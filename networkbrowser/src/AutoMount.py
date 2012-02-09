@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # for localized messages
-#from __init__ import _
+from __init__ import _
 import os
 from enigma import eTimer
 from Components.Console import Console

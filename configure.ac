@@ -333,6 +333,7 @@ netcaster/src/etc/Makefile
 
 networkbrowser/Makefile
 networkbrowser/meta/Makefile
+networkbrowser/po/Makefile
 networkbrowser/src/Makefile
 networkbrowser/src/icons/Makefile
 networkbrowser/src/lib/Makefile
