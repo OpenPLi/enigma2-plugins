@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxbox-enigma 0.0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-02-20 10:16+0100\n"
+"POT-Creation-Date: 2012-01-28 16:39+0100\n"
 "PO-Revision-Date: 2008-05-12 14:00+0100\n"
 "Last-Translator: Gaj1 <jagg@tdcadsl.dk>\n"
 "Language-Team: Gaj1 <jagg@tdcadsl.dk>\n"
@@ -42,10 +42,19 @@ msgid ""
 "\n"
 msgstr ""
 
+msgid "Attempt to mount shares again"
+msgstr ""
+
+msgid "Attempt to recover lost mounts (in background)"
+msgstr ""
+
 msgid "Browse network neighbourhood"
 msgstr ""
 
 msgid "CIFS share"
+msgstr ""
+
+msgid "Cancel"
 msgstr ""
 
 msgid "Change hostname"
@@ -60,13 +69,16 @@ msgstr ""
 msgid "Delete"
 msgstr ""
 
-msgid "Delete selected mount"
+msgid "Delete mount"
 msgstr ""
 
 msgid "Dir:"
 msgstr ""
 
 msgid "Do you want to enter a username and password for this host?\n"
+msgstr ""
+
+msgid "Enter IP to scan..."
 msgstr ""
 
 msgid "Enter new hostname for your Dreambox"
@@ -90,7 +102,13 @@ msgstr ""
 msgid "Enter username:"
 msgstr ""
 
+msgid "Expert"
+msgstr ""
+
 msgid "Finished restarting your network"
+msgstr ""
+
+msgid "IP Address"
 msgstr ""
 
 msgid "IP:"
@@ -103,6 +121,9 @@ msgid "Manage network shares"
 msgstr ""
 
 msgid "Manage your network shares..."
+msgstr ""
+
+msgid "Mount again"
 msgstr ""
 
 msgid "Mount informations"
@@ -158,10 +179,19 @@ msgstr ""
 msgid "Press OK to activate the settings."
 msgstr ""
 
+msgid "Press OK to collapse this host"
+msgstr ""
+
 msgid "Press OK to edit selected settings."
 msgstr ""
 
 msgid "Press OK to edit the settings."
+msgstr ""
+
+msgid "Press OK to expand this host"
+msgstr ""
+
+msgid "Press OK to mount this share!"
 msgstr ""
 
 msgid "Press OK to mount!"
@@ -173,7 +203,13 @@ msgstr ""
 msgid "Press OK to select."
 msgstr ""
 
-msgid "Rescan network"
+msgid "Rescan"
+msgstr ""
+
+msgid "Scan NFS share"
+msgstr ""
+
+msgid "Scan range"
 msgstr ""
 
 msgid "Search for network shares"
@@ -213,4 +249,7 @@ msgid "Your network mount has been removed."
 msgstr ""
 
 msgid "Your network mount has been updated."
+msgstr ""
+
+msgid "use as HDD replacement"
 msgstr ""
