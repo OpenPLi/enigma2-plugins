@@ -92,14 +92,11 @@ class AutoMountEdit(Screen, ConfigListScreen):
                 self.usernameEntry = None
                 self.passwordEntry = None
                 self.hdd_replacementEntry = None
-
-                self.sharetypelist = []
-                self.sharetypelist.append(("nfs", _("NFS share")))
-                self.sharetypelist.append(("cifs", _("CIFS share")))
+                self.sharetypelist = [("nfs", _("NFS share")), ("cifs", _("CIFS share"))]
 
                 if self.mountinfo.has_key('mounttype'):
                         mounttype = self.mountinfo['mounttype']
-                        if mounttype is False:
+                        if not mounttype:
                                 mounttype = "nfs"
                 else:
                         mounttype = "nfs"
@@ -130,7 +127,7 @@ class AutoMountEdit(Screen, ConfigListScreen):
                 if self.mountinfo.has_key('options'):
                         options = self.mountinfo['options']
                 else:
-                        options = "rw,nolock,tcp"
+                        options = "rw,nolock,soft"
                 if self.mountinfo.has_key('username'):
                         username = self.mountinfo['username']
                 else:
@@ -152,7 +149,7 @@ class AutoMountEdit(Screen, ConfigListScreen):
                 if sharedir is False:
                         sharedir = "/export/hdd"
                 if mounttype == "nfs":
-                        defaultOptions = "rw,nolock,tcp"
+                        defaultOptions = "rw,nolock,soft"
                 else:
                         defaultOptions = "rw"
                 if username is False:
@@ -190,7 +187,7 @@ class AutoMountEdit(Screen, ConfigListScreen):
                         if self.mounttypeConfigEntry.value == "cifs":
                                 self.optionsConfigEntry = NoSave(ConfigText(default = "rw", visible_width = 50, fixed_size = False))
                         else:
-                                self.optionsConfigEntry = NoSave(ConfigText(default = "rw,nolock,tcp", visible_width = 50, fixed_size = False))
+                                self.optionsConfigEntry = NoSave(ConfigText(default = "rw,nolock,soft", visible_width = 50, fixed_size = False))
                 self.optionsEntry = getConfigListEntry(_("Mount options"), self.optionsConfigEntry)
                 self.list.append(self.optionsEntry)
                 if self.mounttypeConfigEntry.value == "cifs":
