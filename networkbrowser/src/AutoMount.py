@@ -239,31 +239,22 @@ class AutoMount():
 		# Generate List in RAM
 		list = ['<?xml version="1.0" ?>\n<mountmanager>\n']
 		for sharename, sharedata in self.automounts.items():
-			if sharedata['mounttype'] == 'nfs':
-				list.append('<nfs>\n')
-				list.append(' <mount>\n')
-				list.append(''.join(["  <active>", str(sharedata['active']), "</active>\n"]))
-				list.append(''.join(["  <hdd_replacement>", str(sharedata['hdd_replacement']), "</hdd_replacement>\n"]))
-				list.append(''.join(["  <ip>", sharedata['ip'], "</ip>\n"]))
-				list.append(''.join(["  <sharename>", sharedata['sharename'], "</sharename>\n"]))
-				list.append(''.join(["  <sharedir>", sharedata['sharedir'], "</sharedir>\n"]))
-				list.append(''.join(["  <options>", sharedata['options'], "</options>\n"]))
-				list.append(' </mount>\n')
-				list.append('</nfs>\n')
+			mtype = sharedata['mounttype']
+			list.append('<' + mtype + '>\n')
+			list.append(' <mount>\n')
+			list.append("  <active>" + str(sharedata['active']) + "</active>\n")
+			list.append("  <hdd_replacement>" + str(sharedata['hdd_replacement']) + "</hdd_replacement>\n")
+			list.append("  <ip>" + sharedata['ip'] + "</ip>\n")
+			list.append("  <sharename>" + sharedata['sharename'] + "</sharename>\n")
+			list.append("  <sharedir>" + sharedata['sharedir'] + "</sharedir>\n")
+			list.append("  <options>" + sharedata['options'] + "</options>\n")
 
 			if sharedata['mounttype'] == 'cifs':
-				list.append('<cifs>\n')
-				list.append(' <mount>\n')
-				list.append(''.join(["  <active>", str(sharedata['active']), "</active>\n"]))
-				list.append(''.join(["  <hdd_replacement>", str(sharedata['hdd_replacement']), "</hdd_replacement>\n"]))
-				list.append(''.join(["  <ip>", sharedata['ip'], "</ip>\n"]))
-				list.append(''.join(["  <sharename>", sharedata['sharename'], "</sharename>\n"]))
-				list.append(''.join(["  <sharedir>", sharedata['sharedir'], "</sharedir>\n"]))
-				list.append(''.join(["  <options>", sharedata['options'], "</options>\n"]))
-				list.append(''.join(["  <username>", sharedata['username'], "</username>\n"]))
-				list.append(''.join(["  <password>", sharedata['password'], "</password>\n"]))
-				list.append(' </mount>\n')
-				list.append('</cifs>\n')
+				list.append("  <username>" + sharedata['username'] + "</username>\n")
+				list.append("  <password>" + sharedata['password'] + "</password>\n")
+
+			list.append(' </mount>\n')
+			list.append('</' + mtype + '>\n')
 
 		# Close Mountmanager Tag
 		list.append('</mountmanager>\n')
