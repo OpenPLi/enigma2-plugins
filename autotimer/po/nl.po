@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma - autotimer\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-10-16 17:32+0200\n"
-"PO-Revision-Date: 2009-09-27 11:53+0100\n"
+"POT-Creation-Date: 2012-02-17 15:07+0100\n"
+"PO-Revision-Date: 2012-02-17 15:03+0100\n"
 "Last-Translator: \n"
 "Language-Team:  <Benny.DeTandt@gmail.com>\n"
 "MIME-Version: 1.0\n"
@@ -15,14 +15,36 @@ msgstr ""
 "X-Poedit-Country: NETHERLANDS\n"
 "X-Generator: KBabel 1.11.4\n"
 
-msgid "Abort this Wizard."
-msgstr "Deze wizard afsluiten"
+#, python-format
+msgid ""
+"%d conflict(s) encountered when trying to add new timers:\n"
+"%s"
+msgstr ""
+
+#, python-format
+msgid ""
+"%d conflict(s) solved with similar timer(s):\n"
+"%s"
+msgstr ""
+
+msgid "%d.%B %Y"
+msgstr ""
+
+#, python-format
+msgid "%s: %s at %s"
+msgstr ""
+
+msgid "Activate VPS"
+msgstr ""
 
 msgid "Add"
 msgstr "Toevoegen"
 
 msgid "Add new AutoTimer"
 msgstr "Nieuwe AutoTimer toevoegen"
+
+msgid "Add similar timer on conflict"
+msgstr ""
 
 msgid "Add timer as disabled on conflict"
 msgstr "Timer als 'uitgeschakeld op conflict' toevoegen"
@@ -36,8 +58,11 @@ msgstr "Na de actie"
 msgid "All non-repeating timers"
 msgstr "Alle niet-herhalende timers"
 
-msgid "Ammount of recordings left"
-msgstr "Hoeveelheid resterende opnames"
+msgid "Amount of recordings left"
+msgstr ""
+
+msgid "Any service/recording"
+msgstr ""
 
 msgid "AutoTimer Editor"
 msgstr "AutoTimer editor"
@@ -54,6 +79,15 @@ msgstr "AutoTimer instellingen"
 msgid "AutoTimer overview"
 msgstr "AutoTimer overzicht"
 
+msgid "AutoTimer was added successfully"
+msgstr ""
+
+msgid "AutoTimer was changed successfully"
+msgstr ""
+
+msgid "AutoTimer was removed"
+msgstr ""
+
 msgid "Begin of \"after event\" timespan"
 msgstr "Begin van gebeurtenis na tijdspanne"
 
@@ -62,6 +96,23 @@ msgstr "Begin van periode"
 
 msgid "Bouquets"
 msgstr "Boeketten"
+
+msgid ""
+"By enabling this events will not be matched if they don't occur on certain "
+"dates."
+msgstr ""
+
+msgid ""
+"By enabling this you will be notified about similar timers added during "
+"automated polling. There is no intelligence involved, so it might bother you "
+"about the same conflict over and over."
+msgstr ""
+
+msgid ""
+"By enabling this you will be notified about timer conflicts found during "
+"automated polling. There is no intelligence involved, so it might bother you "
+"about the same conflict over and over."
+msgstr ""
 
 msgid "Cancel"
 msgstr "Annuleren"
@@ -90,8 +141,8 @@ msgstr "Sluiten en wijzigingen opslaan"
 msgid "Configure AutoTimer behavior"
 msgstr "AutoTimer gedrag instellen"
 
-msgid "Create a new AutoTimer."
-msgstr "Een nieuwe AutoTimer aanmaken"
+msgid "Control recording completely by service"
+msgstr ""
 
 msgid "Create a new timer using the classic editor"
 msgstr "Nieuwe timer instellen met de klassieke editor"
@@ -131,6 +182,7 @@ msgstr "AutoTimer filters bewerken"
 msgid "Edit AutoTimer services"
 msgstr "AutoTimer services bewerken"
 
+#. TRANSLATORS: description of AutoTimer in PluginBrowser
 msgid "Edit Timers and scan for new Events"
 msgstr "Timers aanpassen en nieuwe zoeken "
 
@@ -156,8 +208,8 @@ msgid ""
 "Enable this to be able to access the AutoTimer Overview from within the "
 "extension menu."
 msgstr ""
-"Activeer deze optie om de AutoTimer vanuit het uitbreidingsmenu te "
-"kunnen instellen."
+"Activeer deze optie om de AutoTimer vanuit het uitbreidingsmenu te kunnen "
+"instellen."
 
 msgid "Enabled"
 msgstr "Geactiveerd"
@@ -188,23 +240,19 @@ msgid "Filter"
 msgstr "Filter"
 
 msgid ""
-"Filters are another powerful tool when matching events. An AutoTimer can be "
-"restricted to certain Weekdays or only match an event with a text inside eg "
-"it's Description.\n"
-"Press BLUE to add a new restriction and YELLOW to remove the selected one."
+"First day to match events. No event that begins before this date will be "
+"matched."
 msgstr ""
-"Filters zijn een krachtig gereedschap voor het vergelijken van "
-"gebeurtenissen. Een AutoTimer kan beperkt worden tot bepaalde weekdagen, of "
-"alleen overeenkomen met een tekst in bijv. een beschrijving\n"
-"Druk BLAUW om een nieuw filter in te stellen of GEEL om één te verwijderen."
 
 #, python-format
 msgid ""
 "Found a total of %d matching Events.\n"
-"%d Timer were added and %d modified."
+"%d Timer were added and %d modified, %d conflicts encountered, %d similars "
+"added."
 msgstr ""
-"Een totaal van %d overeenkomende gebeurtenissen gevonden.\n"
-"%d Timers werd toegevoegd en %d gewijzigd."
+
+msgid "Frequently asked questions"
+msgstr ""
 
 msgid "Friday"
 msgstr "Vrijdag"
@@ -212,13 +260,19 @@ msgstr "Vrijdag"
 msgid "Guess existing timer based on begin/end"
 msgstr "Raad bestaande timer gebaseerd op begin/einde"
 
+msgid "Help"
+msgstr ""
+
+msgid ""
+"If a timer conflict occurs, AutoTimer will search outside the timespan for a "
+"similar event and add it."
+msgstr ""
+
 #, python-format
 msgid ""
 "If this is enabled an existing timer will also be considered recording an "
-"event if it records at least 80% of the it."
+"event if it records at least 80%% of the it."
 msgstr ""
-"Indien ingeschakeld wordt een programma al als opgenomen beschouwd als een andere timer "
-"er al 80% van opneemt."
 
 msgid "Import AutoTimer"
 msgstr "Importeren AutoTimer"
@@ -233,17 +287,9 @@ msgid "Include"
 msgstr "Toevoegen"
 
 msgid ""
-"It's possible to restrict an AutoTimer to certain Services or Bouquets or to "
-"deny specific ones.\n"
-"An Event will only match this AutoTimer if it's on a specific and not denied "
-"Service (inside a Bouquet).\n"
-"Press BLUE to add a new restriction and YELLOW to remove the selected one."
+"Last day to match events. Events have to begin before this date to be "
+"matched."
 msgstr ""
-"Het is mogelijk om een AutoTimer te beperken tot bepaalde zenders of "
-"boeketten of sommige te weigeren. Een gebeurtenis komt alleen overeen met "
-"een AutoTimer wanneer het op een specifieke en niet geweigerde zender "
-"(binnen een boeket).\n"
-"Druk BLAUW voor een nieuwe restrictie of GEEL om één te verwijderen."
 
 msgid "Location"
 msgstr "Locatie"
@@ -260,7 +306,7 @@ msgstr ""
 
 #, python-format
 msgid "Match Timespan: %02d:%02d - %02d:%02d"
-msgstr "Tijdspanne: %2s:%02d - %2d:%02d"
+msgstr "Tijdspanne: %02d:%02d - %02d:%02d"
 
 msgid "Match title"
 msgstr "Titel overeenkomstig"
@@ -273,11 +319,9 @@ msgid "Maximum duration (in m)"
 msgstr "Maximale tijdsduur (in m)"
 
 msgid ""
-"Maximum event duration to match. If an event is longer than this ammount of "
+"Maximum event duration to match. If an event is longer than this amount of "
 "time (without offset) it won't be matched."
 msgstr ""
-"Maximale tijdsduur van een programma. Een programma dat langer duurt komt "
-"niet overeen."
 
 msgid "Modify existing timers"
 msgstr "Bestaande timers aanpassen"
@@ -297,11 +341,14 @@ msgstr "Nieuw"
 msgid "No"
 msgstr "Nee"
 
-msgid "No, remove them."
-msgstr "Nee, verwijder ze."
-
 msgid "None"
 msgstr "Geen"
+
+msgid "Not after"
+msgstr ""
+
+msgid "Not before"
+msgstr ""
 
 msgid "Number of scheduled recordings left."
 msgstr "Overgebleven aantal ingeplande opnames."
@@ -323,6 +370,9 @@ msgstr "Op dezelfde service"
 
 msgid "Only AutoTimers created during this session"
 msgstr "AutoTimers gemaakt tijdens deze sessie"
+
+msgid "Only add timer for next x days"
+msgstr ""
 
 msgid "Only match during timespan"
 msgstr "Gelijke gedurende tijdspanne"
@@ -380,6 +430,9 @@ msgstr "Reset counter"
 msgid "Restrict \"after event\" to a certain timespan?"
 msgstr ""
 
+msgid "Restrict to events on certain dates"
+msgstr ""
+
 msgid "Saturday"
 msgstr "Zaterdag"
 
@@ -434,11 +487,16 @@ msgstr "Is er een maximale tijdsduur van een bepaald programma?"
 
 msgid ""
 "Should timers created by this AutoTimer be recorded to a custom location?"
-msgstr ""
-"Plaats opnames van deze AutoTimer op een alternatieve plaats"
+msgstr "Plaats opnames van deze AutoTimer op een alternatieve plaats"
 
 msgid "Show in extension menu"
 msgstr "Toon in uitbreidingsmenu"
+
+msgid "Show notification on conflicts"
+msgstr ""
+
+msgid "Show notification on similars"
+msgstr ""
 
 msgid "Sort AutoTimer"
 msgstr "Sorteer"
@@ -449,36 +507,14 @@ msgstr "Selecteer op tijd"
 msgid "Sunday"
 msgstr "Zondag"
 
+msgid "Support \"Fast Scan\"?"
+msgstr ""
+
 msgid "Tags"
 msgstr "Labels"
 
 msgid "Tags the Timer/Recording will have."
 msgstr "Etiketten om aan de opname te verbinden voor de opname lijst."
-
-msgid ""
-"Thank you for using the wizard. Your new AutoTimer has been added to the "
-"List.\n"
-"Please press OK to continue."
-msgstr ""
-"Bedankt voor het gebruiken van de Wizard. Uw nieuwe Autotimer is toegevoegd "
-"aan de lijst.\n"
-"Druk OK om door te gaan."
-
-msgid ""
-"The Timer will not be added to the List.\n"
-"Please press OK to close this Wizard."
-msgstr ""
-"De timer wordt niet toegevoegd aan de lijst.\n"
-"Druk OK om de wizard af te sluiten."
-
-msgid ""
-"The Timespan of an AutoTimer is the first 'advanced' attribute. If a "
-"timespan is specified an event will only match this AutoTimer if it lies "
-"inside of this timespan."
-msgstr ""
-"Het tijdspanne van een AutoTimer is het eerste geavanceerde attribuut. "
-"Wanneer een tijdspanne is gespecificeerd, dan zal een gebeurtenis alleen "
-"overeenkomen met de AutoTimer indien deze binnen dit tijdspanne ligt."
 
 msgid ""
 "The counter can automatically be reset to the limit at certain intervals."
@@ -498,8 +534,8 @@ msgid ""
 "This is a name you can give the AutoTimer. It will be shown in the Overview "
 "and the Preview."
 msgstr ""
-"Een beschrijvende naam die alleen gebruikt wordt in de overzichtslijst en "
-"de preview functie."
+"Een beschrijvende naam die alleen gebruikt wordt in de overzichtslijst en de "
+"preview functie."
 
 msgid ""
 "This is the delay in hours that the AutoTimer will wait after a search to "
@@ -513,19 +549,21 @@ msgid ""
 "german umlauts can be tricky as you have to know the encoding the channel "
 "uses."
 msgstr ""
-"Deze tekst wordt gezocht in programmatitels. Voor het zoeken op speciale tekens "
-"dient de encoding correct gekozen te zijn."
+"Deze tekst wordt gezocht in programmatitels. Voor het zoeken op speciale "
+"tekens dient de encoding correct gekozen te zijn."
 
 msgid "This setting controls the behavior when a timer matches a found event."
-msgstr "Dit bepaalt het gedrag als een timer al overeenkomt met een gevonden programma."
+msgstr ""
+"Dit bepaalt het gedrag als een timer al overeenkomt met een gevonden "
+"programma."
 
 msgid ""
 "This toggles the behavior on timer conflicts. If an AutoTimer matches an "
 "event that conflicts with an existing timer it will not ignore this event "
 "but add it disabled."
 msgstr ""
-"Bij timer conflicten kan de AutoTimer het programma toevoegen zonder deze "
-"te activeren. Als deze optie uit staat wordt het programma overgeslagen."
+"Bij timer conflicten kan de AutoTimer het programma toevoegen zonder deze te "
+"activeren. Als deze optie uit staat wordt het programma overgeslagen."
 
 msgid "Thursday"
 msgstr "Donderdag"
@@ -579,15 +617,9 @@ msgid "Weekly (Sunday)"
 msgstr "Wekelijks (zondag)"
 
 msgid ""
-"Welcome.\n"
-"\n"
-"This Wizard will help you to create a new AutoTimer by providing "
-"descriptions for common settings."
+"When supporting \"Fast Scan\" the service type is ignored. You don't need to "
+"enable this unless your Image supports \"Fast Scan\" and you are using it."
 msgstr ""
-"Welkom.\n"
-"\n"
-"Deze Wizard helpt u bij het aanmaken van een nieuw AutoTimer door "
-"uitgebreidere omschrijvingen te geven voor algemene instellingen."
 
 msgid ""
 "When this option is enabled the AutoTimer won't match events where another "
@@ -598,41 +630,21 @@ msgid ""
 "With this option enabled the channel to record on can be changed to a "
 "alternative service it is restricted to."
 msgstr ""
-"Indien ingeschakeld kan een alternatieve zender worden gebruikt om "
-"de opname te maken als de ingestelde zender niet beschikbaar is."
+"Indien ingeschakeld kan een alternatieve zender worden gebruikt om de opname "
+"te maken als de ingestelde zender niet beschikbaar is."
 
 msgid ""
-"With this option you can restrict the AutoTimer to a certain ammount of "
+"With this option you can restrict the AutoTimer to a certain amount of "
 "scheduled recordings. Set this to 0 to disable this functionality."
 msgstr ""
-"Deze optie beperkt het aantal timers dat de AutoTimer toevoegt. De "
-"waarde \"0\" staat een onbeperkt aantal toe."
 
 msgid "Wizard"
 msgstr "Wizard"
 
-msgid "Yes"
-msgstr "Ja"
-
-msgid "Yes, keep them."
-msgstr "Ja, behoud deze."
-
 msgid ""
-"You can set the basic properties of an AutoTimer here.\n"
-"While 'Name' is just a human-readable name displayed in the Overview, 'Match "
-"in title' is what is looked for in the EPG."
+"You can control for how many days in the future timers are added. Set this "
+"to 0 to disable this feature."
 msgstr ""
-"U kunt hier de basis instellingen doen voor een AutoTimer.\n"
-"Terwijl 'Name' gewoon een normaal leesbare naam is voor de overzichtslijst, "
-"'Match' is een titel waar naar gezocht wordt in de EPG."
-
-msgid ""
-"You did not provide a valid 'Match in title' Attribute for your new "
-"AutoTimer.\n"
-"As this is a mandatory Attribute you cannot continue without doing so."
-msgstr ""
-"U geeft geen geldige 'Match een titel' attribuut gegeven voor uw AutoTimer.\n"
-"Omdat deze verplicht is, kunt u niet verder zonder deze alsnog op te geven."
 
 #, python-format
 msgid ""
@@ -642,24 +654,6 @@ msgstr ""
 "U gaf \"%s\" als vergelijking.\n"
 "Wilt u achterliggende spaties verwijderen?"
 
-msgid ""
-"You successfully configured a new AutoTimer. Do you want to add it to the "
-"list?\n"
-"\n"
-"You can go back a step by pressing EXIT on your remote."
-msgstr ""
-"U heeft succesvol een AutoTimer geconfigureerd. Wilt u deze aan de lijst "
-"toevoegen ?\n"
-"\n"
-"U kunt één stap terug door de EXIT knop te gebruiken."
-
-msgid ""
-"Your 'Match in title' Attribute ends with a Whitespace.\n"
-"Please confirm if this was intentional, if not they will be removed."
-msgstr ""
-"Uw 'Match in titel' attribuut eindigt op een spatie.\n"
-"Is deze zo bedoeld of niet. Zo niet, dan zal deze worden verwijderd."
-
 #, python-format
 msgid ""
 "Your config file is not well-formed:\n"
@@ -668,11 +662,13 @@ msgstr ""
 "Uw configuratie bevat fouten:\n"
 "%s"
 
-msgid "add AutoTimer..."
-msgstr "Autotimer toevoegen..."
-
+#. TRANSLATORS: AutoTimer title in MovieList (automatically opens importer, I consider this no further interaction)
 msgid "add AutoTimer"
 msgstr "Autotimer toevoegen"
+
+#. TRANSLATORS: AutoTimer title in EventInfo dialog (requires the user to select an event to base the AutoTimer on)
+msgid "add AutoTimer..."
+msgstr "Autotimer toevoegen..."
 
 msgid "add filters"
 msgstr "Filters..."
@@ -683,11 +679,17 @@ msgstr "Zenders..."
 msgid "auto"
 msgstr "auto"
 
+msgid "autotimers need a match attribute"
+msgstr ""
+
 msgid "case-insensitive search"
 msgstr "hoofdletterongevoelig zoeken"
 
 msgid "case-sensitive search"
 msgstr "hoofdlettergevoelig zoeken"
+
+msgid "config changed."
+msgstr ""
 
 msgid "delete"
 msgstr "verwijderen"
@@ -728,6 +730,9 @@ msgstr "in de titel"
 msgid "mins"
 msgstr "minuten"
 
+msgid "missing parameter \"id\""
+msgstr ""
+
 msgid "on Weekday"
 msgstr "op een weekdag"
 
@@ -740,5 +745,17 @@ msgstr "opnemen"
 msgid "standard"
 msgstr "standaard"
 
+#, python-format
+msgid "unable to find timer with id %i"
+msgstr ""
+
 msgid "zap"
 msgstr "kanaal wisselen"
+
+#, fuzzy
+#~ msgid ""
+#~ "If this is enabled an existing timer will also be considered recording an "
+#~ "event if it records at least 80% of the it."
+#~ msgstr ""
+#~ "Indien ingeschakeld wordt een programma al als opgenomen beschouwd als "
+#~ "een andere timer er al 80% van opneemt."

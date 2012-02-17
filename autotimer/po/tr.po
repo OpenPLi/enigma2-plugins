@@ -5,9 +5,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2 AutoTimer Plugin Turkish Locale\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-10-06 19:53+0200\n"
-"PO-Revision-Date: 2009-09-24 20:30+0200\n"
-"Last-Translator: Zülfikar VEYİSOĞLU <z.veyisoglu@hobiagaci.com>\n"
+"POT-Creation-Date: 2012-02-17 15:07+0100\n"
+"PO-Revision-Date: 2012-02-17 15:38+0100\n"
+"Last-Translator: \n"
 "Language-Team: http://hobiagaci.com <z.veyisoglu@hobiagaci.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -16,14 +16,36 @@ msgstr ""
 "X-Poedit-Country: TURKEY\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-msgid "Abort this Wizard."
-msgstr "Sihirbazdan çık."
+#, python-format
+msgid ""
+"%d conflict(s) encountered when trying to add new timers:\n"
+"%s"
+msgstr ""
+
+#, python-format
+msgid ""
+"%d conflict(s) solved with similar timer(s):\n"
+"%s"
+msgstr ""
+
+msgid "%d.%B %Y"
+msgstr ""
+
+#, python-format
+msgid "%s: %s at %s"
+msgstr ""
+
+msgid "Activate VPS"
+msgstr ""
 
 msgid "Add"
 msgstr "Ekle"
 
 msgid "Add new AutoTimer"
 msgstr "Yeni otomatik zamanlayıcı ekle"
+
+msgid "Add similar timer on conflict"
+msgstr ""
 
 msgid "Add timer as disabled on conflict"
 msgstr "Çakışmalarda, zamanlayıcıyı 'devre dışı' ekle"
@@ -37,8 +59,11 @@ msgstr "Eylem bittikten sonra"
 msgid "All non-repeating timers"
 msgstr "Tekrarlanmayan tüm zamanlayıcılar"
 
-msgid "Ammount of recordings left"
-msgstr "Kayıt sayacı"
+msgid "Amount of recordings left"
+msgstr ""
+
+msgid "Any service/recording"
+msgstr ""
 
 msgid "AutoTimer Editor"
 msgstr "Otomatik zamanlayıcı editörü"
@@ -55,6 +80,15 @@ msgstr "Otomatik zamanlayıcı ayarları"
 msgid "AutoTimer overview"
 msgstr "Otomatik zamanlayıcı incele"
 
+msgid "AutoTimer was added successfully"
+msgstr ""
+
+msgid "AutoTimer was changed successfully"
+msgstr ""
+
+msgid "AutoTimer was removed"
+msgstr ""
+
 msgid "Begin of \"after event\" timespan"
 msgstr "Zaman aralığı başlangıcı"
 
@@ -63,6 +97,15 @@ msgstr "Zaman aralığı başlangıcı"
 
 msgid "Bouquets"
 msgstr "Bukette"
+
+msgid "By enabling this events will not be matched if they don't occur on certain dates."
+msgstr ""
+
+msgid "By enabling this you will be notified about similar timers added during automated polling. There is no intelligence involved, so it might bother you about the same conflict over and over."
+msgstr ""
+
+msgid "By enabling this you will be notified about timer conflicts found during automated polling. There is no intelligence involved, so it might bother you about the same conflict over and over."
+msgstr ""
 
 msgid "Cancel"
 msgstr "Vazgeç"
@@ -91,8 +134,8 @@ msgstr "Değişiklikleri kaydet ve kapat"
 msgid "Configure AutoTimer behavior"
 msgstr "Otomatik zamanlayıcı davranışını düzenle"
 
-msgid "Create a new AutoTimer."
-msgstr "Yeni otomatik zamanlayıcı oluştur."
+msgid "Control recording completely by service"
+msgstr ""
 
 msgid "Create a new timer using the classic editor"
 msgstr "Klasik editörü kullanarak zamanlayıcı oluştur"
@@ -132,6 +175,7 @@ msgstr "Otomatik zamanlayıcı filtrelerini düzenle"
 msgid "Edit AutoTimer services"
 msgstr "Otomatik zamanlayıcı kanallarını düzenle"
 
+#. TRANSLATORS: description of AutoTimer in PluginBrowser
 msgid "Edit Timers and scan for new Events"
 msgstr "Zamanlayıcı düzenle ve yeni eylemlerde ara"
 
@@ -153,17 +197,13 @@ msgstr "Filtreleme"
 msgid "Enable Service Restriction"
 msgstr "Kanal kısıtlaması"
 
-msgid ""
-"Enable this to be able to access the AutoTimer Overview from within the "
-"extension menu."
+msgid "Enable this to be able to access the AutoTimer Overview from within the extension menu."
 msgstr ""
 
 msgid "Enabled"
 msgstr "Etkin"
 
-msgid ""
-"Encoding the channel uses for it's EPG data. You only need to change this if "
-"you're searching for special characters like the german umlauts."
+msgid "Encoding the channel uses for it's EPG data. You only need to change this if you're searching for special characters like the german umlauts."
 msgstr ""
 
 msgid "End of \"after event\" timespan"
@@ -184,25 +224,17 @@ msgstr "Zaman aralığındaki eylemden sonra çalıştır"
 msgid "Filter"
 msgstr "Filtre"
 
-msgid ""
-"Filters are another powerful tool when matching events. An AutoTimer can be "
-"restricted to certain Weekdays or only match an event with a text inside eg "
-"it's Description.\n"
-"Press BLUE to add a new restriction and YELLOW to remove the selected one."
+msgid "First day to match events. No event that begins before this date will be matched."
 msgstr ""
-"Filtreler ise eşleştirme için kullanabileceğiniz diğer güçlü bir araçtır. "
-"Belirli bir gün kısıtlaması yapabileceğiniz gibi EPG program detayında ki "
-"metnini de sınırlama için kullanabilirsiniz.\n"
-"Sınırlama eklemek için MAVİ tuşu, kaldırmak için istediğinizi seçtikten "
-"sonra da SARI tuşu kullanabilirsiniz."
 
 #, python-format
 msgid ""
 "Found a total of %d matching Events.\n"
-"%d Timer were added and %d modified."
+"%d Timer were added and %d modified, %d conflicts encountered, %d similars added."
 msgstr ""
-"Toplam %d EPG eylemi eşleşmesi bulundu.\n"
-"%d zamanlayıcı eklendi ve %d düzenlendi."
+
+msgid "Frequently asked questions"
+msgstr ""
 
 msgid "Friday"
 msgstr "Cuma"
@@ -210,10 +242,14 @@ msgstr "Cuma"
 msgid "Guess existing timer based on begin/end"
 msgstr "Başlama/Bitiş bilgisini mevcutlardan al"
 
+msgid "Help"
+msgstr ""
+
+msgid "If a timer conflict occurs, AutoTimer will search outside the timespan for a similar event and add it."
+msgstr ""
+
 #, python-format
-msgid ""
-"If this is enabled an existing timer will also be considered recording an "
-"event if it records at least 80% of the it."
+msgid "If this is enabled an existing timer will also be considered recording an event if it records at least 80%% of the it."
 msgstr ""
 
 msgid "Import AutoTimer"
@@ -228,19 +264,8 @@ msgstr "EPG'den içeri al"
 msgid "Include"
 msgstr "İçer"
 
-msgid ""
-"It's possible to restrict an AutoTimer to certain Services or Bouquets or to "
-"deny specific ones.\n"
-"An Event will only match this AutoTimer if it's on a specific and not denied "
-"Service (inside a Bouquet).\n"
-"Press BLUE to add a new restriction and YELLOW to remove the selected one."
+msgid "Last day to match events. Events have to begin before this date to be matched."
 msgstr ""
-"Otomatik zamanlayıcı da anahtar kelime eşleşmesini istediğiniz kanalları "
-"veya buketleri sınırlayabilirsiniz.\n"
-"Eşleştirme için girdiğiniz anahtar kelime, yalnızca belirttiğiniz kanal/"
-"buketlerdeki EPG olaylarında aranabilir.\n"
-"Sınırlama eklemek için MAVİ tuşu, kaldırmak için istediğinizi seçtikten "
-"sonra da SARI tuşu kullanabilirsiniz."
 
 msgid "Location"
 msgstr "Konum"
@@ -248,9 +273,7 @@ msgstr "Konum"
 msgid "Lower bound of timespan."
 msgstr ""
 
-msgid ""
-"Lower bound of timespan. Nothing before this time will be matched. Offsets "
-"are not taken into account!"
+msgid "Lower bound of timespan. Nothing before this time will be matched. Offsets are not taken into account!"
 msgstr ""
 
 #, python-format
@@ -267,9 +290,7 @@ msgstr "Anahtar Kelime: %s"
 msgid "Maximum duration (in m)"
 msgstr "Maksimum Süre (dk.)"
 
-msgid ""
-"Maximum event duration to match. If an event is longer than this ammount of "
-"time (without offset) it won't be matched."
+msgid "Maximum event duration to match. If an event is longer than this amount of time (without offset) it won't be matched."
 msgstr ""
 
 msgid "Modify existing timers"
@@ -290,11 +311,14 @@ msgstr "Yeni"
 msgid "No"
 msgstr "Hayır"
 
-msgid "No, remove them."
-msgstr "Hayır, boşluğu sil."
-
 msgid "None"
 msgstr "Yok"
+
+msgid "Not after"
+msgstr ""
+
+msgid "Not before"
+msgstr ""
 
 msgid "Number of scheduled recordings left."
 msgstr ""
@@ -316,6 +340,9 @@ msgstr "Benzer kanalda"
 
 msgid "Only AutoTimers created during this session"
 msgstr "Yalnızca bu oturumda oluşturulan otomatik zamanlayıcılar"
+
+msgid "Only add timer for next x days"
+msgstr ""
 
 msgid "Only match during timespan"
 msgstr "Yalnızca belirtilen zaman aralığında"
@@ -339,9 +366,7 @@ msgstr "Tarama aralığı (saat)"
 msgid "Poll automatically"
 msgstr "Otomatik tarama"
 
-msgid ""
-"Power state to change to after recordings. Select \"standard\" to not change "
-"the default behaviour of enigma2 or values changed by yourself."
+msgid "Power state to change to after recordings. Select \"standard\" to not change the default behavior of enigma2 or values changed by yourself."
 msgstr ""
 
 msgid "Preview"
@@ -371,6 +396,9 @@ msgstr "Sayaç Sıfırlama"
 msgid "Restrict \"after event\" to a certain timespan?"
 msgstr ""
 
+msgid "Restrict to events on certain dates"
+msgstr ""
+
 msgid "Saturday"
 msgstr "Cumartesi"
 
@@ -383,9 +411,7 @@ msgstr "Arama hassasiyeti"
 msgid "Search type"
 msgstr "Arama tipi"
 
-msgid ""
-"Select \"exact match\" to enforce \"Match title\" to match exactly or "
-"\"partial match\" if you only want to search for a part of the event title."
+msgid "Select \"exact match\" to enforce \"Match title\" to match exactly or \"partial match\" if you only want to search for a part of the event title."
 msgstr ""
 
 msgid "Select a timer to import"
@@ -421,12 +447,17 @@ msgstr ""
 msgid "Should this AutoTimer only match up to a certain event duration?"
 msgstr ""
 
-msgid ""
-"Should timers created by this AutoTimer be recorded to a custom location?"
+msgid "Should timers created by this AutoTimer be recorded to a custom location?"
 msgstr ""
 
 msgid "Show in extension menu"
 msgstr "Eklentiler menüsünde göster"
+
+msgid "Show notification on conflicts"
+msgstr ""
+
+msgid "Show notification on similars"
+msgstr ""
 
 msgid "Sort AutoTimer"
 msgstr "Sırala"
@@ -437,72 +468,37 @@ msgstr "Zamana göre"
 msgid "Sunday"
 msgstr "Pazar"
 
+msgid "Support \"Fast Scan\"?"
+msgstr ""
+
 msgid "Tags"
 msgstr "Etiketler"
 
 msgid "Tags the Timer/Recording will have."
 msgstr ""
 
-msgid ""
-"Thank you for using the wizard. Your new AutoTimer has been added to the "
-"List.\n"
-"Please press OK to continue."
-msgstr ""
-"Sihirbazı kullandığınız için teşekkür ederiz. Yeni otomatik zamanlayıcı "
-"listenize eklenmiştir.\n"
-"Devam etmek için OK'a basınız."
-
-msgid ""
-"The Timer will not be added to the List.\n"
-"Please press OK to close this Wizard."
-msgstr ""
-"Zamanlayıcı listenize eklenmedi.\n"
-"Sihirbazı kapatmak için OK'a basınız."
-
-msgid ""
-"The Timespan of an AutoTimer is the first 'advanced' attribute. If a "
-"timespan is specified an event will only match this AutoTimer if it lies "
-"inside of this timespan."
-msgstr ""
-"Zaman aralığı, otomatik zamanlayıcı için ilk 'gelişmiş' özelliktir. Eğer "
-"otomatik zamanlayıcı için bir zaman aralığı tanımlarsanız, yalnızca bu "
-"aralıklaki eşleşmeler dikkate alınır."
-
-msgid ""
-"The counter can automatically be reset to the limit at certain intervals."
+msgid "The counter can automatically be reset to the limit at certain intervals."
 msgstr ""
 
-msgid ""
-"The editor to be used for new AutoTimers. This can either be the Wizard or "
-"the classic editor."
+msgid "The editor to be used for new AutoTimers. This can either be the Wizard or the classic editor."
 msgstr ""
 
 msgid "The match attribute is mandatory."
 msgstr "Eşleştirme yapmak zorunludur."
 
-msgid ""
-"This is a name you can give the AutoTimer. It will be shown in the Overview "
-"and the Preview."
+msgid "This is a name you can give the AutoTimer. It will be shown in the Overview and the Preview."
 msgstr ""
 
-msgid ""
-"This is the delay in hours that the AutoTimer will wait after a search to "
-"search the EPG again."
+msgid "This is the delay in hours that the AutoTimer will wait after a search to search the EPG again."
 msgstr ""
 
-msgid ""
-"This is what will be looked for in event titles. Note that looking for e.g. "
-"german umlauts can be tricky as you have to know the encoding the channel "
-"uses."
+msgid "This is what will be looked for in event titles. Note that looking for e.g. german umlauts can be tricky as you have to know the encoding the channel uses."
 msgstr ""
 
-msgid "This setting controls the behaviour when a timer matches a found event."
+msgid "This setting controls the behavior when a timer matches a found event."
 msgstr ""
 
-msgid ""
-"This toggles the behaviour on timer conflicts. If an AutoTimer matches an "
-"event that conflicts with an existing timer it will not ignore this event "
-"but add it disabled."
+msgid "This toggles the behavior on timer conflicts. If an AutoTimer matches an event that conflicts with an existing timer it will not ignore this event but add it disabled."
 msgstr ""
 
 msgid "Thursday"
@@ -520,18 +516,13 @@ msgstr "Zamanlayıcı tipi"
 msgid "Tuesday"
 msgstr "Salı"
 
-msgid ""
-"Unless this is enabled AutoTimer will NOT automatically look for events "
-"matching your AutoTimers but only when you leave the GUI with the green "
-"button."
+msgid "Unless this is enabled AutoTimer will NOT automatically look for events matching your AutoTimers but only when you leave the GUI with the green button."
 msgstr ""
 
 msgid "Upper bound of timespan."
 msgstr ""
 
-msgid ""
-"Upper bound of timespan. Nothing after this time will be matched. Offsets "
-"are not taken into account!"
+msgid "Upper bound of timespan. Nothing after this time will be matched. Offsets are not taken into account!"
 msgstr ""
 
 msgid "Use a custom location"
@@ -552,58 +543,23 @@ msgstr "Haftalık (Pazartesi)"
 msgid "Weekly (Sunday)"
 msgstr "Haftalık (Pazar)"
 
-msgid ""
-"Welcome.\n"
-"\n"
-"This Wizard will help you to create a new AutoTimer by providing "
-"descriptions for common settings."
-msgstr ""
-"Hoşgeldiniz.\n"
-"\n"
-"Bu sihirbaz genel ayarlarınızla, yeni otomatik zamanlayıcı oluşturmanıza "
-"yardımcı olur."
-
-msgid ""
-"When this option is enabled the AutoTimer won't match events where another "
-"timer with the same description already exists in the timer list."
+msgid "When supporting \"Fast Scan\" the service type is ignored. You don't need to enable this unless your Image supports \"Fast Scan\" and you are using it."
 msgstr ""
 
-msgid ""
-"With this option enabled the channel to record on can be changed to a "
-"alternative service it is restricted to."
+msgid "When this option is enabled the AutoTimer won't match events where another timer with the same description already exists in the timer list."
 msgstr ""
 
-msgid ""
-"With this option you can restrict the AutoTimer to a certain ammount of "
-"scheduled recordings. Set this to 0 to disable this functionality."
+msgid "With this option enabled the channel to record on can be changed to a alternative service it is restricted to."
+msgstr ""
+
+msgid "With this option you can restrict the AutoTimer to a certain amount of scheduled recordings. Set this to 0 to disable this functionality."
 msgstr ""
 
 msgid "Wizard"
 msgstr "Sihirbaz"
 
-msgid "Yes"
-msgstr "Evet"
-
-msgid "Yes, keep them."
-msgstr "Evet, boşluk kalsın."
-
-msgid ""
-"You can set the basic properties of an AutoTimer here.\n"
-"While 'Name' is just a human-readable name displayed in the Overview, 'Match "
-"in title' is what is looked for in the EPG."
+msgid "You can control for how many days in the future timers are added. Set this to 0 to disable this feature."
 msgstr ""
-"Basit özellikleriyle otomatik zamanlayıcıyı burada tanımlayabilirsiniz.\n"
-"'Anahtar kelime', EPG programlarında aranacak olan eşleştirme kelime/"
-"cümlesidir."
-
-msgid ""
-"You did not provide a valid 'Match in title' Attribute for your new "
-"AutoTimer.\n"
-"As this is a mandatory Attribute you cannot continue without doing so."
-msgstr ""
-"Yeni otomatik zamanlayıcı başlık eşleştirmesi için geçerli bir 'Anahtar "
-"kelime' tanımlamadınız.\n"
-"Devam edebilmeniz için bu geçerli bir anahtar kelime belirtilmesi zorunludur."
 
 #, python-format
 msgid ""
@@ -613,24 +569,6 @@ msgstr ""
 "Metin eşleşmesi için \"%s\" girdiniz.\n"
 "Anahtar kelimeden sonra bırakılan boşluklar silinsin mi?"
 
-msgid ""
-"You successfully configured a new AutoTimer. Do you want to add it to the "
-"list?\n"
-"\n"
-"You can go back a step by pressing EXIT on your remote."
-msgstr ""
-"Yeni otomatik zamanlayıcıyı başarıyla yapılandırdınız. Listeye eklemek "
-"istiyor musunuz?\n"
-"\n"
-"Bir önceki adıma dönmek için kumandanızdaki EXIT tuşunu kullanınız."
-
-msgid ""
-"Your 'Match in title' Attribute ends with a Whitespace.\n"
-"Please confirm if this was intentional, if not they will be removed."
-msgstr ""
-"'Anahtar Kelime' den sonra bir boşluk bırakmışsınız.\n"
-"Lütfen boşluğu bilinçli olarak, tutmak isteyip istemediğinizi belirtiniz?"
-
 #, python-format
 msgid ""
 "Your config file is not well-formed:\n"
@@ -639,11 +577,13 @@ msgstr ""
 "Yapılandırma dosyası düzgün değil:\n"
 "%s"
 
-msgid "add AutoTimer..."
-msgstr "Otomatik zamanlayıcı ekle..."
-
+#. TRANSLATORS: AutoTimer title in MovieList (automatically opens importer, I consider this no further interaction)
 msgid "add AutoTimer"
 msgstr "Otomatik zamanlayıcı ekle"
+
+#. TRANSLATORS: AutoTimer title in EventInfo dialog (requires the user to select an event to base the AutoTimer on)
+msgid "add AutoTimer..."
+msgstr "Otomatik zamanlayıcı ekle..."
 
 msgid "add filters"
 msgstr "Filtre ekle"
@@ -654,11 +594,17 @@ msgstr "Kanal Ekle"
 msgid "auto"
 msgstr "otomatik"
 
+msgid "autotimers need a match attribute"
+msgstr ""
+
 msgid "case-insensitive search"
 msgstr "büyük-küçük harf duyarsız arama"
 
 msgid "case-sensitive search"
 msgstr "büyük-küçük harf duyarlı arama"
+
+msgid "config changed."
+msgstr ""
 
 msgid "delete"
 msgstr "sil"
@@ -699,6 +645,9 @@ msgstr "Başlıkta"
 msgid "mins"
 msgstr "dakika"
 
+msgid "missing parameter \"id\""
+msgstr ""
+
 msgid "on Weekday"
 msgstr "Günde"
 
@@ -711,5 +660,10 @@ msgstr "kaydet"
 msgid "standard"
 msgstr "standart"
 
+#, python-format
+msgid "unable to find timer with id %i"
+msgstr ""
+
 msgid "zap"
 msgstr "değiştir"
+
