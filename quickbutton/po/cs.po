@@ -1,0 +1,113 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Quickbutton\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-06-14 14:29+0200\n"
+"PO-Revision-Date: \n"
+"Last-Translator: ims <ims21@users.sourceforge.net>\n"
+"Language-Team: PLi <ims21@users.sourceforge.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Czech\n"
+"X-Poedit-Country: CZECH REPUBLIC\n"
+"Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+
+msgid "Assign plugin to long blue key pressed"
+msgstr "přiřazený plugin dlouhému stisku tlačítka"
+
+msgid "Assign plugin to long green key pressed"
+msgstr "přiřazený plugin dlouhému stisku tlačítka"
+
+msgid "Assign plugin to long red key pressed"
+msgstr "přiřazený plugin dlouhému stisku tlačítka"
+
+msgid "Assign plugin to long yellow key pressed"
+msgstr "přiřazený plugin dlouhému stisku tlačítka"
+
+msgid "Assign plugin to long TV key pressed"
+msgstr "přiřazený plugin dlouhému stisku tlačítka"
+
+msgid "Assign plugin to red key pressed"
+msgstr "přiřazený plugin tlačítku"
+
+msgid "Cancel"
+msgstr "Zavřít"
+
+msgid "Display 4:3 content as"
+msgstr "Zobrazit 4:3 obraz jako"
+
+msgid "EPG List"
+msgstr "EPG seznam"
+
+#, python-format
+msgid ""
+"Error!\n"
+"Error Text: %s"
+msgstr ""
+"Chyba!\n"
+"Text chyby: %s"
+
+msgid "Just Scale"
+msgstr "Jen měřítko"
+
+msgid "MediaPlayer"
+msgstr "MediaPlayer"
+
+msgid "No plugin assigned!"
+msgstr "Nepřiřazen žádný plugin!"
+
+msgid "Nothing"
+msgstr "nepřiřazeno"
+
+msgid "OK"
+msgstr "OK"
+
+msgid "Pan&Scan"
+msgstr "Pan&Scan"
+
+msgid "Pillarbox"
+msgstr "Pillarbox"
+
+msgid "Plugin browser"
+msgstr "Přehled pluginů"
+
+msgid "Plugin not found!"
+msgstr "Plugin nenalezen!"
+
+msgid "Timer"
+msgstr "Časovač"
+
+msgid "Unknown Error"
+msgstr "Neznámá chyba"
+
+msgid "assigned to long blue"
+msgstr "Dlouhý stisk MODRÉHO tlačítka"
+
+msgid "assigned to long green"
+msgstr "Dlouhý stisk ZELENÉHO tlačítka"
+
+msgid "assigned to long red"
+msgstr "Dlouhý stisk ČERVENÉHO tlačítka"
+
+msgid "assigned to long yellow"
+msgstr "Dlouhý stisk ŽLUTÉHO tlačítka"
+
+msgid "assigned to long tv"
+msgstr "Dlouhý stisk TV tlačítka"
+
+msgid "assigned to red"
+msgstr "Stisk ČERVENÉHO tlačítka"
+
+msgid "setup for Quickbutton"
+msgstr "Nastavení pro Quickbutton"
+
+msgid "switch 4:3 content display"
+msgstr "Přepnout 4:3 zobrazení"
+
+msgid "Assign plugin to long 0 key pressed"
+msgstr "přiřazený plugin dlouhému stisku tlačítka"
+
+msgid "assigned to long 0"
+msgstr "Dlouhý stisk tlačítka 0"
+

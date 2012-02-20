@@ -1,0 +1,91 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: enigma2-plugins-extension-webinterface\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-10-26 23:14+0100\n"
+"PO-Revision-Date: \n"
+"Last-Translator: ims <ims21@users.sourceforge.net>\n"
+"Language-Team: PLi <ims21@users.sourceforge.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Czech\n"
+"X-Poedit-Country: CZECH REPUBLIC\n"
+"Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: _\n"
+"X-Poedit-Basepath: V:\\eclipse\\workspaces\\pydev\\enigma2-plugins\\enigma2-plugins\\webinterface\n"
+"X-Poedit-SearchPath-0: src\n"
+
+#: src/plugin.py:496
+msgid "Webinterface"
+msgstr "Webinterface"
+
+#: src/plugin.py:496
+msgid "Configuration for the Webinterface"
+msgstr "Konfigurace Webinterface"
+
+#: src/WebIfConfig.py:34
+msgid "Cancel"
+msgstr "Zrušit"
+
+#: src/WebIfConfig.py:35
+msgid "OK"
+msgstr "OK"
+
+#: src/WebIfConfig.py:58
+msgid "Start Webinterface"
+msgstr "Spustit webové rozhraní"
+
+#: src/WebIfConfig.py:59
+msgid "Enable /media"
+msgstr "Povolit /media"
+
+#: src/WebIfConfig.py:60
+msgid "Allow zapping via Webinterface"
+msgstr "Umožnit přepínání z webového rozhraní"
+
+#: src/WebIfConfig.py:61
+msgid "Autowrite timer"
+msgstr "Automatický zápis časovače"
+
+#: src/WebIfConfig.py:62
+msgid "Load movie-length"
+msgstr "Zobrazovat délku filmů"
+
+#: src/WebIfConfig.py:63
+msgid "Enable HTTP Access"
+msgstr "Povolit HTTP přístup"
+
+#: src/WebIfConfig.py:68
+msgid "HTTP Port"
+msgstr "HTTP Port"
+
+#: src/WebIfConfig.py:69
+msgid "Enable HTTP Authentication"
+msgstr "Povolit HTTP ověřování"
+
+#: src/WebIfConfig.py:74
+msgid "Enable HTTPS Access"
+msgstr "Povolit HTTPS přístup"
+
+#: src/WebIfConfig.py:78
+msgid "HTTPS Port"
+msgstr "HTTPS Port"
+
+#: src/WebIfConfig.py:79
+msgid "Enable HTTPS Authentication"
+msgstr "Povolit HTTPS ověřování"
+
+#: src/WebIfConfig.py:85
+msgid "Enable Streaming Authentication"
+msgstr "Povolit ověření pro streamování"
+
+#: src/WebIfConfig.py:91
+msgid "Webinterface: Main Setup"
+msgstr "Webinterface: hlavní nastavení"
+
+#: src/WebComponents/Converter/HddInfo.py:32
+msgid "N/A"
+msgstr "N/A"
+

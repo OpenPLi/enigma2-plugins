@@ -1,3 +1,3 @@
 PLUGIN = DVDBackup
-LANGS = de it
+LANGS = de it cs
 include $(top_srcdir)/Rules-po.mak

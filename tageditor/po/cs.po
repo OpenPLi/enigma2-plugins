@@ -1,0 +1,75 @@
+# German translations for enigma package.
+# Copyright (C) 2009 THE enigma'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the enigma package.
+# Automatically generated, 2009.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Enigma 2 TagEditor Plugin\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-02-16 23:05+0100\n"
+"PO-Revision-Date: 2012-02-20 16:38+0100\n"
+"Last-Translator: ims <ims21@users.sourceforge.net>\n"
+"Language-Team: PLi <ims21@users.sourceforge.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Czech\n"
+"X-Poedit-Country: CZECH REPUBLIC\n"
+"Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+
+msgid "Add new tag..."
+msgstr "Přidat nový tag..."
+
+msgid "Cancel"
+msgstr "Zavřít"
+
+msgid "Delete all tags..."
+msgstr "Smazat všechny tagy..."
+
+msgid "Delete this tag..."
+msgstr "Smazat tento tag..."
+
+msgid "Delete unused tags"
+msgstr "Smazat nepoužívané tagy"
+
+msgid ""
+"Do you really want to delete all tags everywhere?\n"
+"(Note that 'Cancel' will not undo this!)"
+msgstr ""
+"Opravdu chcete smazat všude všechny tagy?\n"
+"('Zavřít' nezruší provedené změny!)"
+
+#, python-format
+msgid ""
+"Do you really want to delete tag \"%s\" everywhere?\n"
+"(Note that 'Cancel' will not undo this!)"
+msgstr ""
+"Opravdu chcete všude odstranit tag \"%s\" ?\n"
+"('Zavřít' nezruší provedené změny!)"
+
+msgid "edit tags..."
+msgstr "upravit tagy..."
+
+msgid "edit tags"
+msgstr "Upravit tagy"
+
+msgid "Load"
+msgstr "Načíst"
+
+msgid "New"
+msgstr "Nový"
+
+msgid "OK"
+msgstr "OK"
+
+msgid "Please enter the new tag"
+msgstr "Zadejte nový tag"
+
+msgid "Rename this tag..."
+msgstr "Přejmenovat tento tag..."
+
+#, python-format
+msgid "Replace tag \"%s\" everywhere with:   (Note that 'Cancel' will not undo this!)"
+msgstr "Nahradit tag \"%s\" všude za:   ('Zavřít' nezruší provedené změny!)"
+
