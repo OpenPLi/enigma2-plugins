@@ -140,18 +140,10 @@ class AC3LipSync(Screen, HelpableScreen, MovableScreen):
         self["AudioSlider"].setText(_("%i ms")%iCurDelay)
 
     def keyDown(self):
-        if self.AC3delay.whichAudio == AC3GLOB or self.AC3delay.whichAudio == PCMGLOB:
-            iStep = -25
-        else:
-            iStep = -1 * self.arrowStepSize
-        self.changeSliderValue(iStep)
+        self.changeSliderValue(-1 * self.arrowStepSize)
         
     def keyUp(self):
-        if self.AC3delay.whichAudio == AC3GLOB or self.AC3delay.whichAudio == PCMGLOB:
-            iStep = 25
-        else:
-            iStep = self.arrowStepSize
-        self.changeSliderValue(iStep)
+        self.changeSliderValue(self.arrowStepSize)
 
     def keyNumberAbsolute(self, number):
         sAudio = self.AC3delay.whichAudio
