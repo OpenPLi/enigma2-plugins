@@ -1,0 +1,232 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ims\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-04-08 20:54+0200\n"
+"PO-Revision-Date: \n"
+"Last-Translator: ims <ims21@users.sourceforge.net>\n"
+"Language-Team: PLi <ims21@users.sourceforge.net>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Czech\n"
+"X-Poedit-Country: CZECH REPUBLIC\n"
+"Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+
+#: plugin.py:23
+msgid "Execute cuts..."
+msgstr "Provést střihy..."
+
+#
+#: plugin.py:37
+msgid "Don't cut"
+msgstr "Nestřihat"
+
+#
+#: plugin.py:38
+msgid "Replace the original movie with the cut movie"
+msgstr "Nahradit původní film sestřihaným filmem"
+
+#
+#: plugin.py:39
+msgid "Place the cut movie in a new file ending with \" cut\""
+msgstr "Sestříhaný film do nového souboru končícím na \" cut\""
+
+#
+#: plugin.py:40
+msgid "Advanced cut specification..."
+msgstr "Pokročilá specifikace střihu"
+
+#
+#: plugin.py:42
+#, python-format
+msgid "How would you like to cut \"%s\"?"
+msgstr "Jak byste chtěli sestřihat \"%s\"?"
+
+#
+#: plugin.py:86
+msgid "OK"
+msgstr "OK"
+
+#
+#: plugin.py:87
+msgid "Cancel"
+msgstr "Zavřít"
+
+#
+#: plugin.py:95
+msgid "No"
+msgstr "Ne"
+
+#
+#: plugin.py:95
+msgid "Yes"
+msgstr "Ano"
+
+#
+#: plugin.py:103
+msgid "Cutlist"
+msgstr "Seznam střihů"
+
+#
+#: plugin.py:103
+msgid "Manual specification"
+msgstr "Ruční specifikace"
+
+#
+#: plugin.py:117
+msgid "Replace original:"
+msgstr "Nahradit originál:"
+
+#
+#: plugin.py:118
+msgid "New filename:"
+msgstr "Nový název souboru:"
+
+#
+#: plugin.py:119
+msgid "New title:"
+msgstr "Nový titul:"
+
+#
+#: plugin.py:120
+msgid "New description:"
+msgstr "Nový popis:"
+
+#
+#: plugin.py:121
+msgid "New location:"
+msgstr "Nové umístění:"
+
+#: plugin.py:122
+msgid "Cut source:"
+msgstr "Zdroj pro střih:"
+
+#: plugin.py:123
+msgid "Cuts (an IN OUT IN OUT ... sequence of hour:min:sec)"
+msgstr "Střihy (IN OUT IN OUT ... sekvence hod:min:sec)"
+
+#: plugin.py:130
+msgid "Cut Parameter Input"
+msgstr "Zadání parametrů pro střih"
+
+#
+#: plugin.py:178
+msgid "Choose target folder"
+msgstr "Vyberte cílovou složku"
+
+#
+#: plugin.py:245
+#, python-format
+msgid "The movie \"%s\" is successfully cut"
+msgstr "Film \"%s\" byl úspěšně sestříhán"
+
+#
+#: plugin.py:246
+#: plugin.py:247
+#: plugin.py:248
+#: plugin.py:249
+#: plugin.py:250
+#: plugin.py:251
+#: plugin.py:252
+#: plugin.py:253
+#: plugin.py:254
+#: plugin.py:255
+#, python-format
+msgid "Cutting failed for movie \"%s\""
+msgstr "Střih filmu \"%s\" se nezdařil"
+
+#
+#: plugin.py:246
+msgid "Bad arguments"
+msgstr "Chybné argumenty"
+
+#
+#: plugin.py:247
+msgid "Couldn't open input .ts file"
+msgstr "Nelze otevřít vstupní .ts soubor"
+
+#
+#: plugin.py:248
+msgid "Couldn't open input .cuts file"
+msgstr "Nelze otevřít vstupní .cuts soubor"
+
+#
+#: plugin.py:249
+msgid "Couldn't open input .ap file"
+msgstr "Nelze otevřít vstupní .ap soubor"
+
+#
+#: plugin.py:250
+msgid "Couldn't open output .ts file"
+msgstr "Nelze otevřít výstupní .ts soubor"
+
+#
+#: plugin.py:251
+msgid "Couldn't open output .cuts file"
+msgstr "Nelze otevřít výstupní .cuts soubor"
+
+#
+#: plugin.py:252
+msgid "Couldn't open output .ap file"
+msgstr "Nelze otevřít výstupní .ap soubor"
+
+#
+#: plugin.py:253
+msgid "Empty .ap file"
+msgstr "Prázdný .ap soubor"
+
+#
+#: plugin.py:254
+msgid "No cuts specified"
+msgstr "Nespecifikované střihy"
+
+#
+#: plugin.py:255
+msgid "Read/write error (disk full?)"
+msgstr "Chyba čtení/zápisu (plný disk?)"
+
+#
+#: plugin.py:256
+#, python-format
+msgid "Cutting was aborted for movie \"%s\""
+msgstr "Střih filmu \"%s\" byl zrušen"
+
+#
+#: plugin.py:275
+#, python-format
+msgid "The movie \"%s\" is cut in the background."
+msgstr "Film \"%s\" je sestříháván na pozadí."
+
+#
+#: plugin.py:277
+#, python-format
+msgid ""
+"Another movie is currently cut.\n"
+"The movie \"%s\" will be cut in the background after it."
+msgstr ""
+"V současné době probíhá střih jiného filmu.\n"
+"Film \"%s\" bude sestříhán na pozadí poté."
+
+#~ msgid "%d second"
+
+#~ msgid_plural "%d seconds"
+#~ msgstr[0] "%d sekunda"
+#~ msgstr[1] "%d sekundy"
+#~ msgstr[2] "%d sekund"
+
+#~ msgid "%d minute"
+
+#~ msgid_plural "%d minutes"
+#~ msgstr[0] "%d minuta"
+#~ msgstr[1] "%d minuty"
+#~ msgstr[2] "%d minut"
+
+#~ msgid "%d hour"
+
+#~ msgid_plural "%d hours"
+#~ msgstr[0] "%d hodina"
+#~ msgstr[1] "%d hodiny"
+#~ msgstr[2] "%d hodin"
