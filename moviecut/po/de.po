@@ -3,165 +3,170 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
-msgid ""
-msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-04-08 20:54+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2012-04-14 00:14+0100\n"
+"Last-Translator: \n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: plugin.py:23
 msgid "Execute cuts..."
-msgstr ""
+msgstr "Schnitte ausführen..."
 
 #: plugin.py:37
 msgid "Don't cut"
-msgstr ""
+msgstr "Nicht schneiden"
 
 #: plugin.py:38
 msgid "Replace the original movie with the cut movie"
-msgstr ""
+msgstr "Ersetze den originalen Film mit dem geschnittenen Film"
 
 #: plugin.py:39
 msgid "Place the cut movie in a new file ending with \" cut\""
-msgstr ""
+msgstr "Speichere den geschnittenen Film in eine neue Datei mit der Endung \" cut\""
 
 #: plugin.py:40
 msgid "Advanced cut specification..."
-msgstr ""
+msgstr "Erweiterte Schneide-Spezifikation"
 
 #: plugin.py:42
 #, python-format
 msgid "How would you like to cut \"%s\"?"
-msgstr ""
+msgstr "Wie möchtest Du \"%s\" schneiden?"
 
 #: plugin.py:86
 msgid "OK"
-msgstr ""
+msgstr "Ok"
 
 #: plugin.py:87
 msgid "Cancel"
-msgstr ""
+msgstr "Abbrechen"
 
 #: plugin.py:95
 msgid "No"
-msgstr ""
+msgstr "Nein"
 
 #: plugin.py:95
 msgid "Yes"
-msgstr ""
+msgstr "Ja"
 
 #: plugin.py:103
 msgid "Cutlist"
-msgstr ""
+msgstr "Schneideliste"
 
 #: plugin.py:103
 msgid "Manual specification"
-msgstr ""
+msgstr "Manuelle Spezifikation"
 
 #: plugin.py:117
 msgid "Replace original:"
-msgstr ""
+msgstr "Original ersetzen:"
 
 #: plugin.py:118
 msgid "New filename:"
-msgstr ""
+msgstr "Neuer Dateiname:"
 
 #: plugin.py:119
 msgid "New title:"
-msgstr ""
+msgstr "Neuer Titel:"
 
 #: plugin.py:120
 msgid "New description:"
-msgstr ""
+msgstr "Neue Beschreibung:"
 
 #: plugin.py:121
 msgid "New location:"
-msgstr ""
+msgstr "Neuer Speicherort:"
 
 #: plugin.py:122
 msgid "Cut source:"
-msgstr ""
+msgstr "Schneide-Quelle:"
 
 #: plugin.py:123
 msgid "Cuts (an IN OUT IN OUT ... sequence of hour:min:sec)"
-msgstr ""
+msgstr "Schneide (eine IN OUT IN OUT ... Sequenz von h:min:sec)"
 
 #: plugin.py:130
 msgid "Cut Parameter Input"
-msgstr ""
+msgstr "Eingabe Schneide-Parameter"
 
 #: plugin.py:178
 msgid "Choose target folder"
-msgstr ""
+msgstr "Wähle Zielordner"
 
 #: plugin.py:245
 #, python-format
 msgid "The movie \"%s\" is successfully cut"
-msgstr ""
+msgstr "Der Film \"%s\" wurde erfolgreich geschnitten"
 
-#: plugin.py:246 plugin.py:247 plugin.py:248 plugin.py:249 plugin.py:250
-#: plugin.py:251 plugin.py:252 plugin.py:253 plugin.py:254 plugin.py:255
+#: plugin.py:246
+#: plugin.py:247
+#: plugin.py:248
+#: plugin.py:249
+#: plugin.py:250
+#: plugin.py:251
+#: plugin.py:252
+#: plugin.py:253
+#: plugin.py:254
+#: plugin.py:255
 #, python-format
 msgid "Cutting failed for movie \"%s\""
-msgstr ""
+msgstr "Das Schneiden für \"%s\" ist fehlgeschlagen"
 
 #: plugin.py:246
 msgid "Bad arguments"
-msgstr ""
+msgstr "Ungültige Parameter"
 
 #: plugin.py:247
 msgid "Couldn't open input .ts file"
-msgstr ""
+msgstr "Konnte .ts-Eingangsdatei nicht öffnen"
 
 #: plugin.py:248
 msgid "Couldn't open input .cuts file"
-msgstr ""
+msgstr "Konnte .cuts-Eingangsdatei nicht öffnen"
 
 #: plugin.py:249
 msgid "Couldn't open input .ap file"
-msgstr ""
+msgstr "Konnte .ap-Eingangsdatei nicht öffnen"
 
 #: plugin.py:250
 msgid "Couldn't open output .ts file"
-msgstr ""
+msgstr "Konnte .ts-Ausgangsdatei nicht öffnen"
 
 #: plugin.py:251
 msgid "Couldn't open output .cuts file"
-msgstr ""
+msgstr "Konnte .cuts-Ausgangsdatei nicht öffnen"
 
 #: plugin.py:252
 msgid "Couldn't open output .ap file"
-msgstr ""
+msgstr "Konnte .ap-Ausgangsdatei nicht öffnen"
 
 #: plugin.py:253
 msgid "Empty .ap file"
-msgstr ""
+msgstr "Leere .ap-Datei"
 
 #: plugin.py:254
 msgid "No cuts specified"
-msgstr ""
+msgstr "Keine Schnitte definiert"
 
 #: plugin.py:255
 msgid "Read/write error (disk full?)"
-msgstr ""
+msgstr "Lese/Schreib-Fehler (Festplatte voll?)"
 
 #: plugin.py:256
 #, python-format
 msgid "Cutting was aborted for movie \"%s\""
-msgstr ""
+msgstr "Schneiden für den Film \"%s\" abgebrochen"
 
 #: plugin.py:275
 #, python-format
 msgid "The movie \"%s\" is cut in the background."
-msgstr ""
+msgstr "Der Film \"%s\" wird im Hintergrund geschnitten."
 
 #: plugin.py:277
 #, python-format
@@ -169,3 +174,5 @@ msgid ""
 "Another movie is currently cut.\n"
 "The movie \"%s\" will be cut in the background after it."
 msgstr ""
+"Ein anderer Film wird aktuell geschnitten.\n"
+"Der Film \"%s\" wird im Anschluß im Hintergrund geschnitten."
