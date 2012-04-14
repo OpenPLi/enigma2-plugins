@@ -27,10 +27,6 @@ import gettext, re
 ###################################################
 
 def localeInit():
-	lang = language.getLanguage()
-	environ["LANGUAGE"] = lang[:2]
-	gettext.bindtextdomain("enigma2", resolveFilename(SCOPE_LANGUAGE))
-	gettext.textdomain("enigma2")
 	gettext.bindtextdomain("Podcast", "%s%s" % (resolveFilename(SCOPE_PLUGINS), "Extensions/Podcast/locale/"))
 
 def _(txt):
@@ -148,18 +144,18 @@ class PodcastBuffer(Screen):
 	def __init__(self, session, url, file):
 		self.session = session
 		Screen.__init__(self, session)
-		
+
 		self.url = url
 		self.file = file
-		
+
 		self.infoTimer = eTimer()
 		self.infoTimer.timeout.get().append(self.updateInfo)
-		
+
 		self["info"] = Label(_("Downloading movie: %s") % self.file)
 		self["progress"] = ProgressBar()
-		
+
 		self["actions"] = ActionMap(["OkCancelActions"], {"ok": self.okClicked, "cancel": self.exit}, -1)
-		
+
 		self.onLayoutFinish.append(self.downloadMovie)
 
 	def downloadMovie(self):
@@ -199,18 +195,18 @@ class PodcastMovies(Screen):
 	def __init__(self, session, url):
 		self.session = session
 		Screen.__init__(self, session)
-		
+
 		self.url = url
 		self.list = []
 		self.movies = []
 		self.working = True
-		
+
 		self["list"] = MenuList([])
 		self["list"].onSelectionChanged.append(self.showInfo)
 		self["info"] = Label()
-		
+
 		self["actions"] = ActionMap(["OkCancelActions"], {"ok": self.ok, "cancel": self.exit}, -1)
-		
+
 		self.onLayoutFinish.append(self.downloadMovies)
 
 	def ok(self):
@@ -307,7 +303,7 @@ class PodcastMovies(Screen):
 			url = url[:idx]
 		else:
 			url = "N/A"
-		
+
 		length = "N/A"
 		if info.__contains__('length="'):
 			idx = info.index('length="')
@@ -316,7 +312,7 @@ class PodcastMovies(Screen):
 			length = length[:idx]
 			if length:
 				length = str((int(length) / 1024) / 1024) + " MB"
-		
+
 		if info.__contains__('type="'):
 			idx = info.index('type="')
 			type = info[idx+6:]
@@ -324,7 +320,7 @@ class PodcastMovies(Screen):
 			type = type[:idx]
 		else:
 			type = "N/A"
-		
+
 		return (url, length, type)
 
 ###################################################
@@ -338,9 +334,9 @@ class PodcastPodcasts(Screen):
 	def __init__(self, session, provider):
 		self.session = session
 		Screen.__init__(self, session)
-		
+
 		self["actions"] = ActionMap(["OkCancelActions"], {"ok": self.ok, "cancel": self.close}, -1)
-		
+
 		self.urls = []
 		list = []
 		for podcast in provider.findall("podcast"):
@@ -368,9 +364,9 @@ class PodcastProvider(Screen):
 	def __init__(self, session, language):
 		self.session = session
 		Screen.__init__(self, session)
-		
+
 		self["actions"] = ActionMap(["OkCancelActions"], {"ok": self.ok, "cancel": self.close}, -1)
-		
+
 		self.providers = []
 		list = []
 		for provider in language.findall("provider"):
@@ -397,9 +393,9 @@ class PodcastXML(Screen):
 	def __init__(self, session):
 		self.session = session
 		Screen.__init__(self, session)
-		
+
 		self["actions"] = ActionMap(["OkCancelActions"], {"ok": self.ok, "cancel": self.close}, -1)
-		
+
 		self.languages = []
 		list = []
 		file = "/etc/podcast/podcasts.xml"
@@ -429,14 +425,14 @@ class PodcastComGenre2(Screen):
 	def __init__(self, session, url):
 		self.session = session
 		Screen.__init__(self, session)
-		
+
 		self["actions"] = ActionMap(["OkCancelActions"], {"ok": self.ok, "cancel": self.exit}, -1)
-		
+
 		self.url = url
 		self.urls = []
 		self.working = True
 		self["list"] = MenuList([])
-		
+
 		self.onLayoutFinish.append(self.downloadGenres)
 
 	def ok(self):
@@ -492,14 +488,14 @@ class PodcastComGenre(Screen):
 	def __init__(self, session, url):
 		self.session = session
 		Screen.__init__(self, session)
-		
+
 		self["actions"] = ActionMap(["OkCancelActions"], {"ok": self.ok, "cancel": self.exit}, -1)
-		
+
 		self.url = url
 		self.urls = []
 		self.working = True
 		self["list"] = MenuList([])
-		
+
 		self.onLayoutFinish.append(self.downloadSite)
 
 	def ok(self):
@@ -548,14 +544,14 @@ class PodcastCom(Screen):
 	def __init__(self, session):
 		self.session = session
 		Screen.__init__(self, session)
-		
+
 		self.working = True
 		self.urls = []
-		
+
 		self["actions"] = ActionMap(["OkCancelActions"], {"ok": self.ok, "cancel": self.exit}, -1)
-		
+
 		self["list"] = MenuList([])
-		
+
 		self.onLayoutFinish.append(self.downloadMovies)
 
 	def ok(self):
@@ -601,21 +597,21 @@ class LocationSelection(Screen):
 
 	def __init__(self, session, dir="/"):
 		Screen.__init__(self, session)
-		
+
 		self["key_green"] = Label(_("Select"))
-		
+
 		try: self["filelist"] = FileList(dir, showDirectories=True, showFiles=False)
 		except: self["filelist"] = FileList("/", showDirectories, showFiles)
-		
+
 		self["actions"] = ActionMap(["ColorActions", "OkCancelActions"],
 			{
 				"ok": self.okClicked,
 				"cancel": self.exit,
 				"green": self.select
 			}, -1)
-		
+
 		self.onLayoutFinish.append(self.updateDirectoryName)
-		
+
 	def okClicked(self):
 		if self["filelist"].canDescent():
 			self["filelist"].descent()
@@ -654,14 +650,14 @@ class PodcastConfig(ConfigListScreen, Screen):
 
 	def __init__(self, session):
 		Screen.__init__(self, session)
-		
+
 		self["key_green"] = Label(_("Save"))
-		
+
 		ConfigListScreen.__init__(self, [])
-			
-		
+
+
 		self["actions"] = ActionMap(["OkCancelActions", "ColorActions"], {"green": self.save, "cancel": self.exit}, -1)
-		
+
 		self.onLayoutFinish.append(self.createConfig)
 
 	def createConfig(self):
@@ -711,15 +707,15 @@ class PodcastDeEpisodes(Screen):
 	def __init__(self, session, url):
 		self.session = session
 		Screen.__init__(self, session)
-		
+
 		self.working = True
 		self.url = url
 		self.urls = []
-		
+
 		self["actions"] = ActionMap(["OkCancelActions"], {"ok": self.ok, "cancel": self.exit}, -1)
-		
+
 		self["list"] = MenuList([])
-		
+
 		self.onLayoutFinish.append(self.downloadMovies)
 
 	def ok(self):
@@ -739,7 +735,7 @@ class PodcastDeEpisodes(Screen):
 				idx = url.index("http://")
 				url = url[idx+1:]
 			url = "h%s"%url
-			
+
 			if config.plugins.Podcast.buffer.value:
 				file = url
 				while file.__contains__("/"):
@@ -813,15 +809,15 @@ class PodcastDePodcasts(Screen):
 	def __init__(self, session, url):
 		self.session = session
 		Screen.__init__(self, session)
-		
+
 		self.working = True
 		self.url = url
 		self.urls = []
-		
+
 		self["actions"] = ActionMap(["OkCancelActions"], {"ok": self.ok, "cancel": self.exit}, -1)
-		
+
 		self["list"] = MenuList([])
-		
+
 		self.onLayoutFinish.append(self.downloadMovies)
 
 	def ok(self):
@@ -870,15 +866,15 @@ class PodcastDeCategories(Screen):
 	def __init__(self, session, url):
 		self.session = session
 		Screen.__init__(self, session)
-		
+
 		self.working = True
 		self.url = url
 		self.urls = []
-		
+
 		self["actions"] = ActionMap(["OkCancelActions"], {"ok": self.ok, "cancel": self.exit}, -1)
-		
+
 		self["list"] = MenuList([])
-		
+
 		self.onLayoutFinish.append(self.downloadMovies)
 
 	def ok(self):
@@ -923,14 +919,14 @@ class PodcastDe(Screen):
 	def __init__(self, session):
 		self.session = session
 		Screen.__init__(self, session)
-		
+
 		self.working = True
 		self.urls = []
-		
+
 		self["actions"] = ActionMap(["OkCancelActions"], {"ok": self.ok, "cancel": self.exit}, -1)
-		
+
 		self["list"] = MenuList([])
-		
+
 		self.onLayoutFinish.append(self.downloadMovies)
 
 	def ok(self):
@@ -975,9 +971,9 @@ class Podcast(Screen):
 	def __init__(self, session):
 		self.session = session
 		Screen.__init__(self, session)
-		
+
 		self["actions"] = ActionMap(["OkCancelActions"], {"ok": self.ok, "cancel": self.close}, -1)
-		
+
 		self["list"] = MenuList([
 			_("podcast.de"),
 			_("podcast.com"),

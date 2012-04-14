@@ -15,8 +15,6 @@ config.plugins.epgsearch.history_length = ConfigNumber(default = 10)
 config.plugins.epgsearch.add_search_to_epg = ConfigYesNo(default = True)
 
 def localeInit():
-	lang = language.getLanguage()[:2] # getLanguage returns e.g. "fi_FI" for "language_country"
-	os_environ["LANGUAGE"] = lang # Enigma doesn't set this (or LC_ALL, LC_MESSAGES, LANG). gettext needs it!
 	gettext.bindtextdomain("EPGSearch", resolveFilename(SCOPE_PLUGINS, "Extensions/EPGSearch/locale"))
 
 def _(txt):

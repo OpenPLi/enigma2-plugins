@@ -21,10 +21,6 @@ import gettext
 ###########################################################
 
 def localeInit():
-	lang = language.getLanguage()
-	environ["LANGUAGE"] = lang[:2]
-	gettext.bindtextdomain("enigma2", resolveFilename(SCOPE_LANGUAGE))
-	gettext.textdomain("enigma2")
 	gettext.bindtextdomain("ZapStatistic", "%s%s" % (resolveFilename(SCOPE_PLUGINS), "Extensions/ZapStatistic/locale/"))
 
 def _(txt):

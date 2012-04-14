@@ -25,11 +25,11 @@ config.plugins.Seekbar.sensibility = ConfigInteger(default=10, limits=(1, 10))
 
 ##############################################
 
-lang = language.getLanguage()
-environ["LANGUAGE"] = lang[:2]
-gettext.bindtextdomain("enigma2", resolveFilename(SCOPE_LANGUAGE))
-gettext.textdomain("enigma2")
-gettext.bindtextdomain("Seekbar", "%s%s" % (resolveFilename(SCOPE_PLUGINS), "Extensions/Seekbar/locale/"))
+def localeInit():
+	gettext.bindtextdomain("Seekbar", "%s%s" % (resolveFilename(SCOPE_PLUGINS), "Extensions/Seekbar/locale/"))
+
+localeInit()
+language.addCallback(localeInit)
 
 def _(txt):
 	t = gettext.dgettext("Seekbar", txt)

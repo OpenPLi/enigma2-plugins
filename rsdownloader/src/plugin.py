@@ -73,10 +73,6 @@ config.plugins.Uploaded.password = ConfigText(default="", fixed_size=False)
 ##############################################################################
 
 def localeInit():
-	lang = language.getLanguage()
-	environ["LANGUAGE"] = lang[:2]
-	gettext.bindtextdomain("enigma2", resolveFilename(SCOPE_LANGUAGE))
-	gettext.textdomain("enigma2")
 	gettext.bindtextdomain("RSDownloader", "%s%s"%(resolveFilename(SCOPE_PLUGINS), "Extensions/RSDownloader/locale/"))
 
 def _(txt):

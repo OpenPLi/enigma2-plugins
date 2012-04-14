@@ -4,11 +4,11 @@ from Tools.Directories import resolveFilename, SCOPE_LANGUAGE, SCOPE_PLUGINS, SC
 import gettext, os, re
 from enigma import eBackgroundFileEraser
 
-lang = language.getLanguage()
-os.environ["LANGUAGE"] = lang[:2]
-gettext.bindtextdomain("enigma2", resolveFilename(SCOPE_LANGUAGE))
-gettext.textdomain("enigma2")
-gettext.bindtextdomain("NcidClient", "%s%s" % (resolveFilename(SCOPE_PLUGINS), "Extensions/NcidClient/locale/"))
+def localeInit():
+	gettext.bindtextdomain("NcidClient", resolveFilename(SCOPE_PLUGINS, "Extensions/NcidClient/locale/"))
+
+localeInit()
+language.addCallback(localeInit)
 
 def _(txt): # pylint: disable-msg=C0103
 	td = gettext.dgettext("NcidClient", txt)

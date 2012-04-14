@@ -6,11 +6,11 @@ from Components.Language import language
 from Components.config import config
 import os, gettext, time
 
-lang = language.getLanguage()
-os.environ["LANGUAGE"] = lang[:2]
-gettext.bindtextdomain("enigma2", resolveFilename(SCOPE_LANGUAGE))
-gettext.textdomain("enigma2")
-gettext.bindtextdomain("EmailClient", "%s%s" % (resolveFilename(SCOPE_PLUGINS), "Extensions/EmailClient/locale/"))
+def localeInit():
+	gettext.bindtextdomain("EmailClient", resolveFilename(SCOPE_PLUGINS, "Extensions/EmailClient/locale/"))
+
+localeInit()
+language.addCallback(localeInit)
 
 def _(txt):
 	# pylint: disable-msg=C0103

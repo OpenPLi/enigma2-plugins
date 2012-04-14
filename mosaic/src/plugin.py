@@ -32,11 +32,12 @@ pausedIcon = loadPNG(resolveFilename(SCOPE_SKIN_IMAGE, 'skin_default/icons/ico_m
 
 ################################################
 
-lang = language.getLanguage()
-environ["LANGUAGE"] = lang[:2]
-gettext.bindtextdomain("enigma2", resolveFilename(SCOPE_LANGUAGE))
-gettext.textdomain("enigma2")
-gettext.bindtextdomain("Mosaic", "%s%s" % (resolveFilename(SCOPE_PLUGINS), "Extensions/Mosaic/locale/"))
+
+def localeInit():
+	gettext.bindtextdomain("Mosaic", resolveFilename(SCOPE_PLUGINS, "Extensions/Mosaic/locale/"))
+
+localeInit()
+language.addCallback(localeInit)
 
 def _(txt):
 	t = gettext.dgettext("Mosaic", txt)
