@@ -903,7 +903,7 @@ class MerlinMusicPlayerScreen(Screen, InfoBarBase, InfoBarSeek, InfoBarNotificat
 			"info" : self.showLyrics,
 			"yellow": self.pauseEntry,
 			"green": self.play,
-			"input_date_time": self.config,
+			"menu": self.config,
 			"ok": self.showTV,
 		}, -1)
 
