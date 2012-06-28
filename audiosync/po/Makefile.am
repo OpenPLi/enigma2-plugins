@@ -1,4 +1,4 @@
 PLUGIN = AudioSync
-LANGS = de fi it nl sr sv tr
+LANGS = de fi hu it nl sr sv tr
 
 include $(top_srcdir)/Rules-po.mak

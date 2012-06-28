@@ -1,3 +1,3 @@
 PLUGIN = FTPBrowser
-LANGS = de it sr tr
+LANGS = de hu it sr tr
 include $(top_srcdir)/Rules-po.mak

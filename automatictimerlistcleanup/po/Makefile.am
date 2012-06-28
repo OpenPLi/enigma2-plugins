@@ -1,4 +1,4 @@
 PLUGIN = AutomaticTimerlistCleanup
 CATEGORY = SystemPlugins
-LANGS = de it
+LANGS = de hu it
 include $(top_srcdir)/Rules-po.mak

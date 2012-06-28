@@ -1,3 +1,3 @@
 PLUGIN = MovielistPreview
-LANGS = de it nl
+LANGS = de hu it nl
 include $(top_srcdir)/Rules-po.mak

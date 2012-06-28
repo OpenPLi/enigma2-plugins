@@ -1,0 +1,214 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: robertut <robertut@yahoo.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Hungarian\n"
+"X-Poedit-Country: HUNGARY\n"
+
+#, python-format
+msgid "%d kb/s"
+msgstr "%d kb/s"
+
+msgid "A basic FTP client"
+msgstr "Egy egyszerű FTP kliens"
+
+#, python-format
+msgid ""
+"A file with this name (%s) already exists locally.\n"
+"Do you want to overwrite it?"
+msgstr ""
+
+#, python-format
+msgid ""
+"A file with this name (%s) already exists on the remote host.\n"
+"Do you want to overwrite it?"
+msgstr ""
+
+msgid ""
+"A transfer is currently in progress.\n"
+"What do you want to do?"
+msgstr ""
+"Egy adatátvitel jelenleg folyamatban van.\n"
+"Mit szeretne tenni?"
+
+msgid "Abort transfer"
+msgstr "Átvitel megszakítása"
+
+msgid "Add"
+msgstr "Hozzáadás"
+
+msgid "Address:"
+msgstr "Cím:"
+
+#, python-format
+msgid "Are you sure you want to delete %s?"
+msgstr "Biztos benne, hogy törölni szeretné ezt a tételt: %s?"
+
+msgid "Cancel"
+msgstr "Mégse"
+
+msgid "Configuration saved."
+msgstr "Konfiguráció mentve."
+
+msgid "Connect to FTP"
+msgstr "Kapcsolódás FTP-hez"
+
+msgid "Could not connect to ftp server!"
+msgstr ""
+
+#, python-format
+msgid "Could not delete %s."
+msgstr ""
+
+msgid "Could not obtain list of files."
+msgstr ""
+
+#, python-format
+msgid "Could not rename %s."
+msgstr ""
+
+msgid "Delete"
+msgstr "Törlés"
+
+msgid "Download"
+msgstr "Letöltés"
+
+msgid "Download finished."
+msgstr "A letöltés befejeződött."
+
+#, python-format
+msgid "ETA %d:%02d min"
+msgstr "Hátravan %d:%02d perc"
+
+msgid "Edit"
+msgstr "Szerkesztés"
+
+msgid "Enter URI"
+msgstr "FTP szerver cím"
+
+msgid "Enter URI of FTP Server:"
+msgstr "Adja meg az FTP szerver címét:"
+
+msgid "Enter new filename:"
+msgstr ""
+
+msgid "Error"
+msgstr "Hiba"
+
+msgid "Error during download."
+msgstr ""
+
+msgid "Exit"
+msgstr "Kilépés"
+
+msgid "FTP Queue Manager"
+msgstr ""
+
+msgid "FTP Server Editor"
+msgstr ""
+
+msgid "FTP Server Manager"
+msgstr ""
+
+msgid "Local"
+msgstr "Helyi"
+
+msgid "Name:"
+msgstr "Név:"
+
+msgid "OK"
+msgstr "OK"
+
+msgid "Parent Directory"
+msgstr ""
+
+msgid "Passive:"
+msgstr "Passzív:"
+
+msgid "Password:"
+msgstr "Jelszó:"
+
+msgid "Port:"
+msgstr "Port:"
+
+msgid "Queue Manager"
+msgstr ""
+
+msgid "Queue processed."
+msgstr ""
+
+msgid ""
+"Really delete this entry?\n"
+"It cannot be recovered!"
+msgstr ""
+
+msgid "Remote"
+msgstr "Távoli"
+
+msgid "Remote (not connected)"
+msgstr "Távoli (kapcsolat nélkül)"
+
+#, python-format
+msgid "Removed %s."
+msgstr ""
+
+msgid "Removing directories is not supported."
+msgstr ""
+
+msgid "Rename"
+msgstr "Átnevezés"
+
+#, python-format
+msgid "Renamed %s to %s."
+msgstr ""
+
+msgid "Run in Background"
+msgstr ""
+
+msgid "Save"
+msgstr "Mentés"
+
+msgid "Select local file list"
+msgstr ""
+
+msgid "Select remote file list"
+msgstr ""
+
+msgid "Server Manager"
+msgstr ""
+
+msgid ""
+"There already is an active connection.\n"
+"Do you want to abort it?"
+msgstr ""
+
+msgid "There already is an active transfer."
+msgstr ""
+
+msgid "Upload"
+msgstr "Feltöltés"
+
+msgid "Upload finished."
+msgstr ""
+
+msgid "Username:"
+msgstr "Felhasználónév:"
+
+msgid "Which server do you want to connect to?"
+msgstr ""
+
+msgid "close"
+msgstr "bezárás"
+
+msgid "enter directory/get file/put file"
+msgstr ""
+
+msgid "open menu"
+msgstr "menü megnyítás"
+

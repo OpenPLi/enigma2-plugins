@@ -1,3 +1,3 @@
 PLUGIN = MovieRetitle
-LANGS = de it nl tr sr cs
+LANGS = de hu it nl tr sr cs
 include $(top_srcdir)/Rules-po.mak
