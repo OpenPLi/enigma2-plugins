@@ -96,7 +96,7 @@ class WeatherPlugin(Screen):
 		self["actions"] = ActionMap(["WizardActions", "DirectionActions", "ColorActions", "EPGSelectActions"],
 		{
 			"back": self.close,
-			"input_date_time": self.config,
+			"menu": self.config,
 			"right": self.nextItem,
 			"left": self.previousItem
 		}, -1)
