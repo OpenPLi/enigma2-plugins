@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: tuxbox-enigma 0.0.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-01-28 16:39+0100\n"
-"PO-Revision-Date: 2012-03-18 17:43+0100\n"
+"PO-Revision-Date: 2012-07-31 18:10+0100\n"
 "Last-Translator: \n"
 "Language-Team: none\n"
 "MIME-Version: 1.0\n"
@@ -56,7 +56,7 @@ msgstr "Poskus ponovnega pripetja mrežnih naprav"
 
 #
 msgid "Attempt to recover lost mounts (in background)"
-msgstr "Poskus obnovitve mrežnih naprav (v ozadju)."
+msgstr "Poskus obnovitve mrežnih naprav (v ozadju)"
 
 #
 msgid "Browse network neighbourhood"
@@ -83,11 +83,11 @@ msgid "Close"
 msgstr "Izhod"
 
 msgid "Delete"
-msgstr "Itbris"
+msgstr "Izbris"
 
 #
 msgid "Delete mount"
-msgstr "Izbris mrežne naprave"
+msgstr "Izbris"
 
 #
 msgid "Dir:"
@@ -95,7 +95,7 @@ msgstr "Mapa:"
 
 #
 msgid "Do you want to enter a username and password for this host?\n"
-msgstr "Želite vnesti uporabniško ime in geslo za tega gostitelja?\n"
+msgstr "Želite vnesti uporabniško ime in geslo za izbranega gostitelja?\n"
 
 #
 msgid "Enter IP to scan..."
@@ -123,7 +123,7 @@ msgstr "Vnesite deljeno ime:"
 
 #
 msgid "Enter user and password for host: "
-msgstr "Vnesite uporabniško ime in geslo za gostitelja"
+msgstr "Vnesite uporabniško ime in geslo za gostitelja:"
 
 msgid "Enter username:"
 msgstr "Vnesite uporabniško ime:"
@@ -152,7 +152,7 @@ msgstr "Upravljanje z mrežnimi napravami"
 
 #
 msgid "Manage your network shares..."
-msgstr "Upravljanje z mrežnimi napravami."
+msgstr "Upravljanje z mrežnimi napravami"
 
 #
 msgid "Mount again"
@@ -196,7 +196,7 @@ msgstr "Pripajanje neuspešno"
 
 #
 msgid "Mounts management"
-msgstr "Upravljaj"
+msgstr "Upravljanje"
 
 #
 msgid "NFS share"
@@ -223,7 +223,7 @@ msgstr "Poteka odstranjevanje mrežne naprave... Prosim počakajte!"
 
 #
 msgid "Please wait while updating your network mount..."
-msgstr "Vaše omrežne naprave se posodabljajo... Prosim počakajte."
+msgstr "Mrežne naprave se posodabljajo... Prosim počakajte!"
 
 #
 msgid "Please wait while your network is restarting..."
@@ -267,7 +267,7 @@ msgstr "Za izbiro pritisnite OK."
 
 #
 msgid "Rescan"
-msgstr "Ponovno preišči"
+msgstr "Ponovno iskanje"
 
 #
 msgid "Scan NFS share"
@@ -283,7 +283,7 @@ msgstr "Iskanje mrežnih naprav"
 
 #
 msgid "Search for network shares..."
-msgstr "Iskanje mrežnih naprav."
+msgstr "Iskanje mrežnih naprav"
 
 #
 msgid "Searching your network. Please wait..."
@@ -306,7 +306,7 @@ msgid "Usermanager"
 msgstr "Upravljanje z uporabniki"
 
 msgid "Username"
-msgstr "Uorabniško ime"
+msgstr "Uporabniško ime"
 
 #
 msgid "View, edit or delete mountpoints on your Dreambox."
@@ -318,15 +318,15 @@ msgstr "Glejte, spremenite ali brišite gesla in uporabniška imena mrežnih nap
 
 #
 msgid "Your network mount has been activated."
-msgstr "Vaša omrežna naprava je omogočene."
+msgstr "Mrežna naprava je omogočena."
 
 #
 msgid "Your network mount has been removed."
-msgstr "Vaša omrežna naprava je odstranjena."
+msgstr "Mrežna naprava je odstranjena."
 
 #
 msgid "Your network mount has been updated."
-msgstr "Vaša omrežna naprava je posodobljena."
+msgstr "Mrežna naprava je posodobljena."
 
 #
 msgid "use as HDD replacement"
@@ -334,5 +334,5 @@ msgstr "Uporaba namesto trdega diska"
 
 #
 msgid "Your network configuration has been activated."
-msgstr "Vaše omrežne nastavitve so omogočene."
+msgstr "Mrežne nastavitve so zdaj aktivirane!"
 
