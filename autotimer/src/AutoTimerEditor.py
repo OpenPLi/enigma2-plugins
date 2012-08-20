@@ -170,7 +170,7 @@ class AutoTimerEditorBase:
 		self.encoding = NoSave(ConfigSelection(choices = selection, default = default))
 
 		# ...
-		self.searchType = NoSave(ConfigSelection(choices = [("partial", _("partial match")), ("exact", _("exact match"))], default = timer.searchType))
+		self.searchType = NoSave(ConfigSelection(choices = [("partial", _("partial match")), ("exact", _("exact match")), ("start", _("title starts with"))], default = timer.searchType))
 		self.searchCase = NoSave(ConfigSelection(choices = [("sensitive", _("case-sensitive search")), ("insensitive", _("case-insensitive search"))], default = timer.searchCase))
 
 		# Alternatives override

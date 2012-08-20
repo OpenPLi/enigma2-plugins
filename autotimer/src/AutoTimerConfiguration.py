@@ -540,8 +540,7 @@ def buildConfig(defaultTimer, timers, webif = False):
 	if defaultTimer.encoding != defaultEncoding or webif:
 		extend((' encoding="', str(defaultTimer.encoding), '"'))
 
-	# Only display searchType if exact
-	if defaultTimer.searchType == "exact":
+	if defaultTimer.searchType:
 		extend((' searchType="', str(defaultTimer.searchType), '"'))
 
 	# Only display searchCase if sensitive
@@ -674,8 +673,7 @@ def buildConfig(defaultTimer, timers, webif = False):
 		if timer.encoding != defaultEncoding or webif:
 			extend((' encoding="', str(timer.encoding), '"'))
 
-		# Only display searchType if exact
-		if timer.searchType == "exact":
+		if timer.searchType != "partial":
 			extend((' searchType="', str(timer.searchType), '"'))
 
 		# Only display searchCase if sensitive
