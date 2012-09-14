@@ -55,7 +55,7 @@ class AboutWebScreen(WebScreen):
 		from Components.config import config
 		from Components.About import about
 		from Components.Sources.StaticText import StaticText
-		from Tools.DreamboxHardware import getFPVersion
+		from Tools.StbHardware import getFPVersion
 		from Tools.HardwareInfo import HardwareInfo
 
 		hw = HardwareInfo()
@@ -340,7 +340,7 @@ class DeviceInfoWebScreen(WebScreen):
 		from Components.config import config
 		from Components.About import about
 		from Components.Sources.StaticText import StaticText
-		from Tools.DreamboxHardware import getFPVersion
+		from Tools.StbHardware import getFPVersion
 		from Tools.HardwareInfo import HardwareInfo
 
 		hw = HardwareInfo()
