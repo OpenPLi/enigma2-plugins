@@ -63,7 +63,7 @@ from enigma import quitMainloop, eTimer
 
 
 # import Wakeup?!
-from Tools.DreamboxHardware import getFPWasTimerWakeup
+from Tools.StbHardware import getFPWasTimerWakeup
 
 ###############################################################################
 
