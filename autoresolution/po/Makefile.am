@@ -1,4 +1,4 @@
 PLUGIN = AutoResolution
 CATEGORY = SystemPlugins
-LANGS = de
+LANGS = cs de
 include $(top_srcdir)/Rules-po.mak
