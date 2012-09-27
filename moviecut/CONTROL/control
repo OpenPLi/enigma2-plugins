@@ -1,2 +1,4 @@
+Package: enigma2-plugin-extensions-moviecut
 Description: Perform the cuts specified with the Cutlist editor
+Maintainer: Anders Holst <aho@sics.se>
 Depends: enigma2
