@@ -1,5 +1,3 @@
-# for localized messages
-from . import _
 from Plugins.Plugin import PluginDescriptor
 from Screens.Screen import Screen
 from Screens.MessageBox import MessageBox
@@ -12,6 +10,7 @@ from Components.ConfigList import ConfigList, ConfigListScreen
 from Components.Sources.StaticText import StaticText
 from enigma import eTimer, eServiceCenter, iServiceInformation, eConsoleAppContainer, eEnv
 from os import access, chmod, X_OK
+from __init__ import _
 
 mcut_path = eEnv.resolve("${libdir}/enigma2/python/Plugins/Extensions/MovieCut/bin/mcut")
 
@@ -286,7 +285,10 @@ class MovieCutSpawn:
 #			self.mess = global_mcut_errors[WEXITSTATUS(retval)] % (self.name)
 #		else:
 #			self.mess = global_mcut_errors[-1] % (self.name)
-		self.mess = global_mcut_errors[retval] % (self.name)
+		if retval < 0 or retval > 10:
+			self.mess = global_mcut_errors[11] % (self.name)
+		else:
+			self.mess = global_mcut_errors[retval] % (self.name)
 		self.doWaitAck()
 
 	def doWaitAck(self):
