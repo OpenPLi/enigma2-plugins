@@ -67,7 +67,7 @@ double strtotime(char* str)
 
 double inttotime(unsigned int t1, unsigned int t2)
 {
-  return (bswap_32(t2)*1.1111111111111112e-05 + bswap_32(t1)*47721.858844444447);
+  return (be32toh(t2)*1.1111111111111112e-05 + be32toh(t1)*47721.858844444447);
 }
 
 double lltotime(long long int t)
@@ -78,8 +78,8 @@ double lltotime(long long int t)
 void timetoint(double tm, unsigned int& t1, unsigned int& t2)
 {
   double tmp=tm/47721.858844444447;
-  t1 = bswap_32((unsigned int)tmp);
-  t2 = bswap_32((unsigned int)((tm - t1*47721.858844444447)*90000));
+  t1 = htobe32((unsigned int)tmp);
+  t2 = htobe32((unsigned int)((tm - t1*47721.858844444447)*90000));
 }
 
 void swapbuf(off64_t*& buf0, off64_t*& buf1)
@@ -94,16 +94,16 @@ int readbufinternal(int f, off64_t*& buf)
 {
   if (read(f, buf, 16) != 16)
     return 0;
-  buf[0] = (off64_t)bswap_64((unsigned long long int)buf[0]);
-  buf[1] = (off64_t)bswap_64((unsigned long long int)buf[1]);
+  buf[0] = (off64_t)be64toh((unsigned long long int)buf[0]);
+  buf[1] = (off64_t)be64toh((unsigned long long int)buf[1]);
   return 1;
 }
 
 void writebufinternal(int f, off64_t* buf)
 {
   off64_t tbuf[2];
-  tbuf[0] = (off64_t)bswap_64((unsigned long long int)buf[0] - curr_size_offset);
-  tbuf[1] = (off64_t)bswap_64((unsigned long long int)buf[1]);
+  tbuf[0] = (off64_t)htobe64((unsigned long long int)buf[0] - curr_size_offset);
+  tbuf[1] = (off64_t)htobe64((unsigned long long int)buf[1]);
   write(f, tbuf, 16);
 }
 
@@ -391,7 +391,7 @@ int donextinterval1(int fc, int fco, int fa, int fao, int fs, int fso, int fts, 
 	return 0;
       read(fc, buf, 12);
       n--;
-      tmp = bswap_32(buf[2]);
+      tmp = be32toh(buf[2]);
       if (tmp == 1) {
         c1 = readoff(fa, fao, fs, fso, 0.0, 1, toff);
         if (transfer_start(fts, ftso, c1, c1ret)) return -1;
@@ -404,7 +404,7 @@ int donextinterval1(int fc, int fco, int fa, int fao, int fs, int fso, int fts, 
 	// move all passed marks
 	lseek(fc, 0, SEEK_SET);
 	read(fc, buf, 12);
-	while (bswap_32(buf[2]) != 1) {
+	while (be32toh(buf[2]) != 1) {
 	  write(fco, buf, 12);
 	  read(fc, buf, 12);
 	}
@@ -426,7 +426,7 @@ int donextinterval1(int fc, int fco, int fa, int fao, int fs, int fso, int fts, 
     while (1) {
       read(fc, buf, 12);
       n--;
-      tmp = bswap_32(buf[2]);
+      tmp = be32toh(buf[2]);
       if (tmp == 0) {
         c1 = readoff(fa, fao, fs, fso, inttotime(buf[0], buf[1]), 1, ttmp);
         use_leadin = 0;
@@ -458,7 +458,7 @@ int donextinterval1(int fc, int fco, int fa, int fao, int fs, int fso, int fts, 
     }
     read(fc, buf, 12);
     n--;
-    tmp = bswap_32(buf[2]);
+    tmp = be32toh(buf[2]);
     if (tmp == 1) {
       c2 = readoff(fa, fao, fs, fso, inttotime(buf[0], buf[1]), 0, tlast);
       if (transfer_rest(fts, ftso, c1, c2, c2ret)) return -1;
@@ -489,7 +489,7 @@ int donextinterval2(int barg, int earg, char* argv[], int fc, int fco, int fa, i
       lseek(fc, 0, SEEK_SET);
       for (j=0; j<n; j++) {
         read(fc, buf, 12);
-        tmp = bswap_32(buf[2]);
+        tmp = be32toh(buf[2]);
         if (tmp == 3) {
           timetoint(tlast-toff, buf[0], buf[1]);
           write(fco, buf, 12);
@@ -521,7 +521,7 @@ int donextinterval2(int barg, int earg, char* argv[], int fc, int fco, int fa, i
   if (n > 0) lseek(fc, 0, SEEK_SET);
   for (j=0; j<n; j++) {
     read(fc, buf, 12);
-    tmp = bswap_32(buf[2]);
+    tmp = be32toh(buf[2]);
     ttmp2=inttotime(buf[0], buf[1]);
     if (tmp == 3) {
       if (!lcheck) {
@@ -538,7 +538,7 @@ int donextinterval2(int barg, int earg, char* argv[], int fc, int fco, int fa, i
     } else if (ttmp2 >= ttmp && ttmp2 <= tlast) {
       if (tmp < 2) {
         if (lio != io && lio != -1) {
-          buff[2] = bswap_32(io);
+          buff[2] = htobe32(io);
           timetoint(ttmp-toff, buff[0], buff[1]);
           write(fco, buff, 12);
         }
