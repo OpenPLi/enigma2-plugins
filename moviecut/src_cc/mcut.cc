@@ -201,9 +201,9 @@ off64_t readoff(int fa, int fao, int fs, int fso, double t, int beg, double& tr)
       break;
     if (buf0[1] - buf1[1] > 45000 || buf1[1] - buf0[1] > 900000) {
       if (absless(buf1[1] + ((long long int)1)<<33 - buf0[1], 900000))
-	time_offset -= ((long long int)1)<<33;
+        time_offset -= ((long long int)1)<<33;
       else
-	time_offset += buf1[1] - buf0[1];
+        time_offset += buf1[1] - buf0[1];
     }
     lt = tt;
     if (buf0[1] - buf1[1] > 0 && buf0[1] - buf1[1] <= 45000)
@@ -388,7 +388,7 @@ int donextinterval1(int fc, int fco, int fa, int fao, int fs, int fso, int fts, 
     lseek(fc, 0, SEEK_SET);
     while (1) {
       if (n == 0)
-	return 0;
+        return 0;
       read(fc, buf, 12);
       n--;
       tmp = be32toh(buf[2]);
@@ -401,26 +401,26 @@ int donextinterval1(int fc, int fco, int fa, int fao, int fs, int fso, int fts, 
         if (transfer_rest(fts, ftso, c1, c2, c2ret)) return -1;
         movesc(fs, fso, c2ret, 0);
         printf("Interval: %lld - %lld\n", c1ret, c2ret);
-	// move all passed marks
-	lseek(fc, 0, SEEK_SET);
-	read(fc, buf, 12);
-	while (be32toh(buf[2]) != 1) {
-	  write(fco, buf, 12);
-	  read(fc, buf, 12);
-	}
-	return 1;
+        // move all passed marks
+        lseek(fc, 0, SEEK_SET);
+        read(fc, buf, 12);
+        while (be32toh(buf[2]) != 1) {
+          write(fco, buf, 12);
+          read(fc, buf, 12);
+        }
+        return 1;
       } else if (tmp == 0) {
         c1 = readoff(fa, fao, fs, fso, inttotime(buf[0], buf[1]), 1, toff);
         if (transfer_start(fts, ftso, c1, c1ret)) return -1;
         curr_size_offset = size_offset;
         movesc(fs, fso, c1ret, 1);
-	if (lcheck) {
-	  buf[0] = buf[1] = 0;
-	  write(fco, buf, 12);
-	}
-	break;
+        if (lcheck) {
+          buf[0] = buf[1] = 0;
+          write(fco, buf, 12);
+        }
+        break;
       } else if (tmp == 3)
-	lcheck = 1;
+        lcheck = 1;
     }
   } else {
     while (1) {
@@ -439,13 +439,13 @@ int donextinterval1(int fc, int fco, int fa, int fao, int fs, int fso, int fts, 
         }
         movesc(fs, fso, c1ret, 1);
         toff += ttmp - tlast;
-	break;
+        break;
       } else if (tmp == 3) {
-	timetoint(tlast-toff, buf[0], buf[1]);
-	write(fco, buf, 12);
+        timetoint(tlast-toff, buf[0], buf[1]);
+        write(fco, buf, 12);
       }
       if (n == 0)
-	return 0;
+        return 0;
     }
   }
   while (1) {
