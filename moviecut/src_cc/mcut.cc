@@ -605,6 +605,35 @@ void copymeta(int n, int f1, int f2, const char* title, const char* suff, const 
   } else {
     write(f2, buf+i, j-i);
   }
+  /* creation time */
+  i = j;
+  for (j=i+1; j<n; j++)
+    if (buf[j] == 10)
+      break;
+  write(f2, buf+i, j-i);
+  /* tags */
+  i = j;
+  for (j=i+1; j<n; j++)
+    if (buf[j] == 10)
+      break;
+  write(f2, buf+i, j-i);
+  /* length in pts */
+  i = j;
+  for (j=i+1; j<n; j++)
+    if (buf[j] == 10)
+      break;
+  write(f2, buf+i, 1);
+  /* write 0, force length to be re-calculated */
+  write(f2, "0", 1);
+  /* file size */
+  i = j;
+  for (j=i+1; j<n; j++)
+    if (buf[j] == 10)
+      break;
+  write(f2, buf+i, 1);
+  /* write 0, force size to be re-calculated */
+  write(f2, "0", 1);
+  /* remaining fields */
   if (j < n)
     write(f2, buf+j, n-j);
 exit:
