@@ -37,7 +37,7 @@ def normpath(path):
 	elif path == ".":
 		return None
 	return path
-	
+
 
 class VlcServer:
 	def __init__(self, cfg):
@@ -148,16 +148,21 @@ class VlcServer:
 	def getDvdPath(self):
 		return self.cfg.dvdPath.value
 
-	def __xmlRequest(self, request, params):
-		uri = "/requests/" + request + ".xml"
-		if params is not None: uri = uri + "?" + urlencode(params).replace('+', '%20')
+	def __xmlRequestRaw(self, request, params):
+		uri = "/requests/" + request + ".xml" + params
 		location = "%s:%d" % (self.getHost(), self.getHttpPort())
+		print "[VLC] __xmlRequest http://", location, uri
 		resp = urlopen("http://" + location + uri)
 		if resp is None:
 			raise IOError, "No response from Server"
 		xml = parse(resp)
 		resp.close()
 		return xml
+
+	def __xmlRequest(self, request, params):
+		uriparams = ""
+		if params is not None: uriparams = "?" + urlencode(params).replace('+', '%20')
+		return self.__xmlRequestRaw(request, uriparams)
 
 	def getFilesAndDirs(self, directory, regex):
 		files = []
@@ -169,7 +174,7 @@ class VlcServer:
 				path = normpath(element.getAttribute("path").encode("utf8"))
 				if path is not None:
 					elementType = element.getAttribute("type")
-					if elementType == "directory":
+					if elementType == "directory" or elementType == "dir":
 						directories.append([name, path])
 					elif elementType == "file":
 						if regex is None or regex.search(path):
@@ -202,8 +207,14 @@ class VlcServer:
 		dlg = session.open(player, self, currentList)
 		dlg.playfile(media, name)
 		return dlg
-	
+
 	def playFile(self, filename, videoPid, audioPid):
+		stats = self.status()
+		if stats is not None and stats.has_key("apiversion"):
+			apiversion = int(stats["apiversion"])
+		else:
+			apiversion = 2
+
 		streamName = "dream" + str(randint(0, maxint))
 		transcode = []
 
@@ -236,17 +247,47 @@ class VlcServer:
 			filename = filename.replace("/", "\\")
 
 		filename = filename.replace("\\", "\\\\").replace("'", "\\'")
-		input = filename + " :sout=#"
+		if apiversion > 2:
+			inputPar = "?" + urlencode({"command": "in_play"}).replace('+', '%20')
+		else:
+			inputPar = ""
+
+		input = filename
+		if apiversion > 2:
+			inputPar += "&" + urlencode({"input": input}).replace('+', '%20')
+		else:
+			inputPar += input
+
+		input = ":sout=#"
 
 		if len(transcode) > 0:
 			input += "transcode{%s}:" % (",".join(transcode))
 
 		mux="ts{pid-video=%d,pid-audio=%d}" % (videoPid, audioPid)
-		input += "std{access=http,mux=%s,dst=/%s.ts} :sout-all :sout-keep" % (mux, streamName)
+		input += "std{access=http,mux=%s,dst=/%s.ts}" % (mux, streamName)
+		if apiversion > 2:
+			inputPar += "&" + urlencode({"option": input}).replace('+', '%20')
+		else:
+			inputPar += " " + input
 
-		print "[VLC] playfile", input
+		input = ":sout-all"
+		if apiversion > 2:
+			inputPar += "&" + urlencode({"option": input}).replace('+', '%20')
+		else:
+			inputPar += " " + input
 
-		xml = self.__xmlRequest("status", {"command": "in_play", "input": input})
+		input = ":sout-keep"
+		if apiversion > 2:
+			inputPar += "&" + urlencode({"option": input}).replace('+', '%20')
+		else:
+			inputPar += " " + input
+
+		if not apiversion > 2:
+			inputPar = "?" + urlencode({"command": "in_play", "input": inputPar}).replace('+', '%20')
+
+		print "[VLC] playfile", inputPar
+
+		xml = self.__xmlRequestRaw("status", inputPar)
 		error = xml.getElementsByTagName("error")
 		if error is not None and len(error) > 0:
 			self.lastError = getText(error[0].childNodes).strip()
@@ -274,11 +315,12 @@ class VlcServer:
 	def deleteCurrentTree(self):
 		print "[VLC] delete current tree"
 		currentElement = self.getCurrentElement()
-		while currentElement is not None and currentElement.parentNode.getAttribute("ro") != "ro":
+		while currentElement is not None and currentElement.parentNode is not None and currentElement.parentNode.getAttribute("ro") != "ro":
 			currentElement = currentElement.parentNode
-		id = int(currentElement.getAttribute("id"))
-		self.delete(id)
-		
+		if currentElement is not None:
+			id = int(currentElement.getAttribute("id"))
+			self.delete(id)
+
 	def seek(self, value):
 		"""  Allowed values are of the form:
   [+ or -][<int><H or h>:][<int><M or m or '>:][<int><nothing or S or s or ">]
