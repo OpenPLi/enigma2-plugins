@@ -23,6 +23,7 @@ from enigma import eListboxPythonMultiContent, \
 
 from time import localtime
 
+from Tools.Directories import resolveFilename, SCOPE_CURRENT_SKIN
 from Tools.LoadPixmap import LoadPixmap
 import PartnerboxFunctions as partnerboxfunctions
 
@@ -50,6 +51,12 @@ def Partnerbox_EPGListInit():
 
 def Partnerbox_EPGList__init__(self, type=0, selChangedCB=None, timer = None):
 	baseEPGList__init__(self, type, selChangedCB, timer)
+	self.clock_pixmap = LoadPixmap(cached=True, path=resolveFilename(SCOPE_CURRENT_SKIN, 'skin_default/icons/epgclock.png'))
+	self.clock_add_pixmap = LoadPixmap(cached=True, path=resolveFilename(SCOPE_CURRENT_SKIN, 'skin_default/icons/epgclock_add.png'))
+	self.clock_pre_pixmap = LoadPixmap(cached=True, path=resolveFilename(SCOPE_CURRENT_SKIN, 'skin_default/icons/epgclock_pre.png'))
+	self.clock_post_pixmap = LoadPixmap(cached=True, path=resolveFilename(SCOPE_CURRENT_SKIN, 'skin_default/icons/epgclock_post.png'))
+	self.clock_prepost_pixmap = LoadPixmap(cached=True, path=resolveFilename(SCOPE_CURRENT_SKIN, 'skin_default/icons/epgclock_prepost.png'))
+
 	# Partnerbox Clock Icons
 	self.remote_clock_pixmap = LoadPixmap('/usr/lib/enigma2/python/Plugins/Extensions/Partnerbox/icons/remote_epgclock.png')
 	self.remote_clock_add_pixmap = LoadPixmap('/usr/lib/enigma2/python/Plugins/Extensions/Partnerbox/icons/remote_epgclock_add.png')
@@ -71,7 +78,7 @@ def Partnerbox_SingleEntry(self, service, eventId, beginTime, duration, EventNam
 	]
 	if rec1 or rec2:
 		if rec1:			
-			clock_pic = self.getClockPixmap(service, beginTime, duration, eventId)
+			clock_pic = getClockPixmap(self, service, beginTime, duration, eventId)
 			#eventuell auch in der Partnerbox
 			if rec2:
 				clock_pic_partnerbox = getRemoteClockPixmap(self,service, beginTime, duration, eventId)
@@ -106,7 +113,7 @@ def Partnerbox_SimilarEntry(self, service, eventId, beginTime, service_name, dur
 	]
 	if rec1 or rec2:
 		if rec1:			
-			clock_pic = self.getClockPixmap(service, beginTime, duration, eventId)
+			clock_pic = getClockPixmap(self, service, beginTime, duration, eventId)
 			#eventuell auch in der Partnerbox
 			if rec2:
 				clock_pic_partnerbox = getRemoteClockPixmap(self,service, beginTime, duration, eventId)
@@ -139,7 +146,7 @@ def Partnerbox_MultiEntry(self, changecount, service, eventId, begTime, duration
 	res = [ None ] # no private data needed
 	if rec1 or rec2:
 		if rec1:			
-			clock_pic = self.getClockPixmap(service, begTime, duration, eventId)
+			clock_pic = getClockPixmap(self, service, begTime, duration, eventId)
 			#eventuell auch in der Partnerbox
 			if rec2:
 				clock_pic_partnerbox = getRemoteClockPixmap(self,service, begTime, duration, eventId)
@@ -236,3 +243,26 @@ def getRemoteClockPixmap(self, refstr, beginTime, duration, eventId):
 	else:
 		return self.remote_clock_prepost_pixmap
 
+def getClockPixmap(self, refstr, beginTime, duration, eventId):
+	pre_clock = 1
+	post_clock = 2
+	clock_type = 0
+	endTime = beginTime + duration
+	for x in self.timer.timer_list:
+		if x.service_ref.ref.toString() == refstr:
+			if x.eit == eventId:
+				return self.clock_pixmap
+			beg = x.begin
+			end = x.end
+			if beginTime > beg and beginTime < end and endTime > end:
+				clock_type |= pre_clock
+			elif beginTime < beg and endTime > beg and endTime < end:
+				clock_type |= post_clock
+	if clock_type == 0:
+		return self.clock_add_pixmap
+	elif clock_type == pre_clock:
+		return self.clock_pre_pixmap
+	elif clock_type == post_clock:
+		return self.clock_post_pixmap
+	else:
+		return self.clock_prepost_pixmap
