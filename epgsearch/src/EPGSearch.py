@@ -4,6 +4,7 @@ from . import _
 from enigma import eEPGCache, eServiceReference, RT_HALIGN_LEFT, \
 		RT_HALIGN_RIGHT, eListboxPythonMultiContent
 
+from Tools.Directories import resolveFilename, SCOPE_CURRENT_SKIN
 from Tools.LoadPixmap import LoadPixmap
 from ServiceReference import ServiceReference
 
@@ -76,6 +77,12 @@ class EPGSearchList(EPGList):
 		EPGList.__init__(self, type, selChangedCB, timer)
 		self.l.setBuildFunc(self.buildEPGSearchEntry)
 
+		self.clock_pixmap = LoadPixmap(cached=True, path=resolveFilename(SCOPE_CURRENT_SKIN, 'skin_default/icons/epgclock.png'))
+		self.clock_add_pixmap = LoadPixmap(cached=True, path=resolveFilename(SCOPE_CURRENT_SKIN, 'skin_default/icons/epgclock_add.png'))
+		self.clock_pre_pixmap = LoadPixmap(cached=True, path=resolveFilename(SCOPE_CURRENT_SKIN, 'skin_default/icons/epgclock_pre.png'))
+		self.clock_post_pixmap = LoadPixmap(cached=True, path=resolveFilename(SCOPE_CURRENT_SKIN, 'skin_default/icons/epgclock_post.png'))
+		self.clock_prepost_pixmap = LoadPixmap(cached=True, path=resolveFilename(SCOPE_CURRENT_SKIN, 'skin_default/icons/epgclock_prepost.png'))
+
 		if PartnerBoxIconsEnabled:
 			# Partnerbox Clock Icons
 			self.remote_clock_pixmap = LoadPixmap('/usr/lib/enigma2/python/Plugins/Extensions/Partnerbox/icons/remote_epgclock.png')
@@ -122,6 +129,30 @@ class EPGSearchList(EPGList):
 		else:
 			res.append((eListboxPythonMultiContent.TYPE_TEXT, r3.left(), r3.top(), r3.width(), r3.height(), 0, RT_HALIGN_LEFT, serviceref.getServiceName() + ": " + EventName))
 		return res
+
+	def getClockPixmap(self, refstr, beginTime, duration, eventId):
+		pre_clock = 1
+		post_clock = 2
+		clock_type = 0
+		endTime = beginTime + duration
+		for x in self.timer.timer_list:
+			if x.service_ref.ref.toString() == refstr:
+				if x.eit == eventId:
+					return self.clock_pixmap
+				beg = x.begin
+				end = x.end
+				if beginTime > beg and beginTime < end and endTime > end:
+					clock_type |= pre_clock
+				elif beginTime < beg and endTime > beg and endTime < end:
+					clock_type |= post_clock
+		if clock_type == 0:
+			return self.clock_add_pixmap
+		elif clock_type == pre_clock:
+			return self.clock_pre_pixmap
+		elif clock_type == post_clock:
+			return self.clock_post_pixmap
+		else:
+			return self.clock_prepost_pixmap
 
 # main class of plugin
 class EPGSearch(EPGSelection):
