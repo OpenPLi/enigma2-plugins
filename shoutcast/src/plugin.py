@@ -82,7 +82,7 @@ class SHOUTcastGenre:
 		self.opened = opened
 
 class SHOUTcastStation:
-	def __init__(self, name = "", mt = "", id = "", br = "", genre = "", ct = "", lc = ""):
+	def __init__(self, name = "", mt = "", id = "", br = "", genre = "", ct = "", lc = "", ml = "", nsc = "", cst = ""):
 		self.name = name.replace("- a SHOUTcast.com member station", "")
 		self.mt = mt
 		self.id = id
@@ -90,6 +90,9 @@ class SHOUTcastStation:
 		self.genre = genre
 		self.ct = ct
 		self.lc = lc
+		self.ml = ml
+		self.nsc = nsc
+		self.cst = cst
 
 class Favorite:
 	def __init__(self, configItem = None):
@@ -451,9 +454,8 @@ class SHOUTcastWidget(Screen):
 				elif self.mode == self.STATIONLIST:
 					self.stationListIndex = self["list"].getCurrentIndex()
 					self.stopPlaying()
-					url = "http://207.200.98.1%s?id=%s" % (self.tunein, sel.id)
 					if len(devid) > 8:
-						url = self.SCY + "%s?id=%s" % (self.tunein, sel.id)
+						url = self.SCY + "/sbin/tunein-station.pls?id=%s" % (sel.id)
 					self["list"].hide()
 					self["statustext"].setText(_("Getting streaming data from\n%s") % sel.name)
 					self.currentStreamingStation = sel.name
@@ -514,7 +516,7 @@ class SHOUTcastWidget(Screen):
 		self["statustext"].setText(_("Getting %s") %  self.headerTextString)
 		self["list"].hide()
 		if len(devid) > 8:
-			self.stationListURL = self.SC + "/legacy/stationsearch?k=%s&search=%s" % (devid, genre)
+			self.stationListURL = self.SC + "/station/advancedsearch&f=xml&k=%s&search=%s" % (devid, genre)
 		else:
 			self.stationListURL = "http://207.200.98.1/sbin/newxml.phtml?genre=%s" % genre
 		self.stationListIndex = 0
@@ -541,15 +543,21 @@ class SHOUTcastWidget(Screen):
 			root = xml.etree.cElementTree.fromstring(xmlstring)
 		except: return []
 		config_bitrate = int(config.plugins.shoutcast.streamingrate.value)
-		for childs in root.findall("tunein"):
-			self.tunein = childs.get("base")
-		for childs in root.findall("station"):
-			try: bitrate = int(childs.get("br"))
-			except: bitrate = 0
-			if bitrate >= config_bitrate:
-				stationList.append(SHOUTcastStation(name = childs.get("name"), 
+		data = root.find("data")
+		if data == None:
+			print "[SHOUTcast] could not find data tag\n"
+			return []
+		for slist in data.findall("stationlist"):
+			for childs in slist.findall("tunein"):
+				self.tunein = childs.get("base")
+			for childs in slist.findall("station"):
+				try: bitrate = int(childs.get("br"))
+				except: bitrate = 0
+				if bitrate >= config_bitrate:
+					stationList.append(SHOUTcastStation(name = childs.get("name"), 
 									mt = childs.get("mt"), id = childs.get("id"), br = childs.get("br"), 
-									genre = childs.get("genre"), ct = childs.get("ct"), lc = childs.get("lc")))
+									genre = childs.get("genre"), ct = childs.get("ct"), lc = childs.get("lc"), ml = childs.get("ml"), nsc = childs.get("nsc"),
+									cst = childs.get("cst")))
 		return stationList
 
 	def menu_pressed(self):
@@ -587,7 +595,7 @@ class SHOUTcastWidget(Screen):
 	def addStationToFavorite(self):
 		sel = self.getSelectedItem()
 		if sel is not None:
-			self.addFavorite(name = sel.name, text = self.SCY + "%s?id=%s" % (self.tunein, sel.id), favoritetype = "pls", audio = sel.mt, bitrate = sel.br)			
+			self.addFavorite(name = sel.name, text = self.SCY + "/sbin/tunein-station.pls?id=%s" % (sel.id), favoritetype = "pls", audio = sel.mt, bitrate = sel.br)			
 
 	def addCurrentStreamToFavorite(self):
 		self.addFavorite(name = self.currentStreamingStation, text = self.currentStreamingURL, favoritetype = "url")
@@ -642,7 +650,7 @@ class SHOUTcastWidget(Screen):
 			self["statustext"].setText(_("Searching SHOUTcast for %s...") % searchstring)
 			self["list"].hide()
 			if len(devid) > 8:
-			   self.stationListURL = self.SC + "/legacy/stationsearch?k=%s&search=%s" % (devid, searchstring)
+			   self.stationListURL = self.SC + "/station/advancedsearch&f=xml&k=%s&search=%s" % (devid, searchstring)
 			else:
 			   self.stationListURL = "http://207.200.98.1/sbin/newxml.phtml?search=%s" % searchstring
 			self.mode = self.SEARCHLIST
