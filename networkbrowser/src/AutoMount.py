@@ -123,12 +123,12 @@ class AutoMount():
 		if self.activeMountsCounter == 0:
 			print "self.automounts without active mounts",self.automounts
 			if data['active'] == 'False' or data['active'] is False:
-				umountcmd = 'umount -fl '+ path
+				umountcmd = "umount -fl '%s'" % path
 				print "[AutoMount.py] UMOUNT-CMD--->",umountcmd
 				self.MountConsole.ePopen(umountcmd, self.CheckMountPointFinished, [data, callback])
 		else:
 			if data['active'] == 'False' or data['active'] is False:
-				self.command = 'umount -fl '+ path
+				self.command = "umount -fl '%s'" % path
 
 			elif data['active'] == 'True' or data['active'] is True:
 			        try:
@@ -145,13 +145,14 @@ class AutoMount():
 								options = "tcp,noatime," + data['options']
 							else:
 								options = "tcp,noatime"
-							tmpcmd = 'mount -t nfs -o ' + options + ' ' + data['ip'] + ':/' + tmpsharedir + ' ' + path
+							tmpcmd = "mount -t nfs -o %s '%s' '%s'" % (options, data['ip'] + ':/' + tmpsharedir, path)
 							self.command = tmpcmd.encode("UTF-8")
 
 					elif data['mounttype'] == 'cifs':
 						if not os.path.ismount(path):
 							tmpusername = data['username'].replace(" ", "\\ ")
-							tmpcmd = 'mount -t cifs -o '+ data['options'] +',noatime,noserverino,iocharset=utf8,username='+ tmpusername + ',password='+ data['password'] + ' //' + data['ip'] + '/' + tmpsharedir + ' ' + path
+							options = data['options'] + ',noatime,noserverino,iocharset=utf8,username='+ tmpusername + ',password='+ data['password']
+							tmpcmd = "mount -t cifs -o %s '//%s/%s' '%s'" % (options, data['ip'], tmpsharedir, path)
 							self.command = tmpcmd.encode("UTF-8")
 				except Exception, ex:
 				        print "[AutoMount.py] Failed to create", path, "Error:", ex
@@ -280,7 +281,7 @@ class AutoMount():
 		if not self.removeConsole:
 			self.removeConsole = Console()
 		path = '/media/net/'+ mountpoint
-		umountcmd = 'umount -fl '+ path
+		umountcmd = "umount -fl '%s'" % path
 		print "[AutoMount.py] UMOUNT-CMD--->",umountcmd
 		self.removeConsole.ePopen(umountcmd, self.removeMountPointFinished, [path, callback])
 
