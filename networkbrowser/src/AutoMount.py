@@ -118,7 +118,7 @@ class AutoMount():
 		data = self.automounts[item]
 		if not self.MountConsole:
 			self.MountConsole = Console()
-		self.command = None
+		command = None
 		path = os.path.join('/media/net', data['sharename'])
 		if self.activeMountsCounter == 0:
 			print "self.automounts without active mounts",self.automounts
@@ -128,38 +128,33 @@ class AutoMount():
 				self.MountConsole.ePopen(umountcmd, self.CheckMountPointFinished, [data, callback])
 		else:
 			if data['active'] == 'False' or data['active'] is False:
-				self.command = "umount -fl '%s'" % path
+				command = "umount -fl '%s'" % path
 
 			elif data['active'] == 'True' or data['active'] is True:
 			        try:
 					if not os.path.exists(path):
 						os.makedirs(path)
-					tmpsharedir = data['sharedir'].replace(" ", "\\ ")
-					if tmpsharedir[-1:] == "$":
-						tmpdir = tmpsharedir.replace("$", "\\$")
-						tmpsharedir = tmpdir
-
 					if data['mounttype'] == 'nfs':
 						if not os.path.ismount(path):
 							if data['options']:
 								options = "tcp,noatime," + data['options']
 							else:
 								options = "tcp,noatime"
-							tmpcmd = "mount -t nfs -o %s '%s' '%s'" % (options, data['ip'] + ':/' + tmpsharedir, path)
-							self.command = tmpcmd.encode("UTF-8")
+							tmpcmd = "mount -t nfs -o %s '%s' '%s'" % (options, data['ip'] + ':/' + data['sharedir'], path)
+							command = tmpcmd.encode("UTF-8")
 
 					elif data['mounttype'] == 'cifs':
 						if not os.path.ismount(path):
 							tmpusername = data['username'].replace(" ", "\\ ")
 							options = data['options'] + ',noatime,noserverino,iocharset=utf8,username='+ tmpusername + ',password='+ data['password']
-							tmpcmd = "mount -t cifs -o %s '//%s/%s' '%s'" % (options, data['ip'], tmpsharedir, path)
-							self.command = tmpcmd.encode("UTF-8")
+							tmpcmd = "mount -t cifs -o %s '//%s/%s' '%s'" % (options, data['ip'], data['sharedir'], path)
+							command = tmpcmd.encode("UTF-8")
 				except Exception, ex:
 				        print "[AutoMount.py] Failed to create", path, "Error:", ex
-					self.command = None
-			if self.command is not None:
-				print "[AutoMount.py] U/MOUNTCMD--->",self.command
-				self.MountConsole.ePopen(self.command, self.CheckMountPointFinished, [data, callback])
+					command = None
+			if command:
+				print "[AutoMount.py] U/MOUNTCMD--->",command
+				self.MountConsole.ePopen(command, self.CheckMountPointFinished, [data, callback])
 			else:
 				self.CheckMountPointFinished(None,None, [data, callback])
 
