@@ -1,0 +1,180 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: MovieCut\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-04-08 20:54+0200\n"
+"PO-Revision-Date: 2012-12-16 14:58+0100\n"
+"Last-Translator: thelexia <thelexia@hotmail.fr>\n"
+"Language-Team: french\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: plugin.py:23
+msgid "Execute cuts..."
+msgstr "Exécuter des coupes ..."
+
+#: plugin.py:37
+msgid "Don't cut"
+msgstr "Ne pas couper"
+
+#: plugin.py:38
+msgid "Replace the original movie with the cut movie"
+msgstr "Remplacer le film original par le film coupé"
+
+#: plugin.py:39
+msgid "Place the cut movie in a new file ending with \" cut\""
+msgstr "Placer le film coupé dans un nouveau fichier se terminant par \" cut\""
+
+#: plugin.py:40
+msgid "Advanced cut specification..."
+msgstr "Spécification de coupe avancée ..."
+
+#: plugin.py:42
+#, python-format
+msgid "How would you like to cut \"%s\"?"
+msgstr "Comment voulez-vous couper \"%s\" ?"
+
+#: plugin.py:86
+msgid "OK"
+msgstr "OK"
+
+#: plugin.py:87
+msgid "Cancel"
+msgstr "Annuler"
+
+#: plugin.py:95
+msgid "No"
+msgstr "Non"
+
+#: plugin.py:95
+msgid "Yes"
+msgstr "Oui"
+
+#: plugin.py:103
+msgid "Cutlist"
+msgstr "Cutlist"
+
+#: plugin.py:103
+msgid "Manual specification"
+msgstr "Spécification manuelle"
+
+#: plugin.py:117
+msgid "Replace original:"
+msgstr "Remplacer original :"
+
+#: plugin.py:118
+msgid "New filename:"
+msgstr "Nouveau nom de fichier :"
+
+#: plugin.py:119
+msgid "New title:"
+msgstr "Nouveau titre :"
+
+#: plugin.py:120
+msgid "New description:"
+msgstr "Nouvelle description :"
+
+#: plugin.py:121
+msgid "New location:"
+msgstr "Nouvel emplacement :"
+
+#: plugin.py:122
+msgid "Cut source:"
+msgstr "Source de coupe :"
+
+#: plugin.py:123
+msgid "Cuts (an IN OUT IN OUT ... sequence of hour:min:sec)"
+msgstr "Couper ( IN OUT IN OUT ... séquence d'heure: min: sec)"
+
+#: plugin.py:130
+msgid "Cut Parameter Input"
+msgstr "Couper Paramètre d'entrée"
+
+#: plugin.py:178
+msgid "Choose target folder"
+msgstr "Choisir le dossier cible"
+
+#: plugin.py:245
+#, python-format
+msgid "The movie \"%s\" is successfully cut"
+msgstr "Le film \"%s\" est coupé avec succès"
+
+#: plugin.py:246
+#: plugin.py:247
+#: plugin.py:248
+#: plugin.py:249
+#: plugin.py:250
+#: plugin.py:251
+#: plugin.py:252
+#: plugin.py:253
+#: plugin.py:254
+#: plugin.py:255
+#, python-format
+msgid "Cutting failed for movie \"%s\""
+msgstr "La coupe a échoué pour le film \"%s\""
+
+#: plugin.py:246
+msgid "Bad arguments"
+msgstr "Mauvais arguments"
+
+#: plugin.py:247
+msgid "Couldn't open input .ts file"
+msgstr "Impossible d'ouvrir le fichier d'entrée .ts"
+
+#: plugin.py:248
+msgid "Couldn't open input .cuts file"
+msgstr "Impossible d'ouvrir le fichier d'entrée .cuts"
+
+#: plugin.py:249
+msgid "Couldn't open input .ap file"
+msgstr "Impossible d'ouvrir le fichier d'entrée .ap"
+
+#: plugin.py:250
+msgid "Couldn't open output .ts file"
+msgstr "Impossible d'ouvrir le fichier de sortie .ts"
+
+#: plugin.py:251
+msgid "Couldn't open output .cuts file"
+msgstr "Impossible d'ouvrir le fichier de sortie .cuts"
+
+#: plugin.py:252
+msgid "Couldn't open output .ap file"
+msgstr "Impossible d'ouvrir le fichier de sortie .ap"
+
+#: plugin.py:253
+msgid "Empty .ap file"
+msgstr "Vider le fichier .ap"
+
+#: plugin.py:254
+msgid "No cuts specified"
+msgstr "Pas de coupure spécifié"
+
+#: plugin.py:255
+msgid "Read/write error (disk full?)"
+msgstr "Erreur lecture/écriture (disque plein ?)"
+
+#: plugin.py:256
+#, python-format
+msgid "Cutting was aborted for movie \"%s\""
+msgstr "La coupe a été interrompue pour le film \"%s\""
+
+#: plugin.py:275
+#, python-format
+msgid "The movie \"%s\" is cut in the background."
+msgstr "Le film \"%s\" est coupé en arrière-plan."
+
+#: plugin.py:277
+#, python-format
+msgid ""
+"Another movie is currently cut.\n"
+"The movie \"%s\" will be cut in the background after it."
+msgstr ""
+"Un autre film est actuellement coupée.\n"
+"Le film \"%s\" sera coupé en arrière-plan après."
