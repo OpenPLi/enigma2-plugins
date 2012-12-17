@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-12-18 02:07+0100\n"
 "PO-Revision-Date: \n"
-"Last-Translator: WeeGull <weegull@hotmail.com>\n"
+"Last-Translator: Magnus Nilsson <mag_nilsson@hotmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -15,7 +15,7 @@ msgstr ""
 
 #: src/AC3main.py:57
 msgid "Service delay"
-msgstr "Kanal fördröjning"
+msgstr "Kanalfördröjning"
 
 #: src/AC3main.py:58
 msgid "Global delay"
@@ -32,7 +32,7 @@ msgstr "%i mS"
 
 #: src/AC3main.py:65
 msgid "Channel audio:"
-msgstr "Kanal ljud:"
+msgstr "Kanalljud:"
 
 #: src/AC3main.py:70
 #: src/AC3setup.py:63
@@ -53,7 +53,7 @@ msgstr "Spara till knapp"
 
 #: src/AC3main.py:78
 msgid "Open plugin menu"
-msgstr "Öppna plugin meny"
+msgstr "Öppna pluginmeny"
 
 #: src/AC3main.py:79
 #: src/AC3main.py:86
@@ -80,7 +80,7 @@ msgstr "Minska fördröjning"
 
 #: src/AC3main.py:87
 msgid "Select channel audio"
-msgstr "Välj kanal ljud"
+msgstr "Välj kanalljud"
 
 #: src/AC3main.py:88
 msgid "Save current delay to key"
@@ -133,7 +133,7 @@ msgstr "Knapp %(key)s (nuvarande värde: %(value)i mS)"
 
 #: src/AC3main.py:268
 msgid "Setting key canceled"
-msgstr "Inställning knapp avbruten"
+msgstr "Inställning av knapp avbruten"
 
 #: src/AC3main.py:280
 #, python-format
@@ -182,7 +182,7 @@ msgstr " "
 #: src/MovableScreen.py:17
 #: src/MovableScreen.py:24
 msgid "Save values and close screen"
-msgstr "Spara inställningar och stäng fönster"
+msgstr "Spara inställningar och stäng fönstret"
 
 #: src/MovableScreen.py:18
 #: src/MovableScreen.py:23
@@ -249,31 +249,35 @@ msgstr "Återställ sparad position"
 #: src/plugin.py:36
 #: src/plugin.py:38
 msgid "Audio Sync"
-msgstr "Ljud Synk"
+msgstr "Ljudsynk"
 
 #: src/plugin.py:36
 #: src/plugin.py:38
 msgid "sets the Audio Delay (LipSync)"
-msgstr "sätter ljudfrödröjning (LipSync)"
+msgstr "sätter ljudfördröjning (Läppsynk)"
 
 #: src/plugin.py:37
 msgid "Audio Sync Setup"
-msgstr "Audio Sync Inställning"
+msgstr "Inställning för Ljudsynk"
 
 #: src/plugin.py:37
 msgid "Setup for the Audio Sync Plugin"
-msgstr "Inställning för Audio Sync Plugin"
+msgstr "Inställning för Ljudsynkplugin"
 
 #~ msgid "%s:"
 #~ msgstr "%s:"
+
 #~ msgid "Passthrough"
 #~ msgstr "Passthrough"
+
 #~ msgid "Global Passthr."
 #~ msgstr "Passthr. Global"
+
 #~ msgid "PCM"
 #~ msgstr "PCM"
+
 #~ msgid "Delay:"
 #~ msgstr "Verzögerung:"
+
 #~ msgid "sets the audio Delay (LipSync)"
 #~ msgstr "Setzt die verschiedenen Audio- Verzögerungen (LipSync)"
-
