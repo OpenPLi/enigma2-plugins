@@ -9,9 +9,9 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Language: German\n"
-"X-Poedit-Country: Germany\n"
 "X-Poedit-SourceCharset: utf-8\n"
+"Language: de_DE\n"
+"X-Generator: Poedit 1.5.4\n"
 
 #: ../src/RemoteTimerEntry.py:135
 #: ../src/RemoteTimerEntry.py:414
@@ -45,7 +45,7 @@ msgstr "Lägg till timer"
 #: ../src/RemoteTimerEntry.py:463
 #: ../src/RemoteTimerEntry.py:465
 msgid "After event"
-msgstr "Efter händelse"
+msgstr "Efter program"
 
 #: ../src/PartnerboxSetup.py:68
 #: ../src/PartnerboxSetup.py:234
@@ -64,7 +64,7 @@ msgstr "Städa upp"
 
 #: ../src/plugin.py:318
 msgid "Cleaning up finished timer entries..."
-msgstr "Städa upp färdiga timer poster..."
+msgstr "Städa upp färdiga timerposter..."
 
 #: ../src/RemoteTimerEntry.py:132
 #: ../src/RemoteTimerEntry.py:411
@@ -110,11 +110,11 @@ msgstr "Edit"
 
 #: ../src/PartnerboxSetup.py:78
 msgid "Enable Partnerbox-Function in EPGList"
-msgstr "Aktivera Partnerbox-funktionen i EPG-listan"
+msgstr "Aktivera Partnerboxfunktionen i EPG-listan"
 
 #: ../src/PartnerboxSetup.py:77
 msgid "Enable Partnerbox-Function in TimerEvent"
-msgstr "Aktivera Partnerbox-funktionen i Timer Händelse"
+msgstr "Aktivera Partnerboxfunktionen i Timerprogrammet"
 
 #: ../src/RemoteTimerEntry.py:163
 #: ../src/RemoteTimerEntry.py:168
@@ -165,7 +165,7 @@ msgstr "Fredag"
 
 #: ../src/plugin.py:512
 msgid "Getting Channel Information..."
-msgstr "Hämtar Kanal Information..."
+msgstr "Hämtar Kanalinformation..."
 
 #: ../src/plugin.py:948
 msgid "Getting EPG Information..."
@@ -173,11 +173,11 @@ msgstr "Hämtar EPG information..."
 
 #: ../src/plugin.py:400
 msgid "Getting Partnerbox Bouquet Information..."
-msgstr "Hämtar Partnerbox Bouquet Information..."
+msgstr "Hämtar Partnerbox Bouquetinformation..."
 
 #: ../src/plugin.py:237
 msgid "Getting Partnerbox Information..."
-msgstr "Hämtar Partnerbox Infomation..."
+msgstr "Hämtar Partnerboxinfomation..."
 
 #: ../src/PartnerboxSetup.py:124
 #: ../src/PartnerboxSetup.py:247
@@ -272,7 +272,7 @@ msgstr "Verkligen ta bort denna Partnerbox Post?"
 
 #: ../src/RemoteTimerEntry.py:312
 msgid "Remote Timer"
-msgstr "Fjärr Timer"
+msgstr "Fjärrtimer"
 
 #: ../src/PartnerboxEPGSelection.py:159
 #: ../src/plugin.py:1007
@@ -300,7 +300,7 @@ msgstr "Visa 'FjärrTV Spelare' i E-Meny"
 
 #: ../src/PartnerboxSetup.py:74
 msgid "Show 'RemoteTimer' in E-Menu"
-msgstr "Visa 'FjärrTimer' i E-Meny"
+msgstr "Visa 'Fjärrtimer' i E-Meny"
 
 #: ../src/PartnerboxSetup.py:76
 msgid "Show 'Stream current Service' in E-Menu"
@@ -344,7 +344,7 @@ msgstr "Torsdag"
 #: ../src/RemoteTimerEntry.py:155
 #: ../src/RemoteTimerEntry.py:442
 msgid "Timer Type"
-msgstr "Timer Typ"
+msgstr "Timertyp"
 
 #: ../src/plugin.py:1222
 #: ../src/plugin.py:1279
@@ -473,4 +473,3 @@ msgstr "zapped"
 #: ../src/PartnerboxSetup.py:257
 msgid "Zap to service when streaming"
 msgstr "Zappa till kanal vid strömning"
-
