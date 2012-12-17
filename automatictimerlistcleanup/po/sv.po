@@ -1,0 +1,67 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: automatictimerlistcleanup\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-04-14 19:59+0100\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Magnus Nilsson <mag_nilsson@hotmail.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: _(\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-Language: Swedish\n"
+"X-Poedit-Country: SWEDEN\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-SearchPath-0: ../src\n"
+
+#: ../src/plugin.py:36
+msgid "disabled"
+msgstr "Avstängd"
+
+#: ../src/plugin.py:36
+msgid "immediately after recording"
+msgstr "Direkt efter inspelning"
+
+#: ../src/plugin.py:36
+msgid "older than 1 day"
+msgstr "Äldre än 1 dag"
+
+#: ../src/plugin.py:36
+msgid "older than 3 days"
+msgstr "Äldre än 3 dagar"
+
+#: ../src/plugin.py:36
+msgid "older than 1 week"
+msgstr "Äldre än 1 vecka"
+
+#: ../src/plugin.py:36
+msgid "older than 2 weeks"
+msgstr "Äldre än 2 veckor"
+
+#: ../src/plugin.py:36
+msgid "older than 4 weeks"
+msgstr "Äldre än 4 veckor"
+
+#: ../src/plugin.py:36
+msgid "older than 6 weeks"
+msgstr "Äldre än 6 veckor"
+
+#: ../src/plugin.py:49
+#: ../src/plugin.py:122
+#: ../src/plugin.py:125
+msgid "Automatic Timerlist Cleanup Setup"
+msgstr "Inställningar för automatisk upprensning"
+
+#: ../src/plugin.py:53
+msgid "Cancel"
+msgstr "Avbrot"
+
+#: ../src/plugin.py:54
+msgid "OK"
+msgstr "OK"
+
+#: ../src/plugin.py:56
+msgid "Cleanup timerlist-entries"
+msgstr "Städa upp timerlistans poster"
