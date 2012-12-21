@@ -14,8 +14,8 @@ from Plugins.Plugin import PluginDescriptor
 
 # Initialize Configuration
 config.plugins.autotimer = ConfigSubsection()
-config.plugins.autotimer.autopoll = ConfigEnableDisable(default = False)
-config.plugins.autotimer.interval = ConfigNumber(default = 3)
+config.plugins.autotimer.autopoll = ConfigEnableDisable(default = True)
+config.plugins.autotimer.interval = ConfigNumber(default = 12)
 config.plugins.autotimer.refresh = ConfigSelection(choices = [
 		("none", _("None")),
 		("auto", _("Only AutoTimers created during this session")),
