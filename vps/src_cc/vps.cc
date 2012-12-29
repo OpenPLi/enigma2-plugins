@@ -10,7 +10,7 @@
 // 10 prüfen, ob überhaupt PDC vorhanden
 //
 
-
+#include <unistd.h>
 #include <sys/ioctl.h>
 #include <fcntl.h>
 #include <linux/dvb/dmx.h>
