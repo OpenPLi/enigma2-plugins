@@ -17,7 +17,7 @@ class AutoTimerList(MenuList):
 		self.l.setFont(0, gFont("Regular", 22))
 		self.l.setBuildFunc(self.buildListboxEntry)
 		self.l.setItemHeight(25)
-		self.colorDisabled = 12368828
+		self.colorDisabled = 0x606060
 
 	def applySkin(self, desktop, parent):
 		attribs = [ ] 
