@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Enigma2 FritzCall Plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-15 16:20+0100\n"
+"POT-Creation-Date: 2013-04-07 13:11+0200\n"
 "PO-Revision-Date: 2009-09-10 22:47+0100\n"
 "Last-Translator: maja <jovanovic@gmx.ch>\n"
 "Language-Team: veselin & majevica CRNABERZA <jovanovic@gmx.ch>\n"
@@ -65,6 +65,13 @@ msgstr "Kontrola poziva"
 msgid "Call redirection"
 msgstr "Preusmerenje poziva"
 
+msgid "Call redirection active"
+msgstr ""
+
+#, python-format
+msgid "Calling %s"
+msgstr ""
+
 #. TRANSLATORS: keep it short, this is a button
 msgid "Cancel"
 msgstr "Otkaži"
@@ -72,7 +79,7 @@ msgstr "Otkaži"
 msgid "Cannot get calls from FRITZ!Box"
 msgstr ""
 
-msgid "Cannot get infos from FRITZ!Box"
+msgid "Cannot get infos from FRITZ!Box yet; try later"
 msgstr ""
 
 msgid "Compact Flash"
@@ -107,11 +114,20 @@ msgstr ""
 " (%s)\n"
 "pokušavam ponovo..."
 
+msgid "Could not get call list; wrong version?"
+msgstr ""
+
 msgid "Could not parse FRITZ!Box Phonebook entry"
 msgstr "Ne mogu tumačiti unos FRITZ!Box imenika"
 
+msgid "Could not read FRITZ!Box phonebook; wrong version?"
+msgstr ""
+
 msgid "Country"
 msgstr "Država"
+
+msgid "DECT inactive"
+msgstr ""
 
 msgid "DECT phones registered"
 msgstr "DECT telefoni registrovani"
@@ -181,6 +197,12 @@ msgstr "Unesi termin za pretragu"
 msgid "Entry incomplete."
 msgstr "Unos nekompletan."
 
+msgid "Extended Search for faces"
+msgstr ""
+
+msgid "Extended Search for names"
+msgstr ""
+
 msgid "Extension number to initiate call on"
 msgstr "Dodatni broj za početak poziva"
 
@@ -238,11 +260,25 @@ msgstr "FRITZ!Box -Nije uspela promena WLAN-a: %s"
 msgid "FRITZ!Box FON address (Name or IP)"
 msgstr "FRITZ!Box FON Adresse (Name oder IP-Adresse)"
 
+msgid "FRITZ!Box FON firmware version"
+msgstr ""
+
 #. TRANSLATORS: this is a window title.
 #. TRANSLATORS: keep it short, this is a button
 #. TRANSLATORS: keep it short, this is a help text
 msgid "FRITZ!Box Fon Status"
 msgstr "FRITZ!Box Stanje telefona"
+
+msgid "FRITZ!Box PhoneBook to read"
+msgstr ""
+
+msgid ""
+"FRITZ!Box firmware version not configured! Please set it in the "
+"configuration."
+msgstr ""
+
+msgid "FRITZ!Box not available for calling"
+msgstr ""
 
 msgid "Filter also list of calls"
 msgstr ""
@@ -277,6 +313,9 @@ msgstr "Dobijanje stanja FRITZ!Box telefona..."
 
 msgid "IP Address:"
 msgstr "IP Adresa:"
+
+msgid "Ignore callers with no phone number"
+msgstr ""
 
 #. TRANSLATORS: keep it short, this is a button
 msgid "Incoming"
@@ -334,6 +373,9 @@ msgstr ""
 msgid "New"
 msgstr "Neu"
 
+msgid "New call"
+msgstr ""
+
 msgid "No DECT phone registered"
 msgstr "Nijedan DECT tel. nije registrovan "
 
@@ -373,6 +415,9 @@ msgstr "Jedno preusmerenje poziva je aktivno"
 
 msgid "One mailbox active"
 msgstr "Jedno pošt. sand. je aktivno"
+
+msgid "Others"
+msgstr ""
 
 #. TRANSLATORS: keep it short, this is a button
 msgid "Outgoing"
@@ -421,8 +466,15 @@ msgstr "Pročitaj tel. imenik iz FRITZ!Box-a"
 msgid "Refresh status"
 msgstr "Stanje osvežavanja"
 
+msgid "Refreshing..."
+msgstr ""
+
+msgid "Reload interval for phonebooks (hours)"
+msgstr ""
+
 #. TRANSLATORS: keep it short, this is a button
 #. TRANSLATORS: keep it short, this is a help text
+#. TRANSLATORS: keep it short, this is a button
 msgid "Reset"
 msgstr "Resetuj"
 
@@ -472,6 +524,9 @@ msgstr ""
 msgid "Software fax active"
 msgstr "Aktivan faks softver"
 
+msgid "Software fax inactive"
+msgstr ""
+
 msgid "Status not available"
 msgstr "Status nije dostupan"
 
@@ -513,6 +568,7 @@ msgstr "Prebac pošt.sanduče"
 
 #. TRANSLATORS: keep it short, this is a button
 #. TRANSLATORS: keep it short, this is a help text
+#. TRANSLATORS: keep it short, this is a button
 msgid "Toggle WLAN"
 msgstr "Prebaci WLAN"
 
@@ -528,6 +584,9 @@ msgstr ""
 
 msgid "Use internal PhoneBook"
 msgstr "Koristi interni tel. imenik"
+
+msgid "User name Accessing FRITZ!Box"
+msgstr ""
 
 msgid "Vanity"
 msgstr "Ništavnost"
@@ -545,6 +604,9 @@ msgstr ""
 "u konfiguracijskom meniju za prikaz poziva.\n"
 "\n"
 "To može biti problem veza,samo opet probajte."
+
+msgid "before 05.27"
+msgstr ""
 
 msgid "call redirections active"
 msgstr "Preusmerenje poziva aktivno"
@@ -596,8 +658,14 @@ msgstr ""
 msgid "no device active"
 msgstr "Nijedan urećaj nije aktivan"
 
+msgid "not configured"
+msgstr ""
+
 msgid "not encrypted"
 msgstr "Nije kodirano"
+
+msgid "not yet implemented"
+msgstr ""
 
 msgid "number suppressed"
 msgstr ""
@@ -627,6 +695,9 @@ msgstr "Ništa ne pokazuj"
 
 msgid "work"
 msgstr "Posao"
+
+msgid "wrong user or password?"
+msgstr ""
 
 #~ msgid "Areacode to add to Outgoing Calls (if necessary)"
 #~ msgstr "Pozivni broj za dodati izlaznim pozivima (ako je potrebno)"

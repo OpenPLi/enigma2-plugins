@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-15 16:20+0100\n"
+"POT-Creation-Date: 2013-04-07 13:11+0200\n"
 "PO-Revision-Date: 2009-06-04 20:19+0200\n"
 "Last-Translator: \n"
 "Language-Team:  <en@li.org>\n"
@@ -64,6 +64,13 @@ msgstr "Gespreksmonitoring"
 msgid "Call redirection"
 msgstr ""
 
+msgid "Call redirection active"
+msgstr ""
+
+#, python-format
+msgid "Calling %s"
+msgstr ""
+
 #. TRANSLATORS: keep it short, this is a button
 msgid "Cancel"
 msgstr "Annuleren"
@@ -71,7 +78,7 @@ msgstr "Annuleren"
 msgid "Cannot get calls from FRITZ!Box"
 msgstr ""
 
-msgid "Cannot get infos from FRITZ!Box"
+msgid "Cannot get infos from FRITZ!Box yet; try later"
 msgstr ""
 
 msgid "Compact Flash"
@@ -106,11 +113,20 @@ msgstr ""
 " (%s)\n"
 "probeert opnieuw"
 
+msgid "Could not get call list; wrong version?"
+msgstr ""
+
 msgid "Could not parse FRITZ!Box Phonebook entry"
 msgstr "Fout bij het verwerken van een FRITZ!Box telefoonboek regel"
 
+msgid "Could not read FRITZ!Box phonebook; wrong version?"
+msgstr ""
+
 msgid "Country"
 msgstr "Land"
+
+msgid "DECT inactive"
+msgstr ""
 
 msgid "DECT phones registered"
 msgstr "geregistreerde DECT telefoons"
@@ -180,6 +196,12 @@ msgstr "Geef de zoekterm in"
 msgid "Entry incomplete."
 msgstr "Regel incompleet"
 
+msgid "Extended Search for faces"
+msgstr ""
+
+msgid "Extended Search for names"
+msgstr ""
+
 msgid "Extension number to initiate call on"
 msgstr "Voorkies nummer voor een telefoonoproep"
 
@@ -237,11 +259,25 @@ msgstr ""
 msgid "FRITZ!Box FON address (Name or IP)"
 msgstr "FRITZ!Box adres (Naam of IP)"
 
+msgid "FRITZ!Box FON firmware version"
+msgstr ""
+
 #. TRANSLATORS: this is a window title.
 #. TRANSLATORS: keep it short, this is a button
 #. TRANSLATORS: keep it short, this is a help text
 msgid "FRITZ!Box Fon Status"
 msgstr "FRITZ!Box Status"
+
+msgid "FRITZ!Box PhoneBook to read"
+msgstr ""
+
+msgid ""
+"FRITZ!Box firmware version not configured! Please set it in the "
+"configuration."
+msgstr ""
+
+msgid "FRITZ!Box not available for calling"
+msgstr ""
 
 msgid "Filter also list of calls"
 msgstr ""
@@ -276,6 +312,9 @@ msgstr "Ophalen van status van de FRITZ!Box..."
 
 msgid "IP Address:"
 msgstr "IP Adres:"
+
+msgid "Ignore callers with no phone number"
+msgstr ""
 
 #. TRANSLATORS: keep it short, this is a button
 msgid "Incoming"
@@ -333,6 +372,9 @@ msgstr ""
 msgid "New"
 msgstr "Nieuw"
 
+msgid "New call"
+msgstr ""
+
 msgid "No DECT phone registered"
 msgstr "Geen DECT telefoon geregistreerd"
 
@@ -374,6 +416,9 @@ msgstr "Eén mailbox actief"
 
 msgid "One mailbox active"
 msgstr "Eén mailbox actief"
+
+msgid "Others"
+msgstr ""
 
 #. TRANSLATORS: keep it short, this is a button
 msgid "Outgoing"
@@ -422,8 +467,15 @@ msgstr "Lees telefoonboek van FRITZ!Box"
 msgid "Refresh status"
 msgstr ""
 
+msgid "Refreshing..."
+msgstr ""
+
+msgid "Reload interval for phonebooks (hours)"
+msgstr ""
+
 #. TRANSLATORS: keep it short, this is a button
 #. TRANSLATORS: keep it short, this is a help text
+#. TRANSLATORS: keep it short, this is a button
 msgid "Reset"
 msgstr "Reset"
 
@@ -474,6 +526,9 @@ msgstr ""
 msgid "Software fax active"
 msgstr "Geen mailbox actief"
 
+msgid "Software fax inactive"
+msgstr ""
+
 msgid "Status not available"
 msgstr ""
 
@@ -515,6 +570,7 @@ msgstr "Mailbox Aan/Uit"
 
 #. TRANSLATORS: keep it short, this is a button
 #. TRANSLATORS: keep it short, this is a help text
+#. TRANSLATORS: keep it short, this is a button
 msgid "Toggle WLAN"
 msgstr "WLAN Aan/Uit"
 
@@ -531,6 +587,9 @@ msgstr "USB Stick"
 
 msgid "Use internal PhoneBook"
 msgstr "Gebruik het interne telefoonboek"
+
+msgid "User name Accessing FRITZ!Box"
+msgstr ""
 
 msgid "Vanity"
 msgstr "Trots"
@@ -550,6 +609,9 @@ msgstr ""
 "in het configuratiescherm om gesprekken te laten zien\n"
 "\n"
 "Dit kan een communicatieprobleem zijn, probeer opnieuw."
+
+msgid "before 05.27"
+msgstr ""
 
 msgid "call redirections active"
 msgstr ""
@@ -603,8 +665,14 @@ msgstr ""
 msgid "no device active"
 msgstr "Eén mailbox actief"
 
+msgid "not configured"
+msgstr ""
+
 msgid "not encrypted"
 msgstr "ongecodeerd "
+
+msgid "not yet implemented"
+msgstr ""
 
 msgid "number suppressed"
 msgstr ""
@@ -635,6 +703,9 @@ msgstr "niets weergeven"
 
 msgid "work"
 msgstr "werk"
+
+msgid "wrong user or password?"
+msgstr ""
 
 #~ msgid "Areacode to add to Outgoing Calls (if necessary)"
 #~ msgstr "Netnummer bij uitgaande gesprekken  (indien nodig)"

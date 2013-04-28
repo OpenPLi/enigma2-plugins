@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Enigma2 FritzCall Plugin Turkish Locale\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-15 16:20+0100\n"
+"POT-Creation-Date: 2013-04-07 13:11+0200\n"
 "PO-Revision-Date: 2009-07-29 20:37+0200\n"
 "Last-Translator: Zülfikar VEYİSOĞLU <z.veyisoglu@hobiagaci.com>\n"
 "Language-Team: http://hobiagaci.com <z.veyisoglu@hobiagaci.com>\n"
@@ -61,6 +61,13 @@ msgstr "Çağrı görüntüleme"
 msgid "Call redirection"
 msgstr "Çağrı yönlendirme"
 
+msgid "Call redirection active"
+msgstr ""
+
+#, python-format
+msgid "Calling %s"
+msgstr ""
+
 #. TRANSLATORS: keep it short, this is a button
 msgid "Cancel"
 msgstr "Vazgeç"
@@ -68,7 +75,7 @@ msgstr "Vazgeç"
 msgid "Cannot get calls from FRITZ!Box"
 msgstr ""
 
-msgid "Cannot get infos from FRITZ!Box"
+msgid "Cannot get infos from FRITZ!Box yet; try later"
 msgstr ""
 
 msgid "Compact Flash"
@@ -103,11 +110,20 @@ msgstr ""
 " (%s)\n"
 "yeniden deneniyor..."
 
+msgid "Could not get call list; wrong version?"
+msgstr ""
+
 msgid "Could not parse FRITZ!Box Phonebook entry"
 msgstr "FRITZ!Box rehber kaydı ayrıştırılamıyor"
 
+msgid "Could not read FRITZ!Box phonebook; wrong version?"
+msgstr ""
+
 msgid "Country"
 msgstr "Ülke"
+
+msgid "DECT inactive"
+msgstr ""
 
 msgid "DECT phones registered"
 msgstr "DECT telefon tanıtılmış"
@@ -177,6 +193,12 @@ msgstr "Arama terimlerini düzelt"
 msgid "Entry incomplete."
 msgstr "Giriş tamamlanmamış."
 
+msgid "Extended Search for faces"
+msgstr ""
+
+msgid "Extended Search for names"
+msgstr ""
+
 msgid "Extension number to initiate call on"
 msgstr "Dış hatta ulaşmak için çevrilen numara"
 
@@ -234,11 +256,25 @@ msgstr "FRITZ!Box WLAN durumu değiştirilemedi: %s"
 msgid "FRITZ!Box FON address (Name or IP)"
 msgstr "FRITZ!Box adresi (isim yada IP)"
 
+msgid "FRITZ!Box FON firmware version"
+msgstr ""
+
 #. TRANSLATORS: this is a window title.
 #. TRANSLATORS: keep it short, this is a button
 #. TRANSLATORS: keep it short, this is a help text
 msgid "FRITZ!Box Fon Status"
 msgstr "FRITZ!Box durumu"
+
+msgid "FRITZ!Box PhoneBook to read"
+msgstr ""
+
+msgid ""
+"FRITZ!Box firmware version not configured! Please set it in the "
+"configuration."
+msgstr ""
+
+msgid "FRITZ!Box not available for calling"
+msgstr ""
 
 msgid "Filter also list of calls"
 msgstr ""
@@ -273,6 +309,9 @@ msgstr "Durum bilgisi FRITZ!Box'tan alınıyor..."
 
 msgid "IP Address:"
 msgstr "IP Adresi:"
+
+msgid "Ignore callers with no phone number"
+msgstr ""
 
 #. TRANSLATORS: keep it short, this is a button
 msgid "Incoming"
@@ -330,6 +369,9 @@ msgstr ""
 msgid "New"
 msgstr "Yeni"
 
+msgid "New call"
+msgstr ""
+
 msgid "No DECT phone registered"
 msgstr "DECT telefon tanıtılmamış"
 
@@ -369,6 +411,9 @@ msgstr "Bir çağrı yönlendirmesi etkin"
 
 msgid "One mailbox active"
 msgstr "Bir posta kutusu etkin"
+
+msgid "Others"
+msgstr ""
 
 #. TRANSLATORS: keep it short, this is a button
 msgid "Outgoing"
@@ -417,8 +462,15 @@ msgstr "FRITZ!Box telefon rehberini oku"
 msgid "Refresh status"
 msgstr "Durumu yenile"
 
+msgid "Refreshing..."
+msgstr ""
+
+msgid "Reload interval for phonebooks (hours)"
+msgstr ""
+
 #. TRANSLATORS: keep it short, this is a button
 #. TRANSLATORS: keep it short, this is a help text
+#. TRANSLATORS: keep it short, this is a button
 msgid "Reset"
 msgstr "Y.başlat"
 
@@ -468,6 +520,9 @@ msgstr ""
 msgid "Software fax active"
 msgstr "Yazılım bazlı faks etkin"
 
+msgid "Software fax inactive"
+msgstr ""
+
 msgid "Status not available"
 msgstr "Durum bilgisi uygun değil"
 
@@ -509,6 +564,7 @@ msgstr "Posta aç/kapa"
 
 #. TRANSLATORS: keep it short, this is a button
 #. TRANSLATORS: keep it short, this is a help text
+#. TRANSLATORS: keep it short, this is a button
 msgid "Toggle WLAN"
 msgstr "WLAN aç/kapa"
 
@@ -525,6 +581,9 @@ msgstr "USB Bellek"
 
 msgid "Use internal PhoneBook"
 msgstr "FRITZ!Box rehberini kullan"
+
+msgid "User name Accessing FRITZ!Box"
+msgstr ""
 
 msgid "Vanity"
 msgstr "Vanity"
@@ -543,6 +602,9 @@ msgstr ""
 "FRITZ!Box parolanızı girmeniz gerekiyor\n"
 "\n"
 "Bağlantı sorunu yaşarsanız, tekrar deneyin."
+
+msgid "before 05.27"
+msgstr ""
 
 msgid "call redirections active"
 msgstr "çağrı yönlendirmesi etkin"
@@ -594,8 +656,14 @@ msgstr ""
 msgid "no device active"
 msgstr "etkin cihaz yok"
 
+msgid "not configured"
+msgstr ""
+
 msgid "not encrypted"
 msgstr "şifrelenmemiş"
+
+msgid "not yet implemented"
+msgstr ""
 
 msgid "number suppressed"
 msgstr ""
@@ -625,6 +693,9 @@ msgstr "birşey gösterme"
 
 msgid "work"
 msgstr "iş"
+
+msgid "wrong user or password?"
+msgstr ""
 
 #~ msgid "Areacode to add to Outgoing Calls (if necessary)"
 #~ msgstr "Giden aramalara alan kodu ekle (gerekirse)"

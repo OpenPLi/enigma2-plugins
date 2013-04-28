@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Enigma2 FritzCall Plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-15 16:20+0100\n"
-"PO-Revision-Date: 2011-01-15 16:21+0100\n"
+"POT-Creation-Date: 2013-04-07 13:11+0200\n"
+"PO-Revision-Date: 2013-04-07 13:12+0200\n"
 "Last-Translator: Michael Schmidt <michael@schmidt-schmitten.com>\n"
 "Language-Team: german <de@li.org>\n"
 "Language: \n"
@@ -62,6 +62,13 @@ msgstr "Anrufanzeige"
 msgid "Call redirection"
 msgstr "Rufumleitung"
 
+msgid "Call redirection active"
+msgstr "Rufumleitung aktiv"
+
+#, python-format
+msgid "Calling %s"
+msgstr "Rufe %s an"
+
 #. TRANSLATORS: keep it short, this is a button
 msgid "Cancel"
 msgstr "Abbruch"
@@ -69,8 +76,10 @@ msgstr "Abbruch"
 msgid "Cannot get calls from FRITZ!Box"
 msgstr "Kann Anrufe nicht von der FRITZ!Box bekommen"
 
-msgid "Cannot get infos from FRITZ!Box"
-msgstr "Kann Status nicht von der FRITZ!Box bekommen"
+msgid "Cannot get infos from FRITZ!Box yet; try later"
+msgstr ""
+"Kann Informationen von der FRITZ!Box noch nciht bekommen; versuche es später "
+"nochmal"
 
 msgid "Compact Flash"
 msgstr "Compact Flash"
@@ -104,11 +113,21 @@ msgstr ""
 " (%s)\n"
 "neuer Versuch..."
 
+msgid "Could not get call list; wrong version?"
+msgstr "Konnte Anrufliste nicht bekommen; falsche Firmware-Version?"
+
 msgid "Could not parse FRITZ!Box Phonebook entry"
 msgstr "Konnte Eintrag in FRITZ!Box-Telefonbuch nicht lesen"
 
+msgid "Could not read FRITZ!Box phonebook; wrong version?"
+msgstr ""
+"Konnte Telefonbuch der FRITZ!Box nicht lesen; falsche Firmware-Version?"
+
 msgid "Country"
 msgstr "Land"
+
+msgid "DECT inactive"
+msgstr "DECT inaktiv"
 
 msgid "DECT phones registered"
 msgstr "Schnurlostelefone angemeldet"
@@ -178,6 +197,12 @@ msgstr "Suchbegriffe"
 msgid "Entry incomplete."
 msgstr "Eintrag unvollständig."
 
+msgid "Extended Search for faces"
+msgstr "Erweiterte Suche für Anruferbilder"
+
+msgid "Extended Search for names"
+msgstr "Erweiterte Suche für Anrufernamen"
+
 msgid "Extension number to initiate call on"
 msgstr "Nebenstelle für Anrufe"
 
@@ -239,11 +264,27 @@ msgstr "FRITZ!Box - Fehler bei Änderung des WLAN-Status: %s"
 msgid "FRITZ!Box FON address (Name or IP)"
 msgstr "FRITZ!Box FON Adresse (Name oder IP-Adresse)"
 
+msgid "FRITZ!Box FON firmware version"
+msgstr "FRITZ!Box FON Firmware-Version"
+
 #. TRANSLATORS: this is a window title.
 #. TRANSLATORS: keep it short, this is a button
 #. TRANSLATORS: keep it short, this is a help text
 msgid "FRITZ!Box Fon Status"
 msgstr "FRITZ!Box Fon Status"
+
+msgid "FRITZ!Box PhoneBook to read"
+msgstr "Einzulesendes FRITZ!Box Telefonbuch"
+
+msgid ""
+"FRITZ!Box firmware version not configured! Please set it in the "
+"configuration."
+msgstr ""
+"FRITZ!Box Firmware-Version nicht konfiguriert! Bitte in der Konfiguration "
+"setzen."
+
+msgid "FRITZ!Box not available for calling"
+msgstr "FRITZ!Box für Anrufe nicht verfügbar"
 
 msgid "Filter also list of calls"
 msgstr "Filter auch auf Anrufliste anwenden"
@@ -284,6 +325,9 @@ msgstr "Hole Status von der FRITZ!Box..."
 
 msgid "IP Address:"
 msgstr "IP Adresse:"
+
+msgid "Ignore callers with no phone number"
+msgstr "Ignoriere Anrufe ohne Rufnummer"
 
 #. TRANSLATORS: keep it short, this is a button
 msgid "Incoming"
@@ -347,6 +391,9 @@ msgstr "Netzwerk"
 msgid "New"
 msgstr "Neu"
 
+msgid "New call"
+msgstr "Neuer Anruf"
+
 msgid "No DECT phone registered"
 msgstr "Kein Schnurlostelefon angemeldet"
 
@@ -386,6 +433,9 @@ msgstr "Eine Rufumleitung aktiv"
 
 msgid "One mailbox active"
 msgstr "Ein Anrufbeantworter aktiv"
+
+msgid "Others"
+msgstr "Andere"
 
 #. TRANSLATORS: keep it short, this is a button
 msgid "Outgoing"
@@ -440,8 +490,15 @@ msgstr "Telefonbuch der FRITZ!Box auslesen"
 msgid "Refresh status"
 msgstr "Status neu holen"
 
+msgid "Refreshing..."
+msgstr "Lade neu..."
+
+msgid "Reload interval for phonebooks (hours)"
+msgstr "Lade Telefonbücher neu nach soviel Stunden"
+
 #. TRANSLATORS: keep it short, this is a button
 #. TRANSLATORS: keep it short, this is a help text
+#. TRANSLATORS: keep it short, this is a button
 msgid "Reset"
 msgstr "Reset"
 
@@ -491,6 +548,9 @@ msgstr "Zeige nur Anrufe bestimmter Nummern"
 msgid "Software fax active"
 msgstr "Software Fax aktiv"
 
+msgid "Software fax inactive"
+msgstr "Software Fax inaktiv"
+
 msgid "Status not available"
 msgstr "Status nicht verfügbar"
 
@@ -532,6 +592,7 @@ msgstr "Toggle AB"
 
 #. TRANSLATORS: keep it short, this is a button
 #. TRANSLATORS: keep it short, this is a help text
+#. TRANSLATORS: keep it short, this is a button
 msgid "Toggle WLAN"
 msgstr "Toggle WLAN"
 
@@ -547,6 +608,9 @@ msgstr "USB Gerät"
 
 msgid "Use internal PhoneBook"
 msgstr "Benutze internes Telefonbuch"
+
+msgid "User name Accessing FRITZ!Box"
+msgstr "Benutzername für FRITZ!Box"
 
 msgid "Vanity"
 msgstr "Vanity"
@@ -567,6 +631,9 @@ msgstr ""
 "\n"
 "Es könnte eine Kommunikationsproblem mit der FRITZ!Box sein.\n"
 "Versuchen Sie es nochmal."
+
+msgid "before 05.27"
+msgstr "vor 05.27"
 
 msgid "call redirections active"
 msgstr "Rufumleitungen aktiv"
@@ -618,8 +685,14 @@ msgstr "keine Anrufe"
 msgid "no device active"
 msgstr "keine WLAN-Station aktiv"
 
+msgid "not configured"
+msgstr "nicht konfiguriert"
+
 msgid "not encrypted"
 msgstr "nicht verschlüsselt"
+
+msgid "not yet implemented"
+msgstr "noch nicht eingebaut"
 
 msgid "number suppressed"
 msgstr "Nummer unterdrückt"
@@ -649,3 +722,6 @@ msgstr "keine Anzeige"
 
 msgid "work"
 msgstr "Büro"
+
+msgid "wrong user or password?"
+msgstr "falscher Benutzer oder falsches Passwort?"

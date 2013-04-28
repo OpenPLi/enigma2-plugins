@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma 2-plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-15 16:20+0100\n"
+"POT-Creation-Date: 2013-04-07 13:11+0200\n"
 "PO-Revision-Date: 2009-06-04 20:22+0200\n"
 "Last-Translator: José Juan Zapater <josej@zapater.fdns.net>\n"
 "Language-Team: none\n"
@@ -63,6 +63,13 @@ msgstr "Monitorizar llamada"
 msgid "Call redirection"
 msgstr ""
 
+msgid "Call redirection active"
+msgstr ""
+
+#, python-format
+msgid "Calling %s"
+msgstr ""
+
 #. TRANSLATORS: keep it short, this is a button
 msgid "Cancel"
 msgstr "Cancelar"
@@ -70,7 +77,7 @@ msgstr "Cancelar"
 msgid "Cannot get calls from FRITZ!Box"
 msgstr ""
 
-msgid "Cannot get infos from FRITZ!Box"
+msgid "Cannot get infos from FRITZ!Box yet; try later"
 msgstr ""
 
 msgid "Compact Flash"
@@ -105,11 +112,20 @@ msgstr ""
 "(%s)\n"
 "reintentando..."
 
+msgid "Could not get call list; wrong version?"
+msgstr ""
+
 msgid "Could not parse FRITZ!Box Phonebook entry"
 msgstr "No puedo analizar las entradas de la agenda de FRITZ!Box"
 
+msgid "Could not read FRITZ!Box phonebook; wrong version?"
+msgstr ""
+
 msgid "Country"
 msgstr "País"
+
+msgid "DECT inactive"
+msgstr ""
 
 msgid "DECT phones registered"
 msgstr "Teléfonos DECT registrados"
@@ -179,6 +195,12 @@ msgstr "Introduzca Términos de Búsqueda"
 msgid "Entry incomplete."
 msgstr "Entrada incompleta."
 
+msgid "Extended Search for faces"
+msgstr ""
+
+msgid "Extended Search for names"
+msgstr ""
+
 msgid "Extension number to initiate call on"
 msgstr "Número de extensión para iniciar la llamada"
 
@@ -236,11 +258,25 @@ msgstr ""
 msgid "FRITZ!Box FON address (Name or IP)"
 msgstr "Dirección FRITZ!Box FON (Nombre o IP)"
 
+msgid "FRITZ!Box FON firmware version"
+msgstr ""
+
 #. TRANSLATORS: this is a window title.
 #. TRANSLATORS: keep it short, this is a button
 #. TRANSLATORS: keep it short, this is a help text
 msgid "FRITZ!Box Fon Status"
 msgstr "Estado de Fon FRITZ!Box"
+
+msgid "FRITZ!Box PhoneBook to read"
+msgstr ""
+
+msgid ""
+"FRITZ!Box firmware version not configured! Please set it in the "
+"configuration."
+msgstr ""
+
+msgid "FRITZ!Box not available for calling"
+msgstr ""
 
 msgid "Filter also list of calls"
 msgstr ""
@@ -275,6 +311,9 @@ msgstr "Consiguiendo estado desde Fon FRITZ!Box..."
 
 msgid "IP Address:"
 msgstr "Dirección IP:"
+
+msgid "Ignore callers with no phone number"
+msgstr ""
 
 #. TRANSLATORS: keep it short, this is a button
 msgid "Incoming"
@@ -332,6 +371,9 @@ msgstr ""
 msgid "New"
 msgstr "Nuevo"
 
+msgid "New call"
+msgstr ""
+
 msgid "No DECT phone registered"
 msgstr "No hay teléfono DECT registrado"
 
@@ -373,6 +415,9 @@ msgstr "Una cuenta de correo activa"
 
 msgid "One mailbox active"
 msgstr "Una cuenta de correo activa"
+
+msgid "Others"
+msgstr ""
 
 #. TRANSLATORS: keep it short, this is a button
 msgid "Outgoing"
@@ -421,8 +466,15 @@ msgstr "Leer Agenda desde FRITZ!Box"
 msgid "Refresh status"
 msgstr ""
 
+msgid "Refreshing..."
+msgstr ""
+
+msgid "Reload interval for phonebooks (hours)"
+msgstr ""
+
 #. TRANSLATORS: keep it short, this is a button
 #. TRANSLATORS: keep it short, this is a help text
+#. TRANSLATORS: keep it short, this is a button
 msgid "Reset"
 msgstr "Resetear"
 
@@ -473,6 +525,9 @@ msgstr ""
 msgid "Software fax active"
 msgstr "No cuenta de correo activa"
 
+msgid "Software fax inactive"
+msgstr ""
+
 msgid "Status not available"
 msgstr ""
 
@@ -514,6 +569,7 @@ msgstr "Marcar Cuenta de Correo"
 
 #. TRANSLATORS: keep it short, this is a button
 #. TRANSLATORS: keep it short, this is a help text
+#. TRANSLATORS: keep it short, this is a button
 msgid "Toggle WLAN"
 msgstr "Marcar WLAN"
 
@@ -532,6 +588,9 @@ msgstr "Lápiz USB"
 msgid "Use internal PhoneBook"
 msgstr "Usar Agenda interna"
 
+msgid "User name Accessing FRITZ!Box"
+msgstr ""
+
 msgid "Vanity"
 msgstr "Vanidad"
 
@@ -548,6 +607,9 @@ msgstr ""
 "en el diálogo de configuración para visualizar las llamadas\n"
 "\n"
 "Puede hacer un problema de comunicación, sólo reintente otra vez."
+
+msgid "before 05.27"
+msgstr ""
 
 msgid "call redirections active"
 msgstr ""
@@ -601,8 +663,14 @@ msgstr ""
 msgid "no device active"
 msgstr "Una cuenta de correo activa"
 
+msgid "not configured"
+msgstr ""
+
 msgid "not encrypted"
 msgstr "no encriptado"
+
+msgid "not yet implemented"
+msgstr ""
 
 msgid "number suppressed"
 msgstr ""
@@ -633,6 +701,9 @@ msgstr "no mostrar nada"
 
 msgid "work"
 msgstr "trabajo"
+
+msgid "wrong user or password?"
+msgstr ""
 
 #~ msgid "Areacode to add to Outgoing Calls (if necessary)"
 #~ msgstr "Añadir código de área a las llamadas salientes (si es necesario)"
