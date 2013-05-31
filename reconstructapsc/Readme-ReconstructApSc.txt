@@ -1,7 +1,8 @@
-ReconstructApSc-1.0
+ReconstructApSc-1.1
 -------------------
-2009-12-14
-Anders Holst (aho@sics.se)
+based on plugin by Anders Holst (aho@sics.se)
+
+modified by MiLo and ims 2013
 
 
 This plugin makes it possible to reconstruct missing or corrupt .ap
@@ -25,7 +26,7 @@ Situations when this plugin may be useful include:
  * After a disk crash it may be possible to rescue the .ts files
    (because their specific structure) but perhaps not the others.
 
-The plugin uses the C++ program "reconstruct_apsc" to scan through the
+The plugin uses enigma's build-in C++ routines to scan through the
 .ts file, and store the structural information into the .ap and .sc
 files. You can either tell the program to reconstruct the files for a
 specific movie, in which case any existing .ap and .sc for that movie

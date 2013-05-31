@@ -403,6 +403,7 @@ quickbutton/src/Makefile
 reconstructapsc/Makefile
 reconstructapsc/meta/Makefile
 reconstructapsc/src_py/Makefile
+reconstructapsc/po/Makefile
 
 remotetimer/Makefile
 remotetimer/meta/Makefile

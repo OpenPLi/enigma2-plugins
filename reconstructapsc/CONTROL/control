@@ -1,5 +1,5 @@
 Package: enigma2-plugin-extensions-reconstructapsc
-Version: 1.0-20091214
+Version: 1.1-20130504
 Description: Reconstruct missing or corrupt .ap and .sc files of movies
-Maintainer: Anders Holst <aho@sics.se>
+Maintainer: Anders Holst, MiLo, ims
 Depends: enigma2 (>= 2.6git20091014)
