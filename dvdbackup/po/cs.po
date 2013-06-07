@@ -108,5 +108,17 @@ msgstr "DVD Backup"
 msgid "Backup your Video-DVD to your harddisk"
 msgstr "Záloha Video-DVD na pevný disk"
 
+msgid "No"
+msgstr "Ne"
+
+msgid "With mkisofs"
+msgstr "Pomocí mkisofs (delší)"
+
+msgid "With dd"
+msgstr "Pomocí dd (kratší)"
+
+msgid "Cancel"
+msgstr "Zavřít"
+
 #~ msgid "DVD Name"
 #~ msgstr "DVD Name"

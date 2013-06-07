@@ -103,6 +103,18 @@ msgstr "DVD Backup"
 msgid "Backup your Video-DVD to your harddisk"
 msgstr "Eseguire backup di DVD su harddisk"
 
+msgid "No"
+msgstr ""
+
+msgid "With mkisofs"
+msgstr ""
+
+msgid "With dd"
+msgstr ""
+
+msgid "Cancel"
+msgstr ""
+
 #~ msgid "DVD Name"
 #~ msgstr "Nome DVD"
 
