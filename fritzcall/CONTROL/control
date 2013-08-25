@@ -7,5 +7,5 @@ Maintainer: michael
 Architecture: mipsel
 OE:
 Homepage:
-Depends:
+Depends: enigma2, python-html, python-textutils
 Source:
