@@ -3,6 +3,11 @@ from . import _
 from Plugins.Plugin import PluginDescriptor
 from MyTubeService import validate_cert
 from enigma import eTPM
+from Components.config import ConfigSubsection, config, ConfigYesNo
+
+config.plugins.mytubestart = ConfigSubsection()
+config.plugins.mytubestart.extmenu = ConfigYesNo(default=True)
+
 
 def MyTubeMain(session, **kwargs):
 	import ui
@@ -24,8 +29,10 @@ def MyTubeMain(session, **kwargs):
 def Plugins(path, **kwargs):
 	global plugin_path
 	plugin_path = path
-	return PluginDescriptor(
-		name=_("My TubePlayer"),
-		description=_("Play YouTube movies"),
-		where = [ PluginDescriptor.WHERE_EXTENSIONSMENU, PluginDescriptor.WHERE_PLUGINMENU ],
-		icon = "plugin.png", fnc = MyTubeMain)
+
+	name=_("My TubePlayer")
+	descr=_("Play YouTube movies")
+	where = [PluginDescriptor.WHERE_PLUGINMENU,]
+	if config.plugins.mytubestart.extmenu.value:
+		where.append(PluginDescriptor.WHERE_EXTENSIONSMENU)
+	return PluginDescriptor(name=name, description=descr, where=where, icon="plugin.png", fnc=MyTubeMain)

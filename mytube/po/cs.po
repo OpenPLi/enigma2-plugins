@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ims\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-11 09:23+0100\n"
+"POT-Creation-Date: 2013-09-12 16:26+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: ims <ims21@users.sourceforge.net>\n"
 "Language-Team: PLi <ims21@users.sourceforge.net>\n"
@@ -16,343 +16,409 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 
 #
-#: plugin.py:45
+#: plugin.py:33
+msgid "My TubePlayer"
+msgstr "My TubePlayer"
+
+#
+#: plugin.py:34
+msgid "Play YouTube movies"
+msgstr "Přehrávač YouTube"
+
+#
+#: ui.py:44
 msgid "Relevance"
 msgstr "důležitosti"
 
 #
-#: plugin.py:46
+#: ui.py:45
 msgid "View Count"
 msgstr "počtu zobrazení"
 
 #
-#: plugin.py:47
+#: ui.py:46
 msgid "Published"
 msgstr "přidání"
 
 #
-#: plugin.py:48
+#: ui.py:47
 msgid "Rating"
 msgstr "hodnocení"
 
 #
-#: plugin.py:52
+#: ui.py:51
 msgid "All Time"
 msgstr "Neomezeno"
 
 #
-#: plugin.py:53
+#: ui.py:52
 msgid "This Month"
 msgstr "Tento měsíc"
 
 #
-#: plugin.py:54
+#: ui.py:53
 msgid "This Week"
 msgstr "Tento týden"
 
 #
-#: plugin.py:55
+#: ui.py:54
 msgid "Today"
 msgstr "Dnes"
 
 #
-#: plugin.py:59
-#: plugin.py:613
-#: plugin.py:619
-#: plugin.py:1756
+#: ui.py:58
+#: ui.py:656
+#: ui.py:662
+#: ui.py:1859
 msgid "Yes"
 msgstr "Ano"
 
 #
-#: plugin.py:60
-#: plugin.py:614
-#: plugin.py:620
+#: ui.py:59
+#: ui.py:657
+#: ui.py:663
 msgid "No"
 msgstr "Ne"
 
 #
-#: plugin.py:64
-#: plugin.py:84
+#: ui.py:63
+#: ui.py:83
 msgid "All"
 msgstr "Vše"
 
 #
-#: plugin.py:65
+#: ui.py:64
 msgid "Film & Animation"
 msgstr "Krátké a kreslené filmy"
 
 #
-#: plugin.py:66
+#: ui.py:65
 msgid "Autos & Vehicles"
 msgstr "Auta a dopravní prostředky"
 
 #
-#: plugin.py:67
+#: ui.py:66
 msgid "Music"
 msgstr "Hudba"
 
 #
-#: plugin.py:68
+#: ui.py:67
 msgid "Pets & Animals"
 msgstr "Zvířata a domácí mazlíčci"
 
 #
-#: plugin.py:69
+#: ui.py:68
 msgid "Sports"
 msgstr "Sporty"
 
 #
-#: plugin.py:70
+#: ui.py:69
 msgid "Travel & Events"
 msgstr "Cestování a události"
 
 #
-#: plugin.py:71
+#: ui.py:70
 msgid "Short Movies"
 msgstr "Krátké filmy"
 
 #
-#: plugin.py:72
+#: ui.py:71
 msgid "Gaming"
 msgstr "Hraní her"
 
 #
-#: plugin.py:73
+#: ui.py:72
 msgid "Comedy"
 msgstr "Komedie"
 
 #
-#: plugin.py:74
+#: ui.py:73
 msgid "People & Blogs"
 msgstr "Lidé a blogy"
 
 #
-#: plugin.py:75
+#: ui.py:74
 msgid "News & Politics"
 msgstr "Zprávy a politika"
 
 #
-#: plugin.py:76
+#: ui.py:75
 msgid "Entertainment"
 msgstr "Zábava"
 
 #
-#: plugin.py:77
+#: ui.py:76
 msgid "Education"
 msgstr "Vzdělání"
 
 #
-#: plugin.py:78
+#: ui.py:77
 msgid "Howto & Style"
 msgstr "Jak na to a Styl"
 
 #
-#: plugin.py:79
+#: ui.py:78
 msgid "Nonprofits & Activism"
 msgstr "Neziskové organizace a aktivismus"
 
 #
-#: plugin.py:80
+#: ui.py:79
 msgid "Science & Technology"
 msgstr "Věda a technologie"
 
 #
-#: plugin.py:85
+#: ui.py:84
+#: ui.py:91
 msgid "Australia"
 msgstr "Austrálie"
 
 #
-#: plugin.py:86
+#: ui.py:85
 msgid "Brazil"
 msgstr "Brazílie"
 
 #
-#: plugin.py:87
+#: ui.py:86
 msgid "Canada"
 msgstr "Kanada"
 
 #
-#: plugin.py:88
+#: ui.py:87
 msgid "Czech Republic"
 msgstr "Česká republika"
 
 #
-#: plugin.py:89
+#: ui.py:88
 msgid "France"
 msgstr "Francie"
 
 #
-#: plugin.py:90
+#: ui.py:89
 msgid "Germany"
 msgstr "Německo"
 
 #
-#: plugin.py:91
+#: ui.py:90
 msgid "Great Britain"
 msgstr "Velká Británie"
 
 #
-#: plugin.py:92
+#: ui.py:92
 msgid "Holland"
 msgstr "Nizozemí"
 
 #
-#: plugin.py:93
+#: ui.py:93
 msgid "Hong Kong"
 msgstr "Hong Kong"
 
 #
-#: plugin.py:94
+#: ui.py:94
 msgid "India"
 msgstr "Indie"
 
 #
-#: plugin.py:95
+#: ui.py:95
 msgid "Ireland"
 msgstr "Irsko"
 
 #
-#: plugin.py:96
+#: ui.py:96
 msgid "Israel"
 msgstr "Izrael"
 
 #
-#: plugin.py:97
+#: ui.py:97
 msgid "Italy"
 msgstr "Itálie"
 
 #
-#: plugin.py:98
+#: ui.py:98
 msgid "Japan"
 msgstr "Japonsko"
 
 #
-#: plugin.py:99
+#: ui.py:99
 msgid "Mexico"
 msgstr "Mexiko"
 
 #
-#: plugin.py:100
+#: ui.py:100
 msgid "New Zealand"
 msgstr "Nový Zéland"
 
 #
-#: plugin.py:101
+#: ui.py:101
 msgid "Poland"
 msgstr "Polsko"
 
 #
-#: plugin.py:102
+#: ui.py:102
 msgid "Russia"
 msgstr "Rusko"
 
 #
-#: plugin.py:103
+#: ui.py:103
 msgid "South Korea"
 msgstr "Jižní Korea"
 
 #
-#: plugin.py:104
+#: ui.py:104
 msgid "Spain"
 msgstr "Španělsko"
 
 #
-#: plugin.py:105
+#: ui.py:105
 msgid "Sweden"
 msgstr "Švédsko"
 
 #
-#: plugin.py:106
+#: ui.py:106
 msgid "Taiwan"
 msgstr "Taiwan"
 
 #
-#: plugin.py:107
+#: ui.py:107
 msgid "United States"
 msgstr "Spojené státy"
 
 #
-#: plugin.py:111
+#: ui.py:111
 msgid "Ascending"
 msgstr "vzestupně"
 
 #
-#: plugin.py:112
+#: ui.py:112
 msgid "Descending"
 msgstr "sestupně"
 
 #
-#: plugin.py:120
-#: plugin.py:785
+#: ui.py:120
+#: ui.py:855
 msgid "HD videos"
 msgstr "HD videa"
 
 #
-#: plugin.py:122
-#: plugin.py:787
+#: ui.py:121
+#: ui.py:858
+msgid "Most viewed"
+msgstr "Nejčastěji prohlížené"
+
+#
+#: ui.py:122
+#: ui.py:856
 msgid "Top rated"
 msgstr "Nejvýše hodnocené"
 
 #
-#: plugin.py:123
-#: plugin.py:794
+#: ui.py:123
+#: ui.py:863
 msgid "Recently featured"
 msgstr "Nedávno přidané"
 
 #
-#: plugin.py:124
-#: plugin.py:792
+#: ui.py:124
+#: ui.py:861
 msgid "Most discussed"
 msgstr "Nejvíce diskutované"
 
 #
-#: plugin.py:125
-#: plugin.py:788
+#: ui.py:125
+#: ui.py:857
 msgid "Top favorites"
 msgstr "Nejoblíbenější"
 
 #
-#: plugin.py:126
-#: plugin.py:793
+#: ui.py:126
+#: ui.py:862
 msgid "Most linked"
 msgstr "Nejnavštěvovanější"
 
 #
-#: plugin.py:127
-#: plugin.py:795
+#: ui.py:127
+#: ui.py:864
 msgid "Most responded"
 msgstr "S nejvíce odpověďmi"
 
 #
-#: plugin.py:128
-#: plugin.py:791
+#: ui.py:128
+#: ui.py:860
 msgid "Most recent"
 msgstr "Nejnovější"
 
 #
-#: plugin.py:131
-#: plugin.py:134
+#: ui.py:129
+#: ui.py:859
+msgid "Most popular"
+msgstr "Nejpopulárnější"
+
+#
+#: ui.py:130
+#: ui.py:865
+msgid "Most shared"
+msgstr "Nejvíce sdílené"
+
+#: ui.py:131
+#: ui.py:866
+msgid "Trending videos"
+msgstr "Trendy"
+
+#: ui.py:132
+#: ui.py:846
+msgid "My Subscriptions"
+msgstr "Moje odběry"
+
+#
+#: ui.py:133
+#: ui.py:847
+msgid "My Favorites"
+msgstr "Oblíbené"
+
+#
+#: ui.py:134
+#: ui.py:848
+msgid "My History"
+msgstr "Moje historie"
+
+#: ui.py:135
+#: ui.py:849
+msgid "My Watch Later"
+msgstr "Moje sledovat později"
+
+#: ui.py:136
+#: ui.py:850
+msgid "My Recommendations"
+msgstr "Moje doporučení"
+
+#: ui.py:137
+#: ui.py:851
+msgid "My Uploads"
+msgstr "Moje nahrávky"
+
+#
+#: ui.py:140
+#: ui.py:143
 msgid "Ask user"
 msgstr "zeptat se"
 
 #
-#: plugin.py:131
-#: plugin.py:134
+#: ui.py:140
+#: ui.py:143
 msgid "Return to movie list"
 msgstr "zpět na seznam filmů"
 
 #
-#: plugin.py:131
+#: ui.py:140
 msgid "Play next video"
 msgstr "přehrát další video"
 
 #
-#: plugin.py:131
+#: ui.py:140
 msgid "Play video again"
 msgstr "přehrát video znovu"
 
 #
-#: plugin.py:264
+#: ui.py:278
 msgid ""
 "Welcome to the MyTube Youtube Player.\n"
 "\n"
@@ -371,7 +437,7 @@ msgstr ""
 "Stisknutím EXIT se vrátíte na vstupní pole."
 
 #
-#: plugin.py:265
+#: ui.py:279
 msgid ""
 "Welcome to the MyTube Youtube Player.\n"
 "\n"
@@ -398,389 +464,408 @@ msgstr ""
 "Tlačítko Help zobrazí opět tuto nápovědu."
 
 #
-#: plugin.py:274
-#: plugin.py:1294
-#: plugin.py:1480
-#: MyTubeSearch.py:285
-#: MyTubeSearch.py:451
+#: ui.py:288
+#: ui.py:1394
+#: ui.py:1580
+#: MyTubeSearch.py:293
+#: MyTubeSearch.py:466
 msgid "Close"
 msgstr "Zavřít"
 
 #
-#: plugin.py:275
+#: ui.py:289
 msgid "Std. Feeds"
 msgstr "Std. zdroje"
 
 #
-#: plugin.py:276
+#: ui.py:290
 msgid "History"
 msgstr "Historie"
 
-#: plugin.py:392
-#: plugin.py:416
-#: plugin.py:458
+#: ui.py:410
+#: ui.py:438
+#: ui.py:492
 msgid "Genuine Dreambox validation failed!"
 msgstr "Ověření pravosti Dreamboxu selhalo!"
 
-#: plugin.py:392
-#: plugin.py:416
-#: plugin.py:458
+#: ui.py:410
+#: ui.py:438
+#: ui.py:492
 msgid "Verify your Dreambox authenticity by running the genuine dreambox plugin!"
 msgstr "Ověřte pravost Vašeho Boxu spuštěním genuine dreambox pluginu!"
 
 #
-#: plugin.py:411
-#: plugin.py:470
+#: ui.py:433
+#: ui.py:504
 msgid "Fetching feed entries"
 msgstr "Stahování zdrojových položek"
 
 #
-#: plugin.py:411
-#: plugin.py:470
+#: ui.py:433
+#: ui.py:504
 msgid "Trying to download the Youtube feed entries. Please wait..."
 msgstr "Pokouším se stahovat Youtube zdrojové položky. Prosím, čekejte..."
 
 #
-#: plugin.py:428
+#: ui.py:450
 msgid "MyTubePlayer"
 msgstr "MyTube přehrávač"
 
 #
-#: plugin.py:432
+#: ui.py:454
 msgid "Search Term(s)"
 msgstr "Hledané výrazy"
 
+#: ui.py:466
+msgid "Login OK"
+msgstr "Přihlášení vpořádku"
+
+#: ui.py:466
+msgid "Hello"
+msgstr ""
+
+#: ui.py:469
+msgid "Login failed"
+msgstr "Přihlášení se nezdařilo"
+
 #
-#: plugin.py:472
+#: ui.py:506
 msgid "Fetching search entries"
 msgstr "Stahování hledaných položek"
 
 #
-#: plugin.py:472
+#: ui.py:506
 msgid "Trying to download the Youtube search results. Please wait..."
 msgstr "Pokouším se stahovat Youtube výsledky hledání. Prosím, čekejte..."
 
 #
-#: plugin.py:474
+#: ui.py:508
 msgid "An error occured."
 msgstr "Došlo k chybě."
 
 #
-#: plugin.py:474
+#: ui.py:508
 msgid "There was an error getting the feed entries. Please try again."
 msgstr "Chyba při získávání zdrojových položek. Prosím, zkuste to znovu..."
 
 #
-#: plugin.py:477
+#: ui.py:511
 msgid "No videos to display"
 msgstr "Žádná videa k zobrazení"
 
 #
-#: plugin.py:477
+#: ui.py:511
 msgid "Please select a standard feed or try searching for videos."
 msgstr "Zvolte standardní zdroj nebo zkuste video vyhledat."
 
 #
-#: plugin.py:479
+#: ui.py:513
 msgid "Not fetching feed entries"
 msgstr "Žádné stažené zdrojové položky."
 
 #
-#: plugin.py:479
+#: ui.py:513
 msgid "Please enter your search term."
 msgstr "Zadejte hledaný výraz."
 
 #
-#: plugin.py:498
-#: plugin.py:500
-#: plugin.py:507
+#: ui.py:527
+#: ui.py:529
+#: ui.py:536
 msgid "MyTubePlayer Help"
 msgstr "Nápověda MyTube Player"
 
 #
-#: plugin.py:519
-#: plugin.py:525
+#: ui.py:548
+#: ui.py:554
 msgid "MyTube Settings"
 msgstr "Nastavení MyTube"
 
 #
-#: plugin.py:522
-#: plugin.py:537
+#: ui.py:551
+#: ui.py:574
 msgid "Select your choice."
 msgstr "Vyberte si."
 
 #
-#: plugin.py:527
+#: ui.py:556
 msgid "View related videos"
 msgstr "Prohlížet podobná videa"
 
 #
-#: plugin.py:528
+#: ui.py:557
+msgid "View user videos"
+msgstr "Prohlížet uživatelská videa"
+
+#
+#: ui.py:558
 msgid "View response videos"
 msgstr "Prohlížet videoodpovědi"
 
+#: ui.py:563
+msgid "Subscribe to user"
+msgstr "Odebrat uživatelem"
+
 #
-#: plugin.py:532
+#: ui.py:564
+msgid "Add to favorites"
+msgstr "Přidat k oblíbeným"
+
+#
+#: ui.py:569
 msgid "Download Video"
 msgstr "Stáhnout video"
 
 #
-#: plugin.py:533
+#: ui.py:570
 msgid "View active downloads"
 msgstr "Zobrazit probíhající stahování"
 
 #
-#: plugin.py:571
+#: ui.py:618
 msgid "Enter your search term(s)"
 msgstr "Zadejte hledané výrazy"
 
 #
-#: plugin.py:615
+#: ui.py:658
 msgid "No, but switch to video entries."
 msgstr "Ne, jen přepnout do video položek."
 
 #
-#: plugin.py:621
+#: ui.py:664
 msgid "No, but switch to video search."
 msgstr "Ne, jen přepnout na vyhledávání videa"
 
 #
-#: plugin.py:623
+#: ui.py:666
 msgid "Really quit MyTube Player?"
 msgstr "Opravdu ukončit MyTube Player?"
 
 #
-#: plugin.py:717
+#: ui.py:760
 msgid "Sorry, video is not available!"
 msgstr "Bohužel, video není dostupné!"
 
 #
-#: plugin.py:752
+#: ui.py:807
 msgid "Do you want to see more entries?"
 msgstr "Přejete si vidět více položek?"
 
 #
-#: plugin.py:789
-msgid "Most viewed"
-msgstr "Nejčastěji prohlížené"
-
-#
-#: plugin.py:790
-msgid "Most popular"
-msgstr "Nejpopulárnější"
-
-#
-#: plugin.py:797
+#: ui.py:868
 msgid "Select new feed to view."
 msgstr "Výběr nových zdrojů k prohlížení."
 
 #
-#: plugin.py:955
+#: ui.py:1026
 msgid "More video entries."
 msgstr "Více video položek."
 
 #
-#: plugin.py:963
+#: ui.py:1034
 msgid "Related video entries."
 msgstr "Odpovídající video položky."
 
 #
-#: plugin.py:971
+#: ui.py:1042
 msgid "Response video entries."
 msgstr "Videoodpovědi."
 
 #
-#: plugin.py:1117
-#: plugin.py:1355
+#: ui.py:1050
+msgid "User video entries."
+msgstr "Video položky uživatele."
+
+#: ui.py:1104
+#, python-format
+msgid "Results: %s - Page: %s "
+msgstr "Výsledky: %s - Stran: %s "
+
+#
+#: ui.py:1217
+#: ui.py:1455
 msgid "Added: "
 msgstr "Přidáno: "
 
 #
-#: plugin.py:1117
-#: plugin.py:1358
+#: ui.py:1217
+#: ui.py:1458
 msgid "Views: "
 msgstr "Shlédnuto: "
 
 #
-#: plugin.py:1117
-#: plugin.py:1349
+#: ui.py:1217
+#: ui.py:1449
 msgid "Duration: "
 msgstr "Délka: "
 
 #
-#: plugin.py:1117
+#: ui.py:1217
 msgid "Ratings: "
 msgstr "Hodnocení: "
 
 #
-#: plugin.py:1323
+#: ui.py:1423
 msgid "Downloading screenshots. Please wait..."
 msgstr "Stahování screenshotů. Čekejte, prosím..."
 
 #
-#: plugin.py:1352
+#: ui.py:1452
 msgid "Author: "
 msgstr "Autor: "
 
 #
-#: plugin.py:1361
+#: ui.py:1461
 msgid "Tags: "
 msgstr "Tagy: "
 
 #
-#: plugin.py:1364
+#: ui.py:1464
 msgid "MyTubeVideoInfoScreen"
 msgstr ""
 
 #
-#: plugin.py:1498
+#: ui.py:1598
 msgid "Help"
 msgstr "Nápověda"
 
 #
-#: plugin.py:1502
+#: ui.py:1602
 msgid "This is the help screen. Feed me with something to display."
 msgstr "Toto je obrazovka pro nápovědu. Zadejte mi něco pro zobrazení."
 
 #
-#: plugin.py:1507
+#: ui.py:1607
 msgid "MyTubeVideohelpScreen"
 msgstr ""
 
 #
-#: plugin.py:1757
+#: ui.py:1860
 msgid "No, but play video again"
 msgstr "Ne, ale přehrát video jěště jednou"
 
 #
-#: plugin.py:1758
+#: ui.py:1861
 msgid "Yes, but play next video"
 msgstr "Ano, ale přehrát následující video"
 
 #
-#: plugin.py:1759
+#: ui.py:1862
 msgid "Yes, but play previous video"
 msgstr "Ano, ale přehrát předchozí video"
 
 #
-#: plugin.py:1762
+#: ui.py:1865
 msgid "Stop playing this movie?"
 msgstr "Zastavit přehrávání toho filmu?"
 
 #
-#: plugin.py:1764
+#: ui.py:1867
 msgid "No playable video found! Stop playing this movie?"
 msgstr "Nenalezeno přehratelné video! Zastavit přehrávání tohoto filmu?"
 
-#
-#: plugin.py:1810
-msgid "My TubePlayer"
-msgstr "My TubePlayer"
+#: MyTubeService.py:723
+msgid "New subscription added"
+msgstr "Přidán nový odběr"
+
+#: MyTubeService.py:725
+#: MyTubeService.py:741
+msgid "Unknown error"
+msgstr "Neznámá chyba"
+
+#: MyTubeService.py:739
+msgid "Video successfully added to favorites"
+msgstr "Video úspěšně přidáno k oblíbeným"
 
 #
-#: plugin.py:1811
-msgid "Play YouTube movies"
-msgstr "Přehrávač YouTube"
-
-#
-#: MyTubeSearch.py:201
-msgid " Results"
-msgstr "Výsledky"
-
-#
-#: MyTubeSearch.py:286
+#: MyTubeSearch.py:294
 msgid "Save"
 msgstr "Uložit"
 
 #
-#: MyTubeSearch.py:299
-#: MyTubeSearch.py:302
+#: MyTubeSearch.py:307
+#: MyTubeSearch.py:310
 msgid "MyTubePlayer settings"
 msgstr "Nastavení MyTubePlayer"
 
 #
-#: MyTubeSearch.py:306
+#: MyTubeSearch.py:314
 msgid "Display search results by:"
 msgstr "Zobrazovat výsledky hledání podle:"
 
 #
-#: MyTubeSearch.py:307
-msgid "Sort order:"
-msgstr "Třídění"
-
-#
-#: MyTubeSearch.py:308
+#: MyTubeSearch.py:315
 msgid "Search restricted content:"
 msgstr "Hledat obsah s omezeným přístupem:"
 
 #
-#: MyTubeSearch.py:309
+#: MyTubeSearch.py:316
 msgid "Search category:"
 msgstr "Hledané kategorie:"
 
 #
-#: MyTubeSearch.py:310
+#: MyTubeSearch.py:317
 msgid "Search region:"
 msgstr "Hledaný region:"
 
 #
-#: MyTubeSearch.py:311
+#: MyTubeSearch.py:318
 msgid "Load feed on startup:"
 msgstr "Načíst zdroje při spuštění:"
 
 #
-#: MyTubeSearch.py:314
+#: MyTubeSearch.py:321
 msgid "Start with following feed:"
 msgstr "Začít s následujícími zdroji:"
 
 #
-#: MyTubeSearch.py:315
+#: MyTubeSearch.py:322
 msgid "Videoplayer stop/exit behavior:"
 msgstr "Chování přehrávače videa při zastavení/ukončení:"
 
 #
-#: MyTubeSearch.py:316
+#: MyTubeSearch.py:323
 msgid "Videobrowser exit behavior:"
 msgstr "Chování prohlížeče videa při ukončení:"
 
 #
-#: MyTubeSearch.py:323
+#: MyTubeSearch.py:330
 msgid "Download location"
 msgstr "Umístění stahování"
 
 #
-#: MyTubeSearch.py:326
+#: MyTubeSearch.py:333
 msgid "Clear history on Exit:"
 msgstr "Smazat historii při ukončení:"
 
+#: MyTubeSearch.py:334
+msgid "Auto paginate on last entry:"
+msgstr "Automatické stránkování na poslední položce:"
+
+#: MyTubeSearch.py:335
+msgid "Reset tv-screen after playback:"
+msgstr "Reset tv-obraszovky po přehrátí."
+
+#: MyTubeSearch.py:336
+msgid "Youtube Username (reopen plugin on change):"
+msgstr "Uživatel pro Youtube (při změně znovu otevřít):"
+
+#: MyTubeSearch.py:337
+msgid "Youtube Password (reopen plugin on change):"
+msgstr "Heslo pro Youtube (při změně znovu otevřít):"
+
+#: MyTubeSearch.py:338
+msgid "Display MyTube in extensions menu:"
+msgstr "Zobrazovat MyTube v Extensins menu:"
+
 #
-#: MyTubeSearch.py:347
+#: MyTubeSearch.py:359
 msgid "Choose target folder"
 msgstr "Vyberte cílovou složku"
 
 #
-#: MyTubeSearch.py:464
-#: MyTubeSearch.py:480
+#: MyTubeSearch.py:479
+#: MyTubeSearch.py:495
 msgid "MyTubePlayer active video downloads"
 msgstr "MyTubePlayer aktivní stahování videa"
 
-#~ msgid "%d second"
-
-#~ msgid_plural "%d seconds"
-#~ msgstr[0] "%d sekunda"
-#~ msgstr[1] "%d sekundy"
-#~ msgstr[2] "%d sekund"
-
-#~ msgid "%d minute"
-
-#~ msgid_plural "%d minutes"
-#~ msgstr[0] "%d minuta"
-#~ msgstr[1] "%d minuty"
-#~ msgstr[2] "%d minut"
-
-#~ msgid "%d hour"
-
-#~ msgid_plural "%d hours"
-#~ msgstr[0] "%d hodina"
-#~ msgstr[1] "%d hodiny"
-#~ msgstr[2] "%d hodin"

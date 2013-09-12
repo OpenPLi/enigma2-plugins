@@ -1,3 +1,4 @@
+from . import _
 # -*- coding: iso-8859-1 -*-
 from enigma import ePythonMessagePump
 

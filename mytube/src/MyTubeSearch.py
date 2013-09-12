@@ -1,3 +1,4 @@
+from . import _
 from enigma import eTimer, ePythonMessagePump
 from MyTubeService import GoogleSuggestions
 from Screens.Screen import Screen
@@ -335,6 +336,7 @@ class MyTubeSettingsScreen(Screen, ConfigListScreen):
 		self.searchContextEntries.append(getConfigListEntry(_("Reset tv-screen after playback:"), config.plugins.mytube.general.resetPlayService))
 		self.searchContextEntries.append(getConfigListEntry(_("Youtube Username (reopen plugin on change):"), config.plugins.mytube.general.username))
 		self.searchContextEntries.append(getConfigListEntry(_("Youtube Password (reopen plugin on change):"), config.plugins.mytube.general.password))
+		self.searchContextEntries.append(getConfigListEntry(_("Display MyTube in extensions menu:"), config.plugins.mytubestart.extmenu))
 
 		self["config"].list = self.searchContextEntries
 		self["config"].l.setList(self.searchContextEntries)
@@ -414,6 +416,7 @@ class MyTubeSettingsScreen(Screen, ConfigListScreen):
 		config.plugins.mytube.general.save()
 		config.plugins.mytube.search.save()
 		config.plugins.mytube.save()
+		config.plugins.mytubestart.save()
 		"""if config.plugins.mytube.general.useHTTPProxy.value is True:
 			proxy = {'http': 'http://'+str(config.plugins.mytube.general.ProxyIP.getText())+':'+str(config.plugins.mytube.general.ProxyPort.value)}
 			self.myopener = MyOpener(proxies=proxy)
