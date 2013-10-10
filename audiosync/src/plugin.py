@@ -1,3 +1,5 @@
+# for localized messages
+from __init__ import _
 from Components.config import config, ConfigSubsection, ConfigInteger, ConfigSubList
 from Plugins.Plugin import PluginDescriptor
 from Screens.MessageBox import MessageBox
