@@ -1,251 +1,261 @@
-# Copyright (C) 2005 THE tuxbox-enigma'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the tuxbox-enigma package.
-# Automatically generated, 2005.
-#
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-01-28 16:39+0100\n"
-"PO-Revision-Date: 2007-03-03 22:09+0200\n"
-"Last-Translator: stefanos <...>\n"
-"Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.7\n"
+"Project-Id-Version: NetworkBrowser\n"
+"Language: el\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: athoik\n"
+"Language-Team: satdreamgr <satdreamgr.com>\n"
 
 msgid ""
 "A mount entry with this name already exists!\n"
 "Update existing entry and continue?\n"
 msgstr ""
+"Υπάρχει ήδη μία προσάρτηση με αυτό το όνομα!\n"
+"Ενημέρωση της υπάρχουσας και συνέχεια;\n"
 
 msgid "Active"
-msgstr ""
+msgstr "Ενεργό"
 
 msgid ""
 "Active/\n"
 "Inactive"
 msgstr ""
+"Ενεργό/\n"
+"Μη ενεργό"
 
 msgid "Add a new NFS or CIFS mount point to your Dreambox."
-msgstr ""
+msgstr "Προσθήκη μίας νέας προσάρτησης NFS ή CIFS στο Dreambox."
 
 msgid "Add new network mount point"
-msgstr ""
+msgstr "Προσθήκη νέου σημείου προσάρτησης"
 
 msgid ""
 "Are you sure you want to save this network mount?\n"
 "\n"
-msgstr ""
+msgstr "Σίγουρα θέλετε να αποθηκευτεί αυτό το σημείο προσάρτησης;\n"
 
 msgid "Attempt to mount shares again"
-msgstr ""
+msgstr "Προσπάθεια επαναπροσάρτησης των κοινόχρηστων στοιχείων"
 
 msgid "Attempt to recover lost mounts (in background)"
-msgstr ""
+msgstr "Προσπάθεια επαναφοράς των χαμένων προσαρτήσεων (στο παρασκήνιο) "
 
 msgid "Browse network neighbourhood"
-msgstr ""
+msgstr "Αναζήτηση στο οικείο δίκτυο"
 
 msgid "CIFS share"
-msgstr ""
+msgstr "Κοινόχρηστο στοιχείο CIFS"
 
 msgid "Cancel"
-msgstr ""
+msgstr "Ακύρωση"
 
 msgid "Change hostname"
-msgstr ""
+msgstr "Αλλαγή ονόματος συσκευής δικτύου"
 
 msgid "Change the hostname of your Dreambox."
-msgstr ""
+msgstr "Αλλαγή ονόματος δικτύου του Dreambox."
 
 msgid "Close"
-msgstr ""
+msgstr "Κλείσιμο"
 
 msgid "Delete"
-msgstr ""
+msgstr "Διαγραφή"
 
 msgid "Delete mount"
-msgstr ""
+msgstr "Διαγραφή προσάρτησης"
 
 msgid "Dir:"
-msgstr ""
+msgstr "Φάκ:"
 
 msgid "Do you want to enter a username and password for this host?\n"
 msgstr ""
+"Θέλετε να ορίσετε όνομα χρήστη και κωδικό πρόσβασης για αυτή τη συσκευή;\n"
 
 msgid "Enter IP to scan..."
-msgstr ""
+msgstr "Εισάγετε IP προς ανίχνευση..."
 
 msgid "Enter new hostname for your Dreambox"
-msgstr ""
+msgstr "Εισαγωγή νέου ονόματος δικτύου του Dreambox"
 
 msgid "Enter options:"
-msgstr ""
+msgstr "Εισαγωγή επιλογών:"
 
 msgid "Enter password:"
-msgstr ""
+msgstr "Εισαγωγή κωδικού:"
 
 msgid "Enter share directory:"
-msgstr ""
+msgstr "Εισαγωγή κοινόχρηστου φακέλου:"
 
 msgid "Enter share name:"
-msgstr ""
+msgstr "Εισαγωγή ονόματος κοινόχρηστου στοιχείου:"
 
 msgid "Enter user and password for host: "
-msgstr ""
+msgstr "Εισαγωγή χρήστη και κωδικού για τη συσκευή: "
 
 msgid "Enter username:"
-msgstr ""
+msgstr "Εισαγωγή ονόματος χρήστη:"
 
 msgid "Expert"
-msgstr ""
+msgstr "Προχωρημένο"
+
+msgid "FSTAB (mount using linux)"
+msgstr "FSTAB (προσάρτηση μέσω linux)"
 
 msgid "Finished restarting your network"
-msgstr ""
+msgstr "Ολοκλήρωση επανεκκίνησης δικτύου"
 
 msgid "IP Address"
-msgstr ""
+msgstr "Διεύθυνση IP"
 
 msgid "IP:"
-msgstr ""
+msgstr "IP:"
 
 msgid "Local share name"
-msgstr ""
+msgstr "Όνομα τοπικού κοινόχρηστου στοιχείου"
 
 msgid "Manage network shares"
-msgstr ""
+msgstr "Διαχείριση κοινόχρηστων στοιχείων στο δίκτυο"
 
 msgid "Manage your network shares..."
-msgstr ""
+msgstr "Διαχείριση κοινόχρηστων στοιχείων στο δίκτυο..."
 
 msgid "Mount again"
-msgstr ""
+msgstr "Προσάρτηση ξανά"
 
 msgid "Mount informations"
-msgstr ""
+msgstr "Πληροφορίες προσάρτησης"
 
 msgid "Mount options"
-msgstr ""
+msgstr "Επιλογές προσάρτησης"
 
 msgid "Mount type"
-msgstr ""
+msgstr "Τύπος προσάρτησης"
+
+msgid "Mount using"
+msgstr "Χρήση προσάρτησης"
 
 msgid "MountManager"
-msgstr ""
+msgstr "Διαχείριση προσαρτήσεων"
 
 msgid ""
 "Mounted/\n"
 "Unmounted"
 msgstr ""
+"Μονταρισμένο/\n"
+"Αμοντάριστο"
 
 msgid "Mountpoints management"
-msgstr ""
+msgstr "Διαχείριση σημείων προσάρτησης"
 
 msgid "Mounts editor"
-msgstr ""
+msgstr "Επεξεργασία προσαρτήσεων"
 
 msgid "Mounts management"
-msgstr ""
+msgstr "Διαχείριση προσαρτήσεων"
 
 msgid "NFS share"
-msgstr ""
+msgstr "Κοινόχρηστο στοιχείο NFS"
 
 msgid "NetworkBrowser"
-msgstr ""
+msgstr "Πλοηγός Δικτύου"
 
 msgid "No network devices found!"
-msgstr ""
+msgstr "Δεν βρέθηκαν συσκευές δικτύου!"
 
 msgid "Password"
-msgstr ""
+msgstr "Κωδικός"
 
 msgid "Please wait for activation of your network mount..."
-msgstr ""
+msgstr "Παρακαλώ περιμένετε να ενεργοποιηθεί η προσάρτηση..."
 
 msgid "Please wait while removing your network mount..."
-msgstr ""
+msgstr "Παρακαλώ περιμένετε να αφαιρεθεί η προσάρτηση..."
 
 msgid "Please wait while updating your network mount..."
-msgstr ""
+msgstr "Παρακαλώ περιμένετε να ενημερωθεί η προσάρτηση..."
 
 msgid "Please wait while your network is restarting..."
-msgstr ""
+msgstr "Παρακαλώ περιμένετε να επανεκκινηθεί η προσάρτηση"
 
 msgid "Press OK to activate the settings."
-msgstr ""
+msgstr "Πιέστε ΟΚ για ενεργοποίηση των ρυθμίσεων."
 
 msgid "Press OK to collapse this host"
-msgstr ""
+msgstr "Πιέστε ΟΚ για απόκρυψη λεπτομερειών"
 
 msgid "Press OK to edit selected settings."
-msgstr ""
+msgstr "Πιέστε ΟΚ για επεξεργασία των επιλεγμένων ρυθμίσεων."
 
 msgid "Press OK to edit the settings."
-msgstr ""
+msgstr "Πιέστε ΟΚ για επεξεργασία των ρυθμίσεων."
 
 msgid "Press OK to expand this host"
-msgstr ""
+msgstr "Πιέστε ΟΚ για επέκταση λεπτομερειών"
 
 msgid "Press OK to mount this share!"
-msgstr ""
+msgstr "Πιέστε ΟΚ για προσάρτηση αυτού του στοιχείου!"
 
 msgid "Press OK to mount!"
-msgstr ""
+msgstr "Πιέστε ΟΚ για προσάρτηση!"
 
 msgid "Press OK to save settings."
-msgstr ""
+msgstr "Πιέστε ΟΚ για αποθήκευση ρυθμίσεων."
 
 msgid "Press OK to select."
-msgstr ""
+msgstr "Πιέστε ΟΚ για επιλογή."
 
 msgid "Rescan"
-msgstr ""
+msgstr "Επανασάρωση"
 
 msgid "Scan NFS share"
-msgstr ""
+msgstr "Ανίχνευση κοινόχρηστων NFS"
 
 msgid "Scan range"
-msgstr ""
+msgstr "Ανίχνευση κλίμακας"
 
 msgid "Search for network shares"
-msgstr ""
+msgstr "Ανίχνευση για κοινόχρηστα στοιχεία"
 
 msgid "Search for network shares..."
-msgstr ""
+msgstr "Ανίχνευση για κοινόχρηστα στοιχεία..."
 
 msgid "Searching your network. Please wait..."
-msgstr ""
+msgstr "Ανίχνευση στο δίκτυο. Παρακαλώ περιμένετε..."
 
 msgid "Server IP"
-msgstr ""
+msgstr "IP διακομιστή"
 
 msgid "Server share"
-msgstr ""
+msgstr "Κοινόχρηστο στοιχείο διακομιστή"
 
 msgid "User management"
-msgstr ""
+msgstr "Διαχείριση χρηστών"
 
 msgid "Usermanager"
-msgstr ""
+msgstr "Διαχειριστής χρηστών"
 
 msgid "Username"
-msgstr ""
+msgstr "Όνομα χρήστη"
 
 msgid "View, edit or delete mountpoints on your Dreambox."
-msgstr ""
+msgstr "Επισκόπηση, επεξεργασία ή διαγραφή προσαρτήσεων στο Dreambox."
 
 msgid "View, edit or delete usernames and passwords for your network."
-msgstr ""
+msgstr "Επισκόπηση, επεξεργασία ή διαγραφή ονομάτων και κωδικών στο δίκτυο."
 
 msgid "Your network mount has been activated."
-msgstr ""
+msgstr "Η προσάρτηση δικτύου ενεργοποιήθηκε."
 
 msgid "Your network mount has been removed."
-msgstr ""
+msgstr "Η προσάρτηση δικτύου αφαιρέθηκε."
 
 msgid "Your network mount has been updated."
-msgstr ""
+msgstr "Η προσάρτηση δικτύου ενημερώθηκε."
 
 msgid "use as HDD replacement"
-msgstr ""
+msgstr "χρήση ως HDD"
