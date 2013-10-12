@@ -1,2 +1,3 @@
 PLUGIN = FanControl2
-include $(top_srcdir)/Rules_noxml-po.mak
+LANGS = de fr it nl fa sv pl
+include $(top_srcdir)/Rules-po.mak
