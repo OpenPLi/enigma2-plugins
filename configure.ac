@@ -239,7 +239,6 @@ letterbox/src/Makefile
 letterbox/meta/Makefile
 
 logomanager/Makefile
-logomanager/logodir_hdd/Makefile
 logomanager/meta/Makefile
 logomanager/src/Makefile
 
