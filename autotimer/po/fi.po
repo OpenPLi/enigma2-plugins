@@ -1,245 +1,268 @@
-# Finnish translations for PACKAGE package.
+# Swedish translations for PACKAGE package.
 # Copyright (C) 2012 THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # Automatically generated, 2012.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: Enigma2 AutoTimer plugin\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-02-17 15:07+0100\n"
-"PO-Revision-Date: 2012-02-17 12:13+0100\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2013-10-09 03:55+0200\n"
+"Last-Translator: BoxFreak\n"
+"Language-Team: \n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ASCII\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Language: fi\n"
+"X-Generator: Poedit 1.5.7\n"
 
 #, python-format
 msgid ""
 "%d conflict(s) encountered when trying to add new timers:\n"
 "%s"
 msgstr ""
+"%d päällekkäistä ajastusta, kun yritettiin lisätä uusia ajastuksia:\n"
+"%s"
 
 #, python-format
 msgid ""
 "%d conflict(s) solved with similar timer(s):\n"
 "%s"
 msgstr ""
+"%d päällekkäistä ajastusta ratkaistu lisäämällä samankaltaiset ajastukset:\n"
+"%s"
 
 msgid "%d.%B %Y"
-msgstr ""
+msgstr "%d.%B %Y"
 
 #, python-format
 msgid "%s: %s at %s"
-msgstr ""
+msgstr "%s: %s at %s"
 
 msgid "Activate VPS"
-msgstr ""
+msgstr "Aktivoi VPS"
 
 msgid "Add"
-msgstr ""
+msgstr "Lisää"
 
 msgid "Add new AutoTimer"
-msgstr ""
+msgstr "Lisää uusi AutoTimer"
 
 msgid "Add similar timer on conflict"
-msgstr ""
+msgstr "Lisää vastaavanlainen ajastus, jos päällekkäisiä"
 
 msgid "Add timer as disabled on conflict"
-msgstr ""
+msgstr "Lisää pois käytöstä oleva ajastus, jos päällekkäisiä"
 
 msgid "Add zap timer instead of record timer?"
-msgstr ""
+msgstr "Lisää katseluajastus nauhoitusajastuksen sijaan?"
 
 msgid "After event"
-msgstr ""
+msgstr "Ohjelman jälkeen"
 
 msgid "All non-repeating timers"
-msgstr ""
+msgstr "Kaikki ei toistuvat ajastukset"
 
 msgid "Amount of recordings left"
-msgstr ""
+msgstr "Jäljellä olevien tallennuskertojen määrä"
 
 msgid "Any service/recording"
-msgstr ""
+msgstr "Mikä tahansa kanava/nauhoitus"
 
 msgid "AutoTimer Editor"
-msgstr ""
+msgstr "AutoTimer Editori"
 
 msgid "AutoTimer Filters"
-msgstr ""
+msgstr "AutoTimer Suotimet"
 
 msgid "AutoTimer Services"
-msgstr ""
+msgstr "AutoTimer Kanavat"
 
 msgid "AutoTimer Settings"
-msgstr ""
+msgstr "AutoTimer Asetukset"
 
 msgid "AutoTimer overview"
-msgstr ""
+msgstr "AutoTimer yhteenveto"
 
 msgid "AutoTimer was added successfully"
-msgstr ""
+msgstr "AutoTimer lisättiin onnistuneesti"
 
 msgid "AutoTimer was changed successfully"
-msgstr ""
+msgstr "AutoTimer muutettiin onnistuneesti"
 
 msgid "AutoTimer was removed"
-msgstr ""
+msgstr "AutoTimer poistettiin"
 
 msgid "Begin of \"after event\" timespan"
-msgstr ""
+msgstr "\"ohjelman jälkeen\" aikavälin alku"
 
 msgid "Begin of timespan"
-msgstr ""
+msgstr "Aikavälin alku"
 
 msgid "Bouquets"
-msgstr ""
+msgstr "Suosikit"
 
 msgid ""
 "By enabling this events will not be matched if they don't occur on certain "
 "dates."
 msgstr ""
+"Asettamalla tämän asetuksen päälle ohjelmat ei tuo osumia, jos niitä ei "
+"esitetä tiettyinä päivinä."
 
 msgid ""
 "By enabling this you will be notified about similar timers added during "
 "automated polling. There is no intelligence involved, so it might bother you "
 "about the same conflict over and over."
 msgstr ""
+"Ottamalla tämän option käyttöön saat ilmoituksen samankaltaisista "
+"ajastuksista jotka on lisätty automaattisen haun aikana. Optiossa ei ole "
+"mitään älykkyyttä rakennettuna, joten se saattaa ilmoittaa samoista "
+"päällekkäisestä ajastuksesta uudelleen ja uudelleen."
 
 msgid ""
 "By enabling this you will be notified about timer conflicts found during "
 "automated polling. There is no intelligence involved, so it might bother you "
 "about the same conflict over and over."
 msgstr ""
+"Ottamalla tämän option käyttöön saat ilmoituksen päällekkäisistä "
+"ajastuksista joihin törmättiin automaattisen haun aikana. Optiossa ei ole "
+"mitään älykkyyttä rakennettuna, joten se saattaa ilmoittaa samoista "
+"päällekkäisistä ajastuksista uudelleen ja uudelleen."
 
 msgid "Cancel"
-msgstr ""
+msgstr "Peruuta"
 
 msgid "Change default recording offset?"
-msgstr ""
+msgstr "Muuta tallennusten oletus lisäaika?"
 
 msgid "Channel Selection"
-msgstr ""
+msgstr "Kanavalista"
 
 msgid "Channels"
-msgstr ""
+msgstr "Kanavat"
 
 msgid "Choose target folder"
-msgstr ""
+msgstr "Valitse kohdehakemisto"
 
 msgid "Classic"
-msgstr ""
+msgstr "Klassinen"
 
 msgid "Close and forget changes"
-msgstr ""
+msgstr "Sulje ja unohda muutokset"
 
 msgid "Close and save changes"
-msgstr ""
+msgstr "Sulje ja tallenna muutokset"
 
 msgid "Configure AutoTimer behavior"
-msgstr ""
+msgstr "Määrittele AutoTimerin käyttäytyminen"
 
 msgid "Control recording completely by service"
-msgstr ""
+msgstr "Anna kanavan ohjata tallennusta kokonaan"
 
 msgid "Create a new timer using the classic editor"
-msgstr ""
+msgstr "Luo uusi ajastus käyttäen editoria"
 
 msgid "Create a new timer using the wizard"
-msgstr ""
+msgstr "Luo uusi ajastus käyttäen Avustajaa"
 
 #, python-format
 msgid "Custom (%s)"
-msgstr ""
+msgstr "Muokattu (%s)"
 
 msgid "Custom location"
-msgstr ""
+msgstr "Määritelty hakemisto"
 
 msgid "Custom offset"
-msgstr ""
+msgstr "Määritelty lisäaika"
 
 msgid "Delete"
-msgstr ""
+msgstr "Poista"
 
 msgid "Description"
-msgstr ""
+msgstr "Kuvaus"
 
 #, python-format
 msgid "Do you really want to delete %s?"
-msgstr ""
+msgstr "Haluatko todella poistaa %s?"
 
 msgid "EPG encoding"
-msgstr ""
+msgstr "Ohjelmaoppaan koodaus"
 
 msgid "Edit AutoTimer"
-msgstr ""
+msgstr "Muokkaa AutoTimer"
 
 msgid "Edit AutoTimer filters"
-msgstr ""
+msgstr "Muokkaa AutoTimer suodattimia"
 
 msgid "Edit AutoTimer services"
-msgstr ""
+msgstr "Muokkaa AutoTimer kanavat"
 
 #. TRANSLATORS: description of AutoTimer in PluginBrowser
 msgid "Edit Timers and scan for new Events"
-msgstr ""
+msgstr "Muokkaa ajastuksia ja etsi uusia ohjelmia"
 
 msgid "Edit new timer defaults"
-msgstr ""
+msgstr "Muokkaa uuden ajastuksen oletuksia"
 
 msgid "Edit selected AutoTimer"
-msgstr ""
+msgstr "Muokkaa valittua AutoTimeria"
 
 msgid "Editing"
-msgstr ""
+msgstr "Muokataan"
 
 msgid "Editor for new AutoTimers"
-msgstr ""
+msgstr "Uusien AutoTimerien editori"
 
 msgid "Enable Filtering"
-msgstr ""
+msgstr "Laita suodatin päälle"
 
 msgid "Enable Service Restriction"
-msgstr ""
+msgstr "Ota kanavarajoitus käyttöön"
 
 msgid ""
 "Enable this to be able to access the AutoTimer Overview from within the "
 "extension menu."
 msgstr ""
+"Ota tämä käyttöön jos haluat päästä AutoTimerien yhteenvetoon laajennus "
+"valikosta."
 
 msgid "Enabled"
-msgstr ""
+msgstr "Päällä"
 
 msgid ""
 "Encoding the channel uses for it's EPG data. You only need to change this if "
 "you're searching for special characters like the german umlauts."
 msgstr ""
+"Merkistön koodaus jota kanava käyttää ohjelmaoppaassaan. Sinun tarvitsee "
+"muuttaa tätä ainoastaan jos haet joitakin erikoismerkkejä, kuten saksalaisia "
+"aksenttimerkkejä."
 
 msgid "End of \"after event\" timespan"
-msgstr ""
+msgstr "\"ohjelman jälkeen\" aikavälin loppu"
 
 msgid "End of timespan"
-msgstr ""
+msgstr "Aikavälin loppu"
 
 msgid "Exact match"
-msgstr ""
+msgstr "Täysi vastaavuus"
 
 msgid "Exclude"
-msgstr ""
+msgstr "Ei sisällä"
 
 msgid "Execute \"after event\" during timespan"
-msgstr ""
+msgstr "Tee \"ohjelman jälkeen\" aikavälin aikana"
 
 msgid "Filter"
-msgstr ""
+msgstr "Suodata"
 
 msgid ""
 "First day to match events. No event that begins before this date will be "
 "matched."
 msgstr ""
+"Ensimmäinen päivä ohjelmien hakuun. Ennen tätä päivää ohjelmat ei tuo osumia."
 
 #, python-format
 msgid ""
@@ -247,476 +270,533 @@ msgid ""
 "%d Timer were added and %d modified, %d conflicts encountered, %d similars "
 "added."
 msgstr ""
+"Löydettiin yhteensä %d osumaa hakusanoihin ohjelmatiedoista.\n"
+"%d Ajastusta lisättiin ja\n"
+"%d muokattiin,\n"
+"%d päällekkäistä ajastusta havaittiin,\n"
+"%d samankaltaista lisätty."
 
 msgid "Frequently asked questions"
-msgstr ""
+msgstr "Yleisimmin kysytyt kysymykset"
 
 msgid "Friday"
-msgstr ""
+msgstr "Perjantai"
 
 msgid "Guess existing timer based on begin/end"
-msgstr ""
+msgstr "Arvaa olemassa oleva ajastus alun/lopun perusteella"
 
 msgid "Help"
-msgstr ""
+msgstr "Apua"
 
 msgid ""
 "If a timer conflict occurs, AutoTimer will search outside the timespan for a "
 "similar event and add it."
 msgstr ""
+"Jos tulee päällekkäinen ajastus, AutoTimer hakee samankaltaista ohjelmaa "
+"aikavälin ulkopuolelta ja lisää sen."
 
 #, python-format
 msgid ""
 "If this is enabled an existing timer will also be considered recording an "
 "event if it records at least 80%% of the it."
 msgstr ""
+"Jos tämä on päällä, ohjelma katsotaan tallennetuksi jos olemassa oleva "
+"ajastus tallentaa vähintään 80%% siitä. "
 
 msgid "Import AutoTimer"
-msgstr ""
+msgstr "Tuo AutoTimerista"
 
 msgid "Import existing Timer"
-msgstr ""
+msgstr "Tuo olemassaoleva ajastus"
 
 msgid "Import from EPG"
-msgstr ""
+msgstr "Tuo ohjelmaoppaasta"
 
 msgid "Include"
-msgstr ""
+msgstr "Sisältää"
 
 msgid ""
 "Last day to match events. Events have to begin before this date to be "
 "matched."
 msgstr ""
+"Viimeinen päivä ohjelmien hakuun. Tämän päivän jälkeiset ohjelmat ei tuo "
+"osumia."
 
 msgid "Location"
-msgstr ""
+msgstr "Hakemisto"
 
 msgid "Lower bound of timespan."
-msgstr ""
+msgstr "Aikavälin alkuaika."
 
 msgid ""
 "Lower bound of timespan. Nothing before this time will be matched. Offsets "
 "are not taken into account!"
 msgstr ""
+"Aikavälin alkuaika. Ennen tätä aikaa haku ei tuo osumia. Lisäaikoja ei "
+"huomioida!"
 
 #, python-format
 msgid "Match Timespan: %02d:%02d - %02d:%02d"
-msgstr ""
+msgstr "Käytetty aikaväli: %02d:%02d - %02d:%02d"
 
 msgid "Match title"
-msgstr ""
+msgstr "Hae otsikosta"
 
 #, python-format
 msgid "Match title: %s"
-msgstr ""
+msgstr "Hae otsikosta: %s"
 
 msgid "Maximum duration (in m)"
-msgstr ""
+msgstr "Suurin kesto (minuuttia)"
 
 msgid ""
 "Maximum event duration to match. If an event is longer than this amount of "
 "time (without offset) it won't be matched."
 msgstr ""
+"Ohjelman enimmäispituus haussa. Jos ohjelma on pidempi kuin tämä aika (ilman "
+"lisäaikaa) se ei tuota haussa osumia."
 
 msgid "Modify existing timers"
-msgstr ""
+msgstr "Muokkaa olemassa olevia ajastuksia"
 
 msgid "Monday"
-msgstr ""
+msgstr "Maanantai"
 
 msgid "Monthly"
-msgstr ""
+msgstr "Kuukausittain"
 
 msgid "Never"
-msgstr ""
+msgstr "Ei koskaan"
 
 msgid "New"
-msgstr ""
+msgstr "Uusi"
 
 msgid "No"
-msgstr ""
+msgstr "Ei"
 
 msgid "None"
-msgstr ""
+msgstr "Ei mitään"
 
 msgid "Not after"
-msgstr ""
+msgstr "Ei jälkeen"
 
 msgid "Not before"
-msgstr ""
+msgstr "Ei ennen"
 
 msgid "Number of scheduled recordings left."
-msgstr ""
+msgstr "Jäljellä olevien ajastettujen tallennusten lukumäärä."
 
 msgid "OK"
-msgstr ""
+msgstr "OK"
 
 msgid "Offset after recording (in m)"
-msgstr ""
+msgstr "Lisäaika tallennuksen perään (min)"
 
 msgid "Offset before recording (in m)"
-msgstr ""
+msgstr "Lisäaika ennen tallennusta (min)"
 
 msgid "On any service"
-msgstr ""
+msgstr "Miltä tahansa kanavalta"
 
 msgid "On same service"
-msgstr ""
+msgstr "Samalta kanavalta"
 
 msgid "Only AutoTimers created during this session"
-msgstr ""
+msgstr "Vain tällä kertaa luodut AutoTimerit"
 
 msgid "Only add timer for next x days"
-msgstr ""
+msgstr "Lisää ajastus vain seuraaviksi x päiväksi"
 
 msgid "Only match during timespan"
-msgstr ""
+msgstr "Hae vain aikavälin aikana"
 
 #, python-format
 msgid "Only on Service: %s"
-msgstr ""
+msgstr "Vain kanavalta: %s"
 
 msgid "Open Context Menu"
-msgstr ""
+msgstr "Avaa pikavalikko"
 
 msgid "Override found with alternative service"
-msgstr ""
+msgstr "Salli nauhoitus vaihtoehtoiselta kanavalta"
 
 msgid "Please provide a Text to match"
-msgstr ""
+msgstr "Kirjoita etsittävä Teksti"
 
 msgid "Poll Interval (in h)"
-msgstr ""
+msgstr "Tarkastusväli (tunteja) "
 
 msgid "Poll automatically"
-msgstr ""
+msgstr "Tarkasta automaattisesti"
 
 msgid ""
 "Power state to change to after recordings. Select \"standard\" to not change "
 "the default behavior of enigma2 or values changed by yourself."
 msgstr ""
+"Virtatilan muuttaminen tallennuksen jälkeen. Valitse \"normaali\" "
+"käyttäksesi enigma2 oletusarvoja tai itse muuttamiasi arvoja."
 
 msgid "Preview"
-msgstr ""
+msgstr "Hakuehtojen testaus"
 
 msgid "Preview AutoTimer"
-msgstr ""
+msgstr "Esikatsele AutoTimer"
 
 msgid "Really close without saving settings?"
-msgstr ""
+msgstr "Haluatko todella poistua tallentamatta asetuksia?"
 
 msgid "Record a maximum of x times"
-msgstr ""
+msgstr "Tallenna enintään x kertaa"
 
 msgid "Record on"
-msgstr ""
+msgstr "Kanavalta"
 
 msgid "Remove selected AutoTimer"
-msgstr ""
+msgstr "Poista valittu AutoTimer"
 
 msgid "Require description to be unique"
-msgstr ""
+msgstr "Vaadi että kuvaus on ainutlaatuinen"
 
 msgid "Reset count"
-msgstr ""
+msgstr "Nollaa laskuri"
 
 msgid "Restrict \"after event\" to a certain timespan?"
-msgstr ""
+msgstr "Rajoita \"ohjelman jälkeen\" tietylle aikavälille?"
 
 msgid "Restrict to events on certain dates"
-msgstr ""
+msgstr "Rajoita ohjelmiin tiettyinä päivämäärinä"
 
 msgid "Saturday"
-msgstr ""
+msgstr "Lauantai"
 
 msgid "Save"
-msgstr ""
+msgstr "Tallenna"
 
 msgid "Search strictness"
-msgstr ""
+msgstr "Haun tiukkuus"
 
 msgid "Search type"
-msgstr ""
+msgstr "Hakutyyppi"
 
 msgid ""
 "Select \"exact match\" to enforce \"Match title\" to match exactly or "
 "\"partial match\" if you only want to search for a part of the event title."
 msgstr ""
+"Valitse \"täydellinen vastaavuus\" että \"Hae otsikosta\" vastaa täysin tai "
+"\"osittainen vastaavuus\" jos haluat hakea vain osaa ohjelman otsikosta."
 
 msgid "Select a timer to import"
-msgstr ""
+msgstr "Valitse tuotava ajastus"
 
 msgid "Select bouquet to record on"
-msgstr ""
+msgstr "Valitse suosikkilista jolta tallennetaan"
 
 msgid "Select channel to record on"
-msgstr ""
+msgstr "Valitse kanava jolta tallennetaan"
 
 msgid "Select the location to save the recording to."
-msgstr ""
+msgstr "Valitse mihin hakemistoon tallennustiedostot tallennetaan."
 
 msgid "Select type of Filter"
-msgstr ""
+msgstr "Valitse Suotimen tyyppi"
 
 msgid "Select whether or not you want to enforce case correctness."
-msgstr ""
+msgstr "Valitse haluatko erotella haussa myös isot ja pienet kirjaimet."
 
 msgid "Set maximum duration"
-msgstr ""
+msgstr "Aseta maksimi kesto"
 
 msgid "Set this NO to disable this AutoTimer."
-msgstr ""
+msgstr "Aseta tämä EI:ksi ottaaksesti tämän AutoTimerin pois käytöstä."
 
 msgid "Setup"
-msgstr ""
+msgstr "Asetukset"
 
 msgid "Should this AutoTimer be restricted to a timespan?"
-msgstr ""
+msgstr "Pitäisikö tämä AutoTimer rajoittaa tietylle aikavälille?"
 
 msgid "Should this AutoTimer only match up to a certain event duration?"
-msgstr ""
+msgstr "Pitäisikö tämän AutoTimerin hakea vain tietyn mittaisia ohjelmia?"
 
 msgid ""
 "Should timers created by this AutoTimer be recorded to a custom location?"
 msgstr ""
+"Pitäisikö tämän AutoTimerin luomat ajastukset tallentaa määrättyyn "
+"hakemistoon?"
 
 msgid "Show in extension menu"
-msgstr ""
+msgstr "Näytä laajennusten valikossa."
 
 msgid "Show notification on conflicts"
-msgstr ""
+msgstr "Näytä ilmoitus päällekkäisistä ajastuksista"
 
 msgid "Show notification on similars"
-msgstr ""
+msgstr "Näytä ilmoitus samankaltaisista"
 
 msgid "Sort AutoTimer"
-msgstr ""
+msgstr "Järjestä AutoTimer"
 
 msgid "Sort Time"
-msgstr ""
+msgstr "Järjestä Aika"
 
 msgid "Sunday"
-msgstr ""
+msgstr "Sunnuntai"
 
 msgid "Support \"Fast Scan\"?"
-msgstr ""
+msgstr "Tue \"Nopeaa hakua\"?"
 
 msgid "Tags"
-msgstr ""
+msgstr "Avainsanat"
 
 msgid "Tags the Timer/Recording will have."
-msgstr ""
+msgstr "Ajastukseen/Tallenteeseen liitetyt avainsanat."
 
 msgid ""
 "The counter can automatically be reset to the limit at certain intervals."
 msgstr ""
+"Laskuri voidaan tietyin väliajaoin asettaa automaattisesti takaisin raja-"
+"arvoon."
 
 msgid ""
 "The editor to be used for new AutoTimers. This can either be the Wizard or "
 "the classic editor."
 msgstr ""
+"Editori jota käytetään uusille AutoTimereille. Tämä voi olla joko Avustaja "
+"tai perinteinen editori."
 
 msgid "The match attribute is mandatory."
-msgstr ""
+msgstr "Hakuehto on pakollinen."
 
 msgid ""
 "This is a name you can give the AutoTimer. It will be shown in the Overview "
 "and the Preview."
 msgstr ""
+"Tämä on nimi jonka voit antaa AutoTimerille. Se näytetään Yhteenvedossa ja "
+"Esikatselussa."
 
 msgid ""
 "This is the delay in hours that the AutoTimer will wait after a search to "
 "search the EPG again."
 msgstr ""
+"Tämä on viive tunteina, mitä AutoTimer odottaa haun jälkeen ennen seuraavaa "
+"hakua ohjelmaoppaasta."
 
 msgid ""
 "This is what will be looked for in event titles. Note that looking for e.g. "
 "german umlauts can be tricky as you have to know the encoding the channel "
 "uses."
 msgstr ""
+"Tämä on se mitä haetaan ohjelmien otsikoista. Huomaa että haku esim. saksan "
+"aksenttimerkeistä voi olla hankalaa, koska sinun täytyy tietää mitä "
+"merkistöä kanava käyttää."
 
 msgid "This setting controls the behavior when a timer matches a found event."
 msgstr ""
+"Tämä asetus määrittelee käyttäytymisen kun ajastus vastaa löydettyä ohjelmaa."
 
 msgid ""
 "This toggles the behavior on timer conflicts. If an AutoTimer matches an "
 "event that conflicts with an existing timer it will not ignore this event "
 "but add it disabled."
 msgstr ""
+"Tämä määrittelee käyttäytymisen jos löytyy päällekkäisiä ajastuksia. Jos "
+"AutoTimer löytää ohjelman josta tehdään päällekkäinen ajastus olemassa "
+"olevan ajastuksen kanssa se ei jätä huomioimatta tätä ohjelmaa, vaan lisää "
+"pois käytöstä olevan ajastuksen."
 
 msgid "Thursday"
-msgstr ""
+msgstr "Torstai"
 
 msgid "Time in minutes to append to recording."
-msgstr ""
+msgstr "Tallennuksen loppuun lisättävä aika minuutteina."
 
 msgid "Time in minutes to prepend to recording."
-msgstr ""
+msgstr "Tallennuksen alkuun lisättävä aika minuutteina."
 
 msgid "Timer type"
-msgstr ""
+msgstr "Ajastustyyppi"
 
 msgid "Tuesday"
-msgstr ""
+msgstr "Tiistai"
 
 msgid ""
 "Unless this is enabled AutoTimer will NOT automatically look for events "
 "matching your AutoTimers but only when you leave the GUI with the green "
 "button."
 msgstr ""
+"Mikäli tämä ei ole käytössä AutoTimer EI automaattisesti hae "
+"ohjelmatiedoista määrittelemiäsi hakusanoja ajastuksiksi. Haku tehdään vain "
+"kun poistut ikkunasta vihreällä näppäimellä. "
 
 msgid "Upper bound of timespan."
-msgstr ""
+msgstr "Aikavälin päättymisaika."
 
 msgid ""
 "Upper bound of timespan. Nothing after this time will be matched. Offsets "
 "are not taken into account!"
 msgstr ""
+"Aikavälin päättymisaika. Tämän ajan jälkeen haku ei tuo osumia. Lisäaikoja "
+"ei huomioida!"
 
 msgid "Use a custom location"
-msgstr ""
+msgstr "Käytä muuta kuin oletushakemistoa"
 
 msgid "Wednesday"
-msgstr ""
+msgstr "Keskiviikko"
 
 msgid "Weekday"
-msgstr ""
+msgstr "Arkipäivä"
 
 msgid "Weekend"
-msgstr ""
+msgstr "Viikonloppu"
 
 msgid "Weekly (Monday)"
-msgstr ""
+msgstr "Viikoittain (Maanantai)"
 
 msgid "Weekly (Sunday)"
-msgstr ""
+msgstr "Viikoittain (Sunnuntai)"
 
 msgid ""
 "When supporting \"Fast Scan\" the service type is ignored. You don't need to "
 "enable this unless your Image supports \"Fast Scan\" and you are using it."
 msgstr ""
+"Kun tuetaan \"Nopeaa hakua\" kanavatyyppitieto ohitetaan. Sinun ei tarvitse "
+"laittaa tätä päälle, ellei käyttämäsi ohjelmisto tue \"Nopeaa hakua\" ja "
+"sinä käytä sitä."
 
 msgid ""
 "When this option is enabled the AutoTimer won't match events where another "
 "timer with the same description already exists in the timer list."
 msgstr ""
+"Kun tämä optio on päällä, AutoTimer ei ajasta ohjelmia jos ajastuslistalta "
+"löytyy jo toinen ajastus samalla kuvauksella."
 
 msgid ""
 "With this option enabled the channel to record on can be changed to a "
 "alternative service it is restricted to."
 msgstr ""
+"Kun tämä optio on päällä, kanava jolta tallennetaan voidaan vaihtaa "
+"määriteltyyn vaihtoehtoiseen kanavaan."
 
 msgid ""
 "With this option you can restrict the AutoTimer to a certain amount of "
 "scheduled recordings. Set this to 0 to disable this functionality."
 msgstr ""
+"Voit määritellä tällä optiolla rajoituksen kuinka monta AutoTimer ajastusta "
+"kerrallaan sallitaan. Asettamalla arvoksi 0 on tämä määritys pois päältä."
 
 msgid "Wizard"
-msgstr ""
+msgstr "Avustaja"
 
 msgid ""
 "You can control for how many days in the future timers are added. Set this "
 "to 0 to disable this feature."
 msgstr ""
+"Voit määritellä kuinka monta päivää eteenpäin ajastukset lisätään. "
+"Asettamalla arvoksi 0 on tämä määritys pois päältä."
 
 #, python-format
 msgid ""
 "You entered \"%s\" as Text to match.\n"
 "Do you want to remove trailing whitespaces?"
 msgstr ""
+"Syötit \"%s\" haettavaksi tekstiksi.\n"
+"Haluatko poistaa tekstin perässä olevat välilyönnit?"
 
 #, python-format
 msgid ""
 "Your config file is not well-formed:\n"
 "%s"
 msgstr ""
+"Konfiguraatiotiedostosi ei ole oikeassa formaatissa:\n"
+"%s"
 
 #. TRANSLATORS: AutoTimer title in MovieList (automatically opens importer, I consider this no further interaction)
 msgid "add AutoTimer"
-msgstr ""
+msgstr "Lisää AutoTimer"
 
 #. TRANSLATORS: AutoTimer title in EventInfo dialog (requires the user to select an event to base the AutoTimer on)
 msgid "add AutoTimer..."
-msgstr ""
+msgstr "Lisää AutoTimer..."
 
 msgid "add filters"
-msgstr ""
+msgstr "Lisää suotimia"
 
 msgid "add services"
-msgstr ""
+msgstr "Lisää kanavia"
 
 msgid "auto"
-msgstr ""
+msgstr "Auto"
 
 msgid "autotimers need a match attribute"
-msgstr ""
+msgstr "AutoTimer ajastukset tarvitsevat hakuehdot"
 
 msgid "case-insensitive search"
-msgstr ""
+msgstr "Älä tutki haussa isoja ja pieniä kirjaimia"
 
 msgid "case-sensitive search"
-msgstr ""
+msgstr "Tutki haussa isot ja pienet kirjaimet"
 
 msgid "config changed."
-msgstr ""
+msgstr "asetukset muutettu."
 
 msgid "delete"
-msgstr ""
+msgstr "Poista"
 
 msgid "disable"
-msgstr ""
+msgstr "Pois päältä"
 
 msgid "do nothing"
-msgstr ""
+msgstr "Älä tee mitään"
 
 msgid "edit filters"
-msgstr ""
+msgstr "Muokkaa suotimia"
 
 msgid "edit services"
-msgstr ""
+msgstr "Muokkaa kanavia"
 
 msgid "enable"
-msgstr ""
+msgstr "Päälle"
 
 msgid "exact match"
-msgstr ""
+msgstr "Täysi vastaavuus"
 
 msgid "go to deep standby"
-msgstr ""
+msgstr "Mene virransäästötilaan"
 
 msgid "go to standby"
-msgstr ""
+msgstr "Mene valmiustilaan"
 
 msgid "in Description"
-msgstr ""
+msgstr "Kuvauksessa"
 
 msgid "in Shortdescription"
-msgstr ""
+msgstr "Lyhyessä kuvauksessa"
 
 msgid "in Title"
-msgstr ""
+msgstr "Otsikossa"
 
 msgid "mins"
-msgstr ""
+msgstr "minuuttia"
 
 msgid "missing parameter \"id\""
-msgstr ""
+msgstr "puuttuu parametri \"id\""
 
 msgid "on Weekday"
-msgstr ""
+msgstr "Arkipäivisin"
 
 msgid "partial match"
-msgstr ""
+msgstr "Osittainen vastaavuus"
 
 msgid "record"
-msgstr ""
+msgstr "Tallennus"
 
 msgid "standard"
-msgstr ""
+msgstr "Normaali"
 
 #, python-format
 msgid "unable to find timer with id %i"
-msgstr ""
+msgstr "Ei löydä ajastusta tunnuksella %i"
 
 msgid "zap"
-msgstr ""
+msgstr "Kanavanvaihto"
