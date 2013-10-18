@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-09-12 16:26+0200\n"
+"POT-Creation-Date: 2013-10-18 10:35+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,6 +16,105 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+#: MyTubeSearch.py:294
+#: MyTubeSearch.py:467
+#: ui.py:289
+#: ui.py:1395
+#: ui.py:1581
+msgid "Close"
+msgstr ""
+
+#: MyTubeSearch.py:295
+msgid "Save"
+msgstr ""
+
+#: MyTubeSearch.py:308
+#: MyTubeSearch.py:311
+msgid "MyTubePlayer settings"
+msgstr ""
+
+#: MyTubeSearch.py:315
+msgid "Display search results by:"
+msgstr ""
+
+#: MyTubeSearch.py:316
+msgid "Search restricted content:"
+msgstr ""
+
+#: MyTubeSearch.py:317
+msgid "Search category:"
+msgstr ""
+
+#: MyTubeSearch.py:318
+msgid "Search region:"
+msgstr ""
+
+#: MyTubeSearch.py:319
+msgid "Load feed on startup:"
+msgstr ""
+
+#: MyTubeSearch.py:322
+msgid "Start with following feed:"
+msgstr ""
+
+#: MyTubeSearch.py:323
+msgid "Videoplayer stop/exit behavior:"
+msgstr ""
+
+#: MyTubeSearch.py:324
+msgid "Videobrowser exit behavior:"
+msgstr ""
+
+#: MyTubeSearch.py:331
+msgid "Download location"
+msgstr ""
+
+#: MyTubeSearch.py:334
+msgid "Clear history on Exit:"
+msgstr ""
+
+#: MyTubeSearch.py:335
+msgid "Auto paginate on last entry:"
+msgstr ""
+
+#: MyTubeSearch.py:336
+msgid "Reset tv-screen after playback:"
+msgstr ""
+
+#: MyTubeSearch.py:337
+msgid "Youtube Username (reopen plugin on change):"
+msgstr ""
+
+#: MyTubeSearch.py:338
+msgid "Youtube Password (reopen plugin on change):"
+msgstr ""
+
+#: MyTubeSearch.py:339
+msgid "Display MyTube in extensions menu:"
+msgstr ""
+
+#: MyTubeSearch.py:360
+msgid "Choose target folder"
+msgstr ""
+
+#: MyTubeSearch.py:480
+#: MyTubeSearch.py:496
+msgid "MyTubePlayer active video downloads"
+msgstr ""
+
+#: MyTubeService.py:724
+msgid "New subscription added"
+msgstr ""
+
+#: MyTubeService.py:726
+#: MyTubeService.py:742
+msgid "Unknown error"
+msgstr ""
+
+#: MyTubeService.py:740
+msgid "Video successfully added to favorites"
+msgstr ""
 
 #: plugin.py:33
 msgid "My TubePlayer"
@@ -25,303 +124,330 @@ msgstr ""
 msgid "Play YouTube movies"
 msgstr ""
 
-#: ui.py:44
+#: ui.py:45
 msgid "Relevance"
 msgstr ""
 
-#: ui.py:45
+#: ui.py:46
 msgid "View Count"
 msgstr ""
 
-#: ui.py:46
+#: ui.py:47
 msgid "Published"
 msgstr ""
 
-#: ui.py:47
+#: ui.py:48
 msgid "Rating"
 msgstr ""
 
-#: ui.py:51
+#: ui.py:52
 msgid "All Time"
 msgstr ""
 
-#: ui.py:52
+#: ui.py:53
 msgid "This Month"
 msgstr ""
 
-#: ui.py:53
+#: ui.py:54
 msgid "This Week"
 msgstr ""
 
-#: ui.py:54
+#: ui.py:55
 msgid "Today"
 msgstr ""
 
-#: ui.py:58 ui.py:656 ui.py:662 ui.py:1859
+#: ui.py:59
+#: ui.py:657
+#: ui.py:663
+#: ui.py:1860
 msgid "Yes"
 msgstr ""
 
-#: ui.py:59 ui.py:657 ui.py:663
+#: ui.py:60
+#: ui.py:658
+#: ui.py:664
 msgid "No"
 msgstr ""
 
-#: ui.py:63 ui.py:83
+#: ui.py:64
+#: ui.py:84
 msgid "All"
 msgstr ""
 
-#: ui.py:64
+#: ui.py:65
 msgid "Film & Animation"
 msgstr ""
 
-#: ui.py:65
+#: ui.py:66
 msgid "Autos & Vehicles"
 msgstr ""
 
-#: ui.py:66
+#: ui.py:67
 msgid "Music"
 msgstr ""
 
-#: ui.py:67
+#: ui.py:68
 msgid "Pets & Animals"
 msgstr ""
 
-#: ui.py:68
+#: ui.py:69
 msgid "Sports"
 msgstr ""
 
-#: ui.py:69
+#: ui.py:70
 msgid "Travel & Events"
 msgstr ""
 
-#: ui.py:70
+#: ui.py:71
 msgid "Short Movies"
 msgstr ""
 
-#: ui.py:71
+#: ui.py:72
 msgid "Gaming"
 msgstr ""
 
-#: ui.py:72
+#: ui.py:73
 msgid "Comedy"
 msgstr ""
 
-#: ui.py:73
+#: ui.py:74
 msgid "People & Blogs"
 msgstr ""
 
-#: ui.py:74
+#: ui.py:75
 msgid "News & Politics"
 msgstr ""
 
-#: ui.py:75
+#: ui.py:76
 msgid "Entertainment"
 msgstr ""
 
-#: ui.py:76
+#: ui.py:77
 msgid "Education"
 msgstr ""
 
-#: ui.py:77
+#: ui.py:78
 msgid "Howto & Style"
 msgstr ""
 
-#: ui.py:78
+#: ui.py:79
 msgid "Nonprofits & Activism"
 msgstr ""
 
-#: ui.py:79
+#: ui.py:80
 msgid "Science & Technology"
 msgstr ""
 
-#: ui.py:84 ui.py:91
+#: ui.py:85
+#: ui.py:92
 msgid "Australia"
 msgstr ""
 
-#: ui.py:85
+#: ui.py:86
 msgid "Brazil"
 msgstr ""
 
-#: ui.py:86
+#: ui.py:87
 msgid "Canada"
 msgstr ""
 
-#: ui.py:87
+#: ui.py:88
 msgid "Czech Republic"
 msgstr ""
 
-#: ui.py:88
+#: ui.py:89
 msgid "France"
 msgstr ""
 
-#: ui.py:89
+#: ui.py:90
 msgid "Germany"
 msgstr ""
 
-#: ui.py:90
+#: ui.py:91
 msgid "Great Britain"
 msgstr ""
 
-#: ui.py:92
+#: ui.py:93
 msgid "Holland"
 msgstr ""
 
-#: ui.py:93
+#: ui.py:94
 msgid "Hong Kong"
 msgstr ""
 
-#: ui.py:94
+#: ui.py:95
 msgid "India"
 msgstr ""
 
-#: ui.py:95
+#: ui.py:96
 msgid "Ireland"
 msgstr ""
 
-#: ui.py:96
+#: ui.py:97
 msgid "Israel"
 msgstr ""
 
-#: ui.py:97
+#: ui.py:98
 msgid "Italy"
 msgstr ""
 
-#: ui.py:98
+#: ui.py:99
 msgid "Japan"
 msgstr ""
 
-#: ui.py:99
+#: ui.py:100
 msgid "Mexico"
 msgstr ""
 
-#: ui.py:100
+#: ui.py:101
 msgid "New Zealand"
 msgstr ""
 
-#: ui.py:101
+#: ui.py:102
 msgid "Poland"
 msgstr ""
 
-#: ui.py:102
+#: ui.py:103
 msgid "Russia"
 msgstr ""
 
-#: ui.py:103
+#: ui.py:104
 msgid "South Korea"
 msgstr ""
 
-#: ui.py:104
+#: ui.py:105
 msgid "Spain"
 msgstr ""
 
-#: ui.py:105
+#: ui.py:106
 msgid "Sweden"
 msgstr ""
 
-#: ui.py:106
+#: ui.py:107
 msgid "Taiwan"
 msgstr ""
 
-#: ui.py:107
+#: ui.py:108
 msgid "United States"
 msgstr ""
 
-#: ui.py:111
+#: ui.py:112
 msgid "Ascending"
 msgstr ""
 
-#: ui.py:112
+#: ui.py:113
 msgid "Descending"
 msgstr ""
 
-#: ui.py:120 ui.py:855
+#: ui.py:121
+#: ui.py:856
 msgid "HD videos"
 msgstr ""
 
-#: ui.py:121 ui.py:858
+#: ui.py:122
+#: ui.py:859
 msgid "Most viewed"
 msgstr ""
 
-#: ui.py:122 ui.py:856
+#: ui.py:123
+#: ui.py:857
 msgid "Top rated"
 msgstr ""
 
-#: ui.py:123 ui.py:863
+#: ui.py:124
+#: ui.py:864
 msgid "Recently featured"
 msgstr ""
 
-#: ui.py:124 ui.py:861
+#: ui.py:125
+#: ui.py:862
 msgid "Most discussed"
 msgstr ""
 
-#: ui.py:125 ui.py:857
+#: ui.py:126
+#: ui.py:858
 msgid "Top favorites"
 msgstr ""
 
-#: ui.py:126 ui.py:862
+#: ui.py:127
+#: ui.py:863
 msgid "Most linked"
 msgstr ""
 
-#: ui.py:127 ui.py:864
+#: ui.py:128
+#: ui.py:865
 msgid "Most responded"
 msgstr ""
 
-#: ui.py:128 ui.py:860
+#: ui.py:129
+#: ui.py:861
 msgid "Most recent"
 msgstr ""
 
-#: ui.py:129 ui.py:859
+#: ui.py:130
+#: ui.py:860
 msgid "Most popular"
 msgstr ""
 
-#: ui.py:130 ui.py:865
+#: ui.py:131
+#: ui.py:866
 msgid "Most shared"
 msgstr ""
 
-#: ui.py:131 ui.py:866
+#: ui.py:132
+#: ui.py:867
 msgid "Trending videos"
 msgstr ""
 
-#: ui.py:132 ui.py:846
+#: ui.py:133
+#: ui.py:847
 msgid "My Subscriptions"
 msgstr ""
 
-#: ui.py:133 ui.py:847
+#: ui.py:134
+#: ui.py:848
 msgid "My Favorites"
 msgstr ""
 
-#: ui.py:134 ui.py:848
+#: ui.py:135
+#: ui.py:849
 msgid "My History"
 msgstr ""
 
-#: ui.py:135 ui.py:849
+#: ui.py:136
+#: ui.py:850
 msgid "My Watch Later"
 msgstr ""
 
-#: ui.py:136 ui.py:850
+#: ui.py:137
+#: ui.py:851
 msgid "My Recommendations"
 msgstr ""
 
-#: ui.py:137 ui.py:851
+#: ui.py:138
+#: ui.py:852
 msgid "My Uploads"
 msgstr ""
 
-#: ui.py:140 ui.py:143
+#: ui.py:141
+#: ui.py:144
 msgid "Ask user"
 msgstr ""
 
-#: ui.py:140 ui.py:143
+#: ui.py:141
+#: ui.py:144
 msgid "Return to movie list"
 msgstr ""
 
-#: ui.py:140
+#: ui.py:141
 msgid "Play next video"
 msgstr ""
 
-#: ui.py:140
+#: ui.py:141
 msgid "Play video again"
 msgstr ""
 
-#: ui.py:278
+#: ui.py:279
 msgid ""
 "Welcome to the MyTube Youtube Player.\n"
 "\n"
@@ -334,7 +460,7 @@ msgid ""
 "Press exit to get back to the input field."
 msgstr ""
 
-#: ui.py:279
+#: ui.py:280
 msgid ""
 "Welcome to the MyTube Youtube Player.\n"
 "\n"
@@ -350,324 +476,245 @@ msgid ""
 "The Help button shows this help again."
 msgstr ""
 
-#: ui.py:288 ui.py:1394 ui.py:1580 MyTubeSearch.py:293 MyTubeSearch.py:466
-msgid "Close"
-msgstr ""
-
-#: ui.py:289
+#: ui.py:290
 msgid "Std. Feeds"
 msgstr ""
 
-#: ui.py:290
+#: ui.py:291
 msgid "History"
 msgstr ""
 
-#: ui.py:410 ui.py:438 ui.py:492
+#: ui.py:411
+#: ui.py:439
+#: ui.py:493
 msgid "Genuine Dreambox validation failed!"
 msgstr ""
 
-#: ui.py:410 ui.py:438 ui.py:492
+#: ui.py:411
+#: ui.py:439
+#: ui.py:493
 msgid ""
 "Verify your Dreambox authenticity by running the genuine dreambox plugin!"
 msgstr ""
 
-#: ui.py:433 ui.py:504
+#: ui.py:434
+#: ui.py:505
 msgid "Fetching feed entries"
 msgstr ""
 
-#: ui.py:433 ui.py:504
+#: ui.py:434
+#: ui.py:505
 msgid "Trying to download the Youtube feed entries. Please wait..."
 msgstr ""
 
-#: ui.py:450
+#: ui.py:451
 msgid "MyTubePlayer"
 msgstr ""
 
-#: ui.py:454
+#: ui.py:455
 msgid "Search Term(s)"
 msgstr ""
 
-#: ui.py:466
+#: ui.py:467
 msgid "Login OK"
 msgstr ""
 
-#: ui.py:466
+#: ui.py:467
 msgid "Hello"
 msgstr ""
 
-#: ui.py:469
+#: ui.py:470
 msgid "Login failed"
 msgstr ""
 
-#: ui.py:506
+#: ui.py:507
 msgid "Fetching search entries"
 msgstr ""
 
-#: ui.py:506
+#: ui.py:507
 msgid "Trying to download the Youtube search results. Please wait..."
 msgstr ""
 
-#: ui.py:508
+#: ui.py:509
 msgid "An error occured."
 msgstr ""
 
-#: ui.py:508
+#: ui.py:509
 msgid "There was an error getting the feed entries. Please try again."
 msgstr ""
 
-#: ui.py:511
+#: ui.py:512
 msgid "No videos to display"
 msgstr ""
 
-#: ui.py:511
+#: ui.py:512
 msgid "Please select a standard feed or try searching for videos."
 msgstr ""
 
-#: ui.py:513
+#: ui.py:514
 msgid "Not fetching feed entries"
 msgstr ""
 
-#: ui.py:513
+#: ui.py:514
 msgid "Please enter your search term."
 msgstr ""
 
-#: ui.py:527 ui.py:529 ui.py:536
+#: ui.py:528
+#: ui.py:530
+#: ui.py:537
 msgid "MyTubePlayer Help"
 msgstr ""
 
-#: ui.py:548 ui.py:554
+#: ui.py:549
+#: ui.py:555
 msgid "MyTube Settings"
 msgstr ""
 
-#: ui.py:551 ui.py:574
+#: ui.py:552
+#: ui.py:575
 msgid "Select your choice."
 msgstr ""
 
-#: ui.py:556
+#: ui.py:557
 msgid "View related videos"
 msgstr ""
 
-#: ui.py:557
+#: ui.py:558
 msgid "View user videos"
 msgstr ""
 
-#: ui.py:558
+#: ui.py:559
 msgid "View response videos"
 msgstr ""
 
-#: ui.py:563
+#: ui.py:564
 msgid "Subscribe to user"
 msgstr ""
 
-#: ui.py:564
+#: ui.py:565
 msgid "Add to favorites"
 msgstr ""
 
-#: ui.py:569
+#: ui.py:570
 msgid "Download Video"
 msgstr ""
 
-#: ui.py:570
+#: ui.py:571
 msgid "View active downloads"
 msgstr ""
 
-#: ui.py:618
+#: ui.py:619
 msgid "Enter your search term(s)"
 msgstr ""
 
-#: ui.py:658
+#: ui.py:659
 msgid "No, but switch to video entries."
 msgstr ""
 
-#: ui.py:664
+#: ui.py:665
 msgid "No, but switch to video search."
 msgstr ""
 
-#: ui.py:666
+#: ui.py:667
 msgid "Really quit MyTube Player?"
 msgstr ""
 
-#: ui.py:760
+#: ui.py:761
 msgid "Sorry, video is not available!"
 msgstr ""
 
-#: ui.py:807
+#: ui.py:808
 msgid "Do you want to see more entries?"
 msgstr ""
 
-#: ui.py:868
+#: ui.py:869
 msgid "Select new feed to view."
 msgstr ""
 
-#: ui.py:1026
+#: ui.py:1027
 msgid "More video entries."
 msgstr ""
 
-#: ui.py:1034
+#: ui.py:1035
 msgid "Related video entries."
 msgstr ""
 
-#: ui.py:1042
+#: ui.py:1043
 msgid "Response video entries."
 msgstr ""
 
-#: ui.py:1050
+#: ui.py:1051
 msgid "User video entries."
 msgstr ""
 
-#: ui.py:1104
+#: ui.py:1105
 #, python-format
 msgid "Results: %s - Page: %s "
 msgstr ""
 
-#: ui.py:1217 ui.py:1455
+#: ui.py:1218
+#: ui.py:1456
 msgid "Added: "
 msgstr ""
 
-#: ui.py:1217 ui.py:1458
+#: ui.py:1218
+#: ui.py:1459
 msgid "Views: "
 msgstr ""
 
-#: ui.py:1217 ui.py:1449
+#: ui.py:1218
+#: ui.py:1450
 msgid "Duration: "
 msgstr ""
 
-#: ui.py:1217
+#: ui.py:1218
 msgid "Ratings: "
 msgstr ""
 
-#: ui.py:1423
+#: ui.py:1424
 msgid "Downloading screenshots. Please wait..."
 msgstr ""
 
-#: ui.py:1452
+#: ui.py:1453
 msgid "Author: "
 msgstr ""
 
-#: ui.py:1461
+#: ui.py:1462
 msgid "Tags: "
 msgstr ""
 
-#: ui.py:1464
+#: ui.py:1465
 msgid "MyTubeVideoInfoScreen"
 msgstr ""
 
-#: ui.py:1598
+#: ui.py:1599
 msgid "Help"
 msgstr ""
 
-#: ui.py:1602
+#: ui.py:1603
 msgid "This is the help screen. Feed me with something to display."
 msgstr ""
 
-#: ui.py:1607
+#: ui.py:1608
 msgid "MyTubeVideohelpScreen"
 msgstr ""
 
-#: ui.py:1860
+#: ui.py:1861
 msgid "No, but play video again"
 msgstr ""
 
-#: ui.py:1861
+#: ui.py:1862
 msgid "Yes, but play next video"
 msgstr ""
 
-#: ui.py:1862
+#: ui.py:1863
 msgid "Yes, but play previous video"
 msgstr ""
 
-#: ui.py:1865
+#: ui.py:1866
 msgid "Stop playing this movie?"
 msgstr ""
 
-#: ui.py:1867
+#: ui.py:1868
 msgid "No playable video found! Stop playing this movie?"
-msgstr ""
-
-#: MyTubeService.py:723
-msgid "New subscription added"
-msgstr ""
-
-#: MyTubeService.py:725 MyTubeService.py:741
-msgid "Unknown error"
-msgstr ""
-
-#: MyTubeService.py:739
-msgid "Video successfully added to favorites"
-msgstr ""
-
-#: MyTubeSearch.py:294
-msgid "Save"
-msgstr ""
-
-#: MyTubeSearch.py:307 MyTubeSearch.py:310
-msgid "MyTubePlayer settings"
-msgstr ""
-
-#: MyTubeSearch.py:314
-msgid "Display search results by:"
-msgstr ""
-
-#: MyTubeSearch.py:315
-msgid "Search restricted content:"
-msgstr ""
-
-#: MyTubeSearch.py:316
-msgid "Search category:"
-msgstr ""
-
-#: MyTubeSearch.py:317
-msgid "Search region:"
-msgstr ""
-
-#: MyTubeSearch.py:318
-msgid "Load feed on startup:"
-msgstr ""
-
-#: MyTubeSearch.py:321
-msgid "Start with following feed:"
-msgstr ""
-
-#: MyTubeSearch.py:322
-msgid "Videoplayer stop/exit behavior:"
-msgstr ""
-
-#: MyTubeSearch.py:323
-msgid "Videobrowser exit behavior:"
-msgstr ""
-
-#: MyTubeSearch.py:330
-msgid "Download location"
-msgstr ""
-
-#: MyTubeSearch.py:333
-msgid "Clear history on Exit:"
-msgstr ""
-
-#: MyTubeSearch.py:334
-msgid "Auto paginate on last entry:"
-msgstr ""
-
-#: MyTubeSearch.py:335
-msgid "Reset tv-screen after playback:"
-msgstr ""
-
-#: MyTubeSearch.py:336
-msgid "Youtube Username (reopen plugin on change):"
-msgstr ""
-
-#: MyTubeSearch.py:337
-msgid "Youtube Password (reopen plugin on change):"
-msgstr ""
-
-#: MyTubeSearch.py:338
-msgid "Display MyTube in extensions menu:"
-msgstr ""
-
-#: MyTubeSearch.py:359
-msgid "Choose target folder"
-msgstr ""
-
-#: MyTubeSearch.py:479 MyTubeSearch.py:495
-msgid "MyTubePlayer active video downloads"
 msgstr ""
