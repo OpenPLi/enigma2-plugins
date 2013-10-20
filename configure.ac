@@ -202,10 +202,6 @@ ftpbrowser/po/Makefile
 ftpbrowser/src/Makefile
 ftpbrowser/src/images/Makefile
 
-genuinedreambox/Makefile
-genuinedreambox/meta/Makefile
-genuinedreambox/src/Makefile
-
 googlemaps/Makefile
 googlemaps/meta/Makefile
 googlemaps/src/Makefile
@@ -424,12 +420,6 @@ seekbar/Makefile
 seekbar/meta/Makefile
 seekbar/po/Makefile
 seekbar/src/Makefile
-
-serienfilm/Makefile
-serienfilm/meta/Makefile
-serienfilm/po/Makefile
-serienfilm/src/Makefile
-serienfilm/src/icons/Makefile
 
 setpasswd/Makefile
 setpasswd/meta/Makefile
