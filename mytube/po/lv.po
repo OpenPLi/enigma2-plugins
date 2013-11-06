@@ -384,7 +384,7 @@ msgid "Fetching feed entries"
 msgstr "Ienes barotnes ierakstus"
 
 msgid "Trying to download the Youtube feed entries. Please wait..."
-msgstr "Mēgina lejuplādēts Youtube barotnes ierakstus. Lūdzu uzgaidiet..."
+msgstr "Lejuplādē Youtube barotnes ierakstus. Lūdzu uzgaidiet..."
 
 msgid "MyTubePlayer"
 msgstr "MyTube atskaņotājs"
