@@ -405,7 +405,7 @@ msgid "Fetching search entries"
 msgstr "Ienes meklēšanas ierakstus"
 
 msgid "Trying to download the Youtube search results. Please wait..."
-msgstr "Mēgina lejuplādēts Youtube meklēšanas rezultātus. Lūdzu uzgaidiet..."
+msgstr "Lejuplādē Youtube meklēšanas rezultātus. Lūdzu uzgaidiet..."
 
 msgid "An error occured."
 msgstr "Kļūda."
