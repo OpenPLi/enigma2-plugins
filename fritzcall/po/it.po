@@ -4,20 +4,19 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2  - FRITZ!Box\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-07 13:11+0200\n"
-"PO-Revision-Date: 2013-01-20 15:17+0100\n"
+"POT-Creation-Date: 2013-09-30 10:37+0200\n"
+"PO-Revision-Date: 2013-05-01 18:25+0100\n"
 "Last-Translator: Spaeleus <spaeleus@croci.org>\n"
 "Language-Team: www.linsat.net <spaeleus@croci.org>\n"
-"Language: \n"
+"Language: it_IT\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Poedit-Language: Italian\n"
-"X-Poedit-Country: ITALY\n"
-"X-Poedit-SourceCharset: utf-8\n"
-"X-Poedit-Basepath: .../enigma2-plugins/fritzcall\n"
-"X-Poedit-SearchPath-0: .../enigma2-plugins/fritzcall\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-Basepath: /media/dario/TREKSTOR/git/enigma2-plugins/fritzcall\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-SearchPath-0: /media/dario/TREKSTOR/git/enigma2-plugins/fritzcall\n"
 
 #. TRANSLATORS: this is a window title.
 #. TRANSLATORS: keep it short, this is a button
@@ -66,7 +65,7 @@ msgid "Call redirection"
 msgstr "Deviazione chiamate"
 
 msgid "Call redirection active"
-msgstr ""
+msgstr "deviazione chiamate attiva"
 
 #, python-format
 msgid "Calling %s"
@@ -80,10 +79,7 @@ msgid "Cannot get calls from FRITZ!Box"
 msgstr "Recupero chiamate dalla FRITZ!Box impossibile"
 
 msgid "Cannot get infos from FRITZ!Box yet; try later"
-msgstr ""
-
-msgid "Compact Flash"
-msgstr "work"
+msgstr "Recupero informazioni dalla FRITZ!Box impossibile: riprovare più tardi"
 
 msgid "Connected since"
 msgstr "Connesso da"
@@ -127,7 +123,7 @@ msgid "Country"
 msgstr "Nazione"
 
 msgid "DECT inactive"
-msgstr ""
+msgstr "DECT non attivo"
 
 msgid "DECT phones registered"
 msgstr "Telefoni DECT registrati"
@@ -198,10 +194,10 @@ msgid "Entry incomplete."
 msgstr "Voce incompleta."
 
 msgid "Extended Search for faces"
-msgstr ""
+msgstr "Ricerca avanzata foto chiamante"
 
 msgid "Extended Search for names"
-msgstr ""
+msgstr "Ricerca estesa nomi"
 
 msgid "Extension number to initiate call on"
 msgstr "Numero apparecchio su cui indirizzare la chiamata"
@@ -288,9 +284,6 @@ msgstr "FRITZ!Box non disponibile per le chiamate"
 msgid "Filter also list of calls"
 msgstr "Filtrare anche gli elenchi chiamate"
 
-msgid "Flash"
-msgstr "Flash"
-
 #, python-format
 msgid ""
 "Found picture\n"
@@ -366,9 +359,6 @@ msgstr "MSN da mostrare (separare con ,)"
 msgid "Mailbox"
 msgstr "Casella di posta"
 
-msgid "Media directory"
-msgstr "Directory media"
-
 #. TRANSLATORS: keep it short, this is a button
 msgid "Missed"
 msgstr "Ch. perse"
@@ -381,9 +371,6 @@ msgstr "Mute su Chiamata"
 
 msgid "Name"
 msgstr "Nome"
-
-msgid "Network mount"
-msgstr "Mount di rete"
 
 #. TRANSLATORS: keep it short, this is a button
 msgid "New"
@@ -466,8 +453,8 @@ msgstr "Password di accesso alla FRITZ!Box"
 msgid "Phone calls"
 msgstr "Ch. telef."
 
-msgid "PhoneBook Location"
-msgstr "Posizione rubrica"
+msgid "PhoneBook and Faces Location"
+msgstr ""
 
 #. TRANSLATORS: this is a window title.
 #. TRANSLATORS: keep it short, this is a button
@@ -489,7 +476,7 @@ msgid "Refresh status"
 msgstr "Aggiornare lo stato"
 
 msgid "Refreshing..."
-msgstr ""
+msgstr "Aggiornamento in coso..."
 
 msgid "Reload interval for phonebooks (hours)"
 msgstr "Intervallo aggiornamento rubriche (ore)"
@@ -547,7 +534,7 @@ msgid "Software fax active"
 msgstr "Fax software attivo"
 
 msgid "Software fax inactive"
-msgstr ""
+msgstr "Fax software non attivo"
 
 msgid "Status not available"
 msgstr "Stato non disponibile"
@@ -600,9 +587,6 @@ msgstr "Comm. tutte le caselle"
 
 msgid "UNKNOWN"
 msgstr "SCONOSCIUTO"
-
-msgid "USB Device"
-msgstr "Dispositivo USB"
 
 msgid "Use internal PhoneBook"
 msgstr "Usare la rubrica interna"
@@ -719,13 +703,25 @@ msgid "work"
 msgstr "Ufficio"
 
 msgid "wrong user or password?"
-msgstr ""
+msgstr "Utente o password errati?"
 
-#~ msgid "Cannot get infos from FRITZ!Box"
-#~ msgstr "Recupero informazioni dalla FRITZ!Box impossibile"
+#~ msgid "Compact Flash"
+#~ msgstr "work"
+
+#~ msgid "Flash"
+#~ msgstr "Flash"
+
+#~ msgid "Media directory"
+#~ msgstr "Directory media"
+
+#~ msgid "Network mount"
+#~ msgstr "Mount di rete"
+
+#~ msgid "PhoneBook Location"
+#~ msgstr "Posizione rubrica"
+
+#~ msgid "USB Device"
+#~ msgstr "Dispositivo USB"
 
 #~ msgid "business"
 #~ msgstr "Affari"
-
-#~ msgid "no SID"
-#~ msgstr "Nessun SID"

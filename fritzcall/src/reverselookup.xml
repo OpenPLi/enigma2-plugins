@@ -10,20 +10,20 @@ $Date: 2013-07-21 14:34:08 +0200 (Sun, 21 Jul 2013) $
      everything in here needs to be xml compliant, that means all
      quotes, pound signs etc need to be properly escaped!!!
      Otherwise jfritz will refuse too load due to of SAX errors.
-
+     
      Websites and pattern entries are processed in the order they
      are placed. This is important when determining what web site should
      be used first and what pattern should be used for that web site first.
-	 As soon as one matching name is found, jfritz will stop trying other
-	 patterns / entries.
-	 +46
-	 Make sure that each url entry contains the string $NUMBER at the
-	 appropriate spot or else the algorithm won't work! The attributes prefix
-	 and areacode are optional. The attribute prefix is used to determine if
-	 the number needs the area code prefix or not. if the attribute area code
-	 is set make sure to include string $AREACODE, or $PFXAREACODE at the
-	 appropriate spot in the url. For more info see http://www.jfritz.org
-
+   	 As soon as one matching name is found, jfritz will stop trying other
+   	 patterns / entries.
+   	 +46
+   	 Make sure that each url entry contains the string $NUMBER at the
+   	 appropriate spot or else the algorithm won't work! The attributes prefix
+   	 and areacode are optional. The attribute prefix is used to determine if 
+   	 the number needs the area code prefix or not. if the attribute area code
+   	 is set make sure to include string $AREACODE, or $PFXAREACODE at the
+   	 appropriate spot in the url. For more info see http://www.jfritz.org
+   	    	 
 -->
 
 <reverselookup version="1.01">
@@ -803,7 +803,7 @@ $Date: 2013-07-21 14:34:08 +0200 (Sun, 21 Jul 2013) $
 				<city>&lt;span class=&quot;locality&quot;&gt;(?:&lt;a href=[^&gt;]*&gt;)?([^&lt;]*)(?:&lt;/a&gt;)?&lt;/span&gt;</city>
 				<zipcode>&lt;span class=&quot;postal-code&quot;>([^&lt;]*)&lt;/span&gt;</zipcode>
 			</entry>
-		</website>
+		</website>		
 	</country>
 	<country code="+423">
 		<website name="tel.search.ch" url="http://tel.search.ch/result.html?tel=00423$NUMBER" prefix="">
@@ -834,7 +834,7 @@ $Date: 2013-07-21 14:34:08 +0200 (Sun, 21 Jul 2013) $
 		</website>
 		<website name="tb-online.at" url="http://www.tb-online.at/index.php?pc=in&amp;telnummer=$NUMBER&amp;aktion=suchein" prefix="0">
 			<entry>
-				<!--
+				<!-- 
 				zipcode hidden as image...
 				-->
 				<name>&lt;p\s*class=&quot;name&quot;&gt;\s*([^&lt;]*)&lt;/p&gt;</name>
@@ -842,7 +842,7 @@ $Date: 2013-07-21 14:34:08 +0200 (Sun, 21 Jul 2013) $
 				<city>&lt;p&gt;[^&lt;]*&lt;/p&gt;\s*&lt;p&gt;&lt;img class=&quot;img&quot; src=&quot;grafikpng.php?[^&gt;]*&gt;&amp;nbsp;([^&lt;]*)&lt;/p&gt;</city>
 				<zipcode>()</zipcode>
 			</entry>
-		</website>
+		</website>				
 	</country>
 	<country code="+45">
 		<website name="degulesider.dk" url="http://www.degulesider.dk/vbw/super/resultat.do?twoFieldName=$NUMBER&amp;twoFieldAddr=&amp;Image52.x=0&amp;Image52.y=0" prefix="0">
@@ -937,19 +937,19 @@ $Date: 2013-07-21 14:34:08 +0200 (Sun, 21 Jul 2013) $
 	</country>
 	<country code="+49">
 		<website name="www.dasoertliche.de" url="http://www.dasoertliche.de/Controller?form_name=search_inv&amp;ph=$NUMBER" prefix="0" numLines="1">
-		<entry>
-			<name>class=&quot;entry&quot;\s*(?:onmouseover=&quot;&quot;)?\s*&gt;([^&lt;]*)&lt;/a&gt;</name>
-			<street>^\s*([^,&gt;]+),&amp;nbsp;\d{5}&amp;nbsp;[^&lt;]*&lt;/div&gt;</street>
-			<city>^[^,]*,&amp;nbsp;\d{5}&amp;nbsp;([^&lt;]*)&lt;/div&gt;</city>
-			<zipcode>^[^,]*,&amp;nbsp;(\d{5})&amp;nbsp;[^&lt;]*&lt;/div&gt;</zipcode>
-		</entry>
-		<entry>
-			<name>class=&quot;entry&quot;\s*(?:onmouseover=&quot;&quot;)?\s*&gt;([^&lt;]*)&lt;/a&gt;</name>
-			<street>^\s*([^,&gt;]+),&amp;nbsp;\d{5}&amp;nbsp;[^&lt;]*&lt;/div&gt;</street>
-			<city>^[^,]*,&amp;nbsp;\d{5}&amp;nbsp;([^&lt;]*)&lt;/div&gt;</city>
-			<zipcode>^[^,]*,&amp;nbsp;(\d{5})&amp;nbsp;[^&lt;]*&lt;/div&gt;</zipcode>
-		</entry>
-		<entry>
+	        <entry>
+	        	<name>class=&quot;entry&quot;\s*(?:onmouseover=&quot;&quot;)?\s*&gt;([^&lt;]*)&lt;/a&gt;</name>
+	        	<street>^\s*([^,&gt;]+),&amp;nbsp;\d{5}&amp;nbsp;[^&lt;]*&lt;/div&gt;</street>
+	        	<city>^[^,]*,&amp;nbsp;\d{5}&amp;nbsp;([^&lt;]*)&lt;/div&gt;</city>
+	        	<zipcode>^[^,]*,&amp;nbsp;(\d{5})&amp;nbsp;[^&lt;]*&lt;/div&gt;</zipcode>
+	        </entry>
+	        <entry>
+	        	<name>class=&quot;entry&quot;\s*(?:onmouseover=&quot;&quot;)?\s*&gt;([^&lt;]*)&lt;/a&gt;</name>
+	        	<street>^\s*([^,&gt;]+),&amp;nbsp;\d{5}&amp;nbsp;[^&lt;]*&lt;/div&gt;</street>
+	        	<city>^[^,]*,&amp;nbsp;\d{5}&amp;nbsp;([^&lt;]*)&lt;/div&gt;</city>
+	        	<zipcode>^[^,]*,&amp;nbsp;(\d{5})&amp;nbsp;[^&lt;]*&lt;/div&gt;</zipcode>
+	        </entry>
+	        <entry>
 				<name>var data = getItemData\('[^']+', '[^']+', '[^']+', '[^']+', '[^']+', '([^']+)', '[^']+', '[^']+', '[^']+'\);</name>
 				<city>var data = getItemData\('[^']+', '[^']+', '[^']+', '[^']+', '([^']+)', '[^']+', '[^']+', '[^']+', '[^']+'\);</city>
 				<street>&lt;div class=&quot;strasse&quot;&gt;\s*([^,]+),&amp;nbsp;</street>
@@ -961,15 +961,15 @@ $Date: 2013-07-21 14:34:08 +0200 (Sun, 21 Jul 2013) $
 				<city>&lt;p class=&quot;data track&quot;&gt;\s*[^&lt;]*&lt;br /&gt;\d+ ([^\s]*)\s*&lt;/p&gt;</city>
 				<zipcode>&lt;p class="data track"&gt;\s*[^&lt;]*&lt;br /&gt;(\d+) [^&lt;]&lt;/p&gt;</zipcode>
 			</entry>
-		<entry>
-			<name>class=&quot;preview&quot;&gt;([^&lt;]*)&lt;span class="preview_box"&gt;</name>
-			<street>^\s*([^,&gt;]+),&amp;nbsp;\d{5}&amp;nbsp;[^&lt;]*&lt;/div&gt;</street>
-			<city>^[^,]*,&amp;nbsp;\d{5}&amp;nbsp;([^&lt;]*)&lt;/div&gt;</city>
-			<zipcode>^[^,]*,&amp;nbsp;(\d{5})&amp;nbsp;[^&lt;]*&lt;/div&gt;</zipcode>
-		</entry>
+	        <entry>
+	        	<name>class=&quot;preview&quot;&gt;([^&lt;]*)&lt;span class="preview_box"&gt;</name>
+	        	<street>^\s*([^,&gt;]+),&amp;nbsp;\d{5}&amp;nbsp;[^&lt;]*&lt;/div&gt;</street>
+	        	<city>^[^,]*,&amp;nbsp;\d{5}&amp;nbsp;([^&lt;]*)&lt;/div&gt;</city>
+	        	<zipcode>^[^,]*,&amp;nbsp;(\d{5})&amp;nbsp;[^&lt;]*&lt;/div&gt;</zipcode>
+	        </entry>
 	    </website>
 		<website name="www.dastelefonbuch.de" url="http://www3.dastelefonbuch.de/?la=de&amp;kw=$NUMBER&amp;cmd=detail&amp;recSelected=0" prefix="0">
-			<entry>
+			<entry>	
 				<name>&lt;div id=&quot;detail-hl&quot;&gt;&lt;h2&gt;([^&lt;]*)&lt;/h2&gt;</name>
 				<street>&lt;div class=&quot;addr&quot; title=&quot;Adresse&quot;&gt;\s*?&lt;div&gt;.*?&lt;/div&gt;\s*?&lt;div&gt;\s*?([^&lt;]*)&lt;br /&gt;\d{5}&amp;nbsp;[^&lt;]*&lt;br /&gt;&lt;/div&gt;\s*?&lt;/div&gt;</street>
 				<city>&lt;div class=&quot;addr&quot; title=&quot;Adresse&quot;&gt;\s*?&lt;div&gt;.*?&lt;/div&gt;\s*?&lt;div&gt;\s*?[^&lt;]*&lt;br /&gt;\d{5}&amp;nbsp;([^&lt;]*)&lt;br /&gt;&lt;/div&gt;\s*?&lt;/div&gt;</city>
@@ -985,20 +985,20 @@ $Date: 2013-07-21 14:34:08 +0200 (Sun, 21 Jul 2013) $
 			</entry>
 		</website>
 		<website name="www.goyellow.de" url="http://www.goyellow.de/inverssuche/?TEL=$NUMBER" prefix="0">
-		<entry>
-			<name>&lt;a onClick=&quot;[^&quot;]*&quot; title=&quot;[^&quot;]*&quot; href=&quot;[^&quot;]*&quot;&gt;\s*&lt;span class=&quot;normal&quot;&gt;([^&lt;]*)&lt;/span&gt;</name>
-				<street>&lt;span class=&quot;street&quot;&gt;([^&lt;]*)&lt;/span&gt;</street>
-			<city>&lt;span class=&quot;city&quot;&gt;([^&lt;]*)&lt;/span&gt;</city>
-			<zipcode>&lt;span class=&quot;postcode&quot;&gt;([^&lt;]*)&lt;/span&gt;</zipcode>
-		</entry>
+	        <entry>
+	        	<name>&lt;a onClick=&quot;[^&quot;]*&quot; title=&quot;[^&quot;]*&quot; href=&quot;[^&quot;]*&quot;&gt;\s*&lt;span class=&quot;normal&quot;&gt;([^&lt;]*)&lt;/span&gt;</name>
+		  		<street>&lt;span class=&quot;street&quot;&gt;([^&lt;]*)&lt;/span&gt;</street>
+	        	<city>&lt;span class=&quot;city&quot;&gt;([^&lt;]*)&lt;/span&gt;</city>
+	        	<zipcode>&lt;span class=&quot;postcode&quot;&gt;([^&lt;]*)&lt;/span&gt;</zipcode>
+	        </entry>
 		</website>
 		<website name="www.11880.com" url="http://www.11880.com/inverssuche/index/search?method=searchSimple&quot;_dvform_posted=1&quot;phoneNumber=$NUMBER" prefix="0">
-		<entry>
-			<name>&lt;a style=&quot;text-decoration: underline;&quot; href=&quot;[^&quot;]*?&quot;\s+onclick=&quot;[^&quot;]*?&quot;\s+class=&quot;popup&quot;[^&gt;]*?&gt;([^&lt;]*?)&lt;/a&gt;</name>
-			<street>^\t*?([^,\t]*?), [\d]{5} [^&lt;]*?&lt;br /&gt;</street>
-			<city>^\t*?[^,\t]*?, [\d]{5} ([^&lt;]*?)&lt;br /&gt;</city>
-			<zipcode>^\t*?[^,\t]*?, ([\d]{5}) [^&lt;]*?&lt;br /&gt;</zipcode>
-		</entry>
+	        <entry>
+	        	<name>&lt;a style=&quot;text-decoration: underline;&quot; href=&quot;[^&quot;]*?&quot;\s+onclick=&quot;[^&quot;]*?&quot;\s+class=&quot;popup&quot;[^&gt;]*?&gt;([^&lt;]*?)&lt;/a&gt;</name>
+	        	<street>^\t*?([^,\t]*?), [\d]{5} [^&lt;]*?&lt;br /&gt;</street>
+	        	<city>^\t*?[^,\t]*?, [\d]{5} ([^&lt;]*?)&lt;br /&gt;</city>
+	        	<zipcode>^\t*?[^,\t]*?, ([\d]{5}) [^&lt;]*?&lt;br /&gt;</zipcode>
+	        </entry>
 		</website>
 	</country>
 	<country code="+501">
@@ -1580,4 +1580,6 @@ $Date: 2013-07-21 14:34:08 +0200 (Sun, 21 Jul 2013) $
 		</website>
 	</country>
 </reverselookup>
+	
 
+	
