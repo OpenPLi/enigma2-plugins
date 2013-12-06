@@ -383,7 +383,7 @@ class IMDB(Screen):
 	def openVirtualKeyBoard(self):
 		self.session.openWithCallback(
 			self.gotSearchString,
-			NTIVirtualKeyBoard,
+			VirtualKeyBoard,
 			title = _("Enter text to search for")
 		)
 
