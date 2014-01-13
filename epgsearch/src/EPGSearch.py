@@ -2,7 +2,7 @@
 from . import _
 
 from enigma import eEPGCache, eServiceReference, RT_HALIGN_LEFT, \
-		RT_HALIGN_RIGHT, eListboxPythonMultiContent
+		RT_HALIGN_RIGHT, eListboxPythonMultiContent, RT_VALIGN_CENTER
 
 from Tools.Directories import resolveFilename, SCOPE_CURRENT_SKIN
 from Tools.LoadPixmap import LoadPixmap
@@ -77,12 +77,6 @@ class EPGSearchList(EPGList):
 		EPGList.__init__(self, type, selChangedCB, timer)
 		self.l.setBuildFunc(self.buildEPGSearchEntry)
 
-		self.clock_pixmap = LoadPixmap(cached=True, path=resolveFilename(SCOPE_CURRENT_SKIN, 'skin_default/icons/epgclock.png'))
-		self.clock_add_pixmap = LoadPixmap(cached=True, path=resolveFilename(SCOPE_CURRENT_SKIN, 'skin_default/icons/epgclock_add.png'))
-		self.clock_pre_pixmap = LoadPixmap(cached=True, path=resolveFilename(SCOPE_CURRENT_SKIN, 'skin_default/icons/epgclock_pre.png'))
-		self.clock_post_pixmap = LoadPixmap(cached=True, path=resolveFilename(SCOPE_CURRENT_SKIN, 'skin_default/icons/epgclock_post.png'))
-		self.clock_prepost_pixmap = LoadPixmap(cached=True, path=resolveFilename(SCOPE_CURRENT_SKIN, 'skin_default/icons/epgclock_prepost.png'))
-
 		if PartnerBoxIconsEnabled:
 			# Partnerbox Clock Icons
 			self.remote_clock_pixmap = LoadPixmap('/usr/lib/enigma2/python/Plugins/Extensions/Partnerbox/icons/remote_epgclock.png')
@@ -105,12 +99,12 @@ class EPGSearchList(EPGList):
 		serviceref = ServiceReference(service) # for Servicename
 		res = [
 			None, # no private data needed
-			(eListboxPythonMultiContent.TYPE_TEXT, r1.left(), r1.top(), r1.width(), r1.height(), 0, RT_HALIGN_RIGHT, self.days[t[6]]),
-			(eListboxPythonMultiContent.TYPE_TEXT, r2.left(), r2.top(), r2.width(), r1.height(), 0, RT_HALIGN_RIGHT, "%02d.%02d, %02d:%02d"%(t[2],t[1],t[3],t[4]))
+			(eListboxPythonMultiContent.TYPE_TEXT, r1.left(), r1.top(), r1.width(), r1.height(), 0, RT_HALIGN_RIGHT|RT_VALIGN_CENTER, self.days[t[6]]),
+			(eListboxPythonMultiContent.TYPE_TEXT, r2.left(), r2.top(), r2.width(), r1.height(), 0, RT_HALIGN_RIGHT|RT_VALIGN_CENTER, "%02d.%02d, %02d:%02d"%(t[2],t[1],t[3],t[4]))
 		]
 		if rec1 or rec2:
 			if rec1:			
-				clock_pic = self.getClockPixmap(service, beginTime, duration, eventId)
+				clock_types = self.getClockTypesForEntry(service, eventId, beginTime, duration)
 				# maybe Partnerbox too
 				if rec2:
 					clock_pic_partnerbox = getRemoteClockPixmap(self,service, beginTime, duration, eventId)
@@ -118,41 +112,21 @@ class EPGSearchList(EPGList):
 				clock_pic = getRemoteClockPixmap(self,service, beginTime, duration, eventId)
 			if rec1 and rec2:
 				# Partnerbox and local
+				for i in range(len(clock_types)):
+					res.append((eListboxPythonMultiContent.TYPE_PIXMAP_ALPHATEST, r3.left(), r3.top(), 21, 21, self.clocks[clock_types[i]]))
 				res.extend((
-					(eListboxPythonMultiContent.TYPE_PIXMAP_ALPHATEST, r3.left(), r3.top(), 21, 21, clock_pic),
-					(eListboxPythonMultiContent.TYPE_PIXMAP_ALPHATEST, r3.left() + 25, r3.top(), 21, 21, clock_pic_partnerbox),
-					(eListboxPythonMultiContent.TYPE_TEXT, r3.left() + 50, r3.top(), r3.width(), r3.height(), 0, RT_HALIGN_LEFT, serviceref.getServiceName() + ": " + EventName)))
+					(eListboxPythonMultiContent.TYPE_PIXMAP_ALPHATEST, r3.left() + 25, r3.top()+4, 21, 21, clock_pic_partnerbox),
+					(eListboxPythonMultiContent.TYPE_TEXT, r3.left() + 50, r3.top(), r3.width(), r3.height(), 0, RT_HALIGN_LEFT|RT_VALIGN_CENTER, serviceref.getServiceName() + ": " + EventName)))
 			else:
-				res.extend((
-					(eListboxPythonMultiContent.TYPE_PIXMAP_ALPHATEST, r3.left(), r3.top(), 21, 21, clock_pic),
-					(eListboxPythonMultiContent.TYPE_TEXT, r3.left() + 25, r3.top(), r3.width(), r3.height(), 0, RT_HALIGN_LEFT, serviceref.getServiceName() + ": " + EventName)))
+				if rec1:
+					for i in range(len(clock_types)):
+						res.append((eListboxPythonMultiContent.TYPE_PIXMAP_ALPHATEST, r3.left(), r3.top(), 21, 21, self.clocks[clock_types[i]]))
+				else:
+					res.append((eListboxPythonMultiContent.TYPE_PIXMAP_ALPHATEST, r3.left(), r3.top()+4, 21, 21, clock_pic))
+				res.append((eListboxPythonMultiContent.TYPE_TEXT, r3.left() + 25, r3.top(), r3.width(), r3.height(), 0, RT_HALIGN_LEFT|RT_VALIGN_CENTER, serviceref.getServiceName() + ": " + EventName))
 		else:
-			res.append((eListboxPythonMultiContent.TYPE_TEXT, r3.left(), r3.top(), r3.width(), r3.height(), 0, RT_HALIGN_LEFT, serviceref.getServiceName() + ": " + EventName))
+			res.append((eListboxPythonMultiContent.TYPE_TEXT, r3.left(), r3.top(), r3.width(), r3.height(), 0, RT_HALIGN_LEFT|RT_VALIGN_CENTER, serviceref.getServiceName() + ": " + EventName))
 		return res
-
-	def getClockPixmap(self, refstr, beginTime, duration, eventId):
-		pre_clock = 1
-		post_clock = 2
-		clock_type = 0
-		endTime = beginTime + duration
-		for x in self.timer.timer_list:
-			if x.service_ref.ref.toString() == refstr:
-				if x.eit == eventId:
-					return self.clock_pixmap
-				beg = x.begin
-				end = x.end
-				if beginTime > beg and beginTime < end and endTime > end:
-					clock_type |= pre_clock
-				elif beginTime < beg and endTime > beg and endTime < end:
-					clock_type |= post_clock
-		if clock_type == 0:
-			return self.clock_add_pixmap
-		elif clock_type == pre_clock:
-			return self.clock_pre_pixmap
-		elif clock_type == post_clock:
-			return self.clock_post_pixmap
-		else:
-			return self.clock_prepost_pixmap
 
 # main class of plugin
 class EPGSearch(EPGSelection):
