@@ -716,15 +716,21 @@ class SHOUTcastWidget(Screen):
 			sendUrlCommand(self.currentGoogle, None, 10).addCallback(self.GoogleImageCallback).addErrback(self.Error)
 			return
 		self.currentGoogle = None
-		foundPos = result.find("imgres?imgurl=")
-		foundPos2 = result.find("&amp;imgrefurl=")
-		if foundPos != -1 and foundPos2 != -1:
-			url=result[foundPos+14:foundPos2]
+		foundPos = FoundPos2 = 0
+		tmp = '\" src=\"'
+		if tmp in result:
+			foundPos = result.find(tmp)
+			length = len(result)
+			url = result[foundPos:length]
+			tmp = '\" width=\"'
+			if tmp in url:
+				foundPos2 = url.find(tmp) + foundPos
+		if foundPos >0 and foundPos2 >0:
+			url=result[foundPos+7:foundPos2]
 			if len(url)>15:
 				url= url.replace(" ", "%20")
 				print "download url: %s " % url
-				upperl = url.upper()
-				validurl = (".JPG" in upperl) or (".PNG" in upperl) or (".GIF" in upperl) or (".JPEG" in upperl)
+				validurl = True
 			else:
 				validurl = False
 				print "[SHOUTcast] invalid cover url or pictureformat!"
@@ -770,11 +776,11 @@ class SHOUTcastWidget(Screen):
 				self.oldtitle=sTitle
 				sTitle = sTitle.replace("Title:", "")[:55]
 				if config.plugins.shoutcast.showcover.value:
-					searchpara="album cover art "
+					searchpara="album cover "
 					if sTitle:
 						url = "http://images.google.com/search?tbm=isch&q=%s%s&biw=%s&bih=%s&ift=jpg&ift=gif&ift=png" % (quote(searchpara), quote(sTitle), config.plugins.shoutcast.coverwidth.value, config.plugins.shoutcast.coverheight.value)
 					else:
-						url = "http://images.google.com/search?tbm=isch&q=notavailable&biw=%s&bih=%s&ift=jpg&ift=gif&ift=png" % (config.plugins.shoutcast.coverwidth.value, config.plugins.shoutcast.coverheight.value)
+						url = "http://images.google.com/search?tbm=isch&q=album+cover+notavailable&biw=%s&bih=%s&ift=jpg&ift=gif&ift=png" % (config.plugins.shoutcast.coverwidth.value, config.plugins.shoutcast.coverheight.value)
 					print "[SHOUTcast] coverurl = %s " % url
 					if self.currentGoogle:
 						self.nextGoogle = url
