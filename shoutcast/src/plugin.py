@@ -716,17 +716,10 @@ class SHOUTcastWidget(Screen):
 			sendUrlCommand(self.currentGoogle, None, 10).addCallback(self.GoogleImageCallback).addErrback(self.Error)
 			return
 		self.currentGoogle = None
-		foundPos = FoundPos2 = 0
-		tmp = '\" src=\"'
-		if tmp in result:
-			foundPos = result.find(tmp)
-			length = len(result)
-			url = result[foundPos:length]
-			tmp = '\" width=\"'
-			if tmp in url:
-				foundPos2 = url.find(tmp) + foundPos
-		if foundPos >0 and foundPos2 >0:
-			url=result[foundPos+7:foundPos2]
+		foundPos = result.find("unescapedUrl\":\"")
+		foundPos2 = result.find("\",\"url\":\"")
+		if foundPos != -1 and foundPos2 != -1:
+			url=result[foundPos+15:foundPos2]
 			if len(url)>15:
 				url= url.replace(" ", "%20")
 				print "download url: %s " % url
@@ -776,11 +769,11 @@ class SHOUTcastWidget(Screen):
 				self.oldtitle=sTitle
 				sTitle = sTitle.replace("Title:", "")[:55]
 				if config.plugins.shoutcast.showcover.value:
-					searchpara="album cover "
+					searchpara="covers "
 					if sTitle:
-						url = "http://images.google.com/search?tbm=isch&q=%s%s&biw=%s&bih=%s&ift=jpg&ift=gif&ift=png" % (quote(searchpara), quote(sTitle), config.plugins.shoutcast.coverwidth.value, config.plugins.shoutcast.coverheight.value)
+						url = "http://ajax.googleapis.com/ajax/services/search/images?v=1.0&q=%s%s&biw=%s&bih=%s&ift=jpg&ift=gif&ift=png" % (quote(searchpara), quote(sTitle), config.plugins.shoutcast.coverwidth.value, config.plugins.shoutcast.coverheight.value)
 					else:
-						url = "http://images.google.com/search?tbm=isch&q=album+cover+notavailable&biw=%s&bih=%s&ift=jpg&ift=gif&ift=png" % (config.plugins.shoutcast.coverwidth.value, config.plugins.shoutcast.coverheight.value)
+						url = "http://ajax.googleapis.com/ajax/services/search/images?v=1.0&q=no+cover+pic&biw=%s&bih=%s&ift=jpg&ift=gif&ift=png" % (config.plugins.shoutcast.coverwidth.value, config.plugins.shoutcast.coverheight.value)
 					print "[SHOUTcast] coverurl = %s " % url
 					if self.currentGoogle:
 						self.nextGoogle = url
