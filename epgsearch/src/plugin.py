@@ -34,6 +34,10 @@ def eventinfo(session, *args, **kwargs):
 	ref = session.nav.getCurrentlyPlayingServiceReference()
 	session.open(EPGSearchEPGSelection, ref, True)
 
+# EPG Further Options
+def epgfurther(session, currentevent, **kwargs):
+	session.open(EPGSearch, currentevent[0].getEventName())
+
 # Movielist
 def movielist(session, service, **kwargs):
 	serviceHandler = eServiceCenter.getInstance()
@@ -69,6 +73,13 @@ def Plugins(**kwargs):
 			description = _("search EPG"),
 			where = PluginDescriptor.WHERE_MOVIELIST,
 			fnc = movielist,
+			needsRestart = False,
+		),
+		PluginDescriptor(
+			# TRANSLATORS: EPGSearch title in EPG Further Options (does not require further user interaction)
+			name = _("Search event in EPG"),
+			where = PluginDescriptor.WHERE_EVENTINFO,
+			fnc = epgfurther,
 			needsRestart = False,
 		),
 	]
