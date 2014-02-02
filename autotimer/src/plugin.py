@@ -160,6 +160,11 @@ def eventinfo(session, servicelist, **kwargs):
 	ref = session.nav.getCurrentlyPlayingServiceReference()
 	session.open(AutoTimerEPGSelection, ref)
 
+# EPG Further Options
+def epgfurther(session, currentevent, **kwargs):
+	from AutoTimerEditor import addAutotimerFromEvent
+	addAutotimerFromEvent(session, currentevent[0], currentevent[1])
+
 # XXX: we need this helper function to identify the descriptor
 # Extensions menu
 def extensionsmenu(session, **kwargs):
@@ -186,6 +191,8 @@ def Plugins(**kwargs):
 		PluginDescriptor(name="AutoTimer", description= _("add AutoTimer"), where = PluginDescriptor.WHERE_MOVIELIST, fnc = movielist, needsRestart = False),
 		# TRANSLATORS: AutoTimer title in EventInfo dialog (requires the user to select an event to base the AutoTimer on)
 		PluginDescriptor(name=_("add AutoTimer..."), where = PluginDescriptor.WHERE_EVENTINFO, fnc = eventinfo, needsRestart = False),
+		# TRANSLATORS: AutoTimer title in Further Option List
+		PluginDescriptor(name=_("Create AutoTimer"), where = PluginDescriptor.WHERE_EVENTINFO, fnc = epgfurther, needsRestart = False),
 	]
 	if config.plugins.autotimer.show_in_extensionsmenu.value:
 		l.append(extDescriptor)
