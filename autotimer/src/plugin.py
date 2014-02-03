@@ -161,9 +161,9 @@ def eventinfo(session, servicelist, **kwargs):
 	session.open(AutoTimerEPGSelection, ref)
 
 # EPG Further Options
-def epgfurther(session, currentevent, **kwargs):
+def epgfurther(session, selectedevent, **kwargs):
 	from AutoTimerEditor import addAutotimerFromEvent
-	addAutotimerFromEvent(session, currentevent[0], currentevent[1])
+	addAutotimerFromEvent(session, selectedevent[0], selectedevent[1])
 
 # XXX: we need this helper function to identify the descriptor
 # Extensions menu

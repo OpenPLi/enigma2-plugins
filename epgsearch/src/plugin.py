@@ -35,8 +35,8 @@ def eventinfo(session, *args, **kwargs):
 	session.open(EPGSearchEPGSelection, ref, True)
 
 # EPG Further Options
-def epgfurther(session, currentevent, **kwargs):
-	session.open(EPGSearch, currentevent[0].getEventName())
+def epgfurther(session, selectedevent, **kwargs):
+	session.open(EPGSearch, selectedevent[0].getEventName())
 
 # Movielist
 def movielist(session, service, **kwargs):
