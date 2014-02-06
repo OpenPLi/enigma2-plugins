@@ -939,3 +939,13 @@ msgstr ""
 #: ../autotimer/AutoTimerEditor.py:194 ../autotimer/AutoTimerImporter.py:182
 msgid "zap"
 msgstr ""
+
+#: ../autotimer/AutoTimerSettings.py:43
+msgid "Show in event menu"
+msgstr ""
+
+#: ../autotimer/AutoTimerSettings.py:43
+msgid ""
+"Enable this to add item for create the AutoTimer into event menu (needs "
+"restart GUI)."
+msgstr ""
