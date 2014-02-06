@@ -31,6 +31,7 @@ config.plugins.autotimer.editor = ConfigSelection(choices = [
 config.plugins.autotimer.addsimilar_on_conflict = ConfigEnableDisable(default = False)
 config.plugins.autotimer.disabled_on_conflict = ConfigEnableDisable(default = False)
 config.plugins.autotimer.show_in_extensionsmenu = ConfigYesNo(default = False)
+config.plugins.autotimer.show_in_furtheroptionsmenu = ConfigYesNo(default = True)
 config.plugins.autotimer.fastscan = ConfigYesNo(default = False)
 config.plugins.autotimer.notifconflict = ConfigYesNo(default = True)
 config.plugins.autotimer.notifsimilar = ConfigYesNo(default = True)
@@ -191,9 +192,10 @@ def Plugins(**kwargs):
 		PluginDescriptor(name="AutoTimer", description= _("add AutoTimer"), where = PluginDescriptor.WHERE_MOVIELIST, fnc = movielist, needsRestart = False),
 		# TRANSLATORS: AutoTimer title in EventInfo dialog (requires the user to select an event to base the AutoTimer on)
 		PluginDescriptor(name=_("add AutoTimer..."), where = PluginDescriptor.WHERE_EVENTINFO, fnc = eventinfo, needsRestart = False),
-		# TRANSLATORS: AutoTimer title in Further Option List
-		PluginDescriptor(name=_("Create AutoTimer"), where = PluginDescriptor.WHERE_EVENTINFO, fnc = epgfurther, needsRestart = False),
 	]
+	if config.plugins.autotimer.show_in_furtheroptionsmenu.value:
+		# TRANSLATORS: AutoTimer title in Further Options List
+		l.append(PluginDescriptor(name=_("Create AutoTimer"), where = PluginDescriptor.WHERE_EVENTINFO, fnc = epgfurther, needsRestart = False))
 	if config.plugins.autotimer.show_in_extensionsmenu.value:
 		l.append(extDescriptor)
 	return l
