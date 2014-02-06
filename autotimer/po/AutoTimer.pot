@@ -949,3 +949,7 @@ msgid ""
 "Enable this to add item for create the AutoTimer into event menu (needs "
 "restart GUI)."
 msgstr ""
+
+#: #: ../autotimer/plugin.py:198
+msgid "Create AutoTimer"
+msgstr ""
