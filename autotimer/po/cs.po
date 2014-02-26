@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ims\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-02-17 15:07+0100\n"
-"PO-Revision-Date: 2014-02-06 22:16+0100\n"
+"PO-Revision-Date: 2014-02-26 22:18+0100\n"
 "Last-Translator: ims <ims21@users.sourceforge.net>\n"
 "Language-Team: PLi <ims21@users.sourceforge.net>\n"
 "Language: \n"
@@ -624,7 +624,7 @@ msgstr "Pro zakázání tohoto AutoTimeru nastavte Ne."
 
 #: ../autotimer/AutoTimerOverview.py:221
 msgid "Setup"
-msgstr "Nastavení"
+msgstr "Nastavení..."
 
 #: ../autotimer/AutoTimerEditor.py:496
 msgid "Should this AutoTimer be restricted to a timespan?"
@@ -940,7 +940,7 @@ msgstr "Zobrazit v menu události"
 
 #: ../autotimer/AutoTimerSettings.py:43
 msgid "Enable this to add item for create the AutoTimer into event menu (needs restart GUI)."
-msgstr "Přidá položku pro založení Autotimeru v menu události (potřebuje restart Enigmy)."
+msgstr "Přidá položku pro založení Autotimeru v menu události (potřeba restartu Enigma)."
 
 #: #:
 #: ../autotimer/plugin.py:198
