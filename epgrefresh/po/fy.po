@@ -97,3 +97,9 @@ msgstr "Ut de djippe sliipstand komme om de EPG te ferfaskjen."
 msgid "delete"
 msgstr "Ferwiderje"
 
+msgid "Show in event menu"
+msgstr ""
+
+msgid "Enable this to be able to add current service into EPGRefresh from event menu."
+msgstr ""
+

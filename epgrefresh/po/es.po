@@ -97,3 +97,8 @@ msgstr "Despertar desde Reposo-Profundo a refrescar EPG"
 msgid "delete"
 msgstr "borrar"
 
+msgid "Show in event menu"
+msgstr ""
+
+msgid "Enable this to be able to add current service into EPGRefresh from event menu."
+msgstr ""

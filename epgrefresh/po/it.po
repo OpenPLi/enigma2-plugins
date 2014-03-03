@@ -256,6 +256,12 @@ msgstr "Aggiornare automaticamente EPG"
 msgid "add to EPGRefresh"
 msgstr "aggiungere a EPGRefresh"
 
+msgid "Show in event menu"
+msgstr ""
+
+msgid "Enable this to be able to add current service into EPGRefresh from event menu."
+msgstr ""
+
 #~ msgid "Configure EPGRefresh"
 #~ msgstr "Configurare Agg. automatizzato EPG"
 

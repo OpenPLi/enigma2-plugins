@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Enigma2 EPGRefresh Plugin\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-05-30 20:50+0100\n"
-"PO-Revision-Date: 2014-02-26 08:28+0100\n"
+"PO-Revision-Date: 2014-03-03 17:28+0100\n"
 "Last-Translator: ims <ims21@users.sourceforge.net>\n"
 "Language-Team: PLi\n"
 "MIME-Version: 1.0\n"
@@ -252,6 +252,12 @@ msgstr "Automatická aktualizace EPG"
 #: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/plugin.py:179
 msgid "add to EPGRefresh"
 msgstr "Přidat do EPGRefresh"
+
+msgid "Show in event menu"
+msgstr "Zobrazovat v menu události"
+
+msgid "Enable this to be able to add current service into EPGRefresh from event menu."
+msgstr "Povolením bude možné z menu události přidávat aktuální program do EPGRefresh"
 
 #~ msgid "Refresh EPG after"
 #~ msgstr "Aktualisiere nach"

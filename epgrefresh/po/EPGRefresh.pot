@@ -255,3 +255,8 @@ msgstr ""
 msgid "add to EPGRefresh"
 msgstr ""
 
+msgid "Show in event menu"
+msgstr ""
+
+msgid "Enable this to be able to add current service into EPGRefresh from event menu."
+msgstr ""

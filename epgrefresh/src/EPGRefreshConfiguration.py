@@ -21,7 +21,7 @@ from Components.config import config, getConfigListEntry
 from EPGRefresh import epgrefresh
 from Components.SystemInfo import SystemInfo
 
-VERSION = "1.0.0"
+VERSION = "1.0.1"
 
 class EPGRefreshConfiguration(Screen, ConfigListScreen):
 	"""Configuration of EPGRefresh"""
@@ -59,6 +59,7 @@ class EPGRefreshConfiguration(Screen, ConfigListScreen):
 		self.list = [
 			getConfigListEntry(_("Refresh EPG automatically"), config.plugins.epgrefresh.enabled, _("Unless this is enabled, EPGRefresh won't automatically run but needs to be explicitly started by the yellow button in this menu.")),
 			getConfigListEntry(_("Show in extension menu"), config.plugins.epgrefresh.show_in_extensionsmenu, _("Enable this to be able to access the EPGRefresh configuration from within the extension menu.")),
+			getConfigListEntry(_("Show in event menu"), config.plugins.epgrefresh.show_in_eventmenu, _("Enable this to be able to add current service into EPGRefresh from event menu.")),
 			getConfigListEntry(_("Show popup when refresh starts and ends"), config.plugins.epgrefresh.enablemessage, _("This setting controls whether or not an informational message will be shown at start and completion of refresh.")),
 			getConfigListEntry(_("Wake up from deep standby for EPG refresh"), config.plugins.epgrefresh.wakeup, _("If this is enabled, the plugin will wake up the receiver from deep standby if possible. Otherwise it needs to be switched on already.")),
 			getConfigListEntry(_("Duration to stay on service-channels (minutes)"), config.plugins.epgrefresh.interval, _("This is the duration each service/channel will stay active during a refresh.")),

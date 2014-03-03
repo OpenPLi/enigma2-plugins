@@ -202,3 +202,9 @@ msgstr "بازآوری خودکار برنامه راهنما الکترونیک
 msgid "add to EPGRefresh"
 msgstr "اضافه کردن به برنامه راهنما الکترونیک"
 
+msgid "Show in event menu"
+msgstr ""
+
+msgid "Enable this to be able to add current service into EPGRefresh from event menu."
+msgstr ""
+

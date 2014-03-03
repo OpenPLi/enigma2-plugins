@@ -41,6 +41,7 @@ config.plugins.epgrefresh.adapter = ConfigSelection(choices = [
 	], default = "main"
 )
 config.plugins.epgrefresh.show_in_extensionsmenu = ConfigYesNo(default = False)
+config.plugins.epgrefresh.show_in_eventmenu = ConfigYesNo(default = False)
 config.plugins.epgrefresh.show_help = ConfigYesNo(default = True)
 
 # convert previous parameter
@@ -187,7 +188,7 @@ def housekeepingExtensionsmenu(el):
 
 config.plugins.epgrefresh.show_in_extensionsmenu.addNotifier(housekeepingExtensionsmenu, initial_call = False, immediate_feedback = True)
 extDescriptor = PluginDescriptor(name="EPGRefresh", description = _("Automatically refresh EPG"), where = PluginDescriptor.WHERE_EXTENSIONSMENU, fnc = extensionsmenu, needsRestart=False)
-
+eventDescriptor = PluginDescriptor(name=_("add to EPGRefresh"), where=PluginDescriptor.WHERE_EVENTINFO, fnc=eventinfo, needsRestart=False)
 def Plugins(**kwargs):
 	# NOTE: this might be a little odd to check this, but a user might expect
 	# the plugin to resume normal operation if installed during runtime, but
@@ -208,12 +209,7 @@ def Plugins(**kwargs):
 			wakeupfnc = getNextWakeup,
 			needsRestart = needsRestart,
 		),
-		PluginDescriptor(
-			name = _("add to EPGRefresh"),
-			where = PluginDescriptor.WHERE_EVENTINFO,
-			fnc = eventinfo,
-			needsRestart = needsRestart,
-		),
+
 		PluginDescriptor(
 			name = "EPGRefresh",
 			description = _("Automatically refresh EPG"),
@@ -222,6 +218,9 @@ def Plugins(**kwargs):
 			needsRestart = needsRestart,
 		),
 	]
+	if config.plugins.epgrefresh.show_in_eventmenu.value:
+		eventDescriptor.needsRestart = needsRestart
+		list.append(eventDescriptor)
 	if config.plugins.epgrefresh.show_in_extensionsmenu.value:
 		extDescriptor.needsRestart = needsRestart
 		list.append(extDescriptor)

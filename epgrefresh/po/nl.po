@@ -107,3 +107,9 @@ msgstr "toevoegen aan EPGRefresh"
 msgid "delete"
 msgstr "Verwijderen"
 
+msgid "Show in event menu"
+msgstr ""
+
+msgid "Enable this to be able to add current service into EPGRefresh from event menu."
+msgstr ""
+
