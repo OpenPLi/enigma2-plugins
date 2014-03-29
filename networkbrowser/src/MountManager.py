@@ -11,7 +11,7 @@ from Components.Network import iNetwork
 from Components.Sources.List import List
 from Tools.LoadPixmap import LoadPixmap
 from Tools.Directories import resolveFilename, SCOPE_PLUGINS, SCOPE_SKIN_IMAGE
-from os import path as os_path
+from os import path as os_path, listdir
 
 from MountView import AutoMountView
 from MountEdit import AutoMountEdit
@@ -72,7 +72,13 @@ class AutoMountManager(Screen):
 		okpng = LoadPixmap(cached=True, path=resolveFilename(SCOPE_PLUGINS, "SystemPlugins/NetworkBrowser/icons/ok.png"))
 		self.list.append((_("Add new network mount point"),"add", _("Add a new NFS or CIFS mount point to your Dreambox."), okpng ))
 		self.list.append((_("Mountpoints management"),"view", _("View, edit or delete mountpoints on your Dreambox."), okpng ))
-		self.list.append((_("User management"),"user", _("View, edit or delete usernames and passwords for your network."), okpng))
+		for file in listdir('/etc/enigma2'):
+			if file.endswith('.cache'):
+				if file == 'networkbrowser.cache':
+					continue
+				else:
+					self.list.append((_("User management"),"user", _("View, edit or delete usernames and passwords for your network."), okpng))
+					break
 		self.list.append((_("Change hostname"),"hostname", _("Change the hostname of your Dreambox."), okpng))
 		self["config"].setList(self.list)
 
