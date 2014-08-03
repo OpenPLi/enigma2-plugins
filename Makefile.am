@@ -18,7 +18,6 @@ SUBDIRS = \
 	dyndns \
 	easyinfo \
 	easymedia \
-	ecasa \
 	eibox \
 	elektro \
 	emailclient \
@@ -34,7 +33,6 @@ SUBDIRS = \
 	httpproxy \
 	imdb \
 	kiddytimer \
-	lastfm \
 	letterbox \
 	logomanager \
 	mediadownloader \
@@ -57,7 +55,6 @@ SUBDIRS = \
 	orfteletext \
 	partnerbox \
 	permanentclock \
-	podcast \
 	porncenter \
 	quickbutton \
 	reconstructapsc \
