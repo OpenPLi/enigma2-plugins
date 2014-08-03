@@ -77,7 +77,6 @@ SUBDIRS = \
 	vps \
 	weatherplugin \
 	webcamviewer \
-	webbouqueteditor \
 	werbezapper \
 	youtubeplayer \
 	zaphistorybrowser \
@@ -88,6 +87,7 @@ if TPM
 SUBDIRS += \
 	mytube \
 	yttrailer \
+	webbouqueteditor \
 	webinterface
 endif
 
