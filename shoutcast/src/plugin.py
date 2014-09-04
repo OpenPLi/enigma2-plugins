@@ -117,7 +117,6 @@ class myHTTPClientFactory(HTTPClientFactory):
 		connector.connect()
 
 def sendUrlCommand(url, contextFactory=None, timeout=60, *args, **kwargs):
-	# scheme, host, port, path = client._parse(url)
 	parsed = urlparse(url)
 	scheme = parsed.scheme
 	host = parsed.hostname
