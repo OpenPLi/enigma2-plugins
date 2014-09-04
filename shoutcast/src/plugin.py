@@ -21,6 +21,7 @@
 #
 
 from Plugins.Plugin import PluginDescriptor
+from urlparse import urlparse
 from Screens.Screen import Screen
 from Components.ActionMap import ActionMap
 from Components.Label import Label
@@ -116,7 +117,13 @@ class myHTTPClientFactory(HTTPClientFactory):
 		connector.connect()
 
 def sendUrlCommand(url, contextFactory=None, timeout=60, *args, **kwargs):
-	scheme, host, port, path = client._parse(url)
+	# scheme, host, port, path = client._parse(url)
+	parsed = urlparse(url)
+	scheme = parsed.scheme
+	host = parsed.hostname
+	port = parsed.port or (443 if scheme == 'https' else 80)
+	path = parsed.path or '/'
+
 	factory = myHTTPClientFactory(url, *args, **kwargs)
 	# print "scheme=%s host=%s port=%s path=%s\n" % (scheme, host, port, path)
 	reactor.connectTCP(host, port, factory, timeout=timeout)
