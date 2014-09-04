@@ -1,10 +1,16 @@
 from twisted.internet import reactor
-from twisted.web.client import HTTPClientFactory, HTTPPageDownloader, _parse
+from twisted.web.client import HTTPClientFactory, HTTPPageDownloader
+from urlparse import urlparse
 
 valid_types = ("MP3","PLS") #list of playable mediatypes
 
 def getPage(url, contextFactory=None, *args, **kwargs):
-	scheme, host, port, path = _parse(url)
+	parsed = urlparse(url)
+	scheme = parsed.scheme
+	host = parsed.hostname
+	port = parsed.port or (443 if scheme == 'https' else 80)
+	path = parsed.path or '/'
+
 	factory = LimitedHTTPClientFactory(url, *args, **kwargs)
 	if scheme == 'https':
 		from twisted.internet import ssl 
