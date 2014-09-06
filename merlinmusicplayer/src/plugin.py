@@ -41,6 +41,7 @@ from Components.GUIComponent import GUIComponent
 from enigma import ePicLoad
 from xml.etree.cElementTree import fromstring as cet_fromstring
 from urllib import quote
+from urlparse import urlparse
 from Components.ScrollLabel import ScrollLabel
 from Components.AVSwitch import AVSwitch
 from Tools.Directories import fileExists, resolveFilename, SCOPE_CURRENT_SKIN
@@ -289,7 +290,10 @@ class myHTTPClientFactory(HTTPClientFactory):
 		headers=headers, agent=agent, timeout=timeout, cookies=cookies,followRedirect=followRedirect)
 
 def sendUrlCommand(url, contextFactory=None, timeout=60, *args, **kwargs):
-	scheme, host, port, path = client._parse(url)
+	parsed = urlparse(url)
+	scheme = parsed.scheme
+	host = parsed.hostname
+	port = parsed.port or (443 if scheme == 'https' else 80)
 	factory = myHTTPClientFactory(url, *args, **kwargs)
 	reactor.connectTCP(host, port, factory, timeout=timeout)
 	return factory.deferred
