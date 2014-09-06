@@ -215,7 +215,11 @@ class myHTTPClientFactory(HTTPClientFactory):
 
 
 def sendPartnerBoxWebCommand(url, contextFactory=None, timeout=60, username = "root", password = "", *args, **kwargs):
-	scheme, host, port, path = client._parse(url)
+	from urlparse import urlparse
+	parsed = urlparse(url)
+	scheme = parsed.scheme
+	host = parsed.hostname
+	port = parsed.port or (443 if scheme == 'https' else 80)
 	basicAuth = encodestring(("%s:%s")%(username,password))
 	authHeader = "Basic " + basicAuth.strip()
 	AuthHeaders = {"Authorization": authHeader}
