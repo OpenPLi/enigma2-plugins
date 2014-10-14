@@ -354,7 +354,7 @@ class EPGRefresh:
 			# Start Timer
 			delay = service.duration or config.plugins.epgrefresh.interval.value
 			epgrefreshtimer.add(EPGRefreshTimerEntry(
-				time() + delay*60,
+				time() + (delay*60 or 20),
 				self.refresh,
 				nocheck = True)
 			)

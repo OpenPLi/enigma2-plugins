@@ -9,6 +9,9 @@ from Tools import Notifications
 # Config
 from Components.config import config
 
+# eServiceReference
+from enigma import eServiceReference
+
 class MainPictureAdapter:
 	backgroundCapable = True
 	def __init__(self, session):
@@ -18,6 +21,8 @@ class MainPictureAdapter:
 		if config.plugins.epgrefresh.enablemessage.value:
 			Notifications.AddNotification(MessageBox, _("EPG refresh starts scanning channels."), type=MessageBox.TYPE_INFO, timeout=4)
 		self.previousService = self.navcore.getCurrentlyPlayingServiceReference()
+		if self.previousService is None and Screens.Standby.inStandby:
+			self.previousService = eServiceReference(config.tv.lastservice.value)
 		return True
 
 	def play(self, service):
