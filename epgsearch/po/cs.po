@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Enigma 2 EPGSearch Plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-02-06 18:28+0100\n"
-"PO-Revision-Date: 2014-11-22 15:49+0100\n"
+"POT-Creation-Date: 2014-11-22 20:42+0100\n"
+"PO-Revision-Date: 2014-11-22 20:44+0100\n"
 "Last-Translator: ims <ims21@users.sourceforge.net>\n"
 "Language-Team: PLi <ims21@users.sourceforge.net>\n"
 "Language: \n"
@@ -14,134 +14,105 @@ msgstr ""
 "X-Poedit-Country: CZECH REPUBLIC\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 
-#: src/EPGSearch.py:72
-#: src/EPGSearch.py:448
 msgid "Search"
 msgstr "Hledat"
 
-#: src/EPGSearch.py:141
 msgid "New Search"
 msgstr "Nové hledání"
 
-#: src/EPGSearch.py:142
 msgid "History"
 msgstr "Historie"
 
-#: src/EPGSearch.py:157
 msgid "Add timer"
 msgstr "Přidat časovač"
 
-#: src/EPGSearch.py:200
 msgid "EPG Search"
 msgstr "EPG Search"
 
-#: src/EPGSearch.py:229
 msgid "Enter text to search for"
 msgstr "Zadejte text pro hledání"
 
-#: src/EPGSearch.py:234
 msgid "Import from Timer"
 msgstr "Import z Časovače"
 
-#: src/EPGSearch.py:235
 msgid "Import from EPG"
 msgstr "Import z EPG"
 
-#: src/EPGSearch.py:240
 msgid "Import from AutoTimer"
 msgstr "Import z AutoTimeru"
 
-#: src/EPGSearch.py:241
 msgid "Save search as AutoTimer"
 msgstr "Uložit hledání jako AutoTimer"
 
-#: src/EPGSearch.py:242
 msgid "Export selected as AutoTimer"
 msgstr "Exportovat vybrané jako AutoTimer"
 
-#: src/EPGSearch.py:245
 msgid "Setup"
 msgstr "Nastavení..."
 
-#: src/EPGSearch.py:286
 #, python-format
 msgid "Could not read AutoTimer timer list: %s"
 msgstr "Nepodařilo se načíst seznam časovačů AutoTimeru: %s"
 
-#: src/EPGSearch.py:297
-#: src/EPGSearch.py:324
 msgid "Select text to search for"
 msgstr "Výběr textu pro hledání"
 
-#: src/EPGSearch.py:330
 msgid "No history"
 msgstr "Žádná historie"
 
-#: src/EPGSearch.py:382
-#: src/EPGSearchSetup.py:59
 msgid "Cancel"
 msgstr "Zrušit"
 
-#: src/EPGSearch.py:383
-#: src/EPGSearchSetup.py:58
 msgid "OK"
 msgstr "OK"
 
-#: src/EPGSearch.py:397
 msgid "Select a timer to search"
 msgstr "Výběr časovače pro hledání"
 
-#: src/EPGSearch.py:420
 msgid "Channel Selection"
 msgstr "Výběr kanálu"
 
-#: src/plugin.py:60
 msgid "Search EPG"
 msgstr "Prohledat EPG"
 
-#: src/plugin.py:67
 msgid "search EPG..."
 msgstr "hledat v EPG..."
 
-#: src/plugin.py:74
 msgid "search EPG"
 msgstr "Prohledat EPG"
 
-#: src/plugin.py:81
 msgid "Search event in EPG"
 msgstr "Najít událost v EPG"
 
-#: src/EPGSearchSetup.py:33
-#: src/EPGSearchSetup.py:76
 msgid "EPGSearch Setup"
 msgstr "Nastavení EPGSearch"
 
-#: src/EPGSearchSetup.py:39
 msgid "Length of History"
 msgstr "Délka historie"
 
-#: src/EPGSearchSetup.py:39
 msgid "How many entries to keep in the search history at most. 0 disables history entirely!"
 msgstr "Kolik položek je udržováno v historii hledání. 0 zakáže historii úplně! "
 
-#: src/EPGSearchSetup.py:40
 msgid "Add \"Search\" Button to EPG"
 msgstr "Přidat tlačítko \"Hledání\" do EPG"
 
-#: src/EPGSearchSetup.py:40
 msgid "If this setting is enabled, the plugin adds a \"Search\" Button to the regular EPG."
 msgstr "Jestliže je povoleno, plugin přidá tlačítko \"EPG Search\" do EPG."
 
-#: src/EPGSearchSetup.py:41
 msgid "Add \"Search event in EPG\" to event menu"
 msgstr "Přidat \"Najít událost v EPG\" do menu události"
 
-#: src/EPGSearchSetup.py:41
-msgid "Adds \"Search event in EPG\" item into the event menu (needs restart GUI)"
-msgstr "Přidá položku \"Najít událost v EPG\" do menu události (potřeba restartovat Enigma)."
+msgid "Adds \"Search event in EPG\" item into the event menu."
+msgstr "Přidá \"Najít událost v EPG\" do menu události."
 
 msgid "Add \"Search event in EPG\" to channel menu"
 msgstr "Přidat \"Najít událost v EPG\" do menu kanálů"
 
-msgid "Adds \"Search event in EPG\" item into the channel selection context menu (needs restart GUI)"
-msgstr "Přidá položku \"Najít událost v EPG\" do menu přehledu kanálů (potřeba restartovat Enigma)."
+msgid "Adds \"Search event in EPG\" item into the channel selection context menu."
+msgstr "Přidá položku \"Najít událost v EPG\" do menu přehledu kanálů."
+
+#~ msgid ""
+#~ "Adds \"Search event in EPG\" item into the event menu (needs restart GUI)"
+#~ msgstr ""
+#~ "Přidá položku \"Najít událost v EPG\" do menu události (potřeba "
+#~ "restartovat Enigma)."

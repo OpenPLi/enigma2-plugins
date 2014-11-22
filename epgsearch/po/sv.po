@@ -2,10 +2,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Enigma 2 EPGSearch Plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-09 14:20+0100\n"
-"PO-Revision-Date: 2012-12-16 11:57+0100\n"
+"POT-Creation-Date: 2014-11-22 20:42+0100\n"
+"PO-Revision-Date: 2014-11-22 20:47+0100\n"
 "Last-Translator: Magnus Nilsson <mag_nilsson@hotmail.com>\n"
 "Language-Team: none\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -16,116 +17,101 @@ msgstr ""
 "X-Poedit-SourceCharset: utf-8\n"
 "X-Poedit-SearchPath-0: ../src\n"
 
-#: ../src/EPGSearch.py:71
-#: ../src/EPGSearch.py:195
-msgid "EPG Search"
-msgstr "EPG sökning"
+msgid "Search"
+msgstr "Sök"
 
-#: ../src/EPGSearch.py:136
 msgid "New Search"
 msgstr "Ny sökning"
 
-#: ../src/EPGSearch.py:137
 msgid "History"
 msgstr "Historik"
 
-#: ../src/EPGSearch.py:152
 msgid "Add timer"
 msgstr "Lägg till timer"
 
-#: ../src/EPGSearch.py:219
+msgid "EPG Search"
+msgstr "EPG sökning"
+
 msgid "Enter text to search for"
 msgstr "Skriv in text att söka efter"
 
-#: ../src/EPGSearch.py:224
 msgid "Import from Timer"
 msgstr "Importera från timer"
 
-#: ../src/EPGSearch.py:225
 msgid "Import from EPG"
 msgstr "Importera från EPG"
 
-#: ../src/EPGSearch.py:230
 msgid "Import from AutoTimer"
 msgstr "Importera från AutoTimer"
 
-#: ../src/EPGSearch.py:231
 msgid "Save search as AutoTimer"
 msgstr "Spara sökning som AutoTimer"
 
-#: ../src/EPGSearch.py:232
 msgid "Export selected as AutoTimer"
 msgstr "Exportera vald som AutoTimer"
 
-#: ../src/EPGSearch.py:235
 msgid "Setup"
 msgstr "Inställning"
 
-#: ../src/EPGSearch.py:276
 #, python-format
 msgid "Could not read AutoTimer timer list: %s"
 msgstr "Kunde inte läsa timerlistan för AutoTimer: %s"
 
-#: ../src/EPGSearch.py:287
-#: ../src/EPGSearch.py:314
 msgid "Select text to search for"
 msgstr "Välj text att söka efter"
 
-#: ../src/EPGSearch.py:320
 msgid "No history"
 msgstr "Ingen historik"
 
-#: ../src/EPGSearch.py:372
-#: ../src/EPGSearchSetup.py:58
 msgid "Cancel"
 msgstr "Avbryt"
 
-#: ../src/EPGSearch.py:373
-#: ../src/EPGSearchSetup.py:57
 msgid "OK"
 msgstr "OK"
 
-#: ../src/EPGSearch.py:387
 msgid "Select a timer to search"
 msgstr "Välj en timer för sökning"
 
-#: ../src/EPGSearch.py:410
 msgid "Channel Selection"
 msgstr "Kanalval"
 
-#: ../src/EPGSearch.py:438
-msgid "Search"
-msgstr "Sök"
-
-#: ../src/EPGSearchSetup.py:33
-#: ../src/EPGSearchSetup.py:75
-msgid "EPGSearch Setup"
-msgstr "Inställningar för EPG Sökning"
-
-#: ../src/EPGSearchSetup.py:39
-msgid "Length of History"
-msgstr "Längd på historik"
-
-#: ../src/EPGSearchSetup.py:39
-msgid "How many entries to keep in the search history at most. 0 disables history entirely!"
-msgstr "Hur många poster som skall vara i sökhistoriken som mest. 0 inaktiverar historia helt!"
-
-#: ../src/EPGSearchSetup.py:40
-msgid "Add \"Search\" Button to EPG"
-msgstr "Lägg \"Sök\" knappen till EPG"
-
-#: ../src/EPGSearchSetup.py:40
-msgid "If this setting is enabled, the plugin adds a \"Search\" Button to the regular EPG."
-msgstr "Om denna inställning är aktiverad, kommer pluginet att lägga till \"sök\" knapp till den vanliga EPG:n."
-
-#: ../src/plugin.py:55
 msgid "Search EPG"
 msgstr "Sök EPG"
 
-#: ../src/plugin.py:62
 msgid "search EPG..."
 msgstr "Sök EPG..."
 
-#: ../src/plugin.py:69
 msgid "search EPG"
 msgstr "Sök EPG"
+
+#, fuzzy
+msgid "Search event in EPG"
+msgstr "Sök EPG"
+
+msgid "EPGSearch Setup"
+msgstr "Inställningar för EPG Sökning"
+
+msgid "Length of History"
+msgstr "Längd på historik"
+
+msgid "How many entries to keep in the search history at most. 0 disables history entirely!"
+msgstr "Hur många poster som skall vara i sökhistoriken som mest. 0 inaktiverar historia helt!"
+
+msgid "Add \"Search\" Button to EPG"
+msgstr "Lägg \"Sök\" knappen till EPG"
+
+msgid "If this setting is enabled, the plugin adds a \"Search\" Button to the regular EPG."
+msgstr "Om denna inställning är aktiverad, kommer pluginet att lägga till \"sök\" knapp till den vanliga EPG:n."
+
+msgid "Add \"Search event in EPG\" to event menu"
+msgstr ""
+
+msgid "Adds \"Search event in EPG\" item into the event menu."
+msgstr ""
+
+msgid "Add \"Search event in EPG\" to channel menu"
+msgstr ""
+
+msgid "Adds \"Search event in EPG\" item into the channel selection context menu."
+msgstr ""
+

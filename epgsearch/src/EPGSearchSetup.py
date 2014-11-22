@@ -38,8 +38,8 @@ class EPGSearchSetup(Screen, ConfigListScreen):
 			[
 				getConfigListEntry(_("Length of History"), config.plugins.epgsearch.history_length, _("How many entries to keep in the search history at most. 0 disables history entirely!")),
 				getConfigListEntry(_("Add \"Search\" Button to EPG"), config.plugins.epgsearch.add_search_to_epg , _("If this setting is enabled, the plugin adds a \"Search\" Button to the regular EPG.")),
-				getConfigListEntry(_("Add \"Search event in EPG\" to event menu"), config.plugins.epgsearch.show_in_furtheroptionsmenu, _("Adds \"Search event in EPG\" item into the event menu (needs restart GUI)")),
-				getConfigListEntry(_("Add \"Search event in EPG\" to channel menu"), config.plugins.epgsearch.search_in_channelmenu, _("Adds \"Search event in EPG\" item into the channel selection context menu (needs restart GUI)")),
+				getConfigListEntry(_("Add \"Search event in EPG\" to event menu"), config.plugins.epgsearch.show_in_furtheroptionsmenu, _("Adds \"Search event in EPG\" item into the event menu.")),
+				getConfigListEntry(_("Add \"Search event in EPG\" to channel menu"), config.plugins.epgsearch.search_in_channelmenu, _("Adds \"Search event in EPG\" item into the channel selection context menu.")),
 			],
 			session = session,
 			on_change = self.changed
@@ -64,7 +64,7 @@ class EPGSearchSetup(Screen, ConfigListScreen):
 		self["actions"] = ActionMap(["SetupActions"],
 			{
 				"cancel": self.keyCancel,
-				"save": self.keySave,
+				"save": self.save,
 			}
 		)
 
@@ -94,3 +94,12 @@ class EPGSearchSetup(Screen, ConfigListScreen):
 	def createSummary(self):
 		return SetupSummary
 
+	def save(self):
+		self.keySave()
+		self.refreshPlugins()
+
+	def refreshPlugins(self):
+		from Components.PluginComponent import plugins
+		from Tools.Directories import SCOPE_PLUGINS, resolveFilename
+		plugins.clearPluginList()
+		plugins.readPluginList(resolveFilename(SCOPE_PLUGINS))

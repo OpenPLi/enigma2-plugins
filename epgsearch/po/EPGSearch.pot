@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-02-06 18:28+0100\n"
+"POT-Creation-Date: 2014-11-22 20:42+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,128 +17,104 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/EPGSearch.py:72 src/EPGSearch.py:448
 msgid "Search"
 msgstr ""
 
-#: src/EPGSearch.py:141
 msgid "New Search"
 msgstr ""
 
-#: src/EPGSearch.py:142
 msgid "History"
 msgstr ""
 
-#: src/EPGSearch.py:157
 msgid "Add timer"
 msgstr ""
 
-#: src/EPGSearch.py:200
 msgid "EPG Search"
 msgstr ""
 
-#: src/EPGSearch.py:229
 msgid "Enter text to search for"
 msgstr ""
 
-#: src/EPGSearch.py:234
 msgid "Import from Timer"
 msgstr ""
 
-#: src/EPGSearch.py:235
 msgid "Import from EPG"
 msgstr ""
 
-#: src/EPGSearch.py:240
 msgid "Import from AutoTimer"
 msgstr ""
 
-#: src/EPGSearch.py:241
 msgid "Save search as AutoTimer"
 msgstr ""
 
-#: src/EPGSearch.py:242
 msgid "Export selected as AutoTimer"
 msgstr ""
 
-#: src/EPGSearch.py:245
 msgid "Setup"
 msgstr ""
 
-#: src/EPGSearch.py:286
 #, python-format
 msgid "Could not read AutoTimer timer list: %s"
 msgstr ""
 
-#: src/EPGSearch.py:297 src/EPGSearch.py:324
 msgid "Select text to search for"
 msgstr ""
 
-#: src/EPGSearch.py:330
 msgid "No history"
 msgstr ""
 
-#: src/EPGSearch.py:382 src/EPGSearchSetup.py:59
 msgid "Cancel"
 msgstr ""
 
-#: src/EPGSearch.py:383 src/EPGSearchSetup.py:58
 msgid "OK"
 msgstr ""
 
-#: src/EPGSearch.py:397
 msgid "Select a timer to search"
 msgstr ""
 
-#: src/EPGSearch.py:420
 msgid "Channel Selection"
 msgstr ""
 
-#: src/plugin.py:60
 msgid "Search EPG"
 msgstr ""
 
-#: src/plugin.py:67
 msgid "search EPG..."
 msgstr ""
 
-#: src/plugin.py:74
 msgid "search EPG"
 msgstr ""
 
-#: src/plugin.py:81
 msgid "Search event in EPG"
 msgstr ""
 
-#: src/EPGSearchSetup.py:33 src/EPGSearchSetup.py:76
 msgid "EPGSearch Setup"
 msgstr ""
 
-#: src/EPGSearchSetup.py:39
 msgid "Length of History"
 msgstr ""
 
-#: src/EPGSearchSetup.py:39
 msgid ""
 "How many entries to keep in the search history at most. 0 disables history "
 "entirely!"
 msgstr ""
 
-#: src/EPGSearchSetup.py:40
 msgid "Add \"Search\" Button to EPG"
 msgstr ""
 
-#: src/EPGSearchSetup.py:40
 msgid ""
 "If this setting is enabled, the plugin adds a \"Search\" Button to the "
 "regular EPG."
 msgstr ""
 
-#: src/EPGSearchSetup.py:41
 msgid "Add \"Search event in EPG\" to event menu"
 msgstr ""
 
-#: src/EPGSearchSetup.py:41
+msgid "Adds \"Search event in EPG\" item into the event menu."
+msgstr ""
+
+msgid "Add \"Search event in EPG\" to channel menu"
+msgstr ""
+
 msgid ""
-"Adds \"Search event in EPG\" item into the event menu (needs restart GUI)"
+"Adds \"Search event in EPG\" item into the channel selection context menu."
 msgstr ""

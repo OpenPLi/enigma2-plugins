@@ -7,29 +7,29 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2 - epgsearch\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-09-26 14:41+0200\n"
-"PO-Revision-Date: 2009-09-27 11:07+0100\n"
-"Last-Translator: \n"
+"POT-Creation-Date: 2014-11-22 20:42+0100\n"
+"PO-Revision-Date: 2014-11-22 20:46+0100\n"
+"Last-Translator: Benny <Benny.DeTandt@gmail.com>\n"
 "Language-Team:  <Benny.DeTandt@gmail.com>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-Language: Dutch\n"
 "X-Poedit-Country: NETHERLANDS\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+msgid "Search"
+msgstr "Zoeken"
+
+msgid "New Search"
+msgstr "Nieuw"
+
+msgid "History"
+msgstr "Historiek"
+
 msgid "Add timer"
 msgstr "Voeg timer toe"
-
-msgid "Cancel"
-msgstr "Annuleren"
-
-msgid "Channel Selection"
-msgstr "Zenderkeuze"
-
-#, python-format
-msgid "Could not read AutoTimer timer list: %s"
-msgstr "Kan AutoTimer timer lijst niet lezen : %s"
 
 msgid "EPG Search"
 msgstr "EPG doorzoeken"
@@ -37,47 +37,84 @@ msgstr "EPG doorzoeken"
 msgid "Enter text to search for"
 msgstr "Voer te zoeken tekst in:"
 
-msgid "Export selected as AutoTimer"
-msgstr "Exporteer het geselecteerde als AutoTimer"
-
-msgid "History"
-msgstr "Historiek"
-
-msgid "Import from AutoTimer"
-msgstr "Importeren uit AutoTimer"
+msgid "Import from Timer"
+msgstr "Importeren uit de timer"
 
 msgid "Import from EPG"
 msgstr "Uit de EPG importeren"
 
-msgid "Import from Timer"
-msgstr "Importeren uit de timer"
-
-msgid "New Search"
-msgstr "Nieuw"
-
-msgid "No history"
-msgstr "Geen historiek"
-
-msgid "OK"
-msgstr "OK"
+msgid "Import from AutoTimer"
+msgstr "Importeren uit AutoTimer"
 
 msgid "Save search as AutoTimer"
 msgstr "Bewaar als AutoTimer"
 
-msgid "Search"
-msgstr "Zoeken"
+msgid "Export selected as AutoTimer"
+msgstr "Exporteer het geselecteerde als AutoTimer"
 
-msgid "Search EPG"
-msgstr "EPG doorzoeken"
+msgid "Setup"
+msgstr ""
+
+#, python-format
+msgid "Could not read AutoTimer timer list: %s"
+msgstr "Kan AutoTimer timer lijst niet lezen : %s"
+
+msgid "Select text to search for"
+msgstr "Selecteer te zoeken tekst..."
+
+msgid "No history"
+msgstr "Geen historiek"
+
+msgid "Cancel"
+msgstr "Annuleren"
+
+msgid "OK"
+msgstr "OK"
 
 msgid "Select a timer to search"
 msgstr "Selecteer te zoeken timer..."
 
-msgid "Select text to search for"
-msgstr "Selecteer te zoeken tekst..."
+msgid "Channel Selection"
+msgstr "Zenderkeuze"
+
+msgid "Search EPG"
+msgstr "EPG doorzoeken"
 
 msgid "search EPG..."
 msgstr "EPG doorzoeken..."
 
 msgid "search EPG"
 msgstr "EPG doorzoeken"
+
+#, fuzzy
+msgid "Search event in EPG"
+msgstr "EPG doorzoeken"
+
+#, fuzzy
+msgid "EPGSearch Setup"
+msgstr "EPG doorzoeken"
+
+msgid "Length of History"
+msgstr ""
+
+msgid "How many entries to keep in the search history at most. 0 disables history entirely!"
+msgstr ""
+
+msgid "Add \"Search\" Button to EPG"
+msgstr ""
+
+msgid "If this setting is enabled, the plugin adds a \"Search\" Button to the regular EPG."
+msgstr ""
+
+msgid "Add \"Search event in EPG\" to event menu"
+msgstr ""
+
+msgid "Adds \"Search event in EPG\" item into the event menu."
+msgstr ""
+
+msgid "Add \"Search event in EPG\" to channel menu"
+msgstr ""
+
+msgid "Adds \"Search event in EPG\" item into the channel selection context menu."
+msgstr ""
+
