@@ -47,6 +47,15 @@ def movielist(session, service, **kwargs):
 
 	session.open(EPGSearch, name)
 
+# Channel context menu
+def channelscontext(session, service=None, **kwargs):
+	serviceHandler = eServiceCenter.getInstance()
+	info = serviceHandler.info(service)
+	event = info.getEvent(service)
+	if event:
+		name = info and event.getEventName() or ''
+		session.open(EPGSearch, name)
+
 def Plugins(**kwargs):
 	path = [
 		PluginDescriptor(
@@ -77,6 +86,8 @@ def Plugins(**kwargs):
 			needsRestart = False,
 		),
 	]
+	if config.plugins.epgsearch.search_in_channelmenu.value:
+		path.append(PluginDescriptor(name = _("Search event in EPG"),  where=PluginDescriptor.WHERE_CHANNEL_CONTEXT_MENU, needsRestart = False, fnc=channelscontext))
 	if config.plugins.epgsearch.show_in_furtheroptionsmenu.value:
-		path.append(PluginDescriptor( name = _("Search event in EPG"), where = PluginDescriptor.WHERE_EVENTINFO, fnc = epgfurther,needsRestart = False,))
+		path.append(PluginDescriptor(name = _("Search event in EPG"), where = PluginDescriptor.WHERE_EVENTINFO, fnc = epgfurther, needsRestart = False,))
 	return path

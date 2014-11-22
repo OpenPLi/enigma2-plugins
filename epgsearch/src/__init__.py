@@ -14,6 +14,7 @@ config.plugins.epgsearch.encoding = ConfigText(default = 'UTF-8', fixed_size = F
 config.plugins.epgsearch.history_length = ConfigNumber(default = 10)
 config.plugins.epgsearch.add_search_to_epg = ConfigYesNo(default = True)
 config.plugins.epgsearch.show_in_furtheroptionsmenu = ConfigYesNo(default = True)
+config.plugins.epgsearch.search_in_channelmenu = ConfigYesNo(default = False)
 
 def localeInit():
 	gettext.bindtextdomain("EPGSearch", resolveFilename(SCOPE_PLUGINS, "Extensions/EPGSearch/locale"))
