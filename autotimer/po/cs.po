@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ims\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-02-17 15:07+0100\n"
-"PO-Revision-Date: 2014-02-26 22:18+0100\n"
+"PO-Revision-Date: 2014-11-27 20:42+0100\n"
 "Last-Translator: ims <ims21@users.sourceforge.net>\n"
 "Language-Team: PLi <ims21@users.sourceforge.net>\n"
 "Language: \n"
@@ -939,11 +939,18 @@ msgid "Show in event menu"
 msgstr "Zobrazit v menu události"
 
 #: ../autotimer/AutoTimerSettings.py:43
-msgid "Enable this to add item for create the AutoTimer into event menu (needs restart GUI)."
-msgstr "Přidá položku pro založení Autotimeru v menu události (potřeba restartu Enigma)."
+msgid "Enable this to add item for create the AutoTimer into event menu."
+msgstr "Přidá položku pro založení Autotimeru v menu události."
 
 #: #:
 #: ../autotimer/plugin.py:198
 msgid "Create AutoTimer"
 msgstr "Vytvořit AutoTimer"
+
+#
+msgid "Show in channel menu"
+msgstr "Zobrazit v menu kanálů"
+
+msgid "Enable this to add item for create the AutoTimer into channel selection context menu."
+msgstr "Přidá položku pro založení Autotimeru v menu kanálů."
 

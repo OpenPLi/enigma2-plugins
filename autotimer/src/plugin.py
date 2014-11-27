@@ -32,6 +32,7 @@ config.plugins.autotimer.addsimilar_on_conflict = ConfigEnableDisable(default = 
 config.plugins.autotimer.disabled_on_conflict = ConfigEnableDisable(default = False)
 config.plugins.autotimer.show_in_extensionsmenu = ConfigYesNo(default = False)
 config.plugins.autotimer.show_in_furtheroptionsmenu = ConfigYesNo(default = True)
+config.plugins.autotimer.show_in_channelmenu = ConfigYesNo(default = False)
 config.plugins.autotimer.fastscan = ConfigYesNo(default = False)
 config.plugins.autotimer.notifconflict = ConfigYesNo(default = True)
 config.plugins.autotimer.notifsimilar = ConfigYesNo(default = True)
@@ -156,7 +157,7 @@ def movielist(session, service, **kwargs):
 	addAutotimerFromService(session, service)
 
 # Event Info
-def eventinfo(session, servicelist, **kwargs):
+def eventinfo(session, *args, **kwargs):
 	from AutoTimerEditor import AutoTimerEPGSelection
 	ref = session.nav.getCurrentlyPlayingServiceReference()
 	session.open(AutoTimerEPGSelection, ref)
@@ -180,6 +181,19 @@ def housekeepingExtensionsmenu(el):
 		except ValueError as ve:
 			print("[AutoTimer] housekeepingExtensionsmenu got confused, tried to remove non-existant plugin entry... ignoring.")
 
+# Channel context menu
+def channelscontext(session, service=None, **kwargs):
+	if service:
+		from enigma import eServiceCenter
+		serviceHandler = eServiceCenter.getInstance()
+		info = serviceHandler.info(service)
+		if info:
+			event = info.getEvent(service)
+			if event:
+				from AutoTimerEditor import addAutotimerFromEvent
+				from ServiceReference import ServiceReference
+				addAutotimerFromEvent(session, event, ServiceReference(service))
+
 config.plugins.autotimer.show_in_extensionsmenu.addNotifier(housekeepingExtensionsmenu, initial_call = False, immediate_feedback = True)
 extDescriptor = PluginDescriptor(name="AutoTimer", description = _("Edit Timers and scan for new Events"), where = PluginDescriptor.WHERE_EXTENSIONSMENU, fnc = extensionsmenu, needsRestart = False)
 
@@ -196,6 +210,9 @@ def Plugins(**kwargs):
 	if config.plugins.autotimer.show_in_furtheroptionsmenu.value:
 		# TRANSLATORS: AutoTimer title in Further Options List
 		l.append(PluginDescriptor(name=_("Create AutoTimer"), where = PluginDescriptor.WHERE_EVENTINFO, fnc = epgfurther, needsRestart = False))
+	if config.plugins.autotimer.show_in_channelmenu.value:
+		# TRANSLATORS: AutoTimer title in Channel selection context menu
+		l.append(PluginDescriptor(name=_("Create AutoTimer"), where = PluginDescriptor.WHERE_CHANNEL_CONTEXT_MENU, fnc = channelscontext, needsRestart = False))
 	if config.plugins.autotimer.show_in_extensionsmenu.value:
 		l.append(extDescriptor)
 	return l

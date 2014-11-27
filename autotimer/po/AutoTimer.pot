@@ -945,11 +945,15 @@ msgid "Show in event menu"
 msgstr ""
 
 #: ../autotimer/AutoTimerSettings.py:43
-msgid ""
-"Enable this to add item for create the AutoTimer into event menu (needs "
-"restart GUI)."
+msgid "Enable this to add item for create the AutoTimer into event menu."
 msgstr ""
 
 #: #: ../autotimer/plugin.py:198
 msgid "Create AutoTimer"
+msgstr ""
+
+msgid "Show in channel menu"
+msgstr ""
+
+msgid "Enable this to add item for create the AutoTimer into channel selection context menu."
 msgstr ""
