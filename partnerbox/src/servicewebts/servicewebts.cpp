@@ -267,7 +267,7 @@ RESULT eServiceWebTS::start()
 		eDebug("Cannot allocate decode-demux");
 		return -1;
 	}
-	if (m_decodedemux->getMPEGDecoder(m_decoder, 1) != 0) {
+	if (m_decodedemux->getMPEGDecoder(m_decoder) != 0) {
 		eDebug("Cannot allocate MPEGDecoder");
 		return -1;
 	}
