@@ -234,6 +234,22 @@ class EPGRefresh:
 				channelIdList.append(channelID)
 		del additionalServices[:]
 
+		def sortServices(services): # sort by positions - better for motor
+			unsortedServices = []
+			for service in services:
+				ref = service.sref
+				auxiliarySortParameter = int(ref.split(":")[6][:-4], 16)
+				if auxiliarySortParameter > 1800:
+					auxiliarySortParameter = 3600 - auxiliarySortParameter
+				unsortedServices.append((auxiliarySortParameter, service))
+			unsortedServices.sort()
+			sortedServices = []
+			for service in unsortedServices:
+				sortedServices.append(service[1])
+			return sortedServices
+
+		scanServices = sortServices(scanServices)
+
 		# Debug
 		print("[EPGRefresh] Services we're going to scan:", ', '.join([repr(x) for x in scanServices]))
 
