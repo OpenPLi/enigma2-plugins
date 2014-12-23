@@ -111,9 +111,11 @@ class PartnerboxEntriesListConfigScreen(Screen):
 			<widget name="entrylist" position="0,50" size="550,300" scrollbarMode="showOnDemand"/>
 
 			<widget name="key_red" position="0,350" size="140,40" zPosition="5" valign="center" halign="center" backgroundColor="red" font="Regular;21" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
+			<widget name="key_green" position="140,350" size="140,40" zPosition="5" valign="center" halign="center" backgroundColor="green" font="Regular;21" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
 			<widget name="key_yellow" position="280,350" size="140,40" zPosition="5" valign="center" halign="center" backgroundColor="yellow" font="Regular;21" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
 			<widget name="key_blue" position="420,350" zPosition="5" size="140,40" valign="center" halign="center" font="Regular;21" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
 			<ePixmap name="red" position="0,350" zPosition="4" size="140,40" pixmap="skin_default/buttons/red.png" transparent="1" alphatest="on" />
+			<ePixmap name="green" position="140,350" zPosition="4" size="140,40" pixmap="skin_default/buttons/green.png" transparent="1" alphatest="on" />
 			<ePixmap name="yellow" position="280,350" zPosition="4" size="140,40" pixmap="skin_default/buttons/yellow.png" transparent="1" alphatest="on" />
 			<ePixmap name="blue" position="420,350" zPosition="4" size="140,40" pixmap="skin_default/buttons/blue.png" transparent="1" alphatest="on" />
 		</screen>""" % _("Partnerbox: List of Entries")
@@ -126,6 +128,7 @@ class PartnerboxEntriesListConfigScreen(Screen):
 		self["port"] = Button(_("Port"))
 		self["type"] = Button(_("Enigma Type"))
 		self["key_red"] = Button(_("Add"))
+		self["key_green"] = Button(_("Power"))
 		self["key_yellow"] = Button(_("Edit"))
 		self["key_blue"] = Button(_("Delete"))
 		self["entrylist"] = PartnerboxEntryList([])
@@ -136,6 +139,7 @@ class PartnerboxEntriesListConfigScreen(Screen):
 			 "red"	:	self.keyRed,
 			 "yellow":	self.keyYellow,
 			 "blue": 	self.keyDelete,
+			 "green":	self.powerMenu,
 			 }, -1)
 		self.what = what
 		self.updateList()
@@ -152,7 +156,12 @@ class PartnerboxEntriesListConfigScreen(Screen):
 	def keyOK(self):
 		try:sel = self["entrylist"].l.getCurrentSelection()[0]
 		except: sel = None
-		self.close(self.session, self.what, sel)
+		nr = int(config.plugins.Partnerbox.entriescount.value)
+		if nr > 1 and self.what == 2 or nr >= 1 and self.what == None:
+				from plugin import RemoteTimer
+				self.session.open(RemoteTimer, sel)
+		else:
+			self.close(self.session, self.what, sel)
 
 	def keyYellow(self):
 		try:sel = self["entrylist"].l.getCurrentSelection()[0]
@@ -160,6 +169,58 @@ class PartnerboxEntriesListConfigScreen(Screen):
 		if sel is None:
 			return
 		self.session.openWithCallback(self.updateList,PartnerboxEntryConfigScreen,sel)
+
+	def powerMenu(self):
+		try:sel = self["entrylist"].l.getCurrentSelection()[0]
+		except: sel = None
+		if sel is None:
+			return
+		menu = []
+		menu.append((_("Wakeup"),0))
+		menu.append((_("Standby"),1))
+		menu.append((_("Restart enigma"),2))
+		menu.append((_("Restart"),3))
+		if int(sel.enigma.value) == 0:
+			menu.append((_("Toggle Standby"),4))
+			menu.append((_("Deep Standby"),5))
+		else:
+			menu.append((_("Shutdown"),4))
+		from Screens.ChoiceBox import ChoiceBox
+		self.session.openWithCallback(self.menuCallback, ChoiceBox, title=(_("Select operation for partnerbox")+": "+"%s" % (sel.name.value)), list=menu)
+
+	def menuCallback(self, choice):
+		if choice is None:
+			return
+		try:sel = self["entrylist"].l.getCurrentSelection()[0]
+		except: sel = None
+		if sel is None:
+			return
+		password = sel.password.value
+		username = "root"
+		ip = "%d.%d.%d.%d" % tuple(sel.ip.value)
+		port = sel.port.value
+		http = "http://%s:%d" % (ip,port)
+		enigma_type = int(sel.enigma.value)
+		sCommand = http
+		sCommand += enigma_type and "/cgi-bin/admin?command=" or "/web/powerstate?newstate="
+		if choice[1] == 0:
+			sCommand += enigma_type and "wakeup" or "4"
+		elif choice[1] == 1:
+			sCommand += enigma_type and "standby" or "5"
+		elif choice[1] == 2:
+			sCommand += enigma_type and "restart" or "3"
+		elif choice[1] == 3:
+			sCommand += enigma_type and "reboot"  or "2"
+		elif choice[1] == 4:
+			sCommand += enigma_type and "shutdown" or "0"
+		elif choice[1] == 5:
+			if enigma_type:
+				return
+			sCommand += "1"
+		else:
+			return
+		from PartnerboxFunctions import sendPartnerBoxWebCommand
+		sendPartnerBoxWebCommand(sCommand, None,3, username, password)
 
 	def keyDelete(self):
 		try:sel = self["entrylist"].l.getCurrentSelection()[0]
