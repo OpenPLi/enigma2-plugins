@@ -81,7 +81,11 @@ def PartnerboxInit(self, filterRef):
 			self.partnerboxentry = config.plugins.Partnerbox.Entries[0]
 			partnerboxfunctions.CurrentIP = self.partnerboxentry.ip.value
 		except: self.partnerboxentry = None
-	try:self["key_red"].setText(config.plugins.Partnerbox.Entries[0].name.value)
+	try:
+		if int(config.plugins.Partnerbox.entriescount.value) > 1:
+			self["key_red"].setText("PartnerBox")
+		else:
+			self["key_red"].setText(config.plugins.Partnerbox.Entries[0].name.value)
 	except: pass
 	
 
@@ -99,7 +103,10 @@ def NewPartnerBoxSelected(self, session, what, partnerboxentry = None):
 			curService = self.currentService.ref.toString()
 		SetPartnerboxTimerlist(partnerboxentry, curService)
 		Partnerbox_onSelectionChanged(self)
-		self["key_red"].setText(partnerboxentry.name.value)
+		if int(config.plugins.Partnerbox.entriescount.value) > 1:
+			self["key_red"].setText("PartnerBox")
+		else:
+			self["key_red"].setText(partnerboxentry.name.value)
 		self["list"].l.invalidate() # immer zeichnen, da neue Box ausgewaehlt wurde
 
 def Partnerbox_onSelectionChanged(self):
