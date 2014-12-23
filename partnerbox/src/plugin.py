@@ -609,7 +609,7 @@ class RemoteTimerChannelList(Screen):
 	
 	def ZapCallback(self, callback = None):
 		if self.mode == self.REMOTE_TIMER_MODE:
-			self["text"].setText("Give Enigma time to fill epg cache...")
+			self["text"].setText(_("Give Enigma time to fill epg cache..."))
 			self.zapTimer.start(10000) # 10 Sekunden
 		else:
 			self.zapTimer.start(3000) # 3 Sekunden REMOTE_TV
