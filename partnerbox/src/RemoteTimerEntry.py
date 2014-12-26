@@ -65,6 +65,7 @@ class RemoteTimerEntry(Screen, ConfigListScreen):
 	def __init__(self, session, timer, Locations):
 		self.session = session
 		Screen.__init__(self, session)
+		self.setTitle(_("Timer entry"))
 		self.timer = timer
 		self.Locations = Locations
 		self.entryDate = None

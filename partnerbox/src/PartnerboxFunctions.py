@@ -25,6 +25,7 @@ from twisted.web import client
 from twisted.web.client import HTTPClientFactory
 from base64 import encodestring
 import xml.etree.cElementTree
+from urllib import unquote
 
 CurrentIP = None
 remote_timer_list = None
@@ -189,13 +190,13 @@ def FillE1TimerList(xmlstring, sreference = None):
 		except: typedata = 0
 		for service in timer.findall("service"):
 			servicereference = str(service.findtext("reference", '').encode("utf-8", 'ignore'))
-			servicename = str(service.findtext("name", 'n/a').encode("utf-8", 'ignore'))
+			servicename = unquote(str(service.findtext("name", 'n/a').encode("utf-8", 'ignore')))
 		for event in timer.findall("event"):
 			try: timebegin = int(event.findtext("start", 0))
 			except: timebegin = 0
 			try: duration = int(event.findtext("duration", 0))
 			except: duration = 0
-			description = str(event.findtext("description", '').encode("utf-8", 'ignore'))
+			description = unquote(str(event.findtext("description", '').encode("utf-8", 'ignore')))
 		go = False
 		if sreference is None:
 			go = True
@@ -237,8 +238,8 @@ class PlaylistEntry:
 	SwitchTimerEntry=2		#simple service switch timer
 	RecTimerEntry=4			#timer do recording
 	
-	recDVR=8				#timer do DVR recording
-	recVCR=16				#timer do VCR recording (LIRC) not used yet
+	recDVR=8			#timer do DVR recording
+	recVCR=16			#timer do VCR recording (LIRC) not used yet
 	recNgrab=131072			#timer do record via Ngrab Server
 
 	stateWaiting=32			#timer is waiting
@@ -247,8 +248,8 @@ class PlaylistEntry:
 	stateFinished=256		#timer is finished
 	stateError=512			#timer has error state(s)
 
-	errorNoSpaceLeft=1024	#HDD no space Left ( recDVR )
-	errorUserAborted=2048	#User Action aborts this event
+	errorNoSpaceLeft=1024		#HDD no space Left ( recDVR )
+	errorUserAborted=2048		#User Action aborts this event
 	errorZapFailed=4096		#Zap to service failed
 	errorOutdated=8192		#Outdated event
 

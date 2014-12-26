@@ -65,11 +65,11 @@ class PartnerboxSetup(ConfigListScreen, Screen):
 
 	def __init__(self, session, args = None):
 		Screen.__init__(self, session)
+		self.setTitle(_("Partnerbox Setup"))
 
 		self["key_red"] = Button(_("Cancel"))
 		self["key_green"] = Button(_("OK"))
 		self["key_yellow"] = Button(_("Partnerbox Entries"))
-
 
 		self.list = [ ]
 		self.list.append(getConfigListEntry(_("Show 'RemoteTimer' in E-Menu"), config.plugins.Partnerbox.showremotetimerinextensionsmenu))
@@ -90,20 +90,26 @@ class PartnerboxSetup(ConfigListScreen, Screen):
 		for x in self["config"].list:
 			x[1].save()
 		configfile.save()
-		self.close(self.session, True)
+		self.refreshPlugins()
+		self.close(self.session)
 
 	def keyClose(self):
 		for x in self["config"].list:
 			x[1].cancel()
-		self.close(self.session, False)
+		self.close(self.session)
 
 	def PartnerboxEntries(self):
 		self.session.open(PartnerboxEntriesListConfigScreen)
 
+	def refreshPlugins(self):
+		from Components.PluginComponent import plugins
+		from Tools.Directories import SCOPE_PLUGINS, resolveFilename
+		plugins.clearPluginList()
+		plugins.readPluginList(resolveFilename(SCOPE_PLUGINS))
 
 class PartnerboxEntriesListConfigScreen(Screen):
 	skin = """
-		<screen position="center,center" size="550,400" title="%s" >
+		<screen position="center,center" size="550,400" title="Partnerbox: List of Entries" >
 			<widget name="name" position="5,0" size="150,50" font="Regular;20" halign="left"/>
 			<widget name="ip" position="120,0" size="50,50" font="Regular;20" halign="left"/>
 			<widget name="port" position="270,0" size="100,50" font="Regular;20" halign="left"/>
@@ -118,11 +124,13 @@ class PartnerboxEntriesListConfigScreen(Screen):
 			<ePixmap name="green" position="140,350" zPosition="4" size="140,40" pixmap="skin_default/buttons/green.png" transparent="1" alphatest="on" />
 			<ePixmap name="yellow" position="280,350" zPosition="4" size="140,40" pixmap="skin_default/buttons/yellow.png" transparent="1" alphatest="on" />
 			<ePixmap name="blue" position="420,350" zPosition="4" size="140,40" pixmap="skin_default/buttons/blue.png" transparent="1" alphatest="on" />
-		</screen>""" % _("Partnerbox: List of Entries")
+		</screen>"""
 
 	def __init__(self, session, what = None):
 		Screen.__init__(self, session)
 		self.session = session
+		self.setTitle(_("Partnerbox: List of Entries"))
+
 		self["name"] = Button(_("Name"))
 		self["ip"] = Button(_("IP"))
 		self["port"] = Button(_("Port"))
@@ -270,7 +278,7 @@ class PartnerboxEntryList(MenuList):
 
 class PartnerboxEntryConfigScreen(ConfigListScreen, Screen):
 	skin = """
-		<screen name="PartnerboxEntryConfigScreen" position="center,center" size="550,400" title="%s">
+		<screen name="PartnerboxEntryConfigScreen" position="center,center" size="550,400" title="Partnerbox: Edit Entry">
 			<widget name="config" position="20,10" size="520,330" scrollbarMode="showOnDemand" />
 			<ePixmap name="red"	position="0,350" zPosition="4" size="140,40" pixmap="skin_default/buttons/red.png" transparent="1" alphatest="on" />
 			<ePixmap name="green" position="140,350" zPosition="4" size="140,40" pixmap="skin_default/buttons/green.png" transparent="1" alphatest="on" />
@@ -279,11 +287,12 @@ class PartnerboxEntryConfigScreen(ConfigListScreen, Screen):
 			<widget name="key_red" position="0,350" zPosition="5" size="140,40" valign="center" halign="center" font="Regular;21" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
 			<widget name="key_green" position="140,350" zPosition="5" size="140,40" valign="center" halign="center" font="Regular;21" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
 			<widget name="key_blue" position="420,350" zPosition="5" size="140,40" valign="center" halign="center" font="Regular;21" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
-		</screen>""" % _("Partnerbox: Edit Entry")
+		</screen>"""
 
 	def __init__(self, session, entry):
 		self.session = session
 		Screen.__init__(self, session)
+		self.setTitle(_("Partnerbox: Edit Entry"))
 
 		self["actions"] = ActionMap(["SetupActions", "ColorActions"],
 		{

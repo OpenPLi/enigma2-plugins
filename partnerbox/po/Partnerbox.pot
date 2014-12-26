@@ -8,391 +8,474 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-20 14:39+0200\n"
+"POT-Creation-Date: 2014-12-26 12:49+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../src/RemoteTimerEntry.py:135 ../src/RemoteTimerEntry.py:414
-msgid "%d.%B %Y"
+#: plugin.py:126 plugin.py:134
+msgid "Partnerbox: RemoteTimer"
 msgstr ""
 
-#: ../src/plugin.py:1234 ../src/plugin.py:1239 ../src/plugin.py:1291
-#: ../src/plugin.py:1296
-msgid "(ZAP)"
+#: plugin.py:126 plugin.py:134
+msgid "Manage timer for other dreamboxes in network"
 msgstr ""
 
-#: ../src/plugin.py:1255 ../src/plugin.py:1319 ../src/plugin.py:1321
-msgid "<unknown>"
+#: plugin.py:132
+msgid "Partnerbox"
 msgstr ""
 
-#: ../src/PartnerboxSetup.py:127
-msgid "Add"
+#: plugin.py:132
+msgid "setup for partnerbox"
 msgstr ""
 
-#: ../src/plugin.py:944 ../src/plugin.py:1003
-msgid "Add timer"
+#: plugin.py:137
+msgid "Partnerbox: RemoteTV Player"
 msgstr ""
 
-#: ../src/RemoteTimerEntry.py:176 ../src/RemoteTimerEntry.py:178
-#: ../src/RemoteTimerEntry.py:463 ../src/RemoteTimerEntry.py:465
-msgid "After event"
+#: plugin.py:137
+msgid "Stream TV from your Partnerbox"
 msgstr ""
 
-#: ../src/PartnerboxSetup.py:68 ../src/PartnerboxSetup.py:234
-#: ../src/RemoteTimerEntry.py:73
-msgid "Cancel"
+#: plugin.py:139
+msgid "Stream current Service from Partnerbox"
 msgstr ""
 
-#: ../src/RemoteTimerEntry.py:170 ../src/RemoteTimerEntry.py:457
-msgid "Channel"
+#: plugin.py:139
+msgid "Stream current service from partnerbox"
 msgstr ""
 
-#: ../src/plugin.py:236
-msgid "Clean up"
+#: plugin.py:160
+msgid "Remote Player"
 msgstr ""
 
-#: ../src/plugin.py:318
-msgid "Cleaning up finished timer entries..."
+#: plugin.py:175
+#, python-format
+msgid "Starting Remote Player (IP = %s)"
 msgstr ""
 
-#: ../src/RemoteTimerEntry.py:132 ../src/RemoteTimerEntry.py:411
-msgid "DVR"
+#: plugin.py:230
+msgid "RemoteTimer Timerlist"
 msgstr ""
 
-#: ../src/RemoteTimerEntry.py:157 ../src/RemoteTimerEntry.py:444
-msgid "Date"
-msgstr ""
-
-#: ../src/PartnerboxSetup.py:129 ../src/PartnerboxSetup.py:236
-#: ../src/plugin.py:233
+#: plugin.py:231 PartnerboxSetup.py:141 PartnerboxSetup.py:307
 msgid "Delete"
 msgstr ""
 
-#: ../src/RemoteTimerEntry.py:154 ../src/RemoteTimerEntry.py:441
-msgid "Description"
+#: plugin.py:233 plugin.py:508 plugin.py:666 plugin.py:969
+msgid "EPG Selection"
 msgstr ""
 
-#: ../src/PartnerboxEPGSelection.py:111 ../src/plugin.py:337
-#: ../src/plugin.py:1152
+#: plugin.py:234
+msgid "Clean up"
+msgstr ""
+
+#: plugin.py:235
+msgid "Getting Partnerbox Information..."
+msgstr ""
+
+#: plugin.py:319
+msgid "Cleaning up finished timer entries..."
+msgstr ""
+
+#: plugin.py:338 plugin.py:1180 PartnerboxEPGSelection.py:130
 #, python-format
 msgid ""
 "Do you really want to delete the timer \n"
 "%s ?"
 msgstr ""
 
-#: ../src/plugin.py:235 ../src/plugin.py:507 ../src/plugin.py:651
-msgid "EPG Selection"
+#: plugin.py:399
+msgid "Choose bouquet"
 msgstr ""
 
-#: ../src/PartnerboxSetup.py:128
-msgid "Edit"
-msgstr ""
-
-#: ../src/PartnerboxSetup.py:78
-msgid "Enable Partnerbox-Function in EPGList"
-msgstr ""
-
-#: ../src/PartnerboxSetup.py:77
-msgid "Enable Partnerbox-Function in TimerEvent"
-msgstr ""
-
-#: ../src/RemoteTimerEntry.py:163 ../src/RemoteTimerEntry.py:168
-#: ../src/RemoteTimerEntry.py:450 ../src/RemoteTimerEntry.py:455
-msgid "EndTime"
-msgstr ""
-
-#: ../src/PartnerboxSetup.py:40
-msgid "Enigma 1"
-msgstr ""
-
-#: ../src/PartnerboxSetup.py:40
-msgid "Enigma 2"
-msgstr ""
-
-#: ../src/PartnerboxSetup.py:126 ../src/PartnerboxSetup.py:249
-msgid "Enigma Type"
-msgstr ""
-
-#: ../src/plugin.py:1311
-msgid "Error: No space left"
-msgstr ""
-
-#: ../src/plugin.py:1317
-msgid "Error: Outdated"
-msgstr ""
-
-#: ../src/plugin.py:1313
-msgid "Error: User aborted"
-msgstr ""
-
-#: ../src/plugin.py:1315
-msgid "Error: Zap failed"
-msgstr ""
-
-#: ../src/plugin.py:1222 ../src/plugin.py:1279 ../src/plugin.py:1395
-msgid "Fri"
-msgstr ""
-
-#: ../src/RemoteTimerEntry.py:143 ../src/RemoteTimerEntry.py:422
-msgid "Friday"
-msgstr ""
-
-#: ../src/plugin.py:512
-msgid "Getting Channel Information..."
-msgstr ""
-
-#: ../src/plugin.py:948
-msgid "Getting EPG Information..."
-msgstr ""
-
-#: ../src/plugin.py:400
+#: plugin.py:401
 msgid "Getting Partnerbox Bouquet Information..."
 msgstr ""
 
-#: ../src/plugin.py:237
-msgid "Getting Partnerbox Information..."
+#: plugin.py:502
+msgid "Bouquet List"
 msgstr ""
 
-#: ../src/PartnerboxSetup.py:124 ../src/PartnerboxSetup.py:247
-msgid "IP"
+#: plugin.py:505
+msgid "Zap"
 msgstr ""
 
-#: ../src/plugin.py:510 ../src/plugin.py:652 ../src/plugin.py:947
-#: ../src/plugin.py:998
+#: plugin.py:511 plugin.py:667 plugin.py:976 plugin.py:1026
 msgid "Info"
 msgstr ""
 
-#: ../src/RemoteTimerEntry.py:173 ../src/RemoteTimerEntry.py:460
-msgid "Location"
+#: plugin.py:513
+msgid "Getting Channel Information..."
 msgstr ""
 
-#: ../src/plugin.py:127 ../src/plugin.py:135
-msgid "Manage timer for other dreamboxes in network"
+#: plugin.py:606
+msgid "Give Enigma time to fill epg cache..."
 msgstr ""
 
-#: ../src/plugin.py:1222 ../src/plugin.py:1279 ../src/plugin.py:1395
+#: plugin.py:816
+msgid "Partnerbox - RemotePlayer"
+msgstr ""
+
+#: plugin.py:821 plugin.py:907 plugin.py:1264 plugin.py:1269 plugin.py:1317
+#: plugin.py:1320 plugin.py:1322 plugin.py:1430 plugin.py:1627
+msgid "mins"
+msgstr ""
+
+#: plugin.py:973 plugin.py:1031
+msgid "Add timer"
+msgstr ""
+
+#: plugin.py:977
+msgid "Getting EPG Information..."
+msgstr ""
+
+#: plugin.py:1035 PartnerboxEPGSelection.py:181
+msgid "Remove timer"
+msgstr ""
+
+#: plugin.py:1250 plugin.py:1303 plugin.py:1443
 msgid "Mon"
 msgstr ""
 
-#: ../src/RemoteTimerEntry.py:143 ../src/RemoteTimerEntry.py:422
-msgid "Monday"
+#: plugin.py:1250 plugin.py:1303 plugin.py:1443
+msgid "Tue"
 msgstr ""
 
-#: ../src/RemoteTimerEntry.py:132 ../src/RemoteTimerEntry.py:411
-msgid "NGRAB"
+#: plugin.py:1250 plugin.py:1303 plugin.py:1443
+msgid "Wed"
 msgstr ""
 
-#: ../src/PartnerboxSetup.py:123 ../src/PartnerboxSetup.py:246
-#: ../src/RemoteTimerEntry.py:153 ../src/RemoteTimerEntry.py:440
-msgid "Name"
+#: plugin.py:1250 plugin.py:1303 plugin.py:1443
+msgid "Thu"
 msgstr ""
 
-#: ../src/RemoteTimerEntry.py:289
-msgid "No"
+#: plugin.py:1250 plugin.py:1303 plugin.py:1443
+msgid "Fri"
 msgstr ""
 
-#: ../src/PartnerboxSetup.py:69 ../src/PartnerboxSetup.py:235
-#: ../src/RemoteTimerEntry.py:72
+#: plugin.py:1250 plugin.py:1303 plugin.py:1443
+msgid "Sat"
+msgstr ""
+
+#: plugin.py:1250 plugin.py:1303 plugin.py:1443
+msgid "Sun"
+msgstr ""
+
+#: plugin.py:1262 plugin.py:1267 plugin.py:1315 plugin.py:1320
+msgid "(ZAP)"
+msgstr ""
+
+#: plugin.py:1272 plugin.py:1325
+msgid "waiting"
+msgstr ""
+
+#: plugin.py:1274
+msgid "about to start"
+msgstr ""
+
+#: plugin.py:1277 plugin.py:1328
+msgid "zapped"
+msgstr ""
+
+#: plugin.py:1279 plugin.py:1330
+msgid "recording..."
+msgstr ""
+
+#: plugin.py:1281 plugin.py:1332
+msgid "done!"
+msgstr ""
+
+#: plugin.py:1283 plugin.py:1343 plugin.py:1345
+msgid "<unknown>"
+msgstr ""
+
+#: plugin.py:1286
+msgid "disabled"
+msgstr ""
+
+#: plugin.py:1335
+msgid "Error: No space left"
+msgstr ""
+
+#: plugin.py:1337
+msgid "Error: User aborted"
+msgstr ""
+
+#: plugin.py:1339
+msgid "Error: Zap failed"
+msgstr ""
+
+#: plugin.py:1341
+msgid "Error: Outdated"
+msgstr ""
+
+#: plugin.py:1577
+msgid "Eventview"
+msgstr ""
+
+#: plugin.py:1612
+msgid "unknown service"
+msgstr ""
+
+#: RemoteTimerEntry.py:68
+msgid "Timer entry"
+msgstr ""
+
+#: RemoteTimerEntry.py:73 PartnerboxSetup.py:71 PartnerboxSetup.py:306
 msgid "OK"
 msgstr ""
 
-#: ../src/RemoteTimerEntry.py:523 ../src/RemoteTimerEntry.py:533
+#: RemoteTimerEntry.py:74 PartnerboxSetup.py:70 PartnerboxSetup.py:305
+msgid "Cancel"
+msgstr ""
+
+#: RemoteTimerEntry.py:129 RemoteTimerEntry.py:133 RemoteTimerEntry.py:408
+#: RemoteTimerEntry.py:413
+msgid "zap"
+msgstr ""
+
+#: RemoteTimerEntry.py:129 RemoteTimerEntry.py:408
+msgid "record"
+msgstr ""
+
+#: RemoteTimerEntry.py:130 RemoteTimerEntry.py:134 RemoteTimerEntry.py:409
+#: RemoteTimerEntry.py:414
+msgid "do nothing"
+msgstr ""
+
+#: RemoteTimerEntry.py:130 RemoteTimerEntry.py:134 RemoteTimerEntry.py:409
+#: RemoteTimerEntry.py:414
+msgid "go to standby"
+msgstr ""
+
+#: RemoteTimerEntry.py:130 RemoteTimerEntry.py:134 RemoteTimerEntry.py:409
+#: RemoteTimerEntry.py:414
+msgid "go to deep standby"
+msgstr ""
+
+#: RemoteTimerEntry.py:130 RemoteTimerEntry.py:409
+msgid "auto"
+msgstr ""
+
+#: RemoteTimerEntry.py:133 RemoteTimerEntry.py:413
+msgid "NGRAB"
+msgstr ""
+
+#: RemoteTimerEntry.py:133 RemoteTimerEntry.py:413
+msgid "DVR"
+msgstr ""
+
+#: RemoteTimerEntry.py:136 RemoteTimerEntry.py:416
+msgid "%d.%B %Y"
+msgstr ""
+
+#: RemoteTimerEntry.py:145 RemoteTimerEntry.py:424
+msgid "Monday"
+msgstr ""
+
+#: RemoteTimerEntry.py:145 RemoteTimerEntry.py:424
+msgid "Tuesday"
+msgstr ""
+
+#: RemoteTimerEntry.py:145 RemoteTimerEntry.py:424
+msgid "Wednesday"
+msgstr ""
+
+#: RemoteTimerEntry.py:145 RemoteTimerEntry.py:424
+msgid "Thursday"
+msgstr ""
+
+#: RemoteTimerEntry.py:145 RemoteTimerEntry.py:424
+msgid "Friday"
+msgstr ""
+
+#: RemoteTimerEntry.py:145 RemoteTimerEntry.py:424
+msgid "Saturday"
+msgstr ""
+
+#: RemoteTimerEntry.py:145 RemoteTimerEntry.py:424
+msgid "Sunday"
+msgstr ""
+
+#: RemoteTimerEntry.py:155 RemoteTimerEntry.py:442 PartnerboxSetup.py:134
+#: PartnerboxSetup.py:317
+msgid "Name"
+msgstr ""
+
+#: RemoteTimerEntry.py:156 RemoteTimerEntry.py:443
+msgid "Description"
+msgstr ""
+
+#: RemoteTimerEntry.py:157 RemoteTimerEntry.py:444
+msgid "Timer Type"
+msgstr ""
+
+#: RemoteTimerEntry.py:159 RemoteTimerEntry.py:446
+msgid "Date"
+msgstr ""
+
+#: RemoteTimerEntry.py:161 RemoteTimerEntry.py:448
+msgid "StartTime"
+msgstr ""
+
+#: RemoteTimerEntry.py:165 RemoteTimerEntry.py:170 RemoteTimerEntry.py:452
+#: RemoteTimerEntry.py:457
+msgid "EndTime"
+msgstr ""
+
+#: RemoteTimerEntry.py:172 RemoteTimerEntry.py:459
+msgid "Channel"
+msgstr ""
+
+#: RemoteTimerEntry.py:175 RemoteTimerEntry.py:462
+msgid "Location"
+msgstr ""
+
+#: RemoteTimerEntry.py:178 RemoteTimerEntry.py:180 RemoteTimerEntry.py:465
+#: RemoteTimerEntry.py:467
+msgid "After event"
+msgstr ""
+
+#: RemoteTimerEntry.py:291
+msgid "No"
+msgstr ""
+
+#: RemoteTimerEntry.py:314
+msgid "Remote Timer"
+msgstr ""
+
+#: RemoteTimerEntry.py:526 RemoteTimerEntry.py:536
 #, python-format
 msgid ""
 "Partnerbox Answer: \n"
 "%s"
 msgstr ""
 
-#: ../src/PartnerboxSetup.py:70
-msgid "Partnerbox Entries"
+#: PartnerboxSetup.py:40
+msgid "Enigma 2"
 msgstr ""
 
-#: ../src/PartnerboxSetup.py:220
-msgid "Partnerbox: Edit Entry"
+#: PartnerboxSetup.py:40
+msgid "Enigma 1"
 msgstr ""
 
-#: ../src/PartnerboxSetup.py:118
-msgid "Partnerbox: List of Entries"
-msgstr ""
-
-#: ../src/PartnerboxSetup.py:250
-msgid "Password"
-msgstr ""
-
-#: ../src/PartnerboxSetup.py:125 ../src/PartnerboxSetup.py:248
-msgid "Port"
-msgstr ""
-
-#: ../src/PartnerboxSetup.py:168 ../src/PartnerboxSetup.py:274
-msgid "Really delete this Partnerbox Entry?"
-msgstr ""
-
-#: ../src/RemoteTimerEntry.py:312
-msgid "Remote Timer"
-msgstr ""
-
-#: ../src/PartnerboxEPGSelection.py:159 ../src/plugin.py:1007
-msgid "Remove timer"
-msgstr ""
-
-#: ../src/plugin.py:1222 ../src/plugin.py:1279 ../src/plugin.py:1395
-msgid "Sat"
-msgstr ""
-
-#: ../src/RemoteTimerEntry.py:143 ../src/RemoteTimerEntry.py:422
-msgid "Saturday"
-msgstr ""
-
-#: ../src/PartnerboxSetup.py:251
-msgid "Servicelists/EPG"
-msgstr ""
-
-#: ../src/PartnerboxSetup.py:75
-msgid "Show 'RemoteTV Player' in E-Menu"
-msgstr ""
-
-#: ../src/PartnerboxSetup.py:74
-msgid "Show 'RemoteTimer' in E-Menu"
-msgstr ""
-
-#: ../src/PartnerboxSetup.py:76
-msgid "Show 'Stream current Service' in E-Menu"
-msgstr ""
-
-#: ../src/RemoteTimerEntry.py:159 ../src/RemoteTimerEntry.py:446
-msgid "StartTime"
-msgstr ""
-
-#: ../src/plugin.py:138
-msgid "Stream TV from your Partnerbox"
-msgstr ""
-
-#: ../src/plugin.py:140
-msgid "Stream current service from partnerbox"
-msgstr ""
-
-#: ../src/plugin.py:1222 ../src/plugin.py:1279 ../src/plugin.py:1395
-msgid "Sun"
-msgstr ""
-
-#: ../src/RemoteTimerEntry.py:143 ../src/RemoteTimerEntry.py:422
-msgid "Sunday"
-msgstr ""
-
-#: ../src/plugin.py:1222 ../src/plugin.py:1279 ../src/plugin.py:1395
-msgid "Thu"
-msgstr ""
-
-#: ../src/RemoteTimerEntry.py:143 ../src/RemoteTimerEntry.py:422
-msgid "Thursday"
-msgstr ""
-
-#: ../src/RemoteTimerEntry.py:155 ../src/RemoteTimerEntry.py:442
-msgid "Timer Type"
-msgstr ""
-
-#: ../src/plugin.py:1222 ../src/plugin.py:1279 ../src/plugin.py:1395
-msgid "Tue"
-msgstr ""
-
-#: ../src/RemoteTimerEntry.py:143 ../src/RemoteTimerEntry.py:422
-msgid "Tuesday"
-msgstr ""
-
-#: ../src/plugin.py:1222 ../src/plugin.py:1279 ../src/plugin.py:1395
-msgid "Wed"
-msgstr ""
-
-#: ../src/RemoteTimerEntry.py:143 ../src/RemoteTimerEntry.py:422
-msgid "Wednesday"
-msgstr ""
-
-#: ../src/plugin.py:111
-msgid "You have to restart Enigma2 to activate your new preferences!"
-msgstr ""
-
-#: ../src/plugin.py:504
-msgid "Zap"
-msgstr ""
-
-#: ../src/plugin.py:1246
-msgid "about to start"
-msgstr ""
-
-#: ../src/RemoteTimerEntry.py:129 ../src/RemoteTimerEntry.py:407
-msgid "auto"
-msgstr ""
-
-#: ../src/plugin.py:1258
-msgid "disabled"
-msgstr ""
-
-#: ../src/RemoteTimerEntry.py:129 ../src/RemoteTimerEntry.py:133
-#: ../src/RemoteTimerEntry.py:407 ../src/RemoteTimerEntry.py:412
-msgid "do nothing"
-msgstr ""
-
-#: ../src/plugin.py:1253 ../src/plugin.py:1308
-msgid "done!"
-msgstr ""
-
-#: ../src/RemoteTimerEntry.py:129 ../src/RemoteTimerEntry.py:133
-#: ../src/RemoteTimerEntry.py:407 ../src/RemoteTimerEntry.py:412
-msgid "go to deep standby"
-msgstr ""
-
-#: ../src/RemoteTimerEntry.py:129 ../src/RemoteTimerEntry.py:133
-#: ../src/RemoteTimerEntry.py:407 ../src/RemoteTimerEntry.py:412
-msgid "go to standby"
-msgstr ""
-
-#: ../src/plugin.py:807 ../src/plugin.py:879 ../src/plugin.py:1236
-#: ../src/plugin.py:1241 ../src/plugin.py:1293 ../src/plugin.py:1296
-#: ../src/plugin.py:1298 ../src/plugin.py:1382 ../src/plugin.py:1579
-msgid "mins"
-msgstr ""
-
-#: ../src/RemoteTimerEntry.py:128 ../src/RemoteTimerEntry.py:406
-msgid "record"
-msgstr ""
-
-#: ../src/plugin.py:1251 ../src/plugin.py:1306
-msgid "recording..."
-msgstr ""
-
-#: ../src/plugin.py:133
-msgid "setup for partnerbox"
-msgstr ""
-
-#: ../src/plugin.py:1564
-msgid "unknown service"
-msgstr ""
-
-#: ../src/PartnerboxSetup.py:42
+#: PartnerboxSetup.py:42
 msgid "use external"
 msgstr ""
 
-#: ../src/PartnerboxSetup.py:42
+#: PartnerboxSetup.py:42
 msgid "use internal"
 msgstr ""
 
-#: ../src/plugin.py:1244 ../src/plugin.py:1301
-msgid "waiting"
+#: PartnerboxSetup.py:68
+msgid "Partnerbox Setup"
 msgstr ""
 
-#: ../src/RemoteTimerEntry.py:128 ../src/RemoteTimerEntry.py:132
-#: ../src/RemoteTimerEntry.py:406 ../src/RemoteTimerEntry.py:411
-msgid "zap"
+#: PartnerboxSetup.py:72
+msgid "Partnerbox Entries"
 msgstr ""
 
-#: ../src/plugin.py:1249 ../src/plugin.py:1304
-msgid "zapped"
+#: PartnerboxSetup.py:75
+msgid "Show 'RemoteTimer' in E-Menu"
 msgstr ""
 
-#: ../src/PartnerboxSetup.py:257 
+#: PartnerboxSetup.py:76
+msgid "Show 'RemoteTV Player' in E-Menu"
+msgstr ""
+
+#: PartnerboxSetup.py:77
+msgid "Show 'Stream current Service' in E-Menu"
+msgstr ""
+
+#: PartnerboxSetup.py:78
+msgid "Enable Partnerbox-Function in TimerEvent"
+msgstr ""
+
+#: PartnerboxSetup.py:79
+msgid "Enable Partnerbox-Function in EPGList"
+msgstr ""
+
+#: PartnerboxSetup.py:132
+msgid "Partnerbox: List of Entries"
+msgstr ""
+
+#: PartnerboxSetup.py:135 PartnerboxSetup.py:318
+msgid "IP"
+msgstr ""
+
+#: PartnerboxSetup.py:136 PartnerboxSetup.py:319
+msgid "Port"
+msgstr ""
+
+#: PartnerboxSetup.py:137 PartnerboxSetup.py:320
+msgid "Enigma Type"
+msgstr ""
+
+#: PartnerboxSetup.py:138
+msgid "Add"
+msgstr ""
+
+#: PartnerboxSetup.py:139
+msgid "Power"
+msgstr ""
+
+#: PartnerboxSetup.py:140
+msgid "Edit"
+msgstr ""
+
+#: PartnerboxSetup.py:187
+msgid "Wakeup"
+msgstr ""
+
+#: PartnerboxSetup.py:188
+msgid "Standby"
+msgstr ""
+
+#: PartnerboxSetup.py:189
+msgid "Restart enigma"
+msgstr ""
+
+#: PartnerboxSetup.py:190
+msgid "Restart"
+msgstr ""
+
+#: PartnerboxSetup.py:192
+msgid "Toggle Standby"
+msgstr ""
+
+#: PartnerboxSetup.py:193
+msgid "Deep Standby"
+msgstr ""
+
+#: PartnerboxSetup.py:195
+msgid "Shutdown"
+msgstr ""
+
+#: PartnerboxSetup.py:197
+msgid "Select operation for partnerbox"
+msgstr ""
+
+#: PartnerboxSetup.py:238 PartnerboxSetup.py:346
+msgid "Really delete this Partnerbox Entry?"
+msgstr ""
+
+#: PartnerboxSetup.py:295
+msgid "Partnerbox: Edit Entry"
+msgstr ""
+
+#: PartnerboxSetup.py:321
+msgid "Password"
+msgstr ""
+
+#: PartnerboxSetup.py:322
+msgid "Servicelists/EPG"
+msgstr ""
+
+#: PartnerboxSetup.py:323
 msgid "Zap to service when streaming"
 msgstr ""
