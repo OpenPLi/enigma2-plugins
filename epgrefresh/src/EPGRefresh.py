@@ -46,6 +46,7 @@ class EPGRefresh:
 		# Initialize
 		self.services = (set(), set())
 		self.forcedScan = False
+		self.isrunning = False
 		self.session = None
 		self.beginOfTimespan = 0
 		self.refreshAdapter = None
@@ -55,6 +56,9 @@ class EPGRefresh:
 
 		# Read in Configuration
 		self.readConfiguration()
+
+	def isRunning(self):
+		return self.isrunning
 
 	def readConfiguration(self):
 		# Check if file exists
@@ -270,6 +274,7 @@ class EPGRefresh:
 		self.refreshAdapter = refreshAdapter
 
 		self.scanServices = scanServices
+		self.isrunning = True
 		self.refresh()
 
 	def cleanUp(self):
@@ -310,6 +315,7 @@ class EPGRefresh:
 		if not Screens.Standby.inStandby and not config.plugins.epgrefresh.background and config.plugins.epgrefresh.enablemessage.value:
 			Notifications.AddNotification(MessageBox, _("EPG refresh finished."), type=MessageBox.TYPE_INFO, timeout=4)
 		self.forcedScan = False
+		self.isrunning = False
 		epgrefreshtimer.cleanup()
 		self.maybeStopAdapter()
 
