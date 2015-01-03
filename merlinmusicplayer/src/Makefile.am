@@ -1,4 +1,4 @@
-SUBDIRS = images merlinmp3player
+SUBDIRS = images
 
 plugindir = $(libdir)/enigma2/python/Plugins/Extensions/MerlinMusicPlayer
 

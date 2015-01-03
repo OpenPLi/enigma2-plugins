@@ -25,8 +25,6 @@ from Screens.Screen import Screen
 from Components.ActionMap import ActionMap, NumberActionMap
 from Components.Label import Label
 from enigma import RT_VALIGN_CENTER, RT_HALIGN_LEFT, RT_HALIGN_RIGHT, RT_HALIGN_CENTER, gFont, eListbox,ePoint, eListboxPythonMultiContent
-# merlin mp3 player
-import merlinmp3player
 ENIGMA_MERLINPLAYER_ID = 0x1014
 from Components.FileList import FileList
 from enigma import eServiceReference, eTimer
@@ -68,7 +66,6 @@ from random import shuffle, randrange
 import re
 from Components.config import config, ConfigSubsection, ConfigDirectory, ConfigYesNo, ConfigInteger, getConfigListEntry, configfile
 from Components.ConfigList import ConfigListScreen
-from Tools.HardwareInfo import HardwareInfo
 
 from Components.SystemInfo import SystemInfo
 from enigma import eServiceCenter, getBestPlayableServiceReference
@@ -83,7 +80,6 @@ from Screens.InfoBarGenerics import NumberZap
 START_MERLIN_PLAYER_SCREEN_TIMER_VALUE = 7000
 
 config.plugins.merlinmusicplayer = ConfigSubsection()
-config.plugins.merlinmusicplayer.hardwaredecoder = ConfigYesNo(default = True)
 config.plugins.merlinmusicplayer.startlastsonglist = ConfigYesNo(default = True)
 config.plugins.merlinmusicplayer.lastsonglistindex = ConfigInteger(-1)
 config.plugins.merlinmusicplayer.databasepath = ConfigDirectory(default = "/hdd/")
@@ -1047,35 +1043,16 @@ class MerlinMusicPlayerScreen(Screen, InfoBarBase, InfoBarSeek, InfoBarNotificat
 		self.session.nav.stopService()
 		self.seek = None
 		self.currentFilename = filename
-		if not config.plugins.merlinmusicplayer.hardwaredecoder.value and self.currentFilename.lower().endswith(".mp3") and self.songList[self.currentIndex][0].PTS is None:
-			sref = eServiceReference(ENIGMA_MERLINPLAYER_ID, 0, self.currentFilename) # play mp3 file with merlinmp3player lib
-			self.session.nav.playService(sref)
-			if self.iDreamMode:
-				self.updateMusicInformation( self.songList[self.currentIndex][0].artist, self.songList[self.currentIndex][0].title, 
-					self.songList[self.currentIndex][0].album, self.songList[self.currentIndex][0].genre, self.songList[self.currentIndex][0].date, clear = True )
-			else:
-				path,filename = os_path.split(self.currentFilename)
-				audio, isAudio, title, genre,artist,album,tracknr,track,date,length,bitrate = getID3Tags(path,filename)
-				if audio:
-					if date:
-						year = "(%s)" % str(date)
-					else:
-						year = ""
-					self.updateMusicInformation( artist, title, album, genre, year, clear = True )
-				else:
-					self.updateMusicInformation( title = title, clear = True)
-				audio = None
-		else:
-			sref = eServiceReference(4097, 0, self.currentFilename)
-			self.session.nav.playService(sref)
-			if self.songList[self.currentIndex][0].PTS is not None:
-				service = self.session.nav.getCurrentService()
-				if service:
-					self.seek = service.seek()
-				self.updateMusicInformationCUE()
-				self.ptsTimer = eTimer()
-				self.ptsTimer.callback.append(self.ptsTimerCallback)
-				self.ptsTimer.start(1000)
+		sref = eServiceReference(4097, 0, self.currentFilename)
+		self.session.nav.playService(sref)
+		if self.songList[self.currentIndex][0].PTS is not None:
+			service = self.session.nav.getCurrentService()
+			if service:
+				self.seek = service.seek()
+			self.updateMusicInformationCUE()
+			self.ptsTimer = eTimer()
+			self.ptsTimer.callback.append(self.ptsTimerCallback)
+			self.ptsTimer.start(1000)
 		self["nextTitle"].setText(self.getNextTitle())
 
 	def ptsTimerCallback(self):
@@ -1182,13 +1159,6 @@ class MerlinMusicPlayerScreen(Screen, InfoBarBase, InfoBarSeek, InfoBarNotificat
 				apicframes = audio.getall("APIC")
 				if len(apicframes) >= 1:
 					hasCover = True
-					if not config.plugins.merlinmusicplayer.hardwaredecoder.value:
-						coverArtFile = file("/tmp/.id3coverart", 'wb')
-                    				coverArtFile.write(apicframes[0].data)
-				                coverArtFile.close()
-						self["coverArt"].embeddedCoverArt()
-						if self.screenSaverScreen:
-							self.screenSaverScreen.updateCover(modus = 2)
 			elif audiotype == 2:
 				if len(audio.pictures) >= 1:
 					hasCover = True
@@ -2877,8 +2847,6 @@ class MerlinMusicPlayerSetup(Screen, ConfigListScreen):
 		self["key_green"] = StaticText(_("OK"))
 
 		self.list = [ ]
-		if HardwareInfo().get_device_name() != "dm7025":
-			self.list.append(getConfigListEntry(_("Use hardware-decoder for MP3"), config.plugins.merlinmusicplayer.hardwaredecoder))
 		self.list.append(getConfigListEntry(_("Play last used songlist after starting"), config.plugins.merlinmusicplayer.startlastsonglist))
 		if databasePath:
 			self.database = getConfigListEntry(_("iDream database path"), config.plugins.merlinmusicplayer.databasepath)

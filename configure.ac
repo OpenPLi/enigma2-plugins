@@ -258,7 +258,6 @@ merlinmusicplayer/Makefile
 merlinmusicplayer/meta/Makefile
 merlinmusicplayer/src/Makefile
 merlinmusicplayer/src/images/Makefile
-merlinmusicplayer/src/merlinmp3player/Makefile
 
 meteoitalia/Makefile
 meteoitalia/meta/Makefile
