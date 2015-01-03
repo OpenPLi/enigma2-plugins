@@ -2,9 +2,9 @@
 '''
 Created on 30.09.2012
 $Author: michael $
-$Revision: 857 $
-$Date: 2014-03-06 10:42:17 +0100 (Thu, 06 Mar 2014) $
-$Id: FritzCallFBF.py 857 2014-03-06 09:42:17Z michael $
+$Revision: 1119 $
+$Date: 2014-12-26 12:06:04 +0100 (Fr, 26 Dez 2014) $
+$Id: FritzCallFBF.py 1119 2014-12-26 11:06:04Z michael $
 '''
 
 # C0111 (Missing docstring)
@@ -70,9 +70,16 @@ def resolveNumber(number, default=None, phonebook=None):
 	return number
 
 def cleanNumber(number):
-	number = number.replace('(','').replace(')','').replace(' ','').replace('-','')
+	# debug("[FritzCallFBF] cleanNumber: " + number)
+	newNumber = (" ".join(re.findall(r"[+0-9*#ABCD]*", number))).replace(" ","")
+	if len(newNumber) == 0:
+		return number
+	else:
+		number = newNumber
 	if number[0] == '+':
 		number = '00' + number[1:]
+	elif number[0] != '0':
+		number = config.plugins.FritzCall.prefix.value + number
 	if config.plugins.FritzCall.country.value and number.startswith(config.plugins.FritzCall.country.value):
 		number = '0' + number[len(config.plugins.FritzCall.country.value):]
 	return number
@@ -2008,6 +2015,8 @@ class FritzCallFBF_05_50:
 				thiscodes = found.group(4).split("<br>")
 				thisvanitys = found.group(5).split("<br>")
 				for i in range(len(thisnumbers)):
+					if (len(thisnumbers[i]) == 0):
+						continue;
 					thisnumber = cleanNumber(thisnumbers[i])
 					if self.phonebook.phonebook.has_key(thisnumber):
 						# debug("[FritzCallFBF_05_50] Ignoring '%s' ('%s') with %s' ( have: '%s')" % (name, thistypes[i], __(thisnumber), self.phonebook.phonebook[thisnumber]))
@@ -2365,29 +2374,29 @@ class FritzCallFBF_05_50:
 				ipAddress = found.group(1)
 			debug("[FritzCallFBF_05_50] _okGetInfo ipAddress v6: " + ipAddress)
 
-
+		# dslState = [ state, info, unused ]; state == '5' means up, everything else down
 		found = re.match('.*<tr id="uiTrDsl"><td class="(led_gray|led_green|led_red)">', html, re.S)
 		if found:
 			if found.group(1) == "led_green":
 				dslState = ['5', None, None]
-				found = re.match('.*<a href="[^"]*">DSL</a></td><td >bereit, ([^<]*)<img src=\'[^\']*\' height=\'[^\']*\'>&nbsp;([^<]*)<img src=\'[^\']*\' height=\'[^\']*\'></td></tr>', html, re.S)
+				found = re.match('.*<a href="[^"]*">(DSL|Kabel)</a></td><td(?: )?>(?:bereit|verbunden), ([^<]*)<img src=\'[^\']*\' height=\'[^\']*\'>&nbsp;([^<]*)<img src=\'[^\']*\' height=\'[^\']*\'></td></tr>', html, re.S)
 				if found:
-					dslState[1] = found.group(1) + " / " + found.group(2)
+					dslState[1] = found.group(2) + " / " + found.group(3)
+					dslState[2] = found.group(1)
 			else:
 				dslState = ['0', None, None]
 		debug("[FritzCallFBF_05_50] _okGetInfo dslState: " + repr(dslState))
 
 		# wlanstate = [ active, encrypted, no of devices ]
-		found = re.match('.*<tr id="uiTrWlan"><td class="(led_gray|led_green|led_red)"></td><td><a href="[^"]*">WLAN</a></td><td>(aus|an)(|, gesichert)</td>', html, re.S)
+		# encrypted == 2 means unknown
+		found = re.match('.*<tr id="uiTrWlan"><td class="(led_gray|led_green|led_red)"></td><td><a href="[^"]*">WLAN</a></td><td[^>]*>(aus|an)', html, re.S)
 		if found:
 			if found.group(1) == "led_green":
-				if found.group(3):
-					wlanState = [ '1', '1', '' ]
-				else:
-					wlanState = [ '1', '0', '' ]
+				wlanState = [ '1', '2', '' ]
 			else:
 				wlanState = [ '0', '0', '0' ]
 			debug("[FritzCallFBF_05_50] _okGetInfo wlanState: " + repr(wlanState))
+			
 
 		#=======================================================================
 		# found = re.match('.*<tr id="trTam" style=""><td><a href="[^"]*">Anrufbeantworter</a></td><td title=\'[^\']*\'>([\d]+) aktiv([^<]*)</td></tr>', html, re.S)
