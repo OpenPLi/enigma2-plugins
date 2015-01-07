@@ -6,6 +6,7 @@ from . import _
 # GUI (Screens)
 from Screens.Screen import Screen
 from Components.ConfigList import ConfigListScreen
+from Screens.ChoiceBox import ChoiceBox
 from EPGRefreshChannelEditor import EPGRefreshServiceEditor
 
 # GUI (Summary)
@@ -14,34 +15,68 @@ from Screens.Setup import SetupSummary
 # GUI (Components)
 from Components.ActionMap import ActionMap
 from Components.Sources.StaticText import StaticText
+from Components.Button import Button
+from Tools.Directories import resolveFilename, SCOPE_PLUGINS
 
 # Configuration
 from Components.config import config, getConfigListEntry
 
 from EPGRefresh import epgrefresh
+from EPGSaveLoadConfiguration import EPGSaveLoadConfiguration
 from Components.SystemInfo import SystemInfo
+from enigma import getDesktop
 
-VERSION = "1.0.1"
+VERSION = "1.5"
 
+weekdays = [
+	_("Monday"),
+	_("Tuesday"),
+	_("Wednesday"),
+	_("Thursday"),
+	_("Friday"),
+	_("Saturday"),
+	_("Sunday"),
+	]
+
+HD = False
+if getDesktop(0).size().width() >= 1280:
+	HD = True
 class EPGRefreshConfiguration(Screen, ConfigListScreen):
 	"""Configuration of EPGRefresh"""
-        
-        skin = """<screen name="EPGRefreshConfiguration" position="center,center" size="600,430">
-		<ePixmap position="0,5" size="140,40" pixmap="skin_default/buttons/red.png" transparent="1" alphatest="on" />
-		<ePixmap position="140,5" size="140,40" pixmap="skin_default/buttons/green.png" transparent="1" alphatest="on" />
-		<ePixmap position="280,5" size="140,40" pixmap="skin_default/buttons/yellow.png" transparent="1" alphatest="on" />
-		<ePixmap position="420,5" size="140,40" pixmap="skin_default/buttons/blue.png" transparent="1" alphatest="on" />
-		<ePixmap position="562,15" size="35,25" pixmap="skin_default/buttons/key_info.png" alphatest="on" />
+	if HD:
+		skin = """<screen name="EPGRefreshConfiguration" position="center,center" size="680,630">
+			<ePixmap position="20,5" size="140,40" pixmap="skin_default/buttons/red.png" transparent="1" alphatest="on" />
+			<ePixmap position="180,5" size="140,40" pixmap="skin_default/buttons/green.png" transparent="1" alphatest="on" />
+			<ePixmap position="320,5" size="140,40" pixmap="skin_default/buttons/yellow.png" transparent="1" alphatest="on" />
+			<ePixmap position="460,5" size="140,40" pixmap="skin_default/buttons/blue.png" transparent="1" alphatest="on" />
+			<ePixmap position="642,15" size="35,25" pixmap="skin_default/buttons/key_info.png" alphatest="on" />
 
-		<widget source="key_red" render="Label" position="0,5" zPosition="1" size="140,40" valign="center" halign="center" font="Regular;21" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
-		<widget source="key_green" render="Label" position="140,5" zPosition="1" size="140,40" valign="center" halign="center" font="Regular;21" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
-		<widget source="key_yellow" render="Label" position="280,5" zPosition="1" size="140,40" valign="center" halign="center" font="Regular;21" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
-		<widget source="key_blue" render="Label" position="420,5" zPosition="1" size="140,40" valign="center" halign="center" font="Regular;21" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
+			<widget source="key_red" render="Label" position="20,5" zPosition="1" size="140,40" valign="center" halign="center" font="Regular;18" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
+			<widget source="key_green" render="Label" position="180,5" zPosition="1" size="140,40" valign="center" halign="center" font="Regular;18" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
+			<widget source="key_yellow" render="Label" position="320,5" zPosition="1" size="140,40" valign="center" halign="center" font="Regular;18" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
+			<widget source="key_blue" render="Label" position="460,5" zPosition="1" size="140,40" valign="center" halign="center" font="Regular;18" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
 
-		<widget name="config" position="5,50" size="590,275" scrollbarMode="showOnDemand" />
-		<ePixmap pixmap="skin_default/div-h.png" position="0,335" zPosition="1" size="565,2" />
-		<widget source="help" render="Label" position="5,345" size="590,83" font="Regular;21" />
-	</screen>"""
+			<widget name="config" position="0,50" size="680,450" scrollbarMode="showOnDemand" />
+			<ePixmap pixmap="skin_default/div-h.png" position="0,505" zPosition="1" size="680,2" />
+			<widget source="help" render="Label" position="5,510" size="670,110" font="Regular;21" />
+		</screen>"""
+	else:
+		skin = """<screen name="EPGRefreshConfiguration" position="center,center" size="600,430">
+			<ePixmap position="0,5" size="140,40" pixmap="skin_default/buttons/red.png" transparent="1" alphatest="on" />
+			<ePixmap position="140,5" size="140,40" pixmap="skin_default/buttons/green.png" transparent="1" alphatest="on" />
+			<ePixmap position="280,5" size="140,40" pixmap="skin_default/buttons/yellow.png" transparent="1" alphatest="on" />
+			<ePixmap position="420,5" size="140,40" pixmap="skin_default/buttons/blue.png" transparent="1" alphatest="on" />
+			<ePixmap position="562,15" size="35,25" pixmap="skin_default/buttons/key_info.png" alphatest="on" />
+
+			<widget source="key_red" render="Label" position="0,5" zPosition="1" size="140,40" valign="center" halign="center" font="Regular;21" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
+			<widget source="key_green" render="Label" position="140,5" zPosition="1" size="140,40" valign="center" halign="center" font="Regular;21" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
+			<widget source="key_yellow" render="Label" position="280,5" zPosition="1" size="140,40" valign="center" halign="center" font="Regular;21" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
+			<widget source="key_blue" render="Label" position="420,5" zPosition="1" size="140,40" valign="center" halign="center" font="Regular;21" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
+
+			<widget name="config" position="5,50" size="590,275" scrollbarMode="showOnDemand" />
+			<ePixmap pixmap="skin_default/div-h.png" position="0,335" zPosition="1" size="565,2" />
+			<widget source="help" render="Label" position="5,345" size="590,83" font="Regular;21" />
+		</screen>"""
 	
 	def __init__(self, session):
 		Screen.__init__(self, session)
@@ -57,27 +92,37 @@ class EPGRefreshConfiguration(Screen, ConfigListScreen):
 		)
 
 		self.list = [
+			getConfigListEntry(_("Setup save / load EPG"), config.plugins.epgrefresh.setup_epg, _("Press button OK in order to open the settings menu.")),
 			getConfigListEntry(_("Refresh EPG automatically"), config.plugins.epgrefresh.enabled, _("Unless this is enabled, EPGRefresh won't automatically run but needs to be explicitly started by the yellow button in this menu.")),
 			getConfigListEntry(_("Show in extension menu"), config.plugins.epgrefresh.show_in_extensionsmenu, _("Enable this to be able to access the EPGRefresh configuration from within the extension menu.")),
-			getConfigListEntry(_("Show in event menu"), config.plugins.epgrefresh.show_in_eventmenu, _("Enable this to be able to add current service into EPGRefresh from event menu.")),
+			getConfigListEntry(_("Show \"add to EPGRefresh\" in"), config.plugins.epgrefresh.add_to_refresh, _("Select menu to add services to the EPGRefresh.")),
 			getConfigListEntry(_("Show popup when refresh starts and ends"), config.plugins.epgrefresh.enablemessage, _("This setting controls whether or not an informational message will be shown at start and completion of refresh.")),
 			getConfigListEntry(_("Wake up from deep standby for EPG refresh"), config.plugins.epgrefresh.wakeup, _("If this is enabled, the plugin will wake up the receiver from deep standby if possible. Otherwise it needs to be switched on already.")),
-			getConfigListEntry(_("Duration to stay on service-channels (minutes)"), config.plugins.epgrefresh.interval, _("This is the duration each service/channel will stay active during a refresh.")),
+			getConfigListEntry(_("Choice days for refresh"), config.plugins.epgrefresh.day_profile, _("Select the day or days of the week for automatic refresh EPG. At least one day must be included.")),
+			getConfigListEntry(_("Duration to stay on service (seconds)"), config.plugins.epgrefresh.interval_seconds, _("This is the duration each service/channel will stay active during a refresh.")),
 			getConfigListEntry(_("EPG refresh auto-start earliest (hh:mm)"), config.plugins.epgrefresh.begin, _("An automated refresh will start after this time of day, but before the time specified in next setting.")),
 			getConfigListEntry(_("EPG refresh auto-start latest (hh:mm)"), config.plugins.epgrefresh.end, _("An automated refresh will start before this time of day, but after the time specified in previous setting.")),
 			getConfigListEntry(_("Delay if not in standby (minutes)"), config.plugins.epgrefresh.delay_standby, _("If the receiver currently isn't in standby, this is the duration which EPGRefresh will wait before retry.")),
 			getConfigListEntry(_("Force scan even if receiver is in use"), config.plugins.epgrefresh.force, _("This setting controls whether or not the refresh will be initiated even though the receiver is active (either not in standby or currently recording).")),
 			getConfigListEntry(_("Shutdown after EPG refresh"), config.plugins.epgrefresh.afterevent, _("This setting controls whether the receiver should be set to deep standby after refresh is completed.")),
-                ]
+			getConfigListEntry(_("Save EPG after refresh"), config.plugins.epgrefresh.save_epg, _("Save EPG in current cachefile after refresh is completed.")),
+			getConfigListEntry(_("Show 'EPG-refresh now' in main menu"), config.plugins.epgrefresh.start_on_mainmenu, _("If enabled, show 'EPG-refresh now' in main menu if refresh now not running.")),
+				]
 		if SystemInfo.get("NumVideoDecoders", 1) > 1:
 			self.list.insert(3, getConfigListEntry(_("Refresh EPG using"), config.plugins.epgrefresh.adapter, _("If you want to refresh the EPG in background, you can choose the method which best suits your needs here, e.g. hidden, fake reocrding or regular Picture in Picture.")))
-
+		if config.ParentalControl.configured.value and config.ParentalControl.servicepinactive.value:
+			self.list.append(getConfigListEntry(_("Skip protected Services"), config.plugins.epgrefresh.skipProtectedServices, _("Select mode the refresh for services/bouquets parental control.")))
 		try:
 			# try to import autotimer module to check for its existence
 			from Plugins.Extensions.AutoTimer.AutoTimer import AutoTimer
 
 			self.list.append(getConfigListEntry(_("Inherit Services from AutoTimer"), config.plugins.epgrefresh.inherit_autotimer, _("Extend the list of services to refresh by those your AutoTimers use?")))
 			self.list.append(getConfigListEntry(_("Run AutoTimer after refresh"), config.plugins.epgrefresh.parse_autotimer, _("After a successful refresh the AutoTimer will automatically search for new matches if this is enabled.")))
+			try:
+				from Plugins.Extensions.SeriesPlugin.plugin import renameTimer
+				self.list.append(getConfigListEntry(_("Timeout shutdown after refresh for SeriesPlugin (min)"), config.plugins.epgrefresh.timeout_shutdown,  _("If \"Run AutoTimer after refresh\" and \"Shutdown after EPG refresh\" enabled and use \"Label series\" for match, set long timeout."))) 
+			except ImportError as ie:
+				print("[EPGRefresh] SeriesPlugin Plugin not installed:", ie)
 		except ImportError as ie:
 			print("[EPGRefresh] AutoTimer Plugin not installed:", ie)
 
@@ -97,7 +142,7 @@ class EPGRefreshConfiguration(Screen, ConfigListScreen):
 
 		# Initialize Buttons
 		self["key_red"] = StaticText(_("Cancel"))
-		self["key_green"] = StaticText(_("OK"))
+		self["key_green"] = StaticText(_("Save"))
 		self["key_yellow"] = StaticText(_("Refresh now"))
 		self["key_blue"] = StaticText(_("Edit Services"))
 
@@ -112,12 +157,12 @@ class EPGRefreshConfiguration(Screen, ConfigListScreen):
 				"blue": self.editServices,
 				"showEPGList": self.keyInfo,
 				"displayHelp": self.showHelp,
+				"ok": self.keyOK,
 			}
 		)
 
 		# Trigger change
 		self.changed()
-
 		self.onLayoutFinish.append(self.setCustomTitle)
 		self.onFirstExecBegin.append(self.firstExec)
 
@@ -142,8 +187,34 @@ class EPGRefreshConfiguration(Screen, ConfigListScreen):
 			self["help"].text = cur[2]
 
 	def forceRefresh(self):
+		if config.plugins.epgrefresh.afterevent.value:
+			choicelist = [
+			(_("Return to TV viewing"), self.forceRefreshAfterNoShutdown),
+			(_("Shutdown after EPG refresh"), self.forceRefreshStandart),
+			]
+			dlg = self.session.openWithCallback(self.menuCallback,ChoiceBox,list = choicelist,title= _("Select action after refresh:"))
+			dlg.setTitle(_("Shutdown after EPG refresh enabled in setup..."))
+		else:
+			self.forceRefreshStandart()
+
+	def menuCallback(self, ret = None):
+		ret and ret[1]()
+
+	def forceRefreshStandart(self):
 		epgrefresh.services = (set(self.services[0]), set(self.services[1]))
 		epgrefresh.forceRefresh(self.session)
+
+	def forceRefreshAfterNoShutdown(self):
+		epgrefresh.services = (set(self.services[0]), set(self.services[1]))
+		epgrefresh.forceRefresh(self.session, dontshutdown = True)
+
+	def keyOK(self):
+		ConfigListScreen.keyOK(self)
+		sel = self["config"].getCurrent()[1]
+		if sel == config.plugins.epgrefresh.setup_epg:
+			self.session.open(EPGSaveLoadConfiguration)
+		if sel == config.plugins.epgrefresh.day_profile:
+			self.session.open(EPGRefreshProfile)
 
 	def editServices(self):
 		self.session.openWithCallback(
@@ -212,8 +283,63 @@ class EPGRefreshConfiguration(Screen, ConfigListScreen):
 	def keySave(self):
 		epgrefresh.services = (set(self.services[0]), set(self.services[1]))
 		epgrefresh.saveConfiguration()
-
 		for x in self["config"].list:
 			x[1].save()
 
 		self.close(self.session)
+
+class EPGRefreshProfile(ConfigListScreen,Screen):
+	skin = """
+			<screen position="center,center" size="400,230" title="EPGRefreshProfile" >
+			<widget name="config" position="0,0" size="400,180" scrollbarMode="showOnDemand" />
+			<widget name="key_red" position="0,190" size="140,40" valign="center" halign="center" zPosition="4"  foregroundColor="white" font="Regular;18" transparent="1"/> 
+			<widget name="key_green" position="140,190" size="140,40" valign="center" halign="center" zPosition="4"  foregroundColor="white" font="Regular;18" transparent="1"/> 
+			<ePixmap name="red"    position="0,190"   zPosition="2" size="140,40" pixmap="skin_default/buttons/red.png" transparent="1" alphatest="on" />
+			<ePixmap name="green"  position="140,190" zPosition="2" size="140,40" pixmap="skin_default/buttons/green.png" transparent="1" alphatest="on" />
+		</screen>"""
+		
+	def __init__(self, session, args = 0):
+		self.session = session
+		Screen.__init__(self, session)
+		
+		self.list = []
+
+		for i in range(7):
+			self.list.append(getConfigListEntry(weekdays[i], config.plugins.epgrefresh_extra.day_refresh[i]))
+
+		ConfigListScreen.__init__(self, self.list)
+		
+		self["key_red"] = Button(_("Cancel"))
+		self["key_green"] = Button(_("Save"))
+		self["setupActions"] = ActionMap(["SetupActions", "ColorActions"],
+		{
+			"red": self.cancel,
+			"green": self.save,
+			"save": self.save,
+			"cancel": self.cancel,
+			"ok": self.save,
+		}, -2)
+		self.onLayoutFinish.append(self.setCustomTitle)
+
+	def setCustomTitle(self):
+		self.setTitle(_("Days Profile"))
+
+	def save(self):
+		if not config.plugins.epgrefresh_extra.day_refresh[0].value:
+			if not config.plugins.epgrefresh_extra.day_refresh[1].value:
+				if not config.plugins.epgrefresh_extra.day_refresh[2].value:
+					if not config.plugins.epgrefresh_extra.day_refresh[3].value:
+						if not config.plugins.epgrefresh_extra.day_refresh[4].value:
+							if not config.plugins.epgrefresh_extra.day_refresh[5].value:
+								if not config.plugins.epgrefresh_extra.day_refresh[6].value:
+									from Screens.MessageBox import MessageBox
+									self.session.open(MessageBox, _("You may not use this settings!\nAt least one day a week should be included!"), MessageBox.TYPE_INFO, timeout = 6)
+									return
+		for x in self["config"].list:
+			x[1].save()
+		self.close()
+
+	def cancel(self):
+		for x in self["config"].list:
+			x[1].cancel()
+		self.close()

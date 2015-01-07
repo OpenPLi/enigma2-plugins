@@ -15,8 +15,9 @@ from Components.config import config
 def checkTimespan(begin, end):
 	# Get current time
 	time = localtime()
-
-	# Check if we span a day
+	if not config.plugins.epgrefresh_extra.day_refresh[time.tm_wday].value:
+		return False
+	# Check if we span a day 
 	if begin[0] > end[0] or (begin[0] == end[0] and begin[1] >= end[1]):
 		# Check if begin of event is later than our timespan starts
 		if time.tm_hour > begin[0] or (time.tm_hour == begin[0] and time.tm_min >= begin[1]):

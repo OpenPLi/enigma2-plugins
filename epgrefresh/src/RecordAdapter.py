@@ -5,9 +5,11 @@ from Components.SystemInfo import SystemInfo
 # MessageBox
 from Screens.MessageBox import MessageBox
 from Tools import Notifications
-
+import Screens.Standby
 # Config
 from Components.config import config
+
+from . import _, NOTIFICATIONID
 
 class RecordAdapter:
 	backgroundCapable = True
@@ -23,9 +25,11 @@ class RecordAdapter:
 	def prepare(self):
 		if not self.backgroundRefreshAvailable:
 			return False
-		if config.plugins.epgrefresh.enablemessage.value:
-			Notifications.AddNotification(MessageBox, _("EPG refresh started in background."), type=MessageBox.TYPE_INFO, timeout=4)
-
+		if config.plugins.epgrefresh.enablemessage.value and Screens.Standby.inStandby is None:
+			try:
+				Notifications.AddPopup(_("EPG refresh started in background."), MessageBox.TYPE_INFO, 4, NOTIFICATIONID)
+			except:
+				pass
 		return True
 
 	def play(self, service):
