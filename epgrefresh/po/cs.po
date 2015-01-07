@@ -2,10 +2,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Enigma2 EPGRefresh Plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-05-30 20:50+0100\n"
-"PO-Revision-Date: 2014-03-03 17:28+0100\n"
+"POT-Creation-Date: 2014-12-28 18:07+0200\n"
+"PO-Revision-Date: 2015-01-07 20:31+0100\n"
 "Last-Translator: ims <ims21@users.sourceforge.net>\n"
 "Language-Team: PLi\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -14,229 +15,637 @@ msgstr ""
 "X-Poedit-Country: CZECH REPUBLIC\n"
 "X-Poedit-SearchPath-0: D:\\Dreambox\\Plugins\\enigma2-plugins\\epgrefresh\\src\n"
 
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/EPGRefresh.py:287
-msgid "EPG refresh finished."
-msgstr "Aktualizace EPG dokončena."
+#: EPGRefresh.py:439
+#, python-format
+msgid ""
+"\n"
+"%d more services."
+msgstr ""
+"\n"
+"%d více programů."
 
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/EPGRefreshChannelEditor.py:59
-msgid "EPGRefresh Services"
-msgstr "EPGRefresh kanály"
+#: plugin.py:188
+#: plugin.py:213
+msgid "   (AutoZap)"
+msgstr ""
 
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/EPGRefreshChannelEditor.py:69
-msgid "Channels"
-msgstr "Kanály"
+#: EpgLoadSaveRefresh.py:49
+#: EpgLoadSaveRefresh.py:106
+msgid "Adding schedule..."
+msgstr ""
 
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/EPGRefreshChannelEditor.py:70
-msgid "Bouquets"
-msgstr "Přehledy"
-
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/EPGRefreshChannelEditor.py:79
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/EPGRefreshConfiguration.py:96
-msgid "Cancel"
-msgstr "Zrušit"
-
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/EPGRefreshChannelEditor.py:80
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/EPGRefreshConfiguration.py:97
-msgid "OK"
-msgstr "OK"
-
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/EPGRefreshChannelEditor.py:81
-msgid "delete"
-msgstr "Smazat"
-
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/EPGRefreshChannelEditor.py:82
-msgid "New"
-msgstr "Nový"
-
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/EPGRefreshChannelEditor.py:100
-msgid "Edit Services to refresh"
-msgstr "Upravit aktualizované kanály"
-
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/EPGRefreshChannelEditor.py:120
-msgid "Editing"
-msgstr "Upravovat"
-
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/EPGRefreshChannelEditor.py:129
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/EPGRefreshChannelEditor.py:177
-msgid "Refreshing"
-msgstr "Aktualizace"
-
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/EPGRefreshChannelEditor.py:164
-msgid "Select channel to refresh"
-msgstr "Vyberte kanál pro aktualizaci"
-
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/EPGRefreshChannelEditor.py:170
-msgid "Select bouquet to refresh"
-msgstr "Vyberte přehled pro aktualizaci"
-
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/EPGRefreshConfiguration.py:48
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/EPGRefreshConfiguration.py:120
-msgid "EPGRefresh Configuration"
-msgstr "EPGRefresh nastavení"
-
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/EPGRefreshConfiguration.py:58
-msgid "Refresh EPG automatically"
-msgstr "Aktualizovat EPG automaticky"
-
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/EPGRefreshConfiguration.py:58
-msgid "Unless this is enabled, EPGRefresh won't automatically run but needs to be explicitly started by the yellow button in this menu."
-msgstr "Dokud není povoleno, EPGRefresh  nebude probíhat automaticky a musí být spouštěna pomocí žlutého tlačítka v této nabídce."
-
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/EPGRefreshConfiguration.py:59
-msgid "Show in extension menu"
-msgstr "Zobrazovat v Extension menu"
-
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/EPGRefreshConfiguration.py:59
-msgid "Enable this to be able to access the EPGRefresh configuration from within the extension menu."
-msgstr "Umožní přistupovat k nastavení EPGRefresh z Extension menu."
-
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/EPGRefreshConfiguration.py:60
-msgid "Show popup when refresh starts and ends"
-msgstr "Zobrazovat zprávu při spuštění a ukončení aktualizace"
-
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/EPGRefreshConfiguration.py:60
-msgid "This setting controls whether or not an informational message will be shown at start and completion of refresh."
-msgstr "Určuje, zda se bude zobrazovat zpráva při spuštění a dokončení aktualizace."
-
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/EPGRefreshConfiguration.py:61
-msgid "Wake up from deep standby for EPG refresh"
-msgstr "Probudit pro aktualizaci z hlubokého spánku"
-
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/EPGRefreshConfiguration.py:61
-msgid "If this is enabled, the plugin will wake up the receiver from deep standby if possible. Otherwise it needs to be switched on already."
-msgstr "Pokud je povoleno, pak plugin - jestliže je to možné - probudí přijímač z hlubokého spánku. Jinak musí být přijímač již zapnutý. "
-
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/EPGRefreshConfiguration.py:62
-msgid "Duration to stay on service-channels (minutes)"
-msgstr "Zůstat na kanálu (minuty)"
-
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/EPGRefreshConfiguration.py:62
-msgid "This is the duration each service/channel will stay active during a refresh."
-msgstr "Doba, po kterou se aktualizují jednotlivé kanály."
-
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/EPGRefreshConfiguration.py:63
-msgid "EPG refresh auto-start earliest (hh:mm)"
-msgstr "Aktualizaci EPG spouštět nejdříve v (hh:mm)"
-
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/EPGRefreshConfiguration.py:63
-msgid "An automated refresh will start after this time of day, but before the time specified in next setting."
-msgstr "Automatická aktualizace se spustí každý den po tomto čase ale před časem zadaným v následujícím nastavení. "
-
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/EPGRefreshConfiguration.py:64
-msgid "EPG refresh auto-start latest (hh:mm)"
-msgstr "Aktualizaci EPG spouštět nejpozději v (hh:mm)"
-
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/EPGRefreshConfiguration.py:64
-msgid "An automated refresh will start before this time of day, but after the time specified in previous setting."
-msgstr "Automatické aktualizace se spustí každý den před tímto časem ale nejdříve po čase nastaveném v předchozím nastavení. "
-
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/EPGRefreshConfiguration.py:65
-msgid "Delay if not in standby (minutes)"
-msgstr "Zpoždění, není-li v pohotovostním režimu (minuty) "
-
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/EPGRefreshConfiguration.py:65
-msgid "If the receiver currently isn't in standby, this is the duration which EPGRefresh will wait before retry."
-msgstr "Doba, jak dlouho bude EPGRefresh čekat před opakováním, jestliže není přijímač v pohotovostním režimu."
-
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/EPGRefreshConfiguration.py:66
-msgid "Force scan even if receiver is in use"
-msgstr "Vynutit aktualizaci, je-li přijímač používán"
-
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/EPGRefreshConfiguration.py:66
-msgid "This setting controls whether or not the refresh will be initiated even though the receiver is active (either not in standby or currently recording)."
-msgstr "Určuje, zda aktualizace bude nebo nebude prováděna i když je přijímač aktivní (není v pohotovostním režimu nebo probíhá nahrávání)."
-
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/EPGRefreshConfiguration.py:67
-msgid "Shutdown after EPG refresh"
-msgstr "Vypnout po aktualizaci EPG"
-
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/EPGRefreshConfiguration.py:67
-msgid "This setting controls whether the receiver should be set to deep standby after refresh is completed."
-msgstr "Určuje, zda přijímač po provedené aktualizaci bude nebo nebude přepnut do hlubokého spánku."
-
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/EPGRefreshConfiguration.py:70
-msgid "Refresh EPG using"
-msgstr "Aktualizace EPG používá "
-
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/EPGRefreshConfiguration.py:70
-msgid "If you want to refresh the EPG in background, you can choose the method which best suits your needs here, e.g. hidden, fake reocrding or regular Picture in Picture."
-msgstr "Pokud chcete aktualizovat EPG na pozadí , můžete zvolit metodu, která nejlépe vyhovuje Vašim potřebám. Např. skrytě , falešné nahrávání nebo obraz v obraze (PiP). "
-
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/EPGRefreshConfiguration.py:76
-msgid "Inherit Services from AutoTimer"
-msgstr "Převzít kanály z AutoTimeru"
-
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/EPGRefreshConfiguration.py:76
-msgid "Extend the list of services to refresh by those your AutoTimers use?"
-msgstr "Seznam kanálů pro automatickou aktualizaci EPG bude rozšířen o kanály používané v AutoTimeru."
-
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/EPGRefreshConfiguration.py:77
-msgid "Run AutoTimer after refresh"
-msgstr "Spustit AutoTimer po aktualizaci"
-
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/EPGRefreshConfiguration.py:77
+#: EPGRefreshConfiguration.py:120
 msgid "After a successful refresh the AutoTimer will automatically search for new matches if this is enabled."
 msgstr "Po úspěšné aktualizaci Autotimer automaticky znovu vyhledá odpovídající časovače."
 
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/EPGRefreshConfiguration.py:98
-msgid "Refresh now"
-msgstr "Aktualizovat"
+#: EPGRefreshConfiguration.py:103
+msgid "An automated refresh will start after this time of day, but before the time specified in next setting."
+msgstr "Automatická aktualizace se spustí každý den po tomto čase ale před časem zadaným v následujícím nastavení. "
 
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/EPGRefreshConfiguration.py:99
+#: EPGRefreshConfiguration.py:104
+msgid "An automated refresh will start before this time of day, but after the time specified in previous setting."
+msgstr "Automatické aktualizace se spustí každý den před tímto časem ale nejdříve po čase nastaveném v předchozím nastavení. "
+
+#: EPGSaveLoadConfiguration.py:158
+#: EPGSaveLoadConfiguration.py:414
+msgid "Are you sure you want to load the EPG data from:\n"
+msgstr "Chcete načíst EPG data z:\n"
+
+#: EpgLoadSaveRefresh.py:154
+msgid "Are you sure you want to reload the EPG data from:\n"
+msgstr "Chcete znovu načíst EPG data z:\n"
+
+#: EPGSaveLoadConfiguration.py:160
+#: EPGSaveLoadConfiguration.py:416
+msgid "Are you sure you want to save and load the EPG data from:\n"
+msgstr "Chcete uložit a znovu načíst EPG data z:\n"
+
+#: EPGSaveLoadConfiguration.py:156
+#: EPGSaveLoadConfiguration.py:412
+#: EpgLoadSaveRefresh.py:149
+msgid "Are you sure you want to save the EPG Cache to:\n"
+msgstr "Chcete uložit EPG data do:\n"
+
+#: EPGSaveLoadConfiguration.py:86
+msgid "Auto restore EPG backup on boot"
+msgstr "Automaticky obnovit EPG zálohu po startu"
+
+#: EPGSaveLoadConfiguration.py:86
+msgid "Auto restore EPG from backup cachefile and loading on boot."
+msgstr "Automaticky obnovit EPG ze zálohy a načíst při startu."
+
+#: plugin.py:172
+msgid "AutoZap"
+msgstr ""
+
+#: plugin.py:599
+msgid "AutoZap for refreshing EPG data"
+msgstr "AutoZap pro aktualizaci EPG dat"
+
+#: EPGSaveLoadConfiguration.py:81
+msgid "Automatic load EPG"
+msgstr "Automatické načtení EPG"
+
+#: EPGSaveLoadConfiguration.py:81
+msgid "Automatic loading EPG from current cachefile after a specified time."
+msgstr "Automatické načítání EPG z aktuálního souboru v zadaném čase."
+
+#: EPGSaveLoadConfiguration.py:79
+msgid "Automatic save EPG"
+msgstr "Automatické uložení EPG"
+
+#: EPGSaveLoadConfiguration.py:79
+msgid "Automatic saving EPG in current cachefile after a specified time."
+msgstr "Automatické uložení EPG do aktuálního souboru v zadaném čase."
+
+#: EPGSaveLoadConfiguration.py:89
+msgid "Automatic switching of all the services in the current channel list after a specified time. Stop switch can only manually."
+msgstr "Automatické přepínání ze všech služeb v aktuálním přehledu kanálů po uplynutí nastavené doby. Vypnout lze pouze ručně."
+
+#: plugin.py:597
+#: plugin.py:621
+msgid "Automatically refresh EPG"
+msgstr "Automatická aktualizace EPG"
+
+#: plugin.py:71
+msgid "Background only"
+msgstr ""
+
+#: EPGSaveLoadConfiguration.py:174
+msgid ""
+"Backup file is corrupt!\n"
+"Backup file will be deleted!"
+msgstr ""
+"Záložní soubor je poškozen\n"
+" a bude smazán!"
+
+#: EPGSaveLoadConfiguration.py:181
+msgid "Backup file is not found!"
+msgstr "Záložní soubor nenalezen!"
+
+#: EPGSaveLoadConfiguration.py:170
+msgid "Backup file load!"
+msgstr "Záložní soubor načten!"
+
+#: EPGRefreshChannelEditor.py:70
+msgid "Bouquets"
+msgstr "Přehledy"
+
+#: EPGRefreshChannelEditor.py:79
+#: EPGRefreshConfiguration.py:144
+#: EPGRefreshConfiguration.py:312
+#: EPGSaveLoadConfiguration.py:108
+msgid "Cancel"
+msgstr "Zrušit"
+
+#: EPGSaveLoadConfiguration.py:87
+msgid "Changes are needed to restart enigma2."
+msgstr "Změny se projeví po restartu enigma2."
+
+#: EPGRefreshChannelEditor.py:69
+msgid "Channels"
+msgstr "Kanály"
+
+#: EPGRefreshConfiguration.py:101
+msgid "Choice days for refresh"
+msgstr "Nastavit dny pro aktualizaci "
+
+#: EPGSaveLoadConfiguration.py:56
+msgid "Configuration save / load EPG"
+msgstr "Nastavení uložení/načtení EPG"
+
+#: EPGSaveLoadConfiguration.py:406
+#: EPGSaveLoadConfiguration.py:417
+msgid "Configuration..."
+msgstr "Nastavení..."
+
+#: EPGSaveLoadConfiguration.py:85
+msgid "Create backup cachefile, after manual or automatic saving EPG."
+msgstr "Vytvářet zálohu cachefile při ručním nebo automatickém ukládání EPG."
+
+#: EPGSaveLoadConfiguration.py:85
+msgid "Create backup when saving EPG"
+msgstr "Vytvářet zálohu při ukládání EPG"
+
+#: EPGSaveLoadConfiguration.py:135
+msgid "Current EPG cachefile:"
+msgstr "Aktuální soubor EPG cache:"
+
+#: EPGRefreshConfiguration.py:325
+msgid "Days Profile"
+msgstr "Výberte dny"
+
+#: EPGRefreshConfiguration.py:105
+msgid "Delay if not in standby (minutes)"
+msgstr "Zpoždění, není-li v pohotovostním režimu (minuty) "
+
+#: EPGSaveLoadConfiguration.py:80
+msgid "Do not set too short period of time."
+msgstr "Nenastavujte příliš krátký interval."
+
+#: EPGSaveLoadConfiguration.py:405
+#: EPGSaveLoadConfiguration.py:419
+msgid "Download EPG from exUSSR"
+msgstr ""
+
+#: EPGSaveLoadConfiguration.py:93
+msgid "Download internet EPG from exUSSR"
+msgstr "Stahovat internetovou EPG z exUSSR"
+
+#: EPGSaveLoadConfiguration.py:90
+msgid "Duration to stay on service (sec) for \"AutoZap\" "
+msgstr "Zůstat na kanálu ve (vteřinách) pro \"AutoZap\""
+
+#: EPGRefreshConfiguration.py:102
+msgid "Duration to stay on service (seconds)"
+msgstr "Zůstat na kanálu (vteřiny)"
+
+#: EpgLoadSaveRefresh.py:44
+#: EpgLoadSaveRefresh.py:101
+msgid "EPG Cache Check"
+msgstr "Kontrola EPG Cache"
+
+#: EPGSaveLoadConfiguration.py:84
+msgid "EPG cache filename"
+msgstr "Název EPG cache"
+
+#: EPGSaveLoadConfiguration.py:83
+msgid "EPG cache path"
+msgstr "Cesta k EPG cache"
+
+#: EPGSaveLoadConfiguration.py:237
+#: EPGSaveLoadConfiguration.py:474
+msgid "EPG is loaded!"
+msgstr "EPG je načteno!"
+
+#: EPGRefreshConfiguration.py:103
+msgid "EPG refresh auto-start earliest (hh:mm)"
+msgstr "Aktualizaci EPG spouštět nejdříve v (hh:mm)"
+
+#: EPGRefreshConfiguration.py:104
+msgid "EPG refresh auto-start latest (hh:mm)"
+msgstr "Aktualizaci EPG spouštět nejpozději v (hh:mm)"
+
+#: EPGRefresh.py:308
+#: PipAdapter.py:106
+msgid "EPG refresh finished."
+msgstr "Aktualizace EPG dokončena."
+
+#: PipAdapter.py:36
+#: RecordAdapter.py:30
+msgid "EPG refresh started in background."
+msgstr "Aktualizace EPG spuštěna na pozadí."
+
+#: MainPictureAdapter.py:28
+msgid "EPG refresh starts scanning channels."
+msgstr "Aktualizace EPG začala prohledávat kanály."
+
+#: EPGSaveLoadConfiguration.py:191
+#: EPGSaveLoadConfiguration.py:428
+msgid "EPG with Linux-Sat"
+msgstr ""
+
+#: plugin.py:540
+msgid "EPG-refresh now"
+msgstr "Aktualizovat nyní"
+
+#: plugin.py:620
+msgid "EPGRefresh"
+msgstr "EPGRefresh"
+
+#: EPGRefreshConfiguration.py:85
+#: EPGRefreshConfiguration.py:177
+msgid "EPGRefresh Configuration"
+msgstr "EPGRefresh nastavení"
+
+#: EPGRefreshChannelEditor.py:59
+msgid "EPGRefresh Services"
+msgstr "EPGRefresh kanály"
+
+#: EPGRefreshConfiguration.py:147
 msgid "Edit Services"
 msgstr "Kanály"
 
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/EPGRefreshConfiguration.py:120
-msgid "Version"
-msgstr "- v"
+#: EPGRefreshChannelEditor.py:100
+msgid "Edit Services to refresh"
+msgstr "Upravit aktualizované kanály"
 
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/EPGRefreshConfiguration.py:175
-msgid "never"
-msgstr "nikdy"
+#: EPGRefreshChannelEditor.py:120
+msgid "Editing"
+msgstr "Upravovat"
 
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/EPGRefreshConfiguration.py:179
+#: EPGRefreshConfiguration.py:97
+msgid "Enable this to be able to access the EPGRefresh configuration from within the extension menu."
+msgstr "Umožní přistupovat k nastavení EPGRefresh z Extension menu."
+
+#: EPGRefreshConfiguration.py:119
+msgid "Extend the list of services to refresh by those your AutoTimers use?"
+msgstr "Seznam kanálů pro automatickou aktualizaci EPG bude rozšířen o kanály používané v AutoTimeru."
+
+#: plugin.py:55
+msgid "Fake recording"
+msgstr "Falešné nahrávání"
+
+#: EPGRefresh.py:440
+msgid "Following Services have to be scanned:"
+msgstr "Následující programy mají být zkontrolovány:"
+
+#: EPGRefreshConfiguration.py:106
+msgid "Force scan even if receiver is in use"
+msgstr "Vynutit aktualizaci, je-li přijímač používán"
+
+#: plugin.py:72
+msgid "Foreground also"
+msgstr ""
+
+#: EPGRefreshConfiguration.py:36
+msgid "Friday"
+msgstr "Pátek"
+
+#: EPGRefreshConfiguration.py:123
+msgid "If \"Run AutoTimer after refresh\" and \"Shutdown after EPG refresh\" enabled and use \"Label series\" for match, set long timeout."
+msgstr ""
+
+#: EPGRefreshConfiguration.py:109
+msgid "If enabled, show 'EPG-refresh now' in main menu if refresh now not running."
+msgstr "Jestliže je povoleno, pak 'EPG-refresh nyní' bude zobrazeno v hlavním menu ( jestliže již neprobíhá)."
+
+#: EPGRefreshConfiguration.py:105
+msgid "If the receiver currently isn't in standby, this is the duration which EPGRefresh will wait before retry."
+msgstr "Doba, jak dlouho bude EPGRefresh čekat před opakováním, jestliže není přijímač v pohotovostním režimu."
+
+#: EPGRefreshConfiguration.py:100
+msgid "If this is enabled, the plugin will wake up the receiver from deep standby if possible. Otherwise it needs to be switched on already."
+msgstr "Pokud je povoleno, pak plugin - jestliže je to možné - probudí přijímač z hlubokého spánku. Jinak musí být přijímač již zapnutý. "
+
+#: EPGSaveLoadConfiguration.py:88
+msgid "If you want to download from the internet russian ERG, put to yes."
+msgstr "Povolte, chcete-li stahovat z internetu ruské EPG."
+
+#: EPGRefreshConfiguration.py:112
+msgid "If you want to refresh the EPG in background, you can choose the method which best suits your needs here, e.g. hidden, fake reocrding or regular Picture in Picture."
+msgstr "Pokud chcete aktualizovat EPG na pozadí , můžete zvolit metodu, která nejlépe vyhovuje Vašim potřebám. Např. skrytě , falešné nahrávání nebo obraz v obraze (PiP). "
+
+#: EPGRefreshConfiguration.py:119
+msgid "Inherit Services from AutoTimer"
+msgstr "Převzít kanály z AutoTimeru"
+
+#: EPGRefreshConfiguration.py:267
 #, python-format
 msgid "Last refresh was %s"
 msgstr "Poslední aktualizace provedena: %s"
 
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/EPGRefreshConfiguration.py:190
-msgid "Really close without saving settings?"
-msgstr "Opravdu zavřít bez uloženého nastavení?"
+#: EPGSaveLoadConfiguration.py:82
+msgid "Load every (in hours)"
+msgstr "Načítat každých (hod)"
 
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/MainPictureAdapter.py:19
-msgid "EPG refresh starts scanning channels."
-msgstr "Aktualizace EPG začala prohledávat kanály."
-
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/PipAdapter.py:22
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/RecordAdapter.py:16
-msgid "EPG refresh started in background."
-msgstr "Aktualizace EPG spuštěna na pozadí."
-
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/PipAdapter.py:22
-msgid "Please don't use PiP meanwhile!"
-msgstr "Prosím, nepoužívejte zatím PiP!"
-
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/PipAdapter.py:68
-msgid "EPG refresh finished. PiP available now."
-msgstr "Aktualizace EPG byla dokončena. PiP je možné opět používat."
-
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/plugin.py:35
+#: plugin.py:52
 msgid "Main Picture"
 msgstr "Hlavní obraz"
 
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/plugin.py:36
+#: plugin.py:533
+msgid "Manual EPG"
+msgstr ""
+
+#: EPGSaveLoadConfiguration.py:76
+#: EPGSaveLoadConfiguration.py:402
+#: EPGSaveLoadConfiguration.py:413
+msgid "Manual load EPG"
+msgstr "Načtení EPG"
+
+#: EPGSaveLoadConfiguration.py:76
+msgid "Manual loading EPG from current cachefile."
+msgstr "Ruční načtení EPG z aktuálního souboru."
+
+#: EPGSaveLoadConfiguration.py:77
+#: EPGSaveLoadConfiguration.py:403
+#: EPGSaveLoadConfiguration.py:415
+msgid "Manual reload EPG"
+msgstr "Znovunačtení EPG"
+
+#: EPGSaveLoadConfiguration.py:78
+msgid "Manual restore EPG backup"
+msgstr "Obnovení EPG ze zálohy"
+
+#: EPGSaveLoadConfiguration.py:78
+msgid "Manual restore EPG from backup cachefile and loading."
+msgstr "Ruční obnovení EPG ze záložního souboru a načtení."
+
+#: EPGSaveLoadConfiguration.py:75
+#: EPGSaveLoadConfiguration.py:401
+#: EPGSaveLoadConfiguration.py:411
+msgid "Manual save EPG"
+msgstr "Uložení EPG"
+
+#: EPGSaveLoadConfiguration.py:75
+msgid "Manual saving EPG in current cachefile."
+msgstr "Ruční uložení EPG do aktuálního souboru."
+
+#: EPGSaveLoadConfiguration.py:77
+msgid "Manual saving and loading EPG from current cachefile."
+msgstr "Ruční uložení a načtení EPG z aktuálního souboru."
+
+#: EPGRefreshConfiguration.py:32
+msgid "Monday"
+msgstr "Pondělí"
+
+#: EPGRefreshChannelEditor.py:82
+msgid "New"
+msgstr "Nový"
+
+#: EPGSaveLoadConfiguration.py:206
+#: EPGSaveLoadConfiguration.py:218
+#: EPGSaveLoadConfiguration.py:443
+#: EPGSaveLoadConfiguration.py:455
+msgid "Not found the mounted device for EPG file!"
+msgstr "Nenalezeno připojené zařízení pro EPG soubor!"
+
+#: EPGRefreshChannelEditor.py:80
+#: EPGSaveLoadConfiguration.py:109
+msgid "OK"
+msgstr "OK"
+
+#: PipAdapter.py:106
+msgid "PiP available now."
+msgstr "PiP je možné opět používat."
+
+#: plugin.py:53
 msgid "Picture in Picture"
 msgstr "Obraz v obraze (PiP)"
 
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/plugin.py:37
+#: plugin.py:54
 msgid "Picture in Picture (hidden)"
 msgstr "Obraz v obraze (skrytě)"
 
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/plugin.py:38
-msgid "Fake recording"
-msgstr "Falešné nahrávání"
+#: PipAdapter.py:36
+msgid "Please don't use PiP meanwhile!"
+msgstr "Prosím, nepoužívejte zatím PiP!"
 
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/plugin.py:90
+#: EPGSaveLoadConfiguration.py:204
+#: EPGSaveLoadConfiguration.py:216
+#: EPGSaveLoadConfiguration.py:441
+#: EPGSaveLoadConfiguration.py:453
+msgid "Please wait..."
+msgstr "Čekejte..."
+
+#: plugin.py:68
+#: plugin.py:69
+#: plugin.py:99
+#: plugin.py:100
+#: plugin.py:101
+#: plugin.py:106
+#: plugin.py:109
+msgid "Press OK"
+msgstr "Stiskněte OK"
+
+#: EPGSaveLoadConfiguration.py:93
+msgid "Press OK to download EPG with http://linux-sat.tv."
+msgstr "Stiskněte OK pro stažení EPG z http://linux-sat.tv"
+
+#: EPGRefreshConfiguration.py:95
+msgid "Press button OK in order to open the settings menu."
+msgstr "Stiskněte OK pro otevření menu nastavení."
+
+#: EPGRefreshConfiguration.py:278
+#: EPGSaveLoadConfiguration.py:321
+msgid "Really close without saving settings?"
+msgstr "Opravdu zavřít bez uloženého nastavení?"
+
+#: EPGRefreshConfiguration.py:96
+msgid "Refresh EPG automatically"
+msgstr "Aktualizovat EPG automaticky"
+
+#: EPGRefreshConfiguration.py:112
+msgid "Refresh EPG using"
+msgstr "Aktualizace EPG používá "
+
+#: EPGRefreshConfiguration.py:146
+msgid "Refresh now"
+msgstr "Aktualizovat"
+
+#: plugin.py:599
+msgid "Refresh-EPG / AutoZap"
+msgstr "Aktualizovat EPG / AutoZap"
+
+#: EPGRefreshChannelEditor.py:129
+#: EPGRefreshChannelEditor.py:177
+msgid "Refreshing"
+msgstr "Aktualizace"
+
+#: EpgLoadSaveRefresh.py:46
+msgid "Reloading EPG Cache..."
+msgstr "Provádí se reloading EPG Cache..."
+
+#: EPGRefreshConfiguration.py:192
+msgid "Return to TV viewing"
+msgstr ""
+
+#: EPGRefreshConfiguration.py:120
+msgid "Run AutoTimer after refresh"
+msgstr "Spustit AutoTimer po aktualizaci"
+
+#: EPGSaveLoadConfiguration.py:187
+#: EPGSaveLoadConfiguration.py:424
+msgid "Russian language"
+msgstr "Ruština"
+
+#: EPGRefreshConfiguration.py:37
+msgid "Saturday"
+msgstr "Sobota"
+
+#: EPGRefreshConfiguration.py:145
+#: EPGRefreshConfiguration.py:313
+msgid "Save"
+msgstr "Uložit"
+
+#: EPGRefreshConfiguration.py:108
+msgid "Save EPG after refresh"
+msgstr "Uložit EPG po aktualizaci"
+
+#: EPGRefreshConfiguration.py:108
+msgid "Save EPG in current cachefile after refresh is completed."
+msgstr "Po dokončení uložit EPG do aktuálního souboru."
+
+#: EPGSaveLoadConfiguration.py:80
+msgid "Save every (in hours)"
+msgstr "Ukládat každých ( hod)"
+
+#: EpgLoadSaveRefresh.py:103
+msgid "Saving EPG Cache..."
+msgstr "Ukládá se EPG Cache..."
+
+#: EPGRefreshConfiguration.py:195
+msgid "Select action after refresh:"
+msgstr "Vyberte akci po aktualizaci:"
+
+#: EPGRefreshChannelEditor.py:170
+msgid "Select bouquet to refresh"
+msgstr "Vyberte přehled pro aktualizaci"
+
+#: EPGRefreshChannelEditor.py:164
+msgid "Select channel to refresh"
+msgstr "Vyberte kanál pro aktualizaci"
+
+#: EPGSaveLoadConfiguration.py:190
+#: EPGSaveLoadConfiguration.py:427
+msgid "Select language for download:"
+msgstr "Zvolte jazyk pro stažení:"
+
+#: EPGRefreshConfiguration.py:98
+msgid "Select menu to add services to the EPGRefresh."
+msgstr "Vyberte menu pro přidávání programů do EPGRefresh."
+
+#: EPGRefreshConfiguration.py:114
+msgid "Select mode the refresh for services/bouquets parental control."
+msgstr ""
+
+#: EPGSaveLoadConfiguration.py:390
+msgid "Select options"
+msgstr "Vyberte možnosti"
+
+#: EPGRefreshConfiguration.py:101
+msgid "Select the day or days of the week for automatic refresh EPG. At least one day must be included."
+msgstr "Vyberte dny v týdnu pro automatickou aktualizaci EPG. Alespoň jeden den musí být vybrán."
+
+#: EPGSaveLoadConfiguration.py:84
+msgid "Select the file name EPG cache, if you do not like credit default name."
+msgstr "Vyberte název souboru EPG cache, pokud se vám nelíbí výchozí název."
+
+#: EPGSaveLoadConfiguration.py:83
+msgid "Select the path to EPG cache,not recommended to use the internal flash."
+msgstr "Vyberte si cestu k EPG cache. Nedoporučuje se používat interní flash."
+
+#: EPGRefreshConfiguration.py:95
+msgid "Setup save / load EPG"
+msgstr "Nastavit uložení/načtení EPG"
+
+#: EPGSaveLoadConfiguration.py:89
+msgid "Show \"AutoZap\" in extension menu"
+msgstr "Zobrazovat \"AutoZap\" v Extension menu"
+
+#: EPGRefreshConfiguration.py:98
+msgid "Show \"add to EPGRefresh\" in"
+msgstr "Zobrazovat \"přidat do EPGRefresh\""
+
+#: EPGRefreshConfiguration.py:109
+msgid "Show 'EPG-refresh now' in main menu"
+msgstr "Zobrazovat 'EPG-refresh nyní' v hlavním menu"
+
+#: EPGSaveLoadConfiguration.py:88
+msgid "Show download exUSSR EPG in list setup"
+msgstr "Zobrazovat stahování exUSSR EPG v seznamu nastavení"
+
+#: EPGRefreshConfiguration.py:97
+msgid "Show in extension menu"
+msgstr "Zobrazovat v Extension menu"
+
+#: EPGSaveLoadConfiguration.py:87
+msgid "Show manual change EPG in main menu"
+msgstr "Zobrazovat ruřní změny EPG v hlavním menu"
+
+#: EPGRefreshConfiguration.py:99
+msgid "Show popup when refresh starts and ends"
+msgstr "Zobrazovat zprávu při spuštění a ukončení aktualizace"
+
+#: EPGRefreshConfiguration.py:107
+#: EPGRefreshConfiguration.py:193
+msgid "Shutdown after EPG refresh"
+msgstr "Vypnout po aktualizaci EPG"
+
+#: EPGRefreshConfiguration.py:196
+msgid "Shutdown after EPG refresh enabled in setup..."
+msgstr "Vypnout po aktualizaci EPG povolené v nastavení..."
+
+#: EPGSaveLoadConfiguration.py:132
+msgid "Size: "
+msgstr "Velikost:"
+
+#: EPGRefreshConfiguration.py:114
+msgid "Skip protected Services"
+msgstr "Přeskočit zabezpečené kanály"
+
+#: EPGSaveLoadConfiguration.py:239
+#: EPGSaveLoadConfiguration.py:476
+msgid ""
+"Sorry, EPG was downloaded but not loaded!\n"
+"Maybe EPG file is corrupt!"
+msgstr ""
+"EPG stažena ale nenačtena!\n"
+"Možná je soubor EPG porušen!"
+
+#: EPGSaveLoadConfiguration.py:242
+#: EPGSaveLoadConfiguration.py:244
+#: EPGSaveLoadConfiguration.py:478
+#: EPGSaveLoadConfiguration.py:480
+msgid "Sorry, the EPG download failed!"
+msgstr "Stažení EPG selhalo!"
+
+#: plugin.py:538
+msgid "Stop Running EPG-refresh"
+msgstr "Zastavit běžící aktualizaci  EPG"
+
+#: EPGRefresh.py:437
+msgid "Stop Running EPG-refresh?\n"
+msgstr "Zastavit běžící aktualizaci EPG?\n"
+
+#: EPGRefreshConfiguration.py:38
+msgid "Sunday"
+msgstr "Neděle"
+
+#: EPGSaveLoadConfiguration.py:362
+msgid "The same functions are used in Menu -> System -> EPG settings!"
+msgstr "Shodné funkce jsou použity v Menu -> Nastavení -> Systém -> Nastavení EPG!"
+
+#: EPGSaveLoadConfiguration.py:353
+msgid "The same functions are used in plugin EPGD!!"
+msgstr "Stejné funkce jsou použity v pluginu EPGD!!"
+
+#: EPGRefreshConfiguration.py:102
+#: EPGSaveLoadConfiguration.py:90
+msgid "This is the duration each service/channel will stay active during a refresh."
+msgstr "Doba, po kterou se aktualizují jednotlivé kanály."
+
+#: plugin.py:147
 msgid ""
 "This might have been an automated bootup to refresh the EPG. For this to happen it is recommended to put the receiver to Standby.\n"
 "Do you want to do this now?"
@@ -244,20 +653,106 @@ msgstr ""
 "Je spouštěna automatická aktualizace EPG. Pro její provedení je doporučeno přijímač přepnout do pohotovostního režimu.\n"
 "Přejete si nyní přepnout přijímač do Standby ?"
 
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/plugin.py:156
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/plugin.py:186
-msgid "Automatically refresh EPG"
-msgstr "Automatická aktualizace EPG"
+#: EPGSaveLoadConfiguration.py:82
+msgid "This option is not recommended to be used only in exceptional cases. Do not set too short period of time."
+msgstr "Tato možnost se doporučuje používat pouze ve výjimečných případech. Nenastavujte příliš krátký interval."
 
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/plugin.py:179
+#: EPGRefreshConfiguration.py:99
+msgid "This setting controls whether or not an informational message will be shown at start and completion of refresh."
+msgstr "Určuje, zda se bude zobrazovat zpráva při spuštění a dokončení aktualizace."
+
+#: EPGRefreshConfiguration.py:106
+msgid "This setting controls whether or not the refresh will be initiated even though the receiver is active (either not in standby or currently recording)."
+msgstr "Určuje, zda aktualizace bude nebo nebude prováděna i když je přijímač aktivní (není v pohotovostním režimu nebo probíhá nahrávání)."
+
+#: EPGRefreshConfiguration.py:107
+msgid "This setting controls whether the receiver should be set to deep standby after refresh is completed."
+msgstr "Určuje, zda přijímač po provedené aktualizaci bude nebo nebude přepnut do hlubokého spánku."
+
+#: EPGRefreshConfiguration.py:35
+msgid "Thursday"
+msgstr "Čtvrtek"
+
+#: EPGRefreshConfiguration.py:123
+msgid "Timeout shutdown after refresh for SeriesPlugin (min)"
+msgstr ""
+
+#: EPGRefreshConfiguration.py:33
+msgid "Tuesday"
+msgstr "Úterý"
+
+#: EPGSaveLoadConfiguration.py:188
+#: EPGSaveLoadConfiguration.py:425
+msgid "Ukrainian language"
+msgstr "Ukrajinština"
+
+#: EPGRefreshConfiguration.py:96
+msgid "Unless this is enabled, EPGRefresh won't automatically run but needs to be explicitly started by the yellow button in this menu."
+msgstr "Dokud není povoleno, EPGRefresh  nebude probíhat automaticky a musí být spouštěna pomocí žlutého tlačítka v této nabídce."
+
+#: EPGRefreshConfiguration.py:177
+msgid "Version"
+msgstr "- v"
+
+#: EPGRefreshConfiguration.py:100
+msgid "Wake up from deep standby for EPG refresh"
+msgstr "Probudit pro aktualizaci z hlubokého spánku"
+
+#: EPGRefreshConfiguration.py:34
+msgid "Wednesday"
+msgstr "Středa"
+
+#: EPGRefreshConfiguration.py:336
+msgid ""
+"You may not use this settings!\n"
+"At least one day a week should be included!"
+msgstr ""
+
+#: plugin.py:508
+msgid "add service to EPGRefresh"
+msgstr "Přidat do EPGRefresh"
+
+#: plugin.py:598
 msgid "add to EPGRefresh"
 msgstr "Přidat do EPGRefresh"
 
-msgid "Show in event menu"
-msgstr "Zobrazovat v menu události"
+#: plugin.py:61
+msgid "channel selection"
+msgstr "ve výběru kanálů"
 
-msgid "Enable this to be able to add current service into EPGRefresh from event menu."
-msgstr "Povolením bude možné z menu události přidávat aktuální program do EPGRefresh"
+#: EPGRefreshChannelEditor.py:81
+msgid "delete"
+msgstr "Smazat"
+
+#: plugin.py:60
+msgid "event info"
+msgstr "v informaci o události"
+
+#: plugin.py:62
+msgid "event info / channel selection"
+msgstr "v informaci o události / výběru kanálů"
+
+#: plugin.py:629
+msgid "manual save/load EPG"
+msgstr "ruční uložení/načtení EPG"
+
+#: EPGRefreshConfiguration.py:263
+msgid "never"
+msgstr "nikdy"
+
+#: plugin.py:59
+msgid "nowhere"
+msgstr "nikde"
+
+#~ msgid "Show in event menu"
+#~ msgstr "Zobrazovat v menu události"
+
+#~ msgid ""
+#~ "Enable this to be able to add current service into EPGRefresh from event "
+#~ "menu."
+#~ msgstr ""
+#~ "Povolením bude možné z menu události přidávat aktuální program do "
+#~ "EPGRefresh"
 
 #~ msgid "Refresh EPG after"
 #~ msgstr "Aktualisiere nach"
@@ -281,6 +776,3 @@ msgstr "Povolením bude možné z menu události přidávat aktuální program d
 #~ msgstr ""
 #~ "Bei Benutzung des AutoTimer- Plugins wird automatisch ein EPG- Scan nach "
 #~ "erfolgter Aktualisierung gestartet."
-
-#~ msgid "Configure EPGRefresh"
-#~ msgstr "EPGRefresh Konfiguration"

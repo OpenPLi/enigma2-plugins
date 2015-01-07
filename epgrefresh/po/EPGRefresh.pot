@@ -3,260 +3,731 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-05-30 21:42+0100\n"
-"PO-Revision-Date: 2011-05-30 21:42+0100\n"
-"Last-Translator: Tode <sagichnet@gmx.net>\n"
+"POT-Creation-Date: 2014-12-28 18:07+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
 "Language: \n"
-"X-Poedit-Basepath: .\n"
-"X-Poedit-SearchPath-0: D:\\Dreambox\\Plugins\\enigma2-plugins\\epgrefresh\\src\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
 
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/EPGRefresh.py:287
-msgid "EPG refresh finished."
+#: EPGRefresh.py:439
+#, python-format
+msgid ""
+"\n"
+"%d more services."
 msgstr ""
 
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/EPGRefreshChannelEditor.py:59
-msgid "EPGRefresh Services"
+#: plugin.py:188 plugin.py:213
+msgid "   (AutoZap)"
 msgstr ""
 
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/EPGRefreshChannelEditor.py:69
-msgid "Channels"
+#: EpgLoadSaveRefresh.py:49 EpgLoadSaveRefresh.py:106
+msgid "Adding schedule..."
 msgstr ""
 
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/EPGRefreshChannelEditor.py:70
+#: EPGRefreshConfiguration.py:120
+msgid ""
+"After a successful refresh the AutoTimer will automatically search for new "
+"matches if this is enabled."
+msgstr ""
+
+#: EPGRefreshConfiguration.py:103
+msgid ""
+"An automated refresh will start after this time of day, but before the time "
+"specified in next setting."
+msgstr ""
+
+#: EPGRefreshConfiguration.py:104
+msgid ""
+"An automated refresh will start before this time of day, but after the time "
+"specified in previous setting."
+msgstr ""
+
+#: EPGSaveLoadConfiguration.py:158 EPGSaveLoadConfiguration.py:414
+msgid "Are you sure you want to load the EPG data from:\n"
+msgstr ""
+
+#: EpgLoadSaveRefresh.py:154
+msgid "Are you sure you want to reload the EPG data from:\n"
+msgstr ""
+
+#: EPGSaveLoadConfiguration.py:160 EPGSaveLoadConfiguration.py:416
+msgid "Are you sure you want to save and load the EPG data from:\n"
+msgstr ""
+
+#: EPGSaveLoadConfiguration.py:156 EPGSaveLoadConfiguration.py:412
+#: EpgLoadSaveRefresh.py:149
+msgid "Are you sure you want to save the EPG Cache to:\n"
+msgstr ""
+
+#: EPGSaveLoadConfiguration.py:86
+msgid "Auto restore EPG backup on boot"
+msgstr ""
+
+#: EPGSaveLoadConfiguration.py:86
+msgid "Auto restore EPG from backup cachefile and loading on boot."
+msgstr ""
+
+#: plugin.py:172
+msgid "AutoZap"
+msgstr ""
+
+#: plugin.py:599
+msgid "AutoZap for refreshing EPG data"
+msgstr ""
+
+#: EPGSaveLoadConfiguration.py:81
+msgid "Automatic load EPG"
+msgstr ""
+
+#: EPGSaveLoadConfiguration.py:81
+msgid "Automatic loading EPG from current cachefile after a specified time."
+msgstr ""
+
+#: EPGSaveLoadConfiguration.py:79
+msgid "Automatic save EPG"
+msgstr ""
+
+#: EPGSaveLoadConfiguration.py:79
+msgid "Automatic saving EPG in current cachefile after a specified time."
+msgstr ""
+
+#: EPGSaveLoadConfiguration.py:89
+msgid ""
+"Automatic switching of all the services in the current channel list after a "
+"specified time. Stop switch can only manually."
+msgstr ""
+
+#: plugin.py:597 plugin.py:621
+msgid "Automatically refresh EPG"
+msgstr ""
+
+#: plugin.py:71
+msgid "Background only"
+msgstr ""
+
+#: EPGSaveLoadConfiguration.py:174
+msgid ""
+"Backup file is corrupt!\n"
+"Backup file will be deleted!"
+msgstr ""
+
+#: EPGSaveLoadConfiguration.py:181
+msgid "Backup file is not found!"
+msgstr ""
+
+#: EPGSaveLoadConfiguration.py:170
+msgid "Backup file load!"
+msgstr ""
+
+#: EPGRefreshChannelEditor.py:70
 msgid "Bouquets"
 msgstr ""
 
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/EPGRefreshChannelEditor.py:79
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/EPGRefreshConfiguration.py:96
+#: EPGRefreshChannelEditor.py:79 EPGRefreshConfiguration.py:144
+#: EPGRefreshConfiguration.py:312 EPGSaveLoadConfiguration.py:108
 msgid "Cancel"
 msgstr ""
 
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/EPGRefreshChannelEditor.py:80
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/EPGRefreshConfiguration.py:97
-msgid "OK"
+#: EPGSaveLoadConfiguration.py:87
+msgid "Changes are needed to restart enigma2."
 msgstr ""
 
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/EPGRefreshChannelEditor.py:81
-msgid "delete"
+#: EPGRefreshChannelEditor.py:69
+msgid "Channels"
 msgstr ""
 
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/EPGRefreshChannelEditor.py:82
-msgid "New"
+#: EPGRefreshConfiguration.py:101
+msgid "Choice days for refresh"
 msgstr ""
 
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/EPGRefreshChannelEditor.py:100
-msgid "Edit Services to refresh"
+#: EPGSaveLoadConfiguration.py:56
+msgid "Configuration save / load EPG"
 msgstr ""
 
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/EPGRefreshChannelEditor.py:120
-msgid "Editing"
+#: EPGSaveLoadConfiguration.py:406 EPGSaveLoadConfiguration.py:417
+msgid "Configuration..."
 msgstr ""
 
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/EPGRefreshChannelEditor.py:129
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/EPGRefreshChannelEditor.py:177
-msgid "Refreshing"
+#: EPGSaveLoadConfiguration.py:85
+msgid "Create backup cachefile, after manual or automatic saving EPG."
 msgstr ""
 
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/EPGRefreshChannelEditor.py:164
-msgid "Select channel to refresh"
+#: EPGSaveLoadConfiguration.py:85
+msgid "Create backup when saving EPG"
 msgstr ""
 
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/EPGRefreshChannelEditor.py:170
-msgid "Select bouquet to refresh"
+#: EPGSaveLoadConfiguration.py:135
+msgid "Current EPG cachefile:"
 msgstr ""
 
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/EPGRefreshConfiguration.py:48
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/EPGRefreshConfiguration.py:120
-msgid "EPGRefresh Configuration"
+#: EPGRefreshConfiguration.py:325
+msgid "Days Profile"
 msgstr ""
 
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/EPGRefreshConfiguration.py:58
-msgid "Refresh EPG automatically"
-msgstr ""
-
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/EPGRefreshConfiguration.py:58
-msgid "Unless this is enabled, EPGRefresh won't automatically run but needs to be explicitly started by the yellow button in this menu."
-msgstr ""
-
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/EPGRefreshConfiguration.py:59
-msgid "Show in extension menu"
-msgstr ""
-
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/EPGRefreshConfiguration.py:59
-msgid "Enable this to be able to access the EPGRefresh configuration from within the extension menu."
-msgstr ""
-
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/EPGRefreshConfiguration.py:60
-msgid "Show popup when refresh starts and ends"
-msgstr ""
-
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/EPGRefreshConfiguration.py:60
-msgid "This setting controls whether or not an informational message will be shown at start and completion of refresh."
-msgstr ""
-
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/EPGRefreshConfiguration.py:61
-msgid "Wake up from deep standby for EPG refresh"
-msgstr ""
-
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/EPGRefreshConfiguration.py:61
-msgid "If this is enabled, the plugin will wake up the receiver from deep standby if possible. Otherwise it needs to be switched on already."
-msgstr ""
-
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/EPGRefreshConfiguration.py:62
-msgid "Duration to stay on service-channels (minutes)"
-msgstr ""
-
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/EPGRefreshConfiguration.py:62
-msgid "This is the duration each service/channel will stay active during a refresh."
-msgstr ""
-
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/EPGRefreshConfiguration.py:63
-msgid "EPG refresh auto-start earliest (hh:mm)"
-msgstr ""
-
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/EPGRefreshConfiguration.py:63
-msgid "An automated refresh will start after this time of day, but before the time specified in next setting."
-msgstr ""
-
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/EPGRefreshConfiguration.py:64
-msgid "EPG refresh auto-start latest (hh:mm)"
-msgstr ""
-
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/EPGRefreshConfiguration.py:64
-msgid "An automated refresh will start before this time of day, but after the time specified in previous setting."
-msgstr ""
-
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/EPGRefreshConfiguration.py:65
+#: EPGRefreshConfiguration.py:105
 msgid "Delay if not in standby (minutes)"
 msgstr ""
 
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/EPGRefreshConfiguration.py:65
-msgid "If the receiver currently isn't in standby, this is the duration which EPGRefresh will wait before retry."
+#: EPGSaveLoadConfiguration.py:80
+msgid "Do not set too short period of time."
 msgstr ""
 
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/EPGRefreshConfiguration.py:66
-msgid "Force scan even if receiver is in use"
+#: EPGSaveLoadConfiguration.py:405 EPGSaveLoadConfiguration.py:419
+msgid "Download EPG from exUSSR"
 msgstr ""
 
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/EPGRefreshConfiguration.py:66
-msgid "This setting controls whether or not the refresh will be initiated even though the receiver is active (either not in standby or currently recording)."
+#: EPGSaveLoadConfiguration.py:93
+msgid "Download internet EPG from exUSSR"
 msgstr ""
 
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/EPGRefreshConfiguration.py:67
-msgid "Shutdown after EPG refresh"
+#: EPGSaveLoadConfiguration.py:90
+msgid "Duration to stay on service (sec) for \"AutoZap\" "
 msgstr ""
 
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/EPGRefreshConfiguration.py:67
-msgid "This setting controls whether the receiver should be set to deep standby after refresh is completed."
+#: EPGRefreshConfiguration.py:102
+msgid "Duration to stay on service (seconds)"
 msgstr ""
 
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/EPGRefreshConfiguration.py:70
-msgid "Refresh EPG using"
+#: EpgLoadSaveRefresh.py:44 EpgLoadSaveRefresh.py:101
+msgid "EPG Cache Check"
 msgstr ""
 
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/EPGRefreshConfiguration.py:70
-msgid "If you want to refresh the EPG in background, you can choose the method which best suits your needs here, e.g. hidden, fake reocrding or regular Picture in Picture."
+#: EPGSaveLoadConfiguration.py:84
+msgid "EPG cache filename"
 msgstr ""
 
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/EPGRefreshConfiguration.py:76
-msgid "Inherit Services from AutoTimer"
+#: EPGSaveLoadConfiguration.py:83
+msgid "EPG cache path"
 msgstr ""
 
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/EPGRefreshConfiguration.py:76
-msgid "Extend the list of services to refresh by those your AutoTimers use?"
+#: EPGSaveLoadConfiguration.py:237 EPGSaveLoadConfiguration.py:474
+msgid "EPG is loaded!"
 msgstr ""
 
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/EPGRefreshConfiguration.py:77
-msgid "Run AutoTimer after refresh"
+#: EPGRefreshConfiguration.py:103
+msgid "EPG refresh auto-start earliest (hh:mm)"
 msgstr ""
 
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/EPGRefreshConfiguration.py:77
-msgid "After a successful refresh the AutoTimer will automatically search for new matches if this is enabled."
+#: EPGRefreshConfiguration.py:104
+msgid "EPG refresh auto-start latest (hh:mm)"
 msgstr ""
 
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/EPGRefreshConfiguration.py:98
-msgid "Refresh now"
+#: EPGRefresh.py:308 PipAdapter.py:106
+msgid "EPG refresh finished."
 msgstr ""
 
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/EPGRefreshConfiguration.py:99
+#: PipAdapter.py:36 RecordAdapter.py:30
+msgid "EPG refresh started in background."
+msgstr ""
+
+#: MainPictureAdapter.py:28
+msgid "EPG refresh starts scanning channels."
+msgstr ""
+
+#: EPGSaveLoadConfiguration.py:191 EPGSaveLoadConfiguration.py:428
+msgid "EPG with Linux-Sat"
+msgstr ""
+
+#: plugin.py:540
+msgid "EPG-refresh now"
+msgstr ""
+
+#: plugin.py:620
+msgid "EPGRefresh"
+msgstr ""
+
+#: EPGRefreshConfiguration.py:85 EPGRefreshConfiguration.py:177
+msgid "EPGRefresh Configuration"
+msgstr ""
+
+#: EPGRefreshChannelEditor.py:59
+msgid "EPGRefresh Services"
+msgstr ""
+
+#: EPGRefreshConfiguration.py:147
 msgid "Edit Services"
 msgstr ""
 
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/EPGRefreshConfiguration.py:120
-msgid "Version"
+#: EPGRefreshChannelEditor.py:100
+msgid "Edit Services to refresh"
 msgstr ""
 
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/EPGRefreshConfiguration.py:175
-msgid "never"
+#: EPGRefreshChannelEditor.py:120
+msgid "Editing"
 msgstr ""
 
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/EPGRefreshConfiguration.py:179
+#: EPGRefreshConfiguration.py:97
+msgid ""
+"Enable this to be able to access the EPGRefresh configuration from within "
+"the extension menu."
+msgstr ""
+
+#: EPGRefreshConfiguration.py:119
+msgid "Extend the list of services to refresh by those your AutoTimers use?"
+msgstr ""
+
+#: plugin.py:55
+msgid "Fake recording"
+msgstr ""
+
+#: EPGRefresh.py:440
+msgid "Following Services have to be scanned:"
+msgstr ""
+
+#: EPGRefreshConfiguration.py:106
+msgid "Force scan even if receiver is in use"
+msgstr ""
+
+#: plugin.py:72
+msgid "Foreground also"
+msgstr ""
+
+#: EPGRefreshConfiguration.py:36
+msgid "Friday"
+msgstr ""
+
+#: EPGRefreshConfiguration.py:123
+msgid ""
+"If \"Run AutoTimer after refresh\" and \"Shutdown after EPG refresh\" "
+"enabled and use \"Label series\" for match, set long timeout."
+msgstr ""
+
+#: EPGRefreshConfiguration.py:109
+msgid ""
+"If enabled, show 'EPG-refresh now' in main menu if refresh now not running."
+msgstr ""
+
+#: EPGRefreshConfiguration.py:105
+msgid ""
+"If the receiver currently isn't in standby, this is the duration which "
+"EPGRefresh will wait before retry."
+msgstr ""
+
+#: EPGRefreshConfiguration.py:100
+msgid ""
+"If this is enabled, the plugin will wake up the receiver from deep standby "
+"if possible. Otherwise it needs to be switched on already."
+msgstr ""
+
+#: EPGSaveLoadConfiguration.py:88
+msgid "If you want to download from the internet russian ERG, put to yes."
+msgstr ""
+
+#: EPGRefreshConfiguration.py:112
+msgid ""
+"If you want to refresh the EPG in background, you can choose the method "
+"which best suits your needs here, e.g. hidden, fake reocrding or regular "
+"Picture in Picture."
+msgstr ""
+
+#: EPGRefreshConfiguration.py:119
+msgid "Inherit Services from AutoTimer"
+msgstr ""
+
+#: EPGRefreshConfiguration.py:267
 #, python-format
 msgid "Last refresh was %s"
 msgstr ""
 
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/EPGRefreshConfiguration.py:190
-msgid "Really close without saving settings?"
+#: EPGSaveLoadConfiguration.py:82
+msgid "Load every (in hours)"
 msgstr ""
 
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/MainPictureAdapter.py:19
-msgid "EPG refresh starts scanning channels."
-msgstr ""
-
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/PipAdapter.py:22
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/RecordAdapter.py:16
-msgid "EPG refresh started in background."
-msgstr ""
-
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/PipAdapter.py:22
-msgid "Please don't use PiP meanwhile!"
-msgstr ""
-
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/PipAdapter.py:68
-msgid "EPG refresh finished. PiP available now."
-msgstr ""
-
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/plugin.py:35
+#: plugin.py:52
 msgid "Main Picture"
 msgstr ""
 
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/plugin.py:36
+#: plugin.py:533
+msgid "Manual EPG"
+msgstr ""
+
+#: EPGSaveLoadConfiguration.py:76 EPGSaveLoadConfiguration.py:402
+#: EPGSaveLoadConfiguration.py:413
+msgid "Manual load EPG"
+msgstr ""
+
+#: EPGSaveLoadConfiguration.py:76
+msgid "Manual loading EPG from current cachefile."
+msgstr ""
+
+#: EPGSaveLoadConfiguration.py:77 EPGSaveLoadConfiguration.py:403
+#: EPGSaveLoadConfiguration.py:415
+msgid "Manual reload EPG"
+msgstr ""
+
+#: EPGSaveLoadConfiguration.py:78
+msgid "Manual restore EPG backup"
+msgstr ""
+
+#: EPGSaveLoadConfiguration.py:78
+msgid "Manual restore EPG from backup cachefile and loading."
+msgstr ""
+
+#: EPGSaveLoadConfiguration.py:75 EPGSaveLoadConfiguration.py:401
+#: EPGSaveLoadConfiguration.py:411
+msgid "Manual save EPG"
+msgstr ""
+
+#: EPGSaveLoadConfiguration.py:75
+msgid "Manual saving EPG in current cachefile."
+msgstr ""
+
+#: EPGSaveLoadConfiguration.py:77
+msgid "Manual saving and loading EPG from current cachefile."
+msgstr ""
+
+#: EPGRefreshConfiguration.py:32
+msgid "Monday"
+msgstr ""
+
+#: EPGRefreshChannelEditor.py:82
+msgid "New"
+msgstr ""
+
+#: EPGSaveLoadConfiguration.py:206 EPGSaveLoadConfiguration.py:218
+#: EPGSaveLoadConfiguration.py:443 EPGSaveLoadConfiguration.py:455
+msgid "Not found the mounted device for EPG file!"
+msgstr ""
+
+#: EPGRefreshChannelEditor.py:80 EPGSaveLoadConfiguration.py:109
+msgid "OK"
+msgstr ""
+
+#: PipAdapter.py:106
+msgid "PiP available now."
+msgstr ""
+
+#: plugin.py:53
 msgid "Picture in Picture"
 msgstr ""
 
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/plugin.py:37
+#: plugin.py:54
 msgid "Picture in Picture (hidden)"
 msgstr ""
 
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/plugin.py:38
-msgid "Fake recording"
+#: PipAdapter.py:36
+msgid "Please don't use PiP meanwhile!"
 msgstr ""
 
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/plugin.py:90
+#: EPGSaveLoadConfiguration.py:204 EPGSaveLoadConfiguration.py:216
+#: EPGSaveLoadConfiguration.py:441 EPGSaveLoadConfiguration.py:453
+msgid "Please wait..."
+msgstr ""
+
+#: plugin.py:68 plugin.py:69 plugin.py:99 plugin.py:100 plugin.py:101
+#: plugin.py:106 plugin.py:109
+msgid "Press OK"
+msgstr ""
+
+#: EPGSaveLoadConfiguration.py:93
+msgid "Press OK to download EPG with http://linux-sat.tv."
+msgstr ""
+
+#: EPGRefreshConfiguration.py:95
+msgid "Press button OK in order to open the settings menu."
+msgstr ""
+
+#: EPGRefreshConfiguration.py:278 EPGSaveLoadConfiguration.py:321
+msgid "Really close without saving settings?"
+msgstr ""
+
+#: EPGRefreshConfiguration.py:96
+msgid "Refresh EPG automatically"
+msgstr ""
+
+#: EPGRefreshConfiguration.py:112
+msgid "Refresh EPG using"
+msgstr ""
+
+#: EPGRefreshConfiguration.py:146
+msgid "Refresh now"
+msgstr ""
+
+#: plugin.py:599
+msgid "Refresh-EPG / AutoZap"
+msgstr ""
+
+#: EPGRefreshChannelEditor.py:129 EPGRefreshChannelEditor.py:177
+msgid "Refreshing"
+msgstr ""
+
+#: EpgLoadSaveRefresh.py:46
+msgid "Reloading EPG Cache..."
+msgstr ""
+
+#: EPGRefreshConfiguration.py:192
+msgid "Return to TV viewing"
+msgstr ""
+
+#: EPGRefreshConfiguration.py:120
+msgid "Run AutoTimer after refresh"
+msgstr ""
+
+#: EPGSaveLoadConfiguration.py:187 EPGSaveLoadConfiguration.py:424
+msgid "Russian language"
+msgstr ""
+
+#: EPGRefreshConfiguration.py:37
+msgid "Saturday"
+msgstr ""
+
+#: EPGRefreshConfiguration.py:145 EPGRefreshConfiguration.py:313
+msgid "Save"
+msgstr ""
+
+#: EPGRefreshConfiguration.py:108
+msgid "Save EPG after refresh"
+msgstr ""
+
+#: EPGRefreshConfiguration.py:108
+msgid "Save EPG in current cachefile after refresh is completed."
+msgstr ""
+
+#: EPGSaveLoadConfiguration.py:80
+msgid "Save every (in hours)"
+msgstr ""
+
+#: EpgLoadSaveRefresh.py:103
+msgid "Saving EPG Cache..."
+msgstr ""
+
+#: EPGRefreshConfiguration.py:195
+msgid "Select action after refresh:"
+msgstr ""
+
+#: EPGRefreshChannelEditor.py:170
+msgid "Select bouquet to refresh"
+msgstr ""
+
+#: EPGRefreshChannelEditor.py:164
+msgid "Select channel to refresh"
+msgstr ""
+
+#: EPGSaveLoadConfiguration.py:190 EPGSaveLoadConfiguration.py:427
+msgid "Select language for download:"
+msgstr ""
+
+#: EPGRefreshConfiguration.py:98
+msgid "Select menu to add services to the EPGRefresh."
+msgstr ""
+
+#: EPGRefreshConfiguration.py:114
+msgid "Select mode the refresh for services/bouquets parental control."
+msgstr ""
+
+#: EPGSaveLoadConfiguration.py:390
+msgid "Select options"
+msgstr ""
+
+#: EPGRefreshConfiguration.py:101
 msgid ""
-"This might have been an automated bootup to refresh the EPG. For this to happen it is recommended to put the receiver to Standby.\n"
+"Select the day or days of the week for automatic refresh EPG. At least one "
+"day must be included."
+msgstr ""
+
+#: EPGSaveLoadConfiguration.py:84
+msgid "Select the file name EPG cache, if you do not like credit default name."
+msgstr ""
+
+#: EPGSaveLoadConfiguration.py:83
+msgid "Select the path to EPG cache,not recommended to use the internal flash."
+msgstr ""
+
+#: EPGRefreshConfiguration.py:95
+msgid "Setup save / load EPG"
+msgstr ""
+
+#: EPGSaveLoadConfiguration.py:89
+msgid "Show \"AutoZap\" in extension menu"
+msgstr ""
+
+#: EPGRefreshConfiguration.py:98
+msgid "Show \"add to EPGRefresh\" in"
+msgstr ""
+
+#: EPGRefreshConfiguration.py:109
+msgid "Show 'EPG-refresh now' in main menu"
+msgstr ""
+
+#: EPGSaveLoadConfiguration.py:88
+msgid "Show download exUSSR EPG in list setup"
+msgstr ""
+
+#: EPGRefreshConfiguration.py:97
+msgid "Show in extension menu"
+msgstr ""
+
+#: EPGSaveLoadConfiguration.py:87
+msgid "Show manual change EPG in main menu"
+msgstr ""
+
+#: EPGRefreshConfiguration.py:99
+msgid "Show popup when refresh starts and ends"
+msgstr ""
+
+#: EPGRefreshConfiguration.py:107 EPGRefreshConfiguration.py:193
+msgid "Shutdown after EPG refresh"
+msgstr ""
+
+#: EPGRefreshConfiguration.py:196
+msgid "Shutdown after EPG refresh enabled in setup..."
+msgstr ""
+
+#: EPGSaveLoadConfiguration.py:132
+msgid "Size: "
+msgstr ""
+
+#: EPGRefreshConfiguration.py:114
+msgid "Skip protected Services"
+msgstr ""
+
+#: EPGSaveLoadConfiguration.py:239 EPGSaveLoadConfiguration.py:476
+msgid ""
+"Sorry, EPG was downloaded but not loaded!\n"
+"Maybe EPG file is corrupt!"
+msgstr ""
+
+#: EPGSaveLoadConfiguration.py:242 EPGSaveLoadConfiguration.py:244
+#: EPGSaveLoadConfiguration.py:478 EPGSaveLoadConfiguration.py:480
+msgid "Sorry, the EPG download failed!"
+msgstr ""
+
+#: plugin.py:538
+msgid "Stop Running EPG-refresh"
+msgstr ""
+
+#: EPGRefresh.py:437
+msgid "Stop Running EPG-refresh?\n"
+msgstr ""
+
+#: EPGRefreshConfiguration.py:38
+msgid "Sunday"
+msgstr ""
+
+#: EPGSaveLoadConfiguration.py:362
+msgid "The same functions are used in Menu -> System -> EPG settings!"
+msgstr ""
+
+#: EPGSaveLoadConfiguration.py:353
+msgid "The same functions are used in plugin EPGD!!"
+msgstr ""
+
+#: EPGRefreshConfiguration.py:102 EPGSaveLoadConfiguration.py:90
+msgid ""
+"This is the duration each service/channel will stay active during a refresh."
+msgstr ""
+
+#: plugin.py:147
+msgid ""
+"This might have been an automated bootup to refresh the EPG. For this to "
+"happen it is recommended to put the receiver to Standby.\n"
 "Do you want to do this now?"
 msgstr ""
 
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/plugin.py:156
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/plugin.py:186
-msgid "Automatically refresh EPG"
+#: EPGSaveLoadConfiguration.py:82
+msgid ""
+"This option is not recommended to be used only in exceptional cases. Do not "
+"set too short period of time."
 msgstr ""
 
-#: D:\Dreambox\Plugins\enigma2-plugins\epgrefresh\src/plugin.py:179
+#: EPGRefreshConfiguration.py:99
+msgid ""
+"This setting controls whether or not an informational message will be shown "
+"at start and completion of refresh."
+msgstr ""
+
+#: EPGRefreshConfiguration.py:106
+msgid ""
+"This setting controls whether or not the refresh will be initiated even "
+"though the receiver is active (either not in standby or currently recording)."
+msgstr ""
+
+#: EPGRefreshConfiguration.py:107
+msgid ""
+"This setting controls whether the receiver should be set to deep standby "
+"after refresh is completed."
+msgstr ""
+
+#: EPGRefreshConfiguration.py:35
+msgid "Thursday"
+msgstr ""
+
+#: EPGRefreshConfiguration.py:123
+msgid "Timeout shutdown after refresh for SeriesPlugin (min)"
+msgstr ""
+
+#: EPGRefreshConfiguration.py:33
+msgid "Tuesday"
+msgstr ""
+
+#: EPGSaveLoadConfiguration.py:188 EPGSaveLoadConfiguration.py:425
+msgid "Ukrainian language"
+msgstr ""
+
+#: EPGRefreshConfiguration.py:96
+msgid ""
+"Unless this is enabled, EPGRefresh won't automatically run but needs to be "
+"explicitly started by the yellow button in this menu."
+msgstr ""
+
+#: EPGRefreshConfiguration.py:177
+msgid "Version"
+msgstr ""
+
+#: EPGRefreshConfiguration.py:100
+msgid "Wake up from deep standby for EPG refresh"
+msgstr ""
+
+#: EPGRefreshConfiguration.py:34
+msgid "Wednesday"
+msgstr ""
+
+#: EPGRefreshConfiguration.py:336
+msgid ""
+"You may not use this settings!\n"
+"At least one day a week should be included!"
+msgstr ""
+
+#: plugin.py:508
+msgid "add service to EPGRefresh"
+msgstr ""
+
+#: plugin.py:598
 msgid "add to EPGRefresh"
 msgstr ""
 
-msgid "Show in event menu"
+#: plugin.py:61
+msgid "channel selection"
 msgstr ""
 
-msgid "Enable this to be able to add current service into EPGRefresh from event menu."
+#: EPGRefreshChannelEditor.py:81
+msgid "delete"
+msgstr ""
+
+#: plugin.py:60
+msgid "event info"
+msgstr ""
+
+#: plugin.py:62
+msgid "event info / channel selection"
+msgstr ""
+
+#: plugin.py:629
+msgid "manual save/load EPG"
+msgstr ""
+
+#: EPGRefreshConfiguration.py:263
+msgid "never"
+msgstr ""
+
+#: plugin.py:59
+msgid "nowhere"
 msgstr ""
