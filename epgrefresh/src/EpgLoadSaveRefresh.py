@@ -124,7 +124,7 @@ class EpgCacheSaveCheckPoller:
 		self.saveTimer = eTimer()
 		self.saveTimer.timeout.get().append(self.JobEpgCacheSave)
 		self.saveTimer.start(4000, False)
-				
+
 	def JobEpgCacheSave(self):
 		self.saveTimer.stop()
 		print '[EPGC] Saving EPGCache.'

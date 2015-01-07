@@ -50,7 +50,7 @@ class EPGSaveLoadConfiguration(Screen, ConfigListScreen):
 			<ePixmap pixmap="skin_default/div-h.png" position="0,430" zPosition="1" size="600,2" />
 			<widget source="help" render="Label" position="5,435" size="590,83" font="Regular;21" />
 		</screen>"""
-	
+
 	def __init__(self, session):
 		Screen.__init__(self, session)
 		self.setup_title = _("Configuration save / load EPG")
@@ -91,9 +91,9 @@ class EPGSaveLoadConfiguration(Screen, ConfigListScreen):
                 ]
 		if config.plugins.epgrefresh_extra.add_ruepg:
 			self.list.insert(3, getConfigListEntry(_("Download internet EPG from exUSSR"), config.plugins.epgrefresh_extra.load_ruepg, _("Press OK to download EPG with http://linux-sat.tv.")))
-		
+
 		ConfigListScreen.__init__(self, self.list, session = session, on_change = self.changed)
-		
+
 		def selectionChanged():
 			if self["config"].current:
 				self["config"].current[1].onDeselect(self.session)
@@ -102,7 +102,7 @@ class EPGSaveLoadConfiguration(Screen, ConfigListScreen):
 				self["config"].current[1].onSelect(self.session)
 			for x in self["config"].onSelectionChanged:
 				x()
-				
+
 		self["config"].selectionChanged = selectionChanged
 		self["config"].onSelectionChanged.append(self.updateHelp)
 		self["key_red"] = StaticText(_("Cancel"))
@@ -216,7 +216,7 @@ class EPGSaveLoadConfiguration(Screen, ConfigListScreen):
 			self.session.open(MessageBox,(_("Please wait...")), MessageBox.TYPE_INFO, timeout = 4)
 		else:
 			self.session.open(MessageBox,(_("Not found the mounted device for EPG file!")), MessageBox.TYPE_INFO, timeout = 6 )
-	
+
 	def copiEpg(self):
 		self.copiTimer.stop()
 		down_file = config.misc.epgcache_filename.value + ".gz"
@@ -418,7 +418,7 @@ class ManualEPGlist(Screen):
 			self.session.open(EPGSaveLoadConfiguration)
 		if sel == _("Download EPG from exUSSR"):
 			self.pre_startDownload()
-			
+
 	def pre_startDownload(self):
 		choicelist = [
 		(_("Russian language"), self.startDownload),
@@ -453,7 +453,7 @@ class ManualEPGlist(Screen):
 			self.session.open(MessageBox,(_("Please wait...")), MessageBox.TYPE_INFO, timeout = 4)
 		else:
 			self.session.open(MessageBox,(_("Not found the mounted device for EPG file!")), MessageBox.TYPE_INFO, timeout = 6 )
-	
+
 	def copiEpg(self):
 		self.copiTimer.stop()
 		down_file = config.misc.epgcache_filename.value + ".gz"
@@ -493,7 +493,7 @@ class ManualEPGlist(Screen):
 			epgcache = eEPGCache.getInstance()
 			epgcache.save()
 			self.setBackup()
-			
+
 	def manualsetEpgLoad(self, answer):
 		if answer:
 			from enigma import eEPGCache
@@ -508,7 +508,7 @@ class ManualEPGlist(Screen):
 			epgcache = eEPGCache.getInstance()
 			epgcache.load()
 			self.setBackup()
-			
+
 	def setBackup(self):
 		if config.plugins.epgrefresh_extra.save_backup.value and config.plugins.epgrefresh_extra.epgcachepath.value != "/etc/enigma2/":
 			restore_backup = config.misc.epgcache_filename.value + ".backup"

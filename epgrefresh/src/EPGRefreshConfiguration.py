@@ -77,7 +77,7 @@ class EPGRefreshConfiguration(Screen, ConfigListScreen):
 			<ePixmap pixmap="skin_default/div-h.png" position="0,335" zPosition="1" size="565,2" />
 			<widget source="help" render="Label" position="5,345" size="590,83" font="Regular;21" />
 		</screen>"""
-	
+
 	def __init__(self, session):
 		Screen.__init__(self, session)
 
@@ -127,7 +127,7 @@ class EPGRefreshConfiguration(Screen, ConfigListScreen):
 			print("[EPGRefresh] AutoTimer Plugin not installed:", ie)
 
 		ConfigListScreen.__init__(self, self.list, session = session, on_change = self.changed)
-		
+
 		def selectionChanged():
 			if self["config"].current:
 				self["config"].current[1].onDeselect(self.session)
@@ -136,7 +136,7 @@ class EPGRefreshConfiguration(Screen, ConfigListScreen):
 				self["config"].current[1].onSelect(self.session)
 			for x in self["config"].onSelectionChanged:
 				x()
-				
+
 		self["config"].selectionChanged = selectionChanged
 		self["config"].onSelectionChanged.append(self.updateHelp)
 
@@ -297,18 +297,18 @@ class EPGRefreshProfile(ConfigListScreen,Screen):
 			<ePixmap name="red"    position="0,190"   zPosition="2" size="140,40" pixmap="skin_default/buttons/red.png" transparent="1" alphatest="on" />
 			<ePixmap name="green"  position="140,190" zPosition="2" size="140,40" pixmap="skin_default/buttons/green.png" transparent="1" alphatest="on" />
 		</screen>"""
-		
+
 	def __init__(self, session, args = 0):
 		self.session = session
 		Screen.__init__(self, session)
-		
+
 		self.list = []
 
 		for i in range(7):
 			self.list.append(getConfigListEntry(weekdays[i], config.plugins.epgrefresh_extra.day_refresh[i]))
 
 		ConfigListScreen.__init__(self, self.list)
-		
+
 		self["key_red"] = Button(_("Cancel"))
 		self["key_green"] = Button(_("Save"))
 		self["setupActions"] = ActionMap(["SetupActions", "ColorActions"],
