@@ -3,18 +3,18 @@
 		AutoTimer WebIf for Enigma-2
 		Coded by betonme (c) 2012 @ IHAD <glaserfrank(at)gmail.com>
 		Support: http://www.i-have-a-dreambox.com/wbb2/thread.php?threadid=79391
-		
-		All Files of this Software are licensed under the Creative Commons 
-		Attribution-NonCommercial-ShareAlike 3.0 Unported 
+
+		All Files of this Software are licensed under the Creative Commons
+		Attribution-NonCommercial-ShareAlike 3.0 Unported
 		License if not stated otherwise in a files head. To view a copy of this license, visit
 		http://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative
 		Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.
-		
+
 		Alternatively, this plugin may be distributed and executed on hardware which
 		is licensed by Dream Multimedia GmbH.
-		
+
 		This plugin is NOT free software. It is open source, you are allowed to
-		modify it (if you keep the license), but it may not be commercially 
+		modify it (if you keep the license), but it may not be commercially
 		distributed other than under the conditions noted above.
 
 ***/
@@ -172,7 +172,7 @@ function numericalOptionList(lowerBound, upperBound, selectedValue, offset){
 	if(offset == undefined){
 		offset = 0;
 	}
-	
+
 	for(var i = lowerBound; i <= upperBound; i++){
 		var t = i + offset;
 		var txt = t < 10 ? "0" + t : t;
@@ -243,25 +243,25 @@ var AutoTimerEditorCore = Class.create({
 		// Load autotimer settings
 		this.settings.load(this.loadSettingsCallback.bind(this));
 	},
-	
+
 	loadLocationsAndTagsCallback: function(currentLocation, locations, tags){
 		this.currentLocation = currentLocation;
 		this.locations = locations;
 		this.tags = tags;
 		this.loadFinal();
 	},
-	
+
 	loadBouquetsCallback: function(bouquets){
 		this.bouquets = bouquets;
 		this.loadFinal();
 	},
-	
+
 	loadSettingsCallback: function(settings){
 		this.hasVps = settings['hasVps'];
 		this.hasSeriesPlugin = settings['hasSeriesPlugin'];
 		this.loadFinal();
 	},
-	
+
 	loadFinal: function(){
 		if (this.locations != undefined && this.tags != undefined && this.bouquets != undefined && this.hasVps != undefined && this.hasSeriesPlugin != undefined ){
 			// Load and display autotimer list
@@ -283,17 +283,17 @@ var AutoTimerServiceController = Class.create(Controller, {
 	initialize: function($super){
 		$super(new AutoTimerServiceListHandler());
 	},
-	
+
 	load: function(sRef, callback){
 		this.handler.load( {'sRef' : sRef}, callback );
 	},
-	
+
 	loadBouquetsTv: function(callback){
 		this.load(bouquetsTv, callback);
 	},
-	
+
 	onFinished: function(){},
-	
+
 	registerEvents: function(){}
 });
 
@@ -301,11 +301,11 @@ var AutoTimerSettingsController = Class.create(Controller, {
 	initialize: function($super){
 		$super(new AutoTimerSettingsHandler());
 	},
-	
+
 	load: function(callback){
 		this.handler.load( callback );
 	},
-	
+
 	onFinished: function(){},
 	registerEvents: function(){},
 });
@@ -314,15 +314,15 @@ var AutoTimerMenuController  = Class.create(Controller, {
 	initialize: function($super, target){
 		$super(new AutoTimerMenuHandler(target));
 	},
-	
+
 	back: function(){
 		window.location = window.location.protocol + "//" + window.location.hostname;
 	},
-	
+
 	load: function(){
 		this.handler.load({});
 	},
-	
+
 	backup: function() {
 		this.filename=prompt('Please enter filename for backup file:', 'autotimer_backup');
 		if (this.filename) {
@@ -330,22 +330,22 @@ var AutoTimerMenuController  = Class.create(Controller, {
 				{ 'Filename' : this.filename },
 				this.download.bind(this));
 		}
-		
+
 	},
 	download: function(file){
 		var url =  URL.tmp + file;
 		window.open(url,'Download');
 		core.notify("Downloading...");
 	},
-	
+
 	restore: function(){
 		this.upload();
 	},
-	
+
 	upload: function(){
 		//TODO move to a separate class
 		var form = $('restoreform');
-		
+
 		if($('file').value.trim() == ""){
 			core.notify("Please select a File to restore!");
 			return;
@@ -358,17 +358,17 @@ var AutoTimerMenuController  = Class.create(Controller, {
 		iframe.setAttribute("height","0");
 		iframe.setAttribute("border","0");
 		iframe.setAttribute("style","width: 0; height: 0; border: none;");
-	
+
 		// Add to document...
 		form.parentNode.appendChild(iframe);
 		window.frames['upload_iframe'].name="upload_iframe";
 		iframe = $(iframe);
-	
+
 		// Add event...
 		var eventHandler = function(){
 			// Message from server...
 			var resdoc;
-			
+
 			if (iframe.contentDocument) {
 					resdoc = iframe.contentDocument;
 			} else if (iframe.contentWindow) {
@@ -376,7 +376,7 @@ var AutoTimerMenuController  = Class.create(Controller, {
 			} else if (iframe.document) {
 					resdoc = iframe.document;
 			}
-	
+
 			var result = new SimpleXMLResult(resdoc);
 			if (result.getState()){
 				autotimereditorcore.menu.handler.restore(
@@ -385,7 +385,7 @@ var AutoTimerMenuController  = Class.create(Controller, {
 			} else {
 				core.notify( result.getStateText() );
 			}
-	
+
 			try{
 				// unregister Eventhandler
 				iframe.stopObserving();
@@ -393,7 +393,7 @@ var AutoTimerMenuController  = Class.create(Controller, {
 				iframe.parentNode.removeChild(iframe);
 			} catch(e){alert(e);}
 		}
-	
+
 		iframe.observe("load", eventHandler);
 		// Set properties of form...
 		form.setAttribute("target","upload_iframe");
@@ -401,20 +401,20 @@ var AutoTimerMenuController  = Class.create(Controller, {
 		form.setAttribute("method","post");
 		form.setAttribute("enctype","multipart/form-data");
 		form.setAttribute("encoding","multipart/form-data");
-	
+
 		// Submit the form...
 		form.submit();
-	
+
 		core.notify("Uploading...");
 	},
 	uploadCallback: function(){
 		autotimereditorcore.list.reload();
 	},
-	
+
 	about: function(){
 		autotimereditorcore.about.load();
 	},
-	
+
 	registerEvents: function(){
 		$('back').on(
 			'click',
@@ -482,7 +482,7 @@ var AutoTimerListController = Class.create(Controller, {
 		this.select = null;
 		this.idx = null;
 	},
-	
+
 	load: function(){
 		this.handler.load({});
 	},
@@ -495,14 +495,14 @@ var AutoTimerListController = Class.create(Controller, {
 	onFinished: function(){
 		this.onChange();
 	},
-	
+
 	onChange: function(){
 		var selectList = $('list');
 		var selectOptions = selectList.getElementsByTagName('option');
-		
+
 		// Set new row size of list
 		selectList.size = selectOptions.length + 2;
-		
+
 		if ( selectOptions.length > 0){
 			if (this.select != undefined && this.select != null && this.select != ""){
 				// Select the given AutoTimer because of add/remove action
@@ -527,7 +527,7 @@ var AutoTimerListController = Class.create(Controller, {
 					selectOptions[idx].selected = true;
 				}
 			}
-			
+
 			// Update editor
 			idx = selectList.selectedIndex;
 			if (idx >= 0){
@@ -538,19 +538,19 @@ var AutoTimerListController = Class.create(Controller, {
 				// Show empty editor for new AutoTimer
 				autotimereditorcore.edit.load( -1 );
 			}
-		
+
 		} else if (selectOptions.length == 0){
 			// Show empty editor for new AutoTimer
 			autotimereditorcore.edit.load( -1 );
 		}
 	},
-	
+
 	reload: function(){
 		this.select = $('list').value;
 		$('contentAutoTimerContent').update('<div></div>');
 		this.load();
 	},
-	
+
 	add: function(){
 		this.match = prompt("Name for the new AutoTimer:");
 		if (this.match!=null && this.match!=""){
@@ -564,13 +564,13 @@ var AutoTimerListController = Class.create(Controller, {
 				}.bind(this));
 		}
 	},
-		
+
 	remove: function(){
 		var selectList = $('list');
 		var idx = selectList.selectedIndex; 
 		var selectOptions = selectList.getElementsByTagName('option');
 		var id = unescape(selectOptions[idx].value);
-		
+
 		var nextidx = -1;
 		if ( selectOptions.length > 0){
 			if ( selectOptions.length > (idx+1)){
@@ -589,7 +589,7 @@ var AutoTimerListController = Class.create(Controller, {
 				}.bind(this));
 		}
 	},
-	
+
 	registerEvents: function(){
 		$('list').on(
 			'change',
@@ -616,16 +616,16 @@ var AutoTimerEditController = Class.create(Controller, {
 	initialize: function($super, target){
 		$super(new AutoTimerEditHandler(target));
 	},
-	
+
 	load: function( id ){
 		this.id = id;
 		this.handler.load( id );
 	},
-	
+
 	reload: function(){
 		this.handler.load( this.id );
 	},
-	
+
 	onFinished: function(){
 		var id = this.id>0 ? this.id : 'new';
 		$('headerautotimercontent').innerHTML = "AutoTimer Editor: " + $('name').value + " (" + id + ")";
@@ -651,7 +651,7 @@ var AutoTimerEditController = Class.create(Controller, {
 			}
 		}
 		this.onchangeCheckbox( $('vps_enabled') );
-		
+
 		AnyTime.noPicker( 'from' );
 		AnyTime.picker( 'from', { format: "%H:%i" } );
 		AnyTime.noPicker( 'to' );
@@ -665,7 +665,7 @@ var AutoTimerEditController = Class.create(Controller, {
 		AnyTime.noPicker( 'aftereventTo' );
 		AnyTime.picker( 'aftereventTo', { format: "%H:%i" } );
 	},
-	
+
 	onchangeCheckbox: function(x) {
 		if (x.checked){
 			$(x.id+'content').style.display = 'block';
@@ -673,7 +673,7 @@ var AutoTimerEditController = Class.create(Controller, {
 			$(x.id+'content').style.display = 'none';
 		}
 	},
-	
+
 	onchangeSelect: function(x) {
 		if (x.value > 0){
 			$(x.id+'content').style.display = 'block';
@@ -681,7 +681,7 @@ var AutoTimerEditController = Class.create(Controller, {
 			$(x.id+'content').style.display = 'none';
 		}
 	},
-	
+
 	onchangeSelectAfterEvent: function(x) {
 		if (x.value == 'default'){
 			$('aftereventusetimespan').checked = '';
@@ -691,7 +691,7 @@ var AutoTimerEditController = Class.create(Controller, {
 		}
 		this.onchangeCheckbox( $('aftereventusetimespan') );
 	},
-	
+
 	onchangeSelectFilter: function(x) {
 		if (x.value == 'dayofweek'){
 			x.parentNode.nextElementSibling.children[0].style.display = 'none';
@@ -701,7 +701,7 @@ var AutoTimerEditController = Class.create(Controller, {
 			x.parentNode.nextElementSibling.children[0].style.display = 'block';
 		}
 	},
-	
+
 	onchangeSelectBouquet: function(x) {
 		var select = x.parentNode.nextElementSibling.firstElementChild;
 		for (i = select.options.length - 1; i>=0; i--) {
@@ -716,7 +716,7 @@ var AutoTimerEditController = Class.create(Controller, {
 			select.options.add( new Option(String(services[service]), service ) );
 		}
 	},
-	
+
 	changeTag: function(x) {
 		var selected = 'selected';
 		var attr = 'data-selected';
@@ -728,7 +728,7 @@ var AutoTimerEditController = Class.create(Controller, {
 			x.writeAttribute(attr, selected);
 		}
 	},
-	
+
 	addFilter: function(x) {
 		var parent = x.parentNode;
 		if (parent.children[1].firstElementChild.value == 'dayofweek' || parent.children[2].firstElementChild.value){
@@ -741,7 +741,7 @@ var AutoTimerEditController = Class.create(Controller, {
 			$('filterlist').firstElementChild.insertBefore(node, parent);
 		}
 	},
-	
+
 	removeFilter: function(x) {
 		var parent = x.parentNode;
 		var element = parent.children[0].firstElementChild;
@@ -767,7 +767,7 @@ var AutoTimerEditController = Class.create(Controller, {
 		node.children[1].className = 'remove';
 		$('bouquetlist').firstElementChild.insertBefore(node, parent);
 	},
-	
+
 	removeBouquet: function(x) {
 		var parent = x.parentNode;
 		var element = parent.children[0].firstElementChild;
@@ -777,7 +777,7 @@ var AutoTimerEditController = Class.create(Controller, {
 			$('bouquetlist').deleteRow(parent.rowIndex); 
 		}
 	},
-		
+
 	addService: function(x) {
 		var parent = x.parentNode;
 		var node = parent.cloneNode(true);
@@ -791,7 +791,7 @@ var AutoTimerEditController = Class.create(Controller, {
 			$('servicelist').firstElementChild.insertBefore(node, parent);
 		}
 	},
-	
+
 	removeService: function(x) {
 		var parent = x.parentNode;
 		var element = parent.children[1].firstElementChild;
@@ -801,7 +801,7 @@ var AutoTimerEditController = Class.create(Controller, {
 			$('servicelist').deleteRow(parent.rowIndex); 
 		}
 	},
-	
+
 	save: function() {
 		//TODO Move to a separate class similar AutoTimerListEntry
 		//TODO handle defaults
@@ -813,7 +813,7 @@ var AutoTimerEditController = Class.create(Controller, {
 			selectList.options[idx].className = ($('enabled').checked) ? 'enabled' : 'disabled';
 		}
 		data['enabled'] = ($('enabled').checked) ? '1' : '0';
-		
+
 		options = ['match','name','encoding','searchType','searchCase','justplay','avoidDuplicateDescription'];
 		for (var id = 0; id < options.length; id++) {
 			if ($(options[id]).value == ''){
@@ -822,13 +822,13 @@ var AutoTimerEditController = Class.create(Controller, {
 			}
 			data[options[id]] = $(options[id]).value;
 		}
-		
+
 		if ($('justplay').value > 0){
 				data['setEndtime']            = ($('setEndtime').checked) ? '1' : '0';
 		}
-		
+
 		data['overrideAlternatives'] = ($('overrideAlternatives').checked) ? '1' : '0';
-		
+
 		if ($('timespan').checked){
 			options = ['from','to'];
 			for (var id = 0; id < options.length; id++) {
@@ -844,7 +844,7 @@ var AutoTimerEditController = Class.create(Controller, {
 			data['timespanFrom']            = '';
 			data['timespanTo']              = '';
 		}
-		
+
 		if ($('timeframe').checked){
 			options = ['before','after'];
 			for (var id = 0; id < options.length; id++) {
@@ -859,7 +859,7 @@ var AutoTimerEditController = Class.create(Controller, {
 			data['before']             = '';
 			data['after']              = '';
 		}
-		
+
 		if ($('offset').checked){
 			if ($('offset').value == ''){
 				core.notify('Error: offset is empty', false);
@@ -869,7 +869,7 @@ var AutoTimerEditController = Class.create(Controller, {
 		} else{
 			data['offset']             = '';
 		}
-		
+
 		if ($('maxdurationavailable').checked){
 			if ($('maxduration').value == ''){
 				core.notify('Error: maxduration is empty', false);
@@ -879,7 +879,7 @@ var AutoTimerEditController = Class.create(Controller, {
 		} else{
 			data['maxduration']             = '';
 		}
-		
+
 		var afterevent = $('afterevent').value;
 		data['afterevent']              = afterevent;
 		if ($('aftereventusetimespan').checked){
@@ -896,7 +896,7 @@ var AutoTimerEditController = Class.create(Controller, {
 			var lastBegin = $('lastBegin').value;
 			if (lastBegin) data['lastBegin'] = lastBegin;
 		}
-		
+
 		if ($('locationavailable').checked){
 			if ($('location').value == ''){
 				core.notify('Error: location is empty', false);
@@ -906,7 +906,7 @@ var AutoTimerEditController = Class.create(Controller, {
 		} else{
 			data['location']             = '';
 		}
-		
+
 		var tags = [];
 		$$('.tags').each(function(element){
 			var selected = element.readAttribute('data-selected');
@@ -920,7 +920,7 @@ var AutoTimerEditController = Class.create(Controller, {
 		}else{
 			data['tag'] = '';
 		}
-		
+
 		var title = [];
 		var shortdescription = [];
 		var description = [];
@@ -987,7 +987,7 @@ var AutoTimerEditController = Class.create(Controller, {
 		}else{
 			data['!dayofweek'] = '';
 		}
-		
+
 		var bouquets = [];
 		if ($('usebouquets').checked){
 			$$('.bouquet').each(function(element){
@@ -998,7 +998,7 @@ var AutoTimerEditController = Class.create(Controller, {
 			});
 		}
 		data['bouquets'] = bouquets.join(',');
-		
+
 		var services = [];
 		if ($('useservices').checked){
 			$$('.service').each(function(element){
@@ -1009,7 +1009,7 @@ var AutoTimerEditController = Class.create(Controller, {
 			});
 		}
 		data['services'] = services.join(',');
-		
+
 		if ($('vps_enabled').checked){
 			data['vps_enabled'] = ($('vps_enabled').checked) ? '1' : '0';
 			data['vps_overwrite'] = ($('vps_overwrite').checked) ? '1' : '0';
@@ -1017,13 +1017,13 @@ var AutoTimerEditController = Class.create(Controller, {
 			data['vps_enabled'] = '0';
 			data['vps_overwrite'] = '0';
 		}
-		
+
 		if ($('series_labeling').checked){
 			data['series_labeling'] = ($('series_labeling').checked) ? '1' : '0';
 		} else{
 			data['series_labeling'] = '0';
 		}
-		
+
 		this.saveurl = [];
 		for( key in data ){
 			var value = data[key];
@@ -1038,7 +1038,7 @@ var AutoTimerEditController = Class.create(Controller, {
 		}
 		this.saveurl = this.saveurl.join('&');
 		//alert(this.saveurl);
-		
+
 		this.handler.save( this.saveurl, this.saveCallback.bind(this) );
 	},
 	saveCallback: function() {
@@ -1055,11 +1055,11 @@ var AutoTimerEditController = Class.create(Controller, {
 			autotimereditorcore.list.load();
 		}
 	},
-	
+
 	cancel: function() {
 		this.reload();
 	},
-	
+
 	registerEvents: function(){
 		$('justplay').on(
 			'change',
@@ -1222,15 +1222,15 @@ var AutoTimerPreviewController = Class.create(Controller, {
 	initialize: function($super, target){
 		$super(new AutoTimerPreviewHandler(target));
 	},
-	
+
 	load: function(){
 		$('list').selectedIndex = -1;
 		$('headerautotimercontent').innerHTML = "AutoTimer Preview:";
 		this.handler.load({});
 	},
-	
+
 	onFinished: function(){},
-	
+
 	registerEvents: function(){}
 });
 
@@ -1238,7 +1238,7 @@ var AutoTimerParseController = Class.create(Controller, {
 	initialize: function($super, target){
 		$super(new AutoTimerParseHandler(target));
 	},
-	
+
 	load: function(){
 		$('list').selectedIndex = -1;
 		$('headerautotimercontent').innerHTML = "AutoTimer Parse:";
@@ -1249,9 +1249,9 @@ var AutoTimerParseController = Class.create(Controller, {
 				autotimereditorcore.timers.loadList();
 			}.bind(this));
 	},
-	
+
 	onFinished: function(){},
-	
+
 	registerEvents: function(){}
 });
 
@@ -1330,12 +1330,12 @@ var AutoTimerServiceListHandler = Class.create(AbstractATContentHandler, {
 		this.provider = new SimpleServiceListProvider (this.onReady.bind(this));
 		this.ajaxload = false;
 	},
-	
+
 	load: function( ref, callback ){
 		this.callback = callback;
 		this.provider.load(ref);
 	},
-	
+
 	onReady: function(data){
 		var services = {};
 		var len = data.services.length;
@@ -1354,12 +1354,12 @@ var AutoTimerSettingsHandler = Class.create(AbstractATContentHandler, {
 		this.provider = new AutoTimerSettingsProvider(this.onReady.bind(this));
 		this.ajaxload = false;
 	},
-	
+
 	load: function( callback ){
 		this.callback = callback;
 		this.provider.load();
 	},
-	
+
 	onReady: function(data){
 		if(typeof(this.callback) == "function"){
 			this.callback(data);
@@ -1372,11 +1372,11 @@ var AutoTimerMenuHandler = Class.create(AbstractATContentHandler,{
 		$super('tplAutoTimerMenu', target);
 		this.provider = new SimpleRequestProvider();
 	},
-	
+
 	load: function(){
 		this.show({});
 	},
-	
+
 	backup: function(parms, callback){
 		this.provider.simpleResultQuery(
 			URL.backup,
@@ -1415,7 +1415,7 @@ var AutoTimerListHandler  = Class.create(AbstractATContentHandler, {
 		this.provider = new AutoTimerListProvider(this.show.bind(this));
 		this.ajaxload = true;
 	},
-	
+
 	add: function(parms, callback){
 		this.provider.simpleResultQuery(
 			URL.add, 
@@ -1427,7 +1427,7 @@ var AutoTimerListHandler  = Class.create(AbstractATContentHandler, {
 				}
 			}.bind(this, callback));
 	},
-	
+
 	remove: function(parms, callback){
 		this.provider.simpleResultQuery(
 			URL.remove, 
@@ -1447,13 +1447,13 @@ var AutoTimerEditHandler = Class.create(AbstractATContentHandler, {
 		this.provider = new AutoTimerEditProvider(this.show.bind(this));
 		this.ajaxload = true;
 	},
-	
+
 	load: function( id ){
 		this.requestStarted();
 		this.parms = id;
 		this.provider.load( id );
 	},
-	
+
 	save: function(parms, callback){
 		this.provider.simpleResultQuery(
 			URL.edit, 
@@ -1481,7 +1481,7 @@ var AutoTimerParseHandler = Class.create(AbstractATContentHandler, {
 		this.provider = new SimpleRequestProvider();
 		this.ajaxload = true;
 	},
-	
+
 	load: function(parms, callback){
 		this.requestStarted();
 		this.provider.simpleResultQuery(
@@ -1493,7 +1493,7 @@ var AutoTimerParseHandler = Class.create(AbstractATContentHandler, {
 				callback();
 		}.bind(this));
 	},
-	
+
 });
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -1502,7 +1502,7 @@ var AutoTimerSettingsProvider = Class.create(AbstractContentProvider, {
 	initialize: function($super, showFnc){
 		$super(URL.get, showFnc);
 	},
-	
+
 	load: function( ){
 		this.getUrl(this.url, null, this.loadCallback.bind(this), this.errorback.bind(this));
 	},
@@ -1520,12 +1520,12 @@ var AutoTimerListProvider = Class.create(AbstractContentProvider, {
 	initialize: function($super, showFnc){
 		$super(URL.list, showFnc);
 	},
-	
+
 	renderXML: function(xml){
 		this.list = new AutoTimerList(xml).getList();
 		return {list : this.list};
 	},
-	
+
 	getAutoTimer: function(id){
 		var autotimer = null;
 		for (idx in this.list) {
@@ -1536,7 +1536,7 @@ var AutoTimerListProvider = Class.create(AbstractContentProvider, {
 		}
 		return autotimer;
 	},
-	
+
 	getAutoTimerIndex: function(id){
 		var idx = null;
 		for (i in this.list) {
@@ -1553,17 +1553,17 @@ var AutoTimerEditProvider = Class.create(AbstractContentProvider, {
 	initialize: function($super, showFnc){
 		$super(URL.list, showFnc);
 	},
-	
+
 	load: function( id ){
 		callback = this.callback.bind(this, id);
 		this.getUrl(this.url, null, callback, this.errorback.bind(this));
 	},
-	
+
 	callback: function(id, transport){
 		var data = this.renderXML(this.getXML(transport), id);
 		this.show(data);
 	},
-	
+
 	renderXML: function(xml, id){
 		this.edit = new AutoTimerEdit(xml, id).getItem();
 		return this.edit;
@@ -1574,12 +1574,12 @@ var AutoTimerPreviewProvider = Class.create(AbstractContentProvider, {
 	initialize: function($super, showFnc){
 		$super(URL.preview, showFnc);
 	},
-	
+
 	callback: function(transport){
 		var data = this.renderXML(this.getXML(transport));
 		this.show(data);
 	},
-	
+
 	renderXML: function(xml){
 		this.list = new AutoTimerPreview(xml).getList();
 		return {list : this.list};
@@ -1710,11 +1710,11 @@ function AutoTimer(xml, defaults){
 	// Items that must exist
 	this.id = xml.getAttribute('id');
 	this.enabled = (xml.getAttribute('enabled')=='yes') ? 'checked' : '';
-	
+
 	var name = xml.getAttribute('name');
 	this.match = xml.getAttribute('match');
 	this.name = (this.name == undefined) ? name : this.match;
-	
+
 	var encoding = getAttribute(xml, 'encoding', defaults);
 	if (encoding==undefined) encoding = 'UTF-8';
 	var options = ['ISO8859-15', 'UTF-8'];
@@ -1743,7 +1743,7 @@ function AutoTimer(xml, defaults){
 	options['0'] = 'record';
 	options['1'] = 'zap';
 	this.justplay = createOptionList(options, justplay);
-	
+
 	var setEndtime = getAttribute(xml, 'setEndtime', defaults);
 	if (setEndtime==undefined || setEndtime=='1'){
 		setEndtime = 'checked';
@@ -1751,9 +1751,9 @@ function AutoTimer(xml, defaults){
 		setEndtime = '';
 	}
 	this.setEndtime = setEndtime;
-	
+
 	this.overrideAlternatives = (getAttribute(xml, 'overrideAlternatives', defaults)) ? 'checked' : '';
-	
+
 	var from = getAttribute(xml, 'from', defaults);
 	var to = getAttribute(xml, 'to', defaults);
 	var usetimespan = '';
@@ -1769,7 +1769,7 @@ function AutoTimer(xml, defaults){
 		'from' : from,
 		'to' : to,
 	}	
-	
+
 	var after = getAttribute(xml, 'after', defaults);
 	var before = getAttribute(xml, 'before', defaults);
 	var usetimeframe = '';
@@ -1794,7 +1794,7 @@ function AutoTimer(xml, defaults){
 		'after' : toReadableDate( after ),
 		'before' : toReadableDate( before ),
 	}	
-	
+
 	var offset = getAttribute(xml, 'offset', defaults);
 	var useoffset = (offset) ? 'checked' : '';
 	if (offset != undefined) {
@@ -1812,7 +1812,7 @@ function AutoTimer(xml, defaults){
 		'begin' : numericalOptionList(0, 100, begin),
 		'end' : numericalOptionList(0, 100, end),
 	}	
-	
+
 	var maxduration = getAttribute(xml, 'maxduration', defaults);
 	var usemaxduration = (maxduration) ? 'checked' : '';
 	if (maxduration == undefined) maxduration = 70;
@@ -1820,7 +1820,7 @@ function AutoTimer(xml, defaults){
 		'usemaxduration' : usemaxduration,
 		'maxduration' : numericalOptionList(0, 999, maxduration),
 	}	
-	
+
 	var xmlafterevents = xml.getElementsByTagName('afterevent');
 	var afterevent = '';
 	var aftereventFrom = '';
@@ -1851,7 +1851,7 @@ function AutoTimer(xml, defaults){
 		'from' : aftereventFrom,
 		'to' : aftereventTo,
 	}
-	
+
 	//TODO TEST lastactivation lastbegin
 	var counter = getAttribute(xml, 'counter', defaults);
 	var left = getAttribute(xml, 'left', defaults);
@@ -1906,7 +1906,7 @@ function AutoTimer(xml, defaults){
 		'uselocation' : uselocation,
 		'locations' : l,
 	}
-	
+
 	var xmltags = xml.getElementsByTagName('e2tags');
 	var tags = '';
 	if (xmltags.length > 0){
@@ -1914,7 +1914,7 @@ function AutoTimer(xml, defaults){
 	}
 	this.tags = toOptionList(autotimereditorcore.tags, tags, " ");
 	this.tags.shift();
-	
+
 	var filters = [];
 	var filtertags = ['include', 'exclude'];
 	var tlen = filtertags.length;
@@ -1929,7 +1929,7 @@ function AutoTimer(xml, defaults){
 			} else{
 				weekday = '0';
 			}
-			
+
 			filters.push({ 
 				'type' : createOptionList(types, xmlfilters.item(i).nodeName),
 				'where' : createOptionList(wheres, xmlfilters.item(i).getAttribute('where')),
@@ -1951,7 +1951,7 @@ function AutoTimer(xml, defaults){
 		'usefilters' : usefilters,
 		'filters' : filters,
 	}
-	
+
 	var bouquetoptions = createOptionList(autotimereditorcore.bouquets);
 	var bouquets = [];
 	var services = [];
@@ -1966,7 +1966,7 @@ function AutoTimer(xml, defaults){
 			else{
 				name = name.item(0).firstChild.nodeValue;
 			}
-			
+
 			var reference = xmlservices.item(i).getElementsByTagName('e2servicereference');
 			var firstChild = reference.item(0).firstChild;
 			if (firstChild){
@@ -2001,7 +2001,7 @@ function AutoTimer(xml, defaults){
 			}
 		}
 	}
-	
+
 	var usebouquets = (bouquets.length > 0) ? 'checked' : '';
 	bouquets.push({ 
 		'bouquet' : bouquetoptions,
@@ -2011,7 +2011,7 @@ function AutoTimer(xml, defaults){
 		'usebouquets' : usebouquets,
 		'bouquets' : bouquets,
 	}
-	
+
 	var useservices = (services.length > 0) ? 'checked' : '';
 	services.push({ 
 		'bouquet' : bouquetoptions,
@@ -2022,7 +2022,7 @@ function AutoTimer(xml, defaults){
 		'useservices' : useservices,
 		'services' : services,
 	}
-	
+
 	var hasVps = (autotimereditorcore.hasVps == "True") ? '' : 'invisible';
 	var vps_enabled = (getAttribute(xml, 'vps_enabled', defaults)) ? 'checked' : '';
 	var vps_overwrite = (getAttribute(xml, 'vps_overwrite', defaults)) ? 'checked' : '';
@@ -2031,43 +2031,43 @@ function AutoTimer(xml, defaults){
 		'vps_enabled' : vps_enabled,
 		'vps_overwrite' : vps_overwrite,
 	}
-	
+
 	var hasSeriesPlugin = (autotimereditorcore.hasSeriesPlugin == "True") ? '' : 'invisible';
 	var series_labeling = (getAttribute(xml, 'series_labeling', defaults)) ? 'checked' : '';
 	this.seriesplugin = {
 		'hasSeriesPlugin' : hasSeriesPlugin,
 		'series_labeling' : series_labeling,
 	}
-	
+
 	this.json = { 	
 			'id' :                    this.id,
 			'enabled' :               this.enabled,
 			'name' :                  this.name,
 			'match' :                 this.match,
 			'encoding' :              this.encoding,
-			
+
 			'searchType' :            this.searchType,
 			'searchCase' :            this.searchCase,
-			
+
 			'justplay' :              this.justplay,
 			'setEndtime' :            this.setEndtime,
-			
+
 			'overrideAlternatives' :  this.overrideAlternatives,
 			'timespan' :              this.timespan,
 			'timeframe' :             this.timeframe,
 			'offset' :                this.offset,
 			'maxduration' :           this.maxduration,
-			
+
 			'afterevent' :            this.afterevent,
 			'counter' :               this.counter,
-			
+
 			'avoidDuplicateDescription' :  this.avoidDuplicateDescription,
 			'location' :                   this.location,
 			'tags' :                       this.tags,
 			'filters' :                    this.filters,
 			'bouquets' :                   this.bouquets,
 			'services' :                   this.services,
-			
+
 			'vps' :                   this.vps,
 			'seriesplugin' :          this.seriesplugin,
 	};

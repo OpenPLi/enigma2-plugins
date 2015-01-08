@@ -76,7 +76,7 @@ class AutoTimerEditor(Source):
 					except Exception:
 						# TODO: proper error handling
 						pass
-				
+
 				remove(backupFilename)
 				return (True, "AutoTimer-settings were restored successfully")
 			else:

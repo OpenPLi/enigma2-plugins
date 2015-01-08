@@ -1,8 +1,8 @@
 <!-- tplAutoTimerEditor -->
-					<table class="tabEditor"> 
+					<table class="tabEditor">
 						<tr>
 							<td>
-								<table class="editor"> 
+								<table class="editor">
 									<tr>
 										<td class="optionTitle">Enabled:</td>
 										<td class="optionContent">
@@ -27,7 +27,7 @@
 											<select id="encoding" size="1" class="select">
 												{for e in encoding}
 													<option value="${e.value}" ${e.selected}>${e.txt}</option>
-												{/for}	
+												{/for}
 											</select>
 										</td>
 									</tr>
@@ -37,7 +37,7 @@
 											<select id="searchType" size="1" class="select">
 												{for e in searchType}
 													<option value="${e.value}" ${e.selected}>${e.txt}</option>
-												{/for}	
+												{/for}
 											</select>
 										</td>
 									</tr>
@@ -47,20 +47,20 @@
 											<select id="searchCase" size="1" class="select">
 												{for e in searchCase}
 													<option value="${e.value}" ${e.selected}>${e.txt}</option>
-												{/for}	
+												{/for}
 											</select>
 										</td>
 									</tr>
 									<tr>
 										<td class="optionTitle">Timer type:</td>
 										<td class="optionContent">
-											<table> 
+											<table>
 												<tr>
 													<td class="optionMain">
 														<select id="justplay" size="1" class="select">
 															{for e in justplay}
 																<option value="${e.value}" ${e.selected}>${e.txt}</option>
-															{/for}	
+															{/for}
 														</select>
 													</td>
 													<td>
@@ -82,7 +82,7 @@
 									<tr>
 										<td class="optionTitle">Time span:</td>
 										<td class="optionContent">
-											<table> 
+											<table>
 												<tr>
 													<td class="optionMain">
 														<input id="timespan" type="checkbox" class="input" ${timespan.usetimespan}>
@@ -102,7 +102,7 @@
 									<tr>
 										<td class="optionTitle">Time frame:</td>
 										<td class="optionContent">
-											<table> 
+											<table>
 												<tr>
 													<td class="optionMain">
 														<input id="timeframe" type="checkbox" class="input" ${timeframe.usetimeframe}>
@@ -122,7 +122,7 @@
 									<tr>
 										<td class="optionTitle">Timer offset:</td>
 										<td class="optionContent">
-											<table> 
+											<table>
 												<tr>
 													<td class="optionMain">
 														<input id="offset" type="checkbox" class="input" ${offset.useoffset}>
@@ -133,13 +133,13 @@
 															<select id="offsetbegin" size="1" class="select">
 																{for e in offset.begin}
 																	<option value="${e.value}" ${e.selected}>${e.txt}</option>
-																{/for}	
+																{/for}
 															</select>
 															After:
 															<select id="offsetend" size="1" class="select">
 																{for e in offset.end}
 																	<option value="${e.value}" ${e.selected}>${e.txt}</option>
-																{/for}	
+																{/for}
 															</select>
 															minutes
 														</div>
@@ -151,7 +151,7 @@
 									<tr>
 										<td class="optionTitle">Max duration:</td>
 										<td class="optionContent">
-											<table> 
+											<table>
 												<tr>
 													<td class="optionMain">
 														<input id="maxdurationavailable" type="checkbox" class="input" ${maxduration.usemaxduration}>
@@ -161,7 +161,7 @@
 															<select id="maxduration" size="1" class="select">
 																{for e in maxduration.maxduration}
 																	<option value="${e.value}" ${e.selected}>${e.txt}</option>
-																{/for}	
+																{/for}
 															</select>
 															minutes
 														</div>
@@ -173,13 +173,13 @@
 									<tr>
 										<td class="optionTitle">After event:</td>
 										<td class="optionContent">
-											<table> 
+											<table>
 												<tr>
 													<td class="optionMain">
 														<select id="afterevent" size="1" class="select">
 															{for e in afterevent.options}
 																<option value="${e.value}" ${e.selected}>${e.txt}</option>
-															{/for}	
+															{/for}
 														</select>
 													</td>
 													<td>
@@ -195,20 +195,20 @@
 														</div>
 													</td>
 												</tr>
-											</table>	
+											</table>
 										</td>
 									</tr>
 									<tr>
 										<td class="optionTitle">Counter:</td>
 										<td class="optionContent">
-											<table> 
+											<table>
 												<tr>
 													<td class="optionMain">
 														Max:
 														<select id="counter" size="1" class="select">
 															{for e in counter.options}
 																<option value="${e.value}" ${e.selected}>${e.txt}</option>
-															{/for}	
+															{/for}
 														</select>
 													</td>
 													<td>
@@ -219,13 +219,13 @@
 																	<select id="left" size="1" class="select">
 																		{for e in counter.left}
 																			<option value="${e.value}" ${e.selected}>${e.txt}</option>
-																		{/for}	
+																		{/for}
 																	</select>
 																	Reset:
 																	<select id="counterFormat" size="1" class="select">
 																		{for e in counter.counterFormat}
 																			<option value="${e.value}" ${e.selected}>${e.txt}</option>
-																		{/for}	
+																		{/for}
 																	</select>
 																</td>
 															</tr>
@@ -253,14 +253,14 @@
 											<select id="avoidDuplicateDescription" size="1" class="select">
 												{for e in avoidDuplicateDescription}
 													<option value="${e.value}" ${e.selected}>${e.txt}</option>
-												{/for}	
+												{/for}
 											</select>
 										</td>
 									</tr>
 									<tr>
 										<td class="optionTitle">Location:</td>
 										<td class="optionContent">
-											<table> 
+											<table>
 												<tr>
 													<td class="optionMain">
 														<input id="locationavailable" type="checkbox" class="input" ${location.uselocation}>
@@ -291,7 +291,7 @@
 									<tr>
 										<td class="optionTitle">Filter:</td>
 										<td class="optionContent">
-											<table> 
+											<table>
 												<tr>
 													<td class="optionMain">
 														<input id="usefilters" type="checkbox" class="input" ${filters.usefilters}>
@@ -336,7 +336,7 @@
 									<tr>
 										<td class="optionTitle">Bouquets:</td>
 										<td class="optionContent">
-											<table> 
+											<table>
 												<tr>
 													<td class="optionMain">
 														<input id="usebouquets" type="checkbox" class="input" ${bouquets.usebouquets}>
@@ -366,7 +366,7 @@
 									<tr>
 										<td class="optionTitle">Services:</td>
 										<td class="optionContent">
-											<table> 
+											<table>
 												<tr>
 													<td class="optionMain">
 														<input id="useservices" type="checkbox" class="input" ${services.useservices}>
@@ -403,7 +403,7 @@
 									<tr class="${vps.hasVPS}"">
 										<td class="optionTitle">VPS:</td>
 										<td class="optionContent">
-											<table> 
+											<table>
 												<tr>
 													<td class="optionMain">
 														<input id="vps_enabled" type="checkbox" class="input" ${vps.vps_enabled}>
@@ -421,7 +421,7 @@
 									<tr class="${seriesplugin.hasSeriesPlugin}"">
 										<td class="optionTitle">Label series:</td>
 										<td class="optionContent">
-											<table> 
+											<table>
 												<tr>
 													<td class="optionMain">
 														<input id="series_labeling" type="checkbox" class="input" ${seriesplugin.series_labeling}>

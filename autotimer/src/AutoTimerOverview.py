@@ -249,7 +249,7 @@ class AutoTimerOverview(Screen, HelpableScreen):
 			list.append((_("Create a new timer using the classic editor"), "newplain"))
 		else:
 			list.append((_("Create a new timer using the wizard"), "newwizard"))
-			
+
 		from plugin import autotimerHelp
 		if autotimerHelp:
 			list.insert(7, (_("Help"), "help"))

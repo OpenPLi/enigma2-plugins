@@ -6,9 +6,9 @@
 <head>
 	<meta content="text/html; charset=UTF-8" http-equiv="content-type">
 	<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
-	
+
 	<title>Receiver AutoTimerEditor</title>
-	
+
 	<link href="/autotimereditor/style.css" type="text/css" rel="stylesheet">
 	<link rel="shortcut icon" type="/web-data/image/x-icon" href="/web-data/img/favicon.ico">
 	<!--
@@ -39,7 +39,7 @@
 	 	if (!window.$) {
 			window.$ = function(id) { return document.getElementById(id); }
 		}
-		
+
 		function getAjaxLoad(){
 			return ('<center><img style="padding-top: 50px;" src="/web-data/gfx/ajaxload.gif" alt="loading..."></center>');
 		}
@@ -59,7 +59,6 @@
 	<link rel="stylesheet" type="text/css" href="/autotimereditor/anytimec.css" />
 	<script type="text/javascript" src="/autotimereditor/anytimec.js" ></script>
 	<script type="text/javascript" src="/autotimereditor/autotimereditor.js?version=20140108" ></script>
-	
 </head>
 <body onload="document.getElementById('notification').style.display='none'">
 	<div id="container">
@@ -99,7 +98,7 @@
 	</div>
 
 	<script language="JavaScript">
-		
+
 		// Read get parameters
 		HTTP_GET_VARS=new Array();
 		strGET=document.location.search.substr(1,document.location.search.length);
@@ -111,12 +110,12 @@
 	      HTTP_GET_VARS[unescape(vArr[0])]=unescape(v);
 		  }
 		}
-		 
+
 		function GET(v){
 			if(!HTTP_GET_VARS[v]){return '';}
 			return HTTP_GET_VARS[v];
 		}
-		
+
 		// Instantiate the AutotimerEditor
 		var atTemplateEngine = new TemplateEngine('/autotimereditor/');
 		autotimereditorcore = new AutoTimerEditorCore(GET('name'), GET('servicename'), GET('servicereference'), GET('from'), GET('to'));

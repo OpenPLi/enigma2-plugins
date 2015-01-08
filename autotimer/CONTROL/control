@@ -1,6 +1,6 @@
 Package: enigma2-plugin-extensions-autotimer
 Version: 2.0-git
-Description: Automatically add Timers based on simple rules 
+Description: Automatically add Timers based on simple rules
 Maintainer: OpenPLi Team, dima73
 Homepage: www.openpli.org
 Depends: enigma2 (>= 2.6git20091014), python-codecs, python-difflib, python-re, python-xml, enigma2-plugin-systemplugins-mphelp

@@ -93,7 +93,7 @@ class AutoTimerImportSelector(Screen):
 
 	def cancel(self):
 		self.close(None)
-		
+
 HD = False
 if getDesktop(0).size().width() >= 1280:
 	HD = True

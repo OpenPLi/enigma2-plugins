@@ -242,7 +242,7 @@ def CallbackToGraphMultiEPG(self, ret):
 				self.showSetup()
 			except:
 				pass
-				
+
 base_furtherOptions = None
 baseEPGSelection__init__ = None
 mepg_config_initialized = False
@@ -382,7 +382,7 @@ def addtoAutoTimer(self, add):
 			addAutotimerFromEvent(self.session, evt = event, service = sref)
 		except:
 			pass
-		
+
 # Mainfunction
 def main(session, **kwargs):
 	global autopoller
@@ -445,7 +445,7 @@ def parseEPGCallback(ret):
 def movielist(session, service, **kwargs):
 	from AutoTimerEditor import addAutotimerFromService
 	addAutotimerFromService(session, service)
-	
+
 # EPG Further Options
 def epgfurther(session, selectedevent, **kwargs):
 	from AutoTimerEditor import addAutotimerFromEvent

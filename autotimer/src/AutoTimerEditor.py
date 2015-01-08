@@ -109,7 +109,7 @@ class AutoTimerEPGSelection(EPGSelection):
 		EPGSelection.__init__(self, *args)
 		self.skinName = "EPGSelection"
 		self["key_red"].setText(_(" add AutoTimer"))
-		
+
 	def eventSelected(self):
 		self.zapTo()
 
