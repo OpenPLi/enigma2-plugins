@@ -19,8 +19,9 @@ from RecordTimer import AFTEREVENT
 
 # Needed to convert our timestamp back and forth
 from time import localtime
+from AutoTimerEditor import weekdays
 
-from enigma import eServiceReference
+from enigma import eServiceReference, getDesktop
 
 afterevent = {
 	AFTEREVENT.NONE: _("do nothing"),
@@ -92,21 +93,36 @@ class AutoTimerImportSelector(Screen):
 
 	def cancel(self):
 		self.close(None)
-
+		
+HD = False
+if getDesktop(0).size().width() >= 1280:
+	HD = True
 class AutoTimerImporter(Screen):
 	"""Import AutoTimer from Timer"""
-
-	skin = """<screen name="AutoTimerImporter" title="Import AutoTimer" position="center,center" size="565,290">
-		<ePixmap position="0,0" size="140,40" pixmap="skin_default/buttons/red.png" transparent="1" alphatest="on" />
-		<ePixmap position="140,0" size="140,40" pixmap="skin_default/buttons/green.png" transparent="1" alphatest="on" />
-		<ePixmap position="280,0" size="140,40" pixmap="skin_default/buttons/yellow.png" transparent="1" alphatest="on" />
-		<ePixmap position="420,0" size="140,40" pixmap="skin_default/buttons/blue.png" transparent="1" alphatest="on" />
-		<widget source="key_red" render="Label" position="0,0" zPosition="1" size="140,40" valign="center" halign="center" font="Regular;21" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
-		<widget source="key_green" render="Label" position="140,0" zPosition="1" size="140,40" valign="center" halign="center" font="Regular;21" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
-		<widget source="key_yellow" render="Label" position="280,0" zPosition="1" size="140,40" valign="center" halign="center" font="Regular;21" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
-		<widget source="key_blue" render="Label" position="420,0" zPosition="1" size="140,40" valign="center" halign="center" font="Regular;21" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
-		<widget name="list" position="5,45" size="555,240" scrollbarMode="showOnDemand" />
-	</screen>"""
+	if HD:
+		skin = """<screen name="AutoTimerImporter" title="Import AutoTimer" position="center,center" size="640,320">
+			<ePixmap position="0,0" size="140,40" pixmap="skin_default/buttons/red.png" transparent="1" alphatest="on" />
+			<ePixmap position="160,0" size="140,40" pixmap="skin_default/buttons/green.png" transparent="1" alphatest="on" />
+			<ePixmap position="320,0" size="140,40" pixmap="skin_default/buttons/yellow.png" transparent="1" alphatest="on" />
+			<ePixmap position="480,0" size="140,40" pixmap="skin_default/buttons/blue.png" transparent="1" alphatest="on" />
+			<widget source="key_red" render="Label" position="0,0" zPosition="1" size="140,40" valign="center" halign="center" font="Regular;21" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
+			<widget source="key_green" render="Label" position="160,0" zPosition="1" size="140,40" valign="center" halign="center" font="Regular;21" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
+			<widget source="key_yellow" render="Label" position="320,0" zPosition="1" size="140,40" valign="center" halign="center" font="Regular;21" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
+			<widget source="key_blue" render="Label" position="480,0" zPosition="1" size="140,40" valign="center" halign="center" font="Regular;21" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
+			<widget name="list" position="5,45" size="630,270" scrollbarMode="showOnDemand" />
+		</screen>"""
+	else:
+		skin = """<screen name="AutoTimerImporter" title="Import AutoTimer" position="center,center" size="565,290">
+			<ePixmap position="0,0" size="140,40" pixmap="skin_default/buttons/red.png" transparent="1" alphatest="on" />
+			<ePixmap position="140,0" size="140,40" pixmap="skin_default/buttons/green.png" transparent="1" alphatest="on" />
+			<ePixmap position="280,0" size="140,40" pixmap="skin_default/buttons/yellow.png" transparent="1" alphatest="on" />
+			<ePixmap position="420,0" size="140,40" pixmap="skin_default/buttons/blue.png" transparent="1" alphatest="on" />
+			<widget source="key_red" render="Label" position="0,0" zPosition="1" size="140,40" valign="center" halign="center" font="Regular;21" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
+			<widget source="key_green" render="Label" position="140,0" zPosition="1" size="140,40" valign="center" halign="center" font="Regular;21" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
+			<widget source="key_yellow" render="Label" position="280,0" zPosition="1" size="140,40" valign="center" halign="center" font="Regular;21" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
+			<widget source="key_blue" render="Label" position="420,0" zPosition="1" size="140,40" valign="center" halign="center" font="Regular;21" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
+			<widget name="list" position="5,45" size="555,240" scrollbarMode="showOnDemand" />
+		</screen>"""
 
 	def __init__(self, session, autotimer, name, begin, end, disabled, sref, afterEvent, justplay, dirname, tags):
 		Screen.__init__(self, session)
@@ -120,10 +136,11 @@ class AutoTimerImporter(Screen):
 		self["key_yellow"] = StaticText()
  		self["key_blue"] = StaticText()
 
-		list = []
+		entries = []
+		append = entries.append
 
 		if disabled is not None:
-			list.append(
+			append(
 				SelectionEntryComponent(
 					': '.join((_("Enabled"), {True: _("disable"), False: _("enable")}[bool(disabled)])),
 					not disabled,
@@ -132,34 +149,41 @@ class AutoTimerImporter(Screen):
 			))
 
 		if name != "":
-			list.extend([
+			append(
 				SelectionEntryComponent(
 					_("Match title: %s") % (name),
 					name,
 					1,
 					True
-				),
+			))
+			append(
 				SelectionEntryComponent(
 					_("Exact match"),
 					True,
 					8,
 					True
-				)
-			])
+			))
 
 		if begin and end:
 			begin = localtime(begin)
 			end = localtime(end)
-			list.append(
+			append(
 				SelectionEntryComponent(
 					_("Match Timespan: %02d:%02d - %02d:%02d") % (begin[3], begin[4], end[3], end[4]),
 					((begin[3], begin[4]), (end[3], end[4])),
 					2,
 					True
 			))
+			append(
+				SelectionEntryComponent(
+					_("Only on Weekday: %s") % (weekdays[begin.tm_wday][1],), # XXX: the lookup is dirty but works :P
+					str(begin.tm_wday),
+					9,
+					True
+			))
 
 		if sref:
-			list.append(
+			append(
 				SelectionEntryComponent(
 					_("Only on Service: %s") % (sref.getServiceName().replace('\xc2\x86', '').replace('\xc2\x87', '')),
 					str(sref),
@@ -168,7 +192,7 @@ class AutoTimerImporter(Screen):
 			))
 
 		if afterEvent is not None:
-			list.append(
+			append(
 				SelectionEntryComponent(
 					': '.join((_("After event"), afterevent[afterEvent])),
 					afterEvent,
@@ -177,7 +201,7 @@ class AutoTimerImporter(Screen):
 			))
 
 		if justplay is not None:
-			list.append(
+			append(
 				SelectionEntryComponent(
 					': '.join((_("Timer type"), {0: _("record"), 1: _("zap")}[int(justplay)])),
 					int(justplay),
@@ -186,7 +210,7 @@ class AutoTimerImporter(Screen):
 			))
 
 		if dirname is not None:
-			list.append(
+			append(
 				SelectionEntryComponent(
 					': '.join((_("Location"), dirname or "/hdd/movie/")),
 					dirname,
@@ -195,7 +219,7 @@ class AutoTimerImporter(Screen):
 			))
 
 		if tags:
-			list.append(
+			append(
 				SelectionEntryComponent(
 					': '.join((_("Tags"), ', '.join(tags))),
 					tags,
@@ -203,7 +227,7 @@ class AutoTimerImporter(Screen):
 					True
 			))
 
-		self["list"] = SelectionList(list)
+		self["list"] = SelectionList(entries)
 
 		# Define Actions
 		self["actions"] = ActionMap(["OkCancelActions", "ColorActions"],
@@ -291,6 +315,14 @@ class AutoTimerImporter(Screen):
 			elif item[2] == 8: # Exact match
 				autotimer.searchType = "exact"
 				autotimer.searchCase = "sensitive"
+			elif item[2] == 9: # Weekday
+				includes = [
+						autotimer.getIncludedTitle(),
+						autotimer.getIncludedShort(),
+						autotimer.getIncludedDescription(),
+						[item[1]],
+				]
+				autotimer.include = includes
 
 		if autotimer.match == "":
 			self.session.openWithCallback(

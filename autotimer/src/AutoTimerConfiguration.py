@@ -11,7 +11,18 @@ from ServiceReference import ServiceReference
 
 from enigma import eServiceReference
 
-CURRENT_CONFIG_VERSION = "5"
+"""
+Configuration Version.
+To be bumped for any modification of the config format.
+Incompatible changes (e.g. different parameter names) require a compatible
+parser to be implemented as for example parseConfigOld which is capable of
+parsing every config format before version 5.
+Previously this variable was only bumped for incompatible changes, but as this
+is the only reliable way to make remote tools aware of our capabilities without
+much overhead (read: a special api just for this) we chose to change the meaning
+of the version attribue.
+"""
+CURRENT_CONFIG_VERSION = "7"
 
 def getValue(definitions, default):
 	# Initialize Output
@@ -31,7 +42,13 @@ def getValue(definitions, default):
 	return ret.strip() or default
 
 def parseConfig(configuration, list, version = None, uniqueTimerId = 0, defaultTimer = None):
-	if version != CURRENT_CONFIG_VERSION:
+	try:
+		intVersion = int(version)
+	except ValueError:
+		print('[AutoTimer] Config version "%s" is not a valid integer, assuming old version' % version)
+		intVersion = -1
+
+	if intVersion < 5:
 		parseConfigOld(configuration, list, uniqueTimerId)
 		return
 
@@ -82,12 +99,17 @@ def parseEntry(element, baseTimer, defaults = False):
 		if before and after:
 			baseTimer.timeframe = (int(after), int(before))
 
-		# VPS-Plugin settings
-		vps_enabled = element.get("vps_enabled", "no")
-		vps_overwrite = element.get("vps_overwrite", "no")
-		baseTimer.vps_enabled = True if vps_enabled == "yes" else False
-		baseTimer.vps_overwrite = True if vps_overwrite == "yes" else False
-		del vps_enabled, vps_overwrite
+	# VPS-Plugin settings
+	vps_enabled = element.get("vps_enabled", "no")
+	vps_overwrite = element.get("vps_overwrite", "no")
+	baseTimer.vps_enabled = True if vps_enabled == "yes" else False
+	baseTimer.vps_overwrite = True if vps_overwrite == "yes" else False
+	del vps_enabled, vps_overwrite
+
+	# SeriesPlugin settings
+	series_labeling = element.get("series_labeling", "no")
+	baseTimer.series_labeling = True if series_labeling == "yes" else False
+	del series_labeling
 
 	# Read out encoding (won't change if no value is set)
 	baseTimer.encoding = element.get("encoding")
@@ -137,9 +159,11 @@ def parseEntry(element, baseTimer, defaults = False):
 
 	# Read out justplay
 	baseTimer.justplay = int(element.get("justplay", 0))
+	baseTimer.setEndtime = int(element.get("setEndtime", 1))
 
 	# Read out avoidDuplicateDescription
 	baseTimer.avoidDuplicateDescription = int(element.get("avoidDuplicateDescription", 0))
+	baseTimer.searchForDuplicateDescription = int(element.get("searchForDuplicateDescription", 2))
 
 	# Read out allowed services
 	l = element.findall("serviceref")
@@ -386,9 +410,13 @@ def parseConfigOld(configuration, list, uniqueTimerId = 0):
 
 		# Read out justplay
 		justplay = int(timer.get("justplay", '0'))
+		setEndtime = int(timer.get("setEndtime", '1'))
 
 		# Read out avoidDuplicateDescription
 		avoidDuplicateDescription = int(timer.get("avoidDuplicateDescription", 0))
+		searchForDuplicateDescription = int(timer.get("searchForDuplicateDescription", 3)) - 1
+		if searchForDuplicateDescription < 0 or searchForDuplicateDescription > 2:
+			searchForDuplicateDescription = 2
 
 		# Read out afterevent (compatible to V* though behaviour for V3- is different as V4+ allows multiple afterevents while the last definication was chosen before)
 		idx = {
@@ -486,7 +514,9 @@ def parseConfigOld(configuration, list, uniqueTimerId = 0):
 				matchFormatString = counterFormat,
 				lastBegin = lastBegin,
 				justplay = justplay,
+				setEndtime = setEndtime,
 				avoidDuplicateDescription = avoidDuplicateDescription,
+				searchForDuplicateDescription = searchForDuplicateDescription,
 				bouquets = bouquets,
 				tags = tags
 		))
@@ -532,20 +562,37 @@ def buildConfig(defaultTimer, timers, webif = False):
 	if defaultTimer.getAvoidDuplicateDescription():
 		extend((' avoidDuplicateDescription="', str(defaultTimer.getAvoidDuplicateDescription()), '"'))
 
+		if defaultTimer.getAvoidDuplicateDescription() > 0:
+			if defaultTimer.searchForDuplicateDescription != 2:
+				extend((' searchForDuplicateDescription="', str(defaultTimer.searchForDuplicateDescription), '"'))
+
 	# Only display justplay if true
 	if defaultTimer.justplay:
 		extend((' justplay="', str(defaultTimer.getJustplay()), '"'))
+		if not defaultTimer.setEndtime:
+			append(' setEndtime="0"')
 
 	# Only display encoding if != utf-8
 	if defaultTimer.encoding != defaultEncoding or webif:
 		extend((' encoding="', str(defaultTimer.encoding), '"'))
 
-	if defaultTimer.searchType:
+	# SearchType
+	if defaultTimer.searchType != "partial":
 		extend((' searchType="', str(defaultTimer.searchType), '"'))
 
 	# Only display searchCase if sensitive
 	if defaultTimer.searchCase == "sensitive":
 		extend((' searchCase="', str(defaultTimer.searchCase), '"'))
+
+	# Only add vps related entries if true
+	if defaultTimer.vps_enabled:
+		append(' vps_enabled="yes"')
+		if defaultTimer.vps_overwrite:
+			append(' vps_overwrite="yes"')
+
+	# Only add seriesplugin related entry if true
+	if defaultTimer.series_labeling:
+		append(' series_labeling="yes"')
 
 	# Close still opened defaults tag
 	append('>\n')
@@ -664,15 +711,20 @@ def buildConfig(defaultTimer, timers, webif = False):
 		# Duplicate Description
 		if timer.getAvoidDuplicateDescription():
 			extend((' avoidDuplicateDescription="', str(timer.getAvoidDuplicateDescription()), '"'))
+			if timer.searchForDuplicateDescription != 2:
+				extend((' searchForDuplicateDescription="', str(timer.searchForDuplicateDescription), '"'))
 
 		# Only display justplay if true
 		if timer.justplay:
 			extend((' justplay="', str(timer.getJustplay()), '"'))
+			if not timer.setEndtime:
+				append(' setEndtime="0"')
 
 		# Only display encoding if != utf-8
 		if timer.encoding != defaultEncoding or webif:
 			extend((' encoding="', str(timer.encoding), '"'))
 
+		# SearchType
 		if timer.searchType != "partial":
 			extend((' searchType="', str(timer.searchType), '"'))
 
@@ -689,6 +741,10 @@ def buildConfig(defaultTimer, timers, webif = False):
 			append(' vps_enabled="yes"')
 			if timer.vps_overwrite:
 				append(' vps_overwrite="yes"')
+
+		# Only add seriesplugin related entry if true
+		if timer.series_labeling:
+			append(' series_labeling="yes"')
 
 		# Close still opened timer tag
 		append('>\n')

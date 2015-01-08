@@ -11,20 +11,33 @@ from Screens.Setup import SetupSummary
 # GUI (Components)
 from Components.ActionMap import ActionMap
 from Components.Sources.StaticText import StaticText
-
+from enigma import getDesktop
 # Configuration
 from Components.config import config, getConfigListEntry
-
+HD = False
+if getDesktop(0).size().width() >= 1280:
+	HD = True
 class AutoTimerSettings(Screen, ConfigListScreen):
-	skin = """<screen name="AutoTimerSettings" title="AutoTimer Settings" position="center,center" size="565,370">
-		<ePixmap pixmap="skin_default/buttons/red.png" position="0,0" size="140,40" alphatest="on" />
-		<ePixmap pixmap="skin_default/buttons/green.png" position="140,0" size="140,40" alphatest="on" />
-		<widget source="key_red" render="Label" position="0,0" zPosition="1" size="140,40" font="Regular;20" halign="center" valign="center" backgroundColor="#9f1313" transparent="1" />
-		<widget source="key_green" render="Label" position="140,0" zPosition="1" size="140,40" font="Regular;20" halign="center" valign="center" backgroundColor="#1f771f" transparent="1" />
-		<widget name="config" position="5,50" size="555,250" scrollbarMode="showOnDemand" />
-		<ePixmap pixmap="skin_default/div-h.png" position="0,301" zPosition="1" size="565,2" />
-		<widget source="help" render="Label" position="5,305" size="555,63" font="Regular;21" />
-	</screen>"""
+	if HD:
+		skin = """<screen name="AutoTimerSettings" title="AutoTimer Settings" position="center,center" size="750,635">
+			<ePixmap pixmap="skin_default/buttons/red.png" position="0,0" size="140,40" alphatest="on" />
+			<ePixmap pixmap="skin_default/buttons/green.png" position="140,0" size="140,40" alphatest="on" />
+			<widget source="key_red" render="Label" position="0,0" zPosition="1" size="140,40" font="Regular;20" halign="center" valign="center" backgroundColor="#9f1313" transparent="1" />
+			<widget source="key_green" render="Label" position="140,0" zPosition="1" size="140,40" font="Regular;20" halign="center" valign="center" backgroundColor="#1f771f" transparent="1" />
+			<widget name="config" position="5,50" size="740,475" scrollbarMode="showOnDemand" />
+			<ePixmap pixmap="skin_default/div-h.png" position="0,530" zPosition="1" size="750,2" />
+			<widget source="help" render="Label" position="5,535" size="740,110" font="Regular;21" />
+		</screen>"""
+	else:
+		skin = """<screen name="AutoTimerSettings" title="AutoTimer Settings" position="center,center" size="565,430">
+			<ePixmap pixmap="skin_default/buttons/red.png" position="0,0" size="140,40" alphatest="on" />
+			<ePixmap pixmap="skin_default/buttons/green.png" position="140,0" size="140,40" alphatest="on" />
+			<widget source="key_red" render="Label" position="0,0" zPosition="1" size="140,40" font="Regular;20" halign="center" valign="center" backgroundColor="#9f1313" transparent="1" />
+			<widget source="key_green" render="Label" position="140,0" zPosition="1" size="140,40" font="Regular;20" halign="center" valign="center" backgroundColor="#1f771f" transparent="1" />
+			<widget name="config" position="5,50" size="555,300" scrollbarMode="showOnDemand" />
+			<ePixmap pixmap="skin_default/div-h.png" position="0,355" zPosition="1" size="565,2" />
+			<widget source="help" render="Label" position="5,360" size="555,70" font="Regular;20" />
+		</screen>"""
 
 	def __init__(self, session):
 		Screen.__init__(self, session)
@@ -37,19 +50,31 @@ class AutoTimerSettings(Screen, ConfigListScreen):
 			self,
 			[
 				getConfigListEntry(_("Poll automatically"), config.plugins.autotimer.autopoll, _("Unless this is enabled AutoTimer will NOT automatically look for events matching your AutoTimers but only when you leave the GUI with the green button.")),
+				getConfigListEntry(_("Startup delay (in min)"), config.plugins.autotimer.delay, _("This is the delay in minutes that the AutoTimer will wait on initial launch to not delay enigma2 startup time.")),
 				getConfigListEntry(_("Poll Interval (in h)"), config.plugins.autotimer.interval, _("This is the delay in hours that the AutoTimer will wait after a search to search the EPG again.")),
+				getConfigListEntry(_("Timeout (in min)"), config.plugins.autotimer.timeout, _("This is the duration in minutes that the AutoTimer is allowed to run.")),
 				getConfigListEntry(_("Only add timer for next x days"), config.plugins.autotimer.maxdaysinfuture, _("You can control for how many days in the future timers are added. Set this to 0 to disable this feature.")),
 				getConfigListEntry(_("Show in extension menu"), config.plugins.autotimer.show_in_extensionsmenu, _("Enable this to be able to access the AutoTimer Overview from within the extension menu.")),
-				getConfigListEntry(_("Show in event menu"), config.plugins.autotimer.show_in_furtheroptionsmenu, _("Enable this to add item for create the AutoTimer into event menu.")),
-				getConfigListEntry(_("Show in channel menu"), config.plugins.autotimer.show_in_channelmenu, _("Enable this to add item for create the AutoTimer into channel selection context menu.")),
+				getConfigListEntry(_("Show in event menu"), config.plugins.autotimer.show_in_furtheroptionsmenu, _("Enable this to add item for create the AutoTimer into event menu (needs restart GUI).")),
+				getConfigListEntry(_("Show \"add to AutoTimer\" in channel selection menu"), config.plugins.autotimer.add_to_channelselection, _("Enable this to be able to access the add to AutoTimer from the channel selection context menu.")),
+				getConfigListEntry(_("Add \"Choice list AutoTimer\" menu button to single-EPG"), config.plugins.autotimer.add_to_epgselection, _("If this is enabled, up on the Menu button in the standard single-EPG will list of choices for AutoTimer.")),
+				getConfigListEntry(_("Add \"Choice list AutoTimer\" menu button to multi-EPG"), config.plugins.autotimer.add_to_multiepgselection, _("If this is enabled, up on the MENU button in the multi-EPG will list of choices for AutoTimer.")),
+				#getConfigListEntry(_("Add \"Choice list AutoTimer\" menu button to GraphMultiEpg"), config.plugins.autotimer.add_to_graph, _("If this is enabled, up on the MENU button in the GraphMultiEpg will list of choices for AutoTimer.")),
 				getConfigListEntry(_("Modify existing timers"), config.plugins.autotimer.refresh, _("This setting controls the behavior when a timer matches a found event.")),
-				getConfigListEntry(_("Guess existing timer based on begin/end"), config.plugins.autotimer.try_guessing, _("If this is enabled an existing timer will also be considered recording an event if it records at least 80%% of the it.")),
+				getConfigListEntry(_("Guess existing timer based on begin/end"), config.plugins.autotimer.try_guessing, _("If this is enabled an existing timer will also be considered recording an event if it records at least 80% of the it.")),
 				getConfigListEntry(_("Add similar timer on conflict"), config.plugins.autotimer.addsimilar_on_conflict, _("If a timer conflict occurs, AutoTimer will search outside the timespan for a similar event and add it.")),
 				getConfigListEntry(_("Add timer as disabled on conflict"), config.plugins.autotimer.disabled_on_conflict, _("This toggles the behavior on timer conflicts. If an AutoTimer matches an event that conflicts with an existing timer it will not ignore this event but add it disabled.")),
+				getConfigListEntry(_("Include \"AutoTimer\" in tags"), config.plugins.autotimer.add_autotimer_to_tags, _("If this is selected, the tag \"AutoTimer\" will be given to timers created by this plugin.")),
+				getConfigListEntry(_("Include AutoTimer name in tags"), config.plugins.autotimer.add_name_to_tags, _("If this is selected, the name of the respective AutoTimer will be added as a tag to timers created by this plugin.")),
 				getConfigListEntry(_("Show notification on conflicts"), config.plugins.autotimer.notifconflict, _("By enabling this you will be notified about timer conflicts found during automated polling. There is no intelligence involved, so it might bother you about the same conflict over and over.")),
 				getConfigListEntry(_("Show notification on similars"), config.plugins.autotimer.notifsimilar, _("By enabling this you will be notified about similar timers added during automated polling. There is no intelligence involved, so it might bother you about the same conflict over and over.")),
+				getConfigListEntry(_("Show notification on added timers"), config.plugins.autotimer.notiftimers, _("By enabling this you will be notified about timer(s) added during automated polling. Just not in standby mode.")),
 				getConfigListEntry(_("Editor for new AutoTimers"), config.plugins.autotimer.editor, _("The editor to be used for new AutoTimers. This can either be the Wizard or the classic editor.")),
 				getConfigListEntry(_("Support \"Fast Scan\"?"), config.plugins.autotimer.fastscan, _("When supporting \"Fast Scan\" the service type is ignored. You don't need to enable this unless your Image supports \"Fast Scan\" and you are using it.")),
+				getConfigListEntry(_("Skip poll during records"), config.plugins.autotimer.skip_during_records, _("If enabled, the polling will be skipped if a recording is in progress.")),
+				getConfigListEntry(_("Only poll while in standby"), config.plugins.autotimer.onlyinstandby, _("When this is enabled AutoTimer will ONLY check for new events whilst in stanadby.")),
+				getConfigListEntry(_("Style auto timers list"), config.plugins.autotimer.style_autotimerslist, _("If the style is advanced, you will see more information about each auto timer.")),
+				getConfigListEntry(_("Skip poll during epg refresh"), config.plugins.autotimer.skip_during_epgrefresh, _("If enabled, the polling will be skipped if EPGRefresh is currently running.")),
 			],
 			session = session,
 			on_change = self.changed
@@ -74,7 +99,7 @@ class AutoTimerSettings(Screen, ConfigListScreen):
 		self["actions"] = ActionMap(["SetupActions"],
 			{
 				"cancel": self.keyCancel,
-				"save": self.save,
+				"save": self.keySave,
 			}
 		)
 
@@ -104,12 +129,3 @@ class AutoTimerSettings(Screen, ConfigListScreen):
 	def createSummary(self):
 		return SetupSummary
 
-	def save(self):
-		self.keySave()
-		self.refreshPlugins()
-
-	def refreshPlugins(self):
-		from Components.PluginComponent import plugins
-		from Tools.Directories import SCOPE_PLUGINS, resolveFilename
-		plugins.clearPluginList()
-		plugins.readPluginList(resolveFilename(SCOPE_PLUGINS))

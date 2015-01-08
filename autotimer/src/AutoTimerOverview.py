@@ -1,5 +1,5 @@
 # for localized messages
-from . import _
+from . import _, config
 
 # GUI (Screens)
 from Screens.Screen import Screen
@@ -15,8 +15,8 @@ from AutoTimerWizard import AutoTimerWizard
 # GUI (Components)
 from AutoTimerList import AutoTimerList
 from Components.ActionMap import HelpableActionMap
-from Components.config import config
 from Components.Sources.StaticText import StaticText
+from enigma import getDesktop
 
 class AutoTimerOverviewSummary(Screen):
 	skin = """
@@ -44,19 +44,37 @@ class AutoTimerOverviewSummary(Screen):
 	def selectionChanged(self, text):
 		self["entry"].text = text
 
+HD = False
+if getDesktop(0).size().width() >= 1280:
+	HD = True
 class AutoTimerOverview(Screen, HelpableScreen):
 	"""Overview of AutoTimers"""
-
-	skin = """<screen name="AutoTimerOverview" position="center,center" size="460,280" title="AutoTimer Overview">
-			<ePixmap position="0,0" size="140,40" pixmap="skin_default/buttons/green.png" transparent="1" alphatest="on" />
-			<ePixmap position="140,0" size="140,40" pixmap="skin_default/buttons/yellow.png" transparent="1" alphatest="on" />
-			<ePixmap position="280,0" size="140,40" pixmap="skin_default/buttons/blue.png" transparent="1" alphatest="on" />
-			<ePixmap position="422,10" zPosition="1" size="35,25" pixmap="skin_default/buttons/key_menu.png" alphatest="on" />
-			<widget source="key_green" render="Label" position="0,0" zPosition="1" size="140,40" valign="center" halign="center" font="Regular;21" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
-			<widget source="key_yellow" render="Label" position="140,0" zPosition="1" size="140,40" valign="center" halign="center" font="Regular;21" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
-			<widget source="key_blue" render="Label" position="280,0" zPosition="1" size="140,40" valign="center" halign="center" font="Regular;21" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
-			<widget name="entries" position="5,45" size="450,225" scrollbarMode="showOnDemand" />
-		</screen>"""
+	if HD:
+		skin = """<screen name="AutoTimerOverview" position="center,center" size="680,480" title="AutoTimer Overview">
+				<ePixmap position="0,0" size="140,40" pixmap="skin_default/buttons/red.png" transparent="1" alphatest="on" />
+				<ePixmap position="160,0" size="140,40" pixmap="skin_default/buttons/green.png" transparent="1" alphatest="on" />
+				<ePixmap position="320,0" size="140,40" pixmap="skin_default/buttons/yellow.png" transparent="1" alphatest="on" />
+				<ePixmap position="480,0" size="140,40" pixmap="skin_default/buttons/blue.png" transparent="1" alphatest="on" />
+				<ePixmap position="635,5" zPosition="1" size="35,25" pixmap="skin_default/buttons/key_menu.png" alphatest="on" />
+				<widget source="key_red" render="Label" position="0,0" zPosition="1" size="140,40" valign="center" halign="center" font="Regular;17" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
+				<widget source="key_green" render="Label" position="160,0" zPosition="1" size="140,40" valign="center" halign="center" font="Regular;17" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
+				<widget source="key_yellow" render="Label" position="320,0" zPosition="1" size="140,40" valign="center" halign="center" font="Regular;17" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
+				<widget source="key_blue" render="Label" position="480,0" zPosition="1" size="140,40" valign="center" halign="center" font="Regular;17" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
+				<widget name="entries" position="5,45" size="650,425" scrollbarMode="showOnDemand" />
+			</screen>"""
+	else:
+		skin = """<screen name="AutoTimerOverview" position="center,center" size="600,380" title="AutoTimer Overview">
+				<ePixmap position="0,0" size="140,40" pixmap="skin_default/buttons/red.png" transparent="1" alphatest="on" />
+				<ePixmap position="140,0" size="140,40" pixmap="skin_default/buttons/green.png" transparent="1" alphatest="on" />
+				<ePixmap position="280,0" size="140,40" pixmap="skin_default/buttons/yellow.png" transparent="1" alphatest="on" />
+				<ePixmap position="420,0" size="140,40" pixmap="skin_default/buttons/blue.png" transparent="1" alphatest="on" />
+				<ePixmap position="565,10" zPosition="1" size="35,25" pixmap="skin_default/buttons/key_menu.png" alphatest="on" />
+				<widget source="key_red" render="Label" position="0,0" zPosition="1" size="140,40" valign="center" halign="center" font="Regular;21" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
+				<widget source="key_green" render="Label" position="140,0" zPosition="1" size="140,40" valign="center" halign="center" font="Regular;21" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
+				<widget source="key_yellow" render="Label" position="280,0" zPosition="1" size="140,40" valign="center" halign="center" font="Regular;21" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
+				<widget source="key_blue" render="Label" position="420,0" zPosition="1" size="140,40" valign="center" halign="center" font="Regular;21" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
+				<widget name="entries" position="5,45" size="590,325" scrollbarMode="showOnDemand" />
+			</screen>"""
 
 	def __init__(self, session, autotimer):
 		Screen.__init__(self, session)
@@ -68,7 +86,8 @@ class AutoTimerOverview(Screen, HelpableScreen):
 		self.changed = False
 
 		# Button Labels
-		self["key_green"] = StaticText(_("Save"))
+		self["key_red"] = StaticText(_("Timers list"))
+		self["key_green"] = StaticText(_("Save and search now"))
 		self["key_yellow"] = StaticText(_("Delete"))
 		self["key_blue"] = StaticText(_("Add"))
 
@@ -95,8 +114,8 @@ class AutoTimerOverview(Screen, HelpableScreen):
 
 		self["ColorActions"] = HelpableActionMap(self, "ColorActions",
 			{
-				"red": self.cancel,
-				"green": (self.save, _("Close and save changes")),
+				"red": (self.timer_menu, _("Open Timers list")),
+				"green": (self.save, _("Close, save changes and search now")),
 				"yellow": (self.remove, _("Remove selected AutoTimer")),
 				"blue": (self.add, _("Add new AutoTimer")),
 			}
@@ -126,6 +145,10 @@ class AutoTimerOverview(Screen, HelpableScreen):
 				x(text)
 			except Exception:
 				pass
+
+	def timer_menu(self):
+		from Screens.TimerEdit import TimerEditList
+		self.session.open(TimerEditList)
 
 	def add(self):
 		newTimer = self.autotimer.defaultTimer.clone()
@@ -222,19 +245,20 @@ class AutoTimerOverview(Screen, HelpableScreen):
 			(_("Edit new timer defaults"), "defaults"),
 		]
 
-		from plugin import autotimerHelp
-		if autotimerHelp:
-			list.insert(0, (_("Help"), "help"))
-			list.insert(1, (_("Frequently asked questions") , "faq"))
-
 		if config.plugins.autotimer.editor.value == "wizard":
 			list.append((_("Create a new timer using the classic editor"), "newplain"))
 		else:
 			list.append((_("Create a new timer using the wizard"), "newwizard"))
+			
+		from plugin import autotimerHelp
+		if autotimerHelp:
+			list.insert(7, (_("Help"), "help"))
+			list.insert(8, (_("Frequently asked questions") , "faq"))
 
 		self.session.openWithCallback(
 			self.menuCallback,
 			ChoiceBox,
+			title=_("AutoTimer Context Menu"),
 			list = list,
 		)
 

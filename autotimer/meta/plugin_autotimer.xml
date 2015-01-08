@@ -4,7 +4,7 @@
                     <tag type="EPG" />
 	  </prerequisites>
           <info>
-                    <author>ritzMo</author>
+                    <author>OpenPLi Team, Moritz Venn, dima73</author>
                     <name>AutoTimer</name>
                     <packagename>enigma2-plugin-extensions-autotimer</packagename>
                     <shortdescription>Automatically create timer events based on keywords</shortdescription>
