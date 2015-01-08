@@ -15,7 +15,7 @@ msgstr ""
 "X-Poedit-SourceCharset: utf-8\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
 "X-Poedit-SearchPath-0: ../src\n"
-"X-Poedit-SearchPath-1: ../src/webinterface\n"
+"X-Poedit-SearchPath-1: ../src/web\n"
 
 #, python-format
 msgid ""
