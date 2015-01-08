@@ -473,7 +473,7 @@ def filescan_open(list, session, **kwargs):
 	if len(list) == 1 and list[0].mimetype == "video/x-dvd":
 		splitted = list[0].path.split('/')
 		if len(splitted) > 2:
-			if splitted[1] == 'autofs':
+			if splitted[1] == 'media':
 				session.open(DVDBackupScreen, device="/dev/%s"%(splitted[2]))
 				return
 
