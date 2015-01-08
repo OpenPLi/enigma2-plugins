@@ -534,7 +534,7 @@ def main_menu(menuid, **kwargs):
 	return []
 
 def manualrefresh_menu(menuid, **kwargs):
-	if menuid == "mainmenu" and epgrefresh.isRunning():
+	if menuid == "mainmenu" and config.plugins.epgrefresh.start_on_mainmenu.value and epgrefresh.isRunning():
 		return [(_("Stop Running EPG-refresh"), stop_Running, "stop_EPG-refresh", 10)]
 	elif menuid == "mainmenu" and config.plugins.epgrefresh.start_on_mainmenu.value and not epgrefresh.isRunning():
 		return [(_("EPG-refresh now"), start_Running, "start_EPG-refresh", 10)]
