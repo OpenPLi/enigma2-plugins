@@ -96,10 +96,15 @@ autoresolution/src/Makefile
 autoresolution/po/Makefile
 
 autotimer/Makefile
-autotimer/meta/Makefile
 autotimer/po/Makefile
+autotimer/meta/Makefile
+autotimer/etc/Makefile
+autotimer/src/WebComponents/Makefile
+autotimer/src/WebScreens/Makefile
 autotimer/src/Makefile
-autotimer/src/webinterface/Makefile
+autotimer/src/web-data/Makefile
+autotimer/src/WebChilds/Makefile
+autotimer/src/web/Makefile
 
 babelzapper/Makefile
 babelzapper/etc/Makefile
