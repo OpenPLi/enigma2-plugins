@@ -123,7 +123,7 @@ class AutoMountEdit(Screen, ConfigListScreen):
                 if self.mountinfo.has_key('sharedir'):
                         sharedir = self.mountinfo['sharedir']
                 else:
-                        sharedir = "/export/hdd"
+                        sharedir = "/media/hdd"
                 if self.mountinfo.has_key('options'):
                         options = self.mountinfo['options']
                 else:
@@ -147,7 +147,7 @@ class AutoMountEdit(Screen, ConfigListScreen):
                 if sharename is False:
                         sharename = "Sharename"
                 if sharedir is False:
-                        sharedir = "/export/hdd"
+                        sharedir = "/media/hdd"
                 if mounttype == "nfs":
                         defaultOptions = "rw,nolock,soft"
                 else:

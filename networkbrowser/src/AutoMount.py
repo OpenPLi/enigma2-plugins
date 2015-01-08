@@ -64,7 +64,7 @@ class AutoMount():
 						self.activeMountsCounter +=1
 					data['hdd_replacement'] = getValue(mount.findall("hdd_replacement"), "False").encode("UTF-8")
 					data['ip'] = getValue(mount.findall("ip"), "192.168.0.0").encode("UTF-8")
-					data['sharedir'] = getValue(mount.findall("sharedir"), "/exports/").encode("UTF-8")
+					data['sharedir'] = getValue(mount.findall("sharedir"), "/media/").encode("UTF-8")
 					data['sharename'] = getValue(mount.findall("sharename"), "MEDIA").encode("UTF-8")
 					data['options'] = getValue(mount.findall("options"), "rw,nolock,tcp").encode("UTF-8")
 					self.automounts[data['sharename']] = data
@@ -82,7 +82,7 @@ class AutoMount():
 						self.activeMountsCounter +=1
 					data['hdd_replacement'] = getValue(mount.findall("hdd_replacement"), "False").encode("UTF-8")
 					data['ip'] = getValue(mount.findall("ip"), "192.168.0.0").encode("UTF-8")
-					data['sharedir'] = getValue(mount.findall("sharedir"), "/exports/").encode("UTF-8")
+					data['sharedir'] = getValue(mount.findall("sharedir"), "/media/").encode("UTF-8")
 					data['sharename'] = getValue(mount.findall("sharename"), "MEDIA").encode("UTF-8")
 					data['options'] = getValue(mount.findall("options"), "rw,nolock").encode("UTF-8")
 					data['username'] = getValue(mount.findall("username"), "guest").encode("UTF-8")
