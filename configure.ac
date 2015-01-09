@@ -175,6 +175,7 @@ epgsearch/Makefile
 epgsearch/meta/Makefile
 epgsearch/po/Makefile
 epgsearch/src/Makefile
+epgsearch/src/icons/Makefile
 
 fancontrol2/Makefile
 fancontrol2/meta/Makefile
