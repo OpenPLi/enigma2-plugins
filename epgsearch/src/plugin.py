@@ -40,7 +40,7 @@ def EPGSearchSelection__init__(self, session, service, zapFunc=None, eventid=Non
 			elif config.plugins.epgsearch.type_button_blue.value == "1":
 				list = [
 				(_("Search"), "search"),
-				(_("Select channel"), "standart"),
+				(_("Select channel"), "standard"),
 				]
 				dlg = self.session.openWithCallback(self.CallbackChoiceAction, ChoiceBox, title= _("Select action:"), list = list)
 				dlg.setTitle(_("Choice list EPGSearch"))
@@ -66,7 +66,7 @@ def CallbackChoiceAction(self, ret):
 				self.session.open(EPGSearch, name, False)
 			except:
 				pass
-		elif ret == "standart":
+		elif ret == "standard":
 			try:
 				self.blueButtonPressed()
 			except:
