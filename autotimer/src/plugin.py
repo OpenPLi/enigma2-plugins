@@ -6,7 +6,7 @@ from . import _, config
 from Screens.MessageBox import MessageBox
 from Tools.Notifications import AddPopup
 
-# Standart EpgSelection and Multi-Epg
+# Standard EpgSelection and Multi-Epg
 from Screens.ChoiceBox import ChoiceBox
 from Screens.EpgSelection import EPGSelection
 from Components.EpgList import EPGList, EPG_TYPE_SINGLE, EPG_TYPE_MULTI
@@ -189,7 +189,7 @@ def AutoTimerGraphMultiEPG__init__(self, session, services, zapFunc=None, bouque
 	if config.plugins.autotimer.add_to_graph.value:
 		def showAutoTimer():
 			open_list = [
-				(_("Open standart setup menu"), "setup"),
+				(_("Open standard setup menu"), "setup"),
 				(_("Add new AutoTimer"), "add"),
 				(_("Preview for your AutoTimers"), "preview"),
 				(_("Search new events matching for your AutoTimers"), "search"),
@@ -279,7 +279,7 @@ def furtherOptions(self):
 	elif self.type == EPG_TYPE_MULTI:
 		if config.plugins.autotimer.add_to_multiepgselection.value:
 			list = [
-				(_("Standart input date/time"), "input"),
+				(_("Standard input date/time"), "input"),
 				(_("Add new AutoTimer"), "add"),
 				(_("Preview for your AutoTimers"), "preview"),
 				(_("Search new events matching for your AutoTimers"), "search"),

@@ -64,9 +64,9 @@ config.plugins.autotimer.show_help = ConfigYesNo(default=True)
 config.plugins.autotimer.skip_during_records = ConfigYesNo(default=False)
 config.plugins.autotimer.skip_during_epgrefresh = ConfigYesNo(default=False)
 config.plugins.autotimer.style_autotimerslist = ConfigSelection(choices=[
-		("standart", _("Standart")),
+		("standard", _("Standard")),
 		("advanced", _("Advanced"))
-	], default="standart"
+	], default="standard"
 )
 
 try:

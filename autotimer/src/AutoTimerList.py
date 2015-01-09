@@ -29,7 +29,7 @@ class AutoTimerList(MenuList):
 
 	def __init__(self, entries):
 		MenuList.__init__(self, entries, False, content = eListboxPythonMultiContent)
-		if config.plugins.autotimer.style_autotimerslist.value == "standart":
+		if config.plugins.autotimer.style_autotimerslist.value == "standard":
 			self.l.setFont(0, gFont("Regular", 22))
 			self.l.setBuildFunc(self.buildListboxEntry)
 			self.l.setItemHeight(25)
@@ -50,13 +50,13 @@ class AutoTimerList(MenuList):
 		if self.skinAttributes is not None:
 			for (attrib, value) in self.skinAttributes:
 				if attrib == "font":
-					if config.plugins.autotimer.style_autotimerslist.value == "standart":
+					if config.plugins.autotimer.style_autotimerslist.value == "standard":
 						self.l.setFont(0, parseFont(value, ((1,1),(1,1))))
 				elif attrib == "itemHeight":
-					if config.plugins.autotimer.style_autotimerslist.value == "standart":
+					if config.plugins.autotimer.style_autotimerslist.value == "standard":
 						self.l.setItemHeight(int(value))
 				elif attrib == "colorDisabled":
-					if config.plugins.autotimer.style_autotimerslist.value == "standart":
+					if config.plugins.autotimer.style_autotimerslist.value == "standard":
 						self.colorDisabled = parseColor(value).argb()
 				else:
 					attribs.append((attrib, value))
@@ -67,7 +67,7 @@ class AutoTimerList(MenuList):
 	#  | <Name of AutoTimer> |
 	#
 	def buildListboxEntry(self, timer):
-		if config.plugins.autotimer.style_autotimerslist.value == "standart":
+		if config.plugins.autotimer.style_autotimerslist.value == "standard":
 			size = self.l.getItemSize()
 			color = None
 			if not timer.enabled:
