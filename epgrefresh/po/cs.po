@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Enigma2 EPGRefresh Plugin\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-12-28 18:07+0200\n"
-"PO-Revision-Date: 2015-01-09 12:11+0100\n"
+"PO-Revision-Date: 2015-01-09 15:43+0100\n"
 "Last-Translator: ims <ims21@users.sourceforge.net>\n"
 "Language-Team: PLi\n"
 "Language: \n"
@@ -32,7 +32,7 @@ msgstr ""
 #: EpgLoadSaveRefresh.py:49
 #: EpgLoadSaveRefresh.py:106
 msgid "Adding schedule..."
-msgstr ""
+msgstr "Přidat plán..."
 
 #: EPGRefreshConfiguration.py:120
 msgid "After a successful refresh the AutoTimer will automatically search for new matches if this is enabled."
@@ -109,7 +109,7 @@ msgstr "Automatická aktualizace EPG"
 
 #: plugin.py:71
 msgid "Background only"
-msgstr ""
+msgstr "pouze na pozadí"
 
 #: EPGSaveLoadConfiguration.py:174
 msgid ""
@@ -161,7 +161,7 @@ msgstr "Nastavení..."
 
 #: EPGSaveLoadConfiguration.py:85
 msgid "Create backup cachefile, after manual or automatic saving EPG."
-msgstr "Vytvářet zálohu cachefile při ručním nebo automatickém ukládání EPG."
+msgstr "Vytvářet zálohu mezipaměti při ručním nebo automatickém ukládání EPG."
 
 #: EPGSaveLoadConfiguration.py:85
 msgid "Create backup when saving EPG"
@@ -186,7 +186,7 @@ msgstr "Nenastavujte příliš krátký interval."
 #: EPGSaveLoadConfiguration.py:405
 #: EPGSaveLoadConfiguration.py:419
 msgid "Download EPG from exUSSR"
-msgstr ""
+msgstr "Stahnout EPG z exUSSR"
 
 #: EPGSaveLoadConfiguration.py:93
 msgid "Download internet EPG from exUSSR"
@@ -243,7 +243,7 @@ msgstr "Aktualizace EPG začala prohledávat kanály."
 #: EPGSaveLoadConfiguration.py:191
 #: EPGSaveLoadConfiguration.py:428
 msgid "EPG with Linux-Sat"
-msgstr ""
+msgstr "EPG s Linux-Sat"
 
 #: plugin.py:540
 msgid "EPG-refresh now"
@@ -296,7 +296,7 @@ msgstr "Vynutit aktualizaci, je-li přijímač používán"
 
 #: plugin.py:72
 msgid "Foreground also"
-msgstr ""
+msgstr "i v popředí"
 
 #: EPGRefreshConfiguration.py:36
 msgid "Friday"
@@ -304,11 +304,11 @@ msgstr "Pátek"
 
 #: EPGRefreshConfiguration.py:123
 msgid "If \"Run AutoTimer after refresh\" and \"Shutdown after EPG refresh\" enabled and use \"Label series\" for match, set long timeout."
-msgstr ""
+msgstr "Jestliže jsou \"Spustit AutoTimer po auktualizaci\" a \"Vypnout po aktualizaci EPG\" povoleny a používáte \"Label series\" pro hledání, nastavte delší zpoždění."
 
 #: EPGRefreshConfiguration.py:109
 msgid "If enabled, show 'EPG-refresh now' in main menu if refresh now not running."
-msgstr "Jestliže je povoleno, pak 'EPG-refresh nyní' bude zobrazeno v hlavním menu ( jestliže již neprobíhá)."
+msgstr "Jestliže je povoleno, pak bude zobrazeno 'Aktualizace EPG' v hlavním menu ( jestliže již aktualizace neprobíhá)."
 
 #: EPGRefreshConfiguration.py:105
 msgid "If the receiver currently isn't in standby, this is the duration which EPGRefresh will wait before retry."
@@ -345,7 +345,7 @@ msgstr "Hlavní obraz"
 
 #: plugin.py:533
 msgid "Manual EPG"
-msgstr ""
+msgstr "EPG ručně"
 
 #: EPGSaveLoadConfiguration.py:76
 #: EPGSaveLoadConfiguration.py:402
@@ -478,7 +478,7 @@ msgstr "Provádí se reloading EPG Cache..."
 
 #: EPGRefreshConfiguration.py:192
 msgid "Return to TV viewing"
-msgstr ""
+msgstr "návrat na sledování TV"
 
 #: EPGRefreshConfiguration.py:120
 msgid "Run AutoTimer after refresh"
@@ -537,7 +537,7 @@ msgstr "Vyberte menu pro přidávání programů do EPGRefresh."
 
 #: EPGRefreshConfiguration.py:114
 msgid "Select mode the refresh for services/bouquets parental control."
-msgstr ""
+msgstr "Nastavuje režim aktualizace pro služby / přehledy z rodičovské kontroly."
 
 #: EPGSaveLoadConfiguration.py:390
 msgid "Select options"
@@ -553,7 +553,7 @@ msgstr "Vyberte název souboru EPG cache, pokud se vám nelíbí výchozí náze
 
 #: EPGSaveLoadConfiguration.py:83
 msgid "Select the path to EPG cache,not recommended to use the internal flash."
-msgstr "Vyberte si cestu k EPG cache. Nedoporučuje se používat interní flash."
+msgstr "Vyberte cestu k EPG cache. Nedoporučuje se používat interní flash."
 
 #: EPGRefreshConfiguration.py:95
 msgid "Setup save / load EPG"
@@ -581,7 +581,7 @@ msgstr "Zobrazovat v Extension menu"
 
 #: EPGSaveLoadConfiguration.py:87
 msgid "Show manual change EPG in main menu"
-msgstr "Zobrazovat ruřní změny EPG v hlavním menu"
+msgstr "Zobrazovat 'EPG ručně' v hlavním menu"
 
 #: EPGRefreshConfiguration.py:99
 msgid "Show popup when refresh starts and ends"
@@ -675,7 +675,7 @@ msgstr "Čtvrtek"
 
 #: EPGRefreshConfiguration.py:123
 msgid "Timeout shutdown after refresh for SeriesPlugin (min)"
-msgstr ""
+msgstr "Zpoždění vypnutí po aktualizaci pro SeriesPlugin (v minutách)"
 
 #: EPGRefreshConfiguration.py:33
 msgid "Tuesday"
@@ -692,7 +692,7 @@ msgstr "Dokud není povoleno, EPGRefresh  nebude probíhat automaticky a musí b
 
 #: EPGRefreshConfiguration.py:177
 msgid "Version"
-msgstr "- v"
+msgstr "verze"
 
 #: EPGRefreshConfiguration.py:100
 msgid "Wake up from deep standby for EPG refresh"
@@ -707,6 +707,8 @@ msgid ""
 "You may not use this settings!\n"
 "At least one day a week should be included!"
 msgstr ""
+"Nemůžete použít toto nastavení!\n"
+"Alespoň jeden den v týdnu by měl být nastaven!"
 
 #: plugin.py:508
 msgid "add service to EPGRefresh"
