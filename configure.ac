@@ -98,7 +98,6 @@ autoresolution/po/Makefile
 autotimer/Makefile
 autotimer/po/Makefile
 autotimer/meta/Makefile
-autotimer/etc/Makefile
 autotimer/src/WebComponents/Makefile
 autotimer/src/WebScreens/Makefile
 autotimer/src/Makefile
