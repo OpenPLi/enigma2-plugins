@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Enigma2 EPGRefresh Plugin\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-12-28 18:07+0200\n"
-"PO-Revision-Date: 2015-01-07 20:31+0100\n"
+"PO-Revision-Date: 2015-01-09 12:11+0100\n"
 "Last-Translator: ims <ims21@users.sourceforge.net>\n"
 "Language-Team: PLi\n"
 "Language: \n"
@@ -22,7 +22,7 @@ msgid ""
 "%d more services."
 msgstr ""
 "\n"
-"%d více programů."
+"a dalších %d programů."
 
 #: plugin.py:188
 #: plugin.py:213
@@ -216,7 +216,7 @@ msgstr "Cesta k EPG cache"
 #: EPGSaveLoadConfiguration.py:237
 #: EPGSaveLoadConfiguration.py:474
 msgid "EPG is loaded!"
-msgstr "EPG je načteno!"
+msgstr "EPG je načtena!"
 
 #: EPGRefreshConfiguration.py:103
 msgid "EPG refresh auto-start earliest (hh:mm)"
@@ -247,7 +247,7 @@ msgstr ""
 
 #: plugin.py:540
 msgid "EPG-refresh now"
-msgstr "Aktualizovat nyní"
+msgstr "Aktualizovat EPG"
 
 #: plugin.py:620
 msgid "EPGRefresh"
@@ -569,7 +569,7 @@ msgstr "Zobrazovat \"přidat do EPGRefresh\""
 
 #: EPGRefreshConfiguration.py:109
 msgid "Show 'EPG-refresh now' in main menu"
-msgstr "Zobrazovat 'EPG-refresh nyní' v hlavním menu"
+msgstr "Zobrazovat 'Aktualizovat EPG' v hlavním menu"
 
 #: EPGSaveLoadConfiguration.py:88
 msgid "Show download exUSSR EPG in list setup"
@@ -622,11 +622,11 @@ msgstr "Stažení EPG selhalo!"
 
 #: plugin.py:538
 msgid "Stop Running EPG-refresh"
-msgstr "Zastavit běžící aktualizaci  EPG"
+msgstr "Zastavit aktualizaci  EPG"
 
 #: EPGRefresh.py:437
 msgid "Stop Running EPG-refresh?\n"
-msgstr "Zastavit běžící aktualizaci EPG?\n"
+msgstr "Zastavit probíhající aktualizaci EPG?\n"
 
 #: EPGRefreshConfiguration.py:38
 msgid "Sunday"
@@ -744,35 +744,8 @@ msgstr "nikdy"
 msgid "nowhere"
 msgstr "nikde"
 
-#~ msgid "Show in event menu"
-#~ msgstr "Zobrazovat v menu události"
+msgid "Show 'Stop Running EPG-refresh' in main menu"
+msgstr "Zobrazovat 'Zastavit aktualizaci EPG' v hlavním menu"
 
-#~ msgid ""
-#~ "Enable this to be able to add current service into EPGRefresh from event "
-#~ "menu."
-#~ msgstr ""
-#~ "Povolením bude možné z menu události přidávat aktuální program do "
-#~ "EPGRefresh"
-
-#~ msgid "Refresh EPG after"
-#~ msgstr "Aktualisiere nach"
-
-#~ msgid "Refresh EPG before"
-#~ msgstr "Aktualisiere vor"
-
-#~ msgid ""
-#~ "If you're also using the AutoTimer plugin this allows to extend the list "
-#~ "of services to refresh by the services your AutoTimers are restricted to."
-#~ msgstr ""
-#~ "Bei Benutzung des AutoTimer- Plugins erlaubt diese Einstellung die Liste "
-#~ "der Kanäle automatisch um die Kanäle der gesetzten AutoTimer zu erweitern."
-
-#~ msgid "Make AutoTimer parse EPG if available"
-#~ msgstr "AutoTimer nach Aktualisierung aktivieren"
-
-#~ msgid ""
-#~ "If you're also using the AutoTimer plugin this will initiate a scan of "
-#~ "the EPG after a completed refresh."
-#~ msgstr ""
-#~ "Bei Benutzung des AutoTimer- Plugins wird automatisch ein EPG- Scan nach "
-#~ "erfolgter Aktualisierung gestartet."
+msgid "If enabled, 'Stop Running EPG-refresh' will not be displayed in main menu when refresh is running."
+msgstr "Jestliže je povoleno a probíhá aktualizace, pak bude v hlavním menu zobrazena volba 'Zastavit aktualizaci EPG'."
