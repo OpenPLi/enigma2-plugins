@@ -45,6 +45,7 @@ config.plugins.epgrefresh.force = ConfigYesNo(default = False)
 config.plugins.epgrefresh.enablemessage = ConfigYesNo(default = True)
 config.plugins.epgrefresh.wakeup = ConfigYesNo(default = False)
 config.plugins.epgrefresh.start_on_mainmenu = ConfigYesNo(default = False)
+config.plugins.epgrefresh.stop_on_mainmenu = ConfigYesNo(default = True)
 config.plugins.epgrefresh.lastscan = ConfigNumber(default = 0)
 config.plugins.epgrefresh.timeout_shutdown = ConfigInteger(default = 2, limits= (2, 30))
 config.plugins.epgrefresh.parse_autotimer = ConfigYesNo(default = False)
@@ -530,14 +531,14 @@ def addtoEPGRefresh(self, add):
 
 def main_menu(menuid, **kwargs):
 	if menuid == "mainmenu" and config.plugins.epgrefresh_extra.main_menu.value:
-		return [(_("Manual EPG"), manual_epg, "Manual_Epg", 45)]
+		return [(_("Manual EPG"), manual_epg, "Manual_Epg", 98)]
 	return []
 
 def manualrefresh_menu(menuid, **kwargs):
-	if menuid == "mainmenu" and config.plugins.epgrefresh.start_on_mainmenu.value and epgrefresh.isRunning():
-		return [(_("Stop Running EPG-refresh"), stop_Running, "stop_EPG-refresh", 10)]
+	if menuid == "mainmenu" and config.plugins.epgrefresh.stop_on_mainmenu.value and epgrefresh.isRunning():
+		return [(_("Stop Running EPG-refresh"), stop_Running, "stop_EPG-refresh", 99)]
 	elif menuid == "mainmenu" and config.plugins.epgrefresh.start_on_mainmenu.value and not epgrefresh.isRunning():
-		return [(_("EPG-refresh now"), start_Running, "start_EPG-refresh", 10)]
+		return [(_("EPG-refresh now"), start_Running, "start_EPG-refresh", 99)]
 	return []
 
 def stop_Running(session, **kwargs):

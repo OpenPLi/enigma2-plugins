@@ -731,3 +731,9 @@ msgstr ""
 #: plugin.py:59
 msgid "nowhere"
 msgstr ""
+
+msgid "Show 'Stop Running EPG-refresh' in main menu"
+msgstr ""
+
+msgid "If enabled, 'Stop Running EPG-refresh' will not be displayed in main menu when refresh is running."
+msgstr ""

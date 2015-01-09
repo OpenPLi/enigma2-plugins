@@ -107,6 +107,7 @@ class EPGRefreshConfiguration(Screen, ConfigListScreen):
 			getConfigListEntry(_("Shutdown after EPG refresh"), config.plugins.epgrefresh.afterevent, _("This setting controls whether the receiver should be set to deep standby after refresh is completed.")),
 			getConfigListEntry(_("Save EPG after refresh"), config.plugins.epgrefresh.save_epg, _("Save EPG in current cachefile after refresh is completed.")),
 			getConfigListEntry(_("Show 'EPG-refresh now' in main menu"), config.plugins.epgrefresh.start_on_mainmenu, _("If enabled, show 'EPG-refresh now' in main menu if refresh now not running.")),
+			getConfigListEntry(_("Show 'Stop Running EPG-refresh' in main menu"), config.plugins.epgrefresh.stop_on_mainmenu, _("If enabled, 'Stop Running EPG-refresh' will not be displayed in main menu when refresh is running.")),
 				]
 		if SystemInfo.get("NumVideoDecoders", 1) > 1:
 			self.list.insert(3, getConfigListEntry(_("Refresh EPG using"), config.plugins.epgrefresh.adapter, _("If you want to refresh the EPG in background, you can choose the method which best suits your needs here, e.g. hidden, fake reocrding or regular Picture in Picture.")))
