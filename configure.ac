@@ -1,4 +1,4 @@
-AC_INIT([enigma2-plugins],[4.0.0],[forum@openpli.org])
+AC_INIT([enigma2-plugins],[4],[forum@openpli.org])
 AM_INIT_AUTOMAKE([dist-bzip2 foreign no-define tar-pax])
 AC_CONFIG_HEADERS([enigma2-plugins-config.h])
 
