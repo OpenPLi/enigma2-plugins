@@ -27,6 +27,7 @@ from Components.config import config
 from Components.ActionMap import ActionMap, NumberActionMap
 from Components.ConfigList import ConfigList, ConfigListScreen
 from Components.config import ConfigSubsection, ConfigSubList, ConfigIP, ConfigInteger, ConfigSelection, ConfigText, ConfigYesNo, getConfigListEntry, configfile
+import skin
 
 # for localized messages
 from . import _
@@ -252,26 +253,33 @@ class PartnerboxEntriesListConfigScreen(Screen):
 class PartnerboxEntryList(MenuList):
 	def __init__(self, list, enableWrapAround = True):
 		MenuList.__init__(self, list, enableWrapAround, eListboxPythonMultiContent)
-		self.l.setFont(0, gFont("Regular", 20))
-		self.l.setFont(1, gFont("Regular", 18))
+		font = skin.fonts.get("PartnerBoxEntryList0", ("Regular", 20, 20))
+		self.l.setFont(0, gFont(font[0], font[1]))
+		self.ItemHeight = int(font[2])
+		font = skin.fonts.get("PartnerBoxEntryList1", ("Regular", 18))
+		self.l.setFont(1, gFont(font[0], font[1]))
 	def postWidgetCreate(self, instance):
 		MenuList.postWidgetCreate(self, instance)
-		instance.setItemHeight(20)
+		instance.setItemHeight(self.ItemHeight)
 
 	def buildList(self):
 		self.list=[]
 		for c in config.plugins.Partnerbox.Entries:
 			res = [c]
-			res.append((eListboxPythonMultiContent.TYPE_TEXT, 5, 0, 150, 20, 1, RT_HALIGN_LEFT|RT_VALIGN_CENTER, str(c.name.value)))
+			x, y, w, h = skin.parameters.get("PartnerBoxEntryListName",(5, 0, 150, 20))
+			res.append((eListboxPythonMultiContent.TYPE_TEXT, x, y, w, h, 1, RT_HALIGN_LEFT|RT_VALIGN_CENTER, str(c.name.value)))
 			ip = "%d.%d.%d.%d" % tuple(c.ip.value)
-			res.append((eListboxPythonMultiContent.TYPE_TEXT, 120, 0, 150, 20, 1, RT_HALIGN_LEFT|RT_VALIGN_CENTER, str(ip)))
+			x, y, w, h = skin.parameters.get("PartnerBoxEntryListIP",(120, 0, 150, 20))
+			res.append((eListboxPythonMultiContent.TYPE_TEXT, x, y, w, h, 1, RT_HALIGN_LEFT|RT_VALIGN_CENTER, str(ip)))
 			port = "%d"%(c.port.value)
-			res.append((eListboxPythonMultiContent.TYPE_TEXT, 270, 0, 100, 20, 1, RT_HALIGN_LEFT|RT_VALIGN_CENTER, str(port)))
+			x, y, w, h = skin.parameters.get("PartnerBoxEntryListPort",(270, 0, 100, 20))
+			res.append((eListboxPythonMultiContent.TYPE_TEXT, x, y, w, h, 1, RT_HALIGN_LEFT|RT_VALIGN_CENTER, str(port)))
 			if int(c.enigma.value) == 0:
 				e_type = "Enigma2"
 			else:
 				e_type = "Enigma1"
-			res.append((eListboxPythonMultiContent.TYPE_TEXT, 410, 0, 100, 20, 1, RT_HALIGN_LEFT|RT_VALIGN_CENTER, str(e_type)))
+			x, y, w, h = skin.parameters.get("PartnerBoxEntryListType",(410, 0, 100, 20))
+			res.append((eListboxPythonMultiContent.TYPE_TEXT, x, y, w, h, 1, RT_HALIGN_LEFT|RT_VALIGN_CENTER, str(e_type)))
 			self.list.append(res)
 		self.l.setList(self.list)
 		self.moveToIndex(0)
