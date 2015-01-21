@@ -96,6 +96,10 @@ class EPGSearchList(EPGList):
 		self.skinColumns = False
 		self.tw = 90
 		self.dy = 0
+		self.piconSize = 50,30
+		self.piconDistance = 5
+		self.pboxDistance = 80
+
 		self.clocks = [ LoadPixmap('/usr/lib/enigma2/python/Plugins/Extensions/EPGSearch/icons/epgclock_add.png'),
 				LoadPixmap('/usr/lib/enigma2/python/Plugins/Extensions/EPGSearch/icons/epgclock_pre.png'),
 				LoadPixmap('/usr/lib/enigma2/python/Plugins/Extensions/EPGSearch/icons/epgclock.png'),
@@ -339,6 +343,7 @@ class EPGSearchList(EPGList):
 		r1 = self.weekday_rect
 		r2 = self.datetime_rect
 		r3 = self.descr_rect
+		dx = self.piconSize[0] + self.piconDistance
 		nowTime = int(time())
 		remaining = ""
 		if beginTime is not None:
@@ -358,21 +363,21 @@ class EPGSearchList(EPGList):
 			else:
 				picon = self.findPicon(service)
 			if picon != "":
-				self.picon.setPara((50, 30, 1, 1, False, 1, '#000f0f0f'))
+				self.picon.setPara((self.piconSize[0], self.piconSize[1], 1, 1, False, 1, '#000f0f0f'))
 				self.picon.startDecode(picon, 0, 0, False)
 				png = self.picon.getData()
-				dy = int((self.height - 30)/2.)
+				dy = int((self.height - self.piconSize[1])/2.)
 				res = [
 					None, # no private data needed
-					(eListboxPythonMultiContent.TYPE_PIXMAP_ALPHATEST, r1.left(), r1.top()+ dy, 50, 30, png),
-					(eListboxPythonMultiContent.TYPE_TEXT, r1.left() + 55, r1.top(), r1.width(), r1.height(), 0, RT_HALIGN_RIGHT, self.days[t[6]]),
-					(eListboxPythonMultiContent.TYPE_TEXT, r2.left() + 55, r2.top(), r2.width(), r1.height(), 1, RT_HALIGN_RIGHT|RT_VALIGN_CENTER, "%02d.%02d, %02d:%02d"%(t[2],t[1],t[3],t[4]))
+					(eListboxPythonMultiContent.TYPE_PIXMAP_ALPHATEST, r1.left(), r1.top()+ dy, self.piconSize[0], self.piconSize[1], png),
+					(eListboxPythonMultiContent.TYPE_TEXT, r1.left() + dx, r1.top(), r1.width(), r1.height(), 0, RT_HALIGN_RIGHT, self.days[t[6]]),
+					(eListboxPythonMultiContent.TYPE_TEXT, r2.left() + dx, r2.top(), r2.width(), r1.height(), 1, RT_HALIGN_RIGHT|RT_VALIGN_CENTER, "%02d.%02d, %02d:%02d"%(t[2],t[1],t[3],t[4]))
 				]
 			else:
 				res = [
 					None, # no private data needed
-					(eListboxPythonMultiContent.TYPE_TEXT, r1.left() + 55, r1.top(), r1.width(), r1.height(), 0, RT_HALIGN_RIGHT, self.days[t[6]]),
-					(eListboxPythonMultiContent.TYPE_TEXT, r2.left() + 55, r2.top(), r2.width(), r1.height(), 1, RT_HALIGN_RIGHT|RT_VALIGN_CENTER, "%02d.%02d, %02d:%02d"%(t[2],t[1],t[3],t[4]))
+					(eListboxPythonMultiContent.TYPE_TEXT, r1.left() + dx, r1.top(), r1.width(), r1.height(), 0, RT_HALIGN_RIGHT, self.days[t[6]]),
+					(eListboxPythonMultiContent.TYPE_TEXT, r2.left() + dx, r2.top(), r2.width(), r1.height(), 1, RT_HALIGN_RIGHT|RT_VALIGN_CENTER, "%02d.%02d, %02d:%02d"%(t[2],t[1],t[3],t[4]))
 				]
 		else:
 			res = [
@@ -398,21 +403,21 @@ class EPGSearchList(EPGList):
 				if rec1 and rec2:
 					# Partnerbox and local
 					for i in range(len(clock_types)):
-						res.append((eListboxPythonMultiContent.TYPE_PIXMAP_ALPHATEST, r3.left() + i * self.space + 55, r3.top() + self.dy, self.iconSize, self.iconSize, self.clocks[clock_types[i]]))
+						res.append((eListboxPythonMultiContent.TYPE_PIXMAP_ALPHATEST, r3.left() + i * self.space + dx, r3.top() + self.dy, self.iconSize, self.iconSize, self.clocks[clock_types[i]]))
 					res.extend((
-						(eListboxPythonMultiContent.TYPE_PIXMAP_ALPHATEST, r3.left() + (i + 1) * self.space + 55, r3.top() + self.dy, self.iconSize, self.iconSize, clock_pic_partnerbox),
-						(eListboxPythonMultiContent.TYPE_TEXT, r3.left() + (i + 1) * self.space + 80 + self.nextIcon, r3.top(), r3.width(), r3.height(), 0, RT_HALIGN_LEFT|RT_VALIGN_CENTER, serviceref.getServiceName() + ": " + EventName + remaining)))
+						(eListboxPythonMultiContent.TYPE_PIXMAP_ALPHATEST, r3.left() + (i + 1) * self.space + dx, r3.top() + self.dy, self.iconSize, self.iconSize, clock_pic_partnerbox),
+						(eListboxPythonMultiContent.TYPE_TEXT, r3.left() + (i + 1) * self.space + self.pboxDistance + self.nextIcon, r3.top(), r3.width(), r3.height(), 0, RT_HALIGN_LEFT|RT_VALIGN_CENTER, serviceref.getServiceName() + ": " + EventName + remaining)))
 				else:
 					if rec1:
 						for i in range(len(clock_types)):
-							res.append((eListboxPythonMultiContent.TYPE_PIXMAP_ALPHATEST, r3.left() + i * self.space + 55, r3.top() + self.dy, self.iconSize, self.iconSize, self.clocks[clock_types[i]]))
-						res.append((eListboxPythonMultiContent.TYPE_TEXT, r3.left() + (i + 1) * self.space + 55 + self.nextIcon, r3.top(), r3.width(), r3.height(), 0, RT_HALIGN_LEFT|RT_VALIGN_CENTER, serviceref.getServiceName() + ": " + EventName + remaining))
+							res.append((eListboxPythonMultiContent.TYPE_PIXMAP_ALPHATEST, r3.left() + i * self.space + dx, r3.top() + self.dy, self.iconSize, self.iconSize, self.clocks[clock_types[i]]))
+						res.append((eListboxPythonMultiContent.TYPE_TEXT, r3.left() + (i + 1) * self.space + dx + self.nextIcon, r3.top(), r3.width(), r3.height(), 0, RT_HALIGN_LEFT|RT_VALIGN_CENTER, serviceref.getServiceName() + ": " + EventName + remaining))
 					else:
 						res.extend((
-						(eListboxPythonMultiContent.TYPE_PIXMAP_ALPHATEST, r3.left() + 55, r3.top() + self.dy, self.iconSize, self.iconSize, clock_pic),
-						(eListboxPythonMultiContent.TYPE_TEXT, r3.left() + 80 + self.nextIcon, r3.top(), r3.width(), r3.height(), 0, RT_HALIGN_LEFT|RT_VALIGN_CENTER, serviceref.getServiceName() + ": " + EventName + remaining)))
+						(eListboxPythonMultiContent.TYPE_PIXMAP_ALPHATEST, r3.left() + dx, r3.top() + self.dy, self.iconSize, self.iconSize, clock_pic),
+						(eListboxPythonMultiContent.TYPE_TEXT, r3.left() + self.pboxDistance + self.nextIcon, r3.top(), r3.width(), r3.height(), 0, RT_HALIGN_LEFT|RT_VALIGN_CENTER, serviceref.getServiceName() + ": " + EventName + remaining)))
 			else:
-				res.append((eListboxPythonMultiContent.TYPE_TEXT, r3.left() + 55, r3.top(), r3.width(), r3.height(), 0, RT_HALIGN_LEFT|RT_VALIGN_CENTER, serviceref.getServiceName() + ": " + EventName + remaining))
+				res.append((eListboxPythonMultiContent.TYPE_TEXT, r3.left() + dx, r3.top(), r3.width(), r3.height(), 0, RT_HALIGN_LEFT|RT_VALIGN_CENTER, serviceref.getServiceName() + ": " + EventName + remaining))
 		else:
 			if rec1 or rec2:
 				if rec1:
@@ -537,8 +542,18 @@ class EPGSearchList(EPGList):
 				self.skinColumns = True
 			else:
 				warningWrongSkinParameter(attrib)
+		def setPiconSize(value):
+			self.piconSize = map(int, value.split(','))
+			if len(self.piconSize) == 2:
+				self.skinColumns = True
+			else:
+				warningWrongSkinParameter(attrib)
+		def setPiconDistance(value):
+			self.piconDistance = int(value)
 		def setColGap(value):
 			self.colGap = int(value)
+		def setPboxDistance(value):
+			self.pboxDistance = int(value)
 		for (attrib, value) in self.skinAttributes[:]:
 			try:
 				locals().get(attrib)(value)
