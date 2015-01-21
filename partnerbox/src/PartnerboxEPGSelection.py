@@ -135,8 +135,13 @@ def Partnerbox_finishedAdd(self, answer):
 	self.CheckRemoteTimer()
 
 def Partnerbox_onCreate(self):
-	baseonCreate(self)
-	self.GetPartnerboxTimerlist()
+	try:
+		if not hasattr(self, 'partnerboxentry'):
+			self.PartnerboxInit(True)
+		baseonCreate(self)
+		self.GetPartnerboxTimerlist()
+	except:
+		pass
 
 def GetPartnerboxTimerlist(self):
 	if self.partnerboxentry is not None:
