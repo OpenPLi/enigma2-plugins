@@ -98,58 +98,35 @@ class EPGSearchList(EPGList):
 		self.piconDistance = 5
 		self.pboxDistance = 80
 
-		self.clocks = [ LoadPixmap('/usr/lib/enigma2/python/Plugins/Extensions/EPGSearch/icons/epgclock_add.png'),
-				LoadPixmap('/usr/lib/enigma2/python/Plugins/Extensions/EPGSearch/icons/epgclock_pre.png'),
-				LoadPixmap('/usr/lib/enigma2/python/Plugins/Extensions/EPGSearch/icons/epgclock.png'),
-				LoadPixmap('/usr/lib/enigma2/python/Plugins/Extensions/EPGSearch/icons/epgclock_prepost.png'),
-				LoadPixmap('/usr/lib/enigma2/python/Plugins/Extensions/EPGSearch/icons/epgclock_post.png'),
-				LoadPixmap('/usr/lib/enigma2/python/Plugins/Extensions/EPGSearch/icons/zapclock_add.png'),
-				LoadPixmap('/usr/lib/enigma2/python/Plugins/Extensions/EPGSearch/icons/zapclock_pre.png'),
-				LoadPixmap('/usr/lib/enigma2/python/Plugins/Extensions/EPGSearch/icons/zapclock.png'),
-				LoadPixmap('/usr/lib/enigma2/python/Plugins/Extensions/EPGSearch/icons/zapclock_prepost.png'),
-				LoadPixmap('/usr/lib/enigma2/python/Plugins/Extensions/EPGSearch/icons/zapclock_post.png'),
-				LoadPixmap('/usr/lib/enigma2/python/Plugins/Extensions/EPGSearch/icons/zaprecclock_add.png'),
-				LoadPixmap('/usr/lib/enigma2/python/Plugins/Extensions/EPGSearch/icons/zaprecclock_pre.png'),
-				LoadPixmap('/usr/lib/enigma2/python/Plugins/Extensions/EPGSearch/icons/zaprecclock.png'),
-				LoadPixmap('/usr/lib/enigma2/python/Plugins/Extensions/EPGSearch/icons/zaprecclock_prepost.png'),
-				LoadPixmap('/usr/lib/enigma2/python/Plugins/Extensions/EPGSearch/icons/zaprecclock_post.png'),
-				LoadPixmap('/usr/lib/enigma2/python/Plugins/Extensions/EPGSearch/icons/repepgclock_add.png'),
-				LoadPixmap('/usr/lib/enigma2/python/Plugins/Extensions/EPGSearch/icons/repepgclock_pre.png'),
-				LoadPixmap('/usr/lib/enigma2/python/Plugins/Extensions/EPGSearch/icons/repepgclock.png'),
-				LoadPixmap('/usr/lib/enigma2/python/Plugins/Extensions/EPGSearch/icons/repepgclock_prepost.png'),
-				LoadPixmap('/usr/lib/enigma2/python/Plugins/Extensions/EPGSearch/icons/repepgclock_post.png'),
-				LoadPixmap('/usr/lib/enigma2/python/Plugins/Extensions/EPGSearch/icons/repzapclock_add.png'),
-				LoadPixmap('/usr/lib/enigma2/python/Plugins/Extensions/EPGSearch/icons/repzapclock_pre.png'),
-				LoadPixmap('/usr/lib/enigma2/python/Plugins/Extensions/EPGSearch/icons/repzapclock.png'),
-				LoadPixmap('/usr/lib/enigma2/python/Plugins/Extensions/EPGSearch/icons/repzapclock_prepost.png'),
-				LoadPixmap('/usr/lib/enigma2/python/Plugins/Extensions/EPGSearch/icons/repzapclock_post.png'),
-				LoadPixmap('/usr/lib/enigma2/python/Plugins/Extensions/EPGSearch/icons/repzaprecclock_add.png'),
-				LoadPixmap('/usr/lib/enigma2/python/Plugins/Extensions/EPGSearch/icons/repzaprecclock_pre.png'),
-				LoadPixmap('/usr/lib/enigma2/python/Plugins/Extensions/EPGSearch/icons/repzaprecclock.png'),
-				LoadPixmap('/usr/lib/enigma2/python/Plugins/Extensions/EPGSearch/icons/repzaprecclock_prepost.png'),
-				LoadPixmap('/usr/lib/enigma2/python/Plugins/Extensions/EPGSearch/icons/repzaprecclock_post.png') ]
+		def loadPixmap(name):
+			pixmap = LoadPixmap(resolveFilename(SCOPE_CURRENT_SKIN, "skin_default/icons/%s" % name))
+			if pixmap is None:
+				pixmap = LoadPixmap("/usr/lib/enigma2/python/Plugins/Extensions/EPGSearch/icons/%s" % name)
+			return pixmap
+
 		if PartnerBoxIconsEnabled:
-			self.remote_clock_pixmap = LoadPixmap('/usr/lib/enigma2/python/Plugins/Extensions/EPGSearch/icons/remote_epgclock.png')
-			self.remote_clock_add_pixmap = LoadPixmap('/usr/lib/enigma2/python/Plugins/Extensions/EPGSearch/icons/remote_epgclock_add.png')
-			self.remote_clock_pre_pixmap = LoadPixmap('/usr/lib/enigma2/python/Plugins/Extensions/EPGSearch/icons/remote_epgclock_pre.png')
-			self.remote_clock_post_pixmap = LoadPixmap('/usr/lib/enigma2/python/Plugins/Extensions/EPGSearch/icons/remote_epgclock_post.png')
-			self.remote_clock_prepost_pixmap = LoadPixmap('/usr/lib/enigma2/python/Plugins/Extensions/EPGSearch/icons/remote_epgclock_prepost.png')
+			self.remote_clock_pixmap = loadPixmap("remote_epgclock.png")
+			self.remote_clock_add_pixmap = loadPixmap("remote_epgclock_add.png")
+			self.remote_clock_pre_pixmap = loadPixmap("remote_epgclock_pre.png")
+			self.remote_clock_post_pixmap = loadPixmap("remote_epgclock_post.png")
+			self.remote_clock_prepost_pixmap = loadPixmap("remote_epgclock_prepost.png")
+
 			if PartnerBoxZapRepIcons:
-				self.remote_zapclock_pixmap = LoadPixmap('/usr/lib/enigma2/python/Plugins/Extensions/EPGSearch/icons/remote_zapclock.png')
-				self.remote_zapclock_add_pixmap = LoadPixmap('/usr/lib/enigma2/python/Plugins/Extensions/EPGSearch/icons/remote_zapclock_add.png')
-				self.remote_zapclock_pre_pixmap = LoadPixmap('/usr/lib/enigma2/python/Plugins/Extensions/EPGSearch/icons/remote_zapclock_pre.png')
-				self.remote_zapclock_post_pixmap = LoadPixmap('/usr/lib/enigma2/python/Plugins/Extensions/EPGSearch/icons/remote_zapclock_post.png')
-				self.remote_zapclock_prepost_pixmap = LoadPixmap('/usr/lib/enigma2/python/Plugins/Extensions/EPGSearch/icons/remote_zapclock_prepost.png')
-				self.remote_repclock_pixmap = LoadPixmap('/usr/lib/enigma2/python/Plugins/Extensions/EPGSearch/icons/remote_repepgclock.png')
-				self.remote_repclock_add_pixmap = LoadPixmap('/usr/lib/enigma2/python/Plugins/Extensions/EPGSearch/icons/remote_repepgclock_add.png')
-				self.remote_repclock_pre_pixmap = LoadPixmap('/usr/lib/enigma2/python/Plugins/Extensions/EPGSearch/icons/remote_repepgclock_pre.png')
-				self.remote_repclock_post_pixmap = LoadPixmap('/usr/lib/enigma2/python/Plugins/Extensions/EPGSearch/icons/remote_repepgclock_post.png')
-				self.remote_repclock_prepost_pixmap = LoadPixmap('/usr/lib/enigma2/python/Plugins/Extensions/EPGSearch/icons/remote_repepgclock_prepost.png')
-				self.remote_repzapclock_pixmap = LoadPixmap('/usr/lib/enigma2/python/Plugins/Extensions/EPGSearch/icons/remote_repzapclock.png')
-				self.remote_repzapclock_add_pixmap = LoadPixmap('/usr/lib/enigma2/python/Plugins/Extensions/EPGSearch/icons/remote_repzapclock_add.png')
-				self.remote_repzapclock_pre_pixmap = LoadPixmap('/usr/lib/enigma2/python/Plugins/Extensions/EPGSearch/icons/remote_repzapclock_pre.png')
-				self.remote_repzapclock_post_pixmap = LoadPixmap('/usr/lib/enigma2/python/Plugins/Extensions/EPGSearch/icons/remote_repzapclock_post.png')
-				self.remote_repzapclock_prepost_pixmap = LoadPixmap('/usr/lib/enigma2/python/Plugins/Extensions/EPGSearch/icons/remote_repzapclock_prepost.png')
+				self.remote_zapclock_pixmap = loadPixmap("remote_zapclock.png")
+				self.remote_zapclock_add_pixmap = loadPixmap("remote_zapclock_add.png")
+				self.remote_zapclock_pre_pixmap = loadPixmap("remote_zapclock_pre.png")
+				self.remote_zapclock_post_pixmap = loadPixmap("remote_zapclock_post.png")
+				self.remote_zapclock_prepost_pixmap = loadPixmap("remote_zapclock_prepost.png")
+				self.remote_repclock_pixmap = loadPixmap("remote_repepgclock.png")
+				self.remote_repclock_add_pixmap = loadPixmap("remote_repepgclock_add.png")
+				self.remote_repclock_pre_pixmap = loadPixmap("remote_repepgclock_pre.png")
+				self.remote_repclock_post_pixmap = loadPixmap("remote_repepgclock_post.png")
+				self.remote_repclock_prepost_pixmap = loadPixmap("remote_repepgclock_prepost.png")
+				self.remote_repzapclock_pixmap = loadPixmap("remote_repzapclock.png")
+				self.remote_repzapclock_add_pixmap = loadPixmap("remote_repzapclock_add.png")
+				self.remote_repzapclock_pre_pixmap = loadPixmap("remote_repzapclock_pre.png")
+				self.remote_repzapclock_post_pixmap = loadPixmap("remote_repzapclock_post.png")
+				self.remote_repzapclock_prepost_pixmap = loadPixmap("remote_repzapclock_prepost.png")
 
 	def getClockTypesForEntry(self, service, eventId, beginTime, duration):
 		if not beginTime:
