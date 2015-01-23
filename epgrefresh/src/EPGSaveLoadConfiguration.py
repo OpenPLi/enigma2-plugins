@@ -33,7 +33,7 @@ class EPGSaveLoadConfiguration(Screen, ConfigListScreen):
 			<widget source="key_red" render="Label" position="0,5" zPosition="1" size="140,40" valign="center" halign="center" font="Regular;21" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
 			<widget source="key_green" render="Label" position="140,5" zPosition="1" size="140,40" valign="center" halign="center" font="Regular;21" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
 			<widget source="epgcachelocation" render="Label" position="5,495" size="590,50" zPosition="1" font="Regular;21" halign="left" valign="center" />
-			<widget name="config" position="5,50" size="590,435" scrollbarMode="showOnDemand" />
+			<widget name="config" position="5,50" size="590,428" scrollbarMode="showOnDemand" />
 			<ePixmap pixmap="skin_default/div-h.png" position="0,490" zPosition="1" size="600,2" />
 			<ePixmap pixmap="skin_default/div-h.png" position="0,550" zPosition="1" size="600,2" />
 			<widget source="help" render="Label" position="5,555" size="590,83" font="Regular;21" />
@@ -74,6 +74,7 @@ class EPGSaveLoadConfiguration(Screen, ConfigListScreen):
 		self.list = [
 			getConfigListEntry(_("Manual save EPG"), config.plugins.epgrefresh_extra.manual_save, _("Manual saving EPG in current cachefile.")),
 			getConfigListEntry(_("Manual load EPG"), config.plugins.epgrefresh_extra.manual_load, _("Manual loading EPG from current cachefile.")),
+			getConfigListEntry(_("Manual clear EPG"), config.plugins.epgrefresh_extra.delete_backup, _("Options for manual clear current cachefile EPG.")),
 			getConfigListEntry(_("Manual reload EPG"), config.plugins.epgrefresh_extra.manual_reload, _("Manual saving and loading EPG from current cachefile.")),
 			getConfigListEntry(_("Manual restore EPG backup"), config.plugins.epgrefresh_extra.restore_backup, _("Manual restore EPG from backup cachefile and loading.")),
 			getConfigListEntry(_("Automatic save EPG"), config.plugins.epgrefresh_extra.cachesavesched, _("Automatic saving EPG in current cachefile after a specified time.")),
@@ -181,6 +182,33 @@ class EPGSaveLoadConfiguration(Screen, ConfigListScreen):
 				self.session.open(MessageBox, _("Backup file is not found!"), MessageBox.TYPE_INFO, timeout = 4)
 		if sel == config.plugins.epgrefresh_extra.load_ruepg:
 			self.pre_startDownload()
+		if sel == config.plugins.epgrefresh_extra.delete_backup:
+			self.deleteEPG()
+
+	def deleteEPG(self):
+		menu = [(_("Clear only in memory (RAM) EPG"), "ram"),(_("Clear only epg.dat and epg.dat.backup"), "dat"),(_("Clear all EPG"), "all")]
+		def removeEPGAction(choice):
+			if choice is not None:
+				try:
+					from enigma import eEPGCache
+					epgcache = eEPGCache.getInstance()
+					if choice[1] == "ram":
+						if hasattr(epgcache, 'flushEPG'):
+							epgcache.flushEPG()
+					elif choice[1] == "dat":
+						restore_backup = config.misc.epgcache_filename.value + ".backup"
+						os.system("rm -f %s" % (restore_backup))
+						os.system("rm -f %s" % (config.misc.epgcache_filename.value))
+					elif choice[1] == "all":
+						if hasattr(epgcache, 'flushEPG'):
+							epgcache.flushEPG()
+						restore_backup = config.misc.epgcache_filename.value + ".backup"
+						os.system("rm -f %s" % (restore_backup))
+						os.system("rm -f %s" % (config.misc.epgcache_filename.value))
+					self.updateDestination()
+				except:
+					pass
+		self.session.openWithCallback(removeEPGAction, ChoiceBox, title= _("Select action:"), list=menu)
 
 	def pre_startDownload(self):
 		choicelist = [
