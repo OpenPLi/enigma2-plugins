@@ -54,12 +54,18 @@ def Partnerbox_EPGListInit():
 def Partnerbox_EPGList__init__(self, type=0, selChangedCB=None, timer = None):
 	baseEPGList__init__(self, type, selChangedCB, timer)
 
+	def loadPixmap(name):
+		pixmap = LoadPixmap(resolveFilename(SCOPE_CURRENT_SKIN, "skin_default/icons/%s" % name))
+		if pixmap is None:
+			pixmap = LoadPixmap("/usr/lib/enigma2/python/Plugins/Extensions/Partnerbox/icons/%s" % name)
+		return pixmap
+
 	# Partnerbox Clock Icons
-	self.remote_clock_pixmap = LoadPixmap('/usr/lib/enigma2/python/Plugins/Extensions/Partnerbox/icons/remote_epgclock.png')
-	self.remote_clock_add_pixmap = LoadPixmap('/usr/lib/enigma2/python/Plugins/Extensions/Partnerbox/icons/remote_epgclock_add.png')
-	self.remote_clock_pre_pixmap = LoadPixmap('/usr/lib/enigma2/python/Plugins/Extensions/Partnerbox/icons/remote_epgclock_pre.png')
-	self.remote_clock_post_pixmap = LoadPixmap('/usr/lib/enigma2/python/Plugins/Extensions/Partnerbox/icons/remote_epgclock_post.png')
-	self.remote_clock_prepost_pixmap = LoadPixmap('/usr/lib/enigma2/python/Plugins/Extensions/Partnerbox/icons/remote_epgclock_prepost.png')
+	self.remote_clock_pixmap = loadPixmap("remote_epgclock.png")
+	self.remote_clock_add_pixmap = loadPixmap("remote_epgclock_add.png")
+	self.remote_clock_pre_pixmap = loadPixmap("remote_epgclock_pre.png")
+	self.remote_clock_post_pixmap = loadPixmap("remote_epgclock_post.png")
+	self.remote_clock_prepost_pixmap = loadPixmap("remote_epgclock_prepost.png")
 
 def Partnerbox_SingleEntry(self, service, eventId, beginTime, duration, EventName):
 	rec1=beginTime and (self.timer.isInTimer(eventId, beginTime, duration, service))
