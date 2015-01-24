@@ -43,7 +43,6 @@ SUBDIRS = \
 	mosaic \
 	moviecut \
 	movieretitle \
-	moviesearch \
 	movietagger \
 	mphelp \
 	multirc \

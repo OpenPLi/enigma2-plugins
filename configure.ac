@@ -284,10 +284,6 @@ movieretitle/meta/Makefile
 movieretitle/po/Makefile
 movieretitle/src/Makefile
 
-moviesearch/Makefile
-moviesearch/meta/Makefile
-moviesearch/src/Makefile
-
 movieselectionquickbutton/Makefile
 movieselectionquickbutton/meta/Makefile
 movieselectionquickbutton/po/Makefile
