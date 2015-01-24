@@ -591,14 +591,15 @@ class EPGSearch(EPGSelection):
 		self.select = False
 		self.do_filter = None
 		self.eventid = None
+		self.isTMBD = fileExists("/usr/lib/enigma2/python/Plugins/Extensions/TMBD/plugin.pyo")
 		# Partnerbox
 		if PartnerBoxIconsEnabled:
 			EPGSelection.PartnerboxInit(self, False)
-			if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/TMBD/plugin.pyo"):
+			if self.isTMBD:
 				self["key_red"].setText(_("Choice list"))
 				self.select = True
 		else:
-			if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/TMBD/plugin.pyo"):
+			if self.isTMBD:
 				self["key_red"].setText(_("Lookup in TMBD"))
 
 		# Hook up actions for yttrailer if installed
@@ -703,6 +704,9 @@ class EPGSearch(EPGSelection):
 		self["Service"].newService(eServiceReference(str(self["list"].getCurrent()[1])))
 		self["Event"].newEvent(self["list"].getCurrent()[0])
 		EPGSelection.onSelectionChanged(self)
+		if PartnerBoxZapRepIcons:
+			if self.isTMBD:
+				self["key_red"].setText(_("Choice list"))
 
 	def zapToselect(self):
 		if not PartnerBoxIconsEnabled:
