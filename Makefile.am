@@ -82,14 +82,6 @@ SUBDIRS = \
 	zapstatistic \
 	zdfmediathek
 
-if TPM
-SUBDIRS += \
-	mytube \
-	yttrailer \
-	webbouqueteditor \
-	webinterface
-endif
-
 metadir = $(datadir)/meta
 meta_DATA = index-enigma2-plugins.xml
 CLEANFILES = index-enigma2-plugins.xml

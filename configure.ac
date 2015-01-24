@@ -26,14 +26,6 @@ PKG_CHECK_MODULES(ENIGMA2, enigma2)
 PKG_CHECK_MODULES(GSTREAMER, gstreamer-0.10 gstreamer-pbutils-0.10)
 PKG_CHECK_MODULES(LIBCRYPTO, libcrypto)
 
-AC_ARG_WITH(tpm,
-	AS_HELP_STRING([--with-tpm], [enable plugins that require a TPM]),
-	[with_tpm="$withval"],[with_tpm="no"])
-if test "$with_tpm" = "yes"; then
-	AC_DEFINE([HAVE_TPM],[1],[Define to 1 to enable plugins that require a TPM])
-fi
-AM_CONDITIONAL(TPM, test "$with_tpm" = "yes")
-
 AC_ARG_WITH(debug,
 	AS_HELP_STRING([--without-debug],[disable debugging code]),
 	[with_debug="$withval"],[with_debug="yes"])
@@ -307,11 +299,6 @@ multirc/Makefile
 multirc/src/Makefile
 multirc/meta/Makefile
 
-mytube/Makefile
-mytube/meta/Makefile
-mytube/src/Makefile
-mytube/po/Makefile
-
 namezap/Makefile
 namezap/meta/Makefile
 namezap/po/Makefile
@@ -488,36 +475,6 @@ webcamviewer/Makefile
 webcamviewer/meta/Makefile
 webcamviewer/src/Makefile
 
-webbouqueteditor/Makefile
-webbouqueteditor/src/Makefile
-webbouqueteditor/meta/Makefile
-webbouqueteditor/src/web/Makefile
-webbouqueteditor/src/web-data/Makefile
-webbouqueteditor/src/WebChilds/Makefile
-webbouqueteditor/src/WebComponents/Makefile
-webbouqueteditor/src/WebComponents/Sources/Makefile
-webbouqueteditor/src/WebScreens/Makefile
-
-webinterface/Makefile
-webinterface/meta/Makefile
-webinterface/po/Makefile
-webinterface/src/Makefile
-webinterface/src/etc/Makefile
-webinterface/src/mobile/Makefile
-webinterface/src/web/Makefile
-webinterface/src/web-data/Makefile
-webinterface/src/web-data/gfx/Makefile
-webinterface/src/web-data/img/Makefile
-webinterface/src/web-data/lib/Makefile
-webinterface/src/web-data/tpl/Makefile
-webinterface/src/web-data/tpl/default/Makefile
-webinterface/src/web-data/tpl/default/streaminterface/Makefile
-webinterface/src/WebChilds/Makefile
-webinterface/src/WebChilds/External/Makefile
-webinterface/src/WebComponents/Makefile
-webinterface/src/WebComponents/Converter/Makefile
-webinterface/src/WebComponents/Sources/Makefile
-
 werbezapper/Makefile
 werbezapper/meta/Makefile
 werbezapper/po/Makefile
@@ -527,11 +484,6 @@ youtubeplayer/Makefile
 youtubeplayer/meta/Makefile
 youtubeplayer/src/Makefile
 youtubeplayer/src/Nemesis.GlassLine_Mod/Makefile
-
-yttrailer/Makefile
-yttrailer/meta/Makefile
-yttrailer/po/Makefile
-yttrailer/src/Makefile
 
 zaphistorybrowser/Makefile
 zaphistorybrowser/meta/Makefile
