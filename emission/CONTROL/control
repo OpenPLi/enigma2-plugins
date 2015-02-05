@@ -4,7 +4,7 @@ Description: basic frontend to the transmission bittorrent client
 Architecture: mipsel
 Section: extra
 Priority: optional
-Maintainer: Moritz Venn <moritz.venn@freaque.net>
-Homepage: http://www.ritzmo.de
+Maintainer: OpenPLi team <forum@openpli.org>
+Homepage: http://www.openpli.org
 Depends: enigma2(>=2.6git20091014), python-transmissionrpc
 Source: http://www.ritzmo.de

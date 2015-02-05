@@ -1,6 +1,6 @@
 Package: enigma2-plugin-extensions-growlee
 Version: 0.1-20091001-r0
 Description: redirect notifications to growl
-Maintainer: Moritz Venn <moritz.venn@freaque.net>
-Homepage: http://www.ritzmo.de
+Maintainer: OpenPLi team <forum@openpli.org>
+Homepage: http://www.openpli.org
 Depends: enigma2 (>= 2.6git20091014), python-twisted-protocols

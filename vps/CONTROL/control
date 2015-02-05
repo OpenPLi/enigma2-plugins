@@ -3,7 +3,7 @@ Version: 1.3
 Description: VPS-Plugin
 Section: extra
 Priority: optional
-Maintainer: Martin Gauk <mart-g@web.de>
+Maintainer: OpenPLi team <forum@openpli.org>
 Architecture: mipsel
 Replaces: enigma2-plugin-extensions-vps
 Conflicts: enigma2-plugin-extensions-vps
