@@ -1,0 +1,1310 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-02-28 19:54+0100\n"
+"PO-Revision-Date: 2015-01-20 16:12+0200\n"
+"Last-Translator: Dima73 <Dima-73@inbox.lv>\n"
+"Language-Team: openli.org\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.7.1\n"
+"Language: ru\n"
+
+msgid ""
+"\n"
+"%d more services."
+msgstr ""
+"\n"
+"%d сервисов всего."
+
+msgid "   (AutoZap)"
+msgstr "   (Авто переключение)"
+
+msgid "Adding schedule..."
+msgstr "Добавлено расписание..."
+
+msgid ""
+"After a successful refresh the AutoTimer will automatically search for new "
+"matches if this is enabled."
+msgstr ""
+"После успешного обновления Автотаймер будет автоматически искать новые "
+"соответствия, если это включено."
+
+msgid ""
+"An automated refresh will start after this time of day, but before the time "
+"specified in next setting."
+msgstr ""
+"Автоматическое обновление начнется после назначеного времени, но не позже "
+"чем в следущей настройке."
+
+msgid ""
+"An automated refresh will start before this time of day, but after the time "
+"specified in previous setting."
+msgstr ""
+"Автоматическое обновление начнется не позже назначеного времени, но не "
+"раньше чем в предыдущей настройке."
+
+msgid "Are you sure you want to load the EPG data from:\n"
+msgstr "Вы уверены, что хотите загрузить данные EPG из:\n"
+
+msgid "Are you sure you want to reload the EPG data from:\n"
+msgstr "Вы уверены, что хотите перезагрузить данные EPG из:\n"
+
+msgid "Are you sure you want to save and load the EPG data from:\n"
+msgstr "Вы уверены, что хотите сохранить и загрузить данные EPG из:\n"
+
+msgid "Are you sure you want to save the EPG Cache to:\n"
+msgstr "Вы уверены, что хотите сохранить данные EPG в:\n"
+
+msgid "Auto restore EPG backup on boot"
+msgstr "Авто восстановление из бекапа EPG при старте"
+
+msgid "Auto restore EPG from backup cachefile and loading on boot."
+msgstr ""
+"Автоматическое восстановление  из бекапа данных EPG при старте и загрузки "
+"его в память ресивера."
+
+msgid "AutoZap"
+msgstr "Авто переключение"
+
+msgid "AutoZap for refreshing EPG data"
+msgstr "Авто переключение для обновления данных EPG"
+
+msgid "Automatic load EPG"
+msgstr "Автоматическая загрузка EPG"
+
+msgid "Automatic loading EPG from current cachefile after a specified time."
+msgstr ""
+"Автоматическая загрузка EPG из текущего файла кеша. Каждая загрузка "
+"затормаживает работу ресивера на несколько секунд."
+
+msgid "Automatic save EPG"
+msgstr "Автоматическое сохранение EPG"
+
+msgid "Automatic saving EPG in current cachefile after a specified time."
+msgstr ""
+"Автоматическое сохранение EPG в текущий файл кеша через заданное время. "
+"Может быть полезно при внезапных отключениях электричества."
+
+msgid ""
+"Automatic switching of all the services in the current channel list after a "
+"specified time. Stop switch can only manually."
+msgstr ""
+"Автоматическое переключение всех каналов, через заданное время, в текущем "
+"списке каналов. Остановка только в ручную."
+
+msgid "Automatically refresh EPG"
+msgstr "Автоматическое обновление DVB EPG"
+
+msgid "Background only"
+msgstr "только при фоновом сканировании"
+
+msgid ""
+"Backup file is corrupt!\n"
+"Backup file will be deleted!"
+msgstr ""
+"Файл бекапа кеша поврежден!\n"
+"Этот файл будет удален!"
+
+msgid "Backup file is not found!"
+msgstr "Файл бекапа кеша не найден!"
+
+msgid "Backup file load!"
+msgstr "Файл бекапа кеша загружен!"
+
+msgid "Bouquets"
+msgstr "Букеты"
+
+msgid "Cancel"
+msgstr "Отмена"
+
+msgid "Changes are needed to restart enigma2."
+msgstr "Для изменения этой настройки рестарт энигмы2 не требуется."
+
+msgid "Channels"
+msgstr "Каналы"
+
+msgid "Choice days for refresh"
+msgstr "Выбор дней для обновления"
+
+msgid "Clear all EPG"
+msgstr "Очистка всего EPG"
+
+msgid "Clear only epg.dat and epg.dat.backup"
+msgstr "Очистка только epg.dat и epg.dat.backup"
+
+msgid "Clear only in memory (RAM) EPG"
+msgstr "Очистка EPG только из памяти (RAM)"
+
+msgid "Configuration save / load EPG"
+msgstr "Настройки сохранения / загрузки EPG"
+
+msgid "Configuration..."
+msgstr "Настройки..."
+
+msgid "Create backup cachefile, after manual or automatic saving EPG."
+msgstr ""
+"Создавать файл бекапа кеша данных, после ручного или автоматического "
+"сохранения EPG."
+
+msgid "Create backup when saving EPG"
+msgstr "Создавать бекап после сохранения EPG"
+
+msgid "Current EPG cachefile:"
+msgstr "Текущий файл кеша EPG:"
+
+msgid "Days Profile"
+msgstr "Профили дней"
+
+msgid "Delay if not in standby (minutes)"
+msgstr "Пауза проверки, если не в режиме ожидания (в минутах)"
+
+msgid "Do not set too short period of time."
+msgstr ""
+"Каждое сохранение затормаживает работу ресивера на несколько секунд.Не "
+"выбирайте слишком маленький период времени."
+
+msgid "Download EPG from exUSSR"
+msgstr "Загрузить EPG для exUSSR"
+
+msgid "Download internet EPG from exUSSR"
+msgstr "Загрузить EPG с интернета для exUSSR"
+
+msgid "Duration to stay on service (sec) for \"AutoZap\" "
+msgstr "Таймаут ( в секундах) для \"Авто переключение\""
+
+msgid "Duration to stay on service (seconds)"
+msgstr "Таймаут, оставатся на сервисе (в секундах)"
+
+msgid "EPG Cache Check"
+msgstr "Проверка кеша EPG"
+
+msgid "EPG cache filename"
+msgstr "Название файла данных EPG"
+
+msgid "EPG cache path"
+msgstr "Директория хранения файла данных EPG"
+
+msgid "EPG is loaded!"
+msgstr "Данные EPG загружены!"
+
+msgid "EPG refresh auto-start earliest (hh:mm)"
+msgstr "Начало авто-старта обновления EPG  не раньше (чч:мм)"
+
+msgid "EPG refresh auto-start latest (hh:mm)"
+msgstr "Начало авто-старта обновления EPG  не позже (чч:мм)"
+
+msgid "EPG refresh finished."
+msgstr "Обновление EPG закончено."
+
+msgid "EPG refresh started in background."
+msgstr "Обновление EPG началось в фоновом режиме."
+
+msgid "EPG refresh starts scanning channels."
+msgstr "Обновление EPG начинает сканирование каналов."
+
+msgid "EPG with Linux-Sat"
+msgstr "EPG с Linux-Sat"
+
+msgid "EPG-refresh now"
+msgstr "Обновить EPG сейчас"
+
+msgid "EPGRefresh"
+msgstr "Обновление EPG"
+
+msgid "EPGRefresh Configuration"
+msgstr "Конфигурация обновления EPG"
+
+msgid "EPGRefresh Services"
+msgstr "Сервисы обновления EPG"
+
+msgid "Edit Services"
+msgstr "Редактировать сервисы"
+
+msgid "Edit Services to refresh"
+msgstr "Редактировать сервисы для обновления"
+
+msgid "Editing"
+msgstr "Редактировать"
+
+msgid ""
+"Enable this to be able to access the EPGRefresh configuration from within "
+"the extension menu."
+msgstr ""
+"Если включено, то плагин обновления EPG будет показан в меню дополнений."
+
+msgid "Extend the list of services to refresh by those your AutoTimers use?"
+msgstr "Расширить список сервисов, для обновления данных ваших Автотаймеров?"
+
+msgid "Fake recording"
+msgstr "Имитация записи"
+
+msgid "Following Services have to be scanned:"
+msgstr "EPG для следующих сервисов должно быть еще обновлено:"
+
+msgid "Force scan even if receiver is in use"
+msgstr "Форсированное обновление, даже если ресивер занят"
+
+msgid "Foreground also"
+msgstr "так же и при режиме просмотра тв"
+
+msgid "Friday"
+msgstr "Пятница"
+
+msgid ""
+"If \"Run AutoTimer after refresh\" and \"Shutdown after EPG refresh\" "
+"enabled and use \"Label series\" for match, set long timeout."
+msgstr ""
+"Если \"Запустить Автотаймер после обновления\" и \"Глубокое ожидание после "
+"обновления EPG\" включены и используются \"Ярлыки сериалов\" для совпадений, "
+"установите большой таймаут."
+
+msgid ""
+"If enabled, 'Stop Running EPG-refresh' will not be displayed in main menu "
+"when refresh is running."
+msgstr ""
+"Если включено, то 'Остановить обновление EPG' будет показано в главном меню, "
+"если в это время обновление запущено."
+
+msgid ""
+"If enabled, show 'EPG-refresh now' in main menu if refresh now not running."
+msgstr ""
+"Если включено, то 'Обновить EPG сейчас' будет показано в главном меню, если "
+"в это время обновление не запущено."
+
+msgid ""
+"If the receiver currently isn't in standby, this is the duration which "
+"EPGRefresh will wait before retry."
+msgstr ""
+"Если ресивер не находится в режиме ожидания, это продолжительность времени, "
+"по окончании которого обновление EPG попробует повторить попытку обновления."
+
+msgid ""
+"If this is enabled, the plugin will wake up the receiver from deep standby "
+"if possible. Otherwise it needs to be switched on already."
+msgstr ""
+"Если эта опция включена, обновление EPG будет автоматически включать ресивер "
+"из режима глубокого ожидания."
+
+msgid "If you want to download from the internet russian ERG, put to yes."
+msgstr ""
+"Если вы хотите видеть в меню опцию загрузки русскоязычного ERG с интернета, "
+"установите значение да."
+
+msgid ""
+"If you want to refresh the EPG in background, you can choose the method "
+"which best suits your needs here, e.g. hidden, fake reocrding or regular "
+"Picture in Picture."
+msgstr ""
+"Если вы хотите обновлять EPG в фоновом режиме, вы можете выбрать метод, "
+"который наилучшим образом соответствует вашим потребностям. Варианты - в "
+"режиме ожидания, имитация записи, скрытая или стандартная функция из "
+"Картинка в Картинке."
+
+msgid "Inherit Services from AutoTimer"
+msgstr "Унаследовать сервисы из Автотаймера"
+
+msgid "Last refresh was %s"
+msgstr "Последнее обновление: %s"
+
+msgid "Load every (in hours)"
+msgstr "Загрузка каждые (в часах)"
+
+msgid "Main Picture"
+msgstr "Основной экран"
+
+msgid "Manual EPG"
+msgstr "Ручное EPG"
+
+msgid "Manual clear EPG"
+msgstr "Ручная очистка EPG"
+
+msgid "Manual load EPG"
+msgstr "Ручная загрузка EPG"
+
+msgid "Manual loading EPG from current cachefile."
+msgstr "Ручная загрузка EPG из текущего файла кеша."
+
+msgid "Manual reload EPG"
+msgstr "Ручная перезагрузка EPG"
+
+msgid "Manual restore EPG backup"
+msgstr "Ручное восстановление бекапа EPG"
+
+msgid "Manual restore EPG from backup cachefile and loading."
+msgstr "Ручное восстановление бекапа EPG и загрузка в память ресивера."
+
+msgid "Manual save EPG"
+msgstr "Ручное сохранение EPG"
+
+msgid "Manual saving EPG in current cachefile."
+msgstr "Ручное сохранение EPG в текущий файл кеша."
+
+msgid "Manual saving and loading EPG from current cachefile."
+msgstr "Ручное сохранение и загрузка EPG из  текущего файла кеша."
+
+msgid "Monday"
+msgstr "Понедельник"
+
+msgid "New"
+msgstr "Новый"
+
+msgid "Not found the mounted device for EPG file!"
+msgstr "Не найден смонтированный накопитель для файла данных EPG!"
+
+msgid "OK"
+msgstr "ОК"
+
+msgid "Options for manual clear current cachefile EPG."
+msgstr "Варианты ручной очистки текущего кеша данных EPG."
+
+msgid "PiP available now."
+msgstr "PiP теперь доступен."
+
+msgid "Picture in Picture"
+msgstr "Картинка в картинке"
+
+msgid "Picture in Picture (hidden)"
+msgstr "Картинка в картинке (скрытый режим)"
+
+msgid "Please don't use PiP meanwhile!"
+msgstr "Пожалуйста, не используйте PiP в это время!"
+
+msgid "Please wait..."
+msgstr "Пожалуйста подождите..."
+
+msgid "Press OK"
+msgstr "Нажмите ОК"
+
+msgid "Press OK to download EPG with http://linux-sat.tv."
+msgstr "Нажмите ОК для загрузки русскоязычного EPG с http://linux-sat.tv."
+
+msgid "Press button OK in order to open the settings menu."
+msgstr "Нажмите кнопку OK, если вы хотите открыть это меню настроек."
+
+msgid "Really close without saving settings?"
+msgstr "Действительно выйти, не сохраняя настройки?"
+
+msgid "Refresh EPG automatically"
+msgstr "Автоматическое обновление EPG"
+
+msgid "Refresh EPG using"
+msgstr "Вариант обновления EPG"
+
+msgid "Refresh now"
+msgstr "Обновить сейчас"
+
+msgid "Refresh-EPG / AutoZap"
+msgstr "Обновление-EPG / Авто переключение"
+
+msgid "Refreshing"
+msgstr "Обновлять"
+
+msgid "Reloading EPG Cache..."
+msgstr "Перезагрузка кеша EPG..."
+
+msgid "Return to TV viewing"
+msgstr "Возврат к просмотру ТВ"
+
+msgid "Run AutoTimer after refresh"
+msgstr "Запустить Автотаймер после обновления"
+
+msgid "Russian language"
+msgstr "Русский язык"
+
+msgid "Saturday"
+msgstr "Суббота"
+
+msgid "Save EPG after refresh"
+msgstr "Сохранять EPG после обновления"
+
+msgid "Save EPG in current cachefile after refresh is completed."
+msgstr "Сохранение EPG в текущий файл кеша после окончания обновления."
+
+msgid "Save every (in hours)"
+msgstr "Сохранять каждый (в часах)"
+
+msgid "Saving EPG Cache..."
+msgstr "Сохранен кеш EPG..."
+
+msgid "Select action after refresh:"
+msgstr "Выберите действие после обновления:"
+
+msgid "Select action:"
+msgstr "Выберите действие:"
+
+msgid "Select bouquet to refresh"
+msgstr "Выберите букет для обновления"
+
+msgid "Select channel to refresh"
+msgstr "Выберите канал для обновления"
+
+msgid "Select language for download:"
+msgstr "Выберите язык для загрузки:"
+
+msgid "Select menu to add services to the EPGRefresh."
+msgstr ""
+"Выберите меню, в котором бы хотели видеть - добавить сервис к обновлению EPG."
+
+msgid "Select mode the refresh for services/bouquets parental control."
+msgstr ""
+"Выберите режим для обновления сервисов/букетов защищенных родительским "
+"контролем."
+
+msgid "Select options"
+msgstr "Выберите действие"
+
+msgid ""
+"Select the day or days of the week for automatic refresh EPG. At least one "
+"day must be included."
+msgstr ""
+"Выберите день или несколько дней недели для автоматического обновления EPG. "
+"Хотя бы один день должен быть активирован."
+
+msgid "Select the file name EPG cache, if you do not like credit default name."
+msgstr ""
+"Измените имя файла кеша EPG, если вас не устраивает дефолтное название."
+
+msgid "Select the path to EPG cache,not recommended to use the internal flash."
+msgstr ""
+"Выберите директорию хранения кеша EPG, крайне не рекомендовано использовать "
+"внутреннюю флешь."
+
+msgid "Setup save / load EPG"
+msgstr "Настройки сохранения / загрузки EPG"
+
+msgid "Show \"AutoZap\" in extension menu"
+msgstr "Показать \"Авто переключение\" в меню дополнений"
+
+msgid "Show \"add to EPGRefresh\" in"
+msgstr "Показать \"добавить к обновлению EPG\" в"
+
+msgid "Show 'EPG-refresh now' in main menu"
+msgstr "Показать 'Обновить EPG сейчас' в главном меню"
+
+msgid "Show 'Stop Running EPG-refresh' in main menu"
+msgstr "Показать 'Остановить обновление EPG' в главном меню"
+
+msgid "Show download exUSSR EPG in list setup"
+msgstr "Показать загрузку exUSSR EPG в меню настроек"
+
+msgid "Show in extension menu"
+msgstr "Показать обновление EPG в меню дополнений"
+
+msgid "Show manual change EPG in main menu"
+msgstr "Показать ручные изменения EPG в главном меню"
+
+msgid "Show popup when refresh starts and ends"
+msgstr "Вывод сообщения при начале и окончании обновления"
+
+msgid "Shutdown after EPG refresh"
+msgstr "Глубокое ожидание после обновления EPG"
+
+msgid "Shutdown after EPG refresh enabled in setup..."
+msgstr "Выключение после обновления включено в настройках..."
+
+msgid "Size: "
+msgstr "Объем: "
+
+msgid "Skip protected Services"
+msgstr "Пропускать защищенные сервисы"
+
+msgid ""
+"Sorry, EPG was downloaded but not loaded!\n"
+"Maybe EPG file is corrupt!"
+msgstr ""
+"Извините, файл EPG был скачан но не загружен!\n"
+"Может быть файл EPG был поврежден и удален!"
+
+msgid "Sorry, the EPG download failed!"
+msgstr "Извините, ошибка скачивания EPG!"
+
+msgid "Stop Running EPG-refresh"
+msgstr "Остановить обновление EPG"
+
+msgid "Stop Running EPG-refresh?\n"
+msgstr "Остановить обновление EPG?\n"
+
+msgid "Sunday"
+msgstr "Воскресенье"
+
+msgid "The same functions are used in Menu -> System -> EPG settings!"
+msgstr "Такие же функции используются в Меню -> Система -> Настройки EPG!"
+
+msgid "The same functions are used in plugin EPGD!!"
+msgstr "Такие же функции используются в плагине EPGD!"
+
+msgid ""
+"This is the duration each service/channel will stay active during a refresh."
+msgstr ""
+"Продолжительность времени нахождения на канале до переключения на следующий, "
+"во время обновления."
+
+msgid ""
+"This might have been an automated bootup to refresh the EPG. For this to "
+"happen it is recommended to put the receiver to Standby.\n"
+"Do you want to do this now?"
+msgstr ""
+"Ресивер возможно был включен для автоматического обновления EPG. Для этого "
+"требуется перевод ресивера в режим ожидания.\n"
+"Вы хотите сделать это сейчас?"
+
+msgid ""
+"This option is not recommended to be used only in exceptional cases. Do not "
+"set too short period of time."
+msgstr ""
+"Этот параметр не рекомендуется использовать в стандартной настройке, только "
+"в исключительных случаях. Не выставляйте короткий период времени."
+
+msgid ""
+"This setting controls whether or not an informational message will be shown "
+"at start and completion of refresh."
+msgstr ""
+"Этот параметр определяет, будет ли показано информационное сообщение при "
+"начале и завершении обновления."
+
+msgid ""
+"This setting controls whether or not the refresh will be initiated even "
+"though the receiver is active (either not in standby or currently recording)."
+msgstr ""
+"Этот параметр определяет, будет ли обновление инициировано, даже если "
+"ресивер активен (либо не в режиме ожидания или идет  запись в текущее время)."
+
+msgid ""
+"This setting controls whether the receiver should be set to deep standby "
+"after refresh is completed."
+msgstr ""
+"Этот параметр определяет, будет ли ресивер переведен в режим глубокого "
+"ожидания, когда обновление будет завершено."
+
+msgid "Thursday"
+msgstr "Четверг"
+
+msgid "Timeout shutdown after refresh for SeriesPlugin (min)"
+msgstr "Таймаут выключения после обновления для SeriesPlugin (мин)"
+
+msgid "Tuesday"
+msgstr "Вторник"
+
+msgid "Ukrainian language"
+msgstr "Украинский язык"
+
+msgid ""
+"Unless this is enabled, EPGRefresh won't automatically run but needs to be "
+"explicitly started by the yellow button in this menu."
+msgstr ""
+"Если это включено, то обновление EPG начнет работать в автоматическом "
+"режиме, в противном случае есть ручное обновление на желтой кнопке в этом "
+"меню."
+
+msgid "Version"
+msgstr "Версия"
+
+msgid "Wake up from deep standby for EPG refresh"
+msgstr "Включать из глубокого ожидания для обновления EPG"
+
+msgid "Wednesday"
+msgstr "Среда"
+
+msgid ""
+"You may not use this settings!\n"
+"At least one day a week should be included!"
+msgstr ""
+"Вы не можете использовать эти настройки!\n"
+"Хотя бы один день должен быть активирован!"
+
+msgid "add service to EPGRefresh"
+msgstr "добавить сервис к обновлению EPG"
+
+msgid "add to EPGRefresh"
+msgstr "добавить к обновлению EPG"
+
+msgid "always"
+msgstr "всегда"
+
+msgid "channel selection"
+msgstr "селектор каналов"
+
+msgid "delete"
+msgstr "удалить"
+
+msgid "disable"
+msgstr "выключить"
+
+msgid "enable"
+msgstr "включить"
+
+msgid "event info"
+msgstr "меню событий"
+
+msgid "event info / channel selection"
+msgstr "меню событий / селектор каналов"
+
+msgid "exclusion background"
+msgstr "исключение для фонового сканирования"
+
+msgid "never"
+msgstr "никогда"
+
+msgid "no"
+msgstr "нет"
+
+msgid "nowhere"
+msgstr "нигде"
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-02-28 19:54+0100\n"
+"PO-Revision-Date: 2015-01-20 16:12+0200\n"
+"Last-Translator: Dima73 <Dima-73@inbox.lv>\n"
+"Language-Team: openli.org\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.7.1\n"
+"Language: ru\n"
+
+msgid ""
+"\n"
+"%d more services."
+msgstr ""
+"\n"
+"%d сервисов всего."
+
+msgid "   (AutoZap)"
+msgstr "   (Авто переключение)"
+
+msgid "Adding schedule..."
+msgstr "Добавлено расписание..."
+
+msgid ""
+"After a successful refresh the AutoTimer will automatically search for new "
+"matches if this is enabled."
+msgstr ""
+"После успешного обновления Автотаймер будет автоматически искать новые "
+"соответствия, если это включено."
+
+msgid ""
+"An automated refresh will start after this time of day, but before the time "
+"specified in next setting."
+msgstr ""
+"Автоматическое обновление начнется после назначеного времени, но не позже "
+"чем в следущей настройке."
+
+msgid ""
+"An automated refresh will start before this time of day, but after the time "
+"specified in previous setting."
+msgstr ""
+"Автоматическое обновление начнется не позже назначеного времени, но не "
+"раньше чем в предыдущей настройке."
+
+msgid "Are you sure you want to load the EPG data from:\n"
+msgstr "Вы уверены, что хотите загрузить данные EPG из:\n"
+
+msgid "Are you sure you want to reload the EPG data from:\n"
+msgstr "Вы уверены, что хотите перезагрузить данные EPG из:\n"
+
+msgid "Are you sure you want to save and load the EPG data from:\n"
+msgstr "Вы уверены, что хотите сохранить и загрузить данные EPG из:\n"
+
+msgid "Are you sure you want to save the EPG Cache to:\n"
+msgstr "Вы уверены, что хотите сохранить данные EPG в:\n"
+
+msgid "Auto restore EPG backup on boot"
+msgstr "Авто восстановление из бекапа EPG при старте"
+
+msgid "Auto restore EPG from backup cachefile and loading on boot."
+msgstr ""
+"Автоматическое восстановление  из бекапа данных EPG при старте и загрузки "
+"его в память ресивера."
+
+msgid "AutoZap"
+msgstr "Авто переключение"
+
+msgid "AutoZap for refreshing EPG data"
+msgstr "Авто переключение для обновления данных EPG"
+
+msgid "Automatic load EPG"
+msgstr "Автоматическая загрузка EPG"
+
+msgid "Automatic loading EPG from current cachefile after a specified time."
+msgstr ""
+"Автоматическая загрузка EPG из текущего файла кеша. Каждая загрузка "
+"затормаживает работу ресивера на несколько секунд."
+
+msgid "Automatic save EPG"
+msgstr "Автоматическое сохранение EPG"
+
+msgid "Automatic saving EPG in current cachefile after a specified time."
+msgstr ""
+"Автоматическое сохранение EPG в текущий файл кеша через заданное время. "
+"Может быть полезно при внезапных отключениях электричества."
+
+msgid ""
+"Automatic switching of all the services in the current channel list after a "
+"specified time. Stop switch can only manually."
+msgstr ""
+"Автоматическое переключение всех каналов, через заданное время, в текущем "
+"списке каналов. Остановка только в ручную."
+
+msgid "Automatically refresh EPG"
+msgstr "Автоматическое обновление DVB EPG"
+
+msgid "Background only"
+msgstr "только при фоновом сканировании"
+
+msgid ""
+"Backup file is corrupt!\n"
+"Backup file will be deleted!"
+msgstr ""
+"Файл бекапа кеша поврежден!\n"
+"Этот файл будет удален!"
+
+msgid "Backup file is not found!"
+msgstr "Файл бекапа кеша не найден!"
+
+msgid "Backup file load!"
+msgstr "Файл бекапа кеша загружен!"
+
+msgid "Bouquets"
+msgstr "Букеты"
+
+msgid "Cancel"
+msgstr "Отмена"
+
+msgid "Changes are needed to restart enigma2."
+msgstr "Для изменения этой настройки рестарт энигмы2 не требуется."
+
+msgid "Channels"
+msgstr "Каналы"
+
+msgid "Choice days for refresh"
+msgstr "Выбор дней для обновления"
+
+msgid "Clear all EPG"
+msgstr "Очистка всего EPG"
+
+msgid "Clear only epg.dat and epg.dat.backup"
+msgstr "Очистка только epg.dat и epg.dat.backup"
+
+msgid "Clear only in memory (RAM) EPG"
+msgstr "Очистка EPG только из памяти (RAM)"
+
+msgid "Configuration save / load EPG"
+msgstr "Настройки сохранения / загрузки EPG"
+
+msgid "Configuration..."
+msgstr "Настройки..."
+
+msgid "Create backup cachefile, after manual or automatic saving EPG."
+msgstr ""
+"Создавать файл бекапа кеша данных, после ручного или автоматического "
+"сохранения EPG."
+
+msgid "Create backup when saving EPG"
+msgstr "Создавать бекап после сохранения EPG"
+
+msgid "Current EPG cachefile:"
+msgstr "Текущий файл кеша EPG:"
+
+msgid "Days Profile"
+msgstr "Профили дней"
+
+msgid "Delay if not in standby (minutes)"
+msgstr "Пауза проверки, если не в режиме ожидания (в минутах)"
+
+msgid "Do not set too short period of time."
+msgstr ""
+"Каждое сохранение затормаживает работу ресивера на несколько секунд.Не "
+"выбирайте слишком маленький период времени."
+
+msgid "Download EPG from exUSSR"
+msgstr "Загрузить EPG для exUSSR"
+
+msgid "Download internet EPG from exUSSR"
+msgstr "Загрузить EPG с интернета для exUSSR"
+
+msgid "Duration to stay on service (sec) for \"AutoZap\" "
+msgstr "Таймаут ( в секундах) для \"Авто переключение\""
+
+msgid "Duration to stay on service (seconds)"
+msgstr "Таймаут, оставатся на сервисе (в секундах)"
+
+msgid "EPG Cache Check"
+msgstr "Проверка кеша EPG"
+
+msgid "EPG cache filename"
+msgstr "Название файла данных EPG"
+
+msgid "EPG cache path"
+msgstr "Директория хранения файла данных EPG"
+
+msgid "EPG is loaded!"
+msgstr "Данные EPG загружены!"
+
+msgid "EPG refresh auto-start earliest (hh:mm)"
+msgstr "Начало авто-старта обновления EPG  не раньше (чч:мм)"
+
+msgid "EPG refresh auto-start latest (hh:mm)"
+msgstr "Начало авто-старта обновления EPG  не позже (чч:мм)"
+
+msgid "EPG refresh finished."
+msgstr "Обновление EPG закончено."
+
+msgid "EPG refresh started in background."
+msgstr "Обновление EPG началось в фоновом режиме."
+
+msgid "EPG refresh starts scanning channels."
+msgstr "Обновление EPG начинает сканирование каналов."
+
+msgid "EPG with Linux-Sat"
+msgstr "EPG с Linux-Sat"
+
+msgid "EPG-refresh now"
+msgstr "Обновить EPG сейчас"
+
+msgid "EPGRefresh"
+msgstr "Обновление EPG"
+
+msgid "EPGRefresh Configuration"
+msgstr "Конфигурация обновления EPG"
+
+msgid "EPGRefresh Services"
+msgstr "Сервисы обновления EPG"
+
+msgid "Edit Services"
+msgstr "Редактировать сервисы"
+
+msgid "Edit Services to refresh"
+msgstr "Редактировать сервисы для обновления"
+
+msgid "Editing"
+msgstr "Редактировать"
+
+msgid ""
+"Enable this to be able to access the EPGRefresh configuration from within "
+"the extension menu."
+msgstr ""
+"Если включено, то плагин обновления EPG будет показан в меню дополнений."
+
+msgid "Extend the list of services to refresh by those your AutoTimers use?"
+msgstr "Расширить список сервисов, для обновления данных ваших Автотаймеров?"
+
+msgid "Fake recording"
+msgstr "Имитация записи"
+
+msgid "Following Services have to be scanned:"
+msgstr "EPG для следующих сервисов должно быть еще обновлено:"
+
+msgid "Force scan even if receiver is in use"
+msgstr "Форсированное обновление, даже если ресивер занят"
+
+msgid "Foreground also"
+msgstr "так же и при режиме просмотра тв"
+
+msgid "Friday"
+msgstr "Пятница"
+
+msgid ""
+"If \"Run AutoTimer after refresh\" and \"Shutdown after EPG refresh\" "
+"enabled and use \"Label series\" for match, set long timeout."
+msgstr ""
+"Если \"Запустить Автотаймер после обновления\" и \"Глубокое ожидание после "
+"обновления EPG\" включены и используются \"Ярлыки сериалов\" для совпадений, "
+"установите большой таймаут."
+
+msgid ""
+"If enabled, 'Stop Running EPG-refresh' will not be displayed in main menu "
+"when refresh is running."
+msgstr ""
+"Если включено, то 'Остановить обновление EPG' будет показано в главном меню, "
+"если в это время обновление запущено."
+
+msgid ""
+"If enabled, show 'EPG-refresh now' in main menu if refresh now not running."
+msgstr ""
+"Если включено, то 'Обновить EPG сейчас' будет показано в главном меню, если "
+"в это время обновление не запущено."
+
+msgid ""
+"If the receiver currently isn't in standby, this is the duration which "
+"EPGRefresh will wait before retry."
+msgstr ""
+"Если ресивер не находится в режиме ожидания, это продолжительность времени, "
+"по окончании которого обновление EPG попробует повторить попытку обновления."
+
+msgid ""
+"If this is enabled, the plugin will wake up the receiver from deep standby "
+"if possible. Otherwise it needs to be switched on already."
+msgstr ""
+"Если эта опция включена, обновление EPG будет автоматически включать ресивер "
+"из режима глубокого ожидания."
+
+msgid "If you want to download from the internet russian ERG, put to yes."
+msgstr ""
+"Если вы хотите видеть в меню опцию загрузки русскоязычного ERG с интернета, "
+"установите значение да."
+
+msgid ""
+"If you want to refresh the EPG in background, you can choose the method "
+"which best suits your needs here, e.g. hidden, fake reocrding or regular "
+"Picture in Picture."
+msgstr ""
+"Если вы хотите обновлять EPG в фоновом режиме, вы можете выбрать метод, "
+"который наилучшим образом соответствует вашим потребностям. Варианты - в "
+"режиме ожидания, имитация записи, скрытая или стандартная функция из "
+"Картинка в Картинке."
+
+msgid "Inherit Services from AutoTimer"
+msgstr "Унаследовать сервисы из Автотаймера"
+
+msgid "Last refresh was %s"
+msgstr "Последнее обновление: %s"
+
+msgid "Load every (in hours)"
+msgstr "Загрузка каждые (в часах)"
+
+msgid "Main Picture"
+msgstr "Основной экран"
+
+msgid "Manual EPG"
+msgstr "Ручное EPG"
+
+msgid "Manual clear EPG"
+msgstr "Ручная очистка EPG"
+
+msgid "Manual load EPG"
+msgstr "Ручная загрузка EPG"
+
+msgid "Manual loading EPG from current cachefile."
+msgstr "Ручная загрузка EPG из текущего файла кеша."
+
+msgid "Manual reload EPG"
+msgstr "Ручная перезагрузка EPG"
+
+msgid "Manual restore EPG backup"
+msgstr "Ручное восстановление бекапа EPG"
+
+msgid "Manual restore EPG from backup cachefile and loading."
+msgstr "Ручное восстановление бекапа EPG и загрузка в память ресивера."
+
+msgid "Manual save EPG"
+msgstr "Ручное сохранение EPG"
+
+msgid "Manual saving EPG in current cachefile."
+msgstr "Ручное сохранение EPG в текущий файл кеша."
+
+msgid "Manual saving and loading EPG from current cachefile."
+msgstr "Ручное сохранение и загрузка EPG из  текущего файла кеша."
+
+msgid "Monday"
+msgstr "Понедельник"
+
+msgid "New"
+msgstr "Новый"
+
+msgid "Not found the mounted device for EPG file!"
+msgstr "Не найден смонтированный накопитель для файла данных EPG!"
+
+msgid "OK"
+msgstr "ОК"
+
+msgid "Options for manual clear current cachefile EPG."
+msgstr "Варианты ручной очистки текущего кеша данных EPG."
+
+msgid "PiP available now."
+msgstr "PiP теперь доступен."
+
+msgid "Picture in Picture"
+msgstr "Картинка в картинке"
+
+msgid "Picture in Picture (hidden)"
+msgstr "Картинка в картинке (скрытый режим)"
+
+msgid "Please don't use PiP meanwhile!"
+msgstr "Пожалуйста, не используйте PiP в это время!"
+
+msgid "Please wait..."
+msgstr "Пожалуйста подождите..."
+
+msgid "Press OK"
+msgstr "Нажмите ОК"
+
+msgid "Press OK to download EPG with http://linux-sat.tv."
+msgstr "Нажмите ОК для загрузки русскоязычного EPG с http://linux-sat.tv."
+
+msgid "Press button OK in order to open the settings menu."
+msgstr "Нажмите кнопку OK, если вы хотите открыть это меню настроек."
+
+msgid "Really close without saving settings?"
+msgstr "Действительно выйти, не сохраняя настройки?"
+
+msgid "Refresh EPG automatically"
+msgstr "Автоматическое обновление EPG"
+
+msgid "Refresh EPG using"
+msgstr "Вариант обновления EPG"
+
+msgid "Refresh now"
+msgstr "Обновить сейчас"
+
+msgid "Refresh-EPG / AutoZap"
+msgstr "Обновление-EPG / Авто переключение"
+
+msgid "Refreshing"
+msgstr "Обновлять"
+
+msgid "Reloading EPG Cache..."
+msgstr "Перезагрузка кеша EPG..."
+
+msgid "Return to TV viewing"
+msgstr "Возврат к просмотру ТВ"
+
+msgid "Run AutoTimer after refresh"
+msgstr "Запустить Автотаймер после обновления"
+
+msgid "Russian language"
+msgstr "Русский язык"
+
+msgid "Saturday"
+msgstr "Суббота"
+
+msgid "Save EPG after refresh"
+msgstr "Сохранять EPG после обновления"
+
+msgid "Save EPG in current cachefile after refresh is completed."
+msgstr "Сохранение EPG в текущий файл кеша после окончания обновления."
+
+msgid "Save every (in hours)"
+msgstr "Сохранять каждый (в часах)"
+
+msgid "Saving EPG Cache..."
+msgstr "Сохранен кеш EPG..."
+
+msgid "Select action after refresh:"
+msgstr "Выберите действие после обновления:"
+
+msgid "Select action:"
+msgstr "Выберите действие:"
+
+msgid "Select bouquet to refresh"
+msgstr "Выберите букет для обновления"
+
+msgid "Select channel to refresh"
+msgstr "Выберите канал для обновления"
+
+msgid "Select language for download:"
+msgstr "Выберите язык для загрузки:"
+
+msgid "Select menu to add services to the EPGRefresh."
+msgstr ""
+"Выберите меню, в котором бы хотели видеть - добавить сервис к обновлению EPG."
+
+msgid "Select mode the refresh for services/bouquets parental control."
+msgstr ""
+"Выберите режим для обновления сервисов/букетов защищенных родительским "
+"контролем."
+
+msgid "Select options"
+msgstr "Выберите действие"
+
+msgid ""
+"Select the day or days of the week for automatic refresh EPG. At least one "
+"day must be included."
+msgstr ""
+"Выберите день или несколько дней недели для автоматического обновления EPG. "
+"Хотя бы один день должен быть активирован."
+
+msgid "Select the file name EPG cache, if you do not like credit default name."
+msgstr ""
+"Измените имя файла кеша EPG, если вас не устраивает дефолтное название."
+
+msgid "Select the path to EPG cache,not recommended to use the internal flash."
+msgstr ""
+"Выберите директорию хранения кеша EPG, крайне не рекомендовано использовать "
+"внутреннюю флешь."
+
+msgid "Setup save / load EPG"
+msgstr "Настройки сохранения / загрузки EPG"
+
+msgid "Show \"AutoZap\" in extension menu"
+msgstr "Показать \"Авто переключение\" в меню дополнений"
+
+msgid "Show \"add to EPGRefresh\" in"
+msgstr "Показать \"добавить к обновлению EPG\" в"
+
+msgid "Show 'EPG-refresh now' in main menu"
+msgstr "Показать 'Обновить EPG сейчас' в главном меню"
+
+msgid "Show 'Stop Running EPG-refresh' in main menu"
+msgstr "Показать 'Остановить обновление EPG' в главном меню"
+
+msgid "Show download exUSSR EPG in list setup"
+msgstr "Показать загрузку exUSSR EPG в меню настроек"
+
+msgid "Show in extension menu"
+msgstr "Показать обновление EPG в меню дополнений"
+
+msgid "Show manual change EPG in main menu"
+msgstr "Показать ручные изменения EPG в главном меню"
+
+msgid "Show popup when refresh starts and ends"
+msgstr "Вывод сообщения при начале и окончании обновления"
+
+msgid "Shutdown after EPG refresh"
+msgstr "Глубокое ожидание после обновления EPG"
+
+msgid "Shutdown after EPG refresh enabled in setup..."
+msgstr "Выключение после обновления включено в настройках..."
+
+msgid "Size: "
+msgstr "Объем: "
+
+msgid "Skip protected Services"
+msgstr "Пропускать защищенные сервисы"
+
+msgid ""
+"Sorry, EPG was downloaded but not loaded!\n"
+"Maybe EPG file is corrupt!"
+msgstr ""
+"Извините, файл EPG был скачан но не загружен!\n"
+"Может быть файл EPG был поврежден и удален!"
+
+msgid "Sorry, the EPG download failed!"
+msgstr "Извините, ошибка скачивания EPG!"
+
+msgid "Stop Running EPG-refresh"
+msgstr "Остановить обновление EPG"
+
+msgid "Stop Running EPG-refresh?\n"
+msgstr "Остановить обновление EPG?\n"
+
+msgid "Sunday"
+msgstr "Воскресенье"
+
+msgid "The same functions are used in Menu -> System -> EPG settings!"
+msgstr "Такие же функции используются в Меню -> Система -> Настройки EPG!"
+
+msgid "The same functions are used in plugin EPGD!!"
+msgstr "Такие же функции используются в плагине EPGD!"
+
+msgid ""
+"This is the duration each service/channel will stay active during a refresh."
+msgstr ""
+"Продолжительность времени нахождения на канале до переключения на следующий, "
+"во время обновления."
+
+msgid ""
+"This might have been an automated bootup to refresh the EPG. For this to "
+"happen it is recommended to put the receiver to Standby.\n"
+"Do you want to do this now?"
+msgstr ""
+"Ресивер возможно был включен для автоматического обновления EPG. Для этого "
+"требуется перевод ресивера в режим ожидания.\n"
+"Вы хотите сделать это сейчас?"
+
+msgid ""
+"This option is not recommended to be used only in exceptional cases. Do not "
+"set too short period of time."
+msgstr ""
+"Этот параметр не рекомендуется использовать в стандартной настройке, только "
+"в исключительных случаях. Не выставляйте короткий период времени."
+
+msgid ""
+"This setting controls whether or not an informational message will be shown "
+"at start and completion of refresh."
+msgstr ""
+"Этот параметр определяет, будет ли показано информационное сообщение при "
+"начале и завершении обновления."
+
+msgid ""
+"This setting controls whether or not the refresh will be initiated even "
+"though the receiver is active (either not in standby or currently recording)."
+msgstr ""
+"Этот параметр определяет, будет ли обновление инициировано, даже если "
+"ресивер активен (либо не в режиме ожидания или идет  запись в текущее время)."
+
+msgid ""
+"This setting controls whether the receiver should be set to deep standby "
+"after refresh is completed."
+msgstr ""
+"Этот параметр определяет, будет ли ресивер переведен в режим глубокого "
+"ожидания, когда обновление будет завершено."
+
+msgid "Thursday"
+msgstr "Четверг"
+
+msgid "Timeout shutdown after refresh for SeriesPlugin (min)"
+msgstr "Таймаут выключения после обновления для SeriesPlugin (мин)"
+
+msgid "Tuesday"
+msgstr "Вторник"
+
+msgid "Ukrainian language"
+msgstr "Украинский язык"
+
+msgid ""
+"Unless this is enabled, EPGRefresh won't automatically run but needs to be "
+"explicitly started by the yellow button in this menu."
+msgstr ""
+"Если это включено, то обновление EPG начнет работать в автоматическом "
+"режиме, в противном случае есть ручное обновление на желтой кнопке в этом "
+"меню."
+
+msgid "Version"
+msgstr "Версия"
+
+msgid "Wake up from deep standby for EPG refresh"
+msgstr "Включать из глубокого ожидания для обновления EPG"
+
+msgid "Wednesday"
+msgstr "Среда"
+
+msgid ""
+"You may not use this settings!\n"
+"At least one day a week should be included!"
+msgstr ""
+"Вы не можете использовать эти настройки!\n"
+"Хотя бы один день должен быть активирован!"
+
+msgid "add service to EPGRefresh"
+msgstr "добавить сервис к обновлению EPG"
+
+msgid "add to EPGRefresh"
+msgstr "добавить к обновлению EPG"
+
+msgid "always"
+msgstr "всегда"
+
+msgid "channel selection"
+msgstr "селектор каналов"
+
+msgid "delete"
+msgstr "удалить"
+
+msgid "disable"
+msgstr "выключить"
+
+msgid "enable"
+msgstr "включить"
+
+msgid "event info"
+msgstr "меню событий"
+
+msgid "event info / channel selection"
+msgstr "меню событий / селектор каналов"
+
+msgid "exclusion background"
+msgstr "исключение для фонового сканирования"
+
+msgid "never"
+msgstr "никогда"
+
+msgid "no"
+msgstr "нет"
+
+msgid "nowhere"
+msgstr "нигде"
