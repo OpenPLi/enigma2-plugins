@@ -12,6 +12,7 @@ SUBDIRS = \
 	bitrateviewer \
 	bonjour \
 	cdinfo \
+	dreamexplorer \
 	dreamirc \
 	dreammediathek \
 	dvdbackup \

@@ -121,6 +121,11 @@ cdinfo/Makefile
 cdinfo/meta/Makefile
 cdinfo/src/Makefile
 
+dreamexplorer/Makefile
+dreamexplorer/meta/Makefile
+dreamexplorer/src/Makefile
+dreamexplorer/src/res/Makefile
+
 dreamirc/Makefile
 dreamirc/meta/Makefile
 dreamirc/src/Makefile
