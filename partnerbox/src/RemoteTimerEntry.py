@@ -433,6 +433,7 @@ def  RemoteTimercreateConfig(self):
 		pass
 	self.timerentry_service_ref = self.timer.service_ref
 	self.timerentry_service = ConfigSelection([servicename])
+	self.timerentry_vps_in_timerevent = ConfigSelection(default = "no", choices = [("no", _("No")), ("yes_safe", _("Yes (safe mode)")), ("yes", _("Yes"))])
 
 def RemoteTimerCreateSetup(self, widget):
 	self.list = []
@@ -467,6 +468,12 @@ def RemoteTimerCreateSetup(self, widget):
 		self.list.append(getConfigListEntry(_("After event"), self.timerentry_afterevent))
 	self[widget].list = self.list
 	self[widget].l.setList(self.list)
+	if config.plugins.Partnerbox.enablevpsintimerevent.value:
+		if isVPSplugin():
+			cfg = self.timerentry_vpsplugin_enabled
+		else:
+			cfg = self.timerentry_vps_in_timerevent
+		self.list.append(getConfigListEntry(_("Enable VPS"), cfg ))
 
 def RemoteTimerGo(self):
 	if int(self.timerentry_remote.value) == 0:
@@ -511,7 +518,7 @@ def RemoteTimerGo(self):
 			"deepstandby": AFTEREVENT.DEEPSTANDBY,
 			"standby": AFTEREVENT.STANDBY,
 			}.get(self.timerentry_afterevent.value, AFTEREVENT.NONE)
-			sCommand = "%s/web/timeradd?sRef=%s&begin=%d&end=%d&name=%s&description=%s&dirname=%s&eit=0&justplay=%d&afterevent=%s" % (http, service_ref,begin,end,name,descr,dirname,justplay,afterevent)
+			sCommand = "%s/web/timeradd?sRef=%s&begin=%d&end=%d&name=%s&description=%s&dirname=%s&eit=0&justplay=%d&afterevent=%s&vps_pbox=%s" % (http, service_ref,begin,end,name,descr,dirname,justplay,afterevent,vpsValue(self))
 			sendPartnerBoxWebCommand(sCommand, None,3, "root", str(self.entryguilist[int(self.timerentry_remote.value)][2].password.value)).addCallback(boundFunction(AddTimerE2Callback,self, self.session)).addErrback(boundFunction(AddTimerError,self,self.session))
 
 def AddTimerE2Callback(self, session, answer):
@@ -540,7 +547,21 @@ def AddTimerE1Callback(self, session, answer):
 			if partnerboxfunctions.CurrentIP == self.entryguilist[int(self.timerentry_remote.value)][2].ip.value:
 				SetPartnerboxTimerlist(self.entryguilist[int(self.timerentry_remote.value)][2])
 		self.keyCancel()
-		
+
 def AddTimerError(self, session, error):
 	session.open(MessageBox,str(error.getErrorMessage()),MessageBox.TYPE_INFO)
 
+def isVPSplugin():
+	try:
+		from Plugins.SystemPlugins.vps.Modifications import vps_already_registered
+		if vps_already_registered:
+			return True
+	except:
+		return False
+
+def vpsValue(self):
+	if isVPSplugin():
+		return self.timerentry_vpsplugin_enabled.value
+	if config.plugins.Partnerbox.enablevpsintimerevent.value:
+		return self.timerentry_vps_in_timerevent.value
+	return ""

@@ -473,3 +473,15 @@ msgstr "zapped"
 #: ../src/PartnerboxSetup.py:257
 msgid "Zap to service when streaming"
 msgstr "Zappa till kanal vid strömning"
+
+msgid "Enable VPS-Function in TimerEvent"
+msgstr ""
+
+msgid "Enable VPS"
+msgstr ""
+
+msgid "Yes (safe mode)"
+msgstr ""
+
+msgid "Yes"
+msgstr ""

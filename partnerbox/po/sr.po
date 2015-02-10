@@ -470,3 +470,15 @@ msgstr "zap"
 msgid "zapped"
 msgstr "prebačen"
 
+msgid "Enable VPS-Function in TimerEvent"
+msgstr ""
+
+msgid "Enable VPS"
+msgstr ""
+
+msgid "Yes (safe mode)"
+msgstr ""
+
+msgid "Yes"
+msgstr ""
+

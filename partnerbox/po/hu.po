@@ -479,3 +479,14 @@ msgstr "ugorva"
 msgid "Zap to service when streaming"
 msgstr "Ugrás a csatornára stream-eléskor"
 
+msgid "Enable VPS-Function in TimerEvent"
+msgstr ""
+
+msgid "Enable VPS"
+msgstr ""
+
+msgid "Yes (safe mode)"
+msgstr ""
+
+msgid "Yes"
+msgstr ""

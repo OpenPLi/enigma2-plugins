@@ -583,6 +583,18 @@ msgstr "Seznam programů/EPG"
 msgid "Zap to service when streaming"
 msgstr "Přepnout na program při streamování"
 
+msgid "Enable VPS-Function in TimerEvent"
+msgstr "Povolit VPS-funkci v Časovači"
+
+msgid "Enable VPS"
+msgstr "Povolit VPS"
+
+msgid "Yes (safe mode)"
+msgstr "Ano (bezpečný mód)"
+
+msgid "Yes"
+msgstr "Ano"
+
 #~ msgid "You have to restart Enigma2 to activate your new preferences!"
 #~ msgstr "Pro uplatnění změn musíte restartovat Enigma2!"
 
