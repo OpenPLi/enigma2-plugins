@@ -369,6 +369,14 @@ def RemoteTimernewConfig(self):
 	else:
 			if int(self.timerentry_remote.value) == 0:
 				baseTimerEntrynewConfig(self)
+
+	if isVPSplugin():
+		if self["config"].getCurrent() == self.timerVps_enabled_Entry:
+			if self.timerentry_vpsplugin_enabled.value == "no":
+				self.timerentry_vpsplugin_dontcheck_pdc = False
+
+			self.createSetup("config")
+			self["config"].setCurrentIndex(self["config"].getCurrentIndex() + 1)
 	
 def  RemoteTimercreateConfig(self):
 	if int(self.entryguilist[int(self.timerentry_remote.value)][2].enigma.value) == 0:
