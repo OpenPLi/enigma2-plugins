@@ -111,7 +111,7 @@ class EPGRefreshConfiguration(Screen, ConfigListScreen):
 				]
 		if SystemInfo.get("NumVideoDecoders", 1) > 1:
 			self.list.insert(3, getConfigListEntry(_("Refresh EPG using"), config.plugins.epgrefresh.adapter, _("If you want to refresh the EPG in background, you can choose the method which best suits your needs here, e.g. hidden, fake reocrding or regular Picture in Picture.")))
-		if config.ParentalControl.configured.value and config.ParentalControl.servicepinactive.value:
+		if config.ParentalControl.servicepinactive.value:
 			self.list.append(getConfigListEntry(_("Skip protected Services"), config.plugins.epgrefresh.skipProtectedServices, _("Select mode the refresh for services/bouquets parental control.")))
 		try:
 			# try to import autotimer module to check for its existence
