@@ -49,7 +49,7 @@ class EPGRefresh:
 	def isServiceProtected(self, service):
 		if not service:
 			return True
-		if not config.ParentalControl.configured.value or not config.ParentalControl.servicepinactive.value:
+		if not config.ParentalControl.servicepinactive.value:
 			return False
 		refstr = ':'.join(str(service).split(':')[:11])
 		return parentalControl.getProtectionLevel(refstr) != -1
