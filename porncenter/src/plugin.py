@@ -346,7 +346,7 @@ class PornCenterSub(Screen, ProtectedScreen):
 		self.onLayoutFinish.append(self.getEntries)
 
 	def isProtected(self):
-		return config.ParentalControl.setuppinactive.value and config.ParentalControl.configured.value
+		return config.ParentalControl.servicepinactive.value
 
 	def pinEntered(self, result):
 		if result is None:
