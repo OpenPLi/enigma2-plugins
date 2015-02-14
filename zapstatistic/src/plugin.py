@@ -483,7 +483,7 @@ class ZapStatisticScreen(Screen, ProtectedScreen):
 		self.updateLabels()
 
 	def isProtected(self):
-		return config.ParentalControl.setuppinactive.value
+		return config.ParentalControl.servicepinactive.value
 	
 	def pinEntered(self, result):
 		if result is None:
