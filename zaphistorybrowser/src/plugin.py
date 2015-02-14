@@ -47,7 +47,7 @@ config.plugins.ZapHistoryConfigurator.history_radio = ConfigSet(choices = [])
 def addToHistory(instance, ref):
 	if config.plugins.ZapHistoryConfigurator.enable_zap_history.value == "off":
 		return
-	if config.ParentalControl.configured.value and config.plugins.ZapHistoryConfigurator.enable_zap_history.value == "parental_lock":
+	if config.ParentalControl.servicepinactive.value and config.plugins.ZapHistoryConfigurator.enable_zap_history.value == "parental_lock":
 		if parentalControl.getProtectionLevel(ref.toCompareString()) != -1:
 			return
 	if instance.servicePath is not None:
@@ -258,7 +258,7 @@ class ZapHistoryBrowser(Screen, ProtectedScreen):
 			self.session.open(ZapHistoryConfigurator)
 
 	def isProtected(self):
-		return config.ParentalControl.setuppinactive.value and config.ParentalControl.configured.value
+		return config.ParentalControl.servicepinactive.value
 	
 	def pinEntered(self, result):
 		if result is None:
