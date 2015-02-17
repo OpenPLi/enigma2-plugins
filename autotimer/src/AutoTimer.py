@@ -678,6 +678,7 @@ class AutoTimer:
 				print("[AutoTimer] extdesc ratio %f - %s - %d - %s - %d" % (ratio, extdesc1, len(extdesc1), extdesc2, len(extdesc2)))
 				foundExt = (0.8 < ratio)
 			return foundShort and foundExt
+		return False
 
 	def checkSimilarityold(self, timer, name1, name2, shortdesc1, shortdesc2, extdesc1, extdesc2, force=False):
 		foundTitle = name1 == name2
