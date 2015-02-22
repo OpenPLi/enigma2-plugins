@@ -113,6 +113,11 @@ bitrateviewer/meta/Makefile
 bitrateviewer/src/Makefile
 bitrateviewer/src/bitratecalc/Makefile
 
+blindscan/src/Makefile
+blindscan/po/Makefile
+blindscan/Makefile
+blindscan/meta/Makefile
+
 bonjour/Makefile
 bonjour/meta/Makefile
 bonjour/src/Makefile
