@@ -70,6 +70,7 @@ SUBDIRS = \
 	svdrp \
 	tageditor \
 	trafficinfo \
+	transcodingsetup \
 	tvcharts \
 	unwetterinfo \
 	valixdcontrol \

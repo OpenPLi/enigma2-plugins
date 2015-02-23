@@ -1,0 +1,18 @@
+<default>
+	  <prerequisites>
+                    <tag type="System" />
+	  </prerequisites>
+          <info>
+                    <author>PLi Team</author>
+                    <name>TranscodingSetup</name>
+                    <packagename>enigma2-plugin-extensions-transcodingsetup</packagename>
+                    <shortdescription>Transcoding setup (default config)</shortdescription>
+                    <description>Use this plugin to configure default values for transcoding for
+									app's that don't support configuring transcoding and
+									for the OpenWebIf</description>
+          </info>
+
+	  <files type="package"> <!-- without version, without .ipk -->
+		<file type="package" name="enigma2-plugin-extensions-transcodingsetup" />
+	  </files>
+</default>

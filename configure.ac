@@ -451,6 +451,10 @@ trafficinfo/Makefile
 trafficinfo/meta/Makefile
 trafficinfo/src/Makefile
 
+transcodingsetup/Makefile
+transcodingsetup/src/Makefile
+transcodingsetup/meta/Makefile
+
 tvcharts/Makefile
 tvcharts/meta/Makefile
 tvcharts/src/Makefile
