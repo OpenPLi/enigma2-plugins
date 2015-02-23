@@ -6,6 +6,15 @@ import Components.Sources.StaticText
 import Components.ActionMap
 import Components.config
 
+Components.config.config.plugins.transcodingsetup = Components.config.ConfigSubsection()
+Components.config.config.plugins.transcodingsetup.port = Components.config.ConfigInteger(default = None, limits = (1024, 65535))
+Components.config.config.plugins.transcodingsetup.bitrate = Components.config.ConfigInteger(default = None, limits = (50000, 2000000))
+Components.config.config.plugins.transcodingsetup.resolution = Components.config.ConfigSelection(default = "480p", choices = [ ("720x480", "480p"), ("720x576", "576p"), ("1280x720", "720p") ])
+
+Components.config.config.plugins.transcodingsetup.framerate = Components.config.ConfigInteger(default = None)
+Components.config.config.plugins.transcodingsetup.aspectratio = Components.config.ConfigInteger(default = None)
+Components.config.config.plugins.transcodingsetup.interlaced = Components.config.ConfigInteger(default = None)
+
 class TranscodingSetup(Components.ConfigList.ConfigListScreen, Screens.Screen.Screen):
 	skin = 	"""
 		<screen position="center,center" size="500,114" title="TranscodingSetup">
@@ -80,16 +89,8 @@ class TranscodingSetup(Components.ConfigList.ConfigListScreen, Screens.Screen.Sc
 		if transcoding == "vuplus":
 			port = 8002
 		else:
-			if transcoding == "enigma2":
+			if transcoding == "enigma":
 				port = 8001
-
-		Components.config.config.plugins.transcodingsetup = Components.config.ConfigSubsection()
-		Components.config.config.plugins.transcodingsetup.port = Components.config.ConfigInteger(default = None)
-		Components.config.config.plugins.transcodingsetup.bitrate = Components.config.ConfigInteger(default = None)
-		Components.config.config.plugins.transcodingsetup.resolution = Components.config.ConfigText(default = "")
-		Components.config.config.plugins.transcodingsetup.framerate = Components.config.ConfigInteger(default = None)
-		Components.config.config.plugins.transcodingsetup.aspectratio = Components.config.ConfigInteger(default = None)
-		Components.config.config.plugins.transcodingsetup.interlaced = Components.config.ConfigInteger(default = None)
 
 		if Components.config.config.plugins.transcodingsetup.framerate.value is None:
 			Components.config.config.plugins.transcodingsetup.framerate.value = 30000
