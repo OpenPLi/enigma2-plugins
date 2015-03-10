@@ -19,7 +19,7 @@ from Tools.Directories import resolveFilename, SCOPE_PLUGINS, fileExists
 # Configuration
 from Components.config import config, configfile, getConfigListEntry, NoSave, ConfigSelection
 import os
-from enigma import eTimer, getDesktop
+from enigma import eTimer, getDesktop, eEPGCache
 import time
 
 HD = False
@@ -57,20 +57,6 @@ class EPGSaveLoadConfiguration(Screen, ConfigListScreen):
 		self.onChangedEntry = []
 		self.prev_lastepgcachepath = config.misc.epgcache_filename.value
 		self.current_epgpath = config.plugins.epgrefresh_extra.epgcachepath.value
-		hddchoises = []
-		if self.current_epgpath != '/etc/enigma2/':
-			hddchoises = [('/etc/enigma2/', '/etc/enigma2/')]
-		for p in harddiskmanager.getMountedPartitions():
-			if os.path.exists(p.mountpoint) and  os.access(p.mountpoint, os.F_OK|os.R_OK):
-				if p.mountpoint != '/':
-					d = os.path.normpath(p.mountpoint)
-					hddchoises.append((d + '/', p.mountpoint + '/'))
-		if self.current_epgpath and self.current_epgpath != '/' and (self.current_epgpath, self.current_epgpath) in hddchoises:
-			#hddchoises.append((self.current_epgpath, self.current_epgpath))
-			default_epg = self.current_epgpath
-		else:
-			default_epg = None
-		config.plugins.epgrefresh_extra.add_epgcachepath = NoSave(ConfigSelection(default = default_epg, choices = hddchoises))
 		self.list = [
 			getConfigListEntry(_("Manual save EPG"), config.plugins.epgrefresh_extra.manual_save, _("Manual saving EPG in current cachefile.")),
 			getConfigListEntry(_("Manual load EPG"), config.plugins.epgrefresh_extra.manual_load, _("Manual loading EPG from current cachefile.")),
@@ -81,7 +67,7 @@ class EPGSaveLoadConfiguration(Screen, ConfigListScreen):
 			getConfigListEntry(_("Save every (in hours)"), config.plugins.epgrefresh_extra.cachesavetimer, _("Do not set too short period of time.")),
 			getConfigListEntry(_("Automatic load EPG"), config.plugins.epgrefresh_extra.cacheloadsched, _("Automatic loading EPG from current cachefile after a specified time.")),
 			getConfigListEntry(_("Load every (in hours)"), config.plugins.epgrefresh_extra.cacheloadtimer, _("This option is not recommended to be used only in exceptional cases. Do not set too short period of time.")),
-			getConfigListEntry(_("EPG cache path"), config.plugins.epgrefresh_extra.add_epgcachepath, _("Select the path to EPG cache,not recommended to use the internal flash.")),
+			getConfigListEntry(_("EPG cache path"), config.plugins.epgrefresh_extra.epgcachepath, _("Press OK and select the path to EPG cache. Is not recommended to use the internal flash!")),
 			getConfigListEntry(_("EPG cache filename"), config.plugins.epgrefresh_extra.epgcachefilename, _("Select the file name EPG cache, if you do not like credit default name.")),
 			getConfigListEntry(_("Create backup when saving EPG"), config.plugins.epgrefresh_extra.save_backup, _("Create backup cachefile, after manual or automatic saving EPG.")),
 			getConfigListEntry(_("Auto restore EPG backup on boot"), config.plugins.epgrefresh_extra.autorestore_backup, _("Auto restore EPG from backup cachefile and loading on boot.")),
@@ -89,7 +75,7 @@ class EPGSaveLoadConfiguration(Screen, ConfigListScreen):
 			getConfigListEntry(_("Show download exUSSR EPG in list setup"), config.plugins.epgrefresh_extra.add_ruepg, _("If you want to download from the internet russian ERG, put to yes.")),
 			getConfigListEntry(_("Show \"AutoZap\" in extension menu"), config.plugins.epgrefresh_extra.show_autozap, _("Automatic switching of all the services in the current channel list after a specified time. Stop switch can only manually.")),
 			getConfigListEntry(_("Duration to stay on service (sec) for \"AutoZap\" "), config.plugins.epgrefresh_extra.timeout_autozap, _("This is the duration each service/channel will stay active during a refresh.")),
-                ]
+		]
 		if config.plugins.epgrefresh_extra.add_ruepg:
 			self.list.insert(3, getConfigListEntry(_("Download internet EPG from exUSSR"), config.plugins.epgrefresh_extra.load_ruepg, _("Press OK to download EPG with http://linux-sat.tv.")))
 
@@ -182,15 +168,26 @@ class EPGSaveLoadConfiguration(Screen, ConfigListScreen):
 				self.session.open(MessageBox, _("Backup file is not found!"), MessageBox.TYPE_INFO, timeout = 4)
 		if sel == config.plugins.epgrefresh_extra.load_ruepg:
 			self.pre_startDownload()
+		if sel == config.plugins.epgrefresh_extra.epgcachepath:
+			self.setEPGCachePath()
 		if sel == config.plugins.epgrefresh_extra.delete_backup:
 			self.deleteEPG()
+
+	def setEPGCachePath(self):
+		inhibitDirs = ["/autofs", "/bin", "/boot", "/dev", "/lib", "/proc", "/sbin", "/sys", "/tmp", "/usr"]
+		from Screens.LocationBox import LocationBox
+		txt = _("Input EPG Cache path")
+		self.session.openWithCallback(self.setEPGCachePathBack, LocationBox, text=txt, currDir=config.plugins.epgrefresh_extra.epgcachepath.value,
+				bookmarks=config.plugins.epgrefresh_extra.bookmarks, autoAdd=False, editDir=True, minFree=20, inhibitDirs=inhibitDirs)
+	def setEPGCachePathBack(self, res):
+		if res is not None:
+			config.plugins.epgrefresh_extra.epgcachepath.value = res
 
 	def deleteEPG(self):
 		menu = [(_("Clear only in memory (RAM) EPG"), "ram"),(_("Clear only epg.dat and epg.dat.backup"), "dat"),(_("Clear all EPG"), "all")]
 		def removeEPGAction(choice):
 			if choice is not None:
 				try:
-					from enigma import eEPGCache
 					epgcache = eEPGCache.getInstance()
 					if choice[1] == "ram":
 						if hasattr(epgcache, 'flushEPG'):
@@ -282,7 +279,6 @@ class EPGSaveLoadConfiguration(Screen, ConfigListScreen):
 
 	def setEpgSave(self, answer):
 		if answer:
-			from enigma import eEPGCache
 			epgcache = eEPGCache.getInstance()
 			epgcache.save()
 			self.updateDestination()
@@ -297,13 +293,11 @@ class EPGSaveLoadConfiguration(Screen, ConfigListScreen):
 
 	def setEpgLoad(self, answer):
 		if answer:
-			from enigma import eEPGCache
 			epgcache = eEPGCache.getInstance()
 			epgcache.load()
 
 	def setEpgReload(self, answer):
 		if answer:
-			from enigma import eEPGCache
 			epgcache = eEPGCache.getInstance()
 			epgcache.save()
 			epgcache = eEPGCache.getInstance()
@@ -356,7 +350,6 @@ class EPGSaveLoadConfiguration(Screen, ConfigListScreen):
 		config.misc.epgcache_filename.save()
 		configfile.save()
 		if self.prev_lastepgcachepath != config.misc.epgcache_filename.value:
-			from enigma import eEPGCache
 			eEPGCache.getInstance().setCacheFile(config.misc.epgcache_filename.value)
 			eEPGCache.getInstance().save()
 			self.updateDestination()
@@ -391,9 +384,7 @@ class EPGSaveLoadConfiguration(Screen, ConfigListScreen):
 				config.plugins.epgrefresh_extra.cachesavesched.value = False
 				config.plugins.epgrefresh_extra.cacheloadsched.value = False
 				return
-		if config.plugins.epgrefresh_extra.add_epgcachepath.value and config.plugins.epgrefresh_extra.add_epgcachepath.value != '/':
-			config.plugins.epgrefresh_extra.epgcachepath.value = config.plugins.epgrefresh_extra.add_epgcachepath.value
-			config.plugins.epgrefresh_extra.epgcachepath.save()
+
 		for x in self["config"].list:
 			x[1].save()
 		self.updateEpgCache()
@@ -517,20 +508,17 @@ class ManualEPGlist(Screen):
 
 	def manualsetEpgSave(self, answer):
 		if answer:
-			from enigma import eEPGCache
 			epgcache = eEPGCache.getInstance()
 			epgcache.save()
 			self.setBackup()
 
 	def manualsetEpgLoad(self, answer):
 		if answer:
-			from enigma import eEPGCache
 			epgcache = eEPGCache.getInstance()
 			epgcache.load()
 
 	def manualsetEpgReload(self, answer):
 		if answer:
-			from enigma import eEPGCache
 			epgcache = eEPGCache.getInstance()
 			epgcache.save()
 			epgcache = eEPGCache.getInstance()

@@ -25,8 +25,10 @@ from EPGRefresh import epgrefresh
 from EPGSaveLoadConfiguration import EPGSaveLoadConfiguration
 from Components.SystemInfo import SystemInfo
 from enigma import getDesktop
+from Screens.MessageBox import MessageBox
 
-VERSION = "1.5"
+
+VERSION = "1.6"
 
 weekdays = [
 	_("Monday"),
@@ -254,8 +256,6 @@ class EPGRefreshConfiguration(Screen, ConfigListScreen):
 		self.close(self.session)
 
 	def keyInfo(self):
-		from Screens.MessageBox import MessageBox
-
 		lastscan = config.plugins.epgrefresh.lastscan.value
 		if lastscan:
 			from Tools.FuzzyDate import FuzzyTime
@@ -271,8 +271,6 @@ class EPGRefreshConfiguration(Screen, ConfigListScreen):
 
 	def keyCancel(self):
 		if self["config"].isChanged():
-			from Screens.MessageBox import MessageBox
-
 			self.session.openWithCallback(
 				self.cancelConfirm,
 				MessageBox,
@@ -326,19 +324,18 @@ class EPGRefreshProfile(ConfigListScreen,Screen):
 		self.setTitle(_("Days Profile"))
 
 	def save(self):
-		if not config.plugins.epgrefresh_extra.day_refresh[0].value:
-			if not config.plugins.epgrefresh_extra.day_refresh[1].value:
-				if not config.plugins.epgrefresh_extra.day_refresh[2].value:
-					if not config.plugins.epgrefresh_extra.day_refresh[3].value:
-						if not config.plugins.epgrefresh_extra.day_refresh[4].value:
-							if not config.plugins.epgrefresh_extra.day_refresh[5].value:
-								if not config.plugins.epgrefresh_extra.day_refresh[6].value:
-									from Screens.MessageBox import MessageBox
-									self.session.open(MessageBox, _("You may not use this settings!\nAt least one day a week should be included!"), MessageBox.TYPE_INFO, timeout = 6)
-									return
-		for x in self["config"].list:
-			x[1].save()
+		day = False
+		for i in range(0, 7):
+			if config.plugins.epgrefresh_extra.day_refresh[i].value:
+				for x in self["config"].list:
+					x[1].save()
+				day = True
+				break
+		if not day:
+			self.session.open(MessageBox, _("You may not use this settings!\nAt least one day a week should be included!"), MessageBox.TYPE_INFO, timeout = 6)
+			return
 		self.close()
+
 
 	def cancel(self):
 		for x in self["config"].list:

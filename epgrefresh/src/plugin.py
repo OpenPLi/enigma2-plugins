@@ -5,7 +5,7 @@ from . import _
 
 # Config
 from Components.config import config, ConfigYesNo, ConfigNumber, ConfigSelectionNumber, \
-	ConfigSelection, ConfigSubsection, ConfigClock, ConfigText, ConfigInteger, ConfigSubDict, ConfigEnableDisable
+	ConfigSelection, ConfigSubsection, ConfigClock, ConfigText, ConfigInteger, ConfigSubDict, ConfigEnableDisable, ConfigDirectory, ConfigLocations
 from enigma import eServiceReference, iPlayableService, eTimer
 from Screens.Screen import Screen
 from Screens.MessageBox import MessageBox
@@ -101,7 +101,9 @@ config.plugins.epgrefresh_extra.manual_save = ConfigSelection(choices = [("1", _
 config.plugins.epgrefresh_extra.manual_load = ConfigSelection(choices = [("1", _("Press OK"))], default = "1")
 config.plugins.epgrefresh_extra.manual_reload = ConfigSelection(choices = [("1", _("Press OK"))], default = "1")
 config.plugins.epgrefresh_extra.main_menu = ConfigYesNo(default = False)
-config.plugins.epgrefresh_extra.epgcachepath = ConfigText(default = "/etc/enigma2/", fixed_size=False)
+
+config.plugins.epgrefresh_extra.epgcachepath = ConfigDirectory('/media/hdd/')
+config.plugins.epgrefresh_extra.bookmarks = ConfigLocations(default=['/media/hdd/'])
 config.plugins.epgrefresh_extra.epgcachefilename = ConfigText(default="epg", fixed_size=False)
 config.plugins.epgrefresh_extra.save_backup = ConfigYesNo(default = False)
 config.plugins.epgrefresh_extra.delete_backup = ConfigSelection(choices = [("1", _("Press OK"))], default = "1")
@@ -298,7 +300,7 @@ def WakeupDayOfWeek():
 		cur_day = -1
 
 	if cur_day >= 0:
-		for i in (1,2,3,4,5,6,7):
+		for i in range(1,8):
 			if config.plugins.epgrefresh_extra.day_refresh[(cur_day+i)%7].value:
 				return i
 	return start_day
