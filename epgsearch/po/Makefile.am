@@ -1,3 +1,3 @@
 PLUGIN = EPGSearch
-LANGS = de cs es fa fi it nl sl sr sv tr
+LANGS = cs de es fa fi it nl ru sl sr sv tr
 include $(top_srcdir)/Rules-po.mak
