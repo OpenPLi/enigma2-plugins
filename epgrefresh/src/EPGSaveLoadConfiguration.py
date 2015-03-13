@@ -72,13 +72,9 @@ class EPGSaveLoadConfiguration(Screen, ConfigListScreen):
 			getConfigListEntry(_("Create backup when saving EPG"), config.plugins.epgrefresh_extra.save_backup, _("Create backup cachefile, after manual or automatic saving EPG.")),
 			getConfigListEntry(_("Auto restore EPG backup on boot"), config.plugins.epgrefresh_extra.autorestore_backup, _("Auto restore EPG from backup cachefile and loading on boot.")),
 			getConfigListEntry(_("Show manual change EPG in main menu"), config.plugins.epgrefresh_extra.main_menu, _("Changes are needed to restart enigma2.")),
-			getConfigListEntry(_("Show download exUSSR EPG in list setup"), config.plugins.epgrefresh_extra.add_ruepg, _("If you want to download from the internet russian ERG, put to yes.")),
 			getConfigListEntry(_("Show \"AutoZap\" in extension menu"), config.plugins.epgrefresh_extra.show_autozap, _("Automatic switching of all the services in the current channel list after a specified time. Stop switch can only manually.")),
 			getConfigListEntry(_("Duration to stay on service (sec) for \"AutoZap\" "), config.plugins.epgrefresh_extra.timeout_autozap, _("This is the duration each service/channel will stay active during a refresh.")),
 		]
-		if config.plugins.epgrefresh_extra.add_ruepg:
-			self.list.insert(3, getConfigListEntry(_("Download internet EPG from exUSSR"), config.plugins.epgrefresh_extra.load_ruepg, _("Press OK to download EPG with http://linux-sat.tv.")))
-
 		ConfigListScreen.__init__(self, self.list, session = session, on_change = self.changed)
 
 		def selectionChanged():
@@ -166,8 +162,6 @@ class EPGSaveLoadConfiguration(Screen, ConfigListScreen):
 					pass
 			else:
 				self.session.open(MessageBox, _("Backup file is not found!"), MessageBox.TYPE_INFO, timeout = 4)
-		if sel == config.plugins.epgrefresh_extra.load_ruepg:
-			self.pre_startDownload()
 		if sel == config.plugins.epgrefresh_extra.epgcachepath:
 			self.setEPGCachePath()
 		if sel == config.plugins.epgrefresh_extra.delete_backup:
@@ -206,76 +200,6 @@ class EPGSaveLoadConfiguration(Screen, ConfigListScreen):
 				except:
 					pass
 		self.session.openWithCallback(removeEPGAction, ChoiceBox, title= _("Select action:"), list=menu)
-
-	def pre_startDownload(self):
-		choicelist = [
-		(_("Russian language"), self.startDownload),
-		(_("Ukrainian language"), self.start_ukr_Download),
-		]
-		dlg = self.session.openWithCallback(self.menuCallback,ChoiceBox,list = choicelist,title= _("Select language for download:"))
-		dlg.setTitle(_("EPG with Linux-Sat"))
-
-	def menuCallback(self, ret = None):
-		ret and ret[1]()
-
-	def startDownload(self):
-		down_lang = "ru"
-		if self.ismounted(config.plugins.epgrefresh_extra.epgcachepath.value) == 1:
-			down_file = config.misc.epgcache_filename.value + ".gz"
-			os.system("wget -q http://linux-sat.tv/epg/epg_%s.dat.gz -O %s" % (down_lang, down_file))
-			self.copiTimer = eTimer()
-			self.copiTimer.timeout.get().append(self.copiEpg)
-			self.copiTimer.start(4000, True)
-			self.session.open(MessageBox,(_("Please wait...")), MessageBox.TYPE_INFO, timeout = 4)
-		else:
-			self.session.open(MessageBox,(_("Not found the mounted device for EPG file!")), MessageBox.TYPE_INFO, timeout = 6 )
-
-	def start_ukr_Download(self):
-		down_lang = "ua"
-		if self.ismounted(config.plugins.epgrefresh_extra.epgcachepath.value) == 1:
-			down_file = config.misc.epgcache_filename.value + ".gz"
-			os.system("wget -q http://linux-sat.tv/epg/epg_%s.dat.gz -O %s" % (down_lang, down_file))
-			self.copiTimer = eTimer()
-			self.copiTimer.timeout.get().append(self.copiEpg)
-			self.copiTimer.start(4000, True)
-			self.session.open(MessageBox,(_("Please wait...")), MessageBox.TYPE_INFO, timeout = 4)
-		else:
-			self.session.open(MessageBox,(_("Not found the mounted device for EPG file!")), MessageBox.TYPE_INFO, timeout = 6 )
-
-	def copiEpg(self):
-		self.copiTimer.stop()
-		down_file = config.misc.epgcache_filename.value + ".gz"
-		if os.path.exists(down_file):
-			try:
-				if os.path.exists(config.misc.epgcache_filename.value):
-					os.system("rm -f %s" % (config.misc.epgcache_filename.value))
-				os.system("gzip -df %s" % (down_file))
-				time.sleep(3)
-				os.chmod("%s" % (config.misc.epgcache_filename.value), 0644)
-				from enigma import eEPGCache
-				epgcache = eEPGCache.getInstance()
-				epgcache.load()
-				if os.path.exists(config.misc.epgcache_filename.value):
-					os.system("rm -f %s" % (config.misc.epgcache_filename.value))
-				self.setEpgSave(True)
-				if os.path.exists(config.misc.epgcache_filename.value):
-					self.session.open(MessageBox,(_("EPG is loaded!")), MessageBox.TYPE_INFO, timeout = 5 )
-				else:
-					self.session.open(MessageBox,(_("Sorry, EPG was downloaded but not loaded!\nMaybe EPG file is corrupt!")), MessageBox.TYPE_INFO, timeout = 5 )
-				self.updateDestination()
-			except:
-				self.session.open(MessageBox,(_("Sorry, the EPG download failed!")), MessageBox.TYPE_INFO, timeout = 5 )
-		else:
-			self.session.open(MessageBox,(_("Sorry, the EPG download failed!")), MessageBox.TYPE_INFO, timeout = 5 )
-
-	def ismounted(self, what):
-		try:
-			for line in open("/proc/mounts"):
-				if line.find(what[:-1]) > -1:
-					return 1
-		except:
-			return 0
-		return 0
 
 	def setEpgSave(self, answer):
 		if answer:
@@ -420,8 +344,6 @@ class ManualEPGlist(Screen):
 		list.append(_("Manual save EPG"))
 		list.append(_("Manual load EPG"))
 		list.append(_("Manual reload EPG"))
-		if config.plugins.epgrefresh_extra.add_ruepg.value:
-			list.append(_("Download EPG from exUSSR"))
 		list.append(_("Configuration..."))
 		self["list"].setList(list)
 
@@ -435,76 +357,6 @@ class ManualEPGlist(Screen):
 			self.session.openWithCallback(self.manualsetEpgReload, MessageBox,_("Are you sure you want to save and load the EPG data from:\n") + config.misc.epgcache_filename.value, MessageBox.TYPE_YESNO)
 		if sel == _("Configuration..."):
 			self.session.open(EPGSaveLoadConfiguration)
-		if sel == _("Download EPG from exUSSR"):
-			self.pre_startDownload()
-
-	def pre_startDownload(self):
-		choicelist = [
-		(_("Russian language"), self.startDownload),
-		(_("Ukrainian language"), self.start_ukr_Download),
-		]
-		dlg = self.session.openWithCallback(self.menuCallback,ChoiceBox,list = choicelist,title= _("Select language for download:"))
-		dlg.setTitle(_("EPG with Linux-Sat"))
-
-	def menuCallback(self, ret = None):
-		ret and ret[1]()
-
-	def startDownload(self):
-		down_lang = "ru"
-		if self.ismounted(config.plugins.epgrefresh_extra.epgcachepath.value) == 1:
-			down_file = config.misc.epgcache_filename.value + ".gz"
-			os.system("wget -q http://linux-sat.tv/epg/epg_%s.dat.gz -O %s" % (down_lang, down_file))
-			self.copiTimer = eTimer()
-			self.copiTimer.timeout.get().append(self.copiEpg)
-			self.copiTimer.start(4000, True)
-			self.session.open(MessageBox,(_("Please wait...")), MessageBox.TYPE_INFO, timeout = 4)
-		else:
-			self.session.open(MessageBox,(_("Not found the mounted device for EPG file!")), MessageBox.TYPE_INFO, timeout = 6 )
-
-	def start_ukr_Download(self):
-		down_lang = "ua"
-		if self.ismounted(config.plugins.epgrefresh_extra.epgcachepath.value) == 1:
-			down_file = config.misc.epgcache_filename.value + ".gz"
-			os.system("wget -q http://linux-sat.tv/epg/epg_%s.dat.gz -O %s" % (down_lang, down_file))
-			self.copiTimer = eTimer()
-			self.copiTimer.timeout.get().append(self.copiEpg)
-			self.copiTimer.start(4000, True)
-			self.session.open(MessageBox,(_("Please wait...")), MessageBox.TYPE_INFO, timeout = 4)
-		else:
-			self.session.open(MessageBox,(_("Not found the mounted device for EPG file!")), MessageBox.TYPE_INFO, timeout = 6 )
-
-	def copiEpg(self):
-		self.copiTimer.stop()
-		down_file = config.misc.epgcache_filename.value + ".gz"
-		if os.path.exists(down_file):
-			try:
-				if os.path.exists(config.misc.epgcache_filename.value):
-					os.system("rm -f %s" % (config.misc.epgcache_filename.value))
-				os.system("gzip -df %s" % (down_file))
-				time.sleep(3)
-				os.chmod("%s" % (config.misc.epgcache_filename.value), 0644)
-				from enigma import eEPGCache
-				epgcache = eEPGCache.getInstance()
-				epgcache.load()
-				if os.path.exists(config.misc.epgcache_filename.value):
-					os.system("rm -f %s" % (config.misc.epgcache_filename.value))
-				self.manualsetEpgSave(True)
-				if os.path.exists(config.misc.epgcache_filename.value):
-					self.session.open(MessageBox,(_("EPG is loaded!")), MessageBox.TYPE_INFO, timeout = 5 )
-				else:
-					self.session.open(MessageBox,(_("Sorry, EPG was downloaded but not loaded!\nMaybe EPG file is corrupt!")), MessageBox.TYPE_INFO, timeout = 5 )
-			except:
-				self.session.open(MessageBox,(_("Sorry, the EPG download failed!")), MessageBox.TYPE_INFO, timeout = 5 )
-		else:
-			self.session.open(MessageBox,(_("Sorry, the EPG download failed!")), MessageBox.TYPE_INFO, timeout = 5 )
-
-	def ismounted(self, what):
-		try:
-			for line in open("/proc/mounts"):
-				if line.find(what[:-1]) > -1:
-					return 1
-		except:
-			return 0
 
 	def manualsetEpgSave(self, answer):
 		if answer:
