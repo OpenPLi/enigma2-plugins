@@ -1,0 +1,258 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: tuxbox-enigma 0.0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-01-28 16:39+0100\n"
+"PO-Revision-Date: 2014-03-31 18:48+0200\n"
+"Last-Translator: \n"
+"Language-Team: none\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: iso-8859-15\n"
+"Language: et_EE\n"
+
+msgid ""
+"A mount entry with this name already exists!\n"
+"Update existing entry and continue?\n"
+msgstr ""
+"Sellise nimega ühenduspunkt on juba olemas!\n"
+"Muuda olemasolev ja jätka?\n"
+
+msgid "Active"
+msgstr "Aktiivne"
+
+msgid ""
+"Active/\n"
+"Inactive"
+msgstr ""
+"Aktiivne/\n"
+"Välja lülitatud"
+
+msgid "Add a new NFS or CIFS mount point to your Dreambox."
+msgstr "Lisa uus NFS või CIFS haakepunkt oma tuunerile.."
+
+msgid "Add new network mount point"
+msgstr "Lisa uus võrgu haakepunkt"
+
+msgid ""
+"Are you sure you want to save this network mount?\n"
+"\n"
+msgstr ""
+"Soovid kindlasti salvestada selle võrgukoha?\n"
+"\n"
+
+msgid "Attempt to mount shares again"
+msgstr "Proovi võrgukohad uuesti haakida"
+
+msgid "Attempt to recover lost mounts (in background)"
+msgstr "Üritame taastada kaotatud haaked (taustal). "
+
+msgid "Browse network neighbourhood"
+msgstr "Otsi võrgunaabreid"
+
+msgid "CIFS share"
+msgstr "CIFS võrgukoht"
+
+msgid "Cancel"
+msgstr "Tühista"
+
+msgid "Change hostname"
+msgstr "Muuda hosti nime"
+
+msgid "Change the hostname of your Dreambox."
+msgstr "Muuda oma vastuvõtja hosti nime."
+
+msgid "Close"
+msgstr "Sulge"
+
+msgid "Delete"
+msgstr "Kustuta"
+
+msgid "Delete mount"
+msgstr "Kustuta haage"
+
+msgid "Dir:"
+msgstr "Kaust:"
+
+msgid "Do you want to enter a username and password for this host?\n"
+msgstr "Kas soovid seada kasutajanime ja salasõna sellele seadmele?\n"
+
+msgid "Enter IP to scan..."
+msgstr "Sisesta IP otsinguks ..."
+
+msgid "Enter new hostname for your Dreambox"
+msgstr "Sisesta uus nimi oma vastuvõtjale"
+
+msgid "Enter options:"
+msgstr "Sisesta valikud:"
+
+msgid "Enter password:"
+msgstr "Sisesta salasõna:"
+
+msgid "Enter share directory:"
+msgstr "Sisesta võrgukoha kaust:"
+
+msgid "Enter share name:"
+msgstr "Nimeta võrgukoht:"
+
+msgid "Enter user and password for host: "
+msgstr "Sisesta kasutajanimi ja salasõnal hostile: "
+
+msgid "Enter username:"
+msgstr "Sisesta kasutajanimi:"
+
+msgid "Expert"
+msgstr "Ekspert"
+
+msgid "Finished restarting your network"
+msgstr "Võrgu taaskäivitus on tehtud"
+
+msgid "IP Address"
+msgstr "IP aadress"
+
+msgid "IP:"
+msgstr "IP:"
+
+msgid "Local share name"
+msgstr "Kohaliku võrgukoha nimi"
+
+msgid "Manage network shares"
+msgstr "Halda võrgukohti"
+
+msgid "Manage your network shares..."
+msgstr "Halda oma võrgukohti..."
+
+msgid "Mount again"
+msgstr "Haagi uuesti"
+
+msgid "Mount informations"
+msgstr "Haake info"
+
+msgid "Mount options"
+msgstr "Haake seaded"
+
+msgid "Mount type"
+msgstr "Haake tüüp"
+
+msgid "MountManager"
+msgstr "Haakehaldur"
+
+msgid ""
+"Mounted/\n"
+"Unmounted"
+msgstr ""
+"Haagitud/\n"
+"Lahtihaagitud"
+
+msgid "Mountpoints management"
+msgstr "Haakepunktide haldamine"
+
+msgid "Mounts editor"
+msgstr "Haake muutja"
+
+msgid "Mounts management"
+msgstr "Haldur"
+
+msgid "NFS share"
+msgstr "NFS võrgukoht"
+
+msgid "NetworkBrowser"
+msgstr "Võrgulehitseja"
+
+msgid "No network devices found!"
+msgstr "Võrguseadmeid ei leitud!"
+
+msgid "Password"
+msgstr "Salasõna"
+
+msgid "Please wait for activation of your network mount..."
+msgstr "Palun oota oma võrguühenduse aktiveerimist..."
+
+msgid "Please wait while removing your network mount..."
+msgstr "Palun oota oma võrguühenduse kõrvaldamist..."
+
+msgid "Please wait while updating your network mount..."
+msgstr "Palun oota oma võrguühenduse uuendamist..."
+
+msgid "Please wait while your network is restarting..."
+msgstr "Palun oota kuni võrk taaskäivitub ..."
+
+msgid "Press OK to activate the settings."
+msgstr "Seadete aktiveerimiseks vajuta OK."
+
+msgid "Press OK to collapse this host"
+msgstr "Selle serveri eemaldamiseks vajuta OK"
+
+msgid "Press OK to edit selected settings."
+msgstr "Vajuta OK valitud seade muutmiseks."
+
+msgid "Press OK to edit the settings."
+msgstr "Seadete muutmiseks vajuta OK"
+
+msgid "Press OK to expand this host"
+msgstr "Selle serveri lisamiseks vajuta OK"
+
+msgid "Press OK to mount this share!"
+msgstr "Vajuta OK võrgukoha haakimiseks!"
+
+msgid "Press OK to mount!"
+msgstr "Vajuta OK haakimiseks!"
+
+msgid "Press OK to save settings."
+msgstr "Vajuta OK seadete salvestamiseks."
+
+msgid "Press OK to select."
+msgstr "Vajuta OK valikuks."
+
+msgid "Rescan"
+msgstr "Otsi uuesti"
+
+msgid "Scan NFS share"
+msgstr "Otsi NFS võrgukohti"
+
+msgid "Scan range"
+msgstr "Otsi piirkonda"
+
+msgid "Search for network shares"
+msgstr "Otsi võrgukohti"
+
+msgid "Search for network shares..."
+msgstr "Otsi võrgukohti..."
+
+msgid "Searching your network. Please wait..."
+msgstr "Otsin võrku. Palun oota ..."
+
+msgid "Server IP"
+msgstr "Serveri IP"
+
+msgid "Server share"
+msgstr "Serveri võrgukoht"
+
+msgid "User management"
+msgstr "Kasutaja haldamine"
+
+msgid "Usermanager"
+msgstr "Kasutajahaldur"
+
+msgid "Username"
+msgstr "Kasutajatunnus"
+
+msgid "View, edit or delete mountpoints on your Dreambox."
+msgstr "Vaata, muuda või kustuta vastuvõtja haakepunkte."
+
+msgid "View, edit or delete usernames and passwords for your network."
+msgstr "Vaata, muuda või kustuta oma võrgu kasutajanimesid ja salasõnu."
+
+msgid "Your network mount has been activated."
+msgstr "Sinu võrgu haage on aktiveeritud."
+
+msgid "Your network mount has been removed."
+msgstr "Sinu võrgu haage on kustutatud."
+
+msgid "Your network mount has been updated."
+msgstr "Sinu võrgu haakepunkt on uuendatud."
+
+msgid "use as HDD replacement"
+msgstr "Kasuta HDD asenduseks"
