@@ -1,0 +1,63 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Enigma 2 MovieRetitle Plugin\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-10-14 18:35+0200\n"
+"PO-Revision-Date: 2015-04-06 18:51+0200\n"
+"Last-Translator: Moritz Venn <moritz.venn@freaque.net>\n"
+"Language-Team: none\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: et\n"
+"X-Generator: Poedit 1.7.5\n"
+
+msgid "Cancel"
+msgstr "Tühista"
+
+msgid "Choose target folder"
+msgstr "Vali sihtpunkti kaust"
+
+msgid "Description"
+msgstr "Kirjeldus"
+
+#, python-format
+msgid "Failed to move the movie %s to %s in the background"
+msgstr "Filmi %s liigutamine %s taustal nurjus"
+
+msgid "Filename"
+msgstr "Failinimi"
+
+msgid "Location"
+msgstr "Asukoht"
+
+msgid "Name and Description Input"
+msgstr "Nime ja kirjelduse sisestamine"
+
+msgid "OK"
+msgstr "OK"
+
+#, python-format
+msgid "Successfully moved the movie %s"
+msgstr "Film %s on edukalt ümber paigutatud"
+
+#, python-format
+msgid ""
+"Target file %s.ts already exist.\n"
+"Do you want to replace it?"
+msgstr ""
+"Sihtfail %s.ts on juba olemas.\n"
+" Soovid seda asendada?"
+
+#, python-format
+msgid "The movie is moved in the background from %s to %s."
+msgstr "Film liigutatakse %s taustal sihtpunkti %s."
+
+msgid "The target directory is not found. The file is not renamed."
+msgstr "Ei leia sihtkausta. Fail on ümber nimetamata."
+
+msgid "Title"
+msgstr "Nimetus"
+
+msgid "change name..."
+msgstr "Nime vahetus..."
