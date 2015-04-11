@@ -1,0 +1,173 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: MovieCut\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-04-08 20:54+0200\n"
+"PO-Revision-Date: 2015-04-06 18:52+0200\n"
+"Last-Translator: \n"
+"Language: et\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language-Team: \n"
+"X-Generator: Poedit 1.7.5\n"
+
+#: plugin.py:23
+msgid "Execute cuts..."
+msgstr "Teosta lõiked"
+
+#: plugin.py:37
+msgid "Don't cut"
+msgstr "Ära lõika"
+
+#: plugin.py:38
+msgid "Replace the original movie with the cut movie"
+msgstr "Asenda algne film lõigatud filmiga"
+
+#: plugin.py:39
+msgid "Place the cut movie in a new file ending with \" cut\""
+msgstr "Paiguta lõigatud film uude faili nimelõpuga \" cut\""
+
+#: plugin.py:40
+msgid "Advanced cut specification..."
+msgstr "Lõigete lisaseadistused..."
+
+#: plugin.py:42
+#, python-format
+msgid "How would you like to cut \"%s\"?"
+msgstr "Kuidas soovid lõigata \"%s\"?"
+
+#: plugin.py:86
+msgid "OK"
+msgstr "OK"
+
+#: plugin.py:87
+msgid "Cancel"
+msgstr "Tühista"
+
+#: plugin.py:95
+msgid "No"
+msgstr "Ei"
+
+#: plugin.py:95
+msgid "Yes"
+msgstr "Jah"
+
+#: plugin.py:103
+msgid "Cutlist"
+msgstr "Lõikenimekiri"
+
+#: plugin.py:103
+msgid "Manual specification"
+msgstr "Käsispetsifikatsioon"
+
+#: plugin.py:117
+msgid "Replace original:"
+msgstr "Asenda originaal:"
+
+#: plugin.py:118
+msgid "New filename:"
+msgstr "Uus failinimi:"
+
+#: plugin.py:119
+msgid "New title:"
+msgstr "Uus pealkiri:"
+
+#: plugin.py:120
+msgid "New description:"
+msgstr "Uus kirjeldus:"
+
+#: plugin.py:121
+msgid "New location:"
+msgstr "Uus asukoht:"
+
+#: plugin.py:122
+msgid "Cut source:"
+msgstr "Lõike allikas:"
+
+#: plugin.py:123
+msgid "Cuts (an IN OUT IN OUT ... sequence of hour:min:sec)"
+msgstr "Lõiked (IN OUT IN OUT ... järjestus h:min:sec)"
+
+#: plugin.py:130
+msgid "Cut Parameter Input"
+msgstr "Lõike määrangu sisestus"
+
+#: plugin.py:178
+msgid "Choose target folder"
+msgstr "Vali sihtpunkti kaust"
+
+#: plugin.py:245
+#, python-format
+msgid "The movie \"%s\" is successfully cut"
+msgstr "Film \"%s\" on edukalt lõigatud"
+
+#: plugin.py:246 plugin.py:247 plugin.py:248 plugin.py:249 plugin.py:250
+#: plugin.py:251 plugin.py:252 plugin.py:253 plugin.py:254 plugin.py:255
+#, python-format
+msgid "Cutting failed for movie \"%s\""
+msgstr "Filmi \"%s\" lõikamine ebaõnnestus"
+
+#: plugin.py:246
+msgid "Bad arguments"
+msgstr "Kõlbmatud määrangud"
+
+#: plugin.py:247
+msgid "Couldn't open input .ts file"
+msgstr "Ei saa avada sisend .ts faili"
+
+#: plugin.py:248
+msgid "Couldn't open input .cuts file"
+msgstr "Ei saa avada sisend .cuts faili"
+
+#: plugin.py:249
+msgid "Couldn't open input .ap file"
+msgstr "Ei saa avada sisend .ap faili"
+
+#: plugin.py:250
+msgid "Couldn't open output .ts file"
+msgstr "Ei saa avada väljund .ts faili"
+
+#: plugin.py:251
+msgid "Couldn't open output .cuts file"
+msgstr "Ei saa avada väljund .cuts faili"
+
+#: plugin.py:252
+msgid "Couldn't open output .ap file"
+msgstr "Ei saa avada väljund .ap faili"
+
+#: plugin.py:253
+msgid "Empty .ap file"
+msgstr "Tühi .ap fail"
+
+#: plugin.py:254
+msgid "No cuts specified"
+msgstr "Lõikeid ei ole määratud"
+
+#: plugin.py:255
+msgid "Read/write error (disk full?)"
+msgstr "Lugemise/kirjutamise viga (Kõvaketas täis?)"
+
+#: plugin.py:256
+#, python-format
+msgid "Cutting was aborted for movie \"%s\""
+msgstr "Filmi \"%s\" lõikamine katkestati"
+
+#: plugin.py:275
+#, python-format
+msgid "The movie \"%s\" is cut in the background."
+msgstr "Film \"%s\" lõigatakse taustal."
+
+#: plugin.py:277
+#, python-format
+msgid ""
+"Another movie is currently cut.\n"
+"The movie \"%s\" will be cut in the background after it."
+msgstr ""
+"Käib teise filmi lõikamine.\n"
+"Film \"%s\" lõigatakse taustal pärast selle valmimist."
