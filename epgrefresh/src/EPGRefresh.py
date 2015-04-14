@@ -213,8 +213,8 @@ class EPGRefresh:
 			for service in unsortedServices:
 				sortedServices.append(service[1])
 			return sortedServices
-		scanServices = sortServices(scanServices)
 		self.addServices(additionalServices, scanServices, channelIdList)
+		scanServices = sortServices(scanServices)
 		del additionalServices[:]
 		return scanServices
 
