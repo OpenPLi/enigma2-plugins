@@ -1,0 +1,243 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: AudioSync\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-12-18 02:07+0100\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Pr2 <dummy@dummy.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Basepath: D:\\Dreambox\\Eclipse\\ac3lipsync\\\n"
+"X-Generator: Poedit 1.7.6\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Language: fr\n"
+"X-Poedit-SearchPath-0: src\n"
+
+#: src/AC3main.py:57
+msgid "Service delay"
+msgstr "Délai service"
+
+#: src/AC3main.py:58
+msgid "Global delay"
+msgstr "Délai global"
+
+#: src/AC3main.py:62 src/AC3main.py:146 src/AC3main.py:236 src/AC3main.py:240
+#: src/AC3main.py:241
+#, python-format
+msgid "%i ms"
+msgstr "%i ms"
+
+#: src/AC3main.py:65
+msgid "Channel audio:"
+msgstr "Canal audio:"
+
+#: src/AC3main.py:70 src/AC3setup.py:63
+msgid "Cancel"
+msgstr "Annuler"
+
+#: src/AC3main.py:71
+msgid "OK"
+msgstr "OK"
+
+#: src/AC3main.py:72
+msgid "Switch audio"
+msgstr "Basculer audio"
+
+#: src/AC3main.py:73
+msgid "Save to key"
+msgstr "Sauv. s/touche"
+
+#: src/AC3main.py:78
+msgid "Open plugin menu"
+msgstr "Ouvrir le menu plugin"
+
+#: src/AC3main.py:79 src/AC3main.py:86
+msgid "Save values and close plugin"
+msgstr "Sauvegarder les valeurs et fermer le plugin"
+
+#: src/AC3main.py:80 src/AC3main.py:85
+msgid "Discard changes and close plugin"
+msgstr "Annuler les changements et fermer le plugin"
+
+#: src/AC3main.py:81 src/AC3main.py:82
+msgid "Change active delay"
+msgstr "Modifier le délai actif"
+
+#: src/AC3main.py:83
+msgid "Increase delay"
+msgstr "Augmenter le délai"
+
+#: src/AC3main.py:84
+msgid "Decrease delay"
+msgstr "Diminuer le délai"
+
+#: src/AC3main.py:87
+msgid "Select channel audio"
+msgstr "Choisir le canal audio"
+
+#: src/AC3main.py:88
+msgid "Save current delay to key"
+msgstr "Sauvegarder le délai actuel sur la touche"
+
+#: src/AC3main.py:89 src/AC3main.py:91 src/AC3main.py:93
+#, python-format
+msgid "Decrease delay by %i ms (can be set)"
+msgstr "Diminuer le délai par %i ms (peut être défini)"
+
+#: src/AC3main.py:90 src/AC3main.py:92 src/AC3main.py:94
+#, python-format
+msgid "Increase delay by %i ms (can be set)"
+msgstr "Augmenter le délai par %i ms (peut être défini)"
+
+#: src/AC3main.py:95 src/AC3main.py:96 src/AC3main.py:97 src/AC3main.py:98
+#, python-format
+msgid "Set delay to %i ms (can be set)"
+msgstr "Définir le délai à %i ms (peut être défini)"
+
+#: src/AC3main.py:211
+msgid "Move plugin screen"
+msgstr "Déplacer l'écran du plugin"
+
+#: src/AC3main.py:214
+msgid "Menu"
+msgstr "Menu"
+
+#: src/AC3main.py:221 src/AC3main.py:282
+msgid "Invalid selection"
+msgstr "Sélection non valide"
+
+#: src/AC3main.py:257
+#, python-format
+msgid "Select the key you want to set to %i ms"
+msgstr "Choisir la touche sur laquelle vous-voulez définir à %i ms"
+
+#: src/AC3main.py:263
+#, python-format
+msgid "Key %(key)s (current value: %(value)i ms)"
+msgstr "Touche %(key)s (valeur actuelle: %(value)i ms)"
+
+#: src/AC3main.py:268
+msgid "Setting key canceled"
+msgstr "Définition des touches annulé"
+
+#: src/AC3main.py:280
+#, python-format
+msgid "Key %(Key)s successfully set to %(delay)i ms"
+msgstr "Touche %(Key)s définir à %(delay)i ms avec succès"
+
+#: src/AC3setup.py:42
+msgid "Outer Bound (+/-)"
+msgstr "Limite maximale du décalage autorisé (+/-)"
+
+#: src/AC3setup.py:43
+msgid "Step in ms for arrow keys"
+msgstr "Pas en ms pour les flèches"
+
+#: src/AC3setup.py:44
+msgid "Wait time in ms before activation:"
+msgstr "Temps d'attente en ms avant activation"
+
+#: src/AC3setup.py:45 src/AC3setup.py:46 src/AC3setup.py:47
+#, python-format
+msgid "Step in ms for keys '%s'"
+msgstr "Pas en ms pour les touches '%s'"
+
+#: src/AC3setup.py:48 src/AC3setup.py:49 src/AC3setup.py:50
+#, python-format
+msgid "Step in ms for key %i"
+msgstr "Pas en ms pour la touche %i"
+
+#: src/AC3setup.py:60
+#, python-format
+msgid "Plugin: %(plugin)s , Version: %(version)s"
+msgstr "Plugin: %(plugin)s . Version: %(version)s"
+
+#: src/AC3setup.py:64
+msgid "Save"
+msgstr "Sauvegarder"
+
+#: src/AC3setup.py:65
+msgid " "
+msgstr " "
+
+#: src/MovableScreen.py:17 src/MovableScreen.py:24
+msgid "Save values and close screen"
+msgstr "Sauvergarder les valeurs et fermer l'écran"
+
+#: src/MovableScreen.py:18 src/MovableScreen.py:23
+msgid "Discard changes and close screen"
+msgstr "Annuler les changements et fermer l'écran"
+
+#: src/MovableScreen.py:19
+msgid "Move screen to the left"
+msgstr "Déplacer l'écran vers la gauche"
+
+#: src/MovableScreen.py:20
+msgid "Move screen to the right"
+msgstr "Déplacer l'écran vers la droite"
+
+#: src/MovableScreen.py:21
+msgid "Move screen up"
+msgstr "Déplacer l'écran vers le haut"
+
+#: src/MovableScreen.py:22
+msgid "Move screen down"
+msgstr "Déplacer l'écran vers le bas"
+
+#: src/MovableScreen.py:25
+msgid "Move screen to the upper left corner"
+msgstr "Déplacer l'écran dans le coin supérieur gauche"
+
+#: src/MovableScreen.py:26
+msgid "Center screen at the upper border"
+msgstr "Centrer l'écran sur le bord supérieur"
+
+#: src/MovableScreen.py:27
+msgid "Move screen to the upper right corner"
+msgstr "Déplacer l'écran dans le coin supérieur droit"
+
+#: src/MovableScreen.py:28
+msgid "Move screen to the middle of the left border"
+msgstr "Déplacer l'écran au milieu du bord gauche"
+
+#: src/MovableScreen.py:29
+msgid "Move screen to the center of your TV"
+msgstr "Déplacer l'écran au centre de l'écran"
+
+#: src/MovableScreen.py:30
+msgid "Move screen to the middle of the right border"
+msgstr "Déplacer l'écran au milieu du bord droit"
+
+#: src/MovableScreen.py:31
+msgid "Move screen to the lower left corner"
+msgstr "Déplacer l'écran dans le coin inférieure gauche"
+
+#: src/MovableScreen.py:32
+msgid "Center screen at the lower border"
+msgstr "Centrer l'écran sur le bord inférieur"
+
+#: src/MovableScreen.py:33
+msgid "Move screen to the lower right corner"
+msgstr "Déplacer l'écran dans le coin inférieure droit"
+
+#: src/MovableScreen.py:34
+msgid "Reset saved position"
+msgstr "Remette la position par défaut"
+
+#: src/plugin.py:30 src/plugin.py:36 src/plugin.py:38
+msgid "Audio Sync"
+msgstr "Audio Sync"
+
+#: src/plugin.py:36 src/plugin.py:38
+msgid "sets the Audio Delay (LipSync)"
+msgstr "Définir le délai audio (synchro lèvre) (LipSync)"
+
+#: src/plugin.py:37
+msgid "Audio Sync Setup"
+msgstr "Configuration Audio Sync"
+
+#: src/plugin.py:37
+msgid "Setup for the Audio Sync Plugin"
+msgstr "Configuration du plugin Audio Sync"
