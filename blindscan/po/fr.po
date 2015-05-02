@@ -2,18 +2,140 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-29 18:20+0100\n"
-"PO-Revision-Date: 2014-10-27 11:04+0100\n"
-"Last-Translator: Andy Blackburn <andyblac@o2.co.uk>\n"
+"POT-Creation-Date: 2015-05-01 21:54+0200\n"
+"PO-Revision-Date: 2015-05-01 21:55+0100\n"
+"Last-Translator: Pr2 <dummy@dummy.com>\n"
 "Language-Team: french\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
-"X-Generator: Poedit 1.6.10\n"
+"X-Generator: Poedit 1.7.6\n"
 "X-Poedit-SourceCharset: iso-8859-15\n"
 
+#: plugin.py:55
+msgid "Blind scan for internal DVB-S2 tuners"
+msgstr "Blind scan pour tuners internes DVB-S2"
+
+#: plugin.py:90 plugin.py:104
+msgid "Exit"
+msgstr "Quitter"
+
+#: plugin.py:92
+msgid "Scan"
+msgstr "Scanner"
+
+#: plugin.py:93
+msgid "Press Green/OK to start the scan"
+msgstr "Appuyez sur Vert/OK pour démarrer le scan"
+
+#: plugin.py:107
+msgid "Please setup your tuner configuration."
+msgstr "Merci de configurer votre tuner"
+
+#: plugin.py:114 plugin.py:933
+msgid "Open xml file"
+msgstr "Ouvrir fichier .xml"
+
+#: plugin.py:253
+msgid "Sorry, this tuner is in use."
+msgstr "Désolé, ce tuner est utilisé."
+
+#: plugin.py:256
+msgid "Maybe the reason that recording is currently running."
+msgstr "Peut-être parce qu'un enregistrement est en cours."
+
+#: plugin.py:312 plugin.py:316
+msgid "no"
+msgstr "non"
+
+#: plugin.py:312
+msgid "yes"
+msgstr "oui"
+
+#: plugin.py:312
+msgid "yes (keep feeds)"
+msgstr "oui (conserver les feeds)"
+
+#: plugin.py:317
+msgid "up to 1 degree"
+msgstr "jusqu'à 1 degré"
+
+#: plugin.py:318
+msgid "up to 2 degrees"
+msgstr "jusqu'à 2 degrés"
+
+#: plugin.py:319
+msgid "up to 3 degrees"
+msgstr "jusqu'à 3 degrés"
+
+#: plugin.py:321
+msgid "scan for channels"
+msgstr "scanner les chaînes"
+
+#: plugin.py:322
+msgid "save to XML file"
+msgstr "sauvegarder dans un fichier XML"
+
+#: plugin.py:343
+msgid "vertical and horizontal"
+msgstr "vertical et horizontal"
+
+#: plugin.py:344 plugin.py:635
+msgid "vertical"
+msgstr "verticale"
+
+#: plugin.py:345 plugin.py:633
+msgid "horizontal"
+msgstr "horizontale"
+
+#: plugin.py:346
+msgid "circular right and circular left"
+msgstr "circulaire droit et circulaire gauche"
+
+#: plugin.py:347 plugin.py:624 plugin.py:631
+msgid "circular right"
+msgstr "circulaire à droite"
+
+#: plugin.py:348 plugin.py:626 plugin.py:629
+msgid "circular left"
+msgstr "circulaire à gauche"
+
+#: plugin.py:373
+msgid ""
+"\n"
+"WARNING! Blind scan may make the tuner malfunction on a VU+ and ET receiver. "
+"A reboot afterwards may be required to return to proper tuner function."
+msgstr ""
+"\n"
+"ATTENTION! Blind scan peut conduire a un mauvais fonctionnement du tuner sur "
+"les récepteurs VU+ et ET. Un redémarrage complet peut-être requis après pour "
+"retrouver un fonctionnement normal."
+
+#: plugin.py:374
+msgid "Tuner"
+msgstr "Tuner"
+
+#: plugin.py:374
+msgid "Select a tuner that is configured for the satellite you wish to search"
+msgstr ""
+"Choisir un tuner qui est configuré pour recevoir le satellite que vous "
+"voulez chercher"
+
+#: plugin.py:383
+msgid "Satellite"
+msgstr "Satellite"
+
+#: plugin.py:383
+msgid "Select the satellite you wish to search"
+msgstr "Choisir un satellite sur lequel vous voulez chercher"
+
+#: plugin.py:384
+msgid "Search type"
+msgstr "Type de recherche"
+
+#: plugin.py:384
 msgid ""
 "\"channel scan\" searches for channels and saves them to your receiver; "
 "\"save to XML file\" does a transponder search and saves found transponders "
@@ -24,42 +146,101 @@ msgstr ""
 "transpondeurs et sauvegarde les transpondeurs trouvés dans un fichier XML au "
 "format satellites.xml"
 
-msgid "Blind Scan"
-msgstr "Blind Scan"
+#: plugin.py:388 plugin.py:391
+msgid "Scan start frequency"
+msgstr "Fréquence de départ du scan"
 
-msgid "Blindscan"
-msgstr "Blindscan"
+#: plugin.py:388
+msgid "Frequency values must be between 3000 MHz and 4199 MHz (C-band)"
+msgstr "La fréquence doit être comprise entre 3000 MHz et 4199 MHz (bande C)"
 
-msgid "Clear before scan"
-msgstr "Effacer avant d'analyser"
+#: plugin.py:389 plugin.py:392
+msgid "Scan stop frequency"
+msgstr "Fréquence d'arrêt du scan"
 
-msgid "Exit"
-msgstr "Quitter"
+#: plugin.py:389
+msgid "Frequency values must be between 3001 MHz and 4200 MHz (C-band)"
+msgstr "La fréquence doit être comprise entre 3001 MHz et 4200 MHz (bande C)"
 
+#: plugin.py:391
+msgid "Frequency values must be between 10700 MHz and 12749 MHz"
+msgstr "La fréquence doit être comprise entre 10700 MHz et 12749 MHz"
+
+#: plugin.py:392
+msgid "Frequency values must be between 10701 MHz and 12750 MHz"
+msgstr "La fréquence doit être comprise entre 10701 MHz et 12750 MHz"
+
+#: plugin.py:393
+#, python-format
+msgid "The suggested polarisation for this satellite is '%s'"
+msgstr "La polarisation suggérée pour ce satellite est '%s'"
+
+#: plugin.py:394
+msgid "Polarisation"
+msgstr "Polarisation"
+
+#: plugin.py:395
+msgid "Scan start symbolrate"
+msgstr "Symbolrate de départ"
+
+#: plugin.py:395
+msgid "Symbol rate values are in megasymbols; enter a value between 1 and 44"
+msgstr ""
+"La valeur du Symbol rate est en megasymbols; entrer une valeur entre 1 et 44"
+
+#: plugin.py:396
+msgid "Scan stop symbolrate"
+msgstr "Symbolrate de fin"
+
+#: plugin.py:396
+msgid "Symbol rate values are in megasymbols; enter a value between 2 and 45"
+msgstr ""
+"La valeur du Symbol rate est en megasymbols; entrer une valeur entre 2 et 45"
+
+#: plugin.py:397
+msgid "Only scan unknown transponders"
+msgstr "Scanner uniquement les transpondeurs inconnus"
+
+#: plugin.py:397
+msgid ""
+"If you select \"yes\" the scan will only search transponders not listed in "
+"satellites.xml"
+msgstr ""
+"Si vous choisissez \"oui\" le scan va uniquement utiliser les transpondeurs "
+"non présents dans votre satellites.xml"
+
+#: plugin.py:398
 msgid "Filter out adjacent satellites"
 msgstr "Filtrer les satellites proches"
 
+#: plugin.py:398
 msgid ""
-"Frequency values must be between 10700 and 12750 (or 3000 and 4200 in the "
-"case of C-band satellites)"
+"When a neighbouring satellite is very strong this avoids searching "
+"transponders known to be coming from the neighbouring satellite"
 msgstr ""
-"La valeur de la fréquence doit être entre 10700 et 12750 (ou 3000 et 4200 "
-"pour les satellites en bande-C)"
+"Lorsque le satellite voisin émet très fort, cela évite de rechercher les "
+"transpondeurs connus comme venant du satellite voisin"
 
-msgid ""
-"If you are not sure what polarisations the satellite you wish to search "
-"transmits, select \"vertical and horizontal\""
-msgstr ""
-"Si vous n'êtes pas certains de la polarisation du satellite sur lequel vous "
-"faites une recherche, choisissez \"Vertical et horizontal\""
+#: plugin.py:401
+msgid "Clear before scan"
+msgstr "Effacer avant d'analyser"
 
+#: plugin.py:401
 msgid ""
 "If you select \"yes\" all channels on the satellite being search will be "
-"deleted before starting the current search"
+"deleted before starting the current search, yes (keep feeds) means the same "
+"but hold all feed services/transponders."
 msgstr ""
 "Si vous choisissez \"oui\" toutes les chaînes du satellite recherché seront "
-"effacées avant que la recherche ne démarre."
+"effacées avant de démarrer la nouvelle recherche, oui (garder les feeds) "
+"signifie la même chose mais conserve tous les feeds des services/"
+"transpondeurs."
 
+#: plugin.py:402
+msgid "Only free scan"
+msgstr "Scanner seulement les chaînes en clair"
+
+#: plugin.py:402
 msgid ""
 "If you select \"yes\" the scan will only save channels that are not "
 "encrypted; \"no\" will find encrypted and non-encrypted channels"
@@ -68,85 +249,15 @@ msgstr ""
 "qui ne sont pas encryptées; \"non\" va trouver les chaînes encryptées et non-"
 "encryptées."
 
-msgid ""
-"If you select \"yes\" the scan will only search transponders not listed in "
-"satellites.xml"
-msgstr ""
-"Si vous choisissez \"oui\" le scan va uniquement utiliser les transpondeurs "
-"non présents dans votre satellites.xml"
+#: plugin.py:501
+msgid "Blindscan is not supported in "
+msgstr "Blindscan n'est pas supporté dans "
 
-msgid ""
-"Invalid parameters entered. Please correct and try again.\n"
-"For C-band searches stop frequency must be between 3000MHz and 4200MHz."
-msgstr ""
-"Paramètres invalides entrés. Merci de corriger et de réessayer.\n"
-"Pour les recherches en bande C la fréquence d'arrêt doit être entre 3000MHz "
-"et 4200MHz."
+#: plugin.py:501
+msgid " tuner."
+msgstr "tuner."
 
-msgid ""
-"Invalid parameters entered. Please correct and try again.\n"
-"Frequency start value is larger than stop value."
-msgstr ""
-"Paramètres invalides entrés. Merci de corriger et de réessayer.\n"
-"La fréquence de départ est plus grande que la valeur de fin."
-
-msgid ""
-"Invalid parameters entered. Please correct and try again.\n"
-"Start frequency must be between 10700MHz and 12750MHz.\n"
-"(Or 3000MHz and 4200MHz in the case of c-band)."
-msgstr ""
-"Paramètres invalides entrés. Merci de corriger et de réessayer.\n"
-"La fréquence de départ doit être comprise entre 10700MHz et 12750MHz.\n"
-"(Ou 3000MHz et 4200MHz pour la bande C)."
-
-msgid ""
-"Invalid parameters entered. Please correct and try again.\n"
-"Start symbol rate must be between 1MHz and 44MHz."
-msgstr ""
-"Paramètres invalides entrés. Merci de corriger et de réessayer.\n"
-"Le Symbol Rate de départ doit être compris entre 1MHz et 44MHz."
-
-msgid ""
-"Invalid parameters entered. Please correct and try again.\n"
-"Stop frequency must be between 10700MHz and 12750MHz.\n"
-"(Or 3000MHz and 4200MHz in the case of c-band)."
-msgstr ""
-"Paramètres invalides entrés. Merci de corriger et de réessayer.\n"
-"La fréquence de fin doit être comprise entre 10700MHz et 12750MHz.\n"
-"(Ou 3000MHz et 4200MHz pour la bande C)."
-
-msgid ""
-"Invalid parameters entered. Please correct and try again.\n"
-"Stop symbol rate must be between 2MHz and 45MHz."
-msgstr ""
-"Paramètres invalides entrés. Merci de corriger et de réessayer.\n"
-"La valeur d'arrêt du Symbol Rate doit être compris entre 2MHz et 45MHz."
-
-msgid ""
-"Invalid parameters entered. Please correct and try again.\n"
-"Symbol rate start value is larger than stop value."
-msgstr ""
-"Paramètres invalides entrés. Merci de corriger et de réessayer.\n"
-"La valeur de départ du Symbol Rate est supérieure à la valeur de fin."
-
-msgid ""
-"Invalid parameters entered. Please correct and try again.\n"
-"That is a C-band satellite so frequency values \n"
-"need to be between 3000MHz and 4200MHz."
-msgstr ""
-"Paramètres invalides entrés. Merci de corriger et de réessayer.\n"
-"C'est un satellite en bande C donc la plage de fréquence \n"
-"doit être entre 3000MHz et 4200MHz."
-
-msgid ""
-"Invalid parameters entered. Please correct and try again.\n"
-"That is a Ku-band satellite so frequency values \n"
-"need to be between 10700MHz and 12750MHz."
-msgstr ""
-"Paramètres invalides entrés. Merci de corriger et de réessayer.\n"
-"Ceci est un satellite en bande  Ku donc la plage de fréquence \n"
-"doit être entre 10700MHz et 12750MHz."
-
+#: plugin.py:637
 #, python-format
 msgid ""
 "Looking for available transponders.\n"
@@ -167,53 +278,7 @@ msgstr ""
 "   Plage de fréquence : %d - %d MHz\n"
 "   Symbol rates : %d - %d MHz"
 
-msgid ""
-"No new transponders found! \n"
-"\n"
-"Only transponders already listed in satellites.xml \n"
-"have been found for those search parameters!"
-msgstr ""
-"Aucun transpondeur trouvé! \n"
-"\n"
-"Seul les transpondeurs déjà présent dans votre satellites.xml \n"
-"ont été trouvé avec ces paramètres de recherche!"
-
-msgid "No transponders were found for those search parameters!"
-msgstr "Aucun transpondeur trouvé avec ces paramètres de recherche!"
-
-msgid "Only free scan"
-msgstr "Scanner seulement les chaînes en clair"
-
-msgid "Only scan unknown transponders"
-msgstr "Scanner uniquement les transpondeurs inconnus"
-
-msgid "Please setup your tuner configuration."
-msgstr "Merci de configurer votre tuner"
-
-msgid "Polarisation"
-msgstr "Polarisation"
-
-msgid "Press Green/OK to start the scan"
-msgstr "Appuyez sur Vert/OK pour démarrer le scan"
-
-msgid "Satellite"
-msgstr "Satellite"
-
-msgid "Scan"
-msgstr "Scanner"
-
-msgid "Scan start frequency"
-msgstr "Fréquence de départ du scan"
-
-msgid "Scan start symbolrate"
-msgstr "Symbolrate de départ"
-
-msgid "Scan stop frequency"
-msgstr "Fréquence d'arrêt du scan"
-
-msgid "Scan stop symbolrate"
-msgstr "Symbolrate de fin"
-
+#: plugin.py:740
 #, python-format
 msgid ""
 "Search completed. %d transponders found.\n"
@@ -226,70 +291,145 @@ msgstr ""
 "Informations sauvées dans:\n"
 "%s"
 
-msgid "Search type"
-msgstr "Type de recherche"
-
-msgid "Select a tuner that is configured for the satellite you wish to search"
+#: plugin.py:743
+msgid ""
+"No new transponders found! \n"
+"\n"
+"Only transponders already listed in satellites.xml \n"
+"have been found for those search parameters!"
 msgstr ""
-"Choisir un tuner qui est configuré pour recevoir le satellite que vous "
-"voulez chercher"
+"Aucun transpondeur trouvé! \n"
+"\n"
+"Seul les transpondeurs déjà présent dans votre satellites.xml \n"
+"ont été trouvé avec ces paramètres de recherche!"
 
-msgid "Select the satellite you wish to search"
-msgstr "Choisir un satellite sur lequel vous voulez chercher"
+#: plugin.py:747
+msgid "No transponders were found for those search parameters!"
+msgstr "Aucun transpondeur trouvé avec ces paramètres de recherche!"
 
-msgid "Symbol rate values are in megasymbols; enter a value between 1 and 44"
-msgstr ""
-"La valeur du Symbol rate est en megasymbols; entrer une valeur entre 1 et 44"
-
-msgid "Symbol rate values are in megasymbols; enter a value between 2 and 45"
-msgstr ""
-"La valeur du Symbol rate est en megasymbols; entrer une valeur entre 2 et 45"
-
+#: plugin.py:749
 msgid "The blindscan run was cancelled by the user."
 msgstr "Le blindscan a été annulé par l'utilisateur."
 
-msgid "Tuner"
-msgstr "Tuner"
+#: plugin.py:946
+msgid "vertical & horizontal"
+msgstr "vertical & horizontal"
 
-msgid ""
-"When a neighbouring satellite is very strong this avoids searching "
-"transponders known to be coming from the neighbouring satellite"
-msgstr ""
-"Lorsque le satellite voisin émet très fort, cela évite de rechercher les "
-"transpondeurs connus comme venant du satellite voisin"
+#: plugin.py:952
+msgid "circular right & circular left"
+msgstr "circulaire droit & circulaire gauche"
 
-msgid "circular left"
-msgstr "circulaire à gauche"
+#: plugin.py:1013 plugin.py:1040
+msgid "Rotor: "
+msgstr "Rotor: "
 
-msgid "circular right"
-msgstr "circulaire à droite"
+#: plugin.py:1037
+msgid "Moving to "
+msgstr "Déplacer vers "
 
-msgid "circular right and circular left"
-msgstr "circulaire droit et circulaire gauche"
+#: plugin.py:1059 plugin.py:1066
+msgid "Blind scan"
+msgstr "Blind scan"
 
-msgid "horizontal"
-msgstr "horizontale"
+#: plugin.py:1066
+msgid "Scan satellites for new transponders"
+msgstr "Scanner les satellites pour les nouveaux transpondeurs"
 
-msgid "no"
-msgstr "non"
+#~ msgid "Blind Scan"
+#~ msgstr "Blind Scan"
 
-msgid "save to XML file"
-msgstr "sauvegarder dans un fichier XML"
+#~ msgid "Blindscan"
+#~ msgstr "Blindscan"
 
-msgid "scan for channels"
-msgstr "scanner les chaînes"
+#~ msgid ""
+#~ "Frequency values must be between 10700 and 12750 (or 3000 and 4200 in the "
+#~ "case of C-band satellites)"
+#~ msgstr ""
+#~ "La valeur de la fréquence doit être entre 10700 et 12750 (ou 3000 et 4200 "
+#~ "pour les satellites en bande-C)"
 
-msgid "up to 1 degree"
-msgstr "jusqu'à 1 degré"
+#~ msgid ""
+#~ "If you are not sure what polarisations the satellite you wish to search "
+#~ "transmits, select \"vertical and horizontal\""
+#~ msgstr ""
+#~ "Si vous n'êtes pas certains de la polarisation du satellite sur lequel "
+#~ "vous faites une recherche, choisissez \"Vertical et horizontal\""
 
-msgid "up to 2 degrees"
-msgstr "jusqu'à 2 degrés"
+#~ msgid ""
+#~ "If you select \"yes\" all channels on the satellite being search will be "
+#~ "deleted before starting the current search"
+#~ msgstr ""
+#~ "Si vous choisissez \"oui\" toutes les chaînes du satellite recherché "
+#~ "seront effacées avant que la recherche ne démarre."
 
-msgid "up to 3 degrees"
-msgstr "jusqu'à 3 degrés"
+#~ msgid ""
+#~ "Invalid parameters entered. Please correct and try again.\n"
+#~ "For C-band searches stop frequency must be between 3000MHz and 4200MHz."
+#~ msgstr ""
+#~ "Paramètres invalides entrés. Merci de corriger et de réessayer.\n"
+#~ "Pour les recherches en bande C la fréquence d'arrêt doit être entre "
+#~ "3000MHz et 4200MHz."
 
-msgid "vertical"
-msgstr "verticale"
+#~ msgid ""
+#~ "Invalid parameters entered. Please correct and try again.\n"
+#~ "Frequency start value is larger than stop value."
+#~ msgstr ""
+#~ "Paramètres invalides entrés. Merci de corriger et de réessayer.\n"
+#~ "La fréquence de départ est plus grande que la valeur de fin."
 
-msgid "vertical and horizontal"
-msgstr "vertical et horizontal"
+#~ msgid ""
+#~ "Invalid parameters entered. Please correct and try again.\n"
+#~ "Start frequency must be between 10700MHz and 12750MHz.\n"
+#~ "(Or 3000MHz and 4200MHz in the case of c-band)."
+#~ msgstr ""
+#~ "Paramètres invalides entrés. Merci de corriger et de réessayer.\n"
+#~ "La fréquence de départ doit être comprise entre 10700MHz et 12750MHz.\n"
+#~ "(Ou 3000MHz et 4200MHz pour la bande C)."
+
+#~ msgid ""
+#~ "Invalid parameters entered. Please correct and try again.\n"
+#~ "Start symbol rate must be between 1MHz and 44MHz."
+#~ msgstr ""
+#~ "Paramètres invalides entrés. Merci de corriger et de réessayer.\n"
+#~ "Le Symbol Rate de départ doit être compris entre 1MHz et 44MHz."
+
+#~ msgid ""
+#~ "Invalid parameters entered. Please correct and try again.\n"
+#~ "Stop frequency must be between 10700MHz and 12750MHz.\n"
+#~ "(Or 3000MHz and 4200MHz in the case of c-band)."
+#~ msgstr ""
+#~ "Paramètres invalides entrés. Merci de corriger et de réessayer.\n"
+#~ "La fréquence de fin doit être comprise entre 10700MHz et 12750MHz.\n"
+#~ "(Ou 3000MHz et 4200MHz pour la bande C)."
+
+#~ msgid ""
+#~ "Invalid parameters entered. Please correct and try again.\n"
+#~ "Stop symbol rate must be between 2MHz and 45MHz."
+#~ msgstr ""
+#~ "Paramètres invalides entrés. Merci de corriger et de réessayer.\n"
+#~ "La valeur d'arrêt du Symbol Rate doit être compris entre 2MHz et 45MHz."
+
+#~ msgid ""
+#~ "Invalid parameters entered. Please correct and try again.\n"
+#~ "Symbol rate start value is larger than stop value."
+#~ msgstr ""
+#~ "Paramètres invalides entrés. Merci de corriger et de réessayer.\n"
+#~ "La valeur de départ du Symbol Rate est supérieure à la valeur de fin."
+
+#~ msgid ""
+#~ "Invalid parameters entered. Please correct and try again.\n"
+#~ "That is a C-band satellite so frequency values \n"
+#~ "need to be between 3000MHz and 4200MHz."
+#~ msgstr ""
+#~ "Paramètres invalides entrés. Merci de corriger et de réessayer.\n"
+#~ "C'est un satellite en bande C donc la plage de fréquence \n"
+#~ "doit être entre 3000MHz et 4200MHz."
+
+#~ msgid ""
+#~ "Invalid parameters entered. Please correct and try again.\n"
+#~ "That is a Ku-band satellite so frequency values \n"
+#~ "need to be between 10700MHz and 12750MHz."
+#~ msgstr ""
+#~ "Paramètres invalides entrés. Merci de corriger et de réessayer.\n"
+#~ "Ceci est un satellite en bande  Ku donc la plage de fréquence \n"
+#~ "doit être entre 10700MHz et 12750MHz."
