@@ -1,0 +1,336 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: elektro\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-05-01 22:50+0200\n"
+"PO-Revision-Date: 2015-05-01 23:46+0100\n"
+"Last-Translator: Pr2 <dummy@dummy.com>\n"
+"Language-Team: OpenPLi\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.7.6\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+
+#: plugin.py:110
+msgid "Elektro Power Save"
+msgstr "Economiseur d'énergie Elektro"
+
+#: plugin.py:111
+msgid "Automatically shut down to deep standby"
+msgstr "Mettre automatiquement en veille profonde"
+
+#: plugin.py:112
+msgid "Plugin menu"
+msgstr "Menu plugin"
+
+#: plugin.py:112
+msgid "Extensions menu"
+msgstr "Menu extensions"
+
+#: plugin.py:124
+msgid "yes, Profile 1"
+msgstr "oui, profile 1"
+
+#: plugin.py:124
+msgid "yes, Profile 2"
+msgstr "oui, profile 2"
+
+#: plugin.py:134
+msgid "Monday"
+msgstr "Lundi"
+
+#: plugin.py:135
+msgid "Tuesday"
+msgstr "Mardi"
+
+#: plugin.py:136
+msgid "Wednesday"
+msgstr "Mercredi"
+
+#: plugin.py:137
+msgid "Thursday"
+msgstr "Jeudi"
+
+#: plugin.py:138
+msgid "Friday"
+msgstr "Vendredi"
+
+#: plugin.py:139
+msgid "Saturday"
+msgstr "Samedi"
+
+#: plugin.py:140
+msgid "Sunday"
+msgstr "Dimanche"
+
+#: plugin.py:150
+msgid "no Name"
+msgstr "pas de nom"
+
+#: plugin.py:151
+msgid "Connection Error"
+msgstr "Erreur de connexion"
+
+#: plugin.py:211 plugin.py:222 plugin.py:230 plugin.py:530
+msgid "Ver."
+msgstr "Ver."
+
+#: plugin.py:263 plugin.py:268
+msgid "Wakeup"
+msgstr "allumage"
+
+#: plugin.py:264 plugin.py:269
+msgid "Sleep"
+msgstr "repos"
+
+#: plugin.py:265 plugin.py:270
+msgid "Next day starts at"
+msgstr "Jour suivant commence à"
+
+#: plugin.py:266 plugin.py:271
+msgid ""
+"If the box is supposed to enter deep standby e.g. monday night at 1 AM, it "
+"actually is already tuesday. To enable this anyway, differing next day start "
+"time can be specified here."
+msgstr ""
+"Si la boite est supposée entrer en veille profonde p.e. la nuit de lundi à "
+"1h du matin, et s'il est déjà mardi. Pour l'activer quant même, une heure de "
+"début différente, le jour suivant, peut être spécifiée ici."
+
+#: plugin.py:275 plugin.py:321 plugin.py:400 plugin.py:507
+msgid "Cancel"
+msgstr "Annuler"
+
+#: plugin.py:276 plugin.py:322 plugin.py:401 plugin.py:508
+msgid "Ok"
+msgstr "OK"
+
+#: plugin.py:317
+msgid "IP Address"
+msgstr "Adresse IP"
+
+#: plugin.py:354
+msgid "please wait..."
+msgstr "merci de patienter..."
+
+#: plugin.py:391
+msgid "NAS/Server Name or IP"
+msgstr "NAS/Nom du serveur ou adresse IP"
+
+#: plugin.py:392
+msgid "Username"
+msgstr "Nom utilisateur"
+
+#: plugin.py:393
+msgid "Password"
+msgstr "Mot de passe"
+
+#: plugin.py:394
+msgid "Command [poweroff, shutdown -h,...]"
+msgstr "Commande [poweroff, shutdown -h,...]"
+
+#: plugin.py:395
+msgid "Telnet Port"
+msgstr "Port telnet"
+
+#: plugin.py:396
+msgid "Waiting until poweroff"
+msgstr "Attendre jusqu'à l'extinction"
+
+#: plugin.py:402
+msgid "Run"
+msgstr "Fonctionne"
+
+#: plugin.py:461
+msgid "Active Time Profile"
+msgstr "Activer le profil de temps"
+
+#: plugin.py:462
+msgid "The active Time Profile is (1 or 2)."
+msgstr "Le profil de temps actif est (1 ou 2)."
+
+#: plugin.py:463
+msgid "Enable Elektro Power Save"
+msgstr "Activer la sauvegarde d'énergie Elektro"
+
+#: plugin.py:464
+msgid "Unless this is enabled, this plugin won't run automatically."
+msgstr ""
+"A moins que ceci ne soit activé, ce plugin ne démarrera pas automatiquement."
+
+#: plugin.py:465
+msgid "Use both profiles alternately"
+msgstr "Utiliser alternativement chaque profile"
+
+#: plugin.py:466
+msgid ""
+"Both profiles are used alternately. When shutting down the other profile is "
+"enabled. This allows two time cycles per day. Do not overlap the times."
+msgstr ""
+"Chaque profile est utilisé alternativement. Lors de l'extinction l'autre "
+"profil est activé. Cela permet 2 cycles par jour. Ne pas chevaucher les "
+"heures!"
+
+#: plugin.py:467 plugin.py:624
+msgid "Standby on boot"
+msgstr "Veille au démarrage"
+
+#: plugin.py:468
+msgid "Puts the box in standby mode after boot."
+msgstr "Mettre la boite en veille après le démarrage."
+
+#: plugin.py:469
+msgid "Standby on manual boot"
+msgstr "Veille en démarrage manuel"
+
+#: plugin.py:470
+msgid ""
+"Whether to put the box in standby when booted manually. On manual boot the "
+"box will not go to standby before the next deep standby interval starts, "
+"even if this option is set. This option is only active if 'Standby on boot' "
+"option is set, too."
+msgstr ""
+"Pour mettre le récepteur en veille lorsqu'il est démarré manuellement. Au "
+"démarrage manuel le récepteur n'ira pas en veille avant le prochain interval "
+"de veille profonde, même si l'option est définie. Cette option n'est valable "
+"que lorsque l'option 'Veille au démarrage' est aussi activée."
+
+#: plugin.py:471
+msgid "Standby on boot screen timeout"
+msgstr "Expiration de l'écran veille au démarrage"
+
+#: plugin.py:472
+msgid ""
+"Specify how long to show the standby query on boot screen. This value can be "
+"set to ensure the box does not shut down to deep standby again too fast when "
+"in standby mode."
+msgstr ""
+"Spécifie combien de temps la demande de mise en veille sera affichée à "
+"l'écran. Cette valeur peut être mise pour éviter que le récepteur ne bascule "
+"en veille profonde trop rapidement après une mise en veille."
+
+#: plugin.py:473
+msgid "Force sleep (even when not in standby)"
+msgstr "Forcer le repos (même lorsqu'il n'est pas en veille)"
+
+#: plugin.py:474
+msgid ""
+"Forces deep standby, even when not in standby mode. Scheduled recordings "
+"remain unaffected."
+msgstr ""
+"Forcer la veille profonde, même lorsqu'il n'est pas en veille. Les "
+"enregistrements programmés ne seront pas affectés."
+
+#: plugin.py:475
+msgid "Avoid deep standby when HDD is active, e.g. for FTP"
+msgstr ""
+"Eviter la veille profonde lorsque le disque dur est actif, p.e. pour du FTP"
+
+#: plugin.py:476
+msgid ""
+"Wait for the HDD to enter sleep mode. Depending on the configuration this "
+"can prevent the box entirely from entering deep standby mode."
+msgstr ""
+"Attendre que le disque dur entre en veille. En fonction de la configuration "
+"cela peut empêcher le récepteur d'entrer en mode veille profonde."
+
+#: plugin.py:477
+msgid "Check IPs (press OK to edit)"
+msgstr "Vérifier les IPs (appuyer sur OK pour éditer)"
+
+#: plugin.py:478
+msgid ""
+"This list of IP addresses is checked. Elektro waits until addresses no "
+"longer responds to ping."
+msgstr ""
+"Liste des adresses IP à vérifier. Elektro va attendre que les adresses IPs "
+"ne répondent plus au ping."
+
+#: plugin.py:479
+msgid "NAS Poweroff (press OK to edit)"
+msgstr "Eteindre le NAS (appuyer sur OK pour éditer)"
+
+#: plugin.py:480
+msgid "A NAS/Server can be shut down. Is required activated Telnet."
+msgstr "Un serveur NAS peut être éteint. Cela nécessite un accès telnet actif."
+
+#: plugin.py:481
+msgid "Don't wake up"
+msgstr "Ne pas réveiller"
+
+#: plugin.py:482
+msgid "Do not wake up at the end of next deep standby interval."
+msgstr "Ne pas réveiller à la fin du prochain interval de veille profonde."
+
+#: plugin.py:483
+msgid "Holiday mode (experimental)"
+msgstr "Mode vacances (expérimental)"
+
+#: plugin.py:484
+msgid "The box always enters deep standby mode, except for recording."
+msgstr ""
+"Le récepteur entre en veille profonde, excepté pour les enregistrements."
+
+#: plugin.py:485
+msgid "Show in"
+msgstr "Afficher dans"
+
+#: plugin.py:486
+msgid ""
+"Specify whether plugin shall show up in plugin menu or extensions menu "
+"(needs GUI restart)"
+msgstr ""
+"Spécifie si le plugin doit s'afficher dans le menu plugin ou le menu "
+"extensions (nécessite un redémarrage de l'IGU)"
+
+#: plugin.py:487
+msgid "Name"
+msgstr "Nom"
+
+#: plugin.py:488
+msgid "Specify plugin name to be used in menu (needs GUI restart)."
+msgstr ""
+"Spécifie le nom du plugin à utiliser dans le menu (nécessite un redémarrage "
+"de l'IGU)"
+
+#: plugin.py:489
+msgid "Description"
+msgstr "Description"
+
+#: plugin.py:490
+msgid "Specify plugin description to be used in menu (needs GUI restart)."
+msgstr ""
+"Spécifie la description du plugin à utiliser dans le menu (nécessite un "
+"redémarrage de l'IGU)"
+
+#: plugin.py:509
+msgid "Help"
+msgstr "Aide"
+
+#: plugin.py:510
+msgid "Times"
+msgstr "Heures"
+
+#: plugin.py:558
+msgid "Showing Elektro readme.txt"
+msgstr "Afficher Elektro readme.txt"
+
+#: plugin.py:558
+msgid "readme.txt"
+msgstr "readme.txt"
+
+#: plugin.py:650
+msgid "Go to Standby now?"
+msgstr "Aller en veille maintenant?"
+
+#: plugin.py:828
+msgid "Go to sleep now?"
+msgstr "Aller au repos maintenant?"

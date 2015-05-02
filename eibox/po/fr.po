@@ -1,0 +1,56 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: eibox\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-05-01 22:40+0200\n"
+"PO-Revision-Date: 2015-05-01 22:47+0100\n"
+"Last-Translator: Pr2 <dummy@dummy.com>\n"
+"Language-Team: OpenPLi\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.7.6\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+
+#: plugin.py:51
+msgid "up"
+msgstr "haut"
+
+#: plugin.py:51
+msgid "down"
+msgstr "bas"
+
+#: plugin.py:454
+msgid "(online)"
+msgstr "(connecté)"
+
+#: plugin.py:456
+msgid "(offline!)"
+msgstr "(déconnecté)"
+
+#: plugin.py:562
+msgid "not found"
+msgstr "pas trouvé"
+
+#: plugin.py:600
+msgid "parser error"
+msgstr "erreur d'analyseur"
+
+#: plugin.py:683
+msgid "(actual)"
+msgstr "(actuel)"
+
+#: plugin.py:688
+msgid "(set point)"
+msgstr "(définir point)"
+
+#: plugin.py:700
+msgid "Visualization for European Installation Bus"
+msgstr "Visualisation pour EIB (European Installation Bus)"
