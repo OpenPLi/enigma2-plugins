@@ -1,0 +1,65 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: ZapHistoryBrowser\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-05-04 21:39+0200\n"
+"PO-Revision-Date: 2015-05-04 21:58+0100\n"
+"Last-Translator: Pr2 <dummy@dummy.com>\n"
+"Language-Team: Nabil Hanna <nabil1978@web.de>\n"
+"Language: de_DE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-Basepath: .\n"
+"X-Generator: Poedit 1.7.6\n"
+"X-Poedit-SearchPath-0: /home/aliabdul/dream/enigma2/enigma2-plugins/"
+"zaphistorybrowser/src\n"
+
+#: plugin.py:39
+msgid "disabled"
+msgstr "Désactivé"
+
+#: plugin.py:39
+msgid "enabled"
+msgstr "Activé"
+
+#: plugin.py:39
+msgid "disabled at parental lock"
+msgstr "Désactivé au verrouillage parental"
+
+#: plugin.py:101
+msgid "Zap-History Configurator"
+msgstr "Configuration de l'historique de zap"
+
+#: plugin.py:108
+msgid "Enable zap history:"
+msgstr "Activer l'historique de zap:"
+
+#: plugin.py:109
+msgid "Maximum zap history entries:"
+msgstr "Nombre maximum d'entrées:"
+
+#: plugin.py:110
+msgid "Enigma1-like history:"
+msgstr "Historique de style Enigma-1:"
+
+#: plugin.py:166 plugin.py:277
+msgid "Zap-History Browser"
+msgstr "Parcourir l'historique de zap"
+
+#: plugin.py:178
+msgid "Clear"
+msgstr "Effacer tout"
+
+#: plugin.py:179
+msgid "Delete"
+msgstr "Effacer"
+
+#: plugin.py:180
+msgid "Zap & Close"
+msgstr "Zapper & fermer"
+
+#: plugin.py:181
+msgid "Config"
+msgstr "Configuration"
