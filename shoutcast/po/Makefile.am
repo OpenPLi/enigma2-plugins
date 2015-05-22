@@ -1,3 +1,3 @@
 PLUGIN = SHOUTcast
-LANGS = de it fr
+LANGS = de it nl fr
 include $(top_srcdir)/Rules-po.mak
