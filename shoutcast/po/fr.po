@@ -1,0 +1,305 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: SHOUTcast\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-05-05 14:40+0200\n"
+"PO-Revision-Date: 2015-05-18 19:15+0100\n"
+"Last-Translator: Pr2 <dummy@dummy.com>\n"
+"Language-Team: OpenPLi\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.7.6\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+
+#: plugin.py:66
+msgid "All"
+msgstr "Tous"
+
+#: plugin.py:66
+msgid ">= 64 kbps"
+msgstr ">= 64 kbps"
+
+#: plugin.py:66
+msgid ">= 128 kbps"
+msgstr ">= 128 kbps"
+
+#: plugin.py:66
+msgid ">= 192 kbps"
+msgstr ">= 192 kbps"
+
+#: plugin.py:66
+msgid ">= 256 kbps"
+msgstr ">= 256 kbps"
+
+#: plugin.py:67
+msgid "Off"
+msgstr "Off"
+
+#: plugin.py:67
+msgid "every minute"
+msgstr "Chaque minute"
+
+#: plugin.py:67
+msgid "every three minutes"
+msgstr "Chaque trois minutes"
+
+#: plugin.py:67
+msgid "every five minutes"
+msgstr "Chaque cinq minutes"
+
+#: plugin.py:135 plugin.py:137
+msgid "listen to shoutcast internet-radio"
+msgstr "Ecouter une radio SHOUTcast internet"
+
+#: plugin.py:207 plugin.py:280
+msgid "Record"
+msgstr "Enregistrer"
+
+#: plugin.py:208
+msgid "Genres"
+msgstr "Genres"
+
+#: plugin.py:209
+msgid "Stations"
+msgstr "Stations"
+
+#: plugin.py:210
+msgid "Favorites"
+msgstr "Favoris"
+
+#: plugin.py:214
+msgid "Getting SHOUTcast genre list..."
+msgstr "Réception de la liste des genres SHOUTcast..."
+
+#: plugin.py:272 plugin.py:319
+msgid "Stop record"
+msgstr "Arrêter enregistrement"
+
+#: plugin.py:274
+msgid "Recording stream station"
+msgstr "Enregistrement d'une radion streamée"
+
+#: plugin.py:327
+msgid "Do you really want to stop the recording?"
+msgstr "Voulez-vous vraiment arrêter l'enregistrement?"
+
+#: plugin.py:330
+msgid "Recording length"
+msgstr "Longueur de l'enregistrement"
+
+#: plugin.py:330
+msgid "Enter in minutes (0 means unlimited)"
+msgstr "Entré en minutres (0 signifie infini)"
+
+#: plugin.py:332
+msgid "Only running streamings can be recorded!"
+msgstr "Seul les streams en cours peuvent être enregistrés!"
+
+#: plugin.py:347 plugin.py:520 plugin.py:654
+#, python-format
+msgid "SHOUTcast station list for %s"
+msgstr "Liste des stations SHOUTcast pour %s"
+
+#: plugin.py:362
+msgid "Favorite list"
+msgstr "Liste des favoris"
+
+#: plugin.py:376
+#, python-format
+msgid "Getting SHOUTcast genre list for %s..."
+msgstr "Réception de la liste des genres de SHOUTcast pour %s..."
+
+#: plugin.py:385 plugin.py:432
+msgid "SHOUTcast genre list"
+msgstr "Liste des genres SHOUTcast"
+
+#: plugin.py:391
+msgid ""
+"Got 0 genres. Could be a network problem.\n"
+"Please try again..."
+msgstr ""
+"Réception de 0 genre. Peut-être un problème réseau?\n"
+"Merci de réessayer..."
+
+#: plugin.py:399
+#, python-format
+msgid ""
+"%s\n"
+"Press green-button to try again..."
+msgstr ""
+"%s\n"
+"Appuyez sur le bouton vert pour essayer à nouveau..."
+
+#: plugin.py:466 plugin.py:480
+#, python-format
+msgid ""
+"Getting streaming data from\n"
+"%s"
+msgstr ""
+"Réception des données de streaming depuis\n"
+"%s"
+
+#: plugin.py:516
+msgid "No streaming data found..."
+msgstr "Aucune donnée de streaming trouvée..."
+
+#: plugin.py:519
+#, python-format
+msgid "genre %s"
+msgstr "genre: %s"
+
+#: plugin.py:522
+#, python-format
+msgid "Getting %s"
+msgstr "Réception de %s"
+
+#: plugin.py:572
+msgid "Config"
+msgstr "Configuration"
+
+#: plugin.py:572
+msgid "Search"
+msgstr "Rechercher"
+
+#: plugin.py:574
+msgid "rename current selected favorite"
+msgstr "Renommer la liste des favoris courante"
+
+#: plugin.py:575
+msgid "remove current selected favorite"
+msgstr "Supprimer la liste des favoris courante"
+
+#: plugin.py:577
+msgid "Add current selected genre to favorite"
+msgstr "Ajouter le genre sélectionné au favori"
+
+#: plugin.py:579
+msgid "Add current selected station to favorite"
+msgstr "Ajouter la station sélectionnée au favori"
+
+#: plugin.py:581
+msgid "Add current playing stream to favorite"
+msgstr "Ajouter la liste de lecture sélectionnée au favori"
+
+#: plugin.py:582
+msgid "Hide"
+msgstr "Cacher"
+
+#: plugin.py:624
+msgid "Enter new name for favorite item"
+msgstr "Entrer un nouveau nom du favori"
+
+#: plugin.py:648
+msgid "Enter text to search for"
+msgstr "Entre le texte à rechercher"
+
+#: plugin.py:653
+#, python-format
+msgid "search-criteria %s"
+msgstr "critère de recherche: %s"
+
+#: plugin.py:656
+#, python-format
+msgid "Searching SHOUTcast for %s..."
+msgstr "Recherche sur SHOUTcast pour %s..."
+
+#: plugin.py:686
+#, python-format
+msgid ""
+"%s\n"
+"Press OK to try again..."
+msgstr ""
+"%s\n"
+"Appuyez sur OK pour recommencer..."
+
+#: plugin.py:751
+msgid "Error downloading cover..."
+msgstr "Erreur en téléchargeant la pochette..."
+
+#: plugin.py:767
+msgid "Stream stopped playing, playback of stream stopped!"
+msgstr "La lecture du stream a été interrompue, lecture du stream arrêté!"
+
+#: plugin.py:791
+#, python-format
+msgid "Title: %s"
+msgstr "Titre: %s"
+
+#: plugin.py:814
+msgid "Title: n/a"
+msgstr "Titre: p/a"
+
+#: plugin.py:815
+#, python-format
+msgid "Station: %s"
+msgstr "Station: %s"
+
+#: plugin.py:922 plugin.py:928
+#, python-format
+msgid "Audio: %s"
+msgstr "Audio: %s"
+
+#: plugin.py:923 plugin.py:930
+#, python-format
+msgid "Bit rate: %s kbps"
+msgstr "Bit rate: %s kbps"
+
+#: plugin.py:1020 plugin.py:1096
+msgid "Cancel"
+msgstr "Annuler"
+
+#: plugin.py:1021 plugin.py:1097
+msgid "OK"
+msgstr "OK"
+
+#: plugin.py:1024
+msgid "Show cover:"
+msgstr "Afficher pochette:"
+
+#: plugin.py:1025
+msgid "Coverwidth:"
+msgstr "Largeur pochette:"
+
+#: plugin.py:1026
+msgid "Coverheight:"
+msgstr "Hauteur pochette:"
+
+#: plugin.py:1027
+msgid "Show in extension menu:"
+msgstr "Afficher dans le menu extensions:"
+
+#: plugin.py:1028
+msgid "Streaming rate:"
+msgstr "Taux de streaming:"
+
+#: plugin.py:1029
+msgid "Reload station list:"
+msgstr "Relire la liste des stations:"
+
+#: plugin.py:1030
+msgid "Rip to single file, name is timestamped"
+msgstr "Ripper dans un fichier unique, le nom est horodaté"
+
+#: plugin.py:1031
+msgid "Create a directory for each stream"
+msgstr "Créer un répertoire pour chaque stream"
+
+#: plugin.py:1032
+msgid "Add sequence number to output file"
+msgstr "Ajouter un numéro de séquence au fichier créé"
+
+#: plugin.py:1034
+msgid "Recording location:"
+msgstr "Localisation des enregistrements:"
+
+#: plugin.py:1131 plugin.py:1159
+msgid "Invalid Location"
+msgstr "Localisation non valide"

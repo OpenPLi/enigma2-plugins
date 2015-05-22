@@ -1,0 +1,142 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ShowClock\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-05-05 14:19+0200\n"
+"PO-Revision-Date: 2015-05-18 18:49+0100\n"
+"Last-Translator: Pr2 <dummy@dummy.com>\n"
+"Language-Team: OpenPLi\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.7.6\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+
+#: plugin.py:74
+msgid "Show Clock setup"
+msgstr "Configuration Show Clock"
+
+#: plugin.py:75
+msgid "Push \"Exit\" long to show/hide clock"
+msgstr "Appui long sur \"EXIT\" pour afficher/cacher l'horloge"
+
+#: plugin.py:76
+msgid "Plugin menu"
+msgstr "Menu plugin"
+
+#: plugin.py:76
+msgid "Extensions menu"
+msgstr "Menu extensions"
+
+#: plugin.py:112 plugin.py:167
+msgid "Show Clock Setup"
+msgstr "Configuration Show Clock"
+
+#: plugin.py:117
+msgid "Clock show timeout"
+msgstr "Expiration Show Clock"
+
+#: plugin.py:118
+msgid ""
+"Specify how long (seconds) the clock shall be shown before it disappears. "
+"Set to \"0\" to show clock until hidden manually."
+msgstr ""
+"Spécifie combien de temps (secondes) l'horloge doit être affichée avant de "
+"disparaître. Définir \"0\" pour afficher l'horloge jusqu'à ce qu'on la ferme "
+"manuellement."
+
+#: plugin.py:119
+msgid "Show in"
+msgstr "Afficher dans"
+
+#: plugin.py:120
+msgid ""
+"Specify whether plugin shall show up in plugin menu or extensions menu "
+"(needs GUI restart)"
+msgstr ""
+"Spécifie si le plugin doit être affiché dans le menu plugin ou extensions "
+"(nécessite un redémarrage de l'IGU)"
+
+#: plugin.py:121
+msgid "Name"
+msgstr "Nom"
+
+#: plugin.py:122
+msgid "Specify plugin name to be used in menu (needs GUI restart)."
+msgstr ""
+"Spécifie le nom du plugin a utliser dans le menu (nécessite un redémarrage "
+"de l'IGU)."
+
+#: plugin.py:123
+msgid "Description"
+msgstr "Description"
+
+#: plugin.py:124
+msgid "Specify plugin description to be used in menu (needs GUI restart)."
+msgstr ""
+"Spécifie la description du plugin à afficher dans le menu (nécessite un "
+"redémarrage de l'IGU)."
+
+#: plugin.py:142
+msgid "Cancel"
+msgstr "Annuler"
+
+#: plugin.py:143
+msgid "OK"
+msgstr "OK"
+
+#: plugin.py:144
+msgid "Help"
+msgstr "Aide"
+
+#: plugin.py:145
+msgid "Move clock"
+msgstr "Déplacer l'horloge"
+
+#: plugin.py:167 plugin.py:388 plugin.py:396
+msgid "Ver."
+msgstr "Ver."
+
+#: plugin.py:205
+msgid ""
+"Modify the settings to match your preferences. To change the clock position, "
+"select \"Move clock\" and relocate using the direction keys. Press OK to "
+"store current position and return to the setup menu or EXIT to cancel the "
+"moving.\n"
+"\n"
+"Push key \"Exit long\" to show the clock while watching TV. Clock will "
+"disappear after the specified timeout or by pushing key \"Exit long\" "
+"again.\n"
+"\n"
+"If GP3 is installed, weekday shows up in selected language, otherwise always "
+"in english."
+msgstr ""
+"Modifiez les paramètres en fonction de vos préférences. Pour changer la "
+"position de l'horloge, choisir \"Déplacer l'horloge\" et déplacez là en "
+"utilisant les flèches. Appuyez sur OK pour conserver la nouvelle position et "
+"retourner dans le menu ou EXIT pour annuler le déplacement.\n"
+"\n"
+"Appuyez sur la touche \"EXIT long\" pour afficher l'horloge tout en "
+"regardant la TV.  L'horloge disparaitra après la période d'expiration ou en "
+"appuyant sur la touche \"EXIT long\" à nouveau.\n"
+"\n"
+"Fin"
+
+#: plugin.py:213
+msgid ""
+"Please use direction keys to move the clock.\n"
+"\n"
+"Press OK to store current position and return to the setup menu or EXIT to "
+"cancel the moving."
+msgstr ""
+"Utilisez les flèches pour déplacer l'horloge.\n"
+"\n"
+"Appuyez sur OK pour sauvegarder la position et revenir au menu de "
+"configuration ou EXIT pour annuler le déplacement."

@@ -1,0 +1,94 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: TagEditor\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-05-05 13:15+0200\n"
+"PO-Revision-Date: 2015-05-18 18:19+0100\n"
+"Last-Translator: Pr2 <dummy@dummy.com>\n"
+"Language-Team: OpenPLi\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.7.6\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+
+#: plugin.py:26
+msgid "edit tags"
+msgstr "Editer tags"
+
+#: plugin.py:47
+msgid "Cancel"
+msgstr "Annuler"
+
+#: plugin.py:48
+msgid "OK"
+msgstr "OK"
+
+#: plugin.py:49
+msgid "New"
+msgstr "Nouveau"
+
+#: plugin.py:50
+msgid "Load"
+msgstr "Charger"
+
+#: plugin.py:79
+msgid "Edit Tags"
+msgstr "Editer tags"
+
+#: plugin.py:85
+msgid "Please enter the new tag"
+msgstr "Veuillez entrer un nouveau tag"
+
+#: plugin.py:208
+#, python-format
+msgid ""
+"Replace tag \"%s\" everywhere with:   (Note that 'Cancel' will not undo "
+"this!)"
+msgstr ""
+"Replacer le tag \"%s\" partout par:\n"
+"(Notez que 'Annuler' ne va pas défaire ceci!)"
+
+#: plugin.py:228
+#, python-format
+msgid ""
+"Do you really want to delete tag \"%s\" everywhere?\n"
+"(Note that 'Cancel' will not undo this!)"
+msgstr ""
+"Voulez-vous vraiment effacer le tag \"%s\" partout?\n"
+"(Notez que 'Annuler' ne va pas défaire ceci!)"
+
+#: plugin.py:245
+msgid ""
+"Do you really want to delete all tags everywhere?\n"
+"(Note that 'Cancel' will not undo this!)"
+msgstr ""
+"Voulez-vous vraiment effacer tous les tags partout?\n"
+"(Notez que 'Annuler' ne va pas défaire ceci!)"
+
+#: plugin.py:259
+msgid "Add new tag..."
+msgstr "Ajouter un nouveau tag..."
+
+#: plugin.py:260
+msgid "Rename this tag..."
+msgstr "Renommer ce tag...."
+
+#: plugin.py:261
+msgid "Delete this tag..."
+msgstr "Effacer ce tag..."
+
+#: plugin.py:262
+msgid "Delete unused tags"
+msgstr "Effacer les tags non utilisés"
+
+#: plugin.py:263
+msgid "Delete all tags..."
+msgstr "Effacer tous les tags..."
