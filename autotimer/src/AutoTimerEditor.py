@@ -364,16 +364,32 @@ class AutoTimerEditorBase:
 					self.destination.setChoices(config.movielist.videodirs.value, default = res)
 			self.destination.value = res
 
-	def chooseDestination(self):
+	def openMovieLocationBox(self, answer=""):
 		from Screens.LocationBox import MovieLocationBox
-
 		self.session.openWithCallback(
 			self.pathSelected,
 			MovieLocationBox,
 			_("Choose target folder"),
-			self.destination.value,
-			minFree = 100 # Same requirement as in Screens.TimerEntry
+				self.destination.value,
+			filename = answer,
+			minFree = 100
 		)
+
+	def chooseDestination(self):
+		menu = [(_("Open select location"), "empty")]
+		if self.name.value:
+			menu.append((_("Open select location as timer name"), "timername"))
+		if len(menu) == 1:
+			self.openMovieLocationBox()
+		elif len(menu) == 2:
+			text = _("Select action")
+			def selectAction(choice):
+				if choice:
+					if choice[1] == "timername":
+						self.openMovieLocationBox(self.name.value)
+					elif choice[1] == "empty":
+						self.openMovieLocationBox()
+			self.session.openWithCallback(selectAction, ChoiceBox, title=text, list=menu)
 
 	def tagEditFinished(self, ret):
 		if ret is not None:
