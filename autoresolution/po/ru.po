@@ -1,0 +1,154 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Automatic Screen Resolution V. 0.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-06-10 16:57+0100\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Dimitrij <Dima-73@inbox.lv>\n"
+"Language-Team: PLi Dima73\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: _(\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"Language: ru_RU\n"
+"X-Generator: Poedit 1.8.4\n"
+"X-Poedit-SearchPath-0: ../src\n"
+
+#: ../src/plugin.py:24
+msgid "SD 24HZ Progressive mode"
+msgstr "SD 24HZ прогрессивный режим"
+
+#: ../src/plugin.py:24
+msgid "SD 25/50HZ Interlace Mode"
+msgstr "SD 25/50HZ чересстрочный режим"
+
+#: ../src/plugin.py:24
+msgid "SD 30/60HZ Interlace Mode"
+msgstr "SD 30/60HZ чересстрочный режим"
+
+#: ../src/plugin.py:25
+msgid "SD 25/50HZ Progressive Mode"
+msgstr "SD 25/50HZ прогрессивный режим"
+
+#: ../src/plugin.py:25
+msgid "SD 30/60HZ Progressive Mode"
+msgstr "SD 30/60Hz прогрессивный режим"
+
+#: ../src/plugin.py:26
+msgid "HD Interlace Mode"
+msgstr "HD чересстрочный режим"
+
+#: ../src/plugin.py:26
+msgid "HD Progressive Mode"
+msgstr "HD прогрессивный режим"
+
+#: ../src/plugin.py:27
+msgid "Enable 720p24 Mode"
+msgstr "Включить режим 720p24"
+
+#: ../src/plugin.py:27
+msgid "Enable 1080p24 Mode"
+msgstr "Включить режим 1080p24"
+
+#: ../src/plugin.py:28
+msgid "Enable 1080p25 Mode"
+msgstr "Включить режим 1080p25"
+
+#: ../src/plugin.py:28
+msgid "Enable 1080p30 Mode"
+msgstr "Включить режим 1080p30"
+
+#: ../src/plugin.py:35 ../src/plugin.py:37
+msgid "off"
+msgstr "выкл"
+
+#: ../src/plugin.py:35 ../src/plugin.py:37
+msgid "auto"
+msgstr "авто"
+
+#: ../src/plugin.py:35 ../src/plugin.py:37
+msgid "on"
+msgstr "вкл"
+
+#: ../src/plugin.py:35 ../src/plugin.py:37
+msgid "bob"
+msgstr "лучший"
+
+#: ../src/plugin.py:39
+msgid "second"
+msgstr "сек"
+
+#: ../src/plugin.py:39 ../src/plugin.py:40 ../src/plugin.py:41
+msgid "seconds"
+msgstr "сек"
+
+#: ../src/plugin.py:117
+msgid "default"
+msgstr "дефолт"
+
+#: ../src/plugin.py:227
+#, python-format
+msgid ""
+"Autoresolution Plugin Testmode:\n"
+"Is %s OK?"
+msgstr ""
+"Тестовый режим авторазрешения:\n"
+"Так %s Вас устраивает?"
+
+#: ../src/plugin.py:276
+msgid "Autoresolution videomode setup"
+msgstr "Параметры авторазрешения видеорежима"
+
+#: ../src/plugin.py:288
+msgid "OK"
+msgstr "ОК"
+
+#: ../src/plugin.py:289
+msgid "Cancel"
+msgstr "Отмена"
+
+#: ../src/plugin.py:295
+msgid "Autoresolution settings"
+msgstr "Настройки авторазрешения"
+
+#: ../src/plugin.py:298
+msgid "Enable Autoresolution"
+msgstr "Включить авторазрешение"
+
+#: ../src/plugin.py:304 ../src/plugin.py:305
+msgid "Refresh Rate"
+msgstr "Частота обновления"
+
+#: ../src/plugin.py:306
+msgid "Show info screen"
+msgstr "Показать экран информации"
+
+#: ../src/plugin.py:307
+msgid "Delay x seconds after service started"
+msgstr "Задержка в х секунд после старта сервиса"
+
+#: ../src/plugin.py:308
+msgid "Running in testmode"
+msgstr "Запуск в тестовом режиме"
+
+#: ../src/plugin.py:309
+msgid "Deinterlacer mode for interlaced content"
+msgstr "Деинтерлейсер режим для чересстрочной развертки"
+
+#: ../src/plugin.py:310
+msgid "Deinterlacer mode for progressive content"
+msgstr "Деинтерлейсер режим для прогрессивной развертки"
+
+#: ../src/plugin.py:313
+msgid "Autoresolution is not working in Scart/DVI-PC Mode"
+msgstr "Авторазрешение не работает на Scart/DVI-PC режиме"
+
+#: ../src/plugin.py:357
+msgid "Autoresolution"
+msgstr "Авторазрешение"
+
+#: ../src/plugin.py:365
+msgid "Autoresolution Switch"
+msgstr "Переключатель авторазрешения"
