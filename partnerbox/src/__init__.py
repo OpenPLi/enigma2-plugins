@@ -10,7 +10,7 @@ def localeInit():
 def _(txt):
 	t = gettext.dgettext("Partnerbox", txt)
 	if t == txt:
-		print "[Partnerbox] fallback to default translation for", txt
+		#print "[Partnerbox] fallback to default translation for", txt
 		t = gettext.gettext(txt)
 	return t
 

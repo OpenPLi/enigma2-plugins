@@ -18,7 +18,7 @@
 #
 
 from enigma import eListboxPythonMultiContent, eListbox, gFont, \
-	RT_HALIGN_LEFT, RT_VALIGN_CENTER
+	RT_HALIGN_LEFT, RT_VALIGN_CENTER, getDesktop
 from Screens.Screen import Screen
 from Screens.MessageBox import MessageBox
 from Components.MenuList import MenuList
@@ -35,11 +35,11 @@ from . import _
 def initPartnerboxEntryConfig():
 	config.plugins.Partnerbox.Entries.append(ConfigSubsection())
 	i = len(config.plugins.Partnerbox.Entries) -1
-	config.plugins.Partnerbox.Entries[i].name = ConfigText(default = "dreambox", visible_width = 50, fixed_size = False)
+	config.plugins.Partnerbox.Entries[i].name = ConfigText(default = "Remote box", visible_width = 50, fixed_size = False)
 	config.plugins.Partnerbox.Entries[i].ip = ConfigIP(default = [192,168,0,98])
 	config.plugins.Partnerbox.Entries[i].port = ConfigInteger(default=80, limits=(1, 65555))
 	config.plugins.Partnerbox.Entries[i].enigma = ConfigSelection(default="0", choices = [("0", _("Enigma 2")),("1", _("Enigma 1"))])
-	config.plugins.Partnerbox.Entries[i].password = ConfigText(default = "dreambox", visible_width = 50, fixed_size = False)
+	config.plugins.Partnerbox.Entries[i].password = ConfigText(default = "root", visible_width = 50, fixed_size = False)
 	config.plugins.Partnerbox.Entries[i].useinternal = ConfigSelection(default="1", choices = [("0", _("use external")),("1", _("use internal"))])
 	config.plugins.Partnerbox.Entries[i].zaptoservicewhenstreaming = ConfigYesNo(default = True)
 	return config.plugins.Partnerbox.Entries[i]
@@ -52,17 +52,30 @@ def initConfig():
 			initPartnerboxEntryConfig()
 			i += 1
 
+HD = False
+if getDesktop(0).size().width() >= 1280:
+	HD = True
 class PartnerboxSetup(ConfigListScreen, Screen):
-	skin = """
-		<screen position="center,center" size="550,400" title="Partnerbox Setup" >
-			<widget name="config" position="20,10" size="510,330" scrollbarMode="showOnDemand" />
-			<widget name="key_red" position="0,350" size="140,40" valign="center" halign="center" zPosition="5" transparent="1" foregroundColor="white" font="Regular;18"/>
-			<widget name="key_green" position="140,350" size="140,40" valign="center" halign="center" zPosition="5" transparent="1" foregroundColor="white" font="Regular;18"/>
-			<widget name="key_yellow" position="280,350" size="140,40" valign="center" halign="center" zPosition="5" transparent="1" foregroundColor="white" font="Regular;18"/>
-			<ePixmap name="red" pixmap="skin_default/buttons/red.png" position="0,350" size="140,40" zPosition="4" transparent="1" alphatest="on"/>
-			<ePixmap name="green" pixmap="skin_default/buttons/green.png" position="140,350" size="140,40" zPosition="4" transparent="1" alphatest="on"/>
-			<ePixmap name="yellow" pixmap="skin_default/buttons/yellow.png" position="280,350" size="140,40" zPosition="4" transparent="1" alphatest="on"/>
-		</screen>"""
+	if HD:
+		skin = """ <screen position="center,center" size="700,400" title="Partnerbox Setup" >
+				<widget name="config" position="10,10" size="680,330" scrollbarMode="showOnDemand" />
+				<widget name="key_red" position="10,350" size="140,40" valign="center" halign="center" zPosition="5" transparent="1" foregroundColor="white" font="Regular;17"/>
+				<widget name="key_green" position="300,350" size="140,40" valign="center" halign="center" zPosition="5" transparent="1" foregroundColor="white" font="Regular;17"/>
+				<widget name="key_yellow" position="550,350" size="140,40" valign="center" halign="center" zPosition="5" transparent="1" foregroundColor="white" font="Regular;17"/>
+				<ePixmap name="red" pixmap="skin_default/buttons/red.png" position="10,350" size="140,40" zPosition="4" transparent="1" alphatest="on"/>
+				<ePixmap name="green" pixmap="skin_default/buttons/green.png" position="300,350" size="140,40" zPosition="4" transparent="1" alphatest="on"/>
+				<ePixmap name="yellow" pixmap="skin_default/buttons/yellow.png" position="550,350" size="140,40" zPosition="4" transparent="1" alphatest="on"/>
+			</screen>"""
+	else:
+		skin = """ <screen position="center,center" size="550,400" title="Partnerbox Setup" >
+				<widget name="config" position="20,10" size="510,330" scrollbarMode="showOnDemand" />
+				<widget name="key_red" position="0,350" size="140,40" valign="center" halign="center" zPosition="5" transparent="1" foregroundColor="white" font="Regular;18"/>
+				<widget name="key_green" position="140,350" size="140,40" valign="center" halign="center" zPosition="5" transparent="1" foregroundColor="white" font="Regular;18"/>
+				<widget name="key_yellow" position="280,350" size="140,40" valign="center" halign="center" zPosition="5" transparent="1" foregroundColor="white" font="Regular;18"/>
+				<ePixmap name="red" pixmap="skin_default/buttons/red.png" position="0,350" size="140,40" zPosition="4" transparent="1" alphatest="on"/>
+				<ePixmap name="green" pixmap="skin_default/buttons/green.png" position="140,350" size="140,40" zPosition="4" transparent="1" alphatest="on"/>
+				<ePixmap name="yellow" pixmap="skin_default/buttons/yellow.png" position="280,350" size="140,40" zPosition="4" transparent="1" alphatest="on"/>
+			</screen>"""
 
 	def __init__(self, session, args = None):
 		Screen.__init__(self, session)
@@ -71,26 +84,50 @@ class PartnerboxSetup(ConfigListScreen, Screen):
 		self["key_red"] = Button(_("Cancel"))
 		self["key_green"] = Button(_("OK"))
 		self["key_yellow"] = Button(_("Partnerbox Entries"))
-
-		self.list = [ ]
-		self.list.append(getConfigListEntry(_("Show 'RemoteTimer' in E-Menu"), config.plugins.Partnerbox.showremotetimerinextensionsmenu))
-		self.list.append(getConfigListEntry(_("Show 'RemoteTV Player' in E-Menu"), config.plugins.Partnerbox.showremotetvinextensionsmenu))
-		self.list.append(getConfigListEntry(_("Show 'Stream current Service' in E-Menu"), config.plugins.Partnerbox.showcurrentstreaminextensionsmenu))
-		self.list.append(getConfigListEntry(_("Enable Partnerbox-Function in TimerEvent"), config.plugins.Partnerbox.enablepartnerboxintimerevent))
-		self.list.append(getConfigListEntry(_("Enable Partnerbox-Function in EPGList"), config.plugins.Partnerbox.enablepartnerboxepglist))
-		self.list.append(getConfigListEntry(_("Enable VPS-Function in TimerEvent"), config.plugins.Partnerbox.enablevpsintimerevent))
-		ConfigListScreen.__init__(self, self.list, session)
+		ConfigListScreen.__init__(self, [])
+		self.initConfig()
 		self["setupActions"] = ActionMap(["SetupActions", "ColorActions"],
 		{
 			"green": self.keySave,
 			"cancel": self.keyClose,
+			"red": self.keyClose,
 			"ok": self.keySave,
 			"yellow": self.PartnerboxEntries,
 		}, -2)
 
+	def initConfig(self):
+		self.list = [ ]
+		self.list.append(getConfigListEntry(_("Show 'RemoteTimer' in Eventinfo menu"), config.plugins.Partnerbox.enablepartnerboxeventinfomenu))
+		if config.plugins.Partnerbox.enablepartnerboxeventinfomenu.value:
+			self.list.append(getConfigListEntry(_("Show 'RemoteTimer' in Event View context menu"), config.plugins.Partnerbox.enablepartnerboxeventinfocontextmenu))
+		self.list.append(getConfigListEntry(_("Show 'RemoteTimer' in E-Menu"), config.plugins.Partnerbox.showremotetimerinextensionsmenu))
+		self.list.append(getConfigListEntry(_("Show 'RemoteTV Player' in E-Menu"), config.plugins.Partnerbox.showremotetvinextensionsmenu))
+		self.list.append(getConfigListEntry(_("Show 'Stream current Service' in E-Menu"), config.plugins.Partnerbox.showcurrentstreaminextensionsmenu))
+		self.list.append(getConfigListEntry(_("Enable Partnerbox-Function in TimerEvent"), config.plugins.Partnerbox.enablepartnerboxintimerevent))
+		if config.plugins.Partnerbox.enablepartnerboxintimerevent.value:
+			self.list.append(getConfigListEntry(_("Enable first Partnerbox-entry in Timeredit as default"), config.plugins.Partnerbox.enabledefaultpartnerboxintimeredit))
+			self.list.append(getConfigListEntry(_("Enable VPS-Function in TimerEvent"), config.plugins.Partnerbox.enablevpsintimerevent))
+		self.list.append(getConfigListEntry(_("Enable Partnerbox-Function in EPGList"), config.plugins.Partnerbox.enablepartnerboxepglist))
+		if config.plugins.Partnerbox.enablepartnerboxepglist.value:
+			self.list.append(getConfigListEntry(_("Enable Red Button-Function in single/multi EPG"), config.plugins.Partnerbox.enablepartnerboxzapbuton))
+			self.list.append(getConfigListEntry(_("Show duration time for event"), config.plugins.Partnerbox.showremaingepglist))
+			self.list.append(getConfigListEntry(_("Show all icon for event in EPGList"), config.plugins.Partnerbox.allicontype))
+		self.list.append(getConfigListEntry(_("Enable Partnerbox-Function in Channel Selector"), config.plugins.Partnerbox.enablepartnerboxchannelselector))
+		self["config"].l.setList(self.list)
+
 	def keySave(self):
-		for x in self["config"].list:
-			x[1].save()
+		config.plugins.Partnerbox.showremotetvinextensionsmenu.save()
+		config.plugins.Partnerbox.showcurrentstreaminextensionsmenu.save()
+		config.plugins.Partnerbox.showremotetimerinextensionsmenu.save()
+		config.plugins.Partnerbox.enablepartnerboxintimerevent.save()
+		config.plugins.Partnerbox.enablepartnerboxepglist.save()
+		config.plugins.Partnerbox.enablepartnerboxzapbuton.save()
+		config.plugins.Partnerbox.enablepartnerboxchannelselector.save()
+		config.plugins.Partnerbox.enabledefaultpartnerboxintimeredit.save()
+		config.plugins.Partnerbox.enablepartnerboxeventinfomenu.save()
+		config.plugins.Partnerbox.enablepartnerboxeventinfocontextmenu.save()
+		config.plugins.Partnerbox.allicontype.save()
+		config.plugins.Partnerbox.showremaingepglist.save()
 		configfile.save()
 		self.refreshPlugins()
 		self.close(self.session)
@@ -103,6 +140,14 @@ class PartnerboxSetup(ConfigListScreen, Screen):
 	def PartnerboxEntries(self):
 		self.session.open(PartnerboxEntriesListConfigScreen)
 
+	def keyLeft(self):
+		ConfigListScreen.keyLeft(self)
+		self.initConfig()
+
+	def keyRight(self):
+		ConfigListScreen.keyRight(self)
+		self.initConfig()
+
 	def refreshPlugins(self):
 		from Components.PluginComponent import plugins
 		from Tools.Directories import SCOPE_PLUGINS, resolveFilename
@@ -112,19 +157,19 @@ class PartnerboxSetup(ConfigListScreen, Screen):
 class PartnerboxEntriesListConfigScreen(Screen):
 	skin = """
 		<screen position="center,center" size="550,400" title="Partnerbox: List of Entries" >
-			<widget name="name" position="5,0" size="150,50" font="Regular;20" halign="left"/>
-			<widget name="ip" position="120,0" size="50,50" font="Regular;20" halign="left"/>
-			<widget name="port" position="270,0" size="100,50" font="Regular;20" halign="left"/>
-			<widget name="type" position="410,0" size="160,50" font="Regular;20" halign="left"/>
+			<widget name="name" position="5,0" size="200,50" font="Regular;20" halign="left"/>
+			<widget name="ip" position="215,0" size="140,50" font="Regular;20" halign="left"/>
+			<widget name="port" position="350,0" size="80,50" font="Regular;20" halign="left"/>
+			<widget name="type" position="430,0" size="120,50" font="Regular;20" halign="left"/>
 			<widget name="entrylist" position="0,50" size="550,300" scrollbarMode="showOnDemand"/>
 
 			<widget name="key_red" position="0,350" size="140,40" zPosition="5" valign="center" halign="center" backgroundColor="red" font="Regular;21" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
-			<widget name="key_green" position="140,350" size="140,40" zPosition="5" valign="center" halign="center" backgroundColor="green" font="Regular;21" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
 			<widget name="key_yellow" position="280,350" size="140,40" zPosition="5" valign="center" halign="center" backgroundColor="yellow" font="Regular;21" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
+			<widget name="key_green" position="140,350" size="140,40" zPosition="5" valign="center" halign="center" backgroundColor="green" font="Regular;21" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
 			<widget name="key_blue" position="420,350" zPosition="5" size="140,40" valign="center" halign="center" font="Regular;21" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
 			<ePixmap name="red" position="0,350" zPosition="4" size="140,40" pixmap="skin_default/buttons/red.png" transparent="1" alphatest="on" />
-			<ePixmap name="green" position="140,350" zPosition="4" size="140,40" pixmap="skin_default/buttons/green.png" transparent="1" alphatest="on" />
 			<ePixmap name="yellow" position="280,350" zPosition="4" size="140,40" pixmap="skin_default/buttons/yellow.png" transparent="1" alphatest="on" />
+			<ePixmap name="green" position="140,350" zPosition="4" size="140,40" pixmap="skin_default/buttons/green.png" transparent="1" alphatest="on" />
 			<ePixmap name="blue" position="420,350" zPosition="4" size="140,40" pixmap="skin_default/buttons/blue.png" transparent="1" alphatest="on" />
 		</screen>"""
 
@@ -138,8 +183,8 @@ class PartnerboxEntriesListConfigScreen(Screen):
 		self["port"] = Button(_("Port"))
 		self["type"] = Button(_("Enigma Type"))
 		self["key_red"] = Button(_("Add"))
-		self["key_green"] = Button(_("Power"))
 		self["key_yellow"] = Button(_("Edit"))
+		self["key_green"] = Button(_("Power"))
 		self["key_blue"] = Button(_("Delete"))
 		self["entrylist"] = PartnerboxEntryList([])
 		self["actions"] = ActionMap(["WizardActions","MenuActions","ShortcutActions"],
@@ -179,6 +224,25 @@ class PartnerboxEntriesListConfigScreen(Screen):
 		if sel is None:
 			return
 		self.session.openWithCallback(self.updateList,PartnerboxEntryConfigScreen,sel)
+
+	def keyDelete(self):
+		try:sel = self["entrylist"].l.getCurrentSelection()[0]
+		except: sel = None
+		if sel is None:
+			return
+		self.session.openWithCallback(self.deleteConfirm, MessageBox, _("Really delete this Partnerbox Entry?"))
+
+	def deleteConfirm(self, result):
+		if not result:
+			return
+		sel = self["entrylist"].l.getCurrentSelection()[0]
+		config.plugins.Partnerbox.entriescount.value = config.plugins.Partnerbox.entriescount.value - 1
+		config.plugins.Partnerbox.entriescount.save()
+		config.plugins.Partnerbox.Entries.remove(sel)
+		config.plugins.Partnerbox.Entries.save()
+		config.plugins.Partnerbox.save()
+		configfile.save()
+		self.updateList()
 
 	def powerMenu(self):
 		try:sel = self["entrylist"].l.getCurrentSelection()[0]
@@ -231,25 +295,6 @@ class PartnerboxEntriesListConfigScreen(Screen):
 			return
 		from PartnerboxFunctions import sendPartnerBoxWebCommand
 		sendPartnerBoxWebCommand(sCommand, None,3, username, password)
-
-	def keyDelete(self):
-		try:sel = self["entrylist"].l.getCurrentSelection()[0]
-		except: sel = None
-		if sel is None:
-			return
-		self.session.openWithCallback(self.deleteConfirm, MessageBox, _("Really delete this Partnerbox Entry?"))
-
-	def deleteConfirm(self, result):
-		if not result:
-			return
-		sel = self["entrylist"].l.getCurrentSelection()[0]
-		config.plugins.Partnerbox.entriescount.value = config.plugins.Partnerbox.entriescount.value - 1
-		config.plugins.Partnerbox.entriescount.save()
-		config.plugins.Partnerbox.Entries.remove(sel)
-		config.plugins.Partnerbox.Entries.save()
-		config.plugins.Partnerbox.save()
-		configfile.save()
-		self.updateList()
 
 class PartnerboxEntryList(MenuList):
 	def __init__(self, list, enableWrapAround = True):
@@ -351,7 +396,7 @@ class PartnerboxEntryConfigScreen(ConfigListScreen, Screen):
 	def keyDelete(self):
 		if self.newmode == 1:
 			self.keyCancel()
-		else:		
+		else:
 			self.session.openWithCallback(self.deleteConfirm, MessageBox, _("Really delete this Partnerbox Entry?"))
 
 	def deleteConfirm(self, result):
