@@ -25,6 +25,7 @@ from twisted.web import client
 from twisted.web.client import HTTPClientFactory
 from base64 import encodestring
 import xml.etree.cElementTree
+#import urlparse
 from urllib import unquote
 
 CurrentIP = None
@@ -36,8 +37,10 @@ def getTimerType(refstr, beginTime, duration, eventId, timer_list):
 	post = 2
 	type = 0
 	endTime = beginTime + duration
+	refstr_str = ':'.join(str(refstr).split(':')[:11])
 	for x in timer_list:
-		if x.servicereference.upper() == refstr.upper():
+		servicereference_str = ':'.join(str(x.servicereference).split(':')[:11])
+		if servicereference_str.upper() == refstr_str.upper():
 			if x.eventId == eventId:
 				return True
 			beg = x.timebegin
@@ -62,8 +65,11 @@ def isInTimerList(begin, duration, service, eventid, timer_list):
 	chktimecmp_end = None
 	end = begin + duration
 	timerentry = None
+	service = getServiceRef(service)
+	service_str = ':'.join(str(service).split(':')[:11])
 	for x in timer_list:
-		if x.servicereference.upper() == service.upper():
+		servicereference_str = ':'.join(str(x.servicereference).split(':')[:11])
+		if servicereference_str.upper() == service_str.upper():
 			if x.repeated != 0:
 				if chktime is None:
 					chktime = localtime(begin)
@@ -92,9 +98,107 @@ def isInTimerList(begin, duration, service, eventid, timer_list):
 				break
 	return timerentry
 
+def isInRepeatTimer(self, timer, event):
+	time_match = 0
+	is_editable = False
+	begin = event.getBeginTime()
+	duration = event.getDuration()
+	end = begin + duration
+	timer_end = timer.end
+	if timer.disabled and timer.isRunning():
+		if begin < timer.begin <= end or timer.begin <= begin <= timer_end:
+			return True
+		else:
+			return False
+	if timer.justplay and (timer_end - timer.begin) <= 1:
+		timer_end += 60
+	bt = localtime(begin)
+	bday = bt.tm_wday
+	begin2 = 1440 + bt.tm_hour * 60 + bt.tm_min
+	end2 = begin2 + duration / 60
+	xbt = localtime(timer.begin)
+	xet = localtime(timer_end)
+	offset_day = False
+	checking_time = timer.begin < begin or begin <= timer.begin <= end
+	if xbt.tm_yday != xet.tm_yday:
+		oday = bday - 1
+		if oday == -1: oday = 6
+		offset_day = timer.repeated & (1 << oday)
+	xbegin = 1440 + xbt.tm_hour * 60 + xbt.tm_min
+	xend = xbegin + ((timer_end - timer.begin) / 60)
+	if xend < xbegin:
+		xend += 1440
+	if timer.repeated & (1 << bday) and checking_time:
+		if begin2 < xbegin <= end2:
+			if xend < end2:
+				# recording within event
+				time_match = (xend - xbegin) * 60
+				is_editable = True
+			else:
+				# recording last part of event
+				time_match = (end2 - xbegin) * 60
+				summary_end = (xend - end2) * 60
+				is_editable = not summary_end and True or time_match >= summary_end
+		elif xbegin <= begin2 <= xend:
+			if xend < end2:
+				# recording first part of event
+				time_match = (xend - begin2) * 60
+				summary_end = (begin2 - xbegin) * 60
+				is_editable = not summary_end and True or time_match >= summary_end
+			else:
+				# recording whole event
+				time_match = (end2 - begin2) * 60
+				is_editable = True
+		elif offset_day:
+			xbegin -= 1440
+			xend -= 1440
+			if begin2 < xbegin <= end2:
+				if xend < end2:
+					# recording within event
+					time_match = (xend - xbegin) * 60
+					is_editable = True
+				else:
+					# recording last part of event
+					time_match = (end2 - xbegin) * 60
+					summary_end = (xend - end2) * 60
+					is_editable = not summary_end and True or time_match >= summary_end
+			elif xbegin <= begin2 <= xend:
+				if xend < end2:
+					# recording first part of event
+					time_match = (xend - begin2) * 60
+					summary_end = (begin2 - xbegin) * 60
+					is_editable = not summary_end and True or time_match >= summary_end
+				else:
+					# recording whole event
+					time_match = (end2 - begin2) * 60
+					is_editable = True
+	elif offset_day and checking_time:
+		xbegin -= 1440
+		xend -= 1440
+		if begin2 < xbegin <= end2:
+			if xend < end2:
+				# recording within event
+				time_match = (xend - xbegin) * 60
+				is_editable = True
+			else:
+				# recording last part of event
+				time_match = (end2 - xbegin) * 60
+				summary_end = (xend - end2) * 60
+				is_editable = not summary_end and True or time_match >= summary_end
+		elif xbegin <= begin2 <= xend:
+			if xend < end2:
+				# recording first part of event
+				time_match = (xend - begin2) * 60
+				summary_end = (begin2 - xbegin) * 60
+				is_editable = not summary_end and True or time_match >= summary_end
+			else:
+				# recording whole event
+				time_match = (end2 - begin2) * 60
+				is_editable = True
+	return time_match and is_editable
 
 class E2Timer:
-	def __init__(self, servicereference = "", servicename = "", name = "", disabled = 0, timebegin = 0, timeend = 0, duration = 0, startprepare = 0, state = 0, repeated = 0, justplay = 0, eventId = 0, afterevent = 0, dirname = "", description = "", type = 0):
+	def __init__(self, servicereference = "", servicename = "", name = "", disabled = 0, timebegin = 0, timeend = 0, duration = 0, startprepare = 0, state = 0, repeated = 0, justplay = 0, eventId = 0, afterevent = 3, dirname = "", description = "", type = 0):
 		self.servicereference = servicereference
 		self.servicename = servicename
 		self.name = name
@@ -116,12 +220,16 @@ class E2Timer:
 			self.name = description
 			if type & PlaylistEntry.isRepeating:
 				self.repeated = 1
-			self.dirname = "/hdd/movie/"
+			self.dirname = "/media/hdd/movie/"
 
 def FillE2TimerList(xmlstring, sreference = None):
 	E2TimerList = []
 	try: root = xml.etree.cElementTree.fromstring(xmlstring)
 	except: return E2TimerList
+	if sreference is None:
+		sreference = None
+	else:
+		sreference = getServiceRef(sreference)
 	for timer in root.findall("e2timer"):
 		go = False
 		state = 0
@@ -130,11 +238,13 @@ def FillE2TimerList(xmlstring, sreference = None):
 		disabled = 0
 		try: disabled = int(timer.findtext("e2disabled", 0))
 		except: disabled = 0
-		servicereference = str(timer.findtext("e2servicereference", '').encode("utf-8", 'ignore'))
+		servicereference = str(timer.findtext("e2servicereference", '').decode("utf-8").encode("utf-8", 'ignore'))
 		if sreference is None:
 			go = True
 		else:
-			if sreference.upper() == servicereference.upper() and state != TimerEntry.StateEnded and not disabled:
+			servicereference_str = ':'.join(str(servicereference).split(':')[:11])
+			sreference_str = ':'.join(str(sreference).split(':')[:11])
+			if sreference_str.upper() == servicereference_str.upper() and state != TimerEntry.StateEnded and not disabled:
 				go = True
 		if go:
 			timebegin = 0
@@ -143,7 +253,7 @@ def FillE2TimerList(xmlstring, sreference = None):
 			startprepare = 0
 			repeated = 0
 			justplay = 0
-			afterevent = 0
+			afterevent = 3
 			eventId = -1
 			try: timebegin = int(timer.findtext("e2timebegin", 0))
 			except: timebegin = 0
@@ -157,14 +267,14 @@ def FillE2TimerList(xmlstring, sreference = None):
 			except: repeated = 0
 			try: justplay = int(timer.findtext("e2justplay", 0)) 
 			except: justplay = 0
-			try: afterevent = int(timer.findtext("e2afterevent", 0))
-			except: afterevent = 0
+			try: afterevent = int(timer.findtext("e2afterevent", 3))
+			except: afterevent = 3
 			try: eventId = int(timer.findtext("e2eit", -1))
 			except: eventId = -1
 			E2TimerList.append(E2Timer(
 				servicereference = servicereference,
-				servicename = str(timer.findtext("e2servicename", 'n/a').encode("utf-8", 'ignore')),
-				name = str(timer.findtext("e2name", '').encode("utf-8", 'ignore')),
+				servicename = unquote(str(timer.findtext("e2servicename", 'n/a').decode("utf-8").encode("utf-8", 'ignore'))),
+				name = str(timer.findtext("e2name", '').decode("utf-8").encode("utf-8", 'ignore')),
 				disabled = disabled,
 				timebegin = timebegin,
 				timeend = timeend,
@@ -175,11 +285,10 @@ def FillE2TimerList(xmlstring, sreference = None):
 				justplay = justplay,
 				eventId = eventId,
 				afterevent = afterevent,
-				dirname = str(timer.findtext("e2location", '').encode("utf-8", 'ignore')),
-				description = str(timer.findtext("e2description", '').encode("utf-8", 'ignore')),
+				dirname = str(timer.findtext("e2location", '').decode("utf-8").encode("utf-8", 'ignore')),
+				description = unquote(str(timer.findtext("e2description", '').decode("utf-8").encode("utf-8", 'ignore'))),
 				type = 0))
 	return E2TimerList
-
 
 def FillE1TimerList(xmlstring, sreference = None):
 	E1TimerList = []
@@ -189,14 +298,14 @@ def FillE1TimerList(xmlstring, sreference = None):
 		try: typedata = int(timer.findtext("typedata", 0))
 		except: typedata = 0
 		for service in timer.findall("service"):
-			servicereference = str(service.findtext("reference", '').encode("utf-8", 'ignore'))
-			servicename = unquote(str(service.findtext("name", 'n/a').encode("utf-8", 'ignore')))
+			servicereference = str(service.findtext("reference", '').decode("utf-8").encode("utf-8", 'ignore'))
+			servicename = str(service.findtext("name", 'n/a').decode("utf-8").encode("utf-8", 'ignore'))
 		for event in timer.findall("event"):
 			try: timebegin = int(event.findtext("start", 0))
 			except: timebegin = 0
 			try: duration = int(event.findtext("duration", 0))
 			except: duration = 0
-			description = unquote(str(event.findtext("description", '').encode("utf-8", 'ignore')))
+			description = str(event.findtext("description", '').decode("utf-8").encode("utf-8", 'ignore'))
 		go = False
 		if sreference is None:
 			go = True
@@ -214,8 +323,24 @@ class myHTTPClientFactory(HTTPClientFactory):
 		HTTPClientFactory.__init__(self, url, method=method, postdata=postdata,
 		headers=headers, agent=agent, timeout=timeout, cookies=cookies,followRedirect=followRedirect)
 
+def url_parse(url, defaultPort=None):
+	parsed = urlparse.urlparse(url)
+	scheme = parsed[0]
+	path = urlparse.urlunparse(('', '') + parsed[2:])
+	if defaultPort is None:
+		if scheme == 'https':
+			defaultPort = 443
+		else:
+			defaultPort = 80
+	host, port = parsed[1], defaultPort
+	if ':' in host:
+		host, port = host.split(':')
+		port = int(port)
+	return scheme, host, port, path
 
 def sendPartnerBoxWebCommand(url, contextFactory=None, timeout=60, username = "root", password = "", *args, **kwargs):
+	#scheme, host, port, path = client._parse(url)
+	#scheme, host, port, path = url_parse(url)
 	from urlparse import urlparse
 	parsed = urlparse(url)
 	scheme = parsed.scheme
@@ -238,8 +363,8 @@ class PlaylistEntry:
 	SwitchTimerEntry=2		#simple service switch timer
 	RecTimerEntry=4			#timer do recording
 	
-	recDVR=8			#timer do DVR recording
-	recVCR=16			#timer do VCR recording (LIRC) not used yet
+	recDVR=8				#timer do DVR recording
+	recVCR=16				#timer do VCR recording (LIRC) not used yet
 	recNgrab=131072			#timer do record via Ngrab Server
 
 	stateWaiting=32			#timer is waiting
@@ -248,8 +373,8 @@ class PlaylistEntry:
 	stateFinished=256		#timer is finished
 	stateError=512			#timer has error state(s)
 
-	errorNoSpaceLeft=1024		#HDD no space Left ( recDVR )
-	errorUserAborted=2048		#User Action aborts this event
+	errorNoSpaceLeft=1024	#HDD no space Left ( recDVR )
+	errorUserAborted=2048	#User Action aborts this event
 	errorZapFailed=4096		#Zap to service failed
 	errorOutdated=8192		#Outdated event
 
@@ -269,12 +394,11 @@ class PlaylistEntry:
 	Fr=16777216
 	Sa=33554432
 
-
 def SetPartnerboxTimerlist(partnerboxentry = None, sreference = None):
 	global remote_timer_list
 	global CurrentIP
 	if partnerboxentry is None:
-		return	
+		return
 	try:
 		password = partnerboxentry.password.value
 		username = "root"
@@ -293,3 +417,12 @@ def SetPartnerboxTimerlist(partnerboxentry = None, sreference = None):
 		else:
 			remote_timer_list = FillE1TimerList(sxml, sreference)
 	except: pass
+
+def getServiceRef(sreference):
+		if not sreference:
+			return ""
+		serviceref = sreference
+		hindex = sreference.find("http")
+		if hindex > 0: # partnerbox service ?
+			serviceref =  serviceref[:hindex]
+		return serviceref

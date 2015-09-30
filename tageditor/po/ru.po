@@ -1,0 +1,72 @@
+# German translations for enigma package.
+# Copyright (C) 2009 THE enigma'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the enigma package.
+# Automatically generated, 2009.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Enigma 2 TagEditor Plugin\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-02-16 23:05+0100\n"
+"PO-Revision-Date: 2015-09-29 14:07+0200\n"
+"Last-Translator: Dimitrij <Dima-73@inbox.lv>\n"
+"Language-Team: PLi Dima73\n"
+"Language: ru_RU\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Poedit 1.7.5\n"
+
+msgid "Add new tag..."
+msgstr "Добавить новый тег..."
+
+msgid "Cancel"
+msgstr "Отмена"
+
+msgid "Delete all tags..."
+msgstr "Удалить все теги..."
+
+msgid "Delete this tag..."
+msgstr "Удалить этот тег..."
+
+msgid "Delete unused tags"
+msgstr "Удалить неиспользуемые теги"
+
+msgid ""
+"Do you really want to delete all tags everywhere?\n"
+"(Note that 'Cancel' will not undo this!)"
+msgstr ""
+"Вы действительно хотите удалить все теги везде?\n"
+"(Обратите внимание, что 'Отмена' не отменит это!)"
+
+msgid ""
+"Do you really want to delete tag \"%s\" everywhere?\n"
+"(Note that 'Cancel' will not undo this!)"
+msgstr ""
+"Вы действительно хотите удалить тег \"%s\" везде?\n"
+"(Обратите внимание, что 'Отмена' не отменит это!)"
+
+msgid "edit tags..."
+msgstr "отредактировать тэги..."
+
+msgid "edit tags"
+msgstr "отредактировать тэги"
+
+msgid "Load"
+msgstr "Загрузить"
+
+msgid "New"
+msgstr "Новый"
+
+msgid "OK"
+msgstr "OK"
+
+msgid "Please enter the new tag"
+msgstr "Пожалуйста, введите новый тег"
+
+msgid "Rename this tag..."
+msgstr "Переименовать этот тег..."
+
+msgid "Replace tag \"%s\" everywhere with:   (Note that 'Cancel' will not undo this!)"
+msgstr "Заменить тег \"%s\" везде:   (Обратите внимание, что 'Отмена' не отменит это!)"
