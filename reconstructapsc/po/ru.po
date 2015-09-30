@@ -1,0 +1,56 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ReconstructApSc\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-05-04 10:23+0200\n"
+"Last-Translator: Dimitrij <Dima-73@inbox.lv>\n"
+"Language-Team: PLi Dima73\n"
+"Language: ru_RU\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Generator: Poedit 1.7.5\n"
+
+#: plugin.py:9
+msgid "Reconstruct AP/SC ..."
+msgstr "Реконструкция AP/SC..."
+
+#: ui.py:17
+msgid "Cannot reconstruct this item"
+msgstr "Не удается реконструировать этот файл"
+
+#: ui.py:19
+msgid "Don't reconstruct"
+msgstr "Не реконструировать"
+
+#: ui.py:21
+msgid "Reconstruct missing .ap and .sc files in this directory"
+msgstr "Реконструкция потерянных .ap и .sc файлов в этой папке"
+
+#: ui.py:22
+msgid "Reconstruct all .ap and .sc files in this directory"
+msgstr "Реконструкция всех .ap и .sc файлов в этой папке"
+
+#: ui.py:26
+msgid "more files..."
+msgstr "больше файлов ..."
+
+#: ui.py:28
+msgid "Reconstruct the .ap and .sc files of the selected movie"
+msgstr "Реконструкция .ap и .sc файлов для выбранного видео"
+
+#: ui.py:31
+#, python-format
+msgid "What would you like to reconstruct?  (\"%s\")"
+msgstr "Вы действительно хотите реконструировать?  (\"%s\")"
+
+#: ui.py:58
+#, python-format
+msgid "Reconstruct AP/SC - %s"
+msgstr "Реконструкция AP/SC - %s"
