@@ -9,7 +9,6 @@
 # version.
 #===============================================================================
 
-
 from enigma import eListboxPythonMultiContent, RT_HALIGN_LEFT, gFont
 
 from Tools.LoadPixmap import LoadPixmap

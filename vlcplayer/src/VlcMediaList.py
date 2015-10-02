@@ -41,7 +41,7 @@ class VlcMediaListScreen(Screen):
 			<widget size="540,320" scrollbarMode="showOnDemand" position="11,35" name="filelist" />
 			<widget size="540,320" scrollbarMode="showOnDemand" position="11,35" name="playlist" />
 		</screen>"""
-	
+
 	defaultFilter = "(?i)\.(avi|mpeg|mpg|divx|xvid|mp4|mov|ts|vob|wmv|mkv|iso|m3u|pls|xspf|flv)$"
 
 	def __init__(self, session, server):
@@ -62,7 +62,7 @@ class VlcMediaListScreen(Screen):
 		self["playlist_text"] = Label(_("Playlist"))
 		self["server_name"] = Label(server.getName())
 		self["current_dir"] = Label()
-		
+
 		self["actions"] = ActionMap(["WizardActions", "MenuActions", "ShortcutActions", "MoviePlayerActions", "EPGSelectActions"],
 			{
 			 "back": 	self.close,

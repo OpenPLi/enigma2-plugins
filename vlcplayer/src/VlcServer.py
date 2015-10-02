@@ -292,7 +292,7 @@ class VlcServer:
 
 		# Fix for nat. chars in path/filename
 		if not re.match("dvd", filename):
-			filename = urllib.pathname2url(filename)	
+			filename = urllib.pathname2url(filename)
 
 		if re.match("[a-zA-Z]:", filename):
 			# Fix for subtitles with VLC on Windows.
@@ -308,13 +308,13 @@ class VlcServer:
 		if self.getSubYellow():
 			parameters += " :freetype-color=0xFFFF00"
 
-		# caching			
+		# caching
 		if re.match("dvd", filename):
 			parameters += " :dvdread-caching=3000"
 		else:
 			parameters += " :file-caching=1000"
 
-		# languages/tracks			
+		# languages/tracks
 		if self.getlangInputType()=="language":
 			if self.gettypeAudio()!="---":
 				parameters += " :audio-language=%s" % self.gettypeAudio()
@@ -352,10 +352,10 @@ class VlcServer:
 				sout +="&option=%s" % quote_plus(par.lstrip(':'))
 
 		print "[VLC] playfile", input
-		print "[VLC] sout", sout	
+		print "[VLC] sout", sout
 
 		xml = self.__xmlRequest("status", [("command", "in_play"),("input", input)], sout)
-		
+
 		error = xml.getElementsByTagName("error")
 		if error is not None and len(error) > 0:
 			self.lastError = getText(error[0].childNodes).strip()

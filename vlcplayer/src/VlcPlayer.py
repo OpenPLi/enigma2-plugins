@@ -220,7 +220,7 @@ class VlcPlayerSummary(Screen):
 	def __init__(self, session, parent):
 		Screen.__init__(self, session)
 		self.skinName = "InfoBarMoviePlayerSummary"
-		
+
 
 class VlcPlayer(Screen, InfoBarNotifications, InfoBarAudioSelection, InfoBarSubtitleSupport):
 	screen_timeout = 5000
@@ -453,7 +453,7 @@ class VlcPlayer(Screen, InfoBarNotifications, InfoBarAudioSelection, InfoBarSubt
 				self.session.open(SubtitleSelection, self)
 			except:
 				pass
-		
+
 	def unpause(self):
 		print "[VLC] unpause"
 		try:
@@ -578,7 +578,7 @@ class VlcPlayer(Screen, InfoBarNotifications, InfoBarAudioSelection, InfoBarSubt
 
 	def audioTracks(self):
 		return self.session.nav.getCurrentService() and self.session.nav.getCurrentService().audioTracks();
-		
+
 	def subtitle(self):
 		return self.session.nav.getCurrentService() and self.session.nav.getCurrentService().subtitle();
 
