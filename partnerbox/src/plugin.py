@@ -120,7 +120,7 @@ def autostart_RemoteTimerInit(reason, **kwargs):
 def autostart_Partnerbox_EPGList(reason, **kwargs):
 	if "session" in kwargs:
 		session = kwargs["session"]
-		try: 
+		try:
 			Partnerbox_EPGListInit()
 			Partnerbox_EPGSelectionInit()
 		except: pass
@@ -165,7 +165,7 @@ def Plugins(**kwargs):
 def FillLocationList(xmlstring):
 	Locations = []
 	try: root = xml.etree.cElementTree.fromstring(xmlstring)
-	except: Locations 
+	except: Locations
 	for location in root.findall("e2location"):
 		Locations.append(location.text.encode("utf-8", 'ignore'))
 	for location in root.findall("e2simplexmlitem"):  # vorerst Kompatibilitaet zum alten Webinterface-Api aufrecht erhalten (e2simplexmlitem)
@@ -199,7 +199,7 @@ class CurrentRemoteTV(Screen):
 		tt = _("Starting Remote Player (IP = %s)") % (self.ip)
 		self["text"] = Label(tt)
 		self.onLayoutFinish.append(self.startRun)
-	
+
 	def startRun(self):
 		sendPartnerBoxWebCommand(self.url, None,10, self.username, self.password).addCallback(self.Callback).addErrback(self.Error)
 
@@ -280,7 +280,7 @@ class RemoteTimer(Screen):
 		self.not_epg = not_epg
 		self["key_red"] = Label()
 		self["key_green"] = Label()
-		self["key_yellow"] = Label() 
+		self["key_yellow"] = Label()
 		self["key_blue"] = Label()
 		self["text"] = Label(_("Getting Partnerbox Information..."))
 		self["textok"] = Label()
@@ -319,7 +319,7 @@ class RemoteTimer(Screen):
 			if self.not_epg:
 				self["key_yellow"].setText("")
 			else:
-				self["key_yellow"].setText(_("EPG Selection")) 
+				self["key_yellow"].setText(_("EPG Selection"))
 			self["key_blue"].setText(_("Clean up"))
 			self["textok"].setText(_("Press OK to edit timer..."))
 		else:
@@ -486,7 +486,7 @@ class RemoteTimerBouquetList(Screen):
 		<widget name="text" position="10,10" zPosition="1" size="290,225" font="Regular;20" halign="center" valign="center" />
 		<widget name="bouquetlist" position="10,10" zPosition="2" size="290,225" scrollbarMode="showOnDemand" />
 	</screen>"""
-	
+
 	def __init__(self, session, E2Timerlist, partnerboxentry, playeronly):
 		self.session = session
 		Screen.__init__(self, session)
@@ -731,7 +731,7 @@ class RemoteTimerChannelList(Screen):
 
 	def GetStreamInfosCallback(self):
 		if self.enigma_type == 0:
-			url = "http://" + self.ip + ":8001/" + self["channellist"].l.getCurrentSelection()[0].servicereference 
+			url = "http://" + self.ip + ":8001/" + self["channellist"].l.getCurrentSelection()[0].servicereference
 			self.StreamTV(url)
 		else:
 			url = self.http + "/video.m3u"
@@ -868,7 +868,7 @@ class RemoteTimerChannelList(Screen):
 			except:eventdescriptionextended = ""
 			self.E2ChannelList.append(E2EPGListAllData(
 					servicereference = servicereference, servicename = servicename, eventstart = eventstart,
-					eventduration = eventduration, eventtitle = eventtitle, eventid = eventid, eventdescription= eventdescription, 
+					eventduration = eventduration, eventtitle = eventtitle, eventid = eventid, eventdescription= eventdescription,
 					eventdescriptionextended = eventdescriptionextended))
 		self["channellist"].buildList(self.E2ChannelList)
 
@@ -911,7 +911,7 @@ class RemotePlayer(Screen, InfoBarAudioSelection):
 		self.enigma_type = int(partnerboxentry.enigma.value)
 		self.useinternal = int(partnerboxentry.useinternal.value)
 		endtime = int(eventstart + eventduration)
-		tt = ((" %s ... %s (+%d " + _("mins") + ")") % (FuzzyTime(eventstart)[1], FuzzyTime(endtime)[1], (endtime - time.time()) / 60))	
+		tt = ((" %s ... %s (+%d " + _("mins") + ")") % (FuzzyTime(eventstart)[1], FuzzyTime(endtime)[1], (endtime - time.time()) / 60))
 		self["ServiceName"] = Label(EventTitle)
 		self.ip = "%d.%d.%d.%d" % tuple(partnerboxentry.ip.value)
 		port = partnerboxentry.port.value
@@ -1179,7 +1179,7 @@ class RemotePlayer(Screen, InfoBarAudioSelection):
 			self.startRun()
 			self.show()
 			self.isVisible = True
-			
+
 	def __onClose(self):
 		if self.Timer.isActive():
 			self.Timer.stop()
@@ -1280,7 +1280,7 @@ class RemoteTimerEPGList(Screen):
 			self["key_blue"].setText("")
 			return
 		self["key_blue"].setText(_("Info"))
-		
+
 		timerentry = isInTimerList(cur[0].eventstart,cur[0].eventduration, cur[0].servicereference, cur[0].eventid, self.E2TimerList)
 		if timerentry is None:
 			if self.key_green_choice != self.ADD_TIMER:
@@ -1739,7 +1739,7 @@ class E2ChannelList(MenuList):
 
 	def getCurrentIndex(self):
 		return self.instance.getCurrentIndex()
-		
+
 	def moveSelectionTo(self,index):
 		self.moveToIndex(index)
 
@@ -1874,7 +1874,7 @@ class E2EPGList(MenuList):
 								time_match = ((timecmp + ((x.timeend - x.timebegin) / 60)) - chktimecmp) * 60
 							elif chktimecmp <= timecmp < chktimecmp_end:
 								time_match = (chktimecmp_end - timecmp) * 60
-				else: 
+				else:
 					if begin <= x.timebegin <= end:
 						diff = end - x.timebegin
 						if time_match < diff:
@@ -1993,7 +1993,7 @@ class RemoteTimerEventView(Screen):
 			<widget name="duration" position="140,395" size="100,25" font="Regular;22" />
 			<widget name="channel" position="240,395" size="305,25" font="Regular;22" halign="right" />
 		</screen>"""
-	
+
 	def __init__(self, session, E2Timerlist, epgdata , partnerboxentry):
 		self.session = session
 		Screen.__init__(self, session)
@@ -2137,7 +2137,7 @@ def parentalControlPinEntered(self, insertType, result):
 		else:
 			self.session.openWithCallback(self.close, MessageBox, _("The pin code you entered is wrong."), MessageBox.TYPE_ERROR)
 
-def callbackPartnerboxServiceList(self, result): 
+def callbackPartnerboxServiceList(self, result):
 	if result and result[1]:
 		isBouquet = result[0]
 		partnerboxentry = result[2]
