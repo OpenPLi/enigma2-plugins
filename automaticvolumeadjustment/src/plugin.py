@@ -20,6 +20,8 @@
 #  modify it (if you keep the license), but it may not be commercially 
 #  distributed other than under the conditions noted above.
 #
+# for localized messages
+from . import _
 from Plugins.Plugin import PluginDescriptor
 from AutomaticVolumeAdjustmentSetup import AutomaticVolumeAdjustmentConfigScreen
 from AutomaticVolumeAdjustment import AutomaticVolumeAdjustment
@@ -36,7 +38,7 @@ def autoend(reason, **kwargs):
 		if AutomaticVolumeAdjustment.instance:
 			if AutomaticVolumeAdjustment.instance.enabled and AutomaticVolumeAdjustment.instance.modus != "0":
 				saveVolumeDict(AutomaticVolumeAdjustment.instance.serviceList)
-	
+
 def setup(session, **kwargs):
 	session.open(AutomaticVolumeAdjustmentConfigScreen) # start setup
 
@@ -44,7 +46,7 @@ def startSetup(menuid):
 	if menuid != "system": # show setup only in system level menu
 		return []
 	return [(_("Automatic Volume Adjustment"), setup, "AutomaticVolumeAdjustment", 46)]
-	
+
 def Plugins(**kwargs):
 	return [PluginDescriptor(where = [PluginDescriptor.WHERE_SESSIONSTART], fnc = autostart), PluginDescriptor(where = [PluginDescriptor.WHERE_AUTOSTART], fnc = autoend), PluginDescriptor(name="Automatic Volume Adjustment", description=_("Automatic Volume Adjustment"), where = PluginDescriptor.WHERE_MENU, fnc=startSetup) ]
 
