@@ -20,6 +20,9 @@
 #  modify it (if you keep the license), but it may not be commercially 
 #  distributed other than under the conditions noted above.
 #
+# for localized messages
+from . import _
+
 from Components.config import ConfigSubsection, ConfigText, \
 	config, ConfigInteger, Config, ConfigSubList, ConfigDirectory, NoSave, ConfigYesNo, ConfigSelectionNumber, ConfigSelection
 from os import path as os_path, open as os_open, close as os_close, O_RDWR as os_O_RDWR, O_CREAT  as os_O_CREAT 
@@ -88,14 +91,14 @@ class AutomaticVolumeAdjustmentConfig():
 		self.config.Entries[i].name = NoSave(ConfigDirectory(default = _("Press OK to select a service")))
 		self.config.Entries[i].adjustvalue = ConfigSelectionNumber(-50, 50, 5, default = 25)
 		return self.config.Entries[i]
-	
+
 	def remove(self, configItem):
 		self.config.entriescount.value = self.config.entriescount.value - 1
 		self.config.entriescount.save()
 		self.config.Entries.remove(configItem)
 		self.config.Entries.save()
 		self.save()
-	
+
 	def save(self):
 		print "[AutomaticVolumeAdjustmentConfig] saving config file..."
 		self.config.saveToFile(self.CONFIG_FILE)

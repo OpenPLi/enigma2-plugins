@@ -74,7 +74,7 @@ class AutomaticVolumeAdjustment(Screen):
 		if not self.pluginStarted and self.enabled and fromOutside:
 			self.newService = True
 			self.__evUpdatedInfo()
-		
+
 	def __evEnd(self):
 		if self.pluginStarted and self.enabled:
 			if self.modus == "0": # Automatic volume adjust mode
@@ -86,7 +86,7 @@ class AutomaticVolumeAdjustment(Screen):
 					ref = self.getPlayingServiceReference()
 					if ref and ref.valid():
 						self.serviceList[ref.toString()] = self.volctrl.getVolume()
-		
+
 	def __evStart(self):
 		self.newService = True
 
@@ -164,7 +164,7 @@ class AutomaticVolumeAdjustment(Screen):
 			except:
 				return False
 		return False
-		
+
 	def getPlayingServiceReference(self):
 		ref = self.session.nav.getCurrentlyPlayingServiceReference()
 		if ref and ref.getPath(): # check if a movie is playing
@@ -175,7 +175,7 @@ class AutomaticVolumeAdjustment(Screen):
 				# no need here to know if eServiceReference is valid...
 				ref = eServiceReference(info.getInfoString(ref, iServiceInformation.sServiceref)) # get new eServicereference from meta file
 		return ref
-		
+
 	def setVolume(self, value):
 		# set new volume 
 		self.volctrl.setVolume(value, value)
@@ -189,11 +189,10 @@ class AutomaticVolumeAdjustment(Screen):
 		config.audio.volume.value = self.volctrl.getVolume()
 		config.audio.volume.save()
 
-
 # VolumeControl Class --> overwrite setVolume
 # only for max. mpeg-volume restriction
 baseVolumeControl_setVolume = None
-		
+
 def VolumeControlInit(enabled, maxVolume):
 	global baseVolumeControl_setVolume
 	if baseVolumeControl_setVolume is None:
@@ -209,7 +208,7 @@ def AVA_setVolume(self, direction):
 	ok = True
 	if direction > 0:
 		oldvol = self.volctrl.getVolume()
-		if not AutomaticVolumeAdjustment.instance.currentAC3DTS:	
+		if not AutomaticVolumeAdjustment.instance.currentAC3DTS:
 			if oldvol+1 > self.maxVolume:
 				ok = False
 				self.volumeDialog.setValue(oldvol)

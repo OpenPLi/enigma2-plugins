@@ -1,0 +1,87 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-09-27 18:11+0100\n"
+"PO-Revision-Date: 2015-10-03 22:19+0300\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Last-Translator: Dimitrij <Dima-73@inbox.lv>\n"
+"Language-Team: \n"
+"X-Generator: Poedit 1.8.4\n"
+
+msgid "Add"
+msgstr "Добавить"
+
+msgid "Adjustment value"
+msgstr "Значение регулировки"
+
+msgid "Automatic Volume Adjustment"
+msgstr "Авторегулировка громкости"
+
+msgid "Automatic Volume Adjustment - Config"
+msgstr "Авторегулировка громкости - настройки"
+
+msgid "Automatic Volume Adjustment - Entry Config"
+msgstr "Авторегулировка громкости - настройки записи"
+
+msgid "Automatic Volume Adjustment - Service Config"
+msgstr "Авторегулировка громкости - настройки сервиса"
+
+msgid "Automatic volume adjust"
+msgstr "Авторегулировка громкости"
+
+msgid "Cancel"
+msgstr "Отмена"
+
+msgid "Channel Selection"
+msgstr "Список каналов"
+
+msgid "Default volume adjustment value for AC3/DTS"
+msgstr "Дефолтное значение регулировки для AC3/DTS"
+
+msgid "Delete"
+msgstr "Удалить"
+
+msgid "Do you really want to delete this entry?"
+msgstr "Вы действительно хотите удалить эту запись?"
+
+msgid "Edit"
+msgstr "Редактор"
+
+msgid "Enable"
+msgstr "Включить"
+
+msgid "Max. volume for mpeg audio"
+msgstr "Максимальная громкость для mpeg аудио"
+
+msgid "Modus"
+msgstr "Способ"
+
+msgid "OK"
+msgstr "ОК"
+
+msgid "Press OK to select a service"
+msgstr "Нажмите ОК для выбора сервиса"
+
+msgid "Remember service volume value"
+msgstr "Запоминать значение громкости сервиса"
+
+msgid "Servicename"
+msgstr "Имя сервиса"
+
+msgid "Services"
+msgstr "Сервисы"
+
+msgid "Show volumebar when volume-value was changed"
+msgstr "Показать volumebar при смене значения громкости"
+
+msgid "You must select a valid service!"
+msgstr "Вы должны выбрать действительный сервис!"
