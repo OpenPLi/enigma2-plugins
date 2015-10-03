@@ -79,11 +79,6 @@ automaticcleanup/meta/Makefile
 automaticcleanup/po/Makefile
 automaticcleanup/src/Makefile
 
-automatictimerlistcleanup/Makefile
-automatictimerlistcleanup/meta/Makefile
-automatictimerlistcleanup/po/Makefile
-automatictimerlistcleanup/src/Makefile
-
 automaticvolumeadjustment/Makefile
 automaticvolumeadjustment/meta/Makefile
 automaticvolumeadjustment/src/Makefile
