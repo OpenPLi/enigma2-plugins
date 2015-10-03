@@ -162,8 +162,9 @@ class AC3delay:
         oAudioTracks = self.iService and self.iService.audioTracks()
         n = oAudioTracks and oAudioTracks.getNumberOfTracks() or 0
         tlist = []
-        self.selectedAudioIndex = oAudioTracks.getCurrentTrack()
-        if n >= 0:
+        self.selectedAudioIndex = self.selectedAudioInfo = None
+        if n:
+            self.selectedAudioIndex = oAudioTracks.getCurrentTrack()
             for x in range(n):
                 i = oAudioTracks.getTrackInfo(x)
                 language = i.getLanguage()
