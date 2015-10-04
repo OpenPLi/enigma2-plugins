@@ -1,0 +1,78 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PermanentClock\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-11-26 18:22-0000\n"
+"PO-Revision-Date: 2015-10-04 16:21+0300\n"
+"Last-Translator: Dimitrij <Dima-73@inbox.lv>\n"
+"Language-Team: Dimitrij openPLi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-Basepath: .\n"
+"Language: ru_RU\n"
+"X-Generator: Poedit 1.8.4\n"
+
+msgid "Activate permanent clock"
+msgstr "Активировать постоянные часы"
+
+msgid "Change permanent clock position"
+msgstr "Измененить позицию часов"
+
+msgid "Choice color clock:"
+msgstr "Выберите цвет часов:"
+
+msgid "Color analog clock"
+msgstr "Цвет аналоговых часов"
+
+msgid "Color digital clock"
+msgstr "Цвет цифровых часов"
+
+msgid "Deactivate permanent clock"
+msgstr "Деактивировать постоянные часы"
+
+msgid "Disable key 'long EXIT' show/hide"
+msgstr "Выключить кнопку 'длинная EXIT'"
+
+msgid "Enable key 'long EXIT' show/hide"
+msgstr "Включить кнопку 'длинная EXIT'"
+
+msgid "PLi-transparent"
+msgstr "PLi-прозрачный"
+
+msgid "Permanent Clock"
+msgstr "Постоянные часы на экране"
+
+msgid "Permanent Clock Setup"
+msgstr "Постоянные часы - настройки"
+
+msgid "Show analog clock"
+msgstr "Показать аналоговые часы"
+
+msgid "Show digital clock"
+msgstr "Показать цифровые часы"
+
+msgid "Shows the clock permanent on the screen"
+msgstr "Постоянно показывать часы на экране"
+
+msgid "black-blue"
+msgstr "черно-синий"
+
+msgid "black-white"
+msgstr "черно-белый"
+
+msgid "black-yellow"
+msgstr "черно-желтый"
+
+msgid "yellow"
+msgstr "желтый"
+
+msgid "blue"
+msgstr "синий"
+
+msgid "transparent"
+msgstr "прозрачный"
+
+msgid "white"
+msgstr "белый"
