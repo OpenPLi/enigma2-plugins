@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-09 20:50+0100\n"
+"POT-Creation-Date: 2015-10-07 19:39+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,533 +17,8 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: AutoTimerResource.py:65 plugin.py:434
-#, python-format
-msgid ""
-"Found a total of %d matching Events.\n"
-"%d Timer were added and\n"
-"%d modified,\n"
-"%d conflicts encountered,\n"
-"%d similars added."
-msgstr ""
-
-#: AutoTimerResource.py:101
-msgid "Couldn't load config file!"
-msgstr ""
-
-#: AutoTimerResource.py:113
-msgid "AutoTimer was removed"
-msgstr ""
-
-#: AutoTimerResource.py:115
-msgid "missing parameter \"id\""
-msgstr ""
-
-#: AutoTimerResource.py:140
-#, python-format
-msgid "unable to find timer with id %i"
-msgstr ""
-
-#: AutoTimerResource.py:146
-msgid "autotimers need a match attribute"
-msgstr ""
-
-#: AutoTimerResource.py:340
-msgid "AutoTimer was added successfully"
-msgstr ""
-
-#: AutoTimerResource.py:342
-msgid "AutoTimer was changed successfully"
-msgstr ""
-
-#: AutoTimerResource.py:389
-msgid "config changed."
-msgstr ""
-
-#: AutoTimerImporter.py:27 AutoTimerEditor.py:255
-msgid "do nothing"
-msgstr ""
-
-#: AutoTimerImporter.py:28 AutoTimerEditor.py:257
-msgid "go to deep standby"
-msgstr ""
-
-#: AutoTimerImporter.py:29 AutoTimerEditor.py:256
-msgid "go to standby"
-msgstr ""
-
-#: AutoTimerImporter.py:30 AutoTimerEditor.py:258
-msgid "auto"
-msgstr ""
-
-#: AutoTimerImporter.py:45 AutoTimerImporter.py:134 AutoTimerSettings.py:95
-#: AutoTimerPreview.py:84 AutoTimerEditor.py:456 AutoTimerEditor.py:972
-#: AutoTimerEditor.py:1187
-msgid "Cancel"
-msgstr ""
-
-#: AutoTimerImporter.py:46 AutoTimerImporter.py:135 AutoTimerSettings.py:94
-#: AutoTimerEditor.py:457 AutoTimerEditor.py:1188
-msgid "OK"
-msgstr ""
-
-#: AutoTimerImporter.py:60
-msgid "Select a timer to import"
-msgstr ""
-
-#: AutoTimerImporter.py:145 AutoTimerWizard.py:110 AutoTimerEditor.py:584
-msgid "Enabled"
-msgstr ""
-
-#: AutoTimerImporter.py:145
-msgid "disable"
-msgstr ""
-
-#: AutoTimerImporter.py:145
-msgid "enable"
-msgstr ""
-
-#: AutoTimerImporter.py:154
-#, python-format
-msgid "Match title: %s"
-msgstr ""
-
-#: AutoTimerImporter.py:161
-msgid "Exact match"
-msgstr ""
-
-#: AutoTimerImporter.py:172
-#, python-format
-msgid "Match Timespan: %02d:%02d - %02d:%02d"
-msgstr ""
-
-#: AutoTimerImporter.py:179
-#, python-format
-msgid "Only on Weekday: %s"
-msgstr ""
-
-#: AutoTimerImporter.py:188
-#, python-format
-msgid "Only on Service: %s"
-msgstr ""
-
-#: AutoTimerImporter.py:197 AutoTimerEditor.py:633
-msgid "After event"
-msgstr ""
-
-#: AutoTimerImporter.py:206 AutoTimerWizard.py:113 AutoTimerEditor.py:593
-msgid "Timer type"
-msgstr ""
-
-#: AutoTimerImporter.py:206 AutoTimerEditor.py:187
-msgid "record"
-msgstr ""
-
-#: AutoTimerImporter.py:206 AutoTimerEditor.py:187
-msgid "zap"
-msgstr ""
-
-#: AutoTimerImporter.py:215
-msgid "Location"
-msgstr ""
-
-#: AutoTimerImporter.py:224 AutoTimerEditor.py:664
-msgid "Tags"
-msgstr ""
-
-#: AutoTimerImporter.py:244
-msgid "Import AutoTimer"
-msgstr ""
-
-#: AutoTimerImporter.py:250 AutoTimerOverview.py:226 AutoTimerEditor.py:773
-#: AutoTimerEditor.py:1130 AutoTimerEditor.py:1301
-msgid "Really close without saving settings?"
-msgstr ""
-
-#: AutoTimerImporter.py:265 AutoTimerEditor.py:799
-#, python-format
-msgid ""
-"You entered \"%s\" as Text to match.\n"
-"Do you want to remove trailing whitespaces?"
-msgstr ""
-
-#: AutoTimerImporter.py:331
-msgid "Please provide a Text to match"
-msgstr ""
-
-#: AutoTimerSettings.py:46
-msgid "AutoTimer Settings"
-msgstr ""
-
-#: AutoTimerSettings.py:52
-msgid "Poll automatically"
-msgstr ""
-
-#: AutoTimerSettings.py:52
-msgid ""
-"Unless this is enabled AutoTimer will NOT automatically look for events "
-"matching your AutoTimers but only when you leave the GUI with the green "
-"button."
-msgstr ""
-
-#: AutoTimerSettings.py:53
-msgid "Startup delay (in min)"
-msgstr ""
-
-#: AutoTimerSettings.py:53
-msgid ""
-"This is the delay in minutes that the AutoTimer will wait on initial launch "
-"to not delay enigma2 startup time."
-msgstr ""
-
-#: AutoTimerSettings.py:54
-msgid "Poll Interval (in h)"
-msgstr ""
-
-#: AutoTimerSettings.py:54
-msgid ""
-"This is the delay in hours that the AutoTimer will wait after a search to "
-"search the EPG again."
-msgstr ""
-
-#: AutoTimerSettings.py:55
-msgid "Timeout (in min)"
-msgstr ""
-
-#: AutoTimerSettings.py:55
-msgid "This is the duration in minutes that the AutoTimer is allowed to run."
-msgstr ""
-
-#: AutoTimerSettings.py:56
-msgid "Only add timer for next x days"
-msgstr ""
-
-#: AutoTimerSettings.py:56
-msgid ""
-"You can control for how many days in the future timers are added. Set this "
-"to 0 to disable this feature."
-msgstr ""
-
-#: AutoTimerSettings.py:57
-msgid "Show in extension menu"
-msgstr ""
-
-#: AutoTimerSettings.py:57
-msgid ""
-"Enable this to be able to access the AutoTimer Overview from within the "
-"extension menu."
-msgstr ""
-
-#: AutoTimerSettings.py:58
-msgid "Show in event menu"
-msgstr ""
-
-#: AutoTimerSettings.py:58
-msgid ""
-"Enable this to add item for create the AutoTimer into event menu (needs "
-"restart GUI)."
-msgstr ""
-
-#: AutoTimerSettings.py:59
-msgid "Show \"add to AutoTimer\" in channel selection menu"
-msgstr ""
-
-#: AutoTimerSettings.py:59
-msgid ""
-"Enable this to be able to access the add to AutoTimer from the channel "
-"selection context menu."
-msgstr ""
-
-#: AutoTimerSettings.py:60
-msgid "Add \"Choice list AutoTimer\" menu button to single-EPG"
-msgstr ""
-
-#: AutoTimerSettings.py:60
-msgid ""
-"If this is enabled, up on the Menu button in the standard single-EPG will "
-"list of choices for AutoTimer."
-msgstr ""
-
-#: AutoTimerSettings.py:61
-msgid "Add \"Choice list AutoTimer\" menu button to multi-EPG"
-msgstr ""
-
-#: AutoTimerSettings.py:61
-msgid ""
-"If this is enabled, up on the MENU button in the multi-EPG will list of "
-"choices for AutoTimer."
-msgstr ""
-
-#: AutoTimerSettings.py:63
-msgid "Modify existing timers"
-msgstr ""
-
-#: AutoTimerSettings.py:63
-msgid "This setting controls the behavior when a timer matches a found event."
-msgstr ""
-
-#: AutoTimerSettings.py:64
-msgid "Guess existing timer based on begin/end"
-msgstr ""
-
-#: AutoTimerSettings.py:64
-#, python-format
-msgid ""
-"If this is enabled an existing timer will also be considered recording an "
-"event if it records at least 80% of the it."
-msgstr ""
-
-#: AutoTimerSettings.py:65
-msgid "Add similar timer on conflict"
-msgstr ""
-
-#: AutoTimerSettings.py:65
-msgid ""
-"If a timer conflict occurs, AutoTimer will search outside the timespan for a "
-"similar event and add it."
-msgstr ""
-
-#: AutoTimerSettings.py:66
-msgid "Add timer as disabled on conflict"
-msgstr ""
-
-#: AutoTimerSettings.py:66
-msgid ""
-"This toggles the behavior on timer conflicts. If an AutoTimer matches an "
-"event that conflicts with an existing timer it will not ignore this event "
-"but add it disabled."
-msgstr ""
-
-#: AutoTimerSettings.py:67
-msgid "Include \"AutoTimer\" in tags"
-msgstr ""
-
-#: AutoTimerSettings.py:67
-msgid ""
-"If this is selected, the tag \"AutoTimer\" will be given to timers created "
-"by this plugin."
-msgstr ""
-
-#: AutoTimerSettings.py:68
-msgid "Include AutoTimer name in tags"
-msgstr ""
-
-#: AutoTimerSettings.py:68
-msgid ""
-"If this is selected, the name of the respective AutoTimer will be added as a "
-"tag to timers created by this plugin."
-msgstr ""
-
-#: AutoTimerSettings.py:69
-msgid "Show notification on conflicts"
-msgstr ""
-
-#: AutoTimerSettings.py:69
-msgid ""
-"By enabling this you will be notified about timer conflicts found during "
-"automated polling. There is no intelligence involved, so it might bother you "
-"about the same conflict over and over."
-msgstr ""
-
-#: AutoTimerSettings.py:70
-msgid "Show notification on similars"
-msgstr ""
-
-#: AutoTimerSettings.py:70
-msgid ""
-"By enabling this you will be notified about similar timers added during "
-"automated polling. There is no intelligence involved, so it might bother you "
-"about the same conflict over and over."
-msgstr ""
-
-#: AutoTimerSettings.py:71
-msgid "Show notification on added timers"
-msgstr ""
-
-#: AutoTimerSettings.py:71
-msgid ""
-"By enabling this you will be notified about timer(s) added during automated "
-"polling. Just not in standby mode."
-msgstr ""
-
-#: AutoTimerSettings.py:72
-msgid "Editor for new AutoTimers"
-msgstr ""
-
-#: AutoTimerSettings.py:72
-msgid ""
-"The editor to be used for new AutoTimers. This can either be the Wizard or "
-"the classic editor."
-msgstr ""
-
-#: AutoTimerSettings.py:73
-msgid "Support \"Fast Scan\"?"
-msgstr ""
-
-#: AutoTimerSettings.py:73
-msgid ""
-"When supporting \"Fast Scan\" the service type is ignored. You don't need to "
-"enable this unless your Image supports \"Fast Scan\" and you are using it."
-msgstr ""
-
-#: AutoTimerSettings.py:74
-msgid "Skip poll during records"
-msgstr ""
-
-#: AutoTimerSettings.py:74
-msgid "If enabled, the polling will be skipped if a recording is in progress."
-msgstr ""
-
-#: AutoTimerSettings.py:75
-msgid "Only poll while in standby"
-msgstr ""
-
-#: AutoTimerSettings.py:75
-msgid ""
-"When this is enabled AutoTimer will ONLY check for new events whilst in "
-"stanadby."
-msgstr ""
-
-#: AutoTimerSettings.py:76
-msgid "Style auto timers list"
-msgstr ""
-
-#: AutoTimerSettings.py:76
-msgid ""
-"If the style is advanced, you will see more information about each auto "
-"timer."
-msgstr ""
-
-#: AutoTimerSettings.py:77
-msgid "Skip poll during epg refresh"
-msgstr ""
-
-#: AutoTimerSettings.py:77
-msgid ""
-"If enabled, the polling will be skipped if EPGRefresh is currently running."
-msgstr ""
-
-#: AutoTimerSettings.py:112
-msgid "Configure AutoTimer behavior"
-msgstr ""
-
-#: AutoTimerPreview.py:77
-msgid "mins"
-msgstr ""
-
-#: AutoTimerPreview.py:101
-msgid "Preview AutoTimer"
-msgstr ""
-
-#: AutoTimerPreview.py:105
-msgid "Sort Time"
-msgstr ""
-
-#: AutoTimerPreview.py:107
-msgid "Sort AutoTimer"
-msgstr ""
-
-#: __init__.py:30 AutoTimerEditor.py:345 AutoTimerEditor.py:381
-msgid "None"
-msgstr ""
-
-#: __init__.py:31
-msgid "Only AutoTimers created during this session"
-msgstr ""
-
-#: __init__.py:32
-msgid "All non-repeating timers"
-msgstr ""
-
-#: __init__.py:47
-msgid "Classic"
-msgstr ""
-
-#: __init__.py:48
-msgid "Wizard"
-msgstr ""
-
-#: __init__.py:67
-msgid "Standard"
-msgstr ""
-
-#: __init__.py:68
-msgid "Advanced"
-msgstr ""
-
-#: plugin.py:192
-msgid "Open standard setup menu"
-msgstr ""
-
-#: plugin.py:193 plugin.py:269 plugin.py:283 AutoTimerOverview.py:120
-msgid "Add new AutoTimer"
-msgstr ""
-
-#: plugin.py:194 plugin.py:270 plugin.py:284
-msgid "Preview for your AutoTimers"
-msgstr ""
-
-#: plugin.py:195 plugin.py:271 plugin.py:285
-msgid "Search new events matching for your AutoTimers"
-msgstr ""
-
-#: plugin.py:196 plugin.py:273 plugin.py:287 AutoTimerOverview.py:89
-msgid "Timers list"
-msgstr ""
-
-#: plugin.py:198 plugin.py:275
-msgid "Select action for AutoTimer:"
-msgstr ""
-
-#: plugin.py:199 plugin.py:203 plugin.py:276 plugin.py:290
-msgid "Choice list AutoTimer"
-msgstr ""
-
-#: plugin.py:272 plugin.py:286
-msgid "Open plugin"
-msgstr ""
-
-#: plugin.py:282
-msgid "Standard input date/time"
-msgstr ""
-
-#: plugin.py:289
-msgid "Select action for AutoTimer or input date/time:"
-msgstr ""
-
-#: plugin.py:369
-msgid "create AutoTimer for current event"
-msgstr ""
-
-#: plugin.py:395
-#, python-format
-msgid ""
-"Your config file is not well-formed:\n"
-"%s"
-msgstr ""
-
-#: plugin.py:487 plugin.py:494
-msgid "AutoTimer"
-msgstr ""
-
-#: plugin.py:487 plugin.py:494
-msgid "Edit Timers and scan for new Events"
-msgstr ""
-
-#: plugin.py:496
-msgid "Add AutoTimer"
-msgstr ""
-
-#: plugin.py:496
-msgid "add AutoTimer"
-msgstr ""
-
-#: plugin.py:498
-msgid "add AutoTimer..."
-msgstr ""
-
-#: plugin.py:502
-msgid "Create AutoTimer"
+#: AutoTimerEditor.py:111
+msgid " add AutoTimer"
 msgstr ""
 
 #: AutoPoller.py:49
@@ -553,16 +28,92 @@ msgid ""
 "%s"
 msgstr ""
 
-#: AutoPoller.py:49 AutoPoller.py:58
-#, python-format
-msgid "%s: %s at %s"
-msgstr ""
-
 #: AutoPoller.py:58
 #, python-format
 msgid ""
 "%d conflict(s) solved with similar timer(s):\n"
 "%s"
+msgstr ""
+
+#: AutoTimerEditor.py:225 AutoTimerEditor.py:226
+msgid "%d.%B %Y"
+msgstr ""
+
+#: AutoPoller.py:49 AutoPoller.py:58
+#, python-format
+msgid "%s: %s at %s"
+msgstr ""
+
+#: AutoTimerEditor.py:692
+msgid "Activate VPS"
+msgstr ""
+
+#: AutoTimerOverview.py:92
+msgid "Add"
+msgstr ""
+
+#: AutoTimerSettings.py:62
+msgid "Add \"Choice list AutoTimer\" menu button to multi-EPG"
+msgstr ""
+
+#: AutoTimerSettings.py:61
+msgid "Add \"Choice list AutoTimer\" menu button to single-EPG"
+msgstr ""
+
+#: plugin.py:509
+msgid "Add AutoTimer"
+msgstr ""
+
+#: AutoTimerOverview.py:120 plugin.py:195 plugin.py:271 plugin.py:285
+msgid "Add new AutoTimer"
+msgstr ""
+
+#: AutoTimerEditor.py:530
+msgid "Add services"
+msgstr ""
+
+#: AutoTimerSettings.py:66
+msgid "Add similar timer on conflict"
+msgstr ""
+
+#: AutoTimerSettings.py:67
+msgid "Add timer as disabled on conflict"
+msgstr ""
+
+#: AutoTimerEditor.py:571
+msgid "Add zap timer instead of record timer?"
+msgstr ""
+
+#: __init__.py:70
+msgid "Advanced"
+msgstr ""
+
+#: AutoTimerEditor.py:658 AutoTimerImporter.py:197
+msgid "After event"
+msgstr ""
+
+#: AutoTimerList.py:99
+msgid "All channels"
+msgstr ""
+
+#: __init__.py:34
+msgid "All non-repeating timers"
+msgstr ""
+
+#: AutoTimerEditor.py:676
+msgid "Amount of recordings left"
+msgstr ""
+
+#: AutoTimerEditor.py:312
+msgid "Any service/recording"
+msgstr ""
+
+#: AutoTimerList.py:138
+msgid "Any time"
+msgstr ""
+
+#: plugin.py:500 plugin.py:507
+msgid "AutoTimer"
 msgstr ""
 
 #: AutoPoller.py:66
@@ -572,92 +123,570 @@ msgid ""
 "%d timer(s) were added."
 msgstr ""
 
-#: AutoTimerList.py:99
-msgid "All channels"
+#: AutoTimerOverview.py:280
+msgid "AutoTimer Context Menu"
 msgstr ""
 
-#: AutoTimerList.py:114
-msgid "Mon"
+#: AutoTimerEditor.py:456
+msgid "AutoTimer Editor"
 msgstr ""
 
-#: AutoTimerList.py:115
-msgid "Tue"
+#: AutoTimerEditor.py:976
+msgid "AutoTimer Filters"
 msgstr ""
 
-#: AutoTimerList.py:116
-msgid "Wed"
+#: AutoTimerEditor.py:1192
+msgid "AutoTimer Services"
 msgstr ""
 
-#: AutoTimerList.py:117
-msgid "Thur"
+#: AutoTimerSettings.py:46
+msgid "AutoTimer Settings"
 msgstr ""
 
-#: AutoTimerList.py:118
-msgid "Fri"
+#: AutoTimerResource.py:105
+#, python-format
+msgid "AutoTimer failed with error %s"
 msgstr ""
 
-#: AutoTimerList.py:119
-msgid "Sat"
+#: AutoTimerOverview.py:135
+msgid "AutoTimer overview"
 msgstr ""
 
-#: AutoTimerList.py:120
-msgid "Sun"
+#: AutoTimerResource.py:404
+msgid "AutoTimer was added successfully"
 msgstr ""
 
-#: AutoTimerList.py:121 AutoTimerEditor.py:52
-msgid "Weekend"
+#: AutoTimerResource.py:406
+msgid "AutoTimer was changed successfully"
 msgstr ""
 
-#: AutoTimerList.py:122 AutoTimerEditor.py:53
-msgid "Weekday"
+#: AutoTimerResource.py:177
+msgid "AutoTimer was removed"
 msgstr ""
 
-#: AutoTimerList.py:128
-msgid "Everyday"
+#: AutoTimerEditor.py:667
+msgid "Begin of \"after event\" timespan"
 msgstr ""
 
-#: AutoTimerList.py:138
-msgid "Any time"
-msgstr ""
-
-#: AutoTimerWizard.py:97 AutoTimerEditor.py:599
-msgid "Only match during timespan"
-msgstr ""
-
-#: AutoTimerWizard.py:103 AutoTimerEditor.py:605
+#: AutoTimerEditor.py:630 AutoTimerWizard.py:103
 msgid "Begin of timespan"
 msgstr ""
 
-#: AutoTimerWizard.py:104 AutoTimerEditor.py:606
-msgid "End of timespan"
+#: AutoTimerEditor.py:1203
+msgid "Bouquets"
 msgstr ""
 
-#: AutoTimerWizard.py:111 AutoTimerEditor.py:585
-msgid "Description"
+#: AutoTimerEditor.py:577
+msgid ""
+"By enabling this events will not be matched if they don't occur on certain "
+"dates."
 msgstr ""
 
-#: AutoTimerWizard.py:112 AutoTimerEditor.py:586
-msgid "Match title"
+#: AutoTimerSettings.py:71
+msgid ""
+"By enabling this you will be notified about similar timers added during "
+"automated polling. There is no intelligence involved, so it might bother you "
+"about the same conflict over and over."
 msgstr ""
 
-#: AutoTimerOverview.py:90
-msgid "Save and search now"
+#: AutoTimerSettings.py:70
+msgid ""
+"By enabling this you will be notified about timer conflicts found during "
+"automated polling. There is no intelligence involved, so it might bother you "
+"about the same conflict over and over."
+msgstr ""
+
+#: AutoTimerSettings.py:72
+msgid ""
+"By enabling this you will be notified about timer(s) added during automated "
+"polling. Just not in standby mode."
+msgstr ""
+
+#: AutoTimerEditor.py:481 AutoTimerEditor.py:997 AutoTimerEditor.py:1212
+#: AutoTimerImporter.py:45 AutoTimerImporter.py:134 AutoTimerPreview.py:84
+#: AutoTimerSettings.py:97
+msgid "Cancel"
+msgstr ""
+
+#: AutoTimerEditor.py:580
+msgid "Change default recording offset?"
+msgstr ""
+
+#: AutoTimerEditor.py:87
+msgid "Channel Selection"
+msgstr ""
+
+#: AutoTimerEditor.py:1202
+msgid "Channels"
+msgstr ""
+
+#: AutoTimerEditor.py:682
+msgid "Check for uniqueness in"
+msgstr ""
+
+#: plugin.py:201 plugin.py:205 plugin.py:278 plugin.py:292
+msgid "Choice list AutoTimer"
+msgstr ""
+
+#: AutoTimerEditor.py:373 AutoTimerEditor.py:382
+msgid "Choose target folder"
+msgstr ""
+
+#: __init__.py:49
+msgid "Classic"
+msgstr ""
+
+#: AutoTimerOverview.py:264
+msgid "Clone selected timer"
+msgstr ""
+
+#: AutoTimerOverview.py:105
+msgid "Close and forget changes"
+msgstr ""
+
+#: AutoTimerOverview.py:118
+msgid "Close, save changes and search now"
+msgstr ""
+
+#: AutoTimerSettings.py:114
+msgid "Configure AutoTimer behavior"
+msgstr ""
+
+#: AutoTimerEditor.py:694
+msgid "Control recording completely by service"
+msgstr ""
+
+#: AutoTimerResource.py:164
+msgid "Couldn't load config file!"
+msgstr ""
+
+#: plugin.py:515
+msgid "Create AutoTimer"
+msgstr ""
+
+#: AutoTimerOverview.py:268
+msgid "Create a new timer using the classic editor"
+msgstr ""
+
+#: AutoTimerOverview.py:270
+msgid "Create a new timer using the wizard"
+msgstr ""
+
+#: AutoTimerEditor.py:304
+#, python-format
+msgid "Custom (%s)"
+msgstr ""
+
+#: AutoTimerEditor.py:687
+msgid "Custom location"
+msgstr ""
+
+#: AutoTimerEditor.py:643
+msgid "Custom offset"
+msgstr ""
+
+#: AutoTimerEditor.py:593
+msgid ""
+"Defines where to search for duplicates (only title, short description or "
+"even extended description)"
+msgstr ""
+
+#: AutoTimerSettings.py:54
+msgid "Delay after editing (in sec)"
 msgstr ""
 
 #: AutoTimerOverview.py:91
 msgid "Delete"
 msgstr ""
 
-#: AutoTimerOverview.py:92
-msgid "Add"
+#: AutoTimerEditor.py:610 AutoTimerWizard.py:111
+msgid "Description"
+msgstr ""
+
+#: AutoTimerEditor.py:615
+msgid "EPG encoding"
+msgstr ""
+
+#: AutoTimerEditor.py:509
+msgid "Edit AutoTimer"
+msgstr ""
+
+#: AutoTimerEditor.py:1019
+msgid "Edit AutoTimer filters"
+msgstr ""
+
+#: AutoTimerEditor.py:1233
+msgid "Edit AutoTimer services"
+msgstr ""
+
+#: plugin.py:500 plugin.py:507
+msgid "Edit Timers and scan for new Events"
+msgstr ""
+
+#: AutoTimerOverview.py:263
+msgid "Edit new timer defaults"
 msgstr ""
 
 #: AutoTimerOverview.py:104
 msgid "Edit selected AutoTimer"
 msgstr ""
 
-#: AutoTimerOverview.py:105
-msgid "Close and forget changes"
+#: AutoTimerEditor.py:528
+msgid "Edit services"
+msgstr ""
+
+#: AutoTimerEditor.py:1255
+msgid "Editing"
+msgstr ""
+
+#: AutoTimerSettings.py:73
+msgid "Editor for new AutoTimers"
+msgstr ""
+
+#: AutoTimerEditor.py:1063
+msgid "Enable Filtering"
+msgstr ""
+
+#: AutoTimerEditor.py:1254
+msgid "Enable Service Restriction"
+msgstr ""
+
+#: AutoTimerSettings.py:59
+msgid ""
+"Enable this to add item for create the AutoTimer into event menu (needs "
+"restart GUI)."
+msgstr ""
+
+#: AutoTimerSettings.py:58
+msgid ""
+"Enable this to be able to access the AutoTimer Overview from within the "
+"extension menu."
+msgstr ""
+
+#: AutoTimerSettings.py:60
+msgid ""
+"Enable this to be able to access the add to AutoTimer from the channel "
+"selection context menu."
+msgstr ""
+
+#: AutoTimerEditor.py:609 AutoTimerImporter.py:145 AutoTimerWizard.py:110
+msgid "Enabled"
+msgstr ""
+
+#: AutoTimerEditor.py:568
+msgid ""
+"Encoding the channel uses for it's EPG data. You only need to change this if "
+"you're searching for special characters like the german umlauts."
+msgstr ""
+
+#: AutoTimerEditor.py:668
+msgid "End of \"after event\" timespan"
+msgstr ""
+
+#: AutoTimerEditor.py:631 AutoTimerWizard.py:104
+msgid "End of timespan"
+msgstr ""
+
+#: AutoTimerEditor.py:779
+msgid "Enter or edit description"
+msgstr ""
+
+#: AutoTimerEditor.py:786
+msgid "Enter or edit match title"
+msgstr ""
+
+#: AutoTimerEditor.py:1144
+msgid "Enter or edit text"
+msgstr ""
+
+#: AutoTimerList.py:128
+msgid "Everyday"
+msgstr ""
+
+#: AutoTimerImporter.py:161
+msgid "Exact match"
+msgstr ""
+
+#: AutoTimerEditor.py:1072 AutoTimerEditor.py:1089 AutoTimerEditor.py:1114
+#: AutoTimerEditor.py:1142
+msgid "Exclude"
+msgstr ""
+
+#: AutoTimerEditor.py:662
+msgid "Execute \"after event\" during timespan"
+msgstr ""
+
+#: AutoTimerEditor.py:1064
+msgid "Filter"
+msgstr ""
+
+#: AutoTimerEditor.py:578
+msgid ""
+"First day to match events. No event that begins before this date will be "
+"matched."
+msgstr ""
+
+#: AutoTimerResource.py:96 plugin.py:447
+#, python-format
+msgid ""
+"Found a total of %d matching Events.\n"
+"%d Timer were added and\n"
+"%d modified,\n"
+"%d conflicts encountered,\n"
+"%d similars added."
+msgstr ""
+
+#: AutoTimerOverview.py:275
+msgid "Frequently asked questions"
+msgstr ""
+
+#: AutoTimerList.py:118
+msgid "Fri"
+msgstr ""
+
+#: AutoTimerEditor.py:49
+msgid "Friday"
+msgstr ""
+
+#: AutoTimerSettings.py:65
+msgid "Guess existing timer based on begin/end"
+msgstr ""
+
+#: AutoTimerOverview.py:274
+msgid "Help"
+msgstr ""
+
+#: AutoTimerSettings.py:79
+msgid "If 0, the popup will remain open."
+msgstr ""
+
+#: AutoTimerSettings.py:66
+msgid ""
+"If a timer conflict occurs, AutoTimer will search outside the timespan for a "
+"similar event and add it."
+msgstr ""
+
+#: AutoTimerSettings.py:78
+msgid ""
+"If enabled, the polling will be skipped if EPGRefresh is currently running."
+msgstr ""
+
+#: AutoTimerSettings.py:75
+msgid "If enabled, the polling will be skipped if a recording is in progress."
+msgstr ""
+
+#: AutoTimerSettings.py:77
+msgid ""
+"If the style is advanced, you will see more information about each auto "
+"timer."
+msgstr ""
+
+#: AutoTimerSettings.py:65
+#, python-format
+msgid ""
+"If this is enabled an existing timer will also be considered recording an "
+"event if it records at least 80% of the it."
+msgstr ""
+
+#: AutoTimerSettings.py:62
+msgid ""
+"If this is enabled, up on the MENU button in the multi-EPG will list of "
+"choices for AutoTimer."
+msgstr ""
+
+#: AutoTimerSettings.py:61
+msgid ""
+"If this is enabled, up on the Menu button in the standard single-EPG will "
+"list of choices for AutoTimer."
+msgstr ""
+
+#: AutoTimerSettings.py:69
+msgid ""
+"If this is selected, the name of the respective AutoTimer will be added as a "
+"tag to timers created by this plugin."
+msgstr ""
+
+#: AutoTimerSettings.py:68
+msgid ""
+"If this is selected, the tag \"AutoTimer\" will be given to timers created "
+"by this plugin."
+msgstr ""
+
+#: AutoTimerImporter.py:244
+msgid "Import AutoTimer"
+msgstr ""
+
+#: AutoTimerOverview.py:260
+msgid "Import existing Timer"
+msgstr ""
+
+#: AutoTimerOverview.py:261
+msgid "Import from EPG"
+msgstr ""
+
+#: AutoTimerEditor.py:1077 AutoTimerEditor.py:1094 AutoTimerEditor.py:1115
+#: AutoTimerEditor.py:1142
+msgid "Include"
+msgstr ""
+
+#: AutoTimerSettings.py:68
+msgid "Include \"AutoTimer\" in tags"
+msgstr ""
+
+#: AutoTimerSettings.py:69
+msgid "Include AutoTimer name in tags"
+msgstr ""
+
+#: AutoTimerEditor.py:597
+msgid ""
+"Label Timers with season, episode and title, according to the SeriesPlugin "
+"settings."
+msgstr ""
+
+#: AutoTimerEditor.py:697
+msgid "Label series"
+msgstr ""
+
+#: AutoTimerEditor.py:579
+msgid ""
+"Last day to match events. Events have to begin before this date to be "
+"matched."
+msgstr ""
+
+#: AutoTimerImporter.py:215
+msgid "Location"
+msgstr ""
+
+#: AutoTimerEditor.py:587
+msgid "Lower bound of timespan."
+msgstr ""
+
+#: AutoTimerEditor.py:575
+msgid ""
+"Lower bound of timespan. Nothing before this time will be matched. Offsets "
+"are not taken into account!"
+msgstr ""
+
+#: AutoTimerImporter.py:172
+#, python-format
+msgid "Match Timespan: %02d:%02d - %02d:%02d"
+msgstr ""
+
+#: AutoTimerEditor.py:611 AutoTimerWizard.py:112
+msgid "Match title"
+msgstr ""
+
+#: AutoTimerImporter.py:154
+#, python-format
+msgid "Match title: %s"
+msgstr ""
+
+#: AutoTimerEditor.py:656
+msgid "Maximum duration (in m)"
+msgstr ""
+
+#: AutoTimerEditor.py:584
+msgid ""
+"Maximum event duration to match. If an event is longer than this amount of "
+"time (without offset) it won't be matched."
+msgstr ""
+
+#: AutoTimerOverview.py:209
+#, python-format
+msgid ""
+"Message\n"
+"Do you really want to delete %s?"
+msgstr ""
+
+#: AutoTimerSettings.py:64
+msgid "Modify existing timers"
+msgstr ""
+
+#: AutoTimerList.py:114
+msgid "Mon"
+msgstr ""
+
+#: AutoTimerEditor.py:45
+msgid "Monday"
+msgstr ""
+
+#: AutoTimerEditor.py:302
+msgid "Monthly"
+msgstr ""
+
+#: AutoTimerEditor.py:302
+msgid "Never"
+msgstr ""
+
+#: AutoTimerEditor.py:1000 AutoTimerEditor.py:1215
+msgid "New"
+msgstr ""
+
+#: AutoTimerEditor.py:309 AutoTimerOverview.py:212
+msgid "No"
+msgstr ""
+
+#: AutoTimerEditor.py:345 AutoTimerEditor.py:406 __init__.py:32
+msgid "None"
+msgstr ""
+
+#: AutoTimerEditor.py:640
+msgid "Not after"
+msgstr ""
+
+#: AutoTimerEditor.py:639
+msgid "Not before"
+msgstr ""
+
+#: AutoTimerEditor.py:590
+msgid "Number of scheduled recordings left."
+msgstr ""
+
+#: AutoTimerEditor.py:482 AutoTimerEditor.py:1213 AutoTimerImporter.py:46
+#: AutoTimerImporter.py:135 AutoTimerSettings.py:96
+msgid "OK"
+msgstr ""
+
+#: AutoTimerEditor.py:649
+msgid "Offset after recording (in m)"
+msgstr ""
+
+#: AutoTimerEditor.py:648
+msgid "Offset before recording (in m)"
+msgstr ""
+
+#: AutoTimerEditor.py:311
+msgid "On any service"
+msgstr ""
+
+#: AutoTimerEditor.py:310
+msgid "On same service"
+msgstr ""
+
+#: __init__.py:33
+msgid "Only AutoTimers created during this session"
+msgstr ""
+
+#: AutoTimerSettings.py:57
+msgid "Only add timer for next x days"
+msgstr ""
+
+#: AutoTimerEditor.py:624 AutoTimerWizard.py:97
+msgid "Only match during timespan"
+msgstr ""
+
+#: AutoTimerImporter.py:188
+#, python-format
+msgid "Only on Service: %s"
+msgstr ""
+
+#: AutoTimerImporter.py:179
+#, python-format
+msgid "Only on Weekday: %s"
+msgstr ""
+
+#: AutoTimerSettings.py:76
+msgid "Only poll while in standby"
 msgstr ""
 
 #: AutoTimerOverview.py:111
@@ -668,166 +697,379 @@ msgstr ""
 msgid "Open Timers list"
 msgstr ""
 
-#: AutoTimerOverview.py:118
-msgid "Close, save changes and search now"
+#: plugin.py:274 plugin.py:288
+msgid "Open plugin"
+msgstr ""
+
+#: AutoTimerEditor.py:388
+msgid "Open select location"
+msgstr ""
+
+#: AutoTimerEditor.py:390
+msgid "Open select location as timer name"
+msgstr ""
+
+#: plugin.py:194
+msgid "Open standard setup menu"
+msgstr ""
+
+#: AutoTimerEditor.py:707
+msgid "Other filters (edit in filter menu)"
+msgstr ""
+
+#: AutoTimerEditor.py:623
+msgid "Override found with alternative service"
+msgstr ""
+
+#: AutoTimerImporter.py:331
+msgid "Please provide a Text to match"
+msgstr ""
+
+#: AutoTimerSettings.py:55
+msgid "Poll Interval (in h)"
+msgstr ""
+
+#: AutoTimerSettings.py:52
+msgid "Poll automatically"
+msgstr ""
+
+#: AutoTimerSettings.py:79
+msgid "Popup timeout in seconds"
+msgstr ""
+
+#: AutoTimerEditor.py:585
+msgid ""
+"Power state to change to after recordings. Select \"standard\" to not change "
+"the default behavior of enigma2 or values changed by yourself."
+msgstr ""
+
+#: AutoTimerOverview.py:259
+msgid "Preview"
+msgstr ""
+
+#: AutoTimerPreview.py:101
+msgid "Preview AutoTimer"
+msgstr ""
+
+#: plugin.py:196 plugin.py:272 plugin.py:286
+msgid "Preview for your AutoTimers"
+msgstr ""
+
+#: AutoTimerEditor.py:798 AutoTimerEditor.py:1155 AutoTimerEditor.py:1326
+#: AutoTimerImporter.py:250 AutoTimerOverview.py:244
+msgid "Really close without saving settings?"
+msgstr ""
+
+#: AutoTimerEditor.py:671
+msgid "Record a maximum of x times"
+msgstr ""
+
+#: AutoTimerEditor.py:1264 AutoTimerEditor.py:1318
+msgid "Record on"
 msgstr ""
 
 #: AutoTimerOverview.py:119
 msgid "Remove selected AutoTimer"
 msgstr ""
 
-#: AutoTimerOverview.py:135
-msgid "AutoTimer overview"
+#: AutoTimerEditor.py:679
+msgid "Require description to be unique"
 msgstr ""
 
-#: AutoTimerOverview.py:212
-#, python-format
-msgid "Do you really want to delete %s?"
+#: AutoTimerEditor.py:677
+msgid "Reset count"
 msgstr ""
 
-#: AutoTimerOverview.py:241
-msgid "Preview"
+#: AutoTimerEditor.py:586
+msgid "Restrict \"after event\" to a certain timespan?"
 msgstr ""
 
-#: AutoTimerOverview.py:242
-msgid "Import existing Timer"
+#: AutoTimerEditor.py:634
+msgid "Restrict to events on certain dates"
 msgstr ""
 
-#: AutoTimerOverview.py:243
-msgid "Import from EPG"
+#: AutoTimerEditor.py:705
+msgid "Restriction to certain bouquets (edit in services menu)"
 msgstr ""
 
-#: AutoTimerOverview.py:244
-msgid "Setup"
+#: AutoTimerEditor.py:706
+msgid "Restriction to certain days of week (edit in filter menu)"
 msgstr ""
 
-#: AutoTimerOverview.py:245
-msgid "Edit new timer defaults"
+#: AutoTimerEditor.py:704
+msgid "Restriction to certain services (edit in services menu)"
 msgstr ""
 
-#: AutoTimerOverview.py:249
-msgid "Create a new timer using the classic editor"
-msgstr ""
-
-#: AutoTimerOverview.py:251
-msgid "Create a new timer using the wizard"
-msgstr ""
-
-#: AutoTimerOverview.py:255
-msgid "Help"
-msgstr ""
-
-#: AutoTimerOverview.py:256
-msgid "Frequently asked questions"
-msgstr ""
-
-#: AutoTimerOverview.py:261
-msgid "AutoTimer Context Menu"
-msgstr ""
-
-#: AutoTimerEditor.py:45
-msgid "Monday"
-msgstr ""
-
-#: AutoTimerEditor.py:46
-msgid "Tuesday"
-msgstr ""
-
-#: AutoTimerEditor.py:47
-msgid "Wednesday"
-msgstr ""
-
-#: AutoTimerEditor.py:48
-msgid "Thursday"
-msgstr ""
-
-#: AutoTimerEditor.py:49
-msgid "Friday"
+#: AutoTimerList.py:119
+msgid "Sat"
 msgstr ""
 
 #: AutoTimerEditor.py:50
 msgid "Saturday"
 msgstr ""
 
+#: AutoTimerEditor.py:998
+msgid "Save"
+msgstr ""
+
+#: AutoTimerOverview.py:90
+msgid "Save and search now"
+msgstr ""
+
+#: plugin.py:197 plugin.py:273 plugin.py:287
+msgid "Search new events matching for your AutoTimers"
+msgstr ""
+
+#: AutoTimerEditor.py:617
+msgid "Search strictness"
+msgstr ""
+
+#: AutoTimerEditor.py:616
+msgid "Search type"
+msgstr ""
+
+#: AutoTimerEditor.py:569
+msgid ""
+"Select \"exact match\" to enforce \"Match title\" to match exactly, "
+"\"partial match\" if you only want to search for a part of the event title "
+"or \"description match\" if you only want to search for a part of the event "
+"description"
+msgstr ""
+
+#: AutoTimerImporter.py:60
+msgid "Select a timer to import"
+msgstr ""
+
+#: AutoTimerEditor.py:394
+msgid "Select action"
+msgstr ""
+
+#: plugin.py:291
+msgid "Select action for AutoTimer or input date/time:"
+msgstr ""
+
+#: plugin.py:200 plugin.py:277
+msgid "Select action for AutoTimer:"
+msgstr ""
+
+#: AutoTimerEditor.py:1302
+msgid "Select bouquet to record on"
+msgstr ""
+
+#: AutoTimerEditor.py:1296
+msgid "Select channel to record on"
+msgstr ""
+
+#: AutoTimerEditor.py:595
+msgid "Select the location to save the recording to."
+msgstr ""
+
+#: AutoTimerEditor.py:1112
+msgid "Select type of Filter"
+msgstr ""
+
+#: AutoTimerEditor.py:570
+msgid "Select whether or not you want to enforce case correctness."
+msgstr ""
+
+#: AutoTimerEditor.py:621
+msgid "Set End Time"
+msgstr ""
+
+#: AutoTimerEditor.py:572
+msgid ""
+"Set an end time for the timer. If you do, the timespan of the event might be "
+"blocked for recordings."
+msgstr ""
+
+#: AutoTimerEditor.py:652
+msgid "Set maximum duration"
+msgstr ""
+
+#: AutoTimerEditor.py:565
+msgid "Set this NO to disable this AutoTimer."
+msgstr ""
+
+#: AutoTimerOverview.py:262
+msgid "Setup"
+msgstr ""
+
+#: AutoTimerEditor.py:574
+msgid "Should this AutoTimer be restricted to a timespan?"
+msgstr ""
+
+#: AutoTimerEditor.py:583
+msgid "Should this AutoTimer only match up to a certain event duration?"
+msgstr ""
+
+#: AutoTimerEditor.py:594
+msgid ""
+"Should timers created by this AutoTimer be recorded to a custom location?"
+msgstr ""
+
+#: AutoTimerSettings.py:60
+msgid "Show \"add to AutoTimer\" in channel selection menu"
+msgstr ""
+
+#: AutoTimerSettings.py:59
+msgid "Show in event menu"
+msgstr ""
+
+#: AutoTimerSettings.py:58
+msgid "Show in extension menu"
+msgstr ""
+
+#: AutoTimerSettings.py:72
+msgid "Show notification on added timers"
+msgstr ""
+
+#: AutoTimerSettings.py:70
+msgid "Show notification on conflicts"
+msgstr ""
+
+#: AutoTimerSettings.py:71
+msgid "Show notification on similars"
+msgstr ""
+
+#: AutoTimerSettings.py:78
+msgid "Skip poll during epg refresh"
+msgstr ""
+
+#: AutoTimerSettings.py:75
+msgid "Skip poll during records"
+msgstr ""
+
+#: AutoTimerPreview.py:107
+msgid "Sort AutoTimer"
+msgstr ""
+
+#: AutoTimerPreview.py:105
+msgid "Sort Time"
+msgstr ""
+
+#: __init__.py:69
+msgid "Standard"
+msgstr ""
+
+#: plugin.py:284
+msgid "Standard input date/time"
+msgstr ""
+
+#: AutoTimerSettings.py:53
+msgid "Startup delay (in min)"
+msgstr ""
+
+#: AutoTimerSettings.py:77
+msgid "Style auto timers list"
+msgstr ""
+
+#: AutoTimerList.py:120
+msgid "Sun"
+msgstr ""
+
 #: AutoTimerEditor.py:51
 msgid "Sunday"
 msgstr ""
 
-#: AutoTimerEditor.py:87
-msgid "Channel Selection"
+#: AutoTimerSettings.py:74
+msgid "Support \"Fast Scan\"?"
 msgstr ""
 
-#: AutoTimerEditor.py:111
-msgid " add AutoTimer"
+#: AutoTimerEditor.py:689 AutoTimerImporter.py:224
+msgid "Tags"
 msgstr ""
 
-#: AutoTimerEditor.py:180
-msgid "partial match"
+#: AutoTimerEditor.py:596
+msgid "Tags the Timer/Recording will have."
 msgstr ""
 
-#: AutoTimerEditor.py:180
-msgid "exact match"
+#: AutoTimerEditor.py:591
+msgid ""
+"The counter can automatically be reset to the limit at certain intervals."
 msgstr ""
 
-#: AutoTimerEditor.py:180
-msgid "title starts with"
+#: AutoTimerSettings.py:73
+msgid ""
+"The editor to be used for new AutoTimers. This can either be the Wizard or "
+"the classic editor."
 msgstr ""
 
-#: AutoTimerEditor.py:180
-msgid "description match"
+#: AutoTimerEditor.py:815
+msgid "The match attribute is mandatory."
 msgstr ""
 
-#: AutoTimerEditor.py:181
-msgid "case-sensitive search"
+#: AutoTimerEditor.py:566
+msgid ""
+"This is a name you can give the AutoTimer. It will be shown in the Overview "
+"and the Preview."
 msgstr ""
 
-#: AutoTimerEditor.py:181
-msgid "case-insensitive search"
+#: AutoTimerSettings.py:55
+msgid ""
+"This is the delay in hours that the AutoTimer will wait after a search to "
+"search the EPG again."
 msgstr ""
 
-#: AutoTimerEditor.py:225 AutoTimerEditor.py:226
-msgid "%d.%B %Y"
+#: AutoTimerSettings.py:53
+msgid ""
+"This is the delay in minutes that the AutoTimer will wait on initial launch "
+"to not delay enigma2 startup time."
 msgstr ""
 
-#: AutoTimerEditor.py:255
-msgid "standard"
+#: AutoTimerSettings.py:54
+msgid ""
+"This is the delay in seconds that the AutoTimer will wait after editing the "
+"AutoTimers."
 msgstr ""
 
-#: AutoTimerEditor.py:302
-msgid "Never"
+#: AutoTimerSettings.py:56
+msgid "This is the duration in minutes that the AutoTimer is allowed to run."
 msgstr ""
 
-#: AutoTimerEditor.py:302
-msgid "Monthly"
+#: AutoTimerEditor.py:567
+msgid ""
+"This is what will be looked for in event titles. Note that looking for e.g. "
+"german umlauts can be tricky as you have to know the encoding the channel "
+"uses."
 msgstr ""
 
-#: AutoTimerEditor.py:302
-msgid "Weekly (Sunday)"
+#: AutoTimerSettings.py:64
+msgid "This setting controls the behavior when a timer matches a found event."
 msgstr ""
 
-#: AutoTimerEditor.py:302
-msgid "Weekly (Monday)"
+#: AutoTimerSettings.py:67
+msgid ""
+"This toggles the behavior on timer conflicts. If an AutoTimer matches an "
+"event that conflicts with an existing timer it will not ignore this event "
+"but add it disabled."
 msgstr ""
 
-#: AutoTimerEditor.py:304
-#, python-format
-msgid "Custom (%s)"
+#: AutoTimerList.py:117
+msgid "Thur"
 msgstr ""
 
-#: AutoTimerEditor.py:309
-msgid "No"
+#: AutoTimerEditor.py:48
+msgid "Thursday"
 msgstr ""
 
-#: AutoTimerEditor.py:310
-msgid "On same service"
+#: AutoTimerEditor.py:582
+msgid "Time in minutes to append to recording."
 msgstr ""
 
-#: AutoTimerEditor.py:311
-msgid "On any service"
+#: AutoTimerEditor.py:581
+msgid "Time in minutes to prepend to recording."
 msgstr ""
 
-#: AutoTimerEditor.py:312
-msgid "Any service/recording"
+#: AutoTimerSettings.py:56
+msgid "Timeout (in min)"
+msgstr ""
+
+#: AutoTimerEditor.py:618 AutoTimerImporter.py:206 AutoTimerWizard.py:113
+msgid "Timer type"
+msgstr ""
+
+#: AutoTimerOverview.py:89 plugin.py:198 plugin.py:275 plugin.py:289
+msgid "Timers list"
 msgstr ""
 
 #: AutoTimerEditor.py:321
@@ -842,454 +1084,261 @@ msgstr ""
 msgid "Title and all descriptions"
 msgstr ""
 
-#: AutoTimerEditor.py:355 AutoTimerEditor.py:356 AutoTimerEditor.py:357
-#: AutoTimerEditor.py:358
-msgid "unknown"
+#: AutoTimerList.py:115
+msgid "Tue"
 msgstr ""
 
-#: AutoTimerEditor.py:373
-msgid "Choose target folder"
+#: AutoTimerEditor.py:46
+msgid "Tuesday"
 msgstr ""
 
-#: AutoTimerEditor.py:431
-msgid "AutoTimer Editor"
-msgstr ""
-
-#: AutoTimerEditor.py:484
-msgid "Edit AutoTimer"
-msgstr ""
-
-#: AutoTimerEditor.py:488
-msgid "edit filters"
-msgstr ""
-
-#: AutoTimerEditor.py:490
-msgid "add filters"
-msgstr ""
-
-#: AutoTimerEditor.py:492 AutoTimerEditor.py:496 AutoTimerEditor.py:508
-#: AutoTimerEditor.py:512
-msgid "enabled"
-msgstr ""
-
-#: AutoTimerEditor.py:494 AutoTimerEditor.py:498 AutoTimerEditor.py:506
-#: AutoTimerEditor.py:510 AutoTimerEditor.py:514
-msgid "disabled"
-msgstr ""
-
-#: AutoTimerEditor.py:503
-msgid "Edit services"
-msgstr ""
-
-#: AutoTimerEditor.py:505
-msgid "Add services"
-msgstr ""
-
-#: AutoTimerEditor.py:540
-msgid "Set this NO to disable this AutoTimer."
-msgstr ""
-
-#: AutoTimerEditor.py:541
+#: AutoTimerSettings.py:52
 msgid ""
-"This is a name you can give the AutoTimer. It will be shown in the Overview "
-"and the Preview."
+"Unless this is enabled AutoTimer will NOT automatically look for events "
+"matching your AutoTimers but only when you leave the GUI with the green "
+"button."
 msgstr ""
 
-#: AutoTimerEditor.py:542
-msgid ""
-"This is what will be looked for in event titles. Note that looking for e.g. "
-"german umlauts can be tricky as you have to know the encoding the channel "
-"uses."
+#: AutoTimerEditor.py:588
+msgid "Upper bound of timespan."
 msgstr ""
 
-#: AutoTimerEditor.py:543
-msgid ""
-"Encoding the channel uses for it's EPG data. You only need to change this if "
-"you're searching for special characters like the german umlauts."
-msgstr ""
-
-#: AutoTimerEditor.py:544
-msgid ""
-"Select \"exact match\" to enforce \"Match title\" to match exactly, "
-"\"partial match\" if you only want to search for a part of the event title "
-"or \"description match\" if you only want to search for a part of the event "
-"description"
-msgstr ""
-
-#: AutoTimerEditor.py:545
-msgid "Select whether or not you want to enforce case correctness."
-msgstr ""
-
-#: AutoTimerEditor.py:546
-msgid "Add zap timer instead of record timer?"
-msgstr ""
-
-#: AutoTimerEditor.py:547
-msgid ""
-"Set an end time for the timer. If you do, the timespan of the event might be "
-"blocked for recordings."
-msgstr ""
-
-#: AutoTimerEditor.py:548
-msgid ""
-"With this option enabled the channel to record on can be changed to a "
-"alternative service it is restricted to."
-msgstr ""
-
-#: AutoTimerEditor.py:549
-msgid "Should this AutoTimer be restricted to a timespan?"
-msgstr ""
-
-#: AutoTimerEditor.py:550
-msgid ""
-"Lower bound of timespan. Nothing before this time will be matched. Offsets "
-"are not taken into account!"
-msgstr ""
-
-#: AutoTimerEditor.py:551
+#: AutoTimerEditor.py:576
 msgid ""
 "Upper bound of timespan. Nothing after this time will be matched. Offsets "
 "are not taken into account!"
 msgstr ""
 
-#: AutoTimerEditor.py:552
+#: AutoTimerEditor.py:685
+msgid "Use a custom location"
+msgstr ""
+
+#: AutoTimerEditor.py:598 AutoTimerEditor.py:599
+msgid "Use blue key to edit bouquets or services."
+msgstr ""
+
+#: AutoTimerEditor.py:600 AutoTimerEditor.py:601
+msgid "Use yellow key to edit filters."
+msgstr ""
+
+#: AutoTimerList.py:116
+msgid "Wed"
+msgstr ""
+
+#: AutoTimerEditor.py:47
+msgid "Wednesday"
+msgstr ""
+
+#: AutoTimerEditor.py:53 AutoTimerList.py:122
+msgid "Weekday"
+msgstr ""
+
+#: AutoTimerEditor.py:52 AutoTimerList.py:121
+msgid "Weekend"
+msgstr ""
+
+#: AutoTimerEditor.py:302
+msgid "Weekly (Monday)"
+msgstr ""
+
+#: AutoTimerEditor.py:302
+msgid "Weekly (Sunday)"
+msgstr ""
+
+#: AutoTimerSettings.py:74
 msgid ""
-"By enabling this events will not be matched if they don't occur on certain "
-"dates."
+"When supporting \"Fast Scan\" the service type is ignored. You don't need to "
+"enable this unless your Image supports \"Fast Scan\" and you are using it."
 msgstr ""
 
-#: AutoTimerEditor.py:553
+#: AutoTimerSettings.py:76
 msgid ""
-"First day to match events. No event that begins before this date will be "
-"matched."
+"When this is enabled AutoTimer will ONLY check for new events whilst in "
+"stanadby."
 msgstr ""
 
-#: AutoTimerEditor.py:554
-msgid ""
-"Last day to match events. Events have to begin before this date to be "
-"matched."
-msgstr ""
-
-#: AutoTimerEditor.py:555
-msgid "Change default recording offset?"
-msgstr ""
-
-#: AutoTimerEditor.py:556
-msgid "Time in minutes to prepend to recording."
-msgstr ""
-
-#: AutoTimerEditor.py:557
-msgid "Time in minutes to append to recording."
-msgstr ""
-
-#: AutoTimerEditor.py:558
-msgid "Should this AutoTimer only match up to a certain event duration?"
-msgstr ""
-
-#: AutoTimerEditor.py:559
-msgid ""
-"Maximum event duration to match. If an event is longer than this amount of "
-"time (without offset) it won't be matched."
-msgstr ""
-
-#: AutoTimerEditor.py:560
-msgid ""
-"Power state to change to after recordings. Select \"standard\" to not change "
-"the default behavior of enigma2 or values changed by yourself."
-msgstr ""
-
-#: AutoTimerEditor.py:561
-msgid "Restrict \"after event\" to a certain timespan?"
-msgstr ""
-
-#: AutoTimerEditor.py:562
-msgid "Lower bound of timespan."
-msgstr ""
-
-#: AutoTimerEditor.py:563
-msgid "Upper bound of timespan."
-msgstr ""
-
-#: AutoTimerEditor.py:564
-msgid ""
-"With this option you can restrict the AutoTimer to a certain amount of "
-"scheduled recordings. Set this to 0 to disable this functionality."
-msgstr ""
-
-#: AutoTimerEditor.py:565
-msgid "Number of scheduled recordings left."
-msgstr ""
-
-#: AutoTimerEditor.py:566
-msgid ""
-"The counter can automatically be reset to the limit at certain intervals."
-msgstr ""
-
-#: AutoTimerEditor.py:567
+#: AutoTimerEditor.py:592
 msgid ""
 "When this option is enabled the AutoTimer won't match events where another "
 "timer with the same description already exists in the timer list."
 msgstr ""
 
-#: AutoTimerEditor.py:568
+#: AutoTimerEditor.py:573
 msgid ""
-"Defines where to search for duplicates (only title, short description or "
-"even extended description)"
+"With this option enabled the channel to record on can be changed to a "
+"alternative service it is restricted to."
 msgstr ""
 
-#: AutoTimerEditor.py:569
+#: AutoTimerEditor.py:589
 msgid ""
-"Should timers created by this AutoTimer be recorded to a custom location?"
+"With this option you can restrict the AutoTimer to a certain amount of "
+"scheduled recordings. Set this to 0 to disable this functionality."
 msgstr ""
 
-#: AutoTimerEditor.py:570
-msgid "Select the location to save the recording to."
+#: __init__.py:50
+msgid "Wizard"
 msgstr ""
 
-#: AutoTimerEditor.py:571
-msgid "Tags the Timer/Recording will have."
+#: AutoTimerOverview.py:210
+msgid "Yes, and delete all timers generated by this autotimer"
 msgstr ""
 
-#: AutoTimerEditor.py:572
+#: AutoTimerOverview.py:211
+msgid "Yes, but keep timers generated by this autotimer"
+msgstr ""
+
+#: AutoTimerSettings.py:57
 msgid ""
-"Label Timers with season, episode and title, according to the SeriesPlugin "
-"settings."
+"You can control for how many days in the future timers are added. Set this "
+"to 0 to disable this feature."
 msgstr ""
 
-#: AutoTimerEditor.py:573 AutoTimerEditor.py:574
-msgid "Use blue key to edit bouquets or services."
+#: AutoTimerEditor.py:824 AutoTimerImporter.py:265
+#, python-format
+msgid ""
+"You entered \"%s\" as Text to match.\n"
+"Do you want to remove trailing whitespaces?"
 msgstr ""
 
-#: AutoTimerEditor.py:575 AutoTimerEditor.py:576
-msgid "Use yellow key to edit filters."
+#: plugin.py:397
+#, python-format
+msgid ""
+"Your config file is not well-formed:\n"
+"%s"
 msgstr ""
 
-#: AutoTimerEditor.py:590
-msgid "EPG encoding"
+#: plugin.py:509
+msgid "add AutoTimer"
 msgstr ""
 
-#: AutoTimerEditor.py:591
-msgid "Search type"
+#: plugin.py:511
+msgid "add AutoTimer..."
 msgstr ""
 
-#: AutoTimerEditor.py:592
-msgid "Search strictness"
+#: AutoTimerEditor.py:515
+msgid "add filters"
 msgstr ""
 
-#: AutoTimerEditor.py:596
-msgid "Set End Time"
+#: AutoTimerEditor.py:258 AutoTimerImporter.py:30
+msgid "auto"
 msgstr ""
 
-#: AutoTimerEditor.py:598
-msgid "Override found with alternative service"
+#: AutoTimerResource.py:210
+msgid "autotimers need a match attribute"
 msgstr ""
 
-#: AutoTimerEditor.py:609
-msgid "Restrict to events on certain dates"
+#: AutoTimerEditor.py:181
+msgid "case-insensitive search"
 msgstr ""
 
-#: AutoTimerEditor.py:614
-msgid "Not before"
+#: AutoTimerEditor.py:181
+msgid "case-sensitive search"
 msgstr ""
 
-#: AutoTimerEditor.py:615
-msgid "Not after"
+#: AutoTimerResource.py:463
+msgid "config changed."
 msgstr ""
 
-#: AutoTimerEditor.py:618
-msgid "Custom offset"
+#: plugin.py:371
+msgid "create AutoTimer for current event"
 msgstr ""
 
-#: AutoTimerEditor.py:623
-msgid "Offset before recording (in m)"
-msgstr ""
-
-#: AutoTimerEditor.py:624
-msgid "Offset after recording (in m)"
-msgstr ""
-
-#: AutoTimerEditor.py:627
-msgid "Set maximum duration"
-msgstr ""
-
-#: AutoTimerEditor.py:631
-msgid "Maximum duration (in m)"
-msgstr ""
-
-#: AutoTimerEditor.py:637
-msgid "Execute \"after event\" during timespan"
-msgstr ""
-
-#: AutoTimerEditor.py:642
-msgid "Begin of \"after event\" timespan"
-msgstr ""
-
-#: AutoTimerEditor.py:643
-msgid "End of \"after event\" timespan"
-msgstr ""
-
-#: AutoTimerEditor.py:646
-msgid "Record a maximum of x times"
-msgstr ""
-
-#: AutoTimerEditor.py:651
-msgid "Amount of recordings left"
-msgstr ""
-
-#: AutoTimerEditor.py:652
-msgid "Reset count"
-msgstr ""
-
-#: AutoTimerEditor.py:654
-msgid "Require description to be unique"
-msgstr ""
-
-#: AutoTimerEditor.py:657
-msgid "Check for uniqueness in"
-msgstr ""
-
-#: AutoTimerEditor.py:660
-msgid "Use a custom location"
-msgstr ""
-
-#: AutoTimerEditor.py:662
-msgid "Custom location"
-msgstr ""
-
-#: AutoTimerEditor.py:667
-msgid "Activate VPS"
-msgstr ""
-
-#: AutoTimerEditor.py:669
-msgid "Control recording completely by service"
-msgstr ""
-
-#: AutoTimerEditor.py:672
-msgid "Label series"
-msgstr ""
-
-#: AutoTimerEditor.py:679
-msgid "Restriction to certain services (edit in services menu)"
-msgstr ""
-
-#: AutoTimerEditor.py:680
-msgid "Restriction to certain bouquets (edit in services menu)"
-msgstr ""
-
-#: AutoTimerEditor.py:681
-msgid "Restriction to certain days of week (edit in filter menu)"
-msgstr ""
-
-#: AutoTimerEditor.py:682
-msgid "Other filters (edit in filter menu)"
-msgstr ""
-
-#: AutoTimerEditor.py:754
-msgid "Enter or edit description"
-msgstr ""
-
-#: AutoTimerEditor.py:761
-msgid "Enter or edit match title"
-msgstr ""
-
-#: AutoTimerEditor.py:790
-msgid "The match attribute is mandatory."
-msgstr ""
-
-#: AutoTimerEditor.py:951
-msgid "AutoTimer Filters"
-msgstr ""
-
-#: AutoTimerEditor.py:955
-msgid "in Title"
-msgstr ""
-
-#: AutoTimerEditor.py:956
-msgid "in Shortdescription"
-msgstr ""
-
-#: AutoTimerEditor.py:957
-msgid "in Description"
-msgstr ""
-
-#: AutoTimerEditor.py:958
-msgid "on Weekday"
-msgstr ""
-
-#: AutoTimerEditor.py:973
-msgid "Save"
-msgstr ""
-
-#: AutoTimerEditor.py:974 AutoTimerEditor.py:1189
+#: AutoTimerEditor.py:999 AutoTimerEditor.py:1214
 msgid "delete"
 msgstr ""
 
-#: AutoTimerEditor.py:975 AutoTimerEditor.py:1190
-msgid "New"
+#: AutoTimerEditor.py:180
+msgid "description match"
 msgstr ""
 
-#: AutoTimerEditor.py:994
-msgid "Edit AutoTimer filters"
+#: AutoTimerImporter.py:145
+msgid "disable"
 msgstr ""
 
-#: AutoTimerEditor.py:1038
-msgid "Enable Filtering"
+#: AutoTimerEditor.py:519 AutoTimerEditor.py:523 AutoTimerEditor.py:531
+#: AutoTimerEditor.py:535 AutoTimerEditor.py:539
+msgid "disabled"
 msgstr ""
 
-#: AutoTimerEditor.py:1039
-msgid "Filter"
+#: AutoTimerEditor.py:255 AutoTimerImporter.py:27
+msgid "do nothing"
 msgstr ""
 
-#: AutoTimerEditor.py:1047 AutoTimerEditor.py:1064 AutoTimerEditor.py:1089
-#: AutoTimerEditor.py:1117
-msgid "Exclude"
+#: AutoTimerEditor.py:513
+msgid "edit filters"
 msgstr ""
 
-#: AutoTimerEditor.py:1052 AutoTimerEditor.py:1069 AutoTimerEditor.py:1090
-#: AutoTimerEditor.py:1117
-msgid "Include"
+#: AutoTimerImporter.py:145
+msgid "enable"
 msgstr ""
 
-#: AutoTimerEditor.py:1087
-msgid "Select type of Filter"
+#: AutoTimerEditor.py:517 AutoTimerEditor.py:521 AutoTimerEditor.py:533
+#: AutoTimerEditor.py:537
+msgid "enabled"
 msgstr ""
 
-#: AutoTimerEditor.py:1119
-msgid "Enter or edit text"
+#: AutoTimerEditor.py:180
+msgid "exact match"
 msgstr ""
 
-#: AutoTimerEditor.py:1167
-msgid "AutoTimer Services"
+#: AutoTimerEditor.py:257 AutoTimerImporter.py:28
+msgid "go to deep standby"
 msgstr ""
 
-#: AutoTimerEditor.py:1177
-msgid "Channels"
+#: AutoTimerEditor.py:256 AutoTimerImporter.py:29
+msgid "go to standby"
 msgstr ""
 
-#: AutoTimerEditor.py:1178
-msgid "Bouquets"
+#: AutoTimerEditor.py:982
+msgid "in Description"
 msgstr ""
 
-#: AutoTimerEditor.py:1208
-msgid "Edit AutoTimer services"
+#: AutoTimerEditor.py:981
+msgid "in Shortdescription"
 msgstr ""
 
-#: AutoTimerEditor.py:1229
-msgid "Enable Service Restriction"
+#: AutoTimerEditor.py:980
+msgid "in Title"
 msgstr ""
 
-#: AutoTimerEditor.py:1230
-msgid "Editing"
+#: AutoTimerPreview.py:77
+msgid "mins"
 msgstr ""
 
-#: AutoTimerEditor.py:1239 AutoTimerEditor.py:1293
-msgid "Record on"
+#: AutoTimerResource.py:179
+msgid "missing parameter \"id\""
 msgstr ""
 
-#: AutoTimerEditor.py:1271
-msgid "Select channel to record on"
+#: AutoTimerEditor.py:983
+msgid "on Weekday"
 msgstr ""
 
-#: AutoTimerEditor.py:1277
-msgid "Select bouquet to record on"
+#: AutoTimerEditor.py:180
+msgid "partial match"
+msgstr ""
+
+#: AutoTimerEditor.py:187 AutoTimerImporter.py:206
+msgid "record"
+msgstr ""
+
+#: AutoTimerEditor.py:255
+msgid "standard"
+msgstr ""
+
+#: AutoTimerEditor.py:180
+msgid "title starts with"
+msgstr ""
+
+#: AutoTimerResource.py:204
+#, python-format
+msgid "unable to find timer with id %i"
+msgstr ""
+
+#: AutoTimerEditor.py:355 AutoTimerEditor.py:356 AutoTimerEditor.py:357
+#: AutoTimerEditor.py:358
+msgid "unknown"
+msgstr ""
+
+#: AutoTimerEditor.py:187 AutoTimerImporter.py:206
+msgid "zap"
 msgstr ""
