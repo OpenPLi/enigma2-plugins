@@ -22,7 +22,7 @@ is the only reliable way to make remote tools aware of our capabilities without
 much overhead (read: a special api just for this) we chose to change the meaning
 of the version attribue.
 """
-CURRENT_CONFIG_VERSION = "7"
+CURRENT_CONFIG_VERSION = "8"
 
 def getValue(definitions, default):
 	# Initialize Output
@@ -31,10 +31,7 @@ def getValue(definitions, default):
 	# How many definitions are present
 	if isinstance(definitions, list):
 		Len = len(definitions)
-		if Len > 0:
-			childNodes = definitions[Len-1].text
-		else:
-			childNodes = ""
+		ret = definitions[Len-1].text if Len else ""
 	else:
 		ret = definitions.text
 

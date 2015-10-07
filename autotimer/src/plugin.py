@@ -2,6 +2,8 @@ from __future__ import print_function
 
 from . import _, config
 
+from twisted.internet import reactor
+
 # GUI (Screens)
 from Screens.MessageBox import MessageBox
 from Tools.Notifications import AddPopup
@@ -425,15 +427,26 @@ def handleAutoPoller():
 def editCallback(session):
 	# Don't parse EPG if editing was canceled
 	if session is not None:
-		autotimer.parseEPGAsync().addCallback(parseEPGCallback)#.addErrback(parseEPGErrback)
+		delay = config.plugins.autotimer.editdelay.value
+		parseFunc = lambda: autotimer.parseEPGAsync().addCallback(parseEPGCallback)#.addErrback(parseEPGErrback)
+		reactor.callLater(delay, parseFunc)
 	else:
 		handleAutoPoller()
+
+#def parseEPGErrback(failure):
+#	AddPopup(
+#		_("AutoTimer failed with error %s" (str(failure),)),
+#	)
+#
+#	# Save xml
+#	autotimer.writeXml()
+#	handleAutoPoller()
 
 def parseEPGCallback(ret):
 	AddPopup(
 		_("Found a total of %d matching Events.\n%d Timer were added and\n%d modified,\n%d conflicts encountered,\n%d similars added.") % (ret[0], ret[1], ret[2], len(ret[4]), len(ret[5])),
 		MessageBox.TYPE_INFO,
-		10,
+		config.plugins.autotimer.popup_timeout.value,
 		'AT_PopUp_ID_ParseEPGCallback'
 	)
 
