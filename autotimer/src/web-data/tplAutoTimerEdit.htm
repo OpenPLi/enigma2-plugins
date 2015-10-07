@@ -22,16 +22,6 @@
 										</td>
 									</tr>
 									<tr>
-										<td class="optionTitle">Encoding:</td>
-										<td class="optionContent">
-											<select id="encoding" size="1" class="select">
-												{for e in encoding}
-													<option value="${e.value}" ${e.selected}>${e.txt}</option>
-												{/for}
-											</select>
-										</td>
-									</tr>
-									<tr>
 										<td class="optionTitle">Search type:</td>
 										<td class="optionContent">
 											<select id="searchType" size="1" class="select">
@@ -173,7 +163,7 @@
 									<tr>
 										<td class="optionTitle">After event:</td>
 										<td class="optionContent">
-											<table>
+											<table> 
 												<tr>
 													<td class="optionMain">
 														<select id="afterevent" size="1" class="select">
@@ -250,11 +240,31 @@
 									<tr>
 										<td class="optionTitle">Avoid duplicate description:</td>
 										<td class="optionContent">
-											<select id="avoidDuplicateDescription" size="1" class="select">
-												{for e in avoidDuplicateDescription}
-													<option value="${e.value}" ${e.selected}>${e.txt}</option>
-												{/for}
-											</select>
+											<table>
+												<tr>
+													<td class="optionMain">
+														<select id="avoidDuplicateDescription" size="1" class="select">
+															{for e in avoidDuplicateDescription}
+																<option value="${e.value}" ${e.selected}>${e.txt}</option>
+															{/for}	
+														</select>
+													</td>
+													<td>
+														<table id="avoidDuplicateDescriptioncontent" class="optionSub">
+															<tr>
+																<td>
+																	In:
+																	<select id="searchForDuplicateDescription" size="1" class="select">
+																		{for e in searchForDuplicateDescription}
+																			<option value="${e.value}" ${e.selected}>${e.txt}</option>
+																		{/for}	
+																	</select>
+																</td>
+															</tr>
+														</table>
+													</td>
+												</tr>
+											</table>
 										</td>
 									</tr>
 									<tr>
@@ -435,8 +445,7 @@
 						</tr>
 						<tr>
 							<td>
-								<hr />
-									<div class="buttonbar">
+								<div class="buttonbar">
 									<button type="button" id="save">Save</button>
 									<button type="button" id="cancel">Cancel</button>
 								</div>

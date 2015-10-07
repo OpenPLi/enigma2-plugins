@@ -48,7 +48,7 @@ class AutoPollerThread(Thread):
 				#_("%d conflict(s) encountered when trying to add new timers:\n%s") % (len(conflicts), '\n'.join([_("%s: %s at %s") % (x[4], x[0], asctime(localtime(x[2]))) for x in conflicts])),
 				_("%d conflict(s) encountered when trying to add new timers:\n%s") % (len(conflicts), '\n'.join([_("%s: %s at %s") % (x[4], x[0], "('%s', '%s')" % FuzzyTime(x[2])) for x in conflicts])),
 				MessageBox.TYPE_INFO,
-				20,
+				config.plugins.autotimer.popup_timeout.value,
 				NOTIFICATIONID
 			)
 		similars = ret[5]
@@ -57,7 +57,7 @@ class AutoPollerThread(Thread):
 				#_("%d conflict(s) solved with similar timer(s):\n%s") % (len(similars), '\n'.join([_("%s: %s at %s") % (x[4], x[0], asctime(localtime(x[2]))) for x in similars])),
 				_("%d conflict(s) solved with similar timer(s):\n%s") % (len(similars), '\n'.join([_("%s: %s at %s") % (x[4], x[0], "('%s', '%s')" % FuzzyTime(x[2])) for x in similars])),
 				MessageBox.TYPE_INFO,
-				20,
+				config.plugins.autotimer.popup_timeout.value,
 				SIMILARNOTIFICATIONID
 			)
 		added_timer = ret[1]
@@ -65,7 +65,7 @@ class AutoPollerThread(Thread):
 			AddPopup(
 				_("AutoTimer\n%d timer(s) were added.") % (ret[1]),
 				MessageBox.TYPE_INFO,
-				20,
+				config.plugins.autotimer.popup_timeout.value,
 				TIMERNOTIFICATIONID 
 			)
 

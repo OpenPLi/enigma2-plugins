@@ -366,14 +366,23 @@ class AutoTimerEditorBase:
 
 	def openMovieLocationBox(self, answer=""):
 		from Screens.LocationBox import MovieLocationBox
-		self.session.openWithCallback(
-			self.pathSelected,
-			MovieLocationBox,
-			_("Choose target folder"),
+		try:
+			self.session.openWithCallback(
+				self.pathSelected,
+				MovieLocationBox,
+				_("Choose target folder"),
 				self.destination.value,
-			filename = answer,
-			minFree = 100
-		)
+				filename = answer,
+				minFree = 100
+			)
+		except:
+			self.session.openWithCallback(
+				self.pathSelected,
+				MovieLocationBox,
+				_("Choose target folder"),
+				self.destination.value,
+				minFree = 100 # Same requirement as in Screens.TimerEntry
+			)
 
 	def chooseDestination(self):
 		menu = [(_("Open select location"), "empty")]

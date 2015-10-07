@@ -3,9 +3,9 @@
 		AutoTimer WebIf for Enigma-2
 		Coded by betonme (c) 2012 @ IHAD <glaserfrank(at)gmail.com>
 		Support: http://www.i-have-a-dreambox.com/wbb2/thread.php?threadid=79391
-
-		All Files of this Software are licensed under the Creative Commons
-		Attribution-NonCommercial-ShareAlike 3.0 Unported
+		
+		All Files of this Software are licensed under the Creative Commons 
+		Attribution-NonCommercial-ShareAlike 3.0 Unported 
 		License if not stated otherwise in a files head. To view a copy of this license, visit
 		http://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative
 		Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.
@@ -14,7 +14,7 @@
 		is licensed by Dream Multimedia GmbH.
 
 		This plugin is NOT free software. It is open source, you are allowed to
-		modify it (if you keep the license), but it may not be commercially
+		modify it (if you keep the license), but it may not be commercially 
 		distributed other than under the conditions noted above.
 
 ***/
@@ -422,7 +422,7 @@ var AutoTimerMenuController  = Class.create(Controller, {
 				this.back();
 			}.bind(this)
 		);
-		$('back').title = "Return to Receiver Webcontrol";
+		$('back').title = "Return to box Webcontrol";
 		$('reload').on(
 			'click',
 			function(event, element){
@@ -465,13 +465,13 @@ var AutoTimerMenuController  = Class.create(Controller, {
 			}.bind(this)
 		);
 		$('restore').title = "Restore a previous configuration backup";
-		$('about').on(
+		$('about_autotimereditor').on(
 			'click',
 			function(event, element){
 				this.about();
 			}.bind(this)
 		);
-		$('about').title = "Some information about author, license, support...";
+		$('about_autotimereditor').title = "Some information about author, license, support...";
 	},
 });
 
@@ -637,6 +637,7 @@ var AutoTimerEditController = Class.create(Controller, {
 		this.onchangeCheckbox( $('locationavailable') );
 		this.onchangeSelectAfterEvent( $('afterevent') );
 		this.onchangeSelect( $('counter') );
+		this.onchangeSelect( $('avoidDuplicateDescription') );
 		this.onchangeCheckbox( $('usefilters') );
 		var filterwheres = $$('.filterwhere');
 		for (var i = 0; i < filterwheres.size(); i++) {
@@ -814,7 +815,7 @@ var AutoTimerEditController = Class.create(Controller, {
 		}
 		data['enabled'] = ($('enabled').checked) ? '1' : '0';
 
-		options = ['match','name','encoding','searchType','searchCase','justplay','avoidDuplicateDescription'];
+		options = ['match','name','searchType','searchCase','justplay'];
 		for (var id = 0; id < options.length; id++) {
 			if ($(options[id]).value == ''){
 				core.notify('Error: ' + options[id] + ' is empty', false);
@@ -895,6 +896,11 @@ var AutoTimerEditController = Class.create(Controller, {
 			if (lastActivation) data['lastActivation'] = lastActivation;
 			var lastBegin = $('lastBegin').value;
 			if (lastBegin) data['lastBegin'] = lastBegin;
+		}
+
+		data['avoidDuplicateDescription'] = $('avoidDuplicateDescription').value;		
+		if ($('avoidDuplicateDescription').value > 0){
+			data['searchForDuplicateDescription'] = $('searchForDuplicateDescription').value;
 		}
 
 		if ($('locationavailable').checked){
@@ -1109,6 +1115,12 @@ var AutoTimerEditController = Class.create(Controller, {
 				this.onchangeSelect(element);
 			}.bind(this)
 		);
+		$('avoidDuplicateDescription').on(
+			'change',
+			function(event, element){
+				this.onchangeSelect(element);
+			}.bind(this)
+		);
 		$('locationavailable').on(
 			'change',
 			function(event, element){
@@ -1296,24 +1308,6 @@ var TimerController = Class.create({
 	}
 });
 
-var AboutPage = Class.create({
-	initialize: function(target){
-		this.simpleHandler = new SimplePageHandler(target);
-	},
-
-	show: function(tpl, data){
-		if(!data)
-			data = {};
-		this.simpleHandler.show(tpl, data);
-	},
-
-	load: function(){
-		$('list').selectedIndex = -1;
-		$('headerautotimercontent').innerHTML = "AutoTimer WebIf About:";
-		this.show('tplAbout');
-	},
-});
-
 
 ///////////////////////////////////////////////////////////////////////////////
 // Handler
@@ -1407,6 +1401,20 @@ var AutoTimerMenuHandler = Class.create(AbstractATContentHandler,{
 			callback();
 		}
 	},
+});
+
+var AboutPage = Class.create(AbstractATContentHandler,{
+	initialize: function($super, target){
+		$super('tplAutoTimerAbout', target);
+		this.provider = new SimpleRequestProvider();
+	},
+
+	load: function(){
+		$('list').selectedIndex = -1;
+		$('headerautotimercontent').innerHTML = "AutoTimer WebIf About:";
+		//this.show('tplAutoTimerAbout');
+		this.show({});
+	}
 });
 
 var AutoTimerListHandler  = Class.create(AbstractATContentHandler, {
@@ -1715,12 +1723,6 @@ function AutoTimer(xml, defaults){
 	this.match = xml.getAttribute('match');
 	this.name = (this.name == undefined) ? name : this.match;
 
-	var encoding = getAttribute(xml, 'encoding', defaults);
-	if (encoding==undefined) encoding = 'UTF-8';
-	var options = ['ISO8859-15', 'UTF-8'];
-	this.encoding = toOptionList(options, encoding);
-	this.encoding.shift();
-
 	// Items which only exists if they differ from the default value
 	var searchType = getAttribute(xml, 'searchType', defaults);
 	if (searchType==undefined) searchType = 'partial';
@@ -1768,7 +1770,7 @@ function AutoTimer(xml, defaults){
 		'usetimespan' : usetimespan,
 		'from' : from,
 		'to' : to,
-	}	
+	}
 
 	var after = getAttribute(xml, 'after', defaults);
 	var before = getAttribute(xml, 'before', defaults);
@@ -1793,7 +1795,7 @@ function AutoTimer(xml, defaults){
 		'usetimeframe' : usetimeframe,
 		'after' : toReadableDate( after ),
 		'before' : toReadableDate( before ),
-	}	
+	}
 
 	var offset = getAttribute(xml, 'offset', defaults);
 	var useoffset = (offset) ? 'checked' : '';
@@ -1811,7 +1813,7 @@ function AutoTimer(xml, defaults){
 		'useoffset' : useoffset,
 		'begin' : numericalOptionList(0, 100, begin),
 		'end' : numericalOptionList(0, 100, end),
-	}	
+	}
 
 	var maxduration = getAttribute(xml, 'maxduration', defaults);
 	var usemaxduration = (maxduration) ? 'checked' : '';
@@ -1819,7 +1821,7 @@ function AutoTimer(xml, defaults){
 	this.maxduration = {
 		'usemaxduration' : usemaxduration,
 		'maxduration' : numericalOptionList(0, 999, maxduration),
-	}	
+	}
 
 	var xmlafterevents = xml.getElementsByTagName('afterevent');
 	var afterevent = '';
@@ -1895,6 +1897,14 @@ function AutoTimer(xml, defaults){
 	options['3'] = 'Any service/recording';
 	this.avoidDuplicateDescription = createOptionList(options, avoidDuplicateDescription);
 
+	searchForDuplicateDescription = getAttribute(xml, 'searchForDuplicateDescription', defaults);
+	if (searchForDuplicateDescription==undefined) searchForDuplicateDescription = '2';
+	var options = {};
+	options['0'] = 'Title';
+	options['1'] = 'Title and Short description';
+	options['2'] = 'Title and all descriptions';
+	this.searchForDuplicateDescription = createOptionList(options, searchForDuplicateDescription);
+	
 	var location = getAttribute(xml, 'location', defaults);
 	var uselocation = (location) ? 'checked' : '';
 	if (location == undefined) {
@@ -2044,7 +2054,6 @@ function AutoTimer(xml, defaults){
 			'enabled' :               this.enabled,
 			'name' :                  this.name,
 			'match' :                 this.match,
-			'encoding' :              this.encoding,
 
 			'searchType' :            this.searchType,
 			'searchCase' :            this.searchCase,
@@ -2062,6 +2071,8 @@ function AutoTimer(xml, defaults){
 			'counter' :               this.counter,
 
 			'avoidDuplicateDescription' :  this.avoidDuplicateDescription,
+			'searchForDuplicateDescription' :  this.searchForDuplicateDescription,
+
 			'location' :                   this.location,
 			'tags' :                       this.tags,
 			'filters' :                    this.filters,

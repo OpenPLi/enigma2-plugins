@@ -41,6 +41,11 @@ try:
 except ImportError as ie:
 	renameTimer = None
 
+try:
+	from Plugins.Extensions.SeriesPlugin.plugin import getSeasonAndEpisode
+except ImportError as ie:
+	getSeasonAndEpisode = None
+
 from . import config, xrange, itervalues
 
 XML_CONFIG = "/etc/enigma2/autotimer.xml"
@@ -80,13 +85,20 @@ def blockingCallFromMainThread(f, *a, **kw):
 	if isinstance(result, failure.Failure):
 		result.raiseException()
 	return result
-
-typeMap = {
-	"exact": eEPGCache.EXAKT_TITLE_SEARCH,
-	"partial": eEPGCache.PARTIAL_TITLE_SEARCH,
-	"start": eEPGCache.START_TITLE_SEARCH,
-	"description": -99
-}
+try:
+	typeMap = {
+		"exact": eEPGCache.EXAKT_TITLE_SEARCH,
+		"partial": eEPGCache.PARTIAL_TITLE_SEARCH,
+		"start": eEPGCache.START_TITLE_SEARCH,
+		"description": -99
+	}
+except:
+	typeMap = {
+		"exact": eEPGCache.EXAKT_TITLE_SEARCH,
+		"partial": eEPGCache.PARTIAL_TITLE_SEARCH,
+		"start": eEPGCache.PARTIAL_TITLE_SEARCH,
+		"description": -99
+	}
 
 caseMap = {
 	"sensitive": eEPGCache.CASE_CHECK,
@@ -145,11 +157,11 @@ class AutoTimer:
 		return buildConfig(self.defaultTimer, self.timers, webif = True)
 
 	def writeXml(self):
-		with open(XML_CONFIG, 'w') as config:
-			config.writelines(buildConfig(self.defaultTimer, self.timers))
+		file = open(XML_CONFIG, 'w')
+		file.writelines(buildConfig(self.defaultTimer, self.timers))
+		file.close()
 
 # Manage List
-
 	def add(self, timer):
 		self.timers.append(timer)
 
@@ -310,6 +322,7 @@ class AutoTimer:
 		# Loop over all EPG matches
 		for idx, ( serviceref, eit, name, begin, duration, shortdesc, extdesc ) in enumerate( epgmatches ):
 
+			print("[AutoTimer] possible epgmatch %s" % (name))
 			eserviceref = eServiceReference(serviceref)
 			evt = epgcache.lookupEventId(eserviceref, eit)
 			if not evt:
@@ -359,7 +372,7 @@ class AutoTimer:
 				or (not similarTimer and (\
 					timer.checkTimespan(timestamp) \
 					or timer.checkTimeframe(begin) \
-				)) or timer.checkFilter(name, shortdesc, extdesc, dayofweek):
+				)): #or timer.checkFilter(name, shortdesc, extdesc, dayofweek):
 				continue
 
 			if timer.hasOffset():
@@ -439,13 +452,10 @@ class AutoTimer:
 				if timer.checkCounter(timestamp):
 					print("[AutoTimer] Not adding new timer because counter is depleted.")
 					continue
-
-
 			# Append to timerlist and abort if simulating
 			timers.append((name, begin, end, serviceref, timer.name))
 			if simulateOnly:
 				continue
-
 
 			if newEntry is not None:
 				# Abort if we don't want to modify timers or timer is repeated
@@ -466,7 +476,6 @@ class AutoTimer:
 
 				self.modifyTimer(newEntry, name, shortdesc, begin, end, serviceref, eit)
 				newEntry.log(501, "[AutoTimer] AutoTimer modified timer: %s ." % (newEntry.name))
-
 			else:
 				newEntry = RecordTimerEntry(ServiceReference(serviceref), begin, end, name, shortdesc, eit)
 				newEntry.log(500, "[AutoTimer] Try to add new timer based on AutoTimer %s." % (timer.name))
@@ -475,6 +484,18 @@ class AutoTimer:
 				# It is only temporarily, after a restart it will be lost,
 				# because it won't be stored in the timer xml file
 				newEntry.isAutoTimer = True
+
+			if getSeasonAndEpisode is not None and timer.series_labeling:
+				sp_timer = getSeasonAndEpisode(newEntry, name, evtBegin, evtEnd)
+				if sp_timer:
+					newEntry = sp_timer
+				name = newEntry.name
+				print("[AutoTimer SeriesPlugin] Returned name %s" % (name))
+				shortdesc = newEntry.description
+				print("[AutoTimer SeriesPlugin] Returned description %s" % (shortdesc))
+			
+			if timer.checkFilter(name, shortdesc, extdesc, dayofweek):
+				continue
 
 			# Apply afterEvent
 			if timer.hasAfterEvent():
@@ -502,8 +523,8 @@ class AutoTimer:
 				# XXX: this won't perform a sanity check, but do we actually want to do so?
 				recordHandler.timeChanged(newEntry)
 
-				if renameTimer is not None and timer.series_labeling:
-					renameTimer(newEntry, name, evtBegin, evtEnd)
+				#if renameTimer is not None and timer.series_labeling:
+				#	renameTimer(newEntry, name, evtBegin, evtEnd)
 
 			else:
 				conflictString = ""
@@ -550,8 +571,8 @@ class AutoTimer:
 					newEntry.extdesc = extdesc
 					timerdict[serviceref].append(newEntry)
 
-					if renameTimer is not None and timer.series_labeling:
-						renameTimer(newEntry, name, evtBegin, evtEnd)
+					#if renameTimer is not None and timer.series_labeling:
+					#	renameTimer(newEntry, name, evtBegin, evtEnd)
 
 					# Similar timers are in new timers list and additionally in similar timers list
 					if similarTimer:
@@ -569,7 +590,7 @@ class AutoTimer:
 						conflicts = recordHandler.record(newEntry)
 		return (new, modified)
 
-	def parseEPG(self, simulateOnly = False):
+	def parseEPG(self, simulateOnly = False, callback=None):
 		if NavigationInstance.instance is None:
 			print("[AutoTimer] Navigation is not available, can't parse EPG")
 			return (0, 0, 0, [], [], [])
@@ -612,8 +633,14 @@ class AutoTimer:
 		# Iterate Timer
 		for timer in self.getEnabledTimerList():
 			tup = doBlockingCallFromMainThread(self.parseTimer, timer, epgcache, serviceHandler, recordHandler, checkEvtLimit, evtLimit, timers, conflicting, similars, timerdict, moviedict, simulateOnly=simulateOnly)
-			new += tup[0]
-			modified += tup[1]
+			if callback:
+				callback(timers, conflicting, similars)
+				del timers[:]
+				del conflicting[:]
+				del similars[:]
+			else:
+				new += tup[0]
+				modified += tup[1]
 
 		return (len(timers), new, modified, timers, conflicting, similars)
 
@@ -630,14 +657,15 @@ class AutoTimer:
 					timer.extdesc = ''
 				timerdict[str(timer.service_ref)].append(timer)
 
-	def modifyTimer(self, timer, name, shortdesc, begin, end, serviceref, eit):
+	def modifyTimer(self, timer, name, shortdesc, begin, end, serviceref, eit=None):
 		# Don't update the name, it will overwrite the name of the SeriesPlugin
 		#timer.name = name
 		timer.description = shortdesc
 		timer.begin = int(begin)
 		timer.end = int(end)
 		timer.service_ref = ServiceReference(serviceref)
-		timer.eit = eit
+		if eit is not None: 
+			timer.eit = eit
 
 	def addDirectoryToMovieDict(self, moviedict, dest, serviceHandler):
 		movielist = serviceHandler.list(eServiceReference("2:0:1:0:0:0:0:0:0:0:" + dest))
@@ -663,12 +691,35 @@ class AutoTimer:
 					"extdesc": event.getExtendedDescription() or '' # XXX: does event.getExtendedDescription() actually return None on no description or an empty string?
 				})
 
+	def checkDuplicatesOE(self, timer, name1, name2, shortdesc1, shortdesc2, extdesc1, extdesc2, force=False):
+		foundTitle = False
+		foundShort = False
+		retValue = False
+		if name1 and name2:
+			foundTitle = ( 0.8 < SequenceMatcher(lambda x: x == " ",name1, name2).ratio() )
+		# NOTE: only check extended & short if tile is a partial match
+		if foundTitle:
+			if timer.searchForDuplicateDescription > 0 or force:
+				if shortdesc1 and shortdesc2:
+					# If the similarity percent is higher then 0.7 it is a very close match
+					foundShort = ( 0.7 < SequenceMatcher(lambda x: x == " ",shortdesc1, shortdesc2).ratio() )
+					if foundShort:
+						if timer.searchForDuplicateDescription == 3:
+							if extdesc1 and extdesc2:
+								# Some channels indicate replays in the extended descriptions
+								# If the similarity percent is higher then 0.7 it is a very close match
+								retValue = ( 0.7 < SequenceMatcher(lambda x: x == " ",extdesc1, extdesc2).ratio() )
+						else:
+							retValue = True
+			else:
+				retValue = True
+		return retValue
+
 	def checkDuplicates(self, timer, name1, name2, shortdesc1, shortdesc2, extdesc1, extdesc2, force=False):
 		if name1 and name2:
 			sequenceMatcher = SequenceMatcher(" ".__eq__, name1, name2)
 		else:
 			return False
-
 		ratio = sequenceMatcher.ratio()
 		print("[AutoTimer] names ratio %f - %s - %d - %s - %d" % (ratio, name1, len(name1), name2, len(name2)))
 		if name1 in name2 or (0.8 < ratio): # this is probably a match
@@ -678,7 +729,6 @@ class AutoTimer:
 				ratio = sequenceMatcher.ratio()
 				print("[AutoTimer] shortdesc ratio %f - %s - %d - %s - %d" % (ratio, shortdesc1, len(shortdesc1), shortdesc2, len(shortdesc2)))
 				foundShort = shortdesc1 in shortdesc2 or (0.8 < ratio)
-
 			foundExt = True
 			# NOTE: only check extended if short description already is a match because otherwise
 			# it won't evaluate to True anyway
@@ -689,21 +739,3 @@ class AutoTimer:
 				foundExt = (0.8 < ratio)
 			return foundShort and foundExt
 		return False
-
-	def checkSimilarityold(self, timer, name1, name2, shortdesc1, shortdesc2, extdesc1, extdesc2, force=False):
-		foundTitle = name1 == name2
-		foundShort = False
-		foundExt = False
-		if (timer.searchForDuplicateDescription > 0 or force):
-			if shortdesc1 and shortdesc2:
-				# SkyUK does not use extended description, so try to find a close match to short description.
-				# If the similarity percent is higher then 0.8 it is a very close match
-				foundShort = ( 0.8 < SequenceMatcher(lambda x: x == " ",shortdesc1, shortdesc2).ratio() )
-
-			# NOTE: only check extended if short description already is a match because otherwise
-			# it won't evaluate to True anyway
-			if foundShort and extdesc1 and extdesc2:
-				# Some channels indicate replays in the extended descriptions
-				# If the similarity percent is higher then 0.8 it is a very close match
-				foundExt = ( 0.8 < SequenceMatcher(lambda x: x == " ",extdesc1, extdesc2).ratio() )
-		return foundTitle and foundShort and foundExt

@@ -360,15 +360,19 @@ class AutoTimerComponent(object):
 			if "weekday" in list and dayofweek in ("0", "1", "2", "3", "4"):
 				return True
 
-		for exclude in self.exclude[0]:
-			if exclude.search(title) is not None:
-				return True
-		for exclude in self.exclude[1]:
-			if exclude.search(short) is not None:
-				return True
-		for exclude in self.exclude[2]:
-			if exclude.search(extended) is not None:
-				return True
+		if self.exclude[0]:
+			for exclude in self.exclude[0]:
+				if exclude.search(title):
+					return True
+		if self.exclude[2]:
+			for exclude in self.exclude[1]:
+				if exclude.search(short):
+					return True
+		if self.exclude[2]:
+			for exclude in self.exclude[2]:
+				if exclude.search(extended):
+					return True
+
 		return False
 
 	def checkFilter(self, title, short, extended, dayofweek):
@@ -387,15 +391,18 @@ class AutoTimerComponent(object):
 			if dayofweek not in list:
 				return True
 
-		for include in self.include[0]:
-			if include.search(title) is None:
-				return True
-		for include in self.include[1]:
-			if include.search(short) is None:
-				return True
-		for include in self.include[2]:
-			if include.search(extended) is None:
-				return True
+		if self.include[0]:
+			for include in self.include[0]:
+				if not include.search(title):
+					return True
+		if self.include[1]:
+			for include in self.include[1]:
+				if not include.search(short):
+					return True
+		if self.include[2]:
+			for include in self.include[2]:
+				if not include.search(extended):
+					return True
 
 		return False
 
@@ -489,8 +496,11 @@ class AutoTimerComponent(object):
 		return None
 
 	def checkTimeframe(self, begin):
-		if self.timeframe is not None:
-			start, end = self.timeframe
+		timeframe = self.timeframe
+		if timeframe is not None:
+			start, end = timeframe
+			if start == end: # NOTE: by convention start == end indicates open ended from begin
+				return begin < start
 			if begin > start and begin < end:
 				return False
 			return True
