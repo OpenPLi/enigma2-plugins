@@ -19,8 +19,8 @@
 #
 #######################################################################
 
-
-
+# for localized messages
+from . import _
 from re import compile as re_compile
 from os import path as os_path, listdir, stat as os_stat
 from Components.MenuList import MenuList
@@ -66,8 +66,6 @@ EXTENSIONS = {
 		"sh": "script"
 	}
 
-
-
 def FileEntryComponent(name, absolute = None, isDir = False):
 	res = [ (absolute, isDir) ]
 	x, y, w, h = skin.parameters.get("DreamexplorerName",(40, 2, 1000, 22))
@@ -78,15 +76,16 @@ def FileEntryComponent(name, absolute = None, isDir = False):
 		extension = name.split('.')
 		extension = extension[-1].lower()
 		if EXTENSIONS.has_key(extension):
-			png = LoadPixmap("/usr/lib/enigma2/python/Plugins/Extensions/DreamExplorer/res/" + EXTENSIONS[extension] + ".png")
+			if name == "VIDEO_TS.IFO":
+				png = LoadPixmap("/usr/lib/enigma2/python/Plugins/Extensions/DreamExplorer/res/dvd.png")
+			else:
+				png = LoadPixmap("/usr/lib/enigma2/python/Plugins/Extensions/DreamExplorer/res/" + EXTENSIONS[extension] + ".png")
 		else:
 			png = None
 	if png is not None:
 		x, y, w, h = skin.parameters.get("DreamexplorerIcon",(12, 3, 20, 20))
 		res.append(MultiContentEntryPixmapAlphaTest(pos=(x, y), size=(w, h), png=png, flags=BT_SCALE | BT_KEEP_ASPECT_RATIO))
 	return res
-
-
 
 class FileList(MenuList):
 	def __init__(self, directory, showDirectories = True, showFiles = True, showMountpoints = True, matchingPattern = None, useServiceRef = False, inhibitDirs = False, inhibitMounts = False, isTop = False, enableWrapAround = True, additionalExtensions = None):
@@ -357,5 +356,3 @@ class FileList(MenuList):
 		#self.l.invalidate()
 		self.l.setList(self.list)
 		self.moveToIndex(0)
-
-
