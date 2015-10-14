@@ -41,11 +41,11 @@ config.plugins.PermanentClock.position_y = ConfigInteger(default=35)
 config.plugins.PermanentClock.analog = ConfigYesNo(default=False)
 config.plugins.PermanentClock.show_hide = ConfigYesNo(default=False)
 config.plugins.PermanentClock.color_analog = ConfigSelection([("1", _("black-yellow")),("2", _("black-blue")),("3", _("blue")),("4", _("black-white")),("5", _("white")),("6", _("transparent")),("7", _("PLi-transparent"))], default="1")
-config.plugins.PermanentClock.color_digital = ConfigSelection([("0", _("yellow")),("1", _("white"))], default="1")
+config.plugins.PermanentClock.color_digital = ConfigSelection([("0", _("yellow")),("1", _("white")), ("2", _("large yellow")), ("3", _("large white"))], default="1")
 
 ##############################################################################
 SKIN1 = """
-	<screen position="0,0" size="70,70" zPosition="10" backgroundColor="#ff000000" title="Permanent Clock" flags="wfNoBorder">
+	<screen position="0,0" size="70,70" zPosition="-1" backgroundColor="#ff000000" title="Permanent Clock" flags="wfNoBorder">
 		<ePixmap position="1,1" zPosition="1" size="70,70" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/PermanentClock/trad/trad1.png" alphatest="on" />
 		<widget source="global.CurrentTime" render="PermanentClockWatches" position="7,7" size="58,58" zPosition="4" alphatest="on" foregroundColor="#00f23d21">
 			<convert type="PermanentClockTime">secHand</convert>
@@ -59,7 +59,7 @@ SKIN1 = """
 	</screen>"""
 ##############################################################################
 SKIN2 = """
-	<screen position="0,0" size="70,70" zPosition="10" backgroundColor="#ff000000" title="Permanent Clock" flags="wfNoBorder">
+	<screen position="0,0" size="70,70" zPosition="-1" backgroundColor="#ff000000" title="Permanent Clock" flags="wfNoBorder">
 		<ePixmap position="1,1" zPosition="1" size="70,70" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/PermanentClock/trad/trad2.png" alphatest="on" />
 		<widget source="global.CurrentTime" render="PermanentClockWatches" position="7,7" size="58,58" zPosition="4" alphatest="on" foregroundColor="#00f23d21">
 			<convert type="PermanentClockTime">secHand</convert>
@@ -73,7 +73,7 @@ SKIN2 = """
 	</screen>"""
 ##############################################################################
 SKIN3 = """
-	<screen position="0,0" size="70,70" zPosition="10" backgroundColor="#ff000000" title="Permanent Clock" flags="wfNoBorder">
+	<screen position="0,0" size="70,70" zPosition="-1" backgroundColor="#ff000000" title="Permanent Clock" flags="wfNoBorder">
 		<ePixmap position="1,1" zPosition="1" size="70,70" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/PermanentClock/trad/trad3.png" alphatest="on" />
 			<widget source="global.CurrentTime" render="PermanentClockWatches" position="7,7" size="58,58" zPosition="4" alphatest="on" foregroundColor="#00f23d21">
 				<convert type="PermanentClockTime">secHand</convert>
@@ -87,7 +87,7 @@ SKIN3 = """
 	</screen>"""
 ##############################################################################
 SKIN4 = """
-	<screen position="0,0" size="70,70" zPosition="10" backgroundColor="#ff000000" title="Permanent Clock" flags="wfNoBorder">
+	<screen position="0,0" size="70,70" zPosition="-1" backgroundColor="#ff000000" title="Permanent Clock" flags="wfNoBorder">
 		<ePixmap position="1,1" zPosition="1" size="70,70" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/PermanentClock/trad/trad4.png" alphatest="on" />
 		<widget source="global.CurrentTime" render="PermanentClockWatches" position="7,7" size="58,58" zPosition="4" alphatest="on" foregroundColor="#00f23d21">
 			<convert type="PermanentClockTime">secHand</convert>
@@ -101,7 +101,7 @@ SKIN4 = """
 	</screen>"""
 ##############################################################################
 SKIN5 = """
-	<screen position="0,0" size="70,70" zPosition="10" backgroundColor="#ff000000" title="Permanent Clock" flags="wfNoBorder">
+	<screen position="0,0" size="70,70" zPosition="-1" backgroundColor="#ff000000" title="Permanent Clock" flags="wfNoBorder">
 		<ePixmap position="1,1" zPosition="1" size="70,70" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/PermanentClock/trad/trad5.png" alphatest="on" />
 		<widget source="global.CurrentTime" render="PermanentClockWatches" position="7,7" size="58,58" zPosition="4" alphatest="on" foregroundColor="#00f23d21">
 			<convert type="PermanentClockTime">secHand</convert>
@@ -115,7 +115,7 @@ SKIN5 = """
 	</screen>"""
 ##############################################################################
 SKIN6 = """
-	<screen position="0,0" size="70,70" zPosition="10" backgroundColor="#ff000000" title="Permanent Clock" flags="wfNoBorder">
+	<screen position="0,0" size="70,70" zPosition="-1" backgroundColor="#ff000000" title="Permanent Clock" flags="wfNoBorder">
 		<ePixmap position="1,1" zPosition="1" size="70,70" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/PermanentClock/trad/trad6.png" alphatest="on" />
 		<widget source="global.CurrentTime" render="PermanentClockWatches" position="7,7" size="58,58" zPosition="4" alphatest="on" foregroundColor="#00f23d21">
 			<convert type="PermanentClockTime">secHand</convert>
@@ -129,7 +129,7 @@ SKIN6 = """
 	</screen>"""
 ##############################################################################
 SKIN7 = """
-	<screen position="0,0" size="70,70" zPosition="10" backgroundColor="#ff000000" title="Permanent Clock" flags="wfNoBorder">
+	<screen position="0,0" size="70,70" zPosition="-1" backgroundColor="#ff000000" title="Permanent Clock" flags="wfNoBorder">
 		<ePixmap position="1,1" zPosition="1" size="70,70" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/PermanentClock/trad/trad7.png" alphatest="on" />
 		<widget source="global.CurrentTime" render="PermanentClockWatches" position="7,7" size="58,58" zPosition="4" alphatest="on" foregroundColor="#00f23d21">
 			<convert type="PermanentClockTime">secHand</convert>
@@ -143,15 +143,29 @@ SKIN7 = """
 	</screen>"""
 ##############################################################################
 SKIN = """
-	<screen position="0,0" size="120,30" zPosition="10" backgroundColor="#ff000000" title="Permanent Clock" flags="wfNoBorder">
+	<screen position="0,0" size="120,30" zPosition="-1" backgroundColor="#ff000000" title="Permanent Clock" flags="wfNoBorder">
 		<widget source="global.CurrentTime" render="Label" position="1,1" size="120,30" backgroundColor="#ff000000" transparent="1" zPosition="0" foregroundColor="#00f0f0f0" borderWidth="2" font="Regular;26" borderColor="#00000000" valign="center" halign="center">
 			<convert type="ClockToText">Default</convert>
 		</widget>
 	</screen>"""
 ##############################################################################
 SKIN0 = """
-	<screen position="0,0" size="120,30" zPosition="10" backgroundColor="#ff000000" title="Permanent Clock" flags="wfNoBorder">
+	<screen position="0,0" size="120,30" zPosition="-1" backgroundColor="#ff000000" title="Permanent Clock" flags="wfNoBorder">
 		<widget source="global.CurrentTime" render="Label" position="1,1" size="120,30" backgroundColor="#ff000000" transparent="1" zPosition="0" foregroundColor="#00ffc000" borderWidth="2" font="Regular;26" borderColor="#00000000" valign="center" halign="center">
+			<convert type="ClockToText">Default</convert>
+		</widget>
+	</screen>"""
+##############################################################################
+SKINL = """
+	<screen position="0,0" size="180,45" zPosition="-1" backgroundColor="#ff000000" title="Permanent Clock" flags="wfNoBorder">
+		<widget source="global.CurrentTime" render="Label" position="1,1" size="180,45" backgroundColor="#ff000000" transparent="1" zPosition="0" foregroundColor="#00f0f0f0" borderWidth="2" font="Regular;39" borderColor="#00000000" valign="center" halign="center">
+			<convert type="ClockToText">Default</convert>
+		</widget>
+	</screen>"""
+##############################################################################
+SKIN0L = """
+	<screen position="0,0" size="180,45" zPosition="-1" backgroundColor="#ff000000" title="Permanent Clock" flags="wfNoBorder">
+		<widget source="global.CurrentTime" render="Label" position="1,1" size="180,45" backgroundColor="#ff000000" transparent="1" zPosition="0" foregroundColor="#00ffc000" borderWidth="2" font="Regular;39" borderColor="#00000000" valign="center" halign="center">
 			<convert type="ClockToText">Default</convert>
 		</widget>
 	</screen>"""
@@ -175,10 +189,14 @@ class PermanentClockNewScreen(Screen):
 			elif config.plugins.PermanentClock.color_analog.value == "7":
 				self.skin = SKIN7
 		else:
-			if config.plugins.PermanentClock.color_digital.value == "1":
-				self.skin = SKIN
-			else:
+			if config.plugins.PermanentClock.color_digital.value == "0":
 				self.skin = SKIN0
+			elif config.plugins.PermanentClock.color_digital.value == "1":
+				self.skin = SKIN
+			elif config.plugins.PermanentClock.color_digital.value == "2":
+				self.skin = SKINL
+			elif config.plugins.PermanentClock.color_digital.value == "3":
+				self.skin = SKIN0L
 		Screen.__init__(self, session)
 		self.onShow.append(self.movePosition)
 
@@ -277,10 +295,14 @@ class PermanentClockPositioner(Screen):
 			elif config.plugins.PermanentClock.color_analog.value == "7":
 				self.skin = SKIN7
 		else:
-			if config.plugins.PermanentClock.color_digital.value == "1":
-				self.skin = SKIN
-			else:
+			if config.plugins.PermanentClock.color_digital.value == "0":
 				self.skin = SKIN0
+			elif config.plugins.PermanentClock.color_digital.value == "1":
+				self.skin = SKIN
+			elif config.plugins.PermanentClock.color_digital.value == "2":
+				self.skin = SKINL
+			elif config.plugins.PermanentClock.color_digital.value == "3":
+				self.skin = SKIN0L
 		Screen.__init__(self, session)
 		self["actions"] = ActionMap(["WizardActions"],
 		{
@@ -421,6 +443,8 @@ class PermanentClockMenu(Screen):
 			list = [
 				(_("yellow"), self.skins0),
 				(_("white"), self.skins),
+				(_("large yellow"), self.skins0l),
+				(_("large white"), self.skinsl),
 			]
 		else:
 			list = [
@@ -451,6 +475,14 @@ class PermanentClockMenu(Screen):
 
 	def skins0(self):
 		config.plugins.PermanentClock.color_digital.value = "0"
+		self.newConfig(digital=True)
+
+	def skinsl(self):
+		config.plugins.PermanentClock.color_digital.value = "2"
+		self.newConfig(digital=True)
+
+	def skins0l(self):
+		config.plugins.PermanentClock.color_digital.value = "3"
 		self.newConfig(digital=True)
 
 	def skins1(self):
