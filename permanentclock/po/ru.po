@@ -71,6 +71,12 @@ msgstr "желтый"
 msgid "blue"
 msgstr "синий"
 
+msgid "large white"
+msgstr "белый-большие"
+
+msgid "large yellow"
+msgstr "желтый-большие"
+
 msgid "transparent"
 msgstr "прозрачный"
 
