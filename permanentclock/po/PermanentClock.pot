@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-10-04 16:25+0300\n"
+"POT-Creation-Date: 2015-10-14 19:19+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,86 +17,94 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: plugin.py:363 plugin.py:391
+#: plugin.py:385 plugin.py:413
 msgid "Activate permanent clock"
 msgstr ""
 
-#: plugin.py:361 plugin.py:394
+#: plugin.py:383 plugin.py:416
 msgid "Change permanent clock position"
 msgstr ""
 
-#: plugin.py:438
+#: plugin.py:462
 msgid "Choice color clock:"
 msgstr ""
 
-#: plugin.py:367 plugin.py:414
+#: plugin.py:389 plugin.py:436
 msgid "Color analog clock"
 msgstr ""
 
-#: plugin.py:370 plugin.py:416
+#: plugin.py:392 plugin.py:438
 msgid "Color digital clock"
 msgstr ""
 
-#: plugin.py:360 plugin.py:391
+#: plugin.py:382 plugin.py:413
 msgid "Deactivate permanent clock"
 msgstr ""
 
-#: plugin.py:373 plugin.py:404
+#: plugin.py:395 plugin.py:426
 msgid "Disable key 'long EXIT' show/hide"
 msgstr ""
 
-#: plugin.py:375 plugin.py:409
+#: plugin.py:397 plugin.py:431
 msgid "Enable key 'long EXIT' show/hide"
 msgstr ""
 
-#: plugin.py:43 plugin.py:433
+#: plugin.py:43 plugin.py:457
 msgid "PLi-transparent"
 msgstr ""
 
-#: plugin.py:494 plugin.py:499
+#: plugin.py:526 plugin.py:531
 msgid "Permanent Clock"
 msgstr ""
 
-#: plugin.py:353
+#: plugin.py:375
 msgid "Permanent Clock Setup"
 msgstr ""
 
-#: plugin.py:369 plugin.py:397
+#: plugin.py:391 plugin.py:419
 msgid "Show analog clock"
 msgstr ""
 
-#: plugin.py:366 plugin.py:397
+#: plugin.py:388 plugin.py:419
 msgid "Show digital clock"
 msgstr ""
 
-#: plugin.py:499
+#: plugin.py:531
 msgid "Shows the clock permanent on the screen"
 msgstr ""
 
-#: plugin.py:43 plugin.py:428
+#: plugin.py:43 plugin.py:452
 msgid "black-blue"
 msgstr ""
 
-#: plugin.py:43 plugin.py:430
+#: plugin.py:43 plugin.py:454
 msgid "black-white"
 msgstr ""
 
-#: plugin.py:43 plugin.py:427
+#: plugin.py:43 plugin.py:451
 msgid "black-yellow"
 msgstr ""
 
-#: plugin.py:43 plugin.py:429
+#: plugin.py:43 plugin.py:453
 msgid "blue"
 msgstr ""
 
-#: plugin.py:43 plugin.py:432
+#: plugin.py:44 plugin.py:447
+msgid "large white"
+msgstr ""
+
+#: plugin.py:44 plugin.py:446
+msgid "large yellow"
+msgstr ""
+
+#: plugin.py:43 plugin.py:456
 msgid "transparent"
 msgstr ""
 
-#: plugin.py:43 plugin.py:44 plugin.py:423 plugin.py:431
+#: plugin.py:43 plugin.py:44 plugin.py:445 plugin.py:455
 msgid "white"
 msgstr ""
 
-#: plugin.py:44 plugin.py:422
+#: plugin.py:44 plugin.py:444
 msgid "yellow"
 msgstr ""
