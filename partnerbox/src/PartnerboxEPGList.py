@@ -33,7 +33,7 @@ basebuildSingleEntry = None
 basebuildSimilarEntry = None
 basebuildMultiEntry = None
 
-picDY = 21
+picDY = 0
 
 def Partnerbox_EPGListInit():
 	global baseEPGList__init__, basebuildSingleEntry, basebuildSimilarEntry, basebuildMultiEntry
@@ -56,35 +56,37 @@ def Partnerbox_EPGListInit():
 
 def Partnerbox_EPGList__init__(self, type=0, selChangedCB=None, timer = None):
 	baseEPGList__init__(self, type, selChangedCB, timer)
-	def loadCurrentSkinPixmap(name):
+	def loadPixmap(name):
 		pixmap = LoadPixmap(resolveFilename(SCOPE_CURRENT_SKIN, "skin_default/icons/%s" % name))
 		if pixmap is None:
 			pixmap = LoadPixmap("/usr/lib/enigma2/python/Plugins/Extensions/Partnerbox/icons/%s" % name)
 		return pixmap
 
 	# Partnerbox remote clock icons
-	self.remote_clock_pixmap = loadCurrentSkinPixmap("remote_epgclock.png")
-	self.remote_clock_add_pixmap = loadCurrentSkinPixmap("remote_epgclock_add.png")
-	self.remote_clock_pre_pixmap = loadCurrentSkinPixmap("remote_epgclock_pre.png")
-	self.remote_clock_post_pixmap = loadCurrentSkinPixmap("remote_epgclock_post.png")
-	self.remote_clock_prepost_pixmap = loadCurrentSkinPixmap("remote_epgclock_prepost.png")
+	self.remote_clock_pixmap = loadPixmap("remote_epgclock.png")
+	self.remote_clock_add_pixmap = loadPixmap("remote_epgclock_add.png")
+	self.remote_clock_pre_pixmap = loadPixmap("remote_epgclock_pre.png")
+	self.remote_clock_post_pixmap = loadPixmap("remote_epgclock_post.png")
+	self.remote_clock_prepost_pixmap = loadPixmap("remote_epgclock_prepost.png")
+
 	# Partnerbox remote zap clock icons
-	self.remote_zapclock_pixmap = LoadPixmap('/usr/lib/enigma2/python/Plugins/Extensions/Partnerbox/icons/remote_zapclock.png')
-	self.remote_zapclock_add_pixmap = LoadPixmap('/usr/lib/enigma2/python/Plugins/Extensions/Partnerbox/icons/remote_zapclock_add.png')
-	self.remote_zapclock_pre_pixmap = LoadPixmap('/usr/lib/enigma2/python/Plugins/Extensions/Partnerbox/icons/remote_zapclock_pre.png')
-	self.remote_zapclock_post_pixmap = LoadPixmap('/usr/lib/enigma2/python/Plugins/Extensions/Partnerbox/icons/remote_zapclock_post.png')
-	self.remote_zapclock_prepost_pixmap = LoadPixmap('/usr/lib/enigma2/python/Plugins/Extensions/Partnerbox/icons/remote_zapclock_prepost.png')
-	#Partnerbox repeat remote clock/zap clock icons
-	self.remote_repclock_pixmap = LoadPixmap('/usr/lib/enigma2/python/Plugins/Extensions/Partnerbox/icons/remote_repepgclock.png')
-	self.remote_repclock_add_pixmap = LoadPixmap('/usr/lib/enigma2/python/Plugins/Extensions/Partnerbox/icons/remote_repepgclock_add.png')
-	self.remote_repclock_pre_pixmap = LoadPixmap('/usr/lib/enigma2/python/Plugins/Extensions/Partnerbox/icons/remote_repepgclock_pre.png')
-	self.remote_repclock_post_pixmap = LoadPixmap('/usr/lib/enigma2/python/Plugins/Extensions/Partnerbox/icons/remote_repepgclock_post.png')
-	self.remote_repclock_prepost_pixmap = LoadPixmap('/usr/lib/enigma2/python/Plugins/Extensions/Partnerbox/icons/remote_repepgclock_prepost.png')
-	self.remote_repzapclock_pixmap = LoadPixmap('/usr/lib/enigma2/python/Plugins/Extensions/Partnerbox/icons/remote_repzapclock.png')
-	self.remote_repzapclock_add_pixmap = LoadPixmap('/usr/lib/enigma2/python/Plugins/Extensions/Partnerbox/icons/remote_repzapclock_add.png')
-	self.remote_repzapclock_pre_pixmap = LoadPixmap('/usr/lib/enigma2/python/Plugins/Extensions/Partnerbox/icons/remote_repzapclock_pre.png')
-	self.remote_repzapclock_post_pixmap = LoadPixmap('/usr/lib/enigma2/python/Plugins/Extensions/Partnerbox/icons/remote_repzapclock_post.png')
-	self.remote_repzapclock_prepost_pixmap = LoadPixmap('/usr/lib/enigma2/python/Plugins/Extensions/Partnerbox/icons/remote_repzapclock_prepost.png')
+	self.remote_zapclock_pixmap = loadPixmap("remote_zapclock.png")
+	self.remote_zapclock_add_pixmap = loadPixmap("remote_zapclock_add.png")
+	self.remote_zapclock_pre_pixmap = loadPixmap("remote_zapclock_pre.png")
+	self.remote_zapclock_post_pixmap = loadPixmap("remote_zapclock_post.png")
+	self.remote_zapclock_prepost_pixmap = loadPixmap("remote_zapclock_prepost.png")
+
+	# Partnerbox remote repeat icons
+	self.remote_repclock_pixmap = loadPixmap("remote_repepgclock.png")
+	self.remote_repclock_add_pixmap = loadPixmap("remote_repepgclock_add.png")
+	self.remote_repclock_pre_pixmap = loadPixmap("remote_repepgclock_pre.png")
+	self.remote_repclock_post_pixmap = loadPixmap("remote_repepgclock_post.png")
+	self.remote_repclock_prepost_pixmap = loadPixmap("remote_repepgclock_prepost.png")
+	self.remote_repzapclock_pixmap = loadPixmap("remote_repzapclock.png")
+	self.remote_repzapclock_add_pixmap = loadPixmap("remote_repzapclock_add.png")
+	self.remote_repzapclock_pre_pixmap = loadPixmap("remote_repzapclock_pre.png")
+	self.remote_repzapclock_post_pixmap = loadPixmap("remote_repzapclock_post.png")
+	self.remote_repzapclock_prepost_pixmap = loadPixmap("remote_repzapclock_prepost.png")
 
 def Partnerbox_SingleEntry(self, service, eventId, beginTime, duration, EventName):
 	rec1 = self.getClockTypesEntry(service, eventId, beginTime, duration)
@@ -92,7 +94,12 @@ def Partnerbox_SingleEntry(self, service, eventId, beginTime, duration, EventNam
 	r1=self.weekday_rect
 	r2=self.datetime_rect
 	r3=self.descr_rect
-	dy = hasattr(self, 'dy') and self.dy or picDY
+	s=self.iconSize
+	space=self.space
+	distance=self.iconDistance
+	times=80
+	dy=self.dy
+
 	t = localtime(beginTime)
 	if config.plugins.Partnerbox.showremaingepglist.value:
 		nowTime = int(time())
@@ -108,8 +115,8 @@ def Partnerbox_SingleEntry(self, service, eventId, beginTime, duration, EventNam
 				Time = _("%s%d min") % (prefix, remaining)
 		res = [
 			None,
-			(eListboxPythonMultiContent.TYPE_TEXT, r1.left(), r1.top(), r1.width(), r1.height(), 0, RT_HALIGN_RIGHT, self.days[t[6]]),
-			(eListboxPythonMultiContent.TYPE_TEXT, r2.left(), r2.top(), r2.width(), r1.height(), 0, RT_HALIGN_RIGHT, "%02d.%02d, %02d:%02d"%(t[2],t[1],t[3],t[4]))
+			(eListboxPythonMultiContent.TYPE_TEXT, r1.left(), r1.top(), r1.width(), r1.height(), 0, RT_HALIGN_RIGHT|RT_VALIGN_CENTER, self.days[t[6]]),
+			(eListboxPythonMultiContent.TYPE_TEXT, r2.left(), r2.top(), r2.width(), r1.height(), 0, RT_HALIGN_RIGHT|RT_VALIGN_CENTER, "%02d.%02d, %02d:%02d"%(t[2],t[1],t[3],t[4]))
 		]
 		if rec1 or rec2:
 			if rec1:
@@ -119,30 +126,30 @@ def Partnerbox_SingleEntry(self, service, eventId, beginTime, duration, EventNam
 			else:
 				clock_pic = getRemoteClockZapPixmap(self, service, beginTime, duration, eventId)
 			if rec1 and rec2:
-				res.append((eListboxPythonMultiContent.TYPE_TEXT, r3.left(), r3.top(), 80, r3.height(), 1, RT_HALIGN_RIGHT|RT_VALIGN_CENTER, Time))
+				res.append((eListboxPythonMultiContent.TYPE_TEXT, r3.left(), r3.top(), times, r3.height(), 1, RT_HALIGN_RIGHT|RT_VALIGN_CENTER, Time))
 				for i in range(len(clock_types)):
-					res.append((eListboxPythonMultiContent.TYPE_PIXMAP_ALPHATEST, r3.left() + 90 + i * 23, r3.top()+dy, 21, 21, self.clocks[clock_types[i]]))
-				res.append((eListboxPythonMultiContent.TYPE_PIXMAP_ALPHATEST, r3.left() + 115 + i * 23, r3.top()+dy, 21, 21, clock_pic_partnerbox))
-				res.append((eListboxPythonMultiContent.TYPE_TEXT, r3.left() + 140 + (i + 1) * 23, r3.top(), r3.width(), r3.height(), 0, RT_HALIGN_LEFT, EventName))
+					res.append((eListboxPythonMultiContent.TYPE_PIXMAP_ALPHATEST, r3.left() + times + 10 + i * space, r3.top()+dy, s, s, self.clocks[clock_types[i]]))
+				res.append((eListboxPythonMultiContent.TYPE_PIXMAP_ALPHATEST, r3.left() + times + 10 + i * space + space, r3.top()+dy, s, s, clock_pic_partnerbox))
+				res.append((eListboxPythonMultiContent.TYPE_TEXT, r3.left() + times + 10 + (i + 1) * space + space + distance, r3.top(), r3.width(), r3.height(), 0, RT_HALIGN_LEFT|RT_VALIGN_CENTER, EventName))
 			else:
-				res.append((eListboxPythonMultiContent.TYPE_TEXT, r3.left(), r3.top(), 80, r3.height(), 1, RT_HALIGN_RIGHT|RT_VALIGN_CENTER, Time))
+				res.append((eListboxPythonMultiContent.TYPE_TEXT, r3.left(), r3.top(), times, r3.height(), 1, RT_HALIGN_RIGHT|RT_VALIGN_CENTER, Time))
 				if rec1:
 					for i in range(len(clock_types)):
-						res.append((eListboxPythonMultiContent.TYPE_PIXMAP_ALPHATEST, r3.left()+90 + i * 23, r3.top()+dy, 21, 21, self.clocks[clock_types[i]]))
-					res.append((eListboxPythonMultiContent.TYPE_TEXT, r3.left() + 115 + (i + 1) * 23, r3.top(), r3.width(), r3.height(), 0, RT_HALIGN_LEFT, EventName))
+						res.append((eListboxPythonMultiContent.TYPE_PIXMAP_ALPHATEST, r3.left() + times + 10 + i * space, r3.top()+dy, s, s, self.clocks[clock_types[i]]))
+					res.append((eListboxPythonMultiContent.TYPE_TEXT, r3.left() + times + 10 + (i + 1) * space + distance, r3.top(), r3.width(), r3.height(), 0, RT_HALIGN_LEFT|RT_VALIGN_CENTER, EventName))
 				else:
-					res.append((eListboxPythonMultiContent.TYPE_PIXMAP_ALPHATEST, r3.left()+90, r3.top()+dy, 21, 21, clock_pic))
-					res.append((eListboxPythonMultiContent.TYPE_TEXT, r3.left() + 115 + 23, r3.top(), r3.width(), r3.height(), 0, RT_HALIGN_LEFT, EventName))
+					res.append((eListboxPythonMultiContent.TYPE_PIXMAP_ALPHATEST, r3.left() + times + 10, r3.top()+dy, s, s, clock_pic))
+					res.append((eListboxPythonMultiContent.TYPE_TEXT, r3.left() + times + 10 + space + distance, r3.top(), r3.width(), r3.height(), 0, RT_HALIGN_LEFT|RT_VALIGN_CENTER, EventName))
 		else:
 			res.extend((
-				(eListboxPythonMultiContent.TYPE_TEXT, r3.left(), r3.top(), 80, r3.height(), 1, RT_HALIGN_RIGHT|RT_VALIGN_CENTER, Time),
-				(eListboxPythonMultiContent.TYPE_TEXT, r3.left() + 90, r3.top(), r3.width(), r3.height(), 0, RT_HALIGN_LEFT, EventName)))
+				(eListboxPythonMultiContent.TYPE_TEXT, r3.left(), r3.top(), times, r3.height(), 1, RT_HALIGN_RIGHT|RT_VALIGN_CENTER, Time),
+				(eListboxPythonMultiContent.TYPE_TEXT, r3.left() + times + 10, r3.top(), r3.width(), r3.height(), 0, RT_HALIGN_LEFT|RT_VALIGN_CENTER, EventName)))
 		return res
 	else:
 		res = [
 			None,
-			(eListboxPythonMultiContent.TYPE_TEXT, r1.left(), r1.top(), r1.width(), r1.height(), 0, RT_HALIGN_RIGHT, self.days[t[6]]),
-			(eListboxPythonMultiContent.TYPE_TEXT, r2.left(), r2.top(), r2.width(), r1.height(), 0, RT_HALIGN_RIGHT, "%02d.%02d, %02d:%02d"%(t[2],t[1],t[3],t[4]))
+			(eListboxPythonMultiContent.TYPE_TEXT, r1.left(), r1.top(), r1.width(), r1.height(), 0, RT_HALIGN_RIGHT|RT_VALIGN_CENTER, self.days[t[6]]),
+			(eListboxPythonMultiContent.TYPE_TEXT, r2.left(), r2.top(), r2.width(), r1.height(), 0, RT_HALIGN_RIGHT|RT_VALIGN_CENTER, "%02d.%02d, %02d:%02d"%(t[2],t[1],t[3],t[4]))
 		]
 		if rec1 or rec2:
 			if rec1:
@@ -153,19 +160,19 @@ def Partnerbox_SingleEntry(self, service, eventId, beginTime, duration, EventNam
 				clock_pic = getRemoteClockZapPixmap(self, service, beginTime, duration, eventId)
 			if rec1 and rec2:
 				for i in range(len(clock_types)):
-					res.append((eListboxPythonMultiContent.TYPE_PIXMAP_ALPHATEST, r3.left() + i * 23, r3.top()+dy, 21, 21, self.clocks[clock_types[i]]))
-				res.append((eListboxPythonMultiContent.TYPE_PIXMAP_ALPHATEST, r3.left() + 25 + i * 23, r3.top()+dy, 21, 21, clock_pic_partnerbox))
-				res.append((eListboxPythonMultiContent.TYPE_TEXT, r3.left() + 50 + (i + 1) * 23, r3.top(), r3.width(), r3.height(), 0, RT_HALIGN_LEFT, EventName))
+					res.append((eListboxPythonMultiContent.TYPE_PIXMAP_ALPHATEST, r3.left() + i * space, r3.top()+dy, s, s, self.clocks[clock_types[i]]))
+				res.append((eListboxPythonMultiContent.TYPE_PIXMAP_ALPHATEST, r3.left() + i * space + space, r3.top()+dy, s, s, clock_pic_partnerbox))
+				res.append((eListboxPythonMultiContent.TYPE_TEXT, r3.left() + (i + 1) * space + space + distance, r3.top(), r3.width(), r3.height(), 0, RT_HALIGN_LEFT|RT_VALIGN_CENTER, EventName))
 			else:
 				if rec1:
 					for i in range(len(clock_types)):
-						res.append((eListboxPythonMultiContent.TYPE_PIXMAP_ALPHATEST, r3.left() + i * 23, r3.top()+dy, 21, 21, self.clocks[clock_types[i]]))
-					res.append((eListboxPythonMultiContent.TYPE_TEXT, r3.left() + 25 + (i + 1) * 23, r3.top(), r3.width(), r3.height(), 0, RT_HALIGN_LEFT, EventName))
+						res.append((eListboxPythonMultiContent.TYPE_PIXMAP_ALPHATEST, r3.left() + i * space, r3.top()+dy, s, s, self.clocks[clock_types[i]]))
+					res.append((eListboxPythonMultiContent.TYPE_TEXT, r3.left() + (i + 1) * space + distance, r3.top(), r3.width(), r3.height(), 0, RT_HALIGN_LEFT|RT_VALIGN_CENTER, EventName))
 				else:
-					res.append((eListboxPythonMultiContent.TYPE_PIXMAP_ALPHATEST, r3.left(), r3.top()+dy, 21, 21, clock_pic))
-					res.append((eListboxPythonMultiContent.TYPE_TEXT, r3.left() + 25 + 23, r3.top(), r3.width(), r3.height(), 0, RT_HALIGN_LEFT, EventName))
+					res.append((eListboxPythonMultiContent.TYPE_PIXMAP_ALPHATEST, r3.left(), r3.top()+dy, s, s, clock_pic))
+					res.append((eListboxPythonMultiContent.TYPE_TEXT, r3.left() + space + distance, r3.top(), r3.width(), r3.height(), 0, RT_HALIGN_LEFT|RT_VALIGN_CENTER, EventName))
 		else:
-			res.append((eListboxPythonMultiContent.TYPE_TEXT, r3.left(), r3.top(), r3.width(), r3.height(), 0, RT_HALIGN_LEFT, EventName))
+			res.append((eListboxPythonMultiContent.TYPE_TEXT, r3.left(), r3.top(), r3.width(), r3.height(), 0, RT_HALIGN_LEFT|RT_VALIGN_CENTER, EventName))
 		return res
 
 def Partnerbox_SimilarEntry(self, service, eventId, beginTime, service_name, duration):
@@ -174,12 +181,16 @@ def Partnerbox_SimilarEntry(self, service, eventId, beginTime, service_name, dur
 	r1=self.weekday_rect
 	r2=self.datetime_rect
 	r3=self.service_rect
-	dy = hasattr(self, 'dy') and self.dy or picDY
+	s=self.iconSize
+	space=self.space
+	distance=self.iconDistance
+	dy=self.dy
+
 	t = localtime(beginTime)
 	res = [
 		None,
-		(eListboxPythonMultiContent.TYPE_TEXT, r1.left(), r1.top(), r1.width(), r1.height(), 0, RT_HALIGN_RIGHT, self.days[t[6]]),
-		(eListboxPythonMultiContent.TYPE_TEXT, r2.left(), r2.top(), r2.width(), r1.height(), 0, RT_HALIGN_RIGHT, "%02d.%02d, %02d:%02d"%(t[2],t[1],t[3],t[4]))
+		(eListboxPythonMultiContent.TYPE_TEXT, r1.left(), r1.top(), r1.width(), r1.height(), 0, RT_HALIGN_RIGHT|RT_VALIGN_CENTER, self.days[t[6]]),
+		(eListboxPythonMultiContent.TYPE_TEXT, r2.left(), r2.top(), r2.width(), r1.height(), 0, RT_HALIGN_RIGHT|RT_VALIGN_CENTER, "%02d.%02d, %02d:%02d"%(t[2],t[1],t[3],t[4]))
 	]
 	if rec1 or rec2:
 		if rec1:
@@ -190,19 +201,19 @@ def Partnerbox_SimilarEntry(self, service, eventId, beginTime, service_name, dur
 			clock_pic = getRemoteClockZapPixmap(self, service, beginTime, duration, eventId)
 		if rec1 and rec2:
 			for i in range(len(clock_types)):
-				res.append((eListboxPythonMultiContent.TYPE_PIXMAP_ALPHATEST, r3.left() + i * 23, r3.top()+dy, 21, 21, self.clocks[clock_types[i]]))
-			res.append((eListboxPythonMultiContent.TYPE_PIXMAP_ALPHATEST, r3.left() + 25 + i * 23, r3.top()+dy, 21, 21, clock_pic_partnerbox))
-			res.append((eListboxPythonMultiContent.TYPE_TEXT, r3.left() + 50 + (i + 1) * 23, r3.top(), r3.width(), r3.height(), 0, RT_HALIGN_LEFT, service_name))
+				res.append((eListboxPythonMultiContent.TYPE_PIXMAP_ALPHATEST, r3.left() + i * space, r3.top()+dy, s, s, self.clocks[clock_types[i]]))
+			res.append((eListboxPythonMultiContent.TYPE_PIXMAP_ALPHATEST, r3.left() + space + i * space, r3.top()+dy, s, s, clock_pic_partnerbox))
+			res.append((eListboxPythonMultiContent.TYPE_TEXT, r3.left() + space + (i + 1) * space + distance, r3.top(), r3.width(), r3.height(), 0, RT_HALIGN_LEFT|RT_VALIGN_CENTER, service_name))
 		else:
 			if rec1:
 				for i in range(len(clock_types)):
-					res.append((eListboxPythonMultiContent.TYPE_PIXMAP_ALPHATEST, r3.left() + i * 23, r3.top()+dy, 21, 21, self.clocks[clock_types[i]]))
-				res.append((eListboxPythonMultiContent.TYPE_TEXT, r3.left() + 25 + (i + 1) * 23, r3.top(), r3.width(), r3.height(), 0, RT_HALIGN_LEFT, service_name))
+					res.append((eListboxPythonMultiContent.TYPE_PIXMAP_ALPHATEST, r3.left() + i * space, r3.top()+dy, s, s, self.clocks[clock_types[i]]))
+				res.append((eListboxPythonMultiContent.TYPE_TEXT, r3.left() + (i + 1) * space + distance, r3.top(), r3.width(), r3.height(), 0, RT_HALIGN_LEFT|RT_VALIGN_CENTER, service_name))
 			else:
-				res.append((eListboxPythonMultiContent.TYPE_PIXMAP_ALPHATEST, r3.left(), r3.top()+dy, 21, 21, clock_pic))
-				res.append((eListboxPythonMultiContent.TYPE_TEXT, r3.left() + 25, r3.top(), r3.width(), r3.height(), 0, RT_HALIGN_LEFT, service_name))
+				res.append((eListboxPythonMultiContent.TYPE_PIXMAP_ALPHATEST, r3.left(), r3.top()+dy, s, s, clock_pic))
+				res.append((eListboxPythonMultiContent.TYPE_TEXT, r3.left() + space + distance, r3.top(), r3.width(), r3.height(), 0, RT_HALIGN_LEFT|RT_VALIGN_CENTER, service_name))
 	else:
-		res.append((eListboxPythonMultiContent.TYPE_TEXT, r3.left(), r3.top(), r3.width(), r3.height(), 0, RT_HALIGN_LEFT, service_name))
+		res.append((eListboxPythonMultiContent.TYPE_TEXT, r3.left(), r3.top(), r3.width(), r3.height(), 0, RT_HALIGN_LEFT|RT_VALIGN_CENTER, service_name))
 	return res
 
 def Partnerbox_MultiEntry(self, changecount, service, eventId, begTime, duration, EventName, nowTime, service_name):
@@ -212,57 +223,56 @@ def Partnerbox_MultiEntry(self, changecount, service, eventId, begTime, duration
 	r2=self.progress_rect
 	r3=self.descr_rect
 	r4=self.start_end_rect
-	dy = hasattr(self, 'dy') and self.dy or picDY
+	s=self.iconSize
+	space=self.space
+	distance=self.iconDistance
+	dy=self.dy
+
 	res = [ None ]
-	if config.plugins.Partnerbox.showremaingepglist.value:
-		Progress = 0
-		if begTime is not None:
+	if rec1 or rec2:
+		if rec1:
+			clock_types = rec1
+			if rec2:
+				clock_pic_partnerbox = getRemoteClockZapPixmap(self, service, begTime, duration, eventId)
+		else:
+			clock_pic = getRemoteClockZapPixmap(self, service, begTime, duration, eventId)
+		if rec1 and rec2:
+			res.append((eListboxPythonMultiContent.TYPE_TEXT, r1.x, r1.y, r1.w - (self.space * len(clock_types) + self.space + distance), r1.h, 0, RT_HALIGN_LEFT|RT_VALIGN_CENTER, service_name))
+			for i in range(len(clock_types)):
+				res.append((eListboxPythonMultiContent.TYPE_PIXMAP_ALPHATEST, r1.x + r1.w - self.space * (i + 1) - self.space, r1.y + self.dy, s, s, self.clocks[clock_types[len(clock_types) - 1 - i]]))
+			res.append((eListboxPythonMultiContent.TYPE_PIXMAP_ALPHATEST, r1.left()+r1.width()-self.space, r1.top()+dy, s, s, clock_pic_partnerbox))
+		else:
+			if rec1:
+				for i in range(len(clock_types)):
+					res.append((eListboxPythonMultiContent.TYPE_PIXMAP_ALPHATEST, r1.left()+r1.width()-self.space * (i + 1), r1.top()+dy, s, s, self.clocks[clock_types[len(clock_types) - 1 - i]]))
+				res.append((eListboxPythonMultiContent.TYPE_TEXT, r1.left(), r1.top(), r1.width()- (self.space * len(clock_types) + distance), r1.height(), 0, RT_HALIGN_LEFT|RT_VALIGN_CENTER, service_name))
+			else:
+				res.append((eListboxPythonMultiContent.TYPE_PIXMAP_ALPHATEST, r1.left()+r1.width()-self.space, r1.top()+dy, s, s, clock_pic))
+				res.append((eListboxPythonMultiContent.TYPE_TEXT, r1.left(), r1.top(), r1.width()- self.space, r1.height(), 0, RT_HALIGN_LEFT|RT_VALIGN_CENTER, service_name))
+	else:
+		res.append((eListboxPythonMultiContent.TYPE_TEXT, r1.left(), r1.top(), r1.width(), r1.height(), 0, RT_HALIGN_LEFT|RT_VALIGN_CENTER, service_name))
+	if begTime is not None:
+		if config.plugins.Partnerbox.showremaingepglist.value:
 			if nowTime < begTime:
 				begin = localtime(begTime)
 				end = localtime(begTime+duration)
 				res.extend((
-					(eListboxPythonMultiContent.TYPE_TEXT, r4.left()+50, r4.top(), r4.width(), r4.height(), 1, RT_HALIGN_CENTER|RT_VALIGN_CENTER, "%s %02d.%02d - %02d.%02d"%(self.days[begin[6]], begin[3],begin[4],end[3],end[4])),
-					(eListboxPythonMultiContent.TYPE_TEXT,  r3.left(), r3.top(), 80, r3.height(), 1, RT_HALIGN_RIGHT|RT_VALIGN_CENTER, _("%d min") % (duration / 60)),
-					(eListboxPythonMultiContent.TYPE_TEXT, r3.left() + 90, r3.top(), r3.width(), r3.height(), 0, RT_HALIGN_LEFT, EventName)
+					(eListboxPythonMultiContent.TYPE_TEXT, r4.x, r4.y, r4.w, r4.h, 1, RT_HALIGN_CENTER|RT_VALIGN_CENTER, "%02d.%02d - %02d.%02d"%(begin[3],begin[4],end[3],end[4])),
+					(eListboxPythonMultiContent.TYPE_TEXT, r3.x, r3.y, self.gap(self.tw), r3.h, 1, RT_HALIGN_RIGHT|RT_VALIGN_CENTER, _("%d min") % (duration / 60)),
+					(eListboxPythonMultiContent.TYPE_TEXT, r3.x + self.tw, r3.y, r3.w, r3.h, 0, RT_HALIGN_LEFT, EventName)
 				))
 			else:
-				Progress = 70
 				percent = (nowTime - begTime) * 100 / duration
 				prefix = "+"
 				remaining = ((begTime+duration) - int(time())) / 60
 				if remaining <= 0:
 					prefix = ""
 				res.extend((
-					(eListboxPythonMultiContent.TYPE_PROGRESS, r2.left(), r2.top(), r2.width(), r2.height(), percent),
-					(eListboxPythonMultiContent.TYPE_TEXT, r3.left(), r3.top(), 80,  r3.height(), 1, RT_HALIGN_RIGHT|RT_VALIGN_CENTER, _("%s%d min") % (prefix, remaining)),
-					(eListboxPythonMultiContent.TYPE_TEXT, r3.left() + 90, r3.top(), r3.width(), r3.height(), 0, RT_HALIGN_LEFT, EventName)
+					(eListboxPythonMultiContent.TYPE_PROGRESS, r2.x, r2.y, r2.w, r2.h, percent),
+					(eListboxPythonMultiContent.TYPE_TEXT, r3.x, r3.y, self.gap(self.tw), r3.h, 1, RT_HALIGN_RIGHT|RT_VALIGN_CENTER, _("%s%d min") % (prefix, remaining)),
+					(eListboxPythonMultiContent.TYPE_TEXT, r3.x + self.tw, r3.y, r3.w, r3.h, 0, RT_HALIGN_LEFT, EventName)
 				))
-		if rec1 or rec2:
-			if rec1:
-				clock_types = rec1
-				if rec2:
-					clock_pic_partnerbox = getRemoteClockZapPixmap(self, service, begTime, duration, eventId)
-			else:
-				clock_pic = getRemoteClockZapPixmap(self, service, begTime, duration, eventId)
-			if rec1 and rec2:
-				res.append((eListboxPythonMultiContent.TYPE_TEXT, r1.left(), r1.top(), r1.width() - 23 * len(clock_types) - 23 - Progress, r1.height(), 0, RT_HALIGN_LEFT, service_name))
-				for i in range(len(clock_types)):
-					res.append((eListboxPythonMultiContent.TYPE_PIXMAP_ALPHATEST, r1.left()+r1.width() - 32 - Progress + i * 23, r1.top()+dy, 21, 21, self.clocks[clock_types[i]]))
-				res.append((eListboxPythonMultiContent.TYPE_PIXMAP_ALPHATEST, r1.left()+r1.width()-10 - Progress + i * 23, r1.top()+dy, 21, 21, clock_pic_partnerbox))
-			else:
-				if rec1:
-					for i in range(len(clock_types)):
-						res.append((eListboxPythonMultiContent.TYPE_PIXMAP_ALPHATEST, r1.left()+r1.width()-16 - Progress + i * 23, r1.top()+dy, 21, 21,  self.clocks[clock_types[i]]))
-					res.append((eListboxPythonMultiContent.TYPE_TEXT, r1.left(), r1.top(), r1.width() - 23 * len(clock_types) - Progress, r1.height(), 0, RT_HALIGN_LEFT, service_name))
-				else:
-					res.append((eListboxPythonMultiContent.TYPE_PIXMAP_ALPHATEST, r1.left()+r1.width()-16, r1.top()+dy, 21, 21, clock_pic))
-					res.append((eListboxPythonMultiContent.TYPE_TEXT, r1.left(), r1.top(), r1.width() - 23, r1.height(), 0, RT_HALIGN_LEFT, service_name))
 		else:
-			res.append((eListboxPythonMultiContent.TYPE_TEXT, r1.left(), r1.top(), r1.width(), r1.height(), 0, RT_HALIGN_LEFT, service_name))
-		return res
-	else:
-		Progress = 0
-		if begTime is not None:
 			if nowTime < begTime:
 				begin = localtime(begTime)
 				end = localtime(begTime+duration)
@@ -271,35 +281,12 @@ def Partnerbox_MultiEntry(self, changecount, service, eventId, begTime, duration
 					(eListboxPythonMultiContent.TYPE_TEXT, r3.left(), r3.top(), r3.width(), r3.height(), 0, RT_HALIGN_LEFT, EventName)
 				))
 			else:
-				Progress = 70
 				percent = (nowTime - begTime) * 100 / duration
 				res.extend((
 					(eListboxPythonMultiContent.TYPE_PROGRESS, r2.left(), r2.top(), r2.width(), r2.height(), percent),
 					(eListboxPythonMultiContent.TYPE_TEXT, r3.left(), r3.top(), r3.width(), r3.height(), 0, RT_HALIGN_LEFT, EventName)
 				))
-		if rec1 or rec2:
-			if rec1:
-				clock_types = rec1
-				if rec2:
-					clock_pic_partnerbox = getRemoteClockZapPixmap(self, service, begTime, duration, eventId)
-			else:
-				clock_pic = getRemoteClockZapPixmap(self, service, begTime, duration, eventId)
-			if rec1 and rec2:
-				res.append((eListboxPythonMultiContent.TYPE_TEXT, r1.left(), r1.top(), r1.width() - 23 * len(clock_types) - 23 - Progress, r1.height(), 0, RT_HALIGN_LEFT, service_name))
-				for i in range(len(clock_types)):
-					res.append((eListboxPythonMultiContent.TYPE_PIXMAP_ALPHATEST, r1.left()+r1.width() - 32 - Progress + i * 23, r1.top()+dy, 21, 21, self.clocks[clock_types[i]]))
-				res.append((eListboxPythonMultiContent.TYPE_PIXMAP_ALPHATEST, r1.left()+r1.width()-10 - Progress + i * 23, r1.top()+dy, 21, 21, clock_pic_partnerbox))
-			else:
-				if rec1:
-					for i in range(len(clock_types)):
-						res.append((eListboxPythonMultiContent.TYPE_PIXMAP_ALPHATEST, r1.left()+r1.width()-16 - Progress + i * 23, r1.top()+dy, 21, 21,  self.clocks[clock_types[i]]))
-					res.append((eListboxPythonMultiContent.TYPE_TEXT, r1.left(), r1.top(), r1.width() - 23 * len(clock_types) - Progress, r1.height(), 0, RT_HALIGN_LEFT, service_name))
-				else:
-					res.append((eListboxPythonMultiContent.TYPE_PIXMAP_ALPHATEST, r1.left()+r1.width()-16, r1.top()+dy, 21, 21, clock_pic))
-					res.append((eListboxPythonMultiContent.TYPE_TEXT, r1.left(), r1.top(), r1.width() - 23, r1.height(), 0, RT_HALIGN_LEFT, service_name))
-		else:
-			res.append((eListboxPythonMultiContent.TYPE_TEXT, r1.left(), r1.top(), r1.width(), r1.height(), 0, RT_HALIGN_LEFT, service_name))
-		return res
+	return res
 
 def getClockTypesEntry(self, service, eventId, beginTime, duration):
 	if not beginTime:
