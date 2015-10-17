@@ -85,20 +85,13 @@ def blockingCallFromMainThread(f, *a, **kw):
 	if isinstance(result, failure.Failure):
 		result.raiseException()
 	return result
-try:
-	typeMap = {
-		"exact": eEPGCache.EXAKT_TITLE_SEARCH,
-		"partial": eEPGCache.PARTIAL_TITLE_SEARCH,
-		"start": eEPGCache.START_TITLE_SEARCH,
-		"description": -99
-	}
-except:
-	typeMap = {
-		"exact": eEPGCache.EXAKT_TITLE_SEARCH,
-		"partial": eEPGCache.PARTIAL_TITLE_SEARCH,
-		"start": eEPGCache.PARTIAL_TITLE_SEARCH,
-		"description": -99
-	}
+
+typeMap = {
+	"exact": eEPGCache.EXAKT_TITLE_SEARCH,
+	"partial": eEPGCache.PARTIAL_TITLE_SEARCH,
+	"start": eEPGCache.START_TITLE_SEARCH,
+	"description": -99
+}
 
 caseMap = {
 	"sensitive": eEPGCache.CASE_CHECK,
