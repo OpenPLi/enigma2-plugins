@@ -124,6 +124,7 @@ cdinfo/src/Makefile
 
 dreamexplorer/Makefile
 dreamexplorer/meta/Makefile
+dreamexplorer/po/Makefile
 dreamexplorer/src/Makefile
 dreamexplorer/src/res/Makefile
 
