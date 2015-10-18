@@ -359,6 +359,7 @@ permanentclock/Makefile
 permanentclock/meta/Makefile
 permanentclock/po/Makefile
 permanentclock/src/Makefile
+permanentclock/src/trad/Makefile
 
 pipzap/Makefile
 pipzap/meta/Makefile
