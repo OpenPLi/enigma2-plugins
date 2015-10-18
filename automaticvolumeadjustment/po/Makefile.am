@@ -1,3 +1,4 @@
 PLUGIN = AutomaticVolumeAdjustment
-CATEGORY = SystemPlugins
-include $(top_srcdir)/Rules_noxml-po.mak
+
+LANGS = de en en_GB fi fr nl ru
+include $(top_srcdir)/Rules-po.mak
