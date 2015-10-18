@@ -82,6 +82,7 @@ automaticcleanup/src/Makefile
 automaticvolumeadjustment/Makefile
 automaticvolumeadjustment/meta/Makefile
 automaticvolumeadjustment/src/Makefile
+automaticvolumeadjustment/po/Makefile
 
 autoresolution/Makefile
 autoresolution/meta/Makefile
