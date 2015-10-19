@@ -1,3 +1,3 @@
-installdir = $(libdir)/enigma2/python/Plugins/SystemPlugins/EPGSearch/icons
+installdir = $(libdir)/enigma2/python/Plugins/Extensions/EPGSearch/icons
 
 install_DATA = *.png

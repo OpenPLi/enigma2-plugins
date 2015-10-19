@@ -1,4 +1,4 @@
-installdir = $(libdir)/enigma2/python/Plugins/SystemPlugins/AutomaticVolumeAdjustment
+installdir = $(libdir)/enigma2/python/Plugins/Extensions/AutomaticVolumeAdjustment
 
 install_PYTHON = *.py
 
