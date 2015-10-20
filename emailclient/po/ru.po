@@ -1,0 +1,241 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Enigma2 EmailClient Plugin\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-11-18 08:15+0100\n"
+"PO-Revision-Date: 2015-10-20 22:57+0300\n"
+"Last-Translator: Dimitrij <Dima-73@inbox.lv>\n"
+"Language-Team: ru <ser6@bk.ru>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.4\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Language: ru\n"
+
+msgid "%(name)s (%(user)s@%(server)s)"
+msgstr "%(name)s (%(user)s@%(server)s)"
+
+msgid "Accounts list"
+msgstr "Список аккаунтов"
+
+msgid "Attachments"
+msgstr "Вложения"
+
+msgid "Bodys"
+msgstr "Текст письма"
+
+msgid "Date"
+msgstr "Дата"
+
+msgid "Email Client"
+msgstr "Почтовый клиент"
+
+msgid "Email setup"
+msgstr "Настройки почтового клиента"
+
+msgid "Account Setup"
+msgstr "Настройки аккакунта"
+
+msgid "view Email"
+msgstr "Просмотр почты"
+
+msgid "Email Setup"
+msgstr "Настройки почтового клиента"
+
+msgid ""
+"EmailClient for %(account)s:\n"
+"\n"
+"%(error)s"
+msgstr ""
+"Почтовый клиент для %(account)s:\n"
+"\n"
+"%(error)s"
+
+msgid "Email"
+msgstr "Почта"
+
+msgid "Просмотр почты"
+msgstr "От"
+
+msgid "From"
+msgstr "От"
+
+msgid "IMAP Port"
+msgstr "IMAP порт"
+
+msgid "IMAP Server"
+msgstr "IMAP сервер"
+
+msgid ""
+"New mail arrived for account %s:\n"
+"\n"
+msgstr ""
+"Новая почта пришла на аккаунт %s\n"
+"\n"
+
+msgid "Really delete account %s?"
+msgstr "Действительно удалить аккаунт %s?"
+
+msgid "Subject"
+msgstr "Тема"
+
+msgid ""
+"[EmailAccount] %(name)s: _cbCapabilities:\n"
+"####################################################################################################\n"
+"# If you have problems to log into your imap-server, please send me the "
+"output of the following line\n"
+"# cbCapabilities: %(capa)s\n"
+"####################################################################################################\n"
+msgstr ""
+"[EmailAccount] %(name)s: _cbCapabilities:\n"
+"####################################################################################################\n"
+"# Если у Вас есть проблемы, чтобы войти в Ваш IMAP сервера, пожалуйста, "
+"пришлите мне ответ следующей строки\n"
+"# cbCapabilities: %(capa)s\n"
+"####################################################################################################\n"
+
+msgid "account %s is not connected"
+msgstr "Нет подключения к аккаунту %s"
+
+msgid "account name"
+msgstr "Имя аккаунта"
+
+msgid "account not connected"
+msgstr "Нет подключения к аккаунту"
+
+msgid "add"
+msgstr "Добавить"
+
+msgid "cancel"
+msgstr "Отмена"
+
+msgid "cannot access inbox"
+msgstr "Нет доступа к почтовому ящику"
+
+msgid "cannot get headers of new messages"
+msgstr "Невозможно прочитать заголовки новых сообщений"
+
+msgid "cannot get list of new messages"
+msgstr "Не удаётся получить список новых сообщений"
+
+msgid "connection failed - retrying"
+msgstr "Подключение не удалось - повтор попытки"
+
+msgid "debug"
+msgstr "Отладка"
+
+msgid "delete"
+msgstr "Удалить"
+
+msgid "display connection errors"
+msgstr "Показать сообщение об ошибках соединения"
+
+msgid "display timeout (seconds)"
+msgstr "Тайм-аут сообщения (в секундах)"
+
+msgid "edit"
+msgstr "Редактор"
+
+msgid "empty values - retry"
+msgstr "Пустые значение - попробуйте снова"
+
+msgid ""
+"error logging %(who)s in:\n"
+"%(failure)s"
+msgstr ""
+"Ошибка загрузки %(who)s в:\n"
+"%(failure)s"
+
+msgid "failed to load message"
+msgstr "Ошибка загрузки сообщения"
+
+msgid "getting message ..."
+msgstr "Получение сообщения..."
+
+msgid "have %d messages"
+msgstr "Имеется %d сообщений"
+
+msgid "have no messages"
+msgstr "Нет сообщений"
+
+msgid "headers loaded, now parsing ..."
+msgstr "Заголовки загружены, идет анализ..."
+
+msgid "importing configurations from %s"
+msgstr "Импорт конфигурации из %s"
+
+msgid "leave unread"
+msgstr "Оставлять непрочитаным"
+
+msgid "list all mailboxes"
+msgstr "Список всех почтовых ящиков"
+
+msgid "loading headers ..."
+msgstr "Загрузка заголовков..."
+
+msgid "mail check interval (minutes)"
+msgstr "Интервал проверки почты (в минутах)"
+
+msgid "maximum mail size to fetch"
+msgstr "Максимимальный объем загрузки почты"
+
+msgid "message too large"
+msgstr "Сообщение слишком большое"
+
+msgid "no account selected"
+msgstr "Аккаунт не выбран"
+
+msgid "no date"
+msgstr "Нет даты"
+
+msgid "no filename"
+msgstr "Нет имени файла"
+
+msgid "no from"
+msgstr "Без отправителя"
+
+msgid "no mailbox?!?!"
+msgstr "Нет почтового ящика?!?!"
+
+msgid "no sender"
+msgstr "Нет отправителя"
+
+msgid "no subject"
+msgstr "Без темы"
+
+msgid "ok"
+msgstr "OK"
+
+msgid "parsing message ..."
+msgstr "Анализ сообщения..."
+
+msgid "password"
+msgstr "Пароль"
+
+msgid "really delete mail?"
+msgstr "Действительно удалить письмо?"
+
+msgid "really undelete mail?"
+msgstr "Действительно восстановить письмо?"
+
+msgid "remove"
+msgstr "Удалить"
+
+msgid "select Attachment"
+msgstr "Выберите вложение"
+
+msgid "select Body"
+msgstr "Выберите текстовую часть"
+
+msgid "show deleted entries"
+msgstr "Показывать удалённые записи"
+
+msgid "undelete"
+msgstr "Восстановить"
+
+msgid "user name"
+msgstr "Логин"
+
+msgid "view Emails via IMAP4"
+msgstr "Просмотр почты через IMAP4"
