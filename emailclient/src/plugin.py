@@ -341,6 +341,7 @@ class ScreenMailView(Screen):
 					   4*buttonsGap+3*140, height-30-5, scaleV(18,16),
 					   )
 		Screen.__init__(self, session)
+		self.setTitle(_("view Email"))
 		self["from"] = Label(decodeHeader(_("From") +": %s" %self._email.get('from', _('no from'))))
 		msgdate = email.utils.parsedate_tz(self._email.get("date", ""))
 		self["date"] = Label(_("Date") +": %s" % (time.ctime(email.utils.mktime_tz(msgdate)) if msgdate else _("no date")))
@@ -682,7 +683,7 @@ class EmailAccount():
 	def _ebNotify(self, result, where, what):
 		debug("[EmailAccount] %s: _ebNotify error in %s: %s: %s" %(self._name, where, what, result.getErrorMessage()))
 		if config.plugins.emailimap.verbose.value:
-			Notifications.AddNotification(MessageBox, "EmailClient for %(account)s:\n\n%(error)s" %{'account': self._name, 'error':what}, type=MessageBox.TYPE_ERROR, timeout=config.plugins.emailimap.timeout.value)
+			Notifications.AddNotification(MessageBox, _("EmailClient for %(account)s:\n\n%(error)s") %{'account': self._name, 'error':what}, type=MessageBox.TYPE_ERROR, timeout=config.plugins.emailimap.timeout.value)
 
 	def startChecker(self):
 		# debug("[EmailAccount] %s: startChecker?" %self._name)

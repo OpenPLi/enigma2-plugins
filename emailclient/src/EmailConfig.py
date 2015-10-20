@@ -97,6 +97,7 @@ class EmailConfigAccount(ConfigListScreen, Screen):
 		debug("[EmailConfigAccount] __init__")
 		self._session = session
 		Screen.__init__(self, session)
+		self.setTitle(_("Account Setup"))
 		self.list = []
 		ConfigListScreen.__init__(self, self.list, session=session)
 		self["buttonred"] = Label(_("cancel"))
