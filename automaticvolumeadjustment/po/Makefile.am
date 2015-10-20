@@ -1,4 +1,6 @@
 PLUGIN = AutomaticVolumeAdjustment
+CATEGORY = SystemPlugins
 
-LANGS = de en en_GB fi fr nl ru
+LANGS = de en fi fr nl ru
+
 include $(top_srcdir)/Rules-po.mak
