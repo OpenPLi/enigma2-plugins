@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Enigma2 EmailClient Plugin\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-11-18 08:15+0100\n"
-"PO-Revision-Date: 2015-10-20 22:57+0300\n"
+"PO-Revision-Date: 2015-10-21 19:44+0300\n"
 "Last-Translator: Dimitrij <Dima-73@inbox.lv>\n"
 "Language-Team: ru <ser6@bk.ru>\n"
 "MIME-Version: 1.0\n"
@@ -54,9 +54,6 @@ msgstr ""
 
 msgid "Email"
 msgstr "Почта"
-
-msgid "Просмотр почты"
-msgstr "От"
 
 msgid "From"
 msgstr "От"
@@ -132,7 +129,7 @@ msgid "display connection errors"
 msgstr "Показать сообщение об ошибках соединения"
 
 msgid "display timeout (seconds)"
-msgstr "Тайм-аут сообщения (в секундах)"
+msgstr "Тайм-аут сообщения в секундах (0-всегда)"
 
 msgid "edit"
 msgstr "Редактор"
@@ -144,7 +141,7 @@ msgid ""
 "error logging %(who)s in:\n"
 "%(failure)s"
 msgstr ""
-"Ошибка загрузки %(who)s в:\n"
+"Ошибка загрузки %(who)s:\n"
 "%(failure)s"
 
 msgid "failed to load message"
@@ -175,10 +172,10 @@ msgid "loading headers ..."
 msgstr "Загрузка заголовков..."
 
 msgid "mail check interval (minutes)"
-msgstr "Интервал проверки почты (в минутах)"
+msgstr "Интервал проверки почты в минутах (0-откл.)"
 
 msgid "maximum mail size to fetch"
-msgstr "Максимимальный объем загрузки почты"
+msgstr "Максимальный размер почты для выборки"
 
 msgid "message too large"
 msgstr "Сообщение слишком большое"
@@ -239,3 +236,15 @@ msgstr "Логин"
 
 msgid "view Emails via IMAP4"
 msgstr "Просмотр почты через IMAP4"
+
+msgid "enable auto check mail"
+msgstr "Включить автопроверку почты"
+
+msgid "display message type"
+msgstr "Тип показа сообщений"
+
+msgid "infobar mode (live TV)"
+msgstr "режим инфобара (live TV)"
+
+msgid "always"
+msgstr "всегда"

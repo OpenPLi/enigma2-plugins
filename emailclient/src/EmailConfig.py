@@ -3,7 +3,7 @@ Configuration screens for EmailClient
 '''
 from Screens.Screen import Screen
 from Screens.MessageBox import MessageBox
-from Components.config import config, getConfigListEntry, ConfigText, ConfigPassword, ConfigSelection, ConfigEnableDisable
+from Components.config import config, getConfigListEntry, ConfigText, ConfigPassword, ConfigSelection, ConfigEnableDisable, ConfigYesNo, ConfigSelection
 from Components.ConfigList import ConfigListScreen
 from Components.Label import Label
 from Components.ActionMap import ActionMap
@@ -47,7 +47,9 @@ class EmailConfigOptions(ConfigListScreen, Screen):
 			"ok": self.save,
 		}, -2)
 		self.list = [
+			getConfigListEntry(_("enable auto check mail"), config.plugins.emailimap.autostart),
 			getConfigListEntry(_("show deleted entries"), config.plugins.emailimap.showDeleted),
+			getConfigListEntry(_("display message type"), config.plugins.emailimap.type),
 			getConfigListEntry(_("display timeout (seconds)"), config.plugins.emailimap.timeout),
 			getConfigListEntry(_("display connection errors"), config.plugins.emailimap.verbose),
 			getConfigListEntry(_("debug"), config.plugins.emailimap.debug),

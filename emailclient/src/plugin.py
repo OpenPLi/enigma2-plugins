@@ -12,7 +12,7 @@ from Components.MenuList import MenuList
 from Components.MultiContent import MultiContentEntryText
 from Components.ScrollLabel import ScrollLabel
 from Components.Button import Button
-from Components.config import config, ConfigSubsection, ConfigInteger, ConfigEnableDisable
+from Components.config import config, ConfigSubsection, ConfigInteger, ConfigEnableDisable, ConfigYesNo, ConfigSelection
 from Plugins.Plugin import PluginDescriptor
 from Screens.ChoiceBox import ChoiceBox
 from Screens.Screen import Screen
@@ -23,6 +23,8 @@ from zope.interface import implements
 import email, re, os
 from email.header import decode_header
 import time
+import Screens.Standby
+import Screens.InfoBar
 from TagStrip import strip_readable
 from protocol import createFactory
 
@@ -30,11 +32,17 @@ from . import _, initLog, debug, scaleH, scaleV, DESKTOP_WIDTH, DESKTOP_HEIGHT #
 mailAccounts = [] # contains all EmailAccount objects
 from EmailConfig import EmailConfigOptions, EmailConfigAccount
 
+NOTIFICATIONID = 'EmailClientNotificationId'
+
 config.plugins.emailimap = ConfigSubsection()
+config.plugins.emailimap.autostart = ConfigYesNo(default=True)
 config.plugins.emailimap.showDeleted = ConfigEnableDisable(default=False)
 config.plugins.emailimap.timeout = ConfigInteger(default=0, limits=(0, 90)) # in seconds
 config.plugins.emailimap.verbose = ConfigEnableDisable(default=True)
 config.plugins.emailimap.debug = ConfigEnableDisable(default=False)
+config.plugins.emailimap.type = ConfigSelection(default = "1", choices = [("0", _("infobar mode (live TV)")), ("1", _("always"))])
+
+_firstCheckMail = 0
 
 def decodeHeader(text, default=''):
 	if text is None:
@@ -522,7 +530,8 @@ class CheckMail:
 		self._interval = int(random.normalvariate(self._interval, self._interval * 0.11962656472))
 		debug("[CheckMail] %(name)s: __init__: checking all %(interval)s seconds"
 			%{'name':self._name, 'interval':self._interval/1000})
-		self._timer.start(self._interval) # it is minutes
+		if config.plugins.emailimap.autostart.value:
+			self._timer.start(self._interval) # it is minutes
 		self._unseenList = None
 		self._checkMail()
 
@@ -580,11 +589,22 @@ class CheckMail:
 		@param headers: list of headers
 		'''
 		# debug("[CheckMail] _onHeaderList headers: %s" %repr(headers))
-		message = _("New mail arrived for account %s:\n\n") %self._name
-		for h in headers:
-			m = MessageHeader(h, headers[h]['RFC822.HEADER'])
-			message += m.getSenderString() + '\n' + m.getSubject() + '\n\n'
-		Notifications.AddNotification(MessageBox, message, type=MessageBox.TYPE_INFO, timeout=config.plugins.emailimap.timeout.value)
+		if Screens.Standby.inStandby is None and (config.plugins.emailimap.autostart.value or _firstCheckMail):
+			message = _("New mail arrived for account %s:\n\n") %self._name
+			for h in headers:
+				m = MessageHeader(h, headers[h]['RFC822.HEADER'])
+				message += m.getSenderString() + '\n' + m.getSubject() + '\n\n'
+			delay = config.plugins.emailimap.timeout.value
+			if delay == 0:
+				if _firstCheckMail == 0:
+					delay = 10
+					global _firstCheckMail
+					_firstCheckMail = 1
+			if config.plugins.emailimap.type.value == "0":
+				if Screens.InfoBar.InfoBar.instance and Screens.InfoBar.InfoBar.instance.execing:
+					Notifications.AddPopup(message, type=MessageBox.TYPE_INFO, timeout=delay, id=NOTIFICATIONID)
+			else:
+				Notifications.AddNotification(MessageBox, message, type=MessageBox.TYPE_INFO, timeout=delay)
 
 class MessageHeader(object):
 	def __init__(self, uid, message):
@@ -682,8 +702,18 @@ class EmailAccount():
 
 	def _ebNotify(self, result, where, what):
 		debug("[EmailAccount] %s: _ebNotify error in %s: %s: %s" %(self._name, where, what, result.getErrorMessage()))
-		if config.plugins.emailimap.verbose.value:
-			Notifications.AddNotification(MessageBox, _("EmailClient for %(account)s:\n\n%(error)s") %{'account': self._name, 'error':what}, type=MessageBox.TYPE_ERROR, timeout=config.plugins.emailimap.timeout.value)
+		if config.plugins.emailimap.verbose.value and Screens.Standby.inStandby is None and (config.plugins.emailimap.autostart.value or _firstCheckMail):
+			delay = config.plugins.emailimap.timeout.value
+			if delay == 0:
+				if _firstCheckMail == 0:
+					delay = 10
+					global _firstCheckMail
+					_firstCheckMail = 1
+			if config.plugins.emailimap.type.value == "0":
+				if Screens.InfoBar.InfoBar.instance and Screens.InfoBar.InfoBar.instance.execing:
+					Notifications.AddPopup(_("EmailClient for %(account)s:\n\n%(error)s") %{'account': self._name, 'error':what}, type=MessageBox.TYPE_ERROR, timeout=delay, id=NOTIFICATIONID)
+			else:
+				Notifications.AddNotification(MessageBox, _("EmailClient for %(account)s:\n\n%(error)s") %{'account': self._name, 'error':what}, type=MessageBox.TYPE_ERROR, timeout=delay)
 
 	def startChecker(self):
 		# debug("[EmailAccount] %s: startChecker?" %self._name)
@@ -1089,7 +1119,15 @@ def getAccounts():
 		debug("[] getAccounts: check for %s" %fMAILCONF_XML)
 		if os.path.exists(fMAILCONF_XML):
 			from xml.dom.minidom import parse
-			Notifications.AddNotification(MessageBox, _("importing configurations from %s") %fMAILCONF_XML, type=MessageBox.TYPE_INFO, timeout=config.plugins.emailimap.timeout.value)
+			if Screens.Standby.inStandby is None and config.plugins.emailimap.autostart.value:
+				delay = config.plugins.emailimap.timeout.value
+				if delay == 0:
+					delay = 10
+				if config.plugins.emailimap.type.value == "0":
+					if Screens.InfoBar.InfoBar.instance and Screens.InfoBar.InfoBar.instance.execing:
+						Notifications.AddPopup(_("importing configurations from %s") % fMAILCONF_XML, type=MessageBox.TYPE_INFO, timeout=delay, id=NOTIFICATIONID)
+				else:
+					Notifications.AddNotification(MessageBox, _("importing configurations from %s") % fMAILCONF_XML, type=MessageBox.TYPE_INFO, timeout=delay)
 			maildom = parse(fMAILCONF_XML)
 			for top in maildom.getElementsByTagName("list"):
 				for acc in top.getElementsByTagName("account"):
@@ -1124,6 +1162,9 @@ def getAccounts():
 			writeAccounts()
 
 def main(session, **kwargs): #@UnusedVariable kwargs # pylint: disable-msg=W0613
+	if _firstCheckMail == 0:
+		global _firstCheckMail
+		_firstCheckMail = 1
 	session.open(EmailAccountList)
 
 def autostart(reason, **kwargs): #@UnusedVariable reason
