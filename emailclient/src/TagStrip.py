@@ -63,8 +63,11 @@ def strip(html):
 	html = sub('<(.*?)>', '', html)
 
 	# Convert html entities
-	for escaped, unescaped in entities:
-		html = html.replace(escaped, unescaped)
+	try:
+		for escaped, unescaped in entities:
+			html = html.replace(escaped, unescaped)
+	except:
+		return ''
 
 	# Return result with leading/trailing whitespaces removed
 	return html.strip()
