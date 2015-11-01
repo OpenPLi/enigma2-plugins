@@ -85,3 +85,15 @@ msgstr "Показать volumebar при смене значения громк
 
 msgid "You must select a valid service!"
 msgstr "Вы должны выбрать действительный сервис!"
+
+msgid "toggle on/off plugin only for session"
+msgstr "переключатель плагина вкл/выкл только для этой сессии"
+
+msgid "Show on/off plugin only for session in Audio menu"
+msgstr "Вкл/выкл только для этой сессии в меню аудио"
+
+msgid "%s plugin only this session?"
+msgstr "%s плагин для этой сессии?"
+
+msgid "Disable"
+msgstr "Выключить"
