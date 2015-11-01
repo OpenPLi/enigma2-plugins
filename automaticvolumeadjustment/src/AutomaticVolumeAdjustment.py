@@ -76,7 +76,7 @@ class AutomaticVolumeAdjustment(Screen):
 			self.__evUpdatedInfo()
 
 	def __evEnd(self):
-		if self.pluginStarted and self.enabled:
+		if self.pluginStarted and self.enabled and config.misc.toggle_AV_session.value:
 			if self.modus == "0": # Automatic volume adjust mode
 				# if played service had AC3||DTS audio and volume value was changed with RC, take new delta value from the config
 				if self.currentVolume and self.volctrl.getVolume() != self.currentVolume:
@@ -91,7 +91,7 @@ class AutomaticVolumeAdjustment(Screen):
 		self.newService = True
 
 	def __evUpdatedInfo(self):
-		if self.newService and self.session.nav.getCurrentlyPlayingServiceReference() and self.enabled:
+		if self.newService and self.session.nav.getCurrentlyPlayingServiceReference() and self.enabled and config.misc.toggle_AV_session.value:
 			print "[AutomaticVolumeAdjustment] service changed"
 			self.newService = False
 			self.currentVolume = 0 # init
@@ -153,7 +153,7 @@ class AutomaticVolumeAdjustment(Screen):
 
 	def isCurrentAudioAC3DTS(self):
 		service = self.session.nav.getCurrentService()
-		audio = service.audioTracks()
+		audio = service and service.audioTracks()
 		if audio:
 			try: # uhh, servicemp3 leads sometimes to OverflowError Error
 				tracknr = audio.getCurrentTrack()

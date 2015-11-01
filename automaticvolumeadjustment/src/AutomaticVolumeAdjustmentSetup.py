@@ -64,6 +64,7 @@ class AutomaticVolumeAdjustmentConfigScreen(ConfigListScreen, Screen):
 		self["key_green"] = StaticText(_("OK"))
 		self["key_blue"] = StaticText()
 		self.configVA = AutomaticVolumeAdjustmentConfig()
+		self.prev_audio_menu = config.misc.AV_audio_menu.value
 		self.automaticVolumeAdjustmentInstance = AutomaticVolumeAdjustment.instance
 		self.list = []
 		ConfigListScreen.__init__(self, self.list, session = session)
@@ -83,6 +84,7 @@ class AutomaticVolumeAdjustmentConfigScreen(ConfigListScreen, Screen):
 			else:
 				self["key_blue"].text = ""
 			self.list.append(getConfigListEntry(_("Show volumebar when volume-value was changed"), self.configVA.config.show_volumebar))
+			self.list.append(getConfigListEntry(_("Show on/off plugin only for session in Audio menu"), config.misc.AV_audio_menu))
 		else:
 			self.config_modus = None
 		self[widget].list = self.list
@@ -105,15 +107,25 @@ class AutomaticVolumeAdjustmentConfigScreen(ConfigListScreen, Screen):
 			self.session.open(AutomaticVolumeAdjustmentEntriesListConfigScreen, self.configVA)
 
 	def keySave(self):
+		if not self.configVA.config.enable.value:
+			config.misc.AV_audio_menu.value = False
 		for x in self["config"].list:
 			x[1].save()
 		self.configVA.save()
+		if self.prev_audio_menu != config.misc.AV_audio_menu.value:
+			self.refreshPlugins()
 		if self.automaticVolumeAdjustmentInstance is not None:
 			self.automaticVolumeAdjustmentInstance.initializeConfigValues(self.configVA, True) # submit config values
 		self.close()
 
 	def keyCancel(self):
 		ConfigListScreen.cancelConfirm(self, True)
+
+	def refreshPlugins(self):
+		from Components.PluginComponent import plugins
+		from Tools.Directories import SCOPE_PLUGINS, resolveFilename
+		plugins.clearPluginList()
+		plugins.readPluginList(resolveFilename(SCOPE_PLUGINS))
 
 class AutomaticVolumeAdjustmentEntriesListConfigScreen(Screen):
 	skin = """
