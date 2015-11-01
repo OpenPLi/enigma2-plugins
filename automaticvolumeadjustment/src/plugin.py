@@ -23,9 +23,25 @@
 # for localized messages
 from . import _
 from Plugins.Plugin import PluginDescriptor
+from Components.config import config, ConfigYesNo, NoSave
+from Screens.MessageBox import MessageBox
 from AutomaticVolumeAdjustmentSetup import AutomaticVolumeAdjustmentConfigScreen
 from AutomaticVolumeAdjustment import AutomaticVolumeAdjustment
 from AutomaticVolumeAdjustmentConfig import saveVolumeDict
+
+config.misc.AV_audio_menu = ConfigYesNo(default = False)
+config.misc.toggle_AV_session = NoSave(ConfigYesNo(default = True))
+
+def audioMenu(session, **kwargs):
+	status = config.misc.toggle_AV_session.value and _("Disable") or _("Enable")
+	session.openWithCallback(toggleAVclosed, MessageBox, _("%s plugin only this session?") % status, MessageBox.TYPE_YESNO)
+
+def toggleAVclosed(ret):
+	if ret:
+		if config.misc.toggle_AV_session.value:
+			config.misc.toggle_AV_session.value = False
+		else:
+			config.misc.toggle_AV_session.value = True
 
 def autostart(reason, **kwargs):
 	if "session" in kwargs:
@@ -48,5 +64,9 @@ def startSetup(menuid):
 	return [(_("Automatic Volume Adjustment"), setup, "AutomaticVolumeAdjustment", 46)]
 
 def Plugins(**kwargs):
-	return [PluginDescriptor(where = [PluginDescriptor.WHERE_SESSIONSTART], fnc = autostart), PluginDescriptor(where = [PluginDescriptor.WHERE_AUTOSTART], fnc = autoend), PluginDescriptor(name="Automatic Volume Adjustment", description=_("Automatic Volume Adjustment"), where = PluginDescriptor.WHERE_MENU, fnc=startSetup) ]
+	l = [PluginDescriptor(where = [PluginDescriptor.WHERE_SESSIONSTART], fnc = autostart), PluginDescriptor(where = [PluginDescriptor.WHERE_AUTOSTART], fnc = autoend),
+		PluginDescriptor(name="Automatic Volume Adjustment", description=_("Automatic Volume Adjustment"), where = PluginDescriptor.WHERE_MENU, fnc=startSetup)]
+	if config.misc.AV_audio_menu.value:
+		l.append((PluginDescriptor(name=_("Automatic Volume Adjustment"), description=_("toggle on/off plugin only for session"), where = PluginDescriptor.WHERE_AUDIOMENU, fnc=audioMenu)))
+	return l
 
