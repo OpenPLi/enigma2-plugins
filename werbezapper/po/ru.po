@@ -1,0 +1,201 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Enigma2 Plugin WerbeZapper\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-02-07 12:44+0100\n"
+"PO-Revision-Date: 2015-11-06 22:36+0200\n"
+"Last-Translator: Dimitrij <Dima-73@inbox.lv>\n"
+"Language-Team: none\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: ru\n"
+"X-Generator: Poedit 1.8.4\n"
+
+msgid "\"Werbezapper\" quick button"
+msgstr "\"Werbezapper\" быстрая кнопка"
+
+msgid "%d min"
+msgstr "%d мин"
+
+msgid "- %d:%02d min"
+msgstr "- %d:%02d мин"
+
+msgid "Automatically zaps back to current service after given Time"
+msgstr "Авто возврат на текущий канал через заданное время"
+
+msgid ""
+"Button Info/EPG\n"
+"Set time begin next event: %d min"
+msgstr ""
+"Кнопка Info/EPG\n"
+"Установка времени на начало следущего события: %d мин"
+
+msgid "Cancel"
+msgstr "Отмена"
+
+msgid "Channel: %s"
+msgstr "Канал: %s"
+
+msgid "Custom"
+msgstr "Задать время"
+
+msgid "Disable wakeup from standby"
+msgstr "Выключить переключение из режима ожидания"
+
+msgid "Enable wakeup from standby"
+msgstr "Включить переключение из режима ожидания"
+
+msgid "Error"
+msgstr "Ошибка"
+
+msgid "How many minutes to wait until zapping back?"
+msgstr "Сколько минут ждать, до переключения назад?"
+
+msgid "Indicator mode"
+msgstr "Режим показа индикатора"
+
+msgid "Monitoring duration for service if not EPG"
+msgstr "Продолжительность мониторинга для сервиса без EPG"
+
+msgid "Monitoring: %s (%d:%02d Min)"
+msgstr "Мониторинг: %s (%d:%02d мин)"
+
+msgid "Monitoring: for service is not EPG (%d:%02d Min)"
+msgstr "Мониторинг: для сервиса без EPG (%d:%02d мин)"
+
+msgid "Open setup"
+msgstr "Открыть настройки"
+
+msgid "Rezap"
+msgstr "Переключить сейчас"
+
+msgid "Save"
+msgstr "Сохранить"
+
+msgid "Service is not EPG"
+msgstr "Сервис без EPG"
+
+msgid "Set zap time"
+msgstr "Задать время"
+
+msgid "Show \"Start / Stop monitoring\" in extensions menu"
+msgstr "Показать \"Старт / стоп мониторинга\" в меню дополнений"
+
+msgid "Show indicator zap time in window"
+msgstr "Индикатор времени до переключения на экране"
+
+msgid "Show plugin in channel selection context menu"
+msgstr "Показать плагин в контекстном меню селектора каналов"
+
+msgid "Slider step size (1 - 20 mins)"
+msgstr "Размер шага ползунка (1 - 20 мин)"
+
+msgid "Start / Stop monitoring instantly"
+msgstr "Быстрый запуск/остановка мониторинга"
+
+msgid "Start monitoring"
+msgstr "Старт мониторинга"
+
+msgid "Stop monitoring"
+msgstr "Остановка мониторинга"
+
+msgid "Stop timer"
+msgstr "Отключить таймер"
+
+msgid "Wakeup receiver from standby for zap timer"
+msgstr "Включить ресивер из режима ожидания по таймеру"
+
+msgid "WerbeZapper"
+msgstr "WerbeZapper..."
+
+msgid ""
+"WerbeZapper\n"
+"Monitoring ends\n"
+"%s"
+msgstr ""
+"WerbeZapper...\n"
+"Мониторинг окончен\n"
+"%s"
+
+msgid ""
+"WerbeZapper\n"
+"Monitoring started unlimited\n"
+"Has to be deactivated manually"
+msgstr ""
+"WerbeZapper\n"
+"Monitoring начался без лимита времени\n"
+"Должен быть отключен в ручную"
+
+msgid "WerbeZapper Setup"
+msgstr "Настройки WerbeZapper"
+
+msgid ""
+"WerbeZapper...\n"
+"Monitoring is not running\n"
+"No event"
+msgstr ""
+"WerbeZapper...\n"
+"Мониторинг не может быть запущен\n"
+"На текущем канале нет EPG"
+
+msgid ""
+"WerbeZapper...\n"
+"Monitoring started\n"
+"%s"
+msgstr ""
+"WerbeZapper...\n"
+"Мониторинг стартовал\n"
+"%s"
+
+msgid ""
+"WerbeZapper...\n"
+"Monitoring started for service is not EPG.\n"
+"Duration %d Min."
+msgstr ""
+"WerbeZapper...\n"
+"Мониторинг стартовал для сервиса без EPG.\n"
+"Продолжительность %d мин."
+
+msgid "Werbezapper Start / Stop monitoring"
+msgstr "Werbezapper: старт / стоп мониторинга"
+
+msgid "When zap to service?"
+msgstr "Когда переключить на канал?"
+
+msgid "X position"
+msgstr "X позиция"
+
+msgid "Y position"
+msgstr "Y позиция"
+
+msgid "Z position (priority of srceen)"
+msgstr "Z позиция (приоритет скрина)"
+
+msgid "Zapping back %s in %d Min"
+msgstr "Переключение назад на %s через %d мин"
+
+msgid "Zapping to %s"
+msgstr "Переключаем на %s"
+
+msgid "Zapping to service in %d:%02d Min"
+msgstr "Переключение на канал через %d:%02d мин"
+
+msgid "add zap timer for service"
+msgstr "добавить таймер переключения для сервиса"
+
+msgid "minut"
+msgstr "минуты"
+
+msgid "minute"
+msgstr "минута"
+
+msgid "minutes"
+msgstr "минут"
+
+msgid "service / time"
+msgstr "сервис / время"
+
+msgid "time"
+msgstr "время"

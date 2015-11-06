@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-02-07 12:44+0100\n"
+"POT-Creation-Date: 2013-02-02 17:28+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,33 +16,210 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../src/plugin.py:28
+#: WerbeZapper.py:511
+msgid "\"Werbezapper\" quick button"
+msgstr ""
+
+#: plugin.py:163
+#, python-format
+msgid "%d min"
+msgstr ""
+
+#: plugin.py:234 plugin.py:256
 msgid "Automatically zaps back to current service after given Time"
 msgstr ""
 
-#: ../src/WerbeZapper.py:55
+#: WerbeZapper.py:484
+msgid "Cancel"
+msgstr ""
+
+#: WerbeZapper.py:75
+#, python-format
+msgid "Channel: %s"
+msgstr ""
+
+#: WerbeZapper.py:152
 msgid "Custom"
 msgstr ""
 
-#: ../src/WerbeZapper.py:81
+#: plugin.py:25
+msgid "GREEN"
+msgstr ""
+
+#: plugin.py:30
+msgid "HELP"
+msgstr ""
+
+#: WerbeZapper.py:222
 msgid "How many minutes to wait until zapping back?"
 msgstr ""
 
-#: ../src/WerbeZapper.py:38
-msgid ""
-"Timer already running.\n"
-"Stop it?"
+#: WerbeZapper.py:512
+msgid "Monitoring duration for service if not EPG"
 msgstr ""
 
-#: ../src/WerbeZapper.py:47
-msgid "When to Zap back?"
-msgstr ""
-
-#: ../src/WerbeZapper.py:104
+#: WerbeZapper.py:59
 #, python-format
-msgid "Zapping back in %d Minutes"
+msgid "Monitoring: %s (%d:%02d Min)"
 msgstr ""
 
-#: ../src/WerbeZapper.py:50
+#: WerbeZapper.py:63
+#, python-format
+msgid "Monitoring: for service is not EPG (%d:%02d Min)"
+msgstr ""
+
+#: plugin.py:24
+msgid "NONE"
+msgstr ""
+
+#: WerbeZapper.py:194
+msgid "Open setup"
+msgstr ""
+
+#: plugin.py:27
+msgid "RADIO"
+msgstr ""
+
+#: WerbeZapper.py:189
+msgid "Rezap"
+msgstr ""
+
+#: plugin.py:32
+msgid "SEARCH"
+msgstr ""
+
+#: WerbeZapper.py:485
+msgid "Save"
+msgstr ""
+
+#: WerbeZapper.py:330
+msgid "Service is not EPG"
+msgstr ""
+
+#: plugin.py:151
+msgid "Set zap time"
+msgstr ""
+
+#: WerbeZapper.py:507
+msgid "Show \"Start / Stop monitoring\" in extensions menu"
+msgstr ""
+
+#: WerbeZapper.py:508
+msgid "Show plugin in channel selection context menu"
+msgstr ""
+
+#: WerbeZapper.py:509
+msgid "Slider step size (1 - 20 mins)"
+msgstr ""
+
+#: plugin.py:241
+msgid "Start / Stop monitoring instantly"
+msgstr ""
+
+#: WerbeZapper.py:171
+msgid "Start monitoring"
+msgstr ""
+
+#: WerbeZapper.py:169
+msgid "Stop monitoring"
+msgstr ""
+
+#: WerbeZapper.py:181
+msgid "Stop timer"
+msgstr ""
+
+#: plugin.py:28
+msgid "TEXT"
+msgstr ""
+
+#: plugin.py:31
+msgid "TIMER"
+msgstr ""
+
+#: plugin.py:29
+msgid "TV"
+msgstr ""
+
+#: WerbeZapper.py:510
+msgid "Wakeup receiver from standby for zap timer"
+msgstr ""
+
+#: WerbeZapper.py:49
+msgid "WerbeZapper"
+msgstr ""
+
+#: WerbeZapper.py:332
+#, python-format
+msgid ""
+"WerbeZapper\n"
+"Monitoring ends\n"
+"%s"
+msgstr ""
+
+#: WerbeZapper.py:483
+msgid "WerbeZapper Setup"
+msgstr ""
+
+#: WerbeZapper.py:297
+#, python-format
+msgid ""
+"WerbeZapper...\n"
+"Monitoring started\n"
+"%s"
+msgstr ""
+
+#: WerbeZapper.py:310
+#, python-format
+msgid ""
+"WerbeZapper...\n"
+"Monitoring started for service is not EPG.\n"
+"Duration %d Min."
+msgstr ""
+
+#: plugin.py:233 plugin.py:255
+msgid "Werbezapper"
+msgstr ""
+
+#: plugin.py:240
+msgid "Werbezapper Start / Stop monitoring"
+msgstr ""
+
+#: WerbeZapper.py:127
+msgid "When zap to service?"
+msgstr ""
+
+#: plugin.py:26
+msgid "YELLOW"
+msgstr ""
+
+#: WerbeZapper.py:400
+#, python-format
+msgid "Zapping back %s in %d Min"
+msgstr ""
+
+#: WerbeZapper.py:427
+#, python-format
+msgid "Zapping to %s"
+msgstr ""
+
+#: WerbeZapper.py:68
+#, python-format
+msgid "Zapping to service in %d:%02d Min"
+msgstr ""
+
+#: plugin.py:100
+msgid "add zap timer for service"
+msgstr ""
+
+#: WerbeZapper.py:154 WerbeZapper.py:155 WerbeZapper.py:156
+msgid "minut"
+msgstr ""
+
+#: WerbeZapper.py:153
+msgid "minute"
+msgstr ""
+
+#: WerbeZapper.py:157 WerbeZapper.py:158 WerbeZapper.py:159 WerbeZapper.py:160
+#: WerbeZapper.py:161
 msgid "minutes"
 msgstr ""
