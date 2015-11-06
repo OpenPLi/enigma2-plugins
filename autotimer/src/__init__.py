@@ -28,6 +28,7 @@ config.plugins.autotimer.editdelay = ConfigNumber(default=3)
 config.plugins.autotimer.interval = ConfigNumber(default=12)
 config.plugins.autotimer.timeout = ConfigNumber(default=1)
 config.plugins.autotimer.popup_timeout = ConfigNumber(default=5)
+config.plugins.autotimer.check_eit_and_remove = ConfigEnableDisable(default=False)
 config.plugins.autotimer.refresh = ConfigSelection(choices=[
 		("none", _("None")),
 		("auto", _("Only AutoTimers created during this session")),
