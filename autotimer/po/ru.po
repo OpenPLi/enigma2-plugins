@@ -1259,3 +1259,9 @@ msgstr "неизвестно"
 
 msgid "zap"
 msgstr "переключение"
+
+msgid "Remove not existing events"
+msgstr "Удалять не существующие события"
+
+msgid "Check the event id (eit) and remove the timer if event not exists in EPG."
+msgstr "Проверка идентификатора события (eit) и удаление таймера, если событие не существует в EPG."
