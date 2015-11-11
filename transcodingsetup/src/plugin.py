@@ -80,7 +80,7 @@ class TranscodingSetup(Components.ConfigList.ConfigListScreen, Screens.Screen.Sc
 		except:
 			pass
 
-		if vumodel == "solo2" or vumodel == "duo2":
+		if vumodel == "solo2" or vumodel == "duo2" or vumodel == "solose":
 			transcoding = "vuplus"
 		else:
 			if boxtype == "et10000" or boxtype == "hd2400":
