@@ -108,6 +108,11 @@ def parseEntry(element, baseTimer, defaults = False):
 	baseTimer.series_labeling = True if series_labeling == "yes" else False
 	del series_labeling
 
+	# Read conflict detection
+	conflict_detection = element.get("conflict_detection", "yes")
+	baseTimer.conflict_detection = True if conflict_detection == "yes" else False
+	del conflict_detection
+
 	# Read out encoding (won't change if no value is set)
 	baseTimer.encoding = element.get("encoding")
 
@@ -591,6 +596,10 @@ def buildConfig(defaultTimer, timers, webif = False):
 	if defaultTimer.series_labeling:
 		append(' series_labeling="yes"')
 
+	# Only add conflict detection related entry if False
+	if not defaultTimer.conflict_detection:
+		append(' conflict_detection="no"')
+
 	# Close still opened defaults tag
 	append('>\n')
 
@@ -742,6 +751,10 @@ def buildConfig(defaultTimer, timers, webif = False):
 		# Only add seriesplugin related entry if true
 		if timer.series_labeling:
 			append(' series_labeling="yes"')
+
+		# Only add conflict detection related entry if False
+		if not timer.conflict_detection:
+			append(' conflict_detection="no"')
 
 		# Close still opened timer tag
 		append('>\n')
