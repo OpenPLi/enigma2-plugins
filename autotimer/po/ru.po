@@ -1265,3 +1265,9 @@ msgstr "Удалять не существующие события"
 
 msgid "Check the event id (eit) and remove the timer if event not exists in EPG."
 msgstr "Проверка идентификатора события (eit) и удаление таймера, если событие не существует в EPG."
+
+msgid "When you use the remote fallback tuner to do recording, the timer conflict detection can't handle remote fallback tuners. This option allows you to turn off the timer confict detection."
+msgstr "При использовании дистанционного резервного тюнера для записей, обнаружение конфликтов таймеров не может сделать исключение для резервного тюнера. Эта опция позволяет отключить обнаружение конфликтов для этого таймера. Не рекомендуется!"
+
+msgid "Enable timer conflict detection"
+msgstr "Включить обнаружение конфликтов таймера"

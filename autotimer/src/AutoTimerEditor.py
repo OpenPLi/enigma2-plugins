@@ -351,6 +351,9 @@ class AutoTimerEditorBase:
 		# SeriesPlugin
 		self.series_labeling = NoSave(ConfigYesNo(default = timer.series_labeling))
 
+		# Conflict detection
+		self.conflict_detection = NoSave(ConfigYesNo(default = timer.conflict_detection))
+
 		# Filter info
 		self.isActive_services_value = _("unknown")
 		self.isActive_bouquets_value = _("unknown")
@@ -586,6 +589,7 @@ class AutoTimerEditor(Screen, ConfigListScreen, AutoTimerEditorBase):
 			self.destination: _("Select the location to save the recording to."),
 			self.tags: _("Tags the Timer/Recording will have."),
 			self.series_labeling: _("Label Timers with season, episode and title, according to the SeriesPlugin settings."),
+			self.conflict_detection: _("When you use the remote fallback tuner to do recording, the timer conflict detection can't handle remote fallback tuners. This option allows you to turn off the timer confict detection."),
 			self.isActive_services: _("Use blue key to edit bouquets or services."),
 			self.isActive_bouquets: _("Use blue key to edit bouquets or services."),
 			self.isActive_dayofweek: _("Use yellow key to edit filters."),
@@ -686,6 +690,8 @@ class AutoTimerEditor(Screen, ConfigListScreen, AutoTimerEditorBase):
 
 		if hasSeriesPlugin:
 			list.append(getConfigListEntry(_("Label series"), self.series_labeling))
+
+		list.append(getConfigListEntry(_("Enable timer conflict detection"), self.conflict_detection))
 
 		# Display short info on active filters in autotimer editor
 		self.isActive_services = NoSave(ConfigSelection([("0", self.isActive_services_value)], default="0"))
@@ -941,6 +947,8 @@ class AutoTimerEditor(Screen, ConfigListScreen, AutoTimerEditorBase):
 		self.timer.vps_overwrite = self.vps_overwrite.value
 
 		self.timer.series_labeling = self.series_labeling.value
+
+		self.timer.conflict_detection = self.conflict_detection.value
 
 		# Close
 		self.close(self.timer)

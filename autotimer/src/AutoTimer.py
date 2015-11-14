@@ -480,7 +480,7 @@ class AutoTimer:
 					print("[AutoTimer SeriesPlugin] Returned name %s" % (name))
 					shortdesc = newEntry.description
 					print("[AutoTimer SeriesPlugin] Returned description %s" % (shortdesc))
-			
+
 			if timer.checkFilter(name, shortdesc, extdesc, dayofweek):
 				continue
 
@@ -496,6 +496,10 @@ class AutoTimer:
 			newEntry.justplay = timer.justplay
 			newEntry.vpsplugin_enabled = timer.vps_enabled
 			newEntry.vpsplugin_overwrite = timer.vps_overwrite
+			if config.usage.remote_fallback_enabled.value and "http" in config.usage.remote_fallback.value:
+				newEntry.conflict_detection = timer.conflict_detection
+			else:
+				newEntry.conflict_detection = True
 			tags = timer.tags[:]
 			if config.plugins.autotimer.add_autotimer_to_tags.value:
 				tags.append('AutoTimer')
