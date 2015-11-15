@@ -504,10 +504,8 @@ class AutoTimer:
 			newEntry.justplay = timer.justplay
 			newEntry.vpsplugin_enabled = timer.vps_enabled
 			newEntry.vpsplugin_overwrite = timer.vps_overwrite
-			if config.usage.remote_fallback_enabled.value and "http" in config.usage.remote_fallback.value:
-				newEntry.conflict_detection = timer.conflict_detection
-			else:
-				newEntry.conflict_detection = True
+			newEntry.conflict_detection = timer.conflict_detection
+
 			tags = timer.tags[:]
 			if config.plugins.autotimer.add_autotimer_to_tags.value:
 				tags.append('AutoTimer')

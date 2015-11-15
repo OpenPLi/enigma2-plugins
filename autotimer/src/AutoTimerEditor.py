@@ -589,7 +589,7 @@ class AutoTimerEditor(Screen, ConfigListScreen, AutoTimerEditorBase):
 			self.destination: _("Select the location to save the recording to."),
 			self.tags: _("Tags the Timer/Recording will have."),
 			self.series_labeling: _("Label Timers with season, episode and title, according to the SeriesPlugin settings."),
-			self.conflict_detection: _("When you use the remote fallback tuner to do recording, the timer conflict detection can't handle remote fallback tuners. This option allows you to turn off the timer confict detection."),
+			self.conflict_detection: _("This option allows you to turn off the timer confict detection. This option is for advanced users."),
 			self.isActive_services: _("Use blue key to edit bouquets or services."),
 			self.isActive_bouquets: _("Use blue key to edit bouquets or services."),
 			self.isActive_dayofweek: _("Use yellow key to edit filters."),
