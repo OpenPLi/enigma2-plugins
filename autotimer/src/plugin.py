@@ -20,7 +20,7 @@ from Components.Sources.ServiceEvent import ServiceEvent
 # ChannelContextMenu
 from Screens.ChannelSelection import ChannelContextMenu, OFF, MODE_TV, service_types_tv
 from Components.ChoiceList import ChoiceEntryComponent
-from enigma import eServiceReference, iPlayableService, eServiceCenter, eEnv
+from enigma import eServiceReference, iPlayableService, eServiceCenter, eEnv, eTimer
 from Tools.BoundFunction import boundFunction
 # Plugin
 from Components.PluginComponent import plugins
@@ -424,14 +424,23 @@ def handleAutoPoller():
 	else:
 		autopoller = None
 
+editTimer = eTimer()
+
 def editCallback(session):
 	# Don't parse EPG if editing was canceled
 	if session is not None:
 		delay = config.plugins.autotimer.editdelay.value
-		parseFunc = lambda: autotimer.parseEPGAsync().addCallback(parseEPGCallback)#.addErrback(parseEPGErrback)
-		reactor.callLater(delay, parseFunc)
+		editTimer.startLongTimer(int(delay))
+		#parseFunc = lambda: autotimer.parseEPGAsync().addCallback(parseEPGCallback)#.addErrback(parseEPGErrback)
+		#reactor.callLater(delay, parseFunc)
 	else:
 		handleAutoPoller()
+
+def parseEPGstart():
+	if autotimer:
+		autotimer.parseEPGAsync().addCallback(parseEPGCallback)#.addErrback(parseEPGErrback)
+
+editTimer.callback.append(parseEPGstart)
 
 #def parseEPGErrback(failure):
 #	AddPopup(

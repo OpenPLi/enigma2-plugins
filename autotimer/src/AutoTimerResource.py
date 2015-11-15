@@ -399,6 +399,13 @@ class AutoTimerAddOrEditAutoTimerResource(AutoTimerBaseResource):
 			except ValueError: series_labeling = series_labeling == "yes"
 			timer.series_labeling = series_labeling
 
+		# Conflict detection
+		conflict_detection = get("conflict_detection")
+		if conflict_detection is not None:
+			try: conflict_detection = int(conflict_detection)
+			except ValueError: conflict_detection = conflict_detection == "yes"
+			timer.conflict_detection = conflict_detection
+
 		if newTimer:
 			autotimer.add(timer)
 			message = _("AutoTimer was added successfully")
