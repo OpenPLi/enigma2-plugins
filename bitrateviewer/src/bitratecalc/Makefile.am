@@ -10,6 +10,3 @@ bitratecalc_la_SOURCES = \
 
 bitratecalc_la_LDFLAGS = \
 	-avoid-version -module
-
-bitratecalc_la_LIBADD = \
-	@LIBCRYPTO_LIBS@
