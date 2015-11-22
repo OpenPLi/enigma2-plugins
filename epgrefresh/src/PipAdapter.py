@@ -33,7 +33,7 @@ class PipAdapter:
 
 		if config.plugins.epgrefresh.enablemessage.value and Standby.inStandby is None:
 			try:
-				Notifications.AddPopup(_("EPG refresh started in background.") + "\n" + _("Please don't use PiP meanwhile!"), MessageBox.TYPE_INFO, 4, NOTIFICATIONID)
+				Notifications.AddPopup(_("EPG refresh started in background.") + "\n" + _("Please don't use PiP in the meantime!"), MessageBox.TYPE_INFO, 4, NOTIFICATIONID)
 			except:
 				pass
 		if hasattr(self.session, 'pipshown') and self.session.pipshown:

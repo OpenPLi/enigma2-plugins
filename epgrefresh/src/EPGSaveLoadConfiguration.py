@@ -58,22 +58,22 @@ class EPGSaveLoadConfiguration(Screen, ConfigListScreen):
 		self.prev_lastepgcachepath = config.misc.epgcache_filename.value
 		self.current_epgpath = config.plugins.epgrefresh_extra.epgcachepath.value
 		self.list = [
-			getConfigListEntry(_("Manual save EPG"), config.plugins.epgrefresh_extra.manual_save, _("Manual saving EPG in current cachefile.")),
-			getConfigListEntry(_("Manual load EPG"), config.plugins.epgrefresh_extra.manual_load, _("Manual loading EPG from current cachefile.")),
-			getConfigListEntry(_("Manual clear EPG"), config.plugins.epgrefresh_extra.delete_backup, _("Options for manual clear current cachefile EPG.")),
-			getConfigListEntry(_("Manual reload EPG"), config.plugins.epgrefresh_extra.manual_reload, _("Manual saving and loading EPG from current cachefile.")),
-			getConfigListEntry(_("Manual restore EPG backup"), config.plugins.epgrefresh_extra.restore_backup, _("Manual restore EPG from backup cachefile and loading.")),
-			getConfigListEntry(_("Automatic save EPG"), config.plugins.epgrefresh_extra.cachesavesched, _("Automatic saving EPG in current cachefile after a specified time.")),
-			getConfigListEntry(_("Save every (in hours)"), config.plugins.epgrefresh_extra.cachesavetimer, _("Do not set too short period of time.")),
-			getConfigListEntry(_("Automatic load EPG"), config.plugins.epgrefresh_extra.cacheloadsched, _("Automatic loading EPG from current cachefile after a specified time.")),
-			getConfigListEntry(_("Load every (in hours)"), config.plugins.epgrefresh_extra.cacheloadtimer, _("This option is not recommended to be used only in exceptional cases. Do not set too short period of time.")),
-			getConfigListEntry(_("EPG cache path"), config.plugins.epgrefresh_extra.epgcachepath, _("Press OK and select the path to EPG cache. Is not recommended to use the internal flash!")),
-			getConfigListEntry(_("EPG cache filename"), config.plugins.epgrefresh_extra.epgcachefilename, _("Select the file name EPG cache, if you do not like credit default name.")),
-			getConfigListEntry(_("Create backup when saving EPG"), config.plugins.epgrefresh_extra.save_backup, _("Create backup cachefile, after manual or automatic saving EPG.")),
-			getConfigListEntry(_("Auto restore EPG backup on boot"), config.plugins.epgrefresh_extra.autorestore_backup, _("Auto restore EPG from backup cachefile and loading on boot.")),
-			getConfigListEntry(_("Show manual change EPG in main menu"), config.plugins.epgrefresh_extra.main_menu, _("Changes are needed to restart enigma2.")),
-			getConfigListEntry(_("Show \"AutoZap\" in extension menu"), config.plugins.epgrefresh_extra.show_autozap, _("Automatic switching of all the services in the current channel list after a specified time. Stop switch can only manually.")),
-			getConfigListEntry(_("Duration to stay on service (sec) for \"AutoZap\" "), config.plugins.epgrefresh_extra.timeout_autozap, _("This is the duration each service/channel will stay active during a refresh.")),
+			getConfigListEntry(_("Save EPG"), config.plugins.epgrefresh_extra.manual_save, _("Manually save EPG to current cache file.")),
+			getConfigListEntry(_("Load EPG"), config.plugins.epgrefresh_extra.manual_load, _("Manually load EPG from current cachefile.")),
+			getConfigListEntry(_("Clear EPG"), config.plugins.epgrefresh_extra.delete_backup, _("Manually clear EPG (choose method).")),
+			getConfigListEntry(_("Reload EPG"), config.plugins.epgrefresh_extra.manual_reload, _("Manually load EPG from current cache file.")),
+			getConfigListEntry(_("Restore EPG backup"), config.plugins.epgrefresh_extra.restore_backup, _("Manually restore EPG from backup cache file.")),
+			getConfigListEntry(_("Automatically save EPG"), config.plugins.epgrefresh_extra.cachesavesched, _("Enable automatic EPG save interval.")),
+			getConfigListEntry(_("Automatic save period (in hours)"), config.plugins.epgrefresh_extra.cachesavetimer, _("Configure EPG save interval, if enabled.")),
+			getConfigListEntry(_("Automatically load EPG"), config.plugins.epgrefresh_extra.cacheloadsched, _("Automatic EPG loading from current cache file.")),
+			getConfigListEntry(_("Automatic load period (in hours)"), config.plugins.epgrefresh_extra.cacheloadtimer, _("Configure EPG load interval, if enabled. This is an option for experienced users.")),
+			getConfigListEntry(_("EPG cache file path"), config.plugins.epgrefresh_extra.epgcachepath, _("Select the path to EPG cache file. Don't use the internal flash if not necessary!")),
+			getConfigListEntry(_("EPG cache file filename"), config.plugins.epgrefresh_extra.epgcachefilename, _("Select the file name for the EPG cache file.")),
+			getConfigListEntry(_("Create backup when saving EPG"), config.plugins.epgrefresh_extra.save_backup, _("Create a backup cache file, after manually or automatically saving EPG.")),
+			getConfigListEntry(_("Automatically restore EPG backup on boot"), config.plugins.epgrefresh_extra.autorestore_backup, _("Load EPG from backup cache file when booting.")),
+			getConfigListEntry(_("Show entry 'Manually change EPG' in main menu"), config.plugins.epgrefresh_extra.main_menu, _("Restart enigma2 to effectuate.")),
+			getConfigListEntry(_("Show entry 'AutoZap' in extensions menu"), config.plugins.epgrefresh_extra.show_autozap, _("Enable automatic zapping of all services in the current services list.")),
+			getConfigListEntry(_("Duration to show each service (in seconds) for 'AutoZap'"), config.plugins.epgrefresh_extra.timeout_autozap, _("This is the duration each service will be shown in AutoZap mode.")),
 		]
 		ConfigListScreen.__init__(self, self.list, session = session, on_change = self.changed)
 
@@ -136,7 +136,7 @@ class EPGSaveLoadConfiguration(Screen, ConfigListScreen):
 		ConfigListScreen.keyOK(self)
 		sel = self["config"].getCurrent()[1]
 		if sel == config.plugins.epgrefresh_extra.manual_save:
-			self.session.openWithCallback(self.setEpgSave, MessageBox,_("Are you sure you want to save the EPG Cache to:\n") + config.misc.epgcache_filename.value, MessageBox.TYPE_YESNO)
+			self.session.openWithCallback(self.setEpgSave, MessageBox,_("Are you sure you want to save the EPG cache to:\n") + config.misc.epgcache_filename.value, MessageBox.TYPE_YESNO)
 		if sel == config.plugins.epgrefresh_extra.manual_load:
 			self.session.openWithCallback(self.setEpgLoad, MessageBox,_("Are you sure you want to load the EPG data from:\n") + config.misc.epgcache_filename.value, MessageBox.TYPE_YESNO)
 		if sel == config.plugins.epgrefresh_extra.manual_reload:
@@ -341,19 +341,19 @@ class ManualEPGlist(Screen):
 
 	def showMenu(self):
 		list = []
-		list.append(_("Manual save EPG"))
-		list.append(_("Manual load EPG"))
-		list.append(_("Manual reload EPG"))
+		list.append(_("Manually save EPG"))
+		list.append(_("Manually load EPG"))
+		list.append(_("Manually reload EPG"))
 		list.append(_("Configuration..."))
 		self["list"].setList(list)
 
 	def okClicked(self):
 		sel = self["list"].getCurrent()
-		if sel == _("Manual save EPG"):
-			self.session.openWithCallback(self.manualsetEpgSave, MessageBox,_("Are you sure you want to save the EPG Cache to:\n") + config.misc.epgcache_filename.value, MessageBox.TYPE_YESNO)
-		if sel == _("Manual load EPG"):
+		if sel == _("Manually save EPG"):
+			self.session.openWithCallback(self.manualsetEpgSave, MessageBox,_("Are you sure you want to save the EPG cache to:\n") + config.misc.epgcache_filename.value, MessageBox.TYPE_YESNO)
+		if sel == _("Manually load EPG"):
 			self.session.openWithCallback(self.manualsetEpgLoad, MessageBox,_("Are you sure you want to load the EPG data from:\n") + config.misc.epgcache_filename.value, MessageBox.TYPE_YESNO)
-		if sel == _("Manual reload EPG"):
+		if sel == _("Manually reload EPG"):
 			self.session.openWithCallback(self.manualsetEpgReload, MessageBox,_("Are you sure you want to save and load the EPG data from:\n") + config.misc.epgcache_filename.value, MessageBox.TYPE_YESNO)
 		if sel == _("Configuration..."):
 			self.session.open(EPGSaveLoadConfiguration)

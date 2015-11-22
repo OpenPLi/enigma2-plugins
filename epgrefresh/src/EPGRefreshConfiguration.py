@@ -84,7 +84,7 @@ class EPGRefreshConfiguration(Screen, ConfigListScreen):
 		Screen.__init__(self, session)
 
 		# Summary
-		self.setup_title = _("EPGRefresh Configuration")
+		self.setup_title = _("EPGRefresh configuration")
 		self.onChangedEntry = []
 
 		# Although EPGRefresh keeps services in a Set we prefer a list
@@ -94,25 +94,25 @@ class EPGRefreshConfiguration(Screen, ConfigListScreen):
 		)
 
 		self.list = [
-			getConfigListEntry(_("Setup save / load EPG"), config.plugins.epgrefresh.setup_epg, _("Press button OK in order to open the settings menu.")),
-			getConfigListEntry(_("Refresh EPG automatically"), config.plugins.epgrefresh.enabled, _("Unless this is enabled, EPGRefresh won't automatically run but needs to be explicitly started by the yellow button in this menu.")),
-			getConfigListEntry(_("Show in extension menu"), config.plugins.epgrefresh.show_in_extensionsmenu, _("Enable this to be able to access the EPGRefresh configuration from within the extension menu.")),
-			getConfigListEntry(_("Show \"add to EPGRefresh\" in"), config.plugins.epgrefresh.add_to_refresh, _("Select menu to add services to the EPGRefresh.")),
-			getConfigListEntry(_("Show popup when refresh starts and ends"), config.plugins.epgrefresh.enablemessage, _("This setting controls whether or not an informational message will be shown at start and completion of refresh.")),
-			getConfigListEntry(_("Wake up from deep standby for EPG refresh"), config.plugins.epgrefresh.wakeup, _("If this is enabled, the plugin will wake up the receiver from deep standby if possible. Otherwise it needs to be switched on already.")),
-			getConfigListEntry(_("Choice days for refresh"), config.plugins.epgrefresh.day_profile, _("Select the day or days of the week for automatic refresh EPG. At least one day must be included.")),
-			getConfigListEntry(_("Duration to stay on service (seconds)"), config.plugins.epgrefresh.interval_seconds, _("This is the duration each service/channel will stay active during a refresh.")),
-			getConfigListEntry(_("EPG refresh auto-start earliest (hh:mm)"), config.plugins.epgrefresh.begin, _("An automated refresh will start after this time of day, but before the time specified in next setting.")),
-			getConfigListEntry(_("EPG refresh auto-start latest (hh:mm)"), config.plugins.epgrefresh.end, _("An automated refresh will start before this time of day, but after the time specified in previous setting.")),
-			getConfigListEntry(_("Delay if not in standby (minutes)"), config.plugins.epgrefresh.delay_standby, _("If the receiver currently isn't in standby, this is the duration which EPGRefresh will wait before retry.")),
-			getConfigListEntry(_("Force scan even if receiver is in use"), config.plugins.epgrefresh.force, _("This setting controls whether or not the refresh will be initiated even though the receiver is active (either not in standby or currently recording).")),
-			getConfigListEntry(_("Shutdown after EPG refresh"), config.plugins.epgrefresh.afterevent, _("This setting controls whether the receiver should be set to deep standby after refresh is completed.")),
-			getConfigListEntry(_("Save EPG after refresh"), config.plugins.epgrefresh.save_epg, _("Save EPG in current cachefile after refresh is completed.")),
-			getConfigListEntry(_("Show 'EPG-refresh now' in main menu"), config.plugins.epgrefresh.start_on_mainmenu, _("If enabled, show 'EPG-refresh now' in main menu if refresh now not running.")),
-			getConfigListEntry(_("Show 'Stop Running EPG-refresh' in main menu"), config.plugins.epgrefresh.stop_on_mainmenu, _("If enabled, 'Stop Running EPG-refresh' will not be displayed in main menu when refresh is running.")),
+			getConfigListEntry(_("Setup save / load EPG"), config.plugins.epgrefresh.setup_epg, _("Press the OK button to open the save / load EPG (+ configuration) menu.")),
+			getConfigListEntry(_("Refresh EPG automatically"), config.plugins.epgrefresh.enabled, _("EPGRefresh needs to be explicitly started using the yellow button in this menu if this option is not enabled")),
+			getConfigListEntry(_("Show in extensions menu"), config.plugins.epgrefresh.show_in_extensionsmenu, _("Enable this to show the EPGRefresh configuration menu in the extension menu.")),
+			getConfigListEntry(_("Show \"add to EPGRefresh\" in"), config.plugins.epgrefresh.add_to_refresh, _("Select this item to add services to the EPGRefresh.")),
+			getConfigListEntry(_("Show popup when refresh starts or ends"), config.plugins.epgrefresh.enablemessage, _("Enable this to show an informational message at the start and completion of the refresh.")),
+			getConfigListEntry(_("Wake up from deep standby"), config.plugins.epgrefresh.wakeup, _("Enable this item to wake up the receiver from deep standby (if possible).")),
+			getConfigListEntry(_("Choice days for refresh"), config.plugins.epgrefresh.day_profile, _("Select the days of the week for automatic refresh.")),
+			getConfigListEntry(_("Timespan to remain on service (in seconds)"), config.plugins.epgrefresh.interval_seconds, _("This is the duration each service/channel will be tuned to during a refresh.")),
+			getConfigListEntry(_("EPG refresh auto-start earliest (hh:mm)"), config.plugins.epgrefresh.begin, _("Automated refresh will start after this time of day, but before the time specified in next setting.")),
+			getConfigListEntry(_("EPG refresh auto-start latest (hh:mm)"), config.plugins.epgrefresh.end, _("Automated refresh will start before this time of day, but after the time specified in previous setting.")),
+			getConfigListEntry(_("Delay if not in standby (in minutes)"), config.plugins.epgrefresh.delay_standby, _("The duration that will be waited for the receiver to go into standby.")),
+			getConfigListEntry(_("Force scan even if receiver is in use"), config.plugins.epgrefresh.force, _("Don't wait for the receiver to go into standby when starting a refresh cycle.")),
+			getConfigListEntry(_("Shutdown after EPG refresh"), config.plugins.epgrefresh.afterevent, _("Whether the receiver should go into deep standby after refresh is completed.")),
+			getConfigListEntry(_("Save EPG after refresh"), config.plugins.epgrefresh.save_epg, _("Save EPG in the cache file after refresh is completed.")),
+			getConfigListEntry(_("Show 'EPGRefresh now' in main menu"), config.plugins.epgrefresh.start_on_mainmenu, _("If enabled, show 'EPGRefresh now' in main menu when currently no EPGRefresh is running.")),
+			getConfigListEntry(_("Show 'Stop running EPGRefresh' in main menu"), config.plugins.epgrefresh.stop_on_mainmenu, _("If enabled, show 'Stop running EPGRefresh' in main menu when EPGPRefresh is running.")),
 				]
 		if SystemInfo.get("NumVideoDecoders", 1) > 1:
-			self.list.insert(3, getConfigListEntry(_("Refresh EPG using"), config.plugins.epgrefresh.adapter, _("If you want to refresh the EPG in background, you can choose the method which best suits your needs here, e.g. hidden, fake reocrding or regular Picture in Picture.")))
+			self.list.insert(3, getConfigListEntry(_("Refresh EPG using"), config.plugins.epgrefresh.adapter, _("If you want to refresh the EPG in background, you can choose the method which best suits your needs here, e.g. hidden, fake recording or regular Picture in Picture.")))
 		if config.ParentalControl.servicepinactive.value:
 			self.list.append(getConfigListEntry(_("Skip protected Services"), config.plugins.epgrefresh.skipProtectedServices, _("Select mode the refresh for services/bouquets parental control.")))
 		try:

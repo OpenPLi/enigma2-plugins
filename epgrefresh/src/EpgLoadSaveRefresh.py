@@ -146,7 +146,7 @@ class EpgCacheSaveCheckPoller:
 
 class EpgSaveMsg(MessageBox):
 	def __init__(self, session):
-		MessageBox.__init__(self, session, _("Are you sure you want to save the EPG Cache to:\n") + config.misc.epgcache_filename.getValue(), MessageBox.TYPE_YESNO)
+		MessageBox.__init__(self, session, _("Are you sure you want to save the EPG cache to:\n") + config.misc.epgcache_filename.getValue(), MessageBox.TYPE_YESNO)
 		self.skinName = "MessageBox"
 
 class EpgLoadMsg(MessageBox):
