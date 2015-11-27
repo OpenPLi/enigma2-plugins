@@ -1,0 +1,51 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Seekbar\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-11-28 00:00+0000\n"
+"PO-Revision-Date: 2015-11-28 00:00+0200\n"
+"Last-Translator: Dimitrij <dima-73@inbox.lv>\n"
+"Language-Team: Dimitrij PLi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Russian\n"
+"X-Poedit-Country: RUSSIA\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+#: plugin.py:96
+msgid "Bitrate"
+msgstr "Битрейт"
+
+#: plugin.py:153
+msgid "Default values for trancoding"
+msgstr "Дефолтные значения для транскодирования"
+
+#: plugin.py:159
+msgid "It seems your receiver is not supported!"
+msgstr "Кажется, Ваш ресивер не поддерживается!"
+
+#: plugin.py:156
+msgid "Not found file '/etc/enigma2/streamproxy.conf' !"
+msgstr "Не найден файл'/etc/enigma2/streamproxy.conf' !"
+
+#: plugin.py:150
+msgid "Quit"
+msgstr "Отменить"
+
+#: plugin.py:151
+msgid "Set"
+msgstr "Установить"
+
+#: plugin.py:233
+msgid "Set up default transcoding parameters"
+msgstr "Установка дефолтных параметров транскодирования"
+
+#: plugin.py:47 plugin.py:227
+msgid "Transcoding Setup"
+msgstr "Настройки транскодирования"
+
+#: plugin.py:97
+msgid "Video size"
+msgstr "Размер видео"
+
