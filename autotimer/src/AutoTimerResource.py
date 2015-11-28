@@ -406,11 +406,19 @@ class AutoTimerAddOrEditAutoTimerResource(AutoTimerBaseResource):
 			except ValueError: conflict_detection = conflict_detection == "yes"
 			timer.conflict_detection = conflict_detection
 
+		# Always zap
+		timer.always_zap = get("always_zap", timer.always_zap)
+
+		# Zap wakeup
+		timer.zap_wakeup = get("zap_wakeup", timer.zap_wakeup)
+
 		if newTimer:
 			autotimer.add(timer)
 			message = _("AutoTimer was added successfully")
 		else:
 			message = _("AutoTimer was changed successfully")
+
+		autotimer.writeXml()
 
 		return self.returnResult(req, True, message)
 
