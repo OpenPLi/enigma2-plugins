@@ -113,6 +113,12 @@ def parseEntry(element, baseTimer, defaults = False):
 	baseTimer.conflict_detection = True if conflict_detection == "yes" else False
 	del conflict_detection
 
+	# Read always_zap
+	baseTimer.always_zap = int(element.get("always_zap", 0))
+
+	# Read zap_wakeup
+	baseTimer.zap_wakeup = element.get("zap_wakeup", "always")
+
 	# Read out encoding (won't change if no value is set)
 	baseTimer.encoding = element.get("encoding")
 
@@ -600,6 +606,14 @@ def buildConfig(defaultTimer, timers, webif = False):
 	if not defaultTimer.conflict_detection:
 		append(' conflict_detection="no"')
 
+	# Only add always zap related entry if true
+	if defaultTimer.always_zap:
+		append(' always_zap="1"')
+
+	# Only add zap wakeup entry if justplay is true
+	if defaultTimer.justplay:
+		extend((' zap_wakeup="', str(defaultTimer.zap_wakeup), '"'))
+
 	# Close still opened defaults tag
 	append('>\n')
 
@@ -755,6 +769,14 @@ def buildConfig(defaultTimer, timers, webif = False):
 		# Only add conflict detection related entry if False
 		if not timer.conflict_detection:
 			append(' conflict_detection="no"')
+
+		# Only add always zap related entry if true
+		if timer.always_zap:
+			append(' always_zap="1"')
+
+		# Only add zap wakeup entry if justplay is true
+		if timer.justplay:
+			extend((' zap_wakeup="', str(timer.zap_wakeup), '"'))
 
 		# Close still opened timer tag
 		append('>\n')

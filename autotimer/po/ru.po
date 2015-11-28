@@ -1263,11 +1263,35 @@ msgstr "переключение"
 msgid "Remove not existing events"
 msgstr "Удалять не существующие события"
 
-msgid "Check the event id (eit) and remove the timer if event not exists in EPG."
-msgstr "Проверка идентификатора события (eit) и удаление таймера, если событие не существует в EPG."
+msgid "Check the event id (eit) and remove the timer if there is no corresponding EPG event. Due to compatible issues with SerienRecorder and IPRec, only timer created by AutoTimer are affected."
+msgstr "Проверка идентификатора события (eit) и удаление таймера, если нет соответствующего события EPG. Не совместим с SerienRecorder и IPRec, это затрагивает только таймеры созданные Автотаймером."
 
 msgid "This option allows you to turn off the timer confict detection. This option is for advanced users."
 msgstr "При использовании дистанционного резервного тюнера для записей, обнаружение конфликтов таймеров не может сделать исключение для резервного тюнера. Эта опция позволяет отключить обнаружение конфликтов для этого таймера. Не рекомендуется!"
 
 msgid "Enable timer conflict detection"
 msgstr "Включить обнаружение конфликтов таймера"
+
+msgid "Wakeup receiver for start timer"
+msgstr "Разбудить ресивер для старта таймера"
+
+msgid "Set wakeup receiver type. This works only for zap timers."
+msgstr "Установите тип пробуждения ресивера. Это работает только для таймеров переключения."
+
+msgid "Set timer type: zap, simple record, zap+record (always zap to service before start record)."
+msgstr "Установите тип таймера: переключение, простая запись, переключение+запись (всегда переключать на сервис перед стартом записи)."
+
+msgid "zap and record"
+msgstr "переключение и запись"
+
+msgid "always"
+msgstr "всегда"
+
+msgid "only from standby"
+msgstr "только из режима ожидания"
+
+msgid "only from deep standby"
+msgstr "только из режима глубокого ожидания"
+
+msgid "never"
+msgstr "никогда"

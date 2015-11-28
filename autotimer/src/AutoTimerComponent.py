@@ -52,8 +52,8 @@ class AutoTimerComponent(object):
 			matchLimit='', matchFormatString='', lastBegin=0, justplay=False, \
 			avoidDuplicateDescription=0, searchForDuplicateDescription=2, bouquets=None, \
 			tags=None, encoding=None, searchType="partial", searchCase="insensitive", \
-			overrideAlternatives=False, timeframe=None, vps_enabled=False, \
-			vps_overwrite=False, setEndtime=False, series_labeling=False, conflict_detection=True):
+			overrideAlternatives=False, timeframe=None, vps_enabled=False, vps_overwrite=False, setEndtime=False, \
+			always_zap=False, zap_wakeup="always", series_labeling=False, conflict_detection=True):
 		self.name = name
 		self.match = match
 		self.enabled = enabled
@@ -80,6 +80,8 @@ class AutoTimerComponent(object):
 		self.searchCase = searchCase
 		self.overrideAlternatives = overrideAlternatives
 		self.timeframe = timeframe
+		self.always_zap = always_zap
+		self.zap_wakeup = zap_wakeup
 		self.vps_enabled = vps_enabled
 		self.vps_overwrite = vps_overwrite
 		self.series_labeling = series_labeling
@@ -538,6 +540,8 @@ class AutoTimerComponent(object):
 			searchCase = self.searchCase,
 			overrideAlternatives = self.overrideAlternatives,
 			timeframe = self.timeframe,
+			always_zap = self.always_zap,
+			zap_wakeup = self.zap_wakeup,
 			vps_enabled = self.vps_enabled,
 			vps_overwrite = self.vps_overwrite,
 			series_labeling = self.series_labeling,
@@ -573,6 +577,8 @@ class AutoTimerComponent(object):
 			searchCase = self.searchCase,
 			overrideAlternatives = self.overrideAlternatives,
 			timeframe = self.timeframe,
+			always_zap = self.always_zap,
+			zap_wakeup = self.zap_wakeup,
 			vps_enabled = self.vps_enabled,
 			vps_overwrite = self.vps_overwrite,
 			series_labeling = self.series_labeling,
@@ -631,6 +637,8 @@ class AutoTimerComponent(object):
 					str(self.tags),
 					str(self.overrideAlternatives),
 					str(self.timeframe),
+					str(self.always_zap),
+					str(self.zap_wakeup),
 					str(self.vps_enabled),
 					str(self.vps_overwrite),
 					str(self.series_labeling),
