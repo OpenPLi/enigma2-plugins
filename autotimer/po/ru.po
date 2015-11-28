@@ -1263,8 +1263,8 @@ msgstr "переключение"
 msgid "Remove not existing events"
 msgstr "Удалять не существующие события"
 
-msgid "Check the event id (eit) and remove the timer if event not exists in EPG."
-msgstr "Проверка идентификатора события (eit) и удаление таймера, если событие не существует в EPG."
+msgid "Check the event id (eit) and remove the timer if there is no corresponding EPG event. Not compatible with SerienRecorder and IPRec."
+msgstr "Проверка идентификатора события (eit) и удаление таймера, если нет соответствующего события EPG. Не совместим с SerienRecorder и IPRec."
 
 msgid "This option allows you to turn off the timer confict detection. This option is for advanced users."
 msgstr "При использовании дистанционного резервного тюнера для записей, обнаружение конфликтов таймеров не может сделать исключение для резервного тюнера. Эта опция позволяет отключить обнаружение конфликтов для этого таймера. Не рекомендуется!"
