@@ -184,8 +184,11 @@ class AutoTimerEditorBase:
 		self.overrideAlternatives = NoSave(ConfigYesNo(default = timer.overrideAlternatives))
 
 		# Justplay
-		self.justplay = NoSave(ConfigSelection(choices = [("zap", _("zap")), ("record", _("record"))], default = {0: "record", 1: "zap"}[int(timer.justplay)]))
+		self.justplay = NoSave(ConfigSelection(choices = [("zap", _("zap")), ("record", _("record")), ("zap+record", _("zap and record"))], default = {0: "record", 1: "zap", 2: "zap+record"}[int(timer.justplay) + 2*int(timer.always_zap)]))
 		self.setEndtime = NoSave(ConfigYesNo(default=timer.setEndtime))
+
+		# Zap wakeup
+		self.zap_wakeup = NoSave(ConfigSelection(choices = [("always", _("always")), ("from_standby", _("only from standby")), ("from_deep_standby", _("only from deep standby")), ("never", _("never"))], default = timer.zap_wakeup))
 
 		# Timespan
 		now = [x for x in localtime()]
@@ -452,6 +455,7 @@ class AutoTimerEditor(Screen, ConfigListScreen, AutoTimerEditorBase):
 
 		# We might need to change shown items, so add some notifiers
 		self.justplay.addNotifier(self.reloadList, initial_call = False)
+		self.zap_wakeup.addNotifier(self.reloadList, initial_call = False)
 		self.timespan.addNotifier(self.reloadList, initial_call = False)
 		self.timeframe.addNotifier(self.reloadList, initial_call = False)
 		self.offset.addNotifier(self.reloadList, initial_call = False)
@@ -562,7 +566,8 @@ class AutoTimerEditor(Screen, ConfigListScreen, AutoTimerEditorBase):
 			self.encoding: _("Encoding the channel uses for it's EPG data. You only need to change this if you're searching for special characters like the german umlauts."),
 			self.searchType: _("Select \"exact match\" to enforce \"Match title\" to match exactly, \"partial match\" if you only want to search for a part of the event title or \"description match\" if you only want to search for a part of the event description"),
 			self.searchCase: _("Select whether or not you want to enforce case correctness."),
-			self.justplay: _("Add zap timer instead of record timer?"),
+			self.justplay: _("Set timer type: zap, simple record, zap+record (always zap to service before start record)."),
+			self.zap_wakeup: _("Set wakeup receiver type. This works only for zap timers."),
 			self.setEndtime: _("Set an end time for the timer. If you do, the timespan of the event might be blocked for recordings."),
 			self.overrideAlternatives: _("With this option enabled the channel to record on can be changed to a alternative service it is restricted to."),
 			self.timespan: _("Should this AutoTimer be restricted to a timespan?"),
@@ -614,6 +619,7 @@ class AutoTimerEditor(Screen, ConfigListScreen, AutoTimerEditorBase):
 		))
 		if self.justplay.value == "zap":
 			list.append(getConfigListEntry(_("Set End Time"), self.setEndtime))
+			list.append(getConfigListEntry(_("Wakeup receiver for start timer"), self.zap_wakeup))
 		list.extend((
 			getConfigListEntry(_("Override found with alternative service"), self.overrideAlternatives),
 			getConfigListEntry(_("Only match during timespan"), self.timespan)
@@ -949,6 +955,10 @@ class AutoTimerEditor(Screen, ConfigListScreen, AutoTimerEditorBase):
 		self.timer.series_labeling = self.series_labeling.value
 
 		self.timer.conflict_detection = self.conflict_detection.value
+
+		self.timer.always_zap = self.justplay.value == "zap+record"
+
+		self.timer.zap_wakeup = self.zap_wakeup.value
 
 		# Close
 		self.close(self.timer)

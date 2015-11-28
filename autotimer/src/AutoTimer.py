@@ -505,6 +505,8 @@ class AutoTimer:
 			newEntry.vpsplugin_enabled = timer.vps_enabled
 			newEntry.vpsplugin_overwrite = timer.vps_overwrite
 			newEntry.conflict_detection = timer.conflict_detection
+			newEntry.always_zap = timer.always_zap
+			newEntry.zap_wakeup = timer.zap_wakeup
 
 			tags = timer.tags[:]
 			if config.plugins.autotimer.add_autotimer_to_tags.value:
