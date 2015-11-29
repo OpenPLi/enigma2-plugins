@@ -450,6 +450,7 @@ trafficinfo/src/Makefile
 
 transcodingsetup/Makefile
 transcodingsetup/src/Makefile
+transcodingsetup/po/Makefile
 transcodingsetup/meta/Makefile
 
 tvcharts/Makefile
