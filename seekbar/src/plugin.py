@@ -1,7 +1,7 @@
 ##
 ## Seekbar
 ## by AliAbdul
-##
+
 from Components.ActionMap import ActionMap
 from Components.config import config, ConfigInteger, ConfigNumber, ConfigSelection, ConfigSubsection, ConfigYesNo, getConfigListEntry
 from Components.ConfigList import ConfigListScreen
@@ -11,8 +11,8 @@ from Components.Pixmap import MovingPixmap
 from enigma import eTimer
 from keyids import KEYIDS
 from os import environ
-from Screens.InfoBar import MoviePlayer
 from Screens.Screen import Screen
+from Screens.InfoBar import MoviePlayer, InfoBar
 from Tools.Directories import fileExists, resolveFilename, SCOPE_LANGUAGE, SCOPE_PLUGINS
 from Tools.KeyBindings import addKeyBinding
 import gettext, keymapparser
@@ -59,10 +59,43 @@ class Seekbar(ConfigListScreen, Screen):
 		self.session = session
 		self.infobarInstance = instance
 		self.fwd = fwd
-		if isinstance(session.current_dialog, MoviePlayer):
-			self.dvd = False
-		else:
-			self.dvd = True
+		self.movie = isinstance(session.current_dialog, MoviePlayer)
+		try:
+			self.media_player = isinstance(session.current_dialog, MediaPlayer)
+		except:
+			self.media_player = False
+		try:
+			self.dvd_pli = isinstance(session.current_dialog, DVDPlayer)
+		except:
+			self.dvd_pli = False
+		try:
+			self.old_dvd = isinstance(session.current_dialog, DVDPlayer2)
+		except:
+			self.old_dvd = False
+		try:
+			self.ytube = isinstance(session.current_dialog, YouTubePlayer)
+		except:
+			self.ytube = False
+		try:
+			self.tmbd_trailer = isinstance(session.current_dialog, tmbdTrailerPlayer)
+		except:
+			self.tmbd_trailer = False
+		try:
+			self.vod = isinstance(session.current_dialog, nVODplayer)
+		except:
+			self.vod = False
+		try:
+			self.yamp_player = isinstance(session.current_dialog, YampScreen)
+		except:
+			self.yamp_player = False
+		try:
+			self.seasondream = isinstance(session.current_dialog, Player)
+		except:
+			self.seasondream = False
+		try:
+			self.timeshift = isinstance(session.current_dialog, InfoBar)
+		except:
+			self.timeshift = False
 		self.percent = 0.0
 		self.length = None
 		service = session.nav.getCurrentService()
@@ -118,25 +151,103 @@ class Seekbar(ConfigListScreen, Screen):
 		sel = self["config"].getCurrent()[1]
 		if sel == self.positionEntry:
 			if self.length:
-				if self.dvd: # seekTo() doesn't work for DVD Player
+				if self.old_dvd: # seekTo() doesn't work for DVD Player
 					oldPosition = self.seek.getPlayPosition()[1]
 					newPosition = int(float(self.length[1]) / 100.0 * self.percent)
 					if newPosition > oldPosition:
 						pts = newPosition - oldPosition
 					else:
 						pts = -1*(oldPosition - newPosition)
+					DVDPlayer2.doSeekRelative(self.infobarInstance, pts)
+				elif self.media_player:
+					oldPosition = self.seek.getPlayPosition()[1]
+					newPosition = int(float(self.length[1]) / 100.0 * self.percent)
+					if newPosition > oldPosition:
+						pts = newPosition - oldPosition
+					else:
+						pts = -1 * (oldPosition - newPosition)
+					MediaPlayer.doSeekRelative(self.infobarInstance, pts)
+				elif self.dvd_pli:
+					oldPosition = self.seek.getPlayPosition()[1]
+					newPosition = int(float(self.length[1]) / 100.0 * self.percent)
+					if newPosition > oldPosition:
+						pts = newPosition - oldPosition
+					else:
+						pts = -1 * (oldPosition - newPosition)
 					DVDPlayer.doSeekRelative(self.infobarInstance, pts)
-				else:
+				elif self.ytube:
+					oldPosition = self.seek.getPlayPosition()[1]
+					newPosition = int(float(self.length[1]) / 100.0 * self.percent)
+					if newPosition > oldPosition:
+						pts = newPosition - oldPosition
+					else:
+						pts = -1 * (oldPosition - newPosition)
+					YouTubePlayer.doSeekRelative(self.infobarInstance, pts)
+				elif self.tmbd_trailer:
+					oldPosition = self.seek.getPlayPosition()[1]
+					newPosition = int(float(self.length[1]) / 100.0 * self.percent)
+					if newPosition > oldPosition:
+						pts = newPosition - oldPosition
+					else:
+						pts = -1 * (oldPosition - newPosition)
+					tmbdTrailerPlayer.doSeekRelative(self.infobarInstance, pts)
+				elif self.vod:
+					oldPosition = self.seek.getPlayPosition()[1]
+					newPosition = int(float(self.length[1]) / 100.0 * self.percent)
+					if newPosition > oldPosition:
+						pts = newPosition - oldPosition
+					else:
+						pts = -1 * (oldPosition - newPosition)
+					nVODplayer.doSeekRelative(self.infobarInstance, pts)
+				elif self.yamp_player:
+					oldPosition = self.seek.getPlayPosition()[1]
+					newPosition = int(float(self.length[1]) / 100.0 * self.percent)
+					if newPosition > oldPosition:
+						pts = newPosition - oldPosition
+					else:
+						pts = -1 * (oldPosition - newPosition)
+					YampScreen.doSeekRelative(self.infobarInstance, pts)
+				elif self.seasondream:
+					oldPosition = self.seek.getPlayPosition()[1]
+					newPosition = int(float(self.length[1]) / 100.0 * self.percent)
+					if newPosition > oldPosition:
+						pts = newPosition - oldPosition
+					else:
+						pts = -1 * (oldPosition - newPosition)
+					Player.doSeekRelative(self.infobarInstance, pts)
+				elif self.movie:
 					self.seek.seekTo(int(float(self.length[1]) / 100.0 * self.percent))
+				elif self.timeshift:
+					self.seek.seekTo(int(float(self.length[1]) / 100.0 * self.percent))
+				else:
+					pass
 				self.exit()
 		elif sel == self.minuteInput:
 			pts = self.minuteInput.value * 60 * 90000
 			if self.fwd == False:
 				pts = -1*pts
-			if self.dvd:
+			if self.old_dvd:
+				DVDPlayer2.doSeekRelative(self.infobarInstance, pts)
+			elif self.media_player:
+				MediaPlayer.doSeekRelative(self.infobarInstance, pts)
+			elif self.dvd_pli:
 				DVDPlayer.doSeekRelative(self.infobarInstance, pts)
-			else:
+			elif self.ytube:
+				YouTubePlayer.doSeekRelative(self.infobarInstance, pts)
+			elif self.tmbd_trailer:
+				tmbdTrailerPlayer.doSeekRelative(self.infobarInstance, pts)
+			elif self.vod:
+				nVODplayer.doSeekRelative(self.infobarInstance, pts)
+			elif self.yamp_player:
+				YampScreen.doSeekRelative(self.infobarInstance, pts)
+			elif self.seasondream:
+				Player.doSeekRelative(self.infobarInstance, pts)
+			elif self.movie:
 				MoviePlayer.doSeekRelative(self.infobarInstance, pts)
+			elif self.timeshift:
+				InfoBar.doSeekRelative(self.infobarInstance, pts)
+			else:
+				pass
 			self.exit()
 
 	def keyLeft(self):
@@ -176,12 +287,82 @@ def seekbarBack(instance):
 
 MoviePlayer.seekFwdManual = seekbar
 MoviePlayer.seekBackManual = seekbarBack
+InfoBar.seekFwdManual = seekbar
+InfoBar.seekBackManual = seekbarBack
+if fileExists("/usr/lib/enigma2/python/Screens/DVD.pyo"):
+	try:
+		from Screens.DVD import DVDPlayer
+	except:
+		pass
+	else:
+		DVDPlayer.seekFwdManual = seekbar
+		DVDPlayer.seekBackManual = seekbarBack
 
-dvdPlayer = "%s%s"%(resolveFilename(SCOPE_PLUGINS), "Extensions/DVDPlayer/plugin.py")
-if fileExists(dvdPlayer) or fileExists("%sc"%dvdPlayer):
-	from Plugins.Extensions.DVDPlayer.plugin import DVDPlayer
-	DVDPlayer.seekFwdManual = seekbar
-	DVDPlayer.seekBackManual = seekbarBack
+dvdPlayer = "%s%s" % (resolveFilename(SCOPE_PLUGINS), "Extensions/DVDPlayer/plugin.pyo")
+dvdPlayerKeymap = "%s%s" % (resolveFilename(SCOPE_PLUGINS), "Extensions/DVDPlayer/keymap.xml")
+if fileExists(dvdPlayer) and fileExists(dvdPlayerKeymap):
+	try:
+		from Plugins.Extensions.DVDPlayer.plugin import DVDPlayer as DVDPlayer2
+	except:
+		pass
+	else:
+		DVDPlayer2.seekFwdManual = seekbar
+		DVDPlayer2.seekBackManual = seekbarBack
+mediaplayer = '%s%s' % (resolveFilename(SCOPE_PLUGINS), 'Extensions/MediaPlayer/plugin.pyo')
+if fileExists(mediaplayer) and fileExists("%so" % mediaplayer):
+	try:
+		from Plugins.Extensions.MediaPlayer.plugin import MediaPlayer
+	except:
+		pass
+	else:
+		MediaPlayer.seekFwdManual = seekbar
+		MediaPlayer.seekBackManual = seekbarBack
+youTubePlayer = '%s%s' % (resolveFilename(SCOPE_PLUGINS), 'Extensions/YouTube/plugin.pyo')
+youTubePlayerUi = '%s%s' % (resolveFilename(SCOPE_PLUGINS), 'Extensions/YouTube/YouTubeUi.pyo')
+if fileExists(youTubePlayer) and fileExists(youTubePlayerUi):
+	try:
+		from Plugins.Extensions.YouTube.YouTubeUi import YouTubePlayer
+	except:
+		pass
+	else:
+		YouTubePlayer.seekFwdManual = seekbar
+		YouTubePlayer.seekBackManual = seekbarBack
+tmbd = '%s%s' % (resolveFilename(SCOPE_PLUGINS), 'Extensions/TMBD/plugin.pyo')
+if fileExists(tmbd):
+	try:
+		from Plugins.Extensions.TMBD.tmbdYTTrailer import tmbdTrailerPlayer
+	except:
+		pass
+	else:
+		tmbdTrailerPlayer.seekFwdManual = seekbar
+		tmbdTrailerPlayer.seekBackManual = seekbarBack
+nStreamVODPlayer = '%s%s' % (resolveFilename(SCOPE_PLUGINS), 'Extensions/nStreamVOD/plugin.pyo')
+if fileExists(nStreamVODPlayer):
+	try:
+		from Plugins.Extensions.nStreamVOD.plugin import nVODplayer
+	except:
+		pass
+	else:
+		nVODplayer.seekFwdManual = seekbar
+		nVODplayer.seekBackManual = seekbarBack
+yampMusicPlayer = '%s%s' % (resolveFilename(SCOPE_PLUGINS), 'Extensions/YampMusicPlayer/plugin.pyo')
+if fileExists(yampMusicPlayer):
+	try:
+		from Plugins.Extensions.YampMusicPlayer.Yamp import YampScreen
+	except:
+		pass
+	else:
+		YampScreen.seekFwdManual = seekbar
+		YampScreen.seekBackManual = seekbarBack
+seasondreamPlayer = '%s%s' % (resolveFilename(SCOPE_PLUGINS), 'Extensions/Seasondream/plugin.pyo')
+if fileExists(seasondreamPlayer):
+	try:
+		from Plugins.Extensions.Seasondream.Player import Player
+	except:
+		pass
+	else:
+		Player.seekFwdManual = seekbar
+		Player.seekBackManual = seekbarBack
 
 ##############################################
 # This hack puts the functions seekFwdManual and seekBackManual to the maped keys to seekbarRight and seekbarLeft
