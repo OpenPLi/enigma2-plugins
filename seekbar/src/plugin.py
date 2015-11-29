@@ -59,71 +59,41 @@ class Seekbar(ConfigListScreen, Screen):
 		self.session = session
 		self.infobarInstance = instance
 		self.fwd = fwd
-		if isinstance(session.current_dialog, MoviePlayer):
-			self.movie = True
-		else:
-			self.movie = False
+		self.movie = isinstance(session.current_dialog, MoviePlayer)
 		try:
-			if isinstance(session.current_dialog, MediaPlayer):
-				self.media_player = True
-			else:
-				self.media_player = False
+			self.media_player = isinstance(session.current_dialog, MediaPlayer)
 		except:
 			self.media_player = False
 		try:
-			if isinstance(session.current_dialog, DVDPlayer):
-				self.dvd_pli = True
-			else:
-				self.dvd_pli = False
+			self.dvd_pli = isinstance(session.current_dialog, DVDPlayer)
 		except:
 			self.dvd_pli = False
 		try:
-			if isinstance(session.current_dialog, DVDPlayer2):
-				self.old_dvd = True
-			else:
-				self.old_dvd = False
+			self.old_dvd = isinstance(session.current_dialog, DVDPlayer2)
 		except:
 			self.old_dvd = False
 		try:
-			if isinstance(session.current_dialog, YouTubePlayer):
-				self.ytube = True
-			else:
-				self.ytube = False
+			self.ytube = isinstance(session.current_dialog, YouTubePlayer)
 		except:
 			self.ytube = False
 		try:
-			if isinstance(session.current_dialog, tmbdTrailerPlayer):
-				self.tmbd_trailer = True
-			else:
-				self.tmbd_trailer = False
+			self.tmbd_trailer = isinstance(session.current_dialog, tmbdTrailerPlayer)
 		except:
 			self.tmbd_trailer = False
 		try:
-			if isinstance(session.current_dialog, nVODplayer):
-				self.vod = True
-			else:
-				self.vod = False
+			self.vod = isinstance(session.current_dialog, nVODplayer)
 		except:
 			self.vod = False
 		try:
-			if isinstance(session.current_dialog, YampScreen):
-				self.yamp_player = True
-			else:
-				self.yamp_player = False
+			self.yamp_player = isinstance(session.current_dialog, YampScreen)
 		except:
 			self.yamp_player = False
 		try:
-			if isinstance(session.current_dialog, Player):
-				self.seasondream = True
-			else:
-				self.seasondream = False
+			self.seasondream = isinstance(session.current_dialog, Player)
 		except:
 			self.seasondream = False
 		try:
-			if isinstance(session.current_dialog, InfoBar):
-				self.timeshift = True
-			else:
-				self.timeshift = False
+			self.timeshift = isinstance(session.current_dialog, InfoBar)
 		except:
 			self.timeshift = False
 		self.percent = 0.0
