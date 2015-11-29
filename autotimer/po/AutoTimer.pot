@@ -226,7 +226,7 @@ msgstr ""
 
 #: AutoTimerSettings.py:80
 msgid ""
-"Check the event id (eit) and remove the timer if there is no corresponding EPG event. Due to compatible issues with SerienRecorder and IPRec, only timer created by AutoTimer are affected."
+"Check the event id (eit) and remove the timer if there is no corresponding EPG event. Due to compatibility issues with SerienRecorder and IPRec, only timer created by AutoTimer are affected."
 msgstr ""
 
 #: plugin.py:201 plugin.py:205 plugin.py:278 plugin.py:292

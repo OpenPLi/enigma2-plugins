@@ -1263,7 +1263,7 @@ msgstr "переключение"
 msgid "Remove not existing events"
 msgstr "Удалять не существующие события"
 
-msgid "Check the event id (eit) and remove the timer if there is no corresponding EPG event. Due to compatible issues with SerienRecorder and IPRec, only timer created by AutoTimer are affected."
+msgid "Check the event id (eit) and remove the timer if there is no corresponding EPG event. Due to compatibility issues with SerienRecorder and IPRec, only timer created by AutoTimer are affected."
 msgstr "Проверка идентификатора события (eit) и удаление таймера, если нет соответствующего события EPG. Не совместим с SerienRecorder и IPRec, это затрагивает только таймеры созданные Автотаймером."
 
 msgid "This option allows you to turn off the timer confict detection. This option is for advanced users."
