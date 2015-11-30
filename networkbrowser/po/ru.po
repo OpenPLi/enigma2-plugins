@@ -132,6 +132,9 @@ msgstr "Менеджер сетевых подключений..."
 msgid "Mount again"
 msgstr "Монтировать еще раз"
 
+msgid "Mount view"
+msgstr "Просмотр монтирования"
+
 msgid "Mount informations"
 msgstr "Информация о монтировании"
 
@@ -191,7 +194,7 @@ msgid "Press OK to collapse this host"
 msgstr "Нажмите OK, чтобы свернуть хост."
 
 msgid "Press OK to edit selected settings."
-msgstr "ажмите OK, чтобы изменить выбранную настройку."
+msgstr "Нажмите OK, чтобы изменить выбранную настройку."
 
 msgid "Press OK to edit the settings."
 msgstr "Нажмите OK, чтобы изменить настройки."

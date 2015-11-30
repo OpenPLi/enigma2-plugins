@@ -36,7 +36,7 @@ class AC3LipSyncSetup(ConfigListScreen, Screen):
 
     def __init__(self, session, plugin_path):
         Screen.__init__(self, session)
-
+        self.setTitle(_("AC3 Lip Sync Setup"))
         # Lets get a list of elements for the config list
         self.list = [
             getConfigListEntry(_("Outer Bound (+/-)"), config.plugins.AC3LipSync.outerBounds),

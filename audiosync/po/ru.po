@@ -24,6 +24,9 @@ msgstr "Синхронизация аудио"
 msgid "Audio Sync Setup"
 msgstr "Настройки синхронизации аудио"
 
+msgid "AC3 Lip Sync Setup"
+msgstr "Настройки синхронизации AC3"
+
 msgid "Cancel"
 msgstr "Отмена"
 
