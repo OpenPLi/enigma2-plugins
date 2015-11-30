@@ -263,3 +263,6 @@ msgstr ""
 msgid "Setup for the Audio Sync Plugin"
 msgstr ""
 
+msgid "AC3 Lip Sync Setup"
+msgstr ""
+

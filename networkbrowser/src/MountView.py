@@ -46,6 +46,7 @@ class AutoMountView(Screen):
                 self.skin_path = plugin_path
                 self.session = session
                 Screen.__init__(self, session)
+                self.setTitle(_("Mount view"))
                 self.mounts = None
                 self.applyConfigRef = None
                 self["shortcuts"] = ActionMap(["ShortcutActions", "WizardActions"],

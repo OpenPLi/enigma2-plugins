@@ -330,3 +330,6 @@ msgstr ""
 #: ../src/MountEdit.py:187
 msgid "use as HDD replacement"
 msgstr ""
+
+msgid "Mount view"
+msgstr ""
