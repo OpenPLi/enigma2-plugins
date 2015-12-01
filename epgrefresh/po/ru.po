@@ -191,6 +191,9 @@ msgstr "Обновление EPG"
 msgid "EPGRefresh configuration"
 msgstr "Конфигурация обновления EPG"
 
+msgid "EPGRefresh Configuration"
+msgstr "Конфигурация обновления EPG"
+
 msgid "EPGRefresh Services"
 msgstr "Сервисы обновления EPG"
 
@@ -527,7 +530,7 @@ msgid "EPGRefresh needs to be explicitly started using the yellow button in this
 msgstr "Если это включено, то обновление EPG начнет работать в автоматическом режиме, в противном случае есть ручное обновление на желтой кнопке в этом меню."
 
 msgid "Version"
-msgstr "Версия"
+msgstr "версия"
 
 msgid "Wake up from deep standby"
 msgstr "Включать из глубокого ожидания для обновления EPG"
