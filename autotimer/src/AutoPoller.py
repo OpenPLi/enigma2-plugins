@@ -108,12 +108,14 @@ class AutoPollerThread(Thread):
 				try:
 					import NavigationInstance
 					if NavigationInstance.instance.RecordTimer.isRecording():
+						doLog("[AutoTimer] Skip check during running records")
 						reactor.callFromThread(timer.startLongTimer, config.plugins.autotimer.interval.value*3600)
 						continue
 				except:
 					pass
 			try:
 				if config.plugins.autotimer.onlyinstandby.value and Standby.inStandby is None:
+					doLog("[AutoTimer] Skip check during live tv")
 					reactor.callFromThread(timer.startLongTimer, config.plugins.autotimer.interval.value*3600)
 					continue
 			except:
@@ -122,6 +124,7 @@ class AutoPollerThread(Thread):
 				try:
 					from Plugins.Extensions.EPGRefresh.EPGRefresh import epgrefresh
 					if epgrefresh.isrunning:
+						doLog("[AutoTimer] Skip check during EPGRefresh")
 						reactor.callFromThread(timer.startLongTimer, config.plugins.autotimer.interval.value*3600)
 						continue
 				except:
