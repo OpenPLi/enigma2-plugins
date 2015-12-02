@@ -26,6 +26,8 @@ from Tools.BoundFunction import boundFunction
 from Components.PluginComponent import plugins
 from Plugins.Plugin import PluginDescriptor
 
+from Logger import doLog
+
 from AutoTimer import AutoTimer
 autotimer = AutoTimer()
 autopoller = None
@@ -37,7 +39,7 @@ try:
 	reader = XMLHelpReader(resolveFilename(SCOPE_PLUGINS, "Extensions/AutoTimer/mphelp.xml"))
 	autotimerHelp = registerHelp(*reader)
 except Exception as e:
-	print("[AutoTimer] Unable to initialize MPHelp:", e,"- Help not available!")
+	doLog("[AutoTimer] Unable to initialize MPHelp:", e,"- Help not available!")
 	autotimerHelp = None
 #pragma mark -
 
@@ -118,7 +120,7 @@ def sessionstart(reason, **kwargs):
 				from AutoTimerResource import AutoTimerDoParseResource, \
 					AutoTimerListAutoTimerResource, AutoTimerAddOrEditAutoTimerResource, \
 					AutoTimerRemoveAutoTimerResource, AutoTimerChangeSettingsResource, \
-					AutoTimerSettingsResource, AutoTimerSimulateResource, API_VERSION
+					AutoTimerSettingsResource, AutoTimerSimulateResource, AutoTimerTestResource, API_VERSION
 			except ImportError as ie:
 				pass
 			else:
@@ -137,6 +139,7 @@ def sessionstart(reason, **kwargs):
 				root.putChild('get', AutoTimerSettingsResource())
 				root.putChild('set', AutoTimerChangeSettingsResource())
 				root.putChild('simulate', AutoTimerSimulateResource())
+				root.putChild('test', AutoTimerTestResource())
 				addExternalChild( ("autotimer", root , "AutoTimer-Plugin", API_VERSION, False) )
 
 				# webgui
@@ -146,7 +149,7 @@ def sessionstart(reason, **kwargs):
 				root.putChild('tmp', File('/tmp'))
 				root.putChild("uploadfile", UploadResource(session))
 				addExternalChild( ("autotimereditor", root, "AutoTimer", "1", True) )
-				print("[AutoTimer] Use WebInterface")
+				doLog("[AutoTimer] Use WebInterface")
 		else:
 			if isOpenWebifInstalled():
 				try:
@@ -154,7 +157,7 @@ def sessionstart(reason, **kwargs):
 					from AutoTimerResource import AutoTimerDoParseResource, \
 						AutoTimerListAutoTimerResource, AutoTimerAddOrEditAutoTimerResource, \
 						AutoTimerRemoveAutoTimerResource, AutoTimerChangeSettingsResource, \
-						AutoTimerSettingsResource, AutoTimerSimulateResource, API_VERSION
+						AutoTimerSettingsResource, AutoTimerSimulateResource, AutoTimerTestResource, API_VERSION
 				except ImportError as ie:
 					pass
 				else:
@@ -165,8 +168,9 @@ def sessionstart(reason, **kwargs):
 					root.putChild('get', AutoTimerSettingsResource())
 					root.putChild('set', AutoTimerChangeSettingsResource())
 					root.putChild('simulate', AutoTimerSimulateResource())
+					root.putChild('test', AutoTimerTestResource())
 					addExternalChild(("autotimer", root , "AutoTimer-Plugin", API_VERSION))
-					print("[AutoTimer] Use OpenWebif")
+					doLog("[AutoTimer] Use OpenWebif")
 
 baseGraphMultiEPG__init__ = None
 def AutoTimerGraphMultiEPGInit():
@@ -503,7 +507,7 @@ def housekeepingExtensionsmenu(el):
 		try:
 			plugins.removePlugin(extDescriptor)
 		except ValueError as ve:
-			print("[AutoTimer] housekeepingExtensionsmenu got confused, tried to remove non-existant plugin entry... ignoring.")
+			doLog("[AutoTimer] housekeepingExtensionsmenu got confused, tried to remove non-existant plugin entry... ignoring.")
 
 config.plugins.autotimer.show_in_extensionsmenu.addNotifier(housekeepingExtensionsmenu, initial_call = False, immediate_feedback = True)
 extDescriptor = PluginDescriptor(name=_("AutoTimer"), description = _("Edit Timers and scan for new Events"), where = PluginDescriptor.WHERE_EXTENSIONSMENU, fnc = extensionsmenu, needsRestart = False)

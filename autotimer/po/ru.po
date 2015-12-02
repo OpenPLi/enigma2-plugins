@@ -1295,3 +1295,21 @@ msgstr "только из режима глубокого ожидания"
 
 msgid "never"
 msgstr "никогда"
+
+msgid "Create debug log file"
+msgstr "Создавать лог файл отладки"
+
+msgid "Path debug log"
+msgstr "Расположение лога отладки"
+
+msgid "Print shell log"
+msgstr "Вывод shell лога"
+
+msgid "If this enabled, debug log print in console mode start enigma2."
+msgstr "Если это включено, то лог отладки будет выводится в режиме запуска enigma2 через консоль."
+
+msgid "Specify the name and location for the log."
+msgstr "Укажите имя и расположение для лога."
+
+msgid "If this enabled, debug Autotimer write in log file."
+msgstr "Если это включено, то лог отладки Автотаймера будет записан в файл."
