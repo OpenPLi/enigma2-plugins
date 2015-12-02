@@ -236,6 +236,7 @@ letterbox/meta/Makefile
 
 logomanager/Makefile
 logomanager/meta/Makefile
+logomanager/po/Makefile
 logomanager/src/Makefile
 
 mediadownloader/Makefile
