@@ -401,6 +401,11 @@ rsdownloader/po/Makefile
 rsdownloader/src/Makefile
 rsdownloader/src/container/Makefile
 
+satipclient/Makefile
+satipclient/meta/Makefile
+satipclient/po/Makefile
+satipclient/src/Makefile
+
 seekbar/Makefile
 seekbar/meta/Makefile
 seekbar/po/Makefile
