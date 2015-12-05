@@ -1,4 +1,4 @@
-PLUGIN = LogoManager
+PLUGIN = SatipClient
 
 LANGS = nl de ru
 
