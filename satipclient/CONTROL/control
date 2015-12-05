@@ -1,0 +1,6 @@
+Package: enigma2-plugin-systemplugins-satipclient
+Version: 1.0
+Description: SAT>IP Client attached to vtuner
+Maintainer: OpenPLi team <forum@openpli.org>
+Homepage: http://www.openpli.org
+Depends: satipclient
