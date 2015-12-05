@@ -1,0 +1,100 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-08-08 23:21+0200\n"
+"PO-Revision-Date: 2015-08-08 23:26+0200\n"
+"Last-Translator: OE-A <OE_A>\n"
+"Language-Team: \n"
+"Language: de_DE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.4\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "SAT>IP Client Tuner Setup"
+msgstr "SAT>IP Client Tuner Konfiguration"
+
+msgid "Cancel"
+msgstr "Abbrechen"
+
+msgid "Ok"
+msgstr "OK"
+
+msgid "Discover"
+msgstr "Suchen"
+
+msgid "Starting..."
+msgstr "Startet..."
+
+msgid "SAT>IP server discovering for %d seconds..."
+msgstr "SAT>IP Server suche für %d sekunden..."
+
+msgid "SAT>IP server is not detected."
+msgstr "SAT>IP Server wurde nicht gefunden."
+
+msgid "SAT>IP Server : "
+msgstr "SAT>IP Server : "
+
+msgid "SAT>IP Tuner Type : "
+msgstr "SAT>IP Tuner Typ : "
+
+msgid "Description"
+msgstr "Beschreibung"
+
+msgid "Manufacturer"
+msgstr "Hersteller"
+
+msgid "Server capacity is fulled."
+msgstr "Server Kapazität erreicht"
+
+msgid "SAT>IP Client Setup"
+msgstr "SAT>IP Client"
+
+msgid "Save"
+msgstr "Speichern"
+
+msgid "Setup"
+msgstr "Einstellungen"
+
+msgid "Disable"
+msgstr "Deaktivieren"
+
+msgid "Select tuner and press setup key (Yellow)"
+msgstr "Tuner Auswählen und Taste (Gelb) für Setup"
+
+msgid ""
+"You should now reboot your STB to change SAT>IP Configuration.\n"
+"\n"
+"Reboot now ?\n"
+"\n"
+msgstr "Neustarten um die SAT>IP Konfiguration zu Aktivieren.\\n\\nNeustarten jetzt ?\\n\\n\n"
+
+msgid "Really close without saving settings?"
+msgstr "Wirklich ohne speichern der Konfiguration beenden?"
+
+msgid "VIRTUAL TUNER %s"
+msgstr "VIRTUAL TUNER %s"
+
+msgid "TYPE : %s"
+msgstr "TYP : %s"
+
+msgid "IP : %s"
+msgstr "IP : %s"
+
+msgid "TUNER TYPE : %s"
+msgstr "TUNER TYP : %s"
+
+msgid "SAT>IP SERVER : %s"
+msgstr "SAT>IP SERVER : %s"
+
+msgid "SAT>IP Client"
+msgstr "SAT>IP Client"
+
+msgid "SAT>IP Client attached to vtuner."
+msgstr "SAT>IP Client Anbindung über Vtuner"
+
+msgid "Select"
+msgstr "Auswahl"
