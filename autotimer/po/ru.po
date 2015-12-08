@@ -493,10 +493,10 @@ msgid ""
 "Press BLUE to add a new restriction and YELLOW to remove the selected one."
 msgstr ""
 "Этим можно ограничить Автотаймер на определенные сервисы, фаворитные списки "
-"или исключить альтернативы.\n"
+"или исключить определенные из них.\n"
 "Совпадение события для этого Автотаймера будет происходить только на "
 "конкретном сервисе (внутри фаворитного списка).\n"
-"Нажмите синюю кнопку для добавления нового ограничения."
+"Нажмите СИНЮЮ для добавления нового ограничения и ЖЕЛТУЮ для отмены."
 
 msgid ""
 "Label Timers with season, episode and title, according to the SeriesPlugin "
@@ -645,7 +645,7 @@ msgid "Other filters (edit in filter menu)"
 msgstr "Другие фильтры (меню фильтров)"
 
 msgid "Override found with alternative service"
-msgstr "Отвергнуть найденое в альтернативном сервисе"
+msgstr "Заменить на найденное в альтернативном сервисе"
 
 msgid "Please provide a Text to match"
 msgstr "Пожалуйста укажите текст, для совпадения"
@@ -1072,8 +1072,8 @@ msgid ""
 "With this option enabled the channel to record on can be changed to a "
 "alternative service it is restricted to."
 msgstr ""
-"Если этот параметр включен, то канал записи не можеть быть заменен на "
-"альтернативный сервис."
+"Если этот параметр включен, то канал записи можеть быть заменен на "
+"альтернативный сервис, к которому он переназначен."
 
 msgid ""
 "With this option you can restrict the AutoTimer to a certain amount of "
@@ -1111,7 +1111,7 @@ msgid ""
 "in title' is what is looked for in the EPG."
 msgstr ""
 "Вы можете установить основные свойства Автотаймера здесь.\n"
-"Простое 'Имя' служит для отображения в обзоре, а 'имя названия' для "
+"Простое 'Описание' служит для отображения в обзоре, а 'Имя совпадения' для "
 "непосредственного поиска в EPG."
 
 msgid ""
@@ -1295,3 +1295,21 @@ msgstr "только из режима глубокого ожидания"
 
 msgid "never"
 msgstr "никогда"
+
+msgid "Create debug log file"
+msgstr "Создавать лог файл отладки"
+
+msgid "Path debug log"
+msgstr "Расположение лога отладки"
+
+msgid "Print shell log"
+msgstr "Вывод shell лога"
+
+msgid "If this enabled, debug log print in console mode start enigma2."
+msgstr "Если это включено, то лог отладки будет выводится в режиме запуска enigma2 через консоль."
+
+msgid "Specify the name and location for the log."
+msgstr "Укажите имя и расположение для лога."
+
+msgid "If this enabled, debug Autotimer write in log file."
+msgstr "Если это включено, то лог отладки Автотаймера будет записан в файл."

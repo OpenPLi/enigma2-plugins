@@ -15,7 +15,7 @@ from enigma import eServiceReference
 from . import _, config, iteritems, plugin
 from plugin import autotimer
 
-API_VERSION = "1.4"
+API_VERSION = "1.5"
 
 class AutoTimerBaseResource(resource.Resource):
 	def returnResult(self, req, state, statetext):
@@ -130,11 +130,11 @@ class AutoTimerSimulateBackgroundThread(AutoTimerBackgroundThread):
 		if self._stillAlive:
 			reactor.callFromThread(finishRequest)
 
-	def intermediateWrite(self, new, conflicting, similar):
+	def intermediateWrite(self, timers, conflicting, similar, skipped):
 		returnlist = []
 		extend = returnlist.extend
 
-		for (name, begin, end, serviceref, autotimername) in new:
+		for (name, begin, end, serviceref, autotimername, message) in timers:
 			ref = ServiceReference(str(serviceref))
 			extend((
 				'<e2simulatedtimer>\n'
@@ -146,6 +146,72 @@ class AutoTimerSimulateBackgroundThread(AutoTimerBackgroundThread):
 				'   <e2autotimername>', stringToXML(autotimername), '</e2autotimername>\n'
 				'</e2simulatedtimer>\n'
 			))
+
+		if self._stillAlive:
+			reactor.callFromThread(lambda: self._req.write(''.join(returnlist)))
+
+class AutoTimerTestBackgroundThread(AutoTimerBackgroundThread):
+	def run(self):
+		req = self._req
+		if self._stillAlive:
+			req.setResponseCode(http.OK)
+			req.setHeader('Content-type', 'application/xhtml+xml')
+			req.setHeader('charset', 'UTF-8')
+			reactor.callFromThread(lambda: req.write("<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\n<e2autotimersimulate api_version=\"" + str(API_VERSION) + "\">\n"))
+
+		def finishRequest():
+			req.write('</e2autotimersimulate>')
+			req.finish()
+
+		id = req.args.get("id")
+		if id:
+			self.id = int(id[0])
+		else:
+			self.id = None
+		
+		try: autotimer.parseEPG(simulateOnly=True, uniqueId=self.id, callback=self.intermediateWrite)
+		except Exception as e:
+			def finishRequest():
+				req.write('<exception>'+str(e)+'</exception><|PURPOSEFULLYBROKENXML<')
+				req.finish()
+
+		if self._stillAlive:
+			reactor.callFromThread(finishRequest)
+
+	def intermediateWrite(self, timers, conflicting, similar, skipped):
+		returnlist = []
+		extend = returnlist.extend
+
+		for (name, begin, end, serviceref, autotimername, message) in timers:
+			ref = ServiceReference(str(serviceref))
+			extend((
+				'<e2simulatedtimer>\n'
+				'   <e2servicereference>', stringToXML(serviceref), '</e2servicereference>\n',
+				'   <e2servicename>', stringToXML(ref.getServiceName().replace('\xc2\x86', '').replace('\xc2\x87', '')), '</e2servicename>\n',
+				'   <e2name>', stringToXML(name), '</e2name>\n',
+				'   <e2timebegin>', str(begin), '</e2timebegin>\n',
+				'   <e2timeend>', str(end), '</e2timeend>\n',
+				'   <e2autotimername>', stringToXML(autotimername), '</e2autotimername>\n',
+				'   <e2state>OK</e2state>\n'
+				'   <e2message>', stringToXML(message), '</e2message>\n'
+				'</e2simulatedtimer>\n'
+			))
+
+		if self.id:
+			for (name, begin, end, serviceref, autotimername, message) in skipped:
+				ref = ServiceReference(str(serviceref))
+				extend((
+					'<e2simulatedtimer>\n'
+					'   <e2servicereference>', stringToXML(serviceref), '</e2servicereference>\n',
+					'   <e2servicename>', stringToXML(ref.getServiceName().replace('\xc2\x86', '').replace('\xc2\x87', '')), '</e2servicename>\n',
+					'   <e2name>', stringToXML(name), '</e2name>\n',
+					'   <e2timebegin>', str(begin), '</e2timebegin>\n',
+					'   <e2timeend>', str(end), '</e2timeend>\n',
+					'   <e2autotimername>', stringToXML(autotimername), '</e2autotimername>\n',
+					'   <e2state>Skip</e2state>\n'
+					'   <e2message>', stringToXML(message), '</e2message>\n'
+					'</e2simulatedtimer>\n'
+				))
 
 		if self._stillAlive:
 			reactor.callFromThread(lambda: self._req.write(''.join(returnlist)))
@@ -168,6 +234,11 @@ class AutoTimerListAutoTimerResource(AutoTimerBaseResource):
 		req.setHeader('Content-type', 'application/xhtml+xml')
 		req.setHeader('charset', 'UTF-8')
 		return ''.join(autotimer.getXml())
+
+class AutoTimerTestResource(AutoTimerBaseResource):
+	def render(self, req):
+		AutoTimerTestBackgroundThread(req, None)
+		return server.NOT_DONE_YET
 
 class AutoTimerRemoveAutoTimerResource(AutoTimerBaseResource):
 	def render(self, req):
@@ -512,86 +583,7 @@ class AutoTimerSettingsResource(resource.Resource):
 		<e2settingvalue>%s</e2settingvalue>
 	</e2setting>
 	<e2setting>
-		<e2settingname>config.plugins.autotimer.try_guessing</e2settingname>
-		<e2settingvalue>%s</e2settingvalue>
-	</e2setting>
-	<e2setting>
-		<e2settingname>config.plugins.autotimer.editor</e2settingname>
-		<e2settingvalue>%s</e2settingvalue>
-	</e2setting>
-	<e2setting>
-		<e2settingname>config.plugins.autotimer.disabled_on_conflict</e2settingname>
-		<e2settingvalue>%s</e2settingvalue>
-	</e2setting>
-	<e2setting>
-		<e2settingname>config.plugins.autotimer.addsimilar_on_conflict</e2settingname>
-		<e2settingvalue>%s</e2settingvalue>
-	</e2setting>
-	<e2setting>
-		<e2settingname>config.plugins.autotimer.show_in_extensionsmenu</e2settingname>
-		<e2settingvalue>%s</e2settingvalue>
-	</e2setting>
-	<e2setting>
-		<e2settingname>config.plugins.autotimer.fastscan</e2settingname>
-		<e2settingvalue>%s</e2settingvalue>
-	</e2setting>
-	<e2setting>
-		<e2settingname>config.plugins.autotimer.notifconflict</e2settingname>
-		<e2settingvalue>%s</e2settingvalue>
-	</e2setting>
-	<e2setting>
-		<e2settingname>config.plugins.autotimer.notifsimilar</e2settingname>
-		<e2settingvalue>%s</e2settingvalue>
-	</e2setting>
-	<e2setting>
-		<e2settingname>config.plugins.autotimer.maxdaysinfuture</e2settingname>
-		<e2settingvalue>%s</e2settingvalue>
-	</e2setting>
-	<e2setting>
-		<e2settingname>config.plugins.autotimer.add_autotimer_to_tags</e2settingname>
-		<e2settingvalue>%s</e2settingvalue>
-	</e2setting>
-	<e2setting>
-		<e2settingname>config.plugins.autotimer.add_name_to_tags</e2settingname>
-		<e2settingvalue>%s</e2settingvalue>
-	</e2setting>
-	<e2setting>
-		<e2settingname>config.plugins.autotimer.timeout</e2settingname>
-		<e2settingvalue>%s</e2settingvalue>
-	</e2setting>
-	<e2setting>
-		<e2settingname>config.plugins.autotimer.delay</e2settingname>
-		<e2settingvalue>%s</e2settingvalue>
-	</e2setting>
-	<e2setting>
-		<e2settingname>config.plugins.autotimer.editdelay</e2settingname>
-		<e2settingvalue>%s</e2settingvalue>
-	</e2setting>
-	<e2setting>
-		<e2settingname>config.plugins.autotimer.skip_during_records</e2settingname>
-		<e2settingvalue>%s</e2settingvalue>
-	</e2setting>
-	<e2setting>
-		<e2settingname>config.plugins.autotimer.skip_during_epgrefresh</e2settingname>
-		<e2settingvalue>%s</e2settingvalue>
-	</e2setting>
-	<e2setting>
-		<e2settingname>hasVps</e2settingname>
-		<e2settingvalue>%s</e2settingvalue>
-	</e2setting>
-	<e2setting>
-		<e2settingname>hasSeriesPlugin</e2settingname>
-		<e2settingvalue>%s</e2settingvalue>
-	</e2setting>
-	<e2setting>
-		<e2settingname>version</e2settingname>
-		<e2settingvalue>%s</e2settingvalue>
-	</e2setting>
-	<e2setting>
-		<e2settingname>api_version</e2settingname>
-		<e2settingvalue>%s</e2settingvalue>
-	</e2setting>
-</e2settings>""" % (
+		<e2settingname>config.plugins.autotimer.try_guesings>""" % (
 				config.plugins.autotimer.autopoll.value,
 				config.plugins.autotimer.interval.value,
 				config.plugins.autotimer.refresh.value,

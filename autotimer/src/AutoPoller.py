@@ -24,6 +24,8 @@ from collections import deque
 
 from twisted.internet import reactor
 
+from Logger import doLog
+
 class AutoPollerThread(Thread):
 	"""Background thread where the EPG is parsed (unless initiated by the user)."""
 	def __init__(self):
@@ -106,14 +108,14 @@ class AutoPollerThread(Thread):
 				try:
 					import NavigationInstance
 					if NavigationInstance.instance.RecordTimer.isRecording():
-						print("[AutoTimer]: Skip check during running records")
+						doLog("[AutoTimer] Skip check during running records")
 						reactor.callFromThread(timer.startLongTimer, config.plugins.autotimer.interval.value*3600)
 						continue
 				except:
 					pass
 			try:
 				if config.plugins.autotimer.onlyinstandby.value and Standby.inStandby is None:
-					print("[AutoTimer]: Skip check during live tv")
+					doLog("[AutoTimer] Skip check during live tv")
 					reactor.callFromThread(timer.startLongTimer, config.plugins.autotimer.interval.value*3600)
 					continue
 			except:
@@ -122,7 +124,7 @@ class AutoPollerThread(Thread):
 				try:
 					from Plugins.Extensions.EPGRefresh.EPGRefresh import epgrefresh
 					if epgrefresh.isrunning:
-						print("[AutoTimer]: Skip check during EPGRefresh")
+						doLog("[AutoTimer] Skip check during EPGRefresh")
 						reactor.callFromThread(timer.startLongTimer, config.plugins.autotimer.interval.value*3600)
 						continue
 				except:

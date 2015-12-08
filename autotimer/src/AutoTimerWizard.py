@@ -19,6 +19,8 @@ from Components.config import getConfigListEntry, KEY_0, KEY_DELETE, \
 # Wizard XML Path
 from Tools import Directories
 
+from Logger import doLog
+
 class AutoTimerWizard(WizardLanguage, AutoTimerEditorBase, Rc):
 	STEP_ID_BASIC = 2
 	STEP_ID_TIMESPAN = 5
@@ -26,13 +28,14 @@ class AutoTimerWizard(WizardLanguage, AutoTimerEditorBase, Rc):
 	STEP_ID_FILTER = 8
 
 	skin = """
-		<screen name="AutoTimerWizard" position="0,0" size="720,576" title="Welcome..." flags="wfNoBorder" >
-			<widget name="text" position="153,40" size="340,300" font="Regular;22" />
+		<screen name="AutoTimerWizard" position="center,center" size="720,576" title="Welcome..." flags="wfNoBorder" >
+			<widget name="text" position="153,40" size="340,300" font="Regular;20" />
 			<widget source="list" render="Listbox" position="53,340" size="440,180" scrollbarMode="showOnDemand" >
 				<convert type="StringList" />
 			</widget>
 			<widget name="config" position="53,340" zPosition="1" size="440,180" transparent="1" scrollbarMode="showOnDemand" />
 			<ePixmap pixmap="skin_default/buttons/button_red.png" position="40,225" zPosition="0" size="15,16" transparent="1" alphatest="on" />
+			<ePixmap pixmap="skin_default/buttons/button_blue.png" position="40,250" zPosition="0" size="15,16" transparent="1" alphatest="on" />
 			<widget name="languagetext" position="55,225" size="95,30" font="Regular;18" />
 			<widget name="wizard" pixmap="skin_default/wizard.png" position="40,50" zPosition="10" size="110,174" alphatest="on" />
 			<widget name="rc" pixmaps="skin_default/rc.png,skin_default/rcold.png" position="500,50" zPosition="10" size="154,500" alphatest="on" />
@@ -40,10 +43,10 @@ class AutoTimerWizard(WizardLanguage, AutoTimerEditorBase, Rc):
 			<widget name="arrowdown2" pixmap="skin_default/arrowdown.png" position="-100,-100" zPosition="11" size="37,70" alphatest="on" />
 			<widget name="arrowup" pixmap="skin_default/arrowup.png" position="-100,-100" zPosition="11" size="37,70" alphatest="on" />
 			<widget name="arrowup2" pixmap="skin_default/arrowup.png" position="-100,-100" zPosition="11" size="37,70" alphatest="on" />
-			<widget source="VKeyIcon" render="Pixmap" pixmap="skin_default/buttons/key_text.png" position="40,260" zPosition="0" size="35,25" transparent="1" alphatest="on" >
+			<widget source="VKeyIcon" render="Pixmap" pixmap="skin_default/buttons/key_text.png" position="35,270" zPosition="0" size="35,25" transparent="1" alphatest="on" >
 				<convert type="ConditionalShowHide" />
 			</widget>
-			<widget name="HelpWindow" pixmap="skin_default/buttons/key_text.png" position="310,435" zPosition="1" size="1,1" transparent="1" alphatest="on" />
+			<widget name="HelpWindow" pixmap="skin_default/buttons/key_text.png" position="200,450" zPosition="1" size="1,1" transparent="1" alphatest="on" />
 		</screen>"""
 
 	def __init__(self, session, newTimer):
@@ -53,7 +56,7 @@ class AutoTimerWizard(WizardLanguage, AutoTimerEditorBase, Rc):
 		AutoTimerEditorBase.__init__(self, newTimer)
 		Rc.__init__(self)
 
-		self.skinName = ["AutoTimerWizard", "NetworkWizard"]
+		#self.skinName = ["AutoTimerWizard", "NetworkWizard"]
 		self["wizard"] = Pixmap()
 		self["HelpWindow"] = Pixmap()
 		self["HelpWindow"].hide()
@@ -127,6 +130,7 @@ class AutoTimerWizard(WizardLanguage, AutoTimerEditorBase, Rc):
 			timer.name = self.name.value.strip() or self.match.value
 			timer.match = self.match.value
 			timer.justplay = self.justplay.value == "zap"
+			self.timer.always_zap = self.justplay.value == "zap+record"
 			self.emptyMatch = not timer.match.strip()
 			self.trailingWhitespacesMatch = (timer.match[-1:] == " ")
 		elif self.currStep == AutoTimerWizard.STEP_ID_TIMESPAN: # Timespan
@@ -176,7 +180,7 @@ class AutoTimerWizard(WizardLanguage, AutoTimerEditorBase, Rc):
 	def maybeRemoveWhitespaces(self):
 		# XXX: Hack alert
 		if self["list"].current[1] == "removeTrailingWhitespaces":
-			print("Next step would be to remove trailing whitespaces, removing them and redirecting to 'conf2'")
+			doLog("[AutoTimer] Next step would be to remove trailing whitespaces, removing them and redirecting to 'conf2'")
 			self.timer.match = self.timer.match.rstrip()
 			self.match.value = self.match.value.rstrip()
 			self.currStep = self.getStepWithID("conf2")
