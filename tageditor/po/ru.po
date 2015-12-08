@@ -53,6 +53,9 @@ msgstr "отредактировать тэги..."
 msgid "edit tags"
 msgstr "отредактировать тэги"
 
+msgid "Edit Tags"
+msgstr "Редактор тэгов"
+
 msgid "Load"
 msgstr "Загрузить"
 
