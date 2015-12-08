@@ -50,7 +50,7 @@ from . import config, xrange, itervalues
 
 XML_CONFIG = "/etc/enigma2/autotimer.xml"
 
-TAG = "AutoTimer"
+TAG = "newAT"
 
 def getTimeDiff(timer, begin, end):
 	if begin <= timer.begin <= end:
@@ -524,7 +524,6 @@ class AutoTimer:
 				# It is only temporarily, after a restart it will be lost,
 				# because it won't be stored in the timer xml file
 				newEntry.isAutoTimer = True
-				newEntry.tags.append(TAG)
 
 			# Apply afterEvent
 			if timer.hasAfterEvent():
@@ -550,6 +549,8 @@ class AutoTimer:
 				if tagname:
 					tagname = tagname[0].upper() + tagname[1:].replace(" ", "_")
 					tags.append(tagname)
+			if TAG not in tags:
+				tags.append(TAG)
 			newEntry.tags = tags
 
 			if oldExists:
