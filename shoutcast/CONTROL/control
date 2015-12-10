@@ -3,4 +3,4 @@ Version: 1.0
 Description: A client to listen and record SHOUTcast internet radio
 Maintainer: OpenPLi team <forum@openpli.org>
 Homepage: http://www.openpli.org
-Depends: enigma2 (>> 2.6git20091201), python-twisted-web, streamripper
+Depends: python-twisted-web, streamripper
