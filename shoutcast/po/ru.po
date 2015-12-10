@@ -1,0 +1,253 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: shoutcast\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-01-03 14:09+0100\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Dimitrij <dima-73@inbox.lv>\n"
+"Language-Team: Dimitrij openPLi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"Language: ru_RU\n"
+"X-Generator: Poedit 1.5.5\n"
+
+msgid ""
+"%s\n"
+"Press OK to try again..."
+msgstr ""
+"%s\n"
+"Нажмите OK, для повторной попытки..."
+
+msgid ""
+"%s\n"
+"Press green-button to try again..."
+msgstr ""
+"%s\n"
+"Нажмите зелёную кнопку, для повторной попытки.."
+
+msgid ">= 128 kbps"
+msgstr ">= 128 kbps"
+
+msgid ">= 192 kbps"
+msgstr ">= 192 kbps"
+
+msgid ">= 256 kbps"
+msgstr ">= 256 kbps"
+
+msgid ">= 64 kbps"
+msgstr ">= 64 kbps"
+
+msgid "Add current playing stream to favorite"
+msgstr "Добавить текущий играющий стрим в фавориты"
+
+msgid "Add current selected genre to favorite"
+msgstr "Добавить текущий выбранный жанр в фавориты"
+
+msgid "Add current selected station to favorite"
+msgstr "Добавить текущую выбранную станцию в фавориты"
+
+msgid "Add sequence number to output file"
+msgstr "Добавить порядковый номер в выходной файл"
+
+msgid "All"
+msgstr "Все"
+
+msgid "Audio: %s"
+msgstr "Аудио: %s"
+
+msgid "Bit rate: %s kbps"
+msgstr "Битрейт: %s kbps"
+
+msgid "Cancel"
+msgstr "Отмена"
+
+msgid "Config"
+msgstr "Конфигурация"
+
+msgid "Coverheight:"
+msgstr "Высота обложки"
+
+msgid "Coverwidth:"
+msgstr "Ширина обложки"
+
+msgid "Create a directory for each stream"
+msgstr "Создавать директорию для каждого стрима"
+
+msgid "Do you really want to stop the recording?"
+msgstr "Вы действительно хотите остановить запись?"
+
+msgid "Enter in minutes (0 means unlimited)"
+msgstr "Ввод в минутах (0 - без ограничений)"
+
+msgid "Enter new name for favorite item"
+msgstr "Введите новое имя для пункта фаворита"
+
+msgid "Enter text to search for"
+msgstr "Введите текст поиска для"
+
+msgid "Favorite list"
+msgstr "Фаворитный список"
+
+msgid "Favorites"
+msgstr "Фавориты"
+
+msgid "Genres"
+msgstr "Жанры"
+
+msgid "Getting %s"
+msgstr "Получение %s"
+
+msgid "Getting SHOUTcast genre list..."
+msgstr "Получение списка жанров SHOUTcast..."
+
+msgid ""
+"Getting streaming data from\n"
+"%s"
+msgstr ""
+"Получение данных стрима из\n"
+"%s"
+
+msgid "Hide"
+msgstr "Скрыть"
+
+msgid "Invalid Location"
+msgstr "Недействительное расположение"
+
+msgid "No streaming data found..."
+msgstr "Нет найденных данных стриминга..."
+
+msgid "OK"
+msgstr "OK"
+
+msgid "Off"
+msgstr "ВЫКЛ"
+
+msgid "Only running streamings can be recorded!"
+msgstr "Только играющие стриминги могут быть записаны!"
+
+msgid "Record"
+msgstr "Запись"
+
+msgid "Recording length"
+msgstr "Продолжительность записи"
+
+msgid "Recording location:"
+msgstr "Дериктория записи (нажмите ОК для выбора)"
+
+msgid "Recording stream station"
+msgstr "Запись станции стрима"
+
+msgid "Reload station list:"
+msgstr "Перезагружать список станций"
+
+msgid "Rip to single file, name is timestamped"
+msgstr "Рип в одном файле, имя с датой"
+
+msgid "SHOUTcast genre list"
+msgstr "Список жанров SHOUTcast"
+
+msgid "SHOUTcast station list for %s"
+msgstr "Список станций SHOUTcastдля - %s"
+
+msgid "Search"
+msgstr "Поиск"
+
+msgid "Searching SHOUTcast for %s..."
+msgstr "Поиск в SHOUTcast для %s..."
+
+msgid "Show cover:"
+msgstr "Показать обложку"
+
+msgid "Show in extension menu:"
+msgstr "Показать плагин в меню дополнений"
+
+msgid "Station: %s"
+msgstr "Станция: %s"
+
+msgid "Stations"
+msgstr "Станции"
+
+msgid "Stop record"
+msgstr "Остановка записи"
+
+msgid "Streaming rate:"
+msgstr "Скорость стриминга"
+
+msgid "This Dreambox can't decode %s streams!"
+msgstr "Этот ресивер не может декодировать стрим %s!"
+
+msgid "Title: %s"
+msgstr "Название: %s"
+
+msgid "Title: n/a"
+msgstr "Название: n/a"
+
+msgid "every five minutes"
+msgstr "каждые пять минут"
+
+msgid "every minute"
+msgstr "каждую минуту"
+
+msgid "every three minutes"
+msgstr "каждые три минуты"
+
+msgid "genre %s"
+msgstr "жанр %s"
+
+msgid "listen to shoutcast internet-radio"
+msgstr "интернет-радио shoutcast"
+
+msgid "remove current selected favorite"
+msgstr "Удалить выбранный фаворит"
+
+msgid "rename current selected favorite"
+msgstr "Переименовать выбранный фаворит"
+
+msgid "search-criteria %s"
+msgstr "критерии поиска %s"
+
+msgid "Stream stopped playing, playback of stream stopped!"
+msgstr "Стрим перестал проигрываться, воспроизведение стрима остановилось!"
+
+msgid "Error downloading cover..."
+msgstr "Ошибка при загрузке обложки..."
+
+msgid "Got 0 genres. Could be a network problem.\nPlease try again..."
+msgstr "Получено 0 жанров. Может быть проблема с сетью.\nПожалуйста, попробуйте повторить попытку..."
+
+msgid "Select record path for streamripper"
+msgstr "Выбор расположения записи для streamripper"
+
+msgid "SHOUTcast setup"
+msgstr "Настройки SHOUTcast"
+
+msgid "Zap focus to Picture in Picture"
+msgstr "Переключение в экране PiP"
+
+msgid "Zap focus to main screen"
+msgstr "Переключение в главном экране"
+
+msgid "Move Picture in Picture"
+msgstr "Переместить картинку в картинке"
+
+msgid "Menu PiP"
+msgstr "Меню PiP"
+
+msgid "Activate Picture in Picture"
+msgstr "Включить PiP (картинку в картинке)"
+
+msgid "streamripper not installed!"
+msgstr "streamripper не установлен!"
+
+msgid "Error create directory %s!"
+msgstr "Ошибка создания директории %s!"
+
+msgid "First play streaming!"
+msgstr "Первое, запустите воспроизведение стрима!"
+
+msgid "Choose action:"
+msgstr "Выберите действие:"
+
+
