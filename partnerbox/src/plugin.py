@@ -1780,7 +1780,7 @@ class E2EPGList(MenuList):
 		font = skin.fonts.get("PartnerBoxChannelEPGList0", ("Regular", 22, 30))
 		self.l.setFont(0, gFont(font[0], font[1]))
 		self.ItemHeight = int(font[2])
-		font = skin.fonts.get("PartnerBoxChannelEPGList0", ("Regular", 16))
+		font = skin.fonts.get("PartnerBoxChannelEPGList1", ("Regular", 16))
 		self.l.setFont(1, gFont(font[0], font[1]))
 		self.days = [ _("Mon"), _("Tue"), _("Wed"), _("Thu"), _("Fri"), _("Sat"), _("Sun") ]
 		self.timer_list = []
