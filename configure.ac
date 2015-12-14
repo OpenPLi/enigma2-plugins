@@ -266,6 +266,7 @@ merlinepgcenter/images/XD_BORDER/Makefile
 
 merlinmusicplayer/Makefile
 merlinmusicplayer/meta/Makefile
+merlinmusicplayer/po/Makefile
 merlinmusicplayer/src/Makefile
 merlinmusicplayer/src/images/Makefile
 
