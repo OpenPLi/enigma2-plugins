@@ -106,6 +106,7 @@ babelzapper/src/Makefile
 bitrateviewer/Makefile
 bitrateviewer/meta/Makefile
 bitrateviewer/src/Makefile
+bitrateviewer/po/Makefile
 bitrateviewer/src/bitratecalc/Makefile
 
 blindscan/src/Makefile
