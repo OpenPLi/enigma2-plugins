@@ -323,6 +323,7 @@ class AutoTimer:
 			evtEnd = end = begin + duration
 
 			doLog("[AutoTimer] possible epgmatch %s" % (name))
+			doLog("[AutoTimer] Serviceref %s" % (str(serviceref)))
 			eserviceref = eServiceReference(serviceref)
 			evt = epgcache.lookupEventId(eserviceref, eit)
 			if not evt:
@@ -333,6 +334,7 @@ class AutoTimer:
 			n = evt.getNumOfLinkageServices()
 			if n > 0:
 				i = evt.getLinkageService(eserviceref, n-1)
+				doLog("[AutoTimer] Serviceref2 %s" % (str(serviceref)))
 				serviceref = i.toString()
 
 			evtBegin = begin
@@ -401,7 +403,7 @@ class AutoTimer:
 			if timer.series_labeling and sp_getSeasonEpisode is not None:
 				#doLog("[AutoTimer SeriesPlugin] Request name, desc, path %s %s %s" % (name,shortdesc,dest))
 				sp = sp_getSeasonEpisode(serviceref, name, evtBegin, evtEnd, shortdesc, dest)
-				if sp and len(sp) == 4:
+				if sp and type(sp) in (tuple, list) and len(sp) == 4:
 					name = sp[0]
 					shortdesc = sp[1]
 					dirname = sp[2]
@@ -413,7 +415,7 @@ class AutoTimer:
 					# If AutoTimer name not equal match, do a second lookup with the name
 					if timer.name.lower() != timer.match.lower():
 						sp = sp_getSeasonEpisode(serviceref, timer.name, evtBegin, evtEnd, shortdesc, dest)
-						if sp and len(sp) == 4:
+						if sp and type(sp) in (tuple, list) and len(sp) == 4:
 							name = sp[0]
 							shortdesc = sp[1]
 							dirname = sp[2]
@@ -733,7 +735,9 @@ class AutoTimer:
 	def modifyTimer(self, timer, name, shortdesc, begin, end, serviceref, eit=None):
 		# Don't update the name, it will overwrite the name of the SeriesPlugin
 		#timer.name = name
-		#timer.description = shortdesc
+		if timer.description == "":
+			# Only update the description if it is empty, it will overwrite the description of the SeriesPlugin
+			timer.description = shortdesc
 		timer.begin = int(begin)
 		timer.end = int(end)
 		timer.service_ref = ServiceReference(serviceref)
