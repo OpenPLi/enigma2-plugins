@@ -34,6 +34,8 @@ class BitrateCalculator(Screen):
 		left = 1030
 	elif sz_w == 1024:
 		left = 774
+	elif sz_w == 1920:
+		left = 1670
 	else:
 		left = 470
 	skin = """
