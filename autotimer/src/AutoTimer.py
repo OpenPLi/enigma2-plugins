@@ -735,7 +735,7 @@ class AutoTimer:
 	def modifyTimer(self, timer, name, shortdesc, begin, end, serviceref, eit=None):
 		# Don't update the name, it will overwrite the name of the SeriesPlugin
 		#timer.name = name
-		if timer.description == "":
+		if not timer.description:
 			# Only update the description if it is empty, it will overwrite the description of the SeriesPlugin
 			timer.description = shortdesc
 		timer.begin = int(begin)
