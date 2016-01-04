@@ -1038,8 +1038,6 @@ class EPGSearch(EPGSelection):
 		if config.plugins.epgsearch.favorit_name.value:
 			for e in epglist:
 				for x in usr_ref_list:
-					if x.startswith('1:134:'):
-						x = GetWithAlternative(x)
 					y = ':'.join(x.split(':')[:11]) 
 					if y == e[0]:
 						new_e = (x, e[1], e[2], e[3], e[4])
