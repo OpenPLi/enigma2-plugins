@@ -86,7 +86,7 @@ msgid "All non-repeating timers"
 msgstr "Все неповторяющиеся таймеры"
 
 msgid "Amount of recordings left"
-msgstr "Оставить количество записей"
+msgstr "Количество оставшихся записей"
 
 msgid "Any service/recording"
 msgstr "Любой сервис/запись"
@@ -589,6 +589,9 @@ msgstr "Не раньше чем"
 
 msgid "Number of scheduled recordings left."
 msgstr "Количество оставшихся запланированных записей."
+
+msgid " 0 - timers will not be added."
+msgstr " 0 - таймеры не будут добавлены."
 
 msgid "OK"
 msgstr "ОK"

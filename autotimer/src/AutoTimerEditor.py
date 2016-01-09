@@ -586,7 +586,7 @@ class AutoTimerEditor(Screen, ConfigListScreen, AutoTimerEditorBase):
 			self.afterevent_timespanbegin: _("Lower bound of timespan."),
 			self.afterevent_timespanend: _("Upper bound of timespan."),
 			self.counter: _("With this option you can restrict the AutoTimer to a certain amount of scheduled recordings. Set this to 0 to disable this functionality."),
-			self.counterLeft: _("Number of scheduled recordings left."),
+			self.counterLeft: _("Number of scheduled recordings left.") + _(" 0 - timers will not be added."),
 			self.counterFormatString: _("The counter can automatically be reset to the limit at certain intervals."),
 			self.avoidDuplicateDescription: _("When this option is enabled the AutoTimer won't match events where another timer with the same description already exists in the timer list."),
 			self.searchForDuplicateDescription: _("Defines where to search for duplicates (only title, short description or even extended description)"),
