@@ -325,6 +325,8 @@ class Blindscan(ConfigListScreen, Screen):
 		# collect all nims which are *not* set to "nothing"
 		nim_list = []
 		for n in nimmanager.nim_slots:
+			if n.isFBCLink():
+				continue
 			if n.config_mode == "nothing":
 				continue
 			if n.config_mode == "advanced" and len(nimmanager.getSatListForNim(n.slot)) < 1:
