@@ -5,6 +5,7 @@ from enigma import eEPGCache, eServiceReference, eServiceCenter, RT_HALIGN_LEFT,
 		RT_HALIGN_CENTER, RT_VALIGN_CENTER, RT_WRAP, eListboxPythonMultiContent, gFont, ePicLoad
 from Tools.Directories import resolveFilename, SCOPE_CURRENT_SKIN, SCOPE_SKIN_IMAGE, fileExists
 from Tools.LoadPixmap import LoadPixmap
+from Tools.Alternatives import GetWithAlternative
 from ServiceReference import ServiceReference
 from EPGSearchSetup import EPGSearchSetup
 from Screens.ChannelSelection import SimpleChannelSelection
@@ -1026,10 +1027,13 @@ class EPGSearch(EPGSelection):
 								service = servicelist.getNext()
 								if not service.valid(): break
 								if not (service.flags & (eServiceReference.isMarker|eServiceReference.isDirectory)):
+									refstr = service.toString()
+									if refstr.startswith('1:134:'):
+										refstr = GetWithAlternative(refstr)
 									if config.plugins.epgsearch.favorit_name.value:
-										usr_ref_list.append(service.toString())
+										usr_ref_list.append(refstr)
 									else:
-										usr_ref_list.append(':'.join(service.toString().split(':')[:11]))
+										usr_ref_list.append(':'.join(refstr.split(':')[:11]))
 		result = [ ]
 		if config.plugins.epgsearch.favorit_name.value:
 			for e in epglist:
