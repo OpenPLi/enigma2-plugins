@@ -513,12 +513,16 @@ class AutoTimerChangeSettingsResource(AutoTimerBaseResource):
 				config.plugins.autotimer.addsimilar_on_conflict.value = True if value == "true" else False
 			elif key == "show_in_extensionsmenu":
 				config.plugins.autotimer.show_in_extensionsmenu.value = True if value == "true" else False
+			elif key == "show_in_furtheroptionsmenu":
+				config.plugins.autotimer.show_in_furtheroptionsmenu.value = True if value == "true" else False
 			elif key == "fastscan":
 				config.plugins.autotimer.fastscan.value = True if value == "true" else False
 			elif key == "notifconflict":
 				config.plugins.autotimer.notifconflict.value = True if value == "true" else False
 			elif key == "notifsimilar":
 				config.plugins.autotimer.notifsimilar.value = True if value == "true" else False
+			elif key == "notiftimers":
+				config.plugins.autotimer.notiftimers.value = True if value == "true" else False
 			elif key == "maxdaysinfuture":
 				config.plugins.autotimer.maxdaysinfuture.value = int(value)
 			elif key == "add_autotimer_to_tags":
@@ -535,6 +539,20 @@ class AutoTimerChangeSettingsResource(AutoTimerBaseResource):
 				config.plugins.autotimer.skip_during_records.value = True if value == "true" else False
 			elif key == "skip_during_epgrefresh":
 				config.plugins.autotimer.skip_during_epgrefresh.value = True if value == "true" else False
+			elif key == "check_eit_and_removeh":
+				config.plugins.autotimer.check_eit_and_remove.value = True if value == "true" else False
+			elif key == "onlyinstandby":
+				config.plugins.autotimer.onlyinstandby.value = True if value == "true" else False
+			elif key == "add_to_channelselection":
+				config.plugins.autotimer.add_to_channelselection.value = True if value == "true" else False
+			elif key == "add_to_epgselection":
+				config.plugins.autotimer.add_to_epgselection.value = True if value == "true" else False
+			elif key == "add_to_multiepgselection":
+				config.plugins.autotimer.add_to_multiepgselection.value = True if value == "true" else False
+			elif key == "log_write":
+				config.plugins.autotimer.log_write.value = True if value == "true" else False
+			elif key == "log_shell":
+				config.plugins.autotimer.log_shell.value = True if value == "true" else False
 
 		if config.plugins.autotimer.autopoll.value:
 			if plugin.autopoller is None:
@@ -583,7 +601,122 @@ class AutoTimerSettingsResource(resource.Resource):
 		<e2settingvalue>%s</e2settingvalue>
 	</e2setting>
 	<e2setting>
-		<e2settingname>config.plugins.autotimer.try_guesings>""" % (
+		<e2settingname>config.plugins.autotimer.try_guessing</e2settingname>
+		<e2settingvalue>%s</e2settingvalue>
+	</e2setting>
+	<e2setting>
+		<e2settingname>config.plugins.autotimer.editor</e2settingname>
+		<e2settingvalue>%s</e2settingvalue>
+	</e2setting>
+	<e2setting>
+		<e2settingname>config.plugins.autotimer.disabled_on_conflict</e2settingname>
+		<e2settingvalue>%s</e2settingvalue>
+	</e2setting>
+	<e2setting>
+		<e2settingname>config.plugins.autotimer.addsimilar_on_conflict</e2settingname>
+		<e2settingvalue>%s</e2settingvalue>
+	</e2setting>
+	<e2setting>
+		<e2settingname>config.plugins.autotimer.show_in_extensionsmenu</e2settingname>
+		<e2settingvalue>%s</e2settingvalue>
+	</e2setting>
+	<e2setting>
+		<e2settingname>config.plugins.autotimer.show_in_furtheroptionsmenu</e2settingname>
+		<e2settingvalue>%s</e2settingvalue>
+	</e2setting>
+	<e2setting>
+		<e2settingname>config.plugins.autotimer.fastscan</e2settingname>
+		<e2settingvalue>%s</e2settingvalue>
+	</e2setting>
+	<e2setting>
+		<e2settingname>config.plugins.autotimer.notifconflict</e2settingname>
+		<e2settingvalue>%s</e2settingvalue>
+	</e2setting>
+	<e2setting>
+		<e2settingname>config.plugins.autotimer.notifsimilar</e2settingname>
+		<e2settingvalue>%s</e2settingvalue>
+	</e2setting>
+	<e2setting>
+		<e2settingname>config.plugins.autotimer.notiftimers</e2settingname>
+		<e2settingvalue>%s</e2settingvalue>
+	</e2setting>
+	<e2setting>
+		<e2settingname>config.plugins.autotimer.maxdaysinfuture</e2settingname>
+		<e2settingvalue>%s</e2settingvalue>
+	</e2setting>
+	<e2setting>
+		<e2settingname>config.plugins.autotimer.add_autotimer_to_tags</e2settingname>
+		<e2settingvalue>%s</e2settingvalue>
+	</e2setting>
+	<e2setting>
+		<e2settingname>config.plugins.autotimer.add_name_to_tags</e2settingname>
+		<e2settingvalue>%s</e2settingvalue>
+	</e2setting>
+	<e2setting>
+		<e2settingname>config.plugins.autotimer.timeout</e2settingname>
+		<e2settingvalue>%s</e2settingvalue>
+	</e2setting>
+	<e2setting>
+		<e2settingname>config.plugins.autotimer.delay</e2settingname>
+		<e2settingvalue>%s</e2settingvalue>
+	</e2setting>
+	<e2setting>
+		<e2settingname>config.plugins.autotimer.editdelay</e2settingname>
+		<e2settingvalue>%s</e2settingvalue>
+	</e2setting>
+	<e2setting>
+		<e2settingname>config.plugins.autotimer.skip_during_records</e2settingname>
+		<e2settingvalue>%s</e2settingvalue>
+	</e2setting>
+	<e2setting>
+		<e2settingname>config.plugins.autotimer.skip_during_epgrefresh</e2settingname>
+		<e2settingvalue>%s</e2settingvalue>
+	</e2setting>
+	<e2setting>
+		<e2settingname>config.plugins.autotimer.check_eit_and_remove</e2settingname>
+		<e2settingvalue>%s</e2settingvalue>
+	</e2setting>
+	<e2setting>
+		<e2settingname>config.plugins.autotimer.onlyinstandby</e2settingname>
+		<e2settingvalue>%s</e2settingvalue>
+	</e2setting>
+	<e2setting>
+		<e2settingname>config.plugins.autotimer.add_to_channelselection</e2settingname>
+		<e2settingvalue>%s</e2settingvalue>
+	</e2setting>
+	<e2setting>
+		<e2settingname>config.plugins.autotimer.add_to_epgselection</e2settingname>
+		<e2settingvalue>%s</e2settingvalue>
+	</e2setting>
+	<e2setting>
+		<e2settingname>config.plugins.autotimer.add_to_multiepgselection</e2settingname>
+		<e2settingvalue>%s</e2settingvalue>
+	</e2setting>
+	<e2setting>
+		<e2settingname>config.plugins.autotimer.log_write</e2settingname>
+		<e2settingvalue>%s</e2settingvalue>
+	</e2setting>
+	<e2setting>
+		<e2settingname>config.plugins.autotimer.log_shell</e2settingname>
+		<e2settingvalue>%s</e2settingvalue>
+	</e2setting>
+	<e2setting>
+		<e2settingname>hasVps</e2settingname>
+		<e2settingvalue>%s</e2settingvalue>
+	</e2setting>
+	<e2setting>
+		<e2settingname>hasSeriesPlugin</e2settingname>
+		<e2settingvalue>%s</e2settingvalue>
+	</e2setting>
+	<e2setting>
+		<e2settingname>version</e2settingname>
+		<e2settingvalue>%s</e2settingvalue>
+	</e2setting>
+	<e2setting>
+		<e2settingname>api_version</e2settingname>
+		<e2settingvalue>%s</e2settingvalue>
+	</e2setting>
+</e2settings>""" % (
 				config.plugins.autotimer.autopoll.value,
 				config.plugins.autotimer.interval.value,
 				config.plugins.autotimer.refresh.value,
@@ -592,9 +725,11 @@ class AutoTimerSettingsResource(resource.Resource):
 				config.plugins.autotimer.addsimilar_on_conflict.value,
 				config.plugins.autotimer.disabled_on_conflict.value,
 				config.plugins.autotimer.show_in_extensionsmenu.value,
+				config.plugins.autotimer.show_in_furtheroptionsmenu.value,
 				config.plugins.autotimer.fastscan.value,
 				config.plugins.autotimer.notifconflict.value,
 				config.plugins.autotimer.notifsimilar.value,
+				config.plugins.autotimer.notiftimers.value,
 				config.plugins.autotimer.maxdaysinfuture.value,
 				config.plugins.autotimer.add_autotimer_to_tags.value,
 				config.plugins.autotimer.add_name_to_tags.value,
@@ -603,8 +738,15 @@ class AutoTimerSettingsResource(resource.Resource):
 				config.plugins.autotimer.editdelay.value,
 				config.plugins.autotimer.skip_during_records.value,
 				config.plugins.autotimer.skip_during_epgrefresh.value,
+				config.plugins.autotimer.check_eit_and_remove.value,
+				config.plugins.autotimer.onlyinstandby.value,
+				config.plugins.autotimer.add_to_channelselection.value,
+				config.plugins.autotimer.add_to_epgselection.value,
+				config.plugins.autotimer.add_to_multiepgselection.value,
+				config.plugins.autotimer.log_write.value,
+				config.plugins.autotimer.log_shell.value,
 				hasVps,
 				hasSeriesPlugin,
 				CURRENT_CONFIG_VERSION,
-				API_VERSION,
+				API_VERSION
 			)
