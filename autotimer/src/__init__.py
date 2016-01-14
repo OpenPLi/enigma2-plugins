@@ -5,7 +5,7 @@ from os import environ as os_environ
 import gettext
 
 # Config
-from Components.config import config, ConfigSubsection, ConfigEnableDisable, \
+from Components.config import config, ConfigSubsection, \
 	ConfigNumber, ConfigSelection, ConfigYesNo, ConfigText
 
 def localeInit():
@@ -22,13 +22,13 @@ language.addCallback(localeInit)
 
 
 config.plugins.autotimer = ConfigSubsection()
-config.plugins.autotimer.autopoll = ConfigEnableDisable(default=True)
+config.plugins.autotimer.autopoll = ConfigYesNo(default=True)
 config.plugins.autotimer.delay = ConfigNumber(default=3)
 config.plugins.autotimer.editdelay = ConfigNumber(default=3)
 config.plugins.autotimer.interval = ConfigNumber(default=12)
 config.plugins.autotimer.timeout = ConfigNumber(default=5)
 config.plugins.autotimer.popup_timeout = ConfigNumber(default=5)
-config.plugins.autotimer.check_eit_and_remove = ConfigEnableDisable(default=False)
+config.plugins.autotimer.check_eit_and_remove = ConfigYesNo(default=False)
 config.plugins.autotimer.refresh = ConfigSelection(choices=[
 		("none", _("None")),
 		("auto", _("Only AutoTimers created during this session")),
@@ -45,17 +45,17 @@ config.plugins.autotimer.add_to_channelselection = ConfigYesNo(default=False)
 config.plugins.autotimer.add_to_epgselection = ConfigYesNo(default=False)
 config.plugins.autotimer.add_to_multiepgselection = ConfigYesNo(default=False)
 config.plugins.autotimer.add_to_graph = ConfigYesNo(default=False) 
-config.plugins.autotimer.try_guessing = ConfigEnableDisable(default=True)
+config.plugins.autotimer.try_guessing = ConfigYesNo(default=True)
 config.plugins.autotimer.editor = ConfigSelection(choices=[
 		("plain", _("Classic")),
 		("wizard", _("Wizard"))
 	], default="wizard"
 )
-config.plugins.autotimer.addsimilar_on_conflict = ConfigEnableDisable(default=False)
+config.plugins.autotimer.addsimilar_on_conflict = ConfigYesNo(default=False)
 config.plugins.autotimer.onlyinstandby = ConfigYesNo(default=False)
 config.plugins.autotimer.add_autotimer_to_tags = ConfigYesNo(default=False)
 config.plugins.autotimer.add_name_to_tags = ConfigYesNo(default=False)
-config.plugins.autotimer.disabled_on_conflict = ConfigEnableDisable(default=False)
+config.plugins.autotimer.disabled_on_conflict = ConfigYesNo(default=False)
 config.plugins.autotimer.show_in_extensionsmenu = ConfigYesNo(default=False)
 config.plugins.autotimer.show_in_furtheroptionsmenu = ConfigYesNo(default = True)
 config.plugins.autotimer.fastscan = ConfigYesNo(default=False)
