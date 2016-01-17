@@ -189,46 +189,41 @@ class WerbeZapper(Screen):
 		self.monitored_event = None
 		self.monitor_time = None
 		self.__event_tracker = None
+		self.select = 1
 
 		# Keep Cleanup
 		self.cleanupfnc = cleanupfnc
 
 	def showSelection(self):
 		title = _("When zap to service?")
-		if config.werbezapper.duration.value == 7:
-			select= 0
-		elif config.werbezapper.duration.value == 8:
-			select= 0
-		elif config.werbezapper.duration.value == 9:
-			select= 0
-		elif config.werbezapper.duration.value == 10:
-			select= 0
-		elif config.werbezapper.duration.value == 11:
-			select= 0
-		elif config.werbezapper.duration.value == 13:
-			select= 0
-		elif config.werbezapper.duration.value == 12:
-			select= 7
-		elif config.werbezapper.duration.value == 14:
-			select= 8
-		elif config.werbezapper.duration.value == 15:
-			select= 9
+		self.select = 1
+		val = int(config.werbezapper.duration.value)
+		if val == 1: select= 1
+		elif val == 2: select= 2
+		elif val == 3: select= 3
+		elif val == 4: select= 4
+		elif val == 5: select= 5
+		elif val == 6: select= 6
+		elif val == 8: select= 7
+		elif val == 9: select= 8
+		elif val == 14: select= 9
 		else:
-			select = int(config.werbezapper.duration.value)
+			select = 0
+			self.select = 0
 		keys = []
 
 		# Number keys
 		choices = [
 								( _("Custom"), 'custom'),
-								('1 ' + _('minute'),  1),
+								('1 ' + _('minute'), 1),
 								('2 ' + _('minut'), 2),
 								('3 ' + _('minut'), 3),
 								('4 ' + _('minut'), 4),
 								('5 ' + _('minutes'), 5),
 								('6 ' + _('minutes'), 6),
-								('12 ' + _('minutes'), 12),
+								('8 ' + _('minutes'), 8),
+								('9 ' + _('minutes'), 9),
 								('14 ' + _('minutes'), 14),
-								('15 ' + _('minutes'), 15),
 							]
 		keys.extend( [ "0", "1", "2", "3", "4", "5", "6", "7", "8", "9" ] )
 		# Dummy entry to seperate the color keys
@@ -236,10 +231,10 @@ class WerbeZapper(Screen):
 		keys.append( "" )  # No key
 		# Blue key - Covers the monitoring functions without closing Werbezapper
 		if self.monitor_timer.isActive():
-			choices.append( ( _("Stop monitoring"), 'stopmonitoring' ) )
+			choices.append(( _("Stop monitoring"), 'stopmonitoring' ))
 		else:
-			choices.append( ( _("Start monitoring"), 'startmonitoring' ) )
-		keys.append( "blue" )
+			choices.append(( _("Start monitoring"), 'startmonitoring' ))
+		keys.append("blue")
 
 		# Red key - Covers all stop and close functions
 		if self.zap_timer.isActive():
@@ -247,9 +242,9 @@ class WerbeZapper(Screen):
 				remaining = int( math.floor( self.zap_time - time() ) )
 				remaining = remaining if remaining > 0 else 0
 				remaining /= 60
-				select = remaining if 0 < remaining and remaining < 7 else select
-			choices.append( ( _("Stop timer"), 'stoptimer' ) )
-			keys.append( "red" )
+				select = remaining if 0 < remaining and remaining < 5 else select
+			choices.append(( _("Stop timer"), 'stoptimer'))
+			keys.append("red")
 		else:
 			choices.append( ( "------", 'close' ) )
 			keys.append( "" )  # No key
@@ -284,14 +279,16 @@ class WerbeZapper(Screen):
 			from Screens.InputBox import InputBox
 			from Components.Input import Input
 
-			#TODO allow custom input in seconds or parts of a minute 1.5
+			num = "10"
+			if not self.select:
+				num = str(config.werbezapper.duration.value)
 			self.session.openWithCallback(
 				self.inputCallback,
 				InputBox,
-				title=_("How many minutes to wait until zapping back?"),
-				text="10",
-				maxSize=False,
-				type=Input.NUMBER
+				title =_("How many minutes to wait until zapping back?"),
+				text = num,
+				maxSize = False,
+				type = Input.NUMBER
 			)
 			return
 
