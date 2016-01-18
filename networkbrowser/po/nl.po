@@ -251,7 +251,7 @@ msgid "View, edit or delete usernames and passwords for your network."
 msgstr "Bekijk, wijzig of verwijder gebruikersnaam en wachtwoord voor uw netwerk."
 
 msgid "Your network mount has been activated."
-msgstr "Uw netwermount is geactiveerd."
+msgstr "Uw netwerkmount is geactiveerd."
 
 msgid "Your network mount has been removed."
 msgstr "Uw netwerkmount is verwijderd."
