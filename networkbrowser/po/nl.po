@@ -8,16 +8,15 @@ msgstr ""
 "Project-Id-Version: enigma2 - networkbrowser\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-01-28 16:39+0100\n"
-"PO-Revision-Date: 2009-06-07 11:56+0100\n"
+"PO-Revision-Date: 2016-01-15 13:28+0100\n"
 "Last-Translator: \n"
-"Language-Team:  <Benny.DeTandt@gmail.com>\n"
+"Language-Team: Benny.DeTandt@gmail.com\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Language: dutch\n"
-"X-Poedit-Country: NETHERLANDS\n"
-"X-Generator: KBabel 1.11.4\n"
+"X-Generator: Poedit 1.8.6\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: nl\n"
 
 msgid ""
 "A mount entry with this name already exists!\n"
@@ -40,20 +39,20 @@ msgid "Add a new NFS or CIFS mount point to your Dreambox."
 msgstr "Voeg een nieuwe NFS of CIFS verbinding aan uw Dreambox toe."
 
 msgid "Add new network mount point"
-msgstr "Voeg een nieuwe netwerkverbinding toe"
+msgstr "Voeg een nieuwe netwerkmount toe"
 
 msgid ""
 "Are you sure you want to save this network mount?\n"
 "\n"
 msgstr ""
-"Wilt u deze netwerkverbinding bewaren?\n"
+"Wilt u deze netwerkmount bewaren?\n"
 "\n"
 
 msgid "Attempt to mount shares again"
-msgstr ""
+msgstr "Nieuwe poging naar gedeelde mount"
 
 msgid "Attempt to recover lost mounts (in background)"
-msgstr ""
+msgstr "Poging tot herstellen van verbroken mounts (op de achtergrond)."
 
 msgid "Browse network neighbourhood"
 msgstr "Blader door netwerkomgeving"
@@ -77,7 +76,7 @@ msgid "Delete"
 msgstr "Verwijderen"
 
 msgid "Delete mount"
-msgstr ""
+msgstr "Verwijder mount"
 
 msgid "Dir:"
 msgstr "Map:"
@@ -128,22 +127,22 @@ msgid "Manage network shares"
 msgstr "Beheer gedeelde netwerkmappen"
 
 msgid "Manage your network shares..."
-msgstr "Beheer uw netwerkverbindingen."
+msgstr "Beheer uw gedeelde netwerkmappen."
 
 msgid "Mount again"
-msgstr ""
+msgstr "Mount opnieuw"
 
 msgid "Mount informations"
-msgstr "Info verbindingen"
+msgstr "Info mount"
 
 msgid "Mount options"
-msgstr "Verbindings opties"
+msgstr "Mount opties"
 
 msgid "Mount type"
-msgstr "Type verbinding"
+msgstr "Type mount"
 
 msgid "MountManager"
-msgstr "Verbindingsbeheer"
+msgstr "Mountbeheer"
 
 msgid ""
 "Mounted/\n"
@@ -153,13 +152,13 @@ msgstr ""
 "Niet verbonden"
 
 msgid "Mountpoints management"
-msgstr "Verbindingsbeheer"
+msgstr "Mountpoints beheer"
 
 msgid "Mounts editor"
 msgstr "Verbindingseditor"
 
 msgid "Mounts management"
-msgstr "Verbindingsbeheer"
+msgstr "Beheer mounts"
 
 msgid "NFS share"
 msgstr "NFS share"
@@ -174,16 +173,13 @@ msgid "Password"
 msgstr "Wachtwoord"
 
 msgid "Please wait for activation of your network mount..."
-msgstr ""
-"Een ogenblikje geduld a.u.b. terwijl we uw netwerkverbinding activeren..."
+msgstr "Een ogenblikje geduld a.u.b. terwijl we uw netwerkmount activeren..."
 
 msgid "Please wait while removing your network mount..."
-msgstr ""
-"Een ogenblikje geduld a.u.b. terwijl we uw netwerkverbinding verwijderen..."
+msgstr "Een ogenblikje geduld a.u.b. terwijl we uw netwerkmount verwijderen..."
 
 msgid "Please wait while updating your network mount..."
-msgstr ""
-"Een ogenblikje geduld a.u.b. terwijl we uw netwerkverbinding bijwerken..."
+msgstr "Een ogenblikje geduld a.u.b. terwijl we uw netwerkmount bijwerken..."
 
 msgid "Please wait while your network is restarting..."
 msgstr "Een ogenblikje geduld a.u.b. terwijl we uw netwerk herstarten..."
@@ -192,7 +188,7 @@ msgid "Press OK to activate the settings."
 msgstr "Druk op OK om te activeren."
 
 msgid "Press OK to collapse this host"
-msgstr ""
+msgstr "Druk op OK om deze host in te klappen"
 
 msgid "Press OK to edit selected settings."
 msgstr "Druk op OK om te wijzigen."
@@ -201,10 +197,10 @@ msgid "Press OK to edit the settings."
 msgstr "Druk op OK om op te slaan."
 
 msgid "Press OK to expand this host"
-msgstr ""
+msgstr "Druk op OK om deze host uit te klapen"
 
 msgid "Press OK to mount this share!"
-msgstr ""
+msgstr "Druk op OK om deze mount te delen"
 
 msgid "Press OK to mount!"
 msgstr "Druk op OK om te verbinden."
@@ -216,13 +212,13 @@ msgid "Press OK to select."
 msgstr "Druk op OK om te selecteren."
 
 msgid "Rescan"
-msgstr ""
+msgstr "Herscan"
 
 msgid "Scan NFS share"
-msgstr ""
+msgstr "Scan naar NFS share"
 
 msgid "Scan range"
-msgstr ""
+msgstr "Scan bereik"
 
 msgid "Search for network shares"
 msgstr "Zoeken naar gedeelde mappen"
@@ -249,26 +245,25 @@ msgid "Username"
 msgstr "Gebruikersnaam"
 
 msgid "View, edit or delete mountpoints on your Dreambox."
-msgstr "Bekijk, wijzig of verwijder verbindingen op uw Dreambox."
+msgstr "Bekijk, wijzig of verwijder mounts op uw Dreambox."
 
 msgid "View, edit or delete usernames and passwords for your network."
-msgstr ""
-"Bekijk, wijzig of verwijder gebruikersnaam en wachtwoord voor uw netwerk."
+msgstr "Bekijk, wijzig of verwijder gebruikersnaam en wachtwoord voor uw netwerk."
 
 msgid "Your network mount has been activated."
-msgstr "Uw netwerkverbinding is geactiveerd."
+msgstr "Uw netwermount is geactiveerd."
 
 msgid "Your network mount has been removed."
-msgstr "Uw netwerkverbinding is verwijderd."
+msgstr "Uw netwerkmount is verwijderd."
 
 msgid "Your network mount has been updated."
-msgstr "Uw netwerkverbinding is bijgewerkt."
+msgstr "Uw netwerkmount is bijgewerkt."
 
 msgid "use as HDD replacement"
 msgstr "Gebruik als harde schijf vervanging"
 
 #~ msgid "Delete selected mount"
-#~ msgstr "Verwijder deze verbinding"
+#~ msgstr "Verwijder deze mount"
 
 #~ msgid "Rescan network"
 #~ msgstr "Netwerk opnieuw doorzoeken"
