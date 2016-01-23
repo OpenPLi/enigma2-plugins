@@ -102,12 +102,6 @@ babelzapper/etc/Makefile
 babelzapper/meta/Makefile
 babelzapper/src/Makefile
 
-bitrateviewer/Makefile
-bitrateviewer/meta/Makefile
-bitrateviewer/src/Makefile
-bitrateviewer/po/Makefile
-bitrateviewer/src/bitratecalc/Makefile
-
 blindscan/src/Makefile
 blindscan/po/Makefile
 blindscan/Makefile
