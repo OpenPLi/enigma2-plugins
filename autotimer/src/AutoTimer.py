@@ -207,9 +207,6 @@ class AutoTimer:
 		new = 0
 		modified = 0
 
-		# Precompute timer destination dir
-		dest = timer.destination or config.usage.default_path.value
-
 		# Workaround to allow search for umlauts if we know the encoding
 		#match = timer.match
 		match = timer.match.replace('\xc2\x86', '').replace('\xc2\x87', '')
@@ -319,6 +316,9 @@ class AutoTimer:
 
 			startLog()
 
+			# timer destination dir
+			dest = timer.destination or config.usage.default_path.value
+
 			evtBegin = begin
 			evtEnd = end = begin + duration
 
@@ -394,8 +394,7 @@ class AutoTimer:
 			# Initialize
 			newEntry = None
 			oldExists = False
-			dirname = None
-			
+
 			# Eventually change service to alternative
 			if timer.overrideAlternatives:
 				serviceref = timer.getAlternative(serviceref)
@@ -404,23 +403,24 @@ class AutoTimer:
 				#doLog("[AutoTimer SeriesPlugin] Request name, desc, path %s %s %s" % (name,shortdesc,dest))
 				sp = sp_getSeasonEpisode(serviceref, name, evtBegin, evtEnd, shortdesc, dest)
 				if sp and type(sp) in (tuple, list) and len(sp) == 4:
-					name = sp[0]
-					shortdesc = sp[1]
-					dirname = sp[2]
+					name = sp[0] or name
+					shortdesc = sp[1] or shortdesc
+					dest = sp[2] or dest
 					doLog(str(sp[3]))
-					#doLog("[AutoTimer SeriesPlugin] Returned name, desc, path %s %s %s" % (name,shortdesc,dirname))
+					#doLog("[AutoTimer SeriesPlugin] Returned name, desc, path %s %s %s" % (name,shortdesc,dest))
 				else:
 					# Nothing found
 					doLog(str(sp))
 					# If AutoTimer name not equal match, do a second lookup with the name
 					if timer.name.lower() != timer.match.lower():
+						#doLog("[AutoTimer SeriesPlugin] Request name, desc, path %s %s %s" % (timer.name,shortdesc,dest))
 						sp = sp_getSeasonEpisode(serviceref, timer.name, evtBegin, evtEnd, shortdesc, dest)
 						if sp and type(sp) in (tuple, list) and len(sp) == 4:
-							name = sp[0]
-							shortdesc = sp[1]
-							dirname = sp[2]
+							name = sp[0] or name
+							shortdesc = sp[1] or shortdesc
+							dest = sp[2] or dest
 							doLog(str(sp[3]))
-							#doLog("Returned name, desc, path %s %s %s" % (name,shortdesc,dirname))
+							#doLog("[AutoTimer SeriesPlugin] Returned name, desc, path %s %s %s" % (name,shortdesc,dest))
 						else:
 							doLog(str(sp))
 
@@ -569,7 +569,8 @@ class AutoTimer:
 				if afterEvent is not None:
 					newEntry.afterEvent = afterEvent
 
-			newEntry.dirname = dirname or timer.destination
+			newEntry.dirname = dest
+			newEntry.calculateFilename()
 			newEntry.justplay = timer.justplay
 			newEntry.vpsplugin_enabled = timer.vps_enabled
 			newEntry.vpsplugin_overwrite = timer.vps_overwrite
@@ -757,10 +758,10 @@ class AutoTimer:
 		del remove
 
 	def modifyTimer(self, timer, name, shortdesc, begin, end, serviceref, eit=None):
-		# Don't update the name, it will overwrite the name of the SeriesPlugin
-		#timer.name = name
-		if not timer.description:
-			# Only update the description if it is empty, it will overwrite the description of the SeriesPlugin
+		# Only update the name and description if we got a "new" one
+		if len(timer.name) < len(name):
+			timer.name = name
+		if len(timer.description) < len(shortdesc):
 			timer.description = shortdesc
 		timer.begin = int(begin)
 		timer.end = int(end)
