@@ -28,7 +28,6 @@ AX_PTHREAD
 
 TUXBOX_APPS_DVB
 
-PKG_CHECK_MODULES(ENIGMA2, enigma2)
 PKG_CHECK_MODULES(GSTREAMER, gstreamer-$GST_MAJORMINOR gstreamer-pbutils-$GST_MAJORMINOR)
 
 AC_ARG_WITH(debug,
@@ -356,7 +355,6 @@ partnerbox/meta/Makefile
 partnerbox/po/Makefile
 partnerbox/src/Makefile
 partnerbox/src/icons/Makefile
-partnerbox/src/servicewebts/Makefile
 
 permanentclock/Makefile
 permanentclock/meta/Makefile
@@ -484,7 +482,6 @@ vlcplayer/Makefile
 vlcplayer/meta/Makefile
 vlcplayer/po/Makefile
 vlcplayer/src/Makefile
-vlcplayer/src/servicets/Makefile
 
 vps/Makefile
 vps/meta/Makefile

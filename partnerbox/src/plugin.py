@@ -43,7 +43,6 @@ import time
 import xml.etree.cElementTree
 import urllib
 import SocketServer
-import servicewebts
 ENIGMA_WEBSERVICE_ID = 0x1012
 from Screens.InfoBarGenerics import InfoBarAudioSelection
 from Screens.InfoBar import InfoBar
