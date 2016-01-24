@@ -72,16 +72,8 @@ if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/MerlinMusicPlayer/plug
 		pass
 
 from enigma import eConsoleAppContainer, eServiceReference, ePicLoad, getDesktop, eServiceCenter
-from os import system as os_system
-from os import stat as os_stat
-from os import walk as os_walk
-from os import popen as os_popen
-from os import rename as os_rename
-from os import mkdir as os_mkdir
-from os import path as os_path
-from os import listdir as os_listdir
-from time import strftime as time_strftime
-from time import localtime as time_localtime
+import os
+from time import strftime, localtime
 
 config.plugins.DreamExplorer = ConfigSubsection()
 config.plugins.DreamExplorer.startDir = ConfigText(default="/")
@@ -177,7 +169,7 @@ class DreamExplorerII(Screen):
 		Screen.__init__(self, session)
 		self.setTitle(_("Dream-Explorer"))
 		self.sesion = session
-		self.altservice = self.session.nav.getCurrentlyPlayingServiceReference()
+		self.altservice = self.session.nav.getCurrentlyPlayingServiceOrGroup()
 		self.MyBox = HardwareInfo().get_device_name()
 		self.commando = [ "ls" ]
 		self.selectedDir = "/tmp/"
@@ -295,7 +287,7 @@ class DreamExplorerII(Screen):
 					self.session.openWithCallback(self.SysExecution, ChoiceBox, title=_("Do you want to execute?\\n") +filename, list=askList)
 				else:
 					try:
-						xfile = os_stat(filename)
+						xfile = os.stat(filename)
 					except:
 						xfile = None 
 					#old (xfile.st_size < 61440)
@@ -325,6 +317,7 @@ class DreamExplorerII(Screen):
 			self.setTitle(_("Dream-Explorer"))
 
 	def explContextMenu(self):
+		self.playfile = ''
 		if self.MediaFilter:
 			mftext = _("Disable")
 		else:
@@ -347,6 +340,28 @@ class DreamExplorerII(Screen):
 						(_("Create new directory"), "NEWDIR"),
 						(_("Set start directory"), "SETSTARTDIR"),
 						(_("About"), "HELP")]
+				last_dir = self["filelist"].getFilename() 
+				if last_dir and last_dir.endswith("/BDMV/STREAM/"):
+					sizelist = []
+					try:
+						for name in os.listdir(last_dir):
+							if name.endswith(".m2ts"):
+								try:
+									st = os.stat(last_dir + name)
+									size = st.st_size
+									if size > 0:
+										sizelist.append((last_dir + name, size))
+								except:
+									pass
+						if sizelist:
+							sizelist.sort(key=lambda x: x[1])
+					except:
+						pass
+					Len = len(sizelist)
+					if Len > 0:
+						index = Len - 1
+						self.playfile = sizelist[index][0]
+						contextDirList.insert(1,(_("Auto play blu-ray file"), "BLURAY"))
 				dei = self.session.openWithCallback(self.SysExecution, ChoiceBox, title=_("Options:\n"), list=contextDirList)
 				dei.setTitle(_("Dream-Explorer"))
 			else:
@@ -384,7 +399,7 @@ class DreamExplorerII(Screen):
 			self.session.open(Console, cmdlist = ["cd /tmp/", "tar -czf /tmp/dreambox.bootlogo.tar.gz /usr/share/bootlogo.mvi /usr/share/bootlogo_wait.mvi /usr/share/backdrop.mvi /boot/bootlogo.jpg"])
 		elif answer == "VIEW":
 			try:
-				yfile = os_stat(self.commando[0])
+				yfile = os.stat(self.commando[0])
 			except:
 				yfile = None 
 			#old yfile.st_size < 61440)
@@ -459,9 +474,13 @@ class DreamExplorerII(Screen):
 			if not(self.MediaFilter):
 				self.session.openWithCallback(self.callbackCPmaniger, SoftLinkScreen, self["filelist"].getCurrentDirectory())
 		elif answer == "CHMOD644":
-			os_system("chmod 644 " + self["filelist"].getCurrentDirectory() + self["filelist"].getFilename())
+			os.system("chmod 644 " + self["filelist"].getCurrentDirectory() + self["filelist"].getFilename())
 		elif answer == "CHMOD755":
-			os_system("chmod 755 " + self["filelist"].getCurrentDirectory() + self["filelist"].getFilename())
+			os.system("chmod 755 " + self["filelist"].getCurrentDirectory() + self["filelist"].getFilename())
+		elif answer == "BLURAY":
+			if self.playfile:
+				fileRef = eServiceReference("4097:0:0:0:0:0:0:0:0:0:" + self.playfile)
+				self.session.open(MoviePlayer, fileRef)
 
 	def up(self):
 		self["filelist"].up()
@@ -493,9 +512,9 @@ class DreamExplorerII(Screen):
 			if self["filelist"].getSelectionIndex()!=0:
 				curSelDir = self["filelist"].getSelection()[0]
 				try:
-					dir_stats = os_stat(curSelDir)
+					dir_stats = os.stat(curSelDir)
 					dir_infos = _("size ") + str(self.Humanizer(dir_stats.st_size)) + "    "
-					dir_infos = dir_infos + _("last-mod ") + time_strftime("%d.%m.%Y %H:%M:%S",time_localtime(dir_stats.st_mtime)) + "    "
+					dir_infos = dir_infos + _("last-mod ") + strftime("%d.%m.%Y %H:%M:%S",localtime(dir_stats.st_mtime)) + "    "
 					dir_infos = dir_infos + _("mode ") + str(dir_stats.st_mode)
 				except:
 					dir_infos = _("read error")
@@ -506,9 +525,9 @@ class DreamExplorerII(Screen):
 		else:
 			curSelFile = self["filelist"].getCurrentDirectory() + self["filelist"].getFilename()
 			try:
-				file_stats = os_stat(curSelFile)
+				file_stats = os.stat(curSelFile)
 				file_infos = _("size ") + str(self.Humanizer(file_stats.st_size)) + "    "
-				file_infos = file_infos + _("last-mod ") + time_strftime("%d.%m.%Y %H:%M:%S",time_localtime(file_stats.st_mtime)) + "    "
+				file_infos = file_infos + _("last-mod ") + strftime("%d.%m.%Y %H:%M:%S",localtime(file_stats.st_mtime)) + "    "
 				file_infos = file_infos + _("mode ") + str(file_stats.st_mode)
 			except:
 					file_infos = _("read error")
@@ -556,7 +575,7 @@ class DreamExplorerII(Screen):
 			DELfilename = self["filelist"].getCurrentDirectory() + self["filelist"].getFilename()
 			order = 'rm -f \"' + DELfilename + '\"'
 			try:
-				os_system(order)
+				os.system(order)
 				self["filelist"].refresh()
 			except:
 				dei = self.session.open(MessageBox,_("%s \nFAILED!") % order, MessageBox.TYPE_ERROR)
@@ -568,7 +587,7 @@ class DreamExplorerII(Screen):
 			DELDIR = self["filelist"].getSelection()[0]
 			order = 'rm -r \"' + DELDIR + '\"'
 			try:
-				os_system(order)
+				os.system(order)
 				self["filelist"].refresh()
 			except:
 				dei = self.session.open(MessageBox,_("%s \nFAILED!") % order, MessageBox.TYPE_ERROR)
@@ -592,7 +611,7 @@ class DreamExplorerII(Screen):
 			source = self["filelist"].getCurrentDirectory() + self["filelist"].getFilename()
 			dest = self["filelist"].getCurrentDirectory() + answer
 			try:
-				os_rename(source, dest)
+				os.rename(source, dest)
 				self["filelist"].refresh()
 			except:
 				dei = self.session.open(MessageBox,_("Rename: %s \nFAILED!") % answer, MessageBox.TYPE_ERROR)
@@ -604,7 +623,7 @@ class DreamExplorerII(Screen):
 			source = self["filelist"].getSelection()[0]
 			dest = answer
 			try:
-				os_rename(source, dest)
+				os.rename(source, dest)
 				self["filelist"].refresh()
 			except:
 				dei = self.session.open(MessageBox,_("Rename: %s \nFAILED!") % answer, MessageBox.TYPE_ERROR)
@@ -623,7 +642,7 @@ class DreamExplorerII(Screen):
 			order = 'touch ' + dest + answer
 			try:
 				if not fileExists(dest + answer):
-					os_system(order)
+					os.system(order)
 				self["filelist"].refresh()
 			except:
 				dei = self.session.open(MessageBox,_("%s \nFAILED!") % order, MessageBox.TYPE_ERROR)
@@ -642,7 +661,7 @@ class DreamExplorerII(Screen):
 			order = dest + answer
 			try:
 				if not pathExists(dest + answer):
-					os_mkdir(order)
+					os.mkdir(order)
 				self["filelist"].refresh()
 			except:
 				dei = self.session.open(MessageBox,_("%s \nFAILED!") % order, MessageBox.TYPE_ERROR)
@@ -693,12 +712,12 @@ class DreamExplorerII(Screen):
 		slist = []
 		foundIndex = 0
 		index = 0
-		files = os_listdir(self["filelist"].getCurrentDirectory())
+		files = os.listdir(self["filelist"].getCurrentDirectory())
 		files.sort()
 		for name in files:
 			testname = name.lower()
 			if testname.endswith(".mp3") or name.endswith(".m4a") or name.endswith(".ogg") or name.endswith(".flac"):
-				slist.append((Item(text = name, filename = os_path.join(self["filelist"].getCurrentDirectory(),name)),))
+				slist.append((Item(text = name, filename = os.path.join(self["filelist"].getCurrentDirectory(),name)),))
 				if self["filelist"].getFilename() == name:
 					foundIndex = index
 				index = index + 1
@@ -836,7 +855,7 @@ class MviExplorer(Screen):
 		self.onLayoutFinish.append(self.showMvi)
 
 	def showMvi(self):
-		os_system("/usr/bin/showiframe " + self.file_name)
+		os.system("/usr/bin/showiframe " + self.file_name)
 
 class PictureExplorerII(Screen):
 	global HDSkn
@@ -891,7 +910,7 @@ class PictureExplorerII(Screen):
 			self.EXpicload.startDecode(self.whatPic)
 		if self.whatDir is not None:
 			pidx = 0
-			for root, dirs, files in os_walk(self.whatDir ):
+			for root, dirs, files in os.walk(self.whatDir):
 				for name in files:
 					if name.endswith(".jpg") or name.endswith(".jpeg") or name.endswith(".Jpg") or name.endswith(".Jpeg") or name.endswith(".JPG") or name.endswith(".JPEG"):
 						self.picList.append(name)
@@ -994,11 +1013,11 @@ class MusicExplorer(MoviePlayer):
 		MoviePlayer.WithoutStopClose = False
 
 	def showMMI(self):
-		os_system("/usr/bin/showiframe /usr/lib/enigma2/python/Plugins/Extensions/DreamExplorer/res/music.mvi")
+		os.system("/usr/bin/showiframe /usr/lib/enigma2/python/Plugins/Extensions/DreamExplorer/res/music.mvi")
 
 	def searchMusic(self):
 		midx = 0
-		for root, dirs, files in os_walk(self.MusicDir ):
+		for root, dirs, files in os.walk(self.MusicDir):
 			for name in files:
 				name = name.lower()
 				if name.endswith(".mp3") or name.endswith(".mp2") or name.endswith(".ogg") or name.endswith(".wav") or name.endswith(".flac") or name.endswith(".m4a"):
@@ -1037,10 +1056,10 @@ class MusicExplorer(MoviePlayer):
 def ScanSysem_str():
 	try:
 		ret = ""
-		out_line = os_popen("uptime").readline()
+		out_line = os.popen("uptime").readline()
 		ret = ret  + "at" + out_line + "\n"
 		out_lines = []
-		out_lines = os_popen("cat /proc/meminfo").readlines()
+		out_lines = os.popen("cat /proc/meminfo").readlines()
 		for lidx in range(len(out_lines)-1):
 			tstLine = out_lines[lidx].split()
 			if "MemTotal:" in tstLine:
@@ -1048,7 +1067,7 @@ def ScanSysem_str():
 			elif "MemFree:" in tstLine:
 				ret = ret + out_lines[lidx] + "\n"
 		out_lines = []
-		out_lines = os_popen("cat /proc/stat").readlines()
+		out_lines = os.popen("cat /proc/stat").readlines()
 		for lidx in range(len(out_lines)-1):
 			tstLine = out_lines[lidx].split()
 			if "procs_running" in tstLine:
@@ -1141,7 +1160,7 @@ class CPmaniger(Screen):
 			try:
 				config.plugins.DreamExplorer.CopyDest.value = dest
 				config.plugins.DreamExplorer.CopyDest.save()
-				os_system(order)
+				os.system(order)
 			except:
 				dei = self.session.open(MessageBox,_("%s \nFAILED!") % order, MessageBox.TYPE_ERROR)
 				dei.setTitle(_("Dream-Explorer"))
@@ -1159,12 +1178,12 @@ class CPmaniger(Screen):
 			try:
 				config.plugins.DreamExplorer.CopyDest.value = dest
 				config.plugins.DreamExplorer.CopyDest.save()
-				os_system(order)
+				os.system(order)
 			except:
 				dei = self.session.open(MessageBox,_("%s \nFAILED!") % order, MessageBox.TYPE_ERROR)
 				dei.setTitle(_("Dream-Explorer"))
 			try:
-				os_system(DELorder)
+				os.system(DELorder)
 			except:
 				dei = self.session.open(MessageBox,_("%s \nFAILED!") % DELorder, MessageBox.TYPE_ERROR)
 				dei.setTitle(_("Dream-Explorer"))
@@ -1251,7 +1270,7 @@ class SoftLinkScreen(Screen):
 					order = 'ln -s \"' + self["SLto"].getSelection()[0] + '\" \"' + self.newSLname + '\"'
 				else:
 					order = 'ln -s \"' + (self["SLto"].getCurrentDirectory() + self["SLto"].getFilename()) + '\" \"' + self.newSLname + '\"'
-				os_system(order)
+				os.system(order)
 				self.close(" ")
 		else:
 			dei = self.session.open(MessageBox,_("Softlink name error !"), MessageBox.TYPE_ERROR)

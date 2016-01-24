@@ -351,3 +351,6 @@ msgstr "объем "
 
 msgid "wait..."
 msgstr "подождите..."
+
+msgid "Auto play blu-ray file"
+msgstr "Авто проигрывание файла blu-ray"
