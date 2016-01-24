@@ -309,7 +309,7 @@ if fileExists(dvdPlayer) and fileExists(dvdPlayerKeymap):
 		DVDPlayer2.seekFwdManual = seekbar
 		DVDPlayer2.seekBackManual = seekbarBack
 mediaplayer = '%s%s' % (resolveFilename(SCOPE_PLUGINS), 'Extensions/MediaPlayer/plugin.pyo')
-if fileExists(mediaplayer) and fileExists("%so" % mediaplayer):
+if fileExists(mediaplayer):
 	try:
 		from Plugins.Extensions.MediaPlayer.plugin import MediaPlayer
 	except:
