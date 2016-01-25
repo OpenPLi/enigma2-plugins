@@ -220,7 +220,10 @@ class DreamExplorerII(Screen):
 					fileRef = eServiceReference("1:0:0:0:0:0:0:0:0:0:" + filename)
 					self.session.open(MoviePlayer, fileRef)
 				elif (testFileName.endswith(".mpg")) or (testFileName.endswith(".mpeg")) or (testFileName.endswith(".mkv")) or (testFileName.endswith(".m2ts")) or (testFileName.endswith(".vob")) or (testFileName.endswith(".mod")):
-					fileRef = eServiceReference("4097:0:0:0:0:0:0:0:0:0:" + filename)
+					if testFileName.endswith(".m2ts"):
+						fileRef = eServiceReference("3:0:0:0:0:0:0:0:0:0:" + filename)
+					else:
+						fileRef = eServiceReference("4097:0:0:0:0:0:0:0:0:0:" + filename)
 					self.session.open(MoviePlayer, fileRef)
 				elif (testFileName.endswith(".avi")) or (testFileName.endswith(".mp4")) or (testFileName.endswith(".divx")) or (testFileName.endswith(".wmv")) or (testFileName.endswith(".mov")) or (testFileName.endswith(".flv")) or (testFileName.endswith(".3gp")):
 					if not(self.MyBox=="dm7025"):
@@ -340,17 +343,18 @@ class DreamExplorerII(Screen):
 						(_("Create new directory"), "NEWDIR"),
 						(_("Set start directory"), "SETSTARTDIR"),
 						(_("About"), "HELP")]
-				last_dir = self["filelist"].getFilename() 
-				if last_dir and last_dir.endswith("/BDMV/STREAM/"):
+				last_dir = self["filelist"].getFilename()
+				folder = last_dir + 'STREAM/'
+				if last_dir.endswith("/BDMV/") and os.path.isdir(folder):
 					sizelist = []
 					try:
-						for name in os.listdir(last_dir):
+						for name in os.listdir(folder):
 							if name.endswith(".m2ts"):
 								try:
-									st = os.stat(last_dir + name)
+									st = os.stat(folder + name)
 									size = st.st_size
 									if size > 0:
-										sizelist.append((last_dir + name, size))
+										sizelist.append((folder + name, size))
 								except:
 									pass
 						if sizelist:
@@ -479,7 +483,7 @@ class DreamExplorerII(Screen):
 			os.system("chmod 755 " + self["filelist"].getCurrentDirectory() + self["filelist"].getFilename())
 		elif answer == "BLURAY":
 			if self.playfile:
-				fileRef = eServiceReference("4097:0:0:0:0:0:0:0:0:0:" + self.playfile)
+				fileRef = eServiceReference("3:0:0:0:0:0:0:0:0:0:" + self.playfile)
 				self.session.open(MoviePlayer, fileRef)
 
 	def up(self):
