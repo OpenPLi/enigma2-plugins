@@ -28,8 +28,8 @@ msgstr ""
 "Ενεργό/\n"
 "Μη ενεργό"
 
-msgid "Add a new NFS or CIFS mount point to your Dreambox."
-msgstr "Προσθήκη μίας νέας προσάρτησης NFS ή CIFS στο Dreambox."
+msgid "Add a new NFS or CIFS mount point to your Receiver."
+msgstr "Προσθήκη μίας νέας προσάρτησης NFS ή CIFS στο Receiver."
 
 msgid "Add new network mount point"
 msgstr "Προσθήκη νέου σημείου προσάρτησης"
@@ -57,8 +57,8 @@ msgstr "Ακύρωση"
 msgid "Change hostname"
 msgstr "Αλλαγή ονόματος συσκευής δικτύου"
 
-msgid "Change the hostname of your Dreambox."
-msgstr "Αλλαγή ονόματος δικτύου του Dreambox."
+msgid "Change the hostname of your Receiver."
+msgstr "Αλλαγή ονόματος δικτύου του Receiver."
 
 msgid "Close"
 msgstr "Κλείσιμο"
@@ -79,8 +79,8 @@ msgstr ""
 msgid "Enter IP to scan..."
 msgstr "Εισάγετε IP προς ανίχνευση..."
 
-msgid "Enter new hostname for your Dreambox"
-msgstr "Εισαγωγή νέου ονόματος δικτύου του Dreambox"
+msgid "Enter new hostname for your Receiver"
+msgstr "Εισαγωγή νέου ονόματος δικτύου του Receiver"
 
 msgid "Enter options:"
 msgstr "Εισαγωγή επιλογών:"
@@ -242,8 +242,8 @@ msgstr "Διαχειριστής χρηστών"
 msgid "Username"
 msgstr "Όνομα χρήστη"
 
-msgid "View, edit or delete mountpoints on your Dreambox."
-msgstr "Επισκόπηση, επεξεργασία ή διαγραφή προσαρτήσεων στο Dreambox."
+msgid "View, edit or delete mountpoints on your Receiver."
+msgstr "Επισκόπηση, επεξεργασία ή διαγραφή προσαρτήσεων στο Receiver."
 
 msgid "View, edit or delete usernames and passwords for your network."
 msgstr "Επισκόπηση, επεξεργασία ή διαγραφή ονομάτων και κωδικών στο δίκτυο."

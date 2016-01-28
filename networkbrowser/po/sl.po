@@ -35,7 +35,7 @@ msgstr ""
 "Neaktivno"
 
 #
-msgid "Add a new NFS or CIFS mount point to your Dreambox."
+msgid "Add a new NFS or CIFS mount point to your Receiver."
 msgstr "NFS ali CIFS"
 
 #
@@ -75,7 +75,7 @@ msgid "Change hostname"
 msgstr "Sprememba imena sprejemnika"
 
 #
-msgid "Change the hostname of your Dreambox."
+msgid "Change the hostname of your Receiver."
 msgstr "Sprememba mrežnega imena satelitskega sprejemnika."
 
 #
@@ -102,7 +102,7 @@ msgid "Enter IP to scan..."
 msgstr "Vnesite IP naslov:"
 
 #
-msgid "Enter new hostname for your Dreambox"
+msgid "Enter new hostname for your Receiver"
 msgstr "Vnesite novo gostiteljsko ime za sprejemnik"
 
 #
@@ -309,7 +309,7 @@ msgid "Username"
 msgstr "Uporabniško ime"
 
 #
-msgid "View, edit or delete mountpoints on your Dreambox."
+msgid "View, edit or delete mountpoints on your Receiver."
 msgstr "Poglejte, spremenite ali brišite mrežne naprave na sprejemniku."
 
 #

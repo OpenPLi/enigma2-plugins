@@ -30,7 +30,7 @@ msgstr ""
 "Aktiivne/\n"
 "Välja lülitatud"
 
-msgid "Add a new NFS or CIFS mount point to your Dreambox."
+msgid "Add a new NFS or CIFS mount point to your Receiver."
 msgstr "Lisa uus NFS või CIFS haakepunkt oma tuunerile.."
 
 msgid "Add new network mount point"
@@ -61,7 +61,7 @@ msgstr "Tühista"
 msgid "Change hostname"
 msgstr "Muuda hosti nime"
 
-msgid "Change the hostname of your Dreambox."
+msgid "Change the hostname of your Receiver."
 msgstr "Muuda oma vastuvõtja hosti nime."
 
 msgid "Close"
@@ -82,7 +82,7 @@ msgstr "Kas soovid seada kasutajanime ja salasõna sellele seadmele?\n"
 msgid "Enter IP to scan..."
 msgstr "Sisesta IP otsinguks ..."
 
-msgid "Enter new hostname for your Dreambox"
+msgid "Enter new hostname for your Receiver"
 msgstr "Sisesta uus nimi oma vastuvõtjale"
 
 msgid "Enter options:"
@@ -239,7 +239,7 @@ msgstr "Kasutajahaldur"
 msgid "Username"
 msgstr "Kasutajatunnus"
 
-msgid "View, edit or delete mountpoints on your Dreambox."
+msgid "View, edit or delete mountpoints on your Receiver."
 msgstr "Vaata, muuda või kustuta vastuvõtja haakepunkte."
 
 msgid "View, edit or delete usernames and passwords for your network."

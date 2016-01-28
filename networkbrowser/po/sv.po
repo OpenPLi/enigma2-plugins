@@ -36,7 +36,7 @@ msgstr ""
 "Aktiv/\n"
 "Inaktiv"
 
-msgid "Add a new NFS or CIFS mount point to your Dreambox."
+msgid "Add a new NFS or CIFS mount point to your Receiver."
 msgstr "Lägg till ny NFS eller CIFS monteringspunkt i din mottagare."
 
 msgid "Add new network mount point"
@@ -67,7 +67,7 @@ msgstr "Avbryt"
 msgid "Change hostname"
 msgstr "Byt värdnamn"
 
-msgid "Change the hostname of your Dreambox."
+msgid "Change the hostname of your Receiver."
 msgstr "Byt värdnamn på din mottagare."
 
 msgid "Close"
@@ -88,7 +88,7 @@ msgstr "Vill du ange ett användarnamn och lösenord för den här värden?\n"
 msgid "Enter IP to scan..."
 msgstr "Ange IP att skanna..."
 
-msgid "Enter new hostname for your Dreambox"
+msgid "Enter new hostname for your Receiver"
 msgstr "Ange nytt värdnamn för din mottagare"
 
 msgid "Enter options:"
@@ -245,7 +245,7 @@ msgstr "Användarhanterare"
 msgid "Username"
 msgstr "Användarnamn"
 
-msgid "View, edit or delete mountpoints on your Dreambox."
+msgid "View, edit or delete mountpoints on your Receiver."
 msgstr "Visa, ändra eller ta bort monteringspunkter på din mottagare."
 
 msgid "View, edit or delete usernames and passwords for your network."

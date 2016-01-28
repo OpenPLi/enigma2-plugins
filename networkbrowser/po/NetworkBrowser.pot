@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 
 #: ../src/MountManager.py:73
-msgid "Add a new NFS or CIFS mount point to your Dreambox."
+msgid "Add a new NFS or CIFS mount point to your Receiver."
 msgstr ""
 
 #: ../src/MountManager.py:73
@@ -71,7 +71,7 @@ msgid "Change hostname"
 msgstr ""
 
 #: ../src/MountManager.py:76
-msgid "Change the hostname of your Dreambox."
+msgid "Change the hostname of your Receiver."
 msgstr ""
 
 #: ../src/MountManager.py:54 ../src/MountView.py:63
@@ -102,7 +102,7 @@ msgid "Enter IP to scan..."
 msgstr ""
 
 #: ../src/MountManager.py:108
-msgid "Enter new hostname for your Dreambox"
+msgid "Enter new hostname for your Receiver"
 msgstr ""
 
 #: ../src/MountEdit.py:217
@@ -308,7 +308,7 @@ msgid "Username"
 msgstr ""
 
 #: ../src/MountManager.py:74
-msgid "View, edit or delete mountpoints on your Dreambox."
+msgid "View, edit or delete mountpoints on your Receiver."
 msgstr ""
 
 #: ../src/MountManager.py:75

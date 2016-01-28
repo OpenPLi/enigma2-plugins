@@ -29,7 +29,7 @@ msgstr ""
 "Actif/\n"
 "Inactif"
 
-msgid "Add a new NFS or CIFS mount point to your Dreambox."
+msgid "Add a new NFS or CIFS mount point to your Receiver."
 msgstr "Ajouter un nouveau point de montage NFS ou CIFS à votre récepteur."
 
 msgid "Add new network mount point"
@@ -60,7 +60,7 @@ msgstr "Annuler"
 msgid "Change hostname"
 msgstr "Changer le nom d'hôte"
 
-msgid "Change the hostname of your Dreambox."
+msgid "Change the hostname of your Receiver."
 msgstr "Changer le nom d'hôte de votre récepteur."
 
 msgid "Close"
@@ -81,7 +81,7 @@ msgstr "Voulez-vous entrer un nom d'utilisateur et mot de passe pour cet hôte ?
 msgid "Enter IP to scan..."
 msgstr "Entrer l'adresse IP à scanner ..."
 
-msgid "Enter new hostname for your Dreambox"
+msgid "Enter new hostname for your Receiver"
 msgstr "Saisisser nouveau nom d'hôte pour votre récepteur"
 
 msgid "Enter options:"
@@ -238,7 +238,7 @@ msgstr "Gestionnaire utilisateur"
 msgid "Username"
 msgstr "Nom d'utilisateur"
 
-msgid "View, edit or delete mountpoints on your Dreambox."
+msgid "View, edit or delete mountpoints on your Receiver."
 msgstr "Afficher, modifier ou supprimer des points de montage sur votre récepteur."
 
 msgid "View, edit or delete usernames and passwords for your network."

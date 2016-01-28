@@ -35,7 +35,7 @@ msgstr ""
 "Aktivan/\n"
 "Neaktivan"
 
-msgid "Add a new NFS or CIFS mount point to your Dreambox."
+msgid "Add a new NFS or CIFS mount point to your Receiver."
 msgstr "Dodaj novu CIFS ili  NFS maunt tačku tvom drimboksu."
 
 msgid "Add new network mount point"
@@ -66,7 +66,7 @@ msgstr ""
 msgid "Change hostname"
 msgstr "Promeni ime hosta"
 
-msgid "Change the hostname of your Dreambox."
+msgid "Change the hostname of your Receiver."
 msgstr "Promeni ime hosta svog drimboksa."
 
 msgid "Close"
@@ -87,7 +87,7 @@ msgstr "Želite li da postavite korisničko ime i lozinku za ovaj host?\n"
 msgid "Enter IP to scan..."
 msgstr ""
 
-msgid "Enter new hostname for your Dreambox"
+msgid "Enter new hostname for your Receiver"
 msgstr "Unesi novo ime hosta za svoj drimboks"
 
 msgid "Enter options:"
@@ -244,7 +244,7 @@ msgstr "Korisnički menadžer"
 msgid "Username"
 msgstr "Korisn. ime"
 
-msgid "View, edit or delete mountpoints on your Dreambox."
+msgid "View, edit or delete mountpoints on your Receiver."
 msgstr "Vidi, uredi ili obriši maunt tačke na svom drimboksu."
 
 msgid "View, edit or delete usernames and passwords for your network."

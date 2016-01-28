@@ -34,7 +34,7 @@ msgstr ""
 "aktivní/\n"
 "neaktivní"
 
-msgid "Add a new NFS or CIFS mount point to your Dreambox."
+msgid "Add a new NFS or CIFS mount point to your Receiver."
 msgstr "Přidat nový NFS nebo CIFS připojovací bod."
 
 msgid "Add new network mount point"
@@ -65,7 +65,7 @@ msgstr "Zrušit"
 msgid "Change hostname"
 msgstr "Změna názvu v síti"
 
-msgid "Change the hostname of your Dreambox."
+msgid "Change the hostname of your Receiver."
 msgstr "Změna názvu přijímače v síti."
 
 msgid "Close"
@@ -86,7 +86,7 @@ msgstr "Chcete zadat uživatelské jméno a heslo pro tento hostitelský počít
 msgid "Enter IP to scan..."
 msgstr "Zadejte IP pro hledání..."
 
-msgid "Enter new hostname for your Dreambox"
+msgid "Enter new hostname for your Receiver"
 msgstr "Zadejte síťový název Vašeho přijímače"
 
 msgid "Enter options:"
@@ -243,7 +243,7 @@ msgstr "Správce uživatele"
 msgid "Username"
 msgstr "Uživatel"
 
-msgid "View, edit or delete mountpoints on your Dreambox."
+msgid "View, edit or delete mountpoints on your Receiver."
 msgstr "Prohlížet, upravit nebo smazat připojovací body Vašeho přijímače."
 
 msgid "View, edit or delete usernames and passwords for your network."

@@ -35,7 +35,7 @@ msgstr ""
 "Akīvs/\n"
 "Neaktīvs"
 
-msgid "Add a new NFS or CIFS mount point to your Dreambox."
+msgid "Add a new NFS or CIFS mount point to your Receiver."
 msgstr "Pievienot jaunu NFS vai CIFS montēšanas punktu"
 
 msgid "Add new network mount point"
@@ -66,7 +66,7 @@ msgstr "Atcelt"
 msgid "Change hostname"
 msgstr "Izmainīt uztvērēja nosaukumu"
 
-msgid "Change the hostname of your Dreambox."
+msgid "Change the hostname of your Receiver."
 msgstr "Izmainīt uztvērēja nosaukumu tīklā."
 
 msgid "Close"
@@ -87,7 +87,7 @@ msgstr "Vai vēlaties ievadīt lietotāju un paroli šim resursam?\n"
 msgid "Enter IP to scan..."
 msgstr "Ievadiet IP adresi skanēšanai..."
 
-msgid "Enter new hostname for your Dreambox"
+msgid "Enter new hostname for your Receiver"
 msgstr "Ivadiet jauno uztvērēja nosaukumu tīklā"
 
 msgid "Enter options:"
@@ -244,7 +244,7 @@ msgstr "Lietotāju pārvaldība"
 msgid "Username"
 msgstr "Lietotājs"
 
-msgid "View, edit or delete mountpoints on your Dreambox."
+msgid "View, edit or delete mountpoints on your Receiver."
 msgstr "Apskatīt, rediģēt vai dzēst montēšanas punktus jūsu uztvērējā."
 
 msgid "View, edit or delete usernames and passwords for your network."

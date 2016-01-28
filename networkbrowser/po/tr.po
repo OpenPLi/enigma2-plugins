@@ -32,8 +32,8 @@ msgstr ""
 "Etkin/\n"
 "Devre dışı"
 
-msgid "Add a new NFS or CIFS mount point to your Dreambox."
-msgstr "Dreambox'ınıza yeni bir NFS veya CIFS ağ bağlantı noktası ekleyin."
+msgid "Add a new NFS or CIFS mount point to your Receiver."
+msgstr "Receiver'ınıza yeni bir NFS veya CIFS ağ bağlantı noktası ekleyin."
 
 msgid "Add new network mount point"
 msgstr "Yeni ağ bağlantı noktası ekle"
@@ -63,8 +63,8 @@ msgstr ""
 msgid "Change hostname"
 msgstr "Konak adını değiştir"
 
-msgid "Change the hostname of your Dreambox."
-msgstr "Dreambox'ınızın konak adını değiştirin."
+msgid "Change the hostname of your Receiver."
+msgstr "Receiver'ınızın konak adını değiştirin."
 
 msgid "Close"
 msgstr "Kapat"
@@ -84,8 +84,8 @@ msgstr "Bu konak için kullanıcı adı ve parola tanımlamak istiyor musunuz?\n
 msgid "Enter IP to scan..."
 msgstr ""
 
-msgid "Enter new hostname for your Dreambox"
-msgstr "Dreambox'ınızın yeni konak adını girin"
+msgid "Enter new hostname for your Receiver"
+msgstr "Receiver'ınızın yeni konak adını girin"
 
 msgid "Enter options:"
 msgstr "Seçenekleri girin:"
@@ -241,9 +241,9 @@ msgstr "Kullanıcı yönetimi"
 msgid "Username"
 msgstr "Kullanıcı adı"
 
-msgid "View, edit or delete mountpoints on your Dreambox."
+msgid "View, edit or delete mountpoints on your Receiver."
 msgstr ""
-"Dreambox'ınızdaki ağ bağlantı noktalarını inceleyin, düzenleyin veya silin."
+"Receiver'ınızdaki ağ bağlantı noktalarını inceleyin, düzenleyin veya silin."
 
 msgid "View, edit or delete usernames and passwords for your network."
 msgstr "Ağınızdaki kullanıcı hesaplarını inceleyin, düzenleyin veya silin."
