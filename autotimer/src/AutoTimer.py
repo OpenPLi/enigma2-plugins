@@ -315,7 +315,7 @@ class AutoTimer:
 			startLog()
 
 			# timer destination dir
-			dest = timer.destination or config.usage.default_path.value
+			dest = timer.destination
 
 			evtBegin = begin
 			evtEnd = end = begin + duration
