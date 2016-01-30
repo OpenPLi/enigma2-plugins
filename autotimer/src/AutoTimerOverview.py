@@ -230,7 +230,7 @@ class AutoTimerOverview(Screen, HelpableScreen):
 					recordHandler = NavigationInstance.instance.RecordTimer
 					for timer in recordHandler.timer_list[:]:
 						if timer:
-							if timer.name == cur.name and (hasattr(timer, "isAutoTimer") or "newAT" in timer.tags):
+							if timer.name == cur.name and ("autotimer" in timer.flags):
 								try:
 									if not timer.isRunning():
 										NavigationInstance.instance.RecordTimer.removeEntry(timer)

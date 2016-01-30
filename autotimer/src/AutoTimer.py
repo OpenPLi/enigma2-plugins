@@ -50,8 +50,6 @@ from . import config, xrange, itervalues
 
 XML_CONFIG = "/etc/enigma2/autotimer.xml"
 
-TAG = "newAT"
-
 def getTimeDiff(timerbegin, timerend, begin, end):
 	if begin <= timerbegin <= end:
 		return end - timerbegin
@@ -530,7 +528,7 @@ class AutoTimer:
 					doLog("[AutoTimer] Won't modify existing timer because either no modification allowed or repeated timer")
 					continue
 
-				if hasattr(newEntry, "isAutoTimer") or TAG in newEntry.tags:
+				if "autotimer" in newEntry.flags:
 					msg = "[AutoTimer] AutoTimer %s modified this automatically generated timer." % (timer.name)
 					doLog(msg)
 					newEntry.log(501, msg)
@@ -556,10 +554,8 @@ class AutoTimer:
 				doLog(msg)
 				newEntry.log(500, msg)
 
-				# Mark this entry as AutoTimer (only AutoTimers will have this Attribute set)
-				# It is only temporarily, after a restart it will be lost,
-				# because it won't be stored in the timer xml file
-				newEntry.isAutoTimer = True
+				# Mark this entry as AutoTimer
+				newEntry.flags.add("autotimer")
 
 			# Apply afterEvent
 			if timer.hasAfterEvent():
@@ -586,8 +582,6 @@ class AutoTimer:
 				if tagname:
 					tagname = tagname[0].upper() + tagname[1:].replace(" ", "_")
 					tags.append(tagname)
-			if TAG not in tags:
-				tags.append(TAG)
 			newEntry.tags = tags
 
 			if oldExists:
@@ -746,7 +740,7 @@ class AutoTimer:
 
 		if config.plugins.autotimer.check_eit_and_remove.value:
 			for timer in remove:
-				if hasattr(timer, "isAutoTimer") or TAG in timer.tags:
+				if "autotimer" in timer.flags:
 					try:
 						# Because of the duplicate check, we only want to remove future timer
 						if timer in recordHandler.timer_list:
