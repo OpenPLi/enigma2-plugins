@@ -215,6 +215,7 @@ class E2Timer:
 		self.dirname = dirname
 		self.description = description
 		self.type = type
+		self.flags = set()
 		if type != 0: # E1 Timerlist
 			self.timeend = timebegin + duration
 			self.name = description
