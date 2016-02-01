@@ -183,6 +183,8 @@ class RemoteTimerScreen(Screen):
 						afterevent = int(timer.findtext("e2afterevent", 0)),
 						dirname = str(timer.findtext("e2dirname", '').encode("utf-8", 'ignore')),
 						description = str(timer.findtext("e2description", '').encode("utf-8", 'ignore'))
+						flags = ""
+						conflict_detection = 0
 					),
 					False
 				)
@@ -193,7 +195,7 @@ class E2Timer:
 	def __init__(self, sref = "", sname = "", name = "", disabled = 0, \
 			timebegin = 0, timeend = 0, duration = 0, startprepare = 0, \
 			state = 0, repeated = 0, justplay = 0, eventId = 0, afterevent = 0, \
-			dirname = "", description = ""):
+			dirname = "", description = "", flags = "", conflict_detection = 0):
 		self.service_ref = RemoteService(sref, sname)
 		self.name = name
 		self.disabled = disabled
@@ -208,6 +210,8 @@ class E2Timer:
 		self.afterevent = afterevent
 		self.dirname = dirname
 		self.description = description
+		self.flags = flags
+		self.conflict_detection = conflict_detection
 
 class RemoteTimerSetup(Screen, ConfigListScreen):
 	skin = """
