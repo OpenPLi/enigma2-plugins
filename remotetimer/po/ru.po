@@ -1,0 +1,119 @@
+# Russian translations for PACKAGE package.
+# Copyright (C) 2012 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Automatically generated, 2012.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-02-17 15:07+0100\n"
+"PO-Revision-Date: 2016-02-03 23:25+0200\n"
+"Last-Translator: Dimitrij <Dima-73@inbox.lv>\n"
+"Language-Team: openpli.org\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Language: ru\n"
+"X-Generator: Poedit 1.8.4\n"
+
+msgid "Remote-Timer digest"
+msgstr "Дистанционный таймер - обзор"
+
+msgid "Settings"
+msgstr "Настройки"
+
+msgid "Cleanup"
+msgstr "Очистка"
+
+msgid "Delete"
+msgstr "Удалить"
+
+msgid "Cancel"
+msgstr "Отмена"
+
+msgid "fetching remote data..."
+msgstr "Извлечение дистанционных данных..."
+
+msgid "not configured yet. please do so in the settings."
+msgstr "Нет конфигурации. Пожалуйста, выполните настройки."
+
+msgid "finish fetching remote data..."
+msgstr "Закончено получение данных..."
+
+msgid ""
+"Do you really want to delete the timer \n"
+"%s ?"
+msgstr ""
+"Вы действительно хотите удалить таймер \n"
+"%s ?"
+
+msgid "error parsing incoming data..."
+msgstr "Ошибка разбора входящих данных..."
+
+msgid "Remote-Timer settings"
+msgstr "Дистанционный таймер - настройки"
+
+msgid "Hostname"
+msgstr "Имя хоста"
+
+msgid "Network IP"
+msgstr "Сетевой IP"
+
+msgid "Save"
+msgstr "Сохранить"
+
+msgid "WebIf port"
+msgstr "WebIf порт"
+
+msgid "added"
+msgstr "добавлен"
+
+msgid "Username"
+msgstr "Имя пользователя"
+
+msgid "Password"
+msgstr "Пароль"
+
+msgid "Use remote directory"
+msgstr "Использовать дистанционную директорию"
+
+msgid "Timer Edit - remote as default"
+msgstr "Редактор таймеров - дистанционный по дефолту"
+
+msgid "Show in extensions menu"
+msgstr "Показать в меню дополнений"
+
+msgid "Remote Timer"
+msgstr "Дистанционный таймер"
+
+msgid "Please select a subservice to record..."
+msgstr "Выбор субсервиса для записи..."
+
+msgid "Timer added successfully!"
+msgstr "Таймер успешно добавлен!"
+
+msgid ""
+"Set timer on remote reciever via WebIf:\n"
+"%s"
+msgstr ""
+"Установка таймера на дистанционный ресивер через WebIf:\n"
+"%s"
+
+msgid ""
+"ERROR - Set timer on remote reciever via WebIf:\n"
+"%s"
+msgstr ""
+"Ошибка установки таймера на дистанционный ресивер через WebIf:\n"
+"%s"
+
+msgid "No entry in XML from the web server"
+msgstr "Нет данных в XML из веб-сервера"
+
+msgid "ERROR XML parse"
+msgstr "Ошибка парсинга XML"
+
+msgid "Create timers on remote reciever enigma2"
+msgstr "Создавать таймеры на удаленном ресивере с enigma2"

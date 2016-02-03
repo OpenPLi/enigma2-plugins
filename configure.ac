@@ -381,6 +381,7 @@ reconstructapsc/po/Makefile
 
 remotetimer/Makefile
 remotetimer/meta/Makefile
+remotetimer/po/Makefile
 remotetimer/src/Makefile
 
 rsdownloader/Makefile
