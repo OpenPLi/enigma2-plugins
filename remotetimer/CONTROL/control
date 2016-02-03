@@ -1,6 +1,6 @@
 Package: enigma2-plugin-extensions-remoteTimer
-Version: 20090408
-Description: add Timer remote on a another Dreambox whit Enigma2
+Version: 20160203
+Description: add remote timer for recievers on enigma2
 Maintainer: OpenPLi team <forum@openpli.org>
 Homepage: http://www.openpli.org
-Depends: enigma2 (>> 2.6git20090409), python-twisted-web
+Depends: python-twisted-web
