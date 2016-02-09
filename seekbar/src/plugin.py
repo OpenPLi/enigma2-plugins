@@ -93,6 +93,10 @@ class Seekbar(ConfigListScreen, Screen):
 		except:
 			self.seasondream = False
 		try:
+			self.cutlisteditor = isinstance(session.current_dialog, CutListEditor)
+		except:
+			self.cutlisteditor = False
+		try:
 			self.timeshift = isinstance(session.current_dialog, InfoBar)
 		except:
 			self.timeshift = False
@@ -215,6 +219,14 @@ class Seekbar(ConfigListScreen, Screen):
 					else:
 						pts = -1 * (oldPosition - newPosition)
 					Player.doSeekRelative(self.infobarInstance, pts)
+				elif self.cutlisteditor:
+					oldPosition = self.seek.getPlayPosition()[1]
+					newPosition = int(float(self.length[1]) / 100.0 * self.percent)
+					if newPosition > oldPosition:
+						pts = newPosition - oldPosition
+					else:
+						pts = -1 * (oldPosition - newPosition)
+					CutListEditor.doSeekRelative(self.infobarInstance, pts)
 				elif self.movie:
 					self.seek.seekTo(int(float(self.length[1]) / 100.0 * self.percent))
 				elif self.timeshift:
@@ -242,6 +254,8 @@ class Seekbar(ConfigListScreen, Screen):
 				YampScreen.doSeekRelative(self.infobarInstance, pts)
 			elif self.seasondream:
 				Player.doSeekRelative(self.infobarInstance, pts)
+			elif self.cutlisteditor:
+				CutListEditor.doSeekRelative(self.infobarInstance, pts)
 			elif self.movie:
 				MoviePlayer.doSeekRelative(self.infobarInstance, pts)
 			elif self.timeshift:
@@ -363,6 +377,15 @@ if fileExists(seasondreamPlayer):
 	else:
 		Player.seekFwdManual = seekbar
 		Player.seekBackManual = seekbarBack
+cutlistEditor = '%s%s' % (resolveFilename(SCOPE_PLUGINS), 'Extensions/CutListEditor/plugin.pyo')
+if fileExists(cutlistEditor):
+	try:
+		from Plugins.Extensions.CutListEditor.ui import CutListEditor
+	except:
+		pass
+	else:
+		CutListEditor.seekFwdManual = seekbar
+		CutListEditor.seekBackManual = seekbarBack
 
 ##############################################
 # This hack puts the functions seekFwdManual and seekBackManual to the maped keys to seekbarRight and seekbarLeft
