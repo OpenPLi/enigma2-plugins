@@ -1,6 +1,0 @@
-Package: enigma2-plugin-extensions-ecasa
-Version: 0.0.1-20110908-r0
-Description: simple picasa client
-Maintainer: OpenPLi team <forum@openpli.org>
-Homepage: http://www.openpli.org
-Depends: enigma2 (>= 2.6git20090120), python-gdata, python-shell, python-netclient, python-io, python-html, python-twisted-web, python-flickrapi

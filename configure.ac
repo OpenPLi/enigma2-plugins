@@ -491,11 +491,6 @@ werbezapper/meta/Makefile
 werbezapper/po/Makefile
 werbezapper/src/Makefile
 
-youtubeplayer/Makefile
-youtubeplayer/meta/Makefile
-youtubeplayer/src/Makefile
-youtubeplayer/src/Nemesis.GlassLine_Mod/Makefile
-
 zaphistorybrowser/Makefile
 zaphistorybrowser/meta/Makefile
 zaphistorybrowser/po/Makefile

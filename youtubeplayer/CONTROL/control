@@ -1,6 +1,0 @@
-Package: enigma2-plugin-extensions-youtubeplayer
-Version: 0.2.1
-Description: Enigma2 Plugin to search and play YouTube Movies
-Maintainer: OpenPLi team <forum@openpli.org>
-Homepage: www.openpli.org
-Depends: enigma2, enigma2-plugin-extensions-vlcplayer, python-twisted-web, python-gdata, python-misc, python-textutils
