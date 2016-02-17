@@ -1,5 +1,5 @@
 Package: enigma2-plugin-extensions-imdb
-Version: 0.1-20080118-r0
+Version: 0.1-20160217-r1
 Description: query movie details from the Internet Movie Database
 Maintainer: OpenPLi team <forum@openpli.org>
-Depends: enigma2 (>= 2.5git20080416), python-html, python-twisted-web
+Depends: python-html, python-twisted-web
