@@ -1,0 +1,277 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: IMDb\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-09-27 21:28+0100\n"
+"PO-Revision-Date: 2016-02-17 21:31+0200\n"
+"Last-Translator: Dimitrij <Dima-73@inbox.lv>\n"
+"Language-Team: none\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 1.8.4\n"
+
+#: plugin.py:709
+msgid " as "
+msgstr " как "
+
+#: plugin.py:812
+msgid "Add 'Search event in IMDb' to further option EPG menu."
+msgstr "\"Добавить 'Поиск события IMDb' в дополнительном меню EPG."
+
+#: plugin.py:813
+msgid "Add 'Search in IMDb' to movie list menu for selected video."
+msgstr "Добавить 'Поиск в IMDb' в меню видео списка для выбранного видео."
+
+#: plugin.py:298
+msgid "Ambiguous results"
+msgstr "Результаты поиска"
+
+#: plugin.py:795
+msgid "Cancel"
+msgstr "Отмена"
+
+#: plugin.py:711
+msgid "Cast: "
+msgstr "В ролях: "
+
+#: plugin.py:59
+msgid "Channel Selection"
+msgstr "Селектор каналов"
+
+#: plugin.py:440 plugin.py:443
+msgid "Content:"
+msgstr "Содержание:"
+
+#: plugin.py:569
+msgid "Could't get Eventname"
+msgstr "Не удалось получить описание события"
+
+#: plugin.py:303 plugin.py:666
+msgid "Details"
+msgstr "Подробнее"
+
+#: plugin.py:719
+#, python-format
+msgid "Downloading Movie Poster: %s..."
+msgstr "Загрузка постера: %s..."
+
+#: plugin.py:811
+msgid "Enable this to be able to access the IMDb from within the plugin browser."
+msgstr "Включить это, чтобы получить доступ к IMDb из меню плагинов."
+
+#: plugin.py:358
+msgid "Enter search"
+msgstr "Введите условия поиска"
+
+#: plugin.py:513
+msgid "Enter text to search for"
+msgstr "Введите текст для поиска"
+
+#: plugin.py:177
+msgid "Exit"
+msgstr "Выход"
+
+#: plugin.py:741
+msgid "Extra Info"
+msgstr "Дополнительно"
+
+#: plugin.py:729
+msgid "Extra Info\n"
+msgstr "Дополнительная информация\n"
+
+#: plugin.py:454 plugin.py:456
+msgid "Genre:"
+msgstr "Жанр:"
+
+#: plugin.py:679
+msgid "Genre: "
+msgstr "Жанр: "
+
+#: plugin.py:871 plugin.py:875
+msgid "IMDb Details"
+msgstr "Данные IMDb"
+
+#: plugin.py:667 plugin.py:747
+msgid "IMDb Details parsed"
+msgstr "Подробное описание из IMDb"
+
+#: plugin.py:605
+msgid "IMDb Download completed"
+msgstr "Загрузка данных IMDb выполнена"
+
+#: plugin.py:649
+msgid "IMDb Download failed"
+msgstr "Загрузка данных IMDb неудачна"
+
+#: plugin.py:380
+msgid "IMDb Menu"
+msgstr "Меню IMDb"
+
+#: plugin.py:777
+msgid "IMDb Plugin"
+msgstr "Плагин IMDb"
+
+#: plugin.py:657
+msgid "IMDb Re-Download completed"
+msgstr "Повторная загрузка данных IMDb выполнена"
+
+#: plugin.py:422
+msgid "IMDb Save-Download completed"
+msgstr "Загрузка/сохранение данных IMDb выполнено"
+
+#: plugin.py:791
+msgid "IMDb Setup"
+msgstr "Настройки IMDb"
+
+#: plugin.py:417
+msgid ""
+"IMDb can not get Movie Information, to\n"
+" write .jpg and .txt-file!"
+msgstr ""
+"\"\"IMDb не может получить информацию, для\n"
+" записи .jpg и .txt-file!"
+
+#: plugin.py:405
+msgid ""
+"IMDb can not get Movie Information, to\n"
+" write .txt-file!"
+msgstr ""
+"IMDb не может получить информацию, для\n"
+" записи .txt-file!"
+
+#: plugin.py:646
+msgid "IMDb query failed!"
+msgstr "Запрос в IMDb не удался!"
+
+#: plugin.py:873
+msgid "IMDb search"
+msgstr "IMDb поиск"
+
+#: plugin.py:88
+msgid "Lookup IMDb"
+msgstr "Поиск в IMDb"
+
+#: plugin.py:634 plugin.py:635
+msgid "No IMDb match."
+msgstr "Описание не найдено в IMDb!"
+
+#: plugin.py:713
+msgid "No cast list found in the database."
+msgstr "Список актеров не найден в базе данных."
+
+#: plugin.py:664
+msgid "No details found."
+msgstr "Подробностей не найдено."
+
+#: plugin.py:794
+msgid "OK"
+msgstr "ОК"
+
+#: plugin.py:373
+msgid "Play Trailer"
+msgstr "Воспроизвести трейлеры"
+
+#: plugin.py:299
+msgid "Please select the matching entry"
+msgstr "Пожалуйста, выберите соответствующую запись"
+
+#: plugin.py:460 plugin.py:463
+msgid "Production Countries:"
+msgstr "Страны призводства:"
+
+#: plugin.py:561
+#, python-format
+msgid "Query IMDb: %s"
+msgstr "Запрос в IMDb: %s..."
+
+#: plugin.py:870
+msgid "Query details from the Internet Movie Database"
+msgstr "Запрос подробностей в IMDb (базе данных видео в интернете)"
+
+#: plugin.py:324 plugin.py:624 plugin.py:640
+#, python-format
+msgid "Re-Query IMDb: %s..."
+msgstr "Повторный запрос в IMDb: %s..."
+
+#: plugin.py:466 plugin.py:469
+msgid "Release Date:"
+msgstr "Дата релиза:"
+
+#: plugin.py:446 plugin.py:449
+msgid "Runtime:"
+msgstr "Продолжительность:"
+
+#: plugin.py:366
+msgid "Save current Details as .html for offline using"
+msgstr "Сохранить текущие подробности как .html"
+
+#: plugin.py:367
+msgid "Save current Details as .txt"
+msgstr "Сохранить текущие подробности как .txt"
+
+#: plugin.py:368
+msgid "Save current Poster and Details as .txt"
+msgstr "Сохранить текущие постер и подробности как .txt"
+
+#: plugin.py:374
+msgid "Search Trailer"
+msgstr "Поиск трейлеров"
+
+#: plugin.py:877
+msgid "Search event in IMDb"
+msgstr "Поиск события IMDb"
+
+#: plugin.py:875
+msgid "Search in IMDb"
+msgstr "Поиск в IMDb"
+
+#: plugin.py:359
+msgid "Select from EPG"
+msgstr "Выбор из EPG"
+
+#: plugin.py:360
+msgid "Setup"
+msgstr "Настройки"
+
+#: plugin.py:812
+msgid "Show in further option EPG menu"
+msgstr "Показать в дополнительном меню EPG"
+
+#: plugin.py:813
+msgid "Show in movie list menu"
+msgstr "Показать в меню видео списка"
+
+#: plugin.py:811
+msgid "Show in plugin browser"
+msgstr "Показать в меню плагинов"
+
+#: plugin.py:134 plugin.py:162
+msgid "The Internet Movie Database"
+msgstr "Интернет база данных"
+
+#: plugin.py:814
+msgid ""
+"This option allows you add words/phrases for IMDb to ignore when searching. "
+"please seperaate with a comma"
+msgstr ""
+"Эта опция позволяет добавить слова / фразы для игнорирования при поиске в IMDb. "
+"Пожалуйста, отделяйте их запятой."
+
+#: plugin.py:302
+msgid "Title Menu"
+msgstr "Основное меню"
+
+#: plugin.py:475 plugin.py:477 plugin.py:696
+msgid "User Rating"
+msgstr "Рейтинг пользователей"
+
+#: plugin.py:814
+msgid "Words / phrases to ignore "
+msgstr "Cлова / фразы для игнорирования"
+
+#: plugin.py:814 plugin.py:692
+msgid "no user rating yet"
+msgstr "пользовательский рейтинг отсутствует"
