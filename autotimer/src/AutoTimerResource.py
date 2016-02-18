@@ -13,7 +13,7 @@ from ServiceReference import ServiceReference
 from Tools.XMLTools import stringToXML
 from enigma import eServiceReference
 from . import _, config, iteritems, plugin
-from plugin import autotimer
+from plugin import autotimer, AUTOTIMER_VERSION
 
 API_VERSION = "1.5"
 
@@ -489,7 +489,8 @@ class AutoTimerAddOrEditAutoTimerResource(AutoTimerBaseResource):
 		else:
 			message = _("AutoTimer was changed successfully")
 
-		autotimer.writeXml()
+		if config.plugins.autotimer.always_write_config.value:
+			autotimer.writeXml()
 
 		return self.returnResult(req, True, message)
 
@@ -677,6 +678,10 @@ class AutoTimerSettingsResource(resource.Resource):
 		<e2settingvalue>%s</e2settingvalue>
 	</e2setting>
 	<e2setting>
+		<e2settingname>config.plugins.autotimer.always_write_config</e2settingname>
+		<e2settingvalue>%s</e2settingvalue>
+	</e2setting>
+	<e2setting>
 		<e2settingname>config.plugins.autotimer.onlyinstandby</e2settingname>
 		<e2settingvalue>%s</e2settingvalue>
 	</e2setting>
@@ -716,6 +721,10 @@ class AutoTimerSettingsResource(resource.Resource):
 		<e2settingname>api_version</e2settingname>
 		<e2settingvalue>%s</e2settingvalue>
 	</e2setting>
+	<e2setting>
+		<e2settingname>autotimer_version</e2settingname>
+		<e2settingvalue>%s</e2settingvalue>
+	</e2setting>
 </e2settings>""" % (
 				config.plugins.autotimer.autopoll.value,
 				config.plugins.autotimer.interval.value,
@@ -739,6 +748,7 @@ class AutoTimerSettingsResource(resource.Resource):
 				config.plugins.autotimer.skip_during_records.value,
 				config.plugins.autotimer.skip_during_epgrefresh.value,
 				config.plugins.autotimer.check_eit_and_remove.value,
+				config.plugins.autotimer.always_write_config.value,
 				config.plugins.autotimer.onlyinstandby.value,
 				config.plugins.autotimer.add_to_channelselection.value,
 				config.plugins.autotimer.add_to_epgselection.value,
@@ -748,5 +758,6 @@ class AutoTimerSettingsResource(resource.Resource):
 				hasVps,
 				hasSeriesPlugin,
 				CURRENT_CONFIG_VERSION,
-				API_VERSION
+				API_VERSION,
+				AUTOTIMER_VERSION
 			)
