@@ -32,6 +32,8 @@ from AutoTimer import AutoTimer
 autotimer = AutoTimer()
 autopoller = None
 
+AUTOTIMER_VERSION = "4.0.9"
+
 #pragma mark - Help
 try:
 	from Plugins.SystemPlugins.MPHelp import registerHelp, XMLHelpReader
@@ -93,7 +95,6 @@ def autostart(reason, **kwargs):
 			pass
 		else:
 			autotimer.writeXml()
-
 
 def sessionstart(reason, **kwargs):
 	if reason == 0 and "session" in kwargs:
@@ -209,7 +210,6 @@ def AutoTimerGraphMultiEPG__init__(self, session, services, zapFunc=None, bouque
 					"contextMenu": (showAutoTimer, _("Choice list AutoTimer")),
 				}, -1)
 		self["AutoTimeractions"].csel = self
-
 
 def CallbackToGraphMultiEPG(self, ret):
 	ret = ret and ret[1]
@@ -374,7 +374,6 @@ def AutoTimerChannelContextMenu__init__(self, session, csel):
 					callFunction = self.addtoAutoTimer
 					self["menu"].list.insert(3, ChoiceEntryComponent(text = (_("create AutoTimer for current event"), boundFunction(callFunction,1))))
 
-
 def addtoAutoTimer(self, add):
 	sref = self.csel.servicelist.getCurrent()
 	if not sref:
@@ -433,10 +432,10 @@ editTimer = eTimer()
 def editCallback(session):
 	# Don't parse EPG if editing was canceled
 	if session is not None:
+		if config.plugins.autotimer.always_write_config.value:
+			autotimer.writeXml()
 		delay = config.plugins.autotimer.editdelay.value
 		editTimer.startLongTimer(int(delay))
-		#parseFunc = lambda: autotimer.parseEPGAsync().addCallback(parseEPGCallback)#.addErrback(parseEPGErrback)
-		#reactor.callLater(delay, parseFunc)
 	else:
 		handleAutoPoller()
 
@@ -445,15 +444,6 @@ def parseEPGstart():
 		autotimer.parseEPGAsync().addCallback(parseEPGCallback)#.addErrback(parseEPGErrback)
 
 editTimer.callback.append(parseEPGstart)
-
-#def parseEPGErrback(failure):
-#	AddPopup(
-#		_("AutoTimer failed with error %s" (str(failure),)),
-#	)
-#
-#	# Save xml
-#	autotimer.writeXml()
-#	handleAutoPoller()
 
 def parseEPGCallback(ret):
 	AddPopup(
@@ -464,7 +454,8 @@ def parseEPGCallback(ret):
 	)
 
 	# Save xml
-	autotimer.writeXml()
+	if config.plugins.autotimer.always_write_config.value:
+		autotimer.writeXml()
 	handleAutoPoller()
 
 # Movielist

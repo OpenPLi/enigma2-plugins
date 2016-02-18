@@ -1316,3 +1316,12 @@ msgstr "Укажите имя и расположение для лога."
 
 msgid "If this enabled, debug Autotimer write in log file."
 msgstr "Если это включено, то лог отладки Автотаймера будет записан в файл."
+
+msgid " - Version: "
+msgstr " - версия: "
+
+msgid "Always write config"
+msgstr "Всегда перезаписывать конфигурацию"
+
+msgid "Write the config file after every change which the user quits by saving."
+msgstr "Перезаписывать конфигурационный файл после каждого изменения, когда пользователь сохранил настройки."

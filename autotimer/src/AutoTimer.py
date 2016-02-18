@@ -661,6 +661,10 @@ class AutoTimer:
 		return (new, modified)
 
 	def parseEPG(self, simulateOnly=False, uniqueId=None, callback=None):
+ 
+		from plugin import AUTOTIMER_VERSION
+		doLog("AutoTimer Version: " + AUTOTIMER_VERSION)
+
 		if NavigationInstance.instance is None:
 			doLog("Navigation is not available, can't parse EPG")
 			return (0, 0, 0, [], [], [])
