@@ -555,6 +555,7 @@ class DVDBackupScreen(Screen, ConfigListScreen):
 		if self.working == False:
 			cfg.create_iso.cancel()
 			cfg.directory.cancel()
+			cfg.show_message.cancel()
 			self.close()
 
 	def checkConfig(self):

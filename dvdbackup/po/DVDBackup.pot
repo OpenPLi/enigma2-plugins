@@ -1,109 +1,185 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: DVDBackup\n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-05-01 09:36+0100\n"
-"PO-Revision-Date: \n"
-"Last-Translator: AliAbdul <aliabdul1978@hotmail.de>\n"
-"Language-Team: Nabil Hanna <nabil1978@web.de>\n"
+"POT-Creation-Date: 2016-02-23 23:32+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Language: German\n"
-"X-Poedit-Country: GERMANY\n"
-"X-Poedit-Basepath: .\n"
-"X-Poedit-SearchPath-0: /home/aliabdul/dream/enigma2-plugins/dvdbackup/src\n"
 
-#: /home/aliabdul/dream/enigma2-plugins/dvdbackup/src/plugin.py:50
-#: /home/aliabdul/dream/enigma2-plugins/dvdbackup/src/plugin.py:401
-msgid "Name of DVD"
+#: plugin.py:87
+msgid " B"
 msgstr ""
 
-#: /home/aliabdul/dream/enigma2-plugins/dvdbackup/src/plugin.py:143
-msgid "Could not find any file to backup!"
+#: plugin.py:89
+msgid " KB"
 msgstr ""
 
-#: /home/aliabdul/dream/enigma2-plugins/dvdbackup/src/plugin.py:146
-msgid "Could not read the DVD informations!"
+#: plugin.py:91
+msgid " MB"
 msgstr ""
 
-#: /home/aliabdul/dream/enigma2-plugins/dvdbackup/src/plugin.py:152
-#: /home/aliabdul/dream/enigma2-plugins/dvdbackup/src/plugin.py:181
-msgid "Error while backup of DVD!"
-msgstr ""
-
-#: /home/aliabdul/dream/enigma2-plugins/dvdbackup/src/plugin.py:186
-msgid ""
-"mkisofs job done.\n"
-"Delete DVD directory?"
-msgstr ""
-
-#: /home/aliabdul/dream/enigma2-plugins/dvdbackup/src/plugin.py:201
-msgid "Backup of DVD finished."
-msgstr ""
-
-#: /home/aliabdul/dream/enigma2-plugins/dvdbackup/src/plugin.py:201
-msgid "Duration:"
-msgstr ""
-
-#: /home/aliabdul/dream/enigma2-plugins/dvdbackup/src/plugin.py:201
-msgid "Eject DVD?"
-msgstr ""
-
-#: /home/aliabdul/dream/enigma2-plugins/dvdbackup/src/plugin.py:250
+#: plugin.py:351
 msgid "Abort"
 msgstr ""
 
-#: /home/aliabdul/dream/enigma2-plugins/dvdbackup/src/plugin.py:322
-msgid "Progress"
+#: plugin.py:495
+msgid "Auto set name and folder DVD"
 msgstr ""
 
-#: /home/aliabdul/dream/enigma2-plugins/dvdbackup/src/plugin.py:323
-msgid "Backup"
+#: plugin.py:539
+msgid "Backup directory too small size!"
 msgstr ""
 
-#: /home/aliabdul/dream/enigma2-plugins/dvdbackup/src/plugin.py:324
-msgid "Keyboard"
+#: plugin.py:463
+msgid "Backup directory:"
 msgstr ""
 
-#: /home/aliabdul/dream/enigma2-plugins/dvdbackup/src/plugin.py:325
-msgid "Location"
+#: plugin.py:289 plugin.py:291
+msgid "Backup of DVD finished."
 msgstr ""
 
-#: /home/aliabdul/dream/enigma2-plugins/dvdbackup/src/plugin.py:331
-msgid "Device:"
-msgstr ""
-
-#: /home/aliabdul/dream/enigma2-plugins/dvdbackup/src/plugin.py:332
-msgid "Directory:"
-msgstr ""
-
-#: /home/aliabdul/dream/enigma2-plugins/dvdbackup/src/plugin.py:333
-msgid "Name:"
-msgstr ""
-
-#: /home/aliabdul/dream/enigma2-plugins/dvdbackup/src/plugin.py:334
-msgid "Log:"
-msgstr ""
-
-#: /home/aliabdul/dream/enigma2-plugins/dvdbackup/src/plugin.py:335
-msgid "Create iso:"
-msgstr ""
-
-#: /home/aliabdul/dream/enigma2-plugins/dvdbackup/src/plugin.py:421
-msgid "Installing..."
-msgstr ""
-
-#: /home/aliabdul/dream/enigma2-plugins/dvdbackup/src/plugin.py:427
-msgid "Could not install needed dvdbackup package!"
-msgstr ""
-
-#: /home/aliabdul/dream/enigma2-plugins/dvdbackup/src/plugin.py:443
-#: /home/aliabdul/dream/enigma2-plugins/dvdbackup/src/plugin.py:446
-msgid "DVD Backup"
-msgstr ""
-
-#: /home/aliabdul/dream/enigma2-plugins/dvdbackup/src/plugin.py:446
+#: plugin.py:673
 msgid "Backup your Video-DVD to your harddisk"
 msgstr ""
 
+#: plugin.py:213
+msgid "Could not find any file to backup!"
+msgstr ""
+
+#: plugin.py:644
+msgid "Could not install needed dvdbackup package!"
+msgstr ""
+
+#: plugin.py:180 plugin.py:218
+msgid "Could not read the DVD informations!"
+msgstr ""
+
+#: plugin.py:467
+msgid "Create iso:"
+msgstr ""
+
+#: plugin.py:465
+msgid "Create log (tmp/dvdbackup.log):"
+msgstr ""
+
+#: plugin.py:441 plugin.py:670 plugin.py:673
+msgid "DVD Backup"
+msgstr ""
+
+#: plugin.py:342
+msgid "DVD Backup Progress"
+msgstr ""
+
+#: plugin.py:462
+msgid "Device mount folder:"
+msgstr ""
+
+#: plugin.py:289 plugin.py:291
+msgid "Duration:"
+msgstr ""
+
+#: plugin.py:289
+msgid "Eject DVD?"
+msgstr ""
+
+#: plugin.py:543
+#, python-format
+msgid "Error read folder %s!"
+msgstr ""
+
+#: plugin.py:150 plugin.py:226 plugin.py:255
+msgid "Error while backup of DVD!"
+msgstr ""
+
+#: plugin.py:349
+msgid "Exit"
+msgstr ""
+
+#: plugin.py:446 plugin.py:511
+msgid "Extra option"
+msgstr ""
+
+#: plugin.py:464
+msgid "Folder/iso name:"
+msgstr ""
+
+#: plugin.py:448
+msgid "Keyboard"
+msgstr ""
+
+#: plugin.py:449
+msgid "Location"
+msgstr ""
+
+#: plugin.py:49 plugin.py:458 plugin.py:459 plugin.py:619
+msgid "Name of DVD"
+msgstr ""
+
+#: plugin.py:496
+msgid "Open menu progress"
+msgstr ""
+
+#: plugin.py:466
+msgid "Show error message:"
+msgstr ""
+
+#: plugin.py:498 plugin.py:507
+msgid "Show log"
+msgstr ""
+
+#: plugin.py:447
+msgid "Start backup"
+msgstr ""
+
+#: plugin.py:656
+msgid ""
+"Warning!\n"
+"DVD backup is already running!"
+msgstr ""
+
+#: plugin.py:521
+msgid ""
+"Warning!\n"
+"This folder not CD-ROM!"
+msgstr ""
+
+#: plugin.py:545
+msgid ""
+"Warning!\n"
+"This folder not DVD structure!"
+msgstr ""
+
+#: plugin.py:517
+msgid ""
+"Warning!\n"
+"This is the same folder!"
+msgstr ""
+
+#: plugin.py:270
+msgid ""
+"genisoimage job done.\n"
+"Delete DVD directory?"
+msgstr ""
+
+#: plugin.py:52
+msgid "no"
+msgstr ""
+
+#: plugin.py:52
+msgid "with dd (faster)"
+msgstr ""
+
+#: plugin.py:52
+msgid "with genisoimage (slower)"
+msgstr ""
