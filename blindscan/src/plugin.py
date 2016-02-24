@@ -33,6 +33,9 @@ XML_FILE = None
 
 _supportNimType = { 'AVL1208':'', 'AVL6222':'6222_', 'AVL6211':'6211_', 'BCM7356':'bcm7346_'}
 
+# For STBs that support multiple DVB-S tuner models, e.g. Solo 4K.
+_unsupportedNims = ( 'Vuplus DVB-S NIM(7376 FBC)', ) # format = nim.description from nimmanager
+
 class Blindscan(ConfigListScreen, Screen):
 	skin="""
 		<screen position="center,center" size="640,560" title="Blind scan">
@@ -325,18 +328,21 @@ class Blindscan(ConfigListScreen, Screen):
 		# collect all nims which are *not* set to "nothing"
 		nim_list = []
 		for n in nimmanager.nim_slots:
+			if not n.isCompatible("DVB-S"):
+				continue
+			if n.description in _unsupportedNims: # DVB-S NIMs without blindscan hardware or software
+				continue
 			if n.isFBCLink():
 				continue
 			if n.config_mode == "nothing":
 				continue
-			if n.config_mode == "advanced" and len(nimmanager.getSatListForNim(n.slot)) < 1:
+			if len(nimmanager.getSatListForNim(n.slot)) < 1: # empty setup
 				continue
 			if n.config_mode in ("loopthrough", "satposdepends"):
 				root_id = nimmanager.sec.getRoot(n.slot_id, int(n.config.connectedTo.value))
 				if n.type == nimmanager.nim_slots[root_id].type: # check if connected from a DVB-S to DVB-S2 Nim or vice versa
 					continue
-			if n.isCompatible("DVB-S"):
-				nim_list.append((str(n.slot), n.friendly_full_description))
+			nim_list.append((str(n.slot), n.friendly_full_description))
 		self.scan_nims = ConfigSelection(choices = nim_list)
 
 		# sat
@@ -1065,7 +1071,8 @@ def BlindscanSetup(menuid, **kwargs):
 
 def Plugins(**kwargs):
 	from enigma import getBoxType
-	if nimmanager.hasNimType("DVB-S") and getBoxType().startswith('et') or getBoxType().startswith('vu'):
-		return PluginDescriptor(name=_("Blind scan"), description=_("Scan satellites for new transponders"), where = PluginDescriptor.WHERE_MENU, fnc=BlindscanSetup)
-	else:
-		return []
+	if nimmanager.hasNimType("DVB-S") and (getBoxType().startswith('et') or getBoxType().startswith('vu')):
+		for n in nimmanager.nim_slots:
+			if n.isCompatible("DVB-S") and n.description not in _unsupportedNims:
+				return PluginDescriptor(name=_("Blind scan"), description=_("Scan satellites for new transponders"), where = PluginDescriptor.WHERE_MENU, fnc=BlindscanSetup)
+	return []
