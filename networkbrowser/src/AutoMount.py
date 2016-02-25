@@ -43,7 +43,16 @@ class AutoMount():
 
 		if not os.path.exists(XML_FSTAB):
 			return
-		tree = cet_parse(XML_FSTAB).getroot()
+
+		try:
+			tree = cet_parse(XML_FSTAB).getroot()
+		except Exception, e:
+			print "[MountManager] Error reading /etc/enigma2/automounts.xml:", e
+			try:
+				os.remove(XML_FSTAB)
+			except Exception, e:
+				print "[MountManager] Error delete corrupt /etc/enigma2/automounts.xml:", e
+			return
 
 		def getValue(definitions, default):
 			# Initialize Output
