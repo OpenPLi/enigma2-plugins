@@ -138,6 +138,8 @@ class DVDBackup:
 			except:
 				pass
 		self.getInfo()
+		self.pollTimer = eTimer()
+		self.pollTimer.callback.append(self.setPollSDROM)
 
 	def getInfo(self):
 		if cfg.create_iso.value == "dd":
@@ -146,6 +148,7 @@ class DVDBackup:
 			self.console.ePopen("dvdbackup --info -i %s" % cfg.device.value, self.gotInfo)
 
 	def isoFinished(self, result, retval, extra_args):
+		self.pollTimer.stop()
 		if retval != 0:
 			msg = _("Error while backup of DVD!")
 			message(msg)
@@ -157,10 +160,16 @@ class DVDBackup:
 			self.working = False
 			self.finished()
 
+	def setPollSDROM(self):
+		if self.working:
+			self.console.ePopen("mount /dev/sr0 1>/dev/null 2>/dev/null")
+			self.pollTimer.start(30000, True)
+
 	def isoWithDD(self, result, retval, extra_args):
 		size = self.getDVDSize(result, retval, extra_args)
 		if size > 0:
 			self.files.append(DVDBackupFile("dd", int(size)))
+			self.pollTimer.start(10000, True)
 			self.console.ePopen("dd if=/dev/sr0 of=%s%s.iso bs=2048 conv=sync" % (cfg.directory.value,cfg.name.value), self.isoFinished)
 
 	def getDVDSize(self, result, retval, extra_args):
@@ -300,6 +309,7 @@ class DVDBackup:
 		del self.files
 		self.files = []
 		self.startTime = None
+		self.pollTimer.stop()
 		print "[DVD Backup] abort user"
 
 dvdbackup = DVDBackup()
@@ -517,9 +527,12 @@ class DVDBackupScreen(Screen, ConfigListScreen):
 				self.session.open(MessageBox, _("Warning!\nThis is the same folder!"), type=MessageBox.TYPE_ERROR, timeout=6)
 				return
 			if os.path.exists(os.path.join(cfg.device.value, "VIDEO_TS")) or os.path.exists(os.path.join(cfg.device.value, "video_ts")):
-				if cfg.create_iso.value == "dd" and not isCDdevice():
-					self.session.open(MessageBox, _("Warning!\nThis folder not CD-ROM!"), type=MessageBox.TYPE_ERROR, timeout=6)
-					return
+				if cfg.create_iso.value == "dd":
+					if not isCDdevice():
+						self.session.open(MessageBox, _("Warning!\nThis folder not CD-ROM!"), type=MessageBox.TYPE_ERROR, timeout=6)
+						return
+					else:
+						os.system("mount /dev/sr0 1>/dev/null 2>/dev/null")
 				try:
 					st = os.statvfs(cfg.device.value)
 					size = st.f_bsize * st.f_blocks
@@ -624,7 +637,7 @@ class DVDBackupScreen(Screen, ConfigListScreen):
 				if line.startswith("DVD-Video information of the DVD with title "):
 					idx = line.index("title ")
 					name = line[idx+6:]
-					name = name.replace('&', '').replace('+', '').replace('*', '').replace('?', '').replace('<', '').replace('>', '').replace('|', '')
+					name = name.replace('&', '').replace('+', '').replace('*', '').replace('?', '').replace('<', '').replace('>', '').replace('|', '').replace(' ', '_')
 					name = name.replace('"', '').replace('.', '').replace('/', '').replace('\\', '').replace('[', '').replace(']', '').replace(':', '').replace(';', '').replace('=', '').replace(',', '')
 					if name:
 						cfg.name.value = name
