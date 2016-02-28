@@ -127,3 +127,16 @@ msgstr "Видеорежим: %s"
 
 msgid "Videocontent: %sx%s%s %sHZ"
 msgstr "Видеоконтент: %sx%s%s %sHZ"
+
+msgid "Manual"
+msgstr "Ручной"
+
+msgid "Auto frame rate (refresh need 'multi')"
+msgstr "Авто скорость частоты кадров (обновление необходимо 'multi')"
+
+msgid "Mode"
+msgstr "Режим"
+
+msgid "Lock timeout"
+msgstr "Таймаут блокировки"
+

@@ -1,0 +1,184 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-02-28 20:09+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: plugin.py:56
+msgid "Auto frame rate (refresh need 'multi')"
+msgstr ""
+
+#: plugin.py:517
+msgid "Autoresolution"
+msgstr ""
+
+#: plugin.py:272
+#, python-format
+msgid ""
+"Autoresolution Plugin Testmode:\n"
+"Is %s OK?"
+msgstr ""
+
+#: plugin.py:525
+msgid "Autoresolution Switch"
+msgstr ""
+
+#: plugin.py:370
+msgid "Autoresolution is not working in Scart/DVI-PC Mode"
+msgstr ""
+
+#: plugin.py:342
+msgid "Autoresolution settings"
+msgstr ""
+
+#: plugin.py:323
+msgid "Autoresolution videomode setup"
+msgstr ""
+
+#: plugin.py:336
+msgid "Cancel"
+msgstr ""
+
+#: plugin.py:364
+msgid "Deinterlacer mode for interlaced content"
+msgstr ""
+
+#: plugin.py:365
+msgid "Deinterlacer mode for progressive content"
+msgstr ""
+
+#: plugin.py:362
+msgid "Delay x seconds after service started"
+msgstr ""
+
+#: plugin.py:40
+msgid "Enable 1080p24 Mode"
+msgstr ""
+
+#: plugin.py:41
+msgid "Enable 1080p25 Mode"
+msgstr ""
+
+#: plugin.py:41
+msgid "Enable 1080p30 Mode"
+msgstr ""
+
+#: plugin.py:40
+msgid "Enable 720p24 Mode"
+msgstr ""
+
+#: plugin.py:345
+msgid "Enable Autoresolution"
+msgstr ""
+
+#: plugin.py:39
+msgid "HD Interlace Mode"
+msgstr ""
+
+#: plugin.py:39
+msgid "HD Progressive Mode"
+msgstr ""
+
+#: plugin.py:368
+msgid "Lock timeout"
+msgstr ""
+
+#: plugin.py:56
+msgid "Manual"
+msgstr ""
+
+#: plugin.py:348
+msgid "Mode"
+msgstr ""
+
+#: plugin.py:335
+msgid "OK"
+msgstr ""
+
+#: plugin.py:353 plugin.py:355 plugin.py:357 plugin.py:359
+msgid "Refresh Rate"
+msgstr ""
+
+#: plugin.py:363
+msgid "Running in testmode"
+msgstr ""
+
+#: plugin.py:37
+msgid "SD 24HZ Progressive mode"
+msgstr ""
+
+#: plugin.py:36
+msgid "SD 25/50HZ Interlace Mode"
+msgstr ""
+
+#: plugin.py:38
+msgid "SD 25/50HZ Progressive Mode"
+msgstr ""
+
+#: plugin.py:36
+msgid "SD 30/60HZ Interlace Mode"
+msgstr ""
+
+#: plugin.py:38
+msgid "SD 30/60HZ Progressive Mode"
+msgstr ""
+
+#: plugin.py:361
+msgid "Show info screen"
+msgstr ""
+
+#: plugin.py:242
+#, python-format
+msgid "Videocontent: %sx%s%s %sHZ"
+msgstr ""
+
+#: plugin.py:262 plugin.py:268
+#, python-format
+msgid "Videomode: %s"
+msgstr ""
+
+#: plugin.py:290
+#, python-format
+msgid "Videomode: %s %s %s"
+msgstr ""
+
+#: plugin.py:48 plugin.py:50
+msgid "auto"
+msgstr ""
+
+#: plugin.py:48 plugin.py:50
+msgid "bob"
+msgstr ""
+
+#: plugin.py:157
+msgid "default"
+msgstr ""
+
+#: plugin.py:48 plugin.py:50
+msgid "off"
+msgstr ""
+
+#: plugin.py:48 plugin.py:50
+msgid "on"
+msgstr ""
+
+#: plugin.py:53
+msgid "second"
+msgstr ""
+
+#: plugin.py:52 plugin.py:53 plugin.py:54 plugin.py:55 plugin.py:57
+msgid "seconds"
+msgstr ""
