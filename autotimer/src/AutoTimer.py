@@ -392,12 +392,14 @@ class AutoTimer:
 			# Initialize
 			newEntry = None
 			oldExists = False
+			allow_modify = True
 
 			# Eventually change service to alternative
 			if timer.overrideAlternatives:
 				serviceref = timer.getAlternative(serviceref)
 
 			if timer.series_labeling and sp_getSeasonEpisode is not None:
+				allow_modify = False
 				#doLog("[AutoTimer SeriesPlugin] Request name, desc, path %s %s %s" % (name,shortdesc,dest))
 				sp = sp_getSeasonEpisode(serviceref, name, evtBegin, evtEnd, shortdesc, dest)
 				if sp and type(sp) in (tuple, list) and len(sp) == 4:
@@ -405,6 +407,7 @@ class AutoTimer:
 					shortdesc = sp[1] or shortdesc
 					dest = sp[2] or dest
 					doLog(str(sp[3]))
+					allow_modify = True
 					#doLog("[AutoTimer SeriesPlugin] Returned name, desc, path %s %s %s" % (name,shortdesc,dest))
 				else:
 					# Nothing found
@@ -418,6 +421,7 @@ class AutoTimer:
 							shortdesc = sp[1] or shortdesc
 							dest = sp[2] or dest
 							doLog(str(sp[3]))
+							allow_modify = True
 							#doLog("[AutoTimer SeriesPlugin] Returned name, desc, path %s %s %s" % (name,shortdesc,dest))
 						else:
 							doLog(str(sp))
@@ -543,10 +547,14 @@ class AutoTimer:
 
 				modified += 1
 
-				self.modifyTimer(newEntry, name, shortdesc, begin, end, serviceref, eit)
-				msg = "[AutoTimer] AutoTimer modified timer: %s ." % (newEntry.name)
-				doLog(msg)
-				newEntry.log(501, msg)
+				if allow_modify:
+					self.modifyTimer(newEntry, name, shortdesc, begin, end, serviceref, eit)
+					msg = "[AutoTimer] AutoTimer modified timer: %s ." % (newEntry.name)
+					doLog(msg)
+					newEntry.log(501, msg)
+				else:
+					msg = "[AutoTimer] AutoTimer modification not allowed for timer: %s ." % (newEntry.name)
+					doLog(msg)
 			else:
 				newEntry = RecordTimerEntry(ServiceReference(serviceref), begin, end, name, shortdesc, eit)
 
@@ -655,9 +663,6 @@ class AutoTimer:
 						# We might want to do the sanity check locally so we don't run it twice - but I consider this workaround a hack anyway
 						conflicts = recordHandler.record(newEntry)
 
-		if sp_showResult is not None:
-			sp_showResult()
-
 		return (new, modified)
 
 	def parseEPG(self, simulateOnly=False, uniqueId=None, callback=None):
@@ -719,6 +724,10 @@ class AutoTimer:
 					new += tup[0]
 					modified += tup[1]
 
+		if not simulateOnly:
+ 			if sp_showResult is not None:
+				blockingCallFromMainThread(sp_showResult)
+
 		return (len(timers), new, modified, timers, conflicting, similars)
 
 # Supporting functions
@@ -756,11 +765,8 @@ class AutoTimer:
 		del remove
 
 	def modifyTimer(self, timer, name, shortdesc, begin, end, serviceref, eit=None):
-		# Only update the name and description if we got a "new" one
-		if len(timer.name) < len(name):
-			timer.name = name
-		if len(timer.description) < len(shortdesc):
-			timer.description = shortdesc
+		timer.name = name
+		timer.description = shortdesc
 		timer.begin = int(begin)
 		timer.end = int(end)
 		timer.service_ref = ServiceReference(serviceref)
