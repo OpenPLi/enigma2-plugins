@@ -1,0 +1,6 @@
+Package: enigma2-plugin-systemplugins-systemtime
+Version: 1.4
+Description: system time for enigma2 box
+Maintainer: OpenPLi team <forum@openpli.org>
+Homepage: http://www.openpli.org
+Depends: dvbdate, ntpdate
