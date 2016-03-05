@@ -1,0 +1,157 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-02-28 19:54+0100\n"
+"PO-Revision-Date: 2016-03-04 14:24+0200\n"
+"Language-Team: LANGUAGE <Dima-73@inbox.lv>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Last-Translator: \n"
+"Language: ru\n"
+"X-Generator: Poedit 1.7.5\n"
+
+msgid " ver. "
+msgstr " версия "
+
+msgid "'dvbdate' not installed !"
+msgstr "'dvbdate' не установлен !"
+
+msgid "'ntpdate' not installed !"
+msgstr "'ntpdate' не установлен !"
+
+msgid "1 hour"
+msgstr "1 час"
+
+msgid "12 hours"
+msgstr "12 часов"
+
+msgid "15 min"
+msgstr "15 мин"
+
+msgid "2 hours"
+msgstr "2 часа"
+
+msgid "24 hours"
+msgstr "24 часа"
+
+msgid "30 min"
+msgstr "30 мин"
+
+msgid "4 hours"
+msgstr "4 часа"
+
+msgid "48 hours"
+msgstr "48 часов"
+
+msgid "5 min"
+msgstr "5 мин"
+
+msgid "Apply the new System time?"
+msgstr "Примененить новое системное время?"
+
+msgid "Cancel"
+msgstr "Отмена"
+
+msgid "Change system time was canceled, because %s"
+msgstr "Изменение системного времени был отменено, так как %s"
+
+msgid "Choice transponder"
+msgstr "Выбор транспондера"
+
+msgid "Delay (sec) wnen use wifi network"
+msgstr "Задержка (сек) при использовании сети wifi"
+
+msgid "Domain name or IP (pool.ntp.org)"
+msgstr "Доменное имя или IP (pool.ntp.org)"
+
+msgid "Internet Time"
+msgstr "время с интернета"
+
+msgid "Please Enter new System time and press OK !"
+msgstr "Введите новое системное время и нажмите ОК !"
+
+msgid "Press OK"
+msgstr "Нажмите OK"
+
+msgid "Restart GUI"
+msgstr "Рестарт GUI"
+
+msgid "Restart the GUI now?"
+msgstr "Рестарт GUI сейчас?"
+
+msgid "Save"
+msgstr "Сохранить"
+
+msgid "Script 'set-rtctime' not found !"
+msgstr "Скрипт 'set-rtctime' не найден !"
+
+msgid "Set system time manually"
+msgstr "Выставить системное время вручную"
+
+msgid "Setup System Time"
+msgstr "Настройки системного времени:"
+
+msgid "Sync NTP cold start"
+msgstr "Синхронизировать с NTP при старте ресивера"
+
+msgid "Sync NTP every"
+msgstr "Синхронизировать с NTP каждые"
+
+msgid "Sync now current transponder"
+msgstr "Синхронизировать с текущего транспордера"
+
+msgid "Sync now internet"
+msgstr "Синхронизировать сейчас с интернета"
+
+msgid "Sync time using"
+msgstr "Синхронизация времени с помощью"
+
+msgid "System Time"
+msgstr "Системное время"
+
+msgid "System time your box"
+msgstr "Системное время вашего ресивера"
+
+msgid "Time sync with DVB..."
+msgstr "Системное время с DVB..."
+
+msgid "Time sync with NTP..."
+msgstr "Системное время с NTP..."
+
+msgid "Transponder Time"
+msgstr "время с транспордера"
+
+msgid "Use RTC time from deep standby"
+msgstr "Использовать время RTC при старте ресивера"
+
+msgid "answer is None"
+msgstr "ответ нет"
+
+msgid "invalid day %s"
+msgstr "неправильный день %s"
+
+msgid "invalid format"
+msgstr "неправильный формат"
+
+msgid "invalid hour %s"
+msgstr "неправильные часы %s"
+
+msgid "invalid minute %s"
+msgstr "неправильные минуты %s"
+
+msgid "invalid month %s"
+msgstr "неправильный месяц %s"
+
+msgid "invalid year %s"
+msgstr "неправильный год %s"
+
+msgid "new time string too short"
+msgstr "слишком короткое время"
+
+msgid "no new time"
+msgstr "нет нового времени"
+
+msgid "you were not confirming"
+msgstr "вы не подтверждаете"

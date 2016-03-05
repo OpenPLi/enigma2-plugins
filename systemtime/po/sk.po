@@ -1,0 +1,145 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Xtrend\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-12-01 16:48+0100\n"
+"PO-Revision-Date: 2014-11-22 19:38+0100\n"
+"Last-Translator: dym1 <dusantvrdy1@gmail.com>\n"
+"Language-Team: dym1\n"
+"Language: sk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+
+msgid "'dvbdate' not installed !"
+msgstr "'dvbdate' nenainštalovaný !"
+
+msgid "'ntpdate' not installed !"
+msgstr "'ntpdate' nenainštalovaný !"
+
+msgid "1 hour"
+msgstr "1 hodinu"
+
+msgid "12 hours"
+msgstr "12 hodín"
+
+msgid "15 min"
+msgstr "15 minút"
+
+msgid "2 hours"
+msgstr "2 hodiny"
+
+msgid "24 hours"
+msgstr "24 hodín"
+
+msgid "30 min"
+msgstr "30 minút"
+
+msgid "4 hours"
+msgstr "4 hodiny"
+
+msgid "48 hours"
+msgstr "48 hodín"
+
+msgid "5 min"
+msgstr "5 minút"
+
+msgid "Apply the new System time?"
+msgstr "Použiť nový čas systému ?"
+
+msgid "Cancel"
+msgstr "Zrušiť"
+
+msgid "Change system time was canceled, because %s"
+msgstr "Zmena času systému bola zrušená, pretože %s"
+
+msgid "Choice transponder"
+msgstr "Voľba transpondéru"
+
+msgid "Domain name or IP (pool.ntp.org)"
+msgstr "Meno domény alebo IP (pool.ntp.org)"
+
+msgid "Internet Time"
+msgstr "Internetový čas"
+
+msgid "Please Enter new System time and press OK !"
+msgstr "Prosím, zadajte nový čas systému a stlačte OK !"
+
+msgid "Press OK"
+msgstr "Stlačte OK"
+
+msgid "Restart GUI"
+msgstr "Reštartovať Enigma2"
+
+msgid "Restart the GUI now?"
+msgstr "Reštartovať Enigma2 teraz?"
+
+msgid "Save"
+msgstr "Uložiť"
+
+msgid "Set system time manually"
+msgstr "Nastaviť systémový čas ručne"
+
+msgid "Setup System Time"
+msgstr "Nastaviť systémový čas: "
+
+msgid "Sync NTP cold start"
+msgstr "Synchronizovať čas po zapnutí prijímača"
+
+msgid "Sync NTP every"
+msgstr "Synchronizovať NTP cez internet každých"
+
+msgid "Sync now current transponder"
+msgstr "Synchronizovať teraz z aktuálneho transpondéru"
+
+msgid "Sync now internet"
+msgstr "Synchronizovať NTP teraz cez internet"
+
+msgid "Sync time using"
+msgstr "Synchronizovať čas pomocou"
+
+msgid "System Time"
+msgstr "Systémový čas"
+
+msgid "System time your box"
+msgstr "Systémový čas vášho prijímača"
+
+msgid "Time sync with DVB..."
+msgstr "Systémový čas z DVB..."
+
+msgid "Time sync with NTP..."
+msgstr "Systémový čas z NTP..."
+
+msgid "Transponder Time"
+msgstr "Čas z transpondéru"
+
+msgid "answer is None"
+msgstr "odpoveď je nie"
+
+msgid "invalid day %s"
+msgstr "zlý deň %s"
+
+msgid "invalid format"
+msgstr "neplatný formát"
+
+msgid "invalid hour %s"
+msgstr "neplatné hodiny %s"
+
+msgid "invalid minute %s"
+msgstr "neplatné minúty %s"
+
+msgid "invalid month %s"
+msgstr "neplatný mesiac %s"
+
+msgid "invalid year %s"
+msgstr "neplatný rok %s"
+
+msgid "new time string too short"
+msgstr "reťazec nového času je príliš krátky"
+
+msgid "no new time"
+msgstr "žiadny nový čas"
+
+msgid "you were not confirming"
+msgstr "ste nepotvrdili áno"

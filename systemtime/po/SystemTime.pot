@@ -1,0 +1,216 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-04 20:56+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: plugin.py:39
+msgid " ver. "
+msgstr ""
+
+#: plugin.py:216
+msgid "'dvbdate' not installed !"
+msgstr ""
+
+#: plugin.py:210 plugin.py:255
+msgid "'ntpdate' not installed !"
+msgstr ""
+
+#: plugin.py:43
+msgid "1 hour"
+msgstr ""
+
+#: plugin.py:43
+msgid "12 hours"
+msgstr ""
+
+#: plugin.py:43
+msgid "15 min"
+msgstr ""
+
+#: plugin.py:43
+msgid "2 hours"
+msgstr ""
+
+#: plugin.py:43
+msgid "24 hours"
+msgstr ""
+
+#: plugin.py:43
+msgid "30 min"
+msgstr ""
+
+#: plugin.py:43
+msgid "4 hours"
+msgstr ""
+
+#: plugin.py:43
+msgid "48 hours"
+msgstr ""
+
+#: plugin.py:43
+msgid "5 min"
+msgstr ""
+
+#: plugin.py:420
+msgid "Apply the new System time?"
+msgstr ""
+
+#: plugin.py:103
+msgid "Cancel"
+msgstr ""
+
+#: plugin.py:442
+#, python-format
+msgid "Change system time was canceled, because %s"
+msgstr ""
+
+#: plugin.py:224 plugin.py:321
+msgid "Choice transponder"
+msgstr ""
+
+#: plugin.py:170
+msgid "Delay (sec) wnen use wifi network"
+msgstr ""
+
+#: plugin.py:175
+msgid "Domain name or IP (pool.ntp.org)"
+msgstr ""
+
+#: plugin.py:42
+msgid "Internet Time"
+msgstr ""
+
+#: plugin.py:372
+msgid "Please Enter new System time and press OK !"
+msgstr ""
+
+#: plugin.py:47 plugin.py:48 plugin.py:49
+msgid "Press OK"
+msgstr ""
+
+#: plugin.py:105
+msgid "Restart GUI"
+msgstr ""
+
+#: plugin.py:301 plugin.py:314
+msgid "Restart the GUI now?"
+msgstr ""
+
+#: plugin.py:104
+msgid "Save"
+msgstr ""
+
+#: plugin.py:273
+msgid "Script 'set-rtctime' not found !"
+msgstr ""
+
+#: plugin.py:173
+msgid "Set system time manually"
+msgstr ""
+
+#: plugin.py:99
+msgid "Setup System Time"
+msgstr ""
+
+#: plugin.py:169
+msgid "Sync NTP cold start"
+msgstr ""
+
+#: plugin.py:168
+msgid "Sync NTP every"
+msgstr ""
+
+#: plugin.py:172
+msgid "Sync now current transponder"
+msgstr ""
+
+#: plugin.py:171
+msgid "Sync now internet"
+msgstr ""
+
+#: plugin.py:167
+msgid "Sync time using"
+msgstr ""
+
+#: plugin.py:457
+msgid "System Time"
+msgstr ""
+
+#: plugin.py:466
+msgid "System time your box"
+msgstr ""
+
+#: plugin.py:214
+msgid "Time sync with DVB..."
+msgstr ""
+
+#: plugin.py:205 plugin.py:208
+msgid "Time sync with NTP..."
+msgstr ""
+
+#: plugin.py:42
+msgid "Transponder Time"
+msgstr ""
+
+#: plugin.py:174
+msgid "Use RTC time from deep standby"
+msgstr ""
+
+#: plugin.py:424
+msgid "answer is None"
+msgstr ""
+
+#: plugin.py:413
+#, python-format
+msgid "invalid day %s"
+msgstr ""
+
+#: plugin.py:384 plugin.py:386
+msgid "invalid format"
+msgstr ""
+
+#: plugin.py:415
+#, python-format
+msgid "invalid hour %s"
+msgstr ""
+
+#: plugin.py:417
+#, python-format
+msgid "invalid minute %s"
+msgstr ""
+
+#: plugin.py:411
+#, python-format
+msgid "invalid month %s"
+msgstr ""
+
+#: plugin.py:409
+#, python-format
+msgid "invalid year %s"
+msgstr ""
+
+#: plugin.py:382
+msgid "new time string too short"
+msgstr ""
+
+#: plugin.py:380
+msgid "no new time"
+msgstr ""
+
+#: plugin.py:426
+msgid "you were not confirming"
+msgstr ""

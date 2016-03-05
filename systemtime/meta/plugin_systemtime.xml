@@ -1,0 +1,15 @@
+<default>
+	<prerequisites>
+		<tag type="System" />
+	</prerequisites>
+	<info>
+			<name>SystemTime</name>
+			<packagename>enigma2-plugin-systemplugins-systemtime</packagename>
+			<shortdescription>System Time</shortdescription>
+			<description>System Time your box</description>
+	</info>
+	<files type="package"> <!-- without version, without .ipk -->
+		<file type="package" name="enigma2-plugin-systemplugins-systemtime" />
+		<file type="package" name="system-time" />
+	</files>
+</default>
