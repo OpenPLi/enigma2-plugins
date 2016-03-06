@@ -674,3 +674,91 @@ msgstr "Kann Timer mit Id %i nicht finden"
 msgid "zap"
 msgstr "umschalten"
 
+# new from here
+
+msgid "Save and search now"
+msgstr "Jetzt speichern und suchen"
+
+msgid "Clone selected timer"
+msgstr "Bestehenden Timer kopieren"
+
+msgid "Startup delay (in min)"
+msgstr "Start verzögern (in min)"
+
+msgid "Delay after editing (in sec)"
+msgstr "Verzögerung nach editieren (in Sek)"
+
+msgid "Show in event menu"
+msgstr "Zeige im Event Menü"
+
+msgid "Show \"add to AutoTimer\" in channel selection menu"
+msgstr "Zeige \"zu Autotimer hinzugügen\" im Kanalauswahl Menü"
+
+msgid "Add \"Choice list AutoTimer\" menu button to multi-EPG"
+msgstr "Füge \"Auswahlliste Autotimer\" Menü Button zu Mutli-EPG hinzu"
+
+msgid "Add \"Choice list AutoTimer\" menu button to single-EPG"
+msgstr "Füge \"Auswahlliste Autotimer\" Menü Button zu Singel-EPG hinzu"
+
+msgid "Include \"AutoTimer\" in tags"
+msgstr "Füge \"Autotimer\" zu Tags hinzu"
+
+msgid "Include AutoTimer name in tags"
+msgstr "Füge Namen des Autotimers zu Tags hinzu"
+
+msgid "Show notification on added timers"
+msgstr "Zeige Benachrichtigung bei hinzugefügten Timern"
+
+msgid "Skip poll during records"
+msgstr "Keine Abfrage während Aufnahmen"
+
+msgid "Only poll while in standby"
+msgstr "Nur während des Standby abfragen"
+
+msgid "Style auto timers list"
+msgstr "Aussehen der Autotimerliste"
+
+msgid "Skip poll during epg refresh"
+msgstr "Keine Abfrage während EPG-Refresh"
+
+msgid "Popup timeout in seconds"
+msgstr "Popup Timeout in Sekunden"
+
+msgid "Remove not existing events"
+msgstr "Entferne nicht existierende Timer-Events"
+
+msgid "Always write config"
+msgstr "Config immer schreiben"
+
+msgid "Create debug log file"
+msgstr "Erstelle Debug log Datei"
+
+msgid "Path debug log"
+msgstr "Debug log Verzeichnis"
+
+msgid "Label series"
+msgstr "Serie umbenennen"
+
+msgid "Enable timer conflict detection"
+msgstr "Aktiviere Timer-Konflikt Erkennung"
+
+msgid "Restriction to certain bouquets (edit in services menu)"
+msgstr "Beschränkung auf bestimmte Bouquets (im Services Menü bearbeiten)"
+
+msgid "Restriction to certain days of week (edit in filter menu)"
+msgstr "Beschränkung auf bestimmte Wochentage (im Filter Menü bearbeiten)"
+
+msgid "Restriction to certain services (edit in services menu)"
+msgstr "Beschränkung auf bestimmte Services (im Services Menü bearbeiten)"
+
+msgid "Other filters (edit in filter menu)"
+msgstr "Andere Filter (im Filter Menü bearbeiten)"
+
+msgid "Edit services"
+msgstr "Services bearbeiten"
+
+msgid ""
+"If this is selected, the tag \"AutoTimer\" will be given to timers created "
+"by this plugin."
+msgstr ""
+"Wenn das ausgewählt ist, wird ein Tag \"Autotimer\" vom Plugin erstellt."
