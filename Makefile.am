@@ -60,6 +60,7 @@ SUBDIRS = \
 	reconstructapsc \
 	remotetimer \
 	rsdownloader \
+	satipclient \
 	seekbar \
 	setpasswd \
 	shoutcast \
@@ -67,6 +68,7 @@ SUBDIRS = \
 	simplerss \
 	startuptostandby \
 	svdrp \
+	systemtime \
 	tageditor \
 	trafficinfo \
 	transcodingsetup \
