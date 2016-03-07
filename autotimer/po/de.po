@@ -674,3 +674,233 @@ msgstr "Kann Timer mit Id %i nicht finden"
 msgid "zap"
 msgstr "umschalten"
 
+# new from here
+
+msgid "Save and search now"
+msgstr "Jetzt speichern und suchen"
+
+msgid "Clone selected timer"
+msgstr "Bestehenden Timer kopieren"
+
+msgid "Startup delay (in min)"
+msgstr "Start verzögern (in min)"
+
+msgid "Delay after editing (in sec)"
+msgstr "Verzögerung nach editieren (in Sek)"
+
+msgid "Show in event menu"
+msgstr "Zeige im Event Menü"
+
+msgid "Show \"add to AutoTimer\" in channel selection menu"
+msgstr "Zeige \"zu Autotimer hinzugügen\" im Kanalauswahl Menü"
+
+msgid "Add \"Choice list AutoTimer\" menu button to multi-EPG"
+msgstr "Füge \"Auswahlliste Autotimer\" Menü Button zu Mutli-EPG hinzu"
+
+msgid "Add \"Choice list AutoTimer\" menu button to single-EPG"
+msgstr "Füge \"Auswahlliste Autotimer\" Menü Button zu Singel-EPG hinzu"
+
+msgid "Include \"AutoTimer\" in tags"
+msgstr "Füge \"Autotimer\" zu Tags hinzu"
+
+msgid "Include AutoTimer name in tags"
+msgstr "Füge Namen des Autotimers zu Tags hinzu"
+
+msgid "Show notification on added timers"
+msgstr "Zeige Benachrichtigung bei hinzugefügten Timern"
+
+msgid "Skip poll during records"
+msgstr "Keine Abfrage während Aufnahmen"
+
+msgid "Only poll while in standby"
+msgstr "Nur während des Standby abfragen"
+
+msgid "Style auto timers list"
+msgstr "Aussehen der Autotimerliste"
+
+msgid "Skip poll during epg refresh"
+msgstr "Keine Abfrage während EPG-Refresh"
+
+msgid "Popup timeout in seconds"
+msgstr "Popup Timeout in Sekunden"
+
+msgid "Remove not existing events"
+msgstr "Entferne nicht existierende Timer-Events"
+
+msgid "Always write config"
+msgstr "Config immer schreiben"
+
+msgid "Create debug log file"
+msgstr "Erstelle Debug log Datei"
+
+msgid "Path debug log"
+msgstr "Debug log Verzeichnis"
+
+msgid "Label series"
+msgstr "Serie umbenennen"
+
+msgid "Enable timer conflict detection"
+msgstr "Aktiviere Timer-Konflikt Erkennung"
+
+msgid "Restriction to certain bouquets (edit in services menu)"
+msgstr "Beschränkung auf bestimmte Bouquets (im Services Menü bearbeiten)"
+
+msgid "Restriction to certain days of week (edit in filter menu)"
+msgstr "Beschränkung auf bestimmte Wochentage (im Filter Menü bearbeiten)"
+
+msgid "Restriction to certain services (edit in services menu)"
+msgstr "Beschränkung auf bestimmte Services (im Services Menü bearbeiten)"
+
+msgid "Other filters (edit in filter menu)"
+msgstr "Andere Filter (im Filter Menü bearbeiten)"
+
+msgid "Edit services"
+msgstr "Services bearbeiten"
+
+msgid ""
+"If this is selected, the tag \"AutoTimer\" will be given to timers created "
+"by this plugin."
+msgstr ""
+"Wenn das ausgewählt ist, wird ein Tag \"Autotimer\" vom Plugin erstellt."
+
+msgid ""
+"This is the delay in minutes that the AutoTimer will wait on initial launch "
+"to not delay enigma2 startup time."
+msgstr ""
+"Das ist die Verzögerung in Minuten die Autotimer nach einem Neustart wartet "
+"um die Startzeit von Enigma2 nicht zu verlängern."
+
+msgid ""
+"This is the delay in seconds that the AutoTimer will wait after editing the "
+"AutoTimers."
+msgstr ""
+"Das ist die Verzögerung in Sekunden die AutoTimer wartet nach dem bearbeiten "
+"des AutoTimers."
+
+msgid "This is the duration in minutes that the AutoTimer is allowed to run."
+msgstr "Das ist die Dauer in Minuten die Autotimer laufen darf."
+
+msgid ""
+"Enable this to add item for create the AutoTimer into event menu (needs "
+"restart GUI)."
+msgstr ""
+"Aktiviere das um einen Menüpunkt für AutoTimer im Event Menü zu erstellen"
+"(Benötigt Neustart der GUI)"
+
+msgid ""
+"Enable this to be able to access the add to AutoTimer from the channel "
+"selection context menu."
+msgstr ""
+"Aktiviere das um vom der Kanalauswahlmenü auf AutoTimer zugreifen zu können."
+
+msgid ""
+"If this is enabled, up on the Menu button in the standard single-EPG will "
+"list of choices for AutoTimer."
+msgstr ""
+"Wenn das aktiviert ist, wird im Standard Single-EPG über die Menütaste eine"
+"Auswahlliste für AutoTimer erscheinen."
+
+msgid ""
+"If this is enabled, up on the MENU button in the multi-EPG will list of "
+"choices for AutoTimer."
+msgstr ""
+"Wenn das aktiviert ist, wird im Standard Multi-EPG über die Menütaste eine"
+"Auswahlliste für AutoTimer erscheinen."
+
+msgid ""
+"If this is enabled an existing timer will also be considered recording an "
+"event if it records at least 80% of the it."
+msgstr ""
+"Wenn das aktiviert ist wird ein bestehender Timer als Ereignisses berücksichtigt "
+"werden, wenn er mindestens 80% darauf aufzeichnet. "
+
+msgid ""
+"If this is selected, the name of the respective AutoTimer will be added as a "
+"tag to timers created by this plugin."
+msgstr ""
+"Wenn das aktiviert ist wird der Name des AutoTimers durch das Plugin als Tag"
+"hinzugefügt."
+
+msgid ""
+"By enabling this you will be notified about timer(s) added during automated "
+"polling. Just not in standby mode."
+msgstr ""
+"Wenn das aktiviert ist wirst du über hinzugefügte Timer während der Abfrage"
+"informiert. Funktioniert nicht im Standby Mode."
+
+msgid "If enabled, the polling will be skipped if a recording is in progress."
+msgstr "Wenn aktiviert, wird keine Abfrage während einer Aufnahme ausgeführt."
+
+msgid ""
+"When this is enabled AutoTimer will ONLY check for new events whilst in "
+"stanadby."
+msgstr ""
+"Wenn aktiviert, wird AutoTimer NUR im Standby nach neuen Timern suchen."
+
+msgid ""
+"If the style is advanced, you will see more information about each auto "
+"timer."
+msgstr ""
+"Wenn das Style \"erweitert\" ist, werden mehr Informationen zu jedem "
+"AutoTimer angezeigt."
+
+msgid ""
+"If enabled, the polling will be skipped if EPGRefresh is currently running."
+msgstr ""
+"Wenn aktivert, wird keine Abfrage während EPG-Refresh ausgeführt."
+
+msgid "If 0, the popup will remain open."
+msgstr "Wenn 0, bleibt das Popup geöffnet."
+
+msgid ""
+"Check the event id (eit) and remove the timer if there is no corresponding "
+"EPG event. Due to compatibility issues with SerienRecorder and IPRec, only "
+"timer created by AutoTimer are affected."
+msgstr ""
+"Prüfe die Event ID (eit) und entferne nicht übereinstimmende Timer. Wegen Problemen"
+"mit Serienrecorder und IPRec werden nur AutoTimer berücksichtigt."
+
+msgid ""
+"Write the config file after every change which the user quits by saving."
+msgstr ""
+"Schreibe die Config Datei nach jeder Änderung wenn der User über \"speichern\""
+"beendet."
+
+msgid "If this enabled, debug Autotimer write in log file."
+msgstr "Wenn das aktiviert ist schreibt der AutoTimer in die Log Datei."
+
+msgid "Specify the name and location for the log."
+msgstr "Benenne den Namen und das Verzeichnis der Log Datei."
+
+msgid "title starts with"
+msgstr "Titel beginnt mit"
+
+msgid "description match"
+msgstr "Beschreibung passt"
+
+msgid ""
+"Set timer type: zap, simple record, zap+record (always zap to service before "
+"start record)."
+msgstr ""
+"Bestimme Timer Typ: Zap, einfache Aufnahme, Zap+Aufnahme (schalte immer auf Sender"
+"vor Aufnahmebeginn)"
+
+msgid ""
+"Label Timers with season, episode and title, according to the SeriesPlugin "
+"settings."
+msgstr ""
+"Benenne Timer mit Season, Episode und Titel anhand der SeriesPlugin Einstellungen"
+"um."
+
+msgid ""
+"This option allows you to turn off the timer confict detection. This option "
+"is for advanced users."
+msgstr ""
+"Diese Option erlaubt dir die Timer Konflikt Erkennung auszuschalten. Nur für"
+"erfahrene User!"
+
+msgid "Use blue key to edit bouquets or services."
+msgstr "Drücke \"Blau\" zum bearbeiten der Bouquets oder Services."
+
+msgid "Use yellow key to edit filters."
+msgstr "Drücke \"Gelb\" zum bearbeiten der Filter"
