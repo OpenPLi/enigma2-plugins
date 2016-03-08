@@ -1,0 +1,141 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: RecBar\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-09-16 10:28+0300\n"
+"PO-Revision-Date: 2012-09-16 18:30+0100\n"
+"Last-Translator: \n"
+"Language-Team: Satkiekerd <LL@li.org>\n"
+"Language: dutch\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.3\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+
+msgid " (%d mins)\n"
+msgstr " (%d mins)\n"
+
+msgid "All Services"
+msgstr "Alle kanalen"
+
+msgid "Automatic is the default action"
+msgstr "Automatisch is de default aktie"
+
+msgid "Cancel"
+msgstr "Annuleer"
+
+msgid "Enable record infobar"
+msgstr "Record infobar inschakelen"
+
+msgid "Go to Standby now?"
+msgstr "Nu in standby gaan?"
+
+msgid "Goto Standby when wakeup on a timer recording"
+msgstr "Ga naar standby bij het ontwaken voor een geplande opname."
+
+msgid "Increase direction"
+msgstr "Vergroot richting"
+
+msgid "N/A"
+msgstr "NVT"
+
+msgid "Provider"
+msgstr "Provider"
+
+msgid "Record Infobar"
+msgstr "Record Infobar"
+
+msgid "Record Infobar Setup"
+msgstr "Record Infobar instellingen"
+
+msgid "Record Infobar addon"
+msgstr "Record Infobar toevoeging"
+
+msgid "Recording starts!\n"
+msgstr "Opnme begint!\n"
+
+msgid "Satellites"
+msgstr "Satelleten"
+
+msgid "Save"
+msgstr "Opslaan"
+
+msgid "Show message when switching to recording service"
+msgstr "Toon bericht wanneer naar het opgenomen kanaal wordt gezapped."
+
+msgid "Standby for timer 'After event' "
+msgstr "Standby voor timer 'Na gebeurtenis'. "
+
+msgid "Standby message screen timeout (sec.)"
+msgstr "Standby bericht timeout (sec.)"
+
+msgid "Switch to a recordable channel?"
+msgstr "Zappen naar een opneembaar kanaal?"
+
+msgid "Switched to the recording service !\n"
+msgstr "Gezapped naar het opgenomen kanaal!\n"
+
+msgid "Unknown"
+msgstr "Onbekend"
+
+msgid "X position (upper-left corner of srceen)"
+msgstr "X-positie (vanaf de linkerzijde van het scherm)"
+
+msgid "Y position (upper-left corner of srceen)"
+msgstr "Y-positie (vanaf de bovenzijde van het scherm)"
+
+msgid "Zap on start service recording"
+msgstr "Zap bij aanvang opname"
+
+msgid "all"
+msgstr "alle"
+
+msgid "all,than to do 'nothing' "
+msgstr "Alle, vervolgens 'doe niets'"
+
+msgid "always"
+msgstr "altijd"
+
+msgid "ask the user"
+msgstr "vraag gebruiker"
+
+msgid "auto"
+msgstr "auto"
+
+msgid "auto and deep standby"
+msgstr "auto en  deep standby"
+
+msgid "channel: %s   prov: %s\n"
+msgstr "kanaal: %s   prov: %s\n"
+
+msgid ""
+"channel: %s   prov: %s\n"
+" %s\n"
+msgstr ""
+"kanaal: %s   prov: %s\n"
+" %s\n"
+
+msgid "deep standby"
+msgstr "deep standby"
+
+msgid "default"
+msgstr "default"
+
+msgid "down"
+msgstr "naar beneden"
+
+msgid "duration:  %s ... "
+msgstr "duur:  %s ... "
+
+msgid "no zap"
+msgstr "geen zap"
+
+msgid "standby"
+msgstr "standby"
+
+msgid "top"
+msgstr "bovenin"
+
+msgid "zap"
+msgstr "zap"

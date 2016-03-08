@@ -60,6 +60,7 @@ SUBDIRS = \
 	reconstructapsc \
 	remotetimer \
 	rsdownloader \
+	recordinfobar \
 	satipclient \
 	seekbar \
 	setpasswd \

@@ -390,6 +390,11 @@ rsdownloader/po/Makefile
 rsdownloader/src/Makefile
 rsdownloader/src/container/Makefile
 
+recordinfobar/Makefile
+recordinfobar/meta/Makefile
+recordinfobar/po/Makefile
+recordinfobar/src/Makefile
+
 satipclient/Makefile
 satipclient/meta/Makefile
 satipclient/po/Makefile
