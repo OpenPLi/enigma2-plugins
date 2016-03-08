@@ -26,7 +26,7 @@ class NTPSyncPoller:
 
 	def NTPStart(self):
 		if config.plugins.SystemTime.choiceSystemTime.value == "1":
-			cmd = '/usr/bin/ntpdate -s -u %s' % config.plugins.SystemTime.ip.value
+			cmd = '/usr/sbin/ntpdate -s -u %s' % config.plugins.SystemTime.ip.value
 			self.Console.ePopen(cmd, self.update_schedule)
 		self.timer.startLongTimer(int(config.plugins.SystemTime.useNTPminutes.value) * 60)
 
