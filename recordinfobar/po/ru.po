@@ -1,0 +1,264 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: RecInfobar\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-02-20 15:49+0200\n"
+"PO-Revision-Date: 2014-02-18 22:57+0200\n"
+"Last-Translator: Dima73 <Dima-73@inbox.lv>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3;     plural=n%10==1 && n%100!=11 ? 0 : n"
+"%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Poedit 1.5.5\n"
+
+msgid " (%d mins)\n"
+msgstr " (%d мин)\n"
+
+msgid "%(DD)d day"
+msgid_plural "%(DD)d days"
+msgstr[0] "%(DD)d день"
+msgstr[1] "%(DD)d дня"
+msgstr[2] "%(DD)d дней"
+
+msgid "%(DD)dd %(HH)02dh %(MM)02dm %(SS)02ds"
+msgstr "%(DD)dд %(HH)02dч %(MM)02dм %(SS)02dс"
+
+msgid "%(HHs)02dh %(MM)02dm %(SS)02ds"
+msgstr "%(HHs)02dч %(MM)02dм %(SS)02dс"
+
+msgid "%(HHs)dh %(MM)dm %(SS)ds"
+msgstr "%(HHs)dч %(MM)dм %(SS)dс"
+
+msgid "%(MMs)02dm %(SS)02ds"
+msgstr "%(MMs)02dм %(SS)02dс"
+
+msgid "%(MMs)dm %(SS)02ds"
+msgstr "%(MMs)dм %(SS)02dс"
+
+msgid "%(MMs)dm %(SS)ds"
+msgstr "%(MMs)dм %(SS)dс"
+
+msgid "%(SSs)ds"
+msgstr "%(SSs)dс"
+
+msgid "%s...%s (%d mins)"
+msgstr "%s...%s (%d мин)"
+
+msgid "+%d min / %s"
+msgstr "+%d мин / %s"
+
+msgid "<<Only when zap to service at start timer>>"
+msgstr "<<Только при переключении канала при старте таймера>>"
+
+msgid "All Services"
+msgstr "Все сервисы"
+
+msgid "Always show indicator icon when recording"
+msgstr "Всегда показывать иконку индикатора при записи"
+
+msgid "Anchor resizing at"
+msgstr "Привязка окна при изменении размера"
+
+msgid "Automatic is the default action"
+msgstr "Автоматическое действие по умолчанию"
+
+msgid "Bouquet: %s"
+msgstr "Фаворит: %s"
+
+msgid "Cancel"
+msgstr "Отмена"
+
+msgid "DD HH:MM:SS"
+msgstr "ДД ЧЧ:ММ:СС"
+
+msgid "Dd HHh MMm SSs"
+msgstr "Дд ЧЧч ММм ССс"
+
+msgid "Enable record infobar"
+msgstr "Включить инфобар записей"
+
+msgid ""
+"GUI needs a restart to apply changes.\n"
+"Restart the GUI now?"
+msgstr ""
+"Необходимый рестарт GUI для применения изменений.\n"
+"Сделать это сейчас?"
+
+msgid "Go to Standby now?"
+msgstr "Перейти в режим ожидания сейчас?"
+
+msgid "Goto standby when wakeup on a timer recording"
+msgstr "Режим ожидания при включении по таймеру записи"
+
+msgid "H:M:S"
+msgstr "Ч:М:С"
+
+msgid "HH:MM:SS"
+msgstr "ЧЧ:ММ:СС"
+
+msgid "HHh MMm SSs"
+msgstr "ЧЧч ММм ССс"
+
+msgid "Hh Mm Ss"
+msgstr "Чч Мм Сс"
+
+msgid "M:S"
+msgstr "М:С"
+
+msgid "M:SS"
+msgstr "М:СС"
+
+msgid "MM:SS"
+msgstr "ММ:СС"
+
+msgid "MMm SSs"
+msgstr "ММм Сс"
+
+msgid "Mm SSs"
+msgstr "Мм ССс"
+
+msgid "Mm Ss"
+msgstr "Мм Сс"
+
+msgid "N/A"
+msgstr "Н/Д"
+
+msgid "Preferred tuner for recording"
+msgstr "Приоритетный тюнер для записи"
+
+msgid "Provider"
+msgstr "Провайдер"
+
+msgid "Provider: %s"
+msgstr "Провайдер: %s"
+
+msgid "Record Infobar"
+msgstr "Инфобар записей"
+
+msgid "Record Infobar Setup"
+msgstr "Инфобар записей - настройки"
+
+msgid "Record timelen format"
+msgstr "Формат времени записи"
+
+msgid "Recording starts!\n"
+msgstr "Начинается запись!\n"
+
+msgid "S"
+msgstr "С"
+
+msgid "Satellites"
+msgstr "Спутник"
+
+msgid "Save"
+msgstr "Сохранить"
+
+msgid "Set correct position timer in channel list"
+msgstr "Установить корректную позицию таймера в списке каналов"
+
+msgid "Show message when zap to recording service"
+msgstr "Показать сообщение при переключении на канал записи"
+
+msgid "Ss"
+msgstr "Сс"
+
+msgid "Standby message screen timeout (sec)"
+msgstr "Таймаут сообщения до перехода в режим ожидания (сек.)"
+
+msgid "Standby only type timer 'After event'"
+msgstr "Режим ожидания только для таймеров 'После события'"
+
+msgid "Switch to a recordable channel?"
+msgstr "Переключить на записываемый канал?"
+
+msgid "Switched to the recording service !\n"
+msgstr "Переключено на записываемый канал !\n"
+
+msgid "Tuner: %s"
+msgstr "Тюнер: %s"
+
+msgid "Unknown"
+msgstr "Неизвестный"
+
+msgid "X screen position"
+msgstr "X позиция на экране"
+
+msgid "Y screen position"
+msgstr "Y позиция на экране"
+
+msgid "Z screen position"
+msgstr "Z позиция на экране"
+
+msgid "Zap on start service recording"
+msgstr "Переключение на записываемый канал"
+
+msgid "all"
+msgstr "все"
+
+msgid "all, except 'nothing'"
+msgstr "все,кроме 'ничего не делать'"
+
+msgid "always"
+msgstr "всегда"
+
+msgid "ask the user"
+msgstr "спросить пользователя"
+
+msgid "auto"
+msgstr "авто"
+
+msgid "auto and deep standby"
+msgstr "авто и полное выключение"
+
+msgid "bottom"
+msgstr "снизу"
+
+msgid "channel: %s   prov: %s\n"
+msgstr "канал: %s   провайдер: %s\n"
+
+msgid ""
+"channel: %s   prov: %s\n"
+" %s\n"
+msgstr ""
+"канал: %s   провайдер: %s\n"
+" %s\n"
+
+msgid "deep standby"
+msgstr "полное выключение"
+
+msgid "default"
+msgstr "по умолчанию"
+
+msgid "disabled"
+msgstr "отключено"
+
+msgid "duration:  %s ... "
+msgstr "продолжительность:  %s ... "
+
+msgid "no zap"
+msgstr "не переключать"
+
+msgid "standby"
+msgstr "режим ожидания"
+
+msgid "start in :  %s\n"
+msgstr "начало в :  %s\n"
+
+msgid "top"
+msgstr "сверху"
+
+msgid "zap"
+msgstr "переключить"
+
+msgid "Background window"
+msgstr "Фон окна"
+
+msgid "transparent"
+msgstr "прозрачный"
+
+msgid "black"
+msgstr "черный"
+

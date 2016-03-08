@@ -1,0 +1,128 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-09-16 10:28+0300\n"
+"PO-Revision-Date: 2013-08-04 16:45+0100\n"
+"Last-Translator: daTa deVil <data-devil@nowhere.org>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+
+msgid " (%d mins)\n"
+msgstr " (%d min)\n"
+
+msgid "All Services"
+msgstr "Alle Services"
+
+msgid "Automatic is the default action"
+msgstr "Automatische Standardaktion"
+
+msgid "Cancel"
+msgstr "Abbrechen"
+
+msgid "Enable record infobar"
+msgstr "aktiviere Record Infobar"
+
+msgid "Go to Standby now?"
+msgstr "Jetzt in den Standby gehen?"
+
+msgid "Goto Standby when wakeup on a timer recording"
+msgstr "Gehe in Standby nach wecken bei Timeraufnahme"
+
+msgid "Increase direction"
+msgstr "Ausrichtung neuer Aufnahmen"
+
+msgid "Provider"
+msgstr "Provider"
+
+msgid "Recording starts!\n"
+msgstr "Aufnahme startet!\n"
+
+msgid "Satellites"
+msgstr "Satelliten"
+
+msgid "Save"
+msgstr "Speichern"
+
+msgid "Show message when switching to recording service"
+msgstr "Zeige Nachricht beim umschalten zur Aufnahme"
+
+msgid "Standby for timer 'After event' "
+msgstr "Standby für Timer 'Nach dem Event'"
+
+msgid "Standby message screen timeout (sec.)"
+msgstr "Standby Nachricht Zeitlimit (sec.)"
+
+msgid "Switch to a recordable channel?"
+msgstr "Umschalten zu einem aufnehmbaren Kanal?"
+
+msgid "Switched to the recording service !\n"
+msgstr "Umgeschaltet zu einem aufnehmbaren Kanal !\n"
+
+msgid "Unknown"
+msgstr "Unbekannt"
+
+msgid "X position (upper-left corner of srceen)"
+msgstr "X Position (obere linke Ecke vom Bildschirm)"
+
+msgid "Y position (upper-left corner of srceen)"
+msgstr "Y Position (obere linke Ecke vom Bildschirm)"
+
+msgid "Zap on start service recording"
+msgstr "schalte zur gestarteten Aufnahme"
+
+msgid "all"
+msgstr "alle"
+
+msgid "all,than to do 'nothing' "
+msgstr "alle, dann mache 'nichts' "
+
+msgid "always"
+msgstr "immer"
+
+msgid "ask the user"
+msgstr "nachfragen"
+
+msgid "auto"
+msgstr "auto"
+
+msgid "auto and deep standby"
+msgstr "auto und Deep Standby"
+
+msgid "channel: %s   prov: %s\n"
+msgstr "Kanal: %s   Prov: %s\n"
+
+msgid ""
+"channel: %s   prov: %s\n"
+" %s\n"
+msgstr ""
+"Kanal: %s   Prov: %s\n"
+" %s\n"
+
+msgid "deep standby"
+msgstr "Deep Standby"
+
+msgid "default"
+msgstr "standard"
+
+msgid "down"
+msgstr "unten"
+
+msgid "duration:  %s ... "
+msgstr "Laufzeit:  %s ... "
+
+msgid "no zap"
+msgstr "nicht umschalten"
+
+msgid "standby"
+msgstr "Standby"
+
+msgid "top"
+msgstr "Oben"
+
+msgid "zap"
+msgstr "umschalten"

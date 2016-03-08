@@ -1,0 +1,15 @@
+<default>
+	<prerequisites>
+		<tag type="System" />
+	</prerequisites>
+	<info>
+			<name>RecInfobar</name>
+			<packagename>enigma2-plugin-systemplugins-recordinfobar</packagename>
+			<shortdescription>Record Infobar</shortdescription>
+			<description>Record Infobar addon</description>
+	</info>
+	<files type="package"> <!-- without version, without .ipk -->
+		<file type="package" name="enigma2-plugin-systemplugins-recordinfobar" />
+		<file type="package" name="record-infobar" />
+	</files>
+</default>
