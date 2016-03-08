@@ -188,8 +188,8 @@ class SystemTimeSetupScreen(Screen, ConfigListScreen):
 		ConfigListScreen.keyOK(self)
 		sel = self["config"].getCurrent() and self["config"].getCurrent()[1]
 		if sel == self.ST.syncNTPtime:
-			if os.path.exists("/usr/bin/ntpdate"):
-				cmd = '/usr/bin/ntpdate -v -u %s && echo "\n"' % self.ST.ip.value
+			if os.path.exists("/usr/sbin/ntpdate"):
+				cmd = '/usr/sbin/ntpdate -v -u %s && echo "\n"' % self.ST.ip.value
 				self.session.open(MyConsole, _("Time sync with NTP..."), [cmd])
 			elif os.path.exists("/usr/sbin/ntpd"):
 				cmd = '/usr/sbin/ntpd -dnqp %s' % self.ST.ip.value
@@ -224,9 +224,9 @@ class SystemTimeSetupScreen(Screen, ConfigListScreen):
 		self.ST.save()
 
 	def addNTPcoldstart(self):
-		if os.path.exists("/usr/bin/ntpdate") or os.path.exists("/usr/sbin/ntpd"):
-			if os.path.exists("/usr/bin/ntpdate"):
-				cmd = "echo -e '#!/bin/sh\n\nsleep %s\n\n[ -x /usr/bin/ntpdate ] && /usr/bin/ntpdate -s -u %s\n\nexit 0' >> /etc/init.d/ntpdate" % (str(self.ST.wifi_delay.value), self.ST.ip.value)
+		if os.path.exists("/usr/sbin/ntpdate") or os.path.exists("/usr/sbin/ntpd"):
+			if os.path.exists("/usr/sbin/ntpdate"):
+				cmd = "echo -e '#!/bin/sh\n\nsleep %s\n\n[ -x /usr/sbin/ntpdate ] && /usr/sbin/ntpdate -s -u %s\n\nexit 0' >> /etc/init.d/ntpdate" % (str(self.ST.wifi_delay.value), self.ST.ip.value)
 			elif os.path.exists("/usr/sbin/ntpd"):
 				cmd = "echo -e '#!/bin/sh\n\nsleep %s\n\n[ -x usr/sbin/ntpd ] && /usr/sbin/ntpd -dnqp %s\n\nexit 0' >> /etc/init.d/ntpdate" % (str(self.ST.wifi_delay.value), self.ST.ip.value)
 			if fileExists("/etc/init.d/ntpdate"):
