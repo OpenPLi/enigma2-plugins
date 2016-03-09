@@ -56,6 +56,7 @@ SUBDIRS = \
 	partnerbox \
 	permanentclock \
 	porncenter \
+	primetimemanager \
 	quickbutton \
 	reconstructapsc \
 	remotetimer \

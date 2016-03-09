@@ -1,0 +1,206 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PrimeTimeManager\n"
+"POT-Creation-Date: 2011-03-24 21:03+CET\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Shaderman <shaderman@dreambox-tools.info>\n"
+"Language-Team:  <shaderman@dreambox-tools.info>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: German\n"
+"X-Poedit-Country: GERMANY\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: po\n"
+
+msgid "%s prime time | events today (%s) | Bouquet: %s"
+msgstr "%s Hauptsendezeit | Sendungen heute (%s) | Bouquet: %s"
+
+msgid "%s prime time | events today +%s (%s) | Bouquet: %s"
+msgstr "%s Hauptsendezeit | Sendungen heute +%s (%s) | Bouquet: %s"
+
+msgid "Accept"
+msgstr "Übernehmen"
+
+msgid "Accept the events as shown"
+msgstr "Sendungen wie gezeigt übernehmen"
+
+msgid "Add Timer"
+msgstr "Timer setzen"
+
+msgid "Add/remove event to or from favourites"
+msgstr "Sendung zu Favoriten hinzufügen/löschen"
+
+msgid "Begin time"
+msgstr "Startzeit"
+
+msgid "Bouquet"
+msgstr "Bouquet"
+
+msgid "Bouquet:"
+msgstr "Bouquet:"
+
+msgid "Close"
+msgstr "Schließen"
+
+msgid "Conflicts were solved"
+msgstr "Konflikte wurden gelöst"
+
+msgid "Date"
+msgstr "Datum"
+
+msgid "Do you really want to delete the timer for \"%s\"?"
+msgstr "Soll der Timer für \"%s\" wirklich gelöscht werden?"
+
+msgid ""
+"Do you want to switch the prime time? Currently selected favorites will be "
+"lost!"
+msgstr ""
+"Soll die Hauptsendezeit wirklich geändert werden? Alle bisher ausgewählten "
+"Favoriten sind damit verloren!"
+
+msgid "Duration"
+msgstr "Dauer"
+
+msgid "End time"
+msgstr "Endzeit"
+
+msgid "Exit"
+msgstr "Beenden"
+
+msgid "Exit plugin"
+msgstr "Plugin beenden"
+
+msgid "Favorite"
+msgstr "Favorit"
+
+msgid "Favorite will be deleted!"
+msgstr "Favorit wird gelöscht!"
+
+msgid "Manage prime time events"
+msgstr "Verwaltung der Hauptsendezeit"
+
+msgid "No EPG data"
+msgstr "Keine EPG Daten"
+
+msgid "No conflicts found"
+msgstr "Keine Konflikte gefunden"
+
+msgid "OK"
+msgstr "OK"
+
+msgid "Open the settings screen"
+msgstr "Öffnet die Plugin-Einstellungen"
+
+msgid "Primary"
+msgstr "Primäre"
+
+msgid "Primary Prime Time:"
+msgstr "Primäre Hauptsendezeit:"
+
+msgid "Prime Time Manager Conflict Results"
+msgstr "Prime Time Manager Konfliktergebnisse"
+
+msgid ""
+"Prime Time Manager:\n"
+"\n"
+"Prime time has already begun or is over. Starting with tomorrow's events."
+msgstr ""
+"Prime Time Manager:\n"
+"\n"
+"Die Hauptsendezeit läuft bereits oder ist schon vorbei. Beginne mit den "
+"Sendungen von morgen."
+
+msgid ""
+"Prime Time Manager:\n"
+"\n"
+"Sorry, but a timer for %s can't be set because there are conflicts with "
+"other timers."
+msgstr ""
+"Prime Time Manager:\n"
+"\n"
+"Es kann kein Timer für %s gesetzt werden weil es Konflikte mit anderen "
+"Timern gibt."
+
+msgid ""
+"Prime Time Manager:\n"
+"\n"
+"Sorry, but turning a repeated timer into a view live event isn't supported."
+msgstr ""
+"Prime Time Manager:\n"
+"\n"
+"Ein wiederholender Timer kann nicht in eine Live-Sendung umgewandelt werden."
+
+msgid "Remove favorite on timer deletion:"
+msgstr "Favorit entfernen wenn Timer gelöscht wird:"
+
+msgid "Remove timer"
+msgstr "Lösche Timer"
+
+msgid "Scroll selected list to the left"
+msgstr "Aktive Liste nach links bewegen"
+
+msgid "Scroll selected list to the right"
+msgstr "Aktive Liste nach rechts bewegen"
+
+msgid "Secondary"
+msgstr "Sekundäre"
+
+msgid "Secondary Prime Time:"
+msgstr "Sekundäre Hauptsendezeit:"
+
+msgid "Selected favorites"
+msgstr "Ausgewählte Favoriten"
+
+msgid "Set Timer"
+msgstr "Timer setzen"
+
+msgid "Set day"
+msgstr "Tag setzen"
+
+msgid "Set or remove a timer"
+msgstr "Timer setzen oder löschen"
+
+msgid "Settings"
+msgstr "Einstellungen"
+
+msgid "Show duration or end time:"
+msgstr "Dauer oder Endzeit anzeigen:"
+
+msgid "Show event information"
+msgstr "Zeige Informationen zur Sendung"
+
+msgid "Solution"
+msgstr "Lösung"
+
+msgid "Switch betw. favourite/prime time list"
+msgstr "Umschalten zwischen Favoriten/Hauptsendezeit"
+
+msgid "Switch to the next bouquet"
+msgstr "Nächstes Bouquet anzeigen"
+
+msgid "Switch to the next day"
+msgstr "Nächsten Tag anzeigen"
+
+msgid "Switch to the previous bouquet"
+msgstr "Vorheriges Bouquet anzeigen"
+
+msgid "Switch to the previous day"
+msgstr "Vorherigen Tag anzeigen"
+
+msgid ""
+"This is a repeated timer! Do you really want to delete the repeated timer "
+"for \"%s\"?"
+msgstr ""
+"Vorsicht wiederholender Timer! Soll der wiederholende Timer für \"%s\" "
+"wirklich gelöscht werden?"
+
+msgid "Toggle marker for a \"view live\" event"
+msgstr "Markierung für Live-Sendung setzen/löschen"
+
+msgid "Toggle primary/secondary prime time"
+msgstr "Wechsel primäre/sekundäre Hauptsendezeit"
+
+msgid "Try to solve conflicts and show result"
+msgstr "Konfliktlösung und Ergebnisansicht"

@@ -369,6 +369,12 @@ porncenter/po/Makefile
 porncenter/src/Makefile
 porncenter/src/Additions/Makefile
 
+primetimemanager/Makefile
+primetimemanager/meta/Makefile
+primetimemanager/po/Makefile
+primetimemanager/src/Makefile
+primetimemanager/src/images/Makefile
+
 quickbutton/Makefile
 quickbutton/meta/Makefile
 quickbutton/po/Makefile
