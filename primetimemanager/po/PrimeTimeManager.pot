@@ -1,0 +1,423 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-04-12 17:30+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: PrimeTimeSettings.py:82
+msgid "\"View live\" event only in Prime Time:"
+msgstr ""
+
+#: PrimeTimeManager.py:2046 ResultScreen.py:179 ResultScreen.py:231
+#, python-format
+msgid "%d min"
+msgstr ""
+
+#: PrimeTimeManager.py:1800
+#, python-format
+msgid "%s prime time | events today (%s) | Bouquet: %s"
+msgstr ""
+
+#: PrimeTimeManager.py:1802
+#, python-format
+msgid "%s prime time | events today +%s (%s) | Bouquet: %s"
+msgstr ""
+
+#: ResultScreen.py:81
+msgid "Accept"
+msgstr ""
+
+#: ResultScreen.py:98
+msgid "Accept the events as shown"
+msgstr ""
+
+#: PrimeTimeManager.py:1634
+msgid "Add Timer"
+msgstr ""
+
+#: PrimeTimeManager.py:2259
+msgid "Add timer"
+msgstr ""
+
+#: PrimeTimeManager.py:1601
+#, python-format
+msgid "Add timer for \"%s\"?"
+msgstr ""
+
+#: PrimeTimeManager.py:198
+msgid "Add/remove event to or from favourites"
+msgstr ""
+
+#: PrimeTimeManager.py:2040 ResultScreen.py:173 ResultScreen.py:224
+msgid "Begin time"
+msgstr ""
+
+#: ResultScreen.py:185
+msgid "Bouquet"
+msgstr ""
+
+#: PrimeTimeManager.py:2054
+msgid "Bouquet:"
+msgstr ""
+
+#: PrimeTimeManager.py:2392
+#, python-format
+msgid "Bouquet: %s - EPG Selection Multi"
+msgstr ""
+
+#: PrimeTimeSettings.py:72
+msgid "Cansel"
+msgstr ""
+
+#: PrimeTimeSettings.py:83
+msgid "Check conflicts timers after \"Accept\":"
+msgstr ""
+
+#: PrimeTimeSettings.py:84
+msgid "Check conflicts timers after exit:"
+msgstr ""
+
+#: ResultScreen.py:80 ResultScreen.py:92 ResultScreen.py:97
+msgid "Close"
+msgstr ""
+
+#: ResultScreen.py:245
+msgid "Conflicts were solved"
+msgstr ""
+
+#: ResultScreen.py:221
+msgid "Date"
+msgstr ""
+
+#: PrimeTimeManager.py:1519 PrimeTimeManager.py:1595
+#, python-format
+msgid "Do you really want to delete the timer for \"%s\"?"
+msgstr ""
+
+#: PrimeTimeManager.py:1308
+msgid ""
+"Do you want to switch the prime time? Currently selected favorites will be "
+"lost!"
+msgstr ""
+
+#: PrimeTimeManager.py:2045 PrimeTimeSettings.py:39 ResultScreen.py:178
+#: ResultScreen.py:230
+msgid "Duration"
+msgstr ""
+
+#: PrimeTimeManager.py:2049 PrimeTimeSettings.py:40 ResultScreen.py:182
+#: ResultScreen.py:234
+msgid "End time"
+msgstr ""
+
+#: PrimeTimeManager.py:175
+msgid "Exit"
+msgstr ""
+
+#: PrimeTimeSettings.py:87
+msgid "Exit from Multi EPG on selected service:"
+msgstr ""
+
+#: PrimeTimeManager.py:197
+msgid "Exit plugin"
+msgstr ""
+
+#: PrimeTimeManager.py:203
+msgid "Exit plugin or open Multi EPG"
+msgstr ""
+
+#: ResultScreen.py:84
+msgid "Favorite"
+msgstr ""
+
+#: ResultScreen.py:240
+msgid "Favorite will be deleted!"
+msgstr ""
+
+#: PrimeTimeManager.py:2228
+msgid "Lookup in TMBD"
+msgstr ""
+
+#: plugin.py:46 plugin.py:48
+msgid "Manage prime time events"
+msgstr ""
+
+#: PrimeTimeManager.py:177
+msgid "Multi EPG"
+msgstr ""
+
+#: PrimeTimeManager.py:2036
+msgid "No EPG data"
+msgstr ""
+
+#: ResultScreen.py:243
+msgid "No conflicts found"
+msgstr ""
+
+#: PrimeTimeSettings.py:73
+msgid "OK"
+msgstr ""
+
+#: PrimeTimeManager.py:234
+msgid "Open the settings screen"
+msgstr ""
+
+#: PrimeTimeManager.py:206
+msgid "Open timers list"
+msgstr ""
+
+#: PrimeTimeManager.py:1797
+msgid "Primary"
+msgstr ""
+
+#: PrimeTimeSettings.py:78
+msgid "Primary Prime Time:"
+msgstr ""
+
+#: PrimeTimeManager.py:171 plugin.py:46
+msgid "Prime Time Manager"
+msgstr ""
+
+#: plugin.py:48
+msgid "Prime Time Manager "
+msgstr ""
+
+#: ResultScreen.py:70
+msgid "Prime Time Manager Conflict Results"
+msgstr ""
+
+#: PrimeTimeSettings.py:85
+msgid "Prime Time Manager in E-menu:"
+msgstr ""
+
+#: plugin.py:45
+msgid "Prime Time Manager setup"
+msgstr ""
+
+#: PrimeTimeManager.py:364
+msgid ""
+"Prime Time Manager:\n"
+"\n"
+"Prime time has already begun or is over. Starting with tomorrow's events."
+msgstr ""
+
+#: PrimeTimeManager.py:1739
+#, python-format
+msgid ""
+"Prime Time Manager:\n"
+"\n"
+"Sorry, but a timer for %s can't be set because there are conflicts with "
+"other timers."
+msgstr ""
+
+#: PrimeTimeManager.py:1334
+msgid ""
+"Prime Time Manager:\n"
+"\n"
+"Sorry, but turning a repeated timer into a view live event isn't supported."
+msgstr ""
+
+#: PrimeTimeSettings.py:100
+msgid "Prime Time Settings"
+msgstr ""
+
+#: PrimeTimeManager.py:1517 PrimeTimeManager.py:1594
+msgid "Recording is in progress.\n"
+msgstr ""
+
+#: PrimeTimeSettings.py:86
+msgid "Red Button function:"
+msgstr ""
+
+#: PrimeTimeSettings.py:81
+msgid "Remove favorite on timer deletion:"
+msgstr ""
+
+#: PrimeTimeManager.py:1632 PrimeTimeManager.py:2257
+msgid "Remove timer"
+msgstr ""
+
+#: PrimeTimeManager.py:213 PrimeTimeManager.py:214
+msgid "Scroll selected list to the left"
+msgstr ""
+
+#: PrimeTimeManager.py:215 PrimeTimeManager.py:216
+msgid "Scroll selected list to the right"
+msgstr ""
+
+#: PrimeTimeManager.py:2231
+msgid "Search in IMDb"
+msgstr ""
+
+#: PrimeTimeManager.py:1795
+msgid "Secondary"
+msgstr ""
+
+#: PrimeTimeSettings.py:79
+msgid "Secondary Prime Time:"
+msgstr ""
+
+#: PrimeTimeManager.py:184
+msgid "Selected favorites"
+msgstr ""
+
+#: PrimeTimeManager.py:178
+msgid "Set Timer"
+msgstr ""
+
+#: PrimeTimeManager.py:1620
+msgid "Set day"
+msgstr ""
+
+#: PrimeTimeManager.py:204
+msgid "Set or remove a timer"
+msgstr ""
+
+#: plugin.py:45
+msgid "Settings of the plugin"
+msgstr ""
+
+#: PrimeTimeSettings.py:80
+msgid "Show duration or end time:"
+msgstr ""
+
+#: PrimeTimeManager.py:229
+msgid "Show event information"
+msgstr ""
+
+#: PrimeTimeManager.py:2233 PrimeTimeManager.py:2235
+msgid "Single EPG"
+msgstr ""
+
+#: ResultScreen.py:85
+msgid "Solution"
+msgstr ""
+
+#: PrimeTimeManager.py:1434
+msgid ""
+"Sorri!\n"
+"Conflict timers in timers.xml detected!\n"
+"Please recheck it!"
+msgstr ""
+
+#: PrimeTimeManager.py:211 PrimeTimeManager.py:212
+msgid "Switch betw. favourite/prime time list"
+msgstr ""
+
+#: PrimeTimeManager.py:223
+msgid "Switch to the next bouquet"
+msgstr ""
+
+#: PrimeTimeManager.py:221
+msgid "Switch to the next day"
+msgstr ""
+
+#: PrimeTimeManager.py:224
+msgid "Switch to the previous bouquet"
+msgstr ""
+
+#: PrimeTimeManager.py:222
+msgid "Switch to the previous day"
+msgstr ""
+
+#: PrimeTimeManager.py:1493
+#, python-format
+msgid ""
+"This event \"%s\" has already begun or will begin in the next few minutes.\n"
+"We can not add it to your list of favorites, as will instantly record.\n"
+"Just want to switch to this service?"
+msgstr ""
+
+#: PrimeTimeManager.py:1600
+msgid "This event will be an instant record.\n"
+msgstr ""
+
+#: PrimeTimeManager.py:1513
+#, python-format
+msgid ""
+"This is a repeated timer! Do you really want to delete the repeated timer "
+"for \"%s\"?"
+msgstr ""
+
+#: PrimeTimeManager.py:180
+msgid "Timers list"
+msgstr ""
+
+#: PrimeTimeManager.py:239
+msgid "Toggle marker for a \"view live\" event"
+msgstr ""
+
+#: PrimeTimeManager.py:244
+msgid "Toggle primary/secondary prime time"
+msgstr ""
+
+#: PrimeTimeManager.py:205
+msgid "Try to solve conflicts and show result"
+msgstr ""
+
+#: PrimeTimeSettings.py:89
+msgid "Use AutoTimer plugin instead remove favorites:"
+msgstr ""
+
+#: PrimeTimeSettings.py:50
+msgid "exit plugin"
+msgstr ""
+
+#: PrimeTimeSettings.py:49
+msgid "open Multi EPG"
+msgstr ""
+
+msgid "Accept this solution?"
+msgstr ""
+
+msgid "\nTotal number of conflicts: %s"
+msgstr ""
+
+msgid "Zap"
+msgstr ""
+
+msgid "Zap + Record"
+msgstr ""
+
+msgid "\"View live\" type:"
+msgstr ""
+
+msgid "Toggle "view live" type"
+msgstr ""
+
+msgid "Set 'view live' type '%s'?"
+msgstr ""
+
+msgid "Conflict detected!"
+msgstr ""
+
+msgid "'Timer Edit' key menu - show conflict timer:"
+msgstr ""
+
+msgid "Current timer"
+msgstr ""
+
+msgid "Any timers"
+msgstr ""
+
+msgid "Checking with conflict detection enabled for"
+msgstr ""
+
+msgid ": only notification"
+msgstr ""
+
+msgid ": total conflicts %d"
+msgstr ""
