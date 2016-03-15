@@ -155,3 +155,6 @@ msgstr "нет нового времени"
 
 msgid "you were not confirming"
 msgstr "вы не подтверждаете"
+
+msgid "Old time: %s\nOffset: %s sec.\nNew time: %s"
+msgstr "Старое время: %s\nСмещение: %s сек.\nНовое время: %s"
