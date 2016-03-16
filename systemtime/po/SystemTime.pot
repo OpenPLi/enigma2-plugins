@@ -214,3 +214,6 @@ msgstr ""
 #: plugin.py:426
 msgid "you were not confirming"
 msgstr ""
+
+msgid "Old time: %s\nOffset: %s sec.\nNew time: %s"
+msgstr ""

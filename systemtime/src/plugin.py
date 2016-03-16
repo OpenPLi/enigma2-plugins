@@ -24,7 +24,7 @@ from time import *
 import time
 import datetime
 
-PLUGIN_VERSION = _(" ver. ") + "1.4"
+PLUGIN_VERSION = _(" ver. ") + "1.5"
 
 config.plugins.SystemTime = ConfigSubsection()
 config.plugins.SystemTime.choiceSystemTime = ConfigSelection([("0", _("Transponder Time")),("1", _("Internet Time"))], default="0")
@@ -87,7 +87,8 @@ class SystemTimeSetupScreen(Screen, ConfigListScreen):
 		self.setup_title = _("Setup System Time") + PLUGIN_VERSION
 		self.onChangedEntry = []
 		Screen.__init__(self, session)
-		
+		self.syncTimer = eTimer()
+		self.syncTimer.callback.append(self.showMessage)
 		self["key_red"] = Label(_("Cancel"))
 		self["key_green"] = Label(_("Save"))
 		self["key_yellow"] = Label(_("Restart GUI"))
@@ -197,14 +198,26 @@ class SystemTimeSetupScreen(Screen, ConfigListScreen):
 			else:
 				self.session.open(MessageBox,"'ntpd' / " + _("'ntpdate' not installed !"), MessageBox.TYPE_ERROR, timeout = 3)
 		elif sel == self.ST.syncDVBtime:
-			if os.path.exists("/usr/bin/dvbdate"):
-				cmd = '/usr/bin/dvbdate -p -s -f && echo "\n"'
-				self.session.open(MyConsole, _("Time sync with DVB..."), [cmd])
-			else:
-				self.session.open(MessageBox,_("'dvbdate' not installed !"), MessageBox.TYPE_ERROR, timeout = 3)
+			try:
+				if not self.syncTimer.isActive():
+					self.old_time = time.time()
+					self.oldtime = strftime("%Y:%m:%d %H:%M",localtime())
+					eDVBLocalTimeHandler.getInstance().syncDVBTime()
+					self.syncTimer.start(5000, True)
+			except:
+				if os.path.exists("/usr/bin/dvbdate"):
+					cmd = '/usr/bin/dvbdate -p -s -f && echo "\n"'
+					self.session.open(MyConsole, _("Time sync with DVB..."), [cmd])
+				else:
+					self.session.open(MessageBox,_("'dvbdate' not installed !"), MessageBox.TYPE_ERROR, timeout = 3)
 		elif sel == self.ST.syncManually:
 			ChangeTimeWizzard(self.session)
-	
+
+	def showMessage(self):
+		offset = time.time() - self.old_time
+		newtime = strftime("%Y:%m:%d %H:%M",localtime())
+		self.session.open(MessageBox,_("Old time: %s\nOffset: %s sec.\nNew time: %s") % (self.oldtime, offset, newtime), MessageBox.TYPE_INFO)
+
 	def configPosition(self):
 		self["key_blue"].setText("")
 		idx = self["config"].getCurrent() and self["config"].getCurrent()[1]
