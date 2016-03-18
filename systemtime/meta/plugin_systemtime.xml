@@ -10,6 +10,6 @@
 	</info>
 	<files type="package"> <!-- without version, without .ipk -->
 		<file type="package" name="enigma2-plugin-systemplugins-systemtime" />
-		<file type="package" name="system-time" />
+		<file type="package" name="ntpdate" />
 	</files>
 </default>

@@ -10,6 +10,5 @@
 	</info>
 	<files type="package"> <!-- without version, without .ipk -->
 		<file type="package" name="enigma2-plugin-systemplugins-recordinfobar" />
-		<file type="package" name="record-infobar" />
 	</files>
 </default>
