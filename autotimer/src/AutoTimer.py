@@ -639,17 +639,20 @@ class AutoTimer:
 
 				if conflicts is None:
 					timer.decrementCounter()
-					new += 1
-					newEntry.extdesc = extdesc
-					timerdict[serviceref].append(newEntry)
+					if newEntry in (recordHandler.timer_list[:] + recordHandler.processed_timers[:]):
+						new += 1
+						newEntry.extdesc = extdesc
+						timerdict[serviceref].append(newEntry)
 
-					#if renameTimer is not None and timer.series_labeling:
-					#	renameTimer(newEntry, name, evtBegin, evtEnd)
+						#if renameTimer is not None and timer.series_labeling:
+						#	renameTimer(newEntry, name, evtBegin, evtEnd)
 
-					# Similar timers are in new timers list and additionally in similar timers list
-					if similarTimer:
-						similars.append((name, begin, end, serviceref, timer.name))
-						similardict.clear()
+						# Similar timers are in new timers list and additionally in similar timers list
+						if similarTimer:
+							similars.append((name, begin, end, serviceref, timer.name))
+							similardict.clear()
+					else:
+						doLog("[AutoTimer] ignore double timer.")
 
 				# Don't care about similar timers
 				elif not similarTimer:
