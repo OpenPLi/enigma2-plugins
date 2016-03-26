@@ -332,11 +332,9 @@ class AutoTimer:
 			n = evt.getNumOfLinkageServices()
 			if n > 0:
 				i = evt.getLinkageService(eserviceref, n-1)
-				doLog("[AutoTimer] Serviceref2 %s" % (str(serviceref)))
 				serviceref = i.toString()
+				doLog("[AutoTimer] Serviceref2 %s" % (str(serviceref)))
 
-			evtBegin = begin
-			evtEnd = end = begin + duration
 
 			# If event starts in less than 60 seconds skip it
 			if begin < time() + 60:
@@ -345,8 +343,8 @@ class AutoTimer:
 				continue
 
 			# Set short description to equal extended description if it is empty.
-			if not shortdesc:
-				shortdesc = extdesc
+			#if not shortdesc:
+			#	shortdesc = extdesc
 
 			# Convert begin time
 			timestamp = localtime(begin)
@@ -400,7 +398,7 @@ class AutoTimer:
 
 			if timer.series_labeling and sp_getSeasonEpisode is not None:
 				allow_modify = False
-				#doLog("[AutoTimer SeriesPlugin] Request name, desc, path %s %s %s" % (name,shortdesc,dest))
+				doLog("[AutoTimer SeriesPlugin] Request name, desc, path %s %s %s" % (name, shortdesc, dest))
 				sp = sp_getSeasonEpisode(serviceref, name, evtBegin, evtEnd, shortdesc, dest)
 				if sp and type(sp) in (tuple, list) and len(sp) == 4:
 					name = sp[0] or name
@@ -408,13 +406,13 @@ class AutoTimer:
 					dest = sp[2] or dest
 					doLog(str(sp[3]))
 					allow_modify = True
-					#doLog("[AutoTimer SeriesPlugin] Returned name, desc, path %s %s %s" % (name,shortdesc,dest))
+					doLog("[AutoTimer SeriesPlugin] Returned name, desc, path %s %s %s" % (name, shortdesc, dest))
 				else:
 					# Nothing found
 					doLog(str(sp))
 					# If AutoTimer name not equal match, do a second lookup with the name
 					if timer.name.lower() != timer.match.lower():
-						#doLog("[AutoTimer SeriesPlugin] Request name, desc, path %s %s %s" % (timer.name,shortdesc,dest))
+						doLog("[AutoTimer SeriesPlugin] Request name, desc, path %s %s %s" % (timer.name, shortdesc, dest))
 						sp = sp_getSeasonEpisode(serviceref, timer.name, evtBegin, evtEnd, shortdesc, dest)
 						if sp and type(sp) in (tuple, list) and len(sp) == 4:
 							name = sp[0] or name
@@ -422,7 +420,7 @@ class AutoTimer:
 							dest = sp[2] or dest
 							doLog(str(sp[3]))
 							allow_modify = True
-							#doLog("[AutoTimer SeriesPlugin] Returned name, desc, path %s %s %s" % (name,shortdesc,dest))
+							doLog("[AutoTimer SeriesPlugin] Returned name, desc, path %s %s %s" % (name, shortdesc, dest))
 						else:
 							doLog(str(sp))
 
@@ -488,7 +486,7 @@ class AutoTimer:
 						doLog("[AutoTimer] We found a timer based on time guessing")
 						newEntry = rtimer
 						break
-				elif timer.avoidDuplicateDescription >= 1 \
+				if timer.avoidDuplicateDescription >= 1 \
 					and not rtimer.disabled:
 						if self.checkDuplicates(timer, name, rtimer.name, shortdesc, rtimer.description, extdesc, rtimer.extdesc ):
 						# if searchForDuplicateDescription > 1 then check short description
@@ -545,13 +543,16 @@ class AutoTimer:
 					doLog(msg)
 					newEntry.log(501, msg)
 
-				modified += 1
-
 				if allow_modify:
-					self.modifyTimer(newEntry, name, shortdesc, begin, end, serviceref, eit)
-					msg = "[AutoTimer] AutoTimer modified timer: %s ." % (newEntry.name)
-					doLog(msg)
-					newEntry.log(501, msg)
+					if self.modifyTimer(newEntry, name, shortdesc, begin, end, serviceref, eit, base_timer=timer):
+						msg = "[AutoTimer] AutoTimer modified timer: %s ." % (newEntry.name)
+						doLog(msg)
+						newEntry.log(501, msg)
+						modified += 1
+					else:
+						msg = "[AutoTimer] AutoTimer modification not allowed for timer %s because conflicts." % (newEntry.name)
+						doLog(msg)
+						continue
 				else:
 					msg = "[AutoTimer] AutoTimer modification not allowed for timer: %s ." % (newEntry.name)
 					doLog(msg)
@@ -584,12 +585,14 @@ class AutoTimer:
 
 			tags = timer.tags[:]
 			if config.plugins.autotimer.add_autotimer_to_tags.value:
-				tags.append('AutoTimer')
+				if 'AutoTimer' not in tags:
+					tags.append('AutoTimer')
 			if config.plugins.autotimer.add_name_to_tags.value:
 				tagname = timer.name.strip()
 				if tagname:
 					tagname = tagname[0].upper() + tagname[1:].replace(" ", "_")
-					tags.append(tagname)
+					if tagname not in tags:
+						tags.append(tagname)
 			newEntry.tags = tags
 
 			if oldExists:
@@ -652,7 +655,7 @@ class AutoTimer:
 							similars.append((name, begin, end, serviceref, timer.name))
 							similardict.clear()
 					else:
-						doLog("[AutoTimer] ignore double timer.")
+						doLog("[AutoTimer] ignore double timer %s." % newEntry.name)
 
 				# Don't care about similar timers
 				elif not similarTimer:
@@ -767,14 +770,29 @@ class AutoTimer:
 						pass
 		del remove
 
-	def modifyTimer(self, timer, name, shortdesc, begin, end, serviceref, eit=None):
+	def modifyTimer(self, timer, name, shortdesc, begin, end, serviceref, eit=None, base_timer=None):
+		if base_timer:
+			old_timer = timer
+			timer.justplay = base_timer.justplay
+			timer.conflict_detection = base_timer.conflict_detection
+			timer.always_zap = base_timer.always_zap
 		timer.name = name
 		timer.description = shortdesc
 		timer.begin = int(begin)
 		timer.end = int(end)
 		timer.service_ref = ServiceReference(serviceref)
-		if eit is not None: 
+		if eit: 
 			timer.eit = eit
+		if base_timer:
+			timersanitycheck = TimerSanityCheck(NavigationInstance.instance.RecordTimer.timer_list, timer)
+			if not timersanitycheck.check():
+				conflict = timersanitycheck.getSimulTimerList()
+				if conflict and len(conflict) > 1:
+					timer = old_timer
+					return False
+			else:
+				doLog("[AutoTimer] conflict not found for modify timer %s." % timer.name)
+		return True
 
 	def addDirectoryToMovieDict(self, moviedict, dest, serviceHandler):
 		movielist = serviceHandler.list(eServiceReference("2:0:1:0:0:0:0:0:0:0:" + dest))
