@@ -251,7 +251,7 @@ class AutoTimer:
 							s = bouquets.getNext()
 							if not s.valid():
 								break
-							if s.flags & eServiceReference.isDirectory:
+							if s.flags & eServiceReference.isDirectory and not s.flags & eServiceReference.isInvisible:
 								info = serviceHandler.info(s)
 								if info:
 									bouquetlist.append((info.getName(s), s))
@@ -269,7 +269,7 @@ class AutoTimer:
 									if not (service.flags & mask):
 										test.append( (service.toString(), 0, -1, -1 ) )
 				else:
-					service_types_tv = '1:7:1:0:0:0:0:0:0:0:(type == 1) || (type == 17) || (type == 22) || (type == 25) || (type == 134) || (type == 195)'
+					service_types_tv = '1:7:1:0:0:0:0:0:0:0:(type == 1) || (type == 17) || (type == 22) || (type == 25) || (type == 31) || (type == 134) || (type == 195)'
 					refstr = '%s FROM BOUQUET "userbouquet.favourites.tv" ORDER BY bouquet'%(service_types_tv)
 					bouquetroot = eServiceReference(refstr)
 					info = serviceHandler.info(bouquetroot)
@@ -389,8 +389,10 @@ class AutoTimer:
 
 			# Initialize
 			newEntry = None
+			oldEntry = None
 			oldExists = False
 			allow_modify = True
+			newAT = None
 
 			# Eventually change service to alternative
 			if timer.overrideAlternatives:
@@ -466,6 +468,7 @@ class AutoTimer:
 					oldExists = True
 					doLog("[AutoTimer] We found a timer based on eit")
 					newEntry = rtimer
+					oldEntry = rtimer
 					break
 				elif config.plugins.autotimer.try_guessing.value:
 					if timer.hasOffset():
@@ -485,6 +488,7 @@ class AutoTimer:
 						oldExists = True
 						doLog("[AutoTimer] We found a timer based on time guessing")
 						newEntry = rtimer
+						oldEntry = rtimer
 						break
 				if timer.avoidDuplicateDescription >= 1 \
 					and not rtimer.disabled:
@@ -550,14 +554,19 @@ class AutoTimer:
 						newEntry.log(501, msg)
 						modified += 1
 					else:
-						msg = "[AutoTimer] AutoTimer modification not allowed for timer %s because conflicts." % (newEntry.name)
+						msg = "[AutoTimer] AutoTimer modification not allowed for timer %s because conflicts or double timer." % (newEntry.name)
 						doLog(msg)
+						if oldEntry:
+							self.setOldTimer(newEntry, oldEntry)
+							doLog("[AutoTimer] conflict for new timer %s detected return to old timer" % (newEntry.name))
 						continue
 				else:
 					msg = "[AutoTimer] AutoTimer modification not allowed for timer: %s ." % (newEntry.name)
 					doLog(msg)
+					continue
 			else:
 				newEntry = RecordTimerEntry(ServiceReference(serviceref), begin, end, name, shortdesc, eit)
+				newAT = True
 
 				msg = "[AutoTimer] Try to add new timer based on AutoTimer %s." % (timer.name)
 				doLog(msg)
@@ -595,11 +604,16 @@ class AutoTimer:
 						tags.append(tagname)
 			newEntry.tags = tags
 
-			if oldExists:
-				# XXX: this won't perform a sanity check, but do we actually want to do so?
-				recordHandler.timeChanged(newEntry)
-
-			else:
+			if oldExists and newAT is None:
+				if self.isResolvedConflict(newEntry):
+					recordHandler.timeChanged(newEntry)
+				else:
+					if oldEntry:
+						self.setOldTimer(newEntry, oldEntry)
+						doLog("[AutoTimer] conflict for new timer %s detected return to old timer" % (newEntry.name))
+					continue
+			elif newAT:
+				newAT = newEntry
 				conflictString = ""
 				if similarTimer:
 					conflictString = similardict[eit].conflictString
@@ -647,9 +661,6 @@ class AutoTimer:
 						newEntry.extdesc = extdesc
 						timerdict[serviceref].append(newEntry)
 
-						#if renameTimer is not None and timer.series_labeling:
-						#	renameTimer(newEntry, name, evtBegin, evtEnd)
-
 						# Similar timers are in new timers list and additionally in similar timers list
 						if similarTimer:
 							similars.append((name, begin, end, serviceref, timer.name))
@@ -666,8 +677,16 @@ class AutoTimer:
 						doLog(msg)
 						newEntry.log(503, msg)
 						newEntry.disabled = True
-						# We might want to do the sanity check locally so we don't run it twice - but I consider this workaround a hack anyway
-						conflicts = recordHandler.record(newEntry)
+						if newEntry in (recordHandler.timer_list[:] + recordHandler.processed_timers[:]):
+							recordHandler.timeChanged(newEntry)
+						else:
+							# We might want to do the sanity check locally so we don't run it twice - but I consider this workaround a hack anyway
+							conflicts = recordHandler.record(newEntry)
+					elif newAT != newEntry and newEntry in (recordHandler.timer_list[:] + recordHandler.processed_timers[:]):
+						if not self.isResolvedConflict(newEntry):
+							newEntry.disabled = True
+							recordHandler.timeChanged(newEntry)
+							doLog("[AutoTimer] Unknown conflict, disable this timer %s." % newEntry.name)
 
 		return (new, modified)
 
@@ -770,6 +789,17 @@ class AutoTimer:
 						pass
 		del remove
 
+	def isResolvedConflict(self, checktimer=None):
+		if checktimer:
+			timersanitycheck = TimerSanityCheck(NavigationInstance.instance.RecordTimer.timer_list, checktimer)
+			if not timersanitycheck.check():
+					return False
+			elif timersanitycheck.doubleCheck():
+				return False
+			else:
+				return True
+		return False
+
 	def modifyTimer(self, timer, name, shortdesc, begin, end, serviceref, eit=None, base_timer=None):
 		if base_timer:
 			old_timer = timer
@@ -786,13 +816,25 @@ class AutoTimer:
 		if base_timer:
 			timersanitycheck = TimerSanityCheck(NavigationInstance.instance.RecordTimer.timer_list, timer)
 			if not timersanitycheck.check():
-				conflict = timersanitycheck.getSimulTimerList()
-				if conflict and len(conflict) > 1:
-					timer = old_timer
-					return False
+				return False
+			elif timersanitycheck.doubleCheck():
+				return False
 			else:
 				doLog("[AutoTimer] conflict not found for modify timer %s." % timer.name)
 		return True
+
+	def setOldTimer(self, new_timer=None, old_timer=None):
+		if new_timer and old_timer:
+			new_timer.justplay = old_timer.justplay
+			new_timer.conflict_detection = old_timer.conflict_detection
+			new_timer.always_zap = old_timer.always_zap
+			new_timer.name = old_timer.name
+			new_timer.description = old_timer.description
+			new_timer.begin = old_timer.begin
+			new_timer.end = old_timer.end
+			new_timer.service_ref = old_timer.service_ref
+			new_timer.eit = old_timer.eit
+			new_timer.disabled = old_timer.disabled
 
 	def addDirectoryToMovieDict(self, moviedict, dest, serviceHandler):
 		movielist = serviceHandler.list(eServiceReference("2:0:1:0:0:0:0:0:0:0:" + dest))
