@@ -442,6 +442,7 @@ msgid "Maximum duration (in m)"
 msgstr "Максимальная продолжительность (в мин)"
 
 msgid "Maximum event duration to match. If an event is longer than this amount of time (without offset) it won't be matched."
+msgstr "Максимальная продолжительность события для совпадения. Если событие больше, чем эта сумма времени (без смещения), то это событие не будет считатся совпавшим."
 
 msgid ""
 "Message\n"
