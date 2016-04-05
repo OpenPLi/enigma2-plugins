@@ -357,6 +357,12 @@ class AutoTimerEditorBase:
 		# Conflict detection
 		self.conflict_detection = NoSave(ConfigYesNo(default = timer.conflict_detection))
 
+		# Behavior short description to equal extended description if it is empty
+		self.descShortEqualExt = NoSave(ConfigYesNo(default = timer.descShortEqualExt))
+
+		# Behavior short description and extended description if is empty
+		self.descShortExtEmpty = NoSave(ConfigYesNo(default = timer.descShortExtEmpty))
+
 		# Filter info
 		self.isActive_services_value = _("unknown")
 		self.isActive_bouquets_value = _("unknown")
@@ -417,7 +423,7 @@ if getDesktop(0).size().width() >= 1280:
 class AutoTimerEditor(Screen, ConfigListScreen, AutoTimerEditorBase):
 	"""Edit AutoTimer"""
 	if HD:
-		skin = """<screen name="AutoTimerEditor" title="Edit AutoTimer" position="center,center" size="700,510">
+		skin = """<screen name="AutoTimerEditor" title="Edit AutoTimer" position="center,center" size="700,572">
 			<ePixmap position="40,5" size="140,40" pixmap="skin_default/buttons/red.png" transparent="1" alphatest="on" />
 			<ePixmap position="200,5" size="140,40" pixmap="skin_default/buttons/green.png" transparent="1" alphatest="on" />
 			<ePixmap position="360,5" size="140,40" pixmap="skin_default/buttons/yellow.png" transparent="1" alphatest="on" />
@@ -428,10 +434,10 @@ class AutoTimerEditor(Screen, ConfigListScreen, AutoTimerEditorBase):
 			<widget source="key_blue" render="Label" position="520,5" zPosition="1" size="140,40" valign="center" halign="center" font="Regular;18" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
 			<widget name="config" position="5,50" size="690,350" scrollbarMode="showOnDemand" />
 			<ePixmap pixmap="skin_default/div-h.png" position="0,405" zPosition="1" size="700,2" />
-			<widget source="help" render="Label" position="5,410" size="690,95" font="Regular;20" />
+			<widget source="help" render="Label" position="5,410" size="690,157" font="Regular;20" />
 		</screen>"""
 	else:
-		skin = """<screen name="AutoTimerEditor" title="Edit AutoTimer" position="center,center" size="565,370">
+		skin = """<screen name="AutoTimerEditor" title="Edit AutoTimer" position="center,center" size="565,400">
 			<ePixmap position="0,5" size="140,40" pixmap="skin_default/buttons/red.png" transparent="1" alphatest="on" />
 			<ePixmap position="140,5" size="140,40" pixmap="skin_default/buttons/green.png" transparent="1" alphatest="on" />
 			<ePixmap position="280,5" size="140,40" pixmap="skin_default/buttons/yellow.png" transparent="1" alphatest="on" />
@@ -442,7 +448,7 @@ class AutoTimerEditor(Screen, ConfigListScreen, AutoTimerEditorBase):
 			<widget source="key_blue" render="Label" position="420,5" zPosition="1" size="140,40" valign="center" halign="center" font="Regular;21" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
 			<widget name="config" position="5,50" size="555,225" scrollbarMode="showOnDemand" />
 			<ePixmap pixmap="skin_default/div-h.png" position="0,275" zPosition="1" size="565,2" />
-			<widget source="help" render="Label" position="5,280" size="555,83" font="Regular;21" />
+			<widget source="help" render="Label" position="5,280" size="555,113" font="Regular;21" />
 		</screen>"""
 	def __init__(self, session, timer, editingDefaults = False):
 		Screen.__init__(self, session)
@@ -564,7 +570,7 @@ class AutoTimerEditor(Screen, ConfigListScreen, AutoTimerEditorBase):
 			self.name: _("This is a name you can give the AutoTimer. It will be shown in the Overview and the Preview."),
 			self.match: _("This is what will be looked for in event titles. Note that looking for e.g. german umlauts can be tricky as you have to know the encoding the channel uses."),
 			self.encoding: _("Encoding the channel uses for it's EPG data. You only need to change this if you're searching for special characters like the german umlauts."),
-			self.searchType: _("Select \"exact match\" to enforce \"Match title\" to match exactly, \"partial match\" if you only want to search for a part of the event title or \"description match\" if you only want to search for a part of the event description"),
+			self.searchType: _("Select \"exact match\" to enforce \"Match title\" to match exactly, \"partial match\" if you only want to search for a part of the event title or \"description match\" if you only want to search for a part of the event description") + _(" (only services from bouquets)."),
 			self.searchCase: _("Select whether or not you want to enforce case correctness."),
 			self.justplay: _("Set timer type: zap, simple record, zap+record (always zap to service before start record)."),
 			self.zap_wakeup: _("Set wakeup receiver type. This works only for zap timers."),
@@ -595,6 +601,8 @@ class AutoTimerEditor(Screen, ConfigListScreen, AutoTimerEditorBase):
 			self.tags: _("Tags the Timer/Recording will have."),
 			self.series_labeling: _("Label Timers with season, episode and title, according to the SeriesPlugin settings."),
 			self.conflict_detection: _("This option allows you to turn off the timer confict detection. This option is for advanced users."),
+			self.descShortEqualExt: _("When this option enabled, short description to equal extended description if short description is empty."),
+			self.descShortExtEmpty: _("When this option enabled and short description and extended description match is empty and timer title exist in match title, match is not a duplicate. Attention, this may result in double timers."),
 			self.isActive_services: _("Use blue key to edit bouquets or services."),
 			self.isActive_bouquets: _("Use blue key to edit bouquets or services."),
 			self.isActive_dayofweek: _("Use yellow key to edit filters."),
@@ -681,6 +689,8 @@ class AutoTimerEditor(Screen, ConfigListScreen, AutoTimerEditorBase):
 
 		if int(self.avoidDuplicateDescription.value) > 0:
 			list.append(getConfigListEntry(_("Check for uniqueness in"), self.searchForDuplicateDescription))
+			list.append(getConfigListEntry(_("Description - short equal extended for match"), self.descShortEqualExt))
+			list.append(getConfigListEntry(_("Do not skip match when not description"), self.descShortExtEmpty))
 
 		# We always add this option though its expert only in enigma2
 		list.append(getConfigListEntry(_("Use a custom location"), self.useDestination))
@@ -959,6 +969,10 @@ class AutoTimerEditor(Screen, ConfigListScreen, AutoTimerEditorBase):
 		self.timer.always_zap = self.justplay.value == "zap+record"
 
 		self.timer.zap_wakeup = self.zap_wakeup.value
+
+		self.timer.descShortEqualExt = self.descShortEqualExt.value
+
+		self.timer.descShortExtEmpty = self.descShortExtEmpty.value
 
 		# Close
 		self.close(self.timer)

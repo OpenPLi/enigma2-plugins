@@ -449,6 +449,18 @@ class AutoTimerAddOrEditAutoTimerResource(AutoTimerBaseResource):
 		timer.searchForDuplicateDescription = int(get("searchForDuplicateDescription", timer.searchForDuplicateDescription))
 		timer.destination = get("location", timer.destination) or None
 
+		descShortEqualExt = get("descShortEqualExt")
+		if descShortEqualExt is not None:
+			try: descShortEqualExt = int(descShortEqualExt)
+			except ValueError: descShortEqualExt = descShortEqualExt == "yes"
+			timer.descShortEqualExt= descShortEqualExt
+
+		descShortExtEmpty = get("descShortExtEmpty")
+		if descShortExtEmpty is not None:
+			try: descShortExtEmpty = int(descShortExtEmpty)
+			except ValueError: descShortExtEmpty = descShortExtEmpty == "yes"
+			timer.descShortExtEmpty = descShortExtEmpty
+
 		# vps
 		enabled = get("vps_enabled")
 		if enabled is not None:

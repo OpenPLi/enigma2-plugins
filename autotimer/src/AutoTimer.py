@@ -2,7 +2,7 @@ from __future__ import print_function
 
 # Plugins Config
 from xml.etree.cElementTree import parse as cet_parse
-from os import path as os_path
+import os
 from AutoTimerConfiguration import parseConfig, buildConfig
 from Logger import doLog, startLog, getLog, doDebug
 
@@ -117,12 +117,12 @@ class AutoTimer:
 
 	def readXml(self):
 		# Abort if no config found
-		if not os_path.exists(XML_CONFIG):
+		if not os.path.exists(XML_CONFIG):
 			doLog("[AutoTimer] No configuration file present")
 			return
 
 		# Parse if mtime differs from whats saved
-		mtime = os_path.getmtime(XML_CONFIG)
+		mtime = os.path.getmtime(XML_CONFIG)
 		if mtime == self.configMtime:
 			doLog("[AutoTimer] No changes in configuration, won't parse")
 			return
@@ -131,7 +131,15 @@ class AutoTimer:
 		self.configMtime = mtime
 
 		# Parse Config
-		configuration = cet_parse(XML_CONFIG).getroot()
+		try:
+			configuration = cet_parse(XML_CONFIG).getroot()
+		except:
+			try:
+				os.remove(XML_CONFIG)
+			except:
+				pass
+			doLog("[AutoTimer] error parsing xml")
+			return
 
 		# Empty out timers and reset Ids
 		del self.timers[:]
@@ -301,7 +309,7 @@ class AutoTimer:
 
 		else:
 			# Search EPG, default to empty list
-			epgmatches = epgcache.search( ('RITBDSE', 2000, typeMap[timer.searchType], match, caseMap[timer.searchCase]) ) or []
+			epgmatches = epgcache.search( ('RITBDSE', 2500, typeMap[timer.searchType], match, caseMap[timer.searchCase]) ) or []
 
 		# Sort list of tuples by begin time 'B'
 		epgmatches.sort(key=itemgetter(3))
@@ -343,8 +351,8 @@ class AutoTimer:
 				continue
 
 			# Set short description to equal extended description if it is empty.
-			#if not shortdesc:
-			#	shortdesc = extdesc
+			if not shortdesc and timer.descShortEqualExt:
+				shortdesc = extdesc
 
 			# Convert begin time
 			timestamp = localtime(begin)
@@ -901,6 +909,8 @@ class AutoTimer:
 				foundShort = shortdesc1 in shortdesc2 or (0.8 < ratio)
 				if foundShort:
 					doLog("[AutoTimer] shortdesc ratio %f - %s - %d - %s - %d" % (ratio, shortdesc1, len(shortdesc1), shortdesc2, len(shortdesc2)))
+			elif not force and timer.descShortExtEmpty and not shortdesc1 and not shortdesc2 and name1 != name2:
+				foundShort = False
 
 			foundExt = True
 			# NOTE: only check extended if short description already is a match because otherwise
@@ -912,5 +922,7 @@ class AutoTimer:
 				foundExt = (0.8 < ratio)
 				if foundExt:
 					doLog("[AutoTimer] extdesc ratio %f - %s - %d - %s - %d" % (ratio, extdesc1, len(extdesc1), extdesc2, len(extdesc2)))
+			elif not force and timer.descShortExtEmpty and not extdesc1 and not extdesc2 and name1 != name2:
+				foundExt = False
 			return foundShort and foundExt
 		return False

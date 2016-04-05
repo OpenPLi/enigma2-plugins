@@ -1434,3 +1434,18 @@ msgstr ""
 #: AutoTimerEditor.py:187
 msgid "zap and record"
 msgstr ""
+
+msgid "Description - short equal extended for match"
+msgstr ""
+
+msgid "Do not skip match when not description"
+msgstr ""
+
+msgid "When this option enabled, short description to equal extended description if short description is empty."
+msgstr ""
+
+msgid "When this option enabled and short description and extended description match is empty and timer title exist in match title, match is not a duplicate. Attention, this may result in double timers."
+msgstr ""
+
+msgid " (only services from bouquets)."
+msgstr ""
