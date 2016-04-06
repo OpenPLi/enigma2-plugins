@@ -175,6 +175,14 @@ def parseEntry(element, baseTimer, defaults = False):
 	baseTimer.avoidDuplicateDescription = int(element.get("avoidDuplicateDescription", 0))
 	baseTimer.searchForDuplicateDescription = int(element.get("searchForDuplicateDescription", 2))
 
+	# Read out description behavior
+	descShortEqualExt = element.get("descShortEqualExt", "no")
+	baseTimer.descShortEqualExt = True if descShortEqualExt == "yes" else False
+	del descShortEqualExt
+	descShortExtEmpty = element.get("descShortExtEmpty", "no")
+	baseTimer.descShortExtEmpty = True if descShortExtEmpty == "yes" else False
+	del descShortExtEmpty
+
 	# Read out allowed services
 	l = element.findall("serviceref")
 	if l:
@@ -575,6 +583,10 @@ def buildConfig(defaultTimer, timers, webif = False):
 		if defaultTimer.getAvoidDuplicateDescription() > 0:
 			if defaultTimer.searchForDuplicateDescription != 2:
 				extend((' searchForDuplicateDescription="', str(defaultTimer.searchForDuplicateDescription), '"'))
+			if defaultTimer.descShortEqualExt:
+				append(' descShortEqualExt="yes"')
+			if defaultTimer.descShortExtEmpty:
+				append(' descShortExtEmpty="yes"')
 
 	# Only display justplay if true
 	if defaultTimer.justplay:
@@ -735,6 +747,10 @@ def buildConfig(defaultTimer, timers, webif = False):
 			extend((' avoidDuplicateDescription="', str(timer.getAvoidDuplicateDescription()), '"'))
 			if timer.searchForDuplicateDescription != 2:
 				extend((' searchForDuplicateDescription="', str(timer.searchForDuplicateDescription), '"'))
+			if timer.descShortEqualExt:
+				append(' descShortEqualExt="yes"')
+			if timer.descShortExtEmpty:
+				append(' descShortExtEmpty="yes"')
 
 		# Only display justplay if true
 		if timer.justplay:

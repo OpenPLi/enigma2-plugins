@@ -50,8 +50,8 @@ class AutoTimerComponent(object):
 			offset=None, afterevent=[], exclude=None, maxduration=None, \
 			destination=None, include=None, matchCount=0, matchLeft=0, \
 			matchLimit='', matchFormatString='', lastBegin=0, justplay=False, \
-			avoidDuplicateDescription=0, searchForDuplicateDescription=2, bouquets=None, \
-			tags=None, encoding=None, searchType="partial", searchCase="insensitive", \
+			avoidDuplicateDescription=0, searchForDuplicateDescription=2, descShortEqualExt=False, descShortExtEmpty=False, \
+			bouquets=None, tags=None, encoding=None, searchType="partial", searchCase="insensitive", \
 			overrideAlternatives=False, timeframe=None, vps_enabled=False, vps_overwrite=False, setEndtime=False, \
 			always_zap=False, zap_wakeup="always", series_labeling=False, conflict_detection=True):
 		self.name = name
@@ -73,6 +73,8 @@ class AutoTimerComponent(object):
 		self.justplay = justplay
 		self.avoidDuplicateDescription = avoidDuplicateDescription
 		self.searchForDuplicateDescription = searchForDuplicateDescription
+		self.descShortEqualExt = descShortEqualExt
+		self.descShortExtEmpty = descShortExtEmpty
 		self.bouquets = bouquets
 		self.tags = tags or []
 		self.encoding = encoding or getDefaultEncoding()
@@ -533,6 +535,8 @@ class AutoTimerComponent(object):
 			justplay = self.justplay,
 			avoidDuplicateDescription = self.avoidDuplicateDescription,
 			searchForDuplicateDescription = self.searchForDuplicateDescription,
+			descShortEqualExt = self.descShortEqualExt,
+			descShortExtEmpty = self.descShortExtEmpty,
 			bouquets = self.bouquets,
 			tags = self.tags,
 			encoding = self.encoding,
@@ -570,6 +574,8 @@ class AutoTimerComponent(object):
 			justplay = self.justplay,
 			avoidDuplicateDescription = self.avoidDuplicateDescription,
 			searchForDuplicateDescription = self.searchForDuplicateDescription,
+			descShortEqualExt = self.descShortEqualExt,
+			descShortExtEmpty = self.descShortExtEmpty,
 			bouquets = self.bouquets[:],
 			tags = self.tags[:],
 			encoding = self.encoding,
@@ -633,6 +639,8 @@ class AutoTimerComponent(object):
 					str(self.justplay),
 					str(self.avoidDuplicateDescription),
 					str(self.searchForDuplicateDescription),
+					str(self.descShortEqualExt),
+					str(self.descShortExtEmpty),
 					str(self.bouquets),
 					str(self.tags),
 					str(self.overrideAlternatives),
