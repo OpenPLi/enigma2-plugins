@@ -360,6 +360,19 @@ class AutoTimerEditorBase:
 		# Behavior short description to equal extended description if it is empty
 		self.descShortEqualExt = NoSave(ConfigYesNo(default = timer.descShortEqualExt))
 
+		# Ratio Threshold Duplicate
+		self.ratioThresholdDuplicate = NoSave(ConfigSelection([
+				("0.5", "50%"),
+				("0.6", "60%"),
+				("0.7", "70%"),
+				("0.8", "80%"),
+				("0.9", "90%"),
+				("1", "100%"),
+			],
+
+			default = str(timer.ratioThresholdDuplicate)
+		))
+
 		# Behavior short description and extended description if is empty
 		self.descShortExtEmpty = NoSave(ConfigYesNo(default = timer.descShortExtEmpty))
 
@@ -603,6 +616,7 @@ class AutoTimerEditor(Screen, ConfigListScreen, AutoTimerEditorBase):
 			self.conflict_detection: _("This option allows you to turn off the timer confict detection. This option is for advanced users."),
 			self.descShortEqualExt: _("When this option enabled, short description to equal extended description if short description is empty."),
 			self.descShortExtEmpty: _("When this option enabled and short description and extended description match is empty and timer title exist in match title, match is not a duplicate. Attention, this may result in double timers."),
+			self.ratioThresholdDuplicate: _("To cater for spelling mistakes and small deviations in the EPG information, you can make the matching algorithm fuzzy by setting the percentage both programmes must be equal for. Use 100% if you only want a match when both are completely identical. Recommended default ratio 80%."),
 			self.isActive_services: _("Use blue key to edit bouquets or services."),
 			self.isActive_bouquets: _("Use blue key to edit bouquets or services."),
 			self.isActive_dayofweek: _("Use yellow key to edit filters."),
@@ -691,6 +705,7 @@ class AutoTimerEditor(Screen, ConfigListScreen, AutoTimerEditorBase):
 			list.append(getConfigListEntry(_("Check for uniqueness in"), self.searchForDuplicateDescription))
 			list.append(getConfigListEntry(_("Description - short equal extended for match"), self.descShortEqualExt))
 			list.append(getConfigListEntry(_("Do not skip match when not description"), self.descShortExtEmpty))
+			list.append(getConfigListEntry(_("Percentage ratio for duplicates matches"), self.ratioThresholdDuplicate))
 
 		# We always add this option though its expert only in enigma2
 		list.append(getConfigListEntry(_("Use a custom location"), self.useDestination))
@@ -973,6 +988,8 @@ class AutoTimerEditor(Screen, ConfigListScreen, AutoTimerEditorBase):
 		self.timer.descShortEqualExt = self.descShortEqualExt.value
 
 		self.timer.descShortExtEmpty = self.descShortExtEmpty.value
+
+		self.timer.ratioThresholdDuplicate = float(self.ratioThresholdDuplicate.value)
 
 		# Close
 		self.close(self.timer)

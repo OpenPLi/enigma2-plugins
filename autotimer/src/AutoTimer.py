@@ -899,6 +899,7 @@ class AutoTimer:
 			return False
 
 		ratio = sequenceMatcher.ratio()
+		ratio_value = force and 0.8 or timer.ratioThresholdDuplicate
 		doDebug("[AutoTimer] names ratio %f - %s - %d - %s - %d" % (ratio, name1, len(name1), name2, len(name2)))
 		if name1 in name2 or (0.8 < ratio): # this is probably a match
 			foundShort = True
@@ -906,7 +907,7 @@ class AutoTimer:
 				sequenceMatcher.set_seqs(shortdesc1, shortdesc2)
 				ratio = sequenceMatcher.ratio()
 				doDebug("[AutoTimer] shortdesc ratio %f - %s - %d - %s - %d" % (ratio, shortdesc1, len(shortdesc1), shortdesc2, len(shortdesc2)))
-				foundShort = shortdesc1 in shortdesc2 or (0.8 < ratio)
+				foundShort = shortdesc1 in shortdesc2 or (ratio_value < ratio)
 				if foundShort:
 					doLog("[AutoTimer] shortdesc ratio %f - %s - %d - %s - %d" % (ratio, shortdesc1, len(shortdesc1), shortdesc2, len(shortdesc2)))
 			elif not force and timer.descShortExtEmpty and not shortdesc1 and not shortdesc2 and name1 != name2:
@@ -919,7 +920,7 @@ class AutoTimer:
 				sequenceMatcher.set_seqs(extdesc1, extdesc2)
 				ratio = sequenceMatcher.ratio()
 				doDebug("[AutoTimer] extdesc ratio %f - %s - %d - %s - %d" % (ratio, extdesc1, len(extdesc1), extdesc2, len(extdesc2)))
-				foundExt = (0.8 < ratio)
+				foundExt = (ratio_value < ratio)
 				if foundExt:
 					doLog("[AutoTimer] extdesc ratio %f - %s - %d - %s - %d" % (ratio, extdesc1, len(extdesc1), extdesc2, len(extdesc2)))
 			elif not force and timer.descShortExtEmpty and not extdesc1 and not extdesc2 and name1 != name2:
