@@ -461,6 +461,8 @@ class AutoTimerAddOrEditAutoTimerResource(AutoTimerBaseResource):
 			except ValueError: descShortExtEmpty = descShortExtEmpty == "yes"
 			timer.descShortExtEmpty = descShortExtEmpty
 
+		timer.ratioThresholdDuplicate = float(get("ratioThresholdDuplicate", timer.ratioThresholdDuplicate))
+
 		# vps
 		enabled = get("vps_enabled")
 		if enabled is not None:

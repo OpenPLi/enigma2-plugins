@@ -50,7 +50,7 @@ class AutoTimerComponent(object):
 			offset=None, afterevent=[], exclude=None, maxduration=None, \
 			destination=None, include=None, matchCount=0, matchLeft=0, \
 			matchLimit='', matchFormatString='', lastBegin=0, justplay=False, \
-			avoidDuplicateDescription=0, searchForDuplicateDescription=2, descShortEqualExt=False, descShortExtEmpty=False, \
+			avoidDuplicateDescription=0, searchForDuplicateDescription=2, descShortEqualExt=False, descShortExtEmpty=False, ratioThresholdDuplicate=0.8, \
 			bouquets=None, tags=None, encoding=None, searchType="partial", searchCase="insensitive", \
 			overrideAlternatives=False, timeframe=None, vps_enabled=False, vps_overwrite=False, setEndtime=False, \
 			always_zap=False, zap_wakeup="always", series_labeling=False, conflict_detection=True):
@@ -75,6 +75,7 @@ class AutoTimerComponent(object):
 		self.searchForDuplicateDescription = searchForDuplicateDescription
 		self.descShortEqualExt = descShortEqualExt
 		self.descShortExtEmpty = descShortExtEmpty
+		self.ratioThresholdDuplicate = ratioThresholdDuplicate
 		self.bouquets = bouquets
 		self.tags = tags or []
 		self.encoding = encoding or getDefaultEncoding()
@@ -325,7 +326,7 @@ class AutoTimerComponent(object):
 
 	getTimeframe = lambda self: self.timeframe
 	getTimeframeBegin = lambda self: int(self.timeframe[0])
-	getTimeframeEnd	= lambda self: int(self.timeframe[1])
+	getTimeframeEnd = lambda self: int(self.timeframe[1])
 
 	isOffsetEqual = lambda self: self.offset[0] == self.offset[1]
 
@@ -537,6 +538,7 @@ class AutoTimerComponent(object):
 			searchForDuplicateDescription = self.searchForDuplicateDescription,
 			descShortEqualExt = self.descShortEqualExt,
 			descShortExtEmpty = self.descShortExtEmpty,
+			ratioThresholdDuplicate = self.ratioThresholdDuplicate,
 			bouquets = self.bouquets,
 			tags = self.tags,
 			encoding = self.encoding,
@@ -576,6 +578,7 @@ class AutoTimerComponent(object):
 			searchForDuplicateDescription = self.searchForDuplicateDescription,
 			descShortEqualExt = self.descShortEqualExt,
 			descShortExtEmpty = self.descShortExtEmpty,
+			ratioThresholdDuplicate = self.ratioThresholdDuplicate,
 			bouquets = self.bouquets[:],
 			tags = self.tags[:],
 			encoding = self.encoding,
@@ -641,6 +644,7 @@ class AutoTimerComponent(object):
 					str(self.searchForDuplicateDescription),
 					str(self.descShortEqualExt),
 					str(self.descShortExtEmpty),
+					str(self.ratioThresholdDuplicate),
 					str(self.bouquets),
 					str(self.tags),
 					str(self.overrideAlternatives),

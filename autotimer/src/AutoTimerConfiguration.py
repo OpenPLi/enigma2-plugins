@@ -183,6 +183,9 @@ def parseEntry(element, baseTimer, defaults = False):
 	baseTimer.descShortExtEmpty = True if descShortExtEmpty == "yes" else False
 	del descShortExtEmpty
 
+	# Read out ratioThresholdDuplicate
+	baseTimer.ratioThresholdDuplicate = float(element.get("ratioThresholdDuplicate", 0.8))
+
 	# Read out allowed services
 	l = element.findall("serviceref")
 	if l:
@@ -587,6 +590,8 @@ def buildConfig(defaultTimer, timers, webif = False):
 				append(' descShortEqualExt="yes"')
 			if defaultTimer.descShortExtEmpty:
 				append(' descShortExtEmpty="yes"')
+			if defaultTimer.ratioThresholdDuplicate != 0.8:
+				extend((' ratioThresholdDuplicate="', str(defaultTimer.ratioThresholdDuplicate), '"'))
 
 	# Only display justplay if true
 	if defaultTimer.justplay:
@@ -751,6 +756,8 @@ def buildConfig(defaultTimer, timers, webif = False):
 				append(' descShortEqualExt="yes"')
 			if timer.descShortExtEmpty:
 				append(' descShortExtEmpty="yes"')
+			if timer.ratioThresholdDuplicate != 0.8:
+				extend((' ratioThresholdDuplicate="', str(timer.ratioThresholdDuplicate), '"'))
 
 		# Only display justplay if true
 		if timer.justplay:

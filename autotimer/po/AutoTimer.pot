@@ -1449,3 +1449,9 @@ msgstr ""
 
 msgid " (only services from bouquets)."
 msgstr ""
+
+msgid "Percentage ratio for duplicates matches"
+msgstr ""
+
+msgid "To cater for spelling mistakes and small deviations in the EPG information, you can make the matching algorithm fuzzy by setting the percentage both programmes must be equal for. Use 100% if you only want a match when both are completely identical. Recommended default ratio 80%."
+msgstr ""
