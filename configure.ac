@@ -99,6 +99,7 @@ blindscan/src/Makefile
 blindscan/po/Makefile
 blindscan/Makefile
 blindscan/meta/Makefile
+blindscan/src/images/Makefile
 
 bonjour/Makefile
 bonjour/meta/Makefile

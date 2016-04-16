@@ -3,247 +3,36 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
+#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-02-24 14:28+0200\n"
-"PO-Revision-Date: 2016-02-24 14:29+0200\n"
+"POT-Creation-Date: 2016-04-13 20:32+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: \n"
-"X-Generator: Eazy Po 0.9.5.3\n"
 
-#: plugin.py:55
-msgid "Blind scan for internal DVB-S2 tuners"
+#: plugin.py:482
+msgid ""
+"\n"
+"Second slot dual tuner may not be supported blind scan."
 msgstr ""
 
-#: plugin.py:90 plugin.py:104
-msgid "Exit"
-msgstr ""
-
-#: plugin.py:92
-msgid "Scan"
-msgstr ""
-
-#: plugin.py:93
-msgid "Press Green/OK to start the scan"
-msgstr ""
-
-#: plugin.py:107
-msgid "Please setup your tuner configuration."
-msgstr ""
-
-#: plugin.py:114 plugin.py:944
-msgid "Open xml file"
-msgstr ""
-
-#: plugin.py:253
-msgid "Sorry, this tuner is in use."
-msgstr ""
-
-#: plugin.py:256
-msgid "Maybe the reason that recording is currently running."
-msgstr ""
-
-#: plugin.py:312 plugin.py:316
-msgid "no"
-msgstr ""
-
-#: plugin.py:312
-msgid "yes"
-msgstr ""
-
-#: plugin.py:312
-msgid "yes (keep feeds)"
-msgstr ""
-
-#: plugin.py:317
-msgid "up to 1 degree"
-msgstr ""
-
-#: plugin.py:318
-msgid "up to 2 degrees"
-msgstr ""
-
-#: plugin.py:319
-msgid "up to 3 degrees"
-msgstr ""
-
-#: plugin.py:321
-msgid "scan for channels"
-msgstr ""
-
-#: plugin.py:322
-msgid "save to XML file"
-msgstr ""
-
-#: plugin.py:345
-msgid "vertical and horizontal"
-msgstr ""
-
-#: plugin.py:346 plugin.py:645
-msgid "vertical"
-msgstr ""
-
-#: plugin.py:347 plugin.py:643
-msgid "horizontal"
-msgstr ""
-
-#: plugin.py:348
-msgid "circular right and circular left"
-msgstr ""
-
-#: plugin.py:349 plugin.py:634 plugin.py:641
-msgid "circular right"
-msgstr ""
-
-#: plugin.py:350 plugin.py:636 plugin.py:639
-msgid "circular left"
-msgstr ""
-
-#: plugin.py:375
+#: plugin.py:480
 msgid ""
 "\n"
 "WARNING! Blind scan may make the tuner malfunction on a VU+ and ET receiver. "
 "A reboot afterwards may be required to return to proper tuner function."
 msgstr ""
 
-#: plugin.py:376
-msgid "Tuner"
-msgstr ""
-
-#: plugin.py:376
-msgid "Select a tuner that is configured for the satellite you wish to search"
-msgstr ""
-
-#: plugin.py:385
-msgid "Satellite"
-msgstr ""
-
-#: plugin.py:385
-msgid "Select the satellite you wish to search"
-msgstr ""
-
-#: plugin.py:386
-msgid "Search type"
-msgstr ""
-
-#: plugin.py:386
-msgid ""
-"\"channel scan\" searches for channels and saves them to your receiver; "
-"\"save to XML file\" does a transponder search and saves found transponders "
-"to an XML file in satellites.xml format"
-msgstr ""
-
-#: plugin.py:390 plugin.py:393
-msgid "Scan start frequency"
-msgstr ""
-
-#: plugin.py:390
-msgid "Frequency values must be between 3000 MHz and 4199 MHz (C-band)"
-msgstr ""
-
-#: plugin.py:391 plugin.py:394
-msgid "Scan stop frequency"
-msgstr ""
-
-#: plugin.py:391
-msgid "Frequency values must be between 3001 MHz and 4200 MHz (C-band)"
-msgstr ""
-
-#: plugin.py:393
-msgid "Frequency values must be between 10700 MHz and 12749 MHz"
-msgstr ""
-
-#: plugin.py:394
-msgid "Frequency values must be between 10701 MHz and 12750 MHz"
-msgstr ""
-
-#: plugin.py:395
-#, python-format
-msgid "The suggested polarisation for this satellite is '%s'"
-msgstr ""
-
-#: plugin.py:396
-msgid "Polarisation"
-msgstr ""
-
-#: plugin.py:397
-msgid "Scan start symbolrate"
-msgstr ""
-
-#: plugin.py:397
-msgid "Symbol rate values are in megasymbols; enter a value between 1 and 44"
-msgstr ""
-
-#: plugin.py:398
-msgid "Scan stop symbolrate"
-msgstr ""
-
-#: plugin.py:398
-msgid "Symbol rate values are in megasymbols; enter a value between 2 and 45"
-msgstr ""
-
-#: plugin.py:399
-msgid "Only scan unknown transponders"
-msgstr ""
-
-#: plugin.py:399
-msgid ""
-"If you select \"yes\" the scan will only search transponders not listed in "
-"satellites.xml"
-msgstr ""
-
-#: plugin.py:400
-msgid "Filter out adjacent satellites"
-msgstr ""
-
-#: plugin.py:400
-msgid ""
-"When a neighbouring satellite is very strong this avoids searching "
-"transponders known to be coming from the neighbouring satellite"
-msgstr ""
-
-#: plugin.py:403
-msgid "Clear before scan"
-msgstr ""
-
-#: plugin.py:403
-msgid ""
-"If you select \"yes\" all channels on the satellite being search will be "
-"deleted before starting the current search, yes (keep feeds) means the same "
-"but hold all feed services/transponders."
-msgstr ""
-
-#: plugin.py:404
-msgid "Only free scan"
-msgstr ""
-
-#: plugin.py:404
-msgid ""
-"If you select \"yes\" the scan will only save channels that are not "
-"encrypted; \"no\" will find encrypted and non-encrypted channels"
-msgstr ""
-
-#: plugin.py:503
-msgid "Blindscan is not supported in "
-msgstr ""
-
-#: plugin.py:503
-msgid " tuner."
-msgstr ""
-
-#: plugin.py:647
+#: plugin.py:825
 #, python-format
 msgid ""
-"Looking for available transponders.\n"
-"This will take a short while.\n"
-"\n"
 "   Current Status : %d/%d\n"
 "   Satellite : %s\n"
 "   Polarization : %s\n"
@@ -251,7 +40,276 @@ msgid ""
 "   Symbol rates : %d - %d MHz"
 msgstr ""
 
-#: plugin.py:751
+#: plugin.py:823
+msgid "   Starting Sundtek hardware blind scan."
+msgstr ""
+
+#: plugin.py:605
+msgid " tuner."
+msgstr ""
+
+#: plugin.py:488
+msgid ""
+"\"channel scan\" searches for channels and saves them to your receiver; "
+"\"save to XML file\" does a transponder search and saves found transponders "
+"to an XML file in satellites.xml format"
+msgstr ""
+
+#: dmmBlindScan.py:318
+#, python-format
+msgid "%d transponder(s) found"
+msgstr ""
+
+#: dmmBlindScan.py:293 plugin.py:998
+#, python-format
+msgid "%d transponders found at %d:%02d min"
+msgstr ""
+
+#: dmmBlindScan.py:323
+#, python-format
+msgid "%d:%02d/%d:%02dmin"
+msgstr ""
+
+#: dmmBlindScan.py:291
+#, python-format
+msgid "%dMHz scanned"
+msgstr ""
+
+#: dmmBlindScan.py:101
+msgid "AUTOMATICALLY start service searching, press green to change"
+msgstr ""
+
+#: dmmBlindScan.py:583
+msgid "Accuracy (higher is better)"
+msgstr ""
+
+#: plugin.py:1394
+msgid "Another type"
+msgstr ""
+
+#: plugin.py:1413
+msgid "Blind scan"
+msgstr ""
+
+#: plugin.py:116
+msgid "Blind scan for DVB-S2 tuners"
+msgstr ""
+
+#: dmmBlindScan.py:500
+msgid "Blind scan for dreambox DVB-S2 tuners"
+msgstr ""
+
+#: dmmBlindScan.py:67
+msgid "Blind scan state"
+msgstr ""
+
+#: plugin.py:605
+msgid "Blindscan is not supported in "
+msgstr ""
+
+#: dmmBlindScan.py:589 plugin.py:506
+msgid "Clear before scan"
+msgstr ""
+
+#: dmmBlindScan.py:662
+msgid "DVB-S + DVB-S2"
+msgstr ""
+
+#: dmmBlindScan.py:663
+msgid "DVB-S only"
+msgstr ""
+
+#: dmmBlindScan.py:480
+#, python-format
+msgid "Dreambox blind scan is not supported by this tuner (%s)!"
+msgstr ""
+
+#: plugin.py:1394
+msgid "Dreambox type"
+msgstr ""
+
+#: plugin.py:166 plugin.py:184
+msgid "Exit"
+msgstr ""
+
+#: plugin.py:502
+msgid "Filter out adjacent satellites"
+msgstr ""
+
+#: plugin.py:495
+msgid "Frequency values must be between 10700 MHz and 12749 MHz"
+msgstr ""
+
+#: plugin.py:496
+msgid "Frequency values must be between 10701 MHz and 12750 MHz"
+msgstr ""
+
+#: plugin.py:492
+msgid "Frequency values must be between 3000 MHz and 4199 MHz (C-band)"
+msgstr ""
+
+#: plugin.py:493
+msgid "Frequency values must be between 3001 MHz and 4200 MHz (C-band)"
+msgstr ""
+
+#: dmmBlindScan.py:584
+msgid "Horizontal"
+msgstr ""
+
+#: plugin.py:506
+msgid ""
+"If you select \"yes\" all channels on the satellite being search will be "
+"deleted before starting the current search, yes (keep feeds) means the same "
+"but hold all feed services/transponders."
+msgstr ""
+
+#: plugin.py:505
+msgid ""
+"If you select \"yes\" in addition to scan transponders list the NIT (Network "
+"Information Table; contains all the info of a provider) is being read and "
+"the channels being advertised in there are stored in your tuner."
+msgstr ""
+
+#: plugin.py:507
+msgid ""
+"If you select \"yes\" the scan will only save channels that are not "
+"encrypted; \"no\" will find encrypted and non-encrypted channels"
+msgstr ""
+
+#: plugin.py:501
+msgid ""
+"If you select \"yes\" the scan will only search transponders not listed in "
+"satellites.xml"
+msgstr ""
+
+#: plugin.py:724
+msgid "It seems manufacturer does not support blind scan for this tuner."
+msgstr ""
+
+#: plugin.py:826
+msgid ""
+"Looking for available transponders.\n"
+"This will take a long time, please be patient."
+msgstr ""
+
+#: dmmBlindScan.py:99
+msgid "MANUALLY start service searching, press green to change"
+msgstr ""
+
+#: dmmBlindScan.py:425 plugin.py:350
+msgid "Maybe the reason that recording is currently running."
+msgstr ""
+
+#: plugin.py:1373
+msgid "Moving to "
+msgstr ""
+
+#: dmmBlindScan.py:588 plugin.py:505
+msgid "Network scan"
+msgstr ""
+
+#: plugin.py:1061
+msgid ""
+"No new transponders found! \n"
+"\n"
+"Only transponders already listed in satellites.xml \n"
+"have been found for those search parameters!"
+msgstr ""
+
+#: dmmBlindScan.py:767 plugin.py:1065
+msgid "No transponders were found for those search parameters!"
+msgstr ""
+
+#: dmmBlindScan.py:723
+msgid ""
+"No tuner is enabled!\n"
+"Please setup your tuner settings before you start a service scan."
+msgstr ""
+
+#: plugin.py:750 plugin.py:762 plugin.py:773 plugin.py:789
+#, python-format
+msgid "Not found blind scan utility '%s'!"
+msgstr ""
+
+#: dmmBlindScan.py:529
+msgid ""
+"Nothing to scan!\n"
+"Please setup your tuner settings before you start a service scan."
+msgstr ""
+
+#: dmmBlindScan.py:472
+msgid "Nothing to scan! Press Exit!"
+msgstr ""
+
+#: dmmBlindScan.py:590 plugin.py:507
+msgid "Only free scan"
+msgstr ""
+
+#: plugin.py:501
+msgid "Only scan unknown transponders"
+msgstr ""
+
+#: plugin.py:195 plugin.py:1261
+msgid "Open xml file"
+msgstr ""
+
+#: plugin.py:188
+msgid "Please setup your tuner configuration."
+msgstr ""
+
+#: plugin.py:498
+msgid "Polarisation"
+msgstr ""
+
+#: plugin.py:291
+msgid "Press Green/OK to start the scan"
+msgstr ""
+
+#: dmmBlindScan.py:527
+msgid "Press OK to start the scan"
+msgstr ""
+
+#: dmmBlindScan.py:107
+msgid "Press green to start service searching!"
+msgstr ""
+
+#: plugin.py:1349 plugin.py:1376
+msgid "Rotor: "
+msgstr ""
+
+#: dmmBlindScan.py:577 plugin.py:487
+msgid "Satellite"
+msgstr ""
+
+#: plugin.py:1407
+msgid "Satellite blind scan"
+msgstr ""
+
+#: plugin.py:1413
+msgid "Scan satellites for new transponders"
+msgstr ""
+
+#: dmmBlindScan.py:580 plugin.py:492 plugin.py:495
+msgid "Scan start frequency"
+msgstr ""
+
+#: plugin.py:499
+msgid "Scan start symbolrate"
+msgstr ""
+
+#: dmmBlindScan.py:581 plugin.py:493 plugin.py:496
+msgid "Scan stop frequency"
+msgstr ""
+
+#: plugin.py:500
+msgid "Scan stop symbolrate"
+msgstr ""
+
+#: plugin.py:759
+msgid "Scan unknown error!"
+msgstr ""
+
+#: dmmBlindScan.py:761 plugin.py:1058
 #, python-format
 msgid ""
 "Search completed. %d transponders found.\n"
@@ -260,42 +318,133 @@ msgid ""
 "%s"
 msgstr ""
 
-#: plugin.py:754
-msgid ""
-"No new transponders found! \n"
-"\n"
-"Only transponders already listed in satellites.xml \n"
-"have been found for those search parameters!"
+#: dmmBlindScan.py:579 plugin.py:488
+msgid "Search type"
 msgstr ""
 
-#: plugin.py:758
-msgid "No transponders were found for those search parameters!"
+#: plugin.py:483
+msgid "Select a tuner that is configured for the satellite you wish to search"
 msgstr ""
 
-#: plugin.py:760
+#: plugin.py:487
+msgid "Select the satellite you wish to search"
+msgstr ""
+
+#: plugin.py:1401
+msgid "Select type for scan:"
+msgstr ""
+
+#: dmmBlindScan.py:422 plugin.py:347
+msgid "Sorry, this tuner is in use."
+msgstr ""
+
+#: plugin.py:168
+msgid "Start scan"
+msgstr ""
+
+#: plugin.py:499
+msgid "Symbol rate values are in megasymbols; enter a value between 1 and 44"
+msgstr ""
+
+#: plugin.py:500
+msgid "Symbol rate values are in megasymbols; enter a value between 2 and 45"
+msgstr ""
+
+#: dmmBlindScan.py:765 plugin.py:1067
 msgid "The blindscan run was cancelled by the user."
 msgstr ""
 
-#: plugin.py:957
-msgid "vertical & horizontal"
+#: plugin.py:497
+#, python-format
+msgid "The suggested polarisation for this satellite is '%s'"
 msgstr ""
 
-#: plugin.py:963
+#: dmmBlindScan.py:106
+msgid "Transponder searching finished!"
+msgstr ""
+
+#: dmmBlindScan.py:470
+msgid "Try to find used satellite transponders..."
+msgstr ""
+
+#: dmmBlindScan.py:560 plugin.py:483
+msgid "Tuner"
+msgstr ""
+
+#: dmmBlindScan.py:478
+msgid "Use Sundtek full hardware blind scan!"
+msgstr ""
+
+#: dmmBlindScan.py:585
+msgid "Vertical"
+msgstr ""
+
+#: plugin.py:502
+msgid ""
+"When a neighbouring satellite is very strong this avoids searching "
+"transponders known to be coming from the neighbouring satellite"
+msgstr ""
+
+#: plugin.py:448 plugin.py:812 plugin.py:815
+msgid "circular left"
+msgstr ""
+
+#: plugin.py:447 plugin.py:810 plugin.py:817
+msgid "circular right"
+msgstr ""
+
+#: plugin.py:1282 plugin.py:1295
 msgid "circular right & circular left"
 msgstr ""
 
-#: plugin.py:1024 plugin.py:1051
-msgid "Rotor: "
+#: plugin.py:446
+msgid "circular right and circular left"
 msgstr ""
 
-#: plugin.py:1048
-msgid "Moving to "
+#: plugin.py:445 plugin.py:819
+msgid "horizontal"
 msgstr ""
 
-#: plugin.py:1070 plugin.py:1077
-msgid "Blind scan"
+#: dmmBlindScan.py:638 plugin.py:406 plugin.py:410
+msgid "no"
 msgstr ""
 
-#: plugin.py:1077
-msgid "Scan satellites for new transponders"
+#: dmmBlindScan.py:668 plugin.py:416
+msgid "save to XML file"
+msgstr ""
+
+#: dmmBlindScan.py:667 plugin.py:415
+msgid "scan for channels"
+msgstr ""
+
+#: plugin.py:411
+msgid "up to 1 degree"
+msgstr ""
+
+#: plugin.py:412
+msgid "up to 2 degrees"
+msgstr ""
+
+#: plugin.py:413
+msgid "up to 3 degrees"
+msgstr ""
+
+#: plugin.py:444 plugin.py:821
+msgid "vertical"
+msgstr ""
+
+#: plugin.py:1275
+msgid "vertical & horizontal"
+msgstr ""
+
+#: plugin.py:443
+msgid "vertical and horizontal"
+msgstr ""
+
+#: dmmBlindScan.py:638 plugin.py:406
+msgid "yes"
+msgstr ""
+
+#: dmmBlindScan.py:638 plugin.py:406
+msgid "yes (keep feeds)"
 msgstr ""
