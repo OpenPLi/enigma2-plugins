@@ -92,6 +92,9 @@ _supportNimType = { 'AVL1208':'', 'AVL6222':'6222_', 'AVL6211':'6211_', 'BCM7356
 # For STBs that support multiple DVB-S tuner models, e.g. Solo 4K.
 _unsupportedNims = ( 'Vuplus DVB-S NIM(7376 FBC)', ) # format = nim.description from nimmanager
 
+# blindscan-s2 supported tuners
+_blindscans2Nims = ('TBS-5925', 'DVBS2BOX')
+
 class Blindscan(ConfigListScreen, Screen):
 	skin="""
 		<screen position="center,center" size="640,565" title="Blind scan">
@@ -688,8 +691,9 @@ class Blindscan(ConfigListScreen, Screen):
 
 		nim = nimmanager.nim_slots[self.feid]
 		nimname = nim.friendly_full_description
+		tunername = nim.description
 
-		if "Sundtek" not in nimname and self.getNimSocket(self.feid) < 0:
+		if ("Sundtek" not in nimname or tunername not in _blindscans2Nims) and self.getNimSocket(self.feid) < 0:
 			print "[Blind scan] can't find i2c number!!"
 			return
 
@@ -723,7 +727,7 @@ class Blindscan(ConfigListScreen, Screen):
 		self.tmpstr = ""
 		not_support_text = _("It seems manufacturer does not support blind scan for this tuner.")
 
-		if nimname in ("TBS5925", "DVBS2BOX"):
+		if tunername in _blindscans2Nims:
 			cmd = "blindscan-s2 -b -s %d -e %d" % (temp_start_int_freq, temp_end_int_freq)
 			cmd += getAdapterFrontend(self.feid, tunername)
 			if pol == "horizontal":
@@ -731,9 +735,9 @@ class Blindscan(ConfigListScreen, Screen):
 			elif pol == "vertical":
 				cmd += " -V"
 			if self.is_c_band_scan:
-				cmd = "true" #FIXME no support for cband for now
+				cmd += " -l 5150" # needs testing
 			elif tab_hilow[band]:
-				cmd += " -l 10600"
+				cmd += " -l 10600 -2" # on high band enable 22KHz tone
 			else:
 				cmd += " -l 9750"
 			#self.frontend.closeFrontend() # close because blindscan-s2 does not like to be open
@@ -933,7 +937,8 @@ class Blindscan(ConfigListScreen, Screen):
 						"FEC_NONE" : parm.FEC_None}
 					roll ={ "ROLLOFF_20" : parm.RollOff_alpha_0_20,
 						"ROLLOFF_25" : parm.RollOff_alpha_0_25,
-						"ROLLOFF_35" : parm.RollOff_alpha_0_35}
+						"ROLLOFF_35" : parm.RollOff_alpha_0_35,
+						"ROLLOFF_AUTO" : parm.RollOff_auto}
 					pilot={ "PILOT_ON" : parm.Pilot_On,
 						"PILOT_OFF" : parm.Pilot_Off, 
 						"PILOT_AUTO" : parm.Pilot_Unknown}
