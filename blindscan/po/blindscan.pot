@@ -448,3 +448,7 @@ msgstr ""
 #: dmmBlindScan.py:638 plugin.py:406
 msgid "yes (keep feeds)"
 msgstr ""
+
+msgid "\nYou must use the power adapter."
+msgstr ""
+

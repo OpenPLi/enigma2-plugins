@@ -479,10 +479,12 @@ class Blindscan(ConfigListScreen, Screen):
 		nimname = nim.friendly_full_description
 		self.SundtekScan = "Sundtek DVB-S/S2" in nimname and "V" in nimname
 		warning_text = ""
-		if "Sundtek" not in nimname and getBoxType().startswith('et') or getBoxType().startswith('vu'):
+		if not self.SundtekScan and getBoxType().startswith('et') or getBoxType().startswith('vu'):
 			warning_text = _("\nWARNING! Blind scan may make the tuner malfunction on a VU+ and ET receiver. A reboot afterwards may be required to return to proper tuner function.")
 			if getBoxType().startswith('vu') and "AVL6222" in nimname:
 				warning_text = _("\nSecond slot dual tuner may not be supported blind scan.")
+		elif self.SundtekScan:
+			warning_text = _("\nYou must use the power adapter.")
 		self.tunerEntry = getConfigListEntry(_("Tuner"), self.scan_nims,(_("Select a tuner that is configured for the satellite you wish to search") + warning_text))
 		self.list.append(self.tunerEntry)
 		self.scan_networkScan.value = False
@@ -690,10 +692,9 @@ class Blindscan(ConfigListScreen, Screen):
 		self.tuner.tune(returnvalue)
 
 		nim = nimmanager.nim_slots[self.feid]
-		nimname = nim.friendly_full_description
 		tunername = nim.description
 
-		if ("Sundtek" not in nimname or tunername not in _blindscans2Nims) and self.getNimSocket(self.feid) < 0:
+		if not self.SundtekScan and tunername not in _blindscans2Nims and self.getNimSocket(self.feid) < 0:
 			print "[Blind scan] can't find i2c number!!"
 			return
 
@@ -803,7 +804,7 @@ class Blindscan(ConfigListScreen, Screen):
 		if not self.cmd:
 			if self.SundtekScan:
 				print "[Blind scan] closing frontend and starting blindscan"
-				self.frontend.closeFrontend()
+				self.frontend and self.frontend.closeFrontend()
 			self.blindscan_container = eConsoleAppContainer()
 			self.blindscan_container.appClosed.append(self.blindscanContainerClose)
 			self.blindscan_container.dataAvail.append(self.blindscanContainerAvail)
