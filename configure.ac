@@ -486,6 +486,11 @@ vps/po/Makefile
 vps/src_cc/Makefile
 vps/src_py/Makefile
 
+vfdcontrol/Makefile
+vfdcontrol/meta/Makefile
+vfdcontrol/po/Makefile
+vfdcontrol/src/Makefile
+
 weatherplugin/Makefile
 weatherplugin/meta/Makefile
 weatherplugin/po/Makefile

@@ -1,0 +1,14 @@
+<default>
+	<prerequisites>
+		<tag type="System" />
+	</prerequisites>
+	<info>
+			<name>vfdcontrol</name>
+			<packagename>enigma2-plugin-systemplugins-vfdcontrol</packagename>
+			<shortdescription>VFD Control </shortdescription>
+			<description>control 7 segment VFD display</description>
+	</info>
+	<files type="package">
+		<file type="package" name="enigma2-plugin-systemplugins-vfdcontrol" />
+	</files>
+</default>
