@@ -68,7 +68,6 @@ SUBDIRS = \
 	shoutcast \
 	showclock \
 	simplerss \
-	startuptostandby \
 	svdrp \
 	systemtime \
 	tageditor \
