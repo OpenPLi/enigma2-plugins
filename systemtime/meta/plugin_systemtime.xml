@@ -8,8 +8,7 @@
 			<shortdescription>System Time</shortdescription>
 			<description>System Time your box</description>
 	</info>
-	<files type="package"> <!-- without version, without .ipk -->
+	<files type="package">
 		<file type="package" name="enigma2-plugin-systemplugins-systemtime" />
-		<file type="package" name="ntpdate" />
 	</files>
 </default>
