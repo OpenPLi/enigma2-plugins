@@ -432,20 +432,11 @@ simplerss/meta/Makefile
 simplerss/po/Makefile
 simplerss/src/Makefile
 
-startupservice/Makefile
-startupservice/meta/Makefile
-startupservice/po/Makefile
-startupservice/src/Makefile
-
 systemtime/Makefile
 systemtime/meta/Makefile
 systemtime/po/Makefile
 systemtime/src/Makefile
 systemtime/src/images/Makefile
-
-startuptostandby/Makefile
-startuptostandby/meta/Makefile
-startuptostandby/src/Makefile
 
 svdrp/Makefile
 svdrp/meta/Makefile
