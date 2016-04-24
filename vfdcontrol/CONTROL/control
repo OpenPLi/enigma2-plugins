@@ -1,0 +1,5 @@
+Package: enigma2-plugin-systemplugins-vfdcontrol
+Version: 2.0
+Description: control 7 segment VFD display
+Maintainer: OpenPLi team <forum@openpli.org>
+Homepage: www.openpli.org

@@ -79,6 +79,7 @@ SUBDIRS = \
 	virtualzap \
 	vlcplayer \
 	vps \
+	vfdcontrol \
 	weatherplugin \
 	webcamviewer \
 	werbezapper \
