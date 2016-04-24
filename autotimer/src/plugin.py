@@ -265,8 +265,8 @@ def AutoTimerEPGSelectionInit():
 	except:
 		pass
 
-def AutoTimerEPGSelection__init__(self, session, service, zapFunc=None, eventid=None, bouquetChangeCB=None, serviceChangeCB=None):
-	baseEPGSelection__init__(self, session, service, zapFunc, eventid, bouquetChangeCB, serviceChangeCB)
+def AutoTimerEPGSelection__init__(self, session, service, zapFunc=None, eventid=None, bouquetChangeCB=None, serviceChangeCB=None, parent=None):
+	baseEPGSelection__init__(self, session, service, zapFunc, eventid, bouquetChangeCB, serviceChangeCB, parent)
 
 def furtherOptions(self):
 	if self.type == EPG_TYPE_SINGLE:
