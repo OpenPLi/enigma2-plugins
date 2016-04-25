@@ -19,7 +19,7 @@ import Screens.Standby
 
 config.plugins.VFD_ini = ConfigSubsection()
 config.plugins.VFD_ini.showClock = ConfigSelection(default = "True_Switch", choices = [("False",_("Channelnumber in Standby off")),("True",_("Channelnumber in Standby Clock")), ("True_Switch",_("Channelnumber/Clock in Standby Clock")),("True_All",_("Clock always")),("Off",_("Always off"))])
-config.plugins.VFD_ini.timeMode = ConfigSelection(default = "24h", choices = ["12",_("12h"),"24",_("24h")])
+config.plugins.VFD_ini.timeMode = ConfigSelection(default = "24h", choices = ["12h",_("12h"),"24h",_("24h")])
 config.plugins.VFD_ini.recDisplay = ConfigSelection(default = "False", choices = [("True",_("yes")),("False",_("no"))])
 config.plugins.VFD_ini.recClockBlink = ConfigSelection(default = "off", choices = [("off",_("Off")),("on_off",_("On/Off")),("brightness",_("Brightness level"))])
 config.plugins.VFD_ini.ClockLevel1 = ConfigSlider(default=1, limits=(0, 10))
