@@ -1,0 +1,129 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-04-25 13:34+0200\n"
+"PO-Revision-Date: 2016-04-25 13:43+0200\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.7\n"
+"Last-Translator: Nicker <nickersk@gmail.com>\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"Language: sk_SK\n"
+
+#: plugin.py:37
+#, python-format
+msgid "%s plugin only this session?"
+msgstr "%s plugin iba toto sedenie?"
+
+#: AutomaticVolumeAdjustmentSetup.py:151
+msgid "Add"
+msgstr "Pridať"
+
+#: AutomaticVolumeAdjustmentSetup.py:150 AutomaticVolumeAdjustmentSetup.py:276
+msgid "Adjustment value"
+msgstr "Hodnota nastavenia"
+
+#: plugin.py:64 plugin.py:68 plugin.py:70
+msgid "Automatic Volume Adjustment"
+msgstr "Automatická regulácia hlasitosti"
+
+#: AutomaticVolumeAdjustmentSetup.py:55
+msgid "Automatic Volume Adjustment - Config"
+msgstr "Automatická regulácia hlasitosti - Konfigurácia"
+
+#: AutomaticVolumeAdjustmentSetup.py:253
+msgid "Automatic Volume Adjustment - Entry Config"
+msgstr "Automatická regulácia hlasitosti - Konfigurácia položky"
+
+#: AutomaticVolumeAdjustmentSetup.py:148
+msgid "Automatic Volume Adjustment - Service Config"
+msgstr "Automatická regulácia hlasitosti - Konfigurácia stanice"
+
+#: AutomaticVolumeAdjustmentConfig.py:72
+msgid "Automatic volume adjust"
+msgstr "Automatické nastavenie hlasitosti"
+
+#: AutomaticVolumeAdjustmentSetup.py:63 AutomaticVolumeAdjustmentSetup.py:261
+msgid "Cancel"
+msgstr "Zrušiť"
+
+#: AutomaticVolumeAdjustmentSetup.py:284
+msgid "Channel Selection"
+msgstr "Výber stanice"
+
+#: AutomaticVolumeAdjustmentSetup.py:81
+msgid "Default volume adjustment value for AC3/DTS"
+msgstr "Predvolená hodnota regulácie hlasitosti pre AC3/DTS"
+
+#: AutomaticVolumeAdjustmentSetup.py:154
+msgid "Delete"
+msgstr "Odstrániť"
+
+#: plugin.py:36
+msgid "Disable"
+msgstr "Vypnúť"
+
+#: AutomaticVolumeAdjustmentSetup.py:195
+msgid "Do you really want to delete this entry?"
+msgstr "Naozaj chcete odstrániť túto položku?"
+
+#: AutomaticVolumeAdjustmentSetup.py:153
+msgid "Edit"
+msgstr "Upraviť"
+
+#: AutomaticVolumeAdjustmentSetup.py:75 plugin.py:36
+msgid "Enable"
+msgstr "Zapnúť"
+
+#: AutomaticVolumeAdjustmentSetup.py:82
+msgid "Max. volume for mpeg audio"
+msgstr "Max. hlasitosť zvuku mpeg"
+
+#: AutomaticVolumeAdjustmentSetup.py:78
+msgid "Modus"
+msgstr "Režim"
+
+#: AutomaticVolumeAdjustmentSetup.py:64 AutomaticVolumeAdjustmentSetup.py:152
+#: AutomaticVolumeAdjustmentSetup.py:262
+msgid "OK"
+msgstr "OK"
+
+#: AutomaticVolumeAdjustmentConfig.py:91
+msgid "Press OK to select a service"
+msgstr "Stlačením tlačidla OK vyberte stanicu"
+
+#: AutomaticVolumeAdjustmentConfig.py:72
+msgid "Remember service volume value"
+msgstr "Uložiť hodnotu hlasitosti stanice"
+
+#: AutomaticVolumeAdjustmentSetup.py:149 AutomaticVolumeAdjustmentSetup.py:274
+msgid "Servicename"
+msgstr "Názov stanice"
+
+#: AutomaticVolumeAdjustmentSetup.py:83
+msgid "Services"
+msgstr "Stanice"
+
+#: AutomaticVolumeAdjustmentSetup.py:87
+msgid "Show on/off plugin only for session in Audio menu"
+msgstr "Zobraziť zapnutie/vypnutie pluginu len v ponuke Audio"
+
+#: AutomaticVolumeAdjustmentSetup.py:86
+msgid "Show volumebar when volume-value was changed"
+msgstr "Zobraziť panel hlasitosti, ak bola zmenená hodnota hlasitosti."
+
+#: AutomaticVolumeAdjustmentSetup.py:304
+msgid "You must select a valid service!"
+msgstr "Musíte vybrať platnú stanicu!"
+
+#: plugin.py:70
+msgid "toggle on/off plugin only for session"
+msgstr "prepínať zap./vyp. pluginu iba pre sedenie"
