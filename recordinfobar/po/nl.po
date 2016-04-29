@@ -1,141 +1,324 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: RecBar\n"
+"Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-09-16 10:28+0300\n"
-"PO-Revision-Date: 2012-09-16 18:30+0100\n"
-"Last-Translator: \n"
-"Language-Team: Satkiekerd <LL@li.org>\n"
-"Language: dutch\n"
+"POT-Creation-Date: 2016-04-29 09:00+0200\n"
+"PO-Revision-Date: 2016-04-29 20:37+0300\n"
+"Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.3\n"
-"X-Poedit-SourceCharset: UTF-8\n"
+"X-Generator: Poedit 1.8.4\n"
+"Last-Translator: Dimitrij <Dima-73@inbox.lv>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: nl\n"
 
+#: plugin.py:283
+#, python-format
 msgid " (%d mins)\n"
 msgstr " (%d mins)\n"
 
+#: plugin.py:417 plugin.py:659
+#, python-format
+msgid "%s...%s (%d mins)"
+msgstr "%s...%s (%d min)"
+
+#: plugin.py:356
+#, python-format
+msgid "+%d min / %s"
+msgstr "+%d min / %s"
+
+#: RecInfobarSetup.py:74
+msgid "<<Only when zap to service at start timer>>"
+msgstr "<<Alleen bij start timer naar kanaal zappen>>"
+
+#: plugin.py:485 plugin.py:557
 msgid "All Services"
 msgstr "Alle kanalen"
 
-msgid "Automatic is the default action"
-msgstr "Automatisch is de default aktie"
+#: RecInfobarSetup.py:63
+msgid "Always show indicator icon when recording"
+msgstr "Toon altijd opnameikoon tijdens opname"
 
+#: RecInfobarSetup.py:60
+msgid "Anchor resizing at"
+msgstr "Vergroot vanuit"
+
+#: RecInfobarSetup.py:69
+msgid "Automatic is the default action"
+msgstr "'Automatisch' is de standaard actie."
+
+#: RecInfobarSetup.py:66
+msgid "Background window"
+msgstr "Windowachtergrond"
+
+#: plugin.py:348
+#, python-format
+msgid "Bouquet: %s"
+msgstr "Boeket: %s"
+
+#: RecInfobarSetup.py:20
 msgid "Cancel"
 msgstr "Annuleer"
 
+#: plugin.py:70
+msgid "DD HH:MM:SS"
+msgstr "DD HH:MM:SS"
+
+#: plugin.py:71
+msgid "Dd HHh MMm SSs"
+msgstr "Dd HHh MMm SSs"
+
+#: RecInfobarSetup.py:59
 msgid "Enable record infobar"
-msgstr "Record infobar inschakelen"
+msgstr "Schakel record infobar in"
 
+#: RecInfobarSetup.py:179
+msgid ""
+"GUI needs a restart to apply changes.\n"
+"Restart the GUI now?"
+msgstr ""
+"De GUI moet herstart worden om de aanpassingen in te stellen.\n"
+"GUI nu herstarten?"
+
+#: plugin.py:219
 msgid "Go to Standby now?"
-msgstr "Nu in standby gaan?"
+msgstr "Nu naar stand-by gaan?"
 
-msgid "Goto Standby when wakeup on a timer recording"
-msgstr "Ga naar standby bij het ontwaken voor een geplande opname."
+#: RecInfobarSetup.py:70
+msgid "Goto standby when wakeup on a timer recording"
+msgstr "Ga naar stand-by indien ontwaakt voor een opname"
 
-msgid "Increase direction"
-msgstr "Vergroot richting"
+#: plugin.py:66
+msgid "H:M:S"
+msgstr "H:M:S"
 
+#: plugin.py:68
+msgid "HH:MM:SS"
+msgstr "HH:MM:SS"
+
+#: plugin.py:69
+msgid "HHh MMm SSs"
+msgstr "HHh MMm SSs"
+
+#: plugin.py:67
+msgid "Hh Mm Ss"
+msgstr "Hh Mm Ss"
+
+#: plugin.py:60
+msgid "M:S"
+msgstr "M:S"
+
+#: plugin.py:62
+msgid "M:SS"
+msgstr "M:SS"
+
+#: plugin.py:64
+msgid "MM:SS"
+msgstr "MM:SS"
+
+#: plugin.py:65
+msgid "MMm SSs"
+msgstr "MMm SSs"
+
+#: plugin.py:63
+msgid "Mm SSs"
+msgstr "Mm SSs"
+
+#: plugin.py:61
+msgid "Mm Ss"
+msgstr "Mm Ss"
+
+#: plugin.py:343 plugin.py:486 plugin.py:558 plugin.py:598 plugin.py:623
 msgid "N/A"
 msgstr "NVT"
 
+#: RecInfobarSetup.py:19
+msgid "OK"
+msgstr "OK"
+
+#: RecInfobarSetup.py:77
+msgid "Preferred tuner for recording"
+msgstr "Voorkeurstuner voor opname"
+
+#: plugin.py:481 plugin.py:553
 msgid "Provider"
 msgstr "Provider"
 
+#: plugin.py:344
+#, python-format
+msgid "Provider: %s"
+msgstr "Provider: %s"
+
+#: plugin.py:732 plugin.py:738 plugin.py:739
 msgid "Record Infobar"
 msgstr "Record Infobar"
 
+#: RecInfobarSetup.py:17
 msgid "Record Infobar Setup"
 msgstr "Record Infobar instellingen"
 
+#: plugin.py:738 plugin.py:739
 msgid "Record Infobar addon"
-msgstr "Record Infobar toevoeging"
+msgstr "Record Infobar aanvulling"
 
+#: RecInfobarSetup.py:76
+msgid "Record timelen format"
+msgstr "Opname tijdlijn formaat"
+
+#: plugin.py:283
 msgid "Recording starts!\n"
-msgstr "Opnme begint!\n"
+msgstr "Opname begint!\n"
 
+#: plugin.py:58
+msgid "S"
+msgstr "S"
+
+#: plugin.py:483 plugin.py:555
 msgid "Satellites"
-msgstr "Satelleten"
+msgstr "Satellieten"
 
-msgid "Save"
-msgstr "Opslaan"
+#: RecInfobarSetup.py:73
+msgid "Set correct position timer in channel list"
+msgstr "Stel de juiste positietimer in de kanaallijst"
 
-msgid "Show message when switching to recording service"
-msgstr "Toon bericht wanneer naar het opgenomen kanaal wordt gezapped."
+#: RecInfobarSetup.py:68
+msgid "Show message when zap to recording service"
+msgstr "Toon bericht wanneer gezapt wordt naar het opnamekanaal"
 
-msgid "Standby for timer 'After event' "
-msgstr "Standby voor timer 'Na gebeurtenis'. "
+#: plugin.py:59
+msgid "Ss"
+msgstr "Ss"
 
-msgid "Standby message screen timeout (sec.)"
-msgstr "Standby bericht timeout (sec.)"
+#: RecInfobarSetup.py:71
+msgid "Standby message screen timeout (sec)"
+msgstr "Stand-by schermbericht (sec)"
 
+#: RecInfobarSetup.py:72
+msgid "Standby only type timer 'After event'"
+msgstr "Alleen stand-by voor timertype 'na event"
+
+#: plugin.py:353
+msgid "Stream"
+msgstr "Stream"
+
+#: plugin.py:283
 msgid "Switch to a recordable channel?"
-msgstr "Zappen naar een opneembaar kanaal?"
+msgstr "Zappen naar opnamekanaal?"
 
+#: plugin.py:438 plugin.py:440
 msgid "Switched to the recording service !\n"
-msgstr "Gezapped naar het opgenomen kanaal!\n"
+msgstr "Gezapt naar het opnamekanaal!\n"
 
+#: plugin.py:355
+#, python-format
+msgid "Tuner: %s"
+msgstr "Tuner: %s"
+
+#: plugin.py:621
 msgid "Unknown"
 msgstr "Onbekend"
 
-msgid "X position (upper-left corner of srceen)"
-msgstr "X-positie (vanaf de linkerzijde van het scherm)"
+#: RecInfobarSetup.py:61 RecInfobarSetup.py:64
+msgid "X screen position"
+msgstr "X scherm positie"
 
-msgid "Y position (upper-left corner of srceen)"
-msgstr "Y-positie (vanaf de bovenzijde van het scherm)"
+#: RecInfobarSetup.py:62 RecInfobarSetup.py:65
+msgid "Y screen position"
+msgstr "Y scherm positie"
 
+#: RecInfobarSetup.py:75
+msgid "Z screen position"
+msgstr "Z scherm positie"
+
+#: RecInfobarSetup.py:67
 msgid "Zap on start service recording"
 msgstr "Zap bij aanvang opname"
 
+#: plugin.py:49
 msgid "all"
-msgstr "alle"
+msgstr "álle"
 
-msgid "all,than to do 'nothing' "
-msgstr "Alle, vervolgens 'doe niets'"
+#: plugin.py:49
+msgid "all, except 'nothing'"
+msgstr "alles, behalve 'niets"
 
+#: plugin.py:44
 msgid "always"
 msgstr "altijd"
 
+#: plugin.py:44
 msgid "ask the user"
 msgstr "vraag gebruiker"
 
+#: plugin.py:49 plugin.py:74
 msgid "auto"
 msgstr "auto"
 
+#: plugin.py:49
 msgid "auto and deep standby"
-msgstr "auto en  deep standby"
+msgstr "auto en deep standby"
 
+#: plugin.py:41
+msgid "black"
+msgstr "zwart"
+
+#: plugin.py:438
+#, python-format
 msgid "channel: %s   prov: %s\n"
-msgstr "kanaal: %s   prov: %s\n"
+msgstr "channel: %s   prov: %s\n"
 
+#: plugin.py:283 plugin.py:440
+#, python-format
 msgid ""
 "channel: %s   prov: %s\n"
 " %s\n"
 msgstr ""
-"kanaal: %s   prov: %s\n"
+"channel: %s   prov: %s\n"
 " %s\n"
 
+#: plugin.py:49
 msgid "deep standby"
 msgstr "deep standby"
 
+#: plugin.py:44
 msgid "default"
 msgstr "default"
 
-msgid "down"
-msgstr "naar beneden"
+#: plugin.py:74
+msgid "disabled"
+msgstr "uitgeschakeld"
 
+#: plugin.py:40
+msgid "down"
+msgstr "beneden"
+
+#: plugin.py:283
+#, python-format
 msgid "duration:  %s ... "
 msgstr "duur:  %s ... "
 
+#: plugin.py:46
 msgid "no zap"
-msgstr "geen zap"
+msgstr "niet zappen"
 
+#: plugin.py:49
 msgid "standby"
 msgstr "standby"
 
+#: plugin.py:40
 msgid "top"
-msgstr "bovenin"
+msgstr "Bovenin"
 
+#: plugin.py:41
+msgid "transparent"
+msgstr "transparent"
+
+#: plugin.py:46
 msgid "zap"
 msgstr "zap"
