@@ -42,7 +42,7 @@ msgstr "Номер канала в режиме ожидания"
 
 #: plugin.py:21
 msgid "Channelnumber in Standby off"
-msgstr "Номер канала не в режиме ожидания"
+msgstr "Выкл. номер канала в режиме ожидания"
 
 #: plugin.py:21
 msgid "Channelnumber/Clock in Standby Clock"
