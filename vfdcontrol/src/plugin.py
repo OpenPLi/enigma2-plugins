@@ -1,25 +1,19 @@
 from . import _
 from Screens.Screen import Screen
 from Plugins.Plugin import PluginDescriptor
-from Components.Console import Console
 from Components.Button import Button
 from Components.ActionMap import ActionMap
-from Components.ConfigList import ConfigList
 from Components.config import config, configfile, ConfigSubsection, getConfigListEntry, ConfigSelection, ConfigSlider
 from Components.ConfigList import ConfigListScreen
 from enigma import iPlayableService, eServiceCenter, eTimer, eActionMap, eDBoxLCD
 from Components.ServiceEventTracker import ServiceEventTracker
-from Components.ServiceList import ServiceList
 from Screens.InfoBar import InfoBar
 from time import localtime, time
-from Tools.Directories import fileExists
-import Components.RecordingConfig
-
 import Screens.Standby
 
 config.plugins.VFD_ini = ConfigSubsection()
 config.plugins.VFD_ini.showClock = ConfigSelection(default = "True_Switch", choices = [("False",_("Channelnumber in Standby off")),("True",_("Channelnumber in Standby Clock")), ("True_Switch",_("Channelnumber/Clock in Standby Clock")),("True_All",_("Clock always")),("Off",_("Always off"))])
-config.plugins.VFD_ini.timeMode = ConfigSelection(default = "24h", choices = ["12h",_("12h"),"24h",_("24h")])
+config.plugins.VFD_ini.timeMode = ConfigSelection(default = "24h", choices = [("12h",_("12h")),("24h",_("24h"))])
 config.plugins.VFD_ini.recDisplay = ConfigSelection(default = "False", choices = [("True",_("yes")),("False",_("no"))])
 config.plugins.VFD_ini.recClockBlink = ConfigSelection(default = "off", choices = [("off",_("Off")),("on_off",_("On/Off")),("brightness",_("Brightness level"))])
 config.plugins.VFD_ini.ClockLevel1 = ConfigSlider(default=1, limits=(0, 10))
@@ -52,8 +46,12 @@ class Channelnumber:
 
 		self.__event_tracker = ServiceEventTracker(screen=self,eventmap=
 			{
-				iPlayableService.evUpdatedEventInfo: self.__eventInfoChanged
+				iPlayableService.evUpdatedEventInfo: self.__eventInfoChanged,
+				iPlayableService.evEnd: self.__evEnd
 			})
+
+	def __evEnd(self):
+		pass
 
 	def __eventInfoChanged(self):
 		self.RecordingLed()
@@ -83,7 +81,7 @@ class Channelnumber:
 		chnr = "----"
 		if InfoBar.instance is None:
 			return chnr
-		playref = self.session.nav.getCurrentlyPlayingServiceOrGroup()
+		playref = self.session.nav.getCurrentlyPlayingServiceReference()
 		if not playref:
 			return chnr
 		str_service = playref.toString()
@@ -144,11 +142,11 @@ class Channelnumber:
 			if config.plugins.VFD_ini.recDisplay.value == 'True' and MyRecLed:
 				vfd_write(" rec")
 			elif config.plugins.VFD_ini.recClockBlink.value == 'on_off' and self.blink:
-				vfd_write("    ")
+				vfd_write("....")
 			else:
 				vfd_write(clock2)
 		else:
-			vfd_write("    ")
+			vfd_write("....")
 
 	def vrime(self):
 		if (config.plugins.VFD_ini.showClock.value == 'True' or config.plugins.VFD_ini.showClock.value == 'False' or config.plugins.VFD_ini.showClock.value == 'True_Switch') and not Screens.Standby.inStandby:
@@ -163,7 +161,7 @@ class Channelnumber:
 				self.__eventInfoChanged()
 
 		if config.plugins.VFD_ini.showClock.value == 'Off':
-			vfd_write("    ")
+			vfd_write("....")
 			self.zaPrik.start(self.updatetime, 1)
 			return
 		else:
@@ -178,12 +176,7 @@ class Channelnumber:
 
 	def RecordingLed(self):
 		global MyRecLed
-		try:
-			#not all images support recording type indicators
-			recordings = self.session.nav.getRecordings(False,Components.RecordingConfig.recType(config.recording.show_rec_symbol_for_rec_types.getValue()))
-		except:
-			recordings = self.session.nav.getRecordings()
-		if recordings:
+		if self.session.nav.getRecordings():
 			MyRecLed = True
 		else:
 			MyRecLed = False
@@ -195,18 +188,18 @@ ChannelnumberInstance = None
 
 def leaveStandby():
 	if config.plugins.VFD_ini.showClock.value == 'Off':
-		vfd_write("    ")
+		vfd_write("....")
 
 def standbyCounterChanged(configElement):
 	from Screens.Standby import inStandby
 	inStandby.onClose.append(leaveStandby)
 
 	if config.plugins.VFD_ini.showClock.value == 'Off':
-		vfd_write("    ")
+		vfd_write("....")
 
 def initVFD():
 	if config.plugins.VFD_ini.showClock.value == 'Off':
-		vfd_write("    ")
+		vfd_write("....")
 
 class VFD_INISetup(ConfigListScreen, Screen):
 	def __init__(self, session, args = None):
@@ -233,7 +226,6 @@ class VFD_INISetup(ConfigListScreen, Screen):
 
 		self.createSetup()
 
-		self.Console = Console()
 		self["key_red"] = Button(_("Cancel"))
 		self["key_green"] = Button(_("Save"))
 		self["key_yellow"] = Button(_("Update Date/Time"))
@@ -247,7 +239,6 @@ class VFD_INISetup(ConfigListScreen, Screen):
 		}, -2)
 
 	def createSetup(self):
-		self.editListEntry = None
 		self.list = []
 		self.list.append(getConfigListEntry(_("Show on VFD"), config.plugins.VFD_ini.showClock))
 		if config.plugins.VFD_ini.showClock.value != "Off":
@@ -301,9 +292,6 @@ class VFD_INI:
 		self.session = session
 		self.service = None
 		self.onClose = [ ]
-
-		self.Console = Console()
-
 		initVFD()
 
 		global ChannelnumberInstance
