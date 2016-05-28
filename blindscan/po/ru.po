@@ -487,3 +487,6 @@ msgstr ""
 
 msgid "\nYou must use the power adapter."
 msgstr "\nВозможно надо использовать адаптер питания."
+
+msgid "Step %d %d:%02d min"
+msgstr "Шаг %d %d:%02d мин"
