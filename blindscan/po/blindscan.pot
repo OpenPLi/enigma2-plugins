@@ -452,3 +452,5 @@ msgstr ""
 msgid "\nYou must use the power adapter."
 msgstr ""
 
+msgid "Step %d %d:%02d min"
+msgstr ""
