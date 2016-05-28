@@ -171,7 +171,7 @@ class Blindscan(ConfigListScreen, Screen):
 			self["green"] = Label(_("Start scan"))
 			self["blue"] = Label("")
 			self["introduction"] = Label("")
-			self.createSetup()
+			self.createSetup(True)
 			self.keyBlue()
 		else :
 			self["actions"] = ActionMap(["ColorActions", "SetupActions", 'DirectionActions'],
@@ -346,7 +346,7 @@ class Blindscan(ConfigListScreen, Screen):
 					if hasattr(self.session, 'pip'):
 						del self.session.pip
 					self.openFrontend()
-		if self.frontend == None :
+		if self.frontend == None:
 			text = _("Sorry, this tuner is in use.")
 			if self.session.nav.getRecordings():
 				text += "\n"
@@ -468,7 +468,7 @@ class Blindscan(ConfigListScreen, Screen):
 			index = index + 1
 		return -1
 
-	def createSetup(self):
+	def createSetup(self, first_start=False):
 		self.list = []
 		self.multiscanlist = []
 		if self.scan_nims == []:
@@ -512,7 +512,12 @@ class Blindscan(ConfigListScreen, Screen):
 				self.list.append(getConfigListEntry(_("Only free scan"), self.scan_onlyfree,_('If you select "yes" the scan will only save channels that are not encrypted; "no" will find encrypted and non-encrypted channels')))
 			self["config"].list = self.list
 			self["config"].l.setList(self.list)
-			self.startDishMovingIfRotorSat()
+			if first_start:
+				self.firstTimer = eTimer()
+				self.firstTimer.callback.append(self.startDishMovingIfRotorSat)
+				self.firstTimer.start(1000, True)
+			else:
+				self.startDishMovingIfRotorSat()
 
 	def newConfig(self):
 		cur = self["config"].getCurrent()
