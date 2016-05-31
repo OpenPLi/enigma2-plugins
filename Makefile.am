@@ -73,6 +73,7 @@ SUBDIRS = \
 	tageditor \
 	trafficinfo \
 	transcodingsetup \
+	transmission \
 	tvcharts \
 	unwetterinfo \
 	valixdcontrol \

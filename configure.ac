@@ -456,6 +456,11 @@ transcodingsetup/src/Makefile
 transcodingsetup/po/Makefile
 transcodingsetup/meta/Makefile
 
+transmission/Makefile
+transmission/src/Makefile
+transmission/po/Makefile
+transmission/meta/Makefile
+
 tvcharts/Makefile
 tvcharts/meta/Makefile
 tvcharts/src/Makefile

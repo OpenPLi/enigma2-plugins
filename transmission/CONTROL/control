@@ -1,0 +1,6 @@
+Package: enigma2-plugin-extensions-transmission
+Version: 1.0
+Description: Bittorrent client for enigma2
+Maintainer: OpenPLi team <forum@openpli.org>
+Homepage: http://www.openpli.org
+Depends: transmission, transmission-client
