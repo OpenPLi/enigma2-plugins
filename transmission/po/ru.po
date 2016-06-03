@@ -1,0 +1,77 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-02-28 19:54+0100\n"
+"PO-Revision-Date: 2016-05-31 22:31+0300\n"
+"Language-Team: LANGUAGE <Dima-73@inbox.lv>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Last-Translator: Dimitrij <Dima-73@inbox.lv>\n"
+"Language: ru\n"
+"X-Generator: Poedit 1.8.4\n"
+
+msgid "About transmission version"
+msgstr "Информация о версии transmission"
+
+msgid "Bittorrent client for enigma2"
+msgstr "Битторрент клиент для Энигма2"
+
+msgid "Create SWAP '/media/hdd/swapfile'"
+msgstr "Создать SWAP '/media/hdd/swapfile'"
+
+msgid "Disable auto queue downloads"
+msgstr "Отключить автоматическую очередность загрузок"
+
+msgid "Disable transmission autostart"
+msgstr "Отключить автоматический старт transmission"
+
+msgid "Don't stop transmission after downloads (only queue works)"
+msgstr "Не отключать transmission после загрузок (если очередность вкл.)"
+
+msgid "Enable auto queue downloads"
+msgstr "Включить автоматическую очередность загрузок"
+
+msgid "Enable transmission autostart"
+msgstr "Включение автоматического старта transmission"
+
+msgid "Enabled SWAP when start transmission"
+msgstr "Автоматическое включение SWAP при запуске transmission"
+
+msgid "Information transmission download"
+msgstr "Информация о текущих загрузках"
+
+msgid "Not enabled SWAP when start transmission"
+msgstr "Не включать SWAP при запуске transmission"
+
+msgid "Pause all downloads"
+msgstr "Пауза всех загрузок"
+
+msgid "Restart transmission"
+msgstr "Рестарт transmission"
+
+msgid "Start transmission"
+msgstr "Запуск transmission"
+
+msgid "Stop transmission"
+msgstr "Остановка transmission"
+
+msgid "Stop transmission after downloads (only queue works)"
+msgstr "Стоп transmission после загрузок (если очередность вкл.)"
+
+msgid "Transmission"
+msgstr "Transmission"
+
+msgid "Transmission menu"
+msgstr "Меню Transmission"
+
+msgid "Unpause all downloads"
+msgstr "Возобновление всех загрузок"
+
+msgid ""
+"transmission-daemon not installed!\n"
+"Install now?"
+msgstr ""
+"transmission-daemon не установлен!\n"
+"Установить сейчас?"

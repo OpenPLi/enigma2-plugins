@@ -1,0 +1,14 @@
+<default>
+	<prerequisites>
+		<tag type="Multimedia" />
+	</prerequisites>
+	<info>
+			<name>Transmission</name>
+			<packagename>enigma2-plugin-extensions-transmission</packagename>
+			<shortdescription>Transmission menu</shortdescription>
+			<description>Bittorrent client for enigma2</description>
+	</info>
+	<files type="package"> <!-- without version, without .ipk -->
+		<file type="package" name="enigma2-plugin-extensions-transmission" />
+	</files>
+</default>

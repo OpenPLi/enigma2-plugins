@@ -1,0 +1,104 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-05-31 22:35+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: plugin.py:41 plugin.py:82
+msgid "About transmission version"
+msgstr ""
+
+#: plugin.py:94
+msgid "Bittorrent client for enigma2"
+msgstr ""
+
+#: plugin.py:37 plugin.py:73
+msgid "Create SWAP '/media/hdd/swapfile'"
+msgstr ""
+
+#: plugin.py:35 plugin.py:69
+msgid "Disable auto queue downloads"
+msgstr ""
+
+#: plugin.py:31 plugin.py:65
+msgid "Disable transmission autostart"
+msgstr ""
+
+#: plugin.py:40 plugin.py:79
+msgid "Don't stop transmission after downloads (only queue works)"
+msgstr ""
+
+#: plugin.py:34 plugin.py:67
+msgid "Enable auto queue downloads"
+msgstr ""
+
+#: plugin.py:30 plugin.py:63
+msgid "Enable transmission autostart"
+msgstr ""
+
+#: plugin.py:36 plugin.py:71
+msgid "Enabled SWAP when start transmission"
+msgstr ""
+
+#: plugin.py:26 plugin.py:51
+msgid "Information transmission download"
+msgstr ""
+
+#: plugin.py:38 plugin.py:75
+msgid "Not enabled SWAP when start transmission"
+msgstr ""
+
+#: plugin.py:32 plugin.py:53
+msgid "Pause all downloads"
+msgstr ""
+
+#: plugin.py:29 plugin.py:61
+msgid "Restart transmission"
+msgstr ""
+
+#: plugin.py:27 plugin.py:57
+msgid "Start transmission"
+msgstr ""
+
+#: plugin.py:28 plugin.py:59
+msgid "Stop transmission"
+msgstr ""
+
+#: plugin.py:39 plugin.py:77
+msgid "Stop transmission after downloads (only queue works)"
+msgstr ""
+
+#: plugin.py:94 plugin.py:95
+msgid "Transmission"
+msgstr ""
+
+#: plugin.py:24
+msgid "Transmission menu"
+msgstr ""
+
+#: plugin.py:33 plugin.py:55
+msgid "Unpause all downloads"
+msgstr ""
+
+#: plugin.py:88
+msgid "transmission-daemon"
+msgstr ""
+
+#: plugin.py:84
+msgid ""
+"transmission-daemon not installed!\n"
+"Install now?"
+msgstr ""
