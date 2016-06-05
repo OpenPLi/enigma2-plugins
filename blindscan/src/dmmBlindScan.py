@@ -753,12 +753,12 @@ class DmmBlindscan(ConfigListScreen, Screen, TransponderSearchSupport, Satellite
 		if self.tlist is None:
 			self.tlist = []
 		if self.tlist:
-			self.tlist = sorted(self.tplist, key=lambda transponder: transponder.frequency)
-			xml_location = self.createSatellitesXMLfile(self.tplist, XML_BLINDSCAN_DIR)
+			self.tlist = sorted(self.tlist, key=lambda transponder: transponder.frequency)
+			xml_location = self.createSatellitesXMLfile(self.tlist, XML_BLINDSCAN_DIR)
 			if self.search_type.value == 0 :
 				self.startScan(self.tlist, self.flags, self.feid)
 			else:
-				msg = _("Search completed. %d transponders found.\n\nDetails saved in:\n%s") % (len(self.tplist), xml_location)
+				msg = _("Search completed. %d transponders found.\n\nDetails saved in:\n%s") % (len(self.tlist), xml_location)
 				self.session.openWithCallback(self.callbackNone, MessageBox, msg, MessageBox.TYPE_INFO, timeout=300)
 		else:
 			if close_user:
