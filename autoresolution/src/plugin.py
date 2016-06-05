@@ -375,7 +375,7 @@ class AutoResSetupMenu(Screen, ConfigListScreen):
 	def apply(self):
 		for x in self["config"].list:
 			x[1].save()
-			configfile.save()
+		configfile.save()
 		self.close()
 
 	def keyLeft(self):
