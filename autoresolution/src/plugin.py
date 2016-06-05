@@ -88,6 +88,8 @@ class AutoRes(Screen):
 			})
 		self.timer = eTimer()
 		self.timer.callback.append(self.determineContent)
+		self.extra_mode1080p50 = '1080p50' in video_hw.modes_available
+		self.extra_mode1080p60 = '1080p60' in video_hw.modes_available
 		if config.av.videoport.value in config.av.videomode:
 			self.lastmode = config.av.videomode[config.av.videoport.value].value
 		config.av.videoport.addNotifier(self.defaultModeChanged)
@@ -161,8 +163,13 @@ class AutoRes(Screen):
 			print "[AutoRes] preferedmodes", preferedmodes
 			videoresolution_dictionary = {}
 			config.plugins.autoresolution.videoresolution = ConfigSubDict()
+			default_choices = ['1080p24', '1080p25', '1080p30']
+			if self.extra_mode1080p50:
+				default_choices.append('1080p50')
+			if self.extra_mode1080p60:
+				default_choices.append('1080p60')
 			for mode in resolutions:
-				choices = ['1080p24', '1080p25', '1080p30'] + preferedmodes
+				choices = default_choices + preferedmodes
 				config.plugins.autoresolution.videoresolution[mode[0]] = ConfigSelection(default = default[0], choices = choices)
 				config.plugins.autoresolution.videoresolution[mode[0]].addNotifier(self.modeConfigChanged, initial_call = False, immediate_feedback = False)
 				videoresolution_dictionary[mode[0]] = (config.plugins.autoresolution.videoresolution[mode[0]])
@@ -251,7 +258,7 @@ class AutoRes(Screen):
 			return
 		if usable:
 			mode = self.lastmode
-			if mode.find("p24") != -1 or mode.find("p25") != -1 or mode.find("p30") != -1:
+			if mode.find("p24") != -1 or mode.find("p25") != -1 or mode.find("p30") != -1 or (self.extra_mode1080p50 and mode.find("p50") != -1) or (self.extra_mode1080p60 and mode.find("p60") != -1):
 				try:
 					v = open('/proc/stb/video/videomode' , "w")
 					v.write("%s\n" % mode)
@@ -292,7 +299,11 @@ class AutoRes(Screen):
 			print "[AutoRes] switching to %s %s %s" % (port, mode, rate)
 			if config.plugins.autoresolution.showinfo.value:
 				resolutionlabel.show()
-			video_hw.setMode(port, mode, rate)
+			try:
+				video_hw.setMode(port, mode, rate)
+			except:
+				print "[AutoRes] Videomode: failed switching to", mode
+				return
 		self.lastmode = mode
 
 class ResolutionLabel(Screen):
