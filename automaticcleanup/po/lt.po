@@ -1,0 +1,193 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: enigma2-automaticcleanup\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-07-20 07:42+0100\n"
+"PO-Revision-Date: 2016-06-22 11:36+0300\n"
+"Last-Translator: Vytenis P.\n"
+"Language-Team: Vytenis P. <vyteniui@gmail.com>\n"
+"Language: lt_LT\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n"
+"%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Poedit 1.8.8\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+
+#: ../src/plugin.py:85
+msgid "void"
+msgstr "tuščias"
+
+#: ../src/plugin.py:87 ../src/plugin.py:91
+msgid "all"
+msgstr "visi"
+
+#: ../src/plugin.py:89 ../src/plugin.py:93
+msgid "cleanup disabled"
+msgstr "valymas išjungtas"
+
+#: ../src/plugin.py:89
+msgid "older than 6 months"
+msgstr "senesni, nei 6 mėnesių"
+
+#: ../src/plugin.py:89
+msgid "older than 3 months"
+msgstr "senesni, nei 3 mėnesių"
+
+#: ../src/plugin.py:89 ../src/plugin.py:93
+msgid "older than 4 weeks"
+msgstr "senesni, nei 4 savaičių"
+
+#: ../src/plugin.py:89 ../src/plugin.py:93
+msgid "older than 2 weeks"
+msgstr "senesni, nei 2 savaičių"
+
+#: ../src/plugin.py:89 ../src/plugin.py:93
+msgid "older than 1 week"
+msgstr "senesni, nei 1 savaitės"
+
+#: ../src/plugin.py:91
+msgid "last 10"
+msgstr "paskutiniai 10"
+
+#: ../src/plugin.py:91
+msgid "last 5"
+msgstr "paskutiniai 5"
+
+#: ../src/plugin.py:91
+msgid "last 3"
+msgstr "paskutiniai 3"
+
+#: ../src/plugin.py:91
+msgid "last 2"
+msgstr "paskutiniai 2"
+
+#: ../src/plugin.py:91
+msgid "only last one"
+msgstr "tik paskutinį"
+
+#: ../src/plugin.py:93
+msgid "older than 6 weeks"
+msgstr "senesni, nei 6 savaičių"
+
+#: ../src/plugin.py:93
+msgid "older than 3 days"
+msgstr "senesni, nei 3 dienų"
+
+#: ../src/plugin.py:93
+msgid "older than 1 day"
+msgstr "senesni, nei 1 dienos"
+
+#: ../src/plugin.py:93
+msgid "immediately after recording"
+msgstr "iškart po įrašymo"
+
+#: ../src/plugin.py:120 ../src/plugin.py:190 ../src/plugin.py:436
+msgid "Automatic System Cleanup Setup"
+msgstr "Automatinio sistemos valymo sąranka"
+
+#: ../src/plugin.py:125
+msgid "Delete system setting backups"
+msgstr "Šalinti sistemos nustatymų atsargines kopijas"
+
+#: ../src/plugin.py:126
+msgid ""
+"Specify, how long system setting backups shall be kept at most (even if "
+"maximum number is not yet exceeded). Latest backup will be kept anyway!"
+msgstr ""
+"Nurodykite, kiek ilgiausiai saugoti sistemos nustatymų atsargines kopijas "
+"(net jei maskimalus skaičius neviršytas). Paskutinė kopija vis tiek išliks!"
+
+#: ../src/plugin.py:127
+msgid "Maximum number of system setting backups"
+msgstr "Maksimalus sistemos nustatymų atsarginių kopijų skaičius"
+
+#: ../src/plugin.py:128
+msgid ""
+"Maximum number of system setting backups to keep, regardless of retention "
+"period."
+msgstr ""
+"Maksimalus saugomų sistemos nustatymų atsarginių kopijų skaičius, nepaisant "
+"saugojimo priodo."
+
+#: ../src/plugin.py:129
+msgid "Delete orphaned movie files"
+msgstr "Šalinti pavienius filmus"
+
+#: ../src/plugin.py:130
+msgid ""
+"If enabled, orphaned movie files will be automatically deleted from movie "
+"directories."
+msgstr ""
+"Jei įjungta, pavieniai filmai bus automatiškai ištrinti iš filmų katalogų."
+
+#: ../src/plugin.py:131
+msgid "Delete crashlogs"
+msgstr "Šalinti lūžio žurnalus"
+
+#: ../src/plugin.py:132 ../src/plugin.py:134
+msgid ""
+"Sorry, this feature is not available due to license reasons. To get the full "
+"version, please search the web for \"dreambox automaticcleanup.\""
+msgstr ""
+"Atleiskite, ši funkcija negalima dėl licencijų priežasčių. Norėdami gauti "
+"pilną versiją, ieškokite internete \"DREAMBOX automaticcleanup\"."
+
+#: ../src/plugin.py:133
+msgid "Maximum number of crashlogs"
+msgstr "Maksimalus lūžio žurnalų skaičius"
+
+#: ../src/plugin.py:146 ../src/plugin.py:149
+msgid "Delete timerlist entries"
+msgstr "Šalinti laikmačio sąrašo įrašus"
+
+#: ../src/plugin.py:147
+msgid ""
+"Timerlist cleanup is enabled in EMC plugin! To avoid crashes, we won't "
+"delete entries whilst this option is enabled in EMC."
+msgstr ""
+"Laikmačių sąrašų valymas įjungtas EMC įskiepyje! Kad išvengti lūžių, mes "
+"negalime ištrinti įrašų, kol ši parinktis įjungta EMC."
+
+#: ../src/plugin.py:150
+msgid ""
+"Specify, how long expired timer list entries shall be kept at most. "
+"Deactivated repeat timer entries won't be deleted ever."
+msgstr ""
+"Nurodykite, kiek ilgiausiai saugoti pasibaigusius laikmačio įrašus. "
+"Deaktyvuoti pakartotiniai įrašai nebus ištrinti niekada."
+
+#: ../src/plugin.py:167
+msgid "Cancel"
+msgstr "Atšaukti"
+
+#: ../src/plugin.py:168
+msgid "OK"
+msgstr "Gerai"
+
+#: ../src/plugin.py:169
+msgid "Help"
+msgstr "Pagalba"
+
+#: ../src/plugin.py:190
+msgid "Ver."
+msgstr "Vers."
+
+#: ../src/plugin.py:213
+msgid ""
+"Cleanup timerlist, orphaned movie files and stored setting backups "
+"automatically.\n"
+"\n"
+"Modify the settings to match your preferences. More detailed explanations "
+"given with each adjustable option."
+msgstr ""
+"Valyti laikmačius, pavienius filmus ir nustatymų atsargines kopijas "
+"automatiškai.\n"
+"\n"
+"Keiskite parametrus, kad atitiktų jūsų poreikius. Išsamesni paaiškinimai "
+"prie kiekvieno keičiamo nustatymo."
+
+#: ../src/plugin.py:433
+msgid "System cleanup"
+msgstr "Sistemos išvalymas"
