@@ -1,0 +1,149 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: LogoManager-PLi\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-11-28 00:00+0000\n"
+"PO-Revision-Date: 2016-06-23 17:54+0300\n"
+"Last-Translator: Vytenis P.\n"
+"Language-Team: Vytenis P. <vyteniui@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Language: lt\n"
+"X-Generator: Poedit 1.8.8\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: plugin.py:195
+msgid "Add default bootlogo to folder logos"
+msgstr "Įkelti numatytąjį įkrovos logo į logotipų katalogą"
+
+#: plugin.py:197
+msgid "Add default radio to folder logos"
+msgstr "Įkelti numatytąjį radijo logo į logotipų katalogą"
+
+#: plugin.py:19
+msgid "CF Drive"
+msgstr "CF laikmena"
+
+#: plugin.py:308
+msgid "Cancel"
+msgstr "Atšaukti"
+
+#: plugin.py:306
+msgid "Directory to scan for logos"
+msgstr "Katalogas logo paieškai"
+
+#: plugin.py:189
+msgid "Disable backdrop"
+msgstr "Išjungti foną"
+
+#: plugin.py:193
+msgid "Disable reboot"
+msgstr "Uždrausti paleidimą iš naujo"
+
+#: plugin.py:191
+msgid "Disable switch off"
+msgstr "Uždrausti išjungimą"
+
+#: plugin.py:19
+msgid "Harddisk"
+msgstr "HDD"
+
+#: plugin.py:181
+msgid "Install selected logo as..."
+msgstr "Įdiegti pasirinktą logotipą, kaip..."
+
+#: plugin.py:39 plugin.py:64 plugin.py:350 plugin.py:351
+msgid "Logo Manager"
+msgstr "Logotipų valdymas"
+
+#: plugin.py:304
+msgid "Logo manager setup"
+msgstr "Logotipų valdymo sąranka"
+
+#: plugin.py:19
+msgid "None"
+msgstr "Nieko"
+
+#: plugin.py:326
+#, python-format
+msgid "Not found directory '%s'!"
+msgstr "Katalogo '%s' nerasta!"
+
+#: plugin.py:309
+msgid "OK"
+msgstr " Gerai"
+
+#: plugin.py:204
+msgid "Open configuration"
+msgstr "Atverti konfigūraciją"
+
+#: plugin.py:205
+msgid "Please select a option:"
+msgstr "Pasirinkite variantą:"
+
+#: plugin.py:208
+#, python-format
+msgid "Really remove current logo of %s?"
+msgstr "Ar tikrai norite pašalinti dabartinį %s logotipą?"
+
+#: plugin.py:203
+msgid "Remove current logo"
+msgstr "Pašalinti esamą logotipą"
+
+#: plugin.py:199
+msgid "Reset all logos to default"
+msgstr "Atkurti numatytuosius logotipus"
+
+#: plugin.py:185
+msgid "Reset bootlogo to default"
+msgstr "Atkurti įkrovos logotipą"
+
+#: plugin.py:187
+msgid "Reset radio to default"
+msgstr "Atkurti radijo logotipą"
+
+#: plugin.py:254
+msgid "Select target for logo:"
+msgstr "Pasirinkite tikslą logotipui:"
+
+#: plugin.py:182
+msgid "Show active logos"
+msgstr "Rodyti aktyvius logotipus"
+
+#: plugin.py:179 plugin.py:183
+msgid "Show available logos"
+msgstr "Rodyti galimus logotipus"
+
+#: plugin.py:19
+msgid "USB Drive"
+msgstr "USB laikmena"
+
+#: plugin.py:54
+msgid "backdrop"
+msgstr "fonas"
+
+#: plugin.py:53 plugin.py:237
+msgid "bootlogo"
+msgstr "įkrovos logotipas"
+
+#: plugin.py:350
+msgid "manage logos to display at boottime"
+msgstr "enigma2 atvaizduojamų logotipų valdymas"
+
+#: plugin.py:55 plugin.py:275
+msgid "radio"
+msgstr "radijas"
+
+#: plugin.py:57 plugin.py:287
+msgid "reboot"
+msgstr "paleisti iš naujo"
+
+#: plugin.py:56 plugin.py:282
+msgid "switch off"
+msgstr "išjungti"
+
+#: plugin.py:40
+msgid "view bootlogo/mvi"
+msgstr "peržiūrėti įkrovos logo/mvi"
