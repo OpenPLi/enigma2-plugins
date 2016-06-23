@@ -1,0 +1,801 @@
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: EPGRefresh\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-06-22 14:31+0300\n"
+"PO-Revision-Date: 2016-06-23 08:31+0300\n"
+"Last-Translator: \n"
+"Language-Team: Vytenis P. <vyteniui@gmail.com>\n"
+"Language: lt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.8\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n"
+"%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+
+#: EPGRefresh.py:439
+#, python-format
+msgid ""
+"\n"
+"%d more services."
+msgstr ""
+"\n"
+"dar %d kanalų."
+
+#: plugin.py:188 plugin.py:213
+msgid "   (AutoZap)"
+msgstr "   (Auto perjungimas)"
+
+#: EpgLoadSaveRefresh.py:49 EpgLoadSaveRefresh.py:106
+msgid "Adding schedule..."
+msgstr "Kuriama užduotis..."
+
+#: EPGRefreshConfiguration.py:120
+msgid ""
+"After a successful refresh the AutoTimer will automatically search for new "
+"matches if this is enabled."
+msgstr ""
+"Jei čia įjungta, po sėkmingo atnaujinimo autolaikmatis automatiškai ieškos "
+"naujų atitikimų."
+
+#: EPGRefreshConfiguration.py:103
+msgid ""
+"An automated refresh will start after this time of day, but before the time "
+"specified in next setting."
+msgstr ""
+"Auto-atnaujinimas prasidės po šio dienos meto laiko, bet iki laiko, nurodyto "
+"sekančiame nustatyme."
+
+#: EPGRefreshConfiguration.py:104
+msgid ""
+"An automated refresh will start before this time of day, but after the time "
+"specified in previous setting."
+msgstr ""
+"Auto-atnaujinimas prasidės iki šio laiko, bet po laiko, nurodyto ankstesniame "
+"nustatyme."
+
+#: EPGSaveLoadConfiguration.py:158 EPGSaveLoadConfiguration.py:414
+msgid "Are you sure you want to load the EPG data from:\n"
+msgstr "Ar tikrai norite įkelti EPG duomenis iš:\n"
+
+#: EpgLoadSaveRefresh.py:154
+msgid "Are you sure you want to reload the EPG data from:\n"
+msgstr "Ar tikrai norite iš naujo įkelti EPG duomenis iš:\n"
+
+#: EPGSaveLoadConfiguration.py:160 EPGSaveLoadConfiguration.py:416
+msgid "Are you sure you want to save and load the EPG data from:\n"
+msgstr "Ar tikrai norite įrašyti ir įkelti EPG duomenis iš:\n"
+
+#: EPGSaveLoadConfiguration.py:156 EPGSaveLoadConfiguration.py:412
+#: EpgLoadSaveRefresh.py:149
+msgid "Are you sure you want to save the EPG Cache to:\n"
+msgstr "Ar tikrai norite išsaugoti EPG podėlį į:\n"
+
+#: EPGSaveLoadConfiguration.py:86
+msgid "Auto restore EPG backup on boot"
+msgstr "Automatiškai atkurti EPG atsarginę kopiją, paleidžiant"
+
+#: EPGSaveLoadConfiguration.py:86
+msgid "Auto restore EPG from backup cachefile and loading on boot."
+msgstr ""
+"Automatiškai atkurti EPG atsarginę kopiją iš podėlio ir įkelti paleidžiant."
+
+#: plugin.py:172
+msgid "AutoZap"
+msgstr "Auto perjungimas"
+
+#: plugin.py:599
+msgid "AutoZap for refreshing EPG data"
+msgstr "EPG duomenų atnaujinimui, perjungti automatiškai"
+
+#: EPGSaveLoadConfiguration.py:81
+msgid "Automatic load EPG"
+msgstr "Automatinis EPG įkėlimas"
+
+#: EPGSaveLoadConfiguration.py:81
+msgid "Automatic loading EPG from current cachefile after a specified time."
+msgstr "Automatinis įkėlimas nurodytu laiku iš paskutinio EPG podėlio failo."
+
+#: EPGSaveLoadConfiguration.py:79
+msgid "Automatic save EPG"
+msgstr "Automatinis EPG išsaugojimas"
+
+#: EPGSaveLoadConfiguration.py:79
+msgid "Automatic saving EPG in current cachefile after a specified time."
+msgstr "Automatinis išsaugojimas nurodytu laiku į EPG podėlio failą."
+
+#: EPGSaveLoadConfiguration.py:89
+msgid ""
+"Automatic switching of all the services in the current channel list after a "
+"specified time. Stop switch can only manually."
+msgstr ""
+"Automatinis visų paskutinio kanalų sąrašo kanalų išjungimas nurodytu laiku. "
+"Sustabdyti išjungimą galite tik rankiniu būdu."
+
+#: plugin.py:597 plugin.py:621
+msgid "Automatically refresh EPG"
+msgstr "Automatiškai atnaujinti EPG"
+
+#: plugin.py:71
+msgid "Background only"
+msgstr "Tik fone"
+
+#: EPGSaveLoadConfiguration.py:174
+msgid ""
+"Backup file is corrupt!\n"
+"Backup file will be deleted!"
+msgstr ""
+"Atsarginės kopijos failas sugadintas!\n"
+"Atsarginės kopijos failas bus ištrintas!"
+
+#: EPGSaveLoadConfiguration.py:181
+msgid "Backup file is not found!"
+msgstr "Atsarginės kopijos failo nerasta!"
+
+#: EPGSaveLoadConfiguration.py:170
+msgid "Backup file load!"
+msgstr "Atsarginės kopijos failo įkėlimas!"
+
+#: EPGRefreshChannelEditor.py:70
+msgid "Bouquets"
+msgstr "Bukietai"
+
+#: EPGRefreshChannelEditor.py:79 EPGRefreshConfiguration.py:144
+#: EPGRefreshConfiguration.py:312 EPGSaveLoadConfiguration.py:108
+msgid "Cancel"
+msgstr "Atšaukti"
+
+#: EPGSaveLoadConfiguration.py:87
+msgid "Changes are needed to restart enigma2."
+msgstr "Pakeitimai reikalauja enigma2 paleisti iš naujo."
+
+#: EPGRefreshChannelEditor.py:69
+msgid "Channels"
+msgstr "Kanalai"
+
+#: EPGRefreshConfiguration.py:101
+msgid "Choice days for refresh"
+msgstr "Pasirinkite dienas atnaujinimui"
+
+#: EPGSaveLoadConfiguration.py:56
+msgid "Configuration save / load EPG"
+msgstr "EPG išsaugojimo/įkėlimo konfigūravimas"
+
+#: EPGSaveLoadConfiguration.py:406 EPGSaveLoadConfiguration.py:417
+msgid "Configuration..."
+msgstr "Konfigūracija..."
+
+#: EPGSaveLoadConfiguration.py:85
+msgid "Create backup cachefile, after manual or automatic saving EPG."
+msgstr ""
+"Ranka, ar automatiškai išsaugant EPG, sukurti atsarginęEPG podėlio kopiją."
+
+#: EPGSaveLoadConfiguration.py:85
+msgid "Create backup when saving EPG"
+msgstr "Įrašant EPG, sukurti atsarginę kopiją"
+
+#: EPGSaveLoadConfiguration.py:135
+msgid "Current EPG cachefile:"
+msgstr "Paskutinis EPG podėlio failas:"
+
+#: EPGRefreshConfiguration.py:325
+msgid "Days Profile"
+msgstr "Dienų profilis"
+
+#: EPGRefreshConfiguration.py:105
+msgid "Delay if not in standby (minutes)"
+msgstr "Delsa, jei ne budėjimo būsenoje (min.)"
+
+#: EPGSaveLoadConfiguration.py:80
+msgid "Do not set too short period of time."
+msgstr "Nenustatykite per trumpo laiko tarpo."
+
+#: EPGSaveLoadConfiguration.py:405 EPGSaveLoadConfiguration.py:419
+msgid "Download EPG from exUSSR"
+msgstr "Parsisiųsti EPG iš exUSSR"
+
+#: EPGSaveLoadConfiguration.py:93
+msgid "Download internet EPG from exUSSR"
+msgstr "Internetinis EPG parsisiuntimas iš exUSSR"
+
+#: EPGSaveLoadConfiguration.py:90
+msgid "Duration to stay on service (sec) for \"AutoZap\" "
+msgstr "Kanalo perjungimo laukimo trukmė (sek.) \"auto perjungime\" "
+
+#: EPGRefreshConfiguration.py:102
+msgid "Duration to stay on service (seconds)"
+msgstr "Veikimo užlaikymo trukmė (sek.)"
+
+#: EpgLoadSaveRefresh.py:44 EpgLoadSaveRefresh.py:101
+msgid "EPG Cache Check"
+msgstr "EPG podėlio tikrinimas"
+
+#: EPGSaveLoadConfiguration.py:84
+msgid "EPG cache filename"
+msgstr "EPG podėlio failo pavadinimas"
+
+#: EPGSaveLoadConfiguration.py:83
+msgid "EPG cache path"
+msgstr "Kelias į EPG podėlį"
+
+#: EPGSaveLoadConfiguration.py:237 EPGSaveLoadConfiguration.py:474
+msgid "EPG is loaded!"
+msgstr "EPG įkeltas!"
+
+#: EPGRefreshConfiguration.py:103
+msgid "EPG refresh auto-start earliest (hh:mm)"
+msgstr "Ankstyviausias EPG atnaujinimo auto-paleidimas (hh:mm)"
+
+#: EPGRefreshConfiguration.py:104
+msgid "EPG refresh auto-start latest (hh:mm)"
+msgstr "Vėliausias EPG atnaujinimo auto-paleidimas (hh:mm)"
+
+#: EPGRefresh.py:308 PipAdapter.py:106
+msgid "EPG refresh finished."
+msgstr "EPG atnaujinimas baigtas."
+
+#: PipAdapter.py:36 RecordAdapter.py:30
+msgid "EPG refresh started in background."
+msgstr "EPG atnaujinimas pradėtas fone."
+
+#: MainPictureAdapter.py:28
+msgid "EPG refresh starts scanning channels."
+msgstr "EPG atnaujinimas pradeda skenuoti kanalus."
+
+#: EPGSaveLoadConfiguration.py:191 EPGSaveLoadConfiguration.py:428
+msgid "EPG with Linux-Sat"
+msgstr "EPG su Linux-Sat"
+
+#: plugin.py:540
+msgid "EPG-refresh now"
+msgstr "Atnaujinti EPG dabar"
+
+#: plugin.py:620
+msgid "EPGRefresh"
+msgstr "Atnaujinti EPG"
+
+#: EPGRefreshConfiguration.py:85 EPGRefreshConfiguration.py:177
+msgid "EPGRefresh Configuration"
+msgstr "EPG atnaujinimo konfigūravimas"
+
+#: EPGRefreshChannelEditor.py:59
+msgid "EPGRefresh Services"
+msgstr "EPG atnaujinimo kanalai"
+
+#: EPGRefreshConfiguration.py:147
+msgid "Edit Services"
+msgstr "Redaguoti kanalus"
+
+#: EPGRefreshChannelEditor.py:100
+msgid "Edit Services to refresh"
+msgstr "Redaguoti atnaujintinus kanalus"
+
+#: EPGRefreshChannelEditor.py:120
+msgid "Editing"
+msgstr "Redagavimas"
+
+#: EPGRefreshConfiguration.py:97
+msgid ""
+"Enable this to be able to access the EPGRefresh configuration from within "
+"the extension menu."
+msgstr ""
+"Įjunkite čia, jei norite turėti prieigą prie EPG atnaujinimo konfigūravimo "
+"iš plėtinių meniu."
+
+#: EPGRefreshConfiguration.py:119
+msgid "Extend the list of services to refresh by those your AutoTimers use?"
+msgstr "Ar išplėsti atnaujintinų kanalų sąrašą naudojamais autolaikmačio?"
+
+#: plugin.py:55
+msgid "Fake recording"
+msgstr "Netikras įrašymas"
+
+#: EPGRefresh.py:440
+msgid "Following Services have to be scanned:"
+msgstr "Šie kanalai, turi būti nuskenuoti:"
+
+#: EPGRefreshConfiguration.py:106
+msgid "Force scan even if receiver is in use"
+msgstr "Paleisti skenavimą, net jei imtuvas užimtas"
+
+#: plugin.py:72
+msgid "Foreground also"
+msgstr "Viršus taip pat"
+
+#: EPGRefreshConfiguration.py:36
+msgid "Friday"
+msgstr "Penktadienis"
+
+#: EPGRefreshConfiguration.py:123
+msgid ""
+"If \"Run AutoTimer after refresh\" and \"Shutdown after EPG refresh\" "
+"enabled and use \"Label series\" for match, set long timeout."
+msgstr ""
+"Jei nuostatos \"Paleisti autolaikmatį po atnaujinimo\" ir \"Po EPG "
+"atnaujinimo, išjungti\" įjungtos ir naudojate \"\"Pavadinimų serijos\" "
+"atitikimą, nustatykite ilgesnę delsą."
+
+#: EPGRefreshConfiguration.py:109
+msgid ""
+"If enabled, show 'EPG-refresh now' in main menu if refresh now not running."
+msgstr ""
+"Jei čia įjungta ir \"atnaujinti dabar\" neveikia, pagrindiniame meniu rodoma "
+"\"Atnaujinti EPG dabar\"."
+
+#: EPGRefreshConfiguration.py:105
+msgid ""
+"If the receiver currently isn't in standby, this is the duration which "
+"EPGRefresh will wait before retry."
+msgstr ""
+"Jei imtuvas dabar ne budėjimo būsenoje, tai yra trukmė, kiek EPG "
+"atnaujinimas lauks prieš kartojimą."
+
+#: EPGRefreshConfiguration.py:100
+msgid ""
+"If this is enabled, the plugin will wake up the receiver from deep standby "
+"if possible. Otherwise it needs to be switched on already."
+msgstr ""
+"Jei čia įjungta, įskiepis prižadins imtuvą, jei įmanoma, iš išjungtos "
+"būsenos. Kitaip jis turi būti įjungtas iš anksto."
+
+#: EPGSaveLoadConfiguration.py:88
+msgid "If you want to download from the internet russian ERG, put to yes."
+msgstr "Jei norite atsisiųsti iš interneto rusišką ERG, pasirinkite 'Taip'."
+
+#: EPGRefreshConfiguration.py:112
+msgid ""
+"If you want to refresh the EPG in background, you can choose the method "
+"which best suits your needs here, e.g. hidden, fake reocrding or regular "
+"Picture in Picture."
+msgstr ""
+"Jei norite atnaujinti EPG fone, čia galite pasirinkti geriausiai jūsų "
+"poreikius atitinkantį metodą, t.y. slaptą, netikrą įrašymą, ar įprastą "
+"vaizdą vaizde."
+
+#: EPGRefreshConfiguration.py:119
+msgid "Inherit Services from AutoTimer"
+msgstr "Perimti kanalus iš autolaikmačio"
+
+#: EPGRefreshConfiguration.py:267
+#, python-format
+msgid "Last refresh was %s"
+msgstr "Paskutinis atnaujinimas buvo %s"
+
+#: EPGSaveLoadConfiguration.py:82
+msgid "Load every (in hours)"
+msgstr "Išsaugoti kas (val.)"
+
+#: plugin.py:52
+msgid "Main Picture"
+msgstr "Pagrindinis vaizdas"
+
+#: plugin.py:533
+msgid "Manual EPG"
+msgstr "Rankinis EPG"
+
+#: EPGSaveLoadConfiguration.py:76 EPGSaveLoadConfiguration.py:402
+#: EPGSaveLoadConfiguration.py:413
+msgid "Manual load EPG"
+msgstr "Rankinis EPG įkėlimas"
+
+#: EPGSaveLoadConfiguration.py:76
+msgid "Manual loading EPG from current cachefile."
+msgstr "Automatinis EPG įkėlimas iš paskutinio EPG podėlio failo."
+
+#: EPGSaveLoadConfiguration.py:77 EPGSaveLoadConfiguration.py:403
+#: EPGSaveLoadConfiguration.py:415
+msgid "Manual reload EPG"
+msgstr "Rankinis EPG įkėlimas iš naujo"
+
+#: EPGSaveLoadConfiguration.py:78
+msgid "Manual restore EPG backup"
+msgstr "Rankinis EPG atkūrimas"
+
+#: EPGSaveLoadConfiguration.py:78
+msgid "Manual restore EPG from backup cachefile and loading."
+msgstr "Rankinis EPG atkūrimas iš paskutinio EPG podėlio failo ir įkėlimas."
+
+#: EPGSaveLoadConfiguration.py:75 EPGSaveLoadConfiguration.py:401
+#: EPGSaveLoadConfiguration.py:411
+msgid "Manual save EPG"
+msgstr "Rankinis EPG išsaugojimas"
+
+#: EPGSaveLoadConfiguration.py:75
+msgid "Manual saving EPG in current cachefile."
+msgstr "Rankinis EPG išsaugojimas į podėlio failą."
+
+#: EPGSaveLoadConfiguration.py:77
+msgid "Manual saving and loading EPG from current cachefile."
+msgstr "Rankinis išsaugojimas ir EPG įkėlimas iš podėlio failo."
+
+#: EPGRefreshConfiguration.py:32
+msgid "Monday"
+msgstr "Pirmadienis"
+
+#: EPGRefreshChannelEditor.py:82
+msgid "New"
+msgstr "Naujas"
+
+#: EPGSaveLoadConfiguration.py:206 EPGSaveLoadConfiguration.py:218
+#: EPGSaveLoadConfiguration.py:443 EPGSaveLoadConfiguration.py:455
+msgid "Not found the mounted device for EPG file!"
+msgstr "Nerasta pajungta laikmena EPG failui išsaugoti!"
+
+#: EPGRefreshChannelEditor.py:80 EPGSaveLoadConfiguration.py:109
+msgid "OK"
+msgstr "Gerai"
+
+#: PipAdapter.py:106
+msgid "PiP available now."
+msgstr "PiP dabar galimas."
+
+#: plugin.py:53
+msgid "Picture in Picture"
+msgstr "Vaizdas vaizde (PIP)"
+
+#: plugin.py:54
+msgid "Picture in Picture (hidden)"
+msgstr "Vaizdas vaizde (paslėptas)"
+
+#: PipAdapter.py:36
+msgid "Please don't use PiP meanwhile!"
+msgstr "Kol kas nenaudokite PiP!"
+
+#: EPGSaveLoadConfiguration.py:204 EPGSaveLoadConfiguration.py:216
+#: EPGSaveLoadConfiguration.py:441 EPGSaveLoadConfiguration.py:453
+msgid "Please wait..."
+msgstr "Palaukite..."
+
+#: plugin.py:68 plugin.py:69 plugin.py:99 plugin.py:100 plugin.py:101
+#: plugin.py:106 plugin.py:109
+msgid "Press OK"
+msgstr "Spauskite 'OK'"
+
+#: EPGSaveLoadConfiguration.py:93
+msgid "Press OK to download EPG with http://linux-sat.tv."
+msgstr "Kad parsisiųsti EPG iš http://linux-sat.tv, spauskite 'OK'."
+
+#: EPGRefreshConfiguration.py:95
+msgid "Press button OK in order to open the settings menu."
+msgstr "Kad atverti nustatymų meniu, spauskite 'OK'."
+
+#: EPGRefreshConfiguration.py:278 EPGSaveLoadConfiguration.py:321
+msgid "Really close without saving settings?"
+msgstr "Tikrai uždaryti neišsaugant nustatymų?"
+
+#: EPGRefreshConfiguration.py:96
+msgid "Refresh EPG automatically"
+msgstr "EPG atnaujinti automatiškai"
+
+#: EPGRefreshConfiguration.py:112
+msgid "Refresh EPG using"
+msgstr "Atnaujinti EPG, naudojant"
+
+#: EPGRefreshConfiguration.py:146
+msgid "Refresh now"
+msgstr "Atnaujinti dabar"
+
+#: plugin.py:599
+msgid "Refresh-EPG / AutoZap"
+msgstr "Atnaujinti EPG / perjungti automatiškai"
+
+#: EPGRefreshChannelEditor.py:129 EPGRefreshChannelEditor.py:177
+msgid "Refreshing"
+msgstr "Atnaujinama"
+
+#: EpgLoadSaveRefresh.py:46
+msgid "Reloading EPG Cache..."
+msgstr "EPG podėlis atnaujinamas..."
+
+#: EPGRefreshConfiguration.py:192
+msgid "Return to TV viewing"
+msgstr "Grįžti į TV laidą"
+
+#: EPGRefreshConfiguration.py:120
+msgid "Run AutoTimer after refresh"
+msgstr "Paleisti autolaikmatį po atnaujinimo"
+
+#: EPGSaveLoadConfiguration.py:187 EPGSaveLoadConfiguration.py:424
+msgid "Russian language"
+msgstr "Rusų kalba"
+
+#: EPGRefreshConfiguration.py:37
+msgid "Saturday"
+msgstr "Šeštadienis"
+
+#: EPGRefreshConfiguration.py:145 EPGRefreshConfiguration.py:313
+msgid "Save"
+msgstr "Išsaugoti"
+
+#: EPGRefreshConfiguration.py:108
+msgid "Save EPG after refresh"
+msgstr "Po EPG atnaujinimo, išsaugoti"
+
+#: EPGRefreshConfiguration.py:108
+msgid "Save EPG in current cachefile after refresh is completed."
+msgstr "Po EPG atnaujinimo pabaigos, EPG išsaugoti podėlio faile."
+
+#: EPGSaveLoadConfiguration.py:80
+msgid "Save every (in hours)"
+msgstr "Išsaugoti kas (val.)"
+
+#: EpgLoadSaveRefresh.py:103
+msgid "Saving EPG Cache..."
+msgstr "EPG podėlis išsaugomas..."
+
+#: EPGRefreshConfiguration.py:195
+msgid "Select action after refresh:"
+msgstr "Pasirinkite veiksmą po atnaujinimo:"
+
+#: EPGRefreshChannelEditor.py:170
+msgid "Select bouquet to refresh"
+msgstr "Pasirinkite bukietą atnaujinimui"
+
+#: EPGRefreshChannelEditor.py:164
+msgid "Select channel to refresh"
+msgstr "Pasirinkite kanalą atnaujinimui"
+
+#: EPGSaveLoadConfiguration.py:190 EPGSaveLoadConfiguration.py:427
+msgid "Select language for download:"
+msgstr "Pasirinkite kalba parsisiuntimui:"
+
+#: EPGRefreshConfiguration.py:98
+msgid "Select menu to add services to the EPGRefresh."
+msgstr "Pasirinkite meniu įtraukti kanalus į EPG atnaujinimą"
+
+#: EPGRefreshConfiguration.py:114
+msgid "Select mode the refresh for services/bouquets parental control."
+msgstr "Pasirinkite būdą kanalų/bukietų tėvų kontrolės atnaujinimui."
+
+#: EPGSaveLoadConfiguration.py:390
+msgid "Select options"
+msgstr "Pasirinkite parametrus"
+
+#: EPGRefreshConfiguration.py:101
+msgid ""
+"Select the day or days of the week for automatic refresh EPG. At least one "
+"day must be included."
+msgstr ""
+"Pasirinkite dieną, ar savaitės dienas automatiniam EPG atnaujinimui. Turi "
+"būti įtraukta bent viena diena."
+
+#: EPGSaveLoadConfiguration.py:84
+msgid "Select the file name EPG cache, if you do not like credit default name."
+msgstr "Pasirinkite EPG podėlio failo vardą, jei jums nepatinka numatytasis."
+
+#: EPGSaveLoadConfiguration.py:83
+msgid "Select the path to EPG cache,not recommended to use the internal flash."
+msgstr ""
+"Pasirinkite kelią į EPG podėlį. Nerekomenduojama naudoti vidinės atminties."
+
+#: EPGRefreshConfiguration.py:95
+msgid "Setup save / load EPG"
+msgstr "EPG išsaugojimo/įkėlimo sąranka"
+
+#: EPGSaveLoadConfiguration.py:89
+msgid "Show \"AutoZap\" in extension menu"
+msgstr "Rodyti 'Auto perjungimą' tarp plėtinių meniu"
+
+#: EPGRefreshConfiguration.py:98
+msgid "Show \"add to EPGRefresh\" in"
+msgstr "Rodyti 'įtraukti į EPG atnaujinimą' tarp"
+
+#: EPGRefreshConfiguration.py:109
+msgid "Show 'EPG-refresh now' in main menu"
+msgstr "Rodyti 'Atnaujinti EPG dabar' pagrindiniame meniu"
+
+#: EPGSaveLoadConfiguration.py:88
+msgid "Show download exUSSR EPG in list setup"
+msgstr "Rodyti nustatymų sąraše EPG iš exUSSR parsisiuntimą"
+
+#: EPGRefreshConfiguration.py:97
+msgid "Show in extension menu"
+msgstr "Rodyti tarp plėtinių meniu"
+
+#: EPGSaveLoadConfiguration.py:87
+msgid "Show manual change EPG in main menu"
+msgstr "Rodyti 'Rankinis EPG keitimas' pagrindiniame meniu"
+
+#: EPGRefreshConfiguration.py:99
+msgid "Show popup when refresh starts and ends"
+msgstr "Rodyti iškylantį pranešimą, kai atnaujinimas prasideda ir baigiasi"
+
+#: EPGRefreshConfiguration.py:107 EPGRefreshConfiguration.py:193
+msgid "Shutdown after EPG refresh"
+msgstr "Po EPG atnaujinimo, išjungti"
+
+#: EPGRefreshConfiguration.py:196
+msgid "Shutdown after EPG refresh enabled in setup..."
+msgstr "Po EPG atnaujinimo, išjungti įjungtas sąrankoje..."
+
+#: EPGSaveLoadConfiguration.py:132
+msgid "Size: "
+msgstr "Dydis: "
+
+#: EPGRefreshConfiguration.py:114
+msgid "Skip protected Services"
+msgstr "Praleisti apsaugotus kanalus"
+
+#: EPGSaveLoadConfiguration.py:239 EPGSaveLoadConfiguration.py:476
+msgid ""
+"Sorry, EPG was downloaded but not loaded!\n"
+"Maybe EPG file is corrupt!"
+msgstr ""
+"EPG parsisiųstas bet neįkeltas!\n"
+"Galimai, EPG failas sugadintas!"
+
+#: EPGSaveLoadConfiguration.py:242 EPGSaveLoadConfiguration.py:244
+#: EPGSaveLoadConfiguration.py:478 EPGSaveLoadConfiguration.py:480
+msgid "Sorry, the EPG download failed!"
+msgstr "EPG atsisiųsti nepavyko!"
+
+#: plugin.py:538
+msgid "Stop Running EPG-refresh"
+msgstr "Nutraukti EPG atnaujinimą"
+
+#: EPGRefresh.py:437
+msgid "Stop Running EPG-refresh?\n"
+msgstr "Nutraukti EPG atnaujinimą?\n"
+
+#: EPGRefreshConfiguration.py:38
+msgid "Sunday"
+msgstr "Sekmadienis"
+
+#: EPGSaveLoadConfiguration.py:362
+msgid "The same functions are used in Menu -> System -> EPG settings!"
+msgstr "Tos pačios funkcijos naudojamos meniu -> Sistema-> EPG nustatymai!"
+
+#: EPGSaveLoadConfiguration.py:353
+msgid "The same functions are used in plugin EPGD!!"
+msgstr "Tos pačios funkcijos naudojamos EPGD įskiepyje!!"
+
+#: EPGRefreshConfiguration.py:102 EPGSaveLoadConfiguration.py:90
+msgid ""
+"This is the duration each service/channel will stay active during a refresh."
+msgstr ""
+"Tai trukmė, kiek kiekviena paslauga, kanalas atnaujinimo metu išliks aktyvūs."
+
+#: plugin.py:147
+msgid ""
+"This might have been an automated bootup to refresh the EPG. For this to "
+"happen it is recommended to put the receiver to Standby.\n"
+"Do you want to do this now?"
+msgstr ""
+"Tai galėjo būti automatizuotas paleidimas EPG atnaujinimui. Kad tai įvyktų, "
+"rekomenduojama pereiti į budėjimo režimą.\n"
+"Ar norite tai atlikti dabar?"
+
+#: EPGSaveLoadConfiguration.py:82
+msgid ""
+"This option is not recommended to be used only in exceptional cases. Do not "
+"set too short period of time."
+msgstr ""
+"Šios parinkties naudoti nerekomenduojama, tik išskirtiniais atvejais. "
+"Nenustatykite labai trumpo laiko tarpo."
+
+#: EPGRefreshConfiguration.py:99
+msgid ""
+"This setting controls whether or not an informational message will be shown "
+"at start and completion of refresh."
+msgstr ""
+"Šis parametras nustato, ar bus rodomi informaciniai pranešimai atnaujinimo "
+"pradžioje ir pabaigoje."
+
+#: EPGRefreshConfiguration.py:106
+msgid ""
+"This setting controls whether or not the refresh will be initiated even "
+"though the receiver is active (either not in standby or currently recording)."
+msgstr ""
+"Šis parametras nustato, bus pradedamas naujinimas, ar ne, netgi jei imtuvas "
+"veikia (arba ne budėjimo, ar įrašymo būsenoje)."
+
+#: EPGRefreshConfiguration.py:107
+msgid ""
+"This setting controls whether the receiver should be set to deep standby "
+"after refresh is completed."
+msgstr "Šis parametras nustato, ar po atnaujinimo imtuvas bus išjungtas."
+
+#: EPGRefreshConfiguration.py:35
+msgid "Thursday"
+msgstr "Ketvirtadienis"
+
+#: EPGRefreshConfiguration.py:123
+msgid "Timeout shutdown after refresh for SeriesPlugin (min)"
+msgstr "Laukimo laikas išjungti po Series įskiepio duomenų atnaujinimo (min.)"
+
+#: EPGRefreshConfiguration.py:33
+msgid "Tuesday"
+msgstr "Antradienis"
+
+#: EPGSaveLoadConfiguration.py:188 EPGSaveLoadConfiguration.py:425
+msgid "Ukrainian language"
+msgstr "Ukrainiečių kalba"
+
+#: EPGRefreshConfiguration.py:96
+msgid ""
+"Unless this is enabled, EPGRefresh won't automatically run but needs to be "
+"explicitly started by the yellow button in this menu."
+msgstr ""
+"Kol čia neįjungta, EPG atnaujinimas nepasileis automatiškai, bet turi būti "
+"paleistas tiesiogiai, paspaudus 'GELTONĄ' šio meniu mygtuką."
+
+#: EPGRefreshConfiguration.py:177
+msgid "Version"
+msgstr "Versija"
+
+#: EPGRefreshConfiguration.py:100
+msgid "Wake up from deep standby for EPG refresh"
+msgstr "Prižadinti iš išjungtos būsenos EPG atnaujinimui"
+
+#: EPGRefreshConfiguration.py:34
+msgid "Wednesday"
+msgstr "Trečiadienis"
+
+#: EPGRefreshConfiguration.py:336
+msgid ""
+"You may not use this settings!\n"
+"At least one day a week should be included!"
+msgstr ""
+"Jūs negalite naudoti šių nustatymų!\n"
+"Turi būti įtraukta bent viena savaitės diena!"
+
+#: plugin.py:508
+msgid "add service to EPGRefresh"
+msgstr "įtraukti į EPG atnaujinimą kanalą"
+
+#: plugin.py:598
+msgid "add to EPGRefresh"
+msgstr "įtraukti į EPG atnaujinimą"
+
+#: plugin.py:61
+msgid "channel selection"
+msgstr "kanalo parinkimas"
+
+#: EPGRefreshChannelEditor.py:81
+msgid "delete"
+msgstr "šalinti"
+
+#: plugin.py:60
+msgid "event info"
+msgstr "informacija apie įvykį"
+
+#: plugin.py:62
+msgid "event info / channel selection"
+msgstr "informacija apie įvykį / kanalo parinkimas"
+
+#: plugin.py:629
+msgid "manual save/load EPG"
+msgstr "Rankiniu būdu išsaugoti/įkelti EPG"
+
+#: EPGRefreshConfiguration.py:263
+msgid "never"
+msgstr "niekada"
+
+#: plugin.py:59
+msgid "nowhere"
+msgstr "niekur"
+
+msgid "Show 'Stop Running EPG-refresh' in main menu"
+msgstr "Rodyti \"Stabdyti EPG atnaujinimą\" pagrindiniame meniu"
+
+msgid ""
+"If enabled, 'Stop Running EPG-refresh' will not be displayed in main menu "
+"when refresh is running."
+msgstr ""
+"Jei čia įjungta, kai atnaujinimas veikia, pagrindiniame meniu bus rodoma "
+"\"\"Stabdyti EPG atnaujinimą\"."
+
+#~ msgid "Save epg to file after EPG refresh"
+#~ msgstr "Po EPG atnaujinimo, EPG išsaugoti faile"
+
+#~ msgid ""
+#~ "This setting controls whether the cached EPG should be saved to file or "
+#~ "not."
+#~ msgstr ""
+#~ "Šis parametras nustato, ar iš mainų atminties EPG bus išsaugotas faile."
