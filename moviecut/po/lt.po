@@ -1,0 +1,175 @@
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: MovieCut\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-06-23 18:01+0300\n"
+"PO-Revision-Date: 2016-06-23 18:01+0300\n"
+"Last-Translator: Vytenis P. <vyteniui@gmail.com>\n"
+"Language-Team: Vytenis P. <vyteniui@gmail.com>\n"
+"Language: lt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.8\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n"
+"%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+
+#: plugin.py:23
+msgid "Execute cuts..."
+msgstr "Karpyti..."
+
+#: plugin.py:37
+msgid "Don't cut"
+msgstr "Nekirpti"
+
+#: plugin.py:38
+msgid "Replace the original movie with the cut movie"
+msgstr "Pakeisti originalų filmą iškirptuoju filmu"
+
+#: plugin.py:39
+msgid "Place the cut movie in a new file ending with \" cut\""
+msgstr "Išsaugoti iškirptą filmą naujame failą, su galūne \"cut\""
+
+#: plugin.py:40
+msgid "Advanced cut specification..."
+msgstr "Išplėstinis iškirpimo nustatymas..."
+
+#: plugin.py:42
+#, python-format
+msgid "How would you like to cut \"%s\"?"
+msgstr "Kaip norėtumėte kirpti \"%s\"?"
+
+#: plugin.py:86
+msgid "OK"
+msgstr "Gerai"
+
+#: plugin.py:87
+msgid "Cancel"
+msgstr "Atšaukti"
+
+#: plugin.py:95
+msgid "No"
+msgstr "Ne"
+
+#: plugin.py:95
+msgid "Yes"
+msgstr "Taip"
+
+#: plugin.py:103
+msgid "Cutlist"
+msgstr "Kirpimų sąrašas"
+
+#: plugin.py:103
+msgid "Manual specification"
+msgstr "Rankinis nustatymas"
+
+#: plugin.py:117
+msgid "Replace original:"
+msgstr "Pakeiskite originalą:"
+
+#: plugin.py:118
+msgid "New filename:"
+msgstr "Naujo failo pavadinimas:"
+
+#: plugin.py:119
+msgid "New title:"
+msgstr "Nauja antraštė:"
+
+#: plugin.py:120
+msgid "New description:"
+msgstr "Naujas aprašymas:"
+
+#: plugin.py:121
+msgid "New location:"
+msgstr "Nauja vieta:"
+
+#: plugin.py:122
+msgid "Cut source:"
+msgstr "Iškirpimo šaltinis:"
+
+#: plugin.py:123
+msgid "Cuts (an IN OUT IN OUT ... sequence of hour:min:sec)"
+msgstr "Kirpimai (PRADŽIA ... PABAIGA ... val.:min.:sek. seka)"
+
+#: plugin.py:130
+msgid "Cut Parameter Input"
+msgstr "Kirpimo pradžios parametras"
+
+#: plugin.py:178
+msgid "Choose target folder"
+msgstr "Pasirinkite paskirties katalogą"
+
+#: plugin.py:245
+#, python-format
+msgid "The movie \"%s\" is successfully cut"
+msgstr "Filmas \"%s\" sėkmingai iškirptas"
+
+#: plugin.py:246 plugin.py:247 plugin.py:248 plugin.py:249 plugin.py:250
+#: plugin.py:251 plugin.py:252 plugin.py:253 plugin.py:254 plugin.py:255
+#, python-format
+msgid "Cutting failed for movie \"%s\""
+msgstr "Filmo \"%s\" iškirpti nepavyko"
+
+#: plugin.py:246
+msgid "Bad arguments"
+msgstr "Blogi pasirinkimai"
+
+#: plugin.py:247
+msgid "Couldn't open input .ts file"
+msgstr "Nepavyko atverti įvesties .ts failo"
+
+#: plugin.py:248
+msgid "Couldn't open input .cuts file"
+msgstr "Nepavyko atverti įvesties .cuts failo"
+
+#: plugin.py:249
+msgid "Couldn't open input .ap file"
+msgstr "Nepavyko atverti įvesties .ap failo"
+
+#: plugin.py:250
+msgid "Couldn't open output .ts file"
+msgstr "Nepavyko atverti išvesties .ts failo"
+
+#: plugin.py:251
+msgid "Couldn't open output .cuts file"
+msgstr "Nepavyko atverti išvesties .cuts failo"
+
+#: plugin.py:252
+msgid "Couldn't open output .ap file"
+msgstr "Nepavyko atverti išvesties .ap failo"
+
+#: plugin.py:253
+msgid "Empty .ap file"
+msgstr "Tuščias .ap failas"
+
+#: plugin.py:254
+msgid "No cuts specified"
+msgstr "Kirpimų nenurodyta"
+
+#: plugin.py:255
+msgid "Read/write error (disk full?)"
+msgstr "Skaitymo/Rašymo klaida (HDD pilnas?)"
+
+#: plugin.py:256
+#, python-format
+msgid "Cutting was aborted for movie \"%s\""
+msgstr "Filmo \"%s\" karpymas buvo nutrauktas"
+
+#: plugin.py:275
+#, python-format
+msgid "The movie \"%s\" is cut in the background."
+msgstr "Filmas \"%s\" karpomas fone."
+
+#: plugin.py:277
+#, python-format
+msgid ""
+"Another movie is currently cut.\n"
+"The movie \"%s\" will be cut in the background after it."
+msgstr ""
+"Šiuo metu karpomas kitas filmas.\n"
+"Filmas \"%s\" bus sukarpytas fone po to."
