@@ -1,723 +1,1591 @@
-# Lithuanian translations for PACKAGE package.
-# Copyright (C) 2012 THE PACKAGE'S COPYRIGHT HOLDER
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# Automatically generated, 2012.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: AutoTimer\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-02-17 15:07+0100\n"
-"PO-Revision-Date: 2012-02-17 12:13+0100\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"POT-Creation-Date: 2016-06-24 09:25+0300\n"
+"PO-Revision-Date: 2016-06-24 16:08+0300\n"
+"Last-Translator: Vytenis P.\n"
+"Language-Team: Vytenis P. <vyteniui@gmail.com>\n"
+"Language: lt_LT\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ASCII\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n%"
-"100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Poedit 1.8.8\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n"
+"%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: ../src\n"
 
+#: AutoTimerOverview.py:136 AutoTimerSettings.py:120
+msgid " - Version: "
+msgstr " - Versija: "
+
+#: AutoTimerEditor.py:589
+msgid " 0 - timers will not be added."
+msgstr " 0 - laikmačių neįtraukti."
+
+#: AutoTimerEditor.py:111
+msgid " add AutoTimer"
+msgstr "įtraukti autolaikmatį"
+
+#: AutoPoller.py:51
 #, python-format
 msgid ""
 "%d conflict(s) encountered when trying to add new timers:\n"
 "%s"
 msgstr ""
+"%d konfliktas(-ai), bandant įtraukti naujus laikmačius:\n"
+"%s"
 
+#: AutoPoller.py:60
 #, python-format
 msgid ""
 "%d conflict(s) solved with similar timer(s):\n"
 "%s"
 msgstr ""
+"%d konfliktas(ai) išspręsta su panašiais laikmačiais:\n"
+"%s"
 
+#: AutoTimerEditor.py:228 AutoTimerEditor.py:229
 msgid "%d.%B %Y"
-msgstr ""
+msgstr "%Y %B %d."
 
+#: AutoPoller.py:51 AutoPoller.py:60
 #, python-format
 msgid "%s: %s at %s"
-msgstr ""
+msgstr "%s: %s tarp %s"
 
+#: AutoTimerEditor.py:693
 msgid "Activate VPS"
-msgstr ""
+msgstr "Aktyvuoti VPS"
 
+#: AutoTimerOverview.py:92
 msgid "Add"
-msgstr ""
+msgstr "Pridėti"
 
+#: AutoTimerSettings.py:62
+msgid "Add \"Choice list AutoTimer\" menu button to multi-EPG"
+msgstr ""
+"'Autolaikmačio sąrašo pasirinkimas' meniu mygtuką į multikanalioEPG langą"
+
+#: AutoTimerSettings.py:61
+msgid "Add \"Choice list AutoTimer\" menu button to single-EPG"
+msgstr ""
+"'Autolaikmačio sąrašo pasirinkimas' meniu mygtuką į vienkanalioEPG langą"
+
+#: plugin.py:513
+msgid "Add AutoTimer"
+msgstr "Įtraukti autolaikmatį"
+
+#: AutoTimerOverview.py:120 plugin.py:200 plugin.py:275 plugin.py:289
 msgid "Add new AutoTimer"
-msgstr ""
+msgstr "Įtraukti naują autolaikmatį"
 
+#: AutoTimerEditor.py:528
+msgid "Add services"
+msgstr "Pridėti kanalus"
+
+#: AutoTimerSettings.py:66
 msgid "Add similar timer on conflict"
-msgstr ""
+msgstr "Konflikto atveju, pridėti panašų laikmatį"
 
+#: AutoTimerSettings.py:67
 msgid "Add timer as disabled on conflict"
-msgstr ""
+msgstr "Įtraukti laikmatį, prie konflikto išjungti"
 
-msgid "Add zap timer instead of record timer?"
-msgstr ""
+#: __init__.py:72
+msgid "Advanced"
+msgstr "Išsamiai"
 
+#: AutoTimerEditor.py:659 AutoTimerImporter.py:197
 msgid "After event"
-msgstr ""
+msgstr "Po įvykio"
 
+#: AutoTimerList.py:99
+msgid "All channels"
+msgstr "Visi kanalai"
+
+#: __init__.py:36
 msgid "All non-repeating timers"
-msgstr ""
+msgstr "Visi nesikartojantys laikmačiai"
 
+#: AutoTimerSettings.py:81
+msgid "Always write config"
+msgstr "Visada rašyti konfigūraciją"
+
+#: AutoTimerEditor.py:677
 msgid "Amount of recordings left"
-msgstr ""
+msgstr "Likęs įrašų kiekis"
 
+#: AutoTimerEditor.py:315
 msgid "Any service/recording"
-msgstr ""
+msgstr "Bet kuris kanalas/įrašymas"
 
+#: AutoTimerList.py:138
+msgid "Any time"
+msgstr "Bet kada"
+
+#: plugin.py:504 plugin.py:511
+msgid "AutoTimer"
+msgstr "Autolaikmatis"
+
+#: AutoPoller.py:68
+#, python-format
+msgid ""
+"AutoTimer\n"
+"%d timer(s) were added."
+msgstr ""
+"Autolaikmatis\n"
+"%d laikmačiai įtraukti."
+
+#: AutoTimerOverview.py:292
+msgid "AutoTimer Context Menu"
+msgstr "Autolaikmačio kontekstinis meniu"
+
+#: AutoTimerEditor.py:453
 msgid "AutoTimer Editor"
-msgstr ""
+msgstr "Autolaikmačio redaktorius"
 
+#: AutoTimerEditor.py:985
 msgid "AutoTimer Filters"
-msgstr ""
+msgstr "Autolaikmačio filtrai"
 
+#: AutoTimerEditor.py:1201
 msgid "AutoTimer Services"
-msgstr ""
+msgstr "Autolaikmačio kanalai"
 
+#: AutoTimerSettings.py:46
 msgid "AutoTimer Settings"
-msgstr ""
+msgstr "Autolaikmačio nustatymai"
 
+#: AutoTimerResource.py:105
+#, python-format
+msgid "AutoTimer failed with error %s"
+msgstr "Autolaikmatis atsakė, klaida %s"
+
+#: AutoTimerOverview.py:136
 msgid "AutoTimer overview"
-msgstr ""
+msgstr "Autolaikmačio apžvalga"
 
+#: AutoTimerResource.py:488
 msgid "AutoTimer was added successfully"
-msgstr ""
+msgstr "Autolaikmatis pridėtas sėkmingai"
 
+#: AutoTimerResource.py:490
 msgid "AutoTimer was changed successfully"
-msgstr ""
+msgstr "Autolaikmatis pakeistas sėkmingai"
 
+#: AutoTimerResource.py:248
 msgid "AutoTimer was removed"
-msgstr ""
+msgstr "Autolaikmatis pašalintas"
 
+#: AutoTimerEditor.py:668
 msgid "Begin of \"after event\" timespan"
-msgstr ""
+msgstr "Laikotarpio 'po įvykio' pradžia"
 
+#: AutoTimerEditor.py:631 AutoTimerWizard.py:106
 msgid "Begin of timespan"
-msgstr ""
+msgstr "Laikotarpio pradžia"
 
+#: AutoTimerEditor.py:1212
 msgid "Bouquets"
-msgstr ""
+msgstr "Bukietai"
 
+#: AutoTimerEditor.py:576
 msgid ""
 "By enabling this events will not be matched if they don't occur on certain "
 "dates."
 msgstr ""
+"Įjungus šią parinktį, įvykiai neatitiks, jei jie nevyks tam tikromis datomis."
 
+#: AutoTimerSettings.py:71
 msgid ""
 "By enabling this you will be notified about similar timers added during "
 "automated polling. There is no intelligence involved, so it might bother you "
 "about the same conflict over and over."
 msgstr ""
+"Čia įjungę, būsite perspėti apie panašius laikmačius, įtrauktus per "
+"autoužklausas. Kadangi tai vyksta mechaniškai, ištisiniai perspėjimai apie "
+"tą patį konfliktą gali įgristi."
 
+#: AutoTimerSettings.py:70
 msgid ""
 "By enabling this you will be notified about timer conflicts found during "
 "automated polling. There is no intelligence involved, so it might bother you "
 "about the same conflict over and over."
 msgstr ""
+"Čia įjungę, būsite perspėti apie laikmačio konfliktus, rastus per "
+"autoužklausas. Kadangi tai vyksta mechaniškai, ištisiniai perspėjimai apie "
+"tą patį konfliktą gali įgristi."
 
+#: AutoTimerSettings.py:72
+msgid ""
+"By enabling this you will be notified about timer(s) added during automated "
+"polling. Just not in standby mode."
+msgstr ""
+"Čia įjungę, būsite perspėti apie laikmačius, įtrauktus per autoįkėlimą, "
+"jeigu aparatas ne budėjimo režime."
+
+#: AutoTimerEditor.py:479 AutoTimerEditor.py:1006 AutoTimerEditor.py:1221
+#: AutoTimerImporter.py:45 AutoTimerImporter.py:134 AutoTimerPreview.py:84
+#: AutoTimerSettings.py:102
 msgid "Cancel"
-msgstr ""
+msgstr "Atšaukti"
 
+#: AutoTimerEditor.py:579
 msgid "Change default recording offset?"
-msgstr ""
+msgstr "Keisti numatytą įrašymo intarpą?"
 
+#: AutoTimerEditor.py:87
 msgid "Channel Selection"
-msgstr ""
+msgstr "Kanalo pasirinkimas"
 
+#: AutoTimerEditor.py:1211
 msgid "Channels"
-msgstr ""
+msgstr "Kanalai"
 
+#: AutoTimerEditor.py:683
+msgid "Check for uniqueness in"
+msgstr "Unikalumą tikrinti"
+
+#: AutoTimerSettings.py:80
+msgid ""
+"Check the event id (eit) and remove the timer if there is no corresponding "
+"EPG event. Due to compatibility issues with SerienRecorder and IPRec, only "
+"timer created by AutoTimer are affected."
+msgstr ""
+"Patikrinti įvykio id (eit) ir pašalinti laikmatį, jei šis įvykis "
+"neegzistuoja EPG. Dėl suderinamumo problemų su SerienRecorder ir IPRec, tai "
+"veikia tik laikmačiams sukurtiems Autolaikmačio."
+
+#: plugin.py:206 plugin.py:210 plugin.py:282 plugin.py:296
+msgid "Choice list AutoTimer"
+msgstr "Autolaikmačio sąrašo pasirinkimas"
+
+#: AutoTimerEditor.py:378
 msgid "Choose target folder"
-msgstr ""
+msgstr "Pasirinkite paskirties katalogą"
 
+#: __init__.py:51
 msgid "Classic"
-msgstr ""
+msgstr "Klasika"
 
+#: AutoTimerOverview.py:276
+msgid "Clone selected timer"
+msgstr "Klonuoti pasirinktą laikmatį"
+
+#: AutoTimerOverview.py:105
 msgid "Close and forget changes"
-msgstr ""
+msgstr "Uždaryti ir atmesti pakeitimus"
 
-msgid "Close and save changes"
-msgstr ""
+#: AutoTimerOverview.py:118
+msgid "Close, save changes and search now"
+msgstr "Uždaryti, išsaugoti pakeitimus ir ieškoti"
 
+#: AutoTimerSettings.py:120
 msgid "Configure AutoTimer behavior"
-msgstr ""
+msgstr "Konfigūruoti autolaikmačio elgseną"
 
+#: AutoTimerEditor.py:695
 msgid "Control recording completely by service"
-msgstr ""
+msgstr "Valdykite įrašymą priklausomai nuo kanalo"
 
+#: AutoTimerResource.py:230
+msgid "Couldn't load config file!"
+msgstr "Konfigūracijos failo įkelti nepavyko!"
+
+#: plugin.py:519
+msgid "Create AutoTimer"
+msgstr "Sukurti autolaikmatį"
+
+#: AutoTimerOverview.py:280
 msgid "Create a new timer using the classic editor"
-msgstr ""
+msgstr "Sukurkite naują laikmatį, naudodami klasikinį redaktorių"
 
+#: AutoTimerOverview.py:282
 msgid "Create a new timer using the wizard"
-msgstr ""
+msgstr "Sukurkite naują laikmatį, naudodami vedlį"
 
+#: AutoTimerSettings.py:82
+msgid "Create debug log file"
+msgstr "Sukurti derinimo žurnalo failą"
+
+#: AutoTimerEditor.py:307
 #, python-format
 msgid "Custom (%s)"
-msgstr ""
+msgstr "Pasirinktinis (%s)"
 
+#: AutoTimerEditor.py:688
 msgid "Custom location"
-msgstr ""
+msgstr "Pasirinkta vieta"
 
+#: AutoTimerEditor.py:644
 msgid "Custom offset"
-msgstr ""
+msgstr "Pasirinktinis intarpas"
 
+#: AutoTimerEditor.py:592
+msgid ""
+"Defines where to search for duplicates (only title, short description or "
+"even extended description)"
+msgstr ""
+"Apibrėžia kur ieškoti dublikatų (tik pavadinime, trumpame aprašyme, ar net "
+"išsamiame aprašyme)"
+
+#: AutoTimerSettings.py:54
+msgid "Delay after editing (in sec)"
+msgstr "Vėlavimas po redagavimo (sek.)"
+
+#: AutoTimerOverview.py:91
 msgid "Delete"
-msgstr ""
+msgstr "Šalinti"
 
+#: AutoTimerEditor.py:610 AutoTimerWizard.py:114
 msgid "Description"
-msgstr ""
+msgstr "Aprašymas"
 
-#, python-format
-msgid "Do you really want to delete %s?"
-msgstr ""
-
+#: AutoTimerEditor.py:615
 msgid "EPG encoding"
-msgstr ""
+msgstr "EPG kodavimas"
 
+#: AutoTimerEditor.py:507
 msgid "Edit AutoTimer"
-msgstr ""
+msgstr "Redaguoti autolaikmatį"
 
+#: AutoTimerEditor.py:1028
 msgid "Edit AutoTimer filters"
-msgstr ""
+msgstr "Redaguoti autolaikmačio filtrus"
 
+#: AutoTimerEditor.py:1242
 msgid "Edit AutoTimer services"
-msgstr ""
+msgstr "Redaguoti autolaikmačio kanalus"
 
-#. TRANSLATORS: description of AutoTimer in PluginBrowser
+#: plugin.py:504 plugin.py:511
 msgid "Edit Timers and scan for new Events"
-msgstr ""
+msgstr "Redaguoti laikmačius ir ieškoti naujų įvykių"
 
+#: AutoTimerOverview.py:275
 msgid "Edit new timer defaults"
-msgstr ""
+msgstr "Redaguoti naujo laikmačio numatytąsias reikšmes"
 
+#: AutoTimerOverview.py:104
 msgid "Edit selected AutoTimer"
-msgstr ""
+msgstr "Redaguoti pasirinktą autolaikmatį"
 
+#: AutoTimerEditor.py:526
+msgid "Edit services"
+msgstr "Redaguoti kanalus"
+
+#: AutoTimerEditor.py:1264
 msgid "Editing"
-msgstr ""
+msgstr "Redagavimas"
 
+#: AutoTimerSettings.py:73
 msgid "Editor for new AutoTimers"
-msgstr ""
+msgstr "Naujų autolaikmačių redaktorius"
 
+#: AutoTimerEditor.py:1072
 msgid "Enable Filtering"
-msgstr ""
+msgstr "Įjungti filtravimą"
 
+#: AutoTimerEditor.py:1263
 msgid "Enable Service Restriction"
-msgstr ""
+msgstr "Įjungti kanalų apribojimą"
 
+#: AutoTimerSettings.py:59
+msgid ""
+"Enable this to add item for create the AutoTimer into event menu (needs "
+"restart GUI)."
+msgstr ""
+"Įjunkite čia, kad įtraukti Autolaikmačio sukūrimą įvykių meniu (grafinę "
+"aplinką reikės paleisti iš naujo)."
+
+#: AutoTimerSettings.py:58
 msgid ""
 "Enable this to be able to access the AutoTimer Overview from within the "
 "extension menu."
 msgstr ""
+"Įjunkite čia, kad prieiti prie Autolaikmačio apžvalgos iš plėtinių meniu."
 
-msgid "Enabled"
+#: AutoTimerSettings.py:60
+msgid ""
+"Enable this to be able to access the add to AutoTimer from the channel "
+"selection context menu."
 msgstr ""
+"Įjunkite čia, kad įtraukimą į Autolaikmatį matyti kanalų pasirinkimo "
+"kontekstiniame meniu (grafinę aplinką reikės paleisti iš naujo)."
 
+#: AutoTimerEditor.py:700
+msgid "Enable timer conflict detection"
+msgstr "Įjungti laikmačio konfliktų aptikimą"
+
+#: AutoTimerEditor.py:609 AutoTimerImporter.py:145 AutoTimerWizard.py:113
+msgid "Enabled"
+msgstr "Įjungta"
+
+#: AutoTimerEditor.py:566
 msgid ""
 "Encoding the channel uses for it's EPG data. You only need to change this if "
 "you're searching for special characters like the german umlauts."
 msgstr ""
+"Kanalo kodavimas, naudojamas jo EPG duomenims. Čia keiskite tik tada, jei "
+"ieškote specialių simbolių, pavyzdžiui, Vokietijos umliautai."
 
+#: AutoTimerEditor.py:669
 msgid "End of \"after event\" timespan"
-msgstr ""
+msgstr "Laikotarpio 'po įvykio' pabaiga"
 
+#: AutoTimerEditor.py:632 AutoTimerWizard.py:107
 msgid "End of timespan"
-msgstr ""
+msgstr "Laikotarpio pabaiga"
 
+#: AutoTimerEditor.py:782
+msgid "Enter or edit description"
+msgstr "Įrašykite, arba redaguokite aprašymą"
+
+#: AutoTimerEditor.py:789
+msgid "Enter or edit match title"
+msgstr "Įrašykite, arba redaguokite pavadinimo atitikimą"
+
+#: AutoTimerEditor.py:1153
+msgid "Enter or edit text"
+msgstr "Įrašykite, arba redaguokite tekstą"
+
+#: AutoTimerList.py:128
+msgid "Everyday"
+msgstr "Kasdien"
+
+#: AutoTimerImporter.py:161
 msgid "Exact match"
-msgstr ""
+msgstr "Tiksli atitiktis"
 
+#: AutoTimerEditor.py:1081 AutoTimerEditor.py:1098 AutoTimerEditor.py:1123
+#: AutoTimerEditor.py:1151
 msgid "Exclude"
-msgstr ""
+msgstr "Išskyrus"
 
+#: AutoTimerEditor.py:663
 msgid "Execute \"after event\" during timespan"
-msgstr ""
+msgstr "Vykdyti 'po įvykio' per laikotarpį"
 
+#: AutoTimerEditor.py:1073
 msgid "Filter"
-msgstr ""
+msgstr "Filtras"
 
+#: AutoTimerEditor.py:577
 msgid ""
 "First day to match events. No event that begins before this date will be "
 "matched."
 msgstr ""
+"Pirma diena, kurią turi atitikti įvykis. Įvykis, kuris prasideda prieš šią "
+"datą, nebus tinkamas."
 
+#: AutoTimerResource.py:96 plugin.py:450
 #, python-format
 msgid ""
 "Found a total of %d matching Events.\n"
-"%d Timer were added and %d modified, %d conflicts encountered, %d similars "
-"added."
+"%d Timer were added and\n"
+"%d modified,\n"
+"%d conflicts encountered,\n"
+"%d similars added."
 msgstr ""
+"Iš viso rasta %d atitinkančių įvykių.\n"
+"%d laikmačių įtraukta ir\n"
+"%d pakeista,\n"
+"%d konfliktuojančių,\n"
+"%d panašių pridėta."
 
+#: AutoTimerOverview.py:287
 msgid "Frequently asked questions"
-msgstr ""
+msgstr "Dažnai užduodami klausimai"
 
+#: AutoTimerList.py:118
+msgid "Fri"
+msgstr "Pen"
+
+#: AutoTimerEditor.py:49
 msgid "Friday"
-msgstr ""
+msgstr "penktadienis"
 
+#: AutoTimerSettings.py:65
 msgid "Guess existing timer based on begin/end"
-msgstr ""
+msgstr "Atspėti esamą laikmatį, remiantis pradžia/pabaiga"
 
+#: AutoTimerOverview.py:286
 msgid "Help"
-msgstr ""
+msgstr "Pagalba"
 
+#: AutoTimerSettings.py:79
+msgid "If 0, the popup will remain open."
+msgstr "Jei '0', iškylantis langas liks atviras."
+
+#: AutoTimerSettings.py:66
 msgid ""
 "If a timer conflict occurs, AutoTimer will search outside the timespan for a "
 "similar event and add it."
 msgstr ""
+"Jei įvyks laikmačių konfliktas, autolaikmatis ieškos analogiško įvykio už "
+"šio laikotarpio ir įtrauks jį."
 
-#, python-format
+#: AutoTimerSettings.py:78
+msgid ""
+"If enabled, the polling will be skipped if EPGRefresh is currently running."
+msgstr "Čia įjungus, užklausa bus praleista, jei vyksta EPG atjaujinimas."
+
+#: AutoTimerSettings.py:75
+msgid "If enabled, the polling will be skipped if a recording is in progress."
+msgstr "Čia įjungus, užklausa bus praleista, jei vyksta įrašymas."
+
+#: AutoTimerSettings.py:77
+msgid ""
+"If the style is advanced, you will see more information about each auto "
+"timer."
+msgstr ""
+"Jei rodoma 'Išsamiai', apie kiekvieną autolaikmatį matysite daugiau "
+"informacijos."
+
+#: AutoTimerSettings.py:82
+msgid "If this enabled, debug Autotimer write in log file."
+msgstr "Čia įjungus, Autolaikmatis rašys derinimo žurnalo failą."
+
+#: AutoTimerSettings.py:84
+msgid "If this enabled, debug log print in console mode start enigma2."
+msgstr "Čia įjungus, derinimo žurnalas bus rodomas, paleidžiant enigma2."
+
+#: AutoTimerSettings.py:65
 msgid ""
 "If this is enabled an existing timer will also be considered recording an "
-"event if it records at least 80%% of the it."
+"event if it records at least 80% of the it."
 msgstr ""
+"Pažymėjus čia, esamas laikmatis taip pat bus skaitomas įrašančiu įvykį, jei "
+"jis įrašo bent 80% to įvykio."
 
+#: AutoTimerSettings.py:62
+msgid ""
+"If this is enabled, up on the MENU button in the multi-EPG will list of "
+"choices for AutoTimer."
+msgstr ""
+"Čia įjungus, 'MENIU' mygtuko paspaudimas multikanalioEPG lange atvers "
+"Autolaikmačio pasirinkimus."
+
+#: AutoTimerSettings.py:61
+msgid ""
+"If this is enabled, up on the Menu button in the standard single-EPG will "
+"list of choices for AutoTimer."
+msgstr ""
+"Čia įjungus, 'MENIU' mygtuko paspaudimas įprastiniame vienkanalioEPG lange "
+"atvers Autolaikmačio pasirinkimus."
+
+#: AutoTimerSettings.py:69
+msgid ""
+"If this is selected, the name of the respective AutoTimer will be added as a "
+"tag to timers created by this plugin."
+msgstr ""
+"Čia įjungus, laikmačiams, sukurtiems šio įskiepio, kaip žymė, bus duotas "
+"atininkamo autolaikmačio pavadinimas."
+
+#: AutoTimerSettings.py:68
+msgid ""
+"If this is selected, the tag \"AutoTimer\" will be given to timers created "
+"by this plugin."
+msgstr ""
+"Čai įjungus, laikmačiams, sukurtiems šio įskiepio, bus duota \"autolaikmačio"
+"\" žymė."
+
+#: AutoTimerImporter.py:244
 msgid "Import AutoTimer"
-msgstr ""
+msgstr "Importuoti Autolaikmatį"
 
+#: AutoTimerOverview.py:272
 msgid "Import existing Timer"
-msgstr ""
+msgstr "Importuoti esamą laikmatį"
 
+#: AutoTimerOverview.py:273
 msgid "Import from EPG"
-msgstr ""
+msgstr "Importuoti iš EPG"
 
+#: AutoTimerEditor.py:1086 AutoTimerEditor.py:1103 AutoTimerEditor.py:1124
+#: AutoTimerEditor.py:1151
 msgid "Include"
-msgstr ""
+msgstr "Įskaitant"
 
+#: AutoTimerSettings.py:68
+msgid "Include \"AutoTimer\" in tags"
+msgstr "Pridėti 'Autolaikmatį' prie žymių"
+
+#: AutoTimerSettings.py:69
+msgid "Include AutoTimer name in tags"
+msgstr "Pridėti autolaikmačio pavadinimą prie žymių"
+
+#: AutoTimerEditor.py:596
+msgid ""
+"Label Timers with season, episode and title, according to the SeriesPlugin "
+"settings."
+msgstr ""
+"Užvadinti laikmačius sezonu, epizodu ir pavadinimu, pagal SeriesPlugin "
+"parametrus."
+
+#: AutoTimerEditor.py:698
+msgid "Label series"
+msgstr "Žymėti seriją"
+
+#: AutoTimerEditor.py:578
 msgid ""
 "Last day to match events. Events have to begin before this date to be "
 "matched."
 msgstr ""
+"Paskutinė diena, kurią įvykiai atitinka. Kad atitiktų, įvykiai turi "
+"prasidėti prieš šią datą."
 
+#: AutoTimerImporter.py:215
 msgid "Location"
-msgstr ""
+msgstr "Vieta"
 
+#: AutoTimerEditor.py:586
 msgid "Lower bound of timespan."
-msgstr ""
+msgstr "Žemutinė laikotarpio riba."
 
+#: AutoTimerEditor.py:574
 msgid ""
 "Lower bound of timespan. Nothing before this time will be matched. Offsets "
 "are not taken into account!"
 msgstr ""
+"Žemutinė laikotarpio riba. Kas žemiau šios ribos, skaitysis neatitinkantys "
+"reikalavimo. Į intarpus neatsižvelgiama!"
 
+#: AutoTimerImporter.py:172
 #, python-format
 msgid "Match Timespan: %02d:%02d - %02d:%02d"
-msgstr ""
+msgstr "Atitiks laikotarpį: %02d:%02d - %02d:%02d"
 
+#: AutoTimerEditor.py:611 AutoTimerWizard.py:115
 msgid "Match title"
-msgstr ""
+msgstr "Pavadinimas atitiks"
 
+#: AutoTimerImporter.py:154
 #, python-format
 msgid "Match title: %s"
-msgstr ""
+msgstr "Pavadinimas atitiks: %s"
 
+#: AutoTimerEditor.py:657
 msgid "Maximum duration (in m)"
-msgstr ""
+msgstr "Maksimali trukmė (min.)"
 
+#: AutoTimerEditor.py:583
 msgid ""
 "Maximum event duration to match. If an event is longer than this amount of "
 "time (without offset) it won't be matched."
 msgstr ""
+"Didžiausia įvykio trukmės riba. Kas daugiau šios ribos (neskaitant intarpų), "
+"skaitysis neatitinkantys reikalavimo."
 
+#: AutoTimerOverview.py:210
+#, python-format
+msgid ""
+"Message\n"
+"Do you really want to delete %s?"
+msgstr ""
+"Pranešimas\n"
+"Ar tikrai norite ištrinti %s?"
+
+#: AutoTimerSettings.py:64
 msgid "Modify existing timers"
-msgstr ""
+msgstr "Pakeiskite esamus laikmačius"
 
+#: AutoTimerList.py:114
+msgid "Mon"
+msgstr "Pir"
+
+#: AutoTimerEditor.py:45
 msgid "Monday"
-msgstr ""
+msgstr "pirmadienis"
 
+#: AutoTimerEditor.py:305
 msgid "Monthly"
-msgstr ""
+msgstr "Kas mėnesį"
 
+#: AutoTimerEditor.py:305
 msgid "Never"
-msgstr ""
+msgstr "Niekada"
 
+#: AutoTimerEditor.py:1009 AutoTimerEditor.py:1224
 msgid "New"
-msgstr ""
+msgstr "Naujas"
 
+#: AutoTimerEditor.py:312 AutoTimerOverview.py:213
 msgid "No"
-msgstr ""
+msgstr "Ne"
 
+#: AutoTimerEditor.py:348 AutoTimerEditor.py:403 __init__.py:34
 msgid "None"
-msgstr ""
+msgstr "Joks"
 
+#: AutoTimerEditor.py:641
 msgid "Not after"
-msgstr ""
+msgstr "Ne po"
 
+#: AutoTimerEditor.py:640
 msgid "Not before"
-msgstr ""
+msgstr "Ne anksčiau"
 
+#: AutoTimerEditor.py:589
 msgid "Number of scheduled recordings left."
-msgstr ""
+msgstr "Likęs suplanuotų įrašų skaičius."
 
+#: AutoTimerEditor.py:480 AutoTimerEditor.py:1222 AutoTimerImporter.py:46
+#: AutoTimerImporter.py:135 AutoTimerSettings.py:101
 msgid "OK"
-msgstr ""
+msgstr "Gerai"
 
+#: AutoTimerEditor.py:650
 msgid "Offset after recording (in m)"
-msgstr ""
+msgstr "Intarpas po įrašymo (min.)"
 
+#: AutoTimerEditor.py:649
 msgid "Offset before recording (in m)"
-msgstr ""
+msgstr "Intarpas prieš įrašymą (min.)"
 
+#: AutoTimerEditor.py:314
 msgid "On any service"
-msgstr ""
+msgstr "Ant bet kurio kanalo"
 
+#: AutoTimerEditor.py:313
 msgid "On same service"
-msgstr ""
+msgstr "Ant to pačio kanalo"
 
+#: __init__.py:35
 msgid "Only AutoTimers created during this session"
-msgstr ""
+msgstr "Tik autolaikmačiai, sukurti per šią sesiją"
 
+#: AutoTimerSettings.py:57
 msgid "Only add timer for next x days"
-msgstr ""
+msgstr "Tik pridėti laikmatį sekančioms x dienoms"
 
+#: AutoTimerEditor.py:625 AutoTimerWizard.py:100
 msgid "Only match during timespan"
-msgstr ""
+msgstr "Atitinka tik laikotarpiu"
 
+#: AutoTimerImporter.py:188
 #, python-format
 msgid "Only on Service: %s"
-msgstr ""
+msgstr "Tik kanale: %s"
 
+#: AutoTimerImporter.py:179
+#, python-format
+msgid "Only on Weekday: %s"
+msgstr "Tik šiokiadieniais: %s"
+
+#: AutoTimerSettings.py:76
+msgid "Only poll while in standby"
+msgstr "Užklausos tik budėjimo režime"
+
+#: AutoTimerOverview.py:111
 msgid "Open Context Menu"
-msgstr ""
+msgstr "Rodyti kontekstinį meniu"
 
+#: AutoTimerOverview.py:117
+msgid "Open Timers list"
+msgstr "Laikmačių sąrašas"
+
+#: plugin.py:278 plugin.py:292
+msgid "Open plugin"
+msgstr "Atidaryti įskiepį"
+
+#: AutoTimerEditor.py:385
+msgid "Open select location"
+msgstr "Atverti vietos pasirinkimą"
+
+#: AutoTimerEditor.py:387
+msgid "Open select location as timer name"
+msgstr "Atverti vietos pasirinkimą, kaip laikmačio vardą"
+
+#: plugin.py:199
+msgid "Open standard setup menu"
+msgstr "Atverti įprastinį sąrankos meniu"
+
+#: AutoTimerEditor.py:710
+msgid "Other filters (edit in filter menu)"
+msgstr "Kiti filtrai (redaguoti per filtrų meniu)"
+
+#: AutoTimerEditor.py:624
 msgid "Override found with alternative service"
-msgstr ""
+msgstr "Nepaisyti rastų alternatyvių kanalų"
 
+#: AutoTimerSettings.py:83
+msgid "Path debug log"
+msgstr "Kelias į derinimo žurnalą"
+
+#: AutoTimerImporter.py:331
 msgid "Please provide a Text to match"
-msgstr ""
+msgstr "Pateikite tekstą atitikimui"
 
+#: AutoTimerSettings.py:55
 msgid "Poll Interval (in h)"
-msgstr ""
+msgstr "Užklausos intervalas (val.)"
 
+#: AutoTimerSettings.py:52
 msgid "Poll automatically"
-msgstr ""
+msgstr "Užklausti automatiškai"
 
+#: AutoTimerSettings.py:79
+msgid "Popup timeout in seconds"
+msgstr "Iškylantį langą rodyti (sek.)"
+
+#: AutoTimerEditor.py:584
 msgid ""
 "Power state to change to after recordings. Select \"standard\" to not change "
 "the default behavior of enigma2 or values changed by yourself."
 msgstr ""
+"Į kokią įjungimo būseną pereiti po įrašymo. Pasirinkite 'įprastinis', kad "
+"palikti numatytąją enigma2 elgseną, arba pasitinkite pagal save."
 
+#: AutoTimerOverview.py:271
 msgid "Preview"
-msgstr ""
+msgstr "Peržiūra"
 
+#: AutoTimerPreview.py:101
 msgid "Preview AutoTimer"
-msgstr ""
+msgstr "Peržiūrėti autolaikmatį"
 
+#: plugin.py:201 plugin.py:276 plugin.py:290
+msgid "Preview for your AutoTimers"
+msgstr "Peržiūrėti Autolaikmačius"
+
+#: AutoTimerSettings.py:84
+msgid "Print shell log"
+msgstr "Spausdinti aplinkos žurnalą"
+
+#: AutoTimerEditor.py:801 AutoTimerEditor.py:1164 AutoTimerEditor.py:1335
+#: AutoTimerImporter.py:250 AutoTimerOverview.py:256
 msgid "Really close without saving settings?"
-msgstr ""
+msgstr "Tikrai uždaryti neišsaugant nustatymų?"
 
+#: AutoTimerEditor.py:672
 msgid "Record a maximum of x times"
-msgstr ""
+msgstr "Įrašyti daugiausiai x kartų"
 
+#: AutoTimerEditor.py:1273 AutoTimerEditor.py:1327
 msgid "Record on"
-msgstr ""
+msgstr "Įrašyti"
 
+#: AutoTimerSettings.py:80
+msgid "Remove not existing events"
+msgstr "Pašalinti nesamus įvykius"
+
+#: AutoTimerOverview.py:119
 msgid "Remove selected AutoTimer"
-msgstr ""
+msgstr "Pašalinti pasirinktą autolaikmatį"
 
+#: AutoTimerEditor.py:680
 msgid "Require description to be unique"
-msgstr ""
+msgstr "Aprašymas turi būti unikalus"
 
+#: AutoTimerEditor.py:678
 msgid "Reset count"
-msgstr ""
+msgstr "Išvalyti skaitklį"
 
+#: AutoTimerEditor.py:585
 msgid "Restrict \"after event\" to a certain timespan?"
-msgstr ""
+msgstr "Riboti \"po įvykio\" tam tikru laikotarpiu?"
 
+#: AutoTimerEditor.py:635
 msgid "Restrict to events on certain dates"
-msgstr ""
+msgstr "Apriboti įvykius konkrečiomis datomis"
 
+#: AutoTimerEditor.py:708
+msgid "Restriction to certain bouquets (edit in services menu)"
+msgstr "Prieigos prie bukietų apribojimas (redaguoti kanalų meniu)"
+
+#: AutoTimerEditor.py:709
+msgid "Restriction to certain days of week (edit in filter menu)"
+msgstr ""
+"Prieigos kažkuriomis savaitės dienomis apribojimas (redaguoti filtro meniu)"
+
+#: AutoTimerEditor.py:707
+msgid "Restriction to certain services (edit in services menu)"
+msgstr "Prieigos prie kanalų apribojimas (redaguoti kanalų meniu)"
+
+#: AutoTimerList.py:119
+msgid "Sat"
+msgstr "Šeš"
+
+#: AutoTimerEditor.py:50
 msgid "Saturday"
-msgstr ""
+msgstr "šeštadienis"
 
+#: AutoTimerEditor.py:1007
 msgid "Save"
-msgstr ""
+msgstr "Įrašyti"
 
+#: AutoTimerOverview.py:90
+msgid "Save and search now"
+msgstr "Išsaugoti ir ieškoti dabar"
+
+#: plugin.py:202 plugin.py:277 plugin.py:291
+msgid "Search new events matching for your AutoTimers"
+msgstr "Ieškoti naujų įvykių, atitinkančių jūsų Autolaikmačius"
+
+#: AutoTimerEditor.py:617
 msgid "Search strictness"
-msgstr ""
+msgstr "Paieškos tikslumas"
 
+#: AutoTimerEditor.py:616
 msgid "Search type"
-msgstr ""
+msgstr "Paieškos tipas"
 
+#: AutoTimerEditor.py:567
 msgid ""
-"Select \"exact match\" to enforce \"Match title\" to match exactly or "
-"\"partial match\" if you only want to search for a part of the event title."
+"Select \"exact match\" to enforce \"Match title\" to match exactly, "
+"\"partial match\" if you only want to search for a part of the event title "
+"or \"description match\" if you only want to search for a part of the event "
+"description"
 msgstr ""
+"Pasirinkite 'tikslus atitikimas', kad užklausa pavadinimą atitiktų tiksliai, "
+"'dalinis atitikimas', jei norite ieškoti tik pavadinimo dalies, arba "
+"'aprašymo atitikimas', jei norite ieškoti dalinio atitikimo aprašyme"
 
+#: AutoTimerImporter.py:60
 msgid "Select a timer to import"
-msgstr ""
+msgstr "Pasirinkite laikmatį importavimui"
 
+#: AutoTimerEditor.py:391
+msgid "Select action"
+msgstr "Pasirinkite veiksmą"
+
+#: plugin.py:295
+msgid "Select action for AutoTimer or input date/time:"
+msgstr "Pasirinkite Autolaikmačio, arba data / laikas įvesties veiksmą:"
+
+#: plugin.py:205 plugin.py:281
+msgid "Select action for AutoTimer:"
+msgstr "Pasirinkite Autolaikmačio veiksmą:"
+
+#: AutoTimerEditor.py:1311
 msgid "Select bouquet to record on"
-msgstr ""
+msgstr "Pasirinkite įrašomą bukietą"
 
+#: AutoTimerEditor.py:1305
 msgid "Select channel to record on"
-msgstr ""
+msgstr "Pasirinkite įrašomą kanalą"
 
+#: AutoTimerEditor.py:594
 msgid "Select the location to save the recording to."
-msgstr ""
+msgstr "Pasirinkite vietą, į kurią išsaugoti įrašus."
 
+#: AutoTimerEditor.py:1121
 msgid "Select type of Filter"
-msgstr ""
+msgstr "Pasirinkite filtro tipą"
 
+#: AutoTimerEditor.py:568
 msgid "Select whether or not you want to enforce case correctness."
-msgstr ""
+msgstr "Pasirinkite, norėsite, ar ne laikytis įvykio pastovumo."
 
+#: AutoTimerEditor.py:621
+msgid "Set End Time"
+msgstr "Nustatyti pabaigos laiką"
+
+#: AutoTimerEditor.py:571
+msgid ""
+"Set an end time for the timer. If you do, the timespan of the event might be "
+"blocked for recordings."
+msgstr ""
+"Nustatyti laikmačio pabaigos laiką. Jei tai padarysite, įvykio laikas gali "
+"būti blokuotas įrašymų."
+
+#: AutoTimerEditor.py:653
 msgid "Set maximum duration"
-msgstr ""
+msgstr "Nustatyti maksimalią trukmę"
 
+#: AutoTimerEditor.py:563
 msgid "Set this NO to disable this AutoTimer."
-msgstr ""
+msgstr "Pasirinkite NE, kad išjungti šį autolaikmatį."
 
+#: AutoTimerEditor.py:569
+msgid ""
+"Set timer type: zap, simple record, zap+record (always zap to service before "
+"start record)."
+msgstr ""
+"Nustatykite laikmačio tipą: perjungti, tiesiog įrašyti, perjungti ir "
+"įrašyti, (visada įjungti įrašomą kanalą)."
+
+#: AutoTimerEditor.py:570
+msgid "Set wakeup receiver type. This works only for zap timers."
+msgstr ""
+"Nustatykite imtuvo priažadinimo būdą. Tai veikia tik perjungimo laikmačiams."
+
+#: AutoTimerOverview.py:274
 msgid "Setup"
-msgstr ""
+msgstr "Sąranka"
 
+#: AutoTimerEditor.py:573
 msgid "Should this AutoTimer be restricted to a timespan?"
-msgstr ""
+msgstr "Ar apriboti šį autolaikmatį laikotarpiu?"
 
+#: AutoTimerEditor.py:582
 msgid "Should this AutoTimer only match up to a certain event duration?"
-msgstr ""
+msgstr "Ar šis autolaikmatis turi atitikti tik tam tikros trukmės įvykius?"
 
+#: AutoTimerEditor.py:593
 msgid ""
 "Should timers created by this AutoTimer be recorded to a custom location?"
 msgstr ""
+"Ar laikmačiai, sukurti šio autolaikmačio, turi būti įrašomi į pasirinktą "
+"vietą?"
 
+#: AutoTimerSettings.py:60
+msgid "Show \"add to AutoTimer\" in channel selection menu"
+msgstr "Rodyti 'įtraukti į Autolaikmatį ' kanalų pasirinkimo meniu"
+
+#: AutoTimerSettings.py:59
+msgid "Show in event menu"
+msgstr "Rodyti tarp įvykių meniu"
+
+#: AutoTimerSettings.py:58
 msgid "Show in extension menu"
-msgstr ""
+msgstr "Rodyti tarp plėtinių meniu"
 
+#: AutoTimerSettings.py:72
+msgid "Show notification on added timers"
+msgstr "Įtraukus laikmatį, rodyti pranešimą"
+
+#: AutoTimerSettings.py:70
 msgid "Show notification on conflicts"
-msgstr ""
+msgstr "Rodyti pranešimą apie konfliktus"
 
+#: AutoTimerSettings.py:71
 msgid "Show notification on similars"
-msgstr ""
+msgstr "Rodyti pranešimą apie panašumus"
 
+#: AutoTimerSettings.py:78
+msgid "Skip poll during epg refresh"
+msgstr "Praleisti užklausas atnaujinant EPG"
+
+#: AutoTimerSettings.py:75
+msgid "Skip poll during records"
+msgstr "Praleisti užklausas įrašymo metu"
+
+#: AutoTimerPreview.py:107
 msgid "Sort AutoTimer"
-msgstr ""
+msgstr "Rūšiuoti autolaikmatį"
 
+#: AutoTimerPreview.py:105
 msgid "Sort Time"
-msgstr ""
+msgstr "Rūšiavimo laikas"
 
+#: AutoTimerSettings.py:83
+msgid "Specify the name and location for the log."
+msgstr "Nurodykite žurnalo failo pavadinimą ir vietą."
+
+#: __init__.py:71
+msgid "Standard"
+msgstr "Įprastinis"
+
+#: plugin.py:288
+msgid "Standard input date/time"
+msgstr "Įprastinė data / laikas įvestis"
+
+#: AutoTimerSettings.py:53
+msgid "Startup delay (in min)"
+msgstr "Paleisties delsa (min.)"
+
+#: AutoTimerSettings.py:77
+msgid "Style auto timers list"
+msgstr "Autolaikmačių sąrašo stilius"
+
+#: AutoTimerList.py:120
+msgid "Sun"
+msgstr "Sek"
+
+#: AutoTimerEditor.py:51
 msgid "Sunday"
-msgstr ""
+msgstr "sekmadienis"
 
+#: AutoTimerSettings.py:74
 msgid "Support \"Fast Scan\"?"
-msgstr ""
+msgstr "Naudoti 'Greitą paiešką'?"
 
+#: AutoTimerEditor.py:690 AutoTimerImporter.py:224
 msgid "Tags"
-msgstr ""
+msgstr "Žymės"
 
+#: AutoTimerEditor.py:595
 msgid "Tags the Timer/Recording will have."
-msgstr ""
+msgstr "Turės žymas Laikmatis/Įrašas."
 
+#: AutoTimerEditor.py:590
 msgid ""
 "The counter can automatically be reset to the limit at certain intervals."
 msgstr ""
+"Skaitiklis gali būti atstatytas iki ribos automatiškai tam tikrais "
+"intervalais."
 
+#: AutoTimerSettings.py:73
 msgid ""
 "The editor to be used for new AutoTimers. This can either be the Wizard or "
 "the classic editor."
 msgstr ""
+"Redaktorius, naudojamas naujiems autolaikmačiams. Tai gali būti arba vedlys, "
+"arba klasikinis redaktorius."
 
+#: AutoTimerEditor.py:818
 msgid "The match attribute is mandatory."
-msgstr ""
+msgstr "Atitikimo požymis privalomas."
 
+#: AutoTimerEditor.py:564
 msgid ""
 "This is a name you can give the AutoTimer. It will be shown in the Overview "
 "and the Preview."
 msgstr ""
+"Tai pavadinimas, kurį jūs galite duoti autolaikmačiui. Jis bus rodomas "
+"apžvalgoje ir peržiūroje."
 
+#: AutoTimerSettings.py:55
 msgid ""
 "This is the delay in hours that the AutoTimer will wait after a search to "
 "search the EPG again."
 msgstr ""
+"Tai yra užlaikymas valandomis, kiek autolaikmatis lauks po paieškos, kad "
+"ieškotų EPG vėl."
 
+#: AutoTimerSettings.py:53
+msgid ""
+"This is the delay in minutes that the AutoTimer will wait on initial launch "
+"to not delay enigma2 startup time."
+msgstr ""
+"Tai yra delsa minutėmis, kiek autolaikmatis lauks po pradinio įjungimo, kad "
+"neužlaikyti enigma2 paleisties."
+
+#: AutoTimerSettings.py:54
+msgid ""
+"This is the delay in seconds that the AutoTimer will wait after editing the "
+"AutoTimers."
+msgstr ""
+"Tai delsa (sek.), kiek Autolaikmatis lauks po autolaikmačių redagavimo."
+
+#: AutoTimerSettings.py:56
+msgid "This is the duration in minutes that the AutoTimer is allowed to run."
+msgstr "Tai yra trukmė minutėmis, kiek autolaikmačiui leidžiama dirbti."
+
+#: AutoTimerEditor.py:565
 msgid ""
 "This is what will be looked for in event titles. Note that looking for e.g. "
 "german umlauts can be tricky as you have to know the encoding the channel "
 "uses."
 msgstr ""
+"Tai, kas bus ieškoma įvykių pavadinimuose. Žinokite, kad pvz. vokiškų "
+"umliautų ieškojimas gali būti sudėtingas, nes turite žinoti kanalo naudojamą "
+"rašmenų kodavimą."
 
-msgid "This setting controls the behavior when a timer matches a found event."
+#: AutoTimerEditor.py:597
+msgid ""
+"This option allows you to turn off the timer confict detection. This option "
+"is for advanced users."
 msgstr ""
+"Ši parinktis leidžia išjungti laikmačių konfliktų aptikimą. Ji skirta tik "
+"patyrusiems vartotojams."
 
+#: AutoTimerSettings.py:64
+msgid "This setting controls the behavior when a timer matches a found event."
+msgstr "Šis nustatymas nurodo elgseną, kai laikmatis atitinka surastą įvykį."
+
+#: AutoTimerSettings.py:67
 msgid ""
 "This toggles the behavior on timer conflicts. If an AutoTimer matches an "
 "event that conflicts with an existing timer it will not ignore this event "
 "but add it disabled."
 msgstr ""
+"Perjungia elgesį, esant laikmačio konfliktui. Jei autolaikmatis atitinka "
+"įvykį, prieštaraujantį esamam laikmačiui, jis neignoruos šio įvykio, bet "
+"įtrauks jį išjungtą."
 
+#: AutoTimerList.py:117
+msgid "Thur"
+msgstr "Ket"
+
+#: AutoTimerEditor.py:48
 msgid "Thursday"
-msgstr ""
+msgstr "ketvirtadienis"
 
+#: AutoTimerEditor.py:581
 msgid "Time in minutes to append to recording."
-msgstr ""
+msgstr "Laikas (min.), kurį pridėti įrašo pabaigoje."
 
+#: AutoTimerEditor.py:580
 msgid "Time in minutes to prepend to recording."
-msgstr ""
+msgstr "Laikas (min.), kurį pridėti įrašo pradžioje."
 
+#: AutoTimerSettings.py:56
+msgid "Timeout (in min)"
+msgstr "Skirtas laikas (min.)"
+
+#: AutoTimerEditor.py:618 AutoTimerImporter.py:206 AutoTimerWizard.py:116
 msgid "Timer type"
-msgstr ""
+msgstr "Laikmačio tipas"
 
+#: AutoTimerOverview.py:89 plugin.py:203 plugin.py:279 plugin.py:293
+msgid "Timers list"
+msgstr "Laikmačių sąrašas"
+
+#: AutoTimerEditor.py:324
+msgid "Title"
+msgstr "Pavadinimas"
+
+#: AutoTimerEditor.py:325
+msgid "Title and Short description"
+msgstr "Pavadinimas ir trumpas aprašymas"
+
+#: AutoTimerEditor.py:326
+msgid "Title and all descriptions"
+msgstr "Pavadinimas ir visi aprašymai"
+
+#: AutoTimerList.py:115
+msgid "Tue"
+msgstr "Ant"
+
+#: AutoTimerEditor.py:46
 msgid "Tuesday"
-msgstr ""
+msgstr "antradienis"
 
+#: AutoTimerSettings.py:52
 msgid ""
 "Unless this is enabled AutoTimer will NOT automatically look for events "
 "matching your AutoTimers but only when you leave the GUI with the green "
 "button."
 msgstr ""
+"Kol neįjungta, autolaikmatis automatiškai NEieškos įvykių, atitinkančių jūsų "
+"autolaikmačius, bet tiktai, jei jūs išeinate iš GUI su 'ŽALIU' mygtuku."
 
+#: AutoTimerEditor.py:587
 msgid "Upper bound of timespan."
-msgstr ""
+msgstr "Viršutinė laikotarpio riba."
 
+#: AutoTimerEditor.py:575
 msgid ""
 "Upper bound of timespan. Nothing after this time will be matched. Offsets "
 "are not taken into account!"
 msgstr ""
+"Viršutinė laikotarpio riba. Kas aukščiau šios ribos, skaitysis "
+"neatitinkantys reikalavimo. Į intarpus neatsižvelgiama!"
 
+#: AutoTimerEditor.py:686
 msgid "Use a custom location"
-msgstr ""
+msgstr "Naudoti pasirinktą vietą"
 
+#: AutoTimerEditor.py:598 AutoTimerEditor.py:599
+msgid "Use blue key to edit bouquets or services."
+msgstr "Bukietams ir kanalams redaguoti, naudokite 'MĖLYNĄ' mygtuką."
+
+#: AutoTimerEditor.py:600 AutoTimerEditor.py:601
+msgid "Use yellow key to edit filters."
+msgstr "Filtrams redaguoti, naudokite 'GELTONĄ' mygtuką."
+
+#: AutoTimerEditor.py:622
+msgid "Wakeup receiver for start timer"
+msgstr "Pažadinti imtuvą, kad vykdyti laikmatį"
+
+#: AutoTimerList.py:116
+msgid "Wed"
+msgstr "Tre"
+
+#: AutoTimerEditor.py:47
 msgid "Wednesday"
-msgstr ""
+msgstr "trečiadienis"
 
+#: AutoTimerEditor.py:53 AutoTimerList.py:122
 msgid "Weekday"
-msgstr ""
+msgstr "Šiokiadienis"
 
+#: AutoTimerEditor.py:52 AutoTimerList.py:121
 msgid "Weekend"
-msgstr ""
+msgstr "Savaitgalis"
 
+#: AutoTimerEditor.py:305
 msgid "Weekly (Monday)"
-msgstr ""
+msgstr "Kas savaitę (pirmadienis)"
 
+#: AutoTimerEditor.py:305
 msgid "Weekly (Sunday)"
-msgstr ""
+msgstr "Kas savaitę (sekmadienis)"
 
+#: AutoTimerSettings.py:74
 msgid ""
 "When supporting \"Fast Scan\" the service type is ignored. You don't need to "
 "enable this unless your Image supports \"Fast Scan\" and you are using it."
 msgstr ""
+"'Greitoje paieškoje', kanalų tipas yra ignoruojamas. Neverta įjungti, nebent "
+"šis atvaizdas palaiko 'Greitą paiešką' ir jūs ją naudojate."
 
+#: AutoTimerSettings.py:76
+msgid ""
+"When this is enabled AutoTimer will ONLY check for new events whilst in "
+"stanadby."
+msgstr ""
+"Kai čia įjungta, budėjimo režime autolaikmatis žiūrės TIK naujų įvykių."
+
+#: AutoTimerEditor.py:591
 msgid ""
 "When this option is enabled the AutoTimer won't match events where another "
 "timer with the same description already exists in the timer list."
 msgstr ""
+"Įjungus šią parinktį, autolaikmatis neatlikinės tų įvykių, kurių kitas "
+"laikmatis su tuo pačiu aprašymu jau yra laikmačių sąraše."
 
+#: AutoTimerEditor.py:572
 msgid ""
 "With this option enabled the channel to record on can be changed to a "
 "alternative service it is restricted to."
 msgstr ""
+"Įjungus šią parinktį, įrašomo kanalo pakeitimas alternatyviais kanalais yra "
+"apribotas."
 
+#: AutoTimerEditor.py:588
 msgid ""
 "With this option you can restrict the AutoTimer to a certain amount of "
 "scheduled recordings. Set this to 0 to disable this functionality."
 msgstr ""
+"Šia parinktimi galite apriboti autolaikmatį iki tam tikro kiekio numatytų "
+"įrašų. '0' - funkcija išjungta."
 
+#: __init__.py:52
 msgid "Wizard"
-msgstr ""
+msgstr "Vedlys"
 
+#: AutoTimerSettings.py:81
+msgid ""
+"Write the config file after every change which the user quits by saving."
+msgstr ""
+"Įrašyti konfigūracijos failą po visų pakeitimų, kuriuos vartotojas užveria "
+"išsaugant."
+
+#: AutoTimerOverview.py:211
+msgid "Yes, and delete all timers generated by this autotimer"
+msgstr "Taip, ir pašalinti visus šio autolaikmačio sugeneruotus laikmačius"
+
+#: AutoTimerOverview.py:212
+msgid "Yes, but keep timers generated by this autotimer"
+msgstr "Taip, bet išsaugoti šio autolaikmačio sugeneruotus laikmačius"
+
+#: AutoTimerSettings.py:57
 msgid ""
 "You can control for how many days in the future timers are added. Set this "
 "to 0 to disable this feature."
 msgstr ""
+"Galite pasirinkti, kelioms dienoms į priekį pridėti laikmačius. '0' - "
+"funkcija išjungta."
 
+#: AutoTimerEditor.py:827 AutoTimerImporter.py:265
 #, python-format
 msgid ""
 "You entered \"%s\" as Text to match.\n"
 "Do you want to remove trailing whitespaces?"
 msgstr ""
+"Jūs įrašėte \"%s \" tekstą atitikimui.\n"
+"Ar norite pašalinti tarpus?"
 
+#: plugin.py:400
 #, python-format
 msgid ""
 "Your config file is not well-formed:\n"
 "%s"
 msgstr ""
+"Jūsų config failas netinkamai suformuotas:\n"
+"%s"
 
-#. TRANSLATORS: AutoTimer title in MovieList (automatically opens importer, I consider this no further interaction)
+#: plugin.py:513
 msgid "add AutoTimer"
-msgstr ""
+msgstr "pridėti autolaikmatį"
 
-#. TRANSLATORS: AutoTimer title in EventInfo dialog (requires the user to select an event to base the AutoTimer on)
+#: plugin.py:515
 msgid "add AutoTimer..."
-msgstr ""
+msgstr "pridėti autolaikmatį..."
 
+#: AutoTimerEditor.py:513
 msgid "add filters"
-msgstr ""
+msgstr "pridėti filtrus"
 
-msgid "add services"
-msgstr ""
+#: AutoTimerEditor.py:191
+msgid "always"
+msgstr "visada"
 
+#: AutoTimerEditor.py:261 AutoTimerImporter.py:30
 msgid "auto"
-msgstr ""
+msgstr "auto"
 
+#: AutoTimerResource.py:281
 msgid "autotimers need a match attribute"
-msgstr ""
+msgstr "autolaikmačiams reikia atitikimo požymio"
 
+#: AutoTimerEditor.py:181
 msgid "case-insensitive search"
-msgstr ""
+msgstr "paieška, neatsižvelgiant į DIDŽIĄSIAS-mažąsias raides"
 
+#: AutoTimerEditor.py:181
 msgid "case-sensitive search"
-msgstr ""
+msgstr "paieška, atsižvelgiant į DIDŽIĄSIAS-mažąsias raides"
 
+#: AutoTimerResource.py:568
 msgid "config changed."
-msgstr ""
+msgstr "konfigūracija pakeista."
 
+#: plugin.py:375
+msgid "create AutoTimer for current event"
+msgstr "sukurti autolaikmatį šiam įvykiui"
+
+#: AutoTimerEditor.py:1008 AutoTimerEditor.py:1223
 msgid "delete"
-msgstr ""
+msgstr "šalinti"
 
+#: AutoTimerEditor.py:180
+msgid "description match"
+msgstr "aprašymo atitikimas"
+
+#: AutoTimerImporter.py:145
 msgid "disable"
-msgstr ""
+msgstr "išjungti"
 
+#: AutoTimerEditor.py:517 AutoTimerEditor.py:521 AutoTimerEditor.py:529
+#: AutoTimerEditor.py:533 AutoTimerEditor.py:537
+msgid "disabled"
+msgstr "išjungta"
+
+#: AutoTimerEditor.py:258 AutoTimerImporter.py:27
 msgid "do nothing"
-msgstr ""
+msgstr "nieko nedaryti"
 
+#: AutoTimerEditor.py:511
 msgid "edit filters"
-msgstr ""
+msgstr "redaguoti filtrus"
 
-msgid "edit services"
-msgstr ""
-
+#: AutoTimerImporter.py:145
 msgid "enable"
-msgstr ""
+msgstr "įjungti"
 
+#: AutoTimerEditor.py:515 AutoTimerEditor.py:519 AutoTimerEditor.py:531
+#: AutoTimerEditor.py:535
+msgid "enabled"
+msgstr "įjungta"
+
+#: AutoTimerEditor.py:180
 msgid "exact match"
-msgstr ""
+msgstr "tikslus atitikimas"
 
+#: AutoTimerEditor.py:260 AutoTimerImporter.py:28
 msgid "go to deep standby"
-msgstr ""
+msgstr "išjungti"
 
+#: AutoTimerEditor.py:259 AutoTimerImporter.py:29
 msgid "go to standby"
-msgstr ""
+msgstr "į budėjimo režimą"
 
+#: AutoTimerEditor.py:991
 msgid "in Description"
-msgstr ""
+msgstr "aprašyme"
 
+#: AutoTimerEditor.py:990
 msgid "in Shortdescription"
-msgstr ""
+msgstr "trumpame aprašyme"
 
+#: AutoTimerEditor.py:989
 msgid "in Title"
-msgstr ""
+msgstr "pavadinime"
 
+#: AutoTimerPreview.py:77
 msgid "mins"
-msgstr ""
+msgstr "min."
 
+#: AutoTimerResource.py:250
 msgid "missing parameter \"id\""
-msgstr ""
+msgstr "trūksta parametro \"id\""
 
+#: AutoTimerEditor.py:191
+msgid "never"
+msgstr "niekada"
+
+#: AutoTimerEditor.py:992
 msgid "on Weekday"
-msgstr ""
+msgstr "šiokiadienį"
 
+#: AutoTimerEditor.py:191
+msgid "only from deep standby"
+msgstr "tik iš išjungtos būsenos"
+
+#: AutoTimerEditor.py:191
+msgid "only from standby"
+msgstr "tik iš budėjimo būsenos"
+
+#: AutoTimerEditor.py:180
 msgid "partial match"
-msgstr ""
+msgstr "dalinis atitikimas"
 
+#: AutoTimerEditor.py:187 AutoTimerImporter.py:206
 msgid "record"
-msgstr ""
+msgstr "įrašas"
 
+#: AutoTimerEditor.py:258
 msgid "standard"
-msgstr ""
+msgstr "įprastinis"
 
+#: AutoTimerEditor.py:180
+msgid "title starts with"
+msgstr "pavadinimas prasideda"
+
+#: AutoTimerResource.py:275
 #, python-format
 msgid "unable to find timer with id %i"
-msgstr ""
+msgstr "laikmačio su id %i nerasta"
 
+#: AutoTimerEditor.py:361 AutoTimerEditor.py:362 AutoTimerEditor.py:363
+#: AutoTimerEditor.py:364
+msgid "unknown"
+msgstr "nežinoma"
+
+#: AutoTimerEditor.py:187 AutoTimerImporter.py:206
 msgid "zap"
+msgstr "perjungti"
+
+#: AutoTimerEditor.py:187
+msgid "zap and record"
+msgstr "perjungti ir įrašyti"
+
+msgid "Description - short equal extended for match"
+msgstr "Atitinka, jei trumpas aprašymas atitinka išplėstinį"
+
+msgid "Do not skip match when not description"
+msgstr "Nepraleisti atitikimo, jei aprašymo nėra"
+
+msgid ""
+"When this option enabled, short description to equal extended description if "
+"short description is empty."
 msgstr ""
+"Kai čia įjungta, trumpas aprašymas atitiks išplėstinį, jei trumpas aprašymas "
+"tuščias."
+
+msgid ""
+"When this option enabled and short description and extended description "
+"match is empty and timer title exist in match title, match is not a "
+"duplicate. Attention, this may result in double timers."
+msgstr ""
+"Kai čia įjungta ir trumpo, bei išplėstinio aprašymų atitikimų nėra, nors "
+"laikmačio pavadinimas atitinka pavadinimą, atitikimas nesiskaitys "
+"besidubliuojančiu. Dėmesio, tai gali iššaukti laikmačių dubliavimąsi."
+
+msgid " (only services from bouquets)."
+msgstr " (tik kanalai iš bukietų)."
+
+msgid "Percentage ratio for duplicates matches"
+msgstr "Procentinis santykis dublikatų atitikimui"
+
+msgid ""
+"To cater for spelling mistakes and small deviations in the EPG information, "
+"you can make the matching algorithm fuzzy by setting the percentage both "
+"programmes must be equal for. Use 100% if you only want a match when both "
+"are completely identical. Recommended default ratio 80%."
+msgstr ""
+"Kad apeiti rašybos klaidas ir smulkius nukrypimus EPG informacijoje, galite "
+"atitikimo algoritmą padaryti mažiau apibrėžtą, nustatydami abiejų programų "
+"atitikimų procentinį santykį. Naudokite 100%, tiktai kai norite visiško "
+"sutapimo. Rekomenduojamas numatytasis santykis yra 80%."
