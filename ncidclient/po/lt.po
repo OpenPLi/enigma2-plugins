@@ -1,0 +1,270 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: ncidclient\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-06-25 08:27+0300\n"
+"PO-Revision-Date: 2016-06-25 09:48+0300\n"
+"Language-Team: Vytenis P. <vyteniui@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Generator: Poedit 1.8.8\n"
+"Last-Translator: \n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Language: lt\n"
+"X-Poedit-SearchPath-0: V:/eclipse/workspaces/pydev/enigma2-plugins/enigma2-plugins/ncidclient/src\n"
+
+#: /home/dario/Plugins/ncidclient/plugin.py:44
+msgid "Germany"
+msgstr "Vokietija"
+
+#: /home/dario/Plugins/ncidclient/plugin.py:45
+msgid "The Netherlands"
+msgstr "Nyderlandai"
+
+#: /home/dario/Plugins/ncidclient/plugin.py:46
+msgid "France"
+msgstr "Prancūzija"
+
+#: /home/dario/Plugins/ncidclient/plugin.py:47
+msgid "Italy"
+msgstr "Italija"
+
+#: /home/dario/Plugins/ncidclient/plugin.py:48
+msgid "Switzerland"
+msgstr "Šveicarija"
+
+#: /home/dario/Plugins/ncidclient/plugin.py:49
+msgid "Austria"
+msgstr "Austrija"
+
+#: /home/dario/Plugins/ncidclient/plugin.py:87
+msgid "Flash"
+msgstr "Atmintinė"
+
+#: /home/dario/Plugins/ncidclient/plugin.py:88
+msgid "Compact Flash"
+msgstr "CF laikmena"
+
+#: /home/dario/Plugins/ncidclient/plugin.py:89
+msgid "USB Device"
+msgstr "USB įrenginys"
+
+#: /home/dario/Plugins/ncidclient/plugin.py:94
+msgid "Media directory"
+msgstr "Medijos katalogas"
+
+#: /home/dario/Plugins/ncidclient/plugin.py:100
+msgid "Network mount"
+msgstr "Tinklinis pajungimas"
+
+#: /home/dario/Plugins/ncidclient/plugin.py:109
+msgid "show nothing"
+msgstr "nieko nerodyti"
+
+#: /home/dario/Plugins/ncidclient/plugin.py:109
+msgid "show as list"
+msgstr "rodyti sąrašu"
+
+#: /home/dario/Plugins/ncidclient/plugin.py:109
+msgid "show each call"
+msgstr "rodyti kiekvieną skambutį"
+
+#: /home/dario/Plugins/ncidclient/plugin.py:440
+msgid "Delete"
+msgstr "Šalinti"
+
+#: /home/dario/Plugins/ncidclient/plugin.py:442
+msgid "New"
+msgstr "Naujas"
+
+#: /home/dario/Plugins/ncidclient/plugin.py:444
+msgid "Edit"
+msgstr "Redaguoti"
+
+#: /home/dario/Plugins/ncidclient/plugin.py:446
+msgid "Search"
+msgstr "Paieška"
+
+#: /home/dario/Plugins/ncidclient/plugin.py:466
+msgid "Phonebook"
+msgstr "Telefonų knyga"
+
+#: /home/dario/Plugins/ncidclient/plugin.py:520
+#, python-format
+msgid ""
+"Do you really want to delete entry for\n"
+"\n"
+"%(number)s\n"
+"\n"
+"%(name)s?"
+msgstr ""
+"Ar tikrai norite pašalinti įrašą\n"
+"\n"
+"%(number)s\n"
+"\n"
+"%(name)s?"
+
+#: /home/dario/Plugins/ncidclient/plugin.py:524
+#: /home/dario/Plugins/ncidclient/plugin.py:541
+#: /home/dario/Plugins/ncidclient/plugin.py:633
+msgid "No entry selected"
+msgstr "Įrašų nepasirinkta"
+
+#: /home/dario/Plugins/ncidclient/plugin.py:575
+#: /home/dario/Plugins/ncidclient/plugin.py:697
+msgid "Cancel"
+msgstr "Atšaukti"
+
+#: /home/dario/Plugins/ncidclient/plugin.py:577
+#: /home/dario/Plugins/ncidclient/plugin.py:699
+msgid "OK"
+msgstr " Gerai"
+
+#: /home/dario/Plugins/ncidclient/plugin.py:592
+msgid "Name"
+msgstr "Vardas"
+
+#: /home/dario/Plugins/ncidclient/plugin.py:593
+msgid "Number"
+msgstr "Numeris"
+
+#: /home/dario/Plugins/ncidclient/plugin.py:600
+msgid "Add entry to phonebook"
+msgstr "Įtraukti įrašą į telefonų knygą"
+
+#: /home/dario/Plugins/ncidclient/plugin.py:608
+msgid "Entry incomplete."
+msgstr "Įrašas nepilnas."
+
+#: /home/dario/Plugins/ncidclient/plugin.py:642
+msgid "Enter Search Terms"
+msgstr "Įrašykite ieškomą tekstą"
+
+#: /home/dario/Plugins/ncidclient/plugin.py:642
+msgid "Search phonebook"
+msgstr "Ieškoti telefonų knygoje"
+
+#: /home/dario/Plugins/ncidclient/plugin.py:718
+msgid "NCID Client - Setup"
+msgstr "'NCID Client' sąranka"
+
+#: /home/dario/Plugins/ncidclient/plugin.py:730
+msgid "Call monitoring"
+msgstr "Skambučių stebėsena"
+
+#: /home/dario/Plugins/ncidclient/plugin.py:732
+msgid "NCID server (Name or IP)"
+msgstr "NCID serveris (pavadinimas arba IP)"
+
+#: /home/dario/Plugins/ncidclient/plugin.py:733
+msgid "NCID server listening port (1-65535)"
+msgstr "NCID serververio prievadas (1 – 65535)"
+
+#: /home/dario/Plugins/ncidclient/plugin.py:735
+msgid "Show after Standby"
+msgstr "Rodyti po budėjimo"
+
+#: /home/dario/Plugins/ncidclient/plugin.py:738
+msgid "Areacode to add to calls without one (if necessary)"
+msgstr "Pridėti šį vietos kodą be vieneto (jei reikia)"
+
+#: /home/dario/Plugins/ncidclient/plugin.py:739
+msgid "Timeout for Call Notifications (seconds)"
+msgstr "Skambučiui skirtasis laikas (sek.)"
+
+#: /home/dario/Plugins/ncidclient/plugin.py:740
+msgid "Reverse Lookup Caller ID (select country below)"
+msgstr "Grįžtamasis skambinančiojo ID (pasirinkite šalį)"
+
+#: /home/dario/Plugins/ncidclient/plugin.py:742
+msgid "Country"
+msgstr "Šalis"
+
+#: /home/dario/Plugins/ncidclient/plugin.py:764
+msgid "Strip Leading 0"
+msgstr "Nuimti pradinį '0'"
+
+#: /home/dario/Plugins/ncidclient/plugin.py:765
+msgid "Show connection information popups"
+msgstr "Rodyti prisijungimo informacijos iškylantį langą"
+
+#: /home/dario/Plugins/ncidclient/plugin.py:795
+msgid "Plugin not active"
+msgstr "Įskiepis neaktyvus"
+
+#: /home/dario/Plugins/ncidclient/plugin.py:797
+msgid "No phonebook"
+msgstr "Telefonų knygos nėra"
+
+#: /home/dario/Plugins/ncidclient/plugin.py:824
+msgid "no calls"
+msgstr "be skambučių"
+
+#: /home/dario/Plugins/ncidclient/plugin.py:827
+msgid "Last 10 calls:\n"
+msgstr "Paskutiniai 10 skambučių:\n"
+
+#: /home/dario/Plugins/ncidclient/plugin.py:835
+#: /home/dario/Plugins/ncidclient/plugin.py:838
+#: /home/dario/Plugins/ncidclient/plugin.py:940
+#: /home/dario/Plugins/ncidclient/plugin.py:997
+#: /home/dario/Plugins/ncidclient/plugin.py:1017
+msgid "UNKNOWN"
+msgstr "NEŽINOMA"
+
+#: /home/dario/Plugins/ncidclient/plugin.py:874
+#, python-format
+msgid ""
+"Incoming Call on %s from\n"
+"---------------------------------------------\n"
+"%s\n"
+"%s\n"
+"---------------------------------------------"
+msgstr ""
+"Įeinantis skambutis %s nuo\n"
+"---------------------------------------------\n"
+"%s\n"
+"%s\n"
+"---------------------------------------------"
+
+#: /home/dario/Plugins/ncidclient/plugin.py:996
+msgid "number suppressed"
+msgstr "numeris blokuojamas"
+
+#: /home/dario/Plugins/ncidclient/plugin.py:1029
+msgid "Connecting to NCID Server..."
+msgstr "Jungiamasi prie NCID serverio..."
+
+#: /home/dario/Plugins/ncidclient/plugin.py:1034
+msgid "Connected to NCID Server"
+msgstr "Prisijungta prie NCID serverio"
+
+#: /home/dario/Plugins/ncidclient/plugin.py:1044
+#, python-format
+msgid ""
+"Connection to NCID Server lost\n"
+" (%s)\n"
+"retrying..."
+msgstr ""
+"Ryšys su NCID serveriu nutrūko\n"
+" (%s)\n"
+"bandoma iš naujo..."
+
+#: /home/dario/Plugins/ncidclient/plugin.py:1052
+#, python-format
+msgid ""
+"Connecting to NCID Server failed\n"
+" (%s)\n"
+"retrying..."
+msgstr ""
+"Prisijungti prie NCID serverio napavyko\n"
+" (%s)\n"
+"bandoma iš naujo..."
+
+#: /home/dario/Plugins/ncidclient/plugin.py:1102
+msgid "Display Fon calls on screen"
+msgstr "Rodyti skambučius ekrane"
