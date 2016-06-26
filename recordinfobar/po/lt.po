@@ -1,0 +1,325 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: RecInfobar\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-06-25 11:57+0300\n"
+"PO-Revision-Date: 2016-06-25 12:15+0300\n"
+"Language-Team: Vytenis P. <vyteniu@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.8\n"
+"Last-Translator: \n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Language: lt\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+
+#: plugin.py:283
+#, python-format
+msgid " (%d mins)\n"
+msgstr " (% d min.)\n"
+
+#: plugin.py:417 plugin.py:659
+#, python-format
+msgid "%s...%s (%d mins)"
+msgstr "%s...%s (%d min.)"
+
+#: plugin.py:356
+#, python-format
+msgid "+%d min / %s"
+msgstr "+%d min. / %s"
+
+#: RecInfobarSetup.py:74
+msgid "<<Only when zap to service at start timer>>"
+msgstr "<<Tik perjungiant kanalą, paleidžiant laikmatį>>"
+
+#: plugin.py:485 plugin.py:557
+msgid "All Services"
+msgstr "Visi kanalai"
+
+#: RecInfobarSetup.py:63
+msgid "Always show indicator icon when recording"
+msgstr "Įrašant, visada rodyti įrašymo piktogramą"
+
+#: RecInfobarSetup.py:60
+msgid "Anchor resizing at"
+msgstr "Keičiant dydį, susieti su"
+
+#: RecInfobarSetup.py:69
+msgid "Automatic is the default action"
+msgstr "Automatinis veiksmas - numatytasis"
+
+#: RecInfobarSetup.py:66
+msgid "Background window"
+msgstr "Fono langas"
+
+#: plugin.py:348
+#, python-format
+msgid "Bouquet: %s"
+msgstr "Bukietas: %s"
+
+#: RecInfobarSetup.py:20
+msgid "Cancel"
+msgstr "Atšaukti"
+
+#: plugin.py:70
+msgid "DD HH:MM:SS"
+msgstr "DD HH: MM: SS"
+
+#: plugin.py:71
+msgid "Dd HHh MMm SSs"
+msgstr "Dd. HHval. MMmin. SSsek."
+
+#: RecInfobarSetup.py:59
+msgid "Enable record infobar"
+msgstr "Įjungti įrašų infojuostą"
+
+#: RecInfobarSetup.py:179
+msgid ""
+"GUI needs a restart to apply changes.\n"
+"Restart the GUI now?"
+msgstr ""
+"Pakeitimams įsigalioti, grafinę aplinką reikia\n"
+"paleisti iš naujo. Paleisti iš naujo dabar?"
+
+#: plugin.py:219
+msgid "Go to Standby now?"
+msgstr "Įjungti budėjimo režimą?"
+
+#: RecInfobarSetup.py:70
+msgid "Goto standby when wakeup on a timer recording"
+msgstr "Įjungti budėjimo režimą, įsijungiant įrašymui pagal laikmatį"
+
+#: plugin.py:66
+msgid "H:M:S"
+msgstr "H:M:S"
+
+#: plugin.py:68
+msgid "HH:MM:SS"
+msgstr "HH:MM:SS"
+
+#: plugin.py:69
+msgid "HHh MMm SSs"
+msgstr "HHval. MMmin. SSsek."
+
+#: plugin.py:67
+msgid "Hh Mm Ss"
+msgstr "Hval. Mmin. Ssek."
+
+#: plugin.py:60
+msgid "M:S"
+msgstr "M:S"
+
+#: plugin.py:62
+msgid "M:SS"
+msgstr "M:SS"
+
+#: plugin.py:64
+msgid "MM:SS"
+msgstr "MM:SS"
+
+#: plugin.py:65
+msgid "MMm SSs"
+msgstr "MMmin. SSsek."
+
+#: plugin.py:63
+msgid "Mm SSs"
+msgstr "Mmin. SSsek."
+
+#: plugin.py:61
+msgid "Mm Ss"
+msgstr "Mmin. Ssek."
+
+#: plugin.py:343 plugin.py:486 plugin.py:558 plugin.py:598 plugin.py:623
+msgid "N/A"
+msgstr "N/D"
+
+#: RecInfobarSetup.py:19
+msgid "OK"
+msgstr " Gerai"
+
+#: RecInfobarSetup.py:77
+msgid "Preferred tuner for recording"
+msgstr "Pirmenybinis imtuvas įrašams"
+
+#: plugin.py:481 plugin.py:553
+msgid "Provider"
+msgstr "Tiekėjas"
+
+#: plugin.py:344
+#, python-format
+msgid "Provider: %s"
+msgstr "Tiekėjas: %s"
+
+#: plugin.py:732 plugin.py:738 plugin.py:739
+msgid "Record Infobar"
+msgstr "'Įrašų infojuosta'"
+
+#: RecInfobarSetup.py:17
+msgid "Record Infobar Setup"
+msgstr "Įrašų infojuostos sąranka"
+
+#: plugin.py:738 plugin.py:739
+msgid "Record Infobar addon"
+msgstr "Įrašų infojuostos plėtinys"
+
+#: RecInfobarSetup.py:76
+msgid "Record timelen format"
+msgstr "Įrašo laiko formatas"
+
+#: plugin.py:283
+msgid "Recording starts!\n"
+msgstr "Įrašymas prasideda!\n"
+
+#: plugin.py:58
+msgid "S"
+msgstr "S"
+
+#: plugin.py:483 plugin.py:555
+msgid "Satellites"
+msgstr "Palydovai"
+
+#: RecInfobarSetup.py:73
+msgid "Set correct position timer in channel list"
+msgstr "Nustatyti teisingą laikmačio poziciją kanalų sąraše"
+
+#: RecInfobarSetup.py:68
+msgid "Show message when zap to recording service"
+msgstr "Perjungiant į įrašomą kanalą, rodyti žinutę"
+
+#: plugin.py:59
+msgid "Ss"
+msgstr "Ssek."
+
+#: RecInfobarSetup.py:71
+msgid "Standby message screen timeout (sec)"
+msgstr "Budėjimo žinutės rodymo trukmė (sek.)"
+
+#: RecInfobarSetup.py:72
+msgid "Standby only type timer 'After event'"
+msgstr "Į budėjimą tik laikmačio 'Po įvykio' režime"
+
+#: plugin.py:353
+msgid "Stream"
+msgstr "Transliacija"
+
+#: plugin.py:283
+msgid "Switch to a recordable channel?"
+msgstr "Perjungti į įrašomą kanalą?"
+
+#: plugin.py:438 plugin.py:440
+msgid "Switched to the recording service !\n"
+msgstr "Perjungta į įrašomą kanalą!\n"
+
+#: plugin.py:355
+#, python-format
+msgid "Tuner: %s"
+msgstr "Imtuvas: %s"
+
+#: plugin.py:621
+msgid "Unknown"
+msgstr "Nežinomas"
+
+#: RecInfobarSetup.py:61 RecInfobarSetup.py:64
+msgid "X screen position"
+msgstr "X ekrano pozicija"
+
+#: RecInfobarSetup.py:62 RecInfobarSetup.py:65
+msgid "Y screen position"
+msgstr "Y ekrano pozicija"
+
+#: RecInfobarSetup.py:75
+msgid "Z screen position"
+msgstr "Z ekrano pozicija"
+
+#: RecInfobarSetup.py:67
+msgid "Zap on start service recording"
+msgstr "Pradžioje įrašo, perjungti į įrašomą kanalą"
+
+#: plugin.py:49
+msgid "all"
+msgstr "visi"
+
+#: plugin.py:49
+msgid "all, except 'nothing'"
+msgstr "visi, išskyrus 'nieko'"
+
+#: plugin.py:44
+msgid "always"
+msgstr "visada"
+
+#: plugin.py:44
+msgid "ask the user"
+msgstr "klausti"
+
+#: plugin.py:49 plugin.py:74
+msgid "auto"
+msgstr "automatiškai"
+
+#: plugin.py:49
+msgid "auto and deep standby"
+msgstr "auto ir išjungimas"
+
+#: plugin.py:41
+msgid "black"
+msgstr "juoda"
+
+#: plugin.py:438
+#, python-format
+msgid "channel: %s   prov: %s\n"
+msgstr "kanalas: %s   tiek.: %s\n"
+
+#: plugin.py:283 plugin.py:440
+#, python-format
+msgid ""
+"channel: %s   prov: %s\n"
+" %s\n"
+msgstr ""
+"kanalas: %s   tiek.: %s\n"
+" %s\n"
+
+#: plugin.py:49
+msgid "deep standby"
+msgstr "išjungti"
+
+#: plugin.py:44
+msgid "default"
+msgstr "numatytas"
+
+#: plugin.py:74
+msgid "disabled"
+msgstr "išjungtas"
+
+#: plugin.py:40
+msgid "down"
+msgstr "žemyn"
+
+#: plugin.py:283
+#, python-format
+msgid "duration:  %s ... "
+msgstr "trukmė:  %s ... "
+
+#: plugin.py:46
+msgid "no zap"
+msgstr "neperjungti"
+
+#: plugin.py:49
+msgid "standby"
+msgstr "budėjimas"
+
+#: plugin.py:40
+msgid "top"
+msgstr "viršus"
+
+#: plugin.py:41
+msgid "transparent"
+msgstr "skaidrus"
+
+#: plugin.py:46
+msgid "zap"
+msgstr "perjungti"
