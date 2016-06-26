@@ -1,0 +1,126 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-06-24 09:10+0300\n"
+"PO-Revision-Date: 2016-06-24 09:20+0300\n"
+"Language-Team: Vytenis P. <vyteniui@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.8\n"
+"Last-Translator: \n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Language: lt\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+
+#: plugin.py:37
+#, python-format
+msgid "%s plugin only this session?"
+msgstr "%s įjungti tik šiam seansui?"
+
+#: AutomaticVolumeAdjustmentSetup.py:151
+msgid "Add"
+msgstr "Pridėti"
+
+#: AutomaticVolumeAdjustmentSetup.py:150 AutomaticVolumeAdjustmentSetup.py:276
+msgid "Adjustment value"
+msgstr "Koregavimo vertė"
+
+#: plugin.py:64 plugin.py:68 plugin.py:70
+msgid "Automatic Volume Adjustment"
+msgstr "Automatinis garso reguliavimas"
+
+#: AutomaticVolumeAdjustmentSetup.py:55
+msgid "Automatic Volume Adjustment - Config"
+msgstr "Automatinis garso reguliavimas - nustatymai"
+
+#: AutomaticVolumeAdjustmentSetup.py:253
+msgid "Automatic Volume Adjustment - Entry Config"
+msgstr "Automatinis garso reguliavimas - įrašų nustatymai"
+
+#: AutomaticVolumeAdjustmentSetup.py:148
+msgid "Automatic Volume Adjustment - Service Config"
+msgstr "Automatinis garso reguliavimas - kanalų nustatymai"
+
+#: AutomaticVolumeAdjustmentConfig.py:72
+msgid "Automatic volume adjust"
+msgstr "Automatiškai reguliuoti garsą"
+
+#: AutomaticVolumeAdjustmentSetup.py:63 AutomaticVolumeAdjustmentSetup.py:261
+msgid "Cancel"
+msgstr "Atšaukti"
+
+#: AutomaticVolumeAdjustmentSetup.py:284
+msgid "Channel Selection"
+msgstr "Kanalo pasirinkimas"
+
+#: AutomaticVolumeAdjustmentSetup.py:81
+msgid "Default volume adjustment value for AC3/DTS"
+msgstr "Numatytasis AC3/DTS kanalų garso lygis"
+
+#: AutomaticVolumeAdjustmentSetup.py:154
+msgid "Delete"
+msgstr "Šalinti"
+
+#: plugin.py:36
+msgid "Disable"
+msgstr "Išjungti"
+
+#: AutomaticVolumeAdjustmentSetup.py:195
+msgid "Do you really want to delete this entry?"
+msgstr "Ar tikrai norite šalinti šį įrašą?"
+
+#: AutomaticVolumeAdjustmentSetup.py:153
+msgid "Edit"
+msgstr "Redaguoti"
+
+#: AutomaticVolumeAdjustmentSetup.py:75 plugin.py:36
+msgid "Enable"
+msgstr "Įjungti"
+
+#: AutomaticVolumeAdjustmentSetup.py:82
+msgid "Max. volume for mpeg audio"
+msgstr "Maksimalus mpeg garso lygis"
+
+#: AutomaticVolumeAdjustmentSetup.py:78
+msgid "Modus"
+msgstr "Modus"
+
+#: AutomaticVolumeAdjustmentSetup.py:64 AutomaticVolumeAdjustmentSetup.py:152
+#: AutomaticVolumeAdjustmentSetup.py:262
+msgid "OK"
+msgstr " Gerai"
+
+#: AutomaticVolumeAdjustmentConfig.py:91
+msgid "Press OK to select a service"
+msgstr "Kanalui pasirinkti, spauskite 'OK'"
+
+#: AutomaticVolumeAdjustmentConfig.py:72
+msgid "Remember service volume value"
+msgstr "Įsiminti kanalo garso lygį"
+
+#: AutomaticVolumeAdjustmentSetup.py:149 AutomaticVolumeAdjustmentSetup.py:274
+msgid "Servicename"
+msgstr "Kanalo pavadinimas"
+
+#: AutomaticVolumeAdjustmentSetup.py:83
+msgid "Services"
+msgstr "Kanalai"
+
+#: AutomaticVolumeAdjustmentSetup.py:87
+msgid "Show on/off plugin only for session in Audio menu"
+msgstr "Rodyti įskiepio paleidimą/išjungimą tik seansui garso meniu"
+
+#: AutomaticVolumeAdjustmentSetup.py:86
+msgid "Show volumebar when volume-value was changed"
+msgstr "Pakeitus garso lygį, parodyti garso juostą"
+
+#: AutomaticVolumeAdjustmentSetup.py:304
+msgid "You must select a valid service!"
+msgstr "Turite pasirinkti veikiantį kanalą!"
+
+#: plugin.py:70
+msgid "toggle on/off plugin only for session"
+msgstr "perjungti įskiepio paleidimą/išjungimą tik seansui"
