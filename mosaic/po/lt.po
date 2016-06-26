@@ -1,0 +1,39 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Mosaic\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-06-25 07:43+0300\n"
+"PO-Revision-Date: 2016-06-25 07:48+0300\n"
+"Language-Team: Vytenis P. <vyteniui@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-Basepath: .\n"
+"X-Generator: Poedit 1.8.8\n"
+"Last-Translator: \n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Language: lt\n"
+"X-Poedit-SearchPath-0: /home/aliabdul/dream/enigma2-plugins/mosaic/src\n"
+
+#: /home/aliabdul/dream/enigma2-plugins/mosaic/src/plugin.py:171
+#: /home/aliabdul/dream/enigma2-plugins/mosaic/src/plugin.py:283
+msgid "Channel: "
+msgstr "Kanalas: "
+
+#: /home/aliabdul/dream/enigma2-plugins/mosaic/src/plugin.py:177
+#, python-format
+msgid "%s does not exist!"
+msgstr "%s nėra!"
+
+#: /home/aliabdul/dream/enigma2-plugins/mosaic/src/plugin.py:298
+msgid "Error while creating screenshot. You need grab version 0.8 or higher!"
+msgstr "Klaida, kuriant ekrano nuotrauką. Jums reikia 0.8, arba naujesnės versijos!"
+
+#: /home/aliabdul/dream/enigma2-plugins/mosaic/src/plugin.py:311
+msgid "Countdown:"
+msgstr "Atvirkštinis:"
+
+#: /home/aliabdul/dream/enigma2-plugins/mosaic/src/plugin.py:368
+msgid "Mosaic"
+msgstr "'Mozaika'"
