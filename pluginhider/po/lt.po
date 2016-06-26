@@ -1,0 +1,82 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: enigma2 plugin - pluginhider\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-09-19 21:14+0100\n"
+"PO-Revision-Date: 2016-06-25 10:10+0300\n"
+"Last-Translator: Spaeleus <spaeleus@croci.org>\n"
+"Language-Team: Vytenis P. <vyteniui@gmail.com>\n"
+"Language: lt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop\n"
+"X-Poedit-Basepath: .../enigma2-plugins/pluginhider\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Generator: Poedit 1.8.8\n"
+"X-Poedit-SearchPath-0: .../enigma2-plugins/pluginhider\n"
+
+#: .../enigma2-plugins/pluginhider/src/PluginHiderSetup.py:52
+msgid "OK"
+msgstr " Gerai"
+
+#: .../enigma2-plugins/pluginhider/src/PluginHiderSetup.py:53
+msgid "Cancel"
+msgstr "Atšaukti"
+
+#: .../enigma2-plugins/pluginhider/src/PluginHiderSetup.py:55
+msgid "Run"
+msgstr "Vykdyti"
+
+#: .../enigma2-plugins/pluginhider/src/PluginHiderSetup.py:56
+msgid "Plugins"
+msgstr "Įskiepiai"
+
+#: .../enigma2-plugins/pluginhider/src/PluginHiderSetup.py:57
+msgid "Extensions"
+msgstr "Plėtiniai"
+
+#: .../enigma2-plugins/pluginhider/src/PluginHiderSetup.py:58
+msgid "Eventinfo"
+msgstr "Informacija"
+
+#: .../enigma2-plugins/pluginhider/src/PluginHiderSetup.py:67
+msgid "toggle selection"
+msgstr "sukeisti pasirinktus"
+
+#: .../enigma2-plugins/pluginhider/src/PluginHiderSetup.py:68
+msgid "end editing"
+msgstr "redagavimo pabaiga"
+
+#: .../enigma2-plugins/pluginhider/src/PluginHiderSetup.py:69
+msgid "save"
+msgstr "išsaugoti"
+
+#: .../enigma2-plugins/pluginhider/src/PluginHiderSetup.py:70
+msgid "run selected plugin"
+msgstr "paleisti pasirinktą įskiepį"
+
+#: .../enigma2-plugins/pluginhider/src/PluginHiderSetup.py:71
+msgid "select next tab"
+msgstr "pasirinkti kitą skirtuką"
+
+#: .../enigma2-plugins/pluginhider/src/PluginHiderSetup.py:72
+msgid "select previous tab"
+msgstr "pasirinkti ankstesnį skirtuką"
+
+#: .../enigma2-plugins/pluginhider/src/PluginHiderSetup.py:95
+msgid "Could not start Plugin:"
+msgstr "Nepavyko paleist įskiepio:"
+
+#: .../enigma2-plugins/pluginhider/src/PluginHiderSetup.py:95
+msgid "Unable to access InfoBar."
+msgstr "Nepavyko prieiti prie infojuostos."
+
+#: .../enigma2-plugins/pluginhider/src/PluginHiderSetup.py:122
+msgid "PluginHider Setup"
+msgstr "'PluginHider' sąranka"
+
+#: .../enigma2-plugins/pluginhider/src/plugin.py:79
+msgid "Hide Plugins"
+msgstr "Paslėpti įskiepius"
