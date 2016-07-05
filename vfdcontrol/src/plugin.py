@@ -207,11 +207,11 @@ class VFD_INISetup(ConfigListScreen, Screen):
 		self.skin = """
 			<screen position="center,center" size="500,210" title="VFD Display Setup" >
 				<widget name="config" position="20,15" size="460,150" scrollbarMode="showOnDemand" />
-				<ePixmap position="40,165" size="140,40" pixmap="skin_default/buttons/green.png" alphatest="on" />
-				<ePixmap position="180,165" size="140,40" pixmap="skin_default/buttons/red.png" alphatest="on" />
+				<ePixmap position="40,165" size="140,40" pixmap="skin_default/buttons/red.png" alphatest="on" />
+				<ePixmap position="180,165" size="140,40" pixmap="skin_default/buttons/green.png" alphatest="on" />
 				<ePixmap position="360,165" size="140,40" pixmap="skin_default/buttons/yellow.png" alphatest="on" />
-				<widget name="key_green" position="40,165" size="140,40" font="Regular;18" backgroundColor="#1f771f" zPosition="2" transparent="1" shadowColor="black" shadowOffset="-1,-1" />
-				<widget name="key_red" position="180,165" size="140,40" font="Regular;18" backgroundColor="#1f771f" zPosition="2" transparent="1" shadowColor="black" shadowOffset="-1,-1" />
+				<widget name="key_red" position="40,165" size="140,40" font="Regular;18" backgroundColor="#1f771f" zPosition="2" transparent="1" shadowColor="black" shadowOffset="-1,-1" />
+				<widget name="key_green" position="180,165" size="140,40" font="Regular;18" backgroundColor="#1f771f" zPosition="2" transparent="1" shadowColor="black" shadowOffset="-1,-1" />
 				<widget name="key_yellow" position="360,165" size="140,40" font="Regular;18" backgroundColor="#1f771f" zPosition="2" transparent="1" shadowColor="black" shadowOffset="-1,-1" />
 			</screen>"""
 
