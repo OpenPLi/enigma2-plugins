@@ -332,7 +332,8 @@ class AutoResSetupMenu(Screen, ConfigListScreen):
 		Screen.__init__(self, session)
 		self.skinName = [ "AutoResSetupMenu", "Setup" ]
 		self.setup_title = _("Autoresolution videomode setup")
-
+		from Screens.Menu import setmenu_path
+		setmenu_path(self, self.setup_title)
 		self.onChangedEntry = [ ]
 		self.list = [ ]
 		ConfigListScreen.__init__(self, self.list, session = session, on_change = self.changedEntry)
