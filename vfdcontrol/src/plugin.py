@@ -85,7 +85,7 @@ class Channelnumber:
 		if not playref:
 			return chnr
 		str_service = playref.toString()
-		if '%3a//' in str_service or str_service.rsplit(":", 1)[1].startswith("/"):
+		if not str_service.startswith("1:"):
 			return chnr
 		MYCHANSEL = InfoBar.instance.servicelist
 		markersOffset = 0
