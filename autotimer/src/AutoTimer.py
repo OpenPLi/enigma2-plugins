@@ -14,6 +14,11 @@ from ServiceReference import ServiceReference
 from RecordTimer import RecordTimerEntry
 from Components.TimerSanityCheck import TimerSanityCheck
 
+# Notifications
+from Tools.Notifications import AddPopup
+from Screens import Standby
+from Screens.MessageBox import MessageBox
+
 # Timespan
 from time import localtime, strftime, time, mktime
 from datetime import timedelta, date
@@ -48,6 +53,9 @@ except ImportError as ie:
 
 from . import config, xrange, itervalues
 
+CONFLICTINGDOUBLEID = 'AutoTimerConflictingDoubleTimersNotification'
+addNewTimers = []
+
 XML_CONFIG = "/etc/enigma2/autotimer.xml"
 
 def getTimeDiff(timerbegin, timerend, begin, end):
@@ -56,6 +64,39 @@ def getTimeDiff(timerbegin, timerend, begin, end):
 	elif timerbegin <= begin <= timerend:
 		return timerend - begin
 	return 0
+
+def timeSimilarityPercent(rtimer, evtBegin, evtEnd, timer=None):
+	if (timer is not None) and (timer.offset is not None):
+		# remove custom offset from rtimer using timer.offset as RecordTimerEntry doesn't store the offset
+		rtimerBegin = rtimer.begin + timer.offset[0]
+		rtimerEnd   = rtimer.end - timer.offset[1]
+	else:
+		# remove E2 offset
+		rtimerBegin = rtimer.begin + config.recording.margin_before.value * 60
+		rtimerEnd   = rtimer.end - config.recording.margin_after.value * 60
+	if (rtimerBegin <= evtBegin) and (evtEnd <= rtimerEnd):
+		commonTime = evtEnd - evtBegin
+	elif (evtBegin <= rtimerBegin) and (rtimerEnd <= evtEnd):
+		commonTime = rtimerEnd - rtimerBegin
+	elif evtBegin <= rtimerBegin <= evtEnd:
+		commonTime = evtEnd - rtimerBegin
+	elif rtimerBegin <= evtBegin <= rtimerEnd:
+		commonTime = rtimerEnd - evtBegin
+	else:
+		commonTime = 0
+	if evtBegin != evtEnd:
+		commonTime_percent = 100*commonTime/(evtEnd - evtBegin)
+	else:
+		return 0
+	if rtimerEnd != rtimerBegin:
+		durationMatch_percent = 100*(evtEnd - evtBegin)/(rtimerEnd - rtimerBegin)
+	else:
+		return 0
+	if durationMatch_percent < commonTime_percent:
+		#avoid false match for a short event completely inside a very long rtimer's time span 
+		return durationMatch_percent
+	else:
+		return commonTime_percent
 
 def blockingCallFromMainThread(f, *a, **kw):
 	"""
@@ -104,6 +145,7 @@ class AutoTimer:
 	def __init__(self):
 		# Initialize
 		self.timers = []
+		self.isParseRunning = False
 		self.configMtime = -1
 		self.uniqueTimerId = 0
 		self.defaultTimer = preferredAutoTimerComponent(
@@ -161,6 +203,9 @@ class AutoTimer:
 		file = open(XML_CONFIG, 'w')
 		file.writelines(buildConfig(self.defaultTimer, self.timers))
 		file.close()
+
+	def getStatusParseEPGrunning(self):
+		return self.isParseRunning
 
 # Manage List
 	def add(self, timer):
@@ -492,7 +537,7 @@ class AutoTimer:
 					#rbegin = revent.getBeginTime() or 0
 					#rduration = revent.getDuration() or 0
 					#rend = rbegin + rduration or 0
-					if getTimeDiff(rbegin, rend, evtBegin, evtEnd) > ((duration/10)*8):
+					if getTimeDiff(rbegin, rend, evtBegin, evtEnd) > ((duration/10)*8) and timeSimilarityPercent(rtimer, evtBegin, evtEnd, timer) > 80:
 						oldExists = True
 						doLog("[AutoTimer] We found a timer based on time guessing")
 						newEntry = rtimer
@@ -629,6 +674,20 @@ class AutoTimer:
 					doLog(msg)
 					newEntry.log(504, msg)
 
+				# add new timer in AT timer list
+				atDoubleTimer = False
+				refstr = ':'.join(newEntry.service_ref.ref.toString().split(':')[:11])
+				for at in addNewTimers:
+					needed_ref = ':'.join(at.service_ref.ref.toString().split(':')[:11]) == refstr
+					if needed_ref and at.eit == newEntry.eit and (newEntry.begin < at.begin <= newEntry.end or at.begin <= newEntry.begin <= at.end):
+						atDoubleTimer = True
+						break
+				if atDoubleTimer:
+					continue
+				else:
+					doLog("[AutoTimer] ignore double new auto timer %s." % newEntry.name)
+					addNewTimers.append(newEntry)
+
 				# Try to add timer
 				conflicts = recordHandler.record(newEntry)
 
@@ -704,8 +763,14 @@ class AutoTimer:
 		doLog("AutoTimer Version: " + AUTOTIMER_VERSION)
 
 		if NavigationInstance.instance is None:
-			doLog("Navigation is not available, can't parse EPG")
+			doLog("[AutoTimer] Navigation is not available, can't parse EPG")
 			return (0, 0, 0, [], [], [])
+
+		if self.isParseRunning:
+			doLog("[AutoTimer] parse EPG it is already running, return zero")
+			return (0, 0, 0, [], [], [])
+		else:
+			self.isParseRunning = True
 
 		new = 0
 		modified = 0
@@ -713,6 +778,10 @@ class AutoTimer:
 		conflicting = []
 		similars = []
 		skipped = []
+
+		# Init new added timers list
+		global addNewTimers
+		addNewTimers = []
 
 		if currentThread().getName() == 'MainThread':
 			doBlockingCallFromMainThread = lambda f, *a, **kw: f(*a, **kw)
@@ -761,9 +830,42 @@ class AutoTimer:
  			if sp_showResult is not None:
 				blockingCallFromMainThread(sp_showResult)
 
+			if config.plugins.autotimer.remove_double_and_conflicts_timers.value != "no":
+				self.reloadTimerList(recordHandler)
+
+		# Set status finished
+		self.isParseRunning = False
+
 		return (len(timers), new, modified, timers, conflicting, similars)
 
 # Supporting functions
+
+	def reloadTimerList(self, recordHandler):
+		doLog("[AutoTimer] Start reload timers list after search")
+		# checking and deleting duplicate timers
+		disabled_at = removed_at = 0
+		check_timer_list = recordHandler.timer_list[:]
+		for timer in check_timer_list:
+			check_timer_list.remove(timer)
+			timersanitycheck = TimerSanityCheck(check_timer_list, timer)
+			if not timersanitycheck.check():
+				simulTimerList = timersanitycheck.getSimulTimerList()
+				if simulTimerList and timer in simulTimerList and "autotimer" in timer.flags and not timer.isRunning():
+					timer.disabled = True
+					recordHandler.timeChanged(timer)
+					disabled_at += 1
+					conflictString += ' / '.join(["%s (%s)" % (x.name, strftime("%Y%m%d %H%M", localtime(x.begin))) for x in simulTimerList])
+					doLog("[AutoTimer-reload] Timer %s disabled because of conflicts with %s." % (timer.name, conflictString))
+			elif timersanitycheck.doubleCheck() and "autotimer" in timer.flags and not timer.isRunning():
+				try:
+					recordHandler.removeEntry(timer)
+					removed_at += 1
+					doLog("[AutoTimer-reload] Remove double timer %s."% (timer.name))
+				except:
+					doLog("[AutoTimer-reload] Error for remove double timer %s."% (timer.name))
+		if config.plugins.autotimer.remove_double_and_conflicts_timers.value == "yes_notify":
+			if Standby.inStandby is None and (disabled_at or removed_at):
+				AddPopup(_("Reload timers list.\n%d autotimer(s) disabled because conflict.\n%d double autotimer(s) removed.\n") % (disabled_at, removed_at), MessageBox.TYPE_INFO, config.plugins.autotimer.popup_timeout.value, CONFLICTINGDOUBLEID)
 
 	def populateTimerdict(self, epgcache, recordHandler, timerdict):
 		remove = []

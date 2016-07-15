@@ -36,6 +36,12 @@ config.plugins.autotimer.refresh = ConfigSelection(choices=[
 		("all", _("All non-repeating timers"))
 	], default="none"
 )
+config.plugins.autotimer.remove_double_and_conflicts_timers = ConfigSelection(choices=[
+		("no", _("No")),
+		("yes", _("Yes")),
+		("yes_notify", _("Yes and show notify"))
+	], default="no"
+)
 if config.plugins.autotimer.interval.value == 0:
 	config.plugins.autotimer.interval.value = 1
 	config.plugins.autotimer.interval.save()

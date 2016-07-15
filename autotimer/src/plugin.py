@@ -98,10 +98,6 @@ def autostart(reason, **kwargs):
 
 def sessionstart(reason, **kwargs):
 	if reason == 0 and "session" in kwargs:
-		#try:
-		#	AutoTimerGraphMultiEPGInit()
-		#except:
-		#	pass
 		try:
 			AutoTimerChannelContextMenuInit()
 		except:
@@ -173,82 +169,6 @@ def sessionstart(reason, **kwargs):
 					addExternalChild(("autotimer", root , "AutoTimer-Plugin", API_VERSION))
 					doLog("[AutoTimer] Use OpenWebif")
 
-baseGraphMultiEPG__init__ = None
-def AutoTimerGraphMultiEPGInit():
-	global baseGraphMultiEPG__init__
-	try:
-		from Plugins.Extensions.GraphMultiEPG.GraphMultiEpg import GraphMultiEPG
-	except ImportError:
-		return
-	try:
-		if baseGraphMultiEPG__init__ is None:
-			baseGraphMultiEPG__init__ = GraphMultiEPG.__init__
-		GraphMultiEPG.__init__ = AutoTimerGraphMultiEPG__init__
-		GraphMultiEPG.CallbackToGraphMultiEPG = CallbackToGraphMultiEPG
-	except:
-		pass
-
-def AutoTimerGraphMultiEPG__init__(self, session, services, zapFunc=None, bouquetChangeCB=None, bouquetname=""):
-	try:
-		baseGraphMultiEPG__init__(self, session, services, zapFunc, bouquetChangeCB, bouquetname)
-	except:
-		baseGraphMultiEPG__init__(self, session, services, zapFunc, bouquetChangeCB)
-	if config.plugins.autotimer.add_to_graph.value:
-		def showAutoTimer():
-			open_list = [
-				(_("Open standard setup menu"), "setup"),
-				(_("Add new AutoTimer"), "add"),
-				(_("Preview for your AutoTimers"), "preview"),
-				(_("Search new events matching for your AutoTimers"), "search"),
-				(_("Timers list"), "timerlist"),
-			]
-			dlg = self.session.openWithCallback(self.CallbackToGraphMultiEPG,ChoiceBox,title= _("Select action for AutoTimer:"), list = open_list)
-			dlg.setTitle(_("Choice list AutoTimer"))
-		HelpableScreen.__init__(self)
-		self["AutoTimeractions"] = HelpableActionMap(self, "ChannelSelectEditActions",
-				{
-					"contextMenu": (showAutoTimer, _("Choice list AutoTimer")),
-				}, -1)
-		self["AutoTimeractions"].csel = self
-
-def CallbackToGraphMultiEPG(self, ret):
-	ret = ret and ret[1]
-	if ret:
-		if ret == "add":
-			from AutoTimerEditor import addAutotimerFromEvent
-			cur = self["list"].getCurrent()
-			evt = cur[0]
-			sref = cur[1]
-			if not evt:
-				return
-			try:
-				addAutotimerFromEvent(self.session, evt = evt, service = sref)
-			except:
-				pass
-		elif ret == "preview":
-			from AutoTimerPreview import AutoTimerPreview
-			try:
-				total, new, modified, timers, conflicts, similars = autotimer.parseEPG(simulateOnly = True)
-				self.session.open(AutoTimerPreview,timers)
-			except:
-				pass
-		elif ret == "search":
-			try:
-				editCallback(self.session)
-			except:
-				pass
-		elif ret == "timerlist":
-			try:
-				from Screens.TimerEdit import TimerEditList
-				self.session.open(TimerEditList)
-			except:
-				pass
-		elif ret == "setup":
-			try:
-				self.showSetup()
-			except:
-				pass
-
 base_furtherOptions = None
 baseEPGSelection__init__ = None
 mepg_config_initialized = False
@@ -316,13 +236,15 @@ def menuCallbackAutoTimer(self, ret):
 		elif ret == "preview":
 			from AutoTimerPreview import AutoTimerPreview
 			try:
-				total, new, modified, timers, conflicts, similars = autotimer.parseEPG(simulateOnly = True)
-				self.session.open(AutoTimerPreview,timers)
+				if not autotimer.getStatusParseEPGrunning():
+					total, new, modified, timers, conflicts, similars = autotimer.parseEPG(simulateOnly = True)
+					self.session.open(AutoTimerPreview, timers)
 			except:
 				pass
 		elif ret == "search":
 			try:
-				editCallback(self.session)
+				if not autotimer.getStatusParseEPGrunning():
+					editCallback(self.session)
 			except:
 				pass
 		elif ret == "timerlist":
@@ -440,7 +362,7 @@ def editCallback(session):
 		handleAutoPoller()
 
 def parseEPGstart():
-	if autotimer:
+	if autotimer and not autotimer.getStatusParseEPGrunning():
 		autotimer.parseEPGAsync().addCallback(parseEPGCallback)#.addErrback(parseEPGErrback)
 
 editTimer.callback.append(parseEPGstart)
