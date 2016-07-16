@@ -45,7 +45,7 @@ class AutoPollerThread(Thread):
 		"""Create Notifications if there is anything to display."""
 		ret = self.__queue.pop()
 		conflicts = ret[4]
-		if conflicts and config.plugins.autotimer.notifconflict.value:
+		if conflicts and config.plugins.autotimer.notifconflict.value and Standby.inStandby is None:
 			AddPopup(
 				#_("%d conflict(s) encountered when trying to add new timers:\n%s") % (len(conflicts), '\n'.join([_("%s: %s at %s") % (x[4], x[0], asctime(localtime(x[2]))) for x in conflicts])),
 				_("%d conflict(s) encountered when trying to add new timers:\n%s") % (len(conflicts), '\n'.join([_("%s: %s at %s") % (x[4], x[0], "('%s', '%s')" % FuzzyTime(x[2])) for x in conflicts])),
@@ -54,9 +54,8 @@ class AutoPollerThread(Thread):
 				NOTIFICATIONID
 			)
 		similars = ret[5]
-		if similars and config.plugins.autotimer.notifsimilar.value:
+		if similars and config.plugins.autotimer.notifsimilar.value and Standby.inStandby is None:
 			AddPopup(
-				#_("%d conflict(s) solved with similar timer(s):\n%s") % (len(similars), '\n'.join([_("%s: %s at %s") % (x[4], x[0], asctime(localtime(x[2]))) for x in similars])),
 				_("%d conflict(s) solved with similar timer(s):\n%s") % (len(similars), '\n'.join([_("%s: %s at %s") % (x[4], x[0], "('%s', '%s')" % FuzzyTime(x[2])) for x in similars])),
 				MessageBox.TYPE_INFO,
 				config.plugins.autotimer.popup_timeout.value,
@@ -107,7 +106,7 @@ class AutoPollerThread(Thread):
 			if config.plugins.autotimer.skip_during_records.value:
 				try:
 					import NavigationInstance
-					if NavigationInstance.instance.RecordTimer.isRecording():
+					if NavigationInstance.instance.getRecordings():
 						doLog("[AutoTimer] Skip check during running records")
 						reactor.callFromThread(timer.startLongTimer, config.plugins.autotimer.interval.value*3600)
 						continue

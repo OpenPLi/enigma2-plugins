@@ -1137,3 +1137,21 @@ msgstr "Процентное соотношение для дубликатов 
 
 msgid "To cater for spelling mistakes and small deviations in the EPG information, you can make the matching algorithm fuzzy by setting the percentage both programmes must be equal for. Use 100% if you only want a match when both are completely identical. Recommended default ratio 80%."
 msgstr "Для обхода опечаток и небольших отклонений в информации EPG, Вы можете сделать алгоритм сопоставления нечетким, установив нужный процент для совпадения обеих программ. Используйте 100% для полной идентичности. Рекомендуемое соотношение по дефолту 80%."
+
+msgid "Reload timers list after search events"
+msgstr "Перезагрузка списка таймеров по окончании поиска событий"
+
+msgid "If this enabled, will check the list of timers, conflicting autotimers are disabled, the duplicate autotimers will be deleted."
+msgstr "Если эта опция включена, то будет запущена проверка списка таймеров, по окончании поиска событий .Кофликтные автотаймеры будут отключены, дублирующие автотаймеры будут удалены."
+
+msgid "Yes and show notify"
+msgstr "Да и показать сообщение"
+
+msgid ""
+"Reload timers list.\n"
+"%d autotimer(s) disabled because conflict.\n"
+"%d double autotimer(s) removed.\n"
+msgstr ""
+"Перезагрузка списка таймеров.\n"
+"%d автотаймер(а) отключен из-за конфликта.\n"
+"%d дублирующий автотаймер(а) удален.\n"
