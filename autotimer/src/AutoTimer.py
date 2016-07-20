@@ -684,9 +684,9 @@ class AutoTimer:
 						atDoubleTimer = True
 						break
 				if atDoubleTimer:
+					doLog("[AutoTimer] ignore double new auto timer %s." % newEntry.name)
 					continue
 				else:
-					doLog("[AutoTimer] ignore double new auto timer %s." % newEntry.name)
 					addNewTimers.append(newEntry)
 
 				# Try to add timer
