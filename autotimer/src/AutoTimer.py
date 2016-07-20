@@ -537,7 +537,8 @@ class AutoTimer:
 					#rbegin = revent.getBeginTime() or 0
 					#rduration = revent.getDuration() or 0
 					#rend = rbegin + rduration or 0
-					if getTimeDiff(rbegin, rend, evtBegin, evtEnd) > ((duration/10)*8) and timeSimilarityPercent(rtimer, evtBegin, evtEnd, timer) > 80:
+					#if getTimeDiff(rbegin, rend, evtBegin, evtEnd) > ((duration/10)*8) and timeSimilarityPercent(rtimer, evtBegin, evtEnd, timer) > 80:
+					if getTimeDiff(rbegin, rend, evtBegin, evtEnd) > ((duration/10)*8):
 						oldExists = True
 						doLog("[AutoTimer] We found a timer based on time guessing")
 						newEntry = rtimer
