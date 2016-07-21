@@ -537,8 +537,7 @@ class AutoTimer:
 					#rbegin = revent.getBeginTime() or 0
 					#rduration = revent.getDuration() or 0
 					#rend = rbegin + rduration or 0
-					#if getTimeDiff(rbegin, rend, evtBegin, evtEnd) > ((duration/10)*8) and timeSimilarityPercent(rtimer, evtBegin, evtEnd, timer) > 80:
-					if getTimeDiff(rbegin, rend, evtBegin, evtEnd) > ((duration/10)*8):
+					if getTimeDiff(rbegin, rend, evtBegin, evtEnd) > ((duration/10)*8) or timeSimilarityPercent(rtimer, evtBegin, evtEnd, timer) > 80:
 						oldExists = True
 						doLog("[AutoTimer] We found a timer based on time guessing")
 						newEntry = rtimer
@@ -612,7 +611,7 @@ class AutoTimer:
 						doLog(msg)
 						if oldEntry:
 							self.setOldTimer(newEntry, oldEntry)
-							doLog("[AutoTimer] conflict for new timer %s detected return to old timer" % (newEntry.name))
+							doLog("[AutoTimer] conflict for modification timer %s detected return to old timer" % (newEntry.name))
 						continue
 				else:
 					msg = "[AutoTimer] AutoTimer modification not allowed for timer: %s ." % (newEntry.name)
@@ -664,7 +663,7 @@ class AutoTimer:
 				else:
 					if oldEntry:
 						self.setOldTimer(newEntry, oldEntry)
-						doLog("[AutoTimer] conflict for new timer %s detected return to old timer" % (newEntry.name))
+						doLog("[AutoTimer] rechecking - conflict for timer %s detected return to old timer" % (newEntry.name))
 					continue
 			elif newAT:
 				newAT = newEntry
@@ -684,9 +683,9 @@ class AutoTimer:
 						atDoubleTimer = True
 						break
 				if atDoubleTimer:
+					doLog("[AutoTimer] ignore double new auto timer %s." % newEntry.name)
 					continue
 				else:
-					doLog("[AutoTimer] ignore double new auto timer %s." % newEntry.name)
 					addNewTimers.append(newEntry)
 
 				# Try to add timer
@@ -902,7 +901,10 @@ class AutoTimer:
 
 	def isResolvedConflict(self, checktimer=None):
 		if checktimer:
-			timersanitycheck = TimerSanityCheck(NavigationInstance.instance.RecordTimer.timer_list, checktimer)
+			check_timer_list = NavigationInstance.instance.RecordTimer.timer_list[:]
+			if checktimer in check_timer_list:
+				check_timer_list.remove(checktimer)
+			timersanitycheck = TimerSanityCheck(check_timer_list, checktimer)
 			if not timersanitycheck.check():
 					return False
 			elif timersanitycheck.doubleCheck():
@@ -913,7 +915,6 @@ class AutoTimer:
 
 	def modifyTimer(self, timer, name, shortdesc, begin, end, serviceref, eit=None, base_timer=None):
 		if base_timer:
-			old_timer = timer
 			timer.justplay = base_timer.justplay
 			timer.conflict_detection = base_timer.conflict_detection
 			timer.always_zap = base_timer.always_zap
@@ -925,7 +926,10 @@ class AutoTimer:
 		if eit: 
 			timer.eit = eit
 		if base_timer:
-			timersanitycheck = TimerSanityCheck(NavigationInstance.instance.RecordTimer.timer_list, timer)
+			check_timer_list = NavigationInstance.instance.RecordTimer.timer_list[:]
+			if timer in check_timer_list:
+				check_timer_list.remove(timer)
+			timersanitycheck = TimerSanityCheck(check_timer_list, timer)
 			if not timersanitycheck.check():
 				return False
 			elif timersanitycheck.doubleCheck():
@@ -1010,7 +1014,7 @@ class AutoTimer:
 				sequenceMatcher.set_seqs(shortdesc1, shortdesc2)
 				ratio = sequenceMatcher.ratio()
 				doDebug("[AutoTimer] shortdesc ratio %f - %s - %d - %s - %d" % (ratio, shortdesc1, len(shortdesc1), shortdesc2, len(shortdesc2)))
-				foundShort = shortdesc1 in shortdesc2 or (ratio_value < ratio)
+				foundShort = shortdesc1 in shortdesc2 or ((ratio_value < ratio) or (ratio_value == 1.0 and ratio_value == ratio))
 				if foundShort:
 					doLog("[AutoTimer] shortdesc ratio %f - %s - %d - %s - %d" % (ratio, shortdesc1, len(shortdesc1), shortdesc2, len(shortdesc2)))
 			elif not force and timer.descShortExtEmpty and not shortdesc1 and not shortdesc2 and name1 != name2:
@@ -1023,7 +1027,7 @@ class AutoTimer:
 				sequenceMatcher.set_seqs(extdesc1, extdesc2)
 				ratio = sequenceMatcher.ratio()
 				doDebug("[AutoTimer] extdesc ratio %f - %s - %d - %s - %d" % (ratio, extdesc1, len(extdesc1), extdesc2, len(extdesc2)))
-				foundExt = (ratio_value < ratio)
+				foundExt = (ratio_value < ratio) or (ratio_value == 1.0 and ratio_value == ratio)
 				if foundExt:
 					doLog("[AutoTimer] extdesc ratio %f - %s - %d - %s - %d" % (ratio, extdesc1, len(extdesc1), extdesc2, len(extdesc2)))
 			elif not force and timer.descShortExtEmpty and not extdesc1 and not extdesc2 and name1 != name2:

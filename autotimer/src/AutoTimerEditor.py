@@ -367,7 +367,7 @@ class AutoTimerEditorBase:
 				("0.7", "70%"),
 				("0.8", "80%"),
 				("0.9", "90%"),
-				("1", "100%"),
+				("1.0", "100%"),
 			],
 
 			default = str(timer.ratioThresholdDuplicate)
