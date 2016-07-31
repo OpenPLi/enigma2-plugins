@@ -1,0 +1,56 @@
+# --- PLEASE EDIT THE LINES BELOW CORRECTLY ---
+# SOME DESCRIPTIVE TITLE.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: PluginHider\n"
+"POT-Creation-Date: 2011-06-16 22:14+0000\n"
+"PO-Revision-Date: 2016-07-13 14:36+0200\n"
+"Last-Translator: MCelliot_g <mcelliot_g@hotmail.com>\n"
+"Language-Team: SiennaRoot <fk-912737@versanet.de>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: /Users/fk/Desktop/PluginHiderpath\n"
+"X-Generator: Poedit 1.7.7\n"
+"Language: el_GR\n"
+
+#: /Users/fk/Desktop/PluginHider/PluginHiderSetup.py:46
+msgid "Cancel"
+msgstr "Ακύρωση"
+
+#: /Users/fk/Desktop/PluginHider/PluginHiderSetup.py:51
+msgid "Eventinfo"
+msgstr "Πληροφορίες Προγράμματος"
+
+#: /Users/fk/Desktop/PluginHider/PluginHiderSetup.py:50
+msgid "Extensions"
+msgstr "Επεκτάσεις"
+
+#: /Users/fk/Desktop/PluginHider/plugin.py:52
+msgid "Hide Plugins"
+msgstr "Απόκρυψη Προσθέτων"
+
+#: /Users/fk/Desktop/PluginHider/PluginHiderSetup.py:48
+msgid "Next"
+msgstr "Επόμενο"
+
+#: /Users/fk/Desktop/PluginHider/PluginHiderSetup.py:45
+msgid "OK"
+msgstr "OK"
+
+#: /Users/fk/Desktop/PluginHider/PluginHiderSetup.py:96
+msgid "PluginHider Setup"
+msgstr "Ρυθμίσεις Απόκρυψης Προσθέτων"
+
+#: /Users/fk/Desktop/PluginHider/PluginHiderSetup.py:49
+msgid "Plugins"
+msgstr "Πρόσθετα"
+
+#: /Users/fk/Desktop/PluginHider/PluginHiderSetup.py:47
+msgid "Previous"
+msgstr "Προηγούμενο"
