@@ -205,7 +205,8 @@ class AutoTimer:
 		file.close()
 
 	def getStatusParseEPGrunning(self):
-		return self.isParseRunning
+		#return self.isParseRunning
+		return False
 
 # Manage List
 	def add(self, timer):
@@ -767,8 +768,8 @@ class AutoTimer:
 			return (0, 0, 0, [], [], [])
 
 		if self.isParseRunning:
-			doLog("[AutoTimer] parse EPG it is already running, return zero")
-			return (0, 0, 0, [], [], [])
+			doLog("[AutoTimer] parse EPG it is already running, return zero, test only")
+			#return (0, 0, 0, [], [], [])
 		else:
 			self.isParseRunning = True
 
