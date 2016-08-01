@@ -1,0 +1,266 @@
+msgid ""
+msgstr ""
+"Project-Id-Version:\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-08-21 09:29+0200\n"
+"PO-Revision-Date: 2016-07-18 12:32+0200\n"
+"Last-Translator: satdreamgr\n"
+"Language-Team: sety <tim1065@mail.ru>\n"
+"Language: uk_UA\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.8\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
+"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+msgid ""
+"A mount entry with this name already exists!\n"
+"Update existing entry and continue?\n"
+msgstr ""
+"Точка монтування з таким ім'ям вже існує!\n"
+"Оновити існуючий запис і продовжити?\n"
+
+msgid "Active"
+msgstr "Активний"
+
+msgid ""
+"Active/\n"
+"Inactive"
+msgstr ""
+"Активний/\n"
+"Не активний"
+
+msgid "Add a new NFS or CIFS mount point to your Receiver."
+msgstr "Додати нову точку монтування NFS або CIFS до вашого ресивера."
+
+msgid "Add new network mount point"
+msgstr "Додати нову точку підключення мережі"
+
+msgid ""
+"Are you sure you want to save this network mount?\n"
+"\n"
+msgstr ""
+"Зберегти цю точку монтування?\n"
+"\n"
+
+msgid "Attempt to mount shares again"
+msgstr "Спроба монтування знову"
+
+msgid "Attempt to recover lost mounts (in background)"
+msgstr "Спроба відновити загублені підключення (в фоні)."
+
+msgid "Browse network neighbourhood"
+msgstr "Перегляд мережевого оточення"
+
+msgid "CIFS share"
+msgstr "через CIFS"
+
+msgid "Cancel"
+msgstr "Відміна"
+
+msgid "Change hostname"
+msgstr "Змінити мережеве ім'я"
+
+msgid "Change the hostname of your Receiver."
+msgstr "Змінити мережеве ім'я Вашого ресивера."
+
+msgid "Close"
+msgstr "Закрити"
+
+msgid "Delete"
+msgstr "Видалити"
+
+msgid "Delete mount"
+msgstr "Видалити монтування"
+
+msgid "Dir:"
+msgstr "Каталог:"
+
+msgid "Do you want to enter a username and password for this host?\n"
+msgstr "Ви хочете ввести ім'я користувача і пароль для цього хоста?\n"
+
+msgid "Enter IP to scan..."
+msgstr "Введіть IP, щоб почати сканувати ..."
+
+msgid "Enter new hostname for your Receiver"
+msgstr "Введіть нове ім'я мережі для Вашого ресивера"
+
+msgid "Enter options:"
+msgstr "Введіть параметри:"
+
+msgid "Enter password:"
+msgstr "Введіть пароль:"
+
+msgid "Enter share directory:"
+msgstr "Введіть каталог загального ресурсу:"
+
+msgid "Enter share name:"
+msgstr "Введіть ім'я загального ресурсу:"
+
+msgid "Enter user and password for host: "
+msgstr "Введіть ім'я користувача і пароль для хоста: "
+
+msgid "Enter username:"
+msgstr "Введіть ім'я користувача:"
+
+msgid "Expert"
+msgstr "Експерт"
+
+msgid "Finished restarting your network"
+msgstr "Перезавантаження Вашої мережі завершено"
+
+msgid "IP Address"
+msgstr "IP адреса"
+
+msgid "IP:"
+msgstr "IP:"
+
+msgid "Local share name"
+msgstr "Ім'я локального ресурсу"
+
+msgid "Manage network shares"
+msgstr "Управління загальними ресурсами мережі"
+
+msgid "Manage your network shares..."
+msgstr "Менеджер підключення до мережі ..."
+
+msgid "Mount again"
+msgstr "Монтувати ще раз"
+
+msgid "Mount informations"
+msgstr "Інформація про монтування"
+
+msgid "Mount options"
+msgstr "Варіанти монтування"
+
+msgid "Mount type"
+msgstr "Тип монтування"
+
+msgid "Mount view"
+msgstr "Тип монтування"
+
+msgid "MountManager"
+msgstr "Редактор монтування"
+
+msgid ""
+"Mounted/\n"
+"Unmounted"
+msgstr ""
+"Смотирован\n"
+"Отмонтирован"
+
+msgid "Mountpoints management"
+msgstr "Менеджер точок монтування"
+
+msgid "Mounts editor"
+msgstr "Редактор монтування"
+
+msgid "Mounts management"
+msgstr "Менеджер монтування"
+
+msgid "NFS share"
+msgstr "через NFS"
+
+msgid "Network Browser"
+msgstr "Оглядач мережі"
+
+msgid "NetworkBrowser"
+msgstr "Оглядач мережі"
+
+msgid "No network devices found!"
+msgstr "Не знайдені мережеві пристрої!"
+
+msgid "Password"
+msgstr "Пароль"
+
+msgid "Please wait for activation of your network mount..."
+msgstr "Будь ласка, зачекайте, йде активація вашого мережевого монтування ..."
+
+msgid "Please wait while removing your network mount..."
+msgstr "Будь ласка, зачекайте, йде видалення вашого мережевого монтування ..."
+
+msgid "Please wait while updating your network mount..."
+msgstr "Будь ласка, зачекайте, оновлення вашого мережевого монтування ..."
+
+msgid "Please wait while your network is restarting..."
+msgstr "Будь ласка, зачекайте, поки йде перезавантаження вашої мережі ..."
+
+msgid "Press OK to activate the settings."
+msgstr "Натисніть OK для активації налаштувань."
+
+msgid "Press OK to collapse this host"
+msgstr "Натисніть OK, щоб згорнути хост."
+
+msgid "Press OK to edit selected settings."
+msgstr "Натисніть OK, щоб змінити вибране налаштування."
+
+msgid "Press OK to edit the settings."
+msgstr "Натисніть OK, щоб змінити налаштування."
+
+msgid "Press OK to expand this host"
+msgstr "Натисніть OK, щоб перевернути цей хост."
+
+msgid "Press OK to mount this share!"
+msgstr "Натисніть OK, щоб змонтувати цей ресурс!"
+
+msgid "Press OK to mount!"
+msgstr "Натисніть OK для монтування!"
+
+msgid "Press OK to save settings."
+msgstr "Натисніть OK, для збереження настройки."
+
+msgid "Press OK to select."
+msgstr "Натисніть ОК для вибору."
+
+msgid "Rescan"
+msgstr "Пересканування"
+
+msgid "Scan NFS share"
+msgstr "Сканування NFS ресурсів"
+
+msgid "Scan range"
+msgstr "Діапазон сканування"
+
+msgid "Search for network shares"
+msgstr "Пошук для мережевих ресурсів"
+
+msgid "Search for network shares..."
+msgstr "Пошук для мережевих ресурсів ..."
+
+msgid "Searching your network. Please wait..."
+msgstr "Скануємо Вашу мережу. Будь ласка, зачекайте ..."
+
+msgid "Server IP"
+msgstr "IP сервера"
+
+msgid "Server share"
+msgstr "Ресурс сервера"
+
+msgid "User management"
+msgstr "Керування користувача"
+
+msgid "Usermanager"
+msgstr "Менеджер користувача"
+
+msgid "Username"
+msgstr "Ім'я користувача"
+
+msgid "View, edit or delete mountpoints on your Receiver."
+msgstr "Перегляд, редагування та видалення точок монтування Вашого ресивера."
+
+msgid "View, edit or delete usernames and passwords for your network."
+msgstr ""
+"Перегляд, редагування та видалення користувачів і паролів у Вашій мережі."
+
+msgid "Your network mount has been activated."
+msgstr "Ваше мережеве монтування було активовано."
+
+msgid "Your network mount has been removed."
+msgstr "Ваше мережеве монтування було видалено."
+
+msgid "Your network mount has been updated."
+msgstr "Ваше мережеве монтування було оновлено."
+
+msgid "use as HDD replacement"
+msgstr "Використовувати як заміна HDD"
