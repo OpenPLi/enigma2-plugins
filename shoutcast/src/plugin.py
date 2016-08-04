@@ -960,15 +960,15 @@ class SHOUTcastWidget(Screen):
 			self["cover"].doShow()
 
 	def __event(self, ev):
-		if ev != 17:
+		if ev != 17 and ev != 18:
 			print "[SHOUTcast] EVENT ==>", ev
 		if ev == 1 or ev == 4:
 			print "[SHOUTcast] Tuned in, playing now!"
-		if ev == 3 or ev == 7:
+		elif ev == 3 or ev == 7:
 			self["statustext"].setText(_("Stream stopped playing, playback of stream stopped!"))
 			print "[SHOUTcast] Stream stopped playing, playback of stream stopped!"
 			self.session.nav.stopService()
-		if ev == 5:
+		elif ev == 5:
 			if not self.currPlay:
 				return
 			sTitle = self.currPlay.info().getInfoString(iServiceInformation.sTagTitle)
@@ -995,10 +995,6 @@ class SHOUTcastWidget(Screen):
 				self.summaries.setText(title)
 			else:
 				print "[SHOUTcast] Ignoring useless updated info provided by streamengine!"
-		#if ev == 6 or (ev > 8 and ev != 17):
-		#	print "[SHOUTcast] Abnormal event %s from stream, so stop playing!" % ev
-		#	self["statustext"].setText(_("Abnormal event from stream, aborting!"))
-		#	self.session.nav.stopService()
 			
 	def playServiceStream(self, url):
 		self.currPlay = None
