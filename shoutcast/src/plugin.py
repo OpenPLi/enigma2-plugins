@@ -27,21 +27,16 @@ from Screens.InfoBar import InfoBar
 from Components.SystemInfo import SystemInfo
 from Components.ActionMap import ActionMap
 from Components.Label import Label
-from enigma import eServiceReference, eListboxPythonMultiContent, eListbox, gFont, RT_HALIGN_LEFT, RT_HALIGN_RIGHT, RT_VALIGN_CENTER,  getDesktop
+from enigma import eServiceReference, eListboxPythonMultiContent, eListbox, gFont, RT_HALIGN_LEFT, RT_HALIGN_RIGHT, RT_VALIGN_CENTER, getDesktop, iPlayableService, iServiceInformation, eTimer, eConsoleAppContainer, ePicLoad
 from Tools.LoadPixmap import LoadPixmap
 from Tools.Directories import fileExists
 import xml.etree.cElementTree
-from enigma import iPlayableService, iServiceInformation
-
 from twisted.internet import reactor, defer
 from twisted.web import client
 from twisted.web.client import HTTPClientFactory
 from Components.Pixmap import Pixmap
-from enigma import ePicLoad
 from Components.ScrollLabel import ScrollLabel
-import string
-import os, re
-import skin
+import string, os, re, skin
 from Components.config import config, ConfigSubsection, ConfigSelection, ConfigDirectory, ConfigYesNo, Config, ConfigInteger, ConfigSubList, ConfigText, ConfigNumber, getConfigListEntry, configfile
 from Components.ConfigList import ConfigListScreen
 from Screens.MessageBox import MessageBox
@@ -51,8 +46,6 @@ from urllib import quote
 from twisted.web.client import downloadPage
 from Screens.ChoiceBox import ChoiceBox
 from Screens.VirtualKeyBoard import VirtualKeyBoard
-from enigma import eTimer
-from enigma import eConsoleAppContainer
 from Components.Input import Input
 from Screens.InputBox import InputBox
 from Components.FileList import FileList
