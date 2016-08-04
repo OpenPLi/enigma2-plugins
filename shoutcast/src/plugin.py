@@ -40,7 +40,7 @@ from Components.Pixmap import Pixmap
 from enigma import ePicLoad
 from Components.ScrollLabel import ScrollLabel
 import string
-import os
+import os, re
 import skin
 from Components.config import config, ConfigSubsection, ConfigSelection, ConfigDirectory, ConfigYesNo, Config, ConfigInteger, ConfigSubList, ConfigText, ConfigNumber, getConfigListEntry, configfile
 from Components.ConfigList import ConfigListScreen
@@ -102,7 +102,7 @@ class Favorite:
 
 class myHTTPClientFactory(HTTPClientFactory):
 	def __init__(self, url, method='GET', postdata=None, headers=None,
-			agent="SHOUTcast", timeout=0, cookies=None,
+			agent="Mozilla/5.0 (Windows NT 6.1; rv:17.0) Gecko/20100101 Firefox/17.0", timeout=0, cookies=None,
 			followRedirect=1, lastModified=None, etag=None):
 		HTTPClientFactory.__init__(self, url, method=method, postdata=postdata,
 		headers=headers, agent=agent, timeout=timeout, cookies=cookies, followRedirect=followRedirect)
@@ -890,16 +890,43 @@ class SHOUTcastWidget(Screen):
 
 	def GoogleImageCallback(self, result):
 		global coverfiles
+		bad_link  = ['http://cdn.discogs.com', 'http://www.jaren80muziek.nl', 'http://www.inthestudio.net', \
+		'https://deepmp3.ru', 'http://beyondbreed.com', 'https://i1.sndcdn.com', 'http://www.lyrics007.com', 'https://lametralleta.es', \
+		'http://www.caramail.tv', 'http://cloud.freehandmusic.netdna-cdn.com', 'http://rockyourlyrics.com', 'http://www.franceinter.fr', \
+		'http://audio-max.home.pl', 'https://www.mystic.pl', 'http://radiobox2.omroep.nl', 'http://s0.hulkshare.com', 'http://static2.ising.pl', \
+		'http://www.disco-polo.info', 'http://merlin.pl', 'http://www.muzikbuldum.com', 'http://img2.zcdn.com.au', 'http://www.duoviva.com', \
+		'http://thumbnail.mixcloud.com', 'http://www.modern-talking.net', 'http://galleryplus.ebayimg.com', 'http://www.radiotrip.it', \
+		'https://dlmetal.org', 'http://i.iplsc.com', 'http://www.copertinedvd.org', 'http://flacmusic.org', 'https://imgcdn.ok.de', \
+		'http://www.mediaboom.org', 'http://democracy.allerdale.gov.uk', 'http://lahoradelrelax.com', 'http://www.isvent.com',  \
+		'http://www.wallpaperfo.com', 'http://www.analyticdatasolutions.net', 'http://caratulascd.com', 'http://img.youtube.com', \
+		'http://satpic.ru', 'http://imagizer.imageshack.us']
+		nr = 0
+		url = 'http://memytutaj.pl/uploads/2015/07/27/55b66ab973ad1.jpg'
 		if self.nextGoogle:
 			self.currentGoogle = self.nextGoogle
 			self.nextGoogle = None
 			sendUrlCommand(self.currentGoogle, None, 10).addCallback(self.GoogleImageCallback).addErrback(self.Error)
 			return
 		self.currentGoogle = None
-		foundPos = result.find("unescapedUrl\":\"")
-		foundPos2 = result.find("\",\"url\":\"")
-		if foundPos != -1 and foundPos2 != -1:
-			url=result[foundPos+15:foundPos2]
+		r=re.findall(',imgurl:&quot;(.*?)&quot;,tid',result)
+		if r:
+			url = r[nr]
+			print "[SHOUTcast] fetch cover first try:%s" % (url)
+			for link in bad_link:
+				if url.startswith(link):
+					nr += 1
+					url = r[nr]
+					print "[SHOUTcast] fetch cover second try:%s" % (url)
+					for link in bad_link:
+						if url.startswith(link):
+							nr += 1
+							url = r[nr]
+							print "[SHOUTcast] fetch cover third try:%s" % (url)
+							for link in bad_link:
+								if url.startswith(link):
+									nr += 1
+									url = r[nr]
+									print "[SHOUTcast] fetch cover fourth try:%s" % (url)
 			if len(url)>15:
 				url= url.replace(" ", "%20")
 				print "download url: %s " % url
@@ -916,7 +943,7 @@ class SHOUTcastWidget(Screen):
 				except:
 					pass
 				coverfile = coverfiles[self.currentcoverfile]
-				print "[SHOUTcast] downloading cover from %s to %s" % (url, coverfile)
+				print "[SHOUTcast] downloading cover from %s to %s numer%s" % (url, coverfile, str(nr))
 				downloadPage(url, coverfile).addCallback(self.coverDownloadFinished, coverfile).addErrback(self.coverDownloadFailed)
 
 	def coverDownloadFailed(self,result):
@@ -949,11 +976,11 @@ class SHOUTcastWidget(Screen):
 				self.oldtitle=sTitle
 				sTitle = sTitle.replace("Title:", "")[:55]
 				if config.plugins.shoutcast.showcover.value:
-					searchpara="covers "
+					searchpara = sTitle
 					if sTitle:
-						url = "http://ajax.googleapis.com/ajax/services/search/images?v=1.0&q=%s%s&biw=%s&bih=%s&ift=jpg&ift=gif&ift=png" % (quote(searchpara), quote(sTitle), config.plugins.shoutcast.cover_width.value, config.plugins.shoutcast.cover_height.value)
+						url = "http://www.bing.com/images/search?q=%s&FORM=HDRSC2" % quote(searchpara)
 					else:
-						url = "http://ajax.googleapis.com/ajax/services/search/images?v=1.0&q=no+cover+pic&biw=%s&bih=%s&ift=jpg&ift=gif&ift=png" % (config.plugins.shoutcast.cover_width.value, config.plugins.shoutcast.cover_height.value)
+						url = "http://www.bing.com/images/search?q=%s&FORM=HDRSC2" % quote('pamela anderson')
 					print "[SHOUTcast] coverurl = %s " % url
 					if self.currentGoogle:
 						self.nextGoogle = url
