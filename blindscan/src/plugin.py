@@ -1325,23 +1325,23 @@ class Blindscan(ConfigListScreen, Screen):
 		self.is_Ku_band_scan = False
 		self.is_user_defined_scan = False
 		self.suggestedPolarisation = _("vertical & horizontal")
-		if band == "Unknown" and self.isCbandLNB(pos):
+		if band == "Unknown" and self.isLNB(pos, "c_band"):
 			band = 'C'
 			self.is_c_band_scan = True
-		if band == "Unknown" and self.isCircularLNB(pos):
+		if band == "Unknown" and self.isLNB(pos, "circular_lnb"):
 			band = 'circular'
 			self.is_circular_band_scan = True
-		if band == "Unknown" and self.isKuLNB(pos):
+		if band == "Unknown" and self.isLNB(pos, "universal_lnb"):
 			band = 'Ku'
 			self.is_Ku_band_scan = True
-		if band == "Unknown" and self.isUserDefinedLNB(pos):
+		if band == "Unknown" and self.isLNB(pos, "user_defined"):
 			band = 'user_defined'
 			self.is_user_defined_scan = True
 		# if satellites.xml didn't contain any entries for this satellite check
 		# LNB type instead. Assumes the tuner is configured correctly for C-band.
 		print "[Blind scan] SatBandCheck band = %s" % (band)
 
-	def isCbandLNB(self, cur_orb_pos):
+	def isLNB(self, cur_orb_pos, lof_type):
 		nim = nimmanager.nim_slots[int(self.scan_nims.value)]
 		if nim.config.configMode.getValue() == "advanced":
 			currSat = nim.config.advanced.sat[cur_orb_pos]
@@ -1349,42 +1349,7 @@ class Blindscan(ConfigListScreen, Screen):
 			currLnb = nim.config.advanced.lnb[lnbnum]
 			lof = currLnb.lof.getValue()
 			print "[Blind scan] LNB type: ", lof
-			if lof == "c_band":
-				return True
-		return False
-
-	def isCircularLNB(self, cur_orb_pos):  #added for 10750 LNB
-		nim = nimmanager.nim_slots[int(self.scan_nims.value)]
-		if nim.config.configMode.getValue() == "advanced":
-			currSat = nim.config.advanced.sat[cur_orb_pos]
-			lnbnum = int(currSat.lnb.getValue())
-			currLnb = nim.config.advanced.lnb[lnbnum]
-			lof = currLnb.lof.getValue()
-			print "[Blind scan] LNB type: ", lof
-			if lof == "circular_lnb":
-				return True
-		return False
-
-	def isKuLNB(self, cur_orb_pos):  #added for 10750 LNB
-		nim = nimmanager.nim_slots[int(self.scan_nims.value)]
-		if nim.config.configMode.getValue() == "advanced":
-			currSat = nim.config.advanced.sat[cur_orb_pos]
-			lnbnum = int(currSat.lnb.getValue())
-			currLnb = nim.config.advanced.lnb[lnbnum]
-			lof = currLnb.lof.getValue()
-			print "[Blind scan] LNB type: ", lof
-			if lof == "universal_lnb":
-				return True
-		return False
-	def isUserDefinedLNB(self, cur_orb_pos):  #added for 10750 LNB
-		nim = nimmanager.nim_slots[int(self.scan_nims.value)]
-		if nim.config.configMode.getValue() == "advanced":
-			currSat = nim.config.advanced.sat[cur_orb_pos]
-			lnbnum = int(currSat.lnb.getValue())
-			currLnb = nim.config.advanced.lnb[lnbnum]
-			lof = currLnb.lof.getValue()
-			print "[Blind scan] LNB type: ", lof
-			if lof == "user_defined":
+			if lof == lof_type:
 				return True
 		return False
 
