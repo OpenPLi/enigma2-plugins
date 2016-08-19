@@ -643,7 +643,7 @@ def buildConfig(defaultTimer, timers, webif = False):
 			extend((
 				'  <e2service>\n',
 				'   <e2servicereference>', str(serviceref), '</e2servicereference>\n',
-				'   <e2servicename>', stringToXML(ref.getServiceName().replace('\xc2\x86', '').replace('\xc2\x87', '')), '</e2servicename>\n',
+				'   <e2servicename>', stringToXML(ref.getServiceName().replace('\xc2\x86', '').replace('\xc2\x87', '').replace('^', '')), '</e2servicename>\n',
 				'  </e2service>\n',
 			))
 	else:
@@ -651,14 +651,14 @@ def buildConfig(defaultTimer, timers, webif = False):
 		for serviceref in defaultTimer.services:
 			ref = ServiceReference(str(serviceref))
 			extend(('  <serviceref>', serviceref, '</serviceref>',
-						' <!-- ', stringToXML(ref.getServiceName().replace('\xc2\x86', '').replace('\xc2\x87', '')), ' -->\n',
+						' <!-- ', stringToXML(ref.getServiceName().replace('\xc2\x86', '').replace('\xc2\x87', '').replace('^', '')), ' -->\n',
 			))
 
 		# Bouquets
 		for bouquet in defaultTimer.bouquets:
 			ref = ServiceReference(str(bouquet))
 			extend(('  <bouquet>', str(bouquet), '</bouquet>',
-						' <!-- ', stringToXML(ref.getServiceName().replace('\xc2\x86', '').replace('\xc2\x87', '')), ' -->\n',
+						' <!-- ', stringToXML(ref.getServiceName().replace('\xc2\x86', '').replace('\xc2\x87', '').replace('^', '')), ' -->\n',
 			))
 
 	# AfterEvent
@@ -813,7 +813,7 @@ def buildConfig(defaultTimer, timers, webif = False):
 				extend((
 					'  <e2service>\n',
 					'   <e2servicereference>', str(serviceref), '</e2servicereference>\n',
-					'   <e2servicename>', stringToXML(ref.getServiceName().replace('\xc2\x86', '').replace('\xc2\x87', '')), '</e2servicename>\n',
+					'   <e2servicename>', stringToXML(ref.getServiceName().replace('\xc2\x86', '').replace('\xc2\x87', '').replace('^', '')), '</e2servicename>\n',
 					'  </e2service>\n',
 				))
 		else:
@@ -821,14 +821,14 @@ def buildConfig(defaultTimer, timers, webif = False):
 			for serviceref in timer.services:
 				ref = ServiceReference(str(serviceref))
 				extend(('  <serviceref>', serviceref, '</serviceref>',
-							' <!-- ', stringToXML(ref.getServiceName().replace('\xc2\x86', '').replace('\xc2\x87', '')), ' -->\n',
+							' <!-- ', stringToXML(ref.getServiceName().replace('\xc2\x86', '').replace('\xc2\x87', '').replace('^', '')), ' -->\n',
 				))
 
 			# Bouquets
 			for bouquet in timer.bouquets:
 				ref = ServiceReference(str(bouquet))
 				extend(('  <bouquet>', str(bouquet), '</bouquet>',
-							' <!-- ', stringToXML(ref.getServiceName().replace('\xc2\x86', '').replace('\xc2\x87', '')), ' -->\n',
+							' <!-- ', stringToXML(ref.getServiceName().replace('\xc2\x86', '').replace('\xc2\x87', '').replace('^', '')), ' -->\n',
 				))
 
 		# AfterEvent
