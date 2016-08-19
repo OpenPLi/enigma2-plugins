@@ -21,8 +21,8 @@ msgid ""
 "afterwards may be required to return to proper tuner function."
 msgstr ""
 "\n"
-"ВНИМАНИЕ! Слепое сканирование, может сделать нерабочим тюнер, на VU+/ET ресиверах. Может "
-"потребоваться перезагрузка после поиска, для того чтобы вернуть тюнер в рабочее состояние."
+"ВНИМАНИЕ! Слепое сканирование, может сделать временно нерабочим тюнер, на VU+/ET ресиверах. Необходима "
+"перезагрузка после поиска, для того чтобы вернуть тюнер в рабочее состояние."
 
 #: plugin.py:822
 #, python-format
@@ -136,6 +136,12 @@ msgstr "Выход"
 msgid "Filter out adjacent satellites"
 msgstr "Фильтр от соседних спутников"
 
+msgid "Frequency values must be between 117000 MHz and 12749 MHz (Circular-band)"
+msgstr "Значение частот должны быть между 11700 MHz / 12749 MHz (Круговой-диапазон)."
+
+msgid "Frequency values must be between 11701 MHz and 12750 MHz (Circular-band)"
+msgstr "Значение частот должны быть между 11701 MHz / 12750 MHz (Круговой-диапазон)."
+
 #: plugin.py:491
 msgid "Frequency values must be between 10700 MHz and 12749 MHz"
 msgstr "Значение частот должны быть между 10700 MHz / 12749 MHz."
@@ -146,11 +152,11 @@ msgstr "Значение частот должны быть между 10701 MHz
 
 #: plugin.py:488
 msgid "Frequency values must be between 3000 MHz and 4199 MHz (C-band)"
-msgstr "Значение частот должны быть между 3000 MHz and 4199 MHz (C-band)."
+msgstr "Значение частот должны быть между 3000 MHz and 4199 MHz (C-диапазон)."
 
 #: plugin.py:489
 msgid "Frequency values must be between 3001 MHz and 4200 MHz (C-band)"
-msgstr "Значение частот должны быть между 3001 MHz / 4200 MHz (C-band)."
+msgstr "Значение частот должны быть между 3001 MHz / 4200 MHz (C-диапазон)."
 
 #: dmmBlindScan.py:584
 msgid "Horizontal"
