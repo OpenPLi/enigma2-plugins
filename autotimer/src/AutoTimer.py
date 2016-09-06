@@ -177,10 +177,12 @@ class AutoTimer:
 			configuration = cet_parse(XML_CONFIG).getroot()
 		except:
 			try:
-				os.remove(XML_CONFIG)
+				os.rename(XML_CONFIG, XML_CONFIG + "_old")
+				doLog("[AutoTimer] autotimer.xml is corrupt rename file to /etc/enigma2/autotimer.xml_old")
 			except:
 				pass
-			doLog("[AutoTimer] error parsing xml")
+			if Standby.inStandby is None:
+				AddPopup(_("The autotimer file (/etc/enigma2/autotimer.xml) is corrupt and could not be loaded."), type = MessageBox.TYPE_ERROR, timeout = 0, id = "AutoTimerLoadFailed")
 			return
 
 		# Empty out timers and reset Ids
