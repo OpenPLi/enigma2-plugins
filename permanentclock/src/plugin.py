@@ -237,6 +237,7 @@ class PermanentClock():
 			else:
 				self.clockShown = True
 				self.dialog.hide()
+		return 0
 
 	def changeVisibility(self):
 		if config.plugins.PermanentClock.enabled.value:
