@@ -461,7 +461,11 @@ class Blindscan(ConfigListScreen, Screen):
 		self.scan_satselection = []
 		for slot in nimmanager.nim_slots:
 			if slot.isCompatible("DVB-S"):
-				self.scan_satselection.append(getConfigSatlist(defaultSat["orbpos"], self.satList[slot.slot]))
+				default_sat_pos = defaultSat["orbpos"]
+				if self.getCurrentTuner is not None and slot.slot != self.getCurrentTuner:
+					if len(nimmanager.getRotorSatListForNim(slot.slot)) and Lastrotorposition is not None and config.misc.lastrotorposition.value != 9999:
+						default_sat_pos = config.misc.lastrotorposition.value
+				self.scan_satselection.append(getConfigSatlist(default_sat_pos, self.satList[slot.slot]))
 		self.frontend = None # set for later use
 		return True
 
