@@ -1470,8 +1470,7 @@ msgid ""
 "%d autotimer(s) disabled because conflict.\n"
 "%d double autotimer(s) removed.\n"
 msgstr ""
-""
-""
-""
 
+msgid "The autotimer file (/etc/enigma2/autotimer.xml) is corrupt and could not be loaded."
+msgstr ""
 

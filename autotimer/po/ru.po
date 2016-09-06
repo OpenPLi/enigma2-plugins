@@ -1155,3 +1155,6 @@ msgstr ""
 "Перезагрузка списка таймеров.\n"
 "%d автотаймер(а) отключен из-за конфликта.\n"
 "%d дублирующий автотаймер(а) удален.\n"
+
+msgid "Файл (/etc/enigma2/autotimer.xml) is corrupt and could not be loaded."
+msgstr "Файл автотаймеров (/etc/enigma2/autotimer.xml) поврежден и не может быть загружен."
