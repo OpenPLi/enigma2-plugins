@@ -232,10 +232,6 @@ mediadownloader/meta/Makefile
 mediadownloader/po/Makefile
 mediadownloader/src/Makefile
 
-menusort/Makefile
-menusort/meta/Makefile
-menusort/src/Makefile
-
 merlinepg/Makefile
 merlinepg/meta/Makefile
 merlinepg/src/Makefile
@@ -278,20 +274,11 @@ movieretitle/meta/Makefile
 movieretitle/po/Makefile
 movieretitle/src/Makefile
 
-movieselectionquickbutton/Makefile
-movieselectionquickbutton/meta/Makefile
-movieselectionquickbutton/po/Makefile
-movieselectionquickbutton/src/Makefile
-
 movietagger/Makefile
 movietagger/etc/Makefile
 movietagger/meta/Makefile
 movietagger/po/Makefile
 movietagger/src/Makefile
-
-movieepg/Makefile
-movieepg/meta/Makefile
-movieepg/src/Makefile
 
 mphelp/Makefile
 mphelp/meta/Makefile
@@ -300,11 +287,6 @@ mphelp/src/Makefile
 multirc/Makefile
 multirc/src/Makefile
 multirc/meta/Makefile
-
-namezap/Makefile
-namezap/meta/Makefile
-namezap/po/Makefile
-namezap/src/Makefile
 
 netcaster/Makefile
 netcaster/meta/Makefile
@@ -350,19 +332,10 @@ permanentclock/po/Makefile
 permanentclock/src/Makefile
 permanentclock/src/trad/Makefile
 
-pipzap/Makefile
-pipzap/meta/Makefile
-pipzap/src/Makefile
-
 pluginhider/Makefile
 pluginhider/meta/Makefile
 pluginhider/po/Makefile
 pluginhider/src/Makefile
-
-pluginsort/Makefile
-pluginsort/meta/Makefile
-pluginsort/po/Makefile
-pluginsort/src/Makefile
 
 porncenter/Makefile
 porncenter/meta/Makefile
@@ -375,11 +348,6 @@ primetimemanager/meta/Makefile
 primetimemanager/po/Makefile
 primetimemanager/src/Makefile
 primetimemanager/src/images/Makefile
-
-quickbutton/Makefile
-quickbutton/meta/Makefile
-quickbutton/po/Makefile
-quickbutton/src/Makefile
 
 reconstructapsc/Makefile
 reconstructapsc/meta/Makefile

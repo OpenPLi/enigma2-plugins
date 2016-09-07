@@ -1,6 +1,0 @@
-Package: enigma2-plugin-extensions-movieselectionquickbutton
-Version: 1.0
-Description: assign buttons (red/green/yellow/blue) to plugins from MOVIELIST
-Maintainer: OpenPLi team <forum@openpli.org>
-Homepage: http://www.openpli.org
-Depends: enigma2 (>> 2.6git20090518)

@@ -37,7 +37,6 @@ SUBDIRS = \
 	letterbox \
 	logomanager \
 	mediadownloader \
-	merlinepg \
 	merlinepgcenter \
 	merlinmusicplayer \
 	meteoitalia \
@@ -57,7 +56,6 @@ SUBDIRS = \
 	permanentclock \
 	porncenter \
 	primetimemanager \
-	quickbutton \
 	reconstructapsc \
 	remotetimer \
 	rsdownloader \
