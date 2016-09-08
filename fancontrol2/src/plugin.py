@@ -159,17 +159,21 @@ config.plugins.FanControl.LogPath = ConfigText(default="/tmp/", fixed_size=False
 config.plugins.FanControl.DeleteData = ConfigSelection(choices = [("0", _("no")), ("2", "2"), ("3", "3"), ("7", "7"), ("14", "14"), ("30", "30")], default="14")
 config.plugins.FanControl.EnableDataLog = ConfigYesNo(default = False)
 config.plugins.FanControl.EnableEventLog = ConfigYesNo(default = False)
-config.plugins.FanControl.CheckHDDTemp = ConfigSelection(choices = [("false", _("no")), ("true", _("yes")), ("auto", _("auto")), ("never", _("never"))], default="auto")
+config.plugins.FanControl.CheckHDDTemp = ConfigSelection(choices = [("false", _("no")), ("true", _("yes")), ("auto", _("auto")), ("never", _("never"))], default="never")
 config.plugins.FanControl.MonitorInExtension = ConfigYesNo(default = True)
 config.plugins.FanControl.FanControlInExtension = ConfigYesNo(default = True)
 config.plugins.FanControl.Multi = ConfigSelection(choices = [("1", "RPM"), ("2", "RPM/2")], default = "2")
 
 def GetFanRPM():
 	global RPMread
-	f = open("/proc/stb/fp/fan_speed", "r")
-	value = int(f.readline().strip()[:-4])
-	f.close()
-	value = int(value / int(config.plugins.FanControl.Multi.value))
+	value = 0
+	try:
+		f = open("/proc/stb/fp/fan_speed", "r")
+		value = int(f.readline().strip()[:-4])
+		f.close()
+		value = int(value / int(config.plugins.FanControl.Multi.value))
+	except:
+			pass
 	if value > 0 and value < 6000:
 		RPMread = 0
 	else:
@@ -304,7 +308,7 @@ class FanControl2Test(ConfigListScreen,Screen):
 	def __init__(self, session, args = 0):
 		self.session = session
 		Screen.__init__(self, session)
-
+		self.setTitle(_("Fan Control 2 - Test"))
 		self.timer = eTimer()
 		self.timer.callback.append(self.DoTest)
 		self.timer.start(1000, True)
@@ -449,7 +453,7 @@ class FanControl2Monitor(Screen, ConfigListScreen):
 
 	def __init__(self, session, args = None):
 		Screen.__init__(self, session)
-
+		self.setTitle(_("Fan Control 2 - Monitor"))
 		self.temp_timer = eTimer()
 		self.temp_timer.callback.append(self.updateTemp)
 
@@ -514,7 +518,7 @@ class FanControl2SpezialSetup(Screen, ConfigListScreen):
 
 	def __init__(self, session, args = None):
 		Screen.__init__(self, session)
-
+		self.setTitle(_("Fan Control 2 - Setup"))
 # 		config.plugins.FanControl.DisableDMM.value = isDMMdisabled()
 		self.HDDmode = config.plugins.FanControl.CheckHDDTemp.value
 		self.MonitorMode = config.plugins.FanControl.MonitorInExtension.value
@@ -647,7 +651,7 @@ class FanControl2Plugin(ConfigListScreen,Screen):
 		global LastPWM
 		self.session = session
 		Screen.__init__(self, session)
-
+		self.setTitle(_("Fan Control 2"))
 		self.fan_timer = eTimer()
 		self.fan_timer.callback.append(self.updateFanStatus)
 
