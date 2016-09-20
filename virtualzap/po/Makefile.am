@@ -1,3 +1,3 @@
 PLUGIN = VirtualZap
-LANGS = de it fa fr
+LANGS = de el it fa fr
 include $(top_srcdir)/Rules-po.mak

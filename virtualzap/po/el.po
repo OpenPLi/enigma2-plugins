@@ -1,0 +1,74 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-09-20 03:00+0300\n"
+"PO-Revision-Date: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.8\n"
+"Last-Translator: MCelliot_g <mcelliot_g@hotmail.com>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: el_GR\n"
+
+#: ../src/plugin.py:48
+msgid "as plugin in extended bar"
+msgstr "ως πρόσθετο στην εκτεταμένη μπάρα"
+
+#: ../src/plugin.py:48
+msgid "with long OK press"
+msgstr "με παρατεταμένη πίεση του ΟΚ"
+
+#: ../src/plugin.py:48
+msgid "with exit button"
+msgstr "με το πλήκτρο εξόδου"
+
+#: ../src/plugin.py:106
+msgid "Virtual Zap Setup"
+msgstr "Ρυθμίσεις Εικονικού Ζάπινγκ"
+
+#: ../src/plugin.py:108 ../src/plugin.py:112
+msgid "Virtual (PiP) Zap"
+msgstr "Εικονικό (PiP) Ζάπινγκ"
+
+#: ../src/plugin.py:413
+msgid "Cancel"
+msgstr "Ακύρωση"
+
+#: ../src/plugin.py:414
+msgid "OK"
+msgstr "OK"
+
+#: ../src/plugin.py:416
+msgid "Usage"
+msgstr "Χρήση"
+
+#: ../src/plugin.py:598
+msgid "Use PiP"
+msgstr "Χρήση PiP"
+
+#: ../src/plugin.py:599
+msgid "Show PiP in Infobar"
+msgstr "Εμφάνιση του PiP στη Μπάρα Πληροφοριών"
+
+#: ../src/plugin.py:622
+msgid "Start standard PiP after x secs (0 = disabled)"
+msgstr "Εκκίνηση στάνταρ PiP μετά από x δευτ. (0=ανενεργό)"
+
+#: ../src/plugin.py:623
+msgid "Remember last service"
+msgstr "Απομνημόνευση τελευταίας υπηρεσίας"
+
+#: ../src/plugin.py:430
+msgid ""
+"GUI needs a restart to apply the new settings.\n"
+"Do you want to Restart the GUI now?"
+msgstr ""
+"Πρέπει να γίνει επανεκκίνηση της επιφάνειας χρήστη για να εφαρμοστούν οι νέες ρυθμίσεις.\n"
+"Θέλετε να γίνει τώρα;"
+
+#: ../src/plugin.py:431
+msgid "Restart GUI now?"
+msgstr "Επανεκκίνηση της επιφάνειας χρήστη τώρα;"
