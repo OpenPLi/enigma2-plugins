@@ -123,10 +123,7 @@ class Blindscan(ConfigListScreen, Screen):
 		self.setup_title = _("Blind scan for DVB-S2 tuners")
 		Screen.setTitle(self, _(self.setup_title))
 		self.skinName = "Blindscan"
-		try:
-			self.session.postScanService = self.session.nav.getCurrentlyPlayingServiceOrGroup()
-		except:
-			self.session.postScanService = self.session.nav.getCurrentlyPlayingServiceReference()
+		self.session.postScanService = self.session.nav.getCurrentlyPlayingServiceOrGroup()
 		self.onChangedEntry = [ ]
 		self["description"] = Label("")
 		self["rotorstatus"] = Label("")
@@ -196,7 +193,7 @@ class Blindscan(ConfigListScreen, Screen):
 			self["blue"] = Label("")
 			self["introduction"] = Label(_("Please setup your tuner configuration."))
 
-		self.i2c_mapping_table = None
+		self.i2c_mapping_table = {}
 		self.nimSockets = self.ScanNimsocket()
 		self.makeNimSocket()
 		self["config"].onSelectionChanged.append(self.textHelp)
@@ -285,9 +282,7 @@ class Blindscan(ConfigListScreen, Screen):
 			else:	self.i2c_mapping_table = {0:2, 1:4, 2:0, 3:0}
 		else:	self.i2c_mapping_table = {0:2, 1:3, 2:1, 3:0}
 
-	def getNimSocket(self, slot_number, usb=False):
-		if not usb and (slot_number < 0 or slot_number > 3):
-			return -1
+	def getNimSocket(self, slot_number):
 		return self.i2c_mapping_table.get(slot_number, -1)
 
 	def keyNone(self):
