@@ -496,3 +496,10 @@ msgstr "\nВозможно надо использовать адаптер пи
 
 msgid "Step %d %d:%02d min"
 msgstr "Шаг %d %d:%02d мин"
+
+msgid "Scan Step in MHz(TBS5925)"
+msgstr "Шаг сканирования в MHz(TBS5925)"
+
+msgid "Smaller steps takes longer but scan is more thorough"
+msgstr "Меньшие шаги занимают больше времени, но сканирование выполняется более тщательно."
+
