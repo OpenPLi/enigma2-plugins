@@ -149,9 +149,6 @@ msgstr "Dream-обозреватель : разборка..."
 msgid "Dream-Explorer : Install..."
 msgstr "Dream-обозреватель : инсталлировать..."
 
-msgid "Dream-обозреватель..."
-msgstr ""
-
 msgid ""
 "Dreambox-Explorer\n"
 "coded 2010 by Vali\n"
@@ -268,7 +265,7 @@ msgstr "Запущенные процессы: "
 
 #: plugin.py:1109
 msgid "Select Copy/Move location..."
-msgstr ""
+msgstr "Выбор расположения перемещения/копирования"
 
 msgid "Set archive mode (644)"
 msgstr "Установить права чтения (644)"
@@ -354,3 +351,9 @@ msgstr "подождите..."
 
 msgid "Auto play blu-ray file"
 msgstr "Авто проигрывание файла blu-ray"
+
+msgid "Move/Copy"
+msgstr "Перем./Копир."
+
+msgid "Options"
+msgstr "Опции"
