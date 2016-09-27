@@ -362,4 +362,5 @@ msgid "Move"
 msgstr "Перемещение"
 
 msgid "Copy"
+msgstr "Копирование"
 
