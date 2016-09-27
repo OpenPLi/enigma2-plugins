@@ -454,3 +454,9 @@ msgstr ""
 
 msgid "Step %d %d:%02d min"
 msgstr ""
+
+msgid "Scan Step in MHz(TBS5925)"
+msgstr ""
+
+msgid "Smaller steps takes longer but scan is more thorough"
+msgstr ""
