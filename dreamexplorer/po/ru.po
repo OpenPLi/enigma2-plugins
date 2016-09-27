@@ -357,3 +357,9 @@ msgstr "Перем./Копир."
 
 msgid "Options"
 msgstr "Опции"
+
+msgid "Move"
+msgstr "Перемещение"
+
+msgid "Copy"
+
