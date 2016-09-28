@@ -26,6 +26,10 @@ def vfd_write(text):
 		open("/dev/dbox/lcd0", "w").write(text)
 	except:
 		pass
+	try:
+		open("/dev/dbox/oled0", "w").write(text)
+	except:
+		pass
 
 class Channelnumber:
 
@@ -338,10 +342,5 @@ def sessionstart(reason, **kwargs):
 	controliniVfd()
 
 def Plugins(**kwargs):
-	try:
-		f = open("/dev/dbox/lcd0", "w")
-		f.close()
-	except:
-		return []
 	return [ PluginDescriptor(where=[PluginDescriptor.WHERE_AUTOSTART, PluginDescriptor.WHERE_SESSIONSTART], fnc=sessionstart),
 		PluginDescriptor(name="VFD Display Setup", description=_("Change VFD display settings"),where = PluginDescriptor.WHERE_MENU, fnc = main) ]
