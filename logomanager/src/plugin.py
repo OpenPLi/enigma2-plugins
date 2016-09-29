@@ -48,7 +48,6 @@ class LogoManagerScreen(Screen):
 		<screen flags="wfNoBorder" position="60,450" size="600,29" title="Logo Manager" >
 			<widget name="filelist" position="0,0" size="600,30"  />
 		</screen>"""
-		#config.misc.radiopic
 	targets = [
 				( _("bootlogo"), "/etc/enigma2/bootlogo.mvi"),
 				( _("backdrop"), "/etc/enigma2/backdrop.mvi"),
@@ -67,11 +66,11 @@ class LogoManagerScreen(Screen):
 		self["actions"] = ActionMap(["WizardActions", "DirectionActions","MenuActions","ShortcutActions","GlobalActions"],
 		{
 		"ok": self.showSelected,
-		"back": self.exit,
+		"back": self.Exit,
 		"menu": self.openMenu,
 		}, -1)
 
-		self.current_service = self.session.nav.getCurrentlyPlayingServiceReference()
+		self.current_service = self.session.nav.getCurrentlyPlayingServiceOrGroup()
 		self.session.nav.stopService()
 
 		self.available_logos_mode = False
@@ -95,9 +94,9 @@ class LogoManagerScreen(Screen):
 		self.setlist_to_avaiable()
 		self.showSelected()
 
-	def exit(self):
+	def Exit(self):
 		""" quit me """
-		self.session.nav.playService(self.current_service)
+		self.session.nav.playService(self.current_service, adjust=False)
 		self.close()
 
 	def showSelected(self):
