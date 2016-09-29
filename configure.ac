@@ -429,6 +429,12 @@ transmission/src/Makefile
 transmission/po/Makefile
 transmission/meta/Makefile
 
+terrestrialscan/Makefile
+terrestrialscan/src/Makefile
+terrestrialscan/po/Makefile
+terrestrialscan/meta/Makefile
+terrestrialscan/images/Makefile
+
 tvcharts/Makefile
 tvcharts/meta/Makefile
 tvcharts/src/Makefile
