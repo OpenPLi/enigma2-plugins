@@ -83,7 +83,7 @@ class RSSTickerView(Screen):
 	if FULLHD:
 		skin = """
 			<screen position="0,536" size="1920,40" flags="wfNoBorder">
-				<widget name="newsLabel" position="0,0" size="720,30" font="Regular;28" halign="left" noWrap="1"/>
+				<widget name="newsLabel" position="0,0" size="1920,30" font="Regular;28" halign="left" noWrap="1"/>
 			</screen>"""
 	elif HD:
 		skin = """
