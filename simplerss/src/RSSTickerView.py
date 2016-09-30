@@ -5,6 +5,7 @@ from . import _
 
 from Components.Label import Label
 from enigma import eTimer
+from Components.config import config
 
 class MovingLabel(Label):
 	"""Simple Label which allows to display badly scrolling text."""
@@ -40,7 +41,7 @@ class MovingLabel(Label):
 		self.offset = 0
 
 	def startMoving(self):
-		self.moveTimer.start(125)
+		self.moveTimer.start(int(simpleRSS.ticker_speed.value))
 
 	def doMove(self):
 		offset = self.offset + 1
@@ -69,13 +70,31 @@ class MovingCallbackLabel(MovingLabel):
 #pragma mark RSSTickerView
 
 from Screens.Screen import Screen
+from enigma import getDesktop
+
+HD = False
+FULLHD = False
+if getDesktop(0).size().width() >= 1920:
+	FULLHD = True
+elif getDesktop(0).size().width() >= 1280:
+	HD = True
 
 class RSSTickerView(Screen):
-	skin = """
-	<!--- kinda sucks because of overscan, but gives me "good enough" results -->
-	<screen position="0,536" size="720,30" flags="wfNoBorder">
-		<widget name="newsLabel" position="0,0" size="720,20" font="Regular;18" halign="left" noWrap="1"/>
-	</screen>"""
+	if FULLHD:
+		skin = """
+			<screen position="0,536" size="1920,40" flags="wfNoBorder">
+				<widget name="newsLabel" position="0,0" size="720,30" font="Regular;28" halign="left" noWrap="1"/>
+			</screen>"""
+	elif HD:
+		skin = """
+			<screen position="0,536" size="1280,30" flags="wfNoBorder">
+				<widget name="newsLabel" position="0,0" size="1280,20" font="Regular;18" halign="left" noWrap="1"/>
+			</screen>"""
+	else:
+		skin = """
+			<screen position="0,536" size="720,30" flags="wfNoBorder">
+				<widget name="newsLabel" position="0,0" size="720,20" font="Regular;18" halign="left" noWrap="1"/>
+			</screen>"""
 
 	def __init__(self, session):
 		Screen.__init__(self, session)

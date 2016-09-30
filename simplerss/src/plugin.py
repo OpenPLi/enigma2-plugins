@@ -1,11 +1,9 @@
 # for localized messages
 from . import _
 
-from Components.config import config, ConfigSubsection, ConfigSubList, \
-	ConfigEnableDisable, ConfigNumber, ConfigText, ConfigSelection, \
-	ConfigYesNo, ConfigPassword
-
+from Components.config import config, ConfigSubsection, ConfigSubList, ConfigNumber, ConfigText, ConfigSelection, ConfigYesNo, ConfigPassword, ConfigInteger
 from Components.PluginComponent import plugins
+from Plugins.Plugin import PluginDescriptor
 
 # Initialize Configuration
 config.plugins.simpleRSS = ConfigSubsection()
@@ -19,16 +17,18 @@ simpleRSS.update_notification = ConfigSelection(
 	],
 	default = "preview"
 )
+simpleRSS.ticker_speed = ConfigInteger(default = 125, limits = (30, 900))
 simpleRSS.interval = ConfigNumber(default=15)
 simpleRSS.feedcount = ConfigNumber(default=0)
-simpleRSS.autostart = ConfigEnableDisable(default=False)
-simpleRSS.keep_running = ConfigEnableDisable(default=True)
+simpleRSS.autostart = ConfigYesNo(default=False)
+simpleRSS.keep_running = ConfigYesNo(default=True)
+simpleRSS.ext_menu = ConfigYesNo(default=True)
 simpleRSS.feed = ConfigSubList()
 i = 0
 while i < simpleRSS.feedcount.value:
 	s = ConfigSubsection()
 	s.uri = ConfigText(default="http://", fixed_size=False)
-	s.autoupdate = ConfigEnableDisable(default=True)
+	s.autoupdate =  ConfigYesNo(default=True)
 	simpleRSS.feed.append(s)
 	i += 1
 	del s
@@ -126,19 +126,19 @@ def filescan(**kwargs):
 				(
 					ScanPath(path = "", with_subdirs = False),
 				),
-			name = "RSS-Reader",
+			name = _("RSS-Reader"),
 			description = _("Subscribe Newsfeed..."),
 			openfnc = filescan_open,
 		)
 	]
 
 def Plugins(**kwargs):
-	from Plugins.Plugin import PluginDescriptor
- 	return [
+ 	lst = [
 		PluginDescriptor(
-			name = "RSS Reader",
+			name = _("RSS Reader"),
 			description = _("A simple to use RSS reader"),
 			where = PluginDescriptor.WHERE_PLUGINMENU,
+			icon="rss.png",
 			fnc=main,
 			needsRestart=False,
 		),
@@ -148,15 +148,11 @@ def Plugins(**kwargs):
 			needsRestart=False,
 		),
  		PluginDescriptor(
-			name = _("View RSS..."),
-			description = "Let's you view current RSS entries",
-			where = PluginDescriptor.WHERE_EXTENSIONSMENU,
-			fnc=main,
-			needsRestart=False,
-		),
- 		PluginDescriptor(
 			where = PluginDescriptor.WHERE_FILESCAN,
 			fnc = filescan,
 			needsRestart=False,
 		)
 	]
+	if config.plugins.simpleRSS.ext_menu.value:
+		lst.append(PluginDescriptor(name = _("View RSS..."), description = _("Let's you view current RSS entries"), where = PluginDescriptor.WHERE_EXTENSIONSMENU, fnc=main, needsRestart=False))
+	return lst

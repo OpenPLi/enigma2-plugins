@@ -2,7 +2,7 @@
 from . import _
 
 from Screens.Screen import Screen
-from Components.config import config, ConfigSubsection, ConfigEnableDisable, \
+from Components.config import config, ConfigSubsection, ConfigYesNo, \
 	ConfigText, getConfigListEntry
 from Components.ConfigList import ConfigListScreen
 from Components.Sources.StaticText import StaticText
@@ -33,7 +33,7 @@ class RSSFeedEdit(ConfigListScreen, Screen):
 		}, -1)
 
 		self.id = id
-
+		self["VirtualKB"].setEnabled(True)
 		self.onLayoutFinish.append(self.setCustomTitle)
 
 	def setCustomTitle(self):
@@ -42,6 +42,16 @@ class RSSFeedEdit(ConfigListScreen, Screen):
 	def save(self):
 		config.plugins.simpleRSS.feed[self.id].save()
 		config.plugins.simpleRSS.feed.save()
+		self.close()
+
+	def KeyText(self):
+		if self["config"].getCurrent() is not None:
+			if isinstance(self["config"].getCurrent()[1], ConfigText):
+				ConfigListScreen.KeyText(self)
+
+	def keyCancel(self):
+		for x in self["config"].list:
+			x[1].cancel()
 		self.close()
 
 class RSSSetup(ConfigListScreen, Screen):
@@ -62,14 +72,9 @@ class RSSSetup(ConfigListScreen, Screen):
 	def __init__(self, session, rssPoller = None):
 		Screen.__init__(self, session)
 		self.rssPoller = rssPoller
-
-		self.createSetup()
-		config.plugins.simpleRSS.autostart.addNotifier(self.elementChanged, initial_call = False)
-		config.plugins.simpleRSS.enable_google_reader.addNotifier(self.elementChanged, initial_call = False)
-
-		# Initialize ConfigListScreen
+		self.list = []
 		ConfigListScreen.__init__(self, self.list, session)
-
+		self.createSetup()
 		self["key_red"] = StaticText(_("Cancel"))
 		self["key_green"] = StaticText(_("OK"))
 		self["key_yellow"] = StaticText(_("New"))
@@ -107,8 +112,12 @@ class RSSSetup(ConfigListScreen, Screen):
 			list.append(self.keep_running)
 
 		# Append Last two config Elements
+		list.append(getConfigListEntry(_("Show new Messages as"), simpleRSS.update_notification))
+
+		if simpleRSS.update_notification.value == "ticker":
+			list.append(getConfigListEntry(_("Scroll speed (ms)"), simpleRSS.ticker_speed))
+
 		list.extend((
-			getConfigListEntry(_("Show new Messages as"), simpleRSS.update_notification),
 			getConfigListEntry(_("Update Interval (min)"), simpleRSS.interval),
 			getConfigListEntry(_("Fetch feeds from Google Reader?"), simpleRSS.enable_google_reader),
 		))
@@ -119,10 +128,8 @@ class RSSSetup(ConfigListScreen, Screen):
 				getConfigListEntry(_("Google Password"), simpleRSS.google_password),
 			))
 
+		list.append(getConfigListEntry(_("Show in extensions menu"), simpleRSS.ext_menu))
 		self.list = list
-
-	def elementChanged(self, instance):
-		self.createSetup()
 		self["config"].setList(self.list)
 
 	def notificationChanged(self, instance):
@@ -163,11 +170,19 @@ class RSSSetup(ConfigListScreen, Screen):
 		# TODO: anything to be done here?
 		pass
 
+	def keyLeft(self):
+		ConfigListScreen.keyLeft(self)
+		self.createSetup()
+
+	def keyRight(self):
+		ConfigListScreen.keyRight(self)
+		self.createSetup()
+
 	def new(self):
 		l = config.plugins.simpleRSS.feed
 		s = ConfigSubsection()
 		s.uri = ConfigText(default="http://", fixed_size = False)
-		s.autoupdate = ConfigEnableDisable(default=True)
+		s.autoupdate = ConfigYesNo(default=True)
 		id = len(l)
 		l.append(s)
 
@@ -183,7 +198,6 @@ class RSSSetup(ConfigListScreen, Screen):
 		else:
 			config.plugins.simpleRSS.feedcount.value = id+1
 			self.createSetup()
-			self["config"].setList(self.list)
 
 	def keySave(self):
 		# Tell Poller to recreate List if present
@@ -191,12 +205,13 @@ class RSSSetup(ConfigListScreen, Screen):
 			self.rssPoller.triggerReload()
 		ConfigListScreen.keySave(self)
 
+	def keyCancel(self):
+		for x in self["config"].list:
+			x[1].cancel()
+		self.close()
+
 	def abort(self):
 		simpleRSS = config.plugins.simpleRSS
-
-		# Remove Notifier
-		simpleRSS.autostart.notifiers.remove(self.elementChanged)
-		simpleRSS.enable_google_reader.notifiers.remove(self.elementChanged)
 
 		# Handle ticker
 		self.notificationChanged(simpleRSS.update_notification)
@@ -211,7 +226,7 @@ def addFeed(address, auto = False):
 	# Create new Item
 	s = ConfigSubsection()
 	s.uri = ConfigText(default="http://", fixed_size = False)
-	s.autoupdate = ConfigEnableDisable(default=True)
+	s.autoupdate = ConfigYesNo(default=True)
 
 	# Set values
 	s.uri.value = address

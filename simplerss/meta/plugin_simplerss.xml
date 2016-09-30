@@ -7,8 +7,8 @@
                     <name>SimpleRSS</name>
                     <packagename>enigma2-plugin-extensions-simplerss</packagename>
                     <shortdescription>RSS viewer</shortdescription>
-                    <description>SimpleRSS allows reading RSS newsfeeds on your Dreambox.</description>
-                    <screenshot src="http://www.dreamboxupdate.com/preview/plugin_simplerss.jpg" />		    
+                    <description>SimpleRSS allows reading RSS newsfeeds on your box.</description>
+                    <screenshot src="http://www.dreamboxupdate.com/preview/plugin_simplerss.jpg" />
           </info>
 
 	  <files type="package"> <!-- without version, without .ipk -->
