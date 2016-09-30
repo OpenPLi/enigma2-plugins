@@ -10,6 +10,11 @@ from Components.ServiceEventTracker import ServiceEventTracker
 from Screens.InfoBar import InfoBar
 from time import localtime, time
 import Screens.Standby
+from Tools.HardwareInfo import HardwareInfo
+
+use_oled = False
+if HardwareInfo().get_device_model() in ("formuler3", "formuler4", "s1", "h3", "h4", "h5", "lc"):
+	use_oled = True
 
 config.plugins.VFD_ini = ConfigSubsection()
 config.plugins.VFD_ini.showClock = ConfigSelection(default = "True_Switch", choices = [("False",_("Channelnumber in Standby off")),("True",_("Channelnumber in Standby Clock")), ("True_Switch",_("Channelnumber/Clock in Standby Clock")),("True_All",_("Clock always")),("Off",_("Always off"))])
@@ -22,14 +27,16 @@ config.plugins.VFD_ini.ClockLevel2 = ConfigSlider(default=4, limits=(1, 10))
 MyRecLed = False
 
 def vfd_write(text):
-	try:
-		open("/dev/dbox/lcd0", "w").write(text)
-	except:
-		pass
-	try:
-		open("/dev/dbox/oled0", "w").write(text)
-	except:
-		pass
+	if use_oled:
+		try:
+			open("/dev/dbox/oled0", "w").write(text)
+		except:
+			pass
+	else:
+		try:
+			open("/dev/dbox/lcd0", "w").write(text)
+		except:
+			pass
 
 class Channelnumber:
 
@@ -294,7 +301,6 @@ class VFD_INISetup(ConfigListScreen, Screen):
 class VFD_INI:
 	def __init__(self, session):
 		self.session = session
-		self.service = None
 		self.onClose = [ ]
 		initVFD()
 
@@ -342,5 +348,8 @@ def sessionstart(reason, **kwargs):
 	controliniVfd()
 
 def Plugins(**kwargs):
-	return [ PluginDescriptor(where=[PluginDescriptor.WHERE_AUTOSTART, PluginDescriptor.WHERE_SESSIONSTART], fnc=sessionstart),
-		PluginDescriptor(name="VFD Display Setup", description=_("Change VFD display settings"),where = PluginDescriptor.WHERE_MENU, fnc = main) ]
+	from Components.SystemInfo import SystemInfo
+	if SystemInfo["FrontpanelDisplay"]:
+		return [ PluginDescriptor(where=[PluginDescriptor.WHERE_AUTOSTART, PluginDescriptor.WHERE_SESSIONSTART], fnc=sessionstart),
+			PluginDescriptor(name="VFD Display Setup", description=_("Change VFD display settings"),where = PluginDescriptor.WHERE_MENU, fnc = main) ]
+	return []
