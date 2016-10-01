@@ -1,7 +1,7 @@
 # for localized messages
 from . import _
 
-from Components.config import config, ConfigSubsection, ConfigSubList, ConfigNumber, ConfigText, ConfigSelection, ConfigYesNo, ConfigPassword, ConfigInteger
+from Components.config import config, ConfigSubsection, ConfigSubList, ConfigNumber, ConfigText, ConfigSelection, ConfigYesNo, ConfigPassword, ConfigInteger, ConfigNothing
 from Components.PluginComponent import plugins
 from Plugins.Plugin import PluginDescriptor
 
@@ -17,12 +17,13 @@ simpleRSS.update_notification = ConfigSelection(
 	],
 	default = "preview"
 )
-simpleRSS.ticker_speed = ConfigInteger(default = 125, limits = (30, 900))
+simpleRSS.ticker_speed = ConfigInteger(default = 125, limits = (100, 900))
 simpleRSS.interval = ConfigNumber(default=15)
 simpleRSS.feedcount = ConfigNumber(default=0)
 simpleRSS.autostart = ConfigYesNo(default=False)
 simpleRSS.keep_running = ConfigYesNo(default=True)
 simpleRSS.ext_menu = ConfigYesNo(default=True)
+simpleRSS.filescan = ConfigNothing()
 simpleRSS.feed = ConfigSubList()
 i = 0
 while i < simpleRSS.feedcount.value:

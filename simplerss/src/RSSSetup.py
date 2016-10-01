@@ -66,7 +66,7 @@ class RSSSetup(ConfigListScreen, Screen):
 			<widget source="key_green" render="Label" position="140,0" zPosition="1" size="140,40" valign="center" halign="center" font="Regular;21" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
 			<widget source="key_yellow" render="Label" position="280,0" zPosition="1" size="140,40" valign="center" halign="center" font="Regular;21" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
 			<widget source="key_blue" render="Label" position="420,0" zPosition="1" size="140,40" valign="center" halign="center" font="Regular;21" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
-			<widget name="config" position="5,45" size="550,350" scrollbarMode="showOnDemand" />
+			<widget name="config" position="0,45" size="560,350" scrollbarMode="showOnDemand" />
 		</screen>"""
 
 	def __init__(self, session, rssPoller = None):
@@ -129,6 +129,7 @@ class RSSSetup(ConfigListScreen, Screen):
 			))
 
 		list.append(getConfigListEntry(_("Show in extensions menu"), simpleRSS.ext_menu))
+		list.append(getConfigListEntry(_("Scanner rss+xml or atom+xml"), simpleRSS.filescan))
 		self.list = list
 		self["config"].setList(self.list)
 

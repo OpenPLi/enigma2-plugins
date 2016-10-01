@@ -15,6 +15,15 @@ from Components.Sources.StaticText import StaticText
 
 from RSSList import RSSFeedList
 
+from enigma import getDesktop
+
+HD = False
+FULLHD = False
+if getDesktop(0).size().width() >= 1920:
+	FULLHD = True
+elif getDesktop(0).size().width() >= 1280:
+	HD = True
+
 class RSSSummary(Screen):
 	skin = """
 	<screen position="0,0" size="132,64">
@@ -102,12 +111,28 @@ class RSSBaseView(Screen):
 
 class RSSEntryView(RSSBaseView):
 	"""Shows a RSS Item"""
-
-	skin = """
-		<screen position="center,center" size="460,420" title="Simple RSS Reader" >
-			<widget source="info" render="Label" position="0,0" size="460, 20" halign="right" font="Regular; 18" />
-			<widget name="content" position="0,20" size="460,400" font="Regular; 22" />
-		</screen>"""
+	if FULLHD:
+		skin = """
+			<screen position="center,center" size="1760,900" title="Simple RSS Reader" >
+				<eLabel position="5,5" size="1750,1" backgroundColor="background" />
+				<eLabel position="5,55" size="1750,1" backgroundColor="background" />
+				<widget source="info" render="Label" position="10,15" size="1740,35" halign="center" font="Regular; 32" />
+				<widget name="content" position="10,90" size="1740,800" font="Regular; 36" />
+			</screen>"""
+	elif HD:
+		skin = """
+			<screen position="60,60" size="1160,600" title="Simple RSS Reader" >
+				<eLabel position="5,5" size="1150,1" backgroundColor="background" />
+				<eLabel position="5,55" size="1150,1" backgroundColor="background" />
+				<widget source="info" render="Label" position="10,15" size="1140 ,30" halign="center" font="Regular; 22" />
+				<widget name="content" position="10,65" size="1140,530" font="Regular; 26" />
+			</screen>"""
+	else:
+		skin = """
+			<screen position="center,center" size="460,420" title="Simple RSS Reader" >
+				<widget source="info" render="Label" position="0,0" size="460, 20" halign="right" font="Regular; 18" />
+				<widget name="content" position="0,20" size="460,400" font="Regular; 22" />
+			</screen>"""
 
 	def __init__(self, session, data, feedTitle="", cur_idx=None, entries=None, parent=None):
 		RSSBaseView.__init__(self, session, None, parent)
@@ -143,7 +168,15 @@ class RSSEntryView(RSSBaseView):
 		self.onLayoutFinish.append(self.setConditionalTitle)
 
 	def setConditionalTitle(self):
-		self.setTitle(_("Simple RSS Reader: %s") % (self.feedTitle))
+		text = self.feedTitle
+		num = 15
+		if HD:
+			num = 90
+		elif FULLHD:
+			num = 140
+		if text and len(text) > num:
+			text = text[:num] + " ..."
+		self.setTitle(_("Simple RSS Reader: %s") % (text))
 
 	def updateInfo(self):
 		if self.data:
@@ -221,22 +254,60 @@ class RSSEntryView(RSSBaseView):
 
 class RSSFeedView(RSSBaseView):
 	"""Shows a RSS-Feed"""
-
-	skin = """
-		<screen position="center,center" size="460,415" title="Simple RSS Reader" >
-			<widget source="info" render="Label" position="0,0" size="460,20" halign="right" font="Regular; 18" />
-			<widget source="content" render="Listbox" position="0,20" size="460,300" scrollbarMode="showOnDemand">
-				<convert type="TemplatedMultiContent">
-					{"template": [
-							MultiContentEntryText(pos=(0, 3), size=(460, 294), font=0, flags = RT_HALIGN_LEFT|RT_WRAP, text = 0)
-						],
-					 "fonts": [gFont("Regular", 22)],
-					 "itemHeight": 50
-					}
-				</convert>
+	if FULLHD:
+		skin = """
+			<screen position="center,center" size="1760,900" title="Simple RSS Reader" >
+				<eLabel position="5,5" size="1750,1" backgroundColor="background" />
+				<eLabel position="5,55" size="1750,1" backgroundColor="background" />
+				<eLabel position="5,497" size="1750,1" backgroundColor="background" />
+				<widget source="info" render="Label" position="10,15" size="1740,40" halign="center" font="Regular;34" />
+				<widget source="content" render="Listbox" position="10,80" size="1740,700" scrollbarMode="showOnDemand">
+					<convert type="TemplatedMultiContent">
+						{"template": [
+								MultiContentEntryText(pos=(0, 3), size=(1740, 430), font=0, flags = RT_HALIGN_LEFT|RT_WRAP, text = 0)
+							],
+						"fonts": [gFont("Regular", 34)],
+						"itemHeight": 100
+						}
+					</convert>
+				</widget>
+				<widget source="summary" render="Label" position="10,800" size="1740,100" itemHeight="40" foregroundColor="#00bab329" font="Regular;32" />
+			</screen>"""
+	elif HD:
+		skin = """
+			<screen position="60,60" size="1160,600" title="Simple RSS Reader" >
+				<eLabel position="5,5" size="1150,1" backgroundColor="background" />
+				<eLabel position="5,55" size="1150,1" backgroundColor="background" />
+				<eLabel position="5,497" size="1150,1" backgroundColor="background" />
+				<widget source="info" render="Label" position="10,15" size="1140,30" halign="center" font="Regular;24" />
+				<widget source="content" render="Listbox" position="10,65" size="1140,430" scrollbarMode="showOnDemand">
+					<convert type="TemplatedMultiContent">
+						{"template": [
+								MultiContentEntryText(pos=(0, 3), size=(1140, 430), font=0, flags = RT_HALIGN_LEFT|RT_WRAP, text = 0)
+							],
+						"fonts": [gFont("Regular", 24)],
+						"itemHeight": 60
+						}
+					</convert>
+				</widget>
+				<widget source="summary" render="Label" position="10,500" size="1140,100" itemHeight="30" foregroundColor="#00bab329" font="Regular;22" />
+			</screen>"""
+	else:
+		skin = """
+			<screen position="center,center" size="460,415" title="Simple RSS Reader" >
+				<widget source="info" render="Label" position="0,0" size="460,20" halign="right" font="Regular; 18" />
+				<widget source="content" render="Listbox" position="0,20" size="460,300" scrollbarMode="showOnDemand">
+					<convert type="TemplatedMultiContent">
+						{"template": [
+								MultiContentEntryText(pos=(0, 3), size=(460, 294), font=0, flags = RT_HALIGN_LEFT|RT_WRAP, text = 0)
+							],
+						"fonts": [gFont("Regular", 22)],
+						"itemHeight": 50
+						}
+					</convert>
 			</widget>
-			<widget source="summary" render="Label" position="0,320" size="460,95" font="Regular;16" />
-		</screen>"""
+				<widget source="summary" render="Label" position="0,320" size="460,95" font="Regular;16" />
+			</screen>"""
 
 	def __init__(self, session, feed=None, newItems=False, parent=None, rssPoller=None,id=None):
 		RSSBaseView.__init__(self, session, rssPoller, parent)
@@ -305,7 +376,15 @@ class RSSFeedView(RSSBaseView):
 			self.updateInfo()
 
 	def setConditionalTitle(self):
-		self.setTitle(_("Simple RSS Reader: %s") % (self.feed.title))
+		num = 15
+		if HD:
+			num = 90
+		elif FULLHD:
+			num = 140
+		text = self.feed.title
+		if text and len(text) > num:
+			text = text[:num] + " ..."
+		self.setTitle(_("Simple RSS Reader: %s") % (text))
 
 	def updateInfo(self):
 		current_entry = self["content"].current
@@ -388,13 +467,33 @@ class RSSFeedView(RSSBaseView):
 
 class RSSOverview(RSSBaseView):
 	"""Shows an Overview over all RSS-Feeds known to rssPoller"""
-
-	skin = """
-		<screen position="center,center" size="460,415" title="Simple RSS Reader" >
-			<widget source="info" render="Label" position="0,0" size="460,20" halign="right" font="Regular; 18" />
-			<widget name="content" position="0,20" size="460,300" scrollbarMode="showOnDemand" />
-			<widget source="summary" render="Label" position="0,320" size="460,95" font="Regular;16" />
-		</screen>"""
+	if FULLHD:
+		skin = """
+			<screen position="center,center" size="1760,900" title="Simple RSS Reader" >
+				<eLabel position="5,5" size="1750,1" backgroundColor="background" />
+				<eLabel position="5,55" size="1750,1" backgroundColor="background" />
+				<eLabel position="5,437" size="1750,1" backgroundColor="background" />
+				<widget source="info" render="Label" position="10,15" size="1140,40" halign="center" font="Regular;34" />
+				<widget name="content" position="10,80" size="1740,600" font="Regular;30" itemHeight="100" scrollbarMode="showOnDemand" />
+				<widget source="summary" render="Label" position="10,390" size="1740,200" font="Regular;28" halign="center" valign="center" foregroundColor="#00bab329" />
+			</screen>"""
+	elif HD:
+		skin = """
+			<screen position="60,60" size="1160,600" title="Simple RSS Reader" >
+				<eLabel position="5,5" size="1150,1" backgroundColor="background" />
+				<eLabel position="5,55" size="1150,1" backgroundColor="background" />
+				<eLabel position="5,437" size="1150,1" backgroundColor="background" />
+				<widget source="info" render="Label" position="10,15" size="1140,30" halign="center" font="Regular;24" />
+				<widget name="content" position="10,65" size="1140,424" itemHeight="70" scrollbarMode="showOnDemand" />
+				<widget source="summary" render="Label" position="10,505" size="1140,90" font="Regular;22" halign="center" valign="center" foregroundColor="#00bab329" />
+			</screen>"""
+	else:
+		skin = """
+			<screen position="center,center" size="460,415" title="Simple RSS Reader" >
+				<widget source="info" render="Label" position="0,0" size="460,20" halign="right" font="Regular; 18" />
+				<widget name="content" position="0,20" size="460,300" scrollbarMode="showOnDemand" />
+				<widget source="summary" render="Label" position="0,320" size="460,95" foregroundColor="#00bab329" font="Regular;16" />
+			</screen>"""
 
 	def __init__(self, session, poller):
 		RSSBaseView.__init__(self, session, poller)

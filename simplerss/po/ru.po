@@ -166,3 +166,6 @@ msgstr "Скорость прокрутки (мс)"
 
 msgid "Show in extensions menu"
 msgstr "Показать плагин в меню расширений"
+
+msgid "Scanner rss+xml or atom+xml"
+msgstr "Авто сканирование rss+xml или atom+xml"
