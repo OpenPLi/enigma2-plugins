@@ -1,0 +1,66 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: MediaDownloader\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-06-24 20:45+0300\n"
+"PO-Revision-Date: 2016-10-02 00:08+0300\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.9\n"
+"Last-Translator: Dimitrij <Dima-73@inbox.lv>\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Language: ru\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+
+#: ../src/MediaDownloader.py:215
+#, python-format
+msgid "%d kb/s"
+msgstr "%d кб/с"
+
+#: ../src/MediaDownloader.py:148
+msgid "?? kb/s"
+msgstr "?? кб/с"
+
+#: ../src/MediaDownloader.py:245
+msgid "Do you want to try to open the downloaded file?"
+msgstr "Вы хотите попытаться открыть скачанный файл?"
+
+#: ../src/plugin.py:83
+msgid "Download..."
+msgstr "Скачать..."
+
+#: ../src/MediaDownloader.py:145
+msgid "Downloading..."
+msgstr "Скачивание..."
+
+#: ../src/MediaDownloader.py:214
+#, python-format
+msgid "ETA %d:%02d min"
+msgstr "ETA %d:%02d мин"
+
+#: ../src/MediaDownloader.py:147
+msgid "ETA ??:?? h"
+msgstr "ETA ??:?? ч"
+
+#: ../src/MediaDownloader.py:262
+#, python-format
+msgid "Error while downloading file %s"
+msgstr "Ошибка при скачивании файла %s"
+
+#: ../src/MediaDownloader.py:228
+msgid "No suitable Viewer found!"
+msgstr "Нет подходящего для просмотра!"
+
+#: ../src/MediaDownloader.py:172
+msgid "Where to save?"
+msgstr "Где сохранить?"
+
+#: ../src/plugin.py:58
+msgid "Which file do you want to download?"
+msgstr "Какой файл Вы хотите скачать?"
