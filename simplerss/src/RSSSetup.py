@@ -7,6 +7,7 @@ from Components.config import config, ConfigSubsection, ConfigYesNo, \
 from Components.ConfigList import ConfigListScreen
 from Components.Sources.StaticText import StaticText
 from Components.ActionMap import ActionMap
+from Screens.MessageBox import MessageBox
 
 class RSSFeedEdit(ConfigListScreen, Screen):
 	"""Edit an RSS-Feed"""
@@ -129,7 +130,9 @@ class RSSSetup(ConfigListScreen, Screen):
 			))
 
 		list.append(getConfigListEntry(_("Show in extensions menu"), simpleRSS.ext_menu))
-		list.append(getConfigListEntry(_("Scanner rss+xml or atom+xml"), simpleRSS.filescan))
+		list.append(getConfigListEntry(_("--- Scanner automount ---"), simpleRSS.filescan))
+		list.append(getConfigListEntry(_("< Create file any name.rss in USB device >"), simpleRSS.filescan))
+		list.append(getConfigListEntry(_("< and write feeds link column >"), simpleRSS.filescan))
 		self.list = list
 		self["config"].setList(self.list)
 
@@ -145,13 +148,13 @@ class RSSSetup(ConfigListScreen, Screen):
 				tv.tickerView = None
 
 	def delete(self):
-		from Screens.MessageBox import MessageBox
-
-		self.session.openWithCallback(
-			self.deleteConfirm,
-			MessageBox,
-			_("Really delete this entry?\nIt cannot be recovered!")
-		)
+		cur = self["config"].getCurrent()
+		if cur and cur[0] == _("Feed"):
+			self.session.openWithCallback(
+				self.deleteConfirm,
+				MessageBox,
+				_("Really delete this entry?\nIt cannot be recovered!")
+			)
 
 	def deleteConfirm(self, result):
 		if result:
@@ -236,4 +239,6 @@ def addFeed(address, auto = False):
 	# Save
 	l.append(s)
 	l.save()
+	config.plugins.simpleRSS.feedcount.value = len(config.plugins.simpleRSS.feed)
+	config.plugins.simpleRSS.feedcount.save()
 

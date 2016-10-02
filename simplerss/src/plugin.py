@@ -4,6 +4,10 @@ from . import _
 from Components.config import config, ConfigSubsection, ConfigSubList, ConfigNumber, ConfigText, ConfigSelection, ConfigYesNo, ConfigPassword, ConfigInteger, ConfigNothing
 from Components.PluginComponent import plugins
 from Plugins.Plugin import PluginDescriptor
+from Screens.MessageBox import MessageBox
+from Screens.ChoiceBox import ChoiceBox
+from Tools.BoundFunction import boundFunction
+from RSSSetup import addFeed
 
 # Initialize Configuration
 config.plugins.simpleRSS = ConfigSubsection()
@@ -93,23 +97,52 @@ def autostart(reason, **kwargs):
 			rssPoller.shutdown()
 			rssPoller = None
 
+def filescan_chosen(session, feed, item):
+	if item and item[1] == "apply":
+		for i in range(config.plugins.simpleRSS.feedcount.value):
+			try:
+				if config.plugins.simpleRSS.feed[i].uri.value in feed:
+					for uri in feed:
+						if uri == config.plugins.simpleRSS.feed[i].uri.value:
+							feed.remove(uri)
+			except:
+				pass
+		if feed:
+			for uri in feed:
+				addFeed(uri)
+			session.open(MessageBox, _("%d feed(s) added to configuration.") % len(feed), type = MessageBox.TYPE_INFO, timeout = 5)
+		else:
+			session.open(MessageBox, _("Not found new feed(s)."), type = MessageBox.TYPE_INFO, timeout = 5)
+
 # Filescan
 def filescan_open(item, session, **kwargs):
-	from RSSSetup import addFeed
+	Len = len(item)
+	if Len:
+		file = item[0].path
+		if file.endswith(".rss"):
+			try:
+				menu = [(_("Apply"), "apply"), (_("Close"), "close")]
+				list = []
+				f = open(file, "r")
+				all_lines = f.readlines()
+				for line in all_lines:
+					if line.startswith(("http://", "https://")) and not line.endswith("#"):
+						list.append(line)
+				f.close()
+				if list:
+					session.openWithCallback(boundFunction(filescan_chosen, session, list), ChoiceBox, _("Found %d feed(s)") % len(list), menu)
+			except:
+				session.open(MessageBox, _("Read error %s") % file, type = MessageBox.TYPE_INFO, timeout = 5)
+		else:
+			# Add earch feed
+			for each in item:
+				addFeed(each)
 
-	# Add earch feed
-	for each in item:
-		addFeed(each)
+			# Display Message
+			session.open(MessageBox, _("%d Feed(s) were added to configuration.") % (Len), type = MessageBox.TYPE_INFO, timeout = 5)
 
-	from Screens.MessageBox import MessageBox
-
-	# Display Message
-	session.open(
-		MessageBox,
-		_("%d Feed(s) were added to configuration.") % (len(item)),
-		type = MessageBox.TYPE_INFO,
-		timeout = 5
-	)
+from mimetypes import add_type
+add_type("application/x-feed-rss", ".rss")
 
 # Filescanner
 def filescan(**kwargs):
@@ -118,11 +151,13 @@ def filescan(**kwargs):
 	# Overwrite checkFile to detect remote files
 	class RemoteScanner(Scanner):
 		def checkFile(self, file):
+			if file.path.endswith(".rss"):
+				return True
 			return file.path.startswith(("http://", "https://"))
 
 	return [
 		RemoteScanner(
-			mimetypes = ("application/rss+xml", "application/atom+xml"),
+			mimetypes = ("application/rss+xml", "application/atom+xml", "application/x-feed-rss"),
 			paths_to_scan =
 				(
 					ScanPath(path = "", with_subdirs = False),
