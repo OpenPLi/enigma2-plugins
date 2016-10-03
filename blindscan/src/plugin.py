@@ -39,7 +39,7 @@ if fileExists("/proc/stb/info/boxtype"):
 			BOX_MODEL = "formuler"
 		elif BOX_NAME.startswith('hd'):
 			BOX_MODEL = "hd"
-		elif BOX_NAME.startswith('osmini'):
+		elif BOX_NAME.startswith('osm'):
 			BOX_MODEL = "edision"
 		elif BOX_NAME.startswith('7000S'):
 			BOX_MODEL = "miraclebox"
