@@ -1,0 +1,193 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: RSSReader\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-07-29 01:13+0100\n"
+"PO-Revision-Date: 2016-10-03 00:38+0300\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Generator: Poedit 1.8.9\n"
+"Last-Translator: Dimitrij <Dima-73@inbox.lv>\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n"
+"%100<10 || n%100>=20) ? 1 : 2);\n"
+"Language: ru_UA\n"
+
+msgid "RSS Reader"
+msgstr "Просмотр RSS"
+
+msgid "New Items"
+msgstr "Новые сообщения"
+
+msgid "Autoupdate"
+msgstr "Автообновление"
+
+msgid "Feed URI"
+msgstr "Адрес ленты"
+
+msgid "Simple RSS Reader Setup"
+msgstr "Простое чтение RSS лент - настройки"
+
+msgid "Simple RSS Reader"
+msgstr "Простое чтение RSS лент"
+
+msgid "Feed"
+msgstr "Лента"
+
+msgid "New"
+msgstr "Новая"
+
+msgid "Start automatically with Enigma2"
+msgstr "Автозапуск"
+
+msgid "Keep running in background"
+msgstr "Продолжать работу в фоновом режиме"
+
+msgid "Show new Messages as"
+msgstr "Показывать новые сообщения как"
+
+msgid "Update Interval (min)"
+msgstr "Интервал обновления (мин)"
+
+msgid "Fetch feeds from Google Reader?"
+msgstr "Получать ленты из 'Google Reader'"
+
+msgid "Google Username"
+msgstr "Имя пользователя Google"
+
+msgid "Google Password"
+msgstr "Пароль Google"
+
+msgid ""
+"Really delete this entry?\n"
+"It cannot be recovered!"
+msgstr ""
+"Вы действительно хотите удалить эту запись?\n"
+"Запись потом не может быть восстановлена!"
+
+msgid "Error while parsing Feed, this usually means there is something wrong with it."
+msgstr "Ошибка при парсинге ленты, обычно это означает, что с форматом ленты что то не так."
+
+msgid ""
+"Update is being done in Background.\n"
+"Contents will automatically be updated when it's done."
+msgstr ""
+"Обновление будет выполнено в фоновом режиме.\n"
+"Контент будет автоматически обновлен."
+
+msgid "Found no Enclosure we can display."
+msgstr "Не найдено вложений для показа."
+
+msgid "Entry %s/%s"
+msgstr "Запись %s/%s"
+
+msgid "Enclosures"
+msgstr "Вложений"
+
+msgid "Simple RSS Reader: %s"
+msgstr "Простой просмотр RSS: %s"
+
+msgid "No such Item."
+msgstr "Нет сообщений для показа."
+
+msgid "Feed is empty."
+msgstr "Лента пустая."
+
+msgid "Entries"
+msgstr "записей"
+
+msgid "Feed %s/%s"
+msgstr "Лента %s/%s"
+
+msgid "Update Feed"
+msgstr "Обновление ленты"
+
+msgid "What to do?"
+msgstr "Что Вы хотите сделать?"
+
+msgid "New Items since last Auto-Update"
+msgstr "Новые сообщения из последнего автообновления"
+
+msgid "Failed to login to Google Reader."
+msgstr "Ошибочный логин в 'Google Reader'."
+
+msgid "Failed to get subscriptions from Google Reader."
+msgstr "Не удалось получить подписки из 'Google Reader'."
+
+msgid ""
+"Sorry, this type of feed is unsupported:\n"
+"%s"
+msgstr ""
+"К сожалению, этот тип ленты не поддерживается:\n"
+"%s"
+
+msgid "Received %d new news item(s)."
+msgstr "Получено %d новых сообщений."
+
+msgid "Notification"
+msgstr "Уведомление"
+
+msgid "Preview"
+msgstr "Превью"
+
+msgid "Ticker"
+msgstr "Бегущая строка"
+
+msgid "none"
+msgstr "ничего"
+
+msgid "%d Feed(s) were added to configuration."
+msgstr "%d лент был добавлено в конфигурацию."
+
+msgid "Subscribe Newsfeed..."
+msgstr "Подписка фида новостей..."
+
+msgid "A simple to use RSS reader"
+msgstr "Плагин для просмотра сообщений RSS"
+
+msgid "View RSS..."
+msgstr "Просмотр RSS..."
+
+msgid "Unsupported Feed: %s"
+msgstr "Лента не поддерживается: %s"
+
+msgid "RSS-Reader"
+msgstr "RSS-просмотр"
+
+msgid "Let's you view current RSS entries"
+msgstr "Просмотр Ваших текущих RSS лент"
+
+msgid "Scroll speed (ms)"
+msgstr "Скорость прокрутки (мс)"
+
+msgid "Show in extensions menu"
+msgstr "Показать плагин в меню расширений"
+
+msgid "%d feed(s) added to configuration."
+msgstr "%d лент(а) успешно добавлена в конфигурацию."
+
+msgid "Not found new feed(s)."
+msgstr "Нет найденных новых лент."
+
+msgid "Read error %s"
+msgstr "Ошибка чтения %s"
+
+msgid "Found %d feed(s)"
+msgstr "Найдено %d лент"
+
+msgid "Close"
+msgstr "Закрыть"
+
+msgid "Apply"
+msgstr "Применить"
+
+msgid "< Create file any name.rss in USB device >"
+msgstr "< Создайте файл любое имя.rss на USB флешке >"
+
+msgid "--- Scanner automount ---"
+msgstr "--- Сканер авто монтирования ---"
+
+msgid "< and write feeds link column >"
+msgstr "<  и впишите адреса лент колонкой >"

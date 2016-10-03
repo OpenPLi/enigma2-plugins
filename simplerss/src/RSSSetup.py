@@ -2,11 +2,12 @@
 from . import _
 
 from Screens.Screen import Screen
-from Components.config import config, ConfigSubsection, ConfigEnableDisable, \
+from Components.config import config, ConfigSubsection, ConfigYesNo, \
 	ConfigText, getConfigListEntry
 from Components.ConfigList import ConfigListScreen
 from Components.Sources.StaticText import StaticText
 from Components.ActionMap import ActionMap
+from Screens.MessageBox import MessageBox
 
 class RSSFeedEdit(ConfigListScreen, Screen):
 	"""Edit an RSS-Feed"""
@@ -33,7 +34,7 @@ class RSSFeedEdit(ConfigListScreen, Screen):
 		}, -1)
 
 		self.id = id
-
+		self["VirtualKB"].setEnabled(True)
 		self.onLayoutFinish.append(self.setCustomTitle)
 
 	def setCustomTitle(self):
@@ -42,6 +43,16 @@ class RSSFeedEdit(ConfigListScreen, Screen):
 	def save(self):
 		config.plugins.simpleRSS.feed[self.id].save()
 		config.plugins.simpleRSS.feed.save()
+		self.close()
+
+	def KeyText(self):
+		if self["config"].getCurrent() is not None:
+			if isinstance(self["config"].getCurrent()[1], ConfigText):
+				ConfigListScreen.KeyText(self)
+
+	def keyCancel(self):
+		for x in self["config"].list:
+			x[1].cancel()
 		self.close()
 
 class RSSSetup(ConfigListScreen, Screen):
@@ -56,20 +67,15 @@ class RSSSetup(ConfigListScreen, Screen):
 			<widget source="key_green" render="Label" position="140,0" zPosition="1" size="140,40" valign="center" halign="center" font="Regular;21" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
 			<widget source="key_yellow" render="Label" position="280,0" zPosition="1" size="140,40" valign="center" halign="center" font="Regular;21" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
 			<widget source="key_blue" render="Label" position="420,0" zPosition="1" size="140,40" valign="center" halign="center" font="Regular;21" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
-			<widget name="config" position="5,45" size="550,350" scrollbarMode="showOnDemand" />
+			<widget name="config" position="0,45" size="560,350" scrollbarMode="showOnDemand" />
 		</screen>"""
 
 	def __init__(self, session, rssPoller = None):
 		Screen.__init__(self, session)
 		self.rssPoller = rssPoller
-
-		self.createSetup()
-		config.plugins.simpleRSS.autostart.addNotifier(self.elementChanged, initial_call = False)
-		config.plugins.simpleRSS.enable_google_reader.addNotifier(self.elementChanged, initial_call = False)
-
-		# Initialize ConfigListScreen
+		self.list = []
 		ConfigListScreen.__init__(self, self.list, session)
-
+		self.createSetup()
 		self["key_red"] = StaticText(_("Cancel"))
 		self["key_green"] = StaticText(_("OK"))
 		self["key_yellow"] = StaticText(_("New"))
@@ -107,8 +113,12 @@ class RSSSetup(ConfigListScreen, Screen):
 			list.append(self.keep_running)
 
 		# Append Last two config Elements
+		list.append(getConfigListEntry(_("Show new Messages as"), simpleRSS.update_notification))
+
+		if simpleRSS.update_notification.value == "ticker":
+			list.append(getConfigListEntry(_("Scroll speed (ms)"), simpleRSS.ticker_speed))
+
 		list.extend((
-			getConfigListEntry(_("Show new Messages as"), simpleRSS.update_notification),
 			getConfigListEntry(_("Update Interval (min)"), simpleRSS.interval),
 			getConfigListEntry(_("Fetch feeds from Google Reader?"), simpleRSS.enable_google_reader),
 		))
@@ -119,10 +129,11 @@ class RSSSetup(ConfigListScreen, Screen):
 				getConfigListEntry(_("Google Password"), simpleRSS.google_password),
 			))
 
+		list.append(getConfigListEntry(_("Show in extensions menu"), simpleRSS.ext_menu))
+		list.append(getConfigListEntry(_("--- Scanner automount ---"), simpleRSS.filescan))
+		list.append(getConfigListEntry(_("< Create file any name.rss in USB device >"), simpleRSS.filescan))
+		list.append(getConfigListEntry(_("< and write feeds link column >"), simpleRSS.filescan))
 		self.list = list
-
-	def elementChanged(self, instance):
-		self.createSetup()
 		self["config"].setList(self.list)
 
 	def notificationChanged(self, instance):
@@ -137,13 +148,13 @@ class RSSSetup(ConfigListScreen, Screen):
 				tv.tickerView = None
 
 	def delete(self):
-		from Screens.MessageBox import MessageBox
-
-		self.session.openWithCallback(
-			self.deleteConfirm,
-			MessageBox,
-			_("Really delete this entry?\nIt cannot be recovered!")
-		)
+		cur = self["config"].getCurrent()
+		if cur and cur[0] == _("Feed"):
+			self.session.openWithCallback(
+				self.deleteConfirm,
+				MessageBox,
+				_("Really delete this entry?\nIt cannot be recovered!")
+			)
 
 	def deleteConfirm(self, result):
 		if result:
@@ -163,11 +174,19 @@ class RSSSetup(ConfigListScreen, Screen):
 		# TODO: anything to be done here?
 		pass
 
+	def keyLeft(self):
+		ConfigListScreen.keyLeft(self)
+		self.createSetup()
+
+	def keyRight(self):
+		ConfigListScreen.keyRight(self)
+		self.createSetup()
+
 	def new(self):
 		l = config.plugins.simpleRSS.feed
 		s = ConfigSubsection()
 		s.uri = ConfigText(default="http://", fixed_size = False)
-		s.autoupdate = ConfigEnableDisable(default=True)
+		s.autoupdate = ConfigYesNo(default=True)
 		id = len(l)
 		l.append(s)
 
@@ -183,7 +202,6 @@ class RSSSetup(ConfigListScreen, Screen):
 		else:
 			config.plugins.simpleRSS.feedcount.value = id+1
 			self.createSetup()
-			self["config"].setList(self.list)
 
 	def keySave(self):
 		# Tell Poller to recreate List if present
@@ -191,12 +209,13 @@ class RSSSetup(ConfigListScreen, Screen):
 			self.rssPoller.triggerReload()
 		ConfigListScreen.keySave(self)
 
+	def keyCancel(self):
+		for x in self["config"].list:
+			x[1].cancel()
+		self.close()
+
 	def abort(self):
 		simpleRSS = config.plugins.simpleRSS
-
-		# Remove Notifier
-		simpleRSS.autostart.notifiers.remove(self.elementChanged)
-		simpleRSS.enable_google_reader.notifiers.remove(self.elementChanged)
 
 		# Handle ticker
 		self.notificationChanged(simpleRSS.update_notification)
@@ -211,7 +230,7 @@ def addFeed(address, auto = False):
 	# Create new Item
 	s = ConfigSubsection()
 	s.uri = ConfigText(default="http://", fixed_size = False)
-	s.autoupdate = ConfigEnableDisable(default=True)
+	s.autoupdate = ConfigYesNo(default=True)
 
 	# Set values
 	s.uri.value = address
@@ -220,4 +239,6 @@ def addFeed(address, auto = False):
 	# Save
 	l.append(s)
 	l.save()
+	config.plugins.simpleRSS.feedcount.value = len(config.plugins.simpleRSS.feed)
+	config.plugins.simpleRSS.feedcount.save()
 

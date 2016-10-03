@@ -1,11 +1,13 @@
 # for localized messages
 from . import _
 
-from Components.config import config, ConfigSubsection, ConfigSubList, \
-	ConfigEnableDisable, ConfigNumber, ConfigText, ConfigSelection, \
-	ConfigYesNo, ConfigPassword
-
+from Components.config import config, ConfigSubsection, ConfigSubList, ConfigNumber, ConfigText, ConfigSelection, ConfigYesNo, ConfigPassword, ConfigInteger, ConfigNothing
 from Components.PluginComponent import plugins
+from Plugins.Plugin import PluginDescriptor
+from Screens.MessageBox import MessageBox
+from Screens.ChoiceBox import ChoiceBox
+from Tools.BoundFunction import boundFunction
+from RSSSetup import addFeed
 
 # Initialize Configuration
 config.plugins.simpleRSS = ConfigSubsection()
@@ -19,16 +21,19 @@ simpleRSS.update_notification = ConfigSelection(
 	],
 	default = "preview"
 )
+simpleRSS.ticker_speed = ConfigInteger(default = 125, limits = (100, 900))
 simpleRSS.interval = ConfigNumber(default=15)
 simpleRSS.feedcount = ConfigNumber(default=0)
-simpleRSS.autostart = ConfigEnableDisable(default=False)
-simpleRSS.keep_running = ConfigEnableDisable(default=True)
+simpleRSS.autostart = ConfigYesNo(default=False)
+simpleRSS.keep_running = ConfigYesNo(default=True)
+simpleRSS.ext_menu = ConfigYesNo(default=True)
+simpleRSS.filescan = ConfigNothing()
 simpleRSS.feed = ConfigSubList()
 i = 0
 while i < simpleRSS.feedcount.value:
 	s = ConfigSubsection()
 	s.uri = ConfigText(default="http://", fixed_size=False)
-	s.autoupdate = ConfigEnableDisable(default=True)
+	s.autoupdate =  ConfigYesNo(default=True)
 	simpleRSS.feed.append(s)
 	i += 1
 	del s
@@ -92,23 +97,52 @@ def autostart(reason, **kwargs):
 			rssPoller.shutdown()
 			rssPoller = None
 
+def filescan_chosen(session, feed, item):
+	if item and item[1] == "apply":
+		for i in range(config.plugins.simpleRSS.feedcount.value):
+			try:
+				if config.plugins.simpleRSS.feed[i].uri.value in feed:
+					for uri in feed:
+						if uri == config.plugins.simpleRSS.feed[i].uri.value:
+							feed.remove(uri)
+			except:
+				pass
+		if feed:
+			for uri in feed:
+				addFeed(uri)
+			session.open(MessageBox, _("%d feed(s) added to configuration.") % len(feed), type = MessageBox.TYPE_INFO, timeout = 5)
+		else:
+			session.open(MessageBox, _("Not found new feed(s)."), type = MessageBox.TYPE_INFO, timeout = 5)
+
 # Filescan
 def filescan_open(item, session, **kwargs):
-	from RSSSetup import addFeed
+	Len = len(item)
+	if Len:
+		file = item[0].path
+		if file.endswith(".rss"):
+			try:
+				menu = [(_("Apply"), "apply"), (_("Close"), "close")]
+				list = []
+				f = open(file, "r")
+				all_lines = f.readlines()
+				for line in all_lines:
+					if line.startswith(("http://", "https://")) and not line.endswith("#"):
+						list.append(line)
+				f.close()
+				if list:
+					session.openWithCallback(boundFunction(filescan_chosen, session, list), ChoiceBox, _("Found %d feed(s)") % len(list), menu)
+			except:
+				session.open(MessageBox, _("Read error %s") % file, type = MessageBox.TYPE_INFO, timeout = 5)
+		else:
+			# Add earch feed
+			for each in item:
+				addFeed(each)
 
-	# Add earch feed
-	for each in item:
-		addFeed(each)
+			# Display Message
+			session.open(MessageBox, _("%d Feed(s) were added to configuration.") % (Len), type = MessageBox.TYPE_INFO, timeout = 5)
 
-	from Screens.MessageBox import MessageBox
-
-	# Display Message
-	session.open(
-		MessageBox,
-		_("%d Feed(s) were added to configuration.") % (len(item)),
-		type = MessageBox.TYPE_INFO,
-		timeout = 5
-	)
+from mimetypes import add_type
+add_type("application/x-feed-rss", ".rss")
 
 # Filescanner
 def filescan(**kwargs):
@@ -117,28 +151,30 @@ def filescan(**kwargs):
 	# Overwrite checkFile to detect remote files
 	class RemoteScanner(Scanner):
 		def checkFile(self, file):
+			if file.path.endswith(".rss"):
+				return True
 			return file.path.startswith(("http://", "https://"))
 
 	return [
 		RemoteScanner(
-			mimetypes = ("application/rss+xml", "application/atom+xml"),
+			mimetypes = ("application/rss+xml", "application/atom+xml", "application/x-feed-rss"),
 			paths_to_scan =
 				(
 					ScanPath(path = "", with_subdirs = False),
 				),
-			name = "RSS-Reader",
+			name = _("RSS-Reader"),
 			description = _("Subscribe Newsfeed..."),
 			openfnc = filescan_open,
 		)
 	]
 
 def Plugins(**kwargs):
-	from Plugins.Plugin import PluginDescriptor
- 	return [
+ 	lst = [
 		PluginDescriptor(
-			name = "RSS Reader",
+			name = _("RSS Reader"),
 			description = _("A simple to use RSS reader"),
 			where = PluginDescriptor.WHERE_PLUGINMENU,
+			icon="rss.png",
 			fnc=main,
 			needsRestart=False,
 		),
@@ -148,15 +184,11 @@ def Plugins(**kwargs):
 			needsRestart=False,
 		),
  		PluginDescriptor(
-			name = _("View RSS..."),
-			description = "Let's you view current RSS entries",
-			where = PluginDescriptor.WHERE_EXTENSIONSMENU,
-			fnc=main,
-			needsRestart=False,
-		),
- 		PluginDescriptor(
 			where = PluginDescriptor.WHERE_FILESCAN,
 			fnc = filescan,
 			needsRestart=False,
 		)
 	]
+	if config.plugins.simpleRSS.ext_menu.value:
+		lst.append(PluginDescriptor(name = _("View RSS..."), description = _("Let's you view current RSS entries"), where = PluginDescriptor.WHERE_EXTENSIONSMENU, fnc=main, needsRestart=False))
+	return lst
