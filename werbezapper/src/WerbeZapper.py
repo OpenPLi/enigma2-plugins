@@ -593,7 +593,7 @@ class WerbezapperSettings(Screen, ConfigListScreen):
 
 	def createSetup(self):
 		list = []
-		list.append(self.cfg_hotkey)
+		#list.append(self.cfg_hotkey)
 		list.append(self.cfg_extmenu)
 		list.append(self.cfg_channelselection)
 		if config.werbezapper.add_to_channelselection.value:

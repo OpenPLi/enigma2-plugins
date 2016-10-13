@@ -190,14 +190,15 @@ def zapInfoBar__init__(self, session):
 
 def session_start(reason, **kwargs):
 	if reason == 0 and "session" in kwargs:
-		global baseInfoBar__init__
-		try:
-			from Screens.InfoBar import InfoBar
-			if baseInfoBar__init__ is None:
-				baseInfoBar__init__ = InfoBar.__init__
-			InfoBar.__init__ = zapInfoBar__init__
-		except:
-			pass
+		pass
+		#global baseInfoBar__init__
+		#try:
+		#	from Screens.InfoBar import InfoBar
+		#	if baseInfoBar__init__ is None:
+		#		baseInfoBar__init__ = InfoBar.__init__
+		#	InfoBar.__init__ = zapInfoBar__init__
+		#except:
+		#	pass
 
 def start_channelselection(session=None, service=None):
 	from Screens.InfoBar import InfoBar
