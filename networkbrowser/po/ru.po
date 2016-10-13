@@ -209,7 +209,7 @@ msgid "Press OK to mount!"
 msgstr "Нажмите OK для монтирования!"
 
 msgid "Press OK to save settings."
-msgstr "ажмите OK, для сохранения настройки."
+msgstr "Нажмите OK, для сохранения настройки."
 
 msgid "Press OK to select."
 msgstr "Нажмите ОК для выбора."
