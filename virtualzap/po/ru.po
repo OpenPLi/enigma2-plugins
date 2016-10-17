@@ -1,0 +1,223 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: enigma2 - virtualzap\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-02-07 15:42+0100\n"
+"PO-Revision-Date: 2016-10-16 19:36+0300\n"
+"Last-Translator: Dimitrij <Dima-73@inbox.lv>\n"
+"Language-Team: Dimitrij <openpli.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"Language: ru_RU\n"
+"X-Generator: Poedit 1.8.9\n"
+
+msgid "%d min"
+msgstr "%d мин"
+
+msgid "+%d min"
+msgstr "+%d мин"
+
+msgid "1 minute"
+msgstr "1 минута"
+
+msgid "12 hours"
+msgstr "12 часов"
+
+msgid "15 minutes"
+msgstr "15 минут"
+
+msgid "2 hours"
+msgstr "2 часа"
+
+msgid "24 hours"
+msgstr "24 часа"
+
+msgid "3 hours"
+msgstr "3 часа"
+
+msgid "30 minutes"
+msgstr "30 минут"
+
+msgid "45 minutes"
+msgstr "45 минут"
+
+msgid "5 minutes"
+msgstr "5 минут"
+
+msgid "6 hours"
+msgstr "6 часов"
+
+msgid "60 minutes"
+msgstr "60 минут"
+
+msgid "Cancel"
+msgstr "Отмена"
+
+msgid "Config menu"
+msgstr "Меню настроек"
+
+msgid "Could not open Picture in Picture"
+msgstr "Невозможно открыть картинку в картинке (PiP)!"
+
+msgid "Don't toggle standard infobar(s) with exit button"
+msgstr "Не переключать стандартный инфобар(ы) кнопкой выход"
+
+msgid "EPGSelection (context menu)"
+msgstr "Одиночное/мульти EPG (контекстное меню)"
+
+msgid "EPGSelection/EventView (context menu)"
+msgstr "Одиночное EPG/Мульти EPG/Просмотр события  (контекстное меню)"
+
+msgid "EventView (context menu)"
+msgstr "Просмотр события  (контекстное меню)"
+
+msgid "Extended virtual zap"
+msgstr "Расширенное виртуальное переключение"
+
+msgid "Extended virtual zap (PiP)"
+msgstr "Расширенное виртуальное переключение (PiP)"
+
+msgid "Extended virtual zap config"
+msgstr "Конфигурация расширенного виртуального переключения"
+
+msgid "Extended virtual zap setup"
+msgstr "'Extended virtual zap' конфигурация"
+
+msgid ""
+"GUI needs a restart to apply the new settings.\n"
+"Do you want to Restart the GUI now?"
+msgstr ""
+"Для активация новой конфигурации необходим рестарт GUI.\n"
+"Рестарт GUI сейчас?"
+
+msgid "Incorrect type service for PiP!"
+msgstr "Некорректный тип сервиса для PiP!"
+
+msgid "No free tuner!"
+msgstr "Нет свободного тюнера!"
+
+msgid "Parental control!"
+msgstr "Родительский контроль!"
+
+msgid "Remember last service"
+msgstr "Запоминать последний сервис"
+
+msgid "Remember mode"
+msgstr "Режим сохранения"
+
+msgid "Restart GUI"
+msgstr "Перезагрузка GUI"
+
+msgid "Save"
+msgstr "Сохранить"
+
+msgid "Show PiP in window infobar"
+msgstr "Показать PiP в окне инфобара"
+
+msgid "Show picons"
+msgstr "Показать пиконы"
+
+msgid "Show plugin in channel selection context menu"
+msgstr "Показать плагин в контекстном меню селектора каналов"
+
+msgid "Show plugin in the context menu"
+msgstr "Показать плагин в контекстном меню"
+
+msgid "Show positioner movement for PiP service"
+msgstr "Показать движение мотора для сервиса PiP"
+
+msgid "Start standard PiP after x secs (0 = disabled)"
+msgstr "Старт стандартного PiP после х секунд (0 = отключено)"
+
+msgid "Stream"
+msgstr "Стрим"
+
+msgid "Tuner"
+msgstr "Тюнер"
+
+msgid "Tuner %s"
+msgstr "Тюнер %s"
+
+msgid "Usage"
+msgstr "Применение"
+
+msgid "Use PiP"
+msgstr "Использовать PiP"
+
+msgid "Use plugin 'PiPServiceRelation'"
+msgstr "Использовать плагин 'PiPServiceRelation'"
+
+msgid "always"
+msgstr "всегда"
+
+msgid "as plugin in event menu"
+msgstr "как плагин в меню событий"
+
+msgid "as plugin in extended menu"
+msgstr "как плагин в меню дополнений"
+
+msgid "config menu"
+msgstr "меню настроек"
+
+msgid "disable"
+msgstr "отключить"
+
+msgid "disabled"
+msgstr "отключено"
+
+msgid "exit"
+msgstr "выход"
+
+msgid "open Event View"
+msgstr "окрыть просмотр события"
+
+msgid "open favorite list"
+msgstr "открыть список фаворитов"
+
+msgid "open service list"
+msgstr "открыть список сервисов"
+
+msgid "open single EPG"
+msgstr "открыть одиночное EPG"
+
+msgid "show 'Extended virtual zap' for current service"
+msgstr "'Расширенное виртуальное переключение' для сервиса"
+
+msgid "standard PiP"
+msgstr "стандартный PiP"
+
+msgid "standard PiPzap"
+msgstr "стандартный PiPzap"
+
+msgid "swap and standard PiP"
+msgstr "поменять сервисы и стандартный PiP"
+
+msgid "swap and standard PiPzap"
+msgstr "поменять сервисы и стандартный PiPzap"
+
+msgid "swap services"
+msgstr "поменять сервисы"
+
+msgid "until standby/restart"
+msgstr "до режима ожидания/рестарта"
+
+msgid "wait 5 seconds"
+msgstr "подождите 5 секунд"
+
+msgid "with exit button"
+msgstr "с помощью кнопки выход"
+
+msgid "with long OK press"
+msgstr "при длительном нажатии кнопки ОК"
+
+msgid "zap to PiP service and exit"
+msgstr "переключить к сервису PiP и выйти"
+
+msgid "zap to next channel/open service list"
+msgstr "перейти к следующему каналу/открыть список сервисов"
+
+msgid "zap to previous channel/open service list"
+msgstr "перейти к предыдущему каналу/открыть список сервисов"

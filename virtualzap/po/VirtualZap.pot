@@ -1,71 +1,300 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-02-05 19:05+0100\n"
-"PO-Revision-Date: \n"
-"Last-Translator: Dr. Best <dr.best@dreambox-tools.info>\n"
-"Language-Team: \n"
+"POT-Creation-Date: 2014-11-15 16:40+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../src/plugin.py:48
-msgid "as plugin in extended bar"
+#: plugin.py:680
+#, python-format
+msgid "%d min"
 msgstr ""
 
-#: ../src/plugin.py:48
-msgid "with long OK press"
+#: plugin.py:677
+#, python-format
+msgid "+%d min"
 msgstr ""
 
-#: ../src/plugin.py:48
-msgid "with exit button"
+#: DishPiP.py:118
+msgid "/s"
 msgstr ""
 
-#: ../src/plugin.py:106
-msgid "Virtual Zap Setup"
+#: plugin.py:69
+msgid "1 minute"
 msgstr ""
 
-#: ../src/plugin.py:108
-#: ../src/plugin.py:112
-msgid "Virtual (PiP) Zap"
+#: plugin.py:69
+msgid "12 hours"
 msgstr ""
 
-#: ../src/plugin.py:413
+#: plugin.py:69
+msgid "15 minutes"
+msgstr ""
+
+#: plugin.py:69
+msgid "2 hours"
+msgstr ""
+
+#: plugin.py:69
+msgid "24 hours"
+msgstr ""
+
+#: plugin.py:69
+msgid "3 hours"
+msgstr ""
+
+#: plugin.py:69
+msgid "30 minutes"
+msgstr ""
+
+#: plugin.py:69
+msgid "45 minutes"
+msgstr ""
+
+#: plugin.py:69
+msgid "5 minutes"
+msgstr ""
+
+#: plugin.py:69
+msgid "6 hours"
+msgstr ""
+
+#: plugin.py:69
+msgid "60 minutes"
+msgstr ""
+
+#: plugin.py:1065
 msgid "Cancel"
 msgstr ""
 
-#: ../src/plugin.py:414
-msgid "OK"
+#: plugin.py:1232
+msgid "Could not open Picture in Picture"
 msgstr ""
 
-#: ../src/plugin.py:416
-msgid "Usage"
+#: plugin.py:1096
+msgid "Don't toggle standard infobar(s) with exit button"
 msgstr ""
 
-#: ../src/plugin.py:598
-msgid "Use PiP"
+#: plugin.py:64
+msgid "EPGSelection (context menu)"
 msgstr ""
 
-#: ../src/plugin.py:599
-msgid "Show PiP in Infobar"
+#: plugin.py:64
+msgid "EPGSelection/EventView (context menu)"
 msgstr ""
 
-#: ../src/plugin.py:622
-msgid "Start standard PiP after x secs (0 = disabled)"
+#: plugin.py:64
+msgid "EventView (context menu)"
 msgstr ""
 
-#: ../src/plugin.py:623
-msgid "Remember last service"
+#: plugin.py:1317
+msgid "Extended virtual zap"
 msgstr ""
 
-#: ../src/plugin.py:430
+#: plugin.py:1319
+msgid "Extended virtual zap (PiP)"
+msgstr ""
+
+#: plugin.py:1067
+msgid "Extended virtual zap config"
+msgstr ""
+
+#: plugin.py:1314
+msgid "Extended virtual zap setup"
+msgstr ""
+
+#: DishPiP.py:45
+msgid "From :"
+msgstr ""
+
+#: plugin.py:1114
 msgid ""
 "GUI needs a restart to apply the new settings.\n"
 "Do you want to Restart the GUI now?"
 msgstr ""
 
-#: ../src/plugin.py:431
-msgid "Restart GUI now?"
+#: DishPiP.py:46
+msgid "Goto :"
 msgstr ""
 
+#: plugin.py:1098
+msgid "Remember last service"
+msgstr ""
+
+#: plugin.py:1100
+msgid "Remember mode"
+msgstr ""
+
+#: plugin.py:1115
+msgid "Restart GUI"
+msgstr ""
+
+#: plugin.py:1066
+msgid "Save"
+msgstr ""
+
+#: plugin.py:1090
+msgid "Show PiP in window infobar"
+msgstr ""
+
+#: plugin.py:1097
+msgid "Show picons"
+msgstr ""
+
+#: plugin.py:1084
+msgid "Show plugin in channel selection context menu"
+msgstr ""
+
+#: plugin.py:1086
+msgid "Show plugin in the context menu"
+msgstr ""
+
+#: plugin.py:1094
+msgid "Show positioner movement for PiP service"
+msgstr ""
+
+#: plugin.py:1091
+msgid "Start standard PiP after x secs (0 = disabled)"
+msgstr ""
+
+#: plugin.py:888
+msgid "Stream"
+msgstr ""
+
+#: DishPiP.py:210
+msgid "Tuner"
+msgstr ""
+
+#: plugin.py:571
+#, python-format
+msgid "Tuner %s"
+msgstr ""
+
+#: plugin.py:1082
+msgid "Usage"
+msgstr ""
+
+#: plugin.py:1088
+msgid "Use PiP"
+msgstr ""
+
+#: plugin.py:1093
+msgid "Use plugin 'PiPServiceRelation'"
+msgstr ""
+
+#: plugin.py:69
+msgid "always"
+msgstr ""
+
+#: plugin.py:63
+msgid "as plugin in event menu"
+msgstr ""
+
+#: plugin.py:63
+msgid "as plugin in extended menu"
+msgstr ""
+
+#: plugin.py:1314
+msgid "config menu"
+msgstr ""
+
+#: plugin.py:63
+msgid "disable"
+msgstr ""
+
+#: plugin.py:64
+msgid "disabled"
+msgstr ""
+
+#: plugin.py:387
+msgid "exit"
+msgstr ""
+
+#: plugin.py:392
+msgid "open Event View"
+msgstr ""
+
+#: plugin.py:390
+msgid "open favorite list"
+msgstr ""
+
+#: plugin.py:391
+msgid "open service list"
+msgstr ""
+
+#: plugin.py:393
+msgid "open single EPG"
+msgstr ""
+
+#: plugin.py:1162
+msgid "show 'Extended virtual zap' for current service"
+msgstr ""
+
+#: plugin.py:396
+msgid "standard PiP"
+msgstr ""
+
+#: plugin.py:394
+msgid "standard PiPzap"
+msgstr ""
+
+#: plugin.py:397
+msgid "swap and standard PiP"
+msgstr ""
+
+#: plugin.py:395
+msgid "swap and standard PiPzap"
+msgstr ""
+
+#: plugin.py:400
+msgid "swap services"
+msgstr ""
+
+#: plugin.py:69
+msgid "until standby/restart"
+msgstr ""
+
+#: plugin.py:634
+msgid "wait 5 seconds"
+msgstr ""
+
+#: plugin.py:63
+msgid "with exit button"
+msgstr ""
+
+#: plugin.py:63
+msgid "with long OK press"
+msgstr ""
+
+#: plugin.py:386
+msgid "zap to PiP service and exit"
+msgstr ""
+
+#: plugin.py:388 plugin.py:399
+msgid "zap to next channel/open service list"
+msgstr ""
+
+#: plugin.py:389 plugin.py:398
+msgid "zap to previous channel/open service list"
+msgstr ""
+
+msgid "Incorrect type service for PiP!"
+msgstr ""
+
+msgid "Parental control!"
+msgstr ""
+
+msgid "No free tuner!"
+msgstr ""

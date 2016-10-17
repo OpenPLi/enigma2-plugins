@@ -2,4 +2,4 @@ installdir = $(libdir)/enigma2/python/Plugins/Extensions/VirtualZap
 
 install_PYTHON = *.py
 
-install_DATA = maintainer.info plugin.png keymap.xml hd.png sd.png
+install_DATA = maintainer.info plugin.png keymap.xml hd.png sd.png fullhd.png bar_big.png
