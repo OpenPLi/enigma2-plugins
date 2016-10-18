@@ -4,7 +4,30 @@
 		<key id="KEY_ENTER" mapto="toggleShow" flags="b" />
 		<key id="KEY_OK" mapto="longOK" flags="l" />
 		<key id="KEY_ENTER" mapto="longOK" flags="l" />
-		<key id="KEY_EXIT" mapto="hide" flags="m" />
-		<key id="KEY_ESC" mapto="hide" flags="m" />
+		<key id="KEY_EXIT" mapto="hide" flags="b" />
+		<key id="KEY_EXIT" mapto="hideLong" flags="l"/>
+		<key id="KEY_ESC" mapto="hide" flags="b" />
+		<key id="KEY_ESC" mapto="hideLong" flags="l"/>
+	</map>
+	<map context="ExtendedVirtualZapActions">
+		<key id="KEY_0" mapto="0" flags="m"/>
+		<key id="\x0a" mapto="ok" flags="m"/>
+		<key id="\x1b" mapto="cancel" flags="m"/>
+		<key id="KEY_OK" mapto="ok" flags="m"/>
+		<key id="KEY_EXIT" mapto="cancel" flags="m"/>
+		<key id="KEY_ENTER" mapto="ok" flags="m"/>
+		<key id="KEY_ESC" mapto="cancel" flags="m"/>
+		<key id="KEY_RED" mapto="red" flags="m"/>
+		<key id="KEY_GREEN" mapto="green" flags="m"/>
+		<key id="KEY_YELLOW" mapto="yellow" flags="m"/>
+		<key id="KEY_BLUE" mapto="blue" flags="m"/>
+		<key id="KEY_INFO" mapto="showEventInfo" flags="m"/>
+		<key id="KEY_EPG" mapto="showEventInfoSingleEPG" flags="m"/>
+		<key id="KEY_CHANNELUP" mapto="nextBouquet" flags="m"/>
+		<key id="KEY_CHANNELDOWN" mapto="prevBouquet" flags="m"/>
+		<key id="KEY_UP" mapto="up" flags="m"/>
+		<key id="KEY_DOWN" mapto="down" flags="m"/>
+		<key id="KEY_LEFT" mapto="left" flags="m"/>
+		<key id="KEY_RIGHT" mapto="right" flags="m"/>
 	</map>
 </keymap>

@@ -1,6 +1,5 @@
 Package: enigma2-plugin-extensions-virtualzap
-Version: 1.0
-Description: E2 Virtual Zap Plugin
+Version: 1.3
+Description: virtual zap plugin with PiP
 Maintainer: OpenPLi team <forum@openpli.org>
 Homepage: www.openpli.org
-Depends: enigma2 (>> 2.6git20091201)
