@@ -1019,7 +1019,7 @@ class ExtendedVirtualZap(Screen, HelpableScreen):
 		if ref:
 			if self.currentServiceReference is None or ref != self.currentServiceReference:
 				self.pipservice = eServiceCenter.getInstance().play(ref)
-				if self.pipservice and not self.pipservice.setTarget(1):
+				if self.pipservice and not self.pipservice.setTarget(1, True):
 					self.pipservice.start()
 					if self.video_state is False: 
 						self["video"].show()
