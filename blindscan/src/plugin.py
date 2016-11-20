@@ -513,6 +513,10 @@ class Blindscan(ConfigListScreen, Screen):
 			polarisation_text = _("The suggested polarisation for this satellite is '%s'") % self.suggestedPolarisation
 			if nim.description == 'TBS-5925':
 				self.list.append(getConfigListEntry(_("Scan Step in MHz(TBS5925)"), self.blindscan_step_mhz_tbs5925,_('Smaller steps takes longer but scan is more thorough')))
+			if self.suggestedPolarisation == _("circular right & circular left"):
+				self.scan_sat.polarization.value = eDVBFrontendParametersSatellite.Polarisation_CircularRight + 2
+			else:
+				self.scan_sat.polarization.value = eDVBFrontendParametersSatellite.Polarisation_CircularRight + 1
 			self.list.append(getConfigListEntry(_("Polarisation"), self.scan_sat.polarization, polarisation_text))
 			self.list.append(getConfigListEntry(_('Scan start symbolrate'), self.blindscan_start_symbol,_('Symbol rate values are in megasymbols; enter a value between 1 and 44')))
 			self.list.append(getConfigListEntry(_('Scan stop symbolrate'), self.blindscan_stop_symbol,_('Symbol rate values are in megasymbols; enter a value between 2 and 45')))
@@ -1360,7 +1364,7 @@ class Blindscan(ConfigListScreen, Screen):
 					self.suggestedPolarisation = _("circular right & circular left")
 					return False
 				return True
-		elif lof_type == "circular_lnb" and nim.config.configMode.getValue() == "simple" and nim.config.diseqcMode.value == "single" and nim.config.simpleDiSEqCSetCircularLNB.value:
+		elif lof_type == "circular_lnb" and nim.config.configMode.getValue() == "simple" and nim.config.diseqcMode.value == "single" and cur_orb_pos in (360, 560) and nim.config.simpleDiSEqCSetCircularLNB.value:
 			return True
 		return False
 
