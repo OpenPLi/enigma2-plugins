@@ -28,6 +28,7 @@ from Components.ActionMap import ActionMap, NumberActionMap
 from Components.ConfigList import ConfigList, ConfigListScreen
 from Components.config import ConfigSubsection, ConfigSubList, ConfigIP, ConfigInteger, ConfigSelection, ConfigText, ConfigYesNo, getConfigListEntry, configfile
 import skin
+import os
 
 # for localized messages
 from . import _
@@ -40,8 +41,10 @@ def initPartnerboxEntryConfig():
 	config.plugins.Partnerbox.Entries[i].port = ConfigInteger(default=80, limits=(1, 65555))
 	config.plugins.Partnerbox.Entries[i].enigma = ConfigSelection(default="0", choices = [("0", _("Enigma 2")),("1", _("Enigma 1"))])
 	config.plugins.Partnerbox.Entries[i].password = ConfigText(default = "root", visible_width = 50, fixed_size = False)
+	config.plugins.Partnerbox.Entries[i].usewakeonlan = ConfigYesNo(default = False)
+	config.plugins.Partnerbox.Entries[i].mac = ConfigText(default = "00:00:00:00:00:00", fixed_size = False)
 	config.plugins.Partnerbox.Entries[i].useinternal = ConfigSelection(default="1", choices = [("0", _("use external")),("1", _("use internal"))])
-	config.plugins.Partnerbox.Entries[i].zaptoservicewhenstreaming = ConfigYesNo(default = True)
+	config.plugins.Partnerbox.Entries[i].zaptoservicewhenstreaming = ConfigYesNo(default = False)
 	return config.plugins.Partnerbox.Entries[i]
 
 def initConfig():
@@ -259,6 +262,8 @@ class PartnerboxEntriesListConfigScreen(Screen):
 			menu.append((_("Deep Standby"),5))
 		else:
 			menu.append((_("Shutdown"),4))
+		if sel.usewakeonlan.value and sel.enigma.value == "0":
+			menu.append((_("Send Wake-on-LAN"),6))
 		from Screens.ChoiceBox import ChoiceBox
 		self.session.openWithCallback(self.menuCallback, ChoiceBox, title=(_("Select operation for partnerbox")+": "+"%s" % (sel.name.value)), list=menu)
 
@@ -291,10 +296,47 @@ class PartnerboxEntriesListConfigScreen(Screen):
 			if enigma_type:
 				return
 			sCommand += "1"
+		elif choice[1] == 6:
+			self.sendWOL(sel.mac.value)
 		else:
 			return
 		from PartnerboxFunctions import sendPartnerBoxWebCommand
 		sendPartnerBoxWebCommand(sCommand, None,3, username, password)
+
+	def GetIPsFromNetworkInterfaces(self):
+		import socket, fcntl, struct, array, sys
+		is_64bits = sys.maxsize > 2**32
+		struct_size = 40 if is_64bits else 32
+		s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+		max_possible = 8 # initial value
+		while True:
+			_bytes = max_possible * struct_size
+			names = array.array('B')
+			for i in range(0, _bytes):
+				names.append(0)
+			outbytes = struct.unpack('iL', fcntl.ioctl(
+				s.fileno(),
+				0x8912,  # SIOCGIFCONF
+				struct.pack('iL', _bytes, names.buffer_info()[0])
+			))[0]
+			if outbytes == _bytes:
+				max_possible *= 2
+			else:
+				break
+		namestr = names.tostring()
+		ifaces = []
+		for i in range(0, outbytes, struct_size):
+			iface_name = bytes.decode(namestr[i:i+16]).split('\0', 1)[0].encode('ascii')
+			if iface_name != 'lo':
+				iface_addr = socket.inet_ntoa(namestr[i+20:i+24])
+				ifaces.append((iface_name, iface_addr))
+		return ifaces
+
+	def sendWOL(self, mac):
+		ifaces_list = self.GetIPsFromNetworkInterfaces()
+		if ifaces_list:
+			for iface in ifaces_list:
+				os.system("ether-wake -i %s %s" % (iface[0], mac))
 
 class PartnerboxEntryList(MenuList):
 	def __init__(self, list, enableWrapAround = True):
@@ -332,15 +374,17 @@ class PartnerboxEntryList(MenuList):
 
 class PartnerboxEntryConfigScreen(ConfigListScreen, Screen):
 	skin = """
-		<screen name="PartnerboxEntryConfigScreen" position="center,center" size="550,400" title="Partnerbox: Edit Entry">
-			<widget name="config" position="20,10" size="520,330" scrollbarMode="showOnDemand" />
-			<ePixmap name="red"	position="0,350" zPosition="4" size="140,40" pixmap="skin_default/buttons/red.png" transparent="1" alphatest="on" />
+		<screen name="PartnerboxEntryConfigScreen" position="center,center" size="560,400" title="Partnerbox: Edit Entry">
+			<widget name="config" position="10,10" size="540,330" scrollbarMode="showOnDemand" />
+			<ePixmap name="red" position="0,350" zPosition="4" size="140,40" pixmap="skin_default/buttons/red.png" transparent="1" alphatest="on" />
 			<ePixmap name="green" position="140,350" zPosition="4" size="140,40" pixmap="skin_default/buttons/green.png" transparent="1" alphatest="on" />
+			<ePixmap name="yellow" position="280,350" zPosition="4" size="140,40" pixmap="skin_default/buttons/yellow.png" transparent="1" alphatest="on" />
 			<ePixmap name="blue" position="420,350" zPosition="4" size="140,40" pixmap="skin_default/buttons/blue.png" transparent="1" alphatest="on" />
 
-			<widget name="key_red" position="0,350" zPosition="5" size="140,40" valign="center" halign="center" font="Regular;21" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
-			<widget name="key_green" position="140,350" zPosition="5" size="140,40" valign="center" halign="center" font="Regular;21" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
-			<widget name="key_blue" position="420,350" zPosition="5" size="140,40" valign="center" halign="center" font="Regular;21" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
+			<widget name="key_red" position="0,350" zPosition="5" size="140,40" valign="center" halign="center" font="Regular;19" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
+			<widget name="key_green" position="140,350" zPosition="5" size="140,40" valign="center" halign="center" font="Regular;19" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
+			<widget name="key_yellow" position="280,350" zPosition="5" size="140,40" valign="center" halign="center" font="Regular;19" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
+			<widget name="key_blue" position="420,350" zPosition="5" size="140,40" valign="center" halign="center" font="Regular;19" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
 		</screen>"""
 
 	def __init__(self, session, entry):
@@ -352,12 +396,14 @@ class PartnerboxEntryConfigScreen(ConfigListScreen, Screen):
 		{
 			"green": self.keySave,
 			"red": self.keyCancel,
+			"yellow": self.getMAC,
 			"blue": self.keyDelete,
 			"cancel": self.keyCancel
 		}, -2)
 
 		self["key_red"] = Button(_("Cancel"))
 		self["key_green"] = Button(_("OK"))
+		self["key_yellow"] = Button()
 		self["key_blue"] = Button(_("Delete"))
 
 		if entry is None:
@@ -367,7 +413,12 @@ class PartnerboxEntryConfigScreen(ConfigListScreen, Screen):
 			self.newmode = 0
 			self.current = entry
 
-		cfglist = [
+		ConfigListScreen.__init__(self, [], session)
+
+		self.initConfig()
+
+	def initConfig(self):
+		list = [
 			getConfigListEntry(_("Name"), self.current.name),
 			getConfigListEntry(_("IP"), self.current.ip),
 			getConfigListEntry(_("Port"), self.current.port),
@@ -376,8 +427,23 @@ class PartnerboxEntryConfigScreen(ConfigListScreen, Screen):
 			getConfigListEntry(_("Servicelists/EPG"), self.current.useinternal),
 			getConfigListEntry(_("Zap to service when streaming"), self.current.zaptoservicewhenstreaming)
 		]
+		self["key_yellow"].setText(" ")
+		self.mac = getConfigListEntry(_("MAC"), self.current.mac)
+		if self.current.enigma.value == "0":
+			list.append(getConfigListEntry(_("Use Wake-on-LAN"), self.current.usewakeonlan))
+			if self.current.usewakeonlan.value:
+				list.append(self.mac)
+				self["key_yellow"].setText(_("Get MAC"))
+		self["config"].list = list
+		self["config"].l.setList(list)
 
-		ConfigListScreen.__init__(self, cfglist, session)
+	def keyLeft(self):
+		ConfigListScreen.keyLeft(self)
+		self.initConfig()
+
+	def keyRight(self):
+		ConfigListScreen.keyRight(self)
+		self.initConfig()
 
 	def keySave(self):
 		if self.newmode == 1:
@@ -409,3 +475,35 @@ class PartnerboxEntryConfigScreen(ConfigListScreen, Screen):
 		config.plugins.Partnerbox.save()
 		configfile.save()
 		self.close()
+
+	def getMAC(self):
+		if not self.current.usewakeonlan.value and self.current.enigma.value == "1":
+			return
+		ip = "%s.%s.%s.%s" % (tuple(self.current.ip.value))
+		pcMAC = self.readMac(ip)
+		if pcMAC is not None:
+			self.current.mac.value = pcMAC
+			self["config"].invalidate(self.mac)
+		else:
+			res = os.system("ping -c 2 -W 1 %s >/dev/null 2>&1" % (ip))
+			if not res:
+				pcMAC = self.readMac(ip)
+				if pcMAC is not None:
+					self.current.mac.value = pcMAC
+					self["config"].invalidate(self.mac)
+
+	def readMac(self, ip):
+		pcMAC = None
+		file = open("/proc/net/arp", "r")
+		while True:
+			entry = file.readline().strip()
+			if entry == "":
+				break
+			if entry.find(ip) == 0:
+				p = entry.find(':')
+				pcMAC = entry[p-2:p+15]
+				if pcMAC != "00:00:00:00:00:00":
+					file.close()
+					return pcMAC
+		file.close()
+		return None
