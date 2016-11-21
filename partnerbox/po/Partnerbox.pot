@@ -725,3 +725,16 @@ msgstr ""
 #: plugin.py:1556 plugin.py:1620
 msgid "zapped"
 msgstr ""
+
+msgid "Send Wake-on-LAN"
+msgstr ""
+
+msgid "Use Wake-on-LAN"
+msgstr ""
+
+msgid "Get MAC"
+msgstr ""
+
+msgid "MAC"
+msgstr ""
+
