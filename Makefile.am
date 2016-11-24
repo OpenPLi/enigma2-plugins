@@ -59,7 +59,6 @@ SUBDIRS = \
 	primetimemanager \
 	reconstructapsc \
 	remotetimer \
-	rsdownloader \
 	recordinfobar \
 	satipclient \
 	seekbar \

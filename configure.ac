@@ -359,12 +359,6 @@ remotetimer/meta/Makefile
 remotetimer/po/Makefile
 remotetimer/src/Makefile
 
-rsdownloader/Makefile
-rsdownloader/meta/Makefile
-rsdownloader/po/Makefile
-rsdownloader/src/Makefile
-rsdownloader/src/container/Makefile
-
 recordinfobar/Makefile
 recordinfobar/meta/Makefile
 recordinfobar/po/Makefile
