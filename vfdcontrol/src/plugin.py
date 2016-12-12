@@ -43,28 +43,50 @@ class Channelnumber:
 	def __init__(self, session):
 		self.session = session
 		self.sign = 0
-		self.updatetime = 10000
+		self.updatetime = 15000
 		self.blink = False
 		self.blinkCounter = 0
+		self.dvb_service = ""
 		self.channelnrdelay = 15
 		self.begin = int(time())
 		self.endkeypress = True
 		eActionMap.getInstance().bindAction('', -0x7FFFFFFF, self.keyPressed)
 		self.zaPrik = eTimer()
 		self.zaPrik.timeout.get().append(self.vrime)
-		self.zaPrik.start(1000, 1)
+		self.zaPrik.start(1000, True)
 		self.onClose = [ ]
 
 		self.__event_tracker = ServiceEventTracker(screen=self,eventmap=
 			{
-				iPlayableService.evUpdatedEventInfo: self.__eventInfoChanged,
+				#iPlayableService.evUpdatedEventInfo: self.__eventInfoChanged,
+				iPlayableService.evStart: self.__evStart,
 				iPlayableService.evEnd: self.__evEnd
 			})
 
-	def __evEnd(self):
-		pass
+	def __evStart(self):
+		self.getCurrentlyPlayingService()
 
-	def __eventInfoChanged(self):
+	def __evEnd(self):
+		self.dvb_service = ""
+		if config.plugins.VFD_ini.showClock.value == 'Off':
+			vfd_write("....")
+
+def getCurrentlyPlayingService(self):
+	playref = self.session.nav.getCurrentlyPlayingServiceReference()
+	if not playref:
+		self.dvb_service = ""
+	else:
+		str_service = playref.toString()
+		if '%3a//' in str_service or str_service.rsplit(":", 1)[1].startswith("/"):
+			self.dvb_service = "video"
+			if config.plugins.VFD_ini.showClock.value == 'True_All':
+				vfd_write("....")
+		else:
+			self.dvb_service = "dvb"
+
+	def __eventInfoChanged(self, manual=False):
+		if not manual and self.dvb_service == "video":
+			return
 		self.RecordingLed()
 		if config.plugins.VFD_ini.showClock.value == 'Off' or config.plugins.VFD_ini.showClock.value == 'True_All':
 			return
@@ -90,13 +112,9 @@ class Channelnumber:
 
 	def getchannelnr(self):
 		chnr = "----"
+		if self.dvb_service != "dvb":
+			return chnr
 		if InfoBar.instance is None:
-			return chnr
-		playref = self.session.nav.getCurrentlyPlayingServiceReference()
-		if not playref:
-			return chnr
-		str_service = playref.toString()
-		if not str_service.startswith("1:"):
 			return chnr
 		MYCHANSEL = InfoBar.instance.servicelist
 		markersOffset = 0
@@ -139,15 +157,17 @@ class Channelnumber:
 		if config.plugins.VFD_ini.showClock.value == 'True' or config.plugins.VFD_ini.showClock.value == 'True_All' or config.plugins.VFD_ini.showClock.value == 'True_Switch':
 			clock = str(localtime()[3])
 			clock1 = str(localtime()[4])
+			zero = ""
 			if config.plugins.VFD_ini.timeMode.value != '24h':
 				if int(clock) > 12:
 					clock = str(int(clock) - 12)
-
+			elif int(clock) < 10:
+				zero = "0"
 			if self.sign == 0:
-				clock2 = "%02d:%02d" % (int(clock), int(clock1))
+				clock2 = "%s%02d:%02d" % (zero, int(clock), int(clock1))
 				self.sign = 1
 			else:
-				clock2 = "%02d%02d" % (int(clock), int(clock1))
+				clock2 = "%s%02d%02d" % (zero, int(clock), int(clock1))
 				self.sign = 0
 
 			if config.plugins.VFD_ini.recDisplay.value == 'True' and MyRecLed:
@@ -160,25 +180,29 @@ class Channelnumber:
 			vfd_write("....")
 
 	def vrime(self):
-		if (config.plugins.VFD_ini.showClock.value == 'True' or config.plugins.VFD_ini.showClock.value == 'False' or config.plugins.VFD_ini.showClock.value == 'True_Switch') and not Screens.Standby.inStandby:
+		standby_mode = Screens.Standby.inStandby
+		if (config.plugins.VFD_ini.showClock.value == 'True' or config.plugins.VFD_ini.showClock.value == 'False' or config.plugins.VFD_ini.showClock.value == 'True_Switch') and not standby_mode:
 			if config.plugins.VFD_ini.showClock.value == 'True_Switch':
 				if time() >= self.begin:
 					self.endkeypress = False
 				if self.endkeypress:
-					self.__eventInfoChanged()
+					self.__eventInfoChanged(True)
 				else:
 					self.prikaz()
 			else:
-				self.__eventInfoChanged()
+				self.__eventInfoChanged(True)
 
 		if config.plugins.VFD_ini.showClock.value == 'Off':
 			vfd_write("....")
-			self.zaPrik.start(self.updatetime, 1)
+			self.zaPrik.start(self.updatetime, True)
 			return
 		else:
-			self.zaPrik.start(1000, 1)
+			update_time = 1000
+			if not standby_mode and config.plugins.VFD_ini.showClock.value == 'True_All' and self.dvb_service == "video":
+				update_time = 15000
+			self.zaPrik.start(update_time, True)
 
-		if Screens.Standby.inStandby or config.plugins.VFD_ini.showClock.value == 'True_All':
+		if standby_mode or (config.plugins.VFD_ini.showClock.value == 'True_All' and self.dvb_service != "video"):
 			self.prikaz()
 
 	def keyPressed(self, key, tag):
@@ -231,7 +255,7 @@ class VFD_INISetup(ConfigListScreen, Screen):
 		self.onClose.append(self.abort)
 
 		self.onChangedEntry = [ ]
-			
+
 		self.list = []
 		ConfigListScreen.__init__(self, self.list, session = self.session, on_change = self.changedEntry)
 
