@@ -1,0 +1,113 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-12-16 00:24+0200\n"
+"PO-Revision-Date: 2016-12-16 00:32+0200\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.8\n"
+"Last-Translator: MCelliot_g <mcelliot_g@hotmail.com>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: el_GR\n"
+
+#: plugin.py:21
+msgid "Always off"
+msgstr "Πάντα εκτός"
+
+#: plugin.py:248
+msgid "Brightness Level 1"
+msgstr "Επίπεδο φωτεινότητας 1"
+
+#: plugin.py:249
+msgid "Brightness Level 2"
+msgstr "Επίπεδο φωτεινότητας 2"
+
+#: plugin.py:24
+msgid "Brightness level"
+msgstr "Επίπεδο φωτεινότητας"
+
+#: plugin.py:226
+msgid "Cancel"
+msgstr "Ακύρωση"
+
+#: plugin.py:347
+msgid "Change VFD display settings"
+msgstr "Αλλαγή ρυθμίσεων οθόνης VFD"
+
+#: plugin.py:21
+msgid "Channelnumber in Standby Clock"
+msgstr "Αριθμός καναλιού Ρολόι στην Αναμονή"
+
+#: plugin.py:21
+msgid "Channelnumber in Standby off"
+msgstr "Αριθμός καναλιού στην αναμονή εκτός"
+
+#: plugin.py:21
+msgid "Channelnumber/Clock in Standby Clock"
+msgstr "Αριθμός καναλιού/Ρολόι στην Αναμονή Ρολόι"
+
+#: plugin.py:21
+msgid "Clock always"
+msgstr "Πάντα Ρολόι"
+
+#: plugin.py:215
+msgid "Control 7 segment VFD display"
+msgstr "Έλεγχος οθόνης VFD 7 στοιχείων"
+
+#: plugin.py:24
+msgid "Off"
+msgstr "Κλειστό"
+
+#: plugin.py:24
+msgid "On/Off"
+msgstr "Ανοικτό/Κλειστό"
+
+#: plugin.py:227
+msgid "Save"
+msgstr "Αποθήκευση"
+
+#: plugin.py:244 plugin.py:262
+msgid "Show REC-Symbol in Display"
+msgstr "Εμφάνιση συμβόλου REC στην Οθόνη"
+
+#: plugin.py:246 plugin.py:264
+msgid "Show blinking Clock on Display during recording"
+msgstr "Εμφάνιση αναβοσβηνόμενου Ρολογιού στην Οθόνη κατά την εγγραφή"
+
+#: plugin.py:241 plugin.py:260
+msgid "Show on VFD"
+msgstr "Εμφάνιση στη VFD"
+
+#: plugin.py:243
+msgid "Time mode"
+msgstr "Λειτουργία ώρας"
+
+#: plugin.py:228
+msgid "Update Date/Time"
+msgstr "Ενημέρωση Ημερομηνίας/Ώρας"
+
+#: plugin.py:311
+msgid "VFD Display Setup"
+msgstr "Ρυθμίσεις Οθόνης VFD"
+
+#: plugin.py:23
+msgid "no"
+msgstr "όχι"
+
+#: plugin.py:23
+msgid "yes"
+msgstr "ναι"
+
+msgid "24h"
+msgstr "24ω"
+
+msgid "12h"
+msgstr "12ω"
