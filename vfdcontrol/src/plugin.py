@@ -13,7 +13,7 @@ import Screens.Standby
 from Tools.HardwareInfo import HardwareInfo
 
 use_oled = False
-if HardwareInfo().get_device_model() in ("formuler3", "formuler4", "s1", "h3", "h4", "h5", "lc"):
+if HardwareInfo().get_device_model() in ("formuler3", "formuler4", "s1", "h3", "h4", "h5", "lc", "hd500c", "hd530c", "hd1500", "hd1265", "hd1200", "hd1100"):
 	use_oled = True
 
 config.plugins.VFD_ini = ConfigSubsection()
