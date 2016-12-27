@@ -3,220 +3,188 @@ from Screens.Screen import Screen
 from Plugins.Plugin import PluginDescriptor
 from Components.Button import Button
 from Components.ActionMap import ActionMap
-from Components.config import config, configfile, ConfigSubsection, getConfigListEntry, ConfigSelection, ConfigSlider
+from Components.config import config, configfile, ConfigSubsection, getConfigListEntry, ConfigSelection, ConfigYesNo
 from Components.ConfigList import ConfigListScreen
-from enigma import iPlayableService, eServiceCenter, eTimer, eActionMap, eDBoxLCD
+from enigma import iPlayableService, eServiceCenter, eTimer, eActionMap, getDesktop, eDBoxLCD
 from Components.ServiceEventTracker import ServiceEventTracker
 from Screens.InfoBar import InfoBar
-from time import localtime, time
+from time import localtime, time, sleep
 import Screens.Standby
+import os
 from Tools.HardwareInfo import HardwareInfo
 
-use_oled = False
-if HardwareInfo().get_device_model() in ("formuler3", "formuler4", "s1", "h3", "h4", "h5", "lc"):
-	use_oled = True
 
-config.plugins.VFD_ini = ConfigSubsection()
-config.plugins.VFD_ini.showClock = ConfigSelection(default = "True_Switch", choices = [("False",_("Channelnumber in Standby off")),("True",_("Channelnumber in Standby Clock")), ("True_Switch",_("Channelnumber/Clock in Standby Clock")),("True_All",_("Clock always")),("Off",_("Always off"))])
-config.plugins.VFD_ini.timeMode = ConfigSelection(default = "24h", choices = [("12h",_("12h")),("24h",_("24h"))])
-config.plugins.VFD_ini.recDisplay = ConfigSelection(default = "False", choices = [("True",_("yes")),("False",_("no"))])
-config.plugins.VFD_ini.recClockBlink = ConfigSelection(default = "off", choices = [("off",_("Off")),("on_off",_("On/Off")),("brightness",_("Brightness level"))])
-config.plugins.VFD_ini.ClockLevel1 = ConfigSlider(default=1, limits=(0, 10))
-config.plugins.VFD_ini.ClockLevel2 = ConfigSlider(default=4, limits=(1, 10))
+config.plugins.SEG = ConfigSubsection()
+config.plugins.SEG.showClock = ConfigYesNo(default = True)
+config.plugins.SEG.showCHnumber = ConfigSelection(default = "15", choices = [("5",_("5 sec")), ("15",_("15 sec")),("30",_("30 sec")),("60",_("60 sec")),("50000",_("Always")),("0",_("disabled"))])
+config.plugins.SEG.timeMode = ConfigSelection(default = "24h", choices = [("12h",_("12h")),("24h",_("24h"))])
+config.plugins.SEG.blinkRec = ConfigYesNo(default = False)
 
-MyRecLed = False
+choicelist = []
+default_value = ""
+if os.path.exists("/dev/dbox/oled0"):
+	choicelist.append(("oled", "/dev/dbox/oled0"))
+	default_value = "oled"
+if os.path.exists("/dev/dbox/lcd0"):
+	choicelist.append(("lcd", "/dev/dbox/lcd0"))
+	default_value = "lcd"
+if HardwareInfo().get_device_model() in ("formuler3", "formuler4", "formuler4turbo", "s1", "h3", "h4", "h5", "lc", "hd500c", "hd530c", "hd1500", "hd1265", "hd1200", "hd1100"):
+	default_value = "oled"
+config.plugins.SEG.frontpanel = ConfigSelection(default = default_value, choices = choicelist)
 
-def vfd_write(text):
-	if use_oled:
+skin_text = os.path.isfile("/usr/share/enigma2/skin_text.xml") or os.path.isfile("/etc/enigma2/skin_user.xml")
+
+mySession = None
+ChannelnumberInstance = None
+standbyCounter = None
+
+def display_write(text):
+	if config.plugins.SEG.frontpanel.value == "oled": 
 		try:
 			open("/dev/dbox/oled0", "w").write(text)
 		except:
 			pass
-	else:
+	elif config.plugins.SEG.frontpanel.value == "lcd":
 		try:
 			open("/dev/dbox/lcd0", "w").write(text)
 		except:
 			pass
 
-class Channelnumber:
+def displaybrightness_write():
+	os.system("echo 0 > /proc/stb/led/oled_brightness")
+	os.system("echo 0 > /proc/stb/lcd/oled_brightness")
+	os.system("echo 0 > /proc/stb/fp/oled_brightness")
 
+class Channelnumber:
 	def __init__(self, session):
 		self.session = session
-		self.sign = 0
-		self.updatetime = 10000
-		self.blink = False
-		self.blinkCounter = 0
-		self.channelnrdelay = 15
+		self.channelnrdelay = config.plugins.SEG.showCHnumber.value
+		self.dvb_service = ""
 		self.begin = int(time())
 		self.endkeypress = True
 		eActionMap.getInstance().bindAction('', -0x7FFFFFFF, self.keyPressed)
-		self.zaPrik = eTimer()
-		self.zaPrik.timeout.get().append(self.vrime)
-		self.zaPrik.start(1000, 1)
+		self.TimerText = eTimer()
+		self.TimerText.timeout.get().append(self.showclock)
+		self.TimerText.start(1000, True)
+		self.serviceHandler = None
+		self.InfoBarinstance = None
 		self.onClose = [ ]
 
 		self.__event_tracker = ServiceEventTracker(screen=self,eventmap=
 			{
-				iPlayableService.evUpdatedEventInfo: self.__eventInfoChanged,
+				iPlayableService.evStart: self.__evStart,
 				iPlayableService.evEnd: self.__evEnd
 			})
 
-	def __evEnd(self):
-		pass
-
-	def __eventInfoChanged(self):
-		self.RecordingLed()
-		if config.plugins.VFD_ini.showClock.value == 'Off' or config.plugins.VFD_ini.showClock.value == 'True_All':
+	def __evStart(self):
+		if not skin_text:
+			self.dvb_service = ""
 			return
-		service = self.session.nav.getCurrentService()
-		info = service and service.info()
-		if info is None:
-			chnr = "----"
-		else:
-			chnr = self.getchannelnr()
-		info = None
-		service = None
-		if chnr == "----":
-			if config.plugins.VFD_ini.recDisplay.value == 'True' and MyRecLed:
-				vfd_write(" rec")
-			else:
-				vfd_write(chnr)
-		else:
-			Channelnr = "%04d" % (int(chnr))
-			if config.plugins.VFD_ini.recDisplay.value == 'True' and MyRecLed:
-				vfd_write(" rec")
-			else:
-				vfd_write(Channelnr)
-
-	def getchannelnr(self):
-		chnr = "----"
-		if InfoBar.instance is None:
-			return chnr
 		playref = self.session.nav.getCurrentlyPlayingServiceReference()
 		if not playref:
-			return chnr
-		str_service = playref.toString()
-		if not str_service.startswith("1:"):
-			return chnr
-		MYCHANSEL = InfoBar.instance.servicelist
+			self.dvb_service = ""
+		else:
+			str_service = playref.toString()
+			stream = '%3a//' in str_service
+			if (stream and str_service.startswith("4097")) or (not stream and str_service.rsplit(":", 1)[1].startswith("/")):
+				self.dvb_service = "video"
+			else:
+				self.dvb_service = ""
+
+	def __evEnd(self):
+		self.dvb_service = ""
+
+	def updateNumber(self):
+		if not self.dvb_service:
+			text = ""
+			service = self.session.nav.getCurrentService()
+			info = service and service.info()
+			if info is not None:
+				text = self.getchannelnr()
+			if not text:
+				self.show()
+			else:
+				Channelnr = "%04d" % (int(text))
+				display_write(Channelnr)
+
+	def getchannelnr(self):
+		if self.InfoBarinstance is None:
+			self.InfoBarinstance = InfoBar.instance
+		if not self.InfoBarinstance:
+			return ""
+		MYCHANSEL = self.InfoBarinstance.servicelist
+		if not MYCHANSEL:
+			return ""
+		if self.serviceHandler is None:
+			self.serviceHandler = eServiceCenter.getInstance()
+		myRoot = MYCHANSEL.servicelist.getRoot()
+		mySSS = self.serviceHandler and self.serviceHandler.list(myRoot)
+		SRVList = mySSS and mySSS.getContent("SN", True)
 		markersOffset = 0
-		myRoot = MYCHANSEL.getRoot()
 		mySrv = MYCHANSEL.servicelist.getCurrent()
 		chx = MYCHANSEL.servicelist.l.lookupService(mySrv)
-		if not MYCHANSEL.inBouquet():
-			pass
-		else:
-			serviceHandler = eServiceCenter.getInstance()
-			mySSS = serviceHandler.list(myRoot)
-			SRVList = mySSS and mySSS.getContent("SN", True)
-			for i in range(len(SRVList)):
-				if chx == i:
-					break
-				testlinet = SRVList[i]
-				testline = testlinet[0].split(":")
-				if testline[1] == "64":
-					markersOffset = markersOffset + 1
+		for i in range(len(SRVList)):
+			if chx == i:
+				break
+			testlinet = SRVList[i]
+			testline = testlinet[0].split(":")
+			if testline[1] == "64":
+				markersOffset = markersOffset + 1
 		chx = (chx - markersOffset) + 1
 		rx = MYCHANSEL.getBouquetNumOffset(myRoot)
-		chnr = str(chx + rx)
-		return chnr
+		return str(chx + rx)
 
-	def prikaz(self):
-		self.RecordingLed()
-		if config.plugins.VFD_ini.recClockBlink.value != "off" and MyRecLed and config.plugins.VFD_ini.recDisplay.value == 'False':
-			self.blinkCounter += 1
-			if self.blinkCounter >= 2:
-				self.blinkCounter = 0
-				if self.blink:
-					if config.plugins.VFD_ini.recClockBlink.value == "brightness":
-						eDBoxLCD.getInstance().setLCDBrightness(config.plugins.VFD_ini.ClockLevel2.value * 255 / 10)
-					self.blink = False
-				else:
-					if config.plugins.VFD_ini.recClockBlink.value == "brightness":
-						eDBoxLCD.getInstance().setLCDBrightness(config.plugins.VFD_ini.ClockLevel1.value * 255 / 10)
-					self.blink = True
-
-		if config.plugins.VFD_ini.showClock.value == 'True' or config.plugins.VFD_ini.showClock.value == 'True_All' or config.plugins.VFD_ini.showClock.value == 'True_Switch':
+	def show(self):
+		if not self.dvb_service:
 			clock = str(localtime()[3])
 			clock1 = str(localtime()[4])
-			if config.plugins.VFD_ini.timeMode.value != '24h':
+			if config.plugins.SEG.timeMode.value == "12h":
 				if int(clock) > 12:
 					clock = str(int(clock) - 12)
+			clock2 = "%02d:%02d" % (int(clock), int(clock1))
+			display_write(clock2)
 
-			if self.sign == 0:
-				clock2 = "%02d:%02d" % (int(clock), int(clock1))
-				self.sign = 1
-			else:
-				clock2 = "%02d%02d" % (int(clock), int(clock1))
-				self.sign = 0
-
-			if config.plugins.VFD_ini.recDisplay.value == 'True' and MyRecLed:
-				vfd_write(" rec")
-			elif config.plugins.VFD_ini.recClockBlink.value == 'on_off' and self.blink:
-				vfd_write("....")
-			else:
-				vfd_write(clock2)
-		else:
-			vfd_write("....")
-
-	def vrime(self):
-		if (config.plugins.VFD_ini.showClock.value == 'True' or config.plugins.VFD_ini.showClock.value == 'False' or config.plugins.VFD_ini.showClock.value == 'True_Switch') and not Screens.Standby.inStandby:
-			if config.plugins.VFD_ini.showClock.value == 'True_Switch':
-				if time() >= self.begin:
-					self.endkeypress = False
-				if self.endkeypress:
-					self.__eventInfoChanged()
+	def showclock(self):
+		if config.plugins.SEG.showClock.value:
+			standby_mode = Screens.Standby.inStandby
+			update_time = 1000
+			if not standby_mode:
+				if self.dvb_service == "video":
+					update_time = 10000
 				else:
-					self.prikaz()
-			else:
-				self.__eventInfoChanged()
+					if config.plugins.SEG.showCHnumber.value != "0":
+						if time() >= self.begin:
+							self.endkeypress = False
+						if self.endkeypress:
+							self.updateNumber()
+						else:
+							self.show()
+					else:
+						self.show()
+			elif not skin_text:
+				self.show()
 
-		if config.plugins.VFD_ini.showClock.value == 'Off':
-			vfd_write("....")
-			self.zaPrik.start(self.updatetime, 1)
-			return
-		else:
-			self.zaPrik.start(1000, 1)
-
-		if Screens.Standby.inStandby or config.plugins.VFD_ini.showClock.value == 'True_All':
-			self.prikaz()
+			self.TimerText.start(update_time, True)
 
 	def keyPressed(self, key, tag):
 		self.begin = time() + int(self.channelnrdelay)
 		self.endkeypress = True
 
-	def RecordingLed(self):
-		global MyRecLed
-		if self.session.nav.getRecordings():
-			MyRecLed = True
-		else:
-			MyRecLed = False
-			if self.blink:
-				eDBoxLCD.getInstance().setLCDBrightness(config.lcd.bright.value * 255 / 10)
-				self.blink = False
-
-ChannelnumberInstance = None
-
-def leaveStandby():
-	if config.plugins.VFD_ini.showClock.value == 'Off':
-		vfd_write("....")
-
-def standbyCounterChanged(configElement):
-	from Screens.Standby import inStandby
-	inStandby.onClose.append(leaveStandby)
-
-	if config.plugins.VFD_ini.showClock.value == 'Off':
-		vfd_write("....")
-
-def initVFD():
-	if config.plugins.VFD_ini.showClock.value == 'Off':
-		vfd_write("....")
-
-class VFD_INISetup(ConfigListScreen, Screen):
-	def __init__(self, session, args = None):
-
-		self.skin = """
-			<screen position="center,center" size="500,210" title="VFD Display Setup" >
+class SEG_Setup(Screen, ConfigListScreen):
+	if getDesktop(0).size().width() >= 1920:
+		skin = """
+			<screen position="center,center" size="700,300" title="Control 7 Segment display" >
+				<widget name="config" position="20,15" size="660,250" itemHeight="35" font="Regular;33" scrollbarMode="showOnDemand" />
+				<ePixmap position="0,260" size="230,35" pixmap="skin_default/buttons/red.png" alphatest="on" />
+				<ePixmap position="235,260" size="230,35" pixmap="skin_default/buttons/green.png" alphatest="on" />
+				<ePixmap position="470,260" size="230,35" pixmap="skin_default/buttons/yellow.png" alphatest="on" />
+				<widget name="key_red" position="0,260" size="230,35" font="Regular;28" backgroundColor="#1f771f" zPosition="2" transparent="1" shadowColor="black" shadowOffset="-1,-1" />
+				<widget name="key_green" position="235,260" size="230,35" font="Regular;28" backgroundColor="#1f771f" zPosition="2" transparent="1" shadowColor="black" shadowOffset="-1,-1" />
+				<widget name="key_yellow" position="470,260" size="230,35" font="Regular;28" backgroundColor="#1f771f" zPosition="2" transparent="1" shadowColor="black" shadowOffset="-1,-1" />
+			</screen>"""
+	else:
+		skin = """
+			<screen position="center,center" size="500,210" title="Control 7 Segment display" >
 				<widget name="config" position="20,15" size="460,150" scrollbarMode="showOnDemand" />
 				<ePixmap position="40,165" size="140,40" pixmap="skin_default/buttons/red.png" alphatest="on" />
 				<ePixmap position="180,165" size="140,40" pixmap="skin_default/buttons/green.png" alphatest="on" />
@@ -225,131 +193,128 @@ class VFD_INISetup(ConfigListScreen, Screen):
 				<widget name="key_green" position="180,165" size="140,40" font="Regular;18" backgroundColor="#1f771f" zPosition="2" transparent="1" shadowColor="black" shadowOffset="-1,-1" />
 				<widget name="key_yellow" position="360,165" size="140,40" font="Regular;18" backgroundColor="#1f771f" zPosition="2" transparent="1" shadowColor="black" shadowOffset="-1,-1" />
 			</screen>"""
-
+	def __init__(self, session, args = None):
 		Screen.__init__(self, session)
-		self.setTitle(_("Control 7 segment VFD display"))
-		self.onClose.append(self.abort)
-
-		self.onChangedEntry = [ ]
-			
-		self.list = []
-		ConfigListScreen.__init__(self, self.list, session = self.session, on_change = self.changedEntry)
-
-		self.createSetup()
-
+		self.setTitle(_("Control 7-Segment display"))
+		ConfigListScreen.__init__(self, [], session = self.session)
 		self["key_red"] = Button(_("Cancel"))
 		self["key_green"] = Button(_("Save"))
-		self["key_yellow"] = Button(_("Update Date/Time"))
-
+		self["key_yellow"] = Button(_("Test display"))
 		self["setupActions"] = ActionMap(["SetupActions","ColorActions"],
 		{
-			"save": self.save,
-			"cancel": self.cancel,
-			"ok": self.save,
-			"yellow": self.Update,
+			"save": self.keySave,
+			"cancel": self.keyCancel,
+			"ok": self.keySave,
+			"yellow": self.setTestDisplay,
 		}, -2)
+		config.plugins.SEG.blinkRec.value = os.path.isfile("/etc/enigma2/.rec.txt") and os.path.isfile("/etc/enigma2/skin_user.xml")
+		self.createSetup()
 
 	def createSetup(self):
 		self.list = []
-		self.list.append(getConfigListEntry(_("Show on VFD"), config.plugins.VFD_ini.showClock))
-		if config.plugins.VFD_ini.showClock.value != "Off":
-			self.list.append(getConfigListEntry(_("Time mode"), config.plugins.VFD_ini.timeMode))
-			self.list.append(getConfigListEntry(_("Show REC-Symbol in Display"), config.plugins.VFD_ini.recDisplay))
-			if config.plugins.VFD_ini.recDisplay.value == "False":
-				self.list.append(getConfigListEntry(_("Show blinking Clock on Display during recording"), config.plugins.VFD_ini.recClockBlink))
-				if config.plugins.VFD_ini.recClockBlink.value == "brightness":
-					self.list.append(getConfigListEntry(_("Brightness Level 1"), config.plugins.VFD_ini.ClockLevel1))
-					self.list.append(getConfigListEntry(_("Brightness Level 2"), config.plugins.VFD_ini.ClockLevel2))
-
+		self.list.append(getConfigListEntry(_("Enable"), config.plugins.SEG.showClock))
+		if config.plugins.SEG.showClock.value:
+			self.list.append(getConfigListEntry(_("Show channel number"), config.plugins.SEG.showCHnumber))
+			self.list.append(getConfigListEntry(_("Time mode"), config.plugins.SEG.timeMode))
+			if os.path.isfile("/usr/lib/enigma2/python/Plugins/SystemPlugins/VfdControl/skin_user.xml"):
+				self.list.append(getConfigListEntry(_("Blink during recording"), config.plugins.SEG.blinkRec))
+			self.list.append(getConfigListEntry(_("Type front panel"), config.plugins.SEG.frontpanel))
 		self["config"].list = self.list
 		self["config"].l.setList(self.list)
 
-	def changedEntry(self):
-		for x in self.onChangedEntry:
-			x()
-		self.newConfig()
+	def saveAll(self):
+		if self["config"].isChanged():
+			if config.plugins.SEG.showClock.value:
+				try:
+					eDBoxLCD.getInstance().setLCDBrightness(config.lcd.bright.value * 255 / 10)
+				except:
+					pass
+				if ChannelnumberInstance:
+					ChannelnumberInstance.channelnrdelay = config.plugins.SEG.showCHnumber.value
+					ChannelnumberInstance.TimerText.stop()
+					ChannelnumberInstance.showclock()
+				else:
+					initSEG()
+				if not config.plugins.SEG.blinkRec.value:
+					if os.path.isfile("/etc/enigma2/.rec.txt"):
+						os.system("rm -rf /etc/enigma2/skin_user.xml")
+						os.system("rm -rf /usr/share/enigma2/.rec.txt")
+				else:
+					if os.path.isfile("/usr/lib/enigma2/python/Plugins/SystemPlugins/VfdControl/skin_user.xml"):
+						os.system("cp /usr/lib/enigma2/python/Plugins/SystemPlugins/VfdControl/skin_user.xml /etc/enigma2/skin_user.xml")
+						os.system("echo "" > /etc/enigma2/.rec.txt")
+			else:
+				displaybrightness_write() 
+			for x in self["config"].list:
+				x[1].save()
+			configfile.save()
 
-	def newConfig(self):
-		if self["config"].getCurrent()[0] == _('Show on VFD'):
-			self.createSetup()
-		elif self["config"].getCurrent()[0] == _('Show REC-Symbol in Display'):
-			self.createSetup()
-		elif self["config"].getCurrent()[0] == _('Show blinking Clock on Display during recording'):
-			self.createSetup()
+	def setTestDisplay(self):
+		display_write("0000")
+		sleep(1)
+		display_write("1111")
+		sleep(1)
+		display_write("2222")
+		sleep(1)
+		display_write("3333")
+		sleep(1)
+		display_write("4444")
+		sleep(1)
+		display_write("5555")
 
-	def abort(self):
-		pass
+	def keyLeft(self):
+		ConfigListScreen.keyLeft(self)
+		self.createSetup()
 
-	def save(self):
-		for x in self["config"].list:
-			x[1].save()
+	def keyRight(self):
+		ConfigListScreen.keyRight(self)
+		self.createSetup()
 
-		configfile.save()
-		initVFD()
+	def keySave(self):
+		self.saveAll()
 		self.close()
 
-	def cancel(self):
-		initVFD()
+	def keyCancel(self):
 		for x in self["config"].list:
 			x[1].cancel()
 		self.close()
 
-	def Update(self):
-		self.createSetup()
-		initVFD()
-
-class VFD_INI:
-	def __init__(self, session):
-		self.session = session
-		self.onClose = [ ]
-		initVFD()
-
-		global ChannelnumberInstance
-		if ChannelnumberInstance is None:
-			ChannelnumberInstance = Channelnumber(session)
-
-	def shutdown(self):
-		self.abort()
-
-	def abort(self):
-		config.misc.standbyCounter.addNotifier(standbyCounterChanged, initial_call = False)
-
 def main(menuid):
 	if menuid != "system":
 		return [ ]
-	return [(_("VFD Display Setup"), startVFD, "vfd_ini", None)]
+	return [(_("7-Segment Display Setup"), startSEG, "seg", None)]
 
-def startVFD(session, **kwargs):
-	session.open(VFD_INISetup)
+def startSEG(session, **kwargs):
+	session.open(SEG_Setup)
 
-iniVfd = None
-gReason = -1
-mySession = None
+def initSEG():
+	global ChannelnumberInstance, standbyCounter
+	if not config.plugins.SEG.showClock.value:
+		displaybrightness_write()
+	elif mySession and ChannelnumberInstance is None:
+		ChannelnumberInstance = Channelnumber(mySession)
+	if standbyCounter is None: 
+		standbyCounter = config.misc.standbyCounter.addNotifier(standbyCounterChanged, initial_call = False)
 
-def controliniVfd():
-	global iniVfd
-	global gReason
-	global mySession
+def leaveStandby():
+	if not config.plugins.SEG.showClock.value:
+		displaybrightness_write()
 
-	if gReason == 0 and mySession != None and iniVfd == None:
-		iniVfd = VFD_INI(mySession)
-	elif gReason == 1 and iniVfd != None:
-		iniVfd = None
+def standbyCounterChanged(configElement):
+	from Screens.Standby import inStandby
+	if inStandby:
+		inStandby.onClose.append(leaveStandby)
+	if not config.plugins.SEG.showClock.value:
+		displaybrightness_write()
 
 def sessionstart(reason, **kwargs):
-	global iniVfd
-	global gReason
 	global mySession
-
-	if kwargs.has_key("session"):
+	if reason == 0 and mySession is None and kwargs.has_key("session"):
 		mySession = kwargs["session"]
-	else:
-		gReason = reason
-	controliniVfd()
+		initSEG()
 
 def Plugins(**kwargs):
-	from Components.SystemInfo import SystemInfo
-	if SystemInfo["FrontpanelDisplay"]:
+	if os.path.exists("/dev/dbox/oled0") or os.path.exists("/dev/dbox/lcd0"):
 		return [ PluginDescriptor(where=[PluginDescriptor.WHERE_AUTOSTART, PluginDescriptor.WHERE_SESSIONSTART], fnc=sessionstart),
-			PluginDescriptor(name="VFD Display Setup", description=_("Change VFD display settings"),where = PluginDescriptor.WHERE_MENU, fnc = main) ]
+			PluginDescriptor(name="7-Segment Display Setup", description=_("Change display settings"),where = PluginDescriptor.WHERE_MENU, fnc = main) ]
 	return []
