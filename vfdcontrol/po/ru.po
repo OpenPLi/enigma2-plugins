@@ -3,105 +3,68 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-02-28 19:54+0100\n"
-"PO-Revision-Date: 2016-04-23 14:21+0300\n"
+"PO-Revision-Date: 2016-12-27 19:36+0200\n"
 "Language-Team: LANGUAGE <dima-73@inbox.lv>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Last-Translator: Dimitrij <Dima-73@inbox.lv>\n"
 "Language: ru\n"
-"X-Generator: Poedit 1.8.4\n"
+"X-Generator: Poedit 1.8.9\n"
 
-#: plugin.py:21
-msgid "Always off"
-msgstr "Всегда выкл."
+msgid "Always"
+msgstr "Всегда"
 
-#: plugin.py:248
-msgid "Brightness Level 1"
-msgstr "Уровень яркости 1"
-
-#: plugin.py:249
-msgid "Brightness Level 2"
-msgstr "Уровень яркости 2"
-
-#: plugin.py:24
-msgid "Brightness level"
-msgstr "Уровень яркости"
-
-#: plugin.py:226
 msgid "Cancel"
 msgstr "Отмена"
 
-#: plugin.py:347
-msgid "Change VFD display settings"
-msgstr "Смена настроек VFD дисплея"
+msgid "Change display settings"
+msgstr "Настройки дисплея"
 
-#: plugin.py:21
-msgid "Channelnumber in Standby Clock"
-msgstr "Номер канала в режиме ожидания"
+msgid "7-Segment Display Setup"
+msgstr "Настройки дисплея 7-сегментов"
 
-#: plugin.py:21
-msgid "Channelnumber in Standby off"
-msgstr "Выкл. номер канала в режиме ожидания"
+msgid "Control 7-Segment display"
+msgstr "Контроль дисплея 7-сегментов"
 
-#: plugin.py:21
-msgid "Channelnumber/Clock in Standby Clock"
-msgstr "Номер канала/часы в режиме ожидания"
+msgid "Enable"
+msgstr "Включить"
 
-#: plugin.py:21
-msgid "Clock always"
-msgstr "Часы всегда"
+msgid "Show channel number"
+msgstr "Показать номер канала"
 
-#: plugin.py:215
-msgid "Control 7 segment VFD display"
-msgstr "Контроль 7 сегментов дисплея VFD"
+msgid "disabled"
+msgstr "отключено"
 
-#: plugin.py:311
-msgid "VFD Display Setup"
-msgstr "Настройки VFD дисплея"
+msgid "5 sec"
+msgstr "5 сек"
 
-#: plugin.py:24
-msgid "Off"
-msgstr "Выкл."
+msgid "15 sec"
+msgstr "15 сек"
 
-#: plugin.py:24
-msgid "On/Off"
-msgstr "Вкл/Выкл"
+msgid "30 sec"
+msgstr "30 сек"
 
-#: plugin.py:227
+msgid "60 sec"
+msgstr "60 сек"
+
 msgid "Save"
 msgstr "Сохранить"
 
-#: plugin.py:244 plugin.py:262
-msgid "Show REC-Symbol in Display"
-msgstr "Показать REC-символ на дисплее"
-
-#: plugin.py:246 plugin.py:264
-msgid "Show blinking Clock on Display during recording"
-msgstr "Показать мигающие часы на дисплее во время записи"
-
-#: plugin.py:241 plugin.py:260
-msgid "Show on VFD"
-msgstr "Показать на VFD"
-
-#: plugin.py:243
 msgid "Time mode"
 msgstr "Режим времени"
-
-#: plugin.py:228
-msgid "Update Date/Time"
-msgstr "Обновить дату/время"
-
-#: plugin.py:23
-msgid "no"
-msgstr "нет"
-
-#: plugin.py:23
-msgid "yes"
-msgstr "да"
 
 msgid "24h"
 msgstr "24ч"
 
 msgid "12h"
 msgstr "12ч"
+
+msgid "Blink during recording"
+msgstr "Мигание дисплея во время записи"
+
+msgid "Type front panel"
+msgstr "Тип передней панели"
+
+msgid "Test display"
+msgstr "Тест дисплея"
