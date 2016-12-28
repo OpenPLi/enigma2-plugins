@@ -1,0 +1,353 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: shoutcast\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-12-28 14:58+0200\n"
+"PO-Revision-Date: 2016-12-28 15:19+0200\n"
+"Language-Team: Vytenis P. <vyteniui@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.11\n"
+"Last-Translator: Vytenis P.\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Language: lt\n"
+
+#: plugin.py:863
+#, python-format
+msgid ""
+"%s\n"
+"Press OK to try again..."
+msgstr ""
+"%s\n"
+"Kad pabandyti dar kartą, spauskite 'OK'..."
+
+#: plugin.py:574
+#, python-format
+msgid ""
+"%s\n"
+"Press green-button to try again..."
+msgstr ""
+"%s\n"
+"Spauskite 'ŽALIĄ', kad pabandyti dar kartą ..."
+
+#: plugin.py:70
+msgid ">= 128 kbps"
+msgstr ">= 128 kbps"
+
+#: plugin.py:70
+msgid ">= 192 kbps"
+msgstr ">= 192 kbps"
+
+#: plugin.py:70
+msgid ">= 256 kbps"
+msgstr ">= 256 kbps"
+
+#: plugin.py:70
+msgid ">= 64 kbps"
+msgstr ">= 64 kbps"
+
+#: plugin.py:327
+msgid "Activate Picture in Picture"
+msgstr "Įjungti vaizdą vaizde (PiP)"
+
+#: plugin.py:757
+msgid "Add current playing stream to favorite"
+msgstr "Įtraukti šią transliaciją į mėgstamiausias"
+
+#: plugin.py:753
+msgid "Add current selected genre to favorite"
+msgstr "Įtraukti pasirinktą žanrą į mėgstamiausius"
+
+#: plugin.py:755
+msgid "Add current selected station to favorite"
+msgstr "Įtraukti pasirinktą stotį į mėgstamiausias"
+
+#: plugin.py:1216
+msgid "Add sequence number to output file"
+msgstr "Į išvesties failą pridėti numeraciją"
+
+#: plugin.py:70
+msgid "All"
+msgstr "Visi"
+
+#: plugin.py:1099 plugin.py:1105
+#, python-format
+msgid "Audio: %s"
+msgstr "Garsas: %s"
+
+#: plugin.py:1100 plugin.py:1107
+#, python-format
+msgid "Bit rate: %s kbps"
+msgstr "Bitų dažnis: %s kbps"
+
+#: plugin.py:1204 plugin.py:1283
+msgid "Cancel"
+msgstr "Atšaukti"
+
+#: plugin.py:329
+msgid "Choose action:"
+msgstr "Pasirinkite veiksmą:"
+
+#: plugin.py:748
+msgid "Config"
+msgstr "Nustatymas"
+
+#: plugin.py:1210
+msgid "Coverheight:"
+msgstr "Viršelio aukštis:"
+
+#: plugin.py:1209
+msgid "Coverwidth:"
+msgstr "Viršelio plotis:"
+
+#: plugin.py:1215
+msgid "Create a directory for each stream"
+msgstr "Sukurti katalogą kiekvienam srautui"
+
+#: plugin.py:321
+msgid "Disable Picture in Picture"
+msgstr "Išjungti vaizdą vaizde (PiP)"
+
+#: plugin.py:485
+msgid "Do you really want to stop the recording?"
+msgstr "Ar tikrai norite nutraukti įrašymą?"
+
+#: plugin.py:488
+msgid "Enter in minutes (0 means unlimited)"
+msgstr "Įveskite minutėmis (0 = neribotas)"
+
+#: plugin.py:802
+msgid "Enter new name for favorite item"
+msgstr "Įveskite naujo mėgstamiausio pavadinimą"
+
+#: plugin.py:825
+msgid "Enter text to search for"
+msgstr "Įrašykite ieškomą tekstą"
+
+#: plugin.py:453
+#, python-format
+msgid "Error create directory %s!"
+msgstr "Sukurti katalogo %s nepavyko!"
+
+#: plugin.py:928
+msgid "Error downloading cover..."
+msgstr "Klaida, parsisiunčiant viršelį..."
+
+#: plugin.py:537
+msgid "Favorite list"
+msgstr "Mėgstamiausių sąrašas"
+
+#: plugin.py:214
+msgid "Favorites"
+msgstr "Mėgstamiausi"
+
+#: plugin.py:325
+msgid "First play streaming!"
+msgstr "Groti transliuojamą pirmiausiai!"
+
+#: plugin.py:212
+msgid "Genres"
+msgstr "Žanrai"
+
+#: plugin.py:698
+#, python-format
+msgid "Getting %s"
+msgstr "Įkeliama %s"
+
+#: plugin.py:551
+#, python-format
+msgid "Getting SHOUTcast genre list for %s..."
+msgstr "Įkeliamas SHOUTcast žanrų sąrašas %s..."
+
+#: plugin.py:218
+msgid "Getting SHOUTcast genre list..."
+msgstr "Įkeliamas SHOUTcast žanrų sąrašas..."
+
+#: plugin.py:641 plugin.py:655
+#, python-format
+msgid ""
+"Getting streaming data from\n"
+"%s"
+msgstr ""
+"Transliacijos duomenys įkeliami iš\n"
+" %s"
+
+#: plugin.py:566
+msgid ""
+"Got 0 genres. Could be a network problem.\n"
+"Please try again..."
+msgstr ""
+"Įkelta 0 žanrų. Tikriausiai, tinklo problemos.\n"
+"Pabandykite dar kartą..."
+
+#: plugin.py:758
+msgid "Hide"
+msgstr "Slėpti"
+
+#: plugin.py:1318 plugin.py:1346
+msgid "Invalid Location"
+msgstr "Neteisinga vieta"
+
+#: plugin.py:330 plugin.py:760
+msgid "Menu PiP"
+msgstr "PiP meniu"
+
+#: plugin.py:319
+msgid "Move Picture in Picture"
+msgstr "Perkelti vaizdą vaizde (PiP)"
+
+#: plugin.py:691
+msgid "No streaming data found..."
+msgstr "Transliuojamų duomenų nerasta..."
+
+#: plugin.py:1205 plugin.py:1284
+msgid "OK"
+msgstr "Gerai"
+
+#: plugin.py:71
+msgid "Off"
+msgstr "Išjungta"
+
+#: plugin.py:490
+msgid "Only running streamings can be recorded!"
+msgstr "Įrašyti galima tik vykstančias transliacijas!"
+
+#: plugin.py:211 plugin.py:430
+msgid "Record"
+msgstr "Įrašas"
+
+#: plugin.py:488
+msgid "Recording length"
+msgstr "Įrašo ilgis"
+
+#: plugin.py:1218
+msgid "Recording location:"
+msgstr "Įrašo vieta:"
+
+#: plugin.py:279
+msgid "Recording stream station"
+msgstr "Įrašomo srauto stotis"
+
+#: plugin.py:1213
+msgid "Reload station list:"
+msgstr "Stočių sąrašą įkelti iš naujo:"
+
+#: plugin.py:1214
+msgid "Rip to single file, name is timestamped"
+msgstr "Kopijuoti į vieną failą. Pavadinimas - iš datos"
+
+#: plugin.py:560 plugin.py:607
+msgid "SHOUTcast genre list"
+msgstr "SHOUTcast žanrų sąrašas"
+
+#: plugin.py:1202
+msgid "SHOUTcast setup"
+msgstr "SHOUTcast sąranka"
+
+#: plugin.py:514 plugin.py:696 plugin.py:831
+#, python-format
+msgid "SHOUTcast station list for %s"
+msgstr "SHOUTcast %s stočių sąrašas"
+
+#: plugin.py:748
+msgid "Search"
+msgstr "Paieška"
+
+#: plugin.py:833
+#, python-format
+msgid "Searching SHOUTcast for %s..."
+msgstr "SHOUTcast ieškoma %s..."
+
+#: plugin.py:1266
+msgid "Select record path for streamripper"
+msgstr "Pasirinkite kelią srauto kopijos įrašui"
+
+#: plugin.py:1208
+msgid "Show cover:"
+msgstr "Rodyti viršelį:"
+
+#: plugin.py:1211
+msgid "Show in extension menu:"
+msgstr "Rodyti meniu tarp plėtinių:"
+
+#: plugin.py:992
+#, python-format
+msgid "Station: %s"
+msgstr "Stotis: %s"
+
+#: plugin.py:213
+msgid "Stations"
+msgstr "Stotys"
+
+#: plugin.py:277 plugin.py:476
+msgid "Stop record"
+msgstr "Nutraukti įrašymą"
+
+#: plugin.py:944
+msgid "Stream stopped playing, playback of stream stopped!"
+msgstr "Transliacija nustojo, transliacijos atkūrimas nutrauktas!"
+
+#: plugin.py:1212
+msgid "Streaming rate:"
+msgstr "Srauto dažnis:"
+
+#: plugin.py:968
+#, python-format
+msgid "Title: %s"
+msgstr "Pavadinimas: %s"
+
+#: plugin.py:991
+msgid "Title: n/a"
+msgstr "Pavadinimas: N/D"
+
+#: plugin.py:315
+msgid "Zap focus to Picture in Picture"
+msgstr "Pakeisti tarpusavy vaizdus vaizde"
+
+#: plugin.py:313
+msgid "Zap focus to main screen"
+msgstr "Perjungti į pagrindinį ekraną"
+
+#: plugin.py:71
+msgid "every five minutes"
+msgstr "kas 5 min."
+
+#: plugin.py:71
+msgid "every minute"
+msgstr "kas minutę"
+
+#: plugin.py:71
+msgid "every three minutes"
+msgstr "kas 3 min."
+
+#: plugin.py:695
+#, python-format
+msgid "genre %s"
+msgstr "žanras %s"
+
+#: plugin.py:139 plugin.py:141
+msgid "listen to shoutcast internet-radio"
+msgstr "klausytis SHOUTcast interneto radijo"
+
+#: plugin.py:751
+msgid "remove current selected favorite"
+msgstr "pašalinti pasirinktą iš mėgstamiausių"
+
+#: plugin.py:750
+msgid "rename current selected favorite"
+msgstr "pervadinti pasirinktą mėgstamiausią"
+
+#: plugin.py:830
+#, python-format
+msgid "search-criteria %s"
+msgstr "paieškos kriterijus %s"
+
+#: plugin.py:472
+msgid "streamripper not installed!"
+msgstr "neįdiegtas srauto kopijuoklis!"
