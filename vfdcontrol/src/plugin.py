@@ -12,6 +12,7 @@ from time import localtime, time, sleep
 import Screens.Standby
 import os
 from Tools.HardwareInfo import HardwareInfo
+from Components.Console import Console
 
 
 config.plugins.SEG = ConfigSubsection()
@@ -51,9 +52,9 @@ def display_write(text):
 			pass
 
 def displaybrightness_write():
-	os.system("echo 0 > /proc/stb/led/oled_brightness")
-	os.system("echo 0 > /proc/stb/lcd/oled_brightness")
-	os.system("echo 0 > /proc/stb/fp/oled_brightness")
+	Console().ePopen("echo 0 > /proc/stb/led/oled_brightness")
+	Console().ePopen("echo 0 > /proc/stb/lcd/oled_brightness")
+	Console().ePopen("echo 0 > /proc/stb/fp/oled_brightness")
 
 class Channelnumber:
 	def __init__(self, session):
@@ -237,12 +238,12 @@ class SEG_Setup(Screen, ConfigListScreen):
 					initSEG()
 				if not config.plugins.SEG.blinkRec.value:
 					if os.path.isfile("/etc/enigma2/.rec.txt"):
-						os.system("rm -rf /etc/enigma2/skin_user.xml")
-						os.system("rm -rf /usr/share/enigma2/.rec.txt")
+						Console().ePopen("rm -rf /etc/enigma2/skin_user.xml")
+						Console().ePopen("rm -rf /usr/share/enigma2/.rec.txt")
 				else:
 					if os.path.isfile("/usr/lib/enigma2/python/Plugins/SystemPlugins/VfdControl/skin_user.xml"):
-						os.system("cp /usr/lib/enigma2/python/Plugins/SystemPlugins/VfdControl/skin_user.xml /etc/enigma2/skin_user.xml")
-						os.system("echo "" > /etc/enigma2/.rec.txt")
+						Console().ePopen("cp /usr/lib/enigma2/python/Plugins/SystemPlugins/VfdControl/skin_user.xml /etc/enigma2/skin_user.xml")
+						Console().ePopen("echo "" > /etc/enigma2/.rec.txt")
 			else:
 				displaybrightness_write() 
 			for x in self["config"].list:
