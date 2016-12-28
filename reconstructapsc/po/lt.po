@@ -1,0 +1,57 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ReconstructApSc\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-12-28 14:24+0200\n"
+"PO-Revision-Date: 2016-12-28 14:29+0200\n"
+"Language-Team: Vytenis P. <vyteniui@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.11\n"
+"Last-Translator: Vytenis P.\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Language: lt\n"
+
+#: plugin.py:9
+msgid "Reconstruct AP/SC ..."
+msgstr "Atkurkite .ap ir .sc failus."
+
+#: ui.py:17
+msgid "Cannot reconstruct this item"
+msgstr "Šio elemento atkurti nepavyko"
+
+#: ui.py:19
+msgid "Don't reconstruct"
+msgstr "Neatkūrinėti"
+
+#: ui.py:21
+msgid "Reconstruct missing .ap and .sc files in this directory"
+msgstr "Atkurti trūkstamus šio katalogo .ap ir .sc failus"
+
+#: ui.py:22
+msgid "Reconstruct all .ap and .sc files in this directory"
+msgstr "Atkurti visus šio katalogo .ap ir .sc failus"
+
+#: ui.py:26
+msgid "more files..."
+msgstr "daugiau failų..."
+
+#: ui.py:28
+msgid "Reconstruct the .ap and .sc files of the selected movie"
+msgstr "Atkurti trūkstamus pasirinkto filmo .ap ir .sc failus"
+
+#: ui.py:31
+#, python-format
+msgid "What would you like to reconstruct?  (\"%s\")"
+msgstr "Ką norėtumėte atkurti? (\"%s\")"
+
+#: ui.py:58
+#, python-format
+msgid "Reconstruct AP/SC - %s"
+msgstr "Atkurti AP/SC - %s"
