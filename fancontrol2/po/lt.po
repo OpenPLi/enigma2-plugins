@@ -10,7 +10,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "Language: lt\n"
-"X-Generator: Poedit 1.8.8\n"
+"X-Generator: Poedit 1.8.11\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
 #: FC2.txt:35
@@ -23,7 +23,7 @@ msgstr "šalia XILINX Spartan"
 
 #: FC2.txt:37
 msgid "under the WLAN"
-msgstr "prie WLAN"
+msgstr "po WLAN"
 
 #: FC2.txt:38
 msgid "left of the Battery"
@@ -31,19 +31,19 @@ msgstr "kairėje nuo baterijos"
 
 #: FC2.txt:39
 msgid "left near Front-CI"
-msgstr "kairėje prie priekinio CI"
+msgstr "kairėje, prie priekinio CI"
 
 #: FC2.txt:40
 msgid "left near Card-Slot"
-msgstr "kairėje prie kortelės lizdo"
+msgstr "kairėje, prie kortelės lizdo"
 
 #: FC2.txt:41
 msgid "over Security Card"
-msgstr "virš Security Card"
+msgstr "virš SC laikmenos"
 
 #: FC2.txt:42
 msgid "under the Fan"
-msgstr "prie aušintuvo"
+msgstr "po aušintuvu"
 
 #: FC2.txt:142
 msgid "."
@@ -51,19 +51,19 @@ msgstr ","
 
 #: FC2.txt:187
 msgid "3Pin"
-msgstr "3Pin"
+msgstr "3 kont."
 
 #: FC2.txt:187
 msgid "4Pin"
-msgstr "4Pin"
+msgstr "4 kont."
 
 #: FC2.txt:187
 msgid "4Pin (PID)"
-msgstr "4Pin (PID)"
+msgstr "4 kont. (PID)"
 
 #: FC2.txt:187
 msgid "Control disabled"
-msgstr "Valdymo išjungtas"
+msgstr "Valdymas išjungtas"
 
 #: FC2.txt:187
 msgid "disabled"
@@ -95,7 +95,7 @@ msgstr "nieko nedaryti"
 
 #: FC2.txt:205
 msgid "auto"
-msgstr "auto"
+msgstr "automatiškai"
 
 #: FC2.txt:205
 msgid "never"
@@ -155,7 +155,7 @@ msgstr "%s   %02d °C"
 
 #: FC2.txt:535
 msgid "press Info for HDD-Temp"
-msgstr "spauskite 'Info' HDD temperatūrai sužinoti"
+msgstr "HDD temperatūrai sužinoti, spauskite 'Info'"
 
 #: FC2.txt:536 FC2.txt:791
 msgid "Current rpm  %4d"
@@ -167,15 +167,15 @@ msgstr "Veiksmas, kai aušintuvas neveikia"
 
 #: FC2.txt:569
 msgid "Box shutdown at Temperature (C)"
-msgstr "Išjungti, pasiekus temp.(°C)"
+msgstr "Išjungti, pasiekus temp. (°C)"
 
 #: FC2.txt:570
 msgid "increases overheating protection to (C)"
-msgstr "padidina apsaugą nuo perkaitimo iki (°C)"
+msgstr "Padidins apsaugą nuo perkaitimo iki (°C)"
 
 #: FC2.txt:571
 msgid "read HDD-Temperature in HDD-Standby-Mode"
-msgstr "skaityti HDD temperatūrą HDD budėjimo režime"
+msgstr "Tikrinti HDD temperatūrą HDD budėjimo režime"
 
 #: FC2.txt:572
 msgid "disable DMM-FanControl"
@@ -195,7 +195,7 @@ msgstr "Rodyti monitorių tarp plėtinių meniu"
 
 #: FC2.txt:576
 msgid "Enable Console Logging"
-msgstr "Įjungti konsolės registravimą"
+msgstr "Įjungti registravimą konsolėje"
 
 #: FC2.txt:577
 msgid "Number of WebIF-Log-Entries"
@@ -315,7 +315,7 @@ msgstr "Informacija"
 
 #: FC2.txt:828
 msgid "readme.txt"
-msgstr "readmede.txt"
+msgstr "readme.txt"
 
 #: FC2.txt:1019
 msgid "FanControl2 emergency, Box Shutdown now?"
@@ -323,7 +323,7 @@ msgstr "Avarinė situacija, išjungti aparatą dabar?"
 
 #: FC2.txt:1088
 msgid "Fan is not working!"
-msgstr "Ventiliatorius neveikia!"
+msgstr "Aušintuvas neveikia!"
 
 #: FC2.txt:1232
 msgid "currentRPM:%d targetRPM:%d Temp:%4.1f"
@@ -367,7 +367,7 @@ msgstr "įjungti"
 
 #: FC2.txt:1513 FC2.txt:1515 FC2.txt:1549 FC2.txt:1551
 msgid "Filesize : %d %sByte"
-msgstr "Failo dydis: % d%sBaitų"
+msgstr "Failo dydis: % d%s Baitų"
 
 #: FC2.txt:1517 FC2.txt:1553
 msgid "Disk free : %d MByte"
@@ -383,7 +383,7 @@ msgstr "Pašalinti"
 
 #: FC2.txt:1528
 msgid "Delete older 48h"
-msgstr "Šalinti senesnius 48 val."
+msgstr "Šalinti senesnius, nei 48 val."
 
 #: FC2.txt:1531 FC2.txt:1568
 msgid "File %s does not exists"
@@ -391,26 +391,8 @@ msgstr "Failo %s nėra"
 
 #: FC2.txt:1570
 msgid "Logging-Path: %s"
-msgstr "Logging-Verzeichnis: %s"
+msgstr "Kelias iki žurnalo: %s"
 
 #: FC2.txt:1571
 msgid "Auto-Delete older %s Days"
-msgstr "Auto-šalinti senesnius, nei %s dienų"
-
-#~ msgid "OK"
-#~ msgstr "OK"
-
-#~ msgid "Show Fan Error"
-#~ msgstr "Zeige Lüfter Fehler"
-
-#~ msgid "Switch RPM/2 <> RPM?"
-#~ msgstr "Umschaltung RPM/2 <> RPM?"
-
-#~ msgid "Regulation off"
-#~ msgstr "Steuerung aus"
-
-#~ msgid "off"
-#~ msgstr "aus"
-
-#~ msgid "Fan rpm current: %s target: %s (%sC)"
-#~ msgstr "Fan rpm Aktuell: %s Ziel: %s (%sC)"
+msgstr "Automatiškai trinti senesnius, nei %s dienų"
