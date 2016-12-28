@@ -1,0 +1,146 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: remoteTimer\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-12-28 14:32+0200\n"
+"PO-Revision-Date: 2016-12-28 14:45+0200\n"
+"Language-Team: Vytenis P. <vyteniui@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.11\n"
+"Last-Translator: Vytenis P.\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Language: lt\n"
+
+#: plugin.py:100 plugin.py:242
+msgid "Cancel"
+msgstr "Atšaukti"
+
+#: plugin.py:124
+msgid "Cleanup"
+msgstr "Išvalyti"
+
+#: plugin.py:422
+msgid "Create timers on remote reciever enigma2"
+msgstr "Sukurti laikmačius nutolusiame enigma2 imtuve"
+
+#: plugin.py:125
+msgid "Delete"
+msgstr "Ištrinti"
+
+#: plugin.py:150
+#, python-format
+msgid ""
+"Do you really want to delete the timer \n"
+"%s ?"
+msgstr ""
+"Ar tikrai norite pašalinti laikmatį\n"
+"%s ?"
+
+#: plugin.py:395
+#, python-format
+msgid ""
+"ERROR - Set timer on remote reciever via WebIf:\n"
+"%s"
+msgstr ""
+"KLAIDA nustatant laikmatį nutolusiame imtuve per WebIf:\n"
+"%s"
+
+#: plugin.py:405
+msgid "ERROR XML parse"
+msgstr "KLAIDA, apdorojant XML"
+
+#: plugin.py:246
+msgid "Hostname"
+msgstr "Vardas tinkle"
+
+#: plugin.py:247
+msgid "Network IP"
+msgstr "tinklo IP"
+
+#: plugin.py:403
+msgid "No entry in XML from the web server"
+msgstr "Nėra XML įrašų iš interneto serverio"
+
+#: plugin.py:250
+msgid "Password"
+msgstr "Slaptažodis"
+
+#: plugin.py:321
+msgid "Please select a subservice to record..."
+msgstr "Pasirinkite subkanalą įrašymui..."
+
+#: plugin.py:284 plugin.py:422 plugin.py:426
+msgid "Remote Timer"
+msgstr "Nuotolinis laikmatis"
+
+#: plugin.py:86
+msgid "Remote-Timer digest"
+msgstr "Nuotolinio laikmačio sąvadas"
+
+#: plugin.py:233
+msgid "Remote-Timer settings"
+msgstr "Nuotolinio laikmačio nustatymai"
+
+#: plugin.py:243
+msgid "Save"
+msgstr "Išsaugoti"
+
+#: plugin.py:392
+#, python-format
+msgid ""
+"Set timer on remote reciever via WebIf:\n"
+"%s"
+msgstr ""
+"Nustattti laikmatį nutolusiame imtuve per WebIf:\n"
+"%s"
+
+#: plugin.py:97
+msgid "Settings"
+msgstr "Nuostatos"
+
+#: plugin.py:253
+msgid "Show in extensions menu"
+msgstr "Rodyti meniu tarp plėtinių"
+
+#: plugin.py:252
+msgid "Timer Edit - remote as default"
+msgstr "Redaguoti laikmatį - numatytasis nuotolinis"
+
+#: plugin.py:251
+msgid "Use remote directory"
+msgstr "Naudoti nuotolinį katalogą"
+
+#: plugin.py:249
+msgid "Username"
+msgstr "Vartotojas"
+
+#: plugin.py:248
+msgid "WebIf port"
+msgstr "WebIF prievadas"
+
+#: plugin.py:391
+msgid "added"
+msgstr "Pridėta"
+
+#: plugin.py:168
+msgid "error parsing incoming data..."
+msgstr "Gaunamų duomenų apdorojimo klaida..."
+
+#: plugin.py:110
+msgid "fetching remote data..."
+msgstr "Parsiunčiami duomenys..."
+
+#: plugin.py:120
+msgid "finish fetching remote data..."
+msgstr "Duomenų parsiuntimas baigtas."
+
+#: plugin.py:114
+msgid "not configured yet. please do so in the settings."
+msgstr "Dar nesukonfigūruotas, atlikite tai nustatymuose."
