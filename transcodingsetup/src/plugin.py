@@ -12,7 +12,7 @@ from Components.config import config, ConfigSubsection, getConfigListEntry, Conf
 
 config.plugins.transcodingsetup = ConfigSubsection()
 config.plugins.transcodingsetup.port = ConfigInteger(default = None, limits = (1024, 65535))
-config.plugins.transcodingsetup.bitrate = ConfigInteger(default = None, limits = (50000, 2000000))
+config.plugins.transcodingsetup.bitrate = ConfigInteger(default = None, limits = (50000, 4000000))
 config.plugins.transcodingsetup.resolution = ConfigSelection(default = "480p", choices = [ ("720x480", "480p"), ("720x576", "576p"), ("1280x720", "720p") ])
 
 config.plugins.transcodingsetup.framerate = ConfigInteger(default = None)
@@ -37,7 +37,7 @@ class TranscodingSetup(ConfigListScreen, Screen):
 		"""
 
 	def __init__(self, session):
-		bitrate_choices = [( 50, "50 kbps" ), ( 100, "100 kbps" ), ( 200, "200 kbps" ), ( 500, "500 kbps" ), ( 1000, "1 Mbps" ), ( 2000, "2 Mbps" )]
+		bitrate_choices = [( 50, "50 kbps" ), ( 100, "100 kbps" ), ( 200, "200 kbps" ), ( 500, "500 kbps" ), ( 1000, "1 Mbps" ), ( 1500, "1.5 Mbps" ), ( 2000, "2 Mbps" ), ( 2500, "2.5 Mbps" ), ( 3000, "3 Mbps" ), ( 3500, "3.5 Mbps" ), ( 4000, "4 Mbps" )]
 		size_choices = [ "480p", "576p", "720p" ]
 
 		current_bitrate_value = ""
