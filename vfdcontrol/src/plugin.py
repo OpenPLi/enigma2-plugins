@@ -52,21 +52,18 @@ def display_write(text):
 			pass
 
 def displaybrightness_write():
-	if os.path.exists("/proc/stb/lcd/oled_brightness"):
-		try:
-			open("/proc/stb/lcd/oled_brightness", "w").write("0")
-		except:
-			pass
-	elif os.path.exists("/proc/stb/fp/oled_brightness"):
-		try:
-			open("/proc/stb/fp/oled_brightness", "w").write("0")
-		except:
-			pass
-	elif os.path.exists("/proc/stb/led/oled_brightness"):
-		try:
-			open("/proc/stb/led/oled_brightness", "w").write("0")
-		except:
-			pass
+	try:
+		open("/proc/stb/lcd/oled_brightness", "w").write("0")
+	except:
+		pass
+	try:
+		open("/proc/stb/fp/oled_brightness", "w").write("0")
+	except:
+		pass
+	try:
+		open("/proc/stb/led/oled_brightness", "w").write("0")
+	except:
+		pass
 
 
 class Channelnumber:
