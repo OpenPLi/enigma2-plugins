@@ -1,0 +1,303 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: VirtualZap\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-12-28 17:19+0200\n"
+"PO-Revision-Date: 2016-12-28 17:47+0200\n"
+"Language-Team: Vytenis P. <vyteniui@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.11\n"
+"Last-Translator: \n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Language: lt\n"
+
+#: plugin.py:680
+#, python-format
+msgid "%d min"
+msgstr "%d min."
+
+#: plugin.py:677
+#, python-format
+msgid "+%d min"
+msgstr "+%d min."
+
+#: DishPiP.py:118
+msgid "/s"
+msgstr "/sek."
+
+#: plugin.py:69
+msgid "1 minute"
+msgstr "1 min."
+
+#: plugin.py:69
+msgid "12 hours"
+msgstr "12 val."
+
+#: plugin.py:69
+msgid "15 minutes"
+msgstr "15 min."
+
+#: plugin.py:69
+msgid "2 hours"
+msgstr "2 val."
+
+#: plugin.py:69
+msgid "24 hours"
+msgstr "24 val."
+
+#: plugin.py:69
+msgid "3 hours"
+msgstr "3 val."
+
+#: plugin.py:69
+msgid "30 minutes"
+msgstr "30 min."
+
+#: plugin.py:69
+msgid "45 minutes"
+msgstr "45 min."
+
+#: plugin.py:69
+msgid "5 minutes"
+msgstr "5 min."
+
+#: plugin.py:69
+msgid "6 hours"
+msgstr "6 val."
+
+#: plugin.py:69
+msgid "60 minutes"
+msgstr "60 min."
+
+#: plugin.py:1065
+msgid "Cancel"
+msgstr "Atšaukti"
+
+#: plugin.py:1232
+msgid "Could not open Picture in Picture"
+msgstr "Nepavyko atverti vaizdo vaizde (PiP)"
+
+#: plugin.py:1096
+msgid "Don't toggle standard infobar(s) with exit button"
+msgstr "Neperjungti įprastinės infojuostos 'EXIT' mygtuku"
+
+#: plugin.py:64
+msgid "EPGSelection (context menu)"
+msgstr "EPG pasirinkimas (kontekstinis meniu)"
+
+#: plugin.py:64
+msgid "EPGSelection/EventView (context menu)"
+msgstr "EPG pasirinkimas/įvykio apžvalga (kontekstinis meniu)"
+
+#: plugin.py:64
+msgid "EventView (context menu)"
+msgstr "Įvykio apžvalga (kontekstinis meniu)"
+
+#: plugin.py:1317
+msgid "Extended virtual zap"
+msgstr "Išplėstinis virtualus perjungimas"
+
+#: plugin.py:1319
+msgid "Extended virtual zap (PiP)"
+msgstr "Išplėstinis virtualus perjungimas (PiP)"
+
+#: plugin.py:1067
+msgid "Extended virtual zap config"
+msgstr "Išplėstinio virtualaus perjungimo nustatymas"
+
+#: plugin.py:1314
+msgid "Extended virtual zap setup"
+msgstr "Išplėstinio virtualaus perjungimo sąranka"
+
+#: DishPiP.py:45
+msgid "From :"
+msgstr "Nuo :"
+
+#: plugin.py:1114
+msgid ""
+"GUI needs a restart to apply the new settings.\n"
+"Do you want to Restart the GUI now?"
+msgstr ""
+"Kad pakeitimai įsigaliotų, grafinę aplinką reikia paleisti iš naujo.\n"
+"Paleisti iš naujo dabar?"
+
+#: DishPiP.py:46
+msgid "Goto :"
+msgstr "Pereiti į :"
+
+#: plugin.py:1098
+msgid "Remember last service"
+msgstr "Įsiminti paskutinį kanalą"
+
+#: plugin.py:1100
+msgid "Remember mode"
+msgstr "Įsiminimo būdas"
+
+#: plugin.py:1115
+msgid "Restart GUI"
+msgstr "Paleisti grafinę aplinką iš naujo"
+
+#: plugin.py:1066
+msgid "Save"
+msgstr "Išsaugoti"
+
+#: plugin.py:1090
+msgid "Show PiP in window infobar"
+msgstr "Rodyti PiP lango infojuostoje"
+
+#: plugin.py:1097
+msgid "Show picons"
+msgstr "Rodyti piktogramas"
+
+#: plugin.py:1084
+msgid "Show plugin in channel selection context menu"
+msgstr "Rodyti įskiepį kanalų pasirinkimo kontekstiniame meniu"
+
+#: plugin.py:1086
+msgid "Show plugin in the context menu"
+msgstr "Rodyti įskiepį kontekstiniame meniu"
+
+#: plugin.py:1094
+msgid "Show positioner movement for PiP service"
+msgstr "Rodyti PiP kanalo pozicionieriaus judėjimą"
+
+#: plugin.py:1091
+msgid "Start standard PiP after x secs (0 = disabled)"
+msgstr "Atverti įprastinį PiP po X sek. (0 = išjungta)"
+
+#: plugin.py:888
+msgid "Stream"
+msgstr "Srautas"
+
+#: DishPiP.py:210
+msgid "Tuner"
+msgstr "Imtuvas"
+
+#: plugin.py:571
+#, python-format
+msgid "Tuner %s"
+msgstr "Imtuvas %s"
+
+#: plugin.py:1082
+msgid "Usage"
+msgstr "Naudojimas"
+
+#: plugin.py:1088
+msgid "Use PiP"
+msgstr "Naudoti PiP"
+
+#: plugin.py:1093
+msgid "Use plugin 'PiPServiceRelation'"
+msgstr "Naudoti įskiepį 'PiPServiceRelation'"
+
+#: plugin.py:69
+msgid "always"
+msgstr "visada"
+
+#: plugin.py:63
+msgid "as plugin in event menu"
+msgstr "kaip įskiepį įvykių meniu"
+
+#: plugin.py:63
+msgid "as plugin in extended menu"
+msgstr "kaip įskiepį išplėstiniame meniu"
+
+#: plugin.py:1314
+msgid "config menu"
+msgstr "konfigūracijos meniu"
+
+#: plugin.py:63
+msgid "disable"
+msgstr "išjungti"
+
+#: plugin.py:64
+msgid "disabled"
+msgstr "išjungta"
+
+#: plugin.py:387
+msgid "exit"
+msgstr "užverti"
+
+#: plugin.py:392
+msgid "open Event View"
+msgstr "atverti įvykių apžvalgą"
+
+#: plugin.py:390
+msgid "open favorite list"
+msgstr "atverti mėgstamiausių sąrašą"
+
+#: plugin.py:391
+msgid "open service list"
+msgstr "atverti kanalų sąrašą"
+
+#: plugin.py:393
+msgid "open single EPG"
+msgstr "atverti vieno kanalo EPG"
+
+#: plugin.py:1162
+msgid "show 'Extended virtual zap' for current service"
+msgstr "Rodyti 'Išplėstinį virtualų perjungimą' šiam kanalui"
+
+#: plugin.py:396
+msgid "standard PiP"
+msgstr "įprastinis PiP"
+
+#: plugin.py:394
+msgid "standard PiPzap"
+msgstr "įprastinio PiP perjungimas"
+
+#: plugin.py:397
+msgid "swap and standard PiP"
+msgstr "sukeisti PiP ir pagrindinį vaizdą"
+
+#: plugin.py:395
+msgid "swap and standard PiPzap"
+msgstr "sukeisti pagrindinį vaizdą ir perjungtą PiP"
+
+#: plugin.py:400
+msgid "swap services"
+msgstr "Sukeisti kanalus"
+
+#: plugin.py:69
+msgid "until standby/restart"
+msgstr "iki budėjimo/paleidimo iš naujo"
+
+#: plugin.py:634
+msgid "wait 5 seconds"
+msgstr "laukite 5 sek."
+
+#: plugin.py:63
+msgid "with exit button"
+msgstr "'EXIT' mygtuku"
+
+#: plugin.py:63
+msgid "with long OK press"
+msgstr "ilgu 'OK' paspaudimu"
+
+#: plugin.py:386
+msgid "zap to PiP service and exit"
+msgstr "Perjungti į PiP kanalą ir uždaryti"
+
+#: plugin.py:388 plugin.py:399
+msgid "zap to next channel/open service list"
+msgstr "perjungti į sekantį kanalą/atverti kanalų sąrašą"
+
+#: plugin.py:389 plugin.py:398
+msgid "zap to previous channel/open service list"
+msgstr "perjungti į ankstesnį kanalą/atverti kanalų sąrašą"
+
+msgid "Incorrect type service for PiP!"
+msgstr "Nesuderinamas su PiP kanalas!"
+
+msgid "Parental control!"
+msgstr "Tėvų kontrolė!"
+
+msgid "No free tuner!"
+msgstr "Nėra laisvo imtuvo!"
