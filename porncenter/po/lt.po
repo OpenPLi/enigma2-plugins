@@ -1,0 +1,82 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PornCenter\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-12-28 14:15+0200\n"
+"PO-Revision-Date: \n"
+"Language-Team: Vytenis P. <vyteniui@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-Basepath: .\n"
+"X-Generator: Poedit 1.8.11\n"
+"Last-Translator: Vytenis P.\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Language: lt\n"
+"X-Poedit-SearchPath-0: /home/aliabdul/dream/ltteam/trunk/additions/plugins/porncenter/src\n"
+
+#: /home/aliabdul/dream/ltteam/trunk/additions/plugins/porncenter/src/plugin.py:54
+#: /home/aliabdul/dream/ltteam/trunk/additions/plugins/porncenter/src/plugin.py:108
+#: /home/aliabdul/dream/ltteam/trunk/additions/plugins/porncenter/src/plugin.py:171
+#: /home/aliabdul/dream/ltteam/trunk/additions/plugins/porncenter/src/plugin.py:189
+#: /home/aliabdul/dream/ltteam/trunk/additions/plugins/porncenter/src/plugin.py:237
+msgid "Porn Center"
+msgstr "Porno centras"
+
+#: /home/aliabdul/dream/ltteam/trunk/additions/plugins/porncenter/src/plugin.py:55
+msgid "Adult streaming plugins for dm800/dm8000"
+msgstr "dm800/dm8000 transliacijų suaugusiems įskiepiai"
+
+#: /home/aliabdul/dream/ltteam/trunk/additions/plugins/porncenter/src/plugin.py:58
+msgid "delete"
+msgstr "šalinti"
+
+#: /home/aliabdul/dream/ltteam/trunk/additions/plugins/porncenter/src/plugin.py:58
+msgid "keep on device"
+msgstr "saugoti įrenginyje"
+
+#: /home/aliabdul/dream/ltteam/trunk/additions/plugins/porncenter/src/plugin.py:58
+msgid "ask me"
+msgstr "klausti"
+
+#: /home/aliabdul/dream/ltteam/trunk/additions/plugins/porncenter/src/plugin.py:120
+#, python-format
+msgid "Downloading movie: %s"
+msgstr "Parsisiunčiamas filmas: %s"
+
+#: /home/aliabdul/dream/ltteam/trunk/additions/plugins/porncenter/src/plugin.py:159
+msgid "Stop playing this movie?"
+msgstr "Sustabdyti šį filmą?"
+
+#: /home/aliabdul/dream/ltteam/trunk/additions/plugins/porncenter/src/plugin.py:194
+msgid "Select"
+msgstr "Pasirinkti"
+
+#: /home/aliabdul/dream/ltteam/trunk/additions/plugins/porncenter/src/plugin.py:252
+msgid "Name:"
+msgstr "Pavadinimas:"
+
+#: /home/aliabdul/dream/ltteam/trunk/additions/plugins/porncenter/src/plugin.py:253
+msgid "Description:"
+msgstr "Aprašymas:"
+
+#: /home/aliabdul/dream/ltteam/trunk/additions/plugins/porncenter/src/plugin.py:254
+msgid "Buffer:"
+msgstr "Talpykla:"
+
+#: /home/aliabdul/dream/ltteam/trunk/additions/plugins/porncenter/src/plugin.py:255
+msgid "Buffer device:"
+msgstr "Talpyklos įrenginys:"
+
+#: /home/aliabdul/dream/ltteam/trunk/additions/plugins/porncenter/src/plugin.py:256
+msgid "Buffer file handling:"
+msgstr "Talpyklos failo palaikymas:"
+
+#: /home/aliabdul/dream/ltteam/trunk/additions/plugins/porncenter/src/plugin.py:381
+msgid "Error while getting video url!"
+msgstr "Prisijungimo prie internetinio adreso klaida!"
+
+#: /home/aliabdul/dream/ltteam/trunk/additions/plugins/porncenter/src/plugin.py:394
+msgid "Delete this movie?"
+msgstr "Pašalinti šį filmą?"
