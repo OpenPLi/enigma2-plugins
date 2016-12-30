@@ -1,0 +1,222 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-12-30 18:45+0100\n"
+"PO-Revision-Date: 2016-12-30 20:11+0100\n"
+"Last-Translator: hawkeye116477 <hawkeye116477@gmail.com>\n"
+"Language-Team: \n"
+"Language: pl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.7.1\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2);\n"
+
+#: plugin.py:39
+msgid " ver. "
+msgstr "wersja"
+
+#: plugin.py:216
+msgid "'dvbdate' not installed !"
+msgstr "Pakiet dvbdate nie jest zainstalowany!"
+
+#: plugin.py:210 plugin.py:255
+msgid "'ntpdate' not installed !"
+msgstr "Pakiet ntpdate nie jest zainstalowany!"
+
+#: plugin.py:43
+msgid "1 hour"
+msgstr "1 godzinę"
+
+#: plugin.py:43
+msgid "12 hours"
+msgstr "12 godzin"
+
+#: plugin.py:43
+msgid "15 min"
+msgstr "15 minut"
+
+#: plugin.py:43
+msgid "2 hours"
+msgstr "2 godziny"
+
+#: plugin.py:43
+msgid "24 hours"
+msgstr "24 godziny"
+
+#: plugin.py:43
+msgid "30 min"
+msgstr "30 minut"
+
+#: plugin.py:43
+msgid "4 hours"
+msgstr "4 godziny"
+
+#: plugin.py:43
+msgid "48 hours"
+msgstr "48 godzin"
+
+#: plugin.py:43
+msgid "5 min"
+msgstr "5 minut"
+
+#: plugin.py:420
+msgid "Apply the new System time?"
+msgstr "Zastosować nowy czas systemowy?"
+
+#: plugin.py:103
+msgid "Cancel"
+msgstr "Anuluj"
+
+#: plugin.py:442
+#, python-format
+msgid "Change system time was canceled, because %s"
+msgstr "Zmiana czasu systemowego została anulowana, ponieważ %s"
+
+#: plugin.py:224 plugin.py:321
+msgid "Choice transponder"
+msgstr "Wybierz transponder"
+
+#: plugin.py:170
+msgid "Delay (sec) wnen use wifi network"
+msgstr "Opóźnienie (w sek), gdy jest używana sieć wifi"
+
+#: plugin.py:175
+msgid "Domain name or IP (pool.ntp.org)"
+msgstr "Nazwa domeny lub IP (pool.ntp.org)"
+
+#: plugin.py:42
+msgid "Internet Time"
+msgstr "czasu internetowego"
+
+#: plugin.py:372
+msgid "Please Enter new System time and press OK !"
+msgstr "Wpisz nowy czas systemowy i wciśnij OK !"
+
+#: plugin.py:47 plugin.py:48 plugin.py:49
+msgid "Press OK"
+msgstr "Wciśnij OK"
+
+#: plugin.py:105
+msgid "Restart GUI"
+msgstr "Restart GUI"
+
+#: plugin.py:301 plugin.py:314
+msgid "Restart the GUI now?"
+msgstr "Czy chcesz zrestartować GUI?"
+
+#: plugin.py:104
+msgid "Save"
+msgstr "Zapisz"
+
+#: plugin.py:273
+msgid "Script 'set-rtctime' not found !"
+msgstr "Skrypt 'set-rtctime' nie został odnaleziony!"
+
+#: plugin.py:173
+msgid "Set system time manually"
+msgstr "Ustaw ręcznie czas systemowy"
+
+#: plugin.py:99
+msgid "Setup System Time"
+msgstr "Ustawienia System Time"
+
+#: plugin.py:169
+msgid "Sync NTP cold start"
+msgstr "Synchronizacja NTP - zimny start"
+
+#: plugin.py:168
+msgid "Sync NTP every"
+msgstr "Synchronizacja NTP co"
+
+#: plugin.py:172
+msgid "Sync now current transponder"
+msgstr "Synchronizuj korzystając z obecnego transpondera"
+
+#: plugin.py:171
+msgid "Sync now internet"
+msgstr "Synchronizuj korzystając z internetu"
+
+#: plugin.py:167
+msgid "Sync time using"
+msgstr "Synchronizuj czas korzystając z"
+
+#: plugin.py:457
+msgid "System Time"
+msgstr "Czas systemowy"
+
+#: plugin.py:466
+msgid "System time your box"
+msgstr "Czas systemowy twojego tunera"
+
+#: plugin.py:214
+msgid "Time sync with DVB..."
+msgstr "Synchronizacja czasu z DVB..."
+
+#: plugin.py:205 plugin.py:208
+msgid "Time sync with NTP..."
+msgstr "Synchronizacja czasu z NTP..."
+
+#: plugin.py:42
+msgid "Transponder Time"
+msgstr "czasu transpondera"
+
+#: plugin.py:174
+msgid "Use RTC time from deep standby"
+msgstr "Używaj czasu RTC w trybie głębokiego czuwania"
+
+#: plugin.py:424
+msgid "answer is None"
+msgstr "brak odpowiedzi"
+
+#: plugin.py:413
+#, python-format
+msgid "invalid day %s"
+msgstr "nieprawidłowy dzień %s"
+
+#: plugin.py:384 plugin.py:386
+msgid "invalid format"
+msgstr "nieprawidłowy format"
+
+#: plugin.py:415
+#, python-format
+msgid "invalid hour %s"
+msgstr "nieprawidłowa godzina %s"
+
+#: plugin.py:417
+#, python-format
+msgid "invalid minute %s"
+msgstr "nieprawidłowa minuta %s"
+
+#: plugin.py:411
+#, python-format
+msgid "invalid month %s"
+msgstr "nieprawidłowy miesiąc %s"
+
+#: plugin.py:409
+#, python-format
+msgid "invalid year %s"
+msgstr "nieprawidłowy rok %s"
+
+#: plugin.py:382
+msgid "new time string too short"
+msgstr "zbyt krótki nowy łańcuch czasu"
+
+#: plugin.py:380
+msgid "no new time"
+msgstr "brak nowego czasu"
+
+#: plugin.py:426
+msgid "you were not confirming"
+msgstr "nie potwierdziłeś(aś)"
+
+msgid ""
+"Old time: %s\n"
+"Offset: %s sec.\n"
+"New time: %s"
+msgstr ""
+"Stary czas: %s\n"
+"Przesunięcie czasu: %s sec.\n"
+"Nowy czas: %s"
