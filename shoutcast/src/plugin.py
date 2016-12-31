@@ -346,14 +346,14 @@ class SHOUTcastWidget(Screen):
 						del self.session.pip
 					self.session.pipshown = False
 		elif answer == "start":
-			prev_playingref = self.session.nav.getCurrentlyPlayingServiceReference()
+			prev_playingref = self.session.nav.currentlyPlayingServiceOrGroup
 			if prev_playingref:
-				self.session.nav.currentlyPlayingServiceReference = None
+				self.session.nav.currentlyPlayingServiceOrGroup = None
 			InfoBar.showPiP(InfoBar.instance)
 			if self.visible:
 				self.hideWindow()
 			if prev_playingref:
-				self.session.nav.currentlyPlayingServiceReference = prev_playingref
+				self.session.nav.currentlyPlayingServiceOrGroup = prev_playingref
 			slist = self.servicelist
 			if slist:
 				try:
@@ -1200,7 +1200,6 @@ class SHOUTcastLCDScreen(Screen):
 
 	def setText(self, text):
 		self["text2"].setText(text[0:39])
-
 
 class SHOUTcastSetup(Screen, ConfigListScreen):
 
