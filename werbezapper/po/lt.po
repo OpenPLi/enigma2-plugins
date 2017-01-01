@@ -1,0 +1,280 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-12-29 08:19+0200\n"
+"PO-Revision-Date: 2016-12-29 15:12+0200\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.11\n"
+"Last-Translator: \n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Language: lt\n"
+
+#: WerbeZapper.py:511
+msgid "\"Werbezapper\" quick button"
+msgstr "WerbeZapper greitasis mygtukas"
+
+#: plugin.py:163
+#, python-format
+msgid "%d min"
+msgstr "%d min."
+
+#: plugin.py:234 plugin.py:256
+msgid "Automatically zaps back to current service after given Time"
+msgstr "Po nurodyto laiko automatiškai įjungs atgal į dabartinį kanalą"
+
+#: WerbeZapper.py:484
+msgid "Cancel"
+msgstr "Atšaukti"
+
+#: WerbeZapper.py:75
+#, python-format
+msgid "Channel: %s"
+msgstr "Kanalas: %s"
+
+#: WerbeZapper.py:152
+msgid "Custom"
+msgstr "Pasirinktinis"
+
+#: plugin.py:25
+msgid "GREEN"
+msgstr "'ŽALIAS'"
+
+#: plugin.py:30
+msgid "HELP"
+msgstr "'Help'"
+
+#: WerbeZapper.py:222
+msgid "How many minutes to wait until zapping back?"
+msgstr "Kiek minučių laukti, prieš perjungiant atgal?"
+
+#: WerbeZapper.py:512
+msgid "Monitoring duration for service if not EPG"
+msgstr "Kanalo kontrolės trukmė, jei nėra EPG"
+
+#: WerbeZapper.py:59
+#, python-format
+msgid "Monitoring: %s (%d:%02d Min)"
+msgstr "Kontrolė: %s (%d:%02d Min)"
+
+#: WerbeZapper.py:63
+#, python-format
+msgid "Monitoring: for service is not EPG (%d:%02d Min)"
+msgstr "Kontrolė: kanalo, kuris neturi EPG (%d:%02d Min)"
+
+#: plugin.py:24
+msgid "NONE"
+msgstr "NIEKO"
+
+#: WerbeZapper.py:194
+msgid "Open setup"
+msgstr "Averti sąranką"
+
+#: plugin.py:27
+msgid "RADIO"
+msgstr "'RADIO'"
+
+#: WerbeZapper.py:189
+msgid "Rezap"
+msgstr "Perjungti vėl"
+
+#: plugin.py:32
+msgid "SEARCH"
+msgstr "'PAIEŠKA'"
+
+#: WerbeZapper.py:485
+msgid "Save"
+msgstr "Išsaugoti"
+
+#: WerbeZapper.py:330
+msgid "Service is not EPG"
+msgstr "Kanalas neturi EPG"
+
+#: plugin.py:151
+msgid "Set zap time"
+msgstr "Nustatykite perjungimo laiką"
+
+#: WerbeZapper.py:507
+msgid "Show \"Start / Stop monitoring\" in extensions menu"
+msgstr "Rodyti 'Pradėti/nutraukti kontrolę' meniu tarp plėtinių"
+
+#: WerbeZapper.py:508
+msgid "Show plugin in channel selection context menu"
+msgstr "Rodyti įskiepį kanalų pasirinkimo kontekstiniame meniu"
+
+#: WerbeZapper.py:509
+msgid "Slider step size (1 - 20 mins)"
+msgstr "Slankiklio žingsnio dydis (1-20 min.)"
+
+#: plugin.py:241
+msgid "Start / Stop monitoring instantly"
+msgstr "Pradėti/nutraukti kontrolę nedelsiant"
+
+#: WerbeZapper.py:171
+msgid "Start monitoring"
+msgstr "Pradėti kontrolę"
+
+#: WerbeZapper.py:169
+msgid "Stop monitoring"
+msgstr "Nutraukti kontrolę"
+
+#: WerbeZapper.py:181
+msgid "Stop timer"
+msgstr "Stabdyti laikmatį"
+
+#: plugin.py:28
+msgid "TEXT"
+msgstr "'TEXT'"
+
+#: plugin.py:31
+msgid "TIMER"
+msgstr "'LAIKMATIS'"
+
+#: plugin.py:29
+msgid "TV"
+msgstr "'TV'"
+
+#: WerbeZapper.py:510
+msgid "Wakeup receiver from standby for zap timer"
+msgstr "Prižadinti, kad perjungti pagal laikmatį"
+
+#: WerbeZapper.py:49
+msgid "WerbeZapper"
+msgstr "WerbeZapper"
+
+#: WerbeZapper.py:332
+#, python-format
+msgid ""
+"WerbeZapper\n"
+"Monitoring ends\n"
+"%s"
+msgstr ""
+"WerbeZapper\n"
+"kontrolės pabaiga\n"
+"%s"
+
+#: WerbeZapper.py:483
+msgid "WerbeZapper Setup"
+msgstr "WerbeZapper sąranka"
+
+#: WerbeZapper.py:297
+#, python-format
+msgid ""
+"WerbeZapper...\n"
+"Monitoring started\n"
+"%s"
+msgstr ""
+"WerbeZapper\n"
+"kontrolės pradžia\n"
+"%s"
+
+#: WerbeZapper.py:310
+#, python-format
+msgid ""
+"WerbeZapper...\n"
+"Monitoring started for service is not EPG.\n"
+"Duration %d Min."
+msgstr ""
+"WerbeZapper\n"
+"Kontrolės kanalo, kuris neturi EPG, pradžia.\n"
+"Trukmė %d min."
+
+#: plugin.py:233 plugin.py:255
+msgid "Werbezapper"
+msgstr "WerbeZapper"
+
+#: plugin.py:240
+msgid "Werbezapper Start / Stop monitoring"
+msgstr "Pradėti/nutraukti WerbeZapper kontrolę"
+
+#: WerbeZapper.py:127
+msgid "When zap to service?"
+msgstr "Kada įjungti kanalą?"
+
+#: plugin.py:26
+msgid "YELLOW"
+msgstr "'GELTONAS'"
+
+#: WerbeZapper.py:400
+#, python-format
+msgid "Zapping back %s in %d Min"
+msgstr "Perjungimas atgal į %s po %d min."
+
+#: WerbeZapper.py:427
+#, python-format
+msgid "Zapping to %s"
+msgstr "Perjungimas į %s"
+
+#: WerbeZapper.py:68
+#, python-format
+msgid "Zapping to service in %d:%02d Min"
+msgstr "Perjungimas į kanalą po %d:%02d min."
+
+#: plugin.py:100
+msgid "add zap timer for service"
+msgstr "pridėti perjungimo laikmatį kanalui"
+
+#: WerbeZapper.py:154 WerbeZapper.py:155 WerbeZapper.py:156
+msgid "minut"
+msgstr "min."
+
+#: WerbeZapper.py:153
+msgid "minute"
+msgstr "min."
+
+#: WerbeZapper.py:157 WerbeZapper.py:158 WerbeZapper.py:159 WerbeZapper.py:160
+#: WerbeZapper.py:161
+msgid "minutes"
+msgstr "min."
+
+#: WerbeZapper.py:98
+msgid "Error"
+msgstr "klaida"
+
+#: WerbeZapper.py:588
+msgid "Show indicator zap time in window"
+msgstr "Ekrane rodyti perjungimo laiko indikatorių"
+
+#: WerbeZapper.py:589
+msgid "Indicator mode"
+msgstr "Indikatoriaus režimas"
+
+#: WerbeZapper.py:590
+msgid "X position"
+msgstr "X padėtis"
+
+#: WerbeZapper.py:591
+msgid "Y position"
+msgstr "Y padėtis"
+
+#: WerbeZapper.py:592
+msgid "Z position (priority of srceen)"
+msgstr "Z  padėtis (ekrano pirmenybė)"
+
+#: plugin.py:41
+msgid "time"
+msgstr "trukmė"
+
+#: plugin.py:41
+msgid "service / time"
+msgstr "kanalas / trukmė"
+
+#: plugin.py:80
+msgid "Add Zap Timer"
+msgstr "Pridėti perjungimo laikmatį"
+
+#: plugin.py:91
+msgid ""
+"Button Info/EPG\n"
+"Set time begin next event: %d min"
+msgstr ""
+"Mygtukas 'INFO / EPG'\n"
+"Nustatyti sekančio įvykio pradžios laiką: %d min."
