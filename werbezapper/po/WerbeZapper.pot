@@ -223,3 +223,45 @@ msgstr ""
 #: WerbeZapper.py:161
 msgid "minutes"
 msgstr ""
+
+#: WerbeZapper.py:98
+msgid "Error"
+msgstr ""
+
+#: WerbeZapper.py:588
+msgid "Show indicator zap time in window"
+msgstr ""
+
+#: WerbeZapper.py:589
+msgid "Indicator mode"
+msgstr ""
+
+#: WerbeZapper.py:590
+msgid "X position"
+msgstr ""
+
+#: WerbeZapper.py:591
+msgid "Y position"
+msgstr ""
+
+#: WerbeZapper.py:592
+msgid "Z position (priority of srceen)"
+msgstr ""
+
+#: plugin.py:41
+msgid "time"
+msgstr ""
+
+#: plugin.py:41
+msgid "service / time"
+msgstr ""
+
+#: plugin.py:80
+msgid "Add Zap Timer"
+msgstr ""
+
+#: plugin.py:91
+msgid ""
+"Button Info/EPG\n"
+"Set time begin next event: %d min"
+msgstr ""
