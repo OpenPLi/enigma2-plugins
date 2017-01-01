@@ -1012,12 +1012,12 @@ class RemotePlayer(Screen, InfoBarAudioSelection):
 						del self.session.pip
 					self.session.pipshown = False
 		elif answer == "start":
-			prev_playingref = self.session.nav.getCurrentlyPlayingServiceReference()
+			prev_playingref = self.session.nav.currentlyPlayingServiceOrGroup
 			if prev_playingref:
-				self.session.nav.currentlyPlayingServiceReference = None
+				self.session.nav.currentlyPlayingServiceOrGroup = None
 			InfoBar.showPiP(InfoBar.instance)
 			if prev_playingref:
-				self.session.nav.currentlyPlayingServiceReference = prev_playingref
+				self.session.nav.currentlyPlayingServiceOrGroup = prev_playingref
 			slist = self.servicelist
 			if slist:
 				try:

@@ -194,7 +194,7 @@ class SHOUTcastWidget(Screen):
 		self.currentGoogle = None
 		self.nextGoogle = None
 		self.currPlay = None
-		self.CurrentService = self.session.nav.getCurrentlyPlayingServiceReference()
+		self.CurrentService = self.session.nav.getCurrentlyPlayingServiceOrGroup()
 		self.session.nav.stopService()
 		self.session.nav.event.append(self.__event)
 		self["cover"] = Cover()
@@ -346,14 +346,14 @@ class SHOUTcastWidget(Screen):
 						del self.session.pip
 					self.session.pipshown = False
 		elif answer == "start":
-			prev_playingref = self.session.nav.getCurrentlyPlayingServiceReference()
+			prev_playingref = self.session.nav.currentlyPlayingServiceOrGroup
 			if prev_playingref:
-				self.session.nav.currentlyPlayingServiceReference = None
+				self.session.nav.currentlyPlayingServiceOrGroup = None
 			InfoBar.showPiP(InfoBar.instance)
 			if self.visible:
 				self.hideWindow()
 			if prev_playingref:
-				self.session.nav.currentlyPlayingServiceReference = prev_playingref
+				self.session.nav.currentlyPlayingServiceOrGroup = prev_playingref
 			slist = self.servicelist
 			if slist:
 				try:
@@ -875,9 +875,10 @@ class SHOUTcastWidget(Screen):
 			except:
 				pass
 		self.stopReloadStationListTimer()
-		self.session.nav.playService(self.CurrentService)
-		self.session.nav.event.remove(self.__event)
+		if self.__event in self.session.nav.event:
+			self.session.nav.event.remove(self.__event)
 		self.currPlay = None
+		self.session.nav.playService(self.CurrentService)
 		containerStreamripper.dataAvail.remove(self.streamripperDataAvail)
 		containerStreamripper.appClosed.remove(self.streamripperClosed)
 
@@ -1200,7 +1201,6 @@ class SHOUTcastLCDScreen(Screen):
 
 	def setText(self, text):
 		self["text2"].setText(text[0:39])
-
 
 class SHOUTcastSetup(Screen, ConfigListScreen):
 
