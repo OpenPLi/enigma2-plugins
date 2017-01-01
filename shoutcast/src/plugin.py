@@ -194,7 +194,7 @@ class SHOUTcastWidget(Screen):
 		self.currentGoogle = None
 		self.nextGoogle = None
 		self.currPlay = None
-		self.CurrentService = self.session.nav.getCurrentlyPlayingServiceReference()
+		self.CurrentService = self.session.nav.getCurrentlyPlayingServiceOrGroup()
 		self.session.nav.stopService()
 		self.session.nav.event.append(self.__event)
 		self["cover"] = Cover()
@@ -875,9 +875,10 @@ class SHOUTcastWidget(Screen):
 			except:
 				pass
 		self.stopReloadStationListTimer()
-		self.session.nav.playService(self.CurrentService)
-		self.session.nav.event.remove(self.__event)
+		if self.__event in self.session.nav.event:
+			self.session.nav.event.remove(self.__event)
 		self.currPlay = None
+		self.session.nav.playService(self.CurrentService)
 		containerStreamripper.dataAvail.remove(self.streamripperDataAvail)
 		containerStreamripper.appClosed.remove(self.streamripperClosed)
 
