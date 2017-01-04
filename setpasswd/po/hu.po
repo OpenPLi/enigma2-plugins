@@ -19,9 +19,6 @@ msgstr ""
 "X-Poedit-Language: Hungarian\n"
 "X-Poedit-Country: HUNGARY\n"
 
-msgid "Cancel"
-msgstr "Mégse"
-
 msgid "Change or reset the root password of your media center"
 msgstr "A root jelszó megváltoztatása vagy visszaállítása"
 

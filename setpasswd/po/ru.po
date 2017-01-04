@@ -3,23 +3,20 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-02-28 19:54+0100\n"
-"PO-Revision-Date: 2016-04-23 12:45+0300\n"
+"PO-Revision-Date: 2017-01-04 18:06+0200\n"
 "Language-Team: LANGUAGE <Dima-73@inbox.lv>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Last-Translator: Dimitrij <Dima-73@inbox.lv>\n"
 "Language: ru\n"
-"X-Generator: Poedit 1.8.4\n"
-
-msgid "Cancel"
-msgstr "Отмена"
+"X-Generator: Poedit 1.8.9\n"
 
 msgid "Change Root Password"
-msgstr "Сменить root пароль"
+msgstr "Смена пароля root"
 
-msgid "Change or reset the root password of your dreambox"
-msgstr "Сменить или сбросить root пароль на ресивере"
+msgid "Change or reset the root password of your box"
+msgstr "Сменить/сбросить/удалить пароль для root на Вашем ресивере"
 
 msgid "Enter new Password"
 msgstr "Ввод нового пароля"
@@ -34,10 +31,19 @@ msgid "Sucessfully changed password for root user to: "
 msgstr "Пароль для пользователя root успешно изменен на: "
 
 msgid "Unable to change/reset password for root user"
-msgstr "Невозможно изменить/сбросить пароль для root пользователя"
+msgstr "Невозможно изменить/сбросить пароль для пользователя root"
 
 msgid "new Random"
-msgstr "новый случайно"
+msgstr "Новый случайно"
 
 msgid "virt. Keyboard"
-msgstr "вирт. клавиатура"
+msgstr "Виртуальная  клавиатура"
+
+msgid "Delete Password"
+msgstr "Удалить пароль"
+
+msgid "Password deleted sucessfully for root user"
+msgstr "Пароль для пользователя root успешно удален"
+
+msgid "Unable to delete password for root user"
+msgstr "Невозможно удалить пароль для пользователя root"
