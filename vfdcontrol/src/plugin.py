@@ -53,15 +53,7 @@ def display_write(text):
 
 def displaybrightness_write():
 	try:
-		open("/proc/stb/lcd/oled_brightness", "w").write("0")
-	except:
-		pass
-	try:
-		open("/proc/stb/fp/oled_brightness", "w").write("0")
-	except:
-		pass
-	try:
-		open("/proc/stb/led/oled_brightness", "w").write("0")
+		eDBoxLCD.getInstance().setLCDBrightness(0 * 255 / 10)
 	except:
 		pass
 
