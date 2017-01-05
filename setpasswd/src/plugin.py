@@ -22,11 +22,11 @@ import sys
 import time
 from random import Random 
 
-title=_("Change Root Password")
+title =_("Change Root Password")
 
 class ChangePasswdScreen(Screen):
 	skin = """
-		<screen position="65,160" size="585,250" title="%s" >
+		<screen position="center,center" size="585,250" title="%s" >
 		<widget name="passwd" position="10,10" size="565,200" scrollbarMode="showOnDemand" />
 		<ePixmap pixmap="skin_default/div-h.png" position="10,205" size="565,2" transparent="1" alphatest="on" />
 		<ePixmap pixmap="skin_default/buttons/red.png" position="5,210" size="140,40" alphatest="on" />
@@ -42,76 +42,72 @@ class ChangePasswdScreen(Screen):
 	def __init__(self, session, args = 0):
 		Screen.__init__(self, session)
 		self.skin = ChangePasswdScreen.skin
-
-		self.user="root"
-		self.output_line = ""
+		self.user = "root"
 		self.list = []
-		
 		self["passwd"] = ConfigList(self.list)
-		self["key_red"] = StaticText(_("Cancel"))
+		self["key_red"] = StaticText(_("Delete Password"))
 		self["key_green"] = StaticText(_("Set Password"))
 		self["key_yellow"] = StaticText(_("new Random"))
 		self["key_blue"] = StaticText(_("virt. Keyboard"))
-
 		self["actions"] = ActionMap(["OkCancelActions", "ColorActions"],
-				{
-						"red": self.close,
-						"green": self.SetPasswd,
-						"yellow": self.newRandom,
-						"blue": self.bluePressed,
-						"cancel": self.close
-				}, -1)
-	
+			{
+				"red": self.DelPasswd,
+				"green": self.SetPasswd,
+				"yellow": self.newRandom,
+				"blue": self.bluePressed,
+				"cancel": self.close
+			}, -1)
 		self.buildList(self.GeneratePassword())
 
 	def newRandom(self):
 		self.buildList(self.GeneratePassword())
-	
+
 	def buildList(self, password):
-		self.password=password
+		self.password = password
 		self.list = []
 		self.list.append(getConfigListEntry(_('Enter new Password'), ConfigText(default = self.password, fixed_size = False)))
 		self["passwd"].setList(self.list)
-		
+
 	def GeneratePassword(self): 
 		passwdChars = string.letters + string.digits
 		passwdLength = 8
 		return ''.join(Random().sample(passwdChars, passwdLength)) 
 
 	def SetPasswd(self):
-		print "Changing password for %s to %s" % (self.user,self.password) 
 		self.container = eConsoleAppContainer()
 		self.container.appClosed.append(self.runFinished)
 		self.container.dataAvail.append(self.dataAvail)
 		retval = self.container.execute("passwd %s" % self.user)
-		if retval==0:
-			message=_("Sucessfully changed password for root user to: ") + self.password
+		if retval == 0:
+			message = _("Sucessfully changed password for root user to: ") + self.password
 		else:
-			message=_("Unable to change/reset password for root user")
-		self.session.open(MessageBox, message , MessageBox.TYPE_ERROR)
+			message = _("Unable to change/reset password for root user")
+		self.session.open(MessageBox, message , MessageBox.TYPE_INFO)
 
-	def dataAvail(self,data):
-		self.output_line += data
-		while True:
-			i = self.output_line.find('\n')
-			if i == -1:
-				break
-			self.processOutputLine(self.output_line[:i+1])
-			self.output_line = self.output_line[i+1:]
+	def DelPasswd(self):
+		self.container = eConsoleAppContainer()
+		self.container.appClosed.append(self.runFinished)
+		self.container.dataAvail.append(self.dataAvail)
+		retval = self.container.execute("passwd --delete %s" % self.user)
+		if retval == 0:
+			message = _("Password deleted sucessfully for root user")
+		else:
+			message = _("Unable to delete password for root user")
+		self.session.open(MessageBox, message , MessageBox.TYPE_INFO)
 
-	def processOutputLine(self,line):
-		if line.find('password: '):
-			self.container.write("%s\n"%self.password)
+	def dataAvail(self, data):
+		if data.find('password'):
+			self.container.write("%s\n" % self.password)
 
 	def runFinished(self,retval):
 		del self.container.dataAvail[:]
 		del self.container.appClosed[:]
 		del self.container
 		self.close()
-		
+
 	def bluePressed(self):
-		self.session.openWithCallback(self.VirtualKeyBoardTextEntry, VirtualKeyBoard, title = (_("Enter your password here:")), text = self.password)
-	
+		self.session.openWithCallback(self.VirtualKeyBoardTextEntry, VirtualKeyBoard, title = _("Enter your password here:"), text = self.password)
+
 	def VirtualKeyBoardTextEntry(self, callback = None):
 		if callback is not None and len(callback):
 			self.buildList(callback)
@@ -125,8 +121,4 @@ def main(session, **kwargs):
 	session.open(ChangePasswdScreen)
 
 def Plugins(**kwargs):
-	return PluginDescriptor(
-		name=title, 
-		description=_("Change or reset the root password of your dreambox"),
-		where = [PluginDescriptor.WHERE_MENU], fnc = startChange)
-	
+	return PluginDescriptor(name=title, description=_("Change or reset the root password of your box"), where = [PluginDescriptor.WHERE_MENU], fnc = startChange)

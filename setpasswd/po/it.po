@@ -20,10 +20,6 @@ msgstr ""
 msgid "Change Root Password"
 msgstr "Cambiare la password di root"
 
-#: /home/dario/Plugins/setpasswd/src/plugin.py:51
-msgid "Cancel"
-msgstr "Annull."
-
 #: /home/dario/Plugins/setpasswd/src/plugin.py:52
 msgid "Set Password"
 msgstr "Confermare"
@@ -53,6 +49,6 @@ msgid "Enter your password here:"
 msgstr "Inserire qui la nuova password:"
 
 #: /home/dario/Plugins/setpasswd/src/plugin.py:130
-msgid "Change or reset the root password of your dreambox"
-msgstr "Cambiare o annullare la password del Dreambox"
+msgid "Change or reset the root password of your box"
+msgstr "Cambiare o annullare la password del box"
 

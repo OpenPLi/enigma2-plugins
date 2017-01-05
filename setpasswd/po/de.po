@@ -17,17 +17,13 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 
-#: ../src/plugin.py:51
-msgid "Cancel"
-msgstr "Abbrechen"
-
 #: ../src/plugin.py:25
 msgid "Change Root Password"
 msgstr "Root Passwort aendern"
 
 #: ../src/plugin.py:131
-msgid "Change or reset the root password of your dreambox"
-msgstr "Aendern oder resetten sie das RootPasswort ihrer Dreambox"
+msgid "Change or reset the root password of your box"
+msgstr "Aendern oder resetten sie das RootPasswort ihrer box"
 
 #: ../src/plugin.py:73
 msgid "Enter new Password"
