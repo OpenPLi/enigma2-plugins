@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-23 14:15+0300\n"
+"POT-Creation-Date: 2016-12-27 22:53+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,97 +17,78 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: plugin.py:21
-msgid "Always off"
-msgstr ""
-
-#: plugin.py:248
-msgid "Brightness Level 1"
-msgstr ""
-
-#: plugin.py:249
-msgid "Brightness Level 2"
-msgstr ""
-
-#: plugin.py:24
-msgid "Brightness level"
-msgstr ""
-
-#: plugin.py:226
-msgid "Cancel"
-msgstr ""
-
-#: plugin.py:347
-msgid "Change VFD display settings"
-msgstr ""
-
-#: plugin.py:21
-msgid "Channelnumber in Standby Clock"
-msgstr ""
-
-#: plugin.py:21
-msgid "Channelnumber in Standby off"
-msgstr ""
-
-#: plugin.py:21
-msgid "Channelnumber/Clock in Standby Clock"
-msgstr ""
-
-#: plugin.py:21
-msgid "Clock always"
-msgstr ""
-
-#: plugin.py:215
-msgid "Control 7 segment VFD display"
-msgstr ""
-
-#: plugin.py:24
-msgid "Off"
-msgstr ""
-
-#: plugin.py:24
-msgid "On/Off"
-msgstr ""
-
-#: plugin.py:227
-msgid "Save"
-msgstr ""
-
-#: plugin.py:244 plugin.py:262
-msgid "Show REC-Symbol in Display"
-msgstr ""
-
-#: plugin.py:246 plugin.py:264
-msgid "Show blinking Clock on Display during recording"
-msgstr ""
-
-#: plugin.py:241 plugin.py:260
-msgid "Show on VFD"
-msgstr ""
-
-#: plugin.py:243
-msgid "Time mode"
-msgstr ""
-
-#: plugin.py:228
-msgid "Update Date/Time"
-msgstr ""
-
-#: plugin.py:311
-msgid "VFD Display Setup"
-msgstr ""
-
-#: plugin.py:23
-msgid "no"
-msgstr ""
-
-#: plugin.py:23
-msgid "yes"
-msgstr ""
-
-msgid "24h"
-msgstr ""
-
+#: plugin.py:20
 msgid "12h"
 msgstr ""
 
+#: plugin.py:19
+msgid "15 sec"
+msgstr ""
+
+#: plugin.py:20
+msgid "24h"
+msgstr ""
+
+#: plugin.py:19
+msgid "30 sec"
+msgstr ""
+
+#: plugin.py:19
+msgid "5 sec"
+msgstr ""
+
+#: plugin.py:19
+msgid "60 sec"
+msgstr ""
+
+#: plugin.py:285
+msgid "7-Segment Display Setup"
+msgstr ""
+
+#: plugin.py:19
+msgid "Always"
+msgstr ""
+
+#: plugin.py:220
+msgid "Blink during recording"
+msgstr ""
+
+#: plugin.py:200
+msgid "Cancel"
+msgstr ""
+
+#: plugin.py:319
+msgid "Change display settings"
+msgstr ""
+
+#: plugin.py:198
+msgid "Control 7-Segment display"
+msgstr ""
+
+#: plugin.py:215
+msgid "Enable"
+msgstr ""
+
+#: plugin.py:201
+msgid "Save"
+msgstr ""
+
+#: plugin.py:217
+msgid "Show channel number"
+msgstr ""
+
+#: plugin.py:202
+msgid "Test display"
+msgstr ""
+
+#: plugin.py:218
+msgid "Time mode"
+msgstr ""
+
+#: plugin.py:221
+msgid "Type front panel"
+msgstr ""
+
+#: plugin.py:19
+msgid "disabled"
+msgstr ""
