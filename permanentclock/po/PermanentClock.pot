@@ -112,7 +112,7 @@ msgstr ""
 msgid "Save"
 msgstr ""
 
-msgid ""Set slider step"
+msgid "Set slider step"
 msgstr ""
 
 msgid "Set slider step (1 - 20):"
