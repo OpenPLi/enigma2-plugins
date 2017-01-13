@@ -78,7 +78,7 @@ class TranscodingSetup(ConfigListScreen, Screen):
 		except:
 			pass
 
-		if vumodel == "solo2" or vumodel == "duo2" or vumodel == "solose" or vumodel == "solo4k" or vumodel == "uno4k":
+		if vumodel == "solo2" or vumodel == "duo2" or vumodel == "solose" or vumodel == "solo4k" or vumodel == "uno4k" or vumodel == "ultimo4k":
 			transcoding = "vuplus"
 		else:
 			if boxtype == "et10000" or boxtype == "hd2400":
