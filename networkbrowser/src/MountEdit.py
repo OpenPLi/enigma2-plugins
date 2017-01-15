@@ -94,21 +94,10 @@ class AutoMountEdit(Screen, ConfigListScreen):
 		self.hdd_replacementEntry = None
 		self.sharetypelist = [("nfs", _("NFS share")), ("cifs", _("CIFS share"))]
 
-		if self.mountinfo.has_key('mounttype'):
-			mounttype = self.mountinfo['mounttype']
-			if not mounttype:
-				mounttype = "nfs"
-		else:
+		mounttype = self.mountinfo.get('mounttype')
+		if not mounttype:
 			mounttype = "nfs"
-
-		if self.mountinfo.has_key('active'):
-			active = self.mountinfo['active']
-			if active == 'True':
-				active = True
-			if active == 'False':
-				active = False
-		else:
-			active = True
+		active = self.mountinfo.get('active', True)
 		if self.mountinfo.has_key('ip'):
 			if self.mountinfo['ip'] is False:
 				ip = [192, 168, 0, 0]
@@ -116,32 +105,13 @@ class AutoMountEdit(Screen, ConfigListScreen):
 				ip = self.convertIP(self.mountinfo['ip'])
 		else:
 			ip = [192, 168, 0, 0]
-		if self.mountinfo.has_key('sharename'):
-			sharename = self.mountinfo['sharename']
-		else:
-			sharename = "Sharename"
-		if self.mountinfo.has_key('sharedir'):
-			sharedir = self.mountinfo['sharedir']
-		else:
-			sharedir = "/media/hdd"
-		if self.mountinfo.has_key('options'):
-			options = self.mountinfo['options']
-		else:
-			options = "rw,nolock,soft"
-		if self.mountinfo.has_key('username'):
-			username = self.mountinfo['username']
-		else:
-			username = ""
-		if self.mountinfo.has_key('password'):
-			password = self.mountinfo['password']
-		else:
-			password = ""
-		if self.mountinfo.has_key('hdd_replacement'):
-			hdd_replacement = self.mountinfo['hdd_replacement']
-			if hdd_replacement == 'True':
-				hdd_replacement = True
-			if hdd_replacement == 'False':
-				hdd_replacement = False
+		sharename = self.mountinfo.get('sharename', "Sharename")
+		sharedir = self.mountinfo.get('sharedir', "/media/hdd")
+		username = self.mountinfo.get('username', "")
+		password = self.mountinfo.get('password', "")
+		hdd_replacement = self.mountinfo.get('hdd_replacement', False)
+		if hdd_replacement == 'True':
+			hdd_replacement = True
 		else:
 			hdd_replacement = False
 		if sharename is False:
@@ -156,6 +126,7 @@ class AutoMountEdit(Screen, ConfigListScreen):
 			username = ""
 		if password is False:
 			password = ""
+		options = self.mountinfo.get('options', defaultOptions)
 
 		self.activeConfigEntry = NoSave(ConfigEnableDisable(default = active))
 		self.ipConfigEntry = NoSave(ConfigIP(default = ip))
@@ -338,6 +309,5 @@ class AutoMountEdit(Screen, ConfigListScreen):
 			self.session.openWithCallback(self.applyfinished, MessageBox, _("Your network mount has been activated."), type = MessageBox.TYPE_INFO, timeout = 10)
 
 	def applyfinished(self,data):
-		if data is not None:
-			if data is True:
-				self.close()
+		if data is True:
+			self.close()
