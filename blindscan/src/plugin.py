@@ -15,7 +15,7 @@ from Components.ConfigList import ConfigListScreen
 from Components.Sources.StaticText import StaticText
 from Components.ActionMap import NumberActionMap, ActionMap
 from Components.NimManager import nimmanager, getConfigSatlist
-from Components.config import config, ConfigSubsection, ConfigSelection, ConfigYesNo, ConfigInteger, getConfigListEntry
+from Components.config import config, ConfigSubsection, ConfigSelection, ConfigYesNo, ConfigInteger, getConfigListEntry, ConfigNothing
 from enigma import eTimer, eDVBFrontendParametersSatellite, eComponentScan, eConsoleAppContainer, eDVBResourceManager, getBoxType, eDVBSatelliteEquipmentControl
 from Components.About import about
 from time import strftime, time
@@ -1356,6 +1356,8 @@ class Blindscan(ConfigListScreen, Screen):
 			currSat = nim.config.advanced.sat[cur_orb_pos]
 			lnbnum = int(currSat.lnb.getValue())
 			currLnb = nim.config.advanced.lnb[lnbnum]
+			if isinstance(currLnb, ConfigNothing):
+				return False
 			lof = currLnb.lof.getValue()
 			print "[Blind scan] LNB type: ", lof
 			if lof == lof_type:
