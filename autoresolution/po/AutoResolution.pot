@@ -182,3 +182,27 @@ msgstr ""
 #: plugin.py:52 plugin.py:53 plugin.py:54 plugin.py:55 plugin.py:57
 msgid "seconds"
 msgstr ""
+
+msgid "UHD Interlace Mode"
+msgstr ""
+
+msgid "UHD Progressive Mode"
+msgstr ""
+
+msgid "Enable 2160p24 Mode"
+msgstr ""
+
+msgid "Enable 2160p25 Mode"
+msgstr ""
+
+msgid "Enable 2160p30 Mode"
+msgstr ""
+
+msgid "Ask before changing videomode"
+msgstr ""
+
+msgid "Changing framerate for current service?\nCurrent framerate: %s\nNew framerate: %s\n"
+msgstr ""
+
+msgid "Message timeout"
+msgstr ""
