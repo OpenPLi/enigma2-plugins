@@ -10,7 +10,6 @@ from Components.Sources.StaticText import StaticText
 from enigma import iPlayableService, iServiceInformation, eTimer, getDesktop
 from Plugins.Plugin import PluginDescriptor
 from Tools import Notifications
-import os
 from Plugins.SystemPlugins.Videomode.VideoHardware import video_hw # depends on Videomode Plugin
 
 from . import _
@@ -22,16 +21,6 @@ port = None
 videoresolution_dictionary = {}
 resolutionlabel = None
 
-BOX_NAME = ""
-MODEL_NAME = "none"
-if os.path.exists("/proc/stb/info/vumodel"):
-	BOX_NAME = "vu"
-	try:
-		f = open("/proc/stb/info/vumodel")
-		MODEL_NAME = f.read().strip()
-		f.close()
-	except:
-		pass
 
 resolutions = [('sd_i_50', _("SD 25/50HZ Interlace Mode")), ('sd_i_60', _("SD 30/60HZ Interlace Mode")), ('sd_p_24', _("SD 24HZ Progressive mode")),
 			('sd_p_50', _("SD 25/50HZ Progressive Mode")), ('sd_p_60', _("SD 30/60HZ Progressive Mode")),
@@ -566,7 +555,7 @@ class AutoFrameRate(Screen):
 			f.close()
 			print "[AutoFramerate] set resolution/framerate: %s" % self.new_mode
 			service = self.session.nav.getCurrentlyPlayingServiceReference()
-			if BOX_NAME == "vu" and service:
+			if service:
 				path = service.getPath()
 				if path.find("://") == -1:
 					self.doSeekRelative(2 * 9000)
