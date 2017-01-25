@@ -471,9 +471,6 @@ class AutoFrameRate(Screen):
 		self.framerate_change_is_locked = False
 		self.lastService = None
 		self.__event_tracker = ServiceEventTracker(screen = self, eventmap = {iPlayableService.evVideoFramerateChanged: self.AutoVideoFramerateChanged})
-		self.replace_mode = '30'
-		if '1080p60' in video_hw.modes_available:
-			self.replace_mode = '60'
 		self.init = False
 
 	def AutoVideoFramerateChanged(self):
@@ -493,12 +490,10 @@ class AutoFrameRate(Screen):
 					info = service and service.info()
 					framerate = info and info.getInfo(iServiceInformation.sFrameRate)
 					if "multi" in config.av.videorate[config.av.videomode[config.av.videoport.value].value].value:
-						if framerate in (59940, 60000):
+						if framerate in (29970, 30000, 59940, 60000):
 							self.setVideoFrameRate('60')
 						elif framerate in (23976, 24000):
 							self.setVideoFrameRate('24')
-						elif framerate in (29970, 30000):
-							self.setVideoFrameRate(self.replace_mode)
 						else:
 							self.setVideoFrameRate('50')
 
