@@ -472,7 +472,7 @@ class AutoFrameRate(Screen):
 		self.lastService = None
 		self.__event_tracker = ServiceEventTracker(screen = self, eventmap = {iPlayableService.evVideoFramerateChanged: self.AutoVideoFramerateChanged})
 		self.replace_mode = '30'
-		if '1080p60' in video_hw.modes_available:
+		if '1080' in video_hw.modes_available:
 			self.replace_mode = '60'
 		self.init = False
 
