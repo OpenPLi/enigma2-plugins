@@ -206,3 +206,7 @@ msgstr ""
 
 msgid "Message timeout"
 msgstr ""
+
+msgid "Use 60HZ instead 30HZ"
+msgstr ""
+
