@@ -55,6 +55,7 @@ config.plugins.autoresolution.delay_switch_mode = ConfigSelection(default = "100
 config.plugins.autoresolution.mode = ConfigSelection(default = "manual", choices = [("manual", _("Manual")), ("auto", _("Auto frame rate (refresh need 'multi')"))])
 config.plugins.autoresolution.lock_timeout = ConfigSelection(default = "60", choices = [("30", "30 " + _("seconds")), ("60", "60 " + _("seconds"))])
 config.plugins.autoresolution.ask_apply_mode = ConfigYesNo(default = False)
+config.plugins.autoresolution.auto_30_60 = ConfigYesNo(default = True)
 config.plugins.autoresolution.ask_timeout = ConfigSelection(default = "20", choices = [("5", "5 " + _("seconds")), ("10", "10 " + _("seconds")), ("15", "15 " + _("seconds")), ("20", "20 " + _("seconds"))])
 
 def setDeinterlacer(mode):
@@ -424,6 +425,7 @@ class AutoResSetupMenu(Screen, ConfigListScreen):
 					self.list.append(getConfigListEntry(_("Ask before changing videomode"), config.plugins.autoresolution.ask_apply_mode))
 					if config.plugins.autoresolution.ask_apply_mode.value:
 						self.list.append(getConfigListEntry(_("Message timeout"), config.plugins.autoresolution.ask_timeout))
+					self.list.append(getConfigListEntry(_("Use 60HZ instead 30HZ"), config.plugins.autoresolution.auto_30_60))
 			else:
 				self.list.append(getConfigListEntry(_("Autoresolution is not working in Scart/DVI-PC Mode"), ConfigNothing()))
 
@@ -490,10 +492,15 @@ class AutoFrameRate(Screen):
 					info = service and service.info()
 					framerate = info and info.getInfo(iServiceInformation.sFrameRate)
 					if "multi" in config.av.videorate[config.av.videomode[config.av.videoport.value].value].value:
-						if framerate in (29970, 30000, 59940, 60000):
+						replace_mode = '30'
+						if config.plugins.autoresolution.auto_30_60.value:
+							replace_mode = '60'
+						if framerate in (59940, 60000):
 							self.setVideoFrameRate('60')
 						elif framerate in (23976, 24000):
 							self.setVideoFrameRate('24')
+						elif framerate in (29970, 30000):
+							self.setVideoFrameRate(replace_mode)
 						else:
 							self.setVideoFrameRate('50')
 
