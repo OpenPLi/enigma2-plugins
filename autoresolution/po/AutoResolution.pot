@@ -210,3 +210,5 @@ msgstr ""
 msgid "Use 60HZ instead 30HZ"
 msgstr ""
 
+msgid "Enable 720p50 Mode"
+msgstr ""

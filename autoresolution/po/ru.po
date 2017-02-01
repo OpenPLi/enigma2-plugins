@@ -166,3 +166,7 @@ msgstr "Таймаут сообщения"
 
 msgid "Use 60HZ instead 30HZ"
 msgstr "Использовать 60HZ вместо 30HZ"
+
+msgid "Enable 720p50 Mode"
+msgstr "Включить режим 720p50"
+

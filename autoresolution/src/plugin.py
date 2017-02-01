@@ -25,7 +25,7 @@ resolutionlabel = None
 resolutions = [('sd_i_50', _("SD 25/50HZ Interlace Mode")), ('sd_i_60', _("SD 30/60HZ Interlace Mode")), ('sd_p_24', _("SD 24HZ Progressive mode")),
 			('sd_p_50', _("SD 25/50HZ Progressive Mode")), ('sd_p_60', _("SD 30/60HZ Progressive Mode")),
 			('hd_i', _("HD Interlace Mode")), ('hd_p', _("HD Progressive Mode")),
-			('p720_24', _("Enable 720p24 Mode")), ('p1080_24', _("Enable 1080p24 Mode")),
+			('p720_24', _("Enable 720p24 Mode")), ('p720_50', _("Enable 720p50 Mode")), ('p1080_24', _("Enable 1080p24 Mode")),
 			('p1080_25', _("Enable 1080p25 Mode")), ('p1080_30', _("Enable 1080p30 Mode"))]
 
 have_2160p = config.av.videorate.get("2160p", False)
@@ -183,6 +183,8 @@ class AutoRes(Screen):
 						choices = ['1080p24', '1080p25', '1080p30'] + preferedmodes
 					elif mode[0] == 'p720_24':
 						choices = ['720p24', '1080p24', '2160p24'] + preferedmodes
+					elif mode[0] == 'p720_50':
+						choices = ['720p', '1080p25', '2160p25'] + preferedmodes
 					else:
 						choices = preferedmodes
 				else:
@@ -190,6 +192,8 @@ class AutoRes(Screen):
 						choices = ['1080p24', '1080p25', '1080p30'] + preferedmodes
 					elif mode[0] == 'p720_24':
 						choices = ['720p24', '1080p24'] + preferedmodes
+					elif mode[0] == 'p720_50':
+						choices = ['720p', '1080p25'] + preferedmodes
 					else:
 						choices = preferedmodes
 				config.plugins.autoresolution.videoresolution[mode[0]] = ConfigSelection(default = default[0], choices = choices)
@@ -258,6 +262,8 @@ class AutoRes(Screen):
 					new_mode = 'p1080_%s' % frate
 				elif (height > 576 or width > 720) and frate == '24' and prog == 'p': # 720p24 detection
 					new_mode = 'p720_24'
+				elif (height > 576 or width > 720) and frate == '50' and prog == 'p': # 720p50 detection
+					new_mode = 'p720_50'
 				elif (height <= 576) and (width <= 720) and frate in ('25', '50'):
 					new_mode = 'sd_%s_50' % prog
 				elif (height <= 480) and (width <= 720) and frate in ('24', '30', '60'):
