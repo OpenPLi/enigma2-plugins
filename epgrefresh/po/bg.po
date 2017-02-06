@@ -1,0 +1,603 @@
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# peter <sct2003@abv.bg>, 2017.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-08-02 20:15+0200\n"
+"PO-Revision-Date: 2017-02-05 23:42+0200\n"
+"Last-Translator: peter <sct2003@abv.bg>\n"
+"Language-Team: Bulgarian <>\n"
+"Language: bg\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 2.0\n"
+
+msgid "Main Picture"
+msgstr "Главен Прозорец"
+
+msgid "Picture in Picture"
+msgstr "Картина в Картината"
+
+msgid "Picture in Picture (hidden)"
+msgstr "Картина в Картината (скрит)"
+
+msgid "Fake recording"
+msgstr "Имитиране на запис"
+
+msgid "nowhere"
+msgstr "никъде"
+
+msgid "event info"
+msgstr "информация за предаването"
+
+msgid "channel selection"
+msgstr "избор на канали"
+
+msgid "event info / channel selection"
+msgstr "информация за предаването / избор на канали"
+
+msgid "Press OK"
+msgstr "Натиснете ОК"
+
+msgid "Background only"
+msgstr "Във фонов режим"
+
+msgid "Foreground also"
+msgstr "На преден план"
+
+msgid ""
+"This might have been an automated bootup to refresh the EPG. For this to "
+"happen it is recommended to put the receiver to Standby.\n"
+"Do you want to do this now?"
+msgstr ""
+"Възможо е приемника да е бил включен за автоматичо обновяване на ЕПГ. "
+"Това изисква приемника да бъде в режим на готовност.\n"
+"Преминаване в режим на готовност сега?"
+
+msgid "AutoZap"
+msgstr "Автоматично превключване"
+
+msgid "   (AutoZap)"
+msgstr "   (Автоматично превключване)"
+
+msgid "add service to EPGRefresh"
+msgstr "добавяне канала към EPGRefresh"
+
+msgid "Manual EPG"
+msgstr "Ръчно ЕПГ"
+
+msgid "Stop Running EPG-refresh"
+msgstr "Спиране на EPGRefresh"
+
+msgid "EPG-refresh now"
+msgstr "Стартиране на EPGRefresh"
+
+msgid "Automatically refresh EPG"
+msgstr "Автоматично обновяване на ЕПГ"
+
+msgid "add to EPGRefresh"
+msgstr "добавяне към EPGRefresh"
+
+msgid "Refresh-EPG / AutoZap"
+msgstr "Обновяване на ЕПГ /Автоматично Превключване"
+
+msgid "AutoZap for refreshing EPG data"
+msgstr "Автоматично превключване за обновяване на ЕПГ данните"
+
+msgid "EPGRefresh"
+msgstr ""
+
+msgid "manual save/load EPG"
+msgstr "ръчно записване/зареждане на ЕПГ"
+
+msgid "EPG refresh started in background."
+msgstr "EPGRefresh работи във фонов режим"
+
+msgid "Please don't use PiP in the meantime!"
+msgstr "Не използвайте PiP в това време!"
+
+msgid "EPG refresh finished."
+msgstr "Обновяването на ЕПГ завърши."
+
+msgid "PiP available now."
+msgstr "PiP вече е достъпен."
+
+msgid "EPG refresh starts scanning channels."
+msgstr "EPGRefresh започна сканиране на каналите."
+
+msgid "EPGRefresh Services"
+msgstr "Канали за обновяване на ЕПГ"
+
+msgid "Channels"
+msgstr "Канали"
+
+msgid "Bouquets"
+msgstr "Букети"
+
+msgid "Cancel"
+msgstr "Отказ"
+
+msgid "OK"
+msgstr ""
+
+msgid "delete"
+msgstr "изтриване"
+
+msgid "New"
+msgstr "Нов"
+
+msgid "Edit Services to refresh"
+msgstr "Редактиране каналите за сканиране"
+
+msgid "Editing"
+msgstr "Редактиране"
+
+msgid "Refreshing"
+msgstr "Обновяване"
+
+msgid "Select channel to refresh"
+msgstr "Изберете канал за обновяване"
+
+msgid "Select bouquet to refresh"
+msgstr "Изберете букет за обновяване"
+
+msgid "EPG Cache Check"
+msgstr "Проверка ЕПГ данните"
+
+msgid "Reloading EPG Cache..."
+msgstr "Презареждане на ЕПГ данните..."
+
+msgid "Adding schedule..."
+msgstr "Добавяне на разписание..."
+
+msgid "Saving EPG Cache..."
+msgstr "Записване на ЕПГ данните..."
+
+msgid "Are you sure you want to save the EPG cache to:\n"
+msgstr "Сигурни ли сте, че изкате да запишете ЕПГ данните в:\n"
+
+msgid "Are you sure you want to reload the EPG data from:\n"
+msgstr "Сигурни ли сте, че искате да презаредите ЕПГ данните от:\n"
+
+msgid "Configuration save / load EPG"
+msgstr "Настройки записване / зареждане на ЕПГ"
+
+msgid "Save EPG"
+msgstr "Записване на ЕПГ"
+
+msgid "Manually save EPG to current cache file."
+msgstr "Ръчно записване на ЕПГ данните в текущо избрания файл."
+
+msgid "Load EPG"
+msgstr "Зареждане на ЕПГ"
+
+msgid "Manually load EPG from current cachefile."
+msgstr "Ръчно зареждане на ЕПГ данните от текущо избрания файл."
+
+msgid "Clear EPG"
+msgstr "Изчистване на ЕПГ"
+
+msgid "Manually clear EPG (choose method)."
+msgstr "Ръчно изчистване на ЕПГ данните (изберете метод)."
+
+msgid "Reload EPG"
+msgstr "Презареждане на ЕПГ"
+
+msgid "Manually load EPG from current cache file."
+msgstr "Ръчно зареждане на ЕПГ данните от текущо избрания файл."
+
+msgid "Restore EPG backup"
+msgstr "Възстановяване на ЕПГ"
+
+msgid "Manually restore EPG from backup cache file."
+msgstr "Ръчно възстановяване на ЕПГ данните от текущо избрания резервен файл."
+
+msgid "Automatically save EPG"
+msgstr "Авоматично записване на ЕПГ"
+
+msgid "Enable automatic EPG save interval."
+msgstr ""
+"Разрешава автоматично записване на ЕПГ данните през определен интервал."
+
+msgid "Automatic save period (in hours)"
+msgstr "Автоматично записване през (в часове)"
+
+msgid "Configure EPG save interval, if enabled."
+msgstr "Настройка на интервала за записване на ЕПГ данните, ако е разрешен"
+
+msgid "Automatically load EPG"
+msgstr "Автоматично зареждане на ЕПГ"
+
+msgid "Automatic EPG loading from current cache file."
+msgstr "Разрешава автоматично зареждане на ЕПГ от текущо избрания файл."
+
+msgid "Automatic load period (in hours)"
+msgstr "Автоматично зареждане през (в часове)"
+
+msgid ""
+"Configure EPG load interval, if enabled. This is an option for experienced "
+"users."
+msgstr ""
+"Настройка на интервала за зареждане на ЕПГ данните, ако е разрешен. "
+"Тази настройка е за напреднали потребители."
+
+msgid "EPG cache file path"
+msgstr "Път до файла с ЕПГ данните"
+
+msgid ""
+"Select the path to EPG cache file. Don't use the internal flash if not "
+"necessary!"
+msgstr ""
+"Изберете папка за съхранение на файла с ЕПГ данните. Не "
+"използвайте вътрешната памет, освен ако не се налага!"
+
+msgid "EPG cache file filename"
+msgstr "Име на файла с ЕПГ данни"
+
+msgid "Select the file name for the EPG cache file."
+msgstr "Изберете име за фала, съдържащ ЕПГ данните."
+
+msgid "Create backup when saving EPG"
+msgstr "Създаване резервно копие при запис на ЕПГ"
+
+msgid "Create a backup cache file, after manually or automatically saving EPG."
+msgstr "Създаване на резервен файл при запис на ЕПГ данните."
+
+msgid "Automatically restore EPG backup on boot"
+msgstr "Възстановяване на ЕПГ от резервното копие при старт"
+
+msgid "Load EPG from backup cache file when booting."
+msgstr "Зареждане на ЕПГ данните от резервното копие при стартиране."
+
+msgid "Show entry 'Manually change EPG' in main menu"
+msgstr "'Ръчно зареждане на ЕПГ' в главното меню"
+
+msgid "Restart enigma2 to effectuate."
+msgstr "Рестартирайте енигма2 за да се приложат настройките."
+
+msgid "Show entry 'AutoZap' in extensions menu"
+msgstr "'Автоматично превключване' в списъка с разширения"
+
+msgid "Enable automatic zapping of all services in the current services list."
+msgstr ""
+"Разрешаване автоматичното превключване между всички канали в текущия списък."
+
+msgid "Duration to show each service (in seconds) for 'AutoZap'"
+msgstr "Престой на канал ( сек.) за 'Автоматично превключване'"
+
+msgid "This is the duration each service will be shown in AutoZap mode."
+msgstr ""
+"Това е времето, след което ще се премине на нов канал в режим Автоматично"
+" превключване."
+
+msgid "Size: "
+msgstr "Размер: "
+
+msgid "Current EPG cachefile:"
+msgstr "Текущ файл с ЕПГ данни:"
+
+msgid "Are you sure you want to load the EPG data from:\n"
+msgstr "Сигурни ли сте, че искате да заредите ЕПГ данните от:\n"
+
+msgid "Are you sure you want to save and load the EPG data from:\n"
+msgstr "Сигурни ли сте, че искате да запишете и заредите ЕПГ данните от:\n"
+
+msgid "Backup file load!"
+msgstr "Данните от резервното копие са заредени!"
+
+msgid ""
+"Backup file is corrupt!\n"
+"Backup file will be deleted!"
+msgstr ""
+"Резервното копие е повредено!\n"
+"То ще бъде изтрито!"
+
+msgid "Backup file is not found!"
+msgstr "Резервно копие не е открито!"
+
+msgid "Input EPG Cache path"
+msgstr "Изберете папка за файла с ЕПГ данни"
+
+msgid "Clear only in memory (RAM) EPG"
+msgstr "Изчистване на ЕПГ данните само от паметта (RAM)"
+
+msgid "Clear only epg.dat and epg.dat.backup"
+msgstr "Изчистване само на epg.dat и epg.dat.backup"
+
+msgid "Clear all EPG"
+msgstr "Изчистване на всички ЕПГ данни"
+
+msgid "Select action:"
+msgstr "Изберете действие"
+
+msgid "Really close without saving settings?"
+msgstr "Затваряне без запис на настройките?"
+
+msgid "The same functions are used in plugin EPGD!!"
+msgstr "Същите функции се изплзват в плъгин EPGD!!"
+
+msgid "The same functions are used in Menu -> System -> EPG settings!"
+msgstr "Същите функции се използват в Меню -> Система -> ЕПГ настройки!"
+
+msgid "Select options"
+msgstr "Изберете опции"
+
+msgid "Manually save EPG"
+msgstr "Ръчно записване на ЕПГ"
+
+msgid "Manually load EPG"
+msgstr "Ръчно зареждане на ЕПГ"
+
+msgid "Manually reload EPG"
+msgstr "Ръчно презареждане на ЕПГ"
+
+msgid "Configuration..."
+msgstr "Настройки..."
+
+msgid "Monday"
+msgstr "Понеделник"
+
+msgid "Tuesday"
+msgstr "Вторник"
+
+msgid "Wednesday"
+msgstr "Сряда"
+
+msgid "Thursday"
+msgstr "Четвъртък"
+
+msgid "Friday"
+msgstr "Петък"
+
+msgid "Saturday"
+msgstr "Събота"
+
+msgid "Sunday"
+msgstr "Неделя"
+
+msgid "EPGRefresh configuration"
+msgstr "EPGRefresh настройки"
+
+msgid "Setup save / load EPG"
+msgstr "Настройка при записване / зареждане на ЕПГ"
+
+msgid "Press the OK button to open the save / load EPG (+ configuration) menu."
+msgstr ""
+"Натиснете ОК за отваряне менюто при запис  / зареждане на ЕПГ данните (+"
+" настройка)"
+
+msgid "Refresh EPG automatically"
+msgstr "Автоматично обновяване на ЕПГ"
+
+msgid ""
+"EPGRefresh needs to be explicitly started using the yellow button in this "
+"menu if this option is not enabled"
+msgstr ""
+"EPGRefresh трябва да бъде стартиран използвайки жълт бутон в това "
+"меню ако тази опция не е активирана."
+
+msgid "Show in extensions menu"
+msgstr "Покажи в списъка с разширения"
+
+msgid ""
+"Enable this to show the EPGRefresh configuration menu in the extension menu."
+msgstr ""
+"Разрешете това за да се покаже меню за настройка на EPGRefresh в "
+"списъка с разширения."
+
+msgid "Show \"add to EPGRefresh\" in"
+msgstr "Покажи \"добави към EPGRefresh\" в"
+
+msgid "Select this item to add services to the EPGRefresh."
+msgstr "Изберете това за да добавяте канали към EPGRefresh"
+
+msgid "Show popup when refresh starts or ends"
+msgstr "Известие при започване и завършване на обновяването"
+
+msgid ""
+"Enable this to show an informational message at the start and completion of "
+"the refresh."
+msgstr ""
+"Разрешете това за да се покаже съобщение при започване или завършване на "
+"обновяването на ЕПГ данни"
+
+msgid "Wake up from deep standby"
+msgstr "Събуждане от дълбоко приспиване"
+
+msgid ""
+"Enable this item to wake up the receiver from deep standby (if possible)."
+msgstr "Изберете това, за се включи приемника ако е изключен (ако е възможно)."
+
+msgid "Choice days for refresh"
+msgstr "Изберете дни за обновяване"
+
+msgid "Select the days of the week for automatic refresh."
+msgstr "Избор на дни от седмицата за автоматично обновяване."
+
+msgid "Timespan to remain on service (in seconds)"
+msgstr "Време за оставане на канал (в секунди)"
+
+msgid ""
+"This is the duration each service/channel will be tuned to during a refresh."
+msgstr ""
+"Това е времето, след което ще се превключи на друг канал при обновяване на"
+" ЕПГ."
+
+msgid "EPG refresh auto-start earliest (hh:mm)"
+msgstr "Автоматично стартиране не по-рано от (чч:мм)"
+
+msgid ""
+"Automated refresh will start after this time of day, but before the time "
+"specified in next setting."
+msgstr ""
+"Автоматичното обновяване ще започне след това време, но преди "
+"определеното в следващата настройка."
+
+msgid "EPG refresh auto-start latest (hh:mm)"
+msgstr "Автоматично стартиране не по-късно от (чч:мм)"
+
+msgid ""
+"Automated refresh will start before this time of day, but after the time "
+"specified in previous setting."
+msgstr ""
+"Автоматичното обновяване ще започне преди това време, но след "
+"определеното в предишната настройка."
+
+msgid "Delay if not in standby (in minutes)"
+msgstr "Изчакване, ако приемника се използва (в минути)"
+
+msgid "The duration that will be waited for the receiver to go into standby."
+msgstr "Времето за изчакване приемника да премине в режим на готовност."
+
+msgid "Force scan even if receiver is in use"
+msgstr "Сканиране дори приемника да се ползва"
+
+msgid ""
+"Don't wait for the receiver to go into standby when starting a refresh cycle."
+msgstr "Да не се изчаква приемника да премине в режим на готовност."
+
+msgid "Shutdown after EPG refresh"
+msgstr "Изключване след завършване"
+
+msgid ""
+"Whether the receiver should go into deep standby after refresh is completed."
+msgstr ""
+"Приемника ще премине в режим дълбоко приспиване след завършване "
+"обновяването на ЕПГ данните."
+
+msgid "Save EPG after refresh"
+msgstr "Записване ЕПГ данните след обновяване"
+
+msgid "Save EPG in the cache file after refresh is completed."
+msgstr ""
+"Записване ЕПГ данните в текущо избрания файл след завършване "
+"на обновяването."
+
+msgid "Show 'EPGRefresh now' in main menu"
+msgstr "Покажи 'EPGRefresh сега' в главното меню"
+
+msgid ""
+"If enabled, show 'EPGRefresh now' in main menu when currently no EPGRefresh "
+"is running."
+msgstr ""
+"Ще се показва 'EPGRefresh сега' в главното меню ако в момента "
+"не тече обновяване на ЕПГ данните."
+
+msgid "Show 'Stop running EPGRefresh' in main menu"
+msgstr "Покажи 'Спри EPGRefresh' в главното меню"
+
+msgid ""
+"If enabled, show 'Stop running EPGRefresh' in main menu when EPGPRefresh is "
+"running."
+msgstr ""
+"Ще се показва 'Спри EPGRefresh' в главното меню ако в момента "
+"тече обновяване на ЕПГ данните."
+
+msgid "Refresh EPG using"
+msgstr "Обновяване ан ЕПГ използвайки"
+
+msgid ""
+"If you want to refresh the EPG in background, you can choose the method "
+"which best suits your needs here, e.g. hidden, fake recording or regular "
+"Picture in Picture."
+msgstr ""
+"Ако искате обновяването на ЕПГ да протича на заден фон изберете режим, "
+"отговарящ най-добре на вашите нужди, например скрит, имитация на запис "
+"или използване на Картина в Картината."
+
+msgid "Skip protected Services"
+msgstr "Пропускане на заключените канали"
+
+msgid "Select mode the refresh for services/bouquets parental control."
+msgstr ""
+"Изберете режим на обновяване за каналите/букетите защитени чрез "
+"родителски контрол."
+
+msgid "Inherit Services from AutoTimer"
+msgstr "Добавяне каналите от AutoTimer"
+
+msgid "Extend the list of services to refresh by those your AutoTimers use?"
+msgstr ""
+"Разширяване на списъка с канали за обновяване с тези, които използване "
+"в плъгина AutoTimer?"
+
+msgid "Run AutoTimer after refresh"
+msgstr "Стартиране на AutoTimer след обновяване"
+
+msgid ""
+"After a successful refresh the AutoTimer will automatically search for new "
+"matches if this is enabled."
+msgstr ""
+"След успешно обновяване AutoTimer автоматично ще търси за нови "
+"съвпадения."
+
+msgid "Timeout shutdown after refresh for SeriesPlugin (min)"
+msgstr "Максимално време за изключване след обновяване за  SeriesPlugin (мин)"
+
+msgid ""
+"If \"Run AutoTimer after refresh\" and \"Shutdown after EPG refresh\" "
+"enabled and use \"Label series\" for match, set long timeout."
+msgstr ""
+"Ако \"Стартиране на AutoTimer след обновяване\" и \"Изключване след "
+"завършване\" са разрешени и се използва \"Label series\" за съвпадение, "
+"задайте максимално време."
+
+msgid "Save"
+msgstr "Запис"
+
+msgid "Refresh now"
+msgstr "Обновяване сега"
+
+msgid "Edit Services"
+msgstr "Kанали"
+
+msgid "EPGRefresh Configuration"
+msgstr "EPGRefresh Настройки"
+
+msgid "Version"
+msgstr "Версия"
+
+msgid "Return to TV viewing"
+msgstr "Връщане към гледане а ТВ"
+
+msgid "Select action after refresh:"
+msgstr "Изберете действие след обновяване:"
+
+msgid "Shutdown after EPG refresh enabled in setup..."
+msgstr "Изключване след обновяване е разрешено в настройките..."
+
+msgid "never"
+msgstr "никога"
+
+#, python-format
+msgid "Last refresh was %s"
+msgstr "Последно обновяване: %s"
+
+msgid "Days Profile"
+msgstr "Профил по дни"
+
+msgid ""
+"You may not use this settings!\n"
+"At least one day a week should be included!"
+msgstr ""
+"Не може да използвате тези настройки!\n"
+"Трябва да бъде добавен поне един ден от седмицата!"
+
+msgid "Stop Running EPG-refresh?\n"
+msgstr "Спиране на EPGRefresh?\n"
+
+#, python-format
+msgid ""
+"\n"
+"%d more services."
+msgstr ""
+"\n"
+"%d добавени канала."
+
+msgid "Following Services have to be scanned:"
+msgstr "Следните канали ще бъдат сканирани:"
