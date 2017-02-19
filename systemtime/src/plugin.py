@@ -186,6 +186,7 @@ class SystemTimeSetupScreen(Screen, ConfigListScreen):
 				if not self.syncTimer.isActive():
 					self.old_time = time.time()
 					self.oldtime = time.strftime("%Y:%m:%d %H:%M",time.localtime())
+					eDVBLocalTimeHandler.getInstance().syncDVBTime()
 					self.messagebox = self.session.openWithCallback(self.messageboxSessionClose, MessageBox, _('Please wait 5 sec.'), MessageBox.TYPE_INFO)
 					self.syncTimer.start(5000, True)
 			except:
