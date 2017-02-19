@@ -158,3 +158,6 @@ msgstr "вы не подтверждаете"
 
 msgid "Old time: %s\nOffset: %s sec.\nNew time: %s"
 msgstr "Старое время: %s\nСмещение: %s сек.\nНовое время: %s"
+
+msgid "Please wait 5 sec."
+msgstr "Пожалуйста, подождите 5 секунд."
