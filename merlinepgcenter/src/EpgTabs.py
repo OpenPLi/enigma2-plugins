@@ -140,7 +140,7 @@ class EpgSingleTab(EpgBaseTab):
 			
 	def getServiceRef(self, oldMode, bouquet):
 		# set the marker to the currently running service on plugin start
-		if config.plugins.merlinEpgCenter.selectRunningService.value and oldMode == None:
+		if config.plugins.merlinEpgCenter.selectRunningService.value and oldMode is None:
 			sRef = NavigationInstance.instance.getCurrentlyPlayingServiceReference().toString()
 		else:
 			if oldMode == TIMERLIST:
@@ -165,12 +165,12 @@ class EpgSingleTab(EpgBaseTab):
 		self.__currentMode = currentMode
 		self.__showOutdated = showOutdated
 		
-		if sRef == None:
+		if sRef is None:
 			self.__sRef = self.getServiceRef(oldMode, firstBouquet)
 		else:
 			self.__sRef = sRef
 			
-		if self.__sRef == None:
+		if self.__sRef is None:
 			self.__sRef = self.getFirstServiceRef(firstBouquet)
 		if self.__sRef != "":
 			self.__shown = True
@@ -199,7 +199,7 @@ class EpgSingleTab(EpgBaseTab):
 		else:
 			changeBouquet = None
 			
-		if changeBouquet != None:
+		if changeBouquet is not None:
 			numBouquets = len(EpgCenterList.bouquetServices)
 			
 			self.__currentBouquetIndex += direction

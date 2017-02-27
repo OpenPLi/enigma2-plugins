@@ -538,7 +538,7 @@ class VlcPlayer(Screen, InfoBarNotifications, InfoBarAudioSelection, InfoBarSubt
 			self.playfile(url, "DVD")
 			self.showInfobar()
 		else:
-			if self.currentList != None:
+			if self.currentList is not None:
 				media, name = self.currentList.getNextFile()
 				if media is None:
 					self.session.open(
@@ -565,7 +565,7 @@ class VlcPlayer(Screen, InfoBarNotifications, InfoBarAudioSelection, InfoBarSubt
 			self.playfile(url, "DVD")
 			self.showInfobar()
 		else:
-			if self.currentList != None:
+			if self.currentList is not None:
 				media, name = self.currentList.getPrevFile()
 				if media is None:
 					self.session.open(

@@ -571,7 +571,7 @@ class SHOUTcastWidget(Screen):
 			root = xml.etree.cElementTree.fromstring(xmlstring)
 		except: return []
 		data = root.find("data")
-		if data == None:
+		if data is None:
 			print "[SHOUTcast] could not find data tag, assume flat listing\n"
 			return [SHOUTcastGenre(name=childs.get("name")) for childs in root.findall("genre")]
 		for glist in data.findall("genrelist"):
@@ -716,7 +716,7 @@ class SHOUTcastWidget(Screen):
 		except: return []
 		config_bitrate = int(config.plugins.shoutcast.streamingrate.value)
 		data = root.find("data")
-		if data == None:
+		if data is None:
 			print "[SHOUTcast] could not find data tag\n"
 			return []
 		for slist in data.findall("stationlist"):
@@ -1067,7 +1067,7 @@ class Cover(Pixmap):
 
 	def paintIconPixmapCB(self, picInfo=None):
 		ptr = self.picload.getData()
-		if ptr != None:
+		if ptr is not None:
 			self.instance.setPixmap(ptr.__deref__())
 			if self.visible:
 				self.doShow()

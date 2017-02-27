@@ -180,7 +180,7 @@ class TravelWebcamviewer(Screen):
 	def finish_decode(self,webcamid,info):
 		print "finish_decode - of webcamid", webcamid,info
 		ptr = self.picloads[webcamid].getData()
-		if ptr != None:
+		if ptr is not None:
 			self.thumbnails[webcamid] = ptr
 			print "removing file"
 			os_remove("/tmp/"+str(webcamid)+"_thumb.jpg")

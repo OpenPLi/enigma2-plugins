@@ -195,7 +195,7 @@ class TagEditor(Screen):
 	def listReplace(self, lst, fr, to = None):
 		if fr in lst:
 			lst.remove(fr)
-			if to != None and not to in lst:
+			if to is not None and not to in lst:
 				lst.append(to)
 				lst.sort()
 		return lst

@@ -817,7 +817,7 @@ class AutoTimer:
 
 		# Iterate Timer
 		for timer in self.getEnabledTimerList():
-			if uniqueId == None or timer.id == uniqueId:
+			if uniqueId is None or timer.id == uniqueId:
 				tup = doBlockingCallFromMainThread(self.parseTimer, timer, epgcache, serviceHandler, recordHandler, checkEvtLimit, evtLimit, timers, conflicting, similars, skipped, timerdict, moviedict, simulateOnly=simulateOnly)
 				if callback:
 					callback(timers, conflicting, similars, skipped)

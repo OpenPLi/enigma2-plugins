@@ -400,7 +400,7 @@ class ARDMediathek(Screen):
 		thumb = None
 		if picInfo:
 			ptr = self.picload.getData()
-			if ptr != None:
+			if ptr is not None:
 				thumb = ptr
 		self.listMovies.append(ARDMenuListSubEntry(movie, thumb))
 		del self.movies[0]

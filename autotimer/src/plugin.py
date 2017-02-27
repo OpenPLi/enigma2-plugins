@@ -302,7 +302,7 @@ def addtoAutoTimer(self, add):
 		return
 	info = sref and eServiceCenter.getInstance().info(sref)
 	event = info and info.getEvent(sref)
-	if event != None:
+	if event is not None:
 		sref = sref.toString()
 		from AutoTimerEditor import addAutotimerFromEvent
 		try:

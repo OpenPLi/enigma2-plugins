@@ -461,7 +461,7 @@ class OFDB(Screen):
 
 	def paintPosterPixmapCB(self, picInfo=None):
 		ptr = self.picload.getData()
-		if ptr != None:
+		if ptr is not None:
 			self["poster"].instance.setPixmap(ptr.__deref__())
 			self["poster"].show()
 

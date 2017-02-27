@@ -1471,7 +1471,7 @@ class PrimeTimeManager(Screen, HelpableScreen):
 		begin = selected[BEGIN]
 
 		# don't add the selected item to the favorites because it has no begin time (epg data)
-		if begin == None:
+		if begin is None:
 			self.unhandledKey.show()
 			return
 
@@ -1685,7 +1685,7 @@ class PrimeTimeManager(Screen, HelpableScreen):
 			eventId = selected[EVENTID]
 
 			# don't add the selected item to the favorites because it has no begin time (epg data)
-			if begin == None:
+			if begin is None:
 				self.unhandledKey.show()
 				return
 
@@ -1853,7 +1853,7 @@ class PrimeTimeManager(Screen, HelpableScreen):
 
 	# get a list of service refs for all HD services
 	def getHDServices(self):
-		if self.serviceRefsHD != None:
+		if self.serviceRefsHD is not None:
 			return
 		print "[PrimeTimeManager] Searching HD Services"
 		self.serviceRefsHD = []
@@ -2537,7 +2537,7 @@ class EventViewSuperSimple(Screen, EventViewBase):
 					tmbdsearch = config.plugins.tmbd.profile.value
 				except:
 					tmbdsearch = None
-				if tmbdsearch != None:
+				if tmbdsearch is not None:
 					if config.plugins.tmbd.profile.value == "0":
 						try:
 							self.session.open(TMBD, eventname, False)
