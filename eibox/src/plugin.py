@@ -267,7 +267,7 @@ class EIBObjects(object):
 						      elif key == "value":
 							value = item.nodeValue
 						      i += 1
-						    if object_id and value != None and self.ids.has_key(object_id):
+						    if object_id and value is not None and self.ids.has_key(object_id):
 							  EIBObject = self.ids[object_id]
 							  EIBObject.value = value
 							  if config.eib.debug.value:
@@ -427,7 +427,7 @@ class EIBoxZoneScreen(Screen, ConfigListScreen):
 			return None
 
 	def moveBorder(self, direction=None):
-		if direction != None:
+		if direction is not None:
 			for EIB_object in self.EIB_objects:
 				if EIB_object.object_type in (EIB_SWITCH, EIB_DIMMER, EIB_GOTO, EIB_MULTISWITCH):
 					self[EIB_object.object_id].instance.setBorderWidth(0)
@@ -583,7 +583,7 @@ class EIBox(Screen, ConfigListScreen):
 				    if config.eib.debug.value:
 					print "[loadXML] new EIB_zone", zone_id, zone_name, zone_img, self.EIB_zones[zone_id]
 				    self.xmlGetZoneNode(subnode, zone_id)
-				    if self.gotoZone == None:
+				    if self.gotoZone is None:
 					self.gotoZone = zone_id
 				    #self.EIB_zones[zone_id].EIBreadAll()
 			    if node.tagName == 'settings':

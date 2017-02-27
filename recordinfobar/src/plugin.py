@@ -193,13 +193,13 @@ class RecInfoBar(Screen):
 					ret = 3
 				else:
 					ret = 4
-			if ret != None and config.plugins.RecInfobar.after_event.value == "0":
+			if ret is not None and config.plugins.RecInfobar.after_event.value == "0":
 				if ret == 3:
 					if Standby.inStandby is None:
 						Notifications.AddNotification(Standby.Standby)
 				else:
 					self.checkStandby()
-			elif ret != None and ret != 4 and config.plugins.RecInfobar.after_event.value == "5":
+			elif ret is not None and ret != 4 and config.plugins.RecInfobar.after_event.value == "5":
 				if ret == 3:
 					if Standby.inStandby is None:
 						Notifications.AddNotification(Standby.Standby)

@@ -324,7 +324,7 @@ class MerlinEPGCenter(TimerEditList, MerlinEPGActions):
 			self["eventProgress"].show()
 		elif config.plugins.merlinEpgCenter.listProgressStyle.value == STYLE_PIXMAP_BAR:
 			self["eventProgressImage"].hide()
-			if self.progressPixmap == None:
+			if self.progressPixmap is None:
 				pixmapPath = resolveFilename(SCOPE_CURRENT_PLUGIN, "Extensions/MerlinEPGCenter/images/EventProgress.png")
 				self.progressPixmap = LoadPixmap(cached = False, path = pixmapPath)
 			self["eventProgress"].instance.setPixmap(self.progressPixmap)
@@ -345,7 +345,7 @@ class MerlinEPGCenter(TimerEditList, MerlinEPGActions):
 		# get the selected entry
 		cur = self["list"].getCurrent()
 		# cur[1] = eventId, cur[2] = sRef
-		if cur != None and cur[2] != "" and cur[1] != None:
+		if cur is not None and cur[2] != "" and cur[1] is not None:
 			serviceList = self.epgcache.search(('R', 100, eEPGCache.SIMILAR_BROADCASTINGS_SEARCH, cur[2], cur[1]))
 			knownSimilar = False
 			if serviceList is not None and config.plugins.merlinEpgCenter.limitSearchToBouquetServices.value:
@@ -373,14 +373,14 @@ class MerlinEPGCenter(TimerEditList, MerlinEPGActions):
 			
 		upcomingEvents = []
 		cur = self["list"].getCurrent()
-		if cur == None:
+		if cur is None:
 			return
 			
 		sRef		= cur[2]
 		begin		= cur[3]
 		duration	= cur[4]
 		
-		if sRef == None or begin == None or duration == None:
+		if sRef is None or begin is None or duration is None:
 			nextEvent = -1
 		else:
 			nextEvent = self.epgcache.startTimeQuery(eServiceReference(sRef), begin + duration)
@@ -630,7 +630,7 @@ class MerlinEPGCenter(TimerEditList, MerlinEPGActions):
 			serviceName = ServiceReference(sRef).getServiceName()
 		self["serviceName"].setText(serviceName)
 
-		if begin != None and duration != None:
+		if begin is not None and duration is not None:
 			beginString = strftime("%H:%M", localtime(begin))
 			endString = strftime("%H:%M", localtime(begin + duration))
 			
@@ -656,7 +656,7 @@ class MerlinEPGCenter(TimerEditList, MerlinEPGActions):
 						timeValue = (now - begin) /  60
 						percent = 0
 						
-				if (KEEP_OUTDATED_TIME == None and (begin + duration) > now) or (KEEP_OUTDATED_TIME != None and (begin + duration) > now):
+				if (KEEP_OUTDATED_TIME is None and (begin + duration) > now) or (KEEP_OUTDATED_TIME is not None and (begin + duration) > now):
 					remainBeginString = " I "
 					if timeValue > 0:
 						remainBeginString += "+"
@@ -740,12 +740,12 @@ class MerlinEPGCenter(TimerEditList, MerlinEPGActions):
 		if config.plugins.merlinEpgCenter.showShortDescInEventInfo.value:
 			newDescription = ""
 			
-			if shortDesc != None and shortDesc != "" and shortDesc != title:
+			if shortDesc is not None and shortDesc != "" and shortDesc != title:
 				if newDescription == "":
 					newDescription = shortDesc
 				else:
 					newDescription = ''.join([newDescription, "\n\n", shortDesc])
-			if description != None and description != "":
+			if description is not None and description != "":
 				if newDescription == "":
 					newDescription = description
 				else:
@@ -816,7 +816,7 @@ class MerlinEPGCenter(TimerEditList, MerlinEPGActions):
 			
 		# set button text
 		if self.currentMode == MULTI_EPG_NOW or self.currentMode == MULTI_EPG_NEXT or self.currentMode == SINGLE_EPG or self.currentMode == MULTI_EPG_PRIMETIME or self.currentMode == EPGSEARCH_RESULT:
-			if self.currentMode == SINGLE_EPG and KEEP_OUTDATED_TIME != None:
+			if self.currentMode == SINGLE_EPG and KEEP_OUTDATED_TIME is not None:
 				if not self.showOutdated:
 					self["key_blue"].setText(_("Outdated on"))
 				else:
@@ -917,7 +917,7 @@ class MerlinEPGCenter(TimerEditList, MerlinEPGActions):
 		else:
 			self["tabbar"].setPixmapNum(self.currentMode)
 			
-		if self.oldMode != None:
+		if self.oldMode is not None:
 			if self.oldMode >= numTabs:
 				self["tab_text_%d" % numTabs].instance.setForegroundColor(parseColor("#ffffff")) # inactive
 			else:
@@ -936,7 +936,7 @@ class MerlinEPGCenter(TimerEditList, MerlinEPGActions):
 			self.blinkTimer.reset()
 		
 		# TODO only hide if the plugin wasn't just started
-		if not historySearch and self.oldMode != None:
+		if not historySearch and self.oldMode is not None:
 			self.epgTabObjectList[self.oldMode].hide()
 			
 		if searchEpg:
@@ -1074,7 +1074,7 @@ class MerlinEPGCenter(TimerEditList, MerlinEPGActions):
 			self.setMode(historySearch = True)
 		else:
 			cur = self["list"].getCurrent()
-			if cur == None or cur[1] == None or cur[2] == "":
+			if cur is None or cur[1] is None or cur[2] == "":
 				return
 			
 			addTimer = True
@@ -1110,7 +1110,7 @@ class MerlinEPGCenter(TimerEditList, MerlinEPGActions):
 	def keyBlue(self):
 		if self.currentMode == EPGSEARCH_RESULT:
 			cur = self["list"].getCurrent()
-			if cur == None or cur[5] == None:
+			if cur is None or cur[5] is None:
 				return
 			self.epgTabObjectList[self.currentMode].updateEpgSearchHistory(cur[5]) # save the searchString in the search history
 			# remove possibility to add the service name to the list of epg search terms
@@ -1288,7 +1288,7 @@ class MerlinEPGCenter(TimerEditList, MerlinEPGActions):
 			self.setMode(historySearch = True)
 		elif self.currentMode == MULTI_EPG_NOW or self.currentMode == MULTI_EPG_NEXT or self.currentMode == SINGLE_EPG or self.currentMode == MULTI_EPG_PRIMETIME:
 			cur = self["list"].getCurrent()
-			if cur != None:
+			if cur is not None:
 				# update the infobar servicelist...
 				self.infoBarInstance.epg_bouquet = self.bouquetList[self.currentBouquetIndex][1]
 				self.infoBarInstance.zapToService(eServiceReference(cur[2]))
@@ -1352,17 +1352,17 @@ class MerlinEPGCenter(TimerEditList, MerlinEPGActions):
 				shortDesc = cur[6]
 				description = cur[7]
 				
-				if title != None and title != "":
+				if title is not None and title != "":
 					infoText = title
 				else:
 					infoText = ""
 					
-				if shortDesc != None and shortDesc != "" and shortDesc != title:
+				if shortDesc is not None and shortDesc != "" and shortDesc != title:
 					if infoText == "":
 						infoText = shortDesc
 					else:
 						infoText = ''.join([infoText, "\n\n", shortDesc])
-				if description != None and description != "":
+				if description is not None and description != "":
 					if infoText == "":
 						infoText = description
 					else:

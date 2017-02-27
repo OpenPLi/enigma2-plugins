@@ -159,7 +159,7 @@ class Blindscan(ConfigListScreen, Screen):
 		self.bsTimer.callback.append(self.asyncBlindScan)
 
 		ConfigListScreen.__init__(self, self.list, session = session, on_change = self.changedEntry)
-		if self.scan_nims.value != None and self.scan_nims.value != "" :
+		if self.scan_nims.value is not None and self.scan_nims.value != "" :
 			self["actions"] = ActionMap(["ColorActions", "SetupActions", 'DirectionActions'],
 			{
 				"red": self.keyCancel,
@@ -347,7 +347,7 @@ class Blindscan(ConfigListScreen, Screen):
 					if hasattr(self.session, 'pip'):
 						del self.session.pip
 					self.openFrontend()
-		if self.frontend == None:
+		if self.frontend is None:
 			text = _("Sorry, this tuner is in use.")
 			if self.session.nav.getRecordings():
 				text += "\n"
@@ -469,7 +469,7 @@ class Blindscan(ConfigListScreen, Screen):
 		index    = 0
 		none_cnt = 0
 		for n in self.satList:
-			if self.satList[index] == None:
+			if self.satList[index] is None:
 				none_cnt = none_cnt + 1
 			if index == int(v):
 				return (index-none_cnt)
@@ -1084,7 +1084,7 @@ class Blindscan(ConfigListScreen, Screen):
 			self.frontend and self.frontend.closeFrontend()
 		self.blindscanSessionNone(val[0])
 
-		if self.tmp_tplist != None and self.tmp_tplist != []:
+		if self.tmp_tplist is not None and self.tmp_tplist != []:
 			if not self.SundtekScan:
 				self.tmp_tplist = self.correctBugsCausedByDriver(self.tmp_tplist)
 

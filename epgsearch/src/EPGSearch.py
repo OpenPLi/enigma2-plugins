@@ -752,7 +752,7 @@ class EPGSearch(EPGSelection):
 					tmbdsearch = config.plugins.tmbd.profile.value
 				except:
 					tmbdsearch = None
-				if tmbdsearch != None:
+				if tmbdsearch is not None:
 					if config.plugins.tmbd.profile.value == "0":
 						self.session.open(TMBD, eventname, False)
 					else:
