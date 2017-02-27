@@ -1,0 +1,429 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: FanControl2\n"
+"POT-Creation-Date: 2017-02-27 12:00\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Andrej <andrej.tobola@gmail.com>\n"
+"Language-Team: Andrej <andrej.tobola@gmail.com>\n"
+"Language: sk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.11\n"
+
+#: FC2.txt:35
+msgid "below Tunerslot 4"
+msgstr "pod Tunerslot 4"
+
+#: FC2.txt:36
+msgid "near XILINX Spartan"
+msgstr "v blízkosti XILINX Spartan"
+
+#: FC2.txt:37
+msgid "under the WLAN"
+msgstr "v rámci WLAN"
+
+#: FC2.txt:38
+msgid "left of the Battery"
+msgstr "vľavo od batérie"
+
+#: FC2.txt:39
+msgid "left near Front-CI"
+msgstr "vľavo u predného-CI"
+
+#: FC2.txt:40
+msgid "left near Card-Slot"
+msgstr "vľavo u slotu karty"
+
+#: FC2.txt:41
+msgid "over Security Card"
+msgstr "nad Security Card"
+
+#: FC2.txt:42
+msgid "under the Fan"
+msgstr "pod ventilátorom"
+
+#: FC2.txt:142
+msgid "."
+msgstr ","
+
+#: FC2.txt:187
+msgid "3Pin"
+msgstr "3piny"
+
+#: FC2.txt:187
+msgid "4Pin"
+msgstr "4piny"
+
+#: FC2.txt:187
+msgid "4Pin (PID)"
+msgstr "4piny (PID)"
+
+#: FC2.txt:187
+msgid "Control disabled"
+msgstr "Ovládanie vypnuté"
+
+#: FC2.txt:187
+msgid "disabled"
+msgstr "vypnuté"
+
+#: FC2.txt:188
+msgid "yes, Except for Recording or HDD"
+msgstr "áno, okrem záznamu alebo HDD"
+
+#: FC2.txt:188 FC2.txt:201 FC2.txt:205
+msgid "no"
+msgstr "nie"
+
+#: FC2.txt:188 FC2.txt:205
+msgid "yes"
+msgstr "áno"
+
+#: FC2.txt:195
+msgid "Box Shutdown"
+msgstr "Vypnúť prijímač"
+
+#: FC2.txt:195
+msgid "display Info"
+msgstr "zobraziť Info"
+
+#: FC2.txt:195
+msgid "do nothing"
+msgstr "nič nevykonať"
+
+#: FC2.txt:205
+msgid "auto"
+msgstr "automaticky"
+
+#: FC2.txt:205
+msgid "never"
+msgstr "nikdy"
+
+#: FC2.txt:364
+msgid "please wait (until 3min)..."
+msgstr "čaakjte prosím (asi 3min)..."
+
+#: FC2.txt:402
+msgid "Min Fan Start %d rpm at PWM=%d"
+msgstr "Od min. otáčok %d rpm pri PWM=%d"
+
+#: FC2.txt:408
+msgid "Min Fan Stop %d rpm at PWM=%d (%s)"
+msgstr "Do min. otáčok %d rpm pri PWM=%d (%s)"
+
+#: FC2.txt:414
+msgid "Max Fan %d rpm at PWM=255 (%s)"
+msgstr "Max. otáčky %d rpm pri PWM=255 (%s)"
+
+#: FC2.txt:416
+msgid "Extended Control Range"
+msgstr "Rozšírená regulácia"
+
+#: FC2.txt:426
+msgid "Min Fan Start %d rpm at VLT=%d and PWM=0"
+msgstr "Od min. otáčok %d rpm pri VLT=%d a PWM=0"
+
+#: FC2.txt:429
+msgid "Min Fan Stop %d rpm at VLT=%d and PWM=0 (%s)"
+msgstr "Do min. otáčok %d rpm pri VLT=%d a PWM=0 (%s)"
+
+#: FC2.txt:436
+msgid "Max Fan %d rpm at PWM=255 and VLT=255 (%s)"
+msgstr "Max. otáčky %d rpm pri PWM=255 a VLT=255 (%s)"
+
+#: FC2.txt:444
+msgid "Min Fan Start %d rpm at VLT=%d"
+msgstr "Od min. otáčok %d rpm pri VLT=%d"
+
+#: FC2.txt:447
+msgid "Min Fan Stop %d rpm at VLT=%d (%s)"
+msgstr "Do min. otáčok %d rpm pri VLT=%d (%s)"
+
+#: FC2.txt:452
+msgid "Max Fan %d rpm at VLT=255 (%s)"
+msgstr "Max. otáčky %d rpm pri VLT=255 (%s)"
+
+#: FC2.txt:455
+msgid "please set fan type (3Pin or 4Pin)"
+msgstr "nastavte prosím typ ventilátora (3piny alebo 4piny)"
+
+#: FC2.txt:527 FC2.txt:529 FC2.txt:533
+msgid "%s   %02d C"
+msgstr "%s   %02d C"
+
+#: FC2.txt:535
+msgid "press Info for HDD-Temp"
+msgstr "stlačte Info pre teplotu HDD"
+
+#: FC2.txt:536 FC2.txt:791
+msgid "Current rpm  %4d"
+msgstr "Aktuálne otáčky  %4d"
+
+#: FC2.txt:568
+msgid "Action in case of Fan failure"
+msgstr "Akce pri poruše ventilátoru"
+
+#: FC2.txt:569
+msgid "Box shutdown at Temperature (C)"
+msgstr "Vypnúť prijímač pri teplote (°C)"
+
+#: FC2.txt:570
+msgid "increases overheating protection to (C)"
+msgstr "Zvýšiť ochranu proti prehriatiu o (°C)"
+
+#: FC2.txt:571
+msgid "read HDD-Temperature in HDD-Standby-Mode"
+msgstr "Načítať teplotu HDD v pohovostnom režime"
+
+#: FC2.txt:572
+msgid "disable DMM-FanControl"
+msgstr "Vypnúť DMM ovládanie ventilátora"
+
+#: FC2.txt:573
+msgid "Show Fan Speed as"
+msgstr "Zobraziť rýchlosť ventilátora ako"
+
+#: FC2.txt:574
+msgid "Show Plugin in Extension-Menu"
+msgstr "Zobraziť doplnok v menu rozšírení"
+
+#: FC2.txt:575
+msgid "Show Monitor in Extension-Menu"
+msgstr "Zobraziť monitor v menu rozšírení"
+
+#: FC2.txt:576
+msgid "Enable Console Logging"
+msgstr "Povoliť logovanie konzoly"
+
+#: FC2.txt:577
+msgid "Number of WebIF-Log-Entries"
+msgstr "Počet záznamov pre WebIF"
+
+#: FC2.txt:578
+msgid "Logging path"
+msgstr "Cesta k logu"
+
+#: FC2.txt:579
+msgid "Enable Data Logging"
+msgstr "Zapnúť logovanie údajov"
+
+#: FC2.txt:580
+msgid "Auto-Delete Data older than (Days)"
+msgstr "Automaticky mazať údaje staršie ako (dni)"
+
+#: FC2.txt:581
+msgid "Enable Event Logging"
+msgstr "Povoliť logovanie udalostí"
+
+#: FC2.txt:582
+msgid "Enable Thread use"
+msgstr "Povoliť použitie vlákien"
+
+#: FC2.txt:597
+msgid "Choose path"
+msgstr "Vyberte cestu"
+
+#: FC2.txt:631
+msgid ""
+"GUI needs a restart to apply the changes.\n"
+"Do you want to Restart the GUI now?"
+msgstr ""
+"Pre potvrdenie zmien sa musí reštartovať GUI.\n"
+"Chcete GUI teraz reštartovať?"
+
+#: FC2.txt:632
+msgid "Restart GUI now?"
+msgstr "Reštartovať užívateľské rozhranie?"
+
+#: FC2.txt:701
+msgid "Fan type"
+msgstr "Typ ventilátora"
+
+#: FC2.txt:702
+msgid "Fan off in Idle Mode"
+msgstr "Ventilátor vypnutý v móde nečinnosti"
+
+#: FC2.txt:703
+msgid "min Speed rpm"
+msgstr "Minimálne otáčky"
+
+#: FC2.txt:704
+msgid "max Speed rpm"
+msgstr "Maximálne otáčky"
+
+#: FC2.txt:705
+msgid "Static temp C"
+msgstr "Kľudová teplota °C"
+
+#: FC2.txt:706
+msgid "End temperature C"
+msgstr "Maximálna teplota °C"
+
+#: FC2.txt:707
+msgid "Initial Voltage"
+msgstr "Počiatočné napätie"
+
+#: FC2.txt:708
+msgid "Initial PWM"
+msgstr "Počiatočné PWM"
+
+#: FC2.txt:713
+msgid "Cancel"
+msgstr "Zrušiť"
+
+#: FC2.txt:714
+msgid "Save"
+msgstr "Uložiť"
+
+#: FC2.txt:715
+msgid "Check"
+msgstr "Kontrola"
+
+#: FC2.txt:716
+msgid "Help"
+msgstr "Pomoc"
+
+#: FC2.txt:756
+msgid "Current value: %s"
+msgstr "Aktuálne hodnoty: %s"
+
+#: FC2.txt:789
+msgid "Temperature C  %4.1f"
+msgstr "Teplota %4.1f °C"
+
+#: FC2.txt:790
+msgid "Target rpm  %4d"
+msgstr "Cieľové otáčky  %4d"
+
+#: FC2.txt:792
+msgid "Voltage  %03d"
+msgstr "Napätie  %03d"
+
+#: FC2.txt:793
+msgid "PWM  %03d"
+msgstr "PWM  %03d"
+
+#: FC2.txt:806
+msgid "PID Ctl Err %03.2f %%"
+msgstr "PID Ctl Chyba %03.2f %%"
+
+#: FC2.txt:828
+msgid "Information"
+msgstr "Informácie"
+
+#: FC2.txt:828
+msgid "readme.txt"
+msgstr "readme.txt"
+
+#: FC2.txt:1019
+msgid "FanControl2 emergency, Box Shutdown now?"
+msgstr "FanControl2 núdzový stav - vypnúť teraz prijímač?"
+
+#: FC2.txt:1088
+msgid "Fan is not working!"
+msgstr "Ventilátor nefunguje!"
+
+#: FC2.txt:1232
+msgid "currentRPM:%d targetRPM:%d Temp:%4.1f"
+msgstr "aktuálneRPM:%d cieľovéRPM:%d Tep:%4.1f"
+
+#: FC2.txt:1315
+msgid "Box has no fancontrol hardware -> FC2 deactivated"
+msgstr "Prijímač nemá odpovedajúci hardvér -> FC2 je neaktívne"
+
+#: FC2.txt:1395
+msgid "Temperature"
+msgstr "Teplota"
+
+#: FC2.txt:1396
+msgid "Speed"
+msgstr "Otáčky"
+
+#: FC2.txt:1397
+msgid "Voltage"
+msgstr "Napätie"
+
+#: FC2.txt:1404
+msgid "Sensors"
+msgstr "Senzory"
+
+#: FC2.txt:1499 FC2.txt:1535
+msgid "active"
+msgstr "aktívne"
+
+#: FC2.txt:1502 FC2.txt:1538
+msgid "turn off"
+msgstr "vypnuté"
+
+#: FC2.txt:1505 FC2.txt:1541
+msgid "not active"
+msgstr "neaktívne"
+
+#: FC2.txt:1508 FC2.txt:1544
+msgid "turn on"
+msgstr "zapnuté"
+
+#: FC2.txt:1513 FC2.txt:1515 FC2.txt:1549 FC2.txt:1551
+msgid "Filesize : %d %sByte"
+msgstr "Veľkosť : %d %sByte"
+
+#: FC2.txt:1517 FC2.txt:1553
+msgid "Disk free : %d MByte"
+msgstr "HDD volné : %d MB"
+
+#: FC2.txt:1520 FC2.txt:1556
+msgid "Download"
+msgstr "Stiahnúť"
+
+#: FC2.txt:1524 FC2.txt:1560
+msgid "Delete"
+msgstr "Zmazať"
+
+#: FC2.txt:1528
+msgid "Delete older 48h"
+msgstr "Zmazať staršie ako 48h"
+
+#: FC2.txt:1531 FC2.txt:1568
+msgid "File %s does not exists"
+msgstr "Súbor %s neexistuje"
+
+#: FC2.txt:1570
+msgid "Logging-Path: %s"
+msgstr "Cesta k logu: %s"
+
+#: FC2.txt:1571
+msgid "Auto-Delete older %s Days"
+msgstr "Auto-mazanie staršie ako %s dní"
+
+#~ msgid "Fan off in Standby"
+#~ msgstr "Vypnutý ventilátor v pohotovostnom režime"
+
+#~ msgid "Fan Control 2 - Setup"
+#~ msgstr "Fan Control2 - Nastavenie"
+
+#~ msgid "Fan Control"
+#~ msgstr "Ovládanie ventilátora"
+
+#~ msgid "OK"
+#~ msgstr "OK"
+
+#~ msgid "Enable read HDD-Temperature"
+#~ msgstr "Povoliť čítanie teploty HDD"
+
+#~ msgid "Show Fan Error"
+#~ msgstr "Zobraziť chyby ventilátora"
+
+#~ msgid "Show Fan rpm"
+#~ msgstr "Zobraziť RPM ventilátora"
+
+#~ msgid "Switch RPM/2 <> RPM?"
+#~ msgstr "Prepnúť RPM/2 <> RPM?"
+
+#~ msgid "Regulation off"
+#~ msgstr "Regulácia vyp"
+
+#~ msgid "off"
+#~ msgstr "vyp"
+
+#~ msgid "Fan rpm current: %s target: %s (%sC)"
+#~ msgstr "Aktuálne RPM ventilátora: %s cieľové: %s (%sC)"
