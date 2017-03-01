@@ -1,0 +1,506 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-04-13 20:32+0300\n"
+"PO-Revision-Date: 2017-03-01 14:01+0100\n"
+"Last-Translator: Andrej <andrej.tobola@gmail.com>\n"
+"Language-Team: Andrej <andrej.tobola@gmail.com>\n"
+"Language: sk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n"
+"%100>=20) ? 1 : 2;\n"
+"X-Generator: Poedit 1.8.11\n"
+
+#: plugin.py:482
+msgid ""
+"\n"
+"Second slot dual tuner may not be supported blind scan."
+msgstr ""
+"\n"
+"Druhy tuner nemusí podporovať blind scan."
+
+#: plugin.py:480
+msgid ""
+"\n"
+"WARNING! Blind scan may make the tuner malfunction on a VU+ and ET receiver. A "
+"reboot afterwards may be required to return to proper tuner function."
+msgstr ""
+"\n"
+"POZOR! Blind scan môže spôsobiť zlyhanie tuneru na prijímačoch VU+ a ET. Po "
+"dokončení môže byť pre návrat do normálnych funkcií tuneru vyžadovaný reštart."
+
+#: plugin.py:825
+#, python-format
+msgid ""
+"   Current Status : %d/%d\n"
+"   Satellite : %s\n"
+"   Polarization : %s\n"
+"   Frequency range : %d - %d MHz\n"
+"   Symbol rates : %d - %d MHz"
+msgstr ""
+"   Aktuálny stav : %d/%d\n"
+"   Satelit : %s\n"
+"   Polarizácia : %s\n"
+"   Rozsah frekvencií : %d - %d MHz\n"
+"   Symbolová rýchlosť : %d - %d MHz"
+
+#: plugin.py:823
+msgid "   Starting Sundtek hardware blind scan."
+msgstr "   Spúšťa sa Sundtek hardvérový blind scan."
+
+#: plugin.py:605
+msgid " tuner."
+msgstr " tuner."
+
+#: plugin.py:488
+msgid ""
+"\"channel scan\" searches for channels and saves them to your receiver; \"save to "
+"XML file\" does a transponder search and saves found transponders to an XML file in "
+"satellites.xml format"
+msgstr ""
+"\"prehľadávanie kanálov\" prehľadá stanice a uloží ich do vášho prijímača; \"uložiť "
+"do XML súboru\" vykoná prehľadanie transpondérov a najdenétranspondéry uloží do XML "
+"súboru vo formáte satellites.xml"
+
+#: dmmBlindScan.py:318
+#, python-format
+msgid "%d transponder(s) found"
+msgstr "Nájdených transpondérov: %d"
+
+#: dmmBlindScan.py:293 plugin.py:998
+#, python-format
+msgid "%d transponders found at %d:%02d min"
+msgstr "%d nájdených transpondérov o %d:%02d min"
+
+#: dmmBlindScan.py:323
+#, python-format
+msgid "%d:%02d/%d:%02dmin"
+msgstr "%d:%02d/%d:%02dmin"
+
+#: dmmBlindScan.py:291
+#, python-format
+msgid "%dMHz scanned"
+msgstr "%dMHz prehľadávaných"
+
+#: dmmBlindScan.py:101
+msgid "AUTOMATICALLY start service searching, press green to change"
+msgstr "AUTOMATICKÉ spustenie vyhľadávania staníc, pre zmenu stlačte Zelené tlač."
+
+#: dmmBlindScan.py:583
+msgid "Accuracy (higher is better)"
+msgstr "Presnosť (vyššia je lepšie)"
+
+#: plugin.py:1394
+msgid "Another type"
+msgstr "Iný typ"
+
+#: plugin.py:1413
+msgid "Blind scan"
+msgstr "Blink scan"
+
+#: plugin.py:116
+msgid "Blind scan for DVB-S2 tuners"
+msgstr "Blind scan pre DVB-S2 tunery"
+
+#: dmmBlindScan.py:500
+msgid "Blind scan for dreambox DVB-S2 tuners"
+msgstr "Blind scan pre dreambox DVB-S2 tunery"
+
+#: dmmBlindScan.py:67
+msgid "Blind scan state"
+msgstr "Stav Blind scanu"
+
+#: plugin.py:605
+msgid "Blindscan is not supported in "
+msgstr "Blindscan nie je podporovaný v "
+
+#
+#: dmmBlindScan.py:589 plugin.py:506
+msgid "Clear before scan"
+msgstr "Vymazať pred skenovaním"
+
+#: dmmBlindScan.py:662
+msgid "DVB-S + DVB-S2"
+msgstr "DVB-S + DVB-S2"
+
+#: dmmBlindScan.py:663
+msgid "DVB-S only"
+msgstr "Len DVB-S"
+
+#: dmmBlindScan.py:480
+#, python-format
+msgid "Dreambox blind scan is not supported by this tuner (%s)!"
+msgstr "Dreambox blind scan nie je podporovaný tunerom (%s)!"
+
+#: plugin.py:1394
+msgid "Dreambox type"
+msgstr "Typ Dreamboxu"
+
+#
+#: plugin.py:166 plugin.py:184
+msgid "Exit"
+msgstr "Ukončiť"
+
+#: plugin.py:502
+msgid "Filter out adjacent satellites"
+msgstr "Filtrovať susedné satelity"
+
+#: plugin.py:495
+msgid "Frequency values must be between 10700 MHz and 12749 MHz"
+msgstr "Hodnoty frekvencie musia byť medzi 10700 MHz a 12749 MHz"
+
+#: plugin.py:496
+msgid "Frequency values must be between 10701 MHz and 12750 MHz"
+msgstr "Hodnoty frekvencie musia byť medzi 10701 MHz and 12750 MHz"
+
+#: plugin.py:492
+msgid "Frequency values must be between 3000 MHz and 4199 MHz (C-band)"
+msgstr "Hodnoty frekvencie musia byť medzi 3000 MHz and 4199 MHz (C-pásmo)"
+
+#: plugin.py:493
+msgid "Frequency values must be between 3001 MHz and 4200 MHz (C-band)"
+msgstr "Hodnoty frekvencie musia byť medzi 3001 MHz and 4200 MHz (C-pásmo)"
+
+#: dmmBlindScan.py:584
+msgid "Horizontal"
+msgstr "Horizontálna"
+
+#: plugin.py:506
+msgid ""
+"If you select \"yes\" all channels on the satellite being search will be deleted "
+"before starting the current search, yes (keep feeds) means the same but hold all "
+"feed services/transponders."
+msgstr ""
+"Ak zvolíte \"áno\", všetky stanice na prehľadávanom satelite budú vymazané pred "
+"začatím vyhľadávania, áno (ponechať feedy) znamená to isté, ale ponechá všetky "
+"stanice/transpondéry."
+
+#: plugin.py:505
+msgid ""
+"If you select \"yes\" in addition to scan transponders list the NIT (Network "
+"Information Table; contains all the info of a provider) is being read and the "
+"channels being advertised in there are stored in your tuner."
+msgstr ""
+"Ak zvolíte \"áno\" ako doplnenie k vyhľadávaniu zoznamu transpondérov, tabuľka NIT "
+"(Network Information Table; obsahujúca všetky informácie o poskytovateľovi)sa "
+"načíta a stanice, ktoré sú tam uvedené budú vložené do tunera."
+
+#: plugin.py:507
+msgid ""
+"If you select \"yes\" the scan will only save channels that are not encrypted; \"no"
+"\" will find encrypted and non-encrypted channels"
+msgstr ""
+"Ak zvolíte \"áno\", vyhľadajú sa iba nekódované stanice (FTA); voľba \"nie\" "
+"vyhľadá kódované aj nekódované stanice."
+
+#: plugin.py:501
+msgid ""
+"If you select \"yes\" the scan will only search transponders not listed in "
+"satellites.xml"
+msgstr ""
+"Ak zvolíte \"áno\", prehľadajú sa len transpondéry, ktoré nie sú uvedené v súbore "
+"satellites.xml"
+
+#: plugin.py:724
+msgid "It seems manufacturer does not support blind scan for this tuner."
+msgstr "Zdá sa, že výrobca tohto tuneru nepodporuje blind scan."
+
+#: plugin.py:826
+msgid ""
+"Looking for available transponders.\n"
+"This will take a long time, please be patient."
+msgstr ""
+"Hľadajú sa dostupné transpondéry.\n"
+"Bude to chvíľu trvať, prosím buďte trpezlivý."
+
+#: dmmBlindScan.py:99
+msgid "MANUALLY start service searching, press green to change"
+msgstr "MANUÁLNE spustenie vyhľadávania staníc, pre zmenu stlačte Zelené tlač."
+
+#: dmmBlindScan.py:425 plugin.py:350
+msgid "Maybe the reason that recording is currently running."
+msgstr "Možná príčina - nahrávanie je spustené"
+
+#: plugin.py:1373
+msgid "Moving to "
+msgstr "Presúvam to "
+
+#: dmmBlindScan.py:588 plugin.py:505
+msgid "Network scan"
+msgstr "Vyhľadávanie siete"
+
+#: plugin.py:1061
+msgid ""
+"No new transponders found! \n"
+"\n"
+"Only transponders already listed in satellites.xml \n"
+"have been found for those search parameters!"
+msgstr ""
+"Nové transpondéry neboli nájdené! \n"
+"\n"
+"Podľa zadaných parametrov boli nájdené len tie, \n"
+"ktoré sa už nachádzajú v satellites.xml!"
+
+#: dmmBlindScan.py:767 plugin.py:1065
+msgid "No transponders were found for those search parameters!"
+msgstr "Podľa zadaných parametrov neboli nájdené žiadne transpondéry!"
+
+#: dmmBlindScan.py:723
+msgid ""
+"No tuner is enabled!\n"
+"Please setup your tuner settings before you start a service scan."
+msgstr ""
+"Nie je povolený tuner!\n"
+"Pred spustením vyhľadávania si prosím nastavte konfiguráciu tuneru."
+
+#: plugin.py:750 plugin.py:762 plugin.py:773 plugin.py:789
+#, python-format
+msgid "Not found blind scan utility '%s'!"
+msgstr "Nebol nájdený Blind scan modul '%s'!"
+
+#: dmmBlindScan.py:529
+msgid ""
+"Nothing to scan!\n"
+"Please setup your tuner settings before you start a service scan."
+msgstr ""
+"Nie je čo vyhľadávať!\n"
+"Pred spustením vyhľadávania si prosím nastavte konfiguráciu tuneru."
+
+#: dmmBlindScan.py:472
+msgid "Nothing to scan! Press Exit!"
+msgstr "Nie je čo vyhľadávať! Stlačte Exit!"
+
+#: dmmBlindScan.py:590 plugin.py:507
+msgid "Only free scan"
+msgstr "Len nekódované (FTA)"
+
+#: plugin.py:501
+msgid "Only scan unknown transponders"
+msgstr "Vyhľadať len neznáme transpondéry"
+
+#: plugin.py:195 plugin.py:1261
+msgid "Open xml file"
+msgstr "Otvoriť xml súbor"
+
+#: plugin.py:188
+msgid "Please setup your tuner configuration."
+msgstr "Nastavte si prosím konfiguráciu tuneru."
+
+#
+#: plugin.py:498
+msgid "Polarisation"
+msgstr "Polarizácia"
+
+#: plugin.py:291
+msgid "Press Green/OK to start the scan"
+msgstr "Stlačením Zelené/OK spustíte vyhľadávanie"
+
+#: dmmBlindScan.py:527
+msgid "Press OK to start the scan"
+msgstr "Stlačením OK spustíte vyhľadávanie"
+
+#: dmmBlindScan.py:107
+msgid "Press green to start service searching!"
+msgstr "Stlačením Zeleného tlač. spustíte prehľadávanie"
+
+#: plugin.py:1349 plugin.py:1376
+msgid "Rotor: "
+msgstr "Rotor: "
+
+#: dmmBlindScan.py:577 plugin.py:487
+msgid "Satellite"
+msgstr "Satelit"
+
+#: plugin.py:1407
+msgid "Satellite blind scan"
+msgstr "Blind scan satelitu"
+
+#: plugin.py:1413
+msgid "Scan satellites for new transponders"
+msgstr "Vyhľadávať satelity pre nové transpondéry"
+
+#: dmmBlindScan.py:580 plugin.py:492 plugin.py:495
+msgid "Scan start frequency"
+msgstr "Hľadať od frekvencie"
+
+#: plugin.py:499
+msgid "Scan start symbolrate"
+msgstr "Hľadať od symb. rýchlosti"
+
+#: dmmBlindScan.py:581 plugin.py:493 plugin.py:496
+msgid "Scan stop frequency"
+msgstr "Hľadať do frekvencie"
+
+#: plugin.py:500
+msgid "Scan stop symbolrate"
+msgstr "Hľadať do symb. rychlosti"
+
+#: plugin.py:759
+msgid "Scan unknown error!"
+msgstr "Neznáma chyba vyhľadávania"
+
+#: dmmBlindScan.py:761 plugin.py:1058
+#, python-format
+msgid ""
+"Search completed. %d transponders found.\n"
+"\n"
+"Details saved in:\n"
+"%s"
+msgstr ""
+"Prehľadávanie dokončené. Nájdených transpondérov: %d \n"
+"\n"
+"Podrobnosti uložené v:\n"
+"%s"
+
+#: dmmBlindScan.py:579 plugin.py:488
+msgid "Search type"
+msgstr "Typ hľadania"
+
+#: plugin.py:483
+msgid "Select a tuner that is configured for the satellite you wish to search"
+msgstr "Vyberte tuner, ktorý je nakonfigurovaný pre satelit, ktorý chcete prehľadať"
+
+#: plugin.py:487
+msgid "Select the satellite you wish to search"
+msgstr "Vyberte satelit, ktorý chcete prehľadať"
+
+#: plugin.py:1401
+msgid "Select type for scan:"
+msgstr "Voľba typu hľadania:"
+
+#: dmmBlindScan.py:422 plugin.py:347
+msgid "Sorry, this tuner is in use."
+msgstr "Prepáčte, tento tuner sa už používa"
+
+#: plugin.py:168
+msgid "Start scan"
+msgstr "Spustiť vyhľadávanie"
+
+#: plugin.py:499
+msgid "Symbol rate values are in megasymbols; enter a value between 1 and 44"
+msgstr "Hodnoty prenosovej rýchlosti sú v megasymboloch, zadajte hodnotu medzi 1 a 44"
+
+#: plugin.py:500
+msgid "Symbol rate values are in megasymbols; enter a value between 2 and 45"
+msgstr "Hodnoty prenosovej rýchlosti sú v megasymboloch, zadajte hodnotu medzi 2 a 45"
+
+#: dmmBlindScan.py:765 plugin.py:1067
+msgid "The blindscan run was cancelled by the user."
+msgstr "Spustený blindscan bol zrušený užívateľom."
+
+#: plugin.py:497
+#, python-format
+msgid "The suggested polarisation for this satellite is '%s'"
+msgstr "Doporučená polarizácia pre tento satelit je '%s'"
+
+#: dmmBlindScan.py:106
+msgid "Transponder searching finished!"
+msgstr "Prehľadávanie transpondéra skončilo!"
+
+#: dmmBlindScan.py:470
+msgid "Try to find used satellite transponders..."
+msgstr "Pokus o nájdenie používaných satelitných transpondérov..."
+
+#: dmmBlindScan.py:560 plugin.py:483
+msgid "Tuner"
+msgstr "Tuner"
+
+#: dmmBlindScan.py:478
+msgid "Use Sundtek full hardware blind scan!"
+msgstr ""
+
+#: dmmBlindScan.py:585
+msgid "Vertical"
+msgstr "Vertikálna"
+
+#: plugin.py:502
+msgid ""
+"When a neighbouring satellite is very strong this avoids searching transponders "
+"known to be coming from the neighbouring satellite"
+msgstr ""
+"Keď je susedný satelit veľmi silný, zabraňuje vo vyhľadávaní transpondérov zo "
+"sousedných satelitov"
+
+#: plugin.py:448 plugin.py:812 plugin.py:815
+msgid "circular left"
+msgstr "ľavá kruhová"
+
+#: plugin.py:447 plugin.py:810 plugin.py:817
+msgid "circular right"
+msgstr "pravá kruhová"
+
+#: plugin.py:1282 plugin.py:1295
+msgid "circular right & circular left"
+msgstr "pravá kruhová a ľavá kruhová"
+
+#: plugin.py:446
+msgid "circular right and circular left"
+msgstr "pravá kruhová a ľavá kruhová"
+
+#: plugin.py:445 plugin.py:819
+msgid "horizontal"
+msgstr "horizontálna"
+
+#: dmmBlindScan.py:638 plugin.py:406 plugin.py:410
+msgid "no"
+msgstr "nie"
+
+#: dmmBlindScan.py:668 plugin.py:416
+msgid "save to XML file"
+msgstr "uložiť do súboru XML"
+
+#: dmmBlindScan.py:667 plugin.py:415
+msgid "scan for channels"
+msgstr "vyhľadať kanály"
+
+#: plugin.py:411
+msgid "up to 1 degree"
+msgstr "až do 1 stupňa"
+
+#: plugin.py:412
+msgid "up to 2 degrees"
+msgstr "až do 2 stupňov"
+
+#: plugin.py:413
+msgid "up to 3 degrees"
+msgstr "až do 3 stupňov"
+
+#: plugin.py:444 plugin.py:821
+msgid "vertical"
+msgstr "vertikálna"
+
+#: plugin.py:1275
+msgid "vertical & horizontal"
+msgstr "vertikálna a horizontálna"
+
+#: plugin.py:443
+msgid "vertical and horizontal"
+msgstr "vertikálna a horizontálna"
+
+#: dmmBlindScan.py:638 plugin.py:406
+msgid "yes"
+msgstr "áno"
+
+#: dmmBlindScan.py:638 plugin.py:406
+msgid "yes (keep feeds)"
+msgstr "áno (ponechať feedy)"
+
+msgid "You must use the power adapter."
+msgstr "Musíte použiť napájací adaptér."
+
+msgid "Step %d %d:%02d min"
+msgstr "Krok %d %d:%02d min"
+
+msgid "Scan Step in MHz(TBS5925)"
+msgstr "Krok hľadania v MHz(TBS5925)"
+
+msgid "Smaller steps takes longer but scan is more thorough"
+msgstr "Menšie kroty zaberú viac času, vyhľadávanie je však viac dôsledné"
