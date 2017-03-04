@@ -16,6 +16,8 @@ from ServiceReference import ServiceReference
 from Screens.ChannelSelection import ChannelContextMenu, OFF, MODE_TV, service_types_tv
 from Components.ChoiceList import ChoiceEntryComponent
 from Tools.BoundFunction import boundFunction
+from Components.SystemInfo import SystemInfo
+from Components.NimManager import nimmanager
 import EpgLoadSaveRefresh
 import os
 # Plugin
@@ -49,13 +51,15 @@ config.plugins.epgrefresh.stop_on_mainmenu = ConfigYesNo(default = True)
 config.plugins.epgrefresh.lastscan = ConfigNumber(default = 0)
 config.plugins.epgrefresh.timeout_shutdown = ConfigInteger(default = 2, limits= (2, 30))
 config.plugins.epgrefresh.parse_autotimer = ConfigYesNo(default = False)
-config.plugins.epgrefresh.adapter = ConfigSelection(choices = [
-		("main", _("Main Picture")),
-		("pip", _("Picture in Picture")),
-		("pip_hidden", _("Picture in Picture (hidden)")),
-		("record", _("Fake recording")),
-	], default = "main"
-)
+
+adapter_choices = [("main", _("Main Picture"))]
+if SystemInfo.get("NumVideoDecoders", 1) > 1:
+	adapter_choices.append(("pip", _("Picture in Picture")))
+	adapter_choices.append(("pip_hidden", _("Picture in Picture (hidden)")))
+if len(nimmanager.nim_slots) > 1:
+	adapter_choices.append(("record", _("Fake recording")))
+config.plugins.epgrefresh.adapter = ConfigSelection(choices = adapter_choices, default = "main")
+
 config.plugins.epgrefresh.add_to_refresh = ConfigSelection(choices = [
 		("0", _("nowhere")),
 		("1", _("event info")),
@@ -68,6 +72,7 @@ config.plugins.epgrefresh.show_help = ConfigYesNo(default = True)
 config.plugins.epgrefresh.save_epg = ConfigYesNo(default = False)
 config.plugins.epgrefresh.setup_epg = ConfigSelection(choices = [("1", _("Press OK"))], default = "1")
 config.plugins.epgrefresh.day_profile = ConfigSelection(choices = [("1", _("Press OK"))], default = "1")
+
 config.plugins.epgrefresh.skipProtectedServices = ConfigSelection(choices = [
 		("bg_only", _("Background only")),
 		("always", _("Foreground also")),
