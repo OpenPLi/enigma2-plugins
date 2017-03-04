@@ -23,12 +23,12 @@ from Components.config import config, getConfigListEntry
 
 from EPGRefresh import epgrefresh
 from EPGSaveLoadConfiguration import EPGSaveLoadConfiguration
-from Components.SystemInfo import SystemInfo
+from Components.NimManager import nimmanager
 from enigma import getDesktop
 from Screens.MessageBox import MessageBox
 
 
-VERSION = "1.6"
+VERSION = "1.7"
 
 weekdays = [
 	_("Monday"),
@@ -111,7 +111,7 @@ class EPGRefreshConfiguration(Screen, ConfigListScreen):
 			getConfigListEntry(_("Show 'EPGRefresh now' in main menu"), config.plugins.epgrefresh.start_on_mainmenu, _("If enabled, show 'EPGRefresh now' in main menu when currently no EPGRefresh is running.")),
 			getConfigListEntry(_("Show 'Stop running EPGRefresh' in main menu"), config.plugins.epgrefresh.stop_on_mainmenu, _("If enabled, show 'Stop running EPGRefresh' in main menu when EPGPRefresh is running.")),
 				]
-		if SystemInfo.get("NumVideoDecoders", 1) > 1:
+		if len(nimmanager.nim_slots) > 1:
 			self.list.insert(3, getConfigListEntry(_("Refresh EPG using"), config.plugins.epgrefresh.adapter, _("If you want to refresh the EPG in background, you can choose the method which best suits your needs here, e.g. hidden, fake recording or regular Picture in Picture.")))
 		if config.ParentalControl.servicepinactive.value:
 			self.list.append(getConfigListEntry(_("Skip protected Services"), config.plugins.epgrefresh.skipProtectedServices, _("Select mode the refresh for services/bouquets parental control.")))
