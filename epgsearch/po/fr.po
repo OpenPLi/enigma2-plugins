@@ -1,0 +1,340 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-03 16:48+0100\n"
+"PO-Revision-Date: 2017-03-03 17:53+0100\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.12\n"
+"Last-Translator: \n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Language: fr_FR\n"
+
+#: EPGSearch.py:326
+#, python-format
+msgid " (%d min)"
+msgstr " (%d min)"
+
+#: EPGSearch.py:332
+#, python-format
+msgid " (%s%d min)"
+msgstr " (%s%d min)"
+
+#: EPGSearchSetup.py:46
+msgid "Add \"Search event in EPG\" to channel menu"
+msgstr "Ajouter \"Rechercher évènement dans EPG\" dans le menu des chaînes"
+
+#: EPGSearchSetup.py:45
+msgid "Add \"Search event in EPG\" to event menu"
+msgstr "Ajouter \"Rechercher évènement dans EPG\" dans le menu des évènements"
+
+#: EPGSearchSetup.py:40
+msgid "Add \"Search\" Button to EPG"
+msgstr "Ajouter le bouton \"Recherche\" dans EPG"
+
+#: EPGSearch.py:568
+msgid "Add timer"
+msgstr "Ajouter une programmation (timer)"
+
+#: EPGSearchSetup.py:46
+msgid ""
+"Adds \"Search event in EPG\" item into the channel selection context menu "
+"(needs restart GUI)"
+msgstr ""
+"Ajouter \"Rechercher évènement dans EPG\" dans le menu contextuel de la "
+"sélection des chaînes (nécessite de redémarrer l'IGU)."
+
+#: EPGSearchSetup.py:45
+msgid ""
+"Adds \"Search event in EPG\" item into the event menu (needs restart GUI)"
+msgstr ""
+"Ajouter \"Rechercher évènement dans EPG\" dans le menu des évènements "
+"(nécessite de redémarrer l'IGU)."
+
+#: EPGSearch.py:1057 EPGSearchSetup.py:69
+msgid "Cancel"
+msgstr "Annuler"
+
+#: EPGSearch.py:1095
+msgid "Channel Selection"
+msgstr "Sélection de la chaîne"
+
+#: plugin.py:54 EPGSearch.py:599 EPGSearch.py:709
+msgid "Choice list"
+msgstr "Liste des choix"
+
+#: plugin.py:46
+msgid "Choice list EPGSearch"
+msgstr "Liste des choix RechercheEPG"
+
+#: EPGSearch.py:721
+msgid "Choice list RED Button"
+msgstr "Liste des choix bouton ROUGE"
+
+#: EPGSearchSetup.py:43
+msgid "Choosing an encoding. \"UTF-8\" to search for EPG cyrillic."
+msgstr "Choisir un encodage. \"UTF-8\" pour chercher dans l'EPG cyrillique"
+
+#: EPGSearch.py:802
+msgid "Clear history"
+msgstr "Effacer l'historique"
+
+#: EPGSearch.py:850
+#, python-format
+msgid "Could not read AutoTimer timer list: %s"
+msgstr "Impossible de lire la liste des AutoTimer: %s"
+
+#: EPGSearchSetup.py:49
+msgid "Display name service as in bouquets"
+msgstr "Afficher le nom du service comme dans les bouquets"
+
+#: EPGSearch.py:620
+msgid "EPG Search"
+msgstr "Recherche EPG"
+
+#: plugin.py:131
+msgid "EPGSearch"
+msgstr "RechercheEPG"
+
+#: EPGSearchSetup.py:33 EPGSearchSetup.py:87
+msgid "EPGSearch Setup"
+msgstr "Configuration RechercheEPG"
+
+#: EPGSearchSetup.py:43
+msgid "Encoding Search to EPG"
+msgstr "Encodage des recherches dans l'EPG"
+
+#: EPGSearch.py:775
+msgid "Enter text to search for"
+msgstr "Entrer le texte à rechercher"
+
+#: EPGSearch.py:794
+msgid "Export selected as AutoTimer"
+msgstr "Exporter la sélection en tant qu'AutoTimer"
+
+#: EPGSearch.py:553
+msgid "History"
+msgstr "Historique"
+
+#: EPGSearchSetup.py:39
+msgid ""
+"How many entries to keep in the search history at most. 0 disables history "
+"entirely!"
+msgstr ""
+"Combien d'entréesde recherche conserver dans l'historique au maximum. 0 "
+"pour désactiver l'historique!"
+
+#: EPGSearchSetup.py:49
+msgid ""
+"If 'Search only bouquets' is enabled, show service name as in bouquets for "
+"renamed services."
+msgstr ""
+"Si 'Chercher seulement dans les  bouquets' est activé, affiche le nom du "
+"service comme dans les bouquets pour les services renommés."
+
+#: EPGSearchSetup.py:48
+msgid ""
+"If this setting is enabled, searching EPG in only services in user bouquets."
+msgstr ""
+"Si ce paramètre est activé, la recherche EPG se fait uniquement sur les "
+"services qui sont dans les bouquets."
+
+#: EPGSearchSetup.py:40
+msgid ""
+"If this setting is enabled, the plugin adds a \"Search\" Button to the "
+"regular EPG."
+msgstr ""
+"Si ce paramètre est activé, le plugin ajouters un bouton \"Recherche\" dans "
+"l'EPG habituel."
+
+#: EPGSearchSetup.py:42
+msgid "If this setting is enabled, the plugin adds picons."
+msgstr ""
+"Si ce paramètre est activé, le plugin affiche les picons dans les résultats."
+
+#: EPGSearch.py:792
+msgid "Import from AutoTimer"
+msgstr "Importer depuis un AutoTimer"
+
+#: EPGSearch.py:781
+msgid "Import from EPG"
+msgstr "Importer depuis l'EPG"
+
+#: EPGSearch.py:780
+msgid "Import from Timer"
+msgstr "Importer depuis les Timers (programmations)"
+
+#: EPGSearchSetup.py:39
+msgid "Length of History"
+msgstr "Longueur de l'historique"
+
+#: EPGSearch.py:928
+msgid "List of history is cleared !"
+msgstr "La liste de l'historique a été effacée!"
+
+#: EPGSearch.py:603 EPGSearch.py:717
+msgid "Lookup in TMBD"
+msgstr "Rechecher dans TMDB"
+
+#: EPGSearch.py:552
+msgid "New Search"
+msgstr "Nouvelle recherche"
+
+#: EPGSearch.py:946
+msgid "No history !"
+msgstr "Pas d'historique!"
+
+#: EPGSearch.py:1058 EPGSearchSetup.py:68
+msgid "OK"
+msgstr "OK"
+
+#: EPGSearch.py:799
+msgid "Open selected in IMDb"
+msgstr "Ouvrir la sélection dans IMDB"
+
+#: EPGSearch.py:718
+msgid "Partnerbox Entries"
+msgstr "Entrées du récepteur partenaire"
+
+#: EPGSearch.py:793
+msgid "Save search as AutoTimer"
+msgstr "Sauvegarder la recherche comme un AutoTimer"
+
+#: plugin.py:42 plugin.py:52
+msgid "Search"
+msgstr "Recherche"
+
+#: plugin.py:132
+msgid "Search EPG by title event"
+msgstr "Rechercher un évènement dans l'EPG par son titre"
+
+#: plugin.py:152 plugin.py:154
+msgid "Search event in EPG"
+msgstr "Rechercher l'évènement dans l'EPG"
+
+#: EPGSearch.py:797
+msgid "Search for TMDb info"
+msgstr "Recherche les infos de TMDB"
+
+#: EPGSearchSetup.py:48
+msgid "Search only bouquets"
+msgstr "Chercher uniquement dans les bouquets"
+
+#: EPGSearchSetup.py:47
+msgid "Search strictness"
+msgstr "Rigueur de la recherche"
+
+#: EPGSearchSetup.py:44
+msgid "Search type"
+msgstr "Type de recherche"
+
+#: EPGSearchSetup.py:50
+msgid "Search type for filter"
+msgstr "Type de recherche pour le filtre"
+
+#: EPGSearch.py:1072
+msgid "Select a timer to search"
+msgstr "Choisir un timer à rechercher"
+
+#: plugin.py:45 EPGSearch.py:720
+msgid "Select action:"
+msgstr "Choisir l'action:"
+
+#: plugin.py:43
+msgid "Select channel"
+msgstr "Sélectionner une chaîne"
+
+#: EPGSearch.py:861 EPGSearch.py:940
+msgid "Select text to search for"
+msgstr "Sélectionner le texte à rechercher"
+
+#: EPGSearchSetup.py:50
+msgid ""
+"Select type for filter search. Press button P +/- for show/hide filter in "
+"description after search."
+msgstr ""
+"Sélectionner le type de filtre de recherche. Appuyez sur P+/- pour afficher/"
+"masquer le filtre dans la description après la recherche."
+
+#: EPGSearchSetup.py:44
+msgid ""
+"Select type for search, \"partial match\" for the most extensive search."
+msgstr ""
+"Sélectionner le type de recherche, \"correspondance partielle\" pour la "
+"recherche la plus étendue."
+
+#: EPGSearchSetup.py:41
+msgid "Select type: 'Search and Select channel' or 'Search'."
+msgstr ""
+"Sélectionner le type: 'Rechercher et sélectionner la chaîne' ou "
+"'Rechercher'."
+
+#: EPGSearchSetup.py:47
+msgid "Select whether or not you want to enforce case correctness."
+msgstr ""
+"Sélectionne si vous voulez ou pas forcer le respect de la casse (majuscule "
+"ou minuscule)."
+
+#: EPGSearch.py:804
+msgid "Setup"
+msgstr "Configuration"
+
+#: EPGSearch.py:803
+msgid "Timers list"
+msgstr "Liste des programmations (timers)"
+
+#: EPGSearchSetup.py:41
+msgid "Type blue Button"
+msgstr "Type bouton bleu"
+
+#: EPGSearchSetup.py:42
+msgid "Use Picons"
+msgstr "Utiliser les picons"
+
+#: EPGSearch.py:789
+msgid "Zap to selected service"
+msgstr "Zapper vers le service sélectionné"
+
+#: __init__.py:36
+msgid "case-insensitive search"
+msgstr "recherche non sensible à la casse"
+
+#: __init__.py:36
+msgid "case-sensitive search"
+msgstr "recherche sensible à la casse"
+
+#: __init__.py:29
+msgid "choice (Search and standard)"
+msgstr "Rechercher et sélectionner la chaîne"
+
+#: __init__.py:35 __init__.py:37
+msgid "exact match"
+msgstr "correspondance parfaite"
+
+#: __init__.py:29
+msgid "only Search"
+msgstr "seulement rechercher"
+
+#: __init__.py:35 __init__.py:37
+msgid "partial match"
+msgstr "correspondance partielle"
+
+#: plugin.py:145
+msgid "search EPG"
+msgstr "recherche EPG"
+
+#: plugin.py:139
+msgid "search EPG..."
+msgstr "recherche EPG..."
+
+#: __init__.py:37
+msgid "title starts with"
+msgstr "titre commence par"
