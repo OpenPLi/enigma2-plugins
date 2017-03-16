@@ -108,3 +108,13 @@ msgstr ""
 #: plugin.py:44 plugin.py:444
 msgid "yellow"
 msgstr ""
+
+msgid "Save"
+msgstr ""
+
+msgid "Set slider step"
+msgstr ""
+
+msgid "Set slider step (1 - 20):"
+msgstr ""
+
