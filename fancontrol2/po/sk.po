@@ -241,7 +241,7 @@ msgstr "Typ ventilátora"
 
 #: FC2.txt:702
 msgid "Fan off in Idle Mode"
-msgstr "Ventilátor vypnutý v móde nečinnosti"
+msgstr "Ventilátor vypnutý v pohotovostnom režime"
 
 #: FC2.txt:703
 msgid "min Speed rpm"
@@ -257,7 +257,7 @@ msgstr "Kľudová teplota °C"
 
 #: FC2.txt:706
 msgid "End temperature C"
-msgstr "Maximálna teplota °C"
+msgstr "Maximálna tepl. °C"
 
 #: FC2.txt:707
 msgid "Initial Voltage"
