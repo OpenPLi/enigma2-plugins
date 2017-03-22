@@ -51,7 +51,7 @@ msgstr "Priradiť tlačidlu"
 
 #: src/AC3main.py:78
 msgid "Open plugin menu"
-msgstr "Utvoriť menu pluginu"
+msgstr "Otvoriť menu pluginu"
 
 #: src/AC3main.py:79 src/AC3main.py:86
 msgid "Save values and close plugin"
@@ -59,7 +59,7 @@ msgstr "Uložiť hodnoty a zatvoriť plugin"
 
 #: src/AC3main.py:80 src/AC3main.py:85
 msgid "Discard changes and close plugin"
-msgstr "Zahodiť zmeny a zavrieť plugin"
+msgstr "Zrušiť zmeny a zavrieť plugin"
 
 #: src/AC3main.py:81 src/AC3main.py:82
 msgid "Change active delay"
@@ -168,7 +168,7 @@ msgstr "Uložiť hodnoty a zatvoriť okno"
 
 #: src/MovableScreen.py:18 src/MovableScreen.py:23
 msgid "Discard changes and close screen"
-msgstr "Zahodiť zmeny a zatvoriť okno"
+msgstr "Zrušiť zmeny a zatvoriť okno"
 
 #: src/MovableScreen.py:19
 msgid "Move screen to the left"
@@ -228,7 +228,7 @@ msgstr "Resetovať uloženú polohu"
 
 #: src/plugin.py:30 src/plugin.py:36 src/plugin.py:38
 msgid "Audio Sync"
-msgstr "Synchronizáciu zvuku"
+msgstr "Synchronizácia zvuku"
 
 #: src/plugin.py:36 src/plugin.py:38
 msgid "sets the Audio Delay (LipSync)"
