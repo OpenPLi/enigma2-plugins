@@ -2,9 +2,9 @@
 '''
 Created on 30.09.2012
 $Author: michael $
-$Revision: 1380 $
-$Date: 2016-09-09 14:14:14 +0200 (Fri, 09 Sep 2016) $
-$Id: FritzCallFBF.py 1380 2016-09-09 12:14:14Z michael $
+$Revision: 1386 $
+$Date: 2017-01-19 18:16:38 +0100 (Thu, 19 Jan 2017) $
+$Id: FritzCallFBF.py 1386 2017-01-19 17:16:38Z michael $
 '''
 
 # C0111 (Missing docstring)
@@ -18,7 +18,7 @@ $Id: FritzCallFBF.py 1380 2016-09-09 12:14:14Z michael $
 # W0110 deprecated-lambda
 # C0302 too-many-lines
 # C0410 multiple-imports
-# pylint: disable=C0111,C0103,C0301,W0603,W0141,W0403,C0302
+# pylint: disable=C0111,C0103,C0301,W0603,W0403,C0302
 
 from urllib import urlencode
 import re, time, hashlib, logging, StringIO, csv
@@ -110,7 +110,7 @@ class FritzCallFBF(object):
 		self._callList = []
 		self._callType = config.plugins.FritzCall.fbfCalls.value
 		self.password = decode(config.plugins.FritzCall.password.value)
-		self.information = (None, None, None, None, None, None, None, None, None, None)
+		self.information = (None, None, None, None, None, [False, False, False, False, False, False], None, None, None, None)
 		self.getInfo(None)
 		self.blacklist = ([], [])
 		self.readBlacklist()
@@ -2789,12 +2789,12 @@ class FritzCallFBF_06_35(object):
 		html = re.sub("<a href[^>]*>", "", html)
 		html = re.sub("</a>", "", html)
 
-# 		linkP = open("/tmp/FritzCall_Phonebook.htm", "w")
-# 		linkP.write(html)
-# 		linkP.close()
+		if self.logger.getEffectiveLevel() == logging.DEBUG:
+			linkP = open("/tmp/FritzCall_Phonebook.htm", "w")
+			linkP.write(html)
+			linkP.close()
 
-		entrymask = re.compile(r'<td class="tname" title="([^"]*)">[^<]*</td><td class="tnum"(?: datalabel="[^"]*")?>((?:<a class="print"[^>]+>)?[^<]+(?:<br>(?:<a class="print"[^>]+>)?[^<]+)*)</td><td class="ttype">([^<]+(?:<br>[^<]+)*)</td><td class="tcode"(?: datalabel="[^"]*")?>([^<]*(?:<br>[^<]*)*)</td><td class="tvanity"(?: datalabel="[^"]*")?>([^<]*(?:<br>[^<]*)*)</td>', re.S)
-		# entrymask = re.compile(r'<td class="tname" title="([^"]*)">[^<]*</td><td class="tnum"(?: datalabel="[^"]*")?>(?:&lt;a class="print"[^&gt;]+&gt;)?([^<]+(?:<br>[^<]+)*)</td><td class="ttype">([^<]+(?:<br>[^<]+)*)</td><td class="tcode"(?: datalabel="[^"]*")?>([^<]*(?:<br>[^<]*)*)</td><td class="tvanity"(?: datalabel="[^"]*")?>([^<]*(?:<br>[^<]*)*)</td>', re.S)
+		entrymask = re.compile(r'<td class="tname" title="([^"]*)">[^<]*</td><td class="tnum"(?: datalabel="[^"]*")?>((?:<a class="print"[^>]+>)?[^<]+(?:<br>(?:<a class="print"[^>]+>)?[^<]+)*)</td><td class="ttype"(?: datalabel="[^"]*")?>([^<]*(?:<br>[^<]*)*)</td><td class="tcode"(?: datalabel="[^"]*")?>([^<]*(?:<br>[^<]*)*)</td><td class="tvanity"(?: datalabel="[^"]*")?>([^<]*(?:<br>[^<]*)*)</td>', re.S)
 		entries = entrymask.finditer(html)
 		for found in entries:
 			# self.debug("processing entry for '''%s'''" % repr(found.groups()))
