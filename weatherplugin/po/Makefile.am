@@ -1,3 +1,3 @@
 PLUGIN = WeatherPlugin
-LANGS = de fa
+LANGS = de fa sk
 include $(top_srcdir)/Rules-po.mak
