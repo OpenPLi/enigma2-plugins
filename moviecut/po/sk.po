@@ -1,0 +1,174 @@
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: MovieCut\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-06-23 18:01+0300\n"
+"PO-Revision-Date: 2017-03-30 09:59+0200\n"
+"Last-Translator: Andrej Tobola <andrej.tobola@gmail.com>\n"
+"Language-Team: \n"
+"Language: sk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.11\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+
+#: plugin.py:23
+msgid "Execute cuts..."
+msgstr "Vykonať strihy..."
+
+#: plugin.py:37
+msgid "Don't cut"
+msgstr "Nestrihať"
+
+#: plugin.py:38
+msgid "Replace the original movie with the cut movie"
+msgstr "Nahradiť pôvodný film zostrihaným filmom"
+
+#: plugin.py:39
+msgid "Place the cut movie in a new file ending with \" cut\""
+msgstr "Uložiť zostrihaný film do nového súboru končiaceho na \"cut\""
+
+#: plugin.py:40
+msgid "Advanced cut specification..."
+msgstr "Pokročilé špecifikácie strihu..."
+
+#: plugin.py:42
+#, python-format
+msgid "How would you like to cut \"%s\"?"
+msgstr "Ako chcete zostrihať \"%s\"?"
+
+#: plugin.py:86
+msgid "OK"
+msgstr "OK"
+
+#: plugin.py:87
+msgid "Cancel"
+msgstr "Zatvoriť"
+
+#: plugin.py:95
+msgid "No"
+msgstr "Nie"
+
+#: plugin.py:95
+msgid "Yes"
+msgstr "Áno"
+
+#: plugin.py:103
+msgid "Cutlist"
+msgstr "Zoznam strihov"
+
+#: plugin.py:103
+msgid "Manual specification"
+msgstr "Ručná špecifikácia"
+
+#: plugin.py:117
+msgid "Replace original:"
+msgstr "Nahradiť originál:"
+
+#: plugin.py:118
+msgid "New filename:"
+msgstr "Nový názov súboru:"
+
+#: plugin.py:119
+msgid "New title:"
+msgstr "Nový titul:"
+
+#: plugin.py:120
+msgid "New description:"
+msgstr "Nový popis:"
+
+#: plugin.py:121
+msgid "New location:"
+msgstr "Nové umiestnenie:"
+
+#: plugin.py:122
+msgid "Cut source:"
+msgstr "Zdroj pre strih:"
+
+#: plugin.py:123
+msgid "Cuts (an IN OUT IN OUT ... sequence of hour:min:sec)"
+msgstr "Strihy (IN OUT IN OUT ... sekvencia hod:min:sek"
+
+#: plugin.py:130
+msgid "Cut Parameter Input"
+msgstr "Zadanie parametrov pre strih"
+
+#: plugin.py:178
+msgid "Choose target folder"
+msgstr "Vyberte cieľovú zložku"
+
+#: plugin.py:245
+#, python-format
+msgid "The movie \"%s\" is successfully cut"
+msgstr "Film \"%s\" bol úspešne zostrihaný"
+
+#: plugin.py:246 plugin.py:247 plugin.py:248 plugin.py:249 plugin.py:250
+#: plugin.py:251 plugin.py:252 plugin.py:253 plugin.py:254 plugin.py:255
+#, python-format
+msgid "Cutting failed for movie \"%s\""
+msgstr "Strih filmu \"%s\" zlyhal"
+
+#: plugin.py:246
+msgid "Bad arguments"
+msgstr "Chybný argument"
+
+#: plugin.py:247
+msgid "Couldn't open input .ts file"
+msgstr "Nie je možné otvoriť vstupný .ts súbor"
+
+#: plugin.py:248
+msgid "Couldn't open input .cuts file"
+msgstr "Nie je možné otvoriť vstupný .cuts súbor"
+
+#: plugin.py:249
+msgid "Couldn't open input .ap file"
+msgstr "Nie je možné otvoriť vstupný .ap súbor"
+
+#: plugin.py:250
+msgid "Couldn't open output .ts file"
+msgstr "Nie je možné otvoriť výstupný .ts súbor"
+
+#: plugin.py:251
+msgid "Couldn't open output .cuts file"
+msgstr "Nie je možné otvoriť výstupný .cuts súbor"
+
+#: plugin.py:252
+msgid "Couldn't open output .ap file"
+msgstr "Nie je možné otvoriť výstupný .ap súbor"
+
+#: plugin.py:253
+msgid "Empty .ap file"
+msgstr "Prázdny .ap súbor"
+
+#: plugin.py:254
+msgid "No cuts specified"
+msgstr "Nie sú určené strihy"
+
+#: plugin.py:255
+msgid "Read/write error (disk full?)"
+msgstr "Chyba čítania/zápisu (plný disk?)"
+
+#: plugin.py:256
+#, python-format
+msgid "Cutting was aborted for movie \"%s\""
+msgstr "Strih filmu \"%s\" bol prerušený"
+
+#: plugin.py:275
+#, python-format
+msgid "The movie \"%s\" is cut in the background."
+msgstr "Strih filmu \"%s\" je strihaný na pozadí."
+
+#: plugin.py:277
+#, python-format
+msgid ""
+"Another movie is currently cut.\n"
+"The movie \"%s\" will be cut in the background after it."
+msgstr ""
+"Práve prebieha strih iného filmu.\n"
+"Film \"%s\" bude potom zostrihaný na pozadí."
