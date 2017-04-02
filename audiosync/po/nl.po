@@ -151,3 +151,20 @@ msgstr "Welke vertragingen wilt u instellen..."
 msgid "sets the AC3 audio Delay (LipSync)"
 msgstr "Stel de AC3 audio vertraging in (LipSync)"
 
+msgid "Restart audio"
+msgstr "Herstart audio"
+
+msgid "Restart audio delay (in sec)"
+msgstr "Herstart audio vertraging (in sec)"
+
+msgid "after restart"
+msgstr "na herstart"
+
+msgid "after restart/standby"
+msgstr "na herstart/standby"
+
+msgid "after standby"
+msgstr "na standby"
+
+msgid "disabled"
+msgstr "uitgeschakeld"

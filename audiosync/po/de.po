@@ -264,6 +264,24 @@ msgstr "Audio Sync Setup"
 msgid "Setup for the Audio Sync Plugin"
 msgstr "Setup fürs Audio Sync Plugin"
 
+msgid "Restart audio"
+msgstr "Audio neu starten"
+
+msgid "Restart audio delay (in sec)"
+msgstr "Verzögerung (in sek)"
+
+msgid "after restart"
+msgstr "nach Neustart"
+
+msgid "after restart/standby"
+msgstr "nach Neustart/Standby"
+
+msgid "after standby"
+msgstr "nach Standby"
+
+msgid "disabled"
+msgstr "deaktiviert"
+
 #~ msgid "%s:"
 #~ msgstr "%s:"
 #~ msgid "Passthrough"
@@ -276,4 +294,6 @@ msgstr "Setup fürs Audio Sync Plugin"
 #~ msgstr "Verzögerung:"
 #~ msgid "sets the audio Delay (LipSync)"
 #~ msgstr "Setzt die verschiedenen Audio- Verzögerungen (LipSync)"
+
+
 
