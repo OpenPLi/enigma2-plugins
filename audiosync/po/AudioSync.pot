@@ -266,3 +266,21 @@ msgstr ""
 msgid "AC3 Lip Sync Setup"
 msgstr ""
 
+msgid "Restart audio"
+msgstr ""
+
+msgid "Restart audio delay (in sec)"
+msgstr ""
+
+msgid "after restart"
+msgstr ""
+
+msgid "after restart/standby"
+msgstr ""
+
+msgid "after standby"
+msgstr ""
+
+msgid "disabled"
+msgstr ""
+

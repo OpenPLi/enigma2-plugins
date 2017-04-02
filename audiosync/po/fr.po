@@ -244,3 +244,21 @@ msgstr "Configuration du plugin Audio Sync"
 
 msgid "AC3 Lip Sync Setup"
 msgstr "Configuration synchro des lèvres AC3"
+
+msgid "disabled"
+msgstr "désactivé"
+
+msgid "after restart"
+msgstr "après redémarrage"
+
+msgid "after standby"
+msgstr "après veille"
+
+msgid "after restart/standby"
+msgstr "après redémarrage/veille"
+
+msgid "Restart audio"
+msgstr "Redémarrer audio"
+
+msgid "Restart audio delay (in sec)"
+msgstr "Redémarrer le délai audio (en sec)"
