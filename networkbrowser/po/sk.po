@@ -51,7 +51,7 @@ msgid "Attempt to mount shares again"
 msgstr "Pokus o znovupripojenie zdieľania"
 
 msgid "Attempt to recover lost mounts (in background)"
-msgstr "Pokus obnoviť stratené pripojenia (na pozadí)"
+msgstr "Pokus obnoviť stratené pripojenia (na pozadí). "
 
 msgid "Browse network neighbourhood"
 msgstr "Prehľadávať siete"
@@ -126,7 +126,7 @@ msgid "Manage network shares"
 msgstr "Správa sieťových zdieľaní"
 
 msgid "Manage your network shares..."
-msgstr "Správa Vašich sieťových zdieľaní..."
+msgstr "Správa Vašich sieťových zdieľaní... "
 
 msgid "Mount again"
 msgstr "Znovu pripojiť"
@@ -223,7 +223,7 @@ msgid "Search for network shares"
 msgstr "Vyhľadať zdieľanie v sieti"
 
 msgid "Search for network shares..."
-msgstr "Vyhľadať sieťové zdieľania..."
+msgstr "Vyhľadať sieťové zdieľania... "
 
 msgid "Searching your network. Please wait..."
 msgstr "Prehľadávam Vašu sieť. Čakajte prosím..."
