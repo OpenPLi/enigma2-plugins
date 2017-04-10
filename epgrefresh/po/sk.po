@@ -356,7 +356,7 @@ msgid "Refresh EPG automatically"
 msgstr "Aktualizovať EPG automaticky"
 
 msgid "EPGRefresh needs to be explicitly started using the yellow button in this menu if this option is not enabled"
-msgstr "Ak je táto voľba nie je povolená, EPGRefresh nebude prebiehať automaticky a musí byť spustený pomocou žltého tlačidla v tejto ponuke."
+msgstr "Ak je táto voľba zakázaná, EPGRefresh nebude prebiehať automaticky a musí byť spustený pomocou žltého tlačidla v tejto ponuke."
 
 msgid "Show in extensions menu"
 msgstr "Zobrazovať v menu rozšírení"
