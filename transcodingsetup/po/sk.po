@@ -24,7 +24,7 @@ msgstr "Bitrate"
 
 #: plugin.py:153
 msgid "Default values for trancoding"
-msgstr "Predvolené hodnoty pre trancoding"
+msgstr "Predvolené hodnoty pre transcoding"
 
 #: plugin.py:159
 msgid "It seems your receiver is not supported!"
