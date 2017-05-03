@@ -1,0 +1,478 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ims\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-07 19:06+0300\n"
+"PO-Revision-Date: \n"
+"Last-Translator: ims <ims21@users.sourceforge.net>\n"
+"Language-Team: PLi <ims21@users.sourceforge.net>\n"
+"Language: cs_CZ\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+
+#: plugin.py:772
+msgid ""
+"\n"
+"\n"
+"The Editor-Funktions are beta (not full tested) !!!"
+msgstr ""
+"\n"
+"\n"
+"Funkce editoru jsou v beta verzi (nebylo plně otestováno) !!!"
+
+#: plugin.py:551
+msgid ""
+"\n"
+"\n"
+"You do it at your own risk!"
+msgstr ""
+"\n"
+"\n"
+"Děláte to na vlastní risk!"
+
+#: plugin.py:773
+msgid ""
+"\n"
+"The author are NOT RESPONSIBLE\n"
+"for DATA LOST OR DISORDERS !!!"
+msgstr ""
+"\n"
+"Autor není zodpovědný\n"
+"za ztrátu dat nebo poškození !!!"
+
+#: plugin.py:771
+msgid ""
+"\n"
+"have been CHANGED! Do you want to save it?\n"
+"\n"
+"WARNING!"
+msgstr ""
+"\n"
+"Bylo ZMĚNĚNO! Chcete uložit?\n"
+"\n"
+"POZOR!"
+
+#: plugin.py:1112 plugin.py:1238
+msgid ""
+"\n"
+"to:"
+msgstr ""
+"\n"
+"do:"
+
+#
+#: plugin.py:342 plugin.py:354 plugin.py:363
+msgid " Media-filter"
+msgstr " multimediální filtr"
+
+#: plugin.py:562 plugin.py:574 plugin.py:629 plugin.py:648 plugin.py:1146
+#: plugin.py:1164 plugin.py:1169
+#, python-format
+msgid ""
+"%s \n"
+"FAILED!"
+msgstr ""
+"%s \n"
+"SELHALO!"
+
+#: plugin.py:340
+msgid "ADDLINK"
+msgstr ""
+
+#
+#: plugin.py:349 plugin.py:358 plugin.py:372
+msgid "About"
+msgstr "O přijímači"
+
+#
+#: plugin.py:339
+msgid "Add directory to Bookmarks"
+msgstr "Přidat adresář do záložek"
+
+#: plugin.py:277
+msgid "BZ2-package:\\n"
+msgstr "BZ2-balíček:\\n"
+
+#: plugin.py:267
+msgid "Bootlogo-package:\\n"
+msgstr "Bootlogo-balíček:\\n"
+
+#: plugin.py:504
+msgid "Box: "
+msgstr "Přijímač: "
+
+#
+#: plugin.py:266 plugin.py:271 plugin.py:276 plugin.py:284 plugin.py:289
+#: plugin.py:294 plugin.py:341 plugin.py:353 plugin.py:362 plugin.py:534
+msgid "Cancel"
+msgstr "Zavřít"
+
+#
+#: plugin.py:347 plugin.py:368
+msgid "Create new directory"
+msgstr "Založit adresář"
+
+#
+#: plugin.py:445
+msgid "Create new directory in..."
+msgstr "Založit adresář v..."
+
+#: plugin.py:346 plugin.py:367
+msgid "Create new file"
+msgstr "Založit soubor"
+
+#: plugin.py:443
+msgid "Create new file in..."
+msgstr "Založit soubor v..."
+
+#: plugin.py:369
+msgid "Create softlink..."
+msgstr "Vytvořit softlink..."
+
+#: plugin.py:337
+msgid "DELLINK"
+msgstr ""
+
+#
+#: plugin.py:638
+msgid "Directory name error !"
+msgstr "Chyba v názvu adresáře!"
+
+#
+#: plugin.py:329
+msgid "Disable"
+msgstr "Zakázat"
+
+#: plugin.py:289
+msgid "Disassemble to bytecode..."
+msgstr "Disassemble na bytecode..."
+
+#
+#: plugin.py:547 plugin.py:551
+msgid "Do you realy want to DELETE:\n"
+msgstr "Opravdu chcete ODSTRANIT:\n"
+
+#
+#: plugin.py:295
+msgid "Do you want to execute?\\n"
+msgstr "Chcete provést?\\n?"
+
+#: plugin.py:448
+msgid "Do you want to set\n"
+msgstr "Chcete nastavit\n"
+
+#: plugin.py:1227
+msgid "Dream Explorer..."
+msgstr ""
+
+#: plugin.py:101 plugin.py:178 plugin.py:312 plugin.py:325 plugin.py:351
+#: plugin.py:360 plugin.py:374 plugin.py:399 plugin.py:405 plugin.py:422
+#: plugin.py:505 plugin.py:538 plugin.py:563 plugin.py:575 plugin.py:599
+#: plugin.py:611 plugin.py:620 plugin.py:630 plugin.py:639 plugin.py:649
+#: plugin.py:680 plugin.py:690 plugin.py:1147 plugin.py:1165 plugin.py:1170
+#: plugin.py:1234 plugin.py:1258
+msgid "Dream-Explorer"
+msgstr ""
+
+#: plugin.py:552
+msgid "Dream-Explorer - DELETE DIRECTORY..."
+msgstr "Dream-Explorer - ODSTRANIT ADRESÁŘ..."
+
+#: plugin.py:548
+msgid "Dream-Explorer - DELETE file..."
+msgstr "Dream-Explorer - ODSTRANIT soubor..."
+
+#: plugin.py:291
+msgid "Dream-Explorer : Disassemble..."
+msgstr ""
+
+#: plugin.py:268 plugin.py:273 plugin.py:278 plugin.py:286
+msgid "Dream-Explorer : Install..."
+msgstr "Dream-Explorer : Instalovat..."
+
+#: plugin.py:449 plugin.py:543 plugin.py:581 plugin.py:655 plugin.py:775
+msgid "Dream-Explorer..."
+msgstr ""
+
+#: plugin.py:455
+msgid ""
+"Dreambox-Explorer\n"
+"coded 2010 by Vali\n"
+"\n"
+"Support & Help on\n"
+"www.dreambox-tools.info"
+msgstr ""
+
+#
+#: plugin.py:794
+msgid "Edit line "
+msgstr "Upravit řádek "
+
+#
+#: plugin.py:331
+msgid "Enable"
+msgstr "Povolit"
+
+#: plugin.py:311
+msgid "Error by reading bookmarks !!!"
+msgstr "Chyba při čtení záložek !!!"
+
+#: plugin.py:404 plugin.py:421
+msgid "Error by writing bookmarks !!!"
+msgstr "Chyba při zápisu záložek !!!"
+
+#
+#: plugin.py:797
+msgid "Error..."
+msgstr "Chyba..."
+
+#: plugin.py:100
+msgid "Explore your box"
+msgstr "Průzkumník vašeho boxu"
+
+#: plugin.py:619
+msgid "File name error !"
+msgstr "Chyba v názvu souboru!"
+
+#: plugin.py:754
+msgid "File-Explorer"
+msgstr "Průzkumník souborů"
+
+#: plugin.py:272
+msgid "GZ-package:\\n"
+msgstr "GZ-balíček:\\n"
+
+#: plugin.py:245
+msgid "Incompatible MerlinMusicPlayer version!"
+msgstr "Nekompatibilní verze MerlinMusicPlayer!"
+
+#
+#: plugin.py:457
+msgid "Info..."
+msgstr "Informace..."
+
+#
+#: plugin.py:1066
+msgid "Input"
+msgstr "Zadání"
+
+#
+#: plugin.py:266
+msgid "Install new bootlogo..."
+msgstr "Instalovat nové bootlogo..."
+
+#
+#: plugin.py:271 plugin.py:276 plugin.py:284
+msgid "Install this package"
+msgstr "Instalovat tento balíček"
+
+#
+#: myFileList.py:210
+msgid "List of Storage Devices"
+msgstr "Seznam záznamových zařízení"
+
+#: plugin.py:1212
+msgid "Make a softlink..."
+msgstr "Vytvořit softlink..."
+
+#
+#: plugin.py:537
+msgid "My Bookmarks"
+msgstr "Záložky"
+
+#: plugin.py:921 plugin.py:934
+msgid "No more picture-files."
+msgstr "Nejsou již zádné obrázky."
+
+#: plugin.py:1018 plugin.py:1028
+msgid "No more playable files."
+msgstr "Nejsou již žádné přehratelné soubory."
+
+#: plugin.py:285
+msgid "OPKG-package:\\n"
+msgstr "OPKG-balíček:\\n"
+
+#
+#: plugin.py:350 plugin.py:359 plugin.py:373
+msgid "Options:\n"
+msgstr "Možnosti:\n"
+
+#: plugin.py:357
+msgid "Pack my bootlogo"
+msgstr "Zabalit moje bootlogo"
+
+#
+#: myFileList.py:212
+msgid "Parent Directory"
+msgstr "Rodičovský adresář"
+
+#
+#: plugin.py:866
+msgid "Picture-Explorer"
+msgstr "Přehrávač obrázků"
+
+#: plugin.py:398
+msgid "Picture-Player not available!"
+msgstr "Přehrávač obrázků není dostupný!"
+
+#
+#: plugin.py:366
+msgid "Preview all pictures"
+msgstr "Prohlédnout všechny obrázky"
+
+#: plugin.py:290
+msgid "Pyc-Script:\\n"
+msgstr ""
+
+#
+#: plugin.py:336
+msgid "Remove directory from Bookmarks"
+msgstr "Odstranit adresář ze záložek"
+
+#
+#: plugin.py:588
+msgid "Rename directory..."
+msgstr "Přejmenovat adresář..."
+
+#
+#: plugin.py:585
+msgid "Rename file..."
+msgstr "Přejmenovat soubor..."
+
+#: plugin.py:598 plugin.py:610
+#, python-format
+msgid ""
+"Rename: %s \n"
+"FAILED!"
+msgstr ""
+"Přejmenovat: %s \n"
+"SELHALO!"
+
+#: plugin.py:1055
+msgid "Running processes: "
+msgstr "Běžící procesy: "
+
+#
+#: plugin.py:1109
+msgid "Select Copy/Move location..."
+msgstr "Zvolte umístění pro Copy /Move..."
+
+#: plugin.py:370
+msgid "Set archive mode (644)"
+msgstr "Nastavit archivní mód (644)"
+
+#: plugin.py:371
+msgid "Set executable mode (755)"
+msgstr "Nastavit spouštěcí mód (755)"
+
+#: plugin.py:1216
+msgid "Set first the Softlink name ..."
+msgstr "Nejprve nastavte název Softlinku..."
+
+#
+#: plugin.py:348
+msgid "Set start directory"
+msgstr "Nastavit výchozí adresář"
+
+#: plugin.py:1233 plugin.py:1257
+msgid "Softlink name error !"
+msgstr "Chyba v názvu Softlinku!"
+
+#
+#: plugin.py:344 plugin.py:356 plugin.py:365
+msgid "Sort by date (bouquet-)"
+msgstr "Třídit podle stáří (bouquet-)"
+
+#: plugin.py:343 plugin.py:355 plugin.py:364
+msgid "Sort by name (bouquet+)"
+msgstr "Třídit podle názvu (bouquet+)"
+
+#
+#: plugin.py:294
+msgid "Start execution"
+msgstr "Spustit"
+
+#
+#: plugin.py:796
+msgid "This line is not editable!"
+msgstr "Tato řádka nejde upravit!"
+
+#: plugin.py:542 plugin.py:580 plugin.py:654
+msgid "Turn off the media-filter first."
+msgstr "Nejdříve vypněte multimediální filtr."
+
+#: plugin.py:294
+msgid "View this shell-script"
+msgstr "Prohlédnout tento shell-script"
+
+#: plugin.py:1112
+msgid "WARNING! they doing now COPY or MOVE\n"
+msgstr "POZOR! Právě se Kopíruje/Přemísťuje\n"
+
+#: plugin.py:1238
+msgid "WARNING! they make now a softlink from\n"
+msgstr "POZOR! Vytváří se softlink z\n"
+
+#: plugin.py:1227
+msgid "Write the new softlink name here:"
+msgstr "Zapište název nového softlinku:"
+
+#: plugin.py:323
+msgid "[All files] "
+msgstr "[všechny soubory] "
+
+#
+#: plugin.py:321
+msgid "[Media files] "
+msgstr "[multimediální soubory] "
+
+#: plugin.py:686 plugin.py:688
+msgid "[sort by Date] "
+msgstr "[podle stáří] "
+
+#: plugin.py:676 plugin.py:678
+msgid "[sort by Name] "
+msgstr "[podle názvu] "
+
+#: plugin.py:498 plugin.py:511
+msgid "last-mod "
+msgstr ""
+
+#
+#: plugin.py:875 plugin.py:916 plugin.py:929
+msgid "loading... "
+msgstr "nahrávání... "
+
+#
+#: plugin.py:499 plugin.py:512
+msgid "mode "
+msgstr "mód "
+
+#: plugin.py:829
+msgid "mvi-Explorer"
+msgstr ""
+
+#: plugin.py:585 plugin.py:588 plugin.py:794
+msgid "old:  "
+msgstr "starý: "
+
+#
+#: plugin.py:501 plugin.py:514
+msgid "read error"
+msgstr "chyba při čtení"
+
+#: plugin.py:905
+msgid "ready..."
+msgstr "připraven..."
+
+#: plugin.py:497 plugin.py:510
+msgid "size "
+msgstr "velikost "
+
+#
+#: plugin.py:919 plugin.py:932 plugin.py:938
+msgid "wait..."
+msgstr "čekejte..."
