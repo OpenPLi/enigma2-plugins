@@ -231,7 +231,7 @@ msgstr "Chyba..."
 
 #: plugin.py:100
 msgid "Explore your box"
-msgstr "Průzkumník vašeho boxu"
+msgstr "Průzkumník Vašeho boxu"
 
 #: plugin.py:619
 msgid "File name error !"

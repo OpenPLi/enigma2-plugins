@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Enigma 2 EPGSearch Plugin\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-21 10:41+0200\n"
-"PO-Revision-Date: 2017-05-03 11:24+0100\n"
+"PO-Revision-Date: 2017-05-03 16:13+0100\n"
 "Last-Translator: ims <ims21@users.sourceforge.net>\n"
 "Language-Team: PLi <ims21@users.sourceforge.net>\n"
 "Language: cs_CZ\n"
@@ -11,6 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Poedit 1.5.4\n"
 
 #: EPGSearch.py:326
 #, python-format
@@ -169,7 +170,7 @@ msgstr "OK"
 
 #: EPGSearch.py:799
 msgid "Open selected in IMDb"
-msgstr "Otevřít zvolené v IMDb"
+msgstr "Otevřít v IMDb"
 
 #: EPGSearch.py:718
 msgid "Partnerbox Entries"
@@ -185,7 +186,7 @@ msgstr "Hledat"
 
 #: plugin.py:132
 msgid "Search EPG by title event"
-msgstr "Prohledávání EPG podle názvu události"
+msgstr "Vyhledávání události v EPG podle názvu"
 
 #: plugin.py:152 plugin.py:154
 msgid "Search event in EPG"
