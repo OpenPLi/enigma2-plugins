@@ -489,11 +489,11 @@ msgstr "Zobrazovat 'Časovač' v E-Menu"
 
 #: PartnerboxSetup.py:102
 msgid "Show 'RemoteTimer' in Event View context menu"
-msgstr "Zobrazovat 'Časovač' v kontextovém E-Menu"
+msgstr "Zobrazovat 'Časovač' v Event View context menu"
 
 #: PartnerboxSetup.py:100
 msgid "Show 'RemoteTimer' in Eventinfo menu"
-msgstr "Zobrazovat 'Časovač' v E-Menu"
+msgstr "Zobrazovat 'Časovač' v menu události"
 
 #: PartnerboxSetup.py:105
 msgid "Show 'Stream current Service' in E-Menu"

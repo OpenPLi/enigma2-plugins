@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ims\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-03-06 13:23+0200\n"
-"PO-Revision-Date: 2017-05-03 11:34+0100\n"
+"PO-Revision-Date: 2017-05-03 21:16+0100\n"
 "Last-Translator: ims <ims21@users.sourceforge.net>\n"
 "Language-Team: PLi <ims21@users.sourceforge.net>\n"
 "Language: cs_CZ\n"
@@ -17,7 +17,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Poedit-SourceCharset: utf-8\n"
-"X-Generator: Poedit 1.5.4\n"
 
 #: AutoTimerOverview.py:136 AutoTimerSettings.py:120
 msgid " - Version: "
@@ -68,11 +67,11 @@ msgstr "Přidat"
 
 #: AutoTimerSettings.py:62
 msgid "Add \"Choice list AutoTimer\" menu button to multi-EPG"
-msgstr ""
+msgstr "Přidat \"Seznam možností AutoTimeru\" do menu multiEPG "
 
 #: AutoTimerSettings.py:61
 msgid "Add \"Choice list AutoTimer\" menu button to single-EPG"
-msgstr ""
+msgstr "Přidat \"Seznam možností AutoTimeru\" do menu EPG "
 
 #: plugin.py:513
 msgid "Add AutoTimer"
@@ -96,7 +95,7 @@ msgstr "Přidat časovač při konfliktu jako zakázaný"
 
 #: __init__.py:72
 msgid "Advanced"
-msgstr "Pokročilé"
+msgstr "pokročilé"
 
 #: AutoTimerEditor.py:659 AutoTimerImporter.py:197
 msgid "After event"
@@ -137,7 +136,7 @@ msgid ""
 "%d timer(s) were added."
 msgstr ""
 "AutoTimer\n"
-"%d časovač(ů) přídán(o)."
+"%d časovač(ů) přidán(o)."
 
 #: AutoTimerOverview.py:292
 msgid "AutoTimer Context Menu"
@@ -160,9 +159,9 @@ msgid "AutoTimer Settings"
 msgstr "AutoTimer nastavení"
 
 #: AutoTimerResource.py:105
-#, fuzzy, python-format
+#, python-format
 msgid "AutoTimer failed with error %s"
-msgstr "Filtry AutoTimeru"
+msgstr "AutoTimeru selhal s chybou %s"
 
 #: AutoTimerOverview.py:136
 msgid "AutoTimer overview"
@@ -205,9 +204,8 @@ msgid "By enabling this you will be notified about timer conflicts found during 
 msgstr "Při zapnutí budete při automatickém dotazování dostávat informáce o konfliktech časovače. Nepoužívá se zde žádná logika, takže Vás pak může ten samý konflikt obtěžovat stále dokola."
 
 #: AutoTimerSettings.py:72
-#, fuzzy
 msgid "By enabling this you will be notified about timer(s) added during automated polling. Just not in standby mode."
-msgstr "Při zapnutí budete při automatickém dotazování dostávat informáce o podobných časovačích. Nepoužívá se zde žádná logika, takže Vás pak může ten samý konflikt obtěžovat stále dokola"
+msgstr "Povolením tohoto nastavení budete upozorněni na časovač(e) přidané během automatizovaného zjišťování.  Nikoliv ale ve standby."
 
 #: AutoTimerEditor.py:479 AutoTimerEditor.py:1006 AutoTimerEditor.py:1221
 #: AutoTimerImporter.py:45 AutoTimerImporter.py:134 AutoTimerPreview.py:84
@@ -229,11 +227,11 @@ msgstr "Kanály"
 
 #: AutoTimerEditor.py:683
 msgid "Check for uniqueness in"
-msgstr ""
+msgstr "Kontrola jedinečnosti v"
 
 #: AutoTimerSettings.py:80
 msgid "Check the event id (eit) and remove the timer if there is no corresponding EPG event. Due to compatibility issues with SerienRecorder and IPRec, only timer created by AutoTimer are affected."
-msgstr ""
+msgstr "Zkontroluje ID události (eit) a odstraní časovač, pokud neexistuje odpovídající EPG událost. Vzhledem k problémům s kompatibilitou se systémy SerienRecorder a IPRec je ovlivněn pouze časovač vytvořený AutoTimerem."
 
 #: plugin.py:206 plugin.py:210 plugin.py:282 plugin.py:296
 msgid "Choice list AutoTimer"
@@ -248,9 +246,8 @@ msgid "Classic"
 msgstr "Klasický"
 
 #: AutoTimerOverview.py:276
-#, fuzzy
 msgid "Clone selected timer"
-msgstr "Odstranit vybraný AutoTimer"
+msgstr "Klonovat vybraný AutoTimer"
 
 #: AutoTimerOverview.py:105
 msgid "Close and forget changes"
@@ -286,7 +283,7 @@ msgstr "Vytvořit nový časovač s pomocníkem"
 
 #: AutoTimerSettings.py:82
 msgid "Create debug log file"
-msgstr ""
+msgstr "Založit debug log"
 
 #: AutoTimerEditor.py:307
 #, python-format
@@ -303,12 +300,11 @@ msgstr "Vlastní posun"
 
 #: AutoTimerEditor.py:592
 msgid "Defines where to search for duplicates (only title, short description or even extended description)"
-msgstr ""
+msgstr "Definuje, kde hledat duplicity (pouze název, krátký popis nebo i rozšířený popis)"
 
 #: AutoTimerSettings.py:54
-#, fuzzy
 msgid "Delay after editing (in sec)"
-msgstr "Posun po nahrávání (v minutách)"
+msgstr "Zpoždění po úpravách (sec)"
 
 #: AutoTimerOverview.py:91
 msgid "Delete"
@@ -336,7 +332,7 @@ msgstr "Upravit programy Autotimeru"
 
 #: plugin.py:504 plugin.py:511
 msgid "Edit Timers and scan for new Events"
-msgstr "Upravit časovače a vyhledat nové události"
+msgstr "Úpravy časovačů a hledání nových událostí"
 
 #: AutoTimerOverview.py:275
 msgid "Edit new timer defaults"
@@ -367,23 +363,20 @@ msgid "Enable Service Restriction"
 msgstr "Povolit programové omezení"
 
 #: AutoTimerSettings.py:59
-#, fuzzy
 msgid "Enable this to add item for create the AutoTimer into event menu (needs restart GUI)."
-msgstr "Přidá položku pro založení Autotimeru v menu události."
+msgstr "Přidá možnost pro založení Autotimeru do menu události (vyžaduje restart GUI)."
 
 #: AutoTimerSettings.py:58
 msgid "Enable this to be able to access the AutoTimer Overview from within the extension menu."
-msgstr "Povolení umožní připojit AutoTimer přehled do Extension menu."
+msgstr "Umožní připojit AutoTimer přehled do Extension menu."
 
 #: AutoTimerSettings.py:60
-#, fuzzy
 msgid "Enable this to be able to access the add to AutoTimer from the channel selection context menu."
-msgstr "Přidá položku pro založení Autotimeru v menu kanálů."
+msgstr "Přidá možnost pro založení Autotimeru z kontextového menu kanálů."
 
 #: AutoTimerEditor.py:700
-#, fuzzy
 msgid "Enable timer conflict detection"
-msgstr "Povolit programové omezení"
+msgstr "Povolit detekci konfliktu časovače"
 
 #: AutoTimerEditor.py:609 AutoTimerImporter.py:145 AutoTimerWizard.py:113
 msgid "Enabled"
@@ -411,7 +404,7 @@ msgstr "Zadejte nebo upravte odpovídající název"
 
 #: AutoTimerEditor.py:1153
 msgid "Enter or edit text"
-msgstr "Zatejte nebo upravte text"
+msgstr "Zadejte nebo upravte text"
 
 #: AutoTimerList.py:128
 msgid "Everyday"
@@ -428,7 +421,7 @@ msgstr "Kromě"
 
 #: AutoTimerEditor.py:663
 msgid "Execute \"after event\" during timespan"
-msgstr "Provést \"po skončení\" v časovom úseku"
+msgstr "Provést \"po skončení\" v časovém úseku"
 
 #: AutoTimerEditor.py:1073
 msgid "Filter"
@@ -475,7 +468,7 @@ msgstr "Nápověda"
 
 #: AutoTimerSettings.py:79
 msgid "If 0, the popup will remain open."
-msgstr ""
+msgstr "Pokud je 0, zůstane vyskakovací okno otevřené."
 
 #: AutoTimerSettings.py:66
 msgid "If a timer conflict occurs, AutoTimer will search outside the timespan for a similar event and add it."
@@ -483,7 +476,7 @@ msgstr "Pokud dojde ke konfliktu časovače, AutoTimer bude hledat mimo časový
 
 #: AutoTimerSettings.py:78
 msgid "If enabled, the polling will be skipped if EPGRefresh is currently running."
-msgstr "Jestliže je povoleno, pak se nebude vyhledávání při probíhající aktualizaci EPG."
+msgstr "Jestliže je povoleno, pak se nebude vyhledávat během práce EPGRefresh."
 
 #: AutoTimerSettings.py:75
 msgid "If enabled, the polling will be skipped if a recording is in progress."
@@ -491,36 +484,36 @@ msgstr "Jestliže je povoleno, pak se nebude vyhledávání při probíhajícím
 
 #: AutoTimerSettings.py:77
 msgid "If the style is advanced, you will see more information about each auto timer."
-msgstr ""
+msgstr "Při rozšířeném stylu uvidíte více informací o každém automatickém časovači."
 
 #: AutoTimerSettings.py:82
 msgid "If this enabled, debug Autotimer write in log file."
-msgstr ""
+msgstr "Jestliže je povoleno, Autotimer zapisuje debug do log souboru."
 
 #: AutoTimerSettings.py:84
 msgid "If this enabled, debug log print in console mode start enigma2."
-msgstr ""
+msgstr "Vytiskněte protokol ladění v režimu konzoly enigma2."
 
 #: AutoTimerSettings.py:65
-#, fuzzy, python-format
+#, python-format
 msgid "If this is enabled an existing timer will also be considered recording an event if it records at least 80% of the it."
 msgstr "Při zapnutí této funkce se bude existující časovač považovat za nahrávající, jestliže nahraje aspoň 80 procent programu."
 
 #: AutoTimerSettings.py:62
 msgid "If this is enabled, up on the MENU button in the multi-EPG will list of choices for AutoTimer."
-msgstr ""
+msgstr "Jestliže je povoleno, v menu v multi-EPG se zobrazí seznam možností pro AutoTimer."
 
 #: AutoTimerSettings.py:61
 msgid "If this is enabled, up on the Menu button in the standard single-EPG will list of choices for AutoTimer."
-msgstr ""
+msgstr "Jestliže je povoleno, v menu v EPG se zobrazí seznam možností pro AutoTimer."
 
 #: AutoTimerSettings.py:69
 msgid "If this is selected, the name of the respective AutoTimer will be added as a tag to timers created by this plugin."
-msgstr ""
+msgstr "Název příslušného AutoTimeru bude přidán jako tag časovačům vytvořených tímto pluginem."
 
 #: AutoTimerSettings.py:68
 msgid "If this is selected, the tag \"AutoTimer\" will be given to timers created by this plugin."
-msgstr ""
+msgstr "Jestliže je povoleno, tag \"AutoTimer\" bude přidáván do časovačů založených tímto pluginem."
 
 #: AutoTimerImporter.py:244
 msgid "Import AutoTimer"
@@ -540,14 +533,12 @@ msgid "Include"
 msgstr "Včetně"
 
 #: AutoTimerSettings.py:68
-#, fuzzy
 msgid "Include \"AutoTimer\" in tags"
-msgstr "AutoTimer nastavení"
+msgstr "Zahrnout \"AutoTimer\" do tagů"
 
 #: AutoTimerSettings.py:69
-#, fuzzy
 msgid "Include AutoTimer name in tags"
-msgstr "AutoTimer nastavení"
+msgstr "Zahrnout jméno AutoTimeru do tagů"
 
 #: AutoTimerEditor.py:596
 msgid "Label Timers with season, episode and title, according to the SeriesPlugin settings."
@@ -596,11 +587,13 @@ msgid "Maximum event duration to match. If an event is longer than this amount o
 msgstr "Maximální délka události. Jestliže je událost delší než tato doba (bez posunu), pak by neměla odpovídat."
 
 #: AutoTimerOverview.py:210
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Message\n"
 "Do you really want to delete %s?"
-msgstr "Opravdu chcete smazat \"%s\"?"
+msgstr ""
+"Oznámení\n"
+"Opravdu chcete smazat %s?"
 
 #: AutoTimerSettings.py:64
 msgid "Modify existing timers"
@@ -632,7 +625,7 @@ msgstr "Ne"
 
 #: AutoTimerEditor.py:348 AutoTimerEditor.py:403 __init__.py:34
 msgid "None"
-msgstr "Žádný"
+msgstr "Žádné"
 
 #: AutoTimerEditor.py:641
 msgid "Not after"
@@ -669,7 +662,7 @@ msgstr "na stejném programu"
 
 #: __init__.py:35
 msgid "Only AutoTimers created during this session"
-msgstr "Pouze AutoTimery založené v této akci"
+msgstr "Jen AutoTimery založené v této akci"
 
 #: AutoTimerSettings.py:57
 msgid "Only add timer for next x days"
@@ -703,7 +696,7 @@ msgstr "Otevřít seznam časovačů"
 
 #: plugin.py:278 plugin.py:292
 msgid "Open plugin"
-msgstr ""
+msgstr "Otevřít plugin"
 
 #: AutoTimerEditor.py:385
 msgid "Open select location"
@@ -711,7 +704,7 @@ msgstr "Otevřít zvolené umístění"
 
 #: AutoTimerEditor.py:387
 msgid "Open select location as timer name"
-msgstr ""
+msgstr "Otevřít vybrané místo jako název časovače"
 
 #: plugin.py:199
 msgid "Open standard setup menu"
@@ -727,7 +720,7 @@ msgstr "Přepsat nalezené alternativním programem"
 
 #: AutoTimerSettings.py:83
 msgid "Path debug log"
-msgstr ""
+msgstr "Cesta pro log"
 
 #: AutoTimerImporter.py:331
 msgid "Please provide a Text to match"
@@ -743,7 +736,7 @@ msgstr "Zjišťovat automaticky"
 
 #: AutoTimerSettings.py:79
 msgid "Popup timeout in seconds"
-msgstr ""
+msgstr "Délka zobrazení okna v sekundách"
 
 #: AutoTimerEditor.py:584
 msgid "Power state to change to after recordings. Select \"standard\" to not change the default behavior of enigma2 or values changed by yourself."
@@ -832,7 +825,7 @@ msgstr "Uložit a vyhledat"
 
 #: plugin.py:202 plugin.py:277 plugin.py:291
 msgid "Search new events matching for your AutoTimers"
-msgstr ""
+msgstr "Vyhledat nové události odpovídající Vašim AutoTimerům"
 
 #: AutoTimerEditor.py:617
 msgid "Search strictness"
@@ -856,7 +849,7 @@ msgstr "Vybrat akci"
 
 #: plugin.py:295
 msgid "Select action for AutoTimer or input date/time:"
-msgstr ""
+msgstr "Zvolte akci pro Autotimer nebo zadejte datum/čas:"
 
 #: plugin.py:205 plugin.py:281
 msgid "Select action for AutoTimer:"
@@ -888,7 +881,7 @@ msgstr "Nastavte čas ukončení"
 
 #: AutoTimerEditor.py:571
 msgid "Set an end time for the timer. If you do, the timespan of the event might be blocked for recordings."
-msgstr ""
+msgstr "Nastavuje čas ukončení časovače. Pokud tak učiníte, časový interval události může být zablokován pro nahrávání."
 
 #: AutoTimerEditor.py:653
 msgid "Set maximum duration"
@@ -900,11 +893,11 @@ msgstr "Pro zakázání tohoto AutoTimeru nastavte Ne."
 
 #: AutoTimerEditor.py:569
 msgid "Set timer type: zap, simple record, zap+record (always zap to service before start record)."
-msgstr ""
+msgstr "Nastavuje typ časovače: přepnout, nahrát, přepnout a nahrát (před nahráváním vždy přepne na program)."
 
 #: AutoTimerEditor.py:570
 msgid "Set wakeup receiver type. This works only for zap timers."
-msgstr ""
+msgstr "Nastavte typ probuzení přijímače. Funguje pouze pro časovače přepnutí."
 
 #: AutoTimerOverview.py:274
 msgid "Setup"
@@ -924,7 +917,7 @@ msgstr "Měly by být časovače vytvořené AutoTimerem zaznamenávány do vlas
 
 #: AutoTimerSettings.py:60
 msgid "Show \"add to AutoTimer\" in channel selection menu"
-msgstr "Zobrazit \" přidat AutoTimer\" v menu seznamu kanálů."
+msgstr "Zobrazit \"přidat AutoTimer\" v menu seznamu kanálů."
 
 #: AutoTimerSettings.py:59
 msgid "Show in event menu"
@@ -935,9 +928,8 @@ msgid "Show in extension menu"
 msgstr "Zobrazit v Extension menu"
 
 #: AutoTimerSettings.py:72
-#, fuzzy
 msgid "Show notification on added timers"
-msgstr "Zobrazovat oznámení při podobných"
+msgstr "Zobrazovat oznámení o přidaných časovačích"
 
 #: AutoTimerSettings.py:70
 msgid "Show notification on conflicts"
@@ -949,7 +941,7 @@ msgstr "Zobrazovat oznámení při podobných"
 
 #: AutoTimerSettings.py:78
 msgid "Skip poll during epg refresh"
-msgstr "Nevyhledávat pro aktualizaci EPG"
+msgstr "Nevyhledávat během aktualizace EPG"
 
 #: AutoTimerSettings.py:75
 msgid "Skip poll during records"
@@ -965,7 +957,7 @@ msgstr "Setřídit dle času"
 
 #: AutoTimerSettings.py:83
 msgid "Specify the name and location for the log."
-msgstr ""
+msgstr "Zadejte jméno a umístění pro log."
 
 #: __init__.py:71
 msgid "Standard"
@@ -973,7 +965,7 @@ msgstr "standard"
 
 #: plugin.py:288
 msgid "Standard input date/time"
-msgstr ""
+msgstr "Standardní vstup datum/čas"
 
 #: AutoTimerSettings.py:53
 msgid "Startup delay (in min)"
@@ -1028,9 +1020,8 @@ msgid "This is the delay in minutes that the AutoTimer will wait on initial laun
 msgstr "Zpoždění v minutách, po které bude AutoTimer čekat s inicializací, aby nedocházelo ke zpoždění startu enigma2."
 
 #: AutoTimerSettings.py:54
-#, fuzzy
 msgid "This is the delay in seconds that the AutoTimer will wait after editing the AutoTimers."
-msgstr "Toto je zpoždění v hodinách, po které bude AutoTimer po hledání čekat na další prohledání EPG."
+msgstr "Toto je zpoždění v sekundách, po které bude AutoTimer čekat po úpravách AutoTimerů."
 
 #: AutoTimerSettings.py:56
 msgid "This is the duration in minutes that the AutoTimer is allowed to run."
@@ -1042,7 +1033,7 @@ msgstr "Tento výraz bude hledán v názvech událostí. Uvědomte si, že pro h
 
 #: AutoTimerEditor.py:597
 msgid "This option allows you to turn off the timer confict detection. This option is for advanced users."
-msgstr ""
+msgstr "Umožňuje vypnout detekci konfliktu časovače. Tato volba je pro pokročilé uživatele."
 
 #: AutoTimerSettings.py:64
 msgid "This setting controls the behavior when a timer matches a found event."
@@ -1102,7 +1093,7 @@ msgstr "Úterý"
 
 #: AutoTimerSettings.py:52
 msgid "Unless this is enabled AutoTimer will NOT automatically look for events matching your AutoTimers but only when you leave the GUI with the green button."
-msgstr "Pokud je povoleno, AutoTimer NEBUDE hledat události odpovídající Vašim AutoTimerům automaticky, ale pouze po ukončení GUI stlačením ZELENÉHO tlačítka."
+msgstr "Pokud není povoleno, AutoTimer NEBUDE hledat události odpovídající Vašim AutoTimerům automaticky, ale pouze po ukončení nastavení stlačením ZELENÉHO tlačítka."
 
 #: AutoTimerEditor.py:587
 msgid "Upper bound of timespan."
@@ -1126,7 +1117,7 @@ msgstr "Žluté tlačítko pro úpravu filtrů."
 
 #: AutoTimerEditor.py:622
 msgid "Wakeup receiver for start timer"
-msgstr ""
+msgstr "Probudit přijímač kvůli začátku časovače"
 
 #: AutoTimerList.py:116
 msgid "Wed"
@@ -1158,7 +1149,7 @@ msgstr "Při podpoře \"Fast Scan\" se ignoruje typ programu. Tuto funkci nemus�
 
 #: AutoTimerSettings.py:76
 msgid "When this is enabled AutoTimer will ONLY check for new events whilst in stanadby."
-msgstr ""
+msgstr "Pokud je zapnuto, bude AutoTimer kontrolovat nové události POUZE, pokud je ve standby."
 
 #: AutoTimerEditor.py:591
 msgid "When this option is enabled the AutoTimer won't match events where another timer with the same description already exists in the timer list."
@@ -1178,15 +1169,15 @@ msgstr "Průvodce"
 
 #: AutoTimerSettings.py:81
 msgid "Write the config file after every change which the user quits by saving."
-msgstr ""
+msgstr "Zapsat konfigurační soubor po každé změně, kterou uživatel ukončí uložením."
 
 #: AutoTimerOverview.py:211
 msgid "Yes, and delete all timers generated by this autotimer"
-msgstr ""
+msgstr "Ano, a odstraňte všechny časovače generované tímto Autotimerem"
 
 #: AutoTimerOverview.py:212
 msgid "Yes, but keep timers generated by this autotimer"
-msgstr ""
+msgstr "Ano, a zachovejte všechny časovače generované tímto Autotimerem"
 
 #: AutoTimerSettings.py:57
 msgid "You can control for how many days in the future timers are added. Set this to 0 to disable this feature."
@@ -1232,7 +1223,7 @@ msgstr "automaticky"
 
 #: AutoTimerResource.py:281
 msgid "autotimers need a match attribute"
-msgstr "autotimer potřebuje adpovídající atribut"
+msgstr "autotimer potřebuje odpovídající atribut"
 
 #: AutoTimerEditor.py:181
 msgid "case-insensitive search"
@@ -1346,7 +1337,7 @@ msgstr "standard"
 
 #: AutoTimerEditor.py:180
 msgid "title starts with"
-msgstr "název začína na"
+msgstr "název začíná na"
 
 #: AutoTimerResource.py:275
 #, python-format
@@ -1367,43 +1358,46 @@ msgid "zap and record"
 msgstr "přepnout a nahrát"
 
 msgid "Description - short equal extended for match"
-msgstr ""
+msgstr "Popis - krátký se rovná rozšířenému pro porovnání"
 
 msgid "Do not skip match when not description"
-msgstr ""
+msgstr "Nepřeskakovat, pokud není popis"
 
 msgid "When this option enabled, short description to equal extended description if short description is empty."
-msgstr ""
+msgstr "Pokud je tato volba povolena a krátký popis je prázdný, krátký popis se rovná rozšířenému popisu."
 
 msgid "When this option enabled and short description and extended description match is empty and timer title exist in match title, match is not a duplicate. Attention, this may result in double timers."
-msgstr ""
+msgstr "Když je tato volba povolena, krátký popis a rozšířený popis je prázdný a název časovače existuje v názvu, shoda není duplicita. Pozor, může to mít za následek duplicitní časovač."
 
 msgid " (only services from bouquets)."
-msgstr ""
+msgstr " (pouze programy z přehledů)."
 
 msgid "Percentage ratio for duplicates matches"
-msgstr ""
+msgstr "Procentní poměr pro shody duplicity"
 
 msgid "To cater for spelling mistakes and small deviations in the EPG information, you can make the matching algorithm fuzzy by setting the percentage both programmes must be equal for. Use 100% if you only want a match when both are completely identical. Recommended default ratio 80%."
-msgstr ""
+msgstr "Chcete-li se postarat o pravopisné chyby a malé odchylky v informacích EPG, můžete přizpůsobit algoritmus nastavením procent, které musí být pro oba programy stejné. Použijte 100%, pokud chcete pouze shodu, pokud jsou obě zcela identické. Doporučený poměr je 80%."
 
 msgid "Reload timers list after search events"
-msgstr ""
+msgstr "Znovu načíst přehled časovačů po vyhledání událostí"
 
 msgid "If this enabled, will check the list of timers, conflicting autotimers are disabled, the duplicate autotimers will be deleted."
-msgstr ""
+msgstr "Pokud je tato volba zapnuta, zkontroluje seznam časovačů, konfliktní autotimery zakáže, duplicitní autotimery smaže."
 
 msgid "Yes and show notify"
-msgstr ""
+msgstr "Ano a zobrazit oznámení"
 
 msgid ""
 "Reload timers list.\n"
 "%d autotimer(s) disabled because conflict.\n"
 "%d double autotimer(s) removed.\n"
 msgstr ""
+"Znovu načíst přehled časovačů.\n"
+"%d autotimer(ů) zakázáno kvůli konfliktu.\n"
+"%d duplicitní(ch) autotimer(ů) odstraněn(o).\n"
 
 msgid "The autotimer file (/etc/enigma2/autotimer.xml) is corrupt and could not be loaded."
-msgstr ""
+msgstr "Soubor autotimeru (/etc/enigma2/autotimer.xml) je porušen a nemůže být načten."
 
 #~ msgid "Add zap timer instead of record timer?"
 #~ msgstr "Přidat časovač přepnutí místo časovače nahrávání?"
