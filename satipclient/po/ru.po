@@ -110,3 +110,6 @@ msgstr "SAT>IP клиент через vtuner."
 
 msgid "Select"
 msgstr "Выбор"
+
+msgid "No vtuner found."
+msgstr "Не найден vtuner."
