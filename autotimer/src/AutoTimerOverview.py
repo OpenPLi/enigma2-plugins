@@ -271,7 +271,6 @@ class AutoTimerOverview(Screen, HelpableScreen):
 			(_("Preview"), "preview"),
 			(_("Import existing Timer"), "import"),
 			(_("Import from EPG"), "import_epg"),
-			(_("Setup"), "setup"),
 			(_("Edit new timer defaults"), "defaults"),
 			(_("Clone selected timer"), "clone")
 		]
@@ -283,14 +282,23 @@ class AutoTimerOverview(Screen, HelpableScreen):
 
 		from plugin import autotimerHelp
 		if autotimerHelp:
-			list.insert(7, (_("Help"), "help"))
-			list.insert(8, (_("Frequently asked questions") , "faq"))
+			list.append((_("Help"), "help"))
+			list.append((_("Frequently asked questions") , "faq"))
+
+		key = []
+		for n in range(1, len(list)+1):
+			if 0 < n < 10:
+				key.append("%d" % n)
+
+		list.append((_("Setup"), "setup"))
+		key.append("menu")
 
 		self.session.openWithCallback(
 			self.menuCallback,
 			ChoiceBox,
 			title=_("AutoTimer Context Menu"),
 			list = list,
+			keys=key,
 		)
 
 	def menuCallback(self, ret):
