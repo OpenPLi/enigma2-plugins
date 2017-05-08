@@ -802,12 +802,16 @@ class EPGSearch(EPGSelection):
 		if len(history) > 0:
 			options.append((_("Clear history"), self.ClearHistory))
 		options.append((_("Timers list"), self.openTimerslist))
-		options.append((_("Setup"), self.setup))
+
+		keys = ["menu"]
+		keys = [ "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "red", "green", "yellow", "blue" ][:len(options)] + (len(options) - 14) * [""] + keys
+		options.append((_("Setup"), self.setup ))
 
 		self.session.openWithCallback(
 			self.menuCallback,
 			ChoiceBox,
-			list = options
+			list = options,
+			keys = keys
 		)
 
 	def menuCallback(self, ret):
