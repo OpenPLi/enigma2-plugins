@@ -265,7 +265,7 @@ class PartnerboxEntriesListConfigScreen(Screen):
 		if sel.usewakeonlan.value and sel.enigma.value == "0":
 			menu.append((_("Send Wake-on-LAN"),6))
 		if config.usage.remote_fallback_enabled.value:
-			menu.append((_("Set as fallback tuner"),10))
+			menu.append((_("Set as fallback remote receiver"),10))
 		from Screens.ChoiceBox import ChoiceBox
 		self.session.openWithCallback(self.menuCallback, ChoiceBox, title=(_("Select operation for partnerbox")+": "+"%s" % (sel.name.value)), list=menu)
 
@@ -351,7 +351,7 @@ class PartnerboxEntriesListConfigScreen(Screen):
 			if not result:
 				return
 			config.usage.remote_fallback.value="http://%s:8001" % ip
-		self.session.openWithCallback(fallbackConfirm, MessageBox, _("Set box %s as fallback tuner?" % name))
+		self.session.openWithCallback(fallbackConfirm, MessageBox, _("Set %s as fallback remote receiver?" % name))
 
 class PartnerboxEntryList(MenuList):
 	def __init__(self, list, enableWrapAround = True):
