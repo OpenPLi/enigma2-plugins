@@ -759,6 +759,12 @@ msgstr "Získat MAC"
 msgid "MAC"
 msgstr ""
 
+msgid "Set %s as fallback remote receiver?"
+msgstr "Nastavit %s jako záložní přijímač?"
+
+msgid "Set as fallback remote receiver"
+msgstr "Nastavit jako záložní přijímač"
+
 #~ msgid "You have to restart Enigma2 to activate your new preferences!"
 #~ msgstr "Pro uplatnění změn musíte restartovat Enigma2!"
 
