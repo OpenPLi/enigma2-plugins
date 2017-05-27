@@ -198,7 +198,6 @@ class AutoTimer:
 				self.writeXml()
 				configuration = cet_parse(XML_CONFIG).getroot()
 			except:
-				pass
 				doLog("[AutoTimer] fatal error, the autotimer.xml cannot create")
 				return
 
