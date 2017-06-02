@@ -1,0 +1,111 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-14 19:19+0300\n"
+"PO-Revision-Date: 2017-03-01 12:00+0100\n"
+"Last-Translator: Andrej Tobola <andrej.tobola@gmail.com>\n"
+"Language-Team: Andrej Tobola <andrej.tobola@gmail.com>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+
+#: plugin.py:385 plugin.py:413
+msgid "Activate permanent clock"
+msgstr "Aktivovať permanentné hodiny"
+
+#: plugin.py:383 plugin.py:416
+msgid "Change permanent clock position"
+msgstr "Zmena pozície permanentných hodín"
+
+#: plugin.py:462
+msgid "Choice color clock:"
+msgstr "Výber farby hodín:"
+
+#: plugin.py:389 plugin.py:436
+msgid "Color analog clock"
+msgstr "Farebné analógové hodiny"
+
+#: plugin.py:392 plugin.py:438
+msgid "Color digital clock"
+msgstr "Farebné digitálne hodiny"
+
+#: plugin.py:382 plugin.py:413
+msgid "Deactivate permanent clock"
+msgstr "Deaktivovať permanentné hodiny"
+
+#: plugin.py:395 plugin.py:426
+msgid "Disable key 'long EXIT' show/hide"
+msgstr "Zakázať klávesu 'dlhý EXIT' ukáže/skryje"
+
+#: plugin.py:397 plugin.py:431
+msgid "Enable key 'long EXIT' show/hide"
+msgstr "Povoliť klávesu 'dlhý EXIT' ukáže/skryje"
+
+#: plugin.py:43 plugin.py:457
+msgid "PLi-transparent"
+msgstr "PLi-priehľadné"
+
+#: plugin.py:526 plugin.py:531
+msgid "Permanent Clock"
+msgstr "Permanentné hodiny"
+
+#: plugin.py:375
+msgid "Permanent Clock Setup"
+msgstr "Nastavenie permanentných hodín"
+
+#: plugin.py:391 plugin.py:419
+msgid "Show analog clock"
+msgstr "Zobraziť analógové hodiny"
+
+#: plugin.py:388 plugin.py:419
+msgid "Show digital clock"
+msgstr "Zobraziť digitálne hodiny"
+
+#: plugin.py:531
+msgid "Shows the clock permanent on the screen"
+msgstr "Zobrazí hodiny permanentne na obrazovke"
+
+#: plugin.py:43 plugin.py:452
+msgid "black-blue"
+msgstr "čierno-modré"
+
+#: plugin.py:43 plugin.py:454
+msgid "black-white"
+msgstr "čierno-biele"
+
+#: plugin.py:43 plugin.py:451
+msgid "black-yellow"
+msgstr "čierno-žlté"
+
+#: plugin.py:43 plugin.py:453
+msgid "blue"
+msgstr "modré"
+
+#: plugin.py:44 plugin.py:447
+msgid "large white"
+msgstr "veľké biele"
+
+#: plugin.py:44 plugin.py:446
+msgid "large yellow"
+msgstr "veľké žlté"
+
+#: plugin.py:43 plugin.py:456
+msgid "transparent"
+msgstr "priehľadné"
+
+#: plugin.py:43 plugin.py:44 plugin.py:445 plugin.py:455
+msgid "white"
+msgstr "biele"
+
+#: plugin.py:44 plugin.py:444
+msgid "yellow"
+msgstr "žlté"

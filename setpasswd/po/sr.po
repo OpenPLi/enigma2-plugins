@@ -18,17 +18,13 @@ msgstr ""
 "X-Poedit-Country: SERBIA\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-#: ../src/plugin.py:51
-msgid "Cancel"
-msgstr "Otkaži"
-
 #: ../src/plugin.py:25
 msgid "Change Root Password"
 msgstr "Promeni baznu lozinku"
 
 #: ../src/plugin.py:131
-msgid "Change or reset the root password of your dreambox"
-msgstr "Promeni ili resetuj baznu lozinku svog drimboksa"
+msgid "Change or reset the root password of your box"
+msgstr "Promeni ili resetuj baznu lozinku svog boksa"
 
 #: ../src/plugin.py:73
 msgid "Enter new Password"

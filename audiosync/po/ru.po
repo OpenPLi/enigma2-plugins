@@ -82,7 +82,7 @@ msgid "Move screen down"
 msgstr "Перемещение экрана вниз"
 
 msgid "Move screen to the center of your TV"
-msgstr "Перемещение экрана к центру Вашего Т"
+msgstr "Перемещение экрана к центру Вашего ТВ"
 
 msgid "Move screen to the left"
 msgstr "Перемещение экрана влево"
@@ -176,3 +176,23 @@ msgstr "Время ожидания в мс до активации:"
 
 msgid "sets the Audio Delay (LipSync)"
 msgstr "установка задержки аудио"
+
+msgid "Restart audio"
+msgstr "Рестарт аудио"
+
+msgid "Restart audio delay (in sec)"
+msgstr "Задержка рестарта аудио (сек.)"
+
+msgid "after restart"
+msgstr "после загрузки"
+
+msgid "after restart/standby"
+msgstr "после загрузки/режима ожидания"
+
+msgid "after standby"
+msgstr "после режима ожидания"
+
+msgid "disabled"
+msgstr "отключено"
+
+

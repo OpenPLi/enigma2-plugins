@@ -215,7 +215,7 @@ class DreamExplorerII(Screen):
 			filename = self["filelist"].getCurrentDirectory() + self["filelist"].getFilename()
 			testFileName = self["filelist"].getFilename()
 			testFileName = testFileName.lower()
-			if filename != None:
+			if filename is not None:
 				if testFileName.endswith(".ts"):
 					fileRef = eServiceReference("1:0:0:0:0:0:0:0:0:0:" + filename)
 					self.session.open(MoviePlayer, fileRef)

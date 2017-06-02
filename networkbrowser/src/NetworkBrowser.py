@@ -476,7 +476,7 @@ class NetworkBrowser(Screen):
 				self.session.openWithCallback(self.MountEditClosed,AutoMountEdit, self.skin_path, data)
 
 	def MountEditClosed(self, returnValue = None):
-		if returnValue == None:
+		if returnValue is None:
 			self.updateNetworkList()
 
 class ScanIP(Screen, ConfigListScreen):

@@ -199,7 +199,7 @@ class EpgCenterList(GUIComponent):
 		border = int(config.plugins.merlinEpgCenter.listItemHeight.value) / 2
 		percent = 0
 		
-		if begin != None and duration != None:
+		if begin is not None and duration is not None:
 			timeString = strftime("%H:%M", localtime(begin)) + "-" + strftime("%H:%M", localtime(begin + duration))
 			now = int(time())
 			if now > begin:
@@ -220,7 +220,7 @@ class EpgCenterList(GUIComponent):
 				else:
 					timeValue = (now - begin) /  60
 				
-			if (KEEP_OUTDATED_TIME == None and (begin + duration) > now) or (KEEP_OUTDATED_TIME != None and (begin + duration) > now):
+			if (KEEP_OUTDATED_TIME is None and (begin + duration) > now) or (KEEP_OUTDATED_TIME is not None and (begin + duration) > now):
 				if config.plugins.merlinEpgCenter.showDuration.value:
 					remainBeginString = " I "
 				else:
@@ -283,7 +283,7 @@ class EpgCenterList(GUIComponent):
 			
 		if outdated:
 			textColor = progColor
-		elif self.epgList != None:
+		elif self.epgList is not None:
 			textColor = self.epgList.getColorEventAvailable(sRef, begin, duration)
 		else:
 			textColor = None
@@ -374,7 +374,7 @@ class EpgCenterList(GUIComponent):
 				res.append((eListboxPythonMultiContent.TYPE_TEXT, offsetLeft, 0, width, self.itemHeight, 1, RT_HALIGN_CENTER|RT_VALIGN_CENTER, timeString, textColor))
 			offsetLeft = offsetLeft + width + 5 # abstand
 			
-		if begin != None and duration != None:
+		if begin is not None and duration is not None:
 			(timerPixmaps, zapPixmaps, isRunning) = self.getTimerPixmapsForEntry(sRef, eventid, begin, duration)
 		else:
 			timerPixmaps = 0
@@ -642,7 +642,7 @@ class EpgCenterList(GUIComponent):
 		self.mode = mode
 		self.similarShown = False
 		
-		if searchString == None:
+		if searchString is None:
 			self.list = []
 		else:
 			searchString = searchString.decode('utf-8').encode("iso-8859-1","replace")

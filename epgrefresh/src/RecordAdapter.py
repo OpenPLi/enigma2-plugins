@@ -1,6 +1,6 @@
 from __future__ import print_function
 
-from Components.SystemInfo import SystemInfo
+from Components.NimManager import nimmanager
 
 # MessageBox
 from Screens.MessageBox import MessageBox
@@ -14,7 +14,7 @@ from . import _, NOTIFICATIONID
 class RecordAdapter:
 	backgroundCapable = True
 	def __init__(self, session):
-		if SystemInfo.get("NumVideoDecoders", 1) < 2:
+		if len(nimmanager.nim_slots) < 2:
 			self.backgroundRefreshAvailable = False
 			return
 

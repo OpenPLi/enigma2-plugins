@@ -217,3 +217,6 @@ msgstr ""
 
 msgid "Old time: %s\nOffset: %s sec.\nNew time: %s"
 msgstr ""
+
+msgid "Please wait 5 sec."
+msgstr ""

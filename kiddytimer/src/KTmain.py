@@ -306,13 +306,13 @@ class KiddyTimer():
     
     def toggleActiveState(self , bStatus):
         # Initialize dialog
-        if self.dialog == None and bStatus:
+        if self.dialog is None and bStatus:
             self.dialog = self.session.instantiateDialog(KiddyTimerScreen)
         self.active = bStatus
         if bStatus == True:
             self.dialog.show()
         else:
-            if self.dialog != None:
+            if self.dialog is not None:
                 self.dialog.hide()
 
     def toggleEnabledState(self, bStatus):

@@ -104,7 +104,7 @@ class AutoMountView(Screen):
                         self.session.openWithCallback(self.MountEditClosed, AutoMountEdit, self.skin_path, iAutoMount.automounts[returnValue])
 
         def MountEditClosed(self, returnValue = None):
-                if returnValue == None:
+                if returnValue is None:
                         self.showMountsList()
 
         def delete(self, returnValue = None):

@@ -215,7 +215,7 @@ class PartnerboxEntriesListConfigScreen(Screen):
 		try:sel = self["entrylist"].l.getCurrentSelection()[0]
 		except: sel = None
 		nr = int(config.plugins.Partnerbox.entriescount.value)
-		if nr > 1 and self.what == 2 or nr >= 1 and self.what == None:
+		if nr > 1 and self.what == 2 or nr >= 1 and self.what is None:
 				from plugin import RemoteTimer
 				self.session.open(RemoteTimer, sel)
 		else:
@@ -264,6 +264,8 @@ class PartnerboxEntriesListConfigScreen(Screen):
 			menu.append((_("Shutdown"),4))
 		if sel.usewakeonlan.value and sel.enigma.value == "0":
 			menu.append((_("Send Wake-on-LAN"),6))
+		if config.usage.remote_fallback_enabled.value:
+			menu.append((_("Set as fallback remote receiver"),10))
 		from Screens.ChoiceBox import ChoiceBox
 		self.session.openWithCallback(self.menuCallback, ChoiceBox, title=(_("Select operation for partnerbox")+": "+"%s" % (sel.name.value)), list=menu)
 
@@ -298,6 +300,10 @@ class PartnerboxEntriesListConfigScreen(Screen):
 			sCommand += "1"
 		elif choice[1] == 6:
 			self.sendWOL(sel.mac.value)
+			return
+		elif choice[1] == 10:
+			self.setFallbackTuner(sel.name.value, ip)
+			return
 		else:
 			return
 		from PartnerboxFunctions import sendPartnerBoxWebCommand
@@ -337,6 +343,15 @@ class PartnerboxEntriesListConfigScreen(Screen):
 		if ifaces_list:
 			for iface in ifaces_list:
 				os.system("ether-wake -i %s %s" % (iface[0], mac))
+
+	def setFallbackTuner(self, name, ip):
+		if not ip:
+			return
+		def fallbackConfirm(result):
+			if not result:
+				return
+			config.usage.remote_fallback.value="http://%s:8001" % ip
+		self.session.openWithCallback(fallbackConfirm, MessageBox, _("Set %s as fallback remote receiver?") % name)
 
 class PartnerboxEntryList(MenuList):
 	def __init__(self, list, enableWrapAround = True):

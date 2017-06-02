@@ -501,7 +501,7 @@ class RightMenuList(MenuList):
 		res = [(x[0], x[2])]
 		if picInfo:
 			ptr = self.picload.getData()
-			if ptr != None:
+			if ptr is not None:
 				res.append(MultiContentEntryPixmapAlphaTest(pos=(0, 0), size=(94, 60), png=ptr))
 		res.append(MultiContentEntryText(pos=(100, 0), size=(430, 20), font=0, text=x[2]))
 		res.append(MultiContentEntryText(pos=(100, 20), size=(430, 20), font=0, text=x[4]))

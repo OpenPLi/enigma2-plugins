@@ -15,7 +15,7 @@ from Components.ConfigList import ConfigListScreen
 from Components.Sources.StaticText import StaticText
 from Components.ActionMap import NumberActionMap, ActionMap
 from Components.NimManager import nimmanager, getConfigSatlist
-from Components.config import config, ConfigSubsection, ConfigSelection, ConfigYesNo, ConfigInteger, getConfigListEntry
+from Components.config import config, ConfigSubsection, ConfigSelection, ConfigYesNo, ConfigInteger, getConfigListEntry, ConfigNothing
 from enigma import eTimer, eDVBFrontendParametersSatellite, eComponentScan, eConsoleAppContainer, eDVBResourceManager, getBoxType, eDVBSatelliteEquipmentControl
 from Components.About import about
 from time import strftime, time
@@ -159,7 +159,7 @@ class Blindscan(ConfigListScreen, Screen):
 		self.bsTimer.callback.append(self.asyncBlindScan)
 
 		ConfigListScreen.__init__(self, self.list, session = session, on_change = self.changedEntry)
-		if self.scan_nims.value != None and self.scan_nims.value != "" :
+		if self.scan_nims.value is not None and self.scan_nims.value != "" :
 			self["actions"] = ActionMap(["ColorActions", "SetupActions", 'DirectionActions'],
 			{
 				"red": self.keyCancel,
@@ -347,7 +347,7 @@ class Blindscan(ConfigListScreen, Screen):
 					if hasattr(self.session, 'pip'):
 						del self.session.pip
 					self.openFrontend()
-		if self.frontend == None:
+		if self.frontend is None:
 			text = _("Sorry, this tuner is in use.")
 			if self.session.nav.getRecordings():
 				text += "\n"
@@ -469,7 +469,7 @@ class Blindscan(ConfigListScreen, Screen):
 		index    = 0
 		none_cnt = 0
 		for n in self.satList:
-			if self.satList[index] == None:
+			if self.satList[index] is None:
 				none_cnt = none_cnt + 1
 			if index == int(v):
 				return (index-none_cnt)
@@ -967,6 +967,12 @@ class Blindscan(ConfigListScreen, Screen):
 					parm.fec = parm.FEC_Auto
 					parm.modulation = qam[data[4]]
 					parm.rolloff = parm.RollOff_alpha_0_35
+					try:
+						parm.pls_mode = eDVBFrontendParametersSatellite.PLS_Root
+						parm.is_id = -1
+						parm.pls_code = 1
+					except:
+						pass
 					self.tmp_tplist.append(parm)
 			elif len(data) >= 10 and self.dataIsGood(data):
 				if data[0] == 'OK':
@@ -1012,6 +1018,12 @@ class Blindscan(ConfigListScreen, Screen):
 					parm.fec = fec[data[7]]
 					parm.modulation = qam[data[8]]
 					parm.rolloff = roll[data[9]]
+					try:
+						parm.pls_mode = eDVBFrontendParametersSatellite.PLS_Root
+						parm.is_id = -1
+						parm.pls_code = 1
+					except:
+						pass
 					self.tmp_tplist.append(parm)
 		self.blindscan_session.close(True)
 		self.blindscan_session = None
@@ -1084,7 +1096,7 @@ class Blindscan(ConfigListScreen, Screen):
 			self.frontend and self.frontend.closeFrontend()
 		self.blindscanSessionNone(val[0])
 
-		if self.tmp_tplist != None and self.tmp_tplist != []:
+		if self.tmp_tplist is not None and self.tmp_tplist != []:
 			if not self.SundtekScan:
 				self.tmp_tplist = self.correctBugsCausedByDriver(self.tmp_tplist)
 
@@ -1153,6 +1165,10 @@ class Blindscan(ConfigListScreen, Screen):
 				parm.modulation = x[6]
 				parm.rolloff = x[8]
 				parm.pilot = x[9]
+				if len(x) > 12:
+					parm.is_id = x[10]
+					parm.pls_mode = x[11]
+					parm.pls_code = x[12]
 				tlist.append(parm)
 		return tlist
 
@@ -1356,6 +1372,8 @@ class Blindscan(ConfigListScreen, Screen):
 			currSat = nim.config.advanced.sat[cur_orb_pos]
 			lnbnum = int(currSat.lnb.getValue())
 			currLnb = nim.config.advanced.lnb[lnbnum]
+			if isinstance(currLnb, ConfigNothing):
+				return False
 			lof = currLnb.lof.getValue()
 			print "[Blind scan] LNB type: ", lof
 			if lof == lof_type:

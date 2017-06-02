@@ -5,26 +5,22 @@ try:
 except:
 	from Tools.DreamboxHardware import setRTCtime
 from Plugins.Plugin import PluginDescriptor
-from Tools.Directories import resolveFilename, fileExists, SCOPE_CONFIG, SCOPE_PLUGINS, SCOPE_LANGUAGE
+from Tools.Directories import fileExists
 from Components.config import config, ConfigSubsection, ConfigSelection, getConfigListEntry, ConfigYesNo, configfile, ConfigText, ConfigInteger
 from Components.ConfigList import ConfigListScreen
 from Screens.Screen import Screen
 from Screens.InputBox import InputBox
 from Components.Input import Input
-from Components.Sources.StaticText import StaticText
-from Components.ActionMap import ActionMap, NumberActionMap
+from Components.ActionMap import ActionMap
 from Screens.MessageBox import MessageBox
-from Components.Pixmap import Pixmap
 from Screens.Console import Console
 from Components.Label import Label
 from Screens.Standby import TryQuitMainloop
-from Components.Language import language
 import os
-from time import *
 import time
 import datetime
 
-PLUGIN_VERSION = _(" ver. ") + "1.5"
+PLUGIN_VERSION = _(" ver. ") + "1.6"
 
 config.plugins.SystemTime = ConfigSubsection()
 config.plugins.SystemTime.choiceSystemTime = ConfigSelection([("0", _("Transponder Time")),("1", _("Internet Time"))], default="0")
@@ -40,23 +36,11 @@ config.plugins.SystemTime.ip = ConfigText(default="pool.ntp.org", fixed_size = F
 from NTPSyncPoller import NTPSyncPoller
 ntpsyncpoller = None
 
-BOX_NAME = "all"
-if os.path.exists("/proc/stb/info/boxtype"):
-	try:
-		f = open("/proc/stb/info/boxtype")
-		model = f.read().strip()
-		f.close()
-	except:
-		model = ""
-	if model.startswith('et'):
-		BOX_NAME = "et"
-
 fullHD = False
 if getDesktop(0).size().width() >= 1920:
 	fullHD = True
 
 class SystemTimeSetupScreen(Screen, ConfigListScreen):
-	global PLUGIN_VERSION
 	skin = """
 		<screen position="center,center" size="700,320" title="Setup System Time" >
 			<ePixmap position="0,42" zPosition="1" size="175,2" pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/SystemTime/images/red.png" alphatest="blend" />
@@ -81,8 +65,7 @@ class SystemTimeSetupScreen(Screen, ConfigListScreen):
 			</widget>
 		</screen>"""
 
-	def __init__(self, session, servicelist=None, args=None):
-		self.servicelist = servicelist
+	def __init__(self, session):
 		self.skin = SystemTimeSetupScreen.skin
 		self.setup_title = _("Setup System Time") + PLUGIN_VERSION
 		self.onChangedEntry = []
@@ -121,6 +104,7 @@ class SystemTimeSetupScreen(Screen, ConfigListScreen):
 			config.plugins.SystemTime.choiceSystemTime.save()
 		self.initConfig()
 		self.createSetup()
+		self.servicelist = self.messagebox = None
 		self.onClose.append(self.__closed)
 		self.onLayoutFinish.append(self.__layoutFinished)
 		self["config"].onSelectionChanged.append(self.configPosition)
@@ -175,7 +159,7 @@ class SystemTimeSetupScreen(Screen, ConfigListScreen):
 			list.append(self.cfg_ip)
 		list.append(self.cfg_syncNTPtime)
 		list.append(self.cfg_syncManually)
-		if fileExists("/proc/stb/fp/rtc") and BOX_NAME != "et":
+		if fileExists("/proc/stb/fp/rtc"):
 			list.append(self.cfg_useRTCstart)
 		self["config"].list = list
 		self["config"].l.setList(list)
@@ -196,27 +180,32 @@ class SystemTimeSetupScreen(Screen, ConfigListScreen):
 				cmd = '/usr/sbin/ntpd -dnqp %s' % self.ST.ip.value
 				self.session.open(MyConsole, _("Time sync with NTP..."), [cmd])
 			else:
-				self.session.open(MessageBox,"'ntpd' / " + _("'ntpdate' not installed !"), MessageBox.TYPE_ERROR, timeout = 3)
+				self.session.open(MessageBox,"'ntpd' / " + _("'ntpdate' not installed !"), MessageBox.TYPE_ERROR, timeout=3)
 		elif sel == self.ST.syncDVBtime:
 			try:
 				if not self.syncTimer.isActive():
 					self.old_time = time.time()
-					self.oldtime = strftime("%Y:%m:%d %H:%M",localtime())
+					self.oldtime = time.strftime("%Y:%m:%d %H:%M",time.localtime())
 					eDVBLocalTimeHandler.getInstance().syncDVBTime()
+					self.messagebox = self.session.openWithCallback(self.messageboxSessionClose, MessageBox, _('Please wait 5 sec.'), MessageBox.TYPE_INFO)
 					self.syncTimer.start(5000, True)
 			except:
 				if os.path.exists("/usr/bin/dvbdate"):
 					cmd = '/usr/bin/dvbdate -p -s -f && echo "\n"'
 					self.session.open(MyConsole, _("Time sync with DVB..."), [cmd])
 				else:
-					self.session.open(MessageBox,_("'dvbdate' not installed !"), MessageBox.TYPE_ERROR, timeout = 3)
+					self.session.open(MessageBox,_("'dvbdate' not installed !"), MessageBox.TYPE_ERROR, timeout=3)
 		elif sel == self.ST.syncManually:
 			ChangeTimeWizzard(self.session)
 
+	def messageboxSessionClose(self, answer=None):
+		self.messagebox = None
+
 	def showMessage(self):
-		offset = time.time() - self.old_time
-		newtime = strftime("%Y:%m:%d %H:%M",localtime())
-		self.session.open(MessageBox,_("Old time: %s\nOffset: %s sec.\nNew time: %s") % (self.oldtime, offset, newtime), MessageBox.TYPE_INFO)
+		offset = (time.time() - 5.1) - self.old_time
+		newtime = time.strftime("%Y:%m:%d %H:%M",time.localtime())
+		if self.messagebox:
+			self.messagebox["text"].setText(_("Old time: %s\nOffset: %s sec.\nNew time: %s") % (self.oldtime, offset, newtime))
 
 	def configPosition(self):
 		self["key_blue"].setText("")
@@ -253,7 +242,7 @@ class SystemTimeSetupScreen(Screen, ConfigListScreen):
 				else:
 					self.ST.syncNTPcoldstart.value = False
 		else:
-			self.session.open(MessageBox,"'ntpd' / " + _("'ntpdate' not installed !"), MessageBox.TYPE_ERROR, timeout = 3)
+			self.session.open(MessageBox,"'ntpd' / " + _("'ntpdate' not installed !"), MessageBox.TYPE_ERROR, timeout=3)
 			self.ST.syncNTPcoldstart.value = False
 
 	def removeNTPcoldstart(self):
@@ -271,7 +260,7 @@ class SystemTimeSetupScreen(Screen, ConfigListScreen):
 				os.chmod("/etc/init.d/set-rtctime", 0755)
 				os.system("update-rc.d set-rtctime defaults 40")
 			else:
-				self.session.open(MessageBox,_("Script 'set-rtctime' not found !"), MessageBox.TYPE_ERROR, timeout = 3)
+				self.session.open(MessageBox,_("Script 'set-rtctime' not found !"), MessageBox.TYPE_ERROR, timeout=3)
 				self.ST.useRTCstart.value = False
 
 	def removeUseRTC(self):
@@ -299,13 +288,7 @@ class SystemTimeSetupScreen(Screen, ConfigListScreen):
 		removeNetworkStart()
 		self.ST.save()
 		configfile.save()
-		self.session.openWithCallback(self.restartGuiNow, MessageBox, _("Restart the GUI now?"), MessageBox.TYPE_YESNO, default = False)
-
-	def restartGuiNow(self, answer):
-		if answer is True:
-			self.session.open(TryQuitMainloop, 3)
-		else:
-			self.close()
+		self.close()
 
 	def cancel(self):
 		self.keyRed()
@@ -313,18 +296,17 @@ class SystemTimeSetupScreen(Screen, ConfigListScreen):
 
 	def keyYellow(self):
 		self.session.openWithCallback(self.restartGui, MessageBox, _("Restart the GUI now?"), MessageBox.TYPE_YESNO)
-		
+
 	def restartGui(self, answer):
-		if answer is True:
+		if answer:
 			self.session.open(TryQuitMainloop, 3)
 
 	def keyBlue(self):
 		if self["key_blue"].getText() == _("Choice transponder"):
-			if self.servicelist is None:
-				for (dlg,flag) in self.session.dialog_stack:
-					if dlg.__class__.__name__ == "InfoBar":
-						self.servicelist = dlg.servicelist
-						break
+			for (dlg,flag) in self.session.dialog_stack:
+				if dlg.__class__.__name__ == "InfoBar":
+					self.servicelist = dlg.servicelist
+					break
 			if not self.servicelist is None:
 				self.session.execDialog(self.servicelist)
 
@@ -369,7 +351,7 @@ class ChangeTimeWizzard(Screen):
 		jetzt = time.time()
 		timezone = datetime.datetime.utcnow()
 		delta = (jetzt - time.mktime(timezone.timetuple())) 
-		self.oldtime = strftime("%Y:%m:%d %H:%M",localtime())
+		self.oldtime = time.strftime("%Y:%m:%d %H:%M",time.localtime())
 		self.session.openWithCallback(self.askForNewTime,InputBox, title=_("Please Enter new System time and press OK !"), text="%s" % (self.oldtime), maxSize=16, type=Input.NUMBER)
 
 	def askForNewTime(self, newclock):
@@ -408,7 +390,7 @@ class ChangeTimeWizzard(Screen):
 					maxmonth=27
 			if (int(newyear) < 2007) or (int(newyear) > 2027)  or (len(newyear) < 4) is True:
 				self.skipChangeTime(_("invalid year %s") %newyear)
-			elif (int(newmonth) < 0) or (int(newmonth) >12) or (len(newmonth) < 2) is True:
+			elif (int(newmonth) < 0) or (int(newmonth) > 12) or (len(newmonth) < 2) is True:
 				self.skipChangeTime(_("invalid month %s") %newmonth)
 			elif (int(newday) < 1) or (int(newday) > maxmonth) or (len(newday) < 2) is True:
 				self.skipChangeTime(_("invalid day %s") %newday)
@@ -446,12 +428,17 @@ def removeNetworkStart():
 	if os.path.exists("/usr/bin/ntpdate-sync"):
 		os.system("rm -rf /usr/bin/ntpdate-sync && rm -rf /etc/network/if-up.d/ntpdate-sync")
 
-def startup(session=None, **kwargs):
-	global ntpsyncpoller
-	if ntpsyncpoller is None:
-		ntpsyncpoller = NTPSyncPoller()
-		ntpsyncpoller.start()
-		removeNetworkStart()
+def startup(reason=0, **kwargs):
+	if reason == 0:
+		global ntpsyncpoller
+		if ntpsyncpoller is None:
+			ntpsyncpoller = NTPSyncPoller()
+			ntpsyncpoller.start()
+			removeNetworkStart()
+	elif reason == 1:
+		nowTime = time.time()
+		if nowTime > 1388534400:
+			setRTCtime(nowTime)
 
 def main(menuid, **kwargs):
 	if menuid == "system":
@@ -460,9 +447,8 @@ def main(menuid, **kwargs):
 		return []
 
 def OpenSetup(session, **kwargs):
-	servicelist = kwargs.get('servicelist', None)
-	session.open(SystemTimeSetupScreen, servicelist)
+	session.open(SystemTimeSetupScreen)
 
 def Plugins(**kwargs):
 	return [PluginDescriptor(name = "System Time", description = _("System time your box"), where = PluginDescriptor.WHERE_MENU, fnc = main),
-					PluginDescriptor(name = "System Time", where = PluginDescriptor.WHERE_SESSIONSTART, fnc = startup)]
+				PluginDescriptor(name = "System Time", where = PluginDescriptor.WHERE_AUTOSTART, fnc = startup)]

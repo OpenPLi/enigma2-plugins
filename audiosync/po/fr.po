@@ -2,17 +2,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: AudioSync\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-12-18 02:07+0100\n"
+"POT-Creation-Date: 2017-03-04 15:54+0100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Pr2 <dummy@dummy.com>\n"
 "Language-Team: \n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Basepath: D:\\Dreambox\\Eclipse\\ac3lipsync\\\n"
-"X-Generator: Poedit 1.7.6\n"
+"X-Poedit-Basepath: D:/Dreambox/Eclipse/ac3lipsync\n"
+"X-Generator: Poedit 1.8.12\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"Language: fr\n"
 "X-Poedit-SearchPath-0: src\n"
 
 #: src/AC3main.py:57
@@ -241,3 +241,24 @@ msgstr "Configuration Audio Sync"
 #: src/plugin.py:37
 msgid "Setup for the Audio Sync Plugin"
 msgstr "Configuration du plugin Audio Sync"
+
+msgid "AC3 Lip Sync Setup"
+msgstr "Configuration synchro des lèvres AC3"
+
+msgid "disabled"
+msgstr "désactivé"
+
+msgid "after restart"
+msgstr "après redémarrage"
+
+msgid "after standby"
+msgstr "après veille"
+
+msgid "after restart/standby"
+msgstr "après redémarrage/veille"
+
+msgid "Restart audio"
+msgstr "Redémarrer audio"
+
+msgid "Restart audio delay (in sec)"
+msgstr "Redémarrer le délai audio (en sec)"

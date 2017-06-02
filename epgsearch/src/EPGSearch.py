@@ -752,7 +752,7 @@ class EPGSearch(EPGSelection):
 					tmbdsearch = config.plugins.tmbd.profile.value
 				except:
 					tmbdsearch = None
-				if tmbdsearch != None:
+				if tmbdsearch is not None:
 					if config.plugins.tmbd.profile.value == "0":
 						self.session.open(TMBD, eventname, False)
 					else:
@@ -802,12 +802,16 @@ class EPGSearch(EPGSelection):
 		if len(history) > 0:
 			options.append((_("Clear history"), self.ClearHistory))
 		options.append((_("Timers list"), self.openTimerslist))
-		options.append((_("Setup"), self.setup))
+
+		keys = ["menu"]
+		keys = [ "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "red", "green", "yellow", "blue" ][:len(options)] + (len(options) - 14) * [""] + keys
+		options.append((_("Setup"), self.setup ))
 
 		self.session.openWithCallback(
 			self.menuCallback,
 			ChoiceBox,
-			list = options
+			list = options,
+			keys = keys
 		)
 
 	def menuCallback(self, ret):

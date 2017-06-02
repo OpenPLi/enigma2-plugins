@@ -4,8 +4,8 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-06-10 16:57+0100\n"
 "PO-Revision-Date: \n"
-"Last-Translator: Dimitrij <Dima-73@inbox.lv>\n"
-"Language-Team: PLi Dima73\n"
+"Last-Translator: Dimitrij <dima-73@inbox.lv>\n"
+"Language-Team: openPLi Dimitrij\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -139,4 +139,34 @@ msgstr "Режим"
 
 msgid "Lock timeout"
 msgstr "Таймаут блокировки"
+
+msgid "UHD Interlace Mode"
+msgstr "UHD чересстрочный режим"
+
+msgid "UHD Progressive Mode"
+msgstr "UHD прогрессивный режим"
+
+msgid "Enable 2160p24 Mode"
+msgstr "Включить режим 2160p24"
+
+msgid "Enable 2160p25 Mode"
+msgstr "Включить режим 2160p25"
+
+msgid "Enable 2160p30 Mode"
+msgstr "Включить режим 2160p30"
+
+msgid "Ask before changing videomode"
+msgstr "Спросить перед изменением видеорежима"
+
+msgid "Changing framerate for current service?\nCurrent framerate: %s\nNew framerate: %s\n"
+msgstr "Изменить скорость частоты кадров для текущего сервиса?\nТекущая скорость частоты кадров: %s\nНовая скорость частоты кадров: %s\n"
+
+msgid "Message timeout"
+msgstr "Таймаут сообщения"
+
+msgid "Use 60HZ instead 30HZ"
+msgstr "Использовать 60HZ вместо 30HZ"
+
+msgid "Enable 720p50 Mode"
+msgstr "Включить режим 720p50"
 

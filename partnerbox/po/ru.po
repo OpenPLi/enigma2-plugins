@@ -569,3 +569,9 @@ msgstr "Получить MAC"
 
 msgid "MAC"
 msgstr "MAC"
+
+msgid "Set %s as fallback remote receiver?"
+msgstr "Установить %s как запасной удаленный ресивер?"
+
+msgid "Set as fallback remote receiver"
+msgstr "Установить как запасной удаленный ресивер"

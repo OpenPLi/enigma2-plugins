@@ -168,7 +168,7 @@ def NASpowerdown(Nname,Nuser,Npass,Ncommand,Nport):
 		if config.plugins.elektro.NASwait.value == True:
 			tt = time() + 90
 			l = l + "\n waiting...\n"
-			while tt>time() and ping.doOne(Nname,1) != None:
+			while tt>time() and ping.doOne(Nname,1) is not None:
 				sleep(2)
 		tn.write('exit\r')
 		l = l + tn.expect(['#',">"],5)[2]
@@ -805,7 +805,7 @@ class DoElektro(Screen):
 			for i in range(10):
 				ip = "%d.%d.%d.%d" % tuple(config.plugins.elektro.ip[i].value)
 				if ip != "0.0.0.0":
-					if ping.doOne(ip,0.1) != None:
+					if ping.doOne(ip,0.1) is not None:
 						print pluginPrintname, ip, "online"
 						trysleep = False
 						break

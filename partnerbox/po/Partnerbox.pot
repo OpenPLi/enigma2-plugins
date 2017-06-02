@@ -738,3 +738,8 @@ msgstr ""
 msgid "MAC"
 msgstr ""
 
+msgid "Set %s as fallback remote receiver?"
+msgstr ""
+
+msgid "Set as fallback remote receiver"
+msgstr ""

@@ -16,16 +16,13 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../src/plugin.py:51
-msgid "Cancel"
-msgstr ""
 
 #: ../src/plugin.py:25
 msgid "Change Root Password"
 msgstr ""
 
 #: ../src/plugin.py:131
-msgid "Change or reset the root password of your dreambox"
+msgid "Change or reset the root password of your box"
 msgstr ""
 
 #: ../src/plugin.py:73
@@ -55,3 +52,13 @@ msgstr ""
 #: ../src/plugin.py:54
 msgid "virt. Keyboard"
 msgstr ""
+
+msgid "Delete Password"
+msgstr ""
+
+msgid "Password deleted sucessfully for root user"
+msgstr ""
+
+msgid "Unable to delete password for root user"
+msgstr ""
+

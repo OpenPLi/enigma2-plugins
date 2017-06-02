@@ -828,7 +828,7 @@ class IRCClient(basic.LineReceiver):
         """
         # << TOPIC #xtestx :fff
         if channel[0] not in '&#!+': channel = '#' + channel
-        if topic != None:
+        if topic is not None:
             self.sendLine("TOPIC %s :%s" % (channel, topic))
         else:
             self.sendLine("TOPIC %s" % (channel,))

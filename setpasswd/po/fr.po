@@ -23,9 +23,6 @@ msgstr ""
 msgid "Change Root Password"
 msgstr "Changer le mot de passe root"
 
-#: plugin.py:51
-msgid "Cancel"
-msgstr "Annuler"
 
 #: plugin.py:52
 msgid "Set Password"
@@ -56,5 +53,5 @@ msgid "Enter your password here:"
 msgstr "Entrer votre mot de passe ici:"
 
 #: plugin.py:130
-msgid "Change or reset the root password of your dreambox"
+msgid "Change or reset the root password of your box"
 msgstr "Changer ou réinitialiser le mot de passe root de votre récepteur."

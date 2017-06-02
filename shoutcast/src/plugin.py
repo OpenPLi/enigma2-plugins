@@ -194,7 +194,7 @@ class SHOUTcastWidget(Screen):
 		self.currentGoogle = None
 		self.nextGoogle = None
 		self.currPlay = None
-		self.CurrentService = self.session.nav.getCurrentlyPlayingServiceReference()
+		self.CurrentService = self.session.nav.getCurrentlyPlayingServiceOrGroup()
 		self.session.nav.stopService()
 		self.session.nav.event.append(self.__event)
 		self["cover"] = Cover()
@@ -346,14 +346,14 @@ class SHOUTcastWidget(Screen):
 						del self.session.pip
 					self.session.pipshown = False
 		elif answer == "start":
-			prev_playingref = self.session.nav.getCurrentlyPlayingServiceReference()
+			prev_playingref = self.session.nav.currentlyPlayingServiceOrGroup
 			if prev_playingref:
-				self.session.nav.currentlyPlayingServiceReference = None
+				self.session.nav.currentlyPlayingServiceOrGroup = None
 			InfoBar.showPiP(InfoBar.instance)
 			if self.visible:
 				self.hideWindow()
 			if prev_playingref:
-				self.session.nav.currentlyPlayingServiceReference = prev_playingref
+				self.session.nav.currentlyPlayingServiceOrGroup = prev_playingref
 			slist = self.servicelist
 			if slist:
 				try:
@@ -571,7 +571,7 @@ class SHOUTcastWidget(Screen):
 			root = xml.etree.cElementTree.fromstring(xmlstring)
 		except: return []
 		data = root.find("data")
-		if data == None:
+		if data is None:
 			print "[SHOUTcast] could not find data tag, assume flat listing\n"
 			return [SHOUTcastGenre(name=childs.get("name")) for childs in root.findall("genre")]
 		for glist in data.findall("genrelist"):
@@ -716,7 +716,7 @@ class SHOUTcastWidget(Screen):
 		except: return []
 		config_bitrate = int(config.plugins.shoutcast.streamingrate.value)
 		data = root.find("data")
-		if data == None:
+		if data is None:
 			print "[SHOUTcast] could not find data tag\n"
 			return []
 		for slist in data.findall("stationlist"):
@@ -875,9 +875,10 @@ class SHOUTcastWidget(Screen):
 			except:
 				pass
 		self.stopReloadStationListTimer()
-		self.session.nav.playService(self.CurrentService)
-		self.session.nav.event.remove(self.__event)
+		if self.__event in self.session.nav.event:
+			self.session.nav.event.remove(self.__event)
 		self.currPlay = None
+		self.session.nav.playService(self.CurrentService)
 		containerStreamripper.dataAvail.remove(self.streamripperDataAvail)
 		containerStreamripper.appClosed.remove(self.streamripperClosed)
 
@@ -901,7 +902,7 @@ class SHOUTcastWidget(Screen):
 			sendUrlCommand(self.currentGoogle, None, 10).addCallback(self.GoogleImageCallback).addErrback(self.Error)
 			return
 		self.currentGoogle = None
-		r=re.findall(',imgurl:&quot;(.*?)&quot;,tid',result)
+		r = re.findall('murl&quot;:&quot;(http.*?)&quot',result, re.S|re.I)
 		if r:
 			url = r[nr]
 			print "[SHOUTcast] fetch cover first try:%s" % (url)
@@ -1066,7 +1067,7 @@ class Cover(Pixmap):
 
 	def paintIconPixmapCB(self, picInfo=None):
 		ptr = self.picload.getData()
-		if ptr != None:
+		if ptr is not None:
 			self.instance.setPixmap(ptr.__deref__())
 			if self.visible:
 				self.doShow()
@@ -1200,7 +1201,6 @@ class SHOUTcastLCDScreen(Screen):
 
 	def setText(self, text):
 		self["text2"].setText(text[0:39])
-
 
 class SHOUTcastSetup(Screen, ConfigListScreen):
 

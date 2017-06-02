@@ -154,3 +154,7 @@ msgid ""
 "Reboot now ?\n"
 "\n"
 msgstr ""
+
+msgid "No vtuner found."
+msgstr ""
+

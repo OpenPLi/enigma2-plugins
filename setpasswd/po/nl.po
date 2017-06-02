@@ -19,14 +19,12 @@ msgstr ""
 "X-Poedit-Country: NETHERLANDS\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-msgid "Cancel"
-msgstr "Annuleren"
 
 msgid "Change Root Password"
 msgstr "Wijzig root wachtwoord..."
 
-msgid "Change or reset the root password of your dreambox"
-msgstr "Wijzig of reset het root wachtwoord van uw Dreambox"
+msgid "Change or reset the root password of your box"
+msgstr "Wijzig of reset het root wachtwoord van uw box"
 
 msgid "Enter new Password"
 msgstr "Geef nieuw wachtwoord"

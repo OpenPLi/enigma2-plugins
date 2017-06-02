@@ -1,0 +1,607 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Enigma2 EPGRefresh Plugin\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-08-02 20:15+0200\n"
+"PO-Revision-Date: 2017-03-24 14:44+0100\n"
+"Last-Translator: ims <andrej.tobola@gmail.com>\n"
+"Language-Team: PLi\n"
+"Language: sk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Basepath: .\n"
+"X-Generator: Poedit 1.8.11\n"
+"X-Poedit-SearchPath-0: D:/Dreambox/Plugins/enigma2-plugins/epgrefresh/src\n"
+
+msgid "Main Picture"
+msgstr "Hlavný obraz"
+
+msgid "Picture in Picture"
+msgstr "Obraz v obraze (PiP)"
+
+msgid "Picture in Picture (hidden)"
+msgstr "Obraz v obraze (skrytý)"
+
+msgid "Fake recording"
+msgstr "Falošné nahrávanie"
+
+msgid "nowhere"
+msgstr "nikde"
+
+msgid "event info"
+msgstr "v informácii o udalosti"
+
+msgid "channel selection"
+msgstr "v zozname staníc"
+
+msgid "event info / channel selection"
+msgstr "v informácii o udalosti / zozname staníc"
+
+msgid "Press OK"
+msgstr "Stlačte OK"
+
+msgid "Background only"
+msgstr "Len na pozadí"
+
+msgid "Foreground also"
+msgstr "Aj v popredí"
+
+msgid ""
+"This might have been an automated bootup to refresh the EPG. For this to happen it is recommended to put the receiver to Standby.\n"
+"Do you want to do this now?"
+msgstr ""
+"Pre obnovenie EPG môže byť vyžadovaný automatický reštart. Aby sa tak stalo, doporučujeme uviesť prijímač do pohotovostného režimu.\n"
+"Prajete si prepnúť prijímač do pohotovostného režimu?"
+
+msgid "AutoZap"
+msgstr ""
+
+msgid "   (AutoZap)"
+msgstr ""
+
+msgid "add service to EPGRefresh"
+msgstr "pridať stanicu do EPGRefresh"
+
+msgid "Manual EPG"
+msgstr "Manuálne EPG"
+
+msgid "Stop Running EPG-refresh"
+msgstr "Zastaviť aktualizáciu EPG"
+
+msgid "EPG-refresh now"
+msgstr "Aktualizovať EPG"
+
+msgid "Automatically refresh EPG"
+msgstr "Automatická aktualizácia EPG"
+
+msgid "add to EPGRefresh"
+msgstr "Pridať do EPGRefresh"
+
+msgid "Refresh-EPG / AutoZap"
+msgstr "Aktualizovať EPG / AutoZap"
+
+msgid "AutoZap for refreshing EPG data"
+msgstr "AutoZap pre aktualizáciu EPG dát"
+
+msgid "EPGRefresh"
+msgstr "EPGRefresh"
+
+msgid "manual save/load EPG"
+msgstr "manuálne uloženie/načítanie EPG"
+
+msgid "EPG refresh started in background."
+msgstr "Aktualizácia EPG spustená na pozadí."
+
+msgid "Please don't use PiP in the meantime!"
+msgstr "Prosím, nepoužívajte teraz PiP!"
+
+msgid "EPG refresh finished."
+msgstr "Aktualizácia EPG dokončená."
+
+msgid "PiP available now."
+msgstr "PiP je už dostupné."
+
+msgid "EPG refresh starts scanning channels."
+msgstr "Aktualizácia EPG začala prehľadávať kanály."
+
+msgid "EPGRefresh Services"
+msgstr "EPGRefresh stanice"
+
+msgid "Channels"
+msgstr "Kanály"
+
+msgid "Bouquets"
+msgstr "Prehľady"
+
+msgid "Cancel"
+msgstr "Zrušiť"
+
+msgid "OK"
+msgstr "OK"
+
+msgid "delete"
+msgstr "zmazať"
+
+msgid "New"
+msgstr "Nový"
+
+msgid "Edit Services to refresh"
+msgstr "Upraviť aktualizované kanály"
+
+msgid "Editing"
+msgstr "Úprava"
+
+msgid "Refreshing"
+msgstr "Aktualizácia"
+
+msgid "Select channel to refresh"
+msgstr "Vyberte kanál pre aktualizáciu"
+
+msgid "Select bouquet to refresh"
+msgstr "Vyberte obľúbené prehľady pre aktualizáciu"
+
+msgid "EPG Cache Check"
+msgstr "Kontrola EPG Cache"
+
+msgid "Reloading EPG Cache..."
+msgstr "Načítavanie EPG cache..."
+
+msgid "Adding schedule..."
+msgstr "Pridať plán..."
+
+msgid "Saving EPG Cache..."
+msgstr "Ukladá sa EPG Cache..."
+
+msgid "Are you sure you want to save the EPG cache to:\n"
+msgstr "Chcete uložiť vyrovnávaciu pamäť EPG (cache) do:\n"
+
+msgid "Are you sure you want to reload the EPG data from:\n"
+msgstr "Chcete načítať údaje z vyrovnávacej pamäte EPG (cache) z:\n"
+
+msgid "Configuration save / load EPG"
+msgstr "Nastavenie uloženia/načítania EPG"
+
+msgid "Save EPG"
+msgstr "Uložiť EPG"
+
+msgid "Manually save EPG to current cache file."
+msgstr "Manuálne uložiť EPG do aktuálneho súboru (cache)."
+
+msgid "Load EPG"
+msgstr "Načítanie EPG"
+
+msgid "Manually load EPG from current cachefile."
+msgstr "Manuálne načítať EPG z aktuálneho súboru (cache)."
+
+msgid "Clear EPG"
+msgstr "Vyčistiť EPG"
+
+msgid "Manually clear EPG (choose method)."
+msgstr "Manuálne vyčistenie EPG (zvolte metódu)."
+
+msgid "Reload EPG"
+msgstr "Obnoviť EPG"
+
+msgid "Manually load EPG from current cache file."
+msgstr "Manuálne načítať EPG z aktuálneho (cache) súboru."
+
+msgid "Restore EPG backup"
+msgstr "Obnoviť EPG zo zálohy"
+
+msgid "Manually restore EPG from backup cache file."
+msgstr "Ručne obnoviť EPG zo záložného (cache) súboru."
+
+msgid "Automatically save EPG"
+msgstr "Automatické ukladanie EPG"
+
+msgid "Enable automatic EPG save interval."
+msgstr "Povoliť interval automatického ukladania EPG."
+
+msgid "Automatic save period (in hours)"
+msgstr "Interval automatického ukladania (v hod.)"
+
+msgid "Configure EPG save interval, if enabled."
+msgstr "Nastavenie intervalu ukladania EPG, pokiaľ je to povolené."
+
+msgid "Automatically load EPG"
+msgstr "Automatické načítanie EPG"
+
+msgid "Automatic EPG loading from current cache file."
+msgstr "Automatické načítanie EPG z aktuálneho (cache) súboru."
+
+msgid "Automatic load period (in hours)"
+msgstr "Interval automatického načítania (v hod.)"
+
+msgid "Configure EPG load interval, if enabled. This is an option for experienced users."
+msgstr "Nastavenie intervalu načítania EPG, pokiaľ je to povolené. Toto je voľba pre skúsených užívateľov."
+
+msgid "EPG cache file path"
+msgstr "Cesta k súboru EPG (cache)"
+
+msgid "Select the path to EPG cache file. Don't use the internal flash if not necessary!"
+msgstr "Vyberte cestu k EPG (cache) súboru. Nedoporučuje sa používať internú flash mapäť."
+
+msgid "EPG cache file filename"
+msgstr "Názov EPG (cache) súboru"
+
+msgid "Select the file name for the EPG cache file."
+msgstr "Vyberte názov EPG (cache) súboru."
+
+msgid "Create backup when saving EPG"
+msgstr "Vytvárať zálohu pri ukládání EPG"
+
+msgid "Create a backup cache file, after manually or automatically saving EPG."
+msgstr "Vytvoriť zálohu EPG súboru (cache) pri manuálnom alebo automatickom ukladaní EPG."
+
+msgid "Automatically restore EPG backup on boot"
+msgstr "Automaticky obnoviť EPG zálohu pri štarte"
+
+msgid "Load EPG from backup cache file when booting."
+msgstr "Načítať EPG zo záložného súboru (cache) počas štartu."
+
+msgid "Show entry 'Manually change EPG' in main menu"
+msgstr "Zobrazovať 'Manuálna zmena EPG' v hlavnom menu"
+
+msgid "Restart enigma2 to effectuate."
+msgstr "Reštartujte enigmu2 pre vykonanie zmien."
+
+msgid "Show entry 'AutoZap' in extensions menu"
+msgstr "Zobrazovať 'AutoZap' v menu rozšírení"
+
+msgid "Enable automatic zapping of all services in the current services list."
+msgstr "Povoľuje automatické prepnutie všetkých staníc nachádzajúcich sa v aktuálnom zozname staníc."
+
+msgid "Duration to show each service (in seconds) for 'AutoZap'"
+msgstr "Doba zobrazenia každej stanice (v sek.) pre 'AutoZap'"
+
+msgid "This is the duration each service will be shown in AutoZap mode."
+msgstr "Doba, po ktorú bude každý program zobrazený v AutoZap móde."
+
+msgid "Size: "
+msgstr "Veľkosť:"
+
+msgid "Current EPG cachefile:"
+msgstr "Aktuálny súbor EPG cache:"
+
+msgid "Are you sure you want to load the EPG data from:\n"
+msgstr "Chcete načítať EPG údaje z:\n"
+
+msgid "Are you sure you want to save and load the EPG data from:\n"
+msgstr "Chcete uložiť a znovu načítať EPG údaje z:\n"
+
+msgid "Backup file load!"
+msgstr "Záložný súbor načítaný!"
+
+msgid ""
+"Backup file is corrupt!\n"
+"Backup file will be deleted!"
+msgstr ""
+"Záložný soubor je poškodený\n"
+"a bude vymazaný!"
+
+msgid "Backup file is not found!"
+msgstr "Záložný súbor nenájdený!"
+
+msgid "Input EPG Cache path"
+msgstr "Cesta k EPG (cache) súboru"
+
+msgid "Clear only in memory (RAM) EPG"
+msgstr "Vyčistit EPG len v pamäti (RAM)"
+
+msgid "Clear only epg.dat and epg.dat.backup"
+msgstr "Vyčistit iba epg.dat a epg.dat.backup"
+
+msgid "Clear all EPG"
+msgstr "Vyčistiť všetky EPG"
+
+msgid "Select action:"
+msgstr "Zvolte akciu:"
+
+msgid "Really close without saving settings?"
+msgstr "Naozaj zatvoriť bez uloženia nastavenia?"
+
+msgid "The same functions are used in plugin EPGD!!"
+msgstr "Rovnaké funkcie sú použité v plugine EPGD!!"
+
+msgid "The same functions are used in Menu -> System -> EPG settings!"
+msgstr "Rovnaké funkcie sú použité v Menu -> Nastavenie -> Systém -> Nastavenie EPG!"
+
+msgid "Select options"
+msgstr "Vyberte možnosti"
+
+msgid "Manually save EPG"
+msgstr "Manuálne uložiť EPG"
+
+msgid "Manually load EPG"
+msgstr "Manuálne načítať EPG"
+
+msgid "Manually reload EPG"
+msgstr "Manuálne obnoviť EPG"
+
+msgid "Configuration..."
+msgstr "Nastavenie..."
+
+msgid "Monday"
+msgstr "Pondelok"
+
+msgid "Tuesday"
+msgstr "Utorok"
+
+msgid "Wednesday"
+msgstr "Streda"
+
+msgid "Thursday"
+msgstr "Štvrtok"
+
+msgid "Friday"
+msgstr "Piatok"
+
+msgid "Saturday"
+msgstr "Sobota"
+
+msgid "Sunday"
+msgstr "Nedeľa"
+
+msgid "EPGRefresh configuration"
+msgstr "Nastavenie EPGRefresh"
+
+msgid "Setup save / load EPG"
+msgstr "Nastaviť uloženie/načítanie EPG"
+
+msgid "Press the OK button to open the save / load EPG (+ configuration) menu."
+msgstr "Stlačte OK a otvorte menu pre uloženie/načítanie EPG (+ konfigurácia)."
+
+msgid "Refresh EPG automatically"
+msgstr "Aktualizovať EPG automaticky"
+
+msgid "EPGRefresh needs to be explicitly started using the yellow button in this menu if this option is not enabled"
+msgstr "Ak je táto voľba zakázaná, EPGRefresh nebude prebiehať automaticky a musí byť spustený pomocou žltého tlačidla v tejto ponuke."
+
+msgid "Show in extensions menu"
+msgstr "Zobrazovať v menu rozšírení"
+
+msgid "Enable this to show the EPGRefresh configuration menu in the extension menu."
+msgstr "Umožní pristupovať k nastaveniu EPGRefresh z menu rozšírení."
+
+msgid "Show \"add to EPGRefresh\" in"
+msgstr "Zobrazovať \"pridať do EPGRefresh\" v"
+
+msgid "Select this item to add services to the EPGRefresh."
+msgstr "Túto voľbu zapnite, ak chcete pridávať stanice do EPGRefresh'."
+
+msgid "Show popup when refresh starts or ends"
+msgstr "Zobrazovať správu, ak aktualizácia EPG začne alebo skončí"
+
+msgid "Enable this to show an informational message at the start and completion of the refresh."
+msgstr "Určuje, či sa bude zobrazovať správa pri spúšťaní a dokončení aktualizácie EPG."
+
+msgid "Wake up from deep standby"
+msgstr "Prebudiť z hlbokého spánku"
+
+msgid "Enable this item to wake up the receiver from deep standby (if possible)."
+msgstr "Ak je povolené, prebudí sa prijímač z hlbokého spánku (ak to bude možné)."
+
+msgid "Choice days for refresh"
+msgstr "Nastavenie dní pre aktualizáciu"
+
+msgid "Select the days of the week for automatic refresh."
+msgstr "Vyberte dni v týždni pre automatickú aktualizáciu EPG."
+
+msgid "Timespan to remain on service (in seconds)"
+msgstr "Časové rozpätie zotrvania programu (v sekundách)"
+
+msgid "This is the duration each service/channel will be tuned to during a refresh."
+msgstr "Doba, po ktorú zostáva stanica/kanál prepnutý z dôvodu načítavania EPG."
+
+msgid "EPG refresh auto-start earliest (hh:mm)"
+msgstr "Aktualizáciu EPG spúšťať najskôr v (hh:mm)"
+
+msgid "Automated refresh will start after this time of day, but before the time specified in next setting."
+msgstr "Automatická aktualizácia sa spustí každý deň o tomto čase, ale pred časom zadaným v nasledujúcom nastavení."
+
+msgid "EPG refresh auto-start latest (hh:mm)"
+msgstr "Aktualizáciu EPG spúšťať najneskôr v (hh:mm)"
+
+msgid "Automated refresh will start before this time of day, but after the time specified in previous setting."
+msgstr "Automatická aktualizácia sa spustí každý den pred týmto časom, ale najskôr po čase nastavenom v predchádzajúcom nastavení."
+
+msgid "Delay if not in standby (in minutes)"
+msgstr "Oneskorenie, pokiaľ nie je v pohotovostnom režime (v minutách)"
+
+msgid "The duration that will be waited for the receiver to go into standby."
+msgstr "Doba, po ktorú sa čaká, kým prejde prijímač do pohotovostného režimu."
+
+msgid "Force scan even if receiver is in use"
+msgstr "Vynútiť aktualizáciu, aj keď sa prijímač používa"
+
+msgid "Don't wait for the receiver to go into standby when starting a refresh cycle."
+msgstr "Nečaká sa na prechod do pohotovostného režimu, ak sa spúšťa aktualizácia."
+
+msgid "Shutdown after EPG refresh"
+msgstr "Vypnúť po aktualizácii EPG"
+
+msgid "Whether the receiver should go into deep standby after refresh is completed."
+msgstr "Určuje, či sa prijímač po vykonaní aktualizácie prepne do hlbokého spánku (vypnutie)."
+
+msgid "Save EPG after refresh"
+msgstr "Uložiť EPG po aktualizácii"
+
+msgid "Save EPG in the cache file after refresh is completed."
+msgstr "Po dokončení aktualizácie EPG uložiť EPG do súboru (cache)."
+
+msgid "Show 'EPGRefresh now' in main menu"
+msgstr "Zobrazovať 'Aktualizovať EPG' v hlavnom menu"
+
+msgid "If enabled, show 'EPGRefresh now' in main menu when currently no EPGRefresh is running."
+msgstr "Ak je povolené, bude zobrazená 'Aktualizácia EPG' v hlavnom menu (pokiaľ už aktualizácia neprebieha)."
+
+msgid "Show 'Stop running EPGRefresh' in main menu"
+msgstr "Zobrazovať 'Zastaviť aktualizáciu EPG' v hlavnom menu"
+
+msgid "If enabled, show 'Stop running EPGRefresh' in main menu when EPGPRefresh is running."
+msgstr "Ak je povolené, v hlavnom menu bude zobrazená voľba 'Zastaviť aktualizáciu EPG' v prípade, že prebieha aktualizácia EPG."
+
+msgid "Refresh EPG using"
+msgstr "Aktualizácia EPG používa"
+
+msgid "If you want to refresh the EPG in background, you can choose the method which best suits your needs here, e.g. hidden, fake recording or regular Picture in Picture."
+msgstr "Ak chcete aktualizovať EPG na pozadí, môžete si zvoliť metódu, ktorá najlepšie vyhovuje Vašim potrebám. Napr. Skrytá, Falošné nahrávanie alebo Obraz v obraze (PiP)."
+
+msgid "Skip protected Services"
+msgstr "Preskočit chránené stanice"
+
+msgid "Select mode the refresh for services/bouquets parental control."
+msgstr "Nastavuje režim aktualizácie EPG pre stanice/prehľady z rodičovskej kontroly."
+
+msgid "Inherit Services from AutoTimer"
+msgstr "Prevziať stanice z AutoTimeru"
+
+msgid "Extend the list of services to refresh by those your AutoTimers use?"
+msgstr "Zoznam kanálov pre automatickú aktualizáciu EPG bude rozšírený o kanály používané v AutoTimeri."
+
+msgid "Run AutoTimer after refresh"
+msgstr "Spustiť AutoTimer po aktualizácii"
+
+msgid "After a successful refresh the AutoTimer will automatically search for new matches if this is enabled."
+msgstr "Ak je povolené, po úspešnej aktualizácii Autotimer automaticky vyhľadá dodatočné kanály."
+
+msgid "Timeout shutdown after refresh for SeriesPlugin (min)"
+msgstr "Oneskorené vypnutie po aktualizácii pre SeriesPlugin (v min.)"
+
+msgid "If \"Run AutoTimer after refresh\" and \"Shutdown after EPG refresh\" enabled and use \"Label series\" for match, set long timeout."
+msgstr "Ak sú voľby \"Spustiť AutoTimer po aktualizácii\" a \"Vypnúť po aktualizácii EPG\" povolené a pre hľadanie používate \"Label series\", nastavte dlhšie oneskorenie."
+
+msgid "Save"
+msgstr "Uložiť"
+
+msgid "Refresh now"
+msgstr "Aktualizovať"
+
+msgid "Edit Services"
+msgstr "Upraviť stanice"
+
+msgid "EPGRefresh Configuration"
+msgstr "EPGRefresh konfigurácia"
+
+msgid "Version"
+msgstr "Verzia"
+
+msgid "Return to TV viewing"
+msgstr "Návrat na sledovánie TV"
+
+msgid "Select action after refresh:"
+msgstr "Vyberte akciu po aktualizácii:"
+
+msgid "Shutdown after EPG refresh enabled in setup..."
+msgstr "Vypnúť po aktualizácii EPG je povolené v nastavení..."
+
+msgid "never"
+msgstr "nikdy"
+
+#, python-format
+msgid "Last refresh was %s"
+msgstr "Posledná aktualizácia: %s"
+
+msgid "Days Profile"
+msgstr "Profil dní"
+
+msgid ""
+"You may not use this settings!\n"
+"At least one day a week should be included!"
+msgstr ""
+"Nemôžete použiť toto nastavenie!\n"
+"Musí byť vybratý aspoň jeden deň v týždni!"
+
+msgid "Stop Running EPG-refresh?\n"
+msgstr "Zastaviť prebiehajúcu aktualizáciu EPG?\n"
+
+#, python-format
+msgid ""
+"\n"
+"%d more services."
+msgstr ""
+"\n"
+"a ďalších %d staníc."
+
+msgid "Following Services have to be scanned:"
+msgstr "Nasledujúce programy musia byť skontrolované:"
+
+#~ msgid "Auto restore EPG from backup cachefile and loading on boot."
+#~ msgstr "Automaticky obnoviť EPG zo záložného súboru a načítať pri štarte."
+
+#~ msgid "Automatic loading EPG from current cachefile after a specified time."
+#~ msgstr "Automatické načítanie EPG z aktuálneho súboru (cache) v zadanom čase."
+
+#~ msgid "Automatic saving EPG in current cachefile after a specified time."
+#~ msgstr "Automatické uloženie EPG do aktuálneho súboru (cache) v zadanom čase."
+
+#~ msgid "Automatic switching of all the services in the current channel list after a specified time. Stop switch can only manually."
+#~ msgstr "Automatické prepínanie všetkých staníc v aktuálnom prehľade kanálov po uplynutí nastavenej doby. Vypnúť pôjde len ručne."
+
+#~ msgid "Changes are needed to restart enigma2."
+#~ msgstr "Zmeny sa prejavia po reštarte enigma2."
+
+#~ msgid "Do not set too short period of time."
+#~ msgstr "Nenastavujte príliš krátky interval."
+
+#~ msgid "Download EPG from exUSSR"
+#~ msgstr "Stiahnúť EPG z exUSSR"
+
+#~ msgid "Download internet EPG from exUSSR"
+#~ msgstr "Stahovať internetové EPG z exUSSR"
+
+#~ msgid "EPG is loaded!"
+#~ msgstr "EPG je načítané!"
+
+#~ msgid "EPG with Linux-Sat"
+#~ msgstr "EPG s Linux-Sat"
+
+#~ msgid "If the receiver currently isn't in standby, this is the duration which EPGRefresh will wait before retry."
+#~ msgstr "Doba, ako dlho bude EPGRefresh čakať pred opakovaním, pokiaľ nie je prijímač v pohotovostnom režime."
+
+#~ msgid "If you want to download from the internet russian ERG, put to yes."
+#~ msgstr "Povoľte, ak chcete sťahovat z ruského internetového EPG serveru."
+
+#~ msgid "Manual saving and loading EPG from current cachefile."
+#~ msgstr "Manuálne uloženie a načítanie EPG z aktuálneho súboru (cache)."
+
+#~ msgid "Not found the mounted device for EPG file!"
+#~ msgstr "Nenájdené pripojené zariadenie pre EPG súbor!"
+
+#~ msgid "Please wait..."
+#~ msgstr "Čakajte prosím..."
+
+#~ msgid "Press OK to download EPG with http://linux-sat.tv."
+#~ msgstr "Stlačte OK pre stiahnutie EPG z http://linux-sat.tv"
+
+#~ msgid "Press button OK in order to open the settings menu."
+#~ msgstr "Stlačte OK pre otvorenie menu nastavení."
+
+#~ msgid "Russian language"
+#~ msgstr "Ruština"
+
+#~ msgid "Select language for download:"
+#~ msgstr "Zvoľte jazyk pre stiahnutie:"
+
+#~ msgid "Show download exUSSR EPG in list setup"
+#~ msgstr "Zobrazovať sťahovanie exUSSR EPG v zozname nastavení"
+
+#~ msgid ""
+#~ "Sorry, EPG was downloaded but not loaded!\n"
+#~ "Maybe EPG file is corrupt!"
+#~ msgstr ""
+#~ "EPG bolo stiahnuté, ale nenačítané!\n"
+#~ "Súbor EPG môže byť poškodený!"
+
+#~ msgid "Sorry, the EPG download failed!"
+#~ msgstr "Stiahnutie EPG zlyhalo!"
+
+#~ msgid "This option is not recommended to be used only in exceptional cases. Do not set too short period of time."
+#~ msgstr "Túto voľbu sa doporučuje používať len vo výnimočných prípadoch. Nenastavujte príliš krátky interval."
+
+#~ msgid "This setting controls whether or not the refresh will be initiated even though the receiver is active (either not in standby or currently recording)."
+#~ msgstr "Určuje, či bude alebo nebude aktualizácia EPG vykonaná v prípade, že je prijímač aktívny (buď nie je v pohotovostnom režime, alebo prebieha nahrávanie)."
+
+#~ msgid "Ukrainian language"
+#~ msgstr "Ukrajinčina"

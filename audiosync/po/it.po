@@ -269,3 +269,20 @@ msgstr "Spostare la finestra nell'angolo in basso a dx"
 msgid "Reset saved position"
 msgstr "Reset della posizione salvata"
 
+msgid "Restart audio"
+msgstr "Riavviare audio"
+
+msgid "Restart audio delay (in sec)"
+msgstr "Ritardo riavvio audio (sec)"
+
+msgid "after restart"
+msgstr "Dopo il riavvio"
+
+msgid "after restart/standby"
+msgstr "Dopo riavvio/standby"
+
+msgid "after standby"
+msgstr "Dopo lo standby"
+
+msgid "disabled"
+msgstr "Disabilitato"

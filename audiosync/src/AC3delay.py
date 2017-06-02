@@ -57,7 +57,7 @@ class AC3delay:
             self.activateTimer.stop()
         if self.bHasToRestartService == True:
             bInitialized = False
-            if self.iService == None:
+            if self.iService is None:
                 self.initAudio()
                 bInitialized = True
             if self.iServiceReference is not None:
@@ -93,7 +93,7 @@ class AC3delay:
 
     def getSystemDelay(self, sAudio):
         bInitialized = False
-        if self.iService == None:
+        if self.iService is None:
             self.initAudio()
             bInitialized = True
         iDelay = 0
@@ -114,7 +114,7 @@ class AC3delay:
 
     def setSystemDelay(self, sAudio, iDelay, bDelayStart):
         bInitialized = False
-        if self.iService == None:
+        if self.iService is None:
             self.initAudio()
             bInitialized = True
         if self.iAudioDelay is not None:
@@ -144,7 +144,7 @@ class AC3delay:
 
     def getAudioInformation(self):
         bInitialized = False
-        if self.iService == None:
+        if self.iService is None:
             self.initAudio()
             bInitialized = True
 
