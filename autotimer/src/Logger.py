@@ -47,14 +47,22 @@ def initLog():
 		logger.setLevel(logging.DEBUG)
 		
 	if config.plugins.autotimer.log_write.value:
-		fhandler = logging.FileHandler(config.plugins.autotimer.log_file.value)
-		fhandler.setLevel(logging.DEBUG)
+		try:
+			try:
+				fhandler = logging.FileHandler(config.plugins.autotimer.log_file.value)
+			except:
+				config.plugins.autotimer.log_file.value = "/tmp/autotimer.log"
+				config.plugins.autotimer.log_file.save()
+			fhandler = logging.FileHandler(config.plugins.autotimer.log_file.value)
+			fhandler.setLevel(logging.DEBUG)
 
-		fformatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
-		fhandler.setFormatter(fformatter)
+			fformatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
+			fhandler.setFormatter(fformatter)
 
-		logger.addHandler(fhandler)
-		logger.setLevel(logging.DEBUG)
+			logger.addHandler(fhandler)
+			logger.setLevel(logging.DEBUG)
+		except:
+			logger = None
 
 def shutdownLog():
 	global logger
