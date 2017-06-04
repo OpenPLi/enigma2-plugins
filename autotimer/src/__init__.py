@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 from Components.Language import language
 from Tools.Directories import resolveFilename, SCOPE_PLUGINS, SCOPE_LANGUAGE
-from os import environ as os_environ
 import gettext
 
 # Config
@@ -81,8 +80,9 @@ config.plugins.autotimer.style_autotimerslist = ConfigSelection(choices=[
 
 config.plugins.autotimer.log_shell = ConfigYesNo(default = False)
 config.plugins.autotimer.log_write = ConfigYesNo(default = False)
-config.plugins.autotimer.log_file  = ConfigText(default = "/tmp/autotimer.log", fixed_size = False)
-if config.plugins.autotimer.log_file.value == "":
+config.plugins.autotimer.log_file = ConfigText(default = "/tmp/autotimer.log", fixed_size = False)
+val = config.plugins.autotimer.log_file.value
+if not val or not val.endswith("autotimer.log"):
 	config.plugins.autotimer.log_file.value = "/tmp/autotimer.log"
 	config.plugins.autotimer.log_file.save()
 
