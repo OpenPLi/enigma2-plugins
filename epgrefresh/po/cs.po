@@ -116,7 +116,7 @@ msgid "Bouquets"
 msgstr "Přehledy"
 
 msgid "Cancel"
-msgstr "Zrušit"
+msgstr "Zavřít"
 
 msgid "OK"
 msgstr "OK"
