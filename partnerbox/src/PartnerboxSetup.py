@@ -253,12 +253,14 @@ class PartnerboxEntriesListConfigScreen(Screen):
 		if sel is None:
 			return
 		menu = []
-		menu.append((_("Wakeup"),0))
-		menu.append((_("Standby"),1))
+		if int(sel.enigma.value) == 0:
+			menu.append((_("Toggle Standby"),4))
+		else:
+			menu.append((_("Wakeup"),0))
+			menu.append((_("Standby"),1))
 		menu.append((_("Restart enigma"),2))
 		menu.append((_("Restart"),3))
 		if int(sel.enigma.value) == 0:
-			menu.append((_("Toggle Standby"),4))
 			menu.append((_("Deep Standby"),5))
 		else:
 			menu.append((_("Shutdown"),4))
