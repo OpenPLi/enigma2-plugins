@@ -218,7 +218,7 @@ class TranscodingSetup(ConfigListScreen, Screen):
 		None
 
 def startSetup(menuid):
-	if menuid != "system":
+	if menuid != "expert":
 		return []
 	return [(_("Transcoding Setup"), main, "transcoding_setup", 60)]
 
