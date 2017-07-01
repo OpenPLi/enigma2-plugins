@@ -36,7 +36,7 @@ msgstr "+%d min. / %s"
 
 #: RecInfobarSetup.py:74
 msgid "<<Only when zap to service at start timer>>"
-msgstr "<<Tik perjungiant kanalą, paleidžiant laikmatį>>"
+msgstr "<<Tik perjungus kanalą, paleidžiant laikmatį>>"
 
 #: plugin.py:485 plugin.py:557
 msgid "All Services"
@@ -145,7 +145,7 @@ msgstr " Gerai"
 
 #: RecInfobarSetup.py:77
 msgid "Preferred tuner for recording"
-msgstr "Pirmenybinis imtuvas įrašams"
+msgstr "Imtuvas, naudojamas įrašams"
 
 #: plugin.py:481 plugin.py:553
 msgid "Provider"
@@ -190,7 +190,7 @@ msgstr "Nustatyti teisingą laikmačio poziciją kanalų sąraše"
 
 #: RecInfobarSetup.py:68
 msgid "Show message when zap to recording service"
-msgstr "Perjungiant į įrašomą kanalą, rodyti žinutę"
+msgstr "Perjungiant į įrašomą kanalą, rodyti pranešimą"
 
 #: plugin.py:59
 msgid "Ss"
@@ -198,7 +198,7 @@ msgstr "Ssek."
 
 #: RecInfobarSetup.py:71
 msgid "Standby message screen timeout (sec)"
-msgstr "Budėjimo žinutės rodymo trukmė (sek.)"
+msgstr "Budėjimo pranešimo rodymo trukmė (sek.)"
 
 #: RecInfobarSetup.py:72
 msgid "Standby only type timer 'After event'"
@@ -227,19 +227,19 @@ msgstr "Nežinomas"
 
 #: RecInfobarSetup.py:61 RecInfobarSetup.py:64
 msgid "X screen position"
-msgstr "X ekrano pozicija"
+msgstr "X ekrano padėtis"
 
 #: RecInfobarSetup.py:62 RecInfobarSetup.py:65
 msgid "Y screen position"
-msgstr "Y ekrano pozicija"
+msgstr "Y ekrano padėtis"
 
 #: RecInfobarSetup.py:75
 msgid "Z screen position"
-msgstr "Z ekrano pozicija"
+msgstr "Z ekrano padėtis"
 
 #: RecInfobarSetup.py:67
 msgid "Zap on start service recording"
-msgstr "Pradžioje įrašo, perjungti į įrašomą kanalą"
+msgstr "Įrašo pradžioje perjungti į įrašomą kanalą"
 
 #: plugin.py:49
 msgid "all"
@@ -263,7 +263,7 @@ msgstr "automatiškai"
 
 #: plugin.py:49
 msgid "auto and deep standby"
-msgstr "auto ir išjungimas"
+msgstr "auto ir gilus budėjimas"
 
 #: plugin.py:41
 msgid "black"
@@ -285,7 +285,7 @@ msgstr ""
 
 #: plugin.py:49
 msgid "deep standby"
-msgstr "išjungti"
+msgstr "gilus budėjimas"
 
 #: plugin.py:44
 msgid "default"
