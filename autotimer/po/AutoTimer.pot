@@ -1474,3 +1474,8 @@ msgstr ""
 msgid "The autotimer file (/etc/enigma2/autotimer.xml) is corrupt and could not be loaded."
 msgstr ""
 
+msgid "A new and empty config was created. A backup of the config can be found here (/etc/enigma2/autotimer.xml_old)."
+msgstr ""
+
+msgid " (if services are enabled, bouquets are ignored)."
+msgstr ""

@@ -550,7 +550,7 @@ class AutoTimerEditor(Screen, ConfigListScreen, AutoTimerEditorBase):
 			self.isActive_services_value = _("enabled")
 		else:
 			self.isActive_services_value = _("disabled")
-		if self.bouquets:
+		if self.bouquets and not self.services:
 			self.isActive_bouquets_value = _("enabled")
 		else:
 			self.isActive_bouquets_value = _("disabled")
@@ -617,8 +617,8 @@ class AutoTimerEditor(Screen, ConfigListScreen, AutoTimerEditorBase):
 			self.descShortEqualExt: _("When this option enabled, short description to equal extended description if short description is empty."),
 			self.descShortExtEmpty: _("When this option enabled and short description and extended description match is empty and timer title exist in match title, match is not a duplicate. Attention, this may result in double timers."),
 			self.ratioThresholdDuplicate: _("To cater for spelling mistakes and small deviations in the EPG information, you can make the matching algorithm fuzzy by setting the percentage both programmes must be equal for. Use 100% if you only want a match when both are completely identical. Recommended default ratio 80%."),
-			self.isActive_services: _("Use blue key to edit bouquets or services."),
-			self.isActive_bouquets: _("Use blue key to edit bouquets or services."),
+			self.isActive_services: _("Use blue key to edit bouquets or services.") + _(" (if services are enabled, bouquets are ignored.)."),
+			self.isActive_bouquets: _("Use blue key to edit bouquets or services.") + _(" (if services are enabled, bouquets are ignored)."),
 			self.isActive_dayofweek: _("Use yellow key to edit filters."),
 			self.isActive_otherfilters: _("Use yellow key to edit filters."),
 		}
