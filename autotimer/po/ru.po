@@ -630,8 +630,8 @@ msgstr "Тип поиска"
 
 msgid "Select \"exact match\" to enforce \"Match title\" to match exactly, \"partial match\" if you only want to search for a part of the event title or \"description match\" if you only want to search for a part of the event description"
 msgstr ""
-"Выбор: \"точное совпадение\" для возможности \"Название совпадения\" полностью быть одинаковым  с названием найденного, \"частичное совпадение\", если Вы хотите найти только часть названия совпадения в названии найденного или \"описание совпадения\", если Вы хотите найти только часть "
-"названия совпадения в описании найденного (кратком или расширенном)"
+"Выбор: \"точное совпадение\" - для возможности \"Название совпадения\" полностью совпасть с названием найденного, \"частичное совпадение\" - если Вы хотите найти только часть названия совпадения в названии найденного, \"описание совпадения\" - если Вы хотите найти "
+"название совпадения в кратком или расширенном описании найденного"
 
 msgid "Select a timer to import"
 msgstr "Выберите таймер для импорта"
@@ -873,7 +873,7 @@ msgstr ""
 "Этот мастер поможет вам создать новый Автотаймер путем предоставления описания общих настроек."
 
 msgid "When supporting \"Fast Scan\" the service type is ignored. You don't need to enable this unless your Image supports \"Fast Scan\" and you are using it."
-msgstr "При использовании  \"Быстрый поиск\" тип сервисов будет игнорирован. Вам не нужно включать это, если ваш софт поддерживает \"Быстрый поиск\" и вы используете его."
+msgstr "При поддержке \"Быстрый поиск\", тип сервисов будет игнорирован (это первые три значения референса). Вам не нужно включать это, если ваш имидж не поддерживает \"Быстрый поиск\"."
 
 msgid "When this is enabled AutoTimer will ONLY check for new events whilst in stanadby."
 msgstr "Если включено, то Автотаймер будет проверять наличие новых событий ТОЛЬКО в режиме ожидания."
@@ -1156,5 +1156,11 @@ msgstr ""
 "%d автотаймер(а) отключен из-за конфликта.\n"
 "%d дублирующий автотаймер(а) удален.\n"
 
-msgid "Файл (/etc/enigma2/autotimer.xml) is corrupt and could not be loaded."
+msgid "The autotimer file (/etc/enigma2/autotimer.xml) is corrupt and could not be loaded."
 msgstr "Файл автотаймеров (/etc/enigma2/autotimer.xml) поврежден и не может быть загружен."
+
+msgid "A new and empty config was created. A backup of the config can be found here (/etc/enigma2/autotimer.xml_old)."
+msgstr "Создана новая и пустая конфигурация. Резервное копирование конфигурации можно найти здесь (/etc/enigma2/autotimer.xml_old)."
+
+msgid " (if services are enabled, bouquets are ignored)."
+msgstr " (если сервисы включены, букеты будут игнорированы)."

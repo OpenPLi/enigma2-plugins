@@ -415,6 +415,8 @@ class AutoTimerComponent(object):
 	def checkServices(self, check_service):
 		services = self.services
 		bouquets = self.bouquets
+		if services:
+			bouquets = []
 		if services or bouquets:
 			addbouquets = []
 
@@ -431,7 +433,7 @@ class AutoTimerComponent(object):
 				myref = eServiceReference(str(bouquet))
 				mylist = serviceHandler.list(myref)
 				if mylist is not None:
-					while 1:
+					while True:
 						s = mylist.getNext()
 						# TODO: I wonder if its sane to assume we get services here (and not just new lists)
 						# We can ignore markers & directorys here because they won't match any event's service :-)
@@ -444,6 +446,10 @@ class AutoTimerComponent(object):
 									pos -= 1
 								value = value[:pos+1]
 
+							if value == check_service:
+								return False
+
+							value = s.toCompareString()
 							if value == check_service:
 								return False
 						else:
@@ -465,7 +471,7 @@ class AutoTimerComponent(object):
 				if myref.flags & eServiceReference.isGroup:
 					mylist = serviceHandler.list(myref)
 					if mylist is not None:
-						while 1:
+						while True:
 							s = mylist.getNext()
 							if s.valid():
 								# strip all after last :
@@ -677,7 +683,11 @@ class AutoTimerFastscanComponent(AutoTimerComponent):
 			fastServices = []
 			append = fastServices.append
 			addbouquets = []
-			for service in self.services:
+			services = self.services
+			bouquets = self.bouquets
+			if services:
+				bouquets = []
+			for service in services:
 				myref = eServiceReference(str(service))
 				if myref.flags & eServiceReference.isGroup:
 					addbouquets.append(service)
@@ -686,11 +696,11 @@ class AutoTimerFastscanComponent(AutoTimerComponent):
 					append(':'.join(comp[3:]))
 
 			serviceHandler = eServiceCenter.getInstance()
-			for bouquet in self.bouquets + addbouquets:
+			for bouquet in bouquets + addbouquets:
 				myref = eServiceReference(str(bouquet))
 				mylist = serviceHandler.list(myref)
 				if mylist is not None:
-					while 1:
+					while True:
 						s = mylist.getNext()
 						# TODO: I wonder if its sane to assume we get services here (and not just new lists)
 						# We can ignore markers & directorys here because they won't match any event's service :-)

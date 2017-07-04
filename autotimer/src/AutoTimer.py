@@ -288,31 +288,26 @@ class AutoTimer:
 
 		if timer.searchType == "description":
 			epgmatches = []
-			mask = (eServiceReference.isMarker | eServiceReference.isDirectory)
 
 			casesensitive = timer.searchCase == "sensitive"
 			if not casesensitive:
 				match = match.lower()
 
-			# Service filter defined
-			# Search only using the specified services
-			test = [(service, 0, -1, -1) for service in timer.services]
-
-			for bouquet in timer.bouquets:
-				services = serviceHandler.list(eServiceReference(bouquet))
-				if not services is None:
-					while True:
-						service = services.getNext()
-						if not service.valid(): #check end of list
-							break
-						if not (service.flags & mask):
-							test.append( (service.toString(), 0, -1, -1 ) )
-
-			if not test:
-				# No service filter defined
-				# Search within all services - could be very slow
-
-				# Get all bouquets
+			test = []
+			if timer.services:
+				test = [(service, 0, -1, -1) for service in timer.services]
+			elif timer.bouquets:
+				for bouquet in timer.bouquets:
+					services = serviceHandler.list(eServiceReference(bouquet))
+					if services:
+						while True:
+							service = services.getNext()
+							if not service.valid():
+								break
+							playable = not (service.flags & (eServiceReference.isMarker|eServiceReference.isDirectory)) or (service.flags & eServiceReference.isNumberedMarker)
+							if playable:
+								test.append((service.toString(), 0, -1, -1))
+			else: # Get all bouquets
 				bouquetlist = []
 				if config.usage.multibouquet.value:
 					refstr = '1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "bouquets.tv" ORDER BY bouquet'
@@ -326,38 +321,28 @@ class AutoTimer:
 							if s.flags & eServiceReference.isDirectory and not s.flags & eServiceReference.isInvisible:
 								info = serviceHandler.info(s)
 								if info:
-									bouquetlist.append((info.getName(s), s))
-					mask = (eServiceReference.isMarker | eServiceReference.isDirectory)
-					for name, bouquet in bouquetlist:
-						if not bouquet.valid(): #check end of list
-							break
-						if bouquet.flags & eServiceReference.isDirectory:
-							services = serviceHandler.list(bouquet)
-							if not services is None:
-								while True:
-									service = services.getNext()
-									if not service.valid(): #check end of list
-										break
-									if not (service.flags & mask):
-										test.append( (service.toString(), 0, -1, -1 ) )
+									bouquetlist.append(s)
 				else:
 					service_types_tv = '1:7:1:0:0:0:0:0:0:0:(type == 1) || (type == 17) || (type == 22) || (type == 25) || (type == 31) || (type == 134) || (type == 195)'
-					refstr = '%s FROM BOUQUET "userbouquet.favourites.tv" ORDER BY bouquet'%(service_types_tv)
+					refstr = '%s FROM BOUQUET "userbouquet.favourites.tv" ORDER BY bouquet' % (service_types_tv)
 					bouquetroot = eServiceReference(refstr)
 					info = serviceHandler.info(bouquetroot)
 					if info:
-						bouquetlist.append((info.getName(bouquetroot), bouquetroot))
-					mask = (eServiceReference.isMarker | eServiceReference.isDirectory)
-					for name, bouquet in bouquetlist:
+						bouquetlist.append(bouquetroot)
+				if bouquetlist:
+					for bouquet in bouquetlist:
+						if not bouquet.valid():
+							break
 						if bouquet.flags & eServiceReference.isDirectory:
 							services = serviceHandler.list(bouquet)
-							if not services is None:
+							if services:
 								while True:
 									service = services.getNext()
-									if not service.valid(): #check end of list
+									if not service.valid():
 										break
-									if not (service.flags & mask):
-										test.append( (service.toString(), 0, -1, -1 ) )
+									playable = not (service.flags & (eServiceReference.isMarker|eServiceReference.isDirectory)) or (service.flags & eServiceReference.isNumberedMarker)
+									if playable:
+										test.append((service.toString(), 0, -1, -1))
 
 			if test:
 				# Get all events
@@ -367,9 +352,8 @@ class AutoTimer:
 
 				# Filter events
 				for serviceref, eit, name, begin, duration, shortdesc, extdesc in allevents:
-					if match in (shortdesc if casesensitive else shortdesc.lower()) \
-						or match in (extdesc if casesensitive else extdesc.lower()):
-						epgmatches.append( (serviceref, eit, name, begin, duration, shortdesc, extdesc) )
+					if match in (shortdesc if casesensitive else shortdesc.lower()) or match in (extdesc if casesensitive else extdesc.lower()):
+						epgmatches.append((serviceref, eit, name, begin, duration, shortdesc, extdesc))
 
 		else:
 			# Search EPG, default to empty list
