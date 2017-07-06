@@ -69,11 +69,12 @@ def timeSimilarityPercent(rtimer, evtBegin, evtEnd, timer=None):
 	if (timer is not None) and (timer.offset is not None):
 		# remove custom offset from rtimer using timer.offset as RecordTimerEntry doesn't store the offset
 		rtimerBegin = rtimer.begin + timer.offset[0]
-		rtimerEnd   = rtimer.end - timer.offset[1]
+		rtimerEnd = rtimer.end - timer.offset[1]
 	else:
 		# remove E2 offset
 		rtimerBegin = rtimer.begin + config.recording.margin_before.value * 60
-		rtimerEnd   = rtimer.end - config.recording.margin_after.value * 60
+		rtimerEnd = rtimer.end - config.recording.margin_after.value * 60
+	#commonTime = max(min(evtEnd, rtimerEnd) - max(evtBegin, rtimerBegin), 0)
 	if (rtimerBegin <= evtBegin) and (evtEnd <= rtimerEnd):
 		commonTime = evtEnd - evtBegin
 	elif (evtBegin <= rtimerBegin) and (rtimerEnd <= evtEnd):
@@ -507,7 +508,7 @@ class AutoTimer:
 				if dest and dest not in moviedict:
 					self.addDirectoryToMovieDict(moviedict, dest, serviceHandler)
 				for movieinfo in moviedict.get(dest, ()):
-					if self.checkDuplicates(timer, name, movieinfo.get("name"), shortdesc, movieinfo.get("shortdesc"), extdesc, movieinfo.get("extdesc") ):
+					if self.checkDuplicates(timer, name, movieinfo.get("name"), shortdesc, movieinfo.get("shortdesc"), extdesc, movieinfo.get("extdesc")):
 						doLog("[AutoTimer] We found a matching recorded movie, skipping event:", name)
 						movieExists = True
 						break
@@ -546,9 +547,8 @@ class AutoTimer:
 						newEntry = rtimer
 						oldEntry = rtimer
 						break
-				if timer.avoidDuplicateDescription >= 1 \
-					and not rtimer.disabled:
-						if self.checkDuplicates(timer, name, rtimer.name, shortdesc, rtimer.description, extdesc, rtimer.extdesc ):
+				if timer.avoidDuplicateDescription >= 1 and not rtimer.disabled:
+						if self.checkDuplicates(timer, name, rtimer.name, shortdesc, rtimer.description, extdesc, rtimer.extdesc):
 						# if searchForDuplicateDescription > 1 then check short description
 							oldExists = True
 							doLog("[AutoTimer] We found a timer (similar service) with same description, skipping event")
@@ -566,7 +566,7 @@ class AutoTimer:
 				if timer.avoidDuplicateDescription >= 2:
 					for rtimer in chain.from_iterable( itervalues(timerdict) ):
 						if not rtimer.disabled:
-							if self.checkDuplicates(timer, name, rtimer.name, shortdesc, rtimer.description, extdesc, rtimer.extdesc ):
+							if self.checkDuplicates(timer, name, rtimer.name, shortdesc, rtimer.description, extdesc, rtimer.extdesc):
 								oldExists = True
 								doLog("[AutoTimer] We found a timer (any service) with same description, skipping event")
 								break
@@ -694,6 +694,26 @@ class AutoTimer:
 				# Try to add timer
 				conflicts = recordHandler.record(newEntry)
 
+				if conflicts and not timer.hasOffset() and not config.recording.margin_before.value and not config.recording.margin_after.value and len(conflicts) > 1:
+					change_end = change_begin = False
+					conflict_begin = conflicts[1].begin
+					conflict_end = conflicts[1].end
+					if conflict_begin == newEntry.end:
+						newEntry.end -= 30
+						change_end = True
+					elif newEntry.begin == conflict_end:
+						newEntry.begin += 30
+						change_begin = True
+					if change_end or change_begin:
+						conflicts = recordHandler.record(newEntry)
+						if conflicts:
+							if change_end:
+								newEntry.end += 30
+							elif change_begin:
+								newEntry.begin -= 30
+						else:
+							doLog("[AutoTimer] The conflict is resolved by offset time begin/end (30 sec) for %s." % newEntry.name)
+
 				if conflicts:
 					# Maybe use newEntry.log
 					conflictString += ' / '.join(["%s (%s)" % (x.name, strftime("%Y%m%d %H%M", localtime(x.begin))) for x in conflicts])
@@ -705,7 +725,7 @@ class AutoTimer:
 						lepgm = len(epgmatches)
 						for i in xrange(lepgm):
 							servicerefS, eitS, nameS, beginS, durationS, shortdescS, extdescS = epgmatches[ (i+idx+1)%lepgm ]
-							if self.checkDuplicates(timer, name, nameS, shortdesc, shortdescS, extdesc, extdescS, force=True ):
+							if self.checkDuplicates(timer, name, nameS, shortdesc, shortdescS, extdesc, extdescS, force=True):
 								# Check if the similar is already known
 								if eitS not in similardict:
 									doLog("[AutoTimer] Found similar Timer: " + name)
