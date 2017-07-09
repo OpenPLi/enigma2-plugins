@@ -41,10 +41,6 @@ if fileExists("/proc/stb/info/boxtype"):
 			BOX_MODEL = "hd"
 		elif BOX_NAME.startswith('osm'):
 			BOX_MODEL = "edision"
-		elif BOX_NAME.startswith('7000S'):
-			BOX_MODEL = "miraclebox"
-		elif BOX_NAME.startswith('g300'):
-			BOX_MODEL = "miraclebox"
 		else:
 			BOX_MODEL = "useBoxtype"
 	except:
@@ -791,7 +787,7 @@ class Blindscan(ConfigListScreen, Screen):
 			else:
 				self.session.open(MessageBox, _("Not found blind scan utility '%s'!") % tools, MessageBox.TYPE_ERROR)
 				return
-		elif BOX_MODEL.startswith('miraclebox') and (BOX_NAME == "7000S" or BOX_NAME == "g300"):
+		elif BOX_NAME in ("7000S", "7005S", "mbmicro", "mbmicrov2"):
 			tools = "/usr/bin/ceryon_blindscan"
 			if os.path.exists(tools):
 				cmd = "ceryon_blindscan %d %d %d %d %d %d %d %d %d" % (temp_start_int_freq, temp_end_int_freq, self.blindscan_start_symbol.value, self.blindscan_stop_symbol.value, tab_pol[pol], tab_hilow[band], self.feid, self.getNimSocket(self.feid), self.is_c_band_scan)
@@ -799,7 +795,7 @@ class Blindscan(ConfigListScreen, Screen):
 				self.session.open(MessageBox, _("Not found blind scan utility '%s'!") % tools, MessageBox.TYPE_ERROR)
 				return
 		elif BOX_MODEL.startswith('vu'):
-			if BOX_NAME == "uno" or BOX_NAME == "duo2" or BOX_NAME == "solo2" or BOX_NAME == "solose" or BOX_NAME == "ultimo" or BOX_NAME == "solo4k":
+			if BOX_NAME == "uno" or BOX_NAME == "duo2" or BOX_NAME == "solo2" or BOX_NAME == "solose" or BOX_NAME == "ultimo" or BOX_NAME == "solo4k" or BOX_NAME == "ultimo4k":
 				tools = "/usr/bin/%s" % self.binName
 				if os.path.exists(tools):
 					try:
