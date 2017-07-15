@@ -10,6 +10,7 @@ class AC3delay:
     def __init__(self):
         self.iService = None
         self.iServiceReference = None
+        self.isStreamService = False
         self.iAudioDelay = None
         self.channelAudio = AC3
         self.whichAudio = AC3
@@ -34,6 +35,7 @@ class AC3delay:
     def initAudio(self):
         self.iService = NavigationInstance.instance.getCurrentService()
         self.iServiceReference = NavigationInstance.instance.getCurrentlyPlayingServiceReference()
+        self.isStreamService = self.iServiceReference and '%3a//' in self.iServiceReference.toString()
         self.iAudioDelay = self.iService and self.iService.audioDelay()
         self.iSeek = self.iService and self.iService.seek()
 
@@ -48,7 +50,7 @@ class AC3delay:
     def delayedActivateDelay(self):
         if self.activateTimer.isActive:
             self.activateTimer.stop()
-        self.activateTimer.start(self.activateWait, False)
+        self.activateTimer.start(self.activateWait, True)
 
     def activateDelay(self):
         # This activation code is only neccessary for DM7025. 
@@ -72,7 +74,7 @@ class AC3delay:
                         self.lCurPosition = lCurPosition
                         self.timer = eTimer()
                         self.timer.callback.append(self.seekAfterWait)
-                        self.timer.start(200, False)
+                        self.timer.start(200, True)
             else:
                 self.deleteAudio()
         
@@ -178,7 +180,7 @@ class AC3delay:
 
                 tlist.append((description, x))
                 if x == self.selectedAudioIndex:
-                    if ((description.find("AC3") != -1 or description.find("AC-3") != -1) and not bDownmixEnabled) or description.find("DTS") != -1:
+                    if ((description.find("AC3") != -1 or description.find("AC-3") != -1 or description.find("AC3+") != -1) and not bDownmixEnabled) or description.find("DTS") != -1 or description.find("DTS-HD") != -1:
                         self.whichAudio = AC3
                         self.channelAudio = AC3
                     else:
@@ -187,7 +189,7 @@ class AC3delay:
                     self.selectedAudioInfo = (description, x)
             tlist.sort(key=lambda x: x[0])
 
-            self.audioTrackList = tlist
+        self.audioTrackList = tlist
         for sAudio in AC3PCM:
             self.systemDelay[sAudio]=self.getSystemDelay(sAudio)
         del oAudioTracks

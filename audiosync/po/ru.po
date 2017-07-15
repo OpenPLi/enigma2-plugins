@@ -17,7 +17,6 @@ msgstr ""
 msgid "%i ms"
 msgstr "%i мс"
 
-
 msgid "Audio Sync"
 msgstr "Синхронизация аудио"
 
@@ -195,4 +194,8 @@ msgstr "после режима ожидания"
 msgid "disabled"
 msgstr "отключено"
 
+msgid "Delete in config"
+msgstr "Удалить из конфига"
 
+msgid "Also save delay in config?"
+msgstr "Заодно сохранить эту задержку в конфиг?"

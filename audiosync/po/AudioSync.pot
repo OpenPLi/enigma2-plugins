@@ -284,3 +284,8 @@ msgstr ""
 msgid "disabled"
 msgstr ""
 
+msgid "Delete in config"
+msgstr ""
+
+msgid "Also save delay in config?"
+msgstr ""

@@ -2,12 +2,15 @@
 from __init__ import _
 from Components.config import config, ConfigSubsection, ConfigInteger, ConfigSubList, ConfigSelection
 from Plugins.Plugin import PluginDescriptor
-from enigma import eTimer
+from enigma import iPlayableService, eTimer
 from Screens import Standby
+from Screens.Screen import Screen
+from Components.ServiceEventTracker import ServiceEventTracker
 from Components.SystemInfo import SystemInfo
+from AC3utils import AC3, PCM, AC3GLOB, PCMGLOB, AC3PCM
 import NavigationInstance
-import AC3main
 import AC3setup
+import os
 
 config.plugins.AC3LipSync = ConfigSubsection()
 config.plugins.AC3LipSync.outerBounds = ConfigInteger(default = 1000, limits = (-10000,10000))
@@ -26,6 +29,34 @@ config.plugins.AC3LipSync.restartSelection = ConfigSelection( default = "disable
 config.plugins.AC3LipSync.restartDelay = ConfigInteger(default = 10, limits = (0,30))
 
 audio_restart = None
+Session = None
+audio_delay = None
+
+CONFIG_FILE = '/etc/enigma2/audiosync.conf'
+
+def getServiceDict():
+	filename = {}
+	if os.path.exists(CONFIG_FILE):
+		try:
+			cfg = open(CONFIG_FILE, 'r')
+		except:
+			return filename
+		file = cfg.readlines()
+		cfg.close()
+		for line in file:
+			line = line.split() 
+			if len(line) == 2:
+				filename[line[0]] = (line[0], line[1])
+	return filename
+
+def saveServiceDict(filename):
+	try:
+		cfg = open(CONFIG_FILE, 'w')
+	except:
+		return
+	for ref, val in filename.items():
+		cfg.write('%s %s\n' % (val[0], val[1]))
+	cfg.close()
 
 class AudioRestart():
 	def __init__(self):
@@ -38,6 +69,9 @@ class AudioRestart():
 
 	def enterStandby(self,configElement):
 		Standby.inStandby.onClose.append(self.endStandby)
+
+	def removeNotifier(self):
+		config.misc.standbyCounter.removeNotifier(self.enterStandby)
 
 	def endStandby(self):
 		self.startTimer()
@@ -71,25 +105,68 @@ class AudioRestart():
 						AC3 = True
 		return AC3
 
-def sessionstart(reason, **kwargs):
-	global audio_restart
-	if reason == 0 and audio_restart is None:
-		audio_restart = AudioRestart()
+class audioDelay(Screen):
+	def __init__(self, session):
+		Screen.__init__(self, session)
+		self.newService = False
+		self.ServiceDelay = getServiceDict()
+		self.__event_tracker = ServiceEventTracker(screen = self, eventmap =
+			{
+				iPlayableService.evUpdatedInfo: self.__audiodelayUpdatedInfo,
+				iPlayableService.evStart: self.__audiodelayStart,
+				iPlayableService.evEnd: self.__audiodelayServiceEnd
+			})
+
+	def __audiodelayStart(self):
+		self.newService = True
+
+	def __audiodelayServiceEnd(self):
+		self.newService = False
+
+	def __audiodelayUpdatedInfo(self):
+		if self.newService:
+			self.newService = False
+			iServiceReference = NavigationInstance.instance and NavigationInstance.instance.getCurrentlyPlayingServiceReference()
+			isStreamService = iServiceReference and '%3a//' in iServiceReference.toCompareString()
+			if isStreamService:
+				delay_service = self.ServiceDelay.get(iServiceReference.toCompareString(), None)
+				if delay_service:
+					delay_value = int(delay_service[1])
+					from AC3delay import AC3delay
+					AC3delay = AC3delay()
+					sAudio = AC3delay.whichAudio
+					if sAudio == AC3 or sAudio == PCM:
+						AC3delay.setSystemDelay(sAudio, delay_value, True)
+						print "[AudioSync] set stream service audio delay %s" % delay_value
+
+def autostart(reason, **kwargs):
+	global audio_restart, Session, audio_delay
+	if reason == 0 and "session" in kwargs:
+		Session = kwargs["session"]
+		if Session and audio_delay is None:
+			audio_delay = audioDelay(Session)
+		if config.plugins.AC3LipSync.restartSelection.value != "disabled" and audio_restart is None:
+			audio_restart = AudioRestart()
+	elif reason == 1:
+		audio_delay = None
+		if audio_restart:
+			audio_restart.removeNotifier()
+			audio_restart = None
 
 def main(session, **kwargs):
+	import AC3main
 	session.open(AC3main.AC3LipSync, plugin_path)
 
 def setup(session, **kwargs):
 	session.open(AC3setup.AC3LipSyncSetup, plugin_path)
 
 def audioMenu(session, **kwargs):
+	import AC3main
 	session.open(AC3main.AC3LipSync, plugin_path)
 
 def Plugins(path,**kwargs):
 	global plugin_path
 	plugin_path = path
-	lst = [ PluginDescriptor(name=_("Audio Sync Setup"), description=_("Setup for the Audio Sync Plugin"), icon = "AudioSync.png", where = PluginDescriptor.WHERE_PLUGINMENU, fnc=setup),
-		PluginDescriptor(name=_("Audio Sync"), description=_("sets the Audio Delay (LipSync)"), where = PluginDescriptor.WHERE_AUDIOMENU, fnc=audioMenu)]
-	if config.plugins.AC3LipSync.restartSelection.value != "disabled":
-		lst.append(PluginDescriptor(name="Restart audio", where=PluginDescriptor.WHERE_SESSIONSTART, fnc = sessionstart))
-	return lst
+	return [ PluginDescriptor(name=_("Audio Sync Setup"), description=_("Setup for the Audio Sync Plugin"), icon = "AudioSync.png", where = PluginDescriptor.WHERE_PLUGINMENU, fnc=setup),
+		PluginDescriptor(name=_("Audio Sync"), description=_("sets the Audio Delay (LipSync)"), where = PluginDescriptor.WHERE_AUDIOMENU, fnc=audioMenu),
+		PluginDescriptor(where = [PluginDescriptor.WHERE_SESSIONSTART, PluginDescriptor.WHERE_AUTOSTART], fnc=autostart)]
