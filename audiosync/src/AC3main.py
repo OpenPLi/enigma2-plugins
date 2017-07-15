@@ -12,12 +12,12 @@ from Screens.HelpMenu import HelpableScreen
 from Screens.MessageBox import MessageBox
 from Screens.Screen import Screen
 from __init__ import _
+from plugin import getServiceDict, saveServiceDict, audio_delay
 
 class AC3LipSync(Screen, HelpableScreen, MovableScreen):
 
     def __init__(self, session, plugin_path):
         Screen.__init__(self, session)
-        self.onShow.append(self.__onShow)
         self.skin = SKIN
         self.skin_path = plugin_path
 
@@ -45,7 +45,7 @@ class AC3LipSync(Screen, HelpableScreen, MovableScreen):
         self.savedValue = {}
         # Current Values
         self.currentValue = {}
-        
+
         #OptionFields
         self["ChannelImg"] = MultiPixmap()
         self["GlobalImg"] = MultiPixmap()
@@ -65,6 +65,7 @@ class AC3LipSync(Screen, HelpableScreen, MovableScreen):
         # Buttons
         self["key_red"] = Label(_("Cancel"))
         self["key_green"] = Label(_("OK"))
+        self["key_yellow"] = Label("")
         self["key_blue"] = Label(_("Save to key"))
 
         # Actions
@@ -79,7 +80,8 @@ class AC3LipSync(Screen, HelpableScreen, MovableScreen):
             "down":     (self.keyDown,              _("Decrease delay")),
             "red":      (self.keyCancel,            _("Discard changes and close plugin")),
             "green":    (self.keyOk,                _("Save values and close plugin")),
-            "blue":     (self.menuSaveDelayToKey,    _("Save current delay to key")),
+            "yellow":   (self.deleteService,        _("Delete in config")),
+            "blue":     (self.menuSaveDelayToKey,   _("Save current delay to key")),
             "1":        (self.keyNumberRelative,    _("Decrease delay by %i ms (can be set)")%self.stepSize["1"]),
             "3":        (self.keyNumberRelative,    _("Increase delay by %i ms (can be set)")%self.stepSize["3"]),
             "4":        (self.keyNumberRelative,    _("Decrease delay by %i ms (can be set)")%self.stepSize["4"]),
@@ -94,16 +96,45 @@ class AC3LipSync(Screen, HelpableScreen, MovableScreen):
 
         HelpableScreen.__init__(self)
         MovableScreen.__init__(self, config.plugins.AC3LipSync, [self["actions"]], 600, 460)
-        
-    def __onShow(self):
+
+        if audio_delay:
+            self.listStreamService = audio_delay.ServiceDelay
+        else:
+            self.listStreamService = {}
+        self.onLayoutFinish.append(self.layoutFinished)
+
+    def layoutFinished(self):
+        delay_value = None
+        if self.AC3delay.isStreamService:
+            current_service = self.AC3delay.iServiceReference
+            if current_service:
+                delay_service = self.listStreamService.get(current_service.toCompareString(), None)
+                if delay_service:
+                    delay_value = int(delay_service[1])
+                    self["key_yellow"].setText(_("Delete in config"))
+
         for sAudio in AC3PCM:
-            iDelay = self.AC3delay.getSystemDelay(sAudio)
+            if delay_value is None:
+                iDelay = self.AC3delay.getSystemDelay(sAudio)
+            else:
+                iDelay = delay_value
+            self.iCurDelay = iDelay
             self.savedValue[sAudio] = iDelay
             self.currentValue[sAudio] = iDelay
 
         self["AudioSliderBar"].setRange([(self.lowerBound), (self.upperBound)])
         self.setActiveSlider()
         self.movePosition()
+
+    def deleteService(self):
+        if self.AC3delay.isStreamService:
+            current_service = self.AC3delay.iServiceReference
+            if current_service:
+                delay_service = self.listStreamService.get(current_service.toCompareString(), None)
+                if delay_service:
+                    del self.listStreamService[current_service.toCompareString()]
+                    saveServiceDict(self.listStreamService)
+                    self["key_yellow"].setText(" ")
 
     def keyLeft(self):
         if self.AC3delay.whichAudio == PCMGLOB:
@@ -127,7 +158,7 @@ class AC3LipSync(Screen, HelpableScreen, MovableScreen):
             self["ChannelImg"].setPixmapNum(1)
             self["GlobalImg"].setPixmapNum(0)
             self["ChannelLabel"].setForegroundColorNum(1)
-            self["GlobalLabel"].setForegroundColorNum(0)        
+            self["GlobalLabel"].setForegroundColorNum(0)
         else:    
             self["ChannelImg"].setPixmapNum(0)
             self["GlobalImg"].setPixmapNum(1)
@@ -138,7 +169,7 @@ class AC3LipSync(Screen, HelpableScreen, MovableScreen):
         iDelay = iCurDelay - self.lowerBound
         self["AudioSliderBar"].setValue(iDelay)
         self["AudioSlider"].setText(_("%i ms")%iCurDelay)
-
+ 
     def keyDown(self):
         self.changeSliderValue(-1 * self.arrowStepSize)
         
@@ -151,7 +182,7 @@ class AC3LipSync(Screen, HelpableScreen, MovableScreen):
         if self.AC3delay.whichAudio == AC3GLOB or self.AC3delay.whichAudio == PCMGLOB:
             iStep = ( self.keyStep[sNumber] // 25 ) * 25
         else:
-            iStep = self.keyStep[sNumber]        
+            iStep = self.keyStep[sNumber]
         iSliderValue = iStep-self.lowerBound
         self.setSliderInfo(iSliderValue)
         self.AC3delay.setSystemDelay(sAudio, self.currentValue[sAudio], True)
@@ -174,9 +205,28 @@ class AC3LipSync(Screen, HelpableScreen, MovableScreen):
         elif iSliderValue > (self.upperBound - self.lowerBound):
             iSliderValue = (self.upperBound - self.lowerBound)
         self.setSliderInfo(iSliderValue)
-        self.AC3delay.setSystemDelay(sAudio, self.currentValue[sAudio], True)        
+        self.AC3delay.setSystemDelay(sAudio, self.currentValue[sAudio], True)
 
     def keyOk(self):
+        if self.AC3delay.isStreamService and (self.AC3delay.whichAudio == AC3 or self.AC3delay.whichAudio == PCM):
+            self.session.openWithCallback(self.saveToConfigAnswer, MessageBox, _("Also save delay in config?"))
+        else:
+            self.close()
+
+    def saveToConfigAnswer(self, answer):
+        if answer:
+            current_service = self.AC3delay.iServiceReference
+            if current_service:
+                CurDelay = self.currentValue[self.AC3delay.whichAudio]
+                delay_service = self.listStreamService.get(current_service.toCompareString(), None)
+                if delay_service:
+                    delay_value = int(delay_service[1])
+                    if CurDelay <> delay_value:
+                        del self.listStreamService[current_service.toCompareString()]
+                        self.listStreamService[current_service.toCompareString()] = (current_service.toCompareString(), str(CurDelay))
+                else:
+                    self.listStreamService[current_service.toCompareString()] = (current_service.toCompareString(), str(CurDelay))
+                saveServiceDict(self.listStreamService)
         self.close()
 
     def keyCancel(self):
@@ -203,18 +253,18 @@ class AC3LipSync(Screen, HelpableScreen, MovableScreen):
             else:
                 sResponse = _("Invalid selection")
                 iType = MessageBox.TYPE_ERROR
-                self.session.open(MessageBox, sResponse , iType)
-                
+                self.session.open(MessageBox, sResponse, iType)
+
     def menuSaveDelayToKey(self):
         sAudio = self.AC3delay.whichAudio
         iDelay = self["AudioSliderBar"].getValue()+self.lowerBound
 
         AC3SetCustomValue(self.session,iDelay,self.keyStep)
-        
+
     def setSliderInfo(self, iDelay):
         sAudio = self.AC3delay.whichAudio
         self.currentValue[sAudio] = iDelay + self.lowerBound
-        iCurDelay = self.currentValue[sAudio]
+        iCurDelay = iDelay + self.lowerBound
         self["AudioSliderBar"].setValue(iDelay)
         self["AudioSlider"].setText(_("%i ms")%iCurDelay)
 
@@ -226,7 +276,7 @@ class AC3LipSync(Screen, HelpableScreen, MovableScreen):
             self["ServiceInfo"].setText(sActiveAudio)
         else:
             self.close()
-            
+
 class AC3SetCustomValue:
     def __init__(self, session, iDelay, keyStep):
         self.keyStep = keyStep
