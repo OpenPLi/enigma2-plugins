@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Partnerbox\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-28 14:01+0200\n"
-"PO-Revision-Date: 2016-12-28 14:05+0200\n"
+"POT-Creation-Date: 2017-07-01 10:51+0300\n"
+"PO-Revision-Date: 2017-07-01 11:16+0300\n"
 "Last-Translator: Vytenis P. <vyteniui@gmail.com>\n"
 "Language-Team: Vytenis P. <vyteniui@gmail.com>\n"
 "Language: lt\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2;\n"
-"X-Generator: Poedit 1.8.11\n"
+"X-Generator: Poedit 2.0.2\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
 #: PartnerboxEPGList.py:102 PartnerboxEPGList.py:225
@@ -68,7 +68,7 @@ msgstr "Alternatyva"
 
 #: plugin.py:2148
 msgid "Alternative services are not supported!"
-msgstr "Alternatyvių kanalų nepalaikoma!"
+msgstr "Alternatyvūs kanalai negalimi!"
 
 #: plugin.py:2255
 msgid "Apply"
@@ -108,7 +108,7 @@ msgstr "Pasirinkite bukietą"
 
 #: plugin.py:323
 msgid "Clean up"
-msgstr "Išvalyti"
+msgstr "Valymas"
 
 #: plugin.py:396
 msgid "Cleaning up finished timer entries..."
@@ -132,7 +132,7 @@ msgstr "Data"
 
 #: PartnerboxSetup.py:259
 msgid "Deep Standby"
-msgstr "Išjungti"
+msgstr "Gilus budėjimas"
 
 #: PartnerboxSetup.py:188 PartnerboxSetup.py:361
 msgid "Delete"
@@ -198,7 +198,7 @@ msgstr "Įjungti Partnerbox funkciją laikmačių nustatyme"
 
 #: PartnerboxSetup.py:112
 msgid "Enable Red Button-Function in single/multi EPG"
-msgstr "Partnerbox funkcija 'RAUDONU' mygtuku viena/daugiakanaliuose EPG"
+msgstr "Įjungti Partnerbox 'RAUDONU' mygtuku viena(daugia)kanaliuose EPG"
 
 #: RemoteTimerEntry.py:526
 msgid "Enable VPS"
@@ -303,7 +303,7 @@ msgstr "Informacija"
 
 #: plugin.py:2151
 msgid "Internet services are not supported!"
-msgstr "Internetiniai kanalai nepalaikomi!"
+msgstr "Internetiniai kanalai negalimi!"
 
 #: RemoteTimerEntry.py:193 RemoteTimerEntry.py:515
 msgid "Location"
@@ -421,7 +421,7 @@ msgstr "Nuotolinis laikmatis"
 
 #: plugin.py:299
 msgid "RemoteTimer Timerlist"
-msgstr "Nuotolinio laikmačio laikmačių sąrašas"
+msgstr "Nuotolinių laikmačių sąrašas"
 
 #: plugin.py:1291
 msgid "Remove timer"
@@ -429,7 +429,7 @@ msgstr "Pašalinti laikmatį"
 
 #: plugin.py:360
 msgid "Repeated Timer are not supported!"
-msgstr "Pasikartojantys laikmačiai nepalaikomi!"
+msgstr "Pasikartojantys laikmačiai negalimi!"
 
 #: PartnerboxSetup.py:256
 msgid "Restart"
@@ -455,7 +455,7 @@ msgstr "Pasirinkite veiksmą nuotoliniam laikmačiui '%s':"
 #: PartnerboxEPGSelection.py:253
 #, python-format
 msgid "Select action for timer '%s':"
-msgstr "Pasirinkite veiksmą laikmačiui %s:"
+msgstr "Pasirinkite veiksmą laikmačiui '%s':"
 
 #: PartnerboxEPGSelection.py:138
 msgid "Select action:"
@@ -471,23 +471,23 @@ msgstr "Kanalų sąrašai / EPG duomenys"
 
 #: PartnerboxSetup.py:104
 msgid "Show 'RemoteTV Player' in E-Menu"
-msgstr "'Nuotolinis TV grotuvas' į plėtinių meniu"
+msgstr "'Nuotolinis TV grotuvas' plėtinių meniu"
 
 #: PartnerboxSetup.py:103
 msgid "Show 'RemoteTimer' in E-Menu"
-msgstr "'Nuotolinis laikmatis' į plėtinių meniu"
+msgstr "'Nuotolinis laikmatis' plėtinių meniu"
 
 #: PartnerboxSetup.py:102
 msgid "Show 'RemoteTimer' in Event View context menu"
-msgstr "'Nuotolinis laikmatis' į įvykių peržiūros kontekstiniame meniu"
+msgstr "'Nuotolinis laikmatis' įvykių peržiūros kontekstiniame meniu"
 
 #: PartnerboxSetup.py:100
 msgid "Show 'RemoteTimer' in Eventinfo menu"
-msgstr "'Nuotolinis laikmatis' į įvykių informacijos meniu"
+msgstr "'Nuotolinis laikmatis' įvykių informacijos meniu"
 
 #: PartnerboxSetup.py:105
 msgid "Show 'Stream current Service' in E-Menu"
-msgstr "'Transliuoti šį kanalą' į plėtinių meniu"
+msgstr "'Transliuoti šį kanalą' plėtinių meniu"
 
 #: PartnerboxSetup.py:114
 msgid "Show all icon for event in EPGList"
@@ -520,7 +520,7 @@ msgstr "Nuotolinis TV grotuvas paleidžiamas (IP = %s)"
 
 #: plugin.py:1653
 msgid "Stream"
-msgstr "Srautas"
+msgstr "Transliacija"
 
 #: plugin.py:160
 msgid "Stream TV from your Partnerbox"
@@ -572,11 +572,11 @@ msgstr "Laikmačio įrašas"
 
 #: plugin.py:1465
 msgid "Timer event deleted successfully."
-msgstr "Laikmačio įrašas pašalintas sėkmingai."
+msgstr "Laikmačio įrašas buvo pašalintas."
 
 #: RemoteTimerEntry.py:610
 msgid "Timer event was created successfully."
-msgstr "Laikmačio įrašas sukurtas sėkmingai."
+msgstr "Laikmačio įrašas buvo sukurtas."
 
 #: PartnerboxEPGSelection.py:342
 msgid "Timer menu"
@@ -631,7 +631,7 @@ msgstr "Perjungti"
 
 #: plugin.py:977
 msgid "Zap focus to Picture in Picture"
-msgstr "Pakeisti tarpusavy vaizdus vaizde"
+msgstr "Perjungti į vaizdą vaizde (PiP)"
 
 #: plugin.py:975
 msgid "Zap focus to main screen"
@@ -682,7 +682,7 @@ msgstr "atlikta!"
 #: RemoteTimerEntry.py:144 RemoteTimerEntry.py:148 RemoteTimerEntry.py:458
 #: RemoteTimerEntry.py:463
 msgid "go to deep standby"
-msgstr "išjungti"
+msgstr "į gilų budėjimą"
 
 #: RemoteTimerEntry.py:144 RemoteTimerEntry.py:148 RemoteTimerEntry.py:458
 #: RemoteTimerEntry.py:463
@@ -742,3 +742,9 @@ msgstr "Nuskaityti MAC"
 
 msgid "MAC"
 msgstr "MAC"
+
+msgid "Set %s as fallback remote receiver?"
+msgstr "Naudoti %s, kaip atsarginį nuotolinį imtuvą?"
+
+msgid "Set as fallback remote receiver"
+msgstr "Naudoti, kaip atsarginį nuotolinį imtuvą"
