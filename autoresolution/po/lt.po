@@ -1,11 +1,14 @@
+# Copyright (C) 2012 THE enigma2-plugins'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the enigma2-plugins package.
+# Automatically generated, 2012.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-AutoResolution\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-06-22 11:45+0300\n"
-"PO-Revision-Date: 2016-06-22 11:52+0300\n"
-"Last-Translator: Vytenis P.\n"
+"POT-Creation-Date: 2017-07-01 08:57+0300\n"
+"PO-Revision-Date: 2017-07-01 09:12+0300\n"
+"Last-Translator: Vytenis P. <vyteniui@gmail.com>\n"
 "Language-Team: Vytenis Pulokas <vytemiui@gmail.com>\n"
 "Language: lt_LT\n"
 "MIME-Version: 1.0\n"
@@ -13,16 +16,16 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n"
 "%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Poedit 1.8.8\n"
+"X-Generator: Poedit 2.0.2\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
 #: plugin.py:56
 msgid "Auto frame rate (refresh need 'multi')"
-msgstr "Automatinis kadrų dažnis (atnaujinant būtinas 'multi')"
+msgstr "Automatinis kadrų dažnis (skleistinė t.b. 'multi')"
 
 #: plugin.py:517
 msgid "Autoresolution"
-msgstr "Autorezoliucija"
+msgstr "Automatinė raiška"
 
 #: plugin.py:272
 #, python-format
@@ -30,16 +33,16 @@ msgid ""
 "Autoresolution Plugin Testmode:\n"
 "Is %s OK?"
 msgstr ""
-"Autorezoliucijos įskiepio Testo režimas:\n"
+"Automatinės raiškos įskiepio bandomasis režimas:\n"
 "Ar %s tinka?"
 
 #: plugin.py:525
 msgid "Autoresolution Switch"
-msgstr "Autorezoliucijos perjungėjas"
+msgstr "Autorezoliucijos perjungimas"
 
 #: plugin.py:370
 msgid "Autoresolution is not working in Scart/DVI-PC Mode"
-msgstr "Autorezoliucija neveikia Scart/DVI-PC režimu"
+msgstr "Automatinė raiška neveikia SCART/DVI-PC režimuose"
 
 #: plugin.py:342
 msgid "Autoresolution settings"
@@ -55,11 +58,11 @@ msgstr "Atšaukti"
 
 #: plugin.py:364
 msgid "Deinterlacer mode for interlaced content"
-msgstr "Deinterlacer metodas dvieilio pynimo turiniui"
+msgstr "Dvieilio pynimo turinio išpynimas"
 
 #: plugin.py:365
 msgid "Deinterlacer mode for progressive content"
-msgstr "Deinterlacer metodas pilnaeiliam turiniui"
+msgstr "Pilnaeilio turinio išpynimas"
 
 #: plugin.py:362
 msgid "Delay x seconds after service started"
@@ -95,7 +98,7 @@ msgstr "HD pilnaeilis (progressive) režimas"
 
 #: plugin.py:368
 msgid "Lock timeout"
-msgstr "Užrakinimo laikas"
+msgstr "Fiksavimo laikas"
 
 #: plugin.py:56
 msgid "Manual"
@@ -115,7 +118,7 @@ msgstr "Skleistinės dažnis"
 
 #: plugin.py:363
 msgid "Running in testmode"
-msgstr "Veikia testavimo režime"
+msgstr "Veikia bandomuoju režimu"
 
 #: plugin.py:37
 msgid "SD 24HZ Progressive mode"
@@ -123,23 +126,23 @@ msgstr "SD 30/60HZ pilnaeilis režimas"
 
 #: plugin.py:36
 msgid "SD 25/50HZ Interlace Mode"
-msgstr "SD 25/50HZ dvieilio pynimo (interlace) režimas"
+msgstr "SD 25/50HZ dvieilio pynimo režimas"
 
 #: plugin.py:38
 msgid "SD 25/50HZ Progressive Mode"
-msgstr "SD 25/50HZ pilnaeilis (progressive) režimas"
+msgstr "SD 25/50HZ pilnaeilis režimas"
 
 #: plugin.py:36
 msgid "SD 30/60HZ Interlace Mode"
-msgstr "SD 30/60HZ dvieilio pynimo (interlace) režimas"
+msgstr "SD 30/60HZ dvieilio pynimo režimas"
 
 #: plugin.py:38
 msgid "SD 30/60HZ Progressive Mode"
-msgstr "SD 30/60HZ pilnaeilis (progressive) režimas"
+msgstr "SD 30/60HZ pilnaeilis režimas"
 
 #: plugin.py:361
 msgid "Show info screen"
-msgstr "Rodyti informacinį ekraną"
+msgstr "Rodyti informacinį pranešimą"
 
 #: plugin.py:242
 #, python-format
@@ -183,6 +186,42 @@ msgstr "sekundę"
 #: plugin.py:52 plugin.py:53 plugin.py:54 plugin.py:55 plugin.py:57
 msgid "seconds"
 msgstr "sek."
+
+msgid "UHD Interlace Mode"
+msgstr "UHD dvieilio pynimo režimas"
+
+msgid "UHD Progressive Mode"
+msgstr "UHD pilnaeilis režimas"
+
+msgid "Enable 2160p24 Mode"
+msgstr "Įjungti 2160p24 režimą"
+
+msgid "Enable 2160p25 Mode"
+msgstr "Įjungti 2160p25 režimą"
+
+msgid "Enable 2160p30 Mode"
+msgstr "Įjungti 2160p30 režimą"
+
+msgid "Ask before changing videomode"
+msgstr "Klausti, prieš keičiant vaizdo režimą"
+
+msgid ""
+"Changing framerate for current service?\n"
+"Current framerate: %s\n"
+"New framerate: %s\n"
+msgstr ""
+"Keisti šio kanalo kadrų dažnį?\n"
+"Dabartinis kadrų dažnis: %s\n"
+"Naujasis kadrų dažnis: %s\n"
+
+msgid "Message timeout"
+msgstr "Pranešimą rodyti (sek.):"
+
+msgid "Use 60HZ instead 30HZ"
+msgstr "Vietoje 30Hz naudoti 60Hz"
+
+msgid "Enable 720p50 Mode"
+msgstr "Įjungti 720p50 režimą"
 
 #~ msgid "Videocontent:"
 #~ msgstr "Vaizdo turinys:"
