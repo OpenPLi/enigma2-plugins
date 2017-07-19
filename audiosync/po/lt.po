@@ -2,16 +2,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: AC3LipSync\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-06-22 11:18+0300\n"
+"POT-Creation-Date: 2017-07-01 08:24+0300\n"
 "PO-Revision-Date: \n"
-"Last-Translator: \n"
+"Last-Translator: Vytenis P. <vyteniui@gmail.com>\n"
 "Language-Team: Vytenis P. <vyteniui@gmail.com>\n"
 "Language: lt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-Basepath: D:/Dreambox/Eclipse/ac3lipsync\n"
-"X-Generator: Poedit 1.8.8\n"
+"X-Generator: Poedit 2.0.2\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n"
 "%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -57,15 +57,15 @@ msgstr "Atverti įskiepio meniu"
 
 #: src/AC3main.py:79 src/AC3main.py:86
 msgid "Save values and close plugin"
-msgstr "Išsaugoti reikšmes ir uždaryti įskiepį"
+msgstr "Uždaryti įskiepį, išsaugant reikšmes"
 
 #: src/AC3main.py:80 src/AC3main.py:85
 msgid "Discard changes and close plugin"
-msgstr "Atšaukti pakeitimus ir uždaryti įskiepį"
+msgstr "Uždaryti įskiepį, atšaukiant pakeitimus"
 
 #: src/AC3main.py:81 src/AC3main.py:82
 msgid "Change active delay"
-msgstr "Keisti aktyvią delsą"
+msgstr "Keisti veikiančią delsą"
 
 #: src/AC3main.py:83
 msgid "Increase delay"
@@ -91,7 +91,7 @@ msgstr "Mažinti delsą %i ms (galima nustatyti)"
 #: src/AC3main.py:90 src/AC3main.py:92 src/AC3main.py:94
 #, python-format
 msgid "Increase delay by %i ms (can be set)"
-msgstr "Padidinti delsą %i ms (gali būti nustatyta)"
+msgstr "Padidinti delsą %i ms (galima nustatyti)"
 
 #: src/AC3main.py:95 src/AC3main.py:96 src/AC3main.py:97 src/AC3main.py:98
 #, python-format
@@ -113,7 +113,7 @@ msgstr "Negalimas pasirinkimas"
 #: src/AC3main.py:257
 #, python-format
 msgid "Select the key you want to set to %i ms"
-msgstr "Išsirinkite mygtuką, kuriam norite nustatyti %i ms"
+msgstr "Išsirinkite mygtuką, kuriam paskirsite %i ms"
 
 #: src/AC3main.py:263
 #, python-format
@@ -127,7 +127,7 @@ msgstr "Mygtuko priskyrimas atšauktas"
 #: src/AC3main.py:280
 #, python-format
 msgid "Key %(Key)s successfully set to %(delay)i ms"
-msgstr "Mygtukui %(Key)s sėkmingai paskirta %(delay)i ms"
+msgstr "Mygtukui %(Key)s buvo paskirta %(delay)i ms"
 
 #: src/AC3setup.py:42
 msgid "Outer Bound (+/-)"
@@ -139,7 +139,7 @@ msgstr "Žingsnis (ms) krypčių mygtukams"
 
 #: src/AC3setup.py:44
 msgid "Wait time in ms before activation:"
-msgstr "Laukti laiko (ms) prieš aktyvaciją:"
+msgstr "Laukti laiko (ms) prieš suveikiant:"
 
 #: src/AC3setup.py:45 src/AC3setup.py:46 src/AC3setup.py:47
 #, python-format
@@ -166,67 +166,67 @@ msgstr " "
 
 #: src/MovableScreen.py:17 src/MovableScreen.py:24
 msgid "Save values and close screen"
-msgstr "Išsaugoti reikšmes ir uždaryti langą"
+msgstr "Uždaryti langą, išsaugant reikšmes"
 
 #: src/MovableScreen.py:18 src/MovableScreen.py:23
 msgid "Discard changes and close screen"
-msgstr "Atšaukti pakeitimus ir uždaryti langą"
+msgstr "Uždaryti langą, atšaukiant pakeitimus"
 
 #: src/MovableScreen.py:19
 msgid "Move screen to the left"
-msgstr "Stumti langą į kairę"
+msgstr "Perkelti langą į kairę"
 
 #: src/MovableScreen.py:20
 msgid "Move screen to the right"
-msgstr "Stumti langą į dešinę"
+msgstr "Perkelti langą į dešinę"
 
 #: src/MovableScreen.py:21
 msgid "Move screen up"
-msgstr "Stumti langą aukštyn"
+msgstr "Perkelti langą aukštyn"
 
 #: src/MovableScreen.py:22
 msgid "Move screen down"
-msgstr "Stumti langą žemyn"
+msgstr "Perkelti langą žemyn"
 
 #: src/MovableScreen.py:25
 msgid "Move screen to the upper left corner"
-msgstr "Stumti langą į viršutinį kairį kampą"
+msgstr "Perkelti langą į viršutinį kairį kampą"
 
 #: src/MovableScreen.py:26
 msgid "Center screen at the upper border"
-msgstr "Centruoti langą viršutiniame krašte"
+msgstr "Centruoti langą viršuje"
 
 #: src/MovableScreen.py:27
 msgid "Move screen to the upper right corner"
-msgstr "Stumti langą į viršutinį dešinį kampą"
+msgstr "Perkelti langą į viršutinį dešinį kampą"
 
 #: src/MovableScreen.py:28
 msgid "Move screen to the middle of the left border"
-msgstr "Stumti langą į kairio krašto vidurį"
+msgstr "Perkelti langą į kairio krašto vidurį"
 
 #: src/MovableScreen.py:29
 msgid "Move screen to the center of your TV"
-msgstr "Stumti langą į ekrano centrą"
+msgstr "Perkelti langą į ekrano centrą"
 
 #: src/MovableScreen.py:30
 msgid "Move screen to the middle of the right border"
-msgstr "Stumti langą į dešinio krašto vidurį"
+msgstr "Perkelti langą į dešinio krašto vidurį"
 
 #: src/MovableScreen.py:31
 msgid "Move screen to the lower left corner"
-msgstr "Stumti langą į kairį apatinį kampą"
+msgstr "Perkelti langą į kairį apatinį kampą"
 
 #: src/MovableScreen.py:32
 msgid "Center screen at the lower border"
-msgstr "Centruoti langą apatiniame krašte"
+msgstr "Centruoti langą apačioje"
 
 #: src/MovableScreen.py:33
 msgid "Move screen to the lower right corner"
-msgstr "Stumti langą į apatinį dešinį kampą"
+msgstr "Perkelti langą į apatinį dešinį kampą"
 
 #: src/MovableScreen.py:34
 msgid "Reset saved position"
-msgstr "Ašaukti išsaugotą poziciją"
+msgstr "Ašaukti išsaugotą padėtį"
 
 #: src/plugin.py:30 src/plugin.py:36 src/plugin.py:38
 msgid "Audio Sync"
@@ -245,4 +245,22 @@ msgid "Setup for the Audio Sync Plugin"
 msgstr "Garso sinchronizavimo įskiepio sąranka"
 
 msgid "AC3 Lip Sync Setup"
-msgstr "AC3 sinchronizavimo sąranka"
+msgstr "AC3 garso sinchronizavimas"
+
+msgid "Restart audio"
+msgstr "Paleisti garso sistemą iš naujo"
+
+msgid "Restart audio delay (in sec)"
+msgstr "garso paleidimo iš naujo delsa (sek.)"
+
+msgid "after restart"
+msgstr "paleidus iš naujo,"
+
+msgid "after restart/standby"
+msgstr "paleidus iš naujo/iš budėjimo,"
+
+msgid "after standby"
+msgstr "iš budėjimo režimo"
+
+msgid "disabled"
+msgstr "išjungta"
