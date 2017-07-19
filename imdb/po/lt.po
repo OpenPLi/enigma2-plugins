@@ -6,15 +6,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: IMDb\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-06-23 13:34+0300\n"
-"PO-Revision-Date: 2016-06-23 13:53+0300\n"
-"Last-Translator: \n"
+"POT-Creation-Date: 2017-07-01 09:27+0300\n"
+"PO-Revision-Date: 2017-07-01 09:49+0300\n"
+"Last-Translator: Vytenis P. <vyteniui@gmail.com>\n"
 "Language-Team: Vytenis P. <vyteniui@gmail.com>\n"
 "Language: lt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.8\n"
+"X-Generator: Poedit 2.0.2\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n"
 "%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -30,8 +30,7 @@ msgstr "Pridėti \"Ieškoti įvykio IMDb\" į EPG meniu."
 #: plugin.py:813
 msgid "Add 'Search in IMDb' to movie list menu for selected video."
 msgstr ""
-"Pridėti \"Ieškoti IMDb\" į filmų sąrašo mrniu meniu pasirinktam vaizdo "
-"turiniui."
+"Pridėti \"Ieškoti IMDb\" į filmų sąrašo meniu meniu pasirinktiems filmams."
 
 #: plugin.py:298
 msgid "Ambiguous results"
@@ -55,7 +54,7 @@ msgstr "Turinys:"
 
 #: plugin.py:569
 msgid "Could't get Eventname"
-msgstr "Nepavyksta gauti pavadinimo"
+msgstr "Nepavyko gauti įvykio pavadinimo"
 
 #: plugin.py:303 plugin.py:666
 msgid "Details"
@@ -64,12 +63,12 @@ msgstr "Išsamiau"
 #: plugin.py:719
 #, python-format
 msgid "Downloading Movie Poster: %s..."
-msgstr "Parsisiunčiamas filmo plakatas: %s..."
+msgstr "Parsiunčiamas filmo plakatas: %s..."
 
 #: plugin.py:811
 msgid ""
 "Enable this to be able to access the IMDb from within the plugin browser."
-msgstr "Įjungę čia, matysite IMDb įskiepių naršyklėje."
+msgstr "Įjungę čia, IMDb atversite įskiepių naršyklėje."
 
 #: plugin.py:358
 msgid "Enter search"
@@ -109,7 +108,7 @@ msgstr "IMDb informacija apdorota"
 
 #: plugin.py:605
 msgid "IMDb Download completed"
-msgstr "IMDb parsisiuntimas baigtas"
+msgstr "IMDb parsiuntimas baigtas"
 
 #: plugin.py:649
 msgid "IMDb Download failed"
@@ -125,11 +124,11 @@ msgstr "IMDb įskiepis"
 
 #: plugin.py:657
 msgid "IMDb Re-Download completed"
-msgstr "IMDb parsisiųstas iš naujo"
+msgstr "IMDb parsiųstas iš naujo"
 
 #: plugin.py:422
 msgid "IMDb Save-Download completed"
-msgstr "IMDb parsisiųstas ir išsaugotas"
+msgstr "IMDb parsiųstas ir išsaugotas"
 
 #: plugin.py:791
 msgid "IMDb Setup"
@@ -140,16 +139,16 @@ msgid ""
 "IMDb can not get Movie Information, to\n"
 " write .jpg and .txt-file!"
 msgstr ""
-"Nepavyksta IMDb gauti informacijos apie\n"
-"filmą, kad išsaugoti .jpg ir .txt faile!"
+"Nepavyksta gauti informacijos apie filmą\n"
+"IMDb, kad išsaugoti ją .jpg ir .txt failuose!"
 
 #: plugin.py:405
 msgid ""
 "IMDb can not get Movie Information, to\n"
 " write .txt-file!"
 msgstr ""
-"Nepavyksta IMDb gauti informacijos\n"
-"apie filmą, kad išsaugoti .txt faile!"
+"Nepavyksta gauti informacijos apie\n"
+"filmą IMDb, kad išsaugoti ją .txt faile!"
 
 #: plugin.py:646
 msgid "IMDb query failed!"
@@ -169,7 +168,7 @@ msgstr "Nėra atitikimo IMDb."
 
 #: plugin.py:713
 msgid "No cast list found in the database."
-msgstr "Aktorių sąrašo duomenų bazėje nerasta."
+msgstr "Aktorių sąrašas duomenų bazėje nerastas."
 
 #: plugin.py:664
 msgid "No details found."
@@ -266,8 +265,8 @@ msgid ""
 "This option allows you add words/phrases for IMDb to ignore when searching. "
 "please seperaate with a comma"
 msgstr ""
-"Ši parinktis leidžia įtraukti paieškos IMDb duomenų bazėje ignoruotinus "
-"žodžius ir frazes. Atskirkite juos kableliais"
+"Ši parinktis leidžia įtraukti IMDb paieškoje ignoruotinus žodžius ir "
+"frazes. Atskirkite juos kableliais"
 
 #: plugin.py:302
 msgid "Title Menu"
@@ -283,7 +282,7 @@ msgstr "Ignoruotini žodžiai ir frazės "
 
 #: plugin.py:692
 msgid "no user rating yet"
-msgstr "vartotojai dar nereitingavo"
+msgstr "vertinimų dar nėra"
 
 #~ msgid "Lookup"
 #~ msgstr "Ieškoti"
