@@ -1,3 +1,4 @@
+from . import _
 from Screens.Screen import Screen
 from Screens.Setup import SetupSummary
 from Screens.MessageBox import MessageBox
@@ -12,7 +13,16 @@ from Plugins.Plugin import PluginDescriptor
 from Tools import Notifications
 from Plugins.SystemPlugins.Videomode.VideoHardware import video_hw # depends on Videomode Plugin
 
-from . import _
+def readAvailableModes():
+	try:
+		f = open("/proc/stb/video/videomode_choices")
+		modes = f.read()[:-1]
+		f.close()
+		return modes.split(' ')
+	except:
+		return []
+
+modes_available = readAvailableModes()
 
 usable = False
 preferedmodes = None
@@ -21,23 +31,31 @@ port = None
 videoresolution_dictionary = {}
 resolutionlabel = None
 
-
-resolutions = [('sd_i_50', _("SD 25/50HZ Interlace Mode")), ('sd_i_60', _("SD 30/60HZ Interlace Mode")), ('sd_p_24', _("SD 24HZ Progressive mode")),
-			('sd_p_50', _("SD 25/50HZ Progressive Mode")), ('sd_p_60', _("SD 30/60HZ Progressive Mode")),
-			('hd_i', _("HD Interlace Mode")), ('hd_p', _("HD Progressive Mode")),
-			('p720_24', _("Enable 720p24 Mode")), ('p720_50', _("Enable 720p50 Mode")), ('p1080_24', _("Enable 1080p24 Mode")),
-			('p1080_25', _("Enable 1080p25 Mode")), ('p1080_30', _("Enable 1080p30 Mode"))]
+resolutions = (
+	('sd_i_50', _("SD 25/50HZ Interlace Mode")),
+	('sd_i_60', _("SD 30/60HZ Interlace Mode")),
+	('sd_p_24', _("SD 24HZ Progressive mode")),
+	('sd_p_50', _("SD 25/50HZ Progressive Mode")),
+	('sd_p_60', _("SD 30/60HZ Progressive Mode")),
+	('hd_i', _("HD Interlace Mode")),
+	('hd_p', _("HD Progressive Mode")),
+	('p720_24', _("Enable 720p24 Mode")),
+	('p720_50', _("Enable 720p50 Mode")),
+	('p1080_24', _("Enable 1080p24 Mode")),
+	('p1080_25', _("Enable 1080p25 Mode")),
+	('p1080_30', _("Enable 1080p30 Mode")),
+)
 
 have_2160p = config.av.videorate.get("2160p", False)
 
 if have_2160p:
-	resolutions.extend([('uhd_i', _("UHD Interlace Mode")),
-		('uhd_p', _("UHD Progressive Mode"))])
-
-if have_2160p:
-	resolutions.extend([('p2160_24', _("Enable 2160p24 Mode")),
+	resolutions += (
+		('uhd_i', _("UHD Interlace Mode")),
+		('uhd_p', _("UHD Progressive Mode")),
+		('p2160_24', _("Enable 2160p24 Mode")),
 		('p2160_25', _("Enable 2160p25 Mode")),
-		('p2160_30', _("Enable 2160p30 Mode"))])
+		('p2160_30', _("Enable 2160p30 Mode")), # Trailing , is NEEDED!
+	)
 
 config.plugins.autoresolution = ConfigSubsection()
 config.plugins.autoresolution.enable = ConfigYesNo(default = False)
@@ -67,18 +85,18 @@ def setDeinterlacer(mode):
 	except:
 		print "[AutoRes] failed switch deinterlacer mode to %s" % mode
 
-frqdic = { 23976: '24', \
-		24000: '24', \
-		25000: '25', \
-		29970: '30', \
-		30000: '30', \
-		50000: '50', \
-		59940: '60', \
+frqdic = { 23976: '24',
+		24000: '24',
+		25000: '25',
+		29970: '30',
+		30000: '30',
+		50000: '50',
+		59940: '60',
 		60000: '60'}
 
 class AutoRes(Screen):
 	def __init__(self, session):
-		global port
+		global port, modes_available
 		Screen.__init__(self, session)
 		self.__event_tracker = ServiceEventTracker(screen = self, eventmap =
 			{
@@ -91,8 +109,9 @@ class AutoRes(Screen):
 			})
 		self.timer = eTimer()
 		self.timer.callback.append(self.determineContent)
-		self.extra_mode1080p50 = '1080p50' in video_hw.modes_available
-		self.extra_mode1080p60 = '1080p60' in video_hw.modes_available
+		self.extra_mode720p60 = '720p60' in modes_available
+		self.extra_mode1080p50 = '1080p50' in modes_available
+		self.extra_mode1080p60 = '1080p60' in modes_available
 		if config.av.videoport.value in config.av.videomode:
 			self.lastmode = config.av.videomode[config.av.videoport.value].value
 		config.av.videoport.addNotifier(self.defaultModeChanged)
@@ -162,13 +181,15 @@ class AutoRes(Screen):
 		else: # videomode changed in normal av setup
 			global videoresolution_dictionary
 			print "[AutoRes] mode changed to", configEntry.value
-			default = (configEntry.value, _("default"))
+			default = (configEntry.value, _("default") + " (%s)" % configEntry.value)
 			preferedmodes = [mode[0] for mode in video_hw.getModeList(port) if mode[0] != default[0]]
 			preferedmodes.append(default)
 			print "[AutoRes] default", default
 			print "[AutoRes] preferedmodes", preferedmodes
 			videoresolution_dictionary = {}
 			config.plugins.autoresolution.videoresolution = ConfigSubDict()
+			if self.extra_mode720p60 and '720p60' not in preferedmodes:
+				preferedmodes.append('720p60')
 			if self.extra_mode1080p50 and '1080p50' not in preferedmodes:
 				preferedmodes.append('1080p50')
 			if self.extra_mode1080p60 and '1080p60' not in preferedmodes:
@@ -184,7 +205,7 @@ class AutoRes(Screen):
 					elif mode[0] == 'p720_24':
 						choices = ['720p24', '1080p24', '2160p24'] + preferedmodes
 					elif mode[0] == 'p720_50':
-						choices = ['720p', '1080p25', '2160p25'] + preferedmodes
+						choices = ['720p50', '1080p25', '2160p25'] + preferedmodes
 					else:
 						choices = preferedmodes
 				else:
@@ -193,7 +214,7 @@ class AutoRes(Screen):
 					elif mode[0] == 'p720_24':
 						choices = ['720p24', '1080p24'] + preferedmodes
 					elif mode[0] == 'p720_50':
-						choices = ['720p', '1080p25'] + preferedmodes
+						choices = ['720p50', '1080p25'] + preferedmodes
 					else:
 						choices = preferedmodes
 				config.plugins.autoresolution.videoresolution[mode[0]] = ConfigSelection(default = default[0], choices = choices)
@@ -256,12 +277,12 @@ class AutoRes(Screen):
 						new_mode = 'uhd_p'
 					else:
 						new_mode = 'uhd_i' # 2160i content - senseless ???
-				elif frate in ('24'): # always 1080p24 content ???
-					new_mode = 'p1080_24'
 				elif (height >= 900 or width >= 1600) and frate in ('24', '25', '30') and prog == 'p': # 1080p content
 					new_mode = 'p1080_%s' % frate
 				elif (height > 576 or width > 720) and frate == '24' and prog == 'p': # 720p24 detection
 					new_mode = 'p720_24'
+				elif frate in ('24'): # always 1080p24 content
+					new_mode = 'p1080_24'
 				elif (height > 576 or width > 720) and frate == '50' and prog == 'p': # 720p50 detection
 					new_mode = 'p720_50'
 				elif (height <= 576) and (width <= 720) and frate in ('25', '50'):
@@ -297,7 +318,7 @@ class AutoRes(Screen):
 			return
 		if usable:
 			mode = self.lastmode
-			if mode.find("p24") != -1 or mode.find("p25") != -1 or mode.find("p30") != -1 or (self.extra_mode1080p50 and mode.find("p50") != -1) or (self.extra_mode1080p60 and mode.find("p60") != -1):
+			if "p24" in mode or "p25" in mode or "p30" in mode or (self.extra_mode1080p50 and "1080p50" in mode) or (self.extra_mode1080p60 and "1080p60" in mode) or (self.extra_mode720p60 and "720p60" in mode):
 				try:
 					v = open('/proc/stb/video/videomode' , "w")
 					v.write("%s\n" % mode)
@@ -606,5 +627,5 @@ def autoresSetup(session, **kwargs):
 	session.open(AutoResSetupMenu)
 
 def Plugins(path, **kwargs):
-	return [PluginDescriptor(where = [PluginDescriptor.WHERE_SESSIONSTART], fnc = autostart), \
+	return [PluginDescriptor(where = [PluginDescriptor.WHERE_SESSIONSTART], fnc = autostart),
 		PluginDescriptor(name="Autoresolution", description=_("Autoresolution Switch"), where = PluginDescriptor.WHERE_MENU, fnc=startSetup)]
