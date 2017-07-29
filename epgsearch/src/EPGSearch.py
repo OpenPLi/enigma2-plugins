@@ -186,6 +186,8 @@ class EPGSearchList(EPGList):
 						timer_begin = begin
 				if x.justplay:
 					type_offset = 5
+					if x.pipzap:
+						type_offset = 30
 					if (timer_end - x.begin) <= 1:
 						timer_end += 60
 				if x.always_zap:
