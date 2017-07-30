@@ -344,6 +344,8 @@ def isInTimer(self, eventid, begin, duration, service):
 					timer_begin = begin
 			if x.justplay:
 				type_offset = 5
+				if x.pipzap:
+					type_offset = 30
 				if (timer_end - x.begin) <= 1:
 					timer_end += 60
 			if x.always_zap:
@@ -457,7 +459,7 @@ def isInTimer(self, eventid, begin, duration, service):
 						type = type_offset + 2
 			if time_match:
 				if not config.plugins.Partnerbox.allicontype.value:
-					if type in (2,7,12,17,22,27):
+					if type in (2,7,12,17,22,27,32):
 						# When full recording do not look further
 						returnValue = (time_match, [type])
 						break
