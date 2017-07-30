@@ -8,7 +8,7 @@ from Components.MenuList import MenuList
 from Tools.Directories import fileExists
 import os
 
-transmission_sh = "/etc/init.d/transmission"
+transmission_sh = "/etc/init.d/transmission.sh"
 transinfo_sh = "/usr/lib/enigma2/python/Plugins/Extensions/Transmission/trans_info.sh"
 swap_sh = "/usr/lib/enigma2/python/Plugins/Extensions/Transmission/trans_swap.sh"
 pause_sh = "/usr/lib/enigma2/python/Plugins/Extensions/Transmission/trans_start_stop_down.sh"

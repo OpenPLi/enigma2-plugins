@@ -93,10 +93,10 @@ case $1 in
 		$0 start
 	;;
 	enable)
-		update-rc.d transmission defaults 60 
+		update-rc.d transmission.sh defaults 60 
 	;;
 	disable)
-		update-rc.d -f transmission remove
+		update-rc.d -f transmission.sh remove
 		sleep 2
 	;;
 	*)
