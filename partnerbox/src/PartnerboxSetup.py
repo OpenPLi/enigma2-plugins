@@ -351,6 +351,7 @@ class PartnerboxEntriesListConfigScreen(Screen):
 			if not result:
 				return
 			config.usage.remote_fallback.value="http://%s:8001" % ip
+			config.usage.remote_fallback.save()
 		self.session.openWithCallback(fallbackConfirm, MessageBox, _("Set %s as fallback remote receiver?") % name)
 
 class PartnerboxEntryList(MenuList):
