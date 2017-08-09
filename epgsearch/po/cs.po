@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Enigma 2 EPGSearch Plugin\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-21 10:41+0200\n"
-"PO-Revision-Date: 2017-05-03 16:13+0100\n"
+"PO-Revision-Date: 2017-08-09 16:13+0100\n"
 "Last-Translator: ims <ims21@users.sourceforge.net>\n"
 "Language-Team: PLi <ims21@users.sourceforge.net>\n"
 "Language: cs_CZ\n"
@@ -266,27 +266,27 @@ msgstr "Přepnout na vybraný program"
 
 #: __init__.py:36
 msgid "case-insensitive search"
-msgstr "nerozlišovat velikost písmen"
+msgstr "Nerozlišovat velikost písmen"
 
 #: __init__.py:36
 msgid "case-sensitive search"
-msgstr "rozlišovat velikost písmen"
+msgstr "Rozlišovat velikost písmen"
 
 #: __init__.py:29
 msgid "choice (Search and standard)"
-msgstr "výběr (hledat a standard)"
+msgstr "Výběr (hledat a standard)"
 
 #: __init__.py:35 __init__.py:37
 msgid "exact match"
-msgstr "přesně odpovídá"
+msgstr "Přesně odpovídá"
 
 #: __init__.py:29
 msgid "only Search"
-msgstr "pouze hledat"
+msgstr "Pouze hledat"
 
 #: __init__.py:35 __init__.py:37
 msgid "partial match"
-msgstr "částečně odpovídá"
+msgstr "Částečně odpovídá"
 
 #: plugin.py:145
 msgid "search EPG"
@@ -294,11 +294,11 @@ msgstr "Prohledat EPG"
 
 #: plugin.py:139
 msgid "search EPG..."
-msgstr "hledat v EPG..."
+msgstr "Hledat v EPG..."
 
 #: __init__.py:37
 msgid "title starts with"
-msgstr "název začíná s"
+msgstr "Název začíná na"
 
 #~ msgid "Search EPG"
 #~ msgstr "Prohledat EPG"
