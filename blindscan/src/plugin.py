@@ -1380,6 +1380,8 @@ class Blindscan(ConfigListScreen, Screen):
 				return True
 		elif lof_type == "circular_lnb" and nim.config.configMode.getValue() == "simple" and nim.config.diseqcMode.value == "single" and cur_orb_pos in (360, 560) and nim.config.simpleDiSEqCSetCircularLNB.value:
 			return True
+		elif lof_type == "universal_lnb" and nim.config.configMode.getValue() == "simple":
+			return True
 		return False
 
 	def getOrbPos(self):
