@@ -12,8 +12,7 @@ from Components.Label import Label
 from Components.TuneTest import Tuner
 from Screens.ChoiceBox import ChoiceBox
 from Components.ConfigList import ConfigListScreen
-from Components.Sources.StaticText import StaticText
-from Components.ActionMap import NumberActionMap, ActionMap
+from Components.ActionMap import ActionMap
 from Components.NimManager import nimmanager, getConfigSatlist
 from Components.config import config, ConfigSubsection, ConfigSelection, ConfigYesNo, ConfigInteger, getConfigListEntry, ConfigNothing
 from enigma import eTimer, eDVBFrontendParametersSatellite, eComponentScan, eConsoleAppContainer, eDVBResourceManager, getBoxType, eDVBSatelliteEquipmentControl
