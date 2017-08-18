@@ -2,9 +2,9 @@
 '''
 Created on 30.09.2012
 $Author: michael $
-$Revision: 1479 $
-$Date: 2017-07-02 15:51:13 +0200 (Sun, 02 Jul 2017) $
-$Id: FritzCallFBF.py 1479 2017-07-02 13:51:13Z michael $
+$Revision: 1488 $
+$Date: 2017-08-09 17:21:09 +0200 (Wed, 09 Aug 2017) $
+$Id: FritzCallFBF.py 1488 2017-08-09 15:21:09Z michael $
 '''
 
 # C0111 (Missing docstring)
@@ -3704,11 +3704,11 @@ class FritzCallFBF_upnp():
 		if "wlan24" in boxData:
 			wlan24 = boxData["wlan24"]
 			if wlan24:
-				netName = re.sub(r".*: ", "", wlan24["txt"]).encode("utf-8")
+				netName24 = re.sub(r".*: ", "", wlan24["txt"]).encode("utf-8")
 				if wlan24["led"] == "led_green":
-					wlanState = ['1', '', '', "2,4GHz " + _("on") + ": " + netName]
+					wlanState = ['1', '', '', "2,4GHz " + _("on") + ": " + netName24]
 				else:
-					wlanState = ['0', '', '', "2,4GHz " + _("off") + ": " + netName]
+					wlanState = ['0', '', '', "2,4GHz " + _("off") + ": " + netName24]
 		self.info("wlanState24: " + repr(wlanState))
 
 		if "wlan5" in boxData:
@@ -3723,7 +3723,10 @@ class FritzCallFBF_upnp():
 				else:
 					if wlan5["led"] == "led_green":
 						wlanState[0] = '1'
-						wlanState[3] = wlanState[3] + ", 5GHz " + _("on") + ": " + netName
+						if netName == netName24:
+							wlanState[3] = "2,4GHz/5GHz " + _("on") + ": " + netName
+						else:
+							wlanState[3] = wlanState[3] + ", 5GHz " + _("on") + ": " + netName
 		self.info("wlanState5: " + repr(wlanState))
 
 		if "dect" in boxData:
@@ -3866,6 +3869,9 @@ class FritzCallFBF_upnp():
 				else:
 					remote = resolveNumber(number, "", self.phonebook)
 				here = call.find("./CallerNumber").text
+				if filtermsns and here not in filtermsns:
+					# self.debug("skip %s" % (here))
+					continue
 				if here.isdigit():
 					here = resolveNumber(here, call.find("./Caller").text, self.phonebook)
 			else:
@@ -3878,11 +3884,11 @@ class FritzCallFBF_upnp():
 				else:
 					remote = resolveNumber(call.find("./Caller").text, "", self.phonebook)
 				here = call.find("./CalledNumber").text
+				if filtermsns and here not in filtermsns:
+					# self.debug("skip %s" % (here))
+					continue
 				if here.isdigit():
 					here = resolveNumber(here, call.find("./Called").text, self.phonebook)
-			if filtermsns and here not in filtermsns:
-				# self.debug("skip %s" % (here))
-				continue
 
 			device = call.find("./Device").text
 			if device:
