@@ -318,7 +318,7 @@ class AutoRes(Screen):
 			return
 		if usable:
 			mode = self.lastmode
-			if "p24" in mode or "p25" in mode or "p30" in mode or (self.extra_mode1080p50 and "1080p50" in mode) or (self.extra_mode1080p60 and "1080p60" in mode) or (self.extra_mode720p60 and "720p60" in mode):
+			if "p24" in mode or "p25" in mode or "p30" in mode or (self.extra_mode1080p50 and "1080p50" in mode) or (self.extra_mode1080p60 and "1080p60" in mode) or (self.extra_mode720p60 and "720p60" in mode) or "720p50" in mode:
 				try:
 					v = open('/proc/stb/video/videomode' , "w")
 					v.write("%s\n" % mode)
