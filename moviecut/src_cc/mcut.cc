@@ -198,8 +198,8 @@ off64_t readoff(int fa, int fao, int fs, int fso, double t, int beg, double& tr)
     if (endp)
       break;
     if (buf0[1] - buf1[1] > 45000 || buf1[1] - buf0[1] > 900000) {
-      if (absless(buf1[1] + ((long long int)1)<<33 - buf0[1], 900000))
-        time_offset -= ((long long int)1)<<33;
+      if (absless(buf1[1] + (((long long int)1) << 33) - buf0[1], 900000))
+        time_offset -= ((long long int)1) << 33;
       else
         time_offset += buf1[1] - buf0[1];
     }
@@ -650,7 +650,7 @@ void copysmallfile(int n, int f1, int f2)
 
 int main(int argc, char* argv[])
 {
-  int f_ts, f_out, f_cuts, f_cutsout, f_ap, f_apout, f_sc, f_scout, f_meta, f_metaout, f_eit, f_eitout;
+  int f_ts, f_out, f_cuts, f_cutsout, f_ap, f_apout, f_sc, f_scout = -1, f_meta, f_metaout, f_eit, f_eitout;
   char* tmpname;
   const char* suff = 0;
   char* inname = 0;
