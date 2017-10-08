@@ -92,7 +92,7 @@ msgstr "бирюзовый-большие"
 msgid "Save"
 msgstr "Сохранить"
 
-msgid ""Set slider step"
+msgid "Set slider step"
 msgstr "Установить шаг ползунка"
 
 msgid "Set slider step (1 - 20):"
