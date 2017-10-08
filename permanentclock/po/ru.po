@@ -82,3 +82,18 @@ msgstr "прозрачный"
 
 msgid "white"
 msgstr "белый"
+
+msgid "cyan"
+msgstr "бирюзовый"
+
+msgid "large cyan"
+msgstr "бирюзовый-большие"
+
+msgid "Save"
+msgstr "Сохранить"
+
+msgid ""Set slider step"
+msgstr "Установить шаг ползунка"
+
+msgid "Set slider step (1 - 20):"
+msgstr "Установить шаг ползунка (1 - 20):"

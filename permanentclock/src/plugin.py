@@ -6,6 +6,8 @@ from Components.ActionMap import ActionMap
 from Components.config import config, ConfigInteger, ConfigSubsection, ConfigYesNo, ConfigSelection
 from Components.Language import language
 from Components.MenuList import MenuList
+from Components.Input import Input
+from Screens.InputBox import InputBox
 from Screens.MessageBox import MessageBox
 from Screens.ChoiceBox import ChoiceBox
 from enigma import ePoint, eTimer, getDesktop
@@ -37,12 +39,12 @@ language.addCallback(localeInit)
 
 config.plugins.PermanentClock = ConfigSubsection()
 config.plugins.PermanentClock.enabled = ConfigYesNo(default=False)
-config.plugins.PermanentClock.position_x = ConfigInteger(default=590)
+config.plugins.PermanentClock.position_x = ConfigInteger(default=500)
 config.plugins.PermanentClock.position_y = ConfigInteger(default=35)
 config.plugins.PermanentClock.analog = ConfigYesNo(default=False)
 config.plugins.PermanentClock.show_hide = ConfigYesNo(default=False)
 config.plugins.PermanentClock.color_analog = ConfigSelection([("1", _("black-yellow")),("2", _("black-blue")),("3", _("blue")),("4", _("black-white")),("5", _("white")),("6", _("transparent")),("7", _("PLi-transparent"))], default="1")
-config.plugins.PermanentClock.color_digital = ConfigSelection([("0", _("yellow")),("1", _("white")), ("2", _("large yellow")), ("3", _("large white"))], default="1")
+config.plugins.PermanentClock.color_digital = ConfigSelection([("0", _("yellow")),("1", _("white")), ("2", _("large yellow")), ("3", _("large white")), ("4", _("cyan")), ("5", _("large cyan"))], default="1")
 
 ##############################################################################
 SKIN1 = """
@@ -157,6 +159,13 @@ SKIN0 = """
 		</widget>
 	</screen>"""
 ##############################################################################
+SKIN01 = """
+	<screen position="0,0" size="120,30" zPosition="-1" backgroundColor="#ff000000" title="Permanent Clock" flags="wfNoBorder">
+		<widget source="global.CurrentTime" render="Label" position="1,1" size="120,30" backgroundColor="#ff000000" transparent="1" zPosition="0" foregroundColor="#7fffff" borderWidth="2" font="Regular;26" borderColor="#00000000" valign="center" halign="center">
+			<convert type="ClockToText">Default</convert>
+		</widget>
+	</screen>"""
+##############################################################################
 SKINL = """
 	<screen position="0,0" size="180,45" zPosition="-1" backgroundColor="#ff000000" title="Permanent Clock" flags="wfNoBorder">
 		<widget source="global.CurrentTime" render="Label" position="1,1" size="180,45" backgroundColor="#ff000000" transparent="1" zPosition="0" foregroundColor="#00f0f0f0" borderWidth="2" font="Regular;39" borderColor="#00000000" valign="center" halign="center">
@@ -167,6 +176,13 @@ SKINL = """
 SKIN0L = """
 	<screen position="0,0" size="180,45" zPosition="-1" backgroundColor="#ff000000" title="Permanent Clock" flags="wfNoBorder">
 		<widget source="global.CurrentTime" render="Label" position="1,1" size="180,45" backgroundColor="#ff000000" transparent="1" zPosition="0" foregroundColor="#00ffc000" borderWidth="2" font="Regular;39" borderColor="#00000000" valign="center" halign="center">
+			<convert type="ClockToText">Default</convert>
+		</widget>
+	</screen>"""
+##############################################################################
+SKIN0L1 = """
+	<screen position="0,0" size="180,45" zPosition="-1" backgroundColor="#ff000000" title="Permanent Clock" flags="wfNoBorder">
+		<widget source="global.CurrentTime" render="Label" position="1,1" size="180,45" backgroundColor="#ff000000" transparent="1" zPosition="0" foregroundColor="#7fffff" borderWidth="2" font="Regular;39" borderColor="#00000000" valign="center" halign="center">
 			<convert type="ClockToText">Default</convert>
 		</widget>
 	</screen>"""
@@ -198,6 +214,10 @@ class PermanentClockNewScreen(Screen):
 				self.skin = SKINL
 			elif config.plugins.PermanentClock.color_digital.value == "3":
 				self.skin = SKIN0L
+			elif config.plugins.PermanentClock.color_digital.value == "4":
+				self.skin = SKIN01
+			elif config.plugins.PermanentClock.color_digital.value == "5":
+				self.skin = SKIN0L1
 		Screen.__init__(self, session)
 		self.onShow.append(self.movePosition)
 
@@ -316,46 +336,64 @@ class PermanentClockPositioner(Screen):
 			"ok": self.ok,
 			"back": self.exit
 		}, -1)
-		desktop = getDesktop(0)
-		self.desktopWidth = desktop.size().width()
-		self.desktopHeight = desktop.size().height()
-		self.moveTimer = eTimer()
-		self.moveTimer.callback.append(self.movePosition)
-		self.moveTimer.start(50, 1)
+		self.desktopWidth = getDesktop(0).size().width()
+		self.desktopHeight = getDesktop(0).size().height()
+		self.slider = 1
+		self.onLayoutFinish.append(self.__layoutFinished)
+
+	def __layoutFinished(self):
+		self.movePosition()
 
 	def movePosition(self):
 		self.instance.move(ePoint(config.plugins.PermanentClock.position_x.value, config.plugins.PermanentClock.position_y.value))
-		self.moveTimer.start(50, 1)
 
 	def left(self):
 		value = config.plugins.PermanentClock.position_x.value
-		value -= 1
+		value -= self.slider
 		if value < 0:
 			value = 0
 		config.plugins.PermanentClock.position_x.value = value
+		self.movePosition()
 
 	def up(self):
 		value = config.plugins.PermanentClock.position_y.value
-		value -= 1
+		value -= self.slider
 		if value < 0:
 			value = 0
 		config.plugins.PermanentClock.position_y.value = value
+		self.movePosition()
 
 	def right(self):
 		value = config.plugins.PermanentClock.position_x.value
-		value += 1
+		value += self.slider
 		if value > self.desktopWidth:
 			value = self.desktopWidth
 		config.plugins.PermanentClock.position_x.value = value
+		self.movePosition()
 
 	def down(self):
 		value = config.plugins.PermanentClock.position_y.value
-		value += 1
+		value += self.slider
 		if value > self.desktopHeight:
 			value = self.desktopHeight
 		config.plugins.PermanentClock.position_y.value = value
+		self.movePosition()
 
 	def ok(self):
+		menu = [(_("Save"), "save"),(_("Set slider"), "slider")]
+		def extraAction(choice):
+			if choice is not None:
+				if choice[1] == "slider":
+					self.session.openWithCallback(self.setSliderStep, InputBox, title=_("Set slider step (1 - 30):"), text=str(self.slider), type = Input.NUMBER)
+				elif choice[1] == "save":
+					self.Save()
+		self.session.openWithCallback(extraAction, ChoiceBox, list=menu)
+
+	def setSliderStep(self, step):
+		if step and (0 < int(step) < 21):
+			self.slider = int(step)
+
+	def Save(self):
 		config.plugins.PermanentClock.position_x.save()
 		config.plugins.PermanentClock.position_y.save()
 		self.close()
@@ -364,6 +402,7 @@ class PermanentClockPositioner(Screen):
 		config.plugins.PermanentClock.position_x.cancel()
 		config.plugins.PermanentClock.position_y.cancel()
 		self.close()
+
 
 class PermanentClockMenu(Screen):
 	skin = """
@@ -448,6 +487,8 @@ class PermanentClockMenu(Screen):
 				(_("white"), self.skins),
 				(_("large yellow"), self.skins0l),
 				(_("large white"), self.skinsl),
+				(_("cyan"), self.skins2d),
+				(_("large cyan"), self.skins2dl),
 			]
 		else:
 			list = [
@@ -486,6 +527,14 @@ class PermanentClockMenu(Screen):
 
 	def skins0l(self):
 		config.plugins.PermanentClock.color_digital.value = "3"
+		self.newConfig(digital=True)
+
+	def skins2d(self):
+		config.plugins.PermanentClock.color_digital.value = "4"
+		self.newConfig(digital=True)
+
+	def skins2dl(self):
+		config.plugins.PermanentClock.color_digital.value = "5"
 		self.newConfig(digital=True)
 
 	def skins1(self):
