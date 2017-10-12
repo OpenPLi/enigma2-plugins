@@ -99,9 +99,9 @@ class AutoMountEdit(Screen, ConfigListScreen):
 			mounttype = "nfs"
 		active = self.mountinfo.get('active', False)
 		if active == 'True':
-			active == True
+			active = True
 		else:
-			active == False
+			active = False
 		if self.mountinfo.has_key('ip'):
 			if self.mountinfo['ip'] is False:
 				ip = [192, 168, 0, 0]
