@@ -1,3 +1,3 @@
 PLUGIN = EmailClient
-LANGS = de it sr sv es fa ru
+LANGS = de es fa it lt ru sr sv
 include $(top_srcdir)/Rules-po.mak
