@@ -212,3 +212,6 @@ msgstr ""
 
 msgid "Enable 720p50 Mode"
 msgstr ""
+
+msgid "Alternative resolution when native not supported"
+msgstr ""
