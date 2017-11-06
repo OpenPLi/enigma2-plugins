@@ -74,6 +74,7 @@ config.plugins.autoresolution.mode = ConfigSelection(default = "manual", choices
 config.plugins.autoresolution.lock_timeout = ConfigSelection(default = "60", choices = [("30", "30 " + _("seconds")), ("60", "60 " + _("seconds"))])
 config.plugins.autoresolution.ask_apply_mode = ConfigYesNo(default = False)
 config.plugins.autoresolution.auto_30_60 = ConfigYesNo(default = True)
+config.plugins.autoresolution.auto_24_30_alternative = ConfigYesNo(default = True)
 config.plugins.autoresolution.ask_timeout = ConfigSelection(default = "20", choices = [("5", "5 " + _("seconds")), ("10", "10 " + _("seconds")), ("15", "15 " + _("seconds")), ("20", "20 " + _("seconds"))])
 
 def setDeinterlacer(mode):
@@ -453,6 +454,7 @@ class AutoResSetupMenu(Screen, ConfigListScreen):
 					if config.plugins.autoresolution.ask_apply_mode.value:
 						self.list.append(getConfigListEntry(_("Message timeout"), config.plugins.autoresolution.ask_timeout))
 					self.list.append(getConfigListEntry(_("Use 60HZ instead 30HZ"), config.plugins.autoresolution.auto_30_60))
+					self.list.append(getConfigListEntry(_("Alternative resolution when native not supported"), config.plugins.autoresolution.auto_24_30_alternative))
 			else:
 				self.list.append(getConfigListEntry(_("Autoresolution is not working in Scart/DVI-PC Mode"), ConfigNothing()))
 
@@ -538,10 +540,6 @@ class AutoFrameRate(Screen):
 			f = open("/proc/stb/video/videomode", "r")
 			videomode = f.read()
 			f.close()
-			f = open("/proc/stb/video/videomode_choices", "r")
-			videomode_choices = f.read()
-			f.close()
-			videomode_choices = videomode_choices.split()
 			if rate in ('24', '30'):
 				multi_videomode = videomode
 				if not videomode.endswith(rate):
@@ -549,14 +547,14 @@ class AutoFrameRate(Screen):
 					for resolution in resolutions:
 						if videomode.startswith(resolution):
 							new_mode = resolution + 'p' + rate
-							if new_mode in videomode_choices:
+							if new_mode in modes_available:
 								multi_videomode = new_mode
 								break
-							else:
+							elif config.plugins.autoresolution.auto_24_30_alternative.value:
 								for alternative_resolution in resolutions:
 									if alternative_resolution != resolution:
 										new_mode = alternative_resolution + 'p' + rate
-										if new_mode in videomode_choices:
+										if new_mode in modes_available:
 											multi_videomode = new_mode
 											break
 			else:
