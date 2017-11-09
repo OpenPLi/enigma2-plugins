@@ -186,7 +186,11 @@ def AutoTimerEPGSelectionInit():
 		pass
 
 def AutoTimerEPGSelection__init__(self, session, service, zapFunc=None, eventid=None, bouquetChangeCB=None, serviceChangeCB=None, parent=None):
-	baseEPGSelection__init__(self, session, service, zapFunc, eventid, bouquetChangeCB, serviceChangeCB, parent)
+	try:
+		baseEPGSelection__init__(self, session, service, zapFunc, eventid, bouquetChangeCB, serviceChangeCB, parent)
+	except TypeError:
+		# might be running on older OpenPLi version
+		baseEPGSelection__init__(self, session, service, zapFunc, eventid, bouquetChangeCB, serviceChangeCB)
 
 def furtherOptions(self):
 	if self.type == EPG_TYPE_SINGLE:
