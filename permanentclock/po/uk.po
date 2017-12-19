@@ -1,0 +1,99 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PermanentClock\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-11-26 18:22-0000\n"
+"PO-Revision-Date: 2017-12-17 17:25+0200\n"
+"Last-Translator: Dimitrij <Dima-73@inbox.lv>\n"
+"Language-Team: Dimitrij openPLi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-Basepath: .\n"
+"Language: ru_RU\n"
+"X-Generator: Poedit 2.0.5\n"
+
+msgid "Activate permanent clock"
+msgstr "Активувати постійний годинник"
+
+msgid "Change permanent clock position"
+msgstr "Змінити позицію годинника"
+
+msgid "Choice color clock:"
+msgstr "Виберіть колір годинника:"
+
+msgid "Color analog clock"
+msgstr "Колір аналового годинника"
+
+msgid "Color digital clock"
+msgstr "Колір цифрового годинника"
+
+msgid "Deactivate permanent clock"
+msgstr "Деактивувати постійний годинник"
+
+msgid "Disable key 'long EXIT' show/hide"
+msgstr "Виключити кнопку 'довго EXIT'"
+
+msgid "Enable key 'long EXIT' show/hide"
+msgstr "Включити кнопку 'довго EXIT'"
+
+msgid "PLi-transparent"
+msgstr "PLi-прозорий"
+
+msgid "Permanent Clock"
+msgstr "Постійний годинник на екрані"
+
+msgid "Permanent Clock Setup"
+msgstr "Постійний годинник - налаштування"
+
+msgid "Save"
+msgstr "Зберегти"
+
+msgid "Set slider step"
+msgstr "Встановити крок повзунка"
+
+msgid "Set slider step (1 - 20):"
+msgstr "Встановити крок повзунка (1 - 20):"
+
+msgid "Show analog clock"
+msgstr "Показати  аналовий годинник"
+
+msgid "Show digital clock"
+msgstr "Показати  цифровий годинник"
+
+msgid "Shows the clock permanent on the screen"
+msgstr "Постійно показувати годинник на екрані"
+
+msgid "black-blue"
+msgstr "чорно-синій"
+
+msgid "black-white"
+msgstr "чорно-білий"
+
+msgid "black-yellow"
+msgstr "темно-жовтий"
+
+msgid "blue"
+msgstr "синий"
+
+msgid "cyan"
+msgstr "світло-голубий"
+
+msgid "large cyan"
+msgstr "голубий-великий"
+
+msgid "large white"
+msgstr "білий-великий"
+
+msgid "large yellow"
+msgstr "жовтий-великий"
+
+msgid "transparent"
+msgstr "прозорий"
+
+msgid "white"
+msgstr "білий"
+
+msgid "yellow"
+msgstr "жовтий"
