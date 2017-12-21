@@ -10,6 +10,8 @@ from Screens.MessageBox import MessageBox
 from enigma import eTimer
 from Components.config import config, ConfigSubsection, getConfigListEntry, ConfigInteger, ConfigSelection, configfile 
 
+import os
+
 config.plugins.transcodingsetup = ConfigSubsection()
 config.plugins.transcodingsetup.port = ConfigInteger(default = None, limits = (1024, 65535))
 config.plugins.transcodingsetup.bitrate = ConfigInteger(default = None, limits = (50000, 4000000))
@@ -55,43 +57,17 @@ class TranscodingSetup(ConfigListScreen, Screen):
 		self.statusTimer = eTimer()
 		self.warningTimer = eTimer()
 
-		vumodel = None
-		boxtype = None
-		transcoding = None
 		port = None
 
-		try:
-			f = open("/proc/stb/info/vumodel", "r")
-			vumodel = f.readlines()
-			vumodel = [x.translate(None, ' \n\r') for x in vumodel]
-			vumodel = vumodel[0]
-			f.close()
-		except:
-			pass
-
-		try:
-			f = open("/proc/stb/info/boxtype", "r")
-			boxtype = f.readlines()
-			boxtype = [x.translate(None, ' \n\r') for x in boxtype]
-			boxtype = boxtype[0]
-			f.close()
-		except:
-			pass
-
-		if vumodel == "solo2" or vumodel == "duo2" or vumodel == "solose" or vumodel == "solo4k" or vumodel == "uno4k" or vumodel == "uno4kse" or vumodel == "ultimo4k":
-			transcoding = "vuplus"
-		else:
-			if boxtype == "et10000" or boxtype == "hd2400":
-				transcoding = "enigma"
-
-		if transcoding == "vuplus":
+		if os.path.exists("/dev/bcm_enc0"):
 			port = 8002
-		elif transcoding == "enigma":
-			port = 8001
-		elif transcoding is None:
-			self.statusTimer.callback.append(self.setErrorMessage)
-			self.statusTimer.start(500, True)
-			return
+		else:
+			if os.path.exists("/proc/stb/encoder/0"):
+				port = 8001
+			else:
+				self.statusTimer.callback.append(self.setErrorMessage)
+				self.statusTimer.start(500, True)
+				return
 
 		config_list.append(getConfigListEntry(_("Bitrate"), self.bitrate))
 		config_list.append(getConfigListEntry(_("Video size"), self.size))
