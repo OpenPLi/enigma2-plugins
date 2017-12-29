@@ -303,3 +303,6 @@ msgstr ""
 #: __init__.py:37
 msgid "title starts with"
 msgstr ""
+
+msgid "Custom search"
+msgstr ""
