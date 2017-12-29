@@ -257,3 +257,6 @@ msgstr "поиск EPG..."
 
 msgid "title starts with"
 msgstr "название начинается с"
+
+msgid "Custom search"
+msgstr "Пользовательский поиск"

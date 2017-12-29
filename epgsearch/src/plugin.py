@@ -2,6 +2,7 @@
 from . import _
 from enigma import eServiceCenter
 from Screens.EpgSelection import EPGSelection
+from Screens.VirtualKeyBoard import VirtualKeyBoard
 from Components.EpgList import EPG_TYPE_SINGLE, EPG_TYPE_MULTI
 from Components.ActionMap import ActionMap
 from EPGSearch import EPGSearch, EPGSearchEPGSelection
@@ -17,6 +18,7 @@ def EPGSelectionInit():
 		baseEPGSelection__init__ = EPGSelection.__init__
 	EPGSelection.__init__ = EPGSearchSelection__init__
 	EPGSelection.CallbackChoiceAction = CallbackChoiceAction
+	EPGSelection.VKaction = VKaction
 
 # Modified EPGSelection __init__
 def EPGSearchSelection__init__(self, session, service, zapFunc=None, eventid=None, bouquetChangeCB=None, serviceChangeCB=None, parent=None):
@@ -34,6 +36,7 @@ def EPGSearchSelection__init__(self, session, service, zapFunc=None, eventid=Non
 				list = [
 				(_("Search"), "search"),
 				(_("Select channel"), "standard"),
+				(_("Custom search"), "custom"),
 				]
 				dlg = self.session.openWithCallback(self.CallbackChoiceAction, ChoiceBox, title= _("Select action:"), list = list)
 				dlg.setTitle(_("Choice list EPGSearch"))
@@ -49,14 +52,17 @@ def EPGSearchSelection__init__(self, session, service, zapFunc=None, eventid=Non
 def CallbackChoiceAction(self, ret):
 	ret = ret and ret[1]
 	if ret:
-		if ret == "search":
+		if ret == "search" or ret == "custom":
 			try:
 				cur = self["list"].getCurrent()
 				if cur[0] is not None:
 					name = cur[0].getEventName()
 				else:
 					name = ''
-				self.session.open(EPGSearch, name, False)
+				if ret == "custom":
+					self.session.openWithCallback(self.VKaction, VirtualKeyBoard, text=name, title = _("Enter text to search for"))
+				else:
+					self.session.open(EPGSearch, name, False)
 			except:
 				pass
 		elif ret == "standard":
@@ -64,6 +70,10 @@ def CallbackChoiceAction(self, ret):
 				self.blueButtonPressed()
 			except:
 				pass
+
+def VKaction(self, answer):
+	if answer:
+		self.session.open(EPGSearch, answer, False)
 
 # Autostart
 def autostart(reason, **kwargs):
