@@ -1,0 +1,270 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: AC3LipSync\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-12-18 02:07+0100\n"
+"PO-Revision-Date: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Basepath: D:/Dreambox/Eclipse/ac3lipsync\n"
+"X-Generator: Poedit 2.0.5\n"
+"Last-Translator: GeirJ <dummy@dummy.com>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: nb\n"
+"X-Poedit-SearchPath-0: src\n"
+
+#: src/AC3main.py:57
+msgid "Service delay"
+msgstr "Tjeneste forsinkelse"
+
+#: src/AC3main.py:58
+msgid "Global delay"
+msgstr "Global forsinkelse"
+
+#: src/AC3main.py:62 src/AC3main.py:146 src/AC3main.py:236 src/AC3main.py:240
+#: src/AC3main.py:241
+#, python-format
+msgid "%i ms"
+msgstr "%i ms"
+
+#: src/AC3main.py:65
+msgid "Channel audio:"
+msgstr "Kanal-lyd:"
+
+#: src/AC3main.py:70 src/AC3setup.py:63
+msgid "Cancel"
+msgstr "Avbryt"
+
+#: src/AC3main.py:71
+msgid "OK"
+msgstr "OK"
+
+#: src/AC3main.py:72
+msgid "Switch audio"
+msgstr "Bytt lyd"
+
+#: src/AC3main.py:73
+msgid "Save to key"
+msgstr "Lagre endringer"
+
+#: src/AC3main.py:78
+msgid "Open plugin menu"
+msgstr "Tilleggsmeny"
+
+#: src/AC3main.py:79 src/AC3main.py:86
+msgid "Save values and close plugin"
+msgstr "Lagre og lukk"
+
+#: src/AC3main.py:80 src/AC3main.py:85
+msgid "Discard changes and close plugin"
+msgstr "Avbryt endringer og lukk program"
+
+#: src/AC3main.py:81 src/AC3main.py:82
+msgid "Change active delay"
+msgstr "Endre aktiv forsinkelse"
+
+#: src/AC3main.py:83
+msgid "Increase delay"
+msgstr "Øk forsinkelse"
+
+#: src/AC3main.py:84
+msgid "Decrease delay"
+msgstr "Reduser forsinkelse"
+
+#: src/AC3main.py:87
+msgid "Select channel audio"
+msgstr "Velg kanal lyd"
+
+#: src/AC3main.py:88
+msgid "Save current delay to key"
+msgstr "Lagre gjeldende forsinkelse til tast"
+
+#: src/AC3main.py:89 src/AC3main.py:91 src/AC3main.py:93
+#, python-format
+msgid "Decrease delay by %i ms (can be set)"
+msgstr "Øk forsinkelse til %i ms (kan stilles inn)"
+
+#: src/AC3main.py:90 src/AC3main.py:92 src/AC3main.py:94
+#, python-format
+msgid "Increase delay by %i ms (can be set)"
+msgstr "Reduser forsinkelse til %i ms (kan stilles inn)"
+
+#: src/AC3main.py:95 src/AC3main.py:96 src/AC3main.py:97 src/AC3main.py:98
+#, python-format
+msgid "Set delay to %i ms (can be set)"
+msgstr "Still forsinkelse til %i ms (kan stilles inn)"
+
+#: src/AC3main.py:211
+msgid "Move plugin screen"
+msgstr "Flytt bildet"
+
+#: src/AC3main.py:214
+msgid "Menu"
+msgstr "Meny"
+
+#: src/AC3main.py:221 src/AC3main.py:282
+msgid "Invalid selection"
+msgstr "Ugyldig valg"
+
+#: src/AC3main.py:257
+#, python-format
+msgid "Select the key you want to set to %i ms"
+msgstr "Velg tast du ønsker å bruke til %i ms"
+
+#: src/AC3main.py:263
+#, python-format
+msgid "Key %(key)s (current value: %(value)i ms)"
+msgstr "Tast %(key)s (gjeldende verdi: %(value)i ms)"
+
+#: src/AC3main.py:268
+msgid "Setting key canceled"
+msgstr "Innstiling av tast avbrutt"
+
+#: src/AC3main.py:280
+#, python-format
+msgid "Key %(Key)s successfully set to %(delay)i ms"
+msgstr "Tast %(Key)s vellykket satt til %(delay)i ms"
+
+#: src/AC3setup.py:42
+msgid "Outer Bound (+/-)"
+msgstr "Yttergrense (+/-)"
+
+#: src/AC3setup.py:43
+msgid "Step in ms for arrow keys"
+msgstr "Steg i ms for piltaster"
+
+#: src/AC3setup.py:44
+msgid "Wait time in ms before activation:"
+msgstr "Ventetid i ms før aktivering:"
+
+#: src/AC3setup.py:45 src/AC3setup.py:46 src/AC3setup.py:47
+#, python-format
+msgid "Step in ms for keys '%s'"
+msgstr "Steg i ms for taster '%s'"
+
+#: src/AC3setup.py:48 src/AC3setup.py:49 src/AC3setup.py:50
+#, python-format
+msgid "Step in ms for key %i"
+msgstr "Steg i ms for tast %i"
+
+#: src/AC3setup.py:60
+#, python-format
+msgid "Plugin: %(plugin)s , Version: %(version)s"
+msgstr "Tillegg: %(plugin)s , Versjon: %(version)s"
+
+#: src/AC3setup.py:64
+msgid "Save"
+msgstr "Lagre"
+
+#: src/AC3setup.py:65
+msgid " "
+msgstr ""
+
+#: src/MovableScreen.py:17 src/MovableScreen.py:24
+msgid "Save values and close screen"
+msgstr "Lagre og lukk bildet"
+
+#: src/MovableScreen.py:18 src/MovableScreen.py:23
+msgid "Discard changes and close screen"
+msgstr "Ikke lagre og forlat bildet"
+
+#: src/MovableScreen.py:19
+msgid "Move screen to the left"
+msgstr "Flytt bildet mot venstre"
+
+#: src/MovableScreen.py:20
+msgid "Move screen to the right"
+msgstr "Flytt bildet mot høyre"
+
+#: src/MovableScreen.py:21
+msgid "Move screen up"
+msgstr "Flytt bildet opp"
+
+#: src/MovableScreen.py:22
+msgid "Move screen down"
+msgstr "Flytt bildet ned"
+
+#: src/MovableScreen.py:25
+msgid "Move screen to the upper left corner"
+msgstr "Flytt bildet til øvre venstre hjørne"
+
+#: src/MovableScreen.py:26
+msgid "Center screen at the upper border"
+msgstr "Sentrer bildet øverst"
+
+#: src/MovableScreen.py:27
+msgid "Move screen to the upper right corner"
+msgstr "Flytt bildet til øvre høyre hjørne"
+
+#: src/MovableScreen.py:28
+msgid "Move screen to the middle of the left border"
+msgstr "Flytt bildet til midten av venstre side"
+
+#: src/MovableScreen.py:29
+msgid "Move screen to the center of your TV"
+msgstr "Flytt bildet til midten av din TV"
+
+#: src/MovableScreen.py:30
+msgid "Move screen to the middle of the right border"
+msgstr "Flytt bildet til midten av høyre side"
+
+#: src/MovableScreen.py:31
+msgid "Move screen to the lower left corner"
+msgstr "Flytt bildet til nedre venstre hjørne"
+
+#: src/MovableScreen.py:32
+msgid "Center screen at the lower border"
+msgstr "Sentrer bildet nederst"
+
+#: src/MovableScreen.py:33
+msgid "Move screen to the lower right corner"
+msgstr "Flytt bildet til nedre høyre hjørne"
+
+#: src/MovableScreen.py:34
+msgid "Reset saved position"
+msgstr "Nullstill lagret posisjon"
+
+#: src/plugin.py:30 src/plugin.py:36 src/plugin.py:38
+msgid "Audio Sync"
+msgstr "Lyd synk"
+
+#: src/plugin.py:36 src/plugin.py:38
+msgid "sets the Audio Delay (LipSync)"
+msgstr "stiller inn lyd forsinkelse (Leppe synk)"
+
+#: src/plugin.py:37
+msgid "Audio Sync Setup"
+msgstr "Lyd synk innstilling"
+
+#: src/plugin.py:37
+msgid "Setup for the Audio Sync Plugin"
+msgstr "Innstilling for lyd synkronisering"
+
+msgid "AC3 Lip Sync Setup"
+msgstr "Innstilling for AC3 leppe synk"
+
+msgid "Restart audio"
+msgstr "Restart lyd"
+
+msgid "Restart audio delay (in sec)"
+msgstr "Restart lyd forsinkelse (i sek)"
+
+msgid "after restart"
+msgstr "etter restart"
+
+msgid "after restart/standby"
+msgstr "etter restart/avslått"
+
+msgid "after standby"
+msgstr "etter avslått"
+
+msgid "disabled"
+msgstr "frakoblet"
+
+msgid "Delete in config"
+msgstr "Fjern i innstillinger"
+
+msgid "Also save delay in config?"
+msgstr "Også lagre forsinkelse i innstillinger?"
