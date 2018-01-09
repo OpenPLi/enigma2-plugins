@@ -20,7 +20,7 @@ import os
 import time
 import datetime
 
-PLUGIN_VERSION = _(" ver. ") + "1.7"
+#PLUGIN_VERSION = _(" ver. ") + "1.7"
 
 config.plugins.SystemTime = ConfigSubsection()
 config.plugins.SystemTime.choiceSystemTime = ConfigSelection([("0", _("Transponder")),("1", _("NTP"))], default="0")
@@ -67,7 +67,7 @@ class SystemTimeSetupScreen(Screen, ConfigListScreen):
 
 	def __init__(self, session):
 		self.skin = SystemTimeSetupScreen.skin
-		self.setup_title = _("Setup System Time") + PLUGIN_VERSION
+		self.setup_title = _("Setup System Time")# + PLUGIN_VERSION
 		self.onChangedEntry = []
 		Screen.__init__(self, session)
 		self.syncTimer = eTimer()
