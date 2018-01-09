@@ -1,0 +1,234 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: SystemTime\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-01-09 19:13+0200\n"
+"PO-Revision-Date: 2018-01-09 19:22+0200\n"
+"Last-Translator: \n"
+"Language-Team: nautilus7 spyros.n7@gmail.com\n"
+"Language: el\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 2.0.5\n"
+"X-Poedit-Basepath: ../src\n"
+"X-Poedit-SearchPath-0: plugin.py\n"
+
+#: plugin.py:23
+msgid " ver. "
+msgstr " έκδοση "
+
+#: plugin.py:26
+msgid "Transponder"
+msgstr "Αναμεταδότη"
+
+#: plugin.py:26
+msgid "NTP"
+msgstr "NTP"
+
+#: plugin.py:27
+msgid "5 mins"
+msgstr "5 λεπτά"
+
+#: plugin.py:27
+msgid "15 mins"
+msgstr "15 λεπτά"
+
+#: plugin.py:27
+msgid "30 mins"
+msgstr "30 λεπτά"
+
+#: plugin.py:27
+msgid "1 hour"
+msgstr "1 ώρα"
+
+#: plugin.py:27
+msgid "2 hours"
+msgstr "2 ώρες"
+
+#: plugin.py:27
+msgid "4 hours"
+msgstr "4 ώρες"
+
+#: plugin.py:27
+msgid "12 hours"
+msgstr "12 ώρες"
+
+#: plugin.py:27
+msgid "24 hours"
+msgstr "24 ώρες"
+
+#: plugin.py:27
+msgid "48 hours"
+msgstr "48 ώρες"
+
+#: plugin.py:31 plugin.py:32 plugin.py:33
+msgid "Press OK"
+msgstr "Πατήστε ΟΚ"
+
+#: plugin.py:70
+msgid "Setup System Time"
+msgstr "Ρύθμιση System Time"
+
+#: plugin.py:75
+msgid "Cancel"
+msgstr "Άκυρο"
+
+#: plugin.py:76
+msgid "Save"
+msgstr "Αποθήκευση"
+
+#: plugin.py:77
+msgid "Restart GUI"
+msgstr "Επανεκκίνηση GUI"
+
+#: plugin.py:140
+msgid "Sync time using"
+msgstr "Συγχρονισμός ώρας μέσω"
+
+#: plugin.py:141
+msgid "Sync NTP every"
+msgstr "Συγχρονισμός NTP κάθε"
+
+#: plugin.py:142
+msgid "NTP cold start"
+msgstr "NTP cold start"
+
+#: plugin.py:143
+msgid "Delay (seconds) when using Wi-Fi"
+msgstr "Καθυστέρηση (δευτερόλεπτα) όταν χρησιμοποιείται Wi-Fi"
+
+#: plugin.py:144
+msgid "Sync now with NTP server"
+msgstr "Συγχρονισμός τώρα με διακομιστή NTP"
+
+#: plugin.py:145
+msgid "Sync now with current transponder"
+msgstr "Συγχρονισμός τώρα με τρέχοντα αναμεταδότη"
+
+#: plugin.py:146
+msgid "Set system time manually"
+msgstr "Ορισμός ώρας χειροκίνητα"
+
+#: plugin.py:147
+msgid "Use RTC time from deep standby"
+msgstr "Χρήση RTC κατά την εκκίνηση από deep standby"
+
+#: plugin.py:148
+msgid "NTP server (e.g. pool.ntp.org)"
+msgstr "Διακομιστής NTP (π.χ. pool.ntp.org)"
+
+#: plugin.py:178 plugin.py:181
+msgid "Syncing with NTP server..."
+msgstr "Γίνεται συγχρονισμός με διακομιστή NTP..."
+
+#: plugin.py:183 plugin.py:245
+msgid "'ntpdate' is not installed!"
+msgstr "Το 'ntpdate' δεν είναι εγκατεστημένο!"
+
+#: plugin.py:190
+msgid "Syncing... Please wait."
+msgstr "Γίνεται συγχρονισμός... Παρακαλώ περιμένετε."
+
+#: plugin.py:195
+msgid "Syncing with current transponder..."
+msgstr "Γίνεται συγχρονισμός με τρέχοντα αναμεταδότη..."
+
+#: plugin.py:197
+msgid "'dvbdate' is not installed!"
+msgstr "Το 'dvbdate' δεν είναι εγκατεστημένο!"
+
+#: plugin.py:208
+#, python-format
+msgid ""
+"Old time: %(oldtime)s\n"
+"Offset: %(offset)s sec.\n"
+"New time: %(newtime)s"
+msgstr ""
+"Παλιά ώρα: %(oldtime)s\n"
+"Διαφορά: %(offset)s sec.\n"
+"Νέα ώρα: %(newtime)s"
+
+#: plugin.py:214 plugin.py:305
+msgid "Select transponder"
+msgstr "Επιλογή αναμεταδότη"
+
+#: plugin.py:263
+msgid "Script 'set-rtctime' not found!"
+msgstr "Το 'set-rtctime' δε βρέθηκε!"
+
+#: plugin.py:298
+msgid "Restart GUI now?"
+msgstr "Επανεκκίνηση GUI τώρα;"
+
+#: plugin.py:355
+msgid "Enter new system time and press OK!"
+msgstr "Εισάγετε νέα ώρα συστήματος και πατήστε ΟΚ!"
+
+#: plugin.py:363
+msgid "no new time"
+msgstr "δε βρέθηκε νέα ώρα"
+
+#: plugin.py:365
+msgid "time string too short"
+msgstr "η μορφή ώρας είναι πολύ σύντομη"
+
+#: plugin.py:367 plugin.py:369
+msgid "invalid format"
+msgstr "λάθος μορφή ώρας"
+
+#: plugin.py:392
+#, python-format
+msgid "invalid year %s"
+msgstr "λάθος έτος %s"
+
+#: plugin.py:394
+#, python-format
+msgid "invalid month %s"
+msgstr "λάθος μήνας %s"
+
+#: plugin.py:396
+#, python-format
+msgid "invalid day %s"
+msgstr "λάθος ημέρα %s"
+
+#: plugin.py:398
+#, python-format
+msgid "invalid hour %s"
+msgstr "λάθος ώρα %s"
+
+#: plugin.py:400
+#, python-format
+msgid "invalid minute %s"
+msgstr "λάθος λεπτό %s"
+
+#: plugin.py:403
+msgid "Apply new system time?"
+msgstr "Εφαρμογή νέας ώρας συστήματος;"
+
+#: plugin.py:407
+msgid "answer is none"
+msgstr "δε λήφθηκε απάντηση"
+
+#: plugin.py:409
+msgid "did not confirm"
+msgstr "δεν έγινε επιβεβαίωση"
+
+#: plugin.py:425
+#, python-format
+msgid "System time was not apllied: %s"
+msgstr "Η ώρα συστήματος δεν εφαρμόστηκε: %s"
+
+#: plugin.py:445
+msgid "System Time"
+msgstr "System Time"
+
+#: plugin.py:453
+msgid "Change system time in enigma2 box"
+msgstr "Ρυθμίστε την ώρα στον engima2 δέκτη σας"
