@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SystemTime\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-09 19:17+0200\n"
+"POT-Creation-Date: 2018-01-10 00:28+0200\n"
 "PO-Revision-Date: 2018-01-09 17:43+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,10 +20,6 @@ msgstr ""
 "X-Generator: Poedit 2.0.5\n"
 "X-Poedit-Basepath: ../src\n"
 "X-Poedit-SearchPath-0: plugin.py\n"
-
-#: plugin.py:23
-msgid " ver. "
-msgstr ""
 
 #: plugin.py:26
 msgid "Transponder"

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SystemTime\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-09 19:13+0200\n"
-"PO-Revision-Date: 2018-01-09 19:22+0200\n"
+"POT-Creation-Date: 2018-01-10 00:28+0200\n"
+"PO-Revision-Date: 2018-01-10 00:30+0200\n"
 "Last-Translator: \n"
 "Language-Team: nautilus7 spyros.n7@gmail.com\n"
 "Language: el\n"
@@ -19,10 +19,6 @@ msgstr ""
 "X-Generator: Poedit 2.0.5\n"
 "X-Poedit-Basepath: ../src\n"
 "X-Poedit-SearchPath-0: plugin.py\n"
-
-#: plugin.py:23
-msgid " ver. "
-msgstr " έκδοση "
 
 #: plugin.py:26
 msgid "Transponder"
@@ -74,7 +70,7 @@ msgstr "Πατήστε ΟΚ"
 
 #: plugin.py:70
 msgid "Setup System Time"
-msgstr "Ρύθμιση System Time"
+msgstr "Ρύθμιση ώρας συστήματος"
 
 #: plugin.py:75
 msgid "Cancel"
@@ -186,27 +182,27 @@ msgstr "λάθος μορφή ώρας"
 #: plugin.py:392
 #, python-format
 msgid "invalid year %s"
-msgstr "λάθος έτος %s"
+msgstr "λάθος στο έτος %s"
 
 #: plugin.py:394
 #, python-format
 msgid "invalid month %s"
-msgstr "λάθος μήνας %s"
+msgstr "λάθος στον μήνα %s"
 
 #: plugin.py:396
 #, python-format
 msgid "invalid day %s"
-msgstr "λάθος ημέρα %s"
+msgstr "λάθος στην ημέρα %s"
 
 #: plugin.py:398
 #, python-format
 msgid "invalid hour %s"
-msgstr "λάθος ώρα %s"
+msgstr "λάθος στην ώρα %s"
 
 #: plugin.py:400
 #, python-format
 msgid "invalid minute %s"
-msgstr "λάθος λεπτό %s"
+msgstr "λάθος στα λεπτά %s"
 
 #: plugin.py:403
 msgid "Apply new system time?"
@@ -227,8 +223,11 @@ msgstr "Η ώρα συστήματος δεν εφαρμόστηκε: %s"
 
 #: plugin.py:445
 msgid "System Time"
-msgstr "System Time"
+msgstr "Ώρα συστήματος"
 
 #: plugin.py:453
 msgid "Change system time in enigma2 box"
 msgstr "Ρυθμίστε την ώρα στον engima2 δέκτη σας"
+
+#~ msgid " ver. "
+#~ msgstr " έκδοση "
