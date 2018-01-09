@@ -22,11 +22,11 @@ msgid " ver. "
 msgstr ""
 
 #: plugin.py:216
-msgid "'dvbdate' not installed !"
+msgid "'dvbdate' not installed!"
 msgstr ""
 
 #: plugin.py:210 plugin.py:255
-msgid "'ntpdate' not installed !"
+msgid "'ntpdate' not installed!"
 msgstr ""
 
 #: plugin.py:43
@@ -38,7 +38,7 @@ msgid "12 hours"
 msgstr ""
 
 #: plugin.py:43
-msgid "15 min"
+msgid "15 mins"
 msgstr ""
 
 #: plugin.py:43
@@ -50,7 +50,7 @@ msgid "24 hours"
 msgstr ""
 
 #: plugin.py:43
-msgid "30 min"
+msgid "30 mins"
 msgstr ""
 
 #: plugin.py:43
@@ -62,11 +62,11 @@ msgid "48 hours"
 msgstr ""
 
 #: plugin.py:43
-msgid "5 min"
+msgid "5 mins"
 msgstr ""
 
 #: plugin.py:420
-msgid "Apply the new System time?"
+msgid "Apply new system time?"
 msgstr ""
 
 #: plugin.py:103
@@ -75,15 +75,15 @@ msgstr ""
 
 #: plugin.py:442
 #, python-format
-msgid "Change system time was canceled, because %s"
+msgid "System time changing was canceled, because %s"
 msgstr ""
 
 #: plugin.py:224 plugin.py:321
-msgid "Choice transponder"
+msgid "Select transponder"
 msgstr ""
 
 #: plugin.py:170
-msgid "Delay (sec) wnen use wifi network"
+msgid "Delay (in secs) when using wifi network"
 msgstr ""
 
 #: plugin.py:175
@@ -91,11 +91,11 @@ msgid "Domain name or IP (pool.ntp.org)"
 msgstr ""
 
 #: plugin.py:42
-msgid "Internet Time"
+msgid "Internet time"
 msgstr ""
 
 #: plugin.py:372
-msgid "Please Enter new System time and press OK !"
+msgid "Please enter new system time and press OK!"
 msgstr ""
 
 #: plugin.py:47 plugin.py:48 plugin.py:49
@@ -107,7 +107,7 @@ msgid "Restart GUI"
 msgstr ""
 
 #: plugin.py:301 plugin.py:314
-msgid "Restart the GUI now?"
+msgid "Restart GUI now?"
 msgstr ""
 
 #: plugin.py:104
@@ -115,7 +115,7 @@ msgid "Save"
 msgstr ""
 
 #: plugin.py:273
-msgid "Script 'set-rtctime' not found !"
+msgid "Script 'set-rtctime' not found!"
 msgstr ""
 
 #: plugin.py:173
@@ -218,5 +218,5 @@ msgstr ""
 msgid "Old time: %s\nOffset: %s sec.\nNew time: %s"
 msgstr ""
 
-msgid "Please wait 5 sec."
+msgid "Please wait for 5 sec."
 msgstr ""
