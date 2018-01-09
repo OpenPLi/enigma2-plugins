@@ -22,11 +22,11 @@ msgid " ver. "
 msgstr ""
 
 #: plugin.py:216
-msgid "'dvbdate' not installed!"
+msgid "'dvbdate' is not installed!"
 msgstr ""
 
 #: plugin.py:210 plugin.py:255
-msgid "'ntpdate' not installed!"
+msgid "'ntpdate' is not installed!"
 msgstr ""
 
 #: plugin.py:43
@@ -75,7 +75,7 @@ msgstr ""
 
 #: plugin.py:442
 #, python-format
-msgid "System time changing was canceled, because %s"
+msgid "System time isn't applied: %s"
 msgstr ""
 
 #: plugin.py:224 plugin.py:321
@@ -83,7 +83,7 @@ msgid "Select transponder"
 msgstr ""
 
 #: plugin.py:170
-msgid "Delay (in secs) when using wifi network"
+msgid "Delay (in secs) when using Wi-Fi"
 msgstr ""
 
 #: plugin.py:175
@@ -91,7 +91,7 @@ msgid "Domain name or IP (pool.ntp.org)"
 msgstr ""
 
 #: plugin.py:42
-msgid "Internet time"
+msgid "NTP"
 msgstr ""
 
 #: plugin.py:372
@@ -127,7 +127,7 @@ msgid "Setup System Time"
 msgstr ""
 
 #: plugin.py:169
-msgid "Sync NTP cold start"
+msgid "NTP cold start"
 msgstr ""
 
 #: plugin.py:168
@@ -135,11 +135,11 @@ msgid "Sync NTP every"
 msgstr ""
 
 #: plugin.py:172
-msgid "Sync now current transponder"
+msgid "Sync now from transponder"
 msgstr ""
 
 #: plugin.py:171
-msgid "Sync now internet"
+msgid "Sync now from NTP"
 msgstr ""
 
 #: plugin.py:167
@@ -155,15 +155,15 @@ msgid "System time your box"
 msgstr ""
 
 #: plugin.py:214
-msgid "Time sync with DVB..."
+msgid "Syncing from transponder..."
 msgstr ""
 
 #: plugin.py:205 plugin.py:208
-msgid "Time sync with NTP..."
+msgid "Syncing from NTP..."
 msgstr ""
 
 #: plugin.py:42
-msgid "Transponder Time"
+msgid "Transponder time"
 msgstr ""
 
 #: plugin.py:174
@@ -171,7 +171,7 @@ msgid "Use RTC time from deep standby"
 msgstr ""
 
 #: plugin.py:424
-msgid "answer is None"
+msgid "answer is none"
 msgstr ""
 
 #: plugin.py:413
@@ -212,11 +212,11 @@ msgid "no new time"
 msgstr ""
 
 #: plugin.py:426
-msgid "you were not confirming"
+msgid "didn't confirm"
 msgstr ""
 
 msgid "Old time: %s\nOffset: %s sec.\nNew time: %s"
 msgstr ""
 
-msgid "Please wait for 5 sec."
+msgid "Please wait..."
 msgstr ""
