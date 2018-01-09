@@ -22,11 +22,11 @@ msgid " ver. "
 msgstr ""
 
 #: plugin.py:216
-msgid "'dvbdate' not installed !"
+msgid "'dvbdate' is not installed!"
 msgstr ""
 
 #: plugin.py:210 plugin.py:255
-msgid "'ntpdate' not installed !"
+msgid "'ntpdate' is not installed!"
 msgstr ""
 
 #: plugin.py:43
@@ -38,7 +38,7 @@ msgid "12 hours"
 msgstr ""
 
 #: plugin.py:43
-msgid "15 min"
+msgid "15 mins"
 msgstr ""
 
 #: plugin.py:43
@@ -50,7 +50,7 @@ msgid "24 hours"
 msgstr ""
 
 #: plugin.py:43
-msgid "30 min"
+msgid "30 mins"
 msgstr ""
 
 #: plugin.py:43
@@ -62,11 +62,11 @@ msgid "48 hours"
 msgstr ""
 
 #: plugin.py:43
-msgid "5 min"
+msgid "5 mins"
 msgstr ""
 
 #: plugin.py:420
-msgid "Apply the new System time?"
+msgid "Apply new system time?"
 msgstr ""
 
 #: plugin.py:103
@@ -75,15 +75,15 @@ msgstr ""
 
 #: plugin.py:442
 #, python-format
-msgid "Change system time was canceled, because %s"
+msgid "System time isn't applied: %s"
 msgstr ""
 
 #: plugin.py:224 plugin.py:321
-msgid "Choice transponder"
+msgid "Select transponder"
 msgstr ""
 
 #: plugin.py:170
-msgid "Delay (sec) wnen use wifi network"
+msgid "Delay (in secs) when using Wi-Fi"
 msgstr ""
 
 #: plugin.py:175
@@ -91,11 +91,11 @@ msgid "Domain name or IP (pool.ntp.org)"
 msgstr ""
 
 #: plugin.py:42
-msgid "Internet Time"
+msgid "NTP"
 msgstr ""
 
 #: plugin.py:372
-msgid "Please Enter new System time and press OK !"
+msgid "Please enter new system time and press OK!"
 msgstr ""
 
 #: plugin.py:47 plugin.py:48 plugin.py:49
@@ -107,7 +107,7 @@ msgid "Restart GUI"
 msgstr ""
 
 #: plugin.py:301 plugin.py:314
-msgid "Restart the GUI now?"
+msgid "Restart GUI now?"
 msgstr ""
 
 #: plugin.py:104
@@ -115,7 +115,7 @@ msgid "Save"
 msgstr ""
 
 #: plugin.py:273
-msgid "Script 'set-rtctime' not found !"
+msgid "Script 'set-rtctime' not found!"
 msgstr ""
 
 #: plugin.py:173
@@ -127,7 +127,7 @@ msgid "Setup System Time"
 msgstr ""
 
 #: plugin.py:169
-msgid "Sync NTP cold start"
+msgid "NTP cold start"
 msgstr ""
 
 #: plugin.py:168
@@ -135,11 +135,11 @@ msgid "Sync NTP every"
 msgstr ""
 
 #: plugin.py:172
-msgid "Sync now current transponder"
+msgid "Sync now from transponder"
 msgstr ""
 
 #: plugin.py:171
-msgid "Sync now internet"
+msgid "Sync now from NTP"
 msgstr ""
 
 #: plugin.py:167
@@ -155,15 +155,15 @@ msgid "System time your box"
 msgstr ""
 
 #: plugin.py:214
-msgid "Time sync with DVB..."
+msgid "Syncing from transponder..."
 msgstr ""
 
 #: plugin.py:205 plugin.py:208
-msgid "Time sync with NTP..."
+msgid "Syncing from NTP..."
 msgstr ""
 
 #: plugin.py:42
-msgid "Transponder Time"
+msgid "Transponder time"
 msgstr ""
 
 #: plugin.py:174
@@ -171,7 +171,7 @@ msgid "Use RTC time from deep standby"
 msgstr ""
 
 #: plugin.py:424
-msgid "answer is None"
+msgid "answer is none"
 msgstr ""
 
 #: plugin.py:413
@@ -212,11 +212,11 @@ msgid "no new time"
 msgstr ""
 
 #: plugin.py:426
-msgid "you were not confirming"
+msgid "didn't confirm"
 msgstr ""
 
 msgid "Old time: %s\nOffset: %s sec.\nNew time: %s"
 msgstr ""
 
-msgid "Please wait 5 sec."
+msgid "Please wait..."
 msgstr ""

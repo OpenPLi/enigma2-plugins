@@ -20,7 +20,7 @@ import os
 import time
 import datetime
 
-PLUGIN_VERSION = _(" ver. ") + "1.6"
+PLUGIN_VERSION = _(" ver. ") + "1.7"
 
 config.plugins.SystemTime = ConfigSubsection()
 config.plugins.SystemTime.choiceSystemTime = ConfigSelection([("0", _("Transponder Time")),("1", _("Internet Time"))], default="0")
