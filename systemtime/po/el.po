@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: SystemTime\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-01-10 00:28+0200\n"
-"PO-Revision-Date: 2018-01-10 00:30+0200\n"
-"Last-Translator: \n"
+"PO-Revision-Date: 2018-01-10 02:30+0200\n"
 "Language-Team: nautilus7 spyros.n7@gmail.com\n"
-"Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 2.0.5\n"
 "X-Poedit-Basepath: ../src\n"
+"Last-Translator: \n"
+"Language: el\n"
 "X-Poedit-SearchPath-0: plugin.py\n"
 
 #: plugin.py:26
@@ -74,7 +74,7 @@ msgstr "Ρύθμιση ώρας συστήματος"
 
 #: plugin.py:75
 msgid "Cancel"
-msgstr "Άκυρο"
+msgstr "Ακύρωση"
 
 #: plugin.py:76
 msgid "Save"
@@ -227,7 +227,4 @@ msgstr "Ώρα συστήματος"
 
 #: plugin.py:453
 msgid "Change system time in enigma2 box"
-msgstr "Ρυθμίστε την ώρα στον engima2 δέκτη σας"
-
-#~ msgid " ver. "
-#~ msgstr " έκδοση "
+msgstr "Ρυθμίστε την ώρα στον enigma2 δέκτη σας"
