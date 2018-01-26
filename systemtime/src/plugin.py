@@ -20,8 +20,6 @@ import os
 import time
 import datetime
 
-#PLUGIN_VERSION = _(" ver. ") + "1.7"
-
 config.plugins.SystemTime = ConfigSubsection()
 config.plugins.SystemTime.choiceSystemTime = ConfigSelection([("0", _("Transponder")),("1", _("NTP"))], default="0")
 config.plugins.SystemTime.useNTPminutes = ConfigSelection(default = "60", choices = [("5", _("5 mins")),("15", _("15 mins")),("30", _("30 mins")), ("60", _("1 hour")), ("120", _("2 hours")),("240", _("4 hours")), ("720", _("12 hours")), ("1440", _("24 hours")), ("2880", _("48 hours"))])
@@ -42,7 +40,7 @@ if getDesktop(0).size().width() >= 1920:
 
 class SystemTimeSetupScreen(Screen, ConfigListScreen):
 	skin = """
-		<screen position="center,center" size="700,320" title="Setup System Time" >
+		<screen position="center,center" size="700,320" title="System time setup" >
 			<ePixmap position="0,42" zPosition="1" size="175,2" pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/SystemTime/images/red.png" alphatest="blend" />
 			<widget name="key_red" position="0,0" zPosition="2" size="175,38" font="Regular; 17" halign="center" valign="center" backgroundColor="background" foregroundColor="white" transparent="1" />
 			<ePixmap position="175,42" zPosition="1" size="175,2" pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/SystemTime/images/green.png" alphatest="blend" />
@@ -67,7 +65,7 @@ class SystemTimeSetupScreen(Screen, ConfigListScreen):
 
 	def __init__(self, session):
 		self.skin = SystemTimeSetupScreen.skin
-		self.setup_title = _("Setup System Time")# + PLUGIN_VERSION
+		self.setup_title = _("System time setup")
 		self.onChangedEntry = []
 		Screen.__init__(self, session)
 		self.syncTimer = eTimer()
@@ -140,7 +138,7 @@ class SystemTimeSetupScreen(Screen, ConfigListScreen):
 		self.cfg_choiceSystemTime = getConfigListEntry(_("Sync time using"), self.ST.choiceSystemTime)
 		self.cfg_useNTPminutes = getConfigListEntry(_("Sync NTP every"), self.ST.useNTPminutes)
 		self.cfg_syncNTPcoldstart = getConfigListEntry(_("NTP cold start"), self.ST.syncNTPcoldstart)
-		self.cfg_wifi_delay = getConfigListEntry(_("Delay (seconds) when using Wi-Fi"), self.ST.wifi_delay)
+		self.cfg_wifi_delay = getConfigListEntry(_("Delay (in seconds) when using Wi-Fi"), self.ST.wifi_delay)
 		self.cfg_syncNTPtime = getConfigListEntry(_("Sync now with NTP server"), self.ST.syncNTPtime)
 		self.cfg_syncDVBtime = getConfigListEntry(_("Sync now with current transponder"), self.ST.syncDVBtime)
 		self.cfg_syncManually = getConfigListEntry(_("Set system time manually"), self.ST.syncManually)
@@ -175,10 +173,10 @@ class SystemTimeSetupScreen(Screen, ConfigListScreen):
 		if sel == self.ST.syncNTPtime:
 			if os.path.exists("/usr/sbin/ntpdate"):
 				cmd = '/usr/sbin/ntpdate -v -u %s && echo "\n"' % self.ST.ip.value
-				self.session.open(MyConsole, _("Syncing with NTP server..."), [cmd])
+				self.session.open(SystemTimeConsole, _("Syncing with NTP server..."), [cmd])
 			elif os.path.exists("/usr/sbin/ntpd"):
 				cmd = '/usr/sbin/ntpd -dnqp %s' % self.ST.ip.value
-				self.session.open(MyConsole, _("Syncing with NTP server..."), [cmd])
+				self.session.open(SystemTimeConsole, _("Syncing with NTP server..."), [cmd])
 			else:
 				self.session.open(MessageBox,"'ntpd' / " + _("'ntpdate' is not installed!"), MessageBox.TYPE_ERROR, timeout=3)
 		elif sel == self.ST.syncDVBtime:
@@ -192,7 +190,7 @@ class SystemTimeSetupScreen(Screen, ConfigListScreen):
 			except:
 				if os.path.exists("/usr/bin/dvbdate"):
 					cmd = '/usr/bin/dvbdate -p -s -f && echo "\n"'
-					self.session.open(MyConsole, _("Syncing with current transponder..."), [cmd])
+					self.session.open(SystemTimeConsole, _("Syncing with current transponder..."), [cmd])
 				else:
 					self.session.open(MessageBox,_("'dvbdate' is not installed!"), MessageBox.TYPE_ERROR, timeout=3)
 		elif sel == self.ST.syncManually:
@@ -205,7 +203,7 @@ class SystemTimeSetupScreen(Screen, ConfigListScreen):
 		offset = (time.time() - 5.1) - self.old_time
 		newtime = time.strftime("%Y:%m:%d %H:%M",time.localtime())
 		if self.messagebox:
-			self.messagebox["text"].setText(_("Old time: %(oldtime)s\nOffset: %(offset)s sec.\nNew time: %(newtime)s") % ({'oldtime' : self.oldtime, 'offset' : offset, 'newtime' : newtime}))
+			self.messagebox["text"].setText(_("Old time: %(oldtime)s\nNew time: %(newtime)s\n\nOffset: %(offset)s seconds") % ({'oldtime' : self.oldtime, 'newtime' : newtime, 'offset' : offset}))
 
 	def configPosition(self):
 		self["key_blue"].setText("")
@@ -318,7 +316,7 @@ class SystemTimeSetupScreen(Screen, ConfigListScreen):
 		ConfigListScreen.keyRight(self)
 		self.newConfig()
 
-class MyConsole(Console):
+class SystemTimeConsole(Console):
 	if fullHD:
 		skin = """<screen position="center,center" size="750,360" title="Command execution..." >
 			<widget name="text" position="10,10" size="732,445" font="Regular;30" />
@@ -328,12 +326,12 @@ class MyConsole(Console):
 			<widget name="text" position="10,10" size="485,230" font="Regular;20" />
 		</screen>"""
 
-	def __init__(self, session, title = "My Console...", cmdlist = None):
+	def __init__(self, session, title = "System Time Console...", cmdlist = None):
 		Console.__init__(self, session, title, cmdlist)
 
 	def cancel(self):
 		nowTime = time.time()
-		if nowTime > 1388534400:
+		if nowTime > 1514808000:
 			setRTCtime(nowTime)
 			if config.plugins.SystemTime.choiceSystemTime.value == "0":
 				eDVBLocalTimeHandler.getInstance().setUseDVBTime(True)
@@ -360,13 +358,13 @@ class ChangeTimeWizzard(Screen):
 		except:
 			length=0
 		if newclock is None:
-			self.skipChangeTime(_("no new time"))
+			self.skipChangeTime(_("No change detected."))
 		elif (length == 16) is False:
-			self.skipChangeTime(_("time string too short"))
+			self.skipChangeTime(_("Time string too short."))
 		elif (newclock.count(" ") < 1) is True:
-			self.skipChangeTime(_("invalid format"))
+			self.skipChangeTime(_("Invalid time format."))
 		elif (newclock.count(":") < 3) is True:
-			self.skipChangeTime(_("invalid format"))
+			self.skipChangeTime(_("Invalid time format."))
 		else:
 			full=[]
 			full=newclock.split(" ",1)
@@ -389,28 +387,28 @@ class ChangeTimeWizzard(Screen):
 				else:
 					maxmonth=27
 			if (int(newyear) < 2007) or (int(newyear) > 2027) or (len(newyear) < 4) is True:
-				self.skipChangeTime(_("invalid year %s") %newyear)
+				self.skipChangeTime(_("Invalid input in year: %s") %newyear)
 			elif (int(newmonth) < 0) or (int(newmonth) > 12) or (len(newmonth) < 2) is True:
-				self.skipChangeTime(_("invalid month %s") %newmonth)
+				self.skipChangeTime(_("Invalid input in month: %s") %newmonth)
 			elif (int(newday) < 1) or (int(newday) > maxmonth) or (len(newday) < 2) is True:
-				self.skipChangeTime(_("invalid day %s") %newday)
+				self.skipChangeTime(_("Invalid input in day: %s") %newday)
 			elif (int(newhour) < 0) or (int(newhour) > 23) or (len(newhour) < 2) is True:
-				self.skipChangeTime(_("invalid hour %s") %newhour)
+				self.skipChangeTime(_("Invalid input in hour: %s") %newhour)
 			elif (int(newmin) < 0) or (int(newmin) > 59) or (len(newmin) < 2) is True:
-				self.skipChangeTime(_("invalid minute %s") %newmin)
+				self.skipChangeTime(_("Invalid input in minute: %s") %newmin)
 			else:
 				self.newtime = "%s%s%s%s%s" %(newmonth,newday,newhour,newmin,newyear)
 				self.session.openWithCallback(self.DoChangeTimeRestart,MessageBox,_("Apply new system time?"), MessageBox.TYPE_YESNO)
 
 	def DoChangeTimeRestart(self, answer):
 		if answer is None:
-			self.skipChangeTime(_("answer is none"))
+			self.skipChangeTime(_("No answer given."))
 		if answer is False:
-			self.skipChangeTime(_("did not confirm"))
+			self.skipChangeTime(_("No confirmation given."))
 		else:
 			os.system("date %s" % (self.newtime))
 			nowTime = time.time()
-			if nowTime > 1388534400:
+			if nowTime > 1514808000:
 				setRTCtime(nowTime)
 				if config.plugins.SystemTime.choiceSystemTime.value == "0":
 					eDVBLocalTimeHandler.getInstance().setUseDVBTime(True)
@@ -422,7 +420,7 @@ class ChangeTimeWizzard(Screen):
 					pass
 
 	def skipChangeTime(self, reason):
-		self.session.open(MessageBox,(_("System time was not apllied: %s") % reason), MessageBox.TYPE_WARNING)
+		self.session.open(MessageBox,(_("System time was not apllied.\n%s") % reason), MessageBox.TYPE_WARNING)
 
 def removeNetworkStart():
 	if os.path.exists("/usr/bin/ntpdate-sync"):
@@ -437,7 +435,7 @@ def startup(reason=0, **kwargs):
 			removeNetworkStart()
 	elif reason == 1:
 		nowTime = time.time()
-		if nowTime > 1388534400:
+		if nowTime > 1514808000:
 			setRTCtime(nowTime)
 
 def main(menuid, **kwargs):

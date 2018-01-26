@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SystemTime\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-10 00:28+0200\n"
+"POT-Creation-Date: 2018-01-15 18:20+0200\n"
 "PO-Revision-Date: 2018-01-09 17:43+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,208 +21,211 @@ msgstr ""
 "X-Poedit-Basepath: ../src\n"
 "X-Poedit-SearchPath-0: plugin.py\n"
 
-#: plugin.py:26
+#: plugin.py:24
 msgid "Transponder"
 msgstr ""
 
-#: plugin.py:26
+#: plugin.py:24
 msgid "NTP"
 msgstr ""
 
-#: plugin.py:27
+#: plugin.py:25
 msgid "5 mins"
 msgstr ""
 
-#: plugin.py:27
+#: plugin.py:25
 msgid "15 mins"
 msgstr ""
 
-#: plugin.py:27
+#: plugin.py:25
 msgid "30 mins"
 msgstr ""
 
-#: plugin.py:27
+#: plugin.py:25
 msgid "1 hour"
 msgstr ""
 
-#: plugin.py:27
+#: plugin.py:25
 msgid "2 hours"
 msgstr ""
 
-#: plugin.py:27
+#: plugin.py:25
 msgid "4 hours"
 msgstr ""
 
-#: plugin.py:27
+#: plugin.py:25
 msgid "12 hours"
 msgstr ""
 
-#: plugin.py:27
+#: plugin.py:25
 msgid "24 hours"
 msgstr ""
 
-#: plugin.py:27
+#: plugin.py:25
 msgid "48 hours"
 msgstr ""
 
-#: plugin.py:31 plugin.py:32 plugin.py:33
+#: plugin.py:29 plugin.py:30 plugin.py:31
 msgid "Press OK"
 msgstr ""
 
-#: plugin.py:70
-msgid "Setup System Time"
+#: plugin.py:68
+msgid "System time setup"
 msgstr ""
 
-#: plugin.py:75
+#: plugin.py:73
 msgid "Cancel"
 msgstr ""
 
-#: plugin.py:76
+#: plugin.py:74
 msgid "Save"
 msgstr ""
 
-#: plugin.py:77
+#: plugin.py:75
 msgid "Restart GUI"
 msgstr ""
 
-#: plugin.py:140
+#: plugin.py:138
 msgid "Sync time using"
 msgstr ""
 
-#: plugin.py:141
+#: plugin.py:139
 msgid "Sync NTP every"
 msgstr ""
 
-#: plugin.py:142
+#: plugin.py:140
 msgid "NTP cold start"
 msgstr ""
 
-#: plugin.py:143
-msgid "Delay (seconds) when using Wi-Fi"
+#: plugin.py:141
+msgid "Delay (in seconds) when using Wi-Fi"
 msgstr ""
 
-#: plugin.py:144
+#: plugin.py:142
 msgid "Sync now with NTP server"
 msgstr ""
 
-#: plugin.py:145
+#: plugin.py:143
 msgid "Sync now with current transponder"
 msgstr ""
 
-#: plugin.py:146
+#: plugin.py:144
 msgid "Set system time manually"
 msgstr ""
 
-#: plugin.py:147
+#: plugin.py:145
 msgid "Use RTC time from deep standby"
 msgstr ""
 
-#: plugin.py:148
+#: plugin.py:146
 msgid "NTP server (e.g. pool.ntp.org)"
 msgstr ""
 
-#: plugin.py:178 plugin.py:181
+#: plugin.py:176 plugin.py:179
 msgid "Syncing with NTP server..."
 msgstr ""
 
-#: plugin.py:183 plugin.py:245
+#: plugin.py:181 plugin.py:243
 msgid "'ntpdate' is not installed!"
 msgstr ""
 
-#: plugin.py:190
+#: plugin.py:188
 msgid "Syncing... Please wait."
 msgstr ""
 
-#: plugin.py:195
+#: plugin.py:193
 msgid "Syncing with current transponder..."
 msgstr ""
 
-#: plugin.py:197
+#: plugin.py:195
 msgid "'dvbdate' is not installed!"
 msgstr ""
 
-#: plugin.py:208
+#: plugin.py:206
 #, python-format
 msgid ""
 "Old time: %(oldtime)s\n"
-"Offset: %(offset)s sec.\n"
-"New time: %(newtime)s"
+"New time: %(newtime)s\n"
+"\n"
+"Offset: %(offset)s seconds"
 msgstr ""
 
-#: plugin.py:214 plugin.py:305
+#: plugin.py:212 plugin.py:303
 msgid "Select transponder"
 msgstr ""
 
-#: plugin.py:263
+#: plugin.py:261
 msgid "Script 'set-rtctime' not found!"
 msgstr ""
 
-#: plugin.py:298
+#: plugin.py:296
 msgid "Restart GUI now?"
 msgstr ""
 
-#: plugin.py:355
+#: plugin.py:353
 msgid "Enter new system time and press OK!"
 msgstr ""
 
+#: plugin.py:361
+msgid "No change detected."
+msgstr ""
+
 #: plugin.py:363
-msgid "no new time"
+msgid "Time string too short."
 msgstr ""
 
-#: plugin.py:365
-msgid "time string too short"
+#: plugin.py:365 plugin.py:367
+msgid "Invalid time format."
 msgstr ""
 
-#: plugin.py:367 plugin.py:369
-msgid "invalid format"
+#: plugin.py:390
+#, python-format
+msgid "Invalid input in year: %s"
 msgstr ""
 
 #: plugin.py:392
 #, python-format
-msgid "invalid year %s"
+msgid "Invalid input in month: %s"
 msgstr ""
 
 #: plugin.py:394
 #, python-format
-msgid "invalid month %s"
+msgid "Invalid input in day: %s"
 msgstr ""
 
 #: plugin.py:396
 #, python-format
-msgid "invalid day %s"
+msgid "Invalid input in hour: %s"
 msgstr ""
 
 #: plugin.py:398
 #, python-format
-msgid "invalid hour %s"
+msgid "Invalid input in minute: %s"
 msgstr ""
 
-#: plugin.py:400
-#, python-format
-msgid "invalid minute %s"
-msgstr ""
-
-#: plugin.py:403
+#: plugin.py:401
 msgid "Apply new system time?"
 msgstr ""
 
+#: plugin.py:405
+msgid "No answer given."
+msgstr ""
+
 #: plugin.py:407
-msgid "answer is none"
+msgid "No confirmation given."
 msgstr ""
 
-#: plugin.py:409
-msgid "did not confirm"
-msgstr ""
-
-#: plugin.py:425
+#: plugin.py:423
 #, python-format
-msgid "System time was not apllied: %s"
+msgid ""
+"System time was not apllied.\n"
+"%s"
 msgstr ""
 
-#: plugin.py:445
+#: plugin.py:443
 msgid "System Time"
 msgstr ""
 
-#: plugin.py:453
+#: plugin.py:451
 msgid "Change system time in enigma2 box"
 msgstr ""
