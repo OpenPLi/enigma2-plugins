@@ -31,14 +31,14 @@ class DynDNSScreenMain(ConfigListScreen,Screen):
 		self.session = session
 		Screen.__init__(self, session)
 		self.list = []
-		self.list.append(getConfigListEntry(_("activate DynDNS"), config.plugins.DynDNS.enable))
-		self.list.append(getConfigListEntry(_("Interval to check IP-Adress"), config.plugins.DynDNS.interval))
+		self.list.append(getConfigListEntry(_("Activate DynDNS"), config.plugins.DynDNS.enable))
+		self.list.append(getConfigListEntry(_("Interval for checking IP address"), config.plugins.DynDNS.interval))
 		self.list.append(getConfigListEntry(_("Hostname"), config.plugins.DynDNS.hostname))
 		self.list.append(getConfigListEntry(_("Username"), config.plugins.DynDNS.user))
 		self.list.append(getConfigListEntry(_("Password"), config.plugins.DynDNS.password))
 		ConfigListScreen.__init__(self, self.list)
-		self["buttonred"] = Label(_("cancel"))
-		self["buttongreen"] = Label(_("ok"))
+		self["buttonred"] = Label(_("Cancel"))
+		self["buttongreen"] = Label(_("OK"))
 		self["setupActions"] = ActionMap(["SetupActions"],
 		{
 			"green": self.save,
@@ -99,13 +99,13 @@ class DynDNSService:
 			str = "coundnotgetip"
 
 	def onIPchanged(self):
-		print "[DynDNS] IP change, setting new one",self.lastip
+		print "[DynDNS] IP changed, setting new one",self.lastip
 		try:
 			url = "http://members.dyndns.org/nic/update?system=dyndns&hostname=%s&myip=%s&wildcard=ON&offline=NO"%(config.plugins.DynDNS.hostname.value,self.lastip)
 			if self.getURL(url).find("good") is not -1:
-				print "[DynDNS] ip changed"
+				print "[DynDNS] IP changed"
 		except Exception,e:
-			print "[DynDNS] ip was not changed",e
+			print "[DynDNS] IP was not changed",e
 
 	def getURL(self,url):
 		request =  Request(url)
