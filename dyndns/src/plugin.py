@@ -23,8 +23,8 @@ class DynDNSScreenMain(ConfigListScreen,Screen):
 	skin = """
 		<screen position="100,100" size="550,400" title="DynDNS Setup">
 			<widget name="config" position="0,0" size="550,300" scrollbarMode="showOnDemand"/>
-			<widget name="buttonred" position="10,360" size="100,40" backgroundColor="red" valign="center" halign="center" zPosition="2" foregroundColor="white" font="Regular;18"/>
-			<widget name="buttongreen" position="120,360" size="100,40" backgroundColor="green" valign="center" halign="center" zPosition="2" foregroundColor="white" font="Regular;18"/>
+			<widget name="key_red" position="10,360" size="100,40" backgroundColor="red" valign="center" halign="center" zPosition="2" foregroundColor="white" font="Regular;18"/>
+			<widget name="key_green" position="120,360" size="100,40" backgroundColor="green" valign="center" halign="center" zPosition="2" foregroundColor="white" font="Regular;18"/>
 		</screen>"""
 
 	def __init__(self, session, args = 0):
@@ -37,8 +37,8 @@ class DynDNSScreenMain(ConfigListScreen,Screen):
 		self.list.append(getConfigListEntry(_("Username"), config.plugins.DynDNS.user))
 		self.list.append(getConfigListEntry(_("Password"), config.plugins.DynDNS.password))
 		ConfigListScreen.__init__(self, self.list)
-		self["buttonred"] = Label(_("Cancel"))
-		self["buttongreen"] = Label(_("OK"))
+		self["key_red"] = Label(_("Cancel"))
+		self["key_green"] = Label(_("Save"))
 		self["setupActions"] = ActionMap(["SetupActions"],
 		{
 			"green": self.save,
