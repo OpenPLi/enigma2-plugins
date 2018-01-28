@@ -14,14 +14,14 @@ sessions = []
 
 config.plugins.DynDNS = ConfigSubsection()
 config.plugins.DynDNS.enable = ConfigYesNo(default = False)
-config.plugins.DynDNS.interval = ConfigSelection(default = "10", choices = [("5", _("5 min.")),("10", _("10 min.")),("15", _("15 min.")),("30", _("30 min.")),("60", _("60 min."))])
+config.plugins.DynDNS.interval = ConfigSelection(default = "15", choices = [("5", _("5 mins")),("15", _("15 mins")),("30", _("30 mins")), ("60", _("1 hour")),("240", _("4 hours")), ("720", _("12 hours")), ("1440", _("24 hours"))])
 config.plugins.DynDNS.hostname = ConfigText(default = "", fixed_size = False)
 config.plugins.DynDNS.user = ConfigText(default = "", fixed_size = False)
 config.plugins.DynDNS.password = ConfigText(default = "", fixed_size = False)
 
 class DynDNSScreenMain(ConfigListScreen,Screen):
 	skin = """
-		<screen position="100,100" size="550,400" title="DynDNS Setup">
+		<screen position="100,100" size="550,400" title="DynDNS setup">
 			<widget name="config" position="0,0" size="550,300" scrollbarMode="showOnDemand"/>
 			<widget name="key_red" position="10,360" size="100,40" backgroundColor="red" valign="center" halign="center" zPosition="2" foregroundColor="white" font="Regular;18"/>
 			<widget name="key_green" position="120,360" size="100,40" backgroundColor="green" valign="center" halign="center" zPosition="2" foregroundColor="white" font="Regular;18"/>
@@ -30,9 +30,11 @@ class DynDNSScreenMain(ConfigListScreen,Screen):
 	def __init__(self, session, args = 0):
 		self.session = session
 		Screen.__init__(self, session)
+		self.setup_title = _("DynDNS setup")
+		self.setTitle(self.setup_title)
 		self.list = []
 		self.list.append(getConfigListEntry(_("Activate DynDNS"), config.plugins.DynDNS.enable))
-		self.list.append(getConfigListEntry(_("Interval for checking IP address"), config.plugins.DynDNS.interval))
+		self.list.append(getConfigListEntry(_("IP address check interval"), config.plugins.DynDNS.interval))
 		self.list.append(getConfigListEntry(_("Hostname"), config.plugins.DynDNS.hostname))
 		self.list.append(getConfigListEntry(_("Username"), config.plugins.DynDNS.user))
 		self.list.append(getConfigListEntry(_("Password"), config.plugins.DynDNS.password))
@@ -141,4 +143,4 @@ def onSessionStart(reason, **kwargs):
 
 def Plugins(path, **kwargs):
 	return [PluginDescriptor(where = [PluginDescriptor.WHERE_SESSIONSTART, PluginDescriptor.WHERE_AUTOSTART], fnc = onSessionStart),
-			PluginDescriptor(name=_("DynDNS"), description=_("use www.DynDNS.org on your Box"), where = [PluginDescriptor.WHERE_PLUGINMENU], fnc = onPluginStart, icon="icon.png")]
+			PluginDescriptor(name=_("DynDNS"), description=_("Use www.dyndns.org on your box"), where = [PluginDescriptor.WHERE_PLUGINMENU], fnc = onPluginStart, icon="icon.png")]
