@@ -420,7 +420,7 @@ class ChangeTimeWizzard(Screen):
 					pass
 
 	def skipChangeTime(self, reason):
-		self.session.open(MessageBox,(_("System time was not apllied.\n%s") % reason), MessageBox.TYPE_WARNING)
+		self.session.open(MessageBox,(_("System time was not applied.\n%s") % reason), MessageBox.TYPE_WARNING)
 
 def removeNetworkStart():
 	if os.path.exists("/usr/bin/ntpdate-sync"):
