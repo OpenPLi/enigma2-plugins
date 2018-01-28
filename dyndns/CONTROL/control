@@ -1,5 +1,5 @@
 Package: enigma2-plugin-extensions-dyndnsclient
-Version: 1.0-20070123-r0
-Description: a client for www.dyndns.org
+Version: 1.1-20180128-r0
+Description: A client for www.dyndns.org
 Maintainer: OpenPLi team <forum@openpli.org>
 Depends: enigma2 (>> 1.0git20061201)
