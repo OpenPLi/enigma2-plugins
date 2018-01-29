@@ -40,25 +40,27 @@ if getDesktop(0).size().width() >= 1920:
 
 class SystemTimeSetupScreen(Screen, ConfigListScreen):
 	skin = """
-		<screen position="center,center" size="700,320" title="System time setup" >
-			<ePixmap position="0,42" zPosition="1" size="175,2" pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/SystemTime/images/red.png" alphatest="blend" />
-			<widget name="key_red" position="0,0" zPosition="2" size="175,38" font="Regular; 17" halign="center" valign="center" backgroundColor="background" foregroundColor="white" transparent="1" />
-			<ePixmap position="175,42" zPosition="1" size="175,2" pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/SystemTime/images/green.png" alphatest="blend" />
-			<widget name="key_green" position="175,0" zPosition="2" size="175,38" font="Regular; 17" halign="center" valign="center" backgroundColor="background" foregroundColor="white" transparent="1" />
-			<ePixmap position="350,42" zPosition="1" size="175,2" pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/SystemTime/images/yellow.png" alphatest="blend" />
-			<widget name="key_yellow" position="350,0" zPosition="2" size="175,38" font="Regular; 17" halign="center" valign="center" backgroundColor="background" foregroundColor="white" transparent="1" />
-			<ePixmap position="525,42" zPosition="1" size="175,2" pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/SystemTime/images/blue.png" alphatest="blend" />
-			<widget name="key_blue" position="525,0" zPosition="2" size="175,38" font="Regular; 17" halign="center" valign="center" backgroundColor="background" foregroundColor="white" transparent="1" />
-			<widget name="config" position="0,50" size="700,225" scrollbarMode="showOnDemand"/>
-			<ePixmap pixmap="skin_default/div-h.png" position="0,280" zPosition="1" size="700,2" />
-			<widget source="global.CurrentTime" render="Label" position="150,288" size="430, 21" font="Regular; 20" halign="left" foregroundColor="white" backgroundColor="background" transparent="1">
+		<screen position="center,center" size="700,400" title="System time setup">
+			<widget name="key_red" position="0,0" size="175,33" font="Regular;17" halign="center" valign="center" transparent="1" />
+			<widget name="key_green" position="175,0" size="175,33" font="Regular;17" halign="center" valign="center" transparent="1" />
+			<widget name="key_yellow" position="350,0" size="175,33" font="Regular;17" halign="center" valign="center" transparent="1" />
+			<widget name="key_blue" position="525,0" size="175,33" font="Regular;17" halign="center" valign="center" transparent="1" />
+			<ePixmap position="0,33" size="175,2" pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/SystemTime/images/red.png" alphatest="blend" />
+			<ePixmap position="175,33" size="175,2" pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/SystemTime/images/green.png" alphatest="blend" />
+			<ePixmap position="350,33" size="175,2" pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/SystemTime/images/yellow.png" alphatest="blend" />
+			<ePixmap position="525,33" size="175,2" pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/SystemTime/images/blue.png" alphatest="blend" />
+			<widget name="config" scrollbarMode="showOnDemand" position="0,45" size="700,225" />
+			<widget name="description" position="5,290" size="690,75" font="Regular;17" />
+			<ePixmap pixmap="skin_default/div-h.png" position="0,280" size="700,2" />
+			<ePixmap pixmap="skin_default/div-h.png" position="0,362" size="700,2" />
+			<widget source="global.CurrentTime" render="Label" position="150,370" size="430,25" font="Regular;20" halign="left" transparent="1">
 				<convert type="ClockToText">Date</convert>
 			</widget>
-			<ePixmap alphatest="on" pixmap="skin_default/icons/clock.png" position="590,285" size="14,14" zPosition="1" />
-			<widget font="Regular;19" halign="left" position="610,288" render="Label" size="55,20" source="global.CurrentTime" transparent="1" valign="center" zPosition="1">
+			<ePixmap alphatest="on" pixmap="skin_default/icons/clock.png" position="590,375" size="14,14" />
+			<widget source="global.CurrentTime" render="Label" position="610,370" size="55,25" font="Regular;20" halign="left" transparent="1">
 				<convert type="ClockToText">Default</convert>
 			</widget>
-			<widget font="Regular;15" halign="left" position="662,285" render="Label" size="27,17" source="global.CurrentTime" transparent="1" valign="center" zPosition="1">
+			<widget source="global.CurrentTime" render="Label" position="662,373" size="27,20" font="Regular;15" halign="left" transparent="1">
 				<convert type="ClockToText">Format::%S</convert>
 			</widget>
 		</screen>"""
@@ -70,6 +72,7 @@ class SystemTimeSetupScreen(Screen, ConfigListScreen):
 		Screen.__init__(self, session)
 		self.syncTimer = eTimer()
 		self.syncTimer.callback.append(self.showMessage)
+		self["description"] = Label("")
 		self["key_red"] = Label(_("Cancel"))
 		self["key_green"] = Label(_("Save"))
 		self["key_yellow"] = Label(_("Restart GUI"))
@@ -116,6 +119,9 @@ class SystemTimeSetupScreen(Screen, ConfigListScreen):
 	def getCurrentValue(self):
 		return self["config"].getCurrent() and len(self["config"].getCurrent()) > 1 and str(self["config"].getCurrent()[1].getText()) or ""
 
+	def getCurrentDescription(self):
+		return self["config"].getCurrent() and len(self["config"].getCurrent()) > 2 and self["config"].getCurrent()[2] or ""
+
 	def createSummary(self):
 		from Screens.Setup import SetupSummary
 		return SetupSummary
@@ -135,15 +141,15 @@ class SystemTimeSetupScreen(Screen, ConfigListScreen):
 
 		self.ST = config.plugins.SystemTime
 		self.prev_values = getPrevValues(self.ST)
-		self.cfg_choiceSystemTime = getConfigListEntry(_("Sync time using"), self.ST.choiceSystemTime)
-		self.cfg_useNTPminutes = getConfigListEntry(_("Sync NTP every"), self.ST.useNTPminutes)
-		self.cfg_syncNTPcoldstart = getConfigListEntry(_("NTP cold start"), self.ST.syncNTPcoldstart)
-		self.cfg_wifi_delay = getConfigListEntry(_("Delay (in seconds) when using Wi-Fi"), self.ST.wifi_delay)
-		self.cfg_syncNTPtime = getConfigListEntry(_("Sync now with NTP server"), self.ST.syncNTPtime)
-		self.cfg_syncDVBtime = getConfigListEntry(_("Sync now with current transponder"), self.ST.syncDVBtime)
-		self.cfg_syncManually = getConfigListEntry(_("Set system time manually"), self.ST.syncManually)
-		self.cfg_useRTCstart = getConfigListEntry(_("Use RTC time from deep standby"), self.ST.useRTCstart)
-		self.cfg_ip = getConfigListEntry(_("NTP server (e.g. pool.ntp.org)"), self.ST.ip)
+		self.cfg_choiceSystemTime = getConfigListEntry(_("Sync time using"), self.ST.choiceSystemTime, _("Select the preferred method for syncing time on your receiver. Network Time Protocol requires internet connection. Transponder time might not be very accurate."))
+		self.cfg_useNTPminutes = getConfigListEntry(_("Sync NTP every"), self.ST.useNTPminutes, _("Set how often the receiver will connect to the NTP server to sync time."))
+		self.cfg_syncNTPcoldstart = getConfigListEntry(_("NTP cold start"), self.ST.syncNTPcoldstart, _("On receiver 'cold start', allow any required time adjustments to be 'stepped'."))
+		self.cfg_wifi_delay = getConfigListEntry(_("Delay (in seconds) when using Wi-Fi"), self.ST.wifi_delay, _("After receiver's boot, wait for the specified delay before connecting to the NTP server. This allows the Wi-Fi connection to be fully established."))
+		self.cfg_syncNTPtime = getConfigListEntry(_("Sync now with NTP server"), self.ST.syncNTPtime, _("Get current time from the specified NTP server."))
+		self.cfg_syncDVBtime = getConfigListEntry(_("Sync now with current transponder"), self.ST.syncDVBtime, _("Get current time from the specified DVB transponder."))
+		self.cfg_syncManually = getConfigListEntry(_("Set system time manually"), self.ST.syncManually, _("Enter a user defined date and time."))
+		self.cfg_useRTCstart = getConfigListEntry(_("Use RTC time from deep standby"), self.ST.useRTCstart, _("When the receiver starts from deep standby, use the time provided by the Real Time Clock, if it appears to be valid."))
+		self.cfg_ip = getConfigListEntry(_("NTP server"), self.ST.ip, _("Set the IP address of the preferred NTP server. Default is pool.ntp.org."))
 
 	def createSetup(self):
 		list = [ self.cfg_choiceSystemTime ]
@@ -206,6 +212,7 @@ class SystemTimeSetupScreen(Screen, ConfigListScreen):
 			self.messagebox["text"].setText(_("Old time: %(oldtime)s\nNew time: %(newtime)s\n\nOffset: %(offset)s seconds") % ({'oldtime' : self.oldtime, 'newtime' : newtime, 'offset' : offset}))
 
 	def configPosition(self):
+		self["description"].setText(self.getCurrentDescription())
 		self["key_blue"].setText("")
 		idx = self["config"].getCurrent() and self["config"].getCurrent()[1]
 		if idx == self.ST.syncDVBtime:
