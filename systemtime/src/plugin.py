@@ -21,14 +21,14 @@ import time
 import datetime
 
 config.plugins.SystemTime = ConfigSubsection()
-config.plugins.SystemTime.choiceSystemTime = ConfigSelection([("0", _("Transponder")),("1", _("NTP"))], default="0")
+config.plugins.SystemTime.choiceSystemTime = ConfigSelection(default = "0", choices = [("0", _("Transponder")),("1", _("NTP"))])
 config.plugins.SystemTime.useNTPminutes = ConfigSelection(default = "60", choices = [("5", _("5 mins")),("15", _("15 mins")),("30", _("30 mins")), ("60", _("1 hour")), ("120", _("2 hours")),("240", _("4 hours")), ("720", _("12 hours")), ("1440", _("24 hours")), ("2880", _("48 hours"))])
 config.plugins.SystemTime.syncNTPcoldstart = ConfigYesNo(default = False)
 config.plugins.SystemTime.useRTCstart = ConfigYesNo(default = False)
-config.plugins.SystemTime.wifi_delay = ConfigInteger(0, limits=(0,120))
-config.plugins.SystemTime.syncNTPtime = ConfigSelection(choices = [("1", _("Press OK"))], default = "1")
-config.plugins.SystemTime.syncDVBtime = ConfigSelection(choices = [("1", _("Press OK"))], default = "1")
-config.plugins.SystemTime.syncManually = ConfigSelection(choices = [("1", _("Press OK"))], default = "1")
+config.plugins.SystemTime.wifi_delay = ConfigInteger(0, limits = (0, 120))
+config.plugins.SystemTime.syncNTPtime = ConfigSelection(default = "1", choices = [("1", _("Press OK"))])
+config.plugins.SystemTime.syncDVBtime = ConfigSelection(default = "1", choices = [("1", _("Press OK"))])
+config.plugins.SystemTime.syncManually = ConfigSelection(default = "1", choices = [("1", _("Press OK"))])
 config.plugins.SystemTime.ip = ConfigText(default="pool.ntp.org", fixed_size = False)
 
 from NTPSyncPoller import NTPSyncPoller
@@ -66,17 +66,17 @@ class SystemTimeSetupScreen(Screen, ConfigListScreen):
 		</screen>"""
 
 	def __init__(self, session):
-		self.skin = SystemTimeSetupScreen.skin
-		self.setup_title = _("System time setup")
-		self.onChangedEntry = []
 		Screen.__init__(self, session)
+		self.setup_title = _("System time setup")
+		self.skin = SystemTimeSetupScreen.skin
+		self.onChangedEntry = []
 		self.syncTimer = eTimer()
 		self.syncTimer.callback.append(self.showMessage)
 		self["description"] = Label("")
 		self["key_red"] = Label(_("Cancel"))
 		self["key_green"] = Label(_("Save"))
 		self["key_yellow"] = Label(_("Restart GUI"))
-		self["key_blue"] = Label(" ")
+		self["key_blue"] = Label("")
 
 		self["actions"] = ActionMap(["SetupActions", "ColorActions"],
 		{
