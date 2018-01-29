@@ -86,6 +86,8 @@ class SystemTimeSetupScreen(Screen, ConfigListScreen):
 			"red": self.keyRed,
 			"yellow":self.keyYellow,
 			"blue": self.keyBlue,
+			"left": self.keyLeft,
+			"right": self.keyRight,
 		}, -2)
 
 		ConfigListScreen.__init__(self, [])
