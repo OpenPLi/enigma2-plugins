@@ -9,17 +9,25 @@ from Components.ActionMap import ActionMap
 from Screens.MessageBox import MessageBox
 from enigma import eTimer
 from Components.config import config, ConfigSubsection, getConfigListEntry, ConfigInteger, ConfigSelection, configfile 
+from Tools.Directories import fileExists, pathExists
 
 import os
 
 config.plugins.transcodingsetup = ConfigSubsection()
 config.plugins.transcodingsetup.port = ConfigInteger(default = None, limits = (1024, 65535))
-config.plugins.transcodingsetup.bitrate = ConfigInteger(default = None, limits = (50000, 4000000))
-config.plugins.transcodingsetup.resolution = ConfigSelection(default = "480p", choices = [ ("720x480", "480p"), ("720x576", "576p"), ("1280x720", "720p") ])
-
-config.plugins.transcodingsetup.framerate = ConfigInteger(default = None)
-config.plugins.transcodingsetup.aspectratio = ConfigInteger(default = None)
-config.plugins.transcodingsetup.interlaced = ConfigInteger(default = None)
+if fileExists("/proc/stb/encoder/0/vcodec"):
+	config.plugins.transcodingsetup.bitrate = ConfigSelection([("100000", _("100 kbps")), ("300000", _("300 kbps")), ("500000", _("500 kbps")), ("800000", _("800 kbps")), ("1000000", _("1.0 Mbps")),  ("1200000", _("1.2 Mbps")), ("1500000", _("1.5 Mbps")), ("2000000", _("2.0 Mbps")), ("2500000", _("2.5 Mbps")), ("3000000", _("3.0 Mbps")), ("3500000", _("3.5 Mbps")), ("4000000", _("4.0 Mbps")), ("5000000", _("5.0 Mbps"))], default="1500000")
+	config.plugins.transcodingsetup.resolution = ConfigSelection([("720x480", _("480p")), ("720x576", _("576p")), ("1280x720", _("720p"))], default="720x576")
+	config.plugins.transcodingsetup.vcodec = ConfigSelection([("h264", _("H.264")), ("h265", _("H.265"))], default="h265")
+	config.plugins.transcodingsetup.framerate = ConfigSelection([("23976", _("23.976 fps")), ("24000", _("24 fps")), ("25000", _("25 fps")), ("30000", _("30 fps"))], default="25000")
+	config.plugins.transcodingsetup.aspectratio = ConfigInteger(default = 2)
+	config.plugins.transcodingsetup.interlaced = ConfigInteger(default = 0)
+else:
+	config.plugins.transcodingsetup.bitrate = ConfigInteger(default = None, limits = (50000, 4000000))
+	config.plugins.transcodingsetup.resolution = ConfigSelection(default = "480p", choices = [ ("720x480", "480p"), ("720x576", "576p"), ("1280x720", "720p") ])
+	config.plugins.transcodingsetup.framerate = ConfigSelection(default = 30000)
+	config.plugins.transcodingsetup.aspectratio = ConfigInteger(default = 2)
+	config.plugins.transcodingsetup.interlaced = ConfigInteger(default = 0)
 
 TRANSCODING_CONFIG = "/etc/enigma2/streamproxy.conf"
 
@@ -39,7 +47,7 @@ class TranscodingSetup(ConfigListScreen, Screen):
 		"""
 
 	def __init__(self, session):
-		bitrate_choices = [( 50, "50 kbps" ), ( 100, "100 kbps" ), ( 200, "200 kbps" ), ( 500, "500 kbps" ), ( 1000, "1 Mbps" ), ( 1500, "1.5 Mbps" ), ( 2000, "2 Mbps" ), ( 2500, "2.5 Mbps" ), ( 3000, "3 Mbps" ), ( 3500, "3.5 Mbps" ), ( 4000, "4 Mbps" )]
+		bitrate_choices = [( 50000, "50 kbps" ), ( 100000, "100 kbps" ), ( 200000, "200 kbps" ), ( 500000, "500 kbps" ), ( 1000000, "1 Mbps" ), ( 1500000, "1.5 Mbps" ), ( 2000000, "2 Mbps" ), ( 2500000, "2.5 Mbps" ), ( 3000000, "3 Mbps" ), ( 3500000, "3.5 Mbps" ), ( 4000000, "4 Mbps" )]
 		size_choices = [ "480p", "576p", "720p" ]
 
 		current_bitrate_value = ""
@@ -69,19 +77,16 @@ class TranscodingSetup(ConfigListScreen, Screen):
 				self.statusTimer.start(500, True)
 				return
 
-		config_list.append(getConfigListEntry(_("Bitrate"), self.bitrate))
-		config_list.append(getConfigListEntry(_("Video size"), self.size))
+		if fileExists("/proc/stb/encoder/0/vcodec"):
+			config_list.append(getConfigListEntry(_("Bitrate"), config.plugins.transcodingsetup.bitrate))
+			config_list.append(getConfigListEntry(_("Video size"), config.plugins.transcodingsetup.resolution))
+			config_list.append(getConfigListEntry(_("Video codec"), config.plugins.transcodingsetup.vcodec))
+			config_list.append(getConfigListEntry(_("Frame rate"), config.plugins.transcodingsetup.framerate))
+		else:
+			config_list.append(getConfigListEntry(_("Bitrate"), self.bitrate))
+			config_list.append(getConfigListEntry(_("Video size"), self.size))
 
 		self["config"].list = config_list
-
-		if config.plugins.transcodingsetup.framerate.value is None:
-			config.plugins.transcodingsetup.framerate.value = 30000
-
-		if config.plugins.transcodingsetup.aspectratio.value is None:
-			config.plugins.transcodingsetup.aspectratio.value = 2
-
-		if config.plugins.transcodingsetup.interlaced.value is None:
-			config.plugins.transcodingsetup.interlaced.value = 0
 
 		if config.plugins.transcodingsetup.port.value is None:
 			config.plugins.transcodingsetup.port.value = port
@@ -176,13 +181,15 @@ class TranscodingSetup(ConfigListScreen, Screen):
 		resolution = "%dx%d" % (resx, resy)
 
 		config.plugins.transcodingsetup.port.save()
-		config.plugins.transcodingsetup.bitrate.value = self.bitrate.value * 1000
 		config.plugins.transcodingsetup.bitrate.save()
 		config.plugins.transcodingsetup.resolution.value = resolution
 		config.plugins.transcodingsetup.resolution.save()
 		config.plugins.transcodingsetup.framerate.save()
 		config.plugins.transcodingsetup.aspectratio.save()
 		config.plugins.transcodingsetup.interlaced.save()
+		if fileExists("/proc/stb/encoder/0/vcodec"):
+			config.plugins.transcodingsetup.vcodec.save()
+
 		configfile.save()
 
 		self.close()
