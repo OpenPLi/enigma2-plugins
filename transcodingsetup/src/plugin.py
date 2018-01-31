@@ -6,6 +6,7 @@ from Components.ConfigList import ConfigListScreen
 from Components.Sources.StaticText import StaticText
 from Components.Label import Label
 from Components.ActionMap import ActionMap
+from Components.SystemInfo import SystemInfo
 from Screens.MessageBox import MessageBox
 from enigma import eTimer
 from Components.config import config, ConfigSubsection, getConfigListEntry, ConfigInteger, ConfigSelection, configfile 
@@ -14,12 +15,20 @@ import os
 
 config.plugins.transcodingsetup = ConfigSubsection()
 config.plugins.transcodingsetup.port = ConfigInteger(default = None, limits = (1024, 65535))
-config.plugins.transcodingsetup.bitrate = ConfigInteger(default = None, limits = (50000, 4000000))
-config.plugins.transcodingsetup.resolution = ConfigSelection(default = "480p", choices = [ ("720x480", "480p"), ("720x576", "576p"), ("1280x720", "720p") ])
 
-config.plugins.transcodingsetup.framerate = ConfigInteger(default = None)
-config.plugins.transcodingsetup.aspectratio = ConfigInteger(default = None)
-config.plugins.transcodingsetup.interlaced = ConfigInteger(default = None)
+if SystemInfo["HasTranscodingH265"]:
+	config.plugins.transcodingsetup.bitrate = ConfigSelection([("100000", _("100 kbps")), ("300000", _("300 kbps")), ("500000", _("500 kbps")), ("800000", _("800 kbps")), ("1000000", _("1.0 Mbps")),  ("1200000", _("1.2 Mbps")), ("1500000", _("1.5 Mbps")), ("2000000", _("2.0 Mbps")), ("2500000", _("2.5 Mbps")), ("3000000", _("3.0 Mbps")), ("3500000", _("3.5 Mbps")), ("4000000", _("4.0 Mbps")), ("5000000", _("5.0 Mbps"))], default="1500000")
+	config.plugins.transcodingsetup.resolution = ConfigSelection([("720x480", _("480p")), ("720x576", _("576p")), ("1280x720", _("720p"))], default="720x576")
+	config.plugins.transcodingsetup.vcodec = ConfigSelection([("h264", _("H.264")), ("h265", _("H.265"))], default="h265")
+	config.plugins.transcodingsetup.framerate = ConfigSelection([("23976", _("23.976 fps")), ("24000", _("24 fps")), ("25000", _("25 fps")), ("30000", _("30 fps"))], default="25000")
+	config.plugins.transcodingsetup.aspectratio = ConfigInteger(default = 2)
+	config.plugins.transcodingsetup.interlaced = ConfigInteger(default = 0)
+else:
+	config.plugins.transcodingsetup.bitrate = ConfigInteger(default = None, limits = (50000, 4000000))
+	config.plugins.transcodingsetup.resolution = ConfigSelection(default = "480p", choices = [ ("720x480", "480p"), ("720x576", "576p"), ("1280x720", "720p") ])
+	config.plugins.transcodingsetup.framerate = ConfigSelection(default = None)
+	config.plugins.transcodingsetup.aspectratio = ConfigInteger(default = None)
+	config.plugins.transcodingsetup.interlaced = ConfigInteger(default = None)
 
 TRANSCODING_CONFIG = "/etc/enigma2/streamproxy.conf"
 
@@ -69,8 +78,13 @@ class TranscodingSetup(ConfigListScreen, Screen):
 				self.statusTimer.start(500, True)
 				return
 
-		config_list.append(getConfigListEntry(_("Bitrate"), self.bitrate))
-		config_list.append(getConfigListEntry(_("Video size"), self.size))
+		if SystemInfo["HasTranscodingH265"]:
+			config_list.append(getConfigListEntry(_("Bitrate"), config.plugins.transcodingsetup.bitrate))
+			config_list.append(getConfigListEntry(_("Video size"), config.plugins.transcodingsetup.resolution))
+			config_list.append(getConfigListEntry(_("Video codec"), config.plugins.transcodingsetup.vcodec))
+		else:
+			config_list.append(getConfigListEntry(_("Bitrate"), self.bitrate))
+			config_list.append(getConfigListEntry(_("Video size"), self.size))
 
 		self["config"].list = config_list
 
@@ -176,13 +190,17 @@ class TranscodingSetup(ConfigListScreen, Screen):
 		resolution = "%dx%d" % (resx, resy)
 
 		config.plugins.transcodingsetup.port.save()
-		config.plugins.transcodingsetup.bitrate.value = self.bitrate.value * 1000
-		config.plugins.transcodingsetup.bitrate.save()
 		config.plugins.transcodingsetup.resolution.value = resolution
 		config.plugins.transcodingsetup.resolution.save()
 		config.plugins.transcodingsetup.framerate.save()
 		config.plugins.transcodingsetup.aspectratio.save()
 		config.plugins.transcodingsetup.interlaced.save()
+		if SystemInfo["HasTranscodingH265"]:
+			config.plugins.transcodingsetup.vcodec.save()
+		else:
+			config.plugins.transcodingsetup.bitrate.value = self.bitrate.value * 1000
+		config.plugins.transcodingsetup.bitrate.save()
+
 		configfile.save()
 
 		self.close()
@@ -202,4 +220,5 @@ def main(session, **kwargs):
 	session.open(TranscodingSetup)
 
 def Plugins(**kwargs):
-	return [PluginDescriptor(name = "Transcoding Setup", description = _("Set up default transcoding parameters"), where = PluginDescriptor.WHERE_MENU, fnc=startSetup)]
+	if SystemInfo["HasTranscoding"]:
+		return [PluginDescriptor(name = "Transcoding Setup", description = _("Set up default transcoding parameters"), where = PluginDescriptor.WHERE_MENU, fnc=startSetup)]
