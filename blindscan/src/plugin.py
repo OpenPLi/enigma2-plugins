@@ -1465,7 +1465,9 @@ class Blindscan(ConfigListScreen, Screen):
 			del self.raw_channel
 
 def main(session, close=None, **kwargs):
-	if BOX_MODEL == "dreambox":
+	if 'Supports_Blind_Scan: yes' in open('/proc/bus/nim_sockets').read():
+		session.openWithCallback(close, dmmBlindScan.DmmBlindscan)
+	elif BOX_MODEL == "dreambox":
 		menu = [(_("Another type"), "all"),(_("Dreambox type"), "dmm")]
 		def scanType(choice):
 			if choice:

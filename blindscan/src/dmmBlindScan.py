@@ -402,8 +402,8 @@ class SatelliteTransponderSearchSupport:
 		self.auto_scan = False
 
 		print "tunername", tunername
-		if tunername in ("BCM4505", "BCM4506 (internal)", "BCM4506", "Alps BSBE1 C01A/D01A.", "Si2166B", "Si2169C"):
-			self.auto_scan = tunername in ("Si2166B", "Si2169C")
+		if nimmanager.nim_slots[nim_idx].supportsBlindScan() or tunername in ("BCM4505", "BCM4506 (internal)", "BCM4506", "Alps BSBE1 C01A/D01A.", "Si2166B", "Si2169C"):
+			self.auto_scan = nimmanager.nim_slots[nim_idx].supportsBlindScan() or tunername in ("Si2166B", "Si2169C")
 			(self.channel, self.frontend) = self.tryGetRawFrontend(nim_idx, False, False)
 			if not self.frontend:
 				self.session.nav.stopService()
@@ -481,7 +481,7 @@ class SatelliteTransponderSearchSupport:
 			if "Sundtek DVB-S/S2" in tunername and "V" in tunername:
 				tmpstr = _("Use Sundtek full hardware blind scan!")
 			else:
-				tmpstr = _("Dreambox blind scan is not supported by this tuner (%s)!") % tunername
+				tmpstr = _("Hardware blind scan is not supported by this tuner (%s)!") % tunername
 			self.session.open(MessageBox, tmpstr, MessageBox.TYPE_ERROR)
 			return
 		self.satellite_search_session = self.session.openWithCallback(self.satelliteTransponderSearchSessionClosed, SatBlindscanState, tuner_no, tmpstr)
@@ -501,7 +501,7 @@ class DmmBlindscan(ConfigListScreen, Screen, TransponderSearchSupport, Satellite
 
 	def __init__(self, session):
 		Screen.__init__(self, session)
-		self.setup_title = _("Blind scan for dreambox DVB-S2 tuners")
+		self.setup_title = _("Blind scan for DVB-S2 tuners")
 		Screen.setTitle(self, _(self.setup_title))
 		self.updateSatList()
 		self.service = session.nav.getCurrentService()
@@ -814,7 +814,7 @@ class DmmBlindscan(ConfigListScreen, Screen, TransponderSearchSupport, Satellite
 			xml.append('	using %s receiver running Enigma2 image, version %s,\n' % (boxtype, about.getEnigmaVersionString()))
 			xml.append('	image %s, with the Blind scan plugin\n\n' % (about.getImageTypeString()))
 		except:
-			xml.append('	using %s receiver running Enigma2 image (%s), with the Dreambox blind scan plugin\n\n' % (boxtype, tuner))
+			xml.append('	using %s receiver running Enigma2 image (%s), with the blind scan plugin\n\n' % (boxtype, tuner))
 		xml.append('-->\n\n')
 		xml.append('<satellites>\n')
 		xml.append('	<sat name="%s" flags="0" position="%s">\n' % (self.sat_name.replace('&', '&amp;'), self.orb_position))
