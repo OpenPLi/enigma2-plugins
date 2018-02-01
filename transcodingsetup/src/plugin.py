@@ -15,7 +15,7 @@ import os
 
 config.plugins.transcodingsetup = ConfigSubsection()
 config.plugins.transcodingsetup.port = ConfigInteger(default = None, limits = (1024, 65535))
-config.plugins.transcodingsetup.bitrate = ConfigInteger(default = 1500000, limits = (50000, 4000000))
+config.plugins.transcodingsetup.bitrate = ConfigSelection(default = "1000000", choices = [( "50000", "50 kbps" ), ( "100000", "100 kbps" ), ( "200000", "200 kbps" ), ( "500000", "500 kbps" ), ( "1000000", "1 Mbps" ), ( "1500000", "1.5 Mbps" ), ( "2000000", "2 Mbps" ), ( "2500000", "2.5 Mbps" ), ( "3000000", "3 Mbps" ), ( "3500000", "3.5 Mbps" ), ( "4000000", "4 Mbps" )])
 config.plugins.transcodingsetup.resolution = ConfigSelection(default = "720x480", choices = [ ("720x480", "480p"), ("720x576", "576p"), ("1280x720", "720p") ])
 
 config.plugins.transcodingsetup.framerate = ConfigSelection(default = "30000", choices = [("23976", _("23.976 fps")), ("24000", _("24 fps")), ("25000", _("25 fps")), ("30000", _("30 fps"))])
@@ -42,20 +42,11 @@ class TranscodingSetup(ConfigListScreen, Screen):
 		"""
 
 	def __init__(self, session):
-		bitrate_choices = [( 50, "50 kbps" ), ( 100, "100 kbps" ), ( 200, "200 kbps" ), ( 500, "500 kbps" ), ( 1000, "1 Mbps" ), ( 1500, "1.5 Mbps" ), ( 2000, "2 Mbps" ), ( 2500, "2.5 Mbps" ), ( 3000, "3 Mbps" ), ( 3500, "3.5 Mbps" ), ( 4000, "4 Mbps" )]
-		size_choices = [ "480p", "576p", "720p" ]
-
-		current_bitrate_value = ""
-		current_size = ""
-
 		Screen.__init__(self, session)
 		self.setTitle(_("Transcoding Setup"))
 
 		config_list = []
 		ConfigListScreen.__init__(self, config_list)
-
-		self.bitrate = ConfigSelection(choices = bitrate_choices)
-		self.size = ConfigSelection(choices = size_choices)
 
 		self.statusTimer = eTimer()
 		self.warningTimer = eTimer()
@@ -72,8 +63,8 @@ class TranscodingSetup(ConfigListScreen, Screen):
 				self.statusTimer.start(500, True)
 				return
 
-		config_list.append(getConfigListEntry(_("Bitrate"), self.bitrate))
-		config_list.append(getConfigListEntry(_("Video size"), self.size))
+		config_list.append(getConfigListEntry(_("Bitrate"), config.plugins.transcodingsetup.bitrate))
+		config_list.append(getConfigListEntry(_("Video size"), config.plugins.transcodingsetup.resolution))
 		config_list.append(getConfigListEntry(_("Frame rate"), config.plugins.transcodingsetup.framerate))
 		if SystemInfo["HasH265Encoder"]:
 			config_list.append(getConfigListEntry(_("Video codec"), config.plugins.transcodingsetup.vcodec))
@@ -101,13 +92,18 @@ class TranscodingSetup(ConfigListScreen, Screen):
 				tokens = line.split('=')
 
 				if(tokens[0] == "bitrate"):
-					for tuple in bitrate_choices:
-						if int(tokens[1]) <= int(tuple[0]):
-							self.bitrate.setValue(tuple[0])
+					for choice in config.plugins.transcodingsetup.bitrate.choices:
+						if int(tokens[1]) * 1000 <= int(choice):
+							config.plugins.transcodingsetup.bitrate.value = choice
 							break
 
 				if(tokens[0] == "size"):
-					self.size.setValue(tokens[1])
+					if tokens[1] == "480p":
+						config.plugins.transcodingsetup.resolution.value = "720x480"
+					elif tokens[1] == "576p":
+						config.plugins.transcodingsetup.resolution.value = "720x576"
+					elif tokens[1] == "720p":
+						config.plugins.transcodingsetup.resolution.value = "1280x720"
 
 				self.content += [ tokens ]
 
@@ -145,10 +141,15 @@ class TranscodingSetup(ConfigListScreen, Screen):
 	def keyGo(self):
 		for token in self.content:
 			if(token[0] == "bitrate"):
-				token[1] = self.bitrate.value
+				token[1] = str(int(config.plugins.transcodingsetup.bitrate.value) / 1000)
 
 			if(token[0] == "size"):
-				token[1] = self.size.value
+				if config.plugins.transcodingsetup.resolution.value == "720x480":
+					token[1] = "480p"
+				elif config.plugins.transcodingsetup.resolution.value == "720x576":
+					token[1] = "576p"
+				elif config.plugins.transcodingsetup.resolution.value == "1280x720":
+					token[1] = "720p"
 
 		try:
 			f = open(TRANSCODING_CONFIG, "w")
@@ -158,24 +159,8 @@ class TranscodingSetup(ConfigListScreen, Screen):
 		except:
 			pass
 
-		if self.size.value == "480p":
-			resx = 720
-			resy = 480
-		else:
-			if self.size.value == "576p":
-				resx = 720
-				resy = 576
-			else:
-				if self.size.value == "720p":
-					resx = 1280
-					resy = 720
-
-		resolution = "%dx%d" % (resx, resy)
-
 		config.plugins.transcodingsetup.port.save()
-		config.plugins.transcodingsetup.bitrate.value = self.bitrate.value * 1000
 		config.plugins.transcodingsetup.bitrate.save()
-		config.plugins.transcodingsetup.resolution.value = resolution
 		config.plugins.transcodingsetup.resolution.save()
 		config.plugins.transcodingsetup.framerate.save()
 		config.plugins.transcodingsetup.aspectratio.save()
