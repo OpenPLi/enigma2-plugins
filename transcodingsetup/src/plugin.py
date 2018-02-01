@@ -6,6 +6,7 @@ from Components.ConfigList import ConfigListScreen
 from Components.Sources.StaticText import StaticText
 from Components.Label import Label
 from Components.ActionMap import ActionMap
+from Components.SystemInfo import SystemInfo
 from Screens.MessageBox import MessageBox
 from enigma import eTimer
 from Components.config import config, ConfigSubsection, getConfigListEntry, ConfigInteger, ConfigSelection, configfile 
@@ -20,6 +21,8 @@ config.plugins.transcodingsetup.resolution = ConfigSelection(default = "720x480"
 config.plugins.transcodingsetup.framerate = ConfigSelection(default = "30000", choices = [("23976", _("23.976 fps")), ("24000", _("24 fps")), ("25000", _("25 fps")), ("30000", _("30 fps"))])
 config.plugins.transcodingsetup.aspectratio = ConfigInteger(default = 2)
 config.plugins.transcodingsetup.interlaced = ConfigInteger(default = 0)
+if SystemInfo["HasH265Encoder"]:
+	config.plugins.transcodingsetup.vcodec = ConfigSelection(default = "h265", choices = [("h264", "H.264"), ("h265", "H.265")])
 
 TRANSCODING_CONFIG = "/etc/enigma2/streamproxy.conf"
 
@@ -72,6 +75,8 @@ class TranscodingSetup(ConfigListScreen, Screen):
 		config_list.append(getConfigListEntry(_("Bitrate"), self.bitrate))
 		config_list.append(getConfigListEntry(_("Video size"), self.size))
 		config_list.append(getConfigListEntry(_("Frame rate"), config.plugins.transcodingsetup.framerate))
+		if SystemInfo["HasH265Encoder"]:
+			config_list.append(getConfigListEntry(_("Video codec"), config.plugins.transcodingsetup.vcodec))
 
 		self["config"].list = config_list
 
@@ -175,6 +180,8 @@ class TranscodingSetup(ConfigListScreen, Screen):
 		config.plugins.transcodingsetup.framerate.save()
 		config.plugins.transcodingsetup.aspectratio.save()
 		config.plugins.transcodingsetup.interlaced.save()
+		if SystemInfo["HasH265Encoder"]:
+			config.plugins.transcodingsetup.vcodec.save()
 		configfile.save()
 
 		self.close()
