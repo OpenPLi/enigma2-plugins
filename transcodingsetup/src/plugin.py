@@ -15,7 +15,7 @@ import os
 config.plugins.transcodingsetup = ConfigSubsection()
 config.plugins.transcodingsetup.port = ConfigInteger(default = None, limits = (1024, 65535))
 config.plugins.transcodingsetup.bitrate = ConfigInteger(default = None, limits = (50000, 4000000))
-config.plugins.transcodingsetup.resolution = ConfigSelection(default = "480p", choices = [ ("720x480", "480p"), ("720x576", "576p"), ("1280x720", "720p") ])
+config.plugins.transcodingsetup.resolution = ConfigSelection(default = "720x480", choices = [ ("720x480", "480p"), ("720x576", "576p"), ("1280x720", "720p") ])
 
 config.plugins.transcodingsetup.framerate = ConfigInteger(default = None)
 config.plugins.transcodingsetup.aspectratio = ConfigInteger(default = None)
