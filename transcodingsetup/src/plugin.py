@@ -17,9 +17,9 @@ config.plugins.transcodingsetup.port = ConfigInteger(default = None, limits = (1
 config.plugins.transcodingsetup.bitrate = ConfigInteger(default = None, limits = (50000, 4000000))
 config.plugins.transcodingsetup.resolution = ConfigSelection(default = "720x480", choices = [ ("720x480", "480p"), ("720x576", "576p"), ("1280x720", "720p") ])
 
-config.plugins.transcodingsetup.framerate = ConfigInteger(default = None)
-config.plugins.transcodingsetup.aspectratio = ConfigInteger(default = None)
-config.plugins.transcodingsetup.interlaced = ConfigInteger(default = None)
+config.plugins.transcodingsetup.framerate = ConfigInteger(default = 30000)
+config.plugins.transcodingsetup.aspectratio = ConfigInteger(default = 2)
+config.plugins.transcodingsetup.interlaced = ConfigInteger(default = 0)
 
 TRANSCODING_CONFIG = "/etc/enigma2/streamproxy.conf"
 
@@ -73,15 +73,6 @@ class TranscodingSetup(ConfigListScreen, Screen):
 		config_list.append(getConfigListEntry(_("Video size"), self.size))
 
 		self["config"].list = config_list
-
-		if config.plugins.transcodingsetup.framerate.value is None:
-			config.plugins.transcodingsetup.framerate.value = 30000
-
-		if config.plugins.transcodingsetup.aspectratio.value is None:
-			config.plugins.transcodingsetup.aspectratio.value = 2
-
-		if config.plugins.transcodingsetup.interlaced.value is None:
-			config.plugins.transcodingsetup.interlaced.value = 0
 
 		if config.plugins.transcodingsetup.port.value is None:
 			config.plugins.transcodingsetup.port.value = port
