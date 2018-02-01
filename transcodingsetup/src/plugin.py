@@ -17,7 +17,7 @@ config.plugins.transcodingsetup.port = ConfigInteger(default = None, limits = (1
 config.plugins.transcodingsetup.bitrate = ConfigInteger(default = 1500000, limits = (50000, 4000000))
 config.plugins.transcodingsetup.resolution = ConfigSelection(default = "720x480", choices = [ ("720x480", "480p"), ("720x576", "576p"), ("1280x720", "720p") ])
 
-config.plugins.transcodingsetup.framerate = ConfigInteger(default = 30000)
+config.plugins.transcodingsetup.framerate = ConfigSelection(default = "30000", choices = [("23976", _("23.976 fps")), ("24000", _("24 fps")), ("25000", _("25 fps")), ("30000", _("30 fps"))])
 config.plugins.transcodingsetup.aspectratio = ConfigInteger(default = 2)
 config.plugins.transcodingsetup.interlaced = ConfigInteger(default = 0)
 
@@ -71,6 +71,7 @@ class TranscodingSetup(ConfigListScreen, Screen):
 
 		config_list.append(getConfigListEntry(_("Bitrate"), self.bitrate))
 		config_list.append(getConfigListEntry(_("Video size"), self.size))
+		config_list.append(getConfigListEntry(_("Frame rate"), config.plugins.transcodingsetup.framerate))
 
 		self["config"].list = config_list
 
