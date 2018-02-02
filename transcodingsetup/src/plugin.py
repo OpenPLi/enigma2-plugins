@@ -51,10 +51,12 @@ class TranscodingSetup(ConfigListScreen, Screen):
 		self.statusTimer = eTimer()
 		self.warningTimer = eTimer()
 
+		needstreamproxy = False
 		port = None
 
 		if os.path.exists("/dev/bcm_enc0"):
 			port = 8002
+			needstreamproxy = True
 		else:
 			if os.path.exists("/proc/stb/encoder/0"):
 				port = 8001
@@ -82,8 +84,9 @@ class TranscodingSetup(ConfigListScreen, Screen):
 			rawcontent = [x.translate(None, ' \n\r') for x in rawcontent]
 			f.close()
 		except:
-			self.warningTimer.callback.append(self.setWarningMessage)
-			self.warningTimer.start(500, True)
+			if needstreamproxy:
+				self.warningTimer.callback.append(self.setWarningMessage)
+				self.warningTimer.start(500, True)
 
 		self.content = []
 
@@ -139,25 +142,26 @@ class TranscodingSetup(ConfigListScreen, Screen):
 		self.close()
 
 	def keyGo(self):
-		for token in self.content:
-			if(token[0] == "bitrate"):
-				token[1] = str(int(config.plugins.transcodingsetup.bitrate.value) / 1000)
-
-			if(token[0] == "size"):
-				if config.plugins.transcodingsetup.resolution.value == "720x480":
-					token[1] = "480p"
-				elif config.plugins.transcodingsetup.resolution.value == "720x576":
-					token[1] = "576p"
-				elif config.plugins.transcodingsetup.resolution.value == "1280x720":
-					token[1] = "720p"
-
-		try:
-			f = open(TRANSCODING_CONFIG, "w")
+		if self.content:
 			for token in self.content:
-				f.write("%s = %s\n" % (token[0], token[1]))
-			f.close()
-		except:
-			pass
+				if(token[0] == "bitrate"):
+					token[1] = str(int(config.plugins.transcodingsetup.bitrate.value) / 1000)
+
+				if(token[0] == "size"):
+					if config.plugins.transcodingsetup.resolution.value == "720x480":
+						token[1] = "480p"
+					elif config.plugins.transcodingsetup.resolution.value == "720x576":
+						token[1] = "576p"
+					elif config.plugins.transcodingsetup.resolution.value == "1280x720":
+						token[1] = "720p"
+
+			try:
+				f = open(TRANSCODING_CONFIG, "w")
+				for token in self.content:
+					f.write("%s = %s\n" % (token[0], token[1]))
+				f.close()
+			except:
+				pass
 
 		config.plugins.transcodingsetup.port.save()
 		config.plugins.transcodingsetup.bitrate.save()
