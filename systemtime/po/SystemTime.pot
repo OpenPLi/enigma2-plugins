@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SystemTime\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-30 01:15+0200\n"
+"POT-Creation-Date: 2018-01-15 18:20+0200\n"
 "PO-Revision-Date: 2018-01-09 17:43+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.0.6\n"
+"X-Generator: Poedit 2.0.5\n"
 "X-Poedit-Basepath: ../src\n"
 "X-Poedit-SearchPath-0: plugin.py\n"
 
@@ -69,115 +69,79 @@ msgstr ""
 msgid "Press OK"
 msgstr ""
 
-#: plugin.py:70
+#: plugin.py:68
 msgid "System time setup"
 msgstr ""
 
-#: plugin.py:76
+#: plugin.py:73
 msgid "Cancel"
 msgstr ""
 
-#: plugin.py:77
+#: plugin.py:74
 msgid "Save"
 msgstr ""
 
-#: plugin.py:78
+#: plugin.py:75
 msgid "Restart GUI"
 msgstr ""
 
-#: plugin.py:146
+#: plugin.py:138
 msgid "Sync time using"
 msgstr ""
 
-#: plugin.py:146
-msgid "Select the preferred method for syncing time on your receiver. Network Time Protocol requires internet connection. Transponder time might not be very accurate."
-msgstr ""
-
-#: plugin.py:147
+#: plugin.py:139
 msgid "Sync NTP every"
 msgstr ""
 
-#: plugin.py:147
-msgid "Set how often the receiver will connect to the NTP server to sync time."
-msgstr ""
-
-#: plugin.py:148
+#: plugin.py:140
 msgid "NTP cold start"
 msgstr ""
 
-#: plugin.py:148
-msgid "On receiver 'cold start', allow any required time adjustments to be 'stepped'."
-msgstr ""
-
-#: plugin.py:149
+#: plugin.py:141
 msgid "Delay (in seconds) when using Wi-Fi"
 msgstr ""
 
-#: plugin.py:149
-msgid "After receiver's boot, wait for the specified delay before connecting to the NTP server. This allows the Wi-Fi connection to be fully established."
-msgstr ""
-
-#: plugin.py:150
+#: plugin.py:142
 msgid "Sync now with NTP server"
 msgstr ""
 
-#: plugin.py:150
-msgid "Get current time from the specified NTP server."
-msgstr ""
-
-#: plugin.py:151
+#: plugin.py:143
 msgid "Sync now with current transponder"
 msgstr ""
 
-#: plugin.py:151
-msgid "Get current time from the specified DVB transponder."
-msgstr ""
-
-#: plugin.py:152
+#: plugin.py:144
 msgid "Set system time manually"
 msgstr ""
 
-#: plugin.py:152
-msgid "Enter a user defined date and time."
-msgstr ""
-
-#: plugin.py:153
+#: plugin.py:145
 msgid "Use RTC time from deep standby"
 msgstr ""
 
-#: plugin.py:153
-msgid "When the receiver starts from deep standby, use the time provided by the Real Time Clock, if it appears to be valid."
+#: plugin.py:146
+msgid "NTP server (e.g. pool.ntp.org)"
 msgstr ""
 
-#: plugin.py:154
-msgid "NTP server"
-msgstr ""
-
-#: plugin.py:154
-msgid "Set the IP address of the preferred NTP server. Default is pool.ntp.org."
-msgstr ""
-
-#: plugin.py:184 plugin.py:187
+#: plugin.py:176 plugin.py:179
 msgid "Syncing with NTP server..."
 msgstr ""
 
-#: plugin.py:189 plugin.py:252
+#: plugin.py:181 plugin.py:243
 msgid "'ntpdate' is not installed!"
 msgstr ""
 
-#: plugin.py:196
+#: plugin.py:188
 msgid "Syncing... Please wait."
 msgstr ""
 
-#: plugin.py:201
+#: plugin.py:193
 msgid "Syncing with current transponder..."
 msgstr ""
 
-#: plugin.py:203
+#: plugin.py:195
 msgid "'dvbdate' is not installed!"
 msgstr ""
 
-#: plugin.py:214
+#: plugin.py:206
 #, python-format
 msgid ""
 "Old time: %(oldtime)s\n"
@@ -186,82 +150,82 @@ msgid ""
 "Offset: %(offset)s seconds"
 msgstr ""
 
-#: plugin.py:221 plugin.py:312
+#: plugin.py:212 plugin.py:303
 msgid "Select transponder"
 msgstr ""
 
-#: plugin.py:270
+#: plugin.py:261
 msgid "Script 'set-rtctime' not found!"
 msgstr ""
 
-#: plugin.py:305
+#: plugin.py:296
 msgid "Restart GUI now?"
 msgstr ""
 
-#: plugin.py:362
+#: plugin.py:353
 msgid "Enter new system time and press OK!"
 msgstr ""
 
-#: plugin.py:370
+#: plugin.py:361
 msgid "No change detected."
 msgstr ""
 
-#: plugin.py:372
+#: plugin.py:363
 msgid "Time string too short."
 msgstr ""
 
-#: plugin.py:374 plugin.py:376
+#: plugin.py:365 plugin.py:367
 msgid "Invalid time format."
 msgstr ""
 
-#: plugin.py:399
+#: plugin.py:390
 #, python-format
 msgid "Invalid input in year: %s"
 msgstr ""
 
-#: plugin.py:401
+#: plugin.py:392
 #, python-format
 msgid "Invalid input in month: %s"
 msgstr ""
 
-#: plugin.py:403
+#: plugin.py:394
 #, python-format
 msgid "Invalid input in day: %s"
 msgstr ""
 
-#: plugin.py:405
+#: plugin.py:396
 #, python-format
 msgid "Invalid input in hour: %s"
 msgstr ""
 
-#: plugin.py:407
+#: plugin.py:398
 #, python-format
 msgid "Invalid input in minute: %s"
 msgstr ""
 
-#: plugin.py:410
+#: plugin.py:401
 msgid "Apply new system time?"
 msgstr ""
 
-#: plugin.py:414
+#: plugin.py:405
 msgid "No answer given."
 msgstr ""
 
-#: plugin.py:416
+#: plugin.py:407
 msgid "No confirmation given."
 msgstr ""
 
-#: plugin.py:432
+#: plugin.py:423
 #, python-format
 msgid ""
-"System time was not applied.\n"
+"System time was not apllied.\n"
 "%s"
 msgstr ""
 
-#: plugin.py:452
+#: plugin.py:443
 msgid "System Time"
 msgstr ""
 
-#: plugin.py:460
+#: plugin.py:451
 msgid "Change system time in enigma2 box"
 msgstr ""
