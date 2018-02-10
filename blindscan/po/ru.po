@@ -96,8 +96,8 @@ msgid "Blind scan for DVB-S2 tuners"
 msgstr "Слепой поиск для DVB-S2 тюнеров"
 
 #: dmmBlindScan.py:500
-msgid "Blind scan for dreambox DVB-S2 tuners"
-msgstr "Слепой поиск для dreambox DVB-S2 тюнеров"
+msgid "Blind scan for DVB-S2 tuners"
+msgstr "Слепой поиск для DVB-S2 тюнеров"
 
 #: dmmBlindScan.py:67
 msgid "Blind scan state"
@@ -121,8 +121,8 @@ msgstr "только DVB-S"
 
 #: dmmBlindScan.py:480
 #, python-format
-msgid "Dreambox blind scan is not supported by this tuner (%s)!"
-msgstr "Dreambox слепой поиск не поддерживает этот тюнер (%s)!"
+msgid "Hardware blind scan is not supported by this tuner (%s)!"
+msgstr "Слепой поиск производителя не поддерживает этот тюнер (%s)!"
 
 #: plugin.py:1391
 msgid "Dreambox type"
