@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Seekbar\n"
+"Project-Id-Version: Transcoding Setup\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-28 00:00+0000\n"
 "PO-Revision-Date: 2015-11-28 00:00+0200\n"
@@ -19,7 +19,7 @@ msgstr "Битрейт"
 
 #: plugin.py:153
 msgid "Default values for trancoding"
-msgstr "Дефолтные значения для транскодирования"
+msgstr "Дефолтные значения транскодирования"
 
 #: plugin.py:159
 msgid "It seems your receiver is not supported!"
@@ -27,15 +27,15 @@ msgstr "Кажется, Ваш ресивер не поддерживается!
 
 #: plugin.py:156
 msgid "Not found file '/etc/enigma2/streamproxy.conf' !"
-msgstr "Не найден файл'/etc/enigma2/streamproxy.conf' !"
+msgstr "Не найден файл'/etc/enigma2/streamproxy.conf'!"
 
 #: plugin.py:150
 msgid "Quit"
-msgstr "Отменить"
+msgstr "Отмена"
 
 #: plugin.py:151
 msgid "Set"
-msgstr "Установить"
+msgstr "Установка"
 
 #: plugin.py:233
 msgid "Set up default transcoding parameters"
@@ -47,5 +47,10 @@ msgstr "Настройки транскодирования"
 
 #: plugin.py:97
 msgid "Video size"
-msgstr "Размер видео"
+msgstr "Видео разрешение"
 
+msgid "Frame rate"
+msgstr "Частота кадров"
+
+msgid "Video codec"
+msgstr "Видео кодек"

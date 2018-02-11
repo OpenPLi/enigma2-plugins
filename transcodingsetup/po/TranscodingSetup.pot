@@ -52,3 +52,9 @@ msgstr ""
 #: plugin.py:97
 msgid "Video size"
 msgstr ""
+
+msgid "Frame rate"
+msgstr ""
+
+msgid "Video codec"
+msgstr ""
