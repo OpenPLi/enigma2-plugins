@@ -95,10 +95,6 @@ msgstr "Слепой поиск"
 msgid "Blind scan for DVB-S2 tuners"
 msgstr "Слепой поиск для DVB-S2 тюнеров"
 
-#: dmmBlindScan.py:500
-msgid "Blind scan for DVB-S2 tuners"
-msgstr "Слепой поиск для DVB-S2 тюнеров"
-
 #: dmmBlindScan.py:67
 msgid "Blind scan state"
 msgstr "Состояние слепого поиска"
