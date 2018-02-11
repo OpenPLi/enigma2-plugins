@@ -18,7 +18,7 @@ config.plugins.transcodingsetup.port = ConfigInteger(default = None, limits = (1
 config.plugins.transcodingsetup.bitrate = ConfigSelection(default = "1000000", choices = [( "50000", "50 kbps" ), ( "100000", "100 kbps" ), ( "200000", "200 kbps" ), ( "500000", "500 kbps" ), ( "1000000", "1 Mbps" ), ( "1500000", "1.5 Mbps" ), ( "2000000", "2 Mbps" ), ( "2500000", "2.5 Mbps" ), ( "3000000", "3 Mbps" ), ( "3500000", "3.5 Mbps" ), ( "4000000", "4 Mbps" )])
 config.plugins.transcodingsetup.resolution = ConfigSelection(default = "720x576", choices = [ ("720x480", "480p"), ("720x576", "576p"), ("1280x720", "720p") ])
 
-config.plugins.transcodingsetup.framerate = ConfigSelection(default = "25000", choices = [("23976", _("23.976 fps")), ("24000", _("24 fps")), ("25000", _("25 fps")), ("30000", _("30 fps"))])
+config.plugins.transcodingsetup.framerate = ConfigSelection(default = "25000", choices = [("23976", "23.976 fps"), ("24000", "24 fps"), ("25000", "25 fps"), ("30000", "30 fps")])
 config.plugins.transcodingsetup.aspectratio = ConfigInteger(default = 2)
 config.plugins.transcodingsetup.interlaced = ConfigInteger(default = 0)
 if SystemInfo["HasH265Encoder"]:
@@ -28,16 +28,16 @@ TRANSCODING_CONFIG = "/etc/enigma2/streamproxy.conf"
 
 class TranscodingSetup(ConfigListScreen, Screen):
 	skin = 	"""
-		<screen position="center,center" size="500,114" title="Transcoding Setup">
-			<widget name="content" position="0,0" size="500,22" font="Regular;20" />
+		<screen position="center,center" size="500,190" title="Transcoding Setup">
+			<widget name="content" position="0,0" size="500,22" font="Regular;19" />
 
-			<widget name="config" position="4,26" font="Regular;20" size="492,60" />
+			<widget name="config" position="4,36" font="Regular;20" size="492,100" />
 
-			<ePixmap pixmap="skin_default/buttons/red.png" position="0,76" size="140,40" alphatest="on" />
-			<ePixmap pixmap="skin_default/buttons/green.png" position="150,76" size="140,40" alphatest="on" />
+			<ePixmap pixmap="skin_default/buttons/red.png" position="0,150" size="140,40" alphatest="on" />
+			<ePixmap pixmap="skin_default/buttons/green.png" position="150,150" size="140,40" alphatest="on" />
 
-			<widget source="key_red" render="Label" position="0,76" zPosition="1" size="140,40" font="Regular;20" halign="center" valign="center" backgroundColor="#9f1313" foregroundColor="#ffffff" transparent="1"/>
-			<widget source="key_green" render="Label" position="150,76" zPosition="1" size="140,40" font="Regular;20" halign="center" valign="center" backgroundColor="#1f771f" foregroundColor="#ffffff" transparent="1"/>
+			<widget source="key_red" render="Label" position="0,150" zPosition="1" size="140,40" font="Regular;20" halign="center" valign="center" backgroundColor="#9f1313" foregroundColor="#ffffff" transparent="1"/>
+			<widget source="key_green" render="Label" position="150,150" zPosition="1" size="140,40" font="Regular;20" halign="center" valign="center" backgroundColor="#1f771f" foregroundColor="#ffffff" transparent="1"/>
 		</screen>
 		"""
 
