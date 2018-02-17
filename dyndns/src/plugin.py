@@ -1,3 +1,4 @@
+from . import _
 from Plugins.Plugin import PluginDescriptor
 from Screens.Screen import Screen
 from Components.Label import Label
@@ -14,54 +15,58 @@ sessions = []
 
 config.plugins.DynDNS = ConfigSubsection()
 config.plugins.DynDNS.enable = ConfigYesNo(default = False)
-config.plugins.DynDNS.interval = ConfigSelection(default = "10", choices = [("5", _("5 min.")),("10", _("10 min.")),("15", _("15 min.")),("30", _("30 min.")),("60", _("60 min."))])
+config.plugins.DynDNS.interval = ConfigSelection(default = "15", choices = [("5", _("5 mins")),("15", _("15 mins")),("30", _("30 mins")), ("60", _("1 hour")),("240", _("4 hours")), ("720", _("12 hours")), ("1440", _("24 hours"))])
 config.plugins.DynDNS.hostname = ConfigText(default = "", fixed_size = False)
 config.plugins.DynDNS.user = ConfigText(default = "", fixed_size = False)
 config.plugins.DynDNS.password = ConfigText(default = "", fixed_size = False)
 
 class DynDNSScreenMain(ConfigListScreen,Screen):
-    skin = """
-        <screen position="100,100" size="550,400" title="DynDNS Setup" >
-        <widget name="config" position="0,0" size="550,300" scrollbarMode="showOnDemand" />
-        <widget name="buttonred" position="10,360" size="100,40" backgroundColor="red" valign="center" halign="center" zPosition="2"  foregroundColor="white" font="Regular;18"/>
-        <widget name="buttongreen" position="120,360" size="100,40" backgroundColor="green" valign="center" halign="center" zPosition="2"  foregroundColor="white" font="Regular;18"/>
-        </screen>"""
-    def __init__(self, session, args = 0):
-        self.session = session
-        Screen.__init__(self, session)
-        self.list = []
-        self.list.append(getConfigListEntry(_("activate DynDNS"), config.plugins.DynDNS.enable))
-        self.list.append(getConfigListEntry(_("Interval to check IP-Adress"), config.plugins.DynDNS.interval))
-        self.list.append(getConfigListEntry(_("Hostname"), config.plugins.DynDNS.hostname))
-        self.list.append(getConfigListEntry(_("Username"), config.plugins.DynDNS.user))
-        self.list.append(getConfigListEntry(_("Password"), config.plugins.DynDNS.password))
-        ConfigListScreen.__init__(self, self.list)
-        self["buttonred"] = Label(_("cancel"))
-        self["buttongreen"] = Label(_("ok"))
-        self["setupActions"] = ActionMap(["SetupActions"],
-        {
-            "green": self.save,
-            "red": self.cancel,
-            "save": self.save,
-            "cancel": self.cancel,
-            "ok": self.save,
-        }, -2)
+	skin = """
+		<screen position="100,100" size="550,400" title="DynDNS setup">
+			<widget name="config" position="0,0" size="550,300" scrollbarMode="showOnDemand"/>
+			<widget name="key_red" position="10,360" size="100,40" backgroundColor="red" valign="center" halign="center" zPosition="2" foregroundColor="white" font="Regular;18"/>
+			<widget name="key_green" position="120,360" size="100,40" backgroundColor="green" valign="center" halign="center" zPosition="2" foregroundColor="white" font="Regular;18"/>
+		</screen>"""
 
-    def save(self):
-        print "[DynDNS] saving config"
-        for x in self["config"].list:
-            x[1].save()
-        self.close(True)
+	def __init__(self, session, args = 0):
+		self.session = session
+		Screen.__init__(self, session)
+		self.setup_title = _("DynDNS setup")
+		self.setTitle(self.setup_title)
+		self.list = []
+		self.list.append(getConfigListEntry(_("Activate DynDNS"), config.plugins.DynDNS.enable))
+		self.list.append(getConfigListEntry(_("IP address check interval"), config.plugins.DynDNS.interval))
+		self.list.append(getConfigListEntry(_("Hostname"), config.plugins.DynDNS.hostname))
+		self.list.append(getConfigListEntry(_("Username"), config.plugins.DynDNS.user))
+		self.list.append(getConfigListEntry(_("Password"), config.plugins.DynDNS.password))
+		ConfigListScreen.__init__(self, self.list)
+		self["key_red"] = Label(_("Cancel"))
+		self["key_green"] = Label(_("Save"))
+		self["setupActions"] = ActionMap(["SetupActions"],
+		{
+			"green": self.save,
+			"red": self.cancel,
+			"save": self.save,
+			"cancel": self.cancel,
+			"ok": self.save,
+		}, -2)
 
-    def cancel(self):
-        for x in self["config"].list:
-            x[1].cancel()
-        self.close(False)
+	def save(self):
+		print "[DynDNS] saving config"
+		for x in self["config"].list:
+			x[1].save()
+		self.close(True)
+
+	def cancel(self):
+		for x in self["config"].list:
+			x[1].cancel()
+		self.close(False)
 
 class DynDNSService:
 	enabled = False
 	sessions = []
 	lastip = ""
+
 	def __init__(self):
 		self.timer = eTimer()
 		self.timer.timeout.get().append(self.checkCurrentIP)
@@ -97,22 +102,22 @@ class DynDNSService:
 			str = "coundnotgetip"
 
 	def onIPchanged(self):
-		print "[DynDNS] IP change, setting new one",self.lastip
+		print "[DynDNS] IP changed, setting new one",self.lastip
 		try:
 			url = "http://members.dyndns.org/nic/update?system=dyndns&hostname=%s&myip=%s&wildcard=ON&offline=NO"%(config.plugins.DynDNS.hostname.value,self.lastip)
 			if self.getURL(url).find("good") is not -1:
-				print "[DynDNS] ip changed"
+				print "[DynDNS] IP changed"
 		except Exception,e:
-			print "[DynDNS] ip was not changed",e
+			print "[DynDNS] IP was not changed",e
 
 	def getURL(self,url):
 		request =  Request(url)
-   		base64string = encodestring('%s:%s' % (config.plugins.DynDNS.user.value,config.plugins.DynDNS.password.value))[:-1]
-   		request.add_header("Authorization", "Basic %s" % base64string)
-   		htmlFile = urlopen(request)
-   		htmlData = htmlFile.read()
-   		htmlFile.close()
-   		return htmlData
+		base64string = encodestring('%s:%s' % (config.plugins.DynDNS.user.value,config.plugins.DynDNS.password.value))[:-1]
+		request.add_header("Authorization", "Basic %s" % base64string)
+		htmlFile = urlopen(request)
+		htmlData = htmlFile.read()
+		htmlFile.close()
+		return htmlData
 
 def onPluginStart(session, **kwargs):
 	session.openWithCallback(onPluginStartCB,DynDNSScreenMain)
@@ -137,7 +142,6 @@ def onSessionStart(reason, **kwargs):
 		elif reason == 1:
 			dyndnsservice.disable()
 
-def Plugins(path,**kwargs):
+def Plugins(path, **kwargs):
 	return [PluginDescriptor(where = [PluginDescriptor.WHERE_SESSIONSTART, PluginDescriptor.WHERE_AUTOSTART], fnc = onSessionStart),
-		    PluginDescriptor(name=_("DynDNS"), description=_("use www.DynDNS.org on your Box"),where = [PluginDescriptor.WHERE_PLUGINMENU], fnc = onPluginStart, icon="icon.png")]
-
+			PluginDescriptor(name=_("DynDNS"), description=_("Use www.dyndns.org on your box"), where = [PluginDescriptor.WHERE_PLUGINMENU], fnc = onPluginStart, icon="icon.png")]
