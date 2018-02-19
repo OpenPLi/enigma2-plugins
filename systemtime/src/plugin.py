@@ -68,7 +68,7 @@ class SystemTimeSetupScreen(Screen, ConfigListScreen):
 	def __init__(self, session):
 		Screen.__init__(self, session)
 		self.setup_title = _("System time setup")
-		self.skin = SystemTimeSetupScreen.skin
+		self.skinName = ["SystemTimeSetupScreen", "Setup"]
 		self.onChangedEntry = []
 		self.syncTimer = eTimer()
 		self.syncTimer.callback.append(self.showMessage)
@@ -337,6 +337,7 @@ class SystemTimeConsole(Console):
 
 	def __init__(self, session, title = "System Time Console...", cmdlist = None):
 		Console.__init__(self, session, title, cmdlist)
+		self.skinName = ["SystemTimeConsole", "Console"]
 
 	def cancel(self):
 		nowTime = time.time()
