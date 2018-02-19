@@ -243,6 +243,11 @@ class EPGRefresh:
 			refreshAdapter.prepare()
 		self.refreshAdapter = refreshAdapter
 		self.isrunning = True
+		if config.plugins.epgrefresh.erase.value:
+			print("[EPGRefresh] flushing EPG cache...")
+			from enigma import eEPGCache
+			epgcache = eEPGCache.getInstance()
+			epgcache.flushEPG()
 		self.refresh()
 		print("[EPGRefresh] pre start...")
 

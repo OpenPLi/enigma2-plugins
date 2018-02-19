@@ -96,6 +96,7 @@ class EPGRefreshConfiguration(Screen, ConfigListScreen):
 		self.list = [
 			getConfigListEntry(_("Setup save / load EPG"), config.plugins.epgrefresh.setup_epg, _("Press the OK button to open the save / load EPG (+ configuration) menu.")),
 			getConfigListEntry(_("Refresh EPG automatically"), config.plugins.epgrefresh.enabled, _("EPGRefresh needs to be explicitly started using the yellow button in this menu if this option is not enabled")),
+			getConfigListEntry(_("Flush EPG before refresh"), config.plugins.epgrefresh.erase, _("Enable this item to flush all EPG data before starting a new EPG refresh cycle")),
 			getConfigListEntry(_("Show in extensions menu"), config.plugins.epgrefresh.show_in_extensionsmenu, _("Enable this to show the EPGRefresh configuration menu in the extension menu.")),
 			getConfigListEntry(_("Show \"add to EPGRefresh\" in"), config.plugins.epgrefresh.add_to_refresh, _("Select this item to add services to the EPGRefresh.")),
 			getConfigListEntry(_("Show popup when refresh starts or ends"), config.plugins.epgrefresh.enablemessage, _("Enable this to show an informational message at the start and completion of the refresh.")),

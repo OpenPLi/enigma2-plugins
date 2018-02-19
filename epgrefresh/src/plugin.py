@@ -51,6 +51,7 @@ config.plugins.epgrefresh.stop_on_mainmenu = ConfigYesNo(default = True)
 config.plugins.epgrefresh.lastscan = ConfigNumber(default = 0)
 config.plugins.epgrefresh.timeout_shutdown = ConfigInteger(default = 2, limits= (2, 30))
 config.plugins.epgrefresh.parse_autotimer = ConfigYesNo(default = False)
+config.plugins.epgrefresh.erase = ConfigYesNo(default = False)
 
 adapter_choices = [("main", _("Main Picture"))]
 if SystemInfo.get("NumVideoDecoders", 1) > 1:
