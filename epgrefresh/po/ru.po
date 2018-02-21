@@ -584,3 +584,8 @@ msgstr "нет"
 msgid "nowhere"
 msgstr "нигде"
 
+msgid "Flush EPG before refresh"
+msgstr "Очистка EPG перед обновлением"
+
+msgid "Enable this item to flush all EPG data before starting a new EPG refresh cycle"
+msgstr "Включите эту опцию, если хотите очистить все данные EPG перед началом нового цикла обновления EPG."
