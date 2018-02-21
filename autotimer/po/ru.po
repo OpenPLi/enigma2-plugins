@@ -1045,6 +1045,9 @@ msgstr "стандарт"
 msgid "title starts with"
 msgstr "имя совпадения начинается с"
 
+msgid "title ends with"
+msgstr "имя совпадения заканчивается на"
+
 msgid "unable to find timer with id %i"
 msgstr "не найден таймер с ид %i"
 
