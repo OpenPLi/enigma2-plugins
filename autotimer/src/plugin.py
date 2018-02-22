@@ -32,7 +32,7 @@ from AutoTimer import AutoTimer
 autotimer = AutoTimer()
 autopoller = None
 
-AUTOTIMER_VERSION = "4.1.5"
+AUTOTIMER_VERSION = "4.1.7"
 
 #pragma mark - Help
 try:

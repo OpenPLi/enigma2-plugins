@@ -133,7 +133,8 @@ typeMap = {
 	"partial": eEPGCache.PARTIAL_TITLE_SEARCH,
 	"start": eEPGCache.START_TITLE_SEARCH,
 	"end": eEPGCache.END_TITLE_SEARCH,
-	"description": -99
+	"description": eEPGCache.PARTIAL_DESCRIPTION_SEARCH,
+	"favoritedesc": -99
 }
 
 caseMap = {
@@ -288,7 +289,7 @@ class AutoTimer:
 			except UnicodeDecodeError:
 				pass
 
-		if timer.searchType == "description":
+		if timer.searchType == "favoritedesc":
 			epgmatches = []
 
 			casesensitive = timer.searchCase == "sensitive"
