@@ -95,7 +95,7 @@ _unsupportedNims = ( 'Vuplus DVB-S NIM(7376 FBC)', ) # format = nim.description 
 _blindscans2Nims = ('TBS-5925', 'DVBS2BOX')
 
 class Blindscan(ConfigListScreen, Screen):
-	skin="""
+	skin = """
 		<screen position="center,center" size="640,565" title="Blind scan">
 			<widget name="rotorstatus" position="5,5" size="550,25" font="Regular;20" foregroundColor="#00ffc000" />
 			<widget name="config" position="5,30" size="630,330" scrollbarMode="showOnDemand" />
@@ -106,10 +106,10 @@ class Blindscan(ConfigListScreen, Screen):
 			<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/Blindscan/images/green.png" position="160,560" size="160,2" alphatest="on" />
 			<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/Blindscan/images/yellow.png" position="320,560" size="160,2" alphatest="on" />
 			<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/Blindscan/images/blue.png" position="480,560" size="160,2" alphatest="on" />
-			<widget name="red" position="0,530" zPosition="2" size="160,20" font="Regular;18" halign="center" valign="center" backgroundColor="background" foregroundColor="white" transparent="1" />
-			<widget name="green" position="160,530" zPosition="2" size="160,20" font="Regular;18" halign="center" valign="center" backgroundColor="background" foregroundColor="white" transparent="1" />
-			<widget name="yellow" position="320,530" zPosition="2" size="160,20" font="Regular;18" halign="center" valign="center" backgroundColor="background" foregroundColor="white" transparent="1" />
-			<widget name="blue" position="480,530" zPosition="2" size="160,20" font="Regular;18" halign="center" valign="center" backgroundColor="background" foregroundColor="white" transparent="1" />
+			<widget name="key_red" position="0,530" zPosition="2" size="160,20" font="Regular;18" halign="center" valign="center" backgroundColor="background" foregroundColor="white" transparent="1" />
+			<widget name="key_green" position="160,530" zPosition="2" size="160,20" font="Regular;18" halign="center" valign="center" backgroundColor="background" foregroundColor="white" transparent="1" />
+			<widget name="key_yellow" position="320,530" zPosition="2" size="160,20" font="Regular;18" halign="center" valign="center" backgroundColor="background" foregroundColor="white" transparent="1" />
+			<widget name="key_blue" position="480,530" zPosition="2" size="160,20" font="Regular;18" halign="center" valign="center" backgroundColor="background" foregroundColor="white" transparent="1" />
 			<widget name="introduction" position="0,500" size="640,20" font="Regular;18" foregroundColor="green" halign="center" />
 		</screen>
 		"""
@@ -119,7 +119,7 @@ class Blindscan(ConfigListScreen, Screen):
 		Screen.setTitle(self, _(self.setup_title))
 		self.skinName = "Blindscan"
 		self.session.postScanService = self.session.nav.getCurrentlyPlayingServiceOrGroup()
-		self.onChangedEntry = [ ]
+		self.onChangedEntry = []
 		self["description"] = Label("")
 		self["rotorstatus"] = Label("")
 		self.getCurrentTuner = None
@@ -164,14 +164,14 @@ class Blindscan(ConfigListScreen, Screen):
 				"ok": self.keyGo,
 				"cancel": self.keyCancel,
 			}, -2)
-			self["red"] = Label(_("Exit"))
-			self["yellow"] = Label("")
-			self["green"] = Label(_("Start scan"))
-			self["blue"] = Label("")
+			self["key_red"] = self["red"] = Label(_("Exit"))
+			self["key_green"] = self["green"] = Label(_("Start scan"))
+			self["key_yellow"] = self["yellow"] = Label("")
+			self["key_blue"] = self["blue"] = Label("")
 			self["introduction"] = Label("")
 			self.createSetup(True)
 			self.keyBlue()
-		else :
+		else:
 			self["actions"] = ActionMap(["ColorActions", "SetupActions", 'DirectionActions'],
 			{
 				"red": self.keyCancel,
@@ -179,13 +179,12 @@ class Blindscan(ConfigListScreen, Screen):
 				"yellow": self.keyNone,
 				"blue": self.keyNone,
 				"ok": self.keyNone,
-
 				"cancel": self.keyCancel,
 			}, -2)
-			self["red"] = Label(_("Exit"))
-			self["yellow"] = Label("")
-			self["green"] = Label("")
-			self["blue"] = Label("")
+			self["key_red"] = self["red"] = Label(_("Exit"))
+			self["key_green"] = self["green"] = Label("")
+			self["key_yellow"] = self["yellow"] = Label("")
+			self["key_blue"] = self["blue"] = Label("")
 			self["introduction"] = Label(_("Please setup your tuner configuration."))
 
 		self.i2c_mapping_table = {}
