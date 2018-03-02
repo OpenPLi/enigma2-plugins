@@ -15,7 +15,7 @@ from enigma import eServiceReference
 from . import _, config, iteritems, plugin
 from plugin import autotimer, AUTOTIMER_VERSION
 
-API_VERSION = "1.5"
+API_VERSION = "1.6"
 
 class AutoTimerBaseResource(resource.Resource):
 	def returnResult(self, req, state, statetext):
@@ -168,7 +168,7 @@ class AutoTimerTestBackgroundThread(AutoTimerBackgroundThread):
 			self.id = int(id[0])
 		else:
 			self.id = None
-		
+
 		try: autotimer.parseEPG(simulateOnly=True, uniqueId=self.id, callback=self.intermediateWrite)
 		except Exception as e:
 			def finishRequest():
@@ -197,7 +197,7 @@ class AutoTimerTestBackgroundThread(AutoTimerBackgroundThread):
 				'</e2simulatedtimer>\n'
 			))
 
-		if self.id:
+		if skipped:
 			for (name, begin, end, serviceref, autotimername, message) in skipped:
 				ref = ServiceReference(str(serviceref))
 				extend((
@@ -228,12 +228,15 @@ class AutoTimerListAutoTimerResource(AutoTimerBaseResource):
 			autotimer.readXml()
 		except Exception as e:
 			return self.returnResult(req, False, _("Couldn't load config file!") + '\n' + str(e))
-
+		webif = True
+		p = req.args.get('webif')
+		if p:
+			webif = not(p[0] == "false")
 		# show xml
 		req.setResponseCode(http.OK)
 		req.setHeader('Content-type', 'application/xhtml+xml')
 		req.setHeader('charset', 'UTF-8')
-		return ''.join(autotimer.getXml())
+		return ''.join(autotimer.getXml(webif))
 
 class AutoTimerTestResource(AutoTimerBaseResource):
 	def render(self, req):
@@ -245,9 +248,41 @@ class AutoTimerRemoveAutoTimerResource(AutoTimerBaseResource):
 		id = req.args.get("id")
 		if id:
 			autotimer.remove(int(id[0]))
+			if config.plugins.autotimer.always_write_config.value:
+				autotimer.writeXml()
 			return self.returnResult(req, True, _("AutoTimer was removed"))
 		else:
 			return self.returnResult(req, False, _("missing parameter \"id\""))
+
+class AutoTimerAddXMLAutoTimerResource(AutoTimerBaseResource):
+	#def render_POST(self, req):
+	def render(self, req):
+		req.setResponseCode(http.OK)
+		req.setHeader('Content-type', 'application/xhtml+xml;')
+		req.setHeader('charset', 'UTF-8')
+		xml = req.args.get("xml")
+		if xml:
+			autotimer.readXmlTimer(xml[0])
+			if config.plugins.autotimer.always_write_config.value:
+				autotimer.writeXml()
+			return self.returnResult(req, True, _("AutoTimer was added successfully"))
+		else:
+			return self.returnResult(req, False, _("missing parameter \"xml\""))
+
+class AutoTimerUploadXMLConfigurationAutoTimerResource(AutoTimerBaseResource):
+	#def render_POST(self, req):
+	def render(self, req):
+		req.setResponseCode(http.OK)
+		req.setHeader('Content-type', 'application/xhtml+xml;')
+		req.setHeader('charset', 'UTF-8')
+		xml = req.args.get("xml")
+		if xml:
+			autotimer.readXml(xml_string=xml[0])
+			if config.plugins.autotimer.always_write_config.value:
+				autotimer.writeXml()
+			return self.returnResult(req, True, _("AutoTimers were changed successfully"))
+		else:
+			return self.returnResult(req, False, _("Not found xml config file!"))
 
 class AutoTimerAddOrEditAutoTimerResource(AutoTimerBaseResource):
 	# TODO: recheck if we can modify regular config parser to work on this

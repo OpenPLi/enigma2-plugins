@@ -223,6 +223,7 @@ class AutoTimerOverview(Screen, HelpableScreen):
 		cur = self["entries"].getCurrent()
 		if answer:
 			if (answer[1] != "no") and cur:
+				self.changed = True
 				self.autotimer.remove(cur.id)
 				self.refresh()
 				if (answer[1] == "yes_delete"):
@@ -250,20 +251,16 @@ class AutoTimerOverview(Screen, HelpableScreen):
 
 	def cancel(self):
 		if self.changed:
-			self.session.openWithCallback(
-				self.cancelConfirm,
-				MessageBox,
-				_("Really close without saving settings?")
-			)
+			self.session.openWithCallback(self.cancelConfirm, ChoiceBox, title=_("Really close without saving settings?"), list = [(_("Close without saving"), "close"), (_("Close and save"), "close_save")])
 		else:
 			self.close(None)
 
 	def cancelConfirm(self, ret):
+		ret = ret and ret[1]
 		if ret:
-			# Invalidate config mtime to force re-read on next run
 			self.autotimer.configMtime = -1
-
-			# Close and indicated that we canceled by returning None
+			if ret == 'close_save':
+				self.autotimer.writeXml()
 			self.close(None)
 
 	def menu(self):
@@ -371,6 +368,4 @@ class AutoTimerOverview(Screen, HelpableScreen):
 					)
 
 	def save(self):
-		# Just close here, saving will be done by cb
 		self.close(self.session)
-

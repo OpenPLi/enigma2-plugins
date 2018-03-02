@@ -67,6 +67,24 @@ except ImportError as ie:
 else:
 	hasSeriesPlugin = True
 
+def importerCallback(ret):
+	if ret:
+		ret, session = ret
+
+		session.openWithCallback(
+			editorCallback,
+			AutoTimerEditor,
+			ret
+		)
+
+def editorCallback(ret):
+	if ret:
+		from plugin import autotimer
+		autotimer.add(ret)
+
+		# Save modified xml
+		if config.plugins.autotimer.always_write_config.value:
+			autotimer.writeXml()
 
 class SimpleBouquetSelection(SimpleChannelSelection):
 	def __init__(self, session, title):
@@ -463,10 +481,14 @@ class AutoTimerEditor(Screen, ConfigListScreen, AutoTimerEditorBase):
 			<ePixmap pixmap="skin_default/div-h.png" position="0,275" zPosition="1" size="565,2" />
 			<widget source="help" render="Label" position="5,280" size="555,113" font="Regular;21" />
 		</screen>"""
-	def __init__(self, session, timer, editingDefaults = False):
+	def __init__(self, session, timer, editingDefaults = False, **kwargs):
 		Screen.__init__(self, session)
 
 		AutoTimerEditorBase.__init__(self, timer, editingDefaults)
+
+		self.partnerbox = False
+		if "partnerbox" in kwargs:
+			self.partnerbox = kwargs["partnerbox"]
 
 		# Summary
 		self.setup_title = _("AutoTimer Editor")
@@ -771,6 +793,16 @@ class AutoTimerEditor(Screen, ConfigListScreen, AutoTimerEditorBase):
 			self.serviceRestriction = ret[0]
 			self.services = ret[1][0]
 			self.bouquets = ret[1][1]
+			if self.partnerbox:
+				idx = 0
+				for service in self.services:
+					serviceref = eServiceReference(service)
+					if serviceref.getPath():
+						serviceref.setPath("")
+						ref_split = serviceref.toString().split(":")
+						ref_split[1] = "0"
+						self.services[idx] = ":".join(ref_split)
+					idx += 1
 			self.renameServiceButton()
 
 	def keyLeft(self):
@@ -1380,7 +1412,7 @@ class AutoTimerServiceEditor(Screen, ConfigListScreen):
 			self.services
 		))
 
-def addAutotimerFromSearchString(session, match):
+def addAutotimerFromSearchString(session, match, importer_Callback = importerCallback):
 	from AutoTimerComponent import preferredAutoTimerComponent
 	from AutoTimerImporter import AutoTimerImporter
 	from plugin import autotimer
@@ -1394,7 +1426,7 @@ def addAutotimerFromSearchString(session, match):
 	newTimer.enabled = True
 
 	session.openWithCallback(
-		importerCallback,
+		importer_Callback,
 		AutoTimerImporter,
 		newTimer,
 		match,		# Proposed Match
@@ -1408,7 +1440,7 @@ def addAutotimerFromSearchString(session, match):
 		[]			# Proposed tags
 	)
 
-def addAutotimerFromEvent(session, evt = None, service = None):
+def addAutotimerFromEvent(session, evt = None, service = None, importer_Callback = importerCallback):
 	from AutoTimerComponent import preferredAutoTimerComponent
 	from AutoTimerImporter import AutoTimerImporter
 	from plugin import autotimer
@@ -1446,7 +1478,7 @@ def addAutotimerFromEvent(session, evt = None, service = None):
 	newTimer.enabled = True
 
 	session.openWithCallback(
-		importerCallback,
+		importer_Callback,
 		AutoTimerImporter,
 		newTimer,
 		match,		# Proposed Match
@@ -1460,7 +1492,7 @@ def addAutotimerFromEvent(session, evt = None, service = None):
 		[]			# Proposed tags
 	)
 
-def addAutotimerFromService(session, service = None):
+def addAutotimerFromService(session, service = None, importer_Callback = importerCallback):
 	from AutoTimerComponent import preferredAutoTimerComponent
 	from AutoTimerImporter import AutoTimerImporter
 	from plugin import autotimer
@@ -1505,7 +1537,7 @@ def addAutotimerFromService(session, service = None):
 	# XXX: we might want to make sure that we actually collected any data because the importer does not do so :-)
 
 	session.openWithCallback(
-		importerCallback,
+		importer_Callback,
 		AutoTimerImporter,
 		newTimer,
 		match,		# Proposed Match
@@ -1518,23 +1550,3 @@ def addAutotimerFromService(session, service = None):
 		path,		# Proposed dirname
 		tags		# Proposed tags
 	)
-
-def importerCallback(ret):
-	if ret:
-		ret, session = ret
-
-		session.openWithCallback(
-			editorCallback,
-			AutoTimerEditor,
-			ret
-		)
-
-def editorCallback(ret):
-	if ret:
-		from plugin import autotimer
-		autotimer.add(ret)
-
-		# Save modified xml
-		if config.plugins.autotimer.always_write_config.value:
-			autotimer.writeXml()
-

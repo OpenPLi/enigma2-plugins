@@ -1,7 +1,7 @@
 from __future__ import print_function
 
 # Plugins Config
-from xml.etree.cElementTree import parse as cet_parse
+from xml.etree.cElementTree import parse as cet_parse, fromstring as cet_fromstring
 import os
 from AutoTimerConfiguration import parseConfig, buildConfig
 from Logger import doLog, startLog, getLog, doDebug
@@ -20,7 +20,7 @@ from Screens import Standby
 from Screens.MessageBox import MessageBox
 
 # Timespan
-from time import localtime, strftime, time, mktime
+from time import localtime, strftime, time, mktime, ctime
 from datetime import timedelta, date
 
 # EPGCache & Event
@@ -57,13 +57,6 @@ CONFLICTINGDOUBLEID = 'AutoTimerConflictingDoubleTimersNotification'
 addNewTimers = []
 
 XML_CONFIG = "/etc/enigma2/autotimer.xml"
-
-def getTimeDiff(timerbegin, timerend, begin, end):
-	if begin <= timerbegin <= end:
-		return end - timerbegin
-	elif timerbegin <= begin <= timerend:
-		return timerend - begin
-	return 0
 
 def timeSimilarityPercent(rtimer, evtBegin, evtEnd, timer=None):
 	if (timer is not None) and (timer.offset is not None):
@@ -160,49 +153,59 @@ class AutoTimer:
 
 # Configuration
 
-	def readXml(self):
-		# Abort if no config found
-		if not os.path.exists(XML_CONFIG):
-			doLog("[AutoTimer] No configuration file present")
-			return
-
-		# Parse if mtime differs from whats saved
-		mtime = os.path.getmtime(XML_CONFIG)
-		if mtime == self.configMtime:
-			doLog("[AutoTimer] No changes in configuration, won't parse")
-			return
-
-		# Save current mtime
-		self.configMtime = mtime
-
-		# Parse Config
-		try:
-			configuration = cet_parse(XML_CONFIG).getroot()
-		except:
+	def readXml(self, **kwargs):
+		if "xml_string" in kwargs:
+			# reset time
+			self.configMtime = -1
+			# Parse Config
 			try:
-				if os_path.exists(XML_CONFIG + "_old"):
-					os_rename(XML_CONFIG + "_old", XML_CONFIG + "_old(1)")
-				os_rename(XML_CONFIG, XML_CONFIG + "_old")
-				doLog("[AutoTimer] autotimer.xml is corrupt rename file to /etc/enigma2/autotimer.xml_old")
+				configuration = cet_fromstring(kwargs["xml_string"])
 			except:
-				pass
-			if Standby.inStandby is None:
-				AddPopup(_("The autotimer file (/etc/enigma2/autotimer.xml) is corrupt and could not be loaded.") + "\n" +_("A new and empty config was created. A backup of the config can be found here (/etc/enigma2/autotimer.xml_old)."), type = MessageBox.TYPE_ERROR, timeout = 0, id = "AutoTimerLoadFailed")
+				doLog("[AutoTimer] fatal error, the xml_string not read")
+				return
+		else:
+			# Abort if no config found
+			if not os.path.exists(XML_CONFIG):
+				doLog("[AutoTimer] No configuration file present")
+				return
 
-			self.timers = []
-			self.defaultTimer = preferredAutoTimerComponent(
-				0,		# Id
-				"",		# Name
-				"",		# Match
-				True	# Enabled
-			)
+			# Parse if mtime differs from whats saved
+			mtime = os.path.getmtime(XML_CONFIG)
+			if mtime == self.configMtime:
+				doLog("[AutoTimer] No changes in configuration, won't parse")
+				return
 
+			# Save current mtime
+			self.configMtime = mtime
+
+			# Parse Config
 			try:
-				self.writeXml()
 				configuration = cet_parse(XML_CONFIG).getroot()
 			except:
-				doLog("[AutoTimer] fatal error, the autotimer.xml cannot create")
-				return
+				try:
+					if os_path.exists(XML_CONFIG + "_old"):
+						os_rename(XML_CONFIG + "_old", XML_CONFIG + "_old(1)")
+					os_rename(XML_CONFIG, XML_CONFIG + "_old")
+					doLog("[AutoTimer] autotimer.xml is corrupt rename file to /etc/enigma2/autotimer.xml_old")
+				except:
+					pass
+				if Standby.inStandby is None:
+					AddPopup(_("The autotimer file (/etc/enigma2/autotimer.xml) is corrupt and could not be loaded.") + "\n" +_("A new and empty config was created. A backup of the config can be found here (/etc/enigma2/autotimer.xml_old)."), type = MessageBox.TYPE_ERROR, timeout = 0, id = "AutoTimerLoadFailed")
+
+				self.timers = []
+				self.defaultTimer = preferredAutoTimerComponent(
+					0,		# Id
+					"",		# Name
+					"",		# Match
+					True	# Enabled
+				)
+
+				try:
+					self.writeXml()
+					configuration = cet_parse(XML_CONFIG).getroot()
+				except:
+					doLog("[AutoTimer] fatal error, the autotimer.xml cannot create")
+					return
 
 		# Empty out timers and reset Ids
 		del self.timers[:]
@@ -217,13 +220,35 @@ class AutoTimer:
 		)
 		self.uniqueTimerId = len(self.timers)
 
-	def getXml(self):
-		return buildConfig(self.defaultTimer, self.timers, webif = True)
+	def getXml(self, webif=True):
+		return buildConfig(self.defaultTimer, self.timers, webif)
 
 	def writeXml(self):
 		file = open(XML_CONFIG, 'w')
 		file.writelines(buildConfig(self.defaultTimer, self.timers))
 		file.close()
+
+	def writeXmlTimer(self, timers):
+		return ''.join(buildConfig(self.defaultTimer, timers))
+
+	def readXmlTimer(self, xml_string):
+		# Parse xml string
+		try:
+			configuration = cet_fromstring(xml_string)
+		except:
+			doLog("[AutoTimer] fatal error, the xml_string not read")
+			return
+		parseConfig(
+			configuration,
+			self.timers,
+			configuration.get("version"),
+			self.uniqueTimerId,
+			self.defaultTimer
+		)
+		self.uniqueTimerId += 1
+
+		# reset time
+		self.configMtime = -1
 
 	def getStatusParseEPGrunning(self):
 		#return self.isParseRunning
@@ -234,7 +259,7 @@ class AutoTimer:
 		self.timers.append(timer)
 
 	def getEnabledTimerList(self):
-		return (x for x in self.timers if x.enabled)
+		return sorted([x for x in self.timers if x.enabled], key=lambda x: x.name)
 
 	def getTimerList(self):
 		return self.timers
@@ -281,7 +306,6 @@ class AutoTimer:
 		modified = 0
 
 		# Workaround to allow search for umlauts if we know the encoding
-		#match = timer.match
 		match = timer.match.replace('\xc2\x86', '').replace('\xc2\x87', '')
 		if timer.encoding != 'UTF-8':
 			try:
@@ -360,7 +384,7 @@ class AutoTimer:
 
 		else:
 			# Search EPG, default to empty list
-			epgmatches = epgcache.search( ('RITBDSE', 2500, typeMap[timer.searchType], match, caseMap[timer.searchCase]) ) or []
+			epgmatches = epgcache.search( ('RITBDSE', 3000, typeMap[timer.searchType], match, caseMap[timer.searchCase]) ) or []
 
 		# Sort list of tuples by begin time 'B'
 		epgmatches.sort(key=itemgetter(3))
@@ -374,7 +398,7 @@ class AutoTimer:
 			startLog()
 
 			# timer destination dir
-			dest = timer.destination
+			dest = timer.destination or config.usage.default_path.value
 
 			evtBegin = begin
 			evtEnd = end = begin + duration
@@ -493,14 +517,19 @@ class AutoTimer:
 			if timer.hasOffset():
 				# Apply custom Offset
 				begin, end = timer.applyOffset(begin, end)
+				offsetBegin = timer.offset[0]
+				offsetEnd = timer.offset[1]
 			else:
 				# Apply E2 Offset
 				begin -= config.recording.margin_before.value * 60
 				end += config.recording.margin_after.value * 60
+				offsetBegin = config.recording.margin_before.value * 60
+				offsetEnd = config.recording.margin_after.value * 60
 
 			# Overwrite endtime if requested
 			if timer.justplay and not timer.setEndtime:
 				end = begin
+				evtEnd = evtBegin
 
 			# Check for existing recordings in directory
 			if timer.avoidDuplicateDescription == 3:
@@ -523,31 +552,21 @@ class AutoTimer:
 			# We first check eit and if user wants us to guess event based on time
 			# we try this as backup. The allowed diff should be configurable though.
 			for rtimer in timerdict.get(serviceref, ()):
+				changed = (evtBegin - offsetBegin != rtimer.begin) or (evtEnd + offsetEnd != rtimer.end) or (shortdesc != rtimer.description)
 				if rtimer.eit == eit:
 					oldExists = True
 					doLog("[AutoTimer] We found a timer based on eit")
-					newEntry = rtimer
-					oldEntry = rtimer
-					break
-				elif config.plugins.autotimer.try_guessing.value:
-					if timer.hasOffset():
-						# Remove custom Offset
-						rbegin = rtimer.begin + timer.offset[0]
-						rend = rtimer.end - timer.offset[1]
-					else:
-						# Remove E2 Offset
-						rbegin = rtimer.begin + config.recording.margin_before.value * 60
-						rend = rtimer.end - config.recording.margin_after.value * 60
-					# As alternative we could also do a epg lookup
-					#revent = epgcache.lookupEventId(rtimer.service_ref.ref, rtimer.eit)
-					#rbegin = revent.getBeginTime() or 0
-					#rduration = revent.getDuration() or 0
-					#rend = rbegin + rduration or 0
-					if getTimeDiff(rbegin, rend, evtBegin, evtEnd) > ((duration/10)*8) or timeSimilarityPercent(rtimer, evtBegin, evtEnd, timer) > 80:
-						oldExists = True
-						doLog("[AutoTimer] We found a timer based on time guessing")
+					if changed:
 						newEntry = rtimer
 						oldEntry = rtimer
+					break
+				elif config.plugins.autotimer.try_guessing.value:
+					if timeSimilarityPercent(rtimer, evtBegin, evtEnd, timer) > 80:
+						oldExists = True
+						doLog("[AutoTimer] We found a timer based on time guessing")
+						if changed:
+							newEntry = rtimer
+							oldEntry = rtimer
 						break
 				if timer.avoidDuplicateDescription >= 1 and not rtimer.disabled:
 						if self.checkDuplicates(timer, name, rtimer.name, shortdesc, rtimer.description, extdesc, rtimer.extdesc):
@@ -591,7 +610,6 @@ class AutoTimer:
 				if config.plugins.autotimer.refresh.value == "none" or newEntry.repeated:
 					doLog("[AutoTimer] Won't modify existing timer because either no modification allowed or repeated timer")
 					continue
-
 				if "autotimer" in newEntry.flags:
 					msg = "[AutoTimer] AutoTimer %s modified this automatically generated timer." % (timer.name)
 					doLog(msg)
@@ -605,12 +623,14 @@ class AutoTimer:
 					doLog(msg)
 					newEntry.log(501, msg)
 
+				changed = newEntry.begin != begin or newEntry.end != end or newEntry.name != name
 				if allow_modify:
 					if self.modifyTimer(newEntry, name, shortdesc, begin, end, serviceref, eit, base_timer=timer):
 						msg = "[AutoTimer] AutoTimer modified timer: %s ." % (newEntry.name)
 						doLog(msg)
 						newEntry.log(501, msg)
-						modified += 1
+						if changed:
+							modified += 1
 					else:
 						msg = "[AutoTimer] AutoTimer modification not allowed for timer %s because conflicts or double timer." % (newEntry.name)
 						doLog(msg)
@@ -629,6 +649,9 @@ class AutoTimer:
 				msg = "[AutoTimer] Try to add new timer based on AutoTimer %s." % (timer.name)
 				doLog(msg)
 				newEntry.log(500, msg)
+				msg = "[AutoTimer] Timer start on: %s" % ctime(begin)
+				doLog(msg)
+				newEntry.log(509, msg)
 
 				# Mark this entry as AutoTimer
 				newEntry.flags.add("autotimer")

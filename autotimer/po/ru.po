@@ -1170,3 +1170,18 @@ msgstr " (если сервисы включены, букеты будут иг
 
 msgid "favorites description match"
 msgstr "описание совпадения в фаворитах"
+
+msgid "AutoTimers were changed successfully"
+msgstr "Автотаймеры были успешно изменены"
+
+msgid "missing parameter \"xml\""
+msgstr "отсутствует параметр \"xml\""
+
+msgid "Not found xml config file!"
+msgstr "Не найден xml конфиг файл!"
+
+msgid "Close without saving"
+msgstr "Закрыть без сохранения"
+
+msgid "Close and save"
+msgstr "Закрыть и сохранить"

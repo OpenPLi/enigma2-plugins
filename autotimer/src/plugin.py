@@ -32,9 +32,8 @@ from AutoTimer import AutoTimer
 autotimer = AutoTimer()
 autopoller = None
 
-AUTOTIMER_VERSION = "4.1.7"
+AUTOTIMER_VERSION = "4.3"
 
-#pragma mark - Help
 try:
 	from Plugins.SystemPlugins.MPHelp import registerHelp, XMLHelpReader
 	from Tools.Directories import resolveFilename, SCOPE_PLUGINS
@@ -43,7 +42,6 @@ try:
 except Exception as e:
 	doLog("[AutoTimer] Unable to initialize MPHelp:", e,"- Help not available!")
 	autotimerHelp = None
-#pragma mark -
 
 def isOriginalWebifInstalled():
 	try:
@@ -117,7 +115,8 @@ def sessionstart(reason, **kwargs):
 				from AutoTimerResource import AutoTimerDoParseResource, \
 					AutoTimerListAutoTimerResource, AutoTimerAddOrEditAutoTimerResource, \
 					AutoTimerRemoveAutoTimerResource, AutoTimerChangeSettingsResource, \
-					AutoTimerSettingsResource, AutoTimerSimulateResource, AutoTimerTestResource, API_VERSION
+					AutoTimerSettingsResource, AutoTimerSimulateResource, AutoTimerTestResource, \
+					AutoTimerUploadXMLConfigurationAutoTimerResource, AutoTimerAddXMLAutoTimerResource, API_VERSION
 			except ImportError as ie:
 				pass
 			else:
@@ -132,6 +131,8 @@ def sessionstart(reason, **kwargs):
 				root = AutoTimerListAutoTimerResource()
 				root.putChild('parse', AutoTimerDoParseResource())
 				root.putChild('remove', AutoTimerRemoveAutoTimerResource())
+				root.putChild('upload_xmlconfiguration', AutoTimerUploadXMLConfigurationAutoTimerResource())
+				root.putChild('add_xmltimer', AutoTimerAddXMLAutoTimerResource())
 				root.putChild('edit', AutoTimerAddOrEditAutoTimerResource())
 				root.putChild('get', AutoTimerSettingsResource())
 				root.putChild('set', AutoTimerChangeSettingsResource())
@@ -154,13 +155,16 @@ def sessionstart(reason, **kwargs):
 					from AutoTimerResource import AutoTimerDoParseResource, \
 						AutoTimerListAutoTimerResource, AutoTimerAddOrEditAutoTimerResource, \
 						AutoTimerRemoveAutoTimerResource, AutoTimerChangeSettingsResource, \
-						AutoTimerSettingsResource, AutoTimerSimulateResource, AutoTimerTestResource, API_VERSION
+						AutoTimerSettingsResource, AutoTimerSimulateResource, AutoTimerTestResource, \
+						AutoTimerUploadXMLConfigurationAutoTimerResource, AutoTimerAddXMLAutoTimerResource, API_VERSION
 				except ImportError as ie:
 					pass
 				else:
 					root = AutoTimerListAutoTimerResource()
 					root.putChild('parse', AutoTimerDoParseResource())
 					root.putChild('remove', AutoTimerRemoveAutoTimerResource())
+					root.putChild('upload_xmlconfiguration', AutoTimerUploadXMLConfigurationAutoTimerResource())
+					root.putChild('add_xmltimer', AutoTimerAddXMLAutoTimerResource())
 					root.putChild('edit', AutoTimerAddOrEditAutoTimerResource())
 					root.putChild('get', AutoTimerSettingsResource())
 					root.putChild('set', AutoTimerChangeSettingsResource())
