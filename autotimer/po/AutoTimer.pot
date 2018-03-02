@@ -1479,3 +1479,18 @@ msgstr ""
 
 msgid " (if services are enabled, bouquets are ignored)."
 msgstr ""
+
+msgid "AutoTimers were changed successfully"
+msgstr ""
+
+msgid "missing parameter \"xml\""
+msgstr ""
+
+msgid "Not found xml config file!"
+msgstr ""
+
+msgid "Close without saving"
+msgstr ""
+
+msgid "Close and save"
+msgstr ""
