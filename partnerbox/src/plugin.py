@@ -67,6 +67,13 @@ import skin
 # for localized messages
 from . import _
 
+# AutoTimer installed?
+try:
+	from Plugins.Extensions.AutoTimer.plugin import autotimer
+	autoTimerAvailable = True
+except ImportError:
+	autoTimerAvailable = False
+
 config.plugins.Partnerbox = ConfigSubsection()
 config.plugins.Partnerbox.showremotetvinextensionsmenu= ConfigYesNo(default = True)
 config.plugins.Partnerbox.showcurrentstreaminextensionsmenu= ConfigYesNo(default = True)
@@ -90,7 +97,7 @@ def showPartnerboxIconsinEPGList():
 	return config.plugins.Partnerbox.enablepartnerboxepglist.value
 
 def showPartnerboxZapRepIconsinEPGList():
-	# for epgsearch_mod
+	# for epgsearch
 	return True
 
 def partnerboxpluginStart(session, what):
@@ -127,20 +134,36 @@ def autostart_Partnerbox_EPGList(reason, **kwargs):
 def setup(session,**kwargs):
 	session.open(PartnerboxSetup)
 
-def currentremotetv(session,**kwargs):
+def currentremotetv(session, **kwargs):
 	partnerboxpluginStart(session, 0)
 
-def remotetvplayer(session,**kwargs):
+def remotetvplayer(session, **kwargs):
 	partnerboxpluginStart(session, 1)
 
 def main(session,**kwargs):
 	partnerboxpluginStart(session, 2)
 
 def eventinfo(session, servicelist, eventName="", **kwargs):
-		partnerboxpluginStart(session, 2)
+	partnerboxpluginStart(session, 2)
 
 def eventinfoContextMenu(session, eventName="", **kwargs):
 	partnerboxpluginStart(session, 2)
+
+def partnerboxAutoTimerEventInfo(session, servicelist, eventName="", **kwargs):
+	from PartnerboxAutoTimer import PartnerboxAutoTimerEPGSelection
+	ref = session.nav.getCurrentlyPlayingServiceReference()
+	if ref:
+		session.open(PartnerboxAutoTimerEPGSelection, ref)
+
+def openPartnerboxAutoTimersOverview(session, servicelist, eventName="", **kwargs):
+	from PartnerboxAutoTimer import PartnerboxAutoTimer
+	PartnerboxAutoTimer.instance and PartnerboxAutoTimer.instance.openPartnerboxAutoTimerOverview()
+
+def autostart_PartnerboxAutoTimer(reason, **kwargs):
+	if "session" in kwargs:
+		session = kwargs["session"]
+		from PartnerboxAutoTimer import PartnerboxAutoTimer
+		PartnerboxAutoTimer(session)
 
 def Plugins(**kwargs):
 	list = [PluginDescriptor(where = PluginDescriptor.WHERE_SESSIONSTART, fnc = autostart_ChannelContextMenu)]
@@ -159,6 +182,10 @@ def Plugins(**kwargs):
 		list.append(PluginDescriptor(name= _("Partnerbox: RemoteTV Player"), description=_("Stream TV from your Partnerbox"), where = [PluginDescriptor.WHERE_EXTENSIONSMENU], fnc=remotetvplayer))
 	if config.plugins.Partnerbox.showcurrentstreaminextensionsmenu.value:
 		list.append(PluginDescriptor(name= _("Stream current Service from Partnerbox"), description=_("Stream current service from partnerbox"), where = [PluginDescriptor.WHERE_EXTENSIONSMENU], fnc=currentremotetv))
+	if autoTimerAvailable:
+		list.append(PluginDescriptor(where = PluginDescriptor.WHERE_SESSIONSTART, fnc = autostart_PartnerboxAutoTimer))
+		list.append(PluginDescriptor(name= _("Partnerbox: AutoTimer"), description=_("Manage autotimer for other dreamboxes in network"), where = [PluginDescriptor.WHERE_EVENTINFO], fnc=openPartnerboxAutoTimersOverview))
+		list.append(PluginDescriptor(name = _("add AutoTimer for Partnerbox..."), where = [PluginDescriptor.WHERE_EVENTINFO], fnc=partnerboxAutoTimerEventInfo, needsRestart=False))
 	return list
 
 def FillLocationList(xmlstring):
@@ -200,7 +227,7 @@ class CurrentRemoteTV(Screen):
 		self.onLayoutFinish.append(self.startRun)
 
 	def startRun(self):
-		sendPartnerBoxWebCommand(self.url, None,10, self.username, self.password).addCallback(self.Callback).addErrback(self.Error)
+		sendPartnerBoxWebCommand(self.url, None, 10, self.username, self.password).addCallback(self.Callback).addErrback(self.Error)
 
 	def Callback(self, xmlstring):
 		url = ""
@@ -526,7 +553,7 @@ class RemoteTimerBouquetList(Screen):
 		pass
 
 	def startRun(self):
-		if self.useinternal == 1 :
+		if self.useinternal == 1:
 			BouquetList = []
 			a = Services(self.session)
 			ref = eServiceReference( service_types_tv + ' FROM BOUQUET "bouquets.tv" ORDER BY bouquet')
@@ -1988,12 +2015,12 @@ class RemoteTimerEventView(Screen):
 			<widget name="key_yellow" position="280,0" zPosition="1" size="140,40" font="Regular;20" halign="center" valign="center" backgroundColor="#a08500" transparent="1" />
 			<widget name="key_blue" position="420,0" zPosition="1" size="140,40" font="Regular;20" halign="center" valign="center" backgroundColor="#18188b" transparent="1" />
 			<widget name="epg_description" position="10,50" size="540,330" font="Regular;22" />
-			<widget name="datetime" position="10,395" size="130,25" font="Regular;22" />
-			<widget name="duration" position="140,395" size="100,25" font="Regular;22" />
-			<widget name="channel" position="240,395" size="305,25" font="Regular;22" halign="right" />
+			<widget name="datetime" position="10,395" size="130,25" font="Regular;20" />
+			<widget name="duration" position="140,395" size="100,25" font="Regular;20" />
+			<widget name="channel" position="240,395" size="305,25" font="Regular;20" halign="right" />
 		</screen>"""
 
-	def __init__(self, session, E2Timerlist, epgdata , partnerboxentry):
+	def __init__(self, session, E2Timerlist, epgdata, partnerboxentry):
 		self.session = session
 		Screen.__init__(self, session)
 		self.setTitle(_("Eventview"))
@@ -2055,7 +2082,7 @@ class RemoteTimerEventView(Screen):
 		endtime = int(self.epgdata.eventstart + self.epgdata.eventduration)
 		t = localtime(self.epgdata.eventstart)
 		datetime = ("%02d.%02d, %02d:%02d"%(t[2],t[1],t[3],t[4]))
-		duration = (" (%d " + _("mins")+")") % ((self.epgdata.eventduration ) / 60)
+		duration = (" (%d " + _("mins")+")") % ((self.epgdata.eventduration) / 60)
 		self["datetime"].setText(datetime)
 		self["duration"].setText(duration)
 		self["key_red"].setText("")

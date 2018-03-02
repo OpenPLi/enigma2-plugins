@@ -17,15 +17,15 @@
 #  GNU General Public License for more details.
 #
 
+from enigma import eServiceReference
 import urllib
 from time import localtime
 from timer import TimerEntry
 from twisted.internet import reactor
 from twisted.web import client
-from twisted.web.client import HTTPClientFactory
+from twisted.web.client import HTTPClientFactory, getPage
 from base64 import encodestring
 import xml.etree.cElementTree
-#import urlparse
 from urllib import unquote
 
 CurrentIP = None
@@ -325,9 +325,10 @@ class myHTTPClientFactory(HTTPClientFactory):
 		headers=headers, agent=agent, timeout=timeout, cookies=cookies,followRedirect=followRedirect)
 
 def url_parse(url, defaultPort=None):
-	parsed = urlparse.urlparse(url)
+	from urlparse import urlparse, urlunparse
+	parsed = urlparse(url)
 	scheme = parsed[0]
-	path = urlparse.urlunparse(('', '') + parsed[2:])
+	path = urlunparse(('', '') + parsed[2:])
 	if defaultPort is None:
 		if scheme == 'https':
 			defaultPort = 443
@@ -339,24 +340,55 @@ def url_parse(url, defaultPort=None):
 		port = int(port)
 	return scheme, host, port, path
 
-def sendPartnerBoxWebCommand(url, contextFactory=None, timeout=60, username = "root", password = "", *args, **kwargs):
-	#scheme, host, port, path = client._parse(url)
-	#scheme, host, port, path = url_parse(url)
-	from urlparse import urlparse
-	parsed = urlparse(url)
-	scheme = parsed.scheme
-	host = parsed.hostname
-	port = parsed.port or (443 if scheme == 'https' else 80)
-	basicAuth = encodestring(("%s:%s")%(username,password))
-	authHeader = "Basic " + basicAuth.strip()
-	AuthHeaders = {"Authorization": authHeader}
-	if kwargs.has_key("headers"):
-		kwargs["headers"].update(AuthHeaders)
+def sendPartnerBoxWebCommand(url, contextFactory=None, timeout=60, username = "root", password = "", parameter=None, *args, **kwargs):
+	if parameter:
+		scheme, host, port, path = url_parse(url)
+		run = runCommand(path, username, password, host, port, "0", parameter)
+		def returnResult(result):
+			return result
+		run.addCallback(returnResult)
+		def returnError(error):
+			print "[Partnerbox] - Error in sendPartnerBoxWebCommand", error.getErrorMessage()
+			return error
+		run.addErrback(returnError)
+		return run
 	else:
-		kwargs["headers"] = AuthHeaders
-	factory = myHTTPClientFactory(url, *args, **kwargs)
-	reactor.connectTCP(host, port, factory, timeout=timeout)
-	return factory.deferred
+		from urlparse import urlparse
+		parsed = urlparse(url)
+		scheme = parsed.scheme
+		host = parsed.hostname
+		port = parsed.port or (443 if scheme == 'https' else 80)
+		basicAuth = encodestring(("%s:%s")%(username,password))
+		authHeader = "Basic " + basicAuth.strip()
+		AuthHeaders = {"Authorization": authHeader}
+		if kwargs.has_key("headers"):
+			kwargs["headers"].update(AuthHeaders)
+		else:
+			kwargs["headers"] = AuthHeaders
+		factory = myHTTPClientFactory(url, *args, **kwargs)
+		reactor.connectTCP(host, port, factory, timeout=timeout)
+		return factory.deferred
+
+def runCommand(path, username="", password="", host="", port=80, sessionid ="0", parameter=None):
+	command = "http://%s:%d%s" %(host, port, path)
+	basicAuth = encodestring(("%s:%s")%(username, password))
+	authHeader = "Basic " + basicAuth.strip()
+	headers = {
+		"Authorization": authHeader,
+		'content-type':'application/x-www-form-urlencoded',
+	}
+	postdata = {"user":username, "password":password, "sessionid":sessionid}
+	if parameter:
+		postdata.update(parameter)
+	send = getPage('%s' %(command), method='POST', headers=headers, postdata=urllib.urlencode(postdata))
+	def readData(data):
+		return data
+	send.addCallback(readData)
+	def printError(error):
+		print "[Partnerbox] - Error in runCommand", error
+		return error
+	send.addErrback(printError)
+	return send
 
 class PlaylistEntry:
 
@@ -420,10 +452,14 @@ def SetPartnerboxTimerlist(partnerboxentry = None, sreference = None):
 	except: pass
 
 def getServiceRef(sreference):
-		if not sreference:
-			return ""
-		serviceref = sreference
-		hindex = sreference.find("http")
-		if hindex > 0: # partnerbox service ?
-			serviceref =  serviceref[:hindex]
-		return serviceref
+	if not sreference:
+		return ""
+	#serviceref = sreference
+	#hindex = sreference.find("http")
+	#if hindex > 0: # partnerbox service ?
+	#	serviceref =  serviceref[:hindex]
+	#return serviceref
+	service = eServiceReference(sreference)
+	service.setPath("")
+	service.setName("")
+	return service.toString()
