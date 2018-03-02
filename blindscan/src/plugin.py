@@ -794,7 +794,7 @@ class Blindscan(ConfigListScreen, Screen):
 				self.session.open(MessageBox, _("Not found blind scan utility '%s'!") % tools, MessageBox.TYPE_ERROR)
 				return
 		elif BOX_MODEL.startswith('vu'):
-			if BOX_NAME == "uno" or BOX_NAME == "duo2" or BOX_NAME == "solo2" or BOX_NAME == "solose" or BOX_NAME == "ultimo" or BOX_NAME == "solo4k" or BOX_NAME == "ultimo4k":
+			if BOX_NAME in ("uno", "duo2", "solo2", "solose", "ultimo", "solo4k", "ultimo4k", "zero4k"):
 				tools = "/usr/bin/%s" % self.binName
 				if os.path.exists(tools):
 					try:
