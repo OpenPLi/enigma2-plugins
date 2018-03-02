@@ -19,35 +19,39 @@
 
 from Components.Sources.Source import Source
 from Components.Sources.ServiceList import ServiceList
-from Screens.ChannelSelection import service_types_tv
 from enigma import eServiceReference, eEPGCache
+import re
 
+def stringReplace(text):
+	illegal_xml_chars_RE = re.compile(u'[\x00-\x08\x0b\x0c\x0e-\x1F\uD800-\uDFFF\uFFFE\uFFFF]')
+	text = illegal_xml_chars_RE.sub('', text)
+	return text.replace('&amp;quot;', '"')
 
 class E2EPGListAllData:
 	def __init__(self, servicereference = "", servicename = "", eventid = 0, eventstart = 0, eventduration = 0, eventtitle = "", eventdescription = "", eventdescriptionextended = ""):
 		self.servicereference = servicereference
-		self.servicename = servicename
+		self.servicename = stringReplace(servicename)
 		self.eventid = eventid
 		self.eventstart = eventstart
 		self.eventduration = eventduration
-		self.eventtitle = eventtitle
-		self.eventdescription = eventdescription
-		self.eventdescriptionextended = eventdescriptionextended
+		self.eventtitle = stringReplace(eventtitle)
+		self.eventdescription = stringReplace(eventdescription)
+		self.eventdescriptionextended = stringReplace(eventdescriptionextended)
 
 class E2ServiceList:
 	def __init__(self, servicereference = "", servicename = ""):
 		self.servicereference = servicereference
-		self.servicename = servicename
+		self.servicename = stringReplace(servicename)
 
-class Services( Source ):
+class Services(Source):
 	def __init__(self, session):
 		Source.__init__(self)
 		self.session = session
 		self.servicelist = {}
 		self.epgcache = eEPGCache.getInstance()
-	
+
 	def buildList(self, ref, epg):
-		self.servicelist = ServiceList(ref, command_func = self.getServiceList, validate_commands=False)
+		self.servicelist = ServiceList(ref, command_func=self.getServiceList, validate_commands=False)
 		list = self.servicelist.getServicesAsList()
 		E2List = [] 
 		for index in range(len(list)): 
@@ -67,15 +71,15 @@ class Services( Source ):
 					if events[0][0] is not None:
 						eventid =  events[0][0]
 					if events[0][1] is not None:
-						eventstart =  events[0][1]
+						eventstart = events[0][1]
 					if events[0][2] is not None:
-						eventduration =  events[0][2]
+						eventduration = events[0][2]
 					if events[0][3] is not None:
 						eventtitle = events[0][3]
 					if events[0][4] is not None:
-						eventdescription= events[0][4]
+						eventdescription = events[0][4]
 					if events[0][5] is not None:
-						eventdescriptionextended= events[0][5]
+						eventdescriptionextended = events[0][5]
 				E2List.append(E2EPGListAllData(servicereference = servicereference, servicename = servicename, eventstart = eventstart, eventduration = eventduration, eventtitle = eventtitle, eventid = eventid, eventdescription= eventdescription, eventdescriptionextended = eventdescriptionextended))
 			else:
 					E2List.append(E2ServiceList(servicereference = item[0], servicename = item[1]))
@@ -83,7 +87,7 @@ class Services( Source ):
 
 	def buildEPGList(self, ref):
 		E2List = [] 
-		events = self.epgcache.lookupEvent(['IBDTSERN',(ref,0,-1,-1)]);
+		events = self.epgcache.lookupEvent(['IBDTSERN', (ref, 0, -1, -1)])
 		if events:
 			for item in events:
 				servicereference = ""
@@ -113,6 +117,6 @@ class Services( Source ):
 				if eventstart != 0:
 					E2List.append(E2EPGListAllData(servicereference = servicereference, servicename = servicename, eventstart = eventstart, eventduration = eventduration, eventtitle = eventtitle, eventid = eventid, eventdescription= eventdescription, eventdescriptionextended = eventdescriptionextended))
 		return E2List
-	
+
 	def getServiceList(self, ref):
 		self.servicelist.root = ref

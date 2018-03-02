@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Enigma 2 TMBD Plugin\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-09-24 16:16+0200\n"
-"PO-Revision-Date: 2016-11-21 20:15+0200\n"
+"PO-Revision-Date: 2018-03-01 22:35+0200\n"
 "Last-Translator: Dimitrij <Dima-73@inbox.lv>\n"
 "Language-Team: Dima-73@inbox.lv\n"
 "MIME-Version: 1.0\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2;\n"
 "Language: ru_RU\n"
-"X-Generator: Poedit 1.8.9\n"
+"X-Generator: Poedit 2.0.4\n"
 
 msgid "%d min"
 msgstr "%d мин"
@@ -575,3 +575,37 @@ msgstr "Установить %s как запасной удаленный ре�
 
 msgid "Set as fallback remote receiver"
 msgstr "Установить как запасной удаленный ресивер"
+
+msgid " (Partnerbox %s - Version: %s)"
+msgstr " (Partnerbox %s - Версия: %s)"
+
+msgid "Partnerbox: AutoTimer"
+msgstr "Partnerbox: Автотаймер"
+
+msgid "add AutoTimer for Partnerbox..."
+msgstr "добавить Автотаймер для Partnerbox..."
+
+msgid "add AutoTimer"
+msgstr "доб. Автотаймер"
+
+msgid "Close without saving"
+msgstr "Закрыть без сохранения"
+
+msgid "Close and save"
+msgstr "Закрыть и сохранить"
+
+msgid ""
+"Really close without saving settings?\n"
+"What do you want to do?"
+msgstr ""
+"Действительно закрыть без сохранения настроек?\n"
+"Что Вы хотите сделать?"
+
+msgid "AutoTimer overview"
+msgstr "Автотаймер - обзор"
+
+msgid "Do you really want to delete %s?"
+msgstr "Вы действительно хотите удалить %s?"
+
+msgid "Save"
+msgstr "Сохранить"

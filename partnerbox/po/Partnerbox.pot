@@ -743,3 +743,33 @@ msgstr ""
 
 msgid "Set as fallback remote receiver"
 msgstr ""
+
+msgid " (Partnerbox %s - Version: %s)"
+msgstr ""
+
+msgid "Partnerbox: AutoTimer"
+msgstr ""
+
+msgid "add AutoTimer for Partnerbox..."
+msgstr ""
+
+msgid "add AutoTimer"
+msgstr ""
+
+msgid "Close without saving"
+msgstr ""
+
+msgid "Close and save"
+msgstr ""
+
+msgid "Really close without saving settings?\nWhat do you want to do?"
+msgstr ""
+
+msgid "AutoTimer overview"
+msgstr ""
+
+msgid "Do you really want to delete %s?"
+msgstr ""
+
+msgid "Save"
+msgstr ""
