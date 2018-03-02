@@ -154,21 +154,21 @@ class SystemTimeSetupScreen(Screen, ConfigListScreen):
 		self.cfg_ip = getConfigListEntry(_("NTP server"), self.ST.ip, _("Set the IP address of the preferred NTP server. Default is pool.ntp.org."))
 
 	def createSetup(self):
-		list = [ self.cfg_choiceSystemTime ]
+		cfg_list = [self.cfg_choiceSystemTime]
 		if self.ST.choiceSystemTime.value == "1":
-			list.append(self.cfg_useNTPminutes)
-			list.append(self.cfg_syncDVBtime)
-		list.append(self.cfg_syncNTPcoldstart)
+			cfg_list.append(self.cfg_useNTPminutes)
+			cfg_list.append(self.cfg_syncDVBtime)
+		cfg_list.append(self.cfg_syncNTPcoldstart)
 		if self.ST.syncNTPcoldstart.value:
-			list.append(self.cfg_wifi_delay)
+			cfg_list.append(self.cfg_wifi_delay)
 		if self.ST.choiceSystemTime.value == "1" or self.ST.syncNTPcoldstart.value:
-			list.append(self.cfg_ip)
-		list.append(self.cfg_syncNTPtime)
-		list.append(self.cfg_syncManually)
+			cfg_list.append(self.cfg_ip)
+		cfg_list.append(self.cfg_syncNTPtime)
+		cfg_list.append(self.cfg_syncManually)
 		if fileExists("/proc/stb/fp/rtc"):
-			list.append(self.cfg_useRTCstart)
-		self["config"].list = list
-		self["config"].l.setList(list)
+			cfg_list.append(self.cfg_useRTCstart)
+		self["config"].list = cfg_list
+		self["config"].l.setList(cfg_list)
 
 	def newConfig(self):
 		cur = self["config"].getCurrent()
