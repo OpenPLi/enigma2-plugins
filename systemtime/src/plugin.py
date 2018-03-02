@@ -157,16 +157,16 @@ class SystemTimeSetupScreen(Screen, ConfigListScreen):
 		cfg_list = [self.cfg_choiceSystemTime]
 		if self.ST.choiceSystemTime.value == "1":
 			cfg_list.append(self.cfg_useNTPminutes)
-			cfg_list.append(self.cfg_syncDVBtime)
 		cfg_list.append(self.cfg_syncNTPcoldstart)
 		if self.ST.syncNTPcoldstart.value:
 			cfg_list.append(self.cfg_wifi_delay)
 		if self.ST.choiceSystemTime.value == "1" or self.ST.syncNTPcoldstart.value:
 			cfg_list.append(self.cfg_ip)
-		cfg_list.append(self.cfg_syncNTPtime)
-		cfg_list.append(self.cfg_syncManually)
 		if fileExists("/proc/stb/fp/rtc"):
 			cfg_list.append(self.cfg_useRTCstart)
+		cfg_list.append(self.cfg_syncNTPtime)
+		cfg_list.append(self.cfg_syncDVBtime)
+		cfg_list.append(self.cfg_syncManually)
 		self["config"].list = cfg_list
 		self["config"].l.setList(cfg_list)
 
