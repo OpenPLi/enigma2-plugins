@@ -296,7 +296,8 @@ class SystemTimeSetupScreen(Screen, ConfigListScreen):
 			self.session.open(TryQuitMainloop, 3)
 
 	def keyBlue(self):
-		if self["key_blue"].getText() == _("Select transponder"):
+		idx = self["config"].getCurrent() and self["config"].getCurrent()[1]
+		if idx == self.ST.syncDVBtime:
 			for (dlg,flag) in self.session.dialog_stack:
 				if dlg.__class__.__name__ == "InfoBar":
 					self.servicelist = dlg.servicelist
