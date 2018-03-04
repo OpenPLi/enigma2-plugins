@@ -215,3 +215,6 @@ msgstr ""
 
 msgid "Alternative resolution when native not supported"
 msgstr ""
+
+msgid "FHD 50/60HZ Progressive Mode"
+msgstr ""

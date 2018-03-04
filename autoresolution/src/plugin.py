@@ -31,6 +31,7 @@ port = None
 videoresolution_dictionary = {}
 resolutionlabel = None
 
+
 resolutions = (
 	('sd_i_50', _("SD 25/50HZ Interlace Mode")),
 	('sd_i_60', _("SD 30/60HZ Interlace Mode")),
@@ -46,15 +47,20 @@ resolutions = (
 	('p1080_30', _("Enable 1080p30 Mode")),
 )
 
-have_2160p = config.av.videorate.get("2160p", False)
+have_1080p = config.av.videorate.get("1080p", False)
+if have_1080p:
+	resolutions += (
+		('fhd_p', _("FHD 50/60HZ Progressive Mode")),
+	)
 
+have_2160p = config.av.videorate.get("2160p", False)
 if have_2160p:
 	resolutions += (
 		('uhd_i', _("UHD Interlace Mode")),
 		('uhd_p', _("UHD Progressive Mode")),
 		('p2160_24', _("Enable 2160p24 Mode")),
 		('p2160_25', _("Enable 2160p25 Mode")),
-		('p2160_30', _("Enable 2160p30 Mode")), # Trailing , is NEEDED!
+		('p2160_30', _("Enable 2160p30 Mode")),
 	)
 
 config.plugins.autoresolution = ConfigSubsection()
@@ -277,19 +283,21 @@ class AutoRes(Screen):
 					elif frate in ('50', '60') and prog == 'p':
 						new_mode = 'uhd_p'
 					else:
-						new_mode = 'uhd_i' # 2160i content - senseless ???
+						new_mode = 'uhd_i' # 2160i content
 				elif (height >= 900 or width >= 1600) and frate in ('24', '25', '30') and prog == 'p': # 1080p content
 					new_mode = 'p1080_%s' % frate
-				elif (height > 576 or width > 720) and frate == '24' and prog == 'p': # 720p24 detection
+				elif (576 < height < 900 or 720 < width < 1600) and frate == '24' and prog == 'p': # 720p24 content
 					new_mode = 'p720_24'
 				elif frate in ('24'): # always 1080p24 content
 					new_mode = 'p1080_24'
-				elif (height > 576 or width > 720) and frate == '50' and prog == 'p': # 720p50 detection
+				elif (576 < height < 900 or 720 < width < 1600) and frate == '50' and prog == 'p': # 720p50 content
 					new_mode = 'p720_50'
 				elif (height <= 576) and (width <= 720) and frate in ('25', '50'):
 					new_mode = 'sd_%s_50' % prog
 				elif (height <= 480) and (width <= 720) and frate in ('24', '30', '60'):
 					new_mode = 'sd_%s_60' % prog
+				elif have_1080p and (height >= 900 or width >= 1600) and frate in ('50', '60') and prog == 'p': # 1080p50/60 content
+					new_mode = 'fhd_p'
 				else:
 					new_mode = 'hd_%s' % prog
 
