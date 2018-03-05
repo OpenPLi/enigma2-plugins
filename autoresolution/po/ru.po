@@ -175,3 +175,27 @@ msgstr "Включить режим 720p50"
 
 msgid "Alternative resolution when native not supported"
 msgstr "Альтернативное разрешение, если родное не поддерживается"
+
+msgid "Manual resolution"
+msgstr "Ручное разрешение"
+
+msgid "Manual resolution is not working in Scart/DVI-PC mode!"
+msgstr "Ручное разрешение не работает в Scart/DVI-PC режиме!"
+
+msgid "This resolution is OK?"
+msgstr "Это разрешение в порядке?"
+
+msgid "Please select a resolution..."
+msgstr "Пожалуйста, выберите разрешение..."
+
+msgid "Video: "
+msgstr "Видео: "
+
+msgid "Exit"
+msgstr "Выход"
+
+msgid "Show 'Manual resolution' in extensions menu"
+msgstr "Показать 'Ручное разрешение' в меню дополнений"
+
+msgid "Return back without confirmation after 10 sec."
+msgstr "Возврат назад без подтверждения через 10 сек."
