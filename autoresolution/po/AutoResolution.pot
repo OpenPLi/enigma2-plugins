@@ -218,3 +218,27 @@ msgstr ""
 
 msgid "FHD 50/60HZ Progressive Mode"
 msgstr ""
+
+msgid "Manual resolution"
+msgstr ""
+
+msgid "Manual resolution is not working in Scart/DVI-PC mode!"
+msgstr ""
+
+msgid "This resolution is OK?"
+msgstr ""
+
+msgid "Please select a resolution..."
+msgstr ""
+
+msgid "Video: "
+msgstr ""
+
+msgid "Exit"
+msgstr ""
+
+msgid "Show 'Manual resolution' in extensions menu"
+msgstr ""
+
+msgid "Return back without confirmation after 10 sec."
+msgstr ""

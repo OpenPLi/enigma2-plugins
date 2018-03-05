@@ -1,5 +1,6 @@
 from . import _
 from Screens.Screen import Screen
+from Screens.ChoiceBox import ChoiceBox
 from Screens.Setup import SetupSummary
 from Screens.MessageBox import MessageBox
 from Components.ConfigList import ConfigList, ConfigListScreen
@@ -30,7 +31,7 @@ default = None
 port = None
 videoresolution_dictionary = {}
 resolutionlabel = None
-
+manualResolution = None
 
 resolutions = (
 	('sd_i_50', _("SD 25/50HZ Interlace Mode")),
@@ -82,6 +83,8 @@ config.plugins.autoresolution.ask_apply_mode = ConfigYesNo(default = False)
 config.plugins.autoresolution.auto_30_60 = ConfigYesNo(default = True)
 config.plugins.autoresolution.auto_24_30_alternative = ConfigYesNo(default = True)
 config.plugins.autoresolution.ask_timeout = ConfigSelection(default = "20", choices = [("5", "5 " + _("seconds")), ("10", "10 " + _("seconds")), ("15", "15 " + _("seconds")), ("20", "20 " + _("seconds"))])
+config.plugins.autoresolution.manual_resolution_ext_menu = ConfigYesNo(default = False)
+config.plugins.autoresolution.manual_resolution_ask = ConfigYesNo(default = True)
 
 def setDeinterlacer(mode):
 	try:
@@ -421,7 +424,7 @@ class AutoResSetupMenu(Screen, ConfigListScreen):
 		self.onChangedEntry = [ ]
 		self.list = [ ]
 		ConfigListScreen.__init__(self, self.list, session = session, on_change = self.changedEntry)
-
+		self.prev_manual_resolution_ext_menu = config.plugins.autoresolution.manual_resolution_ext_menu.value
 		self["actions"] = ActionMap(["SetupActions"],
 			{
 				"cancel": self.keyCancel,
@@ -434,7 +437,7 @@ class AutoResSetupMenu(Screen, ConfigListScreen):
 		self.createSetup()
 
 	def createSetup(self):
-		self.list = [ getConfigListEntry(_("Enable Autoresolution"), config.plugins.autoresolution.enable) ]
+		self.list = [getConfigListEntry(_("Enable Autoresolution"), config.plugins.autoresolution.enable)]
 		if config.plugins.autoresolution.enable.value:
 			if usable:
 				self.list.append(getConfigListEntry(_("Mode"), config.plugins.autoresolution.mode))
@@ -465,7 +468,10 @@ class AutoResSetupMenu(Screen, ConfigListScreen):
 					self.list.append(getConfigListEntry(_("Alternative resolution when native not supported"), config.plugins.autoresolution.auto_24_30_alternative))
 			else:
 				self.list.append(getConfigListEntry(_("Autoresolution is not working in Scart/DVI-PC Mode"), ConfigNothing()))
-
+		elif config.av.videoport.value not in ('DVI-PC', 'Scart'):
+				self.list.append(getConfigListEntry(_("Show 'Manual resolution' in extensions menu"), config.plugins.autoresolution.manual_resolution_ext_menu))
+				if config.plugins.autoresolution.manual_resolution_ext_menu.value:
+					self.list.append(getConfigListEntry(_("Return back without confirmation after 10 sec."), config.plugins.autoresolution.ask_apply_mode))
 		self["config"].list = self.list
 		self["config"].setList(self.list)
 
@@ -473,18 +479,20 @@ class AutoResSetupMenu(Screen, ConfigListScreen):
 		for x in self["config"].list:
 			x[1].save()
 		configfile.save()
+		if self.prev_manual_resolution_ext_menu != config.plugins.autoresolution.manual_resolution_ext_menu.value:
+			self.refreshPlugins()
 		self.close()
 
 	def keyLeft(self):
 		ConfigListScreen.keyLeft(self)
 		if self["config"].getCurrent() and len(self["config"].getCurrent()) > 0:
-			if self["config"].getCurrent()[1] in (config.plugins.autoresolution.enable, config.plugins.autoresolution.mode, config.plugins.autoresolution.ask_apply_mode):
+			if self["config"].getCurrent()[1] in (config.plugins.autoresolution.enable, config.plugins.autoresolution.mode, config.plugins.autoresolution.ask_apply_mode,  config.plugins.autoresolution.manual_resolution_ext_menu):
 				self.createSetup()
 
 	def keyRight(self):
 		ConfigListScreen.keyRight(self)
 		if self["config"].getCurrent() and len(self["config"].getCurrent()) > 0:
-			if self["config"].getCurrent()[1] in (config.plugins.autoresolution.enable, config.plugins.autoresolution.mode, config.plugins.autoresolution.ask_apply_mode):
+			if self["config"].getCurrent()[1] in (config.plugins.autoresolution.enable, config.plugins.autoresolution.mode, config.plugins.autoresolution.ask_apply_mode,  config.plugins.autoresolution.manual_resolution_ext_menu):
 				self.createSetup()
 
 	def changedEntry(self):
@@ -501,6 +509,12 @@ class AutoResSetupMenu(Screen, ConfigListScreen):
 
 	def createSummary(self):
 		return SetupSummary
+
+	def refreshPlugins(self):
+		from Components.PluginComponent import plugins
+		from Tools.Directories import SCOPE_PLUGINS, resolveFilename
+		plugins.clearPluginList()
+		plugins.readPluginList(resolveFilename(SCOPE_PLUGINS))
 
 class AutoFrameRate(Screen):
 	def __init__(self, session):
@@ -614,6 +628,101 @@ class AutoFrameRate(Screen):
 			return
  		seekable.seekRelative(pts < 0 and -1 or 1, abs(pts))
 
+class ManualResolution(Screen):
+	def __init__(self, session):
+		Screen.__init__(self, session)
+		self.choices = []
+		self.init = False
+		try:
+			f = open("/proc/stb/video/videomode_choices")
+			values = f.readline().replace("\n", "").replace("pal ", "").replace("ntsc ", "").replace("auto", "").replace("480i", "").replace("480p", "").replace("576i", "").replace("576p", "").replace("3d1080p24", "").replace("3d720p50", "").replace("3d720p", "").split(" ", -1)
+			for x in values:
+				if x:
+					entry = x.replace('i50', 'i@50hz').replace('i60', 'i@60hz').replace('p23', 'p@23.976hz').replace('p24', 'p@24hz').replace('p25', 'p@25hz').replace('p29', 'p@29.970hz').replace('p30', 'p@30hz').replace('p50', 'p@50hz').replace('p60', 'p@60hz'), x
+					self.choices.append(entry)
+			f.close()
+		except:
+			print"[ManualResolution] Error open /proc/stb/video/videomode_choices"
+		else:
+			self.choices and self.choices.sort()
+
+	def resolutionSelection(self):
+		if not self.choices:
+			return
+		try:
+			f = open("/proc/stb/vmpeg/0/xres", "r")
+			xresString = f.read()
+			f.close()
+			f = open("/proc/stb/vmpeg/0/yres", "r")
+			yresString = f.read()
+			f.close()
+			try:
+				f = open("/proc/stb/vmpeg/0/framerate", "r")
+				fpsString = f.read()
+				f.close()
+			except:
+				print "[ManualResolution] Error open /proc/stb/vmpeg/0/framerate"
+				fpsString = '50000'
+			xres = int(xresString, 16)
+			yres = int(yresString, 16)
+			fps = int(fpsString)
+			fpsFloat = float(fps)
+			fpsFloat = fpsFloat/1000
+		except:
+			print "[ManualResolution] Error reading current mode!Stop!"
+			return
+		selection = 0
+		tlist = []
+		tlist.append((_("Exit"), "exit")) 
+		tlist.append((_("Video: ") + str(xres) + "x" + str(yres) + "@" + str(fpsFloat) + "hz", ""))
+		tlist.append(("--", ""))
+		for x in self.choices:
+			tlist.append(x)
+		keys = ["green", "yellow", "blue", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
+		self.old_mode = ""
+		if self.init:
+			try:
+				self.old_mode = open("/proc/stb/video/videomode").read()[:-1]
+			except:
+				print "[ManualResolution] Error open /proc/stb/video/videomode"
+		if self.old_mode:
+			for x in range(len(tlist)):
+				if tlist[x][1] == self.old_mode:
+					selection = x
+		self.session.openWithCallback(self.resolutionSelected, ChoiceBox, title=_("Please select a resolution..."), list=tlist, selection=selection, keys=keys, windowTitle= _("Manual resolution"))
+
+	def resolutionSelected(self, res):
+		res = res and res[1]
+		if res and isinstance(res, str) and res != "exit":
+			self.setResolution(res)
+			if config.plugins.autoresolution.ask_apply_mode.value and self.init and self.old_mode != res:
+				self.session.openWithCallback(self.confirmMode, MessageBox, _("This resolution is OK?"), MessageBox.TYPE_YESNO, timeout=10, default=False)
+			if not self.init:
+				self.init = True
+
+	def confirmMode(self, answer):
+		if not answer and self.old_mode:
+			self.setResolution(self.old_mode)
+
+	def setResolution(self, mode):
+		try:
+			f = open("/proc/stb/video/videomode", "w")
+			f.write(mode)
+			f.close()
+		except:
+			print "[ManualResolution] Error write /proc/stb/video/videomode"
+
+def openManualResolution(session, **kwargs):
+	if config.av.videoport.value not in ('DVI-PC', 'Scart'):
+		global manualResolution
+		if manualResolution is None:
+			manualResolution = session.instantiateDialog(ManualResolution)
+		manualResolution and manualResolution.resolutionSelection()
+	else:
+		config.plugins.autoresolution.manual_resolution_ext_menu.value = False
+		config.plugins.autoresolution.manual_resolution_ext_menu.save()
+		session.open(MessageBox, _("Manual resolution is not working in Scart/DVI-PC mode!"), MessageBox.TYPE_INFO, timeout=6)
+
 def autostart(reason, **kwargs):
 	global resolutionlabel
 	if reason == 0 and "session" in kwargs and resolutionlabel is None:
@@ -626,12 +735,15 @@ def autostart(reason, **kwargs):
 def startSetup(menuid):
 	if menuid != "system":
 		return [ ]
-	return [(_("Autoresolution"), autoresSetup, "autores_setup", 45)]
+	return [(_("Autoresolution"), autoresSetup, "autores_setup", None)]
 
 def autoresSetup(session, **kwargs):
 	autostart(reason=0, session=session)
 	session.open(AutoResSetupMenu)
 
 def Plugins(path, **kwargs):
-	return [PluginDescriptor(where = [PluginDescriptor.WHERE_SESSIONSTART], fnc = autostart),
-		PluginDescriptor(name="Autoresolution", description=_("Autoresolution Switch"), where = PluginDescriptor.WHERE_MENU, fnc=startSetup)]
+	lst = [PluginDescriptor(where=[PluginDescriptor.WHERE_SESSIONSTART], fnc=autostart),
+		PluginDescriptor(name="Autoresolution", description=_("Autoresolution Switch"), where=PluginDescriptor.WHERE_MENU, fnc=startSetup)]
+	if not config.plugins.autoresolution.enable.value and config.plugins.autoresolution.manual_resolution_ext_menu.value:
+		lst.append(PluginDescriptor(name = _("Manual resolution"), where=PluginDescriptor.WHERE_EXTENSIONSMENU, needsRestart=False, fnc=openManualResolution))
+	return lst
