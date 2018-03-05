@@ -28,6 +28,9 @@ msgstr "SD 30/60HZ чересстрочный режим"
 msgid "SD 25/50HZ Progressive Mode"
 msgstr "SD 25/50HZ прогрессивный режим"
 
+msgid "FHD 50/60HZ Progressive Mode"
+msgstr "FHD 50/60HZ прогрессивный режим"
+
 msgid "SD 30/60HZ Progressive Mode"
 msgstr "SD 30/60Hz прогрессивный режим"
 
