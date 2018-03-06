@@ -19,6 +19,7 @@ from Screens.Standby import TryQuitMainloop
 from NTPSyncPoller import NTPSyncPoller
 import os
 import time
+from calendar import isleap
 
 config.plugins.SystemTime = ConfigSubsection()
 config.plugins.SystemTime.choiceSystemTime = ConfigSelection(default="0", choices=[("0", _("Transponder")), ("1", _("NTP"))])
@@ -353,11 +354,11 @@ class ChangeTimeWizzard(Screen):
 			length = 0
 		if newclock is None:
 			self.skipChangeTime(_("No change detected."))
-		elif (length == 16) is False:
+		elif length != 16:
 			self.skipChangeTime(_("Time string too short."))
-		elif (newclock.count(" ") < 1) is True:
+		elif newclock.count(" ") < 1:
 			self.skipChangeTime(_("Invalid time format."))
-		elif (newclock.count(":") < 3) is True:
+		elif newclock.count(":") < 3:
 			self.skipChangeTime(_("Invalid time format."))
 		else:
 			full = []
@@ -373,22 +374,22 @@ class ChangeTimeWizzard(Screen):
 			newhour = parts[0]
 			newmin = parts[1]
 			maxmonth = 31
-			if (int(newmonth) == 4) or (int(newmonth) == 6) or (int(newmonth) == 9) or (int(newmonth) == 11) is True:
+			if (int(newmonth) == 4) or (int(newmonth) == 6) or (int(newmonth) == 9) or (int(newmonth) == 11):
 				maxmonth = 30
-			elif (int(newmonth) == 2) is True:
-				if ((4*int(int(newyear)/4)) == int(newyear)) is True:
-					maxmonth = 28
+			elif int(newmonth) == 2:
+				if isleap(int(newyear)):
+					maxmonth = 29
 				else:
-					maxmonth = 27
-			if (int(newyear) < 2007) or (int(newyear) > 2027) or (len(newyear) < 4) is True:
+					maxmonth = 28
+			if (int(newyear) < 2019) or (int(newyear) > 2029) or (len(newyear) < 4):
 				self.skipChangeTime(_("Invalid input in year: %s") %newyear)
-			elif (int(newmonth) < 0) or (int(newmonth) > 12) or (len(newmonth) < 2) is True:
+			elif (int(newmonth) < 1) or (int(newmonth) > 12) or (len(newmonth) < 2):
 				self.skipChangeTime(_("Invalid input in month: %s") %newmonth)
-			elif (int(newday) < 1) or (int(newday) > maxmonth) or (len(newday) < 2) is True:
+			elif (int(newday) < 1) or (int(newday) > maxmonth) or (len(newday) < 2):
 				self.skipChangeTime(_("Invalid input in day: %s") %newday)
-			elif (int(newhour) < 0) or (int(newhour) > 23) or (len(newhour) < 2) is True:
+			elif (int(newhour) < 0) or (int(newhour) > 23) or (len(newhour) < 2):
 				self.skipChangeTime(_("Invalid input in hour: %s") %newhour)
-			elif (int(newmin) < 0) or (int(newmin) > 59) or (len(newmin) < 2) is True:
+			elif (int(newmin) < 0) or (int(newmin) > 59) or (len(newmin) < 2):
 				self.skipChangeTime(_("Invalid input in minute: %s") %newmin)
 			else:
 				self.newtime = "%s%s%s%s%s" % (newmonth, newday, newhour, newmin, newyear)
