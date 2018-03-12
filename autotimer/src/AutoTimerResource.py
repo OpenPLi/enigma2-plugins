@@ -518,6 +518,13 @@ class AutoTimerAddOrEditAutoTimerResource(AutoTimerBaseResource):
 			try: series_labeling = int(series_labeling)
 			except ValueError: series_labeling = series_labeling == "yes"
 			timer.series_labeling = series_labeling
+		series_save_filter = get("series_save_filter")
+		if series_save_filter is not None:
+			try: series_save_filter = int(series_save_filter)
+			except ValueError: series_save_filter = series_save_filter == "yes"
+			timer.series_save_filter = series_save_filter
+		if not timer.series_labeling and timer.series_save_filter:
+			timer.series_save_filter = False
 
 		# Conflict detection
 		conflict_detection = get("conflict_detection")

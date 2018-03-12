@@ -107,8 +107,10 @@ def parseEntry(element, baseTimer, defaults = False):
 
 	# SeriesPlugin settings
 	series_labeling = element.get("series_labeling", "no")
+	series_save_filter = element.get("series_save_filter", "no")
 	baseTimer.series_labeling = True if series_labeling == "yes" else False
-	del series_labeling
+	baseTimer.series_save_filter = True if series_save_filter == "yes" else False
+	del series_labeling, series_save_filter
 
 	# Read conflict detection
 	conflict_detection = element.get("conflict_detection", "yes")
@@ -620,6 +622,8 @@ def buildConfig(defaultTimer, timers, webif = False):
 	# Only add seriesplugin related entry if true
 	if defaultTimer.series_labeling:
 		append(' series_labeling="yes"')
+		if defaultTimer.series_save_filter:
+			append(' series_save_filter="yes"')
 
 	# Only add conflict detection related entry if False
 	if not defaultTimer.conflict_detection:
@@ -642,7 +646,7 @@ def buildConfig(defaultTimer, timers, webif = False):
 			ref = ServiceReference(str(serviceref))
 			extend((
 				'  <e2service>\n',
-				'   <e2servicereference>', str(serviceref), '</e2servicereference>\n',
+				'   <e2servicereference>', stringToXML(str(serviceref)), '</e2servicereference>\n',
 				'   <e2servicename>', stringToXML(ref.getServiceName().replace('\xc2\x86', '').replace('\xc2\x87', '').replace('^', '')), '</e2servicename>\n',
 				'  </e2service>\n',
 			))
@@ -656,7 +660,7 @@ def buildConfig(defaultTimer, timers, webif = False):
 		# Bouquets
 		for bouquet in defaultTimer.bouquets:
 			ref = ServiceReference(str(bouquet))
-			extend(('  <bouquet>', str(bouquet), '</bouquet>\n',
+			extend(('  <bouquet>', stringToXML(str(bouquet)), '</bouquet>\n',
 			))
 
 	# AfterEvent
@@ -788,6 +792,8 @@ def buildConfig(defaultTimer, timers, webif = False):
 		# Only add seriesplugin related entry if true
 		if timer.series_labeling:
 			append(' series_labeling="yes"')
+			if timer.series_save_filter:
+				append(' series_save_filter="yes"')
 
 		# Only add conflict detection related entry if False
 		if not timer.conflict_detection:
@@ -810,7 +816,7 @@ def buildConfig(defaultTimer, timers, webif = False):
 				ref = ServiceReference(str(serviceref))
 				extend((
 					'  <e2service>\n',
-					'   <e2servicereference>', str(serviceref), '</e2servicereference>\n',
+					'   <e2servicereference>', stringToXML(str(serviceref)), '</e2servicereference>\n',
 					'   <e2servicename>', stringToXML(ref.getServiceName().replace('\xc2\x86', '').replace('\xc2\x87', '').replace('^', '')), '</e2servicename>\n',
 					'  </e2service>\n',
 				))
@@ -824,7 +830,7 @@ def buildConfig(defaultTimer, timers, webif = False):
 			# Bouquets
 			for bouquet in timer.bouquets:
 				ref = ServiceReference(str(bouquet))
-				extend(('  <bouquet>', str(bouquet), '</bouquet>\n',
+				extend(('  <bouquet>', stringToXML(str(bouquet)), '</bouquet>\n',
 				))
 
 		# AfterEvent

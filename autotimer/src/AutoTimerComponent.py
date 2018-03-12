@@ -53,7 +53,7 @@ class AutoTimerComponent(object):
 			avoidDuplicateDescription=0, searchForDuplicateDescription=2, descShortEqualExt=False, descShortExtEmpty=False, ratioThresholdDuplicate=0.8, \
 			bouquets=None, tags=None, encoding=None, searchType="partial", searchCase="insensitive", \
 			overrideAlternatives=False, timeframe=None, vps_enabled=False, vps_overwrite=False, setEndtime=False, \
-			always_zap=False, zap_wakeup="always", series_labeling=False, conflict_detection=True):
+			always_zap=False, zap_wakeup="always", series_labeling=False, series_save_filter=False, conflict_detection=True):
 		self.name = name
 		self.match = match
 		self.enabled = enabled
@@ -88,6 +88,7 @@ class AutoTimerComponent(object):
 		self.vps_enabled = vps_enabled
 		self.vps_overwrite = vps_overwrite
 		self.series_labeling = series_labeling
+		self.series_save_filter = series_save_filter
 		self.conflict_detection = conflict_detection
 		self.setEndtime = setEndtime
 
@@ -557,6 +558,7 @@ class AutoTimerComponent(object):
 			vps_enabled = self.vps_enabled,
 			vps_overwrite = self.vps_overwrite,
 			series_labeling = self.series_labeling,
+			series_save_filter = self.series_save_filter,
 			conflict_detection = self.conflict_detection,
 		)
 
@@ -597,6 +599,7 @@ class AutoTimerComponent(object):
 			vps_enabled = self.vps_enabled,
 			vps_overwrite = self.vps_overwrite,
 			series_labeling = self.series_labeling,
+			series_save_filter = self.series_save_filter,
 			conflict_detection = self.conflict_detection,
 		)
 
@@ -660,6 +663,7 @@ class AutoTimerComponent(object):
 					str(self.vps_enabled),
 					str(self.vps_overwrite),
 					str(self.series_labeling),
+					str(self.series_save_filter),
 					str(self.conflict_detection),
 			 )),
 			 ")>"

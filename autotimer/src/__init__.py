@@ -4,8 +4,8 @@ from Tools.Directories import resolveFilename, SCOPE_PLUGINS, SCOPE_LANGUAGE
 import gettext
 
 # Config
-from Components.config import config, ConfigSubsection, \
-	ConfigNumber, ConfigSelection, ConfigYesNo, ConfigText
+from Components.config import config, ConfigSubsection, ConfigOnOff, \
+	ConfigNumber, ConfigSelection, ConfigSelectionNumber, ConfigNothing, ConfigYesNo, ConfigText
 
 def localeInit():
 	gettext.bindtextdomain("AutoTimer", resolveFilename(SCOPE_PLUGINS, "Extensions/AutoTimer/locale"))
@@ -21,6 +21,7 @@ language.addCallback(localeInit)
 
 
 config.plugins.autotimer = ConfigSubsection()
+config.plugins.autotimer.nothing = ConfigNothing()
 config.plugins.autotimer.autopoll = ConfigYesNo(default=True)
 config.plugins.autotimer.delay = ConfigNumber(default=3)
 config.plugins.autotimer.editdelay = ConfigNumber(default=3)
@@ -85,6 +86,16 @@ val = config.plugins.autotimer.log_file.value
 if not val or not val.endswith("autotimer.log"):
 	config.plugins.autotimer.log_file.value = "/tmp/autotimer.log"
 	config.plugins.autotimer.log_file.save()
+
+config.plugins.autotimer.series_save_filter = ConfigYesNo(default = False)
+config.plugins.autotimer.searchlog_path = ConfigSelection(choices=[
+		("?likeATlog?", _("like autotimer.log")),
+		("/tmp", _("/tmp")),
+		("/etc/enigma2", _("/etc/enigma2"))
+	], default="?likeATlog?"
+)
+config.plugins.autotimer.searchlog_max = ConfigSelectionNumber(5, 20, 1, default = 5)
+
 
 try:
 	xrange = xrange
