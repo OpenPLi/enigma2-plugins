@@ -1494,3 +1494,99 @@ msgstr ""
 
 msgid "Close and save"
 msgstr ""
+
+msgid "like autotimer.log"
+msgstr ""
+
+msgid "begin searchLog from"
+msgstr ""
+
+msgid "Finished add to filterList with %s event(s):\n\n %s event(s) added \n %s event(s) skipped"
+msgstr ""
+
+msgid "Save the by SeriesPlugin generated timer-name in a filterlist to filter at later timer-searches (only with SeriesPlugin)"
+msgstr ""
+
+msgid "Save/check labeled series in filterlist (SeriesPlugin)"
+msgstr ""
+
+msgid " == attention: global option 'Save/check filterlist is still active!! =="
+msgstr ""
+
+msgid "AutoTimer "
+msgstr ""
+
+msgid "Filterlist"
+msgstr ""
+
+msgid "Timer from:\n"
+msgstr ""
+
+msgid "The filterEntry '%s' already exist!\nThe change was canceled."
+msgstr ""
+
+msgid "FilterEntry"
+msgstr ""
+
+msgid "AutoTimer %s FilterListEntry"
+msgstr ""
+
+msgid "The title attribute is mandatory."
+msgstr ""
+
+msgid "Date"
+msgstr ""
+
+msgid "Time"
+msgstr ""
+
+msgid "Close"
+msgstr ""
+
+msgid "Show last SearchLog"
+msgstr ""
+
+msgid "Show AutoTimer FilterTxt"
+msgstr ""
+
+msgid "No searchLog found!\n\nSo you have no new or modified timer at last autotimer-search."
+msgstr ""
+
+msgid "Show Log file"
+msgstr ""
+
+msgid " - AutoTimer "
+msgstr ""
+
+msgid "Reading file...\n"
+msgstr ""
+
+msgid "\n\nCancel?"
+msgstr ""
+
+msgid "No log file found"
+msgstr ""
+
+msgid "AutoTimer scan"
+msgstr ""
+
+msgid "scan for new Events"
+msgstr ""
+
+msgid "add to AutoTimer filterList"
+msgstr ""
+
+msgid "searchLog"
+msgstr ""
+
+msgid "Select the path for autotimer_search.log"
+msgstr ""
+
+msgid "Select the path where the autotimer_search.log should be saved"
+msgstr ""
+
+msgid "Max. count for saved searchlog"
+msgstr ""
+
+msgid "Select the count of the last saved searchlogs (min=5 max=20)"
+msgstr ""

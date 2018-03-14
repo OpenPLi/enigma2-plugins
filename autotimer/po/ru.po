@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-02-17 15:07+0100\n"
-"PO-Revision-Date: 2018-02-22 20:20+0200\n"
+"PO-Revision-Date: 2018-03-12 22:09+0200\n"
 "Last-Translator: Dimitrij <Dima-73@inbox.lv>\n"
 "Language-Team: openpli.org\n"
 "MIME-Version: 1.0\n"
@@ -412,7 +412,7 @@ msgstr ""
 "Нажмите СИНЮЮ для добавления нового ограничения и ЖЕЛТУЮ для отмены."
 
 msgid "Label Timers with season, episode and title, according to the SeriesPlugin settings."
-msgstr "Этикетка таймеров по (сезон / эпизод/ название), в соответствии с настройками плагина SeriesPlugin."
+msgstr "Этикетка таймеров по сезон/эпизод/название, в соответствии с настройками плагина SeriesPlugin."
 
 msgid "Label series"
 msgstr "Этикетка сериалов"
@@ -1185,3 +1185,123 @@ msgstr "Закрыть без сохранения"
 
 msgid "Close and save"
 msgstr "Закрыть и сохранить"
+
+msgid "like autotimer.log"
+msgstr "как autotimer.log"
+
+msgid "begin searchLog from"
+msgstr "старт - лог поиска от"
+
+msgid ""
+"Finished add to filterList with %s event(s):\n"
+"\n"
+" %s event(s) added \n"
+" %s event(s) skipped"
+msgstr ""
+"В список фильтров записано %s результатов:\n"
+"\n"
+" %s добавленных событий\n"
+" %s пропущеных событий"
+
+msgid "Save the by SeriesPlugin generated timer-name in a filterlist to filter at later timer-searches (only with SeriesPlugin)"
+msgstr "Сохраните имя таймера, созданного с помощью плагина SeriesPlugin, в список фильтров, как фильтр для последующего поиска автотаймеров (только для SeriesPlugin)."
+
+msgid "Save/check labeled series in filterlist (SeriesPlugin)"
+msgstr "Сохранение/проверка этикеток сериалов в список фильтров (SeriesPlugin)"
+
+msgid " == attention: global option 'Save/check filterlist is still active!! =="
+msgstr " == внимание: глобальная опция 'Сохранение/проверка в списке фильтров' по прежнему активна!! =="
+
+msgid "AutoTimer "
+msgstr "Автотаймер "
+
+msgid "Filterlist"
+msgstr "Список фильтров"
+
+msgid "Timer from:\n"
+msgstr "Таймер от:\n"
+
+msgid ""
+"The filterEntry '%s' already exist!\n"
+"The change was canceled."
+msgstr ""
+"Запись фильтра '%s' уже существует!\n"
+"Изменение было отменено."
+
+msgid "FilterEntry"
+msgstr "Запись фильтра"
+
+msgid "AutoTimer %s FilterListEntry"
+msgstr "Автотаймер %s запись фильтра"
+
+msgid "The title attribute is mandatory."
+msgstr "Атрибут название является обязательным."
+
+msgid "Date"
+msgstr "Дата"
+
+msgid "Time"
+msgstr "Время"
+
+msgid "Close"
+msgstr "Закрыть"
+
+msgid "Show last SearchLog"
+msgstr "Показать последний лог поиска"
+
+msgid "Show AutoTimer FilterTxt"
+msgstr "Открыть список фильтров Автотаймера"
+
+msgid ""
+"No searchLog found!\n"
+"\n"
+"So you have no new or modified timer at last autotimer-search."
+msgstr ""
+"Не найден лог поиска!\n"
+"\n"
+"Это значит, что у Вас нет нового или измененного таймера при последнем поиске автотаймеров."
+
+msgid "Show Log file"
+msgstr "Открыть лог-файл"
+
+msgid " - AutoTimer "
+msgstr " - Автотаймер "
+
+msgid "Reading file...\n"
+msgstr "Чтение файла...\n"
+
+msgid ""
+"\n"
+"\n"
+"Cancel?"
+msgstr ""
+"\n"
+"\n"
+"Отмена?"
+
+msgid "No log file found"
+msgstr "Не найден лог файл"
+
+msgid "AutoTimer scan"
+msgstr "Автотаймер - сканирование"
+
+msgid "scan for new Events"
+msgstr "поиск новых событий"
+
+msgid "add to AutoTimer filterList"
+msgstr "добавить в список фильтров Автотаймера"
+
+msgid "searchLog"
+msgstr "лог поиска"
+
+msgid "Select the path for autotimer_search.log"
+msgstr "Выбор пути для autotimer_search.log"
+
+msgid "Select the path where the autotimer_search.log should be saved"
+msgstr "Выберите путь для сохранения autotimer_search.log."
+
+msgid "Max. count for saved searchlog"
+msgstr "Максимальное количество записей лога поиска"
+
+msgid "Select the count of the last saved searchlogs (min=5 max=20)"
+msgstr "Выберите количество последних сохраненных записей в логе поиска (минимум=5 максимум=20)."

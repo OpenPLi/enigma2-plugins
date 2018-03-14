@@ -183,9 +183,9 @@ class AutoTimer:
 				configuration = cet_parse(XML_CONFIG).getroot()
 			except:
 				try:
-					if os_path.exists(XML_CONFIG + "_old"):
-						os_rename(XML_CONFIG + "_old", XML_CONFIG + "_old(1)")
-					os_rename(XML_CONFIG, XML_CONFIG + "_old")
+					if os.path.exists(XML_CONFIG + "_old"):
+						os.rename(XML_CONFIG + "_old", XML_CONFIG + "_old(1)")
+					os.rename(XML_CONFIG, XML_CONFIG + "_old")
 					doLog("[AutoTimer] autotimer.xml is corrupt rename file to /etc/enigma2/autotimer.xml_old")
 				except:
 					pass
@@ -600,6 +600,23 @@ class AutoTimer:
 					doLog("[AutoTimer] Not adding new timer because counter is depleted.")
 					skipped.append((name, begin, end, serviceref, timer.name, getLog()))
 					continue
+
+			# if set option for check/save timer in filterlist and only if not found an existing timer
+			isnewFilterEntry = False
+			if (config.plugins.autotimer.series_save_filter.value or timer.series_save_filter) and oldExists == False:
+				if timer.series_labeling and sp_getSeasonEpisode is not None:
+					if sp and type(sp) in (tuple, list) and len(sp) == 4:
+						ret = self.addToFilterfile(str(sp[0]), begin, simulateOnly)
+						if ret:
+							if simulateOnly:
+								doLog("[AutoTimer SeriesPlugin] only simulate - new Timer would be saved in autotimer_filter")
+							else:
+								doLog("[AutoTimer SeriesPlugin] new Timer saved in autotimer_filter")
+								isnewFilterEntry = True
+						else:
+							skipped.append((name, begin, end, serviceref, timer.name, getLog()))
+							continue
+
 			# Append to timerlist and abort if simulating
 			timers.append((name, begin, end, serviceref, timer.name, getLog()))
 			if simulateOnly:
@@ -630,6 +647,7 @@ class AutoTimer:
 						doLog(msg)
 						newEntry.log(501, msg)
 						if changed:
+							self.addToSearchLogfile(newEntry,"#", simulateOnly)
 							modified += 1
 					else:
 						msg = "[AutoTimer] AutoTimer modification not allowed for timer %s because conflicts or double timer." % (newEntry.name)
@@ -773,6 +791,10 @@ class AutoTimer:
 					timer.decrementCounter()
 					if newEntry in (recordHandler.timer_list[:] + recordHandler.processed_timers[:]):
 						new += 1
+						if isnewFilterEntry:
+							self.addToSearchLogfile(newEntry,"++", simulateOnly)
+						else:
+							self.addToSearchLogfile(newEntry,"+", simulateOnly)
 						newEntry.extdesc = extdesc
 						timerdict[serviceref].append(newEntry)
 
@@ -831,6 +853,9 @@ class AutoTimer:
 		global addNewTimers
 		addNewTimers = []
 
+		if not simulateOnly:
+			self.prepareSearchLogfile()
+
 		if currentThread().getName() == 'MainThread':
 			doBlockingCallFromMainThread = lambda f, *a, **kw: f(*a, **kw)
 		else:
@@ -887,6 +912,84 @@ class AutoTimer:
 		return (len(timers), new, modified, timers, conflicting, similars)
 
 # Supporting functions
+
+	def addToSearchLogfile(self, timerEntry, entryType, simulateOnlyValue=False):
+		if not simulateOnlyValue:
+			#write eventname totextfile
+			logpath = config.plugins.autotimer.searchlog_path.value
+			if logpath == "?likeATlog?":
+				logpath = os.path.dirname(config.plugins.autotimer.log_file.value)
+			path_search_log = os.path.join(logpath, "autotimer_search.log")
+			file_search_log = open(path_search_log, "a")
+			log_txt  = "(" + str(entryType) + ") "
+			log_txt += str(strftime('%d.%m., %H:%M', localtime(timerEntry.begin)))
+			log_txt += ' - ' + timerEntry.service_ref.getServiceName()
+			log_txt += ' - "' + str(timerEntry.name) + '"\n'
+			file_search_log.write(log_txt)
+			file_search_log.close()
+
+	def prepareSearchLogfile(self):
+		# prepare searchlog at begin of real search (max. last 5 searches)
+		logpath = config.plugins.autotimer.searchlog_path.value
+		if logpath == "?likeATlog?":
+			logpath = os.path.dirname(config.plugins.autotimer.log_file.value)
+		path_search_log = os.path.join(logpath, "autotimer_search.log")
+		searchlog_txt = ""
+		if os.path.exists(path_search_log):
+			searchlog_txt = open(path_search_log).read()
+			#read last logs from logfile (do not change then "\n########## " in the code !!!!)
+			if "\n########## " in searchlog_txt:
+				searchlog_txt = searchlog_txt.split("\n########## ")
+				count_logs = len(searchlog_txt)
+				max_count_logs = int(config.plugins.autotimer.searchlog_max.value)
+				if count_logs > max_count_logs:
+					searchlog_txt = searchlog_txt[count_logs - max_count_logs + 1:]
+					searchlog_txt = "\n########## " + "\n########## ".join(searchlog_txt)
+				else:
+					searchlog_txt = "\n########## ".join(searchlog_txt)
+		searchlog_txt += "\n########## " + _("begin searchLog from") + " " + str(strftime('%d.%m.%Y, %H:%M', localtime())) + " ########\n\n"
+		file_search_log = open(path_search_log, "w")
+		file_search_log.write(searchlog_txt)
+		file_search_log.close()
+
+	def addToFilterfile(self, name, begin, simulateOnlyValue=False):
+		path_filter_txt = "/etc/enigma2/autotimer_filter.txt"
+		if os.path.exists(path_filter_txt):
+			search_txt = '"' + name + '"'
+			if search_txt in open(path_filter_txt).read():
+				print ("[AutoTimer] Skipping an event because found event in autotimer_filter")
+				doLog("[AutoTimer] Skipping an event because found event in autotimer_filter")
+				return False
+		if simulateOnlyValue:
+			return True
+		#write eventname totextfile
+		filter_txt = str(strftime('%d.%m.%Y, %H:%M', localtime(begin))) + ' - "' + name + '"\n'
+		file_filter_txt = open(path_filter_txt, "a")
+		file_filter_txt.write(filter_txt)
+		file_filter_txt.close()
+		doLog("[AutoTimer] added a new event to autotimer_filter")
+		return True
+
+	def addToFilterList(self, session, services, *args, **kwargs):
+		if services:
+			serviceHandler = eServiceCenter.getInstance()
+			add_counter = 0
+			try:
+				for service in services:
+					info = serviceHandler.info(service)
+					name = info and info.getName(service) or ""
+					if info:
+						begin = info.getInfo(service, iServiceInformation.sTimeCreate)
+					else:
+						doLog("[AutoTimer] No recordinfo available")
+						continue
+					ret = self.addToFilterfile(name, begin)
+					if ret:
+						add_counter += 1
+				session.open( MessageBox, _("Finished add to filterList with %s event(s):\n\n %s event(s) added \n %s event(s) skipped") % (len(services), add_counter,len(services)-add_counter), type = MessageBox.TYPE_INFO, timeout = config.plugins.autotimer.popup_timeout.value)
+			except Exception as e:
+				doLog("[AutoTimer] Error in addToFilterList", e)
+				print ("[AutoTimer] ======== Error in addToFilterList ", e)
 
 	def reloadTimerList(self, recordHandler):
 		doLog("[AutoTimer] Start reload timers list after search")

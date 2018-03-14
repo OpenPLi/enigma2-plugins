@@ -12,6 +12,18 @@ from AutoTimerPreview import AutoTimerPreview
 from AutoTimerSettings import AutoTimerSettings
 from AutoTimerWizard import AutoTimerWizard
 
+# for showSearchLog
+import os
+from time import localtime, strftime
+from ShowLogScreen import ShowLogScreen
+
+try:
+	from Plugins.Extensions.SeriesPlugin.plugin import Plugins
+except ImportError as ie:
+	hasSeriesPlugin = False
+else:
+	hasSeriesPlugin = True
+
 # GUI (Components)
 from AutoTimerList import AutoTimerList
 from Components.ActionMap import HelpableActionMap
@@ -55,7 +67,8 @@ class AutoTimerOverview(Screen, HelpableScreen):
 				<ePixmap position="160,0" size="140,40" pixmap="skin_default/buttons/green.png" transparent="1" alphatest="on" />
 				<ePixmap position="320,0" size="140,40" pixmap="skin_default/buttons/yellow.png" transparent="1" alphatest="on" />
 				<ePixmap position="480,0" size="140,40" pixmap="skin_default/buttons/blue.png" transparent="1" alphatest="on" />
-				<ePixmap position="635,5" zPosition="1" size="35,25" pixmap="skin_default/buttons/key_menu.png" alphatest="on" />
+				<ePixmap position="635,0" zPosition="1" size="35,25" pixmap="skin_default/buttons/key_menu.png" alphatest="on" />
+				<ePixmap position="635,20" zPosition="1" size="35,25" pixmap="skin_default/buttons/key_info.png" alphatest="on" />
 				<widget source="key_red" render="Label" position="0,0" zPosition="1" size="140,40" valign="center" halign="center" font="Regular;17" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
 				<widget source="key_green" render="Label" position="160,0" zPosition="1" size="140,40" valign="center" halign="center" font="Regular;17" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
 				<widget source="key_yellow" render="Label" position="320,0" zPosition="1" size="140,40" valign="center" halign="center" font="Regular;17" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
@@ -68,7 +81,8 @@ class AutoTimerOverview(Screen, HelpableScreen):
 				<ePixmap position="140,0" size="140,40" pixmap="skin_default/buttons/green.png" transparent="1" alphatest="on" />
 				<ePixmap position="280,0" size="140,40" pixmap="skin_default/buttons/yellow.png" transparent="1" alphatest="on" />
 				<ePixmap position="420,0" size="140,40" pixmap="skin_default/buttons/blue.png" transparent="1" alphatest="on" />
-				<ePixmap position="565,10" zPosition="1" size="35,25" pixmap="skin_default/buttons/key_menu.png" alphatest="on" />
+				<ePixmap position="565,0" zPosition="1" size="35,25" pixmap="skin_default/buttons/key_menu.png" alphatest="on" />
+				<ePixmap position="565,20" zPosition="1" size="35,25" pixmap="skin_default/buttons/key_info.png" alphatest="on" />
 				<widget source="key_red" render="Label" position="0,0" zPosition="1" size="140,40" valign="center" halign="center" font="Regular;21" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
 				<widget source="key_green" render="Label" position="140,0" zPosition="1" size="140,40" valign="center" halign="center" font="Regular;21" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
 				<widget source="key_yellow" render="Label" position="280,0" zPosition="1" size="140,40" valign="center" halign="center" font="Regular;21" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
@@ -112,6 +126,18 @@ class AutoTimerOverview(Screen, HelpableScreen):
 			}
 		)
 
+		self["EPGSelectActions"] = HelpableActionMap(self, "EPGSelectActions",
+			{
+				"info": (self.showSearchLog, _("Show last SearchLog")),
+			}
+		)
+
+		self["InfobarActions"] = HelpableActionMap(self, "InfobarActions",
+			{
+				"showTv": (self.showFilterTxt, _("Show AutoTimer FilterTxt")),
+			}
+		)
+
 		self["ColorActions"] = HelpableActionMap(self, "ColorActions",
 			{
 				"red": (self.timer_menu, _("Open Timers list")),
@@ -146,6 +172,22 @@ class AutoTimerOverview(Screen, HelpableScreen):
 				x(text)
 			except Exception:
 				pass
+
+	def showSearchLog(self):
+		searchlog_txt = ""
+		logpath = config.plugins.autotimer.searchlog_path.value
+		if logpath == "?likeATlog?":
+			logpath = os.path.dirname(config.plugins.autotimer.log_file.value)
+		path_search_log = os.path.join(logpath, "autotimer_search.log")
+		if os.path.exists(path_search_log):
+			self.session.open(ShowLogScreen, path_search_log, _("searchLog"), "","")
+		else:
+			self.session.open(MessageBox,_("No searchLog found!\n\nSo you have no new or modified timer at last autotimer-search."), MessageBox.TYPE_INFO)
+
+	def showFilterTxt(self):
+		if hasSeriesPlugin:
+			from AutoTimerFilterList import AutoTimerFilterListOverview
+			self.session.open(AutoTimerFilterListOverview)
 
 	def timer_menu(self):
 		from Screens.TimerEdit import TimerEditList

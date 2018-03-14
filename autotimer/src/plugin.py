@@ -25,14 +25,20 @@ from Tools.BoundFunction import boundFunction
 # Plugin
 from Components.PluginComponent import plugins
 from Plugins.Plugin import PluginDescriptor
-
+import os
 from Logger import doLog
+
+try:
+	from Plugins.Extensions.SeriesPlugin.plugin import Plugins
+	hasSeriesPlugin = True
+except:
+	hasSeriesPlugin = False
 
 from AutoTimer import AutoTimer
 autotimer = AutoTimer()
 autopoller = None
 
-AUTOTIMER_VERSION = "4.3"
+AUTOTIMER_VERSION = "4.4"
 
 try:
 	from Plugins.SystemPlugins.MPHelp import registerHelp, XMLHelpReader
@@ -321,12 +327,7 @@ def main(session, **kwargs):
 	try:
 		autotimer.readXml()
 	except SyntaxError as se:
-		session.open(
-			MessageBox,
-			_("Your config file is not well-formed:\n%s") % (str(se)),
-			type = MessageBox.TYPE_ERROR,
-			timeout = 10
-		)
+		session.open(MessageBox, _("Your config file is not well-formed:\n%s") % (str(se)), type = MessageBox.TYPE_ERROR, timeout = 10)
 		return
 
 	# Do not run in background while editing, this might screw things up
@@ -372,6 +373,18 @@ def parseEPGstart():
 editTimer.callback.append(parseEPGstart)
 
 def parseEPGCallback(ret):
+	searchlog_txt = ""
+	logpath = config.plugins.autotimer.searchlog_path.value
+	if logpath == "?likeATlog?":
+		logpath = os.path.dirname(config.plugins.autotimer.log_file.value)
+	path_search_log = os.path.join(logpath, "autotimer_search.log")
+	if os.path.exists(path_search_log):
+		searchlog_txt = open(path_search_log).read() 
+		if "\n########## " in searchlog_txt:
+			searchlog_txt = searchlog_txt.split("\n########## ")
+			searchlog_txt = str(searchlog_txt[-1]).split("\n")[2:]
+			searchlog_txt = "\n".join(searchlog_txt)
+
 	AddPopup(
 		_("Found a total of %d matching Events.\n%d Timer were added and\n%d modified,\n%d conflicts encountered,\n%d similars added.") % (ret[0], ret[1], ret[2], len(ret[4]), len(ret[5])),
 		MessageBox.TYPE_INFO,
@@ -412,38 +425,61 @@ def eventinfo(session, service=None, event=None, eventName="", **kwargs):
 		if ref is not None:
 			session.open(AutoTimerEPGSelection, ref)
 
-# XXX: we need this helper function to identify the descriptor
 # Extensions menu
 def extensionsmenu(session, **kwargs):
 	main(session, **kwargs)
 
+# Extensions menu - only scan Autotimer
+def extensionsmenu_scan(session, **kwargs):
+	try:
+		autotimer.readXml()
+	except SyntaxError as se:
+		session.open( MessageBox, _("Your config file is not well-formed:\n%s") % (str(se)), type = MessageBox.TYPE_ERROR, timeout=10)
+		return
+	editCallback(session)
+
+# Movielist menu add to filterList
+def add_to_filterList(session, service, services=None, *args, **kwargs):
+	try:
+		if services:
+			if not isinstance(services, list):
+				services = [services]
+		else:
+			services = [service]
+		autotimer.addToFilterList(session, services)
+	except Exception as e:
+		print ("[AutoTimer] Unable to add Recordtitle to FilterList:", e)
+		doLog("[AutoTimer] Unable to add Recordtitle to FilterList:", e)
+
 def housekeepingExtensionsmenu(el):
 	if el.value:
 		plugins.addPlugin(extDescriptor)
+		plugins.addPlugin(extDescriptor_scan)
 	else:
 		try:
 			plugins.removePlugin(extDescriptor)
+			plugins.removePlugin(extDescriptor_scan)
 		except ValueError as ve:
 			doLog("[AutoTimer] housekeepingExtensionsmenu got confused, tried to remove non-existant plugin entry... ignoring.")
 
 config.plugins.autotimer.show_in_extensionsmenu.addNotifier(housekeepingExtensionsmenu, initial_call = False, immediate_feedback = True)
 extDescriptor = PluginDescriptor(name=_("AutoTimer"), description = _("Edit Timers and scan for new Events"), where = PluginDescriptor.WHERE_EXTENSIONSMENU, fnc = extensionsmenu, needsRestart = False)
+extDescriptor_scan = PluginDescriptor(name=_("AutoTimer scan"), description = _("scan for new Events"), where = PluginDescriptor.WHERE_EXTENSIONSMENU, fnc = extensionsmenu_scan, needsRestart = False)
 
 def Plugins(**kwargs):
 	l = [
 		PluginDescriptor(where=PluginDescriptor.WHERE_AUTOSTART, fnc=autostart, needsRestart=False),
 		PluginDescriptor(where=PluginDescriptor.WHERE_SESSIONSTART, fnc=sessionstart, needsRestart=False),
-		# TRANSLATORS: description of AutoTimer in PluginBrowser
 		PluginDescriptor(name=_("AutoTimer"), description = _("Edit Timers and scan for new Events"), where = PluginDescriptor.WHERE_PLUGINMENU, icon = "plugin.png", fnc = main, needsRestart = False),
-		# TRANSLATORS: AutoTimer title in MovieList (automatically opens importer, I consider this no further interaction)
 		PluginDescriptor(name=_("Add AutoTimer"), description= _("add AutoTimer"), where = PluginDescriptor.WHERE_MOVIELIST, fnc = movielist, needsRestart = False),
-		# TRANSLATORS: AutoTimer title in EventInfo dialog (requires the user to select an event to base the AutoTimer on)
 		PluginDescriptor(name=_("add AutoTimer..."), where = PluginDescriptor.WHERE_EVENTINFO, fnc = eventinfo, needsRestart = False),
 	]
+	if hasSeriesPlugin:
+		l.append(PluginDescriptor(name = _("add to AutoTimer filterList"), description = _("add to AutoTimer filterList"), where = PluginDescriptor.WHERE_MOVIELIST, fnc = add_to_filterList, needsRestart = False))
 	if config.plugins.autotimer.show_in_furtheroptionsmenu.value:
-		# TRANSLATORS: AutoTimer title in Further Options List
 		l.append(PluginDescriptor(name=_("Create AutoTimer"), where = PluginDescriptor.WHERE_EVENTINFO, fnc = epgfurther, needsRestart = False))
 	if config.plugins.autotimer.show_in_extensionsmenu.value:
 		l.append(extDescriptor)
+		l.append(extDescriptor_scan)
 	return l
 

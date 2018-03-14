@@ -55,17 +55,15 @@ weekdays = [
 
 try:
 	from Plugins.SystemPlugins.vps import Vps
-except ImportError as ie:
-	hasVps = False
-else:
 	hasVps = True
+except:
+	hasVps = False
 
 try:
 	from Plugins.Extensions.SeriesPlugin.plugin import Plugins
-except ImportError as ie:
-	hasSeriesPlugin = False
-else:
 	hasSeriesPlugin = True
+except:
+	hasSeriesPlugin = False
 
 def importerCallback(ret):
 	if ret:
@@ -371,6 +369,7 @@ class AutoTimerEditorBase:
 
 		# SeriesPlugin
 		self.series_labeling = NoSave(ConfigYesNo(default = timer.series_labeling))
+		self.series_save_filter = NoSave(ConfigYesNo(default = timer.series_save_filter))
 
 		# Conflict detection
 		self.conflict_detection = NoSave(ConfigYesNo(default = timer.conflict_detection))
@@ -508,6 +507,7 @@ class AutoTimerEditor(Screen, ConfigListScreen, AutoTimerEditorBase):
 		self.useDestination.addNotifier(self.reloadList, initial_call = False)
 		self.vps_enabled.addNotifier(self.reloadList, initial_call = False)
 		self.series_labeling.addNotifier(self.reloadList, initial_call = False)
+		self.series_save_filter.addNotifier(self.reloadList, initial_call = False)
 
 		self.refresh()
 		self.initHelpTexts()
@@ -635,6 +635,7 @@ class AutoTimerEditor(Screen, ConfigListScreen, AutoTimerEditorBase):
 			self.destination: _("Select the location to save the recording to."),
 			self.tags: _("Tags the Timer/Recording will have."),
 			self.series_labeling: _("Label Timers with season, episode and title, according to the SeriesPlugin settings."),
+			self.series_save_filter: _("Save the by SeriesPlugin generated timer-name in a filterlist to filter at later timer-searches (only with SeriesPlugin)"),
 			self.conflict_detection: _("This option allows you to turn off the timer confict detection. This option is for advanced users."),
 			self.descShortEqualExt: _("When this option enabled, short description to equal extended description if short description is empty."),
 			self.descShortExtEmpty: _("When this option enabled and short description and extended description match is empty and timer title exist in match title, match is not a duplicate. Attention, this may result in double timers."),
@@ -743,6 +744,10 @@ class AutoTimerEditor(Screen, ConfigListScreen, AutoTimerEditorBase):
 
 		if hasSeriesPlugin:
 			list.append(getConfigListEntry(_("Label series"), self.series_labeling))
+			if self.series_labeling.value:
+				list.append(getConfigListEntry(_("Save/check labeled series in filterlist (SeriesPlugin)"), self.series_save_filter))
+				if not self.series_save_filter.value and config.plugins.autotimer.series_save_filter.value:
+					list.append(getConfigListEntry(_(" == attention: global option 'Save/check filterlist is still active!! =="), config.plugins.autotimer.nothing))
 
 		list.append(getConfigListEntry(_("Enable timer conflict detection"), self.conflict_detection))
 
@@ -1010,6 +1015,8 @@ class AutoTimerEditor(Screen, ConfigListScreen, AutoTimerEditorBase):
 		self.timer.vps_overwrite = self.vps_overwrite.value
 
 		self.timer.series_labeling = self.series_labeling.value
+
+		self.timer.series_save_filter = self.series_save_filter.value
 
 		self.timer.conflict_detection = self.conflict_detection.value
 
