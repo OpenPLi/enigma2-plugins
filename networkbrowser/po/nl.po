@@ -60,9 +60,8 @@ msgstr "Probeer om de gedeelde locaties opnieuw te mounten"
 
 #: ../src/plugin.py:45
 msgid "Attempt to recover lost mounts (in background)"
-msgstr ""
-"Er wordt geprobeerd om de verbroken mounts te herstellen. "
-"(achtergrondproces). \n"
+msgstr "Er wordt geprobeerd om de verbroken mounts te herstellen.\n"
+"(achtergrondproces)."
 
 #: ../src/NetworkBrowser.py:157
 msgid "Browse network neighbourhood"
@@ -165,9 +164,7 @@ msgstr "Beheer gedeelde netwerkmappen"
 
 #: ../src/plugin.py:41
 msgid "Manage your network shares..."
-msgstr ""
-"Beheer van gedeelde netwerkmappen... \n"
-"\n"
+msgstr "Beheer van gedeelde netwerkmappen..."
 
 #: ../src/plugin.py:42 ../src/plugin.py:44
 msgid "Mount again"
@@ -295,13 +292,11 @@ msgstr "Zoeken naar gedeelde mappen"
 
 #: ../src/plugin.py:40
 msgid "Search for network shares..."
-msgstr ""
-"Zoek naar gedeelde netwerklocaties... \n"
-"\n"
+msgstr "Zoek naar gedeelde netwerklocaties..."
 
 #: ../src/NetworkBrowser.py:189
 msgid "Searching your network. Please wait..."
-msgstr "Netwerk doorzoeken. Een ogenblikje..."
+msgstr "Netwerk doorzoeken. Een ogenblik..."
 
 #: ../src/MountEdit.py:183
 msgid "Server IP"
