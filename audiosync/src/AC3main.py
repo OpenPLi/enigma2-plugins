@@ -134,6 +134,7 @@ class AC3LipSync(Screen, HelpableScreen, MovableScreen):
 				if delay_service:
 					del self.listStreamService[current_service.toCompareString()]
 					saveServiceDict(self.listStreamService)
+					audio_delay and audio_delay.updateServiceDelay()
 					self["key_yellow"].setText(" ")
 
 	def keyLeft(self):
@@ -227,6 +228,7 @@ class AC3LipSync(Screen, HelpableScreen, MovableScreen):
 				else:
 					self.listStreamService[current_service.toCompareString()] = (current_service.toCompareString(), str(CurDelay))
 				saveServiceDict(self.listStreamService)
+				audio_delay and audio_delay.updateServiceDelay()
 		self.close()
 
 	def keyCancel(self):

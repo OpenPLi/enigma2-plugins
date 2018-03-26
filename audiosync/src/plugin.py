@@ -109,6 +109,7 @@ class audioDelay(Screen):
 	def __init__(self, session):
 		Screen.__init__(self, session)
 		self.newService = False
+		self.updateDelay = False
 		self.ServiceDelay = getServiceDict()
 		self.__event_tracker = ServiceEventTracker(screen = self, eventmap =
 			{
@@ -130,14 +131,28 @@ class audioDelay(Screen):
 			isStreamService = iServiceReference and '%3a//' in iServiceReference.toCompareString()
 			if isStreamService:
 				delay_service = self.ServiceDelay.get(iServiceReference.toCompareString(), None)
+				setvalue = False
 				if delay_service:
 					delay_value = int(delay_service[1])
+					setvalue = True
+				elif self.updateDelay:
+					delay_value = 0
+					setvalue = True
+				if setvalue:
 					from AC3delay import AC3delay
 					AC3delay = AC3delay()
 					sAudio = AC3delay.whichAudio
 					if sAudio == AC3 or sAudio == PCM:
 						AC3delay.setSystemDelay(sAudio, delay_value, True)
-						print "[AudioSync] set stream service audio delay %s" % delay_value
+						if delay_service and delay_value != 0:
+							self.updateDelay = True
+							print "[AudioSync] set stream service audio delay %s" % delay_value
+						else:
+							self.updateDelay = False
+							print "[AudioSync] return default stream service audio delay %s" % delay_value
+
+	def updateServiceDelay(self):
+		self.ServiceDelay = getServiceDict()
 
 def autostart(reason, **kwargs):
 	global audio_restart, Session, audio_delay
