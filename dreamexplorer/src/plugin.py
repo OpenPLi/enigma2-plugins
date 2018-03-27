@@ -1141,6 +1141,10 @@ class CPmaniger(Screen):
 		self.src = source
 		self["File"] = Label(_("WARNING! they doing now COPY or MOVE\n") + source + _("\nto:"))
 		self["CPto"] = myFileList(config.plugins.DreamExplorer.CopyDest.value, showDirectories = True, showFiles = False, matchingPattern = "^.*\.*", useServiceRef = False)
+
+		self["key_red"] = StaticText(_("MOVE"))
+		self["key_yellow"] = StaticText(_("COPY"))
+
 		self["actions"] = ActionMap(["WizardActions", "ColorActions"],
 		{
 			"ok": self.ok,
@@ -1245,6 +1249,10 @@ class SoftLinkScreen(Screen):
 		self.newSLname = " "
 		self["File"] = Label(_("Set first the Softlink name ..."))
 		self["SLto"] = myFileList('/', showDirectories=True, showFiles=True, matchingPattern = None, useServiceRef = False)
+
+		self["key_red"] = StaticText(_("Set name"))
+		self["key_yellow"] = StaticText(_("Make a softlink"))
+
 		self["actions"] = ActionMap(["WizardActions", "ColorActions"],
 		{
 			"ok": self.ok,
