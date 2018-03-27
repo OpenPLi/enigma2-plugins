@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Partnerbox\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-27 15:42+0300\n"
+"POT-Creation-Date: 2018-03-27 20:05+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: ims <ims21@users.sourceforge.net>\n"
 "Language-Team: PLi <ims21@users.sourceforge.net>\n"
@@ -10,8 +10,9 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Poedit 1.5.4\n"
+"Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2;\n"
+"X-Generator: Poedit 1.8.7.1\n"
 
 #: PartnerboxEPGList.py:102 PartnerboxEPGList.py:225
 #, python-format
@@ -62,7 +63,7 @@ msgstr "Po skončení"
 
 #: plugin.py:1651
 msgid "Alternative"
-msgstr ""
+msgstr "Alternativa"
 
 #: plugin.py:2148
 msgid "Alternative services are not supported!"
@@ -513,7 +514,7 @@ msgstr "Vypnout"
 
 #: PartnerboxEPGSelection.py:133
 msgid "Standard Zap"
-msgstr ""
+msgstr "Standardní přepnutí"
 
 #
 #: PartnerboxSetup.py:254
@@ -578,7 +579,8 @@ msgstr "Typ časovače"
 
 #: RemoteTimerEntry.py:235 RemoteTimerEntry.py:571
 msgid "Timer can not be added...no locations on partnerbox available."
-msgstr "časovač nemůže být přidán... na partnerboxu není k dispozici žádné umístění. "
+msgstr ""
+"časovač nemůže být přidán... na partnerboxu není k dispozici žádné umístění. "
 
 #
 #: RemoteTimerEntry.py:83
@@ -637,8 +639,12 @@ msgid "Yes (safe mode)"
 msgstr "Ano (bezpečný mód)"
 
 #: plugin.py:2129
-msgid "You can not add services or bouquets from Enigma1-receivers into the channellist..."
-msgstr "Nelze přidávat do seznamu programů programy nebo přehledy z přijímačů používajících Enigma1..."
+msgid ""
+"You can not add services or bouquets from Enigma1-receivers into the "
+"channellist..."
+msgstr ""
+"Nelze přidávat do seznamu programů programy nebo přehledy z přijímačů "
+"používajících Enigma1..."
 
 #: PartnerboxEPGSelection.py:194 plugin.py:615
 msgid "Zap"
@@ -764,6 +770,42 @@ msgstr "Nastavit %s jako záložní přijímač?"
 
 msgid "Set as fallback remote receiver"
 msgstr "Nastavit jako záložní přijímač"
+
+msgid " (Partnerbox %s - Version: %s)"
+msgstr "(Partnerbox %s - verze: %s)"
+
+#
+msgid "Partnerbox: AutoTimer"
+msgstr ""
+
+msgid "add AutoTimer for Partnerbox..."
+msgstr "přidat AutoTimer pro Partnerbox..."
+
+msgid "add AutoTimer"
+msgstr "Přidat AutoTimer"
+
+msgid "Close without saving"
+msgstr "Zavřít bez uložení"
+
+msgid "Close and save"
+msgstr "Uložit a zavřít"
+
+msgid ""
+"Really close without saving settings?\n"
+"What do you want to do?"
+msgstr ""
+"Opravdu zavřít bez uložení nastavení?\n"
+"Co chcete dělat?"
+
+#
+msgid "AutoTimer overview"
+msgstr "AutoTimer přehled"
+
+msgid "Do you really want to delete %s?"
+msgstr "Opravdu chcete smazat %s?"
+
+msgid "Save"
+msgstr "Uložit"
 
 #~ msgid "You have to restart Enigma2 to activate your new preferences!"
 #~ msgstr "Pro uplatnění změn musíte restartovat Enigma2!"
