@@ -40,6 +40,7 @@ from ServiceReference import ServiceReference
 from myFileList import FileList as myFileList
 #from vInputBox import vInputBox
 from Screens.InputBox import InputBox
+from Components.Sources.StaticText import StaticText
 
 PicPlayerAviable = False
 if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/PicturePlayer/plugin.pyo") or fileExists("/usr/lib/enigma2/python/Plugins/Extensions/PicturePlayer/plugin.pyc"):
@@ -90,7 +91,7 @@ else:
 
 def Plugins(**kwargs):
 	list = [PluginDescriptor(name="Dream-Explorer", description=_("Explore your box"), where = [PluginDescriptor.WHERE_PLUGINMENU], icon="dreamexplorer.png", fnc=main)]
- 	list.append(PluginDescriptor(name=_("Dream-Explorer"), where = PluginDescriptor.WHERE_EXTENSIONSMENU, fnc=main))
+	list.append(PluginDescriptor(name=_("Dream-Explorer"), where = PluginDescriptor.WHERE_EXTENSIONSMENU, fnc=main))
 	#list.append(PluginDescriptor(where = [PluginDescriptor.WHERE_SESSIONSTART],fnc = autostart))
 	return list
 
@@ -186,6 +187,12 @@ class DreamExplorerII(Screen):
 			self.MediaFilter = True
 			self["filelist"] = myFileList(StartMeOn, showDirectories = True, showFiles = True, matchingPattern = self.MediaPattern, useServiceRef = False)
 		self["TEMPfl"] = FileList("/", matchingPattern = "(?i)^.*\.(jpeg|jpg|jpe|png|bmp)")
+
+		self["key_red"] = StaticText(_("Delete"))
+		self["key_green"] = StaticText(_("Rename"))
+		self["key_yellow"] = StaticText(_("Move/Copy"))
+		self["key_blue"] = StaticText(_("Bookmarks"))
+
 		self["actions"] = ActionMap(["WizardActions", "DirectionActions", "ColorActions", "MenuActions", "EPGSelectActions", "InfobarActions"],
 		{
 			"ok": self.ok,
