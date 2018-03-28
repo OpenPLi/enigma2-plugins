@@ -29,6 +29,7 @@ from Components.ConfigList import ConfigList, ConfigListScreen
 from Components.config import ConfigSubsection, ConfigSubList, ConfigIP, ConfigInteger, ConfigSelection, ConfigText, ConfigYesNo, getConfigListEntry, configfile
 import skin
 import os
+from plugin import autoTimerAvailable
 
 # for localized messages
 from . import _
@@ -116,6 +117,8 @@ class PartnerboxSetup(ConfigListScreen, Screen):
 			self.list.append(getConfigListEntry(_("Show duration time for event"), config.plugins.Partnerbox.showremaingepglist))
 			self.list.append(getConfigListEntry(_("Show all icon for event in EPGList"), config.plugins.Partnerbox.allicontype))
 		self.list.append(getConfigListEntry(_("Enable Partnerbox-Function in Channel Selector"), config.plugins.Partnerbox.enablepartnerboxchannelselector))
+		if autoTimerAvailable:
+			self.list.append(getConfigListEntry(_("Enable Partnerbox-AutoTimer function"), config.plugins.Partnerbox.showpartnerboxautotimerninmenu))
 		self["config"].l.setList(self.list)
 
 	def keySave(self):

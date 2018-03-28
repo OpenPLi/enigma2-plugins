@@ -773,3 +773,6 @@ msgstr ""
 
 msgid "Save"
 msgstr ""
+
+msgid "Enable Partnerbox-AutoTimer function"
+msgstr ""
