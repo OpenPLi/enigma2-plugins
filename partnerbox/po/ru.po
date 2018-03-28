@@ -609,3 +609,6 @@ msgstr "Вы действительно хотите удалить %s?"
 
 msgid "Save"
 msgstr "Сохранить"
+
+msgid "Enable Partnerbox-AutoTimer function"
+msgstr "Включить функцию Partnerbox-Автотаймер"
