@@ -15,6 +15,7 @@ from cPickle import dump, load
 from os import path as os_path, unlink, stat, mkdir
 from time import time
 from stat import ST_MTIME
+from Components.Sources.Boolean import Boolean
 
 def write_cache(cache_file, cache_data):
 	#Does a cPickle dump
@@ -85,7 +86,7 @@ class UserDialog(Screen, ConfigListScreen):
 		self.createSetup()
 		self.onLayoutFinish.append(self.layoutFinished)
 		# Initialize Buttons
-		self["VKeyIcon"] = Pixmap()
+		self["VKeyIcon"] = Boolean(False)
 		self["HelpWindow"] = Pixmap()
 		self["introduction"] = StaticText(_("Press OK to save settings."))
 		self["key_red"] = StaticText(_("Close"))

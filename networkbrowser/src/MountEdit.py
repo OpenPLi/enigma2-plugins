@@ -13,6 +13,7 @@ from Components.ActionMap import ActionMap, NumberActionMap
 from enigma import ePoint
 from AutoMount import iAutoMount, AutoMount
 from re import sub as re_sub
+from Components.Sources.Boolean import Boolean
 
 class AutoMountEdit(Screen, ConfigListScreen):
 	skin = """
@@ -59,7 +60,7 @@ class AutoMountEdit(Screen, ConfigListScreen):
 		self.createSetup()
 		self.onLayoutFinish.append(self.layoutFinished)
 		# Initialize Buttons
-		self["VKeyIcon"] = Pixmap()
+		self["VKeyIcon"] = Boolean(False)
 		self["HelpWindow"] = Pixmap()
 		self["introduction"] = StaticText(_("Press OK to activate the settings."))
 		self["key_red"] = StaticText(_("Cancel"))
@@ -67,7 +68,6 @@ class AutoMountEdit(Screen, ConfigListScreen):
 
 	def layoutFinished(self):
 		self.setTitle(_("Mounts editor"))
-		self["VKeyIcon"].hide()
 		self["VirtualKB"].setEnabled(False)
 		self["HelpWindow"].hide()
 
@@ -217,13 +217,11 @@ class AutoMountEdit(Screen, ConfigListScreen):
 	def selectionChanged(self):
 		current = self["config"].getCurrent()
 		if current == self.activeEntry or current == self.ipEntry or current == self.mounttypeEntry or current == self.hdd_replacementEntry:
-			self["VKeyIcon"].hide()
 			self["VirtualKB"].setEnabled(False)
 		else:
 			helpwindowpos = self["HelpWindow"].getPosition()
 			if current[1].help_window.instance is not None:
 				current[1].help_window.instance.move(ePoint(helpwindowpos[0],helpwindowpos[1]))
-				self["VKeyIcon"].show()
 				self["VirtualKB"].setEnabled(True)
 
 	def ok(self):
