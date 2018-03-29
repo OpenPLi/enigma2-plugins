@@ -779,7 +779,7 @@ msgid "Partnerbox: AutoTimer"
 msgstr ""
 
 msgid "add AutoTimer for Partnerbox..."
-msgstr "přidat AutoTimer pro Partnerbox..."
+msgstr "Přidat AutoTimer pro Partnerbox..."
 
 msgid "add AutoTimer"
 msgstr "Přidat AutoTimer"
