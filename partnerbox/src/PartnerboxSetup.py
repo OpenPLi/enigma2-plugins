@@ -131,6 +131,8 @@ class PartnerboxSetup(ConfigListScreen, Screen):
 		config.plugins.Partnerbox.enablepartnerboxeventinfocontextmenu.save()
 		config.plugins.Partnerbox.allicontype.save()
 		config.plugins.Partnerbox.showremaingepglist.save()
+		config.plugins.Partnerbox.enablevpsintimerevent.save()
+		config.plugins.Partnerbox.showpartnerboxautotimerninmenu.save()
 		configfile.save()
 		self.refreshPlugins()
 		self.close(self.session)
