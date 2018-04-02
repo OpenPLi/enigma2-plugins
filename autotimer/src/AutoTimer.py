@@ -87,7 +87,7 @@ def timeSimilarityPercent(rtimer, evtBegin, evtEnd, timer=None):
 	else:
 		return 0
 	if durationMatch_percent < commonTime_percent:
-		#avoid false match for a short event completely inside a very long rtimer's time span 
+		#avoid false match for a short event completely inside a very long rtimer's time span
 		return durationMatch_percent
 	else:
 		return commonTime_percent
@@ -539,7 +539,7 @@ class AutoTimer:
 				if dest and dest not in moviedict:
 					self.addDirectoryToMovieDict(moviedict, dest, serviceHandler)
 				for movieinfo in moviedict.get(dest, ()):
-					if self.checkDuplicates(timer, name, movieinfo.get("name"), shortdesc, movieinfo.get("shortdesc"), extdesc, movieinfo.get("extdesc")):
+					if self.checkDuplicates(timer, name, movieinfo.get("name"), shortdesc, movieinfo.get("shortdesc"), extdesc, movieinfo.get("extdesc"), False, True):
 						doLog("[AutoTimer] We found a matching recorded movie, skipping event:", name)
 						movieExists = True
 						break
@@ -828,7 +828,7 @@ class AutoTimer:
 		return (new, modified)
 
 	def parseEPG(self, simulateOnly=False, uniqueId=None, callback=None):
- 
+
 		from plugin import AUTOTIMER_VERSION
 		doLog("AutoTimer Version: " + AUTOTIMER_VERSION)
 
@@ -1074,7 +1074,7 @@ class AutoTimer:
 		timer.begin = int(begin)
 		timer.end = int(end)
 		timer.service_ref = ServiceReference(serviceref)
-		if eit: 
+		if eit:
 			timer.eit = eit
 		if base_timer:
 			check_timer_list = NavigationInstance.instance.RecordTimer.timer_list[:]
@@ -1150,7 +1150,7 @@ class AutoTimer:
 				retValue = True
 		return retValue
 
-	def checkDuplicates(self, timer, name1, name2, shortdesc1, shortdesc2, extdesc1, extdesc2, force=False):
+	def checkDuplicates(self, timer, name1, name2, shortdesc1, shortdesc2, extdesc1, extdesc2, force=False, isMovie=False):
 		if name1 and name2:
 			sequenceMatcher = SequenceMatcher(" ".__eq__, name1, name2)
 		else:
@@ -1167,9 +1167,11 @@ class AutoTimer:
 				doDebug("[AutoTimer] shortdesc ratio %f - %s - %d - %s - %d" % (ratio, shortdesc1, len(shortdesc1), shortdesc2, len(shortdesc2)))
 				foundShort = shortdesc1 in shortdesc2 or ((ratio_value < ratio) or (ratio_value == 1.0 and ratio_value == ratio))
 				if foundShort:
-					doLog("[AutoTimer] shortdesc ratio %f - %s - %d - %s - %d" % (ratio, shortdesc1, len(shortdesc1), shortdesc2, len(shortdesc2)))
-			elif not force and timer.descShortExtEmpty and not shortdesc1 and not shortdesc2 and name1 != name2:
+					doLog("[AutoTimer] shortdesc match: ratio %f - %s - %d - %s - %d" % (ratio, shortdesc1, len(shortdesc1), shortdesc2, len(shortdesc2)))
+			elif not force and timer.descShortExtEmpty and ((isMovie and shortdesc1 and not shortdesc2) or (not isMovie and not shortdesc1 and not shortdesc2 and name1 != name2)):
+				doDebug("[AutoTimer] Configuration caused this sortdesc match to be ignored!");
 				foundShort = False
+			doDebug("[AutoTimer] Final result for foundShort: %s" % "True" if foundShort else "False");
 
 			foundExt = True
 			# NOTE: only check extended if short description already is a match because otherwise
@@ -1180,8 +1182,11 @@ class AutoTimer:
 				doDebug("[AutoTimer] extdesc ratio %f - %s - %d - %s - %d" % (ratio, extdesc1, len(extdesc1), extdesc2, len(extdesc2)))
 				foundExt = (ratio_value < ratio) or (ratio_value == 1.0 and ratio_value == ratio)
 				if foundExt:
-					doLog("[AutoTimer] extdesc ratio %f - %s - %d - %s - %d" % (ratio, extdesc1, len(extdesc1), extdesc2, len(extdesc2)))
-			elif not force and timer.descShortExtEmpty and not extdesc1 and not extdesc2 and name1 != name2:
+					doLog("[AutoTimer] extdesc match: ratio %f - %s - %d - %s - %d" % (ratio, extdesc1, len(extdesc1), extdesc2, len(extdesc2)))
+			elif not force and timer.descShortExtEmpty and ((isMovie and extdesc1 and not extdesc2) or (not isMovie and not extdesc1 and not extdesc2 and name1 != name2)):
+				doDebug("[AutoTimer] Configuration caused this extdesc match to be ignored!");
 				foundExt = False
+			doDebug("[AutoTimer] Final result for foundExt: %s" % "True" if foundExt else "False");
+
 			return foundShort and foundExt
 		return False
