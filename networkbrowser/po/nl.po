@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: enigma2 - networkbrowser\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-01-28 16:44+0100\n"
-"PO-Revision-Date: 2018-03-17 14:48+0100\n"
+"PO-Revision-Date: 2018-04-03 16:15+0100\n"
 "Last-Translator: Frenske <voorzitter@openpli.org>\n"
 "Language-Team: Benny.DeTandt@gmail.com\n"
 "Language: nl\n"
@@ -60,7 +60,8 @@ msgstr "Probeer om de gedeelde locaties opnieuw te mounten"
 
 #: ../src/plugin.py:45
 msgid "Attempt to recover lost mounts (in background)"
-msgstr "Er wordt geprobeerd om de verbroken mounts te herstellen.\n"
+msgstr ""
+"Er wordt geprobeerd om de verbroken mounts te herstellen.\n"
 "(achtergrondproces)."
 
 #: ../src/NetworkBrowser.py:157
@@ -341,7 +342,7 @@ msgstr "De netwerkmount is bijgewerkt."
 
 #: ../src/MountEdit.py:187
 msgid "use as HDD replacement"
-msgstr "gebruik als vervanging voor de harde schijf"
+msgstr "Gebruik als vervanging voor de harde schijf"
 
 msgid "Mount view"
 msgstr "Zicht op de mount"

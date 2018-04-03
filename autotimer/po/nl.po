@@ -5,14 +5,14 @@ msgstr ""
 "Project-Id-Version: enigma - autotimer\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-03-06 13:23+0200\n"
-"PO-Revision-Date: 2018-02-28 16:51+0100\n"
-"Last-Translator: Tech <tech@openpli.org>\n"
-"Language-Team: <Benny.DeTandt@gmail.com>\n"
+"PO-Revision-Date: 2018-04-03 16:28+0100\n"
+"Last-Translator: Frenske <voorzitter@openpli.org>\n"
+"Language-Team:  <Benny.DeTandt@gmail.com>\n"
 "Language: nl_NL\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.6\n"
+"X-Generator: Poedit 1.5.7\n"
 
 #: AutoTimerOverview.py:136 AutoTimerSettings.py:120
 msgid " - Version: "
@@ -393,7 +393,7 @@ msgid ""
 "Enable this to add item for create the AutoTimer into event menu (needs "
 "restart GUI)."
 msgstr ""
-"Aktiveer dit om de AutoTimer aan het event menu toe te voegen (herstart van "
+"Activeer dit om de AutoTimer aan het event menu toe te voegen (herstart van "
 "enigma noodzakelijk)."
 
 #: AutoTimerSettings.py:58
@@ -405,7 +405,6 @@ msgstr ""
 "instellen."
 
 #: AutoTimerSettings.py:60
-#, fuzzy
 #| msgid ""
 #| "Enable this to be able to access the AutoTimer Overview from within the "
 #| "extension menu."
@@ -413,12 +412,12 @@ msgid ""
 "Enable this to be able to access the add to AutoTimer from the channel "
 "selection context menu."
 msgstr ""
-"Activeer deze optie om de AutoTimer vanuit het uitbreidingsmenu te kunnen "
-"instellen."
+"Activeer deze optie om de AutoTimer vanuit het zenderlijst uitbreidingsmenu "
+"te kunnen instellen."
 
 #: AutoTimerEditor.py:700
 msgid "Enable timer conflict detection"
-msgstr "Aktiveer detectie van timerconflicten"
+msgstr "Activeer detectie van timerconflicten"
 
 #: AutoTimerEditor.py:609 AutoTimerImporter.py:145 AutoTimerWizard.py:113
 msgid "Enabled"
@@ -558,14 +557,13 @@ msgid "If this enabled, debug log print in console mode start enigma2."
 msgstr ""
 "Indien ingeschakeld, wordt debug log in de console van enigma2 weergegeven."
 
+# Geen idee wat ik hiermee moet.
 #: AutoTimerSettings.py:65
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "If this is enabled an existing timer will also be considered recording an "
 "event if it records at least 80% of the it."
 msgstr ""
-"Indien ingeschakeld wordt een bestaande timer ook als opname-event beschouwd "
-"indien er minstens 80% van is opgenomen."
 
 #: AutoTimerSettings.py:62
 msgid ""
@@ -812,7 +810,7 @@ msgstr "Open standaard instellingen menu"
 
 #: AutoTimerEditor.py:710
 msgid "Other filters (edit in filter menu)"
-msgstr "Andere filters (aanpassen in filter menu)"
+msgstr "Andere filters (wijzigen met de gele toets)"
 
 #: AutoTimerEditor.py:624
 msgid "Override found with alternative service"
@@ -861,7 +859,7 @@ msgstr "Voorvertoning van de AutoTimers"
 
 #: AutoTimerSettings.py:84
 msgid "Print shell log"
-msgstr ""
+msgstr "Print shell logfile"
 
 #: AutoTimerEditor.py:801 AutoTimerEditor.py:1164 AutoTimerEditor.py:1335
 #: AutoTimerImporter.py:250 AutoTimerOverview.py:256
@@ -902,17 +900,15 @@ msgstr "Beperk tot gebeurtenissen op bepaalde datums"
 
 #: AutoTimerEditor.py:708
 msgid "Restriction to certain bouquets (edit in services menu)"
-msgstr "Beperk tot bepaalde boeketten (aanpasbaar in het services menu)"
+msgstr "Beperkt tot bepaalde boeketten (wijzigen met de blauwe toets)"
 
 #: AutoTimerEditor.py:709
 msgid "Restriction to certain days of week (edit in filter menu)"
-msgstr ""
-"Beperk tot een bepaald aantal dagen in de week (aanpasbaar in het filter "
-"menu)"
+msgstr "Beperkt tot een bepaald aantal dagen (wijzigen met de gele toets)"
 
 #: AutoTimerEditor.py:707
 msgid "Restriction to certain services (edit in services menu)"
-msgstr "Beperk tot bepaalde kanalen (aanpasbaar in het services menu)"
+msgstr "Beperkt tot bepaalde kanalen (wijzigen met de blauwe toets)"
 
 #: AutoTimerList.py:119
 msgid "Sat"
@@ -995,13 +991,12 @@ msgid "Set End Time"
 msgstr "Stel de eindtijd in"
 
 #: AutoTimerEditor.py:571
-#, fuzzy
 msgid ""
 "Set an end time for the timer. If you do, the timespan of the event might be "
 "blocked for recordings."
 msgstr ""
 "Stel een eindtijd in voor de timer. Als u dat doet kan de tijdsspanne van "
-"het event worden geblokkeerd voor opnamen."
+"het programma worden geblokkeerd voor opnamen."
 
 #: AutoTimerEditor.py:653
 msgid "Set maximum duration"
@@ -1569,7 +1564,6 @@ msgstr ""
 "Indien ingeschakeld, geeft de korte omschrijving dezelfde uitkomst als de "
 "uitgebreide omschrijving indien de korte omschrijving leeg is."
 
-#, fuzzy
 msgid ""
 "When this option enabled and short description and extended description "
 "match is empty and timer title exist in match title, match is not a "
