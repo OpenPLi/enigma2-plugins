@@ -4,17 +4,19 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
+"Project-Id-Version: TranscodingSetup\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-28 00:36+0200\n"
-"PO-Revision-Date: 2016-09-15 01:05+0200\n"
+"PO-Revision-Date: 2018-04-03 23:29+0200\n"
+"Last-Translator: Gringo <openpli@tiscali.it>\n"
+"Language-Team: \n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Last-Translator: Eragon <openpli@outlook.it>\n"
-"Language-Team: \n"
-"X-Generator: Poedit 1.8.9\n"
+"X-Generator: Poedit 1.8.7.1\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
 
 #: plugin.py:96
 msgid "Bitrate"
@@ -26,7 +28,7 @@ msgstr "Valori predefiniti del transcoding"
 
 #: plugin.py:159
 msgid "It seems your receiver is not supported!"
-msgstr "Questo ricevitore non e' supportato!"
+msgstr "Questo ricevitore non è supportato!"
 
 #: plugin.py:156
 msgid "Not found file '/etc/enigma2/streamproxy.conf' !"
@@ -51,3 +53,9 @@ msgstr "Transcoding"
 #: plugin.py:97
 msgid "Video size"
 msgstr "Risoluzione video"
+
+msgid "Frame rate"
+msgstr "Immagini al secondo"
+
+msgid "Video codec"
+msgstr "Codifica video"
