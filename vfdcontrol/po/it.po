@@ -1,0 +1,118 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: VfdControl\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-01-19 19:52+0100\n"
+"PO-Revision-Date: 2018-04-05 22:26+0200\n"
+"Last-Translator: Gringo <openpli@tiscali.it>\n"
+"Language-Team: \n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.7.1\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-Basepath: ../../..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: plugin.py\n"
+
+#: plugin.py:20
+msgid "Channelnumber in Standby off"
+msgstr "Numero del canale in stato di sospensione disattivato"
+
+#: plugin.py:20
+msgid "Channelnumber in Standby Clock"
+msgstr "Numero del canale in stato di sospensione nell'orologio "
+
+#: plugin.py:20
+msgid "Channelnumber/Clock in Standby Clock"
+msgstr "Numero del canale/Orologio in stato di sospensione nell'orologio "
+
+#: plugin.py:20
+msgid "Clock always"
+msgstr "Orologio sempre"
+
+#: plugin.py:20
+msgid "Always off"
+msgstr "Sempre spento"
+
+#: plugin.py:21
+msgid "12h"
+msgstr "12h"
+
+#: plugin.py:21
+msgid "24h"
+msgstr "24h"
+
+#: plugin.py:22
+msgid "yes"
+msgstr "Sì"
+
+#: plugin.py:22
+msgid "no"
+msgstr "No"
+
+#: plugin.py:23
+msgid "Off"
+msgstr "Spento"
+
+#: plugin.py:23
+msgid "On/Off"
+msgstr "Acceso/Spento"
+
+#: plugin.py:23
+msgid "Brightness level"
+msgstr "Livello di luminosità"
+
+#: plugin.py:230
+msgid "Control 7 segment VFD display"
+msgstr "Controllare il display VFD a 7 linee"
+
+#: plugin.py:240
+msgid "Cancel"
+msgstr "Annullare"
+
+#: plugin.py:241
+msgid "Save"
+msgstr "Salvare"
+
+#: plugin.py:242
+msgid "Update Date/Time"
+msgstr "Aggiornare Data/Ora"
+
+#: plugin.py:254 plugin.py:273
+msgid "Show on VFD"
+msgstr "Mostrare su VFD"
+
+#: plugin.py:256
+msgid "Time mode"
+msgstr "Modalità Ora"
+
+#: plugin.py:257 plugin.py:275
+msgid "Show REC-Symbol in Display"
+msgstr "Mostrare il simbolo REC nel Display"
+
+#: plugin.py:259 plugin.py:277
+msgid "Show blinking Clock on Display during recording"
+msgstr "Mostrare orologio lampeggiante su display durante reg."
+
+#: plugin.py:261
+msgid "Brightness Level 1"
+msgstr "Luminosità Livello 1"
+
+#: plugin.py:262
+msgid "Brightness Level 2"
+msgstr "Luminosità Livello 2"
+
+#: plugin.py:320
+msgid "VFD Display Setup"
+msgstr "Display VFD"
+
+#: plugin.py:354
+msgid "Change VFD display settings"
+msgstr "Modificare le impostazioni di visualizzazione VFD"
