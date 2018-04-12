@@ -2,22 +2,22 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: enigma2 - networkbrowser\n"
+"Project-Id-Version: NetworkBrowser\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-01-28 16:39+0100\n"
-"PO-Revision-Date: 2009-10-29 14:01+0100\n"
-"Last-Translator: Spaeleus <spaeleus@croci.org>\n"
+"POT-Creation-Date: 2012-01-28 16:44+0100\n"
+"PO-Revision-Date: 2018-04-03 23:34+0200\n"
+"Last-Translator: Gringo <openpli@tiscali.it>\n"
 "Language-Team: WWW.Linsat.net <spaeleus@croci.org>\n"
+"Language: it_IT\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Poedit-Language: Italian\n"
-"X-Poedit-Country: ITALY\n"
-"X-Poedit-SourceCharset: iso-8859-15\n"
-"X-Poedit-Basepath: /home/dario/Plugins/networkbrowser\n"
-"X-Poedit-SearchPath-0: /home/dario/Plugins/networkbrowser\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-Basepath: /X-Generator: Poedit 1.5.4\n"
+"X-Generator: Poedit 1.8.7.1\n"
 
+#: ../src/MountEdit.py:269
 msgid ""
 "A mount entry with this name already exists!\n"
 "Update existing entry and continue?\n"
@@ -25,239 +25,320 @@ msgstr ""
 "Voce di mount già esistente!\n"
 "Aggiornarla con la configurazione corrente e continuare?\n"
 
+#: ../src/MountEdit.py:177
 msgid "Active"
 msgstr "Attivo"
 
+#: ../src/MountView.py:61
 msgid ""
 "Active/\n"
 "Inactive"
 msgstr ""
-"Attivo\n"
-"Inattivo"
+"Attivo/\n"
+"Disattivo"
 
+#: ../src/MountManager.py:73
 msgid "Add a new NFS or CIFS mount point to your Receiver."
-msgstr "Aggiungere nuovo mount point NFS o CIFS al Receiver"
+msgstr "Aggiungere un nuovo punto di mount NFS o CIFS al ricevitore."
 
+#: ../src/MountManager.py:73
 msgid "Add new network mount point"
-msgstr "Aggiungere nuovo mount point di rete"
+msgstr "Aggiungere un nuovo punto di mount di rete"
 
+#: ../src/MountEdit.py:271
 msgid ""
 "Are you sure you want to save this network mount?\n"
 "\n"
 msgstr ""
-"Salvare questo mount point?\n"
+"Salvare questo punto di mount?\n"
 "\n"
 
+#: ../src/plugin.py:42
 msgid "Attempt to mount shares again"
-msgstr ""
+msgstr "Tentare ancora di montare le condivisioni."
 
+#: ../src/plugin.py:45
 msgid "Attempt to recover lost mounts (in background)"
-msgstr ""
+msgstr "Tentare di ripristinare gli ultimi mount (in sottofondo).\n"
 
+#: ../src/NetworkBrowser.py:157
 msgid "Browse network neighbourhood"
 msgstr "Sfogliare Risorse di rete"
 
+#: ../src/MountEdit.py:98
 msgid "CIFS share"
 msgstr "Condivisione CIFS"
 
+#: ../src/MountEdit.py:65 ../src/NetworkBrowser.py:498
 msgid "Cancel"
-msgstr "Annull."
+msgstr "Annullare"
 
+#: ../src/MountManager.py:76
 msgid "Change hostname"
-msgstr "Cambiare nome Host"
+msgstr "Cambiare nome di sistema"
 
+#: ../src/MountManager.py:76
 msgid "Change the hostname of your Receiver."
-msgstr "Cambiare nome Host del Receiver."
+msgstr "Cambiare il nome di sistema al ricevitore."
 
+#: ../src/MountManager.py:54 ../src/MountView.py:63
+#: ../src/NetworkBrowser.py:107 ../src/UserDialog.py:91
+#: ../src/UserManager.py:50
 msgid "Close"
 msgstr "Chiudere"
 
+#: ../src/UserManager.py:52
 msgid "Delete"
-msgstr "Cancellare"
+msgstr "Eliminare"
 
+#: ../src/MountView.py:64
 msgid "Delete mount"
-msgstr "Canc. il mount"
+msgstr "Eliminare mount"
 
+#: ../src/MountView.py:85
 msgid "Dir:"
 msgstr "Dir: "
 
+#: ../src/NetworkBrowser.py:391 ../src/NetworkBrowser.py:393
+#: ../src/NetworkBrowser.py:406
 msgid "Do you want to enter a username and password for this host?\n"
-msgstr "Utilizzare nome User e Password per questo Host?\n"
+msgstr "Utilizzare un nome utente e password per questo sistema?\n"
 
+#: ../src/NetworkBrowser.py:526
 msgid "Enter IP to scan..."
 msgstr "Inserire IP da ricercare..."
 
+#: ../src/MountManager.py:108
 msgid "Enter new hostname for your Receiver"
-msgstr "Inserire il nuovo nome Host per il Receiver"
+msgstr "Inserire il nuovo nome di sistema del ricevitore"
 
+#: ../src/MountEdit.py:217
 msgid "Enter options:"
 msgstr "Inserire opzioni: "
 
+#: ../src/MountEdit.py:221 ../src/UserDialog.py:141
 msgid "Enter password:"
-msgstr "Inserire Password: "
+msgstr "Inserire password: "
 
+#: ../src/MountEdit.py:215
 msgid "Enter share directory:"
 msgstr "Inserire cartella condivisa: "
 
+#: ../src/MountEdit.py:213
 msgid "Enter share name:"
 msgstr "Inserire nome condivisione: "
 
+#: ../src/UserDialog.py:94
 msgid "Enter user and password for host: "
-msgstr "Inserire User e Password per l'Host: "
+msgstr "Inserire utente e password del sistema: "
 
+#: ../src/MountEdit.py:219 ../src/UserDialog.py:139
 msgid "Enter username:"
-msgstr "Inserire nome User: "
+msgstr "Inserire nome utente: "
 
+#: ../src/NetworkBrowser.py:110
 msgid "Expert"
 msgstr "Avanzato"
 
+#: ../src/MountManager.py:132
 msgid "Finished restarting your network"
-msgstr "Riavvio rete terminato"
+msgstr "Riavvio della rete terminato"
 
+#: ../src/NetworkBrowser.py:514
 msgid "IP Address"
 msgstr "Indirizzo IP"
 
+#: ../src/MountView.py:84
 msgid "IP:"
 msgstr "IP:"
 
+#: ../src/MountEdit.py:179
 msgid "Local share name"
 msgstr "Nome condivisione locale"
 
+#: ../src/plugin.py:41
 msgid "Manage network shares"
-msgstr "Gestire condivisioni di rete"
+msgstr "Gestire le condivisioni di rete"
 
+#: ../src/plugin.py:41
 msgid "Manage your network shares..."
-msgstr "Gestire condivisioni di rete..."
+msgstr "Gestire le condivisioni di rete.\n"
 
+#: ../src/plugin.py:42 ../src/plugin.py:44
 msgid "Mount again"
-msgstr ""
+msgstr "Ripristinare mount"
 
+#: ../src/MountView.py:60
 msgid "Mount informations"
 msgstr "Informazioni mount"
 
+#: ../src/MountEdit.py:194
 msgid "Mount options"
 msgstr "Opzioni mount"
 
+#: ../src/MountEdit.py:181
 msgid "Mount type"
 msgstr "Tipo mount"
 
+#: ../src/MountManager.py:64 ../src/plugin.py:41
 msgid "MountManager"
-msgstr "MountManager"
+msgstr "Gestore mount"
 
+#: ../src/MountView.py:59
 msgid ""
 "Mounted/\n"
 "Unmounted"
 msgstr ""
-"Montata\n"
-"Non Montata"
+"Montato/\n"
+"Smontato"
 
+#: ../src/MountManager.py:74
 msgid "Mountpoints management"
-msgstr "Gestione mount point"
+msgstr "Gestione punti di mount"
 
+#: ../src/MountEdit.py:69
 msgid "Mounts editor"
 msgstr "Editor mount"
 
+#: ../src/NetworkBrowser.py:108
 msgid "Mounts management"
 msgstr "Gestione mount"
 
+#: ../src/MountEdit.py:97
 msgid "NFS share"
 msgstr "Condivisione NFS"
 
+#: ../src/plugin.py:40
 msgid "NetworkBrowser"
-msgstr "NetworkBrowser"
+msgstr "Sfogliare la rete"
 
+#: ../src/NetworkBrowser.py:193
 msgid "No network devices found!"
-msgstr "Nessun apparato di rete trovato!"
+msgstr "Nessun dispositivo di rete trovato!"
 
+#: ../src/MountEdit.py:199 ../src/UserDialog.py:130
 msgid "Password"
 msgstr "Password"
 
+#: ../src/MountEdit.py:328
 msgid "Please wait for activation of your network mount..."
-msgstr "Attendere attivazione mount di rete..."
+msgstr "Attendere: attivazione mount di rete in corso..."
 
+#: ../src/MountView.py:113
 msgid "Please wait while removing your network mount..."
 msgstr "Attendere: rimozione mount di rete in corso..."
 
+#: ../src/MountEdit.py:291
 msgid "Please wait while updating your network mount..."
-msgstr "Attendere aggiornamento mount di rete..."
+msgstr "Attendere: aggiornamento mount di rete in corso..."
 
+#: ../src/MountManager.py:119
 msgid "Please wait while your network is restarting..."
 msgstr "Attendere: riavvio della rete in corso..."
 
+#: ../src/MountEdit.py:64
 msgid "Press OK to activate the settings."
-msgstr "Ok -> Attivare la configurazione."
+msgstr "OK -> Attivare la configurazione."
 
+#: ../src/NetworkBrowser.py:364
 msgid "Press OK to collapse this host"
-msgstr "Ok -> Collassare l'host."
+msgstr "OK -> Comprimere il sistema."
 
+#: ../src/UserManager.py:51
 msgid "Press OK to edit selected settings."
-msgstr "Ok -> Modificare configurazione selezionata."
+msgstr "OK -> Modificare configurazione selezionata."
 
+#: ../src/MountView.py:62
 msgid "Press OK to edit the settings."
-msgstr "Ok -> Modificare configurazione."
+msgstr "OK -> Modificare configurazione."
 
+#: ../src/NetworkBrowser.py:366
 msgid "Press OK to expand this host"
-msgstr "Ok -> Espandere l'host."
+msgstr "OK -> Espandere il sistema."
 
+#: ../src/NetworkBrowser.py:360
 msgid "Press OK to mount this share!"
-msgstr "Ok -> Eseguire il mount della condivisione!"
+msgstr "OK -> Eseguire il mount della condivisione!"
 
+#: ../src/NetworkBrowser.py:111
 msgid "Press OK to mount!"
-msgstr "Ok -> Eseguire il mount!"
+msgstr "OK -> Eseguire il mount!"
 
+#: ../src/UserDialog.py:90
 msgid "Press OK to save settings."
-msgstr "Ok -> Salvare configurazione."
+msgstr "OK -> Salvare configurazione."
 
+#: ../src/MountManager.py:55
 msgid "Press OK to select."
-msgstr "Ok -> Selezionare."
+msgstr "OK -> Selezionare."
 
+#: ../src/NetworkBrowser.py:109
 msgid "Rescan"
-msgstr "Ripetere Ricerca"
+msgstr "Ripetere ricerca"
 
+#: ../src/NetworkBrowser.py:499
 msgid "Scan NFS share"
-msgstr "Ric. cond. NFS"
+msgstr "Ricerca condivisione NFS"
 
+#: ../src/NetworkBrowser.py:500
 msgid "Scan range"
 msgstr "Intervallo ricerca"
 
+#: ../src/plugin.py:40
 msgid "Search for network shares"
-msgstr "Ricerca condivisioni di rete"
+msgstr "Cercare le condivisioni di rete"
 
+#: ../src/plugin.py:40
 msgid "Search for network shares..."
-msgstr "Ricerca condivisioni di rete..."
+msgstr "Cercare le condivisioni di rete.\n"
 
+#: ../src/NetworkBrowser.py:189
 msgid "Searching your network. Please wait..."
-msgstr "Ricerca sulla rete in corso. Attendere..."
+msgstr "Ricerca nella rete in corso. Attendere..."
 
+#: ../src/MountEdit.py:183
 msgid "Server IP"
-msgstr "IP Server"
+msgstr "IP server"
 
+#: ../src/MountEdit.py:185
 msgid "Server share"
-msgstr "Condivisione Server"
+msgstr "Condivisione server"
 
+#: ../src/MountManager.py:75
 msgid "User management"
-msgstr "Gestione User"
+msgstr "Gestione utente"
 
+#: ../src/UserManager.py:60
 msgid "Usermanager"
-msgstr "Gestione User"
+msgstr "Gestore utente"
 
+#: ../src/MountEdit.py:197 ../src/UserDialog.py:128
 msgid "Username"
-msgstr "Nome User"
+msgstr "Nome utente"
 
+#: ../src/MountManager.py:74
 msgid "View, edit or delete mountpoints on your Receiver."
-msgstr "Vedere, modificare o cancellare mount point sul Receiver."
+msgstr "Vedere, modificare o eliminare i punti di mount del ricevitore."
 
+#: ../src/MountManager.py:75
 msgid "View, edit or delete usernames and passwords for your network."
-msgstr "Vedere, modificare o cancellare nome User e Password per la rete."
+msgstr "Vedere, modificare o eliminare il nome utente e la password di rete."
 
+#: ../src/MountEdit.py:341
 msgid "Your network mount has been activated."
 msgstr "Mount di rete attivato."
 
+#: ../src/MountView.py:128
 msgid "Your network mount has been removed."
 msgstr "Mount di rete rimosso."
 
+#: ../src/MountEdit.py:303
 msgid "Your network mount has been updated."
 msgstr "Mount di rete aggiornato."
 
+#: ../src/MountEdit.py:187
 msgid "use as HDD replacement"
-msgstr "Usare in sostituzione HDD"
+msgstr "Usare in sostituzione del disco rigido"
+
+msgid "Mount view"
+msgstr "Elenco mount"

@@ -1,0 +1,177 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: MovieCut\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-04-08 20:54+0200\n"
+"PO-Revision-Date: 2018-04-03 23:26+0200\n"
+"Last-Translator: Gringo <openpli@tiscali.it>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.7.1\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: it\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+
+#: plugin.py:23
+msgid "Execute cuts..."
+msgstr "Eseguire i tagli..."
+
+#: plugin.py:37
+msgid "Don't cut"
+msgstr "Non eseguire i tagli"
+
+#: plugin.py:38
+msgid "Replace the original movie with the cut movie"
+msgstr "Sostituire il video originale con la versione tagliata"
+
+#: plugin.py:39
+msgid "Place the cut movie in a new file ending with \" cut\""
+msgstr ""
+"Copiare la versione tagliata in un nuovo file con il nome che termina con \" "
+"cut\""
+
+#: plugin.py:40
+msgid "Advanced cut specification..."
+msgstr "Configurazioni avanzate per la versione tagliata"
+
+#: plugin.py:42
+#, python-format
+msgid "How would you like to cut \"%s\"?"
+msgstr "Come si desidera eseguire i tagli su \"%s\"?"
+
+#: plugin.py:86
+msgid "OK"
+msgstr "OK"
+
+#: plugin.py:87
+msgid "Cancel"
+msgstr "Annullare"
+
+#: plugin.py:95
+msgid "No"
+msgstr "No"
+
+#: plugin.py:95
+msgid "Yes"
+msgstr "Sì"
+
+#: plugin.py:103
+msgid "Cutlist"
+msgstr "Editor video"
+
+#: plugin.py:103
+msgid "Manual specification"
+msgstr "Impostati manualmente"
+
+#: plugin.py:117
+msgid "Replace original:"
+msgstr "Sostituire l'originale:"
+
+#: plugin.py:118
+msgid "New filename:"
+msgstr "Nuovo nome file:"
+
+#: plugin.py:119
+msgid "New title:"
+msgstr "Nuovo titolo:"
+
+#: plugin.py:120
+msgid "New description:"
+msgstr "Nuova descrizione:"
+
+#: plugin.py:121
+msgid "New location:"
+msgstr "Nuovo percorso:"
+
+#: plugin.py:122
+msgid "Cut source:"
+msgstr "Editor da usare per i tagli:"
+
+#: plugin.py:123
+msgid "Cuts (an IN OUT IN OUT ... sequence of hour:min:sec)"
+msgstr "Lista tagli (sequenza IN OUT IN OUT ecc. in formato ore:min:sec)"
+
+#: plugin.py:130
+msgid "Cut Parameter Input"
+msgstr "Inserire i parametri di taglio"
+
+#: plugin.py:178
+msgid "Choose target folder"
+msgstr "Selezionare la cartella di destinazione"
+
+#: plugin.py:245
+#, python-format
+msgid "The movie \"%s\" is successfully cut"
+msgstr "Il video \"%s\" è stato ritagliato con successo"
+
+#: plugin.py:246 plugin.py:247 plugin.py:248 plugin.py:249 plugin.py:250
+#: plugin.py:251 plugin.py:252 plugin.py:253 plugin.py:254 plugin.py:255
+#, python-format
+msgid "Cutting failed for movie \"%s\""
+msgstr "Il ritaglio del video \"%s\" non è riuscito"
+
+#: plugin.py:246
+msgid "Bad arguments"
+msgstr "Parametri non corretti"
+
+#: plugin.py:247
+msgid "Couldn't open input .ts file"
+msgstr "Impossibile aprire il file .ts origine"
+
+#: plugin.py:248
+msgid "Couldn't open input .cuts file"
+msgstr "Impossibile aprire il file .cuts origine"
+
+#: plugin.py:249
+msgid "Couldn't open input .ap file"
+msgstr "Impossibile aprire il file .ap origine"
+
+#: plugin.py:250
+msgid "Couldn't open output .ts file"
+msgstr "Impossibile aprire il file .ts destinazione"
+
+#: plugin.py:251
+msgid "Couldn't open output .cuts file"
+msgstr "Impossibile aprire il file .cuts destinazione"
+
+#: plugin.py:252
+msgid "Couldn't open output .ap file"
+msgstr "Impossibile aprire il file .ap destinazione"
+
+#: plugin.py:253
+msgid "Empty .ap file"
+msgstr "File .ap vuoto"
+
+#: plugin.py:254
+msgid "No cuts specified"
+msgstr "Nessun taglio specificato"
+
+#: plugin.py:255
+msgid "Read/write error (disk full?)"
+msgstr "Errore di lettura/scrittura (disco pieno?)"
+
+#: plugin.py:256
+#, python-format
+msgid "Cutting was aborted for movie \"%s\""
+msgstr "Ritaglio del video \"%s\" annullato"
+
+#: plugin.py:275
+#, python-format
+msgid "The movie \"%s\" is cut in the background."
+msgstr "Il ritaglio del video \"%s\" è in corso in sottofondo."
+
+#: plugin.py:277
+#, python-format
+msgid ""
+"Another movie is currently cut.\n"
+"The movie \"%s\" will be cut in the background after it."
+msgstr ""
+"Un altro video è attualmente in fase di ritaglio.\n"
+"Al termine il video \"%s\" verrà ritagliato in sottofondo."
