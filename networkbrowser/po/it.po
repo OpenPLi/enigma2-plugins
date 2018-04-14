@@ -59,7 +59,7 @@ msgstr "Tentare ancora di montare le condivisioni."
 
 #: ../src/plugin.py:45
 msgid "Attempt to recover lost mounts (in background)"
-msgstr "Tentare di ripristinare gli ultimi mount (in sottofondo).\n"
+msgstr "Tentare di ripristinare gli ultimi mount (in sottofondo)"
 
 #: ../src/NetworkBrowser.py:157
 msgid "Browse network neighbourhood"
@@ -162,7 +162,7 @@ msgstr "Gestire le condivisioni di rete"
 
 #: ../src/plugin.py:41
 msgid "Manage your network shares..."
-msgstr "Gestire le condivisioni di rete.\n"
+msgstr "Gestire le condivisioni di rete..."
 
 #: ../src/plugin.py:42 ../src/plugin.py:44
 msgid "Mount again"
@@ -290,7 +290,7 @@ msgstr "Cercare le condivisioni di rete"
 
 #: ../src/plugin.py:40
 msgid "Search for network shares..."
-msgstr "Cercare le condivisioni di rete.\n"
+msgstr "Cercare le condivisioni di rete..."
 
 #: ../src/NetworkBrowser.py:189
 msgid "Searching your network. Please wait..."
