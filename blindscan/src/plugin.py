@@ -1027,7 +1027,7 @@ class Blindscan(ConfigListScreen, Screen):
 					parm.system = sys[data[4]]
 					parm.inversion = inv[data[5]]
 					parm.pilot = pilot[data[6]]
-					parm.fec = fec[data[7]]
+					parm.fec = fec.get(data[7], eDVBFrontendParametersSatellite.FEC_Auto)
 					parm.modulation = qam[data[8]]
 					parm.rolloff = roll[data[9]]
 					try:
