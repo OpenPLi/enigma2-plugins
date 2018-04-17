@@ -1,14 +1,14 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Italian translations for MovieCut.
+# Signed-off-by: Gringo <openpli@tiscali.it>
+#
+# Updated by: Gringo <openpli@tiscali.it>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: MovieCut\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-04-08 20:54+0200\n"
-"PO-Revision-Date: 2018-04-03 23:26+0200\n"
+"PO-Revision-Date: 2018-04-17 23:19+0200\n"
 "Last-Translator: Gringo <openpli@tiscali.it>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
