@@ -1,11 +1,14 @@
+# Italian translations for NetworkBrowser.
 # Signed-off-by: Dario Croci <spaeleus@croci.org>
+#
+# Updated by: Gringo <openpli@tiscali.it>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: NetworkBrowser\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-01-28 16:44+0100\n"
-"PO-Revision-Date: 2018-04-03 23:34+0200\n"
+"PO-Revision-Date: 2018-04-17 23:07+0200\n"
 "Last-Translator: Gringo <openpli@tiscali.it>\n"
 "Language-Team: WWW.Linsat.net <spaeleus@croci.org>\n"
 "Language: it_IT\n"
@@ -59,7 +62,7 @@ msgstr "Tentare ancora di montare le condivisioni."
 
 #: ../src/plugin.py:45
 msgid "Attempt to recover lost mounts (in background)"
-msgstr "Tentare di ripristinare gli ultimi mount (in sottofondo)"
+msgstr "Tentare di ripristinare gli ultimi mount (in sottofondo)."
 
 #: ../src/NetworkBrowser.py:157
 msgid "Browse network neighbourhood"
@@ -162,7 +165,7 @@ msgstr "Gestire le condivisioni di rete"
 
 #: ../src/plugin.py:41
 msgid "Manage your network shares..."
-msgstr "Gestire le condivisioni di rete..."
+msgstr "Gestire le condivisioni di rete."
 
 #: ../src/plugin.py:42 ../src/plugin.py:44
 msgid "Mount again"
@@ -290,7 +293,7 @@ msgstr "Cercare le condivisioni di rete"
 
 #: ../src/plugin.py:40
 msgid "Search for network shares..."
-msgstr "Cercare le condivisioni di rete..."
+msgstr "Cercare le condivisioni di rete."
 
 #: ../src/NetworkBrowser.py:189
 msgid "Searching your network. Please wait..."
