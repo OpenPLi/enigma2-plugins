@@ -1,13 +1,14 @@
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Italian translations for TranscodingSetup.
+# Signed-off-by: Gringo <openpli@tiscali.it>
+#
+# Updated by: Gringo <openpli@tiscali.it>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: TranscodingSetup\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-28 00:36+0200\n"
-"PO-Revision-Date: 2018-04-03 23:29+0200\n"
+"PO-Revision-Date: 2018-04-17 23:15+0200\n"
 "Last-Translator: Gringo <openpli@tiscali.it>\n"
 "Language-Team: \n"
 "Language: it\n"
