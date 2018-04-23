@@ -753,6 +753,15 @@ msgstr ""
 msgid "add AutoTimer for Partnerbox..."
 msgstr ""
 
+msgid "Wake up remote box from standby"
+msgstr ""
+
+msgid "Set remote box to standby"
+msgstr ""
+
+msgid "Mute remote box"
+msgstr ""
+
 msgid "add AutoTimer"
 msgstr ""
 
