@@ -1,79 +1,233 @@
+# French translations for enigma package.
+# Copyright (C) 2018 THE enigma'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the enigma package.
+# Automatically generated, 2018.
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: VirtualZap\n"
+"Project-Id-Version: enigma 2-plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-05-05 13:09+0200\n"
-"PO-Revision-Date: \n"
-"Last-Translator: Pr2 <dummy@dummy.com>\n"
-"Language-Team: OpenPLi\n"
+"POT-Creation-Date: 2018-05-03 11:46+0200\n"
+"PO-Revision-Date: 2018-05-03 11:46+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.7.6\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Poedit-SourceCharset: UTF-8\n"
 
-#: plugin.py:55
-msgid "as plugin in extended bar"
-msgstr "comme plugin dans la barre des extensions"
+#, python-format
+msgid "%d min"
+msgstr ""
 
-#: plugin.py:55
-msgid "with long OK press"
-msgstr "avec un appui long sur OK"
+#, python-format
+msgid "+%d min"
+msgstr ""
 
-#: plugin.py:55
-msgid "with exit button"
-msgstr "avec le bouton EXIT"
+msgid "/s"
+msgstr ""
 
-#: plugin.py:121
-msgid "Could not open Picture in Picture"
-msgstr "Impossible d'ouvrir Image dans Image (PiP)"
+msgid "1 minute"
+msgstr ""
 
-#: plugin.py:132
-msgid "Virtual Zap Setup"
-msgstr "Configuration de Virtual Zap"
+msgid "12 hours"
+msgstr ""
 
-#: plugin.py:134
-msgid "Virtual (PiP) Zap"
-msgstr "Virtual (PiP) Zap"
+msgid "15 minutes"
+msgstr ""
 
-#: plugin.py:703
+msgid "2 hours"
+msgstr ""
+
+msgid "24 hours"
+msgstr ""
+
+msgid "3 hours"
+msgstr ""
+
+msgid "30 minutes"
+msgstr ""
+
+msgid "45 minutes"
+msgstr ""
+
+msgid "5 minutes"
+msgstr ""
+
+msgid "6 hours"
+msgstr ""
+
+msgid "60 minutes"
+msgstr ""
+
 msgid "Cancel"
-msgstr "Annuler"
+msgstr ""
 
-#: plugin.py:704
-msgid "OK"
-msgstr "OK"
+msgid "Could not open Picture in Picture"
+msgstr ""
 
-#: plugin.py:706
-msgid "Usage"
-msgstr "Utilisation"
+msgid "Don't toggle standard infobar(s) with exit button"
+msgstr ""
 
-#: plugin.py:708
-msgid "Use PiP"
-msgstr "Utiliser PiP"
+msgid "EPGSelection (context menu)"
+msgstr ""
 
-#: plugin.py:709
-msgid "Show PiP in Infobar"
-msgstr "Afficher PiP dans la barre d'info"
+msgid "EPGSelection/EventView (context menu)"
+msgstr ""
 
-#: plugin.py:710
-msgid "Start standard PiP after x secs (0 = disabled)"
-msgstr "Démarrer le PiP standard après x secs (0 = désactivé)"
+msgid "EventView (context menu)"
+msgstr ""
 
-#: plugin.py:711
-msgid "Remember last service"
-msgstr "Se souvenir du dernier service"
+msgid "Extended virtual zap"
+msgstr ""
 
-#: plugin.py:723
+msgid "Extended virtual zap (PiP)"
+msgstr ""
+
+msgid "Extended virtual zap config"
+msgstr ""
+
+msgid "Extended virtual zap setup"
+msgstr ""
+
+msgid "From :"
+msgstr ""
+
 msgid ""
 "GUI needs a restart to apply the new settings.\n"
 "Do you want to Restart the GUI now?"
 msgstr ""
-"L'IGU doit être redémarrée pour appliquer les nouveaux paramètres.\n"
-"Voulez-vous redémarrer l'IGU maintenant?"
 
-#: plugin.py:724
-msgid "Restart GUI now?"
-msgstr "Redémarrer l'IGU maintenant?"
+msgid "Goto :"
+msgstr ""
+
+msgid "Incorrect type service for PiP!"
+msgstr ""
+
+msgid "No free tuner!"
+msgstr ""
+
+msgid "Parental control!"
+msgstr ""
+
+msgid "Remember last service"
+msgstr ""
+
+msgid "Remember mode"
+msgstr ""
+
+msgid "Restart GUI"
+msgstr ""
+
+msgid "Save"
+msgstr ""
+
+msgid "Show PiP in window infobar"
+msgstr ""
+
+msgid "Show picons"
+msgstr ""
+
+msgid "Show plugin in channel selection context menu"
+msgstr ""
+
+msgid "Show plugin in the context menu"
+msgstr ""
+
+msgid "Show positioner movement for PiP service"
+msgstr ""
+
+msgid "Start standard PiP after x secs (0 = disabled)"
+msgstr ""
+
+msgid "Stream"
+msgstr ""
+
+msgid "Tuner"
+msgstr ""
+
+#, python-format
+msgid "Tuner %s"
+msgstr ""
+
+msgid "Usage"
+msgstr ""
+
+msgid "Use PiP"
+msgstr ""
+
+msgid "Use plugin 'PiPServiceRelation'"
+msgstr ""
+
+msgid "always"
+msgstr ""
+
+msgid "as plugin in event menu"
+msgstr ""
+
+msgid "as plugin in extended menu"
+msgstr ""
+
+msgid "config menu"
+msgstr ""
+
+msgid "disable"
+msgstr ""
+
+msgid "disabled"
+msgstr ""
+
+msgid "exit"
+msgstr ""
+
+msgid "open Event View"
+msgstr ""
+
+msgid "open favorite list"
+msgstr ""
+
+msgid "open service list"
+msgstr ""
+
+msgid "open single EPG"
+msgstr ""
+
+msgid "show 'Extended virtual zap' for current service"
+msgstr ""
+
+msgid "standard PiP"
+msgstr ""
+
+msgid "standard PiPzap"
+msgstr ""
+
+msgid "swap and standard PiP"
+msgstr ""
+
+msgid "swap and standard PiPzap"
+msgstr ""
+
+msgid "swap services"
+msgstr ""
+
+msgid "until standby/restart"
+msgstr ""
+
+msgid "wait 5 seconds"
+msgstr ""
+
+msgid "with exit button"
+msgstr ""
+
+msgid "with long OK press"
+msgstr ""
+
+msgid "zap to PiP service and exit"
+msgstr ""
+
+msgid "zap to next channel/open service list"
+msgstr ""
+
+msgid "zap to previous channel/open service list"
+msgstr ""

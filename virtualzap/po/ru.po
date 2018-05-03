@@ -1,223 +1,234 @@
+# Russian translations for enigma package.
+# Copyright (C) 2018 THE enigma'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the enigma package.
+# Automatically generated, 2018.
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: enigma2 - virtualzap\n"
+"Project-Id-Version: enigma 2-plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-02-07 15:42+0100\n"
-"PO-Revision-Date: 2016-10-16 19:36+0300\n"
-"Last-Translator: Dimitrij <Dima-73@inbox.lv>\n"
-"Language-Team: Dimitrij <openpli.org>\n"
+"POT-Creation-Date: 2018-05-03 11:46+0200\n"
+"PO-Revision-Date: 2018-05-03 11:46+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Poedit-SourceCharset: utf-8\n"
-"Language: ru_RU\n"
-"X-Generator: Poedit 1.8.9\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
+#, python-format
 msgid "%d min"
-msgstr "%d мин"
+msgstr ""
 
+#, python-format
 msgid "+%d min"
-msgstr "+%d мин"
+msgstr ""
+
+msgid "/s"
+msgstr ""
 
 msgid "1 minute"
-msgstr "1 минута"
+msgstr ""
 
 msgid "12 hours"
-msgstr "12 часов"
+msgstr ""
 
 msgid "15 minutes"
-msgstr "15 минут"
+msgstr ""
 
 msgid "2 hours"
-msgstr "2 часа"
+msgstr ""
 
 msgid "24 hours"
-msgstr "24 часа"
+msgstr ""
 
 msgid "3 hours"
-msgstr "3 часа"
+msgstr ""
 
 msgid "30 minutes"
-msgstr "30 минут"
+msgstr ""
 
 msgid "45 minutes"
-msgstr "45 минут"
+msgstr ""
 
 msgid "5 minutes"
-msgstr "5 минут"
+msgstr ""
 
 msgid "6 hours"
-msgstr "6 часов"
+msgstr ""
 
 msgid "60 minutes"
-msgstr "60 минут"
+msgstr ""
 
 msgid "Cancel"
-msgstr "Отмена"
-
-msgid "Config menu"
-msgstr "Меню настроек"
+msgstr ""
 
 msgid "Could not open Picture in Picture"
-msgstr "Невозможно открыть картинку в картинке (PiP)!"
+msgstr ""
 
 msgid "Don't toggle standard infobar(s) with exit button"
-msgstr "Не переключать стандартный инфобар(ы) кнопкой выход"
+msgstr ""
 
 msgid "EPGSelection (context menu)"
-msgstr "Одиночное/мульти EPG (контекстное меню)"
+msgstr ""
 
 msgid "EPGSelection/EventView (context menu)"
-msgstr "Одиночное EPG/Мульти EPG/Просмотр события  (контекстное меню)"
+msgstr ""
 
 msgid "EventView (context menu)"
-msgstr "Просмотр события  (контекстное меню)"
+msgstr ""
 
 msgid "Extended virtual zap"
-msgstr "Расширенное виртуальное переключение"
+msgstr ""
 
 msgid "Extended virtual zap (PiP)"
-msgstr "Расширенное виртуальное переключение (PiP)"
+msgstr ""
 
 msgid "Extended virtual zap config"
-msgstr "Конфигурация расширенного виртуального переключения"
+msgstr ""
 
 msgid "Extended virtual zap setup"
-msgstr "'Extended virtual zap' конфигурация"
+msgstr ""
+
+msgid "From :"
+msgstr ""
 
 msgid ""
 "GUI needs a restart to apply the new settings.\n"
 "Do you want to Restart the GUI now?"
 msgstr ""
-"Для активация новой конфигурации необходим рестарт GUI.\n"
-"Рестарт GUI сейчас?"
+
+msgid "Goto :"
+msgstr ""
 
 msgid "Incorrect type service for PiP!"
-msgstr "Некорректный тип сервиса для PiP!"
+msgstr ""
 
 msgid "No free tuner!"
-msgstr "Нет свободного тюнера!"
+msgstr ""
 
 msgid "Parental control!"
-msgstr "Родительский контроль!"
+msgstr ""
 
 msgid "Remember last service"
-msgstr "Запоминать последний сервис"
+msgstr ""
 
 msgid "Remember mode"
-msgstr "Режим сохранения"
+msgstr ""
 
 msgid "Restart GUI"
-msgstr "Перезагрузка GUI"
+msgstr ""
 
 msgid "Save"
-msgstr "Сохранить"
+msgstr ""
 
 msgid "Show PiP in window infobar"
-msgstr "Показать PiP в окне инфобара"
+msgstr ""
 
 msgid "Show picons"
-msgstr "Показать пиконы"
+msgstr ""
 
 msgid "Show plugin in channel selection context menu"
-msgstr "Показать плагин в контекстном меню селектора каналов"
+msgstr ""
 
 msgid "Show plugin in the context menu"
-msgstr "Показать плагин в контекстном меню"
+msgstr ""
 
 msgid "Show positioner movement for PiP service"
-msgstr "Показать движение мотора для сервиса PiP"
+msgstr ""
 
 msgid "Start standard PiP after x secs (0 = disabled)"
-msgstr "Старт стандартного PiP после х секунд (0 = отключено)"
+msgstr ""
 
 msgid "Stream"
-msgstr "Стрим"
+msgstr ""
 
 msgid "Tuner"
-msgstr "Тюнер"
+msgstr ""
 
+#, python-format
 msgid "Tuner %s"
-msgstr "Тюнер %s"
+msgstr ""
 
 msgid "Usage"
-msgstr "Применение"
+msgstr ""
 
 msgid "Use PiP"
-msgstr "Использовать PiP"
+msgstr ""
 
 msgid "Use plugin 'PiPServiceRelation'"
-msgstr "Использовать плагин 'PiPServiceRelation'"
+msgstr ""
 
 msgid "always"
-msgstr "всегда"
+msgstr ""
 
 msgid "as plugin in event menu"
-msgstr "как плагин в меню событий"
+msgstr ""
 
 msgid "as plugin in extended menu"
-msgstr "как плагин в меню дополнений"
+msgstr ""
 
 msgid "config menu"
-msgstr "меню настроек"
+msgstr ""
 
 msgid "disable"
-msgstr "отключить"
+msgstr ""
 
 msgid "disabled"
-msgstr "отключено"
+msgstr ""
 
 msgid "exit"
-msgstr "выход"
+msgstr ""
 
 msgid "open Event View"
-msgstr "окрыть просмотр события"
+msgstr ""
 
 msgid "open favorite list"
-msgstr "открыть список фаворитов"
+msgstr ""
 
 msgid "open service list"
-msgstr "открыть список сервисов"
+msgstr ""
 
 msgid "open single EPG"
-msgstr "открыть одиночное EPG"
+msgstr ""
 
 msgid "show 'Extended virtual zap' for current service"
-msgstr "'Расширенное виртуальное переключение' для сервиса"
+msgstr ""
 
 msgid "standard PiP"
-msgstr "стандартный PiP"
+msgstr ""
 
 msgid "standard PiPzap"
-msgstr "стандартный PiPzap"
+msgstr ""
 
 msgid "swap and standard PiP"
-msgstr "поменять сервисы и стандартный PiP"
+msgstr ""
 
 msgid "swap and standard PiPzap"
-msgstr "поменять сервисы и стандартный PiPzap"
+msgstr ""
 
 msgid "swap services"
-msgstr "поменять сервисы"
+msgstr ""
 
 msgid "until standby/restart"
-msgstr "до режима ожидания/рестарта"
+msgstr ""
 
 msgid "wait 5 seconds"
-msgstr "подождите 5 секунд"
+msgstr ""
 
 msgid "with exit button"
-msgstr "с помощью кнопки выход"
+msgstr ""
 
 msgid "with long OK press"
-msgstr "при длительном нажатии кнопки ОК"
+msgstr ""
 
 msgid "zap to PiP service and exit"
-msgstr "переключить к сервису PiP и выйти"
+msgstr ""
 
 msgid "zap to next channel/open service list"
-msgstr "перейти к следующему каналу/открыть список сервисов"
+msgstr ""
 
 msgid "zap to previous channel/open service list"
-msgstr "перейти к предыдущему каналу/открыть список сервисов"
+msgstr ""
