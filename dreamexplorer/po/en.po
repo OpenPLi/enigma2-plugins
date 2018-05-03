@@ -1,17 +1,21 @@
+# English translations for enigma package.
+# Copyright (C) 2018 THE enigma'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the enigma package.
+# Automatically generated, 2018.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: ims\n"
+"Project-Id-Version: enigma 2-plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-05-03 14:00+0200\n"
-"PO-Revision-Date: \n"
-"Last-Translator: ims <ims21@users.sourceforge.net>\n"
-"Language-Team: PLi <ims21@users.sourceforge.net>\n"
-"Language: cs_CZ\n"
+"PO-Revision-Date: 2018-05-03 14:00+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid ""
 "\n"
@@ -20,7 +24,7 @@ msgid ""
 msgstr ""
 "\n"
 "\n"
-"Funkce editoru jsou v beta verzi (nebylo plně otestováno) !!!"
+"The Editor-Funktions are beta (not full tested) !!!"
 
 msgid ""
 "\n"
@@ -29,7 +33,7 @@ msgid ""
 msgstr ""
 "\n"
 "\n"
-"Děláte to na vlastní risk!"
+"You do it at your own risk!"
 
 msgid ""
 "\n"
@@ -37,8 +41,8 @@ msgid ""
 "for DATA LOST OR DISORDERS !!!"
 msgstr ""
 "\n"
-"Autor není zodpovědný\n"
-"za ztrátu dat nebo poškození !!!"
+"The author are NOT RESPONSIBLE\n"
+"for DATA LOST OR DISORDERS !!!"
 
 msgid ""
 "\n"
@@ -47,20 +51,19 @@ msgid ""
 "WARNING!"
 msgstr ""
 "\n"
-"Bylo ZMĚNĚNO! Chcete uložit?\n"
+"have been CHANGED! Do you want to save it?\n"
 "\n"
-"POZOR!"
+"WARNING!"
 
 msgid ""
 "\n"
 "to:"
 msgstr ""
 "\n"
-"do:"
+"to:"
 
-#
 msgid " Media-filter"
-msgstr " multimediální filtr"
+msgstr " Media-filter"
 
 #, python-format
 msgid ""
@@ -68,108 +71,97 @@ msgid ""
 "FAILED!"
 msgstr ""
 "%s \n"
-"SELHALO!"
+"FAILED!"
 
 msgid "ADDLINK"
-msgstr ""
+msgstr "ADDLINK"
 
-#
 msgid "About"
-msgstr "O přijímači"
+msgstr "About"
 
-#
 msgid "Add directory to Bookmarks"
-msgstr "Přidat adresář do záložek"
+msgstr "Add directory to Bookmarks"
 
 msgid "Auto play blu-ray file"
-msgstr ""
+msgstr "Auto play blu-ray file"
 
 msgid "BZ2-package:\\n"
-msgstr "BZ2-balíček:\\n"
+msgstr "BZ2-package:\\n"
 
-#
-#, fuzzy
 msgid "Bookmarks"
-msgstr "Záložky"
+msgstr "Bookmarks"
 
 msgid "Bootlogo-package:\\n"
-msgstr "Bootlogo-balíček:\\n"
+msgstr "Bootlogo-package:\\n"
 
 msgid "Box: "
-msgstr "Přijímač: "
+msgstr "Box: "
 
 msgid "COPY"
-msgstr ""
+msgstr "COPY"
 
-#
 msgid "Cancel"
-msgstr "Zavřít"
+msgstr "Cancel"
 
-#
 msgid "Create new directory"
-msgstr "Založit adresář"
+msgstr "Create new directory"
 
-#
 msgid "Create new directory in..."
-msgstr "Založit adresář v..."
+msgstr "Create new directory in..."
 
 msgid "Create new file"
-msgstr "Založit soubor"
+msgstr "Create new file"
 
 msgid "Create new file in..."
-msgstr "Založit soubor v..."
+msgstr "Create new file in..."
 
 msgid "Create softlink..."
-msgstr "Vytvořit softlink..."
+msgstr "Create softlink..."
 
 msgid "DELLINK"
-msgstr ""
+msgstr "DELLINK"
 
 msgid "Delete"
-msgstr ""
+msgstr "Delete"
 
-#
 msgid "Directory name error !"
-msgstr "Chyba v názvu adresáře!"
+msgstr "Directory name error !"
 
-#
 msgid "Disable"
-msgstr "Zakázat"
+msgstr "Disable"
 
 msgid "Disassemble to bytecode..."
-msgstr "Disassemble na bytecode..."
+msgstr "Disassemble to bytecode..."
 
-#
 msgid "Do you realy want to DELETE:\n"
-msgstr "Opravdu chcete ODSTRANIT:\n"
+msgstr "Do you realy want to DELETE:\n"
 
-#
 msgid "Do you want to execute?\\n"
-msgstr "Chcete provést?\\n?"
+msgstr "Do you want to execute?\\n"
 
 msgid "Do you want to set\n"
-msgstr "Chcete nastavit\n"
+msgstr "Do you want to set\n"
 
 msgid "Dream Explorer..."
-msgstr ""
+msgstr "Dream Explorer..."
 
 msgid "Dream-Explorer"
-msgstr ""
+msgstr "Dream-Explorer"
 
 msgid "Dream-Explorer - DELETE DIRECTORY..."
-msgstr "Dream-Explorer - ODSTRANIT ADRESÁŘ..."
+msgstr "Dream-Explorer - DELETE DIRECTORY..."
 
 msgid "Dream-Explorer - DELETE file..."
-msgstr "Dream-Explorer - ODSTRANIT soubor..."
+msgstr "Dream-Explorer - DELETE file..."
 
 msgid "Dream-Explorer : Disassemble..."
-msgstr ""
+msgstr "Dream-Explorer : Disassemble..."
 
 msgid "Dream-Explorer : Install..."
-msgstr "Dream-Explorer : Instalovat..."
+msgstr "Dream-Explorer : Install..."
 
 msgid "Dream-Explorer..."
-msgstr ""
+msgstr "Dream-Explorer..."
 
 msgid ""
 "Dreambox-Explorer\n"
@@ -178,232 +170,208 @@ msgid ""
 "Support & Help on\n"
 "www.dreambox-tools.info"
 msgstr ""
+"Dreambox-Explorer\n"
+"coded 2010 by Vali\n"
+"\n"
+"Support & Help on\n"
+"www.dreambox-tools.info"
 
-#
 msgid "Edit line "
-msgstr "Upravit řádek "
+msgstr "Edit line "
 
-#
 msgid "Enable"
-msgstr "Povolit"
+msgstr "Enable"
 
 msgid "Error by reading bookmarks !!!"
-msgstr "Chyba při čtení záložek !!!"
+msgstr "Error by reading bookmarks !!!"
 
 msgid "Error by writing bookmarks !!!"
-msgstr "Chyba při zápisu záložek !!!"
+msgstr "Error by writing bookmarks !!!"
 
-#
 msgid "Error..."
-msgstr "Chyba..."
+msgstr "Error..."
 
 msgid "Explore your box"
-msgstr "Průzkumník Vašeho boxu"
+msgstr "Explore your box"
 
 msgid "File name error !"
-msgstr "Chyba v názvu souboru!"
+msgstr "File name error !"
 
 msgid "File-Explorer"
-msgstr "Průzkumník souborů"
+msgstr "File-Explorer"
 
 msgid "GZ-package:\\n"
-msgstr "GZ-balíček:\\n"
+msgstr "GZ-package:\\n"
 
 msgid "Incompatible MerlinMusicPlayer version!"
-msgstr "Nekompatibilní verze MerlinMusicPlayer!"
+msgstr "Incompatible MerlinMusicPlayer version!"
 
-#
 msgid "Info..."
-msgstr "Informace..."
+msgstr "Info..."
 
-#
 msgid "Input"
-msgstr "Zadání"
+msgstr "Input"
 
-#
 msgid "Install new bootlogo..."
-msgstr "Instalovat nové bootlogo..."
+msgstr "Install new bootlogo..."
 
-#
 msgid "Install this package"
-msgstr "Instalovat tento balíček"
+msgstr "Install this package"
 
-#
 msgid "List of Storage Devices"
-msgstr "Seznam záznamových zařízení"
+msgstr "List of Storage Devices"
 
 msgid "MOVE"
-msgstr ""
+msgstr "MOVE"
 
-#, fuzzy
 msgid "Make a softlink"
-msgstr "Vytvořit softlink..."
+msgstr "Make a softlink"
 
 msgid "Make a softlink..."
-msgstr "Vytvořit softlink..."
+msgstr "Make a softlink..."
 
 msgid "Move/Copy"
-msgstr ""
+msgstr "Move/Copy"
 
-#
 msgid "My Bookmarks"
-msgstr "Záložky"
+msgstr "My Bookmarks"
 
 msgid "No more picture-files."
-msgstr "Nejsou již zádné obrázky."
+msgstr "No more picture-files."
 
 msgid "No more playable files."
-msgstr "Nejsou již žádné přehratelné soubory."
+msgstr "No more playable files."
 
 msgid "OPKG-package:\\n"
-msgstr "OPKG-balíček:\\n"
+msgstr "OPKG-package:\\n"
 
-#
 msgid "Options:\n"
-msgstr "Možnosti:\n"
+msgstr "Options:\n"
 
 msgid "Pack my bootlogo"
-msgstr "Zabalit moje bootlogo"
+msgstr "Pack my bootlogo"
 
-#
 msgid "Parent Directory"
-msgstr "Rodičovský adresář"
+msgstr "Parent Directory"
 
-#
 msgid "Picture-Explorer"
-msgstr "Přehrávač obrázků"
+msgstr "Picture-Explorer"
 
 msgid "Picture-Player not available!"
-msgstr "Přehrávač obrázků není dostupný!"
+msgstr "Picture-Player not available!"
 
-#
 msgid "Preview all pictures"
-msgstr "Prohlédnout všechny obrázky"
+msgstr "Preview all pictures"
 
 msgid "Pyc-Script:\\n"
-msgstr ""
+msgstr "Pyc-Script:\\n"
 
-#
 msgid "Remove directory from Bookmarks"
-msgstr "Odstranit adresář ze záložek"
+msgstr "Remove directory from Bookmarks"
 
-#
-#, fuzzy
 msgid "Rename"
-msgstr "Přejmenovat soubor..."
+msgstr "Rename"
 
-#
 msgid "Rename directory..."
-msgstr "Přejmenovat adresář..."
+msgstr "Rename directory..."
 
-#
 msgid "Rename file..."
-msgstr "Přejmenovat soubor..."
+msgstr "Rename file..."
 
 #, python-format
 msgid ""
 "Rename: %s \n"
 "FAILED!"
 msgstr ""
-"Přejmenovat: %s \n"
-"SELHALO!"
+"Rename: %s \n"
+"FAILED!"
 
 msgid "Running processes: "
-msgstr "Běžící procesy: "
+msgstr "Running processes: "
 
-#
 msgid "Select Copy/Move location..."
-msgstr "Zvolte umístění pro Copy /Move..."
+msgstr "Select Copy/Move location..."
 
 msgid "Set archive mode (644)"
-msgstr "Nastavit archivní mód (644)"
+msgstr "Set archive mode (644)"
 
 msgid "Set executable mode (755)"
-msgstr "Nastavit spouštěcí mód (755)"
+msgstr "Set executable mode (755)"
 
 msgid "Set first the Softlink name ..."
-msgstr "Nejprve nastavte název Softlinku..."
+msgstr "Set first the Softlink name ..."
 
 msgid "Set name"
-msgstr ""
+msgstr "Set name"
 
-#
 msgid "Set start directory"
-msgstr "Nastavit výchozí adresář"
+msgstr "Set start directory"
 
 msgid "Softlink name error !"
-msgstr "Chyba v názvu Softlinku!"
+msgstr "Softlink name error !"
 
-#
 msgid "Sort by date (bouquet-)"
-msgstr "Třídit podle stáří (bouquet-)"
+msgstr "Sort by date (bouquet-)"
 
 msgid "Sort by name (bouquet+)"
-msgstr "Třídit podle názvu (bouquet+)"
+msgstr "Sort by name (bouquet+)"
 
-#
 msgid "Start execution"
-msgstr "Spustit"
+msgstr "Start execution"
 
-#
 msgid "This line is not editable!"
-msgstr "Tato řádka nejde upravit!"
+msgstr "This line is not editable!"
 
 msgid "Turn off the media-filter first."
-msgstr "Nejdříve vypněte multimediální filtr."
+msgstr "Turn off the media-filter first."
 
 msgid "View this shell-script"
-msgstr "Prohlédnout tento shell-script"
+msgstr "View this shell-script"
 
 msgid "WARNING! they doing now COPY or MOVE\n"
-msgstr "POZOR! Právě se Kopíruje/Přemísťuje\n"
+msgstr "WARNING! they doing now COPY or MOVE\n"
 
 msgid "WARNING! they make now a softlink from\n"
-msgstr "POZOR! Vytváří se softlink z\n"
+msgstr "WARNING! they make now a softlink from\n"
 
 msgid "Write the new softlink name here:"
-msgstr "Zapište název nového softlinku:"
+msgstr "Write the new softlink name here:"
 
 msgid "[All files] "
-msgstr "[všechny soubory] "
+msgstr "[All files] "
 
-#
 msgid "[Media files] "
-msgstr "[multimediální soubory] "
+msgstr "[Media files] "
 
 msgid "[sort by Date] "
-msgstr "[podle stáří] "
+msgstr "[sort by Date] "
 
 msgid "[sort by Name] "
-msgstr "[podle názvu] "
+msgstr "[sort by Name] "
 
 msgid "last-mod "
-msgstr ""
+msgstr "last-mod "
 
-#
 msgid "loading... "
-msgstr "nahrávání... "
+msgstr "loading... "
 
-#
 msgid "mode "
-msgstr "mód "
+msgstr "mode "
 
 msgid "mvi-Explorer"
-msgstr ""
+msgstr "mvi-Explorer"
 
 msgid "old:  "
-msgstr "starý: "
+msgstr "old:  "
 
-#
 msgid "read error"
-msgstr "chyba při čtení"
+msgstr "read error"
 
 msgid "ready..."
-msgstr "připraven..."
+msgstr "ready..."
 
 msgid "size "
-msgstr "velikost "
+msgstr "size "
 
-#
 msgid "wait..."
-msgstr "čekejte..."
+msgstr "wait..."

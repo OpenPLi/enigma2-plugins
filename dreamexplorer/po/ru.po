@@ -7,16 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-02-17 15:07+0100\n"
+"POT-Creation-Date: 2018-05-03 14:00+0200\n"
 "PO-Revision-Date: 2015-10-07 18:57+0300\n"
 "Last-Translator: Dimitrij <Dima-73@inbox.lv>\n"
 "Language-Team: openpli.org\n"
+"Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"Language: ru\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Generator: Poedit 1.8.4\n"
 
 msgid ""
@@ -67,6 +66,7 @@ msgstr ""
 msgid " Media-filter"
 msgstr " Медиа-фильтр"
 
+#, python-format
 msgid ""
 "%s \n"
 "FAILED!"
@@ -80,14 +80,27 @@ msgstr "ДОБАВИТЬ ЛИНК"
 msgid "About"
 msgstr "Информация"
 
+msgid "Add directory to Bookmarks"
+msgstr "Добавить директорию к закладкам"
+
+msgid "Auto play blu-ray file"
+msgstr "Авто проигрывание файла blu-ray"
+
 msgid "BZ2-package:\\n"
 msgstr "BZ2-пакет:\\n"
+
+#, fuzzy
+msgid "Bookmarks"
+msgstr "Мои закладки"
 
 msgid "Bootlogo-package:\\n"
 msgstr "Bootlogo-пакет:\\n"
 
 msgid "Box: "
 msgstr "Ресивер: "
+
+msgid "COPY"
+msgstr ""
 
 msgid "Cancel"
 msgstr "Отмена"
@@ -110,14 +123,14 @@ msgstr "Создать символьную ссылку..."
 msgid "DELLINK"
 msgstr "УДАЛИТЬ ЛИНК"
 
+msgid "Delete"
+msgstr ""
+
 msgid "Directory name error !"
 msgstr "Ошибка имени директории !"
 
 msgid "Disable"
 msgstr "Отключить"
-
-msgid "Enable"
-msgstr "Включить"
 
 msgid "Disassemble to bytecode..."
 msgstr "Разобрать в байт-код ..."
@@ -149,6 +162,10 @@ msgstr "Dream-обозреватель : разборка..."
 msgid "Dream-Explorer : Install..."
 msgstr "Dream-обозреватель : инсталлировать..."
 
+#, fuzzy
+msgid "Dream-Explorer..."
+msgstr "Dream-обозреватель..."
+
 msgid ""
 "Dreambox-Explorer\n"
 "coded 2010 by Vali\n"
@@ -164,6 +181,9 @@ msgstr ""
 
 msgid "Edit line "
 msgstr "Редактирование строки "
+
+msgid "Enable"
+msgstr "Включить"
 
 msgid "Error by reading bookmarks !!!"
 msgstr "Ошибка чтения закладок !!!"
@@ -186,7 +206,6 @@ msgstr "Файловый-обозреватель"
 msgid "GZ-package:\\n"
 msgstr "GZ-пакет:\\n"
 
-#: plugin.py:245
 msgid "Incompatible MerlinMusicPlayer version!"
 msgstr "Несовместимая версия MerlinMusicPlayer!"
 
@@ -205,8 +224,18 @@ msgstr "Инсталлировать этот пакет"
 msgid "List of Storage Devices"
 msgstr "Список устройств хранения"
 
+msgid "MOVE"
+msgstr ""
+
+#, fuzzy
+msgid "Make a softlink"
+msgstr "Создать символьную ссылку..."
+
 msgid "Make a softlink..."
 msgstr "Создать символьную ссылку..."
+
+msgid "Move/Copy"
+msgstr "Перем./Копир."
 
 msgid "My Bookmarks"
 msgstr "Мои закладки"
@@ -244,8 +273,9 @@ msgstr "Pyc-скрипт:\\n"
 msgid "Remove directory from Bookmarks"
 msgstr "Переименование директории из закладок"
 
-msgid "Add directory to Bookmarks"
-msgstr "Добавить директорию к закладкам"
+#, fuzzy
+msgid "Rename"
+msgstr "Переименование файла..."
 
 msgid "Rename directory..."
 msgstr "Переименование директории..."
@@ -253,6 +283,7 @@ msgstr "Переименование директории..."
 msgid "Rename file..."
 msgstr "Переименование файла..."
 
+#, python-format
 msgid ""
 "Rename: %s \n"
 "FAILED!"
@@ -263,7 +294,6 @@ msgstr ""
 msgid "Running processes: "
 msgstr "Запущенные процессы: "
 
-#: plugin.py:1109
 msgid "Select Copy/Move location..."
 msgstr "Выбор расположения перемещения/копирования"
 
@@ -275,6 +305,9 @@ msgstr "Установить права выполнения (755)"
 
 msgid "Set first the Softlink name ..."
 msgstr "Установите имя символьной ссылки в первую очередь  ..."
+
+msgid "Set name"
+msgstr ""
 
 msgid "Set start directory"
 msgstr "Установить как стартовую директорию"
@@ -339,7 +372,6 @@ msgstr "старый:  "
 msgid "read error"
 msgstr "ошибка чтения"
 
-#: plugin.py:905
 msgid "ready..."
 msgstr "готово..."
 
@@ -348,19 +380,3 @@ msgstr "объем "
 
 msgid "wait..."
 msgstr "подождите..."
-
-msgid "Auto play blu-ray file"
-msgstr "Авто проигрывание файла blu-ray"
-
-msgid "Move/Copy"
-msgstr "Перем./Копир."
-
-msgid "Options"
-msgstr "Опции"
-
-msgid "Move"
-msgstr "Перемещение"
-
-msgid "Copy"
-msgstr "Копирование"
-
