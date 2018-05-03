@@ -1,18 +1,17 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Indonesian translations for enigma package.
+# Copyright (C) 2018 THE enigma'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the enigma package.
+# Automatically generated, 2018.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: enigma 2-plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-05-03 14:02+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2018-05-03 14:02+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -134,7 +133,9 @@ msgstr ""
 msgid "Do you really want to delete the timer for \"%s\"?"
 msgstr ""
 
-msgid "Do you want to switch the prime time? Currently selected favorites will be lost!"
+msgid ""
+"Do you want to switch the prime time? Currently selected favorites will be "
+"lost!"
 msgstr ""
 
 msgid "Duration"
@@ -225,7 +226,8 @@ msgstr ""
 msgid ""
 "Prime Time Manager:\n"
 "\n"
-"Sorry, but a timer for %s can't be set because there are conflicts with other timers."
+"Sorry, but a timer for %s can't be set because there are conflicts with "
+"other timers."
 msgstr ""
 
 msgid ""
@@ -333,7 +335,9 @@ msgid "This event will be an instant record.\n"
 msgstr ""
 
 #, python-format
-msgid "This is a repeated timer! Do you really want to delete the repeated timer for \"%s\"?"
+msgid ""
+"This is a repeated timer! Do you really want to delete the repeated timer "
+"for \"%s\"?"
 msgstr ""
 
 msgid "Timer sanity error"
