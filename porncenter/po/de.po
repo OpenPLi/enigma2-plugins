@@ -1,82 +1,64 @@
+# German translations for enigma package.
+# Copyright (C) 2018 THE enigma'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the enigma package.
+# Automatically generated, 2018.
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: PornCenter\n"
+"Project-Id-Version: enigma 2-plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-06-12 18:57+0100\n"
-"PO-Revision-Date: \n"
-"Last-Translator: JuSt611 <Software@Strasdas.de>\n"
-"Language-Team: AliAbdul <aliabdul1978@hotmail.de>\n"
+"POT-Creation-Date: 2018-05-03 11:46+0200\n"
+"PO-Revision-Date: 2018-05-03 11:46+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Language: German\n"
-"X-Poedit-Country: GERMANY\n"
-"X-Poedit-SourceCharset: utf-8\n"
-"X-Poedit-Basepath: .\n"
-"X-Poedit-SearchPath-0: ../src\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../src/plugin.py:54
-#: ../src/plugin.py:108
-#: ../src/plugin.py:171
-#: ../src/plugin.py:189
-#: ../src/plugin.py:237
-msgid "Porn Center"
-msgstr "Porn Center"
-
-#: ../src/plugin.py:55
 msgid "Adult streaming plugins for dm800/dm8000"
-msgstr "Filme für Erwachsene auf der Dreambox"
+msgstr ""
 
-#: ../src/plugin.py:58
-msgid "delete"
-msgstr "löschen"
+msgid "Buffer device:"
+msgstr ""
 
-#: ../src/plugin.py:58
-msgid "keep on device"
-msgstr "auf Datenträger behalten"
+msgid "Buffer file handling:"
+msgstr ""
 
-#: ../src/plugin.py:58
-msgid "ask me"
-msgstr "nachfragen"
+msgid "Buffer:"
+msgstr ""
 
-#: ../src/plugin.py:120
+msgid "Delete this movie?"
+msgstr ""
+
+msgid "Description:"
+msgstr ""
+
 #, python-format
 msgid "Downloading movie: %s"
-msgstr "Filme herunterladen: %s"
+msgstr ""
 
-#: ../src/plugin.py:159
-msgid "Stop playing this movie?"
-msgstr "Diesen Film stoppen?"
-
-#: ../src/plugin.py:194
-msgid "Select"
-msgstr "Wählen"
-
-#: ../src/plugin.py:252
-msgid "Name:"
-msgstr "Name:"
-
-#: ../src/plugin.py:253
-msgid "Description:"
-msgstr "Beschreibung:"
-
-#: ../src/plugin.py:254
-msgid "Buffer:"
-msgstr "Puffer:"
-
-#: ../src/plugin.py:255
-msgid "Buffer device:"
-msgstr "Puffergerät:"
-
-#: ../src/plugin.py:256
-msgid "Buffer file handling:"
-msgstr "Pufferdateihandhabung:"
-
-#: ../src/plugin.py:382
 msgid "Error while getting video url!"
-msgstr "Fehler bei Ermittlung der Video URL!"
+msgstr ""
 
-#: ../src/plugin.py:395
-msgid "Delete this movie?"
-msgstr "Diesen Film löschen?"
+msgid "Name:"
+msgstr ""
 
+msgid "Porn Center"
+msgstr ""
+
+msgid "Select"
+msgstr ""
+
+msgid "Stop playing this movie?"
+msgstr ""
+
+msgid "ask me"
+msgstr ""
+
+msgid "delete"
+msgstr ""
+
+msgid "keep on device"
+msgstr ""
