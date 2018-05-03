@@ -50,8 +50,7 @@ msgstr ""
 msgid "Downloading Movie Poster: %s..."
 msgstr ""
 
-msgid ""
-"Enable this to be able to access the IMDb from within the plugin browser."
+msgid "Enable this to be able to access the IMDb from within the plugin browser."
 msgstr ""
 
 msgid "Enter search"
@@ -195,9 +194,7 @@ msgstr ""
 msgid "The Internet Movie Database"
 msgstr ""
 
-msgid ""
-"This option allows you add words/phrases for IMDb to ignore when searching. "
-"please seperaate with a comma"
+msgid "This option allows you add words/phrases for IMDb to ignore when searching. please seperaate with a comma"
 msgstr ""
 
 msgid "Title Menu"
