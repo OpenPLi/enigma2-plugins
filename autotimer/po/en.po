@@ -1,20 +1,58 @@
-# English translations for PACKAGE package.
-# Copyright (C) 2012 THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# Automatically generated, 2012.
+# English translations for enigma package.
+# Copyright (C) 2018 THE enigma'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the enigma package.
+# Automatically generated, 2018.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: enigma 2-plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-02-17 15:07+0100\n"
-"PO-Revision-Date: 2012-02-17 12:13+0100\n"
+"POT-Creation-Date: 2018-05-03 11:45+0200\n"
+"PO-Revision-Date: 2018-05-03 11:45+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
+"Language: en\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ASCII\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid ""
+"\n"
+"\n"
+"Cancel?"
+msgstr ""
+"\n"
+"\n"
+"Cancel?"
+
+msgid " (if services are enabled, bouquets are ignored)."
+msgstr " (if services are enabled, bouquets are ignored)."
+
+msgid " (if services are enabled, bouquets are ignored.)."
+msgstr " (if services are enabled, bouquets are ignored.)."
+
+msgid ""
+" (only services from bouquets when use \"favorites description match\")."
+msgstr ""
+" (only services from bouquets when use \"favorites description match\")."
+
+msgid " - AutoTimer "
+msgstr " - AutoTimer "
+
+msgid " - Version: "
+msgstr " - Version: "
+
+msgid " 0 - timers will not be added."
+msgstr " 0 - timers will not be added."
+
+msgid ""
+" == attention: global option 'Save/check filterlist is still active!! =="
+msgstr ""
+" == attention: global option 'Save/check filterlist is still active!! =="
+
+msgid " add AutoTimer"
+msgstr " add AutoTimer"
 
 #, python-format
 msgid ""
@@ -39,14 +77,39 @@ msgstr "%d.%B %Y"
 msgid "%s: %s at %s"
 msgstr "%s: %s at %s"
 
+msgid "/etc/enigma2"
+msgstr "/etc/enigma2"
+
+msgid "/tmp"
+msgstr "/tmp"
+
+msgid ""
+"A new and empty config was created. A backup of the config can be found here "
+"(/etc/enigma2/autotimer.xml_old)."
+msgstr ""
+"A new and empty config was created. A backup of the config can be found here "
+"(/etc/enigma2/autotimer.xml_old)."
+
 msgid "Activate VPS"
 msgstr "Activate VPS"
 
 msgid "Add"
 msgstr "Add"
 
+msgid "Add \"Choice list AutoTimer\" menu button to multi-EPG"
+msgstr "Add \"Choice list AutoTimer\" menu button to multi-EPG"
+
+msgid "Add \"Choice list AutoTimer\" menu button to single-EPG"
+msgstr "Add \"Choice list AutoTimer\" menu button to single-EPG"
+
+msgid "Add AutoTimer"
+msgstr "Add AutoTimer"
+
 msgid "Add new AutoTimer"
 msgstr "Add new AutoTimer"
+
+msgid "Add services"
+msgstr "Add services"
 
 msgid "Add similar timer on conflict"
 msgstr "Add similar timer on conflict"
@@ -54,20 +117,50 @@ msgstr "Add similar timer on conflict"
 msgid "Add timer as disabled on conflict"
 msgstr "Add timer as disabled on conflict"
 
-msgid "Add zap timer instead of record timer?"
-msgstr "Add zap timer instead of record timer?"
+msgid "Advanced"
+msgstr "Advanced"
 
 msgid "After event"
 msgstr "After event"
 
+msgid "All channels"
+msgstr "All channels"
+
 msgid "All non-repeating timers"
 msgstr "All non-repeating timers"
+
+msgid "Always write config"
+msgstr "Always write config"
 
 msgid "Amount of recordings left"
 msgstr "Amount of recordings left"
 
 msgid "Any service/recording"
 msgstr "Any service/recording"
+
+msgid "Any time"
+msgstr "Any time"
+
+msgid "AutoTimer"
+msgstr "AutoTimer"
+
+#, python-format
+msgid ""
+"AutoTimer\n"
+"%d timer(s) were added."
+msgstr ""
+"AutoTimer\n"
+"%d timer(s) were added."
+
+msgid "AutoTimer "
+msgstr "AutoTimer "
+
+#, python-format
+msgid "AutoTimer %s FilterListEntry"
+msgstr "AutoTimer %s FilterListEntry"
+
+msgid "AutoTimer Context Menu"
+msgstr "AutoTimer Context Menu"
 
 msgid "AutoTimer Editor"
 msgstr "AutoTimer Editor"
@@ -81,8 +174,15 @@ msgstr "AutoTimer Services"
 msgid "AutoTimer Settings"
 msgstr "AutoTimer Settings"
 
+#, python-format
+msgid "AutoTimer failed with error %s"
+msgstr "AutoTimer failed with error %s"
+
 msgid "AutoTimer overview"
 msgstr "AutoTimer overview"
+
+msgid "AutoTimer scan"
+msgstr "AutoTimer scan"
 
 msgid "AutoTimer was added successfully"
 msgstr "AutoTimer was added successfully"
@@ -92,6 +192,9 @@ msgstr "AutoTimer was changed successfully"
 
 msgid "AutoTimer was removed"
 msgstr "AutoTimer was removed"
+
+msgid "AutoTimers were changed successfully"
+msgstr "AutoTimers were changed successfully"
 
 msgid "Begin of \"after event\" timespan"
 msgstr "Begin of \"after event\" timespan"
@@ -127,6 +230,13 @@ msgstr ""
 "automated polling. There is no intelligence involved, so it might bother you "
 "about the same conflict over and over."
 
+msgid ""
+"By enabling this you will be notified about timer(s) added during automated "
+"polling. Just not in standby mode."
+msgstr ""
+"By enabling this you will be notified about timer(s) added during automated "
+"polling. Just not in standby mode."
+
 msgid "Cancel"
 msgstr "Cancel"
 
@@ -139,17 +249,44 @@ msgstr "Channel Selection"
 msgid "Channels"
 msgstr "Channels"
 
+msgid "Check for uniqueness in"
+msgstr "Check for uniqueness in"
+
+msgid ""
+"Check the event id (eit) and remove the timer if there is no corresponding "
+"EPG event. Due to compatibility issues with SerienRecorder and IPRec, only "
+"timer created by AutoTimer are affected."
+msgstr ""
+"Check the event id (eit) and remove the timer if there is no corresponding "
+"EPG event. Due to compatibility issues with SerienRecorder and IPRec, only "
+"timer created by AutoTimer are affected."
+
+msgid "Choice list AutoTimer"
+msgstr "Choice list AutoTimer"
+
 msgid "Choose target folder"
 msgstr "Choose target folder"
 
 msgid "Classic"
 msgstr "Classic"
 
+msgid "Clone selected timer"
+msgstr "Clone selected timer"
+
+msgid "Close"
+msgstr "Close"
+
 msgid "Close and forget changes"
 msgstr "Close and forget changes"
 
-msgid "Close and save changes"
-msgstr "Close and save changes"
+msgid "Close and save"
+msgstr "Close and save"
+
+msgid "Close without saving"
+msgstr "Close without saving"
+
+msgid "Close, save changes and search now"
+msgstr "Close, save changes and search now"
 
 msgid "Configure AutoTimer behavior"
 msgstr "Configure AutoTimer behavior"
@@ -157,11 +294,20 @@ msgstr "Configure AutoTimer behavior"
 msgid "Control recording completely by service"
 msgstr "Control recording completely by service"
 
+msgid "Couldn't load config file!"
+msgstr "Couldn't load config file!"
+
+msgid "Create AutoTimer"
+msgstr "Create AutoTimer"
+
 msgid "Create a new timer using the classic editor"
 msgstr "Create a new timer using the classic editor"
 
 msgid "Create a new timer using the wizard"
 msgstr "Create a new timer using the wizard"
+
+msgid "Create debug log file"
+msgstr "Create debug log file"
 
 #, python-format
 msgid "Custom (%s)"
@@ -173,11 +319,30 @@ msgstr "Custom location"
 msgid "Custom offset"
 msgstr "Custom offset"
 
+msgid "Date"
+msgstr "Date"
+
+msgid ""
+"Defines where to search for duplicates (only title, short description or "
+"even extended description)"
+msgstr ""
+"Defines where to search for duplicates (only title, short description or "
+"even extended description)"
+
+msgid "Delay after editing (in sec)"
+msgstr "Delay after editing (in sec)"
+
 msgid "Delete"
 msgstr "Delete"
 
 msgid "Description"
 msgstr "Description"
+
+msgid "Description - short equal extended for match"
+msgstr "Description - short equal extended for match"
+
+msgid "Do not skip match when not description"
+msgstr "Do not skip match when not description"
 
 #, python-format
 msgid "Do you really want to delete %s?"
@@ -195,7 +360,6 @@ msgstr "Edit AutoTimer filters"
 msgid "Edit AutoTimer services"
 msgstr "Edit AutoTimer services"
 
-#. TRANSLATORS: description of AutoTimer in PluginBrowser
 msgid "Edit Timers and scan for new Events"
 msgstr "Edit Timers and scan for new Events"
 
@@ -204,6 +368,9 @@ msgstr "Edit new timer defaults"
 
 msgid "Edit selected AutoTimer"
 msgstr "Edit selected AutoTimer"
+
+msgid "Edit services"
+msgstr "Edit services"
 
 msgid "Editing"
 msgstr "Editing"
@@ -218,11 +385,28 @@ msgid "Enable Service Restriction"
 msgstr "Enable Service Restriction"
 
 msgid ""
+"Enable this to add item for create the AutoTimer into event menu (needs "
+"restart GUI)."
+msgstr ""
+"Enable this to add item for create the AutoTimer into event menu (needs "
+"restart GUI)."
+
+msgid ""
 "Enable this to be able to access the AutoTimer Overview from within the "
 "extension menu."
 msgstr ""
 "Enable this to be able to access the AutoTimer Overview from within the "
 "extension menu."
+
+msgid ""
+"Enable this to be able to access the add to AutoTimer from the channel "
+"selection context menu."
+msgstr ""
+"Enable this to be able to access the add to AutoTimer from the channel "
+"selection context menu."
+
+msgid "Enable timer conflict detection"
+msgstr "Enable timer conflict detection"
 
 msgid "Enabled"
 msgstr "Enabled"
@@ -240,6 +424,18 @@ msgstr "End of \"after event\" timespan"
 msgid "End of timespan"
 msgstr "End of timespan"
 
+msgid "Enter or edit description"
+msgstr "Enter or edit description"
+
+msgid "Enter or edit match title"
+msgstr "Enter or edit match title"
+
+msgid "Enter or edit text"
+msgstr "Enter or edit text"
+
+msgid "Everyday"
+msgstr "Everyday"
+
 msgid "Exact match"
 msgstr "Exact match"
 
@@ -252,6 +448,24 @@ msgstr "Execute \"after event\" during timespan"
 msgid "Filter"
 msgstr "Filter"
 
+msgid "FilterEntry"
+msgstr "FilterEntry"
+
+msgid "Filterlist"
+msgstr "Filterlist"
+
+#, python-format
+msgid ""
+"Finished add to filterList with %s event(s):\n"
+"\n"
+" %s event(s) added \n"
+" %s event(s) skipped"
+msgstr ""
+"Finished add to filterList with %s event(s):\n"
+"\n"
+" %s event(s) added \n"
+" %s event(s) skipped"
+
 msgid ""
 "First day to match events. No event that begins before this date will be "
 "matched."
@@ -262,15 +476,22 @@ msgstr ""
 #, python-format
 msgid ""
 "Found a total of %d matching Events.\n"
-"%d Timer were added and %d modified, %d conflicts encountered, %d similars "
-"added."
+"%d Timer were added and\n"
+"%d modified,\n"
+"%d conflicts encountered,\n"
+"%d similars added."
 msgstr ""
 "Found a total of %d matching Events.\n"
-"%d Timer were added and %d modified, %d conflicts encountered, %d similars "
-"added."
+"%d Timer were added and\n"
+"%d modified,\n"
+"%d conflicts encountered,\n"
+"%d similars added."
 
 msgid "Frequently asked questions"
 msgstr "Frequently asked questions"
+
+msgid "Fri"
+msgstr "Fri"
 
 msgid "Friday"
 msgstr "Friday"
@@ -281,6 +502,9 @@ msgstr "Guess existing timer based on begin/end"
 msgid "Help"
 msgstr "Help"
 
+msgid "If 0, the popup will remain open."
+msgstr "If 0, the popup will remain open."
+
 msgid ""
 "If a timer conflict occurs, AutoTimer will search outside the timespan for a "
 "similar event and add it."
@@ -288,13 +512,69 @@ msgstr ""
 "If a timer conflict occurs, AutoTimer will search outside the timespan for a "
 "similar event and add it."
 
+msgid ""
+"If enabled, the polling will be skipped if EPGRefresh is currently running."
+msgstr ""
+"If enabled, the polling will be skipped if EPGRefresh is currently running."
+
+msgid "If enabled, the polling will be skipped if a recording is in progress."
+msgstr "If enabled, the polling will be skipped if a recording is in progress."
+
+msgid ""
+"If the style is advanced, you will see more information about each auto "
+"timer."
+msgstr ""
+"If the style is advanced, you will see more information about each auto "
+"timer."
+
+msgid "If this enabled, debug Autotimer write in log file."
+msgstr "If this enabled, debug Autotimer write in log file."
+
+msgid "If this enabled, debug log print in console mode start enigma2."
+msgstr "If this enabled, debug log print in console mode start enigma2."
+
+msgid ""
+"If this enabled, will check the list of timers, conflicting autotimers are "
+"disabled, the duplicate autotimers will be deleted."
+msgstr ""
+"If this enabled, will check the list of timers, conflicting autotimers are "
+"disabled, the duplicate autotimers will be deleted."
+
 #, python-format
 msgid ""
 "If this is enabled an existing timer will also be considered recording an "
-"event if it records at least 80%% of the it."
+"event if it records at least 80% of the it."
 msgstr ""
 "If this is enabled an existing timer will also be considered recording an "
-"event if it records at least 80%% of the it."
+"event if it records at least 80% of the it."
+
+msgid ""
+"If this is enabled, up on the MENU button in the multi-EPG will list of "
+"choices for AutoTimer."
+msgstr ""
+"If this is enabled, up on the MENU button in the multi-EPG will list of "
+"choices for AutoTimer."
+
+msgid ""
+"If this is enabled, up on the Menu button in the standard single-EPG will "
+"list of choices for AutoTimer."
+msgstr ""
+"If this is enabled, up on the Menu button in the standard single-EPG will "
+"list of choices for AutoTimer."
+
+msgid ""
+"If this is selected, the name of the respective AutoTimer will be added as a "
+"tag to timers created by this plugin."
+msgstr ""
+"If this is selected, the name of the respective AutoTimer will be added as a "
+"tag to timers created by this plugin."
+
+msgid ""
+"If this is selected, the tag \"AutoTimer\" will be given to timers created "
+"by this plugin."
+msgstr ""
+"If this is selected, the tag \"AutoTimer\" will be given to timers created "
+"by this plugin."
 
 msgid "Import AutoTimer"
 msgstr "Import AutoTimer"
@@ -307,6 +587,22 @@ msgstr "Import from EPG"
 
 msgid "Include"
 msgstr "Include"
+
+msgid "Include \"AutoTimer\" in tags"
+msgstr "Include \"AutoTimer\" in tags"
+
+msgid "Include AutoTimer name in tags"
+msgstr "Include AutoTimer name in tags"
+
+msgid ""
+"Label Timers with season, episode and title, according to the SeriesPlugin "
+"settings."
+msgstr ""
+"Label Timers with season, episode and title, according to the SeriesPlugin "
+"settings."
+
+msgid "Label series"
+msgstr "Label series"
 
 msgid ""
 "Last day to match events. Events have to begin before this date to be "
@@ -339,6 +635,9 @@ msgstr "Match title"
 msgid "Match title: %s"
 msgstr "Match title: %s"
 
+msgid "Max. count for saved searchlog"
+msgstr "Max. count for saved searchlog"
+
 msgid "Maximum duration (in m)"
 msgstr "Maximum duration (in m)"
 
@@ -349,8 +648,19 @@ msgstr ""
 "Maximum event duration to match. If an event is longer than this amount of "
 "time (without offset) it won't be matched."
 
+#, python-format
+msgid ""
+"Message\n"
+"Do you really want to delete %s?"
+msgstr ""
+"Message\n"
+"Do you really want to delete %s?"
+
 msgid "Modify existing timers"
 msgstr "Modify existing timers"
+
+msgid "Mon"
+msgstr "Mon"
 
 msgid "Monday"
 msgstr "Monday"
@@ -367,6 +677,18 @@ msgstr "New"
 msgid "No"
 msgstr "No"
 
+msgid "No log file found"
+msgstr "No log file found"
+
+msgid ""
+"No searchLog found!\n"
+"\n"
+"So you have no new or modified timer at last autotimer-search."
+msgstr ""
+"No searchLog found!\n"
+"\n"
+"So you have no new or modified timer at last autotimer-search."
+
 msgid "None"
 msgstr "None"
 
@@ -375,6 +697,9 @@ msgstr "Not after"
 
 msgid "Not before"
 msgstr "Not before"
+
+msgid "Not found xml config file!"
+msgstr "Not found xml config file!"
 
 msgid "Number of scheduled recordings left."
 msgstr "Number of scheduled recordings left."
@@ -407,11 +732,39 @@ msgstr "Only match during timespan"
 msgid "Only on Service: %s"
 msgstr "Only on Service: %s"
 
+#, python-format
+msgid "Only on Weekday: %s"
+msgstr "Only on Weekday: %s"
+
+msgid "Only poll while in standby"
+msgstr "Only poll while in standby"
+
 msgid "Open Context Menu"
 msgstr "Open Context Menu"
 
+msgid "Open Timers list"
+msgstr "Open Timers list"
+
+msgid "Open plugin"
+msgstr "Open plugin"
+
+msgid "Open select location"
+msgstr "Open select location"
+
+msgid "Open select location as timer name"
+msgstr "Open select location as timer name"
+
+msgid "Other filters (edit in filter menu)"
+msgstr "Other filters (edit in filter menu)"
+
 msgid "Override found with alternative service"
 msgstr "Override found with alternative service"
+
+msgid "Path debug log"
+msgstr "Path debug log"
+
+msgid "Percentage ratio for duplicates matches"
+msgstr "Percentage ratio for duplicates matches"
 
 msgid "Please provide a Text to match"
 msgstr "Please provide a Text to match"
@@ -421,6 +774,9 @@ msgstr "Poll Interval (in h)"
 
 msgid "Poll automatically"
 msgstr "Poll automatically"
+
+msgid "Popup timeout in seconds"
+msgstr "Popup timeout in seconds"
 
 msgid ""
 "Power state to change to after recordings. Select \"standard\" to not change "
@@ -435,6 +791,15 @@ msgstr "Preview"
 msgid "Preview AutoTimer"
 msgstr "Preview AutoTimer"
 
+msgid "Preview for your AutoTimers"
+msgstr "Preview for your AutoTimers"
+
+msgid "Print shell log"
+msgstr "Print shell log"
+
+msgid "Reading file...\n"
+msgstr "Reading file...\n"
+
 msgid "Really close without saving settings?"
 msgstr "Really close without saving settings?"
 
@@ -443,6 +808,22 @@ msgstr "Record a maximum of x times"
 
 msgid "Record on"
 msgstr "Record on"
+
+msgid "Reload timers list after search events"
+msgstr "Reload timers list after search events"
+
+#, python-format
+msgid ""
+"Reload timers list.\n"
+"%d autotimer(s) disabled because conflict.\n"
+"%d double autotimer(s) removed.\n"
+msgstr ""
+"Reload timers list.\n"
+"%d autotimer(s) disabled because conflict.\n"
+"%d double autotimer(s) removed.\n"
+
+msgid "Remove not existing events"
+msgstr "Remove not existing events"
 
 msgid "Remove selected AutoTimer"
 msgstr "Remove selected AutoTimer"
@@ -459,11 +840,39 @@ msgstr "Restrict \"after event\" to a certain timespan?"
 msgid "Restrict to events on certain dates"
 msgstr "Restrict to events on certain dates"
 
+msgid "Restriction to certain bouquets (edit in services menu)"
+msgstr "Restriction to certain bouquets (edit in services menu)"
+
+msgid "Restriction to certain days of week (edit in filter menu)"
+msgstr "Restriction to certain days of week (edit in filter menu)"
+
+msgid "Restriction to certain services (edit in services menu)"
+msgstr "Restriction to certain services (edit in services menu)"
+
+msgid "Sat"
+msgstr "Sat"
+
 msgid "Saturday"
 msgstr "Saturday"
 
 msgid "Save"
 msgstr "Save"
+
+msgid "Save and search now"
+msgstr "Save and search now"
+
+msgid ""
+"Save the by SeriesPlugin generated timer-name in a filterlist to filter at "
+"later timer-searches (only with SeriesPlugin)"
+msgstr ""
+"Save the by SeriesPlugin generated timer-name in a filterlist to filter at "
+"later timer-searches (only with SeriesPlugin)"
+
+msgid "Save/check labeled series in filterlist (SeriesPlugin)"
+msgstr "Save/check labeled series in filterlist (SeriesPlugin)"
+
+msgid "Search new events matching for your AutoTimers"
+msgstr "Search new events matching for your AutoTimers"
 
 msgid "Search strictness"
 msgstr "Search strictness"
@@ -472,14 +881,27 @@ msgid "Search type"
 msgstr "Search type"
 
 msgid ""
-"Select \"exact match\" to enforce \"Match title\" to match exactly or "
-"\"partial match\" if you only want to search for a part of the event title."
+"Select \"exact match\" to enforce \"Match title\" to match exactly, "
+"\"partial match\" if you only want to search for a part of the event title "
+"or \"description match\" if you only want to search for a part of the event "
+"description"
 msgstr ""
-"Select \"exact match\" to enforce \"Match title\" to match exactly or "
-"\"partial match\" if you only want to search for a part of the event title."
+"Select \"exact match\" to enforce \"Match title\" to match exactly, "
+"\"partial match\" if you only want to search for a part of the event title "
+"or \"description match\" if you only want to search for a part of the event "
+"description"
 
 msgid "Select a timer to import"
 msgstr "Select a timer to import"
+
+msgid "Select action"
+msgstr "Select action"
+
+msgid "Select action for AutoTimer or input date/time:"
+msgstr "Select action for AutoTimer or input date/time:"
+
+msgid "Select action for AutoTimer:"
+msgstr "Select action for AutoTimer:"
 
 msgid "Select bouquet to record on"
 msgstr "Select bouquet to record on"
@@ -487,8 +909,17 @@ msgstr "Select bouquet to record on"
 msgid "Select channel to record on"
 msgstr "Select channel to record on"
 
+msgid "Select the count of the last saved searchlogs (min=5 max=20)"
+msgstr "Select the count of the last saved searchlogs (min=5 max=20)"
+
 msgid "Select the location to save the recording to."
 msgstr "Select the location to save the recording to."
+
+msgid "Select the path for autotimer_search.log"
+msgstr "Select the path for autotimer_search.log"
+
+msgid "Select the path where the autotimer_search.log should be saved"
+msgstr "Select the path where the autotimer_search.log should be saved"
 
 msgid "Select type of Filter"
 msgstr "Select type of Filter"
@@ -496,11 +927,31 @@ msgstr "Select type of Filter"
 msgid "Select whether or not you want to enforce case correctness."
 msgstr "Select whether or not you want to enforce case correctness."
 
+msgid "Set End Time"
+msgstr "Set End Time"
+
+msgid ""
+"Set an end time for the timer. If you do, the timespan of the event might be "
+"blocked for recordings."
+msgstr ""
+"Set an end time for the timer. If you do, the timespan of the event might be "
+"blocked for recordings."
+
 msgid "Set maximum duration"
 msgstr "Set maximum duration"
 
 msgid "Set this NO to disable this AutoTimer."
 msgstr "Set this NO to disable this AutoTimer."
+
+msgid ""
+"Set timer type: zap, simple record, zap+record (always zap to service before "
+"start record)."
+msgstr ""
+"Set timer type: zap, simple record, zap+record (always zap to service before "
+"start record)."
+
+msgid "Set wakeup receiver type. This works only for zap timers."
+msgstr "Set wakeup receiver type. This works only for zap timers."
 
 msgid "Setup"
 msgstr "Setup"
@@ -516,8 +967,26 @@ msgid ""
 msgstr ""
 "Should timers created by this AutoTimer be recorded to a custom location?"
 
+msgid "Show \"add to AutoTimer\" in channel selection menu"
+msgstr "Show \"add to AutoTimer\" in channel selection menu"
+
+msgid "Show AutoTimer FilterTxt"
+msgstr "Show AutoTimer FilterTxt"
+
+msgid "Show Log file"
+msgstr "Show Log file"
+
+msgid "Show in event menu"
+msgstr "Show in event menu"
+
 msgid "Show in extension menu"
 msgstr "Show in extension menu"
+
+msgid "Show last SearchLog"
+msgstr "Show last SearchLog"
+
+msgid "Show notification on added timers"
+msgstr "Show notification on added timers"
 
 msgid "Show notification on conflicts"
 msgstr "Show notification on conflicts"
@@ -525,11 +994,35 @@ msgstr "Show notification on conflicts"
 msgid "Show notification on similars"
 msgstr "Show notification on similars"
 
+msgid "Skip poll during epg refresh"
+msgstr "Skip poll during epg refresh"
+
+msgid "Skip poll during records"
+msgstr "Skip poll during records"
+
 msgid "Sort AutoTimer"
 msgstr "Sort AutoTimer"
 
 msgid "Sort Time"
 msgstr "Sort Time"
+
+msgid "Specify the name and location for the log."
+msgstr "Specify the name and location for the log."
+
+msgid "Standard"
+msgstr "Standard"
+
+msgid "Standard input date/time"
+msgstr "Standard input date/time"
+
+msgid "Startup delay (in min)"
+msgstr "Startup delay (in min)"
+
+msgid "Style auto timers list"
+msgstr "Style auto timers list"
+
+msgid "Sun"
+msgstr "Sun"
 
 msgid "Sunday"
 msgstr "Sunday"
@@ -544,6 +1037,13 @@ msgid "Tags the Timer/Recording will have."
 msgstr "Tags the Timer/Recording will have."
 
 msgid ""
+"The autotimer file (/etc/enigma2/autotimer.xml) is corrupt and could not be "
+"loaded."
+msgstr ""
+"The autotimer file (/etc/enigma2/autotimer.xml) is corrupt and could not be "
+"loaded."
+
+msgid ""
 "The counter can automatically be reset to the limit at certain intervals."
 msgstr ""
 "The counter can automatically be reset to the limit at certain intervals."
@@ -554,10 +1054,21 @@ msgid ""
 msgstr ""
 "The editor to be used for new AutoTimers. This can either be the Wizard or "
 "the classic editor."
+
+#, python-format
+msgid ""
+"The filterEntry '%s' already exist!\n"
+"The change was canceled."
+msgstr ""
+"The filterEntry '%s' already exist!\n"
+"The change was canceled."
 
 msgid "The match attribute is mandatory."
 msgstr "The match attribute is mandatory."
 
+msgid "The title attribute is mandatory."
+msgstr "The title attribute is mandatory."
+
 msgid ""
 "This is a name you can give the AutoTimer. It will be shown in the Overview "
 "and the Preview."
@@ -573,6 +1084,23 @@ msgstr ""
 "search the EPG again."
 
 msgid ""
+"This is the delay in minutes that the AutoTimer will wait on initial launch "
+"to not delay enigma2 startup time."
+msgstr ""
+"This is the delay in minutes that the AutoTimer will wait on initial launch "
+"to not delay enigma2 startup time."
+
+msgid ""
+"This is the delay in seconds that the AutoTimer will wait after editing the "
+"AutoTimers."
+msgstr ""
+"This is the delay in seconds that the AutoTimer will wait after editing the "
+"AutoTimers."
+
+msgid "This is the duration in minutes that the AutoTimer is allowed to run."
+msgstr "This is the duration in minutes that the AutoTimer is allowed to run."
+
+msgid ""
 "This is what will be looked for in event titles. Note that looking for e.g. "
 "german umlauts can be tricky as you have to know the encoding the channel "
 "uses."
@@ -580,6 +1108,13 @@ msgstr ""
 "This is what will be looked for in event titles. Note that looking for e.g. "
 "german umlauts can be tricky as you have to know the encoding the channel "
 "uses."
+
+msgid ""
+"This option allows you to turn off the timer confict detection. This option "
+"is for advanced users."
+msgstr ""
+"This option allows you to turn off the timer confict detection. This option "
+"is for advanced users."
 
 msgid "This setting controls the behavior when a timer matches a found event."
 msgstr "This setting controls the behavior when a timer matches a found event."
@@ -593,8 +1128,14 @@ msgstr ""
 "event that conflicts with an existing timer it will not ignore this event "
 "but add it disabled."
 
+msgid "Thur"
+msgstr "Thur"
+
 msgid "Thursday"
 msgstr "Thursday"
+
+msgid "Time"
+msgstr "Time"
 
 msgid "Time in minutes to append to recording."
 msgstr "Time in minutes to append to recording."
@@ -602,8 +1143,40 @@ msgstr "Time in minutes to append to recording."
 msgid "Time in minutes to prepend to recording."
 msgstr "Time in minutes to prepend to recording."
 
+msgid "Timeout (in min)"
+msgstr "Timeout (in min)"
+
+msgid "Timer from:\n"
+msgstr "Timer from:\n"
+
 msgid "Timer type"
 msgstr "Timer type"
+
+msgid "Timers list"
+msgstr "Timers list"
+
+msgid "Title"
+msgstr "Title"
+
+msgid "Title and Short description"
+msgstr "Title and Short description"
+
+msgid "Title and all descriptions"
+msgstr "Title and all descriptions"
+
+msgid ""
+"To cater for spelling mistakes and small deviations in the EPG information, "
+"you can make the matching algorithm fuzzy by setting the percentage both "
+"programmes must be equal for. Use 100% if you only want a match when both "
+"are completely identical. Recommended default ratio 80%."
+msgstr ""
+"To cater for spelling mistakes and small deviations in the EPG information, "
+"you can make the matching algorithm fuzzy by setting the percentage both "
+"programmes must be equal for. Use 100% if you only want a match when both "
+"are completely identical. Recommended default ratio 80%."
+
+msgid "Tue"
+msgstr "Tue"
 
 msgid "Tuesday"
 msgstr "Tuesday"
@@ -630,6 +1203,18 @@ msgstr ""
 msgid "Use a custom location"
 msgstr "Use a custom location"
 
+msgid "Use blue key to edit bouquets or services."
+msgstr "Use blue key to edit bouquets or services."
+
+msgid "Use yellow key to edit filters."
+msgstr "Use yellow key to edit filters."
+
+msgid "Wakeup receiver for start timer"
+msgstr "Wakeup receiver for start timer"
+
+msgid "Wed"
+msgstr "Wed"
+
 msgid "Wednesday"
 msgstr "Wednesday"
 
@@ -651,6 +1236,29 @@ msgid ""
 msgstr ""
 "When supporting \"Fast Scan\" the service type is ignored. You don't need to "
 "enable this unless your Image supports \"Fast Scan\" and you are using it."
+
+msgid ""
+"When this is enabled AutoTimer will ONLY check for new events whilst in "
+"stanadby."
+msgstr ""
+"When this is enabled AutoTimer will ONLY check for new events whilst in "
+"stanadby."
+
+msgid ""
+"When this option enabled and short description and extended description "
+"match is empty and timer title exist in match title, match is not a "
+"duplicate. Attention, this may result in double timers."
+msgstr ""
+"When this option enabled and short description and extended description "
+"match is empty and timer title exist in match title, match is not a "
+"duplicate. Attention, this may result in double timers."
+
+msgid ""
+"When this option enabled, short description to equal extended description if "
+"short description is empty."
+msgstr ""
+"When this option enabled, short description to equal extended description if "
+"short description is empty."
 
 msgid ""
 "When this option is enabled the AutoTimer won't match events where another "
@@ -677,6 +1285,23 @@ msgid "Wizard"
 msgstr "Wizard"
 
 msgid ""
+"Write the config file after every change which the user quits by saving."
+msgstr ""
+"Write the config file after every change which the user quits by saving."
+
+msgid "Yes"
+msgstr "Yes"
+
+msgid "Yes and show notify"
+msgstr "Yes and show notify"
+
+msgid "Yes, and delete all timers generated by this autotimer"
+msgstr "Yes, and delete all timers generated by this autotimer"
+
+msgid "Yes, but keep timers generated by this autotimer"
+msgstr "Yes, but keep timers generated by this autotimer"
+
+msgid ""
 "You can control for how many days in the future timers are added. Set this "
 "to 0 to disable this feature."
 msgstr ""
@@ -699,25 +1324,29 @@ msgstr ""
 "Your config file is not well-formed:\n"
 "%s"
 
-#. TRANSLATORS: AutoTimer title in MovieList (automatically opens importer, I consider this no further interaction)
 msgid "add AutoTimer"
 msgstr "add AutoTimer"
 
-#. TRANSLATORS: AutoTimer title in EventInfo dialog (requires the user to select an event to base the AutoTimer on)
 msgid "add AutoTimer..."
 msgstr "add AutoTimer..."
 
 msgid "add filters"
 msgstr "add filters"
 
-msgid "add services"
-msgstr "add services"
+msgid "add to AutoTimer filterList"
+msgstr "add to AutoTimer filterList"
+
+msgid "always"
+msgstr "always"
 
 msgid "auto"
 msgstr "auto"
 
 msgid "autotimers need a match attribute"
 msgstr "autotimers need a match attribute"
+
+msgid "begin searchLog from"
+msgstr "begin searchLog from"
 
 msgid "case-insensitive search"
 msgstr "case-insensitive search"
@@ -728,11 +1357,20 @@ msgstr "case-sensitive search"
 msgid "config changed."
 msgstr "config changed."
 
+msgid "create AutoTimer for current event"
+msgstr "create AutoTimer for current event"
+
 msgid "delete"
 msgstr "delete"
 
+msgid "description match"
+msgstr "description match"
+
 msgid "disable"
 msgstr "disable"
+
+msgid "disabled"
+msgstr "disabled"
 
 msgid "do nothing"
 msgstr "do nothing"
@@ -740,14 +1378,17 @@ msgstr "do nothing"
 msgid "edit filters"
 msgstr "edit filters"
 
-msgid "edit services"
-msgstr "edit services"
-
 msgid "enable"
 msgstr "enable"
 
+msgid "enabled"
+msgstr "enabled"
+
 msgid "exact match"
 msgstr "exact match"
+
+msgid "favorites description match"
+msgstr "favorites description match"
 
 msgid "go to deep standby"
 msgstr "go to deep standby"
@@ -764,14 +1405,29 @@ msgstr "in Shortdescription"
 msgid "in Title"
 msgstr "in Title"
 
+msgid "like autotimer.log"
+msgstr "like autotimer.log"
+
 msgid "mins"
 msgstr "mins"
 
 msgid "missing parameter \"id\""
 msgstr "missing parameter \"id\""
 
+msgid "missing parameter \"xml\""
+msgstr "missing parameter \"xml\""
+
+msgid "never"
+msgstr "never"
+
 msgid "on Weekday"
 msgstr "on Weekday"
+
+msgid "only from deep standby"
+msgstr "only from deep standby"
+
+msgid "only from standby"
+msgstr "only from standby"
 
 msgid "partial match"
 msgstr "partial match"
@@ -779,12 +1435,172 @@ msgstr "partial match"
 msgid "record"
 msgstr "record"
 
+msgid "scan for new Events"
+msgstr "scan for new Events"
+
+msgid "searchLog"
+msgstr "searchLog"
+
 msgid "standard"
 msgstr "standard"
+
+msgid "title ends with"
+msgstr "title ends with"
+
+msgid "title starts with"
+msgstr "title starts with"
 
 #, python-format
 msgid "unable to find timer with id %i"
 msgstr "unable to find timer with id %i"
 
+msgid "unknown"
+msgstr "unknown"
+
 msgid "zap"
 msgstr "zap"
+
+msgid "zap and record"
+msgstr "zap and record"
+
+msgid "Abort this Wizard."
+msgstr "Abort this Wizard."
+
+msgid "Create a new AutoTimer."
+msgstr "Create a new AutoTimer."
+
+msgid ""
+"Filters are another powerful tool when matching events. An AutoTimer can be "
+"restricted to certain Weekdays or only match an event with a text inside eg "
+"it's Description.\n"
+"Press BLUE to add a new restriction and YELLOW to remove the selected one."
+msgstr ""
+"Filters are another powerful tool when matching events. An AutoTimer can be "
+"restricted to certain Weekdays or only match an event with a text inside eg "
+"it's Description.\n"
+"Press BLUE to add a new restriction and YELLOW to remove the selected one."
+
+msgid ""
+"It's possible to restrict an AutoTimer to certain Services or Bouquets or to "
+"deny specific ones.\n"
+"An Event will only match this AutoTimer if it's on a specific and not denied "
+"Service (inside a Bouquet).\n"
+"Press BLUE to add a new restriction and YELLOW to remove the selected one."
+msgstr ""
+"It's possible to restrict an AutoTimer to certain Services or Bouquets or to "
+"deny specific ones.\n"
+"An Event will only match this AutoTimer if it's on a specific and not denied "
+"Service (inside a Bouquet).\n"
+"Press BLUE to add a new restriction and YELLOW to remove the selected one."
+
+msgid "No, remove them."
+msgstr "No, remove them."
+
+msgid ""
+"Thank you for using the wizard. Your new AutoTimer has been added to the "
+"List.\n"
+"Please press OK to continue."
+msgstr ""
+"Thank you for using the wizard. Your new AutoTimer has been added to the "
+"List.\n"
+"Please press OK to continue."
+
+msgid ""
+"The Timer will not be added to the List.\n"
+"Please press OK to close this Wizard."
+msgstr ""
+"The Timer will not be added to the List.\n"
+"Please press OK to close this Wizard."
+
+msgid ""
+"The Timespan of an AutoTimer is the first 'advanced' attribute. If a "
+"timespan is specified an event will only match this AutoTimer if it lies "
+"inside of this timespan."
+msgstr ""
+"The Timespan of an AutoTimer is the first 'advanced' attribute. If a "
+"timespan is specified an event will only match this AutoTimer if it lies "
+"inside of this timespan."
+
+msgid ""
+"Welcome.\n"
+"\n"
+"This Wizard will help you to create a new AutoTimer by providing "
+"descriptions for common settings."
+msgstr ""
+"Welcome.\n"
+"\n"
+"This Wizard will help you to create a new AutoTimer by providing "
+"descriptions for common settings."
+
+msgid "Yes, keep them."
+msgstr "Yes, keep them."
+
+msgid ""
+"You can set the basic properties of an AutoTimer here.\n"
+"While 'Name' is just a human-readable name displayed in the Overview, 'Match "
+"in title' is what is looked for in the EPG."
+msgstr ""
+"You can set the basic properties of an AutoTimer here.\n"
+"While 'Name' is just a human-readable name displayed in the Overview, 'Match "
+"in title' is what is looked for in the EPG."
+
+msgid ""
+"You did not provide a valid 'Match in title' Attribute for your new "
+"AutoTimer.\n"
+"As this is a mandatory Attribute you cannot continue without doing so."
+msgstr ""
+"You did not provide a valid 'Match in title' Attribute for your new "
+"AutoTimer.\n"
+"As this is a mandatory Attribute you cannot continue without doing so."
+
+msgid ""
+"You successfully configured a new AutoTimer. Do you want to add it to the "
+"list?\n"
+"\n"
+"You can go back a step by pressing EXIT on your remote."
+msgstr ""
+"You successfully configured a new AutoTimer. Do you want to add it to the "
+"list?\n"
+"\n"
+"You can go back a step by pressing EXIT on your remote."
+
+msgid ""
+"Your 'Match in title' Attribute ends with a Whitespace.\n"
+"Please confirm if this was intentional, if not they will be removed."
+msgstr ""
+"Your 'Match in title' Attribute ends with a Whitespace.\n"
+"Please confirm if this was intentional, if not they will be removed."
+
+msgid "AutoTimer FAQ"
+msgstr "AutoTimer FAQ"
+
+msgid "FAQ"
+msgstr "FAQ"
+
+msgid "Frequently asked questions about the AutoTimer"
+msgstr "Frequently asked questions about the AutoTimer"
+
+msgid ""
+"Question: I found a problem with the AutoTimer, can you fix it? \n"
+"Answer: First try the AutoTimer version in a recent (experimental) Image to "
+"see if the problem was fixed. Then read the Help again and the upcoming FAQs "
+"to make sure that this is actually a problem and not expected behavior. \n"
+"If you still think there is something wrong with the AutoTimer, please visit "
+"http://www.dream-multimedia-tv.de/board and post your problem there. \n"
+"\n"
+"Q: The plugin only adds timers when leaving the configuration, not "
+"automatically. What can I do? \n"
+"A: From the Overview press MENU and enter the \"Setup\". In this screen "
+"enable \"Poll automatically\" and you should be good to go."
+msgstr ""
+"Question: I found a problem with the AutoTimer, can you fix it? \n"
+"Answer: First try the AutoTimer version in a recent (experimental) Image to "
+"see if the problem was fixed. Then read the Help again and the upcoming FAQs "
+"to make sure that this is actually a problem and not expected behavior. \n"
+"If you still think there is something wrong with the AutoTimer, please visit "
+"http://www.dream-multimedia-tv.de/board and post your problem there. \n"
+"\n"
+"Q: The plugin only adds timers when leaving the configuration, not "
+"automatically. What can I do? \n"
+"A: From the Overview press MENU and enter the \"Setup\". In this screen "
+"enable \"Poll automatically\" and you should be good to go."
