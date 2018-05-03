@@ -1,22 +1,21 @@
-# Signed-off-by: Dario Croci <spaeleus@croci.org>
+# Italian translations for enigma package.
+# Copyright (C) 2018 THE enigma'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the enigma package.
+# Automatically generated, 2018.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: enigma2  - FRITZ!Box\n"
+"Project-Id-Version: enigma 2-plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-02-20 10:41+0100\n"
-"PO-Revision-Date: 2015-04-14 23:22+0200\n"
-"Last-Translator: Spaeleus <spaeleus@croci.org>\n"
-"Language-Team: www.linsat.net <spaeleus@croci.org>\n"
-"Language: it_IT\n"
+"POT-Creation-Date: 2018-05-03 11:46+0200\n"
+"PO-Revision-Date: 2018-05-03 11:46+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-Basepath: ../enigma2-plugins/fritzcall\n"
-"X-Generator: Poedit 1.5.4\n"
-"X-Poedit-SearchPath-0: ../enigma2-plugins/fritzcall\n"
 
 msgid "05.29 until below 6.35"
 msgstr ""
@@ -28,45 +27,45 @@ msgstr ""
 #. TRANSLATORS: keep it short, this is a button
 #. TRANSLATORS: keep it short, this is a help text
 msgid "About FritzCall"
-msgstr "Info su FritzCall"
+msgstr ""
 
 #. TRANSLATORS: keep it short, this is a button
 msgid "Activate WLAN guest access"
-msgstr "Attivare accesso Guest WLAN"
+msgstr ""
 
 #. TRANSLATORS: keep it short, this is a help text
 #. TRANSLATORS: this is a window title.
 msgid "Add entry to phonebook"
-msgstr "Aggiungere voce in rubrica"
+msgstr ""
 
 #. TRANSLATORS: keep it short, this is a button
 msgid "All"
-msgstr "Tutte"
+msgstr ""
 
 msgid "All calls"
-msgstr "Tutte le chiamate"
+msgstr ""
 
 msgid "Append shortcut number"
-msgstr "Aggiungere numero breve"
+msgstr ""
 
 msgid "Append type of number"
-msgstr "Agg. il tipo di numero (casa,cell.,uff.)"
+msgstr ""
 
 msgid "Append vanity name"
-msgstr "Aggiungere nome \"Vanity\""
+msgstr ""
 
 msgid "Areacode to add to calls without one (if necessary)"
-msgstr "Pref. locale per le chiamate che ne sono prive (se necessario)"
+msgstr ""
 
 msgid "Austria"
-msgstr "Austria"
+msgstr ""
 
 msgid "Automatically add new Caller to PhoneBook"
-msgstr "Ins. autom. nuovo chiamante in rubrica"
+msgstr ""
 
 #. TRANSLATORS: keep it short, this is a button
 msgid "Call"
-msgstr "Chiam."
+msgstr ""
 
 msgid "Call diversion"
 msgstr ""
@@ -75,34 +74,32 @@ msgid "Call diversion active"
 msgstr ""
 
 msgid "Call monitoring"
-msgstr "Monitoraggio chiamate"
+msgstr ""
 
 msgid "Call redirection"
-msgstr "Deviazione chiamate"
+msgstr ""
 
 #, python-format
 msgid "Calling %s"
-msgstr "Chiamata per %s"
+msgstr ""
 
 #. TRANSLATORS: keep it short, this is a button
 msgid "Cancel"
-msgstr "Annull."
+msgstr ""
 
 msgid "Cannot get calls from FRITZ!Box"
-msgstr "Recupero chiamate dalla FRITZ!Box impossibile"
+msgstr ""
 
 msgid ""
 "Cannot get infos from FRITZ!Box yet\n"
 "Still initialising or wrong firmware version"
 msgstr ""
-"Recupero informazioni dalla FRITZ!Box impossibile.\n"
-"Avvio ancora in corso o versione firmware errata."
 
 msgid "Connected since"
-msgstr "Connesso da"
+msgstr ""
 
 msgid "Connected to FRITZ!Box!"
-msgstr "Connesso alla FRITZ!Box!"
+msgstr ""
 
 #, python-format
 msgid ""
@@ -110,12 +107,9 @@ msgid ""
 " (%s)\n"
 "retrying..."
 msgstr ""
-"Connessione alla FRITZ!Box fallita!\n"
-"(%s)\n"
-"Nuovo tentativo in corso..."
 
 msgid "Connecting to FRITZ!Box..."
-msgstr "Connessione alla FRITZ!Box in corso..."
+msgstr ""
 
 #, python-format
 msgid ""
@@ -123,12 +117,9 @@ msgid ""
 " (%s)\n"
 "retrying..."
 msgstr ""
-"Connessione alla FRITZ!Box persa!\n"
-"(%s)\n"
-"Nuovo tentativo in corso..."
 
 msgid "Could not get call list; wrong version?"
-msgstr "Impossibile ottenere elenco chiamate: versione errata?"
+msgstr ""
 
 msgid "Could not load phonebook: "
 msgstr ""
@@ -138,60 +129,60 @@ msgid "Could not load phonebook: %s"
 msgstr ""
 
 msgid "Could not parse FRITZ!Box Phonebook entry"
-msgstr "Impossibile analizzare la voce nella Rubrica della FRITZ!Box!"
+msgstr ""
 
 msgid "Could not read FRITZ!Box phonebook; wrong version?"
-msgstr "Impossibile leggere Rubrica della FRITZ!Box: versione errata?"
+msgstr ""
 
 msgid "Country"
-msgstr "Nazione"
+msgstr ""
 
 msgid "Countrycode (e.g. 0044 for UK, 0034 for Spain, etc.)"
 msgstr ""
 
 msgid "DECT inactive"
-msgstr "DECT non attivo"
+msgstr ""
 
 msgid "DECT phones registered"
-msgstr "Telefoni DECT registrati"
+msgstr ""
 
 #. TRANSLATORS: keep it short, this is a button
 msgid "Deactivate WLAN guest access"
-msgstr "Disattivare accesso Guest WLAN"
+msgstr ""
 
 #. TRANSLATORS: keep it short, this is a button
 msgid "Delete"
-msgstr "Cancell."
+msgstr ""
 
 #. TRANSLATORS: keep it short, this is a help text
 msgid "Delete entry"
-msgstr "Cancellare voce"
+msgstr ""
 
 msgid "Display FRITZ!box-Fon calls on screen"
-msgstr "Visualizzare chiamate telef. sulla TV"
+msgstr ""
 
 #. TRANSLATORS: keep it short, this is a help text
 msgid "Display all calls"
-msgstr "Tutte le chiamate"
+msgstr ""
 
 msgid "Display connection infos"
-msgstr "Mostrare informazioni connessione"
+msgstr ""
 
 #. TRANSLATORS: keep it short, this is a help text
 msgid "Display incoming calls"
-msgstr "Chiamate in ingresso"
+msgstr ""
 
 #. TRANSLATORS: keep it short, this is a help text
 msgid "Display missed calls"
-msgstr "Chiamate perse"
+msgstr ""
 
 #. TRANSLATORS: keep it short, this is a help text
 msgid "Display outgoing calls"
-msgstr "Chiamate in uscita"
+msgstr ""
 
 #. TRANSLATORS: this is a window title.
 msgid "Do what?"
-msgstr "Che fare?"
+msgstr ""
 
 #, python-format
 msgid ""
@@ -201,123 +192,113 @@ msgid ""
 "\n"
 "%(name)s?"
 msgstr ""
-"Cancellare la voce\n"
-"\n"
-"%(number)s\n"
-"\n"
-"%(name)s?"
 
 #. TRANSLATORS: keep it short, this is a button
 msgid "Edit"
-msgstr "Mod."
+msgstr ""
 
 #. TRANSLATORS: keep it short, this is a help text
 #. TRANSLATORS: this is a window title.
 msgid "Edit selected entry"
-msgstr "Mod. voce selezionata"
+msgstr ""
 
 msgid "Enter Search Terms"
-msgstr "Inserire criteri di ricerca"
+msgstr ""
 
 msgid "Entry incomplete."
-msgstr "Voce incompleta."
+msgstr ""
 
 msgid "Extended Search for faces"
-msgstr "Ricerca avanzata foto chiamante"
+msgstr ""
 
 msgid "Extended Search for names"
-msgstr "Ricerca estesa nomi"
+msgstr ""
 
 msgid "Extension number to initiate call on"
-msgstr "Numero apparecchio su cui indirizzare la chiamata"
+msgstr ""
 
 msgid "FRITZ!Box - "
 msgstr ""
 
 #, python-format
 msgid "FRITZ!Box - Could not load calls: %s"
-msgstr "FRITZ!Box - Impossibile caricare le chiamate: %s"
+msgstr ""
 
 #, python-format
 msgid "FRITZ!Box - Dialling failed: %s"
-msgstr "FRITZ!Box - Composizione fallita: %s"
+msgstr ""
 
 #, python-format
 msgid "FRITZ!Box - Error getting blacklist: %s"
-msgstr "FRITZ!Box - Errore in recupero blacklist: %s"
+msgstr ""
 
 msgid "FRITZ!Box - Error getting status: "
 msgstr ""
 
 #, python-format
 msgid "FRITZ!Box - Error getting status: %s"
-msgstr "FRITZ!Box - Errore in recupero stato: %s"
+msgstr ""
 
 msgid ""
 "FRITZ!Box - Error logging in\n"
 "\n"
 msgstr ""
-"FRITZ!Box - Errore log in\n"
-"\n"
 
 #, python-format
 msgid "FRITZ!Box - Error logging in: %s"
-msgstr "FRITZ!Box - Errore in esecuzione log: %s"
+msgstr ""
 
 #, python-format
 msgid ""
 "FRITZ!Box - Error logging in: %s\n"
 "Disabling plugin."
 msgstr ""
-"FRITZ!Box - Errore in esecuzione log: %s\n"
-"Il plugin verrà disabilitato."
 
 #, python-format
 msgid "FRITZ!Box - Error logging out: %s"
-msgstr "FRITZ!Box - Errore in esecuzione log: %s"
+msgstr ""
 
 #, python-format
 msgid "FRITZ!Box - Error resetting: %s"
-msgstr "FRITZ!Box - Errore in reset: %s"
+msgstr ""
 
 #, python-format
 msgid "FRITZ!Box - Failed changing GuestAccess: %s"
-msgstr "FRITZ!Box - Cambiamento accesso Guest fallito: %s"
+msgstr ""
 
 #, python-format
 msgid "FRITZ!Box - Failed changing Mailbox: %s"
-msgstr "FRITZ!Box - Cambiamento casella di posta fallito: %s"
+msgstr ""
 
 #, python-format
 msgid "FRITZ!Box - Failed changing WLAN: %s"
-msgstr "FRITZ!Box - Cambiamento WLAN fallito: %s"
+msgstr ""
 
 msgid "FRITZ!Box FON address (Name or IP)"
-msgstr "FRITZ!Box FON - Indirizzo (nome o IP)"
+msgstr ""
 
 msgid "FRITZ!Box FON firmware version"
-msgstr "FRITZ!Box FON - Versione firmware"
+msgstr ""
 
 #. TRANSLATORS: this is a window title.
 #. TRANSLATORS: keep it short, this is a button
 #. TRANSLATORS: keep it short, this is a help text
 msgid "FRITZ!Box Fon Status"
-msgstr "FRITZ!Box Fon - Stato"
+msgstr ""
 
 msgid "FRITZ!Box PhoneBook to read"
-msgstr "Rubrica FRITZ!Box da caricare"
+msgstr ""
 
 msgid ""
 "FRITZ!Box firmware version not configured! Please set it in the "
 "configuration."
 msgstr ""
-"Versione firmware FRITZ!Box non inserita. Aggiornare la configurazione."
 
 msgid "FRITZ!Box not available for calling"
-msgstr "FRITZ!Box non disponibile per le chiamate"
+msgstr ""
 
 msgid "Filter also list of calls"
-msgstr "Filtrare anche gli elenchi chiamate"
+msgstr ""
 
 #, python-format
 msgid ""
@@ -327,46 +308,41 @@ msgid ""
 "\n"
 "But did not load. Probably not PNG, 8-bit"
 msgstr ""
-"Trovata immagine\n"
-"\n"
-"%s\n"
-"\n"
-"Impossibile caricarla. Il formato deve esserecpng, 8 bit."
 
 msgid "France"
-msgstr "Francia"
+msgstr ""
 
 #. TRANSLATORS: this is a window title.
 msgid "FritzCall Setup"
-msgstr "Configurazione FritzCall"
+msgstr ""
 
 msgid "Germany"
-msgstr "Germania"
+msgstr ""
 
 msgid "Getting calls from FRITZ!Box..."
-msgstr "Recupero chiamate dalla FRITZ!Box in corso"
+msgstr ""
 
 msgid "Getting status from FRITZ!Box Fon..."
-msgstr "Recupero stato dalla FRITZ!Box Fon in corso..."
+msgstr ""
 
 msgid "Guest access"
-msgstr "Accesso Guest"
+msgstr ""
 
 msgid "Guest access not active"
-msgstr "Accesso Guest non attivo"
+msgstr ""
 
 msgid "Guest access on "
-msgstr "Accesso Guest attivo"
+msgstr ""
 
 msgid "IP Address:"
-msgstr "Indirizzo IP:"
+msgstr ""
 
 msgid "Ignore callers with no phone number"
-msgstr "Ignorare i chiamanti con numero mascherato"
+msgstr ""
 
 #. TRANSLATORS: keep it short, this is a button
 msgid "Incoming"
-msgstr "In Entr."
+msgstr ""
 
 #, python-format
 msgid ""
@@ -377,44 +353,38 @@ msgid ""
 "---------------------------------------------\n"
 "to: %(phone)s"
 msgstr ""
-"Chiamata in arrivo il %(date)s alle %(time)s da\n"
-"---------------------------------------------\n"
-"%(number)s\n"
-"%(caller)s\n"
-"---------------------------------------------\n"
-"a: %(phone)s"
 
 msgid "Incoming calls"
-msgstr "Chiamate in entrata"
+msgstr ""
 
 msgid "Italy"
-msgstr "Italia"
+msgstr ""
 
 msgid "Last 10 calls:\n"
-msgstr "Ultime 10 chiamate:\n"
+msgstr ""
 
 msgid "Log level"
 msgstr ""
 
 #. TRANSLATORS: keep it short, this is a button
 msgid "Lookup"
-msgstr "Lookup"
+msgstr ""
 
 msgid "MSN to show (separated by ,)"
-msgstr "MSN da mostrare (separare con ,)"
+msgstr ""
 
 msgid "Mailbox"
-msgstr "Casella di posta"
+msgstr ""
 
 msgid "Make it more skin friendly"
 msgstr ""
 
 #. TRANSLATORS: keep it short, this is a button
 msgid "Missed"
-msgstr "Ch. perse"
+msgstr ""
 
 msgid "Missed calls"
-msgstr "Chiamate perse"
+msgstr ""
 
 msgid "Mute on incoming call"
 msgstr ""
@@ -423,64 +393,64 @@ msgid "Mute on outgoing calls"
 msgstr ""
 
 msgid "Name"
-msgstr "Nome"
+msgstr ""
 
 #. TRANSLATORS: keep it short, this is a button
 msgid "New"
-msgstr "Nuovo"
+msgstr ""
 
 msgid "New call"
-msgstr "Nuova chiamata"
+msgstr ""
 
 msgid "No DECT phone registered"
-msgstr "Nessun telefono DECT registrato"
+msgstr ""
 
 msgid "No call diversion active"
 msgstr ""
 
 msgid "No entry selected"
-msgstr "Nessuna voce selezionata"
+msgstr ""
 
 msgid "No mailbox active"
-msgstr "Nessuna casella di posta attiva"
+msgstr ""
 
 msgid "No phonebook"
-msgstr "Nessuna rubrica"
+msgstr ""
 
 msgid "No result from LDIF"
-msgstr "Ricerca in LDIF: nessun risultato!"
+msgstr ""
 
 msgid "No result from Outlook export"
-msgstr "Ricerca in Outlook  export: nessun risultato!"
+msgstr ""
 
 msgid "No result from reverse lookup"
-msgstr "Ricerca identificativo chiamante: nessun risultato!"
+msgstr ""
 
 msgid "Not deactivating after time"
 msgstr ""
 
 msgid "Number"
-msgstr "Numero"
+msgstr ""
 
 #. TRANSLATORS: keep it short, this is a button
 msgid "OK"
-msgstr "Ok"
+msgstr ""
 
 msgid "One DECT phone registered"
-msgstr "Un telefono DECT registrato"
+msgstr ""
 
 msgid "One call diversion active"
 msgstr ""
 
 msgid "One mailbox active"
-msgstr "Una casella di posta attiva"
+msgstr ""
 
 msgid "Others"
-msgstr "Altri paesi"
+msgstr ""
 
 #. TRANSLATORS: keep it short, this is a button
 msgid "Outgoing"
-msgstr "In uscita"
+msgstr ""
 
 #, python-format
 msgid ""
@@ -491,127 +461,121 @@ msgid ""
 "---------------------------------------------\n"
 "from: %(phone)s"
 msgstr ""
-"Chiamata in uscita il %(date)s alle %(time)s a\n"
-"---------------------------------------------\n"
-"%(number)s\n"
-"%(caller)s\n"
-"---------------------------------------------\n"
-"da: %(phone)s"
 
 msgid "Outgoing calls"
-msgstr "Chiamate in uscita"
+msgstr ""
 
 msgid "Password Accessing FRITZ!Box"
-msgstr "Password di accesso alla FRITZ!Box"
+msgstr ""
 
 #. TRANSLATORS: this is a window title.
 #. TRANSLATORS: keep it short, this is a button
 msgid "Phone calls"
-msgstr "Ch. telef."
+msgstr ""
 
 msgid "PhoneBook and Faces Location"
-msgstr "Posizione rubrica e Faces"
+msgstr ""
 
 #. TRANSLATORS: this is a window title.
 #. TRANSLATORS: keep it short, this is a button
 msgid "Phonebook"
-msgstr "Rubrica"
+msgstr ""
 
 msgid "Plugin not enabled"
-msgstr "Plugin non abilitato"
+msgstr ""
 
 #. TRANSLATORS: keep it short, this is a help text
 msgid "Quit"
-msgstr "Uscire"
+msgstr ""
 
 msgid "Read PhoneBook from FRITZ!Box"
-msgstr "Caricare la rubrica dalla FRITZ!Box"
+msgstr ""
 
 #. TRANSLATORS: keep it short, this is a help text
 msgid "Refresh status"
-msgstr "Aggiornare lo stato"
+msgstr ""
 
 msgid "Refreshing..."
-msgstr "Aggiornamento in coso..."
+msgstr ""
 
 msgid "Reload interval for phonebooks (hours)"
-msgstr "Intervallo aggiornamento rubriche (ore)"
+msgstr ""
 
 #. TRANSLATORS: keep it short, this is a button
 #. TRANSLATORS: keep it short, this is a help text
 #. TRANSLATORS: keep it short, this is a button
 msgid "Reset"
-msgstr "Reset"
+msgstr ""
 
 msgid "Reverse Lookup Caller ID"
 msgstr ""
 
 msgid "Reverse searching..."
-msgstr "Ricerca identificativo chiamante..."
+msgstr ""
 
 #. TRANSLATORS: keep it short, this is a button
 msgid "Save"
-msgstr "Salvare"
+msgstr ""
 
 #. TRANSLATORS: keep it short, this is a button
 msgid "Search"
-msgstr "Ricerca"
+msgstr ""
 
 #. TRANSLATORS: keep it short, this is a help text
 msgid "Search (case insensitive)"
-msgstr "Ricerca (non distingue Maiusc-minusc)"
+msgstr ""
 
 msgid "Search phonebook"
-msgstr "Ricerca su rubrica"
+msgstr ""
 
 msgid "Searching in LDIF..."
-msgstr "Ricerca in LDIF..."
+msgstr ""
 
 msgid "Searching in Outlook export..."
-msgstr "Ricerca in Outlook  export..."
+msgstr ""
 
 msgid "Setting..."
-msgstr "impostazioni..."
+msgstr ""
 
 msgid "Shortcut"
-msgstr "Numero breve"
+msgstr ""
 
 msgid "Show Blocked Calls"
 msgstr ""
 
 msgid "Show Outgoing Calls"
-msgstr "Mostrare le chiamate in uscita"
+msgstr ""
 
 msgid "Show after Standby"
-msgstr "Mostrare chiamate dopo lo standby"
+msgstr ""
 
 msgid "Show also internal numbers"
 msgstr ""
 
 #. TRANSLATORS: keep it short, this is a help text
 msgid "Show details of entry"
-msgstr "Mostrare dettagli voce"
+msgstr ""
 
 msgid "Show only calls for specific MSN"
-msgstr "Mostrare solo le chiamate per MSN specifico"
+msgstr ""
 
 msgid "Software fax active"
-msgstr "Fax software attivo"
+msgstr ""
 
 msgid "Software fax inactive"
-msgstr "Fax software non attivo"
+msgstr ""
 
 msgid "Status not available"
-msgstr "Stato non disponibile"
+msgstr ""
 
 msgid "Strip Leading 0"
-msgstr "Sopprimere \"0\" iniziali"
+msgstr ""
 
 msgid "Switzerland"
-msgstr "Svizzera"
+msgstr ""
 
 msgid "The Netherlands"
-msgstr "Olanda"
+msgstr ""
 
 #, python-format
 msgid ""
@@ -620,55 +584,53 @@ msgid ""
 msgstr ""
 
 msgid "Timeout for Call Notifications (seconds)"
-msgstr "Ritardo notifica chiamate (secondi)"
+msgstr ""
 
 msgid ""
 "To enjoy more functionalities of your FRITZ!Box, configure the firmware "
 "version!"
 msgstr ""
-"Per godere appieno delle funzionalità della FRITZ!Box, configurare la "
-"versione firmware."
 
 #. TRANSLATORS: keep it short, this is a help text
 msgid "Toggle 1. mailbox"
-msgstr "Comm. casella 1."
+msgstr ""
 
 #. TRANSLATORS: keep it short, this is a help text
 msgid "Toggle 2. mailbox"
-msgstr "Comm. casella 2."
+msgstr ""
 
 #. TRANSLATORS: keep it short, this is a help text
 msgid "Toggle 3. mailbox"
-msgstr "Comm. casella 3."
+msgstr ""
 
 #. TRANSLATORS: keep it short, this is a help text
 msgid "Toggle 4. mailbox"
-msgstr "Comm. casella 4."
+msgstr ""
 
 #. TRANSLATORS: keep it short, this is a help text
 msgid "Toggle 5. mailbox"
-msgstr "Comm. casella 5."
+msgstr ""
 
 #. TRANSLATORS: keep it short, this is a button
 msgid "Toggle Mailbox"
-msgstr "Comm. casella"
+msgstr ""
 
 #. TRANSLATORS: keep it short, this is a button
 #. TRANSLATORS: keep it short, this is a help text
 #. TRANSLATORS: keep it short, this is a button
 msgid "Toggle WLAN"
-msgstr "Commutare WLAN"
+msgstr ""
 
 #. TRANSLATORS: keep it short, this is a help text
 msgid "Toggle WLAN guest access"
-msgstr "Commutare accesso Guest WLAN"
+msgstr ""
 
 #. TRANSLATORS: keep it short, this is a help text
 msgid "Toggle all mailboxes"
-msgstr "Comm. tutte le caselle"
+msgstr ""
 
 msgid "UNKNOWN"
-msgstr "SCONOSCIUTO"
+msgstr ""
 
 msgid "Unknown"
 msgstr ""
@@ -677,19 +639,19 @@ msgid "Update available"
 msgstr ""
 
 msgid "Use internal PhoneBook"
-msgstr "Usare la rubrica interna"
+msgstr ""
 
 msgid "User name Accessing FRITZ!Box"
-msgstr "User name di accesso alla FRITZ!Box"
+msgstr ""
 
 msgid "Vanity"
-msgstr "\"Vanity\""
+msgstr ""
 
 msgid "WLAN not active"
 msgstr ""
 
 msgid "You need to enable the monitoring on your FRITZ!Box by dialing #96*5*!"
-msgstr "Per abilitare il monitoraggio sulla FRITZ!Box comporre #96*5*!"
+msgstr ""
 
 msgid ""
 "You need to set the password of the FRITZ!Box\n"
@@ -697,13 +659,12 @@ msgid ""
 "\n"
 "It could be a communication issue, just try again."
 msgstr ""
-"E' necessario impostare la password della FRITZ!Box\n"
-"nel menu configurazione per mostrare le chiamate.\n"
-"\n"
-"Potrebbe trattarsi di un problema di comunicazione, riprovare."
 
 msgid "before 05.27"
-msgstr "anteriore a 05.27"
+msgstr ""
+
+msgid "business"
+msgstr ""
 
 msgid "call diversions active"
 msgstr ""
@@ -712,24 +673,24 @@ msgid "calls in mailbox"
 msgstr ""
 
 msgid "devices active"
-msgstr "Dispositivi attivi"
+msgstr ""
 
 #. TRANSLATORS: keep it short, this is a help text
 msgid "display calls"
-msgstr "Tutte le chiamate"
+msgstr ""
 
 #. TRANSLATORS: keep it short, this is a help text
 msgid "display phonebook"
-msgstr "Mostrare rubrica"
+msgstr ""
 
 msgid "done"
-msgstr "Fatto"
+msgstr ""
 
 msgid "done, using last list"
-msgstr "Fatto, sarà usata l'ultimo elenco"
+msgstr ""
 
 msgid "encrypted"
-msgstr "codificato"
+msgstr ""
 
 msgid "fax_home"
 msgstr ""
@@ -738,52 +699,52 @@ msgid "fax_work"
 msgstr ""
 
 msgid "finishing"
-msgstr "Quasi terminato..."
+msgstr ""
 
 msgid "guest "
 msgstr ""
 
 msgid "home"
-msgstr "Casa"
+msgstr ""
 
 msgid "login"
-msgstr "Login"
+msgstr ""
 
 msgid "login ok"
-msgstr "Login Ok"
+msgstr ""
 
 msgid "login verification"
-msgstr "Verifica login"
+msgstr ""
 
 msgid "mailboxes active"
-msgstr "caselle di posta attive"
+msgstr ""
 
 msgid "mobile"
-msgstr "Cellulare"
+msgstr ""
 
 msgid "no calls"
-msgstr "Nessuna"
+msgstr ""
 
 msgid "no device active"
-msgstr "Nessun dispositivo attivo"
+msgstr ""
 
 msgid "not available with this firmware version"
 msgstr ""
 
 msgid "not configured"
-msgstr "non configurato"
+msgstr ""
 
 msgid "not encrypted"
-msgstr "non codificato"
+msgstr ""
 
 msgid "not yet implemented"
-msgstr "Funzione non ancora implementata"
+msgstr ""
 
 msgid "nothing"
 msgstr ""
 
 msgid "number suppressed"
-msgstr "numero mascherato"
+msgstr ""
 
 msgid "off"
 msgstr ""
@@ -792,7 +753,7 @@ msgid "on"
 msgstr ""
 
 msgid "one device active"
-msgstr "Un dispositivo attivo"
+msgstr ""
 
 msgid "only failed"
 msgstr ""
@@ -801,63 +762,30 @@ msgid "pager"
 msgstr ""
 
 msgid "preparing"
-msgstr "Preparazione in corso"
+msgstr ""
 
 #. TRANSLATORS: keep it short, this is a help text
 msgid "quit"
-msgstr "Uscire"
+msgstr ""
 
 #. TRANSLATORS: keep it short, this is a help text
 msgid "save and quit"
-msgstr "Salvare e uscire"
+msgstr ""
 
 msgid "show as list"
-msgstr "Come elenco"
+msgstr ""
 
 msgid "show each call"
-msgstr "Tutte"
+msgstr ""
 
 msgid "show nothing"
-msgstr "Nulla"
+msgstr ""
 
 msgid "with"
 msgstr ""
 
 msgid "work"
-msgstr "Ufficio"
+msgstr ""
 
 msgid "wrong user or password?"
-msgstr "Utente o password errati?"
-
-#~ msgid "Call redirection active"
-#~ msgstr "deviazione chiamate attiva"
-
-#~ msgid "Debug"
-#~ msgstr "Debug"
-
-#~ msgid "FRITZ!Box - Could not load phonebook: %s"
-#~ msgstr "FRITZ!Box - Impossibile caricare la rubrica: %s"
-
-#~ msgid "Mute on call"
-#~ msgstr "Mute su Chiamata"
-
-#~ msgid "Name of WLAN guest network"
-#~ msgstr "Nome della rete WLAN Guest"
-
-#~ msgid "No call redirection active"
-#~ msgstr "Nessuna deviazione chiamate attiva"
-
-#~ msgid "One call redirection active"
-#~ msgstr "Una deviazione chiamate attiva"
-
-#~ msgid "Password of WLAN guest network"
-#~ msgstr "Password per la rete WLAN Guest"
-
-#~ msgid "Reverse Lookup Caller ID (select country below)"
-#~ msgstr "Identificativo chiamante (selezionare il Paese!)"
-
-#~ msgid "Secure WLAN guest network"
-#~ msgstr "Sicurezza rete WLAN Guest"
-
-#~ msgid "call redirections active"
-#~ msgstr "deviazione chiamate attiva"
+msgstr ""

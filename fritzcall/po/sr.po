@@ -1,23 +1,22 @@
-# FritzCall plugin german localization
-# Copyright (C) 2009 Michael Schmidt
-# This file is distributed under the same license as the PACKAGE package.
-# Michael Schmidt <michael@schmidt-schmitten.com>, 2009.
+# Serbian translations for enigma package.
+# Copyright (C) 2018 THE enigma'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the enigma package.
+# Automatically generated, 2018.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Enigma2 FritzCall Plugin\n"
+"Project-Id-Version: enigma 2-plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-02-20 10:41+0100\n"
-"PO-Revision-Date: 2009-09-10 22:47+0100\n"
-"Last-Translator: maja <jovanovic@gmx.ch>\n"
-"Language-Team: veselin & majevica CRNABERZA <jovanovic@gmx.ch>\n"
-"Language: \n"
+"POT-Creation-Date: 2018-05-03 11:46+0200\n"
+"PO-Revision-Date: 2018-05-03 11:46+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: sr\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Language: Serbian\n"
-"X-Poedit-Country: SERBIA\n"
-"X-Poedit-SourceCharset: utf-8\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 msgid "05.29 until below 6.35"
 msgstr ""
@@ -29,7 +28,7 @@ msgstr ""
 #. TRANSLATORS: keep it short, this is a button
 #. TRANSLATORS: keep it short, this is a help text
 msgid "About FritzCall"
-msgstr "O FritzCall dodatku"
+msgstr ""
 
 #. TRANSLATORS: keep it short, this is a button
 msgid "Activate WLAN guest access"
@@ -38,36 +37,36 @@ msgstr ""
 #. TRANSLATORS: keep it short, this is a help text
 #. TRANSLATORS: this is a window title.
 msgid "Add entry to phonebook"
-msgstr "Dodaj unos u tel. imenik"
+msgstr ""
 
 #. TRANSLATORS: keep it short, this is a button
 msgid "All"
-msgstr "Svi "
+msgstr ""
 
 msgid "All calls"
-msgstr "Svi pozivi"
+msgstr ""
 
 msgid "Append shortcut number"
-msgstr "Priključi broj prečice "
+msgstr ""
 
 msgid "Append type of number"
-msgstr "Priključi tip broja"
+msgstr ""
 
 msgid "Append vanity name"
-msgstr "Priključi ništavno ime"
+msgstr ""
 
 msgid "Areacode to add to calls without one (if necessary)"
 msgstr ""
 
 msgid "Austria"
-msgstr "Austrija"
+msgstr ""
 
 msgid "Automatically add new Caller to PhoneBook"
-msgstr "Automatski dodaj novog pozivaoca u imenik"
+msgstr ""
 
 #. TRANSLATORS: keep it short, this is a button
 msgid "Call"
-msgstr "Pozovi"
+msgstr ""
 
 msgid "Call diversion"
 msgstr ""
@@ -76,10 +75,10 @@ msgid "Call diversion active"
 msgstr ""
 
 msgid "Call monitoring"
-msgstr "Kontrola poziva"
+msgstr ""
 
 msgid "Call redirection"
-msgstr "Preusmerenje poziva"
+msgstr ""
 
 #, python-format
 msgid "Calling %s"
@@ -87,7 +86,7 @@ msgstr ""
 
 #. TRANSLATORS: keep it short, this is a button
 msgid "Cancel"
-msgstr "Otkaži"
+msgstr ""
 
 msgid "Cannot get calls from FRITZ!Box"
 msgstr ""
@@ -98,10 +97,10 @@ msgid ""
 msgstr ""
 
 msgid "Connected since"
-msgstr "Spojen od"
+msgstr ""
 
 msgid "Connected to FRITZ!Box!"
-msgstr "Spojen sa  FRITZ!Box!"
+msgstr ""
 
 #, python-format
 msgid ""
@@ -109,12 +108,9 @@ msgid ""
 " (%s)\n"
 "retrying..."
 msgstr ""
-"Spajanje sa FRITZ!Box nije uspelo\n"
-" (%s)\n"
-"Pokušavam ponovo..."
 
 msgid "Connecting to FRITZ!Box..."
-msgstr "Spajanje na FRITZ!Box..."
+msgstr ""
 
 #, python-format
 msgid ""
@@ -122,9 +118,6 @@ msgid ""
 " (%s)\n"
 "retrying..."
 msgstr ""
-"Veza sa FRITZ!Box izgubljena \n"
-" (%s)\n"
-"pokušavam ponovo..."
 
 msgid "Could not get call list; wrong version?"
 msgstr ""
@@ -137,13 +130,13 @@ msgid "Could not load phonebook: %s"
 msgstr ""
 
 msgid "Could not parse FRITZ!Box Phonebook entry"
-msgstr "Ne mogu tumačiti unos FRITZ!Box imenika"
+msgstr ""
 
 msgid "Could not read FRITZ!Box phonebook; wrong version?"
 msgstr ""
 
 msgid "Country"
-msgstr "Država"
+msgstr ""
 
 msgid "Countrycode (e.g. 0044 for UK, 0034 for Spain, etc.)"
 msgstr ""
@@ -152,7 +145,7 @@ msgid "DECT inactive"
 msgstr ""
 
 msgid "DECT phones registered"
-msgstr "DECT telefoni registrovani"
+msgstr ""
 
 #. TRANSLATORS: keep it short, this is a button
 msgid "Deactivate WLAN guest access"
@@ -160,37 +153,37 @@ msgstr ""
 
 #. TRANSLATORS: keep it short, this is a button
 msgid "Delete"
-msgstr "Obriši"
+msgstr ""
 
 #. TRANSLATORS: keep it short, this is a help text
 msgid "Delete entry"
-msgstr "Obriši unos"
+msgstr ""
 
 msgid "Display FRITZ!box-Fon calls on screen"
-msgstr "Prikaži  FRITZ!Box tel. pozive na ekranu"
+msgstr ""
 
 #. TRANSLATORS: keep it short, this is a help text
 msgid "Display all calls"
-msgstr "Prikaži sve pozive"
+msgstr ""
 
 msgid "Display connection infos"
 msgstr ""
 
 #. TRANSLATORS: keep it short, this is a help text
 msgid "Display incoming calls"
-msgstr "Prikaži dolazne pozive"
+msgstr ""
 
 #. TRANSLATORS: keep it short, this is a help text
 msgid "Display missed calls"
-msgstr "Prikaži propuštene pozive"
+msgstr ""
 
 #. TRANSLATORS: keep it short, this is a help text
 msgid "Display outgoing calls"
-msgstr "Prikaži odlazne pozive"
+msgstr ""
 
 #. TRANSLATORS: this is a window title.
 msgid "Do what?"
-msgstr "Šta raditi?"
+msgstr ""
 
 #, python-format
 msgid ""
@@ -200,26 +193,21 @@ msgid ""
 "\n"
 "%(name)s?"
 msgstr ""
-"Da li stvarno želite obrisati unos za\n"
-"\n"
-"%(number)s\n"
-"\n"
-"%(name)s?"
 
 #. TRANSLATORS: keep it short, this is a button
 msgid "Edit"
-msgstr "Uredi"
+msgstr ""
 
 #. TRANSLATORS: keep it short, this is a help text
 #. TRANSLATORS: this is a window title.
 msgid "Edit selected entry"
-msgstr "Uredi izabrani unos"
+msgstr ""
 
 msgid "Enter Search Terms"
-msgstr "Unesi termin za pretragu"
+msgstr ""
 
 msgid "Entry incomplete."
-msgstr "Unos nekompletan."
+msgstr ""
 
 msgid "Extended Search for faces"
 msgstr ""
@@ -228,18 +216,18 @@ msgid "Extended Search for names"
 msgstr ""
 
 msgid "Extension number to initiate call on"
-msgstr "Dodatni broj za početak poziva"
+msgstr ""
 
 msgid "FRITZ!Box - "
 msgstr ""
 
 #, python-format
 msgid "FRITZ!Box - Could not load calls: %s"
-msgstr "FRITZ!Box - Ne mogu učitati pozive: %s"
+msgstr ""
 
 #, python-format
 msgid "FRITZ!Box - Dialling failed: %s"
-msgstr "FRITZ!Box - Pozivanje nije uspelo: %s"
+msgstr ""
 
 #, python-format
 msgid "FRITZ!Box - Error getting blacklist: %s"
@@ -250,7 +238,7 @@ msgstr ""
 
 #, python-format
 msgid "FRITZ!Box - Error getting status: %s"
-msgstr "FRITZ!Box - Greška kod dobijanja stanja: %s"
+msgstr ""
 
 msgid ""
 "FRITZ!Box - Error logging in\n"
@@ -259,7 +247,7 @@ msgstr ""
 
 #, python-format
 msgid "FRITZ!Box - Error logging in: %s"
-msgstr "FRITZ!Box - Greška kod upisa: %s"
+msgstr ""
 
 #, python-format
 msgid ""
@@ -269,11 +257,11 @@ msgstr ""
 
 #, python-format
 msgid "FRITZ!Box - Error logging out: %s"
-msgstr "FRITZ!Box - Greška kod ispisa: %s"
+msgstr ""
 
 #, python-format
 msgid "FRITZ!Box - Error resetting: %s"
-msgstr "FRITZ!Box -Greška kod resetovanja: %s"
+msgstr ""
 
 #, python-format
 msgid "FRITZ!Box - Failed changing GuestAccess: %s"
@@ -281,14 +269,14 @@ msgstr ""
 
 #, python-format
 msgid "FRITZ!Box - Failed changing Mailbox: %s"
-msgstr "FRITZ!Box - Nije uspela promena pošt. sand.: %s"
+msgstr ""
 
 #, python-format
 msgid "FRITZ!Box - Failed changing WLAN: %s"
-msgstr "FRITZ!Box -Nije uspela promena WLAN-a: %s"
+msgstr ""
 
 msgid "FRITZ!Box FON address (Name or IP)"
-msgstr "FRITZ!Box FON Adresse (Name oder IP-Adresse)"
+msgstr ""
 
 msgid "FRITZ!Box FON firmware version"
 msgstr ""
@@ -297,7 +285,7 @@ msgstr ""
 #. TRANSLATORS: keep it short, this is a button
 #. TRANSLATORS: keep it short, this is a help text
 msgid "FRITZ!Box Fon Status"
-msgstr "FRITZ!Box Stanje telefona"
+msgstr ""
 
 msgid "FRITZ!Box PhoneBook to read"
 msgstr ""
@@ -323,20 +311,20 @@ msgid ""
 msgstr ""
 
 msgid "France"
-msgstr "Francuska"
+msgstr ""
 
 #. TRANSLATORS: this is a window title.
 msgid "FritzCall Setup"
-msgstr "FritzCall Podešavanje"
+msgstr ""
 
 msgid "Germany"
-msgstr "Nemačka"
+msgstr ""
 
 msgid "Getting calls from FRITZ!Box..."
-msgstr "Uzimanje poziva sa FRITZ!Box..."
+msgstr ""
 
 msgid "Getting status from FRITZ!Box Fon..."
-msgstr "Dobijanje stanja FRITZ!Box telefona..."
+msgstr ""
 
 msgid "Guest access"
 msgstr ""
@@ -348,14 +336,14 @@ msgid "Guest access on "
 msgstr ""
 
 msgid "IP Address:"
-msgstr "IP Adresa:"
+msgstr ""
 
 msgid "Ignore callers with no phone number"
 msgstr ""
 
 #. TRANSLATORS: keep it short, this is a button
 msgid "Incoming"
-msgstr "Dolazni"
+msgstr ""
 
 #, python-format
 msgid ""
@@ -368,36 +356,36 @@ msgid ""
 msgstr ""
 
 msgid "Incoming calls"
-msgstr "Dolazni pozivi"
+msgstr ""
 
 msgid "Italy"
-msgstr "Italija"
+msgstr ""
 
 msgid "Last 10 calls:\n"
-msgstr "Poslednjih 10 poziva:\n"
+msgstr ""
 
 msgid "Log level"
 msgstr ""
 
 #. TRANSLATORS: keep it short, this is a button
 msgid "Lookup"
-msgstr "Traženje"
+msgstr ""
 
 msgid "MSN to show (separated by ,)"
-msgstr "Pokazati MSN (odvojen sa  ,)"
+msgstr ""
 
 msgid "Mailbox"
-msgstr "Poštansko sanduče"
+msgstr ""
 
 msgid "Make it more skin friendly"
 msgstr ""
 
 #. TRANSLATORS: keep it short, this is a button
 msgid "Missed"
-msgstr "Propušten"
+msgstr ""
 
 msgid "Missed calls"
-msgstr "Propušteni pozivi"
+msgstr ""
 
 msgid "Mute on incoming call"
 msgstr ""
@@ -406,64 +394,64 @@ msgid "Mute on outgoing calls"
 msgstr ""
 
 msgid "Name"
-msgstr "Ime"
+msgstr ""
 
 #. TRANSLATORS: keep it short, this is a button
 msgid "New"
-msgstr "Neu"
+msgstr ""
 
 msgid "New call"
 msgstr ""
 
 msgid "No DECT phone registered"
-msgstr "Nijedan DECT tel. nije registrovan "
+msgstr ""
 
 msgid "No call diversion active"
 msgstr ""
 
 msgid "No entry selected"
-msgstr "Nijedan unos nije izabran"
+msgstr ""
 
 msgid "No mailbox active"
-msgstr "Nema aktivnog pošz. sand."
+msgstr ""
 
 msgid "No phonebook"
 msgstr ""
 
 msgid "No result from LDIF"
-msgstr "Nema rezultata iz LDIF"
+msgstr ""
 
 msgid "No result from Outlook export"
-msgstr "Nema rezultata iz Outlook-Export"
+msgstr ""
 
 msgid "No result from reverse lookup"
-msgstr "Nema rezultata traženja unazad"
+msgstr ""
 
 msgid "Not deactivating after time"
 msgstr ""
 
 msgid "Number"
-msgstr "Broj"
+msgstr ""
 
 #. TRANSLATORS: keep it short, this is a button
 msgid "OK"
-msgstr "OK"
+msgstr ""
 
 msgid "One DECT phone registered"
-msgstr "Jedan DECT tel. je registrovan "
+msgstr ""
 
 msgid "One call diversion active"
 msgstr ""
 
 msgid "One mailbox active"
-msgstr "Jedno pošt. sand. je aktivno"
+msgstr ""
 
 msgid "Others"
 msgstr ""
 
 #. TRANSLATORS: keep it short, this is a button
 msgid "Outgoing"
-msgstr "Odlazni"
+msgstr ""
 
 #, python-format
 msgid ""
@@ -476,15 +464,15 @@ msgid ""
 msgstr ""
 
 msgid "Outgoing calls"
-msgstr "Odlazni pozivi"
+msgstr ""
 
 msgid "Password Accessing FRITZ!Box"
-msgstr "Lozinka za pristup FRITZ!Box-u"
+msgstr ""
 
 #. TRANSLATORS: this is a window title.
 #. TRANSLATORS: keep it short, this is a button
 msgid "Phone calls"
-msgstr "Telefonski pozivi"
+msgstr ""
 
 msgid "PhoneBook and Faces Location"
 msgstr ""
@@ -492,21 +480,21 @@ msgstr ""
 #. TRANSLATORS: this is a window title.
 #. TRANSLATORS: keep it short, this is a button
 msgid "Phonebook"
-msgstr "Telefonski imenik"
+msgstr ""
 
 msgid "Plugin not enabled"
 msgstr ""
 
 #. TRANSLATORS: keep it short, this is a help text
 msgid "Quit"
-msgstr "Završi"
+msgstr ""
 
 msgid "Read PhoneBook from FRITZ!Box"
-msgstr "Pročitaj tel. imenik iz FRITZ!Box-a"
+msgstr ""
 
 #. TRANSLATORS: keep it short, this is a help text
 msgid "Refresh status"
-msgstr "Stanje osvežavanja"
+msgstr ""
 
 msgid "Refreshing..."
 msgstr ""
@@ -518,77 +506,77 @@ msgstr ""
 #. TRANSLATORS: keep it short, this is a help text
 #. TRANSLATORS: keep it short, this is a button
 msgid "Reset"
-msgstr "Resetuj"
+msgstr ""
 
 msgid "Reverse Lookup Caller ID"
 msgstr ""
 
 msgid "Reverse searching..."
-msgstr "Pretraživanje unazad..."
+msgstr ""
 
 #. TRANSLATORS: keep it short, this is a button
 msgid "Save"
-msgstr "Sačuvaj"
+msgstr ""
 
 #. TRANSLATORS: keep it short, this is a button
 msgid "Search"
-msgstr "Traži"
+msgstr ""
 
 #. TRANSLATORS: keep it short, this is a help text
 msgid "Search (case insensitive)"
-msgstr "Traži ( isto velika i mala slova)"
+msgstr ""
 
 msgid "Search phonebook"
-msgstr "Pretraži imenik"
+msgstr ""
 
 msgid "Searching in LDIF..."
-msgstr "Traži u  LDIF..."
+msgstr ""
 
 msgid "Searching in Outlook export..."
-msgstr "Tražim u Outlook-Export..."
+msgstr ""
 
 msgid "Setting..."
 msgstr ""
 
 msgid "Shortcut"
-msgstr "Prečica"
+msgstr ""
 
 msgid "Show Blocked Calls"
 msgstr ""
 
 msgid "Show Outgoing Calls"
-msgstr "Prikaži odlazne pozive"
+msgstr ""
 
 msgid "Show after Standby"
-msgstr "Pokaži posle stend baja"
+msgstr ""
 
 msgid "Show also internal numbers"
 msgstr ""
 
 #. TRANSLATORS: keep it short, this is a help text
 msgid "Show details of entry"
-msgstr "Pokaži detalje unosa"
+msgstr ""
 
 msgid "Show only calls for specific MSN"
 msgstr ""
 
 msgid "Software fax active"
-msgstr "Aktivan faks softver"
+msgstr ""
 
 msgid "Software fax inactive"
 msgstr ""
 
 msgid "Status not available"
-msgstr "Status nije dostupan"
+msgstr ""
 
 msgid "Strip Leading 0"
-msgstr "Führende 0 entfernen"
+msgstr ""
 
 msgid "Switzerland"
-msgstr "Švajcarska"
+msgstr ""
 
 msgid "The Netherlands"
-msgstr "Holandija"
+msgstr ""
 
 #, python-format
 msgid ""
@@ -597,7 +585,7 @@ msgid ""
 msgstr ""
 
 msgid "Timeout for Call Notifications (seconds)"
-msgstr "Prekid za obaveštenja o pozivima (sekundi) "
+msgstr ""
 
 msgid ""
 "To enjoy more functionalities of your FRITZ!Box, configure the firmware "
@@ -606,33 +594,33 @@ msgstr ""
 
 #. TRANSLATORS: keep it short, this is a help text
 msgid "Toggle 1. mailbox"
-msgstr "Prebaci 1. pošt.sanduče"
+msgstr ""
 
 #. TRANSLATORS: keep it short, this is a help text
 msgid "Toggle 2. mailbox"
-msgstr "Prebaci  2. pošt.sanduče"
+msgstr ""
 
 #. TRANSLATORS: keep it short, this is a help text
 msgid "Toggle 3. mailbox"
-msgstr "Prebaci 3. pošt.sanduče"
+msgstr ""
 
 #. TRANSLATORS: keep it short, this is a help text
 msgid "Toggle 4. mailbox"
-msgstr "Prebaci 4. pošt.sanduče"
+msgstr ""
 
 #. TRANSLATORS: keep it short, this is a help text
 msgid "Toggle 5. mailbox"
-msgstr "Prebaci 5. pošt.sanduče"
+msgstr ""
 
 #. TRANSLATORS: keep it short, this is a button
 msgid "Toggle Mailbox"
-msgstr "Prebac pošt.sanduče"
+msgstr ""
 
 #. TRANSLATORS: keep it short, this is a button
 #. TRANSLATORS: keep it short, this is a help text
 #. TRANSLATORS: keep it short, this is a button
 msgid "Toggle WLAN"
-msgstr "Prebaci WLAN"
+msgstr ""
 
 #. TRANSLATORS: keep it short, this is a help text
 msgid "Toggle WLAN guest access"
@@ -640,10 +628,10 @@ msgstr ""
 
 #. TRANSLATORS: keep it short, this is a help text
 msgid "Toggle all mailboxes"
-msgstr "Prebaci sve pošt. sand."
+msgstr ""
 
 msgid "UNKNOWN"
-msgstr "NEPOZNATO"
+msgstr ""
 
 msgid "Unknown"
 msgstr ""
@@ -652,19 +640,19 @@ msgid "Update available"
 msgstr ""
 
 msgid "Use internal PhoneBook"
-msgstr "Koristi interni tel. imenik"
+msgstr ""
 
 msgid "User name Accessing FRITZ!Box"
 msgstr ""
 
 msgid "Vanity"
-msgstr "Ništavnost"
+msgstr ""
 
 msgid "WLAN not active"
 msgstr ""
 
 msgid "You need to enable the monitoring on your FRITZ!Box by dialing #96*5*!"
-msgstr "Treba da uključite kontrolu vašeg FRITZ!box-a pozivanjem #96*5*!"
+msgstr ""
 
 msgid ""
 "You need to set the password of the FRITZ!Box\n"
@@ -672,12 +660,11 @@ msgid ""
 "\n"
 "It could be a communication issue, just try again."
 msgstr ""
-"Treba da postavite lozinku za FRITZ!box\n"
-"u konfiguracijskom meniju za prikaz poziva.\n"
-"\n"
-"To može biti problem veza,samo opet probajte."
 
 msgid "before 05.27"
+msgstr ""
+
+msgid "business"
 msgstr ""
 
 msgid "call diversions active"
@@ -687,24 +674,24 @@ msgid "calls in mailbox"
 msgstr ""
 
 msgid "devices active"
-msgstr "Aktivni uređaji"
+msgstr ""
 
 #. TRANSLATORS: keep it short, this is a help text
 msgid "display calls"
-msgstr "Prikaži pozive"
+msgstr ""
 
 #. TRANSLATORS: keep it short, this is a help text
 msgid "display phonebook"
-msgstr "Prikaži imenik"
+msgstr ""
 
 msgid "done"
-msgstr "Završeno"
+msgstr ""
 
 msgid "done, using last list"
-msgstr "Završeno,koristim zadnju listu"
+msgstr ""
 
 msgid "encrypted"
-msgstr "kodirano"
+msgstr ""
 
 msgid "fax_home"
 msgstr ""
@@ -713,34 +700,34 @@ msgid "fax_work"
 msgstr ""
 
 msgid "finishing"
-msgstr "završavam"
+msgstr ""
 
 msgid "guest "
 msgstr ""
 
 msgid "home"
-msgstr "Kuđni"
+msgstr ""
 
 msgid "login"
-msgstr "Upis"
+msgstr ""
 
 msgid "login ok"
-msgstr "Upis OK"
+msgstr ""
 
 msgid "login verification"
-msgstr "Provera upisa"
+msgstr ""
 
 msgid "mailboxes active"
-msgstr "Sandučići aktivni"
+msgstr ""
 
 msgid "mobile"
-msgstr "Mobilni"
+msgstr ""
 
 msgid "no calls"
 msgstr ""
 
 msgid "no device active"
-msgstr "Nijedan urećaj nije aktivan"
+msgstr ""
 
 msgid "not available with this firmware version"
 msgstr ""
@@ -749,7 +736,7 @@ msgid "not configured"
 msgstr ""
 
 msgid "not encrypted"
-msgstr "Nije kodirano"
+msgstr ""
 
 msgid "not yet implemented"
 msgstr ""
@@ -767,7 +754,7 @@ msgid "on"
 msgstr ""
 
 msgid "one device active"
-msgstr "Jedan aktivan uređaj"
+msgstr ""
 
 msgid "only failed"
 msgstr ""
@@ -776,108 +763,30 @@ msgid "pager"
 msgstr ""
 
 msgid "preparing"
-msgstr "Pripremam"
+msgstr ""
 
 #. TRANSLATORS: keep it short, this is a help text
 msgid "quit"
-msgstr "napusti"
+msgstr ""
 
 #. TRANSLATORS: keep it short, this is a help text
 msgid "save and quit"
-msgstr "Sačuvaj i napusti"
+msgstr ""
 
 msgid "show as list"
-msgstr "Pokaži kao listu"
+msgstr ""
 
 msgid "show each call"
-msgstr "Pokaži svaki poziv"
+msgstr ""
 
 msgid "show nothing"
-msgstr "Ništa ne pokazuj"
+msgstr ""
 
 msgid "with"
 msgstr ""
 
 msgid "work"
-msgstr "Posao"
+msgstr ""
 
 msgid "wrong user or password?"
 msgstr ""
-
-#~ msgid "Areacode to add to Outgoing Calls (if necessary)"
-#~ msgstr "Pozivni broj za dodati izlaznim pozivima (ako je potrebno)"
-
-#~ msgid "CF Drive"
-#~ msgstr "CF Laufwerk"
-
-#~ msgid "Debug"
-#~ msgstr "Debag"
-
-#~ msgid "FRITZ!Box - Could not load phonebook: %s"
-#~ msgstr "\"FRITZ!Box - Ne mogu učitati imenik: %s"
-
-#~ msgid "Flash"
-#~ msgstr "Fleš"
-
-#~ msgid "Full screen display"
-#~ msgstr "Prikaži ceo ekran"
-
-#~ msgid "Harddisk"
-#~ msgstr "Festplatte"
-
-#~ msgid ""
-#~ "Incoming Call on %(date)s from\n"
-#~ "---------------------------------------------\n"
-#~ "%(number)s\n"
-#~ "%(caller)s\n"
-#~ "---------------------------------------------\n"
-#~ "to: %(phone)s"
-#~ msgstr ""
-#~ "Dolazni poziv %(date)s od\n"
-#~ "---------------------------------------------\n"
-#~ "%(number)s\n"
-#~ "%(caller)s\n"
-#~ "---------------------------------------------\n"
-#~ "za: %(phone)s"
-
-#~ msgid "Mute on call"
-#~ msgstr "Priguši kod poziva"
-
-#~ msgid "No call redirection active"
-#~ msgstr "Nema aktivnih preusmerenja poziva"
-
-#~ msgid "One call redirection active"
-#~ msgstr "Jedno preusmerenje poziva je aktivno"
-
-#~ msgid ""
-#~ "Outgoing Call on %(date)s to\n"
-#~ "---------------------------------------------\n"
-#~ "%(number)s\n"
-#~ "%(caller)s\n"
-#~ "---------------------------------------------\n"
-#~ "from: %(phone)s"
-#~ msgstr ""
-#~ "Odlazni poziv  %(date)s za\n"
-#~ "---------------------------------------------\n"
-#~ "%(number)s\n"
-#~ "%(caller)s\n"
-#~ "---------------------------------------------\n"
-#~ "od: %(phone)s"
-
-#~ msgid "PhoneBook Location"
-#~ msgstr "Lokacija tel. imenika"
-
-#~ msgid "Reverse Lookup Caller ID (select country below)"
-#~ msgstr "Traženje ID pozivaoca unazad (odaberi zemlju ispod)"
-
-#~ msgid "Show Calls for specific MSN"
-#~ msgstr "Pokaži pozive za spec. MSN"
-
-#~ msgid "USB Stick"
-#~ msgstr "USB Stick"
-
-#~ msgid "business"
-#~ msgstr "posao"
-
-#~ msgid "call redirections active"
-#~ msgstr "Preusmerenje poziva aktivno"
