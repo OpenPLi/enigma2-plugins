@@ -1,25 +1,23 @@
-# English translations for tuxbox-enigma package.
-# Copyright (C) 2005 THE tuxbox-enigma'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the tuxbox-enigma package.
-# Automatically generated, 2005.
+# Hungarian translations for enigma package.
+# Copyright (C) 2018 THE enigma'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the enigma package.
+# Automatically generated, 2018.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
+"Project-Id-Version: enigma 2-plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-06-19 22:55+0400\n"
-"PO-Revision-Date: 2012-06-24 22:37+0100\n"
-"Last-Translator: robertut <robertut@yahoo.com>\n"
+"POT-Creation-Date: 2018-05-03 11:46+0200\n"
+"PO-Revision-Date: 2018-05-03 11:46+0200\n"
+"Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
+"Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Poedit-Bookmarks: -1,-1,-1,706,-1,-1,-1,-1,-1,-1\n"
-"X-Poedit-Language: Hungarian\n"
-"X-Poedit-Country: HUNGARY\n"
 
-msgid "Advanced cut specification"
+msgid "Advanced cut specification..."
 msgstr ""
 
 #, python-format
@@ -32,10 +30,10 @@ msgid "Bad arguments"
 msgstr ""
 
 msgid "Cancel"
-msgstr "Mégse"
+msgstr ""
 
 msgid "Choose target folder"
-msgstr "Válassza ki a célmappaat"
+msgstr ""
 
 msgid "Couldn't open input .ap file"
 msgstr ""
@@ -81,7 +79,7 @@ msgstr ""
 msgid "Empty .ap file"
 msgstr ""
 
-msgid "Execute cuts"
+msgid "Execute cuts..."
 msgstr ""
 
 #, python-format
@@ -104,13 +102,13 @@ msgid "New title:"
 msgstr ""
 
 msgid "No"
-msgstr "Nem"
+msgstr ""
 
 msgid "No cuts specified"
 msgstr ""
 
 msgid "OK"
-msgstr "OK"
+msgstr ""
 
 msgid "Place the cut movie in a new file ending with \" cut\""
 msgstr ""
@@ -133,5 +131,4 @@ msgid "The movie \"%s\" is successfully cut"
 msgstr ""
 
 msgid "Yes"
-msgstr "Igen"
-
+msgstr ""
