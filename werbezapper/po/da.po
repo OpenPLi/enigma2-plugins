@@ -1,22 +1,21 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Danish translations for enigma package.
+# Copyright (C) 2018 THE enigma'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the enigma package.
+# Automatically generated, 2018.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: enigma2 - werbezapper\n"
+"Project-Id-Version: enigma 2-plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-05-03 14:03+0200\n"
-"PO-Revision-Date: 2009-06-06 20:03+0100\n"
-"Last-Translator: \n"
-"Language-Team:  <Benny.DeTandt@gmail.com>\n"
-"Language: \n"
+"PO-Revision-Date: 2018-05-03 14:03+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: da\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Language: Dutch\n"
-"X-Poedit-Country: NETHERLANDS\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "\"Werbezapper\" quick button"
 msgstr ""
@@ -34,7 +33,7 @@ msgid "- %d:%02d min"
 msgstr ""
 
 msgid "Automatically zaps back to current service after given Time"
-msgstr "Zapt automatisch terug naar de huidige zender na bepaalde tijd"
+msgstr ""
 
 #, python-format
 msgid ""
@@ -50,7 +49,7 @@ msgid "Channel: %s"
 msgstr ""
 
 msgid "Custom"
-msgstr "Aangepast"
+msgstr ""
 
 msgid "Error"
 msgstr ""
@@ -62,7 +61,7 @@ msgid "HELP"
 msgstr ""
 
 msgid "How many minutes to wait until zapping back?"
-msgstr "Hoeveel minuten wachten om terug te zappen?"
+msgstr ""
 
 msgid "Indicator mode"
 msgstr ""
@@ -186,30 +185,29 @@ msgstr ""
 msgid "Z position (priority of srceen)"
 msgstr ""
 
-#, fuzzy, python-format
+#, python-format
 msgid "Zapping back %s in %d Min"
-msgstr "Terug zappen in %d minuten"
+msgstr ""
 
 #, python-format
 msgid "Zapping to %s"
 msgstr ""
 
-#, fuzzy, python-format
+#, python-format
 msgid "Zapping to service in %d:%02d Min"
-msgstr "Terug zappen in %d minuten"
+msgstr ""
 
 msgid "add zap timer for service"
 msgstr ""
 
-#, fuzzy
 msgid "minut"
-msgstr "minuut"
+msgstr ""
 
 msgid "minute"
-msgstr "minuut"
+msgstr ""
 
 msgid "minutes"
-msgstr "minuten"
+msgstr ""
 
 msgid "service / time"
 msgstr ""
