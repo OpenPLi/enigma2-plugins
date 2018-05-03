@@ -1,63 +1,216 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Dutch translations for enigma package.
+# Copyright (C) 2018 THE enigma'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the enigma package.
+# Automatically generated, 2018.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: enigma2 - werbezapper\n"
+"Project-Id-Version: enigma 2-plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-06 13:13+0200\n"
-"PO-Revision-Date: 2009-06-06 20:03+0100\n"
-"Last-Translator: \n"
-"Language-Team:  <Benny.DeTandt@gmail.com>\n"
+"POT-Creation-Date: 2018-05-03 11:46+0200\n"
+"PO-Revision-Date: 2018-05-03 11:46+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: nl\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Language: Dutch\n"
-"X-Poedit-Country: NETHERLANDS\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../src/plugin.py:28
-msgid "Automatically zaps back to current service after given Time"
-msgstr "Zapt automatisch terug naar de huidige zender na bepaalde tijd"
-
-#: ../src/WerbeZapper.py:58
-msgid "Custom"
-msgstr "Aangepast"
-
-#: ../src/WerbeZapper.py:84
-msgid "How many minutes to wait until zapping back?"
-msgstr "Hoeveel minuten wachten om terug te zappen?"
-
-#: ../src/WerbeZapper.py:38
-msgid ""
-"Timer already running.\n"
-"Stop it?"
+msgid "\"Werbezapper\" quick button"
 msgstr ""
-"Timer reeds gestart.\n"
-"Deze stoppen?"
 
-#: ../src/WerbeZapper.py:47
-msgid "When to Zap back?"
-msgstr "Wanneer terug zappen?"
-
-#: ../src/WerbeZapper.py:107
 #, python-format
-msgid "Zapping back in %d Minutes"
-msgstr "Terug zappen in %d minuten"
+msgid "%d min"
+msgstr ""
 
-#: ../src/WerbeZapper.py:49
+#, python-format
+msgid "%s\n"
+msgstr ""
+
+#, python-format
+msgid "- %d:%02d min"
+msgstr ""
+
+msgid "Automatically zaps back to current service after given Time"
+msgstr ""
+
+#, python-format
+msgid ""
+"Button Info/EPG\n"
+"Set time begin next event: %d min"
+msgstr ""
+
+msgid "Cancel"
+msgstr ""
+
+#, python-format
+msgid "Channel: %s"
+msgstr ""
+
+msgid "Custom"
+msgstr ""
+
+msgid "Error"
+msgstr ""
+
+msgid "GREEN"
+msgstr ""
+
+msgid "HELP"
+msgstr ""
+
+msgid "How many minutes to wait until zapping back?"
+msgstr ""
+
+msgid "Indicator mode"
+msgstr ""
+
+msgid "Monitoring duration for service if not EPG"
+msgstr ""
+
+#, python-format
+msgid "Monitoring: %s (%d:%02d Min)"
+msgstr ""
+
+#, python-format
+msgid "Monitoring: for service is not EPG (%d:%02d Min)"
+msgstr ""
+
+msgid "NONE"
+msgstr ""
+
+msgid "Open setup"
+msgstr ""
+
+msgid "RADIO"
+msgstr ""
+
+msgid "Rezap"
+msgstr ""
+
+msgid "SEARCH"
+msgstr ""
+
+msgid "Save"
+msgstr ""
+
+msgid "Service is not EPG"
+msgstr ""
+
+msgid "Set zap time"
+msgstr ""
+
+msgid "Show \"Start / Stop monitoring\" in extensions menu"
+msgstr ""
+
+msgid "Show indicator zap time in window"
+msgstr ""
+
+msgid "Show plugin in channel selection context menu"
+msgstr ""
+
+msgid "Slider step size (1 - 20 mins)"
+msgstr ""
+
+msgid "Start / Stop monitoring instantly"
+msgstr ""
+
+msgid "Start monitoring"
+msgstr ""
+
+msgid "Stop monitoring"
+msgstr ""
+
+msgid "Stop timer"
+msgstr ""
+
+msgid "TEXT"
+msgstr ""
+
+msgid "TIMER"
+msgstr ""
+
+msgid "TV"
+msgstr ""
+
+msgid "Wakeup receiver from standby for zap timer"
+msgstr ""
+
+msgid "WerbeZapper"
+msgstr ""
+
+#, python-format
+msgid ""
+"WerbeZapper\n"
+"Monitoring ends\n"
+"%s"
+msgstr ""
+
+msgid "WerbeZapper Setup"
+msgstr ""
+
+#, python-format
+msgid ""
+"WerbeZapper...\n"
+"Monitoring started\n"
+"%s"
+msgstr ""
+
+#, python-format
+msgid ""
+"WerbeZapper...\n"
+"Monitoring started for service is not EPG.\n"
+"Duration %d Min."
+msgstr ""
+
+msgid "Werbezapper"
+msgstr ""
+
+msgid "Werbezapper Start / Stop monitoring"
+msgstr ""
+
+msgid "When zap to service?"
+msgstr ""
+
+msgid "X position"
+msgstr ""
+
+msgid "Y position"
+msgstr ""
+
+msgid "YELLOW"
+msgstr ""
+
+msgid "Z position (priority of srceen)"
+msgstr ""
+
+#, python-format
+msgid "Zapping back %s in %d Min"
+msgstr ""
+
+#, python-format
+msgid "Zapping to %s"
+msgstr ""
+
+#, python-format
+msgid "Zapping to service in %d:%02d Min"
+msgstr ""
+
+msgid "add zap timer for service"
+msgstr ""
+
+msgid "minut"
+msgstr ""
+
 msgid "minute"
-msgstr "minuut"
+msgstr ""
 
-#: ../src/WerbeZapper.py:50
-#: ../src/WerbeZapper.py:51
-#: ../src/WerbeZapper.py:52
-#: ../src/WerbeZapper.py:53
-#: ../src/WerbeZapper.py:54
-#: ../src/WerbeZapper.py:55
-#: ../src/WerbeZapper.py:56
-#: ../src/WerbeZapper.py:57
 msgid "minutes"
-msgstr "minuten"
+msgstr ""
 
+msgid "service / time"
+msgstr ""
+
+msgid "time"
+msgstr ""
