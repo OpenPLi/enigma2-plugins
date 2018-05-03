@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MovieCut\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-04-08 20:54+0200\n"
+"POT-Creation-Date: 2018-05-03 14:01+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: blzr <blzr@o2.pl>\n"
 "Language-Team: \n"
@@ -14,161 +14,9 @@ msgstr ""
 "X-Poedit-Language: Polish\n"
 "X-Poedit-Country: POLAND\n"
 
-#: plugin.py:23
-msgid "Execute cuts..."
-msgstr "Wykonaj cięcia..."
-
-#: plugin.py:37
-msgid "Don't cut"
-msgstr "Nie przycinaj"
-
-#: plugin.py:38
-msgid "Replace the original movie with the cut movie"
-msgstr "Zastąp oryginalny film przyciętym"
-
-#: plugin.py:39
-msgid "Place the cut movie in a new file ending with \" cut\""
-msgstr "Zapisz przycięty film jako nowy plik z końcówką \" cut\""
-
-#: plugin.py:40
 msgid "Advanced cut specification..."
 msgstr "Zaawansowane określenie cięcia..."
 
-#: plugin.py:42
-#, python-format
-msgid "How would you like to cut \"%s\"?"
-msgstr "Jak chciałbyś przyciąć \"%s\"?"
-
-#: plugin.py:86
-msgid "OK"
-msgstr ""
-
-#: plugin.py:87
-msgid "Cancel"
-msgstr "Anuluj"
-
-#: plugin.py:95
-msgid "No"
-msgstr "Nie"
-
-#: plugin.py:95
-msgid "Yes"
-msgstr "Tak"
-
-#: plugin.py:103
-msgid "Cutlist"
-msgstr "Lista cięcia"
-
-#: plugin.py:103
-msgid "Manual specification"
-msgstr "Ręczne określenie"
-
-#: plugin.py:117
-msgid "Replace original:"
-msgstr "Zastąp oryginalny:"
-
-#: plugin.py:118
-msgid "New filename:"
-msgstr "Nowa nazwa pliku:"
-
-#: plugin.py:119
-msgid "New title:"
-msgstr "Nowy tytuł:"
-
-#: plugin.py:120
-msgid "New description:"
-msgstr "Nowy opis:"
-
-#: plugin.py:121
-msgid "New location:"
-msgstr "Nowa lokalizacja:"
-
-#: plugin.py:122
-msgid "Cut source:"
-msgstr "Źródło cięcia:"
-
-#: plugin.py:123
-msgid "Cuts (an IN OUT IN OUT ... sequence of hour:min:sec)"
-msgstr "Cięcia (IN OUT IN OUT... sekwencja godz:min:sek)"
-
-#: plugin.py:130
-msgid "Cut Parameter Input"
-msgstr "Parametry cięcia."
-
-#: plugin.py:178
-msgid "Choose target folder"
-msgstr "Wybierz folder docelowy"
-
-#: plugin.py:245
-#, python-format
-msgid "The movie \"%s\" is successfully cut"
-msgstr "Cięcie filmu  \"%s\" zakończone powodzeniem"
-
-#: plugin.py:246
-#: plugin.py:247
-#: plugin.py:248
-#: plugin.py:249
-#: plugin.py:250
-#: plugin.py:251
-#: plugin.py:252
-#: plugin.py:253
-#: plugin.py:254
-#: plugin.py:255
-#, python-format
-msgid "Cutting failed for movie \"%s\""
-msgstr "Cięcie filmu  \"%s\" nie powiodło się"
-
-#: plugin.py:246
-msgid "Bad arguments"
-msgstr "Nieprawidłowe argumenty"
-
-#: plugin.py:247
-msgid "Couldn't open input .ts file"
-msgstr "Nie można otworzyć wejściowego pliku .ts"
-
-#: plugin.py:248
-msgid "Couldn't open input .cuts file"
-msgstr "Nie można otworzyć wejściowego pliku .cuts"
-
-#: plugin.py:249
-msgid "Couldn't open input .ap file"
-msgstr "Nie można otworzyć wejściowego pliku .ap"
-
-#: plugin.py:250
-msgid "Couldn't open output .ts file"
-msgstr "Nie można otworzyć wyjściowego pliku .ts"
-
-#: plugin.py:251
-msgid "Couldn't open output .cuts file"
-msgstr "Nie można otworzyć wyjściowego pliku .cuts"
-
-#: plugin.py:252
-msgid "Couldn't open output .ap file"
-msgstr "Nie można otworzyć wyjściowego pliku .ap"
-
-#: plugin.py:253
-msgid "Empty .ap file"
-msgstr "Pusty plik .ap"
-
-#: plugin.py:254
-msgid "No cuts specified"
-msgstr "Nie określono cięć"
-
-#: plugin.py:255
-msgid "Read/write error (disk full?)"
-msgstr "Błąd zapisu/odczytu (dysk pełny?)"
-
-#: plugin.py:256
-#, python-format
-msgid "Cutting was aborted for movie \"%s\""
-msgstr "Anulowano cięcie filmu \"%s\" "
-
-#: plugin.py:275
-#, python-format
-msgid "The movie \"%s\" is cut in the background."
-msgstr "Film  \"%s\" jest przycinany w tle"
-
-#: plugin.py:277
 #, python-format
 msgid ""
 "Another movie is currently cut.\n"
@@ -176,3 +24,110 @@ msgid ""
 msgstr ""
 "Inny film jest aktualnie przycinany.\n"
 "Film \"%s\" zostanie przycięty w tle po tym."
+
+msgid "Bad arguments"
+msgstr "Nieprawidłowe argumenty"
+
+msgid "Cancel"
+msgstr "Anuluj"
+
+msgid "Choose target folder"
+msgstr "Wybierz folder docelowy"
+
+msgid "Couldn't open input .ap file"
+msgstr "Nie można otworzyć wejściowego pliku .ap"
+
+msgid "Couldn't open input .cuts file"
+msgstr "Nie można otworzyć wejściowego pliku .cuts"
+
+msgid "Couldn't open input .ts file"
+msgstr "Nie można otworzyć wejściowego pliku .ts"
+
+msgid "Couldn't open output .ap file"
+msgstr "Nie można otworzyć wyjściowego pliku .ap"
+
+msgid "Couldn't open output .cuts file"
+msgstr "Nie można otworzyć wyjściowego pliku .cuts"
+
+msgid "Couldn't open output .ts file"
+msgstr "Nie można otworzyć wyjściowego pliku .ts"
+
+msgid "Cut Parameter Input"
+msgstr "Parametry cięcia."
+
+msgid "Cut source:"
+msgstr "Źródło cięcia:"
+
+msgid "Cutlist"
+msgstr "Lista cięcia"
+
+msgid "Cuts (an IN OUT IN OUT ... sequence of hour:min:sec)"
+msgstr "Cięcia (IN OUT IN OUT... sekwencja godz:min:sek)"
+
+#, python-format
+msgid "Cutting failed for movie \"%s\""
+msgstr "Cięcie filmu  \"%s\" nie powiodło się"
+
+#, python-format
+msgid "Cutting was aborted for movie \"%s\""
+msgstr "Anulowano cięcie filmu \"%s\" "
+
+msgid "Don't cut"
+msgstr "Nie przycinaj"
+
+msgid "Empty .ap file"
+msgstr "Pusty plik .ap"
+
+msgid "Execute cuts..."
+msgstr "Wykonaj cięcia..."
+
+#, python-format
+msgid "How would you like to cut \"%s\"?"
+msgstr "Jak chciałbyś przyciąć \"%s\"?"
+
+msgid "Manual specification"
+msgstr "Ręczne określenie"
+
+msgid "New description:"
+msgstr "Nowy opis:"
+
+msgid "New filename:"
+msgstr "Nowa nazwa pliku:"
+
+msgid "New location:"
+msgstr "Nowa lokalizacja:"
+
+msgid "New title:"
+msgstr "Nowy tytuł:"
+
+msgid "No"
+msgstr "Nie"
+
+msgid "No cuts specified"
+msgstr "Nie określono cięć"
+
+msgid "OK"
+msgstr ""
+
+msgid "Place the cut movie in a new file ending with \" cut\""
+msgstr "Zapisz przycięty film jako nowy plik z końcówką \" cut\""
+
+msgid "Read/write error (disk full?)"
+msgstr "Błąd zapisu/odczytu (dysk pełny?)"
+
+msgid "Replace original:"
+msgstr "Zastąp oryginalny:"
+
+msgid "Replace the original movie with the cut movie"
+msgstr "Zastąp oryginalny film przyciętym"
+
+#, python-format
+msgid "The movie \"%s\" is cut in the background."
+msgstr "Film  \"%s\" jest przycinany w tle"
+
+#, python-format
+msgid "The movie \"%s\" is successfully cut"
+msgstr "Cięcie filmu  \"%s\" zakończone powodzeniem"
+
+msgid "Yes"
+msgstr "Tak"

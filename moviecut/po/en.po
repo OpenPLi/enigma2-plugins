@@ -1,137 +1,136 @@
-# English translations for tuxbox-enigma package.
-# Copyright (C) 2005 THE tuxbox-enigma'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the tuxbox-enigma package.
-# Automatically generated, 2005.
+# English translations for enigma package.
+# Copyright (C) 2018 THE enigma'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the enigma package.
+# Automatically generated, 2018.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
+"Project-Id-Version: enigma 2-plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-05-03 14:01+0200\n"
-"PO-Revision-Date: 2012-06-24 22:37+0100\n"
-"Last-Translator: robertut <robertut@yahoo.com>\n"
+"PO-Revision-Date: 2018-05-03 14:01+0200\n"
+"Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
-"Language: \n"
+"Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Poedit-Bookmarks: -1,-1,-1,706,-1,-1,-1,-1,-1,-1\n"
-"X-Poedit-Language: Hungarian\n"
-"X-Poedit-Country: HUNGARY\n"
 
 msgid "Advanced cut specification..."
-msgstr ""
+msgstr "Advanced cut specification..."
 
 #, python-format
 msgid ""
 "Another movie is currently cut.\n"
 "The movie \"%s\" will be cut in the background after it."
 msgstr ""
+"Another movie is currently cut.\n"
+"The movie \"%s\" will be cut in the background after it."
 
 msgid "Bad arguments"
-msgstr ""
+msgstr "Bad arguments"
 
 msgid "Cancel"
-msgstr "Mégse"
+msgstr "Cancel"
 
 msgid "Choose target folder"
-msgstr "Válassza ki a célmappaat"
+msgstr "Choose target folder"
 
 msgid "Couldn't open input .ap file"
-msgstr ""
+msgstr "Couldn't open input .ap file"
 
 msgid "Couldn't open input .cuts file"
-msgstr ""
+msgstr "Couldn't open input .cuts file"
 
 msgid "Couldn't open input .ts file"
-msgstr ""
+msgstr "Couldn't open input .ts file"
 
 msgid "Couldn't open output .ap file"
-msgstr ""
+msgstr "Couldn't open output .ap file"
 
 msgid "Couldn't open output .cuts file"
-msgstr ""
+msgstr "Couldn't open output .cuts file"
 
 msgid "Couldn't open output .ts file"
-msgstr ""
+msgstr "Couldn't open output .ts file"
 
 msgid "Cut Parameter Input"
-msgstr ""
+msgstr "Cut Parameter Input"
 
 msgid "Cut source:"
-msgstr ""
+msgstr "Cut source:"
 
 msgid "Cutlist"
-msgstr ""
+msgstr "Cutlist"
 
 msgid "Cuts (an IN OUT IN OUT ... sequence of hour:min:sec)"
-msgstr ""
+msgstr "Cuts (an IN OUT IN OUT ... sequence of hour:min:sec)"
 
 #, python-format
 msgid "Cutting failed for movie \"%s\""
-msgstr ""
+msgstr "Cutting failed for movie \"%s\""
 
 #, python-format
 msgid "Cutting was aborted for movie \"%s\""
-msgstr ""
+msgstr "Cutting was aborted for movie \"%s\""
 
 msgid "Don't cut"
-msgstr ""
+msgstr "Don't cut"
 
 msgid "Empty .ap file"
-msgstr ""
+msgstr "Empty .ap file"
 
 msgid "Execute cuts..."
-msgstr ""
+msgstr "Execute cuts..."
 
 #, python-format
 msgid "How would you like to cut \"%s\"?"
-msgstr ""
+msgstr "How would you like to cut \"%s\"?"
 
 msgid "Manual specification"
-msgstr ""
+msgstr "Manual specification"
 
 msgid "New description:"
-msgstr ""
+msgstr "New description:"
 
 msgid "New filename:"
-msgstr ""
+msgstr "New filename:"
 
 msgid "New location:"
-msgstr ""
+msgstr "New location:"
 
 msgid "New title:"
-msgstr ""
+msgstr "New title:"
 
 msgid "No"
-msgstr "Nem"
+msgstr "No"
 
 msgid "No cuts specified"
-msgstr ""
+msgstr "No cuts specified"
 
 msgid "OK"
 msgstr "OK"
 
 msgid "Place the cut movie in a new file ending with \" cut\""
-msgstr ""
+msgstr "Place the cut movie in a new file ending with \" cut\""
 
 msgid "Read/write error (disk full?)"
-msgstr ""
+msgstr "Read/write error (disk full?)"
 
 msgid "Replace original:"
-msgstr ""
+msgstr "Replace original:"
 
 msgid "Replace the original movie with the cut movie"
-msgstr ""
+msgstr "Replace the original movie with the cut movie"
 
 #, python-format
 msgid "The movie \"%s\" is cut in the background."
-msgstr ""
+msgstr "The movie \"%s\" is cut in the background."
 
 #, python-format
 msgid "The movie \"%s\" is successfully cut"
-msgstr ""
+msgstr "The movie \"%s\" is successfully cut"
 
 msgid "Yes"
-msgstr "Igen"
+msgstr "Yes"
