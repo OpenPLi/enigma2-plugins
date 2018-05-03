@@ -1,111 +1,127 @@
-# Dutch translations for enigma2-oe-alliance-plugins package.
-# Copyright (C) 2015 THE enigma2-oe-alliance-plugins'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the enigma2-oe-alliance-plugins package.
-# Automatically generated, 2015.
+# Dutch translations for enigma package.
+# Copyright (C) 2018 THE enigma'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the enigma package.
+# Automatically generated, 2018.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: enigma2-oe-alliance-plugins 1.0\n"
+"Project-Id-Version: enigma 2-plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-12 20:05+0100\n"
-"PO-Revision-Date: 2015-09-13 16:12+0100\n"
-"Last-Translator: Rob van der Does <RobvanderDoes@Gmail.com>\n"
-"Language-Team: Rob van der Does\n"
+"POT-Creation-Date: 2018-05-03 11:46+0200\n"
+"PO-Revision-Date: 2018-05-03 11:46+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Poedit-Language: Dutch\n"
-"X-Poedit-Country: NETHERLANDS\n"
 
 msgid " "
-msgstr " "
+msgstr ""
 
 msgid "Cancel"
-msgstr "Annuleer"
+msgstr ""
 
 msgid "DVB-S"
-msgstr "DVB-S"
+msgstr ""
 
 msgid "Description"
-msgstr "Beschrijving"
+msgstr ""
 
 msgid "Disable"
-msgstr "Schakel uit"
+msgstr ""
 
 msgid "Discover"
-msgstr "Zoek"
+msgstr ""
 
 #, python-format
 msgid "IP : %s"
-msgstr "IP : %s"
+msgstr ""
 
 msgid "Manufacturer"
-msgstr "Fabrikant"
+msgstr ""
+
+msgid "Model URL"
+msgstr ""
+
+msgid "No vtuner found."
+msgstr ""
 
 msgid "Ok"
-msgstr "OK"
+msgstr ""
+
+msgid "Presentation URL"
+msgstr ""
 
 msgid "Really close without saving settings?"
-msgstr "Echt afsluiten zonder op te slaan?"
+msgstr ""
+
+msgid "SAT>IP Capability"
+msgstr ""
 
 msgid "SAT>IP Client"
-msgstr "SAT>IP Client"
+msgstr ""
 
 msgid "SAT>IP Client Setup"
-msgstr "SAT>IP Client-instellingen"
+msgstr ""
 
 msgid "SAT>IP Client Tuner Setup"
-msgstr "SAT>IP Client tunerinstellingen"
+msgstr ""
 
 msgid "SAT>IP Client attached to vtuner."
-msgstr "SAT>IP Client toegewezen aan vtuner."
+msgstr ""
 
 #, python-format
 msgid "SAT>IP SERVER : %s"
-msgstr "SAT>IP SERVER : %s"
+msgstr ""
 
 msgid "SAT>IP Server : "
-msgstr "SAT>IP Server : "
+msgstr ""
 
 msgid "SAT>IP Tuner Type : "
-msgstr "SAT>IP Tunertype : "
+msgstr ""
 
 #, python-format
 msgid "SAT>IP server discovering for %d seconds..."
-msgstr "SAT>IP server zoeken gedurende %d secondes..."
+msgstr ""
 
 msgid "SAT>IP server is not detected."
-msgstr "SAT>IP server is niet gedetecteerd."
+msgstr ""
 
 msgid "Save"
-msgstr "Sla op"
+msgstr ""
 
 msgid "Select"
-msgstr "Kies"
+msgstr ""
 
 msgid "Select tuner and press setup key (Yellow)"
-msgstr "Kies tuner en druk op de gele toets (instellingen)"
+msgstr ""
 
 msgid "Server capacity is fulled."
-msgstr "Servercapaciteit bezet. "
+msgstr ""
 
 msgid "Setup"
-msgstr "Instellingen"
+msgstr ""
 
 msgid "Starting..."
-msgstr "Bezig te starten..."
+msgstr ""
 
 #, python-format
 msgid "TUNER TYPE : %s"
-msgstr "TUNER TYPE : %s"
+msgstr ""
 
 #, python-format
 msgid "TYPE : %s"
-msgstr "TYPE : %s"
+msgstr ""
 
 #, python-format
 msgid "VIRTUAL TUNER %s"
-msgstr "VIRTUAL TUNER %s"
+msgstr ""
 
+msgid ""
+"You should now reboot your STB to change SAT>IP Configuration.\n"
+"\n"
+"Reboot now ?\n"
+"\n"
+msgstr ""
