@@ -1,231 +1,251 @@
+# Latvian translations for enigma package.
+# Copyright (C) 2018 THE enigma'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the enigma package.
+# Automatically generated, 2018.
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: Enigma 2 EPGSearch Plugin\n"
+"Project-Id-Version: enigma 2-plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-21 10:41+0200\n"
-"PO-Revision-Date: 2014-12-13 18:20+0300\n"
-"Last-Translator: Tapat <taapat@gmail.com>\n"
-"Language-Team: Taapat <taapat@gmail.com>\n"
-"Language: lv_LV\n"
+"POT-Creation-Date: 2018-05-03 11:46+0200\n"
+"PO-Revision-Date: 2018-05-03 11:46+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: lv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 1.5.4\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
+"2);\n"
 
 #, python-format
 msgid " (%d min)"
-msgstr " (%d min)"
+msgstr ""
 
 #, python-format
 msgid " (%s%d min)"
-msgstr " (%s%d min)"
+msgstr ""
 
 msgid "Add \"Search event in EPG\" to channel menu"
-msgstr "Pievienot \"Meklēt notikumu EPG\" kanālu izvēlnē"
+msgstr ""
 
 msgid "Add \"Search event in EPG\" to event menu"
-msgstr "Pievienot \"Meklēt notikumu EPG\" notikumu izvēlnē"
+msgstr ""
 
 msgid "Add \"Search\" Button to EPG"
-msgstr "Pievienot \"Meklēt\" pogu EPG"
+msgstr ""
 
 msgid "Add timer"
-msgstr "Pievienot taimeri"
+msgstr ""
 
-msgid "Adds \"Search event in EPG\" item into the channel selection context menu (needs restart GUI)"
-msgstr "Pievieno \"Meklēt notikumu EPG\" kanālu izvēlnē (vajag pārstartēt GUI)"
+msgid ""
+"Adds \"Search event in EPG\" item into the channel selection context menu "
+"(needs restart GUI)"
+msgstr ""
 
-msgid "Adds \"Search event in EPG\" item into the event menu (needs restart GUI)"
-msgstr "Pievieno \"Meklēt notikumu EPG\" notikumu izvēlnē (vajag pārstartēt GUI)"
+msgid ""
+"Adds \"Search event in EPG\" item into the event menu (needs restart GUI)"
+msgstr ""
 
 msgid "Cancel"
-msgstr "Atcelt"
+msgstr ""
 
 msgid "Channel Selection"
-msgstr "Kanālu saraksts"
+msgstr ""
 
 msgid "Choice list"
-msgstr "Izvēlne"
+msgstr ""
 
 msgid "Choice list EPGSearch"
-msgstr "Izvēlieties EPG sarakstu"
+msgstr ""
 
 msgid "Choice list RED Button"
-msgstr "Sarkanā poga attēlo"
+msgstr ""
 
 msgid "Choosing an encoding. \"UTF-8\" to search for EPG cyrillic."
-msgstr "Izvēlieties kodējumu. \"UTF-8\" lai meklētu EPG cyrillic."
+msgstr ""
 
 msgid "Clear history"
-msgstr "Attīrīt vēsturi"
+msgstr ""
 
 #, python-format
 msgid "Could not read AutoTimer timer list: %s"
-msgstr "Nevar nolasīt auto taimeru sarakstu: %s"
+msgstr ""
+
+msgid "Custom search"
+msgstr ""
 
 msgid "Display name service as in bouquets"
-msgstr "Attēlot kanāla nosakukumu kā buķetē"
+msgstr ""
 
 msgid "EPG Search"
-msgstr "EPG meklēšana"
+msgstr ""
 
 msgid "EPGSearch"
-msgstr "EPG meklētājs"
+msgstr ""
 
 msgid "EPGSearch Setup"
-msgstr "EPGSearch iestatījumi"
+msgstr ""
 
 msgid "Encoding Search to EPG"
-msgstr "Meklēt EPG kodējumā"
+msgstr ""
 
 msgid "Enter text to search for"
-msgstr "Ievadiet tekstu kuru meklēt"
+msgstr ""
 
 msgid "Export selected as AutoTimer"
-msgstr "Eksportēt iezīmēto kā auto taimeri"
+msgstr ""
 
 msgid "History"
-msgstr "Vēsture"
+msgstr ""
 
-msgid "How many entries to keep in the search history at most. 0 disables history entirely!"
-msgstr "Cik daudz ierakstu paturēt meklēšanas vēsturē. 0 atspējo vēstures ierakstus!"
+msgid ""
+"How many entries to keep in the search history at most. 0 disables history "
+"entirely!"
+msgstr ""
 
-msgid "If 'Search only bouquets' is enabled, show service name as in bouquets for renamed services."
-msgstr "Ja 'Meklēt tikai buķetēs' ir iespējots, tad pārdēvētajiem kanāliem attēlos kanāla nosaukumu kā buķetē."
+msgid ""
+"If 'Search only bouquets' is enabled, show service name as in bouquets for "
+"renamed services."
+msgstr ""
 
-msgid "If this setting is enabled, searching EPG in only services in user bouquets."
-msgstr "Ja šis iestatījums ir iespējots, tad meklēs tikai kanālos kuri ir buķetēs."
+msgid ""
+"If this setting is enabled, searching EPG in only services in user bouquets."
+msgstr ""
 
-msgid "If this setting is enabled, the plugin adds a \"Search\" Button to the regular EPG."
-msgstr "Ja šis iestatījums ir iespējots, tad spraudnis pievieno \"Meklēt\" pogu standarata EPG."
+msgid ""
+"If this setting is enabled, the plugin adds a \"Search\" Button to the "
+"regular EPG."
+msgstr ""
 
 msgid "If this setting is enabled, the plugin adds picons."
-msgstr "Ja šis istatījums ir iespējots, tad spraudnis pievienos pikonas."
+msgstr ""
 
 msgid "Import from AutoTimer"
-msgstr "Iegūt no auto taimera"
+msgstr ""
 
 msgid "Import from EPG"
-msgstr "Iegūt no EPG"
+msgstr ""
 
 msgid "Import from Timer"
-msgstr "Iegūt no taimera"
+msgstr ""
 
 msgid "Length of History"
-msgstr "Vēstures ilgums"
+msgstr ""
 
 msgid "List of history is cleared !"
-msgstr "Vēsture ir attīrīta!"
+msgstr ""
 
 msgid "Lookup in TMBD"
-msgstr "Meklēt TMBD"
+msgstr ""
 
 msgid "New Search"
-msgstr "Meklēt no jauna"
+msgstr ""
 
 msgid "No history !"
-msgstr "Nav vēstures!"
+msgstr ""
 
 msgid "OK"
-msgstr "Labi"
+msgstr ""
 
 msgid "Open selected in IMDb"
-msgstr "Atvērt izvēlēto IMDb"
+msgstr ""
 
 msgid "Partnerbox Entries"
-msgstr "Partnerbox ieraksti"
+msgstr ""
 
 msgid "Save search as AutoTimer"
-msgstr "Saglabāt atrasto kā auto taimeri"
+msgstr ""
 
 msgid "Search"
-msgstr "Meklēt"
+msgstr ""
 
 msgid "Search EPG by title event"
-msgstr "Meklēt EPG pēc notikumiem"
+msgstr ""
 
 msgid "Search event in EPG"
-msgstr "Meklēt notikumu EPG"
+msgstr ""
 
 msgid "Search for TMDb info"
-msgstr "Meklēt TMDb info"
+msgstr ""
 
 msgid "Search only bouquets"
-msgstr "Meklēt tikai buķetēs"
+msgstr ""
 
 msgid "Search strictness"
-msgstr "Meklēšanas atbilstība"
+msgstr ""
 
 msgid "Search type"
-msgstr "Meklēšanas tips"
+msgstr ""
 
 msgid "Search type for filter"
-msgstr "Meklēšanas tips filtrēšanai"
+msgstr ""
 
 msgid "Select a timer to search"
-msgstr "Izvēlieties taimeri lai meklētu"
+msgstr ""
 
 msgid "Select action:"
-msgstr "Izvēlieties darbību:"
+msgstr ""
 
 msgid "Select channel"
-msgstr "Izvēlieties kanālu"
+msgstr ""
 
 msgid "Select text to search for"
-msgstr "Norādiet tekstu kuru meklēt"
+msgstr ""
 
-msgid "Select type for filter search. Press button P +/- for show/hide filter in description after search."
-msgstr "Izvēlieties meklēšanas veidu filtrēšanai. Lietojiet P +/- lai parādītu/slēptu filtrus aprakstā pēc meklēšanas."
+msgid ""
+"Select type for filter search. Press button P +/- for show/hide filter in "
+"description after search."
+msgstr ""
 
-msgid "Select type for search, \"partial match\" for the most extensive search."
-msgstr "Izvēlieties meklēšanas tipu, \"atbilst daļēji\" lielākam rezultātu daudzumam."
+msgid ""
+"Select type for search, \"partial match\" for the most extensive search."
+msgstr ""
 
 msgid "Select type: 'Search and Select channel' or 'Search'."
-msgstr "Izvēlieties veidu: 'Meklēt un izvēlēties kanālu' vai 'meklēt'."
+msgstr ""
 
 msgid "Select whether or not you want to enforce case correctness."
-msgstr "Izvēlieties vai vēlaties lietot reģistra korekciju"
+msgstr ""
 
 msgid "Setup"
-msgstr "Iestatījumi"
+msgstr ""
 
 msgid "Timers list"
-msgstr "Taimeru saraksts"
+msgstr ""
 
 msgid "Type blue Button"
-msgstr "Zilā poga"
+msgstr ""
 
 msgid "Use Picons"
-msgstr "Lietot pikonas"
+msgstr ""
 
 msgid "Zap to selected service"
-msgstr "Pārslēgt uz izvēlēto kanālu"
+msgstr ""
 
 msgid "case-insensitive search"
-msgstr "meklēt reģistr nejūtīgi"
+msgstr ""
 
 msgid "case-sensitive search"
-msgstr "meklēt reģistr jūtīgi"
+msgstr ""
 
 msgid "choice (Search and standard)"
-msgstr "izvēlēties (meklēt vai standarta)"
+msgstr ""
 
 msgid "exact match"
-msgstr "atbilst tieši"
+msgstr ""
 
 msgid "only Search"
-msgstr "tikai meklēt"
+msgstr ""
 
 msgid "partial match"
-msgstr "atbilst daļēji"
+msgstr ""
 
 msgid "search EPG"
-msgstr "meklēt EPG"
+msgstr ""
 
 msgid "search EPG..."
-msgstr "meklēt EPG..."
+msgstr ""
 
 msgid "title starts with"
-msgstr "nosaukums sākas ar"
+msgstr ""
