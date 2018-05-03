@@ -1,0 +1,232 @@
+# English translations for enigma package.
+# Copyright (C) 2018 THE enigma'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the enigma package.
+# Automatically generated, 2018.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: enigma 2-plugins\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-05-03 14:02+0200\n"
+"PO-Revision-Date: 2018-05-03 14:02+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "'dvbdate' is not installed!"
+msgstr "'dvbdate' is not installed!"
+
+msgid "'ntpdate' is not installed!"
+msgstr "'ntpdate' is not installed!"
+
+msgid "1 hour"
+msgstr "1 hour"
+
+msgid "12 hours"
+msgstr "12 hours"
+
+msgid "15 mins"
+msgstr "15 mins"
+
+msgid "2 hours"
+msgstr "2 hours"
+
+msgid "24 hours"
+msgstr "24 hours"
+
+msgid "30 mins"
+msgstr "30 mins"
+
+msgid "4 hours"
+msgstr "4 hours"
+
+msgid "48 hours"
+msgstr "48 hours"
+
+msgid "5 mins"
+msgstr "5 mins"
+
+msgid ""
+"After receiver's boot, wait for the specified delay before connecting to the "
+"NTP server. This allows the Wi-Fi connection to be fully established."
+msgstr ""
+"After receiver's boot, wait for the specified delay before connecting to the "
+"NTP server. This allows the Wi-Fi connection to be fully established."
+
+msgid "Apply new system time?"
+msgstr "Apply new system time?"
+
+msgid "Cancel"
+msgstr "Cancel"
+
+msgid "Change system time in enigma2 box"
+msgstr "Change system time in enigma2 box"
+
+msgid "Delay (in seconds) when using Wi-Fi"
+msgstr "Delay (in seconds) when using Wi-Fi"
+
+msgid "Enter a user defined date and time."
+msgstr "Enter a user defined date and time."
+
+msgid "Enter new system time and press OK!"
+msgstr "Enter new system time and press OK!"
+
+msgid "Get current time from the specified DVB transponder."
+msgstr "Get current time from the specified DVB transponder."
+
+msgid "Get current time from the specified NTP server."
+msgstr "Get current time from the specified NTP server."
+
+#, python-format
+msgid "Invalid input in day: %s"
+msgstr "Invalid input in day: %s"
+
+#, python-format
+msgid "Invalid input in hour: %s"
+msgstr "Invalid input in hour: %s"
+
+#, python-format
+msgid "Invalid input in minute: %s"
+msgstr "Invalid input in minute: %s"
+
+#, python-format
+msgid "Invalid input in month: %s"
+msgstr "Invalid input in month: %s"
+
+#, python-format
+msgid "Invalid input in year: %s"
+msgstr "Invalid input in year: %s"
+
+msgid "Invalid time format."
+msgstr "Invalid time format."
+
+msgid "NTP"
+msgstr "NTP"
+
+msgid "NTP cold start"
+msgstr "NTP cold start"
+
+msgid "NTP server"
+msgstr "NTP server"
+
+msgid "No answer given."
+msgstr "No answer given."
+
+msgid "No change detected."
+msgstr "No change detected."
+
+msgid "No confirmation given."
+msgstr "No confirmation given."
+
+#, python-format
+msgid ""
+"Old time: %(oldtime)s\n"
+"New time: %(newtime)s\n"
+"\n"
+"Offset: %(offset)s seconds"
+msgstr ""
+"Old time: %(oldtime)s\n"
+"New time: %(newtime)s\n"
+"\n"
+"Offset: %(offset)s seconds"
+
+msgid ""
+"On receiver 'cold start', allow any required time adjustments to be "
+"'stepped'."
+msgstr ""
+"On receiver 'cold start', allow any required time adjustments to be "
+"'stepped'."
+
+msgid "Press OK"
+msgstr "Press OK"
+
+msgid "Restart GUI"
+msgstr "Restart GUI"
+
+msgid "Restart GUI now?"
+msgstr "Restart GUI now?"
+
+msgid "Save"
+msgstr "Save"
+
+msgid "Script 'set-rtctime' not found!"
+msgstr "Script 'set-rtctime' not found!"
+
+msgid ""
+"Select the preferred method for syncing time on your receiver. Network Time "
+"Protocol requires internet connection. Transponder time might not be very "
+"accurate."
+msgstr ""
+"Select the preferred method for syncing time on your receiver. Network Time "
+"Protocol requires internet connection. Transponder time might not be very "
+"accurate."
+
+msgid "Select transponder"
+msgstr "Select transponder"
+
+msgid "Set how often the receiver will connect to the NTP server to sync time."
+msgstr ""
+"Set how often the receiver will connect to the NTP server to sync time."
+
+msgid "Set system time manually"
+msgstr "Set system time manually"
+
+msgid ""
+"Set the IP address of the preferred NTP server. Default is pool.ntp.org."
+msgstr ""
+"Set the IP address of the preferred NTP server. Default is pool.ntp.org."
+
+msgid "Sync NTP every"
+msgstr "Sync NTP every"
+
+msgid "Sync now with NTP server"
+msgstr "Sync now with NTP server"
+
+msgid "Sync now with current transponder"
+msgstr "Sync now with current transponder"
+
+msgid "Sync time using"
+msgstr "Sync time using"
+
+msgid "Syncing with NTP server..."
+msgstr "Syncing with NTP server..."
+
+msgid "Syncing with current transponder..."
+msgstr "Syncing with current transponder..."
+
+msgid "Syncing... Please wait."
+msgstr "Syncing... Please wait."
+
+msgid "System Time"
+msgstr "System Time"
+
+msgid "System time setup"
+msgstr "System time setup"
+
+#, python-format
+msgid ""
+"System time was not applied.\n"
+"%s"
+msgstr ""
+"System time was not applied.\n"
+"%s"
+
+msgid "Time string too short."
+msgstr "Time string too short."
+
+msgid "Transponder"
+msgstr "Transponder"
+
+msgid "Use RTC time from deep standby"
+msgstr "Use RTC time from deep standby"
+
+msgid ""
+"When the receiver starts from deep standby, use the time provided by the "
+"Real Time Clock, if it appears to be valid."
+msgstr ""
+"When the receiver starts from deep standby, use the time provided by the "
+"Real Time Clock, if it appears to be valid."
