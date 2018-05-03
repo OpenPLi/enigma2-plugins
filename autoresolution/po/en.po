@@ -1,53 +1,53 @@
+# English translations for enigma package.
+# Copyright (C) 2018 THE enigma'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the enigma package.
+# Automatically generated, 2018.
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: Automatic Screen Resolution V. 0.1.0\n"
+"Project-Id-Version: enigma 2-plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-05-03 14:00+0200\n"
-"PO-Revision-Date: \n"
-"Last-Translator: Pr2 <dummy@dummy.com>\n"
-"Language-Team: OpenPLi\n"
-"Language: fr\n"
+"PO-Revision-Date: 2018-05-03 14:00+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-KeywordsList: _(\n"
-"X-Poedit-Basepath: .\n"
-"X-Poedit-SourceCharset: UTF-8\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 1.7.6\n"
-"X-Poedit-SearchPath-0: ../src\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "Alternative resolution when native not supported"
-msgstr ""
+msgstr "Alternative resolution when native not supported"
 
 msgid "Ask before changing videomode"
-msgstr ""
+msgstr "Ask before changing videomode"
 
 msgid "Auto frame rate (refresh need 'multi')"
-msgstr ""
+msgstr "Auto frame rate (refresh need 'multi')"
 
 msgid "Autoresolution"
-msgstr "Autorésolution"
+msgstr "Autoresolution"
 
 #, python-format
 msgid ""
 "Autoresolution Plugin Testmode:\n"
 "Is %s OK?"
 msgstr ""
-"Plugin autorésolution mode test:\n"
-"Est-ce %s correcte?"
+"Autoresolution Plugin Testmode:\n"
+"Is %s OK?"
 
 msgid "Autoresolution Switch"
-msgstr "Bascule autorésolution"
+msgstr "Autoresolution Switch"
 
 msgid "Autoresolution is not working in Scart/DVI-PC Mode"
-msgstr "Autorésolution ne fonctionne pas en mode Péritel(Scart)/DVI-PC"
+msgstr "Autoresolution is not working in Scart/DVI-PC Mode"
 
 msgid "Autoresolution videomode setup"
-msgstr "Configuration autorésolution mode vidéo"
+msgstr "Autoresolution videomode setup"
 
 msgid "Cancel"
-msgstr "Annuler"
+msgstr "Cancel"
 
 #, python-format
 msgid ""
@@ -55,153 +55,147 @@ msgid ""
 "Current framerate: %s\n"
 "New framerate: %s\n"
 msgstr ""
+"Changing framerate for current service?\n"
+"Current framerate: %s\n"
+"New framerate: %s\n"
 
 msgid "Deinterlacer mode for interlaced content"
-msgstr "Mode désentrelacé pour le contenu entrelacé"
+msgstr "Deinterlacer mode for interlaced content"
 
 msgid "Deinterlacer mode for progressive content"
-msgstr "Mode désentrelacé pour le contenu progressif"
+msgstr "Deinterlacer mode for progressive content"
 
 msgid "Delay x seconds after service started"
-msgstr "Délai de x secondes après le démarrage du service"
+msgstr "Delay x seconds after service started"
 
 msgid "Enable 1080p24 Mode"
-msgstr "Mode 1080p24 activer"
+msgstr "Enable 1080p24 Mode"
 
 msgid "Enable 1080p25 Mode"
-msgstr "Mode 1080p25 activer"
+msgstr "Enable 1080p25 Mode"
 
 msgid "Enable 1080p30 Mode"
-msgstr "Mode 1080p30 activer"
+msgstr "Enable 1080p30 Mode"
 
-#, fuzzy
 msgid "Enable 2160p24 Mode"
-msgstr "Mode 720p24 activer"
+msgstr "Enable 2160p24 Mode"
 
-#, fuzzy
 msgid "Enable 2160p25 Mode"
-msgstr "Mode 1080p25 activer"
+msgstr "Enable 2160p25 Mode"
 
-#, fuzzy
 msgid "Enable 2160p30 Mode"
-msgstr "Mode 1080p30 activer"
+msgstr "Enable 2160p30 Mode"
 
 msgid "Enable 720p24 Mode"
-msgstr "Mode 720p24 activer"
+msgstr "Enable 720p24 Mode"
 
-#, fuzzy
 msgid "Enable 720p50 Mode"
-msgstr "Mode 720p24 activer"
+msgstr "Enable 720p50 Mode"
 
 msgid "Enable Autoresolution"
-msgstr "Activer autorésolution"
+msgstr "Enable Autoresolution"
 
 msgid "Exit"
-msgstr ""
+msgstr "Exit"
 
-#, fuzzy
 msgid "FHD 50/60HZ Progressive Mode"
-msgstr "SD 30/60Hz mode progressif"
+msgstr "FHD 50/60HZ Progressive Mode"
 
 msgid "HD Interlace Mode"
-msgstr "HD mode entrelacé"
+msgstr "HD Interlace Mode"
 
 msgid "HD Progressive Mode"
-msgstr "HD mode progressif"
+msgstr "HD Progressive Mode"
 
 msgid "Lock timeout"
-msgstr ""
+msgstr "Lock timeout"
 
 msgid "Manual"
-msgstr ""
+msgstr "Manual"
 
-#, fuzzy
 msgid "Manual resolution"
-msgstr "Activer autorésolution"
+msgstr "Manual resolution"
 
-#, fuzzy
 msgid "Manual resolution is not working in Scart/DVI-PC mode!"
-msgstr "Autorésolution ne fonctionne pas en mode Péritel(Scart)/DVI-PC"
+msgstr "Manual resolution is not working in Scart/DVI-PC mode!"
 
 msgid "Message timeout"
-msgstr ""
+msgstr "Message timeout"
 
 msgid "Mode"
-msgstr ""
+msgstr "Mode"
 
 msgid "OK"
 msgstr "OK"
 
 msgid "Please select a resolution..."
-msgstr ""
+msgstr "Please select a resolution..."
 
 msgid "Refresh Rate"
-msgstr "Taux de rafraîchissement"
+msgstr "Refresh Rate"
 
 msgid "Return back without confirmation after 10 sec."
-msgstr ""
+msgstr "Return back without confirmation after 10 sec."
 
 msgid "Running in testmode"
-msgstr "Fonctionne en mode test"
+msgstr "Running in testmode"
 
 msgid "SD 24HZ Progressive mode"
-msgstr "SD 24Hz mode progressif"
+msgstr "SD 24HZ Progressive mode"
 
 msgid "SD 25/50HZ Interlace Mode"
-msgstr "SD 25/50Hz mode entrelacé"
+msgstr "SD 25/50HZ Interlace Mode"
 
 msgid "SD 25/50HZ Progressive Mode"
-msgstr "SD 25/50Hz mode progressif"
+msgstr "SD 25/50HZ Progressive Mode"
 
 msgid "SD 30/60HZ Interlace Mode"
-msgstr "SD 30/60Hz mode entrelacé"
+msgstr "SD 30/60HZ Interlace Mode"
 
 msgid "SD 30/60HZ Progressive Mode"
-msgstr "SD 30/60Hz mode progressif"
+msgstr "SD 30/60HZ Progressive Mode"
 
 msgid "Show 'Manual resolution' in extensions menu"
-msgstr ""
+msgstr "Show 'Manual resolution' in extensions menu"
 
 msgid "Show info screen"
-msgstr "Afficher l'écran d'information"
+msgstr "Show info screen"
 
 msgid "This resolution is OK?"
-msgstr ""
+msgstr "This resolution is OK?"
 
-#, fuzzy
 msgid "UHD Interlace Mode"
-msgstr "HD mode entrelacé"
+msgstr "UHD Interlace Mode"
 
-#, fuzzy
 msgid "UHD Progressive Mode"
-msgstr "HD mode progressif"
+msgstr "UHD Progressive Mode"
 
 msgid "Use 60HZ instead 30HZ"
-msgstr ""
+msgstr "Use 60HZ instead 30HZ"
 
 msgid "Video: "
-msgstr ""
+msgstr "Video: "
 
 #, python-format
 msgid "Videocontent: %sx%s%s %sHZ"
-msgstr ""
+msgstr "Videocontent: %sx%s%s %sHZ"
 
 #, python-format
 msgid "Videomode: %s"
-msgstr ""
+msgstr "Videomode: %s"
 
 #, python-format
 msgid "Videomode: %s %s %s"
-msgstr ""
+msgstr "Videomode: %s %s %s"
 
 msgid "auto"
 msgstr "auto"
 
 msgid "bob"
-msgstr "meilleur possible"
+msgstr "bob"
 
 msgid "default"
-msgstr "défaut"
+msgstr "default"
 
 msgid "off"
 msgstr "off"
@@ -210,7 +204,7 @@ msgid "on"
 msgstr "on"
 
 msgid "second"
-msgstr "seconde"
+msgstr "second"
 
 msgid "seconds"
-msgstr "secondes"
+msgstr "seconds"

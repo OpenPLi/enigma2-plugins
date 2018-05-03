@@ -1,21 +1,20 @@
+# Language hk translations for enigma package.
+# Copyright (C) 2018 THE enigma'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the enigma package.
+# Automatically generated, 2018.
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: Automatic Screen Resolution V. 0.1.0\n"
+"Project-Id-Version: enigma 2-plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-05-03 14:00+0200\n"
-"PO-Revision-Date: \n"
-"Last-Translator: ims <ims21@users.sourceforge.net>\n"
-"Language-Team: msi\n"
-"Language: \n"
+"PO-Revision-Date: 2018-05-03 14:00+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: hk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-KeywordsList: _(\n"
-"X-Poedit-Basepath: .\n"
-"X-Poedit-Language: Czech\n"
-"X-Poedit-Country: CZECH REPUBLIC\n"
-"X-Poedit-SourceCharset: utf-8\n"
-"X-Poedit-SearchPath-0: ../src\n"
 
 msgid "Alternative resolution when native not supported"
 msgstr ""
@@ -27,27 +26,25 @@ msgid "Auto frame rate (refresh need 'multi')"
 msgstr ""
 
 msgid "Autoresolution"
-msgstr "Automatické rozlišení"
+msgstr ""
 
 #, python-format
 msgid ""
 "Autoresolution Plugin Testmode:\n"
 "Is %s OK?"
 msgstr ""
-"Testovací režim pluginu automatického rozlišení:\n"
-"je %s vpořádku?"
 
 msgid "Autoresolution Switch"
-msgstr "Přepínání automatického rozlišení"
+msgstr ""
 
 msgid "Autoresolution is not working in Scart/DVI-PC Mode"
-msgstr "Automatické rozlišení nepracuje v Scart/DVI-PC módu"
+msgstr ""
 
 msgid "Autoresolution videomode setup"
-msgstr "Nastavení videomódu automatického rozlišení"
+msgstr ""
 
 msgid "Cancel"
-msgstr "Zrušit"
+msgstr ""
 
 #, python-format
 msgid ""
@@ -57,57 +54,52 @@ msgid ""
 msgstr ""
 
 msgid "Deinterlacer mode for interlaced content"
-msgstr "Režim odstranění prokládání prokládaného obsahu"
+msgstr ""
 
 msgid "Deinterlacer mode for progressive content"
-msgstr "Režim odstranění prokládání progresivního obsahu"
+msgstr ""
 
 msgid "Delay x seconds after service started"
-msgstr "Zpoždění v sekundách po přepnutí kanálu"
+msgstr ""
 
 msgid "Enable 1080p24 Mode"
-msgstr "Povolit 1080p24 režim"
+msgstr ""
 
 msgid "Enable 1080p25 Mode"
-msgstr "Povolit 1080p25 režim"
+msgstr ""
 
 msgid "Enable 1080p30 Mode"
-msgstr "Povolit 1080p30 režim"
+msgstr ""
 
-#, fuzzy
 msgid "Enable 2160p24 Mode"
-msgstr "Povolit 720p24 režim"
+msgstr ""
 
-#, fuzzy
 msgid "Enable 2160p25 Mode"
-msgstr "Povolit 1080p25 režim"
+msgstr ""
 
-#, fuzzy
 msgid "Enable 2160p30 Mode"
-msgstr "Povolit 1080p30 režim"
+msgstr ""
 
 msgid "Enable 720p24 Mode"
-msgstr "Povolit 720p24 režim"
+msgstr ""
 
-#, fuzzy
 msgid "Enable 720p50 Mode"
-msgstr "Povolit 720p24 režim"
+msgstr ""
 
 msgid "Enable Autoresolution"
-msgstr "Povolit automatické rozlišení"
+msgstr ""
 
 msgid "Exit"
 msgstr ""
 
-#, fuzzy
 msgid "FHD 50/60HZ Progressive Mode"
-msgstr "SD 30/60Hz progresivní režim"
+msgstr ""
 
 msgid "HD Interlace Mode"
-msgstr "HD prokládaný režim"
+msgstr ""
 
 msgid "HD Progressive Mode"
-msgstr "HD progresivní režim"
+msgstr ""
 
 msgid "Lock timeout"
 msgstr ""
@@ -115,13 +107,11 @@ msgstr ""
 msgid "Manual"
 msgstr ""
 
-#, fuzzy
 msgid "Manual resolution"
-msgstr "Povolit automatické rozlišení"
+msgstr ""
 
-#, fuzzy
 msgid "Manual resolution is not working in Scart/DVI-PC mode!"
-msgstr "Automatické rozlišení nepracuje v Scart/DVI-PC módu"
+msgstr ""
 
 msgid "Message timeout"
 msgstr ""
@@ -130,51 +120,49 @@ msgid "Mode"
 msgstr ""
 
 msgid "OK"
-msgstr "OK"
+msgstr ""
 
 msgid "Please select a resolution..."
 msgstr ""
 
 msgid "Refresh Rate"
-msgstr "Občerstvovací frekvence"
+msgstr ""
 
 msgid "Return back without confirmation after 10 sec."
 msgstr ""
 
 msgid "Running in testmode"
-msgstr "Spouštět v testovacím režimu"
+msgstr ""
 
 msgid "SD 24HZ Progressive mode"
-msgstr "SD 24Hz progresivní režim"
+msgstr ""
 
 msgid "SD 25/50HZ Interlace Mode"
-msgstr "SD 25/50Hz prokládaný režim"
+msgstr ""
 
 msgid "SD 25/50HZ Progressive Mode"
-msgstr "SD 25/50Hz progresivní režim"
+msgstr ""
 
 msgid "SD 30/60HZ Interlace Mode"
-msgstr "SD 30/60Hz prokládaný režim"
+msgstr ""
 
 msgid "SD 30/60HZ Progressive Mode"
-msgstr "SD 30/60Hz progresivní režim"
+msgstr ""
 
 msgid "Show 'Manual resolution' in extensions menu"
 msgstr ""
 
 msgid "Show info screen"
-msgstr "Zobrazovat info obrazovku"
+msgstr ""
 
 msgid "This resolution is OK?"
 msgstr ""
 
-#, fuzzy
 msgid "UHD Interlace Mode"
-msgstr "HD prokládaný režim"
+msgstr ""
 
-#, fuzzy
 msgid "UHD Progressive Mode"
-msgstr "HD progresivní režim"
+msgstr ""
 
 msgid "Use 60HZ instead 30HZ"
 msgstr ""
@@ -195,22 +183,22 @@ msgid "Videomode: %s %s %s"
 msgstr ""
 
 msgid "auto"
-msgstr "auto"
+msgstr ""
 
 msgid "bob"
-msgstr "nejlepší možné"
+msgstr ""
 
 msgid "default"
-msgstr "standardní"
+msgstr ""
 
 msgid "off"
-msgstr "vypnuto"
+msgstr ""
 
 msgid "on"
-msgstr "zapnuto"
+msgstr ""
 
 msgid "second"
-msgstr "s"
+msgstr ""
 
 msgid "seconds"
-msgstr "s"
+msgstr ""
