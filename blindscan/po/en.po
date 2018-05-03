@@ -1,12 +1,15 @@
-# English translations for Enigma2.
+# English translations for enigma package.
+# Copyright (C) 2018 THE enigma'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the enigma package.
+# Automatically generated, 2018.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: enigma2 3.0.0\n"
+"Project-Id-Version: enigma 2-plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-29 18:20+0100\n"
-"PO-Revision-Date: 2012-05-18 01:41+0100\n"
-"Last-Translator: Andy Blackburn <andyblac@o2.co.uk>\n"
+"POT-Creation-Date: 2018-05-03 11:46+0200\n"
+"PO-Revision-Date: 2018-05-03 11:46+0200\n"
+"Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: en\n"
 "MIME-Version: 1.0\n"
@@ -15,19 +18,105 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid ""
+"\n"
+"Second slot dual tuner may not be supported blind scan."
+msgstr ""
+"\n"
+"Second slot dual tuner may not be supported blind scan."
+
+msgid ""
+"\n"
+"WARNING! Blind scan may make the tuner malfunction on a VU+ and ET receiver. "
+"A reboot afterwards may be required to return to proper tuner function."
+msgstr ""
+"\n"
+"WARNING! Blind scan may make the tuner malfunction on a VU+ and ET receiver. "
+"A reboot afterwards may be required to return to proper tuner function."
+
+msgid ""
+"\n"
+"You must use the power adapter."
+msgstr ""
+"\n"
+"You must use the power adapter."
+
+#, python-format
+msgid ""
+"   Current Status : %d/%d\n"
+"   Satellite : %s\n"
+"   Polarization : %s\n"
+"   Frequency range : %d - %d MHz\n"
+"   Symbol rates : %d - %d MHz"
+msgstr ""
+"   Current Status : %d/%d\n"
+"   Satellite : %s\n"
+"   Polarization : %s\n"
+"   Frequency range : %d - %d MHz\n"
+"   Symbol rates : %d - %d MHz"
+
+msgid "   Starting Sundtek hardware blind scan."
+msgstr "   Starting Sundtek hardware blind scan."
+
+msgid " tuner."
+msgstr " tuner."
+
+msgid ""
 "\"channel scan\" searches for channels and saves them to your receiver; "
 "\"save to XML file\" does a transponder search and saves found transponders "
 "to an XML file in satellites.xml format"
 msgstr ""
+"\"channel scan\" searches for channels and saves them to your receiver; "
+"\"save to XML file\" does a transponder search and saves found transponders "
+"to an XML file in satellites.xml format"
 
-msgid "Blind Scan"
-msgstr "Blind Scan"
+#, python-format
+msgid "%d transponder(s) found"
+msgstr "%d transponder(s) found"
 
-msgid "Blindscan"
-msgstr "Blindscan"
+#, python-format
+msgid "%d transponders found at %d:%02d min"
+msgstr "%d transponders found at %d:%02d min"
+
+#, python-format
+msgid "%d:%02d/%d:%02dmin"
+msgstr "%d:%02d/%d:%02dmin"
+
+#, python-format
+msgid "%dMHz scanned"
+msgstr "%dMHz scanned"
+
+msgid "AUTOMATICALLY start service searching, press green to change"
+msgstr "AUTOMATICALLY start service searching, press green to change"
+
+msgid "Accuracy (higher is better)"
+msgstr "Accuracy (higher is better)"
+
+msgid "Another type"
+msgstr "Another type"
+
+msgid "Blind scan"
+msgstr "Blind scan"
+
+msgid "Blind scan for DVB-S2 tuners"
+msgstr "Blind scan for DVB-S2 tuners"
+
+msgid "Blind scan state"
+msgstr "Blind scan state"
+
+msgid "Blindscan is not supported in "
+msgstr "Blindscan is not supported in "
 
 msgid "Clear before scan"
 msgstr "Clear before scan"
+
+msgid "DVB-S + DVB-S2"
+msgstr "DVB-S + DVB-S2"
+
+msgid "DVB-S only"
+msgstr "DVB-S only"
+
+msgid "Dreambox type"
+msgstr "Dreambox type"
 
 msgid "Exit"
 msgstr "Exit"
@@ -35,131 +124,88 @@ msgstr "Exit"
 msgid "Filter out adjacent satellites"
 msgstr "Filter out adjacent satellites"
 
-msgid ""
-"Frequency values must be between 10700 and 12750 (or 3000 and 4200 in the "
-"case of C-band satellites)"
-msgstr ""
-"Frequency values must be between 10700 and 12750 (or 3000 and 4200 in the "
-"case of C-band satellites)"
+msgid "Frequency values must be between 10700 MHz and 12749 MHz"
+msgstr "Frequency values must be between 10700 MHz and 12749 MHz"
+
+msgid "Frequency values must be between 10701 MHz and 12750 MHz"
+msgstr "Frequency values must be between 10701 MHz and 12750 MHz"
 
 msgid ""
-"If you are not sure what polarisations the satellite you wish to search "
-"transmits, select \"vertical and horizontal\""
+"Frequency values must be between 117000 MHz and 12749 MHz (Circular-band)"
 msgstr ""
-"If you are not sure what polarisations the satellite you wish to search "
-"transmits, select \"vertical and horizontal\""
+"Frequency values must be between 117000 MHz and 12749 MHz (Circular-band)"
 
 msgid ""
-"If you select \"yes\" all channels on the satellite being search will be "
-"deleted before starting the current search"
+"Frequency values must be between 11701 MHz and 12750 MHz (Circular-band)"
 msgstr ""
-"If you select \"yes\" all channels on the satellite being search will be "
-"deleted before starting the current search"
+"Frequency values must be between 11701 MHz and 12750 MHz (Circular-band)"
 
-msgid ""
-"If you select \"yes\" the scan will only save channels that are not "
-"encrypted; \"no\" will find encrypted and non-encrypted channels"
-msgstr ""
-"If you select \"yes\" the scan will only save channels that are not "
-"encrypted; \"no\" will find encrypted and non-encrypted channels"
+msgid "Frequency values must be between 3000 MHz and 4199 MHz (C-band)"
+msgstr "Frequency values must be between 3000 MHz and 4199 MHz (C-band)"
 
-msgid ""
-"If you select \"yes\" the scan will only search transponders not listed in "
-"satellites.xml"
-msgstr ""
-"If you select \"yes\" the scan will only search transponders not listed in "
-"satellites.xml"
-
-msgid ""
-"Invalid parameters entered. Please correct and try again.\n"
-"For C-band searches stop frequency must be between 3000MHz and 4200MHz."
-msgstr ""
-"Invalid parameters entered. Please correct and try again.\n"
-"For C-band searches stop frequency must be between 3000MHz and 4200MHz."
-
-msgid ""
-"Invalid parameters entered. Please correct and try again.\n"
-"Frequency start value is larger than stop value."
-msgstr ""
-"Invalid parameters entered. Please correct and try again.\n"
-"Frequency start value is larger than stop value."
-
-msgid ""
-"Invalid parameters entered. Please correct and try again.\n"
-"Start frequency must be between 10700MHz and 12750MHz.\n"
-"(Or 3000MHz and 4200MHz in the case of c-band)."
-msgstr ""
-"Invalid parameters entered. Please correct and try again.\n"
-"Start frequency must be between 10700MHz and 12750MHz.\n"
-"(Or 3000MHz and 4200MHz in the case of c-band)."
-
-msgid ""
-"Invalid parameters entered. Please correct and try again.\n"
-"Start symbol rate must be between 1MHz and 44MHz."
-msgstr ""
-"Invalid parameters entered. Please correct and try again.\n"
-"Start symbol rate must be between 1MHz and 44MHz."
-
-msgid ""
-"Invalid parameters entered. Please correct and try again.\n"
-"Stop frequency must be between 10700MHz and 12750MHz.\n"
-"(Or 3000MHz and 4200MHz in the case of c-band)."
-msgstr ""
-"Invalid parameters entered. Please correct and try again.\n"
-"Stop frequency must be between 10700MHz and 12750MHz.\n"
-"(Or 3000MHz and 4200MHz in the case of c-band)."
-
-msgid ""
-"Invalid parameters entered. Please correct and try again.\n"
-"Stop symbol rate must be between 2MHz and 45MHz."
-msgstr ""
-"Invalid parameters entered. Please correct and try again.\n"
-"Stop symbol rate must be between 2MHz and 45MHz."
-
-msgid ""
-"Invalid parameters entered. Please correct and try again.\n"
-"Symbol rate start value is larger than stop value."
-msgstr ""
-"Invalid parameters entered. Please correct and try again.\n"
-"Symbol rate start value is larger than stop value."
-
-msgid ""
-"Invalid parameters entered. Please correct and try again.\n"
-"That is a C-band satellite so frequency values \n"
-"need to be between 3000MHz and 4200MHz."
-msgstr ""
-"Invalid parameters entered. Please correct and try again.\n"
-"That is a C-band satellite so frequency values \n"
-"need to be between 3000MHz and 4200MHz."
-
-msgid ""
-"Invalid parameters entered. Please correct and try again.\n"
-"That is a Ku-band satellite so frequency values \n"
-"need to be between 10700MHz and 12750MHz."
-msgstr ""
-"Invalid parameters entered. Please correct and try again.\n"
-"That is a Ku-band satellite so frequency values \n"
-"need to be between 10700MHz and 12750MHz."
+msgid "Frequency values must be between 3001 MHz and 4200 MHz (C-band)"
+msgstr "Frequency values must be between 3001 MHz and 4200 MHz (C-band)"
 
 #, python-format
+msgid "Hardware blind scan is not supported by this tuner (%s)!"
+msgstr "Hardware blind scan is not supported by this tuner (%s)!"
+
+msgid "Horizontal"
+msgstr "Horizontal"
+
+msgid ""
+"If you select \"yes\" all channels on the satellite being search will be "
+"deleted before starting the current search, yes (keep feeds) means the same "
+"but hold all feed services/transponders."
+msgstr ""
+"If you select \"yes\" all channels on the satellite being search will be "
+"deleted before starting the current search, yes (keep feeds) means the same "
+"but hold all feed services/transponders."
+
+msgid ""
+"If you select \"yes\" in addition to scan transponders list the NIT (Network "
+"Information Table; contains all the info of a provider) is being read and "
+"the channels being advertised in there are stored in your tuner."
+msgstr ""
+"If you select \"yes\" in addition to scan transponders list the NIT (Network "
+"Information Table; contains all the info of a provider) is being read and "
+"the channels being advertised in there are stored in your tuner."
+
+msgid ""
+"If you select \"yes\" the scan will only save channels that are not "
+"encrypted; \"no\" will find encrypted and non-encrypted channels"
+msgstr ""
+"If you select \"yes\" the scan will only save channels that are not "
+"encrypted; \"no\" will find encrypted and non-encrypted channels"
+
+msgid ""
+"If you select \"yes\" the scan will only search transponders not listed in "
+"satellites.xml"
+msgstr ""
+"If you select \"yes\" the scan will only search transponders not listed in "
+"satellites.xml"
+
+msgid "It seems manufacturer does not support blind scan for this tuner."
+msgstr "It seems manufacturer does not support blind scan for this tuner."
+
 msgid ""
 "Looking for available transponders.\n"
-"This will take a short while.\n"
-"\n"
-"   Current Status : %d/%d\n"
-"   Satellite : %s\n"
-"   Polarization : %s\n"
-"   Frequency range : %d - %d MHz\n"
-"   Symbol rates : %d - %d MHz"
+"This will take a long time, please be patient."
 msgstr ""
 "Looking for available transponders.\n"
-"This will take a short while.\n"
-"\n"
-"   Current Status : %d/%d\n"
-"   Satellite : %s\n"
-"   Polarization : %s\n"
-"   Frequency range : %d - %d MHz\n"
-"   Symbol rates : %d - %d MHz"
+"This will take a long time, please be patient."
+
+msgid "MANUALLY start service searching, press green to change"
+msgstr "MANUALLY start service searching, press green to change"
+
+msgid "Maybe the reason that recording is currently running."
+msgstr "Maybe the reason that recording is currently running."
+
+msgid "Moving to "
+msgstr "Moving to "
+
+msgid "Network scan"
+msgstr "Network scan"
 
 msgid ""
 "No new transponders found! \n"
@@ -175,11 +221,35 @@ msgstr ""
 msgid "No transponders were found for those search parameters!"
 msgstr "No transponders were found for those search parameters!"
 
+msgid ""
+"No tuner is enabled!\n"
+"Please setup your tuner settings before you start a service scan."
+msgstr ""
+"No tuner is enabled!\n"
+"Please setup your tuner settings before you start a service scan."
+
+#, python-format
+msgid "Not found blind scan utility '%s'!"
+msgstr "Not found blind scan utility '%s'!"
+
+msgid ""
+"Nothing to scan!\n"
+"Please setup your tuner settings before you start a service scan."
+msgstr ""
+"Nothing to scan!\n"
+"Please setup your tuner settings before you start a service scan."
+
+msgid "Nothing to scan! Press Exit!"
+msgstr "Nothing to scan! Press Exit!"
+
 msgid "Only free scan"
 msgstr "Only free scan"
 
 msgid "Only scan unknown transponders"
 msgstr "Only scan unknown transponders"
+
+msgid "Open xml file"
+msgstr "Open xml file"
 
 msgid "Please setup your tuner configuration."
 msgstr "Please setup your tuner configuration."
@@ -190,11 +260,26 @@ msgstr "Polarisation"
 msgid "Press Green/OK to start the scan"
 msgstr "Press Green/OK to start the scan"
 
+msgid "Press OK to start the scan"
+msgstr "Press OK to start the scan"
+
+msgid "Press green to start service searching!"
+msgstr "Press green to start service searching!"
+
+msgid "Rotor: "
+msgstr "Rotor: "
+
 msgid "Satellite"
 msgstr "Satellite"
 
-msgid "Scan"
-msgstr "Scan"
+msgid "Satellite blind scan"
+msgstr "Satellite blind scan"
+
+msgid "Scan Step in MHz(TBS5925)"
+msgstr "Scan Step in MHz(TBS5925)"
+
+msgid "Scan satellites for new transponders"
+msgstr "Scan satellites for new transponders"
 
 msgid "Scan start frequency"
 msgstr "Scan start frequency"
@@ -207,6 +292,9 @@ msgstr "Scan stop frequency"
 
 msgid "Scan stop symbolrate"
 msgstr "Scan stop symbolrate"
+
+msgid "Scan unknown error!"
+msgstr "Scan unknown error!"
 
 #, python-format
 msgid ""
@@ -229,6 +317,22 @@ msgstr "Select a tuner that is configured for the satellite you wish to search"
 msgid "Select the satellite you wish to search"
 msgstr "Select the satellite you wish to search"
 
+msgid "Select type for scan:"
+msgstr "Select type for scan:"
+
+msgid "Smaller steps takes longer but scan is more thorough"
+msgstr "Smaller steps takes longer but scan is more thorough"
+
+msgid "Sorry, this tuner is in use."
+msgstr "Sorry, this tuner is in use."
+
+msgid "Start scan"
+msgstr "Start scan"
+
+#, python-format
+msgid "Step %d %d:%02d min"
+msgstr "Step %d %d:%02d min"
+
 msgid "Symbol rate values are in megasymbols; enter a value between 1 and 44"
 msgstr "Symbol rate values are in megasymbols; enter a value between 1 and 44"
 
@@ -238,8 +342,24 @@ msgstr "Symbol rate values are in megasymbols; enter a value between 2 and 45"
 msgid "The blindscan run was cancelled by the user."
 msgstr "The blindscan run was cancelled by the user."
 
+#, python-format
+msgid "The suggested polarisation for this satellite is '%s'"
+msgstr "The suggested polarisation for this satellite is '%s'"
+
+msgid "Transponder searching finished!"
+msgstr "Transponder searching finished!"
+
+msgid "Try to find used satellite transponders..."
+msgstr "Try to find used satellite transponders..."
+
 msgid "Tuner"
 msgstr "Tuner"
+
+msgid "Use Sundtek full hardware blind scan!"
+msgstr "Use Sundtek full hardware blind scan!"
+
+msgid "Vertical"
+msgstr "Vertical"
 
 msgid ""
 "When a neighbouring satellite is very strong this avoids searching "
@@ -253,6 +373,9 @@ msgstr "circular left"
 
 msgid "circular right"
 msgstr "circular right"
+
+msgid "circular right & circular left"
+msgstr "circular right & circular left"
 
 msgid "circular right and circular left"
 msgstr "circular right and circular left"
@@ -281,5 +404,14 @@ msgstr "up to 3 degrees"
 msgid "vertical"
 msgstr "vertical"
 
+msgid "vertical & horizontal"
+msgstr "vertical & horizontal"
+
 msgid "vertical and horizontal"
 msgstr "vertical and horizontal"
+
+msgid "yes"
+msgstr "yes"
+
+msgid "yes (keep feeds)"
+msgstr "yes (keep feeds)"
