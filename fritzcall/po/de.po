@@ -289,9 +289,7 @@ msgstr ""
 msgid "FRITZ!Box PhoneBook to read"
 msgstr ""
 
-msgid ""
-"FRITZ!Box firmware version not configured! Please set it in the "
-"configuration."
+msgid "FRITZ!Box firmware version not configured! Please set it in the configuration."
 msgstr ""
 
 msgid "FRITZ!Box not available for calling"
@@ -586,9 +584,7 @@ msgstr ""
 msgid "Timeout for Call Notifications (seconds)"
 msgstr ""
 
-msgid ""
-"To enjoy more functionalities of your FRITZ!Box, configure the firmware "
-"version!"
+msgid "To enjoy more functionalities of your FRITZ!Box, configure the firmware version!"
 msgstr ""
 
 #. TRANSLATORS: keep it short, this is a help text
