@@ -134,9 +134,7 @@ msgstr ""
 msgid "Do you really want to delete the timer for \"%s\"?"
 msgstr ""
 
-msgid ""
-"Do you want to switch the prime time? Currently selected favorites will be "
-"lost!"
+msgid "Do you want to switch the prime time? Currently selected favorites will be lost!"
 msgstr ""
 
 msgid "Duration"
@@ -227,8 +225,7 @@ msgstr ""
 msgid ""
 "Prime Time Manager:\n"
 "\n"
-"Sorry, but a timer for %s can't be set because there are conflicts with "
-"other timers."
+"Sorry, but a timer for %s can't be set because there are conflicts with other timers."
 msgstr ""
 
 msgid ""
@@ -336,9 +333,7 @@ msgid "This event will be an instant record.\n"
 msgstr ""
 
 #, python-format
-msgid ""
-"This is a repeated timer! Do you really want to delete the repeated timer "
-"for \"%s\"?"
+msgid "This is a repeated timer! Do you really want to delete the repeated timer for \"%s\"?"
 msgstr ""
 
 msgid "Timer sanity error"
