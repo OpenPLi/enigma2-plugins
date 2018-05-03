@@ -1,169 +1,209 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR Free Software Foundation, Inc.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# German translations for enigma package.
+# Copyright (C) 2018 THE enigma'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the enigma package.
+# Automatically generated, 2018.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Enigma2 SimpleRSS Plugin\n"
+"Project-Id-Version: enigma 2-plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-09-10 23:20+0200\n"
-"PO-Revision-Date: 2009-09-10 23:22+0100\n"
-"Last-Translator: Moritz Venn <moritz.venn@freaque.net>\n"
-"Language-Team: german <de@li.org>\n"
+"POT-Creation-Date: 2018-05-03 11:46+0200\n"
+"PO-Revision-Date: 2018-05-03 11:46+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #, python-format
 msgid "%d Feed(s) were added to configuration."
-msgstr "%d Kanäle wurden der Konfiguration hinzugefügt."
+msgstr ""
+
+#, python-format
+msgid "%d feed(s) added to configuration."
+msgstr ""
+
+msgid "--- Scanner automount ---"
+msgstr ""
+
+msgid "< Create file any name.rss in USB device >"
+msgstr ""
+
+msgid "< and write feeds link column >"
+msgstr ""
 
 msgid "A simple to use RSS reader"
-msgstr "Ein einfacher Newsreader"
+msgstr ""
+
+msgid "Apply"
+msgstr ""
 
 msgid "Autoupdate"
-msgstr "Automatisch aktualisieren"
+msgstr ""
 
 msgid "Cancel"
-msgstr "Abbrechen"
+msgstr ""
 
 msgid "Close"
-msgstr "Schließen"
+msgstr ""
 
 msgid "Delete"
-msgstr "Löschen"
+msgstr ""
 
 msgid "Enclosures"
-msgstr "Anhänge"
+msgstr ""
 
 msgid "Entries"
-msgstr "Einträge"
+msgstr ""
 
 #, python-format
 msgid "Entry %s/%s"
-msgstr "Eintrag %s/%s"
+msgstr ""
 
 msgid ""
 "Error while parsing Feed, this usually means there is something wrong with "
 "it."
 msgstr ""
-"Fehler während der Verarbeitung. Dies beudetet in der Regel, dass etwas mit "
-"dem Kanal nicht stimmt."
 
 msgid "Failed to get subscriptions from Google Reader."
-msgstr "Konnte Abonnements nicht von Google Reader auslesen."
+msgstr ""
 
 msgid "Failed to login to Google Reader."
-msgstr "Anmeldung bei Google Reader fehlgeschlagen."
+msgstr ""
 
 msgid "Feed"
-msgstr "Kanal"
+msgstr ""
 
 #, python-format
 msgid "Feed %s/%s"
-msgstr "Kanal %s/%s"
+msgstr ""
 
 msgid "Feed URI"
-msgstr "Adresse"
+msgstr ""
 
 msgid "Feed is empty."
-msgstr "Kanal ist leer."
+msgstr ""
 
 msgid "Fetch feeds from Google Reader?"
-msgstr "Abonnements bei Google Reader auslesen?"
+msgstr ""
+
+#, python-format
+msgid "Found %d feed(s)"
+msgstr ""
 
 msgid "Found no Enclosure we can display."
-msgstr "Keine anzeigbaren Anhänge gefunden."
+msgstr ""
 
 msgid "Google Password"
-msgstr "Google Passwort"
+msgstr ""
 
 msgid "Google Username"
-msgstr "Google Benutzername"
+msgstr ""
 
 msgid "Keep running in background"
-msgstr "Im Hintergrund aktiv bleiben"
+msgstr ""
+
+msgid "Let's you view current RSS entries"
+msgstr ""
 
 msgid "New"
-msgstr "Neu"
+msgstr ""
 
 msgid "New Items"
-msgstr "Neue Nachrichten"
+msgstr ""
 
 msgid "New Items since last Auto-Update"
-msgstr "Neue Nachrichten seit letzter Aktualisierung"
+msgstr ""
 
 msgid "No such Item."
-msgstr "Keine derartige Nachricht."
+msgstr ""
+
+msgid "Not found new feed(s)."
+msgstr ""
 
 msgid "Notification"
-msgstr "Benachrichtigung"
+msgstr ""
 
 msgid "OK"
-msgstr "OK"
+msgstr ""
 
 msgid "Preview"
-msgstr "Vorschau"
+msgstr ""
+
+msgid "RSS Reader"
+msgstr ""
+
+msgid "RSS-Reader"
+msgstr ""
+
+#, python-format
+msgid "Read error %s"
+msgstr ""
 
 msgid ""
 "Really delete this entry?\n"
 "It cannot be recovered!"
 msgstr ""
-"Diesen Eintrag wirklich entfernen?\n"
-"Diese Aktion ist unwiderruflich!"
 
 #, python-format
 msgid "Received %d new news item(s)."
-msgstr "%d neue Nachrichten empfangen."
+msgstr ""
+
+msgid "Scroll speed (ms)"
+msgstr ""
 
 msgid "Setup"
-msgstr "Einstellungen"
+msgstr ""
+
+msgid "Show in extensions menu"
+msgstr ""
 
 msgid "Show new Messages as"
-msgstr "Neue Nachrichten als"
+msgstr ""
 
 msgid "Simple RSS Reader"
-msgstr "Simple RSS Reader"
+msgstr ""
 
 msgid "Simple RSS Reader Setup"
-msgstr "Simple RSS Reader Einstellungen"
+msgstr ""
 
 #, python-format
 msgid "Simple RSS Reader: %s"
-msgstr "Simple RSS Reader: %s"
+msgstr ""
 
 #, python-format
 msgid ""
 "Sorry, this type of feed is unsupported:\n"
 "%s"
 msgstr ""
-"Derartige Kanäle werden nicht unterstützt:\n"
-"%s"
 
 msgid "Start automatically with Enigma2"
-msgstr "Automatisch mit Enigma2 starten"
+msgstr ""
 
 msgid "Subscribe Newsfeed..."
-msgstr "Nachrichtenkanal abonieren..."
+msgstr ""
+
+msgid "Ticker"
+msgstr ""
 
 msgid "Update Feed"
-msgstr "Kanal aktualisieren"
+msgstr ""
 
 msgid "Update Interval (min)"
-msgstr "Aktualisierungsinterval (min)"
+msgstr ""
 
 msgid ""
 "Update is being done in Background.\n"
 "Contents will automatically be updated when it's done."
 msgstr ""
-"Aktualisiere im Hintergrund.\n"
-"Die Änderungen werden automatisch übernommen."
 
 msgid "View RSS..."
-msgstr "RSS Nachrichten anzeigen..."
+msgstr ""
 
 msgid "What to do?"
-msgstr "Was möchten Sie tun?"
+msgstr ""
 
 msgid "none"
-msgstr "Keins"
+msgstr ""
