@@ -1,22 +1,28 @@
+# Hungarian translations for enigma package.
+# Copyright (C) 2018 THE enigma'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the enigma package.
+# Automatically generated, 2018.
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
-"POT-Creation-Date: \n"
-"PO-Revision-Date: \n"
-"Last-Translator: robertut <robertut@yahoo.com>\n"
-"Language-Team: \n"
+"Project-Id-Version: enigma 2-plugins\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-05-03 11:46+0200\n"
+"PO-Revision-Date: 2018-05-03 11:46+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Language: Hungarian\n"
-"X-Poedit-Country: HUNGARY\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #, python-format
 msgid "%d kb/s"
-msgstr "%d kb/s"
+msgstr ""
 
 msgid "A basic FTP client"
-msgstr "Egy egyszerű FTP kliens"
+msgstr ""
 
 #, python-format
 msgid ""
@@ -34,30 +40,28 @@ msgid ""
 "A transfer is currently in progress.\n"
 "What do you want to do?"
 msgstr ""
-"Egy adatátvitel jelenleg folyamatban van.\n"
-"Mit szeretne tenni?"
 
 msgid "Abort transfer"
-msgstr "Átvitel megszakítása"
+msgstr ""
 
 msgid "Add"
-msgstr "Hozzáadás"
+msgstr ""
 
 msgid "Address:"
-msgstr "Cím:"
+msgstr ""
 
 #, python-format
 msgid "Are you sure you want to delete %s?"
-msgstr "Biztos benne, hogy törölni szeretné ezt a tételt: %s?"
+msgstr ""
 
 msgid "Cancel"
-msgstr "Mégse"
+msgstr ""
 
 msgid "Configuration saved."
-msgstr "Konfiguráció mentve."
+msgstr ""
 
-msgid "Connect to FTP"
-msgstr "Kapcsolódás FTP-hez"
+msgid "Connect to FTP..."
+msgstr ""
 
 msgid "Could not connect to ftp server!"
 msgstr ""
@@ -74,38 +78,38 @@ msgid "Could not rename %s."
 msgstr ""
 
 msgid "Delete"
-msgstr "Törlés"
+msgstr ""
 
 msgid "Download"
-msgstr "Letöltés"
+msgstr ""
 
 msgid "Download finished."
-msgstr "A letöltés befejeződött."
+msgstr ""
 
 #, python-format
 msgid "ETA %d:%02d min"
-msgstr "Hátravan %d:%02d perc"
+msgstr ""
 
 msgid "Edit"
-msgstr "Szerkesztés"
+msgstr ""
 
 msgid "Enter URI"
-msgstr "FTP szerver cím"
+msgstr ""
 
 msgid "Enter URI of FTP Server:"
-msgstr "Adja meg az FTP szerver címét:"
+msgstr ""
 
 msgid "Enter new filename:"
 msgstr ""
 
 msgid "Error"
-msgstr "Hiba"
+msgstr ""
 
 msgid "Error during download."
 msgstr ""
 
 msgid "Exit"
-msgstr "Kilépés"
+msgstr ""
 
 msgid "FTP Queue Manager"
 msgstr ""
@@ -117,25 +121,25 @@ msgid "FTP Server Manager"
 msgstr ""
 
 msgid "Local"
-msgstr "Helyi"
+msgstr ""
 
 msgid "Name:"
-msgstr "Név:"
+msgstr ""
 
 msgid "OK"
-msgstr "OK"
+msgstr ""
 
 msgid "Parent Directory"
 msgstr ""
 
 msgid "Passive:"
-msgstr "Passzív:"
+msgstr ""
 
 msgid "Password:"
-msgstr "Jelszó:"
+msgstr ""
 
 msgid "Port:"
-msgstr "Port:"
+msgstr ""
 
 msgid "Queue Manager"
 msgstr ""
@@ -149,10 +153,10 @@ msgid ""
 msgstr ""
 
 msgid "Remote"
-msgstr "Távoli"
+msgstr ""
 
 msgid "Remote (not connected)"
-msgstr "Távoli (kapcsolat nélkül)"
+msgstr ""
 
 #, python-format
 msgid "Removed %s."
@@ -162,7 +166,7 @@ msgid "Removing directories is not supported."
 msgstr ""
 
 msgid "Rename"
-msgstr "Átnevezés"
+msgstr ""
 
 #, python-format
 msgid "Renamed %s to %s."
@@ -172,7 +176,7 @@ msgid "Run in Background"
 msgstr ""
 
 msgid "Save"
-msgstr "Mentés"
+msgstr ""
 
 msgid "Select local file list"
 msgstr ""
@@ -192,23 +196,22 @@ msgid "There already is an active transfer."
 msgstr ""
 
 msgid "Upload"
-msgstr "Feltöltés"
+msgstr ""
 
 msgid "Upload finished."
 msgstr ""
 
 msgid "Username:"
-msgstr "Felhasználónév:"
+msgstr ""
 
 msgid "Which server do you want to connect to?"
 msgstr ""
 
 msgid "close"
-msgstr "bezárás"
+msgstr ""
 
 msgid "enter directory/get file/put file"
 msgstr ""
 
 msgid "open menu"
-msgstr "menü megnyítás"
-
+msgstr ""
