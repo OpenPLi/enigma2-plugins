@@ -1,0 +1,119 @@
+# English translations for enigma package.
+# Copyright (C) 2018 THE enigma'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the enigma package.
+# Automatically generated, 2018.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: enigma 2-plugins\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-05-03 14:01+0200\n"
+"PO-Revision-Date: 2018-05-03 14:01+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Add default bootlogo to folder logos"
+msgstr "Add default bootlogo to folder logos"
+
+msgid "Add default radio to folder logos"
+msgstr "Add default radio to folder logos"
+
+msgid "CF Drive"
+msgstr "CF Drive"
+
+msgid "Cancel"
+msgstr "Cancel"
+
+msgid "Directory to scan for logos"
+msgstr "Directory to scan for logos"
+
+msgid "Disable backdrop"
+msgstr "Disable backdrop"
+
+msgid "Disable reboot"
+msgstr "Disable reboot"
+
+msgid "Disable switch off"
+msgstr "Disable switch off"
+
+msgid "Harddisk"
+msgstr "Harddisk"
+
+msgid "Install selected logo as..."
+msgstr "Install selected logo as..."
+
+msgid "Logo Manager"
+msgstr "Logo Manager"
+
+msgid "Logo manager setup"
+msgstr "Logo manager setup"
+
+msgid "None"
+msgstr "None"
+
+#, python-format
+msgid "Not found directory '%s'!"
+msgstr "Not found directory '%s'!"
+
+msgid "OK"
+msgstr "OK"
+
+msgid "Open configuration"
+msgstr "Open configuration"
+
+msgid "Please select a option:"
+msgstr "Please select a option:"
+
+#, python-format
+msgid "Really remove current logo of %s?"
+msgstr "Really remove current logo of %s?"
+
+msgid "Remove current logo"
+msgstr "Remove current logo"
+
+msgid "Reset all logos to default"
+msgstr "Reset all logos to default"
+
+msgid "Reset bootlogo to default"
+msgstr "Reset bootlogo to default"
+
+msgid "Reset radio to default"
+msgstr "Reset radio to default"
+
+msgid "Select target for logo:"
+msgstr "Select target for logo:"
+
+msgid "Show active logos"
+msgstr "Show active logos"
+
+msgid "Show available logos"
+msgstr "Show available logos"
+
+msgid "USB Drive"
+msgstr "USB Drive"
+
+msgid "backdrop"
+msgstr "backdrop"
+
+msgid "bootlogo"
+msgstr "bootlogo"
+
+msgid "manage logos to display at boottime"
+msgstr "manage logos to display at boottime"
+
+msgid "radio"
+msgstr "radio"
+
+msgid "reboot"
+msgstr "reboot"
+
+msgid "switch off"
+msgstr "switch off"
+
+msgid "view bootlogo/mvi"
+msgstr "view bootlogo/mvi"
