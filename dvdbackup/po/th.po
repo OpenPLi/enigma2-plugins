@@ -1,18 +1,20 @@
+# Thai translations for enigma package.
+# Copyright (C) 2018 THE enigma'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the enigma package.
+# Automatically generated, 2018.
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: DVDBackup\n"
+"Project-Id-Version: enigma 2-plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-05-03 14:00+0200\n"
-"PO-Revision-Date: \n"
-"Last-Translator: ims <ims21@users.sourceforge.net>\n"
-"Language-Team: PLi <ims21@users.sourceforge.net>\n"
-"Language: \n"
+"PO-Revision-Date: 2018-05-03 14:00+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: th\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Language: Czech\n"
-"X-Poedit-Country: CZECH REPUBLIC\n"
-"Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 
 msgid " B"
 msgstr ""
@@ -24,7 +26,7 @@ msgid " MB"
 msgstr ""
 
 msgid "Abort"
-msgstr "Zrušit"
+msgstr ""
 
 msgid "Auto set name and folder DVD"
 msgstr ""
@@ -32,53 +34,51 @@ msgstr ""
 msgid "Backup directory too small size!"
 msgstr ""
 
-#, fuzzy
 msgid "Backup directory:"
-msgstr "Adresář:"
+msgstr ""
 
 msgid "Backup of DVD finished."
-msgstr "Záloha DVD byla dokončena."
+msgstr ""
 
 msgid "Backup your Video-DVD to your harddisk"
-msgstr "Záloha Video-DVD na pevný disk"
+msgstr ""
 
 msgid "Could not find any file to backup!"
-msgstr "Nepodařilo se nalézt žádný soubor pro zálohování!"
+msgstr ""
 
 msgid "Could not install needed dvdbackup package!"
-msgstr "Nebylo možné nainstalovat potřebný dvdbackup balíček!"
+msgstr ""
 
 msgid "Could not read the DVD informations!"
-msgstr "Nebylo možné načíst informace o DVD!"
+msgstr ""
 
 msgid "Create iso:"
-msgstr "Vytvořit iso:"
+msgstr ""
 
 msgid "Create log (tmp/dvdbackup.log):"
 msgstr ""
 
 msgid "DVD Backup"
-msgstr "DVD Backup"
+msgstr ""
 
-#, fuzzy
 msgid "DVD Backup Progress"
-msgstr "DVD Backup"
+msgstr ""
 
 msgid "Device mount folder:"
 msgstr ""
 
 msgid "Duration:"
-msgstr "Doba zpracování:"
+msgstr ""
 
 msgid "Eject DVD?"
-msgstr "Vysunout DVD?"
+msgstr ""
 
 #, python-format
 msgid "Error read folder %s!"
 msgstr ""
 
 msgid "Error while backup of DVD!"
-msgstr "Chyba při zálohování DVD!"
+msgstr ""
 
 msgid "Exit"
 msgstr ""
@@ -90,13 +90,13 @@ msgid "Folder/iso name:"
 msgstr ""
 
 msgid "Keyboard"
-msgstr "Klávesnice"
+msgstr ""
 
 msgid "Location"
-msgstr "Umístění"
+msgstr ""
 
 msgid "Name of DVD"
-msgstr "Název DVD"
+msgstr ""
 
 msgid "Open menu progress"
 msgstr ""
@@ -130,13 +130,10 @@ msgid ""
 "This is the same folder!"
 msgstr ""
 
-#, fuzzy
 msgid ""
 "genisoimage job done.\n"
 "Delete DVD directory?"
 msgstr ""
-"mkisofs dokončeno.\n"
-"Smazat DVD adresář?"
 
 msgid "no"
 msgstr ""
