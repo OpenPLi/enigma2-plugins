@@ -1,0 +1,254 @@
+# English translations for enigma package.
+# Copyright (C) 2018 THE enigma'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the enigma package.
+# Automatically generated, 2018.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: enigma 2-plugins\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-05-03 14:01+0200\n"
+"PO-Revision-Date: 2018-05-03 14:01+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "<unknown>"
+msgstr "<unknown>"
+
+msgid ""
+"A finished record timer wants to set your\n"
+"Dreambox to standby. Do that now?"
+msgstr ""
+"A finished record timer wants to set your\n"
+"Dreambox to standby. Do that now?"
+
+msgid ""
+"A finished record timer wants to shut down\n"
+"your Dreambox. Shutdown now?"
+msgstr ""
+"A finished record timer wants to shut down\n"
+"your Dreambox. Shutdown now?"
+
+msgid ""
+"A timer failed to record!\n"
+"Disable TV and try again?\n"
+msgstr ""
+"A timer failed to record!\n"
+"Disable TV and try again?\n"
+
+msgid "Add"
+msgstr "Add"
+
+msgid "Add timer"
+msgstr "Add timer"
+
+msgid "Edit Off"
+msgstr "Edit Off"
+
+msgid "Edit On"
+msgstr "Edit On"
+
+msgid "Event Info"
+msgstr "Event Info"
+
+msgid "Exit on TV <-> Radio switch:"
+msgstr "Exit on TV <-> Radio switch:"
+
+msgid "Friday"
+msgstr "Friday"
+
+msgid "General"
+msgstr "General"
+
+msgid ""
+"In order to record a timer, the TV was switched to the recording service!\n"
+msgstr ""
+"In order to record a timer, the TV was switched to the recording service!\n"
+
+msgid "Increase list item height:"
+msgstr "Increase list item height:"
+
+msgid "Limit search results to bouquet services:"
+msgstr "Limit search results to bouquet services:"
+
+msgid "List style:"
+msgstr "List style:"
+
+msgid "Lists"
+msgstr "Lists"
+
+msgid "Monday"
+msgstr "Monday"
+
+msgid "More than just an EPG..."
+msgstr "More than just an EPG..."
+
+msgid "New Search"
+msgstr "New Search"
+
+msgid "Now"
+msgstr "Now"
+
+msgid "Number of upcoming events to show:"
+msgstr "Number of upcoming events to show:"
+
+msgid "OK"
+msgstr "OK"
+
+msgid "Outdated off"
+msgstr "Outdated off"
+
+msgid "Outdated on"
+msgstr "Outdated on"
+
+msgid "Prime Time"
+msgstr "Prime Time"
+
+msgid "Prime time:"
+msgstr "Prime time:"
+
+msgid "Progress bar style:"
+msgstr "Progress bar style:"
+
+msgid "Remember last tab:"
+msgstr "Remember last tab:"
+
+msgid "Remove"
+msgstr "Remove"
+
+msgid "Remove timer"
+msgstr "Remove timer"
+
+msgid "Replace InfoBar single and multi EPG:"
+msgstr "Replace InfoBar single and multi EPG:"
+
+msgid "Saturday"
+msgstr "Saturday"
+
+msgid "Search"
+msgstr "Search"
+
+msgid "Search for:"
+msgstr "Search for:"
+
+msgid "Select running service on start:"
+msgstr "Select running service on start:"
+
+msgid "Set search term"
+msgstr "Set search term"
+
+msgid "Show blinking picon for running timers:"
+msgstr "Show blinking picon for running timers:"
+
+msgid "Show duration:"
+msgstr "Show duration:"
+
+msgid "Show event information:"
+msgstr "Show event information:"
+
+msgid "Show list numbers:"
+msgstr "Show list numbers:"
+
+msgid "Show multi colored begin/remain times:"
+msgstr "Show multi colored begin/remain times:"
+
+msgid "Show picons:"
+msgstr "Show picons:"
+
+msgid "Show service name:"
+msgstr "Show service name:"
+
+msgid "Show short description:"
+msgstr "Show short description:"
+
+msgid "Show text input help for epg search:"
+msgstr "Show text input help for epg search:"
+
+msgid "Show timer messages:"
+msgstr "Show timer messages:"
+
+msgid "Show video picture:"
+msgstr "Show video picture:"
+
+msgid "Similar"
+msgstr "Similar"
+
+msgid "Single"
+msgstr "Single"
+
+msgid "Sunday"
+msgstr "Sunday"
+
+msgid "Thursday"
+msgstr "Thursday"
+
+msgid "Timer"
+msgstr "Timer"
+
+msgid "Today"
+msgstr "Today"
+
+msgid "Tomorrow"
+msgstr "Tomorrow"
+
+msgid "Tuesday"
+msgstr "Tuesday"
+
+msgid "Unknown date"
+msgstr "Unknown date"
+
+msgid "Upcoming"
+msgstr "Upcoming"
+
+msgid "Use picons (50x30) from:"
+msgstr "Use picons (50x30) from:"
+
+msgid "Use skin:"
+msgstr "Use skin:"
+
+msgid "Wednesday"
+msgstr "Wednesday"
+
+msgid "about to start"
+msgstr "about to start"
+
+msgid "disabled"
+msgstr "disabled"
+
+msgid "done!"
+msgstr "done!"
+
+msgid "four parts"
+msgstr "four parts"
+
+msgid "gradient"
+msgstr "gradient"
+
+msgid "recording..."
+msgstr "recording..."
+
+msgid "return"
+msgstr "return"
+
+msgid "simple"
+msgstr "simple"
+
+msgid "single line style"
+msgstr "single line style"
+
+msgid "waiting"
+msgstr "waiting"
+
+msgid "with short description"
+msgstr "with short description"
+
+msgid "zapped"
+msgstr "zapped"
+
+msgid "MerlinEPGCenter"
+msgstr "MerlinEPGCenter"
