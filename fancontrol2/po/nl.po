@@ -1,343 +1,337 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR ORGANIZATION
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Dutch translations for fancontrol package.
+# Copyright (C) 2018 THE fancontrol'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the fancontrol package.
+# Automatically generated, 2018.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: FanControl2\n"
+"Project-Id-Version: fancontrol 2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-09-26 21:23+0200\n"
-"PO-Revision-Date: 2013-10-06 17:20+0100\n"
-"Last-Translator: Rob van der Does <robvddoes@gmail.com>\n"
-"Language-Team: AndyBlac, Rob van der Does\n"
-"Language: \n"
+"POT-Creation-Date: 2018-05-03 11:46+0200\n"
+"PO-Revision-Date: 2018-05-03 11:46+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: pygettext.py 1.5\n"
-"X-Poedit-Language: Dutch\n"
-"X-Poedit-Country: NETHERLANDS\n"
-"X-Poedit-SourceCharset: utf-8\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #, python-format
 msgid "%s   %02d C"
-msgstr "%s   %02d C"
+msgstr ""
 
 msgid "."
-msgstr ","
+msgstr ""
 
 msgid "3Pin"
-msgstr "3Pin"
+msgstr ""
 
 msgid "4Pin"
-msgstr "4Pin"
+msgstr ""
 
 msgid "4Pin (PID)"
-msgstr "4Pin (PID)"
+msgstr ""
 
 msgid "Action in case of Fan failure"
-msgstr "Actie bij uitval Fan "
+msgstr ""
 
 msgid "Auto-Delete Data older than (Days)"
-msgstr "Automatisch data verwijderen ouder dan (dagen) "
+msgstr ""
 
 #, python-format
 msgid "Auto-Delete older %s Days"
-msgstr "Auto-Delete older %s Days"
+msgstr ""
 
 msgid "Box Shutdown"
-msgstr "Box uitschakelen"
+msgstr ""
 
 msgid "Box has no fancontrol hardware -> FC2 deactivated"
-msgstr "Box has no fancontrol hardware -> FC2 deactivated"
+msgstr ""
 
 msgid "Box shutdown at Temperature (C)"
-msgstr "Box uitschakelen bij Temperatuur (C)"
+msgstr ""
 
 msgid "Cancel"
-msgstr "Annuleren"
+msgstr ""
 
 msgid "Check"
-msgstr "Controle"
+msgstr ""
 
 msgid "Choose path"
-msgstr "Kies het pad"
+msgstr ""
 
 msgid "Control disabled"
-msgstr "Controle uitgeschakeld"
+msgstr ""
 
 #, python-format
 msgid "Current rpm  %4d"
-msgstr "Actuele rpm  %4d"
+msgstr ""
 
 #, python-format
 msgid "Current value: %s"
-msgstr "Huidige waarde: %s"
+msgstr ""
 
 msgid "Delete"
-msgstr "Verwijder"
+msgstr ""
 
 msgid "Delete older 48h"
-msgstr "+48u verwijderen"
+msgstr ""
 
 #, python-format
 msgid "Disk free : %d MByte"
-msgstr "Beschikbare opslag : %d MByte"
+msgstr ""
 
 msgid "Download"
-msgstr "Download"
+msgstr ""
 
 msgid "Enable Data Logging"
-msgstr "Datalogging inschakelen"
+msgstr ""
 
 msgid "Enable Event Logging"
-msgstr "Eventlogging inschakelen"
+msgstr ""
 
 msgid "End temperature C"
-msgstr "Eindtemperatuur C"
+msgstr ""
 
 msgid "Extended Control Range"
-msgstr "Uitgebreid controlebereik"
+msgstr ""
 
 msgid "Fan Control"
-msgstr "Fan Control"
+msgstr ""
 
 msgid "Fan Control 2"
-msgstr "Fan Control 2"
+msgstr ""
 
 msgid "Fan Control 2 - Monitor"
-msgstr "Fan Control 2 - Monitor"
+msgstr ""
+
+msgid "Fan Control 2 - Setup"
+msgstr ""
+
+msgid "Fan Control 2 - Test"
+msgstr ""
 
 msgid "Fan is not working!"
-msgstr "Fan werkt niet!"
+msgstr ""
 
 msgid "Fan off in Idle Mode"
-msgstr "Fan uit in stand-by"
+msgstr ""
 
 msgid "Fan type"
-msgstr "Fan type"
+msgstr ""
 
 msgid "FanControl2 emergency, Box Shutdown now?"
 msgstr ""
-"FanControl2 melding: te hoge temperatuur\n"
-"Box nu uitschakelen?"
 
 #, python-format
 msgid "File %s does not exists"
-msgstr "Bestand %s bestaat niet!"
+msgstr ""
 
 #, python-format
 msgid "Filesize : %d %sByte"
-msgstr "Bestandsgrootte : %d %sByte"
+msgstr ""
 
 msgid ""
 "GUI needs a restart to apply the changes.\n"
 "Do you want to Restart the GUI now?"
 msgstr ""
-"GUI moet herstart worden om de instellingen toe te passen\n"
-"De GUI herstarten?"
 
 msgid "Help"
-msgstr "Help"
+msgstr ""
 
 msgid "Information"
-msgstr "Informatie"
+msgstr ""
 
 msgid "Initial PWM"
-msgstr "Initiële PWM"
+msgstr ""
 
 msgid "Initial Voltage"
-msgstr "Initiële spanning"
+msgstr ""
 
 msgid "Logging path"
-msgstr "Loggingpad:"
+msgstr ""
 
 #, python-format
 msgid "Logging-Path: %s"
-msgstr "Loggingpad: %s"
+msgstr ""
 
 #, python-format
 msgid "Max Fan %d rpm at PWM=255 (%s)"
-msgstr "Max Fan %d rpm bij PWM=255 (%s)"
+msgstr ""
 
 #, python-format
 msgid "Max Fan %d rpm at PWM=255 and VLT=255 (%s)"
-msgstr "Max Fan %d rpm bij PWM=255 en VLT=255 (%s)"
+msgstr ""
 
 #, python-format
 msgid "Max Fan %d rpm at VLT=255 (%s)"
-msgstr "Max Fan %d rpm bij VLT=255 (%s)"
+msgstr ""
 
 #, python-format
 msgid "Min Fan Start %d rpm at PWM=%d"
-msgstr "Min Fan Start %d rpm bij PWM=%d"
+msgstr ""
 
 #, python-format
 msgid "Min Fan Start %d rpm at VLT=%d"
-msgstr "Min Fan Start %d rpm bij VLT=%d"
+msgstr ""
 
 #, python-format
 msgid "Min Fan Start %d rpm at VLT=%d and PWM=0"
-msgstr "Min Fan Start %d rpm bij VLT=%d en PWM=0"
+msgstr ""
 
 #, python-format
 msgid "Min Fan Stop %d rpm at PWM=%d (%s)"
-msgstr "Min Fan Stop %d rpm bij PWM=%d (%s)"
+msgstr ""
 
 #, python-format
 msgid "Min Fan Stop %d rpm at VLT=%d (%s)"
-msgstr "Min Fan Stop %d rpm bij VLT=%d (%s)"
+msgstr ""
 
 #, python-format
 msgid "Min Fan Stop %d rpm at VLT=%d and PWM=0 (%s)"
-msgstr "Min Fan Stop %d rpm bij VLT=%d en PWM=0 (%s)"
+msgstr ""
 
 msgid "Number of WebIF-Log-Entries"
-msgstr "Aantal WebIF-Log-Entries"
+msgstr ""
 
 #, python-format
 msgid "PID Ctl Err %03.2f %%"
-msgstr "PID Ctl Err %03.2f %%"
+msgstr ""
 
 #, python-format
 msgid "PWM  %03d"
-msgstr "PWM  %03d"
+msgstr ""
 
 msgid "Restart GUI now?"
-msgstr "GUI nu herstarten?"
+msgstr ""
 
 msgid "Save"
-msgstr "Opslaan"
+msgstr ""
 
 msgid "Sensors"
-msgstr "Sensoren"
+msgstr ""
 
 msgid "Show Fan Speed as"
-msgstr "Toon ventolator snelheid als"
+msgstr ""
 
 msgid "Show Monitor in Extension-Menu"
-msgstr "Monitor weergeven in extentie-menu"
+msgstr ""
 
 msgid "Show Plugin in Extension-Menu"
-msgstr "Plugin weergeven in extentie-menu"
+msgstr ""
 
 msgid "Speed"
-msgstr "Snelheid"
+msgstr ""
 
 msgid "Static temp C"
-msgstr "Statische temp C"
+msgstr ""
 
 #, python-format
 msgid "Target rpm  %4d"
-msgstr "Gewenste rpm  %4d"
+msgstr ""
 
 msgid "Temperature"
-msgstr "Temperatuur"
+msgstr ""
 
 #, python-format
 msgid "Temperature C  %4.1f"
-msgstr "Temperatuur C  %4.1f"
+msgstr ""
 
 msgid "Voltage"
-msgstr "Spanning"
+msgstr ""
 
 #, python-format
 msgid "Voltage  %03d"
-msgstr "Spanning  %03d"
+msgstr ""
 
 msgid "active"
-msgstr "Actief"
+msgstr ""
 
 msgid "auto"
-msgstr "auto"
+msgstr ""
 
 msgid "below Tunerslot 4"
-msgstr "onder Tunerslot 4"
+msgstr ""
 
 #, python-format
 msgid "currentRPM:%d targetRPM:%d Temp:%4.1f"
-msgstr "actueelRPM:%d doelRPM:%d Temp:%4.1f"
+msgstr ""
 
 msgid "disabled"
-msgstr "uitgeschakeld"
+msgstr ""
 
 msgid "display Info"
-msgstr "Melding weergeven"
+msgstr ""
 
 msgid "do nothing"
-msgstr "geen actie"
+msgstr ""
 
 msgid "increases overheating protection to (C)"
-msgstr "Verhoog oververhittingsbescherming met (C)"
+msgstr ""
 
 msgid "left near Card-Slot"
-msgstr "links bij Card-Slot"
+msgstr ""
 
 msgid "left near Front-CI"
-msgstr "links bij Front-CI"
+msgstr ""
 
 msgid "left of the Battery"
-msgstr "links van de batterij"
+msgstr ""
 
 msgid "max Speed rpm"
-msgstr "max snelheid rpm"
+msgstr ""
 
 msgid "min Speed rpm"
-msgstr "min snelheid rpm"
+msgstr ""
 
 msgid "near XILINX Spartan"
-msgstr "bij XILINX Spartan"
+msgstr ""
 
 msgid "never"
-msgstr "nooit"
+msgstr ""
 
 msgid "no"
-msgstr "nee"
+msgstr ""
 
 msgid "not active"
-msgstr "Niet Actief"
+msgstr ""
 
 msgid "over Security Card"
-msgstr "boven de Security Card"
+msgstr ""
 
 msgid "please set fan type (3Pin or 4Pin)"
-msgstr "Stel het juiste ventilator type in (3- of 4 pins)"
+msgstr ""
 
 msgid "please wait (until 3min)..."
-msgstr "wachten aub (tot 3 min)..."
+msgstr ""
 
 msgid "press Info for HDD-Temp"
-msgstr "druk Info voor de HDD-Temp"
+msgstr ""
 
 msgid "read HDD-Temperature in HDD-Standby-Mode"
-msgstr "HDD-temp tijdens HDD-Standby-Mode uitlezen"
+msgstr ""
 
 msgid "readme.txt"
-msgstr "leesmij.txt"
+msgstr ""
 
 msgid "setup Fancontol inStandby mode"
-msgstr "Instellinge Fancontol in Standby"
+msgstr ""
 
 msgid "turn off"
-msgstr "Uitschakelen"
+msgstr ""
 
 msgid "turn on"
-msgstr "Inschakelen"
+msgstr ""
 
 msgid "under the Fan"
-msgstr "onder de Fan"
+msgstr ""
 
 msgid "under the WLAN"
-msgstr "onder de WLAN"
+msgstr ""
 
 msgid "yes"
-msgstr "ja"
+msgstr ""
 
 msgid "yes, Except for Recording or HDD"
-msgstr "ja, behalve voor Opname of HDD"
-
-#~ msgid "Fan off in Standby"
-#~ msgstr "Fan uit in Standby"
-
-#~ msgid "disable System FanControl"
-#~ msgstr "Schakel System ventiliatorcontrole uit"
+msgstr ""
