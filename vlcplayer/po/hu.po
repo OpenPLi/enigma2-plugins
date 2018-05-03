@@ -1,23 +1,21 @@
-# German translations for enigma package.
-# Copyright (C) 2008 THE enigma'S COPYRIGHT HOLDER
+# Hungarian translations for enigma package.
+# Copyright (C) 2018 THE enigma'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the enigma package.
-# Alex <info@laetsch.de>, 2008.
+# Automatically generated, 2018.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: enigma2.plugins.vlcplayer\n"
+"Project-Id-Version: enigma 2-plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-05-03 14:03+0200\n"
-"PO-Revision-Date: 2012-02-20 16:38+0100\n"
-"Last-Translator: ims <ims21@users.sourceforge.net>\n"
-"Language-Team: PLi <ims21@users.sourceforge.net>\n"
-"Language: \n"
+"PO-Revision-Date: 2018-05-03 14:03+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Language: Czech\n"
-"X-Poedit-Country: CZECH REPUBLIC\n"
-"Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "1 minute"
 msgstr ""
@@ -41,30 +39,28 @@ msgid "5 minutes"
 msgstr ""
 
 msgid "A video streaming solution based on VLC"
-msgstr "Streamování videa na základě VLC"
+msgstr ""
 
-#, fuzzy
 msgid "Audio"
-msgstr "Kodek zvuku"
+msgstr ""
 
 msgid "Audio Bitrate"
-msgstr "Datový tok zvuku"
+msgstr ""
 
 msgid "Audio Channels"
-msgstr "Kánály zvuku"
+msgstr ""
 
 msgid "Audio Codec"
-msgstr "Kodek zvuku"
+msgstr ""
 
 msgid "Audio Samplerate"
-msgstr "Vzorkování zvuku"
+msgstr ""
 
-#, fuzzy
 msgid "Cache Directory"
-msgstr "Adresář filmů"
+msgstr ""
 
 msgid "Cancel"
-msgstr "Zrušit"
+msgstr ""
 
 msgid "Choice of minutes to jump"
 msgstr ""
@@ -73,17 +69,16 @@ msgid "Choose an action:"
 msgstr ""
 
 msgid "DVD Device (leave empty for default)"
-msgstr "DVD zařízení (pro standardní ponechte prázdné)"
+msgstr ""
 
 msgid "Direct play"
 msgstr ""
 
-#, fuzzy
 msgid "Edit VLC Server"
-msgstr "Upravit server"
+msgstr ""
 
 msgid "Enter VLC-Server as FQDN or IP-Address"
-msgstr "Zadat VLC-Server jako FQDN nebo IP-Adresu"
+msgstr ""
 
 msgid "Enter subtitles as Track or Language"
 msgstr ""
@@ -93,49 +88,39 @@ msgid ""
 "Error loading filelist into server %(server)s:\n"
 "%(error)s"
 msgstr ""
-"Chyba při načítání seznamu souborů do serveru %(server)s:\n"
-"%(error)s"
 
 #, python-format
 msgid ""
 "Error loading playlist %(media)s into server %(server)s:\n"
 "%(error)s"
 msgstr ""
-"Chyba při načítání playlistu %(media)s do serveru %(server)s:\n"
-"%(error)s"
 
 #, python-format
 msgid ""
 "Error loading playlist into server %(server)s:\n"
 "%(error)s"
 msgstr ""
-"Chyba při načítání playlistu do serveru %(server)s:\n"
-"%(error)s"
 
 #, python-format
 msgid ""
 "Error updating filelist from server %(server)s:\n"
 "%(error)s"
 msgstr ""
-"Chyba při aktualizaci seznamu souborů ze serveru %(server)s:\n"
-"%(error)s"
 
 #, python-format
 msgid ""
 "Error with VLC server:\n"
 "%s"
 msgstr ""
-"Chyba VLC serveru:\n"
-"%s"
 
 msgid "FQDN"
 msgstr ""
 
 msgid "Filelist"
-msgstr "Soubory"
+msgstr ""
 
 msgid "HTTP Port"
-msgstr "HTTP Port"
+msgstr ""
 
 msgid "IP-Address"
 msgstr ""
@@ -144,18 +129,20 @@ msgid ""
 "Latest compatible version VLC 2.0.7\n"
 "Setup VLC for PC:\n"
 "Tools -> Preferences -> All -> Interface -> Main Interface -> Select Web\n"
-"Find file c:/Program Files/VideoLAN/VLC/Lua/http/.hosts and insert your box ip (without #).\n"
-"Add shortcut to the startup of the background start VLC 'C:\\Program Files\\VideoLAN\\VLC\\vlc.exe --intf telnet --extraintf http'"
+"Find file c:/Program Files/VideoLAN/VLC/Lua/http/.hosts and insert your box "
+"ip (without #).\n"
+"Add shortcut to the startup of the background start VLC 'C:\\Program Files"
+"\\VideoLAN\\VLC\\vlc.exe --intf telnet --extraintf http'"
 msgstr ""
 
 msgid "List of known profiles. Note: key info - help"
 msgstr ""
 
 msgid "Movie Directory"
-msgstr "Adresář filmů"
+msgstr ""
 
 msgid "No more files in this directory"
-msgstr "Žádné další soubory v tomto adresáři"
+msgstr ""
 
 #, python-format
 msgid ""
@@ -165,70 +152,64 @@ msgid ""
 msgstr ""
 
 msgid "No previous file in this directory"
-msgstr "Žádný předchozí soubor v tomto adresáři"
+msgstr ""
 
 msgid ""
 "No valid Enigma-Service to play a VLC-Stream\n"
 "Check your installation and try again!"
 msgstr ""
-"Žádný platný Enigma-program k přehrání VLC-Streamu\n"
-"Zkontrolujte instalaci a zkuste to znovu."
 
 msgid "OK"
-msgstr "OK"
+msgstr ""
 
 #, python-format
 msgid "Overscan Correction [in %(percentsign)s of Video width]"
-msgstr "Overscan korekce [v %(percentsign)s výšky videa]"
+msgstr ""
 
 msgid "Ping IP-Address when open Server"
 msgstr ""
 
 msgid "Playlist"
-msgstr "Playlist"
+msgstr ""
 
 msgid "Really delete this Server?"
-msgstr "Opravdu chcete odstranit tento server?"
+msgstr ""
 
-#, fuzzy
 msgid "Reset default"
-msgstr "Výchozí"
+msgstr ""
 
 msgid "Save as .ts and play"
 msgstr ""
 
-#, fuzzy
 msgid "Select VLC-Server profile"
-msgstr "Seznam VLC-Server profilů"
+msgstr ""
 
 msgid "Select method?"
 msgstr ""
 
 msgid "Server Address"
-msgstr "Adresa serveru"
+msgstr ""
 
 msgid "Server Profile Name"
-msgstr "Název profilu serveru"
+msgstr ""
 
 msgid "Serverlist"
-msgstr "servery"
+msgstr ""
 
-#, fuzzy
 msgid "Set as default"
-msgstr "Výchozí"
+msgstr ""
 
 msgid "Subtitle overlay"
-msgstr "Overlay titulky"
+msgstr ""
 
-#, fuzzy
 msgid "Subtitles"
-msgstr "Overlay titulky"
+msgstr ""
 
 msgid "Transcode MPEG/DVD Audio"
-msgstr "Transkódovat MPEG/DVD Audio"
+msgstr ""
 
 msgid "Transcode MPEG/DVD Video"
-msgstr "Transkódovat MPEG/DVD Video"
+msgstr ""
 
 msgid "Use saving to Cache Directory"
 msgstr ""
@@ -243,43 +224,43 @@ msgid "VLC Video Player"
 msgstr ""
 
 msgid "Video Bitrate"
-msgstr "Datový tok videa"
+msgstr ""
 
 msgid "Video Codec"
-msgstr "Kodek videa"
+msgstr ""
 
 msgid "Video Norm"
-msgstr "Norma videa"
+msgstr ""
 
 msgid "Yellow subtitles"
 msgstr ""
 
 msgid "add server"
-msgstr "Přidat server"
+msgstr ""
 
 msgid "delete server"
-msgstr "Smazat server"
+msgstr ""
 
 msgid "edit server"
-msgstr "Upravit server"
+msgstr ""
 
 msgid "filter off"
-msgstr "vypnout filtr"
+msgstr ""
 
 msgid "filter on"
-msgstr "zapnout filtr"
+msgstr ""
 
 msgid "languages"
 msgstr ""
 
 msgid "play DVD"
-msgstr "přehrát DVD"
+msgstr ""
 
 msgid "refresh"
-msgstr "aktualizovat"
+msgstr ""
 
 msgid "set default"
-msgstr "Výchozí"
+msgstr ""
 
 msgid "tracks"
 msgstr ""
