@@ -1,201 +1,214 @@
-# German translations for enigma package.
-# Copyright (C) 2009 THE enigma'S COPYRIGHT HOLDER
+# Dutch translations for enigma package.
+# Copyright (C) 2018 THE enigma'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the enigma package.
-# Automatically generated, 2009.
+# Automatically generated, 2018.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Enigma 2 IMDb Plugin\n"
+"Project-Id-Version: enigma 2-plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-07-25 12:54+0100\n"
-"PO-Revision-Date: 2015-07-26 16:55+0100\n"
-"Last-Translator: Rob van der Does <RobvanderDoes@Gmail.com>\n"
-"Language-Team: Andy Blackburn/Rob van der Does\n"
-"Language: \n"
+"POT-Creation-Date: 2018-05-03 11:46+0200\n"
+"PO-Revision-Date: 2018-05-03 11:46+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Poedit-Basepath: .\n"
-"X-Poedit-Language: Dutch\n"
-"X-Poedit-Country: NETHERLANDS\n"
-"X-Poedit-SearchPath-0: ../src\n"
 
 msgid " as "
-msgstr " als "
+msgstr ""
 
-msgid "* = Restart Required"
-msgstr "* = Herstart noodzakelijk"
+msgid "Add 'Search event in IMDb' to further option EPG menu."
+msgstr ""
+
+msgid "Add 'Search in IMDb' to movie list menu for selected video."
+msgstr ""
 
 msgid "Ambiguous results"
-msgstr "Geen eenduidige resultaten"
+msgstr ""
 
 msgid "Cancel"
-msgstr "Annuleer"
+msgstr ""
 
 msgid "Cast: "
-msgstr "Cast: "
+msgstr ""
 
 msgid "Channel Selection"
-msgstr "Kanaallijst"
+msgstr ""
 
 msgid "Content:"
-msgstr "Inhoud:"
+msgstr ""
 
 msgid "Could't get Eventname"
-msgstr "Kon de naam van het event niet bepalen"
+msgstr ""
 
 msgid "Details"
-msgstr "Details"
+msgstr ""
 
 #, python-format
 msgid "Downloading Movie Poster: %s..."
-msgstr "Movie poster wordt gedownload: %s..."
+msgstr ""
 
-msgid "Enable this to be able to access the IMDb from within the plugin browser."
-msgstr "Schakel dit in om de IMDb vanuit de plugin browser te kunnen benaderen."
+msgid ""
+"Enable this to be able to access the IMDb from within the plugin browser."
+msgstr ""
 
 msgid "Enter search"
-msgstr "Zoeken"
+msgstr ""
 
 msgid "Enter text to search for"
-msgstr "Zoek naar (tekst)"
+msgstr ""
 
 msgid "Exit"
-msgstr "Afsluiten"
+msgstr ""
 
 msgid "Extra Info"
-msgstr "Extra Info"
+msgstr ""
+
+msgid "Extra Info\n"
+msgstr ""
 
 msgid "Genre:"
-msgstr "Genre:"
+msgstr ""
+
+msgid "Genre: "
+msgstr ""
 
 msgid "IMDb Details"
-msgstr "IMDb Details"
+msgstr ""
 
 msgid "IMDb Details parsed"
-msgstr "IMDB details ingelezen"
+msgstr ""
 
 msgid "IMDb Download completed"
-msgstr "Download van IMDb voltooid"
+msgstr ""
 
 msgid "IMDb Download failed"
-msgstr "Download van IMDb mislukt"
+msgstr ""
 
 msgid "IMDb Menu"
-msgstr "IMDb menu"
+msgstr ""
 
 msgid "IMDb Plugin"
-msgstr "IMDb Plugin"
+msgstr ""
 
 msgid "IMDb Re-Download completed"
-msgstr "IMDB-Download nogmaals uitgevoerd"
+msgstr ""
 
 msgid "IMDb Save-Download completed"
-msgstr "IMDb opslaan gereed"
+msgstr ""
 
 msgid "IMDb Setup"
-msgstr "IMDb instellingen"
+msgstr ""
 
 msgid ""
 "IMDb can not get Movie Information, to\n"
 " write .jpg and .txt-file!"
 msgstr ""
-"IMDb kan geen filminformatie vinden,\n"
-"schrijven als .jpg en .txt bestanden "
 
 msgid ""
 "IMDb can not get Movie Information, to\n"
 " write .txt-file!"
 msgstr ""
-"IMDb kan geen filminformatie vinden,\n"
-"schrijven als .txt bestand "
 
 msgid "IMDb query failed!"
-msgstr "Zoeken in de IMDb mislukt!"
+msgstr ""
 
-msgid "Lookup"
-msgstr "Zoeken"
+msgid "IMDb search"
+msgstr ""
+
+msgid "Lookup IMDb"
+msgstr ""
 
 msgid "No IMDb match."
-msgstr "Geen passende titel in de IMDB gevonden."
+msgstr ""
 
 msgid "No cast list found in the database."
-msgstr "Geen cast in de database gevonden."
+msgstr ""
 
 msgid "No details found."
-msgstr "Geen details gevonden."
+msgstr ""
 
 msgid "OK"
-msgstr "OK"
+msgstr ""
 
 msgid "Play Trailer"
-msgstr "Speel Trailer"
+msgstr ""
 
 msgid "Please select the matching entry"
-msgstr "Maak de juiste keuze"
+msgstr ""
 
 msgid "Production Countries:"
-msgstr "Productieland"
+msgstr ""
 
 #, python-format
 msgid "Query IMDb: %s"
-msgstr "Zoekslag IMDb: %s"
+msgstr ""
 
 msgid "Query details from the Internet Movie Database"
-msgstr "Filminformatie van de Internet Movie Database"
+msgstr ""
 
 #, python-format
 msgid "Re-Query IMDb: %s..."
-msgstr "Nieuwe zoekslag in de IMDb: %s..."
+msgstr ""
 
 msgid "Release Date:"
-msgstr "Releasedatum:"
+msgstr ""
 
 msgid "Runtime:"
-msgstr "Duur:"
+msgstr ""
 
 msgid "Save current Details as .html for offline using"
-msgstr "Sla huidige details op als .html voor offline gebruik."
+msgstr ""
 
 msgid "Save current Details as .txt"
-msgstr "Sla huidige details op als .txt"
+msgstr ""
 
 msgid "Save current Poster and Details as .txt"
-msgstr "Sla huidige poster en details op als .txt"
+msgstr ""
 
 msgid "Search Trailer"
-msgstr "Zoek Trailer"
+msgstr ""
+
+msgid "Search event in IMDb"
+msgstr ""
+
+msgid "Search in IMDb"
+msgstr ""
 
 msgid "Select from EPG"
-msgstr "Kies vanuit de EPG"
+msgstr ""
 
 msgid "Setup"
-msgstr "Instellingen"
+msgstr ""
+
+msgid "Show in further option EPG menu"
+msgstr ""
+
+msgid "Show in movie list menu"
+msgstr ""
 
 msgid "Show in plugin browser"
-msgstr "Toon in plugin browser"
+msgstr ""
 
 msgid "The Internet Movie Database"
-msgstr "De Internet Movie Database"
+msgstr ""
 
-msgid "This option allows you add words/phrases for IMDb to ignore when searching. please seperaate with a comma"
-msgstr "Deze optie maakt het mogelijk woorden/zinnen uit te sluiten van de zoekslag. Gebruik een komma als scheidingsteken."
+msgid ""
+"This option allows you add words/phrases for IMDb to ignore when searching. "
+"please seperaate with a comma"
+msgstr ""
 
 msgid "Title Menu"
-msgstr "Titel menu"
+msgstr ""
 
 msgid "User Rating"
-msgstr "Gebruikers waardering"
+msgstr ""
 
 msgid "Words / phrases to ignore "
-msgstr "Woorden/zinnen die genegeerd worden"
+msgstr ""
 
 msgid "no user rating yet"
-msgstr "nog geen gebruikers waardering"
-
-#~ msgid "Query IMDb: %s..."
-#~ msgstr "Zoekt in de IMDb: %s..."
-
-#~ msgid "Words/pharse's to ingore"
-#~ msgstr "Woorden/zinnen die genegeerd moeten worden"
+msgstr ""

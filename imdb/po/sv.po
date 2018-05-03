@@ -1,139 +1,214 @@
-# German translations for enigma package.
-# Copyright (C) 2009 THE enigma'S COPYRIGHT HOLDER
+# Swedish translations for enigma package.
+# Copyright (C) 2018 THE enigma'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the enigma package.
-# Automatically generated, 2009.
+# Automatically generated, 2018.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Enigma 2 IMDb Plugin\n"
+"Project-Id-Version: enigma 2-plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-27 18:11+0100\n"
-"PO-Revision-Date: 2013-03-19 22:23+0100\n"
-"Last-Translator: xxx\n"
+"POT-Creation-Date: 2018-05-03 11:46+0200\n"
+"PO-Revision-Date: 2018-05-03 11:46+0200\n"
+"Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
-"Language: \n"
+"Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid " as "
-msgstr " som "
+msgstr ""
+
+msgid "Add 'Search event in IMDb' to further option EPG menu."
+msgstr ""
+
+msgid "Add 'Search in IMDb' to movie list menu for selected video."
+msgstr ""
 
 msgid "Ambiguous results"
-msgstr "Tvetydigt resultat"
+msgstr ""
 
 msgid "Cancel"
-msgstr "Avbryt"
+msgstr ""
 
 msgid "Cast: "
-msgstr "Roll: "
+msgstr ""
 
 msgid "Channel Selection"
-msgstr "Kanallista"
+msgstr ""
+
+msgid "Content:"
+msgstr ""
 
 msgid "Could't get Eventname"
-msgstr "Kunde inte få händelsenamn"
+msgstr ""
 
 msgid "Details"
-msgstr "Info"
+msgstr ""
 
 #, python-format
 msgid "Downloading Movie Poster: %s..."
-msgstr "Ladda ner Film poster: %s..."
+msgstr ""
 
-msgid "Enable this to be able to access the IMDb from within the plugin browser."
-msgstr "Aktivera detta för att kunna få tillgång till IMDb i Pluginlistan."
+msgid ""
+"Enable this to be able to access the IMDb from within the plugin browser."
+msgstr ""
 
 msgid "Enter search"
-msgstr "Skriv in sökning"
+msgstr ""
 
 msgid "Enter text to search for"
-msgstr "Skriv text att söka efter"
+msgstr ""
 
 msgid "Exit"
-msgstr "Avsluta"
+msgstr ""
 
 msgid "Extra Info"
-msgstr "Extra info"
+msgstr ""
+
+msgid "Extra Info\n"
+msgstr ""
+
+msgid "Genre:"
+msgstr ""
+
+msgid "Genre: "
+msgstr ""
 
 msgid "IMDb Details"
-msgstr "IMDb-information"
+msgstr ""
 
 msgid "IMDb Details parsed"
-msgstr "IMDb info analyseras"
+msgstr ""
 
 msgid "IMDb Download completed"
-msgstr "IMDb nedladdning klar"
+msgstr ""
 
 msgid "IMDb Download failed"
-msgstr "IMDb nedladdning misslyckades"
+msgstr ""
+
+msgid "IMDb Menu"
+msgstr ""
 
 msgid "IMDb Plugin"
-msgstr "IMDb Plugin"
+msgstr ""
 
 msgid "IMDb Re-Download completed"
-msgstr "IMDb omnedladdning klar"
+msgstr ""
+
+msgid "IMDb Save-Download completed"
+msgstr ""
 
 msgid "IMDb Setup"
-msgstr "IMDb-inställningar"
+msgstr ""
+
+msgid ""
+"IMDb can not get Movie Information, to\n"
+" write .jpg and .txt-file!"
+msgstr ""
+
+msgid ""
+"IMDb can not get Movie Information, to\n"
+" write .txt-file!"
+msgstr ""
 
 msgid "IMDb query failed!"
-msgstr "IMDb förfrågan misslyckades!"
+msgstr ""
 
-msgid "Lookup"
-msgstr "Sök"
+msgid "IMDb search"
+msgstr ""
+
+msgid "Lookup IMDb"
+msgstr ""
 
 msgid "No IMDb match."
-msgstr "Ingen IMDb matchning."
+msgstr ""
 
 msgid "No cast list found in the database."
-msgstr "Ingen rolllista funnen i databasen."
+msgstr ""
 
 msgid "No details found."
-msgstr "Ingen info funnen."
+msgstr ""
 
 msgid "OK"
-msgstr "OK"
+msgstr ""
 
 msgid "Play Trailer"
-msgstr "Spela upp Trailer"
+msgstr ""
 
 msgid "Please select the matching entry"
-msgstr "Vänligen välj matchande post"
+msgstr ""
+
+msgid "Production Countries:"
+msgstr ""
 
 #, python-format
-msgid "Query IMDb: %s..."
-msgstr "Frågar IMDb om: %s..."
+msgid "Query IMDb: %s"
+msgstr ""
 
 msgid "Query details from the Internet Movie Database"
-msgstr "Filminformation från Internet Movie Databas"
+msgstr ""
 
 #, python-format
 msgid "Re-Query IMDb: %s..."
-msgstr "Omfråga IMDb om: %s..."
+msgstr ""
+
+msgid "Release Date:"
+msgstr ""
+
+msgid "Runtime:"
+msgstr ""
+
+msgid "Save current Details as .html for offline using"
+msgstr ""
+
+msgid "Save current Details as .txt"
+msgstr ""
+
+msgid "Save current Poster and Details as .txt"
+msgstr ""
 
 msgid "Search Trailer"
-msgstr "Sök Trailer"
+msgstr ""
+
+msgid "Search event in IMDb"
+msgstr ""
+
+msgid "Search in IMDb"
+msgstr ""
 
 msgid "Select from EPG"
-msgstr "Välj från EPG"
+msgstr ""
 
 msgid "Setup"
-msgstr "Ställ in"
+msgstr ""
+
+msgid "Show in further option EPG menu"
+msgstr ""
+
+msgid "Show in movie list menu"
+msgstr ""
 
 msgid "Show in plugin browser"
-msgstr "Visa i Pluginlista"
+msgstr ""
 
 msgid "The Internet Movie Database"
-msgstr "Internet Movie Databas"
+msgstr ""
+
+msgid ""
+"This option allows you add words/phrases for IMDb to ignore when searching. "
+"please seperaate with a comma"
+msgstr ""
 
 msgid "Title Menu"
-msgstr "Titelmeny"
+msgstr ""
 
 msgid "User Rating"
-msgstr "Betyg"
+msgstr ""
+
+msgid "Words / phrases to ignore "
+msgstr ""
 
 msgid "no user rating yet"
-msgstr "Inte betygsatt ännu"
-
+msgstr ""

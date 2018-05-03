@@ -1,186 +1,214 @@
-# Estonian translations for enigma2-plugins package.
-# Copyright (C) 2012 THE enigma2-plugins'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the enigma2-plugins package.
-# Automatically generated, 2012.
+# Estonian translations for enigma package.
+# Copyright (C) 2018 THE enigma'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the enigma package.
+# Automatically generated, 2018.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: enigma2-plugins 3.2.0\n"
+"Project-Id-Version: enigma 2-plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-15 14:10+0000\n"
-"PO-Revision-Date: 2012-08-25 12:58+0300\n"
-"Last-Translator: rimas\n"
-"Language-Team: rimas\n"
+"POT-Creation-Date: 2018-05-03 11:46+0200\n"
+"PO-Revision-Date: 2018-05-03 11:46+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
 "Language: et\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../src/plugin.py:598
 msgid " as "
-msgstr " - "
+msgstr ""
 
-#: ../src/plugin.py:335
+msgid "Add 'Search event in IMDb' to further option EPG menu."
+msgstr ""
+
+msgid "Add 'Search in IMDb' to movie list menu for selected video."
+msgstr ""
+
 msgid "Ambiguous results"
-msgstr "Mitu varianti"
+msgstr ""
 
-#: ../src/plugin.py:707
 msgid "Cancel"
-msgstr "Tühista"
+msgstr ""
 
-#: ../src/plugin.py:602
 msgid "Cast: "
-msgstr "Osades: "
+msgstr ""
 
-#: ../src/plugin.py:68
 msgid "Channel Selection"
-msgstr "Kanalite valik"
+msgstr ""
 
-#: ../src/plugin.py:470
+msgid "Content:"
+msgstr ""
+
 msgid "Could't get Eventname"
-msgstr "Saate nime ei tuvastatud"
+msgstr ""
 
-#: ../src/plugin.py:340
-#: ../src/plugin.py:555
 msgid "Details"
-msgstr "Üksikasjad"
+msgstr ""
 
-#: ../src/plugin.py:610
 #, python-format
 msgid "Downloading Movie Poster: %s..."
-msgstr "Filmi plakati tõmbamine: %s..."
+msgstr ""
 
-#: ../src/plugin.py:689
-msgid "Enable this to be able to access the IMDb from within the plugin browser."
-msgstr "Luba see, et IMDb oleks ka laienduste lehitsejas"
+msgid ""
+"Enable this to be able to access the IMDb from within the plugin browser."
+msgstr ""
 
-#: ../src/plugin.py:383
 msgid "Enter search"
-msgstr "Sisesta otsitav"
+msgstr ""
 
-#: ../src/plugin.py:428
 msgid "Enter text to search for"
-msgstr "Sisesta otsitav tekst"
+msgstr ""
 
-#: ../src/plugin.py:182
 msgid "Exit"
-msgstr "Välju"
+msgstr ""
 
-#: ../src/plugin.py:630
 msgid "Extra Info"
-msgstr "Lisateave"
+msgstr ""
 
-#: ../src/plugin.py:745
-#: ../src/plugin.py:765
+msgid "Extra Info\n"
+msgstr ""
+
+msgid "Genre:"
+msgstr ""
+
+msgid "Genre: "
+msgstr ""
+
 msgid "IMDb Details"
-msgstr "IMDb andmed"
+msgstr ""
 
-#: ../src/plugin.py:556
-#: ../src/plugin.py:636
 msgid "IMDb Details parsed"
-msgstr "IMDb andmed töödeldud"
+msgstr ""
 
-#: ../src/plugin.py:503
 msgid "IMDb Download completed"
-msgstr "Allalaadimine tehtud"
+msgstr ""
 
-#: ../src/plugin.py:474
 msgid "IMDb Download failed"
-msgstr "Allalaadimine nurjus"
+msgstr ""
 
-#: ../src/plugin.py:666
+msgid "IMDb Menu"
+msgstr ""
+
 msgid "IMDb Plugin"
-msgstr "IMDb laiendus"
+msgstr ""
 
-#: ../src/plugin.py:545
 msgid "IMDb Re-Download completed"
-msgstr "Taasallalaadimine tehtud"
+msgstr ""
 
-#: ../src/plugin.py:683
-#: ../src/plugin.py:724
+msgid "IMDb Save-Download completed"
+msgstr ""
+
 msgid "IMDb Setup"
-msgstr "IMDb seaded"
+msgstr ""
 
-#: ../src/plugin.py:542
+msgid ""
+"IMDb can not get Movie Information, to\n"
+" write .jpg and .txt-file!"
+msgstr ""
+
+msgid ""
+"IMDb can not get Movie Information, to\n"
+" write .txt-file!"
+msgstr ""
+
 msgid "IMDb query failed!"
-msgstr "IMDb päring nurjus!"
+msgstr ""
 
-#: ../src/plugin.py:97
-msgid "Lookup"
-msgstr "Otsing"
+msgid "IMDb search"
+msgstr ""
 
-#: ../src/plugin.py:529
-#: ../src/plugin.py:530
+msgid "Lookup IMDb"
+msgstr ""
+
 msgid "No IMDb match."
-msgstr "Vastet ei leitud"
+msgstr ""
 
-#: ../src/plugin.py:604
 msgid "No cast list found in the database."
-msgstr "Andmebaasist osatäitjaid ei leitud."
+msgstr ""
 
-#: ../src/plugin.py:553
 msgid "No details found."
-msgstr "Üksikasju ei leitud."
+msgstr ""
 
-#: ../src/plugin.py:706
 msgid "OK"
-msgstr "OK"
+msgstr ""
 
-#: ../src/plugin.py:390
 msgid "Play Trailer"
-msgstr "Esita treiler"
+msgstr ""
 
-#: ../src/plugin.py:336
 msgid "Please select the matching entry"
-msgstr "Vali sobiv vaste"
+msgstr ""
 
-#: ../src/plugin.py:460
+msgid "Production Countries:"
+msgstr ""
+
 #, python-format
-msgid "Query IMDb: %s..."
-msgstr "IMDb päring: %s..."
+msgid "Query IMDb: %s"
+msgstr ""
 
-#: ../src/plugin.py:765
-#: ../src/plugin.py:769
 msgid "Query details from the Internet Movie Database"
-msgstr "IMDb päringu üksikasjad"
+msgstr ""
 
-#: ../src/plugin.py:351
-#: ../src/plugin.py:519
-#: ../src/plugin.py:535
 #, python-format
 msgid "Re-Query IMDb: %s..."
-msgstr "Uus päring: %s..."
+msgstr ""
 
-#: ../src/plugin.py:391
+msgid "Release Date:"
+msgstr ""
+
+msgid "Runtime:"
+msgstr ""
+
+msgid "Save current Details as .html for offline using"
+msgstr ""
+
+msgid "Save current Details as .txt"
+msgstr ""
+
+msgid "Save current Poster and Details as .txt"
+msgstr ""
+
 msgid "Search Trailer"
-msgstr "Otsi treilerit"
+msgstr ""
 
-#: ../src/plugin.py:384
+msgid "Search event in IMDb"
+msgstr ""
+
+msgid "Search in IMDb"
+msgstr ""
+
 msgid "Select from EPG"
-msgstr "Vali saatekavast"
+msgstr ""
 
-#: ../src/plugin.py:385
 msgid "Setup"
-msgstr "Seadistamine"
+msgstr ""
 
-#: ../src/plugin.py:689
+msgid "Show in further option EPG menu"
+msgstr ""
+
+msgid "Show in movie list menu"
+msgstr ""
+
 msgid "Show in plugin browser"
-msgstr "Näita laienduste lehitsejas"
+msgstr ""
 
-#: ../src/plugin.py:166
 msgid "The Internet Movie Database"
 msgstr ""
 
-#: ../src/plugin.py:339
+msgid ""
+"This option allows you add words/phrases for IMDb to ignore when searching. "
+"please seperaate with a comma"
+msgstr ""
+
 msgid "Title Menu"
-msgstr "Peamenüü"
+msgstr ""
 
-#: ../src/plugin.py:585
 msgid "User Rating"
-msgstr "Kasutajahinnang"
+msgstr ""
 
-#: ../src/plugin.py:581
+msgid "Words / phrases to ignore "
+msgstr ""
+
 msgid "no user rating yet"
-msgstr "kasutajahinnang puudub"
-
+msgstr ""
