@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TransCodingSetup\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-06-26 17:25+0300\n"
+"POT-Creation-Date: 2018-05-03 14:02+0200\n"
 "PO-Revision-Date: 2016-06-26 17:27+0300\n"
 "Last-Translator: \n"
 "Language-Team: Vytenis P. <vyteniui@gmail.com>\n"
@@ -12,42 +12,45 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: pygettext.py 1.5\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n"
-"%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Generator: Poedit 1.8.8\n"
 
-#: plugin.py:96
 msgid "Bitrate"
 msgstr "Bitų dažnis"
 
-#: plugin.py:153
 msgid "Default values for trancoding"
 msgstr "Numatytosios perkodavimo reikšmės"
 
-#: plugin.py:159
+msgid "Frame rate"
+msgstr ""
+
 msgid "It seems your receiver is not supported!"
 msgstr "Atrodo, jūsų imtuvas nepalaikomas!"
 
-#: plugin.py:156
 msgid "Not found file '/etc/enigma2/streamproxy.conf' !"
 msgstr "Failo '/etc/enigma2/streamproxy.conf' nerasta!"
 
-#: plugin.py:150
+msgid "Port"
+msgstr ""
+
 msgid "Quit"
 msgstr "Baigti"
 
-#: plugin.py:151
+msgid "Resolution"
+msgstr ""
+
 msgid "Set"
 msgstr "Nustatyti"
 
-#: plugin.py:233
 msgid "Set up default transcoding parameters"
 msgstr "Nustatyti numatytuosius perkodavimo parametrus"
 
-#: plugin.py:47 plugin.py:227
 msgid "Transcoding Setup"
 msgstr "Perkodavimo sąranka"
 
-#: plugin.py:97
+#, fuzzy
+msgid "Video codec"
+msgstr "Vaizdo kadro dydis"
+
 msgid "Video size"
 msgstr "Vaizdo kadro dydis"

@@ -2,15 +2,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Seekbar\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-28 00:00+0000\n"
+"POT-Creation-Date: 2018-05-03 14:02+0200\n"
 "PO-Revision-Date: 2016-07-18 22:37+0300\n"
 "Last-Translator: Dimitrij <dima-73@inbox.lv>\n"
 "Language-Team: Dimitrij PLi\n"
+"Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-SourceCharset: utf-8\n"
-"Language: ru\n"
 "X-Generator: Poedit 1.8.8\n"
 
 msgid "Bitrate"
@@ -19,14 +19,23 @@ msgstr "Бітрейт"
 msgid "Default values for trancoding"
 msgstr "Дефолтні значення для транскодування"
 
+msgid "Frame rate"
+msgstr ""
+
 msgid "It seems your receiver is not supported!"
 msgstr "Ваш ресивер не підтримується!"
 
 msgid "Not found file '/etc/enigma2/streamproxy.conf' !"
 msgstr "Не знайдено файл'/etc/enigma2/streamproxy.conf' !"
 
+msgid "Port"
+msgstr ""
+
 msgid "Quit"
 msgstr "Відмінити"
+
+msgid "Resolution"
+msgstr ""
 
 msgid "Set"
 msgstr "Встановити"
@@ -36,6 +45,10 @@ msgstr "Установка дефолтних параметрів транск�
 
 msgid "Transcoding Setup"
 msgstr "Налаштування транскодування"
+
+#, fuzzy
+msgid "Video codec"
+msgstr "Размір відео"
 
 msgid "Video size"
 msgstr "Размір відео"
