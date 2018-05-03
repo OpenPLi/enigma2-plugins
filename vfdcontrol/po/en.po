@@ -1,0 +1,90 @@
+# English translations for enigma package.
+# Copyright (C) 2018 THE enigma'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the enigma package.
+# Automatically generated, 2018.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: enigma 2-plugins\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-05-03 14:02+0200\n"
+"PO-Revision-Date: 2018-05-03 14:02+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "12h"
+msgstr "12h"
+
+msgid "24h"
+msgstr "24h"
+
+msgid "Always off"
+msgstr "Always off"
+
+msgid "Brightness Level 1"
+msgstr "Brightness Level 1"
+
+msgid "Brightness Level 2"
+msgstr "Brightness Level 2"
+
+msgid "Brightness level"
+msgstr "Brightness level"
+
+msgid "Cancel"
+msgstr "Cancel"
+
+msgid "Change VFD display settings"
+msgstr "Change VFD display settings"
+
+msgid "Channelnumber in Standby Clock"
+msgstr "Channelnumber in Standby Clock"
+
+msgid "Channelnumber in Standby off"
+msgstr "Channelnumber in Standby off"
+
+msgid "Channelnumber/Clock in Standby Clock"
+msgstr "Channelnumber/Clock in Standby Clock"
+
+msgid "Clock always"
+msgstr "Clock always"
+
+msgid "Control 7 segment VFD display"
+msgstr "Control 7 segment VFD display"
+
+msgid "Off"
+msgstr "Off"
+
+msgid "On/Off"
+msgstr "On/Off"
+
+msgid "Save"
+msgstr "Save"
+
+msgid "Show REC-Symbol in Display"
+msgstr "Show REC-Symbol in Display"
+
+msgid "Show blinking Clock on Display during recording"
+msgstr "Show blinking Clock on Display during recording"
+
+msgid "Show on VFD"
+msgstr "Show on VFD"
+
+msgid "Time mode"
+msgstr "Time mode"
+
+msgid "Update Date/Time"
+msgstr "Update Date/Time"
+
+msgid "VFD Display Setup"
+msgstr "VFD Display Setup"
+
+msgid "no"
+msgstr "no"
+
+msgid "yes"
+msgstr "yes"
