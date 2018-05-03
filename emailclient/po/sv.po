@@ -1,41 +1,46 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Swedish translations for enigma package.
+# Copyright (C) 2018 THE enigma'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the enigma package.
+# Automatically generated, 2018.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Enigma2 EmailClient Plugin\n"
+"Project-Id-Version: enigma 2-plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-11-28 18:29+0100\n"
-"PO-Revision-Date: 2010-01-03 06:54+0100\n"
-"Last-Translator: WeeGull <weegull@hotmail.com>\n"
-"Language-Team: de <de@li.org>\n"
+"POT-Creation-Date: 2018-05-03 11:46+0200\n"
+"PO-Revision-Date: 2018-05-03 11:46+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #, python-format
 msgid "%(name)s (%(user)s@%(server)s)"
 msgstr ""
 
+msgid "Account Setup"
+msgstr ""
+
 msgid "Accounts list"
-msgstr "Kontolista"
+msgstr ""
 
 msgid "Attachments"
-msgstr "Bifogade"
+msgstr ""
 
 msgid "Bodys"
-msgstr "Textkropp"
+msgstr ""
 
 msgid "Date"
-msgstr "Datum"
+msgstr ""
 
 msgid "Email Client"
-msgstr "Epost Klient"
+msgstr ""
 
 msgid "Email setup"
-msgstr "Epost installation"
+msgstr ""
 
 #, python-format
 msgid ""
@@ -43,234 +48,197 @@ msgid ""
 "\n"
 "%(error)s"
 msgstr ""
-"Epostklient för %(account)s:\n"
-"\n"
-"%(error)s"
 
 msgid "From"
-msgstr "Från"
+msgstr ""
 
 msgid "IMAP Port"
-msgstr "IMAP Port"
+msgstr ""
 
 msgid "IMAP Server"
-msgstr "IMAP Server"
+msgstr ""
 
 #, python-format
 msgid ""
 "New mail arrived for account %s:\n"
 "\n"
 msgstr ""
-"Nytt epost inkommet för kontot %s:\n"
-"\n"
 
 #, python-format
 msgid "Really delete account %s?"
-msgstr "Verkligen ta bort kontot %s?"
+msgstr ""
 
 msgid "Subject"
-msgstr "Ämne"
+msgstr ""
 
 #, python-format
 msgid ""
 "[EmailAccount] %(name)s: _cbCapabilities:\n"
 "####################################################################################################\n"
-"# If you have problems to log into your imap-server, please send me the output of the following line\n"
+"# If you have problems to log into your imap-server, please send me the "
+"output of the following line\n"
 "# cbCapabilities: %(capa)s\n"
 "####################################################################################################\n"
 msgstr ""
 
 #, python-format
 msgid "account %s is not connected"
-msgstr "kontot %s är inte anslutet"
+msgstr ""
 
 msgid "account name"
-msgstr "kontonamn"
+msgstr ""
 
 msgid "account not connected"
-msgstr "kontot ej anslutet"
+msgstr ""
 
 msgid "add"
-msgstr "lägg till"
+msgstr ""
+
+msgid "always"
+msgstr ""
 
 msgid "cancel"
-msgstr "Avbryt"
+msgstr ""
 
 msgid "cannot access inbox"
-msgstr "ingen åtkomst till INBOX"
+msgstr ""
 
 msgid "cannot get headers of new messages"
-msgstr "kan inte erhålla brevhuvuden på nya meddelanden"
+msgstr ""
 
 msgid "cannot get list of new messages"
-msgstr "kan inte erhålla lista över nya meddelanden"
+msgstr ""
 
 msgid "connection failed - retrying"
-msgstr "anslutning misslyckades - försöker igen"
+msgstr ""
 
 msgid "debug"
-msgstr "debug"
+msgstr ""
 
 msgid "delete"
-msgstr "Ta bort"
+msgstr ""
 
 msgid "display connection errors"
-msgstr "visa anslutningsfel"
+msgstr ""
+
+msgid "display message type"
+msgstr ""
 
 msgid "display timeout (seconds)"
-msgstr "visa timeout (i Sekunder)"
+msgstr ""
 
 msgid "edit"
-msgstr "ändra"
+msgstr ""
 
 msgid "empty values - retry"
-msgstr "inget angivet - försök igen"
+msgstr ""
+
+msgid "enable auto check mail"
+msgstr ""
 
 #, python-format
 msgid ""
 "error logging %(who)s in:\n"
 "%(failure)s"
 msgstr ""
-"fel vid inloggning med %(who)s:\n"
-"%(failure)s"
 
 msgid "failed to load message"
-msgstr "misslyckades med att ladda meddelandet"
+msgstr ""
 
 msgid "getting message ..."
-msgstr "laddar ner meddelanden..."
+msgstr ""
 
 #, python-format
 msgid "have %d messages"
-msgstr "har %d meddelanden"
+msgstr ""
 
 msgid "have no messages"
-msgstr "inga meddelanden"
+msgstr ""
 
 msgid "headers loaded, now parsing ..."
-msgstr "Brevhuvuden laddade, bearbetar nu..."
+msgstr ""
 
 #, python-format
 msgid "importing configurations from %s"
-msgstr "importera inställningar från %s"
+msgstr ""
+
+msgid "infobar mode (live TV)"
+msgstr ""
 
 msgid "leave unread"
-msgstr "lämna oläst"
+msgstr ""
 
 msgid "list all mailboxes"
-msgstr "lista alla epostlådor"
+msgstr ""
 
 msgid "loading headers ..."
-msgstr "laddar brevhuvuden..."
+msgstr ""
 
 msgid "mail check interval (minutes)"
-msgstr "kontroll intervall (i Minuter)"
+msgstr ""
 
 msgid "maximum mail size to fetch"
-msgstr "maximum epost storlek att hämta"
+msgstr ""
 
 msgid "message too large"
-msgstr "meddelande för stort"
+msgstr ""
 
 msgid "no account selected"
-msgstr "inget konto valt"
+msgstr ""
 
 msgid "no date"
-msgstr "inget datum"
+msgstr ""
 
 msgid "no filename"
-msgstr "inget filnamn"
+msgstr ""
 
 msgid "no from"
-msgstr "ingen avsändare"
+msgstr ""
 
 msgid "no mailbox?!?!"
-msgstr "ingen epostlåda?!?!"
+msgstr ""
 
 msgid "no sender"
-msgstr "ingen skickare"
+msgstr ""
 
 msgid "no subject"
-msgstr "inget ämne"
+msgstr ""
 
 msgid "ok"
-msgstr "OK"
+msgstr ""
 
 msgid "parsing message ..."
-msgstr "bearbetar epost..."
+msgstr ""
 
 msgid "password"
-msgstr "lösenord"
+msgstr ""
 
 msgid "really delete mail?"
-msgstr "verkligen ta bort epost?"
+msgstr ""
 
 msgid "really undelete mail?"
-msgstr "verkligen återskapa epost?"
+msgstr ""
 
 msgid "remove"
-msgstr "ta bort"
+msgstr ""
 
 msgid "select Attachment"
-msgstr "välj bifogad"
+msgstr ""
 
 msgid "select Body"
-msgstr "välj textkropp"
+msgstr ""
 
 msgid "show deleted entries"
-msgstr "visa borttagna epost"
+msgstr ""
 
 msgid "undelete"
-msgstr "återskapa"
+msgstr ""
 
 msgid "user name"
-msgstr "användarnamn"
+msgstr ""
+
+msgid "view Email"
+msgstr ""
 
 msgid "view Emails via IMAP4"
-msgstr "läs epost med hjälp av IMAP4"
-
-#~ msgid "Box '%s' is empty"
-#~ msgstr "Epostlåda %s är tom"
-#~ msgid ""
-#~ "In order of missing standart python library files\n"
-#~ "i have copied the nessary files now.\n"
-#~ "But you have to restart your Box\n"
-#~ " to apply this!"
-#~ msgstr ""
-#~ "Då det saknades vissa standard python librarys filer,\n"
-#~ "har dessa nu kopierats.\n"
-#~ "En omstart av din Dreambox är nödvändig\n"
-#~ "för att aktivera dessa."
-#~ msgid "Mailbox"
-#~ msgstr "Epostlåda"
-#~ msgid "cannot access mailbox '%(mboxname)s'"
-#~ msgstr "ingen åtkomst till epostlådan '%(mboxname)s'"
-#~ msgid "cannot get capabilities of mailserver"
-#~ msgstr "kan inte erhålla tjänster fråm epostserver"
-#~ msgid "connection to %(server)s:%(port)d failed"
-#~ msgstr "anslutning till %(server)s:%(port)d misslyckades"
-#~ msgid ""
-#~ "connection to %(server)s:%(port)d failed:\n"
-#~ "%(reason)s"
-#~ msgstr ""
-#~ "anslutning till %(server)s:%(port)d misslyckades:\n"
-#~ "%(reason)s"
-#~ msgid "encrypted login failed, trying without encryption"
-#~ msgstr "krypterad inloggning misslyckades, försöker utan kryptering"
-#~ msgid "loading headers %(from)d-%(to)d of Box '%(name)s'"
-#~ msgstr "laddar brevhuvuden %(from)d-%(to)d från epostlåda '%(name)s'"
-#~ msgid "logged in"
-#~ msgstr "inloggad"
-#~ msgid "login failed"
-#~ msgstr "Inloggning missluckades"
-#~ msgid "max of Headers to load"
-#~ msgstr "Max anntal brevhuvuden att ladda"
-#~ msgid "no"
-#~ msgstr "nej"
-#~ msgid "notify about new mails"
-#~ msgstr "Meddela om nya epost"
-#~ msgid "unread messages in mailbox"
-#~ msgstr "olästa meddelanden i epostlådan"
-#~ msgid "yes"
-#~ msgstr "ja"
-
+msgstr ""

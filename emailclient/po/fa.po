@@ -1,43 +1,45 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Persian translations for enigma package.
+# Copyright (C) 2018 THE enigma'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the enigma package.
+# Automatically generated, 2018.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: email client Persian Translation\n"
+"Project-Id-Version: enigma 2-plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-11-28 18:29+0100\n"
-"PO-Revision-Date: 2012-07-24 14:03+0330\n"
-"Last-Translator: mehdi <mehdi_ar_yekta@yahoo.com>\n"
-"Language-Team: Persian Professionals <persianpros@yahoo.com>\n"
+"POT-Creation-Date: 2018-05-03 11:46+0200\n"
+"PO-Revision-Date: 2018-05-03 11:46+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: fa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Language: Persian\n"
-"X-Poedit-Country: IRAN, ISLAMIC REPUBLIC OF\n"
 
 #, python-format
 msgid "%(name)s (%(user)s@%(server)s)"
 msgstr ""
 
+msgid "Account Setup"
+msgstr ""
+
 msgid "Accounts list"
-msgstr "لیست کاربران"
+msgstr ""
 
 msgid "Attachments"
-msgstr "پیوست ها"
+msgstr ""
 
 msgid "Bodys"
-msgstr "بدنه ها"
+msgstr ""
 
 msgid "Date"
-msgstr "تاریخ"
+msgstr ""
 
 msgid "Email Client"
-msgstr "ایمیل کلاینت"
+msgstr ""
 
 msgid "Email setup"
-msgstr "راه اندازی ایمیل"
+msgstr ""
 
 #, python-format
 msgid ""
@@ -47,7 +49,7 @@ msgid ""
 msgstr ""
 
 msgid "From"
-msgstr "از"
+msgstr ""
 
 msgid "IMAP Port"
 msgstr ""
@@ -66,13 +68,14 @@ msgid "Really delete account %s?"
 msgstr ""
 
 msgid "Subject"
-msgstr "موضوع"
+msgstr ""
 
 #, python-format
 msgid ""
 "[EmailAccount] %(name)s: _cbCapabilities:\n"
 "####################################################################################################\n"
-"# If you have problems to log into your imap-server, please send me the output of the following line\n"
+"# If you have problems to log into your imap-server, please send me the "
+"output of the following line\n"
 "# cbCapabilities: %(capa)s\n"
 "####################################################################################################\n"
 msgstr ""
@@ -82,46 +85,55 @@ msgid "account %s is not connected"
 msgstr ""
 
 msgid "account name"
-msgstr "نام کاربری"
+msgstr ""
 
 msgid "account not connected"
-msgstr "کاربر متصل نشده است "
+msgstr ""
 
 msgid "add"
-msgstr "افزودن"
+msgstr ""
+
+msgid "always"
+msgstr ""
 
 msgid "cancel"
-msgstr "لغو کردن"
+msgstr ""
 
 msgid "cannot access inbox"
-msgstr "عدم دسترسی به صندوق "
+msgstr ""
 
 msgid "cannot get headers of new messages"
-msgstr "نمی توانید هدر پیام های جدید را دریافت نمایید"
+msgstr ""
 
 msgid "cannot get list of new messages"
-msgstr "نمی توانید لیست پیام های جدید را دریافت نمایید "
+msgstr ""
 
 msgid "connection failed - retrying"
-msgstr "قطع شدن ارتباط - تلاش جهت برقراری ارتباط"
+msgstr ""
 
 msgid "debug"
-msgstr "اشکال زدایی"
+msgstr ""
 
 msgid "delete"
-msgstr "حذف کردن"
+msgstr ""
 
 msgid "display connection errors"
-msgstr "نمایش خطاهای ارتباطی"
+msgstr ""
+
+msgid "display message type"
+msgstr ""
 
 msgid "display timeout (seconds)"
-msgstr "نمایش وقفه زمانی بر حسب ثانیه"
+msgstr ""
 
 msgid "edit"
-msgstr "ویرایش"
+msgstr ""
 
 msgid "empty values - retry"
-msgstr "خالی بودم مقادیر - تلاش مجدد"
+msgstr ""
+
+msgid "enable auto check mail"
+msgstr ""
 
 #, python-format
 msgid ""
@@ -130,97 +142,102 @@ msgid ""
 msgstr ""
 
 msgid "failed to load message"
-msgstr "بارگذاری ناموفق پیام"
+msgstr ""
 
 msgid "getting message ..."
-msgstr "رساندن پیام ..."
+msgstr ""
 
 #, python-format
 msgid "have %d messages"
 msgstr ""
 
 msgid "have no messages"
-msgstr "هیچ پیامی موجود نیست"
+msgstr ""
 
 msgid "headers loaded, now parsing ..."
-msgstr "هدرها بارگذاری شده اند در حال تجزیه و تحلیل فایل "
+msgstr ""
 
 #, python-format
 msgid "importing configurations from %s"
 msgstr ""
 
+msgid "infobar mode (live TV)"
+msgstr ""
+
 msgid "leave unread"
-msgstr "ترک خوانده نشده ها"
+msgstr ""
 
 msgid "list all mailboxes"
-msgstr "فهرست ایمیل ها"
+msgstr ""
 
 msgid "loading headers ..."
-msgstr "در حال بارگذاری هدرها ..."
+msgstr ""
 
 msgid "mail check interval (minutes)"
-msgstr "وقفه در بررسی پست ها بر حسب دقیقه"
+msgstr ""
 
 msgid "maximum mail size to fetch"
-msgstr "اندازه نهایی یک پست "
+msgstr ""
 
 msgid "message too large"
-msgstr "پیام خیلی حجیم است"
+msgstr ""
 
 msgid "no account selected"
-msgstr "هیچ کاربری انتخاب نشده است"
+msgstr ""
 
 msgid "no date"
-msgstr "بدون تاریخ"
+msgstr ""
 
 msgid "no filename"
-msgstr "بدون نام فایل"
+msgstr ""
 
 msgid "no from"
-msgstr "نه از"
+msgstr ""
 
 msgid "no mailbox?!?!"
-msgstr "بدون هیچ صندوق پستی !؟!؟"
+msgstr ""
 
 msgid "no sender"
-msgstr "بدون فرستنده"
+msgstr ""
 
 msgid "no subject"
-msgstr "بدون موضوع"
+msgstr ""
 
 msgid "ok"
-msgstr "مورد تایید است"
+msgstr ""
 
 msgid "parsing message ..."
-msgstr "در حال بررسی و تجزیه و تحلیل پست..."
+msgstr ""
 
 msgid "password"
-msgstr "رمز عبور"
+msgstr ""
 
 msgid "really delete mail?"
-msgstr "آیا واقعا می خواهید این پست را حذف کنید ؟"
+msgstr ""
 
 msgid "really undelete mail?"
-msgstr "آیا واقعا می خواهید پست بازگردانی شود ؟"
+msgstr ""
 
 msgid "remove"
-msgstr "پاک کردن"
+msgstr ""
 
 msgid "select Attachment"
-msgstr "انتخاب پیوست"
+msgstr ""
 
 msgid "select Body"
-msgstr "انتخاب بدنه"
+msgstr ""
 
 msgid "show deleted entries"
-msgstr "نمایش ورودی های پاک شده"
+msgstr ""
 
 msgid "undelete"
-msgstr "بازگردانی کردن"
+msgstr ""
 
 msgid "user name"
-msgstr "نام کاربری"
+msgstr ""
+
+msgid "view Email"
+msgstr ""
 
 msgid "view Emails via IMAP4"
-msgstr "IMAP4 نمایش پست ها از طریق"
-
+msgstr ""

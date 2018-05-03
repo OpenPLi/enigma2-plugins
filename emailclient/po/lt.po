@@ -1,45 +1,47 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Lithuanian translations for enigma package.
+# Copyright (C) 2018 THE enigma'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the enigma package.
+# Automatically generated, 2018.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: EmailClient plugin\n"
+"Project-Id-Version: enigma 2-plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-28 12:01+0200\n"
-"PO-Revision-Date: 2016-12-28 12:21+0200\n"
-"Language-Team: Vytenis P. <vyteniui@gmail.com>\n"
+"POT-Creation-Date: 2018-05-03 11:46+0200\n"
+"PO-Revision-Date: 2018-05-03 11:46+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: lt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.11\n"
-"Last-Translator: Vytenis P. <vyteniui@gmail.com>\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"(n%100<10 || n%100>=20) ? 1 : 2);\n"
-"Language: lt\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n"
+"%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #, python-format
 msgid "%(name)s (%(user)s@%(server)s)"
-msgstr "%(name)s (%(user)s@%(server)s"
+msgstr ""
+
+msgid "Account Setup"
+msgstr ""
 
 msgid "Accounts list"
-msgstr "Paskyrų sąrašas"
+msgstr ""
 
 msgid "Attachments"
-msgstr "Prisegtukai"
+msgstr ""
 
 msgid "Bodys"
-msgstr "Tekstas"
+msgstr ""
 
 msgid "Date"
-msgstr "Data"
+msgstr ""
 
 msgid "Email Client"
-msgstr "El.pašto klientas"
+msgstr ""
 
 msgid "Email setup"
-msgstr "El.pašto sąranka"
+msgstr ""
 
 #, python-format
 msgid ""
@@ -47,33 +49,28 @@ msgid ""
 "\n"
 "%(error)s"
 msgstr ""
-"%(account)s el.pašto klientas:\n"
-"\n"
-"%(error)s"
 
 msgid "From"
-msgstr "Nuo"
+msgstr ""
 
 msgid "IMAP Port"
-msgstr "IMAP prievadas"
+msgstr ""
 
 msgid "IMAP Server"
-msgstr "IMAP serveris"
+msgstr ""
 
 #, python-format
 msgid ""
 "New mail arrived for account %s:\n"
 "\n"
 msgstr ""
-"Į %s paskyrą gautas naujas laiškas:\n"
-"\n"
 
 #, python-format
 msgid "Really delete account %s?"
-msgstr "Ar tikrai norite pašalinti %s paskyrą?"
+msgstr ""
 
 msgid "Subject"
-msgstr "Tema"
+msgstr ""
 
 #, python-format
 msgid ""
@@ -84,158 +81,165 @@ msgid ""
 "# cbCapabilities: %(capa)s\n"
 "####################################################################################################\n"
 msgstr ""
-"[El.pašto paskyra] %(name)s: _cbCapabilities:\n"
-"####################################################################################################\n"
-"# Jei turite prisijungimo prie IMAP serverio problemų, siųskite man "
-"šios eilutės turinį\n"
-"# cbCapabilities: %(capa)s\n"
-"####################################################################################################\n"
 
 #, python-format
 msgid "account %s is not connected"
-msgstr "prie paskyros %s neprisijungta"
+msgstr ""
 
 msgid "account name"
-msgstr "paskyros pavadinimas"
+msgstr ""
 
 msgid "account not connected"
-msgstr "prie paskyros neprisijungta"
+msgstr ""
 
 msgid "add"
-msgstr "pridėti"
+msgstr ""
+
+msgid "always"
+msgstr ""
 
 msgid "cancel"
-msgstr "atšaukti"
+msgstr ""
 
 msgid "cannot access inbox"
-msgstr "gauti laiškai neprieinami"
+msgstr ""
 
 msgid "cannot get headers of new messages"
-msgstr "nepavyko gauti naujų laiškų antraščių"
+msgstr ""
 
 msgid "cannot get list of new messages"
-msgstr "nepavyko gauti naujų laiškų sąrašo"
+msgstr ""
 
 msgid "connection failed - retrying"
-msgstr "prijungti nepavyko - kartojama"
+msgstr ""
 
 msgid "debug"
-msgstr "klaidų šalinimas"
+msgstr ""
 
 msgid "delete"
-msgstr "šalinti"
+msgstr ""
 
 msgid "display connection errors"
-msgstr "rodyti jungimosi klaidas"
+msgstr ""
+
+msgid "display message type"
+msgstr ""
 
 msgid "display timeout (seconds)"
-msgstr "rodyti delsą (sek.)"
+msgstr ""
 
 msgid "edit"
-msgstr "redaguoti"
+msgstr ""
 
 msgid "empty values - retry"
-msgstr "tuščios reikšmės – kartoti"
+msgstr ""
+
+msgid "enable auto check mail"
+msgstr ""
 
 #, python-format
 msgid ""
 "error logging %(who)s in:\n"
 "%(failure)s"
 msgstr ""
-"klaida prisijungiant %(who)s :\n"
-"%(failure)s"
 
 msgid "failed to load message"
-msgstr "laiško įkelti nepavyko"
+msgstr ""
 
 msgid "getting message ..."
-msgstr "gaunamas laiškas..."
+msgstr ""
 
 #, python-format
 msgid "have %d messages"
-msgstr "yra %d laiškų"
+msgstr ""
 
 msgid "have no messages"
-msgstr "laiškų nėra"
+msgstr ""
 
 msgid "headers loaded, now parsing ..."
-msgstr "antraštės įkeltos, apdorojama..."
+msgstr ""
 
 #, python-format
 msgid "importing configurations from %s"
-msgstr "konfigūracija importuojama iš %s"
+msgstr ""
+
+msgid "infobar mode (live TV)"
+msgstr ""
 
 msgid "leave unread"
-msgstr "palikti neskaitytą"
+msgstr ""
 
 msgid "list all mailboxes"
-msgstr "visos pašto dėžutės"
+msgstr ""
 
 msgid "loading headers ..."
-msgstr "įkeliamos antraštės..."
+msgstr ""
 
 msgid "mail check interval (minutes)"
-msgstr "paštą tikrinti kas (min.)"
+msgstr ""
 
 msgid "maximum mail size to fetch"
-msgstr "didžiausias parsiunčiamo laiško dydis"
+msgstr ""
 
 msgid "message too large"
-msgstr "laiškas per didelis"
+msgstr ""
 
 msgid "no account selected"
-msgstr "nepasirinkta paskyra"
+msgstr ""
 
 msgid "no date"
-msgstr "nėra datos"
+msgstr ""
 
 msgid "no filename"
-msgstr "nėra failo pavadinimo"
+msgstr ""
 
 msgid "no from"
-msgstr "nėra nuo ko"
+msgstr ""
 
 msgid "no mailbox?!?!"
-msgstr "nėra pašto dėžutės?!?!"
+msgstr ""
 
 msgid "no sender"
-msgstr "nėra siuntėjo"
+msgstr ""
 
 msgid "no subject"
-msgstr "nėra temos"
+msgstr ""
 
 msgid "ok"
-msgstr "gerai"
+msgstr ""
 
 msgid "parsing message ..."
-msgstr "apdorojama..."
+msgstr ""
 
 msgid "password"
-msgstr "slaptažodis"
+msgstr ""
 
 msgid "really delete mail?"
-msgstr "tikrai ištrinti laišką?"
+msgstr ""
 
 msgid "really undelete mail?"
-msgstr "tikrai atkurti laišką?"
+msgstr ""
 
 msgid "remove"
-msgstr "pašalinti"
+msgstr ""
 
 msgid "select Attachment"
-msgstr "pasirinkite prisegtuką"
+msgstr ""
 
 msgid "select Body"
-msgstr "pasirinkite tekstą"
+msgstr ""
 
 msgid "show deleted entries"
-msgstr "rodyti ištrintus įrašus"
+msgstr ""
 
 msgid "undelete"
-msgstr "atkurti"
+msgstr ""
 
 msgid "user name"
-msgstr "vartotojo vardas"
+msgstr ""
+
+msgid "view Email"
+msgstr ""
 
 msgid "view Emails via IMAP4"
-msgstr "skaityti paštą per IMAP4"
+msgstr ""
