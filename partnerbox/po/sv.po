@@ -531,9 +531,7 @@ msgstr ""
 msgid "Yes (safe mode)"
 msgstr ""
 
-msgid ""
-"You can not add services or bouquets from Enigma1-receivers into the "
-"channellist..."
+msgid "You can not add services or bouquets from Enigma1-receivers into the channellist..."
 msgstr ""
 
 msgid "Zap"
