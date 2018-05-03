@@ -1,21 +1,21 @@
-# Dutch translations for enigma package.
-# Copyright (C) 2018 THE enigma'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the enigma package.
-# Automatically generated, 2018.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
+#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: enigma 2-plugins\n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-05-03 11:46+0200\n"
-"PO-Revision-Date: 2018-05-03 11:46+0200\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
-"Language: nl\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "A NAS/Server can be shut down. Is required activated Telnet."
 msgstr ""
@@ -29,9 +29,7 @@ msgstr ""
 msgid "Avoid deep standby when HDD is active, e.g. for FTP"
 msgstr ""
 
-msgid ""
-"Both profiles are used alternately. When shutting down the other profile is "
-"enabled. This allows two time cycles per day. Do not overlap the times."
+msgid "Both profiles are used alternately. When shutting down the other profile is enabled. This allows two time cycles per day. Do not overlap the times."
 msgstr ""
 
 msgid "Cancel"
@@ -67,9 +65,7 @@ msgstr ""
 msgid "Force sleep (even when not in standby)"
 msgstr ""
 
-msgid ""
-"Forces deep standby, even when not in standby mode. Scheduled recordings "
-"remain unaffected."
+msgid "Forces deep standby, even when not in standby mode. Scheduled recordings remain unaffected."
 msgstr ""
 
 msgid "Friday"
@@ -90,10 +86,7 @@ msgstr ""
 msgid "IP Address"
 msgstr ""
 
-msgid ""
-"If the box is supposed to enter deep standby e.g. monday night at 1 AM, it "
-"actually is already tuesday. To enable this anyway, differing next day start "
-"time can be specified here."
+msgid "If the box is supposed to enter deep standby e.g. monday night at 1 AM, it actually is already tuesday. To enable this anyway, differing next day start time can be specified here."
 msgstr ""
 
 msgid "Monday"
@@ -138,10 +131,7 @@ msgstr ""
 msgid "Sleep"
 msgstr ""
 
-msgid ""
-"Specify how long to show the standby query on boot screen. This value can be "
-"set to ensure the box does not shut down to deep standby again too fast when "
-"in standby mode."
+msgid "Specify how long to show the standby query on boot screen. This value can be set to ensure the box does not shut down to deep standby again too fast when in standby mode."
 msgstr ""
 
 msgid "Specify plugin description to be used in menu (needs GUI restart)."
@@ -150,9 +140,7 @@ msgstr ""
 msgid "Specify plugin name to be used in menu (needs GUI restart)."
 msgstr ""
 
-msgid ""
-"Specify whether plugin shall show up in plugin menu or extensions menu "
-"(needs GUI restart)"
+msgid "Specify whether plugin shall show up in plugin menu or extensions menu (needs GUI restart)"
 msgstr ""
 
 msgid "Standby on boot"
@@ -176,9 +164,7 @@ msgstr ""
 msgid "The box always enters deep standby mode, except for recording."
 msgstr ""
 
-msgid ""
-"This list of IP addresses is checked. Elektro waits until addresses no "
-"longer responds to ping."
+msgid "This list of IP addresses is checked. Elektro waits until addresses no longer responds to ping."
 msgstr ""
 
 msgid "Thursday"
@@ -202,9 +188,7 @@ msgstr ""
 msgid "Ver."
 msgstr ""
 
-msgid ""
-"Wait for the HDD to enter sleep mode. Depending on the configuration this "
-"can prevent the box entirely from entering deep standby mode."
+msgid "Wait for the HDD to enter sleep mode. Depending on the configuration this can prevent the box entirely from entering deep standby mode."
 msgstr ""
 
 msgid "Waiting until poweroff"
@@ -216,11 +200,7 @@ msgstr ""
 msgid "Wednesday"
 msgstr ""
 
-msgid ""
-"Whether to put the box in standby when booted manually. On manual boot the "
-"box will not go to standby before the next deep standby interval starts, "
-"even if this option is set. This option is only active if 'Standby on boot' "
-"option is set, too."
+msgid "Whether to put the box in standby when booted manually. On manual boot the box will not go to standby before the next deep standby interval starts, even if this option is set. This option is only active if 'Standby on boot' option is set, too."
 msgstr ""
 
 msgid "no Name"
