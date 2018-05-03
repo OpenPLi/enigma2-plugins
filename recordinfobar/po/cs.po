@@ -1,34 +1,39 @@
+# Czech translations for enigma package.
+# Copyright (C) 2018 THE enigma'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the enigma package.
+# Automatically generated, 2018.
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
+"Project-Id-Version: enigma 2-plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-05-03 14:02+0200\n"
-"PO-Revision-Date: 2013-08-04 16:45+0100\n"
-"Last-Translator: daTa deVil <data-devil@nowhere.org>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: de\n"
+"PO-Revision-Date: 2018-05-03 14:02+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.4\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
 #, python-format
 msgid " (%d mins)\n"
-msgstr " (%d min)\n"
+msgstr ""
 
-#, fuzzy, python-format
+#, python-format
 msgid "%s...%s (%d mins)"
-msgstr " (%d min)\n"
+msgstr ""
 
-#, fuzzy, python-format
+#, python-format
 msgid "+%d min / %s"
-msgstr " (%d min)\n"
+msgstr ""
 
 msgid "<<Only when zap to service at start timer>>"
 msgstr ""
 
 msgid "All Services"
-msgstr "Alle Services"
+msgstr ""
 
 msgid "Always show indicator icon when recording"
 msgstr ""
@@ -37,7 +42,7 @@ msgid "Anchor resizing at"
 msgstr ""
 
 msgid "Automatic is the default action"
-msgstr "Automatische Standardaktion"
+msgstr ""
 
 msgid "Background window"
 msgstr ""
@@ -47,7 +52,7 @@ msgid "Bouquet: %s"
 msgstr ""
 
 msgid "Cancel"
-msgstr "Abbrechen"
+msgstr ""
 
 msgid "DD HH:MM:SS"
 msgstr ""
@@ -56,7 +61,7 @@ msgid "Dd HHh MMm SSs"
 msgstr ""
 
 msgid "Enable record infobar"
-msgstr "aktiviere Record Infobar"
+msgstr ""
 
 msgid ""
 "GUI needs a restart to apply changes.\n"
@@ -64,11 +69,10 @@ msgid ""
 msgstr ""
 
 msgid "Go to Standby now?"
-msgstr "Jetzt in den Standby gehen?"
+msgstr ""
 
-#, fuzzy
 msgid "Goto standby when wakeup on a timer recording"
-msgstr "Gehe in Standby nach wecken bei Timeraufnahme"
+msgstr ""
 
 msgid "H:M:S"
 msgstr ""
@@ -110,15 +114,14 @@ msgid "Preferred tuner for recording"
 msgstr ""
 
 msgid "Provider"
-msgstr "Provider"
+msgstr ""
 
-#, fuzzy, python-format
+#, python-format
 msgid "Provider: %s"
-msgstr "Provider"
+msgstr ""
 
-#, fuzzy
 msgid "Record Infobar"
-msgstr "aktiviere Record Infobar"
+msgstr ""
 
 msgid "Record Infobar Setup"
 msgstr ""
@@ -130,47 +133,44 @@ msgid "Record timelen format"
 msgstr ""
 
 msgid "Recording starts!\n"
-msgstr "Aufnahme startet!\n"
+msgstr ""
 
 msgid "S"
 msgstr ""
 
 msgid "Satellites"
-msgstr "Satelliten"
+msgstr ""
 
 msgid "Set correct position timer in channel list"
 msgstr ""
 
-#, fuzzy
 msgid "Show message when zap to recording service"
-msgstr "Zeige Nachricht beim umschalten zur Aufnahme"
+msgstr ""
 
 msgid "Ss"
 msgstr ""
 
-#, fuzzy
 msgid "Standby message screen timeout (sec)"
-msgstr "Standby Nachricht Zeitlimit (sec.)"
+msgstr ""
 
-#, fuzzy
 msgid "Standby only type timer 'After event'"
-msgstr "Standby für Timer 'Nach dem Event'"
+msgstr ""
 
 msgid "Stream"
 msgstr ""
 
 msgid "Switch to a recordable channel?"
-msgstr "Umschalten zu einem aufnehmbaren Kanal?"
+msgstr ""
 
 msgid "Switched to the recording service !\n"
-msgstr "Umgeschaltet zu einem aufnehmbaren Kanal !\n"
+msgstr ""
 
 #, python-format
 msgid "Tuner: %s"
 msgstr ""
 
 msgid "Unknown"
-msgstr "Unbekannt"
+msgstr ""
 
 msgid "X screen position"
 msgstr ""
@@ -182,69 +182,66 @@ msgid "Z screen position"
 msgstr ""
 
 msgid "Zap on start service recording"
-msgstr "schalte zur gestarteten Aufnahme"
+msgstr ""
 
 msgid "all"
-msgstr "alle"
+msgstr ""
 
-#, fuzzy
 msgid "all, except 'nothing'"
-msgstr "alle, dann mache 'nichts' "
+msgstr ""
 
 msgid "always"
-msgstr "immer"
+msgstr ""
 
 msgid "ask the user"
-msgstr "nachfragen"
+msgstr ""
 
 msgid "auto"
-msgstr "auto"
+msgstr ""
 
 msgid "auto and deep standby"
-msgstr "auto und Deep Standby"
+msgstr ""
 
 msgid "black"
 msgstr ""
 
 #, python-format
 msgid "channel: %s   prov: %s\n"
-msgstr "Kanal: %s   Prov: %s\n"
+msgstr ""
 
 #, python-format
 msgid ""
 "channel: %s   prov: %s\n"
 " %s\n"
 msgstr ""
-"Kanal: %s   Prov: %s\n"
-" %s\n"
 
 msgid "deep standby"
-msgstr "Deep Standby"
+msgstr ""
 
 msgid "default"
-msgstr "standard"
+msgstr ""
 
 msgid "disabled"
 msgstr ""
 
 msgid "down"
-msgstr "unten"
+msgstr ""
 
 #, python-format
 msgid "duration:  %s ... "
-msgstr "Laufzeit:  %s ... "
+msgstr ""
 
 msgid "no zap"
-msgstr "nicht umschalten"
+msgstr ""
 
 msgid "standby"
-msgstr "Standby"
+msgstr ""
 
 msgid "top"
-msgstr "Oben"
+msgstr ""
 
 msgid "transparent"
 msgstr ""
 
 msgid "zap"
-msgstr "umschalten"
+msgstr ""

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: RecInfobar\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-02-20 15:49+0200\n"
+"POT-Creation-Date: 2018-05-03 14:02+0200\n"
 "PO-Revision-Date: 2014-02-18 22:57+0200\n"
 "Last-Translator: Dima73 <Dima-73@inbox.lv>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -10,43 +10,18 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3;     plural=n%10==1 && n%100!=11 ? 0 : n"
-"%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3;     plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Poedit 1.5.5\n"
 
+#, python-format
 msgid " (%d mins)\n"
 msgstr " (%d мин)\n"
 
-msgid "%(DD)d day"
-msgid_plural "%(DD)d days"
-msgstr[0] "%(DD)d день"
-msgstr[1] "%(DD)d дня"
-msgstr[2] "%(DD)d дней"
-
-msgid "%(DD)dd %(HH)02dh %(MM)02dm %(SS)02ds"
-msgstr "%(DD)dд %(HH)02dч %(MM)02dм %(SS)02dс"
-
-msgid "%(HHs)02dh %(MM)02dm %(SS)02ds"
-msgstr "%(HHs)02dч %(MM)02dм %(SS)02dс"
-
-msgid "%(HHs)dh %(MM)dm %(SS)ds"
-msgstr "%(HHs)dч %(MM)dм %(SS)dс"
-
-msgid "%(MMs)02dm %(SS)02ds"
-msgstr "%(MMs)02dм %(SS)02dс"
-
-msgid "%(MMs)dm %(SS)02ds"
-msgstr "%(MMs)dм %(SS)02dс"
-
-msgid "%(MMs)dm %(SS)ds"
-msgstr "%(MMs)dм %(SS)dс"
-
-msgid "%(SSs)ds"
-msgstr "%(SSs)dс"
-
+#, python-format
 msgid "%s...%s (%d mins)"
 msgstr "%s...%s (%d мин)"
 
+#, python-format
 msgid "+%d min / %s"
 msgstr "+%d мин / %s"
 
@@ -65,6 +40,10 @@ msgstr "Привязка окна при изменении размера"
 msgid "Automatic is the default action"
 msgstr "Автоматическое действие по умолчанию"
 
+msgid "Background window"
+msgstr "Фон окна"
+
+#, python-format
 msgid "Bouquet: %s"
 msgstr "Фаворит: %s"
 
@@ -126,12 +105,16 @@ msgstr "Мм Сс"
 msgid "N/A"
 msgstr "Н/Д"
 
+msgid "OK"
+msgstr ""
+
 msgid "Preferred tuner for recording"
 msgstr "Приоритетный тюнер для записи"
 
 msgid "Provider"
 msgstr "Провайдер"
 
+#, python-format
 msgid "Provider: %s"
 msgstr "Провайдер: %s"
 
@@ -140,6 +123,10 @@ msgstr "Инфобар записей"
 
 msgid "Record Infobar Setup"
 msgstr "Инфобар записей - настройки"
+
+#, fuzzy
+msgid "Record Infobar addon"
+msgstr "Инфобар записей"
 
 msgid "Record timelen format"
 msgstr "Формат времени записи"
@@ -152,9 +139,6 @@ msgstr "С"
 
 msgid "Satellites"
 msgstr "Спутник"
-
-msgid "Save"
-msgstr "Сохранить"
 
 msgid "Set correct position timer in channel list"
 msgstr "Установить корректную позицию таймера в списке каналов"
@@ -171,12 +155,16 @@ msgstr "Таймаут сообщения до перехода в режим о
 msgid "Standby only type timer 'After event'"
 msgstr "Режим ожидания только для таймеров 'После события'"
 
+msgid "Stream"
+msgstr ""
+
 msgid "Switch to a recordable channel?"
 msgstr "Переключить на записываемый канал?"
 
 msgid "Switched to the recording service !\n"
 msgstr "Переключено на записываемый канал !\n"
 
+#, python-format
 msgid "Tuner: %s"
 msgstr "Тюнер: %s"
 
@@ -213,12 +201,14 @@ msgstr "авто"
 msgid "auto and deep standby"
 msgstr "авто и полное выключение"
 
-msgid "bottom"
-msgstr "снизу"
+msgid "black"
+msgstr "черный"
 
+#, python-format
 msgid "channel: %s   prov: %s\n"
 msgstr "канал: %s   провайдер: %s\n"
 
+#, python-format
 msgid ""
 "channel: %s   prov: %s\n"
 " %s\n"
@@ -235,6 +225,10 @@ msgstr "по умолчанию"
 msgid "disabled"
 msgstr "отключено"
 
+msgid "down"
+msgstr ""
+
+#, python-format
 msgid "duration:  %s ... "
 msgstr "продолжительность:  %s ... "
 
@@ -244,21 +238,11 @@ msgstr "не переключать"
 msgid "standby"
 msgstr "режим ожидания"
 
-msgid "start in :  %s\n"
-msgstr "начало в :  %s\n"
-
 msgid "top"
 msgstr "сверху"
-
-msgid "zap"
-msgstr "переключить"
-
-msgid "Background window"
-msgstr "Фон окна"
 
 msgid "transparent"
 msgstr "прозрачный"
 
-msgid "black"
-msgstr "черный"
-
+msgid "zap"
+msgstr "переключить"

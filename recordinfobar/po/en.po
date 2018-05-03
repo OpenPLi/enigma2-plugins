@@ -1,21 +1,20 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# English translations for enigma package.
+# Copyright (C) 2018 THE enigma'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the enigma package.
+# Automatically generated, 2018.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
+"Project-Id-Version: enigma 2-plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-05-03 14:02+0200\n"
-"PO-Revision-Date: 2016-04-29 20:37+0300\n"
-"Last-Translator: Dimitrij <Dima-73@inbox.lv>\n"
-"Language-Team: \n"
-"Language: nl\n"
+"PO-Revision-Date: 2018-05-03 14:02+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.4\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #, python-format
@@ -24,36 +23,36 @@ msgstr " (%d mins)\n"
 
 #, python-format
 msgid "%s...%s (%d mins)"
-msgstr "%s...%s (%d min)"
+msgstr "%s...%s (%d mins)"
 
 #, python-format
 msgid "+%d min / %s"
 msgstr "+%d min / %s"
 
 msgid "<<Only when zap to service at start timer>>"
-msgstr "<<Alleen bij start timer naar kanaal zappen>>"
+msgstr "<<Only when zap to service at start timer>>"
 
 msgid "All Services"
-msgstr "Alle kanalen"
+msgstr "All Services"
 
 msgid "Always show indicator icon when recording"
-msgstr "Toon altijd opnameikoon tijdens opname"
+msgstr "Always show indicator icon when recording"
 
 msgid "Anchor resizing at"
-msgstr "Vergroot vanuit"
+msgstr "Anchor resizing at"
 
 msgid "Automatic is the default action"
-msgstr "'Automatisch' is de standaard actie."
+msgstr "Automatic is the default action"
 
 msgid "Background window"
-msgstr "Windowachtergrond"
+msgstr "Background window"
 
 #, python-format
 msgid "Bouquet: %s"
-msgstr "Boeket: %s"
+msgstr "Bouquet: %s"
 
 msgid "Cancel"
-msgstr "Annuleer"
+msgstr "Cancel"
 
 msgid "DD HH:MM:SS"
 msgstr "DD HH:MM:SS"
@@ -62,20 +61,20 @@ msgid "Dd HHh MMm SSs"
 msgstr "Dd HHh MMm SSs"
 
 msgid "Enable record infobar"
-msgstr "Schakel record infobar in"
+msgstr "Enable record infobar"
 
 msgid ""
 "GUI needs a restart to apply changes.\n"
 "Restart the GUI now?"
 msgstr ""
-"De GUI moet herstart worden om de aanpassingen in te stellen.\n"
-"GUI nu herstarten?"
+"GUI needs a restart to apply changes.\n"
+"Restart the GUI now?"
 
 msgid "Go to Standby now?"
-msgstr "Nu naar stand-by gaan?"
+msgstr "Go to Standby now?"
 
 msgid "Goto standby when wakeup on a timer recording"
-msgstr "Ga naar stand-by indien ontwaakt voor een opname"
+msgstr "Goto standby when wakeup on a timer recording"
 
 msgid "H:M:S"
 msgstr "H:M:S"
@@ -108,13 +107,13 @@ msgid "Mm Ss"
 msgstr "Mm Ss"
 
 msgid "N/A"
-msgstr "NVT"
+msgstr "N/A"
 
 msgid "OK"
 msgstr "OK"
 
 msgid "Preferred tuner for recording"
-msgstr "Voorkeurstuner voor opname"
+msgstr "Preferred tuner for recording"
 
 msgid "Provider"
 msgstr "Provider"
@@ -127,86 +126,86 @@ msgid "Record Infobar"
 msgstr "Record Infobar"
 
 msgid "Record Infobar Setup"
-msgstr "Record Infobar instellingen"
+msgstr "Record Infobar Setup"
 
 msgid "Record Infobar addon"
-msgstr "Record Infobar aanvulling"
+msgstr "Record Infobar addon"
 
 msgid "Record timelen format"
-msgstr "Opname tijdlijn formaat"
+msgstr "Record timelen format"
 
 msgid "Recording starts!\n"
-msgstr "Opname begint!\n"
+msgstr "Recording starts!\n"
 
 msgid "S"
 msgstr "S"
 
 msgid "Satellites"
-msgstr "Satellieten"
+msgstr "Satellites"
 
 msgid "Set correct position timer in channel list"
-msgstr "Stel de juiste positietimer in de kanaallijst"
+msgstr "Set correct position timer in channel list"
 
 msgid "Show message when zap to recording service"
-msgstr "Toon bericht wanneer gezapt wordt naar het opnamekanaal"
+msgstr "Show message when zap to recording service"
 
 msgid "Ss"
 msgstr "Ss"
 
 msgid "Standby message screen timeout (sec)"
-msgstr "Stand-by schermbericht (sec)"
+msgstr "Standby message screen timeout (sec)"
 
 msgid "Standby only type timer 'After event'"
-msgstr "Alleen stand-by voor timertype 'na event"
+msgstr "Standby only type timer 'After event'"
 
 msgid "Stream"
 msgstr "Stream"
 
 msgid "Switch to a recordable channel?"
-msgstr "Zappen naar opnamekanaal?"
+msgstr "Switch to a recordable channel?"
 
 msgid "Switched to the recording service !\n"
-msgstr "Gezapt naar het opnamekanaal!\n"
+msgstr "Switched to the recording service !\n"
 
 #, python-format
 msgid "Tuner: %s"
 msgstr "Tuner: %s"
 
 msgid "Unknown"
-msgstr "Onbekend"
+msgstr "Unknown"
 
 msgid "X screen position"
-msgstr "X scherm positie"
+msgstr "X screen position"
 
 msgid "Y screen position"
-msgstr "Y scherm positie"
+msgstr "Y screen position"
 
 msgid "Z screen position"
-msgstr "Z scherm positie"
+msgstr "Z screen position"
 
 msgid "Zap on start service recording"
-msgstr "Zap bij aanvang opname"
+msgstr "Zap on start service recording"
 
 msgid "all"
-msgstr "álle"
+msgstr "all"
 
 msgid "all, except 'nothing'"
-msgstr "alles, behalve 'niets"
+msgstr "all, except 'nothing'"
 
 msgid "always"
-msgstr "altijd"
+msgstr "always"
 
 msgid "ask the user"
-msgstr "vraag gebruiker"
+msgstr "ask the user"
 
 msgid "auto"
 msgstr "auto"
 
 msgid "auto and deep standby"
-msgstr "auto en deep standby"
+msgstr "auto and deep standby"
 
 msgid "black"
-msgstr "zwart"
+msgstr "black"
 
 #, python-format
 msgid "channel: %s   prov: %s\n"
@@ -227,23 +226,23 @@ msgid "default"
 msgstr "default"
 
 msgid "disabled"
-msgstr "uitgeschakeld"
+msgstr "disabled"
 
 msgid "down"
-msgstr "beneden"
+msgstr "down"
 
 #, python-format
 msgid "duration:  %s ... "
-msgstr "duur:  %s ... "
+msgstr "duration:  %s ... "
 
 msgid "no zap"
-msgstr "niet zappen"
+msgstr "no zap"
 
 msgid "standby"
 msgstr "standby"
 
 msgid "top"
-msgstr "Bovenin"
+msgstr "top"
 
 msgid "transparent"
 msgstr "transparent"
