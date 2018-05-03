@@ -1,276 +1,257 @@
-# Swedish translations for tuxbox-enigma package.
-# Copyright (C) 2005 THE tuxbox-enigma'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the tuxbox-enigma package.
-# Automatically generated, 2005.
+# Swedish translations for enigma package.
+# Copyright (C) 2018 THE enigma'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the enigma package.
+# Automatically generated, 2018.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: tuxbox-enigma 0.0.1\n"
+"Project-Id-Version: enigma 2-plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-01-28 16:39+0100\n"
-"PO-Revision-Date: 2012-12-16 12:05+0100\n"
-"Last-Translator: Magnus Nilsson <mag_nilsson@hotmail.com>\n"
-"Language-Team: WeeGull <weegull@hotmail.com>\n"
+"POT-Creation-Date: 2018-05-03 11:46+0200\n"
+"PO-Revision-Date: 2018-05-03 11:46+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Poedit-SourceCharset: iso-8859-15\n"
-"Language: sv_SE\n"
-"X-Generator: Poedit 1.5.4\n"
 
 msgid ""
 "A mount entry with this name already exists!\n"
 "Update existing entry and continue?\n"
 msgstr ""
-"En monteringspunkt med samma namn finns redan!\n"
-"Uppdatera befintligt monteringspunkt och forsätta?\n"
 
 msgid "Active"
-msgstr "Aktiv"
+msgstr ""
 
 msgid ""
 "Active/\n"
 "Inactive"
 msgstr ""
-"Aktiv/\n"
-"Inaktiv"
 
 msgid "Add a new NFS or CIFS mount point to your Receiver."
-msgstr "Lägg till ny NFS eller CIFS monteringspunkt i din mottagare."
+msgstr ""
 
 msgid "Add new network mount point"
-msgstr "Lägg till ny nätverksmonteringspunkt"
+msgstr ""
 
 msgid ""
 "Are you sure you want to save this network mount?\n"
 "\n"
 msgstr ""
-"Är du säker på att du vill spara den här nätverksmonteringen?\n"
-"\n"
 
 msgid "Attempt to mount shares again"
-msgstr "Försök att montera nätverksdelning igen"
+msgstr ""
 
 msgid "Attempt to recover lost mounts (in background)"
-msgstr "Försök att återfå förlorade monteringspunkter (i bakgrunden)"
+msgstr ""
 
 msgid "Browse network neighbourhood"
-msgstr "Bläddra i nätverket"
+msgstr ""
 
 msgid "CIFS share"
-msgstr "CIFS delning"
+msgstr ""
 
 msgid "Cancel"
-msgstr "Avbryt"
+msgstr ""
 
 msgid "Change hostname"
-msgstr "Byt värdnamn"
+msgstr ""
 
 msgid "Change the hostname of your Receiver."
-msgstr "Byt värdnamn på din mottagare."
+msgstr ""
 
 msgid "Close"
-msgstr "Stäng"
+msgstr ""
 
 msgid "Delete"
-msgstr "Ta bort"
+msgstr ""
 
 msgid "Delete mount"
-msgstr "Ta bort monteringspunkt"
+msgstr ""
 
 msgid "Dir:"
-msgstr "Dir:"
+msgstr ""
 
 msgid "Do you want to enter a username and password for this host?\n"
-msgstr "Vill du ange ett användarnamn och lösenord för den här värden?\n"
+msgstr ""
 
 msgid "Enter IP to scan..."
-msgstr "Ange IP att skanna..."
+msgstr ""
 
 msgid "Enter new hostname for your Receiver"
-msgstr "Ange nytt värdnamn för din mottagare"
+msgstr ""
 
 msgid "Enter options:"
-msgstr "Ange optioner:"
+msgstr ""
 
 msgid "Enter password:"
-msgstr "Ange lösenord:"
+msgstr ""
 
 msgid "Enter share directory:"
-msgstr "Ange delat bibliotek:"
+msgstr ""
 
 msgid "Enter share name:"
-msgstr "Ange delningsnamn:"
+msgstr ""
 
 msgid "Enter user and password for host: "
-msgstr "Ange användare och lösenord för värd: "
+msgstr ""
 
 msgid "Enter username:"
-msgstr "Ange användarnamn:"
+msgstr ""
 
 msgid "Expert"
-msgstr "Expert"
+msgstr ""
 
 msgid "Finished restarting your network"
-msgstr "Klar med omstart av ditt nätverk"
+msgstr ""
 
 msgid "IP Address"
-msgstr "IP Adress"
+msgstr ""
 
 msgid "IP:"
-msgstr "IP:"
+msgstr ""
 
 msgid "Local share name"
-msgstr "Lokalt delningsnamn"
+msgstr ""
 
 msgid "Manage network shares"
-msgstr "Hantera nätverksdelningar"
+msgstr ""
 
 msgid "Manage your network shares..."
-msgstr "Hantera dina nätverksdelningar..."
+msgstr ""
 
 msgid "Mount again"
-msgstr "Montera igen"
+msgstr ""
 
 msgid "Mount informations"
-msgstr "Monteringsinformation"
+msgstr ""
 
 msgid "Mount options"
-msgstr "Monteringsoptioner"
+msgstr ""
 
 msgid "Mount type"
-msgstr "Monteringstyp"
+msgstr ""
+
+msgid "Mount view"
+msgstr ""
 
 msgid "MountManager"
-msgstr "Monteringshanterare"
+msgstr ""
 
 msgid ""
 "Mounted/\n"
 "Unmounted"
 msgstr ""
-"Monterad/\n"
-"Omonterad"
 
 msgid "Mountpoints management"
-msgstr "Monteringspunktshantering"
+msgstr ""
 
 msgid "Mounts editor"
-msgstr "Monteringseditor"
+msgstr ""
 
 msgid "Mounts management"
-msgstr "Monteringshantering"
+msgstr ""
 
 msgid "NFS share"
-msgstr "NFS delning"
+msgstr ""
 
 msgid "NetworkBrowser"
-msgstr "Nätverksbläddring"
+msgstr ""
 
 msgid "No network devices found!"
-msgstr "Inget nätverkskort funnet!"
+msgstr ""
 
 msgid "Password"
-msgstr "Lösenord"
+msgstr ""
 
 msgid "Please wait for activation of your network mount..."
-msgstr "Vänligen vänta på aktivering av din nätverksmontering..."
+msgstr ""
 
 msgid "Please wait while removing your network mount..."
-msgstr "Vänligen vänta medans din nätverksmontering tas bort..."
+msgstr ""
 
 msgid "Please wait while updating your network mount..."
-msgstr "Vänligen vänta medans din nätverksmontering uppdateras..."
+msgstr ""
 
 msgid "Please wait while your network is restarting..."
-msgstr "Vänligen vänta medans ditt nätverk omstartas..."
+msgstr ""
 
 msgid "Press OK to activate the settings."
-msgstr "Tryck OK för att aktivera inställningarna."
+msgstr ""
 
 msgid "Press OK to collapse this host"
-msgstr "Tryck OK för att stänga denna värd"
+msgstr ""
 
 msgid "Press OK to edit selected settings."
-msgstr "Tryck OK för att ändra vald inställning."
+msgstr ""
 
 msgid "Press OK to edit the settings."
-msgstr "Tryck OK för att ändra inställning."
+msgstr ""
 
 msgid "Press OK to expand this host"
-msgstr "Tryck OK för att expandera denna värd"
+msgstr ""
 
 msgid "Press OK to mount this share!"
-msgstr "Tryck OK för att montera denna nätverksdelning!"
+msgstr ""
 
 msgid "Press OK to mount!"
-msgstr "Tryck OK för att montera!"
+msgstr ""
 
 msgid "Press OK to save settings."
-msgstr "Tryck OK för att spara inställning."
+msgstr ""
 
 msgid "Press OK to select."
-msgstr "Tryck OK för att välja."
+msgstr ""
 
 msgid "Rescan"
-msgstr "Sök igenom igen"
+msgstr ""
 
 msgid "Scan NFS share"
-msgstr "Skanna NFS delning"
+msgstr ""
 
 msgid "Scan range"
-msgstr "Skanna område"
+msgstr ""
 
 msgid "Search for network shares"
-msgstr "Söker efter nätverksutdelningar"
+msgstr ""
 
 msgid "Search for network shares..."
-msgstr "Söker efter nätverksutdelningar..."
+msgstr ""
 
 msgid "Searching your network. Please wait..."
-msgstr "Söker ditt nätverk. Var god vänta ..."
+msgstr ""
 
 msgid "Server IP"
-msgstr "Server IP"
+msgstr ""
 
 msgid "Server share"
-msgstr "Serverdelning"
+msgstr ""
 
 msgid "User management"
-msgstr "Användarhantering"
+msgstr ""
 
 msgid "Usermanager"
-msgstr "Användarhanterare"
+msgstr ""
 
 msgid "Username"
-msgstr "Användarnamn"
+msgstr ""
 
 msgid "View, edit or delete mountpoints on your Receiver."
-msgstr "Visa, ändra eller ta bort monteringspunkter på din mottagare."
+msgstr ""
 
 msgid "View, edit or delete usernames and passwords for your network."
-msgstr "Visa, ändra eller ta bort användarnamn och lösenord på ditt nätverk."
+msgstr ""
 
 msgid "Your network mount has been activated."
-msgstr "Din nätverksmontering har aktiverats."
+msgstr ""
 
 msgid "Your network mount has been removed."
-msgstr "Din nätverksmontering har tagits bort."
+msgstr ""
 
 msgid "Your network mount has been updated."
-msgstr "Din nätverksmontering har uppdaterats."
+msgstr ""
 
 msgid "use as HDD replacement"
-msgstr "använd som HDD ersättning"
-
-#~ msgid "Delete selected mount"
-#~ msgstr "Ta bort vald montering"
-
-#~ msgid "Rescan network"
-#~ msgstr "Omsök nätverk"
-
-#~ msgid "Retrieving network information. Please wait..."
-#~ msgstr "Hämtar nätinformationssystem. Vänligen vänta..."
-
-#~ msgid "Use domain/username for windows domains as username!"
-#~ msgstr "Använd domän/användarnamn för Windows domän som användarnamn!"
+msgstr ""

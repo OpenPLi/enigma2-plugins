@@ -1,262 +1,257 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Slovak translations for enigma package.
+# Copyright (C) 2018 THE enigma'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the enigma package.
+# Automatically generated, 2018.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: ims\n"
+"Project-Id-Version: enigma 2-plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-01-28 16:39+0100\n"
-"PO-Revision-Date: 2017-02-28 12:00+0100\n"
-"Last-Translator: Andrej <andrej.tobola@gmail.com>\n"
-"Language-Team: Andrej <andrej.tobola@gmail.com>\n"
+"POT-Creation-Date: 2018-05-03 11:46+0200\n"
+"PO-Revision-Date: 2018-05-03 11:46+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Language: Slovak\n"
-"X-Poedit-Country: SLOVAK REPUBLIC\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
 msgid ""
 "A mount entry with this name already exists!\n"
 "Update existing entry and continue?\n"
 msgstr ""
-"Bod pripojenia tohto názvu už existuje!\n"
-"Aktualizovať existujúce údaje a pokračovať?\n"
 
 msgid "Active"
-msgstr "Aktívne"
+msgstr ""
 
 msgid ""
 "Active/\n"
 "Inactive"
 msgstr ""
-"aktívne/\n"
-"neaktívne"
 
 msgid "Add a new NFS or CIFS mount point to your Receiver."
-msgstr "Pridať nový NFS alebo CIFS bod pripojenia."
+msgstr ""
 
 msgid "Add new network mount point"
-msgstr "Pridať nový bod pripojenia"
+msgstr ""
 
 msgid ""
 "Are you sure you want to save this network mount?\n"
 "\n"
 msgstr ""
-"Naozaj chcete uložiť tento bod pripojenia?\n"
-"\n"
 
 msgid "Attempt to mount shares again"
-msgstr "Pokus o znovupripojenie zdieľania"
+msgstr ""
 
 msgid "Attempt to recover lost mounts (in background)"
-msgstr "Pokus obnoviť stratené pripojenia (na pozadí)"
+msgstr ""
 
 msgid "Browse network neighbourhood"
-msgstr "Prehľadávať siete"
+msgstr ""
 
 msgid "CIFS share"
-msgstr "CIFS zdieľanie"
+msgstr ""
 
 msgid "Cancel"
-msgstr "Zrušiť"
+msgstr ""
 
 msgid "Change hostname"
-msgstr "Zmena názvu v sieti"
+msgstr ""
 
 msgid "Change the hostname of your Receiver."
-msgstr "Zmena názvu prijímača v sieti."
+msgstr ""
 
 msgid "Close"
-msgstr "Zatvoriť"
+msgstr ""
 
 msgid "Delete"
-msgstr "Zmazať"
+msgstr ""
 
 msgid "Delete mount"
-msgstr "Vymazať"
+msgstr ""
 
 msgid "Dir:"
-msgstr "Adr:"
+msgstr ""
 
 msgid "Do you want to enter a username and password for this host?\n"
-msgstr "Chcete zadať pre tento hostiteľský počítač užívateľské meno a heslo?\n"
+msgstr ""
 
 msgid "Enter IP to scan..."
-msgstr "Zadajte IP pre hľadanie..."
+msgstr ""
 
 msgid "Enter new hostname for your Receiver"
-msgstr "Zadajte sieťový názov Vášho prijímača"
+msgstr ""
 
 msgid "Enter options:"
-msgstr "Zadajte možnosti:"
+msgstr ""
 
 msgid "Enter password:"
-msgstr "Zadajte heslo:"
+msgstr ""
 
 msgid "Enter share directory:"
-msgstr "Zadajte zdieľaný adresár:"
+msgstr ""
 
 msgid "Enter share name:"
-msgstr "Zadajte názov zdieľania:"
+msgstr ""
 
 msgid "Enter user and password for host: "
-msgstr "Zadajte meno a heslo pre: "
+msgstr ""
 
 msgid "Enter username:"
-msgstr "Zadajte užívateľské meno:"
+msgstr ""
 
 msgid "Expert"
-msgstr "Expert"
+msgstr ""
 
 msgid "Finished restarting your network"
-msgstr "Reštart siete dokončený"
+msgstr ""
 
 msgid "IP Address"
-msgstr "IP adresa"
+msgstr ""
 
 msgid "IP:"
-msgstr "IP:"
+msgstr ""
 
 msgid "Local share name"
-msgstr "Názov pre zdieľanie"
+msgstr ""
 
 msgid "Manage network shares"
-msgstr "Správa sieťových zdieľaní"
+msgstr ""
 
 msgid "Manage your network shares..."
-msgstr "Správa sieťových zdieľaní..."
+msgstr ""
 
 msgid "Mount again"
-msgstr "Znovu pripojiť"
+msgstr ""
 
 msgid "Mount informations"
-msgstr "Informácie o pripojení"
+msgstr ""
 
 msgid "Mount options"
-msgstr "Možnosti pripojenia"
+msgstr ""
 
 msgid "Mount type"
-msgstr "Typ pripojenia"
+msgstr ""
+
+msgid "Mount view"
+msgstr ""
 
 msgid "MountManager"
-msgstr "Sieťové pripojenia"
+msgstr ""
 
 msgid ""
 "Mounted/\n"
 "Unmounted"
 msgstr ""
-"Pripojené/\n"
-"Odpojené"
 
 msgid "Mountpoints management"
-msgstr "Správa pripojovacích bodov"
+msgstr ""
 
 msgid "Mounts editor"
-msgstr "Editor pripojení"
+msgstr ""
 
 msgid "Mounts management"
-msgstr "Správa pripojení"
+msgstr ""
 
 msgid "NFS share"
-msgstr "NFS zdieľanie"
+msgstr ""
 
 msgid "NetworkBrowser"
-msgstr "Prehľadávač siete"
+msgstr ""
 
 msgid "No network devices found!"
-msgstr "Sieťové zariadenia nenájdené!"
+msgstr ""
 
 msgid "Password"
-msgstr "Heslo"
+msgstr ""
 
 msgid "Please wait for activation of your network mount..."
-msgstr "Počkajte na aktiváciu Vášho sieťového pripojenia..."
+msgstr ""
 
 msgid "Please wait while removing your network mount..."
-msgstr "Čakajte na odstránenie Vášho sieťového pripojenia..."
+msgstr ""
 
 msgid "Please wait while updating your network mount..."
-msgstr "Čakajte na dokončenie aktualizácie sieťového pripojenia..."
+msgstr ""
 
 msgid "Please wait while your network is restarting..."
-msgstr "Čakajte prosím na dokončenie reštartu siete..."
+msgstr ""
 
 msgid "Press OK to activate the settings."
-msgstr "Stlačte OK pre aktiváciu nastavení."
+msgstr ""
 
 msgid "Press OK to collapse this host"
-msgstr "Stlačte OK pre zbalenie tohto hostiteľa"
+msgstr ""
 
 msgid "Press OK to edit selected settings."
-msgstr "Stlačte OK pre úpravu vybraného nastavenia."
+msgstr ""
 
 msgid "Press OK to edit the settings."
-msgstr "Stlačte OK pre úpravu nastavení."
+msgstr ""
 
 msgid "Press OK to expand this host"
-msgstr "Stlačte OK pre rozbalenie tohto hostiteľa"
+msgstr ""
 
 msgid "Press OK to mount this share!"
-msgstr "Stlačte OK pre pripojenie tohto zdieľania!"
+msgstr ""
 
 msgid "Press OK to mount!"
-msgstr "Stlačte OK pre pripojenie!"
+msgstr ""
 
 msgid "Press OK to save settings."
-msgstr "Stlačte OK pre uloženie nastavenia"
+msgstr ""
 
 msgid "Press OK to select."
-msgstr "Stlačte OK pre výber. "
+msgstr ""
 
 msgid "Rescan"
-msgstr "Znovu vyhľadať"
+msgstr ""
 
 msgid "Scan NFS share"
-msgstr "Hľadať NFS zdieľanie"
+msgstr ""
 
 msgid "Scan range"
-msgstr "Rozsah hľadania"
+msgstr ""
 
 msgid "Search for network shares"
-msgstr "Vyhľadať zdieľanie v sieti"
+msgstr ""
 
 msgid "Search for network shares..."
-msgstr "Vyhľadať sieťové zdieľania..."
+msgstr ""
 
 msgid "Searching your network. Please wait..."
-msgstr "Prehľadávam Vašu sieť. Čakajte prosím..."
+msgstr ""
 
 msgid "Server IP"
-msgstr "IP serveru"
+msgstr ""
 
 msgid "Server share"
-msgstr "Zdieľané serverom ako"
+msgstr ""
 
 msgid "User management"
-msgstr "Správa užívateľa"
+msgstr ""
 
 msgid "Usermanager"
-msgstr "Správca užívateľa"
+msgstr ""
 
 msgid "Username"
-msgstr "Užívateľ"
+msgstr ""
 
 msgid "View, edit or delete mountpoints on your Receiver."
-msgstr "Prehliadať, upraviť alebo vymazať body pripojenia Vášho prijímača."
+msgstr ""
 
 msgid "View, edit or delete usernames and passwords for your network."
-msgstr "Prehliadať, upraviť alebo vymazať užívateľov a heslá pre Vašu sieť"
+msgstr ""
 
 msgid "Your network mount has been activated."
-msgstr "Vaše sieťové pripojenie bolo aktivované."
+msgstr ""
 
 msgid "Your network mount has been removed."
-msgstr "Vaše sieťové pripojenie bylo odstránené."
+msgstr ""
 
 msgid "Your network mount has been updated."
-msgstr "Bod pripojenia bol zaktualizovaný."
+msgstr ""
 
 msgid "use as HDD replacement"
-msgstr "Použiť ako náhradu HDD"
+msgstr ""

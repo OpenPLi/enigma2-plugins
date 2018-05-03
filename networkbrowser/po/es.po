@@ -1,23 +1,21 @@
-# Spanish translations for tuxbox-enigma package.
-# Copyright (C) 2006 THE tuxbox-enigma'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the tuxbox-enigma package.
-# Automatically generated, 2006.
+# Spanish translations for enigma package.
+# Copyright (C) 2018 THE enigma'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the enigma package.
+# Automatically generated, 2018.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: tuxbox-enigma 0.0.1\n"
+"Project-Id-Version: enigma 2-plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-01-28 16:39+0100\n"
-"PO-Revision-Date: 2008-05-08 01:20+0100\n"
-"Last-Translator: José Juan Zapater <josej@zapater.fdns.net>\n"
+"POT-Creation-Date: 2018-05-03 11:46+0200\n"
+"PO-Revision-Date: 2018-05-03 11:46+0200\n"
+"Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Poedit-Language: Spanish\n"
-"X-Poedit-Country: SPAIN\n"
-"X-Poedit-SourceCharset: iso-8859-1\n"
 
 msgid ""
 "A mount entry with this name already exists!\n"
@@ -134,6 +132,9 @@ msgid "Mount options"
 msgstr ""
 
 msgid "Mount type"
+msgstr ""
+
+msgid "Mount view"
 msgstr ""
 
 msgid "MountManager"
