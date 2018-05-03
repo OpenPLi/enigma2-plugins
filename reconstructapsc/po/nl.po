@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ReconstructApSc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-05-04 10:23+0200\n"
+"POT-Creation-Date: 2018-05-03 14:02+0200\n"
 "PO-Revision-Date: 2013-05-04 10:49+0100\n"
 "Last-Translator: ims <ims21@users.sourceforge.net>\n"
 "Language-Team: Pli\n"
@@ -19,41 +19,31 @@ msgstr ""
 "X-Poedit-Country: NETHERLANDS\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-#: plugin.py:9
-msgid "Reconstruct AP/SC ..."
-msgstr ""
-
-#: ui.py:17
 msgid "Cannot reconstruct this item"
 msgstr ""
 
-#: ui.py:19
 msgid "Don't reconstruct"
 msgstr ""
 
-#: ui.py:21
-msgid "Reconstruct missing .ap and .sc files in this directory"
-msgstr ""
-
-#: ui.py:22
-msgid "Reconstruct all .ap and .sc files in this directory"
-msgstr ""
-
-#: ui.py:26
-msgid "more files..."
-msgstr ""
-
-#: ui.py:28
-msgid "Reconstruct the .ap and .sc files of the selected movie"
-msgstr ""
-
-#: ui.py:31
-#, python-format
-msgid "What would you like to reconstruct?  (\"%s\")"
-msgstr ""
-
-#: ui.py:58
 #, python-format
 msgid "Reconstruct AP/SC - %s"
 msgstr ""
 
+msgid "Reconstruct AP/SC ..."
+msgstr ""
+
+msgid "Reconstruct all .ap and .sc files in this directory"
+msgstr ""
+
+msgid "Reconstruct missing .ap and .sc files in this directory"
+msgstr ""
+
+msgid "Reconstruct the .ap and .sc files of the selected movie"
+msgstr ""
+
+#, python-format
+msgid "What would you like to reconstruct?  (\"%s\")"
+msgstr ""
+
+msgid "more files..."
+msgstr ""
