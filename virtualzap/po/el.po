@@ -2,66 +2,95 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-20 03:00+0300\n"
+"POT-Creation-Date: 2018-05-03 14:03+0200\n"
 "PO-Revision-Date: \n"
+"Last-Translator: MCelliot_g <mcelliot_g@hotmail.com>\n"
 "Language-Team: \n"
+"Language: el_GR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.8.8\n"
-"Last-Translator: MCelliot_g <mcelliot_g@hotmail.com>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Language: el_GR\n"
 
-#: ../src/plugin.py:48
-msgid "as plugin in extended bar"
-msgstr "ως πρόσθετο στην εκτεταμένη μπάρα"
+#, python-format
+msgid "%d min"
+msgstr ""
 
-#: ../src/plugin.py:48
-msgid "with long OK press"
-msgstr "με παρατεταμένη πίεση του ΟΚ"
+#, python-format
+msgid "+%d min"
+msgstr ""
 
-#: ../src/plugin.py:48
-msgid "with exit button"
-msgstr "με το πλήκτρο εξόδου"
+msgid "/s"
+msgstr ""
 
-#: ../src/plugin.py:106
-msgid "Virtual Zap Setup"
-msgstr "Ρυθμίσεις Εικονικού Ζάπινγκ"
+msgid "1 minute"
+msgstr ""
 
-#: ../src/plugin.py:108 ../src/plugin.py:112
-msgid "Virtual (PiP) Zap"
-msgstr "Εικονικό (PiP) Ζάπινγκ"
+msgid "12 hours"
+msgstr ""
 
-#: ../src/plugin.py:413
+msgid "15 minutes"
+msgstr ""
+
+msgid "2 hours"
+msgstr ""
+
+msgid "24 hours"
+msgstr ""
+
+msgid "3 hours"
+msgstr ""
+
+msgid "30 minutes"
+msgstr ""
+
+msgid "45 minutes"
+msgstr ""
+
+msgid "5 minutes"
+msgstr ""
+
+msgid "6 hours"
+msgstr ""
+
+msgid "60 minutes"
+msgstr ""
+
 msgid "Cancel"
 msgstr "Ακύρωση"
 
-#: ../src/plugin.py:414
-msgid "OK"
-msgstr "OK"
+msgid "Could not open Picture in Picture"
+msgstr ""
 
-#: ../src/plugin.py:416
-msgid "Usage"
-msgstr "Χρήση"
+msgid "Don't toggle standard infobar(s) with exit button"
+msgstr ""
 
-#: ../src/plugin.py:598
-msgid "Use PiP"
-msgstr "Χρήση PiP"
+msgid "EPGSelection (context menu)"
+msgstr ""
 
-#: ../src/plugin.py:599
-msgid "Show PiP in Infobar"
-msgstr "Εμφάνιση του PiP στη Μπάρα Πληροφοριών"
+msgid "EPGSelection/EventView (context menu)"
+msgstr ""
 
-#: ../src/plugin.py:622
-msgid "Start standard PiP after x secs (0 = disabled)"
-msgstr "Εκκίνηση στάνταρ PiP μετά από x δευτ. (0=ανενεργό)"
+msgid "EventView (context menu)"
+msgstr ""
 
-#: ../src/plugin.py:623
-msgid "Remember last service"
-msgstr "Απομνημόνευση τελευταίας υπηρεσίας"
+msgid "Extended virtual zap"
+msgstr ""
 
-#: ../src/plugin.py:430
+msgid "Extended virtual zap (PiP)"
+msgstr ""
+
+msgid "Extended virtual zap config"
+msgstr ""
+
+#, fuzzy
+msgid "Extended virtual zap setup"
+msgstr "Ρυθμίσεις Εικονικού Ζάπινγκ"
+
+msgid "From :"
+msgstr ""
+
 msgid ""
 "GUI needs a restart to apply the new settings.\n"
 "Do you want to Restart the GUI now?"
@@ -69,6 +98,139 @@ msgstr ""
 "Πρέπει να γίνει επανεκκίνηση της επιφάνειας χρήστη για να εφαρμοστούν οι νέες ρυθμίσεις.\n"
 "Θέλετε να γίνει τώρα;"
 
-#: ../src/plugin.py:431
-msgid "Restart GUI now?"
+msgid "Goto :"
+msgstr ""
+
+msgid "Incorrect type service for PiP!"
+msgstr ""
+
+msgid "No free tuner!"
+msgstr ""
+
+msgid "Parental control!"
+msgstr ""
+
+msgid "Remember last service"
+msgstr "Απομνημόνευση τελευταίας υπηρεσίας"
+
+msgid "Remember mode"
+msgstr ""
+
+#, fuzzy
+msgid "Restart GUI"
 msgstr "Επανεκκίνηση της επιφάνειας χρήστη τώρα;"
+
+msgid "Save"
+msgstr ""
+
+#, fuzzy
+msgid "Show PiP in window infobar"
+msgstr "Εμφάνιση του PiP στη Μπάρα Πληροφοριών"
+
+msgid "Show picons"
+msgstr ""
+
+msgid "Show plugin in channel selection context menu"
+msgstr ""
+
+msgid "Show plugin in the context menu"
+msgstr ""
+
+msgid "Show positioner movement for PiP service"
+msgstr ""
+
+msgid "Start standard PiP after x secs (0 = disabled)"
+msgstr "Εκκίνηση στάνταρ PiP μετά από x δευτ. (0=ανενεργό)"
+
+msgid "Stream"
+msgstr ""
+
+msgid "Tuner"
+msgstr ""
+
+#, python-format
+msgid "Tuner %s"
+msgstr ""
+
+msgid "Usage"
+msgstr "Χρήση"
+
+msgid "Use PiP"
+msgstr "Χρήση PiP"
+
+msgid "Use plugin 'PiPServiceRelation'"
+msgstr ""
+
+msgid "always"
+msgstr ""
+
+#, fuzzy
+msgid "as plugin in event menu"
+msgstr "ως πρόσθετο στην εκτεταμένη μπάρα"
+
+#, fuzzy
+msgid "as plugin in extended menu"
+msgstr "ως πρόσθετο στην εκτεταμένη μπάρα"
+
+msgid "config menu"
+msgstr ""
+
+msgid "disable"
+msgstr ""
+
+msgid "disabled"
+msgstr ""
+
+msgid "exit"
+msgstr ""
+
+msgid "open Event View"
+msgstr ""
+
+msgid "open favorite list"
+msgstr ""
+
+msgid "open service list"
+msgstr ""
+
+msgid "open single EPG"
+msgstr ""
+
+msgid "show 'Extended virtual zap' for current service"
+msgstr ""
+
+msgid "standard PiP"
+msgstr ""
+
+msgid "standard PiPzap"
+msgstr ""
+
+msgid "swap and standard PiP"
+msgstr ""
+
+msgid "swap and standard PiPzap"
+msgstr ""
+
+msgid "swap services"
+msgstr ""
+
+msgid "until standby/restart"
+msgstr ""
+
+msgid "wait 5 seconds"
+msgstr ""
+
+msgid "with exit button"
+msgstr "με το πλήκτρο εξόδου"
+
+msgid "with long OK press"
+msgstr "με παρατεταμένη πίεση του ΟΚ"
+
+msgid "zap to PiP service and exit"
+msgstr ""
+
+msgid "zap to next channel/open service list"
+msgstr ""
+
+msgid "zap to previous channel/open service list"
+msgstr ""

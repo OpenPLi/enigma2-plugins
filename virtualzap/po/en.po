@@ -1,0 +1,235 @@
+# English translations for enigma package.
+# Copyright (C) 2018 THE enigma'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the enigma package.
+# Automatically generated, 2018.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: enigma 2-plugins\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-05-03 14:03+0200\n"
+"PO-Revision-Date: 2018-05-03 14:03+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#, python-format
+msgid "%d min"
+msgstr "%d min"
+
+#, python-format
+msgid "+%d min"
+msgstr "+%d min"
+
+msgid "/s"
+msgstr "/s"
+
+msgid "1 minute"
+msgstr "1 minute"
+
+msgid "12 hours"
+msgstr "12 hours"
+
+msgid "15 minutes"
+msgstr "15 minutes"
+
+msgid "2 hours"
+msgstr "2 hours"
+
+msgid "24 hours"
+msgstr "24 hours"
+
+msgid "3 hours"
+msgstr "3 hours"
+
+msgid "30 minutes"
+msgstr "30 minutes"
+
+msgid "45 minutes"
+msgstr "45 minutes"
+
+msgid "5 minutes"
+msgstr "5 minutes"
+
+msgid "6 hours"
+msgstr "6 hours"
+
+msgid "60 minutes"
+msgstr "60 minutes"
+
+msgid "Cancel"
+msgstr "Cancel"
+
+msgid "Could not open Picture in Picture"
+msgstr "Could not open Picture in Picture"
+
+msgid "Don't toggle standard infobar(s) with exit button"
+msgstr "Don't toggle standard infobar(s) with exit button"
+
+msgid "EPGSelection (context menu)"
+msgstr "EPGSelection (context menu)"
+
+msgid "EPGSelection/EventView (context menu)"
+msgstr "EPGSelection/EventView (context menu)"
+
+msgid "EventView (context menu)"
+msgstr "EventView (context menu)"
+
+msgid "Extended virtual zap"
+msgstr "Extended virtual zap"
+
+msgid "Extended virtual zap (PiP)"
+msgstr "Extended virtual zap (PiP)"
+
+msgid "Extended virtual zap config"
+msgstr "Extended virtual zap config"
+
+msgid "Extended virtual zap setup"
+msgstr "Extended virtual zap setup"
+
+msgid "From :"
+msgstr "From :"
+
+msgid ""
+"GUI needs a restart to apply the new settings.\n"
+"Do you want to Restart the GUI now?"
+msgstr ""
+"GUI needs a restart to apply the new settings.\n"
+"Do you want to Restart the GUI now?"
+
+msgid "Goto :"
+msgstr "Goto :"
+
+msgid "Incorrect type service for PiP!"
+msgstr "Incorrect type service for PiP!"
+
+msgid "No free tuner!"
+msgstr "No free tuner!"
+
+msgid "Parental control!"
+msgstr "Parental control!"
+
+msgid "Remember last service"
+msgstr "Remember last service"
+
+msgid "Remember mode"
+msgstr "Remember mode"
+
+msgid "Restart GUI"
+msgstr "Restart GUI"
+
+msgid "Save"
+msgstr "Save"
+
+msgid "Show PiP in window infobar"
+msgstr "Show PiP in window infobar"
+
+msgid "Show picons"
+msgstr "Show picons"
+
+msgid "Show plugin in channel selection context menu"
+msgstr "Show plugin in channel selection context menu"
+
+msgid "Show plugin in the context menu"
+msgstr "Show plugin in the context menu"
+
+msgid "Show positioner movement for PiP service"
+msgstr "Show positioner movement for PiP service"
+
+msgid "Start standard PiP after x secs (0 = disabled)"
+msgstr "Start standard PiP after x secs (0 = disabled)"
+
+msgid "Stream"
+msgstr "Stream"
+
+msgid "Tuner"
+msgstr "Tuner"
+
+#, python-format
+msgid "Tuner %s"
+msgstr "Tuner %s"
+
+msgid "Usage"
+msgstr "Usage"
+
+msgid "Use PiP"
+msgstr "Use PiP"
+
+msgid "Use plugin 'PiPServiceRelation'"
+msgstr "Use plugin 'PiPServiceRelation'"
+
+msgid "always"
+msgstr "always"
+
+msgid "as plugin in event menu"
+msgstr "as plugin in event menu"
+
+msgid "as plugin in extended menu"
+msgstr "as plugin in extended menu"
+
+msgid "config menu"
+msgstr "config menu"
+
+msgid "disable"
+msgstr "disable"
+
+msgid "disabled"
+msgstr "disabled"
+
+msgid "exit"
+msgstr "exit"
+
+msgid "open Event View"
+msgstr "open Event View"
+
+msgid "open favorite list"
+msgstr "open favorite list"
+
+msgid "open service list"
+msgstr "open service list"
+
+msgid "open single EPG"
+msgstr "open single EPG"
+
+msgid "show 'Extended virtual zap' for current service"
+msgstr "show 'Extended virtual zap' for current service"
+
+msgid "standard PiP"
+msgstr "standard PiP"
+
+msgid "standard PiPzap"
+msgstr "standard PiPzap"
+
+msgid "swap and standard PiP"
+msgstr "swap and standard PiP"
+
+msgid "swap and standard PiPzap"
+msgstr "swap and standard PiPzap"
+
+msgid "swap services"
+msgstr "swap services"
+
+msgid "until standby/restart"
+msgstr "until standby/restart"
+
+msgid "wait 5 seconds"
+msgstr "wait 5 seconds"
+
+msgid "with exit button"
+msgstr "with exit button"
+
+msgid "with long OK press"
+msgstr "with long OK press"
+
+msgid "zap to PiP service and exit"
+msgstr "zap to PiP service and exit"
+
+msgid "zap to next channel/open service list"
+msgstr "zap to next channel/open service list"
+
+msgid "zap to previous channel/open service list"
+msgstr "zap to previous channel/open service list"

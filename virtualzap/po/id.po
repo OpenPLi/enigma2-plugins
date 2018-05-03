@@ -1,12 +1,17 @@
+# Indonesian translations for enigma package.
+# Copyright (C) 2018 THE enigma'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the enigma package.
+# Automatically generated, 2018.
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
+"Project-Id-Version: enigma 2-plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-05-03 14:03+0200\n"
-"PO-Revision-Date: \n"
-"Last-Translator: Dr. Best <dr.best@dreambox-tools.info>\n"
-"Language-Team: \n"
-"Language: \n"
+"PO-Revision-Date: 2018-05-03 14:03+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -56,7 +61,7 @@ msgid "60 minutes"
 msgstr ""
 
 msgid "Cancel"
-msgstr "Abbruch"
+msgstr ""
 
 msgid "Could not open Picture in Picture"
 msgstr ""
@@ -82,9 +87,8 @@ msgstr ""
 msgid "Extended virtual zap config"
 msgstr ""
 
-#, fuzzy
 msgid "Extended virtual zap setup"
-msgstr "Virtual Zap Einstellungen"
+msgstr ""
 
 msgid "From :"
 msgstr ""
@@ -93,8 +97,6 @@ msgid ""
 "GUI needs a restart to apply the new settings.\n"
 "Do you want to Restart the GUI now?"
 msgstr ""
-"Die GUI benötigt einen Neustart, damit die Änderungen wirksam werden.\n"
-"Soll die GUI jezt neu gestartet werden?"
 
 msgid "Goto :"
 msgstr ""
@@ -109,21 +111,19 @@ msgid "Parental control!"
 msgstr ""
 
 msgid "Remember last service"
-msgstr "Letzten Kanal merken"
+msgstr ""
 
 msgid "Remember mode"
 msgstr ""
 
-#, fuzzy
 msgid "Restart GUI"
-msgstr "GUI Neustart?"
+msgstr ""
 
 msgid "Save"
 msgstr ""
 
-#, fuzzy
 msgid "Show PiP in window infobar"
-msgstr "PiP in Infobar anzeigen"
+msgstr ""
 
 msgid "Show picons"
 msgstr ""
@@ -138,7 +138,7 @@ msgid "Show positioner movement for PiP service"
 msgstr ""
 
 msgid "Start standard PiP after x secs (0 = disabled)"
-msgstr "Standard PiP nach x Sek. starten (0 = aus)"
+msgstr ""
 
 msgid "Stream"
 msgstr ""
@@ -151,10 +151,10 @@ msgid "Tuner %s"
 msgstr ""
 
 msgid "Usage"
-msgstr "Benutzung"
+msgstr ""
 
 msgid "Use PiP"
-msgstr "PiP-Anzeige verwenden"
+msgstr ""
 
 msgid "Use plugin 'PiPServiceRelation'"
 msgstr ""
@@ -162,13 +162,11 @@ msgstr ""
 msgid "always"
 msgstr ""
 
-#, fuzzy
 msgid "as plugin in event menu"
-msgstr "als Plugin in Extended Bar"
+msgstr ""
 
-#, fuzzy
 msgid "as plugin in extended menu"
-msgstr "als Plugin in Extended Bar"
+msgstr ""
 
 msgid "config menu"
 msgstr ""
@@ -219,10 +217,10 @@ msgid "wait 5 seconds"
 msgstr ""
 
 msgid "with exit button"
-msgstr "mit \"Exit\" auf Fernbedienung"
+msgstr ""
 
 msgid "with long OK press"
-msgstr "mit langen Druck auf \"OK\""
+msgstr ""
 
 msgid "zap to PiP service and exit"
 msgstr ""
