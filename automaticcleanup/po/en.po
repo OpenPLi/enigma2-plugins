@@ -1,0 +1,160 @@
+# English translations for enigma package.
+# Copyright (C) 2018 THE enigma'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the enigma package.
+# Automatically generated, 2018.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: enigma 2-plugins\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-05-03 13:59+0200\n"
+"PO-Revision-Date: 2018-05-03 13:59+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Automatic System Cleanup Setup"
+msgstr "Automatic System Cleanup Setup"
+
+msgid "Cancel"
+msgstr "Cancel"
+
+msgid ""
+"Cleanup timerlist, orphaned movie files and stored setting backups "
+"automatically.\n"
+"\n"
+"Modify the settings to match your preferences. More detailed explanations "
+"given with each adjustable option."
+msgstr ""
+"Cleanup timerlist, orphaned movie files and stored setting backups "
+"automatically.\n"
+"\n"
+"Modify the settings to match your preferences. More detailed explanations "
+"given with each adjustable option."
+
+msgid "Delete crashlogs"
+msgstr "Delete crashlogs"
+
+msgid "Delete orphaned movie files"
+msgstr "Delete orphaned movie files"
+
+msgid "Delete system setting backups"
+msgstr "Delete system setting backups"
+
+msgid "Delete timerlist entries"
+msgstr "Delete timerlist entries"
+
+msgid "Help"
+msgstr "Help"
+
+msgid ""
+"If enabled, orphaned movie files will be automatically deleted from movie "
+"directories."
+msgstr ""
+"If enabled, orphaned movie files will be automatically deleted from movie "
+"directories."
+
+msgid "Maximum number of crashlogs"
+msgstr "Maximum number of crashlogs"
+
+msgid "Maximum number of system setting backups"
+msgstr "Maximum number of system setting backups"
+
+msgid ""
+"Maximum number of system setting backups to keep, regardless of retention "
+"period."
+msgstr ""
+"Maximum number of system setting backups to keep, regardless of retention "
+"period."
+
+msgid "OK"
+msgstr "OK"
+
+msgid ""
+"Sorry, this feature is not available due to license reasons. To get the full "
+"version, please search the web for \"dreambox automaticcleanup.\""
+msgstr ""
+"Sorry, this feature is not available due to license reasons. To get the full "
+"version, please search the web for \"dreambox automaticcleanup.\""
+
+msgid ""
+"Specify, how long expired timer list entries shall be kept at most. "
+"Deactivated repeat timer entries won't be deleted ever."
+msgstr ""
+"Specify, how long expired timer list entries shall be kept at most. "
+"Deactivated repeat timer entries won't be deleted ever."
+
+msgid ""
+"Specify, how long system setting backups shall be kept at most (even if "
+"maximum number is not yet exceeded). Latest backup will be kept anyway!"
+msgstr ""
+"Specify, how long system setting backups shall be kept at most (even if "
+"maximum number is not yet exceeded). Latest backup will be kept anyway!"
+
+msgid "System cleanup"
+msgstr "System cleanup"
+
+msgid ""
+"Timerlist cleanup is enabled in EMC plugin! To avoid crashes, we won't "
+"delete entries whilst this option is enabled in EMC."
+msgstr ""
+"Timerlist cleanup is enabled in EMC plugin! To avoid crashes, we won't "
+"delete entries whilst this option is enabled in EMC."
+
+msgid "Ver."
+msgstr "Ver."
+
+msgid "all"
+msgstr "all"
+
+msgid "cleanup disabled"
+msgstr "cleanup disabled"
+
+msgid "immediately after recording"
+msgstr "immediately after recording"
+
+msgid "last 10"
+msgstr "last 10"
+
+msgid "last 2"
+msgstr "last 2"
+
+msgid "last 3"
+msgstr "last 3"
+
+msgid "last 5"
+msgstr "last 5"
+
+msgid "older than 1 day"
+msgstr "older than 1 day"
+
+msgid "older than 1 week"
+msgstr "older than 1 week"
+
+msgid "older than 2 weeks"
+msgstr "older than 2 weeks"
+
+msgid "older than 3 days"
+msgstr "older than 3 days"
+
+msgid "older than 3 months"
+msgstr "older than 3 months"
+
+msgid "older than 4 weeks"
+msgstr "older than 4 weeks"
+
+msgid "older than 6 months"
+msgstr "older than 6 months"
+
+msgid "older than 6 weeks"
+msgstr "older than 6 weeks"
+
+msgid "only last one"
+msgstr "only last one"
+
+msgid "void"
+msgstr "void"

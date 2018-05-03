@@ -1,0 +1,248 @@
+# Croatian translations for enigma package.
+# Copyright (C) 2018 THE enigma'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the enigma package.
+# Automatically generated, 2018.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: enigma 2-plugins\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-05-03 14:02+0200\n"
+"PO-Revision-Date: 2018-05-03 14:02+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: hr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#, python-format
+msgid " (%d mins)\n"
+msgstr ""
+
+#, python-format
+msgid "%s...%s (%d mins)"
+msgstr ""
+
+#, python-format
+msgid "+%d min / %s"
+msgstr ""
+
+msgid "<<Only when zap to service at start timer>>"
+msgstr ""
+
+msgid "All Services"
+msgstr ""
+
+msgid "Always show indicator icon when recording"
+msgstr ""
+
+msgid "Anchor resizing at"
+msgstr ""
+
+msgid "Automatic is the default action"
+msgstr ""
+
+msgid "Background window"
+msgstr ""
+
+#, python-format
+msgid "Bouquet: %s"
+msgstr ""
+
+msgid "Cancel"
+msgstr ""
+
+msgid "DD HH:MM:SS"
+msgstr ""
+
+msgid "Dd HHh MMm SSs"
+msgstr ""
+
+msgid "Enable record infobar"
+msgstr ""
+
+msgid ""
+"GUI needs a restart to apply changes.\n"
+"Restart the GUI now?"
+msgstr ""
+
+msgid "Go to Standby now?"
+msgstr ""
+
+msgid "Goto standby when wakeup on a timer recording"
+msgstr ""
+
+msgid "H:M:S"
+msgstr ""
+
+msgid "HH:MM:SS"
+msgstr ""
+
+msgid "HHh MMm SSs"
+msgstr ""
+
+msgid "Hh Mm Ss"
+msgstr ""
+
+msgid "M:S"
+msgstr ""
+
+msgid "M:SS"
+msgstr ""
+
+msgid "MM:SS"
+msgstr ""
+
+msgid "MMm SSs"
+msgstr ""
+
+msgid "Mm SSs"
+msgstr ""
+
+msgid "Mm Ss"
+msgstr ""
+
+msgid "N/A"
+msgstr ""
+
+msgid "OK"
+msgstr ""
+
+msgid "Preferred tuner for recording"
+msgstr ""
+
+msgid "Provider"
+msgstr ""
+
+#, python-format
+msgid "Provider: %s"
+msgstr ""
+
+msgid "Record Infobar"
+msgstr ""
+
+msgid "Record Infobar Setup"
+msgstr ""
+
+msgid "Record Infobar addon"
+msgstr ""
+
+msgid "Record timelen format"
+msgstr ""
+
+msgid "Recording starts!\n"
+msgstr ""
+
+msgid "S"
+msgstr ""
+
+msgid "Satellites"
+msgstr ""
+
+msgid "Set correct position timer in channel list"
+msgstr ""
+
+msgid "Show message when zap to recording service"
+msgstr ""
+
+msgid "Ss"
+msgstr ""
+
+msgid "Standby message screen timeout (sec)"
+msgstr ""
+
+msgid "Standby only type timer 'After event'"
+msgstr ""
+
+msgid "Stream"
+msgstr ""
+
+msgid "Switch to a recordable channel?"
+msgstr ""
+
+msgid "Switched to the recording service !\n"
+msgstr ""
+
+#, python-format
+msgid "Tuner: %s"
+msgstr ""
+
+msgid "Unknown"
+msgstr ""
+
+msgid "X screen position"
+msgstr ""
+
+msgid "Y screen position"
+msgstr ""
+
+msgid "Z screen position"
+msgstr ""
+
+msgid "Zap on start service recording"
+msgstr ""
+
+msgid "all"
+msgstr ""
+
+msgid "all, except 'nothing'"
+msgstr ""
+
+msgid "always"
+msgstr ""
+
+msgid "ask the user"
+msgstr ""
+
+msgid "auto"
+msgstr ""
+
+msgid "auto and deep standby"
+msgstr ""
+
+msgid "black"
+msgstr ""
+
+#, python-format
+msgid "channel: %s   prov: %s\n"
+msgstr ""
+
+#, python-format
+msgid ""
+"channel: %s   prov: %s\n"
+" %s\n"
+msgstr ""
+
+msgid "deep standby"
+msgstr ""
+
+msgid "default"
+msgstr ""
+
+msgid "disabled"
+msgstr ""
+
+msgid "down"
+msgstr ""
+
+#, python-format
+msgid "duration:  %s ... "
+msgstr ""
+
+msgid "no zap"
+msgstr ""
+
+msgid "standby"
+msgstr ""
+
+msgid "top"
+msgstr ""
+
+msgid "transparent"
+msgstr ""
+
+msgid "zap"
+msgstr ""

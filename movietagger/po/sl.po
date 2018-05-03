@@ -1,0 +1,74 @@
+# Slovenian translations for enigma package.
+# Copyright (C) 2018 THE enigma'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the enigma package.
+# Automatically generated, 2018.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: enigma 2-plugins\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-05-03 14:01+0200\n"
+"PO-Revision-Date: 2018-05-03 14:01+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: sl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n"
+"%100==4 ? 2 : 3);\n"
+
+msgid "Add Tag"
+msgstr ""
+
+msgid "Add new Tag"
+msgstr ""
+
+msgid "Assigned Tags"
+msgstr ""
+
+msgid "Can't write movietags, because no meta-file found!"
+msgstr ""
+
+msgid "Clear all Tags"
+msgstr ""
+
+msgid ""
+"Clear all Tags?\n"
+"\n"
+"This will delete ALL tags in ALL recodings!\n"
+"Are you sure?"
+msgstr ""
+
+msgid "Enter the new Tag"
+msgstr ""
+
+msgid "Movie Tagger"
+msgstr ""
+
+msgid "Movie Tagger..."
+msgstr ""
+
+msgid "Predefined Tag"
+msgstr ""
+
+msgid "Remove Tag"
+msgstr ""
+
+msgid "Specified Tags"
+msgstr ""
+
+msgid "Toggle List"
+msgstr ""
+
+msgid "Used Tag"
+msgstr ""
+
+msgid "User-specific Tag"
+msgstr ""
+
+msgid "Ver."
+msgstr ""
+
+msgid "Whitepace will be replaced by \"_\""
+msgstr ""

@@ -1,0 +1,145 @@
+# Arabic translations for enigma package.
+# Copyright (C) 2018 THE enigma'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the enigma package.
+# Automatically generated, 2018.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: enigma 2-plugins\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-05-03 14:00+0200\n"
+"PO-Revision-Date: 2018-05-03 14:00+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid " B"
+msgstr ""
+
+msgid " KB"
+msgstr ""
+
+msgid " MB"
+msgstr ""
+
+msgid "Abort"
+msgstr ""
+
+msgid "Auto set name and folder DVD"
+msgstr ""
+
+msgid "Backup directory too small size!"
+msgstr ""
+
+msgid "Backup directory:"
+msgstr ""
+
+msgid "Backup of DVD finished."
+msgstr ""
+
+msgid "Backup your Video-DVD to your harddisk"
+msgstr ""
+
+msgid "Could not find any file to backup!"
+msgstr ""
+
+msgid "Could not install needed dvdbackup package!"
+msgstr ""
+
+msgid "Could not read the DVD informations!"
+msgstr ""
+
+msgid "Create iso:"
+msgstr ""
+
+msgid "Create log (tmp/dvdbackup.log):"
+msgstr ""
+
+msgid "DVD Backup"
+msgstr ""
+
+msgid "DVD Backup Progress"
+msgstr ""
+
+msgid "Device mount folder:"
+msgstr ""
+
+msgid "Duration:"
+msgstr ""
+
+msgid "Eject DVD?"
+msgstr ""
+
+#, python-format
+msgid "Error read folder %s!"
+msgstr ""
+
+msgid "Error while backup of DVD!"
+msgstr ""
+
+msgid "Exit"
+msgstr ""
+
+msgid "Extra option"
+msgstr ""
+
+msgid "Folder/iso name:"
+msgstr ""
+
+msgid "Keyboard"
+msgstr ""
+
+msgid "Location"
+msgstr ""
+
+msgid "Name of DVD"
+msgstr ""
+
+msgid "Open menu progress"
+msgstr ""
+
+msgid "Show error message:"
+msgstr ""
+
+msgid "Show log"
+msgstr ""
+
+msgid "Start backup"
+msgstr ""
+
+msgid ""
+"Warning!\n"
+"DVD backup is already running!"
+msgstr ""
+
+msgid ""
+"Warning!\n"
+"This folder not CD-ROM!"
+msgstr ""
+
+msgid ""
+"Warning!\n"
+"This folder not DVD structure!"
+msgstr ""
+
+msgid ""
+"Warning!\n"
+"This is the same folder!"
+msgstr ""
+
+msgid ""
+"genisoimage job done.\n"
+"Delete DVD directory?"
+msgstr ""
+
+msgid "no"
+msgstr ""
+
+msgid "with dd (faster)"
+msgstr ""
+
+msgid "with genisoimage (slower)"
+msgstr ""

@@ -2,19 +2,23 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Enigma2 EmailClient Plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-11-18 08:15+0100\n"
+"POT-Creation-Date: 2018-05-03 14:00+0200\n"
 "PO-Revision-Date: 2015-10-21 19:44+0300\n"
 "Last-Translator: Dimitrij <Dima-73@inbox.lv>\n"
 "Language-Team: ru <ser6@bk.ru>\n"
+"Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.8.4\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"Language: ru\n"
 
+#, python-format
 msgid "%(name)s (%(user)s@%(server)s)"
 msgstr "%(name)s (%(user)s@%(server)s)"
+
+msgid "Account Setup"
+msgstr "Настройки аккакунта"
 
 msgid "Accounts list"
 msgstr "Список аккаунтов"
@@ -34,15 +38,7 @@ msgstr "Почтовый клиент"
 msgid "Email setup"
 msgstr "Настройки почтового клиента"
 
-msgid "Account Setup"
-msgstr "Настройки аккакунта"
-
-msgid "view Email"
-msgstr "Просмотр почты"
-
-msgid "Email Setup"
-msgstr "Настройки почтового клиента"
-
+#, python-format
 msgid ""
 "EmailClient for %(account)s:\n"
 "\n"
@@ -51,9 +47,6 @@ msgstr ""
 "Почтовый клиент для %(account)s:\n"
 "\n"
 "%(error)s"
-
-msgid "Email"
-msgstr "Почта"
 
 msgid "From"
 msgstr "От"
@@ -64,6 +57,7 @@ msgstr "IMAP порт"
 msgid "IMAP Server"
 msgstr "IMAP сервер"
 
+#, python-format
 msgid ""
 "New mail arrived for account %s:\n"
 "\n"
@@ -71,27 +65,28 @@ msgstr ""
 "Новая почта пришла на аккаунт %s\n"
 "\n"
 
+#, python-format
 msgid "Really delete account %s?"
 msgstr "Действительно удалить аккаунт %s?"
 
 msgid "Subject"
 msgstr "Тема"
 
+#, python-format
 msgid ""
 "[EmailAccount] %(name)s: _cbCapabilities:\n"
 "####################################################################################################\n"
-"# If you have problems to log into your imap-server, please send me the "
-"output of the following line\n"
+"# If you have problems to log into your imap-server, please send me the output of the following line\n"
 "# cbCapabilities: %(capa)s\n"
 "####################################################################################################\n"
 msgstr ""
 "[EmailAccount] %(name)s: _cbCapabilities:\n"
 "####################################################################################################\n"
-"# Если у Вас есть проблемы, чтобы войти в Ваш IMAP сервера, пожалуйста, "
-"пришлите мне ответ следующей строки\n"
+"# Если у Вас есть проблемы, чтобы войти в Ваш IMAP сервера, пожалуйста, пришлите мне ответ следующей строки\n"
 "# cbCapabilities: %(capa)s\n"
 "####################################################################################################\n"
 
+#, python-format
 msgid "account %s is not connected"
 msgstr "Нет подключения к аккаунту %s"
 
@@ -103,6 +98,9 @@ msgstr "Нет подключения к аккаунту"
 
 msgid "add"
 msgstr "Добавить"
+
+msgid "always"
+msgstr "всегда"
 
 msgid "cancel"
 msgstr "Отмена"
@@ -128,6 +126,9 @@ msgstr "Удалить"
 msgid "display connection errors"
 msgstr "Показать сообщение об ошибках соединения"
 
+msgid "display message type"
+msgstr "Тип показа сообщений"
+
 msgid "display timeout (seconds)"
 msgstr "Тайм-аут сообщения в секундах (0-всегда)"
 
@@ -137,6 +138,10 @@ msgstr "Редактор"
 msgid "empty values - retry"
 msgstr "Пустые значение - попробуйте снова"
 
+msgid "enable auto check mail"
+msgstr "Включить автопроверку почты"
+
+#, python-format
 msgid ""
 "error logging %(who)s in:\n"
 "%(failure)s"
@@ -150,6 +155,7 @@ msgstr "Ошибка загрузки сообщения"
 msgid "getting message ..."
 msgstr "Получение сообщения..."
 
+#, python-format
 msgid "have %d messages"
 msgstr "Имеется %d сообщений"
 
@@ -159,8 +165,12 @@ msgstr "Нет сообщений"
 msgid "headers loaded, now parsing ..."
 msgstr "Заголовки загружены, идет анализ..."
 
+#, python-format
 msgid "importing configurations from %s"
 msgstr "Импорт конфигурации из %s"
+
+msgid "infobar mode (live TV)"
+msgstr "режим инфобара (live TV)"
 
 msgid "leave unread"
 msgstr "Оставлять непрочитаным"
@@ -234,17 +244,8 @@ msgstr "Восстановить"
 msgid "user name"
 msgstr "Логин"
 
+msgid "view Email"
+msgstr "Просмотр почты"
+
 msgid "view Emails via IMAP4"
 msgstr "Просмотр почты через IMAP4"
-
-msgid "enable auto check mail"
-msgstr "Включить автопроверку почты"
-
-msgid "display message type"
-msgstr "Тип показа сообщений"
-
-msgid "infobar mode (live TV)"
-msgstr "режим инфобара (live TV)"
-
-msgid "always"
-msgstr "всегда"

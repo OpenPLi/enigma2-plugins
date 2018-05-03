@@ -1,0 +1,347 @@
+# Catalan translations for enigma package.
+# Copyright (C) 2018 THE enigma'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the enigma package.
+# Automatically generated, 2018.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: enigma 2-plugins\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-05-03 14:01+0200\n"
+"PO-Revision-Date: 2018-05-03 14:01+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: ca\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#, python-format
+msgid ""
+"%d files added to database!\n"
+"Press OK to close."
+msgstr ""
+
+#, python-format
+msgid ""
+"%s\n"
+" added to database"
+msgstr ""
+
+#, python-format
+msgid ""
+"%s\n"
+" already exists in database!"
+msgstr ""
+
+#, python-format
+msgid ""
+"%s\n"
+"appended to songlist"
+msgstr ""
+
+#, python-format
+msgid ""
+"%s\n"
+"inserted and will be played as next song"
+msgstr ""
+
+msgid "Activate screensaver"
+msgstr ""
+
+msgid "Add all songs from selected album to a playlist"
+msgstr ""
+
+msgid "Add all songs from selected artist to a playlist"
+msgstr ""
+
+msgid "Add all songs from selected genre to a playlist"
+msgstr ""
+
+msgid "Add music files to iDream database"
+msgstr ""
+
+msgid "Add selected song to a playlist"
+msgstr ""
+
+#, python-format
+msgid "Album (%s) -> Song List"
+msgstr ""
+
+#, python-format
+msgid "Albums (%d)"
+msgstr ""
+
+msgid "Albums List"
+msgstr ""
+
+msgid "All Artists"
+msgstr ""
+
+msgid "All Songs"
+msgstr ""
+
+msgid "Append file to current playing songlist"
+msgstr ""
+
+msgid "Append file to current songlist"
+msgstr ""
+
+#, python-format
+msgid "Artist (%s) -> Album List"
+msgstr ""
+
+#, python-format
+msgid "Artist (%s) -> Song List"
+msgstr ""
+
+#, python-format
+msgid "Artists (%d)"
+msgstr ""
+
+msgid "Artists List"
+msgstr ""
+
+msgid "Cancel"
+msgstr ""
+
+msgid "Clear current songlist and play selected entry"
+msgstr ""
+
+msgid "Close"
+msgstr ""
+
+msgid "Configuration"
+msgstr ""
+
+msgid "Create new playlist"
+msgstr ""
+
+msgid "Delete selected playlist"
+msgstr ""
+
+msgid "Delete song from current playlist"
+msgstr ""
+
+msgid "Delete song from database"
+msgstr ""
+
+msgid "Do you really want to add all songs from that album to a playlist?"
+msgstr ""
+
+msgid "Do you really want to add all songs from that artist to a playlist?"
+msgstr ""
+
+msgid "Do you really want to add all songs from that genre to a playlist?"
+msgstr ""
+
+msgid "Do you really want to delete that song from the database?"
+msgstr ""
+
+msgid "Do you really want to delete that song the current playlist?"
+msgstr ""
+
+msgid "Do you really want to delete the current playlist?"
+msgstr ""
+
+msgid "Enter name for playlist"
+msgstr ""
+
+msgid "Enter search text"
+msgstr ""
+
+msgid ""
+"Error!\n"
+"Can not open database!\n"
+"Check if save folder is correct and writeable!\n"
+"Press OK to close."
+msgstr ""
+
+msgid "Filebrowser startup path"
+msgstr ""
+
+#, python-format
+msgid "Filelist: %s"
+msgstr ""
+
+#, python-format
+msgid "Genre (%s) -> Song List"
+msgstr ""
+
+msgid "Genre List"
+msgstr ""
+
+#, python-format
+msgid "Genres (%d)"
+msgstr ""
+
+msgid "Google image path"
+msgstr ""
+
+msgid "Insert file to current playing songlist and play next"
+msgstr ""
+
+msgid "Insert file to current songlist and play next"
+msgstr ""
+
+msgid "Invalid Location"
+msgstr ""
+
+msgid "Lyrics"
+msgstr ""
+
+msgid "Main Menu"
+msgstr ""
+
+msgid "Merlin Music Player"
+msgstr ""
+
+msgid "Merlin Music Player Lyrics"
+msgstr ""
+
+msgid "Merlin Music Player Setup"
+msgstr ""
+
+msgid "Merlin Music Player Songlist"
+msgstr ""
+
+msgid "Merlin Music Player TV"
+msgstr ""
+
+msgid "Merlin music player"
+msgstr ""
+
+msgid "No lyrics found"
+msgstr ""
+
+msgid "No music files found!"
+msgstr ""
+
+msgid "OK"
+msgstr ""
+
+msgid "Play"
+msgstr ""
+
+msgid "Play last used songlist after starting"
+msgstr ""
+
+#, python-format
+msgid "Playlist (%s) -> Song List"
+msgstr ""
+
+msgid "Playlists"
+msgstr ""
+
+#, python-format
+msgid "Playlists (%d)"
+msgstr ""
+
+msgid ""
+"Process aborted.\n"
+" 0 files added to database!\n"
+"Press OK to close."
+msgstr ""
+
+msgid "Receiver Music Database"
+msgstr ""
+
+msgid "Remember last path of filebrowser"
+msgstr ""
+
+msgid "Repeat is not available yet with cue-files!"
+msgstr ""
+
+#, python-format
+msgid "Response -> lyrics for: %s (%s)"
+msgstr ""
+
+msgid "Scan path for music files and add them to database"
+msgstr ""
+
+msgid "Search in iDream database"
+msgstr ""
+
+#, python-format
+msgid "Search results for \"%s\" in all albums"
+msgstr ""
+
+#, python-format
+msgid "Search results for \"%s\" in all artists"
+msgstr ""
+
+#, python-format
+msgid "Search results for \"%s\" in all titles"
+msgstr ""
+
+#, python-format
+msgid "Search results for \"%s\" in title, artist or album"
+msgstr ""
+
+msgid "Select path"
+msgstr ""
+
+msgid "Show Album"
+msgstr ""
+
+msgid "Show Merlin Music Player in extensions menu"
+msgstr ""
+
+msgid "Show Merlin Music Player in main menu"
+msgstr ""
+
+msgid "Show iDream in extensions menu"
+msgstr ""
+
+msgid "Show iDream in main menu"
+msgstr ""
+
+msgid "Shuffle is not available yet with cue-files!"
+msgstr ""
+
+#, python-format
+msgid "Songs (%d)"
+msgstr ""
+
+msgid ""
+"There are no playlists defined.\n"
+"Do you want to create a new playlist?"
+msgstr ""
+
+#, python-format
+msgid "This Receiver can't decode %s streams!"
+msgstr ""
+
+#, python-format
+msgid "Track %s"
+msgstr ""
+
+msgid "Use google-images for cover art"
+msgstr ""
+
+msgid "Wait for screensaver (in min)"
+msgstr ""
+
+msgid "[back]"
+msgstr ""
+
+msgid "iDream"
+msgstr ""
+
+msgid "iDream Main Menu"
+msgstr ""
+
+msgid "iDream database path"
+msgstr ""
+
+msgid "search for album"
+msgstr ""
+
+msgid "search for artist"
+msgstr ""
+
+msgid "search for title"
+msgstr ""
+
+msgid "search in all of them"
+msgstr ""

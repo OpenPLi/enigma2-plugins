@@ -1,0 +1,227 @@
+# English translations for enigma package.
+# Copyright (C) 2018 THE enigma'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the enigma package.
+# Automatically generated, 2018.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: enigma 2-plugins\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-05-03 14:03+0200\n"
+"PO-Revision-Date: 2018-05-03 14:03+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "\"Werbezapper\" quick button"
+msgstr "\"Werbezapper\" quick button"
+
+#, python-format
+msgid "%d min"
+msgstr "%d min"
+
+#, python-format
+msgid "%s\n"
+msgstr "%s\n"
+
+#, python-format
+msgid "- %d:%02d min"
+msgstr "- %d:%02d min"
+
+msgid "Automatically zaps back to current service after given Time"
+msgstr "Automatically zaps back to current service after given Time"
+
+#, python-format
+msgid ""
+"Button Info/EPG\n"
+"Set time begin next event: %d min"
+msgstr ""
+"Button Info/EPG\n"
+"Set time begin next event: %d min"
+
+msgid "Cancel"
+msgstr "Cancel"
+
+#, python-format
+msgid "Channel: %s"
+msgstr "Channel: %s"
+
+msgid "Custom"
+msgstr "Custom"
+
+msgid "Error"
+msgstr "Error"
+
+msgid "GREEN"
+msgstr "GREEN"
+
+msgid "HELP"
+msgstr "HELP"
+
+msgid "How many minutes to wait until zapping back?"
+msgstr "How many minutes to wait until zapping back?"
+
+msgid "Indicator mode"
+msgstr "Indicator mode"
+
+msgid "Monitoring duration for service if not EPG"
+msgstr "Monitoring duration for service if not EPG"
+
+#, python-format
+msgid "Monitoring: %s (%d:%02d Min)"
+msgstr "Monitoring: %s (%d:%02d Min)"
+
+#, python-format
+msgid "Monitoring: for service is not EPG (%d:%02d Min)"
+msgstr "Monitoring: for service is not EPG (%d:%02d Min)"
+
+msgid "NONE"
+msgstr "NONE"
+
+msgid "Open setup"
+msgstr "Open setup"
+
+msgid "RADIO"
+msgstr "RADIO"
+
+msgid "Rezap"
+msgstr "Rezap"
+
+msgid "SEARCH"
+msgstr "SEARCH"
+
+msgid "Save"
+msgstr "Save"
+
+msgid "Service is not EPG"
+msgstr "Service is not EPG"
+
+msgid "Set zap time"
+msgstr "Set zap time"
+
+msgid "Show \"Start / Stop monitoring\" in extensions menu"
+msgstr "Show \"Start / Stop monitoring\" in extensions menu"
+
+msgid "Show indicator zap time in window"
+msgstr "Show indicator zap time in window"
+
+msgid "Show plugin in channel selection context menu"
+msgstr "Show plugin in channel selection context menu"
+
+msgid "Slider step size (1 - 20 mins)"
+msgstr "Slider step size (1 - 20 mins)"
+
+msgid "Start / Stop monitoring instantly"
+msgstr "Start / Stop monitoring instantly"
+
+msgid "Start monitoring"
+msgstr "Start monitoring"
+
+msgid "Stop monitoring"
+msgstr "Stop monitoring"
+
+msgid "Stop timer"
+msgstr "Stop timer"
+
+msgid "TEXT"
+msgstr "TEXT"
+
+msgid "TIMER"
+msgstr "TIMER"
+
+msgid "TV"
+msgstr "TV"
+
+msgid "Wakeup receiver from standby for zap timer"
+msgstr "Wakeup receiver from standby for zap timer"
+
+msgid "WerbeZapper"
+msgstr "WerbeZapper"
+
+#, python-format
+msgid ""
+"WerbeZapper\n"
+"Monitoring ends\n"
+"%s"
+msgstr ""
+"WerbeZapper\n"
+"Monitoring ends\n"
+"%s"
+
+msgid "WerbeZapper Setup"
+msgstr "WerbeZapper Setup"
+
+#, python-format
+msgid ""
+"WerbeZapper...\n"
+"Monitoring started\n"
+"%s"
+msgstr ""
+"WerbeZapper...\n"
+"Monitoring started\n"
+"%s"
+
+#, python-format
+msgid ""
+"WerbeZapper...\n"
+"Monitoring started for service is not EPG.\n"
+"Duration %d Min."
+msgstr ""
+"WerbeZapper...\n"
+"Monitoring started for service is not EPG.\n"
+"Duration %d Min."
+
+msgid "Werbezapper"
+msgstr "Werbezapper"
+
+msgid "Werbezapper Start / Stop monitoring"
+msgstr "Werbezapper Start / Stop monitoring"
+
+msgid "When zap to service?"
+msgstr "When zap to service?"
+
+msgid "X position"
+msgstr "X position"
+
+msgid "Y position"
+msgstr "Y position"
+
+msgid "YELLOW"
+msgstr "YELLOW"
+
+msgid "Z position (priority of srceen)"
+msgstr "Z position (priority of srceen)"
+
+#, python-format
+msgid "Zapping back %s in %d Min"
+msgstr "Zapping back %s in %d Min"
+
+#, python-format
+msgid "Zapping to %s"
+msgstr "Zapping to %s"
+
+#, python-format
+msgid "Zapping to service in %d:%02d Min"
+msgstr "Zapping to service in %d:%02d Min"
+
+msgid "add zap timer for service"
+msgstr "add zap timer for service"
+
+msgid "minut"
+msgstr "minut"
+
+msgid "minute"
+msgstr "minute"
+
+msgid "minutes"
+msgstr "minutes"
+
+msgid "service / time"
+msgstr "service / time"
+
+msgid "time"
+msgstr "time"

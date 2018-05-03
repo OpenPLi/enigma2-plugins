@@ -1,0 +1,390 @@
+# French translations for enigma package.
+# Copyright (C) 2018 THE enigma'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the enigma package.
+# Automatically generated, 2018.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: enigma 2-plugins\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-05-03 14:02+0200\n"
+"PO-Revision-Date: 2018-05-03 14:02+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#, python-format
+msgid ""
+"\n"
+"Timer '%s' disabled!"
+msgstr ""
+
+#, python-format
+msgid ""
+"\n"
+"Total number of conflicts: %s"
+msgstr ""
+
+msgid "\"View live\" event only in Prime Time:"
+msgstr ""
+
+msgid "\"View live\" type:"
+msgstr ""
+
+#, python-format
+msgid "%d min"
+msgstr ""
+
+#, python-format
+msgid "%s prime time | events today (%s) | Bouquet: %s"
+msgstr ""
+
+#, python-format
+msgid "%s prime time | events today +%s (%s) | Bouquet: %s"
+msgstr ""
+
+msgid "'Timer Edit' key menu - show conflict timer:"
+msgstr ""
+
+msgid ": only notification"
+msgstr ""
+
+msgid "Accept"
+msgstr ""
+
+msgid "Accept the events as shown"
+msgstr ""
+
+msgid "Accept this solution?"
+msgstr ""
+
+msgid "Add Timer"
+msgstr ""
+
+msgid "Add timer"
+msgstr ""
+
+#, python-format
+msgid "Add timer for \"%s\"?"
+msgstr ""
+
+msgid "Add/remove event to or from favourites"
+msgstr ""
+
+msgid "Any timers"
+msgstr ""
+
+msgid "Begin time"
+msgstr ""
+
+msgid "Bouquet"
+msgstr ""
+
+msgid "Bouquet:"
+msgstr ""
+
+#, python-format
+msgid "Bouquet: %s - EPG Selection Multi"
+msgstr ""
+
+msgid "Cancel"
+msgstr ""
+
+msgid "Cansel"
+msgstr ""
+
+msgid "Channel not in services list"
+msgstr ""
+
+msgid "Check conflicts timers after \"Accept\":"
+msgstr ""
+
+msgid "Check conflicts timers after exit:"
+msgstr ""
+
+msgid "Checking with conflict detection enabled for"
+msgstr ""
+
+msgid "Close"
+msgstr ""
+
+msgid "Conflict detected!"
+msgstr ""
+
+msgid "Conflict not resolved!"
+msgstr ""
+
+msgid "Conflicts were solved"
+msgstr ""
+
+msgid "Current timer"
+msgstr ""
+
+msgid "Date"
+msgstr ""
+
+msgid "Disable"
+msgstr ""
+
+#, python-format
+msgid "Do you really want to delete the timer for \"%s\"?"
+msgstr ""
+
+msgid ""
+"Do you want to switch the prime time? Currently selected favorites will be "
+"lost!"
+msgstr ""
+
+msgid "Duration"
+msgstr ""
+
+msgid "Edit"
+msgstr ""
+
+msgid "Enable"
+msgstr ""
+
+msgid "End time"
+msgstr ""
+
+msgid "Exit"
+msgstr ""
+
+msgid "Exit from Multi EPG on selected service:"
+msgstr ""
+
+msgid "Exit plugin"
+msgstr ""
+
+msgid "Exit plugin or open Multi EPG"
+msgstr ""
+
+msgid "Favorite"
+msgstr ""
+
+msgid "Favorite will be deleted!"
+msgstr ""
+
+msgid "Ignore conflict"
+msgstr ""
+
+msgid "Lookup in TMBD"
+msgstr ""
+
+msgid "Manage prime time events"
+msgstr ""
+
+msgid "Multi EPG"
+msgstr ""
+
+msgid "No EPG data"
+msgstr ""
+
+msgid "No conflicts found"
+msgstr ""
+
+msgid "OK"
+msgstr ""
+
+msgid "Open the settings screen"
+msgstr ""
+
+msgid "Open timers list"
+msgstr ""
+
+msgid "Primary"
+msgstr ""
+
+msgid "Primary Prime Time:"
+msgstr ""
+
+msgid "Prime Time Manager"
+msgstr ""
+
+msgid "Prime Time Manager "
+msgstr ""
+
+msgid "Prime Time Manager Conflict Results"
+msgstr ""
+
+msgid "Prime Time Manager in E-menu:"
+msgstr ""
+
+msgid "Prime Time Manager setup"
+msgstr ""
+
+msgid ""
+"Prime Time Manager:\n"
+"\n"
+"Prime time has already begun or is over. Starting with tomorrow's events."
+msgstr ""
+
+#, python-format
+msgid ""
+"Prime Time Manager:\n"
+"\n"
+"Sorry, but a timer for %s can't be set because there are conflicts with "
+"other timers."
+msgstr ""
+
+msgid ""
+"Prime Time Manager:\n"
+"\n"
+"Sorry, but turning a repeated timer into a view live event isn't supported."
+msgstr ""
+
+msgid "Prime Time Settings"
+msgstr ""
+
+msgid "Recording is in progress.\n"
+msgstr ""
+
+msgid "Red Button function:"
+msgstr ""
+
+msgid "Remove favorite on timer deletion:"
+msgstr ""
+
+msgid "Remove timer"
+msgstr ""
+
+msgid "Scroll selected list to the left"
+msgstr ""
+
+msgid "Scroll selected list to the right"
+msgstr ""
+
+msgid "Search in IMDb"
+msgstr ""
+
+msgid "Secondary"
+msgstr ""
+
+msgid "Secondary Prime Time:"
+msgstr ""
+
+msgid "Select action"
+msgstr ""
+
+msgid "Selected favorites"
+msgstr ""
+
+#, python-format
+msgid "Set 'view live' type '%s'?"
+msgstr ""
+
+msgid "Set Timer"
+msgstr ""
+
+msgid "Set day"
+msgstr ""
+
+msgid "Set or remove a timer"
+msgstr ""
+
+msgid "Settings of the plugin"
+msgstr ""
+
+msgid "Show duration or end time:"
+msgstr ""
+
+msgid "Show event information"
+msgstr ""
+
+msgid "Show warning before set 'Ignore conflict'"
+msgstr ""
+
+msgid "Single EPG"
+msgstr ""
+
+msgid "Solution"
+msgstr ""
+
+msgid ""
+"Sorri!\n"
+"Conflict timers in timers.xml detected!\n"
+"Please recheck it!"
+msgstr ""
+
+msgid "Switch betw. favourite/prime time list"
+msgstr ""
+
+msgid "Switch to the next bouquet"
+msgstr ""
+
+msgid "Switch to the next day"
+msgstr ""
+
+msgid "Switch to the previous bouquet"
+msgstr ""
+
+msgid "Switch to the previous day"
+msgstr ""
+
+#, python-format
+msgid ""
+"This event \"%s\" has already begun or will begin in the next few minutes.\n"
+"We can not add it to your list of favorites, as will instantly record.\n"
+"Just want to switch to this service?"
+msgstr ""
+
+msgid "This event will be an instant record.\n"
+msgstr ""
+
+#, python-format
+msgid ""
+"This is a repeated timer! Do you really want to delete the repeated timer "
+"for \"%s\"?"
+msgstr ""
+
+msgid "Timer sanity error"
+msgstr ""
+
+msgid "Timers list"
+msgstr ""
+
+msgid "Toggle \"view live\" type"
+msgstr ""
+
+msgid "Toggle marker for a \"view live\" event"
+msgstr ""
+
+msgid "Toggle primary/secondary prime time"
+msgstr ""
+
+msgid "Try to solve conflicts and show result"
+msgstr ""
+
+msgid "Use AutoTimer plugin instead remove favorites:"
+msgstr ""
+
+msgid ""
+"Warning!\n"
+"This is an option for advanced users.\n"
+"Really disable timer conflict detection?"
+msgstr ""
+
+msgid "Zap"
+msgstr ""
+
+msgid "Zap + Record"
+msgstr ""
+
+msgid "and never ask this again"
+msgstr ""
+
+msgid "exit plugin"
+msgstr ""
+
+msgid "no"
+msgstr ""
+
+msgid "open Multi EPG"
+msgstr ""
+
+msgid "yes"
+msgstr ""

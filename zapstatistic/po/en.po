@@ -1,0 +1,81 @@
+# English translations for enigma package.
+# Copyright (C) 2018 THE enigma'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the enigma package.
+# Automatically generated, 2018.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: enigma 2-plugins\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-05-03 14:03+0200\n"
+"PO-Revision-Date: 2018-05-03 14:03+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Close plugin"
+msgstr "Close plugin"
+
+msgid "Delete"
+msgstr "Delete"
+
+msgid "Delete all entries"
+msgstr "Delete all entries"
+
+msgid "Delete entry"
+msgstr "Delete entry"
+
+msgid "Durations"
+msgstr "Durations"
+
+msgid "Play entry"
+msgstr "Play entry"
+
+msgid "Please choose a function..."
+msgstr "Please choose a function..."
+
+msgid "Show combined duration window"
+msgstr "Show combined duration window"
+
+msgid "Show duration window"
+msgstr "Show duration window"
+
+msgid "Shows the watched services with some statistic"
+msgstr "Shows the watched services with some statistic"
+
+msgid "Sort (date+)"
+msgstr "Sort (date+)"
+
+msgid "Sort (date-)"
+msgstr "Sort (date-)"
+
+msgid "Sort (duration+)"
+msgstr "Sort (duration+)"
+
+msgid "Sort (duration-)"
+msgstr "Sort (duration-)"
+
+msgid "Sort (name+)"
+msgstr "Sort (name+)"
+
+msgid "Sort (name-)"
+msgstr "Sort (name-)"
+
+msgid "Sort by date (ascending)"
+msgstr "Sort by date (ascending)"
+
+msgid "Sort by date (descending)"
+msgstr "Sort by date (descending)"
+
+msgid "Sort by name (ascending)"
+msgstr "Sort by name (ascending)"
+
+msgid "Sort by name (descending)"
+msgstr "Sort by name (descending)"
+
+msgid "Zap Statistic"
+msgstr "Zap Statistic"

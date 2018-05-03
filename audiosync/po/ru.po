@@ -2,29 +2,33 @@ msgid ""
 msgstr ""
 "Project-Id-Version: AC3LipSync\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-12-18 02:07+0100\n"
+"POT-Creation-Date: 2018-05-03 13:59+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Dimitrij <Dima-73@inbox.lv>\n"
 "Language-Team: \n"
+"Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-Basepath: D:\\Dreambox\\Eclipse\\ac3lipsync\\\n"
-"Language: ru\n"
 "X-Generator: Poedit 1.8\n"
 "X-Poedit-SearchPath-0: src\n"
 
+#, python-format
 msgid "%i ms"
 msgstr "%i мс"
+
+msgid "AC3 Lip Sync Setup"
+msgstr "Настройки синхронизации AC3"
+
+msgid "Also save delay in config?"
+msgstr "Заодно сохранить эту задержку в конфиг?"
 
 msgid "Audio Sync"
 msgstr "Синхронизация аудио"
 
 msgid "Audio Sync Setup"
 msgstr "Настройки синхронизации аудио"
-
-msgid "AC3 Lip Sync Setup"
-msgstr "Настройки синхронизации AC3"
 
 msgid "Cancel"
 msgstr "Отмена"
@@ -44,8 +48,12 @@ msgstr "Канал аудио:"
 msgid "Decrease delay"
 msgstr "Уменьшение задержки"
 
+#, python-format
 msgid "Decrease delay by %i ms (can be set)"
 msgstr "Уменьшение задержки %i мс (возможно установить)"
+
+msgid "Delete in config"
+msgstr "Удалить из конфига"
 
 msgid "Discard changes and close plugin"
 msgstr "Отменить изменения и закрыть плагин"
@@ -59,15 +67,18 @@ msgstr "Глобальная задержка"
 msgid "Increase delay"
 msgstr "Увеличение задержки"
 
+#, python-format
 msgid "Increase delay by %i ms (can be set)"
 msgstr "Увеличение задержки %i мс (возможно установить)"
 
 msgid "Invalid selection"
 msgstr "Неверный выбор"
 
+#, python-format
 msgid "Key %(Key)s successfully set to %(delay)i ms"
 msgstr "Кнопка %(Key)s успешно установлена %(delay)i мс"
 
+#, python-format
 msgid "Key %(key)s (current value: %(value)i ms)"
 msgstr "Кнопка %(key)s (текущее значение: %(value)i мс)"
 
@@ -119,11 +130,18 @@ msgstr "Открыть меню плагина"
 msgid "Outer Bound (+/-)"
 msgstr "Внешняя граница (+/-)"
 
+#, python-format
 msgid "Plugin: %(plugin)s , Version: %(version)s"
 msgstr "Плагин: %(plugin)s , Версия: %(version)s"
 
 msgid "Reset saved position"
 msgstr "Сброс сохраненной позиции"
+
+msgid "Restart audio"
+msgstr "Рестарт аудио"
+
+msgid "Restart audio delay (in sec)"
+msgstr "Задержка рестарта аудио (сек.)"
 
 msgid "Save"
 msgstr "Сохранить"
@@ -140,15 +158,14 @@ msgstr "Сохранить значения и закрыть плагин"
 msgid "Save values and close screen"
 msgstr "Сохранить значения и закрыть экран"
 
-msgid "Select channel audio"
-msgstr "Выбор канала аудио"
-
+#, python-format
 msgid "Select the key you want to set to %i ms"
 msgstr "Выбор кнопки для установки %i мс"
 
 msgid "Service delay"
 msgstr "Задержка сервиса"
 
+#, python-format
 msgid "Set delay to %i ms (can be set)"
 msgstr "Установка задержки в %i мс (возможно установить)"
 
@@ -161,26 +178,16 @@ msgstr "Настройки для плагина синхронизации ау
 msgid "Step in ms for arrow keys"
 msgstr "Шаг в мс для кнопок со стрелками"
 
+#, python-format
 msgid "Step in ms for key %i"
 msgstr "Шаг в мс для кнопки %i"
 
+#, python-format
 msgid "Step in ms for keys '%s'"
 msgstr "Шаг в мс для кнопок '%s'"
 
-msgid "Switch audio"
-msgstr "Смена аудио"
-
 msgid "Wait time in ms before activation:"
 msgstr "Время ожидания в мс до активации:"
-
-msgid "sets the Audio Delay (LipSync)"
-msgstr "установка задержки аудио"
-
-msgid "Restart audio"
-msgstr "Рестарт аудио"
-
-msgid "Restart audio delay (in sec)"
-msgstr "Задержка рестарта аудио (сек.)"
 
 msgid "after restart"
 msgstr "после загрузки"
@@ -194,8 +201,5 @@ msgstr "после режима ожидания"
 msgid "disabled"
 msgstr "отключено"
 
-msgid "Delete in config"
-msgstr "Удалить из конфига"
-
-msgid "Also save delay in config?"
-msgstr "Заодно сохранить эту задержку в конфиг?"
+msgid "sets the Audio Delay (LipSync)"
+msgstr "установка задержки аудио"

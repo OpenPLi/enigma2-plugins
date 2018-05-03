@@ -1,0 +1,628 @@
+# English translations for enigma package.
+# Copyright (C) 2018 THE enigma'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the enigma package.
+# Automatically generated, 2018.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: enigma 2-plugins\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-05-03 14:01+0200\n"
+"PO-Revision-Date: 2018-05-03 14:01+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#, python-format
+msgid " (Partnerbox %s - Version: %s)"
+msgstr " (Partnerbox %s - Version: %s)"
+
+#, python-format
+msgid "%d min"
+msgstr "%d min"
+
+msgid "%d.%B %Y"
+msgstr "%d.%B %Y"
+
+#, python-format
+msgid "%s%d min"
+msgstr "%s%d min"
+
+msgid "(ZAP)"
+msgstr "(ZAP)"
+
+msgid "<unknown>"
+msgstr "<unknown>"
+
+msgid "Abort"
+msgstr "Abort"
+
+msgid "Activate Picture in Picture"
+msgstr "Activate Picture in Picture"
+
+msgid "Add"
+msgstr "Add"
+
+msgid "Add internal timer"
+msgstr "Add internal timer"
+
+msgid "Add timer"
+msgstr "Add timer"
+
+msgid "After event"
+msgstr "After event"
+
+msgid "Alternative"
+msgstr "Alternative"
+
+msgid "Alternative services are not supported!"
+msgstr "Alternative services are not supported!"
+
+msgid "Apply"
+msgstr "Apply"
+
+msgid "Attention, this is repeated timer!\n"
+msgstr "Attention, this is repeated timer!\n"
+
+msgid "AutoTimer overview"
+msgstr "AutoTimer overview"
+
+msgid "Bouquet List"
+msgstr "Bouquet List"
+
+msgid "Cancel"
+msgstr "Cancel"
+
+msgid "Change pin code"
+msgstr "Change pin code"
+
+msgid "Channel"
+msgstr "Channel"
+
+msgid "Choice list Partnerbox"
+msgstr "Choice list Partnerbox"
+
+msgid "Choose action:"
+msgstr "Choose action:"
+
+msgid "Choose bouquet"
+msgstr "Choose bouquet"
+
+msgid "Clean up"
+msgstr "Clean up"
+
+msgid "Cleaning up finished timer entries..."
+msgstr "Cleaning up finished timer entries..."
+
+msgid "Close and save"
+msgstr "Close and save"
+
+msgid "Close without saving"
+msgstr "Close without saving"
+
+msgid "DVB-C"
+msgstr "DVB-C"
+
+msgid "DVB-T"
+msgstr "DVB-T"
+
+msgid "DVR"
+msgstr "DVR"
+
+msgid "Date"
+msgstr "Date"
+
+msgid "Deep Standby"
+msgstr "Deep Standby"
+
+msgid "Delete"
+msgstr "Delete"
+
+msgid "Delete timer"
+msgstr "Delete timer"
+
+msgid "Description"
+msgstr "Description"
+
+msgid "Disable Picture in Picture"
+msgstr "Disable Picture in Picture"
+
+#, python-format
+msgid "Do you really want to delete %s?"
+msgstr "Do you really want to delete %s?"
+
+#, python-format
+msgid ""
+"Do you really want to delete the remote timer \n"
+"%s ?"
+msgstr ""
+"Do you really want to delete the remote timer \n"
+"%s ?"
+
+#, python-format
+msgid ""
+"Do you really want to delete the timer \n"
+"%s ?"
+msgstr ""
+"Do you really want to delete the timer \n"
+"%s ?"
+
+msgid "EPG Selection"
+msgstr "EPG Selection"
+
+msgid "Edit"
+msgstr "Edit"
+
+msgid "Edit internal timer"
+msgstr "Edit internal timer"
+
+msgid "Edit remote timer"
+msgstr "Edit remote timer"
+
+msgid "Enable Partnerbox-AutoTimer function"
+msgstr "Enable Partnerbox-AutoTimer function"
+
+msgid "Enable Partnerbox-Function in Channel Selector"
+msgstr "Enable Partnerbox-Function in Channel Selector"
+
+msgid "Enable Partnerbox-Function in EPGList"
+msgstr "Enable Partnerbox-Function in EPGList"
+
+msgid "Enable Partnerbox-Function in TimerEvent"
+msgstr "Enable Partnerbox-Function in TimerEvent"
+
+msgid "Enable Red Button-Function in single/multi EPG"
+msgstr "Enable Red Button-Function in single/multi EPG"
+
+msgid "Enable VPS"
+msgstr "Enable VPS"
+
+msgid "Enable VPS-Function in TimerEvent"
+msgstr "Enable VPS-Function in TimerEvent"
+
+msgid "Enable first Partnerbox-entry in Timeredit as default"
+msgstr "Enable first Partnerbox-entry in Timeredit as default"
+
+msgid "EndTime"
+msgstr "EndTime"
+
+msgid "Enigma 1"
+msgstr "Enigma 1"
+
+msgid "Enigma 2"
+msgstr "Enigma 2"
+
+msgid "Enigma Type"
+msgstr "Enigma Type"
+
+msgid "Enter the service pin"
+msgstr "Enter the service pin"
+
+msgid "Error: "
+msgstr "Error: "
+
+msgid "Error: No space left"
+msgstr "Error: No space left"
+
+msgid "Error: Outdated"
+msgstr "Error: Outdated"
+
+msgid "Error: User aborted"
+msgstr "Error: User aborted"
+
+msgid "Error: Zap failed"
+msgstr "Error: Zap failed"
+
+msgid "Eventview"
+msgstr "Eventview"
+
+msgid "Fri"
+msgstr "Fri"
+
+msgid "Friday"
+msgstr "Friday"
+
+msgid "Get MAC"
+msgstr "Get MAC"
+
+msgid "Getting Channel Information..."
+msgstr "Getting Channel Information..."
+
+msgid "Getting EPG Information..."
+msgstr "Getting EPG Information..."
+
+msgid "Getting EPG data..."
+msgstr "Getting EPG data..."
+
+msgid "Getting Partnerbox Bouquet Information..."
+msgstr "Getting Partnerbox Bouquet Information..."
+
+msgid "Getting Partnerbox Information..."
+msgstr "Getting Partnerbox Information..."
+
+msgid "Getting timerlist data..."
+msgstr "Getting timerlist data..."
+
+msgid "Give Enigma time to fill epg cache..."
+msgstr "Give Enigma time to fill epg cache..."
+
+msgid "IP"
+msgstr "IP"
+
+msgid "Info"
+msgstr "Info"
+
+msgid "Internet services are not supported!"
+msgstr "Internet services are not supported!"
+
+msgid "Location"
+msgstr "Location"
+
+msgid "MAC"
+msgstr "MAC"
+
+msgid "Manage autotimer for other dreamboxes in network"
+msgstr "Manage autotimer for other dreamboxes in network"
+
+msgid "Manage timer for other dreamboxes in network"
+msgstr "Manage timer for other dreamboxes in network"
+
+msgid "Menu PiP"
+msgstr "Menu PiP"
+
+msgid "Mon"
+msgstr "Mon"
+
+msgid "Monday"
+msgstr "Monday"
+
+msgid "Move Picture in Picture"
+msgstr "Move Picture in Picture"
+
+msgid "Mute"
+msgstr "Mute"
+
+msgid "Mute remote box"
+msgstr "Mute remote box"
+
+msgid "NGRAB"
+msgstr "NGRAB"
+
+msgid "Name"
+msgstr "Name"
+
+msgid "No"
+msgstr "No"
+
+msgid "OK"
+msgstr "OK"
+
+msgid "Partnerbox"
+msgstr "Partnerbox"
+
+msgid "Partnerbox - RemotePlayer"
+msgstr "Partnerbox - RemotePlayer"
+
+#, python-format
+msgid ""
+"Partnerbox Answer: \n"
+"%s"
+msgstr ""
+"Partnerbox Answer: \n"
+"%s"
+
+msgid "Partnerbox Entries"
+msgstr "Partnerbox Entries"
+
+msgid "Partnerbox RemoteTimer"
+msgstr "Partnerbox RemoteTimer"
+
+msgid "Partnerbox Setup"
+msgstr "Partnerbox Setup"
+
+msgid "Partnerbox: AutoTimer"
+msgstr "Partnerbox: AutoTimer"
+
+msgid "Partnerbox: Edit Entry"
+msgstr "Partnerbox: Edit Entry"
+
+msgid "Partnerbox: List of Entries"
+msgstr "Partnerbox: List of Entries"
+
+msgid "Partnerbox: RemoteTV Player"
+msgstr "Partnerbox: RemoteTV Player"
+
+msgid "Partnerbox: RemoteTimer"
+msgstr "Partnerbox: RemoteTimer"
+
+msgid "Password"
+msgstr "Password"
+
+msgid "Port"
+msgstr "Port"
+
+msgid "Power"
+msgstr "Power"
+
+msgid "Press OK to edit timer..."
+msgstr "Press OK to edit timer..."
+
+msgid ""
+"Really close without saving settings?\n"
+"What do you want to do?"
+msgstr ""
+"Really close without saving settings?\n"
+"What do you want to do?"
+
+msgid "Really delete this Partnerbox Entry?"
+msgstr "Really delete this Partnerbox Entry?"
+
+msgid "Remote Player"
+msgstr "Remote Player"
+
+msgid "Remote Timer"
+msgstr "Remote Timer"
+
+msgid "RemoteTimer Timerlist"
+msgstr "RemoteTimer Timerlist"
+
+msgid "Remove timer"
+msgstr "Remove timer"
+
+msgid "Repeated Timer are not supported!"
+msgstr "Repeated Timer are not supported!"
+
+msgid "Restart"
+msgstr "Restart"
+
+msgid "Restart enigma"
+msgstr "Restart enigma"
+
+msgid "Sat"
+msgstr "Sat"
+
+msgid "Saturday"
+msgstr "Saturday"
+
+msgid "Save"
+msgstr "Save"
+
+#, python-format
+msgid "Select action for remote timer '%s':"
+msgstr "Select action for remote timer '%s':"
+
+#, python-format
+msgid "Select action for timer '%s':"
+msgstr "Select action for timer '%s':"
+
+msgid "Select action:"
+msgstr "Select action:"
+
+msgid "Select operation for partnerbox"
+msgstr "Select operation for partnerbox"
+
+msgid "Send Wake-on-LAN"
+msgstr "Send Wake-on-LAN"
+
+msgid "Servicelists/EPG"
+msgstr "Servicelists/EPG"
+
+#, python-format
+msgid "Set %s as fallback remote receiver?"
+msgstr "Set %s as fallback remote receiver?"
+
+msgid "Set as fallback remote receiver"
+msgstr "Set as fallback remote receiver"
+
+msgid "Show 'RemoteTV Player' in E-Menu"
+msgstr "Show 'RemoteTV Player' in E-Menu"
+
+msgid "Show 'RemoteTimer' in E-Menu"
+msgstr "Show 'RemoteTimer' in E-Menu"
+
+msgid "Show 'RemoteTimer' in Event View context menu"
+msgstr "Show 'RemoteTimer' in Event View context menu"
+
+msgid "Show 'RemoteTimer' in Eventinfo menu"
+msgstr "Show 'RemoteTimer' in Eventinfo menu"
+
+msgid "Show 'Stream current Service' in E-Menu"
+msgstr "Show 'Stream current Service' in E-Menu"
+
+msgid "Show all icon for event in EPGList"
+msgstr "Show all icon for event in EPGList"
+
+msgid "Show duration time for event"
+msgstr "Show duration time for event"
+
+msgid "Shutdown"
+msgstr "Shutdown"
+
+msgid "Sleep remote box"
+msgstr "Sleep remote box"
+
+msgid "Standard Zap"
+msgstr "Standard Zap"
+
+msgid "Standby"
+msgstr "Standby"
+
+msgid "StartTime"
+msgstr "StartTime"
+
+#, python-format
+msgid "Starting Remote Player (IP = %s)"
+msgstr "Starting Remote Player (IP = %s)"
+
+msgid "Stream"
+msgstr "Stream"
+
+msgid "Stream TV from your Partnerbox"
+msgstr "Stream TV from your Partnerbox"
+
+msgid "Stream current Service from Partnerbox"
+msgstr "Stream current Service from Partnerbox"
+
+msgid "Stream current service from partnerbox"
+msgstr "Stream current service from partnerbox"
+
+msgid "Sun"
+msgstr "Sun"
+
+msgid "Sunday"
+msgstr "Sunday"
+
+msgid "The pin code you entered is wrong."
+msgstr "The pin code you entered is wrong."
+
+msgid "Thu"
+msgstr "Thu"
+
+msgid "Thursday"
+msgstr "Thursday"
+
+msgid "Timer Overview"
+msgstr "Timer Overview"
+
+msgid "Timer Type"
+msgstr "Timer Type"
+
+msgid "Timer can not be added...no locations on partnerbox available."
+msgstr "Timer can not be added...no locations on partnerbox available."
+
+msgid "Timer entry"
+msgstr "Timer entry"
+
+msgid "Timer event deleted successfully."
+msgstr "Timer event deleted successfully."
+
+msgid "Timer event was created successfully."
+msgstr "Timer event was created successfully."
+
+msgid "Timer menu"
+msgstr "Timer menu"
+
+msgid "Toggle Standby"
+msgstr "Toggle Standby"
+
+msgid "Toggle status (on/off)"
+msgstr "Toggle status (on/off)"
+
+msgid "Tue"
+msgstr "Tue"
+
+msgid "Tuesday"
+msgstr "Tuesday"
+
+msgid "Use Wake-on-LAN"
+msgstr "Use Wake-on-LAN"
+
+msgid "Wake up remote box"
+msgstr "Wake up remote box"
+
+msgid "Wakeup"
+msgstr "Wakeup"
+
+msgid "Wed"
+msgstr "Wed"
+
+msgid "Wednesday"
+msgstr "Wednesday"
+
+msgid "Yes"
+msgstr "Yes"
+
+msgid "Yes (safe mode)"
+msgstr "Yes (safe mode)"
+
+msgid ""
+"You can not add services or bouquets from Enigma1-receivers into the "
+"channellist..."
+msgstr ""
+"You can not add services or bouquets from Enigma1-receivers into the "
+"channellist..."
+
+msgid "Zap"
+msgstr "Zap"
+
+msgid "Zap focus to Picture in Picture"
+msgstr "Zap focus to Picture in Picture"
+
+msgid "Zap focus to main screen"
+msgstr "Zap focus to main screen"
+
+msgid "Zap to service when streaming"
+msgstr "Zap to service when streaming"
+
+msgid "Zap/"
+msgstr "Zap/"
+
+msgid "Zapping to "
+msgstr "Zapping to "
+
+msgid "about to start"
+msgstr "about to start"
+
+msgid "add AutoTimer"
+msgstr "add AutoTimer"
+
+msgid "add AutoTimer for Partnerbox..."
+msgstr "add AutoTimer for Partnerbox..."
+
+msgid "add Partnerbox bouquet"
+msgstr "add Partnerbox bouquet"
+
+msgid "add Partnerbox service"
+msgstr "add Partnerbox service"
+
+msgid "auto"
+msgstr "auto"
+
+msgid "disabled"
+msgstr "disabled"
+
+msgid "do nothing"
+msgstr "do nothing"
+
+msgid "done!"
+msgstr "done!"
+
+msgid "go to deep standby"
+msgstr "go to deep standby"
+
+msgid "go to standby"
+msgstr "go to standby"
+
+msgid "mins"
+msgstr "mins"
+
+msgid "record"
+msgstr "record"
+
+msgid "recording..."
+msgstr "recording..."
+
+msgid "setup for partnerbox"
+msgstr "setup for partnerbox"
+
+msgid "unknown service"
+msgstr "unknown service"
+
+msgid "use external"
+msgstr "use external"
+
+msgid "use internal"
+msgstr "use internal"
+
+msgid "waiting"
+msgstr "waiting"
+
+msgid "zap"
+msgstr "zap"
+
+msgid "zapped"
+msgstr "zapped"

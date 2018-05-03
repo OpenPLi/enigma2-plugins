@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ims\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-29 18:20+0100\n"
+"POT-Creation-Date: 2018-05-03 14:00+0200\n"
 "PO-Revision-Date: 2012-05-22 01:01+0100\n"
 "Last-Translator: jerry <jerry00@quick.cz>\n"
 "Language-Team: jerry00 <jerry00@quick.cz>\n"
@@ -13,160 +13,25 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-Language: Czech\n"
 "X-Poedit-Country: CZECH REPUBLIC\n"
-"Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
-"|| n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 
 msgid ""
-"\"channel scan\" searches for channels and saves them to your receiver; "
-"\"save to XML file\" does a transponder search and saves found transponders "
-"to an XML file in satellites.xml format"
-msgstr ""
-
-#
-msgid "Blind Scan"
-msgstr ""
-
-#
-msgid "Blindscan"
-msgstr ""
-
-#
-msgid "Clear before scan"
-msgstr "Smazat před skenováním"
-
-#
-msgid "Exit"
-msgstr "Ukončit"
-
-#
-msgid "Filter out adjacent satellites"
-msgstr "Filtrovat sousední satelity"
-
-#
-msgid ""
-"Frequency values must be between 10700 and 12750 (or 3000 and 4200 in the "
-"case of C-band satellites)"
-msgstr ""
-"Frekvence musí být mezi 10700 a 12750 (nebo 3000 a 4200 v případě satelitu v "
-"C-pásmu)"
-
-#
-msgid ""
-"If you are not sure what polarisations the satellite you wish to search "
-"transmits, select \"vertical and horizontal\""
-msgstr ""
-"Pokud si nejste jisti, jakou polarizaci má satelit, který chcete prohledat, "
-"vyberte \"vertikální a horizontální\""
-
-#
-msgid ""
-"If you select \"yes\" all channels on the satellite being search will be "
-"deleted before starting the current search"
-msgstr ""
-"Když vyberete \"ano\" všechny kanály na satelitu budou před zahájením "
-"hledání odstraněny "
-
-#
-msgid ""
-"If you select \"yes\" the scan will only save channels that are not "
-"encrypted; \"no\" will find encrypted and non-encrypted channels"
-msgstr ""
-"Když vyberete \"ano\" vyhledají se pouze nekódované kanály;\"ne\" vyhledají "
-"se free i kódované kanály"
-
-#
-msgid ""
-"If you select \"yes\" the scan will only search transponders not listed in "
-"satellites.xml"
-msgstr ""
-"Když vyberete \"ano\" prohledají se pouze transpondéry, které nejsou uvedeny "
-"v satellites.xml"
-
-#
-msgid ""
-"Invalid parameters entered. Please correct and try again.\n"
-"For C-band searches stop frequency must be between 3000MHz and 4200MHz."
-msgstr ""
-"Zadán neplatný parametr. Opravte ho a zkuste to znova.\n"
-"Pro C-pásmo musí být koncová frekvence mezi 3000MHz a 4200MHz."
-
-#
-msgid ""
-"Invalid parameters entered. Please correct and try again.\n"
-"Frequency start value is larger than stop value."
-msgstr ""
-"Zadán neplatný parametr. Opravte ho a zkuste to znova.\n"
-"Počáteční frekvence je větší než koncová."
-
-#
-msgid ""
-"Invalid parameters entered. Please correct and try again.\n"
-"Start frequency must be between 10700MHz and 12750MHz.\n"
-"(Or 3000MHz and 4200MHz in the case of c-band)."
-msgstr ""
-"Zadán neplatný parametr. Opravte ho a zkuste to znova.\n"
-"Počáteční frekvence musí být mezi 10700MHz a 15750MHz.Nebo pro C-pásmo  mezi "
-"3000MHz a 4200MHz."
-
-#
-msgid ""
-"Invalid parameters entered. Please correct and try again.\n"
-"Start symbol rate must be between 1MHz and 44MHz."
-msgstr ""
-"Zadán neplatný parametr. Opravte ho a zkuste to znova.\n"
-"Počáteční symb. rychlost musí být mezi 1MHz a 44MHz."
-
-#
-msgid ""
-"Invalid parameters entered. Please correct and try again.\n"
-"Stop frequency must be between 10700MHz and 12750MHz.\n"
-"(Or 3000MHz and 4200MHz in the case of c-band)."
-msgstr ""
-"Zadán neplatný parametr.Opravte ho a znovu.\n"
-"Konc. frkv. musí být mezi 10700 a 12750MHz.\n"
-"(Nebo v pásmu C frekv. mezi 3000MHz a 4200MHz."
-
-#
-msgid ""
-"Invalid parameters entered. Please correct and try again.\n"
-"Stop symbol rate must be between 2MHz and 45MHz."
-msgstr ""
-"Zadán neplatný parametr.Opravte ho a znovu.\n"
-"Koncová symb. rychlost musí být mezi 2MHz a 45MHz."
-
-#
-msgid ""
-"Invalid parameters entered. Please correct and try again.\n"
-"Symbol rate start value is larger than stop value."
-msgstr ""
-"Zadán neplatný parametr.Opravte ho a znovu.\n"
-"Počáteční symb. rychlost je větší než cílová."
-
-#
-msgid ""
-"Invalid parameters entered. Please correct and try again.\n"
-"That is a C-band satellite so frequency values \n"
-"need to be between 3000MHz and 4200MHz."
-msgstr ""
-"Zadán neplatný parametr.Opravte ho a znovu.\n"
-"Pokud je to sat. v pásmu C-, tak jeho frekv. \n"
-"musí být mezi 3000MHz a 4200MHz."
-
-#
-msgid ""
-"Invalid parameters entered. Please correct and try again.\n"
-"That is a Ku-band satellite so frequency values \n"
-"need to be between 10700MHz and 12750MHz."
-msgstr ""
-"Zadán neplatný parametr.Opravte ho a znovu.\n"
-"Pokud je to sat. v pásmu Ku, tak jeho frekv. \n"
-"musí být mezi 10700MHz a 12750MHz."
-
-#, python-format
-msgid ""
-"Looking for available transponders.\n"
-"This will take a short while.\n"
 "\n"
+"Second slot dual tuner may not be supported blind scan."
+msgstr ""
+
+msgid ""
+"\n"
+"WARNING! Blind scan may make the tuner malfunction on a VU+ and ET receiver. A reboot afterwards may be required to return to proper tuner function."
+msgstr ""
+
+msgid ""
+"\n"
+"You must use the power adapter."
+msgstr ""
+
+#, fuzzy, python-format
+msgid ""
 "   Current Status : %d/%d\n"
 "   Satellite : %s\n"
 "   Polarization : %s\n"
@@ -181,6 +46,152 @@ msgstr ""
 "   Polarizace : %s\n"
 "   Frekv. rozsah : %d - %d MHz\n"
 "   Sym. rychlost : %d - %d MHz"
+
+msgid "   Starting Sundtek hardware blind scan."
+msgstr ""
+
+#
+#, fuzzy
+msgid " tuner."
+msgstr "Tuner"
+
+msgid "\"channel scan\" searches for channels and saves them to your receiver; \"save to XML file\" does a transponder search and saves found transponders to an XML file in satellites.xml format"
+msgstr ""
+
+#, python-format
+msgid "%d transponder(s) found"
+msgstr ""
+
+#, python-format
+msgid "%d transponders found at %d:%02d min"
+msgstr ""
+
+#, python-format
+msgid "%d:%02d/%d:%02dmin"
+msgstr ""
+
+#, python-format
+msgid "%dMHz scanned"
+msgstr ""
+
+msgid "AUTOMATICALLY start service searching, press green to change"
+msgstr ""
+
+msgid "Accuracy (higher is better)"
+msgstr ""
+
+#
+#, fuzzy
+msgid "Another type"
+msgstr "Typ hledání"
+
+msgid "Blind scan"
+msgstr ""
+
+msgid "Blind scan for DVB-S2 tuners"
+msgstr ""
+
+msgid "Blind scan state"
+msgstr ""
+
+msgid "Blindscan is not supported in "
+msgstr ""
+
+#
+msgid "Clear before scan"
+msgstr "Smazat před skenováním"
+
+msgid "DVB-S + DVB-S2"
+msgstr ""
+
+msgid "DVB-S only"
+msgstr ""
+
+msgid "Dreambox type"
+msgstr ""
+
+#
+msgid "Exit"
+msgstr "Ukončit"
+
+#
+msgid "Filter out adjacent satellites"
+msgstr "Filtrovat sousední satelity"
+
+#
+#, fuzzy
+msgid "Frequency values must be between 10700 MHz and 12749 MHz"
+msgstr "Frekvence musí být mezi 10700 a 12750 (nebo 3000 a 4200 v případě satelitu v C-pásmu)"
+
+#
+#, fuzzy
+msgid "Frequency values must be between 10701 MHz and 12750 MHz"
+msgstr "Frekvence musí být mezi 10700 a 12750 (nebo 3000 a 4200 v případě satelitu v C-pásmu)"
+
+#
+#, fuzzy
+msgid "Frequency values must be between 117000 MHz and 12749 MHz (Circular-band)"
+msgstr "Frekvence musí být mezi 10700 a 12750 (nebo 3000 a 4200 v případě satelitu v C-pásmu)"
+
+#
+#, fuzzy
+msgid "Frequency values must be between 11701 MHz and 12750 MHz (Circular-band)"
+msgstr "Frekvence musí být mezi 10700 a 12750 (nebo 3000 a 4200 v případě satelitu v C-pásmu)"
+
+#
+#, fuzzy
+msgid "Frequency values must be between 3000 MHz and 4199 MHz (C-band)"
+msgstr "Frekvence musí být mezi 10700 a 12750 (nebo 3000 a 4200 v případě satelitu v C-pásmu)"
+
+#
+#, fuzzy
+msgid "Frequency values must be between 3001 MHz and 4200 MHz (C-band)"
+msgstr "Frekvence musí být mezi 10700 a 12750 (nebo 3000 a 4200 v případě satelitu v C-pásmu)"
+
+#, python-format
+msgid "Hardware blind scan is not supported by this tuner (%s)!"
+msgstr ""
+
+#
+#, fuzzy
+msgid "Horizontal"
+msgstr "horizontální"
+
+#
+#, fuzzy
+msgid "If you select \"yes\" all channels on the satellite being search will be deleted before starting the current search, yes (keep feeds) means the same but hold all feed services/transponders."
+msgstr "Když vyberete \"ano\" všechny kanály na satelitu budou před zahájením hledání odstraněny "
+
+msgid "If you select \"yes\" in addition to scan transponders list the NIT (Network Information Table; contains all the info of a provider) is being read and the channels being advertised in there are stored in your tuner."
+msgstr ""
+
+#
+msgid "If you select \"yes\" the scan will only save channels that are not encrypted; \"no\" will find encrypted and non-encrypted channels"
+msgstr "Když vyberete \"ano\" vyhledají se pouze nekódované kanály;\"ne\" vyhledají se free i kódované kanály"
+
+#
+msgid "If you select \"yes\" the scan will only search transponders not listed in satellites.xml"
+msgstr "Když vyberete \"ano\" prohledají se pouze transpondéry, které nejsou uvedeny v satellites.xml"
+
+msgid "It seems manufacturer does not support blind scan for this tuner."
+msgstr ""
+
+msgid ""
+"Looking for available transponders.\n"
+"This will take a long time, please be patient."
+msgstr ""
+
+msgid "MANUALLY start service searching, press green to change"
+msgstr ""
+
+msgid "Maybe the reason that recording is currently running."
+msgstr ""
+
+msgid "Moving to "
+msgstr ""
+
+msgid "Network scan"
+msgstr ""
 
 msgid ""
 "No new transponders found! \n"
@@ -197,6 +208,23 @@ msgstr ""
 msgid "No transponders were found for those search parameters!"
 msgstr "Těmto parametrům hledání neodpovídají žádné traňďáky!"
 
+msgid ""
+"No tuner is enabled!\n"
+"Please setup your tuner settings before you start a service scan."
+msgstr ""
+
+#, python-format
+msgid "Not found blind scan utility '%s'!"
+msgstr ""
+
+msgid ""
+"Nothing to scan!\n"
+"Please setup your tuner settings before you start a service scan."
+msgstr ""
+
+msgid "Nothing to scan! Press Exit!"
+msgstr ""
+
 #
 msgid "Only free scan"
 msgstr "Jen volné"
@@ -204,6 +232,9 @@ msgstr "Jen volné"
 #
 msgid "Only scan unknown transponders"
 msgstr "Pouze neznámé tranďáky"
+
+msgid "Open xml file"
+msgstr ""
 
 #
 msgid "Please setup your tuner configuration."
@@ -218,12 +249,34 @@ msgid "Press Green/OK to start the scan"
 msgstr "Zeleným/OK začne skenování"
 
 #
+#, fuzzy
+msgid "Press OK to start the scan"
+msgstr "Zeleným/OK začne skenování"
+
+#
+#, fuzzy
+msgid "Press green to start service searching!"
+msgstr "Zeleným/OK začne skenování"
+
+msgid "Rotor: "
+msgstr ""
+
+#
 msgid "Satellite"
 msgstr "Satelit"
 
 #
-msgid "Scan"
-msgstr "Hledat"
+#, fuzzy
+msgid "Satellite blind scan"
+msgstr "Satelit"
+
+msgid "Scan Step in MHz(TBS5925)"
+msgstr ""
+
+#
+#, fuzzy
+msgid "Scan satellites for new transponders"
+msgstr "Pouze neznámé tranďáky"
 
 #
 msgid "Scan start frequency"
@@ -240,6 +293,11 @@ msgstr "Hledat do frekvence"
 #
 msgid "Scan stop symbolrate"
 msgstr "Hledat do symb.ryhlosti"
+
+#
+#, fuzzy
+msgid "Scan unknown error!"
+msgstr "Pouze neznámé tranďáky"
 
 #, python-format
 msgid ""
@@ -266,30 +324,60 @@ msgid "Select the satellite you wish to search"
 msgstr "Vyberte satelit, který chcete prohledat"
 
 #
-msgid "Symbol rate values are in megasymbols; enter a value between 1 and 44"
+#, fuzzy
+msgid "Select type for scan:"
+msgstr "Smazat před skenováním"
+
+msgid "Smaller steps takes longer but scan is more thorough"
 msgstr ""
-"Hodnoty přenosové rychlosti jsou v megasymbols, zadejte hodnotu mezi 1 a 44"
+
+msgid "Sorry, this tuner is in use."
+msgstr ""
+
+msgid "Start scan"
+msgstr ""
+
+#, python-format
+msgid "Step %d %d:%02d min"
+msgstr ""
+
+#
+msgid "Symbol rate values are in megasymbols; enter a value between 1 and 44"
+msgstr "Hodnoty přenosové rychlosti jsou v megasymbols, zadejte hodnotu mezi 1 a 44"
 
 #
 msgid "Symbol rate values are in megasymbols; enter a value between 2 and 45"
-msgstr ""
-"Hodnoty přenosové rychlosti jsou v megasymbols, zadejte hodnotu mezi 2 a 45"
+msgstr "Hodnoty přenosové rychlosti jsou v megasymbols, zadejte hodnotu mezi 2 a 45"
 
 #
 msgid "The blindscan run was cancelled by the user."
 msgstr "Spuštěný blindscan byl zrušen uživatelem."
 
+#, python-format
+msgid "The suggested polarisation for this satellite is '%s'"
+msgstr ""
+
+msgid "Transponder searching finished!"
+msgstr ""
+
+msgid "Try to find used satellite transponders..."
+msgstr ""
+
 #
 msgid "Tuner"
 msgstr "Tuner"
 
-#
-msgid ""
-"When a neighbouring satellite is very strong this avoids searching "
-"transponders known to be coming from the neighbouring satellite"
+msgid "Use Sundtek full hardware blind scan!"
 msgstr ""
-"Když je sousední satelit velmi silný ,zabrání se tím hledání transpondérů ze "
-"sousedního satelitu"
+
+#
+#, fuzzy
+msgid "Vertical"
+msgstr "vertikální"
+
+#
+msgid "When a neighbouring satellite is very strong this avoids searching transponders known to be coming from the neighbouring satellite"
+msgstr "Když je sousední satelit velmi silný ,zabrání se tím hledání transpondérů ze sousedního satelitu"
 
 #
 msgid "circular left"
@@ -298,6 +386,11 @@ msgstr "levá kruhová (polarizace)"
 #
 msgid "circular right"
 msgstr "pravá kruhová (polarizace)"
+
+#
+#, fuzzy
+msgid "circular right & circular left"
+msgstr "pravá kruhová a levá kruhová "
 
 #
 msgid "circular right and circular left"
@@ -336,5 +429,16 @@ msgid "vertical"
 msgstr "vertikální"
 
 #
+#, fuzzy
+msgid "vertical & horizontal"
+msgstr "svile a vodorovně"
+
+#
 msgid "vertical and horizontal"
 msgstr "svile a vodorovně"
+
+msgid "yes"
+msgstr ""
+
+msgid "yes (keep feeds)"
+msgstr ""

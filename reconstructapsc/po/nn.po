@@ -1,0 +1,47 @@
+# Norwegian Nynorsk translations for enigma package.
+# Copyright (C) 2018 THE enigma'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the enigma package.
+# Automatically generated, 2018.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: enigma 2-plugins\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-05-03 14:02+0200\n"
+"PO-Revision-Date: 2018-05-03 14:02+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: nn\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Cannot reconstruct this item"
+msgstr ""
+
+msgid "Don't reconstruct"
+msgstr ""
+
+#, python-format
+msgid "Reconstruct AP/SC - %s"
+msgstr ""
+
+msgid "Reconstruct AP/SC ..."
+msgstr ""
+
+msgid "Reconstruct all .ap and .sc files in this directory"
+msgstr ""
+
+msgid "Reconstruct missing .ap and .sc files in this directory"
+msgstr ""
+
+msgid "Reconstruct the .ap and .sc files of the selected movie"
+msgstr ""
+
+#, python-format
+msgid "What would you like to reconstruct?  (\"%s\")"
+msgstr ""
+
+msgid "more files..."
+msgstr ""

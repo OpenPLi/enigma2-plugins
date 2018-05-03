@@ -2,10 +2,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PermanentClock\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-11-26 18:22-0000\n"
+"POT-Creation-Date: 2018-05-03 14:01+0200\n"
 "PO-Revision-Date: 2009-01-09 14:31+0100\n"
 "Last-Translator: José Juan Zapater <josej@zapater.fdns.net>\n"
 "Language-Team: none\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -16,26 +17,87 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SearchPath-0: /home/aliabdul/dream/enigma2-plugins/permanentclock/src\n"
 
-#: /home/aliabdul/dream/enigma2-plugins/permanentclock/src/plugin.py:54
-#: /home/aliabdul/dream/enigma2-plugins/permanentclock/src/plugin.py:210
-msgid "Permanent Clock"
-msgstr "Reloj permanente"
-
-#: /home/aliabdul/dream/enigma2-plugins/permanentclock/src/plugin.py:178
-#: /home/aliabdul/dream/enigma2-plugins/permanentclock/src/plugin.py:186
-msgid "Deactivate permanent clock"
-msgstr "Desactivar el reloj permanente"
-
-#: /home/aliabdul/dream/enigma2-plugins/permanentclock/src/plugin.py:180
-#: /home/aliabdul/dream/enigma2-plugins/permanentclock/src/plugin.py:186
 msgid "Activate permanent clock"
 msgstr "Activar el reloj permanente"
 
-#: /home/aliabdul/dream/enigma2-plugins/permanentclock/src/plugin.py:181
 msgid "Change permanent clock position"
 msgstr "Cambiar la posición del reloj permanente"
 
-#: /home/aliabdul/dream/enigma2-plugins/permanentclock/src/plugin.py:210
+msgid "Choice color clock:"
+msgstr ""
+
+msgid "Color analog clock"
+msgstr ""
+
+msgid "Color digital clock"
+msgstr ""
+
+msgid "Deactivate permanent clock"
+msgstr "Desactivar el reloj permanente"
+
+msgid "Disable key 'long EXIT' show/hide"
+msgstr ""
+
+msgid "Enable key 'long EXIT' show/hide"
+msgstr ""
+
+msgid "PLi-transparent"
+msgstr ""
+
+msgid "Permanent Clock"
+msgstr "Reloj permanente"
+
+#, fuzzy
+msgid "Permanent Clock Setup"
+msgstr "Reloj permanente"
+
+msgid "Save"
+msgstr ""
+
+msgid "Set slider"
+msgstr ""
+
+msgid "Set slider step (1 - 30):"
+msgstr ""
+
+msgid "Show analog clock"
+msgstr ""
+
+msgid "Show digital clock"
+msgstr ""
+
 msgid "Shows the clock permanent on the screen"
 msgstr "Mostrar el reloj permanente en la pantalla"
 
+msgid "black-blue"
+msgstr ""
+
+msgid "black-white"
+msgstr ""
+
+msgid "black-yellow"
+msgstr ""
+
+msgid "blue"
+msgstr ""
+
+msgid "cyan"
+msgstr ""
+
+msgid "large cyan"
+msgstr ""
+
+msgid "large white"
+msgstr ""
+
+msgid "large yellow"
+msgstr ""
+
+msgid "transparent"
+msgstr ""
+
+msgid "white"
+msgstr ""
+
+msgid "yellow"
+msgstr ""

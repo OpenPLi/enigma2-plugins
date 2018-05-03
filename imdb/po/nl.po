@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Enigma 2 IMDb Plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-07-25 12:54+0100\n"
+"POT-Creation-Date: 2018-05-03 14:00+0200\n"
 "PO-Revision-Date: 2015-07-26 16:55+0100\n"
 "Last-Translator: Rob van der Does <RobvanderDoes@Gmail.com>\n"
 "Language-Team: Andy Blackburn/Rob van der Does\n"
@@ -24,8 +24,11 @@ msgstr ""
 msgid " as "
 msgstr " als "
 
-msgid "* = Restart Required"
-msgstr "* = Herstart noodzakelijk"
+msgid "Add 'Search event in IMDb' to further option EPG menu."
+msgstr ""
+
+msgid "Add 'Search in IMDb' to movie list menu for selected video."
+msgstr ""
 
 msgid "Ambiguous results"
 msgstr "Geen eenduidige resultaten"
@@ -67,7 +70,15 @@ msgstr "Afsluiten"
 msgid "Extra Info"
 msgstr "Extra Info"
 
+#, fuzzy
+msgid "Extra Info\n"
+msgstr "Extra Info"
+
 msgid "Genre:"
+msgstr "Genre:"
+
+#, fuzzy
+msgid "Genre: "
 msgstr "Genre:"
 
 msgid "IMDb Details"
@@ -114,7 +125,12 @@ msgstr ""
 msgid "IMDb query failed!"
 msgstr "Zoeken in de IMDb mislukt!"
 
-msgid "Lookup"
+#, fuzzy
+msgid "IMDb search"
+msgstr "Geen passende titel in de IMDB gevonden."
+
+#, fuzzy
+msgid "Lookup IMDb"
 msgstr "Zoeken"
 
 msgid "No IMDb match."
@@ -167,11 +183,23 @@ msgstr "Sla huidige poster en details op als .txt"
 msgid "Search Trailer"
 msgstr "Zoek Trailer"
 
+msgid "Search event in IMDb"
+msgstr ""
+
+msgid "Search in IMDb"
+msgstr ""
+
 msgid "Select from EPG"
 msgstr "Kies vanuit de EPG"
 
 msgid "Setup"
 msgstr "Instellingen"
+
+msgid "Show in further option EPG menu"
+msgstr ""
+
+msgid "Show in movie list menu"
+msgstr ""
 
 msgid "Show in plugin browser"
 msgstr "Toon in plugin browser"
@@ -193,9 +221,3 @@ msgstr "Woorden/zinnen die genegeerd worden"
 
 msgid "no user rating yet"
 msgstr "nog geen gebruikers waardering"
-
-#~ msgid "Query IMDb: %s..."
-#~ msgstr "Zoekt in de IMDb: %s..."
-
-#~ msgid "Words/pharse's to ingore"
-#~ msgstr "Woorden/zinnen die genegeerd moeten worden"

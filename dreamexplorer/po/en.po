@@ -1,0 +1,377 @@
+# English translations for enigma package.
+# Copyright (C) 2018 THE enigma'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the enigma package.
+# Automatically generated, 2018.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: enigma 2-plugins\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-05-03 14:00+0200\n"
+"PO-Revision-Date: 2018-05-03 14:00+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid ""
+"\n"
+"\n"
+"The Editor-Funktions are beta (not full tested) !!!"
+msgstr ""
+"\n"
+"\n"
+"The Editor-Funktions are beta (not full tested) !!!"
+
+msgid ""
+"\n"
+"\n"
+"You do it at your own risk!"
+msgstr ""
+"\n"
+"\n"
+"You do it at your own risk!"
+
+msgid ""
+"\n"
+"The author are NOT RESPONSIBLE\n"
+"for DATA LOST OR DISORDERS !!!"
+msgstr ""
+"\n"
+"The author are NOT RESPONSIBLE\n"
+"for DATA LOST OR DISORDERS !!!"
+
+msgid ""
+"\n"
+"have been CHANGED! Do you want to save it?\n"
+"\n"
+"WARNING!"
+msgstr ""
+"\n"
+"have been CHANGED! Do you want to save it?\n"
+"\n"
+"WARNING!"
+
+msgid ""
+"\n"
+"to:"
+msgstr ""
+"\n"
+"to:"
+
+msgid " Media-filter"
+msgstr " Media-filter"
+
+#, python-format
+msgid ""
+"%s \n"
+"FAILED!"
+msgstr ""
+"%s \n"
+"FAILED!"
+
+msgid "ADDLINK"
+msgstr "ADDLINK"
+
+msgid "About"
+msgstr "About"
+
+msgid "Add directory to Bookmarks"
+msgstr "Add directory to Bookmarks"
+
+msgid "Auto play blu-ray file"
+msgstr "Auto play blu-ray file"
+
+msgid "BZ2-package:\\n"
+msgstr "BZ2-package:\\n"
+
+msgid "Bookmarks"
+msgstr "Bookmarks"
+
+msgid "Bootlogo-package:\\n"
+msgstr "Bootlogo-package:\\n"
+
+msgid "Box: "
+msgstr "Box: "
+
+msgid "COPY"
+msgstr "COPY"
+
+msgid "Cancel"
+msgstr "Cancel"
+
+msgid "Create new directory"
+msgstr "Create new directory"
+
+msgid "Create new directory in..."
+msgstr "Create new directory in..."
+
+msgid "Create new file"
+msgstr "Create new file"
+
+msgid "Create new file in..."
+msgstr "Create new file in..."
+
+msgid "Create softlink..."
+msgstr "Create softlink..."
+
+msgid "DELLINK"
+msgstr "DELLINK"
+
+msgid "Delete"
+msgstr "Delete"
+
+msgid "Directory name error !"
+msgstr "Directory name error !"
+
+msgid "Disable"
+msgstr "Disable"
+
+msgid "Disassemble to bytecode..."
+msgstr "Disassemble to bytecode..."
+
+msgid "Do you realy want to DELETE:\n"
+msgstr "Do you realy want to DELETE:\n"
+
+msgid "Do you want to execute?\\n"
+msgstr "Do you want to execute?\\n"
+
+msgid "Do you want to set\n"
+msgstr "Do you want to set\n"
+
+msgid "Dream Explorer..."
+msgstr "Dream Explorer..."
+
+msgid "Dream-Explorer"
+msgstr "Dream-Explorer"
+
+msgid "Dream-Explorer - DELETE DIRECTORY..."
+msgstr "Dream-Explorer - DELETE DIRECTORY..."
+
+msgid "Dream-Explorer - DELETE file..."
+msgstr "Dream-Explorer - DELETE file..."
+
+msgid "Dream-Explorer : Disassemble..."
+msgstr "Dream-Explorer : Disassemble..."
+
+msgid "Dream-Explorer : Install..."
+msgstr "Dream-Explorer : Install..."
+
+msgid "Dream-Explorer..."
+msgstr "Dream-Explorer..."
+
+msgid ""
+"Dreambox-Explorer\n"
+"coded 2010 by Vali\n"
+"\n"
+"Support & Help on\n"
+"www.dreambox-tools.info"
+msgstr ""
+"Dreambox-Explorer\n"
+"coded 2010 by Vali\n"
+"\n"
+"Support & Help on\n"
+"www.dreambox-tools.info"
+
+msgid "Edit line "
+msgstr "Edit line "
+
+msgid "Enable"
+msgstr "Enable"
+
+msgid "Error by reading bookmarks !!!"
+msgstr "Error by reading bookmarks !!!"
+
+msgid "Error by writing bookmarks !!!"
+msgstr "Error by writing bookmarks !!!"
+
+msgid "Error..."
+msgstr "Error..."
+
+msgid "Explore your box"
+msgstr "Explore your box"
+
+msgid "File name error !"
+msgstr "File name error !"
+
+msgid "File-Explorer"
+msgstr "File-Explorer"
+
+msgid "GZ-package:\\n"
+msgstr "GZ-package:\\n"
+
+msgid "Incompatible MerlinMusicPlayer version!"
+msgstr "Incompatible MerlinMusicPlayer version!"
+
+msgid "Info..."
+msgstr "Info..."
+
+msgid "Input"
+msgstr "Input"
+
+msgid "Install new bootlogo..."
+msgstr "Install new bootlogo..."
+
+msgid "Install this package"
+msgstr "Install this package"
+
+msgid "List of Storage Devices"
+msgstr "List of Storage Devices"
+
+msgid "MOVE"
+msgstr "MOVE"
+
+msgid "Make a softlink"
+msgstr "Make a softlink"
+
+msgid "Make a softlink..."
+msgstr "Make a softlink..."
+
+msgid "Move/Copy"
+msgstr "Move/Copy"
+
+msgid "My Bookmarks"
+msgstr "My Bookmarks"
+
+msgid "No more picture-files."
+msgstr "No more picture-files."
+
+msgid "No more playable files."
+msgstr "No more playable files."
+
+msgid "OPKG-package:\\n"
+msgstr "OPKG-package:\\n"
+
+msgid "Options:\n"
+msgstr "Options:\n"
+
+msgid "Pack my bootlogo"
+msgstr "Pack my bootlogo"
+
+msgid "Parent Directory"
+msgstr "Parent Directory"
+
+msgid "Picture-Explorer"
+msgstr "Picture-Explorer"
+
+msgid "Picture-Player not available!"
+msgstr "Picture-Player not available!"
+
+msgid "Preview all pictures"
+msgstr "Preview all pictures"
+
+msgid "Pyc-Script:\\n"
+msgstr "Pyc-Script:\\n"
+
+msgid "Remove directory from Bookmarks"
+msgstr "Remove directory from Bookmarks"
+
+msgid "Rename"
+msgstr "Rename"
+
+msgid "Rename directory..."
+msgstr "Rename directory..."
+
+msgid "Rename file..."
+msgstr "Rename file..."
+
+#, python-format
+msgid ""
+"Rename: %s \n"
+"FAILED!"
+msgstr ""
+"Rename: %s \n"
+"FAILED!"
+
+msgid "Running processes: "
+msgstr "Running processes: "
+
+msgid "Select Copy/Move location..."
+msgstr "Select Copy/Move location..."
+
+msgid "Set archive mode (644)"
+msgstr "Set archive mode (644)"
+
+msgid "Set executable mode (755)"
+msgstr "Set executable mode (755)"
+
+msgid "Set first the Softlink name ..."
+msgstr "Set first the Softlink name ..."
+
+msgid "Set name"
+msgstr "Set name"
+
+msgid "Set start directory"
+msgstr "Set start directory"
+
+msgid "Softlink name error !"
+msgstr "Softlink name error !"
+
+msgid "Sort by date (bouquet-)"
+msgstr "Sort by date (bouquet-)"
+
+msgid "Sort by name (bouquet+)"
+msgstr "Sort by name (bouquet+)"
+
+msgid "Start execution"
+msgstr "Start execution"
+
+msgid "This line is not editable!"
+msgstr "This line is not editable!"
+
+msgid "Turn off the media-filter first."
+msgstr "Turn off the media-filter first."
+
+msgid "View this shell-script"
+msgstr "View this shell-script"
+
+msgid "WARNING! they doing now COPY or MOVE\n"
+msgstr "WARNING! they doing now COPY or MOVE\n"
+
+msgid "WARNING! they make now a softlink from\n"
+msgstr "WARNING! they make now a softlink from\n"
+
+msgid "Write the new softlink name here:"
+msgstr "Write the new softlink name here:"
+
+msgid "[All files] "
+msgstr "[All files] "
+
+msgid "[Media files] "
+msgstr "[Media files] "
+
+msgid "[sort by Date] "
+msgstr "[sort by Date] "
+
+msgid "[sort by Name] "
+msgstr "[sort by Name] "
+
+msgid "last-mod "
+msgstr "last-mod "
+
+msgid "loading... "
+msgstr "loading... "
+
+msgid "mode "
+msgstr "mode "
+
+msgid "mvi-Explorer"
+msgstr "mvi-Explorer"
+
+msgid "old:  "
+msgstr "old:  "
+
+msgid "read error"
+msgstr "read error"
+
+msgid "ready..."
+msgstr "ready..."
+
+msgid "size "
+msgstr "size "
+
+msgid "wait..."
+msgstr "wait..."

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TranscodingSetup\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-28 00:36+0200\n"
+"POT-Creation-Date: 2018-05-03 14:02+0200\n"
 "PO-Revision-Date: 2018-04-17 23:15+0200\n"
 "Last-Translator: Gringo <openpli@tiscali.it>\n"
 "Language-Team: \n"
@@ -19,44 +19,41 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
-#: plugin.py:96
 msgid "Bitrate"
 msgstr "Bitrate"
 
-#: plugin.py:153
 msgid "Default values for trancoding"
 msgstr "Valori predefiniti del transcoding"
-
-#: plugin.py:159
-msgid "It seems your receiver is not supported!"
-msgstr "Questo ricevitore non è supportato!"
-
-#: plugin.py:156
-msgid "Not found file '/etc/enigma2/streamproxy.conf' !"
-msgstr "File '/etc/enigma2/streamproxy.conf' non trovato!"
-
-#: plugin.py:150
-msgid "Quit"
-msgstr "Chiudere"
-
-#: plugin.py:151
-msgid "Set"
-msgstr "Impostare"
-
-#: plugin.py:233
-msgid "Set up default transcoding parameters"
-msgstr "Impostare i parametri predefiniti di transcoding"
-
-#: plugin.py:47 plugin.py:227
-msgid "Transcoding Setup"
-msgstr "Transcoding"
-
-#: plugin.py:97
-msgid "Video size"
-msgstr "Risoluzione video"
 
 msgid "Frame rate"
 msgstr "Immagini al secondo"
 
+msgid "It seems your receiver is not supported!"
+msgstr "Questo ricevitore non è supportato!"
+
+msgid "Not found file '/etc/enigma2/streamproxy.conf' !"
+msgstr "File '/etc/enigma2/streamproxy.conf' non trovato!"
+
+msgid "Port"
+msgstr ""
+
+msgid "Quit"
+msgstr "Chiudere"
+
+msgid "Resolution"
+msgstr ""
+
+msgid "Set"
+msgstr "Impostare"
+
+msgid "Set up default transcoding parameters"
+msgstr "Impostare i parametri predefiniti di transcoding"
+
+msgid "Transcoding Setup"
+msgstr "Transcoding"
+
 msgid "Video codec"
 msgstr "Codifica video"
+
+msgid "Video size"
+msgstr "Risoluzione video"

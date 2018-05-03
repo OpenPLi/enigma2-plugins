@@ -1,0 +1,263 @@
+# English translations for enigma package.
+# Copyright (C) 2018 THE enigma'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the enigma package.
+# Automatically generated, 2018.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: enigma 2-plugins\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-05-03 14:00+0200\n"
+"PO-Revision-Date: 2018-05-03 14:00+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#, python-format
+msgid " (%d min)"
+msgstr " (%d min)"
+
+#, python-format
+msgid " (%s%d min)"
+msgstr " (%s%d min)"
+
+msgid "Add \"Search event in EPG\" to channel menu"
+msgstr "Add \"Search event in EPG\" to channel menu"
+
+msgid "Add \"Search event in EPG\" to event menu"
+msgstr "Add \"Search event in EPG\" to event menu"
+
+msgid "Add \"Search\" Button to EPG"
+msgstr "Add \"Search\" Button to EPG"
+
+msgid "Add timer"
+msgstr "Add timer"
+
+msgid ""
+"Adds \"Search event in EPG\" item into the channel selection context menu "
+"(needs restart GUI)"
+msgstr ""
+"Adds \"Search event in EPG\" item into the channel selection context menu "
+"(needs restart GUI)"
+
+msgid ""
+"Adds \"Search event in EPG\" item into the event menu (needs restart GUI)"
+msgstr ""
+"Adds \"Search event in EPG\" item into the event menu (needs restart GUI)"
+
+msgid "Cancel"
+msgstr "Cancel"
+
+msgid "Channel Selection"
+msgstr "Channel Selection"
+
+msgid "Choice list"
+msgstr "Choice list"
+
+msgid "Choice list EPGSearch"
+msgstr "Choice list EPGSearch"
+
+msgid "Choice list RED Button"
+msgstr "Choice list RED Button"
+
+msgid "Choosing an encoding. \"UTF-8\" to search for EPG cyrillic."
+msgstr "Choosing an encoding. \"UTF-8\" to search for EPG cyrillic."
+
+msgid "Clear history"
+msgstr "Clear history"
+
+#, python-format
+msgid "Could not read AutoTimer timer list: %s"
+msgstr "Could not read AutoTimer timer list: %s"
+
+msgid "Custom search"
+msgstr "Custom search"
+
+msgid "Display name service as in bouquets"
+msgstr "Display name service as in bouquets"
+
+msgid "EPG Search"
+msgstr "EPG Search"
+
+msgid "EPGSearch"
+msgstr "EPGSearch"
+
+msgid "EPGSearch Setup"
+msgstr "EPGSearch Setup"
+
+msgid "Encoding Search to EPG"
+msgstr "Encoding Search to EPG"
+
+msgid "Enter text to search for"
+msgstr "Enter text to search for"
+
+msgid "Export selected as AutoTimer"
+msgstr "Export selected as AutoTimer"
+
+msgid "History"
+msgstr "History"
+
+msgid ""
+"How many entries to keep in the search history at most. 0 disables history "
+"entirely!"
+msgstr ""
+"How many entries to keep in the search history at most. 0 disables history "
+"entirely!"
+
+msgid ""
+"If 'Search only bouquets' is enabled, show service name as in bouquets for "
+"renamed services."
+msgstr ""
+"If 'Search only bouquets' is enabled, show service name as in bouquets for "
+"renamed services."
+
+msgid ""
+"If this setting is enabled, searching EPG in only services in user bouquets."
+msgstr ""
+"If this setting is enabled, searching EPG in only services in user bouquets."
+
+msgid ""
+"If this setting is enabled, the plugin adds a \"Search\" Button to the "
+"regular EPG."
+msgstr ""
+"If this setting is enabled, the plugin adds a \"Search\" Button to the "
+"regular EPG."
+
+msgid "If this setting is enabled, the plugin adds picons."
+msgstr "If this setting is enabled, the plugin adds picons."
+
+msgid "Import from AutoTimer"
+msgstr "Import from AutoTimer"
+
+msgid "Import from EPG"
+msgstr "Import from EPG"
+
+msgid "Import from Timer"
+msgstr "Import from Timer"
+
+msgid "Length of History"
+msgstr "Length of History"
+
+msgid "List of history is cleared !"
+msgstr "List of history is cleared !"
+
+msgid "Lookup in TMBD"
+msgstr "Lookup in TMBD"
+
+msgid "New Search"
+msgstr "New Search"
+
+msgid "No history !"
+msgstr "No history !"
+
+msgid "OK"
+msgstr "OK"
+
+msgid "Open selected in IMDb"
+msgstr "Open selected in IMDb"
+
+msgid "Partnerbox Entries"
+msgstr "Partnerbox Entries"
+
+msgid "Save search as AutoTimer"
+msgstr "Save search as AutoTimer"
+
+msgid "Search"
+msgstr "Search"
+
+msgid "Search EPG by title event"
+msgstr "Search EPG by title event"
+
+msgid "Search event in EPG"
+msgstr "Search event in EPG"
+
+msgid "Search for TMDb info"
+msgstr "Search for TMDb info"
+
+msgid "Search only bouquets"
+msgstr "Search only bouquets"
+
+msgid "Search strictness"
+msgstr "Search strictness"
+
+msgid "Search type"
+msgstr "Search type"
+
+msgid "Search type for filter"
+msgstr "Search type for filter"
+
+msgid "Select a timer to search"
+msgstr "Select a timer to search"
+
+msgid "Select action:"
+msgstr "Select action:"
+
+msgid "Select channel"
+msgstr "Select channel"
+
+msgid "Select text to search for"
+msgstr "Select text to search for"
+
+msgid ""
+"Select type for filter search. Press button P +/- for show/hide filter in "
+"description after search."
+msgstr ""
+"Select type for filter search. Press button P +/- for show/hide filter in "
+"description after search."
+
+msgid ""
+"Select type for search, \"partial match\" for the most extensive search."
+msgstr ""
+"Select type for search, \"partial match\" for the most extensive search."
+
+msgid "Select type: 'Search and Select channel' or 'Search'."
+msgstr "Select type: 'Search and Select channel' or 'Search'."
+
+msgid "Select whether or not you want to enforce case correctness."
+msgstr "Select whether or not you want to enforce case correctness."
+
+msgid "Setup"
+msgstr "Setup"
+
+msgid "Timers list"
+msgstr "Timers list"
+
+msgid "Type blue Button"
+msgstr "Type blue Button"
+
+msgid "Use Picons"
+msgstr "Use Picons"
+
+msgid "Zap to selected service"
+msgstr "Zap to selected service"
+
+msgid "case-insensitive search"
+msgstr "case-insensitive search"
+
+msgid "case-sensitive search"
+msgstr "case-sensitive search"
+
+msgid "choice (Search and standard)"
+msgstr "choice (Search and standard)"
+
+msgid "exact match"
+msgstr "exact match"
+
+msgid "only Search"
+msgstr "only Search"
+
+msgid "partial match"
+msgstr "partial match"
+
+msgid "search EPG"
+msgstr "search EPG"
+
+msgid "search EPG..."
+msgstr "search EPG..."
+
+msgid "title starts with"
+msgstr "title starts with"

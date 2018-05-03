@@ -1,0 +1,103 @@
+# Slovenian translations for enigma package.
+# Copyright (C) 2018 THE enigma'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the enigma package.
+# Automatically generated, 2018.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: enigma 2-plugins\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-05-03 14:01+0200\n"
+"PO-Revision-Date: 2018-05-03 14:01+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: sl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n"
+"%100==4 ? 2 : 3);\n"
+
+msgid "Activate permanent clock"
+msgstr ""
+
+msgid "Change permanent clock position"
+msgstr ""
+
+msgid "Choice color clock:"
+msgstr ""
+
+msgid "Color analog clock"
+msgstr ""
+
+msgid "Color digital clock"
+msgstr ""
+
+msgid "Deactivate permanent clock"
+msgstr ""
+
+msgid "Disable key 'long EXIT' show/hide"
+msgstr ""
+
+msgid "Enable key 'long EXIT' show/hide"
+msgstr ""
+
+msgid "PLi-transparent"
+msgstr ""
+
+msgid "Permanent Clock"
+msgstr ""
+
+msgid "Permanent Clock Setup"
+msgstr ""
+
+msgid "Save"
+msgstr ""
+
+msgid "Set slider"
+msgstr ""
+
+msgid "Set slider step (1 - 30):"
+msgstr ""
+
+msgid "Show analog clock"
+msgstr ""
+
+msgid "Show digital clock"
+msgstr ""
+
+msgid "Shows the clock permanent on the screen"
+msgstr ""
+
+msgid "black-blue"
+msgstr ""
+
+msgid "black-white"
+msgstr ""
+
+msgid "black-yellow"
+msgstr ""
+
+msgid "blue"
+msgstr ""
+
+msgid "cyan"
+msgstr ""
+
+msgid "large cyan"
+msgstr ""
+
+msgid "large white"
+msgstr ""
+
+msgid "large yellow"
+msgstr ""
+
+msgid "transparent"
+msgstr ""
+
+msgid "white"
+msgstr ""
+
+msgid "yellow"
+msgstr ""

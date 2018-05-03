@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-oe-alliance-plugins 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-12 20:05+0100\n"
+"POT-Creation-Date: 2018-05-03 14:02+0200\n"
 "PO-Revision-Date: 2015-09-13 16:12+0100\n"
 "Last-Translator: Rob van der Does <RobvanderDoes@Gmail.com>\n"
 "Language-Team: Rob van der Does\n"
@@ -44,11 +44,24 @@ msgstr "IP : %s"
 msgid "Manufacturer"
 msgstr "Fabrikant"
 
+msgid "Model URL"
+msgstr ""
+
+msgid "No vtuner found."
+msgstr ""
+
 msgid "Ok"
 msgstr "OK"
 
+msgid "Presentation URL"
+msgstr ""
+
 msgid "Really close without saving settings?"
 msgstr "Echt afsluiten zonder op te slaan?"
+
+#, fuzzy
+msgid "SAT>IP Capability"
+msgstr "SAT>IP Client"
 
 msgid "SAT>IP Client"
 msgstr "SAT>IP Client"
@@ -109,3 +122,9 @@ msgstr "TYPE : %s"
 msgid "VIRTUAL TUNER %s"
 msgstr "VIRTUAL TUNER %s"
 
+msgid ""
+"You should now reboot your STB to change SAT>IP Configuration.\n"
+"\n"
+"Reboot now ?\n"
+"\n"
+msgstr ""

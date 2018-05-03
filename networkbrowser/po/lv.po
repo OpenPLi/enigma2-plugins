@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxbox-enigma 0.0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-01-28 16:44+0100\n"
+"POT-Creation-Date: 2018-05-03 14:01+0200\n"
 "PO-Revision-Date: 2014-10-26 18:46+0200\n"
 "Last-Translator: Tapat <taapat@gmail.com>\n"
 "Language-Team: Taapat <taapat@gmail.com>\n"
@@ -139,6 +139,10 @@ msgid "Mount options"
 msgstr "Montēšanas punktu opcijas"
 
 msgid "Mount type"
+msgstr "Montēšanas protokola tips"
+
+#, fuzzy
+msgid "Mount view"
 msgstr "Montēšanas protokola tips"
 
 msgid "MountManager"

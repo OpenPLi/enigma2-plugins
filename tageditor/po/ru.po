@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Enigma 2 TagEditor Plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-02-16 23:05+0100\n"
+"POT-Creation-Date: 2018-05-03 14:02+0200\n"
 "PO-Revision-Date: 2015-09-29 14:07+0200\n"
 "Last-Translator: Dimitrij <Dima-73@inbox.lv>\n"
 "Language-Team: PLi Dima73\n"
@@ -40,6 +40,7 @@ msgstr ""
 "Вы действительно хотите удалить все теги везде?\n"
 "(Обратите внимание, что 'Отмена' не отменит это!)"
 
+#, python-format
 msgid ""
 "Do you really want to delete tag \"%s\" everywhere?\n"
 "(Note that 'Cancel' will not undo this!)"
@@ -47,12 +48,7 @@ msgstr ""
 "Вы действительно хотите удалить тег \"%s\" везде?\n"
 "(Обратите внимание, что 'Отмена' не отменит это!)"
 
-msgid "edit tags..."
-msgstr "отредактировать тэги..."
-
-msgid "edit tags"
-msgstr "отредактировать тэги"
-
+#. TRANSLATORS: This is the title of the TagEditor main screen
 msgid "Edit Tags"
 msgstr "Редактор тэгов"
 
@@ -71,5 +67,10 @@ msgstr "Пожалуйста, введите новый тег"
 msgid "Rename this tag..."
 msgstr "Переименовать этот тег..."
 
+#, python-format
 msgid "Replace tag \"%s\" everywhere with:   (Note that 'Cancel' will not undo this!)"
 msgstr "Заменить тег \"%s\" везде:   (Обратите внимание, что 'Отмена' не отменит это!)"
+
+#. TRANSLATORS: this is the string used in the movie context menu for TagEditor
+msgid "edit tags"
+msgstr "отредактировать тэги"

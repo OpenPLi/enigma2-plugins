@@ -1,0 +1,102 @@
+# English translations for enigma package.
+# Copyright (C) 2018 THE enigma'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the enigma package.
+# Automatically generated, 2018.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: enigma 2-plugins\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-05-03 14:01+0200\n"
+"PO-Revision-Date: 2018-05-03 14:01+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Activate permanent clock"
+msgstr "Activate permanent clock"
+
+msgid "Change permanent clock position"
+msgstr "Change permanent clock position"
+
+msgid "Choice color clock:"
+msgstr "Choice color clock:"
+
+msgid "Color analog clock"
+msgstr "Color analog clock"
+
+msgid "Color digital clock"
+msgstr "Color digital clock"
+
+msgid "Deactivate permanent clock"
+msgstr "Deactivate permanent clock"
+
+msgid "Disable key 'long EXIT' show/hide"
+msgstr "Disable key 'long EXIT' show/hide"
+
+msgid "Enable key 'long EXIT' show/hide"
+msgstr "Enable key 'long EXIT' show/hide"
+
+msgid "PLi-transparent"
+msgstr "PLi-transparent"
+
+msgid "Permanent Clock"
+msgstr "Permanent Clock"
+
+msgid "Permanent Clock Setup"
+msgstr "Permanent Clock Setup"
+
+msgid "Save"
+msgstr "Save"
+
+msgid "Set slider"
+msgstr "Set slider"
+
+msgid "Set slider step (1 - 30):"
+msgstr "Set slider step (1 - 30):"
+
+msgid "Show analog clock"
+msgstr "Show analog clock"
+
+msgid "Show digital clock"
+msgstr "Show digital clock"
+
+msgid "Shows the clock permanent on the screen"
+msgstr "Shows the clock permanent on the screen"
+
+msgid "black-blue"
+msgstr "black-blue"
+
+msgid "black-white"
+msgstr "black-white"
+
+msgid "black-yellow"
+msgstr "black-yellow"
+
+msgid "blue"
+msgstr "blue"
+
+msgid "cyan"
+msgstr "cyan"
+
+msgid "large cyan"
+msgstr "large cyan"
+
+msgid "large white"
+msgstr "large white"
+
+msgid "large yellow"
+msgstr "large yellow"
+
+msgid "transparent"
+msgstr "transparent"
+
+msgid "white"
+msgstr "white"
+
+msgid "yellow"
+msgstr "yellow"

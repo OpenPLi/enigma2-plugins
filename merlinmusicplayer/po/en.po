@@ -1,0 +1,367 @@
+# English translations for enigma package.
+# Copyright (C) 2018 THE enigma'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the enigma package.
+# Automatically generated, 2018.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: enigma 2-plugins\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-05-03 14:01+0200\n"
+"PO-Revision-Date: 2018-05-03 14:01+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#, python-format
+msgid ""
+"%d files added to database!\n"
+"Press OK to close."
+msgstr ""
+"%d files added to database!\n"
+"Press OK to close."
+
+#, python-format
+msgid ""
+"%s\n"
+" added to database"
+msgstr ""
+"%s\n"
+" added to database"
+
+#, python-format
+msgid ""
+"%s\n"
+" already exists in database!"
+msgstr ""
+"%s\n"
+" already exists in database!"
+
+#, python-format
+msgid ""
+"%s\n"
+"appended to songlist"
+msgstr ""
+"%s\n"
+"appended to songlist"
+
+#, python-format
+msgid ""
+"%s\n"
+"inserted and will be played as next song"
+msgstr ""
+"%s\n"
+"inserted and will be played as next song"
+
+msgid "Activate screensaver"
+msgstr "Activate screensaver"
+
+msgid "Add all songs from selected album to a playlist"
+msgstr "Add all songs from selected album to a playlist"
+
+msgid "Add all songs from selected artist to a playlist"
+msgstr "Add all songs from selected artist to a playlist"
+
+msgid "Add all songs from selected genre to a playlist"
+msgstr "Add all songs from selected genre to a playlist"
+
+msgid "Add music files to iDream database"
+msgstr "Add music files to iDream database"
+
+msgid "Add selected song to a playlist"
+msgstr "Add selected song to a playlist"
+
+#, python-format
+msgid "Album (%s) -> Song List"
+msgstr "Album (%s) -> Song List"
+
+#, python-format
+msgid "Albums (%d)"
+msgstr "Albums (%d)"
+
+msgid "Albums List"
+msgstr "Albums List"
+
+msgid "All Artists"
+msgstr "All Artists"
+
+msgid "All Songs"
+msgstr "All Songs"
+
+msgid "Append file to current playing songlist"
+msgstr "Append file to current playing songlist"
+
+msgid "Append file to current songlist"
+msgstr "Append file to current songlist"
+
+#, python-format
+msgid "Artist (%s) -> Album List"
+msgstr "Artist (%s) -> Album List"
+
+#, python-format
+msgid "Artist (%s) -> Song List"
+msgstr "Artist (%s) -> Song List"
+
+#, python-format
+msgid "Artists (%d)"
+msgstr "Artists (%d)"
+
+msgid "Artists List"
+msgstr "Artists List"
+
+msgid "Cancel"
+msgstr "Cancel"
+
+msgid "Clear current songlist and play selected entry"
+msgstr "Clear current songlist and play selected entry"
+
+msgid "Close"
+msgstr "Close"
+
+msgid "Configuration"
+msgstr "Configuration"
+
+msgid "Create new playlist"
+msgstr "Create new playlist"
+
+msgid "Delete selected playlist"
+msgstr "Delete selected playlist"
+
+msgid "Delete song from current playlist"
+msgstr "Delete song from current playlist"
+
+msgid "Delete song from database"
+msgstr "Delete song from database"
+
+msgid "Do you really want to add all songs from that album to a playlist?"
+msgstr "Do you really want to add all songs from that album to a playlist?"
+
+msgid "Do you really want to add all songs from that artist to a playlist?"
+msgstr "Do you really want to add all songs from that artist to a playlist?"
+
+msgid "Do you really want to add all songs from that genre to a playlist?"
+msgstr "Do you really want to add all songs from that genre to a playlist?"
+
+msgid "Do you really want to delete that song from the database?"
+msgstr "Do you really want to delete that song from the database?"
+
+msgid "Do you really want to delete that song the current playlist?"
+msgstr "Do you really want to delete that song the current playlist?"
+
+msgid "Do you really want to delete the current playlist?"
+msgstr "Do you really want to delete the current playlist?"
+
+msgid "Enter name for playlist"
+msgstr "Enter name for playlist"
+
+msgid "Enter search text"
+msgstr "Enter search text"
+
+msgid ""
+"Error!\n"
+"Can not open database!\n"
+"Check if save folder is correct and writeable!\n"
+"Press OK to close."
+msgstr ""
+"Error!\n"
+"Can not open database!\n"
+"Check if save folder is correct and writeable!\n"
+"Press OK to close."
+
+msgid "Filebrowser startup path"
+msgstr "Filebrowser startup path"
+
+#, python-format
+msgid "Filelist: %s"
+msgstr "Filelist: %s"
+
+#, python-format
+msgid "Genre (%s) -> Song List"
+msgstr "Genre (%s) -> Song List"
+
+msgid "Genre List"
+msgstr "Genre List"
+
+#, python-format
+msgid "Genres (%d)"
+msgstr "Genres (%d)"
+
+msgid "Google image path"
+msgstr "Google image path"
+
+msgid "Insert file to current playing songlist and play next"
+msgstr "Insert file to current playing songlist and play next"
+
+msgid "Insert file to current songlist and play next"
+msgstr "Insert file to current songlist and play next"
+
+msgid "Invalid Location"
+msgstr "Invalid Location"
+
+msgid "Lyrics"
+msgstr "Lyrics"
+
+msgid "Main Menu"
+msgstr "Main Menu"
+
+msgid "Merlin Music Player"
+msgstr "Merlin Music Player"
+
+msgid "Merlin Music Player Lyrics"
+msgstr "Merlin Music Player Lyrics"
+
+msgid "Merlin Music Player Setup"
+msgstr "Merlin Music Player Setup"
+
+msgid "Merlin Music Player Songlist"
+msgstr "Merlin Music Player Songlist"
+
+msgid "Merlin Music Player TV"
+msgstr "Merlin Music Player TV"
+
+msgid "Merlin music player"
+msgstr "Merlin music player"
+
+msgid "No lyrics found"
+msgstr "No lyrics found"
+
+msgid "No music files found!"
+msgstr "No music files found!"
+
+msgid "OK"
+msgstr "OK"
+
+msgid "Play"
+msgstr "Play"
+
+msgid "Play last used songlist after starting"
+msgstr "Play last used songlist after starting"
+
+#, python-format
+msgid "Playlist (%s) -> Song List"
+msgstr "Playlist (%s) -> Song List"
+
+msgid "Playlists"
+msgstr "Playlists"
+
+#, python-format
+msgid "Playlists (%d)"
+msgstr "Playlists (%d)"
+
+msgid ""
+"Process aborted.\n"
+" 0 files added to database!\n"
+"Press OK to close."
+msgstr ""
+"Process aborted.\n"
+" 0 files added to database!\n"
+"Press OK to close."
+
+msgid "Receiver Music Database"
+msgstr "Receiver Music Database"
+
+msgid "Remember last path of filebrowser"
+msgstr "Remember last path of filebrowser"
+
+msgid "Repeat is not available yet with cue-files!"
+msgstr "Repeat is not available yet with cue-files!"
+
+#, python-format
+msgid "Response -> lyrics for: %s (%s)"
+msgstr "Response -> lyrics for: %s (%s)"
+
+msgid "Scan path for music files and add them to database"
+msgstr "Scan path for music files and add them to database"
+
+msgid "Search in iDream database"
+msgstr "Search in iDream database"
+
+#, python-format
+msgid "Search results for \"%s\" in all albums"
+msgstr "Search results for \"%s\" in all albums"
+
+#, python-format
+msgid "Search results for \"%s\" in all artists"
+msgstr "Search results for \"%s\" in all artists"
+
+#, python-format
+msgid "Search results for \"%s\" in all titles"
+msgstr "Search results for \"%s\" in all titles"
+
+#, python-format
+msgid "Search results for \"%s\" in title, artist or album"
+msgstr "Search results for \"%s\" in title, artist or album"
+
+msgid "Select path"
+msgstr "Select path"
+
+msgid "Show Album"
+msgstr "Show Album"
+
+msgid "Show Merlin Music Player in extensions menu"
+msgstr "Show Merlin Music Player in extensions menu"
+
+msgid "Show Merlin Music Player in main menu"
+msgstr "Show Merlin Music Player in main menu"
+
+msgid "Show iDream in extensions menu"
+msgstr "Show iDream in extensions menu"
+
+msgid "Show iDream in main menu"
+msgstr "Show iDream in main menu"
+
+msgid "Shuffle is not available yet with cue-files!"
+msgstr "Shuffle is not available yet with cue-files!"
+
+#, python-format
+msgid "Songs (%d)"
+msgstr "Songs (%d)"
+
+msgid ""
+"There are no playlists defined.\n"
+"Do you want to create a new playlist?"
+msgstr ""
+"There are no playlists defined.\n"
+"Do you want to create a new playlist?"
+
+#, python-format
+msgid "This Receiver can't decode %s streams!"
+msgstr "This Receiver can't decode %s streams!"
+
+#, python-format
+msgid "Track %s"
+msgstr "Track %s"
+
+msgid "Use google-images for cover art"
+msgstr "Use google-images for cover art"
+
+msgid "Wait for screensaver (in min)"
+msgstr "Wait for screensaver (in min)"
+
+msgid "[back]"
+msgstr "[back]"
+
+msgid "iDream"
+msgstr "iDream"
+
+msgid "iDream Main Menu"
+msgstr "iDream Main Menu"
+
+msgid "iDream database path"
+msgstr "iDream database path"
+
+msgid "search for album"
+msgstr "search for album"
+
+msgid "search for artist"
+msgstr "search for artist"
+
+msgid "search for title"
+msgstr "search for title"
+
+msgid "search in all of them"
+msgstr "search in all of them"

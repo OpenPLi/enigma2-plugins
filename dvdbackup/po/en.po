@@ -1,0 +1,156 @@
+# English translations for enigma package.
+# Copyright (C) 2018 THE enigma'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the enigma package.
+# Automatically generated, 2018.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: enigma 2-plugins\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-05-03 14:00+0200\n"
+"PO-Revision-Date: 2018-05-03 14:00+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid " B"
+msgstr " B"
+
+msgid " KB"
+msgstr " KB"
+
+msgid " MB"
+msgstr " MB"
+
+msgid "Abort"
+msgstr "Abort"
+
+msgid "Auto set name and folder DVD"
+msgstr "Auto set name and folder DVD"
+
+msgid "Backup directory too small size!"
+msgstr "Backup directory too small size!"
+
+msgid "Backup directory:"
+msgstr "Backup directory:"
+
+msgid "Backup of DVD finished."
+msgstr "Backup of DVD finished."
+
+msgid "Backup your Video-DVD to your harddisk"
+msgstr "Backup your Video-DVD to your harddisk"
+
+msgid "Could not find any file to backup!"
+msgstr "Could not find any file to backup!"
+
+msgid "Could not install needed dvdbackup package!"
+msgstr "Could not install needed dvdbackup package!"
+
+msgid "Could not read the DVD informations!"
+msgstr "Could not read the DVD informations!"
+
+msgid "Create iso:"
+msgstr "Create iso:"
+
+msgid "Create log (tmp/dvdbackup.log):"
+msgstr "Create log (tmp/dvdbackup.log):"
+
+msgid "DVD Backup"
+msgstr "DVD Backup"
+
+msgid "DVD Backup Progress"
+msgstr "DVD Backup Progress"
+
+msgid "Device mount folder:"
+msgstr "Device mount folder:"
+
+msgid "Duration:"
+msgstr "Duration:"
+
+msgid "Eject DVD?"
+msgstr "Eject DVD?"
+
+#, python-format
+msgid "Error read folder %s!"
+msgstr "Error read folder %s!"
+
+msgid "Error while backup of DVD!"
+msgstr "Error while backup of DVD!"
+
+msgid "Exit"
+msgstr "Exit"
+
+msgid "Extra option"
+msgstr "Extra option"
+
+msgid "Folder/iso name:"
+msgstr "Folder/iso name:"
+
+msgid "Keyboard"
+msgstr "Keyboard"
+
+msgid "Location"
+msgstr "Location"
+
+msgid "Name of DVD"
+msgstr "Name of DVD"
+
+msgid "Open menu progress"
+msgstr "Open menu progress"
+
+msgid "Show error message:"
+msgstr "Show error message:"
+
+msgid "Show log"
+msgstr "Show log"
+
+msgid "Start backup"
+msgstr "Start backup"
+
+msgid ""
+"Warning!\n"
+"DVD backup is already running!"
+msgstr ""
+"Warning!\n"
+"DVD backup is already running!"
+
+msgid ""
+"Warning!\n"
+"This folder not CD-ROM!"
+msgstr ""
+"Warning!\n"
+"This folder not CD-ROM!"
+
+msgid ""
+"Warning!\n"
+"This folder not DVD structure!"
+msgstr ""
+"Warning!\n"
+"This folder not DVD structure!"
+
+msgid ""
+"Warning!\n"
+"This is the same folder!"
+msgstr ""
+"Warning!\n"
+"This is the same folder!"
+
+msgid ""
+"genisoimage job done.\n"
+"Delete DVD directory?"
+msgstr ""
+"genisoimage job done.\n"
+"Delete DVD directory?"
+
+msgid "no"
+msgstr "no"
+
+msgid "with dd (faster)"
+msgstr "with dd (faster)"
+
+msgid "with genisoimage (slower)"
+msgstr "with genisoimage (slower)"

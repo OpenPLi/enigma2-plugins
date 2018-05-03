@@ -1,0 +1,136 @@
+# English translations for enigma package.
+# Copyright (C) 2018 THE enigma'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the enigma package.
+# Automatically generated, 2018.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: enigma 2-plugins\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-05-03 14:01+0200\n"
+"PO-Revision-Date: 2018-05-03 14:01+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Advanced cut specification..."
+msgstr "Advanced cut specification..."
+
+#, python-format
+msgid ""
+"Another movie is currently cut.\n"
+"The movie \"%s\" will be cut in the background after it."
+msgstr ""
+"Another movie is currently cut.\n"
+"The movie \"%s\" will be cut in the background after it."
+
+msgid "Bad arguments"
+msgstr "Bad arguments"
+
+msgid "Cancel"
+msgstr "Cancel"
+
+msgid "Choose target folder"
+msgstr "Choose target folder"
+
+msgid "Couldn't open input .ap file"
+msgstr "Couldn't open input .ap file"
+
+msgid "Couldn't open input .cuts file"
+msgstr "Couldn't open input .cuts file"
+
+msgid "Couldn't open input .ts file"
+msgstr "Couldn't open input .ts file"
+
+msgid "Couldn't open output .ap file"
+msgstr "Couldn't open output .ap file"
+
+msgid "Couldn't open output .cuts file"
+msgstr "Couldn't open output .cuts file"
+
+msgid "Couldn't open output .ts file"
+msgstr "Couldn't open output .ts file"
+
+msgid "Cut Parameter Input"
+msgstr "Cut Parameter Input"
+
+msgid "Cut source:"
+msgstr "Cut source:"
+
+msgid "Cutlist"
+msgstr "Cutlist"
+
+msgid "Cuts (an IN OUT IN OUT ... sequence of hour:min:sec)"
+msgstr "Cuts (an IN OUT IN OUT ... sequence of hour:min:sec)"
+
+#, python-format
+msgid "Cutting failed for movie \"%s\""
+msgstr "Cutting failed for movie \"%s\""
+
+#, python-format
+msgid "Cutting was aborted for movie \"%s\""
+msgstr "Cutting was aborted for movie \"%s\""
+
+msgid "Don't cut"
+msgstr "Don't cut"
+
+msgid "Empty .ap file"
+msgstr "Empty .ap file"
+
+msgid "Execute cuts..."
+msgstr "Execute cuts..."
+
+#, python-format
+msgid "How would you like to cut \"%s\"?"
+msgstr "How would you like to cut \"%s\"?"
+
+msgid "Manual specification"
+msgstr "Manual specification"
+
+msgid "New description:"
+msgstr "New description:"
+
+msgid "New filename:"
+msgstr "New filename:"
+
+msgid "New location:"
+msgstr "New location:"
+
+msgid "New title:"
+msgstr "New title:"
+
+msgid "No"
+msgstr "No"
+
+msgid "No cuts specified"
+msgstr "No cuts specified"
+
+msgid "OK"
+msgstr "OK"
+
+msgid "Place the cut movie in a new file ending with \" cut\""
+msgstr "Place the cut movie in a new file ending with \" cut\""
+
+msgid "Read/write error (disk full?)"
+msgstr "Read/write error (disk full?)"
+
+msgid "Replace original:"
+msgstr "Replace original:"
+
+msgid "Replace the original movie with the cut movie"
+msgstr "Replace the original movie with the cut movie"
+
+#, python-format
+msgid "The movie \"%s\" is cut in the background."
+msgstr "The movie \"%s\" is cut in the background."
+
+#, python-format
+msgid "The movie \"%s\" is successfully cut"
+msgstr "The movie \"%s\" is successfully cut"
+
+msgid "Yes"
+msgstr "Yes"

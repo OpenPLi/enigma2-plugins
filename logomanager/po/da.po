@@ -1,0 +1,119 @@
+# Danish translations for enigma package.
+# Copyright (C) 2018 THE enigma'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the enigma package.
+# Automatically generated, 2018.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: enigma 2-plugins\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-05-03 14:01+0200\n"
+"PO-Revision-Date: 2018-05-03 14:01+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: da\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Add default bootlogo to folder logos"
+msgstr ""
+
+msgid "Add default radio to folder logos"
+msgstr ""
+
+msgid "CF Drive"
+msgstr ""
+
+msgid "Cancel"
+msgstr ""
+
+msgid "Directory to scan for logos"
+msgstr ""
+
+msgid "Disable backdrop"
+msgstr ""
+
+msgid "Disable reboot"
+msgstr ""
+
+msgid "Disable switch off"
+msgstr ""
+
+msgid "Harddisk"
+msgstr ""
+
+msgid "Install selected logo as..."
+msgstr ""
+
+msgid "Logo Manager"
+msgstr ""
+
+msgid "Logo manager setup"
+msgstr ""
+
+msgid "None"
+msgstr ""
+
+#, python-format
+msgid "Not found directory '%s'!"
+msgstr ""
+
+msgid "OK"
+msgstr ""
+
+msgid "Open configuration"
+msgstr ""
+
+msgid "Please select a option:"
+msgstr ""
+
+#, python-format
+msgid "Really remove current logo of %s?"
+msgstr ""
+
+msgid "Remove current logo"
+msgstr ""
+
+msgid "Reset all logos to default"
+msgstr ""
+
+msgid "Reset bootlogo to default"
+msgstr ""
+
+msgid "Reset radio to default"
+msgstr ""
+
+msgid "Select target for logo:"
+msgstr ""
+
+msgid "Show active logos"
+msgstr ""
+
+msgid "Show available logos"
+msgstr ""
+
+msgid "USB Drive"
+msgstr ""
+
+msgid "backdrop"
+msgstr ""
+
+msgid "bootlogo"
+msgstr ""
+
+msgid "manage logos to display at boottime"
+msgstr ""
+
+msgid "radio"
+msgstr ""
+
+msgid "reboot"
+msgstr ""
+
+msgid "switch off"
+msgstr ""
+
+msgid "view bootlogo/mvi"
+msgstr ""

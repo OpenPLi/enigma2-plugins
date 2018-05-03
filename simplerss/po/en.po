@@ -1,0 +1,217 @@
+# English translations for enigma package.
+# Copyright (C) 2018 THE enigma'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the enigma package.
+# Automatically generated, 2018.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: enigma 2-plugins\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-05-03 14:02+0200\n"
+"PO-Revision-Date: 2018-05-03 14:02+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#, python-format
+msgid "%d Feed(s) were added to configuration."
+msgstr "%d Feed(s) were added to configuration."
+
+#, python-format
+msgid "%d feed(s) added to configuration."
+msgstr "%d feed(s) added to configuration."
+
+msgid "--- Scanner automount ---"
+msgstr "--- Scanner automount ---"
+
+msgid "< Create file any name.rss in USB device >"
+msgstr "< Create file any name.rss in USB device >"
+
+msgid "< and write feeds link column >"
+msgstr "< and write feeds link column >"
+
+msgid "A simple to use RSS reader"
+msgstr "A simple to use RSS reader"
+
+msgid "Apply"
+msgstr "Apply"
+
+msgid "Autoupdate"
+msgstr "Autoupdate"
+
+msgid "Cancel"
+msgstr "Cancel"
+
+msgid "Close"
+msgstr "Close"
+
+msgid "Delete"
+msgstr "Delete"
+
+msgid "Enclosures"
+msgstr "Enclosures"
+
+msgid "Entries"
+msgstr "Entries"
+
+#, python-format
+msgid "Entry %s/%s"
+msgstr "Entry %s/%s"
+
+msgid ""
+"Error while parsing Feed, this usually means there is something wrong with "
+"it."
+msgstr ""
+"Error while parsing Feed, this usually means there is something wrong with "
+"it."
+
+msgid "Failed to get subscriptions from Google Reader."
+msgstr "Failed to get subscriptions from Google Reader."
+
+msgid "Failed to login to Google Reader."
+msgstr "Failed to login to Google Reader."
+
+msgid "Feed"
+msgstr "Feed"
+
+#, python-format
+msgid "Feed %s/%s"
+msgstr "Feed %s/%s"
+
+msgid "Feed URI"
+msgstr "Feed URI"
+
+msgid "Feed is empty."
+msgstr "Feed is empty."
+
+msgid "Fetch feeds from Google Reader?"
+msgstr "Fetch feeds from Google Reader?"
+
+#, python-format
+msgid "Found %d feed(s)"
+msgstr "Found %d feed(s)"
+
+msgid "Found no Enclosure we can display."
+msgstr "Found no Enclosure we can display."
+
+msgid "Google Password"
+msgstr "Google Password"
+
+msgid "Google Username"
+msgstr "Google Username"
+
+msgid "Keep running in background"
+msgstr "Keep running in background"
+
+msgid "Let's you view current RSS entries"
+msgstr "Let's you view current RSS entries"
+
+msgid "New"
+msgstr "New"
+
+msgid "New Items"
+msgstr "New Items"
+
+msgid "New Items since last Auto-Update"
+msgstr "New Items since last Auto-Update"
+
+msgid "No such Item."
+msgstr "No such Item."
+
+msgid "Not found new feed(s)."
+msgstr "Not found new feed(s)."
+
+msgid "Notification"
+msgstr "Notification"
+
+msgid "OK"
+msgstr "OK"
+
+msgid "Preview"
+msgstr "Preview"
+
+msgid "RSS Reader"
+msgstr "RSS Reader"
+
+msgid "RSS-Reader"
+msgstr "RSS-Reader"
+
+#, python-format
+msgid "Read error %s"
+msgstr "Read error %s"
+
+msgid ""
+"Really delete this entry?\n"
+"It cannot be recovered!"
+msgstr ""
+"Really delete this entry?\n"
+"It cannot be recovered!"
+
+#, python-format
+msgid "Received %d new news item(s)."
+msgstr "Received %d new news item(s)."
+
+msgid "Scroll speed (ms)"
+msgstr "Scroll speed (ms)"
+
+msgid "Setup"
+msgstr "Setup"
+
+msgid "Show in extensions menu"
+msgstr "Show in extensions menu"
+
+msgid "Show new Messages as"
+msgstr "Show new Messages as"
+
+msgid "Simple RSS Reader"
+msgstr "Simple RSS Reader"
+
+msgid "Simple RSS Reader Setup"
+msgstr "Simple RSS Reader Setup"
+
+#, python-format
+msgid "Simple RSS Reader: %s"
+msgstr "Simple RSS Reader: %s"
+
+#, python-format
+msgid ""
+"Sorry, this type of feed is unsupported:\n"
+"%s"
+msgstr ""
+"Sorry, this type of feed is unsupported:\n"
+"%s"
+
+msgid "Start automatically with Enigma2"
+msgstr "Start automatically with Enigma2"
+
+msgid "Subscribe Newsfeed..."
+msgstr "Subscribe Newsfeed..."
+
+msgid "Ticker"
+msgstr "Ticker"
+
+msgid "Update Feed"
+msgstr "Update Feed"
+
+msgid "Update Interval (min)"
+msgstr "Update Interval (min)"
+
+msgid ""
+"Update is being done in Background.\n"
+"Contents will automatically be updated when it's done."
+msgstr ""
+"Update is being done in Background.\n"
+"Contents will automatically be updated when it's done."
+
+msgid "View RSS..."
+msgstr "View RSS..."
+
+msgid "What to do?"
+msgstr "What to do?"
+
+msgid "none"
+msgstr "none"
