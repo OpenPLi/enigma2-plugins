@@ -1,275 +1,208 @@
-# Italian translations for AudioSync.
-# Signed-off-by: Gringo <openpli@tiscali.it>
-#
-# Updated by: Gringo <openpli@tiscali.it>
+# Italian translations for enigma package.
+# Copyright (C) 2018 THE enigma'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the enigma package.
+# Automatically generated, 2018.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: AudioSync\n"
+"Project-Id-Version: enigma 2-plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-12-18 02:07+0100\n"
-"PO-Revision-Date: 2018-04-17 23:25+0200\n"
-"Last-Translator: Gringo <openpli@tiscali.it>\n"
-"Language-Team: www.linsat.net - Italy <spaeleus@croci.org>\n"
-"Language: it_IT\n"
+"POT-Creation-Date: 2018-05-03 11:45+0200\n"
+"PO-Revision-Date: 2018-05-03 11:45+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Poedit-Basepath: .\n"
-"X-Generator: Poedit 1.8.7.1\n"
 
-#: src/AC3main.py:57
-msgid "Service delay"
-msgstr "Ritardo canale"
-
-#: src/AC3main.py:58
-msgid "Global delay"
-msgstr "Ritardo globale"
-
-#: src/AC3main.py:62 src/AC3main.py:146 src/AC3main.py:236 src/AC3main.py:240
-#: src/AC3main.py:241
 #, python-format
 msgid "%i ms"
-msgstr "%i ms"
-
-#: src/AC3main.py:65
-msgid "Channel audio:"
-msgstr "Canale audio: "
-
-#: src/AC3main.py:70 src/AC3setup.py:63
-msgid "Cancel"
-msgstr "Annullare"
-
-#: src/AC3main.py:71
-msgid "OK"
-msgstr "OK"
-
-#: src/AC3main.py:72
-msgid "Switch audio"
-msgstr "Cambiare audio"
-
-#: src/AC3main.py:73
-msgid "Save to key"
-msgstr "Salvare su tasto"
-
-#: src/AC3main.py:78
-msgid "Open plugin menu"
-msgstr "Aprire il menu del plugin"
-
-#: src/AC3main.py:79 src/AC3main.py:86
-msgid "Save values and close plugin"
-msgstr "Salvare la configurazione e uscire"
-
-#: src/AC3main.py:80 src/AC3main.py:85
-msgid "Discard changes and close plugin"
-msgstr "Annullare le modifiche e uscire"
-
-#: src/AC3main.py:81 src/AC3main.py:82
-msgid "Change active delay"
-msgstr "Cambiare il ritardo corrente"
-
-#: src/AC3main.py:83
-msgid "Increase delay"
-msgstr "Aumentare il ritardo"
-
-#: src/AC3main.py:84
-msgid "Decrease delay"
-msgstr "Diminuire il ritardo"
-
-#: src/AC3main.py:87
-msgid "Select channel audio"
-msgstr "Selezionare il canale audio"
-
-#: src/AC3main.py:88
-msgid "Save current delay to key"
-msgstr "Assegnare ritardo corrente a un tasto"
-
-#: src/AC3main.py:89 src/AC3main.py:91 src/AC3main.py:93
-#, python-format
-msgid "Decrease delay by %i ms (can be set)"
-msgstr "Diminuire il ritardo di %i ms (configurabili)"
-
-#: src/AC3main.py:90 src/AC3main.py:92 src/AC3main.py:94
-#, python-format
-msgid "Increase delay by %i ms (can be set)"
-msgstr "Aumentare il ritardo di %i ms (configurabili)"
-
-#: src/AC3main.py:95 src/AC3main.py:96 src/AC3main.py:97 src/AC3main.py:98
-#, python-format
-msgid "Set delay to %i ms (can be set)"
-msgstr "Regolare il ritardo a %i ms (configurabili)"
-
-#: src/AC3main.py:211
-msgid "Move plugin screen"
-msgstr "Spostare la finestra del plugin"
-
-#: src/AC3main.py:214
-msgid "Menu"
-msgstr "Menu"
-
-#: src/AC3main.py:221 src/AC3main.py:282
-msgid "Invalid selection"
-msgstr "Selezione non valida!"
-
-#: src/AC3main.py:257
-#, python-format
-msgid "Select the key you want to set to %i ms"
-msgstr "Selezionare tasto a cui assegnare %i ms"
-
-#: src/AC3main.py:263
-#, python-format
-msgid "Key %(key)s (current value: %(value)i ms)"
-msgstr "Tasto %(key)s (valore corrente: %(value)i ms)"
-
-#: src/AC3main.py:268
-msgid "Setting key canceled"
-msgstr "Configurazione tasto annullata!"
-
-#: src/AC3main.py:280
-#, python-format
-msgid "Key %(Key)s successfully set to %(delay)i ms"
-msgstr "Tasto %(Key)s configurato con successo a %(delay)i ms"
-
-#: src/AC3setup.py:42
-msgid "Outer Bound (+/-)"
-msgstr "Ritardo massimo (+/-)"
-
-#: src/AC3setup.py:43
-msgid "Step in ms for arrow keys"
-msgstr "Passo tasti cursore (ms):"
-
-#: src/AC3setup.py:44
-msgid "Wait time in ms before activation:"
-msgstr "Attesa prima di attivare (ms):"
-
-#: src/AC3setup.py:45 src/AC3setup.py:46 src/AC3setup.py:47
-#, python-format
-msgid "Step in ms for keys '%s'"
-msgstr "Passo tasti '%s' (ms):"
-
-#: src/AC3setup.py:48 src/AC3setup.py:49 src/AC3setup.py:50
-#, python-format
-msgid "Step in ms for key %i"
-msgstr "Passo tasto %i (ms):"
-
-#: src/AC3setup.py:60
-#, python-format
-msgid "Plugin: %(plugin)s , Version: %(version)s"
-msgstr "Plugin: %(plugin)s , Versione: %(version)s"
-
-#: src/AC3setup.py:64
-msgid "Save"
-msgstr "Salvare"
-
-#: src/AC3setup.py:65
-msgid " "
-msgstr " "
-
-#: src/MovableScreen.py:17 src/MovableScreen.py:24
-msgid "Save values and close screen"
-msgstr "Salvare la configurazione e chiudere la finestra"
-
-#: src/MovableScreen.py:18 src/MovableScreen.py:23
-msgid "Discard changes and close screen"
-msgstr "Annullare le modifiche e chiudere la finestra"
-
-#: src/MovableScreen.py:19
-msgid "Move screen to the left"
-msgstr "Spostare la finestra a sinistra"
-
-#: src/MovableScreen.py:20
-msgid "Move screen to the right"
-msgstr "Spostare la finestra a destra"
-
-#: src/MovableScreen.py:21
-msgid "Move screen up"
-msgstr "Spostare la finestra in alto"
-
-#: src/MovableScreen.py:22
-msgid "Move screen down"
-msgstr "Spostare la finestra in basso"
-
-#: src/MovableScreen.py:25
-msgid "Move screen to the upper left corner"
-msgstr "Spostare la finestra nell'angolo in alto a sinistra"
-
-#: src/MovableScreen.py:26
-msgid "Center screen at the upper border"
-msgstr "Centrare la finestra al bordo superiore"
-
-#: src/MovableScreen.py:27
-msgid "Move screen to the upper right corner"
-msgstr "Spostare la finestra nell'angolo in alto a destra"
-
-#: src/MovableScreen.py:28
-msgid "Move screen to the middle of the left border"
-msgstr "Spostare la finestra al centro del bordo sinistro"
-
-#: src/MovableScreen.py:29
-msgid "Move screen to the center of your TV"
-msgstr "Posizionare la finestra al centro"
-
-#: src/MovableScreen.py:30
-msgid "Move screen to the middle of the right border"
-msgstr "Spostare la finestra al centro del bordo destro"
-
-#: src/MovableScreen.py:31
-msgid "Move screen to the lower left corner"
-msgstr "Spostare la finestra nell'angolo in basso a sinistra"
-
-#: src/MovableScreen.py:32
-msgid "Center screen at the lower border"
-msgstr "Centrare la finestra al bordo inferiore"
-
-#: src/MovableScreen.py:33
-msgid "Move screen to the lower right corner"
-msgstr "Spostare la finestra nell'angolo in basso a destra"
-
-#: src/MovableScreen.py:34
-msgid "Reset saved position"
-msgstr "Reimpostare la posizione salvata"
-
-#: src/plugin.py:30 src/plugin.py:36 src/plugin.py:38
-msgid "Audio Sync"
-msgstr "Audio Sync"
-
-#: src/plugin.py:36 src/plugin.py:38
-msgid "sets the Audio Delay (LipSync)"
-msgstr "Configurare il ritardo audio (LipSync)"
-
-#: src/plugin.py:37
-msgid "Audio Sync Setup"
-msgstr "Configurazione sincronismo audio"
-
-#: src/plugin.py:37
-msgid "Setup for the Audio Sync Plugin"
-msgstr "Configurazione plugin Audio Sync"
+msgstr ""
 
 msgid "AC3 Lip Sync Setup"
-msgstr "Configurare il ritardo audio AC3"
-
-msgid "Restart audio"
-msgstr "Riavviare audio"
-
-msgid "Restart audio delay (in sec)"
-msgstr "Ritardo riavvio audio (sec)"
-
-msgid "after restart"
-msgstr "Dopo il riavvio"
-
-msgid "after restart/standby"
-msgstr "Dopo Sospensione/Riavvio"
-
-msgid "after standby"
-msgstr "Dopo la sospensione"
-
-msgid "disabled"
-msgstr "Disabilitato"
-
-msgid "Delete in config"
-msgstr "Eliminare dalla configurazione"
+msgstr ""
 
 msgid "Also save delay in config?"
-msgstr "Salvare il ritardo nella configurazione?"
+msgstr ""
+
+msgid "Audio Sync"
+msgstr ""
+
+msgid "Audio Sync Setup"
+msgstr ""
+
+msgid "Cancel"
+msgstr ""
+
+msgid "Center screen at the lower border"
+msgstr ""
+
+msgid "Center screen at the upper border"
+msgstr ""
+
+msgid "Change active delay"
+msgstr ""
+
+msgid "Channel audio:"
+msgstr ""
+
+msgid "Decrease delay"
+msgstr ""
+
+#, python-format
+msgid "Decrease delay by %i ms (can be set)"
+msgstr ""
+
+msgid "Delete in config"
+msgstr ""
+
+msgid "Discard changes and close plugin"
+msgstr ""
+
+msgid "Discard changes and close screen"
+msgstr ""
+
+msgid "Global delay"
+msgstr ""
+
+msgid "Increase delay"
+msgstr ""
+
+#, python-format
+msgid "Increase delay by %i ms (can be set)"
+msgstr ""
+
+msgid "Invalid selection"
+msgstr ""
+
+#, python-format
+msgid "Key %(Key)s successfully set to %(delay)i ms"
+msgstr ""
+
+#, python-format
+msgid "Key %(key)s (current value: %(value)i ms)"
+msgstr ""
+
+msgid "Menu"
+msgstr ""
+
+msgid "Move plugin screen"
+msgstr ""
+
+msgid "Move screen down"
+msgstr ""
+
+msgid "Move screen to the center of your TV"
+msgstr ""
+
+msgid "Move screen to the left"
+msgstr ""
+
+msgid "Move screen to the lower left corner"
+msgstr ""
+
+msgid "Move screen to the lower right corner"
+msgstr ""
+
+msgid "Move screen to the middle of the left border"
+msgstr ""
+
+msgid "Move screen to the middle of the right border"
+msgstr ""
+
+msgid "Move screen to the right"
+msgstr ""
+
+msgid "Move screen to the upper left corner"
+msgstr ""
+
+msgid "Move screen to the upper right corner"
+msgstr ""
+
+msgid "Move screen up"
+msgstr ""
+
+msgid "OK"
+msgstr ""
+
+msgid "Open plugin menu"
+msgstr ""
+
+msgid "Outer Bound (+/-)"
+msgstr ""
+
+#, python-format
+msgid "Plugin: %(plugin)s , Version: %(version)s"
+msgstr ""
+
+msgid "Reset saved position"
+msgstr ""
+
+msgid "Restart audio"
+msgstr ""
+
+msgid "Restart audio delay (in sec)"
+msgstr ""
+
+msgid "Save"
+msgstr ""
+
+msgid "Save current delay to key"
+msgstr ""
+
+msgid "Save to key"
+msgstr ""
+
+msgid "Save values and close plugin"
+msgstr ""
+
+msgid "Save values and close screen"
+msgstr ""
+
+#, python-format
+msgid "Select the key you want to set to %i ms"
+msgstr ""
+
+msgid "Service delay"
+msgstr ""
+
+#, python-format
+msgid "Set delay to %i ms (can be set)"
+msgstr ""
+
+msgid "Setting key canceled"
+msgstr ""
+
+msgid "Setup for the Audio Sync Plugin"
+msgstr ""
+
+msgid "Step in ms for arrow keys"
+msgstr ""
+
+#, python-format
+msgid "Step in ms for key %i"
+msgstr ""
+
+#, python-format
+msgid "Step in ms for keys '%s'"
+msgstr ""
+
+msgid "Wait time in ms before activation:"
+msgstr ""
+
+msgid "after restart"
+msgstr ""
+
+msgid "after restart/standby"
+msgstr ""
+
+msgid "after standby"
+msgstr ""
+
+msgid "disabled"
+msgstr ""
+
+msgid "sets the Audio Delay (LipSync)"
+msgstr ""
