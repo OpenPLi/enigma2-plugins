@@ -7,10 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-plugins setpasswd\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-04 01:11+0200\n"
+"POT-Creation-Date: 2018-05-03 14:02+0200\n"
 "PO-Revision-Date: 2009-09-27 18:12+0100\n"
 "Last-Translator: maja <jovanovic@gmx.ch>\n"
 "Language-Team: veselin & majevica CRNABERZA <jovanovic@gmx.ch>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -18,39 +19,40 @@ msgstr ""
 "X-Poedit-Country: SERBIA\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-#: ../src/plugin.py:25
 msgid "Change Root Password"
 msgstr "Promeni baznu lozinku"
 
-#: ../src/plugin.py:131
 msgid "Change or reset the root password of your box"
 msgstr "Promeni ili resetuj baznu lozinku svog boksa"
 
-#: ../src/plugin.py:73
+#, fuzzy
+msgid "Delete Password"
+msgstr "Postavi lozinku"
+
 msgid "Enter new Password"
 msgstr "Unesi novu lozinku"
 
-#: ../src/plugin.py:114
 msgid "Enter your password here:"
 msgstr "Unesi svoju lozinku ovde:"
 
-#: ../src/plugin.py:52
+msgid "Password deleted sucessfully for root user"
+msgstr ""
+
 msgid "Set Password"
 msgstr "Postavi lozinku"
 
-#: ../src/plugin.py:88
 msgid "Sucessfully changed password for root user to: "
 msgstr "Uspešno promenjena lozinka za baznog korisnika u: "
 
-#: ../src/plugin.py:90
 msgid "Unable to change/reset password for root user"
 msgstr "Nemoguće promeniti/resetovati lozinku za baznog korisnika"
 
-#: ../src/plugin.py:53
+#, fuzzy
+msgid "Unable to delete password for root user"
+msgstr "Nemoguće promeniti/resetovati lozinku za baznog korisnika"
+
 msgid "new Random"
 msgstr "Novi slučajni"
 
-#: ../src/plugin.py:54
 msgid "virt. Keyboard"
 msgstr "virt. tastatura"
-

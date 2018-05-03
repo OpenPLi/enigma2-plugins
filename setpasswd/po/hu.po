@@ -7,10 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-02-23 22:41+0300\n"
+"POT-Creation-Date: 2018-05-03 14:02+0200\n"
 "PO-Revision-Date: 2012-06-24 22:42+0100\n"
 "Last-Translator: robertut <robertut@yahoo.com>\n"
 "Language-Team: none\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -19,25 +20,30 @@ msgstr ""
 "X-Poedit-Language: Hungarian\n"
 "X-Poedit-Country: HUNGARY\n"
 
-msgid "Change or reset the root password of your media center"
-msgstr "A root jelszó megváltoztatása vagy visszaállítása"
-
-msgid "Change root password"
+#, fuzzy
+msgid "Change Root Password"
 msgstr "root jelszó megváltoztatása"
 
-msgid "Enter new password"
+#, fuzzy
+msgid "Change or reset the root password of your box"
+msgstr "A root jelszó megváltoztatása vagy visszaállítása"
+
+#, fuzzy
+msgid "Delete Password"
+msgstr "Jelszó beállítása"
+
+#, fuzzy
+msgid "Enter new Password"
 msgstr "Új jelszó megadása"
 
 msgid "Enter your password here:"
 msgstr "Írja ide a jelszavat:"
 
-msgid "Keyboard"
-msgstr "Billentyűzet"
+msgid "Password deleted sucessfully for root user"
+msgstr ""
 
-msgid "New random"
-msgstr "Jelszógenerálás"
-
-msgid "Set password"
+#, fuzzy
+msgid "Set Password"
 msgstr "Jelszó beállítása"
 
 msgid "Sucessfully changed password for root user to: "
@@ -46,3 +52,14 @@ msgstr "A root jelszava sikeresen módosítva lett erre:"
 msgid "Unable to change/reset password for root user"
 msgstr "Sajnos a root jelszavat nem lehet beállítani"
 
+#, fuzzy
+msgid "Unable to delete password for root user"
+msgstr "Sajnos a root jelszavat nem lehet beállítani"
+
+#, fuzzy
+msgid "new Random"
+msgstr "Jelszógenerálás"
+
+#, fuzzy
+msgid "virt. Keyboard"
+msgstr "Billentyűzet"
