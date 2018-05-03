@@ -1,30 +1,33 @@
+# Estonian translations for enigma package.
+# Copyright (C) 2018 THE enigma'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the enigma package.
+# Automatically generated, 2018.
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: enigma2 KiddyTimer plugin Turkish Locale\n"
+"Project-Id-Version: enigma 2-plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-05-03 14:00+0200\n"
-"PO-Revision-Date: 2009-09-22 13:12+0200\n"
-"Last-Translator: Zülfikar VEYİSOĞLU <z.veyisoglu@hobiagaci.com>\n"
-"Language-Team: http://hobiagaci.com <z.veyisoglu@hobiagaci.com>\n"
-"Language: \n"
+"PO-Revision-Date: 2018-05-03 14:00+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: et\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Language: Turkish\n"
-"X-Poedit-Country: TURKEY\n"
-"X-Poedit-SourceCharset: utf-8\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "01:00"
-msgstr "01:00"
+msgstr ""
 
 msgid "??:??"
-msgstr "??:??"
+msgstr ""
 
 msgid "Allows to controls your kids' daily TV usage"
-msgstr "Çocuğunuzun TV kullanımını kontrol edin"
+msgstr ""
 
 msgid "Cancel"
-msgstr "Vazgeç"
+msgstr ""
 
 msgid "Center screen at the lower border"
 msgstr ""
@@ -39,64 +42,59 @@ msgid ""
 msgstr ""
 
 msgid "Clock"
-msgstr "Saat"
+msgstr ""
 
-#, fuzzy
 msgid "Decrease remaining time"
-msgstr "Kalan süre: %s"
+msgstr ""
 
-#, fuzzy
 msgid "Disable KiddyTimer"
-msgstr "Çocuk saati"
+msgstr ""
 
 msgid "Discard changes and close screen"
 msgstr ""
 
 msgid "Do you want to start the kiddytimer- plugin now."
-msgstr "Çocuk saati eklentisini şimdi çalıştırmak istiyor musunuz?"
+msgstr ""
 
 msgid "Don't monitor TV started after"
-msgstr "TV izlemeye başladıktan sonra gösterme"
+msgstr ""
 
-#, fuzzy
 msgid "Don't monitor TV started before"
-msgstr "TV izlemeye başladıktan sonra gösterme"
+msgstr ""
 
-#, fuzzy
 msgid "Enable KiddyTimer"
-msgstr "Çocuk saati"
+msgstr ""
 
 msgid "Enable KiddyTimer for x minutes"
 msgstr ""
 
 msgid "Enabled"
-msgstr "Etkin"
+msgstr ""
 
 msgid "Enter pin code"
-msgstr "Şifreyi girin"
+msgstr ""
 
 msgid "Friday"
-msgstr "Cuma"
+msgstr ""
 
-#, fuzzy
 msgid "Increase remaining time"
-msgstr "Kalan süre: %s"
+msgstr ""
 
 msgid "Invalid selection"
 msgstr ""
 
 msgid "KiddyTimer"
-msgstr "Çocuk saati"
+msgstr ""
 
 #, python-format
 msgid "Last day started: %s"
-msgstr "En son başlangıç zamanı: %s"
+msgstr ""
 
 msgid "Monday"
-msgstr "Pazartesi"
+msgstr ""
 
 msgid "Move clock"
-msgstr "Saati taşı"
+msgstr ""
 
 msgid "Move screen down"
 msgstr ""
@@ -132,72 +130,69 @@ msgid "Move screen up"
 msgstr ""
 
 msgid "PIN"
-msgstr "Şifre"
+msgstr ""
 
 msgid "Please enter the correct pin code"
-msgstr "Lütfen geçerli şifreyi girin"
+msgstr ""
 
 msgid "Please select your KiddyTimer- option"
 msgstr ""
 
 #, python-format
 msgid "Plugin: %(plugin)s , Version: %(version)s"
-msgstr "Eklenti: %(plugin)s , Sürüm: %(version)s"
+msgstr ""
 
 #, python-format
 msgid "Remaining time: %s"
-msgstr "Kalan süre: %s"
+msgstr ""
 
 msgid "Reset clock"
-msgstr "Saati sıfırla"
+msgstr ""
 
 msgid "Reset saved position"
 msgstr ""
 
-#, fuzzy
 msgid "Reset todays remaining time"
-msgstr "Kalan süre: %s"
+msgstr ""
 
 msgid "Saturday"
-msgstr "Cumartesi"
+msgstr ""
 
 msgid "Save"
-msgstr "Kaydet"
+msgstr ""
 
 msgid "Save values and close screen"
 msgstr ""
 
-#, fuzzy
 msgid "Set remaining time"
-msgstr "Kalan süre: %s"
+msgstr ""
 
 msgid "Smiley"
-msgstr "Animasyon"
+msgstr ""
 
-#, fuzzy
 msgid "Start KiddyTimer"
-msgstr "Çocuk saati"
+msgstr ""
 
 msgid "Stop KiddyTimer (this session only)"
 msgstr ""
 
 msgid "Style of timer"
-msgstr "Zamanlayıcı şekli"
+msgstr ""
 
 msgid "Sunday"
-msgstr "Pazar"
+msgstr ""
 
 msgid "The pin code you entered is wrong."
 msgstr ""
 
 msgid "Thursday"
-msgstr "Perşembe"
+msgstr ""
 
 msgid "Timeout for activation dialog"
 msgstr ""
 
 msgid "Tuesday"
-msgstr "Salı"
+msgstr ""
 
 msgid "Wednesday"
-msgstr "Çarşamba"
+msgstr ""

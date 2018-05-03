@@ -1,18 +1,21 @@
+# English translations for enigma package.
+# Copyright (C) 2018 THE enigma'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the enigma package.
+# Automatically generated, 2018.
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: KiddyTimer\n"
+"Project-Id-Version: enigma 2-plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-05-03 14:00+0200\n"
-"PO-Revision-Date: \n"
-"Last-Translator: Tode <sagichnet@gmx.net>\n"
-"Language-Team: \n"
-"Language: \n"
+"PO-Revision-Date: 2018-05-03 14:00+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Basepath: D:\\Dreambox\\Eclipse\\kiddytimer\\po\n"
-"X-Poedit-Language: German\n"
-"X-Poedit-SearchPath-0: ..\\src\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "01:00"
 msgstr "01:00"
@@ -21,122 +24,122 @@ msgid "??:??"
 msgstr "??:??"
 
 msgid "Allows to controls your kids' daily TV usage"
-msgstr "Ermöglicht,  den täglichen TV- Konsum Ihrer Kinder zu steuern"
+msgstr "Allows to controls your kids' daily TV usage"
 
 msgid "Cancel"
-msgstr "Abbrechen"
+msgstr "Cancel"
 
 msgid "Center screen at the lower border"
-msgstr "Fenster am unteren Rand zentrieren"
+msgstr "Center screen at the lower border"
 
 msgid "Center screen at the upper border"
-msgstr "Fenster am oberen Rand zentrieren"
+msgstr "Center screen at the upper border"
 
 msgid ""
 "Cheat attempt detected. \n"
 "Box has not been shudown correctly. \n"
 "Remaining time was set to 0."
 msgstr ""
-"Wer versucht denn da zu schummeln? \n"
-"Pech gehabt! Box wurde nicht sauber heruntergefahren! \n"
-"Zeit wurde auf NULL zurückgesetzt."
+"Cheat attempt detected. \n"
+"Box has not been shudown correctly. \n"
+"Remaining time was set to 0."
 
 msgid "Clock"
-msgstr "Uhr"
+msgstr "Clock"
 
 msgid "Decrease remaining time"
-msgstr "Verbleibende Zeit verringern"
+msgstr "Decrease remaining time"
 
 msgid "Disable KiddyTimer"
-msgstr "KiddyTimer deaktivieren"
+msgstr "Disable KiddyTimer"
 
 msgid "Discard changes and close screen"
-msgstr "Änderungen verwerfen und Fenster schliessen"
+msgstr "Discard changes and close screen"
 
 msgid "Do you want to start the kiddytimer- plugin now."
-msgstr "Wollen Sie das KiddyTimer- Plugin jetzt starten?"
+msgstr "Do you want to start the kiddytimer- plugin now."
 
 msgid "Don't monitor TV started after"
-msgstr "Nicht mehr überwachen nach"
+msgstr "Don't monitor TV started after"
 
 msgid "Don't monitor TV started before"
-msgstr "Nicht überwachen vor"
+msgstr "Don't monitor TV started before"
 
 msgid "Enable KiddyTimer"
-msgstr "KiddyTimer aktivieren"
+msgstr "Enable KiddyTimer"
 
 msgid "Enable KiddyTimer for x minutes"
-msgstr "KiddyTimer für x Minuten aktivieren"
+msgstr "Enable KiddyTimer for x minutes"
 
 msgid "Enabled"
-msgstr "Aktiviert"
+msgstr "Enabled"
 
 msgid "Enter pin code"
-msgstr "Pin code eingeben"
+msgstr "Enter pin code"
 
 msgid "Friday"
-msgstr ""
+msgstr "Friday"
 
 msgid "Increase remaining time"
-msgstr "Verbleibende Zeit erhöhen"
+msgstr "Increase remaining time"
 
 msgid "Invalid selection"
-msgstr "Ungültige Auswahl"
+msgstr "Invalid selection"
 
 msgid "KiddyTimer"
 msgstr "KiddyTimer"
 
 #, python-format
 msgid "Last day started: %s"
-msgstr "Zuletzt gestartet am: %s"
+msgstr "Last day started: %s"
 
 msgid "Monday"
-msgstr ""
+msgstr "Monday"
 
 msgid "Move clock"
-msgstr "Pos.ändern"
+msgstr "Move clock"
 
 msgid "Move screen down"
-msgstr "Fenster nach unten verschieben"
+msgstr "Move screen down"
 
 msgid "Move screen to the center of your TV"
-msgstr "Fenster auf dem Bildschirm zentrieren"
+msgstr "Move screen to the center of your TV"
 
 msgid "Move screen to the left"
-msgstr "Fenster nach links verschieben"
+msgstr "Move screen to the left"
 
 msgid "Move screen to the lower left corner"
-msgstr "Fenster in die linke untere Ecke verschieben"
+msgstr "Move screen to the lower left corner"
 
 msgid "Move screen to the lower right corner"
-msgstr "Fenster in die rechte  untere Ecke verschieben"
+msgstr "Move screen to the lower right corner"
 
 msgid "Move screen to the middle of the left border"
-msgstr "Fenster in die Mitte des linken Randes verschieben"
+msgstr "Move screen to the middle of the left border"
 
 msgid "Move screen to the middle of the right border"
-msgstr "Fenster in die Mitte des rechten Randes verschieben"
+msgstr "Move screen to the middle of the right border"
 
 msgid "Move screen to the right"
-msgstr "Fenster nach rechts verschieben"
+msgstr "Move screen to the right"
 
 msgid "Move screen to the upper left corner"
-msgstr "Fenster in die linke obere Ecke verschieben"
+msgstr "Move screen to the upper left corner"
 
 msgid "Move screen to the upper right corner"
-msgstr "Fenster in die obere rechte Ecke verschieben"
+msgstr "Move screen to the upper right corner"
 
 msgid "Move screen up"
-msgstr "Fenster nach oben verschieben"
+msgstr "Move screen up"
 
 msgid "PIN"
 msgstr "PIN"
 
 msgid "Please enter the correct pin code"
-msgstr "Bitte geben Sie den korrekten pin code ein"
+msgstr "Please enter the correct pin code"
 
 msgid "Please select your KiddyTimer- option"
-msgstr "Bitte wählen Sie Ihre KiddyTimer- Option"
+msgstr "Please select your KiddyTimer- option"
 
 #, python-format
 msgid "Plugin: %(plugin)s , Version: %(version)s"
@@ -144,55 +147,55 @@ msgstr "Plugin: %(plugin)s , Version: %(version)s"
 
 #, python-format
 msgid "Remaining time: %s"
-msgstr "Verbleibende Zeit: %s"
+msgstr "Remaining time: %s"
 
 msgid "Reset clock"
-msgstr "Zurücksetzen"
+msgstr "Reset clock"
 
 msgid "Reset saved position"
-msgstr "Gespeicherte Position zurücksetzen"
+msgstr "Reset saved position"
 
 msgid "Reset todays remaining time"
-msgstr "Verbleibende Zeit zurücksetzen"
+msgstr "Reset todays remaining time"
 
 msgid "Saturday"
-msgstr ""
+msgstr "Saturday"
 
 msgid "Save"
-msgstr "Speichern"
+msgstr "Save"
 
 msgid "Save values and close screen"
-msgstr "Werte speichern und Fenster schliessen"
+msgstr "Save values and close screen"
 
 msgid "Set remaining time"
-msgstr "Verbleibende Zeit setzen"
+msgstr "Set remaining time"
 
 msgid "Smiley"
 msgstr "Smiley"
 
 msgid "Start KiddyTimer"
-msgstr "KiddyTimer starten"
+msgstr "Start KiddyTimer"
 
 msgid "Stop KiddyTimer (this session only)"
-msgstr "KiddyTimer stoppen (nur diese Session)"
+msgstr "Stop KiddyTimer (this session only)"
 
 msgid "Style of timer"
-msgstr "Aussehen des Timers"
+msgstr "Style of timer"
 
 msgid "Sunday"
-msgstr ""
+msgstr "Sunday"
 
 msgid "The pin code you entered is wrong."
-msgstr "Der eingegebene PIN-Code ist falsch"
+msgstr "The pin code you entered is wrong."
 
 msgid "Thursday"
-msgstr ""
+msgstr "Thursday"
 
 msgid "Timeout for activation dialog"
-msgstr "Timeout für den Aktivierungsdialog"
+msgstr "Timeout for activation dialog"
 
 msgid "Tuesday"
-msgstr ""
+msgstr "Tuesday"
 
 msgid "Wednesday"
-msgstr ""
+msgstr "Wednesday"
