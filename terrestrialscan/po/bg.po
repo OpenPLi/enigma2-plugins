@@ -1,21 +1,21 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Bulgarian translations for enigma package.
+# Copyright (C) 2018 THE enigma'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the enigma package.
+# Automatically generated, 2018.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: enigma 2-plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-05-03 14:02+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2018-05-03 14:02+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: bg\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "Automatic"
 msgstr ""
@@ -45,13 +45,19 @@ msgstr ""
 msgid "Found %d unique transponder(s)"
 msgstr ""
 
-msgid "If you select \"yes\" all stored terrestrial channels will be deleted before starting the current search."
+msgid ""
+"If you select \"yes\" all stored terrestrial channels will be deleted before "
+"starting the current search."
 msgstr ""
 
-msgid "If you select \"yes\" the scan will only save channels that are not encrypted; \"no\" will find encrypted and non-encrypted channels."
+msgid ""
+"If you select \"yes\" the scan will only save channels that are not "
+"encrypted; \"no\" will find encrypted and non-encrypted channels."
 msgstr ""
 
-msgid "Most transmitters in European countries only have TV channels in the UHF band."
+msgid ""
+"Most transmitters in European countries only have TV channels in the UHF "
+"band."
 msgstr ""
 
 msgid "Network ID"
@@ -86,10 +92,14 @@ msgstr ""
 msgid "Scanning for active transponders"
 msgstr ""
 
-msgid "Select \"0\" to search all networks, or enter the network ID of the provider you wish to search."
+msgid ""
+"Select \"0\" to search all networks, or enter the network ID of the provider "
+"you wish to search."
 msgstr ""
 
-msgid "Select a tuner that is configured for terrestrial scans. \"Automatic\" will pick the highest spec available tuner."
+msgid ""
+"Select a tuner that is configured for terrestrial scans. \"Automatic\" will "
+"pick the highest spec available tuner."
 msgstr ""
 
 msgid "Selected tuner is not cofigured"
