@@ -1,23 +1,21 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Turkish translations for enigma package.
+# Copyright (C) 2018 THE enigma'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the enigma package.
+# Automatically generated, 2018.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Enigma2 - Plugin EmailClient\n"
+"Project-Id-Version: enigma 2-plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-05-03 14:00+0200\n"
-"PO-Revision-Date: 2009-09-27 17:49+0100\n"
-"Last-Translator: maja <jovanovic@gmx.ch>\n"
-"Language-Team: veselin & majevica CRNABERZA <jovanovic@gmx.ch>\n"
-"Language: \n"
+"PO-Revision-Date: 2018-05-03 14:00+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Language: Serbian\n"
-"X-Poedit-Country: SERBIA\n"
-"X-Poedit-SourceCharset: utf-8\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #, python-format
 msgid "%(name)s (%(user)s@%(server)s)"
@@ -30,20 +28,19 @@ msgid "Accounts list"
 msgstr ""
 
 msgid "Attachments"
-msgstr "Dodatci"
+msgstr ""
 
 msgid "Bodys"
-msgstr "Oblici"
+msgstr ""
 
 msgid "Date"
-msgstr "Datum"
+msgstr ""
 
 msgid "Email Client"
-msgstr "Imejl klijent"
+msgstr ""
 
-#, fuzzy
 msgid "Email setup"
-msgstr "Imejl klijent"
+msgstr ""
 
 #, python-format
 msgid ""
@@ -53,48 +50,46 @@ msgid ""
 msgstr ""
 
 msgid "From"
-msgstr "Od"
+msgstr ""
 
 msgid "IMAP Port"
-msgstr "IMAP Port"
+msgstr ""
 
 msgid "IMAP Server"
-msgstr "IMAP Server"
+msgstr ""
 
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "New mail arrived for account %s:\n"
 "\n"
 msgstr ""
-"Nova poruka stigla:\n"
-"\n"
 
-#, fuzzy, python-format
+#, python-format
 msgid "Really delete account %s?"
-msgstr "stvarno obrisati poruku?"
+msgstr ""
 
 msgid "Subject"
-msgstr "Subjekt"
+msgstr ""
 
 #, python-format
 msgid ""
 "[EmailAccount] %(name)s: _cbCapabilities:\n"
 "####################################################################################################\n"
-"# If you have problems to log into your imap-server, please send me the output of the following line\n"
+"# If you have problems to log into your imap-server, please send me the "
+"output of the following line\n"
 "# cbCapabilities: %(capa)s\n"
 "####################################################################################################\n"
 msgstr ""
 
-#, fuzzy, python-format
+#, python-format
 msgid "account %s is not connected"
-msgstr "spojen"
+msgstr ""
 
 msgid "account name"
 msgstr ""
 
-#, fuzzy
 msgid "account not connected"
-msgstr "spojen"
+msgstr ""
 
 msgid "add"
 msgstr ""
@@ -103,7 +98,7 @@ msgid "always"
 msgstr ""
 
 msgid "cancel"
-msgstr "otkaži"
+msgstr ""
 
 msgid "cannot access inbox"
 msgstr ""
@@ -121,18 +116,16 @@ msgid "debug"
 msgstr ""
 
 msgid "delete"
-msgstr "obriši"
+msgstr ""
 
-#, fuzzy
 msgid "display connection errors"
-msgstr "vreme prikazivanja nove poruke (sekunde)"
+msgstr ""
 
 msgid "display message type"
 msgstr ""
 
-#, fuzzy
 msgid "display timeout (seconds)"
-msgstr "vreme prikazivanja nove poruke (sekunde)"
+msgstr ""
 
 msgid "edit"
 msgstr ""
@@ -149,24 +142,21 @@ msgid ""
 "%(failure)s"
 msgstr ""
 
-#, fuzzy
 msgid "failed to load message"
-msgstr "učitavam poruku"
+msgstr ""
 
-#, fuzzy
 msgid "getting message ..."
-msgstr "analiziram poruku"
+msgstr ""
 
 #, python-format
 msgid "have %d messages"
-msgstr "ima %d poruka"
+msgstr ""
 
-#, fuzzy
 msgid "have no messages"
-msgstr "ima %d poruka"
+msgstr ""
 
 msgid "headers loaded, now parsing ..."
-msgstr "Zaglavlja učitana, sad raščlanjujem ..."
+msgstr ""
 
 #, python-format
 msgid "importing configurations from %s"
@@ -176,18 +166,16 @@ msgid "infobar mode (live TV)"
 msgstr ""
 
 msgid "leave unread"
-msgstr "ostavi nepročitano"
+msgstr ""
 
 msgid "list all mailboxes"
 msgstr ""
 
-#, fuzzy
 msgid "loading headers ..."
-msgstr "učitavam poruku"
+msgstr ""
 
-#, fuzzy
 msgid "mail check interval (minutes)"
-msgstr "Interval za proveru novih poruka (u minutima)"
+msgstr ""
 
 msgid "maximum mail size to fetch"
 msgstr ""
@@ -195,69 +183,62 @@ msgstr ""
 msgid "message too large"
 msgstr ""
 
-#, fuzzy
 msgid "no account selected"
-msgstr "spojen"
+msgstr ""
 
 msgid "no date"
-msgstr "bez datuma"
+msgstr ""
 
 msgid "no filename"
-msgstr "bez imena datoteke"
+msgstr ""
 
 msgid "no from"
-msgstr "bez odakle"
+msgstr ""
 
 msgid "no mailbox?!?!"
 msgstr ""
 
 msgid "no sender"
-msgstr "bez pošiljaoca"
+msgstr ""
 
 msgid "no subject"
-msgstr "bez subjekta"
+msgstr ""
 
 msgid "ok"
-msgstr "ok"
+msgstr ""
 
-#, fuzzy
 msgid "parsing message ..."
-msgstr "analiziram poruku"
+msgstr ""
 
-#, fuzzy
 msgid "password"
-msgstr "Lozinka"
+msgstr ""
 
-#, fuzzy
 msgid "really delete mail?"
-msgstr "stvarno obrisati poruku?"
+msgstr ""
 
-#, fuzzy
 msgid "really undelete mail?"
-msgstr "stvarno restaurirati poruku?"
+msgstr ""
 
 msgid "remove"
 msgstr ""
 
 msgid "select Attachment"
-msgstr "izaberi dodatak"
+msgstr ""
 
 msgid "select Body"
-msgstr "Izaberi oblik"
+msgstr ""
 
 msgid "show deleted entries"
-msgstr "pokaži obrisane unose"
+msgstr ""
 
 msgid "undelete"
-msgstr "restauriraj"
+msgstr ""
 
-#, fuzzy
 msgid "user name"
-msgstr "Korisn. ime"
+msgstr ""
 
-#, fuzzy
 msgid "view Email"
-msgstr "vidi imejlove preko IMAP4"
+msgstr ""
 
 msgid "view Emails via IMAP4"
-msgstr "vidi imejlove preko IMAP4"
+msgstr ""
