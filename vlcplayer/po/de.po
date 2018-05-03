@@ -1,170 +1,266 @@
 # German translations for enigma package.
-# Copyright (C) 2008 THE enigma'S COPYRIGHT HOLDER
+# Copyright (C) 2018 THE enigma'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the enigma package.
-# Alex <info@laetsch.de>, 2008.
-# 
+# Automatically generated, 2018.
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: enigma2.plugins.vlcplayer\n"
+"Project-Id-Version: enigma 2-plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-02-17 13:14+0100\n"
-"PO-Revision-Date: 2009-02-17 13:20+0200\n"
-"Last-Translator: Moritz Venn <moritz.venn@freaque.net>\n"
-"Language-Team: German <de@li.org>\n"
+"POT-Creation-Date: 2018-05-03 11:46+0200\n"
+"PO-Revision-Date: 2018-05-03 11:46+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+msgid "1 minute"
+msgstr ""
+
+msgid "10 minutes"
+msgstr ""
+
+msgid "15 minutes"
+msgstr ""
+
+msgid "20 minutes"
+msgstr ""
+
+msgid "3 minutes"
+msgstr ""
+
+msgid "30 minutes"
+msgstr ""
+
+msgid "5 minutes"
+msgstr ""
+
 msgid "A video streaming solution based on VLC"
-msgstr "Video streaming basierend auf dem VLC"
+msgstr ""
+
+msgid "Audio"
+msgstr ""
 
 msgid "Audio Bitrate"
-msgstr "Audio Bitrate"
+msgstr ""
 
 msgid "Audio Channels"
-msgstr "Anzahl Audiokanäle"
+msgstr ""
 
 msgid "Audio Codec"
-msgstr "Audio Codec"
+msgstr ""
 
 msgid "Audio Samplerate"
-msgstr "Audio Samplerate"
+msgstr ""
+
+msgid "Cache Directory"
+msgstr ""
 
 msgid "Cancel"
 msgstr ""
 
+msgid "Choice of minutes to jump"
+msgstr ""
+
+msgid "Choose an action:"
+msgstr ""
+
 msgid "DVD Device (leave empty for default)"
-msgstr "DVD Laufwerk (leer für default)"
+msgstr ""
+
+msgid "Direct play"
+msgstr ""
+
+msgid "Edit VLC Server"
+msgstr ""
 
 msgid "Enter VLC-Server as FQDN or IP-Address"
-msgstr "VLC-Server mit Namen oder IP-Adresse"
+msgstr ""
+
+msgid "Enter subtitles as Track or Language"
+msgstr ""
 
 #, python-format
 msgid ""
 "Error loading filelist into server %(server)s:\n"
 "%(error)s"
 msgstr ""
-"Fehler beim Laden der Filelist auf den Server %(server)s:\n"
-"%(error)s"
 
 #, python-format
 msgid ""
 "Error loading playlist %(media)s into server %(server)s:\n"
 "%(error)s"
 msgstr ""
-"Fehler beim Laden der Playlist %(media)s auf den Server %(server)s:\n"
-"%(error)s"
 
 #, python-format
 msgid ""
 "Error loading playlist into server %(server)s:\n"
 "%(error)s"
 msgstr ""
-"Fehler beim Laden der Playlist auf den Server %(server)s:\n"
-"%(error)s"
 
 #, python-format
 msgid ""
 "Error updating filelist from server %(server)s:\n"
 "%(error)s"
 msgstr ""
-"Fehler beim Holen der Filelist vom Server %(server)s:\n"
-"%(error)s"
 
 #, python-format
 msgid ""
 "Error with VLC server:\n"
 "%s"
 msgstr ""
-"Fehler beim VLC server:\n"
-"%s"
+
+msgid "FQDN"
+msgstr ""
 
 msgid "Filelist"
-msgstr "Filelist"
+msgstr ""
 
 msgid "HTTP Port"
-msgstr "HTTP Port"
+msgstr ""
 
-msgid "List of known VLC-Server Profiles"
-msgstr "Liste bekannter VLC-Server Profile"
+msgid "IP-Address"
+msgstr ""
+
+msgid ""
+"Latest compatible version VLC 2.0.7\n"
+"Setup VLC for PC:\n"
+"Tools -> Preferences -> All -> Interface -> Main Interface -> Select Web\n"
+"Find file c:/Program Files/VideoLAN/VLC/Lua/http/.hosts and insert your box "
+"ip (without #).\n"
+"Add shortcut to the startup of the background start VLC 'C:\\Program Files"
+"\\VideoLAN\\VLC\vlc.exe --intf telnet --extraintf http'"
+msgstr ""
+
+msgid "List of known profiles. Note: key info - help"
+msgstr ""
 
 msgid "Movie Directory"
-msgstr "Film-Verzeichnis"
+msgstr ""
 
 msgid "No more files in this directory"
-msgstr "Keine weiteren Dateien in diesem Verzeichnis"
+msgstr ""
+
+#, python-format
+msgid ""
+"No ping from Server:\n"
+"%s\n"
+"%s"
+msgstr ""
 
 msgid "No previous file in this directory"
-msgstr "Keine vorhergehenden Dateien in diesem Verzeichnis"
+msgstr ""
 
 msgid ""
 "No valid Enigma-Service to play a VLC-Stream\n"
 "Check your installation and try again!"
 msgstr ""
-"Kein gültiger Enima-Service zum Abspielen eines VLC-Stream\n"
-"Bitte Installation überprüfen."
 
 msgid "OK"
 msgstr ""
 
 #, python-format
 msgid "Overscan Correction [in %(percentsign)s of Video width]"
-msgstr "Overscan Korrektur [in %(percentsign)s der Videobreite]"
+msgstr ""
+
+msgid "Ping IP-Address when open Server"
+msgstr ""
 
 msgid "Playlist"
-msgstr "Wiedergabeliste"
+msgstr ""
 
 msgid "Really delete this Server?"
-msgstr "Diesen Server wirklich löschen?"
+msgstr ""
+
+msgid "Reset default"
+msgstr ""
+
+msgid "Save as .ts and play"
+msgstr ""
+
+msgid "Select VLC-Server profile"
+msgstr ""
+
+msgid "Select method?"
+msgstr ""
 
 msgid "Server Address"
-msgstr "Server Adresse"
+msgstr ""
 
 msgid "Server Profile Name"
-msgstr "Server Profilname"
+msgstr ""
 
 msgid "Serverlist"
-msgstr "Serverliste"
+msgstr ""
+
+msgid "Set as default"
+msgstr ""
 
 msgid "Subtitle overlay"
-msgstr "Untertitel einblenden"
+msgstr ""
+
+msgid "Subtitles"
+msgstr ""
 
 msgid "Transcode MPEG/DVD Audio"
-msgstr "Wandle MPEG/DVD Audio um"
+msgstr ""
 
 msgid "Transcode MPEG/DVD Video"
-msgstr "Wandle MPEG/DVD Video um"
+msgstr ""
+
+msgid "Use saving to Cache Directory"
+msgstr ""
+
+msgid "VLC < 2.x"
+msgstr ""
+
+msgid "VLC Media List"
+msgstr ""
+
+msgid "VLC Video Player"
+msgstr ""
 
 msgid "Video Bitrate"
-msgstr "Video Bitrate"
+msgstr ""
 
 msgid "Video Codec"
-msgstr "Video Codec"
+msgstr ""
 
 msgid "Video Norm"
-msgstr "Videostandard"
+msgstr ""
+
+msgid "Yellow subtitles"
+msgstr ""
 
 msgid "add server"
-msgstr "neu"
+msgstr ""
 
 msgid "delete server"
-msgstr "löschen"
+msgstr ""
 
 msgid "edit server"
-msgstr "ändern"
+msgstr ""
 
 msgid "filter off"
-msgstr "Filter aus"
+msgstr ""
 
 msgid "filter on"
-msgstr "Filter an"
+msgstr ""
+
+msgid "languages"
+msgstr ""
 
 msgid "play DVD"
-msgstr "starte DVD"
+msgstr ""
 
 msgid "refresh"
-msgstr "aktualisieren"
+msgstr ""
 
 msgid "set default"
-msgstr "als Standard"
+msgstr ""
+
+msgid "tracks"
+msgstr ""
