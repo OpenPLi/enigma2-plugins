@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxbox-enigma 0.0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-01-28 16:39+0100\n"
+"POT-Creation-Date: 2018-05-03 14:01+0200\n"
 "PO-Revision-Date: 2015-09-17 20:18+0300\n"
 "Last-Translator: Dimitrij <Dima-73@inbox.lv>\n"
 "Language-Team: PLi Dima73\n"
+"Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Language: ru\n"
 "X-Generator: Poedit 1.8.4\n"
 
 msgid ""
@@ -132,9 +132,6 @@ msgstr "Менеджер сетевых подключений..."
 msgid "Mount again"
 msgstr "Монтировать еще раз"
 
-msgid "Mount view"
-msgstr "Просмотр монтирования"
-
 msgid "Mount informations"
 msgstr "Информация о монтировании"
 
@@ -143,6 +140,9 @@ msgstr "Варианты монтирования"
 
 msgid "Mount type"
 msgstr "Тип монтирования"
+
+msgid "Mount view"
+msgstr "Просмотр монтирования"
 
 msgid "MountManager"
 msgstr "Менеджер монтирования"

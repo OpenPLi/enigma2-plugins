@@ -7,10 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxbox-enigma 0.0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-01-28 16:39+0100\n"
+"POT-Creation-Date: 2018-05-03 14:01+0200\n"
 "PO-Revision-Date: 2012-05-29 18:07+0100\n"
 "Last-Translator: \n"
 "Language-Team: none\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -140,6 +141,10 @@ msgstr "Csatlakozás opciói"
 msgid "Mount type"
 msgstr "Csatlakozás típusa"
 
+#, fuzzy
+msgid "Mount view"
+msgstr "Csatlakozás típusa"
+
 msgid "MountManager"
 msgstr "Megosztás-kezelő"
 
@@ -260,4 +265,3 @@ msgstr "A hálózati csatlakozás frissítve lett."
 
 msgid "use as HDD replacement"
 msgstr "Használat merevlemez helyett"
-
