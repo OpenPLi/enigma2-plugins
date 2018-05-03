@@ -1,66 +1,54 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Dutch translations for enigma package.
+# Copyright (C) 2018 THE enigma'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the enigma package.
+# Automatically generated, 2018.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Enigma2 - MediaDownloader Plugin\n"
+"Project-Id-Version: enigma 2-plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-06 13:11+0200\n"
-"PO-Revision-Date: 2009-06-06 19:11+0100\n"
-"Last-Translator: \n"
-"Language-Team:  <Benny.DeTandt@gmail.com>\n"
+"POT-Creation-Date: 2018-05-03 11:46+0200\n"
+"PO-Revision-Date: 2018-05-03 11:46+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: nl\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Language: Dutch\n"
-"X-Poedit-Country: NETHERLANDS\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../src/MediaDownloader.py:215
 #, python-format
 msgid "%d kb/s"
-msgstr "%d kb/s"
+msgstr ""
 
-#: ../src/MediaDownloader.py:148
 msgid "?? kb/s"
-msgstr "?? kb/s"
+msgstr ""
 
-#: ../src/MediaDownloader.py:245
 msgid "Do you want to try to open the downloaded file?"
-msgstr "Wilt u het gedownloade bestand proberen te openen?"
+msgstr ""
 
-#: ../src/plugin.py:83
 msgid "Download..."
-msgstr "Downloaden..."
+msgstr ""
 
-#: ../src/MediaDownloader.py:145
 msgid "Downloading..."
-msgstr "Downloading..."
+msgstr ""
 
-#: ../src/MediaDownloader.py:214
 #, python-format
 msgid "ETA %d:%02d min"
-msgstr "Geschatte tijd: %d:%02d min"
+msgstr ""
 
-#: ../src/MediaDownloader.py:147
 msgid "ETA ??:?? h"
-msgstr "Geschatte tijd: ??:?? h"
+msgstr ""
 
-#: ../src/MediaDownloader.py:262
 #, python-format
 msgid "Error while downloading file %s"
-msgstr "Fout tijdens het downloaden van bestand %s"
+msgstr ""
 
-#: ../src/MediaDownloader.py:228
 msgid "No suitable Viewer found!"
-msgstr "Geen geschikte viewer gevonden!"
+msgstr ""
 
-#: ../src/MediaDownloader.py:172
 msgid "Where to save?"
-msgstr "Waar opslaan?"
+msgstr ""
 
-#: ../src/plugin.py:58
 msgid "Which file do you want to download?"
-msgstr "Welk bestand wilt u downloaden?"
-
+msgstr ""
