@@ -1,348 +1,391 @@
+# Russian translations for enigma package.
+# Copyright (C) 2018 THE enigma'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the enigma package.
+# Automatically generated, 2018.
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
+"Project-Id-Version: enigma 2-plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-02-28 19:54+0100\n"
-"PO-Revision-Date: 2016-02-12 20:06+0200\n"
-"Language-Team: LANGUAGE <Dima-73@inbox.lv>\n"
+"POT-Creation-Date: 2018-05-03 11:46+0200\n"
+"PO-Revision-Date: 2018-05-03 11:46+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Last-Translator: \n"
-"Language: ru\n"
-"X-Generator: Poedit 1.8.4\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
+#, python-format
+msgid ""
+"\n"
+"Timer '%s' disabled!"
+msgstr ""
+
+#, python-format
 msgid ""
 "\n"
 "Total number of conflicts: %s"
 msgstr ""
-"\n"
-"Всего конфликтов: %s"
 
 msgid "\"View live\" event only in Prime Time:"
-msgstr "Событие \"Прямой эфир\" только в прайм-тайм:"
+msgstr ""
 
 msgid "\"View live\" type:"
-msgstr "\"Прямой эфир\" тип:"
+msgstr ""
 
+#, python-format
 msgid "%d min"
-msgstr "%d мин"
+msgstr ""
 
+#, python-format
 msgid "%s prime time | events today (%s) | Bouquet: %s"
-msgstr "%s прайм-тайм | события сегодня (%s) | Пакет: %s"
+msgstr ""
 
+#, python-format
 msgid "%s prime time | events today +%s (%s) | Bouquet: %s"
-msgstr "%s прайм-тайм | события сегодня +%s (%s) | Пакет: %s"
+msgstr ""
 
 msgid "'Timer Edit' key menu - show conflict timer:"
-msgstr "'Редактор таймеров' кнопка меню - конфликт таймеров:"
+msgstr ""
 
 msgid ": only notification"
-msgstr ": только информация"
-
-msgid ": total conflicts %d"
-msgstr ": всего конфликтов %d"
+msgstr ""
 
 msgid "Accept"
-msgstr "Принять"
+msgstr ""
 
 msgid "Accept the events as shown"
-msgstr "Принять события как показано"
+msgstr ""
 
 msgid "Accept this solution?"
-msgstr "Принять это решение?"
+msgstr ""
 
 msgid "Add Timer"
-msgstr "Добавить таймер"
+msgstr ""
 
 msgid "Add timer"
-msgstr "Добавить таймер"
+msgstr ""
 
+#, python-format
 msgid "Add timer for \"%s\"?"
-msgstr "Добавить таймер для \"%s\"?"
+msgstr ""
 
 msgid "Add/remove event to or from favourites"
-msgstr "Добавить/удалить событие для фаворитов"
+msgstr ""
 
 msgid "Any timers"
-msgstr "Любые таймеры"
+msgstr ""
 
 msgid "Begin time"
-msgstr "Начало"
+msgstr ""
 
 msgid "Bouquet"
-msgstr "Пакет"
+msgstr ""
 
 msgid "Bouquet:"
-msgstr "Пакет:"
+msgstr ""
 
+#, python-format
 msgid "Bouquet: %s - EPG Selection Multi"
-msgstr "Пакет: %s - выбор мульти EPG"
+msgstr ""
+
+msgid "Cancel"
+msgstr ""
 
 msgid "Cansel"
-msgstr "Отмена"
+msgstr ""
+
+msgid "Channel not in services list"
+msgstr ""
 
 msgid "Check conflicts timers after \"Accept\":"
-msgstr "Проверка конфликтов таймеров после \"Принять\":"
+msgstr ""
 
 msgid "Check conflicts timers after exit:"
-msgstr "Проверка конфликтов таймеров после выхода:"
+msgstr ""
 
 msgid "Checking with conflict detection enabled for"
-msgstr "Проверка с включенным обнаружением конфликтов для"
+msgstr ""
 
 msgid "Close"
-msgstr "Закрыть"
+msgstr ""
 
 msgid "Conflict detected!"
-msgstr "Обнаружен кофликт!"
+msgstr ""
+
+msgid "Conflict not resolved!"
+msgstr ""
 
 msgid "Conflicts were solved"
-msgstr "Конфликты решены"
+msgstr ""
 
 msgid "Current timer"
-msgstr "Текущий таймер"
+msgstr ""
 
 msgid "Date"
-msgstr "Дата"
+msgstr ""
 
+msgid "Disable"
+msgstr ""
+
+#, python-format
 msgid "Do you really want to delete the timer for \"%s\"?"
-msgstr "Вы действительно хотите удалить таймер для \"%s\"?"
+msgstr ""
 
 msgid ""
 "Do you want to switch the prime time? Currently selected favorites will be "
 "lost!"
 msgstr ""
-"Вы хотите сменить прайм-тайм? Текущие выбранные фавориты будут потеряны!"
 
 msgid "Duration"
-msgstr "Время"
+msgstr ""
+
+msgid "Edit"
+msgstr ""
+
+msgid "Enable"
+msgstr ""
 
 msgid "End time"
-msgstr "Окончание"
+msgstr ""
 
 msgid "Exit"
-msgstr "Выход"
+msgstr ""
 
 msgid "Exit from Multi EPG on selected service:"
-msgstr "Выход из мульти EPG на выбранном сервисе:"
+msgstr ""
 
 msgid "Exit plugin"
-msgstr "Выход из плагина"
+msgstr ""
 
 msgid "Exit plugin or open Multi EPG"
-msgstr "Выход из плагина или мульти EPG"
+msgstr ""
 
 msgid "Favorite"
-msgstr "Фаворит"
+msgstr ""
 
 msgid "Favorite will be deleted!"
-msgstr "Фаворит был удален!"
+msgstr ""
+
+msgid "Ignore conflict"
+msgstr ""
 
 msgid "Lookup in TMBD"
-msgstr "Поиск в TMBD"
+msgstr ""
 
 msgid "Manage prime time events"
-msgstr "Менеджер событий прайм-тайма"
+msgstr ""
 
 msgid "Multi EPG"
-msgstr "Мульти EPG"
+msgstr ""
 
 msgid "No EPG data"
-msgstr "Нет данных EPG"
+msgstr ""
 
 msgid "No conflicts found"
-msgstr "Не найдены кофликты"
+msgstr ""
 
 msgid "OK"
-msgstr "ОК"
+msgstr ""
 
 msgid "Open the settings screen"
-msgstr "Открыть меню настроек"
+msgstr ""
 
 msgid "Open timers list"
-msgstr "Открыть список таймеров"
+msgstr ""
 
 msgid "Primary"
-msgstr "Первый"
+msgstr ""
 
 msgid "Primary Prime Time:"
-msgstr "Первый прайм-тайм:"
+msgstr ""
 
 msgid "Prime Time Manager"
-msgstr "Прайм-тайм менеджер"
+msgstr ""
 
 msgid "Prime Time Manager "
-msgstr "Прайм-тайм менеджер "
+msgstr ""
 
 msgid "Prime Time Manager Conflict Results"
-msgstr "Результаты конфликтов прайм-тайм менеджера"
+msgstr ""
 
 msgid "Prime Time Manager in E-menu:"
-msgstr "Прайм-тайм менеджер в меню дополнений:"
+msgstr ""
 
 msgid "Prime Time Manager setup"
-msgstr "Прайм-тайм менеджер - настройки"
+msgstr ""
 
 msgid ""
 "Prime Time Manager:\n"
 "\n"
 "Prime time has already begun or is over. Starting with tomorrow's events."
 msgstr ""
-"Прайм-тайм менеджер:\n"
-"\n"
-"Прайм-тайм уже начался или закончился. Начинаем с событиями завтрашнего дня."
 
+#, python-format
 msgid ""
 "Prime Time Manager:\n"
 "\n"
 "Sorry, but a timer for %s can't be set because there are conflicts with "
 "other timers."
 msgstr ""
-"Прайм-тайм менеджер:\n"
-"\n"
-"Извините,но таймер %s не может быть добавлен из-за конфликта с другими "
-"таймерами."
 
 msgid ""
 "Prime Time Manager:\n"
 "\n"
 "Sorry, but turning a repeated timer into a view live event isn't supported."
 msgstr ""
-"Прайм-тайм менеджер:\n"
-"\n"
-"Извините, но повторяющиеся таймеры, в целях событий прямого эфира, не "
-"поддерживается."
 
 msgid "Prime Time Settings"
-msgstr "Настройки прайм-тайм менеджера"
+msgstr ""
 
 msgid "Recording is in progress.\n"
-msgstr "Запись в процессе.\n"
+msgstr ""
 
 msgid "Red Button function:"
-msgstr "Функция красной кнопки:"
+msgstr ""
 
 msgid "Remove favorite on timer deletion:"
-msgstr "Удалить фаворит при удалении таймера:"
+msgstr ""
 
 msgid "Remove timer"
-msgstr "Удалить таймер"
+msgstr ""
 
 msgid "Scroll selected list to the left"
-msgstr "Перемещение влево списка выбранного"
+msgstr ""
 
 msgid "Scroll selected list to the right"
-msgstr "Перемещение вправо списка выбранного"
+msgstr ""
 
 msgid "Search in IMDb"
-msgstr "Поиск в IMDb"
+msgstr ""
 
 msgid "Secondary"
-msgstr "Второй"
+msgstr ""
 
 msgid "Secondary Prime Time:"
-msgstr "Второй прайм-тайм:"
+msgstr ""
+
+msgid "Select action"
+msgstr ""
 
 msgid "Selected favorites"
-msgstr "Выбранные фавориты"
+msgstr ""
 
+#, python-format
 msgid "Set 'view live' type '%s'?"
-msgstr "Установить тип 'Прямой эфир' '%s'?"
+msgstr ""
 
 msgid "Set Timer"
-msgstr "Установка таймера"
+msgstr ""
 
 msgid "Set day"
-msgstr "Установка дня"
+msgstr ""
 
 msgid "Set or remove a timer"
-msgstr "Установить или удалить таймер"
+msgstr ""
 
 msgid "Settings of the plugin"
-msgstr "Конфигурация плагина"
+msgstr ""
 
 msgid "Show duration or end time:"
-msgstr "Показать время или окончание события:"
+msgstr ""
 
 msgid "Show event information"
-msgstr "Показать информацию события"
+msgstr ""
+
+msgid "Show warning before set 'Ignore conflict'"
+msgstr ""
 
 msgid "Single EPG"
-msgstr "Одиночное EPG"
+msgstr ""
 
 msgid "Solution"
-msgstr "Решение"
+msgstr ""
 
 msgid ""
 "Sorri!\n"
 "Conflict timers in timers.xml detected!\n"
 "Please recheck it!"
 msgstr ""
-"Извините!\n"
-"Обнаружен конфликт таймеров в timers.xml!\n"
-"Пожалуйста, перепроверьте это!"
 
 msgid "Switch betw. favourite/prime time list"
-msgstr "Смена списка фавориты/прайм-тайм"
+msgstr ""
 
 msgid "Switch to the next bouquet"
-msgstr "Перейти к следующему пакету"
+msgstr ""
 
 msgid "Switch to the next day"
-msgstr "Перейти на следующий день"
+msgstr ""
 
 msgid "Switch to the previous bouquet"
-msgstr "Перейти к предыдущему пакету"
+msgstr ""
 
 msgid "Switch to the previous day"
-msgstr "Перейти на предыдущий день"
+msgstr ""
 
+#, python-format
 msgid ""
 "This event \"%s\" has already begun or will begin in the next few minutes.\n"
 "We can not add it to your list of favorites, as will instantly record.\n"
 "Just want to switch to this service?"
 msgstr ""
-"Это событие \"%s\", уже началось или начнется в ближайшую минуту.\n"
-"Мы не можем добавить его в фавориты, это будет немедленной записью.\n"
-"Хотите просто перейти на сервис?"
 
 msgid "This event will be an instant record.\n"
-msgstr "Это событие будет немедленной записью.\n"
+msgstr ""
 
+#, python-format
 msgid ""
 "This is a repeated timer! Do you really want to delete the repeated timer "
 "for \"%s\"?"
 msgstr ""
-"Это повторяющийся таймер! Вы действительно хотите удалить этот таймер для "
-"\"%s\"?"
+
+msgid "Timer sanity error"
+msgstr ""
 
 msgid "Timers list"
-msgstr "Список таймеров"
+msgstr ""
 
 msgid "Toggle \"view live\" type"
-msgstr "Смена типа \"\"Прямой эфир\""
+msgstr ""
 
 msgid "Toggle marker for a \"view live\" event"
-msgstr "Установка \"Прямой эфир\" для события"
+msgstr ""
 
 msgid "Toggle primary/secondary prime time"
-msgstr "Сменить первый/второй прайм-тайм"
+msgstr ""
 
 msgid "Try to solve conflicts and show result"
-msgstr "Решение конфликтов и просмотр результатов"
+msgstr ""
 
 msgid "Use AutoTimer plugin instead remove favorites:"
-msgstr "Установка Автотаймера вместо удаления фаворита:"
+msgstr ""
+
+msgid ""
+"Warning!\n"
+"This is an option for advanced users.\n"
+"Really disable timer conflict detection?"
+msgstr ""
 
 msgid "Zap"
-msgstr "Перейти"
+msgstr ""
 
 msgid "Zap + Record"
-msgstr "Перейти + записать"
+msgstr ""
+
+msgid "and never ask this again"
+msgstr ""
 
 msgid "exit plugin"
-msgstr "закрыть плагин"
+msgstr ""
+
+msgid "no"
+msgstr ""
 
 msgid "open Multi EPG"
-msgstr "открыть мульти EPG"
+msgstr ""
+
+msgid "yes"
+msgstr ""
