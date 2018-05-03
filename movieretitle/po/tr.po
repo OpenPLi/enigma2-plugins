@@ -1,64 +1,66 @@
+# Turkish translations for enigma package.
+# Copyright (C) 2018 THE enigma'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the enigma package.
+# Automatically generated, 2018.
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: enigma2 MovieRetitle plugin Turkish Locale\n"
+"Project-Id-Version: enigma 2-plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-10-14 18:35+0200\n"
-"PO-Revision-Date: 2009-02-15 01:16+0200\n"
-"Last-Translator: Zülfikar VEYİSOĞLU <zveyis@gmail.com>\n"
-"Language-Team: www.turkeyforum.com/satforum <zveyis@gmail.com>\n"
+"POT-Creation-Date: 2018-05-03 11:46+0200\n"
+"PO-Revision-Date: 2018-05-03 11:46+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Language: Turkish\n"
-"X-Poedit-Country: TURKEY\n"
-"X-Poedit-SourceCharset: utf-8\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "Cancel"
-msgstr "Vazgeç"
+msgstr ""
 
 msgid "Choose target folder"
-msgstr "Hedef klasörü seç"
+msgstr ""
 
 msgid "Description"
-msgstr "Açıklama"
+msgstr ""
 
 #, python-format
 msgid "Failed to move the movie %s to %s in the background"
-msgstr "Film %s konumundan %s konumuna taşınırken hata oluştu."
+msgstr ""
 
 msgid "Filename"
-msgstr "Dosya adı"
+msgstr ""
 
 msgid "Location"
-msgstr "Konum"
+msgstr ""
 
 msgid "Name and Description Input"
 msgstr ""
 
 msgid "OK"
-msgstr "Tamam"
+msgstr ""
 
 #, python-format
 msgid "Successfully moved the movie %s"
-msgstr "%s filmi başarıyla taşındı."
+msgstr ""
 
 #, python-format
 msgid ""
 "Target file %s.ts already exist.\n"
 "Do you want to replace it?"
 msgstr ""
-"Hedefte %s.ts dosyası zaten mevcut.\n"
-"Üzerine yazmak istiyor musunuz?"
 
 #, python-format
 msgid "The movie is moved in the background from %s to %s."
-msgstr "Film arkaplanda %s konumundan %s konumuna taşınıyor."
+msgstr ""
 
 msgid "The target directory is not found. The file is not renamed."
-msgstr "Hedef klasör bulunamadı. Dosya adı değiştirilmedi."
+msgstr ""
 
 msgid "Title"
-msgstr "Başlık"
+msgstr ""
 
 msgid "change name..."
-msgstr "Film adını değiştirin, taşıyın..."
+msgstr ""

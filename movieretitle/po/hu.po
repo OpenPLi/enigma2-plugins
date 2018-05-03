@@ -1,71 +1,66 @@
-# English translations for tuxbox-enigma package.
-# Copyright (C) 2005 THE tuxbox-enigma'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the tuxbox-enigma package.
-# Automatically generated, 2005.
+# Hungarian translations for enigma package.
+# Copyright (C) 2018 THE enigma'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the enigma package.
+# Automatically generated, 2018.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
+"Project-Id-Version: enigma 2-plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-06-19 22:55+0400\n"
-"PO-Revision-Date: 2012-06-24 22:48+0100\n"
-"Last-Translator: robertut <robertut@yahoo.com>\n"
+"POT-Creation-Date: 2018-05-03 11:46+0200\n"
+"PO-Revision-Date: 2018-05-03 11:46+0200\n"
+"Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
+"Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Poedit-Bookmarks: -1,-1,-1,706,-1,-1,-1,-1,-1,-1\n"
-"X-Poedit-Language: Hungarian\n"
-"X-Poedit-Country: HUNGARY\n"
 
 msgid "Cancel"
-msgstr "Mégse"
+msgstr ""
 
 msgid "Choose target folder"
-msgstr "Válassza ki a célmappaat"
+msgstr ""
 
 msgid "Description"
-msgstr "Leírás"
-
-msgid "Edit title"
-msgstr "Cím szerkesztése"
+msgstr ""
 
 #, python-format
 msgid "Failed to move the movie %s to %s in the background"
-msgstr "A felvétel áthelyezése %s-ból %s-be a háttérben sikertelen volt."
+msgstr ""
 
 msgid "Filename"
-msgstr "Fájlnév"
+msgstr ""
 
 msgid "Location"
-msgstr "Pozíció"
+msgstr ""
 
-msgid "Name and description input"
-msgstr "Név és leírás bevitel"
+msgid "Name and Description Input"
+msgstr ""
 
 msgid "OK"
-msgstr "OK"
+msgstr ""
 
 #, python-format
 msgid "Successfully moved the movie %s"
-msgstr "A(z) %s felvétel sikeresen áthelyezve"
+msgstr ""
 
 #, python-format
 msgid ""
 "Target file %s.ts already exist.\n"
 "Do you want to replace it?"
 msgstr ""
-"A célfájl %s.ts már létezik.\n"
-"Ki szeretné cserélni erre?"
 
 #, python-format
 msgid "The movie is moved in the background from %s to %s."
-msgstr "A felvétel áthelyezése %s-ból %s-be a háttérben folyamatban van."
+msgstr ""
 
 msgid "The target directory is not found. The file is not renamed."
-msgstr "A célmappa nem található. A fájl nem lett átnevezve."
+msgstr ""
 
 msgid "Title"
-msgstr "Cím"
+msgstr ""
 
+msgid "change name..."
+msgstr ""
