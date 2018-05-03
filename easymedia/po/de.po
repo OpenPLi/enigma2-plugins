@@ -1,174 +1,205 @@
+# German translations for enigma package.
+# Copyright (C) 2018 THE enigma'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the enigma package.
+# Automatically generated, 2018.
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: EasyMedia\n"
+"Project-Id-Version: enigma 2-plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-09-24 16:10+0200\n"
-"PO-Revision-Date: 2011-01-11 09:41+0100\n"
-"Last-Translator: \n"
+"POT-Creation-Date: 2018-05-03 11:46+0200\n"
+"PO-Revision-Date: 2018-05-03 11:46+0200\n"
+"Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-
-msgid "MerlinMusicPlayer"
-msgstr "MerlinMusicPlayer"
-
-msgid "Enabled"
-msgstr "Eingeschaltet"
-
-msgid "Not easy way to start EasyMedia"
-msgstr "Der schwere Weg EasyMedia zu starten"
-
-msgid "Music player:"
-msgstr "Musik Player:"
-
-msgid "Files browser:"
-msgstr "Datei Browser:"
-
-msgid "Show bookmarks:"
-msgstr "Lesezeichen zeigen:"
-
-msgid "YouTube player:"
-msgstr "YouTube Player:"
-
-msgid "VLC player:"
-msgstr "VLC Player:"
-
-msgid "DVD player:"
-msgstr "DVD Player:"
-
-msgid "Weather plugin:"
-msgstr "Wetter Plugin:"
-
-msgid "NetRadio player:"
-msgstr "Internet Radio-Player:"
-
-msgid "Show Merlin-iDream:"
-msgstr "Merlin iDream zeigen:"
-
-msgid "ZDFmediathek player:"
-msgstr "ZDFmediathek Player:"
-
-msgid "Movies"
-msgstr "Filme"
-
-msgid "Bookmarks"
-msgstr "Lesezeichen"
-
-msgid "Pictures"
-msgstr "Bilder"
-
-msgid "Music"
-msgstr "Musik"
-
-msgid "DVD Player"
-msgstr "DVD Player"
-
-msgid "Weather"
-msgstr "Wetter"
-
-msgid "Files"
-msgstr "Dateien"
-
-msgid "SHOUTcast"
-msgstr "SHOUTcast"
-
-msgid "iDream"
-msgstr "iDream"
-
-msgid "MyTube Player"
-msgstr "MyTube Player"
-
-msgid "VLC Player"
-msgstr "VLC Player"
-
-msgid "ZDFmediathek"
-msgstr "ZDFmediathek"
-
-msgid "Filebrowser"
-msgstr "Datei Browser"
-
-msgid "DreamExplorer"
-msgstr "DreamExplorer"
-
-msgid "Picture-player is not installed!"
-msgstr "Keine Bildbetrachter installiert!"
-
-msgid "No Music-Player installed!"
-msgstr "Keine Musik Player installiert!"
-
-msgid "No File-Manager installed!"
-msgstr "Keine Datei-Manager installiert!"
-
-msgid "Weather Plugin is not installed!"
-msgstr "Wetter Plugin ist nicht  installiert!"
-
-msgid "DVDPlayer Plugin is not installed!"
-msgstr "DVD Player ist nicht  installiert!"
-
-msgid "MyTube Plugin is not installed!"
-msgstr "MyTube ist nich installiert!"
-
-msgid "SHOUTcast Plugin is not installed!"
-msgstr "SHOUTcast Plugin ist nicht  installiert!"
-
-msgid "ZDFmediathek Plugin is not installed!"
-msgstr "ZDFmediathek Plugin ist nicht  installiert!"
-
-msgid "VLC Player is not installed!"
-msgstr "VLC Player ist nicht  installiert!"
-
-msgid "Merlin iDream is not installed!"
-msgstr "Merlin iDream ist nicht  installiert!"
-
-msgid "EasyMedia settings..."
-msgstr "EasyMedia Einstellungen..."
-
-msgid "Select bookmark..."
-msgstr "Lesezeichen selektieren..."
-
-msgid "Tv/Radio"
-msgstr "TV/Radio"
-
-msgid "Show tv/radio switch:"
-msgstr "Tv/Radio Umschalter zeigen:"
-
-msgid "TV-mode"
-msgstr "TV-Modus"
-
-msgid "Radio-mode"
-msgstr "Radio-Modus"
-
-msgid "Nothing"
-msgstr "Abbrechen"
-
-msgid "MyVideo Player is not installed!"
-msgstr "MyVideo Player ist nicht  installiert!"
-
-msgid "MyVideo"
-msgstr "MyVideo"
-
-msgid "MyVideo player:"
-msgstr "MyVideo Player:"
-
-msgid "Add/remove plugin"
-msgstr "Plugin hinzufügen/entfernen"
-
-msgid " removed from EasyMedia"
-msgstr " vom EasyMedia entfernt"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid " added to EasyMedia"
-msgstr " in EasyMedia aufgenohmen"
+msgstr ""
 
-msgid "VideoDB is not installed!"
-msgstr "VideoDB ist nicht  installiert!"
+msgid " removed from EasyMedia"
+msgstr ""
+
+#, python-format
+msgid "%s (%s)\n"
+msgstr ""
+
+msgid "Add/remove plugin"
+msgstr ""
+
+msgid "Bookmarks"
+msgstr ""
+
+msgid "DVD Player"
+msgstr ""
+
+msgid "DVD player:"
+msgstr ""
+
+msgid "DVDPlayer Plugin is not installed!"
+msgstr ""
+
+msgid "Disabled"
+msgstr ""
+
+msgid "DreamExplorer"
+msgstr ""
+
+msgid "EasyMedia settings..."
+msgstr ""
+
+msgid "Enabled"
+msgstr ""
+
+msgid "Filebrowser"
+msgstr ""
+
+msgid "Files"
+msgstr ""
+
+msgid "Files browser:"
+msgstr ""
+
+msgid "MediaPlayer"
+msgstr ""
+
+msgid "Merlin iDream is not installed!"
+msgstr ""
+
+msgid "MerlinMusicPlayer"
+msgstr ""
+
+msgid "Movies"
+msgstr ""
+
+msgid "Music"
+msgstr ""
+
+msgid "Music player:"
+msgstr ""
+
+msgid "MyTube Player"
+msgstr ""
+
+msgid "MyTube Plugin is not installed!"
+msgstr ""
+
+msgid "MyVideo"
+msgstr ""
+
+msgid "MyVideo Player is not installed!"
+msgstr ""
+
+msgid "MyVideo player:"
+msgstr ""
+
+msgid "NetRadio player:"
+msgstr ""
+
+msgid "No File-Manager installed!"
+msgstr ""
+
+msgid "No Music-Player installed!"
+msgstr ""
+
+msgid "Not easy way to start EasyMedia"
+msgstr ""
+
+msgid "Nothing"
+msgstr ""
+
+msgid "Picture-player is not installed!"
+msgstr ""
 
 msgid "PicturePlayer:"
-msgstr "Bildbetrachter"
+msgstr ""
+
+msgid "Pictures"
+msgstr ""
+
+msgid "Radio"
+msgstr ""
+
+msgid "Radio-mode"
+msgstr ""
+
+msgid "SHOUTcast"
+msgstr ""
+
+msgid "SHOUTcast Plugin is not installed!"
+msgstr ""
+
+msgid "Select bookmark..."
+msgstr ""
+
+msgid "Show Merlin-iDream:"
+msgstr ""
+
+msgid "Show bookmarks:"
+msgstr ""
+
+msgid "Show tv/radio switch:"
+msgstr ""
+
+msgid "Some plugins are not available:\n"
+msgstr ""
+
+msgid "TV-mode"
+msgstr ""
+
+msgid "Timer"
+msgstr ""
+
+msgid "Timer:"
+msgstr ""
+
+msgid "TuxCom"
+msgstr ""
+
+msgid "Tv/Radio"
+msgstr ""
+
+msgid "VLC Player"
+msgstr ""
+
+msgid "VLC Player is not installed!"
+msgstr ""
+
+msgid "VLC player:"
+msgstr ""
 
 msgid "Video database:"
-msgstr "Video Datenbank"
+msgstr ""
 
 msgid "VideoDB"
-msgstr "Video-DB"
+msgstr ""
 
+msgid "VideoDB is not installed!"
+msgstr ""
+
+msgid "Weather"
+msgstr ""
+
+msgid "Weather Plugin is not installed!"
+msgstr ""
+
+msgid "Weather plugin:"
+msgstr ""
+
+msgid "YouTube player:"
+msgstr ""
+
+msgid "ZDFmediathek"
+msgstr ""
+
+msgid "ZDFmediathek Plugin is not installed!"
+msgstr ""
+
+msgid "ZDFmediathek player:"
+msgstr ""
+
+msgid "iDream"
+msgstr ""
