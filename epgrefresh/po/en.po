@@ -1,0 +1,704 @@
+# English translations for enigma package.
+# Copyright (C) 2018 THE enigma'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the enigma package.
+# Automatically generated, 2018.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: enigma 2-plugins\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-05-03 14:00+0200\n"
+"PO-Revision-Date: 2018-05-03 14:00+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#, python-format
+msgid ""
+"\n"
+"%d more services."
+msgstr ""
+"\n"
+"%d more services."
+
+msgid "   (AutoZap)"
+msgstr "   (AutoZap)"
+
+msgid "Adding schedule..."
+msgstr "Adding schedule..."
+
+msgid ""
+"After a successful refresh the AutoTimer will automatically search for new "
+"matches if this is enabled."
+msgstr ""
+"After a successful refresh the AutoTimer will automatically search for new "
+"matches if this is enabled."
+
+msgid "Are you sure you want to load the EPG data from:\n"
+msgstr "Are you sure you want to load the EPG data from:\n"
+
+msgid "Are you sure you want to reload the EPG data from:\n"
+msgstr "Are you sure you want to reload the EPG data from:\n"
+
+msgid "Are you sure you want to save and load the EPG data from:\n"
+msgstr "Are you sure you want to save and load the EPG data from:\n"
+
+msgid "Are you sure you want to save the EPG cache to:\n"
+msgstr "Are you sure you want to save the EPG cache to:\n"
+
+msgid "AutoZap"
+msgstr "AutoZap"
+
+msgid "AutoZap for refreshing EPG data"
+msgstr "AutoZap for refreshing EPG data"
+
+msgid ""
+"Automated refresh will start after this time of day, but before the time "
+"specified in next setting."
+msgstr ""
+"Automated refresh will start after this time of day, but before the time "
+"specified in next setting."
+
+msgid ""
+"Automated refresh will start before this time of day, but after the time "
+"specified in previous setting."
+msgstr ""
+"Automated refresh will start before this time of day, but after the time "
+"specified in previous setting."
+
+msgid "Automatic EPG loading from current cache file."
+msgstr "Automatic EPG loading from current cache file."
+
+msgid "Automatic load period (in hours)"
+msgstr "Automatic load period (in hours)"
+
+msgid "Automatic save period (in hours)"
+msgstr "Automatic save period (in hours)"
+
+msgid "Automatically load EPG"
+msgstr "Automatically load EPG"
+
+msgid "Automatically refresh EPG"
+msgstr "Automatically refresh EPG"
+
+msgid "Automatically restore EPG backup on boot"
+msgstr "Automatically restore EPG backup on boot"
+
+msgid "Automatically save EPG"
+msgstr "Automatically save EPG"
+
+msgid "Background only"
+msgstr "Background only"
+
+msgid ""
+"Backup file is corrupt!\n"
+"Backup file will be deleted!"
+msgstr ""
+"Backup file is corrupt!\n"
+"Backup file will be deleted!"
+
+msgid "Backup file is not found!"
+msgstr "Backup file is not found!"
+
+msgid "Backup file load!"
+msgstr "Backup file load!"
+
+msgid "Bouquets"
+msgstr "Bouquets"
+
+msgid "Cancel"
+msgstr "Cancel"
+
+msgid "Channels"
+msgstr "Channels"
+
+msgid "Choice days for refresh"
+msgstr "Choice days for refresh"
+
+msgid "Clear EPG"
+msgstr "Clear EPG"
+
+msgid "Clear all EPG"
+msgstr "Clear all EPG"
+
+msgid "Clear only epg.dat and epg.dat.backup"
+msgstr "Clear only epg.dat and epg.dat.backup"
+
+msgid "Clear only in memory (RAM) EPG"
+msgstr "Clear only in memory (RAM) EPG"
+
+msgid "Configuration save / load EPG"
+msgstr "Configuration save / load EPG"
+
+msgid "Configuration..."
+msgstr "Configuration..."
+
+msgid ""
+"Configure EPG load interval, if enabled. This is an option for experienced "
+"users."
+msgstr ""
+"Configure EPG load interval, if enabled. This is an option for experienced "
+"users."
+
+msgid "Configure EPG save interval, if enabled."
+msgstr "Configure EPG save interval, if enabled."
+
+msgid "Create a backup cache file, after manually or automatically saving EPG."
+msgstr ""
+"Create a backup cache file, after manually or automatically saving EPG."
+
+msgid "Create backup when saving EPG"
+msgstr "Create backup when saving EPG"
+
+msgid "Current EPG cachefile:"
+msgstr "Current EPG cachefile:"
+
+msgid "Days Profile"
+msgstr "Days Profile"
+
+msgid "Delay if not in standby (in minutes)"
+msgstr "Delay if not in standby (in minutes)"
+
+msgid ""
+"Don't wait for the receiver to go into standby when starting a refresh cycle."
+msgstr ""
+"Don't wait for the receiver to go into standby when starting a refresh cycle."
+
+msgid "Duration to show each service (in seconds) for 'AutoZap'"
+msgstr "Duration to show each service (in seconds) for 'AutoZap'"
+
+msgid "EPG Cache Check"
+msgstr "EPG Cache Check"
+
+msgid "EPG cache file filename"
+msgstr "EPG cache file filename"
+
+msgid "EPG cache file path"
+msgstr "EPG cache file path"
+
+msgid "EPG refresh auto-start earliest (hh:mm)"
+msgstr "EPG refresh auto-start earliest (hh:mm)"
+
+msgid "EPG refresh auto-start latest (hh:mm)"
+msgstr "EPG refresh auto-start latest (hh:mm)"
+
+msgid "EPG refresh finished."
+msgstr "EPG refresh finished."
+
+msgid "EPG refresh started in background."
+msgstr "EPG refresh started in background."
+
+msgid "EPG refresh starts scanning channels."
+msgstr "EPG refresh starts scanning channels."
+
+msgid "EPG-refresh now"
+msgstr "EPG-refresh now"
+
+msgid "EPGRefresh"
+msgstr "EPGRefresh"
+
+msgid "EPGRefresh Configuration"
+msgstr "EPGRefresh Configuration"
+
+msgid "EPGRefresh Services"
+msgstr "EPGRefresh Services"
+
+msgid "EPGRefresh configuration"
+msgstr "EPGRefresh configuration"
+
+msgid ""
+"EPGRefresh needs to be explicitly started using the yellow button in this "
+"menu if this option is not enabled"
+msgstr ""
+"EPGRefresh needs to be explicitly started using the yellow button in this "
+"menu if this option is not enabled"
+
+msgid "Edit Services"
+msgstr "Edit Services"
+
+msgid "Edit Services to refresh"
+msgstr "Edit Services to refresh"
+
+msgid "Editing"
+msgstr "Editing"
+
+msgid "Enable automatic EPG save interval."
+msgstr "Enable automatic EPG save interval."
+
+msgid "Enable automatic zapping of all services in the current services list."
+msgstr "Enable automatic zapping of all services in the current services list."
+
+msgid ""
+"Enable this item to flush all EPG data before starting a new EPG refresh "
+"cycle"
+msgstr ""
+"Enable this item to flush all EPG data before starting a new EPG refresh "
+"cycle"
+
+msgid ""
+"Enable this item to wake up the receiver from deep standby (if possible)."
+msgstr ""
+"Enable this item to wake up the receiver from deep standby (if possible)."
+
+msgid ""
+"Enable this to show an informational message at the start and completion of "
+"the refresh."
+msgstr ""
+"Enable this to show an informational message at the start and completion of "
+"the refresh."
+
+msgid ""
+"Enable this to show the EPGRefresh configuration menu in the extension menu."
+msgstr ""
+"Enable this to show the EPGRefresh configuration menu in the extension menu."
+
+msgid "Extend the list of services to refresh by those your AutoTimers use?"
+msgstr "Extend the list of services to refresh by those your AutoTimers use?"
+
+msgid "Fake recording"
+msgstr "Fake recording"
+
+msgid "Flush EPG before refresh"
+msgstr "Flush EPG before refresh"
+
+msgid "Following Services have to be scanned:"
+msgstr "Following Services have to be scanned:"
+
+msgid "Force scan even if receiver is in use"
+msgstr "Force scan even if receiver is in use"
+
+msgid "Foreground also"
+msgstr "Foreground also"
+
+msgid "Friday"
+msgstr "Friday"
+
+msgid ""
+"If \"Run AutoTimer after refresh\" and \"Shutdown after EPG refresh\" "
+"enabled and use \"Label series\" for match, set long timeout."
+msgstr ""
+"If \"Run AutoTimer after refresh\" and \"Shutdown after EPG refresh\" "
+"enabled and use \"Label series\" for match, set long timeout."
+
+msgid ""
+"If enabled, show 'EPGRefresh now' in main menu when currently no EPGRefresh "
+"is running."
+msgstr ""
+"If enabled, show 'EPGRefresh now' in main menu when currently no EPGRefresh "
+"is running."
+
+msgid ""
+"If enabled, show 'Stop running EPGRefresh' in main menu when EPGPRefresh is "
+"running."
+msgstr ""
+"If enabled, show 'Stop running EPGRefresh' in main menu when EPGPRefresh is "
+"running."
+
+msgid ""
+"If you want to refresh the EPG in background, you can choose the method "
+"which best suits your needs here, e.g. hidden, fake recording or regular "
+"Picture in Picture."
+msgstr ""
+"If you want to refresh the EPG in background, you can choose the method "
+"which best suits your needs here, e.g. hidden, fake recording or regular "
+"Picture in Picture."
+
+msgid "Inherit Services from AutoTimer"
+msgstr "Inherit Services from AutoTimer"
+
+msgid "Input EPG Cache path"
+msgstr "Input EPG Cache path"
+
+#, python-format
+msgid "Last refresh was %s"
+msgstr "Last refresh was %s"
+
+msgid "Load EPG"
+msgstr "Load EPG"
+
+msgid "Load EPG from backup cache file when booting."
+msgstr "Load EPG from backup cache file when booting."
+
+msgid "Main Picture"
+msgstr "Main Picture"
+
+msgid "Manual EPG"
+msgstr "Manual EPG"
+
+msgid "Manually clear EPG (choose method)."
+msgstr "Manually clear EPG (choose method)."
+
+msgid "Manually load EPG"
+msgstr "Manually load EPG"
+
+msgid "Manually load EPG from current cache file."
+msgstr "Manually load EPG from current cache file."
+
+msgid "Manually load EPG from current cachefile."
+msgstr "Manually load EPG from current cachefile."
+
+msgid "Manually reload EPG"
+msgstr "Manually reload EPG"
+
+msgid "Manually restore EPG from backup cache file."
+msgstr "Manually restore EPG from backup cache file."
+
+msgid "Manually save EPG"
+msgstr "Manually save EPG"
+
+msgid "Manually save EPG to current cache file."
+msgstr "Manually save EPG to current cache file."
+
+msgid "Monday"
+msgstr "Monday"
+
+msgid "New"
+msgstr "New"
+
+msgid "OK"
+msgstr "OK"
+
+msgid "PiP available now."
+msgstr "PiP available now."
+
+msgid "Picture in Picture"
+msgstr "Picture in Picture"
+
+msgid "Picture in Picture (hidden)"
+msgstr "Picture in Picture (hidden)"
+
+msgid "Please don't use PiP in the meantime!"
+msgstr "Please don't use PiP in the meantime!"
+
+msgid "Press OK"
+msgstr "Press OK"
+
+msgid "Press the OK button to open the save / load EPG (+ configuration) menu."
+msgstr ""
+"Press the OK button to open the save / load EPG (+ configuration) menu."
+
+msgid "Really close without saving settings?"
+msgstr "Really close without saving settings?"
+
+msgid "Refresh EPG automatically"
+msgstr "Refresh EPG automatically"
+
+msgid "Refresh EPG using"
+msgstr "Refresh EPG using"
+
+msgid "Refresh now"
+msgstr "Refresh now"
+
+msgid "Refresh-EPG / AutoZap"
+msgstr "Refresh-EPG / AutoZap"
+
+msgid "Refreshing"
+msgstr "Refreshing"
+
+msgid "Reload EPG"
+msgstr "Reload EPG"
+
+msgid "Reloading EPG Cache..."
+msgstr "Reloading EPG Cache..."
+
+msgid "Restart enigma2 to effectuate."
+msgstr "Restart enigma2 to effectuate."
+
+msgid "Restore EPG backup"
+msgstr "Restore EPG backup"
+
+msgid "Return to TV viewing"
+msgstr "Return to TV viewing"
+
+msgid "Run AutoTimer after refresh"
+msgstr "Run AutoTimer after refresh"
+
+msgid "Saturday"
+msgstr "Saturday"
+
+msgid "Save"
+msgstr "Save"
+
+msgid "Save EPG"
+msgstr "Save EPG"
+
+msgid "Save EPG after refresh"
+msgstr "Save EPG after refresh"
+
+msgid "Save EPG in the cache file after refresh is completed."
+msgstr "Save EPG in the cache file after refresh is completed."
+
+msgid "Saving EPG Cache..."
+msgstr "Saving EPG Cache..."
+
+msgid "Select action after refresh:"
+msgstr "Select action after refresh:"
+
+msgid "Select action:"
+msgstr "Select action:"
+
+msgid "Select bouquet to refresh"
+msgstr "Select bouquet to refresh"
+
+msgid "Select channel to refresh"
+msgstr "Select channel to refresh"
+
+msgid "Select mode the refresh for services/bouquets parental control."
+msgstr "Select mode the refresh for services/bouquets parental control."
+
+msgid "Select options"
+msgstr "Select options"
+
+msgid "Select the days of the week for automatic refresh."
+msgstr "Select the days of the week for automatic refresh."
+
+msgid "Select the file name for the EPG cache file."
+msgstr "Select the file name for the EPG cache file."
+
+msgid ""
+"Select the path to EPG cache file. Don't use the internal flash if not "
+"necessary!"
+msgstr ""
+"Select the path to EPG cache file. Don't use the internal flash if not "
+"necessary!"
+
+msgid "Select this item to add services to the EPGRefresh."
+msgstr "Select this item to add services to the EPGRefresh."
+
+msgid "Setup save / load EPG"
+msgstr "Setup save / load EPG"
+
+msgid "Show \"add to EPGRefresh\" in"
+msgstr "Show \"add to EPGRefresh\" in"
+
+msgid "Show 'EPGRefresh now' in main menu"
+msgstr "Show 'EPGRefresh now' in main menu"
+
+msgid "Show 'Stop running EPGRefresh' in main menu"
+msgstr "Show 'Stop running EPGRefresh' in main menu"
+
+msgid "Show entry 'AutoZap' in extensions menu"
+msgstr "Show entry 'AutoZap' in extensions menu"
+
+msgid "Show entry 'Manually change EPG' in main menu"
+msgstr "Show entry 'Manually change EPG' in main menu"
+
+msgid "Show in extensions menu"
+msgstr "Show in extensions menu"
+
+msgid "Show popup when refresh starts or ends"
+msgstr "Show popup when refresh starts or ends"
+
+msgid "Shutdown after EPG refresh"
+msgstr "Shutdown after EPG refresh"
+
+msgid "Shutdown after EPG refresh enabled in setup..."
+msgstr "Shutdown after EPG refresh enabled in setup..."
+
+msgid "Size: "
+msgstr "Size: "
+
+msgid "Skip protected Services"
+msgstr "Skip protected Services"
+
+msgid "Stop Running EPG-refresh"
+msgstr "Stop Running EPG-refresh"
+
+msgid "Stop Running EPG-refresh?\n"
+msgstr "Stop Running EPG-refresh?\n"
+
+msgid "Sunday"
+msgstr "Sunday"
+
+msgid "The duration that will be waited for the receiver to go into standby."
+msgstr "The duration that will be waited for the receiver to go into standby."
+
+msgid "The same functions are used in Menu -> System -> EPG settings!"
+msgstr "The same functions are used in Menu -> System -> EPG settings!"
+
+msgid "The same functions are used in plugin EPGD!!"
+msgstr "The same functions are used in plugin EPGD!!"
+
+msgid "This is the duration each service will be shown in AutoZap mode."
+msgstr "This is the duration each service will be shown in AutoZap mode."
+
+msgid ""
+"This is the duration each service/channel will be tuned to during a refresh."
+msgstr ""
+"This is the duration each service/channel will be tuned to during a refresh."
+
+msgid ""
+"This might have been an automated bootup to refresh the EPG. For this to "
+"happen it is recommended to put the receiver to Standby.\n"
+"Do you want to do this now?"
+msgstr ""
+"This might have been an automated bootup to refresh the EPG. For this to "
+"happen it is recommended to put the receiver to Standby.\n"
+"Do you want to do this now?"
+
+msgid "Thursday"
+msgstr "Thursday"
+
+msgid "Timeout shutdown after refresh for SeriesPlugin (min)"
+msgstr "Timeout shutdown after refresh for SeriesPlugin (min)"
+
+msgid "Timespan to remain on service (in seconds)"
+msgstr "Timespan to remain on service (in seconds)"
+
+msgid "Tuesday"
+msgstr "Tuesday"
+
+msgid "Version"
+msgstr "Version"
+
+msgid "Wake up from deep standby"
+msgstr "Wake up from deep standby"
+
+msgid "Wednesday"
+msgstr "Wednesday"
+
+msgid ""
+"Whether the receiver should go into deep standby after refresh is completed."
+msgstr ""
+"Whether the receiver should go into deep standby after refresh is completed."
+
+msgid ""
+"You may not use this settings!\n"
+"At least one day a week should be included!"
+msgstr ""
+"You may not use this settings!\n"
+"At least one day a week should be included!"
+
+msgid "add service to EPGRefresh"
+msgstr "add service to EPGRefresh"
+
+msgid "add to EPGRefresh"
+msgstr "add to EPGRefresh"
+
+msgid "channel selection"
+msgstr "channel selection"
+
+msgid "delete"
+msgstr "delete"
+
+msgid "event info"
+msgstr "event info"
+
+msgid "event info / channel selection"
+msgstr "event info / channel selection"
+
+msgid "manual save/load EPG"
+msgstr "manual save/load EPG"
+
+msgid "never"
+msgstr "never"
+
+msgid "nowhere"
+msgstr "nowhere"
+
+msgid "Congratulations"
+msgstr "Congratulations"
+
+msgid "EPGRefresh Help"
+msgstr "EPGRefresh Help"
+
+msgid "Editing the service list"
+msgstr "Editing the service list"
+
+msgid "The configuration menu"
+msgstr "The configuration menu"
+
+msgid ""
+"This help screen is supposed to give you a quick look at everything "
+"EPGRefresh has to offer.\n"
+"You can abort it at any time by pressing the RED or EXIT button on your "
+"remote control or bring it up at a later point by pressing the HELP button "
+"from the configuration menu (more on that later).\n"
+"\n"
+"\n"
+"But you really should consider to take the few minutes it takes to read "
+"these help pages."
+msgstr ""
+"This help screen is supposed to give you a quick look at everything "
+"EPGRefresh has to offer.\n"
+"You can abort it at any time by pressing the RED or EXIT button on your "
+"remote control or bring it up at a later point by pressing the HELP button "
+"from the configuration menu (more on that later).\n"
+"\n"
+"\n"
+"But you really should consider to take the few minutes it takes to read "
+"these help pages."
+
+msgid ""
+"This is the entry point of EPGRefresh. From this menu you can configure "
+"every aspect of the plugin and start a manual refresh of the EPG.\n"
+"The configuration options each have an explaination which is supposed to "
+"help you to understand their effects better. Please give reading them a try, "
+"they can save you a lot of time.\n"
+"\n"
+"Using the YELLOW button you can start a refresh manually and the INFO button "
+"brings up the date the last refresh was completed successfully.\n"
+"The BLUE key opens the service editor (next page)."
+msgstr ""
+"This is the entry point of EPGRefresh. From this menu you can configure "
+"every aspect of the plugin and start a manual refresh of the EPG.\n"
+"The configuration options each have an explaination which is supposed to "
+"help you to understand their effects better. Please give reading them a try, "
+"they can save you a lot of time.\n"
+"\n"
+"Using the YELLOW button you can start a refresh manually and the INFO button "
+"brings up the date the last refresh was completed successfully.\n"
+"The BLUE key opens the service editor (next page)."
+
+msgid "Welcome to EPGRefresh"
+msgstr "Welcome to EPGRefresh"
+
+msgid ""
+"While the screen does not immediately show it, it does have a lot to offer. "
+"The topmost line allows you to choose between the editor for channels and "
+"bouquets and the following lines contain the channels/bouquets you chose to "
+"refresh.\n"
+"\n"
+"You can use the BLUE button to add a new entry to the list or the YELLOW "
+"button to remove an existing one.\n"
+"\n"
+"\n"
+"For most people it should be sufficient to add the \"Favourites\" bouquet by "
+"selecting \"Bouquets\" in the first line and by adding it using the BLUE "
+"button."
+msgstr ""
+"While the screen does not immediately show it, it does have a lot to offer. "
+"The topmost line allows you to choose between the editor for channels and "
+"bouquets and the following lines contain the channels/bouquets you chose to "
+"refresh.\n"
+"\n"
+"You can use the BLUE button to add a new entry to the list or the YELLOW "
+"button to remove an existing one.\n"
+"\n"
+"\n"
+"For most people it should be sufficient to add the \"Favourites\" bouquet by "
+"selecting \"Bouquets\" in the first line and by adding it using the BLUE "
+"button."
+
+msgid ""
+"You now know how to do your first steps in EPGRefresh.\n"
+"\n"
+"As a final note I want to hint you at the fact that this plugin will not do "
+"anything on its own without YOU telling it to. So if you want the refresh to "
+"happen automatically in the background you need to configure the plugin to "
+"do so.\n"
+"This was not done to cause you any inconvenience but rather to give you the "
+"freedom of choice."
+msgstr ""
+"You now know how to do your first steps in EPGRefresh.\n"
+"\n"
+"As a final note I want to hint you at the fact that this plugin will not do "
+"anything on its own without YOU telling it to. So if you want the refresh to "
+"happen automatically in the background you need to configure the plugin to "
+"do so.\n"
+"This was not done to cause you any inconvenience but rather to give you the "
+"freedom of choice."
