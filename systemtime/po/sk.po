@@ -1,145 +1,215 @@
+# Slovak translations for enigma package.
+# Copyright (C) 2018 THE enigma'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the enigma package.
+# Automatically generated, 2018.
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: Xtrend\n"
+"Project-Id-Version: enigma 2-plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-12-01 16:48+0100\n"
-"PO-Revision-Date: 2014-11-22 19:38+0100\n"
-"Last-Translator: dym1 <dusantvrdy1@gmail.com>\n"
-"Language-Team: dym1\n"
+"POT-Creation-Date: 2018-05-03 11:46+0200\n"
+"PO-Revision-Date: 2018-05-03 11:46+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
 "Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.4\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
-msgid "'dvbdate' not installed !"
-msgstr "'dvbdate' nenainštalovaný !"
+msgid "'dvbdate' is not installed!"
+msgstr ""
 
-msgid "'ntpdate' not installed !"
-msgstr "'ntpdate' nenainštalovaný !"
+msgid "'ntpdate' is not installed!"
+msgstr ""
 
 msgid "1 hour"
-msgstr "1 hodinu"
+msgstr ""
 
 msgid "12 hours"
-msgstr "12 hodín"
+msgstr ""
 
-msgid "15 min"
-msgstr "15 minút"
+msgid "15 mins"
+msgstr ""
 
 msgid "2 hours"
-msgstr "2 hodiny"
+msgstr ""
 
 msgid "24 hours"
-msgstr "24 hodín"
+msgstr ""
 
-msgid "30 min"
-msgstr "30 minút"
+msgid "30 mins"
+msgstr ""
 
 msgid "4 hours"
-msgstr "4 hodiny"
+msgstr ""
 
 msgid "48 hours"
-msgstr "48 hodín"
+msgstr ""
 
-msgid "5 min"
-msgstr "5 minút"
+msgid "5 mins"
+msgstr ""
 
-msgid "Apply the new System time?"
-msgstr "Použiť nový čas systému ?"
+msgid ""
+"After receiver's boot, wait for the specified delay before connecting to the "
+"NTP server. This allows the Wi-Fi connection to be fully established."
+msgstr ""
+
+msgid "Apply new system time?"
+msgstr ""
 
 msgid "Cancel"
-msgstr "Zrušiť"
+msgstr ""
 
-msgid "Change system time was canceled, because %s"
-msgstr "Zmena času systému bola zrušená, pretože %s"
+msgid "Change system time in enigma2 box"
+msgstr ""
 
-msgid "Choice transponder"
-msgstr "Voľba transpondéru"
+msgid "Delay (in seconds) when using Wi-Fi"
+msgstr ""
 
-msgid "Domain name or IP (pool.ntp.org)"
-msgstr "Meno domény alebo IP (pool.ntp.org)"
+msgid "Enter a user defined date and time."
+msgstr ""
 
-msgid "Internet Time"
-msgstr "Internetový čas"
+msgid "Enter new system time and press OK!"
+msgstr ""
 
-msgid "Please Enter new System time and press OK !"
-msgstr "Prosím, zadajte nový čas systému a stlačte OK !"
+msgid "Get current time from the specified DVB transponder."
+msgstr ""
+
+msgid "Get current time from the specified NTP server."
+msgstr ""
+
+#, python-format
+msgid "Invalid input in day: %s"
+msgstr ""
+
+#, python-format
+msgid "Invalid input in hour: %s"
+msgstr ""
+
+#, python-format
+msgid "Invalid input in minute: %s"
+msgstr ""
+
+#, python-format
+msgid "Invalid input in month: %s"
+msgstr ""
+
+#, python-format
+msgid "Invalid input in year: %s"
+msgstr ""
+
+msgid "Invalid time format."
+msgstr ""
+
+msgid "NTP"
+msgstr ""
+
+msgid "NTP cold start"
+msgstr ""
+
+msgid "NTP server"
+msgstr ""
+
+msgid "No answer given."
+msgstr ""
+
+msgid "No change detected."
+msgstr ""
+
+msgid "No confirmation given."
+msgstr ""
+
+#, python-format
+msgid ""
+"Old time: %(oldtime)s\n"
+"New time: %(newtime)s\n"
+"\n"
+"Offset: %(offset)s seconds"
+msgstr ""
+
+msgid ""
+"On receiver 'cold start', allow any required time adjustments to be "
+"'stepped'."
+msgstr ""
 
 msgid "Press OK"
-msgstr "Stlačte OK"
+msgstr ""
 
 msgid "Restart GUI"
-msgstr "Reštartovať Enigma2"
+msgstr ""
 
-msgid "Restart the GUI now?"
-msgstr "Reštartovať Enigma2 teraz?"
+msgid "Restart GUI now?"
+msgstr ""
 
 msgid "Save"
-msgstr "Uložiť"
+msgstr ""
+
+msgid "Script 'set-rtctime' not found!"
+msgstr ""
+
+msgid ""
+"Select the preferred method for syncing time on your receiver. Network Time "
+"Protocol requires internet connection. Transponder time might not be very "
+"accurate."
+msgstr ""
+
+msgid "Select transponder"
+msgstr ""
+
+msgid "Set how often the receiver will connect to the NTP server to sync time."
+msgstr ""
 
 msgid "Set system time manually"
-msgstr "Nastaviť systémový čas ručne"
+msgstr ""
 
-msgid "Setup System Time"
-msgstr "Nastaviť systémový čas: "
-
-msgid "Sync NTP cold start"
-msgstr "Synchronizovať čas po zapnutí prijímača"
+msgid ""
+"Set the IP address of the preferred NTP server. Default is pool.ntp.org."
+msgstr ""
 
 msgid "Sync NTP every"
-msgstr "Synchronizovať NTP cez internet každých"
+msgstr ""
 
-msgid "Sync now current transponder"
-msgstr "Synchronizovať teraz z aktuálneho transpondéru"
+msgid "Sync now with NTP server"
+msgstr ""
 
-msgid "Sync now internet"
-msgstr "Synchronizovať NTP teraz cez internet"
+msgid "Sync now with current transponder"
+msgstr ""
 
 msgid "Sync time using"
-msgstr "Synchronizovať čas pomocou"
+msgstr ""
+
+msgid "Syncing with NTP server..."
+msgstr ""
+
+msgid "Syncing with current transponder..."
+msgstr ""
+
+msgid "Syncing... Please wait."
+msgstr ""
 
 msgid "System Time"
-msgstr "Systémový čas"
+msgstr ""
 
-msgid "System time your box"
-msgstr "Systémový čas vášho prijímača"
+msgid "System time setup"
+msgstr ""
 
-msgid "Time sync with DVB..."
-msgstr "Systémový čas z DVB..."
+#, python-format
+msgid ""
+"System time was not applied.\n"
+"%s"
+msgstr ""
 
-msgid "Time sync with NTP..."
-msgstr "Systémový čas z NTP..."
+msgid "Time string too short."
+msgstr ""
 
-msgid "Transponder Time"
-msgstr "Čas z transpondéru"
+msgid "Transponder"
+msgstr ""
 
-msgid "answer is None"
-msgstr "odpoveď je nie"
+msgid "Use RTC time from deep standby"
+msgstr ""
 
-msgid "invalid day %s"
-msgstr "zlý deň %s"
-
-msgid "invalid format"
-msgstr "neplatný formát"
-
-msgid "invalid hour %s"
-msgstr "neplatné hodiny %s"
-
-msgid "invalid minute %s"
-msgstr "neplatné minúty %s"
-
-msgid "invalid month %s"
-msgstr "neplatný mesiac %s"
-
-msgid "invalid year %s"
-msgstr "neplatný rok %s"
-
-msgid "new time string too short"
-msgstr "reťazec nového času je príliš krátky"
-
-msgid "no new time"
-msgstr "žiadny nový čas"
-
-msgid "you were not confirming"
-msgstr "ste nepotvrdili áno"
+msgid ""
+"When the receiver starts from deep standby, use the time provided by the "
+"Real Time Clock, if it appears to be valid."
+msgstr ""
