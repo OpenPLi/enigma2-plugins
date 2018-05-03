@@ -7,10 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-06-19 22:55+0400\n"
+"POT-Creation-Date: 2018-05-03 14:01+0200\n"
 "PO-Revision-Date: 2012-06-24 22:48+0100\n"
 "Last-Translator: robertut <robertut@yahoo.com>\n"
 "Language-Team: none\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -28,9 +29,6 @@ msgstr "Válassza ki a célmappaat"
 msgid "Description"
 msgstr "Leírás"
 
-msgid "Edit title"
-msgstr "Cím szerkesztése"
-
 #, python-format
 msgid "Failed to move the movie %s to %s in the background"
 msgstr "A felvétel áthelyezése %s-ból %s-be a háttérben sikertelen volt."
@@ -41,7 +39,8 @@ msgstr "Fájlnév"
 msgid "Location"
 msgstr "Pozíció"
 
-msgid "Name and description input"
+#, fuzzy
+msgid "Name and Description Input"
 msgstr "Név és leírás bevitel"
 
 msgid "OK"
@@ -69,3 +68,5 @@ msgstr "A célmappa nem található. A fájl nem lett átnevezve."
 msgid "Title"
 msgstr "Cím"
 
+msgid "change name..."
+msgstr ""
