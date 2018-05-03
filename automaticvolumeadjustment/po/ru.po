@@ -1,99 +1,101 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Russian translations for enigma package.
+# Copyright (C) 2018 THE enigma'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the enigma package.
+# Automatically generated, 2018.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
+"Project-Id-Version: enigma 2-plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-27 18:11+0100\n"
-"PO-Revision-Date: 2015-10-03 22:19+0300\n"
+"POT-Creation-Date: 2018-05-03 11:45+0200\n"
+"PO-Revision-Date: 2018-05-03 11:45+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Last-Translator: Dimitrij <Dima-73@inbox.lv>\n"
-"Language-Team: \n"
-"X-Generator: Poedit 1.8.4\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#, python-format
+msgid "%s plugin only this session?"
+msgstr ""
 
 msgid "Add"
-msgstr "Добавить"
+msgstr ""
 
 msgid "Adjustment value"
-msgstr "Значение регулировки"
+msgstr ""
 
 msgid "Automatic Volume Adjustment"
-msgstr "Авторегулировка громкости"
+msgstr ""
 
 msgid "Automatic Volume Adjustment - Config"
-msgstr "Авторегулировка громкости - настройки"
+msgstr ""
 
 msgid "Automatic Volume Adjustment - Entry Config"
-msgstr "Авторегулировка громкости - настройки записи"
+msgstr ""
 
 msgid "Automatic Volume Adjustment - Service Config"
-msgstr "Авторегулировка громкости - настройки сервиса"
+msgstr ""
 
 msgid "Automatic volume adjust"
-msgstr "Авторегулировка громкости"
+msgstr ""
 
 msgid "Cancel"
-msgstr "Отмена"
+msgstr ""
 
 msgid "Channel Selection"
-msgstr "Список каналов"
+msgstr ""
 
 msgid "Default volume adjustment value for AC3/DTS"
-msgstr "Дефолтное значение регулировки для AC3/DTS"
+msgstr ""
 
 msgid "Delete"
-msgstr "Удалить"
-
-msgid "Do you really want to delete this entry?"
-msgstr "Вы действительно хотите удалить эту запись?"
-
-msgid "Edit"
-msgstr "Редактор"
-
-msgid "Enable"
-msgstr "Включить"
-
-msgid "Max. volume for mpeg audio"
-msgstr "Максимальная громкость для mpeg аудио"
-
-msgid "Modus"
-msgstr "Способ"
-
-msgid "OK"
-msgstr "ОК"
-
-msgid "Press OK to select a service"
-msgstr "Нажмите ОК для выбора сервиса"
-
-msgid "Remember service volume value"
-msgstr "Запоминать значение громкости сервиса"
-
-msgid "Servicename"
-msgstr "Имя сервиса"
-
-msgid "Services"
-msgstr "Сервисы"
-
-msgid "Show volumebar when volume-value was changed"
-msgstr "Показать volumebar при смене значения громкости"
-
-msgid "You must select a valid service!"
-msgstr "Вы должны выбрать действительный сервис!"
-
-msgid "toggle on/off plugin only for session"
-msgstr "переключатель плагина вкл/выкл только для этой сессии"
-
-msgid "Show on/off plugin only for session in Audio menu"
-msgstr "Вкл/выкл только для этой сессии в меню аудио"
-
-msgid "%s plugin only this session?"
-msgstr "%s плагин для этой сессии?"
+msgstr ""
 
 msgid "Disable"
-msgstr "Выключить"
+msgstr ""
+
+msgid "Do you really want to delete this entry?"
+msgstr ""
+
+msgid "Edit"
+msgstr ""
+
+msgid "Enable"
+msgstr ""
+
+msgid "Max. volume for mpeg audio"
+msgstr ""
+
+msgid "Modus"
+msgstr ""
+
+msgid "OK"
+msgstr ""
+
+msgid "Press OK to select a service"
+msgstr ""
+
+msgid "Remember service volume value"
+msgstr ""
+
+msgid "Servicename"
+msgstr ""
+
+msgid "Services"
+msgstr ""
+
+msgid "Show on/off plugin only for session in Audio menu"
+msgstr ""
+
+msgid "Show volumebar when volume-value was changed"
+msgstr ""
+
+msgid "You must select a valid service!"
+msgstr ""
+
+msgid "toggle on/off plugin only for session"
+msgstr ""
