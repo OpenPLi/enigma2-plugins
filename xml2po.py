@@ -58,6 +58,7 @@ for arg in sys.argv[1:]:
 			for l in c.split('\n'):
 				print "#. ", l
 		if str(k).strip() != "":
+			k=k.replace('\"', '\\"')
 			print 'msgid "' + str(k) + '"'
 			print 'msgstr ""'
 
