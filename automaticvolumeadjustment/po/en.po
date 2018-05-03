@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-plugins 3.2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-12-03 15:01+0000\n"
+"POT-Creation-Date: 2018-05-03 13:59+0200\n"
 "PO-Revision-Date: 2012-12-03 15:01+0000\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -16,6 +16,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#, python-format
+msgid "%s plugin only this session?"
+msgstr ""
 
 msgid "Add"
 msgstr "Add"
@@ -50,6 +54,10 @@ msgstr "Default volume adjustment value for AC3/DTS"
 msgid "Delete"
 msgstr "Delete"
 
+#, fuzzy
+msgid "Disable"
+msgstr "Enable"
+
 msgid "Do you really want to delete this entry?"
 msgstr "Do you really want to delete this entry?"
 
@@ -80,8 +88,14 @@ msgstr "Servicename"
 msgid "Services"
 msgstr "Services"
 
+msgid "Show on/off plugin only for session in Audio menu"
+msgstr ""
+
 msgid "Show volumebar when volume-value was changed"
 msgstr "Show volumebar when volume-value was changed"
 
 msgid "You must select a valid service!"
 msgstr "You must select a valid service!"
+
+msgid "toggle on/off plugin only for session"
+msgstr ""
