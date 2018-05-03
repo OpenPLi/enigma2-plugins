@@ -1,50 +1,40 @@
-# Russian translations for PACKAGE package.
-# Copyright (C) 2012 THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# Automatically generated, 2012.
+# Russian translations for enigma package.
+# Copyright (C) 2018 THE enigma'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the enigma package.
+# Automatically generated, 2018.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
+"Project-Id-Version: enigma 2-plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-02-17 15:07+0100\n"
-"PO-Revision-Date: 2015-10-07 18:57+0300\n"
-"Last-Translator: Dimitrij <Dima-73@inbox.lv>\n"
-"Language-Team: openpli.org\n"
+"POT-Creation-Date: 2018-05-03 11:46+0200\n"
+"PO-Revision-Date: 2018-05-03 11:46+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"Language: ru\n"
-"X-Generator: Poedit 1.8.4\n"
 
 msgid ""
 "\n"
 "\n"
 "The Editor-Funktions are beta (not full tested) !!!"
 msgstr ""
-"\n"
-"\n"
-"Бета функция редактирования (полностью не протестировано) !!!"
 
 msgid ""
 "\n"
 "\n"
 "You do it at your own risk!"
 msgstr ""
-"\n"
-"\n"
-"Вы делаете это на свой страх и риск!"
 
 msgid ""
 "\n"
 "The author are NOT RESPONSIBLE\n"
 "for DATA LOST OR DISORDERS !!!"
 msgstr ""
-"\n"
-"Автор НЕ НЕСЕТ ОТВЕТСТВЕННОСТИ\n"
-"за ПОТЕРЯННЫЕ или НАРУШЕННЫЕ ДАННЫЕ !!!"
 
 msgid ""
 "\n"
@@ -52,102 +42,110 @@ msgid ""
 "\n"
 "WARNING!"
 msgstr ""
-"\n"
-"был ИЗМЕНЕН! Вы действительно хотите сохранить?\n"
-"\n"
-"ВНИМАНИЕ!"
 
 msgid ""
 "\n"
 "to:"
 msgstr ""
-"\n"
-"для:"
 
 msgid " Media-filter"
-msgstr " Медиа-фильтр"
+msgstr ""
 
+#, python-format
 msgid ""
 "%s \n"
 "FAILED!"
 msgstr ""
-"%s \n"
-"ОШИБКА!"
 
 msgid "ADDLINK"
-msgstr "ДОБАВИТЬ ЛИНК"
+msgstr ""
 
 msgid "About"
-msgstr "Информация"
+msgstr ""
+
+msgid "Add directory to Bookmarks"
+msgstr ""
+
+msgid "Auto play blu-ray file"
+msgstr ""
 
 msgid "BZ2-package:\\n"
-msgstr "BZ2-пакет:\\n"
+msgstr ""
+
+msgid "Bookmarks"
+msgstr ""
 
 msgid "Bootlogo-package:\\n"
-msgstr "Bootlogo-пакет:\\n"
+msgstr ""
 
 msgid "Box: "
-msgstr "Ресивер: "
+msgstr ""
+
+msgid "COPY"
+msgstr ""
 
 msgid "Cancel"
-msgstr "Отмена"
+msgstr ""
 
 msgid "Create new directory"
-msgstr "Создать новую директорию"
+msgstr ""
 
 msgid "Create new directory in..."
-msgstr "Создать новую  директорию в ..."
+msgstr ""
 
 msgid "Create new file"
-msgstr "Создать новый файл"
+msgstr ""
 
 msgid "Create new file in..."
-msgstr "Создать новый файл в..."
+msgstr ""
 
 msgid "Create softlink..."
-msgstr "Создать символьную ссылку..."
+msgstr ""
 
 msgid "DELLINK"
-msgstr "УДАЛИТЬ ЛИНК"
+msgstr ""
+
+msgid "Delete"
+msgstr ""
 
 msgid "Directory name error !"
-msgstr "Ошибка имени директории !"
+msgstr ""
 
 msgid "Disable"
-msgstr "Отключить"
-
-msgid "Enable"
-msgstr "Включить"
+msgstr ""
 
 msgid "Disassemble to bytecode..."
-msgstr "Разобрать в байт-код ..."
+msgstr ""
 
 msgid "Do you realy want to DELETE:\n"
-msgstr "Вы действительно хотите УДАЛИТЬ:\n"
+msgstr ""
 
 msgid "Do you want to execute?\\n"
-msgstr "Вы действительно хотите выполнить?\\n"
+msgstr ""
 
 msgid "Do you want to set\n"
-msgstr "Вы действительно хотите установить\n"
+msgstr ""
 
 msgid "Dream Explorer..."
-msgstr "Dream-обозреватель..."
+msgstr ""
 
 msgid "Dream-Explorer"
-msgstr "Dream-обозреватель"
+msgstr ""
 
 msgid "Dream-Explorer - DELETE DIRECTORY..."
-msgstr "Dream-обозреватель - УДАЛИТЬ ДИРЕКТОРИЮ..."
+msgstr ""
 
 msgid "Dream-Explorer - DELETE file..."
-msgstr "Dream-обозреватель - УДАЛИТЬ файл..."
+msgstr ""
 
 msgid "Dream-Explorer : Disassemble..."
-msgstr "Dream-обозреватель : разборка..."
+msgstr ""
 
 msgid "Dream-Explorer : Install..."
-msgstr "Dream-обозреватель : инсталлировать..."
+msgstr ""
+
+msgid "Dream-Explorer..."
+msgstr ""
 
 msgid ""
 "Dreambox-Explorer\n"
@@ -156,211 +154,201 @@ msgid ""
 "Support & Help on\n"
 "www.dreambox-tools.info"
 msgstr ""
-"Dream-обозреватель\n"
-"автор 2010 Vali\n"
-"\n"
-"Поддержка & помощь\n"
-"www.dreambox-tools.info"
 
 msgid "Edit line "
-msgstr "Редактирование строки "
+msgstr ""
+
+msgid "Enable"
+msgstr ""
 
 msgid "Error by reading bookmarks !!!"
-msgstr "Ошибка чтения закладок !!!"
+msgstr ""
 
 msgid "Error by writing bookmarks !!!"
-msgstr "Ошибка записи закладок !!!"
+msgstr ""
 
 msgid "Error..."
-msgstr "Ошибка..."
+msgstr ""
 
 msgid "Explore your box"
-msgstr "Обозреватель Вашего ресивера"
+msgstr ""
 
 msgid "File name error !"
-msgstr "Ошибка имени файла !"
+msgstr ""
 
 msgid "File-Explorer"
-msgstr "Файловый-обозреватель"
+msgstr ""
 
 msgid "GZ-package:\\n"
-msgstr "GZ-пакет:\\n"
+msgstr ""
 
-#: plugin.py:245
 msgid "Incompatible MerlinMusicPlayer version!"
-msgstr "Несовместимая версия MerlinMusicPlayer!"
+msgstr ""
 
 msgid "Info..."
-msgstr "Инфо..."
+msgstr ""
 
 msgid "Input"
-msgstr "Вход"
+msgstr ""
 
 msgid "Install new bootlogo..."
-msgstr "Инсталлировать новое bootlogo..."
+msgstr ""
 
 msgid "Install this package"
-msgstr "Инсталлировать этот пакет"
+msgstr ""
 
 msgid "List of Storage Devices"
-msgstr "Список устройств хранения"
+msgstr ""
+
+msgid "MOVE"
+msgstr ""
+
+msgid "Make a softlink"
+msgstr ""
 
 msgid "Make a softlink..."
-msgstr "Создать символьную ссылку..."
+msgstr ""
+
+msgid "Move/Copy"
+msgstr ""
 
 msgid "My Bookmarks"
-msgstr "Мои закладки"
+msgstr ""
 
 msgid "No more picture-files."
-msgstr "Нет больше фото-файлов"
+msgstr ""
 
 msgid "No more playable files."
-msgstr "Нет больше файлов для воспроизведения."
+msgstr ""
 
 msgid "OPKG-package:\\n"
-msgstr "OPKG-пакет:\\n"
+msgstr ""
 
 msgid "Options:\n"
-msgstr "Опции:\n"
+msgstr ""
 
 msgid "Pack my bootlogo"
-msgstr "Упаковать мое bootlogo"
+msgstr ""
 
 msgid "Parent Directory"
-msgstr "Родительская директория"
+msgstr ""
 
 msgid "Picture-Explorer"
-msgstr "Фото-обозреватель"
+msgstr ""
 
 msgid "Picture-Player not available!"
-msgstr "Просмотр-фото не доступен!"
+msgstr ""
 
 msgid "Preview all pictures"
-msgstr "Превью всех фотографий"
+msgstr ""
 
 msgid "Pyc-Script:\\n"
-msgstr "Pyc-скрипт:\\n"
+msgstr ""
 
 msgid "Remove directory from Bookmarks"
-msgstr "Переименование директории из закладок"
+msgstr ""
 
-msgid "Add directory to Bookmarks"
-msgstr "Добавить директорию к закладкам"
+msgid "Rename"
+msgstr ""
 
 msgid "Rename directory..."
-msgstr "Переименование директории..."
+msgstr ""
 
 msgid "Rename file..."
-msgstr "Переименование файла..."
+msgstr ""
 
+#, python-format
 msgid ""
 "Rename: %s \n"
 "FAILED!"
 msgstr ""
-"Переименование: %s \n"
-"ОШИБКА!"
 
 msgid "Running processes: "
-msgstr "Запущенные процессы: "
+msgstr ""
 
-#: plugin.py:1109
 msgid "Select Copy/Move location..."
-msgstr "Выбор расположения перемещения/копирования"
+msgstr ""
 
 msgid "Set archive mode (644)"
-msgstr "Установить права чтения (644)"
+msgstr ""
 
 msgid "Set executable mode (755)"
-msgstr "Установить права выполнения (755)"
+msgstr ""
 
 msgid "Set first the Softlink name ..."
-msgstr "Установите имя символьной ссылки в первую очередь  ..."
+msgstr ""
+
+msgid "Set name"
+msgstr ""
 
 msgid "Set start directory"
-msgstr "Установить как стартовую директорию"
+msgstr ""
 
 msgid "Softlink name error !"
-msgstr "Ошибка имени символьной ссылки !"
+msgstr ""
 
 msgid "Sort by date (bouquet-)"
-msgstr "Сортировка по дате (букет-)"
+msgstr ""
 
 msgid "Sort by name (bouquet+)"
-msgstr "Сортировка по имени (букет+)"
+msgstr ""
 
 msgid "Start execution"
-msgstr "Начать выполнение"
+msgstr ""
 
 msgid "This line is not editable!"
-msgstr "Эта строка не редактируется!"
+msgstr ""
 
 msgid "Turn off the media-filter first."
-msgstr "Выключите медиа-фильтр в первую очередь."
+msgstr ""
 
 msgid "View this shell-script"
-msgstr "Просмотр этого shell-скрипта"
+msgstr ""
 
 msgid "WARNING! they doing now COPY or MOVE\n"
-msgstr "ВНИМАНИЕ! сейчас происходит КОПИРОВАНИЕ или ПЕРЕМЕЩЕНИЕ\n"
+msgstr ""
 
 msgid "WARNING! they make now a softlink from\n"
-msgstr "ВНИМАНИЕ! сейчас будет создана новая символьная ссылка из\n"
+msgstr ""
 
 msgid "Write the new softlink name here:"
-msgstr "Впишите имя новой символьной ссылки здесь:"
+msgstr ""
 
 msgid "[All files] "
-msgstr "[Все файлы] "
+msgstr ""
 
 msgid "[Media files] "
-msgstr "[Медиа файлы] "
+msgstr ""
 
 msgid "[sort by Date] "
-msgstr "[сортировка по дате] "
+msgstr ""
 
 msgid "[sort by Name] "
-msgstr "[сортировка по имени] "
+msgstr ""
 
 msgid "last-mod "
-msgstr "дата изменения "
+msgstr ""
 
 msgid "loading... "
-msgstr "загружаем..."
+msgstr ""
 
 msgid "mode "
-msgstr "режим "
+msgstr ""
 
 msgid "mvi-Explorer"
-msgstr "mvi-обозреватель"
+msgstr ""
 
 msgid "old:  "
-msgstr "старый:  "
+msgstr ""
 
 msgid "read error"
-msgstr "ошибка чтения"
+msgstr ""
 
-#: plugin.py:905
 msgid "ready..."
-msgstr "готово..."
+msgstr ""
 
 msgid "size "
-msgstr "объем "
+msgstr ""
 
 msgid "wait..."
-msgstr "подождите..."
-
-msgid "Auto play blu-ray file"
-msgstr "Авто проигрывание файла blu-ray"
-
-msgid "Move/Copy"
-msgstr "Перем./Копир."
-
-msgid "Options"
-msgstr "Опции"
-
-msgid "Move"
-msgstr "Перемещение"
-
-msgid "Copy"
-msgstr "Копирование"
-
+msgstr ""
