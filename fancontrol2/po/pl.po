@@ -1,16 +1,19 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: FanControl2\n"
-"POT-Creation-Date: 2012-11-04 15:20+Mitteleuropäische Zeit\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-05-03 14:00+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Mariusz1970 <Mariusz1970@onet.eu>\n"
 "Language-Team: Mariusz1970 <Mariusz1970@onet.eu>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-Language: Polish\n"
 "X-Poedit-Country: POLAND\n"
 
+#, python-format
 msgid "%s   %02d C"
 msgstr "%s   %02d C"
 
@@ -32,6 +35,7 @@ msgstr "Działanie w przypadku awarii wentylatora"
 msgid "Auto-Delete Data older than (Days)"
 msgstr "Usuwanie plików starszych niż(Dni)"
 
+#, python-format
 msgid "Auto-Delete older %s Days"
 msgstr "Automatycznie - usuń starszy % s Dni"
 
@@ -56,9 +60,11 @@ msgstr "Wybierz ścieżkę"
 msgid "Control disabled"
 msgstr "Wyłączyć kontrolę"
 
+#, python-format
 msgid "Current rpm  %4d"
 msgstr "Aktualny rpm  % 4d"
 
+#, python-format
 msgid "Current value: %s"
 msgstr "Aktualna wartość: % s"
 
@@ -68,6 +74,7 @@ msgstr "Usuń"
 msgid "Delete older 48h"
 msgstr "Usuń starszy 48h"
 
+#, python-format
 msgid "Disk free : %d MByte"
 msgstr "Dysk wolny : % d MByte"
 
@@ -86,6 +93,22 @@ msgstr "Końcowa-temp.C"
 msgid "Extended Control Range"
 msgstr "Wzbogacona oferta sterowania"
 
+#, fuzzy
+msgid "Fan Control"
+msgstr "DMM-Fancontrol wyłączyć"
+
+msgid "Fan Control 2"
+msgstr ""
+
+msgid "Fan Control 2 - Monitor"
+msgstr ""
+
+msgid "Fan Control 2 - Setup"
+msgstr ""
+
+msgid "Fan Control 2 - Test"
+msgstr ""
+
 msgid "Fan is not working!"
 msgstr "Wentylator nie pracuje!"
 
@@ -98,9 +121,11 @@ msgstr "Typ wentylatora"
 msgid "FanControl2 emergency, Box Shutdown now?"
 msgstr "FanControl2 awarja, wyłaczyć DM teraz?"
 
+#, python-format
 msgid "File %s does not exists"
 msgstr "Plik %s nie istnieje"
 
+#, python-format
 msgid "Filesize : %d %sByte"
 msgstr "Rozmiar pliku : %d %sBajtów"
 
@@ -126,42 +151,54 @@ msgstr "Pocz. Napięcie"
 msgid "Logging path"
 msgstr "Rejestrowanie ścieżki"
 
+#, python-format
 msgid "Logging-Path: %s"
 msgstr "Ścieżka wpisania: %s"
 
+#, python-format
 msgid "Max Fan %d rpm at PWM=255 (%s)"
 msgstr "Max Fan %d rpm w PWM=255 (%s)"
 
+#, python-format
 msgid "Max Fan %d rpm at PWM=255 and VLT=255 (%s)"
 msgstr "Max Fan %d rpm w PWM=255 i VLT=255 (%s)"
 
+#, python-format
 msgid "Max Fan %d rpm at VLT=255 (%s)"
 msgstr "Max Fan %d rpm w VLT=255 (%s)"
 
+#, python-format
 msgid "Min Fan Start %d rpm at PWM=%d"
 msgstr "Min Fan Start %d rpm w PWM=%d"
 
+#, python-format
 msgid "Min Fan Start %d rpm at VLT=%d"
 msgstr "Min Fan Start %d rpm w VLT=%d"
 
+#, python-format
 msgid "Min Fan Start %d rpm at VLT=%d and PWM=0"
 msgstr "Min Fan Start %d rpm w VLT=%d i PWM=0"
 
+#, python-format
 msgid "Min Fan Stop %d rpm at PWM=%d (%s)"
 msgstr "Min Fan Stop %d rpm w PWM=%d (%s)"
 
+#, python-format
 msgid "Min Fan Stop %d rpm at VLT=%d (%s)"
 msgstr "Min Fan Stop %d rpm w VLT=%d (%s)"
 
+#, python-format
 msgid "Min Fan Stop %d rpm at VLT=%d and PWM=0 (%s)"
 msgstr "Min Fan Stop %d rpm w VLT=%d i PWM=0 (%s)"
 
 msgid "Number of WebIF-Log-Entries"
 msgstr "Liczba WebIF-Logi-Wejście"
 
+#, python-format
 msgid "PID Ctl Err %03.2f %%"
 msgstr "PID Ctl Err %03.2f %%"
 
+#, python-format
 msgid "PWM  %03d"
 msgstr "PWM  %03d"
 
@@ -189,18 +226,21 @@ msgstr "Szybkość "
 msgid "Static temp C"
 msgstr "Temp. statyczna C"
 
+#, python-format
 msgid "Target rpm  %4d"
 msgstr "Docelowo rpm  %4d"
 
 msgid "Temperature"
 msgstr "Temperatura"
 
+#, python-format
 msgid "Temperature C  %4.1f"
 msgstr "Temperatura C  %4.1f"
 
 msgid "Voltage"
 msgstr "Napięcie "
 
+#, python-format
 msgid "Voltage  %03d"
 msgstr "Napięcie   %03d"
 
@@ -213,11 +253,9 @@ msgstr "auto"
 msgid "below Tunerslot 4"
 msgstr "poniżej  Tunerslot 4"
 
+#, python-format
 msgid "currentRPM:%d targetRPM:%d Temp:%4.1f"
 msgstr "prądRPM:%d docelowoRPM:%d Temp:%4.1f"
-
-msgid "disable DMM-FanControl"
-msgstr "DMM-Fancontrol wyłączyć"
 
 msgid "disabled"
 msgstr "wyłączony"
@@ -276,6 +314,9 @@ msgstr "czytaj temperaturę HDD-tryb gotowości"
 msgid "readme.txt"
 msgstr "readme.txt"
 
+msgid "setup Fancontol inStandby mode"
+msgstr ""
+
 msgid "turn off"
 msgstr "wyłączyć"
 
@@ -293,4 +334,3 @@ msgstr "tak"
 
 msgid "yes, Except for Recording or HDD"
 msgstr "tak, z wyjątkiem nagrywania na HDD"
-
