@@ -62,9 +62,7 @@ msgstr ""
 msgid "Entry %s/%s"
 msgstr ""
 
-msgid ""
-"Error while parsing Feed, this usually means there is something wrong with "
-"it."
+msgid "Error while parsing Feed, this usually means there is something wrong with it."
 msgstr ""
 
 msgid "Failed to get subscriptions from Google Reader."
