@@ -3,14 +3,14 @@ msgstr ""
 "Project-Id-Version: EasyMedia\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-05-11 10:58+0200\n"
-"PO-Revision-Date: 2015-05-01 22:34+0100\n"
+"PO-Revision-Date: 2018-05-11 21:58+0200\n"
 "Last-Translator: Pr2 <dummy@dummy.com>\n"
 "Language-Team: OpenPLi\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.7.6\n"
+"X-Generator: Poedit 2.0.7\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
@@ -22,7 +22,7 @@ msgstr " enlevé de EasyMedia"
 
 #, python-format
 msgid "%s (%s)\n"
-msgstr ""
+msgstr "%s (%s)\n"
 
 msgid "Add/remove plugin"
 msgstr "Ajouter/enlever plugin"
@@ -43,7 +43,7 @@ msgid "Disabled"
 msgstr "Désactivé"
 
 msgid "DreamExplorer"
-msgstr ""
+msgstr "DreamExplorer"
 
 msgid "EasyMedia settings..."
 msgstr "Paramètres EasyMedia..."
@@ -52,7 +52,7 @@ msgid "Enabled"
 msgstr "Activé"
 
 msgid "Filebrowser"
-msgstr ""
+msgstr "Filebrowser"
 
 msgid "Files"
 msgstr "Fichiers"
@@ -61,13 +61,13 @@ msgid "Files browser:"
 msgstr "Gestionnaire de fichier:"
 
 msgid "MediaPlayer"
-msgstr ""
+msgstr "MediaPlayer"
 
 msgid "Merlin iDream is not installed!"
 msgstr "Merlin iDream n'est pas installé!"
 
 msgid "MerlinMusicPlayer"
-msgstr ""
+msgstr "MerlinMusicPlayer"
 
 msgid "Movies"
 msgstr "Films"
@@ -79,13 +79,13 @@ msgid "Music player:"
 msgstr "Lecteur de musique:"
 
 msgid "MyTube Player"
-msgstr ""
+msgstr "MyTube Player"
 
 msgid "MyTube Plugin is not installed!"
 msgstr "MyTube n'est pas installé!"
 
 msgid "MyVideo"
-msgstr ""
+msgstr "MyVideo"
 
 msgid "MyVideo Player is not installed!"
 msgstr "MyVideo Player n'est pas installé!"
@@ -124,7 +124,7 @@ msgid "Radio-mode"
 msgstr "mode-Radio"
 
 msgid "SHOUTcast"
-msgstr ""
+msgstr "SHOUTcast"
 
 msgid "SHOUTcast Plugin is not installed!"
 msgstr "SHOUTcast n'est pas installé!"
@@ -154,13 +154,13 @@ msgid "Timer:"
 msgstr "Programmation:"
 
 msgid "TuxCom"
-msgstr ""
+msgstr "TuxCom"
 
 msgid "Tv/Radio"
 msgstr "TV/Radio"
 
 msgid "VLC Player"
-msgstr ""
+msgstr "VLC Player"
 
 msgid "VLC Player is not installed!"
 msgstr "VLC Player n'est pas installé!"
@@ -190,7 +190,7 @@ msgid "YouTube player:"
 msgstr "Lecteur YouTube:"
 
 msgid "ZDFmediathek"
-msgstr ""
+msgstr "ZDFmediathek"
 
 msgid "ZDFmediathek Plugin is not installed!"
 msgstr "ZDFmediathek n'est pas installé!"
@@ -199,4 +199,4 @@ msgid "ZDFmediathek player:"
 msgstr "Lecteur ZDFmediathek:"
 
 msgid "iDream"
-msgstr ""
+msgstr "iDream"
