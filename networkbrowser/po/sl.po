@@ -6,10 +6,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxbox-enigma 0.0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-01-28 16:39+0100\n"
+"POT-Creation-Date: 2018-05-11 10:58+0200\n"
 "PO-Revision-Date: 2012-07-31 18:10+0100\n"
 "Last-Translator: \n"
 "Language-Team: none\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -171,6 +172,11 @@ msgid "Mount type"
 msgstr "CIFS ali NFS (izberite)"
 
 #
+#, fuzzy
+msgid "Mount view"
+msgstr "Pripajanje neuspešno"
+
+#
 msgid "MountManager"
 msgstr "Dodajanje mrežnih naprav"
 
@@ -189,10 +195,6 @@ msgstr "Upravljanje z mrežnimi napravami"
 #
 msgid "Mounts editor"
 msgstr "Dodajanje mrežne naprave"
-
-#
-msgid "Mount failed"
-msgstr "Pripajanje neuspešno"
 
 #
 msgid "Mounts management"
@@ -331,8 +333,3 @@ msgstr "Mrežna naprava je posodobljena."
 #
 msgid "use as HDD replacement"
 msgstr "Uporaba namesto trdega diska"
-
-#
-msgid "Your network configuration has been activated."
-msgstr "Mrežne nastavitve so zdaj aktivirane!"
-
