@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-plugins 3.2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-09-27 21:28+0100\n"
+"POT-Creation-Date: 2018-05-11 10:58+0200\n"
 "PO-Revision-Date: 2012-03-15 14:10+0000\n"
 "Last-Translator: jerry\n"
 "Language-Team: jerry\n"
@@ -19,6 +19,12 @@ msgstr ""
 
 msgid " as "
 msgstr " jako"
+
+msgid "Add 'Search event in IMDb' to further option EPG menu."
+msgstr ""
+
+msgid "Add 'Search in IMDb' to movie list menu for selected video."
+msgstr ""
 
 msgid "Ambiguous results"
 msgstr "Nejednoznačné výsledky"
@@ -32,6 +38,9 @@ msgstr ""
 msgid "Channel Selection"
 msgstr "Výběr stanice"
 
+msgid "Content:"
+msgstr ""
+
 msgid "Could't get Eventname"
 msgstr "Nelze načíst název události"
 
@@ -42,8 +51,7 @@ msgstr "Detaily"
 msgid "Downloading Movie Poster: %s..."
 msgstr "Stahuji plakát filmu: %s..."
 
-msgid ""
-"Enable this to be able to access the IMDb from within the plugin browser."
+msgid "Enable this to be able to access the IMDb from within the plugin browser."
 msgstr "Povolit = mít přístup na IMDB v rámci Prohlížeče pluginů."
 
 msgid "Enter search"
@@ -58,6 +66,15 @@ msgstr "Konec"
 msgid "Extra Info"
 msgstr ""
 
+msgid "Extra Info\n"
+msgstr ""
+
+msgid "Genre:"
+msgstr ""
+
+msgid "Genre: "
+msgstr ""
+
 msgid "IMDb Details"
 msgstr "Detaily z IMDb"
 
@@ -70,19 +87,42 @@ msgstr "Stažení z IMDb dokončeno"
 msgid "IMDb Download failed"
 msgstr "Stažení z IMDb selhalo"
 
+#, fuzzy
+msgid "IMDb Menu"
+msgstr "Nastavení IMDb"
+
 msgid "IMDb Plugin"
 msgstr "Plugin IMDb"
 
 msgid "IMDb Re-Download completed"
 msgstr "Re-Stažení z IMDb dokončeno"
 
+#, fuzzy
+msgid "IMDb Save-Download completed"
+msgstr "Re-Stažení z IMDb dokončeno"
+
 msgid "IMDb Setup"
 msgstr "Nastavení IMDb"
+
+msgid ""
+"IMDb can not get Movie Information, to\n"
+" write .jpg and .txt-file!"
+msgstr ""
+
+msgid ""
+"IMDb can not get Movie Information, to\n"
+" write .txt-file!"
+msgstr ""
 
 msgid "IMDb query failed!"
 msgstr "IMDb dotaz selhal!"
 
-msgid "Lookup"
+#, fuzzy
+msgid "IMDb search"
+msgstr "IMDb-Žádná shoda"
+
+#, fuzzy
+msgid "Lookup IMDb"
 msgstr "Vyhledat"
 
 msgid "No IMDb match."
@@ -103,8 +143,11 @@ msgstr "Přehrát upoutávku"
 msgid "Please select the matching entry"
 msgstr "Prosím, zvolte odpovídající položku"
 
-#, python-format
-msgid "Query IMDb: %s..."
+msgid "Production Countries:"
+msgstr ""
+
+#, fuzzy, python-format
+msgid "Query IMDb: %s"
 msgstr "Dotaz na IMDb: %s..."
 
 msgid "Query details from the Internet Movie Database"
@@ -114,8 +157,29 @@ msgstr "Dotaz na podrobnosti z internetové filmové databáze"
 msgid "Re-Query IMDb: %s..."
 msgstr "Re-Dotaz na IMDb: %s..."
 
+msgid "Release Date:"
+msgstr ""
+
+msgid "Runtime:"
+msgstr ""
+
+msgid "Save current Details as .html for offline using"
+msgstr ""
+
+msgid "Save current Details as .txt"
+msgstr ""
+
+msgid "Save current Poster and Details as .txt"
+msgstr ""
+
 msgid "Search Trailer"
 msgstr "Najít upoutávku"
+
+msgid "Search event in IMDb"
+msgstr ""
+
+msgid "Search in IMDb"
+msgstr ""
 
 msgid "Select from EPG"
 msgstr "Vybrat z EPG"
@@ -123,11 +187,20 @@ msgstr "Vybrat z EPG"
 msgid "Setup"
 msgstr "Nastavit"
 
+msgid "Show in further option EPG menu"
+msgstr ""
+
+msgid "Show in movie list menu"
+msgstr ""
+
 msgid "Show in plugin browser"
 msgstr "Zobrazit v Prohlížeči pluginů"
 
 msgid "The Internet Movie Database"
 msgstr "Internetová filmová databáze"
+
+msgid "This option allows you add words/phrases for IMDb to ignore when searching. please seperaate with a comma"
+msgstr ""
 
 msgid "Title Menu"
 msgstr "Tituly"
@@ -135,9 +208,8 @@ msgstr "Tituly"
 msgid "User Rating"
 msgstr "Hodnocení"
 
+msgid "Words / phrases to ignore "
+msgstr ""
+
 msgid "no user rating yet"
 msgstr "bez hodnocení"
-
-#
-#~ msgid "Internet Movie Database Details Plugin"
-#~ msgstr "Plugin detailů z Internetové filmové databáze"
