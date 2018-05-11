@@ -8,337 +8,261 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-10 19:17+0200\n"
+"POT-Creation-Date: 2018-05-11 10:58+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: plugin.py:863
 #, python-format
 msgid ""
 "%s\n"
 "Press OK to try again..."
 msgstr ""
 
-#: plugin.py:574
 #, python-format
 msgid ""
 "%s\n"
 "Press green-button to try again..."
 msgstr ""
 
-#: plugin.py:70
 msgid ">= 128 kbps"
 msgstr ""
 
-#: plugin.py:70
 msgid ">= 192 kbps"
 msgstr ""
 
-#: plugin.py:70
 msgid ">= 256 kbps"
 msgstr ""
 
-#: plugin.py:70
 msgid ">= 64 kbps"
 msgstr ""
 
-#: plugin.py:327
 msgid "Activate Picture in Picture"
 msgstr ""
 
-#: plugin.py:757
 msgid "Add current playing stream to favorite"
 msgstr ""
 
-#: plugin.py:753
 msgid "Add current selected genre to favorite"
 msgstr ""
 
-#: plugin.py:755
 msgid "Add current selected station to favorite"
 msgstr ""
 
-#: plugin.py:1216
 msgid "Add sequence number to output file"
 msgstr ""
 
-#: plugin.py:70
 msgid "All"
 msgstr ""
 
-#: plugin.py:1099 plugin.py:1105
 #, python-format
 msgid "Audio: %s"
 msgstr ""
 
-#: plugin.py:1100 plugin.py:1107
 #, python-format
 msgid "Bit rate: %s kbps"
 msgstr ""
 
-#: plugin.py:1204 plugin.py:1283
 msgid "Cancel"
 msgstr ""
 
-#: plugin.py:329
 msgid "Choose action:"
 msgstr ""
 
-#: plugin.py:748
 msgid "Config"
 msgstr ""
 
-#: plugin.py:1210
 msgid "Coverheight:"
 msgstr ""
 
-#: plugin.py:1209
 msgid "Coverwidth:"
 msgstr ""
 
-#: plugin.py:1215
 msgid "Create a directory for each stream"
 msgstr ""
 
-#: plugin.py:321
 msgid "Disable Picture in Picture"
 msgstr ""
 
-#: plugin.py:485
 msgid "Do you really want to stop the recording?"
 msgstr ""
 
-#: plugin.py:488
 msgid "Enter in minutes (0 means unlimited)"
 msgstr ""
 
-#: plugin.py:802
 msgid "Enter new name for favorite item"
 msgstr ""
 
-#: plugin.py:825
 msgid "Enter text to search for"
 msgstr ""
 
-#: plugin.py:453
 #, python-format
 msgid "Error create directory %s!"
 msgstr ""
 
-#: plugin.py:928
 msgid "Error downloading cover..."
 msgstr ""
 
-#: plugin.py:537
 msgid "Favorite list"
 msgstr ""
 
-#: plugin.py:214
 msgid "Favorites"
 msgstr ""
 
-#: plugin.py:325
 msgid "First play streaming!"
 msgstr ""
 
-#: plugin.py:212
 msgid "Genres"
 msgstr ""
 
-#: plugin.py:698
 #, python-format
 msgid "Getting %s"
 msgstr ""
 
-#: plugin.py:551
 #, python-format
 msgid "Getting SHOUTcast genre list for %s..."
 msgstr ""
 
-#: plugin.py:218
 msgid "Getting SHOUTcast genre list..."
 msgstr ""
 
-#: plugin.py:641 plugin.py:655
 #, python-format
 msgid ""
 "Getting streaming data from\n"
 "%s"
 msgstr ""
 
-#: plugin.py:566
 msgid ""
 "Got 0 genres. Could be a network problem.\n"
 "Please try again..."
 msgstr ""
 
-#: plugin.py:758
 msgid "Hide"
 msgstr ""
 
-#: plugin.py:1318 plugin.py:1346
 msgid "Invalid Location"
 msgstr ""
 
-#: plugin.py:330 plugin.py:760
 msgid "Menu PiP"
 msgstr ""
 
-#: plugin.py:319
 msgid "Move Picture in Picture"
 msgstr ""
 
-#: plugin.py:691
 msgid "No streaming data found..."
 msgstr ""
 
-#: plugin.py:1205 plugin.py:1284
 msgid "OK"
 msgstr ""
 
-#: plugin.py:71
 msgid "Off"
 msgstr ""
 
-#: plugin.py:490
 msgid "Only running streamings can be recorded!"
 msgstr ""
 
-#: plugin.py:211 plugin.py:430
 msgid "Record"
 msgstr ""
 
-#: plugin.py:488
 msgid "Recording length"
 msgstr ""
 
-#: plugin.py:1218
 msgid "Recording location:"
 msgstr ""
 
-#: plugin.py:279
 msgid "Recording stream station"
 msgstr ""
 
-#: plugin.py:1213
 msgid "Reload station list:"
 msgstr ""
 
-#: plugin.py:1214
 msgid "Rip to single file, name is timestamped"
 msgstr ""
 
-#: plugin.py:560 plugin.py:607
 msgid "SHOUTcast genre list"
 msgstr ""
 
-#: plugin.py:1202
 msgid "SHOUTcast setup"
 msgstr ""
 
-#: plugin.py:514 plugin.py:696 plugin.py:831
 #, python-format
 msgid "SHOUTcast station list for %s"
 msgstr ""
 
-#: plugin.py:748
 msgid "Search"
 msgstr ""
 
-#: plugin.py:833
 #, python-format
 msgid "Searching SHOUTcast for %s..."
 msgstr ""
 
-#: plugin.py:1266
 msgid "Select record path for streamripper"
 msgstr ""
 
-#: plugin.py:1208
 msgid "Show cover:"
 msgstr ""
 
-#: plugin.py:1211
 msgid "Show in extension menu:"
 msgstr ""
 
-#: plugin.py:992
 #, python-format
 msgid "Station: %s"
 msgstr ""
 
-#: plugin.py:213
 msgid "Stations"
 msgstr ""
 
-#: plugin.py:277 plugin.py:476
 msgid "Stop record"
 msgstr ""
 
-#: plugin.py:944
 msgid "Stream stopped playing, playback of stream stopped!"
 msgstr ""
 
-#: plugin.py:1212
 msgid "Streaming rate:"
 msgstr ""
 
-#: plugin.py:968
 #, python-format
 msgid "Title: %s"
 msgstr ""
 
-#: plugin.py:991
 msgid "Title: n/a"
 msgstr ""
 
-#: plugin.py:315
 msgid "Zap focus to Picture in Picture"
 msgstr ""
 
-#: plugin.py:313
 msgid "Zap focus to main screen"
 msgstr ""
 
-#: plugin.py:71
 msgid "every five minutes"
 msgstr ""
 
-#: plugin.py:71
 msgid "every minute"
 msgstr ""
 
-#: plugin.py:71
 msgid "every three minutes"
 msgstr ""
 
-#: plugin.py:695
 #, python-format
 msgid "genre %s"
 msgstr ""
 
-#: plugin.py:139 plugin.py:141
 msgid "listen to shoutcast internet-radio"
 msgstr ""
 
-#: plugin.py:751
 msgid "remove current selected favorite"
 msgstr ""
 
-#: plugin.py:750
 msgid "rename current selected favorite"
 msgstr ""
 
-#: plugin.py:830
 #, python-format
 msgid "search-criteria %s"
 msgstr ""
 
-#: plugin.py:472
 msgid "streamripper not installed!"
 msgstr ""
