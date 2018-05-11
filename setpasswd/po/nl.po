@@ -7,18 +7,18 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-plugins 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-06 13:13+0200\n"
+"POT-Creation-Date: 2018-05-11 10:58+0200\n"
 "PO-Revision-Date: 2009-06-06 18:16+0100\n"
 "Last-Translator: \n"
 "Language-Team: none <Benny.DeTandt@gmail.com>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-Language: Dutch\n"
 "X-Poedit-Country: NETHERLANDS\n"
 "X-Poedit-SourceCharset: utf-8\n"
-
 
 msgid "Change Root Password"
 msgstr "Wijzig root wachtwoord..."
@@ -26,11 +26,18 @@ msgstr "Wijzig root wachtwoord..."
 msgid "Change or reset the root password of your box"
 msgstr "Wijzig of reset het root wachtwoord van uw box"
 
+#, fuzzy
+msgid "Delete Password"
+msgstr "Wachtwoord instellen"
+
 msgid "Enter new Password"
 msgstr "Geef nieuw wachtwoord"
 
 msgid "Enter your password here:"
 msgstr "Geef hier uw wachtwoord in:"
+
+msgid "Password deleted sucessfully for root user"
+msgstr ""
 
 msgid "Set Password"
 msgstr "Wachtwoord instellen"
@@ -41,12 +48,12 @@ msgstr "Wachwoord succesvol gewijzigd voor root gebruiker in:"
 msgid "Unable to change/reset password for root user"
 msgstr "Kan het wachtwoord van de root gebruiker niet wijzigen/resetten"
 
+#, fuzzy
+msgid "Unable to delete password for root user"
+msgstr "Kan het wachtwoord van de root gebruiker niet wijzigen/resetten"
+
 msgid "new Random"
 msgstr "Nieuw random"
 
 msgid "virt. Keyboard"
 msgstr "Virtueel toetsenbord"
-
-#~ msgid "Sucessfully changed password for root user to: %s "
-#~ msgstr "Wachwoord succesvol gewijzig voor root gebruiker in : %s"
-

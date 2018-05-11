@@ -2,20 +2,52 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-02-17 15:07+0100\n"
+"POT-Creation-Date: 2018-05-11 10:58+0200\n"
 "PO-Revision-Date: 2018-03-12 22:09+0200\n"
 "Last-Translator: Dimitrij <Dima-73@inbox.lv>\n"
 "Language-Team: openpli.org\n"
+"Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"Language: ru\n"
 "X-Generator: Poedit 2.0.4\n"
+
+msgid ""
+"\n"
+"\n"
+"Cancel?"
+msgstr ""
+"\n"
+"\n"
+"Отмена?"
+
+msgid " (if services are enabled, bouquets are ignored)."
+msgstr " (если сервисы включены, букеты будут игнорированы)."
+
+#, fuzzy
+msgid " (if services are enabled, bouquets are ignored.)."
+msgstr " (если сервисы включены, букеты будут игнорированы)."
+
+msgid " (only services from bouquets when use \"favorites description match\")."
+msgstr " (только в сервисах из букетов при использовании \"описание совпадения в фаворитах\")."
+
+msgid " - AutoTimer "
+msgstr " - Автотаймер "
+
+msgid " - Version: "
+msgstr " - версия: "
+
+msgid " 0 - timers will not be added."
+msgstr " 0 - таймеры не будут добавлены."
+
+msgid " == attention: global option 'Save/check filterlist is still active!! =="
+msgstr " == внимание: глобальная опция 'Сохранение/проверка в списке фильтров' по прежнему активна!! =="
 
 msgid " add AutoTimer"
 msgstr " Доб. Автотаймер"
 
+#, python-format
 msgid ""
 "%d conflict(s) encountered when trying to add new timers:\n"
 "%s"
@@ -23,6 +55,7 @@ msgstr ""
 "%d конфликт(ы), возникающие при попытке добавить новые таймеры:\n"
 "%s"
 
+#, python-format
 msgid ""
 "%d conflict(s) solved with similar timer(s):\n"
 "%s"
@@ -33,8 +66,18 @@ msgstr ""
 msgid "%d.%B %Y"
 msgstr "%d.%B %Y"
 
+#, python-format
 msgid "%s: %s at %s"
 msgstr "%s: %s в %s"
+
+msgid "/etc/enigma2"
+msgstr ""
+
+msgid "/tmp"
+msgstr ""
+
+msgid "A new and empty config was created. A backup of the config can be found here (/etc/enigma2/autotimer.xml_old)."
+msgstr "Создана новая и пустая конфигурация. Резервное копирование конфигурации можно найти здесь (/etc/enigma2/autotimer.xml_old)."
 
 msgid "Abort this Wizard."
 msgstr "Отмена этого мастера."
@@ -44,9 +87,6 @@ msgstr "Активировать VPS"
 
 msgid "Add"
 msgstr "Добавить"
-
-msgid "Add \"Choice list AutoTimer\" menu button to GraphMultiEpg"
-msgstr "\"Автотаймер - список выбора\" на кнопке меню в граф. EPG"
 
 msgid "Add \"Choice list AutoTimer\" menu button to multi-EPG"
 msgstr "\"Автотаймер - список выбора\" на кнопке меню в мульти-EPG"
@@ -69,9 +109,6 @@ msgstr "Добавить аналогичный таймер при конфли
 msgid "Add timer as disabled on conflict"
 msgstr "Добавить отключеннный таймер при конфликте"
 
-msgid "Add zap timer instead of record timer?"
-msgstr "Добавить таймер переключения вместо таймера записи?"
-
 msgid "Advanced"
 msgstr "расширенный"
 
@@ -83,6 +120,9 @@ msgstr "Все каналы"
 
 msgid "All non-repeating timers"
 msgstr "Все неповторяющиеся таймеры"
+
+msgid "Always write config"
+msgstr "Всегда перезаписывать конфигурацию"
 
 msgid "Amount of recordings left"
 msgstr "Количество оставшихся записей"
@@ -96,6 +136,7 @@ msgstr "Любое время"
 msgid "AutoTimer"
 msgstr "Автотаймер"
 
+#, python-format
 msgid ""
 "AutoTimer\n"
 "%d timer(s) were added."
@@ -103,11 +144,22 @@ msgstr ""
 "Автотаймер\n"
 "%d таймер(ов) добавлен(о)."
 
+msgid "AutoTimer "
+msgstr "Автотаймер "
+
+#, python-format
+msgid "AutoTimer %s FilterListEntry"
+msgstr "Автотаймер %s запись фильтра"
+
 msgid "AutoTimer Context Menu"
 msgstr "Контекстное меню Автотаймера"
 
 msgid "AutoTimer Editor"
 msgstr "Автотаймер - редактор"
+
+#, fuzzy
+msgid "AutoTimer FAQ"
+msgstr "Автотаймер "
 
 msgid "AutoTimer Filters"
 msgstr "Автотаймер - фильтры"
@@ -118,8 +170,15 @@ msgstr "Автотаймер - сервисы"
 msgid "AutoTimer Settings"
 msgstr "Автотаймер - настройки"
 
+#, fuzzy, python-format
+msgid "AutoTimer failed with error %s"
+msgstr "Автотаймер - фильтры"
+
 msgid "AutoTimer overview"
 msgstr "Автотаймер - обзор"
+
+msgid "AutoTimer scan"
+msgstr "Автотаймер - сканирование"
 
 msgid "AutoTimer was added successfully"
 msgstr "Автотаймер был успешно добавлен"
@@ -129,6 +188,9 @@ msgstr "Автотаймер был успешно изменен"
 
 msgid "AutoTimer was removed"
 msgstr "Автотаймер был удален"
+
+msgid "AutoTimers were changed successfully"
+msgstr "Автотаймеры были успешно изменены"
 
 msgid "Begin of \"after event\" timespan"
 msgstr "Начало для \"после события\" промежутка времени"
@@ -166,6 +228,9 @@ msgstr "Каналы"
 msgid "Check for uniqueness in"
 msgstr "Проверка на уникальность"
 
+msgid "Check the event id (eit) and remove the timer if there is no corresponding EPG event. Due to compatibility issues with SerienRecorder and IPRec, only timer created by AutoTimer are affected."
+msgstr "Проверка идентификатора события (eit) и удаление таймера, если нет соответствующего события EPG. Не совместим с SerienRecorder и IPRec, это затрагивает только таймеры созданные Автотаймером."
+
 msgid "Choice list AutoTimer"
 msgstr "Автотаймер - список выбора"
 
@@ -178,11 +243,17 @@ msgstr "Классический"
 msgid "Clone selected timer"
 msgstr "Клонировать выбранный таймер"
 
+msgid "Close"
+msgstr "Закрыть"
+
 msgid "Close and forget changes"
 msgstr "Закрыть и отменить изменения"
 
-msgid "Close and save changes"
-msgstr "Закрыть и сохранить изменения"
+msgid "Close and save"
+msgstr "Закрыть и сохранить"
+
+msgid "Close without saving"
+msgstr "Закрыть без сохранения"
 
 msgid "Close, save changes and search now"
 msgstr "Закрыть, сохранить изменения и поиск сейчас"
@@ -192,6 +263,10 @@ msgstr "Автотаймер - настройка поведения"
 
 msgid "Control recording completely by service"
 msgstr "Полное управление записью сервиса"
+
+#, fuzzy
+msgid "Couldn't load config file!"
+msgstr "Не найден xml конфиг файл!"
 
 msgid "Create AutoTimer"
 msgstr "Создать Автотаймер"
@@ -205,6 +280,10 @@ msgstr "Создать новый таймер классическим реда
 msgid "Create a new timer using the wizard"
 msgstr "Создать новый таймер с помощью мастера"
 
+msgid "Create debug log file"
+msgstr "Создавать лог файл отладки"
+
+#, python-format
 msgid "Custom (%s)"
 msgstr "Пользовательское (%s)"
 
@@ -213,6 +292,9 @@ msgstr "Пользовательское расположение"
 
 msgid "Custom offset"
 msgstr "Пользовательское смещение"
+
+msgid "Date"
+msgstr "Дата"
 
 msgid "Defines where to search for duplicates (only title, short description or even extended description)"
 msgstr "Определяет, как искать дубликаты (только название, краткое описание или даже расширенное описание)"
@@ -226,6 +308,13 @@ msgstr "Удалить"
 msgid "Description"
 msgstr "Описание"
 
+msgid "Description - short equal extended for match"
+msgstr "Описание для совпадения - краткое, такое же как и расширенное"
+
+msgid "Do not skip match when not description"
+msgstr "Не пропускать совпадение, если нет описания"
+
+#, python-format
 msgid "Do you really want to delete %s?"
 msgstr "Вы действительно хотите удалить %s?"
 
@@ -274,6 +363,9 @@ msgstr "Если включено, то Автотаймер - обзор, бу�
 msgid "Enable this to be able to access the add to AutoTimer from the channel selection context menu."
 msgstr "Если этот параметр включен, то можно добавить новый Автотаймер через контекстное меню селектора каналов."
 
+msgid "Enable timer conflict detection"
+msgstr "Включить обнаружение конфликтов таймера"
+
 msgid "Enabled"
 msgstr "Включено"
 
@@ -295,9 +387,6 @@ msgstr "Введите или измените название совпаден
 msgid "Enter or edit text"
 msgstr "Введите или измените текст"
 
-msgid "Episode (SeriesPlugin)"
-msgstr "Эпизоды (SeriesPlugin)"
-
 msgid "Everyday"
 msgstr "Любой день"
 
@@ -310,8 +399,17 @@ msgstr "Исключать"
 msgid "Execute \"after event\" during timespan"
 msgstr "Исполнять \"после события\" в течении промежутка времени"
 
+msgid "FAQ"
+msgstr ""
+
 msgid "Filter"
 msgstr "Фильтр"
+
+msgid "FilterEntry"
+msgstr "Запись фильтра"
+
+msgid "Filterlist"
+msgstr "Список фильтров"
 
 msgid ""
 "Filters are another powerful tool when matching events. An AutoTimer can be restricted to certain Weekdays or only match an event with a text inside eg it's Description.\n"
@@ -320,9 +418,22 @@ msgstr ""
 "Фильтры являются мощным инструментом для поиска найденных совпадений события. Автотаймер может быть ограничен по определенным дням недели или, например, по тексту внутри описания.\n"
 "Нажмите синюю кнопку, чтобы добавить новое ограничение."
 
+#, python-format
+msgid ""
+"Finished add to filterList with %s event(s):\n"
+"\n"
+" %s event(s) added \n"
+" %s event(s) skipped"
+msgstr ""
+"В список фильтров записано %s результатов:\n"
+"\n"
+" %s добавленных событий\n"
+" %s пропущеных событий"
+
 msgid "First day to match events. No event that begins before this date will be matched."
 msgstr "Первый день для совпадения событий. Ни одно событие, которое начинается раньше этой даты не будет учитываться."
 
+#, python-format
 msgid ""
 "Found a total of %d matching Events.\n"
 "%d Timer were added and\n"
@@ -337,6 +448,10 @@ msgstr ""
 "%d аналогичных добавлено."
 
 msgid "Frequently asked questions"
+msgstr "Часто задаваемые вопросы"
+
+#, fuzzy
+msgid "Frequently asked questions about the AutoTimer"
 msgstr "Часто задаваемые вопросы"
 
 msgid "Fri"
@@ -366,11 +481,18 @@ msgstr "Если включено, то проверка совпадений б
 msgid "If the style is advanced, you will see more information about each auto timer."
 msgstr "Если стиль расширенный, то вы увидете больше информации о каждом автотаймере."
 
+msgid "If this enabled, debug Autotimer write in log file."
+msgstr "Если это включено, то лог отладки Автотаймера будет записан в файл."
+
+msgid "If this enabled, debug log print in console mode start enigma2."
+msgstr "Если это включено, то лог отладки будет выводится в режиме запуска enigma2 через консоль."
+
+msgid "If this enabled, will check the list of timers, conflicting autotimers are disabled, the duplicate autotimers will be deleted."
+msgstr "Если эта опция включена, то будет запущена проверка списка таймеров, по окончании поиска событий .Кофликтные автотаймеры будут отключены, дублирующие автотаймеры будут удалены."
+
+#, fuzzy, python-format
 msgid "If this is enabled an existing timer will also be considered recording an event if it records at least 80% of the it."
 msgstr "Если это включено, то уже существующий таймер также будет рассмотрен как запись события, если этот таймер записывает не меньше 80% события."
-
-msgid "If this is enabled, up on the MENU button in the GraphMultiEpg will list of choices for AutoTimer."
-msgstr "Если этот параметр включен, то на кнопке меню в графическом EPG, будет список действий для  Автотаймера."
 
 msgid "If this is enabled, up on the MENU button in the multi-EPG will list of choices for AutoTimer."
 msgstr "Если этот параметр включен, то на кнопке меню в мульти EPG, будет список действий для  Автотаймера."
@@ -429,14 +551,19 @@ msgstr "Нижняя граница промежутка времени."
 msgid "Lower bound of timespan. Nothing before this time will be matched. Offsets are not taken into account!"
 msgstr "Нижняя граница промежутка времени. Ничего до этого времени не будет совпадать. Смещения не учитываются!"
 
+#, python-format
 msgid "Match Timespan: %02d:%02d - %02d:%02d"
 msgstr "Промежуток времени совпадения: %02d:%02d - %02d:%02d"
 
 msgid "Match title"
 msgstr "Название совпадения"
 
+#, python-format
 msgid "Match title: %s"
 msgstr "Название совпадения: %s "
+
+msgid "Max. count for saved searchlog"
+msgstr "Максимальное количество записей лога поиска"
 
 msgid "Maximum duration (in m)"
 msgstr "Максимальная продолжительность (в мин)"
@@ -444,6 +571,7 @@ msgstr "Максимальная продолжительность (в мин)"
 msgid "Maximum event duration to match. If an event is longer than this amount of time (without offset) it won't be matched."
 msgstr "Максимальная продолжительность события для совпадения. Если событие больше, чем эта сумма времени (без смещения), то это событие не будет считатся совпавшим."
 
+#, python-format
 msgid ""
 "Message\n"
 "Do you really want to delete %s?"
@@ -472,6 +600,18 @@ msgstr "Новый"
 msgid "No"
 msgstr "Нет"
 
+msgid "No log file found"
+msgstr "Не найден лог файл"
+
+msgid ""
+"No searchLog found!\n"
+"\n"
+"So you have no new or modified timer at last autotimer-search."
+msgstr ""
+"Не найден лог поиска!\n"
+"\n"
+"Это значит, что у Вас нет нового или измененного таймера при последнем поиске автотаймеров."
+
 msgid "No, remove them."
 msgstr "Нет, удалить их."
 
@@ -484,11 +624,11 @@ msgstr "Не позже чем"
 msgid "Not before"
 msgstr "Не раньше чем"
 
+msgid "Not found xml config file!"
+msgstr "Не найден xml конфиг файл!"
+
 msgid "Number of scheduled recordings left."
 msgstr "Количество оставшихся запланированных записей."
-
-msgid " 0 - timers will not be added."
-msgstr " 0 - таймеры не будут добавлены."
 
 msgid "OK"
 msgstr "ОK"
@@ -514,9 +654,11 @@ msgstr "Добавлять таймер только для следующих �
 msgid "Only match during timespan"
 msgstr "Только совпадения в промежуток времени"
 
+#, python-format
 msgid "Only on Service: %s"
 msgstr "Только сервис: %s"
 
+#, python-format
 msgid "Only on Weekday: %s"
 msgstr "Только день: %s"
 
@@ -538,14 +680,17 @@ msgstr "Открыть выбор расположения"
 msgid "Open select location as timer name"
 msgstr "Открыть выбор расположения как имя таймера"
 
-msgid "Open standard setup menu"
-msgstr "Открыть стандартное меню настроек"
-
 msgid "Other filters (edit in filter menu)"
 msgstr "Другие фильтры (меню фильтров)"
 
 msgid "Override found with alternative service"
 msgstr "Заменить на найденное в альтернативном сервисе"
+
+msgid "Path debug log"
+msgstr "Расположение лога отладки"
+
+msgid "Percentage ratio for duplicates matches"
+msgstr "Процентное соотношение для дубликатов совпадений"
 
 msgid "Please provide a Text to match"
 msgstr "Пожалуйста, укажите текст для совпадения"
@@ -571,6 +716,21 @@ msgstr "Превью Автотаймеров"
 msgid "Preview for your AutoTimers"
 msgstr "Превью для ваших Автотаймеров"
 
+msgid "Print shell log"
+msgstr "Вывод shell лога"
+
+msgid ""
+"Question: I found a problem with the AutoTimer, can you fix it? \n"
+"Answer: First try the AutoTimer version in a recent (experimental) Image to see if the problem was fixed. Then read the Help again and the upcoming FAQs to make sure that this is actually a problem and not expected behavior. \n"
+"If you still think there is something wrong with the AutoTimer, please visit http://www.dream-multimedia-tv.de/board and post your problem there. \n"
+"\n"
+"Q: The plugin only adds timers when leaving the configuration, not automatically. What can I do? \n"
+"A: From the Overview press MENU and enter the \"Setup\". In this screen enable \"Poll automatically\" and you should be good to go."
+msgstr ""
+
+msgid "Reading file...\n"
+msgstr "Чтение файла...\n"
+
 msgid "Really close without saving settings?"
 msgstr "Действительно закрыть без сохранения настроек?"
 
@@ -579,6 +739,22 @@ msgstr "Запись максимум x раз"
 
 msgid "Record on"
 msgstr "Запись для"
+
+msgid "Reload timers list after search events"
+msgstr "Перезагрузка списка таймеров по окончании поиска событий"
+
+#, python-format
+msgid ""
+"Reload timers list.\n"
+"%d autotimer(s) disabled because conflict.\n"
+"%d double autotimer(s) removed.\n"
+msgstr ""
+"Перезагрузка списка таймеров.\n"
+"%d автотаймер(а) отключен из-за конфликта.\n"
+"%d дублирующий автотаймер(а) удален.\n"
+
+msgid "Remove not existing events"
+msgstr "Удалять не существующие события"
 
 msgid "Remove selected AutoTimer"
 msgstr "Удалить выбранный Автотаймер"
@@ -604,9 +780,6 @@ msgstr "Ограничение на определенные дни недели
 msgid "Restriction to certain services (edit in services menu)"
 msgstr "Ограничение сервисов (редактор в меню сервисов)"
 
-msgid "Restriction to services or bouquets (edit in services menu)"
-msgstr "Ограничение сервисов или букетов (меню сервисов)"
-
 msgid "Sat"
 msgstr "Сб"
 
@@ -619,6 +792,12 @@ msgstr "Сохранить"
 msgid "Save and search now"
 msgstr "Сохранить и поиск сейчас"
 
+msgid "Save the by SeriesPlugin generated timer-name in a filterlist to filter at later timer-searches (only with SeriesPlugin)"
+msgstr "Сохраните имя таймера, созданного с помощью плагина SeriesPlugin, в список фильтров, как фильтр для последующего поиска автотаймеров (только для SeriesPlugin)."
+
+msgid "Save/check labeled series in filterlist (SeriesPlugin)"
+msgstr "Сохранение/проверка этикеток сериалов в список фильтров (SeriesPlugin)"
+
 msgid "Search new events matching for your AutoTimers"
 msgstr "Поиск новых совпадений для ваших Автотаймеров"
 
@@ -629,12 +808,14 @@ msgid "Search type"
 msgstr "Тип поиска"
 
 msgid "Select \"exact match\" to enforce \"Match title\" to match exactly, \"partial match\" if you only want to search for a part of the event title or \"description match\" if you only want to search for a part of the event description"
-msgstr ""
-"Выбор: \"точное совпадение\" - \"Название совпадения\" должно полностью совпасть с названием найденного, \"частичное совпадение\" - названия совпадения есть в названии найденного, \"описание совпадения\" - если Вы хотите найти название совпадения в кратком или расширенном описании "
-"найденного"
+msgstr "Выбор: \"точное совпадение\" - \"Название совпадения\" должно полностью совпасть с названием найденного, \"частичное совпадение\" - названия совпадения есть в названии найденного, \"описание совпадения\" - если Вы хотите найти название совпадения в кратком или расширенном описании найденного"
 
 msgid "Select a timer to import"
 msgstr "Выберите таймер для импорта"
+
+#, fuzzy
+msgid "Select action"
+msgstr "Открыть выбор расположения"
 
 msgid "Select action for AutoTimer or input date/time:"
 msgstr "Выбор действия для Автотаймера или ввод дата/время:"
@@ -648,8 +829,17 @@ msgstr "Выбрать фаворитный список для записи"
 msgid "Select channel to record on"
 msgstr "Выбрать канал для записи"
 
+msgid "Select the count of the last saved searchlogs (min=5 max=20)"
+msgstr "Выберите количество последних сохраненных записей в логе поиска (минимум=5 максимум=20)."
+
 msgid "Select the location to save the recording to."
 msgstr "Выберите директорию для сохранения записи."
+
+msgid "Select the path for autotimer_search.log"
+msgstr "Выбор пути для autotimer_search.log"
+
+msgid "Select the path where the autotimer_search.log should be saved"
+msgstr "Выберите путь для сохранения autotimer_search.log."
 
 msgid "Select type of Filter"
 msgstr "Выберите тип фильтра"
@@ -669,6 +859,12 @@ msgstr "Максимальная продолжительность"
 msgid "Set this NO to disable this AutoTimer."
 msgstr "Установите НЕТ для отключения этого Автотаймера."
 
+msgid "Set timer type: zap, simple record, zap+record (always zap to service before start record)."
+msgstr "Установите тип таймера: переключение, простая запись, переключение+запись (всегда переключать на сервис перед стартом записи)."
+
+msgid "Set wakeup receiver type. This works only for zap timers."
+msgstr "Установите тип пробуждения ресивера. Это работает только для таймеров переключения."
+
 msgid "Setup"
 msgstr "Настройки"
 
@@ -684,11 +880,20 @@ msgstr "Должны или нет, таймеры, созданные этим 
 msgid "Show \"add to AutoTimer\" in channel selection menu"
 msgstr "Показать \"добавить в Автотаймер\" в меню селектора каналов"
 
+msgid "Show AutoTimer FilterTxt"
+msgstr "Открыть список фильтров Автотаймера"
+
+msgid "Show Log file"
+msgstr "Открыть лог-файл"
+
 msgid "Show in event menu"
 msgstr "Показать в меню выбранного события"
 
 msgid "Show in extension menu"
 msgstr "Показать в меню дополнений"
+
+msgid "Show last SearchLog"
+msgstr "Показать последний лог поиска"
 
 msgid "Show notification on added timers"
 msgstr "Показать уведомление о добавленных таймерах"
@@ -710,6 +915,9 @@ msgstr "Сортировка Автотаймеров"
 
 msgid "Sort Time"
 msgstr "Сортировка по времени"
+
+msgid "Specify the name and location for the log."
+msgstr "Укажите имя и расположение для лога."
 
 msgid "Standard"
 msgstr "стандарт"
@@ -755,14 +963,28 @@ msgstr ""
 msgid "The Timespan of an AutoTimer is the first 'advanced' attribute. If a timespan is specified an event will only match this AutoTimer if it lies inside of this timespan."
 msgstr "Промежуток времени Автотаймера служит одним из первых 'расширенных' атрибутов. Если этот промежуток задается, то поиск совпадения события будет производится только в нем."
 
+msgid "The autotimer file (/etc/enigma2/autotimer.xml) is corrupt and could not be loaded."
+msgstr "Файл автотаймеров (/etc/enigma2/autotimer.xml) поврежден и не может быть загружен."
+
 msgid "The counter can automatically be reset to the limit at certain intervals."
 msgstr "Счетчик может автоматически сбрасывается при лимите через заданный интервал."
 
 msgid "The editor to be used for new AutoTimers. This can either be the Wizard or the classic editor."
 msgstr "Редактор для ваших новых Автотаймеров. Это может быть  мастер или классический редактор."
 
+#, python-format
+msgid ""
+"The filterEntry '%s' already exist!\n"
+"The change was canceled."
+msgstr ""
+"Запись фильтра '%s' уже существует!\n"
+"Изменение было отменено."
+
 msgid "The match attribute is mandatory."
 msgstr "Атрибут совпадения является обязательным."
+
+msgid "The title attribute is mandatory."
+msgstr "Атрибут название является обязательным."
 
 msgid "This is a name you can give the AutoTimer. It will be shown in the Overview and the Preview."
 msgstr "Это имя для вашего Автотаймера. Оно будет показано Вам в обзоре и в превью таймеров. Только для информации."
@@ -782,6 +1004,9 @@ msgstr "Это продолжительность в минутах, для вы
 msgid "This is what will be looked for in event titles. Note that looking for e.g. german umlauts can be tricky as you have to know the encoding the channel uses."
 msgstr "Это то название, по которому будет вестись поиск в названиях новых событий для совпадения. Для поиска, например на немецком языке, Вы должны точно знать кодировку канала."
 
+msgid "This option allows you to turn off the timer confict detection. This option is for advanced users."
+msgstr "При использовании дистанционного резервного тюнера для записей, обнаружение конфликтов таймеров не может сделать исключение для резервного тюнера. Эта опция позволяет отключить обнаружение конфликтов для этого таймера. Не рекомендуется!"
+
 msgid "This setting controls the behavior when a timer matches a found event."
 msgstr "Если эта опция включена, то когда уже существующий таймер соответствует найденому событию, Автотаймер имеет право изменить этот таймер(время начала/окончания, название/описание)."
 
@@ -794,6 +1019,9 @@ msgstr "Чт"
 msgid "Thursday"
 msgstr "Четверг"
 
+msgid "Time"
+msgstr "Время"
+
 msgid "Time in minutes to append to recording."
 msgstr "Время в минутах добавленное к окончанию записи."
 
@@ -802,6 +1030,9 @@ msgstr "Время в минутах добавленное к  началу з�
 
 msgid "Timeout (in min)"
 msgstr "Таймаут (в мин)"
+
+msgid "Timer from:\n"
+msgstr "Таймер от:\n"
 
 msgid "Timer type"
 msgstr "Тип таймера"
@@ -817,6 +1048,9 @@ msgstr "Название и краткое описание"
 
 msgid "Title and all descriptions"
 msgstr "Название и все описание"
+
+msgid "To cater for spelling mistakes and small deviations in the EPG information, you can make the matching algorithm fuzzy by setting the percentage both programmes must be equal for. Use 100% if you only want a match when both are completely identical. Recommended default ratio 80%."
+msgstr "Для обхода опечаток и небольших отклонений в информации EPG, Вы можете сделать алгоритм сопоставления нечетким, установив нужный процент для совпадения обеих программ. Используйте 100% для полной идентичности. Рекомендуемое соотношение по дефолту 80%."
 
 msgid "Tue"
 msgstr "Вт"
@@ -839,11 +1073,11 @@ msgstr "Пользовательская директория"
 msgid "Use blue key to edit bouquets or services."
 msgstr "Синяя кнопка для редактирования букетов или сервисов."
 
-msgid "Use blue key to edit services."
-msgstr "Синяя кнопка для редактирования сервисов."
-
 msgid "Use yellow key to edit filters."
 msgstr "Желтая кнопка для редактирования фильтров."
+
+msgid "Wakeup receiver for start timer"
+msgstr "Разбудить ресивер для старта таймера"
 
 msgid "Wed"
 msgstr "Ср"
@@ -878,6 +1112,12 @@ msgstr "При поддержке \"Быстрый поиск\", тип серв
 msgid "When this is enabled AutoTimer will ONLY check for new events whilst in stanadby."
 msgstr "Если включено, то Автотаймер будет проверять наличие новых событий ТОЛЬКО в режиме ожидания."
 
+msgid "When this option enabled and short description and extended description match is empty and timer title exist in match title, match is not a duplicate. Attention, this may result in double timers."
+msgstr "Если эта опция включена и нет краткого и расширенного описания для совпадения, а название таймера существует в названии совпадения, не считать это совпадение дубликатом. Внимание, это может привести к дублям таймера."
+
+msgid "When this option enabled, short description to equal extended description if short description is empty."
+msgstr "Если эта опция включена и нет краткого описания для совпадения, то заменить его на расширенное описание."
+
 msgid "When this option is enabled the AutoTimer won't match events where another timer with the same description already exists in the timer list."
 msgstr "Когда этот параметр включен, то Автотаймер не будет добавлять совпадения, если другой таймер с тем же описанием уже существует в списке таймеров."
 
@@ -890,8 +1130,14 @@ msgstr "С помощью этого параметра вы можете огр
 msgid "Wizard"
 msgstr "Мастер"
 
+msgid "Write the config file after every change which the user quits by saving."
+msgstr "Перезаписывать конфигурационный файл после каждого изменения, когда пользователь сохранил настройки."
+
 msgid "Yes"
 msgstr "Да"
+
+msgid "Yes and show notify"
+msgstr "Да и показать сообщение"
 
 msgid "Yes, and delete all timers generated by this autotimer"
 msgstr "Да и удалить все таймеры сгенерированные этим автотаймером"
@@ -919,6 +1165,7 @@ msgstr ""
 "Вы не предоставили валидный атрибут 'Название совпадения' для вашего нового Автотаймера.\n"
 "Это обязательный атрибут, вы не можете продолжить без этого."
 
+#, python-format
 msgid ""
 "You entered \"%s\" as Text to match.\n"
 "Do you want to remove trailing whitespaces?"
@@ -942,6 +1189,7 @@ msgstr ""
 "Ваше 'Имя совпадения' имеет в окончании пробелы.\n"
 "Подтвердите это,если это сделано специально."
 
+#, python-format
 msgid ""
 "Your config file is not well-formed:\n"
 "%s"
@@ -958,14 +1206,20 @@ msgstr "добавить Автотаймер..."
 msgid "add filters"
 msgstr "добавить фильтры"
 
-msgid "add services"
-msgstr "добавить сервисы"
+msgid "add to AutoTimer filterList"
+msgstr "добавить в список фильтров Автотаймера"
+
+msgid "always"
+msgstr "всегда"
 
 msgid "auto"
 msgstr "авто"
 
 msgid "autotimers need a match attribute"
 msgstr "Автотаймерам нужен атрибут совпадения"
+
+msgid "begin searchLog from"
+msgstr "старт - лог поиска от"
 
 msgid "case-insensitive search"
 msgstr "поиск без учета регистра"
@@ -997,9 +1251,6 @@ msgstr "ничего не делать"
 msgid "edit filters"
 msgstr "редактировать фильтры"
 
-msgid "edit services"
-msgstr "редактировать сервисы"
-
 msgid "enable"
 msgstr "включено"
 
@@ -1008,6 +1259,9 @@ msgstr "включено"
 
 msgid "exact match"
 msgstr "точное совпадение"
+
+msgid "favorites description match"
+msgstr "описание совпадения в фаворитах"
 
 msgid "go to deep standby"
 msgstr "перейти в режим глубокого ожидания"
@@ -1024,14 +1278,29 @@ msgstr "в кратком описании"
 msgid "in Title"
 msgstr "в названии"
 
+msgid "like autotimer.log"
+msgstr "как autotimer.log"
+
 msgid "mins"
 msgstr "минут"
 
 msgid "missing parameter \"id\""
 msgstr "отсутствует параметр \"ид\""
 
+msgid "missing parameter \"xml\""
+msgstr "отсутствует параметр \"xml\""
+
+msgid "never"
+msgstr "никогда"
+
 msgid "on Weekday"
 msgstr "по дням"
+
+msgid "only from deep standby"
+msgstr "только из режима глубокого ожидания"
+
+msgid "only from standby"
+msgstr "только из режима ожидания"
 
 msgid "partial match"
 msgstr "частичное совпадение"
@@ -1039,15 +1308,22 @@ msgstr "частичное совпадение"
 msgid "record"
 msgstr "запись"
 
+msgid "scan for new Events"
+msgstr "поиск новых событий"
+
+msgid "searchLog"
+msgstr "лог поиска"
+
 msgid "standard"
 msgstr "стандарт"
-
-msgid "title starts with"
-msgstr "имя совпадения начинается с"
 
 msgid "title ends with"
 msgstr "имя совпадения заканчивается на"
 
+msgid "title starts with"
+msgstr "имя совпадения начинается с"
+
+#, python-format
 msgid "unable to find timer with id %i"
 msgstr "не найден таймер с ид %i"
 
@@ -1057,251 +1333,5 @@ msgstr "неизвестно"
 msgid "zap"
 msgstr "переключение"
 
-msgid "Remove not existing events"
-msgstr "Удалять не существующие события"
-
-msgid "Check the event id (eit) and remove the timer if there is no corresponding EPG event. Due to compatibility issues with SerienRecorder and IPRec, only timer created by AutoTimer are affected."
-msgstr "Проверка идентификатора события (eit) и удаление таймера, если нет соответствующего события EPG. Не совместим с SerienRecorder и IPRec, это затрагивает только таймеры созданные Автотаймером."
-
-msgid "This option allows you to turn off the timer confict detection. This option is for advanced users."
-msgstr "При использовании дистанционного резервного тюнера для записей, обнаружение конфликтов таймеров не может сделать исключение для резервного тюнера. Эта опция позволяет отключить обнаружение конфликтов для этого таймера. Не рекомендуется!"
-
-msgid "Enable timer conflict detection"
-msgstr "Включить обнаружение конфликтов таймера"
-
-msgid "Wakeup receiver for start timer"
-msgstr "Разбудить ресивер для старта таймера"
-
-msgid "Set wakeup receiver type. This works only for zap timers."
-msgstr "Установите тип пробуждения ресивера. Это работает только для таймеров переключения."
-
-msgid "Set timer type: zap, simple record, zap+record (always zap to service before start record)."
-msgstr "Установите тип таймера: переключение, простая запись, переключение+запись (всегда переключать на сервис перед стартом записи)."
-
 msgid "zap and record"
 msgstr "переключение и запись"
-
-msgid "always"
-msgstr "всегда"
-
-msgid "only from standby"
-msgstr "только из режима ожидания"
-
-msgid "only from deep standby"
-msgstr "только из режима глубокого ожидания"
-
-msgid "never"
-msgstr "никогда"
-
-msgid "Create debug log file"
-msgstr "Создавать лог файл отладки"
-
-msgid "Path debug log"
-msgstr "Расположение лога отладки"
-
-msgid "Print shell log"
-msgstr "Вывод shell лога"
-
-msgid "If this enabled, debug log print in console mode start enigma2."
-msgstr "Если это включено, то лог отладки будет выводится в режиме запуска enigma2 через консоль."
-
-msgid "Specify the name and location for the log."
-msgstr "Укажите имя и расположение для лога."
-
-msgid "If this enabled, debug Autotimer write in log file."
-msgstr "Если это включено, то лог отладки Автотаймера будет записан в файл."
-
-msgid " - Version: "
-msgstr " - версия: "
-
-msgid "Always write config"
-msgstr "Всегда перезаписывать конфигурацию"
-
-msgid "Write the config file after every change which the user quits by saving."
-msgstr "Перезаписывать конфигурационный файл после каждого изменения, когда пользователь сохранил настройки."
-
-msgid "Description - short equal extended for match"
-msgstr "Описание для совпадения - краткое, такое же как и расширенное"
-
-msgid "Do not skip match when not description"
-msgstr "Не пропускать совпадение, если нет описания"
-
-msgid "When this option enabled, short description to equal extended description if short description is empty."
-msgstr "Если эта опция включена и нет краткого описания для совпадения, то заменить его на расширенное описание."
-
-msgid "When this option enabled and short description and extended description match is empty and timer title exist in match title, match is not a duplicate. Attention, this may result in double timers."
-msgstr "Если эта опция включена и нет краткого и расширенного описания для совпадения, а название таймера существует в названии совпадения, не считать это совпадение дубликатом. Внимание, это может привести к дублям таймера."
-
-msgid " (only services from bouquets when use \"favorites description match\")."
-msgstr " (только в сервисах из букетов при использовании \"описание совпадения в фаворитах\")."
-
-msgid "Percentage ratio for duplicates matches"
-msgstr "Процентное соотношение для дубликатов совпадений"
-
-msgid "To cater for spelling mistakes and small deviations in the EPG information, you can make the matching algorithm fuzzy by setting the percentage both programmes must be equal for. Use 100% if you only want a match when both are completely identical. Recommended default ratio 80%."
-msgstr "Для обхода опечаток и небольших отклонений в информации EPG, Вы можете сделать алгоритм сопоставления нечетким, установив нужный процент для совпадения обеих программ. Используйте 100% для полной идентичности. Рекомендуемое соотношение по дефолту 80%."
-
-msgid "Reload timers list after search events"
-msgstr "Перезагрузка списка таймеров по окончании поиска событий"
-
-msgid "If this enabled, will check the list of timers, conflicting autotimers are disabled, the duplicate autotimers will be deleted."
-msgstr "Если эта опция включена, то будет запущена проверка списка таймеров, по окончании поиска событий .Кофликтные автотаймеры будут отключены, дублирующие автотаймеры будут удалены."
-
-msgid "Yes and show notify"
-msgstr "Да и показать сообщение"
-
-msgid ""
-"Reload timers list.\n"
-"%d autotimer(s) disabled because conflict.\n"
-"%d double autotimer(s) removed.\n"
-msgstr ""
-"Перезагрузка списка таймеров.\n"
-"%d автотаймер(а) отключен из-за конфликта.\n"
-"%d дублирующий автотаймер(а) удален.\n"
-
-msgid "The autotimer file (/etc/enigma2/autotimer.xml) is corrupt and could not be loaded."
-msgstr "Файл автотаймеров (/etc/enigma2/autotimer.xml) поврежден и не может быть загружен."
-
-msgid "A new and empty config was created. A backup of the config can be found here (/etc/enigma2/autotimer.xml_old)."
-msgstr "Создана новая и пустая конфигурация. Резервное копирование конфигурации можно найти здесь (/etc/enigma2/autotimer.xml_old)."
-
-msgid " (if services are enabled, bouquets are ignored)."
-msgstr " (если сервисы включены, букеты будут игнорированы)."
-
-msgid "favorites description match"
-msgstr "описание совпадения в фаворитах"
-
-msgid "AutoTimers were changed successfully"
-msgstr "Автотаймеры были успешно изменены"
-
-msgid "missing parameter \"xml\""
-msgstr "отсутствует параметр \"xml\""
-
-msgid "Not found xml config file!"
-msgstr "Не найден xml конфиг файл!"
-
-msgid "Close without saving"
-msgstr "Закрыть без сохранения"
-
-msgid "Close and save"
-msgstr "Закрыть и сохранить"
-
-msgid "like autotimer.log"
-msgstr "как autotimer.log"
-
-msgid "begin searchLog from"
-msgstr "старт - лог поиска от"
-
-msgid ""
-"Finished add to filterList with %s event(s):\n"
-"\n"
-" %s event(s) added \n"
-" %s event(s) skipped"
-msgstr ""
-"В список фильтров записано %s результатов:\n"
-"\n"
-" %s добавленных событий\n"
-" %s пропущеных событий"
-
-msgid "Save the by SeriesPlugin generated timer-name in a filterlist to filter at later timer-searches (only with SeriesPlugin)"
-msgstr "Сохраните имя таймера, созданного с помощью плагина SeriesPlugin, в список фильтров, как фильтр для последующего поиска автотаймеров (только для SeriesPlugin)."
-
-msgid "Save/check labeled series in filterlist (SeriesPlugin)"
-msgstr "Сохранение/проверка этикеток сериалов в список фильтров (SeriesPlugin)"
-
-msgid " == attention: global option 'Save/check filterlist is still active!! =="
-msgstr " == внимание: глобальная опция 'Сохранение/проверка в списке фильтров' по прежнему активна!! =="
-
-msgid "AutoTimer "
-msgstr "Автотаймер "
-
-msgid "Filterlist"
-msgstr "Список фильтров"
-
-msgid "Timer from:\n"
-msgstr "Таймер от:\n"
-
-msgid ""
-"The filterEntry '%s' already exist!\n"
-"The change was canceled."
-msgstr ""
-"Запись фильтра '%s' уже существует!\n"
-"Изменение было отменено."
-
-msgid "FilterEntry"
-msgstr "Запись фильтра"
-
-msgid "AutoTimer %s FilterListEntry"
-msgstr "Автотаймер %s запись фильтра"
-
-msgid "The title attribute is mandatory."
-msgstr "Атрибут название является обязательным."
-
-msgid "Date"
-msgstr "Дата"
-
-msgid "Time"
-msgstr "Время"
-
-msgid "Close"
-msgstr "Закрыть"
-
-msgid "Show last SearchLog"
-msgstr "Показать последний лог поиска"
-
-msgid "Show AutoTimer FilterTxt"
-msgstr "Открыть список фильтров Автотаймера"
-
-msgid ""
-"No searchLog found!\n"
-"\n"
-"So you have no new or modified timer at last autotimer-search."
-msgstr ""
-"Не найден лог поиска!\n"
-"\n"
-"Это значит, что у Вас нет нового или измененного таймера при последнем поиске автотаймеров."
-
-msgid "Show Log file"
-msgstr "Открыть лог-файл"
-
-msgid " - AutoTimer "
-msgstr " - Автотаймер "
-
-msgid "Reading file...\n"
-msgstr "Чтение файла...\n"
-
-msgid ""
-"\n"
-"\n"
-"Cancel?"
-msgstr ""
-"\n"
-"\n"
-"Отмена?"
-
-msgid "No log file found"
-msgstr "Не найден лог файл"
-
-msgid "AutoTimer scan"
-msgstr "Автотаймер - сканирование"
-
-msgid "scan for new Events"
-msgstr "поиск новых событий"
-
-msgid "add to AutoTimer filterList"
-msgstr "добавить в список фильтров Автотаймера"
-
-msgid "searchLog"
-msgstr "лог поиска"
-
-msgid "Select the path for autotimer_search.log"
-msgstr "Выбор пути для autotimer_search.log"
-
-msgid "Select the path where the autotimer_search.log should be saved"
-msgstr "Выберите путь для сохранения autotimer_search.log."
-
-msgid "Max. count for saved searchlog"
-msgstr "Максимальное количество записей лога поиска"
-
-msgid "Select the count of the last saved searchlogs (min=5 max=20)"
-msgstr "Выберите количество последних сохраненных записей в логе поиска (минимум=5 максимум=20)."

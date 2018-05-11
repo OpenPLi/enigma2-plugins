@@ -2,173 +2,117 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-02-28 19:54+0100\n"
+"POT-Creation-Date: 2018-05-11 10:58+0200\n"
 "PO-Revision-Date: 2018-02-12 18:02+0200\n"
+"Last-Translator: \n"
 "Language-Team: LANGUAGE <Dima-73@inbox.lv>\n"
+"Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Last-Translator: \n"
-"Language: ru\n"
 "X-Generator: Poedit 2.0.4\n"
 
-#: plugin.py:24
-msgid "Transponder"
-msgstr "Транспордер"
-
-#: plugin.py:24
-msgid "NTP"
-msgstr "NTP"
-
-#: plugin.py:25
-msgid "5 mins"
-msgstr "5 минут"
-
-#: plugin.py:25
-msgid "15 mins"
-msgstr "15 минут"
-
-#: plugin.py:25
-msgid "30 mins"
-msgstr "30 минут"
-
-#: plugin.py:25
-msgid "1 hour"
-msgstr "1 час"
-
-#: plugin.py:25
-msgid "2 hours"
-msgstr "2 часа"
-
-#: plugin.py:25
-msgid "4 hours"
-msgstr "4 часа"
-
-#: plugin.py:25
-msgid "12 hours"
-msgstr "12 часов"
-
-#: plugin.py:25
-msgid "24 hours"
-msgstr "24 часа"
-
-#: plugin.py:25
-msgid "48 hours"
-msgstr "48 часов"
-
-#: plugin.py:29 plugin.py:30 plugin.py:31
-msgid "Press OK"
-msgstr "Нажмите ОК"
-
-#: plugin.py:70
-msgid "System time setup"
-msgstr "Настройки системного времени"
-
-#: plugin.py:76
-msgid "Cancel"
-msgstr "Отмена"
-
-#: plugin.py:77
-msgid "Save"
-msgstr "Сохранить"
-
-#: plugin.py:78
-msgid "Restart GUI"
-msgstr "Рестарт GUI"
-
-#: plugin.py:146
-msgid "Sync time using"
-msgstr "Синхронизация времени с помощью"
-
-#: plugin.py:146
-msgid "Select the preferred method for syncing time on your receiver. Network Time Protocol requires internet connection. Transponder time might not be very accurate."
-msgstr "Выберите предпочтительный метод синхронизации времени на вашем ресивере. Протокол сетевого времени требует подключения к Интернету. Время с транспондера может быть не очень точным."
-
-#: plugin.py:147
-msgid "Sync NTP every"
-msgstr "Синхронизировать с NTP каждые"
-
-#: plugin.py:147
-msgid "Set how often the receiver will connect to the NTP server to sync time."
-msgstr "Установите интервал подключения к серверу NTP, для синхронизации времени."
-
-#: plugin.py:148
-msgid "NTP cold start"
-msgstr "Синхронизировать с NTP при старте ресивера"
-
-#: plugin.py:148
-msgid "On receiver 'cold start', allow any required time adjustments to be 'stepped'."
-msgstr "Получать время с сервера NTP, при включении ресивера из режима глубокого ожидания."
-
-#: plugin.py:149
-msgid "Delay (in seconds) when using Wi-Fi"
-msgstr "Задержка (в сек.) при использовании Wi-Fi"
-
-#: plugin.py:149
-msgid "After receiver's boot, wait for the specified delay before connecting to the NTP server. This allows the Wi-Fi connection to be fully established."
-msgstr "При загрузке ресивера, дождаться указанной задержки перед подключением к серверу NTP. Это позволяет полностью установить соединение Wi-Fi."
-
-#: plugin.py:150
-msgid "Sync now with NTP server"
-msgstr "Синхронизация сейчас с сервера NTP"
-
-#: plugin.py:150
-msgid "Get current time from the specified NTP server."
-msgstr "Получение текущего времени с выбранного сервера NTP."
-
-#: plugin.py:151
-msgid "Sync now with current transponder"
-msgstr "Синхронизация сейчас с текущего транспондера"
-
-#: plugin.py:151
-msgid "Get current time from the specified DVB transponder."
-msgstr "Получение текущего времени с выбранного DVB транспондера."
-
-#: plugin.py:152
-msgid "Set system time manually"
-msgstr "Установка системного времени вручную"
-
-#: plugin.py:152
-msgid "Enter a user defined date and time."
-msgstr "Введите нужную дату и время."
-
-#: plugin.py:153
-msgid "Use RTC time from deep standby"
-msgstr "Использовать время RTC при старте ресивера"
-
-#: plugin.py:153
-msgid "When the receiver starts from deep standby, use the time provided by the Real Time Clock, if it appears to be valid."
-msgstr "Когда Вы включаете ресивер из режима глубоком ожидания, используйте время, предоставляемое Real Time Clock, если время окажется действительным."
-
-#: plugin.py:154
-msgid "NTP server"
-msgstr "Сервер NTP"
-
-#: plugin.py:154
-msgid "Set the IP address of the preferred NTP server. Default is pool.ntp.org."
-msgstr "Установите IP-адрес предпочтительного сервера NTP. По умолчанию используется pool.ntp.org."
-
-#: plugin.py:184 plugin.py:187
-msgid "Syncing with NTP server..."
-msgstr "Синхронизация с NTP сервера..."
-
-#: plugin.py:189 plugin.py:252
-msgid "'ntpdate' is not installed!"
-msgstr "'ntpdate' не установлен!"
-
-#: plugin.py:196
-msgid "Syncing... Please wait."
-msgstr "Синхронизация... Пожалуйста, подождите..."
-
-#: plugin.py:201
-msgid "Syncing with current transponder..."
-msgstr "Синхронизация с текущего транспондера..."
-
-#: plugin.py:203
 msgid "'dvbdate' is not installed!"
 msgstr "'dvbdate' не установлен!"
 
-#: plugin.py:214
+msgid "'ntpdate' is not installed!"
+msgstr "'ntpdate' не установлен!"
+
+msgid "1 hour"
+msgstr "1 час"
+
+msgid "12 hours"
+msgstr "12 часов"
+
+msgid "15 mins"
+msgstr "15 минут"
+
+msgid "2 hours"
+msgstr "2 часа"
+
+msgid "24 hours"
+msgstr "24 часа"
+
+msgid "30 mins"
+msgstr "30 минут"
+
+msgid "4 hours"
+msgstr "4 часа"
+
+msgid "48 hours"
+msgstr "48 часов"
+
+msgid "5 mins"
+msgstr "5 минут"
+
+msgid "After receiver's boot, wait for the specified delay before connecting to the NTP server. This allows the Wi-Fi connection to be fully established."
+msgstr "При загрузке ресивера, дождаться указанной задержки перед подключением к серверу NTP. Это позволяет полностью установить соединение Wi-Fi."
+
+msgid "Apply new system time?"
+msgstr "Применить новое системное время?"
+
+msgid "Cancel"
+msgstr "Отмена"
+
+msgid "Change system time in enigma2 box"
+msgstr "Изменение системного времени ресивера"
+
+msgid "Delay (in seconds) when using Wi-Fi"
+msgstr "Задержка (в сек.) при использовании Wi-Fi"
+
+msgid "Enter a user defined date and time."
+msgstr "Введите нужную дату и время."
+
+msgid "Enter new system time and press OK!"
+msgstr "Введите новое время и нажмите ОК!"
+
+msgid "Get current time from the specified DVB transponder."
+msgstr "Получение текущего времени с выбранного DVB транспондера."
+
+msgid "Get current time from the specified NTP server."
+msgstr "Получение текущего времени с выбранного сервера NTP."
+
+#, python-format
+msgid "Invalid input in day: %s"
+msgstr "Недопустимый ввод дня: %s"
+
+#, python-format
+msgid "Invalid input in hour: %s"
+msgstr "Недопустимый ввод часа: %s"
+
+#, python-format
+msgid "Invalid input in minute: %s"
+msgstr "Недопустимый ввод минуты: %s"
+
+#, python-format
+msgid "Invalid input in month: %s"
+msgstr "Недопустимый ввод месяца: %s"
+
+#, python-format
+msgid "Invalid input in year: %s"
+msgstr "Недопустимый ввод года: %s"
+
+msgid "Invalid time format."
+msgstr "Недопустимый ввод формата времени."
+
+msgid "NTP"
+msgstr "NTP"
+
+msgid "NTP cold start"
+msgstr "Синхронизировать с NTP при старте ресивера"
+
+msgid "NTP server"
+msgstr "Сервер NTP"
+
+msgid "No answer given."
+msgstr "Нет ответа."
+
+msgid "No change detected."
+msgstr "Не обнаружено изменений."
+
+msgid "No confirmation given."
+msgstr "Не подверждено."
+
 #, python-format
 msgid ""
 "Old time: %(oldtime)s\n"
@@ -181,72 +125,66 @@ msgstr ""
 "\n"
 "Смещение: %(offset)s секунд"
 
-#: plugin.py:221 plugin.py:312
-msgid "Select transponder"
-msgstr "Выбор транспондера"
+msgid "On receiver 'cold start', allow any required time adjustments to be 'stepped'."
+msgstr "Получать время с сервера NTP, при включении ресивера из режима глубокого ожидания."
 
-#: plugin.py:270
-msgid "Script 'set-rtctime' not found!"
-msgstr "Скрипт 'set-rtctime' не найден!"
+msgid "Press OK"
+msgstr "Нажмите ОК"
 
-#: plugin.py:305
+msgid "Restart GUI"
+msgstr "Рестарт GUI"
+
 msgid "Restart GUI now?"
 msgstr "Выполнить рестарт GUI сейчас?"
 
-#: plugin.py:362
-msgid "Enter new system time and press OK!"
-msgstr "Введите новое время и нажмите ОК!"
+msgid "Save"
+msgstr "Сохранить"
 
-#: plugin.py:370
-msgid "No change detected."
-msgstr "Не обнаружено изменений."
+msgid "Script 'set-rtctime' not found!"
+msgstr "Скрипт 'set-rtctime' не найден!"
 
-#: plugin.py:372
-msgid "Time string too short."
-msgstr "Строка времени слишком короткая."
+msgid "Select the preferred method for syncing time on your receiver. Network Time Protocol requires internet connection. Transponder time might not be very accurate."
+msgstr "Выберите предпочтительный метод синхронизации времени на вашем ресивере. Протокол сетевого времени требует подключения к Интернету. Время с транспондера может быть не очень точным."
 
-#: plugin.py:374 plugin.py:376
-msgid "Invalid time format."
-msgstr "Недопустимый ввод формата времени."
+msgid "Select transponder"
+msgstr "Выбор транспондера"
 
-#: plugin.py:399
-#, python-format
-msgid "Invalid input in year: %s"
-msgstr "Недопустимый ввод года: %s"
+msgid "Set how often the receiver will connect to the NTP server to sync time."
+msgstr "Установите интервал подключения к серверу NTP, для синхронизации времени."
 
-#: plugin.py:401
-#, python-format
-msgid "Invalid input in month: %s"
-msgstr "Недопустимый ввод месяца: %s"
+msgid "Set system time manually"
+msgstr "Установка системного времени вручную"
 
-#: plugin.py:403
-#, python-format
-msgid "Invalid input in day: %s"
-msgstr "Недопустимый ввод дня: %s"
+msgid "Set the IP address of the preferred NTP server. Default is pool.ntp.org."
+msgstr "Установите IP-адрес предпочтительного сервера NTP. По умолчанию используется pool.ntp.org."
 
-#: plugin.py:405
-#, python-format
-msgid "Invalid input in hour: %s"
-msgstr "Недопустимый ввод часа: %s"
+msgid "Sync NTP every"
+msgstr "Синхронизировать с NTP каждые"
 
-#: plugin.py:407
-#, python-format
-msgid "Invalid input in minute: %s"
-msgstr "Недопустимый ввод минуты: %s"
+msgid "Sync now with NTP server"
+msgstr "Синхронизация сейчас с сервера NTP"
 
-#: plugin.py:410
-msgid "Apply new system time?"
-msgstr "Применить новое системное время?"
+msgid "Sync now with current transponder"
+msgstr "Синхронизация сейчас с текущего транспондера"
 
-#: plugin.py:414
-msgid "No answer given."
-msgstr "Нет ответа."
+msgid "Sync time using"
+msgstr "Синхронизация времени с помощью"
 
-#: plugin.py:416
-msgid "No confirmation given."
-msgstr "Не подверждено."
+msgid "Syncing with NTP server..."
+msgstr "Синхронизация с NTP сервера..."
 
-#: plugin.py:432
+msgid "Syncing with current transponder..."
+msgstr "Синхронизация с текущего транспондера..."
+
+msgid "Syncing... Please wait."
+msgstr "Синхронизация... Пожалуйста, подождите..."
+
+msgid "System Time"
+msgstr "Системное время"
+
+msgid "System time setup"
+msgstr "Настройки системного времени"
+
 #, python-format
 msgid ""
 "System time was not applied.\n"
@@ -255,10 +193,14 @@ msgstr ""
 "Системное время не применено.\n"
 "%s"
 
-#: plugin.py:452
-msgid "System Time"
-msgstr "Системное время"
+msgid "Time string too short."
+msgstr "Строка времени слишком короткая."
 
-#: plugin.py:460
-msgid "Change system time in enigma2 box"
-msgstr "Изменение системного времени ресивера"
+msgid "Transponder"
+msgstr "Транспордер"
+
+msgid "Use RTC time from deep standby"
+msgstr "Использовать время RTC при старте ресивера"
+
+msgid "When the receiver starts from deep standby, use the time provided by the Real Time Clock, if it appears to be valid."
+msgstr "Когда Вы включаете ресивер из режима глубоком ожидания, используйте время, предоставляемое Real Time Clock, если время окажется действительным."

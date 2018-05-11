@@ -2,14 +2,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-02-28 19:54+0100\n"
+"POT-Creation-Date: 2018-05-11 10:58+0200\n"
 "PO-Revision-Date: 2017-01-04 18:06+0200\n"
+"Last-Translator: Dimitrij <Dima-73@inbox.lv>\n"
 "Language-Team: LANGUAGE <Dima-73@inbox.lv>\n"
+"Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Last-Translator: Dimitrij <Dima-73@inbox.lv>\n"
-"Language: ru\n"
 "X-Generator: Poedit 1.8.9\n"
 
 msgid "Change Root Password"
@@ -18,11 +18,17 @@ msgstr "Смена пароля root"
 msgid "Change or reset the root password of your box"
 msgstr "Сменить/сбросить/удалить пароль для root на Вашем ресивере"
 
+msgid "Delete Password"
+msgstr "Удалить пароль"
+
 msgid "Enter new Password"
 msgstr "Ввод нового пароля"
 
 msgid "Enter your password here:"
 msgstr "Введите Ваш пароль здесь:"
+
+msgid "Password deleted sucessfully for root user"
+msgstr "Пароль для пользователя root успешно удален"
 
 msgid "Set Password"
 msgstr "Установить пароль"
@@ -33,17 +39,11 @@ msgstr "Пароль для пользователя root успешно изм�
 msgid "Unable to change/reset password for root user"
 msgstr "Невозможно изменить/сбросить пароль для пользователя root"
 
+msgid "Unable to delete password for root user"
+msgstr "Невозможно удалить пароль для пользователя root"
+
 msgid "new Random"
 msgstr "Новый случайно"
 
 msgid "virt. Keyboard"
 msgstr "Виртуальная  клавиатура"
-
-msgid "Delete Password"
-msgstr "Удалить пароль"
-
-msgid "Password deleted sucessfully for root user"
-msgstr "Пароль для пользователя root успешно удален"
-
-msgid "Unable to delete password for root user"
-msgstr "Невозможно удалить пароль для пользователя root"

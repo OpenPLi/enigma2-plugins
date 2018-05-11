@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Enigma 2 IMDb Plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-27 18:11+0100\n"
+"POT-Creation-Date: 2018-05-11 10:58+0200\n"
 "PO-Revision-Date: 2015-02-11 21:14+0100\n"
 "Last-Translator: daTa deVil <http://opena.tv>\n"
 "Language-Team: openATV\n"
@@ -20,32 +20,14 @@ msgstr ""
 "X-Generator: Poedit 1.5.4\n"
 "X-Poedit-SearchPath-0: ../src\n"
 
-msgid "IMDb Menu"
-msgstr "IMDb Menü"
-
-msgid "Save current Details as .html for offline using"
-msgstr "aktuelle Details als .html speichern für lokalen Gebrauch"
-
-msgid "Save current Details as .txt"
-msgstr "aktuelle Details als .txt speichern für lokalen Gebrauch"
-
-msgid "Save current Poster and Details as .txt"
-msgstr "aktuelles Poster und die Details als .txt Datei speichern"
-
-msgid "Content:"
-msgstr "Inhalt:"
-
-msgid "Runtime:"
-msgstr "Laufzeit:"
-
-msgid "Production Countries:"
-msgstr "Produktionsländer:"
-
-msgid "Release Date:"
-msgstr "Erscheinungsdatum:"
-
 msgid " as "
 msgstr " als "
+
+msgid "Add 'Search event in IMDb' to further option EPG menu."
+msgstr ""
+
+msgid "Add 'Search in IMDb' to movie list menu for selected video."
+msgstr ""
 
 msgid "Ambiguous results"
 msgstr "Kein eindeutiger Treffer"
@@ -59,6 +41,9 @@ msgstr "Darsteller: "
 msgid "Channel Selection"
 msgstr "Kanalliste"
 
+msgid "Content:"
+msgstr "Inhalt:"
+
 msgid "Could't get Eventname"
 msgstr "Konnte Sendungstitel nicht feststellen"
 
@@ -69,8 +54,7 @@ msgstr "Details"
 msgid "Downloading Movie Poster: %s..."
 msgstr "Lade Filmplakat herunter: %s..."
 
-msgid ""
-"Enable this to be able to access the IMDb from within the plugin browser."
+msgid "Enable this to be able to access the IMDb from within the plugin browser."
 msgstr ""
 
 msgid "Enter search"
@@ -85,6 +69,16 @@ msgstr "Beenden"
 msgid "Extra Info"
 msgstr "Zusatzinfos"
 
+#, fuzzy
+msgid "Extra Info\n"
+msgstr "Zusatzinfos"
+
+msgid "Genre:"
+msgstr ""
+
+msgid "Genre: "
+msgstr ""
+
 msgid "IMDb Details"
 msgstr ""
 
@@ -97,19 +91,41 @@ msgstr "Download von IMDb abgeschlossen"
 msgid "IMDb Download failed"
 msgstr "Download von IMDb fehlgeschlagen"
 
+msgid "IMDb Menu"
+msgstr "IMDb Menü"
+
 msgid "IMDb Plugin"
 msgstr "IMDb Plugin"
 
 msgid "IMDb Re-Download completed"
 msgstr "Erneuten Download ausgeführt"
 
+#, fuzzy
+msgid "IMDb Save-Download completed"
+msgstr "Erneuten Download ausgeführt"
+
 msgid "IMDb Setup"
 msgstr "IMDb Einstellungen"
+
+msgid ""
+"IMDb can not get Movie Information, to\n"
+" write .jpg and .txt-file!"
+msgstr ""
+
+msgid ""
+"IMDb can not get Movie Information, to\n"
+" write .txt-file!"
+msgstr ""
 
 msgid "IMDb query failed!"
 msgstr "Anfrage an IMDb fehlgeschlagen!"
 
-msgid "Lookup"
+#, fuzzy
+msgid "IMDb search"
+msgstr "Keine passenden Einträge gefunden."
+
+#, fuzzy
+msgid "Lookup IMDb"
 msgstr "Suchen"
 
 msgid "No IMDb match."
@@ -130,8 +146,11 @@ msgstr "Trailer abspielen"
 msgid "Please select the matching entry"
 msgstr "Bitte passenden Eintrag auswählen"
 
-#, python-format
-msgid "Query IMDb: %s..."
+msgid "Production Countries:"
+msgstr "Produktionsländer:"
+
+#, fuzzy, python-format
+msgid "Query IMDb: %s"
 msgstr "Frage bei IMDb an: %s..."
 
 msgid "Query details from the Internet Movie Database"
@@ -141,8 +160,29 @@ msgstr "Filminformationen aus der Internet Movie Database"
 msgid "Re-Query IMDb: %s..."
 msgstr "Frage erneut bei IMDb an: %s..."
 
+msgid "Release Date:"
+msgstr "Erscheinungsdatum:"
+
+msgid "Runtime:"
+msgstr "Laufzeit:"
+
+msgid "Save current Details as .html for offline using"
+msgstr "aktuelle Details als .html speichern für lokalen Gebrauch"
+
+msgid "Save current Details as .txt"
+msgstr "aktuelle Details als .txt speichern für lokalen Gebrauch"
+
+msgid "Save current Poster and Details as .txt"
+msgstr "aktuelles Poster und die Details als .txt Datei speichern"
+
 msgid "Search Trailer"
 msgstr "suche Trailer"
+
+msgid "Search event in IMDb"
+msgstr ""
+
+msgid "Search in IMDb"
+msgstr ""
 
 msgid "Select from EPG"
 msgstr "Aus  EPG wählen"
@@ -150,17 +190,29 @@ msgstr "Aus  EPG wählen"
 msgid "Setup"
 msgstr "Einstellungen"
 
+msgid "Show in further option EPG menu"
+msgstr ""
+
+msgid "Show in movie list menu"
+msgstr ""
+
 msgid "Show in plugin browser"
 msgstr "Zeige im Plugin Browser"
 
 msgid "The Internet Movie Database"
 msgstr "Die Internet Movie Database"
 
+msgid "This option allows you add words/phrases for IMDb to ignore when searching. please seperaate with a comma"
+msgstr ""
+
 msgid "Title Menu"
 msgstr "Titelauswahl"
 
 msgid "User Rating"
 msgstr "Nutzer-Bewertung"
+
+msgid "Words / phrases to ignore "
+msgstr ""
 
 msgid "no user rating yet"
 msgstr "noch keine Nutzerwertung"

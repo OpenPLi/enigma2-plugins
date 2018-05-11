@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-plugins 3.2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-05 14:40+0000\n"
+"POT-Creation-Date: 2018-05-11 10:58+0200\n"
 "PO-Revision-Date: 2014-12-19 17:13+0100\n"
 "Last-Translator: Rob van der Does <robvddoes@gmail.com>\n"
 "Language-Team: Samzan\n"
@@ -19,6 +19,10 @@ msgstr ""
 "X-Generator: Poedit 1.5.7\n"
 "X-Poedit-Language: Finnish\n"
 "X-Poedit-Country: FINLAND\n"
+
+#, python-format
+msgid "%s plugin only this session?"
+msgstr ""
 
 msgid "Add"
 msgstr "Lisää"
@@ -53,6 +57,10 @@ msgstr "Äänenvoimakkuuden oletusarvo AC3/DTS:lle"
 msgid "Delete"
 msgstr "Poista"
 
+#, fuzzy
+msgid "Disable"
+msgstr "Salli"
+
 msgid "Do you really want to delete this entry?"
 msgstr "Haluatko todella poistaa tämän arvon"
 
@@ -83,9 +91,14 @@ msgstr "Palvelunnimi"
 msgid "Services"
 msgstr "Palvelut"
 
+msgid "Show on/off plugin only for session in Audio menu"
+msgstr ""
+
 msgid "Show volumebar when volume-value was changed"
 msgstr "Näytä äänenvoimakkuuspalkki muutoksessa"
 
 msgid "You must select a valid service!"
 msgstr "Sinun on valittava oikea palvelu"
 
+msgid "toggle on/off plugin only for session"
+msgstr ""

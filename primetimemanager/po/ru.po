@@ -2,16 +2,23 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-02-28 19:54+0100\n"
+"POT-Creation-Date: 2018-05-11 10:58+0200\n"
 "PO-Revision-Date: 2016-02-12 20:06+0200\n"
+"Last-Translator: \n"
 "Language-Team: LANGUAGE <Dima-73@inbox.lv>\n"
+"Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Last-Translator: \n"
-"Language: ru\n"
 "X-Generator: Poedit 1.8.4\n"
 
+#, python-format
+msgid ""
+"\n"
+"Timer '%s' disabled!"
+msgstr ""
+
+#, python-format
 msgid ""
 "\n"
 "Total number of conflicts: %s"
@@ -25,12 +32,15 @@ msgstr "Событие \"Прямой эфир\" только в прайм-та
 msgid "\"View live\" type:"
 msgstr "\"Прямой эфир\" тип:"
 
+#, python-format
 msgid "%d min"
 msgstr "%d мин"
 
+#, python-format
 msgid "%s prime time | events today (%s) | Bouquet: %s"
 msgstr "%s прайм-тайм | события сегодня (%s) | Пакет: %s"
 
+#, python-format
 msgid "%s prime time | events today +%s (%s) | Bouquet: %s"
 msgstr "%s прайм-тайм | события сегодня +%s (%s) | Пакет: %s"
 
@@ -39,9 +49,6 @@ msgstr "'Редактор таймеров' кнопка меню - конфли
 
 msgid ": only notification"
 msgstr ": только информация"
-
-msgid ": total conflicts %d"
-msgstr ": всего конфликтов %d"
 
 msgid "Accept"
 msgstr "Принять"
@@ -58,6 +65,7 @@ msgstr "Добавить таймер"
 msgid "Add timer"
 msgstr "Добавить таймер"
 
+#, python-format
 msgid "Add timer for \"%s\"?"
 msgstr "Добавить таймер для \"%s\"?"
 
@@ -76,11 +84,18 @@ msgstr "Пакет"
 msgid "Bouquet:"
 msgstr "Пакет:"
 
+#, python-format
 msgid "Bouquet: %s - EPG Selection Multi"
 msgstr "Пакет: %s - выбор мульти EPG"
 
+msgid "Cancel"
+msgstr ""
+
 msgid "Cansel"
 msgstr "Отмена"
+
+msgid "Channel not in services list"
+msgstr ""
 
 msgid "Check conflicts timers after \"Accept\":"
 msgstr "Проверка конфликтов таймеров после \"Принять\":"
@@ -97,6 +112,10 @@ msgstr "Закрыть"
 msgid "Conflict detected!"
 msgstr "Обнаружен кофликт!"
 
+#, fuzzy
+msgid "Conflict not resolved!"
+msgstr "Конфликты решены"
+
 msgid "Conflicts were solved"
 msgstr "Конфликты решены"
 
@@ -106,17 +125,24 @@ msgstr "Текущий таймер"
 msgid "Date"
 msgstr "Дата"
 
+msgid "Disable"
+msgstr ""
+
+#, python-format
 msgid "Do you really want to delete the timer for \"%s\"?"
 msgstr "Вы действительно хотите удалить таймер для \"%s\"?"
 
-msgid ""
-"Do you want to switch the prime time? Currently selected favorites will be "
-"lost!"
-msgstr ""
-"Вы хотите сменить прайм-тайм? Текущие выбранные фавориты будут потеряны!"
+msgid "Do you want to switch the prime time? Currently selected favorites will be lost!"
+msgstr "Вы хотите сменить прайм-тайм? Текущие выбранные фавориты будут потеряны!"
 
 msgid "Duration"
 msgstr "Время"
+
+msgid "Edit"
+msgstr ""
+
+msgid "Enable"
+msgstr ""
 
 msgid "End time"
 msgstr "Окончание"
@@ -138,6 +164,10 @@ msgstr "Фаворит"
 
 msgid "Favorite will be deleted!"
 msgstr "Фаворит был удален!"
+
+#, fuzzy
+msgid "Ignore conflict"
+msgstr "Не найдены кофликты"
 
 msgid "Lookup in TMBD"
 msgstr "Поиск в TMBD"
@@ -193,16 +223,15 @@ msgstr ""
 "\n"
 "Прайм-тайм уже начался или закончился. Начинаем с событиями завтрашнего дня."
 
+#, python-format
 msgid ""
 "Prime Time Manager:\n"
 "\n"
-"Sorry, but a timer for %s can't be set because there are conflicts with "
-"other timers."
+"Sorry, but a timer for %s can't be set because there are conflicts with other timers."
 msgstr ""
 "Прайм-тайм менеджер:\n"
 "\n"
-"Извините,но таймер %s не может быть добавлен из-за конфликта с другими "
-"таймерами."
+"Извините,но таймер %s не может быть добавлен из-за конфликта с другими таймерами."
 
 msgid ""
 "Prime Time Manager:\n"
@@ -211,8 +240,7 @@ msgid ""
 msgstr ""
 "Прайм-тайм менеджер:\n"
 "\n"
-"Извините, но повторяющиеся таймеры, в целях событий прямого эфира, не "
-"поддерживается."
+"Извините, но повторяющиеся таймеры, в целях событий прямого эфира, не поддерживается."
 
 msgid "Prime Time Settings"
 msgstr "Настройки прайм-тайм менеджера"
@@ -244,9 +272,13 @@ msgstr "Второй"
 msgid "Secondary Prime Time:"
 msgstr "Второй прайм-тайм:"
 
+msgid "Select action"
+msgstr ""
+
 msgid "Selected favorites"
 msgstr "Выбранные фавориты"
 
+#, python-format
 msgid "Set 'view live' type '%s'?"
 msgstr "Установить тип 'Прямой эфир' '%s'?"
 
@@ -267,6 +299,9 @@ msgstr "Показать время или окончание события:"
 
 msgid "Show event information"
 msgstr "Показать информацию события"
+
+msgid "Show warning before set 'Ignore conflict'"
+msgstr ""
 
 msgid "Single EPG"
 msgstr "Одиночное EPG"
@@ -298,6 +333,7 @@ msgstr "Перейти к предыдущему пакету"
 msgid "Switch to the previous day"
 msgstr "Перейти на предыдущий день"
 
+#, python-format
 msgid ""
 "This event \"%s\" has already begun or will begin in the next few minutes.\n"
 "We can not add it to your list of favorites, as will instantly record.\n"
@@ -310,12 +346,12 @@ msgstr ""
 msgid "This event will be an instant record.\n"
 msgstr "Это событие будет немедленной записью.\n"
 
-msgid ""
-"This is a repeated timer! Do you really want to delete the repeated timer "
-"for \"%s\"?"
+#, python-format
+msgid "This is a repeated timer! Do you really want to delete the repeated timer for \"%s\"?"
+msgstr "Это повторяющийся таймер! Вы действительно хотите удалить этот таймер для \"%s\"?"
+
+msgid "Timer sanity error"
 msgstr ""
-"Это повторяющийся таймер! Вы действительно хотите удалить этот таймер для "
-"\"%s\"?"
 
 msgid "Timers list"
 msgstr "Список таймеров"
@@ -335,14 +371,29 @@ msgstr "Решение конфликтов и просмотр результа
 msgid "Use AutoTimer plugin instead remove favorites:"
 msgstr "Установка Автотаймера вместо удаления фаворита:"
 
+msgid ""
+"Warning!\n"
+"This is an option for advanced users.\n"
+"Really disable timer conflict detection?"
+msgstr ""
+
 msgid "Zap"
 msgstr "Перейти"
 
 msgid "Zap + Record"
 msgstr "Перейти + записать"
 
+msgid "and never ask this again"
+msgstr ""
+
 msgid "exit plugin"
 msgstr "закрыть плагин"
 
+msgid "no"
+msgstr ""
+
 msgid "open Multi EPG"
 msgstr "открыть мульти EPG"
+
+msgid "yes"
+msgstr ""

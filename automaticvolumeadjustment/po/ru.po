@@ -7,15 +7,19 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-27 18:11+0100\n"
+"POT-Creation-Date: 2018-05-11 10:58+0200\n"
 "PO-Revision-Date: 2015-10-03 22:19+0300\n"
+"Last-Translator: Dimitrij <Dima-73@inbox.lv>\n"
+"Language-Team: \n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Last-Translator: Dimitrij <Dima-73@inbox.lv>\n"
-"Language-Team: \n"
 "X-Generator: Poedit 1.8.4\n"
+
+#, python-format
+msgid "%s plugin only this session?"
+msgstr "%s плагин для этой сессии?"
 
 msgid "Add"
 msgstr "Добавить"
@@ -50,6 +54,9 @@ msgstr "Дефолтное значение регулировки для AC3/DT
 msgid "Delete"
 msgstr "Удалить"
 
+msgid "Disable"
+msgstr "Выключить"
+
 msgid "Do you really want to delete this entry?"
 msgstr "Вы действительно хотите удалить эту запись?"
 
@@ -80,6 +87,9 @@ msgstr "Имя сервиса"
 msgid "Services"
 msgstr "Сервисы"
 
+msgid "Show on/off plugin only for session in Audio menu"
+msgstr "Вкл/выкл только для этой сессии в меню аудио"
+
 msgid "Show volumebar when volume-value was changed"
 msgstr "Показать volumebar при смене значения громкости"
 
@@ -88,12 +98,3 @@ msgstr "Вы должны выбрать действительный серви
 
 msgid "toggle on/off plugin only for session"
 msgstr "переключатель плагина вкл/выкл только для этой сессии"
-
-msgid "Show on/off plugin only for session in Audio menu"
-msgstr "Вкл/выкл только для этой сессии в меню аудио"
-
-msgid "%s plugin only this session?"
-msgstr "%s плагин для этой сессии?"
-
-msgid "Disable"
-msgstr "Выключить"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SetPasswd\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-01 11:47+0300\n"
+"POT-Creation-Date: 2018-05-11 10:58+0200\n"
 "PO-Revision-Date: 2017-07-01 11:50+0300\n"
 "Last-Translator: Vytenis P. <vyteniui@gmail.com>\n"
 "Language-Team: Vytenis P. <vyteniui@gmail.com>\n"
@@ -16,50 +16,40 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 2.0.2\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n"
-"%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: ../src/plugin.py:25
 msgid "Change Root Password"
 msgstr "Pakeisti 'root' slaptažodį"
 
-#: ../src/plugin.py:131
 msgid "Change or reset the root password of your box"
 msgstr "Pakeisti, aba atšaukti 'root' vartotojo slaptažodį"
-
-#: ../src/plugin.py:73
-msgid "Enter new Password"
-msgstr "Įrašykite naują slaptažodį"
-
-#: ../src/plugin.py:114
-msgid "Enter your password here:"
-msgstr "Čai įrašykite slaptažodį:"
-
-#: ../src/plugin.py:52
-msgid "Set Password"
-msgstr "Nustatyti slaptažodį"
-
-#: ../src/plugin.py:88
-msgid "Sucessfully changed password for root user to: "
-msgstr "'root' vartotojo slabtažodis pakeistas į: "
-
-#: ../src/plugin.py:90
-msgid "Unable to change/reset password for root user"
-msgstr "Pakeisti/atkurti 'root' slaptažodžio nepavyko"
-
-#: ../src/plugin.py:53
-msgid "new Random"
-msgstr "Naujas atsitiktinis"
-
-#: ../src/plugin.py:54
-msgid "virt. Keyboard"
-msgstr "Virtuali klaviatūra"
 
 msgid "Delete Password"
 msgstr "Ištrinti slaptažodį"
 
+msgid "Enter new Password"
+msgstr "Įrašykite naują slaptažodį"
+
+msgid "Enter your password here:"
+msgstr "Čai įrašykite slaptažodį:"
+
 msgid "Password deleted sucessfully for root user"
 msgstr "'root' vartotojo slaptažodis ištrintas"
 
+msgid "Set Password"
+msgstr "Nustatyti slaptažodį"
+
+msgid "Sucessfully changed password for root user to: "
+msgstr "'root' vartotojo slabtažodis pakeistas į: "
+
+msgid "Unable to change/reset password for root user"
+msgstr "Pakeisti/atkurti 'root' slaptažodžio nepavyko"
+
 msgid "Unable to delete password for root user"
 msgstr "'root' slaptažodžio ištrinti nepavyko"
+
+msgid "new Random"
+msgstr "Naujas atsitiktinis"
+
+msgid "virt. Keyboard"
+msgstr "Virtuali klaviatūra"

@@ -7,118 +7,147 @@ msgid ""
 msgstr ""
 "Project-Id-Version: DVDBackup\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-05-01 22:05+0200\n"
+"POT-Creation-Date: 2018-05-11 10:58+0200\n"
 "PO-Revision-Date: 2015-05-01 22:15+0100\n"
+"Last-Translator: Pr2 <dummy@dummy.com>\n"
+"Language-Team: OpenPLi\n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Last-Translator: Pr2 <dummy@dummy.com>\n"
-"Language-Team: OpenPLi\n"
 "X-Generator: Poedit 1.7.6\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"Language: fr\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
-#: plugin.py:46 plugin.py:448
-msgid "Name of DVD"
-msgstr "Nom du DVD"
+msgid " B"
+msgstr ""
 
-#: plugin.py:48
-msgid "No"
-msgstr "Non"
+msgid " KB"
+msgstr ""
 
-#: plugin.py:48
-msgid "With mkisofs"
-msgstr "Avec mkisofs"
+msgid " MB"
+msgstr ""
 
-#: plugin.py:48
-msgid "With dd"
-msgstr "Avec dd"
+msgid "Abort"
+msgstr "Abandonner"
 
-#: plugin.py:146 plugin.py:182
-msgid "Could not read the DVD informations!"
-msgstr "Impossible de lire les informations du DVD!"
+msgid "Auto set name and folder DVD"
+msgstr ""
 
-#: plugin.py:179
+msgid "Backup directory too small size!"
+msgstr ""
+
+#, fuzzy
+msgid "Backup directory:"
+msgstr "Répertoire:"
+
+msgid "Backup of DVD finished."
+msgstr "Sauvegarde du DVD terminé."
+
+msgid "Backup your Video-DVD to your harddisk"
+msgstr "Sauvegarde votre DVD vidéo sur votre disque dur"
+
 msgid "Could not find any file to backup!"
 msgstr "Aucun fichier à sauvegarder trouvé!"
 
-#: plugin.py:188 plugin.py:217
+msgid "Could not install needed dvdbackup package!"
+msgstr "Impossible d'installer les packages nécessaire à DVBbackup!"
+
+msgid "Could not read the DVD informations!"
+msgstr "Impossible de lire les informations du DVD!"
+
+msgid "Create iso:"
+msgstr "Créer iso:"
+
+msgid "Create log (tmp/dvdbackup.log):"
+msgstr ""
+
+msgid "DVD Backup"
+msgstr "DVD Backup"
+
+#, fuzzy
+msgid "DVD Backup Progress"
+msgstr "DVD Backup"
+
+msgid "Device mount folder:"
+msgstr ""
+
+msgid "Duration:"
+msgstr "Durée:"
+
+msgid "Eject DVD?"
+msgstr "Ejecter DVD?"
+
+#, python-format
+msgid "Error read folder %s!"
+msgstr ""
+
 msgid "Error while backup of DVD!"
 msgstr "Erreur lors de la sauvegarde sur DVD!"
 
-#: plugin.py:222
+msgid "Exit"
+msgstr ""
+
+msgid "Extra option"
+msgstr ""
+
+msgid "Folder/iso name:"
+msgstr ""
+
+msgid "Keyboard"
+msgstr "Clavier"
+
+msgid "Location"
+msgstr "Localisation"
+
+msgid "Name of DVD"
+msgstr "Nom du DVD"
+
+msgid "Open menu progress"
+msgstr ""
+
+msgid "Show error message:"
+msgstr ""
+
+msgid "Show log"
+msgstr ""
+
+msgid "Start backup"
+msgstr ""
+
 msgid ""
-"mkisofs job done.\n"
+"Warning!\n"
+"DVD backup is already running!"
+msgstr ""
+
+msgid ""
+"Warning!\n"
+"This folder not CD-ROM!"
+msgstr ""
+
+msgid ""
+"Warning!\n"
+"This folder not DVD structure!"
+msgstr ""
+
+msgid ""
+"Warning!\n"
+"This is the same folder!"
+msgstr ""
+
+#, fuzzy
+msgid ""
+"genisoimage job done.\n"
 "Delete DVD directory?"
 msgstr ""
 "mkisofs job teminé.\n"
 "Effacer le répertoire DVD?"
 
-#: plugin.py:237
-msgid "Backup of DVD finished."
-msgstr "Sauvegarde du DVD terminé."
+msgid "no"
+msgstr ""
 
-#: plugin.py:237
-msgid "Duration:"
-msgstr "Durée:"
+msgid "with dd (faster)"
+msgstr ""
 
-#: plugin.py:237
-msgid "Eject DVD?"
-msgstr "Ejecter DVD?"
-
-#: plugin.py:287
-msgid "Cancel"
-msgstr "Annuler"
-
-#: plugin.py:289
-msgid "Abort"
-msgstr "Abandonner"
-
-#: plugin.py:369
-msgid "Progress"
-msgstr "Progression"
-
-#: plugin.py:370
-msgid "Backup"
-msgstr "Sauvegarde"
-
-#: plugin.py:371
-msgid "Keyboard"
-msgstr "Clavier"
-
-#: plugin.py:372
-msgid "Location"
-msgstr "Localisation"
-
-#: plugin.py:378
-msgid "Device:"
-msgstr "Périphérique:"
-
-#: plugin.py:379
-msgid "Directory:"
-msgstr "Répertoire:"
-
-#: plugin.py:380
-msgid "Name:"
-msgstr "Nom:"
-
-#: plugin.py:381
-msgid "Log:"
-msgstr "Log:"
-
-#: plugin.py:382
-msgid "Create iso:"
-msgstr "Créer iso:"
-
-#: plugin.py:468
-msgid "Could not install needed dvdbackup package!"
-msgstr "Impossible d'installer les packages nécessaire à DVBbackup!"
-
-#: plugin.py:484 plugin.py:487
-msgid "DVD Backup"
-msgstr "DVD Backup"
-
-#: plugin.py:487
-msgid "Backup your Video-DVD to your harddisk"
-msgstr "Sauvegarde votre DVD vidéo sur votre disque dur"
+msgid "with genisoimage (slower)"
+msgstr ""

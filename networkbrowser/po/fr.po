@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma 2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-01-28 16:39+0100\n"
+"POT-Creation-Date: 2018-05-11 10:58+0200\n"
 "PO-Revision-Date: 2012-12-16 12:35+0100\n"
 "Last-Translator: thelexia <thelexia@hotmail.fr>\n"
 "Language-Team: french\n"
@@ -133,6 +133,10 @@ msgid "Mount options"
 msgstr "Options de montage"
 
 msgid "Mount type"
+msgstr "Type de montage"
+
+#, fuzzy
+msgid "Mount view"
 msgstr "Type de montage"
 
 msgid "MountManager"

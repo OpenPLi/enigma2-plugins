@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epg refresh Persian Translation\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-02-12 22:45+0100\n"
+"POT-Creation-Date: 2018-05-11 10:58+0200\n"
 "PO-Revision-Date: 2012-07-25 21:57+0330\n"
 "Last-Translator: mehdi <mehdi_ar_yekta@yahoo.com>\n"
 "Language-Team: Persian Professionals <persianpros@yahoo.com>\n"
@@ -20,191 +20,598 @@ msgstr ""
 "X-Poedit-Country: IRAN, ISLAMIC REPUBLIC OF\n"
 "X-Poedit-SearchPath-0: \n"
 
-#: .../src/EPGRefreshChannelEditor.py:59
-msgid "EPGRefresh Services"
-msgstr "بازآوری سرویس راهنمای الکترونیکی"
+#, python-format
+msgid ""
+"\n"
+"%d more services."
+msgstr ""
 
-#: .../src/EPGRefreshChannelEditor.py:69
-msgid "Channels"
-msgstr "کانال ها"
+msgid "   (AutoZap)"
+msgstr ""
 
-#: .../src/EPGRefreshChannelEditor.py:70
+msgid "Adding schedule..."
+msgstr ""
+
+msgid "After a successful refresh the AutoTimer will automatically search for new matches if this is enabled."
+msgstr ""
+
+msgid "Are you sure you want to load the EPG data from:\n"
+msgstr ""
+
+msgid "Are you sure you want to reload the EPG data from:\n"
+msgstr ""
+
+msgid "Are you sure you want to save and load the EPG data from:\n"
+msgstr ""
+
+msgid "Are you sure you want to save the EPG cache to:\n"
+msgstr ""
+
+msgid "AutoZap"
+msgstr ""
+
+#, fuzzy
+msgid "AutoZap for refreshing EPG data"
+msgstr "بازآوری خودکار برنامه راهنما الکترونیک"
+
+#, fuzzy
+msgid "Automated refresh will start after this time of day, but before the time specified in next setting."
+msgstr "بازآوری خودکار بعد از این تاریخ انجام می شود ولی در حین حال قبل از تنظیمات بعدی  "
+
+#, fuzzy
+msgid "Automated refresh will start before this time of day, but after the time specified in previous setting."
+msgstr "بازآوری خودکار بعد از این تاریخ انجام می شود ولی در حین حال قبل از تنظیمات قبلی  "
+
+msgid "Automatic EPG loading from current cache file."
+msgstr ""
+
+msgid "Automatic load period (in hours)"
+msgstr ""
+
+msgid "Automatic save period (in hours)"
+msgstr ""
+
+#, fuzzy
+msgid "Automatically load EPG"
+msgstr "بازآوری خودکار برنامه راهنما الکترونیک"
+
+msgid "Automatically refresh EPG"
+msgstr "بازآوری خودکار برنامه راهنما الکترونیک"
+
+#, fuzzy
+msgid "Automatically restore EPG backup on boot"
+msgstr "بازآوری خودکار برنامه راهنما الکترونیک"
+
+#, fuzzy
+msgid "Automatically save EPG"
+msgstr "بازآوری خودکار برنامه راهنما الکترونیک"
+
+msgid "Background only"
+msgstr ""
+
+msgid ""
+"Backup file is corrupt!\n"
+"Backup file will be deleted!"
+msgstr ""
+
+msgid "Backup file is not found!"
+msgstr ""
+
+msgid "Backup file load!"
+msgstr ""
+
 msgid "Bouquets"
 msgstr "دسته ها"
 
-#: .../src/EPGRefreshChannelEditor.py:79
-#: .../src/EPGRefreshConfiguration.py:80
 msgid "Cancel"
 msgstr "لغو کردن"
 
-#: .../src/EPGRefreshChannelEditor.py:80
-#: .../src/EPGRefreshConfiguration.py:81
-msgid "OK"
-msgstr "مورد تایید است "
+msgid "Channels"
+msgstr "کانال ها"
 
-#: .../src/EPGRefreshChannelEditor.py:81
-msgid "delete"
-msgstr "حذف کردن"
+#, fuzzy
+msgid "Choice days for refresh"
+msgstr "خاموش کردن سیستم بعد از بازآوری"
 
-#: .../src/EPGRefreshChannelEditor.py:82
-msgid "New"
-msgstr "جدید"
+msgid "Clear EPG"
+msgstr ""
 
-#: .../src/EPGRefreshChannelEditor.py:100
-msgid "Edit Services to refresh"
-msgstr "ویرایش سرویس به منظور بازآوری"
+msgid "Clear all EPG"
+msgstr ""
 
-#: .../src/EPGRefreshChannelEditor.py:120
-msgid "Editing"
-msgstr "ویرایش کردن "
+msgid "Clear only epg.dat and epg.dat.backup"
+msgstr ""
 
-#: .../src/EPGRefreshChannelEditor.py:129
-#: .../src/EPGRefreshChannelEditor.py:177
-msgid "Refreshing"
-msgstr "بازآوری کردن"
+msgid "Clear only in memory (RAM) EPG"
+msgstr ""
 
-#: .../src/EPGRefreshChannelEditor.py:164
-msgid "Select channel to refresh"
-msgstr "انتخاب یک کانال به منظور بازآوری کردن"
+msgid "Configuration save / load EPG"
+msgstr ""
 
-#: .../src/EPGRefreshChannelEditor.py:170
-msgid "Select bouquet to refresh"
-msgstr "انتخاب یک دسته به منظور بازآوری کردن"
+#, fuzzy
+msgid "Configuration..."
+msgstr "پیکر بندی بازآوری راهنمای الکترونیک"
 
-#: .../src/EPGRefreshConfiguration.py:43
+msgid "Configure EPG load interval, if enabled. This is an option for experienced users."
+msgstr ""
+
+msgid "Configure EPG save interval, if enabled."
+msgstr ""
+
+msgid "Congratulations"
+msgstr ""
+
+msgid "Create a backup cache file, after manually or automatically saving EPG."
+msgstr ""
+
+msgid "Create backup when saving EPG"
+msgstr ""
+
+msgid "Current EPG cachefile:"
+msgstr ""
+
+msgid "Days Profile"
+msgstr ""
+
+#, fuzzy
+msgid "Delay if not in standby (in minutes)"
+msgstr "تاخیر بر حسب دقیقه ناشی از موارد دیگر غیر از مد استندبای"
+
+msgid "Don't wait for the receiver to go into standby when starting a refresh cycle."
+msgstr ""
+
+msgid "Duration to show each service (in seconds) for 'AutoZap'"
+msgstr ""
+
+msgid "EPG Cache Check"
+msgstr ""
+
+msgid "EPG cache file filename"
+msgstr ""
+
+msgid "EPG cache file path"
+msgstr ""
+
+msgid "EPG refresh auto-start earliest (hh:mm)"
+msgstr ""
+
+msgid "EPG refresh auto-start latest (hh:mm)"
+msgstr ""
+
+#, fuzzy
+msgid "EPG refresh finished."
+msgstr "بازآوری سرویس راهنمای الکترونیکی"
+
+#, fuzzy
+msgid "EPG refresh started in background."
+msgstr "بازآوری پس زمینه "
+
+msgid "EPG refresh starts scanning channels."
+msgstr ""
+
+#, fuzzy
+msgid "EPG-refresh now"
+msgstr "همین الان بازآوی کن"
+
+#, fuzzy
+msgid "EPGRefresh"
+msgstr "اضافه کردن به برنامه راهنما الکترونیک"
+
 msgid "EPGRefresh Configuration"
 msgstr "پیکر بندی بازآوری راهنمای الکترونیک"
 
-#: .../src/EPGRefreshConfiguration.py:53
-msgid "Refresh automatically"
-msgstr "بازآوری خودکار"
+#, fuzzy
+msgid "EPGRefresh Help"
+msgstr "بازآوری سرویس راهنمای الکترونیکی"
 
-#: .../src/EPGRefreshConfiguration.py:53
-msgid "Unless this is enabled EPGRefresh won't automatically run but has to be explicitely started through the yellow button from this menu."
-msgstr "به جز مواردی بازآوری برنامه راهنمای الکترونیکی اجرا نخواهد شد اما با زدن دکمه زرد درون منو باید راه اندازی بشود "
+msgid "EPGRefresh Services"
+msgstr "بازآوری سرویس راهنمای الکترونیکی"
 
-#: .../src/EPGRefreshConfiguration.py:54
-msgid "Wakeup from Deep-Standby to refresh EPG"
-msgstr "بیدار شدن از مد استندبای عمیق به همراه بازآوری راهنمای الکترونیک"
+#, fuzzy
+msgid "EPGRefresh configuration"
+msgstr "پیکر بندی بازآوری راهنمای الکترونیک"
 
-#: .../src/EPGRefreshConfiguration.py:54
-msgid "If this is enabled, the plugin will wake the receiver up from deep-standby if possible. Otherwise it has to be turned on already."
-msgstr "در صورتی که این مورد فعال شده باشد رسیور از مد استندبای عمیق در خواهد آمد در غیر اینصورت باید روشن شود "
+msgid "EPGRefresh needs to be explicitly started using the yellow button in this menu if this option is not enabled"
+msgstr ""
 
-#: .../src/EPGRefreshConfiguration.py:55
-msgid "Time to stay on service (in m)"
-msgstr "زمان استفاده از این سرویس بر حسب دقیقه"
-
-#: .../src/EPGRefreshConfiguration.py:55
-msgid "This is the ammount of time a channel will be active during a refresh."
-msgstr "این مقدار زمانی یک کانال است که در حین بازآوری فعال خواهد شد"
-
-#: .../src/EPGRefreshConfiguration.py:56
-msgid "Refresh EPG after"
-msgstr "بازآوری برنامه راهنمای الکترونیک"
-
-#: .../src/EPGRefreshConfiguration.py:56
-msgid "An automated refresh will happen after this time of day, but before the next setting."
-msgstr "بازآوری خودکار بعد از این تاریخ انجام می شود ولی در حین حال قبل از تنظیمات بعدی  "
-
-#: .../src/EPGRefreshConfiguration.py:57
-msgid "Refresh EPG before"
-msgstr "بروز رسانی برنامه راهنما الکترونیک قبل از "
-
-#: .../src/EPGRefreshConfiguration.py:57
-msgid "An automated refresh will happen before this time of day, but after the previous setting."
-msgstr "بازآوری خودکار بعد از این تاریخ انجام می شود ولی در حین حال قبل از تنظیمات قبلی  "
-
-#: .../src/EPGRefreshConfiguration.py:58
-msgid "Delay when not in Standby (in m)"
-msgstr "تاخیر بر حسب دقیقه ناشی از موارد دیگر غیر از مد استندبای"
-
-#: .../src/EPGRefreshConfiguration.py:58
-msgid "If the receiver is currently not in standby this is the amount of time EPGRefresh will wait before trying again."
-msgstr "اگر رسیور در مد استندبای نیست مقدار زمانی بازآوری برنامه راهنما الکترونیک قبل از تلاش مجدد در انتظار خواهد ماند   "
-
-#: .../src/EPGRefreshConfiguration.py:59
-msgid "Force scan even if receiver is in use"
-msgstr "مجبور کردن به اسکن رویداد ها به شرطی که رسیور در حین کار باشد"
-
-#: .../src/EPGRefreshConfiguration.py:59
-msgid "This setting controls whether or not the refresh will also be initiated when the receiver is being used (namely not in standby or currently recording)."
-msgstr "این تنظیمات به هر حال آغاز به کار خواهد کرد هنگامی که گیرنده در حال استفاده باشد : به عبارت دیگر نه در حالت استندبای یا در حین ضبط "
-
-#: .../src/EPGRefreshConfiguration.py:60
-msgid "Inherit Services from AutoTimer if available"
-msgstr "جانشین شدن سرویس ها از طریق تایمر خودکار البته در صورتی که موجود باشد"
-
-#: .../src/EPGRefreshConfiguration.py:60
-msgid "If you're also using the AutoTimer plugin this allows to extend the list of services to refresh by the services your AutoTimers are restricted to."
-msgstr "اگر شما در حال استفاده از پلاگین تایمر خودکار هستید این پلاگین اجازه می دهد تا لیستی از سرویس ها بوسیله سرویس های تایمر خودکار شما بازآوری شود "
-
-#: .../src/EPGRefreshConfiguration.py:61
-msgid "Make AutoTimer parse EPG if available"
-msgstr "در صورتی که مجود است یک تجزیه و تحلیل از تایمر خودکار ایجاد کن"
-
-#: .../src/EPGRefreshConfiguration.py:61
-msgid "If you're also using the AutoTimer plugin this will initiate a scan of the EPG after a completed refresh."
-msgstr "اگر همچنان در حال استفاده از پلاگین تایمر خودکار هستید این پلاگین بعد از تکمیل بازآوری شروع به اسکن راهنمای الکترونیک می کند  "
-
-#: .../src/EPGRefreshConfiguration.py:62
-msgid "Shutdown after refresh"
-msgstr "خاموش کردن سیستم بعد از بازآوری"
-
-#: .../src/EPGRefreshConfiguration.py:62
-msgid "This setting controls if the receiver should be sent to deep-standby after a completed refresh."
-msgstr "این تنظیمات کنترل می کند که بعد از بازآوری کامل رسیور به مد استند بای عمیق برود"
-
-#: .../src/EPGRefreshConfiguration.py:65
-msgid "Refresh in Background"
-msgstr "بازآوری پس زمینه "
-
-#: .../src/EPGRefreshConfiguration.py:65
-msgid "Use Picture In Picture to refresh EPG?"
-msgstr "آیا به منظور بازآوری برنامه راهنمای الکترونیک از قابلیت تصویر در تصویر استفاده می شود ؟"
-
-#: .../src/EPGRefreshConfiguration.py:82
-msgid "Refresh now"
-msgstr "همین الان بازآوی کن"
-
-#: .../src/EPGRefreshConfiguration.py:83
 msgid "Edit Services"
 msgstr "ویرایشگر سرویس ها"
 
-#: .../src/EPGRefreshConfiguration.py:104
-msgid "Configure EPGRefresh"
-msgstr "پیکربندی بازآوری برنامه راهنمای اللکترونیک"
+msgid "Edit Services to refresh"
+msgstr "ویرایش سرویس به منظور بازآوری"
 
-#: .../src/EPGRefreshConfiguration.py:159
-msgid "never"
-msgstr "هرگز"
+msgid "Editing"
+msgstr "ویرایش کردن "
 
-#: .../src/EPGRefreshConfiguration.py:163
+#, fuzzy
+msgid "Editing the service list"
+msgstr "ویرایشگر سرویس ها"
+
+msgid "Enable automatic EPG save interval."
+msgstr ""
+
+msgid "Enable automatic zapping of all services in the current services list."
+msgstr ""
+
+msgid "Enable this item to flush all EPG data before starting a new EPG refresh cycle"
+msgstr ""
+
+msgid "Enable this item to wake up the receiver from deep standby (if possible)."
+msgstr ""
+
+msgid "Enable this to show an informational message at the start and completion of the refresh."
+msgstr ""
+
+msgid "Enable this to show the EPGRefresh configuration menu in the extension menu."
+msgstr ""
+
+msgid "Extend the list of services to refresh by those your AutoTimers use?"
+msgstr ""
+
+msgid "Fake recording"
+msgstr ""
+
+#, fuzzy
+msgid "Flush EPG before refresh"
+msgstr "بروز رسانی برنامه راهنما الکترونیک قبل از "
+
+msgid "Following Services have to be scanned:"
+msgstr ""
+
+msgid "Force scan even if receiver is in use"
+msgstr "مجبور کردن به اسکن رویداد ها به شرطی که رسیور در حین کار باشد"
+
+msgid "Foreground also"
+msgstr ""
+
+msgid "Friday"
+msgstr ""
+
+msgid "If \"Run AutoTimer after refresh\" and \"Shutdown after EPG refresh\" enabled and use \"Label series\" for match, set long timeout."
+msgstr ""
+
+msgid "If enabled, show 'EPGRefresh now' in main menu when currently no EPGRefresh is running."
+msgstr ""
+
+msgid "If enabled, show 'Stop running EPGRefresh' in main menu when EPGPRefresh is running."
+msgstr ""
+
+msgid "If you want to refresh the EPG in background, you can choose the method which best suits your needs here, e.g. hidden, fake recording or regular Picture in Picture."
+msgstr ""
+
+#, fuzzy
+msgid "Inherit Services from AutoTimer"
+msgstr "جانشین شدن سرویس ها از طریق تایمر خودکار البته در صورتی که موجود باشد"
+
+msgid "Input EPG Cache path"
+msgstr ""
+
 #, python-format
 msgid "Last refresh was %s"
 msgstr "%s آخرین بازآوری عبارت بود "
 
-#: .../src/EPGRefreshConfiguration.py:174
+msgid "Load EPG"
+msgstr ""
+
+msgid "Load EPG from backup cache file when booting."
+msgstr ""
+
+msgid "Main Picture"
+msgstr ""
+
+msgid "Manual EPG"
+msgstr ""
+
+msgid "Manually clear EPG (choose method)."
+msgstr ""
+
+msgid "Manually load EPG"
+msgstr ""
+
+msgid "Manually load EPG from current cache file."
+msgstr ""
+
+msgid "Manually load EPG from current cachefile."
+msgstr ""
+
+msgid "Manually reload EPG"
+msgstr ""
+
+msgid "Manually restore EPG from backup cache file."
+msgstr ""
+
+msgid "Manually save EPG"
+msgstr ""
+
+msgid "Manually save EPG to current cache file."
+msgstr ""
+
+msgid "Monday"
+msgstr ""
+
+msgid "New"
+msgstr "جدید"
+
+msgid "OK"
+msgstr "مورد تایید است "
+
+msgid "PiP available now."
+msgstr ""
+
+#, fuzzy
+msgid "Picture in Picture"
+msgstr "آیا به منظور بازآوری برنامه راهنمای الکترونیک از قابلیت تصویر در تصویر استفاده می شود ؟"
+
+msgid "Picture in Picture (hidden)"
+msgstr ""
+
+msgid "Please don't use PiP in the meantime!"
+msgstr ""
+
+msgid "Press OK"
+msgstr ""
+
+msgid "Press the OK button to open the save / load EPG (+ configuration) menu."
+msgstr ""
+
 msgid "Really close without saving settings?"
 msgstr "آیا واقعا بدون ذخیره سازی تنظیمات قصد بستن برنامه را دارید ؟"
 
-#: .../src/plugin.py:73
+#, fuzzy
+msgid "Refresh EPG automatically"
+msgstr "بازآوری خودکار"
+
+#, fuzzy
+msgid "Refresh EPG using"
+msgstr "بازآوری کردن"
+
+msgid "Refresh now"
+msgstr "همین الان بازآوی کن"
+
+#, fuzzy
+msgid "Refresh-EPG / AutoZap"
+msgstr "بازآوری برنامه راهنمای الکترونیک"
+
+msgid "Refreshing"
+msgstr "بازآوری کردن"
+
+msgid "Reload EPG"
+msgstr ""
+
+msgid "Reloading EPG Cache..."
+msgstr ""
+
+msgid "Restart enigma2 to effectuate."
+msgstr ""
+
+msgid "Restore EPG backup"
+msgstr ""
+
+msgid "Return to TV viewing"
+msgstr ""
+
+#, fuzzy
+msgid "Run AutoTimer after refresh"
+msgstr "خاموش کردن سیستم بعد از بازآوری"
+
+msgid "Saturday"
+msgstr ""
+
+msgid "Save"
+msgstr ""
+
+msgid "Save EPG"
+msgstr ""
+
+#, fuzzy
+msgid "Save EPG after refresh"
+msgstr "خاموش کردن سیستم بعد از بازآوری"
+
+msgid "Save EPG in the cache file after refresh is completed."
+msgstr ""
+
+msgid "Saving EPG Cache..."
+msgstr ""
+
+#, fuzzy
+msgid "Select action after refresh:"
+msgstr "خاموش کردن سیستم بعد از بازآوری"
+
+msgid "Select action:"
+msgstr ""
+
+msgid "Select bouquet to refresh"
+msgstr "انتخاب یک دسته به منظور بازآوری کردن"
+
+msgid "Select channel to refresh"
+msgstr "انتخاب یک کانال به منظور بازآوری کردن"
+
+msgid "Select mode the refresh for services/bouquets parental control."
+msgstr ""
+
+msgid "Select options"
+msgstr ""
+
+msgid "Select the days of the week for automatic refresh."
+msgstr ""
+
+msgid "Select the file name for the EPG cache file."
+msgstr ""
+
+msgid "Select the path to EPG cache file. Don't use the internal flash if not necessary!"
+msgstr ""
+
+msgid "Select this item to add services to the EPGRefresh."
+msgstr ""
+
+msgid "Setup save / load EPG"
+msgstr ""
+
+#, fuzzy
+msgid "Show \"add to EPGRefresh\" in"
+msgstr "اضافه کردن به برنامه راهنما الکترونیک"
+
+msgid "Show 'EPGRefresh now' in main menu"
+msgstr ""
+
+msgid "Show 'Stop running EPGRefresh' in main menu"
+msgstr ""
+
+msgid "Show entry 'AutoZap' in extensions menu"
+msgstr ""
+
+msgid "Show entry 'Manually change EPG' in main menu"
+msgstr ""
+
+msgid "Show in extensions menu"
+msgstr ""
+
+msgid "Show popup when refresh starts or ends"
+msgstr ""
+
+#, fuzzy
+msgid "Shutdown after EPG refresh"
+msgstr "خاموش کردن سیستم بعد از بازآوری"
+
+#, fuzzy
+msgid "Shutdown after EPG refresh enabled in setup..."
+msgstr "خاموش کردن سیستم بعد از بازآوری"
+
+msgid "Size: "
+msgstr ""
+
+#, fuzzy
+msgid "Skip protected Services"
+msgstr "ویرایشگر سرویس ها"
+
+#, fuzzy
+msgid "Stop Running EPG-refresh"
+msgstr "پیکربندی بازآوری برنامه راهنمای اللکترونیک"
+
+#, fuzzy
+msgid "Stop Running EPG-refresh?\n"
+msgstr "پیکربندی بازآوری برنامه راهنمای اللکترونیک"
+
+msgid "Sunday"
+msgstr ""
+
+#, fuzzy
+msgid "The configuration menu"
+msgstr "پیکر بندی بازآوری راهنمای الکترونیک"
+
+msgid "The duration that will be waited for the receiver to go into standby."
+msgstr ""
+
+msgid "The same functions are used in Menu -> System -> EPG settings!"
+msgstr ""
+
+msgid "The same functions are used in plugin EPGD!!"
+msgstr ""
+
 msgid ""
-"This might have been an automated bootup to refresh the EPG. For this to happen it is recommmended to put the receiver to Standby.\n"
+"This help screen is supposed to give you a quick look at everything EPGRefresh has to offer.\n"
+"You can abort it at any time by pressing the RED or EXIT button on your remote control or bring it up at a later point by pressing the HELP button from the configuration menu (more on that later).\n"
+"\n"
+"\n"
+"But you really should consider to take the few minutes it takes to read these help pages."
+msgstr ""
+
+msgid "This is the duration each service will be shown in AutoZap mode."
+msgstr ""
+
+#, fuzzy
+msgid "This is the duration each service/channel will be tuned to during a refresh."
+msgstr "این مقدار زمانی یک کانال است که در حین بازآوری فعال خواهد شد"
+
+msgid ""
+"This is the entry point of EPGRefresh. From this menu you can configure every aspect of the plugin and start a manual refresh of the EPG.\n"
+"The configuration options each have an explaination which is supposed to help you to understand their effects better. Please give reading them a try, they can save you a lot of time.\n"
+"\n"
+"Using the YELLOW button you can start a refresh manually and the INFO button brings up the date the last refresh was completed successfully.\n"
+"The BLUE key opens the service editor (next page)."
+msgstr ""
+
+msgid ""
+"This might have been an automated bootup to refresh the EPG. For this to happen it is recommended to put the receiver to Standby.\n"
 "Do you want to do this now?"
 msgstr ""
 
-#: .../src/plugin.py:140
-msgid "Automatically refresh EPG"
-msgstr "بازآوری خودکار برنامه راهنما الکترونیک"
+msgid "Thursday"
+msgstr ""
 
-#: .../src/plugin.py:145
+msgid "Timeout shutdown after refresh for SeriesPlugin (min)"
+msgstr ""
+
+#, fuzzy
+msgid "Timespan to remain on service (in seconds)"
+msgstr "زمان استفاده از این سرویس بر حسب دقیقه"
+
+msgid "Tuesday"
+msgstr ""
+
+msgid "Version"
+msgstr ""
+
+#, fuzzy
+msgid "Wake up from deep standby"
+msgstr "بیدار شدن از مد استندبای عمیق به همراه بازآوری راهنمای الکترونیک"
+
+msgid "Wednesday"
+msgstr ""
+
+#, fuzzy
+msgid "Welcome to EPGRefresh"
+msgstr "اضافه کردن به برنامه راهنما الکترونیک"
+
+#, fuzzy
+msgid "Whether the receiver should go into deep standby after refresh is completed."
+msgstr "این تنظیمات کنترل می کند که بعد از بازآوری کامل رسیور به مد استند بای عمیق برود"
+
+msgid ""
+"While the screen does not immediately show it, it does have a lot to offer. The topmost line allows you to choose between the editor for channels and bouquets and the following lines contain the channels/bouquets you chose to refresh.\n"
+"\n"
+"You can use the BLUE button to add a new entry to the list or the YELLOW button to remove an existing one.\n"
+"\n"
+"\n"
+"For most people it should be sufficient to add the \"Favourites\" bouquet by selecting \"Bouquets\" in the first line and by adding it using the BLUE button."
+msgstr ""
+
+msgid ""
+"You may not use this settings!\n"
+"At least one day a week should be included!"
+msgstr ""
+
+msgid ""
+"You now know how to do your first steps in EPGRefresh.\n"
+"\n"
+"As a final note I want to hint you at the fact that this plugin will not do anything on its own without YOU telling it to. So if you want the refresh to happen automatically in the background you need to configure the plugin to do so.\n"
+"This was not done to cause you any inconvenience but rather to give you the freedom of choice."
+msgstr ""
+
+#, fuzzy
+msgid "add service to EPGRefresh"
+msgstr "اضافه کردن به برنامه راهنما الکترونیک"
+
 msgid "add to EPGRefresh"
 msgstr "اضافه کردن به برنامه راهنما الکترونیک"
 
-msgid "Show in event menu"
+msgid "channel selection"
 msgstr ""
 
-msgid "Enable this to be able to add current service into EPGRefresh from event menu."
+msgid "delete"
+msgstr "حذف کردن"
+
+msgid "event info"
 msgstr ""
 
+msgid "event info / channel selection"
+msgstr ""
+
+msgid "manual save/load EPG"
+msgstr ""
+
+msgid "never"
+msgstr "هرگز"
+
+msgid "nowhere"
+msgstr ""
