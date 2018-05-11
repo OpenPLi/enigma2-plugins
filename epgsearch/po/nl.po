@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2 - epgsearch\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-21 10:41+0200\n"
+"POT-Creation-Date: 2018-05-11 10:58+0200\n"
 "PO-Revision-Date: 2018-05-02 20:06+0100\n"
 "Last-Translator: Frenske <voorzitter@openpli.org>\n"
 "Language-Team:  <Benny.DeTandt@gmail.com>\n"
@@ -18,326 +18,221 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 1.5.7\n"
 
-#: EPGSearch.py:326
 #, python-format
 msgid " (%d min)"
 msgstr " (%d min)"
 
-#: EPGSearch.py:332
 #, python-format
 msgid " (%s%d min)"
 msgstr " (%s%d min)"
 
-#: EPGSearchSetup.py:46
 msgid "Add \"Search event in EPG\" to channel menu"
 msgstr "Voeg 'zoek een event in de EPG' toe aan het zendermenu"
 
-#: EPGSearchSetup.py:45
 msgid "Add \"Search event in EPG\" to event menu"
 msgstr "Voeg 'zoek een event in de EPG' toe aan het programmamenu"
 
-#: EPGSearchSetup.py:40
 msgid "Add \"Search\" Button to EPG"
 msgstr "Voeg de toets 'zoeken' aan de EPG toe"
 
-#: EPGSearch.py:568
 msgid "Add timer"
 msgstr "Voeg timer toe"
 
-#: EPGSearchSetup.py:46
-msgid ""
-"Adds \"Search event in EPG\" item into the channel selection context menu "
-"(needs restart GUI)"
-msgstr ""
-"Indien geactiveerd, dan voegt dit een 'zoekt een programma in de EPG' item "
-"toe aan het zender selectie context menu (GUI herstart noodzakelijk)"
+msgid "Adds \"Search event in EPG\" item into the channel selection context menu (needs restart GUI)"
+msgstr "Indien geactiveerd, dan voegt dit een 'zoekt een programma in de EPG' item toe aan het zender selectie context menu (GUI herstart noodzakelijk)"
 
-#: EPGSearchSetup.py:45
-msgid ""
-"Adds \"Search event in EPG\" item into the event menu (needs restart GUI)"
-msgstr ""
-"Indien geactiveerd, dan voegt u een 'zoekt een programma in de EPG' item toe "
-"aan het programma menu (GUI herstart noodzakelijk)"
+msgid "Adds \"Search event in EPG\" item into the event menu (needs restart GUI)"
+msgstr "Indien geactiveerd, dan voegt u een 'zoekt een programma in de EPG' item toe aan het programma menu (GUI herstart noodzakelijk)"
 
-#: EPGSearch.py:1057 EPGSearchSetup.py:69
 msgid "Cancel"
 msgstr "Annuleren"
 
-#: EPGSearch.py:1095
 msgid "Channel Selection"
 msgstr "Zenderkeuze"
 
-#: plugin.py:54 EPGSearch.py:599 EPGSearch.py:709
 msgid "Choice list"
 msgstr "Keuzelijst"
 
-#: plugin.py:46
 msgid "Choice list EPGSearch"
 msgstr "EPGSearch keuzelijst"
 
-#: EPGSearch.py:721
 msgid "Choice list RED Button"
 msgstr "Keuzelijst Rode toets"
 
-#: EPGSearchSetup.py:43
 msgid "Choosing an encoding. \"UTF-8\" to search for EPG cyrillic."
-msgstr ""
-"Met deze optie kunt u een encoding aangeven. U kunt kiezen uit UTF-8 om "
-"cyrillisch de EPG te doorzoeken en voor ISO8859-15."
+msgstr "Met deze optie kunt u een encoding aangeven. U kunt kiezen uit UTF-8 om cyrillisch de EPG te doorzoeken en voor ISO8859-15."
 
-#: EPGSearch.py:802
 msgid "Clear history"
 msgstr "Wis de inhoud van de historie"
 
-#: EPGSearch.py:850
 #, python-format
 msgid "Could not read AutoTimer timer list: %s"
 msgstr "Kan AutoTimer timer lijst niet lezen : %s"
 
-#: EPGSearchSetup.py:49
+msgid "Custom search"
+msgstr "Vrij zoeken"
+
 msgid "Display name service as in bouquets"
 msgstr "Toon de zendernaam als in het bouquet"
 
-#: EPGSearch.py:620
 msgid "EPG Search"
 msgstr "EPG doorzoeken"
 
-#: plugin.py:131
 msgid "EPGSearch"
 msgstr "EPGSearch"
 
-#: EPGSearchSetup.py:33 EPGSearchSetup.py:87
 msgid "EPGSearch Setup"
 msgstr "Stel de EPGSearch in."
 
-#: EPGSearchSetup.py:43
 msgid "Encoding Search to EPG"
 msgstr "Encoding om de EPG te doorzoeken"
 
-#: EPGSearch.py:775
 msgid "Enter text to search for"
 msgstr "Voer te zoeken tekst in:"
 
-#: EPGSearch.py:794
 msgid "Export selected as AutoTimer"
 msgstr "Exporteer het geselecteerde als AutoTimer"
 
-#: EPGSearch.py:553
 msgid "History"
 msgstr "Historiek"
 
-#: EPGSearchSetup.py:39
-msgid ""
-"How many entries to keep in the search history at most. 0 disables history "
-"entirely!"
-msgstr ""
-"Met deze optie geeft u aan hoeveel regels u maximaal wilt bewaren in de "
-"zoekhistorie. De invoer 0 déactiveert de historie volledig !"
+msgid "How many entries to keep in the search history at most. 0 disables history entirely!"
+msgstr "Met deze optie geeft u aan hoeveel regels u maximaal wilt bewaren in de zoekhistorie. De invoer 0 déactiveert de historie volledig !"
 
-#: EPGSearchSetup.py:49
-msgid ""
-"If 'Search only bouquets' is enabled, show service name as in bouquets for "
-"renamed services."
-msgstr ""
-"Indien geactiveerd, en de optie hiervoor 'zoek alléén in de bouquetten' "
-"geactiveerd zijn, toon dan de zendernaam zoals in het bouquet als hernoemd."
+msgid "If 'Search only bouquets' is enabled, show service name as in bouquets for renamed services."
+msgstr "Indien geactiveerd, en de optie hiervoor 'zoek alléén in de bouquetten' geactiveerd zijn, toon dan de zendernaam zoals in het bouquet als hernoemd."
 
-#: EPGSearchSetup.py:48
-msgid ""
-"If this setting is enabled, searching EPG in only services in user bouquets."
-msgstr ""
-"Indien geactiveerd, dan zal de EPG enkel doorzocht worden in "
-"gebruikersbouquetten."
+msgid "If this setting is enabled, searching EPG in only services in user bouquets."
+msgstr "Indien geactiveerd, dan zal de EPG enkel doorzocht worden in gebruikersbouquetten."
 
-#: EPGSearchSetup.py:40
-msgid ""
-"If this setting is enabled, the plugin adds a \"Search\" Button to the "
-"regular EPG."
-msgstr ""
-"Indien geactiveerd, dan voegt de plugin een toets 'zoeken' toe aan de gewone "
-"EPG."
+msgid "If this setting is enabled, the plugin adds a \"Search\" Button to the regular EPG."
+msgstr "Indien geactiveerd, dan voegt de plugin een toets 'zoeken' toe aan de gewone EPG."
 
-#: EPGSearchSetup.py:42
 msgid "If this setting is enabled, the plugin adds picons."
 msgstr "Indien geactiveerd, dan voegt de plugin picons toe."
 
-#: EPGSearch.py:792
 msgid "Import from AutoTimer"
 msgstr "Importeren vanuit de AutoTimer"
 
-#: EPGSearch.py:781
 msgid "Import from EPG"
 msgstr "Importeren vanuit de EPG"
 
-#: EPGSearch.py:780
 msgid "Import from Timer"
 msgstr "Importeren uit de timer"
 
-#: EPGSearchSetup.py:39
 msgid "Length of History"
 msgstr "Lengte van de historie"
 
-#: EPGSearch.py:928
 msgid "List of history is cleared !"
 msgstr "Historie overzicht is gewist !"
 
-#: EPGSearch.py:603 EPGSearch.py:717
 msgid "Lookup in TMBD"
 msgstr "Zoek in TMBD"
 
-#: EPGSearch.py:552
 msgid "New Search"
 msgstr "Nieuw"
 
-#: EPGSearch.py:946
 msgid "No history !"
 msgstr "Geen historie !"
 
-#: EPGSearch.py:1058 EPGSearchSetup.py:68
 msgid "OK"
 msgstr "OK"
 
-#: EPGSearch.py:799
 msgid "Open selected in IMDb"
 msgstr "Open de selectie in IMBd"
 
-#: EPGSearch.py:718
 msgid "Partnerbox Entries"
 msgstr "Partnerbox item"
 
-#: EPGSearch.py:793
 msgid "Save search as AutoTimer"
 msgstr "Bewaar dit resultaat als AutoTimer"
 
-#: plugin.py:42 plugin.py:52
 msgid "Search"
 msgstr "Zoeken"
 
-#: plugin.py:132
 msgid "Search EPG by title event"
 msgstr "Doorzoek de EPG op titel van het programma"
 
-#: plugin.py:152 plugin.py:154
 msgid "Search event in EPG"
 msgstr "Zoek het huidige programma in de EPG"
 
-#: EPGSearch.py:797
 msgid "Search for TMDb info"
 msgstr "Zoek naar TMDb informatie"
 
-#: EPGSearchSetup.py:48
 msgid "Search only bouquets"
 msgstr "Doorzoek alléén de bouquetten"
 
-#: EPGSearchSetup.py:47
 msgid "Search strictness"
 msgstr "Nauwkeurigheid van het zoeken"
 
-#: EPGSearchSetup.py:44
 msgid "Search type"
 msgstr "Zoektype"
 
-#: EPGSearchSetup.py:50
 msgid "Search type for filter"
 msgstr "Zoektype om te filteren"
 
-#: EPGSearch.py:1072
 msgid "Select a timer to search"
 msgstr "Selecteer de te zoeken timer ..."
 
-#: plugin.py:45 EPGSearch.py:720
 msgid "Select action:"
 msgstr "Kies de actie:"
 
-#: plugin.py:43
 msgid "Select channel"
 msgstr "Kies de zender"
 
-#: EPGSearch.py:861 EPGSearch.py:940
 msgid "Select text to search for"
 msgstr "Selecteer de te zoeken tekst ..."
 
-#: EPGSearchSetup.py:50
-msgid ""
-"Select type for filter search. Press button P +/- for show/hide filter in "
-"description after search."
-msgstr ""
-"Met deze optie kunt u het zoektype kiezen om op filter te zoeken. Druk P +/- "
-"om het filter te tonen/verbergen na het zoeken."
+msgid "Select type for filter search. Press button P +/- for show/hide filter in description after search."
+msgstr "Met deze optie kunt u het zoektype kiezen om op filter te zoeken. Druk P +/- om het filter te tonen/verbergen na het zoeken."
 
-#: EPGSearchSetup.py:44
-msgid ""
-"Select type for search, \"partial match\" for the most extensive search."
-msgstr ""
-"Met deze optie kunt u aangeven hoe u wilt zoeken. U kunt kiezen uit "
-"'gedeeltelijke overeenkomst', 'exacte overeenkomst' en 'de titel begint "
-"met'. De eerste optie zoekt het intensiefst."
+msgid "Select type for search, \"partial match\" for the most extensive search."
+msgstr "Met deze optie kunt u aangeven hoe u wilt zoeken. U kunt kiezen uit 'gedeeltelijke overeenkomst', 'exacte overeenkomst' en 'de titel begint met'. De eerste optie zoekt het intensiefst."
 
-#: EPGSearchSetup.py:41
 msgid "Select type: 'Search and Select channel' or 'Search'."
-msgstr ""
-"Met deze optie kunt u aangeven op welke manier u wenst te zoeken.U kunt "
-"kiezen uit 'zoek en kies de zender' of 'enkel zoeken'."
+msgstr "Met deze optie kunt u aangeven op welke manier u wenst te zoeken.U kunt kiezen uit 'zoek en kies de zender' of 'enkel zoeken'."
 
-#: EPGSearchSetup.py:47
 msgid "Select whether or not you want to enforce case correctness."
 msgstr "Kies of u de hoofdlettergevoeligheid wel of niet wilt forceren."
 
-#: EPGSearch.py:804
 msgid "Setup"
 msgstr "Setup"
 
-#: EPGSearch.py:803
 msgid "Timers list"
 msgstr "Timeroverzicht"
 
-#: EPGSearchSetup.py:41
 msgid "Type blue Button"
 msgstr "Het type van de blauwe toets"
 
-#: EPGSearchSetup.py:42
 msgid "Use Picons"
 msgstr "Gebruik Picons"
 
-#: EPGSearch.py:789
 msgid "Zap to selected service"
 msgstr "Zap naar de gekozen zender"
 
-#: __init__.py:36
 msgid "case-insensitive search"
 msgstr "Niet hoofdlettergevoelig"
 
-#: __init__.py:36
 msgid "case-sensitive search"
 msgstr "Hoofdlettergevoelig"
 
-#: __init__.py:29
 msgid "choice (Search and standard)"
 msgstr "Zoek en standaard actie"
 
-#: __init__.py:35 __init__.py:37
 msgid "exact match"
 msgstr "Exacte overeenkomst"
 
-#: __init__.py:29
 msgid "only Search"
 msgstr "Alleen zoeken"
 
-#: __init__.py:35 __init__.py:37
 msgid "partial match"
 msgstr "Gedeeltelijke overeenkomst"
 
-#: plugin.py:145
 msgid "search EPG"
 msgstr "EPG doorzoeken"
 
-#: plugin.py:139
 msgid "search EPG..."
 msgstr "EPG doorzoeken..."
 
-#: __init__.py:37
 msgid "title starts with"
 msgstr "De titel begint met"
-
-msgid "Custom search"
-msgstr "Vrij zoeken"
