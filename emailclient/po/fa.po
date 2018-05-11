@@ -7,10 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: email client Persian Translation\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-11-28 18:29+0100\n"
+"POT-Creation-Date: 2018-05-11 10:58+0200\n"
 "PO-Revision-Date: 2012-07-24 14:03+0330\n"
 "Last-Translator: mehdi <mehdi_ar_yekta@yahoo.com>\n"
 "Language-Team: Persian Professionals <persianpros@yahoo.com>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -20,6 +21,10 @@ msgstr ""
 #, python-format
 msgid "%(name)s (%(user)s@%(server)s)"
 msgstr ""
+
+#, fuzzy
+msgid "Account Setup"
+msgstr "لیست کاربران"
 
 msgid "Accounts list"
 msgstr "لیست کاربران"
@@ -90,6 +95,9 @@ msgstr "کاربر متصل نشده است "
 msgid "add"
 msgstr "افزودن"
 
+msgid "always"
+msgstr ""
+
 msgid "cancel"
 msgstr "لغو کردن"
 
@@ -114,6 +122,9 @@ msgstr "حذف کردن"
 msgid "display connection errors"
 msgstr "نمایش خطاهای ارتباطی"
 
+msgid "display message type"
+msgstr ""
+
 msgid "display timeout (seconds)"
 msgstr "نمایش وقفه زمانی بر حسب ثانیه"
 
@@ -122,6 +133,9 @@ msgstr "ویرایش"
 
 msgid "empty values - retry"
 msgstr "خالی بودم مقادیر - تلاش مجدد"
+
+msgid "enable auto check mail"
+msgstr ""
 
 #, python-format
 msgid ""
@@ -147,6 +161,9 @@ msgstr "هدرها بارگذاری شده اند در حال تجزیه و تح
 
 #, python-format
 msgid "importing configurations from %s"
+msgstr ""
+
+msgid "infobar mode (live TV)"
 msgstr ""
 
 msgid "leave unread"
@@ -221,6 +238,9 @@ msgstr "بازگردانی کردن"
 msgid "user name"
 msgstr "نام کاربری"
 
-msgid "view Emails via IMAP4"
+#, fuzzy
+msgid "view Email"
 msgstr "IMAP4 نمایش پست ها از طریق"
 
+msgid "view Emails via IMAP4"
+msgstr "IMAP4 نمایش پست ها از طریق"
