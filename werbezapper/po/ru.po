@@ -2,29 +2,36 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Enigma2 Plugin WerbeZapper\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-02-07 12:44+0100\n"
+"POT-Creation-Date: 2018-05-11 10:58+0200\n"
 "PO-Revision-Date: 2015-11-06 22:36+0200\n"
 "Last-Translator: Dimitrij <Dima-73@inbox.lv>\n"
 "Language-Team: none\n"
+"Language: ru\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Language: ru\n"
 "X-Generator: Poedit 1.8.4\n"
 
 msgid "\"Werbezapper\" quick button"
 msgstr "\"Werbezapper\" быстрая кнопка"
 
+#, python-format
 msgid "%d min"
 msgstr "%d мин"
 
+#, python-format
+msgid "%s\n"
+msgstr ""
+
+#, python-format
 msgid "- %d:%02d min"
 msgstr "- %d:%02d мин"
 
 msgid "Automatically zaps back to current service after given Time"
 msgstr "Авто возврат на текущий канал через заданное время"
 
+#, python-format
 msgid ""
 "Button Info/EPG\n"
 "Set time begin next event: %d min"
@@ -35,20 +42,21 @@ msgstr ""
 msgid "Cancel"
 msgstr "Отмена"
 
+#, python-format
 msgid "Channel: %s"
 msgstr "Канал: %s"
 
 msgid "Custom"
 msgstr "Задать время"
 
-msgid "Disable wakeup from standby"
-msgstr "Выключить переключение из режима ожидания"
-
-msgid "Enable wakeup from standby"
-msgstr "Включить переключение из режима ожидания"
-
 msgid "Error"
 msgstr "Ошибка"
+
+msgid "GREEN"
+msgstr ""
+
+msgid "HELP"
+msgstr ""
 
 msgid "How many minutes to wait until zapping back?"
 msgstr "Сколько минут ждать, до переключения назад?"
@@ -59,17 +67,28 @@ msgstr "Режим показа индикатора"
 msgid "Monitoring duration for service if not EPG"
 msgstr "Продолжительность мониторинга для сервиса без EPG"
 
+#, python-format
 msgid "Monitoring: %s (%d:%02d Min)"
 msgstr "Мониторинг: %s (%d:%02d мин)"
 
+#, python-format
 msgid "Monitoring: for service is not EPG (%d:%02d Min)"
 msgstr "Мониторинг: для сервиса без EPG (%d:%02d мин)"
+
+msgid "NONE"
+msgstr ""
 
 msgid "Open setup"
 msgstr "Открыть настройки"
 
+msgid "RADIO"
+msgstr ""
+
 msgid "Rezap"
 msgstr "Переключить сейчас"
+
+msgid "SEARCH"
+msgstr ""
 
 msgid "Save"
 msgstr "Сохранить"
@@ -104,12 +123,22 @@ msgstr "Остановка мониторинга"
 msgid "Stop timer"
 msgstr "Отключить таймер"
 
+msgid "TEXT"
+msgstr ""
+
+msgid "TIMER"
+msgstr ""
+
+msgid "TV"
+msgstr ""
+
 msgid "Wakeup receiver from standby for zap timer"
 msgstr "Включить ресивер из режима ожидания по таймеру"
 
 msgid "WerbeZapper"
 msgstr "WerbeZapper..."
 
+#, python-format
 msgid ""
 "WerbeZapper\n"
 "Monitoring ends\n"
@@ -119,27 +148,10 @@ msgstr ""
 "Мониторинг окончен\n"
 "%s"
 
-msgid ""
-"WerbeZapper\n"
-"Monitoring started unlimited\n"
-"Has to be deactivated manually"
-msgstr ""
-"WerbeZapper\n"
-"Monitoring начался без лимита времени\n"
-"Должен быть отключен в ручную"
-
 msgid "WerbeZapper Setup"
 msgstr "Настройки WerbeZapper"
 
-msgid ""
-"WerbeZapper...\n"
-"Monitoring is not running\n"
-"No event"
-msgstr ""
-"WerbeZapper...\n"
-"Мониторинг не может быть запущен\n"
-"На текущем канале нет EPG"
-
+#, python-format
 msgid ""
 "WerbeZapper...\n"
 "Monitoring started\n"
@@ -149,6 +161,7 @@ msgstr ""
 "Мониторинг стартовал\n"
 "%s"
 
+#, python-format
 msgid ""
 "WerbeZapper...\n"
 "Monitoring started for service is not EPG.\n"
@@ -157,6 +170,10 @@ msgstr ""
 "WerbeZapper...\n"
 "Мониторинг стартовал для сервиса без EPG.\n"
 "Продолжительность %d мин."
+
+#, fuzzy
+msgid "Werbezapper"
+msgstr "WerbeZapper..."
 
 msgid "Werbezapper Start / Stop monitoring"
 msgstr "Werbezapper: старт / стоп мониторинга"
@@ -170,15 +187,21 @@ msgstr "X позиция"
 msgid "Y position"
 msgstr "Y позиция"
 
+msgid "YELLOW"
+msgstr ""
+
 msgid "Z position (priority of srceen)"
 msgstr "Z позиция (приоритет скрина)"
 
+#, python-format
 msgid "Zapping back %s in %d Min"
 msgstr "Переключение назад на %s через %d мин"
 
+#, python-format
 msgid "Zapping to %s"
 msgstr "Переключаем на %s"
 
+#, python-format
 msgid "Zapping to service in %d:%02d Min"
 msgstr "Переключение на канал через %d:%02d мин"
 
