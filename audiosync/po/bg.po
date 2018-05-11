@@ -2,18 +2,19 @@ msgid ""
 msgstr ""
 "Project-Id-Version: AC3LipSync\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-12-18 02:07+0100\n"
+"POT-Creation-Date: 2018-05-11 12:33+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Мартин Петков <marto74bg@yahoo.co.uk>\n"
 "Language-Team: \n"
+"Language: bg\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-Basepath: D:/Dreambox/Eclipse/ac3lipsync\n"
-"Language: bg\n"
 "X-Generator: Poedit 2.0.6\n"
 "X-Poedit-SearchPath-0: src\n"
 
+#, python-format
 msgid "%i ms"
 msgstr "%i мс"
 
@@ -47,6 +48,7 @@ msgstr "Аудио канал:"
 msgid "Decrease delay"
 msgstr "Намаляне на закъснението"
 
+#, python-format
 msgid "Decrease delay by %i ms (can be set)"
 msgstr "Намаляне на закъснението с %i мс (може да се настрои)"
 
@@ -65,15 +67,18 @@ msgstr "Общо закъснение"
 msgid "Increase delay"
 msgstr "Увеличаване на закъснението"
 
+#, python-format
 msgid "Increase delay by %i ms (can be set)"
 msgstr "Увеличение на закъснението с %i мс (може да се настрои)"
 
 msgid "Invalid selection"
 msgstr "Неправилен избор"
 
+#, python-format
 msgid "Key %(Key)s successfully set to %(delay)i ms"
 msgstr "Бутон %(Key)s успешно е настроен за %(delay)i мс"
 
+#, python-format
 msgid "Key %(key)s (current value: %(value)i ms)"
 msgstr "Бутон %(key)s (текуща стойност: %(value)i мс)"
 
@@ -125,6 +130,7 @@ msgstr "Отваряне на плъгин менюто"
 msgid "Outer Bound (+/-)"
 msgstr "Външна граница (+/-)"
 
+#, python-format
 msgid "Plugin: %(plugin)s , Version: %(version)s"
 msgstr "Плъгин: %(plugin)s , Версия: %(version)s"
 
@@ -152,15 +158,14 @@ msgstr "Запази стойностите и затвори плъгина"
 msgid "Save values and close screen"
 msgstr "Запази стойностите и затвори екрана"
 
-msgid "Select channel audio"
-msgstr "Избери аудио канал"
-
+#, python-format
 msgid "Select the key you want to set to %i ms"
 msgstr "Избери бутон за настройване с %i мс"
 
 msgid "Service delay"
 msgstr "Закъсн.на канал"
 
+#, python-format
 msgid "Set delay to %i ms (can be set)"
 msgstr "Настройване на закъснението с %i мс (може да се настрои)"
 
@@ -173,14 +178,13 @@ msgstr "Настройки за плъгина Аудио Синхронизац
 msgid "Step in ms for arrow keys"
 msgstr "Стъпка в мс за бутоните със стрелките"
 
+#, python-format
 msgid "Step in ms for key %i"
 msgstr "Стъпка в мс за бутон %i"
 
+#, python-format
 msgid "Step in ms for keys '%s'"
 msgstr "Стъпка в мс за бутони '%s'"
-
-msgid "Switch audio"
-msgstr "Смяна на аудио"
 
 msgid "Wait time in ms before activation:"
 msgstr "Време за изчакване в мс до активиране:"
