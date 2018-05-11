@@ -3,33 +3,32 @@ msgstr ""
 "Project-Id-Version: enigma 2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-05-11 10:58+0200\n"
-"PO-Revision-Date: 2011-07-13 18:30+0100\n"
+"PO-Revision-Date: 2018-05-11 22:09+0200\n"
 "Last-Translator: joergm6 <joergm6@online.de>\n"
 "Language-Team: french\n"
-"Language: \n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Poedit-Language: French\n"
 "X-Poedit-SourceCharset: iso-8859-15\n"
-"X-Poedit-Country: FRENCH\n"
+"X-Generator: Poedit 2.0.7\n"
 
 #, python-format
 msgid "%s   %02d C"
 msgstr "%s   %02d C"
 
 msgid "."
-msgstr ","
+msgstr "."
 
 msgid "3Pin"
-msgstr "3Pin"
+msgstr "3 broches"
 
 msgid "4Pin"
-msgstr "4Pin"
+msgstr "4 broches"
 
 msgid "4Pin (PID)"
-msgstr ""
+msgstr "4 broches (PID)"
 
 msgid "Action in case of Fan failure"
 msgstr "Action en cas de défaillance du ventilateur"
@@ -95,25 +94,20 @@ msgstr "Température finale en C"
 msgid "Extended Control Range"
 msgstr "Echelle contrôle étendu"
 
-#, fuzzy
 msgid "Fan Control"
-msgstr "Fan Control 2 - Infos"
+msgstr "Contrôle du ventilateur"
 
-#, fuzzy
 msgid "Fan Control 2"
-msgstr "Fan Control 2 - Infos"
+msgstr "Contrôle du ventilateur 2"
 
-#, fuzzy
 msgid "Fan Control 2 - Monitor"
-msgstr "Fan Control 2 - Infos"
+msgstr "Contrôle du ventilateur 2 - Moniteur"
 
-#, fuzzy
 msgid "Fan Control 2 - Setup"
-msgstr "Fan Control 2 - Courbes"
+msgstr "Contrôle du ventilateur 2 - Configuration"
 
-#, fuzzy
 msgid "Fan Control 2 - Test"
-msgstr "Fan Control 2 - Courbes"
+msgstr "Contrôle du ventilateur 2 - Test"
 
 msgid "Fan is not working!"
 msgstr "Le ventilateur ne fonctionne pas!"
@@ -202,7 +196,7 @@ msgstr "Nombre de WebIF-Log-entries"
 
 #, python-format
 msgid "PID Ctl Err %03.2f %%"
-msgstr ""
+msgstr "PID Ctl Err %03.2f %%"
 
 #, python-format
 msgid "PWM  %03d"
@@ -218,7 +212,7 @@ msgid "Sensors"
 msgstr "Capteurs"
 
 msgid "Show Fan Speed as"
-msgstr ""
+msgstr "Afficher la vitesse du ventilateur comme"
 
 msgid "Show Monitor in Extension-Menu"
 msgstr "Montrer Moniteur dans le menu-extension"
@@ -306,7 +300,7 @@ msgid "over Security Card"
 msgstr "sur la carte sécurité"
 
 msgid "please set fan type (3Pin or 4Pin)"
-msgstr ""
+msgstr "svp définir le type de ventilateur  (3 ou 4 broches)"
 
 msgid "please wait (until 3min)..."
 msgstr "Veuillez patienter (jusqu'à 3min)..."
@@ -321,7 +315,7 @@ msgid "readme.txt"
 msgstr "readmefr.txt"
 
 msgid "setup Fancontol inStandby mode"
-msgstr ""
+msgstr "Définir le contrôle du ventilateur en mode veille"
 
 msgid "turn off"
 msgstr "Stopper"
