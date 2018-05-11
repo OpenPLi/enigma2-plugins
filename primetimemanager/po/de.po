@@ -1,10 +1,12 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PrimeTimeManager\n"
-"POT-Creation-Date: 2011-03-24 21:03+CET\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-05-11 10:58+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Shaderman <shaderman@dreambox-tools.info>\n"
 "Language-Team:  <shaderman@dreambox-tools.info>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -14,11 +16,41 @@ msgstr ""
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SearchPath-0: po\n"
 
+#, python-format
+msgid ""
+"\n"
+"Timer '%s' disabled!"
+msgstr ""
+
+#, python-format
+msgid ""
+"\n"
+"Total number of conflicts: %s"
+msgstr ""
+
+msgid "\"View live\" event only in Prime Time:"
+msgstr ""
+
+msgid "\"View live\" type:"
+msgstr ""
+
+#, python-format
+msgid "%d min"
+msgstr ""
+
+#, python-format
 msgid "%s prime time | events today (%s) | Bouquet: %s"
 msgstr "%s Hauptsendezeit | Sendungen heute (%s) | Bouquet: %s"
 
+#, python-format
 msgid "%s prime time | events today +%s (%s) | Bouquet: %s"
 msgstr "%s Hauptsendezeit | Sendungen heute +%s (%s) | Bouquet: %s"
+
+msgid "'Timer Edit' key menu - show conflict timer:"
+msgstr ""
+
+msgid ": only notification"
+msgstr ""
 
 msgid "Accept"
 msgstr "Übernehmen"
@@ -26,11 +58,26 @@ msgstr "Übernehmen"
 msgid "Accept the events as shown"
 msgstr "Sendungen wie gezeigt übernehmen"
 
+msgid "Accept this solution?"
+msgstr ""
+
 msgid "Add Timer"
 msgstr "Timer setzen"
 
+#, fuzzy
+msgid "Add timer"
+msgstr "Timer setzen"
+
+#, python-format
+msgid "Add timer for \"%s\"?"
+msgstr ""
+
 msgid "Add/remove event to or from favourites"
 msgstr "Sendung zu Favoriten hinzufügen/löschen"
+
+#, fuzzy
+msgid "Any timers"
+msgstr "Endzeit"
 
 msgid "Begin time"
 msgstr "Startzeit"
@@ -41,27 +88,67 @@ msgstr "Bouquet"
 msgid "Bouquet:"
 msgstr "Bouquet:"
 
+#, python-format
+msgid "Bouquet: %s - EPG Selection Multi"
+msgstr ""
+
+msgid "Cancel"
+msgstr ""
+
+msgid "Cansel"
+msgstr ""
+
+msgid "Channel not in services list"
+msgstr ""
+
+msgid "Check conflicts timers after \"Accept\":"
+msgstr ""
+
+msgid "Check conflicts timers after exit:"
+msgstr ""
+
+msgid "Checking with conflict detection enabled for"
+msgstr ""
+
 msgid "Close"
 msgstr "Schließen"
+
+#, fuzzy
+msgid "Conflict detected!"
+msgstr "Konflikte wurden gelöst"
+
+#, fuzzy
+msgid "Conflict not resolved!"
+msgstr "Konflikte wurden gelöst"
 
 msgid "Conflicts were solved"
 msgstr "Konflikte wurden gelöst"
 
+#, fuzzy
+msgid "Current timer"
+msgstr "Timer setzen"
+
 msgid "Date"
 msgstr "Datum"
 
+msgid "Disable"
+msgstr ""
+
+#, python-format
 msgid "Do you really want to delete the timer for \"%s\"?"
 msgstr "Soll der Timer für \"%s\" wirklich gelöscht werden?"
 
-msgid ""
-"Do you want to switch the prime time? Currently selected favorites will be "
-"lost!"
-msgstr ""
-"Soll die Hauptsendezeit wirklich geändert werden? Alle bisher ausgewählten "
-"Favoriten sind damit verloren!"
+msgid "Do you want to switch the prime time? Currently selected favorites will be lost!"
+msgstr "Soll die Hauptsendezeit wirklich geändert werden? Alle bisher ausgewählten Favoriten sind damit verloren!"
 
 msgid "Duration"
 msgstr "Dauer"
+
+msgid "Edit"
+msgstr ""
+
+msgid "Enable"
+msgstr ""
 
 msgid "End time"
 msgstr "Endzeit"
@@ -69,8 +156,14 @@ msgstr "Endzeit"
 msgid "Exit"
 msgstr "Beenden"
 
+msgid "Exit from Multi EPG on selected service:"
+msgstr ""
+
 msgid "Exit plugin"
 msgstr "Plugin beenden"
+
+msgid "Exit plugin or open Multi EPG"
+msgstr ""
 
 msgid "Favorite"
 msgstr "Favorit"
@@ -78,8 +171,18 @@ msgstr "Favorit"
 msgid "Favorite will be deleted!"
 msgstr "Favorit wird gelöscht!"
 
+#, fuzzy
+msgid "Ignore conflict"
+msgstr "Keine Konflikte gefunden"
+
+msgid "Lookup in TMBD"
+msgstr ""
+
 msgid "Manage prime time events"
 msgstr "Verwaltung der Hauptsendezeit"
+
+msgid "Multi EPG"
+msgstr ""
 
 msgid "No EPG data"
 msgstr "Keine EPG Daten"
@@ -93,13 +196,32 @@ msgstr "OK"
 msgid "Open the settings screen"
 msgstr "Öffnet die Plugin-Einstellungen"
 
+msgid "Open timers list"
+msgstr ""
+
 msgid "Primary"
 msgstr "Primäre"
 
 msgid "Primary Prime Time:"
 msgstr "Primäre Hauptsendezeit:"
 
+#, fuzzy
+msgid "Prime Time Manager"
+msgstr "Prime Time Manager Konfliktergebnisse"
+
+#, fuzzy
+msgid "Prime Time Manager "
+msgstr "Prime Time Manager Konfliktergebnisse"
+
 msgid "Prime Time Manager Conflict Results"
+msgstr "Prime Time Manager Konfliktergebnisse"
+
+#, fuzzy
+msgid "Prime Time Manager in E-menu:"
+msgstr "Prime Time Manager Konfliktergebnisse"
+
+#, fuzzy
+msgid "Prime Time Manager setup"
 msgstr "Prime Time Manager Konfliktergebnisse"
 
 msgid ""
@@ -109,19 +231,17 @@ msgid ""
 msgstr ""
 "Prime Time Manager:\n"
 "\n"
-"Die Hauptsendezeit läuft bereits oder ist schon vorbei. Beginne mit den "
-"Sendungen von morgen."
+"Die Hauptsendezeit läuft bereits oder ist schon vorbei. Beginne mit den Sendungen von morgen."
 
+#, python-format
 msgid ""
 "Prime Time Manager:\n"
 "\n"
-"Sorry, but a timer for %s can't be set because there are conflicts with "
-"other timers."
+"Sorry, but a timer for %s can't be set because there are conflicts with other timers."
 msgstr ""
 "Prime Time Manager:\n"
 "\n"
-"Es kann kein Timer für %s gesetzt werden weil es Konflikte mit anderen "
-"Timern gibt."
+"Es kann kein Timer für %s gesetzt werden weil es Konflikte mit anderen Timern gibt."
 
 msgid ""
 "Prime Time Manager:\n"
@@ -131,6 +251,15 @@ msgstr ""
 "Prime Time Manager:\n"
 "\n"
 "Ein wiederholender Timer kann nicht in eine Live-Sendung umgewandelt werden."
+
+msgid "Prime Time Settings"
+msgstr ""
+
+msgid "Recording is in progress.\n"
+msgstr ""
+
+msgid "Red Button function:"
+msgstr ""
 
 msgid "Remove favorite on timer deletion:"
 msgstr "Favorit entfernen wenn Timer gelöscht wird:"
@@ -144,14 +273,24 @@ msgstr "Aktive Liste nach links bewegen"
 msgid "Scroll selected list to the right"
 msgstr "Aktive Liste nach rechts bewegen"
 
+msgid "Search in IMDb"
+msgstr ""
+
 msgid "Secondary"
 msgstr "Sekundäre"
 
 msgid "Secondary Prime Time:"
 msgstr "Sekundäre Hauptsendezeit:"
 
+msgid "Select action"
+msgstr ""
+
 msgid "Selected favorites"
 msgstr "Ausgewählte Favoriten"
+
+#, python-format
+msgid "Set 'view live' type '%s'?"
+msgstr ""
 
 msgid "Set Timer"
 msgstr "Timer setzen"
@@ -162,8 +301,8 @@ msgstr "Tag setzen"
 msgid "Set or remove a timer"
 msgstr "Timer setzen oder löschen"
 
-msgid "Settings"
-msgstr "Einstellungen"
+msgid "Settings of the plugin"
+msgstr ""
 
 msgid "Show duration or end time:"
 msgstr "Dauer oder Endzeit anzeigen:"
@@ -171,8 +310,20 @@ msgstr "Dauer oder Endzeit anzeigen:"
 msgid "Show event information"
 msgstr "Zeige Informationen zur Sendung"
 
+msgid "Show warning before set 'Ignore conflict'"
+msgstr ""
+
+msgid "Single EPG"
+msgstr ""
+
 msgid "Solution"
 msgstr "Lösung"
+
+msgid ""
+"Sorri!\n"
+"Conflict timers in timers.xml detected!\n"
+"Please recheck it!"
+msgstr ""
 
 msgid "Switch betw. favourite/prime time list"
 msgstr "Umschalten zwischen Favoriten/Hauptsendezeit"
@@ -189,12 +340,29 @@ msgstr "Vorheriges Bouquet anzeigen"
 msgid "Switch to the previous day"
 msgstr "Vorherigen Tag anzeigen"
 
+#, python-format
 msgid ""
-"This is a repeated timer! Do you really want to delete the repeated timer "
-"for \"%s\"?"
+"This event \"%s\" has already begun or will begin in the next few minutes.\n"
+"We can not add it to your list of favorites, as will instantly record.\n"
+"Just want to switch to this service?"
 msgstr ""
-"Vorsicht wiederholender Timer! Soll der wiederholende Timer für \"%s\" "
-"wirklich gelöscht werden?"
+
+msgid "This event will be an instant record.\n"
+msgstr ""
+
+#, python-format
+msgid "This is a repeated timer! Do you really want to delete the repeated timer for \"%s\"?"
+msgstr "Vorsicht wiederholender Timer! Soll der wiederholende Timer für \"%s\" wirklich gelöscht werden?"
+
+msgid "Timer sanity error"
+msgstr ""
+
+msgid "Timers list"
+msgstr ""
+
+#, fuzzy
+msgid "Toggle \"view live\" type"
+msgstr "Markierung für Live-Sendung setzen/löschen"
 
 msgid "Toggle marker for a \"view live\" event"
 msgstr "Markierung für Live-Sendung setzen/löschen"
@@ -204,3 +372,34 @@ msgstr "Wechsel primäre/sekundäre Hauptsendezeit"
 
 msgid "Try to solve conflicts and show result"
 msgstr "Konfliktlösung und Ergebnisansicht"
+
+msgid "Use AutoTimer plugin instead remove favorites:"
+msgstr ""
+
+msgid ""
+"Warning!\n"
+"This is an option for advanced users.\n"
+"Really disable timer conflict detection?"
+msgstr ""
+
+msgid "Zap"
+msgstr ""
+
+msgid "Zap + Record"
+msgstr ""
+
+msgid "and never ask this again"
+msgstr ""
+
+#, fuzzy
+msgid "exit plugin"
+msgstr "Plugin beenden"
+
+msgid "no"
+msgstr ""
+
+msgid "open Multi EPG"
+msgstr ""
+
+msgid "yes"
+msgstr ""
