@@ -1,3 +1,3 @@
 PLUGIN = Podcast
-LANGS = de it sr tr sk
+LANGS = de it lt sr tr sk
 include $(top_srcdir)/Rules-po.mak
