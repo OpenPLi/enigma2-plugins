@@ -1,3 +1,3 @@
 PLUGIN = ZapHistoryBrowser
-LANGS = de es fy it lt nl sr sv tr fa fr
+LANGS = de es fa fr fy it lt nl sk sr sv tr 
 include $(top_srcdir)/Rules-po.mak

@@ -1,3 +1,3 @@
 PLUGIN = EIBox
-LANGS = de fr it lt
+LANGS = de fr it lt 
 include $(top_srcdir)/Rules-po.mak

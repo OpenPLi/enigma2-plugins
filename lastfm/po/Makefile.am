@@ -1,3 +1,3 @@
 PLUGIN = LastFM
-LANGS = de nl lt
+LANGS = de lt nl 
 include $(top_srcdir)/Rules-po.mak

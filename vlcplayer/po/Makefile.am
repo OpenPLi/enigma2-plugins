@@ -1,3 +1,3 @@
 PLUGIN = VlcPlayer
-LANGS = de es it tr sv sr cs fa no fr ru lt
+LANGS = cs de es fa fr it lt no ru sr sv tr 
 include $(top_srcdir)/Rules-po.mak

@@ -1,3 +1,3 @@
 PLUGIN = SimpleRSS
-LANGS = de es it lt nl sr tr fa ru
+LANGS = de es fa it lt nl ru sr tr 
 include $(top_srcdir)/Rules-po.mak

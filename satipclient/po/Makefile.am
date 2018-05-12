@@ -2,6 +2,6 @@ PLUGIN = SatipClient
 
 CATEGORY = SystemPlugins
 
-LANGS = nl de ru lt
+LANGS = de lt nl ru 
 
 include $(top_srcdir)/Rules-po.mak

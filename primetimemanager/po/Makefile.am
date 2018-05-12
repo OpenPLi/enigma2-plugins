@@ -1,5 +1,5 @@
 PLUGIN = PrimeTimeManager
 
-LANGS = ru de lt
+LANGS = de lt ru 
 
 include $(top_srcdir)/Rules-po.mak

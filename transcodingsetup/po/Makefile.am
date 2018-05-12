@@ -1,6 +1,6 @@
 PLUGIN = TranscodingSetup
 CATEGORY = SystemPlugins
 
-LANGS = el ru lt uk it nb fr sk cs nl bg
+LANGS = bg cs el fr it lt nb nl ru sk uk 
 
 include $(top_srcdir)/Rules-po.mak

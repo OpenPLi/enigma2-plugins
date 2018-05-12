@@ -1,3 +1,3 @@
 PLUGIN = Seekbar
-LANGS = de it ru lt
+LANGS = de it lt ru 
 include $(top_srcdir)/Rules-po.mak
