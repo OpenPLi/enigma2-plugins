@@ -1,3 +1,3 @@
 PLUGIN = FritzCall
-LANGS = de it nl tr es sr
+LANGS = de es it nl sr tr 
 include $(top_srcdir)/Rules-po.mak
