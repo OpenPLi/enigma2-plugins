@@ -91,6 +91,7 @@ config.plugins.Partnerbox.entriescount = ConfigInteger(0)
 config.plugins.Partnerbox.Entries = ConfigSubList()
 config.plugins.Partnerbox.enablevpsintimerevent = ConfigYesNo(default = False)
 config.plugins.Partnerbox.showpartnerboxautotimerninmenu = ConfigYesNo(default = True)
+config.plugins.Partnerbox.avahicompare = ConfigYesNo(default = False)
 initConfig()
 
 def showPartnerboxIconsinEPGList():

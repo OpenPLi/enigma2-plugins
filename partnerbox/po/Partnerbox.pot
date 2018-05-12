@@ -606,6 +606,9 @@ msgstr ""
 msgid "use internal"
 msgstr ""
 
+msgid "Active boxes from local network only (using localhost names)"
+msgstr ""
+
 msgid "waiting"
 msgstr ""
 

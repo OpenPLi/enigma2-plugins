@@ -111,6 +111,7 @@ class PartnerboxSetup(ConfigListScreen, Screen):
 		self.list.append(getConfigListEntry(_("Show 'Stream current Service' in E-Menu"), config.plugins.Partnerbox.showcurrentstreaminextensionsmenu))
 		self.list.append(getConfigListEntry(_("Enable Partnerbox-Function in TimerEvent"), config.plugins.Partnerbox.enablepartnerboxintimerevent))
 		if config.plugins.Partnerbox.enablepartnerboxintimerevent.value:
+			self.list.append(getConfigListEntry(_("Active boxes from local network only (using localhost names)"), config.plugins.Partnerbox.avahicompare))
 			self.list.append(getConfigListEntry(_("Enable first Partnerbox-entry in Timeredit as default"), config.plugins.Partnerbox.enabledefaultpartnerboxintimeredit))
 			self.list.append(getConfigListEntry(_("Enable VPS-Function in TimerEvent"), config.plugins.Partnerbox.enablevpsintimerevent))
 		self.list.append(getConfigListEntry(_("Enable Partnerbox-Function in EPGList"), config.plugins.Partnerbox.enablepartnerboxepglist))
@@ -138,6 +139,7 @@ class PartnerboxSetup(ConfigListScreen, Screen):
 		config.plugins.Partnerbox.showremaingepglist.save()
 		config.plugins.Partnerbox.enablevpsintimerevent.save()
 		config.plugins.Partnerbox.showpartnerboxautotimerninmenu.save()
+		config.plugins.Partnerbox.avahicompare.save()
 		configfile.save()
 		self.refreshPlugins()
 		self.close(self.session)
