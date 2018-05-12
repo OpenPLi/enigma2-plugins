@@ -1,3 +1,3 @@
 PLUGIN = ZapStatistic
-LANGS = de it lt fa fr
+LANGS = de fa fr it lt 
 include $(top_srcdir)/Rules-po.mak
