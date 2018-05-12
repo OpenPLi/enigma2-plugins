@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VfdControl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-19 19:52+0100\n"
+"POT-Creation-Date: 2018-05-12 11:26+0200\n"
 "PO-Revision-Date: 2018-04-17 23:01+0200\n"
 "Last-Translator: Gringo <openpli@tiscali.it>\n"
 "Language-Team: \n"
@@ -20,98 +20,74 @@ msgstr ""
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
-#: plugin.py:20
-msgid "Channelnumber in Standby off"
-msgstr "Numero del canale in stato di sospensione disattivato"
-
-#: plugin.py:20
-msgid "Channelnumber in Standby Clock"
-msgstr "Numero del canale in stato di sospensione"
-
-#: plugin.py:20
-msgid "Channelnumber/Clock in Standby Clock"
-msgstr "Numero del canale/Orologio in stato di sospensione"
-
-#: plugin.py:20
-msgid "Clock always"
-msgstr "Sempre l'orologio"
-
-#: plugin.py:20
-msgid "Always off"
-msgstr "Sempre spento"
-
-#: plugin.py:21
 msgid "12h"
 msgstr "12h"
 
-#: plugin.py:21
 msgid "24h"
 msgstr "24h"
 
-#: plugin.py:22
-msgid "yes"
-msgstr "Sì"
+msgid "Always off"
+msgstr "Sempre spento"
 
-#: plugin.py:22
-msgid "no"
-msgstr "No"
-
-#: plugin.py:23
-msgid "Off"
-msgstr "Spento"
-
-#: plugin.py:23
-msgid "On/Off"
-msgstr "Acceso/Spento"
-
-#: plugin.py:23
-msgid "Brightness level"
-msgstr "Livello di luminosità"
-
-#: plugin.py:230
-msgid "Control 7 segment VFD display"
-msgstr "Controllare il display VFD a 7 linee"
-
-#: plugin.py:240
-msgid "Cancel"
-msgstr "Annullare"
-
-#: plugin.py:241
-msgid "Save"
-msgstr "Salvare"
-
-#: plugin.py:242
-msgid "Update Date/Time"
-msgstr "Aggiornare Data/Ora"
-
-#: plugin.py:254 plugin.py:273
-msgid "Show on VFD"
-msgstr "Mostrare su VFD"
-
-#: plugin.py:256
-msgid "Time mode"
-msgstr "Modalità Ora"
-
-#: plugin.py:257 plugin.py:275
-msgid "Show REC-Symbol in Display"
-msgstr "Mostrare il simbolo REC nel Display"
-
-#: plugin.py:259 plugin.py:277
-msgid "Show blinking Clock on Display during recording"
-msgstr "Mostrare orologio lampeggiante sul Display durante reg."
-
-#: plugin.py:261
 msgid "Brightness Level 1"
 msgstr "Luminosità Livello 1"
 
-#: plugin.py:262
 msgid "Brightness Level 2"
 msgstr "Luminosità Livello 2"
 
-#: plugin.py:320
+msgid "Brightness level"
+msgstr "Livello di luminosità"
+
+msgid "Cancel"
+msgstr "Annullare"
+
+msgid "Change VFD display settings"
+msgstr "Modificare le impostazioni di visualizzazione VFD"
+
+msgid "Channelnumber in Standby Clock"
+msgstr "Numero del canale in stato di sospensione"
+
+msgid "Channelnumber in Standby off"
+msgstr "Numero del canale in stato di sospensione disattivato"
+
+msgid "Channelnumber/Clock in Standby Clock"
+msgstr "Numero del canale/Orologio in stato di sospensione"
+
+msgid "Clock always"
+msgstr "Sempre l'orologio"
+
+msgid "Control 7 segment VFD display"
+msgstr "Controllare il display VFD a 7 linee"
+
+msgid "Off"
+msgstr "Spento"
+
+msgid "On/Off"
+msgstr "Acceso/Spento"
+
+msgid "Save"
+msgstr "Salvare"
+
+msgid "Show REC-Symbol in Display"
+msgstr "Mostrare il simbolo REC nel Display"
+
+msgid "Show blinking Clock on Display during recording"
+msgstr "Mostrare orologio lampeggiante sul Display durante reg."
+
+msgid "Show on VFD"
+msgstr "Mostrare su VFD"
+
+msgid "Time mode"
+msgstr "Modalità Ora"
+
+msgid "Update Date/Time"
+msgstr "Aggiornare Data/Ora"
+
 msgid "VFD Display Setup"
 msgstr "Display VFD"
 
-#: plugin.py:354
-msgid "Change VFD display settings"
-msgstr "Modificare le impostazioni di visualizzazione VFD"
+msgid "no"
+msgstr "No"
+
+msgid "yes"
+msgstr "Sì"
