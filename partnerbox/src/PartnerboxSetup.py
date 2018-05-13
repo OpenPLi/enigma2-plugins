@@ -32,6 +32,7 @@ from PartnerboxFunctions import sendPartnerBoxWebCommand
 import skin
 import os
 from plugin import autoTimerAvailable
+from Components.Pixmap import Pixmap
 
 # for localized messages
 from . import _
@@ -207,7 +208,13 @@ class PartnerboxEntriesListConfigScreen(Screen, HelpableScreen):
 			 }, -1)
 		self["PBVActions"] = HelpableActionMap(self, "NumberActions",
 			{
-			 "0":		(self.powerMute, _("Mute remote box"))
+			"0":		(self.startMoving, _("Enable/disable moving item")),
+			"5":		(self.powerMute, _("Mute remote box")),
+			 }, -1)
+		self["PBEditActions"] = HelpableActionMap(self, "DirectionActions",
+			{
+			"moveUp":	(self.moveUp, _("Move item up")),
+			"moveDown":	(self.moveDown, _("Move item down")),
 			 }, -1)
 		self["actions"] = ActionMap(["WizardActions","MenuActions","ShortcutActions"],
 			{
@@ -218,6 +225,11 @@ class PartnerboxEntriesListConfigScreen(Screen, HelpableScreen):
 			 "blue": 	self.keyDelete,
 			 "green":	self.powerMenu,
 			 }, -1)
+		self.edit = 0
+		self.idx = 0
+		self["h_prev"] = Pixmap()
+		self["h_next"] = Pixmap()
+		self.showPrevNext()
 		self.what = what
 		self.updateList()
 
@@ -246,6 +258,40 @@ class PartnerboxEntriesListConfigScreen(Screen, HelpableScreen):
 		if sel is None:
 			return
 		self.session.openWithCallback(self.updateList,PartnerboxEntryConfigScreen,sel)
+
+	def startMoving(self):
+		self.edit = not self.edit
+		self.idx = self["entrylist"].l.getCurrentSelectionIndex()
+		self.showPrevNext()
+	def showPrevNext(self):
+		if self.edit:
+			self["h_prev"].show()
+			self["h_next"].show()
+		else:
+			self["h_prev"].hide()
+			self["h_next"].hide()
+	def moveUp(self):
+		if self.edit:
+			self["entrylist"].moveToIndex(self.idx)
+			if self.idx < 1:
+				return
+			tmp = config.plugins.Partnerbox.Entries[self.idx]
+			config.plugins.Partnerbox.Entries[self.idx] = config.plugins.Partnerbox.Entries[self.idx-1]
+			config.plugins.Partnerbox.Entries[self.idx-1] = tmp
+			self.updateList()
+			self.idx -= 1
+			self["entrylist"].moveToIndex(self.idx)
+	def moveDown(self):
+		if self.edit:
+			self["entrylist"].moveToIndex(self.idx)
+			if self.idx >= config.plugins.Partnerbox.entriescount.value - 1:
+				return
+			tmp = config.plugins.Partnerbox.Entries[self.idx]
+			config.plugins.Partnerbox.Entries[self.idx] = config.plugins.Partnerbox.Entries[self.idx+1]
+			config.plugins.Partnerbox.Entries[self.idx+1] = tmp
+			self.updateList()
+			self.idx += 1
+			self["entrylist"].moveToIndex(self.idx)
 
 	def keyDelete(self):
 		try:sel = self["entrylist"].l.getCurrentSelection()[0]
