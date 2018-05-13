@@ -276,6 +276,15 @@ msgstr ""
 msgid "Monday"
 msgstr ""
 
+msgid "Enable/disable moving item"
+msgstr ""
+
+msgid "Move item up"
+msgstr ""
+
+msgid "Move item down"
+msgstr ""
+
 msgid "Move Picture in Picture"
 msgstr ""
 

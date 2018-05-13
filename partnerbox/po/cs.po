@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Partnerbox\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-12 15:16+0200\n"
+"POT-Creation-Date: 2018-05-13 01:45+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: ims <ims21@users.sourceforge.net>\n"
 "Language-Team: PLi <ims21@users.sourceforge.net>\n"
@@ -282,6 +282,15 @@ msgstr "Po"
 msgid "Monday"
 msgstr "Pondělí"
 
+msgid "Enable/disable moving item"
+msgstr "Povolit/zakázat přesun položky"
+
+msgid "Move item up"
+msgstr "Přesun položky nahoru"
+
+msgid "Move item down"
+msgstr "Přesun položky dolů"
+
 msgid "Move Picture in Picture"
 msgstr "Přesunout PiP"
 
@@ -454,7 +463,7 @@ msgid "Shutdown"
 msgstr "Vypnout"
 
 msgid "Sleep remote box"
-msgstr "Ztlumit vzdálený přijímač"
+msgstr "Uspat vzdálený přijímač"
 
 msgid "Standard Zap"
 msgstr "Standardní přepnutí"
