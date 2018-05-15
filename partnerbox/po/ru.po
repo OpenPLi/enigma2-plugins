@@ -52,9 +52,8 @@ msgstr "Добавить таймер"
 msgid "After event"
 msgstr "После события"
 
-#, fuzzy
 msgid "Alternative"
-msgstr "Добавить внутренний таймер"
+msgstr "Альтернатива"
 
 msgid "Alternative services are not supported!"
 msgstr "Альтернативные сервисы не поддерживаются!"
@@ -102,10 +101,10 @@ msgid "Close without saving"
 msgstr "Закрыть без сохранения"
 
 msgid "DVB-C"
-msgstr ""
+msgstr "DVB-C"
 
 msgid "DVB-T"
-msgstr ""
+msgstr "DVB-T"
 
 msgid "DVR"
 msgstr "DVR"
@@ -119,7 +118,6 @@ msgstr "Режим глубокого ожидания"
 msgid "Delete"
 msgstr "Удалить"
 
-#, fuzzy
 msgid "Delete timer"
 msgstr "Удалить таймер"
 
@@ -200,9 +198,9 @@ msgstr "Тип Энигма"
 msgid "Enter the service pin"
 msgstr "Введите PIN-код сервиса"
 
-#, fuzzy
+
 msgid "Error: "
-msgstr "Ошибка: устаревший"
+msgstr "Ошибка: "
 
 msgid "Error: No space left"
 msgstr "Ошибка: нет свободного места"
@@ -264,9 +262,8 @@ msgstr "Расположение"
 msgid "MAC"
 msgstr "MAC"
 
-#, fuzzy
 msgid "Manage autotimer for other dreamboxes in network"
-msgstr "Управление таймерами других ресиверов по сети"
+msgstr "Управление автотаймерами других ресиверов по сети"
 
 msgid "Manage timer for other dreamboxes in network"
 msgstr "Управление таймерами других ресиверов по сети"
@@ -284,10 +281,10 @@ msgid "Move Picture in Picture"
 msgstr "Переместить картинку в картинке"
 
 msgid "Mute"
-msgstr ""
+msgstr "Звук"
 
 msgid "Mute remote box"
-msgstr ""
+msgstr "Звук ресивера"
 
 msgid "NGRAB"
 msgstr "NGRAB"
@@ -361,9 +358,8 @@ msgstr ""
 msgid "Really delete this Partnerbox Entry?"
 msgstr "Действительно удалить этот профиль Partnerbox?"
 
-#, fuzzy
 msgid "Remote Player"
-msgstr "Дистанционный таймер"
+msgstr "Дистанционный плеер"
 
 msgid "Remote Timer"
 msgstr "Дистанционный таймер"
@@ -444,7 +440,7 @@ msgid "Shutdown"
 msgstr "Выключение"
 
 msgid "Sleep remote box"
-msgstr ""
+msgstr "Сон ресивера"
 
 msgid "Standard Zap"
 msgstr "Стандартное переключение"
@@ -460,7 +456,7 @@ msgid "Starting Remote Player (IP = %s)"
 msgstr "Старт дистанционного плеера (IP = %s)"
 
 msgid "Stream"
-msgstr ""
+msgstr "Стрим"
 
 msgid "Stream TV from your Partnerbox"
 msgstr "Стрим ТВ для вашего Partnerbox"
@@ -498,9 +494,8 @@ msgstr ""
 "Таймер не может быть добавлен...\n"
 "Нет доступного места записи в ресивере Partnerbox."
 
-#, fuzzy
 msgid "Timer entry"
-msgstr "Меню таймера"
+msgstr "Строка таймера"
 
 msgid "Timer event deleted successfully."
 msgstr "Таймер события успешно удален."
@@ -527,7 +522,7 @@ msgid "Use Wake-on-LAN"
 msgstr "Использовать Wake-on-LAN"
 
 msgid "Wake up remote box"
-msgstr ""
+msgstr "Разбудить ресивер"
 
 msgid "Wakeup"
 msgstr "Выход из режима ожидания"
@@ -539,7 +534,7 @@ msgid "Wednesday"
 msgstr "Среда"
 
 msgid "Yes"
-msgstr ""
+msgstr "Да"
 
 msgid "Yes (safe mode)"
 msgstr "Да (безопасный режим)"
@@ -627,3 +622,21 @@ msgstr "переключить"
 
 msgid "zapped"
 msgstr "переключено"
+
+msgid "Wake up remote box from standby"
+msgstr "Поднять ресивер из режима ожидания"
+
+msgid "Set remote box to standby"
+msgstr "Перевести ресивер в режим ожидания"
+
+msgid "Active boxes from local network only (using localhost names)"
+msgstr "Активные ресиверы только из локальной сети (имена локальных хостов)"
+
+msgid "Enable/disable moving item"
+msgstr "Включить/выключить перемещение строк"
+
+msgid "Move item up"
+msgstr "Переместить строку вверх"
+
+msgid "Move item down"
+msgstr "Переместить строку вниз"
