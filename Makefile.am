@@ -40,7 +40,6 @@ SUBDIRS = \
 	merlinepg \
 	merlinepgcenter \
 	merlinmusicplayer \
-	meteoitalia \
 	mosaic \
 	moviecut \
 	movieretitle \
