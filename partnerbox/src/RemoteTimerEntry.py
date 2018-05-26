@@ -309,7 +309,7 @@ def RemoteTimerInit():
 	TimerEntry.newConfig = RemoteTimernewConfig
 	TimerEntry.__init__ = RemoteTimer__init__
 
-def RemoteTimer__init__(self, session, timer, edit=False):
+def RemoteTimer__init__(self, session, timer):
 	baseTimer__init__(self, session, timer)
 	if int(self.timerentry_remote.value) != 0:
 		RemoteTimernewConfig(self)
