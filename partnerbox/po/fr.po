@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-12 11:28+0200\n"
+"POT-Creation-Date: 2018-05-28 14:13+0200\n"
 "PO-Revision-Date: 2018-05-12 19:39+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -44,6 +44,9 @@ msgstr "Abandon"
 
 msgid "Activate Picture in Picture"
 msgstr "Activer l'incrustation d'image"
+
+msgid "Active boxes from local network only (using localhost names)"
+msgstr "Activer les récepteurs seulement du réseau local (en utilisant les noms localhost)"
 
 msgid "Add"
 msgstr "Ajouter"
@@ -186,8 +189,10 @@ msgid "Enable VPS-Function in TimerEvent"
 msgstr "Activer la fonction VPS dans l’évènement de programmation"
 
 msgid "Enable first Partnerbox-entry in Timeredit as default"
+msgstr "Activer d’abord Entrée-Partnerbox dans l’édition de programmation par défaut"
+
+msgid "Enable/disable moving item"
 msgstr ""
-"Activer d’abord Entrée-Partnerbox dans l’édition de programmation par défaut"
 
 msgid "EndTime"
 msgstr "Heure de fin"
@@ -268,8 +273,7 @@ msgid "MAC"
 msgstr "MAC"
 
 msgid "Manage autotimer for other dreamboxes in network"
-msgstr ""
-"Gérer les programmations automatiques pour les autres récepteurs du réseau"
+msgstr "Gérer les programmations automatiques pour les autres récepteurs du réseau"
 
 msgid "Manage timer for other dreamboxes in network"
 msgstr "Gérer les programmations pour les autres récepteurs dans le réseau"
@@ -285,6 +289,12 @@ msgstr "Lundi"
 
 msgid "Move Picture in Picture"
 msgstr "Déplacer l'incrustation d'image"
+
+msgid "Move item down"
+msgstr ""
+
+msgid "Move item up"
+msgstr ""
 
 msgid "Mute"
 msgstr "Sourdine"
@@ -428,8 +438,7 @@ msgid "Show 'RemoteTimer' in E-Menu"
 msgstr "Afficher ‘Programmation Distante’ dans E-Menu"
 
 msgid "Show 'RemoteTimer' in Event View context menu"
-msgstr ""
-"Afficher ‘Programmation Distante’ dans le menu contextuel Voir l’évènement"
+msgstr "Afficher ‘Programmation Distante’ dans le menu contextuel Voir l’évènement"
 
 msgid "Show 'RemoteTimer' in Eventinfo menu"
 msgstr "Afficher ‘Programmation Distante’ dans le menu voir évènement"
@@ -496,9 +505,7 @@ msgid "Timer Type"
 msgstr "Type de programmation"
 
 msgid "Timer can not be added...no locations on partnerbox available."
-msgstr ""
-"La programmation ne peut pas être ajoutée… pas de localisation sur la "
-"partnerbox disponible."
+msgstr "La programmation ne peut pas être ajoutée… pas de localisation sur la partnerbox disponible."
 
 msgid "Timer entry"
 msgstr "Saisir programmation"
@@ -545,12 +552,8 @@ msgstr "Oui"
 msgid "Yes (safe mode)"
 msgstr "Oui (mode sans échec)"
 
-msgid ""
-"You can not add services or bouquets from Enigma1-receivers into the "
-"channellist..."
-msgstr ""
-"Vous ne pouvez pas ajouter des services ou bouquets depuis des récepteurs "
-"Enigma1 dans la liste des chaînes…."
+msgid "You can not add services or bouquets from Enigma1-receivers into the channellist..."
+msgstr "Vous ne pouvez pas ajouter des services ou bouquets depuis des récepteurs Enigma1 dans la liste des chaînes…."
 
 msgid "Zap"
 msgstr "Zapper"
@@ -623,11 +626,6 @@ msgstr "utiliser externe"
 
 msgid "use internal"
 msgstr "utiliser interne"
-
-msgid "Active boxes from local network only (using localhost names)"
-msgstr ""
-"Activer les récepteurs seulement du réseau local (en utilisant les noms "
-"localhost)"
 
 msgid "waiting"
 msgstr "En attente"
