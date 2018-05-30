@@ -47,7 +47,7 @@ class AutoTimerList(MenuList):
 			self.colorDisabled = 12368828
 
 	def applySkin(self, desktop, parent):
-		attribs = [ ] 
+		attribs = [ ]
 		if self.skinAttributes is not None:
 			for (attrib, value) in self.skinAttributes:
 				if attrib == "font":
@@ -75,7 +75,7 @@ class AutoTimerList(MenuList):
 				color = self.colorDisabled
 			return [
 				None,
-				(eListboxPythonMultiContent.TYPE_TEXT, 5, 0, size.width() - 5, size.height(), 0, RT_HALIGN_LEFT, timer.name, color, color)
+				(eListboxPythonMultiContent.TYPE_TEXT, 5, 0, size.width() - 5, size.height(), 0, RT_HALIGN_LEFT | RT_VALIGN_CENTER, timer.name, color, color)
 			]
 		else:
 			if not timer.enabled:
