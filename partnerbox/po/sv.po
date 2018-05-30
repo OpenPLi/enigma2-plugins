@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Partnerbox\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"POT-Creation-Date: 2018-05-28 14:13+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Magnus Nilsson <mag_nilsson@hotmail.com>\n"
 "Language-Team: Dr. Best <dr.best@dreambox-tools.info>\n"
@@ -40,6 +40,9 @@ msgid "Abort"
 msgstr ""
 
 msgid "Activate Picture in Picture"
+msgstr ""
+
+msgid "Active boxes from local network only (using localhost names)"
 msgstr ""
 
 msgid "Add"
@@ -195,6 +198,9 @@ msgstr ""
 msgid "Enable first Partnerbox-entry in Timeredit as default"
 msgstr "Aktivera Partnerboxfunktionen i Timerprogrammet"
 
+msgid "Enable/disable moving item"
+msgstr ""
+
 msgid "EndTime"
 msgstr "Sluttid"
 
@@ -292,6 +298,12 @@ msgid "Monday"
 msgstr "Måndag"
 
 msgid "Move Picture in Picture"
+msgstr ""
+
+msgid "Move item down"
+msgstr ""
+
+msgid "Move item up"
 msgstr ""
 
 msgid "Mute"

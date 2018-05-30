@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Enigma 2 TMBD Plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"POT-Creation-Date: 2018-05-28 14:13+0200\n"
 "PO-Revision-Date: 2018-03-01 22:35+0200\n"
 "Last-Translator: Dimitrij <Dima-73@inbox.lv>\n"
 "Language-Team: Dima-73@inbox.lv\n"
@@ -39,6 +39,9 @@ msgstr "Отмена"
 
 msgid "Activate Picture in Picture"
 msgstr "Включить PiP (картинку в картинке)"
+
+msgid "Active boxes from local network only (using localhost names)"
+msgstr "Активные ресиверы только из локальной сети (имена локальных хостов)"
 
 msgid "Add"
 msgstr "Добавить"
@@ -183,6 +186,9 @@ msgstr "Включить VPS-функцию в установку таймеро
 msgid "Enable first Partnerbox-entry in Timeredit as default"
 msgstr "Первый профиль Partnerbox в редактор таймеров по умолчанию"
 
+msgid "Enable/disable moving item"
+msgstr "Включить/выключить перемещение строк"
+
 msgid "EndTime"
 msgstr "Время окончания"
 
@@ -197,7 +203,6 @@ msgstr "Тип Энигма"
 
 msgid "Enter the service pin"
 msgstr "Введите PIN-код сервиса"
-
 
 msgid "Error: "
 msgstr "Ошибка: "
@@ -279,6 +284,12 @@ msgstr "Понедельник"
 
 msgid "Move Picture in Picture"
 msgstr "Переместить картинку в картинке"
+
+msgid "Move item down"
+msgstr "Переместить строку вниз"
+
+msgid "Move item up"
+msgstr "Переместить строку вверх"
 
 msgid "Mute"
 msgstr "Звук"
@@ -622,21 +633,3 @@ msgstr "переключить"
 
 msgid "zapped"
 msgstr "переключено"
-
-msgid "Wake up remote box from standby"
-msgstr "Поднять ресивер из режима ожидания"
-
-msgid "Set remote box to standby"
-msgstr "Перевести ресивер в режим ожидания"
-
-msgid "Active boxes from local network only (using localhost names)"
-msgstr "Активные ресиверы только из локальной сети (имена локальных хостов)"
-
-msgid "Enable/disable moving item"
-msgstr "Включить/выключить перемещение строк"
-
-msgid "Move item up"
-msgstr "Переместить строку вверх"
-
-msgid "Move item down"
-msgstr "Переместить строку вниз"
