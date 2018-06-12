@@ -43,12 +43,12 @@ from SimpleThread import SimpleThread
 
 try:
 	from Plugins.Extensions.SeriesPlugin.plugin import getSeasonEpisode4 as sp_getSeasonEpisode
-except ImportError as ie:
+except:
 	sp_getSeasonEpisode = None
 
 try:
 	from Plugins.Extensions.SeriesPlugin.plugin import showResult as sp_showResult
-except ImportError as ie:
+except:
 	sp_showResult = None
 
 from . import config, xrange, itervalues
@@ -484,8 +484,8 @@ class AutoTimer:
 			if timer.series_labeling and sp_getSeasonEpisode is not None:
 				allow_modify = False
 				doLog("[AutoTimer SeriesPlugin] Request name, desc, path %s %s %s" % (name, shortdesc, dest))
-				sp = sp_getSeasonEpisode(serviceref, name, evtBegin, evtEnd, shortdesc, dest)
-				if sp and type(sp) in (tuple, list) and len(sp) == 4:
+				sp = sp_getSeasonEpisode(serviceref, name, evtBegin, evtEnd, shortdesc, dest, True)
+				if sp and type(sp) in (tuple, list) and len(sp) > 3:
 					name = sp[0] or name
 					shortdesc = sp[1] or shortdesc
 					dest = sp[2] or dest
@@ -498,8 +498,8 @@ class AutoTimer:
 					# If AutoTimer name not equal match, do a second lookup with the name
 					if timer.name.lower() != timer.match.lower():
 						doLog("[AutoTimer SeriesPlugin] Request name, desc, path %s %s %s" % (timer.name, shortdesc, dest))
-						sp = sp_getSeasonEpisode(serviceref, timer.name, evtBegin, evtEnd, shortdesc, dest)
-						if sp and type(sp) in (tuple, list) and len(sp) == 4:
+						sp = sp_getSeasonEpisode(serviceref, timer.name, evtBegin, evtEnd, shortdesc, dest, True)
+						if sp and type(sp) in (tuple, list) and len(sp) > 3:
 							name = sp[0] or name
 							shortdesc = sp[1] or shortdesc
 							dest = sp[2] or dest
@@ -607,6 +607,11 @@ class AutoTimer:
 				if timer.series_labeling and sp_getSeasonEpisode is not None:
 					if sp and type(sp) in (tuple, list) and len(sp) == 4:
 						ret = self.addToFilterfile(str(sp[0]), begin, simulateOnly)
+					if sp and type(sp) in (tuple, list) and len(sp) > 3:
+						filter_title = str(sp[0])
+						if len(sp) > 4:
+							filter_title = "{series:s} - S{season:02d}E{rawepisode:s} - {title:s}".format( **sp[4] )
+						ret = self.addToFilterfile(filter_title, begin, simulateOnly, str(sp[0]))
 						if ret:
 							if simulateOnly:
 								doLog("[AutoTimer SeriesPlugin] only simulate - new Timer would be saved in autotimer_filter")
@@ -952,11 +957,12 @@ class AutoTimer:
 		file_search_log.write(searchlog_txt)
 		file_search_log.close()
 
-	def addToFilterfile(self, name, begin, simulateOnlyValue=False):
+	def addToFilterfile(self, name, begin, simulateOnlyValue=False, sp_title="xxxxxxxxxxxxxxxx"):
 		path_filter_txt = "/etc/enigma2/autotimer_filter.txt"
 		if os.path.exists(path_filter_txt):
 			search_txt = '"' + name + '"'
-			if search_txt in open(path_filter_txt).read():
+			search_txt_sp = '"' + sp_title + '"'
+			if (search_txt or search_txt_sp) in open(path_filter_txt).read():
 				print ("[AutoTimer] Skipping an event because found event in autotimer_filter")
 				doLog("[AutoTimer] Skipping an event because found event in autotimer_filter")
 				return False
