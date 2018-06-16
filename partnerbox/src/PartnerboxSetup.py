@@ -271,26 +271,18 @@ class PartnerboxEntriesListConfigScreen(Screen, HelpableScreen):
 			self["h_prev"].hide()
 			self["h_next"].hide()
 	def moveUp(self):
-		if self.edit:
-			self["entrylist"].moveToIndex(self.idx)
-			if self.idx < 1:
-				return
-			tmp = config.plugins.Partnerbox.Entries[self.idx]
-			config.plugins.Partnerbox.Entries[self.idx] = config.plugins.Partnerbox.Entries[self.idx-1]
-			config.plugins.Partnerbox.Entries[self.idx-1] = tmp
-			self.updateList()
-			self.idx -= 1
-			self["entrylist"].moveToIndex(self.idx)
+		if self.edit and self.idx >= 1:
+				self.moveDirection(-1)
 	def moveDown(self):
-		if self.edit:
+		if self.edit and self.idx < config.plugins.Partnerbox.entriescount.value - 1:
+				self.moveDirection(1)
+	def moveDirection(self, direction):
 			self["entrylist"].moveToIndex(self.idx)
-			if self.idx >= config.plugins.Partnerbox.entriescount.value - 1:
-				return
 			tmp = config.plugins.Partnerbox.Entries[self.idx]
-			config.plugins.Partnerbox.Entries[self.idx] = config.plugins.Partnerbox.Entries[self.idx+1]
-			config.plugins.Partnerbox.Entries[self.idx+1] = tmp
+			config.plugins.Partnerbox.Entries[self.idx] = config.plugins.Partnerbox.Entries[self.idx+direction]
+			config.plugins.Partnerbox.Entries[self.idx+direction] = tmp
 			self.updateList()
-			self.idx += 1
+			self.idx += direction
 			self["entrylist"].moveToIndex(self.idx)
 
 	def keyDelete(self):
