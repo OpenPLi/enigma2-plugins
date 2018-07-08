@@ -30,8 +30,8 @@ class FilebrowserConfigScreen(ConfigListScreen,Screen):
     skin = """
         <screen position="100,100" size="550,400" title="" >
             <widget name="config" position="0,0" size="550,360" scrollbarMode="showOnDemand" />
-            <widget name="buttonred" position="10,360" size="100,40" valign="center" halign="center" zPosition="1"  transparent="1" foregroundColor="white" font="Regular;18"/>
-            <widget name="buttongreen" position="120,360" size="100,40" valign="center" halign="center" zPosition="1"  transparent="1" foregroundColor="white" font="Regular;18"/>
+            <widget name="key_red" position="10,360" size="100,40" valign="center" halign="center" zPosition="1"  transparent="1" foregroundColor="white" font="Regular;18"/>
+            <widget name="key_green" position="120,360" size="100,40" valign="center" halign="center" zPosition="1"  transparent="1" foregroundColor="white" font="Regular;18"/>
             <ePixmap name="pred" position="10,360" size="100,40" zPosition="0" pixmap="skin_default/buttons/red.png" transparent="1" alphatest="on"/>
             <ePixmap name="pgreen" position="120,360" size="100,40" zPosition="0" pixmap="skin_default/buttons/green.png" transparent="1" alphatest="on"/>
         </screen>"""
@@ -39,15 +39,15 @@ class FilebrowserConfigScreen(ConfigListScreen,Screen):
         self.session = session
         Screen.__init__(self, session)
         self.list = []
-        self.list.append(getConfigListEntry(_("add Plugin to Mainmenu"), config.plugins.filebrowser.add_mainmenu_entry))
-        self.list.append(getConfigListEntry(_("add Plugin to Extensionmenu"), config.plugins.filebrowser.add_extensionmenu_entry))
-        self.list.append(getConfigListEntry(_("save Filesystemposition on exit"), config.plugins.filebrowser.savedirs))
+        self.list.append(getConfigListEntry(_("Add Plugin to Mainmenu"), config.plugins.filebrowser.add_mainmenu_entry))
+        self.list.append(getConfigListEntry(_("Add Plugin to Extensionmenu"), config.plugins.filebrowser.add_extensionmenu_entry))
+        self.list.append(getConfigListEntry(_("Save Filesystemposition on exit"), config.plugins.filebrowser.savedirs))
         self.list.append(getConfigListEntry(_("Filesystemposition list left"), config.plugins.filebrowser.path_left))
         self.list.append(getConfigListEntry(_("Filesystemposition list right"), config.plugins.filebrowser.path_right))
 
         ConfigListScreen.__init__(self, self.list)
-        self["buttonred"] = Label(_("cancel"))
-        self["buttongreen"] = Label(_("ok"))
+        self["key_red"] = Label(_("Cancel"))
+        self["key_green"] = Label(_("Ok"))
         self["setupActions"] = ActionMap(["SetupActions"],
         {
             "green": self.save,
@@ -81,10 +81,10 @@ class FilebrowserScreen(Screen):
             <widget name="list_left" position="0,0" size="265,380" scrollbarMode="showOnDemand" />
             <widget name="list_right" position="265,0" size="265,380" scrollbarMode="showOnDemand" />
 
-            <widget name="red" position="10,390" size="120,30" valign="center" halign="center" zPosition="1" transparent="1" foregroundColor="white" font="Regular;18"/>
-            <widget name="green" position="140,390" size="120,30" valign="center" halign="center" zPosition="1" transparent="1" foregroundColor="white" font="Regular;18"/>
-            <widget name="yellow" position="270,390" size="120,30" valign="center" halign="center" zPosition="1" transparent="1" foregroundColor="white" font="Regular;18"/>
-            <widget name="blue" position="400,390" size="120,30" valign="center" halign="center" zPosition="1" transparent="1" foregroundColor="white" font="Regular;18"/>
+            <widget name="key_red" position="10,390" size="120,30" valign="center" halign="center" zPosition="1" transparent="1" foregroundColor="white" font="Regular;18"/>
+            <widget name="key_green" position="140,390" size="120,30" valign="center" halign="center" zPosition="1" transparent="1" foregroundColor="white" font="Regular;18"/>
+            <widget name="key_yellow" position="270,390" size="120,30" valign="center" halign="center" zPosition="1" transparent="1" foregroundColor="white" font="Regular;18"/>
+            <widget name="key_blue" position="400,390" size="120,30" valign="center" halign="center" zPosition="1" transparent="1" foregroundColor="white" font="Regular;18"/>
 
             <ePixmap name="pred" position="10,390" size="120,30" zPosition="0" pixmap="skin_default/buttons/red.png" transparent="1" alphatest="on"/>
             <ePixmap name="pgreen" position="140,390" size="120,30" zPosition="0" pixmap="skin_default/buttons/green.png" transparent="1" alphatest="on"/>
@@ -109,10 +109,10 @@ class FilebrowserScreen(Screen):
 
         self["list_left"] = FileList(path_left, matchingPattern = "^.*")
         self["list_right"] = FileList(path_right, matchingPattern = "^.*")
-        self["red"] = Label(_("delete"))
-        self["green"] = Label(_("move"))
-        self["yellow"] = Label(_("copy"))
-        self["blue"] = Label(_("rename"))
+        self["key_red"] = Label(_("Delete"))
+        self["key_green"] = Label(_("Move"))
+        self["key_yellow"] = Label(_("Copy"))
+        self["key_blue"] = Label(_("Rename"))
 
 
         self["actions"] = ActionMap(["ChannelSelectBaseActions","WizardActions", "DirectionActions","MenuActions","NumberActions","ColorActions"],
@@ -122,6 +122,8 @@ class FilebrowserScreen(Screen):
              "menu":    self.goMenu,
              "nextMarker": self.listRight,
              "prevMarker": self.listLeft,
+             "nextBouquet": self.listRight,
+             "prevBouquet": self.listLeft,
              "up": self.goUp,
              "down": self.goDown,
              "left": self.goLeft,
