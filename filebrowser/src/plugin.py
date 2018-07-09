@@ -151,7 +151,7 @@ class FilebrowserScreen(Screen):
         if self.SOURCELIST.canDescent(): # isDir
             self.SOURCELIST.descent()
             title = self.SOURCELIST.getCurrentDirectory()
-            self.setTitle(title if title else "")
+            self.setTitle(title if title else _("Select location"))
         else:
             self.onFileAction()
 
@@ -248,7 +248,7 @@ class FilebrowserScreen(Screen):
         self.SOURCELIST = self["list_right"]
         self.TARGETLIST = self["list_left"]
         title = self.SOURCELIST.getCurrentDirectory()
-        self.setTitle(title if title else "")
+        self.setTitle(title if title else _("Select location"))
 
     def listLeft(self):
         self["list_left"].selectionEnabled(1)
@@ -256,7 +256,7 @@ class FilebrowserScreen(Screen):
         self.SOURCELIST = self["list_left"]
         self.TARGETLIST = self["list_right"]
         title = self.SOURCELIST.getCurrentDirectory()
-        self.setTitle(title if title else "")
+        self.setTitle(title if title else _("Select location"))
 
     def onFileAction(self):
         try:
