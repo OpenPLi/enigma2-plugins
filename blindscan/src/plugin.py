@@ -3,7 +3,6 @@ from . import _
 
 from Plugins.Plugin import PluginDescriptor
 from Tools.Directories import fileExists
-from Tools.HardwareInfo import HardwareInfo
 from Screens.Screen import Screen
 from Screens.ServiceScan import ServiceScan
 from Screens.MessageBox import MessageBox
@@ -15,7 +14,7 @@ from Components.ConfigList import ConfigListScreen
 from Components.ActionMap import ActionMap
 from Components.NimManager import nimmanager, getConfigSatlist
 from Components.config import config, ConfigSubsection, ConfigSelection, ConfigYesNo, ConfigInteger, getConfigListEntry, ConfigNothing
-from enigma import eTimer, eDVBFrontendParametersSatellite, eComponentScan, eConsoleAppContainer, eDVBResourceManager, getBoxType, eDVBSatelliteEquipmentControl
+from enigma import eTimer, eDVBFrontendParametersSatellite, eComponentScan, eConsoleAppContainer, eDVBResourceManager, eDVBSatelliteEquipmentControl
 from Components.About import about
 from time import strftime, time
 import os
@@ -23,7 +22,17 @@ import dmmBlindScan
 
 BOX_MODEL = "none"
 BOX_NAME = ""
-if fileExists("/proc/stb/info/boxtype"):
+if fileExists("/proc/stb/info/vumodel") and fileExists("/etc/init.d/vuplus-platform-util") and not fileExists("/proc/stb/info/hwmodel") and not fileExists("/proc/stb/info/boxtype"):
+	try:
+		l = open("/proc/stb/info/vumodel")
+		model = l.read().strip()
+		l.close()
+		BOX_NAME = str(model.lower())
+		l.close()
+		BOX_MODEL = "vuplus"
+	except:
+		pass
+elif fileExists("/proc/stb/info/boxtype") and not fileExists("/proc/stb/info/hwmodel"):
 	try:
 		l = open("/proc/stb/info/boxtype")
 		model = l.read().strip()
@@ -44,17 +53,7 @@ if fileExists("/proc/stb/info/boxtype"):
 			BOX_MODEL = "useBoxtype"
 	except:
 		pass
-elif fileExists("/proc/stb/info/vumodel"):
-	try:
-		l = open("/proc/stb/info/vumodel")
-		model = l.read().strip()
-		l.close()
-		BOX_NAME = str(model.lower())
-		l.close()
-		BOX_MODEL = "vuplus"
-	except:
-		pass
-elif HardwareInfo().get_device_name().startswith('dm') and fileExists("/proc/stb/info/model"):
+elif fileExists("/proc/stb/info/model") and not fileExists("/proc/stb/info/hwmodel"):
 	try:
 		l = open("/proc/stb/info/model")
 		model = l.read()
@@ -481,9 +480,9 @@ class Blindscan(ConfigListScreen, Screen):
 		nimname = nim.friendly_full_description
 		self.SundtekScan = "Sundtek DVB-S/S2" in nimname and "V" in nimname
 		warning_text = ""
-		if not self.SundtekScan and getBoxType().startswith('et') or getBoxType().startswith('vu'):
+		if not self.SundtekScan and (BOX_MODEL.startswith('xtrend') or BOX_MODEL.startswith('vu')):
 			warning_text = _("\nWARNING! Blind scan may make the tuner malfunction on a VU+ and ET receiver. A reboot afterwards may be required to return to proper tuner function.")
-			if getBoxType().startswith('vu') and "AVL6222" in nimname:
+			if BOX_MODEL.startswith('vu') and "AVL6222" in nimname:
 				warning_text = _("\nSecond slot dual tuner may not be supported blind scan.")
 		elif self.SundtekScan:
 			warning_text = _("\nYou must use the power adapter.")
@@ -1301,10 +1300,10 @@ class Blindscan(ConfigListScreen, Screen):
 		xml.append('<!--\n')
 		xml.append('	File created on %s\n' % (strftime("%A, %d of %B %Y, %H:%M:%S")))
 		try:
-			xml.append('	using %s receiver running Enigma2 image, version %s,\n' % (getBoxType(), about.getEnigmaVersionString()))
+			xml.append('	using %s receiver running Enigma2 image, version %s,\n' % (BOX_NAME, about.getEnigmaVersionString()))
 			xml.append('	image %s, with the Blind scan plugin\n\n' % (about.getImageTypeString()))
 		except:
-			xml.append('	using %s receiver running Enigma2 image, with the Blind scan plugin\n\n' % (getBoxType()))
+			xml.append('	using %s receiver running Enigma2 image, with the Blind scan plugin\n\n' % (BOX_NAME))
 		xml.append('	Search parameters:\n')
 		xml.append('		%s\n' % (tuner))
 		xml.append('		Satellite: %s\n' % (self.sat_name))
