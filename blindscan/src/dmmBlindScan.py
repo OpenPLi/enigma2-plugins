@@ -394,16 +394,15 @@ class SatelliteTransponderSearchSupport:
 		self.orb_pos = orb_pos
 		self.nim = nimmanager.nim_slots[nim_idx]
 		tunername = nimmanager.getNimName(nim_idx)
+		print "tunername", tunername
 		self.__tlist = [ ]
 		self.tp_found = [ ]
 		self.current_range = None
 		self.range_list = [ ]
 		tuner_no = -1
-		self.auto_scan = False
 
-		print "tunername", tunername
-		if nimmanager.nim_slots[nim_idx].supportsBlindScan() or tunername in ("BCM4505", "BCM4506 (internal)", "BCM4506", "Alps BSBE1 C01A/D01A.", "Si2166B", "Si2169C"):
-			self.auto_scan = nimmanager.nim_slots[nim_idx].supportsBlindScan() or tunername in ("Si2166B", "Si2169C")
+		self.auto_scan = nimmanager.nim_slots[nim_idx].supportsBlindScan() or tunername.startswith('Si216')
+		if self.auto_scan or tunername == "Alps BSBE1 C01A/D01A." or (tunername.startswith("BCM45") and tunername != "BCM4501"):
 			(self.channel, self.frontend) = self.tryGetRawFrontend(nim_idx, False, False)
 			if not self.frontend:
 				self.session.nav.stopService()
