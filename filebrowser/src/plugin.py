@@ -1,3 +1,7 @@
+# -*- coding: utf-8 -*-
+# for localized messages
+from . import _
+
 from Plugins.Plugin import PluginDescriptor
 from Components.config import config, ConfigSubList, ConfigSubsection, ConfigInteger, ConfigYesNo, ConfigText, getConfigListEntry
 from Components.FileList import FileList
