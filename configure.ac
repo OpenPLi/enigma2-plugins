@@ -179,6 +179,7 @@ fancontrol2/src/data/Makefile
 filebrowser/Makefile
 filebrowser/meta/Makefile
 filebrowser/src/Makefile
+filebrowser/po/Makefile
 
 fritzcall/Makefile
 fritzcall/meta/Makefile
