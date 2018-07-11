@@ -1,3 +1,7 @@
+# -*- coding: utf-8 -*-
+# for localized messages
+from . import _
+
 from Plugins.Plugin import PluginDescriptor
 from Components.config import config, ConfigSubList, ConfigSubsection, ConfigInteger, ConfigYesNo, ConfigText, getConfigListEntry
 from Components.FileList import FileList
@@ -18,12 +22,11 @@ pname = _("Filebrowser")
 pdesc = _("manage local Files")
 
 config.plugins.filebrowser = ConfigSubsection()
+config.plugins.filebrowser.add_mainmenu_entry = ConfigYesNo(default = False)
+config.plugins.filebrowser.add_extensionmenu_entry = ConfigYesNo(default = False)
 config.plugins.filebrowser.savedirs = ConfigYesNo(default = True)
-config.plugins.filebrowser.add_mainmenu_entry = ConfigYesNo(default = True)
-config.plugins.filebrowser.add_extensionmenu_entry = ConfigYesNo(default = True)
 config.plugins.filebrowser.path_left = ConfigText(default = "/")
 config.plugins.filebrowser.path_right = ConfigText(default = "/")
-
 
 ##################################
 class FilebrowserConfigScreen(ConfigListScreen,Screen):
@@ -39,11 +42,11 @@ class FilebrowserConfigScreen(ConfigListScreen,Screen):
         self.session = session
         Screen.__init__(self, session)
         self.list = []
-        self.list.append(getConfigListEntry(_("Add Plugin to Mainmenu"), config.plugins.filebrowser.add_mainmenu_entry))
-        self.list.append(getConfigListEntry(_("Add Plugin to Extensionmenu"), config.plugins.filebrowser.add_extensionmenu_entry))
-        self.list.append(getConfigListEntry(_("Save Filesystemposition on exit"), config.plugins.filebrowser.savedirs))
-        self.list.append(getConfigListEntry(_("Filesystemposition list left"), config.plugins.filebrowser.path_left))
-        self.list.append(getConfigListEntry(_("Filesystemposition list right"), config.plugins.filebrowser.path_right))
+        self.list.append(getConfigListEntry(_("Add plugin to Mainmenu"), config.plugins.filebrowser.add_mainmenu_entry))
+        self.list.append(getConfigListEntry(_("Add plugin to Extensionmenu"), config.plugins.filebrowser.add_extensionmenu_entry))
+        self.list.append(getConfigListEntry(_("Save path positions on exit"), config.plugins.filebrowser.savedirs))
+        self.list.append(getConfigListEntry(_("Left panel position"), config.plugins.filebrowser.path_left))
+        self.list.append(getConfigListEntry(_("Right panel position"), config.plugins.filebrowser.path_right))
 
         ConfigListScreen.__init__(self, self.list)
         self["key_red"] = Label(_("Cancel"))
@@ -59,7 +62,7 @@ class FilebrowserConfigScreen(ConfigListScreen,Screen):
         self.onLayoutFinish.append(self.onLayout)
 
     def onLayout(self):
-        self.setTitle(pname+" "+_("Settings"))
+        self.setTitle(pname + " - %s" % _("Settings"))
 
     def save(self):
         print "saving"
