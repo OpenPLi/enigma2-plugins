@@ -22,12 +22,11 @@ pname = _("Filebrowser")
 pdesc = _("manage local Files")
 
 config.plugins.filebrowser = ConfigSubsection()
+config.plugins.filebrowser.add_mainmenu_entry = ConfigYesNo(default = False)
+config.plugins.filebrowser.add_extensionmenu_entry = ConfigYesNo(default = False)
 config.plugins.filebrowser.savedirs = ConfigYesNo(default = True)
-config.plugins.filebrowser.add_mainmenu_entry = ConfigYesNo(default = True)
-config.plugins.filebrowser.add_extensionmenu_entry = ConfigYesNo(default = True)
 config.plugins.filebrowser.path_left = ConfigText(default = "/")
 config.plugins.filebrowser.path_right = ConfigText(default = "/")
-
 
 ##################################
 class FilebrowserConfigScreen(ConfigListScreen,Screen):
