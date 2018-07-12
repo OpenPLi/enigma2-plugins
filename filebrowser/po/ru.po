@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Enigma 2 Filebrowser Plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-11 12:14+0200\n"
+"POT-Creation-Date: 2018-07-12 21:00+0200\n"
 "PO-Revision-Date: 2018-07-11 12:15+0200\n"
 "Last-Translator: ims <ims21@users.sourceforge.net>\n"
 "Language-Team: openPli\n"
@@ -10,70 +10,59 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
-"|| n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Poedit 1.8.7.1\n"
-
-msgid "Filebrowser"
-msgstr ""
-
-msgid "manage local Files"
-msgstr ""
-
-msgid "Add plugin to Mainmenu"
-msgstr ""
 
 msgid "Add plugin to Extensionmenu"
 msgstr ""
 
-msgid "Save path positions on exit"
-msgstr ""
-
-msgid "Left panel position"
-msgstr ""
-
-msgid "Right panel position"
+msgid "Add plugin to Mainmenu"
 msgstr ""
 
 msgid "Cancel"
 msgstr "Отмена"
 
 #, fuzzy
-msgid "Ok"
-msgstr "Ок"
-
-#, fuzzy
-msgid "Settings"
-msgstr "Установки"
+msgid "Copy"
+msgstr "Копирование"
 
 #, fuzzy
 msgid "Delete"
 msgstr "Удалить"
+
+msgid "Filebrowser"
+msgstr ""
+
+msgid "Left panel position"
+msgstr ""
 
 #, fuzzy
 msgid "Move"
 msgstr "Перемещение"
 
 #, fuzzy
-msgid "Copy"
-msgstr "Копирование"
+msgid "Ok"
+msgstr "Ок"
 
 #, fuzzy
 msgid "Rename"
 msgstr "Переименовать"
 
+msgid "Right panel position"
+msgstr ""
+
+msgid "Save path positions on exit"
+msgstr ""
+
 #, fuzzy
 msgid "Select location"
 msgstr "Выбор расположения"
 
-msgid "copy file"
-msgstr ""
-
 #, fuzzy
-msgid "yes"
-msgstr "да"
+msgid "Settings"
+msgstr "Установки"
 
-msgid "no"
+msgid "copy file"
 msgstr ""
 
 msgid "copying file ..."
@@ -86,10 +75,19 @@ msgstr "удалить файл"
 msgid "deleting file ..."
 msgstr ""
 
+msgid "manage local Files"
+msgstr ""
+
 msgid "move file"
 msgstr ""
 
 msgid "moving file ..."
+msgstr ""
+
+msgid "no"
+msgstr ""
+
+msgid "no Viewer installed for this mimetype!"
 msgstr ""
 
 msgid "rename file"
@@ -98,5 +96,6 @@ msgstr ""
 msgid "renaming file ..."
 msgstr ""
 
-msgid "no Viewer installed for this mimetype!"
-msgstr ""
+#, fuzzy
+msgid "yes"
+msgstr "да"
