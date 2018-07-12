@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2 - Filebrowser Plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-11 12:14+0200\n"
+"POT-Creation-Date: 2018-07-12 21:00+0200\n"
 "PO-Revision-Date: 2018-07-11 12:14+0200\n"
 "Last-Translator: ims <ims21@users.sourceforge.net>\n"
 "Language-Team: PLi\n"
@@ -18,63 +18,53 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 1.8.7.1\n"
 
-msgid "Filebrowser"
-msgstr ""
-
-msgid "manage local Files"
+msgid "Add plugin to Extensionmenu"
 msgstr ""
 
 msgid "Add plugin to Mainmenu"
 msgstr ""
 
-msgid "Add plugin to Extensionmenu"
-msgstr ""
-
-msgid "Save path positions on exit"
-msgstr ""
-
-msgid "Left panel position"
-msgstr ""
-
-msgid "Right panel position"
-msgstr ""
-
 msgid "Cancel"
 msgstr "Annuleren"
 
-#, fuzzy
-msgid "Ok"
-msgstr "OK"
-
-#, fuzzy
-msgid "Settings"
-msgstr "Instellingen..."
+msgid "Copy"
+msgstr ""
 
 #, fuzzy
 msgid "Delete"
 msgstr "Verwijder"
 
+msgid "Filebrowser"
+msgstr ""
+
+msgid "Left panel position"
+msgstr ""
+
 msgid "Move"
 msgstr ""
 
-msgid "Copy"
-msgstr ""
+#, fuzzy
+msgid "Ok"
+msgstr "OK"
 
 msgid "Rename"
+msgstr ""
+
+msgid "Right panel position"
+msgstr ""
+
+msgid "Save path positions on exit"
 msgstr ""
 
 #, fuzzy
 msgid "Select location"
 msgstr "Kies de actie:"
 
-msgid "copy file"
-msgstr ""
-
 #, fuzzy
-msgid "yes"
-msgstr "ja"
+msgid "Settings"
+msgstr "Instellingen..."
 
-msgid "no"
+msgid "copy file"
 msgstr ""
 
 msgid "copying file ..."
@@ -86,10 +76,19 @@ msgstr ""
 msgid "deleting file ..."
 msgstr ""
 
+msgid "manage local Files"
+msgstr ""
+
 msgid "move file"
 msgstr ""
 
 msgid "moving file ..."
+msgstr ""
+
+msgid "no"
+msgstr ""
+
+msgid "no Viewer installed for this mimetype!"
 msgstr ""
 
 msgid "rename file"
@@ -98,5 +97,6 @@ msgstr ""
 msgid "renaming file ..."
 msgstr ""
 
-msgid "no Viewer installed for this mimetype!"
-msgstr ""
+#, fuzzy
+msgid "yes"
+msgstr "ja"
