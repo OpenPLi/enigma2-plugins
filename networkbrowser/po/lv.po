@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxbox-enigma 0.0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"POT-Creation-Date: 2018-07-15 10:30+0200\n"
 "PO-Revision-Date: 2014-10-26 18:46+0200\n"
 "Last-Translator: Tapat <taapat@gmail.com>\n"
 "Language-Team: Taapat <taapat@gmail.com>\n"
@@ -113,6 +113,12 @@ msgstr "Lietpratēja"
 
 msgid "Finished restarting your network"
 msgstr "Pārlādēt tīklu"
+
+msgid "Host name"
+msgstr ""
+
+msgid "Host:"
+msgstr ""
 
 msgid "IP Address"
 msgstr "IP adrese"
