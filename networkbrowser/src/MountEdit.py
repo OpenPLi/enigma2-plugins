@@ -191,6 +191,8 @@ class AutoMountEdit(Screen, ConfigListScreen):
 			self.session.openWithCallback(lambda x : self.VirtualKeyBoardCallback(x, 'sharename'), VirtualKeyBoard, title = (_("Enter share name:")), text = self.sharenameConfigEntry.value)
 		if self["config"].getCurrent() == self.sharedirEntry:
 			self.session.openWithCallback(lambda x : self.VirtualKeyBoardCallback(x, 'sharedir'), VirtualKeyBoard, title = (_("Enter share directory:")), text = self.sharedirConfigEntry.value)
+		if self["config"].getCurrent() == self.hostEntry:
+			self.session.openWithCallback(lambda x : self.VirtualKeyBoardCallback(x, 'host'), VirtualKeyBoard, title = (_("Enter host name:")), text = self.hostConfigEntry.value)
 		if self["config"].getCurrent() == self.optionsEntry:
 			self.session.openWithCallback(lambda x : self.VirtualKeyBoardCallback(x, 'options'), VirtualKeyBoard, title = (_("Enter options:")), text = self.optionsConfigEntry.value)
 		if self["config"].getCurrent() == self.usernameEntry:
@@ -206,6 +208,9 @@ class AutoMountEdit(Screen, ConfigListScreen):
 			if entry == 'sharedir':
 				self.sharedirConfigEntry.setValue(callback)
 				self["config"].invalidate(self.sharedirConfigEntry)
+			if entry == 'host':
+				self.hostConfigEntry.setValue(callback)
+				self["config"].invalidate(self.hostConfigEntry)
 			if entry == 'options':
 				self.optionsConfigEntry.setValue(callback)
 				self["config"].invalidate(self.optionsConfigEntry)                                
