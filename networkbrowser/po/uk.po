@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"POT-Creation-Date: 2018-07-15 10:30+0200\n"
 "PO-Revision-Date: 2016-07-18 12:32+0200\n"
 "Last-Translator: satdreamgr\n"
 "Language-Team: sety <tim1065@mail.ru>\n"
@@ -108,6 +108,12 @@ msgstr "Експерт"
 
 msgid "Finished restarting your network"
 msgstr "Перезавантаження Вашої мережі завершено"
+
+msgid "Host name"
+msgstr ""
+
+msgid "Host:"
+msgstr ""
 
 msgid "IP Address"
 msgstr "IP адреса"
