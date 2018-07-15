@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2 - partnerbox\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"POT-Creation-Date: 2018-07-15 10:30+0200\n"
 "PO-Revision-Date: 2009-10-29 20:40+0100\n"
 "Last-Translator: Spaeleus <spaeleus@croci.org>\n"
 "Language-Team: www.linsat.net <spaeleus@croci.org>\n"
@@ -44,6 +44,9 @@ msgid "Abort"
 msgstr ""
 
 msgid "Activate Picture in Picture"
+msgstr ""
+
+msgid "Active boxes from local network only (using localhost names)"
 msgstr ""
 
 msgid "Add"
@@ -199,6 +202,9 @@ msgstr ""
 msgid "Enable first Partnerbox-entry in Timeredit as default"
 msgstr "Abilitare la funzione Partnerbox nell'evento timer"
 
+msgid "Enable/disable moving item"
+msgstr ""
+
 msgid "EndTime"
 msgstr "Ora fine"
 
@@ -296,6 +302,12 @@ msgid "Monday"
 msgstr "Lunedì"
 
 msgid "Move Picture in Picture"
+msgstr ""
+
+msgid "Move item down"
+msgstr ""
+
+msgid "Move item up"
 msgstr ""
 
 msgid "Mute"
