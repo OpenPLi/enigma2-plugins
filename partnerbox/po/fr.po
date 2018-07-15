@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-07-15 10:30+0200\n"
-"PO-Revision-Date: 2018-05-12 19:39+0200\n"
+"PO-Revision-Date: 2018-07-15 10:40+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.7\n"
+"X-Generator: Poedit 2.0.8\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #, python-format
@@ -192,7 +192,7 @@ msgid "Enable first Partnerbox-entry in Timeredit as default"
 msgstr "Activer d’abord Entrée-Partnerbox dans l’édition de programmation par défaut"
 
 msgid "Enable/disable moving item"
-msgstr ""
+msgstr "Activer/désactiver le déplacement des éléments"
 
 msgid "EndTime"
 msgstr "Heure de fin"
@@ -291,10 +291,10 @@ msgid "Move Picture in Picture"
 msgstr "Déplacer l'incrustation d'image"
 
 msgid "Move item down"
-msgstr ""
+msgstr "Descendre l’élément"
 
 msgid "Move item up"
-msgstr ""
+msgstr "Remonter l’élément"
 
 msgid "Mute"
 msgstr "Sourdine"
