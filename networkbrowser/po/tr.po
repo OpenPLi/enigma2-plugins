@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: e2 NetworkBrowser Plugin Turkish locale\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"POT-Creation-Date: 2018-07-15 10:30+0200\n"
 "PO-Revision-Date: 2009-02-23 18:43+0200\n"
 "Last-Translator: Zülfikar VEYİSOĞLU <zveyis@gmail.com>\n"
 "Language-Team: www.turkeyforum.com/satforum <zveyis@gmail.com>\n"
@@ -111,6 +111,12 @@ msgstr ""
 
 msgid "Finished restarting your network"
 msgstr "Ağ yeniden başlatıldı"
+
+msgid "Host name"
+msgstr ""
+
+msgid "Host:"
+msgstr ""
 
 msgid "IP Address"
 msgstr ""
