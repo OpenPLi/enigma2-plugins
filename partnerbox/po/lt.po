@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Partnerbox\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-11 12:34+0200\n"
+"POT-Creation-Date: 2018-07-15 10:30+0200\n"
 "PO-Revision-Date: 2017-07-01 11:16+0300\n"
 "Last-Translator: Vytenis P. <vyteniui@gmail.com>\n"
 "Language-Team: Vytenis P. <vyteniui@gmail.com>\n"
@@ -42,6 +42,9 @@ msgstr "Nutraukti"
 
 msgid "Activate Picture in Picture"
 msgstr "Įjungti vaizdą vaizde (PiP)"
+
+msgid "Active boxes from local network only (using localhost names)"
+msgstr ""
 
 msgid "Add"
 msgstr "Pridėti"
@@ -190,6 +193,9 @@ msgstr "Įjungti VPS funkciją laikmačių nustatyme"
 msgid "Enable first Partnerbox-entry in Timeredit as default"
 msgstr "Pirmasis Partnerbox įrašas laikmačių redagavime - numatytasis"
 
+msgid "Enable/disable moving item"
+msgstr ""
+
 msgid "EndTime"
 msgstr "Pabaigos laikas"
 
@@ -286,6 +292,12 @@ msgstr "pirmadienis"
 
 msgid "Move Picture in Picture"
 msgstr "Perkelti vaizdą vaizde (PiP)"
+
+msgid "Move item down"
+msgstr ""
+
+msgid "Move item up"
+msgstr ""
 
 msgid "Mute"
 msgstr ""
