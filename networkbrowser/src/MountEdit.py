@@ -50,11 +50,6 @@ class AutoMountEdit(Screen, ConfigListScreen):
 			"red": self.close,
 		}, -2)
 
-		self["VirtualKB"] = ActionMap(["VirtualKeyboardActions"],
-		{
-			"showVirtualKeyboard": self.KeyText,
-		}, -2)
-
 		self.list = []
 		ConfigListScreen.__init__(self, self.list,session = self.session)
 		self.createSetup()
@@ -62,14 +57,12 @@ class AutoMountEdit(Screen, ConfigListScreen):
 		# Initialize Buttons
 		self["VKeyIcon"] = Boolean(False)
 		self["HelpWindow"] = Pixmap()
+		self["HelpWindow"].hide()
 		self["introduction"] = StaticText(_("Press OK to activate the settings."))
 		self["key_red"] = StaticText(_("Cancel"))
 
-
 	def layoutFinished(self):
 		self.setTitle(_("Mounts editor"))
-		self["VirtualKB"].setEnabled(False)
-		self["HelpWindow"].hide()
 
 	# helper function to convert ips from a sring to a list of ints
 	def convertIP(self, ip):
@@ -179,47 +172,10 @@ class AutoMountEdit(Screen, ConfigListScreen):
 
 		self["config"].list = self.list
 		self["config"].l.setList(self.list)
-		self["config"].onSelectionChanged.append(self.selectionChanged)
 
 	def newConfig(self):
 		if self["config"].getCurrent() == self.mounttypeEntry:
 			self.createSetup()
-
-	def KeyText(self):
-		print "Green Pressed"
-		if self["config"].getCurrent() == self.sharenameEntry:
-			self.session.openWithCallback(lambda x : self.VirtualKeyBoardCallback(x, 'sharename'), VirtualKeyBoard, title = (_("Enter share name:")), text = self.sharenameConfigEntry.value)
-		if self["config"].getCurrent() == self.sharedirEntry:
-			self.session.openWithCallback(lambda x : self.VirtualKeyBoardCallback(x, 'sharedir'), VirtualKeyBoard, title = (_("Enter share directory:")), text = self.sharedirConfigEntry.value)
-		if self["config"].getCurrent() == self.hostEntry:
-			self.session.openWithCallback(lambda x : self.VirtualKeyBoardCallback(x, 'host'), VirtualKeyBoard, title = (_("Enter host name:")), text = self.hostConfigEntry.value)
-		if self["config"].getCurrent() == self.optionsEntry:
-			self.session.openWithCallback(lambda x : self.VirtualKeyBoardCallback(x, 'options'), VirtualKeyBoard, title = (_("Enter options:")), text = self.optionsConfigEntry.value)
-		if self["config"].getCurrent() == self.usernameEntry:
-			self.session.openWithCallback(lambda x : self.VirtualKeyBoardCallback(x, 'username'), VirtualKeyBoard, title = (_("Enter username:")), text = self.usernameConfigEntry.value)
-		if self["config"].getCurrent() == self.passwordEntry:
-			self.session.openWithCallback(lambda x : self.VirtualKeyBoardCallback(x, 'password'), VirtualKeyBoard, title = (_("Enter password:")), text = self.passwordConfigEntry.value)
-
-	def VirtualKeyBoardCallback(self, callback = None, entry = None):
-		if callback is not None and len(callback) and entry is not None and len(entry):
-			if entry == 'sharename':
-				self.sharenameConfigEntry.setValue(callback)
-				self["config"].invalidate(self.sharenameConfigEntry)
-			if entry == 'sharedir':
-				self.sharedirConfigEntry.setValue(callback)
-				self["config"].invalidate(self.sharedirConfigEntry)
-			if entry == 'host':
-				self.hostConfigEntry.setValue(callback)
-				self["config"].invalidate(self.hostConfigEntry)
-			if entry == 'options':
-				self.optionsConfigEntry.setValue(callback)
-				self["config"].invalidate(self.optionsConfigEntry)                                
-			if entry == 'username':
-				self.usernameConfigEntry.setValue(callback)
-				self["config"].invalidate(self.usernameConfigEntry)
-			if entry == 'password':
-				self.passwordConfigEntry.setValue(callback)
-				self["config"].invalidate(self.passwordConfigEntry)
 
 	def keyLeft(self):
 		ConfigListScreen.keyLeft(self)
@@ -228,16 +184,6 @@ class AutoMountEdit(Screen, ConfigListScreen):
 	def keyRight(self):
 		ConfigListScreen.keyRight(self)
 		self.newConfig()
-
-	def selectionChanged(self):
-		current = self["config"].getCurrent()
-		if current == self.activeEntry or current == self.ipEntry or current == self.mounttypeEntry or current == self.hdd_replacementEntry:
-			self["VirtualKB"].setEnabled(False)
-		else:
-			helpwindowpos = self["HelpWindow"].getPosition()
-			if current[1].help_window.instance is not None:
-				current[1].help_window.instance.move(ePoint(helpwindowpos[0],helpwindowpos[1]))
-				self["VirtualKB"].setEnabled(True)
 
 	def ok(self):
 		current = self["config"].getCurrent()
