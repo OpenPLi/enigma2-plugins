@@ -47,7 +47,7 @@ elif fileExists("/proc/stb/info/boxtype") and not fileExists("/proc/stb/info/hwm
 			BOX_MODEL = "formuler"
 		elif BOX_NAME.startswith('hd'):
 			BOX_MODEL = "hd"
-		elif BOX_NAME.startswith('osm'):
+		elif BOX_NAME.startswith('os'):
 			BOX_MODEL = "edision"
 		else:
 			BOX_MODEL = "useBoxtype"
