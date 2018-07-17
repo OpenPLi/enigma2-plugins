@@ -3,94 +3,95 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-07-15 10:30+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2018-07-15 10:38+0200\n"
+"Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.8\n"
+"Last-Translator: \n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Language: fr\n"
 
 msgid "Add plugin to Extensionmenu"
-msgstr ""
+msgstr "Ajouter le plugin dans le menu des extensions"
 
 msgid "Add plugin to Mainmenu"
-msgstr ""
+msgstr "Ajouter le plugin au menu principal"
 
 msgid "Cancel"
-msgstr ""
+msgstr "Annuler"
 
 msgid "Copy"
-msgstr ""
+msgstr "Copier"
 
 msgid "Delete"
-msgstr ""
+msgstr "Supprimer"
 
 msgid "Filebrowser"
-msgstr ""
+msgstr "Navigateur de fichiers"
 
 msgid "Left panel position"
-msgstr ""
+msgstr "Position du panneau gauche"
 
 msgid "Move"
-msgstr ""
+msgstr "Déplacer"
 
 msgid "Ok"
-msgstr ""
+msgstr "Ok"
 
 msgid "Rename"
-msgstr ""
+msgstr "Renommer"
 
 msgid "Right panel position"
-msgstr ""
+msgstr "Position du panneau droit"
 
 msgid "Save path positions on exit"
-msgstr ""
+msgstr "Sauvegarder la position en sortant"
 
 msgid "Select location"
-msgstr ""
+msgstr "Choisir la localisation"
 
 msgid "Settings"
-msgstr ""
+msgstr "Paramètres"
 
 msgid "copy file"
-msgstr ""
+msgstr "copier fichier"
 
 msgid "copying file ..."
-msgstr ""
+msgstr "copie du fichier …"
 
 msgid "delete file"
-msgstr ""
+msgstr "Supprimer le fichier"
 
 msgid "deleting file ..."
-msgstr ""
+msgstr "Suppression fichier"
 
 msgid "manage local Files"
-msgstr ""
+msgstr "gérer les fichiers locaux"
 
 msgid "move file"
-msgstr ""
+msgstr "déplacer fichier"
 
 msgid "moving file ..."
-msgstr ""
+msgstr "Déplacement fichier …"
 
 msgid "no"
 msgstr ""
 
 msgid "no Viewer installed for this mimetype!"
-msgstr ""
+msgstr "pas de visualiseur installé pour ce type mime!"
 
 msgid "rename file"
-msgstr ""
+msgstr "renommer fichier"
 
 msgid "renaming file ..."
-msgstr ""
+msgstr "renommage fichier …"
 
 msgid "yes"
-msgstr ""
+msgstr "oui"

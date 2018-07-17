@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ca\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"POT-Creation-Date: 2018-07-15 10:30+0200\n"
 "PO-Revision-Date: 2007-08-14 10:23+0200\n"
 "Last-Translator: Oriol Pellicer <oriol@elsud.org>\n"
 "Language-Team: \n"
@@ -110,6 +110,12 @@ msgid "Expert"
 msgstr ""
 
 msgid "Finished restarting your network"
+msgstr ""
+
+msgid "Host name"
+msgstr ""
+
+msgid "Host:"
 msgstr ""
 
 msgid "IP Address"
