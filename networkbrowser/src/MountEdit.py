@@ -12,7 +12,17 @@ from Components.Pixmap import Pixmap
 from Components.ActionMap import ActionMap, NumberActionMap
 from AutoMount import iAutoMount, AutoMount
 from Components.Sources.Boolean import Boolean
-import re
+
+# helper function to convert ips from a sring to a list of ints
+def convertIP(ip):
+	try:
+		strIP = ip.split('.')
+		ip = []
+		for x in strIP:
+			ip.append(int(x))
+	except:
+		ip = [0,0,0,0]
+	return ip
 
 class AutoMountEdit(Screen, ConfigListScreen):
 	skin = """
@@ -63,17 +73,6 @@ class AutoMountEdit(Screen, ConfigListScreen):
 	def layoutFinished(self):
 		self.setTitle(_("Mounts editor"))
 
-	# helper function to convert ips from a sring to a list of ints
-	def convertIP(self, ip):
-		try:
-			strIP = ip.split('.')
-			ip = []
-			for x in strIP:
-				ip.append(int(x))
-		except:
-			ip = [0,0,0,0]
-		return ip
-
 	def exit(self):
 		self.close()
 
@@ -96,14 +95,14 @@ class AutoMountEdit(Screen, ConfigListScreen):
 		active = self.mountinfo.get('active', 'True') == 'True'
 		# Not that "host" takes precedence over "ip"
 		host = self.mountinfo.get('host', "")
-		if host:
-			ip = [0, 0, 0, 0]
-		else:
+		if not host:
+			# In case host is something funky like False or None
 			host = ''
-			if not self.mountinfo.get('ip', None):
-				ip = [192, 168, 0, 0]
-			else:
-				ip = self.convertIP(self.mountinfo['ip'])
+		try:
+			ip = convertIP(self.mountinfo['ip'])
+		except Exception, ex:
+			print "[NWB] Invalid IP", ex
+			ip = [0, 0, 0, 0]
 		sharename = self.mountinfo.get('sharename', "Sharename")
 		sharedir = self.mountinfo.get('sharedir', "/media/hdd")
 		username = self.mountinfo.get('username', "")
@@ -190,8 +189,7 @@ class AutoMountEdit(Screen, ConfigListScreen):
 			if current[1].help_window.instance is not None:
 				current[1].help_window.instance.hide()
 		sharename = self.sharenameConfigEntry.value
-
-		if self.mounts.has_key(sharename) is True:
+		if self.mounts.has_key(sharename):
 			self.session.openWithCallback(self.updateConfig, MessageBox, (_("A mount entry with this name already exists!\nUpdate existing entry and continue?\n") ) )
 		else:
 			self.session.openWithCallback(self.applyConfig, MessageBox, (_("Are you sure you want to save this network mount?\n\n") ) )
@@ -241,8 +239,7 @@ class AutoMountEdit(Screen, ConfigListScreen):
 			data['active'] = self.activeConfigEntry.value
 			data['host'] = self.hostConfigEntry.getText()
 			data['ip'] = self.ipConfigEntry.getText()
-			data['sharename'] = re.sub("\W", "", self.sharenameConfigEntry.value)
-			# "\W" matches everything that is "not numbers, letters, or underscores",where the alphabet defaults to ASCII.
+			data['sharename'] = self.sharenameConfigEntry.value.strip()
 			if self.sharedirConfigEntry.value.startswith("/"):
 				data['sharedir'] = self.sharedirConfigEntry.value[1:]
 			else:
