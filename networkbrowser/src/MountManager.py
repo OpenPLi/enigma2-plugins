@@ -11,12 +11,11 @@ from Components.Network import iNetwork
 from Components.Sources.List import List
 from Tools.LoadPixmap import LoadPixmap
 from Tools.Directories import resolveFilename, SCOPE_PLUGINS, SCOPE_SKIN_IMAGE
-from os import path as os_path, listdir
-
 from MountView import AutoMountView
 from MountEdit import AutoMountEdit
 from AutoMount import iAutoMount, AutoMount
 from UserManager import UserManager
+import os
 
 class AutoMountManager(Screen):
 	skin = """
@@ -41,7 +40,6 @@ class AutoMountManager(Screen):
 	def __init__(self, session, iface ,plugin_path):
 		self.skin_path = plugin_path
 		self.session = session
-		self.hostname = None
 		self.restartLanRef = None
 		Screen.__init__(self, session)
 		self["shortcuts"] = ActionMap(["ShortcutActions", "WizardActions"],
@@ -72,7 +70,7 @@ class AutoMountManager(Screen):
 		okpng = LoadPixmap(cached=True, path=resolveFilename(SCOPE_PLUGINS, "SystemPlugins/NetworkBrowser/icons/ok.png"))
 		self.list.append((_("Add new network mount point"),"add", _("Add a new NFS or CIFS mount point to your Receiver."), okpng ))
 		self.list.append((_("Mountpoints management"),"view", _("View, edit or delete mountpoints on your Receiver."), okpng ))
-		for file in listdir('/etc/enigma2'):
+		for file in os.listdir('/etc/enigma2'):
 			if file.endswith('.cache'):
 				if file == 'networkbrowser.cache':
 					continue
@@ -107,17 +105,17 @@ class AutoMountManager(Screen):
 		self.session.open(UserManager, self.skin_path)
 
 	def hostEdit(self):
-		if os_path.exists("/etc/hostname"):
-			fp = open('/etc/hostname', 'r')
-			self.hostname = fp.read()
-			fp.close()
-			self.session.openWithCallback(self.hostnameCallback, VirtualKeyBoard, title = (_("Enter new hostname for your Receiver")), text = self.hostname)
+		try:
+			with open('/etc/hostname', 'r') as fp:
+				hostname = fp.read()
+		except:
+			return
+		self.session.openWithCallback(self.hostnameCallback, VirtualKeyBoard, title = (_("Enter new hostname for your Receiver")), text = hostname)
 
 	def hostnameCallback(self, callback = None):
-		if callback is not None and len(callback):
-			fp = open('/etc/hostname', 'w+')
-			fp.write(callback)
-			fp.close()
+		if callback:
+			with open('/etc/hostname', 'w+') as fp:
+				fp.write(callback)
 			self.restartLan()
 
 	def restartLan(self):
@@ -133,7 +131,7 @@ class AutoMountManager(Screen):
 			if self.restartLanRef.execing:
 				self.restartLanRef.close(True)
 
-	def restartfinishedCB(self,data):
+	def restartfinishedCB(self, data):
 		if data is True:
 			self.session.open(MessageBox, _("Finished restarting your network"), type = MessageBox.TYPE_INFO, timeout = 10, default = False)
 

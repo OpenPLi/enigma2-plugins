@@ -10,10 +10,9 @@ from Components.config import config, ConfigIP, NoSave, ConfigText, ConfigEnable
 from Components.ConfigList import ConfigListScreen
 from Components.Pixmap import Pixmap
 from Components.ActionMap import ActionMap, NumberActionMap
-from enigma import ePoint
 from AutoMount import iAutoMount, AutoMount
-from re import sub as re_sub
 from Components.Sources.Boolean import Boolean
+import re
 
 class AutoMountEdit(Screen, ConfigListScreen):
 	skin = """
@@ -242,7 +241,7 @@ class AutoMountEdit(Screen, ConfigListScreen):
 			data['active'] = self.activeConfigEntry.value
 			data['host'] = self.hostConfigEntry.getText()
 			data['ip'] = self.ipConfigEntry.getText()
-			data['sharename'] = re_sub("\W", "", self.sharenameConfigEntry.value)
+			data['sharename'] = re.sub("\W", "", self.sharenameConfigEntry.value)
 			# "\W" matches everything that is "not numbers, letters, or underscores",where the alphabet defaults to ASCII.
 			if self.sharedirConfigEntry.value.startswith("/"):
 				data['sharedir'] = self.sharedirConfigEntry.value[1:]

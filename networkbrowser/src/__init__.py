@@ -1,15 +1,7 @@
-# -*- coding: ISO-8859-1 -*-
-#===============================================================================
-# NetworkBrowser and MountManager Plugin by acid-burn
-# netscan lib by Nix_niX
-# for further License informations see the corresponding License files
-# or SourceCodes
-#
-#===============================================================================
-
 from Components.Language import language
-from Tools.Directories import resolveFilename, SCOPE_PLUGINS, SCOPE_LANGUAGE
-import os,gettext
+from Tools.Directories import resolveFilename, SCOPE_PLUGINS
+import gettext
+
 PluginLanguageDomain = "NetworkBrowser"
 PluginLanguagePath = "SystemPlugins/NetworkBrowser/locale"
 
