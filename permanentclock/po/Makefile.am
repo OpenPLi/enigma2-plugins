@@ -1,3 +1,3 @@
 PLUGIN = PermanentClock
-LANGS = de es fa fy hu it lt nl no ru sk sr sv tr uk 
+LANGS = de es fa fr fy hu it lt nl no ru sk sr sv tr uk 
 include $(top_srcdir)/Rules-po.mak

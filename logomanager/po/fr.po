@@ -1,0 +1,120 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-07-31 14:17+0200\n"
+"PO-Revision-Date: 2018-07-31 19:28+0200\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.1.1\n"
+"Last-Translator: \n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Language: fr\n"
+
+msgid "Add default bootlogo to folder logos"
+msgstr "Ajouter le bootlogo par défaut au dossier des logos"
+
+msgid "Add default radio to folder logos"
+msgstr "Ajouter la radio par défaut au dossier des logos"
+
+msgid "CF Drive"
+msgstr "Lecteur CF"
+
+msgid "Cancel"
+msgstr "Annuler"
+
+msgid "Directory to scan for logos"
+msgstr "Répertoire pour rechercher des logos"
+
+msgid "Disable backdrop"
+msgstr "Désactiver le fond d'écran"
+
+msgid "Disable reboot"
+msgstr "Désactiver le redémarrage"
+
+msgid "Disable switch off"
+msgstr "Désactiver éteindre"
+
+msgid "Harddisk"
+msgstr "Disque dur"
+
+msgid "Install selected logo as..."
+msgstr "Installer le logo sélectionné comme....."
+
+msgid "Logo Manager"
+msgstr "Gestionnaire de logo"
+
+msgid "Logo manager setup"
+msgstr "Configuration du gestionnaire de logo"
+
+msgid "None"
+msgstr "Aucun"
+
+#, python-format
+msgid "Not found directory '%s'!"
+msgstr "Répertoire non trouvé '%s'!"
+
+msgid "OK"
+msgstr "OK"
+
+msgid "Open configuration"
+msgstr "Ouvrir la configuration"
+
+msgid "Please select a option:"
+msgstr "Veuillez sélectionner une option :"
+
+#, python-format
+msgid "Really remove current logo of %s?"
+msgstr "Enlever vraiment le logo actuel de %s ?"
+
+msgid "Remove current logo"
+msgstr "Supprimer le logo actuel"
+
+msgid "Reset all logos to default"
+msgstr "Réinitialiser tous les logos par défaut"
+
+msgid "Reset bootlogo to default"
+msgstr "Réinitialiser le bootlogo par défaut"
+
+msgid "Reset radio to default"
+msgstr "Réinitialiser la radio à la valeur par défaut"
+
+msgid "Select target for logo:"
+msgstr "Sélectionner la cible pour le logo :"
+
+msgid "Show active logos"
+msgstr "Afficher les logos actifs"
+
+msgid "Show available logos"
+msgstr "Afficher les logos disponibles"
+
+msgid "USB Drive"
+msgstr "Lecteur USB"
+
+msgid "backdrop"
+msgstr "toile de fond"
+
+msgid "bootlogo"
+msgstr "bootlogo"
+
+msgid "manage logos to display at boottime"
+msgstr "gérer les logos à afficher au démarrage"
+
+msgid "radio"
+msgstr "radio"
+
+msgid "reboot"
+msgstr "réamorcer"
+
+msgid "switch off"
+msgstr "éteindre"
+
+msgid "view bootlogo/mvi"
+msgstr "voir bootlogo/mvi"

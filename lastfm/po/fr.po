@@ -1,0 +1,291 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-07-31 14:17+0200\n"
+"PO-Revision-Date: 2018-07-31 15:47+0200\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.1.1\n"
+"Last-Translator: \n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Language: fr\n"
+
+#, python-format
+msgid "%s name"
+msgstr "Nom %s"
+
+msgid "Album"
+msgstr "Album"
+
+msgid "Artist"
+msgstr "Artistes"
+
+msgid "Ban"
+msgstr "Bannir"
+
+msgid "Ban Track, never play"
+msgstr "Bannir la piste, ne jamais jouer"
+
+msgid "Banned Tracks"
+msgstr "Pistes bannies"
+
+msgid "Banned Tracks loaded"
+msgstr "Pistes bannies chargées"
+
+msgid "Cancel"
+msgstr "Annuler"
+
+msgid "Description"
+msgstr "Description"
+
+msgid "Extensions menu"
+msgstr "Menu extensions"
+
+msgid "Friends"
+msgstr "Amis"
+
+msgid "Friends loaded"
+msgstr "Amis chargés"
+
+msgid "Global Tags"
+msgstr "Tags globaux"
+
+msgid "Global Tags loaded"
+msgstr "Etiquettes globales chargées"
+
+msgid "Group of"
+msgstr "Groupe de"
+
+msgid "Interval for Coverart Animation"
+msgstr "Intervalle pour l'animation pochette"
+
+msgid "Interval to refresh Metadata (seconds)"
+msgstr "Intervalle de rafraîchissement des métadonnées (secondes)"
+
+msgid "Last.FM"
+msgstr "Last.fm"
+
+msgid "Last.FM Username"
+msgstr "Last.FM nom d’utilisateur"
+
+msgid "LastFM Proxy port"
+msgstr "Port Proxy Last.FM"
+
+msgid "Listen to Last.FM Internet Radio"
+msgstr "Écoutez la radio Internet Last.FM"
+
+msgid "Loading Friends"
+msgstr "Chargement d'amis"
+
+msgid "Loading Global Tags"
+msgstr "Chargement des étiquettes globales"
+
+msgid "Loading Loved Tracks"
+msgstr "Chargement des pistes aimées"
+
+msgid "Loading Neighbours"
+msgstr "Chargement des voisins"
+
+msgid "Loading Recent Tracks"
+msgstr "Chargement de pistes récentes"
+
+msgid "Loading Top Tacks"
+msgstr "Chargement des pistes au Top"
+
+msgid "Love"
+msgstr "J’aime"
+
+msgid "Loved Tracks"
+msgstr "Pistes préférées"
+
+msgid "Loved Tracks loaded"
+msgstr "Pistes aimées chargées"
+
+msgid "Mark Track as loved"
+msgstr "Marquer la piste comme aimée"
+
+msgid "Name (needs GUI restart)"
+msgstr "Nom (nécessite le redémarrage de l'interface graphique)"
+
+msgid "Neighbours"
+msgstr "les voisins."
+
+msgid "Neighbours Tracks"
+msgstr "Pistes voisines"
+
+msgid "Neighbours loaded"
+msgstr "Voisins chargés"
+
+msgid "Next Selection"
+msgstr "Sélection suivante"
+
+msgid "OK"
+msgstr "OK"
+
+msgid "Open"
+msgstr "Ouvert"
+
+msgid "Page backward Selections"
+msgstr "Page précédente Sélections"
+
+msgid "Page forward Selections"
+msgstr "Page suivante Sélections"
+
+msgid "Password"
+msgstr "Mot de passe"
+
+msgid "Personal Recommendations"
+msgstr "Recommandations personnelles"
+
+msgid "Personal Stations"
+msgstr "Stations personnelles"
+
+msgid "Play"
+msgstr "Lire"
+
+msgid "Play Artist Radio..."
+msgstr "Écouter Artiste Radio…"
+
+msgid "Play Group Radio..."
+msgstr "Écouter Groupe Radio..."
+
+msgid "Play Tag Radio..."
+msgstr "Écouter Tag Radio…"
+
+msgid "Plugin menu"
+msgstr "Menu d'Extension"
+
+msgid "Previous Selection"
+msgstr "Critère de sélection précédent"
+
+msgid "Quit"
+msgstr "Quitter"
+
+msgid "Recent Tracks"
+msgstr "Pistes récentes"
+
+msgid "Recent Tracks loaded"
+msgstr "Pistes récentes chargées"
+
+msgid "Recommendation level"
+msgstr "Niveau de recommandation"
+
+msgid "Select next Tab"
+msgstr "Sélectionner l'onglet suivant"
+
+msgid "Select prev Tab"
+msgstr "Sélectionner l'onglet precédent"
+
+msgid "Send now playing Audio Tracks"
+msgstr "Envoyer maintenant la lecture des pistes audio"
+
+msgid "Server returned"
+msgstr "Serveur retourné"
+
+msgid "Setup"
+msgstr "Configuration"
+
+msgid "Show Coverart"
+msgstr "Afficher la couverture"
+
+msgid "Show Coverart Animation in Screensaver"
+msgstr "Afficher l'animation de la couverture dans l'économiseur d'écran"
+
+msgid "Show Coverart in Screensaver"
+msgstr "Afficher la couverture dans l'économiseur d'écran"
+
+msgid "Show in (needs GUI restart)"
+msgstr "Afficher dans (nécessite le redémarrage de l'interface graphique)"
+
+msgid "Skip"
+msgstr "Passer"
+
+msgid "Skip current Track"
+msgstr "Sauter la piste en cours"
+
+msgid "Speed for Coverart Animation"
+msgstr "Vitesse pour l'animation de la couverture"
+
+msgid "Start/stop streaming"
+msgstr "Démarrage/arrêt du streaming"
+
+msgid "Starting stream"
+msgstr "Début du stream"
+
+msgid "Station changed"
+msgstr "Changement de station"
+
+msgid "Stop"
+msgstr "Arrêter"
+
+msgid "Stream stopped"
+msgstr "Stream arrêté"
+
+msgid "Switch to selected Station"
+msgstr "Passer à la station sélectionnée"
+
+msgid "Timeout Statustext (seconds)"
+msgstr "Délai d’expiration Statustext (secondes)"
+
+msgid "Timeout to select a Tab (seconds)"
+msgstr "Délai d’expiration pour sélectionner un onglet (secondes)"
+
+msgid "Top Tracks"
+msgstr "Pistes au Top"
+
+msgid "Top Tracks loaded"
+msgstr "Pistes au Top chargées"
+
+msgid "Track"
+msgstr "Piste"
+
+msgid "Track banned"
+msgstr "Piste bannie"
+
+msgid "Track loved"
+msgstr "Piste aimée"
+
+msgid "Track skipped"
+msgstr "Piste sautée"
+
+msgid "Tracks liked by Fans of"
+msgstr "Pistes aimées par les Fans de"
+
+msgid "Tracks similar to"
+msgstr "Pistes similaires à"
+
+msgid "Use LastFM Proxy"
+msgstr "Utiliser LastFM Proxy"
+
+msgid "Use Screensaver"
+msgstr "Utiliser l'économiseur d'écran"
+
+msgid "Ver."
+msgstr "Ver."
+
+msgid "Wait before Screensaver (seconds)"
+msgstr "Attendre avant l'économiseur d'écran (secondes)"
+
+msgid "logging into last.FM"
+msgstr "se connecter à Last.FM"
+
+msgid "login failed! "
+msgstr "le login a échoué! "
+
+msgid "login successful"
+msgstr "connexion réussie"
+
+msgid "playing:"
+msgstr "en lecture:"
+
+#, python-format
+msgid "please enter an %s name to listen to"
+msgstr "veuillez entrer un nom %s pour écouter"
