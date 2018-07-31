@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Enigma2 plugin - Networkbrowser serbian\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-15 10:30+0200\n"
+"POT-Creation-Date: 2018-07-31 14:17+0200\n"
 "PO-Revision-Date: 2009-09-10 20:32+0100\n"
 "Last-Translator: maja <jovanovic@gmx.ch>\n"
 "Language-Team: veselin & majevica CRNABERZA <jovanovic@gmx.ch>\n"
@@ -91,17 +91,8 @@ msgstr ""
 msgid "Enter new hostname for your Receiver"
 msgstr "Unesi novo ime hosta za svoj drimboks"
 
-msgid "Enter options:"
-msgstr "Unesi opcije:"
-
 msgid "Enter password:"
 msgstr "Unesi lozinku:"
-
-msgid "Enter share directory:"
-msgstr "Unesi zajed. direktorijum:"
-
-msgid "Enter share name:"
-msgstr "Unesi zajed. ime:"
 
 msgid "Enter user and password for host: "
 msgstr "Unesi korisnika i lozinku za host: "
