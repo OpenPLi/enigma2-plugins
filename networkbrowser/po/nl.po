@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2 - networkbrowser\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-15 10:30+0200\n"
+"POT-Creation-Date: 2018-07-31 14:17+0200\n"
 "PO-Revision-Date: 2018-04-03 16:15+0100\n"
 "Last-Translator: Frenske <voorzitter@openpli.org>\n"
 "Language-Team: Benny.DeTandt@gmail.com\n"
@@ -92,17 +92,8 @@ msgstr "Geef een IPadres om te zoeken..."
 msgid "Enter new hostname for your Receiver"
 msgstr "Geef een nieuwe hostnaam op voor de ontvanger"
 
-msgid "Enter options:"
-msgstr "Geef opties:"
-
 msgid "Enter password:"
 msgstr "Geef wachtwoord:"
-
-msgid "Enter share directory:"
-msgstr "Geef gedeelde map in:"
-
-msgid "Enter share name:"
-msgstr "Geef gedeelde naam:"
 
 msgid "Enter user and password for host: "
 msgstr "Geef gebruiker en wachtwoord voor deze host: "
