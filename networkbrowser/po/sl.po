@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxbox-enigma 0.0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-15 10:30+0200\n"
+"POT-Creation-Date: 2018-07-31 14:17+0200\n"
 "PO-Revision-Date: 2012-07-31 18:10+0100\n"
 "Last-Translator: \n"
 "Language-Team: none\n"
@@ -107,20 +107,8 @@ msgid "Enter new hostname for your Receiver"
 msgstr "Vnesite novo gostiteljsko ime za sprejemnik"
 
 #
-msgid "Enter options:"
-msgstr "Vnesite možnosti:"
-
-#
 msgid "Enter password:"
 msgstr "Vnesite geslo:"
-
-#
-msgid "Enter share directory:"
-msgstr "Vnesite deljeno mapo:"
-
-#
-msgid "Enter share name:"
-msgstr "Vnesite deljeno ime:"
 
 #
 msgid "Enter user and password for host: "
