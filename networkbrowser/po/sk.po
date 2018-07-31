@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ims\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-15 10:30+0200\n"
+"POT-Creation-Date: 2018-07-31 14:17+0200\n"
 "PO-Revision-Date: 2017-02-28 12:00+0100\n"
 "Last-Translator: Andrej <andrej.tobola@gmail.com>\n"
 "Language-Team: Andrej <andrej.tobola@gmail.com>\n"
@@ -90,17 +90,8 @@ msgstr "Zadajte IP pre hľadanie..."
 msgid "Enter new hostname for your Receiver"
 msgstr "Zadajte sieťový názov Vášho prijímača"
 
-msgid "Enter options:"
-msgstr "Zadajte možnosti:"
-
 msgid "Enter password:"
 msgstr "Zadajte heslo:"
-
-msgid "Enter share directory:"
-msgstr "Zadajte zdieľaný adresár:"
-
-msgid "Enter share name:"
-msgstr "Zadajte názov zdieľania:"
 
 msgid "Enter user and password for host: "
 msgstr "Zadajte meno a heslo pre: "

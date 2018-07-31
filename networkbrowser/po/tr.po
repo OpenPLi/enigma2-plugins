@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: e2 NetworkBrowser Plugin Turkish locale\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-15 10:30+0200\n"
+"POT-Creation-Date: 2018-07-31 14:17+0200\n"
 "PO-Revision-Date: 2009-02-23 18:43+0200\n"
 "Last-Translator: Zülfikar VEYİSOĞLU <zveyis@gmail.com>\n"
 "Language-Team: www.turkeyforum.com/satforum <zveyis@gmail.com>\n"
@@ -88,17 +88,8 @@ msgstr ""
 msgid "Enter new hostname for your Receiver"
 msgstr "Receiver'ınızın yeni konak adını girin"
 
-msgid "Enter options:"
-msgstr "Seçenekleri girin:"
-
 msgid "Enter password:"
 msgstr "Parola girin:"
-
-msgid "Enter share directory:"
-msgstr "Paylaşım klasörünü girin:"
-
-msgid "Enter share name:"
-msgstr "Paylaşım adını girin:"
 
 msgid "Enter user and password for host: "
 msgstr "Konak için kullanıcı adı ve parola girin: "

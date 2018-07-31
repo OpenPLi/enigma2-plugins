@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma 2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-15 10:30+0200\n"
+"POT-Creation-Date: 2018-07-31 14:17+0200\n"
 "PO-Revision-Date: 2018-07-15 10:33+0200\n"
 "Last-Translator: thelexia <thelexia@hotmail.fr>\n"
 "Language-Team: french\n"
@@ -85,17 +85,8 @@ msgstr "Entrer l'adresse IP à scanner ..."
 msgid "Enter new hostname for your Receiver"
 msgstr "Saisisser nouveau nom d'hôte pour votre récepteur"
 
-msgid "Enter options:"
-msgstr "Entrer les options :"
-
 msgid "Enter password:"
 msgstr "Entrer mot de passe :"
-
-msgid "Enter share directory:"
-msgstr "Entrer répertoire de partage :"
-
-msgid "Enter share name:"
-msgstr "Entrer le nom de partage :"
 
 msgid "Enter user and password for host: "
 msgstr "Entrer utilisateur et mot de passe pour l'hôte:"

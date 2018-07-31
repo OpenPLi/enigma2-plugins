@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2 - networkbrowser\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-15 10:30+0200\n"
+"POT-Creation-Date: 2018-07-31 14:17+0200\n"
 "PO-Revision-Date: 2018-05-12 10:14+0300\n"
 "Last-Translator: Мартин Петков <marto74bg@yahoo.co.uk>\n"
 "Language-Team: Bulgarian\n"
@@ -91,17 +91,8 @@ msgstr "Въведете IP адрес за сканиране..."
 msgid "Enter new hostname for your Receiver"
 msgstr "Въведете ново мрежово име за Вашия приемник"
 
-msgid "Enter options:"
-msgstr "Въведете параметри:"
-
 msgid "Enter password:"
 msgstr "Въведете парола:"
-
-msgid "Enter share directory:"
-msgstr "Въведете споделена директория:"
-
-msgid "Enter share name:"
-msgstr "Въведете име на дял:"
 
 msgid "Enter user and password for host: "
 msgstr "Въведете име и парола за хост: "

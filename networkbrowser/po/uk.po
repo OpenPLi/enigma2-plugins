@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-15 10:30+0200\n"
+"POT-Creation-Date: 2018-07-31 14:17+0200\n"
 "PO-Revision-Date: 2016-07-18 12:32+0200\n"
 "Last-Translator: satdreamgr\n"
 "Language-Team: sety <tim1065@mail.ru>\n"
@@ -85,17 +85,8 @@ msgstr "Введіть IP, щоб почати сканувати ..."
 msgid "Enter new hostname for your Receiver"
 msgstr "Введіть нове ім'я мережі для Вашого ресивера"
 
-msgid "Enter options:"
-msgstr "Введіть параметри:"
-
 msgid "Enter password:"
 msgstr "Введіть пароль:"
-
-msgid "Enter share directory:"
-msgstr "Введіть каталог загального ресурсу:"
-
-msgid "Enter share name:"
-msgstr "Введіть ім'я загального ресурсу:"
 
 msgid "Enter user and password for host: "
 msgstr "Введіть ім'я користувача і пароль для хоста: "
