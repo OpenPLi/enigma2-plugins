@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxbox-enigma 0.0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-15 10:30+0200\n"
+"POT-Creation-Date: 2018-07-31 14:17+0200\n"
 "PO-Revision-Date: 2012-01-28 17:22+0100\n"
 "Last-Translator: \n"
 "Language-Team: none\n"
@@ -92,17 +92,8 @@ msgstr "IP zum Scannen eingeben"
 msgid "Enter new hostname for your Receiver"
 msgstr "Neuen Netzwerknamen für Ihre STB eingeben"
 
-msgid "Enter options:"
-msgstr "Optionen eingeben:"
-
 msgid "Enter password:"
 msgstr "Passwort eingeben:"
-
-msgid "Enter share directory:"
-msgstr "Freigabeverzeichnis eingeben:"
-
-msgid "Enter share name:"
-msgstr "Freigabename eingeben:"
 
 msgid "Enter user and password for host: "
 msgstr "Benutzernamen und Passwort eingeben: "
