@@ -1,0 +1,86 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-07-31 23:06+0200\n"
+"PO-Revision-Date: 2018-07-31 23:14+0200\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.1.1\n"
+"Last-Translator: \n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Language: fr\n"
+
+msgid "About transmission version"
+msgstr "A propos de la version de transmission"
+
+msgid "Bittorrent client for enigma2"
+msgstr "Client Bittorrent pour enigma2"
+
+msgid "Create SWAP '/media/hdd/swapfile'"
+msgstr "Créer SWAP '/media/hdd/swapfile'."
+
+msgid "Disable auto queue downloads"
+msgstr "Désactiver les téléchargements de file d'attente automatique"
+
+msgid "Disable transmission autostart"
+msgstr "Désactiver le démarrage automatique de transmission"
+
+msgid "Don't stop transmission after downloads (only queue works)"
+msgstr "Ne pas arrêter transmission après les téléchargements (seule la file d'attente fonctionne)."
+
+msgid "Enable auto queue downloads"
+msgstr "Activer les téléchargements de file d'attente automatique"
+
+msgid "Enable transmission autostart"
+msgstr "Activer le démarrage automatique de transmission"
+
+msgid "Enabled SWAP when start transmission"
+msgstr "Activé SWAP au démarrage de transmission."
+
+msgid "Information transmission download"
+msgstr "Information sur les téléchargements de transmission"
+
+msgid "Not enabled SWAP when start transmission"
+msgstr "SWAP non activé au démarrage de transmission."
+
+msgid "Pause all downloads"
+msgstr "Pause de tous les téléchargements"
+
+msgid "Restart transmission"
+msgstr "Redémarrer transmission"
+
+msgid "Start transmission"
+msgstr "Démarrer transmission"
+
+msgid "Stop transmission"
+msgstr "Arrêter transmission"
+
+msgid "Stop transmission after downloads (only queue works)"
+msgstr "Arrêter transmission après les téléchargements (seule la file d'attente fonctionne)"
+
+msgid "Transmission"
+msgstr "Transmission"
+
+msgid "Transmission menu"
+msgstr "Menu Transmission"
+
+msgid "Unpause all downloads"
+msgstr "Réactiver tous les téléchargements"
+
+msgid "transmission-daemon"
+msgstr ""
+
+msgid ""
+"transmission-daemon not installed!\n"
+"Install now?"
+msgstr ""
+"transmission-daemon n'est pas installé !\n"
+"Installer maintenant ?"

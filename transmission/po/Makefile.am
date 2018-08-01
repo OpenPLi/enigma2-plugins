@@ -1,5 +1,5 @@
 PLUGIN = Transmission
 
-LANGS = lt ru 
+LANGS = fr lt ru 
 
 include $(top_srcdir)/Rules-po.mak

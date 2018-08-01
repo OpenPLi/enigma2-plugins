@@ -1,0 +1,75 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-07-31 23:06+0200\n"
+"PO-Revision-Date: 2018-08-01 20:40+0200\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.1.1\n"
+"Last-Translator: \n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Language: fr\n"
+
+msgid "Add"
+msgstr "Ajouter"
+
+msgid "Back"
+msgstr "Retour"
+
+msgid "Cancel"
+msgstr "Annuler"
+
+msgid "City"
+msgstr "Ville"
+
+msgid "City or Postal Code"
+msgstr "Ville ou code postal"
+
+#, python-format
+msgid "Current: %s"
+msgstr "Courant : %s"
+
+msgid "Delete"
+msgstr "Supprimer"
+
+msgid "Edit"
+msgstr "Éditer"
+
+msgid "Getting weather information..."
+msgstr "Obtenir des informations météorologiques....."
+
+msgid "Language"
+msgstr "Langue"
+
+msgid ""
+"No locations defined...\n"
+"Press 'Menu' to do that."
+msgstr ""
+"Aucun lieu défini......\n"
+"Pour ce faire, appuyez sur'Menu'."
+
+msgid "OK"
+msgstr "OK"
+
+msgid "Really delete this WeatherPlugin Entry?"
+msgstr "Supprimer vraiment cette entrée WeatherPlugin ?"
+
+msgid "Show Weather Forecast"
+msgstr "Afficher les prévisions météorologiques"
+
+msgid "Weather Plugin"
+msgstr "Plugin météo"
+
+msgid "WeatherPlugin: Edit Entry"
+msgstr "WeatherPlugin : Modifier l'entrée"
+
+msgid "WeatherPlugin: List of Entries"
+msgstr "WeatherPlugin : Liste d'entrées"

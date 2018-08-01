@@ -10,129 +10,131 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.7.6\n"
+"X-Generator: Poedit 2.1.1\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
 msgid "\"Werbezapper\" quick button"
-msgstr ""
+msgstr "Bouton rapide \"Werbezapper\""
 
 #, python-format
 msgid "%d min"
-msgstr ""
+msgstr "%d min"
 
 #, python-format
 msgid "%s\n"
-msgstr ""
+msgstr "%s\n"
 
 #, python-format
 msgid "- %d:%02d min"
 msgstr ""
 
 msgid "Automatically zaps back to current service after given Time"
-msgstr ""
+msgstr "Retour automatique au service en cours après une heure donnée."
 
 #, python-format
 msgid ""
 "Button Info/EPG\n"
 "Set time begin next event: %d min"
 msgstr ""
+"Bouton Info/EPG\n"
+"Heure de début du prochain événement : %d min."
 
 msgid "Cancel"
 msgstr "Annuler"
 
 #, python-format
 msgid "Channel: %s"
-msgstr ""
+msgstr "Chaîne: %s"
 
 msgid "Custom"
-msgstr ""
+msgstr "Personnaliser"
 
 msgid "Error"
-msgstr ""
+msgstr "Erreur"
 
 msgid "GREEN"
-msgstr ""
+msgstr "VERT"
 
 msgid "HELP"
-msgstr ""
+msgstr "AIDE"
 
 msgid "How many minutes to wait until zapping back?"
-msgstr ""
+msgstr "Combien de minutes d'attente avant le retour ?"
 
 msgid "Indicator mode"
-msgstr ""
+msgstr "Mode indicateur"
 
 msgid "Monitoring duration for service if not EPG"
-msgstr ""
+msgstr "Surveillance de la durée du service si ce n'est pas un EPG"
 
 #, python-format
 msgid "Monitoring: %s (%d:%02d Min)"
-msgstr ""
+msgstr "Surveillance : %s (%d:%02d Min)"
 
 #, python-format
 msgid "Monitoring: for service is not EPG (%d:%02d Min)"
-msgstr ""
+msgstr "Surveillance : pour le service n'est pas EPG (%d:%02d Min)"
 
 msgid "NONE"
-msgstr ""
+msgstr "AUCUN"
 
 msgid "Open setup"
-msgstr ""
+msgstr "Ouvrir la configuration"
 
 msgid "RADIO"
-msgstr ""
+msgstr "RADIO"
 
 msgid "Rezap"
 msgstr ""
 
 msgid "SEARCH"
-msgstr ""
+msgstr "RECHERCHER"
 
 msgid "Save"
-msgstr ""
+msgstr "Sauver"
 
 msgid "Service is not EPG"
-msgstr ""
+msgstr "Le service n'est pas EPG"
 
 msgid "Set zap time"
-msgstr ""
+msgstr "Réglage de l'heure de zap"
 
 msgid "Show \"Start / Stop monitoring\" in extensions menu"
-msgstr ""
+msgstr "Afficher \"Démarrer / Arrêter la surveillance\" dans le menu des extensions"
 
 msgid "Show indicator zap time in window"
-msgstr ""
+msgstr "Afficher l'indicateur heure de zap dans la fenêtre"
 
 msgid "Show plugin in channel selection context menu"
-msgstr ""
+msgstr "Afficher le plugin dans le menu contextuel de sélection des canaux"
 
 msgid "Slider step size (1 - 20 mins)"
-msgstr ""
+msgstr "Taille du pas du curseur (1 - 20 mins)"
 
 msgid "Start / Stop monitoring instantly"
-msgstr ""
+msgstr "Démarrage / Arrêt de la surveillance instantanément"
 
 msgid "Start monitoring"
-msgstr ""
+msgstr "Démarrer la surveillance"
 
 msgid "Stop monitoring"
-msgstr ""
+msgstr "Arrêter la surveillance"
 
 msgid "Stop timer"
-msgstr ""
+msgstr "Arrêter le chronomètre"
 
 msgid "TEXT"
-msgstr ""
+msgstr "TEXTE"
 
 msgid "TIMER"
-msgstr ""
+msgstr "TIMER"
 
 msgid "TV"
-msgstr ""
+msgstr "TV"
 
 msgid "Wakeup receiver from standby for zap timer"
-msgstr ""
+msgstr "Réveil du récepteur depuis la veille pour minuterie zap"
 
 msgid "WerbeZapper"
 msgstr ""
@@ -143,9 +145,12 @@ msgid ""
 "Monitoring ends\n"
 "%s"
 msgstr ""
+"WerbeZapper\n"
+"Fin de la surveillance\n"
+"%s"
 
 msgid "WerbeZapper Setup"
-msgstr ""
+msgstr "Configuration de WerbeZapper"
 
 #, python-format
 msgid ""
@@ -153,6 +158,9 @@ msgid ""
 "Monitoring started\n"
 "%s"
 msgstr ""
+"WerbeZapper.....\n"
+"Début de la surveillance\n"
+"%s"
 
 #, python-format
 msgid ""
@@ -160,54 +168,57 @@ msgid ""
 "Monitoring started for service is not EPG.\n"
 "Duration %d Min."
 msgstr ""
+"WerbeZapper.....\n"
+"La surveillance commencée pour le service n'est pas un EPG.\n"
+"Durée %d Min."
 
 msgid "Werbezapper"
 msgstr ""
 
 msgid "Werbezapper Start / Stop monitoring"
-msgstr ""
+msgstr "Werbezapper Démarrage / Arrêt de la surveillance"
 
 msgid "When zap to service?"
-msgstr ""
+msgstr "Quand zapper vers le service ?"
 
 msgid "X position"
-msgstr ""
+msgstr "Position en X"
 
 msgid "Y position"
-msgstr ""
+msgstr "Position en Y"
 
 msgid "YELLOW"
-msgstr ""
+msgstr "JAUNE"
 
 msgid "Z position (priority of srceen)"
-msgstr ""
+msgstr "Position Z (priorité de l’écran)"
 
 #, python-format
 msgid "Zapping back %s in %d Min"
-msgstr ""
+msgstr "Zapper de retour %s en %d Min."
 
 #, python-format
 msgid "Zapping to %s"
-msgstr ""
+msgstr "Zapper vers %s"
 
 #, python-format
 msgid "Zapping to service in %d:%02d Min"
-msgstr ""
+msgstr "Zapper vers service en %d:%02d Min."
 
 msgid "add zap timer for service"
-msgstr ""
+msgstr "ajout d'une minuterie zap pour le service"
 
 msgid "minut"
-msgstr ""
+msgstr "minute"
 
 msgid "minute"
-msgstr ""
+msgstr "minute"
 
 msgid "minutes"
-msgstr ""
+msgstr "minutes"
 
 msgid "service / time"
-msgstr ""
+msgstr "service / temps"
 
 msgid "time"
-msgstr ""
+msgstr "heure"

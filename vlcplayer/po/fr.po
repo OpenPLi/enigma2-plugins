@@ -8,44 +8,43 @@ msgstr ""
 "Project-Id-Version: VLCPlayer\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-05-11 10:58+0200\n"
-"PO-Revision-Date: 2015-05-06 16:10+0100\n"
+"PO-Revision-Date: 2018-07-31 23:26+0200\n"
 "Last-Translator: Pr2 <dummy@dummy.com>\n"
 "Language-Team: OpenPLi\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.7.6\n"
+"X-Generator: Poedit 2.1.1\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
 msgid "1 minute"
-msgstr ""
+msgstr "1 minute"
 
 msgid "10 minutes"
-msgstr ""
+msgstr "10 minutes"
 
 msgid "15 minutes"
-msgstr ""
+msgstr "15 minutes"
 
 msgid "20 minutes"
-msgstr ""
+msgstr "20 minutes"
 
 msgid "3 minutes"
-msgstr ""
+msgstr "3 minutes"
 
 msgid "30 minutes"
-msgstr ""
+msgstr "30 minutes"
 
 msgid "5 minutes"
-msgstr ""
+msgstr "5 minutes"
 
 msgid "A video streaming solution based on VLC"
 msgstr "Une solution de streaming vidéo basée sur VLC"
 
-#, fuzzy
 msgid "Audio"
-msgstr "Codec audio"
+msgstr "Audio"
 
 msgid "Audio Bitrate"
 msgstr "Taux d'échantillonnage audio"
@@ -59,34 +58,32 @@ msgstr "Codec audio"
 msgid "Audio Samplerate"
 msgstr "Echantillonnage audio"
 
-#, fuzzy
 msgid "Cache Directory"
-msgstr "Répertoire des films"
+msgstr "Répertoire Cache"
 
 msgid "Cancel"
 msgstr "Annuler"
 
 msgid "Choice of minutes to jump"
-msgstr ""
+msgstr "Choix des minutes pour sauter"
 
 msgid "Choose an action:"
-msgstr ""
+msgstr "Sélectionner une action:"
 
 msgid "DVD Device (leave empty for default)"
 msgstr "Périphérique DVD (laisser vide pour celui par défaut)"
 
 msgid "Direct play"
-msgstr ""
+msgstr "Lecture directe"
 
-#, fuzzy
 msgid "Edit VLC Server"
-msgstr "Editer serveur"
+msgstr "Modifier le serveur VLC"
 
 msgid "Enter VLC-Server as FQDN or IP-Address"
 msgstr "Entrer le serveur VLC comme nom complet (FQDN) ou adresse IP"
 
 msgid "Enter subtitles as Track or Language"
-msgstr ""
+msgstr "Entrer les sous-titres comme Piste ou Langue"
 
 #, python-format
 msgid ""
@@ -129,7 +126,7 @@ msgstr ""
 "%s"
 
 msgid "FQDN"
-msgstr ""
+msgstr "FQDN"
 
 msgid "Filelist"
 msgstr "Liste des fichiers"
@@ -138,7 +135,7 @@ msgid "HTTP Port"
 msgstr "Port HTTP"
 
 msgid "IP-Address"
-msgstr ""
+msgstr "Adresse IP"
 
 msgid ""
 "Latest compatible version VLC 2.0.7\n"
@@ -147,9 +144,14 @@ msgid ""
 "Find file c:/Program Files/VideoLAN/VLC/Lua/http/.hosts and insert your box ip (without #).\n"
 "Add shortcut to the startup of the background start VLC 'C:\\Program Files\\VideoLAN\\VLC\\vlc.exe --intf telnet --extraintf http'"
 msgstr ""
+"Dernière version compatible VLC 2.0.0.7\n"
+"Configurer VLC pour PC :\n"
+"Outils -> Préférences -> Tout -> Interface -> Interface -> Interface principale -> Sélectionner Web\n"
+"Trouvez le fichier c:/Program Files/VideoLAN/VideoLAN/VLC/Lua/http/.hosts et insérez votre boîte ip (sans #).\n"
+"Ajouter un raccourci au démarrage du démarrage de l'arrière-plan VLC 'C:\\Fichiers de programme\\VideoLAN\\VLC\\VideoLAN\\VLC.exe --intf telnet --extraintf http'."
 
 msgid "List of known profiles. Note: key info - help"
-msgstr ""
+msgstr "Liste des profils connus. Note : informations clés - aide"
 
 msgid "Movie Directory"
 msgstr "Répertoire des films"
@@ -163,6 +165,9 @@ msgid ""
 "%s\n"
 "%s"
 msgstr ""
+"Pas de ping depuis le serveur :\n"
+"%s\n"
+"%s"
 
 msgid "No previous file in this directory"
 msgstr "Aucun ancien fichier dans le répertoire"
@@ -182,7 +187,7 @@ msgid "Overscan Correction [in %(percentsign)s of Video width]"
 msgstr "Correction de l'overscan [en %(percentsign)s de la largeur vidéo]"
 
 msgid "Ping IP-Address when open Server"
-msgstr ""
+msgstr "Ping Adresse IP lors de l'ouverture du Serveur"
 
 msgid "Playlist"
 msgstr "Liste de lecture"
@@ -190,19 +195,17 @@ msgstr "Liste de lecture"
 msgid "Really delete this Server?"
 msgstr "Voulez-vous vraiment effacer ce serveur?"
 
-#, fuzzy
 msgid "Reset default"
-msgstr "Définir par défaut"
+msgstr "Réinitialiser la valeur par défaut"
 
 msgid "Save as .ts and play"
-msgstr ""
+msgstr "Enregistrer en tant que .ts et jouer"
 
-#, fuzzy
 msgid "Select VLC-Server profile"
-msgstr "Liste des profils des serveurs VLC connus"
+msgstr "Sélectionner le profil du serveur VLC"
 
 msgid "Select method?"
-msgstr ""
+msgstr "Choisir la méthode ?"
 
 msgid "Server Address"
 msgstr "Adresse du serveur"
@@ -213,16 +216,14 @@ msgstr "Nom du profil du serveur"
 msgid "Serverlist"
 msgstr "Liste des serveurs"
 
-#, fuzzy
 msgid "Set as default"
-msgstr "Définir par défaut"
+msgstr "Définir comme réglages par défaut"
 
 msgid "Subtitle overlay"
 msgstr "Superposition des sous-titres"
 
-#, fuzzy
 msgid "Subtitles"
-msgstr "Superposition des sous-titres"
+msgstr "Sous-titres"
 
 msgid "Transcode MPEG/DVD Audio"
 msgstr "Transcoder MPEG/DVD Audio"
@@ -231,16 +232,16 @@ msgid "Transcode MPEG/DVD Video"
 msgstr "Transcoder MPEG/DVD vidéo"
 
 msgid "Use saving to Cache Directory"
-msgstr ""
+msgstr "Utiliser l'enregistrement dans Cache Directory"
 
 msgid "VLC < 2.x"
 msgstr ""
 
 msgid "VLC Media List"
-msgstr ""
+msgstr "Liste des médias VLC"
 
 msgid "VLC Video Player"
-msgstr ""
+msgstr "Lecteur vidéo VLC"
 
 msgid "Video Bitrate"
 msgstr "Taux d'échantillonnage vidéo"
@@ -252,7 +253,7 @@ msgid "Video Norm"
 msgstr "Norme vidéo"
 
 msgid "Yellow subtitles"
-msgstr ""
+msgstr "Sous-titres jaunes"
 
 msgid "add server"
 msgstr "Ajouter serveur"
@@ -270,7 +271,7 @@ msgid "filter on"
 msgstr "Filtre on"
 
 msgid "languages"
-msgstr ""
+msgstr "langues"
 
 msgid "play DVD"
 msgstr "Jouer DVD"
@@ -282,4 +283,4 @@ msgid "set default"
 msgstr "Définir par défaut"
 
 msgid "tracks"
-msgstr ""
+msgstr "tracks"

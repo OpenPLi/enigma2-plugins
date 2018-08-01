@@ -10,53 +10,53 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.7.6\n"
+"X-Generator: Poedit 2.1.1\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
 #, python-format
 msgid "%d min"
-msgstr ""
+msgstr "%d min"
 
 #, python-format
 msgid "+%d min"
 msgstr ""
 
 msgid "/s"
-msgstr ""
+msgstr "/s"
 
 msgid "1 minute"
-msgstr ""
+msgstr "1 minute"
 
 msgid "12 hours"
-msgstr ""
+msgstr "12 heures"
 
 msgid "15 minutes"
-msgstr ""
+msgstr "15 minutes"
 
 msgid "2 hours"
-msgstr ""
+msgstr "2 heures"
 
 msgid "24 hours"
-msgstr ""
+msgstr "24 heures"
 
 msgid "3 hours"
-msgstr ""
+msgstr "3 heures"
 
 msgid "30 minutes"
-msgstr ""
+msgstr "30 minutes"
 
 msgid "45 minutes"
-msgstr ""
+msgstr "45 minutes"
 
 msgid "5 minutes"
-msgstr ""
+msgstr "5 minutes"
 
 msgid "6 hours"
-msgstr ""
+msgstr "6 heures"
 
 msgid "60 minutes"
-msgstr ""
+msgstr "60 minutes"
 
 msgid "Cancel"
 msgstr "Annuler"
@@ -65,32 +65,31 @@ msgid "Could not open Picture in Picture"
 msgstr "Impossible d'ouvrir Image dans Image (PiP)"
 
 msgid "Don't toggle standard infobar(s) with exit button"
-msgstr ""
+msgstr "Ne basculez pas les infobarres standard avec le bouton de sortie."
 
 msgid "EPGSelection (context menu)"
-msgstr ""
+msgstr "EPGSelection (menu contextuel)"
 
 msgid "EPGSelection/EventView (context menu)"
-msgstr ""
+msgstr "EPGSelection/EventView (menu contextuel)"
 
 msgid "EventView (context menu)"
-msgstr ""
+msgstr "EventView (menu contextuel)"
 
 msgid "Extended virtual zap"
-msgstr ""
+msgstr "Zap virtuel étendu"
 
 msgid "Extended virtual zap (PiP)"
-msgstr ""
+msgstr "Zap virtuel étendu (PiP)"
 
 msgid "Extended virtual zap config"
-msgstr ""
+msgstr "Configuration zap virtuel étendu"
 
-#, fuzzy
 msgid "Extended virtual zap setup"
-msgstr "Configuration de Virtual Zap"
+msgstr "Configuration de Virtual Zap étendu"
 
 msgid "From :"
-msgstr ""
+msgstr "De :"
 
 msgid ""
 "GUI needs a restart to apply the new settings.\n"
@@ -100,54 +99,52 @@ msgstr ""
 "Voulez-vous redémarrer l'IGU maintenant?"
 
 msgid "Goto :"
-msgstr ""
+msgstr "Aller à :"
 
 msgid "Incorrect type service for PiP!"
-msgstr ""
+msgstr "Type de service incorrect pour PiP !"
 
 msgid "No free tuner!"
-msgstr ""
+msgstr "Aucun tuner de libre"
 
 msgid "Parental control!"
-msgstr ""
+msgstr "Contrôle parental !"
 
 msgid "Remember last service"
 msgstr "Se souvenir du dernier service"
 
 msgid "Remember mode"
-msgstr ""
+msgstr "Mode Mémoriser"
 
-#, fuzzy
 msgid "Restart GUI"
-msgstr "Redémarrer l'IGU maintenant?"
+msgstr "Relancer l’IGU"
 
 msgid "Save"
-msgstr ""
+msgstr "Sauver"
 
-#, fuzzy
 msgid "Show PiP in window infobar"
-msgstr "Afficher PiP dans la barre d'info"
+msgstr "Afficher PiP dans la fenêtre de la barre d'info"
 
 msgid "Show picons"
-msgstr ""
+msgstr "Afficher les picons"
 
 msgid "Show plugin in channel selection context menu"
-msgstr ""
+msgstr "Afficher le plugin dans le menu contextuel de sélection des canaux"
 
 msgid "Show plugin in the context menu"
-msgstr ""
+msgstr "Afficher le plugin dans le menu contextuel"
 
 msgid "Show positioner movement for PiP service"
-msgstr ""
+msgstr "Afficher le mouvement du positionneur pour le service PiP"
 
 msgid "Start standard PiP after x secs (0 = disabled)"
 msgstr "Démarrer le PiP standard après x secs (0 = désactivé)"
 
 msgid "Stream"
-msgstr ""
+msgstr "Stream"
 
 msgid "Tuner"
-msgstr ""
+msgstr "Tuner"
 
 #, python-format
 msgid "Tuner %s"
@@ -160,66 +157,64 @@ msgid "Use PiP"
 msgstr "Utiliser PiP"
 
 msgid "Use plugin 'PiPServiceRelation'"
-msgstr ""
+msgstr "Utiliser le plugin 'PiPServiceRelation'."
 
 msgid "always"
-msgstr ""
+msgstr "toujours"
 
-#, fuzzy
 msgid "as plugin in event menu"
-msgstr "comme plugin dans la barre des extensions"
+msgstr "comme plugin dans le menu des évènements"
 
-#, fuzzy
 msgid "as plugin in extended menu"
-msgstr "comme plugin dans la barre des extensions"
+msgstr "comme plugin dans le menu étendu"
 
 msgid "config menu"
-msgstr ""
+msgstr "Menu de configuration"
 
 msgid "disable"
-msgstr ""
+msgstr "désactiver"
 
 msgid "disabled"
-msgstr ""
+msgstr "désactivé"
 
 msgid "exit"
-msgstr ""
+msgstr "sortir"
 
 msgid "open Event View"
-msgstr ""
+msgstr "ouvrir la vue de l'événement"
 
 msgid "open favorite list"
-msgstr ""
+msgstr "ouvrir la liste des favoris"
 
 msgid "open service list"
-msgstr ""
+msgstr "ouvrir liste service"
 
 msgid "open single EPG"
-msgstr ""
+msgstr "ouvrir l’EPG simple"
 
 msgid "show 'Extended virtual zap' for current service"
-msgstr ""
+msgstr "afficher ’zap virtuel étendu’ pour le service actuel"
 
 msgid "standard PiP"
-msgstr ""
+msgstr "PiP standard"
 
 msgid "standard PiPzap"
-msgstr ""
+msgstr "PiPzap standard"
 
 msgid "swap and standard PiP"
-msgstr ""
+msgstr "permuter et PiP standard"
 
 msgid "swap and standard PiPzap"
-msgstr ""
+msgstr "permuter et PiPzap standard"
 
 msgid "swap services"
-msgstr ""
+msgstr "Permuter les services"
 
 msgid "until standby/restart"
-msgstr ""
+msgstr "jusqu'à veille/redémarrage"
 
 msgid "wait 5 seconds"
-msgstr ""
+msgstr "attendre 5 secondes"
 
 msgid "with exit button"
 msgstr "avec le bouton EXIT"
@@ -228,10 +223,10 @@ msgid "with long OK press"
 msgstr "avec un appui long sur OK"
 
 msgid "zap to PiP service and exit"
-msgstr ""
+msgstr "zap au service PiP et sortir"
 
 msgid "zap to next channel/open service list"
-msgstr ""
+msgstr "zap vers le canal suivant/ouvrir liste des services"
 
 msgid "zap to previous channel/open service list"
-msgstr ""
+msgstr "zap vers le canal précédent/ouvrir liste des services"
