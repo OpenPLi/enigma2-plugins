@@ -1,0 +1,91 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-07-31 23:06+0200\n"
+"PO-Revision-Date: 2018-07-31 23:16+0200\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.1.1\n"
+"Last-Translator: \n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Language: fr\n"
+
+msgid "12h"
+msgstr "12h"
+
+msgid "24h"
+msgstr "24h"
+
+msgid "Always off"
+msgstr "Toujours éteinte"
+
+msgid "Brightness Level 1"
+msgstr "Niveau de luminosité 1"
+
+msgid "Brightness Level 2"
+msgstr "Niveau de luminosité 2"
+
+msgid "Brightness level"
+msgstr "Niveau de luminosité"
+
+msgid "Cancel"
+msgstr "Annuler"
+
+msgid "Change VFD display settings"
+msgstr "Modifier les paramètres d'affichage du VFD"
+
+msgid "Channelnumber in Standby Clock"
+msgstr "Numéro de canal dans l'horloge de veille"
+
+msgid "Channelnumber in Standby off"
+msgstr "Numéro de canal en veille éteint"
+
+msgid "Channelnumber/Clock in Standby Clock"
+msgstr "Numéro de Canal/Horloge dans l’horloge de veille"
+
+msgid "Clock always"
+msgstr "Horloge toujours"
+
+msgid "Control 7 segment VFD display"
+msgstr "Afficheur VFD de contrôle à 7 segments"
+
+msgid "Off"
+msgstr "Off"
+
+msgid "On/Off"
+msgstr "Marche/Arrêt"
+
+msgid "Save"
+msgstr "Sauver"
+
+msgid "Show REC-Symbol in Display"
+msgstr "Afficher le symbole REC à l'écran"
+
+msgid "Show blinking Clock on Display during recording"
+msgstr "Afficher l'horloge clignotante sur l'affichage pendant l'enregistrement"
+
+msgid "Show on VFD"
+msgstr "Afficher sur VFD"
+
+msgid "Time mode"
+msgstr "Mode heure"
+
+msgid "Update Date/Time"
+msgstr "Mise-à-jour Date/Heure"
+
+msgid "VFD Display Setup"
+msgstr "Configuration de l'affichage VFD"
+
+msgid "no"
+msgstr "non"
+
+msgid "yes"
+msgstr "oui"
