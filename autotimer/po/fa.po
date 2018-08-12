@@ -488,7 +488,7 @@ msgstr ""
 msgid "If enabled, the polling will be skipped if a recording is in progress."
 msgstr ""
 
-msgid "If the style is advanced, you will see more information about each auto timer."
+msgid "If the style is advanced, you will see more information about each auto timer. Change needs plugin restart."
 msgstr ""
 
 msgid "If this enabled, debug Autotimer write in log file."

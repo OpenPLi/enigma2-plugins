@@ -478,7 +478,7 @@ msgstr "Indien geactiveerd, dan zal het pollen worden overgeslagen indien de EPG
 msgid "If enabled, the polling will be skipped if a recording is in progress."
 msgstr "Indien geactiveerd, dan zal het pollen worden overgeslagen zolang een opname actief is."
 
-msgid "If the style is advanced, you will see more information about each auto timer."
+msgid "If the style is advanced, you will see more information about each auto timer. Change needs plugin restart."
 msgstr ""
 "Met deze optie zal er meer informatie worden getoond in het geavanceerde menu m.b.t. elke autotimer.\n"
 "U kunt kiezen uit standaard of geavanceerd."

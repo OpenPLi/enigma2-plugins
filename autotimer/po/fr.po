@@ -480,7 +480,7 @@ msgstr "Si activé, l'interrogation sera suspendue si EPGRefresh est en cours d'
 msgid "If enabled, the polling will be skipped if a recording is in progress."
 msgstr "Si activé, l'interrogation sera suspendue si un enregistrement est en cours."
 
-msgid "If the style is advanced, you will see more information about each auto timer."
+msgid "If the style is advanced, you will see more information about each auto timer. Change needs plugin restart."
 msgstr "Si le style est avancé, vous verrez plus d'information à propos de chaque programmation."
 
 msgid "If this enabled, debug Autotimer write in log file."

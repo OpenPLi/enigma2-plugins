@@ -478,7 +478,7 @@ msgstr "Если включено, то проверка совпадений б
 msgid "If enabled, the polling will be skipped if a recording is in progress."
 msgstr "Если включено, то проверка совпадений будет пропущена, если в это время идет запись."
 
-msgid "If the style is advanced, you will see more information about each auto timer."
+msgid "If the style is advanced, you will see more information about each auto timer. Change needs plugin restart."
 msgstr "Если стиль расширенный, то вы увидете больше информации о каждом автотаймере."
 
 msgid "If this enabled, debug Autotimer write in log file."

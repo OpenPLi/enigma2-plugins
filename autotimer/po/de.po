@@ -489,7 +489,7 @@ msgstr "Wenn aktivert, wird keine Abfrage während EPG-Refresh ausgeführt."
 msgid "If enabled, the polling will be skipped if a recording is in progress."
 msgstr "Wenn aktiviert, wird keine Abfrage während einer Aufnahme ausgeführt."
 
-msgid "If the style is advanced, you will see more information about each auto timer."
+msgid "If the style is advanced, you will see more information about each auto timer. Change needs plugin restart."
 msgstr "Wenn das Style \"erweitert\" ist, werden mehr Informationen zu jedem AutoTimer angezeigt."
 
 msgid "If this enabled, debug Autotimer write in log file."
