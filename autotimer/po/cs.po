@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Enigma2 Autotimer plugin\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-05-11 10:58+0200\n"
-"PO-Revision-Date: 2017-08-09 16:16+0100\n"
+"PO-Revision-Date: 2018-08-14 12:01+0200\n"
 "Last-Translator: ims <ims21@users.sourceforge.net>\n"
 "Language-Team: PLi <ims21@users.sourceforge.net>\n"
 "Language: cs_CZ\n"
@@ -17,28 +17,28 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Poedit-SourceCharset: utf-8\n"
+"X-Generator: Poedit 1.8.7.1\n"
 
-#, fuzzy
 msgid ""
 "\n"
 "\n"
 "Cancel?"
-msgstr "Zavřít"
+msgstr ""
+"\n"
+"\n"
+"Zrušit?"
 
-#, fuzzy
 msgid " (if services are enabled, bouquets are ignored)."
-msgstr " (pouze programy z přehledů)."
+msgstr " (jestliže jsou povoleny programy, přehledy jsou ignorovány)."
 
 msgid " (if services are enabled, bouquets are ignored.)."
-msgstr ""
+msgstr " (jestliže jsou povoleny programy, přehledy jsou ignorovány.)."
 
-#, fuzzy
 msgid " (only services from bouquets when use \"favorites description match\")."
-msgstr " (pouze programy z přehledů)."
+msgstr " (pouze programy z přehledů, když je použito \"V popisu oblíbených\")."
 
-#, fuzzy
 msgid " - AutoTimer "
-msgstr "Přidat AutoTimer"
+msgstr " - AutoTimer "
 
 msgid " - Version: "
 msgstr "- Verze: "
@@ -76,16 +76,16 @@ msgid "%s: %s at %s"
 msgstr "%s: %s at %s"
 
 msgid "/etc/enigma2"
-msgstr ""
+msgstr "/etc/enigma2"
 
 msgid "/tmp"
-msgstr ""
+msgstr "/tmp"
 
 msgid "A new and empty config was created. A backup of the config can be found here (/etc/enigma2/autotimer.xml_old)."
 msgstr ""
 
 msgid "Abort this Wizard."
-msgstr ""
+msgstr "Ukončit pomocníka."
 
 msgid "Activate VPS"
 msgstr "Aktivovat VPS"
@@ -136,10 +136,10 @@ msgid "Any service/recording"
 msgstr "Libovolný program/nahrávání"
 
 msgid "Any time"
-msgstr "Libovolný den"
+msgstr "Libovolný čas"
 
 msgid "AutoTimer"
-msgstr ""
+msgstr "AutoTimer"
 
 #, python-format
 msgid ""
@@ -149,9 +149,8 @@ msgstr ""
 "AutoTimer\n"
 "%d časovač(ů) přidán(o)."
 
-#, fuzzy
 msgid "AutoTimer "
-msgstr "Přidat AutoTimer"
+msgstr "AutoTimer"
 
 #, fuzzy, python-format
 msgid "AutoTimer %s FilterListEntry"
@@ -252,18 +251,16 @@ msgid "Clone selected timer"
 msgstr "Klonovat vybraný AutoTimer"
 
 msgid "Close"
-msgstr ""
+msgstr "Zavřít"
 
 msgid "Close and forget changes"
 msgstr "Zavřít a zapomenout změny"
 
-#, fuzzy
 msgid "Close and save"
-msgstr "Zavřít a zapomenout změny"
+msgstr "Zavřít a uložit"
 
-#, fuzzy
 msgid "Close without saving"
-msgstr "Opravdu zavřít bez uloženého nastavení?"
+msgstr "Zavřít bez uložení"
 
 msgid "Close, save changes and search now"
 msgstr "Zavřít, uložit změny a hledat"
@@ -280,9 +277,8 @@ msgstr "Nelze načíst konfigurační soubor!"
 msgid "Create AutoTimer"
 msgstr "Vytvořit AutoTimer"
 
-#, fuzzy
 msgid "Create a new AutoTimer."
-msgstr "Vytvořit AutoTimer"
+msgstr "Vytvořit nový AutoTimer."
 
 msgid "Create a new timer using the classic editor"
 msgstr "Vytvořit nový časovač pomocí klasického editoru"
@@ -304,7 +300,7 @@ msgid "Custom offset"
 msgstr "Vlastní posun"
 
 msgid "Date"
-msgstr ""
+msgstr "Datum"
 
 msgid "Defines where to search for duplicates (only title, short description or even extended description)"
 msgstr "Definuje, kde hledat duplicity (pouze název, krátký popis nebo i rozšířený popis)"
@@ -324,11 +320,9 @@ msgstr "Popis - krátký se rovná rozšířenému pro porovnání"
 msgid "Do not skip match when not description"
 msgstr "Nepřeskakovat, pokud není popis"
 
-#, fuzzy, python-format
+#, python-format
 msgid "Do you really want to delete %s?"
-msgstr ""
-"Oznámení\n"
-"Opravdu chcete smazat %s?"
+msgstr "Opravdu chcete smazat %s?"
 
 msgid "EPG encoding"
 msgstr "Kódování EPG"
@@ -429,6 +423,8 @@ msgid ""
 "Filters are another powerful tool when matching events. An AutoTimer can be restricted to certain Weekdays or only match an event with a text inside eg it's Description.\n"
 "Press BLUE to add a new restriction and YELLOW to remove the selected one."
 msgstr ""
+"Filtry jsou dalším účinným nástrojem při určení událostí. AutoTimer může být omezen na určité dny v týdnu nebo může odpovídat pouze události s textem uvnitř, např. jejímu popisu.\n"
+"Stisknutím MODRÉHO přidáte nové omezení a ŽLUTÉ stiskněte pro odstranění vybraného."
 
 #, python-format
 msgid ""
@@ -458,9 +454,8 @@ msgstr ""
 msgid "Frequently asked questions"
 msgstr "Často kladené otázky"
 
-#, fuzzy
 msgid "Frequently asked questions about the AutoTimer"
-msgstr "Často kladené otázky"
+msgstr "Často kladené otázky o AutoTimeru"
 
 msgid "Fri"
 msgstr "Pátek"
@@ -486,21 +481,21 @@ msgstr "Jestliže je povoleno, pak se nebude vyhledávat během práce EPGRefres
 msgid "If enabled, the polling will be skipped if a recording is in progress."
 msgstr "Jestliže je povoleno, pak se nebude vyhledávání při probíhajícím nahrávání."
 
-msgid "If the style is advanced, you will see more information about each auto timer."
-msgstr "Při rozšířeném stylu uvidíte více informací o každém automatickém časovači."
+msgid "If the style is advanced, you will see more information about each auto timer. This change will not take effect until the plugin has started again."
+msgstr "Při rozšířeném stylu uvidíte více informací o každém automatickém časovači. Tato změna projeví se až při novém spuštění pluginu."
 
 msgid "If this enabled, debug Autotimer write in log file."
 msgstr "Jestliže je povoleno, Autotimer zapisuje debug do log souboru."
 
 msgid "If this enabled, debug log print in console mode start enigma2."
-msgstr "Vytiskněte protokol ladění v režimu konzoly enigma2."
+msgstr "Vytiskne protokol ladění v režimu konzoly enigma2."
 
 msgid "If this enabled, will check the list of timers, conflicting autotimers are disabled, the duplicate autotimers will be deleted."
 msgstr "Pokud je tato volba zapnuta, zkontroluje seznam časovačů, konfliktní autotimery zakáže, duplicitní autotimery smaže."
 
 #, python-format
 msgid "If this is enabled an existing timer will also be considered recording an event if it records at least 80% of the it."
-msgstr "Při zapnutí této funkce se bude existující časovač považovat za nahrávající, jestliže nahraje aspoň 80 procent programu."
+msgstr "Při zapnutí této funkce se bude existující časovač považovat za nahrávající, jestliže nahraje aspoň 80% programu."
 
 msgid "If this is enabled, up on the MENU button in the multi-EPG will list of choices for AutoTimer."
 msgstr "Jestliže je povoleno, v menu v multi-EPG se zobrazí seznam možností pro AutoTimer."
@@ -537,6 +532,9 @@ msgid ""
 "An Event will only match this AutoTimer if it's on a specific and not denied Service (inside a Bouquet).\n"
 "Press BLUE to add a new restriction and YELLOW to remove the selected one."
 msgstr ""
+"AutoTimer je možné omezit na určité programy nebo přehledy nebo určité zakázat.\n"
+"Událost bude odpovídat tomuto AutoTimeru, pokud se jedná o konkrétní a nezakázaný program (uvnitř přehledu).\n"
+"Stiskněté MODRÉ pro přidání nového omezení a ŽLUTÉ pro odstranění vybraného."
 
 msgid "Label Timers with season, episode and title, according to the SeriesPlugin settings."
 msgstr ""
@@ -568,7 +566,7 @@ msgid "Match title: %s"
 msgstr "Hledat v názvu: %s"
 
 msgid "Max. count for saved searchlog"
-msgstr ""
+msgstr "Maximální počet ukládaných seznamů hledání"
 
 msgid "Maximum duration (in m)"
 msgstr "Maximální délka trvání (v minutách)"
@@ -626,9 +624,8 @@ msgstr "Ne po"
 msgid "Not before"
 msgstr "Ne před"
 
-#, fuzzy
 msgid "Not found xml config file!"
-msgstr "Nelze načíst konfigurační soubor!"
+msgstr "Nenalezen xml konfigurační soubor!"
 
 msgid "Number of scheduled recordings left."
 msgstr "Počet zbývajících naplánovaných nahrávek."
@@ -720,7 +717,7 @@ msgid "Preview for your AutoTimers"
 msgstr "Přehled AutoTimerů"
 
 msgid "Print shell log"
-msgstr ""
+msgstr "Tisknout shell log"
 
 msgid ""
 "Question: I found a problem with the AutoTimer, can you fix it? \n"
@@ -811,7 +808,7 @@ msgid "Search type"
 msgstr "Typ hledání"
 
 msgid "Select \"exact match\" to enforce \"Match title\" to match exactly, \"partial match\" if you only want to search for a part of the event title or \"description match\" if you only want to search for a part of the event description"
-msgstr "Zvolte \"přesně odpovídá\" pokud chcete, aby odpovídalo přesně \"název začíná na\", nebo \"částečná shoda\" , chcete-li hledat jen část z názvu nebo \"hledat v popisu\", pokud chcete hledat jen část popisu události"
+msgstr "Zvolte \"Přesně odpovídá\" pokud chcete, aby název přesně odpovídal. Vyberte \"Název začíná na\" nebo \"Částečná shoda\", chcete-li hledat jen část z názvu nebo \"Hledat v popisu\", pokud chcete hledat jen část popisu události"
 
 msgid "Select a timer to import"
 msgstr "Vyberte časovač pro import"
@@ -832,17 +829,16 @@ msgid "Select channel to record on"
 msgstr "Zvolte kanál pro nahrávání"
 
 msgid "Select the count of the last saved searchlogs (min=5 max=20)"
-msgstr ""
+msgstr "Zvolte počet posledních uložených záznamů vyhledávání (min = 5 max = 20)"
 
 msgid "Select the location to save the recording to."
 msgstr "Nastavení umístění pro ukládání nahrávek."
 
-#, fuzzy
 msgid "Select the path for autotimer_search.log"
-msgstr "Vyberte akci pro AutoTimer"
+msgstr "Zvolte umístění pro autotimer_search.log"
 
 msgid "Select the path where the autotimer_search.log should be saved"
-msgstr ""
+msgstr "Zvolte umístění kam bude ukládán autotimer_search.log"
 
 msgid "Select type of Filter"
 msgstr "Vyberte typ filtru"
@@ -888,7 +884,7 @@ msgid "Show AutoTimer FilterTxt"
 msgstr "Filtry AutoTimeru"
 
 msgid "Show Log file"
-msgstr ""
+msgstr "Zobrazení log souboru"
 
 msgid "Show in event menu"
 msgstr "Zobrazit v menu události"
@@ -897,7 +893,7 @@ msgid "Show in extension menu"
 msgstr "Zobrazit v Extension menu"
 
 msgid "Show last SearchLog"
-msgstr ""
+msgstr "Zobrazit poslední vyhledávání"
 
 msgid "Show notification on added timers"
 msgstr "Zobrazovat oznámení o přidaných časovačích"
@@ -954,14 +950,18 @@ msgid ""
 "Thank you for using the wizard. Your new AutoTimer has been added to the List.\n"
 "Please press OK to continue."
 msgstr ""
+"Děkujeme za použití průvodce. Nový AutoTimer byl přidán do seznamu.\n"
+"Pro pokračování stiskněte tlačítko OK."
 
 msgid ""
 "The Timer will not be added to the List.\n"
 "Please press OK to close this Wizard."
 msgstr ""
+"Časovač nebude přidán do seznamu.\n"
+"Stiskněte tlačítko OK pro zavření tohoto průvodce."
 
 msgid "The Timespan of an AutoTimer is the first 'advanced' attribute. If a timespan is specified an event will only match this AutoTimer if it lies inside of this timespan."
-msgstr ""
+msgstr "Časový úsek AutoTimeru je první \"pokročilý\" parametr. Je-li zadán časový úsek, událost bude odpovídat tomuto AutoTimeru pouze tehdy, leží-li v tomto časovém úseku."
 
 msgid "The autotimer file (/etc/enigma2/autotimer.xml) is corrupt and could not be loaded."
 msgstr "Soubor autotimeru (/etc/enigma2/autotimer.xml) je porušen a nemůže být načten."
@@ -981,9 +981,8 @@ msgstr ""
 msgid "The match attribute is mandatory."
 msgstr "Parametr 'Hledat v názvu' je povinný."
 
-#, fuzzy
 msgid "The title attribute is mandatory."
-msgstr "Parametr 'Hledat v názvu' je povinný."
+msgstr "Název je povinný."
 
 msgid "This is a name you can give the AutoTimer. It will be shown in the Overview and the Preview."
 msgstr "Pojmenování AutoTimeru, které bude zobrazováno v Náhledu a Přehledu."
@@ -1018,9 +1017,8 @@ msgstr "Čtvrtek"
 msgid "Thursday"
 msgstr "Čtvrtek"
 
-#, fuzzy
 msgid "Time"
-msgstr "Setřídit dle času"
+msgstr "Čas"
 
 msgid "Time in minutes to append to recording."
 msgstr "Čas v minutách přidaný k záznamu."
@@ -1032,7 +1030,7 @@ msgid "Timeout (in min)"
 msgstr "Zpoždění (v minutách)"
 
 msgid "Timer from:\n"
-msgstr ""
+msgstr "Časovač z:\n"
 
 msgid "Timer type"
 msgstr "Typ časovače"
@@ -1102,6 +1100,9 @@ msgid ""
 "\n"
 "This Wizard will help you to create a new AutoTimer by providing descriptions for common settings."
 msgstr ""
+"Vitejte.\n"
+"\n"
+"Tento pomocník Vám pomůže vytvořit nový AutoTimer poskytnutím popisů pro běžná nastavení."
 
 msgid "When supporting \"Fast Scan\" the service type is ignored. You don't need to enable this unless your Image supports \"Fast Scan\" and you are using it."
 msgstr "Při podpoře \"Fast Scan\" se ignoruje typ programu. Tuto funkci nemusíte zapínat, jestliže máte a používáte image s podporou \"Fast Scan\"."
@@ -1131,7 +1132,7 @@ msgid "Write the config file after every change which the user quits by saving."
 msgstr "Zapsat konfigurační soubor po každé změně, kterou uživatel ukončí uložením."
 
 msgid "Yes"
-msgstr ""
+msgstr "Ano"
 
 msgid "Yes and show notify"
 msgstr "Ano a zobrazit oznámení"
@@ -1143,7 +1144,7 @@ msgid "Yes, but keep timers generated by this autotimer"
 msgstr "Ano, a zachovejte všechny časovače generované tímto Autotimerem"
 
 msgid "Yes, keep them."
-msgstr ""
+msgstr "Ano, zachovat."
 
 msgid "You can control for how many days in the future timers are added. Set this to 0 to disable this feature."
 msgstr "Můžete nastavit, po kolik dnů v budoucnu jsou časovače přidávány. Nastavení 0 zakáže tuto vlastnost."
@@ -1152,11 +1153,15 @@ msgid ""
 "You can set the basic properties of an AutoTimer here.\n"
 "While 'Name' is just a human-readable name displayed in the Overview, 'Match in title' is what is looked for in the EPG."
 msgstr ""
+"Zde můžete nastavit základní vlastnosti AutoTimeru.\n"
+"Zatímco 'Popis' je název zobrazovaný v přehledu, 'Hledat v názvu' je to, co se hledá v EPG."
 
 msgid ""
 "You did not provide a valid 'Match in title' Attribute for your new AutoTimer.\n"
 "As this is a mandatory Attribute you cannot continue without doing so."
 msgstr ""
+"Nezadali jste \"Hledat v názvu\" pro Váš nový automatický časovač.\n"
+"Bez toho nemůžete pokračovat."
 
 #, python-format
 msgid ""
@@ -1171,6 +1176,9 @@ msgid ""
 "\n"
 "You can go back a step by pressing EXIT on your remote."
 msgstr ""
+"Úspěšně jste nakonfigurovali nový AutoTimer. Chcete jej přidat do seznamu?\n"
+"\n"
+"Můžete se vrátit o krok zpět stisknutím tlačítka EXIT na dálkovém ovladači."
 
 msgid ""
 "Your 'Match in title' Attribute ends with a Whitespace.\n"
@@ -1208,7 +1216,7 @@ msgid "autotimers need a match attribute"
 msgstr "Autotimery potřebují odpovídající atribut"
 
 msgid "begin searchLog from"
-msgstr ""
+msgstr "začátek vyhledávání z"
 
 msgid "case-insensitive search"
 msgstr "Nerozlišovat velká a malá písmena"
@@ -1249,9 +1257,8 @@ msgstr "Povoleno"
 msgid "exact match"
 msgstr "Přesně odpovídá"
 
-#, fuzzy
 msgid "favorites description match"
-msgstr "Hledat v popisu"
+msgstr "V popisu oblíbených"
 
 msgid "go to deep standby"
 msgstr "Přejít do hlubokého spánku"
@@ -1268,9 +1275,8 @@ msgstr "V krátkém popisu"
 msgid "in Title"
 msgstr "V názvu"
 
-#, fuzzy
 msgid "like autotimer.log"
-msgstr "Styl seznamu časovačů"
+msgstr "jako autotimer.log"
 
 msgid "mins"
 msgstr "minut"
@@ -1278,9 +1284,8 @@ msgstr "minut"
 msgid "missing parameter \"id\""
 msgstr "chybí parametr \"id\""
 
-#, fuzzy
 msgid "missing parameter \"xml\""
-msgstr "chybí parametr \"id\""
+msgstr "chybí parametr \"xml\""
 
 msgid "never"
 msgstr "Nikdy"
@@ -1300,9 +1305,8 @@ msgstr "Částečná shoda"
 msgid "record"
 msgstr "Nahrát"
 
-#, fuzzy
 msgid "scan for new Events"
-msgstr "Úpravy časovačů a hledání nových událostí"
+msgstr "hledání nových událostí"
 
 msgid "searchLog"
 msgstr ""
@@ -1310,9 +1314,8 @@ msgstr ""
 msgid "standard"
 msgstr "Standardní"
 
-#, fuzzy
 msgid "title ends with"
-msgstr "Název začíná na"
+msgstr "Název končí na"
 
 msgid "title starts with"
 msgstr "Název začíná na"

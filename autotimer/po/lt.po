@@ -488,7 +488,7 @@ msgstr "Čia įjungus, užklausa bus praleista, jei vyksta EPG atjaujinimas."
 msgid "If enabled, the polling will be skipped if a recording is in progress."
 msgstr "Čia įjungus, užklausa bus praleista, jei vyksta įrašymas."
 
-msgid "If the style is advanced, you will see more information about each auto timer."
+msgid "If the style is advanced, you will see more information about each auto timer. This change will not take effect until the plugin has started again."
 msgstr "Jei rodoma 'Išsamiai', apie kiekvieną autolaikmatį matysite daugiau informacijos."
 
 msgid "If this enabled, debug Autotimer write in log file."

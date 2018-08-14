@@ -73,7 +73,7 @@ class AutoTimerSettings(Screen, ConfigListScreen):
 			getConfigListEntry(_("Support \"Fast Scan\"?"), config.plugins.autotimer.fastscan, _("When supporting \"Fast Scan\" the service type is ignored. You don't need to enable this unless your Image supports \"Fast Scan\" and you are using it.")),
 			getConfigListEntry(_("Skip poll during records"), config.plugins.autotimer.skip_during_records, _("If enabled, the polling will be skipped if a recording is in progress.")),
 			getConfigListEntry(_("Only poll while in standby"), config.plugins.autotimer.onlyinstandby, _("When this is enabled AutoTimer will ONLY check for new events whilst in stanadby.")),
-			getConfigListEntry(_("Style auto timers list"), config.plugins.autotimer.style_autotimerslist, _("If the style is advanced, you will see more information about each auto timer.")),
+			getConfigListEntry(_("Style auto timers list"), config.plugins.autotimer.style_autotimerslist, _("If the style is advanced, you will see more information about each auto timer. This change will not take effect until the plugin has started again.")),
 			getConfigListEntry(_("Skip poll during epg refresh"), config.plugins.autotimer.skip_during_epgrefresh, _("If enabled, the polling will be skipped if EPGRefresh is currently running.")),
 			getConfigListEntry(_("Popup timeout in seconds"), config.plugins.autotimer.popup_timeout, _("If 0, the popup will remain open.")),
 			getConfigListEntry(_("Remove not existing events"), config.plugins.autotimer.check_eit_and_remove, _("Check the event id (eit) and remove the timer if there is no corresponding EPG event. Due to compatibility issues with SerienRecorder and IPRec, only timer created by AutoTimer are affected.")),

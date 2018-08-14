@@ -486,7 +486,7 @@ msgstr "Αν ενεργοποιηθεί, η ανίχνευση θα παρακα
 msgid "If enabled, the polling will be skipped if a recording is in progress."
 msgstr "Αν ενεργοποιηθεί, η ανίχνευση θα παρακάμπτεται αν υπάρχει εγγραφή σε εξέλιξη."
 
-msgid "If the style is advanced, you will see more information about each auto timer."
+msgid "If the style is advanced, you will see more information about each auto timer. This change will not take effect until the plugin has started again."
 msgstr "Αν το στυλ είναι προχωρημένο, θα δείτε περισσότερες πληροφορίες για τον κάθε αυτ. χρ/κόπτη."
 
 msgid "If this enabled, debug Autotimer write in log file."
