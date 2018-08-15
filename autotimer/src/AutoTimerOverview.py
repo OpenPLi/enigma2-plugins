@@ -135,6 +135,7 @@ class AutoTimerOverview(Screen, HelpableScreen):
 		self["InfobarActions"] = HelpableActionMap(self, "InfobarActions",
 			{
 				"showTv": (self.showFilterTxt, _("Show AutoTimer FilterTxt")),
+				"toggleTvRadio": (self.showFilterTxt, _("Show AutoTimer FilterTxt")),
 			}
 		)
 
