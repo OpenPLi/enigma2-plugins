@@ -12,7 +12,7 @@ import Components.ServiceEventTracker
 from Components.config import config
 
 # eServiceReference
-from enigma import eServiceReference
+from enigma import eServiceReference, eDVBSatelliteEquipmentControl, eTimer
 
 from . import _, NOTIFICATIONID
 
@@ -21,6 +21,8 @@ class MainPictureAdapter:
 	def __init__(self, session):
 		self.navcore = session.nav
 		self.lastCount = None
+		self.rotorTimer = eTimer()
+		self.rotorTimer.callback.append(self.waitRotorMoving)
 
 	def prepare(self):
 		if config.plugins.epgrefresh.enablemessage.value and Screens.Standby.inStandby is None:
@@ -28,7 +30,7 @@ class MainPictureAdapter:
 				Notifications.AddPopup(_("EPG refresh starts scanning channels."), MessageBox.TYPE_INFO, 4, NOTIFICATIONID)
 			except:
 				pass
-		self.previousService = self.navcore.getCurrentlyPlayingServiceReference()
+		self.previousService = self.navcore.getCurrentlyPlayingServiceOrGroup()
 		if self.previousService is None and Screens.Standby.inStandby:
 			self.previousService = eServiceReference(config.tv.lastservice.value)
 		try:
@@ -51,7 +53,8 @@ class MainPictureAdapter:
 			if self.previousService is not None:
 				self.navcore.playService(self.previousService)
 				config.tv.lastservice.value = self.previousService.toString()
-			self.navcore.stopService()
+			if not self.rotorTimer.isActive():
+				self.rotorTimer.start(1000, True)
 		else:
 			if self.previousService is not None:
 				self.navcore.playService(self.previousService)
@@ -66,3 +69,11 @@ class MainPictureAdapter:
 		except:
 			pass
 
+	def waitRotorMoving(self):
+		moving = eDVBSatelliteEquipmentControl.getInstance().isRotorMoving()
+		if moving:
+			if not self.rotorTimer.isActive():
+				self.rotorTimer.start(1000, True)
+		else:
+			self.rotorTimer.stop()
+			self.navcore.stopService()
