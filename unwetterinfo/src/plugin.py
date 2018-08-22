@@ -71,7 +71,6 @@ class HelpPictureView(Screen):
 		<screen position="center,center" size="700,320" title="Warnstufen" >
 			<eLabel position="0,0" zPosition="1" size="700,320" backgroundColor="black" />
 			<ePixmap position="80,270" zPosition="2" size="45,45" pixmap="skin_default/vkey_left.png" alphatest="on" />
-			<ePixmap position="328,270" zPosition="2" size="45,45" pixmap="skin_default/vkey_esc.png" alphatest="on" />
 			<ePixmap position="575,270" zPosition="2" size="45,45" pixmap="skin_default/vkey_right.png" alphatest="on" />
 			<widget name="picture" position="5,20" zPosition="2" size="690,225" />
 		</screen>"""
