@@ -172,7 +172,8 @@ class TranscodingSetup(ConfigListScreen, Screen):
 		if SystemInfo["HasH265Encoder"]:
 			config.plugins.transcodingsetup.vcodec.save()
 		configfile.save()
-
+		if os.path.exists("/etc/init.d/streamproxy.sh"):
+			os.system("/etc/init.d/streamproxy.sh stop && sleep 2 && /etc/init.d/streamproxy.sh start")
 		self.close()
 
 	def KeyNone(self):
