@@ -10,7 +10,7 @@ from Components.SystemInfo import SystemInfo
 from Screens.MessageBox import MessageBox
 from enigma import eTimer
 from Components.config import config, ConfigSubsection, getConfigListEntry, ConfigInteger, ConfigSelection, configfile 
-
+from Components.Console import Console
 import os
 
 config.plugins.transcodingsetup = ConfigSubsection()
@@ -172,7 +172,8 @@ class TranscodingSetup(ConfigListScreen, Screen):
 		if SystemInfo["HasH265Encoder"]:
 			config.plugins.transcodingsetup.vcodec.save()
 		configfile.save()
-
+		if os.path.exists("/etc/init.d/streamproxy.sh"):
+			Console().ePopen("/etc/init.d/streamproxy.sh stop && sleep 2 && /etc/init.d/streamproxy.sh start")
 		self.close()
 
 	def KeyNone(self):
