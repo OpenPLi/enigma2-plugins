@@ -715,7 +715,7 @@ class Blindscan(ConfigListScreen, Screen):
 			"circular right" : eDVBFrontendParametersSatellite.Polarisation_CircularRight
 		}
 
-		returnvalue = (0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+		returnvalue = (0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, 1)
 
 		if not self.prepareFrontend():
 			return False
@@ -736,7 +736,7 @@ class Blindscan(ConfigListScreen, Screen):
 					 eDVBFrontendParametersSatellite.System_DVB_S,
 					 0,
 					 0,
-					 0)
+					 0, -1, 0, 1)
 		self.tuner.tune(returnvalue)
 
 		nim = nimmanager.nim_slots[self.feid]
@@ -1458,7 +1458,7 @@ class Blindscan(ConfigListScreen, Screen):
 			text = _("Rotor: ") + self.OrbToStr(config.misc.lastrotorposition.value)
 			self["rotorstatus"].setText(text)
 		# freq, sr, pol, fec, inv, orb, sys, mod, roll, pilot
-		transponder = (tps[0][1] / 1000, tps[0][2] / 1000, tps[0][3], tps[0][4], 2, orb_pos, tps[0][5], tps[0][6], tps[0][8], tps[0][9])
+		transponder = (tps[0][1] / 1000, tps[0][2] / 1000, tps[0][3], tps[0][4], 2, orb_pos, tps[0][5], tps[0][6], tps[0][8], tps[0][9], -1, 0, 1)
 		if not self.prepareFrontend():
 			return False
 		self.tuner.tune(transponder)
