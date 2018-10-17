@@ -1,7 +1,7 @@
 # -*- coding: UTF-8 -*-
 from __future__ import print_function
 import Screens.Standby
-from enigma import eServiceReference, eServiceCenter, eTimer
+from enigma import eServiceReference, eServiceCenter, eTimer, getBestPlayableServiceReference
 from ServiceReference import ServiceReference
 from EPGRefreshTimer import epgrefreshtimer, EPGRefreshTimerEntry, checkTimespan
 from time import time
@@ -73,7 +73,8 @@ class EPGRefresh:
 			value = service.text
 			if value:
 				pos = value.rfind(':')
-				if pos != -1:
+				# don't split alternative service
+				if pos != -1 and not value.startswith('1:134:'):
 					value = value[:pos+1]
 				duration = service.get('duration', None)
 				duration = duration and int(duration)*factor
@@ -154,8 +155,9 @@ class EPGRefresh:
 	def addServices(self, fromList, toList, channelIds):
 		for scanservice in fromList:
 			service = eServiceReference(scanservice.sref)
-			if not service.valid() \
-				or (service.flags & (eServiceReference.isMarker|eServiceReference.isDirectory)):
+			if (service.flags & eServiceReference.isGroup):
+				service = getBestPlayableServiceReference(eServiceReference(scanservice.sref), eServiceReference())
+			if not service or not service.valid() or service.type != eServiceReference.idDVB or (service.flags & (eServiceReference.isMarker|eServiceReference.isDirectory)):
 				continue
 			channelID = '%08x%04x%04x' % (
 				service.getUnsignedData(4), # NAMESPACE
@@ -192,7 +194,7 @@ class EPGRefresh:
 			if list is not None:
 				while 1:
 					s = list.getNext()
-					if s.valid():
+					if s and s.valid() and s.type == eServiceReference.idDVB:
 						additionalServices.append(EPGRefreshService(s.toString(), None))
 					else:
 						break
@@ -224,6 +226,9 @@ class EPGRefresh:
 			self.readConfiguration()
 		except Exception as e:
 			print("[EPGRefresh] Error occured while reading in configuration:", e)
+		if len(self.services[0]) == 0 and len(self.services[1]) == 0:
+			self.isrunning = False
+			return
 		self.scanServices = self.generateServicelist(self.services[0], self.services[1])
 		print("[EPGRefresh] Services we're going to scan:", ', '.join([repr(x) for x in self.scanServices]))
 		self.maybeStopAdapter()
@@ -429,6 +434,7 @@ class EPGRefresh:
 			return False
 		LISTMAX = 10
 		servcounter = 0
+		remaining_time = 0
 		try:
 			servtxt = ""
 			for service in self.scanServices:
@@ -442,10 +448,19 @@ class EPGRefresh:
 					txt = ref.getServiceName().replace('\xc2\x86', '').replace('\xc2\x87', '')
 					servtxt = servtxt + str(txt) + "\n"
 				servcounter = servcounter + 1
+				delay = service.duration or config.plugins.epgrefresh.interval_seconds.value
+				if not delay:
+					delay = 20
+				remaining_time = remaining_time + delay
 			first_text = _("Stop Running EPG-refresh?\n")
 			if servcounter > LISTMAX:
-				servtxt = servtxt + _("\n%d more services.") % (servcounter)
-			session.openWithCallback(self.msgClosed, MessageBox, first_text + _("Following Services have to be scanned:") + "\n" + servtxt, MessageBox.TYPE_YESNO)
+				servtxt = servtxt + _("%d more services") % (servcounter - LISTMAX)
+			last_text = _("\nRemaining - services: %d / time: %d:%02d min") % (servcounter, remaining_time / 60, remaining_time % 60)
+			if servcounter == 0:
+				text = first_text + _("Scanning last service. Please wait.")
+			else:
+				text = first_text + _("Following Services have to be scanned:") + "\n" + servtxt + last_text
+			session.openWithCallback(self.msgClosed, MessageBox, text, MessageBox.TYPE_YESNO)
 		except:
 			print("[EPGRefresh] showPendingServices Error!")
 
