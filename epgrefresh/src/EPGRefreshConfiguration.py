@@ -28,7 +28,7 @@ from enigma import getDesktop
 from Screens.MessageBox import MessageBox
 
 
-VERSION = "1.7"
+VERSION = "1.8"
 
 weekdays = [
 	_("Monday"),
