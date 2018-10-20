@@ -24,8 +24,8 @@ msgstr ""
 msgid "Ask before changing videomode"
 msgstr "Klausti, prieš keičiant vaizdo režimą"
 
-msgid "Auto frame rate (refresh need 'multi')"
-msgstr "Automatinis kadrų dažnis (skleistinė t.b. 'multi')"
+msgid "Auto frame rate (refresh need 'multi/auto')"
+msgstr "Automatinis kadrų dažnis (skleistinė t.b. 'multi/auto')"
 
 msgid "Autoresolution"
 msgstr "Automatinė raiška"

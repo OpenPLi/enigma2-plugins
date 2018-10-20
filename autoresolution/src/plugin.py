@@ -77,7 +77,7 @@ config.plugins.autoresolution.delay_switch_mode = ConfigSelection(default = "100
 		("1000", "1 " + _("second")), ("2000", "2 " + _("seconds")), ("3000", "3 " + _("seconds")),
 		("4000", "4 " + _("seconds")), ("5000", "5 " + _("seconds")), ("6000", "6 " + _("seconds")), ("7000", "7 " + _("seconds")),
 		("8000", "8 " + _("seconds")), ("9000", "9 " + _("seconds")), ("10000", "10 " + _("seconds")),("60000", "60 " + _("seconds"))])
-config.plugins.autoresolution.mode = ConfigSelection(default = "manual", choices = [("manual", _("Manual")), ("auto", _("Auto frame rate (refresh need 'multi')"))])
+config.plugins.autoresolution.mode = ConfigSelection(default = "manual", choices = [("manual", _("Manual")), ("auto", _("Auto frame rate (refresh need 'multi/auto')"))])
 config.plugins.autoresolution.lock_timeout = ConfigSelection(default = "60", choices = [("30", "30 " + _("seconds")), ("60", "60 " + _("seconds"))])
 config.plugins.autoresolution.ask_apply_mode = ConfigYesNo(default = False)
 config.plugins.autoresolution.auto_30_60 = ConfigYesNo(default = True)
@@ -104,6 +104,32 @@ frqdic = { 23976: '24',
 		59940: '60',
 		60000: '60'}
 
+codec_data = {
+	-1: "N/A",
+	0: "MPEG2",
+	1: "AVC",
+	2: "H263",
+	3: "VC1",
+	4: "MPEG4-VC",
+	5: "VC1-SM",
+	6: "MPEG1",
+	7: "HEVC",
+	8: "VP8",
+	9: "VP9",
+	10: "XVID",
+	11: "N/A 11",
+	12: "N/A 12",
+	13: "DIVX 3.11",
+	14: "DIVX 4",
+	15: "DIVX 5",
+	16: "AVS",
+	17: "N/A 17",
+	18: "VP6",
+	19: "N/A 19",
+	20: "N/A 20",
+	21: "SPARK",
+}
+
 class AutoRes(Screen):
 	def __init__(self, session):
 		global port, modes_available
@@ -122,6 +148,7 @@ class AutoRes(Screen):
 		self.extra_mode720p60 = '720p60' in modes_available
 		self.extra_mode1080p50 = '1080p50' in modes_available
 		self.extra_mode1080p60 = '1080p60' in modes_available
+		self.extra_mode2160p50 = '2160p50' in modes_available
 		if config.av.videoport.value in config.av.videomode:
 			self.lastmode = config.av.videomode[config.av.videoport.value].value
 		config.av.videoport.addNotifier(self.defaultModeChanged)
@@ -204,6 +231,8 @@ class AutoRes(Screen):
 				preferedmodes.append('1080p50')
 			if self.extra_mode1080p60 and '1080p60' not in preferedmodes:
 				preferedmodes.append('1080p60')
+			if self.extra_mode2160p50 and '2160p50' not in preferedmodes:
+				preferedmodes.append('2160p50')
 			for mode in resolutions:
 				if have_2160p:
 					if mode[0].startswith('p2160'):
@@ -271,9 +300,8 @@ class AutoRes(Screen):
 			height = info and info.getInfo(iServiceInformation.sVideoHeight)
 			width = info and info.getInfo(iServiceInformation.sVideoWidth)
 			framerate = info and info.getInfo(iServiceInformation.sFrameRate)
-
 			if info and height != -1 and width != -1 and framerate != -1:
-				videocodec = ("MPEG2", "AVC", "MPEG1", "MPEG4-VC", "VC1", "VC1-SM", "HEVC", "N/A")[info.getInfo(iServiceInformation.sVideoType)]
+				videocodec = codec_data.get(info.getInfo(iServiceInformation.sVideoType), "N/A")
 				frate = str(framerate)[:2] #fallback?
 				if frqdic.has_key(framerate):
 					frate = frqdic[framerate]
@@ -330,7 +358,7 @@ class AutoRes(Screen):
 			return
 		if usable:
 			mode = self.lastmode
-			if "p24" in mode or "p25" in mode or "p30" in mode or (self.extra_mode1080p50 and "1080p50" in mode) or (self.extra_mode1080p60 and "1080p60" in mode) or (self.extra_mode720p60 and "720p60" in mode) or "720p50" in mode:
+			if "p24" in mode or "p25" in mode or "p30" in mode or (self.extra_mode1080p50 and "1080p50" in mode) or (self.extra_mode1080p60 and "1080p60" in mode) or (self.extra_mode720p60 and "720p60" in mode) or (self.extra_mode2160p50 and "2160p50" in mode) or "720p50" in mode:
 				try:
 					v = open('/proc/stb/video/videomode' , "w")
 					v.write("%s\n" % mode)
@@ -527,6 +555,7 @@ class AutoFrameRate(Screen):
 		self.init = False
 
 	def AutoVideoFramerateChanged(self):
+		print "[AutoFrameRate] got event evFramerateChanged"
 		if usable and config.plugins.autoresolution.mode.value == "auto":
 			if config.av.videoport.value in config.av.videomode:
 				if config.av.videomode[config.av.videoport.value].value in config.av.videorate:
@@ -542,7 +571,7 @@ class AutoFrameRate(Screen):
 						self.framerate_change_is_locked = False
 					info = service and service.info()
 					framerate = info and info.getInfo(iServiceInformation.sFrameRate)
-					if "multi" in config.av.videorate[config.av.videomode[config.av.videoport.value].value].value:
+					if config.av.videorate[config.av.videomode[config.av.videoport.value].value].value in ("multi", "auto"):
 						replace_mode = '30'
 						if config.plugins.autoresolution.auto_30_60.value:
 							replace_mode = '60'

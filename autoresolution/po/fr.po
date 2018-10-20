@@ -23,8 +23,8 @@ msgstr "Résolution alternative lorsque le mode natif n’est pas supporté"
 msgid "Ask before changing videomode"
 msgstr "Demander avant de changer le mode vidéo"
 
-msgid "Auto frame rate (refresh need 'multi')"
-msgstr "Frame rate auto (rafraîchissement doit être ‘multi’)"
+msgid "Auto frame rate (refresh need 'multi/auto')"
+msgstr "Frame rate auto (rafraîchissement doit être ‘multi/auto’)"
 
 msgid "Autoresolution"
 msgstr "Autorésolution"

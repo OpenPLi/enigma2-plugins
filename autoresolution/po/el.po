@@ -24,8 +24,8 @@ msgstr ""
 msgid "Ask before changing videomode"
 msgstr ""
 
-msgid "Auto frame rate (refresh need 'multi')"
-msgstr "Αυτόματος ρυθμός καρέ (η ανανέωση απαιτεί το 'πολλαπλό')"
+msgid "Auto frame rate (refresh need 'multi/auto')"
+msgstr "Αυτόματος ρυθμός καρέ (η ανανέωση απαιτεί το 'πολλαπλό/αυτόματο')"
 
 msgid "Autoresolution"
 msgstr "Αυτόματη Ανάλυση"
