@@ -23,7 +23,7 @@ msgstr ""
 msgid "Ask before changing videomode"
 msgstr ""
 
-msgid "Auto frame rate (refresh need 'multi')"
+msgid "Auto frame rate (refresh need 'multi/auto')"
 msgstr ""
 
 msgid "Autoresolution"

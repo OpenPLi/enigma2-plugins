@@ -22,8 +22,8 @@ msgstr "Альтернативное разрешение, если родное
 msgid "Ask before changing videomode"
 msgstr "Спросить перед изменением видеорежима"
 
-msgid "Auto frame rate (refresh need 'multi')"
-msgstr "Авто скорость частоты кадров (обновление необходимо 'multi')"
+msgid "Auto frame rate (refresh need 'multi/auto')"
+msgstr "Авто скорость частоты кадров (обновление необходимо 'multi/auto')"
 
 msgid "Autoresolution"
 msgstr "Авторазрешение"
