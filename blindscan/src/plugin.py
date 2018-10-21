@@ -1472,10 +1472,21 @@ class Blindscan(ConfigListScreen, Screen):
 		xml.append('<satellites>\n')
 		xml.append('	<sat name="%s" flags="0" position="%s">\n' % (self.sat_name.replace('&', '&amp;'), self.orb_position))
 		for tp in tp_list:
-			if tp.is_id != eDVBFrontendParametersSatellite.No_Stream_Id_Filter or tp.pls_code != 0 or tp.pls_mode != eDVBFrontendParametersSatellite.PLS_Gold:
-				xml.append('		<transponder frequency="%d" symbol_rate="%d" polarization="%d" fec_inner="%d" system="%d" modulation="%d" is_id="%d" pls_code="%d" pls_mode="%d" />\n' % (tp.frequency, tp.symbol_rate, tp.polarisation, tp.fec, tp.system, tp.modulation, tp.is_id, tp.pls_code, tp.pls_mode))
-			else:
-				xml.append('		<transponder frequency="%d" symbol_rate="%d" polarization="%d" fec_inner="%d" system="%d" modulation="%d" />\n' % (tp.frequency, tp.symbol_rate, tp.polarisation, tp.fec, tp.system, tp.modulation))
+			tmp_tp = []
+			tmp_tp.append('\t\t<transponder')
+			tmp_tp.append('frequency="%d"' % tp.frequency)
+			tmp_tp.append('symbol_rate="%d"' % tp.symbol_rate)
+			tmp_tp.append('polarization="%d"' % tp.polarisation)
+			tmp_tp.append('fec_inner="%d"' % tp.fec)
+			tmp_tp.append('system="%d"' % tp.system)
+			tmp_tp.append('modulation="%d"' % tp.modulation)
+			if tp.is_id > eDVBFrontendParametersSatellite.No_Stream_Id_Filter:
+				tmp_tp.append('is_id="%d"' % tp.is_id)
+			if tp.pls_code > 0:
+				tmp_tp.append('pls_mode="%d"' % tp.pls_mode)
+				tmp_tp.append('pls_code="%d"' % tp.pls_code)
+			tmp_tp.append('/>\n')
+			xml.append(' '.join(tmp_tp))
 		xml.append('	</sat>\n')
 		xml.append('</satellites>\n')
 		f = open(location, "w")
