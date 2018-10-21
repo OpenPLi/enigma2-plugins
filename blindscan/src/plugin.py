@@ -1233,10 +1233,10 @@ class Blindscan(ConfigListScreen, Screen):
 				blindscanStateList = []
 				for p in self.tmp_tplist:
 					print "[Blind scan] data : [%d][%d][%d][%d][%d][%d][%d][%d][%d][%d]" % (p.orbital_position, p.polarisation, p.frequency, p.symbol_rate, p.system, p.inversion, p.pilot, p.fec, p.modulation, p.modulation)
-					pol = { p.Polarisation_Horizontal : "H KHz",
-						p.Polarisation_CircularRight : "R KHz",
-						p.Polarisation_CircularLeft : "L KHz",
-						p.Polarisation_Vertical : "V KHz"}
+					pol = { p.Polarisation_Horizontal : "H",
+						p.Polarisation_CircularRight : "R",
+						p.Polarisation_CircularLeft : "L",
+						p.Polarisation_Vertical : "V"}
 					fec = { p.FEC_Auto : "Auto",
 						p.FEC_1_2 : "1/2",
 						p.FEC_2_3 : "2/3",
@@ -1254,7 +1254,7 @@ class Blindscan(ConfigListScreen, Screen):
 						p.Modulation_8PSK : "8PSK",
 						p.Modulation_16APSK : "16APSK",
 						p.Modulation_32APSK : "32APSK"}
-					tp_str = "%d%s SR%d FEC %s %s %s" % (p.frequency, pol[p.polarisation], p.symbol_rate/1000, fec[p.fec], sys[p.system], qam[p.modulation])
+					tp_str = "%g%s MHz SR%d FEC %s %s %s" % (p.frequency/1000.0, pol[p.polarisation], p.symbol_rate/1000, fec[p.fec], sys[p.system], qam[p.modulation])
 					if p.is_id > eDVBFrontendParametersSatellite.No_Stream_Id_Filter:
 						tp_str += " MIS %d" % p.is_id
 					if p.pls_code > 0:
