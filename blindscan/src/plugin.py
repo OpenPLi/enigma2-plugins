@@ -1255,6 +1255,10 @@ class Blindscan(ConfigListScreen, Screen):
 						p.Modulation_16APSK : "16APSK",
 						p.Modulation_32APSK : "32APSK"}
 					tp_str = "%d%s SR%d FEC %s %s %s" % (p.frequency, pol[p.polarisation], p.symbol_rate/1000, fec[p.fec], sys[p.system], qam[p.modulation])
+					if p.is_id > eDVBFrontendParametersSatellite.No_Stream_Id_Filter:
+						tp_str += " MIS %d" % p.is_id
+					if p.pls_code > 0:
+						tp_str += " PLS Gold %d" % p.pls_code
 					blindscanStateList.append((tp_str, p))
 
 				self.tmp_tplist = sorted(self.tmp_tplist, key=lambda tp: (tp.frequency, tp.is_id, tp.pls_mode, tp.pls_code))
