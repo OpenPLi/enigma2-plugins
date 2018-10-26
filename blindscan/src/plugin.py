@@ -1235,6 +1235,7 @@ class Blindscan(ConfigListScreen, Screen):
 
 			# Process transponders still in list
 			if self.tmp_tplist != []:
+				self.tmp_tplist = sorted(self.tmp_tplist, key=lambda tp: (tp.frequency, tp.is_id, tp.pls_mode, tp.pls_code))
 				blindscanStateList = []
 				for p in self.tmp_tplist:
 					print "[Blind scan] data : [%d][%d][%d][%d][%d][%d][%d][%d][%d][%d]" % (p.orbital_position, p.polarisation, p.frequency, p.symbol_rate, p.system, p.inversion, p.pilot, p.fec, p.modulation, p.modulation)
@@ -1266,7 +1267,6 @@ class Blindscan(ConfigListScreen, Screen):
 						tp_str += " PLS Gold %d" % p.pls_code
 					blindscanStateList.append((tp_str, p))
 
-				self.tmp_tplist = sorted(self.tmp_tplist, key=lambda tp: (tp.frequency, tp.is_id, tp.pls_mode, tp.pls_code))
 				runtime = int(time() - self.start_time)
 				xml_location = self.createSatellitesXMLfile(self.tmp_tplist, XML_BLINDSCAN_DIR)
 				if self.search_type.value == 0: # Do a service scan
