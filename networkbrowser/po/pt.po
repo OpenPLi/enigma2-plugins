@@ -6,10 +6,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxbox-enigma Portuguese\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-01-28 16:39+0100\n"
+"POT-Creation-Date: 2018-07-31 14:17+0200\n"
 "PO-Revision-Date: 2008-03-30 18:45-0000\n"
 "Last-Translator: Muaitai <muaitai@gmail.com>\n"
 "Language-Team: Muaitai <muaitai@gmail.com>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -83,16 +84,7 @@ msgstr ""
 msgid "Enter new hostname for your Receiver"
 msgstr ""
 
-msgid "Enter options:"
-msgstr ""
-
 msgid "Enter password:"
-msgstr ""
-
-msgid "Enter share directory:"
-msgstr ""
-
-msgid "Enter share name:"
 msgstr ""
 
 msgid "Enter user and password for host: "
@@ -105,6 +97,12 @@ msgid "Expert"
 msgstr ""
 
 msgid "Finished restarting your network"
+msgstr ""
+
+msgid "Host name"
+msgstr ""
+
+msgid "Host:"
 msgstr ""
 
 msgid "IP Address"
@@ -132,6 +130,9 @@ msgid "Mount options"
 msgstr ""
 
 msgid "Mount type"
+msgstr ""
+
+msgid "Mount view"
 msgstr ""
 
 msgid "MountManager"

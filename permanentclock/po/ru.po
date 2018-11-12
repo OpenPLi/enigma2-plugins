@@ -2,16 +2,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PermanentClock\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-11-26 18:22-0000\n"
+"POT-Creation-Date: 2018-05-11 10:58+0200\n"
 "PO-Revision-Date: 2015-10-04 16:21+0300\n"
 "Last-Translator: Dimitrij <Dima-73@inbox.lv>\n"
 "Language-Team: Dimitrij openPLi\n"
+"Language: ru_RU\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-SourceCharset: utf-8\n"
 "X-Poedit-Basepath: .\n"
-"Language: ru_RU\n"
 "X-Generator: Poedit 1.8.4\n"
 
 msgid "Activate permanent clock"
@@ -47,6 +47,17 @@ msgstr "Постоянные часы на экране"
 msgid "Permanent Clock Setup"
 msgstr "Постоянные часы - настройки"
 
+msgid "Save"
+msgstr "Сохранить"
+
+#, fuzzy
+msgid "Set slider"
+msgstr "Установить шаг ползунка"
+
+#, fuzzy
+msgid "Set slider step (1 - 30):"
+msgstr "Установить шаг ползунка (1 - 20):"
+
 msgid "Show analog clock"
 msgstr "Показать аналоговые часы"
 
@@ -65,11 +76,14 @@ msgstr "черно-белый"
 msgid "black-yellow"
 msgstr "черно-желтый"
 
-msgid "yellow"
-msgstr "желтый"
-
 msgid "blue"
 msgstr "синий"
+
+msgid "cyan"
+msgstr "бирюзовый"
+
+msgid "large cyan"
+msgstr "бирюзовый-большие"
 
 msgid "large white"
 msgstr "белый-большие"
@@ -83,17 +97,5 @@ msgstr "прозрачный"
 msgid "white"
 msgstr "белый"
 
-msgid "cyan"
-msgstr "бирюзовый"
-
-msgid "large cyan"
-msgstr "бирюзовый-большие"
-
-msgid "Save"
-msgstr "Сохранить"
-
-msgid "Set slider step"
-msgstr "Установить шаг ползунка"
-
-msgid "Set slider step (1 - 20):"
-msgstr "Установить шаг ползунка (1 - 20):"
+msgid "yellow"
+msgstr "желтый"

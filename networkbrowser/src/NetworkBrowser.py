@@ -14,46 +14,41 @@ from Components.config import getConfigListEntry, NoSave, config, ConfigIP
 from Components.ConfigList import ConfigList, ConfigListScreen
 from Tools.Directories import resolveFilename, SCOPE_PLUGINS, SCOPE_SKIN_IMAGE
 from Tools.LoadPixmap import LoadPixmap
-from cPickle import dump, load
-from os import path as os_path, stat, mkdir, remove
-from time import time
-from stat import ST_MTIME
-
-import netscan
 from MountManager import AutoMountManager
 from AutoMount import iAutoMount
 from MountEdit import AutoMountEdit
 from UserDialog import UserDialog
+import netscan
+import cPickle
+import os
+import stat
+import time
 
 def write_cache(cache_file, cache_data):
-	#Does a cPickle dump
-	if not os_path.isdir( os_path.dirname(cache_file) ):
+	path = os.path.dirname(cache_file)
+	if not os.path.isdir(path):
 		try:
-			mkdir( os_path.dirname(cache_file) )
-		except OSError:
-			print os_path.dirname(cache_file), '[Networkbrowser] is a file'
-	fd = open(cache_file, 'w')
-	dump(cache_data, fd, -1)
-	fd.close()
+			os.mkdir(path)
+		except Exception, ex:
+			print "ERROR creating:", path, ex
+	with open(cache_file, 'w') as fd:
+		cPickle.dump(cache_data, fd, -1)
+
+def load_cache(cache_file):
+	with open(cache_file) as fd:
+		return cPickle.load(fd)
 
 def valid_cache(cache_file, cache_ttl):
 	#See if the cache file exists and is still living
 	try:
-		mtime = stat(cache_file)[ST_MTIME]
+		mtime = os.stat(cache_file)[stat.ST_MTIME]
 	except:
 		return 0
-	curr_time = time()
+	curr_time = time.time()
 	if (curr_time - mtime) > cache_ttl:
 		return 0
 	else:
 		return 1
-
-def load_cache(cache_file):
-	#Does a cPickle load
-	fd = open(cache_file)
-	cache_data = load(fd)
-	fd.close()
-	return cache_data
 
 class NetworkDescriptor:
 	def __init__(self, name = "NetworkServer", description = ""):
@@ -160,8 +155,10 @@ class NetworkBrowser(Screen):
 		self.session.open(AutoMountManager, None, self.skin_path)
 
 	def keyYellow(self):
-		if (os_path.exists(self.cache_file) == True):
-			remove(self.cache_file)
+		try:
+			os.unlink(self.cache_file)
+		except:
+			pass
 		self.startRun()
 
 	def keyBlue(self):
@@ -225,18 +222,14 @@ class NetworkBrowser(Screen):
 		sharelist = []
 		self.sharecache_file = None
 		self.sharecache_file = '/etc/enigma2/' + hostname.strip() + '.cache' #Path to cache directory
-		if os_path.exists(self.sharecache_file):
-			print '[Networkbrowser] Loading userinfo from ',self.sharecache_file
-			try:
-				self.hostdata = load_cache(self.sharecache_file)
-				username = self.hostdata['username']
-				password = self.hostdata['password']
-			except:
-				username = "username"
-				password = "password"
-		else:
-			username = "username"
-			password = "password"
+		username = "guest"
+		password = "guest"
+		try:
+			hostdata = load_cache(self.sharecache_file)
+			username = hostdata['username']
+			password = hostdata['password']
+		except:
+			pass
 
 		if devicetype == 'unix':
 			smblist=netscan.smbShare(hostip,hostname,username,password)
@@ -380,16 +373,11 @@ class NetworkBrowser(Screen):
 				self.expanded.remove(selectedhost)
 				self.updateNetworkList()
 			else:
-				self.hostcache_file = None
 				self.hostcache_file = '/etc/enigma2/' + selectedhostname.strip() + '.cache' #Path to cache directory
-				if os_path.exists(self.hostcache_file):
-					print '[Networkbrowser] Loading userinfo cache from ',self.hostcache_file
-					try:
-						self.hostdata = load_cache(self.hostcache_file)
-						self.passwordQuestion(False)
-					except:
-						self.session.openWithCallback(self.passwordQuestion, MessageBox, (_("Do you want to enter a username and password for this host?\n") ) )
-				else:
+				try:
+					self.hostdata = load_cache(self.hostcache_file)
+					self.passwordQuestion(False)
+				except:
 					self.session.openWithCallback(self.passwordQuestion, MessageBox, (_("Do you want to enter a username and password for this host?\n") ) )
 
 		if sel[0][0] == 'nfsShare': # share entry selected
@@ -397,10 +385,9 @@ class NetworkBrowser(Screen):
 			self.openMountEdit(sel[0])
 		if sel[0][0] == 'smbShare': # share entry selected
 			print '[Networkbrowser] sel cifsShare'
-			self.hostcache_file = None
 			self.hostcache_file = '/etc/enigma2/' + selectedhostname.strip() + '.cache' #Path to cache directory
-			if os_path.exists(self.hostcache_file):
-				print '[Networkbrowser] userinfo found from ',self.sharecache_file
+			if os.path.exists(self.hostcache_file):
+				print '[Networkbrowser] userinfo found from ', self.sharecache_file
 				self.openMountEdit(sel[0])
 			else:
 				self.session.openWithCallback(self.passwordQuestion, MessageBox, (_("Do you want to enter a username and password for this host?\n") ) )
@@ -428,7 +415,7 @@ class NetworkBrowser(Screen):
 			self.go()
 
 	def openMountEdit(self, selection):
-		if selection is not None and len(selection):
+		if selection:
 			mounts = iAutoMount.getMountsList()
 			if selection[0] == 'nfsShare': # share entry selected
 				#Initialize blank mount enty
@@ -452,28 +439,24 @@ class NetworkBrowser(Screen):
 				data['mounttype'] = 'cifs'
 				data['active'] = True
 				data['ip'] = selection[2]
+				# Using the host name will only work if NetBIOS name lookup (aka "wins") is installed and actually working
+				# data['host'] = selection[1]
 				data['sharename'] = selection[3] + "@" + selection[1]
 				data['sharedir'] = selection[3]
 				data['options'] = "rw"
-				self.sharecache_file = None
 				self.sharecache_file = '/etc/enigma2/' + selection[1].strip() + '.cache' #Path to cache directory
-				if os_path.exists(self.sharecache_file):
-					print '[Networkbrowser] Loading userinfo from ',self.sharecache_file
-					try:
-						self.hostdata = load_cache(self.sharecache_file)
-						data['username'] = self.hostdata['username']
-						data['password'] = self.hostdata['password']
-					except:
-						data['username'] = "username"
-						data['password'] = "password"
-				else:
-					data['username'] = "username"
-					data['password'] = "password"
-
+				data['username'] = "guest"
+				data['password'] = "guest"
+				try:
+					hostdata = load_cache(self.sharecache_file)
+					data['username'] = hostdata['username']
+					data['password'] = hostdata['password']
+				except:
+					pass
 				for sharename, sharedata in mounts.items():
 					if sharedata['ip'] == selection[2].strip() and sharedata['sharedir'] == selection[3].strip():
 						data = sharedata
-				self.session.openWithCallback(self.MountEditClosed,AutoMountEdit, self.skin_path, data)
+				self.session.openWithCallback(self.MountEditClosed, AutoMountEdit, self.skin_path, data)
 
 	def MountEditClosed(self, returnValue = None):
 		if returnValue is None:

@@ -1,0 +1,380 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-07-15 10:29+0200\n"
+"PO-Revision-Date: 2018-05-29 21:54+0200\n"
+"Last-Translator: Massimo Bambi <maxbambi@libero.it>\n"
+"Language-Team: \n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.7.1\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid ""
+"\n"
+"\n"
+"The Editor-Funktions are beta (not full tested) !!!"
+msgstr ""
+"\n"
+"\n"
+"Le funzioni di editor sono beta (non completamente testate) !!!"
+
+msgid ""
+"\n"
+"\n"
+"You do it at your own risk!"
+msgstr ""
+"\n"
+"\n"
+"Lo stai facendo a tuo rischio!"
+
+msgid ""
+"\n"
+"The author are NOT RESPONSIBLE\n"
+"for DATA LOST OR DISORDERS !!!"
+msgstr ""
+"\n"
+"L'autore NON E' RESPONSABILE\n"
+"per PERDITE DATI O ALTRI INCONVENIENTI!!!"
+
+msgid ""
+"\n"
+"have been CHANGED! Do you want to save it?\n"
+"\n"
+"WARNING!"
+msgstr ""
+"\n"
+"E' CAMBIATO! Vuoi salvarlo? \n"
+"\n"
+"ATTENZIONE!"
+
+msgid ""
+"\n"
+"to:"
+msgstr ""
+"\n"
+"a:"
+
+msgid " Media-filter"
+msgstr "Filtro media"
+
+#, python-format
+msgid ""
+"%s \n"
+"FAILED!"
+msgstr ""
+"%s \n"
+"FALLITO!"
+
+msgid "ADDLINK"
+msgstr "ADDLINK"
+
+msgid "About"
+msgstr "Informazioni"
+
+msgid "Add directory to Bookmarks"
+msgstr "Aggiungi cartella ai Segnalibri"
+
+msgid "Auto play blu-ray file"
+msgstr "Riproduzione automatica di file blu-ray"
+
+msgid "BZ2-package:\\n"
+msgstr "Pacchetto BZ2:\\n"
+
+msgid "Bookmarks"
+msgstr "Segnalibri"
+
+msgid "Bootlogo-package:\\n"
+msgstr "Pacchetto Bootlogo:\\n"
+
+msgid "Box: "
+msgstr "Box:"
+
+msgid "COPY"
+msgstr "COPIA"
+
+msgid "Cancel"
+msgstr "Annulla"
+
+msgid "Create new directory"
+msgstr "Crea una nuova cartella"
+
+msgid "Create new directory in..."
+msgstr "Crea una nuova cartella in..."
+
+msgid "Create new file"
+msgstr "Crea un nuovo file"
+
+msgid "Create new file in..."
+msgstr "Crea un nuovo file in..."
+
+msgid "Create softlink..."
+msgstr "Crea un collegamento..."
+
+msgid "DELLINK"
+msgstr "CANCELLALINK"
+
+msgid "Delete"
+msgstr "Rimuovere"
+
+msgid "Directory name error !"
+msgstr "Errore di nome della cartella!"
+
+msgid "Disable"
+msgstr "Disabilita"
+
+msgid "Disassemble to bytecode..."
+msgstr "Disassembla al bytecode..."
+
+msgid "Do you realy want to DELETE:\n"
+msgstr "Vuoi veramente ELIMINARE:\n"
+
+msgid "Do you want to execute?\\n"
+msgstr "Vuoi eseguire?\\n"
+
+msgid "Do you want to set\n"
+msgstr "Vuoi impostare\n"
+
+msgid "Dream Explorer..."
+msgstr "Dream Explorer..."
+
+msgid "Dream-Explorer"
+msgstr "Dream-Explorer"
+
+msgid "Dream-Explorer - DELETE DIRECTORY..."
+msgstr "Dream-Explorer- ELIMINA CARTELLA..."
+
+msgid "Dream-Explorer - DELETE file..."
+msgstr "Dream-Explorer- ELIMINA FILE..."
+
+msgid "Dream-Explorer : Disassemble..."
+msgstr "Dream-Explorer : Disassembla..."
+
+msgid "Dream-Explorer : Install..."
+msgstr "Dream-Explorer : Installa..."
+
+msgid "Dream-Explorer..."
+msgstr "Dream-Explorer..."
+
+msgid ""
+"Dreambox-Explorer\n"
+"coded 2010 by Vali\n"
+"\n"
+"Support & Help on\n"
+"www.dreambox-tools.info"
+msgstr ""
+"Dreambox-Explorer\n"
+"programmato dal 2010 da Vali\n"
+"\n"
+"Supporto & Aiuto su\n"
+"www.dreambox-tools.info"
+
+msgid "Edit line "
+msgstr "Modifica la linea"
+
+msgid "Enable"
+msgstr "Abilita"
+
+msgid "Error by reading bookmarks !!!"
+msgstr "Errore nella lettura dei segnalibri!!!"
+
+msgid "Error by writing bookmarks !!!"
+msgstr "Errore nella scrittura dei segnalibri!!!"
+
+msgid "Error..."
+msgstr "Errore..."
+
+msgid "Explore your box"
+msgstr "Esplora il tuo decoder"
+
+msgid "File name error !"
+msgstr "Errore di nome file!"
+
+msgid "File-Explorer"
+msgstr "File-Explorer"
+
+msgid "GZ-package:\\n"
+msgstr "Pacchetto GZ:\\n"
+
+msgid "Incompatible MerlinMusicPlayer version!"
+msgstr "Versione di MerlinMusicPlayer non compatibile!"
+
+msgid "Info..."
+msgstr "Info..."
+
+msgid "Input"
+msgstr "Input"
+
+msgid "Install new bootlogo..."
+msgstr "Installa il nuovo bootlogo..."
+
+msgid "Install this package"
+msgstr "Installa questo pacchetto"
+
+msgid "List of Storage Devices"
+msgstr "Elenco dei dispositivi di archiviazione"
+
+msgid "MOVE"
+msgstr "SPOSTA"
+
+msgid "Make a softlink"
+msgstr "Crea un collegamento"
+
+msgid "Make a softlink..."
+msgstr "Crea un collegamento..."
+
+msgid "Move/Copy"
+msgstr "Sposta/Copia"
+
+msgid "My Bookmarks"
+msgstr "I miei segnalibri"
+
+msgid "No more picture-files."
+msgstr "Nessun altro file di immagine."
+
+msgid "No more playable files."
+msgstr "Nessun altro file multimediale."
+
+msgid "OPKG-package:\\n"
+msgstr "Pacchetto OPKG:\\n"
+
+msgid "Options:\n"
+msgstr "Opzioni:\n"
+
+msgid "Pack my bootlogo"
+msgstr "Crea pacchetto con il mio bootlogo"
+
+msgid "Parent Directory"
+msgstr "Cartella padre"
+
+msgid "Picture-Explorer"
+msgstr "Picture-Explorer"
+
+msgid "Picture-Player not available!"
+msgstr "Picture-Player non disponibile!"
+
+msgid "Preview all pictures"
+msgstr "Mostra anteprima di tutte le immagini"
+
+msgid "Pyc-Script:\\n"
+msgstr "Pyc-Script:\\n"
+
+msgid "Remove directory from Bookmarks"
+msgstr "Elimina cartella dai segnalibri"
+
+msgid "Rename"
+msgstr "Rinomina"
+
+msgid "Rename directory..."
+msgstr "Rinomina cartella..."
+
+msgid "Rename file..."
+msgstr "Rinomina file..."
+
+#, python-format
+msgid ""
+"Rename: %s \n"
+"FAILED!"
+msgstr ""
+"Rinomina: %s \n"
+"FALLITA!"
+
+msgid "Running processes: "
+msgstr "Processi in esecuzione: "
+
+msgid "Select Copy/Move location..."
+msgstr "Seleziona la posizione per la copia o lo spostamento..."
+
+msgid "Set archive mode (644)"
+msgstr "Imposta modo per file archivio (644)"
+
+msgid "Set executable mode (755)"
+msgstr "Imposta modo per file eseguibile (755)"
+
+msgid "Set first the Softlink name ..."
+msgstr "Imposta prima il nome del collegamento..."
+
+msgid "Set name"
+msgstr "Imposta il nome"
+
+msgid "Set start directory"
+msgstr "Imposta la cartella di partenza"
+
+msgid "Softlink name error !"
+msgstr "Errore nel nome del collegamento!"
+
+msgid "Sort by date (bouquet-)"
+msgstr "Ordina per data (bouquet-)"
+
+msgid "Sort by name (bouquet+)"
+msgstr "Ordina per nome (bouquet+)"
+
+msgid "Start execution"
+msgstr "Avvia l'esecuzione"
+
+msgid "This line is not editable!"
+msgstr "Questa linea non è modificabile!"
+
+msgid "Turn off the media-filter first."
+msgstr "Disattiva prima il filtro media."
+
+msgid "View this shell-script"
+msgstr "Vedi questo script di shell"
+
+msgid "WARNING! they doing now COPY or MOVE\n"
+msgstr ""
+"ATTENZIONE! adesso si effettua una COPIA O SPOSTAMENTO\n"
+" \n"
+
+msgid "WARNING! they make now a softlink from\n"
+msgstr "ATTENZIONE! adesso si effettua un collegamento da\n"
+
+msgid "Write the new softlink name here:"
+msgstr "Scrivi il nuovo nome per il collegamento:"
+
+msgid "[All files] "
+msgstr "[Tutti i file]"
+
+msgid "[Media files] "
+msgstr "[file multimediali]"
+
+msgid "[sort by Date] "
+msgstr "[ordina per data]"
+
+msgid "[sort by Name] "
+msgstr "[ordina per nome]"
+
+msgid "last-mod "
+msgstr "ultima-mod"
+
+msgid "loading... "
+msgstr "caricamento..."
+
+msgid "mode "
+msgstr "modalità"
+
+msgid "mvi-Explorer"
+msgstr "mvi-Explorer"
+
+msgid "old:  "
+msgstr "vecchio:"
+
+msgid "read error"
+msgstr "errore di lettura"
+
+msgid "ready..."
+msgstr "pronto..."
+
+msgid "size "
+msgstr "dimensione"
+
+msgid "wait..."
+msgstr "attendi..."

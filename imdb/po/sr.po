@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Enigma 2 IMDb Plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-27 18:11+0100\n"
+"POT-Creation-Date: 2018-05-11 10:58+0200\n"
 "PO-Revision-Date: 2009-09-10 20:30+0100\n"
 "Last-Translator: maja <jovanovic@gmx.ch>\n"
 "Language-Team: veselin & majevica CRNABERZA <jovanovic@gmx.ch>\n"
@@ -21,6 +21,12 @@ msgstr ""
 msgid " as "
 msgstr "kao "
 
+msgid "Add 'Search event in IMDb' to further option EPG menu."
+msgstr ""
+
+msgid "Add 'Search in IMDb' to movie list menu for selected video."
+msgstr ""
+
 msgid "Ambiguous results"
 msgstr "Dvosmisleni rezultati"
 
@@ -33,6 +39,9 @@ msgstr "Uloge: "
 msgid "Channel Selection"
 msgstr "Izbor kanala"
 
+msgid "Content:"
+msgstr ""
+
 msgid "Could't get Eventname"
 msgstr "Nema naziva dešavanja"
 
@@ -43,8 +52,7 @@ msgstr "Detalji"
 msgid "Downloading Movie Poster: %s..."
 msgstr "Skidam poster filma: %s..."
 
-msgid ""
-"Enable this to be able to access the IMDb from within the plugin browser."
+msgid "Enable this to be able to access the IMDb from within the plugin browser."
 msgstr ""
 
 msgid "Enter search"
@@ -59,6 +67,16 @@ msgstr "Izlaz"
 msgid "Extra Info"
 msgstr "Dodatni info"
 
+#, fuzzy
+msgid "Extra Info\n"
+msgstr "Dodatni info"
+
+msgid "Genre:"
+msgstr ""
+
+msgid "Genre: "
+msgstr ""
+
 msgid "IMDb Details"
 msgstr ""
 
@@ -71,19 +89,42 @@ msgstr "Skidanje sa IMDb završeno"
 msgid "IMDb Download failed"
 msgstr "Skidanje sa IMDb neuspešno"
 
+#, fuzzy
+msgid "IMDb Menu"
+msgstr "IMDb dodatak"
+
 msgid "IMDb Plugin"
 msgstr "IMDb dodatak"
 
 msgid "IMDb Re-Download completed"
 msgstr "Ponovno skidanje sa IMDb završeno"
 
+#, fuzzy
+msgid "IMDb Save-Download completed"
+msgstr "Ponovno skidanje sa IMDb završeno"
+
 msgid "IMDb Setup"
+msgstr ""
+
+msgid ""
+"IMDb can not get Movie Information, to\n"
+" write .jpg and .txt-file!"
+msgstr ""
+
+msgid ""
+"IMDb can not get Movie Information, to\n"
+" write .txt-file!"
 msgstr ""
 
 msgid "IMDb query failed!"
 msgstr "IMDb upit neuspešan!"
 
-msgid "Lookup"
+#, fuzzy
+msgid "IMDb search"
+msgstr "Nema IMDb pogodaka."
+
+#, fuzzy
+msgid "Lookup IMDb"
 msgstr "Pregledanje"
 
 msgid "No IMDb match."
@@ -104,8 +145,11 @@ msgstr ""
 msgid "Please select the matching entry"
 msgstr "Molim,izaberite odgovarajući unos"
 
-#, python-format
-msgid "Query IMDb: %s..."
+msgid "Production Countries:"
+msgstr ""
+
+#, fuzzy, python-format
+msgid "Query IMDb: %s"
 msgstr "Upit IMDb: %s..."
 
 msgid "Query details from the Internet Movie Database"
@@ -115,7 +159,28 @@ msgstr "Upit za detalje sa Internet filmske baze podataka"
 msgid "Re-Query IMDb: %s..."
 msgstr "Ponovni upit IMDb: %s..."
 
+msgid "Release Date:"
+msgstr ""
+
+msgid "Runtime:"
+msgstr ""
+
+msgid "Save current Details as .html for offline using"
+msgstr ""
+
+msgid "Save current Details as .txt"
+msgstr ""
+
+msgid "Save current Poster and Details as .txt"
+msgstr ""
+
 msgid "Search Trailer"
+msgstr ""
+
+msgid "Search event in IMDb"
+msgstr ""
+
+msgid "Search in IMDb"
 msgstr ""
 
 msgid "Select from EPG"
@@ -124,16 +189,28 @@ msgstr ""
 msgid "Setup"
 msgstr ""
 
+msgid "Show in further option EPG menu"
+msgstr ""
+
+msgid "Show in movie list menu"
+msgstr ""
+
 msgid "Show in plugin browser"
 msgstr ""
 
 msgid "The Internet Movie Database"
 msgstr "Internet filmska baza podataka"
 
+msgid "This option allows you add words/phrases for IMDb to ignore when searching. please seperaate with a comma"
+msgstr ""
+
 msgid "Title Menu"
 msgstr "Meni naslova"
 
 msgid "User Rating"
+msgstr ""
+
+msgid "Words / phrases to ignore "
 msgstr ""
 
 msgid "no user rating yet"

@@ -7,16 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxbox-enigma 0.0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-01-28 16:39+0100\n"
+"POT-Creation-Date: 2018-07-31 14:17+0200\n"
 "PO-Revision-Date: 2012-12-16 12:05+0100\n"
 "Last-Translator: Magnus Nilsson <mag_nilsson@hotmail.com>\n"
 "Language-Team: WeeGull <weegull@hotmail.com>\n"
+"Language: sv_SE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SourceCharset: iso-8859-15\n"
-"Language: sv_SE\n"
 "X-Generator: Poedit 1.5.4\n"
 
 msgid ""
@@ -91,17 +91,8 @@ msgstr "Ange IP att skanna..."
 msgid "Enter new hostname for your Receiver"
 msgstr "Ange nytt värdnamn för din mottagare"
 
-msgid "Enter options:"
-msgstr "Ange optioner:"
-
 msgid "Enter password:"
 msgstr "Ange lösenord:"
-
-msgid "Enter share directory:"
-msgstr "Ange delat bibliotek:"
-
-msgid "Enter share name:"
-msgstr "Ange delningsnamn:"
 
 msgid "Enter user and password for host: "
 msgstr "Ange användare och lösenord för värd: "
@@ -114,6 +105,12 @@ msgstr "Expert"
 
 msgid "Finished restarting your network"
 msgstr "Klar med omstart av ditt nätverk"
+
+msgid "Host name"
+msgstr ""
+
+msgid "Host:"
+msgstr ""
 
 msgid "IP Address"
 msgstr "IP Adress"
@@ -140,6 +137,10 @@ msgid "Mount options"
 msgstr "Monteringsoptioner"
 
 msgid "Mount type"
+msgstr "Monteringstyp"
+
+#, fuzzy
+msgid "Mount view"
 msgstr "Monteringstyp"
 
 msgid "MountManager"
@@ -262,15 +263,3 @@ msgstr "Din nätverksmontering har uppdaterats."
 
 msgid "use as HDD replacement"
 msgstr "använd som HDD ersättning"
-
-#~ msgid "Delete selected mount"
-#~ msgstr "Ta bort vald montering"
-
-#~ msgid "Rescan network"
-#~ msgstr "Omsök nätverk"
-
-#~ msgid "Retrieving network information. Please wait..."
-#~ msgstr "Hämtar nätinformationssystem. Vänligen vänta..."
-
-#~ msgid "Use domain/username for windows domains as username!"
-#~ msgstr "Använd domän/användarnamn för Windows domän som användarnamn!"

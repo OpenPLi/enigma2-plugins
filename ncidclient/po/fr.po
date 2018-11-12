@@ -1,0 +1,229 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-08-01 20:50+0200\n"
+"PO-Revision-Date: 2018-07-31 20:15+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.1.1\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#. TRANSLATORS: this is a window title.
+msgid "Add entry to phonebook"
+msgstr "Ajouter une entrée au répertoire téléphonique"
+
+msgid "Areacode to add to calls without one (if necessary)"
+msgstr "Code régional à ajouter aux appels qui n’en n’ont pas (si nécessaire)"
+
+msgid "Austria"
+msgstr "Autriche"
+
+msgid "Automatically add new Caller to PhoneBook"
+msgstr "Ajout automatique d'un nouvel appelant au répertoire téléphonique"
+
+msgid "Call monitoring"
+msgstr "Surveillance des appels"
+
+#. TRANSLATORS: keep it short, this is a button
+msgid "Cancel"
+msgstr "Annuler"
+
+msgid "Compact Flash"
+msgstr "Compact Flash"
+
+msgid "Connected to NCID Server"
+msgstr "Connecté au serveur NCID"
+
+#, python-format
+msgid ""
+"Connecting to NCID Server failed\n"
+" (%s)\n"
+"retrying..."
+msgstr ""
+"Échec de la connexion à NCID Serveur\n"
+" (%s)\n"
+"réessayer....."
+
+msgid "Connecting to NCID Server..."
+msgstr "Connexion au serveur NCID....."
+
+#, python-format
+msgid ""
+"Connection to NCID Server lost\n"
+" (%s)\n"
+"retrying..."
+msgstr ""
+"Connexion au serveur NCID perdue\n"
+" (%s)\n"
+"réessayer....."
+
+msgid "Country"
+msgstr "Pays"
+
+#. TRANSLATORS: keep it short, this is a button
+msgid "Delete"
+msgstr "Supprimer"
+
+msgid "Display Fon calls on screen"
+msgstr "Afficher les appels Fon à l'écran"
+
+#, python-format
+msgid ""
+"Do you really want to delete entry for\n"
+"\n"
+"%(number)s\n"
+"\n"
+"%(name)s?"
+msgstr ""
+"Souhaitez-vous vraiment supprimer l'entrée pour\n"
+"\n"
+"%(number)s\n"
+"\n"
+"%(name)s?"
+
+#. TRANSLATORS: keep it short, this is a button
+msgid "Edit"
+msgstr "Éditer"
+
+msgid "Enter Search Terms"
+msgstr "Rechercher"
+
+msgid "Entry incomplete."
+msgstr "Entrée incomplète."
+
+msgid "Flash"
+msgstr "Flash"
+
+msgid "France"
+msgstr "France"
+
+msgid "Germany"
+msgstr "Allemagne"
+
+#, python-format
+msgid ""
+"Incoming Call on %s from\n"
+"---------------------------------------------\n"
+"%s\n"
+"%s\n"
+"---------------------------------------------"
+msgstr ""
+"Appel entrant sur %s à partir de\n"
+"---------------------------------------------\n"
+"%s\n"
+"%s\n"
+"---------------------------------------------"
+
+msgid "Italy"
+msgstr "Italie"
+
+msgid "Last 10 calls:\n"
+msgstr "Les 10 derniers appels :\n"
+
+msgid "Media directory"
+msgstr "Répertoire des médias"
+
+#. TRANSLATORS: this is a window title.
+msgid "NCID Client - Setup"
+msgstr "NCID Client - Configuration"
+
+msgid "NCID server (Name or IP)"
+msgstr "Serveur NCID (Nom ou IP)"
+
+msgid "NCID server listening port (1-65535)"
+msgstr "Port d'écoute du serveur NCID (1-65535)"
+
+msgid "Name"
+msgstr "Nom"
+
+msgid "Network mount"
+msgstr "Monter réseau"
+
+#. TRANSLATORS: keep it short, this is a button
+msgid "New"
+msgstr "Nouvelle"
+
+msgid "No entry selected"
+msgstr "Aucune entrée sélectionnée"
+
+msgid "No phonebook"
+msgstr "Pas d'annuaire téléphonique"
+
+msgid "Number"
+msgstr "Nombre"
+
+#. TRANSLATORS: keep it short, this is a button
+msgid "OK"
+msgstr "OK"
+
+msgid "PhoneBook Location"
+msgstr "Emplacement du répertoire téléphonique"
+
+#. TRANSLATORS: this is a window title.
+msgid "Phonebook"
+msgstr "Annuaire téléphonique"
+
+msgid "Plugin not active"
+msgstr "Plugin non actif"
+
+msgid "Reverse Lookup Caller ID (select country below)"
+msgstr "Recherche inversée Identification de l'appelant (sélectionnez le pays ci-dessous)"
+
+#. TRANSLATORS: keep it short, this is a button
+msgid "Search"
+msgstr "Recherche"
+
+msgid "Search phonebook"
+msgstr "Rechercher dans le répertoire téléphonique"
+
+msgid "Show after Standby"
+msgstr "Afficher après la mise en veille"
+
+msgid "Show connection information popups"
+msgstr "Afficher les popups d'informations de connexion"
+
+msgid "Strip Leading 0"
+msgstr "Supprimer les 0 frontaux"
+
+msgid "Switzerland"
+msgstr "Suisse"
+
+msgid "The Netherlands"
+msgstr "Pays-Bas"
+
+msgid "Timeout for Call Notifications (seconds)"
+msgstr "Délai d'attente pour les notifications d'appel (secondes)"
+
+msgid "UNKNOWN"
+msgstr "INCONNU"
+
+msgid "USB Device"
+msgstr "Périphérique USB"
+
+msgid "Use internal PhoneBook"
+msgstr "Utiliser le répertoire téléphonique interne"
+
+msgid "no calls"
+msgstr "pas d'appel"
+
+msgid "number suppressed"
+msgstr "nombre supprimé"
+
+msgid "show as list"
+msgstr "afficher sous forme de liste"
+
+msgid "show each call"
+msgstr "Afficher chaque appel"
+
+msgid "show nothing"
+msgstr "Ne rien afficher"

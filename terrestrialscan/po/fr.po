@@ -1,0 +1,118 @@
+# French translations for enigma2-oe-alliance-plugins package.
+# Copyright (C) 2016 THE enigma2-oe-alliance-plugins'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the enigma2-oe-alliance-plugins package.
+# Automatically generated, 2016.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: enigma2-oe-alliance-plugins 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-07-31 23:06+0200\n"
+"PO-Revision-Date: 2018-07-31 23:08+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 2.1.1\n"
+
+msgid "Automatic"
+msgstr "Automatique"
+
+msgid "Band"
+msgstr "Bande"
+
+msgid "Cannot free NIM because a recording is in progress"
+msgstr "Impossible de libérer NIM car un enregistrement est en cours"
+
+msgid "Cannot get frontend"
+msgstr "Impossible d'obtenir le frontend"
+
+msgid "Cannot get the NIM"
+msgstr "Impossible d'obtenir le NIM"
+
+msgid "Cannot retrieve Resource Manager instance"
+msgstr "Impossible de récupérer l'instance Resource Manager"
+
+msgid "Clear before scan"
+msgstr "Effacer avant d'analyser"
+
+msgid "Exit"
+msgstr "Sortir"
+
+#, python-format
+msgid "Found %d unique transponder(s)"
+msgstr "Trouvé %d transpondeur(s) unique(s)"
+
+msgid "If you select \"yes\" all stored terrestrial channels will be deleted before starting the current search."
+msgstr "Si vous sélectionnez \"oui\", toutes les chaînes terrestres mémorisées seront effacées avant de lancer la nouvelle recherche."
+
+msgid "If you select \"yes\" the scan will only save channels that are not encrypted; \"no\" will find encrypted and non-encrypted channels."
+msgstr "Si vous sélectionnez \"oui\", l'analyse n'enregistrera que les chaînes qui ne sont pas cryptées; \"non\" trouvera les chaînes cryptées et non cryptées."
+
+msgid "Most transmitters in European countries only have TV channels in the UHF band."
+msgstr "La plupart des émetteurs dans les pays européens n'ont que des canaux de télévision dans la bande UHF."
+
+msgid "Network ID"
+msgstr "ID Réseau"
+
+msgid "No frequencies to search"
+msgstr "Pas de fréquences à rechercher"
+
+msgid "No terrestrial tuner found"
+msgstr "Aucun tuner terrestre trouvé"
+
+msgid "No valid NIM found for terrestrial"
+msgstr "Aucun MNI valide n'a été trouvé pour le système terrestre."
+
+msgid "Only free scan"
+msgstr "Analyser uniquement les chaînes en clair"
+
+#, python-format
+msgid "Reading channel %s"
+msgstr "Canal de lecture %s"
+
+msgid "Really close without saving settings?"
+msgstr "Voulez-vous vraiment fermer sans sauvegarder?"
+
+msgid "Scan"
+msgstr "Analyser"
+
+#, python-format
+msgid "Scanning channel %s"
+msgstr "Canal de balayage %s"
+
+msgid "Scanning for active transponders"
+msgstr "Recherche de transpondeurs actifs"
+
+msgid "Select \"0\" to search all networks, or enter the network ID of the provider you wish to search."
+msgstr "Sélectionnez \"0\" pour rechercher tous les réseaux ou entrez l'ID réseau du fournisseur que vous souhaitez rechercher."
+
+msgid "Select a tuner that is configured for terrestrial scans. \"Automatic\" will pick the highest spec available tuner."
+msgstr "Sélectionnez un tuner configuré pour les balayages terrestres. \"Automatique\" choisira l'accordeur le plus haut de gamme disponible."
+
+msgid "Selected tuner is not cofigured"
+msgstr "Le tuner sélectionné n'est pas configuré."
+
+msgid "Starting scanner"
+msgstr "Démarrage du scanner"
+
+msgid "Starting search..."
+msgstr "Lancer la recherche....."
+
+msgid "Terrestrial Scan"
+msgstr "Scan Terrestre"
+
+msgid "TerrestrialScan"
+msgstr "ScanTerrestre"
+
+msgid "Tuner"
+msgstr "Tuner"
+
+msgid "UHF Europe"
+msgstr "UHF Europe"
+
+msgid "UHF/VHF Europe"
+msgstr "UHF/VHF Europe"

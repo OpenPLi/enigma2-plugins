@@ -1,3 +1,3 @@
 PLUGIN = PluginHider
-LANGS = de it
+LANGS = de fr it lt 
 include $(top_srcdir)/Rules-po.mak

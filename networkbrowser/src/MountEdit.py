@@ -10,9 +10,19 @@ from Components.config import config, ConfigIP, NoSave, ConfigText, ConfigEnable
 from Components.ConfigList import ConfigListScreen
 from Components.Pixmap import Pixmap
 from Components.ActionMap import ActionMap, NumberActionMap
-from enigma import ePoint
 from AutoMount import iAutoMount, AutoMount
-from re import sub as re_sub
+from Components.Sources.Boolean import Boolean
+
+# helper function to convert ips from a sring to a list of ints
+def convertIP(ip):
+	try:
+		strIP = ip.split('.')
+		ip = []
+		for x in strIP:
+			ip.append(int(x))
+	except:
+		ip = [0,0,0,0]
+	return ip
 
 class AutoMountEdit(Screen, ConfigListScreen):
 	skin = """
@@ -34,7 +44,7 @@ class AutoMountEdit(Screen, ConfigListScreen):
 		self.mountinfo = mountinfo
 		if self.mountinfo is None:
 			#Initialize blank mount enty
-			self.mountinfo = { 'isMounted': False, 'active': False, 'ip': False, 'sharename': False, 'sharedir': False, 'username': False, 'password': False, 'mounttype' : False, 'options' : False, 'hdd_replacement' : False }
+			self.mountinfo = { 'isMounted': False, 'active': False, 'ip': False, 'host': False, 'sharename': False, 'sharedir': False, 'username': False, 'password': False, 'mounttype' : False, 'options' : False, 'hdd_replacement' : False }
 
 		self.applyConfigRef = None
 		self.updateConfigRef = None
@@ -49,35 +59,19 @@ class AutoMountEdit(Screen, ConfigListScreen):
 			"red": self.close,
 		}, -2)
 
-		self["VirtualKB"] = ActionMap(["VirtualKeyboardActions"],
-		{
-			"showVirtualKeyboard": self.KeyText,
-		}, -2)
-
 		self.list = []
 		ConfigListScreen.__init__(self, self.list,session = self.session)
 		self.createSetup()
 		self.onLayoutFinish.append(self.layoutFinished)
 		# Initialize Buttons
-		self["VKeyIcon"] = Pixmap()
+		self["VKeyIcon"] = Boolean(False)
 		self["HelpWindow"] = Pixmap()
+		self["HelpWindow"].hide()
 		self["introduction"] = StaticText(_("Press OK to activate the settings."))
 		self["key_red"] = StaticText(_("Cancel"))
 
-
 	def layoutFinished(self):
 		self.setTitle(_("Mounts editor"))
-		self["VKeyIcon"].hide()
-		self["VirtualKB"].setEnabled(False)
-		self["HelpWindow"].hide()
-
-	# helper function to convert ips from a sring to a list of ints
-	def convertIP(self, ip):
-		strIP = ip.split('.')
-		ip = []
-		for x in strIP:
-			ip.append(int(x))
-		return ip
 
 	def exit(self):
 		self.close()
@@ -87,6 +81,7 @@ class AutoMountEdit(Screen, ConfigListScreen):
 		self.mounttypeEntry = None
 		self.activeEntry = None
 		self.ipEntry = None
+		self.hostEntry = None
 		self.sharedirEntry = None
 		self.optionsEntry = None
 		self.usernameEntry = None
@@ -98,13 +93,16 @@ class AutoMountEdit(Screen, ConfigListScreen):
 		if not mounttype:
 			mounttype = "nfs"
 		active = self.mountinfo.get('active', 'True') == 'True'
-		if self.mountinfo.has_key('ip'):
-			if self.mountinfo['ip'] is False:
-				ip = [192, 168, 0, 0]
-			else:
-				ip = self.convertIP(self.mountinfo['ip'])
-		else:
-			ip = [192, 168, 0, 0]
+		# Not that "host" takes precedence over "ip"
+		host = self.mountinfo.get('host', "")
+		if not host:
+			# In case host is something funky like False or None
+			host = ''
+		try:
+			ip = convertIP(self.mountinfo['ip'])
+		except Exception, ex:
+			print "[NWB] Invalid IP", ex
+			ip = [0, 0, 0, 0]
 		sharename = self.mountinfo.get('sharename', "Sharename")
 		sharedir = self.mountinfo.get('sharedir', "/media/hdd")
 		username = self.mountinfo.get('username', "")
@@ -130,6 +128,7 @@ class AutoMountEdit(Screen, ConfigListScreen):
 
 		self.activeConfigEntry = NoSave(ConfigEnableDisable(default = active))
 		self.ipConfigEntry = NoSave(ConfigIP(default = ip))
+		self.hostConfigEntry = NoSave(ConfigText(default = host, visible_width = 50, fixed_size = False))
 		self.sharenameConfigEntry = NoSave(ConfigText(default = sharename, visible_width = 50, fixed_size = False))
 		self.sharedirConfigEntry = NoSave(ConfigText(default = sharedir, visible_width = 50, fixed_size = False))
 		self.optionsConfigEntry = NoSave(ConfigText(default = defaultOptions, visible_width = 50, fixed_size = False))
@@ -150,6 +149,8 @@ class AutoMountEdit(Screen, ConfigListScreen):
 		self.list.append(self.mounttypeEntry)
 		self.ipEntry = getConfigListEntry(_("Server IP"), self.ipConfigEntry)
 		self.list.append(self.ipEntry)
+		self.hostEntry = getConfigListEntry(_("Host name"), self.hostConfigEntry)
+		self.list.append(self.hostEntry)
 		self.sharedirEntry = getConfigListEntry(_("Server share"), self.sharedirConfigEntry)
 		self.list.append(self.sharedirEntry)
 		self.hdd_replacementEntry = getConfigListEntry(_("use as HDD replacement"), self.hdd_replacementConfigEntry)
@@ -169,42 +170,10 @@ class AutoMountEdit(Screen, ConfigListScreen):
 
 		self["config"].list = self.list
 		self["config"].l.setList(self.list)
-		self["config"].onSelectionChanged.append(self.selectionChanged)
 
 	def newConfig(self):
 		if self["config"].getCurrent() == self.mounttypeEntry:
 			self.createSetup()
-
-	def KeyText(self):
-		print "Green Pressed"
-		if self["config"].getCurrent() == self.sharenameEntry:
-			self.session.openWithCallback(lambda x : self.VirtualKeyBoardCallback(x, 'sharename'), VirtualKeyBoard, title = (_("Enter share name:")), text = self.sharenameConfigEntry.value)
-		if self["config"].getCurrent() == self.sharedirEntry:
-			self.session.openWithCallback(lambda x : self.VirtualKeyBoardCallback(x, 'sharedir'), VirtualKeyBoard, title = (_("Enter share directory:")), text = self.sharedirConfigEntry.value)
-		if self["config"].getCurrent() == self.optionsEntry:
-			self.session.openWithCallback(lambda x : self.VirtualKeyBoardCallback(x, 'options'), VirtualKeyBoard, title = (_("Enter options:")), text = self.optionsConfigEntry.value)
-		if self["config"].getCurrent() == self.usernameEntry:
-			self.session.openWithCallback(lambda x : self.VirtualKeyBoardCallback(x, 'username'), VirtualKeyBoard, title = (_("Enter username:")), text = self.usernameConfigEntry.value)
-		if self["config"].getCurrent() == self.passwordEntry:
-			self.session.openWithCallback(lambda x : self.VirtualKeyBoardCallback(x, 'password'), VirtualKeyBoard, title = (_("Enter password:")), text = self.passwordConfigEntry.value)
-
-	def VirtualKeyBoardCallback(self, callback = None, entry = None):
-		if callback is not None and len(callback) and entry is not None and len(entry):
-			if entry == 'sharename':
-				self.sharenameConfigEntry.setValue(callback)
-				self["config"].invalidate(self.sharenameConfigEntry)
-			if entry == 'sharedir':
-				self.sharedirConfigEntry.setValue(callback)
-				self["config"].invalidate(self.sharedirConfigEntry)
-			if entry == 'options':
-				self.optionsConfigEntry.setValue(callback)
-				self["config"].invalidate(self.optionsConfigEntry)                                
-			if entry == 'username':
-				self.usernameConfigEntry.setValue(callback)
-				self["config"].invalidate(self.usernameConfigEntry)
-			if entry == 'password':
-				self.passwordConfigEntry.setValue(callback)
-				self["config"].invalidate(self.passwordConfigEntry)
 
 	def keyLeft(self):
 		ConfigListScreen.keyLeft(self)
@@ -214,26 +183,13 @@ class AutoMountEdit(Screen, ConfigListScreen):
 		ConfigListScreen.keyRight(self)
 		self.newConfig()
 
-	def selectionChanged(self):
-		current = self["config"].getCurrent()
-		if current == self.activeEntry or current == self.ipEntry or current == self.mounttypeEntry or current == self.hdd_replacementEntry:
-			self["VKeyIcon"].hide()
-			self["VirtualKB"].setEnabled(False)
-		else:
-			helpwindowpos = self["HelpWindow"].getPosition()
-			if current[1].help_window.instance is not None:
-				current[1].help_window.instance.move(ePoint(helpwindowpos[0],helpwindowpos[1]))
-				self["VKeyIcon"].show()
-				self["VirtualKB"].setEnabled(True)
-
 	def ok(self):
 		current = self["config"].getCurrent()
 		if current == self.sharenameEntry or current == self.sharedirEntry or current == self.sharedirEntry or current == self.optionsEntry or current == self.usernameEntry or current == self.passwordEntry:
 			if current[1].help_window.instance is not None:
 				current[1].help_window.instance.hide()
 		sharename = self.sharenameConfigEntry.value
-
-		if self.mounts.has_key(sharename) is True:
+		if self.mounts.has_key(sharename):
 			self.session.openWithCallback(self.updateConfig, MessageBox, (_("A mount entry with this name already exists!\nUpdate existing entry and continue?\n") ) )
 		else:
 			self.session.openWithCallback(self.applyConfig, MessageBox, (_("Are you sure you want to save this network mount?\n\n") ) )
@@ -247,6 +203,7 @@ class AutoMountEdit(Screen, ConfigListScreen):
 				sharedir = self.sharedirConfigEntry.value
 			iAutoMount.setMountsAttribute(self.sharenameConfigEntry.value, "sharename", self.sharenameConfigEntry.value)
 			iAutoMount.setMountsAttribute(self.sharenameConfigEntry.value, "active", self.activeConfigEntry.value)
+			iAutoMount.setMountsAttribute(self.sharenameConfigEntry.value, "host", self.hostConfigEntry.getText())
 			iAutoMount.setMountsAttribute(self.sharenameConfigEntry.value, "ip", self.ipConfigEntry.getText())
 			iAutoMount.setMountsAttribute(self.sharenameConfigEntry.value, "sharedir", sharedir)
 			iAutoMount.setMountsAttribute(self.sharenameConfigEntry.value, "mounttype", self.mounttypeConfigEntry.value)
@@ -280,9 +237,9 @@ class AutoMountEdit(Screen, ConfigListScreen):
 			data = { 'isMounted': False, 'active': False, 'ip': False, 'sharename': False, 'sharedir': False, \
 					'username': False, 'password': False, 'mounttype' : False, 'options' : False, 'hdd_replacement' : False }
 			data['active'] = self.activeConfigEntry.value
+			data['host'] = self.hostConfigEntry.getText()
 			data['ip'] = self.ipConfigEntry.getText()
-			data['sharename'] = re_sub("\W", "", self.sharenameConfigEntry.value)
-			# "\W" matches everything that is "not numbers, letters, or underscores",where the alphabet defaults to ASCII.
+			data['sharename'] = self.sharenameConfigEntry.value.strip()
 			if self.sharedirConfigEntry.value.startswith("/"):
 				data['sharedir'] = self.sharedirConfigEntry.value[1:]
 			else:

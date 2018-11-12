@@ -3,16 +3,16 @@
 from __init__ import _
 
 from Plugins.Plugin import PluginDescriptor
-from NetworkBrowser import NetworkBrowser
 from Components.Network import iNetwork
-from MountManager import AutoMountManager
 
 plugin_path = ""
 
 def NetworkBrowserMain(session, iface = None, **kwargs):
+	from NetworkBrowser import NetworkBrowser
 	session.open(NetworkBrowser,iface, plugin_path)
 
 def MountManagerMain(session, iface = None, **kwargs):
+	from MountManager import AutoMountManager
 	session.open(AutoMountManager, iface, plugin_path)
 
 def NetworkBrowserCallFunction(iface):
@@ -44,4 +44,3 @@ def Plugins(path, **kwargs):
 				"menuEntryName": lambda x: _("Mount again"),
 				"menuEntryDescription": lambda x: _("Attempt to recover lost mounts (in background)")+"\n"})
 	]
-

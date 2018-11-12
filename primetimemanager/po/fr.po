@@ -1,0 +1,408 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-08-01 20:50+0200\n"
+"PO-Revision-Date: 2018-07-31 20:42+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.1.1\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#, python-format
+msgid ""
+"\n"
+"Timer '%s' disabled!"
+msgstr ""
+"\n"
+"Programmation ‘%s’ désactivée!"
+
+#, python-format
+msgid ""
+"\n"
+"Total number of conflicts: %s"
+msgstr ""
+"\n"
+"Nombre total de conflits : %s"
+
+msgid "\"View live\" event only in Prime Time:"
+msgstr "\"Voir l'événement en direct\" uniquement aux heures de grande écoute :"
+
+msgid "\"View live\" type:"
+msgstr "Type de \"Voir en direct\" :"
+
+#, python-format
+msgid "%d min"
+msgstr "%d min"
+
+#, python-format
+msgid "%s prime time | events today (%s) | Bouquet: %s"
+msgstr "%s prime time | événements aujourd'hui (%s) | Bouquet : %s"
+
+#, python-format
+msgid "%s prime time | events today +%s (%s) | Bouquet: %s"
+msgstr "%s prime time | événements aujourd'hui +%s (%s) | Bouquet : %s"
+
+msgid "'Timer Edit' key menu - show conflict timer:"
+msgstr "Menu de la touche 'Timer Edit' - afficher la minuterie de conflit :"
+
+msgid ": only notification"
+msgstr ": seulement la notification"
+
+msgid "Accept"
+msgstr "Accepter"
+
+msgid "Accept the events as shown"
+msgstr "Acceptez les événements tels qu'ils sont montrés."
+
+msgid "Accept this solution?"
+msgstr "Accepter cette solution ?"
+
+msgid "Add Timer"
+msgstr "Ajouter un Timer"
+
+msgid "Add timer"
+msgstr "Programmer"
+
+#, python-format
+msgid "Add timer for \"%s\"?"
+msgstr "Ajouter une minuterie pour \"%s\" ?"
+
+msgid "Add/remove event to or from favourites"
+msgstr "Ajouter/supprimer un événement à ou à partir des favoris"
+
+msgid "Any timers"
+msgstr "Toutes les minuteries"
+
+msgid "Begin time"
+msgstr "Heure début"
+
+msgid "Bouquet"
+msgstr "Bouquet"
+
+msgid "Bouquet:"
+msgstr "Favoris:"
+
+#, python-format
+msgid "Bouquet: %s - EPG Selection Multi"
+msgstr "Bouquet : %s - EPG Sélection Multi"
+
+msgid "Cancel"
+msgstr "Annuler"
+
+msgid "Cansel"
+msgstr "Annuler"
+
+msgid "Channel not in services list"
+msgstr "Chaîne absente de la liste services"
+
+msgid "Check conflicts timers after \"Accept\":"
+msgstr "Vérifier les temporisations de conflits après \"Accepter\" :"
+
+msgid "Check conflicts timers after exit:"
+msgstr "Vérifier les minuteries de conflits après la sortie :"
+
+msgid "Checking with conflict detection enabled for"
+msgstr "Vérification avec la détection de conflit activée pour"
+
+msgid "Close"
+msgstr "Fermer"
+
+msgid "Conflict detected!"
+msgstr "Conflit détecté !"
+
+msgid "Conflict not resolved!"
+msgstr "Conflit non résolu!"
+
+msgid "Conflicts were solved"
+msgstr "Les conflits ont été résolus."
+
+msgid "Current timer"
+msgstr "Minuterie actuelle"
+
+msgid "Date"
+msgstr "Date"
+
+msgid "Disable"
+msgstr "Supprimer"
+
+#, python-format
+msgid "Do you really want to delete the timer for \"%s\"?"
+msgstr "Voulez-vous vraiment supprimer la minuterie pour \"%s\" ?"
+
+msgid "Do you want to switch the prime time? Currently selected favorites will be lost!"
+msgstr "Voulez-vous changer l'heure de grande écoute ? Les favoris actuellement sélectionnés seront perdus !"
+
+msgid "Duration"
+msgstr "Longueur"
+
+msgid "Edit"
+msgstr "Éditer"
+
+msgid "Enable"
+msgstr "Activé"
+
+msgid "End time"
+msgstr "Heure de fin"
+
+msgid "Exit"
+msgstr "Quitter"
+
+msgid "Exit from Multi EPG on selected service:"
+msgstr "Quitter Multi EPG sur le service sélectionné :"
+
+msgid "Exit plugin"
+msgstr "Quitter le plugin"
+
+msgid "Exit plugin or open Multi EPG"
+msgstr "Quitter le plugin ou ouvrir Multi EPG"
+
+msgid "Favorite"
+msgstr "Favoris"
+
+msgid "Favorite will be deleted!"
+msgstr "Les favoris seront supprimés !"
+
+msgid "Ignore conflict"
+msgstr "Ignorer les conflits"
+
+msgid "Lookup in TMBD"
+msgstr "Rechecher dans TMDB"
+
+msgid "Manage prime time events"
+msgstr "Gérer les événements aux heures de grande écoute"
+
+msgid "Multi EPG"
+msgstr "Multi EPG"
+
+msgid "No EPG data"
+msgstr "Pas de données EPG"
+
+msgid "No conflicts found"
+msgstr "Aucun conflit trouvé"
+
+msgid "OK"
+msgstr "OK"
+
+msgid "Open the settings screen"
+msgstr "Ouvrir l'écran des paramètres"
+
+msgid "Open timers list"
+msgstr "Liste des minuteries ouvertes"
+
+msgid "Primary"
+msgstr "Primaire"
+
+msgid "Primary Prime Time:"
+msgstr "Heure de pointe primaire :"
+
+msgid "Prime Time Manager"
+msgstr ""
+
+msgid "Prime Time Manager "
+msgstr ""
+
+msgid "Prime Time Manager Conflict Results"
+msgstr "Prime Time Manager Résultats de conflit"
+
+msgid "Prime Time Manager in E-menu:"
+msgstr "Prime Time Manager dans E-menu:"
+
+msgid "Prime Time Manager setup"
+msgstr "Prime Time Manager configuration"
+
+msgid ""
+"Prime Time Manager:\n"
+"\n"
+"Prime time has already begun or is over. Starting with tomorrow's events."
+msgstr ""
+"Prime Time Manager :\n"
+"\n"
+"L'heure de grande écoute a déjà commencé ou est terminée. A commencer par les événements de demain."
+
+#, python-format
+msgid ""
+"Prime Time Manager:\n"
+"\n"
+"Sorry, but a timer for %s can't be set because there are conflicts with other timers."
+msgstr ""
+"Prime Time Manager :\n"
+"\n"
+"Désolé, mais une minuterie pour %s ne peut pas être réglée parce qu'il y a des conflits avec d'autres minuteries."
+
+msgid ""
+"Prime Time Manager:\n"
+"\n"
+"Sorry, but turning a repeated timer into a view live event isn't supported."
+msgstr ""
+"Prime Time Manager :\n"
+"\n"
+"Désolé, mais la transformation d'une minuterie répétée en vue d'un événement en direct n'est pas prise en charge."
+
+msgid "Prime Time Settings"
+msgstr "Réglages de l'heure de grande écoute"
+
+msgid "Recording is in progress.\n"
+msgstr "L'enregistrement est en cours.\n"
+
+msgid "Red Button function:"
+msgstr "Fonction du bouton rouge :"
+
+msgid "Remove favorite on timer deletion:"
+msgstr "Supprimer le favori lors de la suppression de la minuterie :"
+
+msgid "Remove timer"
+msgstr "Retirer programmation"
+
+msgid "Scroll selected list to the left"
+msgstr "Faites défiler la liste sélectionnée vers la gauche."
+
+msgid "Scroll selected list to the right"
+msgstr "Faire défiler la liste sélectionnée vers la droite"
+
+msgid "Search in IMDb"
+msgstr "Rechercher dans IMDb"
+
+msgid "Secondary"
+msgstr "Secondaire"
+
+msgid "Secondary Prime Time:"
+msgstr "Prime Time secondaire:"
+
+msgid "Select action"
+msgstr "Choisir une action"
+
+msgid "Selected favorites"
+msgstr "Sélection de favoris"
+
+#, python-format
+msgid "Set 'view live' type '%s'?"
+msgstr "Définir 'view live' type '%s'?"
+
+msgid "Set Timer"
+msgstr "Régler le minuteur"
+
+msgid "Set day"
+msgstr "Régler le jour"
+
+msgid "Set or remove a timer"
+msgstr "Réglage ou suppression d'une minuterie"
+
+msgid "Settings of the plugin"
+msgstr "Paramètres du plugin"
+
+msgid "Show duration or end time:"
+msgstr "Afficher la durée ou l'heure de fin :"
+
+msgid "Show event information"
+msgstr "Afficher les informations sur l'événement"
+
+msgid "Show warning before set 'Ignore conflict'"
+msgstr "Voir la mise en garde avant de définir « Ignorer les conflits »"
+
+msgid "Single EPG"
+msgstr "EPG Unique"
+
+msgid "Solution"
+msgstr "Solution"
+
+msgid ""
+"Sorri!\n"
+"Conflict timers in timers.xml detected!\n"
+"Please recheck it!"
+msgstr ""
+"Désolé!\n"
+"Conflit de minuteurs dans timers.xml détecté !\n"
+"S'il vous plaît, revérifiez-le !"
+
+msgid "Switch betw. favourite/prime time list"
+msgstr "Changer entre les listes de temps favori/principal."
+
+msgid "Switch to the next bouquet"
+msgstr "Passer au bouquet suivant"
+
+msgid "Switch to the next day"
+msgstr "Passer au jour suivant"
+
+msgid "Switch to the previous bouquet"
+msgstr "Passer au bouquet précédent"
+
+msgid "Switch to the previous day"
+msgstr "Passer à la journée précédente"
+
+#, python-format
+msgid ""
+"This event \"%s\" has already begun or will begin in the next few minutes.\n"
+"We can not add it to your list of favorites, as will instantly record.\n"
+"Just want to switch to this service?"
+msgstr ""
+"Cet événement \"%s\" a déjà commencé ou commencera dans les prochaines minutes.\n"
+"Nous ne pouvons pas l'ajouter à votre liste de favoris, comme l'enregistrement instantané.\n"
+"Vous voulez simplement passer à ce service ?"
+
+msgid "This event will be an instant record.\n"
+msgstr "Cet événement sera un record instantané.\n"
+
+#, python-format
+msgid "This is a repeated timer! Do you really want to delete the repeated timer for \"%s\"?"
+msgstr "C'est une minuterie répétée ! Voulez-vous vraiment effacer la minuterie répétée pour \"%s\" ?"
+
+msgid "Timer sanity error"
+msgstr "Erreur de programmation"
+
+msgid "Timers list"
+msgstr "Liste des programmations (timers)"
+
+msgid "Toggle \"view live\" type"
+msgstr "Bascule du type \"événement en direct\""
+
+msgid "Toggle marker for a \"view live\" event"
+msgstr "Marqueur à bascule pour un \"événement en direct\""
+
+msgid "Toggle primary/secondary prime time"
+msgstr "Commutation de l'heure de grande écoute primaire/secondaire"
+
+msgid "Try to solve conflicts and show result"
+msgstr "Essayez de résoudre les conflits et de montrer les résultats."
+
+msgid "Use AutoTimer plugin instead remove favorites:"
+msgstr "Utilisez le plugin AutoTimer à la place pour supprimer les favoris :"
+
+msgid ""
+"Warning!\n"
+"This is an option for advanced users.\n"
+"Really disable timer conflict detection?"
+msgstr ""
+"Mise en garde !\n"
+"Il s’agit d’une option pour les utilisateurs avancés.\n"
+"Vraiment désactiver la détection des conflits de programmation?"
+
+msgid "Zap"
+msgstr "Zap"
+
+msgid "Zap + Record"
+msgstr "Zapper et Enregistrer"
+
+msgid "and never ask this again"
+msgstr "et ne plus demander à nouveau"
+
+msgid "exit plugin"
+msgstr "Quitter le plugin"
+
+msgid "no"
+msgstr "non"
+
+msgid "open Multi EPG"
+msgstr "ouvrir Multi EPG"
+
+msgid "yes"
+msgstr "oui"

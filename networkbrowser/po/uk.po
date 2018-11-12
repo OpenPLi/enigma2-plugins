@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-08-21 09:29+0200\n"
+"POT-Creation-Date: 2018-07-31 14:17+0200\n"
 "PO-Revision-Date: 2016-07-18 12:32+0200\n"
 "Last-Translator: satdreamgr\n"
 "Language-Team: sety <tim1065@mail.ru>\n"
@@ -11,8 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.8.8\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
-"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 msgid ""
 "A mount entry with this name already exists!\n"
@@ -86,17 +85,8 @@ msgstr "Введіть IP, щоб почати сканувати ..."
 msgid "Enter new hostname for your Receiver"
 msgstr "Введіть нове ім'я мережі для Вашого ресивера"
 
-msgid "Enter options:"
-msgstr "Введіть параметри:"
-
 msgid "Enter password:"
 msgstr "Введіть пароль:"
-
-msgid "Enter share directory:"
-msgstr "Введіть каталог загального ресурсу:"
-
-msgid "Enter share name:"
-msgstr "Введіть ім'я загального ресурсу:"
 
 msgid "Enter user and password for host: "
 msgstr "Введіть ім'я користувача і пароль для хоста: "
@@ -109,6 +99,12 @@ msgstr "Експерт"
 
 msgid "Finished restarting your network"
 msgstr "Перезавантаження Вашої мережі завершено"
+
+msgid "Host name"
+msgstr ""
+
+msgid "Host:"
+msgstr ""
 
 msgid "IP Address"
 msgstr "IP адреса"
@@ -161,9 +157,6 @@ msgstr "Менеджер монтування"
 
 msgid "NFS share"
 msgstr "через NFS"
-
-msgid "Network Browser"
-msgstr "Оглядач мережі"
 
 msgid "NetworkBrowser"
 msgstr "Оглядач мережі"
@@ -250,8 +243,7 @@ msgid "View, edit or delete mountpoints on your Receiver."
 msgstr "Перегляд, редагування та видалення точок монтування Вашого ресивера."
 
 msgid "View, edit or delete usernames and passwords for your network."
-msgstr ""
-"Перегляд, редагування та видалення користувачів і паролів у Вашій мережі."
+msgstr "Перегляд, редагування та видалення користувачів і паролів у Вашій мережі."
 
 msgid "Your network mount has been activated."
 msgstr "Ваше мережеве монтування було активовано."

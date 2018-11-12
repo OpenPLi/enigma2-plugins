@@ -315,13 +315,29 @@ def RemoteTimer__init__(self, session, timer):
 		RemoteTimernewConfig(self)
 
 def RemoteTimerConfig(self):
+	def addPBoxtoList(pb, boxes):
+		pbName = str(pb.name.value)
+		for avahiName in boxes:
+			item = avahiName.split('//')[1].split('.')[0]
+			if pbName == item:
+				return True
+		return False
+
+	from enigma import getPeerStreamingBoxes
+	boxes = getPeerStreamingBoxes()
+
 	self.Locations = []
 	self.entryguilist = []
 	self.entryguilist.append(("0",_("No"),None))
 	index = 1
 	for c in config.plugins.Partnerbox.Entries:
-		self.entryguilist.append((str(index),str(c.name.value),c))
-		index = index + 1
+		if config.plugins.Partnerbox.avahicompare.value:
+			if addPBoxtoList(c, boxes):
+				self.entryguilist.append((str(index),str(c.name.value),c))
+				index = index + 1
+		else:
+			self.entryguilist.append((str(index),str(c.name.value),c))
+			index = index + 1
 	if config.plugins.Partnerbox.enabledefaultpartnerboxintimeredit.value and index > 1:
 		default = "1"
 	else:

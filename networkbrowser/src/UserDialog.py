@@ -10,41 +10,24 @@ from Components.ConfigList import ConfigListScreen
 from Components.Sources.StaticText import StaticText
 from Components.Pixmap import Pixmap
 from Components.ActionMap import ActionMap, NumberActionMap
-from enigma import ePoint
-from cPickle import dump, load
-from os import path as os_path, unlink, stat, mkdir
-from time import time
-from stat import ST_MTIME
+from Components.Sources.Boolean import Boolean
+import enigma
+import os
+import cPickle
 
 def write_cache(cache_file, cache_data):
-	#Does a cPickle dump
-	if not os_path.isdir( os_path.dirname(cache_file) ):
+	path = os.path.dirname(cache_file)
+	if not os.path.isdir(path):
 		try:
-			mkdir( os_path.dirname(cache_file) )
-		except OSError:
-			print os_path.dirname(cache_file), 'is a file'
-	fd = open(cache_file, 'w')
-	dump(cache_data, fd, -1)
-	fd.close()
-
-def valid_cache(cache_file, cache_ttl):
-	#See if the cache file exists and is still living
-	try:
-		mtime = stat(cache_file)[ST_MTIME]
-	except:
-		return 0
-	curr_time = time()
-	if (curr_time - mtime) > cache_ttl:
-		return 0
-	else:
-		return 1
+			os.mkdir(path)
+		except Exception, ex:
+			print "ERROR creating:", path, ex
+	with open(cache_file, 'w') as fd:
+		cPickle.dump(cache_data, fd, -1)
 
 def load_cache(cache_file):
-	#Does a cPickle load
-	fd = open(cache_file)
-	cache_data = load(fd)
-	fd.close()
-	return cache_data
+	with open(cache_file) as fd:
+		return cPickle.load(fd)
 
 class UserDialog(Screen, ConfigListScreen):
 	skin = """
@@ -62,8 +45,7 @@ class UserDialog(Screen, ConfigListScreen):
 		self.skin_path = plugin_path
 		self.session = session
 		Screen.__init__(self, self.session)
-		self.hostinfo = hostinfo
-		self.cache_ttl = 86400 #600 is default, 0 disables, Seconds cache is considered valid
+		self.hostinfo = str(hostinfo)
 		self.cache_file = '/etc/enigma2/' + self.hostinfo + '.cache' #Path to cache directory
 		self.createConfig()
 
@@ -85,7 +67,7 @@ class UserDialog(Screen, ConfigListScreen):
 		self.createSetup()
 		self.onLayoutFinish.append(self.layoutFinished)
 		# Initialize Buttons
-		self["VKeyIcon"] = Pixmap()
+		self["VKeyIcon"] = Boolean(False)
 		self["HelpWindow"] = Pixmap()
 		self["introduction"] = StaticText(_("Press OK to save settings."))
 		self["key_red"] = StaticText(_("Close"))
@@ -93,33 +75,16 @@ class UserDialog(Screen, ConfigListScreen):
 	def layoutFinished(self):
 		self.setTitle(_("Enter user and password for host: ")+ self.hostinfo)
 
-	# helper function to convert ips from a sring to a list of ints
-	def convertIP(self, ip):
-		strIP = ip.split('.')
-		ip = []
-		for x in strIP:
-			ip.append(int(x))
-		return ip
-
 	def createConfig(self):
-		self.usernameEntry = None
-		self.passwordEntry = None
-		self.username = None
-		self.password = None
-
-		if os_path.exists(self.cache_file):
-			print 'Loading user cache from ',self.cache_file
-			try:
-				self.hostdata = load_cache(self.cache_file)
-				username = self.hostdata['username']
-				password = self.hostdata['password']
-			except:
-				username = "username"
-				password = "password"
-		else:
-			username = "username"
-			password = "password"
-
+		username = 'guest'
+		password = 'guest'
+		print 'Loading user cache from ', self.cache_file
+		try:
+			hostdata = load_cache(self.cache_file)
+			username = hostdata['username']
+			password = hostdata['password']
+		except:
+			pass
 		self.username = NoSave(ConfigText(default = username, visible_width = 50, fixed_size = False))
 		self.password = NoSave(ConfigPassword(default = password, visible_width = 50, fixed_size = False))
 
@@ -129,7 +94,6 @@ class UserDialog(Screen, ConfigListScreen):
 		self.list.append(self.usernameEntry)
 		self.passwordEntry = getConfigListEntry(_("Password"), self.password)
 		self.list.append(self.passwordEntry)
-
 		self["config"].list = self.list
 		self["config"].l.setList(self.list)
 		self["config"].onSelectionChanged.append(self.selectionChanged)
@@ -163,11 +127,10 @@ class UserDialog(Screen, ConfigListScreen):
 		current = self["config"].getCurrent()
 		helpwindowpos = self["HelpWindow"].getPosition()
 		if current[1].help_window.instance is not None:
-			current[1].help_window.instance.move(ePoint(helpwindowpos[0],helpwindowpos[1]))
+			current[1].help_window.instance.move(enigma.ePoint(helpwindowpos[0], helpwindowpos[1]))
 
 	def ok(self):
 		current = self["config"].getCurrent()
-		self.hostdata = { 'username': self.username.value, 'password': self.password.value }
-		write_cache(self.cache_file, self.hostdata)
+		hostdata = { 'username': self.username.value, 'password': self.password.value }
+		write_cache(self.cache_file, hostdata)
 		self.close(True)
-

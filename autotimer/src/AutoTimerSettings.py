@@ -15,6 +15,9 @@ from enigma import getDesktop
 # Configuration
 from Components.config import config, getConfigListEntry
 
+from Components.Sources.Boolean import Boolean
+from Components.Pixmap import Pixmap
+
 HD = False
 if getDesktop(0).size().width() >= 1280:
 	HD = True
@@ -28,6 +31,9 @@ class AutoTimerSettings(Screen, ConfigListScreen):
 			<widget name="config" position="5,50" size="740,475" scrollbarMode="showOnDemand" />
 			<ePixmap pixmap="skin_default/div-h.png" position="0,530" zPosition="1" size="750,2" />
 			<widget source="help" render="Label" position="5,535" size="740,110" font="Regular;21" />
+			<widget source="VKeyIcon" render="Pixmap" pixmap="skin_default/buttons/key_text.png" position="5,597" zPosition="10" size="52,38" transparent="1" alphatest="on">
+				<convert type="ConditionalShowHide"/>
+			</widget>
 		</screen>"""
 	else:
 		skin = """<screen name="AutoTimerSettings" title="AutoTimer Settings" position="center,center" size="565,430">
@@ -38,6 +44,9 @@ class AutoTimerSettings(Screen, ConfigListScreen):
 			<widget name="config" position="5,50" size="555,300" scrollbarMode="showOnDemand" />
 			<ePixmap pixmap="skin_default/div-h.png" position="0,355" zPosition="1" size="565,2" />
 			<widget source="help" render="Label" position="5,360" size="555,70" font="Regular;20" />
+			<widget source="VKeyIcon" render="Pixmap" pixmap="skin_default/buttons/key_text.png" position="5,405" zPosition="10" size="35,25" transparent="1" alphatest="on">
+				<convert type="ConditionalShowHide"/>
+			</widget>
 		</screen>"""
 
 	def __init__(self, session):
@@ -73,7 +82,7 @@ class AutoTimerSettings(Screen, ConfigListScreen):
 			getConfigListEntry(_("Support \"Fast Scan\"?"), config.plugins.autotimer.fastscan, _("When supporting \"Fast Scan\" the service type is ignored. You don't need to enable this unless your Image supports \"Fast Scan\" and you are using it.")),
 			getConfigListEntry(_("Skip poll during records"), config.plugins.autotimer.skip_during_records, _("If enabled, the polling will be skipped if a recording is in progress.")),
 			getConfigListEntry(_("Only poll while in standby"), config.plugins.autotimer.onlyinstandby, _("When this is enabled AutoTimer will ONLY check for new events whilst in stanadby.")),
-			getConfigListEntry(_("Style auto timers list"), config.plugins.autotimer.style_autotimerslist, _("If the style is advanced, you will see more information about each auto timer.")),
+			getConfigListEntry(_("Style auto timers list"), config.plugins.autotimer.style_autotimerslist, _("If the style is advanced, you will see more information about each auto timer. This change will not take effect until the plugin has started again.")),
 			getConfigListEntry(_("Skip poll during epg refresh"), config.plugins.autotimer.skip_during_epgrefresh, _("If enabled, the polling will be skipped if EPGRefresh is currently running.")),
 			getConfigListEntry(_("Popup timeout in seconds"), config.plugins.autotimer.popup_timeout, _("If 0, the popup will remain open.")),
 			getConfigListEntry(_("Remove not existing events"), config.plugins.autotimer.check_eit_and_remove, _("Check the event id (eit) and remove the timer if there is no corresponding EPG event. Due to compatibility issues with SerienRecorder and IPRec, only timer created by AutoTimer are affected.")),
@@ -108,6 +117,10 @@ class AutoTimerSettings(Screen, ConfigListScreen):
 		self["key_green"] = StaticText(_("OK"))
 		self["key_red"] = StaticText(_("Cancel"))
 		self["help"] = StaticText()
+
+		self["HelpWindow"] = Pixmap()
+		self["HelpWindow"].hide()
+		self["VKeyIcon"] = Boolean(False)
 
 		# Define Actions
 		self["actions"] = ActionMap(["SetupActions"],

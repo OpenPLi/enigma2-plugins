@@ -1,3 +1,3 @@
 PLUGIN = TagEditor
-LANGS = de it nl sr tr cs fa fr ru
+LANGS = cs de fa fr it lt nl ru sr tr 
 include $(top_srcdir)/Rules-po.mak

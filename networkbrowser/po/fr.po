@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma 2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-01-28 16:39+0100\n"
-"PO-Revision-Date: 2012-12-16 12:35+0100\n"
+"POT-Creation-Date: 2018-07-31 14:17+0200\n"
+"PO-Revision-Date: 2018-07-15 10:33+0200\n"
 "Last-Translator: thelexia <thelexia@hotmail.fr>\n"
 "Language-Team: french\n"
 "Language: fr\n"
@@ -11,6 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 2.0.8\n"
 
 msgid ""
 "A mount entry with this name already exists!\n"
@@ -84,20 +85,11 @@ msgstr "Entrer l'adresse IP à scanner ..."
 msgid "Enter new hostname for your Receiver"
 msgstr "Saisisser nouveau nom d'hôte pour votre récepteur"
 
-msgid "Enter options:"
-msgstr "Entrer les options :"
-
 msgid "Enter password:"
 msgstr "Entrer mot de passe :"
 
-msgid "Enter share directory:"
-msgstr "Entrer répertoire de partage :"
-
-msgid "Enter share name:"
-msgstr "Entrer le nom de partage :"
-
 msgid "Enter user and password for host: "
-msgstr "Entrer utilisateur et mot de passe pour l'hôte :"
+msgstr "Entrer utilisateur et mot de passe pour l'hôte:"
 
 msgid "Enter username:"
 msgstr "Entrer le nom d'utilisateur :"
@@ -107,6 +99,12 @@ msgstr "Expert"
 
 msgid "Finished restarting your network"
 msgstr "Terminé le redémarrage de votre réseau"
+
+msgid "Host name"
+msgstr "Nom de l’hôte"
+
+msgid "Host:"
+msgstr "Hôte:"
 
 msgid "IP Address"
 msgstr "Adresse IP"
@@ -134,6 +132,9 @@ msgstr "Options de montage"
 
 msgid "Mount type"
 msgstr "Type de montage"
+
+msgid "Mount view"
+msgstr "Afficher montage"
 
 msgid "MountManager"
 msgstr "Gestionnaire de montage"
@@ -254,4 +255,4 @@ msgid "Your network mount has been updated."
 msgstr "Votre montage réseau a été mis à jour."
 
 msgid "use as HDD replacement"
-msgstr "Utiliser comme remplacement du disque dur"
+msgstr "Utiliser en remplacement du disque dur"

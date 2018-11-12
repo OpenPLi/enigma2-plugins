@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VirtualZap\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-05-05 13:09+0200\n"
+"POT-Creation-Date: 2018-05-11 10:58+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Pr2 <dummy@dummy.com>\n"
 "Language-Team: OpenPLi\n"
@@ -10,70 +10,215 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.7.6\n"
+"X-Generator: Poedit 2.1.1\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
-#: plugin.py:55
-msgid "as plugin in extended bar"
-msgstr "comme plugin dans la barre des extensions"
+msgid "\"Werbezapper\" quick button"
+msgstr "Bouton rapide \"Werbezapper\""
 
-#: plugin.py:55
-msgid "with long OK press"
-msgstr "avec un appui long sur OK"
+#, python-format
+msgid "%d min"
+msgstr "%d min"
 
-#: plugin.py:55
-msgid "with exit button"
-msgstr "avec le bouton EXIT"
+#, python-format
+msgid "%s\n"
+msgstr "%s\n"
 
-#: plugin.py:121
-msgid "Could not open Picture in Picture"
-msgstr "Impossible d'ouvrir Image dans Image (PiP)"
+#, python-format
+msgid "- %d:%02d min"
+msgstr ""
 
-#: plugin.py:132
-msgid "Virtual Zap Setup"
-msgstr "Configuration de Virtual Zap"
+msgid "Automatically zaps back to current service after given Time"
+msgstr "Retour automatique au service en cours après une heure donnée."
 
-#: plugin.py:134
-msgid "Virtual (PiP) Zap"
-msgstr "Virtual (PiP) Zap"
+#, python-format
+msgid ""
+"Button Info/EPG\n"
+"Set time begin next event: %d min"
+msgstr ""
+"Bouton Info/EPG\n"
+"Heure de début du prochain événement : %d min."
 
-#: plugin.py:703
 msgid "Cancel"
 msgstr "Annuler"
 
-#: plugin.py:704
-msgid "OK"
-msgstr "OK"
+#, python-format
+msgid "Channel: %s"
+msgstr "Chaîne: %s"
 
-#: plugin.py:706
-msgid "Usage"
-msgstr "Utilisation"
+msgid "Custom"
+msgstr "Personnaliser"
 
-#: plugin.py:708
-msgid "Use PiP"
-msgstr "Utiliser PiP"
+msgid "Error"
+msgstr "Erreur"
 
-#: plugin.py:709
-msgid "Show PiP in Infobar"
-msgstr "Afficher PiP dans la barre d'info"
+msgid "GREEN"
+msgstr "VERT"
 
-#: plugin.py:710
-msgid "Start standard PiP after x secs (0 = disabled)"
-msgstr "Démarrer le PiP standard après x secs (0 = désactivé)"
+msgid "HELP"
+msgstr "AIDE"
 
-#: plugin.py:711
-msgid "Remember last service"
-msgstr "Se souvenir du dernier service"
+msgid "How many minutes to wait until zapping back?"
+msgstr "Combien de minutes d'attente avant le retour ?"
 
-#: plugin.py:723
-msgid ""
-"GUI needs a restart to apply the new settings.\n"
-"Do you want to Restart the GUI now?"
+msgid "Indicator mode"
+msgstr "Mode indicateur"
+
+msgid "Monitoring duration for service if not EPG"
+msgstr "Surveillance de la durée du service si ce n'est pas un EPG"
+
+#, python-format
+msgid "Monitoring: %s (%d:%02d Min)"
+msgstr "Surveillance : %s (%d:%02d Min)"
+
+#, python-format
+msgid "Monitoring: for service is not EPG (%d:%02d Min)"
+msgstr "Surveillance : pour le service n'est pas EPG (%d:%02d Min)"
+
+msgid "NONE"
+msgstr "AUCUN"
+
+msgid "Open setup"
+msgstr "Ouvrir la configuration"
+
+msgid "RADIO"
+msgstr "RADIO"
+
+msgid "Rezap"
 msgstr ""
-"L'IGU doit être redémarrée pour appliquer les nouveaux paramètres.\n"
-"Voulez-vous redémarrer l'IGU maintenant?"
 
-#: plugin.py:724
-msgid "Restart GUI now?"
-msgstr "Redémarrer l'IGU maintenant?"
+msgid "SEARCH"
+msgstr "RECHERCHER"
+
+msgid "Save"
+msgstr "Sauver"
+
+msgid "Service is not EPG"
+msgstr "Le service n'est pas EPG"
+
+msgid "Set zap time"
+msgstr "Réglage de l'heure de zap"
+
+msgid "Show \"Start / Stop monitoring\" in extensions menu"
+msgstr "Afficher \"Démarrer / Arrêter la surveillance\" dans le menu des extensions"
+
+msgid "Show indicator zap time in window"
+msgstr "Afficher l'indicateur heure de zap dans la fenêtre"
+
+msgid "Show plugin in channel selection context menu"
+msgstr "Afficher le plugin dans le menu contextuel de sélection des canaux"
+
+msgid "Slider step size (1 - 20 mins)"
+msgstr "Taille du pas du curseur (1 - 20 mins)"
+
+msgid "Start / Stop monitoring instantly"
+msgstr "Démarrage / Arrêt de la surveillance instantanément"
+
+msgid "Start monitoring"
+msgstr "Démarrer la surveillance"
+
+msgid "Stop monitoring"
+msgstr "Arrêter la surveillance"
+
+msgid "Stop timer"
+msgstr "Arrêter le chronomètre"
+
+msgid "TEXT"
+msgstr "TEXTE"
+
+msgid "TIMER"
+msgstr "TIMER"
+
+msgid "TV"
+msgstr "TV"
+
+msgid "Wakeup receiver from standby for zap timer"
+msgstr "Réveil du récepteur depuis la veille pour minuterie zap"
+
+msgid "WerbeZapper"
+msgstr ""
+
+#, python-format
+msgid ""
+"WerbeZapper\n"
+"Monitoring ends\n"
+"%s"
+msgstr ""
+"WerbeZapper\n"
+"Fin de la surveillance\n"
+"%s"
+
+msgid "WerbeZapper Setup"
+msgstr "Configuration de WerbeZapper"
+
+#, python-format
+msgid ""
+"WerbeZapper...\n"
+"Monitoring started\n"
+"%s"
+msgstr ""
+"WerbeZapper.....\n"
+"Début de la surveillance\n"
+"%s"
+
+#, python-format
+msgid ""
+"WerbeZapper...\n"
+"Monitoring started for service is not EPG.\n"
+"Duration %d Min."
+msgstr ""
+"WerbeZapper.....\n"
+"La surveillance commencée pour le service n'est pas un EPG.\n"
+"Durée %d Min."
+
+msgid "Werbezapper"
+msgstr ""
+
+msgid "Werbezapper Start / Stop monitoring"
+msgstr "Werbezapper Démarrage / Arrêt de la surveillance"
+
+msgid "When zap to service?"
+msgstr "Quand zapper vers le service ?"
+
+msgid "X position"
+msgstr "Position en X"
+
+msgid "Y position"
+msgstr "Position en Y"
+
+msgid "YELLOW"
+msgstr "JAUNE"
+
+msgid "Z position (priority of srceen)"
+msgstr "Position Z (priorité de l’écran)"
+
+#, python-format
+msgid "Zapping back %s in %d Min"
+msgstr "Zapper de retour %s en %d Min."
+
+#, python-format
+msgid "Zapping to %s"
+msgstr "Zapper vers %s"
+
+#, python-format
+msgid "Zapping to service in %d:%02d Min"
+msgstr "Zapper vers service en %d:%02d Min."
+
+msgid "add zap timer for service"
+msgstr "ajout d'une minuterie zap pour le service"
+
+msgid "minut"
+msgstr "minute"
+
+msgid "minute"
+msgstr "minute"
+
+msgid "minutes"
+msgstr "minutes"
+
+msgid "service / time"
+msgstr "service / temps"
+
+msgid "time"
+msgstr "heure"

@@ -24,11 +24,15 @@ from Screens.MessageBox import MessageBox
 from Components.MenuList import MenuList
 from Components.Button import Button
 from Components.config import config
-from Components.ActionMap import ActionMap, NumberActionMap
+from Components.ActionMap import ActionMap, NumberActionMap, HelpableActionMap
+from Screens.HelpMenu import HelpableScreen
 from Components.ConfigList import ConfigList, ConfigListScreen
 from Components.config import ConfigSubsection, ConfigSubList, ConfigIP, ConfigInteger, ConfigSelection, ConfigText, ConfigYesNo, getConfigListEntry, configfile
+from PartnerboxFunctions import sendPartnerBoxWebCommand
 import skin
 import os
+from plugin import autoTimerAvailable
+from Components.Pixmap import Pixmap
 
 # for localized messages
 from . import _
@@ -108,6 +112,7 @@ class PartnerboxSetup(ConfigListScreen, Screen):
 		self.list.append(getConfigListEntry(_("Show 'Stream current Service' in E-Menu"), config.plugins.Partnerbox.showcurrentstreaminextensionsmenu))
 		self.list.append(getConfigListEntry(_("Enable Partnerbox-Function in TimerEvent"), config.plugins.Partnerbox.enablepartnerboxintimerevent))
 		if config.plugins.Partnerbox.enablepartnerboxintimerevent.value:
+			self.list.append(getConfigListEntry(_("Active boxes from local network only (using localhost names)"), config.plugins.Partnerbox.avahicompare))
 			self.list.append(getConfigListEntry(_("Enable first Partnerbox-entry in Timeredit as default"), config.plugins.Partnerbox.enabledefaultpartnerboxintimeredit))
 			self.list.append(getConfigListEntry(_("Enable VPS-Function in TimerEvent"), config.plugins.Partnerbox.enablevpsintimerevent))
 		self.list.append(getConfigListEntry(_("Enable Partnerbox-Function in EPGList"), config.plugins.Partnerbox.enablepartnerboxepglist))
@@ -116,6 +121,8 @@ class PartnerboxSetup(ConfigListScreen, Screen):
 			self.list.append(getConfigListEntry(_("Show duration time for event"), config.plugins.Partnerbox.showremaingepglist))
 			self.list.append(getConfigListEntry(_("Show all icon for event in EPGList"), config.plugins.Partnerbox.allicontype))
 		self.list.append(getConfigListEntry(_("Enable Partnerbox-Function in Channel Selector"), config.plugins.Partnerbox.enablepartnerboxchannelselector))
+		if autoTimerAvailable:
+			self.list.append(getConfigListEntry(_("Enable Partnerbox-AutoTimer function"), config.plugins.Partnerbox.showpartnerboxautotimerninmenu))
 		self["config"].l.setList(self.list)
 
 	def keySave(self):
@@ -131,6 +138,9 @@ class PartnerboxSetup(ConfigListScreen, Screen):
 		config.plugins.Partnerbox.enablepartnerboxeventinfocontextmenu.save()
 		config.plugins.Partnerbox.allicontype.save()
 		config.plugins.Partnerbox.showremaingepglist.save()
+		config.plugins.Partnerbox.enablevpsintimerevent.save()
+		config.plugins.Partnerbox.showpartnerboxautotimerninmenu.save()
+		config.plugins.Partnerbox.avahicompare.save()
 		configfile.save()
 		self.refreshPlugins()
 		self.close(self.session)
@@ -157,7 +167,7 @@ class PartnerboxSetup(ConfigListScreen, Screen):
 		plugins.clearPluginList()
 		plugins.readPluginList(resolveFilename(SCOPE_PLUGINS))
 
-class PartnerboxEntriesListConfigScreen(Screen):
+class PartnerboxEntriesListConfigScreen(Screen, HelpableScreen):
 	skin = """
 		<screen position="center,center" size="550,400" title="Partnerbox: List of Entries" >
 			<widget name="name" position="5,0" size="200,50" font="Regular;20" halign="left"/>
@@ -178,6 +188,7 @@ class PartnerboxEntriesListConfigScreen(Screen):
 
 	def __init__(self, session, what = None):
 		Screen.__init__(self, session)
+		HelpableScreen.__init__(self)
 		self.session = session
 		self.setTitle(_("Partnerbox: List of Entries"))
 
@@ -190,6 +201,21 @@ class PartnerboxEntriesListConfigScreen(Screen):
 		self["key_green"] = Button(_("Power"))
 		self["key_blue"] = Button(_("Delete"))
 		self["entrylist"] = PartnerboxEntryList([])
+		self["PBPActions"] = HelpableActionMap(self, "PiPSetupActions",
+			{
+			 "size+":	(self.powerOn,_("Wake up remote box")),
+			 "size-":	(self.powerStandby, _("Sleep remote box")),
+			 }, -1)
+		self["PBVActions"] = HelpableActionMap(self, "NumberActions",
+			{
+			"0":		(self.startMoving, _("Enable/disable moving item")),
+			"5":		(self.powerMute, _("Mute remote box")),
+			 }, -1)
+		self["PBEditActions"] = HelpableActionMap(self, "DirectionActions",
+			{
+			"moveUp":	(self.moveUp, _("Move item up")),
+			"moveDown":	(self.moveDown, _("Move item down")),
+			 }, -1)
 		self["actions"] = ActionMap(["WizardActions","MenuActions","ShortcutActions"],
 			{
 			 "ok"	:	self.keyOK,
@@ -199,6 +225,11 @@ class PartnerboxEntriesListConfigScreen(Screen):
 			 "blue": 	self.keyDelete,
 			 "green":	self.powerMenu,
 			 }, -1)
+		self.edit = 0
+		self.idx = 0
+		self["h_prev"] = Pixmap()
+		self["h_next"] = Pixmap()
+		self.showPrevNext()
 		self.what = what
 		self.updateList()
 
@@ -228,6 +259,32 @@ class PartnerboxEntriesListConfigScreen(Screen):
 			return
 		self.session.openWithCallback(self.updateList,PartnerboxEntryConfigScreen,sel)
 
+	def startMoving(self):
+		self.edit = not self.edit
+		self.idx = self["entrylist"].l.getCurrentSelectionIndex()
+		self.showPrevNext()
+	def showPrevNext(self):
+		if self.edit:
+			self["h_prev"].show()
+			self["h_next"].show()
+		else:
+			self["h_prev"].hide()
+			self["h_next"].hide()
+	def moveUp(self):
+		if self.edit and self.idx >= 1:
+				self.moveDirection(-1)
+	def moveDown(self):
+		if self.edit and self.idx < config.plugins.Partnerbox.entriescount.value - 1:
+				self.moveDirection(1)
+	def moveDirection(self, direction):
+			self["entrylist"].moveToIndex(self.idx)
+			tmp = config.plugins.Partnerbox.Entries[self.idx]
+			config.plugins.Partnerbox.Entries[self.idx] = config.plugins.Partnerbox.Entries[self.idx+direction]
+			config.plugins.Partnerbox.Entries[self.idx+direction] = tmp
+			self.updateList()
+			self.idx += direction
+			self["entrylist"].moveToIndex(self.idx)
+
 	def keyDelete(self):
 		try:sel = self["entrylist"].l.getCurrentSelection()[0]
 		except: sel = None
@@ -247,9 +304,51 @@ class PartnerboxEntriesListConfigScreen(Screen):
 		configfile.save()
 		self.updateList()
 
-	def powerMenu(self):
+	def getPars(self, sel):
+		password = sel.password.value
+		username = "root"
+		ip = "%d.%d.%d.%d" % tuple(sel.ip.value)
+		port = sel.port.value
+		enigma_type = int(sel.enigma.value)
+		http = "http://%s:%d" % (ip, port)
+		cmd = http
+		cmd += enigma_type and "/cgi-bin/admin?command=" or "/web/powerstate?newstate="
+		return password, username, http, cmd, enigma_type
+
+	def getSelected(self):
 		try:sel = self["entrylist"].l.getCurrentSelection()[0]
 		except: sel = None
+		return sel
+
+	def powerMute(self):
+		sel = self.getSelected()
+		if sel is None:
+			return
+		(password, username, http, cmd, enigma_type) = self.getPars(sel)
+		sCommand = http
+		sCommand += enigma_type and "/cgi-bin/audio?mute=1" or "/web/vol?set=mute"
+		sendPartnerBoxWebCommand(sCommand, None, 3, username, password)
+
+	def powerOn(self):
+		sel = self.getSelected()
+		if sel is None:
+			return
+		(password, username, http, cmd, enigma_type) = self.getPars(sel)
+		sCommand = cmd
+		sCommand += enigma_type and "wakeup" or "4"
+		sendPartnerBoxWebCommand(sCommand, None, 3, username, password)
+
+	def powerStandby(self):
+		sel = self.getSelected()
+		if sel is None:
+			return
+		(password, username, http, cmd, enigma_type) = self.getPars(sel)
+		sCommand = cmd
+		sCommand += enigma_type and "standby" or "5"
+		sendPartnerBoxWebCommand(sCommand, None, 3, username, password)
+
+	def powerMenu(self):
+		sel = self.getSelected()
 		if sel is None:
 			return
 		menu = []
@@ -266,24 +365,18 @@ class PartnerboxEntriesListConfigScreen(Screen):
 			menu.append((_("Send Wake-on-LAN"),6))
 		if config.usage.remote_fallback_enabled.value:
 			menu.append((_("Set as fallback remote receiver"),10))
+		menu.append((_("Mute"),11))
 		from Screens.ChoiceBox import ChoiceBox
 		self.session.openWithCallback(self.menuCallback, ChoiceBox, title=(_("Select operation for partnerbox")+": "+"%s" % (sel.name.value)), list=menu)
 
 	def menuCallback(self, choice):
 		if choice is None:
 			return
-		try:sel = self["entrylist"].l.getCurrentSelection()[0]
-		except: sel = None
+		sel = self.getSelected()
 		if sel is None:
 			return
-		password = sel.password.value
-		username = "root"
-		ip = "%d.%d.%d.%d" % tuple(sel.ip.value)
-		port = sel.port.value
-		http = "http://%s:%d" % (ip,port)
-		enigma_type = int(sel.enigma.value)
-		sCommand = http
-		sCommand += enigma_type and "/cgi-bin/admin?command=" or "/web/powerstate?newstate="
+		(password, username, http, cmd, enigma_type) = self.getPars(sel)
+		sCommand = cmd
 		if choice[1] == 0:
 			sCommand += enigma_type and "wakeup" or "4"
 		elif choice[1] == 1:
@@ -304,9 +397,11 @@ class PartnerboxEntriesListConfigScreen(Screen):
 		elif choice[1] == 10:
 			self.setFallbackTuner(sel.name.value, ip)
 			return
+		elif choice[1] == 11:
+			sCommand = http
+			sCommand += enigma_type and "/cgi-bin/audio?mute=1" or "/web/vol?set=mute"
 		else:
 			return
-		from PartnerboxFunctions import sendPartnerBoxWebCommand
 		sendPartnerBoxWebCommand(sCommand, None,3, username, password)
 
 	def GetIPsFromNetworkInterfaces(self):

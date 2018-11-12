@@ -64,7 +64,7 @@ class AutoMount():
 		# Read out NFS Mounts
 		for nfs in tree.findall("nfs"):
 			for mount in nfs.findall("mount"):
-				data = { 'isMounted': False, 'active': False, 'ip': False, 'sharename': False, 'sharedir': False, 'username': False, \
+				data = { 'isMounted': False, 'active': False, 'ip': False, 'host': False, 'sharename': False, 'sharedir': False, 'username': False, \
 							'password': False, 'mounttype' : False, 'options' : False, 'hdd_replacement' : False }
 				try:
 					data['mounttype'] = 'nfs'.encode("UTF-8")
@@ -72,7 +72,8 @@ class AutoMount():
 					if data["active"] == 'True' or data["active"] == True:
 						self.activeMountsCounter +=1
 					data['hdd_replacement'] = getValue(mount.findall("hdd_replacement"), "False").encode("UTF-8")
-					data['ip'] = getValue(mount.findall("ip"), "192.168.0.0").encode("UTF-8")
+					data['ip'] = getValue(mount.findall("ip"), "").encode("UTF-8")
+					data['host'] = getValue(mount.findall("host"), "").encode("UTF-8")
 					data['sharedir'] = getValue(mount.findall("sharedir"), "/media/").encode("UTF-8")
 					data['sharename'] = getValue(mount.findall("sharename"), "MEDIA").encode("UTF-8")
 					data['options'] = getValue(mount.findall("options"), "rw,nolock,tcp").encode("UTF-8")
@@ -82,7 +83,7 @@ class AutoMount():
 			# Read out CIFS Mounts
 		for nfs in tree.findall("cifs"):
 			for mount in nfs.findall("mount"):
-				data = { 'isMounted': False, 'active': False, 'ip': False, 'sharename': False, 'sharedir': False, 'username': False, \
+				data = { 'isMounted': False, 'active': False, 'ip': False, 'host': False, 'sharename': False, 'sharedir': False, 'username': False, \
 							'password': False, 'mounttype' : False, 'options' : False, 'hdd_replacement' : False }
 				try:
 					data['mounttype'] = 'cifs'.encode("UTF-8")
@@ -90,7 +91,8 @@ class AutoMount():
 					if data["active"] == 'True' or data["active"] == True:
 						self.activeMountsCounter +=1
 					data['hdd_replacement'] = getValue(mount.findall("hdd_replacement"), "False").encode("UTF-8")
-					data['ip'] = getValue(mount.findall("ip"), "192.168.0.0").encode("UTF-8")
+					data['ip'] = getValue(mount.findall("ip"), "").encode("UTF-8")
+					data['host'] = getValue(mount.findall("host"), "").encode("UTF-8")
 					data['sharedir'] = getValue(mount.findall("sharedir"), "/media/").encode("UTF-8")
 					data['sharename'] = getValue(mount.findall("sharename"), "MEDIA").encode("UTF-8")
 					data['options'] = getValue(mount.findall("options"), "rw,nolock").encode("UTF-8")
@@ -140,23 +142,28 @@ class AutoMount():
 				command = "umount -fl '%s'" % path
 
 			elif data['active'] == 'True' or data['active'] is True:
-			        try:
+				try:
 					if not os.path.exists(path):
 						os.makedirs(path)
+					
+					host = data['host']
+					if not host:
+						host = data['ip'] 
+					
 					if data['mounttype'] == 'nfs':
 						if not os.path.ismount(path):
 							if data['options']:
 								options = "tcp,noatime," + data['options']
 							else:
 								options = "tcp,noatime"
-							tmpcmd = "mount -t nfs -o %s '%s' '%s'" % (options, data['ip'] + ':/' + data['sharedir'], path)
+							tmpcmd = "mount -t nfs -o %s '%s' '%s'" % (options, host + ':/' + data['sharedir'], path)
 							command = tmpcmd.encode("UTF-8")
 
 					elif data['mounttype'] == 'cifs':
 						if not os.path.ismount(path):
 							tmpusername = data['username'].replace(" ", "\\ ")
 							options = data['options'] + ',noatime,noserverino,iocharset=utf8,username='+ tmpusername + ',password='+ data['password']
-							tmpcmd = "mount -t cifs -o %s '//%s/%s' '%s'" % (options, data['ip'], data['sharedir'], path)
+							tmpcmd = "mount -t cifs -o %s '//%s/%s' '%s'" % (options, host, data['sharedir'], path)
 							command = tmpcmd.encode("UTF-8")
 				except Exception, ex:
 				        print "[AutoMount.py] Failed to create", path, "Error:", ex
@@ -249,7 +256,10 @@ class AutoMount():
 			list.append(' <mount>\n')
 			list.append("  <active>" + str(sharedata['active']) + "</active>\n")
 			list.append("  <hdd_replacement>" + str(sharedata['hdd_replacement']) + "</hdd_replacement>\n")
-			list.append("  <ip>" + sharedata['ip'] + "</ip>\n")
+			if sharedata['host']:
+				list.append("  <host>" + sharedata['host'] + "</host>\n")
+			if sharedata['ip']:
+				list.append("  <ip>" + sharedata['ip'] + "</ip>\n")
 			list.append("  <sharename>" + sharedata['sharename'] + "</sharename>\n")
 			list.append("  <sharedir>" + sharedata['sharedir'] + "</sharedir>\n")
 			list.append("  <options>" + sharedata['options'] + "</options>\n")

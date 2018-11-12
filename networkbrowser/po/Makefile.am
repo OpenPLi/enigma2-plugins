@@ -1,4 +1,4 @@
 PLUGIN = NetworkBrowser
 CATEGORY = SystemPlugins
-LANGS = de en ar nl es et is it da sv no fr fi tr ca cs hr hu ru pt el lv lt pl sr sl fa uk sk
+LANGS = ar bg ca cs da de el en es et fa fi fr hr hu is it lt lv nl no pl pt ru sk sl sr sv tr uk 
 include $(top_srcdir)/Rules-po.mak

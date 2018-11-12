@@ -1,0 +1,253 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-08-01 20:50+0200\n"
+"PO-Revision-Date: 2018-07-31 21:15+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.1.1\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#, python-format
+msgid " (%d mins)\n"
+msgstr ""
+
+#, python-format
+msgid "%s...%s (%d mins)"
+msgstr ""
+
+#, python-format
+msgid "+%d min / %s"
+msgstr ""
+
+msgid "<<Only when zap to service at start timer>>"
+msgstr "<<Seulement pour zapper vers un service au démarrage d’une minuterie>>"
+
+msgid "All Services"
+msgstr "Tous les Services"
+
+msgid "Always show indicator icon when recording"
+msgstr "Toujours montrer l'icône de l'indicateur lors de l'enregistrement"
+
+msgid "Anchor resizing at"
+msgstr "Redimensionnement de l'ancre à"
+
+msgid "Automatic is the default action"
+msgstr "Automatique est l'action par défaut"
+
+msgid "Background window"
+msgstr "Fenêtre d'arrière plan"
+
+#, python-format
+msgid "Bouquet: %s"
+msgstr "Bouquet : %s"
+
+msgid "Cancel"
+msgstr "Annuler"
+
+msgid "DD HH:MM:SS"
+msgstr ""
+
+msgid "Dd HHh MMm SSs"
+msgstr ""
+
+msgid "Enable record infobar"
+msgstr "Activer la barre d'infobar d'enregistrement"
+
+msgid ""
+"GUI needs a restart to apply changes.\n"
+"Restart the GUI now?"
+msgstr ""
+"L'interface graphique a besoin d'un redémarrage pour appliquer les modifications.\n"
+"Redémarrer l'interface graphique maintenant ?"
+
+msgid "Go to Standby now?"
+msgstr "Aller en veille maintenant ?"
+
+msgid "Goto standby when wakeup on a timer recording"
+msgstr "Aller en veille au réveil sur un enregistrement de minuterie."
+
+msgid "H:M:S"
+msgstr ""
+
+msgid "HH:MM:SS"
+msgstr "HH:MM:SS"
+
+msgid "HHh MMm SSs"
+msgstr ""
+
+msgid "Hh Mm Ss"
+msgstr ""
+
+msgid "M:S"
+msgstr ""
+
+msgid "M:SS"
+msgstr ""
+
+msgid "MM:SS"
+msgstr ""
+
+msgid "MMm SSs"
+msgstr ""
+
+msgid "Mm SSs"
+msgstr ""
+
+msgid "Mm Ss"
+msgstr ""
+
+msgid "N/A"
+msgstr "N/A"
+
+msgid "OK"
+msgstr "OK"
+
+msgid "Preferred tuner for recording"
+msgstr "Tuner préféré pour l'enregistrement"
+
+msgid "Provider"
+msgstr "Opérateur"
+
+#, python-format
+msgid "Provider: %s"
+msgstr "Fournisseur: %s"
+
+msgid "Record Infobar"
+msgstr ""
+
+msgid "Record Infobar Setup"
+msgstr "Record Infobar Configuration"
+
+msgid "Record Infobar addon"
+msgstr "Record Infobar add on"
+
+msgid "Record timelen format"
+msgstr "Record timelen format"
+
+msgid "Recording starts!\n"
+msgstr "L'enregistrement commence !\n"
+
+msgid "S"
+msgstr "S"
+
+msgid "Satellites"
+msgstr "Satellites"
+
+msgid "Set correct position timer in channel list"
+msgstr "Régler la position correcte du minuteur dans la liste des canaux."
+
+msgid "Show message when zap to recording service"
+msgstr "Afficher le message lorsque zap au service d'enregistrement"
+
+msgid "Ss"
+msgstr ""
+
+msgid "Standby message screen timeout (sec)"
+msgstr "Délai d'attente de l'écran des messages de veille (sec)"
+
+msgid "Standby only type timer 'After event'"
+msgstr "Veille uniquement sur le type de minuteur ‘Après l’évènement’"
+
+msgid "Stream"
+msgstr "Stream"
+
+msgid "Switch to a recordable channel?"
+msgstr "Basculer vers un canal enregistrable?"
+
+msgid "Switched to the recording service !\n"
+msgstr "Commutation vers le service d'enregistrement !\n"
+
+#, python-format
+msgid "Tuner: %s"
+msgstr ""
+
+msgid "Unknown"
+msgstr "Inconnu"
+
+msgid "X screen position"
+msgstr "Position de l’écran X"
+
+msgid "Y screen position"
+msgstr "Position de l’écran Y"
+
+msgid "Z screen position"
+msgstr "Position de l’écran Z"
+
+msgid "Zap on start service recording"
+msgstr "Zap au démarrage de l'enregistrement du service"
+
+msgid "all"
+msgstr "Toutes les lignes"
+
+msgid "all, except 'nothing'"
+msgstr "tous, à l'exception de ‘rien’"
+
+msgid "always"
+msgstr "toujours"
+
+msgid "ask the user"
+msgstr "demander à l'utilisateur"
+
+msgid "auto"
+msgstr "auto"
+
+msgid "auto and deep standby"
+msgstr "automatique et veille profonde"
+
+msgid "black"
+msgstr "noir"
+
+#, python-format
+msgid "channel: %s   prov: %s\n"
+msgstr "canal: %s   four.: %s\n"
+
+#, python-format
+msgid ""
+"channel: %s   prov: %s\n"
+" %s\n"
+msgstr ""
+"canal: %s   four.: %s\n"
+"%s\n"
+"\n"
+
+msgid "deep standby"
+msgstr "veille profonde"
+
+msgid "default"
+msgstr "par défaut"
+
+msgid "disabled"
+msgstr "désactivé"
+
+msgid "down"
+msgstr "bas"
+
+#, python-format
+msgid "duration:  %s ... "
+msgstr "durée : %s ....."
+
+msgid "no zap"
+msgstr "pas de zap"
+
+msgid "standby"
+msgstr "Veille"
+
+msgid "top"
+msgstr "haut"
+
+msgid "transparent"
+msgstr "transparent"
+
+msgid "zap"
+msgstr "zap"

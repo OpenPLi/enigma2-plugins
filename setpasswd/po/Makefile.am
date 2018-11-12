@@ -1,4 +1,4 @@
 PLUGIN = SetPasswd
 CATEGORY = SystemPlugins
-LANGS = de hu it nl sr tr fr ru lt
+LANGS = de fr hu it lt nl ru sr tr 
 include $(top_srcdir)/Rules-po.mak

@@ -1,0 +1,101 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-08-01 20:50+0200\n"
+"PO-Revision-Date: 2018-07-31 20:28+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.1.1\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+msgid " (Audio)"
+msgstr ""
+
+msgid " (Video)"
+msgstr "(Vidéo)"
+
+msgid "Buffer device:"
+msgstr "Dispositif tampon :"
+
+msgid "Buffer file handling:"
+msgstr "Gestion des fichiers tampons :"
+
+msgid "Buffer:"
+msgstr "Tampon :"
+
+msgid "Delete this movie?"
+msgstr "Supprimer ce film ?"
+
+#, python-format
+msgid "Downloading movie: %s"
+msgstr "Téléchargement du film : %s"
+
+msgid "Error getting categories"
+msgstr "Erreur dans l'obtention des catégories"
+
+msgid "Error getting episodes"
+msgstr "Erreur lors de l'obtention d'épisodes"
+
+msgid "Error getting genres"
+msgstr "Erreur d'obtention des genres"
+
+msgid "Error getting movies"
+msgstr "Erreur lors de l'obtention de films"
+
+msgid "Error getting podcast url"
+msgstr "Erreur lors de l'obtention de l'url du podcast"
+
+msgid "Error getting podcasts"
+msgstr "Erreur lors de l'obtention de podcasts"
+
+msgid "Error getting rss feed"
+msgstr "Erreur lors de l'obtention du flux rss"
+
+msgid "Length"
+msgstr "Longueur"
+
+msgid "Podcast"
+msgstr "Podcast"
+
+msgid "Save"
+msgstr "Sauver"
+
+msgid "Select"
+msgstr "Sélectionner"
+
+msgid "Stop playing this movie?"
+msgstr "Arrêter la lecture du film?"
+
+msgid "Type"
+msgstr "Type"
+
+msgid "ask me"
+msgstr "demander moi"
+
+msgid "configuration"
+msgstr "configuration"
+
+msgid "delete"
+msgstr "effacer"
+
+msgid "from xml"
+msgstr "à partir de xml"
+
+msgid "keep on device"
+msgstr "garder sur l'appareil"
+
+msgid "podcast.com"
+msgstr ""
+
+msgid "podcast.de"
+msgstr ""

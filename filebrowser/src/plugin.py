@@ -1,3 +1,7 @@
+# -*- coding: utf-8 -*-
+# for localized messages
+from . import _
+
 from Plugins.Plugin import PluginDescriptor
 from Components.config import config, ConfigSubList, ConfigSubsection, ConfigInteger, ConfigYesNo, ConfigText, getConfigListEntry
 from Components.FileList import FileList
@@ -18,20 +22,19 @@ pname = _("Filebrowser")
 pdesc = _("manage local Files")
 
 config.plugins.filebrowser = ConfigSubsection()
+config.plugins.filebrowser.add_mainmenu_entry = ConfigYesNo(default = False)
+config.plugins.filebrowser.add_extensionmenu_entry = ConfigYesNo(default = False)
 config.plugins.filebrowser.savedirs = ConfigYesNo(default = True)
-config.plugins.filebrowser.add_mainmenu_entry = ConfigYesNo(default = True)
-config.plugins.filebrowser.add_extensionmenu_entry = ConfigYesNo(default = True)
 config.plugins.filebrowser.path_left = ConfigText(default = "/")
 config.plugins.filebrowser.path_right = ConfigText(default = "/")
-
 
 ##################################
 class FilebrowserConfigScreen(ConfigListScreen,Screen):
     skin = """
         <screen position="100,100" size="550,400" title="" >
             <widget name="config" position="0,0" size="550,360" scrollbarMode="showOnDemand" />
-            <widget name="buttonred" position="10,360" size="100,40" valign="center" halign="center" zPosition="1"  transparent="1" foregroundColor="white" font="Regular;18"/>
-            <widget name="buttongreen" position="120,360" size="100,40" valign="center" halign="center" zPosition="1"  transparent="1" foregroundColor="white" font="Regular;18"/>
+            <widget name="key_red" position="10,360" size="100,40" valign="center" halign="center" zPosition="1"  transparent="1" foregroundColor="white" font="Regular;18"/>
+            <widget name="key_green" position="120,360" size="100,40" valign="center" halign="center" zPosition="1"  transparent="1" foregroundColor="white" font="Regular;18"/>
             <ePixmap name="pred" position="10,360" size="100,40" zPosition="0" pixmap="skin_default/buttons/red.png" transparent="1" alphatest="on"/>
             <ePixmap name="pgreen" position="120,360" size="100,40" zPosition="0" pixmap="skin_default/buttons/green.png" transparent="1" alphatest="on"/>
         </screen>"""
@@ -39,15 +42,15 @@ class FilebrowserConfigScreen(ConfigListScreen,Screen):
         self.session = session
         Screen.__init__(self, session)
         self.list = []
-        self.list.append(getConfigListEntry(_("add Plugin to Mainmenu"), config.plugins.filebrowser.add_mainmenu_entry))
-        self.list.append(getConfigListEntry(_("add Plugin to Extensionmenu"), config.plugins.filebrowser.add_extensionmenu_entry))
-        self.list.append(getConfigListEntry(_("save Filesystemposition on exit"), config.plugins.filebrowser.savedirs))
-        self.list.append(getConfigListEntry(_("Filesystemposition list left"), config.plugins.filebrowser.path_left))
-        self.list.append(getConfigListEntry(_("Filesystemposition list right"), config.plugins.filebrowser.path_right))
+        self.list.append(getConfigListEntry(_("Add plugin to Mainmenu"), config.plugins.filebrowser.add_mainmenu_entry))
+        self.list.append(getConfigListEntry(_("Add plugin to Extensionmenu"), config.plugins.filebrowser.add_extensionmenu_entry))
+        self.list.append(getConfigListEntry(_("Save path positions on exit"), config.plugins.filebrowser.savedirs))
+        self.list.append(getConfigListEntry(_("Left panel position"), config.plugins.filebrowser.path_left))
+        self.list.append(getConfigListEntry(_("Right panel position"), config.plugins.filebrowser.path_right))
 
         ConfigListScreen.__init__(self, self.list)
-        self["buttonred"] = Label(_("cancel"))
-        self["buttongreen"] = Label(_("ok"))
+        self["key_red"] = Label(_("Cancel"))
+        self["key_green"] = Label(_("Ok"))
         self["setupActions"] = ActionMap(["SetupActions"],
         {
             "green": self.save,
@@ -59,7 +62,7 @@ class FilebrowserConfigScreen(ConfigListScreen,Screen):
         self.onLayoutFinish.append(self.onLayout)
 
     def onLayout(self):
-        self.setTitle(pname+" "+_("Settings"))
+        self.setTitle(pname + " - %s" % _("Settings"))
 
     def save(self):
         print "saving"
@@ -81,10 +84,10 @@ class FilebrowserScreen(Screen):
             <widget name="list_left" position="0,0" size="265,380" scrollbarMode="showOnDemand" />
             <widget name="list_right" position="265,0" size="265,380" scrollbarMode="showOnDemand" />
 
-            <widget name="red" position="10,390" size="120,30" valign="center" halign="center" zPosition="1" transparent="1" foregroundColor="white" font="Regular;18"/>
-            <widget name="green" position="140,390" size="120,30" valign="center" halign="center" zPosition="1" transparent="1" foregroundColor="white" font="Regular;18"/>
-            <widget name="yellow" position="270,390" size="120,30" valign="center" halign="center" zPosition="1" transparent="1" foregroundColor="white" font="Regular;18"/>
-            <widget name="blue" position="400,390" size="120,30" valign="center" halign="center" zPosition="1" transparent="1" foregroundColor="white" font="Regular;18"/>
+            <widget name="key_red" position="10,390" size="120,30" valign="center" halign="center" zPosition="1" transparent="1" foregroundColor="white" font="Regular;18"/>
+            <widget name="key_green" position="140,390" size="120,30" valign="center" halign="center" zPosition="1" transparent="1" foregroundColor="white" font="Regular;18"/>
+            <widget name="key_yellow" position="270,390" size="120,30" valign="center" halign="center" zPosition="1" transparent="1" foregroundColor="white" font="Regular;18"/>
+            <widget name="key_blue" position="400,390" size="120,30" valign="center" halign="center" zPosition="1" transparent="1" foregroundColor="white" font="Regular;18"/>
 
             <ePixmap name="pred" position="10,390" size="120,30" zPosition="0" pixmap="skin_default/buttons/red.png" transparent="1" alphatest="on"/>
             <ePixmap name="pgreen" position="140,390" size="120,30" zPosition="0" pixmap="skin_default/buttons/green.png" transparent="1" alphatest="on"/>
@@ -109,10 +112,10 @@ class FilebrowserScreen(Screen):
 
         self["list_left"] = FileList(path_left, matchingPattern = "^.*")
         self["list_right"] = FileList(path_right, matchingPattern = "^.*")
-        self["red"] = Label(_("delete"))
-        self["green"] = Label(_("move"))
-        self["yellow"] = Label(_("copy"))
-        self["blue"] = Label(_("rename"))
+        self["key_red"] = Label(_("Delete"))
+        self["key_green"] = Label(_("Move"))
+        self["key_yellow"] = Label(_("Copy"))
+        self["key_blue"] = Label(_("Rename"))
 
 
         self["actions"] = ActionMap(["ChannelSelectBaseActions","WizardActions", "DirectionActions","MenuActions","NumberActions","ColorActions"],
@@ -122,6 +125,8 @@ class FilebrowserScreen(Screen):
              "menu":    self.goMenu,
              "nextMarker": self.listRight,
              "prevMarker": self.listLeft,
+             "nextBouquet": self.listRight,
+             "prevBouquet": self.listLeft,
              "up": self.goUp,
              "down": self.goDown,
              "left": self.goLeft,
@@ -148,8 +153,8 @@ class FilebrowserScreen(Screen):
     def ok(self):
         if self.SOURCELIST.canDescent(): # isDir
             self.SOURCELIST.descent()
-            if self.SOURCELIST.getCurrentDirectory(): #??? when is it none
-                self.setTitle(self.SOURCELIST.getCurrentDirectory())
+            title = self.SOURCELIST.getCurrentDirectory()
+            self.setTitle(title if title else _("Select location"))
         else:
             self.onFileAction()
 
@@ -245,14 +250,16 @@ class FilebrowserScreen(Screen):
         self["list_right"].selectionEnabled(1)
         self.SOURCELIST = self["list_right"]
         self.TARGETLIST = self["list_left"]
-        self.setTitle(self.SOURCELIST.getCurrentDirectory())
+        title = self.SOURCELIST.getCurrentDirectory()
+        self.setTitle(title if title else _("Select location"))
 
     def listLeft(self):
         self["list_left"].selectionEnabled(1)
         self["list_right"].selectionEnabled(0)
         self.SOURCELIST = self["list_left"]
         self.TARGETLIST = self["list_right"]
-        self.setTitle(self.SOURCELIST.getCurrentDirectory())
+        title = self.SOURCELIST.getCurrentDirectory()
+        self.setTitle(title if title else _("Select location"))
 
     def onFileAction(self):
         try:

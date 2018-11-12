@@ -1,6 +1,6 @@
 PLUGIN = MerlinMusicPlayer
 
-LANGS = ru de
+LANGS = de fr lt ru 
 
 include $(top_srcdir)/Rules-po.mak
 

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VirtualZap\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-05-05 13:09+0200\n"
+"POT-Creation-Date: 2018-05-11 10:58+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Pr2 <dummy@dummy.com>\n"
 "Language-Team: OpenPLi\n"
@@ -10,63 +10,87 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.7.6\n"
+"X-Generator: Poedit 2.1.1\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
-#: plugin.py:55
-msgid "as plugin in extended bar"
-msgstr "comme plugin dans la barre des extensions"
+#, python-format
+msgid "%d min"
+msgstr "%d min"
 
-#: plugin.py:55
-msgid "with long OK press"
-msgstr "avec un appui long sur OK"
+#, python-format
+msgid "+%d min"
+msgstr ""
 
-#: plugin.py:55
-msgid "with exit button"
-msgstr "avec le bouton EXIT"
+msgid "/s"
+msgstr "/s"
 
-#: plugin.py:121
-msgid "Could not open Picture in Picture"
-msgstr "Impossible d'ouvrir Image dans Image (PiP)"
+msgid "1 minute"
+msgstr "1 minute"
 
-#: plugin.py:132
-msgid "Virtual Zap Setup"
-msgstr "Configuration de Virtual Zap"
+msgid "12 hours"
+msgstr "12 heures"
 
-#: plugin.py:134
-msgid "Virtual (PiP) Zap"
-msgstr "Virtual (PiP) Zap"
+msgid "15 minutes"
+msgstr "15 minutes"
 
-#: plugin.py:703
+msgid "2 hours"
+msgstr "2 heures"
+
+msgid "24 hours"
+msgstr "24 heures"
+
+msgid "3 hours"
+msgstr "3 heures"
+
+msgid "30 minutes"
+msgstr "30 minutes"
+
+msgid "45 minutes"
+msgstr "45 minutes"
+
+msgid "5 minutes"
+msgstr "5 minutes"
+
+msgid "6 hours"
+msgstr "6 heures"
+
+msgid "60 minutes"
+msgstr "60 minutes"
+
 msgid "Cancel"
 msgstr "Annuler"
 
-#: plugin.py:704
-msgid "OK"
-msgstr "OK"
+msgid "Could not open Picture in Picture"
+msgstr "Impossible d'ouvrir Image dans Image (PiP)"
 
-#: plugin.py:706
-msgid "Usage"
-msgstr "Utilisation"
+msgid "Don't toggle standard infobar(s) with exit button"
+msgstr "Ne basculez pas les infobarres standard avec le bouton de sortie."
 
-#: plugin.py:708
-msgid "Use PiP"
-msgstr "Utiliser PiP"
+msgid "EPGSelection (context menu)"
+msgstr "EPGSelection (menu contextuel)"
 
-#: plugin.py:709
-msgid "Show PiP in Infobar"
-msgstr "Afficher PiP dans la barre d'info"
+msgid "EPGSelection/EventView (context menu)"
+msgstr "EPGSelection/EventView (menu contextuel)"
 
-#: plugin.py:710
-msgid "Start standard PiP after x secs (0 = disabled)"
-msgstr "Démarrer le PiP standard après x secs (0 = désactivé)"
+msgid "EventView (context menu)"
+msgstr "EventView (menu contextuel)"
 
-#: plugin.py:711
-msgid "Remember last service"
-msgstr "Se souvenir du dernier service"
+msgid "Extended virtual zap"
+msgstr "Zap virtuel étendu"
 
-#: plugin.py:723
+msgid "Extended virtual zap (PiP)"
+msgstr "Zap virtuel étendu (PiP)"
+
+msgid "Extended virtual zap config"
+msgstr "Configuration zap virtuel étendu"
+
+msgid "Extended virtual zap setup"
+msgstr "Configuration de Virtual Zap étendu"
+
+msgid "From :"
+msgstr "De :"
+
 msgid ""
 "GUI needs a restart to apply the new settings.\n"
 "Do you want to Restart the GUI now?"
@@ -74,6 +98,135 @@ msgstr ""
 "L'IGU doit être redémarrée pour appliquer les nouveaux paramètres.\n"
 "Voulez-vous redémarrer l'IGU maintenant?"
 
-#: plugin.py:724
-msgid "Restart GUI now?"
-msgstr "Redémarrer l'IGU maintenant?"
+msgid "Goto :"
+msgstr "Aller à :"
+
+msgid "Incorrect type service for PiP!"
+msgstr "Type de service incorrect pour PiP !"
+
+msgid "No free tuner!"
+msgstr "Aucun tuner de libre"
+
+msgid "Parental control!"
+msgstr "Contrôle parental !"
+
+msgid "Remember last service"
+msgstr "Se souvenir du dernier service"
+
+msgid "Remember mode"
+msgstr "Mode Mémoriser"
+
+msgid "Restart GUI"
+msgstr "Relancer l’IGU"
+
+msgid "Save"
+msgstr "Sauver"
+
+msgid "Show PiP in window infobar"
+msgstr "Afficher PiP dans la fenêtre de la barre d'info"
+
+msgid "Show picons"
+msgstr "Afficher les picons"
+
+msgid "Show plugin in channel selection context menu"
+msgstr "Afficher le plugin dans le menu contextuel de sélection des canaux"
+
+msgid "Show plugin in the context menu"
+msgstr "Afficher le plugin dans le menu contextuel"
+
+msgid "Show positioner movement for PiP service"
+msgstr "Afficher le mouvement du positionneur pour le service PiP"
+
+msgid "Start standard PiP after x secs (0 = disabled)"
+msgstr "Démarrer le PiP standard après x secs (0 = désactivé)"
+
+msgid "Stream"
+msgstr "Stream"
+
+msgid "Tuner"
+msgstr "Tuner"
+
+#, python-format
+msgid "Tuner %s"
+msgstr ""
+
+msgid "Usage"
+msgstr "Utilisation"
+
+msgid "Use PiP"
+msgstr "Utiliser PiP"
+
+msgid "Use plugin 'PiPServiceRelation'"
+msgstr "Utiliser le plugin 'PiPServiceRelation'."
+
+msgid "always"
+msgstr "toujours"
+
+msgid "as plugin in event menu"
+msgstr "comme plugin dans le menu des évènements"
+
+msgid "as plugin in extended menu"
+msgstr "comme plugin dans le menu étendu"
+
+msgid "config menu"
+msgstr "Menu de configuration"
+
+msgid "disable"
+msgstr "désactiver"
+
+msgid "disabled"
+msgstr "désactivé"
+
+msgid "exit"
+msgstr "sortir"
+
+msgid "open Event View"
+msgstr "ouvrir la vue de l'événement"
+
+msgid "open favorite list"
+msgstr "ouvrir la liste des favoris"
+
+msgid "open service list"
+msgstr "ouvrir liste service"
+
+msgid "open single EPG"
+msgstr "ouvrir l’EPG simple"
+
+msgid "show 'Extended virtual zap' for current service"
+msgstr "afficher ’zap virtuel étendu’ pour le service actuel"
+
+msgid "standard PiP"
+msgstr "PiP standard"
+
+msgid "standard PiPzap"
+msgstr "PiPzap standard"
+
+msgid "swap and standard PiP"
+msgstr "permuter et PiP standard"
+
+msgid "swap and standard PiPzap"
+msgstr "permuter et PiPzap standard"
+
+msgid "swap services"
+msgstr "Permuter les services"
+
+msgid "until standby/restart"
+msgstr "jusqu'à veille/redémarrage"
+
+msgid "wait 5 seconds"
+msgstr "attendre 5 secondes"
+
+msgid "with exit button"
+msgstr "avec le bouton EXIT"
+
+msgid "with long OK press"
+msgstr "avec un appui long sur OK"
+
+msgid "zap to PiP service and exit"
+msgstr "zap au service PiP et sortir"
+
+msgid "zap to next channel/open service list"
+msgstr "zap vers le canal suivant/ouvrir liste des services"
+
+msgid "zap to previous channel/open service list"
+msgstr "zap vers le canal précédent/ouvrir liste des services"

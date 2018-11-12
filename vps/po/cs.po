@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-02-07 12:14+0100\n"
+"POT-Creation-Date: 2018-05-11 10:58+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: ims <ims21@users.sourceforge.net>\n"
 "Language-Team: ims\n"
@@ -14,55 +14,57 @@ msgstr ""
 "X-Poedit-Country: CZECH REPUBLIC\n"
 "X-Poedit-SearchPath-0: ../src_py\n"
 
-#: Vps.py:407
+msgid "%d.%B %Y"
+msgstr "%d %B %Y"
+
+msgid "Cancel"
+msgstr "Zrušit"
+
+msgid "Enable VPS"
+msgstr "Povolit VPS"
+
+msgid "Enable VPS by default (new timers)"
+msgstr "Povolí VPS jako standardní (pro nové časovače)"
+
+msgid "Enable VPS on instant records"
+msgstr "Povolit VPS pro okamžité nahrávání"
+
+msgid "Enable VPS-Plugin"
+msgstr "Povolit VPS-plugin"
+
+msgid "If a programme is interrupted and divided into separate events, the plugin will search for the connected events."
+msgstr "Pokud je program přerušen a rozdělen na jednotlivé události, plugin bude hledat spojené události."
+
+msgid "If enabled and necessary, the plugin will wake up the Dreambox from Deep-Standby for the defined starting time to control whether the programme begins earlier."
+msgstr "Pokud je povoleno a je potřeba, bude plugin probouzet box z hlubokého spánku pro nastavený čas začátku a bude kontrolovat, zda program nezačíná dříve."
+
+msgid "If possible, x minutes before a timer starts VPS-Plugin will control whether the programme begins earlier. (0 disables feature)"
+msgstr "Pokud je to možné, kontroluje se x minut před skutečným začátkem, zda program nezačíná dříve. (0 deaktivuje tuto možnost)"
+
 msgid "In order to record a timer, the TV was switched to the recording service!\n"
 msgstr "Aby bylo možno zaznamenat časovač, TV bude přepnuta na nahrávaný program! \n"
 
-#: plugin.py:18
-#: plugin.py:19
-#: Vps_check.py:250
-#: Vps_check.py:278
-#: Modifications.py:141
+msgid "Information"
+msgstr "Informace"
+
+msgid "Margin after record (in seconds)"
+msgstr "Prodloužení záznamu (v sekundách)"
+
 msgid "No"
 msgstr "Ne"
 
-#: plugin.py:18
-#: plugin.py:19
-#: Vps_check.py:278
-#: Modifications.py:141
-msgid "Yes (safe mode)"
-msgstr "Ano (bezpečný mód)"
+msgid "OK"
+msgstr "OK"
 
-#: plugin.py:18
-#: plugin.py:19
-#: Vps_check.py:250
-#: Vps_check.py:278
-#: Modifications.py:141
-msgid "Yes"
-msgstr "Ano"
+msgid "Really close without saving settings?"
+msgstr "Opravdu zavřít bez uloženého nastavení?"
 
-#: plugin.py:19
-msgid "always ask"
-msgstr "vždy se ptát"
+msgid "Seeking connected events"
+msgstr "Hledání spojených událostí"
 
-#: plugin.py:84
-#: plugin.py:107
-msgid "VPS Settings"
-msgstr "Nastavení VPS"
+msgid "Starting time"
+msgstr "Čas začátku"
 
-#: Vps_check.py:112
-msgid "VPS-Plugin checks if the channel supports VPS ..."
-msgstr "VPS-plugin zjišťuje, zda kanál podporuje VPS ..."
-
-#: Vps_check.py:243
-msgid ""
-"The selected channel doesn't support VPS for manually programmed timers!\n"
-" Do you really want to enable VPS?"
-msgstr ""
-"Zvolený kanál nepodporuje VPS pro ručně programované časovače!\n"
-" Chcete skutečně povolit VPS?"
-
-#: Vps_check.py:245
 msgid ""
 "The VPS-Plugin couldn't check if the selected channel supports VPS for manually programmed timers!\n"
 " Do you really want to enable VPS?"
@@ -70,19 +72,6 @@ msgstr ""
 "VPS-plugin nemohl zjistit, zda zvolený kanál podporuje VPS pro ručně programované časovače!\n"
 " Chcete skutečně povolit VPS?"
 
-#: Vps_check.py:250
-msgid "Yes, don't ask again"
-msgstr "Ano, více se neptat"
-
-#: Vps_check.py:251
-msgid ""
-"VPS-Plugin couldn't check if the selected channel supports VPS.\n"
-" Do you really want to enable VPS?"
-msgstr ""
-"VPS-Plugin nemohl zkontrolovat, zda zvolený kanál podporuje VPS.\n"
-" Chcete opravdu povolit VPS?"
-
-#: Vps_check.py:286
 msgid ""
 "The channel may support VPS\n"
 " Do you want to enable VPS?"
@@ -90,96 +79,32 @@ msgstr ""
 "Kanál  může podporovat VPS\n"
 "Chcete povolit VPS?"
 
-#: Vps_check.py:288
-msgid ""
-"VPS-Plugin couldn't check if the channel supports VPS.\n"
-" Do you want to enable VPS anyway?"
-msgstr ""
-"VPS-Plugin nemohl zkontrolovat, jestli kanál podporuje VPS.\n"
-" Chcete VPS přesto povolit?"
+msgid "The recording will last n seconds longer after the channel sent the stop signal."
+msgstr "Nahrávání bude pokračovat ještě n sekund po přijetí signálu k zastavení."
 
-#: Vps_setup.py:32
+msgid ""
+"The selected channel doesn't support VPS for manually programmed timers!\n"
+" Do you really want to enable VPS?"
+msgstr ""
+"Zvolený kanál nepodporuje VPS pro ručně programované časovače!\n"
+" Chcete skutečně povolit VPS?"
+
+msgid "This plugin can determine whether a programme begins earlier or lasts longer. The channel has to provide reliable data."
+msgstr "Tento plugin může určit, zda program začíná dříve nebo bude delší. Vysílání musí poskytovat spolehlivé údaje!"
+
+msgid "VPS Settings"
+msgstr "Nastavení VPS"
+
 #, python-format
 msgid "VPS Setup Version %s"
 msgstr "Nastavení VPS - verze %s"
 
-#: Vps_setup.py:34
-msgid "Enable VPS-Plugin"
-msgstr "Povolit VPS-plugin"
-
-#: Vps_setup.py:35
-msgid "Starting time"
-msgstr "Čas začátku"
-
-#: Vps_setup.py:36
-msgid "Margin after record (in seconds)"
-msgstr "Prodloužení záznamu (v sekundách)"
-
-#: Vps_setup.py:37
-msgid "Wakeup from Deep-Standby is allowed"
-msgstr "Probuzení z hlubokého spánku je povoleno"
-
-#: Vps_setup.py:38
-msgid "Seeking connected events"
-msgstr "Hledání spojených událostí"
-
-#: Vps_setup.py:39
 msgid "VPS enabled by default"
 msgstr "VPS povoleno standardně"
 
-#: Vps_setup.py:40
-msgid "Enable VPS on instant records"
-msgstr "Povolit VPS pro okamžité nahrávání"
-
-#: Vps_setup.py:55
-msgid "Cancel"
-msgstr "Zrušit"
-
-#: Vps_setup.py:56
-msgid "OK"
-msgstr "OK"
-
-#: Vps_setup.py:57
-msgid "Information"
-msgstr "Informace"
-
-#: Vps_setup.py:78
-msgid "This plugin can determine whether a programme begins earlier or lasts longer. The channel has to provide reliable data."
-msgstr "Tento plugin může určit, zda program začíná dříve nebo bude delší. Vysílání musí poskytovat spolehlivé údaje!"
-
-#: Vps_setup.py:80
-msgid "If possible, x minutes before a timer starts VPS-Plugin will control whether the programme begins earlier. (0 disables feature)"
-msgstr "Pokud je to možné, kontroluje se x minut před skutečným začátkem, zda program nezačíná dříve. (0 deaktivuje tuto možnost)"
-
-#: Vps_setup.py:82
-msgid "The recording will last n seconds longer after the channel sent the stop signal."
-msgstr "Nahrávání bude pokračovat ještě n sekund po přijetí signálu k zastavení."
-
-#: Vps_setup.py:84
-msgid "Enable VPS by default (new timers)"
-msgstr "Povolí VPS jako standardní (pro nové časovače)"
-
-#: Vps_setup.py:86
-msgid "If enabled and necessary, the plugin will wake up the Dreambox from Deep-Standby for the defined starting time to control whether the programme begins earlier."
-msgstr "Pokud je povoleno a je potřeba, bude plugin probouzet box z hlubokého spánku pro nastavený čas začátku a bude kontrolovat, zda program nezačíná dříve."
-
-#: Vps_setup.py:88
-msgid "If a programme is interrupted and divided into separate events, the plugin will search for the connected events."
-msgstr "Pokud je program přerušen a rozdělen na jednotlivé události, plugin bude hledat spojené události."
-
-#: Vps_setup.py:90
-msgid "When yes, VPS will be enabled on instant records (stop after current event), if the channel supports VPS."
-msgstr "Jestliže ano, pak v případě, že kanál podporuje VPS bude VPS povolen v okamžitém nahrávání (zastavit po aktuální události)."
-
-#: Vps_setup.py:111
-msgid "Really close without saving settings?"
-msgstr "Opravdu zavřít bez uloženého nastavení?"
-
-#: Vps_setup.py:133
 msgid "VPS-Plugin Information"
 msgstr "Informace VPS-Pluginu"
 
-#: Vps_setup.py:135
 msgid ""
 "VPS-Plugin can react on delays arising in the startTime or endTime of a programme. VPS is only supported by certain channels!\n"
 "\n"
@@ -228,40 +153,43 @@ msgstr ""
 "\n"
 "Pro časovače programované ručně (nikoliv za pomoci EPG) je nutné nastavit VPS-Time pro povolení VPS. VPS-Time (také známý jako PDC) je čas začátku uváděný např. v časopisech. Pokud nastavíte VPS-Time, musíte ponechat název časovače prázdný!"
 
-#: Modifications.py:144
-#: Modifications.py:147
-msgid "%d.%B %Y"
-msgstr "%d %B %Y"
+msgid "VPS-Plugin checks if the channel supports VPS ..."
+msgstr "VPS-plugin zjišťuje, zda kanál podporuje VPS ..."
 
-#: Modifications.py:161
-msgid "Enable VPS"
-msgstr "Povolit VPS"
+msgid ""
+"VPS-Plugin couldn't check if the channel supports VPS.\n"
+" Do you want to enable VPS anyway?"
+msgstr ""
+"VPS-Plugin nemohl zkontrolovat, jestli kanál podporuje VPS.\n"
+" Chcete VPS přesto povolit?"
 
-#: Modifications.py:177
+msgid ""
+"VPS-Plugin couldn't check if the selected channel supports VPS.\n"
+" Do you really want to enable VPS?"
+msgstr ""
+"VPS-Plugin nemohl zkontrolovat, zda zvolený kanál podporuje VPS.\n"
+" Chcete opravdu povolit VPS?"
+
 msgid "VPS-Time (date)"
 msgstr "VPS-Time (datum)"
 
-#: Modifications.py:178
 msgid "VPS-Time (time)"
 msgstr "VPS-Time (čas)"
 
-#~ msgid "Recording controlled by channel"
-#~ msgstr "Nahrávání řízené vysíláním"
+msgid "Wakeup from Deep-Standby is allowed"
+msgstr "Probuzení z hlubokého spánku je povoleno"
 
-#~ msgid "Recordings can be controlled by channel"
-#~ msgstr "Nahrávání může být řízeno vysíláním"
+msgid "When yes, VPS will be enabled on instant records (stop after current event), if the channel supports VPS."
+msgstr "Jestliže ano, pak v případě, že kanál podporuje VPS bude VPS povolen v okamžitém nahrávání (zastavit po aktuální události)."
 
-#~ msgid "Recordings are controlled by channel by default"
-#~ msgstr "Nahrávání je řízeno vysíláním standardně"
+msgid "Yes"
+msgstr "Ano"
 
-#~ msgid ""
-#~ "If enabled, you can decide whether a timer should be controlled by "
-#~ "channel (Running-Status). Programmed start and end time will be ignored."
-#~ msgstr ""
-#~ "Jestliže je povoleno, můžete určit, zda bude časovač řízen informacemi z "
-#~ "vysílání (Running-Status). V tomto případě budou naprogramované časy "
-#~ "ignorovány!"
+msgid "Yes (safe mode)"
+msgstr "Ano (bezpečný mód)"
 
-#~ msgid "Enable \"Recording controlled by channel\" by default (new timers)"
-#~ msgstr ""
-#~ "Povolí \"Nahrávání řízené vysíláním\" jako standardní (pro nové časovače)"
+msgid "Yes, don't ask again"
+msgstr "Ano, více se neptat"
+
+msgid "always ask"
+msgstr "vždy se ptát"

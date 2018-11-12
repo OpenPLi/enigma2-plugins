@@ -1,3 +1,3 @@
 PLUGIN = FanControl2
-LANGS = de fr it nl fa sv pl cs ru sk
+LANGS = cs de fa fr it lt nl pl ru sk sv 
 include $(top_srcdir)/Rules-po.mak

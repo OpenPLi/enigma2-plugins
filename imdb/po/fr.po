@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2 - IMDb\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-02-02 12:19-0700\n"
-"PO-Revision-Date: 2015-02-02 22:44+0100\n"
+"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"PO-Revision-Date: 2018-07-31 15:28+0200\n"
 "Last-Translator: mimi74\n"
 "Language-Team: french-EGAMI\n"
 "Language: fr\n"
@@ -11,11 +11,17 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
-"X-Generator: Poedit 1.6.10\n"
+"X-Generator: Poedit 2.1.1\n"
 "X-Poedit-SourceCharset: iso-8859-15\n"
 
 msgid " as "
 msgstr " comme "
+
+msgid "Add 'Search event in IMDb' to further option EPG menu."
+msgstr "Ajouter 'Événement de recherche dans IMDb' comme option supplémentaire du menu EPG."
+
+msgid "Add 'Search in IMDb' to movie list menu for selected video."
+msgstr "Ajouter 'Rechercher dans IMDb' au menu de la liste des films pour la vidéo sélectionnée."
 
 msgid "Ambiguous results"
 msgstr "Résultats ambigus"
@@ -29,19 +35,21 @@ msgstr "Cast: "
 msgid "Channel Selection"
 msgstr "Sélection chaîne"
 
+msgid "Content:"
+msgstr "Contenu:"
+
 msgid "Could't get Eventname"
 msgstr "Impossible d'obtenir nom événement"
 
 msgid "Details"
 msgstr "Détails"
 
+#, python-format
 msgid "Downloading Movie Poster: %s..."
 msgstr "Téléchargement affiche du film: %s..."
 
-msgid ""
-"Enable this to be able to access the IMDb from within the plugin browser."
-msgstr ""
-"Activer cette option afin d'accéder à IMDb à partir de le navigateur plugiciels."
+msgid "Enable this to be able to access the IMDb from within the plugin browser."
+msgstr "Activer cette option afin d'accéder à IMDb à partir de le navigateur plugiciels."
 
 msgid "Enter search"
 msgstr "Entrer recherche"
@@ -55,6 +63,15 @@ msgstr "Quitter"
 msgid "Extra Info"
 msgstr "Infos suplémentaires"
 
+msgid "Extra Info\n"
+msgstr "Informations supplémentaires\n"
+
+msgid "Genre:"
+msgstr "Genre:"
+
+msgid "Genre: "
+msgstr "Genre: "
+
 msgid "IMDb Details"
 msgstr "IMDb Détails"
 
@@ -67,20 +84,43 @@ msgstr "IMDb Téléchargement terminé"
 msgid "IMDb Download failed"
 msgstr "IMDb Téléchargement échoué"
 
+msgid "IMDb Menu"
+msgstr "IMDb Menu"
+
 msgid "IMDb Plugin"
 msgstr "IMDb plugiciel"
 
 msgid "IMDb Re-Download completed"
 msgstr "IMDb Re-Téléchargement terminé"
 
+msgid "IMDb Save-Download completed"
+msgstr "IMDb Sauvegarde-Téléchargement terminé"
+
 msgid "IMDb Setup"
 msgstr "IMDb Configuration"
+
+msgid ""
+"IMDb can not get Movie Information, to\n"
+" write .jpg and .txt-file!"
+msgstr ""
+"IMDb ne peut pas obtenir des informations sur les films, pour\n"
+" écrire .jpg et fichier .txt !"
+
+msgid ""
+"IMDb can not get Movie Information, to\n"
+" write .txt-file!"
+msgstr ""
+"IMDb ne peut pas obtenir des informations sur les films, pour\n"
+" écrire fichier .txt !"
 
 msgid "IMDb query failed!"
 msgstr "IMDb requête échoué!"
 
-msgid "Lookup"
-msgstr "Chercher"
+msgid "IMDb search"
+msgstr "Recherche IMDb"
+
+msgid "Lookup IMDb"
+msgstr "Chercher IMDb"
 
 msgid "No IMDb match."
 msgstr "Aucune IMDb correspondante."
@@ -100,17 +140,43 @@ msgstr "Lire bande annonce"
 msgid "Please select the matching entry"
 msgstr "Veuillez sélectionner l'entrée correspondante"
 
-msgid "Query IMDb: %s..."
-msgstr "Récupération IMDb: %s..."
+msgid "Production Countries:"
+msgstr "Pays de production :"
+
+#, python-format
+msgid "Query IMDb: %s"
+msgstr "Requête IMDb: %s"
 
 msgid "Query details from the Internet Movie Database"
 msgstr "Récupérer détails depuis la base de données internet des films"
 
+#, python-format
 msgid "Re-Query IMDb: %s..."
 msgstr "Re-Récupération IMDb: %s..."
 
+msgid "Release Date:"
+msgstr "Date de sortie :"
+
+msgid "Runtime:"
+msgstr "Temps de marche :"
+
+msgid "Save current Details as .html for offline using"
+msgstr "Enregistrer les détails actuels sous forme de fichier .html pour l'utilisation hors ligne"
+
+msgid "Save current Details as .txt"
+msgstr "Enregistrer les détails actuels en tant que .txt"
+
+msgid "Save current Poster and Details as .txt"
+msgstr "Enregistrer l'affiche actuelle et les détails sous le format .txt"
+
 msgid "Search Trailer"
 msgstr "Recherche bande annonce"
+
+msgid "Search event in IMDb"
+msgstr "Rechercher un événement dans IMDb"
+
+msgid "Search in IMDb"
+msgstr "Rechercher dans IMDb"
 
 msgid "Select from EPG"
 msgstr "Sélectionner depuis EPG"
@@ -118,17 +184,29 @@ msgstr "Sélectionner depuis EPG"
 msgid "Setup"
 msgstr "Configuration"
 
+msgid "Show in further option EPG menu"
+msgstr "Afficher dans l'option supplémentaire Menu EPG"
+
+msgid "Show in movie list menu"
+msgstr "Afficher dans le menu de la liste des films"
+
 msgid "Show in plugin browser"
 msgstr "Afficher dans le navigateur plugiciels"
 
 msgid "The Internet Movie Database"
 msgstr "La base de données internet des films"
 
+msgid "This option allows you add words/phrases for IMDb to ignore when searching. please seperaate with a comma"
+msgstr "Cette option vous permet d'ajouter des mots/phrases que l'IMDb ignorera lors de la recherche. Merci de les séparer avec une virgule"
+
 msgid "Title Menu"
 msgstr "Menu titre"
 
 msgid "User Rating"
 msgstr "Appréciation moyenne"
+
+msgid "Words / phrases to ignore "
+msgstr "Mots / phrases à ignorer "
 
 msgid "no user rating yet"
 msgstr "pas d'appréciation encore"

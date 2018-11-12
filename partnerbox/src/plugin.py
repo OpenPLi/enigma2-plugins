@@ -17,6 +17,13 @@
 #  GNU General Public License for more details.
 #
 
+# AutoTimer installed?
+try:
+	from Plugins.Extensions.AutoTimer.plugin import autotimer
+	autoTimerAvailable = True
+except ImportError:
+	autoTimerAvailable = False
+
 from Plugins.Plugin import PluginDescriptor
 from Screens.Screen import Screen
 from Screens.MessageBox import MessageBox
@@ -67,17 +74,10 @@ import skin
 # for localized messages
 from . import _
 
-# AutoTimer installed?
-try:
-	from Plugins.Extensions.AutoTimer.plugin import autotimer
-	autoTimerAvailable = True
-except ImportError:
-	autoTimerAvailable = False
-
 config.plugins.Partnerbox = ConfigSubsection()
-config.plugins.Partnerbox.showremotetvinextensionsmenu= ConfigYesNo(default = True)
-config.plugins.Partnerbox.showcurrentstreaminextensionsmenu= ConfigYesNo(default = True)
-config.plugins.Partnerbox.showremotetimerinextensionsmenu= ConfigYesNo(default = True)
+config.plugins.Partnerbox.showremotetvinextensionsmenu = ConfigYesNo(default = True)
+config.plugins.Partnerbox.showcurrentstreaminextensionsmenu = ConfigYesNo(default = True)
+config.plugins.Partnerbox.showremotetimerinextensionsmenu = ConfigYesNo(default = True)
 config.plugins.Partnerbox.enablepartnerboxintimerevent = ConfigYesNo(default = False)
 config.plugins.Partnerbox.enablepartnerboxepglist = ConfigYesNo(default = False)
 config.plugins.Partnerbox.showremaingepglist = ConfigYesNo(default = False)
@@ -90,6 +90,8 @@ config.plugins.Partnerbox.enablepartnerboxeventinfocontextmenu = ConfigYesNo(def
 config.plugins.Partnerbox.entriescount = ConfigInteger(0)
 config.plugins.Partnerbox.Entries = ConfigSubList()
 config.plugins.Partnerbox.enablevpsintimerevent = ConfigYesNo(default = False)
+config.plugins.Partnerbox.showpartnerboxautotimerninmenu = ConfigYesNo(default = True)
+config.plugins.Partnerbox.avahicompare = ConfigYesNo(default = False)
 initConfig()
 
 def showPartnerboxIconsinEPGList():
@@ -184,8 +186,9 @@ def Plugins(**kwargs):
 		list.append(PluginDescriptor(name= _("Stream current Service from Partnerbox"), description=_("Stream current service from partnerbox"), where = [PluginDescriptor.WHERE_EXTENSIONSMENU], fnc=currentremotetv))
 	if autoTimerAvailable:
 		list.append(PluginDescriptor(where = PluginDescriptor.WHERE_SESSIONSTART, fnc = autostart_PartnerboxAutoTimer))
-		list.append(PluginDescriptor(name= _("Partnerbox: AutoTimer"), description=_("Manage autotimer for other dreamboxes in network"), where = [PluginDescriptor.WHERE_EVENTINFO], fnc=openPartnerboxAutoTimersOverview))
-		list.append(PluginDescriptor(name = _("add AutoTimer for Partnerbox..."), where = [PluginDescriptor.WHERE_EVENTINFO], fnc=partnerboxAutoTimerEventInfo, needsRestart=False))
+		if config.plugins.Partnerbox.showpartnerboxautotimerninmenu.value:
+			list.append(PluginDescriptor(name= _("Partnerbox: AutoTimer"), description=_("Manage autotimer for other dreamboxes in network"), where = [PluginDescriptor.WHERE_EVENTINFO], fnc=openPartnerboxAutoTimersOverview))
+			list.append(PluginDescriptor(name = _("add AutoTimer for Partnerbox..."), where = [PluginDescriptor.WHERE_EVENTINFO], fnc=partnerboxAutoTimerEventInfo, needsRestart=False))
 	return list
 
 def FillLocationList(xmlstring):

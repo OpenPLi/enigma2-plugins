@@ -2,9 +2,9 @@
 '''
 Created on 30.09.2012
 $Author: michael $
-$Revision: 1496 $
-$Date: 2017-10-05 11:17:25 +0200 (Thu, 05 Oct 2017) $
-$Id: FritzCallFBF.py 1496 2017-10-05 09:17:25Z michael $
+$Revision: 1534 $
+$Date: 2018-08-17 14:16:52 +0200 (Fri, 17 Aug 2018) $
+$Id: FritzCallFBF.py 1534 2018-08-17 12:16:52Z michael $
 '''
 
 # C0111 (Missing docstring)
@@ -31,7 +31,7 @@ from Screens.MessageBox import MessageBox
 from twisted.web.client import getPage
 from enigma import eTimer #@UnresolvedImport
 
-from . import _, __ #@UnresolvedImport
+from . import __ #@UnresolvedImport
 from plugin import config, stripCbCPrefix, resolveNumberWithAvon, FBF_IN_CALLS, FBF_OUT_CALLS, FBF_MISSED_CALLS, FBF_BLOCKED_CALLS, \
 	decode
 from nrzuname import html2unicode
@@ -3609,7 +3609,48 @@ class FritzCallFBF_upnp():
 
 		self.info("Boxinfo: " + repr(boxInfo))
 
+		if "internet" in boxData and "led" in boxData["internet"] and boxData["internet"]["led"] == "globe_online":
+			upTime = _("Unknown")
+			if "txt" in boxData["internet"] and len(boxData["internet"]["txt"][0]) >= 1:
+				upTime = upTime + ' (' + boxData["internet"]["txt"][0].encode("utf-8").strip() + ')'
+
 		provider = None
+		if "internet" in boxData and "txt" in boxData["internet"]:
+			for item in boxData["internet"]["txt"]:
+				item = item.encode("utf-8")
+				found = re.match(r'.*verbunden (?:als WLAN-Repeater )?seit (.*)', item, re.S)
+				if found:
+					upTime = found.group(1)
+				else:
+					found = re.match(r'.*connected (?:as WIFI repeater )?since (.*)', item, re.S)
+					if found:
+						upTime = found.group(1)
+				found = re.match(r'\s*Anbieter: (.*)', item, re.S)
+				if found:
+					provider = found.group(1)
+				else:
+					found = re.match(r'\s*Provider: (.*)', item, re.S)
+					if found:
+						provider = found.group(1)
+				found = re.match(r'IP(?:v4)?-Adresse: (.*)', item, re.S)
+				if found:
+					ipAddress = found.group(1)
+				else:
+					found = re.match(r'IP(?:v4)? address: (.*)', item, re.S)
+					if found:
+						ipAddress = found.group(1)
+
+		if "internet" in boxData and "down" in boxData["internet"] and "up" in boxData["internet"]:
+			connData = boxData["internet"]
+			internetSpeed = connData["down"].encode("utf-8") + " / " + connData["up"].encode("utf-8")
+			internetSpeed = internetSpeed.replace('\\', '').decode("utf-8").encode("utf-8")
+		else:
+			internetSpeed = None
+
+		self.info("upTime: " + repr(upTime))
+		self.info("provider: " + repr(provider))
+		self.info("ipAddress: " + repr(ipAddress))
+		
 		if "ipv4" in boxData and "txt" in boxData["ipv4"]:
 			for item in boxData["ipv4"]["txt"]:
 				item = item.encode("utf-8")
@@ -3708,6 +3749,8 @@ class FritzCallFBF_upnp():
 				dslState[1] = connData["down"].encode("utf-8") + " / " + connData["up"].encode("utf-8")
 				dslState[1] = dslState[1].replace('\\', '').decode("utf-8").encode("utf-8")
 				dslState[2] = connData["title"].encode("utf-8")
+				if internetSpeed:
+					dslState[1] = dslState[1] + "; Internet: " + internetSpeed
 		self.info("dslState: " + repr(dslState))
 
 		wlan24NetName = ""
@@ -3724,7 +3767,9 @@ class FritzCallFBF_upnp():
 		if "wlan5" in boxData:
 			wlan5 = boxData["wlan5"]
 			if wlan5:
+				# self.info("wlanState5/1: " + repr(wlanState))
 				netName = re.sub(r".*: ", "", wlan5["txt"]).encode("utf-8")
+				# self.info("wlanState5/2: " + repr(netName))
 				if not wlanState:
 					if wlan5["led"] == "led_green":
 						wlanState = ['1', '', '', "5GHz " + _("on") + ": " + netName]
@@ -3738,6 +3783,19 @@ class FritzCallFBF_upnp():
 						else:
 							wlanState[3] = wlanState[3] + ", 5GHz " + _("on") + ": " + netName
 		self.info("wlanState5: " + repr(wlanState))
+		# self.info("wlanState5/3: " + repr(wlanState))
+
+		if not wlanState and "wlan" in boxData:
+			wlan = boxData["wlan"]
+			# self.debug("wlan: " + repr(wlan))
+			netName = re.sub(r".*: ", "", wlan["txt"]).encode("utf-8")
+			# self.debug("netName: %s; led: %s", repr(netName), repr(wlan["led"]))
+			if wlan["led"] == "led_green":
+				wlanState = ['1', '', '', "2,4Ghz/5GHz " + _("on") + ": " + netName]
+			else:
+				wlanState = ['0', '', '', "2,4Ghz/5GHz " + _("off") + ": " + netName]
+			# self.info("wlanState2,4/5: " + repr(wlanState))
+		self.info("wlanState: " + repr(wlanState))
 
 		if "dect" in boxData:
 			dect = boxData["dect"]
@@ -3759,7 +3817,7 @@ class FritzCallFBF_upnp():
 				if "linktxt" in fun:
 					if fun["linktxt"] == "Faxfunktion" and fun["details"] == "Integriertes Fax aktiv":
 						faxActive = True
-					if fun["linktxt"] == "Fax function" and fun["details"] == "Integrated fax enabled":
+					elif fun["linktxt"] == "Fax function" and fun["details"] == "Integrated fax enabled":
 						faxActive = True
 					elif fun["linktxt"] == "Rufumleitung" and fun["details"]:
 						if fun["details"] != "deaktiviert":
@@ -3878,7 +3936,7 @@ class FritzCallFBF_upnp():
 		for call in calls:
 			direct = call.find("./Type").text
 			if self._callType != '.' and self._callType != direct:
-				# self.debug("skip: %s", call.find("./Id").text)
+				# self.debug("skip: id %s of type %s", call.find("./Id").text, direct)
 				continue
 			if direct == FBF_OUT_CALLS:
 				number = call.find("./Called").text
@@ -4014,6 +4072,7 @@ class FritzCallFBF_upnp():
 			linkP.write(result)
 			linkP.close()
 
+		count = 0
 		contacts = root.iterfind(".//contact")
 		for contact in contacts:
 			name = contact.find("./person/realName").text.replace(",", "")
@@ -4024,28 +4083,33 @@ class FritzCallFBF_upnp():
 				thisname = name.encode("utf-8")
 				thisnumber = cleanNumber(number.text)
 				if thisnumber in self.phonebook.phonebook:
+					self.info("Number already exists, skipping '''%s'''", (__(thisnumber)))
 					continue
 
 				if not thisnumber:
 					self.info("Ignoring entry with empty number for '''%s'''", (__(thisname)))
 					continue
 				else:
-					dummy = _("fax_work") + _("fax_home") + _("pager") # this is just to trigger localisation
-					thisType = number.attrib["type"]
+					dummy = _("fax_work") + _("fax_home") + _("pager") # this is just to trigger localisation; WTF?!?!
+					thisType = number.attrib["type"].encode("utf-8")
+					# self.debug("thisType: %s",  thisType)
 					if thisType.startswith('label:'):
 						thisType = thisType[6:]
 					if not config.plugins.FritzCall.fritzphonebookShowInternal.value and (thisType == "intern" or thisType == "memo" or thisType == ""):
+						self.info("Skipping internal number %s", (__(thisnumber)))
 						continue
 					if config.plugins.FritzCall.showType.value and thisType:
 						thisname = thisname + " (" + _(thisType) + ")"
-					if config.plugins.FritzCall.showShortcut.value and number.attrib["quickdial"]:
-						thisname = thisname + ", " + _("Shortcut") + ": " + number.attrib["quickdial"]
-					if config.plugins.FritzCall.showVanity.value and number.attrib["vanity"]:
-						thisname = thisname + ", " + _("Vanity") + ": " + number.attrib["vanity"]
+					if config.plugins.FritzCall.showShortcut.value and "quickdial" in number.attrib and number.attrib["quickdial"]:
+						thisname = thisname + ", " + _("Shortcut") + ": " + number.attrib["quickdial"].encode("utf-8")
+					if config.plugins.FritzCall.showVanity.value and "vanity" in number.attrib and number.attrib["vanity"]:
+						thisname = thisname + ", " + _("Vanity") + ": " + number.attrib["vanity"].encode("utf-8")
 
-					# self.debug("Adding '''%s''' with '''%s'''" % (__(thisname.strip()), __(thisnumber, False)))
+					# self.debug("Adding '''%s''' with '''%s'''", __(thisname.strip()), __(thisnumber, False))
 					# Beware: strings in phonebook.phonebook have to be in utf-8!
 					self.phonebook.phonebook[thisnumber] = thisname
+					count += 1
+		self.info("Added %d phone numbers", count)
 
 	def changeWLAN(self, statusWLAN, callback):
 		'''
@@ -4139,19 +4203,14 @@ class FritzCallFBF_upnp():
 			linkP.write(result["NewDeflectionList"])
 			linkP.close()
 
-		root = ET.fromstring(result["NewDeflectionList"])
-		deflections =  root.iterfind(".//Item")
-		for deflection in deflections:
+		for deflection in ET.fromstring(result["NewDeflectionList"]).iterfind(".//Item"):
 			# self.debug("enable: " + deflection.find("./Enable").text)
-			enabled = deflection.find("./Enable").text == '1'
-			if enabled:
-				outgoing = deflection.find("./Outgoing")
-				if outgoing is not None:
-					# self.debug("Outgoing")
-					self.blacklist[1].append(deflection.find("./Number").text)
-				else:
-					# self.debug("Incoming")
+			if deflection.find("./Enable").text == '1':
+				if deflection.find("./Type").text == "fromNumber":
 					self.blacklist[0].append(deflection.find("./Number").text)
+				if deflection.find("./Type").text == "fromAnonymous":
+					self.blacklist[0].append("")
+
 		self.debug(repr(self.blacklist))
 
 	def dial(self, number):  # @UnusedVariable # pylint: disable=W0613

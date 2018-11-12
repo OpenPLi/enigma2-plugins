@@ -250,6 +250,8 @@ class SatelliteTransponderSearchSupport:
 					if parm.system == eDVBFrontendParametersSatellite.System_DVB_S2:
 						parm.rolloff = d["rolloff"]
 						parm.pilot = d["pilot"]
+						parm.is_id = d["is_id"]
+						parm.pls_mode = d["pls_mode"]
 					self.__tlist.append(parm)
 					if self.auto_scan:
 						print "LOCKED at", freq
@@ -354,6 +356,8 @@ class SatelliteTransponderSearchSupport:
 				parm.system = self.scan_sat.bs_system.value
 				parm.pilot = eDVBFrontendParametersSatellite.Pilot_Unknown
 				parm.rolloff = eDVBFrontendParametersSatellite.RollOff_alpha_0_35
+				parm.pls_mode = eDVBFrontendParametersSatellite.PLS_Gold
+				parm.is_id = eDVBFrontendParametersSatellite.No_Stream_Id_Filter
 			else:
 				steps = 4000
 				parm.system = eDVBFrontendParametersSatellite.System_DVB_S
@@ -394,16 +398,15 @@ class SatelliteTransponderSearchSupport:
 		self.orb_pos = orb_pos
 		self.nim = nimmanager.nim_slots[nim_idx]
 		tunername = nimmanager.getNimName(nim_idx)
+		print "tunername", tunername
 		self.__tlist = [ ]
 		self.tp_found = [ ]
 		self.current_range = None
 		self.range_list = [ ]
 		tuner_no = -1
-		self.auto_scan = False
 
-		print "tunername", tunername
-		if nimmanager.nim_slots[nim_idx].supportsBlindScan() or tunername in ("BCM4505", "BCM4506 (internal)", "BCM4506", "Alps BSBE1 C01A/D01A.", "Si2166B", "Si2169C"):
-			self.auto_scan = nimmanager.nim_slots[nim_idx].supportsBlindScan() or tunername in ("Si2166B", "Si2169C")
+		self.auto_scan = nimmanager.nim_slots[nim_idx].supportsBlindScan() or tunername.startswith('Si216')
+		if self.auto_scan or tunername == "Alps BSBE1 C01A/D01A." or (tunername.startswith("BCM45") and tunername != "BCM4501"):
 			(self.channel, self.frontend) = self.tryGetRawFrontend(nim_idx, False, False)
 			if not self.frontend:
 				self.session.nav.stopService()
@@ -430,7 +433,7 @@ class SatelliteTransponderSearchSupport:
 						self.session.open(MessageBox, text, MessageBox.TYPE_ERROR)
 						return
 
-			band_cutoff_frequency = 11700000
+			band_cutoff_frequency = 11700001
 
 			s1 = self.scan_sat.bs_freq_start.value * 1000
 			s2 = self.scan_sat.bs_freq_stop.value * 1000

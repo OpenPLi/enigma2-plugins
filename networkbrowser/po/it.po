@@ -1,22 +1,24 @@
+# Italian translations for NetworkBrowser.
 # Signed-off-by: Dario Croci <spaeleus@croci.org>
+#
+# Updated by: Gringo <openpli@tiscali.it>
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: enigma2 - networkbrowser\n"
+"Project-Id-Version: NetworkBrowser\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-01-28 16:39+0100\n"
-"PO-Revision-Date: 2009-10-29 14:01+0100\n"
-"Last-Translator: Spaeleus <spaeleus@croci.org>\n"
+"POT-Creation-Date: 2018-07-31 14:17+0200\n"
+"PO-Revision-Date: 2018-04-17 23:07+0200\n"
+"Last-Translator: Gringo <openpli@tiscali.it>\n"
 "Language-Team: WWW.Linsat.net <spaeleus@croci.org>\n"
+"Language: it_IT\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Poedit-Language: Italian\n"
-"X-Poedit-Country: ITALY\n"
-"X-Poedit-SourceCharset: iso-8859-15\n"
-"X-Poedit-Basepath: /home/dario/Plugins/networkbrowser\n"
-"X-Poedit-SearchPath-0: /home/dario/Plugins/networkbrowser\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-Basepath: /X-Generator: Poedit 1.5.4\n"
+"X-Generator: Poedit 1.8.7.1\n"
 
 msgid ""
 "A mount entry with this name already exists!\n"
@@ -32,27 +34,27 @@ msgid ""
 "Active/\n"
 "Inactive"
 msgstr ""
-"Attivo\n"
-"Inattivo"
+"Attivo/\n"
+"Disattivo"
 
 msgid "Add a new NFS or CIFS mount point to your Receiver."
-msgstr "Aggiungere nuovo mount point NFS o CIFS al Receiver"
+msgstr "Aggiungere un nuovo punto di mount NFS o CIFS al ricevitore."
 
 msgid "Add new network mount point"
-msgstr "Aggiungere nuovo mount point di rete"
+msgstr "Aggiungere un nuovo punto di mount di rete"
 
 msgid ""
 "Are you sure you want to save this network mount?\n"
 "\n"
 msgstr ""
-"Salvare questo mount point?\n"
+"Salvare questo punto di mount?\n"
 "\n"
 
 msgid "Attempt to mount shares again"
-msgstr ""
+msgstr "Tentare ancora di montare le condivisioni."
 
 msgid "Attempt to recover lost mounts (in background)"
-msgstr ""
+msgstr "Tentare di ripristinare gli ultimi mount (in sottofondo)."
 
 msgid "Browse network neighbourhood"
 msgstr "Sfogliare Risorse di rete"
@@ -61,58 +63,55 @@ msgid "CIFS share"
 msgstr "Condivisione CIFS"
 
 msgid "Cancel"
-msgstr "Annull."
+msgstr "Annullare"
 
 msgid "Change hostname"
-msgstr "Cambiare nome Host"
+msgstr "Cambiare nome di sistema"
 
 msgid "Change the hostname of your Receiver."
-msgstr "Cambiare nome Host del Receiver."
+msgstr "Cambiare il nome di sistema al ricevitore."
 
 msgid "Close"
 msgstr "Chiudere"
 
 msgid "Delete"
-msgstr "Cancellare"
+msgstr "Eliminare"
 
 msgid "Delete mount"
-msgstr "Canc. il mount"
+msgstr "Eliminare mount"
 
 msgid "Dir:"
 msgstr "Dir: "
 
 msgid "Do you want to enter a username and password for this host?\n"
-msgstr "Utilizzare nome User e Password per questo Host?\n"
+msgstr "Utilizzare un nome utente e password per questo sistema?\n"
 
 msgid "Enter IP to scan..."
 msgstr "Inserire IP da ricercare..."
 
 msgid "Enter new hostname for your Receiver"
-msgstr "Inserire il nuovo nome Host per il Receiver"
-
-msgid "Enter options:"
-msgstr "Inserire opzioni: "
+msgstr "Inserire il nuovo nome di sistema del ricevitore"
 
 msgid "Enter password:"
-msgstr "Inserire Password: "
-
-msgid "Enter share directory:"
-msgstr "Inserire cartella condivisa: "
-
-msgid "Enter share name:"
-msgstr "Inserire nome condivisione: "
+msgstr "Inserire password: "
 
 msgid "Enter user and password for host: "
-msgstr "Inserire User e Password per l'Host: "
+msgstr "Inserire utente e password del sistema: "
 
 msgid "Enter username:"
-msgstr "Inserire nome User: "
+msgstr "Inserire nome utente: "
 
 msgid "Expert"
 msgstr "Avanzato"
 
 msgid "Finished restarting your network"
-msgstr "Riavvio rete terminato"
+msgstr "Riavvio della rete terminato"
+
+msgid "Host name"
+msgstr ""
+
+msgid "Host:"
+msgstr ""
 
 msgid "IP Address"
 msgstr "Indirizzo IP"
@@ -124,13 +123,13 @@ msgid "Local share name"
 msgstr "Nome condivisione locale"
 
 msgid "Manage network shares"
-msgstr "Gestire condivisioni di rete"
+msgstr "Gestire le condivisioni di rete"
 
 msgid "Manage your network shares..."
-msgstr "Gestire condivisioni di rete..."
+msgstr "Gestire le condivisioni di rete."
 
 msgid "Mount again"
-msgstr ""
+msgstr "Ripristinare mount"
 
 msgid "Mount informations"
 msgstr "Informazioni mount"
@@ -141,18 +140,21 @@ msgstr "Opzioni mount"
 msgid "Mount type"
 msgstr "Tipo mount"
 
+msgid "Mount view"
+msgstr "Elenco mount"
+
 msgid "MountManager"
-msgstr "MountManager"
+msgstr "Gestore mount"
 
 msgid ""
 "Mounted/\n"
 "Unmounted"
 msgstr ""
-"Montata\n"
-"Non Montata"
+"Montato/\n"
+"Smontato"
 
 msgid "Mountpoints management"
-msgstr "Gestione mount point"
+msgstr "Gestione punti di mount"
 
 msgid "Mounts editor"
 msgstr "Editor mount"
@@ -164,91 +166,91 @@ msgid "NFS share"
 msgstr "Condivisione NFS"
 
 msgid "NetworkBrowser"
-msgstr "NetworkBrowser"
+msgstr "Sfogliare la rete"
 
 msgid "No network devices found!"
-msgstr "Nessun apparato di rete trovato!"
+msgstr "Nessun dispositivo di rete trovato!"
 
 msgid "Password"
 msgstr "Password"
 
 msgid "Please wait for activation of your network mount..."
-msgstr "Attendere attivazione mount di rete..."
+msgstr "Attendere: attivazione mount di rete in corso..."
 
 msgid "Please wait while removing your network mount..."
 msgstr "Attendere: rimozione mount di rete in corso..."
 
 msgid "Please wait while updating your network mount..."
-msgstr "Attendere aggiornamento mount di rete..."
+msgstr "Attendere: aggiornamento mount di rete in corso..."
 
 msgid "Please wait while your network is restarting..."
 msgstr "Attendere: riavvio della rete in corso..."
 
 msgid "Press OK to activate the settings."
-msgstr "Ok -> Attivare la configurazione."
+msgstr "OK -> Attivare la configurazione."
 
 msgid "Press OK to collapse this host"
-msgstr "Ok -> Collassare l'host."
+msgstr "OK -> Comprimere il sistema."
 
 msgid "Press OK to edit selected settings."
-msgstr "Ok -> Modificare configurazione selezionata."
+msgstr "OK -> Modificare configurazione selezionata."
 
 msgid "Press OK to edit the settings."
-msgstr "Ok -> Modificare configurazione."
+msgstr "OK -> Modificare configurazione."
 
 msgid "Press OK to expand this host"
-msgstr "Ok -> Espandere l'host."
+msgstr "OK -> Espandere il sistema."
 
 msgid "Press OK to mount this share!"
-msgstr "Ok -> Eseguire il mount della condivisione!"
+msgstr "OK -> Eseguire il mount della condivisione!"
 
 msgid "Press OK to mount!"
-msgstr "Ok -> Eseguire il mount!"
+msgstr "OK -> Eseguire il mount!"
 
 msgid "Press OK to save settings."
-msgstr "Ok -> Salvare configurazione."
+msgstr "OK -> Salvare configurazione."
 
 msgid "Press OK to select."
-msgstr "Ok -> Selezionare."
+msgstr "OK -> Selezionare."
 
 msgid "Rescan"
-msgstr "Ripetere Ricerca"
+msgstr "Ripetere ricerca"
 
 msgid "Scan NFS share"
-msgstr "Ric. cond. NFS"
+msgstr "Ricerca condivisione NFS"
 
 msgid "Scan range"
 msgstr "Intervallo ricerca"
 
 msgid "Search for network shares"
-msgstr "Ricerca condivisioni di rete"
+msgstr "Cercare le condivisioni di rete"
 
 msgid "Search for network shares..."
-msgstr "Ricerca condivisioni di rete..."
+msgstr "Cercare le condivisioni di rete."
 
 msgid "Searching your network. Please wait..."
-msgstr "Ricerca sulla rete in corso. Attendere..."
+msgstr "Ricerca nella rete in corso. Attendere..."
 
 msgid "Server IP"
-msgstr "IP Server"
+msgstr "IP server"
 
 msgid "Server share"
-msgstr "Condivisione Server"
+msgstr "Condivisione server"
 
 msgid "User management"
-msgstr "Gestione User"
+msgstr "Gestione utente"
 
 msgid "Usermanager"
-msgstr "Gestione User"
+msgstr "Gestore utente"
 
 msgid "Username"
-msgstr "Nome User"
+msgstr "Nome utente"
 
 msgid "View, edit or delete mountpoints on your Receiver."
-msgstr "Vedere, modificare o cancellare mount point sul Receiver."
+msgstr "Vedere, modificare o eliminare i punti di mount del ricevitore."
 
 msgid "View, edit or delete usernames and passwords for your network."
-msgstr "Vedere, modificare o cancellare nome User e Password per la rete."
+msgstr "Vedere, modificare o eliminare il nome utente e la password di rete."
 
 msgid "Your network mount has been activated."
 msgstr "Mount di rete attivato."
@@ -260,4 +262,4 @@ msgid "Your network mount has been updated."
 msgstr "Mount di rete aggiornato."
 
 msgid "use as HDD replacement"
-msgstr "Usare in sostituzione HDD"
+msgstr "Usare in sostituzione del disco rigido"

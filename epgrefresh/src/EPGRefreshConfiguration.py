@@ -28,7 +28,7 @@ from enigma import getDesktop
 from Screens.MessageBox import MessageBox
 
 
-VERSION = "1.7"
+VERSION = "1.8"
 
 weekdays = [
 	_("Monday"),
@@ -281,12 +281,25 @@ class EPGRefreshConfiguration(Screen, ConfigListScreen):
 			self.close(self.session)
 
 	def keySave(self):
+		if len(self.services[0]) == 0 and len(self.services[1]) == 0 and config.plugins.epgrefresh.enabled.value:
+			self.session.openWithCallback(self.checkAnswer, MessageBox, _("EPGRefresh requires services/bouquets to be configured. Configure now?"), MessageBox.TYPE_YESNO, timeout=0)
+			return
 		epgrefresh.services = (set(self.services[0]), set(self.services[1]))
 		epgrefresh.saveConfiguration()
 		for x in self["config"].list:
 			x[1].save()
-
 		self.close(self.session)
+
+	def checkAnswer(self, answer):
+		if answer:
+			self.editServices()
+		else:
+			epgrefresh.services = (set(self.services[0]), set(self.services[1]))
+			epgrefresh.saveConfiguration()
+			config.plugins.epgrefresh.enabled.value = False
+			for x in self["config"].list:
+				x[1].save()
+			self.close(self.session)
 
 class EPGRefreshProfile(ConfigListScreen,Screen):
 	skin = """

@@ -1,3 +1,3 @@
 PLUGIN = Mosaic
-LANGS = de es fy it nl sr sv tr fa
+LANGS = de es fa fr fy it lt nl sr sv tr 
 include $(top_srcdir)/Rules-po.mak

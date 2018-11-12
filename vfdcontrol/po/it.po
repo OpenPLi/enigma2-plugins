@@ -1,0 +1,93 @@
+# Italian translations for VfdControl.
+# Signed-off-by: Gringo <openpli@tiscali.it>
+#
+# Updated by: Gringo <openpli@tiscali.it>
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: VfdControl\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-05-12 11:26+0200\n"
+"PO-Revision-Date: 2018-04-17 23:01+0200\n"
+"Last-Translator: Gringo <openpli@tiscali.it>\n"
+"Language-Team: \n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.7.1\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+
+msgid "12h"
+msgstr "12h"
+
+msgid "24h"
+msgstr "24h"
+
+msgid "Always off"
+msgstr "Sempre spento"
+
+msgid "Brightness Level 1"
+msgstr "Luminosità Livello 1"
+
+msgid "Brightness Level 2"
+msgstr "Luminosità Livello 2"
+
+msgid "Brightness level"
+msgstr "Livello di luminosità"
+
+msgid "Cancel"
+msgstr "Annullare"
+
+msgid "Change VFD display settings"
+msgstr "Modificare le impostazioni di visualizzazione VFD"
+
+msgid "Channelnumber in Standby Clock"
+msgstr "Numero del canale in stato di sospensione"
+
+msgid "Channelnumber in Standby off"
+msgstr "Numero del canale in stato di sospensione disattivato"
+
+msgid "Channelnumber/Clock in Standby Clock"
+msgstr "Numero del canale/Orologio in stato di sospensione"
+
+msgid "Clock always"
+msgstr "Sempre l'orologio"
+
+msgid "Control 7 segment VFD display"
+msgstr "Controllare il display VFD a 7 linee"
+
+msgid "Off"
+msgstr "Spento"
+
+msgid "On/Off"
+msgstr "Acceso/Spento"
+
+msgid "Save"
+msgstr "Salvare"
+
+msgid "Show REC-Symbol in Display"
+msgstr "Mostrare il simbolo REC nel Display"
+
+msgid "Show blinking Clock on Display during recording"
+msgstr "Mostrare orologio lampeggiante sul Display durante reg."
+
+msgid "Show on VFD"
+msgstr "Mostrare su VFD"
+
+msgid "Time mode"
+msgstr "Modalità Ora"
+
+msgid "Update Date/Time"
+msgstr "Aggiornare Data/Ora"
+
+msgid "VFD Display Setup"
+msgstr "Display VFD"
+
+msgid "no"
+msgstr "No"
+
+msgid "yes"
+msgstr "Sì"

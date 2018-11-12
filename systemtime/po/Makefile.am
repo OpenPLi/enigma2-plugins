@@ -2,6 +2,6 @@ PLUGIN = SystemTime
 
 CATEGORY = SystemPlugins
 
-LANGS = el ru sk lt pl fr
+LANGS = el fr it lt pl ru sk 
 
 include $(top_srcdir)/Rules-po.mak

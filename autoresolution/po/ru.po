@@ -2,46 +2,70 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Automatic Screen Resolution V. 0.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-06-10 16:57+0100\n"
+"POT-Creation-Date: 2018-05-11 10:58+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Dimitrij <dima-73@inbox.lv>\n"
 "Language-Team: openPLi Dimitrij\n"
+"Language: ru_RU\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-KeywordsList: _(\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SourceCharset: utf-8\n"
-"Language: ru_RU\n"
 "X-Generator: Poedit 1.8.4\n"
 "X-Poedit-SearchPath-0: ../src\n"
 
-msgid "SD 24HZ Progressive mode"
-msgstr "SD 24HZ прогрессивный режим"
+msgid "Alternative resolution when native not supported"
+msgstr "Альтернативное разрешение, если родное не поддерживается"
 
-msgid "SD 25/50HZ Interlace Mode"
-msgstr "SD 25/50HZ чересстрочный режим"
+msgid "Ask before changing videomode"
+msgstr "Спросить перед изменением видеорежима"
 
-msgid "SD 30/60HZ Interlace Mode"
-msgstr "SD 30/60HZ чересстрочный режим"
+msgid "Auto frame rate (refresh need 'multi/auto')"
+msgstr "Авто скорость частоты кадров (обновление необходимо 'multi/auto')"
 
-msgid "SD 25/50HZ Progressive Mode"
-msgstr "SD 25/50HZ прогрессивный режим"
+msgid "Autoresolution"
+msgstr "Авторазрешение"
 
-msgid "FHD 50/60HZ Progressive Mode"
-msgstr "FHD 50/60HZ прогрессивный режим"
+#, python-format
+msgid ""
+"Autoresolution Plugin Testmode:\n"
+"Is %s OK?"
+msgstr ""
+"Тестовый режим авторазрешения:\n"
+"Такой режим %s Вас устраивает?"
 
-msgid "SD 30/60HZ Progressive Mode"
-msgstr "SD 30/60Hz прогрессивный режим"
+msgid "Autoresolution Switch"
+msgstr "Переключатель авторазрешения"
 
-msgid "HD Interlace Mode"
-msgstr "HD чересстрочный режим"
+msgid "Autoresolution is not working in Scart/DVI-PC Mode"
+msgstr "Авторазрешение не работает в Scart/DVI-PC режиме"
 
-msgid "HD Progressive Mode"
-msgstr "HD прогрессивный режим"
+msgid "Autoresolution videomode setup"
+msgstr "Параметры авторазрешения видеорежима"
 
-msgid "Enable 720p24 Mode"
-msgstr "Включить режим 720p24"
+msgid "Cancel"
+msgstr "Отмена"
+
+#, python-format
+msgid ""
+"Changing framerate for current service?\n"
+"Current framerate: %s\n"
+"New framerate: %s\n"
+msgstr ""
+"Изменить скорость частоты кадров для текущего сервиса?\n"
+"Текущая скорость частоты кадров: %s\n"
+"Новая скорость частоты кадров: %s\n"
+
+msgid "Deinterlacer mode for interlaced content"
+msgstr "Деинтерлейсер режим для чересстрочной развертки"
+
+msgid "Deinterlacer mode for progressive content"
+msgstr "Деинтерлейсер режим для прогрессивной развертки"
+
+msgid "Delay x seconds after service started"
+msgstr "Задержка в х секунд после старта сервиса"
 
 msgid "Enable 1080p24 Mode"
 msgstr "Включить режим 1080p24"
@@ -52,103 +76,6 @@ msgstr "Включить режим 1080p25"
 msgid "Enable 1080p30 Mode"
 msgstr "Включить режим 1080p30"
 
-msgid "off"
-msgstr "выкл"
-
-msgid "auto"
-msgstr "авто"
-
-msgid "on"
-msgstr "вкл"
-
-msgid "bob"
-msgstr "bob"
-
-msgid "second"
-msgstr "сек."
-
-msgid "seconds"
-msgstr "сек."
-
-msgid "default"
-msgstr "дефолт"
-
-msgid ""
-"Autoresolution Plugin Testmode:\n"
-"Is %s OK?"
-msgstr ""
-"Тестовый режим авторазрешения:\n"
-"Такой режим %s Вас устраивает?"
-
-msgid "Autoresolution videomode setup"
-msgstr "Параметры авторазрешения видеорежима"
-
-msgid "OK"
-msgstr "ОК"
-
-msgid "Cancel"
-msgstr "Отмена"
-
-msgid "Autoresolution settings"
-msgstr "Настройки авторазрешения"
-
-msgid "Enable Autoresolution"
-msgstr "Включить авторазрешение"
-
-msgid "Refresh Rate"
-msgstr "Частота обновления"
-
-msgid "Show info screen"
-msgstr "Показать экран информации"
-
-msgid "Delay x seconds after service started"
-msgstr "Задержка в х секунд после старта сервиса"
-
-msgid "Running in testmode"
-msgstr "Запуск в тестовом режиме"
-
-msgid "Deinterlacer mode for interlaced content"
-msgstr "Деинтерлейсер режим для чересстрочной развертки"
-
-msgid "Deinterlacer mode for progressive content"
-msgstr "Деинтерлейсер режим для прогрессивной развертки"
-
-msgid "Autoresolution is not working in Scart/DVI-PC Mode"
-msgstr "Авторазрешение не работает в Scart/DVI-PC режиме"
-
-msgid "Autoresolution"
-msgstr "Авторазрешение"
-
-msgid "Autoresolution Switch"
-msgstr "Переключатель авторазрешения"
-
-msgid "Videomode: %s %s %s"
-msgstr "Видеорежим: %s %s %s"
-
-msgid "Videomode: %s"
-msgstr "Видеорежим: %s"
-
-msgid "Videocontent: %sx%s%s %sHZ"
-msgstr "Видеоконтент: %sx%s%s %sHZ"
-
-msgid "Manual"
-msgstr "Ручной"
-
-msgid "Auto frame rate (refresh need 'multi')"
-msgstr "Авто скорость частоты кадров (обновление необходимо 'multi')"
-
-msgid "Mode"
-msgstr "Режим"
-
-msgid "Lock timeout"
-msgstr "Таймаут блокировки"
-
-msgid "UHD Interlace Mode"
-msgstr "UHD чересстрочный режим"
-
-msgid "UHD Progressive Mode"
-msgstr "UHD прогрессивный режим"
-
 msgid "Enable 2160p24 Mode"
 msgstr "Включить режим 2160p24"
 
@@ -158,23 +85,32 @@ msgstr "Включить режим 2160p25"
 msgid "Enable 2160p30 Mode"
 msgstr "Включить режим 2160p30"
 
-msgid "Ask before changing videomode"
-msgstr "Спросить перед изменением видеорежима"
-
-msgid "Changing framerate for current service?\nCurrent framerate: %s\nNew framerate: %s\n"
-msgstr "Изменить скорость частоты кадров для текущего сервиса?\nТекущая скорость частоты кадров: %s\nНовая скорость частоты кадров: %s\n"
-
-msgid "Message timeout"
-msgstr "Таймаут сообщения"
-
-msgid "Use 60HZ instead 30HZ"
-msgstr "Использовать 60HZ вместо 30HZ"
+msgid "Enable 720p24 Mode"
+msgstr "Включить режим 720p24"
 
 msgid "Enable 720p50 Mode"
 msgstr "Включить режим 720p50"
 
-msgid "Alternative resolution when native not supported"
-msgstr "Альтернативное разрешение, если родное не поддерживается"
+msgid "Enable Autoresolution"
+msgstr "Включить авторазрешение"
+
+msgid "Exit"
+msgstr "Выход"
+
+msgid "FHD 50/60HZ Progressive Mode"
+msgstr "FHD 50/60HZ прогрессивный режим"
+
+msgid "HD Interlace Mode"
+msgstr "HD чересстрочный режим"
+
+msgid "HD Progressive Mode"
+msgstr "HD прогрессивный режим"
+
+msgid "Lock timeout"
+msgstr "Таймаут блокировки"
+
+msgid "Manual"
+msgstr "Ручной"
 
 msgid "Manual resolution"
 msgstr "Ручное разрешение"
@@ -182,20 +118,92 @@ msgstr "Ручное разрешение"
 msgid "Manual resolution is not working in Scart/DVI-PC mode!"
 msgstr "Ручное разрешение не работает в Scart/DVI-PC режиме!"
 
-msgid "This resolution is OK?"
-msgstr "Это разрешение в порядке?"
+msgid "Message timeout"
+msgstr "Таймаут сообщения"
+
+msgid "Mode"
+msgstr "Режим"
+
+msgid "OK"
+msgstr "ОК"
 
 msgid "Please select a resolution..."
 msgstr "Пожалуйста, выберите разрешение..."
 
-msgid "Video: "
-msgstr "Видео: "
+msgid "Refresh Rate"
+msgstr "Частота обновления"
 
-msgid "Exit"
-msgstr "Выход"
+msgid "Return back without confirmation after 10 sec."
+msgstr "Возврат назад без подтверждения через 10 сек."
+
+msgid "Running in testmode"
+msgstr "Запуск в тестовом режиме"
+
+msgid "SD 24HZ Progressive mode"
+msgstr "SD 24HZ прогрессивный режим"
+
+msgid "SD 25/50HZ Interlace Mode"
+msgstr "SD 25/50HZ чересстрочный режим"
+
+msgid "SD 25/50HZ Progressive Mode"
+msgstr "SD 25/50HZ прогрессивный режим"
+
+msgid "SD 30/60HZ Interlace Mode"
+msgstr "SD 30/60HZ чересстрочный режим"
+
+msgid "SD 30/60HZ Progressive Mode"
+msgstr "SD 30/60Hz прогрессивный режим"
 
 msgid "Show 'Manual resolution' in extensions menu"
 msgstr "Показать 'Ручное разрешение' в меню дополнений"
 
-msgid "Return back without confirmation after 10 sec."
-msgstr "Возврат назад без подтверждения через 10 сек."
+msgid "Show info screen"
+msgstr "Показать экран информации"
+
+msgid "This resolution is OK?"
+msgstr "Это разрешение в порядке?"
+
+msgid "UHD Interlace Mode"
+msgstr "UHD чересстрочный режим"
+
+msgid "UHD Progressive Mode"
+msgstr "UHD прогрессивный режим"
+
+msgid "Use 60HZ instead 30HZ"
+msgstr "Использовать 60HZ вместо 30HZ"
+
+msgid "Video: "
+msgstr "Видео: "
+
+#, python-format
+msgid "Videocontent: %sx%s%s %sHZ"
+msgstr "Видеоконтент: %sx%s%s %sHZ"
+
+#, python-format
+msgid "Videomode: %s"
+msgstr "Видеорежим: %s"
+
+#, python-format
+msgid "Videomode: %s %s %s"
+msgstr "Видеорежим: %s %s %s"
+
+msgid "auto"
+msgstr "авто"
+
+msgid "bob"
+msgstr "bob"
+
+msgid "default"
+msgstr "дефолт"
+
+msgid "off"
+msgstr "выкл"
+
+msgid "on"
+msgstr "вкл"
+
+msgid "second"
+msgstr "сек."
+
+msgid "seconds"
+msgstr "сек."

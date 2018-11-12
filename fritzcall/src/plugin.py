@@ -2,9 +2,9 @@
 '''
 Update rev
 $Author: michael $
-$Revision: 1507 $
-$Date: 2018-02-20 09:51:31 +0100 (Tue, 20 Feb 2018) $
-$Id: plugin.py 1507 2018-02-20 08:51:31Z michael $
+$Revision: 1534 $
+$Date: 2018-08-17 14:16:52 +0200 (Fri, 17 Aug 2018) $
+$Id: plugin.py 1534 2018-08-17 12:16:52Z michael $
 '''
 
 # C0111 (Missing docstring)
@@ -65,7 +65,7 @@ from twisted.protocols.basic import LineReceiver  # @UnresolvedImport
 
 import FritzOutlookCSV, FritzLDIF
 from nrzuname import ReverseLookupAndNotifier
-from . import _, __  # @UnresolvedImport # pylint: disable=W0611,F0401
+from . import __  # @UnresolvedImport # pylint: disable=W0611,F0401
 
 # import codecs
 # encode = lambda x : codecs.encode(x, "rot13")
@@ -128,7 +128,7 @@ config.plugins.FritzCall.filtermsn.setUseableChars('0123456789,')
 config.plugins.FritzCall.filterCallList = ConfigYesNo(default = True)
 config.plugins.FritzCall.showBlacklistedCalls = ConfigYesNo(default = False)
 config.plugins.FritzCall.showOutgoingCalls = ConfigYesNo(default = False)
-config.plugins.FritzCall.timeout = ConfigInteger(default = 15, limits = (0, 60))
+config.plugins.FritzCall.timeout = ConfigInteger(default = 15, limits = (0, 65535))
 config.plugins.FritzCall.lookup = ConfigYesNo(default = False)
 config.plugins.FritzCall.internal = ConfigYesNo(default = False)
 config.plugins.FritzCall.fritzphonebook = ConfigYesNo(default = False)
@@ -367,8 +367,8 @@ class FritzAbout(Screen):
 		self["text"] = Label(
 							"FritzCall Plugin" + "\n\n" +
 							"$Author: michael $"[1:-2] + "\n" +
-							"$Revision: 1507 $"[1:-2] + "\n" +
-							"$Date: 2018-02-20 09:51:31 +0100 (Tue, 20 Feb 2018) $"[1:23] + "\n"
+							"$Revision: 1534 $"[1:-2] + "\n" +
+							"$Date: 2018-08-17 14:16:52 +0200 (Fri, 17 Aug 2018) $"[1:23] + "\n"
 							)
 		self["url"] = Label("http://wiki.blue-panel.com/index.php/FritzCall")
 		self.onLayoutFinish.append(self.setWindowTitle)
@@ -981,6 +981,10 @@ class FritzMenu(Screen, HelpableScreen):
 					self["FBFInternet"].setText('Internet ' + _('IP Address:') + ' ' + ipAddress)
 				self["internet_inactive"].hide()
 				self["internet_active"].show()
+			elif upTime:
+				self["FBFInternet"].setText(_('Connected since') + ' ' + upTime)
+				self["internet_inactive"].hide()
+				self["internet_active"].show()
 			else:
 				self["internet_active"].hide()
 				self["internet_inactive"].show()
@@ -1431,6 +1435,7 @@ class FritzDisplayCalls(Screen, HelpableScreen):
 
 		# debug("[FritzDisplayCalls] %s" %repr(listOfCalls))
 		self.list = [(number, date[:6] + ' ' + date[9:14], pixDir(direct), remote, length, here) for (number, date, direct, remote, length, here) in listOfCalls]
+		# debug("[FritzDisplayCalls] %s" %repr(self.list))
 		self["entries"].setList(self.list)
 		#=======================================================================
 		# if len(self.list) > 1:
@@ -2617,7 +2622,7 @@ class FritzCallSetup(Screen, ConfigListScreen, HelpableScreen):
 
 	def setWindowTitle(self):
 		# TRANSLATORS: this is a window title.
-		self.setTitle(_("FritzCall Setup") + " (" + "$Revision: 1507 $"[1:-1] + "$Date: 2018-02-20 09:51:31 +0100 (Tue, 20 Feb 2018) $"[7:23] + ")")
+		self.setTitle(_("FritzCall Setup") + " (" + "$Revision: 1534 $"[1:-1] + "$Date: 2018-08-17 14:16:52 +0200 (Fri, 17 Aug 2018) $"[7:23] + ")")
 
 	def keyLeft(self):
 		ConfigListScreen.keyLeft(self)
@@ -3225,7 +3230,7 @@ class FritzReverseLookupAndNotifier(object):
 
 class FritzProtocol(LineReceiver):  # pylint: disable=W0223
 	def __init__(self):
-		info("[FritzProtocol] " + "$Revision: 1507 $"[1:-1] + "$Date: 2018-02-20 09:51:31 +0100 (Tue, 20 Feb 2018) $"[7:23] + " starting")
+		info("[FritzProtocol] " + "$Revision: 1534 $"[1:-1] + "$Date: 2018-08-17 14:16:52 +0200 (Fri, 17 Aug 2018) $"[7:23] + " starting")
 		global mutedOnConnID
 		mutedOnConnID = None
 		self.number = '0'
@@ -3373,11 +3378,12 @@ class FritzProtocol(LineReceiver):  # pylint: disable=W0223
 				self.notifyAndReset()
 
 class FritzClientFactory(ReconnectingClientFactory):
-	initialDelay = 20
-	maxDelay = 30
 
 	def __init__(self):
 		self.hangup_ok = False
+		# self.initialDelay = 20
+		# self.maxDelay = 30
+		self.maxRetries = 5
 
 	def startedConnecting(self, connector):  # @UnusedVariable # pylint: disable=W0613
 		#=======================================================================

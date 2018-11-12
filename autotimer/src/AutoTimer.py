@@ -43,12 +43,12 @@ from SimpleThread import SimpleThread
 
 try:
 	from Plugins.Extensions.SeriesPlugin.plugin import getSeasonEpisode4 as sp_getSeasonEpisode
-except ImportError as ie:
+except:
 	sp_getSeasonEpisode = None
 
 try:
 	from Plugins.Extensions.SeriesPlugin.plugin import showResult as sp_showResult
-except ImportError as ie:
+except:
 	sp_showResult = None
 
 from . import config, xrange, itervalues
@@ -87,7 +87,7 @@ def timeSimilarityPercent(rtimer, evtBegin, evtEnd, timer=None):
 	else:
 		return 0
 	if durationMatch_percent < commonTime_percent:
-		#avoid false match for a short event completely inside a very long rtimer's time span 
+		#avoid false match for a short event completely inside a very long rtimer's time span
 		return durationMatch_percent
 	else:
 		return commonTime_percent
@@ -484,8 +484,8 @@ class AutoTimer:
 			if timer.series_labeling and sp_getSeasonEpisode is not None:
 				allow_modify = False
 				doLog("[AutoTimer SeriesPlugin] Request name, desc, path %s %s %s" % (name, shortdesc, dest))
-				sp = sp_getSeasonEpisode(serviceref, name, evtBegin, evtEnd, shortdesc, dest)
-				if sp and type(sp) in (tuple, list) and len(sp) == 4:
+				sp = sp_getSeasonEpisode(serviceref, name, evtBegin, evtEnd, shortdesc, dest, True)
+				if sp and type(sp) in (tuple, list) and len(sp) > 3:
 					name = sp[0] or name
 					shortdesc = sp[1] or shortdesc
 					dest = sp[2] or dest
@@ -498,8 +498,8 @@ class AutoTimer:
 					# If AutoTimer name not equal match, do a second lookup with the name
 					if timer.name.lower() != timer.match.lower():
 						doLog("[AutoTimer SeriesPlugin] Request name, desc, path %s %s %s" % (timer.name, shortdesc, dest))
-						sp = sp_getSeasonEpisode(serviceref, timer.name, evtBegin, evtEnd, shortdesc, dest)
-						if sp and type(sp) in (tuple, list) and len(sp) == 4:
+						sp = sp_getSeasonEpisode(serviceref, timer.name, evtBegin, evtEnd, shortdesc, dest, True)
+						if sp and type(sp) in (tuple, list) and len(sp) > 3:
 							name = sp[0] or name
 							shortdesc = sp[1] or shortdesc
 							dest = sp[2] or dest
@@ -539,7 +539,7 @@ class AutoTimer:
 				if dest and dest not in moviedict:
 					self.addDirectoryToMovieDict(moviedict, dest, serviceHandler)
 				for movieinfo in moviedict.get(dest, ()):
-					if self.checkDuplicates(timer, name, movieinfo.get("name"), shortdesc, movieinfo.get("shortdesc"), extdesc, movieinfo.get("extdesc")):
+					if self.checkDuplicates(timer, name, movieinfo.get("name"), shortdesc, movieinfo.get("shortdesc"), extdesc, movieinfo.get("extdesc"), False, True):
 						doLog("[AutoTimer] We found a matching recorded movie, skipping event:", name)
 						movieExists = True
 						break
@@ -607,6 +607,11 @@ class AutoTimer:
 				if timer.series_labeling and sp_getSeasonEpisode is not None:
 					if sp and type(sp) in (tuple, list) and len(sp) == 4:
 						ret = self.addToFilterfile(str(sp[0]), begin, simulateOnly)
+					if sp and type(sp) in (tuple, list) and len(sp) > 3:
+						filter_title = str(sp[0])
+						if len(sp) > 4:
+							filter_title = "{series:s} - S{season:02d}E{rawepisode:s} - {title:s}".format( **sp[4] )
+						ret = self.addToFilterfile(filter_title, begin, simulateOnly, str(sp[0]))
 						if ret:
 							if simulateOnly:
 								doLog("[AutoTimer SeriesPlugin] only simulate - new Timer would be saved in autotimer_filter")
@@ -828,7 +833,7 @@ class AutoTimer:
 		return (new, modified)
 
 	def parseEPG(self, simulateOnly=False, uniqueId=None, callback=None):
- 
+
 		from plugin import AUTOTIMER_VERSION
 		doLog("AutoTimer Version: " + AUTOTIMER_VERSION)
 
@@ -952,11 +957,12 @@ class AutoTimer:
 		file_search_log.write(searchlog_txt)
 		file_search_log.close()
 
-	def addToFilterfile(self, name, begin, simulateOnlyValue=False):
+	def addToFilterfile(self, name, begin, simulateOnlyValue=False, sp_title="xxxxxxxxxxxxxxxx"):
 		path_filter_txt = "/etc/enigma2/autotimer_filter.txt"
 		if os.path.exists(path_filter_txt):
 			search_txt = '"' + name + '"'
-			if search_txt in open(path_filter_txt).read():
+			search_txt_sp = '"' + sp_title + '"'
+			if (search_txt or search_txt_sp) in open(path_filter_txt).read():
 				print ("[AutoTimer] Skipping an event because found event in autotimer_filter")
 				doLog("[AutoTimer] Skipping an event because found event in autotimer_filter")
 				return False
@@ -1074,7 +1080,7 @@ class AutoTimer:
 		timer.begin = int(begin)
 		timer.end = int(end)
 		timer.service_ref = ServiceReference(serviceref)
-		if eit: 
+		if eit:
 			timer.eit = eit
 		if base_timer:
 			check_timer_list = NavigationInstance.instance.RecordTimer.timer_list[:]
@@ -1150,7 +1156,7 @@ class AutoTimer:
 				retValue = True
 		return retValue
 
-	def checkDuplicates(self, timer, name1, name2, shortdesc1, shortdesc2, extdesc1, extdesc2, force=False):
+	def checkDuplicates(self, timer, name1, name2, shortdesc1, shortdesc2, extdesc1, extdesc2, force=False, isMovie=False):
 		if name1 and name2:
 			sequenceMatcher = SequenceMatcher(" ".__eq__, name1, name2)
 		else:
@@ -1167,9 +1173,11 @@ class AutoTimer:
 				doDebug("[AutoTimer] shortdesc ratio %f - %s - %d - %s - %d" % (ratio, shortdesc1, len(shortdesc1), shortdesc2, len(shortdesc2)))
 				foundShort = shortdesc1 in shortdesc2 or ((ratio_value < ratio) or (ratio_value == 1.0 and ratio_value == ratio))
 				if foundShort:
-					doLog("[AutoTimer] shortdesc ratio %f - %s - %d - %s - %d" % (ratio, shortdesc1, len(shortdesc1), shortdesc2, len(shortdesc2)))
-			elif not force and timer.descShortExtEmpty and not shortdesc1 and not shortdesc2 and name1 != name2:
+					doLog("[AutoTimer] shortdesc match: ratio %f - %s - %d - %s - %d" % (ratio, shortdesc1, len(shortdesc1), shortdesc2, len(shortdesc2)))
+			elif not force and timer.descShortExtEmpty and ((isMovie and shortdesc1 and not shortdesc2) or (not isMovie and not shortdesc1 and not shortdesc2 and name1 != name2)):
+				doDebug("[AutoTimer] Configuration caused this sortdesc match to be ignored!");
 				foundShort = False
+			doDebug("[AutoTimer] Final result for foundShort: %s" % "True" if foundShort else "False");
 
 			foundExt = True
 			# NOTE: only check extended if short description already is a match because otherwise
@@ -1180,8 +1188,11 @@ class AutoTimer:
 				doDebug("[AutoTimer] extdesc ratio %f - %s - %d - %s - %d" % (ratio, extdesc1, len(extdesc1), extdesc2, len(extdesc2)))
 				foundExt = (ratio_value < ratio) or (ratio_value == 1.0 and ratio_value == ratio)
 				if foundExt:
-					doLog("[AutoTimer] extdesc ratio %f - %s - %d - %s - %d" % (ratio, extdesc1, len(extdesc1), extdesc2, len(extdesc2)))
-			elif not force and timer.descShortExtEmpty and not extdesc1 and not extdesc2 and name1 != name2:
+					doLog("[AutoTimer] extdesc match: ratio %f - %s - %d - %s - %d" % (ratio, extdesc1, len(extdesc1), extdesc2, len(extdesc2)))
+			elif not force and timer.descShortExtEmpty and ((isMovie and extdesc1 and not extdesc2) or (not isMovie and not extdesc1 and not extdesc2 and name1 != name2)):
+				doDebug("[AutoTimer] Configuration caused this extdesc match to be ignored!");
 				foundExt = False
+			doDebug("[AutoTimer] Final result for foundExt: %s" % "True" if foundExt else "False");
+
 			return foundShort and foundExt
 		return False

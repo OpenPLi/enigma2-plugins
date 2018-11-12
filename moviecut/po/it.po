@@ -1,0 +1,138 @@
+# Italian translations for MovieCut.
+# Signed-off-by: Gringo <openpli@tiscali.it>
+#
+# Updated by: Gringo <openpli@tiscali.it>
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: MovieCut\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-05-11 12:34+0200\n"
+"PO-Revision-Date: 2018-04-17 23:19+0200\n"
+"Last-Translator: Gringo <openpli@tiscali.it>\n"
+"Language-Team: \n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.7.1\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+
+msgid "Advanced cut specification..."
+msgstr "Configurazioni avanzate per la versione tagliata"
+
+#, python-format
+msgid ""
+"Another movie is currently cut.\n"
+"The movie \"%s\" will be cut in the background after it."
+msgstr ""
+"Un altro video è attualmente in fase di ritaglio.\n"
+"Al termine il video \"%s\" verrà ritagliato in sottofondo."
+
+msgid "Bad arguments"
+msgstr "Parametri non corretti"
+
+msgid "Cancel"
+msgstr "Annullare"
+
+msgid "Choose target folder"
+msgstr "Selezionare la cartella di destinazione"
+
+msgid "Couldn't open input .ap file"
+msgstr "Impossibile aprire il file .ap origine"
+
+msgid "Couldn't open input .cuts file"
+msgstr "Impossibile aprire il file .cuts origine"
+
+msgid "Couldn't open input .ts file"
+msgstr "Impossibile aprire il file .ts origine"
+
+msgid "Couldn't open output .ap file"
+msgstr "Impossibile aprire il file .ap destinazione"
+
+msgid "Couldn't open output .cuts file"
+msgstr "Impossibile aprire il file .cuts destinazione"
+
+msgid "Couldn't open output .ts file"
+msgstr "Impossibile aprire il file .ts destinazione"
+
+msgid "Cut Parameter Input"
+msgstr "Inserire i parametri di taglio"
+
+msgid "Cut source:"
+msgstr "Editor da usare per i tagli:"
+
+msgid "Cutlist"
+msgstr "Editor video"
+
+msgid "Cuts (an IN OUT IN OUT ... sequence of hour:min:sec)"
+msgstr "Lista tagli (sequenza IN OUT IN OUT ecc. in formato ore:min:sec)"
+
+#, python-format
+msgid "Cutting failed for movie \"%s\""
+msgstr "Il ritaglio del video \"%s\" non è riuscito"
+
+#, python-format
+msgid "Cutting was aborted for movie \"%s\""
+msgstr "Ritaglio del video \"%s\" annullato"
+
+msgid "Don't cut"
+msgstr "Non eseguire i tagli"
+
+msgid "Empty .ap file"
+msgstr "File .ap vuoto"
+
+msgid "Execute cuts..."
+msgstr "Eseguire i tagli..."
+
+#, python-format
+msgid "How would you like to cut \"%s\"?"
+msgstr "Come si desidera eseguire i tagli su \"%s\"?"
+
+msgid "Manual specification"
+msgstr "Impostati manualmente"
+
+msgid "New description:"
+msgstr "Nuova descrizione:"
+
+msgid "New filename:"
+msgstr "Nuovo nome file:"
+
+msgid "New location:"
+msgstr "Nuovo percorso:"
+
+msgid "New title:"
+msgstr "Nuovo titolo:"
+
+msgid "No"
+msgstr "No"
+
+msgid "No cuts specified"
+msgstr "Nessun taglio specificato"
+
+msgid "OK"
+msgstr "OK"
+
+msgid "Place the cut movie in a new file ending with \" cut\""
+msgstr "Copiare la versione tagliata in un nuovo file con il nome che termina con \" cut\""
+
+msgid "Read/write error (disk full?)"
+msgstr "Errore di lettura/scrittura (disco pieno?)"
+
+msgid "Replace original:"
+msgstr "Sostituire l'originale:"
+
+msgid "Replace the original movie with the cut movie"
+msgstr "Sostituire il video originale con la versione tagliata"
+
+#, python-format
+msgid "The movie \"%s\" is cut in the background."
+msgstr "Il ritaglio del video \"%s\" è in corso in sottofondo."
+
+#, python-format
+msgid "The movie \"%s\" is successfully cut"
+msgstr "Il video \"%s\" è stato ritagliato con successo"
+
+msgid "Yes"
+msgstr "Sì"

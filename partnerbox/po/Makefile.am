@@ -1,3 +1,3 @@
 PLUGIN = Partnerbox
-LANGS = de hu it sr cs sv ru
+LANGS = cs de fr hu it lt ru sr sv 
 include $(top_srcdir)/Rules-po.mak

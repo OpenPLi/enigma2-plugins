@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-09-16 10:28+0300\n"
+"POT-Creation-Date: 2018-05-11 10:58+0200\n"
 "PO-Revision-Date: 2013-08-04 16:45+0100\n"
 "Last-Translator: daTa deVil <data-devil@nowhere.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -12,50 +12,152 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.5.4\n"
 
+#, python-format
 msgid " (%d mins)\n"
 msgstr " (%d min)\n"
+
+#, fuzzy, python-format
+msgid "%s...%s (%d mins)"
+msgstr " (%d min)\n"
+
+#, fuzzy, python-format
+msgid "+%d min / %s"
+msgstr " (%d min)\n"
+
+msgid "<<Only when zap to service at start timer>>"
+msgstr ""
 
 msgid "All Services"
 msgstr "Alle Services"
 
+msgid "Always show indicator icon when recording"
+msgstr ""
+
+msgid "Anchor resizing at"
+msgstr ""
+
 msgid "Automatic is the default action"
 msgstr "Automatische Standardaktion"
+
+msgid "Background window"
+msgstr ""
+
+#, python-format
+msgid "Bouquet: %s"
+msgstr ""
 
 msgid "Cancel"
 msgstr "Abbrechen"
 
+msgid "DD HH:MM:SS"
+msgstr ""
+
+msgid "Dd HHh MMm SSs"
+msgstr ""
+
 msgid "Enable record infobar"
 msgstr "aktiviere Record Infobar"
+
+msgid ""
+"GUI needs a restart to apply changes.\n"
+"Restart the GUI now?"
+msgstr ""
 
 msgid "Go to Standby now?"
 msgstr "Jetzt in den Standby gehen?"
 
-msgid "Goto Standby when wakeup on a timer recording"
+#, fuzzy
+msgid "Goto standby when wakeup on a timer recording"
 msgstr "Gehe in Standby nach wecken bei Timeraufnahme"
 
-msgid "Increase direction"
-msgstr "Ausrichtung neuer Aufnahmen"
+msgid "H:M:S"
+msgstr ""
+
+msgid "HH:MM:SS"
+msgstr ""
+
+msgid "HHh MMm SSs"
+msgstr ""
+
+msgid "Hh Mm Ss"
+msgstr ""
+
+msgid "M:S"
+msgstr ""
+
+msgid "M:SS"
+msgstr ""
+
+msgid "MM:SS"
+msgstr ""
+
+msgid "MMm SSs"
+msgstr ""
+
+msgid "Mm SSs"
+msgstr ""
+
+msgid "Mm Ss"
+msgstr ""
+
+msgid "N/A"
+msgstr ""
+
+msgid "OK"
+msgstr ""
+
+msgid "Preferred tuner for recording"
+msgstr ""
 
 msgid "Provider"
 msgstr "Provider"
 
+#, fuzzy, python-format
+msgid "Provider: %s"
+msgstr "Provider"
+
+#, fuzzy
+msgid "Record Infobar"
+msgstr "aktiviere Record Infobar"
+
+msgid "Record Infobar Setup"
+msgstr ""
+
+msgid "Record Infobar addon"
+msgstr ""
+
+msgid "Record timelen format"
+msgstr ""
+
 msgid "Recording starts!\n"
 msgstr "Aufnahme startet!\n"
+
+msgid "S"
+msgstr ""
 
 msgid "Satellites"
 msgstr "Satelliten"
 
-msgid "Save"
-msgstr "Speichern"
+msgid "Set correct position timer in channel list"
+msgstr ""
 
-msgid "Show message when switching to recording service"
+#, fuzzy
+msgid "Show message when zap to recording service"
 msgstr "Zeige Nachricht beim umschalten zur Aufnahme"
 
-msgid "Standby for timer 'After event' "
+msgid "Ss"
+msgstr ""
+
+#, fuzzy
+msgid "Standby message screen timeout (sec)"
+msgstr "Standby Nachricht Zeitlimit (sec.)"
+
+#, fuzzy
+msgid "Standby only type timer 'After event'"
 msgstr "Standby für Timer 'Nach dem Event'"
 
-msgid "Standby message screen timeout (sec.)"
-msgstr "Standby Nachricht Zeitlimit (sec.)"
+msgid "Stream"
+msgstr ""
 
 msgid "Switch to a recordable channel?"
 msgstr "Umschalten zu einem aufnehmbaren Kanal?"
@@ -63,14 +165,21 @@ msgstr "Umschalten zu einem aufnehmbaren Kanal?"
 msgid "Switched to the recording service !\n"
 msgstr "Umgeschaltet zu einem aufnehmbaren Kanal !\n"
 
+#, python-format
+msgid "Tuner: %s"
+msgstr ""
+
 msgid "Unknown"
 msgstr "Unbekannt"
 
-msgid "X position (upper-left corner of srceen)"
-msgstr "X Position (obere linke Ecke vom Bildschirm)"
+msgid "X screen position"
+msgstr ""
 
-msgid "Y position (upper-left corner of srceen)"
-msgstr "Y Position (obere linke Ecke vom Bildschirm)"
+msgid "Y screen position"
+msgstr ""
+
+msgid "Z screen position"
+msgstr ""
 
 msgid "Zap on start service recording"
 msgstr "schalte zur gestarteten Aufnahme"
@@ -78,7 +187,8 @@ msgstr "schalte zur gestarteten Aufnahme"
 msgid "all"
 msgstr "alle"
 
-msgid "all,than to do 'nothing' "
+#, fuzzy
+msgid "all, except 'nothing'"
 msgstr "alle, dann mache 'nichts' "
 
 msgid "always"
@@ -93,9 +203,14 @@ msgstr "auto"
 msgid "auto and deep standby"
 msgstr "auto und Deep Standby"
 
+msgid "black"
+msgstr ""
+
+#, python-format
 msgid "channel: %s   prov: %s\n"
 msgstr "Kanal: %s   Prov: %s\n"
 
+#, python-format
 msgid ""
 "channel: %s   prov: %s\n"
 " %s\n"
@@ -109,9 +224,13 @@ msgstr "Deep Standby"
 msgid "default"
 msgstr "standard"
 
+msgid "disabled"
+msgstr ""
+
 msgid "down"
 msgstr "unten"
 
+#, python-format
 msgid "duration:  %s ... "
 msgstr "Laufzeit:  %s ... "
 
@@ -123,6 +242,9 @@ msgstr "Standby"
 
 msgid "top"
 msgstr "Oben"
+
+msgid "transparent"
+msgstr ""
 
 msgid "zap"
 msgstr "umschalten"

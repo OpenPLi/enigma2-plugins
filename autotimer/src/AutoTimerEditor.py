@@ -41,6 +41,9 @@ from Tools import Directories
 # Tags
 from Screens.MovieSelection import getPreferredTagEditor
 
+from Components.Sources.Boolean import Boolean
+from Components.Pixmap import Pixmap
+
 weekdays = [
 	("0", _("Monday")),
 	("1", _("Tuesday")),
@@ -341,7 +344,7 @@ class AutoTimerEditorBase:
 				("1", _("Title and Short description")),
 				("2", _("Title and all descriptions")),
 			],
-		    default = str(timer.searchForDuplicateDescription)
+			default = str(timer.searchForDuplicateDescription)
 		))
 
 		# Custom Location
@@ -465,6 +468,9 @@ class AutoTimerEditor(Screen, ConfigListScreen, AutoTimerEditorBase):
 			<widget name="config" position="5,50" size="690,350" scrollbarMode="showOnDemand" />
 			<ePixmap pixmap="skin_default/div-h.png" position="0,405" zPosition="1" size="700,2" />
 			<widget source="help" render="Label" position="5,410" size="690,157" font="Regular;20" />
+			<widget source="VKeyIcon" render="Pixmap" pixmap="skin_default/buttons/key_text.png" position="5,534" zPosition="10" size="52,38" transparent="1" alphatest="on">
+				<convert type="ConditionalShowHide"/>
+			</widget>
 		</screen>"""
 	else:
 		skin = """<screen name="AutoTimerEditor" title="Edit AutoTimer" position="center,center" size="565,400">
@@ -479,6 +485,9 @@ class AutoTimerEditor(Screen, ConfigListScreen, AutoTimerEditorBase):
 			<widget name="config" position="5,50" size="555,225" scrollbarMode="showOnDemand" />
 			<ePixmap pixmap="skin_default/div-h.png" position="0,275" zPosition="1" size="565,2" />
 			<widget source="help" render="Label" position="5,280" size="555,113" font="Regular;21" />
+			<widget source="VKeyIcon" render="Pixmap" pixmap="skin_default/buttons/key_text.png" position="5,375" zPosition="10" size="35,25" transparent="1" alphatest="on">
+				<convert type="ConditionalShowHide"/>
+			</widget>
 		</screen>"""
 	def __init__(self, session, timer, editingDefaults = False, **kwargs):
 		Screen.__init__(self, session)
@@ -520,7 +529,9 @@ class AutoTimerEditor(Screen, ConfigListScreen, AutoTimerEditorBase):
 		self["key_red"] = StaticText(_("Cancel"))
 		self["key_green"] = StaticText(_("OK"))
 		self["key_yellow"] = StaticText()
- 		self["key_blue"] = StaticText()
+		self["key_blue"] = StaticText()
+
+		self["VKeyIcon"] = Boolean(False)
 
 		self["help"] = StaticText()
 
@@ -1046,6 +1057,9 @@ class AutoTimerFilterEditor(Screen, ConfigListScreen):
 		<widget source="key_yellow" render="Label" position="280,0" zPosition="1" size="140,40" valign="center" halign="center" font="Regular;21" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
 		<widget source="key_blue" render="Label" position="420,0" zPosition="1" size="140,40" valign="center" halign="center" font="Regular;21" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
 		<widget name="config" position="5,45" size="555,225" scrollbarMode="showOnDemand" />
+		<widget source="VKeyIcon" render="Pixmap" pixmap="skin_default/buttons/key_text.png" position="5,242" zPosition="10" size="52,38" transparent="1" alphatest="on">
+			<convert type="ConditionalShowHide"/>
+		</widget>
 	</screen>"""
 
 	def __init__(self, session, filterset, excludes, includes):
@@ -1077,6 +1091,10 @@ class AutoTimerFilterEditor(Screen, ConfigListScreen):
 		self["key_green"] = StaticText(_("Save"))
 		self["key_yellow"] = StaticText(_("delete"))
 		self["key_blue"] = StaticText(_("New"))
+
+		self["HelpWindow"] = Pixmap()
+		self["HelpWindow"].hide()
+		self["VKeyIcon"] = Boolean(False)
 
 		# Define Actions
 		self["actions"] = ActionMap(["SetupActions", "ColorActions"],

@@ -82,7 +82,10 @@ class AutoMountView(Screen):
                 if entry["isMounted"] is False:
                         isMountedpng = LoadPixmap(cached=True, path=resolveFilename(SCOPE_PLUGINS, "SystemPlugins/NetworkBrowser/icons/cancel.png"))
                 sharename = entry["sharename"]
-                IPdescription = _("IP:") + " " + str(entry["ip"])
+                if entry["host"]:
+                    IPdescription = _("Host:") + " " + str(entry["host"])
+                else:
+                    IPdescription = _("IP:") + " " + str(entry["ip"])
                 DIRdescription = _("Dir:") + " " + str(entry["sharedir"])
                 if entry["active"] == 'True' or entry["active"] == True:
                         activepng = LoadPixmap(cached=True, path=resolveFilename(SCOPE_SKIN_IMAGE, "skin_default/icons/lock_on.png"))

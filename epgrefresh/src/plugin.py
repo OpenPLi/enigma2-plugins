@@ -378,9 +378,8 @@ def addtoEPGRefresh(self, add):
 	if not ref:
 		return
 	sref = ref.toString()
-	# strip all after last :
 	pos = sref.rfind(':')
-	if pos != -1:
+	if pos != -1 and not value.startswith('1:134:'):
 		sref = sref[:pos+1]
 	try:
 		epgrefresh.services[0].add(EPGRefreshService(str(sref), None))

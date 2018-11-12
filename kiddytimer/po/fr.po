@@ -1,0 +1,202 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-08-01 20:49+0200\n"
+"PO-Revision-Date: 2018-07-31 15:34+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.1.1\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+msgid "01:00"
+msgstr "01:00"
+
+msgid "??:??"
+msgstr "??:??"
+
+msgid "Allows to controls your kids' daily TV usage"
+msgstr "Permet de contrôler l'utilisation quotidienne de la télévision par vos enfants."
+
+msgid "Cancel"
+msgstr "Annuler"
+
+msgid "Center screen at the lower border"
+msgstr "Centrer l'écran sur le bord inférieur"
+
+msgid "Center screen at the upper border"
+msgstr "Centrer l'écran sur le bord supérieur"
+
+msgid ""
+"Cheat attempt detected. \n"
+"Box has not been shudown correctly. \n"
+"Remaining time was set to 0."
+msgstr ""
+"Tentative de triche détectée.\n"
+"La boîte n'a pas été arrêtée correctement.\n"
+"Le temps restant a été réglé sur 0."
+
+msgid "Clock"
+msgstr "Horloge"
+
+msgid "Decrease remaining time"
+msgstr "Diminuer le temps restant"
+
+msgid "Disable KiddyTimer"
+msgstr "Désactiver KiddyTimer"
+
+msgid "Discard changes and close screen"
+msgstr "Annuler les changements et fermer l'écran"
+
+msgid "Do you want to start the kiddytimer- plugin now."
+msgstr "Voulez-vous démarrer le plugin kiddytimer maintenant."
+
+msgid "Don't monitor TV started after"
+msgstr "Ne pas surveiller la télévision qui a démarré après"
+
+msgid "Don't monitor TV started before"
+msgstr "Ne pas surveiller la télévision qui a démarré avant"
+
+msgid "Enable KiddyTimer"
+msgstr "Activer KiddyTimer"
+
+msgid "Enable KiddyTimer for x minutes"
+msgstr "Activer KiddyTimer pendant x minutes"
+
+msgid "Enabled"
+msgstr "Activé"
+
+msgid "Enter pin code"
+msgstr "Saisir code PIN"
+
+msgid "Friday"
+msgstr "Vendredi"
+
+msgid "Increase remaining time"
+msgstr "Augmenter le temps restant"
+
+msgid "Invalid selection"
+msgstr "Sélection non valide"
+
+msgid "KiddyTimer"
+msgstr "KiddyTimer"
+
+#, python-format
+msgid "Last day started: %s"
+msgstr "Le dernier jour a commencé : %s"
+
+msgid "Monday"
+msgstr "Lundi"
+
+msgid "Move clock"
+msgstr "Déplacer l'horloge"
+
+msgid "Move screen down"
+msgstr "Déplacer l'écran vers le bas"
+
+msgid "Move screen to the center of your TV"
+msgstr "Déplacer l'écran au centre de l'écran"
+
+msgid "Move screen to the left"
+msgstr "Déplacer l'écran vers la gauche"
+
+msgid "Move screen to the lower left corner"
+msgstr "Déplacer l'écran dans le coin inférieure gauche"
+
+msgid "Move screen to the lower right corner"
+msgstr "Déplacer l'écran dans le coin inférieure droit"
+
+msgid "Move screen to the middle of the left border"
+msgstr "Déplacer l'écran au milieu du bord gauche"
+
+msgid "Move screen to the middle of the right border"
+msgstr "Déplacer l'écran au milieu du bord droit"
+
+msgid "Move screen to the right"
+msgstr "Déplacer l'écran vers la droite"
+
+msgid "Move screen to the upper left corner"
+msgstr "Déplacer l'écran dans le coin supérieur gauche"
+
+msgid "Move screen to the upper right corner"
+msgstr "Déplacer l'écran dans le coin supérieur droit"
+
+msgid "Move screen up"
+msgstr "Déplacer l'écran vers le haut"
+
+msgid "PIN"
+msgstr "PIN"
+
+msgid "Please enter the correct pin code"
+msgstr "Veuillez saisir le code pin correcte"
+
+msgid "Please select your KiddyTimer- option"
+msgstr "Veuillez sélectionner l'option KiddyTimer."
+
+#, python-format
+msgid "Plugin: %(plugin)s , Version: %(version)s"
+msgstr "Plugin: %(plugin)s . Version: %(version)s"
+
+#, python-format
+msgid "Remaining time: %s"
+msgstr "Temps restant : %s"
+
+msgid "Reset clock"
+msgstr "Réinitialiser l'horloge"
+
+msgid "Reset saved position"
+msgstr "Remette la position par défaut"
+
+msgid "Reset todays remaining time"
+msgstr "Réinitialiser le temps restant aujourd'hui"
+
+msgid "Saturday"
+msgstr "Samedi"
+
+msgid "Save"
+msgstr "Sauver"
+
+msgid "Save values and close screen"
+msgstr "Sauvergarder les valeurs et fermer l'écran"
+
+msgid "Set remaining time"
+msgstr "Régler le temps restant"
+
+msgid "Smiley"
+msgstr "Smiley"
+
+msgid "Start KiddyTimer"
+msgstr "Démarrer KiddyTimer"
+
+msgid "Stop KiddyTimer (this session only)"
+msgstr "Stop KiddyTimer (cette session seulement)"
+
+msgid "Style of timer"
+msgstr "Style de la minuterie"
+
+msgid "Sunday"
+msgstr "Dimanche"
+
+msgid "The pin code you entered is wrong."
+msgstr "Le code pin saisi est mauvais"
+
+msgid "Thursday"
+msgstr "Jeudi"
+
+msgid "Timeout for activation dialog"
+msgstr "Délai d'attente pour la boîte de dialogue d'activation"
+
+msgid "Tuesday"
+msgstr "Mardi"
+
+msgid "Wednesday"
+msgstr "Mercredi"

@@ -7,223 +7,206 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-11 13:29+0100\n"
-"PO-Revision-Date: 2017-03-11 13:46+0100\n"
+"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"PO-Revision-Date: 2018-05-17 14:01+0200\n"
+"Last-Translator: \n"
 "Language-Team: \n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.12\n"
-"Last-Translator: \n"
+"X-Generator: Poedit 2.0.7\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"Language: fr\n"
 
-#: plugin.py:39
-msgid " ver. "
-msgstr " ver. "
+msgid "'dvbdate' is not installed!"
+msgstr "'dvbdate' n'est pas installé!"
 
-#: plugin.py:216
-msgid "'dvbdate' not installed !"
-msgstr "'dvbdate' n’est pas installé!"
+msgid "'ntpdate' is not installed!"
+msgstr "'ntpdate' n'est pas installé!"
 
-#: plugin.py:210 plugin.py:255
-msgid "'ntpdate' not installed !"
-msgstr "'ntpdate' n’est pas installé!"
-
-#: plugin.py:43
 msgid "1 hour"
 msgstr "1 heure"
 
-#: plugin.py:43
 msgid "12 hours"
 msgstr "12 heures"
 
-#: plugin.py:43
-msgid "15 min"
-msgstr "15 min"
+msgid "15 mins"
+msgstr "15 mins"
 
-#: plugin.py:43
 msgid "2 hours"
 msgstr "2 heures"
 
-#: plugin.py:43
 msgid "24 hours"
 msgstr "24 heures"
 
-#: plugin.py:43
-msgid "30 min"
-msgstr "30 min"
+msgid "30 mins"
+msgstr "30 mins"
 
-#: plugin.py:43
 msgid "4 hours"
 msgstr "4 heures"
 
-#: plugin.py:43
 msgid "48 hours"
 msgstr "48 heures"
 
-#: plugin.py:43
-msgid "5 min"
-msgstr "5 min"
+msgid "5 mins"
+msgstr "5 mins"
 
-#: plugin.py:420
-msgid "Apply the new System time?"
+msgid "After receiver's boot, wait for the specified delay before connecting to the NTP server. This allows the Wi-Fi connection to be fully established."
+msgstr "Après le démarrage du récepteur, attend le délai spécifié avant de se connecter au serveur NTP. Cela permet que la connexion Wi-Fi soit pleinement établie."
+
+msgid "Apply new system time?"
 msgstr "Appliquer la nouvelle heure système?"
 
-#: plugin.py:103
 msgid "Cancel"
 msgstr "Annuler"
 
-#: plugin.py:442
+msgid "Change system time in enigma2 box"
+msgstr "Modifier l’heure système du récepteur enigma2"
+
+msgid "Delay (in seconds) when using Wi-Fi"
+msgstr "Délai (en secondes) lorsque vous utilisez une connexion Wi-Fi"
+
+msgid "Enter a user defined date and time."
+msgstr "Entrer une heure et une date définie par l’utilisateur."
+
+msgid "Enter new system time and press OK!"
+msgstr "Entrer la nouvelle heure système et appuyez sur OK !"
+
+msgid "Get current time from the specified DVB transponder."
+msgstr "Obtenir l’heure actuelle depuis le transpondeur DVB spécifié."
+
+msgid "Get current time from the specified NTP server."
+msgstr "Obtenir l’heure actuelle depuis le serveur NTP spécifié."
+
 #, python-format
-msgid "Change system time was canceled, because %s"
-msgstr "La modification du temps système a été annulée, à cause de %s"
+msgid "Invalid input in day: %s"
+msgstr "Entrée incorrecte pour le jour:%s"
 
-#: plugin.py:224 plugin.py:321
-msgid "Choice transponder"
-msgstr "Choisir le transpondeur"
+#, python-format
+msgid "Invalid input in hour: %s"
+msgstr "Entrée incorrecte pour l’heure:%s"
 
-#: plugin.py:170
-msgid "Delay (sec) wnen use wifi network"
-msgstr "Délai (sec) lorsqu’on utilise un réseau WiFi"
+#, python-format
+msgid "Invalid input in minute: %s"
+msgstr "Entrée incorrecte pour la minute:%s"
 
-#: plugin.py:175
-msgid "Domain name or IP (pool.ntp.org)"
-msgstr "Nom de domaine ou IP (pool.ntp.org)"
+#, python-format
+msgid "Invalid input in month: %s"
+msgstr "Entrée incorrecte pour le mois: %s"
 
-#: plugin.py:42
-msgid "Internet Time"
-msgstr "Temps Internet"
+#, python-format
+msgid "Invalid input in year: %s"
+msgstr "Entrée incorrecte pour l’année: %s"
 
-#: plugin.py:372
-msgid "Please Enter new System time and press OK !"
-msgstr "Veuillez entrer le nouveau temps système et appuyez sur OK!"
+msgid "Invalid time format."
+msgstr "Format d’heure non valide"
 
-#: plugin.py:47 plugin.py:48 plugin.py:49
+msgid "NTP"
+msgstr "NTP"
+
+msgid "NTP cold start"
+msgstr "NTP démarrage à froid"
+
+msgid "NTP server"
+msgstr "NTP serveur"
+
+msgid "No answer given."
+msgstr "Pas de réponse donnée."
+
+msgid "No change detected."
+msgstr "Aucun changement constaté."
+
+msgid "No confirmation given."
+msgstr "Aucune confirmation donnée."
+
+#, python-format
+msgid ""
+"Old time: %(oldtime)s\n"
+"New time: %(newtime)s\n"
+"\n"
+"Offset: %(offset)s seconds"
+msgstr ""
+"Ancienne heure: %(oldtime)s\n"
+"Nouvelle heure: %(newtime)s\n"
+"\n"
+"Décalage: %(offset)s seconds"
+
+msgid "On receiver 'cold start', allow any required time adjustments to be 'stepped'."
+msgstr "Lors d’un ‘démarrage à froid’, permet que l’ajustement de l’heure se fasse ‘progressivement’."
+
 msgid "Press OK"
 msgstr "Appuyez sur OK"
 
-#: plugin.py:105
 msgid "Restart GUI"
 msgstr "Redémarrer l’IGU"
 
-#: plugin.py:301 plugin.py:314
-msgid "Restart the GUI now?"
+msgid "Restart GUI now?"
 msgstr "Redémarrer l’IGU maintenant?"
 
-#: plugin.py:104
 msgid "Save"
 msgstr "Sauvegarder"
 
-#: plugin.py:273
-msgid "Script 'set-rtctime' not found !"
-msgstr "Le scripte 'set-rtctime'  non trouvé!"
+msgid "Script 'set-rtctime' not found!"
+msgstr "Le scripte 'set-rtctime' non trouvé!"
 
-#: plugin.py:173
+msgid "Select the preferred method for syncing time on your receiver. Network Time Protocol requires internet connection. Transponder time might not be very accurate."
+msgstr "Sélectionnez la méthode recommandée pour la synchronisation de temps sur votre récepteur. Le protocole de temps réseau nécessite la connexion internet. L’heure du transpondeur peut ne pas être très précis."
+
+msgid "Select transponder"
+msgstr "Choisir le transpondeur"
+
+msgid "Set how often the receiver will connect to the NTP server to sync time."
+msgstr "Définissez à quelle fréquence le récepteur se connectera au serveur NTP pour synchronise l’heure."
+
 msgid "Set system time manually"
 msgstr "Définir le temps système manuellement"
 
-#: plugin.py:99
-msgid "Setup System Time"
-msgstr "Définir le temps système"
+msgid "Set the IP address of the preferred NTP server. Default is pool.ntp.org."
+msgstr "Définir l’adresse IP du serveur NTP préféré. Par défaut c’est pool.ntp.org."
 
-#: plugin.py:169
-msgid "Sync NTP cold start"
-msgstr "NTP synchro démarrage à froid"
-
-#: plugin.py:168
 msgid "Sync NTP every"
 msgstr "NTP synchro chaque"
 
-#: plugin.py:172
-msgid "Sync now current transponder"
-msgstr "Synchro maintenant depuis le transpondeur actuel"
+msgid "Sync now with NTP server"
+msgstr "Synchroniser maintenant avec le serveur NTP"
 
-#: plugin.py:171
-msgid "Sync now internet"
-msgstr "Synchro maintenant depuis Internet"
+msgid "Sync now with current transponder"
+msgstr "Synchroniser maintenant avec le transpondeur actuel"
 
-#: plugin.py:167
 msgid "Sync time using"
 msgstr "Synchro le temps en utilisant"
 
-#: plugin.py:457
+msgid "Syncing with NTP server..."
+msgstr "Synchronisation avec le serveur NTP ..."
+
+msgid "Syncing with current transponder..."
+msgstr "Synchronisation avec le transpondeur actuel ..."
+
+msgid "Syncing... Please wait."
+msgstr "Synchronisation... Veuillez patienter."
+
 msgid "System Time"
 msgstr "Temps système"
 
-#: plugin.py:466
-msgid "System time your box"
-msgstr "Temps système de votre récepteur"
+msgid "System time setup"
+msgstr "Réglage de l’horloge système"
 
-#: plugin.py:214
-msgid "Time sync with DVB..."
-msgstr "Synchro le temps par DVB…"
+#, python-format
+msgid ""
+"System time was not applied.\n"
+"%s"
+msgstr ""
+"L’heure système n’a pas été appliquée.\n"
+"%s"
 
-#: plugin.py:205 plugin.py:208
-msgid "Time sync with NTP..."
-msgstr "Synchro temps par NTP…"
+msgid "Time string too short."
+msgstr "la chaîne de caractères pour le temps est trop courte"
 
-#: plugin.py:42
-msgid "Transponder Time"
-msgstr "Temps du transpondeur"
+msgid "Transponder"
+msgstr "Transpondeur"
 
-#: plugin.py:174
 msgid "Use RTC time from deep standby"
 msgstr "Utiliser l’heure RTC depuis la veille profonde"
 
-#: plugin.py:424
-msgid "answer is None"
-msgstr "la réponse est Aucun"
-
-#: plugin.py:413
-#, python-format
-msgid "invalid day %s"
-msgstr "jour non valide %s"
-
-#: plugin.py:384 plugin.py:386
-msgid "invalid format"
-msgstr "format non valide"
-
-#: plugin.py:415
-#, python-format
-msgid "invalid hour %s"
-msgstr "heure %s non valide"
-
-#: plugin.py:417
-#, python-format
-msgid "invalid minute %s"
-msgstr "minute %s non valide"
-
-#: plugin.py:411
-#, python-format
-msgid "invalid month %s"
-msgstr "mois %s non valide"
-
-#: plugin.py:409
-#, python-format
-msgid "invalid year %s"
-msgstr "année %s non valide"
-
-#: plugin.py:382
-msgid "new time string too short"
-msgstr "la chaîne de caractère pour le nouveau temps est trop courte"
-
-#: plugin.py:380
-msgid "no new time"
-msgstr "pas de nouveau temps"
-
-#: plugin.py:426
-msgid "you were not confirming"
-msgstr "vous n’avez pas confirmé"
-
-msgid ""
-"Old time: %s\n"
-"Offset: %s sec.\n"
-"New time: %s"
-msgstr ""
-"Ancien temps: %s\n"
-"Ecart: %s sec.\n"
-"Nouveau temps: %s"
-
-msgid "Please wait 5 sec."
-msgstr "Merci de patienter 5 sec."
+msgid "When the receiver starts from deep standby, use the time provided by the Real Time Clock, if it appears to be valid."
+msgstr "Lorsque le récepteur démarre depuis la veille profonde, utilisez l’heure indiquée par l’horloge temps réel, s’il lui semble être valide."

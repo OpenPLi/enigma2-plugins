@@ -7,10 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxbox-enigma 0.0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-01-28 16:39+0100\n"
+"POT-Creation-Date: 2018-07-31 14:17+0200\n"
 "PO-Revision-Date: 2012-05-29 18:07+0100\n"
 "Last-Translator: \n"
 "Language-Team: none\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -89,17 +90,8 @@ msgstr "Adja meg a lekeresendő IP-címet"
 msgid "Enter new hostname for your Receiver"
 msgstr "Adja meg a készülék új hosztnevét"
 
-msgid "Enter options:"
-msgstr "Opciók:"
-
 msgid "Enter password:"
 msgstr "Jelszó:"
-
-msgid "Enter share directory:"
-msgstr "Megosztott mappa:"
-
-msgid "Enter share name:"
-msgstr "Megosztás neve:"
 
 msgid "Enter user and password for host: "
 msgstr "Adja meg a felhasználónevet és a jelszavat a géphez: "
@@ -112,6 +104,12 @@ msgstr "Haladó"
 
 msgid "Finished restarting your network"
 msgstr "A hálózati kapcsolat újraindítása befejeződött"
+
+msgid "Host name"
+msgstr ""
+
+msgid "Host:"
+msgstr ""
 
 msgid "IP Address"
 msgstr "IP cím"
@@ -138,6 +136,10 @@ msgid "Mount options"
 msgstr "Csatlakozás opciói"
 
 msgid "Mount type"
+msgstr "Csatlakozás típusa"
+
+#, fuzzy
+msgid "Mount view"
 msgstr "Csatlakozás típusa"
 
 msgid "MountManager"
@@ -260,4 +262,3 @@ msgstr "A hálózati csatlakozás frissítve lett."
 
 msgid "use as HDD replacement"
 msgstr "Használat merevlemez helyett"
-

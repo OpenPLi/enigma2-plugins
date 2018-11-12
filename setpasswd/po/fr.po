@@ -7,51 +7,50 @@ msgid ""
 msgstr ""
 "Project-Id-Version: setpasswd\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-05-05 15:25+0200\n"
-"PO-Revision-Date: 2015-05-18 19:19+0100\n"
+"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"PO-Revision-Date: 2018-07-31 21:28+0200\n"
 "Last-Translator: Pr2 <dummy@dummy.com>\n"
 "Language-Team: OpenPLi\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.7.6\n"
+"X-Generator: Poedit 2.1.1\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
-#: plugin.py:25
 msgid "Change Root Password"
 msgstr "Changer le mot de passe root"
 
+msgid "Change or reset the root password of your box"
+msgstr "Changer ou réinitialiser le mot de passe root de votre récepteur"
 
-#: plugin.py:52
-msgid "Set Password"
-msgstr "Définir le mot de passe"
+msgid "Delete Password"
+msgstr "Supprimer le mot de passe"
 
-#: plugin.py:53
-msgid "new Random"
-msgstr "Nouveau aléatoire"
-
-#: plugin.py:54
-msgid "virt. Keyboard"
-msgstr "Clavier virtuel"
-
-#: plugin.py:73
 msgid "Enter new Password"
 msgstr "Entrer un nouveau mot de passe"
 
-#: plugin.py:88
-msgid "Sucessfully changed password for root user to: "
-msgstr "Le mot de passe de root a été changé avec succès pour: "
-
-#: plugin.py:90
-msgid "Unable to change/reset password for root user"
-msgstr "Impossible de changer/réinitialiser le mot de passe de root"
-
-#: plugin.py:113
 msgid "Enter your password here:"
 msgstr "Entrer votre mot de passe ici:"
 
-#: plugin.py:130
-msgid "Change or reset the root password of your box"
-msgstr "Changer ou réinitialiser le mot de passe root de votre récepteur."
+msgid "Password deleted sucessfully for root user"
+msgstr "Mot de passe supprimé avec succès pour l'utilisateur root"
+
+msgid "Set Password"
+msgstr "Définir le mot de passe"
+
+msgid "Sucessfully changed password for root user to: "
+msgstr "Le mot de passe de root a été changé avec succès pour: "
+
+msgid "Unable to change/reset password for root user"
+msgstr "Impossible de changer/réinitialiser le mot de passe de root"
+
+msgid "Unable to delete password for root user"
+msgstr "Impossible de supprimer le mot de passe pour l'utilisateur root"
+
+msgid "new Random"
+msgstr "nouveau aléatoire"
+
+msgid "virt. Keyboard"
+msgstr "clavier virtuel"
