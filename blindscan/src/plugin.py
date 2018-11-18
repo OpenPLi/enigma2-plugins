@@ -592,8 +592,6 @@ class Blindscan(ConfigListScreen, Screen):
 
 	def createSetup(self, first_start=False):
 		self.list = []
-		self.multiscanlist = []
-
 		if self.scan_nims == []:
 			return
 
