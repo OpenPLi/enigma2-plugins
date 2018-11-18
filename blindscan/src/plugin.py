@@ -1413,7 +1413,7 @@ class Blindscan(ConfigListScreen, Screen):
 			x = 0
 			for transponders in tplist:
 				if tplist[x].frequency > (4200*multiplier):
-					tplist[x].frequency = (self.c_band_lo_freq*multiplier) - (tplist[x].frequency - (9750*multiplier))
+					tplist[x].frequency = (self.c_band_lo_freq*multiplier) - (tplist[x].frequency - (self.universal_lo_freq["low"]*multiplier))
 				x += 1
 		elif self.user_defined_lnb_scan:
 			x = 0
