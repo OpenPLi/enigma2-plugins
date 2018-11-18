@@ -1393,7 +1393,6 @@ class Blindscan(ConfigListScreen, Screen):
 					t.is_id == k.is_id and t.pls_code == k.pls_code and t.pls_mode == k.pls_mode:
 					isnt_known = False
 					break
-			x += 1
 			if isnt_known:
 				new_tplist.append(t)
 		return new_tplist
