@@ -307,32 +307,6 @@ def isInTimer(self, eventid, begin, duration, service):
 	refstr = ':'.join(service.split(':')[:11])
 	for x in self.timer.timer_list:
 		check = ':'.join(x.service_ref.ref.toString().split(':')[:11]) == refstr
-		if not check:
-			sref = x.service_ref.ref
-			parent_sid = sref.getUnsignedData(5)
-			parent_tsid = sref.getUnsignedData(6)
-			if parent_sid and parent_tsid:
-				sid = sref.getUnsignedData(1)
-				tsid = sref.getUnsignedData(2)
-				sref.setUnsignedData(1, parent_sid)
-				sref.setUnsignedData(2, parent_tsid)
-				sref.setUnsignedData(5, 0)
-				sref.setUnsignedData(6, 0)
-				check = sref.toCompareString() == refstr
-				num = 0
-				if check:
-					check = False
-					event = self.epgcache.lookupEventId(sref, eventid)
-					num = event and event.getNumOfLinkageServices() or 0
-				sref.setUnsignedData(1, sid)
-				sref.setUnsignedData(2, tsid)
-				sref.setUnsignedData(5, parent_sid)
-				sref.setUnsignedData(6, parent_tsid)
-				for cnt in range(num):
-					subservice = event.getLinkageService(sref, cnt)
-					if sref.toCompareString() == subservice.toCompareString():
-						check = True
-						break
 		if check:
 			timer_end = x.end
 			timer_begin = x.begin
