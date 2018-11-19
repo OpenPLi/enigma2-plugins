@@ -46,19 +46,21 @@ class MainPictureAdapter:
 			print("[EPGRefresh.InfoBarCount = 0]")
 		except:
 			print("[EPGRefresh import error InfoBarCount]")
-		return self.navcore.playService(service)
+		return self.navcore.playService(service, checkParentalControl=False, adjust=False)
 
 	def stop(self):
 		if Screens.Standby.inStandby:
 			if self.previousService is not None:
-				self.navcore.playService(self.previousService)
+				self.navcore.playService(self.previousService, forceRestart=True)
 				config.tv.lastservice.value = self.previousService.toString()
+				config.tv.lastservice.save()
 			if not self.rotorTimer.isActive():
-				self.rotorTimer.start(1000, True)
+				self.rotorTimer.start(1500, True)
 		else:
 			if self.previousService is not None:
 				self.navcore.playService(self.previousService)
 				config.tv.lastservice.value = self.previousService.toString()
+				config.tv.lastservice.save()
 			else:
 				self.navcore.stopService()
 		try:
@@ -73,7 +75,7 @@ class MainPictureAdapter:
 		moving = eDVBSatelliteEquipmentControl.getInstance().isRotorMoving()
 		if moving:
 			if not self.rotorTimer.isActive():
-				self.rotorTimer.start(1000, True)
+				self.rotorTimer.start(1500, True)
 		else:
 			self.rotorTimer.stop()
 			self.navcore.stopService()
