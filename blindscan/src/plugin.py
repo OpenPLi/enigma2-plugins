@@ -539,13 +539,15 @@ class Blindscan(ConfigListScreen, Screen):
 		# collect all nims which are *not* set to "nothing"
 		nim_list = []
 		for n in nimmanager.nim_slots:
+			if not if not n.isCompatible("DVB-S"):
+				continue
 			if hasattr(n, 'isFBCLink') and n.isFBCLink():
 				continue
-			if n.isCompatible("DVB-S") and n.description in _unsupportedNims: # DVB-S NIMs without blindscan hardware or software
+			if n.description in _unsupportedNims: # DVB-S NIMs without blindscan hardware or software
 				continue
 			if n.config_mode == "nothing":
 				continue
-			if n.isCompatible("DVB-S") and len(nimmanager.getSatListForNim(n.slot)) < 1:
+			if len(nimmanager.getSatListForNim(n.slot)) < 1:
 				if n.config_mode in ("advanced", "simple"):
 					config.Nims[n.slot].configMode.value = "nothing"
 					config.Nims[n.slot].configMode.save()
@@ -554,8 +556,7 @@ class Blindscan(ConfigListScreen, Screen):
 				root_id = nimmanager.sec.getRoot(n.slot_id, int(n.config.connectedTo.value))
 				if n.type == nimmanager.nim_slots[root_id].type: # check if connected from a DVB-S to DVB-S2 Nim or vice versa
 					continue
-			if n.isCompatible("DVB-S"):
-				nim_list.append((str(n.slot), n.friendly_full_description))
+			nim_list.append((str(n.slot), n.friendly_full_description))
 		self.scan_nims = ConfigSelection(choices = nim_list)
 
 		# sat
