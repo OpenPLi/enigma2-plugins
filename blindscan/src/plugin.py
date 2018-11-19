@@ -43,7 +43,7 @@ def getMisPlsValue(d, idx, defaultValue):
 
 BOX_MODEL = "none"
 BOX_NAME = ""
-if fileExists("/proc/stb/info/vumodel") and fileExists("/etc/init.d/vuplus-platform-util") and not fileExists("/proc/stb/info/hwmodel") and not fileExists("/proc/stb/info/boxtype"):
+if fileExists("/proc/stb/info/vumodel") and not fileExists("/proc/stb/info/hwmodel") and not fileExists("/proc/stb/info/boxtype"):
 	try:
 		l = open("/proc/stb/info/vumodel")
 		model = l.read().strip()
@@ -251,7 +251,6 @@ class Blindscan(ConfigListScreen, Screen):
 		self.list = []
 		self.onChangedEntry = []
 		self.getCurrentTuner = None
-		self.w_scan = False
 		self.blindscan_session = None
 		self.tmpstr = ""
 		self.Sundtek_pol = ""
@@ -600,7 +599,7 @@ class Blindscan(ConfigListScreen, Screen):
 		print "[Blind scan] ID: ", index_to_scan
 		nim = nimmanager.nim_slots[index_to_scan]
 		nimname = nim.friendly_full_description
-		self.SundtekScan = "Sundtek DVB-S/S2" in nimname and "V" in nimname
+		self.SundtekScan = "Sundtek DVB-S/S2" in nimname
 
 		if not self.SundtekScan and (BOX_MODEL.startswith('xtrend') or BOX_MODEL.startswith('vu')):
 			warning_text = _("\nWARNING! Blind scan may make the tuner malfunction on a VU+ and ET receiver. A reboot afterwards may be required to return to proper tuner function.")
@@ -1543,6 +1542,10 @@ class Blindscan(ConfigListScreen, Screen):
 
 		nim = nimmanager.nim_slots[int(self.scan_nims.value)]
 		nimconfig = nim.config
+		if nimconfig.configMode.getValue() == "equal":
+			slotid = int(nimconfig.connectedTo.value)
+			nim = nimmanager.nim_slots[slotid]
+			nimconfig = nim.config
 		if nimconfig.configMode.getValue() == "advanced":
 			currSat = nimconfig.advanced.sat[cur_orb_pos]
 			lnbnum = int(currSat.lnb.getValue())
@@ -1558,7 +1561,11 @@ class Blindscan(ConfigListScreen, Screen):
 				self.is_c_band_scan = True
 				return True
 			elif lof == "user_defined" and currLnb.lofl.value == currLnb.lofh.value and currLnb.lofl.value > 5000 and currLnb.lofl.value < 30000:
-				self.user_defined_lnb_lo_freq = currLnb.lofl.value
+				if currLnb.lofl.value == 10750 and currLnb.lofh.value == 10750 and cur_orb_pos in (360, 560):
+					self.user_defined_lnb_lo_freq = self.circular_lnb_lo_freq
+					self.suggestedPolarisation = _("circular left/right")
+				else:
+					self.user_defined_lnb_lo_freq = currLnb.lofl.value
 				self.user_defined_lnb_scan = True
 				print "[Blindscan][SatBandCheck] user defined local oscillator frequency: %d" % self.user_defined_lnb_lo_freq
 				return True
