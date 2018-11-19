@@ -612,7 +612,6 @@ class Blindscan(ConfigListScreen, Screen):
 		self.tunerEntry = getConfigListEntry(_("Tuner"), self.scan_nims,(_("Select a tuner that is configured for the satellite you wish to search") + warning_text))
 		self.list.append(self.tunerEntry)
 
-		self.scan_networkScan.value = False
 		if nim.isCompatible("DVB-S"):
 			self.satelliteEntry = getConfigListEntry(_('Satellite'), self.scan_satselection[self.getSelectedSatIndex(index_to_scan)],_('Select the satellite you wish to search'))
 			self.list.append(self.satelliteEntry)
