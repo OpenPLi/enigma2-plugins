@@ -531,9 +531,9 @@ class Blindscan(ConfigListScreen, Screen):
 			(1, _("up to 1 degree")),
 			(2, _("up to 2 degrees")),
 			(3, _("up to 3 degrees"))])
-		self.search_type = ConfigSelection(default = 0, choices = [
-			(0, _("scan for channels")),
-			(1, _("scan for transponders"))])
+		self.search_type = ConfigSelection(default = "services", choices = [
+			("services", _("scan for channels")),
+			("transponders", _("scan for transponders"))])
 
 		# collect all nims which are *not* set to "nothing"
 		nim_list = []
@@ -1286,7 +1286,7 @@ class Blindscan(ConfigListScreen, Screen):
 
 				runtime = int(time() - self.start_time)
 				xml_location = self.createSatellitesXMLfile(self.tmp_tplist, XML_BLINDSCAN_DIR)
-				if self.search_type.value == 0: # Do a service scan
+				if self.search_type.value == "services": # Do a service scan
 					self.startScan(True, self.tmp_tplist)
 				else: # Display results
 					self.session.openWithCallback(self.startScan, BlindscanState, _("Search completed\n%d transponders found in %d:%02d minutes.\nDetails saved in: %s") % (len(self.tmp_tplist), runtime / 60, runtime % 60, xml_location), "", blindscanStateList, True)
