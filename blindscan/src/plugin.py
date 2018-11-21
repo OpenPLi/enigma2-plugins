@@ -1,25 +1,32 @@
 # for localized messages
 from . import _
 
+from enigma import eComponentScan, eConsoleAppContainer, eDVBFrontendParametersSatellite, eDVBResourceManager, eDVBSatelliteEquipmentControl, eTimer
+
+from Components.About import about
+from Components.ActionMap import ActionMap
+from Components.config import config, ConfigBoolean, ConfigInteger, getConfigListEntry, ConfigNothing, ConfigSelection, ConfigSubsection, ConfigYesNo
+from Components.ConfigList import ConfigListScreen
+from Components.Label import Label
+from Components.NimManager import getConfigSatlist, nimmanager
+from Components.Sources.StaticText import StaticText
+from Components.TuneTest import Tuner
+
 from Plugins.Plugin import PluginDescriptor
-from Tools.Directories import fileExists
-from Tools.BoundFunction import boundFunction
+
+from Screens.ChoiceBox import ChoiceBox
+from Screens.Console import Console
+from Screens.MessageBox import MessageBox
 from Screens.Screen import Screen
 from Screens.ServiceScan import ServiceScan
-from Screens.MessageBox import MessageBox
-from Screens.Console import Console
-from Components.Label import Label
-from Components.TuneTest import Tuner
-from Components.Sources.StaticText import StaticText
-from Screens.ChoiceBox import ChoiceBox
-from Components.ConfigList import ConfigListScreen
-from Components.ActionMap import ActionMap
-from Components.NimManager import nimmanager, getConfigSatlist
-from Components.config import config, ConfigSubsection, ConfigSelection, ConfigYesNo, ConfigInteger, getConfigListEntry, ConfigNothing, ConfigBoolean
-from enigma import eTimer, eDVBFrontendParametersSatellite, eComponentScan, eConsoleAppContainer, eDVBResourceManager, eDVBSatelliteEquipmentControl
-from Components.About import about
-from time import strftime, time
+
+from Tools.BoundFunction import boundFunction
+from Tools.Directories import fileExists
+
 import os
+
+#used for the XML file
+from time import strftime, time
 
 # root2gold based on https://github.com/OpenPLi/enigma2/blob/develop/lib/dvb/db.cpp#L27
 def root2gold(root):
@@ -101,14 +108,14 @@ try:
 except:
 	Lastrotorposition = None
 
-
 XML_BLINDSCAN_DIR = "/tmp"
 XML_FILE = None
 
+# _supportNimType is only used by vuplus hardware
 _supportNimType = { 'AVL1208':'', 'AVL6222':'6222_', 'AVL6211':'6211_', 'BCM7356':'bcm7346_', 'SI2166':'si2166_'}
 
 # For STBs that support multiple DVB-S tuner models, e.g. Solo 4K.
-_unsupportedNims = ( 'Vuplus DVB-S NIM(7376 FBC)', ) # format = nim.description from nimmanager
+_unsupportedNims = ( 'Vuplus DVB-S NIM(7376 FBC)', 'Vuplus DVB-S NIM(45308X FBC)') # format = nim.description from nimmanager
 
 # blindscan-s2 supported tuners
 _blindscans2Nims = ('TBS-5925', 'DVBS2BOX', 'M88DS3103')
@@ -143,7 +150,7 @@ class BlindscanState(Screen, ConfigListScreen):
 		self["key_green"] = StaticText("")
 		self["key_yellow"] = StaticText("")
 		self["key_blue"] = StaticText("")
-		
+
 		self["actions"] = ActionMap(["OkCancelActions", "ColorActions"],
 		{
 			"cancel": self.keyCancel,
@@ -157,7 +164,7 @@ class BlindscanState(Screen, ConfigListScreen):
 			"yellow": self.selectAll,
 			"blue": self.deselectAll,
 		}, -2)
-		
+
 		if finished:
 			self["post_action"].setText(_("Select transponders and press green to scan.\nPress yellow to select all transponders and blue to deselect all."))
 			self["key_green"].setText(_("Scan"))
