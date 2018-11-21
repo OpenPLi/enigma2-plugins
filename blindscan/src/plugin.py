@@ -52,7 +52,7 @@ if fileExists("/proc/stb/info/vumodel") and not fileExists("/proc/stb/info/hwmod
 		BOX_MODEL = "vuplus"
 	except:
 		pass
-elif fileExists("/proc/stb/info/boxtype") and not fileExists("/proc/stb/info/hwmodel"):
+elif fileExists("/proc/stb/info/boxtype") and not fileExists("/proc/stb/info/hwmodel") and not fileExists("/proc/stb/info/gbmodel"):
 	try:
 		l = open("/proc/stb/info/boxtype")
 		model = l.read().strip()
@@ -64,10 +64,10 @@ elif fileExists("/proc/stb/info/boxtype") and not fileExists("/proc/stb/info/hwm
 			BOX_MODEL = "edision"
 	except:
 		pass
-elif fileExists("/proc/stb/info/model") and not fileExists("/proc/stb/info/hwmodel"):
+elif fileExists("/proc/stb/info/model") and not fileExists("/proc/stb/info/hwmodel") and not fileExists("/proc/stb/info/gbmodel"):
 	try:
 		l = open("/proc/stb/info/model")
-		model = l.read()
+		model = l.read().strip()
 		l.close()
 		BOX_NAME = str(model.lower())
 		if BOX_NAME.startswith('dm'):
@@ -77,7 +77,7 @@ elif fileExists("/proc/stb/info/model") and not fileExists("/proc/stb/info/hwmod
 elif fileExists("/proc/stb/info/gbmodel"):
 	try:
 		l = open("/proc/stb/info/gbmodel")
-		model = l.read()
+		model = l.read().strip()
 		l.close()
 		BOX_NAME = str(model.lower())
 		if BOX_NAME in ("gbquad4k", "gbue4k"):
