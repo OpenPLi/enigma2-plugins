@@ -153,9 +153,9 @@ class AutoMount():
 					if data['mounttype'] == 'nfs':
 						if not os.path.ismount(path):
 							if data['options']:
-								options = "tcp,noatime," + data['options']
+								options = "tcp,noatime,retry=0" + data['options']
 							else:
-								options = "tcp,noatime"
+								options = "tcp,noatime,retry=0"
 							tmpcmd = "mount -t nfs -o %s '%s' '%s'" % (options, host + ':/' + data['sharedir'], path)
 							command = tmpcmd.encode("UTF-8")
 
