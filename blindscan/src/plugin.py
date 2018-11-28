@@ -849,8 +849,21 @@ class Blindscan(ConfigListScreen, Screen):
 			else: # low band
 				self.scan_sat.frequency.value = random_ku_band_low_tunable_freq
 
-		transponder = (self.scan_sat.frequency.value, 0, tab_pol[pol], 0, 0, orb[0], eDVBFrontendParametersSatellite.System_DVB_S, 0, 0, 0, -1, 0, 1)
-		self.tuner.tune(transponder)
+		self.tuner.tune(
+			(self.scan_sat.frequency.value,
+			0, # symbolrate
+			tab_pol[pol],
+			eDVBFrontendParametersSatellite.FEC_Auto,
+			eDVBFrontendParametersSatellite.Inversion_Off,
+			orb[0],
+			eDVBFrontendParametersSatellite.System_DVB_S,
+			eDVBFrontendParametersSatellite.Modulation_Auto,
+			eDVBFrontendParametersSatellite.RollOff_alpha_0_35,
+			eDVBFrontendParametersSatellite.Pilot_Off),
+			eDVBFrontendParametersSatellite.No_Stream_Id_Filter,
+			eDVBFrontendParametersSatellite.PLS_Gold,
+			0 # default gold PLS code
+		)
 
 		nim = nimmanager.nim_slots[self.feid]
 		tunername = nim.description
