@@ -9,6 +9,7 @@ from Components.config import config, ConfigBoolean, ConfigInteger, getConfigLis
 from Components.ConfigList import ConfigListScreen
 from Components.Label import Label
 from Components.NimManager import getConfigSatlist, nimmanager
+from Components.Sources.FrontendStatus import FrontendStatus
 from Components.Sources.StaticText import StaticText
 from Components.TuneTest import Tuner
 
@@ -220,20 +221,20 @@ class BlindscanState(Screen, ConfigListScreen):
 class Blindscan(ConfigListScreen, Screen):
 	skin = """
 		<screen position="center,center" size="640,565" title="Blind scan">
-			<widget name="rotorstatus" position="5,5" size="550,25" font="Regular;20" foregroundColor="#00ffc000" />
-			<widget name="config" position="5,30" size="630,330" scrollbarMode="showOnDemand" />
-			<ePixmap pixmap="skin_default/div-h.png" position="0,365" zPosition="1" size="640,2" />
-			<widget name="description" position="5,370" size="630,125" font="Regular;20" foregroundColor="#00ffc000" />
-			<ePixmap pixmap="skin_default/div-h.png" position="0,495" zPosition="1" size="640,2" />
-			<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/Blindscan/images/red.png" position="0,560" size="160,2" alphatest="on" />
-			<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/Blindscan/images/green.png" position="160,560" size="160,2" alphatest="on" />
-			<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/Blindscan/images/yellow.png" position="320,560" size="160,2" alphatest="on" />
-			<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/Blindscan/images/blue.png" position="480,560" size="160,2" alphatest="on" />
-			<widget name="key_red" position="0,530" zPosition="2" size="160,20" font="Regular;18" halign="center" valign="center" backgroundColor="background" foregroundColor="white" transparent="1" />
-			<widget name="key_green" position="160,530" zPosition="2" size="160,20" font="Regular;18" halign="center" valign="center" backgroundColor="background" foregroundColor="white" transparent="1" />
-			<widget name="key_yellow" position="320,530" zPosition="2" size="160,20" font="Regular;18" halign="center" valign="center" backgroundColor="background" foregroundColor="white" transparent="1" />
-			<widget name="key_blue" position="480,530" zPosition="2" size="160,20" font="Regular;18" halign="center" valign="center" backgroundColor="background" foregroundColor="white" transparent="1" />
-			<widget name="introduction" position="0,500" size="640,20" font="Regular;18" foregroundColor="green" halign="center" />
+			<widget name="rotorstatus" position="5,5" size="550,25" font="Regular;20" foregroundColor="#00ffc000"/>
+			<widget name="config" position="5,30" size="630,330" scrollbarMode="showOnDemand"/>
+			<ePixmap pixmap="skin_default/div-h.png" position="0,365" zPosition="1" size="640,2"/>
+			<widget name="description" position="5,370" size="630,125" font="Regular;20" foregroundColor="#00ffc000"/>
+			<ePixmap pixmap="skin_default/div-h.png" position="0,495" zPosition="1" size="640,2"/>
+			<widget name="introduction" position="0,500" size="640,20" font="Regular;18" foregroundColor="green" halign="center"/>
+			<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/Blindscan/images/red.png" position="0,560" size="160,2" alphatest="on"/>
+			<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/Blindscan/images/green.png" position="160,560" size="160,2" alphatest="on"/>
+			<widget name="key_red" position="0,530" zPosition="2" size="160,20" font="Regular;18" halign="center" valign="center" backgroundColor="background" foregroundColor="white" transparent="1"/>
+			<widget name="key_green" position="160,530" zPosition="2" size="160,20" font="Regular;18" halign="center" valign="center" backgroundColor="background" foregroundColor="white" transparent="1"/>
+			<widget text="LOCK" source="Frontend" render="FixedLabel" position="500,520" zPosition="2" size="160,35" font="Regular;30" foregroundColor="green" transparent="1">
+				<convert type="FrontendInfo">LOCK</convert>
+				<convert type="ConditionalShowHide"/>
+			</widget>
 		</screen>
 		"""
 	def __init__(self, session):
@@ -255,6 +256,7 @@ class Blindscan(ConfigListScreen, Screen):
 				self.satList.append(None)
 
 		self.frontend = None
+		self["Frontend"] = FrontendStatus(frontend_source = lambda : self.frontend, update_interval = 100)
 		self.list = []
 		self.onChangedEntry = []
 		self.getCurrentTuner = None
