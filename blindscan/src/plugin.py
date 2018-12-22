@@ -1569,7 +1569,14 @@ class Blindscan(ConfigListScreen, Screen):
 			nim = nimmanager.nim_slots[slotid]
 			nimconfig = nim.config
 		if nimconfig.configMode.getValue() == "advanced":
-			currSat = nimconfig.advanced.sat[cur_orb_pos]
+			if nimconfig.advanced.sats.value in ("3605", "3606"):
+				currSat = nimconfig.advanced.sat[int(nimconfig.advanced.sats.value)]
+				import ast
+				userSatellitesList = ast.literal_eval(currSat.userSatellitesList.getValue())
+				if not cur_orb_pos in userSatellitesList:
+					currSat = nimconfig.advanced.sat[cur_orb_pos]
+			else:
+				currSat = nimconfig.advanced.sat[cur_orb_pos]
 			lnbnum = int(currSat.lnb.getValue())
 			currLnb = nimconfig.advanced.lnb[lnbnum]
 			if isinstance(currLnb, ConfigNothing):
