@@ -143,7 +143,7 @@ class AutoMountEdit(Screen, ConfigListScreen):
 		self.list = []
 		self.activeEntry = getConfigListEntry(_("Active"), self.activeConfigEntry)
 		self.list.append(self.activeEntry)
-		self.sharenameEntry = getConfigListEntry(_("Local share name"), self.sharenameConfigEntry)
+		self.sharenameEntry = getConfigListEntry(_("Local mountpoint"), self.sharenameConfigEntry)
 		self.list.append(self.sharenameEntry)
 		self.mounttypeEntry = getConfigListEntry(_("Mount type"), self.mounttypeConfigEntry)
 		self.list.append(self.mounttypeEntry)
