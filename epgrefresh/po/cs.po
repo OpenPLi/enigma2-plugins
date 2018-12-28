@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Enigma2 EPGRefresh Plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"POT-Creation-Date: 2018-12-29 00:27+0100\n"
 "PO-Revision-Date: 2018-10-18 17:16+0200\n"
 "Last-Translator: ims <ims21@users.sourceforge.net>\n"
 "Language-Team: PLi\n"
@@ -15,9 +15,6 @@ msgstr ""
 "X-Poedit-SearchPath-0: D:/Dreambox/Plugins/enigma2-plugins/epgrefresh/src\n"
 
 #, python-format
-msgid "%d more services"
-msgstr "a dalších %d programů"
-
 msgid ""
 "\n"
 "Remaining - services: %d / time: %d:%02d min"
@@ -25,14 +22,12 @@ msgstr ""
 "\n"
 "Zbývá - programů: %d / čas: %d:%02d minut"
 
-msgid "Scanning last service. Please wait."
-msgstr "Skenování poslední služby. Prosím, čekejte."
-
-msgid "EPGRefresh requires services/bouquets to be configured. Configure now?"
-msgstr "EPGRefresh vyžaduje nastavení programů/přehledů. Nastavit nyní?"
-
 msgid "   (AutoZap)"
 msgstr ""
+
+#, python-format
+msgid "%d more services"
+msgstr "a dalších %d programů"
 
 msgid "Adding schedule..."
 msgstr "Přidat plán..."
@@ -205,6 +200,9 @@ msgstr "EPGRefresh nastavení"
 
 msgid "EPGRefresh needs to be explicitly started using the yellow button in this menu if this option is not enabled"
 msgstr "Dokud není povoleno, EPGRefresh  nebude probíhat automaticky a musí být spouštěna pomocí žlutého tlačítka v této nabídce."
+
+msgid "EPGRefresh requires services/bouquets to be configured. Configure now?"
+msgstr "EPGRefresh vyžaduje nastavení programů/přehledů. Nastavit nyní?"
 
 msgid "Edit Services"
 msgstr "Kanály"
@@ -395,6 +393,9 @@ msgstr "Po dokončení uložit EPG do aktuálního souboru."
 
 msgid "Saving EPG Cache..."
 msgstr "Ukládá se EPG Cache..."
+
+msgid "Scanning last service. Please wait."
+msgstr "Skenování poslední služby. Prosím, čekejte."
 
 msgid "Select action after refresh:"
 msgstr "Vyberte akci po aktualizaci:"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-12 11:28+0200\n"
+"POT-Creation-Date: 2018-12-29 00:27+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,10 +20,14 @@ msgstr ""
 #, python-format
 msgid ""
 "\n"
-"%d more services."
+"Remaining - services: %d / time: %d:%02d min"
 msgstr ""
 
 msgid "   (AutoZap)"
+msgstr ""
+
+#, python-format
+msgid "%d more services"
 msgstr ""
 
 msgid "Adding schedule..."
@@ -188,6 +192,9 @@ msgid "EPGRefresh configuration"
 msgstr ""
 
 msgid "EPGRefresh needs to be explicitly started using the yellow button in this menu if this option is not enabled"
+msgstr ""
+
+msgid "EPGRefresh requires services/bouquets to be configured. Configure now?"
 msgstr ""
 
 msgid "Edit Services"
@@ -375,6 +382,9 @@ msgid "Save EPG in the cache file after refresh is completed."
 msgstr ""
 
 msgid "Saving EPG Cache..."
+msgstr ""
+
+msgid "Scanning last service. Please wait."
 msgstr ""
 
 msgid "Select action after refresh:"

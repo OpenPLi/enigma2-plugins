@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"POT-Creation-Date: 2018-12-29 00:27+0100\n"
 "PO-Revision-Date: 2018-05-11 21:23+0200\n"
 "Last-Translator: Pr2\n"
 "Language-Team: \n"
@@ -21,13 +21,17 @@ msgstr ""
 #, python-format
 msgid ""
 "\n"
-"%d more services."
+"Remaining - services: %d / time: %d:%02d min"
 msgstr ""
-"\n"
-"%d services en plus."
 
 msgid "   (AutoZap)"
 msgstr "   (ZapAutomatique)"
+
+#, fuzzy, python-format
+msgid "%d more services"
+msgstr ""
+"\n"
+"%d services en plus."
 
 msgid "Adding schedule..."
 msgstr "Ajouter une planification…"
@@ -200,6 +204,9 @@ msgstr "Configuration RafraîchirEPG"
 
 msgid "EPGRefresh needs to be explicitly started using the yellow button in this menu if this option is not enabled"
 msgstr "RafraîchirEPG doit être explicitement démarré en utilisant le bouton jaune dans ce menu si cette option n'est pas activée."
+
+msgid "EPGRefresh requires services/bouquets to be configured. Configure now?"
+msgstr ""
 
 msgid "Edit Services"
 msgstr "Editer les services"
@@ -390,6 +397,9 @@ msgstr "Sauvegarder l'EPG dans le fichier cache après le rafraîchissement soit
 
 msgid "Saving EPG Cache..."
 msgstr "Sauvegarde du cache EPG..."
+
+msgid "Scanning last service. Please wait."
+msgstr ""
 
 msgid "Select action after refresh:"
 msgstr "Choisir l'action après un rafraîchissement:"
