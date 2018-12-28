@@ -1,7 +1,9 @@
 #!/usr/bin/python
+# -*- coding: utf-8 -*-
 import sys
 import os
 import string
+import re
 from xml.sax import make_parser
 from xml.sax.handler import ContentHandler, property_lexical_handler
 try:
@@ -17,16 +19,19 @@ class parseXML(ContentHandler, LexicalHandler):
 		self.isPointsElement, self.isReboundsElement = 0, 0
 		self.attrlist = attrlist
 		self.last_comment = None
+		self.ishex = re.compile('#[0-9a-fA-F]+\Z')
 
 	def comment(self, comment):
 		if comment.find("TRANSLATORS:") != -1:
 			self.last_comment = comment
 
 	def startElement(self, name, attrs):
-		for x in ["text", "title", "value", "caption"]:
+		for x in ["text", "title", "value", "caption", "description"]:
 			try:
-				attrlist.add((attrs[x], self.last_comment))
-				self.last_comment = None
+				k = str(attrs[x].encode('utf-8'))
+				if k.strip() != "" and not self.ishex.match(k):
+					attrlist.add((k, self.last_comment))
+					self.last_comment = None
 			except KeyError:
 				pass
 
@@ -42,7 +47,7 @@ if not no_comments:
 for arg in sys.argv[1:]:
 	if os.path.isdir(arg):
 		for file in os.listdir(arg):
-			if (file.endswith(".xml")):
+			if file.endswith(".xml"):
 				parser.parse(os.path.join(arg, file))
 	else:
 		parser.parse(arg)
@@ -53,13 +58,11 @@ for arg in sys.argv[1:]:
 	for (k,c) in attrlist:
 		print
 		print '#: ' + arg
-		string.replace(k, "\\n", "\"\n\"")
+		k = string.replace(k, '\"', '\\"')
 		if c:
 			for l in c.split('\n'):
 				print "#. ", l
-		if str(k).strip() != "":
-			k=k.replace('\"', '\\"')
-			print 'msgid "' + str(k) + '"'
-			print 'msgstr ""'
+		print 'msgid "' + str(k) + '"'
+		print 'msgstr ""'
 
 	attrlist = set()
