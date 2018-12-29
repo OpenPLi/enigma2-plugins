@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Enigma2 EPGRefresh Plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"POT-Creation-Date: 2018-12-29 00:27+0100\n"
 "PO-Revision-Date: 2011-05-30 21:36+0100\n"
 "Last-Translator: Tode <sagichnet@gmx.net>\n"
 "Language-Team: none\n"
@@ -16,11 +16,15 @@ msgstr ""
 #, python-format
 msgid ""
 "\n"
-"%d more services."
+"Remaining - services: %d / time: %d:%02d min"
 msgstr ""
 
 msgid "   (AutoZap)"
 msgstr ""
+
+#, fuzzy, python-format
+msgid "%d more services"
+msgstr "Kanäle"
 
 msgid "Adding schedule..."
 msgstr ""
@@ -205,6 +209,9 @@ msgstr "EPGRefresh Konfiguration"
 #, fuzzy
 msgid "EPGRefresh needs to be explicitly started using the yellow button in this menu if this option is not enabled"
 msgstr "Solange diese Option nicht aktiviert ist, wird EPGRefresh nicht automatisch laufen, sondern muss explizit mittels gelbem Button hier im Menu gestartet werden."
+
+msgid "EPGRefresh requires services/bouquets to be configured. Configure now?"
+msgstr ""
 
 msgid "Edit Services"
 msgstr "Kanäle"
@@ -404,6 +411,9 @@ msgid "Save EPG in the cache file after refresh is completed."
 msgstr ""
 
 msgid "Saving EPG Cache..."
+msgstr ""
+
+msgid "Scanning last service. Please wait."
 msgstr ""
 
 #, fuzzy

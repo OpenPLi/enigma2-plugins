@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: EPGRefresh\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"POT-Creation-Date: 2018-12-29 00:27+0100\n"
 "PO-Revision-Date: 2016-12-28 13:27+0200\n"
 "Last-Translator: \n"
 "Language-Team: Vytenis P. <vyteniui@gmail.com>\n"
@@ -21,13 +21,17 @@ msgstr ""
 #, python-format
 msgid ""
 "\n"
-"%d more services."
+"Remaining - services: %d / time: %d:%02d min"
 msgstr ""
-"\n"
-"dar %d kanalų."
 
 msgid "   (AutoZap)"
 msgstr "   (Auto perjungimas)"
+
+#, fuzzy, python-format
+msgid "%d more services"
+msgstr ""
+"\n"
+"dar %d kanalų."
 
 msgid "Adding schedule..."
 msgstr "Kuriama užduotis..."
@@ -202,6 +206,9 @@ msgstr "EPG atnaujinimo konfigūravimas"
 
 msgid "EPGRefresh needs to be explicitly started using the yellow button in this menu if this option is not enabled"
 msgstr "Kol čia neįjungta, EPG atnaujinimas nepasileis automatiškai, bet turi būti paleistas tiesiogiai, paspaudus 'GELTONĄ' šio meniu mygtuką."
+
+msgid "EPGRefresh requires services/bouquets to be configured. Configure now?"
+msgstr ""
 
 msgid "Edit Services"
 msgstr "Redaguoti kanalus"
@@ -394,6 +401,9 @@ msgstr "Po EPG atnaujinimo pabaigos, EPG išsaugoti podėlio faile."
 
 msgid "Saving EPG Cache..."
 msgstr "EPG podėlis išsaugomas..."
+
+msgid "Scanning last service. Please wait."
+msgstr ""
 
 msgid "Select action after refresh:"
 msgstr "Pasirinkite veiksmą po atnaujinimo:"

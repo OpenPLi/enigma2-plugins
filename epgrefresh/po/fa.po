@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epg refresh Persian Translation\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"POT-Creation-Date: 2018-12-29 00:27+0100\n"
 "PO-Revision-Date: 2012-07-25 21:57+0330\n"
 "Last-Translator: mehdi <mehdi_ar_yekta@yahoo.com>\n"
 "Language-Team: Persian Professionals <persianpros@yahoo.com>\n"
@@ -23,11 +23,15 @@ msgstr ""
 #, python-format
 msgid ""
 "\n"
-"%d more services."
+"Remaining - services: %d / time: %d:%02d min"
 msgstr ""
 
 msgid "   (AutoZap)"
 msgstr ""
+
+#, fuzzy, python-format
+msgid "%d more services"
+msgstr "ویرایشگر سرویس ها"
 
 msgid "Adding schedule..."
 msgstr ""
@@ -212,6 +216,9 @@ msgid "EPGRefresh configuration"
 msgstr "پیکر بندی بازآوری راهنمای الکترونیک"
 
 msgid "EPGRefresh needs to be explicitly started using the yellow button in this menu if this option is not enabled"
+msgstr ""
+
+msgid "EPGRefresh requires services/bouquets to be configured. Configure now?"
 msgstr ""
 
 msgid "Edit Services"
@@ -411,6 +418,9 @@ msgid "Save EPG in the cache file after refresh is completed."
 msgstr ""
 
 msgid "Saving EPG Cache..."
+msgstr ""
+
+msgid "Scanning last service. Please wait."
 msgstr ""
 
 #, fuzzy

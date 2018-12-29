@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"POT-Creation-Date: 2018-12-29 00:27+0100\n"
 "PO-Revision-Date: 2015-01-20 16:12+0200\n"
 "Last-Translator: Dima73 <Dima-73@inbox.lv>\n"
 "Language-Team: openli.org\n"
@@ -15,13 +15,19 @@ msgstr ""
 #, python-format
 msgid ""
 "\n"
-"%d more services."
+"Remaining - services: %d / time: %d:%02d min"
 msgstr ""
 "\n"
-"%d сервисов всего."
+"Оставшиеся - сервисы: %d / время: %d:%02d мин"
 
 msgid "   (AutoZap)"
 msgstr "   (Авто переключение)"
+
+#, fuzzy, python-format
+msgid "%d more services"
+msgstr ""
+"\n"
+"%d сервисов всего."
 
 msgid "Adding schedule..."
 msgstr "Добавлено расписание..."
@@ -194,6 +200,9 @@ msgstr "Конфигурация обновления EPG"
 
 msgid "EPGRefresh needs to be explicitly started using the yellow button in this menu if this option is not enabled"
 msgstr "Если это включено, то обновление EPG начнет работать в автоматическом режиме, в противном случае есть ручное обновление на желтой кнопке в этом меню."
+
+msgid "EPGRefresh requires services/bouquets to be configured. Configure now?"
+msgstr "EPGRefresh необходимы сконфигурированные сервисы/букеты. Сделать это сейчас?"
 
 msgid "Edit Services"
 msgstr "Редактировать сервисы"
@@ -384,6 +393,9 @@ msgstr "Сохранение EPG в текущий файл кеша после 
 
 msgid "Saving EPG Cache..."
 msgstr "Сохранен кеш EPG..."
+
+msgid "Scanning last service. Please wait."
+msgstr "Сканируем последний сервис. Пожалуйста, подождите."
 
 msgid "Select action after refresh:"
 msgstr "Выберите действие после обновления:"
@@ -577,12 +589,3 @@ msgstr "никогда"
 
 msgid "nowhere"
 msgstr "нигде"
-
-msgid "Scanning last service. Please wait."
-msgstr "Сканируем последний сервис. Пожалуйста, подождите."
-
-msgid "\nRemaining - services: %d / time: %d:%02d min"
-msgstr "\nОставшиеся - сервисы: %d / время: %d:%02d мин"
-
-msgid "EPGRefresh requires services/bouquets to be configured. Configure now?"
-msgstr "EPGRefresh необходимы сконфигурированные сервисы/букеты. Сделать это сейчас?"

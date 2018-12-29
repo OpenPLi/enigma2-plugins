@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Enigma2 EPGRefresh Plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"POT-Creation-Date: 2018-12-29 00:27+0100\n"
 "PO-Revision-Date: 2017-03-24 14:44+0100\n"
 "Last-Translator: ims <andrej.tobola@gmail.com>\n"
 "Language-Team: PLi\n"
@@ -17,13 +17,17 @@ msgstr ""
 #, python-format
 msgid ""
 "\n"
-"%d more services."
+"Remaining - services: %d / time: %d:%02d min"
 msgstr ""
-"\n"
-"a ďalších %d staníc."
 
 msgid "   (AutoZap)"
 msgstr ""
+
+#, fuzzy, python-format
+msgid "%d more services"
+msgstr ""
+"\n"
+"a ďalších %d staníc."
 
 msgid "Adding schedule..."
 msgstr "Pridať plán..."
@@ -198,6 +202,9 @@ msgstr "Nastavenie EPGRefresh"
 
 msgid "EPGRefresh needs to be explicitly started using the yellow button in this menu if this option is not enabled"
 msgstr "Ak je táto voľba zakázaná, EPGRefresh nebude prebiehať automaticky a musí byť spustený pomocou žltého tlačidla v tejto ponuke."
+
+msgid "EPGRefresh requires services/bouquets to be configured. Configure now?"
+msgstr ""
 
 msgid "Edit Services"
 msgstr "Upraviť stanice"
@@ -390,6 +397,9 @@ msgstr "Po dokončení aktualizácie EPG uložiť EPG do súboru (cache)."
 
 msgid "Saving EPG Cache..."
 msgstr "Ukladá sa EPG Cache..."
+
+msgid "Scanning last service. Please wait."
+msgstr ""
 
 msgid "Select action after refresh:"
 msgstr "Vyberte akciu po aktualizácii:"

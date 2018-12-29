@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Enigma2 AutoTimer Plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"POT-Creation-Date: 2018-12-29 00:27+0100\n"
 "PO-Revision-Date: 2009-09-10 20:30+0100\n"
 "Last-Translator: maja <jovanovic@gmx.ch>\n"
 "Language-Team: veselin & majevica CRNABERZA <jovanovic@gmx.ch>\n"
@@ -20,11 +20,15 @@ msgstr ""
 #, python-format
 msgid ""
 "\n"
-"%d more services."
+"Remaining - services: %d / time: %d:%02d min"
 msgstr ""
 
 msgid "   (AutoZap)"
 msgstr ""
+
+#, fuzzy, python-format
+msgid "%d more services"
+msgstr "Uredi kanale"
 
 msgid "Adding schedule..."
 msgstr ""
@@ -202,6 +206,9 @@ msgid "EPGRefresh configuration"
 msgstr "Konfiguracija EPG osvežavanja"
 
 msgid "EPGRefresh needs to be explicitly started using the yellow button in this menu if this option is not enabled"
+msgstr ""
+
+msgid "EPGRefresh requires services/bouquets to be configured. Configure now?"
 msgstr ""
 
 msgid "Edit Services"
@@ -401,6 +408,9 @@ msgid "Save EPG in the cache file after refresh is completed."
 msgstr ""
 
 msgid "Saving EPG Cache..."
+msgstr ""
+
+msgid "Scanning last service. Please wait."
 msgstr ""
 
 #, fuzzy

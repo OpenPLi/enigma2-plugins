@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"POT-Creation-Date: 2018-12-29 00:27+0100\n"
 "PO-Revision-Date: 2017-02-05 23:42+0200\n"
 "Last-Translator: peter <sct2003@abv.bg>\n"
 "Language-Team: Bulgarian <>\n"
@@ -20,13 +20,17 @@ msgstr ""
 #, python-format
 msgid ""
 "\n"
-"%d more services."
+"Remaining - services: %d / time: %d:%02d min"
 msgstr ""
-"\n"
-"%d добавени канала."
 
 msgid "   (AutoZap)"
 msgstr "   (Автоматично превключване)"
+
+#, fuzzy, python-format
+msgid "%d more services"
+msgstr ""
+"\n"
+"%d добавени канала."
 
 msgid "Adding schedule..."
 msgstr "Добавяне на разписание..."
@@ -201,6 +205,9 @@ msgstr "EPGRefresh настройки"
 
 msgid "EPGRefresh needs to be explicitly started using the yellow button in this menu if this option is not enabled"
 msgstr "EPGRefresh трябва да бъде стартиран използвайки жълт бутон в това меню ако тази опция не е активирана."
+
+msgid "EPGRefresh requires services/bouquets to be configured. Configure now?"
+msgstr ""
 
 msgid "Edit Services"
 msgstr "Kанали"
@@ -393,6 +400,9 @@ msgstr "Записване ЕПГ данните в текущо избрани�
 
 msgid "Saving EPG Cache..."
 msgstr "Записване на ЕПГ данните..."
+
+msgid "Scanning last service. Please wait."
+msgstr ""
 
 msgid "Select action after refresh:"
 msgstr "Изберете действие след обновяване:"
