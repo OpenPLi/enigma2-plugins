@@ -647,6 +647,9 @@ class AutoTimer:
 
 				changed = newEntry.begin != begin or newEntry.end != end or newEntry.name != name
 				if allow_modify:
+					if oldExists and newEntry.service_ref == ServiceReference(serviceref) and newEntry.eit == eit and newEntry.name == name and newEntry.begin < begin and newEntry.end < end and (0 < begin - newEntry.end <= 600):
+						begin = newEntry.begin
+						doLog("[AutoTimer] This same eit and different times end - update only end")
 					if self.modifyTimer(newEntry, name, shortdesc, begin, end, serviceref, eit, base_timer=timer):
 						msg = "[AutoTimer] AutoTimer modified timer: %s ." % (newEntry.name)
 						doLog(msg)
