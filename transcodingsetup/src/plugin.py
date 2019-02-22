@@ -7,9 +7,10 @@ from Components.Sources.StaticText import StaticText
 from Components.Label import Label
 from Components.ActionMap import ActionMap
 from Components.SystemInfo import SystemInfo
+from Components.Language import language
 from Screens.MessageBox import MessageBox
 from enigma import eTimer
-from Components.config import config, ConfigSubsection, getConfigListEntry, ConfigInteger, ConfigSelection, configfile 
+from Components.config import config, ConfigSubsection, getConfigListEntry, ConfigInteger, ConfigSelection, ConfigText, configfile 
 
 import os
 
@@ -20,33 +21,44 @@ BITRATE_CHOICES = [( "100000", "100 kbps" ), ( "200000", "200 kbps" ), ( "500000
 	( "1500000", "1.5 Mbps" ), ( "2000000", "2 Mbps" ), ( "2500000", "2.5 Mbps" ), ( "3000000", "3 Mbps" ), ( "3500000", "3.5 Mbps" ), ( "4000000", "4 Mbps" ), ( "450000", "4.5 Mbps" ),
 	( "5000000", "5 Mbps" ), ( "5500000", "5.5 Mpbs" ), ( "6000000", "6 Mbps" ), ( "6500000", "6.5 Mbps" ), ( "7000000", "7 Mbps" ), ( "7500000", "7.5 Mbps" ), ( "8000000", "8 Mbps" )]
 RESOLUTION_CHOICES = [ ("720x480", "480p"), ("720x576", "576p"), ("1280x720", "720p") ]
+#AUDIOLANG_CHOICES = [ ("xxx" , "Standard"), ("deu", "German"), ("eng", "English"), ("fra", "French"), ("nld", "Dutch")]
 VCODEC_CHOICES = [("h264", "H.264"), ("h265", "H.265")]
 
-config.plugins.transcodingsetup = ConfigSubsection()
-config.plugins.transcodingsetup.port = ConfigInteger(default = None, limits = PORT_LIMITS )
-config.plugins.transcodingsetup.port2 = ConfigInteger(default = None, limits = PORT_LIMITS )
-config.plugins.transcodingsetup.bitrate = ConfigSelection(default = "1000000", choices = BITRATE_CHOICES )
-config.plugins.transcodingsetup.resolution = ConfigSelection(default = "720x576", choices = RESOLUTION_CHOICES )
+class AudioLanguageList:
+	def __init__(self):
+		self.audiolangChoices = [("xxx", "Auto")]
+		for x in language.langlist:
+			self.audiolangChoices.append((language.lang[x][1], language.lang[x][0])) 
 
-#config.plugins.transcodingsetup.framerate = ConfigSelection(default = "25000", choices = [("23976", "23.976 fps"), ("24000", "24 fps"), ("25000", "25 fps"), ("30000", "30 fps")])
+	def getaudiolanguagelist(self):
+		return  [(x) for x in self.audiolangChoices ]
+
+audiolanguagelist = AudioLanguageList()
+
+config.plugins.transcodingsetup = ConfigSubsection()
+config.plugins.transcodingsetup.port = ConfigInteger(default = None, limits = PORT_LIMITS)
+config.plugins.transcodingsetup.port2 = ConfigInteger(default = None, limits = PORT_LIMITS) 
+config.plugins.transcodingsetup.bitrate = ConfigSelection(default = "1000000", choices = BITRATE_CHOICES)
+config.plugins.transcodingsetup.resolution = ConfigSelection(default = "720x576", choices = RESOLUTION_CHOICES)
+config.plugins.transcodingsetup.audiolang = ConfigSelection(default = "xxx", choices = audiolanguagelist.getaudiolanguagelist())
+##config.plugins.transcodingsetup.framerate = ConfigSelection(default = "25000", choices = [("23976", "23.976 fps"), ("24000", "24 fps"), ("25000", "25 fps"), ("30000", "30 fps")])
 config.plugins.transcodingsetup.aspectratio = ConfigSelection(default = 2, choices = [ ("0", "auto"), ("1", "4x3"), ("2", "16x9") ])
 config.plugins.transcodingsetup.interlaced = ConfigInteger(default = 0)
 if SystemInfo["HasH265Encoder"]:
 	config.plugins.transcodingsetup.vcodec = ConfigSelection(default = "h265", choices = VCODEC_CHOICES )
 
-
 class TranscodingSetup(ConfigListScreen, Screen):
 	skin = 	"""
-		<screen position="center,center" size="500,190" title="Transcoding Setup">
+		<screen position="center,center" size="500,250" title="Transcoding Setup">
 			<widget name="content" position="0,0" size="500,22" font="Regular;19" />
 
-			<widget name="config" position="4,36" font="Regular;20" size="492,100" />
+			<widget name="config" position="4,36" font="Regular;20" size="492,150"/>
 
-			<ePixmap pixmap="skin_default/buttons/red.png" position="0,150" size="140,40" alphatest="on" />
-			<ePixmap pixmap="skin_default/buttons/green.png" position="150,150" size="140,40" alphatest="on" />
+			<ePixmap pixmap="skin_default/buttons/red.png" position="0,210" size="140,40" alphatest="on" />
+			<ePixmap pixmap="skin_default/buttons/green.png" position="150,210" size="140,40" alphatest="on" />
 
-			<widget source="key_red" render="Label" position="0,150" zPosition="1" size="140,40" font="Regular;20" halign="center" valign="center" backgroundColor="#9f1313" foregroundColor="#ffffff" transparent="1"/>
-			<widget source="key_green" render="Label" position="150,150" zPosition="1" size="140,40" font="Regular;20" halign="center" valign="center" backgroundColor="#1f771f" foregroundColor="#ffffff" transparent="1"/>
+			<widget source="key_red" render="Label" position="0,210" zPosition="1" size="140,40" font="Regular;20" halign="center" valign="center" backgroundColor="#9f1313" foregroundColor="#ffffff" transparent="1"/>
+			<widget source="key_green" render="Label" position="150,210" zPosition="1" size="140,40" font="Regular;20" halign="center" valign="center" backgroundColor="#1f771f" foregroundColor="#ffffff" transparent="1"/>
 		</screen>
 		"""
 
@@ -73,11 +85,13 @@ class TranscodingSetup(ConfigListScreen, Screen):
 		self.port2 = ConfigInteger(default = config.plugins.transcodingsetup.port2.value, limits = PORT_LIMITS )
 		self.bitrate = ConfigSelection(default = config.plugins.transcodingsetup.bitrate.value, choices = BITRATE_CHOICES ) 
 		self.resolution = ConfigSelection(default = config.plugins.transcodingsetup.resolution.value, choices = RESOLUTION_CHOICES ) 
-
+		self.audiolang = ConfigSelection(default = config.plugins.transcodingsetup.audiolang.value, choices =  audiolanguagelist.getaudiolanguagelist()) 
 		config_list.append(getConfigListEntry(_("Port"), self.port))
 		config_list.append(getConfigListEntry(_("Port2"), self.port2))
 		config_list.append(getConfigListEntry(_("Bitrate"), self.bitrate))
-		config_list.append(getConfigListEntry(_("Video size"), self.resolution))
+		config_list.append(getConfigListEntry(_("Resolution"), self.resolution))
+		config_list.append(getConfigListEntry(_("Language"), self.audiolang))
+		
 #		config_list.append(getConfigListEntry(_("Frame rate"), config.plugins.transcodingsetup.framerate))
 
 		if SystemInfo["HasH265Encoder"]:
@@ -87,8 +101,7 @@ class TranscodingSetup(ConfigListScreen, Screen):
 		self["config"].list = config_list
 
 		self["actions"] = ActionMap(["OkCancelActions", "ShortcutActions", "ColorActions"],
-		{
-			"red": self.keyCancel,
+		{	"red": self.keyCancel,
 			"green": self.keyGo,
 			"ok": self.keyGo,
 			"cancel": self.keyCancel,
@@ -123,6 +136,7 @@ class TranscodingSetup(ConfigListScreen, Screen):
 		config.plugins.transcodingsetup.port2.value = self.port2.value
 		config.plugins.transcodingsetup.bitrate.value = self.bitrate.value
 		config.plugins.transcodingsetup.resolution.value = self.resolution.value
+		config.plugins.transcodingsetup.audiolang.value = self.audiolang.value
 		set_spc_content(True)										# now write changes
 		spc_addNotifier()										# enable callback on save for plugin parameter
 		self.close()
@@ -139,6 +153,7 @@ def setup_config():
 	rawcontent = read_spc_content()
 	port= None
 	port2 = None
+
 	for line in rawcontent:
 		if not line.startswith('#') and not line.startswith(';'):
 			tokens = line.split('=')
@@ -147,6 +162,9 @@ def setup_config():
 					if int(tokens[1]) * 1000 <= int(choice):
 						config.plugins.transcodingsetup.bitrate.value = choice
 						break
+
+			if (tokens[0] == "audiolang"):
+				config.plugins.transcodingsetup.audiolang.value = tokens[1]
 
 			if (tokens[0] == "size"):
 				if tokens[1] == "480p":
@@ -174,7 +192,6 @@ def setup_config():
 		else:
 			if os.path.exists("/proc/stb/encoder/0"):
 				port = 8001
-		config.plugins.transcodingsetup.port.value = port
 	spc_addNotifier()
 
 def set_spc_content(dummy):
@@ -192,6 +209,13 @@ def set_spc_content(dummy):
 				if value != tokens[1]:
 					tokens[1] = value
 					changed = True
+
+			if (tokens[0] == "audiolang"):
+				value = config.plugins.transcodingsetup.audiolang.value
+				if value != tokens[1]:
+					tokens[1] = value
+					changed = True
+
 			if (tokens[0] == "size"):
 				value = tokens[1]
 				if config.plugins.transcodingsetup.resolution.value == "720x480":
@@ -232,6 +256,8 @@ def set_spc_content(dummy):
 	config.plugins.transcodingsetup.port2.save()
 	config.plugins.transcodingsetup.bitrate.save()
 	config.plugins.transcodingsetup.resolution.save()
+	config.plugins.transcodingsetup.audiolang.save()
+	
 #	config.plugins.transcodingsetup.framerate.save()
 #	config.plugins.transcodingsetup.aspectratio.save()
 #	config.plugins.transcodingsetup.interlaced.save()
@@ -260,6 +286,7 @@ def spc_addNotifier():
 	config.plugins.transcodingsetup.resolution.addNotifier(set_spc_content, False)
 	config.plugins.transcodingsetup.port.addNotifier(set_spc_content, False)
 	config.plugins.transcodingsetup.port2.addNotifier(set_spc_content, False)
+	config.plugins.transcodingsetup.audiolang.addNotifier(set_spc_content, False)
 	if SystemInfo["HasH265Encoder"]:
 		config.plugins.transcodingsetup.vcodec.addNotifier(set_spc_content, False)
 
@@ -268,6 +295,7 @@ def spc_removeNotifier():
 	config.plugins.transcodingsetup.resolution.removeNotifier(set_spc_content)
 	config.plugins.transcodingsetup.port.removeNotifier(set_spc_content)
 	config.plugins.transcodingsetup.port2.removeNotifier(set_spc_content)
+	config.plugins.transcodingsetup.audiolang.removeNotifier(set_spc_content)
 	if SystemInfo["HasH265Encoder"]:
 		config.plugins.transcodingsetup.vcodec.removeNotifier(set_spc_content)
 
