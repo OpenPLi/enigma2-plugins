@@ -60,7 +60,7 @@ def CallbackChoiceAction(self, ret):
 				else:
 					name = ''
 				if ret == "custom":
-					self.session.openWithCallback(self.VKaction, VirtualKeyBoard, text=name, title = _("Enter text to search for"))
+					self.session.openWithCallback(self.VKaction, VirtualKeyBoard, text=name, title=_("Enter text to search for"), keyGreen=_("Search"))
 				else:
 					self.session.open(EPGSearch, name, False)
 			except:
