@@ -40,8 +40,8 @@ config.plugins.transcodingsetup.port = ConfigInteger(default = None, limits = PO
 config.plugins.transcodingsetup.port2 = ConfigInteger(default = None, limits = PORT_LIMITS) 
 config.plugins.transcodingsetup.bitrate = ConfigSelection(default = "1000000", choices = BITRATE_CHOICES)
 config.plugins.transcodingsetup.resolution = ConfigSelection(default = "720x576", choices = RESOLUTION_CHOICES)
-config.plugins.transcodingsetup.audiolang = ConfigSelection(default = "xxx", choices = audiolanguagelist.getaudiolanguagelist())
-##config.plugins.transcodingsetup.framerate = ConfigSelection(default = "25000", choices = [("23976", "23.976 fps"), ("24000", "24 fps"), ("25000", "25 fps"), ("30000", "30 fps")])
+#config.plugins.transcodingsetup.audiolang = ConfigSelection(default = "xxx", choices = audiolanguagelist.getaudiolanguagelist())
+#config.plugins.transcodingsetup.framerate = ConfigSelection(default = "25000", choices = [("23976", "23.976 fps"), ("24000", "24 fps"), ("25000", "25 fps"), ("30000", "30 fps")])
 config.plugins.transcodingsetup.aspectratio = ConfigSelection(default = 2, choices = [ ("0", "auto"), ("1", "4x3"), ("2", "16x9") ])
 config.plugins.transcodingsetup.interlaced = ConfigInteger(default = 0)
 if SystemInfo["HasH265Encoder"]:
@@ -85,7 +85,9 @@ class TranscodingSetup(ConfigListScreen, Screen):
 		self.port2 = ConfigInteger(default = config.plugins.transcodingsetup.port2.value, limits = PORT_LIMITS )
 		self.bitrate = ConfigSelection(default = config.plugins.transcodingsetup.bitrate.value, choices = BITRATE_CHOICES ) 
 		self.resolution = ConfigSelection(default = config.plugins.transcodingsetup.resolution.value, choices = RESOLUTION_CHOICES ) 
-		self.audiolang = ConfigSelection(default = config.plugins.transcodingsetup.audiolang.value, choices =  audiolanguagelist.getaudiolanguagelist()) 
+		self.audiolang = ConfigSelection(default = config.plugins.transcodingsetup.audiolang.value, 
+										choices = [(x) for x in config.plugins.transcodingsetup.audiolang.choices.choices ])
+
 		config_list.append(getConfigListEntry(_("Port"), self.port))
 		config_list.append(getConfigListEntry(_("Port2"), self.port2))
 		config_list.append(getConfigListEntry(_("Bitrate"), self.bitrate))
@@ -153,6 +155,7 @@ def setup_config():
 	rawcontent = read_spc_content()
 	port= None
 	port2 = None
+	audiolang = False
 
 	for line in rawcontent:
 		if not line.startswith('#') and not line.startswith(';'):
@@ -164,7 +167,8 @@ def setup_config():
 						break
 
 			if (tokens[0] == "audiolang"):
-				config.plugins.transcodingsetup.audiolang.value = tokens[1]
+				audiolang = True
+				audiolangval = tokens[1]
 
 			if (tokens[0] == "size"):
 				if tokens[1] == "480p":
@@ -184,7 +188,12 @@ def setup_config():
 						port2 = newport
 	config.plugins.transcodingsetup.port.value = port
 	config.plugins.transcodingsetup.port2.value = port2
-
+	if (audiolang):
+		config.plugins.transcodingsetup.audiolang = ConfigSelection(default = "xxx", choices = audiolanguagelist.getaudiolanguagelist())
+		config.plugins.transcodingsetup.audiolang.value = audiolangval
+	else:
+		config.plugins.transcodingsetup.audiolang = ConfigSelection(default = "xxx", choices = [ ("xxx", "only Auto, audiolang missed in streamproxy.conf")])
+	
 	if config.plugins.transcodingsetup.port.value is None:
 		port = None
 		if os.path.exists("/dev/bcm_enc0"):
