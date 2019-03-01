@@ -300,7 +300,6 @@ def RemoteTimerInit():
 	if baseTimer__init__ is None:
 		baseTimer__init__ = TimerEntry.__init__
 	
-	TimerEntry.createConfig = RemoteTimerConfig
 	TimerEntry.keyLeft = RemoteTimerkeyLeft 
 	TimerEntry.keyRight = RemoteTimerkeyRight
 	TimerEntry.keySelect = RemoteTimerkeySelect
@@ -311,6 +310,7 @@ def RemoteTimerInit():
 
 def RemoteTimer__init__(self, session, timer):
 	baseTimer__init__(self, session, timer)
+	RemoteTimerConfig(self)
 	if int(self.timerentry_remote.value) != 0:
 		RemoteTimernewConfig(self)
 
@@ -343,7 +343,6 @@ def RemoteTimerConfig(self):
 	else:
 		default = "0"
 	self.timerentry_remote = ConfigSelection(default = default, choices = self.entryguilist)
-	baseTimercreateConfig(self)
 
 #def getLocationsError(self, error):
 #	RemoteTimercreateConfig(self)
