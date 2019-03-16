@@ -406,7 +406,7 @@ class SatelliteTransponderSearchSupport:
 		tuner_no = -1
 
 		self.auto_scan = nimmanager.nim_slots[nim_idx].supportsBlindScan() or tunername.startswith('Si216')
-		if self.auto_scan or tunername == "Alps BSBE1 C01A/D01A." or (tunername.startswith("BCM45") and tunername != "BCM4501"):
+		if self.auto_scan or tunername == "Alps BSBE1 C01A/D01A." or (tunername != "BCM4501" and "BCM45" in tunername):
 			(self.channel, self.frontend) = self.tryGetRawFrontend(nim_idx, False, False)
 			if not self.frontend:
 				self.session.nav.stopService()
@@ -789,7 +789,7 @@ class DmmBlindscan(ConfigListScreen, Screen, TransponderSearchSupport, Satellite
 		self.session.nav.playService(self.session.postScanService)
 		for x in self["config"].list:
 			x[1].cancel()
-		self.close()
+		self.close(False)
 
 	def startScanCallback(self, answer=True):
 		if answer:

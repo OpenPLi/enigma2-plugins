@@ -49,8 +49,8 @@ def getMisPlsValue(d, idx, defaultValue):
 	except:
 		return defaultValue
 
-BOX_MODEL = "none"
-BOX_NAME = ""
+BOX_MODEL = "all"
+BOX_NAME = "none"
 if fileExists("/proc/stb/info/vumodel") and not fileExists("/proc/stb/info/hwmodel") and not fileExists("/proc/stb/info/boxtype"):
 	try:
 		l = open("/proc/stb/info/vumodel")
@@ -241,7 +241,7 @@ class Blindscan(ConfigListScreen, Screen):
 		"""
 	def __init__(self, session):
 		Screen.__init__(self, session)
-		self.setup_title = _("Blind scan for DVB-S2 tuners")
+		self.setup_title = _("Blind scan for DVB-S2 tuners") + ":" + BOX_NAME + "/" + BOX_MODEL
 		Screen.setTitle(self, _(self.setup_title))
 		self.skinName = "Blindscan"
 		self.session.postScanService = self.session.nav.getCurrentlyPlayingServiceOrGroup()
