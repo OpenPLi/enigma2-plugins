@@ -16,6 +16,7 @@ from MountEdit import AutoMountEdit
 from AutoMount import iAutoMount, AutoMount
 from UserManager import UserManager
 import os
+from Components.config import config
 
 class AutoMountManager(Screen):
 	skin = """
@@ -81,6 +82,7 @@ class AutoMountManager(Screen):
 		self["config"].setList(self.list)
 
 	def exit(self):
+		config.movielist.videodirs.load()
 		self.close()
 
 	def keyOK(self, returnValue = None):
