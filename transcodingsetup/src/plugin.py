@@ -18,7 +18,7 @@ TRANSCODING_CONFIG = "/etc/enigma2/streamproxy.conf"
 
 PORT_LIMITS = (1024, 65535)
 BITRATE_CHOICES = [( "100000", "100 kbps" ), ( "200000", "200 kbps" ), ( "500000", "500 kbps" ), ( "1000000", "1 Mbps" ),
-	( "1500000", "1.5 Mbps" ), ( "2000000", "2 Mbps" ), ( "2500000", "2.5 Mbps" ), ( "3000000", "3 Mbps" ), ( "3500000", "3.5 Mbps" ), ( "4000000", "4 Mbps" ), ( "450000", "4.5 Mbps" ),
+	( "1500000", "1.5 Mbps" ), ( "2000000", "2 Mbps" ), ( "2500000", "2.5 Mbps" ), ( "3000000", "3 Mbps" ), ( "3500000", "3.5 Mbps" ), ( "4000000", "4 Mbps" ), ( "4500000", "4.5 Mbps" ),
 	( "5000000", "5 Mbps" ), ( "5500000", "5.5 Mpbs" ), ( "6000000", "6 Mbps" ), ( "6500000", "6.5 Mbps" ), ( "7000000", "7 Mbps" ), ( "7500000", "7.5 Mbps" ), ( "8000000", "8 Mbps" )]
 RESOLUTION_CHOICES = [ ("720x480", "480p"), ("720x576", "576p"), ("1280x720", "720p") ]
 #AUDIOLANG_CHOICES = [ ("xxx" , "Standard"), ("deu", "German"), ("eng", "English"), ("fra", "French"), ("nld", "Dutch")]
