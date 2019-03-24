@@ -630,6 +630,7 @@ class Blindscan(ConfigListScreen, Screen):
 				self["config"].list = self.list
 				self["config"].l.setList(self.list)
 				self["description"].setText(_("LNB of current satellite not compatible with plugin"))
+				self["introduction"].setText(" ")
 				return
 
 			self.searchtypeEntry = getConfigListEntry(_("Search type"), self.search_type,_('"channel scan" searches for channels and saves them to your receiver; "transponder scan" does a transponder search and displays the results allowing user to select some or all transponder. Both options save the results in satellites.xml format under /tmp'))
@@ -721,6 +722,8 @@ class Blindscan(ConfigListScreen, Screen):
 			fake_hi = self.blindscan_user_defined_lnb_stop_frequency.value - (self.user_defined_lnb_lo_freq - self.universal_lo_freq["low"])
 			self.blindscan_start_frequency = ConfigInteger(default = fake_lo, limits = (fake_lo, fake_lo)) # fake values
 			self.blindscan_stop_frequency = ConfigInteger(default = fake_hi, limits = (fake_hi, fake_hi)) # fake values
+		else:
+			return
 
 		# swap start and stop values if entered the wrong way round
 		if self.blindscan_start_frequency.value > self.blindscan_stop_frequency.value:
