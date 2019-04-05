@@ -776,7 +776,7 @@ class EPGSearch(EPGSelection):
 			self.searchEPG,
 			VirtualKeyBoard,
 			title = _("Enter text to search for"),
-			style = VKB_SEARCH_ICON)
+			style = VKB_SEARCH_ICON
 		)
 
 	def menu(self):
