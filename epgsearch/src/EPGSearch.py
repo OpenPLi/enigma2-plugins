@@ -13,7 +13,7 @@ from Screens.ChoiceBox import ChoiceBox
 from Screens.EpgSelection import EPGSelection
 from Screens.MessageBox import MessageBox
 from Screens.Screen import Screen
-from Screens.VirtualKeyBoard import VirtualKeyBoard
+from Screens.VirtualKeyBoard import VirtualKeyBoard, VKB_SEARCH_ICON
 from Components.ActionMap import ActionMap
 from Components.Button import Button
 from Components.config import config
@@ -748,7 +748,7 @@ class EPGSearch(EPGSelection):
 			if cur[0] is not None:
 				name2 = cur[0].getEventName() or ''
 				name3 = name2.split("(")[0].strip()
-				eventname = name3.replace('"', '').replace('Õ/Ô', '').replace('Ì/Ô', '').replace('Õ/ô', '').replace('.', '')
+				eventname = name3.replace('"', '').replace('Ã•/Ã”', '').replace('ÃŒ/Ã”', '').replace('Ã•/Ã´', '').replace('.', '')
 				eventname = eventname.replace('0+', '').replace('(0+)', '').replace('6+', '').replace('(6+)', '').replace('7+', '').replace('(7+)', '').replace('12+', '').replace('(12+)', '').replace('16+', '').replace('(16+)', '').replace('18+', '').replace('(18+)', '')				
 				try:
 					tmbdsearch = config.plugins.tmbd.profile.value
@@ -776,7 +776,7 @@ class EPGSearch(EPGSelection):
 			self.searchEPG,
 			VirtualKeyBoard,
 			title = _("Enter text to search for"),
-			keyGreen = _("Search")
+			style = VKB_SEARCH_ICON)
 		)
 
 	def menu(self):
