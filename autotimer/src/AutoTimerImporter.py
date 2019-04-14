@@ -124,7 +124,7 @@ class AutoTimerImporter(Screen):
 			<widget name="list" position="5,45" size="555,240" scrollbarMode="showOnDemand" />
 		</screen>"""
 
-	def __init__(self, session, autotimer, name, begin, end, disabled, sref, afterEvent, justplay, dirname, tags):
+	def __init__(self, session, autotimer, name, begin, end, disabled, sref, afterEvent, justplay, dirname, tags, bmargin=0):
 		Screen.__init__(self, session)
 
 		# Keep AutoTimer
@@ -134,7 +134,7 @@ class AutoTimerImporter(Screen):
 		self["key_red"] = StaticText(_("Cancel"))
 		self["key_green"] = StaticText(_("OK"))
 		self["key_yellow"] = StaticText()
- 		self["key_blue"] = StaticText()
+		self["key_blue"] = StaticText()
 
 		entries = []
 		append = entries.append
@@ -165,6 +165,7 @@ class AutoTimerImporter(Screen):
 			))
 
 		if begin and end:
+			start = localtime(begin + bmargin)
 			begin = localtime(begin)
 			end = localtime(end)
 			append(
@@ -176,8 +177,8 @@ class AutoTimerImporter(Screen):
 			))
 			append(
 				SelectionEntryComponent(
-					_("Only on Weekday: %s") % (weekdays[begin.tm_wday][1],), # XXX: the lookup is dirty but works :P
-					str(begin.tm_wday),
+					_("Only on Weekday: %s") % (weekdays[start.tm_wday][1],), # XXX: the lookup is dirty but works :P
+					str(start.tm_wday),
 					9,
 					True
 			))
