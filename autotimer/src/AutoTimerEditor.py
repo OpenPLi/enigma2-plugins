@@ -1514,7 +1514,8 @@ def addAutotimerFromEvent(session, evt = None, service = None, importer_Callback
 		None,		# Proposed afterEvent
 		None,		# Proposed justplay
 		None,		# Proposed dirname, can we get anything useful here?
-		[]			# Proposed tags
+		[],		# Proposed tags
+		3600
 	)
 
 def addAutotimerFromService(session, service = None, importer_Callback = importerCallback):
