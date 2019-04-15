@@ -95,7 +95,8 @@ def setDeinterlacer(mode):
 	except:
 		print "[AutoRes] failed switch deinterlacer mode to %s" % mode
 
-frqdic = { 23976: '24',
+frqdic = { 23000: '24',
+		23976: '24',
 		24000: '24',
 		25000: '25',
 		29970: '30',
@@ -300,6 +301,11 @@ class AutoRes(Screen):
 			height = info and info.getInfo(iServiceInformation.sVideoHeight)
 			width = info and info.getInfo(iServiceInformation.sVideoWidth)
 			framerate = info and info.getInfo(iServiceInformation.sFrameRate)
+			if not framerate:
+				try:
+					framerate = int(open("/proc/stb/vmpeg/0/framerate", "r").read())
+				except:
+					pass
 			if info and height != -1 and width != -1 and framerate != -1:
 				videocodec = codec_data.get(info.getInfo(iServiceInformation.sVideoType), "N/A")
 				frate = str(framerate)[:2] #fallback?
@@ -571,13 +577,18 @@ class AutoFrameRate(Screen):
 						self.framerate_change_is_locked = False
 					info = service and service.info()
 					framerate = info and info.getInfo(iServiceInformation.sFrameRate)
+					if not framerate:
+						try:
+							framerate = int(open("/proc/stb/vmpeg/0/framerate", "r").read())
+						except:
+							pass
 					if config.av.videorate[config.av.videomode[config.av.videoport.value].value].value in ("multi", "auto"):
 						replace_mode = '30'
 						if config.plugins.autoresolution.auto_30_60.value:
 							replace_mode = '60'
 						if framerate in (59940, 60000):
 							self.setVideoFrameRate('60')
-						elif framerate in (23976, 24000):
+						elif framerate in (23000, 23976, 24000):
 							self.setVideoFrameRate('24')
 						elif framerate in (29970, 30000):
 							self.setVideoFrameRate(replace_mode)
