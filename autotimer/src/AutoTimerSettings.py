@@ -91,6 +91,7 @@ class AutoTimerSettings(Screen, ConfigListScreen):
 			getConfigListEntry(_("Create debug log file"), config.plugins.autotimer.log_write, _("If this enabled, debug Autotimer write in log file.")),
 			getConfigListEntry(_("Path debug log"), config.plugins.autotimer.log_file, _("Specify the name and location for the log.")),
 			getConfigListEntry(_("Print shell log"), config.plugins.autotimer.log_shell, _("If this enabled, debug log print in console mode start enigma2.")),
+			getConfigListEntry(_("Create searchlog file"), config.plugins.autotimer.searchlog_write, _("If this enabled, search log write in autotimer_search.log.")),
 			getConfigListEntry(_("Select the path for autotimer_search.log"), config.plugins.autotimer.searchlog_path, _("Select the path where the autotimer_search.log should be saved")),
 			getConfigListEntry(_("Max. count for saved searchlog"), config.plugins.autotimer.searchlog_max, _("Select the count of the last saved searchlogs (min=5 max=20)")),
 			]

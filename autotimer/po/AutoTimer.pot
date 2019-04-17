@@ -1380,3 +1380,9 @@ msgid ""
 "\n"
 "As a final hint I can't stress how important it is to take a look at the help texts that are shown in the setup dialogs as they cover the most frequently asked questions. Surprisingly even after the hints were added ;-)."
 msgstr ""
+
+msgid "Create searchlog file"
+msgstr ""
+
+msgid "If this enabled, search log write in autotimer_search.log."
+msgstr ""

@@ -141,7 +141,6 @@ class AutoTimer:
 	def __init__(self):
 		# Initialize
 		self.timers = []
-		self.isParseRunning = False
 		self.configMtime = -1
 		self.uniqueTimerId = 0
 		self.defaultTimer = preferredAutoTimerComponent(
@@ -249,10 +248,6 @@ class AutoTimer:
 
 		# reset time
 		self.configMtime = -1
-
-	def getStatusParseEPGrunning(self):
-		#return self.isParseRunning
-		return False
 
 # Manage List
 	def add(self, timer):
@@ -844,12 +839,6 @@ class AutoTimer:
 			doLog("[AutoTimer] Navigation is not available, can't parse EPG")
 			return (0, 0, 0, [], [], [])
 
-		if self.isParseRunning:
-			doLog("[AutoTimer] parse EPG it is already running, return zero, test only")
-			#return (0, 0, 0, [], [], [])
-		else:
-			self.isParseRunning = True
-
 		new = 0
 		modified = 0
 		timers = []
@@ -861,7 +850,7 @@ class AutoTimer:
 		global addNewTimers
 		addNewTimers = []
 
-		if not simulateOnly:
+		if config.plugins.autotimer.searchlog_write.value and not simulateOnly:
 			self.prepareSearchLogfile()
 
 		if currentThread().getName() == 'MainThread':
@@ -887,7 +876,7 @@ class AutoTimer:
 		# We include processed timers as we might search for duplicate descriptions
 		# NOTE: It is also possible to use RecordTimer isInTimer(), but we won't get the timer itself on a match
 		timerdict = defaultdict(list)
-		doBlockingCallFromMainThread(self.populateTimerdict, epgcache, recordHandler, timerdict)
+		doBlockingCallFromMainThread(self.populateTimerdict, epgcache, recordHandler, timerdict, simulateOnly=simulateOnly)
 
 		# Create dict of all movies in all folders used by an autotimer to compare with recordings
 		# The moviedict will be filled only if one AutoTimer is configured to avoid duplicate description for any recordings
@@ -896,6 +885,7 @@ class AutoTimer:
 		# Iterate Timer
 		for timer in self.getEnabledTimerList():
 			if uniqueId is None or timer.id == uniqueId:
+				doLog("[AutoTimer] Start search for %s" % (timer.match.replace('\xc2\x86', '').replace('\xc2\x87', '')))
 				tup = doBlockingCallFromMainThread(self.parseTimer, timer, epgcache, serviceHandler, recordHandler, checkEvtLimit, evtLimit, timers, conflicting, similars, skipped, timerdict, moviedict, simulateOnly=simulateOnly)
 				if callback:
 					callback(timers, conflicting, similars, skipped)
@@ -914,15 +904,12 @@ class AutoTimer:
 			if config.plugins.autotimer.remove_double_and_conflicts_timers.value != "no":
 				self.reloadTimerList(recordHandler)
 
-		# Set status finished
-		self.isParseRunning = False
-
 		return (len(timers), new, modified, timers, conflicting, similars)
 
 # Supporting functions
 
 	def addToSearchLogfile(self, timerEntry, entryType, simulateOnlyValue=False):
-		if not simulateOnlyValue:
+		if config.plugins.autotimer.searchlog_write.value and not simulateOnlyValue:
 			#write eventname totextfile
 			logpath = config.plugins.autotimer.searchlog_path.value
 			if logpath == "?likeATlog?":
@@ -1027,7 +1014,7 @@ class AutoTimer:
 			if Standby.inStandby is None and (disabled_at or removed_at):
 				AddPopup(_("Reload timers list.\n%d autotimer(s) disabled because conflict.\n%d double autotimer(s) removed.\n") % (disabled_at, removed_at), MessageBox.TYPE_INFO, config.plugins.autotimer.popup_timeout.value, CONFLICTINGDOUBLEID)
 
-	def populateTimerdict(self, epgcache, recordHandler, timerdict):
+	def populateTimerdict(self, epgcache, recordHandler, timerdict, simulateOnly=False):
 		remove = []
 		for timer in chain(recordHandler.timer_list, recordHandler.processed_timers):
 			if timer and timer.service_ref:
@@ -1055,6 +1042,7 @@ class AutoTimer:
 							if not timer.isRunning():
 								recordHandler.removeEntry(timer)
 								doLog("[AutoTimer] Remove timer because of eit check %s." % (timer.name))
+								self.addToSearchLogfile(timer,"-", simulateOnly)
 					except:
 						pass
 		del remove
