@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-12-29 00:27+0100\n"
-"PO-Revision-Date: 2018-03-12 22:09+0200\n"
+"PO-Revision-Date: 2019-04-16 20:10+0300\n"
 "Last-Translator: Dimitrij <Dima-73@inbox.lv>\n"
 "Language-Team: openpli.org\n"
 "Language: ru\n"
@@ -25,7 +25,6 @@ msgstr ""
 msgid " (if services are enabled, bouquets are ignored)."
 msgstr " (если сервисы включены, букеты будут игнорированы)."
 
-#, fuzzy
 msgid " (if services are enabled, bouquets are ignored.)."
 msgstr " (если сервисы включены, букеты будут игнорированы)."
 
@@ -71,10 +70,10 @@ msgid "%s: %s at %s"
 msgstr "%s: %s в %s"
 
 msgid "/etc/enigma2"
-msgstr ""
+msgstr "/etc/enigma2"
 
 msgid "/tmp"
-msgstr ""
+msgstr "/tmp"
 
 msgid "A new and empty config was created. A backup of the config can be found here (/etc/enigma2/autotimer.xml_old)."
 msgstr "Создана новая и пустая конфигурация. Резервное копирование конфигурации можно найти здесь (/etc/enigma2/autotimer.xml_old)."
@@ -157,16 +156,14 @@ msgstr "Контекстное меню Автотаймера"
 msgid "AutoTimer Editor"
 msgstr "Автотаймер - редактор"
 
-#, fuzzy
 msgid "AutoTimer FAQ"
-msgstr "Автотаймер "
+msgstr "Автотаймер - ФАО"
 
 msgid "AutoTimer Filters"
 msgstr "Автотаймер - фильтры"
 
-#, fuzzy
 msgid "AutoTimer Help"
-msgstr "Автотаймер "
+msgstr "Автотаймер - помощь"
 
 msgid "AutoTimer Services"
 msgstr "Автотаймер - сервисы"
@@ -174,9 +171,8 @@ msgstr "Автотаймер - сервисы"
 msgid "AutoTimer Settings"
 msgstr "Автотаймер - настройки"
 
-#, fuzzy, python-format
 msgid "AutoTimer failed with error %s"
-msgstr "Автотаймер - фильтры"
+msgstr "Автотаймер - ошибка %s"
 
 msgid "AutoTimer overview"
 msgstr "Автотаймер - обзор"
@@ -266,14 +262,13 @@ msgid "Configure AutoTimer behavior"
 msgstr "Автотаймер - настройка поведения"
 
 msgid "Congratulations"
-msgstr ""
+msgstr "Поздравление"
 
 msgid "Control recording completely by service"
 msgstr "Полное управление записью сервиса"
 
-#, fuzzy
 msgid "Couldn't load config file!"
-msgstr "Не найден xml конфиг файл!"
+msgstr "Ошибка загрузки xml конфиг файла!"
 
 msgid "Create AutoTimer"
 msgstr "Создать Автотаймер"
@@ -407,7 +402,7 @@ msgid "Execute \"after event\" during timespan"
 msgstr "Исполнять \"после события\" в течении промежутка времени"
 
 msgid "FAQ"
-msgstr ""
+msgstr "ФАО"
 
 msgid "Filter"
 msgstr "Фильтр"
@@ -457,9 +452,8 @@ msgstr ""
 msgid "Frequently asked questions"
 msgstr "Часто задаваемые вопросы"
 
-#, fuzzy
 msgid "Frequently asked questions about the AutoTimer"
-msgstr "Часто задаваемые вопросы"
+msgstr "Часто задаваемые вопросы об Автотаймере"
 
 msgid "Fri"
 msgstr "Пт"
@@ -468,7 +462,7 @@ msgid "Friday"
 msgstr "Пятница"
 
 msgid "Generic setup"
-msgstr ""
+msgstr "Общая настройка"
 
 msgid "Guess existing timer based on begin/end"
 msgstr "Учесть уже существующий таймер, базируясь на начало/окончание"
@@ -500,7 +494,6 @@ msgstr "Если это включено, то лог отладки будет 
 msgid "If this enabled, will check the list of timers, conflicting autotimers are disabled, the duplicate autotimers will be deleted."
 msgstr "Если эта опция включена, то будет запущена проверка списка таймеров, по окончании поиска событий .Кофликтные автотаймеры будут отключены, дублирующие автотаймеры будут удалены."
 
-#, fuzzy, python-format
 msgid "If this is enabled an existing timer will also be considered recording an event if it records at least 80% of the it."
 msgstr "Если это включено, то уже существующий таймер также будет рассмотрен как запись события, если этот таймер записывает не меньше 80% события."
 
@@ -839,9 +832,8 @@ msgstr "Выбор: \"точное совпадение\" - \"Название �
 msgid "Select a timer to import"
 msgstr "Выберите таймер для импорта"
 
-#, fuzzy
 msgid "Select action"
-msgstr "Открыть выбор расположения"
+msgstr "Выбор действия"
 
 msgid "Select action for AutoTimer or input date/time:"
 msgstr "Выбор действия для Автотаймера или ввод дата/время:"
@@ -979,7 +971,6 @@ msgstr ""
 "Спасибо за использование мастера. Ваш новый Автотаймер был добавлен в список.\n"
 "Пожалуйста нажмите OK, чтобы продолжить."
 
-#, fuzzy
 msgid "The \"Overview\""
 msgstr "Автотаймер - обзор"
 
@@ -1436,3 +1427,9 @@ msgstr "переключение"
 
 msgid "zap and record"
 msgstr "переключение и запись"
+
+msgid "Create searchlog file"
+msgstr "Создавать лог-файл поиска"
+
+msgid "If this enabled, search log write in autotimer_search.log."
+msgstr "Если это включено, то лог поиска будет записан в файл autotimer_search.log."

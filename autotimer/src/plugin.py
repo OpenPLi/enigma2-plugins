@@ -38,12 +38,12 @@ from AutoTimer import AutoTimer
 autotimer = AutoTimer()
 autopoller = None
 
-AUTOTIMER_VERSION = "4.6"
+AUTOTIMER_VERSION = "4.6.1"
 
 try:
 	from Plugins.SystemPlugins.MPHelp import registerHelp, XMLHelpReader
 	from Tools.Directories import resolveFilename, SCOPE_PLUGINS
-	reader = XMLHelpReader(resolveFilename(SCOPE_PLUGINS, "Extensions/AutoTimer/mphelp.xml"))
+	reader = XMLHelpReader(resolveFilename(SCOPE_PLUGINS, "Extensions/AutoTimer/mphelp.xml"), translate=_)
 	autotimerHelp = registerHelp(*reader)
 except Exception as e:
 	doLog("[AutoTimer] Unable to initialize MPHelp:", e,"- Help not available!")
@@ -240,21 +240,19 @@ def menuCallbackAutoTimer(self, ret):
 			if not evt:
 				return
 			try:
-				addAutotimerFromEvent(self.session, evt = evt, service = sref)
+				addAutotimerFromEvent(self.session, evt=evt, service=sref)
 			except:
 				pass
 		elif ret == "preview":
 			from AutoTimerPreview import AutoTimerPreview
 			try:
-				if not autotimer.getStatusParseEPGrunning():
-					total, new, modified, timers, conflicts, similars = autotimer.parseEPG(simulateOnly = True)
-					self.session.open(AutoTimerPreview, timers)
+				total, new, modified, timers, conflicts, similars = autotimer.parseEPG(simulateOnly=True)
+				self.session.open(AutoTimerPreview, timers)
 			except:
 				pass
 		elif ret == "search":
 			try:
-				if not autotimer.getStatusParseEPGrunning():
-					editCallback(self.session)
+				editCallback(self.session)
 			except:
 				pass
 		elif ret == "timerlist":
@@ -367,26 +365,38 @@ def editCallback(session):
 		handleAutoPoller()
 
 def parseEPGstart():
-	if autotimer and not autotimer.getStatusParseEPGrunning():
+	if autotimer:
 		autotimer.parseEPGAsync().addCallback(parseEPGCallback)#.addErrback(parseEPGErrback)
 
 editTimer.callback.append(parseEPGstart)
 
 def parseEPGCallback(ret):
 	searchlog_txt = ""
-	logpath = config.plugins.autotimer.searchlog_path.value
-	if logpath == "?likeATlog?":
-		logpath = os.path.dirname(config.plugins.autotimer.log_file.value)
-	path_search_log = os.path.join(logpath, "autotimer_search.log")
-	if os.path.exists(path_search_log):
-		searchlog_txt = open(path_search_log).read() 
-		if "\n########## " in searchlog_txt:
-			searchlog_txt = searchlog_txt.split("\n########## ")
-			searchlog_txt = str(searchlog_txt[-1]).split("\n")[2:]
-			searchlog_txt = "\n".join(searchlog_txt)
+	if config.plugins.autotimer.searchlog_write.value:
+		logpath = config.plugins.autotimer.searchlog_path.value
+		if logpath == "?likeATlog?":
+			logpath = os.path.dirname(config.plugins.autotimer.log_file.value)
+		path_search_log = os.path.join(logpath, "autotimer_search.log")
+		if os.path.exists(path_search_log):
+			searchlog_txt = open(path_search_log).read()
+			#find last log in logfile 
+			if "\n########## " in searchlog_txt:
+				searchlog_txt = searchlog_txt.split("\n########## ")
+				searchlog_txt = str(searchlog_txt[-1]).split("\n")[2:]
+				#check count and length of searchlog_entries
+				maxlistcount = 10
+				maxtextlength = 55
+				listcount = len(searchlog_txt)
+				searchlog_txt = searchlog_txt[:maxlistcount]
+				for i, entry in enumerate(searchlog_txt):
+					if len(entry) > maxtextlength:
+						searchlog_txt[i] = entry[:maxtextlength-3] + "..."
+				searchlog_txt = "\n".join(searchlog_txt)
+				if listcount > maxlistcount+1:
+					searchlog_txt += "\n" + "and %d searchlog-entries more ..." % (listcount-maxlistcount)
 
 	AddPopup(
-		_("Found a total of %d matching Events.\n%d Timer were added and\n%d modified,\n%d conflicts encountered,\n%d similars added.") % (ret[0], ret[1], ret[2], len(ret[4]), len(ret[5])),
+		_("Found a total of %d matching Events.\n%d Timer were added and\n%d modified,\n%d conflicts encountered,\n%d similars added.") % (ret[0], ret[1], ret[2], len(ret[4]), len(ret[5])) + "\n\n" + searchlog_txt,
 		MessageBox.TYPE_INFO,
 		config.plugins.autotimer.popup_timeout.value,
 		'AT_PopUp_ID_ParseEPGCallback'

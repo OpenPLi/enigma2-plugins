@@ -175,15 +175,16 @@ class AutoTimerOverview(Screen, HelpableScreen):
 				pass
 
 	def showSearchLog(self):
-		searchlog_txt = ""
-		logpath = config.plugins.autotimer.searchlog_path.value
-		if logpath == "?likeATlog?":
-			logpath = os.path.dirname(config.plugins.autotimer.log_file.value)
-		path_search_log = os.path.join(logpath, "autotimer_search.log")
-		if os.path.exists(path_search_log):
-			self.session.open(ShowLogScreen, path_search_log, _("searchLog"), "","")
-		else:
-			self.session.open(MessageBox,_("No searchLog found!\n\nSo you have no new or modified timer at last autotimer-search."), MessageBox.TYPE_INFO)
+		if config.plugins.autotimer.searchlog_write.value:
+			searchlog_txt = ""
+			logpath = config.plugins.autotimer.searchlog_path.value
+			if logpath == "?likeATlog?":
+				logpath = os.path.dirname(config.plugins.autotimer.log_file.value)
+			path_search_log = os.path.join(logpath, "autotimer_search.log")
+			if os.path.exists(path_search_log):
+				self.session.open(ShowLogScreen, path_search_log, _("searchLog"), "","")
+			else:
+				self.session.open(MessageBox,_("No searchLog found!\n\nSo you have no new or modified timer at last autotimer-search."), MessageBox.TYPE_INFO)
 
 	def showFilterTxt(self):
 		if hasSeriesPlugin:
@@ -203,6 +204,12 @@ class AutoTimerOverview(Screen, HelpableScreen):
 				self.addCallback,
 				AutoTimerWizard,
 				newTimer
+			)
+		elif config.plugins.autotimer.editor.value == "epg":
+			self.session.openWithCallback(
+				self.refresh,
+				AutoTimerChannelSelection,
+				self.autotimer
 			)
 		else:
 			self.session.openWithCallback(
@@ -312,13 +319,10 @@ class AutoTimerOverview(Screen, HelpableScreen):
 			(_("Import existing Timer"), "import"),
 			(_("Import from EPG"), "import_epg"),
 			(_("Edit new timer defaults"), "defaults"),
-			(_("Clone selected timer"), "clone")
+			(_("Clone selected timer"), "clone"),
+			(_("Create a new timer using the classic editor"), "newplain"),
+			(_("Create a new timer using the wizard"), "newwizard")
 		]
-
-		if config.plugins.autotimer.editor.value == "wizard":
-			list.append((_("Create a new timer using the classic editor"), "newplain"))
-		else:
-			list.append((_("Create a new timer using the wizard"), "newwizard"))
 
 		from plugin import autotimerHelp
 		if autotimerHelp:
@@ -346,7 +350,7 @@ class AutoTimerOverview(Screen, HelpableScreen):
 			elif ret == "faq":
 				from Plugins.SystemPlugins.MPHelp import PluginHelp, XMLHelpReader
 				from Tools.Directories import resolveFilename, SCOPE_PLUGINS
-				reader = XMLHelpReader(resolveFilename(SCOPE_PLUGINS, "Extensions/AutoTimer/faq.xml"))
+				reader = XMLHelpReader(resolveFilename(SCOPE_PLUGINS, "Extensions/AutoTimer/faq.xml"), translate=_)
 				autotimerFaq = PluginHelp(*reader)
 				autotimerFaq.open(self.session)
 			elif ret == "preview":

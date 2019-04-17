@@ -57,6 +57,7 @@ config.plugins.autotimer.add_to_multiepgselection = ConfigYesNo(default=False)
 config.plugins.autotimer.add_to_graph = ConfigYesNo(default=False) 
 config.plugins.autotimer.try_guessing = ConfigYesNo(default=True)
 config.plugins.autotimer.editor = ConfigSelection(choices=[
+		("epg", _("Import from EPG")),
 		("plain", _("Classic")),
 		("wizard", _("Wizard"))
 	], default="wizard"
@@ -91,6 +92,7 @@ if not val or not val.endswith("autotimer.log"):
 	config.plugins.autotimer.log_file.save()
 
 config.plugins.autotimer.series_save_filter = ConfigYesNo(default = False)
+config.plugins.autotimer.searchlog_write = ConfigYesNo(default = False)
 config.plugins.autotimer.searchlog_path = ConfigSelection(choices=[
 		("?likeATlog?", _("like autotimer.log")),
 		("/tmp", _("/tmp")),
