@@ -379,7 +379,7 @@ class AutoTimer:
 
 		else:
 			# Search EPG, default to empty list
-			epgmatches = epgcache.search( ('RITBDSE', 3000, typeMap[timer.searchType], match, caseMap[timer.searchCase]) ) or []
+			epgmatches = epgcache.search( ('RITBDSE', int(config.plugins.autotimer.max_search_events_match.value), typeMap[timer.searchType], match, caseMap[timer.searchCase]) ) or []
 
 		# Sort list of tuples by begin time 'B'
 		epgmatches.sort(key=itemgetter(3))
@@ -407,11 +407,11 @@ class AutoTimer:
 				skipped.append((name, begin, end, str(serviceref), timer.name, getLog()))
 				continue
 			# Try to determine real service (we always choose the last one)
-			n = evt.getNumOfLinkageServices()
-			if n > 0:
-				i = evt.getLinkageService(eserviceref, n-1)
-				serviceref = i.toString()
-				doLog("[AutoTimer] Serviceref2 %s" % (str(serviceref)))
+			#n = evt.getNumOfLinkageServices()
+			#if n > 0:
+			#	i = evt.getLinkageService(eserviceref, n-1)
+			#	serviceref = i.toString()
+			#	doLog("[AutoTimer] Serviceref2 %s" % (str(serviceref)))
 
 
 			# If event starts in less than 60 seconds skip it

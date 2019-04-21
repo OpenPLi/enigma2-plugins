@@ -100,7 +100,13 @@ config.plugins.autotimer.searchlog_path = ConfigSelection(choices=[
 	], default="?likeATlog?"
 )
 config.plugins.autotimer.searchlog_max = ConfigSelectionNumber(5, 20, 1, default = 5)
-
+config.plugins.autotimer.max_search_events_match = ConfigSelection(choices=[
+		("1000", _("Standard (1000 events)")),
+		("2000", _("Advanced (2000 events)")),
+		("3000", _("Full (3000 events)"))
+	], default="1000"
+)
+config.plugins.autotimer.clear_memory = ConfigYesNo(default = False)
 
 try:
 	xrange = xrange
