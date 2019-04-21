@@ -3,7 +3,7 @@ from __future__ import print_function
 
 from . import _
 # Core functionality
-from enigma import eTimer, ePythonMessagePump
+from enigma import eTimer, ePythonMessagePump, eConsoleAppContainer
 
 # Config
 from Components.config import config
@@ -93,6 +93,8 @@ class AutoPollerThread(Thread):
 		self.__timer.callback.remove(self.timeout)
 
 	def run(self):
+		if config.plugins.autotimer.clear_memory.value:
+			self.clearMemory()
 		sem = self.__semaphore
 		queue = self.__queue
 		pump = self.__pump
@@ -141,6 +143,10 @@ class AutoPollerThread(Thread):
 				traceback.print_exc(file=sys.stdout)
 			#Keep that eTimer in the mainThread
 			reactor.callFromThread(timer.startLongTimer, config.plugins.autotimer.interval.value*3600)
+
+	def clearMemory(self):
+		eConsoleAppContainer().execute("sync")
+		open("/proc/sys/vm/drop_caches", "w").write("3")
 
 class AutoPoller:
 	"""Manages actual thread which does the polling. Used for convenience."""
