@@ -293,6 +293,10 @@ msgstr "Créer un nouveau timer en utilisant l'assistant"
 msgid "Create debug log file"
 msgstr "Créer un journal de débogage"
 
+#, fuzzy
+msgid "Create searchlog file"
+msgstr "Créer un journal de débogage"
+
 #, python-format
 msgid "Custom (%s)"
 msgstr "Personnalisé (%s)"
@@ -498,6 +502,10 @@ msgstr "Si cette option activée, le déboggage d’Autotimer écrira dans le fi
 
 msgid "If this enabled, debug log print in console mode start enigma2."
 msgstr "Si c’est activé, le log de débogage imprimera sur la console au démarrage d’enigma2."
+
+#, fuzzy
+msgid "If this enabled, search log write in autotimer_search.log."
+msgstr "Choisir le chemin pour autotimer_search.log"
 
 msgid "If this enabled, will check the list of timers, conflicting autotimers are disabled, the duplicate autotimers will be deleted."
 msgstr "Si c’est activé, cela vérifiera la liste des programmations, les AutoTimers en conflit seront désactivés, les AutoTimers dupliqués seront effacés."

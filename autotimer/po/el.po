@@ -300,6 +300,10 @@ msgstr "Δημιουργία νέου χρονοδιακόπτη με χρήση
 msgid "Create debug log file"
 msgstr "Δημιουργία αρχείου καταγραφής εκσφαλμάτωσης"
 
+#, fuzzy
+msgid "Create searchlog file"
+msgstr "Δημιουργία αρχείου καταγραφής εκσφαλμάτωσης"
+
 #, python-format
 msgid "Custom (%s)"
 msgstr "Ορισμένο από το χρήστη (%s)"
@@ -504,6 +508,10 @@ msgstr "Αν ενεργοποιηθεί, θα γίνεται εγγραφή εκ
 
 msgid "If this enabled, debug log print in console mode start enigma2."
 msgstr "Αν ενεργοποιηθεί, η η καταγραφή εκσφαλμάτωσης στην κονσόλα εκκινεί το enigma2."
+
+#, fuzzy
+msgid "If this enabled, search log write in autotimer_search.log."
+msgstr "Επιλογή ενέργειας του Αυτ. Χρ/κόπτη:"
 
 msgid "If this enabled, will check the list of timers, conflicting autotimers are disabled, the duplicate autotimers will be deleted."
 msgstr ""

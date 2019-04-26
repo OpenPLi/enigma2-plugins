@@ -296,6 +296,10 @@ msgstr "Vytvořit nový časovač s pomocníkem"
 msgid "Create debug log file"
 msgstr "Založit debug log"
 
+#, fuzzy
+msgid "Create searchlog file"
+msgstr "Založit debug log"
+
 #, python-format
 msgid "Custom (%s)"
 msgstr "Vlastní (%s)"
@@ -499,6 +503,10 @@ msgstr "Jestliže je povoleno, Autotimer zapisuje debug do log souboru."
 
 msgid "If this enabled, debug log print in console mode start enigma2."
 msgstr "Vytiskne protokol ladění v režimu konzoly enigma2."
+
+#, fuzzy
+msgid "If this enabled, search log write in autotimer_search.log."
+msgstr "Zvolte umístění pro autotimer_search.log"
 
 msgid "If this enabled, will check the list of timers, conflicting autotimers are disabled, the duplicate autotimers will be deleted."
 msgstr "Pokud je tato volba zapnuta, zkontroluje seznam časovačů, konfliktní autotimery zakáže, duplicitní autotimery smaže."
