@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Enigma2 AutoTimer Plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-29 00:27+0100\n"
+"POT-Creation-Date: 2019-04-26 22:23+0200\n"
 "PO-Revision-Date: 2012-02-17 15:51+0100\n"
 "Last-Translator: \n"
 "Language-Team: none\n"
@@ -116,6 +116,9 @@ msgid "Add timer as disabled on conflict"
 msgstr "Timer bei Konflikt als deaktiviert hinzufügen"
 
 msgid "Advanced"
+msgstr ""
+
+msgid "Advanced (2000 events)"
 msgstr ""
 
 msgid "After event"
@@ -254,6 +257,9 @@ msgstr "Zielverzeichnis wählen"
 
 msgid "Classic"
 msgstr "Klassisch"
+
+msgid "Clear memory before auto run"
+msgstr ""
 
 msgid "Clone selected timer"
 msgstr "Bestehenden Timer kopieren"
@@ -482,6 +488,9 @@ msgstr "Freitag"
 msgid "Friday"
 msgstr "Freitag"
 
+msgid "Full (3000 events)"
+msgstr ""
+
 msgid "Generic setup"
 msgstr ""
 
@@ -535,6 +544,12 @@ msgstr "Wenn das aktiviert ist wird der Name des AutoTimers durch das Plugin als
 
 msgid "If this is selected, the tag \"AutoTimer\" will be given to timers created by this plugin."
 msgstr "Wenn das ausgewählt ist, wird ein Tag \"Autotimer\" vom Plugin erstellt."
+
+msgid "If your receiver has a small amount of memory, clear memory before poll AutoTimer run."
+msgstr ""
+
+msgid "If your receiver has a small amount of memory, use mode 'Standard (1000 events)' or 'Advanced (2000 events)'."
+msgstr ""
 
 msgid "Import AutoTimer"
 msgstr "AutoTimer importieren"
@@ -590,6 +605,9 @@ msgid "Match title: %s"
 msgstr "Finde Titel: %s"
 
 msgid "Max. count for saved searchlog"
+msgstr ""
+
+msgid "Max. match search events"
 msgstr ""
 
 msgid "Maximum duration (in m)"
@@ -966,6 +984,9 @@ msgstr "Benenne den Namen und das Verzeichnis der Log Datei."
 #, fuzzy
 msgid "Standard"
 msgstr "standard"
+
+msgid "Standard (1000 events)"
+msgstr ""
 
 msgid "Standard input date/time"
 msgstr ""
