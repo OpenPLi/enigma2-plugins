@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-29 00:27+0100\n"
+"POT-Creation-Date: 2019-04-26 22:23+0200\n"
 "PO-Revision-Date: 2018-05-09 12:44+0200\n"
 "Last-Translator: Pr2 <dummy@dummy.com>\n"
 "Language-Team: OpenPLi\n"
@@ -116,6 +116,9 @@ msgstr "Ajouter une programmation comme désactivée en cas de conflit"
 
 msgid "Advanced"
 msgstr "Avancé"
+
+msgid "Advanced (2000 events)"
+msgstr ""
 
 msgid "After event"
 msgstr "Après évènement"
@@ -247,6 +250,9 @@ msgstr "Choisir un répertoire cible"
 
 msgid "Classic"
 msgstr "Classique"
+
+msgid "Clear memory before auto run"
+msgstr ""
 
 msgid "Clone selected timer"
 msgstr "Dupliquer l’AutoTimer sélectionné"
@@ -473,6 +479,9 @@ msgstr "Ven"
 msgid "Friday"
 msgstr "Vendredi"
 
+msgid "Full (3000 events)"
+msgstr ""
+
 msgid "Generic setup"
 msgstr ""
 
@@ -525,6 +534,12 @@ msgstr "Si c'est sélectionné, le nom des AutoTimers respectifs sera ajouté co
 
 msgid "If this is selected, the tag \"AutoTimer\" will be given to timers created by this plugin."
 msgstr "Si c'est séléctionné, le marqueur \"AutoTimer\" sera donné aux programmations créées par ce plugin."
+
+msgid "If your receiver has a small amount of memory, clear memory before poll AutoTimer run."
+msgstr ""
+
+msgid "If your receiver has a small amount of memory, use mode 'Standard (1000 events)' or 'Advanced (2000 events)'."
+msgstr ""
 
 msgid "Import AutoTimer"
 msgstr "Importer AutoTimer"
@@ -584,6 +599,10 @@ msgstr "Correspond au titre: %s"
 
 msgid "Max. count for saved searchlog"
 msgstr "Compteur max. pour les logs de recherche sauvegardés"
+
+#, fuzzy
+msgid "Max. match search events"
+msgstr "Relire la liste des programmations après la recherche d’évènements"
 
 msgid "Maximum duration (in m)"
 msgstr "Durée maximale (en m)"
@@ -962,6 +981,9 @@ msgstr "Spécifier le nom et la localisation du log."
 
 msgid "Standard"
 msgstr "Standard"
+
+msgid "Standard (1000 events)"
+msgstr ""
 
 msgid "Standard input date/time"
 msgstr "Entrée standard date/heure"

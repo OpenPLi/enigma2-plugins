@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-29 00:27+0100\n"
+"POT-Creation-Date: 2019-04-26 22:23+0200\n"
 "PO-Revision-Date: 2012-02-17 12:13+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -106,6 +106,9 @@ msgid "Add timer as disabled on conflict"
 msgstr ""
 
 msgid "Advanced"
+msgstr ""
+
+msgid "Advanced (2000 events)"
 msgstr ""
 
 msgid "After event"
@@ -234,6 +237,9 @@ msgid "Choose target folder"
 msgstr ""
 
 msgid "Classic"
+msgstr ""
+
+msgid "Clear memory before auto run"
 msgstr ""
 
 msgid "Clone selected timer"
@@ -449,6 +455,9 @@ msgstr ""
 msgid "Friday"
 msgstr ""
 
+msgid "Full (3000 events)"
+msgstr ""
+
 msgid "Generic setup"
 msgstr ""
 
@@ -499,6 +508,12 @@ msgid "If this is selected, the name of the respective AutoTimer will be added a
 msgstr ""
 
 msgid "If this is selected, the tag \"AutoTimer\" will be given to timers created by this plugin."
+msgstr ""
+
+msgid "If your receiver has a small amount of memory, clear memory before poll AutoTimer run."
+msgstr ""
+
+msgid "If your receiver has a small amount of memory, use mode 'Standard (1000 events)' or 'Advanced (2000 events)'."
 msgstr ""
 
 msgid "Import AutoTimer"
@@ -555,6 +570,9 @@ msgid "Match title: %s"
 msgstr ""
 
 msgid "Max. count for saved searchlog"
+msgstr ""
+
+msgid "Max. match search events"
 msgstr ""
 
 msgid "Maximum duration (in m)"
@@ -919,6 +937,9 @@ msgid "Specify the name and location for the log."
 msgstr ""
 
 msgid "Standard"
+msgstr ""
+
+msgid "Standard (1000 events)"
 msgstr ""
 
 msgid "Standard input date/time"

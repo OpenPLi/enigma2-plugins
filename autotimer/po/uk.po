@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-29 00:27+0100\n"
+"POT-Creation-Date: 2019-04-26 22:23+0200\n"
 "PO-Revision-Date: 2016-07-27 20:34+0300\n"
 "Last-Translator: vovan43 <vovan43@ex.ua>\n"
 "Language-Team: vovan43,sety\n"
@@ -111,6 +111,9 @@ msgstr "Додати відключений таймер при конфлікт
 
 msgid "Advanced"
 msgstr "Розширений"
+
+msgid "Advanced (2000 events)"
+msgstr ""
 
 msgid "After event"
 msgstr "Після події"
@@ -244,6 +247,9 @@ msgstr "Виберіть папку"
 
 msgid "Classic"
 msgstr "Класичний"
+
+msgid "Clear memory before auto run"
+msgstr ""
 
 msgid "Clone selected timer"
 msgstr "Клонувати обраний таймер"
@@ -468,6 +474,9 @@ msgstr "Пт"
 msgid "Friday"
 msgstr "П'ятниця"
 
+msgid "Full (3000 events)"
+msgstr ""
+
 msgid "Generic setup"
 msgstr ""
 
@@ -520,6 +529,12 @@ msgstr "Якщо цей параметр вибрано, ім'я відпові�
 
 msgid "If this is selected, the tag \"AutoTimer\" will be given to timers created by this plugin."
 msgstr "Якщо цей параметр вибрано, тег \"Автотаймера\" буде приділено таймери, створений цей плагін."
+
+msgid "If your receiver has a small amount of memory, clear memory before poll AutoTimer run."
+msgstr ""
+
+msgid "If your receiver has a small amount of memory, use mode 'Standard (1000 events)' or 'Advanced (2000 events)'."
+msgstr ""
 
 msgid "Import AutoTimer"
 msgstr "Імпорт автотаймера"
@@ -579,6 +594,9 @@ msgid "Match title: %s"
 msgstr "Назва збігів: %s "
 
 msgid "Max. count for saved searchlog"
+msgstr ""
+
+msgid "Max. match search events"
 msgstr ""
 
 msgid "Maximum duration (in m)"
@@ -949,6 +967,9 @@ msgstr "Вкажіть ім'я і розташування для логу."
 
 msgid "Standard"
 msgstr "Стандарт"
+
+msgid "Standard (1000 events)"
+msgstr ""
 
 msgid "Standard input date/time"
 msgstr "Стандартний ввід дата/час"

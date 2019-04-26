@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Enigma2 AutoTimer plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-29 00:27+0100\n"
+"POT-Creation-Date: 2019-04-26 22:23+0200\n"
 "PO-Revision-Date: 2019-02-15 20:00+0200\n"
 "Last-Translator: jamu\n"
 "Language-Team: AndyBlac/TimoJ/Kojo_\n"
@@ -116,6 +116,9 @@ msgstr "Lisää pois käytöstä oleva ajastus, jos päällekkäisiä"
 
 msgid "Advanced"
 msgstr "Laaja"
+
+msgid "Advanced (2000 events)"
+msgstr ""
 
 msgid "After event"
 msgstr "Ohjelman jälkeen"
@@ -246,6 +249,9 @@ msgstr "Valitse kohdehakemisto"
 
 msgid "Classic"
 msgstr "Klassinen"
+
+msgid "Clear memory before auto run"
+msgstr ""
 
 msgid "Clone selected timer"
 msgstr "Kloonaa valittu ajastus"
@@ -467,6 +473,9 @@ msgstr "Pe"
 msgid "Friday"
 msgstr "Perjantai"
 
+msgid "Full (3000 events)"
+msgstr ""
+
 msgid "Generic setup"
 msgstr "Yleiset asetukset"
 
@@ -518,6 +527,12 @@ msgstr "Jos valittu, vastaavan Automaattiajastuksen nimi lisätään avainsanaks
 
 msgid "If this is selected, the tag \"AutoTimer\" will be given to timers created by this plugin."
 msgstr "Jos tämä on valittu,  \"Automaattiajastus\" lisätään avainsanaksi tämän lisäosan luomiin ajastuksiin."
+
+msgid "If your receiver has a small amount of memory, clear memory before poll AutoTimer run."
+msgstr ""
+
+msgid "If your receiver has a small amount of memory, use mode 'Standard (1000 events)' or 'Advanced (2000 events)'."
+msgstr ""
 
 msgid "Import AutoTimer"
 msgstr "Luo automaattiajastus"
@@ -577,6 +592,10 @@ msgstr "Haun merkkijono: %s"
 
 msgid "Max. count for saved searchlog"
 msgstr ""
+
+#, fuzzy
+msgid "Max. match search events"
+msgstr "Tarkista ajastukset hakutoimintojen jälkeen"
 
 msgid "Maximum duration (in m)"
 msgstr "Suurin kesto (minuuttia)"
@@ -946,6 +965,9 @@ msgstr ""
 
 msgid "Standard"
 msgstr "Vakio"
+
+msgid "Standard (1000 events)"
+msgstr ""
 
 msgid "Standard input date/time"
 msgstr ""

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: autotimer_fy\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-29 00:27+0100\n"
+"POT-Creation-Date: 2019-04-26 22:23+0200\n"
 "PO-Revision-Date: 2012-02-17 15:01+0100\n"
 "Last-Translator: \n"
 "Language-Team: gerrit <fy@li.org>\n"
@@ -112,6 +112,9 @@ msgid "Add timer as disabled on conflict"
 msgstr "Tiidsbarren tafoegje as 'útskeakele by conflict'"
 
 msgid "Advanced"
+msgstr ""
+
+msgid "Advanced (2000 events)"
 msgstr ""
 
 msgid "After event"
@@ -251,6 +254,9 @@ msgstr "Kies doel map"
 
 msgid "Classic"
 msgstr "Klassyk"
+
+msgid "Clear memory before auto run"
+msgstr ""
 
 #, fuzzy
 msgid "Clone selected timer"
@@ -481,6 +487,9 @@ msgstr "Freed"
 msgid "Friday"
 msgstr "Freed"
 
+msgid "Full (3000 events)"
+msgstr ""
+
 msgid "Generic setup"
 msgstr ""
 
@@ -531,6 +540,12 @@ msgid "If this is selected, the name of the respective AutoTimer will be added a
 msgstr ""
 
 msgid "If this is selected, the tag \"AutoTimer\" will be given to timers created by this plugin."
+msgstr ""
+
+msgid "If your receiver has a small amount of memory, clear memory before poll AutoTimer run."
+msgstr ""
+
+msgid "If your receiver has a small amount of memory, use mode 'Standard (1000 events)' or 'Advanced (2000 events)'."
 msgstr ""
 
 msgid "Import AutoTimer"
@@ -593,6 +608,9 @@ msgid "Match title: %s"
 msgstr "Sjoch nei titel %s"
 
 msgid "Max. count for saved searchlog"
+msgstr ""
+
+msgid "Max. match search events"
 msgstr ""
 
 msgid "Maximum duration (in m)"
@@ -965,6 +983,9 @@ msgstr ""
 #, fuzzy
 msgid "Standard"
 msgstr "standert"
+
+msgid "Standard (1000 events)"
+msgstr ""
 
 msgid "Standard input date/time"
 msgstr ""
