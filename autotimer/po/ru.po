@@ -171,6 +171,7 @@ msgstr "Автотаймер - сервисы"
 msgid "AutoTimer Settings"
 msgstr "Автотаймер - настройки"
 
+#, python-format
 msgid "AutoTimer failed with error %s"
 msgstr "Автотаймер - ошибка %s"
 
@@ -284,6 +285,9 @@ msgstr "Создать новый таймер с помощью мастера"
 
 msgid "Create debug log file"
 msgstr "Создавать лог файл отладки"
+
+msgid "Create searchlog file"
+msgstr "Создавать лог-файл поиска"
 
 #, python-format
 msgid "Custom (%s)"
@@ -491,9 +495,13 @@ msgstr "Если это включено, то лог отладки Автот�
 msgid "If this enabled, debug log print in console mode start enigma2."
 msgstr "Если это включено, то лог отладки будет выводится в режиме запуска enigma2 через консоль."
 
+msgid "If this enabled, search log write in autotimer_search.log."
+msgstr "Если это включено, то лог поиска будет записан в файл autotimer_search.log."
+
 msgid "If this enabled, will check the list of timers, conflicting autotimers are disabled, the duplicate autotimers will be deleted."
 msgstr "Если эта опция включена, то будет запущена проверка списка таймеров, по окончании поиска событий .Кофликтные автотаймеры будут отключены, дублирующие автотаймеры будут удалены."
 
+#, fuzzy, python-format
 msgid "If this is enabled an existing timer will also be considered recording an event if it records at least 80% of the it."
 msgstr "Если это включено, то уже существующий таймер также будет рассмотрен как запись события, если этот таймер записывает не меньше 80% события."
 
@@ -1427,9 +1435,3 @@ msgstr "переключение"
 
 msgid "zap and record"
 msgstr "переключение и запись"
-
-msgid "Create searchlog file"
-msgstr "Создавать лог-файл поиска"
-
-msgid "If this enabled, search log write in autotimer_search.log."
-msgstr "Если это включено, то лог поиска будет записан в файл autotimer_search.log."

@@ -302,6 +302,10 @@ msgstr "Sukurkite naują laikmatį, naudodami vedlį"
 msgid "Create debug log file"
 msgstr "Sukurti derinimo žurnalo failą"
 
+#, fuzzy
+msgid "Create searchlog file"
+msgstr "Sukurti derinimo žurnalo failą"
+
 #, python-format
 msgid "Custom (%s)"
 msgstr "Pasirinktinis (%s)"
@@ -506,6 +510,10 @@ msgstr "Čia įjungus, Autolaikmatis rašys derinimo žurnalo failą."
 
 msgid "If this enabled, debug log print in console mode start enigma2."
 msgstr "Čia įjungus, derinimo žurnalas bus rodomas, paleidžiant enigma2."
+
+#, fuzzy
+msgid "If this enabled, search log write in autotimer_search.log."
+msgstr "Pasirinkite Autolaikmačio veiksmą:"
 
 msgid "If this enabled, will check the list of timers, conflicting autotimers are disabled, the duplicate autotimers will be deleted."
 msgstr "Jei čia įjungta, bus tikrinamas laikmačių sąrašas - konfliktuojantys autolaikmačiai bus išjungti, besidubliuojantys bus pašalinti."

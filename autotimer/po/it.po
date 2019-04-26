@@ -308,6 +308,9 @@ msgstr "Impostare un nuovo timer usando Conf. Guidata"
 msgid "Create debug log file"
 msgstr ""
 
+msgid "Create searchlog file"
+msgstr ""
+
 #, python-format
 msgid "Custom (%s)"
 msgstr "Personalizzata (%s)"
@@ -512,6 +515,9 @@ msgid "If this enabled, debug Autotimer write in log file."
 msgstr ""
 
 msgid "If this enabled, debug log print in console mode start enigma2."
+msgstr ""
+
+msgid "If this enabled, search log write in autotimer_search.log."
 msgstr ""
 
 msgid "If this enabled, will check the list of timers, conflicting autotimers are disabled, the duplicate autotimers will be deleted."

@@ -285,6 +285,10 @@ msgstr "Nieuwe timer instellen met de wizard"
 msgid "Create debug log file"
 msgstr "Debug logbestand maken"
 
+#, fuzzy
+msgid "Create searchlog file"
+msgstr "Debug logbestand maken"
+
 #, python-format
 msgid "Custom (%s)"
 msgstr "Aangepast (%s)"
@@ -496,6 +500,10 @@ msgstr "Indien geactiveerd, dan wordt de debuginfo in een logbestand weggeschrev
 
 msgid "If this enabled, debug log print in console mode start enigma2."
 msgstr "Indien geactiveerd, dan wordt het debug-log in de console van enigma2 weergegeven."
+
+#, fuzzy
+msgid "If this enabled, search log write in autotimer_search.log."
+msgstr "Geef de map aan voor het voor AutoTimer logbestand"
 
 msgid "If this enabled, will check the list of timers, conflicting autotimers are disabled, the duplicate autotimers will be deleted."
 msgstr "Indien geactiveerd, dan wordt de lijst met timers gecontroleerd, worden conflicterende autotimers uitgeschakeld en worden de dubbele autotimers verwijderd."
