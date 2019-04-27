@@ -59,6 +59,7 @@ for arg in sys.argv[1:]:
 		print
 		print '#: ' + arg
 		k = string.replace(k, '\"', '\\"')
+		k = string.replace(k, '\n', '\x5c\x6e') # put newline to .po string
 		if c:
 			for l in c.split('\n'):
 				print "#. ", l
