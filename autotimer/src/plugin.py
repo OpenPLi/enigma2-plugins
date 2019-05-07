@@ -424,9 +424,12 @@ def epgfurther(session, selectedevent, **kwargs):
 def eventinfo(session, service=None, event=None, eventName="", **kwargs):
 	if eventName != "":
 		if service is not None and event is not None:
-			from AutoTimerEditor import addAutotimerFromEvent
 			try:
-				addAutotimerFromEvent(session, evt = event, service = service)
+				from AutoTimerEditor import addAutotimerFromEvent, addAutotimerFromService
+				if service.getPath() and service.getPath()[0] == "/":
+					addAutotimerFromService(session, eServiceReference(str(service)))
+				else:
+					addAutotimerFromEvent(session, evt=event, service=service)
 			except:
 				pass
 	else:
