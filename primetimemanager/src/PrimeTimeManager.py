@@ -1,4 +1,4 @@
-﻿#  PrimeTimeManager E2
+#  PrimeTimeManager E2
 #  Coded by by Shaderman (c) 2010-2011 / Dimitrij openPLi 2013-2016
 #
 #################

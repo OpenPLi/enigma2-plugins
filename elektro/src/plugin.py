@@ -1,4 +1,4 @@
-﻿#
+#
 # Power Save Plugin by gutemine
 # Rewritten by Morty (morty@gmx.net)
 # Profiles, HDD, IP, NAS Mod by joergm6
