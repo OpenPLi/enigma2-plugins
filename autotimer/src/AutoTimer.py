@@ -389,7 +389,6 @@ class AutoTimer:
 
 		# Loop over all EPG matches
 		for idx, ( serviceref, eit, name, begin, duration, shortdesc, extdesc ) in enumerate( epgmatches ):
-
 			startLog()
 
 			# timer destination dir
@@ -399,19 +398,19 @@ class AutoTimer:
 			evtEnd = end = begin + duration
 
 			doLog("[AutoTimer] possible epgmatch %s" % (name))
-			doLog("[AutoTimer] Serviceref %s" % (str(serviceref)))
+			doLog("[AutoTimer] Serviceref %s" % serviceref)
 			eserviceref = eServiceReference(serviceref)
 			evt = epgcache.lookupEventId(eserviceref, eit)
 			if not evt:
 				doLog("[AutoTimer] Could not create Event!")
-				skipped.append((name, begin, end, str(serviceref), timer.name, getLog()))
+				skipped.append((name, begin, end, serviceref, timer.name, getLog()))
 				continue
 			# Try to determine real service (we always choose the last one)
 			#n = evt.getNumOfLinkageServices()
 			#if n > 0:
 			#	i = evt.getLinkageService(eserviceref, n-1)
 			#	serviceref = i.toString()
-			#	doLog("[AutoTimer] Serviceref2 %s" % (str(serviceref)))
+			#	doLog("[AutoTimer] Serviceref2 %s" % serviceref)
 
 
 			# If event starts in less than 60 seconds skip it
@@ -642,7 +641,7 @@ class AutoTimer:
 
 				changed = newEntry.begin != begin or newEntry.end != end or newEntry.name != name
 				if allow_modify:
-					if oldExists and str(newEntry.service_ref) == serviceref and newEntry.eit == eit and newEntry.name == name and newEntry.begin < begin and newEntry.end < end and (0 < begin - newEntry.end <= 600):
+					if oldExists and newEntry.service_ref.ref.toString() == serviceref and newEntry.eit == eit and newEntry.name == name and newEntry.begin < begin and newEntry.end < end and (0 < begin - newEntry.end <= 600):
 						begin = newEntry.begin
 						doLog("[AutoTimer] This same eit and different times end - update only end")
 					if self.modifyTimer(newEntry, name, shortdesc, begin, end, serviceref, eit, base_timer=timer):
@@ -898,7 +897,7 @@ class AutoTimer:
 					modified += tup[1]
 
 		if not simulateOnly:
- 			if sp_showResult is not None:
+			if sp_showResult is not None:
 				blockingCallFromMainThread(sp_showResult)
 
 			if config.plugins.autotimer.remove_double_and_conflicts_timers.value != "no":
