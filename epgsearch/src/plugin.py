@@ -2,7 +2,7 @@
 from . import _
 from enigma import eServiceCenter
 from Screens.EpgSelection import EPGSelection
-from Screens.VirtualKeyBoard import VirtualKeyBoard
+from Screens.VirtualKeyBoard import VirtualKeyBoard, VKB_SEARCH_ICON
 from Components.EpgList import EPG_TYPE_SINGLE, EPG_TYPE_MULTI
 from Components.ActionMap import ActionMap
 from EPGSearch import EPGSearch, EPGSearchEPGSelection
@@ -60,7 +60,7 @@ def CallbackChoiceAction(self, ret):
 				else:
 					name = ''
 				if ret == "custom":
-					self.session.openWithCallback(self.VKaction, VirtualKeyBoard, text=name, title=_("Enter text to search for"), keyGreen=_("Search"))
+					self.session.openWithCallback(self.VKaction, VirtualKeyBoard, text=name, title=_("Enter text to search for"), style=VKB_SEARCH_ICON)
 				else:
 					self.session.open(EPGSearch, name, False)
 			except:
