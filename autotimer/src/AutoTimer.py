@@ -398,7 +398,7 @@ class AutoTimer:
 			evtEnd = end = begin + duration
 
 			doLog("[AutoTimer] possible epgmatch %s" % (name))
-			doLog("[AutoTimer] Serviceref %s" % (serviceref))
+			doLog("[AutoTimer] Serviceref %s" % serviceref)
 			eserviceref = eServiceReference(serviceref)
 			evt = epgcache.lookupEventId(eserviceref, eit)
 			if not evt:
@@ -410,7 +410,7 @@ class AutoTimer:
 			#if n > 0:
 			#	i = evt.getLinkageService(eserviceref, n-1)
 			#	serviceref = i.toString()
-			#	doLog("[AutoTimer] Serviceref2 %s" % (serviceref))
+			#	doLog("[AutoTimer] Serviceref2 %s" % serviceref)
 
 
 			# If event starts in less than 60 seconds skip it
