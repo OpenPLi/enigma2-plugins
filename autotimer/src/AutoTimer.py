@@ -118,6 +118,8 @@ def blockingCallFromMainThread(f, *a, **kw):
 			break
 
 	if isinstance(result, failure.Failure):
+		print("[AutoTimer]", result.getTraceback())
+		doLog(result.getTraceback())
 		result.raiseException()
 	return result
 
