@@ -5,7 +5,7 @@ msgstr ""
 "POT-Creation-Date: 2018-12-29 00:28+0100\n"
 "PO-Revision-Date: 2016-07-18 12:32+0200\n"
 "Last-Translator: satdreamgr\n"
-"Language-Team: sety <tim1065@mail.ru>\n"
+"Language-Team: kvinto <badsystem@ukr.net>\n"
 "Language: uk_UA\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -101,25 +101,25 @@ msgid "Finished restarting your network"
 msgstr "Перезавантаження Вашої мережі завершено"
 
 msgid "Host name"
-msgstr ""
+msgstr "Ім'я хосту"
 
 msgid "Host:"
-msgstr ""
+msgstr "Хост:"
 
 msgid "IP Address"
-msgstr "IP адреса"
+msgstr "АП адреса"
 
 msgid "IP:"
-msgstr "IP:"
+msgstr "АП:"
 
 msgid "Local mountpoint"
-msgstr ""
+msgstr "Місцева точка монтування"
 
 msgid "Manage network shares"
 msgstr "Управління загальними ресурсами мережі"
 
 msgid "Manage your network shares..."
-msgstr "Менеджер підключення до мережі ..."
+msgstr "Менеджер підключення до мережі..."
 
 msgid "Mount again"
 msgstr "Монтувати ще раз"
@@ -143,8 +143,8 @@ msgid ""
 "Mounted/\n"
 "Unmounted"
 msgstr ""
-"Смотирован\n"
-"Отмонтирован"
+"Підключено\n"
+"Від’єднано"
 
 msgid "Mountpoints management"
 msgstr "Менеджер точок монтування"
@@ -168,16 +168,16 @@ msgid "Password"
 msgstr "Пароль"
 
 msgid "Please wait for activation of your network mount..."
-msgstr "Будь ласка, зачекайте, йде активація вашого мережевого монтування ..."
+msgstr "Будь ласка, зачекайте, йде активація вашого мережевого монтування..."
 
 msgid "Please wait while removing your network mount..."
-msgstr "Будь ласка, зачекайте, йде видалення вашого мережевого монтування ..."
+msgstr "Будь ласка, зачекайте, йде видалення вашого мережевого монтування..."
 
 msgid "Please wait while updating your network mount..."
-msgstr "Будь ласка, зачекайте, оновлення вашого мережевого монтування ..."
+msgstr "Будь ласка, зачекайте, оновлення вашого мережевого монтування..."
 
 msgid "Please wait while your network is restarting..."
-msgstr "Будь ласка, зачекайте, поки йде перезавантаження вашої мережі ..."
+msgstr "Будь ласка, зачекайте, поки йде перезавантаження вашої мережі..."
 
 msgid "Press OK to activate the settings."
 msgstr "Натисніть OK для активації налаштувань."
@@ -207,7 +207,7 @@ msgid "Press OK to select."
 msgstr "Натисніть ОК для вибору."
 
 msgid "Rescan"
-msgstr "Пересканування"
+msgstr "Пересканувати"
 
 msgid "Scan NFS share"
 msgstr "Сканування NFS ресурсів"
@@ -219,13 +219,13 @@ msgid "Search for network shares"
 msgstr "Пошук для мережевих ресурсів"
 
 msgid "Search for network shares..."
-msgstr "Пошук для мережевих ресурсів ..."
+msgstr "Пошук для мережевих ресурсів..."
 
 msgid "Searching your network. Please wait..."
-msgstr "Скануємо Вашу мережу. Будь ласка, зачекайте ..."
+msgstr "Скануємо Вашу мережу. Будь ласка, зачекайте..."
 
 msgid "Server IP"
-msgstr "IP сервера"
+msgstr "АП сервера"
 
 msgid "Server share"
 msgstr "Ресурс сервера"
