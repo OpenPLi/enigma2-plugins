@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2 - epgrefresh\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"POT-Creation-Date: 2019-05-25 07:55+0200\n"
 "PO-Revision-Date: 2019-04-27 13:43+0200\n"
 "Last-Translator: Frenske <voorzitter@openpli.org>\n"
 "Language-Team: <Benny.DeTandt@gmail.com>\n"
@@ -15,13 +15,17 @@ msgstr ""
 #, python-format
 msgid ""
 "\n"
-"%d more services."
+"Remaining - services: %d / time: %d:%02d min"
 msgstr ""
-"\n"
-"%d meer zenders."
 
 msgid "   (AutoZap)"
 msgstr "   (AutoZap)"
+
+#, fuzzy, python-format
+msgid "%d more services"
+msgstr ""
+"\n"
+"%d meer zenders."
 
 msgid "Adding schedule..."
 msgstr "Planning wordt toegevoegd..."
@@ -194,6 +198,9 @@ msgstr "EPGRefresh configuratie"
 
 msgid "EPGRefresh needs to be explicitly started using the yellow button in this menu if this option is not enabled"
 msgstr "Indien geactiveerd zal EPGrefresh automatisch starten. Anders dient u de gele toets te gebruiken om te starten."
+
+msgid "EPGRefresh requires services/bouquets to be configured. Configure now?"
+msgstr ""
 
 msgid "Edit Services"
 msgstr "Zenders bewerken"
@@ -384,6 +391,9 @@ msgstr "Indien geactiveerd zal de EPG in de cache opgeslagen worden na het verve
 
 msgid "Saving EPG Cache..."
 msgstr "Sla de EPG cache op..."
+
+msgid "Scanning last service. Please wait."
+msgstr ""
 
 msgid "Select action after refresh:"
 msgstr "Kies actie na beëindigen van het verversen:"
