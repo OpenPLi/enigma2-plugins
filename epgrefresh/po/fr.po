@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-12-29 00:27+0100\n"
-"PO-Revision-Date: 2018-05-11 21:23+0200\n"
+"PO-Revision-Date: 2019-05-25 08:26+0200\n"
 "Last-Translator: Pr2\n"
 "Language-Team: \n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.7\n"
+"X-Generator: Poedit 2.2\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #, python-format
@@ -23,15 +23,15 @@ msgid ""
 "\n"
 "Remaining - services: %d / time: %d:%02d min"
 msgstr ""
+"\n"
+"Restants - services: %d / temps: %d:%02d min"
 
 msgid "   (AutoZap)"
 msgstr "   (ZapAutomatique)"
 
-#, fuzzy, python-format
+#, python-format
 msgid "%d more services"
-msgstr ""
-"\n"
-"%d services en plus."
+msgstr "%d services en plus"
 
 msgid "Adding schedule..."
 msgstr "Ajouter une planification…"
@@ -206,7 +206,7 @@ msgid "EPGRefresh needs to be explicitly started using the yellow button in this
 msgstr "RafraîchirEPG doit être explicitement démarré en utilisant le bouton jaune dans ce menu si cette option n'est pas activée."
 
 msgid "EPGRefresh requires services/bouquets to be configured. Configure now?"
-msgstr ""
+msgstr "EPGRefresh exige que les services/bouquets soient configurés. Configurer maintenant?"
 
 msgid "Edit Services"
 msgstr "Editer les services"
@@ -399,7 +399,7 @@ msgid "Saving EPG Cache..."
 msgstr "Sauvegarde du cache EPG..."
 
 msgid "Scanning last service. Please wait."
-msgstr ""
+msgstr "Recherche du dernier service. Veuillez patienter."
 
 msgid "Select action after refresh:"
 msgstr "Choisir l'action après un rafraîchissement:"
