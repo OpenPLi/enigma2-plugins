@@ -343,6 +343,7 @@ def RemoteTimerConfig(self):
 	else:
 		default = "0"
 	self.timerentry_remote = ConfigSelection(default = default, choices = self.entryguilist)
+	baseTimercreateConfig(self)
 
 #def getLocationsError(self, error):
 #	RemoteTimercreateConfig(self)
