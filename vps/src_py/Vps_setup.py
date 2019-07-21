@@ -8,7 +8,7 @@ from Components.ActionMap import ActionMap
 from Components.Sources.StaticText import StaticText
 from Components.config import config, getConfigListEntry
 
-VERSION = "1.6"
+VERSION = "1.7"
 
 class VPS_Setup(Screen, ConfigListScreen):
 
@@ -29,7 +29,7 @@ class VPS_Setup(Screen, ConfigListScreen):
 		Screen.__init__(self, session)
 
 		#Summary
-		self.setup_title = _("VPS Setup Version %s") %VERSION
+		self.setup_title = _("VPS Setup Version %s") % VERSION
 
 		self.vps_enabled = getConfigListEntry(_("Enable VPS-Plugin"), config.plugins.vps.enabled)
 		self.vps_initial_time = getConfigListEntry(_("Starting time"), config.plugins.vps.initial_time)
