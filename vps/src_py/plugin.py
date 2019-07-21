@@ -30,26 +30,6 @@ def autostart(reason, **kwargs):
 			session = kwargs["session"]
 			vps_timers.session = session
 			vps_timers.checkTimer()
-
-			try:
-				from Plugins.Extensions.WebInterface.WebChilds.Toplevel import addExternalChild
-				from Plugins.Extensions.WebInterface.WebChilds.Screenpage import ScreenPage
-				from twisted.web import static
-				from twisted.python import util
-				from enigma import eEnv
-			except ImportError as ie:
-				pass
-			else:
-				if hasattr(static.File, 'render_GET'):
-					class File(static.File):
-						def render_POST(self, request):
-							return self.render_GET(request)
-				else:
-					File = static.File
-
-				root = File(eEnv.resolve("${libdir}/enigma2/python/Plugins/SystemPlugins/vps/web-data"))
-				root.putChild("web", ScreenPage(session, util.sibpath(__file__, "web"), True))
-				addExternalChild(("vpsplugin", root, "VPS-Plugin", "1", False))
 		else:
 			register_vps()
 
@@ -62,8 +42,9 @@ def autostart(reason, **kwargs):
 				# Damit sich Enigma2 so verhält, wie wenn es für eine Aufnahme aus dem Standby aufwacht.
 				config.misc.prev_wakeup_time_type.value = 0
 				config.misc.prev_wakeup_time_type.save()
-				config.misc.isNextRecordTimerAfterEventActionAuto.value = recordTimerWakeupAuto
-				config.misc.isNextRecordTimerAfterEventActionAuto.save()
+				#config.misc.isNextRecordTimerAfterEventActionAuto = ConfigYesNo(default=False)
+				#config.misc.isNextRecordTimerAfterEventActionAuto.value = recordTimerWakeupAuto
+				#config.misc.isNextRecordTimerAfterEventActionAuto.save()
 
 				# Da E2 die Configdatei noch vor dem Aufruf von autostart shutdown abspeichert, muss hier nochmal abgespeichert werden.
 				configfile.save()

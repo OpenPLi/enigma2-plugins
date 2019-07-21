@@ -115,7 +115,7 @@ def new_RecordTimer_loadTimer(self):
 	# added by VPS-Plugin
 
 def new_TimerEntry_createConfig(self):
-	self._createConfig_old_rn_vps()
+	#self._createConfig_old_rn_vps()
 
 	# added by VPS-Plugin
 	try:
@@ -152,6 +152,8 @@ def new_TimerEntry_createConfig(self):
 
 
 def new_TimerEntry_createSetup(self, widget):
+	if not hasattr(self, "timerentry_vpsplugin_enabled"):
+		new_TimerEntry_createConfig(self)
 	self._createSetup_old_rn_vps(widget)
 
 	# added by VPS-Plugin
@@ -272,8 +274,8 @@ def register_vps():
 		RecordTimer.loadTimer = new_RecordTimer_loadTimer
 
 
-		TimerEntry._createConfig_old_rn_vps = TimerEntry.createConfig
-		TimerEntry.createConfig = new_TimerEntry_createConfig
+		#TimerEntry._createConfig_old_rn_vps = TimerEntry.createConfig
+		#TimerEntry.createConfig = new_TimerEntry_createConfig
 
 		TimerEntry._createSetup_old_rn_vps = TimerEntry.createSetup
 		TimerEntry.createSetup = new_TimerEntry_createSetup
