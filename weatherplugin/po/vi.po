@@ -1,0 +1,75 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-05-25 08:39+0200\n"
+"PO-Revision-Date: 2019-07-23 17:34+0200\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2\n"
+"Last-Translator: \n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Language: vi\n"
+
+msgid "Add"
+msgstr "Thêm vào"
+
+msgid "Back"
+msgstr "Trở lại"
+
+msgid "Cancel"
+msgstr "Hủy bỏ"
+
+msgid "City"
+msgstr "Thành phố"
+
+msgid "City or Postal Code"
+msgstr "Mã thành phố hoặc mã bưu điện"
+
+#, python-format
+msgid "Current: %s"
+msgstr "Hiện tại: %s"
+
+msgid "Delete"
+msgstr "Xóa bỏ"
+
+msgid "Edit"
+msgstr "Chỉnh sửa"
+
+msgid "Getting weather information..."
+msgstr "Nhận thông tin thời tiết ..."
+
+msgid "Language"
+msgstr "Ngôn ngữ"
+
+msgid ""
+"No locations defined...\n"
+"Press 'Menu' to do that."
+msgstr ""
+"Không có địa điểm được xác định ...\n"
+"Nhấn 'Menu' để làm điều đó."
+
+msgid "OK"
+msgstr "Đồng ý"
+
+msgid "Really delete this WeatherPlugin Entry?"
+msgstr "Thực sự xóa mục WeatherPlugin này?"
+
+msgid "Show Weather Forecast"
+msgstr "Hiển thị dự báo thời tiết"
+
+msgid "Weather Plugin"
+msgstr "Plugin Thời tiết"
+
+msgid "WeatherPlugin: Edit Entry"
+msgstr "WeatherPlugin: Chỉnh sửa mục nhập"
+
+msgid "WeatherPlugin: List of Entries"
+msgstr "Plugin Thời tiết: Danh sách các mục"
