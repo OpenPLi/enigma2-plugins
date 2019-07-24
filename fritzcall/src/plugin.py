@@ -65,7 +65,7 @@ from twisted.protocols.basic import LineReceiver  # @UnresolvedImport
 
 import FritzOutlookCSV, FritzLDIF
 from nrzuname import ReverseLookupAndNotifier
-from . import __  # @UnresolvedImport # pylint: disable=W0611,F0401
+from . import _  # @UnresolvedImport # pylint: disable=W0611,F0401
 
 # import codecs
 # encode = lambda x : codecs.encode(x, "rot13")
