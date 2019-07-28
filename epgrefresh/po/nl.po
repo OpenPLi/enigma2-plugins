@@ -3,29 +3,29 @@ msgstr ""
 "Project-Id-Version: enigma2 - epgrefresh\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-05-25 07:55+0200\n"
-"PO-Revision-Date: 2019-04-27 13:43+0200\n"
+"PO-Revision-Date: 2019-07-28 12:04+0200\n"
 "Last-Translator: Frenske <voorzitter@openpli.org>\n"
 "Language-Team: <Benny.DeTandt@gmail.com>\n"
 "Language: nl_NL\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.1\n"
+"X-Generator: Poedit 2.2.3\n"
 
 #, python-format
 msgid ""
 "\n"
 "Remaining - services: %d / time: %d:%02d min"
 msgstr ""
+"\n"
+"Resterende - zenders: %d / tijd: %d:%02d min"
 
 msgid "   (AutoZap)"
 msgstr "   (AutoZap)"
 
-#, fuzzy, python-format
+#, python-format
 msgid "%d more services"
-msgstr ""
-"\n"
-"%d meer zenders."
+msgstr "%d meer zenders."
 
 msgid "Adding schedule..."
 msgstr "Planning wordt toegevoegd..."
@@ -200,7 +200,7 @@ msgid "EPGRefresh needs to be explicitly started using the yellow button in this
 msgstr "Indien geactiveerd zal EPGrefresh automatisch starten. Anders dient u de gele toets te gebruiken om te starten."
 
 msgid "EPGRefresh requires services/bouquets to be configured. Configure now?"
-msgstr ""
+msgstr "EPGRefresh vereist dat zenderboeketten geconfigureerd worden. Nu configureren?"
 
 msgid "Edit Services"
 msgstr "Zenders bewerken"
@@ -393,7 +393,7 @@ msgid "Saving EPG Cache..."
 msgstr "Sla de EPG cache op..."
 
 msgid "Scanning last service. Please wait."
-msgstr ""
+msgstr "De laatste zenders worden gescand. Een moment nog."
 
 msgid "Select action after refresh:"
 msgstr "Kies actie na beëindigen van het verversen:"
@@ -529,7 +529,7 @@ msgid "Timeout shutdown after refresh for SeriesPlugin (min)"
 msgstr "Vertraging bij het afsluiten van EPGrefresh t.b.v. SeriesPlugin (min)"
 
 msgid "Timespan to remain on service (in seconds)"
-msgstr "Tijdspanne om op de zender te blijven (in min)"
+msgstr "Tijdspanne om op de zender te blijven (in seconden)"
 
 msgid "Tuesday"
 msgstr "Dinsdag"
