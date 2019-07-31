@@ -75,10 +75,10 @@ class AutoTimerFilterList(MenuList):
 class AutoTimerFilterListOverview(Screen):
 
 	skin = """<screen name="AutoTimerEditor" title="Edit AutoTimer" position="center,120" size="820,520">
-		<ePixmap pixmap="skin_default/buttons/red.png" position="10,5" size="140,40" alphatest="on"/>
-		<ePixmap pixmap="skin_default/buttons/green.png" position="210,5" size="140,40" alphatest="on"/>
-		<ePixmap pixmap="skin_default/buttons/yellow.png" position="410,5" size="140,40" alphatest="on"/>
-		<ePixmap pixmap="skin_default/buttons/blue.png" position="610,5" size="140,40" alphatest="on"/>
+		<ePixmap pixmap="buttons/red.png" position="10,5" size="140,40" alphatest="on"/>
+		<ePixmap pixmap="buttons/green.png" position="210,5" size="140,40" alphatest="on"/>
+		<ePixmap pixmap="buttons/yellow.png" position="410,5" size="140,40" alphatest="on"/>
+		<ePixmap pixmap="buttons/blue.png" position="610,5" size="140,40" alphatest="on"/>
 		<widget source="key_red" render="Label" position="10,5" size="140,40" zPosition="1" font="Regular;20" halign="center" valign="center" backgroundColor="#9f1313" transparent="1" shadowColor="black" shadowOffset="-2,-2"/>
 		<widget source="key_green" render="Label" position="210,5" size="140,40" zPosition="1" font="Regular;20" halign="center" valign="center" backgroundColor="#1f771f" transparent="1" shadowColor="black" shadowOffset="-2,-2"/>
 		<widget source="key_yellow" render="Label" position="410,5" size="140,40" zPosition="1" font="Regular;20" halign="center" valign="center" backgroundColor="#a08500" transparent="1" shadowColor="black" shadowOffset="-2,-2"/>
@@ -230,8 +230,8 @@ class AutoTimerFilterListEditor(Screen, ConfigListScreen):
 	"""Edit AutoTimer Filter"""
 
 	skin = """<screen name="AutoTimerFilterEditor" title="Edit AutoTimer Filters" position="center,120" size="820,520">
-		<ePixmap pixmap="skin_default/buttons/red.png" position="10,5" size="140,40" alphatest="on"/>
-		<ePixmap pixmap="skin_default/buttons/green.png" position="210,5" size="140,40" alphatest="on"/>
+		<ePixmap pixmap="buttons/red.png" position="10,5" size="140,40" alphatest="on"/>
+		<ePixmap pixmap="buttons/green.png" position="210,5" size="140,40" alphatest="on"/>
 		<widget source="key_red" render="Label" position="10,5" size="140,40" zPosition="1" font="Regular;20" backgroundColor="#9f1313" transparent="1" shadowColor="black" shadowOffset="-2,-2"/>
 		<widget source="key_green" render="Label" position="210,5" size="140,40" zPosition="1" font="Regular;20" backgroundColor="#1f771f" transparent="1" shadowColor="black" shadowOffset="-2,-2"/>
 		<eLabel	position="10,50" size="800,1" backgroundColor="grey"/>

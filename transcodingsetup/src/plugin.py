@@ -33,8 +33,8 @@ class TranscodingSetup(ConfigListScreen, Screen):
 
 			<widget name="config" position="4,36" font="Regular;20" size="492,100" />
 
-			<ePixmap pixmap="skin_default/buttons/red.png" position="0,150" size="140,40" alphatest="on" />
-			<ePixmap pixmap="skin_default/buttons/green.png" position="150,150" size="140,40" alphatest="on" />
+			<ePixmap pixmap="buttons/red.png" position="0,150" size="140,40" alphatest="on" />
+			<ePixmap pixmap="buttons/green.png" position="150,150" size="140,40" alphatest="on" />
 
 			<widget source="key_red" render="Label" position="0,150" zPosition="1" size="140,40" font="Regular;20" halign="center" valign="center" backgroundColor="#9f1313" foregroundColor="#ffffff" transparent="1"/>
 			<widget source="key_green" render="Label" position="150,150" zPosition="1" size="140,40" font="Regular;20" halign="center" valign="center" backgroundColor="#1f771f" foregroundColor="#ffffff" transparent="1"/>
