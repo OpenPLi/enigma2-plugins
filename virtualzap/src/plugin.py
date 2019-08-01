@@ -194,7 +194,7 @@ class ExtendedVirtualZap(Screen, HelpableScreen):
 					<widget backgroundColor="#101214" font="Regular;24" foregroundColor="#fcc000" halign="right" name="NowTime" position="%d,105" size="124,28" transparent="1" zPosition="2"/>
 					<widget backgroundColor="#101214" font="Regular;24" halign="right" name="NextTime" position="%d,140" size="124,28" transparent="1" zPosition="2"/>
 					<widget backgroundColor="#101214" name="servicePicon" position="%d,%d" size="100,60" alphatest="on" zPosition="2"/>
-					<widget source="Frontend" render="Progress" position="440,190" size="300,20" pixmap="skin_default/bar_snr.png" zPosition="2" borderWidth="2" borderColor="#cccccc">
+					<widget source="Frontend" render="Progress" position="440,190" size="300,20" pixmap="bar_snr.png" zPosition="2" borderWidth="2" borderColor="#cccccc">
 						<convert type="FrontendInfo">SNR</convert>
 					</widget>
 					<eLabel text="SNR:" position="300,190" size="53,22" font="Regular;18" backgroundColor="#101214" halign="left" transparent="1" zPosition="2"/>
@@ -234,7 +234,7 @@ class ExtendedVirtualZap(Screen, HelpableScreen):
 					<widget backgroundColor="#101214" font="Regular;20" foregroundColor="#fcc000" halign="right" name="NowTime" position="%d,55" size="120,25" transparent="1" zPosition="2"/>
 					<widget backgroundColor="#101214" font="Regular;20" halign="right" name="NextTime" position="%d,80" size="120,25" transparent="1" zPosition="2"/>
 					<widget backgroundColor="#101214" name="servicePicon" position="%d,%d" size="70,53" alphatest="on" zPosition="2"/>
-					<widget source="Frontend" render="Progress" position="320,130" size="150,20" pixmap="skin_default/bar_snr.png" zPosition="2" borderWidth="2" borderColor="#cccccc">
+					<widget source="Frontend" render="Progress" position="320,130" size="150,20" pixmap="bar_snr.png" zPosition="2" borderWidth="2" borderColor="#cccccc">
 						<convert type="FrontendInfo">SNR</convert>
 					</widget>
 					<eLabel text="SNR:" position="190,130" size="53,22" font="Regular;18" backgroundColor="#101214" halign="left" transparent="1" zPosition="2"/>
@@ -327,7 +327,7 @@ class ExtendedVirtualZap(Screen, HelpableScreen):
 						<widget backgroundColor="#101214" font="Regular;24" foregroundColor="#fcc000" halign="right" name="NowTime" position="%d,590" size="124,28" transparent="1" zPosition="2"/>
 						<widget backgroundColor="#101214" font="Regular;24" halign="right" name="NextTime" position="%d,625" size="124,28" transparent="1" zPosition="2"/>
 						<widget backgroundColor="#101214" name="servicePicon" position="%d,%d" size="100,60" alphatest="on" zPosition="2"/>
-						<widget source="Frontend" render="Progress" position="275,670" size="300,20" pixmap="skin_default/bar_snr.png" zPosition="2" borderWidth="2" borderColor="#cccccc">
+						<widget source="Frontend" render="Progress" position="275,670" size="300,20" pixmap="bar_snr.png" zPosition="2" borderWidth="2" borderColor="#cccccc">
 							<convert type="FrontendInfo">SNR</convert>
 						</widget>
 						<eLabel text="SNR:" position="140,670" size="53,22" font="Regular;18" backgroundColor="#101214" halign="left" transparent="1" zPosition="2"/>
@@ -367,7 +367,7 @@ class ExtendedVirtualZap(Screen, HelpableScreen):
 						<widget backgroundColor="#101214" font="Regular;20" foregroundColor="#fcc000" halign="right" name="NowTime" position="%d,475" size="120,22" transparent="1" zPosition="2"/>
 						<widget backgroundColor="#101214" font="Regular;20" halign="right" name="NextTime" position="%d,500" size="120,22" transparent="1" zPosition="2"/>
 						<widget backgroundColor="#101214" name="servicePicon" position="%d,%d" size="70,53" alphatest="on" zPosition="2"/>
-						<widget source="Frontend" render="Progress" position="180,540" size="150,20" pixmap="skin_default/bar_snr.png" zPosition="2" borderWidth="2" borderColor="#cccccc">
+						<widget source="Frontend" render="Progress" position="180,540" size="150,20" pixmap="bar_snr.png" zPosition="2" borderWidth="2" borderColor="#cccccc">
 							<convert type="FrontendInfo">SNR</convert>
 						</widget>
 						<eLabel text="SNR:" position="50,540" size="53,22" font="Regular;18" backgroundColor="#101214" halign="left" transparent="1" zPosition="2"/>
@@ -1211,8 +1211,8 @@ class ExtendedVirtualZapConfig(Screen, ConfigListScreen):
 	if sz_w >= 1920:
 		skin = """
 			<screen position="center,center" size="1000,600" title="Extended virtual zap config" >
-				<ePixmap pixmap="skin_default/buttons/red.png" position="170,0" zPosition="0" size="240,80" transparent="1" alphatest="on" />
-				<ePixmap pixmap="skin_default/buttons/green.png" position="670,0" zPosition="0" size="240,80" transparent="1" alphatest="on" />
+				<ePixmap pixmap="buttons/red.png" position="170,0" zPosition="0" size="240,80" transparent="1" alphatest="on" />
+				<ePixmap pixmap="buttons/green.png" position="670,0" zPosition="0" size="240,80" transparent="1" alphatest="on" />
 				<widget render="Label" source="key_red" position="200,0" size="200,50" zPosition="5" valign="center" backgroundColor="red" font="Regular;34" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
 				<widget render="Label" source="key_green" position="700,0" size="200,50" zPosition="5" valign="center" backgroundColor="red" font="Regular;34" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
 				<widget name="config" position="10,90" size="980,500" itemHeight="36" font="Regular;34" scrollbarMode="showOnDemand" />
@@ -1220,8 +1220,8 @@ class ExtendedVirtualZapConfig(Screen, ConfigListScreen):
 	else:
 		skin = """
 			<screen position="center,center" size="690,380" title="Extended virtual zap config" >
-				<ePixmap pixmap="skin_default/buttons/red.png" position="0,0" zPosition="0" size="140,40" transparent="1" alphatest="on" />
-				<ePixmap pixmap="skin_default/buttons/green.png" position="185,0" zPosition="0" size="140,40" transparent="1" alphatest="on" />
+				<ePixmap pixmap="buttons/red.png" position="0,0" zPosition="0" size="140,40" transparent="1" alphatest="on" />
+				<ePixmap pixmap="buttons/green.png" position="185,0" zPosition="0" size="140,40" transparent="1" alphatest="on" />
 				<widget render="Label" source="key_red" position="0,0" size="140,40" zPosition="5" valign="center" halign="center" backgroundColor="red" font="Regular;21" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
 				<widget render="Label" source="key_green" position="185,0" size="140,40" zPosition="5" valign="center" halign="center" backgroundColor="red" font="Regular;21" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
 				<widget name="config" position="20,50" size="650,320" scrollbarMode="showOnDemand" />

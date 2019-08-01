@@ -106,10 +106,10 @@ SERVICENAME	= 7
 
 class PrimeTimeManager(Screen, HelpableScreen):
 	skin = """<screen name="PrimeTimeManager" title="Prime Time Manager" position="center,center" size="650,545">
-		<ePixmap pixmap="skin_default/buttons/red.png" position="45,0" size="140,40" transparent="1" alphatest="on" />
-		<ePixmap pixmap="skin_default/buttons/green.png" position="185,0" size="140,40" transparent="1" alphatest="on" />
-		<ePixmap pixmap="skin_default/buttons/yellow.png" position="325,0" size="140,40" transparent="1" alphatest="on" />
-		<ePixmap pixmap="skin_default/buttons/blue.png" position="465,0" size="140,40" transparent="1" alphatest="on" />
+		<ePixmap pixmap="buttons/red.png" position="45,0" size="140,40" transparent="1" alphatest="on" />
+		<ePixmap pixmap="buttons/green.png" position="185,0" size="140,40" transparent="1" alphatest="on" />
+		<ePixmap pixmap="buttons/yellow.png" position="325,0" size="140,40" transparent="1" alphatest="on" />
+		<ePixmap pixmap="buttons/blue.png" position="465,0" size="140,40" transparent="1" alphatest="on" />
 		<ePixmap position="10,10" size="35,25" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/PrimeTimeManager/images/key_menu.png" alphatest="on" />
 		<ePixmap position="610,10" size="35,25" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/PrimeTimeManager/images/key_help.png" alphatest="on" />
 		<widget render="Label" source="key_red" position="45,0" size="140,40" zPosition="5" valign="center" halign="center" backgroundColor="red" font="Regular;19" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
@@ -134,7 +134,7 @@ class PrimeTimeManager(Screen, HelpableScreen):
 		<widget source="global.CurrentTime" render="Label" position="10,523" size="430, 21" font="Regular; 18" halign="left" foregroundColor="white" backgroundColor="background" transparent="1">
 			<convert type="ClockToText">Date</convert>
 		</widget>
-		<ePixmap alphatest="on" pixmap="skin_default/icons/clock.png" position="540,520" size="14,14" zPosition="1" />
+		<ePixmap alphatest="on" pixmap="icons/clock.png" position="540,520" size="14,14" zPosition="1" />
 		<widget font="Regular;18" halign="left" position="560,523" render="Label" size="55,20" source="global.CurrentTime" transparent="1" valign="center" zPosition="1">
 			<convert type="ClockToText">Default</convert>
 		</widget>
@@ -2614,7 +2614,7 @@ class PrimeTimeSelection(EPGSelection):
 			<widget position="65, 540" size="95, 20" halign="left" source="global.CurrentTime" render="Label" font="Regular;20" backgroundColor="background" transparent="1" zPosition="3">
 				<convert type="ClockToText">Default</convert>
 			</widget>
-			<ePixmap pixmap="skin_default/icons/clock.png" position="40, 542" zPosition="3" size="14,14" alphatest="on" />
+			<ePixmap pixmap="icons/clock.png" position="40, 542" zPosition="3" size="14,14" alphatest="on" />
 			<widget position="190, 535" size="200,36" name="key_red" font="Regular;20" foregroundColor="red" halign="center" valign="center" backgroundColor="black" transparent="1" zPosition="3" />
 			<widget position="390, 535" size="200,36" name="key_green" font="Regular;20" foregroundColor="green" halign="center" valign="center" backgroundColor="black" transparent="1" zPosition="3" />
 			<widget position="590, 535" size="200,36" name="key_yellow" font="Regular;20" foregroundColor="yellow" halign="center" valign="center" backgroundColor="black" transparent="1" zPosition="3" />
@@ -2623,15 +2623,15 @@ class PrimeTimeSelection(EPGSelection):
 		</screen>"""
 	else:
 		skin = """<screen name="PrimeTimeSelection" position="center,center" size="560,430" title="Prime Time EPG Selection Multi">
-			<ePixmap pixmap="skin_default/buttons/red.png" position="0,0" size="140,40" alphatest="on" />
-			<ePixmap pixmap="skin_default/buttons/green.png" position="140,0" size="140,40" alphatest="on" />
-			<ePixmap pixmap="skin_default/buttons/yellow.png" position="280,0" size="140,40" alphatest="on" />
-			<ePixmap pixmap="skin_default/buttons/blue.png" position="420,0" size="140,40" alphatest="on" />
+			<ePixmap pixmap="buttons/red.png" position="0,0" size="140,40" alphatest="on" />
+			<ePixmap pixmap="buttons/green.png" position="140,0" size="140,40" alphatest="on" />
+			<ePixmap pixmap="buttons/yellow.png" position="280,0" size="140,40" alphatest="on" />
+			<ePixmap pixmap="buttons/blue.png" position="420,0" size="140,40" alphatest="on" />
 			<widget name="key_red" position="0,0" zPosition="1" size="140,40" font="Regular;20" halign="center" valign="center" backgroundColor="#9f1313" transparent="1" />
 			<widget name="key_green" position="140,0" zPosition="1" size="140,40" font="Regular;20" halign="center" valign="center" backgroundColor="#1f771f" transparent="1" />
 			<widget name="key_yellow" position="280,0" zPosition="1" size="140,40" font="Regular;20" halign="center" valign="center" backgroundColor="#a08500" transparent="1" />
 			<widget name="key_blue" position="420,0" zPosition="1" size="140,40" font="Regular;20" halign="center" valign="center" backgroundColor="#18188b" transparent="1" />
-			<ePixmap pixmap="skin_default/border_epg.png" position="5,70" size="551,361" alphatest="on" />
+			<ePixmap pixmap="border_epg.png" position="5,70" size="551,361" alphatest="on" />
 			<widget name="date" position="410,35" size="140,45" font="Regular;18" valign="center" halign="right" />
 			<widget name="list" position="11,75" size="540,350" scrollbarMode="showOnDemand" />
 		</screen>"""

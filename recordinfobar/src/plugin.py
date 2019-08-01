@@ -79,7 +79,7 @@ config.plugins.RecInfobar.tuner_recording_priority = ConfigSelection(default = "
 class RecIndicator(Screen):
 	skin = """
 		<screen name="RecIndicator" title="Records Indicator" flags="wfNoBorder" position="60,60" size="36,36" zPosition="-1" backgroundColor="transparent" >
-			<widget source="session.RecordState" render="Pixmap" pixmap="skin_default/icons/icon_rec.png" position="0,0" size="36,36" alphatest="on">
+			<widget source="session.RecordState" render="Pixmap" pixmap="icons/icon_rec.png" position="0,0" size="36,36" alphatest="on">
 				<convert type="ConditionalShowHide">Blink,3000</convert>
 			</widget>  
 		</screen>"""

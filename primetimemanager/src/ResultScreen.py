@@ -42,10 +42,10 @@ skinPTMhdfull = """<screen title="%s" position="center,center" size="630,650">
 	</screen>""" % _("Prime Time Manager Conflict Results")
 #############################################################################################
 skinPTMsd = """<screen title="%s" position="center,center" size="630,520">
-		<ePixmap pixmap="skin_default/buttons/red.png" position="35,0" size="140,40" transparent="1" alphatest="on" />
-		<ePixmap pixmap="skin_default/buttons/green.png" position="175,0" size="140,40" transparent="1" alphatest="on" />
-		<ePixmap pixmap="skin_default/buttons/yellow.png" position="315,0" size="140,40" transparent="1" alphatest="on" />
-		<ePixmap pixmap="skin_default/buttons/blue.png" position="455,0" size="140,40" transparent="1" alphatest="on" />
+		<ePixmap pixmap="buttons/red.png" position="35,0" size="140,40" transparent="1" alphatest="on" />
+		<ePixmap pixmap="buttons/green.png" position="175,0" size="140,40" transparent="1" alphatest="on" />
+		<ePixmap pixmap="buttons/yellow.png" position="315,0" size="140,40" transparent="1" alphatest="on" />
+		<ePixmap pixmap="buttons/blue.png" position="455,0" size="140,40" transparent="1" alphatest="on" />
 		<widget render="Label" source="key_red" position="35,0" size="140,40" zPosition="5" valign="center" halign="center" backgroundColor="red" font="Regular;19" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
 		<widget render="Label" source="key_green" position="175,0" size="140,40" zPosition="5" valign="center" halign="center" backgroundColor="green" font="Regular;19" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
 		<widget render="Label" source="key_yellow" position="315,0" size="140,40" zPosition="5" valign="center" halign="center" backgroundColor="yellow" font="Regular;19" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />

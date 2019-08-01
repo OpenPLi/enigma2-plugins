@@ -28,26 +28,26 @@ if getDesktop(0).size().width() >= 1280:
 class EPGSaveLoadConfiguration(Screen, ConfigListScreen):
 	if HD:
 		skin = """<screen name="EPGSaveLoadConfiguration" position="center,center" size="600,640">
-			<ePixmap position="0,5" size="140,40" pixmap="skin_default/buttons/red.png" transparent="1" alphatest="on" />
-			<ePixmap position="140,5" size="140,40" pixmap="skin_default/buttons/green.png" transparent="1" alphatest="on" />
+			<ePixmap position="0,5" size="140,40" pixmap="buttons/red.png" transparent="1" alphatest="on" />
+			<ePixmap position="140,5" size="140,40" pixmap="buttons/green.png" transparent="1" alphatest="on" />
 			<widget source="key_red" render="Label" position="0,5" zPosition="1" size="140,40" valign="center" halign="center" font="Regular;21" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
 			<widget source="key_green" render="Label" position="140,5" zPosition="1" size="140,40" valign="center" halign="center" font="Regular;21" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
 			<widget source="epgcachelocation" render="Label" position="5,495" size="590,50" zPosition="1" font="Regular;21" halign="left" valign="center" />
 			<widget name="config" position="5,50" size="590,428" scrollbarMode="showOnDemand" />
-			<ePixmap pixmap="skin_default/div-h.png" position="0,490" zPosition="1" size="600,2" />
-			<ePixmap pixmap="skin_default/div-h.png" position="0,550" zPosition="1" size="600,2" />
+			<ePixmap pixmap="div-h.png" position="0,490" zPosition="1" size="600,2" />
+			<ePixmap pixmap="div-h.png" position="0,550" zPosition="1" size="600,2" />
 			<widget source="help" render="Label" position="5,555" size="590,83" font="Regular;21" />
 		</screen>"""
 	else:
 		skin = """<screen name="EPGSaveLoadConfiguration" position="center,center" size="600,520">
-			<ePixmap position="0,5" size="140,40" pixmap="skin_default/buttons/red.png" transparent="1" alphatest="on" />
-			<ePixmap position="140,5" size="140,40" pixmap="skin_default/buttons/green.png" transparent="1" alphatest="on" />
+			<ePixmap position="0,5" size="140,40" pixmap="buttons/red.png" transparent="1" alphatest="on" />
+			<ePixmap position="140,5" size="140,40" pixmap="buttons/green.png" transparent="1" alphatest="on" />
 			<widget source="key_red" render="Label" position="0,5" zPosition="1" size="140,40" valign="center" halign="center" font="Regular;21" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
 			<widget source="key_green" render="Label" position="140,5" zPosition="1" size="140,40" valign="center" halign="center" font="Regular;21" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
 			<widget source="epgcachelocation" render="Label" position="5,375" size="590,50" zPosition="1" font="Regular;21" halign="left" valign="center" />
 			<widget name="config" position="5,50" size="590,315" scrollbarMode="showOnDemand" />
-			<ePixmap pixmap="skin_default/div-h.png" position="0,370" zPosition="1" size="600,2" />
-			<ePixmap pixmap="skin_default/div-h.png" position="0,430" zPosition="1" size="600,2" />
+			<ePixmap pixmap="div-h.png" position="0,370" zPosition="1" size="600,2" />
+			<ePixmap pixmap="div-h.png" position="0,430" zPosition="1" size="600,2" />
 			<widget source="help" render="Label" position="5,435" size="590,83" font="Regular;21" />
 		</screen>"""
 
