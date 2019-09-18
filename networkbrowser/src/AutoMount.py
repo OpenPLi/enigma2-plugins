@@ -153,16 +153,21 @@ class AutoMount():
 					if data['mounttype'] == 'nfs':
 						if not os.path.ismount(path):
 							if data['options']:
-								options = "tcp,noatime,retry=0" + data['options']
+								options = data['options'] + ","
 							else:
-								options = "tcp,noatime,retry=0"
+								options = ""
+							options += "tcp,noatime,retry=0"
 							tmpcmd = "mount -t nfs -o %s '%s' '%s'" % (options, host + ':/' + data['sharedir'], path)
 							command = tmpcmd.encode("UTF-8")
 
 					elif data['mounttype'] == 'cifs':
 						if not os.path.ismount(path):
 							tmpusername = data['username'].replace(" ", "\\ ")
-							options = data['options'] + ',noatime,noserverino,iocharset=utf8,username='+ tmpusername + ',password='+ data['password']
+							if data['options']:
+								options = data['options'] + ","
+							else:
+								options = ""
+							options += "noatime,noserverino,iocharset=utf8,username="+ tmpusername + ",password="+ data['password']
 							tmpcmd = "mount -t cifs -o %s '//%s/%s' '%s'" % (options, host, data['sharedir'], path)
 							command = tmpcmd.encode("UTF-8")
 				except Exception, ex:
