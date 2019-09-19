@@ -154,7 +154,7 @@ class AutoMount():
 		else:
 			# if no protocol given, default to udp
 			if 'tcp' not in options and 'udp' not in options and 'proto=tcp' not in options and 'proto=udp' not in options:
-				options.append('proto=udp')
+				options.append('proto=tcp')
 
 			# by default do not retry
 			if not [i for i in options if i.startswith('retry=')]:
