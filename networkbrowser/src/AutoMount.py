@@ -2,6 +2,7 @@
 # for localized messages
 from __init__ import _
 import os
+import shlex
 from enigma import eTimer
 from Components.Console import Console
 from Components.Harddisk import harddiskmanager #global harddiskmanager
@@ -76,7 +77,7 @@ class AutoMount():
 					data['host'] = getValue(mount.findall("host"), "").encode("UTF-8")
 					data['sharedir'] = getValue(mount.findall("sharedir"), "/media/").encode("UTF-8")
 					data['sharename'] = getValue(mount.findall("sharename"), "MEDIA").encode("UTF-8")
-					data['options'] = getValue(mount.findall("options"), "rw,nolock,tcp").encode("UTF-8")
+					data['options'] = getValue(mount.findall("options"), "").encode("UTF-8")
 					self.automounts[data['sharename']] = data
 				except Exception, e:
 					print "[MountManager] Error reading Mounts:", e
@@ -95,7 +96,7 @@ class AutoMount():
 					data['host'] = getValue(mount.findall("host"), "").encode("UTF-8")
 					data['sharedir'] = getValue(mount.findall("sharedir"), "/media/").encode("UTF-8")
 					data['sharename'] = getValue(mount.findall("sharename"), "MEDIA").encode("UTF-8")
-					data['options'] = getValue(mount.findall("options"), "rw,nolock").encode("UTF-8")
+					data['options'] = getValue(mount.findall("options"), "").encode("UTF-8")
 					data['username'] = getValue(mount.findall("username"), "guest").encode("UTF-8")
 					data['password'] = getValue(mount.findall("password"), "").encode("UTF-8")
 					self.automounts[data['sharename']] = data
@@ -111,19 +112,60 @@ class AutoMount():
 			self.CheckMountPoint(self.checkList.pop(), callback)
 
 	def sanitizeOptions(self, origOptions, cifs=False):
-		options = origOptions.strip()
-		if not options:
-			options = 'rsize=8192,wsize=8192'
-			if not cifs:
-				options += ',tcp'
+		# split the options into their components
+		lexer = shlex.shlex(origOptions, posix=True)
+		lexer.whitespace_split = True
+		lexer.whitespace = ','
+		options = list(map(str.strip, list(lexer)))
+
+		# if not specified, mount read/write
+		if 'ro' not in options and 'rw' not in options:
+			options.append('rw')
+
+		# if not specified, don't hang on server errors
+		if 'soft' not in options and 'hard' not in options:
+			options.append('soft')
+
+		# if not specified, don't update last access time
+		if 'atime' not in options and 'noatime' not in options and 'relatime' not in options:
+			options.append('noatime')
+
+		# if not specified, disable locking
+		if 'lock' not in options and 'nolock' not in options:
+			options.append('nolock')
+
+		# cifs specific options
+		if cifs:
+			# remove any hardcoded username and passwords
+			options = [i for i in options if not i.startswith('user=')]
+			options = [i for i in options if not i.startswith('username=')]
+			options = [i for i in options if not i.startswith('pass=')]
+			options = [i for i in options if not i.startswith('password=')]
+
+			# default to SMBv2
+			if not [i for i in options if i.startswith('vers=')]:
+				options.append('vers=2.1')
+
+			# default to NTLMv2
+			if not [i for i in options if i.startswith('sec=')]:
+				options.append('sec=ntlmv2')
+
+		# nfs specific options
 		else:
-			if 'rsize' not in options:
-				options += ',rsize=8192'
-			if 'wsize' not in options:
-				options += ',wsize=8192'
-			if not cifs and 'tcp' not in options and 'udp' not in options:
-				options += ',tcp'
-		return options
+			# if no protocol given, default to udp
+			if 'tcp' not in options and 'udp' not in options and 'proto=tcp' not in options and 'proto=udp' not in options:
+				options.append('proto=udp')
+
+			# by default do not retry
+			if not [i for i in options if i.startswith('retry=')]:
+				options.append('retry=0')
+
+			# if not specified, allow file service interruptions
+			if 'intr' not in options and 'nointr' not in options:
+				options.append('intr')
+
+		# return the sanitized options list
+		return ",".join(options)
 
 	def CheckMountPoint(self, item, callback):
 		data = self.automounts[item]
@@ -145,29 +187,21 @@ class AutoMount():
 				try:
 					if not os.path.exists(path):
 						os.makedirs(path)
-					
-					host = data['host']
+
+					host = data['ip']
 					if not host:
-						host = data['ip'] 
-					
+						host = data['host']
+
 					if data['mounttype'] == 'nfs':
 						if not os.path.ismount(path):
-							if data['options']:
-								options = data['options'] + ","
-							else:
-								options = ""
-							options += "tcp,noatime,retry=0"
+							options = self.sanitizeOptions(data['options'], false)
 							tmpcmd = "mount -t nfs -o %s '%s' '%s'" % (options, host + ':/' + data['sharedir'], path)
 							command = tmpcmd.encode("UTF-8")
 
 					elif data['mounttype'] == 'cifs':
 						if not os.path.ismount(path):
-							tmpusername = data['username'].replace(" ", "\\ ")
-							if data['options']:
-								options = data['options'] + ","
-							else:
-								options = ""
-							options += "noatime,noserverino,iocharset=utf8,username="+ tmpusername + ",password="+ data['password']
+							options = self.sanitizeOptions(data['options'], true)
+							options += "username="+ data['username'].replace(" ", "\\ ") + ",password="+ data['password']
 							tmpcmd = "mount -t cifs -o %s '//%s/%s' '%s'" % (options, host, data['sharedir'], path)
 							command = tmpcmd.encode("UTF-8")
 				except Exception, ex:
