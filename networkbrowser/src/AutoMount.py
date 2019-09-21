@@ -111,7 +111,7 @@ class AutoMount():
 		else:
 			self.CheckMountPoint(self.checkList.pop(), callback)
 
-	def sanitizeOptions(self, origOptions, cifs=False):
+	def sanitizeOptions(self, origOptions, cifs=False, username=None, password=None):
 		# split the options into their components
 		lexer = shlex.shlex(origOptions, posix=True)
 		lexer.whitespace_split = True
@@ -141,6 +141,12 @@ class AutoMount():
 			options = [i for i in options if not i.startswith('username=')]
 			options = [i for i in options if not i.startswith('pass=')]
 			options = [i for i in options if not i.startswith('password=')]
+			
+			# and add any passed
+			if username:
+			    options.append('username="%s"' % username)
+			if password:
+			    options.append('password="%s"' % password)
 
 			# default to SMBv2
 			if not [i for i in options if i.startswith('vers=')]:
@@ -200,8 +206,7 @@ class AutoMount():
 
 					elif data['mounttype'] == 'cifs':
 						if not os.path.ismount(path):
-							options = self.sanitizeOptions(data['options'], True)
-							options += "username="+ data['username'].replace(" ", "\\ ") + ",password="+ data['password']
+							options = self.sanitizeOptions(data['options'], True, data['username'].replace(" ", "\\ "), data['password'])
 							tmpcmd = "mount -t cifs -o %s '//%s/%s' '%s'" % (options, host, data['sharedir'], path)
 							command = tmpcmd.encode("UTF-8")
 				except Exception, ex:
