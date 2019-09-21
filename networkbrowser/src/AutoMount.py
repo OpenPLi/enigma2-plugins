@@ -194,13 +194,13 @@ class AutoMount():
 
 					if data['mounttype'] == 'nfs':
 						if not os.path.ismount(path):
-							options = self.sanitizeOptions(data['options'], false)
+							options = self.sanitizeOptions(data['options'], False)
 							tmpcmd = "mount -t nfs -o %s '%s' '%s'" % (options, host + ':/' + data['sharedir'], path)
 							command = tmpcmd.encode("UTF-8")
 
 					elif data['mounttype'] == 'cifs':
 						if not os.path.ismount(path):
-							options = self.sanitizeOptions(data['options'], true)
+							options = self.sanitizeOptions(data['options'], True)
 							options += "username="+ data['username'].replace(" ", "\\ ") + ",password="+ data['password']
 							tmpcmd = "mount -t cifs -o %s '//%s/%s' '%s'" % (options, host, data['sharedir'], path)
 							command = tmpcmd.encode("UTF-8")
