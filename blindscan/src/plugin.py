@@ -88,7 +88,7 @@ elif fileExists("/proc/stb/info/gbmodel"):
 		model = l.read().strip()
 		l.close()
 		BOX_NAME = str(model.lower())
-		if BOX_NAME in ("gbquad4k", "gbue4k"):
+		if BOX_NAME in ("gbquad4k", "gbue4k", "gbtrio4k"):
 			BOX_MODEL = "gigablue"
 	except:
 		pass
@@ -223,9 +223,9 @@ class Blindscan(ConfigListScreen, Screen):
 		<screen position="center,center" size="640,565" title="Blind scan">
 			<widget name="rotorstatus" position="5,5" size="550,25" font="Regular;20" foregroundColor="#00ffc000"/>
 			<widget name="config" position="5,30" size="630,330" scrollbarMode="showOnDemand"/>
-			<ePixmap pixmap="skin_default/div-h.png" position="0,365" zPosition="1" size="640,2"/>
+			<ePixmap pixmap="div-h.png" position="0,365" zPosition="1" size="640,2"/>
 			<widget name="description" position="5,370" size="630,125" font="Regular;20" foregroundColor="#00ffc000"/>
-			<ePixmap pixmap="skin_default/div-h.png" position="0,495" zPosition="1" size="640,2"/>
+			<ePixmap pixmap="div-h.png" position="0,495" zPosition="1" size="640,2"/>
 			<widget name="introduction" position="0,500" size="640,20" font="Regular;18" foregroundColor="green" halign="center"/>
 			<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/Blindscan/images/red.png" position="0,560" size="160,2" alphatest="on"/>
 			<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/Blindscan/images/green.png" position="160,560" size="160,2" alphatest="on"/>
@@ -911,25 +911,29 @@ class Blindscan(ConfigListScreen, Screen):
 		not_support_text = _("It seems manufacturer does not support blind scan for this tuner.")
 
 		if tunername in _blindscans2Nims:
-			if tunername == "TBS-5925":
-				cmd = "blindscan-s2 -b -s %d -e %d -t %d" % (temp_start_int_freq, temp_end_int_freq, self.blindscan_step_mhz_tbs5925.value)
+			tools = "/usr/bin/blindscan-s2"
+			if os.path.exists(tools):
+				if tunername == "TBS-5925":
+					cmd = "blindscan-s2 -b -s %d -e %d -t %d" % (temp_start_int_freq, temp_end_int_freq, self.blindscan_step_mhz_tbs5925.value)
+				else:
+					cmd = "blindscan-s2 -b -s %d -e %d" % (temp_start_int_freq, temp_end_int_freq)
+				cmd += getAdapterFrontend(self.feid, tunername)
+				if pol == "horizontal":
+					cmd += " -H"
+				elif pol == "vertical":
+					cmd += " -V"
+				if self.is_c_band_scan:
+					cmd += " -l %d" % self.c_band_lo_freq # tested by el bandito with TBS-5925 and working
+				elif tab_hilow[band]:
+					cmd += " -l %d -2" % self.universal_lo_freq["high"] # on high band enable 22KHz tone
+				else:
+					cmd += " -l %d" % self.universal_lo_freq["low"]
+				#self.frontend.closeFrontend() # close because blindscan-s2 does not like to be open
+				self.cmd = cmd
+				self.bsTimer.stop()
+				self.bsTimer.start(6000, True)
 			else:
-				cmd = "blindscan-s2 -b -s %d -e %d" % (temp_start_int_freq, temp_end_int_freq)
-			cmd += getAdapterFrontend(self.feid, tunername)
-			if pol == "horizontal":
-				cmd += " -H"
-			elif pol == "vertical":
-				cmd += " -V"
-			if self.is_c_band_scan:
-				cmd += " -l %d" % self.c_band_lo_freq # tested by el bandito with TBS-5925 and working
-			elif tab_hilow[band]:
-				cmd += " -l %d -2" % self.universal_lo_freq["high"] # on high band enable 22KHz tone
-			else:
-				cmd += " -l %d" % self.universal_lo_freq["low"]
-			#self.frontend.closeFrontend() # close because blindscan-s2 does not like to be open
-			self.cmd = cmd
-			self.bsTimer.stop()
-			self.bsTimer.start(6000, True)
+				self.session.open(MessageBox, _("Not found blind scan utility '%s'!") % tools, MessageBox.TYPE_ERROR)
 		elif self.SundtekScan:
 			tools = "/opt/bin/mediaclient"
 			if os.path.exists(tools):
@@ -997,6 +1001,9 @@ class Blindscan(ConfigListScreen, Screen):
 			tools = "/usr/bin/gigablue_blindscan"
 			if os.path.exists(tools):
 				cmd = "gigablue_blindscan %d %d %d %d %d %d %d %d" % (temp_start_int_freq, temp_end_int_freq, self.blindscan_start_symbol.value, self.blindscan_stop_symbol.value, tab_pol[pol], tab_hilow[band], self.feid, self.getNimSocket(self.feid))
+				if BOX_NAME == "gbtrio4k":
+					cmd += " %d" % self.is_c_band_scan
+					cmd += " %d" % orb[0]
 			else:
 				self.session.open(MessageBox, _("Not found blind scan utility '%s'!") % tools, MessageBox.TYPE_ERROR)
 				return
@@ -1625,6 +1632,8 @@ class Blindscan(ConfigListScreen, Screen):
 			else:
 				currSat = nimconfig.advanced.sat[cur_orb_pos]
 			lnbnum = int(currSat.lnb.getValue())
+			if lnbnum == 0 and nimconfig.advanced.sats.value in ("3601", "3602", "3603", "3604"):
+				lnbnum = 65 + int(nimconfig.advanced.sats.value) - 3601
 			currLnb = nimconfig.advanced.lnb[lnbnum]
 			if isinstance(currLnb, ConfigNothing):
 				return False
