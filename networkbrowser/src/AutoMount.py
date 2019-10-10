@@ -161,10 +161,6 @@ class AutoMount():
 			if not [i for i in options if i.startswith('iocharset=')]:
 				options.append('iocharset=utf8')
 
-			# if not specified, enable unix extensions
-			if 'unix' not in options and 'nounix' not in options:
-				options.append('unix')
-
 		# nfs specific options
 
 		else:
