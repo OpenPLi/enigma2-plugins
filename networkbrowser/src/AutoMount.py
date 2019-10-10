@@ -135,6 +135,7 @@ class AutoMount():
 			options.append('nolock')
 
 		# cifs specific options
+
 		if cifs:
 			# remove any hardcoded username and passwords
 			options = [i for i in options if not i.startswith('user=')]
@@ -156,7 +157,16 @@ class AutoMount():
 			if not [i for i in options if i.startswith('sec=')]:
 				options.append('sec=ntlmv2')
 
+			# default to utf8
+			if not [i for i in options if i.startswith('iocharset=')]:
+				options.append('iocharset=utf8')
+
+			# if not specified, enable unix extensions
+			if 'unix' not in options and 'nounix' not in options:
+				options.append('unix')
+
 		# nfs specific options
+
 		else:
 			# if no protocol given, default to udp
 			if 'tcp' not in options and 'udp' not in options and 'proto=tcp' not in options and 'proto=udp' not in options:
