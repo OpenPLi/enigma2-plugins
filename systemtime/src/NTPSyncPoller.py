@@ -1,15 +1,17 @@
-from enigma import eTimer
+from enigma import eTimer, eDVBLocalTimeHandler, eEPGCache
+from time import time
 from Components.config import config
 from Components.Console import Console
-from enigma import eTimer, eDVBLocalTimeHandler, eEPGCache
 try:
 	from Tools.StbHardware import setRTCtime
 except:
 	from Tools.DreamboxHardware import setRTCtime
-from time import time
+
 
 class NTPSyncPoller:
+
 	"""Automatically Poll NTP"""
+
 	def __init__(self):
 		self.timer = eTimer()
 		self.Console = Console()
@@ -30,7 +32,7 @@ class NTPSyncPoller:
 			self.Console.ePopen(cmd, self.update_schedule)
 		self.timer.startLongTimer(int(config.plugins.SystemTime.useNTPminutes.value) * 60)
 
-	def update_schedule(self, result = None, retval = None, extra_args = None):
+	def update_schedule(self, result=None, retval=None, extra_args=None):
 		if eDVBLocalTimeHandler.getInstance().ready():
 			nowTime = time()
 			if nowTime > 1388534400:

@@ -4,22 +4,23 @@ try:
 	from Tools.StbHardware import setRTCtime
 except:
 	from Tools.DreamboxHardware import setRTCtime
-from Plugins.Plugin import PluginDescriptor
-from Tools.Directories import fileExists
+from Components.ActionMap import ActionMap
 from Components.config import config, ConfigSubsection, ConfigSelection, getConfigListEntry, ConfigYesNo, configfile, ConfigText, ConfigInteger
 from Components.ConfigList import ConfigListScreen
-from Screens.Screen import Screen
-from Screens.InputBox import InputBox
 from Components.Input import Input
-from Components.ActionMap import ActionMap
-from Screens.MessageBox import MessageBox
-from Screens.Console import Console
 from Components.Label import Label
+from Plugins.Plugin import PluginDescriptor
+from Screens.Console import Console
+from Screens.InputBox import InputBox
+from Screens.MessageBox import MessageBox
 from Screens.Standby import TryQuitMainloop
+from Screens.Screen import Screen
+from Tools.Directories import fileExists
 from NTPSyncPoller import NTPSyncPoller
 import os
 import time
 from calendar import isleap
+
 
 config.plugins.SystemTime = ConfigSubsection()
 config.plugins.SystemTime.choiceSystemTime = ConfigSelection(default="0", choices=[("0", _("Transponder")), ("1", _("NTP"))])
@@ -38,7 +39,9 @@ fullHD = False
 if getDesktop(0).size().width() >= 1920:
 	fullHD = True
 
+
 class SystemTimeSetupScreen(Screen, ConfigListScreen):
+
 	skin = """
 		<screen position="center,center" size="700,400" title="System time setup">
 			<widget name="key_red" position="0,0" size="175,33" font="Regular;17" halign="center" valign="center" transparent="1" />
@@ -67,9 +70,8 @@ class SystemTimeSetupScreen(Screen, ConfigListScreen):
 
 	def __init__(self, session):
 		Screen.__init__(self, session)
-		self.setup_title = _("System time setup")
+		self.setTitle(_("System time setup"))
 		self.skinName = ["SystemTimeSetupScreen", "Setup"]
-		self.onChangedEntry = []
 		self.syncTimer = eTimer()
 		self.syncTimer.callback.append(self.showMessage)
 		self["description"] = Label("")
@@ -108,15 +110,7 @@ class SystemTimeSetupScreen(Screen, ConfigListScreen):
 		self.initConfig()
 		self.createSetup()
 		self.servicelist = self.messagebox = None
-		self.onClose.append(self.__closed)
-		self.onLayoutFinish.append(self.__layoutFinished)
 		self["config"].onSelectionChanged.append(self.configPosition)
-
-	def __closed(self):
-		pass
-
-	def __layoutFinished(self):
-		self.setTitle(self.setup_title)
 
 	def initConfig(self):
 		def getPrevValues(section):
@@ -313,6 +307,7 @@ class SystemTimeSetupScreen(Screen, ConfigListScreen):
 		ConfigListScreen.keyRight(self)
 		self.newConfig()
 
+
 class SystemTimeConsole(Console):
 	if fullHD:
 		skin = """<screen position="center,center" size="750,360" title="Command execution..." >
@@ -323,7 +318,7 @@ class SystemTimeConsole(Console):
 			<widget name="text" position="10,10" size="485,230" font="Regular;20" />
 		</screen>"""
 
-	def __init__(self, session, title="System Time Console...", cmdlist=None):
+	def __init__(self, session, title="System time console...", cmdlist=None):
 		Console.__init__(self, session, title, cmdlist)
 		self.skinName = ["SystemTimeConsole", "Console"]
 
@@ -341,7 +336,9 @@ class SystemTimeConsole(Console):
 				pass
 		Console.cancel(self)
 
+
 class ChangeTimeWizzard(Screen):
+
 	def __init__(self, session):
 		Screen.__init__(self, session)
 		self.oldtime = time.strftime("%Y:%m:%d %H:%M", time.localtime())
@@ -417,9 +414,11 @@ class ChangeTimeWizzard(Screen):
 	def skipChangeTime(self, reason):
 		self.session.open(MessageBox, _("System time was not applied.\n%s") % reason, MessageBox.TYPE_WARNING)
 
+
 def removeNetworkStart():
 	if os.path.exists("/usr/bin/ntpdate-sync"):
 		os.system("rm -rf /usr/bin/ntpdate-sync && rm -rf /etc/network/if-up.d/ntpdate-sync")
+
 
 def startup(reason=0, **kwargs):
 	if reason == 0:
@@ -433,14 +432,17 @@ def startup(reason=0, **kwargs):
 		if nowTime > 1514808000:
 			setRTCtime(nowTime)
 
+
 def main(menuid, **kwargs):
 	if menuid == "system":
 		return [(_("System Time"), OpenSetup, "system_time_setup", None)]
 	else:
 		return []
 
+
 def OpenSetup(session, **kwargs):
 	session.open(SystemTimeSetupScreen)
+
 
 def Plugins(**kwargs):
 	return [PluginDescriptor(name="System Time", description=_("Change system time in enigma2 box"), where=PluginDescriptor.WHERE_MENU, fnc=main),
