@@ -179,7 +179,7 @@ msgstr "Синхронизация с текущего транспондера.
 msgid "Syncing... Please wait."
 msgstr "Синхронизация... Пожалуйста, подождите..."
 
-msgid "System Time"
+msgid "System time"
 msgstr "Системное время"
 
 msgid "System time setup"

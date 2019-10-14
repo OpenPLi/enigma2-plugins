@@ -196,7 +196,7 @@ msgstr "Synchronizuj korzystając z bieżącego transpondera"
 msgid "Syncing... Please wait."
 msgstr ""
 
-msgid "System Time"
+msgid "System time"
 msgstr "Czas systemowy"
 
 #, fuzzy

@@ -185,7 +185,7 @@ msgstr "Synchronisation avec le transpondeur actuel ..."
 msgid "Syncing... Please wait."
 msgstr "Synchronisation... Veuillez patienter."
 
-msgid "System Time"
+msgid "System time"
 msgstr "Temps système"
 
 msgid "System time setup"

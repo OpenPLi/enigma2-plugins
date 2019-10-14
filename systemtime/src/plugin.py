@@ -435,7 +435,7 @@ def startup(reason=0, **kwargs):
 
 def main(menuid, **kwargs):
 	if menuid == "system":
-		return [(_("System Time"), OpenSetup, "system_time_setup", None)]
+		return [(_("System time"), OpenSetup, "system_time_setup", None)]
 	else:
 		return []
 
@@ -445,5 +445,5 @@ def OpenSetup(session, **kwargs):
 
 
 def Plugins(**kwargs):
-	return [PluginDescriptor(name="System Time", description=_("Change system time in enigma2 box"), where=PluginDescriptor.WHERE_MENU, fnc=main),
-			PluginDescriptor(name="System Time", where=PluginDescriptor.WHERE_AUTOSTART, fnc=startup)]
+	return [PluginDescriptor(name="System time", description=_("Change system time in enigma2 box"), where=PluginDescriptor.WHERE_MENU, fnc=main),
+			PluginDescriptor(name="System time", where=PluginDescriptor.WHERE_AUTOSTART, fnc=startup)]
