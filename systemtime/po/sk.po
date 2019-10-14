@@ -193,7 +193,7 @@ msgstr "Synchronizovať teraz z aktuálneho transpondéru"
 msgid "Syncing... Please wait."
 msgstr ""
 
-msgid "System Time"
+msgid "System time"
 msgstr "Systémový čas"
 
 #, fuzzy

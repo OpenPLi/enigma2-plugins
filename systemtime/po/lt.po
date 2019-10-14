@@ -201,7 +201,7 @@ msgstr "Sinchronizuoti su šiuo transponderiu dabar"
 msgid "Syncing... Please wait."
 msgstr ""
 
-msgid "System Time"
+msgid "System time"
 msgstr "Sistemos laikas"
 
 #, fuzzy

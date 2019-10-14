@@ -180,7 +180,7 @@ msgstr ""
 msgid "Syncing... Please wait."
 msgstr ""
 
-msgid "System Time"
+msgid "System time"
 msgstr ""
 
 msgid "System time setup"
