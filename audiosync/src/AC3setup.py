@@ -45,11 +45,11 @@ class AC3LipSyncSetup(ConfigListScreen, Screen):
 		ConfigListScreen.__init__(self, self.list)
 		self["config"].list = self.list
 		self.skin_path = plugin_path
-		self["PluginInfo"] = Label(_("Plugin: %(plugin)s , Version: %(version)s") % dict(plugin=PLUGIN_BASE,version=PLUGIN_VERSION))
+		self["PluginInfo"] = Label(_("Plugin: %(plugin)s , Version: %(version)s") % dict(plugin=PLUGIN_BASE, version=PLUGIN_VERSION))
 		self["key_red"] = Button(_("Cancel"))
 		self["key_green"] = Button(_("Save"))
-		self["key_yellow"] = Button(" ")
-		self["key_blue"] = Button(" ")
+		self["key_yellow"] = Button("")
+		self["key_blue"] = Button("")
 
 		self["setupActions"] = NumberActionMap(["SetupActions", "ColorActions"],
 		{
