@@ -2,6 +2,7 @@
 # for localized messages
 from __init__ import _
 import os
+import subprocess
 import shlex
 from enigma import eTimer
 from Components.Console import Console
@@ -61,6 +62,7 @@ class AutoMount():
 			# How many definitions are present
 			Len = len(definitions)
 			return Len > 0 and definitions[Len-1].text or default
+
 		# Config is stored in "mountmanager" element
 		# Read out NFS Mounts
 		for nfs in tree.findall("nfs"):
@@ -81,7 +83,8 @@ class AutoMount():
 					self.automounts[data['sharename']] = data
 				except Exception, e:
 					print "[MountManager] Error reading Mounts:", e
-			# Read out CIFS Mounts
+
+		# Read out CIFS Mounts
 		for nfs in tree.findall("cifs"):
 			for mount in nfs.findall("mount"):
 				data = { 'isMounted': False, 'active': False, 'ip': False, 'host': False, 'sharename': False, 'sharedir': False, 'username': False, \
@@ -111,7 +114,7 @@ class AutoMount():
 		else:
 			self.CheckMountPoint(self.checkList.pop(), callback)
 
-	def sanitizeOptions(self, origOptions, cifs=False, username=None, password=None):
+	def sanitizeOptions(self, origOptions, mounttype=None, username=None, password=None):
 		# split the options into their components
 		lexer = shlex.shlex(origOptions, posix=True)
 		lexer.whitespace_split = True
@@ -136,26 +139,18 @@ class AutoMount():
 
 		# cifs specific options
 
-		if cifs:
+		if mounttype == "cifs":
 			# remove any hardcoded username and passwords
 			options = [i for i in options if not i.startswith('user=')]
 			options = [i for i in options if not i.startswith('username=')]
 			options = [i for i in options if not i.startswith('pass=')]
 			options = [i for i in options if not i.startswith('password=')]
-			
+
 			# and add any passed
 			if username:
 			    options.append('username="%s"' % username)
 			if password:
 			    options.append('password="%s"' % password)
-
-			# default to SMBv2
-			if not [i for i in options if i.startswith('vers=')]:
-				options.append('vers=2.1')
-
-			# default to NTLMv2
-			if not [i for i in options if i.startswith('sec=')]:
-				options.append('sec=ntlmv2')
 
 			# default to utf8
 			if not [i for i in options if i.startswith('iocharset=')]:
@@ -163,7 +158,7 @@ class AutoMount():
 
 		# nfs specific options
 
-		else:
+		elif mounttype == "nfs":
 			# if no protocol given, default to udp
 			if 'tcp' not in options and 'udp' not in options and 'proto=tcp' not in options and 'proto=udp' not in options:
 				options.append('proto=tcp')
@@ -176,6 +171,10 @@ class AutoMount():
 			if 'intr' not in options and 'nointr' not in options:
 				options.append('intr')
 
+		# unknown mounttype
+		else:
+			print "[AutoMount.py] Unknown mount type: ",mounttype
+
 		# return the sanitized options list
 		return ",".join(options)
 
@@ -183,46 +182,99 @@ class AutoMount():
 		data = self.automounts[item]
 		if not self.MountConsole:
 			self.MountConsole = Console()
-		command = None
+
+		# possible CIFS version/security combinations
+		secvers = ( \
+			'vers=3,sec=ntlmssp', 'vers=3,sec=ntlmv2', 'vers=2.1,sec=ntlmssp', 'vers=2.1,sec=ntlmv2', \
+			'vers=2.1,sec=ntlm', 'vers=1.0,sec=ntlmssp', 'vers=1.0,sec=ntlmv2', 'vers=1.0,sec=ntlm', \
+			'vers=default' \
+		)
+
+		# construct the mount path
 		path = os.path.join('/media/net', data['sharename'])
-		if self.activeMountsCounter == 0:
-			print "self.automounts without active mounts",self.automounts
-			if data['active'] == 'False' or data['active'] is False:
+
+		# current mount definition disabled?
+		if data['active'] == 'False' or data['active'] is False:
+			# unmount it if it is mounted
+			if os.path.ismount(path):
 				umountcmd = "umount -fl '%s'" % path
 				print "[AutoMount.py] UMOUNT-CMD--->",umountcmd
 				self.MountConsole.ePopen(umountcmd, self.CheckMountPointFinished, [data, callback])
-		else:
-			if data['active'] == 'False' or data['active'] is False:
-				command = "umount -fl '%s'" % path
 
-			elif data['active'] == 'True' or data['active'] is True:
+		# any active mounts?
+		if self.activeMountsCounter == 0:
+			# nope, nothing more to do there
+			print "self.automounts without active mounts",self.automounts
+
+		# current mount definition active?
+		elif data['active'] == 'True' or data['active'] is True:
 				try:
+					# something already mounted there?
+					if os.path.ismount(path):
+						# if so, unmount that first
+						umountcmd = "umount -fl '%s'" % path
+						print "[AutoMount.py] UMOUNT-CMD--->",umountcmd
+						self.MountConsole.ePopen(umountcmd, self.CheckMountPointFinished, [data, callback])
+
+					# make sure the mount point exists
 					if not os.path.exists(path):
 						os.makedirs(path)
 
+					# validate and client the mount options
+					options = self.sanitizeOptions(data['options'], data['mounttype'], data['username'].replace(" ", "\\ "), data['password'])
+
+					# determine the host for this mount
 					host = data['ip']
 					if not host:
 						host = data['host']
 
+					# NFS
 					if data['mounttype'] == 'nfs':
-						if not os.path.ismount(path):
-							options = self.sanitizeOptions(data['options'], False)
+							# construct the NFS mount command, and mount it
 							tmpcmd = "mount -t nfs -o %s '%s' '%s'" % (options, host + ':/' + data['sharedir'], path)
 							command = tmpcmd.encode("UTF-8")
+							print "[AutoMount.py] NFS MOUNTCMD--->",command
+							self.MountConsole.ePopen(command, self.CheckMountPointFinished, [data, callback])
 
+					# CIFS
 					elif data['mounttype'] == 'cifs':
-						if not os.path.ismount(path):
-							options = self.sanitizeOptions(data['options'], True, data['username'].replace(" ", "\\ "), data['password'])
+
+						# version and/or security level given?
+						if "vers=" in options or "sec=" in options:
+
+							# construct the CIFS mount command
 							tmpcmd = "mount -t cifs -o %s '//%s/%s' '%s'" % (options, host, data['sharedir'], path)
 							command = tmpcmd.encode("UTF-8")
+							print "[AutoMount.py] CIFS MOUNTCMD--->",command
+
+						else:
+							# loop over the version and security options
+							for secver in secvers:
+								# add the options
+								if options:
+									secver += ','
+
+								# construct the CIFS mount command
+								tmpcmd = "mount -t cifs -o %s '//%s/%s' '%s'" % (secver + options, host, data['sharedir'], path)
+								command = tmpcmd.encode("UTF-8")
+								print "[AutoMount.py] CIFS AUTODETECT MOUNTCMD--->",command
+
+								# attempt to mount it, don't use the background console here, we need to wait
+								ret = subprocess.call(command, shell=True)
+								print "[AutoMount.py] Command returned: ", ret
+
+								# mount succeeded?
+								if ret == 0 and os.path.ismount(path):
+									# record these options
+									self.automounts[item]['options'] = secver + data['options']
+									self.writeMountsConfig()
+									# and terminate the loop
+									break
+
 				except Exception, ex:
-				        print "[AutoMount.py] Failed to create", path, "Error:", ex
-					command = None
-			if command:
-				print "[AutoMount.py] U/MOUNTCMD--->",command
-				self.MountConsole.ePopen(command, self.CheckMountPointFinished, [data, callback])
-			else:
-				self.CheckMountPointFinished(None,None, [data, callback])
+						print "[AutoMount.py] Failed to create", path, "Error:", ex
+
+		self.CheckMountPointFinished(None,None, [data, callback])
 
 	def CheckMountPointFinished(self, result, retval, extra_args):
 		print "[AutoMount.py] CheckMountPointFinished",result,retval
