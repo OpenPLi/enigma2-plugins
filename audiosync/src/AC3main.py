@@ -1,7 +1,7 @@
 from AC3utils import AC3, PCM, AC3GLOB, PCMGLOB, AC3PCM, SKIN
 from AC3delay import AC3delay
 from enigma import ePoint
-from HelpableNumberActionMap import HelpableNumberActionMap
+from Components.ActionMap import HelpableNumberActionMap
 from Components.Label import Label,MultiColorLabel
 from Components.Pixmap import MultiPixmap
 from Components.ProgressBar import ProgressBar
