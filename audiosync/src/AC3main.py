@@ -58,7 +58,7 @@ class AC3LipSync(Screen, HelpableScreen, MovableScreen):
 		self["AudioSlider"] = Label(_("%i ms") % self.AC3delay.systemDelay[self.AC3delay.whichAudio])
 
 		#Service Information
-		self["ServiceInfoLabel"] = Label(_("Channel audio:"))
+		self["ServiceInfoLabel"] = Label(_("Audio track:"))
 		self["ServiceInfo"] = Label()
 		self.setChannelInfoText()
 

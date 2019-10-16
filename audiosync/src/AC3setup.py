@@ -10,7 +10,7 @@ from __init__ import _
 
 class AC3LipSyncSetup(ConfigListScreen, Screen):
 	skin = """
-		<screen position="center,center" size="560,400" title="AC3 Lip Sync Setup">
+		<screen position="center,center" size="560,400" title="AC3 Lip Sync setup">
 			<ePixmap pixmap="~/img/button-red.png" position="0,0" zPosition="0" size="140,40" transparent="1" alphatest="on" />
 			<ePixmap pixmap="~/img/button-green.png" position="140,0" zPosition="0" size="140,40" transparent="1" alphatest="on" />
 			<ePixmap pixmap="~/img/button-yellow.png" position="280,0" zPosition="0" size="140,40" transparent="1" alphatest="on" />
@@ -25,9 +25,9 @@ class AC3LipSyncSetup(ConfigListScreen, Screen):
 
 	def __init__(self, session, plugin_path):
 		Screen.__init__(self, session)
-		self.setTitle(_("AC3 Lip Sync Setup"))
+		self.setTitle(_("AC3 Lip Sync setup"))
 		self.list = [
-			getConfigListEntry(_("Outer Bound (+/-)"), config.plugins.AC3LipSync.outerBounds),
+			getConfigListEntry(_("Outer bound (+/-)"), config.plugins.AC3LipSync.outerBounds),
 			getConfigListEntry(_("Step in ms for arrow keys"), config.plugins.AC3LipSync.arrowStepSize),
 			getConfigListEntry(_("Wait time in ms before activation:"), config.plugins.AC3LipSync.activationDelay),
 			getConfigListEntry(_("Step in ms for keys '%s'") % ("1/3"), config.plugins.AC3LipSync.stepSize13),
@@ -45,7 +45,7 @@ class AC3LipSyncSetup(ConfigListScreen, Screen):
 		ConfigListScreen.__init__(self, self.list)
 		self["config"].list = self.list
 		self.skin_path = plugin_path
-		self["PluginInfo"] = Label(_("Plugin: %(plugin)s , Version: %(version)s") % dict(plugin=PLUGIN_BASE, version=PLUGIN_VERSION))
+		self["PluginInfo"] = Label(_("Plugin: %(plugin)s, Version: %(version)s") % dict(plugin=PLUGIN_BASE, version=PLUGIN_VERSION))
 		self["key_red"] = Button(_("Cancel"))
 		self["key_green"] = Button(_("Save"))
 		self["key_yellow"] = Button("")

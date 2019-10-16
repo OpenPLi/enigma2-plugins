@@ -20,7 +20,7 @@ msgstr ""
 msgid "%i ms"
 msgstr "%i ms"
 
-msgid "AC3 Lip Sync Setup"
+msgid "AC3 Lip Sync setup"
 msgstr "AC3 garso sinchronizavimas"
 
 msgid "Also save delay in config?"
@@ -29,7 +29,7 @@ msgstr ""
 msgid "Audio Sync"
 msgstr "Garso sinchronizavimas"
 
-msgid "Audio Sync Setup"
+msgid "Audio Sync setup"
 msgstr "Garso sinchronizavimas"
 
 msgid "Cancel"
@@ -44,7 +44,7 @@ msgstr "Centruoti langą viršuje"
 msgid "Change active delay"
 msgstr "Keisti veikiančią delsą"
 
-msgid "Channel audio:"
+msgid "Audio track:"
 msgstr "Garso kanalas:"
 
 msgid "Decrease delay"
@@ -129,12 +129,12 @@ msgstr "Gerai"
 msgid "Open plugin menu"
 msgstr "Atverti įskiepio meniu"
 
-msgid "Outer Bound (+/-)"
+msgid "Outer bound (+/-)"
 msgstr "Išorinė riba (+/-)"
 
 #, python-format
-msgid "Plugin: %(plugin)s , Version: %(version)s"
-msgstr "Įskiepis: %(plugin)s , versija: %(version)s"
+msgid "Plugin: %(plugin)s, Version: %(version)s"
+msgstr "Įskiepis: %(plugin)s, versija: %(version)s"
 
 msgid "Reset saved position"
 msgstr "Ašaukti išsaugotą padėtį"
@@ -174,7 +174,7 @@ msgstr "Nustatyti delsą (ms) %i (galima nustatyti)"
 msgid "Setting key canceled"
 msgstr "Mygtuko priskyrimas atšauktas"
 
-msgid "Setup for the Audio Sync Plugin"
+msgid "Setup for the Audio Sync plugin"
 msgstr "Garso sinchronizavimo įskiepio sąranka"
 
 msgid "Step in ms for arrow keys"
@@ -203,5 +203,5 @@ msgstr "iš budėjimo režimo"
 msgid "disabled"
 msgstr "išjungta"
 
-msgid "sets the Audio Delay (LipSync)"
-msgstr "nustato garso delsą (LipSync)"
+msgid "Sets the audio delay (LipSync)"
+msgstr "Nustato garso delsą (LipSync)"

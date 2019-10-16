@@ -21,7 +21,7 @@ msgstr ""
 msgid "%i ms"
 msgstr ""
 
-msgid "AC3 Lip Sync Setup"
+msgid "AC3 Lip Sync setup"
 msgstr ""
 
 msgid "Also save delay in config?"
@@ -30,7 +30,7 @@ msgstr ""
 msgid "Audio Sync"
 msgstr ""
 
-msgid "Audio Sync Setup"
+msgid "Audio Sync setup"
 msgstr ""
 
 msgid "Cancel"
@@ -45,7 +45,7 @@ msgstr ""
 msgid "Change active delay"
 msgstr ""
 
-msgid "Channel audio:"
+msgid "Audio track:"
 msgstr ""
 
 msgid "Decrease delay"
@@ -130,11 +130,11 @@ msgstr ""
 msgid "Open plugin menu"
 msgstr ""
 
-msgid "Outer Bound (+/-)"
+msgid "Outer bound (+/-)"
 msgstr ""
 
 #, python-format
-msgid "Plugin: %(plugin)s , Version: %(version)s"
+msgid "Plugin: %(plugin)s, Version: %(version)s"
 msgstr ""
 
 msgid "Reset saved position"
@@ -175,7 +175,7 @@ msgstr ""
 msgid "Setting key canceled"
 msgstr ""
 
-msgid "Setup for the Audio Sync Plugin"
+msgid "Setup for the Audio Sync plugin"
 msgstr ""
 
 msgid "Step in ms for arrow keys"
@@ -204,5 +204,5 @@ msgstr ""
 msgid "disabled"
 msgstr ""
 
-msgid "sets the Audio Delay (LipSync)"
+msgid "Sets the audio delay (LipSync)"
 msgstr ""

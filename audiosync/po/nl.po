@@ -26,8 +26,8 @@ msgid "%i ms"
 msgstr "%i ms"
 
 # L:\Dreambox\Eclipse\enigma2-plugins\ac3lipsync\src/plugin.py:35
-msgid "AC3 Lip Sync Setup"
-msgstr "AC3 Lip Sync Instellingen"
+msgid "AC3 Lip Sync setup"
+msgstr "AC3 Lip Sync instellingen"
 
 msgid "Also save delay in config?"
 msgstr ""
@@ -41,8 +41,8 @@ msgstr "AC3 Lip Sync"
 
 # L:\Dreambox\Eclipse\enigma2-plugins\ac3lipsync\src/plugin.py:35
 #, fuzzy
-msgid "Audio Sync Setup"
-msgstr "AC3 Lip Sync Instellingen"
+msgid "Audio Sync setup"
+msgstr "AC3 Lip Sync instellingen"
 
 # L:\Dreambox\Eclipse\enigma2-plugins\ac3lipsync\src/AC3main.py:92
 # L:\Dreambox\Eclipse\enigma2-plugins\ac3lipsync\src/AC3setup.py:58
@@ -59,7 +59,7 @@ msgid "Change active delay"
 msgstr ""
 
 # L:\Dreambox\Eclipse\enigma2-plugins\ac3lipsync\src/AC3main.py:87
-msgid "Channel audio:"
+msgid "Audio track:"
 msgstr "Kanaal audio:"
 
 # L:\Dreambox\Eclipse\enigma2-plugins\ac3lipsync\src/AC3main.py:82
@@ -152,12 +152,12 @@ msgstr "OK"
 msgid "Open plugin menu"
 msgstr ""
 
-msgid "Outer Bound (+/-)"
+msgid "Outer bound (+/-)"
 msgstr "Maximale vertraging (+/-)"
 
 #, python-format
-msgid "Plugin: %(plugin)s , Version: %(version)s"
-msgstr "Plugin: %(plugin)s , Versie: %(version)s"
+msgid "Plugin: %(plugin)s, Version: %(version)s"
+msgstr "Plugin: %(plugin)s, Versie: %(version)s"
 
 msgid "Reset saved position"
 msgstr ""
@@ -210,8 +210,8 @@ msgstr "Configuratie toets geannuleerd"
 
 # L:\Dreambox\Eclipse\enigma2-plugins\ac3lipsync\src/plugin.py:35
 #, fuzzy
-msgid "Setup for the Audio Sync Plugin"
-msgstr "Configuratie van de AC3 Lip Sync Plugin"
+msgid "Setup for the Audio Sync plugin"
+msgstr "Configuratie van de AC3 Lip Sync plugin"
 
 # L:\Dreambox\Eclipse\enigma2-plugins\ac3lipsync\src/AC3setup.py:44
 msgid "Step in ms for arrow keys"
@@ -245,5 +245,5 @@ msgstr "uitgeschakeld"
 # L:\Dreambox\Eclipse\enigma2-plugins\ac3lipsync\src/plugin.py:34
 # L:\Dreambox\Eclipse\enigma2-plugins\ac3lipsync\src/plugin.py:36
 #, fuzzy
-msgid "sets the Audio Delay (LipSync)"
+msgid "Sets the audio delay (LipSync)"
 msgstr "Stel de AC3 audio vertraging in (LipSync)"

@@ -20,7 +20,7 @@ msgid "%i ms"
 msgstr "%i ms"
 
 #, fuzzy
-msgid "AC3 Lip Sync Setup"
+msgid "AC3 Lip Sync setup"
 msgstr "Hang szinkronitásának beállítása"
 
 msgid "Also save delay in config?"
@@ -29,7 +29,7 @@ msgstr ""
 msgid "Audio Sync"
 msgstr "Hang szinkronitás"
 
-msgid "Audio Sync Setup"
+msgid "Audio Sync setup"
 msgstr "Hang szinkronitásának beállítása"
 
 msgid "Cancel"
@@ -44,7 +44,7 @@ msgstr "Középre helyezés felső szélen"
 msgid "Change active delay"
 msgstr "Aktív késleltetés változtatása"
 
-msgid "Channel audio:"
+msgid "Audio track:"
 msgstr "Hangsáv:"
 
 msgid "Decrease delay"
@@ -129,12 +129,12 @@ msgstr "OK"
 msgid "Open plugin menu"
 msgstr "Plugin menü megjelenítése"
 
-msgid "Outer Bound (+/-)"
+msgid "Outer bound (+/-)"
 msgstr "Külső határ (+/-)"
 
 #, python-format
-msgid "Plugin: %(plugin)s , Version: %(version)s"
-msgstr "Plugin: %(plugin)s , Verzió: %(version)s"
+msgid "Plugin: %(plugin)s, Version: %(version)s"
+msgstr "Plugin: %(plugin)s, Verzió: %(version)s"
 
 msgid "Reset saved position"
 msgstr "Mentett pozíció elvetése"
@@ -175,7 +175,7 @@ msgstr "Késleltetés beállítása %i miliszekundumra (módosítható)"
 msgid "Setting key canceled"
 msgstr "Gomb beállítása megszakítva"
 
-msgid "Setup for the Audio Sync Plugin"
+msgid "Setup for the Audio Sync plugin"
 msgstr "Hang szinkronitás beállítása"
 
 msgid "Step in ms for arrow keys"
@@ -204,5 +204,5 @@ msgstr ""
 msgid "disabled"
 msgstr ""
 
-msgid "sets the Audio Delay (LipSync)"
-msgstr "beállítja a hang késleltetését a képhez képest (LipSync)"
+msgid "Sets the audio delay (LipSync)"
+msgstr "Beállítja a hang késleltetését a képhez képest (LipSync)"

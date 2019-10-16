@@ -18,7 +18,7 @@ msgstr ""
 msgid "%i ms"
 msgstr "%i ms"
 
-msgid "AC3 Lip Sync Setup"
+msgid "AC3 Lip Sync setup"
 msgstr "AC3 Dudak senkron ayarları"
 
 msgid "Also save delay in config?"
@@ -29,7 +29,7 @@ msgid "Audio Sync"
 msgstr "AC3 Dudak senkronu"
 
 #, fuzzy
-msgid "Audio Sync Setup"
+msgid "Audio Sync setup"
 msgstr "AC3 Dudak senkron ayarları"
 
 msgid "Cancel"
@@ -44,7 +44,7 @@ msgstr ""
 msgid "Change active delay"
 msgstr ""
 
-msgid "Channel audio:"
+msgid "Audio track:"
 msgstr "Ses izi:"
 
 #, fuzzy
@@ -131,11 +131,11 @@ msgstr "Tamam"
 msgid "Open plugin menu"
 msgstr ""
 
-msgid "Outer Bound (+/-)"
-msgstr "Azami Gecikme (+/-)"
+msgid "Outer bound (+/-)"
+msgstr "Azami gecikme (+/-)"
 
 #, python-format
-msgid "Plugin: %(plugin)s , Version: %(version)s"
+msgid "Plugin: %(plugin)s, Version: %(version)s"
 msgstr ""
 
 msgid "Reset saved position"
@@ -181,7 +181,7 @@ msgid "Setting key canceled"
 msgstr "Tuş tanımlama iptal edildi"
 
 #, fuzzy
-msgid "Setup for the Audio Sync Plugin"
+msgid "Setup for the Audio Sync plugin"
 msgstr "AC3 dudak senkron eklentisi"
 
 msgid "Step in ms for arrow keys"
@@ -211,5 +211,5 @@ msgid "disabled"
 msgstr ""
 
 #, fuzzy
-msgid "sets the Audio Delay (LipSync)"
+msgid "Sets the audio delay (LipSync)"
 msgstr "AC3 ses gecikmesini ayarlayın"

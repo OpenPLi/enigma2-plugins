@@ -18,7 +18,7 @@ msgstr ""
 msgid "%i ms"
 msgstr "%i мс"
 
-msgid "AC3 Lip Sync Setup"
+msgid "AC3 Lip Sync setup"
 msgstr "Настройки за AC3 синхронизация"
 
 msgid "Also save delay in config?"
@@ -27,7 +27,7 @@ msgstr "Запазване на закъснението в конфига?"
 msgid "Audio Sync"
 msgstr "Аудио Синхронизация"
 
-msgid "Audio Sync Setup"
+msgid "Audio Sync setup"
 msgstr "Настройки за Аудио Синхронизация"
 
 msgid "Cancel"
@@ -42,7 +42,7 @@ msgstr "Центрирай екрана на горната граница"
 msgid "Change active delay"
 msgstr "Смени активното закъснение"
 
-msgid "Channel audio:"
+msgid "Audio track:"
 msgstr "Аудио канал:"
 
 msgid "Decrease delay"
@@ -127,12 +127,12 @@ msgstr "ОК"
 msgid "Open plugin menu"
 msgstr "Отваряне на плъгин менюто"
 
-msgid "Outer Bound (+/-)"
+msgid "Outer bound (+/-)"
 msgstr "Външна граница (+/-)"
 
 #, python-format
-msgid "Plugin: %(plugin)s , Version: %(version)s"
-msgstr "Плъгин: %(plugin)s , Версия: %(version)s"
+msgid "Plugin: %(plugin)s, Version: %(version)s"
+msgstr "Плъгин: %(plugin)s, Версия: %(version)s"
 
 msgid "Reset saved position"
 msgstr "Нулиране на съхранената позиции"
@@ -172,7 +172,7 @@ msgstr "Настройване на закъснението с %i мс (мож�
 msgid "Setting key canceled"
 msgstr "Настройка на бутон отказ"
 
-msgid "Setup for the Audio Sync Plugin"
+msgid "Setup for the Audio Sync plugin"
 msgstr "Настройки за плъгина Аудио Синхронизация"
 
 msgid "Step in ms for arrow keys"
@@ -201,5 +201,5 @@ msgstr "след режим готовност"
 msgid "disabled"
 msgstr "спрян"
 
-msgid "sets the Audio Delay (LipSync)"
-msgstr "настройка на Аудио Закъснението"
+msgid "Sets the audio delay (LipSync)"
+msgstr "Настройка на аудио закъснението"

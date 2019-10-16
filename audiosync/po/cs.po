@@ -17,7 +17,7 @@ msgstr ""
 msgid "%i ms"
 msgstr ""
 
-msgid "AC3 Lip Sync Setup"
+msgid "AC3 Lip Sync setup"
 msgstr "Nastavení AC3 Lip Sync"
 
 msgid "Also save delay in config?"
@@ -27,7 +27,7 @@ msgstr ""
 msgid "Audio Sync"
 msgstr "Synchronizace zvuku"
 
-msgid "Audio Sync Setup"
+msgid "Audio Sync setup"
 msgstr ""
 
 #
@@ -45,7 +45,7 @@ msgid "Change active delay"
 msgstr "Změnit aktivní zpoždění"
 
 #
-msgid "Channel audio:"
+msgid "Audio track:"
 msgstr "Audio:"
 
 msgid "Decrease delay"
@@ -136,12 +136,12 @@ msgstr "OK"
 msgid "Open plugin menu"
 msgstr "Otevřít menu pluginu"
 
-msgid "Outer Bound (+/-)"
+msgid "Outer bound (+/-)"
 msgstr "Maximální zpoždění (+/-)"
 
 #, python-format
-msgid "Plugin: %(plugin)s , Version: %(version)s"
-msgstr "Plugin: %(plugin)s , Verze: %(version)s"
+msgid "Plugin: %(plugin)s, Version: %(version)s"
+msgstr "Plugin: %(plugin)s, Verze: %(version)s"
 
 #
 msgid "Reset saved position"
@@ -184,7 +184,7 @@ msgstr "Nastavit zpoždění na %i ms (lze nastavit)"
 msgid "Setting key canceled"
 msgstr "Nastavování kláves zrušeno"
 
-msgid "Setup for the Audio Sync Plugin"
+msgid "Setup for the Audio Sync plugin"
 msgstr "Plugin pro nastavování synchronizace zvuku"
 
 msgid "Step in ms for arrow keys"
@@ -215,5 +215,5 @@ msgstr "po standby"
 msgid "disabled"
 msgstr "zakázáno"
 
-msgid "sets the Audio Delay (LipSync)"
-msgstr "nastavuje zpoždění zvuku (LipSync)"
+msgid "Sets the audio delay (LipSync)"
+msgstr "Nastavuje zpoždění zvuku (LipSync)"

@@ -19,7 +19,7 @@ msgstr ""
 msgid "%i ms"
 msgstr "%i ms"
 
-msgid "AC3 Lip Sync Setup"
+msgid "AC3 Lip Sync setup"
 msgstr "Innstilling for AC3 leppe synk"
 
 msgid "Also save delay in config?"
@@ -28,7 +28,7 @@ msgstr "Også lagre forsinkelse i innstillinger?"
 msgid "Audio Sync"
 msgstr "Lyd synk"
 
-msgid "Audio Sync Setup"
+msgid "Audio Sync setup"
 msgstr "Lyd synk innstilling"
 
 msgid "Cancel"
@@ -43,7 +43,7 @@ msgstr "Sentrer bildet øverst"
 msgid "Change active delay"
 msgstr "Endre aktiv forsinkelse"
 
-msgid "Channel audio:"
+msgid "Audio track:"
 msgstr "Kanal-lyd:"
 
 msgid "Decrease delay"
@@ -128,12 +128,12 @@ msgstr "OK"
 msgid "Open plugin menu"
 msgstr "Tilleggsmeny"
 
-msgid "Outer Bound (+/-)"
+msgid "Outer bound (+/-)"
 msgstr "Yttergrense (+/-)"
 
 #, python-format
-msgid "Plugin: %(plugin)s , Version: %(version)s"
-msgstr "Tillegg: %(plugin)s , Versjon: %(version)s"
+msgid "Plugin: %(plugin)s, Version: %(version)s"
+msgstr "Tillegg: %(plugin)s, Versjon: %(version)s"
 
 msgid "Reset saved position"
 msgstr "Nullstill lagret posisjon"
@@ -173,7 +173,7 @@ msgstr "Still forsinkelse til %i ms (kan stilles inn)"
 msgid "Setting key canceled"
 msgstr "Innstiling av tast avbrutt"
 
-msgid "Setup for the Audio Sync Plugin"
+msgid "Setup for the Audio Sync plugin"
 msgstr "Innstilling for lyd synkronisering"
 
 msgid "Step in ms for arrow keys"
@@ -202,5 +202,5 @@ msgstr "etter avslått"
 msgid "disabled"
 msgstr "frakoblet"
 
-msgid "sets the Audio Delay (LipSync)"
-msgstr "stiller inn lyd forsinkelse (Leppe synk)"
+msgid "Sets the audio delay (LipSync)"
+msgstr "Stiller inn lyd forsinkelse (Leppe synk)"
