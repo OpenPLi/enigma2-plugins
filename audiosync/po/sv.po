@@ -19,7 +19,7 @@ msgid "%i ms"
 msgstr "%i mS"
 
 #, fuzzy
-msgid "AC3 Lip Sync Setup"
+msgid "AC3 Lip Sync setup"
 msgstr "Inställning för Ljudsynk"
 
 msgid "Also save delay in config?"
@@ -28,7 +28,7 @@ msgstr ""
 msgid "Audio Sync"
 msgstr "Ljudsynk"
 
-msgid "Audio Sync Setup"
+msgid "Audio Sync setup"
 msgstr "Inställning för Ljudsynk"
 
 msgid "Cancel"
@@ -43,7 +43,7 @@ msgstr "Centrera fönstret till övre kanten"
 msgid "Change active delay"
 msgstr "Ändra aktiverad fördröjning"
 
-msgid "Channel audio:"
+msgid "Audio track:"
 msgstr "Kanalljud:"
 
 msgid "Decrease delay"
@@ -128,12 +128,12 @@ msgstr "OK"
 msgid "Open plugin menu"
 msgstr "Öppna pluginmeny"
 
-msgid "Outer Bound (+/-)"
+msgid "Outer bound (+/-)"
 msgstr "Gränsvärde (+/-)"
 
 #, python-format
-msgid "Plugin: %(plugin)s , Version: %(version)s"
-msgstr "Plugin: %(plugin)s , Version: %(version)s"
+msgid "Plugin: %(plugin)s, Version: %(version)s"
+msgstr "Plugin: %(plugin)s, Version: %(version)s"
 
 msgid "Reset saved position"
 msgstr "Återställ sparad position"
@@ -174,7 +174,7 @@ msgstr "Ange fördröjning till %i mS (kan sättas)"
 msgid "Setting key canceled"
 msgstr "Inställning av knapp avbruten"
 
-msgid "Setup for the Audio Sync Plugin"
+msgid "Setup for the Audio Sync plugin"
 msgstr "Inställning för Ljudsynkplugin"
 
 msgid "Step in ms for arrow keys"
@@ -203,5 +203,5 @@ msgstr ""
 msgid "disabled"
 msgstr ""
 
-msgid "sets the Audio Delay (LipSync)"
-msgstr "sätter ljudfördröjning (Läppsynk)"
+msgid "Sets the audio delay (LipSync)"
+msgstr "Sätter ljudfördröjning (Läppsynk)"

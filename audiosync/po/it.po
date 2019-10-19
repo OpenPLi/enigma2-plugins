@@ -24,7 +24,7 @@ msgstr ""
 msgid "%i ms"
 msgstr "%i ms"
 
-msgid "AC3 Lip Sync Setup"
+msgid "AC3 Lip Sync setup"
 msgstr "Configurare il ritardo audio AC3"
 
 msgid "Also save delay in config?"
@@ -33,7 +33,7 @@ msgstr "Salvare il ritardo nella configurazione?"
 msgid "Audio Sync"
 msgstr "Audio Sync"
 
-msgid "Audio Sync Setup"
+msgid "Audio Sync setup"
 msgstr "Configurazione sincronismo audio"
 
 msgid "Cancel"
@@ -48,7 +48,7 @@ msgstr "Centrare la finestra al bordo superiore"
 msgid "Change active delay"
 msgstr "Cambiare il ritardo corrente"
 
-msgid "Channel audio:"
+msgid "Audio track:"
 msgstr "Canale audio: "
 
 msgid "Decrease delay"
@@ -133,12 +133,12 @@ msgstr "OK"
 msgid "Open plugin menu"
 msgstr "Aprire il menu del plugin"
 
-msgid "Outer Bound (+/-)"
+msgid "Outer bound (+/-)"
 msgstr "Ritardo massimo (+/-)"
 
 #, python-format
-msgid "Plugin: %(plugin)s , Version: %(version)s"
-msgstr "Plugin: %(plugin)s , Versione: %(version)s"
+msgid "Plugin: %(plugin)s, Version: %(version)s"
+msgstr "Plugin: %(plugin)s, Versione: %(version)s"
 
 msgid "Reset saved position"
 msgstr "Reimpostare la posizione salvata"
@@ -178,7 +178,7 @@ msgstr "Regolare il ritardo a %i ms (configurabili)"
 msgid "Setting key canceled"
 msgstr "Configurazione tasto annullata!"
 
-msgid "Setup for the Audio Sync Plugin"
+msgid "Setup for the Audio Sync plugin"
 msgstr "Configurazione plugin Audio Sync"
 
 msgid "Step in ms for arrow keys"
@@ -207,5 +207,5 @@ msgstr "Dopo la sospensione"
 msgid "disabled"
 msgstr "Disabilitato"
 
-msgid "sets the Audio Delay (LipSync)"
+msgid "Sets the audio delay (LipSync)"
 msgstr "Configurare il ritardo audio (LipSync)"

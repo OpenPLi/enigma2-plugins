@@ -20,7 +20,7 @@ msgstr ""
 msgid "%i ms"
 msgstr "%i ms"
 
-msgid "AC3 Lip Sync Setup"
+msgid "AC3 Lip Sync setup"
 msgstr "AC3 Lip Sync podešavanje"
 
 msgid "Also save delay in config?"
@@ -31,7 +31,7 @@ msgid "Audio Sync"
 msgstr "AC3 Lip Sync"
 
 #, fuzzy
-msgid "Audio Sync Setup"
+msgid "Audio Sync setup"
 msgstr "AC3 Lip Sync podešavanje"
 
 msgid "Cancel"
@@ -46,7 +46,7 @@ msgstr ""
 msgid "Change active delay"
 msgstr ""
 
-msgid "Channel audio:"
+msgid "Audio track:"
 msgstr "Audio kanal: "
 
 #, fuzzy
@@ -133,11 +133,11 @@ msgstr "OK"
 msgid "Open plugin menu"
 msgstr ""
 
-msgid "Outer Bound (+/-)"
+msgid "Outer bound (+/-)"
 msgstr "Krajnje ograničen (+/-)"
 
 #, python-format
-msgid "Plugin: %(plugin)s , Version: %(version)s"
+msgid "Plugin: %(plugin)s, Version: %(version)s"
 msgstr ""
 
 msgid "Reset saved position"
@@ -183,7 +183,7 @@ msgid "Setting key canceled"
 msgstr "Podešavanje tipke otkazano"
 
 #, fuzzy
-msgid "Setup for the Audio Sync Plugin"
+msgid "Setup for the Audio Sync plugin"
 msgstr "Podešavanje AC3 Lip Sync dodatka"
 
 msgid "Step in ms for arrow keys"
@@ -213,5 +213,5 @@ msgid "disabled"
 msgstr ""
 
 #, fuzzy
-msgid "sets the Audio Delay (LipSync)"
-msgstr "podešava  AC3 audio kašnjenje (LipSync)"
+msgid "Sets the audio delay (LipSync)"
+msgstr "Podešava AC3 audio kašnjenje (LipSync)"

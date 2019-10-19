@@ -20,7 +20,7 @@ msgid "%i ms"
 msgstr ""
 
 #, fuzzy
-msgid "AC3 Lip Sync Setup"
+msgid "AC3 Lip Sync setup"
 msgstr "راه اندازی هم زمان سازی صدا"
 
 msgid "Also save delay in config?"
@@ -29,7 +29,7 @@ msgstr ""
 msgid "Audio Sync"
 msgstr "هم زمان سازی صدا"
 
-msgid "Audio Sync Setup"
+msgid "Audio Sync setup"
 msgstr "راه اندازی هم زمان سازی صدا"
 
 msgid "Cancel"
@@ -44,7 +44,7 @@ msgstr "حرکت دادن صفحه به بالاتر از حد مرز بالای
 msgid "Change active delay"
 msgstr "تغییر تاخیر فعالیت ها"
 
-msgid "Channel audio:"
+msgid "Audio track:"
 msgstr "کانال های صوتی"
 
 msgid "Decrease delay"
@@ -129,11 +129,11 @@ msgstr "مورد تایید است"
 msgid "Open plugin menu"
 msgstr "باز کردن منو پلاگین"
 
-msgid "Outer Bound (+/-)"
+msgid "Outer bound (+/-)"
 msgstr "(+/-) سرحد بیرونی"
 
 #, python-format
-msgid "Plugin: %(plugin)s , Version: %(version)s"
+msgid "Plugin: %(plugin)s, Version: %(version)s"
 msgstr ""
 
 msgid "Reset saved position"
@@ -175,7 +175,7 @@ msgstr ""
 msgid "Setting key canceled"
 msgstr "تنظیمات کلیدها لغو گردید"
 
-msgid "Setup for the Audio Sync Plugin"
+msgid "Setup for the Audio Sync plugin"
 msgstr "راه اندازی پلاگین هم زمان سازی صدا "
 
 msgid "Step in ms for arrow keys"
@@ -204,5 +204,5 @@ msgstr ""
 msgid "disabled"
 msgstr ""
 
-msgid "sets the Audio Delay (LipSync)"
+msgid "Sets the audio delay (LipSync)"
 msgstr " (LipSync) تنظیم تاخیر صدا بر حسب"

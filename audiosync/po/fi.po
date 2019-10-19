@@ -17,7 +17,7 @@ msgstr ""
 msgid "%i ms"
 msgstr ""
 
-msgid "AC3 Lip Sync Setup"
+msgid "AC3 Lip Sync setup"
 msgstr "AC3 Lip Sync -asetukset"
 
 msgid "Also save delay in config?"
@@ -27,7 +27,7 @@ msgid "Audio Sync"
 msgstr ""
 
 #, fuzzy
-msgid "Audio Sync Setup"
+msgid "Audio Sync setup"
 msgstr "AC3 Lip Sync -asetukset"
 
 msgid "Cancel"
@@ -42,7 +42,7 @@ msgstr ""
 msgid "Change active delay"
 msgstr ""
 
-msgid "Channel audio:"
+msgid "Audio track:"
 msgstr "Ääniraita:"
 
 #, fuzzy
@@ -129,11 +129,11 @@ msgstr ""
 msgid "Open plugin menu"
 msgstr ""
 
-msgid "Outer Bound (+/-)"
+msgid "Outer bound (+/-)"
 msgstr ""
 
 #, python-format
-msgid "Plugin: %(plugin)s , Version: %(version)s"
+msgid "Plugin: %(plugin)s, Version: %(version)s"
 msgstr ""
 
 msgid "Reset saved position"
@@ -179,7 +179,7 @@ msgid "Setting key canceled"
 msgstr "Näppäimen määritys keskeytetty"
 
 #, fuzzy
-msgid "Setup for the Audio Sync Plugin"
+msgid "Setup for the Audio Sync plugin"
 msgstr "AC3 Lip Sync -lisäosan asetukset"
 
 msgid "Step in ms for arrow keys"
@@ -209,5 +209,5 @@ msgid "disabled"
 msgstr ""
 
 #, fuzzy
-msgid "sets the Audio Delay (LipSync)"
-msgstr "säätää ääniviivettä (lipsync)"
+msgid "Sets the audio delay (LipSync)"
+msgstr "Säätää ääniviivettä (lipsync)"

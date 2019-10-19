@@ -13,20 +13,20 @@ import AC3setup
 import os
 
 config.plugins.AC3LipSync = ConfigSubsection()
-config.plugins.AC3LipSync.outerBounds = ConfigInteger(default = 1000, limits = (-10000,10000))
-config.plugins.AC3LipSync.arrowStepSize = ConfigInteger(default = 5, limits = (-10000,10000))
-config.plugins.AC3LipSync.activationDelay = ConfigInteger(default = 800, limits = (-10000,10000))
-config.plugins.AC3LipSync.stepSize13 = ConfigInteger(default = 50, limits = (-10000,10000))
-config.plugins.AC3LipSync.stepSize46 = ConfigInteger(default = 200, limits = (-10000,10000))
-config.plugins.AC3LipSync.stepSize79 = ConfigInteger(default = 500, limits = (-10000,10000))
-config.plugins.AC3LipSync.absoluteStep2 = ConfigInteger(default = 0, limits = (-10000,10000))
-config.plugins.AC3LipSync.absoluteStep5 = ConfigInteger(default = 0, limits = (-10000,10000))
-config.plugins.AC3LipSync.absoluteStep8 = ConfigInteger(default = 0, limits = (-10000,10000))
+config.plugins.AC3LipSync.outerBounds = ConfigInteger(default=1000, limits=(-10000, 10000))
+config.plugins.AC3LipSync.arrowStepSize = ConfigInteger(default=5, limits=(-10000, 10000))
+config.plugins.AC3LipSync.activationDelay = ConfigInteger(default=800, limits=(-10000, 10000))
+config.plugins.AC3LipSync.stepSize13 = ConfigInteger(default=50, limits=(-10000, 10000))
+config.plugins.AC3LipSync.stepSize46 = ConfigInteger(default=200, limits=(-10000, 10000))
+config.plugins.AC3LipSync.stepSize79 = ConfigInteger(default=500, limits=(-10000, 10000))
+config.plugins.AC3LipSync.absoluteStep2 = ConfigInteger(default=0, limits=(-10000, 10000))
+config.plugins.AC3LipSync.absoluteStep5 = ConfigInteger(default=0, limits=(-10000, 10000))
+config.plugins.AC3LipSync.absoluteStep8 = ConfigInteger(default=0, limits=(-10000, 10000))
 config.plugins.AC3LipSync.position_x = ConfigInteger(default=0)
 config.plugins.AC3LipSync.position_y = ConfigInteger(default=0)
 
-config.plugins.AC3LipSync.restartSelection = ConfigSelection( default = "disabled", choices = [("disabled", _("disabled")), ("restart", _("after restart")), ("standby", _("after standby")), ("both", _("after restart/standby"))])
-config.plugins.AC3LipSync.restartDelay = ConfigInteger(default = 10, limits = (0,30))
+config.plugins.AC3LipSync.restartSelection = ConfigSelection(default="disabled", choices=[("disabled", _("disabled")), ("restart", _("after restart")), ("standby", _("after standby")), ("both", _("after restart/standby"))])
+config.plugins.AC3LipSync.restartDelay = ConfigInteger(default=10, limits=(0, 30))
 
 audio_restart = None
 Session = None
@@ -44,7 +44,7 @@ def getServiceDict():
 		file = cfg.readlines()
 		cfg.close()
 		for line in file:
-			line = line.split() 
+			line = line.split()
 			if len(line) == 2:
 				filename[line[0]] = (line[0], line[1])
 	return filename
@@ -63,7 +63,7 @@ class AudioRestart():
 		self.activateTimer = eTimer()
 		self.activateTimer.callback.append(self.restartAudio)
 		if config.plugins.AC3LipSync.restartSelection.value in ["standby", "both"]:
-			config.misc.standbyCounter.addNotifier(self.enterStandby, initial_call = False)
+			config.misc.standbyCounter.addNotifier(self.enterStandby, initial_call=False)
 		if config.plugins.AC3LipSync.restartSelection.value in ["restart", "both"]:
 			self.startTimer()
 
@@ -78,7 +78,7 @@ class AudioRestart():
 
 	def startTimer(self):
 		self.intDelay = config.plugins.AC3LipSync.restartDelay.value * 1000
-		print "[AudioSync] audio restart in ",self.intDelay
+		print "[AudioSync] audio restart in ", self.intDelay
 		self.activateTimer.start(self.intDelay, True)
 
 	def restartAudio(self):
@@ -111,7 +111,7 @@ class audioDelay(Screen):
 		self.newService = False
 		self.updateDelay = False
 		self.ServiceDelay = getServiceDict()
-		self.__event_tracker = ServiceEventTracker(screen = self, eventmap =
+		self.__event_tracker = ServiceEventTracker(screen=self, eventmap=
 			{
 				iPlayableService.evUpdatedInfo: self.__audiodelayUpdatedInfo,
 				iPlayableService.evStart: self.__audiodelayStart,
@@ -179,9 +179,9 @@ def audioMenu(session, **kwargs):
 	import AC3main
 	session.open(AC3main.AC3LipSync, plugin_path)
 
-def Plugins(path,**kwargs):
+def Plugins(path, **kwargs):
 	global plugin_path
 	plugin_path = path
-	return [ PluginDescriptor(name=_("Audio Sync Setup"), description=_("Setup for the Audio Sync Plugin"), icon = "AudioSync.png", where = PluginDescriptor.WHERE_PLUGINMENU, fnc=setup),
-		PluginDescriptor(name=_("Audio Sync"), description=_("sets the Audio Delay (LipSync)"), where = PluginDescriptor.WHERE_AUDIOMENU, fnc=audioMenu),
-		PluginDescriptor(where = [PluginDescriptor.WHERE_SESSIONSTART, PluginDescriptor.WHERE_AUTOSTART], fnc=autostart)]
+	return [PluginDescriptor(name=_("Audio Sync setup"), description=_("Setup for the Audio Sync plugin"), icon="AudioSync.png", where=PluginDescriptor.WHERE_PLUGINMENU, fnc=setup),
+		PluginDescriptor(name=_("Audio Sync"), description=_("Sets the audio delay (LipSync)"), where=PluginDescriptor.WHERE_AUDIOMENU, fnc=audioMenu),
+		PluginDescriptor(where=[PluginDescriptor.WHERE_SESSIONSTART, PluginDescriptor.WHERE_AUTOSTART], fnc=autostart)]
