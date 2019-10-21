@@ -246,6 +246,7 @@ class AutoMount():
 							tmpcmd = "mount -t cifs -o %s '//%s/%s' '%s'" % (options, host, data['sharedir'], path)
 							command = tmpcmd.encode("UTF-8")
 							print "[AutoMount.py] CIFS MOUNTCMD--->",command
+							self.MountConsole.ePopen(command, self.CheckMountPointFinished, [data, callback])
 
 						else:
 							# loop over the version and security options
