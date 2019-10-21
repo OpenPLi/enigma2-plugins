@@ -269,13 +269,14 @@ class AutoMount():
 									# record these options
 									self.automounts[item]['options'] = secver + data['options']
 									self.writeMountsConfig()
+									# finish the mount
+									self.CheckMountPointFinished(command ,ret, [data, callback])
 									# and terminate the loop
 									break
 
 				except Exception, ex:
 						print "[AutoMount.py] Failed to create", path, "Error:", ex
 
-		self.CheckMountPointFinished(None,None, [data, callback])
 
 	def CheckMountPointFinished(self, result, retval, extra_args):
 		print "[AutoMount.py] CheckMountPointFinished",result,retval
