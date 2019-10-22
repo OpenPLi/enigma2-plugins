@@ -730,7 +730,7 @@ int main(int argc, char* argv[])
     suff = 0;
   } else {
     outname = inname;
-    suff = (replace ? "_" : " cut");
+    suff = (replace ? " tmpcut" : " cut");
   }
   tmpname = makefilename(inname, 0, ".ts", 0);
   f_ts = open(tmpname, O_RDONLY | O_LARGEFILE);
