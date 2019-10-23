@@ -220,9 +220,6 @@ class AutoMount():
 					if not os.path.exists(path):
 						os.makedirs(path)
 
-					# validate and client the mount options
-					options = self.sanitizeOptions(data['options'], data['mounttype'], data['username'].replace(" ", "\\ "), data['password'])
-
 					# determine the host for this mount
 					host = data['ip']
 					if not host:
@@ -230,14 +227,19 @@ class AutoMount():
 
 					# NFS
 					if data['mounttype'] == 'nfs':
-							# construct the NFS mount command, and mount it
-							tmpcmd = "mount -t nfs -o %s '%s' '%s'" % (options, host + ':/' + data['sharedir'], path)
-							command = tmpcmd.encode("UTF-8")
-							print "[AutoMount.py] NFS MOUNTCMD--->",command
-							self.MountConsole.ePopen(command, self.CheckMountPointFinished, [data, callback])
+						# validate and client the mount options
+						options = self.sanitizeOptions(data['options'], data['mounttype'])
+
+						# construct the NFS mount command, and mount it
+						tmpcmd = "mount -t nfs -o %s '%s' '%s'" % (options, host + ':/' + data['sharedir'], path)
+						command = tmpcmd.encode("UTF-8")
+						print "[AutoMount.py] NFS MOUNTCMD--->",command
+						self.MountConsole.ePopen(command, self.CheckMountPointFinished, [data, callback])
 
 					# CIFS
 					elif data['mounttype'] == 'cifs':
+						# validate and client the mount options
+						options = self.sanitizeOptions(data['options'], data['mounttype'], data['username'].replace(" ", "\\ "), data['password'])
 
 						# version and/or security level given?
 						if "vers=" in options or "sec=" in options:
