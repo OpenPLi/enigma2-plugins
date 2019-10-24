@@ -4,13 +4,13 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-12-29 00:28+0100\n"
 "PO-Revision-Date: \n"
-"Last-Translator: athoik\n"
+"Last-Translator: MCelliotG <mcelliotg@gmail.com>\n"
 "Language-Team: satdreamgr <satdreamgr.com>\n"
 "Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.7\n"
+"X-Generator: Poedit 2.2.4\n"
 
 msgid ""
 "A mount entry with this name already exists!\n"
@@ -30,7 +30,7 @@ msgstr ""
 "Μη ενεργό"
 
 msgid "Add a new NFS or CIFS mount point to your Receiver."
-msgstr "Προσθήκη μίας νέας προσάρτησης NFS ή CIFS στο Receiver."
+msgstr "Προσθήκη μίας νέας προσάρτησης NFS ή CIFS στο δέκτη σας."
 
 msgid "Add new network mount point"
 msgstr "Προσθήκη νέου σημείου προσάρτησης"
@@ -38,13 +38,16 @@ msgstr "Προσθήκη νέου σημείου προσάρτησης"
 msgid ""
 "Are you sure you want to save this network mount?\n"
 "\n"
-msgstr "Σίγουρα θέλετε να αποθηκευτεί αυτό το σημείο προσάρτησης;\n"
+msgstr ""
+"Θέλετε σίγουρα να αποθηκευτεί αυτό το σημείο προσάρτησης;\n"
+"\n"
+"\n"
 
 msgid "Attempt to mount shares again"
 msgstr "Προσπάθεια επαναπροσάρτησης των κοινόχρηστων στοιχείων"
 
 msgid "Attempt to recover lost mounts (in background)"
-msgstr "Προσπάθεια επαναφοράς των χαμένων προσαρτήσεων (στο παρασκήνιο) "
+msgstr "Προσπάθεια επαναφοράς των χαμένων προσαρτήσεων (στο παρασκήνιο)"
 
 msgid "Browse network neighbourhood"
 msgstr "Αναζήτηση στο οικείο δίκτυο"
@@ -59,7 +62,7 @@ msgid "Change hostname"
 msgstr "Αλλαγή ονόματος συσκευής δικτύου"
 
 msgid "Change the hostname of your Receiver."
-msgstr "Αλλαγή ονόματος δικτύου του Receiver."
+msgstr "Αλλαγή του ονόματος δικτύου του δέκτη σας."
 
 msgid "Close"
 msgstr "Κλείσιμο"
@@ -80,13 +83,13 @@ msgid "Enter IP to scan..."
 msgstr "Εισάγετε IP προς ανίχνευση..."
 
 msgid "Enter new hostname for your Receiver"
-msgstr "Εισαγωγή νέου ονόματος δικτύου του Receiver"
+msgstr "Εισαγωγή του νέου ονόματος δικτύου του δέκτη σας"
 
 msgid "Enter password:"
 msgstr "Εισαγωγή κωδικού:"
 
 msgid "Enter user and password for host: "
-msgstr "Εισαγωγή χρήστη και κωδικού για τη συσκευή: "
+msgstr "Εισαγωγή χρήστη και κωδικού για τη συσκευή δικτύου: "
 
 msgid "Enter username:"
 msgstr "Εισαγωγή ονόματος χρήστη:"
@@ -98,10 +101,10 @@ msgid "Finished restarting your network"
 msgstr "Ολοκλήρωση επανεκκίνησης δικτύου"
 
 msgid "Host name"
-msgstr ""
+msgstr "Όνομα συσκευής δικτύου (host)"
 
 msgid "Host:"
-msgstr ""
+msgstr "Συσκευή δικτύου:"
 
 msgid "IP Address"
 msgstr "Διεύθυνση IP"
@@ -110,13 +113,13 @@ msgid "IP:"
 msgstr "IP:"
 
 msgid "Local mountpoint"
-msgstr ""
+msgstr "Τοπικό σημείο προσάρτησης"
 
 msgid "Manage network shares"
 msgstr "Διαχείριση κοινόχρηστων στοιχείων στο δίκτυο"
 
 msgid "Manage your network shares..."
-msgstr "Διαχείριση κοινόχρηστων στοιχείων στο δίκτυο..."
+msgstr "Διαχείριση των κοινόχρηστων στοιχείων στο δίκτυο..."
 
 msgid "Mount again"
 msgstr "Προσάρτηση ξανά"
@@ -130,9 +133,8 @@ msgstr "Επιλογές προσάρτησης"
 msgid "Mount type"
 msgstr "Τύπος προσάρτησης"
 
-#, fuzzy
 msgid "Mount view"
-msgstr "Τύπος προσάρτησης"
+msgstr "Επισκόπηση προσαρτήσεων"
 
 msgid "MountManager"
 msgstr "Διαχείριση προσαρτήσεων"
@@ -157,7 +159,7 @@ msgid "NFS share"
 msgstr "Κοινόχρηστο στοιχείο NFS"
 
 msgid "NetworkBrowser"
-msgstr "Πλοηγός Δικτύου"
+msgstr "Πλοηγός δικτύου"
 
 msgid "No network devices found!"
 msgstr "Δεν βρέθηκαν συσκευές δικτύου!"
@@ -175,7 +177,7 @@ msgid "Please wait while updating your network mount..."
 msgstr "Παρακαλώ περιμένετε να ενημερωθεί η προσάρτηση..."
 
 msgid "Please wait while your network is restarting..."
-msgstr "Παρακαλώ περιμένετε να επανεκκινηθεί η προσάρτηση"
+msgstr "Παρακαλώ περιμένετε καθώς γίνεται επανεκκίνηση του δικτύου σας..."
 
 msgid "Press OK to activate the settings."
 msgstr "Πιέστε ΟΚ για ενεργοποίηση των ρυθμίσεων."
@@ -208,19 +210,19 @@ msgid "Rescan"
 msgstr "Επανασάρωση"
 
 msgid "Scan NFS share"
-msgstr "Ανίχνευση κοινόχρηστων NFS"
+msgstr "Ανίχνευση κοινόχρηστων στοιχείων NFS"
 
 msgid "Scan range"
-msgstr "Ανίχνευση κλίμακας"
+msgstr "Ανίχνευση εύρους"
 
 msgid "Search for network shares"
-msgstr "Ανίχνευση για κοινόχρηστα στοιχεία"
+msgstr "Αναζήτηση για κοινόχρηστα στοιχεία"
 
 msgid "Search for network shares..."
-msgstr "Ανίχνευση για κοινόχρηστα στοιχεία..."
+msgstr "Αναζήτηση για κοινόχρηστα στοιχεία..."
 
 msgid "Searching your network. Please wait..."
-msgstr "Ανίχνευση στο δίκτυο. Παρακαλώ περιμένετε..."
+msgstr "Αναζήτηση στο δίκτυο. Παρακαλώ περιμένετε..."
 
 msgid "Server IP"
 msgstr "IP διακομιστή"
@@ -238,7 +240,7 @@ msgid "Username"
 msgstr "Όνομα χρήστη"
 
 msgid "View, edit or delete mountpoints on your Receiver."
-msgstr "Επισκόπηση, επεξεργασία ή διαγραφή προσαρτήσεων στο Receiver."
+msgstr "Επισκόπηση, επεξεργασία ή διαγραφή προσαρτήσεων στο δέκτη σας."
 
 msgid "View, edit or delete usernames and passwords for your network."
 msgstr "Επισκόπηση, επεξεργασία ή διαγραφή ονομάτων και κωδικών στο δίκτυο."
@@ -253,4 +255,4 @@ msgid "Your network mount has been updated."
 msgstr "Η προσάρτηση δικτύου ενημερώθηκε."
 
 msgid "use as HDD replacement"
-msgstr "χρήση ως HDD"
+msgstr "Χρήση ως σκληρός δίσκος"
