@@ -30,7 +30,7 @@ msgstr ""
 "Μη ενεργό"
 
 msgid "Add a new NFS or CIFS mount point to your Receiver."
-msgstr "Προσθήκη μίας νέας προσάρτησης NFS ή CIFS στο δέκτη σας."
+msgstr "Προσθήκη μίας νέας προσάρτησης NFS ή CIFS στον δέκτη σας."
 
 msgid "Add new network mount point"
 msgstr "Προσθήκη νέου σημείου προσάρτησης"
@@ -213,7 +213,7 @@ msgid "Scan NFS share"
 msgstr "Ανίχνευση κοινόχρηστων στοιχείων NFS"
 
 msgid "Scan range"
-msgstr "Ανίχνευση εύρους"
+msgstr "Εύρος ανίχνευσης"
 
 msgid "Search for network shares"
 msgstr "Αναζήτηση για κοινόχρηστα στοιχεία"
@@ -240,7 +240,7 @@ msgid "Username"
 msgstr "Όνομα χρήστη"
 
 msgid "View, edit or delete mountpoints on your Receiver."
-msgstr "Επισκόπηση, επεξεργασία ή διαγραφή προσαρτήσεων στο δέκτη σας."
+msgstr "Επισκόπηση, επεξεργασία ή διαγραφή προσαρτήσεων στον δέκτη σας."
 
 msgid "View, edit or delete usernames and passwords for your network."
 msgstr "Επισκόπηση, επεξεργασία ή διαγραφή ονομάτων και κωδικών στο δίκτυο."
