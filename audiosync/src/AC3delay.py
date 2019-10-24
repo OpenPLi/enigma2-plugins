@@ -5,6 +5,7 @@ from Tools.ISO639 import LanguageCodes
 from Tools.HardwareInfo import HardwareInfo
 import os
 import NavigationInstance
+from __init__ import _
 
 class AC3delay:
 	def __init__(self):
@@ -167,14 +168,26 @@ class AC3delay:
 			self.selectedAudioIndex = oAudioTracks.getCurrentTrack()
 			for x in range(n):
 				i = oAudioTracks.getTrackInfo(x)
-				language = i.getLanguage()
-				description = i.getDescription()
-				if LanguageCodes.has_key(language):
-					language = LanguageCodes[language][0]
-				if len(description):
+				languages = i.getLanguage().split('/')
+				description = i.getDescription() or ""
+				language = ""
+
+				cnt = 0
+				for lang in languages:
+					if cnt:
+						language += ' / '
+					if lang in LanguageCodes:
+						language += _(LanguageCodes[lang][0])
+					elif lang == "und":
+						""
+					else:
+						language += lang
+					cnt += 1
+
+				if description and language:
 					description += " (" + language + ")"
 				else:
-					description = language
+					description += language # one of them is not available
 
 				tlist.append((description, x))
 				if x == self.selectedAudioIndex:
