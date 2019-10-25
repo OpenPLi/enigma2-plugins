@@ -10,12 +10,12 @@ from ServiceReference import ServiceReference
 from Components.config import config
 from Tools.FuzzyDate import FuzzyTime
 from time import localtime, time, strftime, mktime
-from Tools.Directories import resolveFilename, SCOPE_SKIN_IMAGE, SCOPE_CURRENT_SKIN
+from Tools.Directories import resolveFilename, SCOPE_CURRENT_SKIN
 from skin import parseColor, parseFont
 
 from enigma import getDesktop
 HD = False
-if getDesktop(0).size().width() >= 1280:
+if getDesktop(0).size().width() > 1280:
 	HD = True
 
 class DAYS:
@@ -45,10 +45,10 @@ class AutoTimerList(MenuList):
 			self.l.setFont(0, gFont("Regular", 28 if HD else 20))
 			self.l.setFont(1, gFont("Regular", 22 if HD else 17))
 			self.l.setItemHeight(95 if HD else 70)
-			self.iconDisabled = LoadPixmap(resolveFilename(SCOPE_SKIN_IMAGE, "icons/lock_off.png"))
-			self.iconEnabled = LoadPixmap(resolveFilename(SCOPE_SKIN_IMAGE, "icons/lock_on.png"))
-			self.iconRecording = LoadPixmap(resolveFilename(SCOPE_SKIN_IMAGE, "icons/timer_rec.png"))
-			self.iconZapped = LoadPixmap(resolveFilename(SCOPE_SKIN_IMAGE, "icons/timer_zap.png"))
+			self.iconDisabled = LoadPixmap(resolveFilename(SCOPE_CURRENT_SKIN, "icons/lock_off.png"))
+			self.iconEnabled = LoadPixmap(resolveFilename(SCOPE_CURRENT_SKIN, "icons/lock_on.png"))
+			self.iconRecording = LoadPixmap(resolveFilename(SCOPE_CURRENT_SKIN, "icons/timer_rec.png"))
+			self.iconZapped = LoadPixmap(resolveFilename(SCOPE_CURRENT_SKIN, "icons/timer_zap.png"))
 			self.colorDisabled = 12368828
 
 	def applySkin(self, desktop, parent):
@@ -107,7 +107,7 @@ class AutoTimerList(MenuList):
 			width = self.l.getItemSize().width()
 			res = [ None ]
 			x = (2*width) // 3
-			res.append((eListboxPythonMultiContent.TYPE_TEXT, 52, 2, x-26, 32 if HD else 25, 0, RT_HALIGN_LEFT|RT_VALIGN_BOTTOM, timer.name))
+			res.append((eListboxPythonMultiContent.TYPE_TEXT, 76 if HD else 52, 4 if HD else 2, x-26, 32 if HD else 25, 0, RT_HALIGN_LEFT|RT_VALIGN_BOTTOM, timer.name))
 			res.append((eListboxPythonMultiContent.TYPE_TEXT, 2, 68 if HD else 47 , width-4, 25, 1, RT_HALIGN_LEFT|RT_VALIGN_BOTTOM, channel))
 
 			if timer.include[3]:
@@ -148,11 +148,17 @@ class AutoTimerList(MenuList):
 				begin = strftime("%a, %d %b", localtime(timer.getTimeframeBegin()))
 				end = strftime("%a, %d %b", localtime(timer.getTimeframeEnd()))
 				timespan = (("%s ... %s") % (begin, end))
-				res.append((eListboxPythonMultiContent.TYPE_TEXT, 2, 38 if HD else 25, float(width)/10*4.5-5, 25, 1, RT_HALIGN_LEFT|RT_VALIGN_BOTTOM, timespan))
+				res.append((eListboxPythonMultiContent.TYPE_TEXT, 2, 40 if HD else 25, float(width)/10*4.5-5, 25, 1, RT_HALIGN_LEFT|RT_VALIGN_BOTTOM, timespan))
 
 			if icon:
-				res.append((eListboxPythonMultiContent.TYPE_PIXMAP_ALPHATEST, 2, 2, 24, 25, icon))
-			res.append((eListboxPythonMultiContent.TYPE_PIXMAP_ALPHATEST, 28, 5, 24, 25, rectypeicon))
+				if HD:
+					res.append((eListboxPythonMultiContent.TYPE_PIXMAP_ALPHATEST, 2, -1, 36, 36, icon))
+				else:
+					res.append((eListboxPythonMultiContent.TYPE_PIXMAP_ALPHATEST, 2, 3, 24, 25, icon))
+			if HD:
+				res.append((eListboxPythonMultiContent.TYPE_PIXMAP_ALPHATEST, 38, 4, 30, 30, rectypeicon))
+			else:
+				res.append((eListboxPythonMultiContent.TYPE_PIXMAP_ALPHATEST, 28, 5, 25, 24, rectypeicon))
 			devide = LoadPixmap(resolveFilename(SCOPE_CURRENT_SKIN, "div-h.png"))
 			res.append((eListboxPythonMultiContent.TYPE_PIXMAP_ALPHATEST, 0, height-2, width, 1, devide))
 			return res
