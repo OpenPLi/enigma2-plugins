@@ -151,14 +151,8 @@ class AutoTimerList(MenuList):
 				res.append((eListboxPythonMultiContent.TYPE_TEXT, 2, 40 if HD else 25, float(width)/10*4.5-5, 25, 1, RT_HALIGN_LEFT|RT_VALIGN_BOTTOM, timespan))
 
 			if icon:
-				if HD:
-					res.append((eListboxPythonMultiContent.TYPE_PIXMAP_ALPHATEST, 2, -1, 36, 36, icon))
-				else:
-					res.append((eListboxPythonMultiContent.TYPE_PIXMAP_ALPHATEST, 2, 3, 24, 25, icon))
-			if HD:
-				res.append((eListboxPythonMultiContent.TYPE_PIXMAP_ALPHATEST, 38, 4, 30, 30, rectypeicon))
-			else:
-				res.append((eListboxPythonMultiContent.TYPE_PIXMAP_ALPHATEST, 28, 5, 25, 24, rectypeicon))
+				res.append((eListboxPythonMultiContent.TYPE_PIXMAP_ALPHATEST, 2, -1 if HD else 3, 36 if HD else 24, 36 if HD else 25, icon))
+			res.append((eListboxPythonMultiContent.TYPE_PIXMAP_ALPHATEST, 38 if HD else 28, 4 if HD else 5, 30 if HD else 24, 30 if HD else 25, rectypeicon))
 			devide = LoadPixmap(resolveFilename(SCOPE_CURRENT_SKIN, "div-h.png"))
 			res.append((eListboxPythonMultiContent.TYPE_PIXMAP_ALPHATEST, 0, height-2, width, 1, devide))
 			return res
