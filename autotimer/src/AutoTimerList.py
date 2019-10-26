@@ -44,10 +44,12 @@ class AutoTimerList(MenuList):
 			font = skin.fonts.get("AutotimerListExt1", ("Regular", 17, 70))
 			self.l.setFont(1, gFont(font[0], font[1]))
 			self.l.setItemHeight(int(font[2]))
-			self.iconDisabled = LoadPixmap(resolveFilename(SCOPE_CURRENT_SKIN, "icons/lock_off.png"))
-			self.iconEnabled = LoadPixmap(resolveFilename(SCOPE_CURRENT_SKIN, "icons/lock_on.png"))
-			self.iconRecording = LoadPixmap(resolveFilename(SCOPE_CURRENT_SKIN, "icons/timer_rec.png"))
-			self.iconZapped = LoadPixmap(resolveFilename(SCOPE_CURRENT_SKIN, "icons/timer_zap.png"))
+
+			(iconEnabled, iconDisabled, iconRecording, iconZapped) = skin.parameters.get("AutotimerListIcons",("icons/lock_on.png","icons/lock_off.png","icons/timer_rec.png","icons/timer_zap.png"))
+			self.iconEnabled = LoadPixmap(resolveFilename(SCOPE_CURRENT_SKIN, iconEnabled))
+			self.iconDisabled = LoadPixmap(resolveFilename(SCOPE_CURRENT_SKIN, iconDisabled))
+			self.iconRecording = LoadPixmap(resolveFilename(SCOPE_CURRENT_SKIN, iconRecording))
+			self.iconZapped = LoadPixmap(resolveFilename(SCOPE_CURRENT_SKIN, iconZapped))
 			self.colorDisabled = 12368828
 
 	def applySkin(self, desktop, parent):
