@@ -1554,7 +1554,7 @@ msgstr "De omschrijving begint met"
 
 #, python-format
 msgid "unable to find timer with id %i"
-msgstr "kan geen timer vinden met id % i"
+msgstr "kan geen timer vinden met id %i"
 
 msgid "unknown"
 msgstr "onbekend"
