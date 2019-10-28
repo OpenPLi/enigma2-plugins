@@ -3,132 +3,134 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MovieCut\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-11 10:58+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"POT-Creation-Date: 2019-05-25 08:39+0200\n"
+"PO-Revision-Date: 2019-09-29 13:03+0200\n"
+"Last-Translator: Frenske <voorzitter@openpli.org>\n"
+"Language-Team: Dutch <LL@li.org>\n"
+"Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2.3\n"
 
 msgid "Advanced cut specification..."
-msgstr ""
+msgstr "Uitgebreide specificaties om te knippen in de film ..."
 
 #, python-format
 msgid ""
 "Another movie is currently cut.\n"
 "The movie \"%s\" will be cut in the background after it."
 msgstr ""
+"Een andere film is momenteel in bewerking.\n"
+"De film '%s' zal na deze opdracht in de achtergrond worden bewerkt."
 
 msgid "Bad arguments"
-msgstr ""
+msgstr "Slechte argumenten"
 
 msgid "Cancel"
-msgstr ""
+msgstr "Annuleren"
 
 msgid "Choose target folder"
-msgstr ""
+msgstr "Kies de doelmap"
 
 msgid "Couldn't open input .ap file"
-msgstr ""
+msgstr "Ik kon het input .ap bestand niet openen."
 
 msgid "Couldn't open input .cuts file"
-msgstr ""
+msgstr "Ik kon het input .cuts bestand niet openen."
 
 msgid "Couldn't open input .ts file"
-msgstr ""
+msgstr "Ik kon het input .ts bestand niet openen."
 
 msgid "Couldn't open output .ap file"
-msgstr ""
+msgstr "Ik kon het output .ap bestand niet openen."
 
 msgid "Couldn't open output .cuts file"
-msgstr ""
+msgstr "Ik kon het output .cuts bestand niet openen."
 
 msgid "Couldn't open output .ts file"
-msgstr ""
+msgstr "Ik kon het output .ts bestand niet openen."
 
 msgid "Cut Parameter Input"
-msgstr ""
+msgstr "Invoer van de snij parameters"
 
 msgid "Cut source:"
-msgstr ""
+msgstr "Bronbestand om te bewerken"
 
 msgid "Cutlist"
-msgstr ""
+msgstr "Kniplijst"
 
 msgid "Cuts (an IN OUT IN OUT ... sequence of hour:min:sec)"
-msgstr ""
+msgstr "Knipt div. gemarkeerde periodes op volgorde van uur, min, sec"
 
 #, python-format
 msgid "Cutting failed for movie \"%s\""
-msgstr ""
+msgstr "De snijbewerking is mislukt voor '%s'"
 
 #, python-format
 msgid "Cutting was aborted for movie \"%s\""
-msgstr ""
+msgstr "De snijbewerking is gestopt voor '%s'"
 
 msgid "Don't cut"
-msgstr ""
+msgstr "Doe niets en stop de applicatie."
 
 msgid "Empty .ap file"
-msgstr ""
+msgstr "Leeg .ap bestand"
 
 msgid "Execute cuts..."
-msgstr ""
+msgstr "Voer een snijbewerking uit..."
 
 #, python-format
 msgid "How would you like to cut \"%s\"?"
-msgstr ""
+msgstr "Hoe wilt u '%s' bewerken?"
 
 msgid "Manual specification"
-msgstr ""
+msgstr "Handmatige specificatie"
 
 msgid "New description:"
-msgstr ""
+msgstr "Nieuwe omschrijving"
 
 msgid "New filename:"
-msgstr ""
+msgstr "Nieuwe bestandsnaam"
 
 msgid "New location:"
-msgstr ""
+msgstr "Nieuwe locatie"
 
 msgid "New title:"
-msgstr ""
+msgstr "Nieuwe titel"
 
 msgid "No"
-msgstr ""
+msgstr "Nee"
 
 msgid "No cuts specified"
-msgstr ""
+msgstr "Geen markeringen geplaatst"
 
 msgid "OK"
-msgstr ""
+msgstr "Ok"
 
 msgid "Place the cut movie in a new file ending with \" cut\""
-msgstr ""
+msgstr "Sla de bewerkte film op met een nieuwe bestandnaam eindigend op '..cut'."
 
 msgid "Read/write error (disk full?)"
-msgstr ""
+msgstr "Lees/schrijf fout (schijf vol?)"
 
 msgid "Replace original:"
-msgstr ""
+msgstr "Vervang het origineel"
 
 msgid "Replace the original movie with the cut movie"
-msgstr ""
+msgstr "Vervang de originele film met de bewerkte film."
 
 #, python-format
 msgid "The movie \"%s\" is cut in the background."
-msgstr ""
+msgstr "De film '%s' wordt op de achtergrond bewerkt."
 
 #, python-format
 msgid "The movie \"%s\" is successfully cut"
-msgstr ""
+msgstr "De film '%s' is met succes bewerkt"
 
 msgid "Yes"
-msgstr ""
+msgstr "Ja"
