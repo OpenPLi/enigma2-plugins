@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: enigma - autotimer\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-04-26 22:24+0200\n"
-"PO-Revision-Date: 2019-10-28 09:54+0100\n"
+"PO-Revision-Date: 2019-10-28 19:07+0100\n"
 "Last-Translator: Frenske <voorzitter@openpli.org>\n"
 "Language-Team: <Benny.DeTandt@gmail.com>\n"
 "Language: nl_NL\n"
@@ -276,7 +276,7 @@ msgid "Classic"
 msgstr "Klassiek"
 
 msgid "Clear memory before auto run"
-msgstr "Wis het geheugen voor het starten "
+msgstr "Wis het geheugen voor het starten"
 
 msgid "Clone selected timer"
 msgstr "Kloon de geselecteerde Autotimer"
@@ -574,13 +574,13 @@ msgstr ""
 "verwijderd."
 
 # Nog steeds geen idee wat ik hiermee moet.
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "If this is enabled an existing timer will also be considered recording an "
 "event if it records at least 80% of the it."
 msgstr ""
-"If this is enabled an existing timer will also be considered recording an "
-"event if it records at least 80% of the it."
+"Indien geactiveerd, dan wordt een bestaande timer ook beschouwd als het "
+"opnemen van een gebeurtenis als deze ten minste 80% hiervan opneemt."
 
 msgid ""
 "If this is enabled, up on the MENU button in the multi-EPG will list of "
