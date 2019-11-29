@@ -528,7 +528,7 @@ class Blindscan(ConfigListScreen, Screen):
 		self.blindscan_Ku_band_stop_frequency = ConfigInteger(default = self.Ku_band_freq_limits["high"], limits = (self.Ku_band_freq_limits["low"]+1, self.Ku_band_freq_limits["high"]))
 		self.blindscan_C_band_start_frequency = ConfigInteger(default = 3400, limits = (3000, 4199))
 		self.blindscan_C_band_stop_frequency = ConfigInteger(default = 4200, limits = (3001, 4200))
-		self.blindscan_start_symbol = ConfigInteger(default = 2, limits = (0, 59))
+		self.blindscan_start_symbol = ConfigInteger(default = 1, limits = (0, 59))
 		self.blindscan_stop_symbol = ConfigInteger(default = 45, limits = (1, 60))
 		self.blindscan_step_mhz_tbs5925 = ConfigInteger(default = 10, limits = (1, 20))
 		self.scan_clearallservices = ConfigSelection(default = "no", choices = [("no", _("no")), ("yes", _("yes")), ("yes_hold_feeds", _("yes (keep feeds)"))])
@@ -541,7 +541,7 @@ class Blindscan(ConfigListScreen, Screen):
 			(1, _("up to 1 degree")),
 			(2, _("up to 2 degrees")),
 			(3, _("up to 3 degrees"))])
-		self.search_type = ConfigSelection(default = "services", choices = [
+		self.search_type = ConfigSelection(default = "transponders", choices = [
 			("services", _("scan for channels")),
 			("transponders", _("scan for transponders"))])
 
