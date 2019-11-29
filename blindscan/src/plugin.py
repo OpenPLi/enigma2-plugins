@@ -123,20 +123,20 @@ _blindscans2Nims = ('TBS-5925', 'DVBS2BOX', 'M88DS3103')
 
 class BlindscanState(Screen, ConfigListScreen):
 	skin="""
-	<screen position="center,center" size="820,570" title="Satellite Blindscan">
-		<widget name="progress" position="10,5" size="800,85" font="Regular;19" />
-		<eLabel	position="10,95" size="800,1" backgroundColor="grey"/>
-		<widget name="config" position="10,102" size="524,425" font="Regular;18" />
-		<eLabel	position="544,95" size="1,440" backgroundColor="grey"/>
-		<widget name="post_action" position="554,102" size="256,140" font="Regular;19" halign="center"/>
-		<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/Blindscan/images/red.png" position="10,560" size="100,2" alphatest="on" />
-		<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/Blindscan/images/green.png" position="120,560" size="100,2" alphatest="on" />
-		<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/Blindscan/images/yellow.png" position="240,560" size="100,2" alphatest="on" />
-		<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/Blindscan/images/blue.png" position="360,560" size="100,2" alphatest="on" />
-		<widget source="key_red" render="Label" position="10,530" size="100,20" font="Regular;18" halign="center"/>
-		<widget source="key_green" render="Label" position="120,530" size="100,20" font="Regular;18" halign="center"/>
-		<widget source="key_yellow" render="Label" position="230,530" size="100,20" font="Regular;18" halign="center"/>
-		<widget source="key_blue" render="Label" position="340,530" size="100,20" font="Regular;18" halign="center"/>
+	<screen position="center,center" size="1280,900" title="Satellite Blindscan">
+		<widget name="progress" position="10,5" size="1260,170" font="Regular;28" />
+		<eLabel	position="10,175" size="1260,1" backgroundColor="grey"/>
+		<widget name="config" position="10,185" size="1260,647" font="Regular;24" />
+		<eLabel	position="1100,185" size="1,655" backgroundColor="grey"/>
+		<widget name="post_action" position="10,110" size="1260,60" zPosition="2" font="Regular;26" valign="center" halign="left"/>
+		<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/Blindscan/images/red.png" position="20,850" size="244,2" alphatest="on" />
+		<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/Blindscan/images/green.png" position="294,850" size="244,2" alphatest="on" />
+		<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/Blindscan/images/yellow.png" position="568,850" size="244,2" alphatest="on" />
+		<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/Blindscan/images/blue.png" position="842,850" size="244,2" alphatest="on" />
+		<widget source="key_red" render="Label" zPosition="2" position="20,860" size="244,26" font="Regular;24" valign="center" halign="center"/>
+		<widget source="key_green" render="Label" zPosition="2" position="294,860" size="244,26" font="Regular;24" valign="center" halign="center"/>
+		<widget source="key_yellow" render="Label" zPosition="2" position="568,860" size="244,26" font="Regular;24" valign="center" halign="center"/>
+		<widget source="key_blue" render="Label" zPosition="2" position="842,860" size="244,26" font="Regular;24" valign="center" halign="center"/>
 	</screen>
 	"""
 
