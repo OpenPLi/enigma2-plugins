@@ -179,10 +179,6 @@ class AutoMount():
 		return ",".join(options)
 
 	def CheckMountPoint(self, item, callback):
-		data = self.automounts[item]
-		if not self.MountConsole:
-			self.MountConsole = Console()
-
 		# possible CIFS version/security combinations
 		secvers = ( \
 			'vers=3,sec=ntlmssp', 'vers=3,sec=ntlmv2', 'vers=2.1,sec=ntlmssp', 'vers=2.1,sec=ntlmv2', \
@@ -190,100 +186,118 @@ class AutoMount():
 			'vers=default' \
 		)
 
+		# create a console object if it doesnt exist
+		if not self.MountConsole:
+			self.MountConsole = Console()
+
+		# fetch the config for tis mount
+		data = self.automounts[item]
+
+		# by default, no command to execute
+		command = None
+
 		# construct the mount path
 		path = os.path.join('/media/net', data['sharename'])
-
-		# current mount definition disabled?
-		if data['active'] == 'False' or data['active'] is False:
-			# unmount it if it is mounted
-			if os.path.ismount(path):
-				umountcmd = "umount -fl '%s'" % path
-				print "[AutoMount.py] UMOUNT-CMD--->",umountcmd
-				self.MountConsole.ePopen(umountcmd, self.CheckMountPointFinished, [data, callback])
 
 		# any active mounts?
 		if self.activeMountsCounter == 0:
 			# nope, nothing more to do there
-			print "self.automounts without active mounts",self.automounts
+			print "[AutoMount.py] self.automounts without active mounts", self.automounts
 
-		# current mount definition active?
-		elif data['active'] == 'True' or data['active'] is True:
-				try:
-					# something already mounted there?
-					if os.path.ismount(path):
-						# if so, unmount that first
-						umountcmd = "umount -fl '%s'" % path
-						print "[AutoMount.py] UMOUNT-CMD--->",umountcmd
-						self.MountConsole.ePopen(umountcmd, self.CheckMountPointFinished, [data, callback])
+		# current mount definition disabled?
+		if data['active'] == 'False' or data['active'] is False:
+			# unmount it
+			command = "umount -fl '%s'" % path
+			print "[AutoMount.py] UMOUNT-CMD-1 --->", command
 
-					# make sure the mount point exists
-					if not os.path.exists(path):
-						os.makedirs(path)
+		# current mount definition active
+		else:
 
-					# determine the host for this mount
+			try:
+				# unmount if something already mounted there
+				# if so, unmount that first
+				umountcmd = "umount -fl '%s'" % path
+				print "[AutoMount.py] UMOUNT-CMD-3 --->", umountcmd
+				ret = subprocess.call(umountcmd, shell=True)
+
+				# make sure the mount point exists
+				if not os.path.exists(path):
+					os.mkdir(path)
+
+				# host name goes before ip address
+				host = data['host']
+				if not host:
 					host = data['ip']
-					if not host:
-						host = data['host']
 
-					# NFS
-					if data['mounttype'] == 'nfs':
-						# validate and client the mount options
-						options = self.sanitizeOptions(data['options'], data['mounttype'])
+				# NFS
+				if data['mounttype'] == 'nfs':
+					# validate and client the mount options
+					options = self.sanitizeOptions(data['options'], data['mounttype'])
 
-						# construct the NFS mount command, and mount it
-						tmpcmd = "mount -t nfs -o %s '%s' '%s'" % (options, host + ':/' + data['sharedir'], path)
+					# construct the NFS mount command, and mount it
+					tmpcmd = "mount -t nfs -o %s '%s' '%s'" % (options, host + ':/' + data['sharedir'], path)
+					command = tmpcmd.encode("UTF-8")
+					print "[AutoMount.py] NFS MOUNT-CMD--->", command
+
+				# CIFS
+				elif data['mounttype'] == 'cifs':
+					# validate and client the mount options
+					options = self.sanitizeOptions(data['options'], data['mounttype'], data['username'].replace(" ", "\\ "), data['password'])
+
+					# version and/or security level given?
+					if "vers=" in options or "sec=" in options:
+
+						# construct the CIFS mount command
+						tmpcmd = "mount -t cifs -o %s '//%s/%s' '%s'" % (options, host, data['sharedir'], path)
 						command = tmpcmd.encode("UTF-8")
-						print "[AutoMount.py] NFS MOUNTCMD--->",command
-						self.MountConsole.ePopen(command, self.CheckMountPointFinished, [data, callback])
+						print "[AutoMount.py] CIFS MOUNT-CMD--->", command
 
-					# CIFS
-					elif data['mounttype'] == 'cifs':
-						# validate and client the mount options
-						options = self.sanitizeOptions(data['options'], data['mounttype'], data['username'].replace(" ", "\\ "), data['password'])
-
-						# version and/or security level given?
-						if "vers=" in options or "sec=" in options:
+					else:
+						# loop over the version and security options
+						for secver in secvers:
+							# add the options
+							if options:
+								secver += ','
 
 							# construct the CIFS mount command
-							tmpcmd = "mount -t cifs -o %s '//%s/%s' '%s'" % (options, host, data['sharedir'], path)
+							tmpcmd = "mount -t cifs -o %s '//%s/%s' '%s'" % (secver + options, host, data['sharedir'], path)
 							command = tmpcmd.encode("UTF-8")
-							print "[AutoMount.py] CIFS MOUNTCMD--->",command
-							self.MountConsole.ePopen(command, self.CheckMountPointFinished, [data, callback])
+							print "[AutoMount.py] CIFS AUTODETECT MOUNTCMD--->", command
 
-						else:
-							# loop over the version and security options
-							for secver in secvers:
-								# add the options
-								if options:
-									secver += ','
+							# attempt to mount it, don't use the background console here, we need to wait
+							ret = subprocess.call(command, shell=True)
+							print "[AutoMount.py] Command returned: ", ret
 
-								# construct the CIFS mount command
-								tmpcmd = "mount -t cifs -o %s '//%s/%s' '%s'" % (secver + options, host, data['sharedir'], path)
-								command = tmpcmd.encode("UTF-8")
-								print "[AutoMount.py] CIFS AUTODETECT MOUNTCMD--->",command
+							# mount succeeded?
+							if ret == 0 and os.path.ismount(path):
+								# save these options
+								self.automounts[item]['options'] = secver + data['options']
+								self.writeMountsConfig()
+								# umount the test mount
+								umountcmd = "umount -fl '%s'" % path
+								print "[AutoMount.py] UMOUNT-AUTODETECT --->", umountcmd
+								ret = subprocess.call(umountcmd, shell=True)
+								print "[AutoMount.py] CIFS MOUNT-CMD--->", command
+								# and terminate the loop
+								break
 
-								# attempt to mount it, don't use the background console here, we need to wait
-								ret = subprocess.call(command, shell=True)
-								print "[AutoMount.py] Command returned: ", ret
+							command = None
 
-								# mount succeeded?
-								if ret == 0 and os.path.ismount(path):
-									# record these options
-									self.automounts[item]['options'] = secver + data['options']
-									self.writeMountsConfig()
-									# finish the mount
-									self.CheckMountPointFinished(command ,ret, [data, callback])
-									# and terminate the loop
-									break
+			except Exception, ex:
+					print "[AutoMount.py] Failed to create", path, "Error:", ex
 
-				except Exception, ex:
-						print "[AutoMount.py] Failed to create", path, "Error:", ex
-
+		# execute any command constructed
+		if command:
+			self.MountConsole.ePopen(command, self.CheckMountPointFinished, [data, callback])
+		else:
+			self.CheckMountPointFinished(None, None, [data, callback])
 
 	def CheckMountPointFinished(self, result, retval, extra_args):
-		print "[AutoMount.py] CheckMountPointFinished",result,retval
-		(data, callback ) = extra_args
+		print "[AutoMount.py] CheckMountPointFinished", result, retval
+		(data, callback) = extra_args
 		path = os.path.join('/media/net', data['sharename'])
+		print "[AutoMount.py] CheckMountPointFinished, verifying: ", path
+
 		if os.path.exists(path):
 			if os.path.ismount(path):
 				if self.automounts.has_key(data['sharename']):
@@ -293,6 +307,7 @@ class AutoMount():
 						self.makeHDDlink(path)
 					harddiskmanager.addMountedPartition(path, desc)
 			else:
+				print "[AutoMount.py] CheckMountPointFinished, path not found, disabling..."
 				if self.automounts.has_key(data['sharename']):
 					self.automounts[data['sharename']]['isMounted'] = False
 				if os.path.exists(path):
@@ -302,12 +317,16 @@ class AutoMount():
 							harddiskmanager.removeMountedPartition(path)
 						except Exception, ex:
 						        print "Failed to remove", path, "Error:", ex
+
 		if self.checkList:
 			# Go to next item in list...
 			self.CheckMountPoint(self.checkList.pop(), callback)
+
 		if self.MountConsole:
+			print "[AutoMount.py] CheckMountPointFinished, # of appContainers: ", len(self.MountConsole.appContainers)
 			if len(self.MountConsole.appContainers) == 0:
 				if callback is not None:
+					print "[AutoMount.py] CheckMountPointFinished, callback timer"
 					self.callback = callback
 					self.timer.startLongTimer(1)
 
