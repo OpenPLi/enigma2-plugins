@@ -222,7 +222,7 @@ class AutoMount():
 
 				# make sure the mount point exists
 				if not os.path.exists(path):
-					os.mkdir(path)
+					os.makedirs(path)
 
 				# host name goes before ip address
 				host = data['host']
