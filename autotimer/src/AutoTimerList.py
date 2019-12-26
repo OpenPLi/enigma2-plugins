@@ -93,17 +93,22 @@ class AutoTimerList(MenuList):
 			else:
 				rectypeicon = self.iconRecording
 
-			channel = []
-			if timer.services is not None:
+			channels = []
+			bouquets = []
+			if timer.services:
 				for t in timer.services:
-					channel.append(ServiceReference(t).getServiceName())
-			elif timer.bouquets is not None:
-				for x in timer.bouquets:
-					channel.append(ServiceReference(str(x)).getServiceName().replace('\xc2\x86', '').replace('\xc2\x87', ''))
-			if len(channel) > 0:
-				channel = ", ".join(channel)
+					channels.append(ServiceReference(t).getServiceName())
+			elif timer.bouquets:
+				for t in timer.bouquets:
+					bouquets.append(ServiceReference(t).getServiceName())
+			if len(channels) > 0:
+				channel = _("[S]  ")
+				channel += ", ".join(channels)
+			elif len(bouquets) > 0:
+				channel = _("[B]  ")
+				channel += ", ".join(bouquets)
 			else:
-				channel = _('All channels')
+				channel = _("All channels")
 			height = self.l.getItemSize().height()
 			width = self.l.getItemSize().width()
 			res = [ None ]
