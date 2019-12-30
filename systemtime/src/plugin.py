@@ -54,12 +54,12 @@ class SystemTimeSetupScreen(Screen, ConfigListScreen):
 			<ePixmap position="525,33" size="175,2" pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/SystemTime/images/blue.png" alphatest="blend" />
 			<widget name="config" scrollbarMode="showOnDemand" position="0,45" size="700,225" />
 			<widget name="description" position="5,290" size="690,75" font="Regular;17" />
-			<ePixmap pixmap="div-h.png" position="0,280" size="700,2" />
-			<ePixmap pixmap="div-h.png" position="0,362" size="700,2" />
+			<ePixmap pixmap="skin_default/div-h.png" position="0,280" size="700,2" />
+			<ePixmap pixmap="skin_default/div-h.png" position="0,362" size="700,2" />
 			<widget source="global.CurrentTime" render="Label" position="150,370" size="430,25" font="Regular;20" halign="left" transparent="1">
 				<convert type="ClockToText">Date</convert>
 			</widget>
-			<ePixmap alphatest="on" pixmap="icons/clock.png" position="590,375" size="14,14" />
+			<ePixmap alphatest="on" pixmap="skin_default/icons/clock.png" position="590,375" size="14,14" />
 			<widget source="global.CurrentTime" render="Label" position="610,370" size="55,25" font="Regular;20" halign="left" transparent="1">
 				<convert type="ClockToText">Default</convert>
 			</widget>

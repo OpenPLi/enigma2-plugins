@@ -223,9 +223,9 @@ class Blindscan(ConfigListScreen, Screen):
 		<screen position="center,center" size="640,565" title="Blind scan">
 			<widget name="rotorstatus" position="5,5" size="550,25" font="Regular;20" foregroundColor="#00ffc000"/>
 			<widget name="config" position="5,30" size="630,330" scrollbarMode="showOnDemand"/>
-			<ePixmap pixmap="div-h.png" position="0,365" zPosition="1" size="640,2"/>
+			<ePixmap pixmap="skin_default/div-h.png" position="0,365" zPosition="1" size="640,2"/>
 			<widget name="description" position="5,370" size="630,125" font="Regular;20" foregroundColor="#00ffc000"/>
-			<ePixmap pixmap="div-h.png" position="0,495" zPosition="1" size="640,2"/>
+			<ePixmap pixmap="skin_default/div-h.png" position="0,495" zPosition="1" size="640,2"/>
 			<widget name="introduction" position="0,500" size="640,20" font="Regular;18" foregroundColor="green" halign="center"/>
 			<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/Blindscan/images/red.png" position="0,560" size="160,2" alphatest="on"/>
 			<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/Blindscan/images/green.png" position="160,560" size="160,2" alphatest="on"/>

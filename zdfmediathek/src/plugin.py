@@ -579,7 +579,7 @@ class ZDFMediathek(Screen, HelpableScreen):
 				<widget name="navigationTitle" position="250,40" size="430,25" font="Regular;18" backgroundColor="#252525" foregroundColor="#f47d19" noWrap="1" />
 				<widget name="leftList" position="40,70" size="200,440" transparent="1" selectionDisabled="1" />
 				<widget name="rightList" position="250,70" size="430,480" backgroundColor="#3d3c3c" backgroundColorSelected="#565656" selectionDisabled="1" scrollbarMode="showOnDemand" />
-				<ePixmap pixmap="buttons/key_menu.png" position="40,520" size="35,25" transparent="1" alphatest="on" />
+				<ePixmap pixmap="skin_default/buttons/key_menu.png" position="40,520" size="35,25" transparent="1" alphatest="on" />
 				<widget name="serverName" position="80,520" size="160,20" font="Regular;18" backgroundColor="#252525" foregroundColor="#f47d19" />
 				<widget name="fakeList" position="0,0" size="0,0" />
 			</screen>""" % (PNG_PATH+"logo.png")
