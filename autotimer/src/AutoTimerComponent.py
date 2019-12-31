@@ -416,8 +416,6 @@ class AutoTimerComponent(object):
 	def checkServices(self, check_service):
 		services = self.services
 		bouquets = self.bouquets
-		if services:
-			bouquets = []
 		if services or bouquets:
 			addbouquets = []
 
@@ -689,8 +687,6 @@ class AutoTimerFastscanComponent(AutoTimerComponent):
 			addbouquets = []
 			services = self.services
 			bouquets = self.bouquets
-			if services:
-				bouquets = []
 			for service in services:
 				myref = eServiceReference(str(service))
 				if myref.flags & eServiceReference.isGroup:

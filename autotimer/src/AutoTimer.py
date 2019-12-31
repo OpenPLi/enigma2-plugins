@@ -318,19 +318,20 @@ class AutoTimer:
 				match = match.lower()
 
 			test = []
-			if timer.services:
-				test = [(service, 0, -1, -1) for service in timer.services]
-			elif timer.bouquets:
-				for bouquet in timer.bouquets:
-					services = serviceHandler.list(eServiceReference(bouquet))
-					if services:
-						while True:
-							service = services.getNext()
-							if not service.valid():
-								break
-							playable = not (service.flags & (eServiceReference.isMarker|eServiceReference.isDirectory)) or (service.flags & eServiceReference.isNumberedMarker)
-							if playable:
-								test.append((service.toString(), 0, -1, -1))
+			if timer.services or timer.bouquets:
+				if timer.services:
+					test = [(service, 0, -1, -1) for service in timer.services]
+				if timer.bouquets:
+					for bouquet in timer.bouquets:
+						services = serviceHandler.list(eServiceReference(bouquet))
+						if services:
+							while True:
+								service = services.getNext()
+								if not service.valid():
+									break
+								playable = not (service.flags & (eServiceReference.isMarker|eServiceReference.isDirectory)) or (service.flags & eServiceReference.isNumberedMarker)
+								if playable:
+									test.append((service.toString(), 0, -1, -1))
 			else: # Get all bouquets
 				bouquetlist = []
 				if config.usage.multibouquet.value:
