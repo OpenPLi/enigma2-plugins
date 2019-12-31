@@ -95,20 +95,25 @@ class AutoTimerList(MenuList):
 
 			channels = []
 			bouquets = []
+			channel = ""
 			if timer.services:
 				for t in timer.services:
 					channels.append(ServiceReference(t).getServiceName())
-			elif timer.bouquets:
+			if timer.bouquets:
 				for t in timer.bouquets:
 					bouquets.append(ServiceReference(t).getServiceName())
-			if len(channels) > 0:
-				channel = _("[S]  ")
-				channel += ", ".join(channels)
-			elif len(bouquets) > 0:
-				channel = _("[B]  ")
-				channel += ", ".join(bouquets)
+			if channels or bouquets:
+				if channels:
+					channel = _("[S]  ")
+					channel += ", ".join(channels)
+					channel += " "
+				if bouquets:
+					channel += _("[B]  ")
+					channel += ", ".join(bouquets)
 			else:
 				channel = _("All channels")
+				if timer.searchType == "favoritedesc":
+					channel = _("[B]  ") + channel
 			height = self.l.getItemSize().height()
 			width = self.l.getItemSize().width()
 			res = [ None ]
