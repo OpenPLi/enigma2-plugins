@@ -10,6 +10,7 @@ from Components.config import config, ConfigText, ConfigSelection, getConfigList
 from Components.ActionMap import ActionMap
 from Components.ConfigList import ConfigListScreen
 from Components.Sources.StaticText import StaticText
+from Components.Sources.Boolean import Boolean
 from enigma import eTimer, eServiceCenter, iServiceInformation, eConsoleAppContainer
 from os import path as os_path, rename as os_rename, unlink as os_unlink
 
@@ -21,9 +22,9 @@ def Plugins(**kwargs):
 
 
 class MovieRetitle(Screen, ConfigListScreen):
-	def __init__(self, session, service, parent, args = 0):
+	def __init__(self, session, service, parent, args=0):
 		Screen.__init__(self, session, parent = parent)
-		self.skinName = [ "MovieRetitle", "Setup" ]
+		self.skinName = ["MovieRetitle", "Setup"]
 
 		serviceHandler = eServiceCenter.getInstance()
 		info = serviceHandler.info(service)
@@ -66,10 +67,10 @@ class MovieRetitle(Screen, ConfigListScreen):
 			self.locationEl
 		]
 
+		self["VKeyIcon"] = Boolean(False)
 		ConfigListScreen.__init__(self, l)
-
 		self.onLayoutFinish.append(self.setCustomTitle)
-		
+
 	def setCustomTitle(self):
 		self.setTitle(_("Name and Description Input"))
 
@@ -120,7 +121,7 @@ class MovieRetitle(Screen, ConfigListScreen):
 			metafile.close()
 
 	def maybeMoveMovieFiles(self, fr, to):
-		if os_path.exists(to+".ts"):
+		if os_path.exists(to + ".ts"):
 			self.inter_fr = fr
 			self.inter_to = to
 			self.session.openWithCallback(self.confirmedReplace, MessageBox, _("Target file %s.ts already exist.\nDo you want to replace it?") % (to), MessageBox.TYPE_YESNO)
@@ -178,7 +179,7 @@ class MovieRetitleBackgroundMover:
 	def __init__(self):
 		self.container = eConsoleAppContainer()
 		self.container.appClosed.append(self.moveNextSuffBG)
-		self.currid = 0;
+		self.currid = 0
 		self.queue = []
 		self.running = False
 		self.messageQueue = []
@@ -202,7 +203,7 @@ class MovieRetitleBackgroundMover:
 				self.messageQueue.append((session, id, txt))
 		self.tryLaunchMessage(callback = cb)
 
-	def tryLaunchMessage(self, dummy=0, callback = None):
+	def tryLaunchMessage(self, dummy=0, callback=None):
 		global global_message_block
 		self.messageTimer.stop()
 		if not self.messageQueue:
