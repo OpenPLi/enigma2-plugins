@@ -746,7 +746,8 @@ class AutoTimerEditor(Screen, ConfigListScreen, AutoTimerEditorBase):
 		if self.useDestination.value:
 			list.append(getConfigListEntry(_("Custom location"), self.destination))
 
-		list.append(getConfigListEntry(_("Tags"), self.tags))
+		if self.justplay.value != "zap" and getPreferredTagEditor():
+			list.append(getConfigListEntry(_("Tags"), self.tags))
 
 		if hasVps:
 			list.append(getConfigListEntry(_("Activate VPS"), self.vps_enabled))
