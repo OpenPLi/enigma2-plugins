@@ -12,7 +12,7 @@ def localeInit():
 def _(txt):
 	t = gettext.dgettext("MovieRetitle", txt)
 	if t == txt:
-		print "[MovieRetitle] fallback to default translation for", txt
+		print("[MovieRetitle] fallback to default translation for", txt)
 		t = gettext.gettext(txt)
 	return t
 

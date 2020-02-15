@@ -22,7 +22,7 @@ def write_cache(cache_file, cache_data):
 		try:
 			os.mkdir(path)
 		except Exception, ex:
-			print "ERROR creating:", path, ex
+			print("ERROR creating:", path, ex)
 	with open(cache_file, 'w') as fd:
 		cPickle.dump(cache_data, fd, -1)
 
@@ -81,7 +81,7 @@ class UserDialog(Screen, ConfigListScreen):
 	def createConfig(self):
 		username = 'guest'
 		password = 'guest'
-		print 'Loading user cache from ', self.cache_file
+		print('Loading user cache from ', self.cache_file)
 		try:
 			hostdata = load_cache(self.cache_file)
 			username = hostdata['username']
