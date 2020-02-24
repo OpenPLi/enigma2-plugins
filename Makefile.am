@@ -57,7 +57,6 @@ SUBDIRS = \
 	porncenter \
 	primetimemanager \
 	reconstructapsc \
-	remotetimer \
 	recordinfobar \
 	satipclient \
 	seekbar \
