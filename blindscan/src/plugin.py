@@ -990,7 +990,7 @@ class Blindscan(ConfigListScreen, Screen):
 				self.session.open(MessageBox, _("Not found blind scan utility '%s'!") % tools, MessageBox.TYPE_ERROR)
 				return
 		elif BOX_NAME == "sf8008":
-			self.frontend and self.frontend.closeFrontend()
+			#self.frontend and self.frontend.closeFrontend()
 			tools = "/usr/bin/octagon-blindscan"
 			if os.path.exists(tools):
 				cmd = "octagon-blindscan %d %d %d %d %d %d %d %d %d %d" % (temp_start_int_freq, temp_end_int_freq, self.blindscan_start_symbol.value, self.blindscan_stop_symbol.value, tab_pol[pol], tab_hilow[band], self.feid, self.getNimSocket(self.feid), self.is_c_band_scan,orb[0])
