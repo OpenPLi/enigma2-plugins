@@ -242,7 +242,7 @@ class AutoMount():
 				# CIFS
 				elif data['mounttype'] == 'cifs':
 					# validate and client the mount options
-					options = self.sanitizeOptions(data['options'], data['mounttype'], data['username'].replace(" ", "\\ "), data['password'])
+					options = self.sanitizeOptions(data['options'], data['mounttype'], data['username'], data['password'])
 
 					# version and/or security level given?
 					if "vers=" in options or "sec=" in options:
