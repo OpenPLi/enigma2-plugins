@@ -4,6 +4,8 @@ from __init__ import _
 
 from Plugins.Plugin import PluginDescriptor
 from Components.Network import iNetwork
+# Don't remove this line! It's needed to remount shares at startup
+from AutoMount import iAutoMount
 
 plugin_path = ""
 
