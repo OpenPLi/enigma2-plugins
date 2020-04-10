@@ -159,7 +159,7 @@ def new_TimerEntry_createSetup(self, widget):
 	# added by VPS-Plugin
 	self.timerVps_enabled_Entry = None
 	try:
-		if self.timerentry_justplay.value != "zap" and self.timerentry_type.value == "once" and config.plugins.vps.enabled.value == True:
+		if self.timerentry_justplay.value != "zap" and config.plugins.vps.enabled.value == True:
 			self.timerVps_enabled_Entry = getConfigListEntry(_("Enable VPS"), self.timerentry_vpsplugin_enabled)
 			self.list.append(self.timerVps_enabled_Entry)
 
