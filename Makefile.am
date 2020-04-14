@@ -29,7 +29,6 @@ SUBDIRS = \
 	fritzcall \
 	fstabeditor \
 	ftpbrowser \
-	googlemaps \
 	growlee \
 	httpproxy \
 	imdb \

@@ -198,10 +198,6 @@ ftpbrowser/po/Makefile
 ftpbrowser/src/Makefile
 ftpbrowser/src/images/Makefile
 
-googlemaps/Makefile
-googlemaps/meta/Makefile
-googlemaps/src/Makefile
-
 growlee/Makefile
 growlee/meta/Makefile
 growlee/src/Makefile
