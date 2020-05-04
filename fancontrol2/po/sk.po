@@ -304,7 +304,7 @@ msgid "please set fan type (3Pin or 4Pin)"
 msgstr "nastavte prosím typ ventilátora (3piny alebo 4piny)"
 
 msgid "please wait (until 3min)..."
-msgstr "čaakjte prosím (asi 3min)..."
+msgstr "čakajte prosím (asi 3min)..."
 
 msgid "press Info for HDD-Temp"
 msgstr "stlačte Info pre teplotu HDD"
