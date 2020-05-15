@@ -103,7 +103,7 @@ msgstr ""
 msgid "Next day starts at"
 msgstr "Sonraki gün başlangıcı"
 
-msgid "Ok"
+msgid "OK"
 msgstr "Tamam"
 
 msgid "Password"

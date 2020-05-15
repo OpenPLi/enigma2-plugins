@@ -325,7 +325,7 @@ class SATIPTuner(Screen, ConfigListScreen):
 		self.current_satipConfig = current_satipConfig
 
 		self["key_red"] = StaticText(_("Cancel"))
-		self["key_green"] = StaticText(_("Ok"))
+		self["key_green"] = StaticText(_("OK"))
 		self["key_yellow"] = StaticText(_("Discover"))
 		self["description"] = StaticText(_("Starting..."))
 		self["choices"] = StaticText(_(" "))

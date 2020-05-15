@@ -103,7 +103,7 @@ msgstr "Pavadinimas"
 msgid "Next day starts at"
 msgstr "Kita diena prasideda"
 
-msgid "Ok"
+msgid "OK"
 msgstr "Gerai"
 
 msgid "Password"

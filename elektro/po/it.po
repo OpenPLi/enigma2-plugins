@@ -104,7 +104,7 @@ msgstr "Nome"
 msgid "Next day starts at"
 msgstr "Il prossimo giorno inizia alle"
 
-msgid "Ok"
+msgid "OK"
 msgstr "Ok"
 
 msgid "Password"

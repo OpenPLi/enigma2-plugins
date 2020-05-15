@@ -44,7 +44,7 @@ msgstr "Модель URL"
 msgid "No vtuner found."
 msgstr "Не найден vtuner."
 
-msgid "Ok"
+msgid "OK"
 msgstr "Ок"
 
 msgid "Presentation URL"

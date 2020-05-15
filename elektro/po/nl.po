@@ -104,7 +104,7 @@ msgstr "Naam"
 msgid "Next day starts at"
 msgstr "Volgende dag start om"
 
-msgid "Ok"
+msgid "OK"
 msgstr "OK"
 
 msgid "Password"

@@ -41,7 +41,7 @@ msgstr ""
 msgid "Move"
 msgstr ""
 
-msgid "Ok"
+msgid "OK"
 msgstr ""
 
 msgid "Rename"

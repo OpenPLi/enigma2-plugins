@@ -41,7 +41,7 @@ msgid "Move"
 msgstr "Перемещение"
 
 #, fuzzy
-msgid "Ok"
+msgid "OK"
 msgstr "Ок"
 
 #, fuzzy

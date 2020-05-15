@@ -45,7 +45,7 @@ msgstr ""
 msgid "No vtuner found."
 msgstr ""
 
-msgid "Ok"
+msgid "OK"
 msgstr "OK"
 
 msgid "Presentation URL"

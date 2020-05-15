@@ -44,7 +44,7 @@ msgid "Move"
 msgstr ""
 
 #, fuzzy
-msgid "Ok"
+msgid "OK"
 msgstr "OK"
 
 msgid "Rename"

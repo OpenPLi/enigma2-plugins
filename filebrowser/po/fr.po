@@ -42,7 +42,7 @@ msgstr "Position du panneau gauche"
 msgid "Move"
 msgstr "Déplacer"
 
-msgid "Ok"
+msgid "OK"
 msgstr "Ok"
 
 msgid "Rename"

@@ -49,7 +49,7 @@ msgstr "URL du modèle"
 msgid "No vtuner found."
 msgstr "Aucun vtuner trouvé."
 
-msgid "Ok"
+msgid "OK"
 msgstr "Ok"
 
 msgid "Presentation URL"

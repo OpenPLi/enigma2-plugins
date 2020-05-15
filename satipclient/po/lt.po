@@ -50,7 +50,7 @@ msgstr "Modelio internetinis adresas"
 msgid "No vtuner found."
 msgstr "Virt. imtuvų nerasta."
 
-msgid "Ok"
+msgid "OK"
 msgstr "Gerai"
 
 msgid "Presentation URL"

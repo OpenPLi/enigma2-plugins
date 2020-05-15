@@ -42,7 +42,7 @@ msgstr "Výrobca"
 msgid "No vtuner found."
 msgstr "Žiadny vTuner nebol nájdený."
 
-msgid "Ok"
+msgid "OK"
 msgstr "OK"
 
 msgid "Really close without saving settings?"

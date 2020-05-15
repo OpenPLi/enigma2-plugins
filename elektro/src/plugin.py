@@ -273,7 +273,7 @@ class ElektroProfile(ConfigListScreen,Screen):
 		ConfigListScreen.__init__(self, self.list)
 		
 		self["key_red"] = Button(_("Cancel"))
-		self["key_green"] = Button(_("Ok"))
+		self["key_green"] = Button(_("OK"))
 		self["setupActions"] = ActionMap(["SetupActions", "ColorActions"],
 		{
 			"red": self.cancel,
@@ -319,7 +319,7 @@ class ElektroIP(ConfigListScreen,Screen):
 		ConfigListScreen.__init__(self, self.list)
 		
 		self["key_red"] = Button(_("Cancel"))
-		self["key_green"] = Button(_("Ok"))
+		self["key_green"] = Button(_("OK"))
 		self["setupActions"] = ActionMap(["SetupActions", "ColorActions"],
 		{
 			"red": self.cancel,
@@ -398,7 +398,7 @@ class ElektroNAS(ConfigListScreen,Screen):
 		ConfigListScreen.__init__(self, self.list)
 		
 		self["key_red"] = Button(_("Cancel"))
-		self["key_green"] = Button(_("Ok"))
+		self["key_green"] = Button(_("OK"))
 		self["key_yellow"] = Button(_("Run"))
 		self["setupActions"] = ActionMap(["SetupActions", "ColorActions"],
 		{
@@ -505,7 +505,7 @@ class Elektro(ConfigListScreen,Screen):
 		self["config"].onSelectionChanged.append(self.configHelp)
 		
 		self["key_red"] = Button(_("Cancel"))
-		self["key_green"] = Button(_("Ok"))
+		self["key_green"] = Button(_("OK"))
 		self["key_yellow"] = Button(_("Help"))
 		self["key_blue"] = Button(_("Times"))
 		self["help"] = StaticText()

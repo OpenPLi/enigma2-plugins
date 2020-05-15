@@ -50,7 +50,7 @@ class FilebrowserConfigScreen(ConfigListScreen,Screen):
 
         ConfigListScreen.__init__(self, self.list)
         self["key_red"] = Label(_("Cancel"))
-        self["key_green"] = Label(_("Ok"))
+        self["key_green"] = Label(_("OK"))
         self["setupActions"] = ActionMap(["SetupActions"],
         {
             "green": self.save,
