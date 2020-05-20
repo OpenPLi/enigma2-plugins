@@ -8,89 +8,119 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-05-25 08:39+0200\n"
+"POT-Creation-Date: 2020-05-20 21:57+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-msgid "Add plugin to Extensionmenu"
-msgstr ""
-
-msgid "Add plugin to Mainmenu"
-msgstr ""
-
-msgid "Cancel"
-msgstr ""
-
-msgid "Copy"
-msgstr ""
-
-msgid "Delete"
-msgstr ""
-
 msgid "Filebrowser"
-msgstr ""
-
-msgid "Left panel position"
-msgstr ""
-
-msgid "Move"
-msgstr ""
-
-msgid "Ok"
-msgstr ""
-
-msgid "Rename"
-msgstr ""
-
-msgid "Right panel position"
-msgstr ""
-
-msgid "Save path positions on exit"
-msgstr ""
-
-msgid "Select location"
-msgstr ""
-
-msgid "Settings"
-msgstr ""
-
-msgid "copy file"
-msgstr ""
-
-msgid "copying file ..."
-msgstr ""
-
-msgid "delete file"
-msgstr ""
-
-msgid "deleting file ..."
 msgstr ""
 
 msgid "manage local Files"
 msgstr ""
 
-msgid "move file"
+msgid "Add plugin to Mainmenu"
+msgstr ""
+
+msgid "Add plugin to Extensionmenu"
+msgstr ""
+
+msgid "Save path positions on exit"
+msgstr ""
+
+msgid "Left panel position"
+msgstr ""
+
+msgid "Right panel position"
+msgstr ""
+
+msgid "Cancel"
+msgstr ""
+
+msgid "OK"
+msgstr ""
+
+msgid "Settings"
+msgstr ""
+
+msgid "Delete"
+msgstr ""
+
+msgid "Move"
+msgstr ""
+
+msgid "Copy"
+msgstr ""
+
+msgid "Rename"
+msgstr ""
+
+msgid "Select location"
+msgstr ""
+
+msgid "Copy directory"
+msgstr ""
+
+msgid "to"
+msgstr ""
+
+msgid "Copy file"
+msgstr ""
+
+msgid "from"
+msgstr ""
+
+msgid "copying directory, wait please ..."
+msgstr ""
+
+msgid "copying file ..."
+msgstr ""
+
+msgid "Delete directory"
+msgstr ""
+
+msgid "Delete file"
+msgstr ""
+
+msgid "from dir"
+msgstr ""
+
+msgid "deleting directory ..."
+msgstr ""
+
+msgid "deleting file ..."
+msgstr ""
+
+msgid "Move directory"
+msgstr ""
+
+msgid "Move file"
+msgstr ""
+
+msgid "to dir"
+msgstr ""
+
+msgid "moving directory, wait please ..."
 msgstr ""
 
 msgid "moving file ..."
 msgstr ""
 
-msgid "no"
+msgid "Rename directory"
 msgstr ""
 
-msgid "no Viewer installed for this mimetype!"
+msgid "Rename file"
 msgstr ""
 
-msgid "rename file"
+msgid "renaming directory ..."
 msgstr ""
 
 msgid "renaming file ..."
 msgstr ""
 
-msgid "yes"
+msgid "no Viewer installed for this mimetype!"
 msgstr ""

@@ -7,91 +7,152 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-31 14:17+0200\n"
-"PO-Revision-Date: 2018-07-31 14:20+0200\n"
+"POT-Creation-Date: 2020-05-20 21:57+0200\n"
+"PO-Revision-Date: 2020-05-20 22:03+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.1.1\n"
+"X-Generator: Poedit 2.0.6\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-
-msgid "Add plugin to Extensionmenu"
-msgstr "Ajouter le plugin dans le menu des extensions"
-
-msgid "Add plugin to Mainmenu"
-msgstr "Ajouter le plugin au menu principal"
-
-msgid "Cancel"
-msgstr "Annuler"
-
-msgid "Copy"
-msgstr "Copier"
-
-msgid "Delete"
-msgstr "Supprimer"
 
 msgid "Filebrowser"
 msgstr "Navigateur de fichiers"
 
-msgid "Left panel position"
-msgstr "Position du panneau gauche"
+msgid "manage local Files"
+msgstr "gérer les fichiers locaux"
 
-msgid "Move"
-msgstr "Déplacer"
+msgid "Add plugin to Mainmenu"
+msgstr "Ajouter le plugin au menu principal"
 
-msgid "OK"
-msgstr "Ok"
-
-msgid "Rename"
-msgstr "Renommer"
-
-msgid "Right panel position"
-msgstr "Position du panneau droit"
+msgid "Add plugin to Extensionmenu"
+msgstr "Ajouter le plugin dans le menu des extensions"
 
 msgid "Save path positions on exit"
 msgstr "Sauvegarder la position en sortant"
 
-msgid "Select location"
-msgstr "Choisir la localisation"
+msgid "Left panel position"
+msgstr "Position du panneau gauche"
+
+msgid "Right panel position"
+msgstr "Position du panneau droit"
+
+msgid "Cancel"
+msgstr "Annuler"
+
+msgid "OK"
+msgstr ""
 
 msgid "Settings"
 msgstr "Paramètres"
 
-msgid "copy file"
+msgid "Delete"
+msgstr "Supprimer"
+
+msgid "Move"
+msgstr "Déplacer"
+
+msgid "Copy"
+msgstr "Copier"
+
+msgid "Rename"
+msgstr "Renommer"
+
+msgid "Select location"
+msgstr "Choisir la localisation"
+
+#, fuzzy
+#| msgid "copy file"
+msgid "Copy directory"
 msgstr "copier fichier"
+
+msgid "to"
+msgstr ""
+
+#, fuzzy
+#| msgid "copy file"
+msgid "Copy file"
+msgstr "copier fichier"
+
+msgid "from"
+msgstr ""
+
+#, fuzzy
+#| msgid "copying file ..."
+msgid "copying directory, wait please ..."
+msgstr "copie du fichier …"
 
 msgid "copying file ..."
 msgstr "copie du fichier …"
 
-msgid "delete file"
+#, fuzzy
+#| msgid "delete file"
+msgid "Delete directory"
 msgstr "supprimer le fichier"
+
+#, fuzzy
+#| msgid "delete file"
+msgid "Delete file"
+msgstr "supprimer le fichier"
+
+msgid "from dir"
+msgstr ""
+
+#, fuzzy
+#| msgid "deleting file ..."
+msgid "deleting directory ..."
+msgstr "suppression fichier"
 
 msgid "deleting file ..."
 msgstr "suppression fichier"
 
-msgid "manage local Files"
-msgstr "gérer les fichiers locaux"
-
-msgid "move file"
+#, fuzzy
+#| msgid "move file"
+msgid "Move directory"
 msgstr "déplacer fichier"
+
+#, fuzzy
+#| msgid "move file"
+msgid "Move file"
+msgstr "déplacer fichier"
+
+msgid "to dir"
+msgstr ""
+
+msgid "moving directory, wait please ..."
+msgstr ""
 
 msgid "moving file ..."
 msgstr "déplacement fichier …"
 
-msgid "no"
-msgstr "non"
+#, fuzzy
+#| msgid "move file"
+msgid "Rename directory"
+msgstr "déplacer fichier"
 
-msgid "no Viewer installed for this mimetype!"
-msgstr "pas de visualiseur installé pour ce type mime!"
-
-msgid "rename file"
+#, fuzzy
+#| msgid "rename file"
+msgid "Rename file"
 msgstr "renommer fichier"
+
+#, fuzzy
+#| msgid "deleting file ..."
+msgid "renaming directory ..."
+msgstr "suppression fichier"
 
 msgid "renaming file ..."
 msgstr "renommage fichier …"
 
-msgid "yes"
-msgstr "oui"
+msgid "no Viewer installed for this mimetype!"
+msgstr "pas de visualiseur installé pour ce type mime!"
+
+#~ msgid "yes"
+#~ msgstr "oui"
+
+#~ msgid "no"
+#~ msgstr "non"
+
+#~ msgid "Ok"
+#~ msgstr "Ok"

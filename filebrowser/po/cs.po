@@ -2,91 +2,131 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Enigma2 Filebrowser Plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-15 10:30+0200\n"
-"PO-Revision-Date: 2018-07-11 12:03+0200\n"
+"POT-Creation-Date: 2020-05-20 21:57+0200\n"
+"PO-Revision-Date: 2020-05-20 22:02+0200\n"
 "Last-Translator: ims <ims21@users.sourceforge.net>\n"
 "Language-Team: PLi <ims21@users.sourceforge.net>\n"
 "Language: cs_CZ\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Poedit 1.8.7.1\n"
-
-msgid "Add plugin to Extensionmenu"
-msgstr "Přidat plugin do Extension menu"
-
-msgid "Add plugin to Mainmenu"
-msgstr "Přidat plugin do hlavního menu"
-
-msgid "Cancel"
-msgstr "Zrušit"
-
-msgid "Copy"
-msgstr "Kopírovat"
-
-msgid "Delete"
-msgstr "Smazat"
+"Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2;\n"
+"X-Generator: Poedit 2.0.6\n"
 
 msgid "Filebrowser"
 msgstr "Filebrowser"
 
-msgid "Left panel position"
-msgstr "Levý panel"
+msgid "manage local Files"
+msgstr "správa místních souborů"
 
-msgid "Move"
-msgstr "Přesunout"
+msgid "Add plugin to Mainmenu"
+msgstr "Přidat plugin do hlavního menu"
 
-msgid "OK"
-msgstr "Ok"
-
-msgid "Rename"
-msgstr "Přejmenovat"
-
-msgid "Right panel position"
-msgstr "Pravý panel"
+msgid "Add plugin to Extensionmenu"
+msgstr "Přidat plugin do Extension menu"
 
 msgid "Save path positions on exit"
 msgstr "Ukládat pozice při ukončení"
 
-msgid "Select location"
-msgstr "Zvolte umístění"
+msgid "Left panel position"
+msgstr "Levý panel"
+
+msgid "Right panel position"
+msgstr "Pravý panel"
+
+msgid "Cancel"
+msgstr "Zavřít"
+
+msgid "OK"
+msgstr ""
 
 msgid "Settings"
 msgstr "Nastavení"
 
-msgid "copy file"
-msgstr "kopírovat soubor"
+msgid "Delete"
+msgstr "Smazat"
+
+msgid "Move"
+msgstr "Přesunout"
+
+msgid "Copy"
+msgstr "Kopírovat"
+
+msgid "Rename"
+msgstr "Přejmenovat"
+
+msgid "Select location"
+msgstr "Zvolte umístění"
+
+msgid "Copy directory"
+msgstr "Kopírovat adresář"
+
+msgid "to"
+msgstr "do"
+
+msgid "Copy file"
+msgstr "Kopírovat soubor"
+
+msgid "from"
+msgstr "z"
+
+msgid "copying directory, wait please ..."
+msgstr "Kopírování adresáře, čekejte, prosím ..."
 
 msgid "copying file ..."
-msgstr "kopíruje se ..."
+msgstr "Kopírování souboru ..."
 
-msgid "delete file"
-msgstr "smazat soubor"
+msgid "Delete directory"
+msgstr "Smazat adresář"
+
+msgid "Delete file"
+msgstr "Smazat soubor"
+
+msgid "from dir"
+msgstr "z adresáře"
+
+msgid "deleting directory ..."
+msgstr "Odstranění adresáře ..."
 
 msgid "deleting file ..."
-msgstr "odstraňuje se ..."
+msgstr "Mazání souboru ..."
 
-msgid "manage local Files"
-msgstr "správa místních souborů"
+msgid "Move directory"
+msgstr "Přesunout adresář"
 
-msgid "move file"
-msgstr "přesunout soubor"
+msgid "Move file"
+msgstr "Přesunout soubor"
+
+msgid "to dir"
+msgstr "do adresáře"
+
+msgid "moving directory, wait please ..."
+msgstr "Přemístění adresáře, čekejte, prosím ..."
 
 msgid "moving file ..."
-msgstr "přesouvá se ..."
+msgstr "Přemístění souboru ..."
 
-msgid "no"
-msgstr "Ne"
+msgid "Rename directory"
+msgstr "Přejmenovat adresář"
+
+msgid "Rename file"
+msgstr "Přejmenovat soubor"
+
+msgid "renaming directory ..."
+msgstr "Přejmenování adresáře ..."
+
+msgid "renaming file ..."
+msgstr "Přejmenování souboru ..."
 
 msgid "no Viewer installed for this mimetype!"
 msgstr "pro tento typ souboru není nainstalován žádný prohlížeč!"
 
-msgid "rename file"
-msgstr "přejmenovat soubor"
+#~ msgid "yes"
+#~ msgstr "Ano"
 
-msgid "renaming file ..."
-msgstr "přejmenovává se ..."
+#~ msgid "no"
+#~ msgstr "Ne"
 
-msgid "yes"
-msgstr "Ano"
+#~ msgid "Ok"
+#~ msgstr "Ok"
