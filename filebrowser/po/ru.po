@@ -2,100 +2,144 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Enigma 2 Filebrowser Plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-15 10:30+0200\n"
-"PO-Revision-Date: 2018-07-11 12:15+0200\n"
+"POT-Creation-Date: 2020-05-20 21:57+0200\n"
+"PO-Revision-Date: 2020-05-20 22:03+0200\n"
 "Last-Translator: ims <ims21@users.sourceforge.net>\n"
 "Language-Team: openPli\n"
 "Language: ru_RU\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Poedit 1.8.7.1\n"
+"Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2;\n"
+"X-Generator: Poedit 2.0.6\n"
 
-msgid "Add plugin to Extensionmenu"
+msgid "Filebrowser"
+msgstr ""
+
+msgid "manage local Files"
 msgstr ""
 
 msgid "Add plugin to Mainmenu"
 msgstr ""
 
-msgid "Cancel"
-msgstr "Отмена"
+msgid "Add plugin to Extensionmenu"
+msgstr ""
 
-#, fuzzy
-msgid "Copy"
-msgstr "Копирование"
-
-#, fuzzy
-msgid "Delete"
-msgstr "Удалить"
-
-msgid "Filebrowser"
+msgid "Save path positions on exit"
 msgstr ""
 
 msgid "Left panel position"
 msgstr ""
+
+msgid "Right panel position"
+msgstr ""
+
+msgid "Cancel"
+msgstr "Отмена"
+
+msgid "OK"
+msgstr ""
+
+#, fuzzy
+msgid "Settings"
+msgstr "Установки"
+
+#, fuzzy
+msgid "Delete"
+msgstr "Удалить"
 
 #, fuzzy
 msgid "Move"
 msgstr "Перемещение"
 
 #, fuzzy
-msgid "OK"
-msgstr "Ок"
+msgid "Copy"
+msgstr "Копирование"
 
 #, fuzzy
 msgid "Rename"
 msgstr "Переименовать"
-
-msgid "Right panel position"
-msgstr ""
-
-msgid "Save path positions on exit"
-msgstr ""
 
 #, fuzzy
 msgid "Select location"
 msgstr "Выбор расположения"
 
 #, fuzzy
-msgid "Settings"
-msgstr "Установки"
+msgid "Copy directory"
+msgstr "удалить файл"
 
-msgid "copy file"
+msgid "to"
+msgstr ""
+
+#, fuzzy
+msgid "Copy file"
+msgstr "Копирование"
+
+msgid "from"
+msgstr ""
+
+msgid "copying directory, wait please ..."
 msgstr ""
 
 msgid "copying file ..."
 msgstr ""
 
 #, fuzzy
-msgid "delete file"
+msgid "Delete directory"
 msgstr "удалить файл"
+
+#, fuzzy
+msgid "Delete file"
+msgstr "удалить файл"
+
+msgid "from dir"
+msgstr ""
+
+msgid "deleting directory ..."
+msgstr ""
 
 msgid "deleting file ..."
 msgstr ""
 
-msgid "manage local Files"
+#, fuzzy
+msgid "Move directory"
+msgstr "удалить файл"
+
+#, fuzzy
+msgid "Move file"
+msgstr "Перемещение"
+
+msgid "to dir"
 msgstr ""
 
-msgid "move file"
+msgid "moving directory, wait please ..."
 msgstr ""
 
 msgid "moving file ..."
 msgstr ""
 
-msgid "no"
-msgstr ""
+#, fuzzy
+msgid "Rename directory"
+msgstr "удалить файл"
 
-msgid "no Viewer installed for this mimetype!"
-msgstr ""
+#, fuzzy
+msgid "Rename file"
+msgstr "Переименовать"
 
-msgid "rename file"
+msgid "renaming directory ..."
 msgstr ""
 
 msgid "renaming file ..."
 msgstr ""
 
+msgid "no Viewer installed for this mimetype!"
+msgstr ""
+
 #, fuzzy
-msgid "yes"
-msgstr "да"
+#~ msgid "yes"
+#~ msgstr "да"
+
+#, fuzzy
+#~ msgid "Ok"
+#~ msgstr "Ок"

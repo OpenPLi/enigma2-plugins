@@ -14,8 +14,9 @@ from Components.Label import Label
 from Screens.Screen import Screen
 from Components.ActionMap import ActionMap
 from Components.Scanner import openFile
-from os.path import isdir as os_path_isdir
+from os.path import isdir as os_path_isdir, dirname as os_path_dirname, basename as os_path_basename
 from mimetypes import guess_type
+from Screens.VirtualKeyBoard import VirtualKeyBoard
 
 ##################################
 pname = _("Filebrowser")
@@ -178,15 +179,24 @@ class FilebrowserScreen(Screen):
         filename = self.SOURCELIST.getFilename()
         sourceDir = self.SOURCELIST.getCurrentDirectory()
         targetDir = self.TARGETLIST.getCurrentDirectory()
-        self.session.openWithCallback(self.doCopy,ChoiceBox, title = _("copy file")+"?\n%s\nfrom\n%s\n%s"%(filename,sourceDir,targetDir),list=[(_("yes"), True ),(_("no"), False )])
+        if os_path_isdir(filename):
+            txt = _("Copy directory")+"?\n\n%s\n%s\n%s"%(filename,_("to"),targetDir)
+        else:
+            txt =_("Copy file")+"?\n\n%s\n%s\n%s\n%s\n%s"%(filename,_("from"),sourceDir,_("to"),targetDir)
+        self.session.openWithCallback(self.doCopy, MessageBox, txt, type=MessageBox.TYPE_YESNO, default=True, simple=True)
 
-    def doCopy(self,result):
-        if result is not None:
-            if result[1]:
-                filename = self.SOURCELIST.getFilename()
-                sourceDir = self.SOURCELIST.getCurrentDirectory()
-                targetDir = self.TARGETLIST.getCurrentDirectory()
-                self.session.openWithCallback(self.doCopyCB,Console, title = _("copying file ..."), cmdlist = ["cp \""+sourceDir+filename+"\" \""+targetDir+"\""])
+    def doCopy(self, result = False):
+        if result:
+            filename = self.SOURCELIST.getFilename()
+            sourceDir = self.SOURCELIST.getCurrentDirectory()
+            targetDir = self.TARGETLIST.getCurrentDirectory()
+            if os_path_isdir(filename):
+                txt = _("copying directory, wait please ...")
+                cmd = ["cp -ar \""+filename+"\" \""+targetDir+"\""]
+            else:
+                txt = _("copying file ...")
+                cmd = ["cp \""+sourceDir+filename+"\" \""+targetDir+"\""]
+            self.session.openWithCallback(self.doCopyCB, Console, title = txt, cmdlist = cmd)
 
     def doCopyCB(self):
         self.doRefresh()
@@ -195,14 +205,23 @@ class FilebrowserScreen(Screen):
     def goRed(self):
         filename = self.SOURCELIST.getFilename()
         sourceDir = self.SOURCELIST.getCurrentDirectory()
-        self.session.openWithCallback(self.doDelete,ChoiceBox, title = _("delete file")+"?\n%s\nfrom dir\n%s"%(filename,sourceDir),list=[(_("yes"), True ),(_("no"), False )])
+        if os_path_isdir(filename):
+            txt = _("Delete directory") + "?\n\n%s" % (filename)
+        else:
+            txt =_("Delete file") + "?\n\n%s\n%s\n%s" % (filename,_("from dir"),sourceDir)
+        self.session.openWithCallback(self.doDelete, MessageBox, txt, type=MessageBox.TYPE_YESNO, default=False, simple=True)
 
-    def doDelete(self,result):
-        if result is not None:
-            if result[1]:
-                filename = self.SOURCELIST.getFilename()
-                sourceDir = self.SOURCELIST.getCurrentDirectory()
-                self.session.openWithCallback(self.doDeleteCB,Console, title = _("deleting file ..."), cmdlist = ["rm \""+sourceDir+filename+"\""])
+    def doDelete(self,result = False):
+        if result:
+            filename = self.SOURCELIST.getFilename()
+            sourceDir = self.SOURCELIST.getCurrentDirectory()
+            if os_path_isdir(filename):
+                txt = _("deleting directory ...")
+                cmd = ["rm -r \""+filename+"\""]
+            else:
+                txt = _("deleting file ...")
+                cmd = ["rm \""+sourceDir+filename+"\""]
+            self.session.openWithCallback(self.doDeleteCB, Console, title = txt, cmdlist = cmd)
 
     def doDeleteCB(self):
         self.doRefresh()
@@ -212,15 +231,24 @@ class FilebrowserScreen(Screen):
         filename = self.SOURCELIST.getFilename()
         sourceDir = self.SOURCELIST.getCurrentDirectory()
         targetDir = self.TARGETLIST.getCurrentDirectory()
-        self.session.openWithCallback(self.doMove,ChoiceBox, title = _("move file")+"?\n%s\nfrom dir\n%s\nto dir\n%s"%(filename,sourceDir,targetDir),list=[(_("yes"), True ),(_("no"), False )])
+        if os_path_isdir(filename):
+            txt = _("Move directory") + "?\n\n%s\n%s\n%s" % (filename,_("to"),targetDir)
+        else:
+            txt =_("Move file") + "?\n\n%s\n%s\n%s\n%s\n%s" % (filename,_("from dir"),sourceDir,_("to dir"),targetDir)
+        self.session.openWithCallback(self.doMove, MessageBox, txt, type=MessageBox.TYPE_YESNO, default=True, simple=True)
 
-    def doMove(self,result):
-        if result is not None:
-            if result[1]:
-                filename = self.SOURCELIST.getFilename()
-                sourceDir = self.SOURCELIST.getCurrentDirectory()
-                targetDir = self.TARGETLIST.getCurrentDirectory()
-                self.session.openWithCallback(self.doMoveCB,Console, title = _("moving file ..."), cmdlist = ["mv \""+sourceDir+filename+"\" \""+targetDir+"\""])
+    def doMove(self, result = True):
+        if result:
+            filename = self.SOURCELIST.getFilename()
+            sourceDir = self.SOURCELIST.getCurrentDirectory()
+            targetDir = self.TARGETLIST.getCurrentDirectory()
+            if os_path_isdir(filename):
+                txt = _("moving directory, wait please ...")
+                cmd = ["mv \""+filename+"\" \""+targetDir+"\""]
+            else:
+                txt = _("moving file ...")
+                cmd = ["mv \""+sourceDir+filename+"\" \""+targetDir+"\""]
+            self.session.openWithCallback(self.doMoveCB,Console, title = txt, cmdlist = cmd)
 
     def doMoveCB(self):
         self.doRefresh()
@@ -229,13 +257,24 @@ class FilebrowserScreen(Screen):
     def goBlue(self):
         filename = self.SOURCELIST.getFilename()
         sourceDir = self.SOURCELIST.getCurrentDirectory()
-        self.session.openWithCallback(self.doRename,InputBox,text=filename, title = filename, windowTitle=_("rename file"))
+        if os_path_isdir(filename):
+            text = _("Rename directory")
+            filename = os_path_basename(os_path_dirname(filename))
+        else:
+            text = _("Rename file")
+        self.session.openWithCallback(self.doRename, VirtualKeyBoard, title = text, text = filename)
 
-    def doRename(self,newname):
+    def doRename(self, newname = None):
         if newname:
             filename = self.SOURCELIST.getFilename()
             sourceDir = self.SOURCELIST.getCurrentDirectory()
-            self.session.openWithCallback(self.doRenameCB,Console, title = _("renaming file ..."), cmdlist = ["mv \""+sourceDir+filename+"\" \""+sourceDir+newname+"\""])
+            if os_path_isdir(filename):
+                txt = _("renaming directory ...")
+                cmd = ["mv \""+filename+"\" \""+sourceDir+newname+"\""]
+            else:
+                txt = _("renaming file ...")
+                cmd = ["mv \""+sourceDir+filename+"\" \""+sourceDir+newname+"\""]
+            self.session.openWithCallback(self.doRenameCB, Console, title = txt, cmdlist = cmd)
 
     def doRenameCB(self):
         self.doRefresh()
