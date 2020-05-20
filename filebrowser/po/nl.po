@@ -7,130 +7,121 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2 - Filebrowser Plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-20 21:57+0200\n"
-"PO-Revision-Date: 2020-05-20 22:03+0200\n"
-"Last-Translator: ims <ims21@users.sourceforge.net>\n"
+"POT-Creation-Date: 2020-05-20 23:35+0200\n"
+"PO-Revision-Date: 2020-05-20 23:54+0200\n"
+"Last-Translator: Frenske <voorzitter@openpli.org>\n"
 "Language-Team: PLi\n"
 "Language: nl_NL\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.0.6\n"
-
-msgid "Filebrowser"
-msgstr ""
-
-msgid "manage local Files"
-msgstr ""
-
-msgid "Add plugin to Mainmenu"
-msgstr ""
+"X-Generator: Poedit 2.3.1\n"
 
 msgid "Add plugin to Extensionmenu"
-msgstr ""
+msgstr "Voeg de plug-in aan het applicatiemenu toe."
 
-msgid "Save path positions on exit"
-msgstr ""
-
-msgid "Left panel position"
-msgstr ""
-
-msgid "Right panel position"
-msgstr ""
+msgid "Add plugin to Mainmenu"
+msgstr "Voeg de plug-in aan het Hoofdmenu toe"
 
 msgid "Cancel"
 msgstr "Annuleren"
 
-#, fuzzy
-msgid "OK"
-msgstr "OK"
+msgid "Copy"
+msgstr "Kopieer"
 
-#, fuzzy
-msgid "Settings"
-msgstr "Instellingen..."
+msgid "Copy directory"
+msgstr "Kopieer de map"
 
-#, fuzzy
+msgid "Copy file"
+msgstr "Kopieer het bestand"
+
 msgid "Delete"
 msgstr "Verwijder"
 
-msgid "Move"
-msgstr ""
-
-msgid "Copy"
-msgstr ""
-
-msgid "Rename"
-msgstr ""
-
-#, fuzzy
-msgid "Select location"
-msgstr "Kies de actie:"
-
-msgid "Copy directory"
-msgstr ""
-
-msgid "to"
-msgstr ""
-
-msgid "Copy file"
-msgstr ""
-
-msgid "from"
-msgstr ""
-
-msgid "copying directory, wait please ..."
-msgstr ""
-
-msgid "copying file ..."
-msgstr ""
-
 msgid "Delete directory"
-msgstr ""
+msgstr "Verwijder de map"
 
-#, fuzzy
 msgid "Delete file"
-msgstr "Verwijder"
+msgstr "Verwijder het bestand"
 
-msgid "from dir"
-msgstr ""
+msgid "Filebrowser"
+msgstr "Filebrowser"
 
-msgid "deleting directory ..."
-msgstr ""
+msgid "Left panel position"
+msgstr "Positie linker scherm"
 
-msgid "deleting file ..."
-msgstr ""
+msgid "Move"
+msgstr "Verplaats"
 
 msgid "Move directory"
-msgstr ""
+msgstr "Verplaats de map"
 
 msgid "Move file"
-msgstr ""
+msgstr "Verplaats een bestand"
 
-msgid "to dir"
-msgstr ""
+msgid "OK"
+msgstr "Ok"
 
-msgid "moving directory, wait please ..."
-msgstr ""
-
-msgid "moving file ..."
-msgstr ""
+msgid "Rename"
+msgstr "Hernoemen"
 
 msgid "Rename directory"
-msgstr ""
+msgstr "Hernoem de map"
 
 msgid "Rename file"
-msgstr ""
+msgstr "Hernoem het bestand"
 
-msgid "renaming directory ..."
-msgstr ""
+msgid "Right panel position"
+msgstr "Positie rechter scherm"
 
-msgid "renaming file ..."
-msgstr ""
+msgid "Save path positions on exit"
+msgstr "Sla de positie(s) op bij het beëindigen van het programma"
+
+msgid "Select location"
+msgstr "Kies de locatie"
+
+msgid "Settings"
+msgstr "Instellingen"
+
+msgid "copying directory, wait please ..."
+msgstr "kopieer de map, een moment aub ..."
+
+msgid "copying file ..."
+msgstr "kopieer het bestand ..."
+
+msgid "deleting directory ..."
+msgstr "verwijderen van de map ..."
+
+msgid "deleting file ..."
+msgstr "verwijder het bestand ..."
+
+msgid "from"
+msgstr "van"
+
+msgid "from dir"
+msgstr "vanuit de map"
+
+msgid "manage local Files"
+msgstr "Beheer de locale bestanden"
+
+msgid "moving directory, wait please ..."
+msgstr "verplaatsen van de map, een moment aub ..."
+
+msgid "moving file ..."
+msgstr "verplaatsen van het bestand ..."
 
 msgid "no Viewer installed for this mimetype!"
-msgstr ""
+msgstr "geen Viewer geïnstalleerd voor dit mimetype!"
 
-#, fuzzy
-#~ msgid "yes"
-#~ msgstr "ja"
+msgid "renaming directory ..."
+msgstr "hernoemd de map ..."
+
+msgid "renaming file ..."
+msgstr "hernoemd het bestand ..."
+
+msgid "to"
+msgstr "naar"
+
+msgid "to dir"
+msgstr "naar map"
