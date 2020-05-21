@@ -69,6 +69,7 @@ class FilebrowserConfigScreen(ConfigListScreen,Screen):
         print "saving"
         for x in self["config"].list:
             x[1].save()
+        self.refreshPlugins()
         self.close(True)
 
     def cancel(self):
@@ -77,6 +78,11 @@ class FilebrowserConfigScreen(ConfigListScreen,Screen):
             x[1].cancel()
         self.close(False)
 
+    def refreshPlugins(self):
+        from Components.PluginComponent import plugins
+        from Tools.Directories import resolveFilename, SCOPE_PLUGINS
+        plugins.clearPluginList()
+        plugins.readPluginList(resolveFilename(SCOPE_PLUGINS))
 
 ##################################
 class FilebrowserScreen(Screen):
