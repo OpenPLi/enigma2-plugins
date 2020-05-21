@@ -240,7 +240,7 @@ class FilebrowserScreen(Screen):
         if os_path_isdir(filename):
             txt = _("Move directory") + "?\n\n%s\n%s\n%s" % (filename,_("to"),targetDir)
         else:
-            txt =_("Move file") + "?\n\n%s\n%s\n%s\n%s\n%s" % (filename,_("from dir"),sourceDir,_("to dir"),targetDir)
+            txt = _("Move file") + "?\n\n%s\n%s\n%s\n%s\n%s" % (filename,_("from dir"),sourceDir,_("to dir"),targetDir)
         self.session.openWithCallback(self.doMove, MessageBox, txt, type=MessageBox.TYPE_YESNO, default=True, simple=True)
 
     def doMove(self, result = True):
