@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-20 21:57+0200\n"
-"PO-Revision-Date: 2020-05-20 22:03+0200\n"
+"POT-Creation-Date: 2020-05-22 18:20+0200\n"
+"PO-Revision-Date: 2020-05-22 18:23+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -29,6 +29,9 @@ msgstr "Ajouter le plugin au menu principal"
 
 msgid "Add plugin to Extensionmenu"
 msgstr "Ajouter le plugin dans le menu des extensions"
+
+msgid "Count directory content size"
+msgstr ""
 
 msgid "Save path positions on exit"
 msgstr "Sauvegarder la position en sortant"
@@ -61,6 +64,16 @@ msgid "Rename"
 msgstr "Renommer"
 
 msgid "Select location"
+msgstr "Choisir la localisation"
+
+#, fuzzy
+#| msgid "delete file"
+msgid "Create directory"
+msgstr "supprimer le fichier"
+
+#, fuzzy
+#| msgid "Select location"
+msgid "Select operation:"
 msgstr "Choisir la localisation"
 
 #, fuzzy
@@ -144,6 +157,11 @@ msgstr "suppression fichier"
 
 msgid "renaming file ..."
 msgstr "renommage fichier …"
+
+#, fuzzy
+#| msgid "deleting file ..."
+msgid "creating directory ..."
+msgstr "suppression fichier"
 
 msgid "no Viewer installed for this mimetype!"
 msgstr "pas de visualiseur installé pour ce type mime!"

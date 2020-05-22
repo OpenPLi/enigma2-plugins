@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-20 21:57+0200\n"
+"POT-Creation-Date: 2020-05-22 18:20+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -27,6 +27,9 @@ msgid "Add plugin to Mainmenu"
 msgstr ""
 
 msgid "Add plugin to Extensionmenu"
+msgstr ""
+
+msgid "Count directory content size"
 msgstr ""
 
 msgid "Save path positions on exit"
@@ -60,6 +63,12 @@ msgid "Rename"
 msgstr ""
 
 msgid "Select location"
+msgstr ""
+
+msgid "Create directory"
+msgstr ""
+
+msgid "Select operation:"
 msgstr ""
 
 msgid "Copy directory"
@@ -120,6 +129,9 @@ msgid "renaming directory ..."
 msgstr ""
 
 msgid "renaming file ..."
+msgstr ""
+
+msgid "creating directory ..."
 msgstr ""
 
 msgid "no Viewer installed for this mimetype!"

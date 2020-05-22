@@ -18,7 +18,7 @@ from mimetypes import guess_type
 from Screens.VirtualKeyBoard import VirtualKeyBoard
 from plugin import pname
 from enigma import getDesktop, eSize, ePoint
-from os import stat
+from os import stat as os_stat, path as os_path, walk as os_walk
 from time import strftime, localtime
 
 ##################################
@@ -37,6 +37,7 @@ class FilebrowserConfigScreen(ConfigListScreen,Screen):
         self.list = []
         self.list.append(getConfigListEntry(_("Add plugin to Mainmenu"), config.plugins.filebrowser.add_mainmenu_entry))
         self.list.append(getConfigListEntry(_("Add plugin to Extensionmenu"), config.plugins.filebrowser.add_extensionmenu_entry))
+        self.list.append(getConfigListEntry(_("Count directory content size"), config.plugins.filebrowser.dir_size))
         self.list.append(getConfigListEntry(_("Save path positions on exit"), config.plugins.filebrowser.savedirs))
         self.list.append(getConfigListEntry(_("Left panel position"), config.plugins.filebrowser.path_left))
         self.list.append(getConfigListEntry(_("Right panel position"), config.plugins.filebrowser.path_right))
@@ -164,14 +165,22 @@ class FilebrowserScreen(Screen):
         if not filename:
             return
         if os_path_isdir(filename):
-            curFile = stat(filename)
+            curFile = os_stat(filename)
             if filename != '/':
                 filename = filename.rstrip('/')
-            fileinfo = self.fileTime(curFile.st_mtime)
+            fileinfo = "%s        " % self.dirSize(filename) if config.plugins.filebrowser.dir_size.value else "" + self.fileTime(curFile.st_mtime)
         else:
-            curFile = stat(self.SOURCELIST.getCurrentDirectory() + filename)
+            curFile = os_stat(self.SOURCELIST.getCurrentDirectory() + filename)
             fileinfo = "%s  (%s)        %s" % (self.humanizer(curFile.st_size),'{:,.0f}'.format(curFile.st_size), self.fileTime(curFile.st_mtime))
         self.session.open(FilebrowserScreenInfo, (filename, fileinfo))
+
+    def dirSize(self, directory):
+        size = 0
+        for dirpath, dirnames, filenames in os_walk(directory):
+            for f in filenames:
+                fp = os_path.join(dirpath, f)
+                size += os_path.getsize(fp) if os_path.isfile(fp) else 0
+        return self.humanizer(size)
 
     def fileTime(self, epoche):
         return strftime("%d.%m.%Y %H:%M:%S",localtime(epoche))

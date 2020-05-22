@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Enigma2 Filebrowser Plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-20 21:57+0200\n"
-"PO-Revision-Date: 2020-05-20 22:02+0200\n"
+"POT-Creation-Date: 2020-05-22 18:20+0200\n"
+"PO-Revision-Date: 2020-05-22 18:22+0200\n"
 "Last-Translator: ims <ims21@users.sourceforge.net>\n"
 "Language-Team: PLi <ims21@users.sourceforge.net>\n"
 "Language: cs_CZ\n"
@@ -25,6 +25,9 @@ msgstr "Přidat plugin do hlavního menu"
 
 msgid "Add plugin to Extensionmenu"
 msgstr "Přidat plugin do Extension menu"
+
+msgid "Count directory content size"
+msgstr "Počítat velikost obsahu adrešáře"
 
 msgid "Save path positions on exit"
 msgstr "Ukládat pozice při ukončení"
@@ -58,6 +61,12 @@ msgstr "Přejmenovat"
 
 msgid "Select location"
 msgstr "Zvolte umístění"
+
+msgid "Create directory"
+msgstr "Založit adresář"
+
+msgid "Select operation:"
+msgstr "Zvolte operaci:"
 
 msgid "Copy directory"
 msgstr "Kopírovat adresář"
@@ -118,6 +127,9 @@ msgstr "Přejmenování adresáře ..."
 
 msgid "renaming file ..."
 msgstr "Přejmenování souboru ..."
+
+msgid "creating directory ..."
+msgstr "Zakládání adresáře ..."
 
 msgid "no Viewer installed for this mimetype!"
 msgstr "pro tento typ souboru není nainstalován žádný prohlížeč!"
