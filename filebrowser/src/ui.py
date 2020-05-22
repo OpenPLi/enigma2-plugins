@@ -9,6 +9,7 @@ from Screens.Console import Console
 from Screens.InputBox import InputBox
 from Screens.MessageBox import MessageBox
 from Components.Label import Label
+from Screens.ChoiceBox import ChoiceBox
 from Screens.Screen import Screen
 from Components.ActionMap import ActionMap
 from Components.Scanner import openFile
@@ -16,6 +17,9 @@ from os.path import isdir as os_path_isdir, dirname as os_path_dirname, basename
 from mimetypes import guess_type
 from Screens.VirtualKeyBoard import VirtualKeyBoard
 from plugin import pname
+from enigma import getDesktop, eSize, ePoint
+from os import stat
+from time import strftime, localtime
 
 ##################################
 class FilebrowserConfigScreen(ConfigListScreen,Screen):
@@ -112,16 +116,15 @@ class FilebrowserScreen(Screen):
         self["key_yellow"] = Label(_("Copy"))
         self["key_blue"] = Label(_("Rename"))
 
-
-        self["actions"] = ActionMap(["ChannelSelectBaseActions","WizardActions", "DirectionActions","MenuActions","NumberActions","ColorActions"],
+        self["actions"] = ActionMap(["ChannelSelectBaseActions","WizardActions", "DirectionActions","MenuActions","NumberActions","ColorActions","ChannelSelectEPGActions"],
             {
              "ok":      self.ok,
              "back":    self.exit,
              "menu":    self.goMenu,
              "nextMarker": self.listRight,
              "prevMarker": self.listLeft,
-             "nextBouquet": self.listRight,
-             "prevBouquet": self.listLeft,
+             "nextBouquet": self.toggleList,
+             "prevBouquet": self.toggleList,
              "up": self.goUp,
              "down": self.goDown,
              "left": self.goLeft,
@@ -131,7 +134,10 @@ class FilebrowserScreen(Screen):
              "yellow": self.goYellow,
              "blue": self.goBlue,
              "0": self.doRefresh,
+             "info": self.displayItemInfo,
+             "epg": self.displayItemInfo,
              }, -1)
+        self.side = False
         self.onLayoutFinish.append(self.listLeft)
 
     def exit(self):
@@ -153,8 +159,52 @@ class FilebrowserScreen(Screen):
         else:
             self.onFileAction()
 
+    def displayItemInfo(self):
+        filename = self.SOURCELIST.getFilename()
+        if os_path_isdir(filename):
+            curFile = stat(filename).rstrip('/')
+            fileinfo = self.fileTime(curFile.st_mtime)
+        else:
+            curFile = stat(self.SOURCELIST.getCurrentDirectory() + filename)
+            fileinfo = "%s  (%s)        %s" % (self.humanizer(curFile.st_size),'{:,.0f}'.format(curFile.st_size), self.fileTime(curFile.st_mtime))
+        self.session.open(FilebrowserScreenInfo, (filename, fileinfo))
+
+    def fileTime(self, epoche):
+        return strftime("%d.%m.%Y %H:%M:%S",localtime(epoche))
+
+    def humanizer(self, size):
+        for index,count in enumerate(['B','KB','MB','GB']):
+            if size < 1024.0:
+                return "%3.2f %s" % (size, count) if index else "%d %s" % (size, count)
+            size /= 1024.0
+        return "%3.2f %s" % (size, 'TB')
+
     def goMenu(self):
-        self.session.open(FilebrowserConfigScreen)
+        menu = []
+        menu.append((_("Rename"), 2))
+        menu.append((_("Copy"), 5))
+        menu.append((_("Move"), 6))
+        menu.append((_("Create directory"), 7))
+        menu.append((_("Delete"), 8))
+        menu.append((_("Settings"), 100))
+        keys = ["2","5","6","7","8","menu"]
+        self.session.openWithCallback(self.menuCallback, ChoiceBox, title=_("Select operation:"), list=menu, keys=keys, skin_name="ChoiceBox")
+
+    def menuCallback(self, choice):
+        if choice is None:
+            return
+        if choice[1] == 2:
+            self.goBlue()
+        if choice[1] == 5:
+            self.goYellow()
+        elif choice[1] == 6:
+            self.goGreen()
+        elif choice[1] == 7:
+            self.goMkDir()
+        elif choice[1] == 8:
+            self.goRed()
+        elif choice[1] == 100:
+            self.session.open(FilebrowserConfigScreen)
 
     def goLeft(self):
         self.SOURCELIST.pageUp()
@@ -190,7 +240,7 @@ class FilebrowserScreen(Screen):
             else:
                 txt = _("copying file ...")
                 cmd = ["cp \""+sourceDir+filename+"\" \""+targetDir+"\""]
-            self.session.openWithCallback(self.doCopyCB, Console, title = txt, cmdlist = cmd)
+            self.session.openWithCallback(self.doCopyCB, Console, title = txt, cmdlist = cmd, closeOnSuccess = True)
 
     def doCopyCB(self):
         self.doRefresh()
@@ -215,7 +265,7 @@ class FilebrowserScreen(Screen):
             else:
                 txt = _("deleting file ...")
                 cmd = ["rm \""+sourceDir+filename+"\""]
-            self.session.openWithCallback(self.doDeleteCB, Console, title = txt, cmdlist = cmd)
+            self.session.openWithCallback(self.doDeleteCB, Console, title = txt, cmdlist = cmd, closeOnSuccess = True)
 
     def doDeleteCB(self):
         self.doRefresh()
@@ -242,7 +292,7 @@ class FilebrowserScreen(Screen):
             else:
                 txt = _("moving file ...")
                 cmd = ["mv \""+sourceDir+filename+"\" \""+targetDir+"\""]
-            self.session.openWithCallback(self.doMoveCB,Console, title = txt, cmdlist = cmd)
+            self.session.openWithCallback(self.doMoveCB,Console, title = txt, cmdlist = cmd, closeOnSuccess = True)
 
     def doMoveCB(self):
         self.doRefresh()
@@ -268,15 +318,34 @@ class FilebrowserScreen(Screen):
             else:
                 txt = _("renaming file ...")
                 cmd = ["mv \""+sourceDir+filename+"\" \""+sourceDir+newname+"\""]
-            self.session.openWithCallback(self.doRenameCB, Console, title = txt, cmdlist = cmd)
+            self.session.openWithCallback(self.doRenameCB, Console, title = txt, cmdlist = cmd, closeOnSuccess = True)
 
     def doRenameCB(self):
+        self.doRefresh()
+
+    # mkdir ###################
+    def goMkDir(self):
+        sourceDir = self.SOURCELIST.getCurrentDirectory()
+        text = _("Create directory")
+        self.session.openWithCallback(self.doMkDir, VirtualKeyBoard, title = text, text = "")
+
+    def doMkDir(self, dirname = None):
+        if dirname:
+            sourceDir = self.SOURCELIST.getCurrentDirectory()
+            txt = _("creating directory ...")
+            cmd = ["mkdir \""+sourceDir+dirname+"\""]
+            self.session.openWithCallback(self.doMkDirCB, Console, title = txt, cmdlist = cmd, closeOnSuccess = True)
+
+    def doMkDirCB(self):
         self.doRefresh()
 
     #############
     def doRefresh(self):
         self.SOURCELIST.refresh()
         self.TARGETLIST.refresh()
+
+    def toggleList(self):
+        self.listRight() if self.side else self.listLeft()
 
     def listRight(self):
         self["list_left"].selectionEnabled(0)
@@ -285,6 +354,7 @@ class FilebrowserScreen(Screen):
         self.TARGETLIST = self["list_left"]
         title = self.SOURCELIST.getCurrentDirectory()
         self.setTitle(title if title else _("Select location"))
+        self.side = False
 
     def listLeft(self):
         self["list_left"].selectionEnabled(1)
@@ -293,6 +363,7 @@ class FilebrowserScreen(Screen):
         self.TARGETLIST = self["list_right"]
         title = self.SOURCELIST.getCurrentDirectory()
         self.setTitle(title if title else _("Select location"))
+        self.side = True
 
     def onFileAction(self):
         try:
@@ -303,3 +374,57 @@ class FilebrowserScreen(Screen):
             #  File "/home/tmbinc/opendreambox/1.5/dm8000/experimental/build/tmp/work/enigma2-2.6git20090627-r1/image/usr/lib/enigma2/python/Components/Scanner.py", line 43, in handleFile
             #  TypeError: 'in <string>' requires string as left operand
             self.session.open(MessageBox,_("no Viewer installed for this mimetype!"), type = MessageBox.TYPE_ERROR, timeout = 5, close_on_any_key = True)
+
+##################################
+class FilebrowserScreenInfo(Screen):
+        skin="""
+        <screen name="FilebrowserScreenInfo" position="fill" title="FileInfo" flags="wfNoBorder" backgroundColor="background">
+                <widget name="path" position="15,25" size="1890,30" font="Regular;26"/>
+                <widget name="size" position="15,65" size="1890,30" font="Regular;26"/>
+        </screen>"""
+
+        def __init__(self, session, (filename, info)):
+                Screen.__init__(self, session)
+                self.session = session
+                self.path = filename
+                self.info = info
+
+                self["path"] = Label()
+                self["size"] = Label()
+
+                self["actions"] = ActionMap(["OkCancelActions","ChannelSelectEPGActions"],
+                {
+                        "ok": self.exit,
+                        "cancel": self.exit,
+                        "green": self.exit,
+                        "red": self.exit,
+                        "info": self.exit,
+                        "epg": self.exit,
+                }, -2)
+                self.onLayoutFinish.append(self.setSize)
+
+        def setSize(self):
+                w,h = self.getScreenSize()
+                mx = 30 if w >= 1920 else 15
+                x,y = self.getLineSize()
+                wsize = (x + 2*mx, 4*y)
+                self.instance.resize(eSize(*wsize))
+                self["path"].instance.move(ePoint(mx,y-y/4))
+                self["size"].instance.move(ePoint(mx,2*y+y/4))
+                wx = (w - wsize[0])/2
+                wy = (h - wsize[1])/2
+                self.instance.move(ePoint(wx,wy))
+
+        def getLineSize(self):
+                self["path"].instance.setNoWrap(1)
+                self["path"].setText("%s" % self.path)
+                self["size"].instance.setNoWrap(1)
+                self["size"].setText("%s" % self.info)
+                return max(self["path"].instance.calculateSize().width(), self["size"].instance.calculateSize().width()), max(self["path"].instance.calculateSize().height(), self["size"].instance.calculateSize().height())
+
+        def getScreenSize(self):
+                desktop = getDesktop(0)
+                return desktop.size().width(), desktop.size().height()
+
+        def exit(self):
+                self.close()
