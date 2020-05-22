@@ -161,8 +161,12 @@ class FilebrowserScreen(Screen):
 
     def displayItemInfo(self):
         filename = self.SOURCELIST.getFilename()
+        if not filename:
+            return
         if os_path_isdir(filename):
-            curFile = stat(filename).rstrip('/')
+            curFile = stat(filename)
+            if filename != '/':
+                filename = filename.rstrip('/')
             fileinfo = self.fileTime(curFile.st_mtime)
         else:
             curFile = stat(self.SOURCELIST.getCurrentDirectory() + filename)
@@ -221,6 +225,8 @@ class FilebrowserScreen(Screen):
     # copy ###################
     def goYellow(self):
         filename = self.SOURCELIST.getFilename()
+        if not filename:
+            return
         sourceDir = self.SOURCELIST.getCurrentDirectory()
         targetDir = self.TARGETLIST.getCurrentDirectory()
         if os_path_isdir(filename):
@@ -248,6 +254,8 @@ class FilebrowserScreen(Screen):
     # delete ###################
     def goRed(self):
         filename = self.SOURCELIST.getFilename()
+        if not filename:
+            return
         sourceDir = self.SOURCELIST.getCurrentDirectory()
         if os_path_isdir(filename):
             txt = _("Delete directory") + "?\n\n%s" % (filename)
@@ -273,6 +281,8 @@ class FilebrowserScreen(Screen):
     # move ###################
     def goGreen(self):
         filename = self.SOURCELIST.getFilename()
+        if not filename:
+            return
         sourceDir = self.SOURCELIST.getCurrentDirectory()
         targetDir = self.TARGETLIST.getCurrentDirectory()
         if os_path_isdir(filename):
@@ -297,9 +307,11 @@ class FilebrowserScreen(Screen):
     def doMoveCB(self):
         self.doRefresh()
 
-    # move ###################
+    # rename (mv) ###################
     def goBlue(self):
         filename = self.SOURCELIST.getFilename()
+        if not filename:
+            return
         sourceDir = self.SOURCELIST.getCurrentDirectory()
         if os_path_isdir(filename):
             text = _("Rename directory")
