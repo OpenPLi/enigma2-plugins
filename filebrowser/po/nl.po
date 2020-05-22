@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2 - Filebrowser Plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-20 23:35+0200\n"
-"PO-Revision-Date: 2020-05-20 23:54+0200\n"
+"POT-Creation-Date: 2020-05-22 18:20+0200\n"
+"PO-Revision-Date: 2020-05-22 18:23+0200\n"
 "Last-Translator: Frenske <voorzitter@openpli.org>\n"
 "Language-Team: PLi\n"
 "Language: nl_NL\n"
@@ -16,73 +16,77 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.3.1\n"
-
-msgid "Add plugin to Extensionmenu"
-msgstr "Voeg de plug-in aan het applicatiemenu toe."
-
-msgid "Add plugin to Mainmenu"
-msgstr "Voeg de plug-in aan het Hoofdmenu toe"
-
-msgid "Cancel"
-msgstr "Annuleren"
-
-msgid "Copy"
-msgstr "Kopieer"
-
-msgid "Copy directory"
-msgstr "Kopieer de map"
-
-msgid "Copy file"
-msgstr "Kopieer het bestand"
-
-msgid "Delete"
-msgstr "Verwijder"
-
-msgid "Delete directory"
-msgstr "Verwijder de map"
-
-msgid "Delete file"
-msgstr "Verwijder het bestand"
+"X-Generator: Poedit 2.0.6\n"
 
 msgid "Filebrowser"
 msgstr "Filebrowser"
 
-msgid "Left panel position"
-msgstr "Positie linker scherm"
+msgid "manage local Files"
+msgstr "Beheer de locale bestanden"
 
-msgid "Move"
-msgstr "Verplaats"
+msgid "Add plugin to Mainmenu"
+msgstr "Voeg de plug-in aan het Hoofdmenu toe"
 
-msgid "Move directory"
-msgstr "Verplaats de map"
+msgid "Add plugin to Extensionmenu"
+msgstr "Voeg de plug-in aan het applicatiemenu toe."
 
-msgid "Move file"
-msgstr "Verplaats een bestand"
-
-msgid "OK"
-msgstr "Ok"
-
-msgid "Rename"
-msgstr "Hernoemen"
-
-msgid "Rename directory"
-msgstr "Hernoem de map"
-
-msgid "Rename file"
-msgstr "Hernoem het bestand"
-
-msgid "Right panel position"
-msgstr "Positie rechter scherm"
+msgid "Count directory content size"
+msgstr ""
 
 msgid "Save path positions on exit"
 msgstr "Sla de positie(s) op bij het beëindigen van het programma"
 
-msgid "Select location"
-msgstr "Kies de locatie"
+msgid "Left panel position"
+msgstr "Positie linker scherm"
+
+msgid "Right panel position"
+msgstr "Positie rechter scherm"
+
+msgid "Cancel"
+msgstr "Annuleren"
+
+msgid "OK"
+msgstr "Ok"
 
 msgid "Settings"
 msgstr "Instellingen"
+
+msgid "Delete"
+msgstr "Verwijder"
+
+msgid "Move"
+msgstr "Verplaats"
+
+msgid "Copy"
+msgstr "Kopieer"
+
+msgid "Rename"
+msgstr "Hernoemen"
+
+msgid "Select location"
+msgstr "Kies de locatie"
+
+#, fuzzy
+#| msgid "Delete directory"
+msgid "Create directory"
+msgstr "Verwijder de map"
+
+#, fuzzy
+#| msgid "Select location"
+msgid "Select operation:"
+msgstr "Kies de locatie"
+
+msgid "Copy directory"
+msgstr "Kopieer de map"
+
+msgid "to"
+msgstr "naar"
+
+msgid "Copy file"
+msgstr "Kopieer het bestand"
+
+msgid "from"
+msgstr "van"
 
 msgid "copying directory, wait please ..."
 msgstr "kopieer de map, een moment aub ..."
@@ -90,20 +94,29 @@ msgstr "kopieer de map, een moment aub ..."
 msgid "copying file ..."
 msgstr "kopieer het bestand ..."
 
+msgid "Delete directory"
+msgstr "Verwijder de map"
+
+msgid "Delete file"
+msgstr "Verwijder het bestand"
+
+msgid "from dir"
+msgstr "vanuit de map"
+
 msgid "deleting directory ..."
 msgstr "verwijderen van de map ..."
 
 msgid "deleting file ..."
 msgstr "verwijder het bestand ..."
 
-msgid "from"
-msgstr "van"
+msgid "Move directory"
+msgstr "Verplaats de map"
 
-msgid "from dir"
-msgstr "vanuit de map"
+msgid "Move file"
+msgstr "Verplaats een bestand"
 
-msgid "manage local Files"
-msgstr "Beheer de locale bestanden"
+msgid "to dir"
+msgstr "naar map"
 
 msgid "moving directory, wait please ..."
 msgstr "verplaatsen van de map, een moment aub ..."
@@ -111,8 +124,11 @@ msgstr "verplaatsen van de map, een moment aub ..."
 msgid "moving file ..."
 msgstr "verplaatsen van het bestand ..."
 
-msgid "no Viewer installed for this mimetype!"
-msgstr "geen Viewer geïnstalleerd voor dit mimetype!"
+msgid "Rename directory"
+msgstr "Hernoem de map"
+
+msgid "Rename file"
+msgstr "Hernoem het bestand"
 
 msgid "renaming directory ..."
 msgstr "hernoemd de map ..."
@@ -120,8 +136,10 @@ msgstr "hernoemd de map ..."
 msgid "renaming file ..."
 msgstr "hernoemd het bestand ..."
 
-msgid "to"
-msgstr "naar"
+#, fuzzy
+#| msgid "renaming directory ..."
+msgid "creating directory ..."
+msgstr "hernoemd de map ..."
 
-msgid "to dir"
-msgstr "naar map"
+msgid "no Viewer installed for this mimetype!"
+msgstr "geen Viewer geïnstalleerd voor dit mimetype!"

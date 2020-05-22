@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Enigma 2 Filebrowser Plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-20 21:57+0200\n"
-"PO-Revision-Date: 2020-05-20 22:03+0200\n"
+"POT-Creation-Date: 2020-05-22 18:20+0200\n"
+"PO-Revision-Date: 2020-05-22 18:24+0200\n"
 "Last-Translator: ims <ims21@users.sourceforge.net>\n"
 "Language-Team: openPli\n"
 "Language: ru_RU\n"
@@ -24,6 +24,9 @@ msgid "Add plugin to Mainmenu"
 msgstr ""
 
 msgid "Add plugin to Extensionmenu"
+msgstr ""
+
+msgid "Count directory content size"
 msgstr ""
 
 msgid "Save path positions on exit"
@@ -63,6 +66,14 @@ msgstr "Переименовать"
 
 #, fuzzy
 msgid "Select location"
+msgstr "Выбор расположения"
+
+#, fuzzy
+msgid "Create directory"
+msgstr "удалить файл"
+
+#, fuzzy
+msgid "Select operation:"
 msgstr "Выбор расположения"
 
 #, fuzzy
@@ -132,6 +143,10 @@ msgstr ""
 
 msgid "renaming file ..."
 msgstr ""
+
+#, fuzzy
+msgid "creating directory ..."
+msgstr "удалить файл"
 
 msgid "no Viewer installed for this mimetype!"
 msgstr ""

@@ -15,6 +15,7 @@ config.plugins.filebrowser.add_extensionmenu_entry = ConfigYesNo(default = False
 config.plugins.filebrowser.savedirs = ConfigYesNo(default = True)
 config.plugins.filebrowser.path_left = ConfigText(default = "/")
 config.plugins.filebrowser.path_right = ConfigText(default = "/")
+config.plugins.filebrowser.dir_size = ConfigYesNo(default = False)
 
 ##################################
 
