@@ -168,7 +168,7 @@ class FilebrowserScreen(Screen):
             curFile = os_stat(filename)
             if filename != '/':
                 filename = filename.rstrip('/')
-            fileinfo = "%s        " % self.dirSize(filename) if config.plugins.filebrowser.dir_size.value else "" + self.fileTime(curFile.st_mtime)
+            fileinfo = ("%s        " % self.dirSize(filename) if config.plugins.filebrowser.dir_size.value else "") + self.fileTime(curFile.st_mtime)
         else:
             curFile = os_stat(self.SOURCELIST.getCurrentDirectory() + filename)
             fileinfo = "%s  (%s)        %s" % (self.humanizer(curFile.st_size),'{:,.0f}'.format(curFile.st_size), self.fileTime(curFile.st_mtime))
