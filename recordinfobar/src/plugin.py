@@ -20,7 +20,7 @@ from Screens import Standby
 from Tools import Notifications
 import RecInfobarSetup
 import NavigationInstance
-import ServiceReference
+from ServiceReference import ServiceReference
 import Screens.InfoBar
 import math
 
@@ -404,7 +404,14 @@ class RecInfoBar(Screen):
 							if timer.service_ref.ref != eServiceReference(config.tv.lastservice.value):
 								self.setZapPosition(timer.service_ref.ref, SetCurTimer=True)
 								self.SetPosition = False
-						name = timer.service_ref.getServiceName()
+						timerservice = timer.service_ref
+						if timerservice and timerservice.ref.flags & eServiceReference.isGroup:
+							alternativeref = hasattr(timer, "rec_ref") and timer.rec_ref
+							if not alternativeref:
+								alternativeref = getBestPlayableServiceReference(timer.service_ref.ref, eServiceReference())
+							if alternativeref:
+								timerservice = ServiceReference(alternativeref)
+						name = timerservice.getServiceName()
 						begin = timer.begin
 						if (Time() - begin) >= 60:
 							begin = Time()
@@ -416,10 +423,10 @@ class RecInfoBar(Screen):
 						duration = ((end - begin) / 60)
 						remaining = (end, _("%s...%s (%d mins)") % (beginstr, endstr, duration))
 						num, bqname = self.getServiceNumber(timer.service_ref.ref)
-						prov = self.getServiceProvider(timer.service_ref.ref)
+						prov = self.getServiceProvider(timerservice.ref)
 						recname = timer.name
 						tunnum, tunname = self.getTunerName(timer.record_service)
-						if "%3a//" in timer.service_ref.ref.toString().lower():
+						if "%3a//" in timerservice.ref.toString():
 							tunname = 'Stream'
 						self.reclist[service] = [num, name, begin, prov, bqname, recname, tunname, remaining, timer.record_service]
 						if config.plugins.RecInfobar.always_zap.value == "1" and self.no_decode == True and Standby.inStandby is None:
@@ -590,12 +597,9 @@ class RecInfoBar(Screen):
 		return 0, ''
 
 	def getServiceProvider(self, ref):
+		if not ref:
+			return _("N/A")
 		if isinstance(ref, eServiceReference):
-			str_ref = ref.toString()
-			if str_ref.startswith('1:134:'):
-				ref = getBestPlayableServiceReference(ref, eServiceReference())
-				if not ref:
-					return _("N/A")
 			typestr = ref.getData(0) in (2,10) and service_types_radio or service_types_tv
 			pos = typestr.rfind(':')
 			rootstr = '%s (channelID == %08x%04x%04x) && %s FROM PROVIDERS ORDER BY name'%(typestr[:pos+1],
