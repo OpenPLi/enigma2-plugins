@@ -38,7 +38,7 @@ from AutoTimer import AutoTimer
 autotimer = AutoTimer()
 autopoller = None
 
-AUTOTIMER_VERSION = "4.6.3"
+AUTOTIMER_VERSION = "4.6.4"
 
 try:
 	from Plugins.SystemPlugins.MPHelp import registerHelp, XMLHelpReader
@@ -302,7 +302,7 @@ def AutoTimerChannelContextMenu__init__(self, session, csel):
 			if isPlayable:
 				if config.plugins.autotimer.add_to_channelselection.value:
 					callFunction = self.addtoAutoTimer
-					self["menu"].list.insert(3, ChoiceEntryComponent(text = (_("create AutoTimer for current event"), boundFunction(callFunction,1))))
+					self["menu"].list.insert(3, ChoiceEntryComponent(text = (_("create AutoTimer for current event"), boundFunction(callFunction,1)), key = "bullet"))
 
 def addtoAutoTimer(self, add):
 	sref = self.csel.servicelist.getCurrent()
