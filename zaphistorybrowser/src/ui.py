@@ -45,8 +45,14 @@ ChannelSelection.addToHistory = addToHistory
 
 class ZapHistoryConfigurator(ConfigListScreen, Screen):
 	skin = """
-		<screen position="center,center" size="420,80">
-			<widget name="config" position="0,0" size="420,80" scrollbarMode="showOnDemand" />
+		<screen position="center,center" size="560,90">
+		<ePixmap pixmap="skin_default/buttons/red.png" position="0,0" size="140,40" transparent="1" alphatest="on" />
+		<ePixmap pixmap="skin_default/buttons/green.png" position="140,0" size="140,40" transparent="1" alphatest="on" />
+		<ePixmap pixmap="skin_default/buttons/yellow.png" position="280,0" size="140,40" transparent="1" alphatest="on" />
+		<ePixmap pixmap="skin_default/buttons/blue.png" position="420,0" size="140,40" transparent="1" alphatest="on" />
+		<widget name="key_red" position="0,0" zPosition="1" size="140,40" font="Regular;20" valign="center" halign="center" backgroundColor="#1f771f" transparent="1" />
+		<widget name="key_green" position="140,0" zPosition="1" size="140,40" font="Regular;20" valign="center" halign="center" backgroundColor="#1f771f" transparent="1" />
+		<widget name="config" position="0,40" size="560,50" scrollbarMode="showOnDemand" />
 		</screen>"""
 
 	def __init__(self, session):
@@ -58,11 +64,15 @@ class ZapHistoryConfigurator(ConfigListScreen, Screen):
 			getConfigListEntry(_("Enable zap history:"), config.plugins.ZapHistoryConfigurator.enable_zap_history),
 			getConfigListEntry(_("Maximum zap history entries:"), config.plugins.ZapHistoryConfigurator.maxEntries_zap_history)])
 		
-		self["actions"] = ActionMap(["OkCancelActions"],
+		self["actions"] = ActionMap(["OkCancelActions", "ColorActions"],
 			{
 				"ok": self.save,
-				"cancel": self.exit
+				"green": self.save,
+				"cancel": self.exit,
+				"red": self.exit
 			}, -2)
+		self["key_red"] = Label(_("Cancel"))
+		self["key_green"] = Label(_("OK"))
 
 	def save(self):
 		for x in self["config"].list:
