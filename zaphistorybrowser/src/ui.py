@@ -2,22 +2,20 @@
 from . import _
 from Plugins.Plugin import PluginDescriptor
 from Components.ActionMap import ActionMap
-from Components.config import config, ConfigInteger, ConfigSelection, \
-		ConfigYesNo, ConfigSet, ConfigSubsection, getConfigListEntry
+from Components.config import config, ConfigSubsection, ConfigSelection, ConfigSet, ConfigInteger, getConfigListEntry
 from Components.ConfigList import ConfigListScreen
 from Components.Label import Label
 from Components.Sources.List import List
 from Screens.ChannelSelection import ChannelSelection
 from Screens.ParentalControlSetup import ProtectedScreen
 from Screens.Screen import Screen
-from enigma import eServiceReference, eServiceCenter
+from enigma import eServiceCenter
 
 ################################################
 
 config.plugins.ZapHistoryConfigurator = ConfigSubsection()
 config.plugins.ZapHistoryConfigurator.enable_zap_history = ConfigSelection(choices = {"off": _("disabled"), "on": _("enabled"), "parental_lock": _("disabled at parental lock")}, default="on")
 config.plugins.ZapHistoryConfigurator.maxEntries_zap_history = ConfigInteger(default=20, limits=(1, 60))
-config.plugins.ZapHistoryConfigurator.e1_like_history = ConfigYesNo(default = False)
 config.plugins.ZapHistoryConfigurator.history_tv = ConfigSet(choices = [])
 config.plugins.ZapHistoryConfigurator.history_radio = ConfigSet(choices = [])
 
@@ -34,42 +32,14 @@ def addToHistory(instance, ref):
 		tmp.append(ref)
 		try: del instance.history[instance.history_pos+1:]
 		except Exception, e: pass
-		if config.plugins.ZapHistoryConfigurator.e1_like_history.value and tmp in instance.history:
-			instance.history.remove(tmp)
 		instance.history.append(tmp)
 		hlen = len(instance.history)
 		if hlen > config.plugins.ZapHistoryConfigurator.maxEntries_zap_history.value:
 			del instance.history[0]
 			hlen -= 1
 		instance.history_pos = hlen-1
-		if config.plugins.ZapHistoryConfigurator.e1_like_history.value:
-			# TODO: optimize this
-			if instance.history == instance.history_tv:
-				config.plugins.ZapHistoryConfigurator.history_tv.value = [[y.toString() for y in x] for x in instance.history]
-			else:
-				config.plugins.ZapHistoryConfigurator.history_radio.value = [[y.toString() for y in x] for x in instance.history]
-			config.plugins.ZapHistoryConfigurator.save()
 
 ChannelSelection.addToHistory = addToHistory
-
-def newInit(self, session):
-	baseInit(self, session)
-	if config.plugins.ZapHistoryConfigurator.e1_like_history.value:
-		append = self.history_tv.append
-		for x in config.plugins.ZapHistoryConfigurator.history_tv.value:
-			append([eServiceReference(y) for y in x])
-		append = self.history_radio.append
-		for x in config.plugins.ZapHistoryConfigurator.history_radio.value:
-			append([eServiceReference(y) for y in x])
-
-		# XXX: self.lastChannelRootTimer was always finished for me, so just fix its mistakes ;)
-		if self.history == self.history_tv:
-			self.history_pos = len(self.history_tv)-1
-		else:
-			self.history_pos = len(self.history_radio)-1
-
-baseInit = ChannelSelection.__init__
-ChannelSelection.__init__ = newInit
 
 ################################################
 
@@ -86,25 +56,15 @@ class ZapHistoryConfigurator(ConfigListScreen, Screen):
 
 		ConfigListScreen.__init__(self, [
 			getConfigListEntry(_("Enable zap history:"), config.plugins.ZapHistoryConfigurator.enable_zap_history),
-			getConfigListEntry(_("Maximum zap history entries:"), config.plugins.ZapHistoryConfigurator.maxEntries_zap_history),
-			getConfigListEntry(_("Enigma1-like history:"), config.plugins.ZapHistoryConfigurator.e1_like_history)])
+			getConfigListEntry(_("Maximum zap history entries:"), config.plugins.ZapHistoryConfigurator.maxEntries_zap_history)])
 		
-		self["actions"] = ActionMap(["OkCancelActions"], {"ok": self.save, "cancel": self.exit}, -2)
+		self["actions"] = ActionMap(["OkCancelActions"],
+			{
+				"ok": self.save,
+				"cancel": self.exit
+			}, -2)
 
 	def save(self):
-		# alternative to notifier
-		if config.plugins.ZapHistoryConfigurator.e1_like_history.value and config.plugins.ZapHistoryConfigurator.e1_like_history.isChanged():
-			from Screens.InfoBar import InfoBar
-			try:
-				csel = InfoBar.instance.servicelist
-			except AttributeError, e:
-				pass
-			else:
-				config.plugins.ZapHistoryConfigurator.history_tv.value = [[y.toString() for y in x] for x in csel.history_tv]
-				config.plugins.ZapHistoryConfigurator.history_radio.value = [[y.toString() for y in x] for x in csel.history_radio]
-				config.plugins.ZapHistoryConfigurator.history_tv.save()
-				config.plugins.ZapHistoryConfigurator.history_radio.save()
-
 		for x in self["config"].list:
 			x[1].save()
 		self.close()
