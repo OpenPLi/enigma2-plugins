@@ -6,7 +6,7 @@ from Components.config import config, ConfigInteger, ConfigSelection, \
 from Components.ConfigList import ConfigListScreen
 from Components.Label import Label
 from Components.Language import language
-from Components.MenuList import MenuList
+from Components.Sources.List import List
 from Components.MultiContent import MultiContentEntryText
 from enigma import eListboxPythonMultiContent, eServiceCenter, \
 		eServiceReference, gFont
@@ -96,14 +96,15 @@ ChannelSelection.__init__ = newInit
 
 class ZapHistoryConfigurator(ConfigListScreen, Screen):
 	skin = """
-		<screen position="center,center" size="420,80" title="%s" >
+		<screen position="center,center" size="420,80">
 			<widget name="config" position="0,0" size="420,80" scrollbarMode="showOnDemand" />
-		</screen>""" % _("Zap-History Configurator")
+		</screen>"""
 
 	def __init__(self, session):
 		Screen.__init__(self, session)
 		self.session = session
-		
+		self.setTitle(_("Zap-History Configurator"))
+
 		ConfigListScreen.__init__(self, [
 			getConfigListEntry(_("Enable zap history:"), config.plugins.ZapHistoryConfigurator.enable_zap_history),
 			getConfigListEntry(_("Maximum zap history entries:"), config.plugins.ZapHistoryConfigurator.maxEntries_zap_history),
@@ -136,24 +137,9 @@ class ZapHistoryConfigurator(ConfigListScreen, Screen):
 
 ################################################
 
-class ZapHistoryBrowserList(MenuList):
-	def __init__(self, list, enableWrapAround=False):
-		MenuList.__init__(self, list, enableWrapAround, eListboxPythonMultiContent)
-		self.l.setItemHeight(40)
-		self.l.setFont(0, gFont("Regular", 20))
-		self.l.setFont(1, gFont("Regular", 18))
-
-def ZapHistoryBrowserListEntry(serviceName, eventName):
-	res = [serviceName]
-	res.append(MultiContentEntryText(pos=(0, 0), size=(560, 22), font=0, text=serviceName))
-	res.append(MultiContentEntryText(pos=(0, 22), size=(560, 18), font=1, text=eventName))
-	return res
-
-################################################
-
 class ZapHistoryBrowser(Screen, ProtectedScreen):
 	skin = """
-	<screen position="center,center" size="560,440" title="%s" >
+	<screen name="ZapHistoryBrowser" position="center,center" size="560,440">
 		<ePixmap pixmap="skin_default/buttons/red.png" position="0,0" size="140,40" transparent="1" alphatest="on" />
 		<ePixmap pixmap="skin_default/buttons/green.png" position="140,0" size="140,40" transparent="1" alphatest="on" />
 		<ePixmap pixmap="skin_default/buttons/yellow.png" position="280,0" size="140,40" transparent="1" alphatest="on" />
@@ -162,24 +148,39 @@ class ZapHistoryBrowser(Screen, ProtectedScreen):
 		<widget name="key_green" position="140,0" zPosition="1" size="140,40" font="Regular;20" valign="center" halign="center" backgroundColor="#1f771f" transparent="1" />
 		<widget name="key_yellow" position="280,0" zPosition="1" size="140,40" font="Regular;20" valign="center" halign="center" backgroundColor="#1f771f" transparent="1" />
 		<widget name="key_blue" position="420,0" zPosition="1" size="140,40" font="Regular;20" valign="center" halign="center" backgroundColor="#1f771f" transparent="1" />
-		<widget name="list" position="0,40" size="560,400" scrollbarMode="showOnDemand" />
-	</screen>""" % _("Zap-History Browser")
+		<widget source="list" render="Listbox" position="0,40" size="560,400" scrollbarMode="showOnDemand">
+			<convert type="TemplatedMultiContent" >
+			{
+				"template":[
+						MultiContentEntryText(pos=(2,2), size=(556,23), font=0, flags=RT_HALIGN_LEFT, text=0),
+						MultiContentEntryText(pos=(2,26), size=(556,21), font=1, flags=RT_HALIGN_LEFT, text=1),
+				],
+				"fonts": [gFont("Regular",20), gFont("Regular",18)],
+				"itemHeight": 50
+			}
+			</convert>
+		</widget>
+	</screen>"""
 
 	def __init__(self, session, servicelist):
 		Screen.__init__(self, session)
 		ProtectedScreen.__init__(self)
 		self.session = session
-		
+
 		self.servicelist = servicelist
 		self.serviceHandler = eServiceCenter.getInstance()
 		self.allowChanges = True
-		
-		self["list"] = ZapHistoryBrowserList([])
+
+		self.setTitle(_("Zap-History Browser"))
+
+		self.list = []
+		self["list"] = List(self.list)
+
 		self["key_red"] = Label(_("Clear"))
 		self["key_green"] = Label(_("Delete"))
 		self["key_yellow"] = Label(_("Zap & Close"))
 		self["key_blue"] = Label(_("Config"))
-		
+
 		self["actions"] = ActionMap(["OkCancelActions", "ColorActions"],
 			{
 				"ok": self.zap,
@@ -212,14 +213,14 @@ class ZapHistoryBrowser(Screen, ProtectedScreen):
 			else:
 				name = "N/A"
 				eventName = ""
-			list.append(ZapHistoryBrowserListEntry(name, eventName))
+			list.append((name, eventName))
 		list.reverse()
 		self["list"].setList(list)
 
 	def zap(self):
 		length = len(self.servicelist.history)
 		if length > 0:
-			self.servicelist.history_pos = (length - self["list"].getSelectionIndex()) - 1
+			self.servicelist.history_pos = (length - self["list"].getIndex()) - 1
 			self.servicelist.setHistoryPath()
 
 	def clear(self):
@@ -233,7 +234,7 @@ class ZapHistoryBrowser(Screen, ProtectedScreen):
 		if self.allowChanges:
 			length = len(self.servicelist.history)
 			if length > 0:
-				idx = (length - self["list"].getSelectionIndex()) - 1
+				idx = (length - self["list"].getIndex()) - 1
 				del self.servicelist.history[idx]
 				self.buildList()
 				currRef = self.session.nav.getCurrentlyPlayingServiceReference()
@@ -259,7 +260,7 @@ class ZapHistoryBrowser(Screen, ProtectedScreen):
 
 	def isProtected(self):
 		return config.ParentalControl.servicepinactive.value
-	
+
 	def pinEntered(self, result):
 		if result is None:
 			self.allowChanges = False
