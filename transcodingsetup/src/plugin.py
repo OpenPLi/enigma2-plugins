@@ -29,7 +29,7 @@ if SystemInfo["HasH265Encoder"]:
 	config.plugins.transcodingsetup.aspectratio = ConfigSelection(default = "0", choices = [("0", "auto")])
 	config.plugins.transcodingsetup.interlaced = ConfigSelection(default = "0", choices = [("0", "auto")])
 else:
-	config.plugins.transcodingsetup.resolution = ConfigSelection(default = "720x576", choices = [ ("720x480", "480p"), ("720x576", "576p"), ("1280x720", "720p")])
+	config.plugins.transcodingsetup.resolution = ConfigSelection(default = "720x576", choices = [ ("720x480", "480pSD"), ("720x576", "576p (4:3)"), ("1280x720", "720p")])
 	config.plugins.transcodingsetup.framerate = ConfigSelection(default = "25000", choices = [("23976", "23.976 fps"), ("24000", "24 fps"), ("25000", "25 fps"), ("30000", "30 fps")])
 	config.plugins.transcodingsetup.aspectratio = ConfigSelection(default = "2", choices = [("0", "auto"), ("1", "4x3"), ("2", "16x9")])
 	config.plugins.transcodingsetup.interlaced = ConfigSelection(default = "0", choices = [("0", "progressive"), ("1", "interlaced")])
