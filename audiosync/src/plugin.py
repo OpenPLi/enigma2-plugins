@@ -8,8 +8,8 @@ from Screens.Screen import Screen
 from Components.ServiceEventTracker import ServiceEventTracker
 from Components.SystemInfo import SystemInfo
 from Plugins.Extensions.AudioSync.AC3utils import AC3, PCM, AC3GLOB, PCMGLOB, AC3PCM
+from Plugins.Extensions.AudioSync import AC3setup
 import NavigationInstance
-import Plugins.Extensions.AudioSync.AC3setup
 import os
 
 config.plugins.AC3LipSync = ConfigSubsection()
@@ -142,7 +142,7 @@ class audioDelay(Screen):
 					delay_value = 0
 					setvalue = True
 				if setvalue:
-					from AC3delay import AC3delay
+					from Plugins.Extensions.AudioSync.AC3delay import AC3delay
 					AC3delay = AC3delay()
 					sAudio = AC3delay.whichAudio
 					if sAudio == AC3 or sAudio == PCM:
@@ -174,7 +174,7 @@ def autostart(reason, **kwargs):
 
 
 def main(session, **kwargs):
-	import AC3main
+	from Plugins.Extensions.AudioSync import AC3main
 	session.open(AC3main.AC3LipSync, plugin_path)
 
 
@@ -183,7 +183,7 @@ def setup(session, **kwargs):
 
 
 def audioMenu(session, **kwargs):
-	import AC3main
+	from Plugins.Extensions.AudioSync import AC3main
 	session.open(AC3main.AC3LipSync, plugin_path)
 
 
