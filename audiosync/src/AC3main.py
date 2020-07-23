@@ -70,7 +70,7 @@ class AC3LipSync(Screen, HelpableScreen, MovableScreen):
 		self["key_blue"] = Label(_("Save to key"))
 
 		# Actions
-		self["actions"] = HelpableNumberActionMap(self, "PluginAudioSyncActions",
+		self["actions"] = HelpableNumberActionMap(self, ["PluginAudioSyncActions"],
 		{
 			"menu": (self.keyMenu, _("Open plugin menu")),
 			"ok": (self.keyOk, _("Save values and close plugin")),
