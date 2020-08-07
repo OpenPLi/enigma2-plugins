@@ -21,7 +21,7 @@
 #
 
 from Plugins.Plugin import PluginDescriptor
-from urlparse import urlparse
+from urllib.parse import urlparse
 from Screens.Screen import Screen
 from Screens.InfoBar import InfoBar
 from Components.SystemInfo import SystemInfo
@@ -46,7 +46,7 @@ from Components.ConfigList import ConfigListScreen
 from Screens.MessageBox import MessageBox
 from Components.GUIComponent import GUIComponent
 from Components.Sources.StaticText import StaticText
-from urllib import quote
+from urllib.parse import quote
 from twisted.web.client import downloadPage
 from Screens.ChoiceBox import ChoiceBox
 from Screens.VirtualKeyBoard import VirtualKeyBoard
