@@ -965,7 +965,7 @@ class SHOUTcastWidget(Screen):
 					pass
 				coverfile = coverfiles[self.currentcoverfile]
 				print("[SHOUTcast] downloading cover from %s to %s numer%s" % (url, coverfile, str(nr)))
-				downloadPage(url, coverfile).addCallback(self.coverDownloadFinished, coverfile).addErrback(self.coverDownloadFailed)
+				downloadPage(url.encode(), coverfile).addCallback(self.coverDownloadFinished, coverfile).addErrback(self.coverDownloadFailed)
 
 	def coverDownloadFailed(self, result):
 		print("[SHOUTcast] cover download failed:", result)
