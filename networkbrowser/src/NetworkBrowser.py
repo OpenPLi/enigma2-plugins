@@ -19,7 +19,7 @@ from Plugins.SystemPlugins.NetworkBrowser.AutoMount import iAutoMount
 from Plugins.SystemPlugins.NetworkBrowser.MountEdit import AutoMountEdit
 from Plugins.SystemPlugins.NetworkBrowser.UserDialog import UserDialog
 import netscan
-import cPickle
+import pickle
 import os
 import stat
 import time
@@ -33,12 +33,12 @@ def write_cache(cache_file, cache_data):
 		except Exception as ex:
 			print("ERROR creating:", path, ex)
 	with open(cache_file, 'w') as fd:
-		cPickle.dump(cache_data, fd, -1)
+		pickle.dump(cache_data, fd, -1)
 
 
 def load_cache(cache_file):
 	with open(cache_file) as fd:
-		return cPickle.load(fd)
+		return pickle.load(fd)
 
 
 def valid_cache(cache_file, cache_ttl):
