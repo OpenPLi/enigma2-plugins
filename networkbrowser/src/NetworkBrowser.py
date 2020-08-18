@@ -30,7 +30,7 @@ def write_cache(cache_file, cache_data):
 	if not os.path.isdir(path):
 		try:
 			os.mkdir(path)
-		except Exception, ex:
+		except Exception as ex:
 			print("ERROR creating:", path, ex)
 	with open(cache_file, 'w') as fd:
 		cPickle.dump(cache_data, fd, -1)
