@@ -20,7 +20,7 @@ def rm_rf(d): # only for removing the ipkg stuff from /media/hdd subdirs
 			else:
 				os.unlink(path)
 		os.rmdir(d)
-	except Exception, ex:
+	except Exception as ex:
 	        print("AutoMount failed to remove", d, "Error:", ex)
 
 
@@ -51,11 +51,11 @@ class AutoMount():
 
 		try:
 			tree = cet_parse(XML_FSTAB).getroot()
-		except Exception, e:
+		except Exception as e:
 			print("[MountManager] Error reading /etc/enigma2/automounts.xml:", e)
 			try:
 				os.remove(XML_FSTAB)
-			except Exception, e:
+			except Exception as e:
 				print("[MountManager] Error delete corrupt /etc/enigma2/automounts.xml:", e)
 			return
 
@@ -84,7 +84,7 @@ class AutoMount():
 					data['sharename'] = getValue(mount.findall("sharename"), "MEDIA").encode("UTF-8")
 					data['options'] = getValue(mount.findall("options"), "").encode("UTF-8")
 					self.automounts[data['sharename']] = data
-				except Exception, e:
+				except Exception as e:
 					print("[MountManager] Error reading Mounts:", e)
 
 		# Read out CIFS Mounts
@@ -106,7 +106,7 @@ class AutoMount():
 					data['username'] = getValue(mount.findall("username"), 'guest').encode("UTF-8")
 					data['password'] = getValue(mount.findall("password"), 'guest').encode("UTF-8")
 					self.automounts[data['sharename']] = data
-				except Exception, e:
+				except Exception as e:
 					print("[MountManager] Error reading Mounts:", e)
 
 		self.checkList = self.automounts.keys()
@@ -286,7 +286,7 @@ class AutoMount():
 
 							command = None
 
-			except Exception, ex:
+			except Exception as ex:
 					print("[AutoMount.py] Failed to create", path, "Error:", ex)
 
 		# execute any command constructed
@@ -318,7 +318,7 @@ class AutoMount():
 					        try:
 							os.rmdir(path)
 							harddiskmanager.removeMountedPartition(path)
-						except Exception, ex:
+						except Exception as ex:
 						        print("Failed to remove", path, "Error:", ex)
 
 		if self.checkList:
@@ -351,7 +351,7 @@ class AutoMount():
 		if not os.path.exists(movie):
 		        try:
 				os.mkdir(movie)
-			except Exception, ex:
+			except Exception as ex:
 				print("[AutoMount.py] Failed to create ", movie, "Error:", ex)
 
 	def mountTimeout(self):
@@ -405,7 +405,7 @@ class AutoMount():
 		# Try Saving to Flash
 		try:
 			open(XML_FSTAB, "w").writelines(list)
-		except Exception, e:
+		except Exception as e:
 			print("[AutoMount.py] Error Saving Mounts List:", e)
 
 	def stopMountConsole(self):
@@ -435,7 +435,7 @@ class AutoMount():
 			        try:
 					os.rmdir(path)
 					harddiskmanager.removeMountedPartition(path)
-				except Exception, ex:
+				except Exception as ex:
 				        print("Failed to remove", path, "Error:", ex)
 		if self.removeConsole:
 			if len(self.removeConsole.appContainers) == 0:

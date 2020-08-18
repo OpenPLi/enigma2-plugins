@@ -103,7 +103,7 @@ class AutoMountEdit(Screen, ConfigListScreen):
 			host = ''
 		try:
 			ip = convertIP(self.mountinfo['ip'])
-		except Exception, ex:
+		except Exception as ex:
 			print("[NWB] Invalid IP", ex)
 			ip = [0, 0, 0, 0]
 		sharename = self.mountinfo.get('sharename', "Sharename")
