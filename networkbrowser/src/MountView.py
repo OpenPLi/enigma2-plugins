@@ -78,6 +78,8 @@ class AutoMountView(Screen):
                 self["config"].setList(self.list)
 
         def buildMountViewItem(self, entry):
+                activepng = ""
+                mounttypepng = ""
                 if entry["isMounted"] is True:
                         isMountedpng = LoadPixmap(cached=True, path=resolveFilename(SCOPE_PLUGINS, "SystemPlugins/NetworkBrowser/icons/ok.png"))
                 if entry["isMounted"] is False:
