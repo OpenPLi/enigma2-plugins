@@ -109,7 +109,7 @@ class AutoMount():
 				except Exception as e:
 					print("[MountManager] Error reading Mounts:", e)
 
-		self.checkList = self.automounts.keys()
+		self.checkList = list(self.automounts.keys())
 		if not self.checkList:
 			print("[AutoMount.py] self.automounts without mounts", self.automounts)
 			if callback is not None:
