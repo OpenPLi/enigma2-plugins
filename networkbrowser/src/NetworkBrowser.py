@@ -18,7 +18,7 @@ from Plugins.SystemPlugins.NetworkBrowser.MountManager import AutoMountManager
 from Plugins.SystemPlugins.NetworkBrowser.AutoMount import iAutoMount
 from Plugins.SystemPlugins.NetworkBrowser.MountEdit import AutoMountEdit
 from Plugins.SystemPlugins.NetworkBrowser.UserDialog import UserDialog
-import netscan
+from Plugins.SystemPlugins.NetworkBrowser import netscan
 import pickle
 import os
 import stat
