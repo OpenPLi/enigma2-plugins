@@ -6,6 +6,7 @@ from Plugins.Plugin import PluginDescriptor
 from Components.ActionMap import ActionMap
 from Components.MenuList import MenuList
 from Tools.Directories import fileExists
+from enigma import getDesktop
 import os
 
 transmission_sh = "/etc/init.d/transmission.sh"
@@ -14,10 +15,16 @@ swap_sh = "/usr/lib/enigma2/python/Plugins/Extensions/Transmission/trans_swap.sh
 pause_sh = "/usr/lib/enigma2/python/Plugins/Extensions/Transmission/trans_start_stop_down.sh"
 
 class Transmission(Screen):
-	skin = """
-	<screen position="center,center" size="720,440" title="Transmission menu" >
-		<widget name="menu" position="10,10" size="700,420" scrollbarMode="showOnDemand" />
-	</screen>"""
+	if getDesktop(0).size().width() >= 1920:
+		skin = """
+		<screen position="center,center" size="1020,600" title="Transmission menu" >
+			<widget name="menu" position="10,10" size="1000,600" font="Regular;30" itemHeight="36" scrollbarMode="showOnDemand" />
+		</screen>"""
+	else:
+		skin = """
+		<screen position="center,center" size="720,440" title="Transmission menu" >
+			<widget name="menu" position="10,10" size="700,420" scrollbarMode="showOnDemand" />
+		</screen>"""
 	def __init__(self, session):
 		Screen.__init__(self, session)
 		self.session = session
