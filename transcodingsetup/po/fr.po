@@ -21,9 +21,6 @@ msgstr ""
 msgid "Bitrate"
 msgstr "Débit"
 
-msgid "Default values for trancoding"
-msgstr "Valeur par défaut pour le transcodage"
-
 msgid "Frame rate"
 msgstr "Fréquence d'images"
 
