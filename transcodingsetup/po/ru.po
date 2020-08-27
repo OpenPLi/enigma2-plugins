@@ -17,9 +17,6 @@ msgstr ""
 msgid "Bitrate"
 msgstr "Битрейт"
 
-msgid "Default values for trancoding"
-msgstr "Дефолтные значения транскодирования"
-
 msgid "Frame rate"
 msgstr "Частота кадров"
 

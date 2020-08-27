@@ -18,9 +18,6 @@ msgstr ""
 msgid "Bitrate"
 msgstr "Bitų dažnis"
 
-msgid "Default values for trancoding"
-msgstr "Numatytosios perkodavimo reikšmės"
-
 msgid "Frame rate"
 msgstr ""
 

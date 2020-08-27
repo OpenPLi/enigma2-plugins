@@ -21,9 +21,6 @@ msgstr ""
 msgid "Bitrate"
 msgstr "Bitrate"
 
-msgid "Default values for trancoding"
-msgstr "Předvolené hodnoty pro transkódování"
-
 msgid "Frame rate"
 msgstr "Snímková frekvence"
 

@@ -21,9 +21,6 @@ msgstr ""
 msgid "Bitrate"
 msgstr "Ρυθμός bit"
 
-msgid "Default values for trancoding"
-msgstr "Προεπιλεγμένες τιμές για διακωδικοποίηση"
-
 msgid "Frame rate"
 msgstr ""
 

@@ -20,9 +20,6 @@ msgstr ""
 msgid "Bitrate"
 msgstr ""
 
-msgid "Default values for trancoding"
-msgstr ""
-
 msgid "Frame rate"
 msgstr ""
 
