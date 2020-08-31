@@ -16,6 +16,7 @@ from Components.TimerSanityCheck import TimerSanityCheck
 
 # Notifications
 from Tools.Notifications import AddPopup
+from Tools.XMLTools import stringToXML
 from Screens import Standby
 from Screens.MessageBox import MessageBox
 
@@ -678,6 +679,8 @@ class AutoTimer:
 
 				# Mark this entry as AutoTimer
 				newEntry.flags.add("autotimer")
+				# Mark this entry as timer name
+				newEntry.flags.add(stringToXML(timer.name))
 
 			# Apply afterEvent
 			if timer.hasAfterEvent():
