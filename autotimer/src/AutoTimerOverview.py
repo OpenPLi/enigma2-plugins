@@ -281,23 +281,27 @@ class AutoTimerOverview(Screen, HelpableScreen):
 					from RecordTimer import RecordTimerEntry
 					recordHandler = NavigationInstance.instance.RecordTimer
 					for timer in recordHandler.timer_list[:]:
-						if timer:
-							if timer.name == cur.name and ("autotimer" in timer.flags):
+						if timer and "autotimer" in timer.flags:
+							remove = False
+							for name in timer.flags:
+								if name == cur.name:
+									remove = True
+							if timer.name == cur.name or remove:
 								try:
 									if not timer.isRunning():
 										NavigationInstance.instance.RecordTimer.removeEntry(timer)
 								except:
 									pass
-							else:
-								for entry in timer.log_entries:
-									if len(entry) == 3:
-										if entry[2] == '[AutoTimer] Try to add new timer based on AutoTimer '+cur.name+'.':
-											try:
-												if not timer.isRunning():
-													NavigationInstance.instance.RecordTimer.removeEntry(timer)
-											except:
-												pass
-											break
+							#else:
+							#	for entry in timer.log_entries:
+							#		if len(entry) == 3:
+							#			if entry[2] == '[AutoTimer] Try to add new timer based on AutoTimer '+cur.name+'.':
+							#				try:
+							#					if not timer.isRunning():
+							#						NavigationInstance.instance.RecordTimer.removeEntry(timer)
+							#				except:
+							#					pass
+							#				break
 
 	def cancel(self):
 		if self.changed:
