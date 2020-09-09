@@ -138,7 +138,7 @@ class BlindscanState(Screen, ConfigListScreen):
 		<eLabel	position="10,95" size="800,1" backgroundColor="grey"/>
 		<widget name="config" position="10,102" size="524,425" font="Regular;18" />
 		<eLabel	position="544,95" size="1,440" backgroundColor="grey"/>
-		<widget name="post_action" position="554,102" size="256,140" font="Regular;19" halign="center"/>
+		<widget name="post_action" position="554,102" size="256,480" font="Regular;18" halign="center"/>
 		<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/Blindscan/images/red.png" position="10,560" size="100,2" alphatest="on" />
 		<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/Blindscan/images/green.png" position="120,560" size="100,2" alphatest="on" />
 		<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/SystemPlugins/Blindscan/images/yellow.png" position="240,560" size="100,2" alphatest="on" />
@@ -1059,10 +1059,10 @@ class Blindscan(ConfigListScreen, Screen):
 			display_pol = _("vertical")
 		if self.SundtekScan:
 			tmpmes = _("   Starting Sundtek hardware blind scan.")
+			self.tmpstr = tmpmes
 		else:
 			tmpmes = _("Current Status: %d/%d\nSatellite: %s\nPolarization: %s  Frequency range: %d - %d MHz  Symbol rates: %d - %d MSym/s") %(self.running_count, self.max_count, orb[1], display_pol, status_box_start_freq, status_box_end_freq, self.blindscan_start_symbol.value, self.blindscan_stop_symbol.value)
 		tmpmes2 = _("Looking for available transponders.\nThis will take a long time, please be patient.")
-		self.tmpstr = tmpmes + '\n\n' + tmpmes2 + '\n\n'
 		if is_scan:
 			self.blindscan_session = self.session.openWithCallback(self.blindscanSessionClose, BlindscanState, tmpmes, tmpmes2, [])
 		else:
@@ -1139,18 +1139,18 @@ class Blindscan(ConfigListScreen, Screen):
 					qam = { "QPSK" : parm.Modulation_QPSK,
 						"8PSK" : parm.Modulation_8PSK,
 						"16APSK" : parm.Modulation_16APSK,
+						"APSK_16" : parm.Modulation_16APSK,
+						"APSK_32" : parm.Modulation_32APSK,
 						"32APSK" : parm.Modulation_32APSK}
 					parm.orbital_position = self.orb_position
 					parm.polarisation = self.Sundtek_pol
-					frequency = ((int(data[2]) + self.offset) / 1000) * 1000
-					parm.frequency = frequency
-					symbol_rate = int(data[3]) * 1000
-					parm.symbol_rate = symbol_rate
+					parm.frequency = ((int(data[2]) + self.offset) / 1000) * 1000
+					parm.symbol_rate = int(data[3]) * 1000
 					parm.system = sys[data[1]]
 					parm.inversion = parm.Inversion_Off
 					parm.pilot = parm.Pilot_Off
 					parm.fec = parm.FEC_Auto
-					parm.modulation = qam[data[4]]
+					parm.modulation = qam.get(data[4], eDVBFrontendParametersSatellite.Modulation_QPSK)
 					parm.rolloff = parm.RollOff_alpha_0_35
 					parm.pls_mode = eDVBFrontendParametersSatellite.PLS_Gold
 					parm.is_id = eDVBFrontendParametersSatellite.No_Stream_Id_Filter
@@ -1226,7 +1226,6 @@ class Blindscan(ConfigListScreen, Screen):
 	def blindscanContainerAvail(self, str):
 		self.full_data = self.full_data + str
 		if self.blindscan_session:
-			tmpstr = ""
 			data = str.split()
 			if self.SundtekScan:
 				if len(data) == 3 and data[0] == 'Scanning':
@@ -1252,9 +1251,10 @@ class Blindscan(ConfigListScreen, Screen):
 							self.offset = self.universal_lo_freq["low"] * 1000
 					self.tp_found.append(str)
 					seconds_done = int(time() - self.start_time)
-					tmpstr += '\n'
-					tmpstr += _("Step %d %d:%02d min") %(len(self.tp_found),seconds_done / 60, seconds_done % 60)
-					self.blindscan_session["text"].setText(self.tmpstr + tmpstr)
+					tmpstr = "\n" + str + _("Step %d %d:%02d min") %(len(self.tp_found),seconds_done / 60, seconds_done % 60)
+					self.blindscan_session["progress"].setText(self.tmpstr + tmpstr)
+				if len(data) >= 6 and data[0] == 'OK':
+					self.blindscan_session["post_action"].setText(str)
 
 	def blindscanSessionNone(self, *val):
 		import time
@@ -1285,8 +1285,8 @@ class Blindscan(ConfigListScreen, Screen):
 		global XML_FILE
 		self["yellow"].setText("")
 		XML_FILE = None
-		if self.SundtekScan:
-			self.frontend and self.frontend.closeFrontend()
+		#if self.SundtekScan:
+		#	self.frontend and self.frontend.closeFrontend()
 		self.blindscanSessionNone(val[0])
 
 		if self.tmp_tplist is not None and self.tmp_tplist != []:
