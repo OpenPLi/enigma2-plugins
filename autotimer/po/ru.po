@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-04-26 22:23+0200\n"
-"PO-Revision-Date: 2019-04-16 20:10+0300\n"
+"PO-Revision-Date: 2020-08-29 14:48+0300\n"
 "Last-Translator: Dimitrij <Dima-73@inbox.lv>\n"
 "Language-Team: openpli.org\n"
 "Language: ru\n"
@@ -112,7 +112,7 @@ msgid "Advanced"
 msgstr "расширенный"
 
 msgid "Advanced (2000 events)"
-msgstr ""
+msgstr "Расширенный (2000 событий)"
 
 msgid "After event"
 msgstr "После события"
@@ -245,7 +245,7 @@ msgid "Classic"
 msgstr "Классический"
 
 msgid "Clear memory before auto run"
-msgstr ""
+msgstr "Очистка памяти перед автостартом поиска"
 
 msgid "Clone selected timer"
 msgstr "Клонировать выбранный таймер"
@@ -472,7 +472,7 @@ msgid "Friday"
 msgstr "Пятница"
 
 msgid "Full (3000 events)"
-msgstr ""
+msgstr "Полный (3000 событий)"
 
 msgid "Generic setup"
 msgstr "Общая настройка"
@@ -510,9 +510,8 @@ msgstr "Если это включено, то лог поиска будет з
 msgid "If this enabled, will check the list of timers, conflicting autotimers are disabled, the duplicate autotimers will be deleted."
 msgstr "Если эта опция включена, то будет запущена проверка списка таймеров, по окончании поиска событий .Кофликтные автотаймеры будут отключены, дублирующие автотаймеры будут удалены."
 
-#, fuzzy, python-format
 msgid "If this is enabled an existing timer will also be considered recording an event if it records at least 80% of the it."
-msgstr "Если это включено, то уже существующий таймер также будет рассмотрен как запись события, если этот таймер записывает не меньше 80% события."
+msgstr "Если это включено, то уже существующий таймер также будет рассмотрен как записывающий событие, если этот таймер включает в себя, не меньше 80% времени события."
 
 msgid "If this is enabled, up on the MENU button in the multi-EPG will list of choices for AutoTimer."
 msgstr "Если этот параметр включен, то на кнопке меню в мульти EPG, будет список действий для  Автотаймера."
@@ -527,10 +526,10 @@ msgid "If this is selected, the tag \"AutoTimer\" will be given to timers create
 msgstr "Если выбран этот параметр, то тег \"Автотаймер\" будет присвоен таймерам, созданным этим плагином."
 
 msgid "If your receiver has a small amount of memory, clear memory before poll AutoTimer run."
-msgstr ""
+msgstr "Если ваш ресивер имеет небольшой объем памяти, очистите память перед автоматическим запуском поиска автотаймеров."
 
 msgid "If your receiver has a small amount of memory, use mode 'Standard (1000 events)' or 'Advanced (2000 events)'."
-msgstr ""
+msgstr "Если у вашего ресивера небольшой объем памяти, используйте режим 'Стандартный (1000 событий)' или 'Расширенный (2000 событий)'."
 
 msgid "Import AutoTimer"
 msgstr "Автотаймер - импорт"
@@ -591,9 +590,8 @@ msgstr "Название совпадения: %s "
 msgid "Max. count for saved searchlog"
 msgstr "Максимальное количество записей лога поиска"
 
-#, fuzzy
 msgid "Max. match search events"
-msgstr "Перезагрузка списка таймеров по окончании поиска событий"
+msgstr "Максимальное количество поиска совпадений"
 
 msgid "Maximum duration (in m)"
 msgstr "Максимальная продолжительность (в мин)"
@@ -968,7 +966,7 @@ msgid "Standard"
 msgstr "стандарт"
 
 msgid "Standard (1000 events)"
-msgstr ""
+msgstr "Стандарт (1000 событий)"
 
 msgid "Standard input date/time"
 msgstr "Стандартный ввод дата/время"
@@ -1217,7 +1215,7 @@ msgstr ""
 "Этот мастер поможет вам создать новый Автотаймер путем предоставления описания общих настроек."
 
 msgid "What is this \"control menu\" you keep talking about?"
-msgstr ""
+msgstr "Что это за \"«меню управления\", о котором вы все время говорите?"
 
 msgid "When supporting \"Fast Scan\" the service type is ignored. You don't need to enable this unless your Image supports \"Fast Scan\" and you are using it."
 msgstr "При поддержке \"Быстрый поиск\", тип сервисов будет игнорирован (это первые три значения референса). Вам не нужно включать это, если ваш имидж не поддерживает \"Быстрый поиск\"."
@@ -1244,7 +1242,7 @@ msgid "Wizard"
 msgstr "Мастер"
 
 msgid "Wizard or Classic Editor?"
-msgstr ""
+msgstr "Мастер или классический редактор?"
 
 msgid "Write the config file after every change which the user quits by saving."
 msgstr "Перезаписывать конфигурационный файл после каждого изменения, когда пользователь сохранил настройки."
