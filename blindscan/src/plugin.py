@@ -1226,29 +1226,9 @@ class Blindscan(ConfigListScreen, Screen):
 	def blindscanContainerAvail(self, str):
 		self.full_data = self.full_data + str
 		if self.blindscan_session:
-			data = str.split()
 			if self.SundtekScan:
-				if len(data) == 3 and data[0] == 'Scanning':
-					if data[1] == '13V':
-						self.Sundtek_pol = "V"
-						if self.scan_sat.polarization.value not in self.linear_polarisations:
-							self.Sundtek_pol = "R"
-					elif data[1] == '18V':
-						self.Sundtek_pol = "H"
-						if self.scan_sat.polarization.value not in self.linear_polarisations:
-							self.Sundtek_pol = "L"
-					if data[2] == 'Highband':
-						self.Sundtek_band = "high"
-					elif data[2] == 'Lowband':
-						self.Sundtek_band = "low"
-					self.offset = 0
-					if self.is_c_band_scan:
-						self.offset = self.c_band_lo_freq * 1000
-					else:
-						if self.Sundtek_band == "high":
-							self.offset = self.universal_lo_freq["high"] * 1000
-						elif self.Sundtek_band == "low":
-							self.offset = self.universal_lo_freq["low"] * 1000
+				data = str.split()
+				if 'Scanning' in data:
 					self.tp_found.append(str)
 					seconds_done = int(time() - self.start_time)
 					tmpstr = "\n" + str + _("Step %d %d:%02d min") %(len(self.tp_found),seconds_done / 60, seconds_done % 60)
