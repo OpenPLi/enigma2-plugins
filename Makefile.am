@@ -80,7 +80,6 @@ SUBDIRS = \
 	weatherplugin \
 	webcamviewer \
 	werbezapper \
-	zaphistorybrowser \
 	zapstatistic \
 	zdfmediathek
 
