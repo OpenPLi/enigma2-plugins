@@ -303,6 +303,9 @@ class AutoTimer:
 		new = 0
 		modified = 0
 
+		# enable multiple timer if services or bouquets specified (eg. recording the same event on sd service and hd service)
+		enable_multiple_timer = ((timer.services and 's' in config.plugins.autotimer.enable_multiple_timer.value or False) or (timer.bouquets and 'b' in config.plugins.autotimer.enable_multiple_timer.value or False))
+
 		# Workaround to allow search for umlauts if we know the encoding
 		match = timer.match.replace('\xc2\x86', '').replace('\xc2\x87', '')
 		if timer.encoding != 'UTF-8':
@@ -424,7 +427,7 @@ class AutoTimer:
 				continue
 
 			# Set short description to equal extended description if it is empty.
-			if not shortdesc and timer.descShortEqualExt:
+			if not shortdesc and timer.descShortEqualExt and extdesc:
 				shortdesc = extdesc
 
 			# Convert begin time
@@ -447,6 +450,11 @@ class AutoTimer:
 						continue
 
 				dayofweek = str(timestamp.tm_wday)
+				# Update dayofweek when programmes that cross midnight and have a dayofweek filter
+				end_timestamp = localtime(end)
+				end_dayofweek = str(end_timestamp.tm_wday)
+				if end_dayofweek != dayofweek:
+					dayofweek = end_dayofweek
 
 			# Check timer conditions
 			# NOTE: similar matches do not care about the day/time they are on, so ignore them
@@ -537,7 +545,7 @@ class AutoTimer:
 				if dest and dest not in moviedict:
 					self.addDirectoryToMovieDict(moviedict, dest, serviceHandler)
 				for movieinfo in moviedict.get(dest, ()):
-					if self.checkDuplicates(timer, name, movieinfo.get("name"), shortdesc, movieinfo.get("shortdesc"), extdesc, movieinfo.get("extdesc"), False, True):
+					if self.checkSimilarity(timer, name, movieinfo.get("name"), shortdesc, movieinfo.get("shortdesc"), extdesc, movieinfo.get("extdesc"), isMovie=True):
 						doLog("[AutoTimer] We found a matching recorded movie, skipping event:", name)
 						movieExists = True
 						break
@@ -550,28 +558,29 @@ class AutoTimer:
 			# We first check eit and if user wants us to guess event based on time
 			# we try this as backup. The allowed diff should be configurable though.
 			for rtimer in timerdict.get(serviceref, ()):
-				changed = (evtBegin - offsetBegin != rtimer.begin) or (evtEnd + offsetEnd != rtimer.end) or (shortdesc != rtimer.description)
+				time_changed = (evtBegin - offsetBegin != rtimer.begin) or (evtEnd + offsetEnd != rtimer.end)
+				desc_changed = (timer.avoidDuplicateDescription >= 1 and shortdesc and rtimer.description and shortdesc != rtimer.description) or (timer.avoidDuplicateDescription >= 2 and extdesc and rtimer.extdesc and  extdesc != rtimer.extdesc)
 				if rtimer.eit == eit:
 					oldExists = True
 					doLog("[AutoTimer] We found a timer based on eit")
-					if changed:
+					if time_changed or desc_changed:
 						newEntry = rtimer
-						oldEntry = rtimer
+						oldEntry = [rtimer.name, rtimer.description, rtimer.extdesc, rtimer.begin, rtimer.end, rtimer.service_ref, rtimer.eit, rtimer.disabled]
 					break
 				elif config.plugins.autotimer.try_guessing.value:
 					if timeSimilarityPercent(rtimer, evtBegin, evtEnd, timer) > 80:
 						oldExists = True
 						doLog("[AutoTimer] We found a timer based on time guessing")
-						if changed:
+						if time_changed or desc_changed:
 							newEntry = rtimer
-							oldEntry = rtimer
+							oldEntry = [rtimer.name, rtimer.description, rtimer.extdesc, rtimer.begin, rtimer.end, rtimer.service_ref, rtimer.eit, rtimer.disabled]
 						break
-				if timer.avoidDuplicateDescription >= 1 and not rtimer.disabled:
-						if self.checkDuplicates(timer, name, rtimer.name, shortdesc, rtimer.description, extdesc, rtimer.extdesc):
-						# if searchForDuplicateDescription > 1 then check short description
-							oldExists = True
-							doLog("[AutoTimer] We found a timer (similar service) with same description, skipping event")
-							break
+				if oldExists is None and timer.avoidDuplicateDescription >= 1 and not rtimer.disabled:
+					# searchForDuplicateDescription is 1 - check short description / searchForDuplicateDescription is 2 - check extended description
+					if self.checkSimilarity(timer, name, rtimer.name, shortdesc, rtimer.description, extdesc, rtimer.extdesc):
+						oldExists = True
+						doLog("[AutoTimer] We found a timer (similar service) with same description, skipping event")
+						break
 
 			# We found no timer we want to edit
 			if newEntry is None:
@@ -582,17 +591,21 @@ class AutoTimer:
 					continue
 
 				# We want to search for possible doubles
-				if timer.avoidDuplicateDescription >= 2:
-					for rtimer in chain.from_iterable( itervalues(timerdict) ):
-						if not rtimer.disabled:
-							if self.checkDuplicates(timer, name, rtimer.name, shortdesc, rtimer.description, extdesc, rtimer.extdesc):
+				for rtimer in chain.from_iterable(itervalues(timerdict)):
+					if not rtimer.disabled:
+						if self.checkDoubleTimers(timer, name, rtimer.name, begin, rtimer.begin, end, rtimer.end, serviceref, rtimer.service_ref.ref.toString(), enable_multiple_timer):
+							oldExists = True
+							print("[AutoTimer] We found a timer with same start time, skipping event")
+							break
+						if timer.avoidDuplicateDescription >= 2:
+							if self.checkSimilarity(timer, name, rtimer.name, shortdesc, rtimer.description, extdesc, rtimer.extdesc):
 								oldExists = True
 								doLog("[AutoTimer] We found a timer (any service) with same description, skipping event")
 								break
-					if oldExists:
-						doLog("[AutoTimer] Skipping an event because a timer on any service exists")
-						skipped.append((name, begin, end, serviceref, timer.name, getLog()))
-						continue
+				if oldExists:
+					doLog("[AutoTimer] Skipping an event because a timer on any service exists")
+					skipped.append((name, begin, end, serviceref, timer.name, getLog()))
+					continue
 
 				if timer.checkCounter(timestamp):
 					doLog("[AutoTimer] Not adding new timer because counter is depleted.")
@@ -601,7 +614,7 @@ class AutoTimer:
 
 			# if set option for check/save timer in filterlist and only if not found an existing timer
 			isnewFilterEntry = False
-			if (config.plugins.autotimer.series_save_filter.value or timer.series_save_filter) and oldExists == False:
+			if (config.plugins.autotimer.series_save_filter.value or timer.series_save_filter) and not oldExists:
 				if timer.series_labeling and sp_getSeasonEpisode is not None:
 					if sp and type(sp) in (tuple, list) and len(sp) == 4:
 						ret = self.addToFilterfile(str(sp[0]), begin, simulateOnly)
@@ -775,8 +788,8 @@ class AutoTimer:
 						# Attention we have to use a copy of the list, because we have to append the previous older matches
 						lepgm = len(epgmatches)
 						for i in xrange(lepgm):
-							servicerefS, eitS, nameS, beginS, durationS, shortdescS, extdescS = epgmatches[ (i+idx+1)%lepgm ]
-							if self.checkDuplicates(timer, name, nameS, shortdesc, shortdescS, extdesc, extdescS, force=True):
+							servicerefS, eitS, nameS, beginS, durationS, shortdescS, extdescS = epgmatches[(i + idx + 1) % lepgm]
+							if self.checkSimilarity(timer, name, nameS, shortdesc, shortdescS, extdesc, extdescS, force=True):
 								# Check if the similar is already known
 								if eitS not in similardict:
 									doLog("[AutoTimer] Found similar Timer: " + name)
@@ -1093,16 +1106,14 @@ class AutoTimer:
 
 	def setOldTimer(self, new_timer=None, old_timer=None):
 		if new_timer and old_timer:
-			new_timer.justplay = old_timer.justplay
-			new_timer.conflict_detection = old_timer.conflict_detection
-			new_timer.always_zap = old_timer.always_zap
-			new_timer.name = old_timer.name
-			new_timer.description = old_timer.description
-			new_timer.begin = old_timer.begin
-			new_timer.end = old_timer.end
-			new_timer.service_ref = old_timer.service_ref
-			new_timer.eit = old_timer.eit
-			new_timer.disabled = old_timer.disabled
+			new_timer.name = old_timer[0]
+			new_timer.description = old_timer[1]
+			new_timer.extdesc = old_timer[2]
+			new_timer.begin = old_timer[3]
+			new_timer.end = old_timer[4]
+			new_timer.service_ref = old_timer[5]
+			new_timer.eit = old_timer[6]
+			new_timer.disabled = old_timer[7]
 
 	def addDirectoryToMovieDict(self, moviedict, dest, serviceHandler):
 		movielist = serviceHandler.list(eServiceReference("2:0:1:0:0:0:0:0:0:0:" + dest))
@@ -1128,7 +1139,7 @@ class AutoTimer:
 					"extdesc": event.getExtendedDescription() or '' # XXX: does event.getExtendedDescription() actually return None on no description or an empty string?
 				})
 
-	def checkDuplicatesOE(self, timer, name1, name2, shortdesc1, shortdesc2, extdesc1, extdesc2, force=False):
+	def checkSimilarityOE(self, timer, name1, name2, shortdesc1, shortdesc2, extdesc1, extdesc2, force=False):
 		foundTitle = False
 		foundShort = False
 		retValue = False
@@ -1141,7 +1152,7 @@ class AutoTimer:
 					# If the similarity percent is higher then 0.7 it is a very close match
 					foundShort = ( 0.7 < SequenceMatcher(lambda x: x == " ",shortdesc1, shortdesc2).ratio() )
 					if foundShort:
-						if timer.searchForDuplicateDescription == 3:
+						if timer.searchForDuplicateDescription == 2:
 							if extdesc1 and extdesc2:
 								# Some channels indicate replays in the extended descriptions
 								# If the similarity percent is higher then 0.7 it is a very close match
@@ -1152,43 +1163,47 @@ class AutoTimer:
 				retValue = True
 		return retValue
 
-	def checkDuplicates(self, timer, name1, name2, shortdesc1, shortdesc2, extdesc1, extdesc2, force=False, isMovie=False):
+	def checkSimilarity(self, timer, name1, name2, shortdesc1, shortdesc2, extdesc1, extdesc2, force=False, isMovie=False):
 		if name1 and name2:
 			sequenceMatcher = SequenceMatcher(" ".__eq__, name1, name2)
 		else:
 			return False
-
+		retValue = False
 		ratio = sequenceMatcher.ratio()
 		ratio_value = force and 0.8 or timer.ratioThresholdDuplicate
 		doDebug("[AutoTimer] names ratio %f - %s - %d - %s - %d" % (ratio, name1, len(name1), name2, len(name2)))
 		if name1 in name2 or (0.8 < ratio): # this is probably a match
-			foundShort = True
-			if (force or timer.searchForDuplicateDescription > 0) and shortdesc1 and shortdesc2:
-				sequenceMatcher.set_seqs(shortdesc1, shortdesc2)
-				ratio = sequenceMatcher.ratio()
-				doDebug("[AutoTimer] shortdesc ratio %f - %s - %d - %s - %d" % (ratio, shortdesc1, len(shortdesc1), shortdesc2, len(shortdesc2)))
-				foundShort = shortdesc1 in shortdesc2 or ((ratio_value < ratio) or (ratio_value == 1.0 and ratio_value == ratio))
-				if foundShort:
-					doLog("[AutoTimer] shortdesc match: ratio %f - %s - %d - %s - %d" % (ratio, shortdesc1, len(shortdesc1), shortdesc2, len(shortdesc2)))
-			elif not force and timer.descShortExtEmpty and ((isMovie and shortdesc1 and not shortdesc2) or (not isMovie and not shortdesc1 and not shortdesc2 and name1 != name2)):
-				doDebug("[AutoTimer] Configuration caused this sortdesc match to be ignored!");
-				foundShort = False
-			doDebug("[AutoTimer] Final result for foundShort: %s" % "True" if foundShort else "False");
+			if not force and timer.descShortExtEmpty and (((isMovie and shortdesc1 and not shortdesc2) or (not isMovie and not shortdesc1 and not shortdesc2 and name1 != name2)) \
+				or ((isMovie and extdesc1 and not extdesc2) or (not isMovie and not extdesc1 and not extdesc2 and name1 != name2))):
+				doDebug("[AutoTimer] Configuration caused this sortdesc/extdesc match to be ignored!")
+				return False
+			if force or timer.searchForDuplicateDescription > 0: 
+				if shortdesc1 and shortdesc2:
+					sequenceMatcher.set_seqs(shortdesc1, shortdesc2)
+					ratio = sequenceMatcher.ratio()
+					doDebug("[AutoTimer] shortdesc ratio %f - %s - %d - %s - %d" % (ratio, shortdesc1, len(shortdesc1), shortdesc2, len(shortdesc2)))
+					foundShort = shortdesc1 in shortdesc2 or ((ratio_value < ratio) or (ratio_value == 1.0 and ratio_value == ratio))
+					doDebug("[AutoTimer] Final result for found shortdesc: %s" % foundShort)
+					if foundShort:
+						doLog("[AutoTimer] shortdesc match: ratio %f - %s - %d - %s - %d" % (ratio, shortdesc1, len(shortdesc1), shortdesc2, len(shortdesc2)))
+						if force or timer.searchForDuplicateDescription > 1:
+							if extdesc1 and extdesc2:
+								sequenceMatcher.set_seqs(extdesc1, extdesc2)
+								ratio = sequenceMatcher.ratio()
+								doDebug("[AutoTimer] extdesc ratio %f - %s - %d - %s - %d" % (ratio, extdesc1, len(extdesc1), extdesc2, len(extdesc2)))
+								retValue = (ratio_value < ratio) or (ratio_value == 1.0 and ratio_value == ratio)
+								doDebug("[AutoTimer] Final result for found extdesc: %s" % retValue)
+								if retValue:
+									doLog("[AutoTimer] extdesc match: ratio %f - %s - %d - %s - %d" % (ratio, extdesc1, len(extdesc1), extdesc2, len(extdesc2)))
+						else:
+							retValue = True
+			else:
+				retValue = True
+		return retValue
 
-			foundExt = True
-			# NOTE: only check extended if short description already is a match because otherwise
-			# it won't evaluate to True anyway
-			if foundShort and (force or timer.searchForDuplicateDescription > 1) and extdesc1 and extdesc2:
-				sequenceMatcher.set_seqs(extdesc1, extdesc2)
-				ratio = sequenceMatcher.ratio()
-				doDebug("[AutoTimer] extdesc ratio %f - %s - %d - %s - %d" % (ratio, extdesc1, len(extdesc1), extdesc2, len(extdesc2)))
-				foundExt = (ratio_value < ratio) or (ratio_value == 1.0 and ratio_value == ratio)
-				if foundExt:
-					doLog("[AutoTimer] extdesc match: ratio %f - %s - %d - %s - %d" % (ratio, extdesc1, len(extdesc1), extdesc2, len(extdesc2)))
-			elif not force and timer.descShortExtEmpty and ((isMovie and extdesc1 and not extdesc2) or (not isMovie and not extdesc1 and not extdesc2 and name1 != name2)):
-				doDebug("[AutoTimer] Configuration caused this extdesc match to be ignored!");
-				foundExt = False
-			doDebug("[AutoTimer] Final result for foundExt: %s" % "True" if foundExt else "False");
-
-			return foundShort and foundExt
-		return False
+	def checkDoubleTimers(self, timer, name1, name2, starttime1, starttime2, endtime1, endtime2, serviceref1, serviceref2, multiple):
+		foundTitle = name1 == name2
+		foundstart = starttime1 == starttime2
+		foundend = endtime1 == endtime2
+		foundref = serviceref1 == serviceref2
+		return foundTitle and foundstart and foundend and (foundref or not multiple)

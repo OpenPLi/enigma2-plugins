@@ -82,7 +82,13 @@ config.plugins.autotimer.style_autotimerslist = ConfigSelection(choices=[
 		("advanced", _("Advanced"))
 	], default="standard"
 )
-
+config.plugins.autotimer.enable_multiple_timer = ConfigSelection(choices=[
+		("0", _("No")),
+		("s", _("If specified services")),
+		("b", _("If specified bouquets")),
+		("sb", _("If specified services or bouquets"))
+	], default = "0"
+)
 config.plugins.autotimer.log_shell = ConfigYesNo(default = False)
 config.plugins.autotimer.log_write = ConfigYesNo(default = False)
 config.plugins.autotimer.log_file = ConfigText(default = "/tmp/autotimer.log", fixed_size = False)
