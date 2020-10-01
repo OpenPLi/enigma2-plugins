@@ -1,0 +1,210 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Automatic Screen Resolution V. 0.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"PO-Revision-Date: \n"
+"Last-Translator: mosad - مساعد الجعيد <abo-mishal@hotmail.com>\n"
+"Language-Team: mosad - مساعد الجعيد\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: _(\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
+"X-Generator: Poedit 2.4.1\n"
+"X-Poedit-SearchPath-0: ../src\n"
+
+msgid "Alternative resolution when native not supported"
+msgstr "الدقة البديلة عندما لا تكون مدعومة"
+
+msgid "Ask before changing videomode"
+msgstr "السؤال قبل تغيير وضع الفيديو"
+
+msgid "Auto frame rate (refresh need 'multi/auto')"
+msgstr "معدل الإطار التلقائي (الحاجة إلى تحديث 'متعددة / تلقائي')"
+
+msgid "Autoresolution"
+msgstr "الدقة التلقائية"
+
+#, python-format
+msgid ""
+"Autoresolution Plugin Testmode:\n"
+"Is %s OK?"
+msgstr ""
+"بلجن الدقة التلقائية في وضع الاختبار:\n"
+"حسنا %s موافق؟"
+
+msgid "Autoresolution Switch"
+msgstr "التحول إلى الدقة التلقائية"
+
+msgid "Autoresolution is not working in Scart/DVI-PC Mode"
+msgstr "الدقة التلقائية لاتعمل على وصلة سكارت/مخرج دفي آي على الكمبيوتر"
+
+msgid "Autoresolution videomode setup"
+msgstr "إعداد الدقة التلقائية للفديو"
+
+msgid "Cancel"
+msgstr "إلغاء"
+
+#, python-format
+msgid ""
+"Changing framerate for current service?\n"
+"Current framerate: %s\n"
+"New framerate: %s\n"
+msgstr ""
+"تغيير معدل الإطار للخدمة الحالية?\n"
+"معدل الإطار الحالي: %s\n"
+"معدل الإطارات الجديد: %s\n"
+
+msgid "Deinterlacer mode for interlaced content"
+msgstr "وضع إلغاء التداخل للمحتوى المتشابك"
+
+msgid "Deinterlacer mode for progressive content"
+msgstr "وضع تفكيك المحتوى المتقدم"
+
+msgid "Delay x seconds after service started"
+msgstr "تأخير (عدد) ثوانى بعد بدأ القناة"
+
+msgid "Enable 1080p24 Mode"
+msgstr "تفعيل صيغة 1080p24"
+
+msgid "Enable 1080p25 Mode"
+msgstr "تفعيل صيغة 1080p25"
+
+msgid "Enable 1080p30 Mode"
+msgstr "تفعيل صيغة 1080p30"
+
+msgid "Enable 2160p24 Mode"
+msgstr "تمكين وضع 2160p24"
+
+msgid "Enable 2160p25 Mode"
+msgstr "تمكين وضع 2160p25"
+
+msgid "Enable 2160p30 Mode"
+msgstr "تمكين وضع 2160p30"
+
+msgid "Enable 720p24 Mode"
+msgstr "تفعيل صيغة 720p24"
+
+msgid "Enable 720p50 Mode"
+msgstr "تمكين وضع 720p50"
+
+msgid "Enable Autoresolution"
+msgstr "تفعيل الدقة التلقائية"
+
+msgid "Exit"
+msgstr "تسجيل الخروج"
+
+msgid "FHD 50/60HZ Progressive Mode"
+msgstr "عالي الدقة 50/60HZ الوضع التدريجي"
+
+msgid "HD Interlace Mode"
+msgstr "طريقة دمج قنوات عالية الوضوح"
+
+msgid "HD Progressive Mode"
+msgstr "طريقة تقديم قنوات عالية الوضوح"
+
+msgid "Lock timeout"
+msgstr "مدة انتهاء وقت القفل"
+
+msgid "Manual"
+msgstr "يدوي"
+
+msgid "Manual resolution"
+msgstr "الدقة اليدوية"
+
+msgid "Manual resolution is not working in Scart/DVI-PC mode!"
+msgstr "الدقة التلقائية لاتعمل على وصلة سكارت/مخرج دفي آي على الكمبيوتر!"
+
+msgid "Message timeout"
+msgstr "وقت عرض الرسالة"
+
+msgid "Mode"
+msgstr "النظام"
+
+msgid "OK"
+msgstr "موافق"
+
+msgid "Please select a resolution..."
+msgstr "الرجاء أختيار دقة..."
+
+msgid "Refresh Rate"
+msgstr "معدل التحديث"
+
+msgid "Return back without confirmation after 10 sec."
+msgstr "العودة دون تأكيد بعد 10 ثواني."
+
+msgid "Running in testmode"
+msgstr "تشغيل وضع الاختبار"
+
+msgid "SD 24HZ Progressive mode"
+msgstr "بث عادي 24 هيرتز وضع متقدم"
+
+msgid "SD 25/50HZ Interlace Mode"
+msgstr "الفديو العادي 50/25 هيرتز نظام الدمج"
+
+msgid "SD 25/50HZ Progressive Mode"
+msgstr "الفديو العادي 50/25 هيرتز نظام متقدم"
+
+msgid "SD 30/60HZ Interlace Mode"
+msgstr "الفديو العادي 60/30 هيرتز نظام الدمج"
+
+msgid "SD 30/60HZ Progressive Mode"
+msgstr "الفديو العادي 60/30 هيرتز نظام متقدم"
+
+msgid "Show 'Manual resolution' in extensions menu"
+msgstr "إظهار \"الدقة اليدوية\" في قائمة الملحقات"
+
+msgid "Show info screen"
+msgstr "إظهار شاشة المعلومات"
+
+msgid "This resolution is OK?"
+msgstr "هذا الدقة على ما يرام؟"
+
+msgid "UHD Interlace Mode"
+msgstr "وضع الواجهة فوركي"
+
+msgid "UHD Progressive Mode"
+msgstr "وضع المعالجة فوركي"
+
+msgid "Use 60HZ instead 30HZ"
+msgstr "استخدم 60 هرتز بدلاً من ذلك 30 هرتز"
+
+msgid "Video: "
+msgstr "الفديو: "
+
+#, python-format
+msgid "Videocontent: %sx%s%s %sHZ"
+msgstr "محتوى الفيديو: %sx%s%s %sHZ"
+
+#, python-format
+msgid "Videomode: %s"
+msgstr "وضع الفديو: %s"
+
+#, python-format
+msgid "Videomode: %s %s %s"
+msgstr "وضع الفديو: %s %s %s"
+
+msgid "auto"
+msgstr "تلقائي"
+
+msgid "bob"
+msgstr "شعبي"
+
+msgid "default"
+msgstr "إفتراضى"
+
+msgid "off"
+msgstr "لا يعمـل"
+
+msgid "on"
+msgstr "على"
+
+msgid "second"
+msgstr "ثانوي"
+
+msgid "seconds"
+msgstr "ثواني"
