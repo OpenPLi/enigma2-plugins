@@ -1,0 +1,154 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: DVDBackup\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"PO-Revision-Date: \n"
+"Last-Translator: mosad - مساعد الجعيد <abo-mishal@hotmail.com>\n"
+"Language-Team: mosad - مساعد الجعيد\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
+"X-Generator: Poedit 2.4.1\n"
+"X-Poedit-SearchPath-0: ../src\n"
+
+msgid " B"
+msgstr " بايت"
+
+msgid " KB"
+msgstr " كيلوبايت"
+
+msgid " MB"
+msgstr " ميقابايت"
+
+msgid "Abort"
+msgstr "الغاء"
+
+msgid "Auto set name and folder DVD"
+msgstr "اسم الضبط التلقائي ومجلد مشغل الاقراص"
+
+msgid "Backup directory too small size!"
+msgstr "دليل النسخ الاحتياطي صغير جدا الحجم!"
+
+msgid "Backup directory:"
+msgstr "مسار النسخ الاحتياطي:"
+
+msgid "Backup of DVD finished."
+msgstr "النسخ الاحتياطي من مشغل الأقراص انتهى."
+
+msgid "Backup your Video-DVD to your harddisk"
+msgstr "إنشاء نسخة إحتياطية من مشغل الاقراص على القرص الصلب الخاص بك"
+
+msgid "Could not find any file to backup!"
+msgstr "لا يمكن العثور على أي ملف للنسخ الاحتياطي!"
+
+msgid "Could not install needed dvdbackup package!"
+msgstr "تعذر تثبيت حزمة النسخ الاحتياطي لأسطوانات مشغل الأقراص المطلوبة!"
+
+msgid "Could not read the DVD informations!"
+msgstr "تعذر قراءة معلومات مشغل الاقراص!"
+
+msgid "Create iso:"
+msgstr "إنشاء ايزو:"
+
+msgid "Create log (tmp/dvdbackup.log):"
+msgstr "إنشاء سجل (tmp/dvdbackup.log):"
+
+msgid "DVD Backup"
+msgstr "نسخة إحتياطية لمشغل الاقراص"
+
+msgid "DVD Backup Progress"
+msgstr "تقدم عملية النسخة الاحتياطية لمشغل الاقراص"
+
+msgid "Device mount folder:"
+msgstr "مجلد مشاركة الجهاز:"
+
+msgid "Duration:"
+msgstr "المدة الزمنية:"
+
+msgid "Eject DVD?"
+msgstr "إخراج مشغل الاقراص؟"
+
+#, python-format
+msgid "Error read folder %s!"
+msgstr "خطأ في قراءة المجلد %s!"
+
+msgid "Error while backup of DVD!"
+msgstr "خطأ أثناء النسخ الاحتياطي من مشغل الاقراص!"
+
+msgid "Exit"
+msgstr "تسجيل الخروج"
+
+msgid "Extra option"
+msgstr "خيار إضافي"
+
+msgid "Folder/iso name:"
+msgstr "اسم المجلد/iso:"
+
+msgid "Keyboard"
+msgstr "لوحة المفاتيح"
+
+msgid "Location"
+msgstr "الموقع"
+
+msgid "Name of DVD"
+msgstr "أسم مشغل الاقراص"
+
+msgid "Open menu progress"
+msgstr "فتح القائمة قيد التقدم"
+
+msgid "Show error message:"
+msgstr "عرض رسالة الخطأ:"
+
+msgid "Show log"
+msgstr "عرض السجل"
+
+msgid "Start backup"
+msgstr "بدء النسخ الاحتياطي"
+
+msgid ""
+"Warning!\n"
+"DVD backup is already running!"
+msgstr ""
+"تحذير!\n"
+"مشعل الأقراص والنسخ الاحتياطي قيد التشغيل بالفعل!"
+
+msgid ""
+"Warning!\n"
+"This folder not CD-ROM!"
+msgstr ""
+"تحذير!\n"
+"هذا المجلد ليس القرص المضغوط!"
+
+msgid ""
+"Warning!\n"
+"This folder not DVD structure!"
+msgstr ""
+"تحذير!\n"
+"هذا المجلد ليس من مشغل الاقراص!"
+
+msgid ""
+"Warning!\n"
+"This is the same folder!"
+msgstr ""
+"تحذير!\n"
+"هذا هو نفس المجلد!"
+
+msgid ""
+"genisoimage job done.\n"
+"Delete DVD directory?"
+msgstr ""
+"اخذ صورة الايزو تمت بنجاح.\n"
+"حذف مسار مشغل الاقراص؟"
+
+msgid "no"
+msgstr "لا"
+
+msgid "with dd (faster)"
+msgstr "مع الأيام (أسرع)"
+
+msgid "with genisoimage (slower)"
+msgstr "مع صورة ملف الايزو (أبظاَ)"
