@@ -1,0 +1,111 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: WeatherPlugin\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-06-12 19:02+0100\n"
+"PO-Revision-Date: 2018-12-08 11:51+0300\n"
+"Last-Translator: mosad - مساعد الجعيد <abo-mishal@hotmail.com>\n"
+"Language-Team: mosad - مساعد الجعيد\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-Basepath: .\n"
+"Language: ar_SA\n"
+"X-Generator: Poedit 2.2\n"
+"X-Poedit-SearchPath-0: ../src\n"
+
+msgid "Add"
+msgstr "أضف"
+
+msgid "Back"
+msgstr "خلف"
+
+msgid "Cancel"
+msgstr "إلغاء"
+
+msgid "City"
+msgstr "المدينة"
+
+msgid "Current: %s"
+msgstr "(الحالي: %s)"
+
+msgid "Delete"
+msgstr "حذف"
+
+msgid "Edit"
+msgstr "تعديل"
+
+msgid "Feels like %s"
+msgstr "الشعور المحسوس %s"
+
+msgid "Getting weather information..."
+msgstr "الحصول على معلومات عن الطقس..."
+
+msgid "Humidity: %s %%"
+msgstr "الرطوبة: %s % %"
+
+msgid "Language"
+msgstr "اللغـة"
+
+msgid "Location code"
+msgstr "كود الموقع"
+
+msgid "MSN location search result"
+msgstr "نتائج بحث موقع الطقس"
+
+msgid ""
+"No locations defined...\n"
+"Press 'Menu' to do that."
+msgstr ""
+"لا توجد مواقع المعرفة...\n"
+"اضغط 'القائمة' للقيام بذلك."
+
+msgid "OK"
+msgstr "موافق"
+
+msgid "Observation point: %s"
+msgstr "نقطة المراقبة: %s"
+
+msgid "Observation time: %s"
+msgstr "وقت الملاحظة: %s"
+
+msgid "Please enter a valid city name."
+msgstr "الرجاء إدخال اسم مدينة صالحة."
+
+msgid "Please enter a valid location code for the city."
+msgstr "الرجاء إدخال رمز موقع صالح للمدينة."
+
+msgid "Really delete this WeatherPlugin Entry?"
+msgstr "حقاً حذف هذا الإدخال وياثيربلوجين؟"
+
+msgid "Search Code"
+msgstr "البحث عن الرمز"
+
+msgid "Show Weather Forecast"
+msgstr "عرض حالة الطقس"
+
+msgid "System"
+msgstr "النـظام"
+
+msgid "Weather Plugin"
+msgstr "بلج إنز الطقس"
+
+msgid "WeatherPlugin: Edit Entry"
+msgstr "بلج إنز الطقس: تحرير الإدخال"
+
+msgid "WeatherPlugin: List of Entries"
+msgstr "بلج إنز الطقس: قائمة بإدخالات"
+
+msgid ""
+"You need to enter a valid city name before you can search for the location "
+"code."
+msgstr ""
+"تحتاج إلى إدخال اسم مدينة صالحة قبل أن يمكنك البحث عن التعليمات البرمجية "
+"الموقع."
+
+msgid "imperial system"
+msgstr "النظام الإمبراطوري"
+
+msgid "metric system"
+msgstr "النظام المتري للقياسات"
