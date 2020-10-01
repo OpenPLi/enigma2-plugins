@@ -1,0 +1,101 @@
+# German translations for enigma2-plugins package.
+# Copyright (C) 2011 THE enigma2-plugins'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the enigma2-plugins package.
+# Automatically generated, 2011.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: enigma2-plugins 3.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"PO-Revision-Date: 2020-10-01 19:47+0300\n"
+"Last-Translator: mosad - مساعد الجعيد <abo-mishal@hotmail.com>\n"
+"Language-Team: mosad - مساعد الجعيد\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
+"X-Generator: Poedit 2.4.1\n"
+
+#, python-format
+msgid "%s plugin only this session?"
+msgstr "%s المكون الإضافي فقط في هذه الجلسة؟"
+
+msgid "Add"
+msgstr "إضافة"
+
+msgid "Adjustment value"
+msgstr "قيم تعديل الصوت"
+
+msgid "Automatic Volume Adjustment"
+msgstr "تعديل الصوت التلقائي"
+
+msgid "Automatic Volume Adjustment - Config"
+msgstr "الضبط التلقائي لوحدة التخزين - التكوين"
+
+msgid "Automatic Volume Adjustment - Entry Config"
+msgstr "الضبط التلقائي لوحدة التخزين - تكوين الإدخال"
+
+msgid "Automatic Volume Adjustment - Service Config"
+msgstr "الضبط التلقائي لوحدة التخزين - تكوين القناة"
+
+msgid "Automatic volume adjust"
+msgstr "ضبط مستوى الصوت تلقائيا"
+
+msgid "Cancel"
+msgstr "إلغاء"
+
+msgid "Channel Selection"
+msgstr "إختيار القناة"
+
+msgid "Default volume adjustment value for AC3/DTS"
+msgstr "تعديل الصوت التلقائي مع نظام الصوت الرقمي/ ترميز الصوت الثلاثي على القنوات"
+
+msgid "Delete"
+msgstr "حذف"
+
+msgid "Disable"
+msgstr "تعطيل"
+
+msgid "Do you really want to delete this entry?"
+msgstr "هل تريد حذف هذا الإدخال؟"
+
+msgid "Edit"
+msgstr "تعديل"
+
+msgid "Enable"
+msgstr "تفعيل"
+
+msgid "Max. volume for mpeg audio"
+msgstr "الحد الأقصى لحجم الصوت mpeg"
+
+msgid "Modus"
+msgstr "تسويه"
+
+msgid "OK"
+msgstr "موافق"
+
+msgid "Press OK to select a service"
+msgstr "اضغط على \"موافق\" لتحديد القناة"
+
+msgid "Remember service volume value"
+msgstr "تذكر قيمة حجم القناة"
+
+msgid "Servicename"
+msgstr "أسم القناة"
+
+msgid "Services"
+msgstr "القنوات"
+
+msgid "Show on/off plugin only for session in Audio menu"
+msgstr "عرض البرنامج المساعد على /إيقاف التشغيل فقط لجلسة العمل في قائمة الصوت"
+
+msgid "Show volumebar when volume-value was changed"
+msgstr "عرض شريط الحجم عند تغيير قيمة حجم الصوت"
+
+msgid "You must select a valid service!"
+msgstr "يجب عليك اختيار قناة صالحة!"
+
+msgid "toggle on/off plugin only for session"
+msgstr "تبديل على / قبالة البرنامج المساعد فقط لجلسة"
