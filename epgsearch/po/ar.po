@@ -1,0 +1,263 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Enigma 2 EPGSearch Plugin\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-07-20 13:07+0000\n"
+"PO-Revision-Date: 2020-10-01 18:24+0300\n"
+"Last-Translator: mosad - مساعد الجعيد <abo-mishal@hotmail.com>\n"
+"Language-Team: mosad - مساعد الجعيد\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Generator: Poedit 2.4.1\n"
+"X-Poedit-SearchPath-0: ../src\n"
+
+msgid "%e/%m, %H:%M"
+msgstr "%e/%m, %H:%M"
+
+msgid "%ssearch EPG"
+msgstr "%s البحث في الدليل الالكتروني"
+
+msgid "%ssearch EPG from history..."
+msgstr "%s البحث في الدليل الالكتروني من السجل..."
+
+msgid "Add AutoTimer"
+msgstr "إضافة مؤقت تلقائي"
+
+msgid "Add Timer"
+msgstr "إضافة مؤقت"
+
+msgid "Add a record timer for highlighted event"
+msgstr "أضف مؤقت التسجيل للحدث المميز"
+
+msgid "Add a zap timer for highlighted event"
+msgstr "أضف مؤقت للانتقال للحدث المميز"
+
+msgid "Add an AutoTimer for highlighted event"
+msgstr "أضف المؤقت التلقائي للحدث المميز"
+
+msgid "Add/remove/edit timer for highlighted event"
+msgstr "إضافة/إزالة/تعديلر مؤقت للحدث المميز"
+
+msgid "All bouquets"
+msgstr "جميع الباقات"
+
+msgid "All services"
+msgstr "كافة الخدمات"
+
+msgid "Cancel"
+msgstr "إلغاء"
+
+msgid "Channel Selection"
+msgstr "إختيار القناة"
+
+msgid "Choose the encoding type for searches, helpful for foreign languages."
+msgstr "اختر نوع الترميز لعمليات البحث، وهو مفيد للغات الأجنبية."
+
+msgid "Close dialog"
+msgstr "إغلاق الحوار"
+
+msgid ""
+"Control where to search in the EPG. When 'all bouquets' is set, all bouquets "
+"are searched, even if 'Enable multiple bouquets' is disabled."
+msgstr ""
+"التحكم في مكان البحث في دليل البرامج الإلكتروني. عند تعيين 'جميع الباقات' ، "
+"يتم البحث في جميع الباقات ، حتى إذا تم تعطيل 'تمكين باقات متعددة'."
+
+msgid "Could not read AutoTimer timer list: %s"
+msgstr "لا يمكن قراءة المؤقت التلقائي من القائمة: %s"
+
+msgid "Current bouquet"
+msgstr "الباقة الحالية"
+
+msgid "Current service"
+msgstr "القناة الحالية"
+
+msgid "Default scope when asked"
+msgstr "النطاق الافتراضي عندما أسئل"
+
+msgid "EPG Search"
+msgstr "البحدث في دليل البرامج الإلكتروني"
+
+msgid "EPG Search setup"
+msgstr "إعداد البحث في الدليل الالكتروني"
+
+msgid "EPGSearch"
+msgstr "البحث في دليل البرامج الإلكترونية"
+
+msgid "EPGSearch Setup"
+msgstr "ضبط البحث في دليل البرامج الإلكترونية"
+
+msgid ""
+"Enable this to allow access to EPG Search from within the plugin browser."
+msgstr ""
+"قم بتمكين هذا للسماح بالوصول إلى البحث في الدليل الالكتروني من داخل متصفح "
+"البلجن."
+
+msgid "Enter new search"
+msgstr "أدخل البحث الجديد"
+
+msgid "Enter text to search for"
+msgstr "إدخال نص للبحث عن"
+
+msgid "Exit EPG Search"
+msgstr "خروج من بحث دليل البرامج الإلكترونية"
+
+msgid "IMDB search for highlighted event"
+msgstr "البحث في قاعدة بيانات معلومات الأفلام على الإنترنت عن حدث مميز"
+
+msgid "IMDb Search"
+msgstr "البحث في قاعدة بيانات معلومات الأفلام على الإنترنت"
+
+msgid "Import from AutoTimer"
+msgstr "إستيراد من المؤقت التلقائي"
+
+msgid "Import from EPG"
+msgstr "إستيراد من دليل البرامج الإلكتروني"
+
+msgid "Import from Timer"
+msgstr "إستيراد من المؤقت"
+
+msgid "Is the search case-sensitive or case-insensitive?"
+msgstr "هل البحث حساس لحالة الأحرف أم غير حساس لحالة الأحرف؟"
+
+msgid "Length of history"
+msgstr "طول التاريخ"
+
+msgid ""
+"Maximum number of entries in the search history. Set this to 0 to disable "
+"search history."
+msgstr ""
+"الحد الأقصى لعدد الإدخالات في محفوظات البحث. اضبط هذا على 0 لتعطيل سجل البحث."
+
+msgid "Move down"
+msgstr "تحرك لأسفل"
+
+msgid "Move down a page"
+msgstr "الانتقال إلى أسفل الصفحة"
+
+msgid "Move up"
+msgstr "تحريك لأعلى"
+
+msgid "Move up a page"
+msgstr "الانتقال إلى أعلى الصفحة"
+
+msgid "New Search"
+msgstr "بحث جديد"
+
+msgid "No history"
+msgstr "بدون تاريخ"
+
+msgid "OK"
+msgstr "موافق"
+
+msgid "Open selected in IMDb"
+msgstr "فتح الحدث المختار من قاعدة بيانات معلومات الأفلام"
+
+msgid "Save search as AutoTimer"
+msgstr "حفظ البحث حسب المؤقت التلقائي"
+
+msgid "Search"
+msgstr "بحث"
+
+msgid "Search EPG"
+msgstr "البحث في دليل البرامج الإلكترونية"
+
+msgid "Search encoding"
+msgstr "ترميز البحث"
+
+msgid "Search in..."
+msgstr "البحث في..."
+
+msgid "Search scope"
+msgstr "نطاق البحث"
+
+msgid "Search strictness"
+msgstr "دقة البحث"
+
+msgid "Search type"
+msgstr "نوع البحث"
+
+msgid "Searching..."
+msgstr "جار البحث..."
+
+msgid "Select a timer to search"
+msgstr "إختيار مؤقت البحث"
+
+msgid "Select text to search for"
+msgstr "تحديد نص للبحث عن"
+
+msgid ""
+"Set type of match used to compare program titles with the search string."
+msgstr "حدد نوع التطابق المستخدم لمقارنة عناوين البرامج بسلسلة البحث."
+
+msgid "Sets the default search scope when the user is asked."
+msgstr "تعيين نطاق البحث الافتراضي عند سؤال المستخدم."
+
+msgid "Setup"
+msgstr "الضبط"
+
+msgid "Setup menu"
+msgstr "قائمة الضبط"
+
+msgid "Show AutoTimer list"
+msgstr "عرض قائمة المؤقتات التلقائية"
+
+msgid "Show detailed event information"
+msgstr "عرض معلومات مفصلة عن الحدث"
+
+msgid "Show in plugin browser"
+msgstr "عرض متصفح البلج إنز"
+
+msgid "Show orbital position"
+msgstr "عرض الموقع المداري"
+
+msgid "Show satellite orbital positions in the search results."
+msgstr "عرض المواقع المدارية الفضائية في نتائج البحث."
+
+msgid "Show search history"
+msgstr "عرض تاريخ البحث"
+
+msgid "Zap to channel"
+msgstr "إنتقل إلى القناة"
+
+msgid "all bouquets"
+msgstr "كل الباقات"
+
+msgid "all services"
+msgstr "كل القنوات"
+
+msgid "ask user"
+msgstr "أسال المستخدم"
+
+msgid "case-insensitive search"
+msgstr "البحث عن طريق الحروف الأبجدية"
+
+msgid "case-sensitive search"
+msgstr "البحث عن طريق الحروف الأبجدية"
+
+msgid "current bouquet"
+msgstr "الباقة الحالية"
+
+msgid "current service"
+msgstr "القناة الحالية"
+
+msgid "exact match"
+msgstr "تطابق كامل"
+
+msgid "partial match"
+msgstr "تطابق جزئي"
+
+msgid "search EPG"
+msgstr "البحث في دليل البرامج الإلكترونية"
+
+msgid "search EPG from history..."
+msgstr "البحث في دليل البرامج الإلكترونية من السجل..."
+
+msgid "title starts with"
+msgstr "يبدأ العنوان بـ"
