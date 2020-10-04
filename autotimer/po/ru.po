@@ -1455,3 +1455,15 @@ msgstr "переключение"
 
 msgid "zap and record"
 msgstr "переключение и запись"
+
+msgid "Allow double timer for different services"
+msgstr "Разрешить двойной таймер для разных сервисов"
+
+msgid "If specified services"
+msgstr "Если назначены сервисы"
+
+msgid "If specified bouquets"
+msgstr "Если назначены букеты""
+
+msgid "If specified services or bouquets"
+msgstr "Если назначены сервисы или букеты"
