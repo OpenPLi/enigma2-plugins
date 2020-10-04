@@ -1463,7 +1463,7 @@ msgid "If specified services"
 msgstr "Если назначены сервисы"
 
 msgid "If specified bouquets"
-msgstr "Если назначены букеты""
+msgstr "Если назначены букеты"
 
 msgid "If specified services or bouquets"
 msgstr "Если назначены сервисы или букеты"
