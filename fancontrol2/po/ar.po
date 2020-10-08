@@ -1,0 +1,335 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: FanControl2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"PO-Revision-Date: \n"
+"Last-Translator: mosad - مساعد الجعيد <abo-mishal@hotmail.com>\n"
+"Language-Team: mosad - مساعد الجعيد\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
+"X-Generator: Poedit 2.4.1\n"
+
+#, python-format
+msgid "%s   %02d C"
+msgstr "%s   %02d C"
+
+msgid "."
+msgstr "."
+
+msgid "3Pin"
+msgstr "3Pin"
+
+msgid "4Pin"
+msgstr "4Pin"
+
+msgid "4Pin (PID)"
+msgstr "4Pin (PID)"
+
+msgid "Action in case of Fan failure"
+msgstr "الإجراء في حالة فشل المروحة"
+
+msgid "Auto-Delete Data older than (Days)"
+msgstr "الحذف التلقائي للبيانات الأقدم من (أيام)"
+
+#, python-format
+msgid "Auto-Delete older %s Days"
+msgstr "حذف تلقائي للأيام %s القديمة"
+
+msgid "Box Shutdown"
+msgstr "إيقاف تشغيل الجهاز"
+
+msgid "Box has no fancontrol hardware -> FC2 deactivated"
+msgstr "لا يحتوي الجهاز على أي جهاز للتحكم في المعالج -> تم إلغاء تنشيط التحكم في المروحة الثانية"
+
+msgid "Box shutdown at Temperature (C)"
+msgstr "إغلاق الجهاز في درجة الحرارة (مقياس مئوي)"
+
+msgid "Cancel"
+msgstr "إلغاء"
+
+msgid "Check"
+msgstr "فحص"
+
+msgid "Choose path"
+msgstr "اختيار المسار"
+
+msgid "Control disabled"
+msgstr "تم تعطيل التحكم"
+
+#, python-format
+msgid "Current rpm  %4d"
+msgstr "دورة في الدقيقة الحالية  %4d"
+
+#, python-format
+msgid "Current value: %s"
+msgstr "القيمة الحالية: %s"
+
+msgid "Delete"
+msgstr "حذف"
+
+msgid "Delete older 48h"
+msgstr "حذف الاقدم بعد 48 ساعة"
+
+#, python-format
+msgid "Disk free : %d MByte"
+msgstr "مساحة القرص المتوفرة : %d ميقابايت"
+
+msgid "Download"
+msgstr "تحميل"
+
+msgid "Enable Data Logging"
+msgstr "تمكين تسجيل البيانات"
+
+msgid "Enable Event Logging"
+msgstr "تمكين تسجيل الأحداث"
+
+msgid "End temperature C"
+msgstr "درجة الحرارة النهائية المقياس المئوي"
+
+msgid "Extended Control Range"
+msgstr "نطاق التحكم الموسع"
+
+msgid "Fan Control"
+msgstr "التحكم بالمروحة"
+
+msgid "Fan Control 2"
+msgstr "التحكم في المروحة 2"
+
+msgid "Fan Control 2 - Monitor"
+msgstr "مروحة التحكم 2 - مراقبة"
+
+msgid "Fan Control 2 - Setup"
+msgstr "التحكم بمروحة 2 - الإعداد"
+
+msgid "Fan Control 2 - Test"
+msgstr "التحكم بمروحة 2 - اختبار"
+
+msgid "Fan is not working!"
+msgstr "المروحة لا تعمل!"
+
+msgid "Fan off in Idle Mode"
+msgstr "إيقاف تشغيل المروحة في وضع الخمول"
+
+msgid "Fan type"
+msgstr "نوع المروحة"
+
+msgid "FanControl2 emergency, Box Shutdown now?"
+msgstr "طوارئ التحكم في المروحة الثانية، إيقاف تشغيل الجهاز الآن؟"
+
+#, python-format
+msgid "File %s does not exists"
+msgstr "الملف %s غير موجود"
+
+#, python-format
+msgid "Filesize : %d %sByte"
+msgstr "حجم الملف : %d %s بايت"
+
+msgid ""
+"GUI needs a restart to apply the changes.\n"
+"Do you want to Restart the GUI now?"
+msgstr ""
+"تحتاج واجهة الانجما إلى إعادة تشغيل لتطبيق التغييرات.\n"
+"هل تريد إعادة تشغيل واجهة المستخدم الرسومية الآن؟"
+
+msgid "Help"
+msgstr "المساعدة"
+
+msgid "Information"
+msgstr "المعلومات"
+
+msgid "Initial PWM"
+msgstr "PWM الأولية"
+
+msgid "Initial Voltage"
+msgstr "الجهد الأولي"
+
+msgid "Logging path"
+msgstr "مسار التسجيل"
+
+#, python-format
+msgid "Logging-Path: %s"
+msgstr "مسار التسجيل: %s"
+
+#, python-format
+msgid "Max Fan %d rpm at PWM=255 (%s)"
+msgstr "حد أقصى للمروحة %d دورة في الدقيقة عند PWM = 255 (%s)"
+
+#, python-format
+msgid "Max Fan %d rpm at PWM=255 and VLT=255 (%s)"
+msgstr "حد أقصى للمروحة %d دورة في الدقيقة في PWM = 255 و VLT = 255 (%s)"
+
+#, python-format
+msgid "Max Fan %d rpm at VLT=255 (%s)"
+msgstr "حد أقصى للمروحة %d دورة في الدقيقة في VLT = 255 (%s)"
+
+#, python-format
+msgid "Min Fan Start %d rpm at PWM=%d"
+msgstr "الحد الأدنى من بدء تشغيل %d دورة في الدقيقة PWM=%d"
+
+#, python-format
+msgid "Min Fan Start %d rpm at VLT=%d"
+msgstr "حد أدنى للمروحة %d دورة في الدقيقة في VLT=%d"
+
+#, python-format
+msgid "Min Fan Start %d rpm at VLT=%d and PWM=0"
+msgstr "الحد الأدنى من بدء تشغيل %d دورة في الدقيقة PWM=%d"
+
+#, python-format
+msgid "Min Fan Stop %d rpm at PWM=%d (%s)"
+msgstr "الحد الأدنى من إيقاف تشغيل %d دورة في الدقيقة PWM=%d (%s)"
+
+#, python-format
+msgid "Min Fan Stop %d rpm at VLT=%d (%s)"
+msgstr "Min Fan Stop %d rpm at VLT=%d (%s)"
+
+#, python-format
+msgid "Min Fan Stop %d rpm at VLT=%d and PWM=0 (%s)"
+msgstr "Min Fan Stop %d rpm at VLT=%d and PWM=0 (%s)"
+
+msgid "Number of WebIF-Log-Entries"
+msgstr "عدد إدخالات سجل واجهة المستخدم"
+
+#, python-format
+msgid "PID Ctl Err %03.2f %%"
+msgstr "PID Ctl Err %03.2f %%"
+
+#, python-format
+msgid "PWM  %03d"
+msgstr "PWM  %03d"
+
+msgid "Restart GUI now?"
+msgstr "هل تريد إعادة تشغيل الاينجما2 الان ؟"
+
+msgid "Save"
+msgstr "حفظ"
+
+msgid "Sensors"
+msgstr "أجهزة الاستشعار"
+
+msgid "Show Fan Speed as"
+msgstr "إظهار سرعة المروحة كـ"
+
+msgid "Show Monitor in Extension-Menu"
+msgstr "عرض جهاز العرض في القائمة الاساسية"
+
+msgid "Show Plugin in Extension-Menu"
+msgstr "عرض البلجن في القائمة الاساسية"
+
+msgid "Speed"
+msgstr "السرعة"
+
+msgid "Static temp C"
+msgstr "درجة الحرارة الثابتة C"
+
+#, python-format
+msgid "Target rpm  %4d"
+msgstr "الهدف دورة في الدقيقة  %4d"
+
+msgid "Temperature"
+msgstr "درجة حرارة"
+
+#, python-format
+msgid "Temperature C  %4.1f"
+msgstr "درجة الحرارة C  %4.1f"
+
+msgid "Voltage"
+msgstr "الجهد االكهربائي"
+
+#, python-format
+msgid "Voltage  %03d"
+msgstr "الجهد  %03d"
+
+msgid "active"
+msgstr "نشط"
+
+msgid "auto"
+msgstr "تلقائي"
+
+msgid "below Tunerslot 4"
+msgstr "أسفل فتحة الموالف 4"
+
+#, python-format
+msgid "currentRPM:%d targetRPM:%d Temp:%4.1f"
+msgstr "التاريخRPM:%d الهدفRPM:%d درجة الحرارة:%4.1f"
+
+msgid "disabled"
+msgstr "تم التعطيل"
+
+msgid "display Info"
+msgstr "عرض معلومات"
+
+msgid "do nothing"
+msgstr "لا تفعل شيئ"
+
+msgid "increases overheating protection to (C)"
+msgstr "يزيد من الحماية من ارتفاع درجة الحرارة إلى (المقياس المئوي)"
+
+msgid "left near Card-Slot"
+msgstr "اليسار بالقرب من فتحة بطاقة"
+
+msgid "left near Front-CI"
+msgstr "اليسار بالقرب من الواجهة-وحدة النفاذ المشورط"
+
+msgid "left of the Battery"
+msgstr "يسار البطارية"
+
+msgid "max Speed rpm"
+msgstr "الحد الاعلى سرعة الدورة في الدقيقة"
+
+msgid "min Speed rpm"
+msgstr "الحد الادنى سرعة الدورة في الدقيقة"
+
+msgid "near XILINX Spartan"
+msgstr "بالقرب من XILINX"
+
+msgid "never"
+msgstr "أبدا"
+
+msgid "no"
+msgstr "لا"
+
+msgid "not active"
+msgstr "غير نشط"
+
+msgid "over Security Card"
+msgstr "أكثر من بطاقة الأمن"
+
+msgid "please set fan type (3Pin or 4Pin)"
+msgstr "يرجى تعيين نوع مروحة (ثلاث أرقام أو أربعة أرقام)"
+
+msgid "please wait (until 3min)..."
+msgstr "يرجى الانتظار (حتى ثلاث دقائق)..."
+
+msgid "press Info for HDD-Temp"
+msgstr "اضغط على معلومات عن الأقراص الصلبة-درجة الحرارة"
+
+msgid "read HDD-Temperature in HDD-Standby-Mode"
+msgstr "قراءة القرص الصلب - درجة الحرارة في القرص الصلب أثناء وضع-الاغلاق"
+
+msgid "readme.txt"
+msgstr "قراءة ملف النصوص"
+
+msgid "setup Fancontol inStandby mode"
+msgstr "إعدادات التحكم بالمروحة في وضع الإستعداد"
+
+msgid "turn off"
+msgstr "إغلاق"
+
+msgid "turn on"
+msgstr "تشغيل"
+
+msgid "under the Fan"
+msgstr "تحت المروحة"
+
+msgid "under the WLAN"
+msgstr "تحت إتصال شبكة عبر الوايفاي"
+
+msgid "yes"
+msgstr "نعم"
+
+msgid "yes, Except for Recording or HDD"
+msgstr "نعم، باستثناء التسجيل أو الأقراص الصلبة"
