@@ -1,0 +1,256 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Enigma2 EmailClient Plugin\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"PO-Revision-Date: 2020-10-08 16:50+0300\n"
+"Last-Translator: mosad - مساعد الجعيد <abo-mishal@hotmail.com>\n"
+"Language-Team: mosad - مساعد الجعيد\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
+"X-Generator: Poedit 2.4.1\n"
+
+#, python-format
+msgid "%(name)s (%(user)s@%(server)s)"
+msgstr "%(name)s (%(user)s@%(server)s)"
+
+msgid "Account Setup"
+msgstr "إعداد الحساب"
+
+msgid "Accounts list"
+msgstr "قائمة الحسابات"
+
+msgid "Attachments"
+msgstr "المرفقات"
+
+msgid "Bodys"
+msgstr "الاشخاص"
+
+msgid "Date"
+msgstr "تاريخ"
+
+msgid "Email Client"
+msgstr "بريد إلكتروني عميل"
+
+msgid "Email setup"
+msgstr "ضبط البريد الالكتروني"
+
+#, python-format
+msgid ""
+"EmailClient for %(account)s:\n"
+"\n"
+"%(error)s"
+msgstr ""
+"EmailClient for %(account)s:\n"
+"\n"
+"%(error)s"
+
+msgid "From"
+msgstr "من"
+
+msgid "IMAP Port"
+msgstr "منفذ الخرائط"
+
+msgid "IMAP Server"
+msgstr "خادم خرائطي"
+
+#, python-format
+msgid ""
+"New mail arrived for account %s:\n"
+"\n"
+msgstr ""
+"وصل البريد الجديد لحساب%s:\n"
+"\n"
+
+#, python-format
+msgid "Really delete account %s?"
+msgstr "هل تريد حذف الحساب بالفعل %s؟"
+
+msgid "Subject"
+msgstr "الموضوع"
+
+#, python-format
+msgid ""
+"[EmailAccount] %(name)s: _cbCapabilities:\n"
+"####################################################################################################\n"
+"# If you have problems to log into your imap-server, please send me the output of the following line\n"
+"# cbCapabilities: %(capa)s\n"
+"####################################################################################################\n"
+msgstr ""
+"[EmailAccount] %(name)s: _cbCapabilities:\n"
+"####################################################################################################\n"
+"# If you have problems to log into your imap-server, please send me the output of the following line\n"
+"# cbCapabilities: %(capa)s\n"
+"####################################################################################################\n"
+
+#, python-format
+msgid "account %s is not connected"
+msgstr "الحساب %s غير متصل"
+
+msgid "account name"
+msgstr "اسم الحساب"
+
+msgid "account not connected"
+msgstr "الحساب غير متصل"
+
+msgid "add"
+msgstr "إضافة"
+
+msgid "always"
+msgstr "دائما"
+
+msgid "cancel"
+msgstr "إلغاء"
+
+msgid "cannot access inbox"
+msgstr "لا يمكن الوصول إلى صندوق البريد الوارد"
+
+msgid "cannot get headers of new messages"
+msgstr "لا يمكن الحصول على عناوين الرسائل الجديدة"
+
+msgid "cannot get list of new messages"
+msgstr "لا يمكن الحصول على قائمة من الرسائل الجديدة"
+
+msgid "connection failed - retrying"
+msgstr "فشل الاتصال - إعادة المحاولة"
+
+msgid "debug"
+msgstr "التصحيح"
+
+msgid "delete"
+msgstr "مسح"
+
+msgid "display connection errors"
+msgstr "عرض أخطاء الاتصال"
+
+msgid "display message type"
+msgstr "نوع الرسالة المعروضة"
+
+msgid "display timeout (seconds)"
+msgstr "مهلة العرض (ثواني)"
+
+msgid "edit"
+msgstr "تحرير"
+
+msgid "empty values - retry"
+msgstr "القيم الفارغة - إعادة المحاولة"
+
+msgid "enable auto check mail"
+msgstr "تمكين التحقق التلقائي من صندوق البريد"
+
+#, python-format
+msgid ""
+"error logging %(who)s in:\n"
+"%(failure)s"
+msgstr ""
+"error logging %(who)s in:\n"
+"%(failure)s"
+
+msgid "failed to load message"
+msgstr "فشل في تحميل الرسالة"
+
+msgid "getting message ..."
+msgstr "الحصول على رسالة ..."
+
+#, python-format
+msgid "have %d messages"
+msgstr "يكون لديك %d الرسائل"
+
+msgid "have no messages"
+msgstr "ليس لديك رسائل"
+
+msgid "headers loaded, now parsing ..."
+msgstr "تم تحميل العناوين، والآن تحليل ..."
+
+#, python-format
+msgid "importing configurations from %s"
+msgstr "استيراد الاعدادات من %s"
+
+msgid "infobar mode (live TV)"
+msgstr "وضع شريط المعلومات (بث مباشر)"
+
+msgid "leave unread"
+msgstr "أتركه غير مقروء"
+
+msgid "list all mailboxes"
+msgstr "قائمة كل صناديق البريد"
+
+msgid "loading headers ..."
+msgstr "تحميل العناوين ..."
+
+msgid "mail check interval (minutes)"
+msgstr "الفاصل الزمني للتحقق من البريد (بالدقائق)"
+
+msgid "maximum mail size to fetch"
+msgstr "أقصى حجم البريد لجلب البيانات"
+
+msgid "message too large"
+msgstr "رسالة كبيرة جداً"
+
+msgid "no account selected"
+msgstr "لم يتم تحديد الحساب"
+
+msgid "no date"
+msgstr "لا يوجد تاريخ"
+
+msgid "no filename"
+msgstr "لا يوجد اسم للملف"
+
+msgid "no from"
+msgstr "لا من"
+
+msgid "no mailbox?!?!"
+msgstr "لا يوجد صندوق بريد?!?!"
+
+msgid "no sender"
+msgstr "لا يوجد مرسل"
+
+msgid "no subject"
+msgstr "لا يوجد موضوع"
+
+msgid "ok"
+msgstr "موافق"
+
+msgid "parsing message ..."
+msgstr "رسالة تحليل ..."
+
+msgid "password"
+msgstr "كلمة المرور"
+
+msgid "really delete mail?"
+msgstr "حقا حذف البريد؟"
+
+msgid "really undelete mail?"
+msgstr "حقا لا تريد حذف البريد؟"
+
+msgid "remove"
+msgstr "حذف"
+
+msgid "select Attachment"
+msgstr "حدد المرفق"
+
+msgid "select Body"
+msgstr "حدد النص الأساسي"
+
+msgid "show deleted entries"
+msgstr "عرض المدخلات المحذوفة"
+
+msgid "undelete"
+msgstr "لا تحذف"
+
+msgid "user name"
+msgstr "اسم المستخدم"
+
+msgid "view Email"
+msgstr "عرض رسائل البريد الإلكتروني"
+
+msgid "view Emails via IMAP4"
+msgstr "عرض رسائل البريد الإلكتروني عبر IMAP4"
