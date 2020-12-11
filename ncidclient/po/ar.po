@@ -1,0 +1,228 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: nigma2-plugin-extensions-ncidclient\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"PO-Revision-Date: 2020-12-10 16:30+0300\n"
+"Last-Translator: mosad - مساعد الجعيد <abo-mishal@hotmail.com>\n"
+"Language-Team: mosad - مساعد الجعيد\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
+"X-Generator: Poedit 2.4.2\n"
+"X-Poedit-SearchPath-0: V:/eclipse/workspaces/pydev/enigma2-plugins/enigma2-plugins/ncidclient/src\n"
+
+#. TRANSLATORS: this is a window title.
+msgid "Add entry to phonebook"
+msgstr "إضافة إدخال إلى دفتر الهاتف"
+
+msgid "Areacode to add to calls without one (if necessary)"
+msgstr "رمز المنطقة المراد إضافته إلى المكالمات بدون واحد (إذا لزم الأمر)"
+
+msgid "Austria"
+msgstr "النمسا"
+
+msgid "Automatically add new Caller to PhoneBook"
+msgstr "إضافة المتصل الجديد تلقائيا إلى دليل الهاتف"
+
+msgid "Call monitoring"
+msgstr "مراقبة المكالمات"
+
+#. TRANSLATORS: keep it short, this is a button
+msgid "Cancel"
+msgstr "إلغاء"
+
+msgid "Compact Flash"
+msgstr "دمج الفلاش"
+
+msgid "Connected to NCID Server"
+msgstr "متصل في خادم هوية متصل الشبكة"
+
+#, python-format
+msgid ""
+"Connecting to NCID Server failed\n"
+" (%s)\n"
+"retrying..."
+msgstr ""
+"فشل الاتصال خادم هوية متصل الشبكة\n"
+" (%s)\n"
+"اعاده المحاوله..."
+
+msgid "Connecting to NCID Server..."
+msgstr "يتم الآن الاتصال خادم هوية متصل الشبكة..."
+
+#, python-format
+msgid ""
+"Connection to NCID Server lost\n"
+" (%s)\n"
+"retrying..."
+msgstr ""
+"الاتصال خادم هوية متصل الشبكة مفقود\n"
+" (%s)\n"
+"اعاده المحاوله..."
+
+msgid "Country"
+msgstr "الدولة"
+
+#. TRANSLATORS: keep it short, this is a button
+msgid "Delete"
+msgstr "حذف"
+
+msgid "Display Fon calls on screen"
+msgstr "عرض المكالمات على الشاشة"
+
+#, python-format
+msgid ""
+"Do you really want to delete entry for\n"
+"\n"
+"%(number)s\n"
+"\n"
+"%(name)s?"
+msgstr ""
+"Do you really want to delete entry for\n"
+"\n"
+"%(number)s\n"
+"\n"
+"%(name)s?"
+
+#. TRANSLATORS: keep it short, this is a button
+msgid "Edit"
+msgstr "تعديل"
+
+msgid "Enter Search Terms"
+msgstr "أدخل مصطلحات البحث"
+
+msgid "Entry incomplete."
+msgstr "الإدخال غير مكتمل."
+
+msgid "Flash"
+msgstr "الفلاش"
+
+msgid "France"
+msgstr "فرنسا"
+
+msgid "Germany"
+msgstr "المانيا"
+
+#, python-format
+msgid ""
+"Incoming Call on %s from\n"
+"---------------------------------------------\n"
+"%s\n"
+"%s\n"
+"---------------------------------------------"
+msgstr ""
+"مكالمة واردة على %s من\n"
+"---------------------------------------------\n"
+"%s\n"
+"%s\n"
+"---------------------------------------------"
+
+msgid "Italy"
+msgstr "إيطاليا"
+
+msgid "Last 10 calls:\n"
+msgstr "آخر 10 مكالمات:\n"
+
+msgid "Media directory"
+msgstr "دليل الوسائط"
+
+#. TRANSLATORS: this is a window title.
+msgid "NCID Client - Setup"
+msgstr "ضبط - عميل خادم هوية متصل الشبكة"
+
+msgid "NCID server (Name or IP)"
+msgstr "خادم هوية متصل الشبكة (الاسم أو الايبي)"
+
+msgid "NCID server listening port (1-65535)"
+msgstr "منفذ إستماع خادم هوية متصل الشبكة (1-65535)"
+
+msgid "Name"
+msgstr "الاسم"
+
+msgid "Network mount"
+msgstr "ربط الشبكة"
+
+#. TRANSLATORS: keep it short, this is a button
+msgid "New"
+msgstr "جديد"
+
+msgid "No entry selected"
+msgstr "لم يتم تحديد أي إدخال"
+
+msgid "No phonebook"
+msgstr "لا يوجد دليل هاتف"
+
+msgid "Number"
+msgstr "عدد"
+
+#. TRANSLATORS: keep it short, this is a button
+msgid "OK"
+msgstr "موافق"
+
+msgid "PhoneBook Location"
+msgstr "موقع دفتر الهاتف"
+
+#. TRANSLATORS: this is a window title.
+msgid "Phonebook"
+msgstr "دليل"
+
+msgid "Plugin not active"
+msgstr "البلجن غير نشط"
+
+msgid "Reverse Lookup Caller ID (select country below)"
+msgstr "عكس معرف المتصل البحث (تحديد البلد أدناه)"
+
+#. TRANSLATORS: keep it short, this is a button
+msgid "Search"
+msgstr "بحث"
+
+msgid "Search phonebook"
+msgstr "بحث دليل الهاتف"
+
+msgid "Show after Standby"
+msgstr "عرض بعد وضع الاستعداد"
+
+msgid "Show connection information popups"
+msgstr "عرض النوافذ المنبثقة لمعلومات الاتصال"
+
+msgid "Strip Leading 0"
+msgstr "يقود الشريط 0"
+
+msgid "Switzerland"
+msgstr "سويسرا"
+
+msgid "The Netherlands"
+msgstr "هولندا"
+
+msgid "Timeout for Call Notifications (seconds)"
+msgstr "مهلة لإشعارات المكالمات (ثواني)"
+
+msgid "UNKNOWN"
+msgstr "غير معرف"
+
+msgid "USB Device"
+msgstr "جهاز الفلاش مموري"
+
+msgid "Use internal PhoneBook"
+msgstr "استخدام دفتر الهاتف الداخلي"
+
+msgid "no calls"
+msgstr "لايوجد مكالمات"
+
+msgid "number suppressed"
+msgstr "تم منع العدد"
+
+msgid "show as list"
+msgstr "إظهار كقائمة"
+
+msgid "show each call"
+msgstr "إظهار كل مكالمة"
+
+msgid "show nothing"
+msgstr "لا تظهر أي شيء"
