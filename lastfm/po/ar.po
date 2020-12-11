@@ -1,0 +1,290 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Last.FM Internet Radio V. 0.6.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"PO-Revision-Date: \n"
+"Last-Translator: mosad - مساعد الجعيد <abo-mishal@hotmail.com>\n"
+"Language-Team: mosad - مساعد الجعيد\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: _(\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
+"X-Generator: Poedit 2.4.1\n"
+"X-Poedit-SearchPath-0: ../src\n"
+
+#, python-format
+msgid "%s name"
+msgstr "%s الإسم"
+
+msgid "Album"
+msgstr "آلبوم"
+
+msgid "Artist"
+msgstr "الفنان"
+
+msgid "Ban"
+msgstr "حظر"
+
+msgid "Ban Track, never play"
+msgstr "حظر المسار، لا تشغله أبدا"
+
+msgid "Banned Tracks"
+msgstr "المسارات المحظورة"
+
+msgid "Banned Tracks loaded"
+msgstr "تم تحميل المسارات المحظورة"
+
+msgid "Cancel"
+msgstr "إلغاء"
+
+msgid "Description"
+msgstr "الوصـف"
+
+msgid "Extensions menu"
+msgstr "قائمة الملحقات"
+
+msgid "Friends"
+msgstr "أصدقائي"
+
+msgid "Friends loaded"
+msgstr "تحميل الاصدقاء"
+
+msgid "Global Tags"
+msgstr "العلامات العالمية"
+
+msgid "Global Tags loaded"
+msgstr "تم تحميل العلامات العالمية"
+
+msgid "Group of"
+msgstr "مجموعة من"
+
+msgid "Interval for Coverart Animation"
+msgstr "تحويل الفاصل الزمني للرسوم المتحركة"
+
+msgid "Interval to refresh Metadata (seconds)"
+msgstr "الفاصل الزمني لتحديث بيانات التعريف (ثواني)"
+
+msgid "Last.FM"
+msgstr "أخر راديو"
+
+msgid "Last.FM Username"
+msgstr "أسم المستخدم أخر راديو"
+
+msgid "LastFM Proxy port"
+msgstr "منفذ البروكسي أخر راديو"
+
+msgid "Listen to Last.FM Internet Radio"
+msgstr "الاستماع إلى أخر راديو من الإنترنت"
+
+msgid "Loading Friends"
+msgstr "تحميل الأصدقاء"
+
+msgid "Loading Global Tags"
+msgstr "تم تحميل العلامات العالمية"
+
+msgid "Loading Loved Tracks"
+msgstr "تحميل المسارات المحببة"
+
+msgid "Loading Neighbours"
+msgstr "تحميل الجيران"
+
+msgid "Loading Recent Tracks"
+msgstr "تحميل المسارات الحديثة"
+
+msgid "Loading Top Tacks"
+msgstr "تحميل أعلى المسارات"
+
+msgid "Love"
+msgstr "محبة"
+
+msgid "Loved Tracks"
+msgstr "مسارات محبوبة"
+
+msgid "Loved Tracks loaded"
+msgstr "تحميل المسارات المحببة"
+
+msgid "Mark Track as loved"
+msgstr "وضع علامة على المسار كما أحب"
+
+msgid "Name (needs GUI restart)"
+msgstr "الاسم (يحتاج إلى إعادة تشغيل واجهة المستخدم)"
+
+msgid "Neighbours"
+msgstr "الجيران"
+
+msgid "Neighbours Tracks"
+msgstr "مسارات الجيران"
+
+msgid "Neighbours loaded"
+msgstr "تحميل الجيران"
+
+msgid "Next Selection"
+msgstr "التحديد التالي"
+
+msgid "OK"
+msgstr "موافق"
+
+msgid "Open"
+msgstr "فتح"
+
+msgid "Page backward Selections"
+msgstr "تحديدات الصفحة للخلف"
+
+msgid "Page forward Selections"
+msgstr "تحديدات الصفحة للامام"
+
+msgid "Password"
+msgstr "كلمة المرور"
+
+msgid "Personal Recommendations"
+msgstr "التوصيات الشخصية"
+
+msgid "Personal Stations"
+msgstr "محطات شخصية"
+
+msgid "Play"
+msgstr "تشغيل"
+
+msgid "Play Artist Radio..."
+msgstr "تشغيل راديو الفنان ..."
+
+msgid "Play Group Radio..."
+msgstr "تشغيل راديو المجموعة..."
+
+msgid "Play Tag Radio..."
+msgstr "تشغيل راديو العلامة..."
+
+msgid "Plugin menu"
+msgstr "قائمة البلج إنز"
+
+msgid "Previous Selection"
+msgstr "التحديد السابق"
+
+msgid "Quit"
+msgstr "خروج"
+
+msgid "Recent Tracks"
+msgstr "المسارات الأخيرة"
+
+msgid "Recent Tracks loaded"
+msgstr "المسارات الأخيرة التي تم تحميلها"
+
+msgid "Recommendation level"
+msgstr "مستوى التوصية"
+
+msgid "Select next Tab"
+msgstr "تحديد علامة التبويب التالية"
+
+msgid "Select prev Tab"
+msgstr "تحديد علامة التبويب السابقة"
+
+msgid "Send now playing Audio Tracks"
+msgstr "إرسال الآن تشغيل المسارات الصوتية"
+
+msgid "Server returned"
+msgstr "أرجع الخادم"
+
+msgid "Setup"
+msgstr "الضبط"
+
+msgid "Show Coverart"
+msgstr "عرض المحول"
+
+msgid "Show Coverart Animation in Screensaver"
+msgstr "عرض تحويل الرسوم المتحركة في شاشة التوقف"
+
+msgid "Show Coverart in Screensaver"
+msgstr "عرض المحول في شاشة التوقف"
+
+msgid "Show in (needs GUI restart)"
+msgstr "عرض في (احتياجات إعادة تشغيل واجهة المستخدم)"
+
+msgid "Skip"
+msgstr "تخطي"
+
+msgid "Skip current Track"
+msgstr "تخطي المسار الحالي"
+
+msgid "Speed for Coverart Animation"
+msgstr "سرعة تحويل للرسوم المتحركة"
+
+msgid "Start/stop streaming"
+msgstr "بدء/ إيقاف البث"
+
+msgid "Starting stream"
+msgstr "بدء البث"
+
+msgid "Station changed"
+msgstr "تم تغيير المحطة"
+
+msgid "Stop"
+msgstr "إيقاف"
+
+msgid "Stream stopped"
+msgstr "توقف البث"
+
+msgid "Switch to selected Station"
+msgstr "التبديل إلى محطة محددة"
+
+msgid "Timeout Statustext (seconds)"
+msgstr "مهلة وقت حالة النص (ثواني)"
+
+msgid "Timeout to select a Tab (seconds)"
+msgstr "مهلة لتحديد علامة تبويب (ثواني)"
+
+msgid "Top Tracks"
+msgstr "أعلى المسارات"
+
+msgid "Top Tracks loaded"
+msgstr "تحميل أعلى المسارات"
+
+msgid "Track"
+msgstr "مسار"
+
+msgid "Track banned"
+msgstr "المسار المحظور"
+
+msgid "Track loved"
+msgstr "المسار أحب"
+
+msgid "Track skipped"
+msgstr "تم تخطي المسار"
+
+msgid "Tracks liked by Fans of"
+msgstr "المسارات يحبها المشجعين من"
+
+msgid "Tracks similar to"
+msgstr "المسارات مشابهة ل"
+
+msgid "Use LastFM Proxy"
+msgstr "استخدام وكيل آخر للراديو"
+
+msgid "Use Screensaver"
+msgstr "استخدام شاشة التوقف"
+
+msgid "Ver."
+msgstr "نسخة."
+
+msgid "Wait before Screensaver (seconds)"
+msgstr "الانتظار قبل شاشة التوقف (ثواني)"
+
+msgid "logging into last.FM"
+msgstr "تسجيل الدخول إلى آخر.راديو"
+
+msgid "login failed! "
+msgstr "فشل تسجيل الدخول! "
+
+msgid "login successful"
+msgstr "نجاح تسجيل الدخول"
+
+msgid "playing:"
+msgstr "التشغيل:"
+
+#, python-format
+msgid "please enter an %s name to listen to"
+msgstr "الرجاء إدخال اسم %s للاستماع إلى"
