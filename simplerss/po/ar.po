@@ -1,0 +1,213 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Enigma2 SimpleRSS Plugin\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"PO-Revision-Date: 2020-11-12 17:33+0300\n"
+"Last-Translator: mosad - مساعد الجعيد <abo-mishal@hotmail.com>\n"
+"Language-Team: mosad - مساعد الجعيد\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
+"X-Generator: Poedit 2.4.1\n"
+
+#, python-format
+msgid "%d Feed(s) were added to configuration."
+msgstr "%d مصدر(المصادر) أضيف إلى الاعدادات."
+
+#, python-format
+msgid "%d feed(s) added to configuration."
+msgstr "%d مصدر(المصادر) تم إضافتها إلى الاعدادات."
+
+msgid "--- Scanner automount ---"
+msgstr "--- البحث عن مشاركة المساحة التلقائي ---"
+
+msgid "< Create file any name.rss in USB device >"
+msgstr "< إنشاء أي اسم الملف.rss في جهاز الفلاش مموري >"
+
+msgid "< and write feeds link column >"
+msgstr "< وكتابة المصادرعلى الرابط >"
+
+msgid "A simple to use RSS reader"
+msgstr "بسيط لاستخدام قارئ RSS"
+
+msgid "Apply"
+msgstr "تطبيق"
+
+msgid "Autoupdate"
+msgstr "التحديث التلقائي"
+
+msgid "Cancel"
+msgstr "إلغاء"
+
+msgid "Close"
+msgstr "إغلاق"
+
+msgid "Delete"
+msgstr "حذف"
+
+msgid "Enclosures"
+msgstr "مرفقات"
+
+msgid "Entries"
+msgstr "مدخلات"
+
+#, python-format
+msgid "Entry %s/%s"
+msgstr "إدخل %s/%s"
+
+msgid "Error while parsing Feed, this usually means there is something wrong with it."
+msgstr "خطأ أثناء تحليل الخلاصة ، هذا يعني عادة أن هناك خطأ ما بها."
+
+msgid "Failed to get subscriptions from Google Reader."
+msgstr "فشل في الحصول على اشتراكات من قاري قوقل."
+
+msgid "Failed to login to Google Reader."
+msgstr "فشل في تسجيل الدخول إلى قارئ قوقل."
+
+msgid "Feed"
+msgstr "مصدر"
+
+#, python-format
+msgid "Feed %s/%s"
+msgstr "المصدر %s/%s"
+
+msgid "Feed URI"
+msgstr "رابط المصدر"
+
+msgid "Feed is empty."
+msgstr "المصدر فارغ."
+
+msgid "Fetch feeds from Google Reader?"
+msgstr "إحضار المصادر من قارئ قوقل؟"
+
+#, python-format
+msgid "Found %d feed(s)"
+msgstr "العثور %d على المصدر(المصادر)"
+
+msgid "Found no Enclosure we can display."
+msgstr "لم يتم العثور على ضميمة يمكننا عرضها."
+
+msgid "Google Password"
+msgstr "كلمة مرور قوقل"
+
+msgid "Google Username"
+msgstr "اسم المستخدم لقوقل"
+
+msgid "Keep running in background"
+msgstr "استمرار التشغيل في الخلفية"
+
+msgid "Let's you view current RSS entries"
+msgstr "دعونا عرض إدخالات RSS الحالية"
+
+msgid "New"
+msgstr "جديد"
+
+msgid "New Items"
+msgstr "منتجات جديدة"
+
+msgid "New Items since last Auto-Update"
+msgstr "عناصر جديدة منذ آخر تحديث تلقائي"
+
+msgid "No such Item."
+msgstr "لا يوجد مثل هذا البند."
+
+msgid "Not found new feed(s)."
+msgstr "لم يتم العثور على مصدر جديد (مصادر)."
+
+msgid "Notification"
+msgstr "إشعارات"
+
+msgid "OK"
+msgstr "موافق"
+
+msgid "Preview"
+msgstr "معاينه"
+
+msgid "RSS Reader"
+msgstr "قارئ RSS"
+
+msgid "RSS-Reader"
+msgstr "قارئ RSS"
+
+#, python-format
+msgid "Read error %s"
+msgstr "خطأ في القراءة %s"
+
+msgid ""
+"Really delete this entry?\n"
+"It cannot be recovered!"
+msgstr ""
+"هل حقا تريد حذف هذا الإدخال؟\n"
+"لا يمكن استعادته!"
+
+#, python-format
+msgid "Received %d new news item(s)."
+msgstr "تم الاستقبال %d جديد من المادة الإخبارية (المواد)."
+
+msgid "Scroll speed (ms)"
+msgstr "سرعة التمرير (مللي ثانية)"
+
+msgid "Setup"
+msgstr "الضبط"
+
+msgid "Show in extensions menu"
+msgstr "عرض في الملحقات القائمة"
+
+msgid "Show new Messages as"
+msgstr "عرض الرسائل الجديدة كـ"
+
+msgid "Simple RSS Reader"
+msgstr "قارئ RSS بسيط"
+
+msgid "Simple RSS Reader Setup"
+msgstr "إعداد قارئ RSS بسيط"
+
+#, python-format
+msgid "Simple RSS Reader: %s"
+msgstr "قارئ RSS بسيط: %s"
+
+#, python-format
+msgid ""
+"Sorry, this type of feed is unsupported:\n"
+"%s"
+msgstr ""
+"عذراً، هذا النوع من موجز ويب غير معتمد:\n"
+"%s"
+
+msgid "Start automatically with Enigma2"
+msgstr "التشغيل تلقائيًا باستخدام الانجما2"
+
+msgid "Subscribe Newsfeed..."
+msgstr "الاشتراك في مصدر الأخبار..."
+
+msgid "Ticker"
+msgstr "شريط"
+
+msgid "Update Feed"
+msgstr "تحديث المصدر"
+
+msgid "Update Interval (min)"
+msgstr "تحديث الفاصل الزمني (دقيقة)"
+
+msgid ""
+"Update is being done in Background.\n"
+"Contents will automatically be updated when it's done."
+msgstr ""
+"يتم التحديث في الخلفية.\n"
+"سيتم تحديث المحتويات تلقائيًا عند الانتهاء منها."
+
+msgid "View RSS..."
+msgstr "عرض RSS..."
+
+msgid "What to do?"
+msgstr "ما الذي يجب القيام به؟"
+
+msgid "none"
+msgstr "لا شي"
