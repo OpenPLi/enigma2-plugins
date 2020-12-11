@@ -1,0 +1,231 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: virtualzap\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"PO-Revision-Date: \n"
+"Last-Translator: mosad - مساعد الجعيد <abo-mishal@hotmail.com>\n"
+"Language-Team: mosad - مساعد الجعيد\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
+"X-Generator: Poedit 2.4.1\n"
+
+#, python-format
+msgid "%d min"
+msgstr "%d دقيقة"
+
+#, python-format
+msgid "+%d min"
+msgstr "+%d دقيقة"
+
+msgid "/s"
+msgstr "/s"
+
+msgid "1 minute"
+msgstr "دقيقة واحدة"
+
+msgid "12 hours"
+msgstr "إثناعشر ساعة"
+
+msgid "15 minutes"
+msgstr "15 دقيقة"
+
+msgid "2 hours"
+msgstr "ساعتين"
+
+msgid "24 hours"
+msgstr "أربعة وعشرون ساعة"
+
+msgid "3 hours"
+msgstr "ثلاث ساعات"
+
+msgid "30 minutes"
+msgstr "30 دقيقة"
+
+msgid "45 minutes"
+msgstr "45 دقيقة"
+
+msgid "5 minutes"
+msgstr "5 دقائق"
+
+msgid "6 hours"
+msgstr "ستة ساعات"
+
+msgid "60 minutes"
+msgstr "60 دقيقة"
+
+msgid "Cancel"
+msgstr "إلغاء"
+
+msgid "Could not open Picture in Picture"
+msgstr "لا يمكن فتح صوره داخل صوره"
+
+msgid "Don't toggle standard infobar(s) with exit button"
+msgstr "لا تقم بتبديل شريط (شريط) المعلومات القياسي مع زر الخروج"
+
+msgid "EPGSelection (context menu)"
+msgstr "أختيار دليل البرامج الالكتروني (قائمة الحالة)"
+
+msgid "EPGSelection/EventView (context menu)"
+msgstr "أختيار دليل البرامج الالكتروني/مشاهدة الحدث (قائمة الحالة)"
+
+msgid "EventView (context menu)"
+msgstr "مشاهدة الحدث (قائمة الحالة)"
+
+msgid "Extended virtual zap"
+msgstr "التنقل الافتراضي المطول"
+
+msgid "Extended virtual zap (PiP)"
+msgstr "التنقل الافتراضي المطول(صورة داخل صورة)"
+
+msgid "Extended virtual zap config"
+msgstr "إعدادات التنقل الافتراضي المطول"
+
+msgid "Extended virtual zap setup"
+msgstr "ضبط التنقل الافتراضي المطول"
+
+msgid "From :"
+msgstr "من:"
+
+msgid ""
+"GUI needs a restart to apply the new settings.\n"
+"Do you want to Restart the GUI now?"
+msgstr ""
+"واجهة المستخدم تحتاج إلى إعادة تشغيل لتطبيق الإعدادات الجديدة.\n"
+"هل تريد إعادة تشغيل واجهة المستخدم الآن؟"
+
+msgid "Goto :"
+msgstr "الإنتقال الى :"
+
+msgid "Incorrect type service for PiP!"
+msgstr "نوع القناة غير صحيحة في خاصية صورة داخل صورة!"
+
+msgid "No free tuner!"
+msgstr "لا يوجد مؤالف متاح!"
+
+msgid "Parental control!"
+msgstr "الرقابة الأبوية!"
+
+msgid "Remember last service"
+msgstr "تذكر آخر قناة"
+
+msgid "Remember mode"
+msgstr "وضع التذكير"
+
+msgid "Restart GUI"
+msgstr "إعادة تشغيل الاينجما"
+
+msgid "Save"
+msgstr "حفظ"
+
+msgid "Show PiP in window infobar"
+msgstr "إظهار صورة داخل صورة في شريط معلومات النافذة"
+
+msgid "Show picons"
+msgstr "عرض الايقونات"
+
+msgid "Show plugin in channel selection context menu"
+msgstr "عرض البلجن في قائمة سياق تحديد القناة"
+
+msgid "Show plugin in the context menu"
+msgstr "عرض البلجن في قائمة السياق"
+
+msgid "Show positioner movement for PiP service"
+msgstr "عرض حركة الماطور في خدمة صورة داخل صورة"
+
+msgid "Start standard PiP after x secs (0 = disabled)"
+msgstr "بدء تشغيل صورة داخل صورة القياسي بعد x ثانية (0 = معطل)"
+
+msgid "Stream"
+msgstr "التدفق"
+
+msgid "Tuner"
+msgstr "المؤالف"
+
+#, python-format
+msgid "Tuner %s"
+msgstr "مؤالف %s"
+
+msgid "Usage"
+msgstr "الاستخدام"
+
+msgid "Use PiP"
+msgstr "استخدام خاصية صورة داخل صورة"
+
+msgid "Use plugin 'PiPServiceRelation'"
+msgstr "أستخدم البلجن 'علاقة القناة بخاصية صورة داخل صورة'"
+
+msgid "always"
+msgstr "دائما"
+
+msgid "as plugin in event menu"
+msgstr "كما البلجن في قائمة الحدث"
+
+msgid "as plugin in extended menu"
+msgstr "كما البلجن في القائمة الموسعة"
+
+msgid "config menu"
+msgstr "قائمه الضبط"
+
+msgid "disable"
+msgstr "تعطيل"
+
+msgid "disabled"
+msgstr "تم التعطيل"
+
+msgid "exit"
+msgstr "خروج"
+
+msgid "open Event View"
+msgstr "فتح طريقة عرض الحدث"
+
+msgid "open favorite list"
+msgstr "فتح قائمة المفضلة"
+
+msgid "open service list"
+msgstr "فتح قائمة القنوات"
+
+msgid "open single EPG"
+msgstr "فتح دليل البرامج الالكتروني المفرد"
+
+msgid "show 'Extended virtual zap' for current service"
+msgstr "عرض 'التنقل الافتراضي الموسع' للقناة الحالية"
+
+msgid "standard PiP"
+msgstr "خاصية صورة داخل صورة العادية"
+
+msgid "standard PiPzap"
+msgstr "التنقل الى خاصية صورة داخل صورة العادية"
+
+msgid "swap and standard PiP"
+msgstr "مبادلة خاصية صورة داخل صورة العادية"
+
+msgid "swap and standard PiPzap"
+msgstr "التنقل إلى مبادلة خاصية صورة داخل صورة العادية"
+
+msgid "swap services"
+msgstr "القنوات المبادلة"
+
+msgid "until standby/restart"
+msgstr "حتى وضع الانتظار/إعادة التشغيل"
+
+msgid "wait 5 seconds"
+msgstr "انتظر 5 ثوان"
+
+msgid "with exit button"
+msgstr "مع زر الخروج"
+
+msgid "with long OK press"
+msgstr "مع الضغط المطول على زر موافق"
+
+msgid "zap to PiP service and exit"
+msgstr "التنقل إلى خاصية صورة داخل صورة لقناة او الخروج"
+
+msgid "zap to next channel/open service list"
+msgstr "إنتقل إلى القناة التالية/أفتح قائمة القنوات"
+
+msgid "zap to previous channel/open service list"
+msgstr "إنتقل إلى القناة السابقة/أفتح قائمة القنوات"
