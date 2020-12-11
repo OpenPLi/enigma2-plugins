@@ -1,0 +1,98 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Podcast\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"PO-Revision-Date: \n"
+"Last-Translator: mosad - مساعد الجعيد <abo-mishal@hotmail.com>\n"
+"Language-Team: mosad - مساعد الجعيد\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
+"X-Generator: Poedit 2.4.2\n"
+"X-Poedit-SearchPath-0: /home/aliabdul/dream/ali/enigma2/ali-image/usr/lib/enigma2/python/Plugins/Extensions/Podcast\n"
+
+msgid " (Audio)"
+msgstr " (الصوت)"
+
+msgid " (Video)"
+msgstr " (فيديو)"
+
+msgid "Buffer device:"
+msgstr "جهاز المخزن المؤقت:"
+
+msgid "Buffer file handling:"
+msgstr "معالجة ملف المخزن المؤقت:"
+
+msgid "Buffer:"
+msgstr "المخزن المؤقت:"
+
+msgid "Delete this movie?"
+msgstr "حذف هذا الفيلم؟"
+
+#, python-format
+msgid "Downloading movie: %s"
+msgstr "جاري تحميل الفيلم: %s"
+
+msgid "Error getting categories"
+msgstr "خطأ في الحصول على الفئات"
+
+msgid "Error getting episodes"
+msgstr "خطأ في الحصول على الحلقات"
+
+msgid "Error getting genres"
+msgstr "خطأ في الحصول على الأنواع"
+
+msgid "Error getting movies"
+msgstr "خطأ في الحصول على الأفلام"
+
+msgid "Error getting podcast url"
+msgstr "خطأ في الحصول على رابط بودكاست"
+
+msgid "Error getting podcasts"
+msgstr "خطأ في الحصول على ملفات بودكاست"
+
+msgid "Error getting rss feed"
+msgstr "خطأ في الحصول على موجز الاخبار"
+
+msgid "Length"
+msgstr "الطول"
+
+msgid "Podcast"
+msgstr "بودكاست"
+
+msgid "Save"
+msgstr "حفظ"
+
+msgid "Select"
+msgstr "تحديد"
+
+msgid "Stop playing this movie?"
+msgstr "إيقاف عرض هذا الفيلم؟"
+
+msgid "Type"
+msgstr "النوع"
+
+msgid "ask me"
+msgstr "أسالني"
+
+msgid "configuration"
+msgstr "عمليات التهيئة"
+
+msgid "delete"
+msgstr "مسح"
+
+msgid "from xml"
+msgstr "من اكس امل"
+
+msgid "keep on device"
+msgstr "إبقاء على الجهاز"
+
+msgid "podcast.com"
+msgstr "podcast.com"
+
+msgid "podcast.de"
+msgstr "podcast.de"
