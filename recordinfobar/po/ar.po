@@ -1,0 +1,247 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: recordinfobar\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"PO-Revision-Date: 2020-11-05 17:39+0300\n"
+"Last-Translator: mosad - مساعد الجعيد <abo-mishal@hotmail.com>\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.4.1\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
+"Language-Team: mosad - مساعد الجعيد\n"
+
+#, python-format
+msgid " (%d mins)\n"
+msgstr " (%d دقائق)\n"
+
+#, python-format
+msgid "%s...%s (%d mins)"
+msgstr "%s...%s (%d دقائق)"
+
+#, python-format
+msgid "+%d min / %s"
+msgstr "+%d دقيقة / %s"
+
+msgid "<<Only when zap to service at start timer>>"
+msgstr "<< فقط عند التنقل إلى القناة عند بدء تشغيل الموقت >>"
+
+msgid "All Services"
+msgstr "كل القنوات"
+
+msgid "Always show indicator icon when recording"
+msgstr "عرض رمز المؤشر دائمًا عند التسجيل"
+
+msgid "Anchor resizing at"
+msgstr "تغيير حجم الصورة في"
+
+msgid "Automatic is the default action"
+msgstr "التلقائي هو الإجراء الافتراضي"
+
+msgid "Background window"
+msgstr "نافذة في الخلفية"
+
+#, python-format
+msgid "Bouquet: %s"
+msgstr "باقة: %s"
+
+msgid "Cancel"
+msgstr "إلغاء"
+
+msgid "DD HH:MM:SS"
+msgstr "أيام ساعات:دقائق:ثواني"
+
+msgid "Dd HHh MMm SSs"
+msgstr "أيام ساعات دقائق ثواني"
+
+msgid "Enable record infobar"
+msgstr "تمكين شريط معلومات السجل"
+
+msgid ""
+"GUI needs a restart to apply changes.\n"
+"Restart the GUI now?"
+msgstr ""
+"يحتاج واجهة المستخدم إلى إعادة التشغيل لتطبيق التغييرات.\n"
+"هل تريد إعادة تشغيل واجهة المستخدم الآن؟"
+
+msgid "Go to Standby now?"
+msgstr "هل تذهب إلى \"وضع الاستعداد\" الآن؟"
+
+msgid "Goto standby when wakeup on a timer recording"
+msgstr "انتقل إلى وضع الاستعداد عند التشغيل على تسجيل مؤقت"
+
+msgid "H:M:S"
+msgstr "ساعة:دقيقة:ثواني"
+
+msgid "HH:MM:SS"
+msgstr "ساعات:دقائق:ثواني"
+
+msgid "HHh MMm SSs"
+msgstr "أيام ساعات دقائق ثواني"
+
+msgid "Hh Mm Ss"
+msgstr "ساعات دقائق ثواني"
+
+msgid "M:S"
+msgstr "دقيقة:ثانية"
+
+msgid "M:SS"
+msgstr "دقيقة:ثواني"
+
+msgid "MM:SS"
+msgstr "دقائق:ثواني"
+
+msgid "MMm SSs"
+msgstr "دقائق ثواني"
+
+msgid "Mm SSs"
+msgstr "دقائق ثواني"
+
+msgid "Mm Ss"
+msgstr "دقائق ثواني"
+
+msgid "N/A"
+msgstr "لا شئ"
+
+msgid "OK"
+msgstr "موافق"
+
+msgid "Preferred tuner for recording"
+msgstr "مؤالف مفضل للتسجيل"
+
+msgid "Provider"
+msgstr "مزود الخدمة"
+
+#, python-format
+msgid "Provider: %s"
+msgstr "مزود الخدمة: %s"
+
+msgid "Record Infobar"
+msgstr "شريط معلومات التسجيل"
+
+msgid "Record Infobar Setup"
+msgstr "إعداد التسجيل في شريط معلومات"
+
+msgid "Record Infobar addon"
+msgstr "إضافة التسجيل في شريط المعلومات"
+
+msgid "Record timelen format"
+msgstr "تنسيق الخط الزمني للتسجيل"
+
+msgid "Recording starts!\n"
+msgstr "بدء التسجيل!\n"
+
+msgid "S"
+msgstr "ثانية"
+
+msgid "Satellites"
+msgstr "أقمار صناعية"
+
+msgid "Set correct position timer in channel list"
+msgstr "اضبط مؤقت الموضع الصحيح في قائمة القنوات"
+
+msgid "Show message when zap to recording service"
+msgstr "عرض الرسالة عند الانتقال إلى قناة التسجيل"
+
+msgid "Ss"
+msgstr "ثواني"
+
+msgid "Standby message screen timeout (sec)"
+msgstr "مهلة شاشة رسالة الاستعداد (بالثانية)"
+
+msgid "Standby only type timer 'After event'"
+msgstr "وضع الاستعداد فقط اكتب المؤقت \"بعد الحدث\""
+
+msgid "Stream"
+msgstr "البث"
+
+msgid "Switch to a recordable channel?"
+msgstr "هل تريد التبديل إلى قناة قابلة للتسجيل؟"
+
+msgid "Switched to the recording service !\n"
+msgstr "تحولت إلى قناة التسجيل!\n"
+
+#, python-format
+msgid "Tuner: %s"
+msgstr "مؤالف: %s"
+
+msgid "Unknown"
+msgstr "مجهول"
+
+msgid "X screen position"
+msgstr "مكان الشاشة اكس"
+
+msgid "Y screen position"
+msgstr "مكان الشاشة واي"
+
+msgid "Z screen position"
+msgstr "مكان الشاشة زد"
+
+msgid "Zap on start service recording"
+msgstr "أنتقل إلى تشغيل قناة التسجيل"
+
+msgid "all"
+msgstr "الكل"
+
+msgid "all, except 'nothing'"
+msgstr "كل شيء ، باستثناء 'لا شيء'"
+
+msgid "always"
+msgstr "دائما"
+
+msgid "ask the user"
+msgstr "اسأل المستخدم"
+
+msgid "auto"
+msgstr "تلقائي"
+
+msgid "auto and deep standby"
+msgstr "وضع الاستعداد التلقائي والعميق"
+
+msgid "black"
+msgstr "أَسْوَد"
+
+#, python-format
+msgid "channel: %s   prov: %s\n"
+msgstr "القناة: %s   مزود الخدمة: %s\n"
+
+#, python-format
+msgid ""
+"channel: %s   prov: %s\n"
+" %s\n"
+msgstr ""
+"القناة: %s   مزود الخدمة: %s\n"
+"%s\n"
+
+msgid "deep standby"
+msgstr "الاستعداد العميق"
+
+msgid "default"
+msgstr "إفتراضى"
+
+msgid "disabled"
+msgstr "تم التعطيل"
+
+msgid "down"
+msgstr "اسفل"
+
+#, python-format
+msgid "duration:  %s ... "
+msgstr "المدة الزمنية:  %s ... "
+
+msgid "no zap"
+msgstr "إنتقل إلى"
+
+msgid "standby"
+msgstr "وضع الاستعداد"
+
+msgid "top"
+msgstr "أعلى"
+
+msgid "transparent"
+msgstr "شفاف"
+
+msgid "zap"
+msgstr "أنتقل"
