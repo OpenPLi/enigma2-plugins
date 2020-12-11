@@ -1,0 +1,199 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: KiddyTimer\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"PO-Revision-Date: \n"
+"Last-Translator: mosad - مساعد الجعيد <abo-mishal@hotmail.com>\n"
+"Language-Team: mosad - مساعد الجعيد\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Basepath: D:/Dreambox/Eclipse/kiddytimer/po\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
+"X-Generator: Poedit 2.4.1\n"
+"X-Poedit-SearchPath-0: ../src\n"
+
+msgid "01:00"
+msgstr "01:00"
+
+msgid "??:??"
+msgstr "??:??"
+
+msgid "Allows to controls your kids' daily TV usage"
+msgstr "يسمح بالتحكم في استخدام أطفالك اليومي للتلفزيون"
+
+msgid "Cancel"
+msgstr "إلغاء"
+
+msgid "Center screen at the lower border"
+msgstr "منتصف الشاشة إلى الحد السفلي"
+
+msgid "Center screen at the upper border"
+msgstr "منتصف الشاشة إلى الحد الأعلى"
+
+msgid ""
+"Cheat attempt detected. \n"
+"Box has not been shudown correctly. \n"
+"Remaining time was set to 0."
+msgstr ""
+"تم الكشف عن محاولة الغش.\n"
+"لم يتم تجاهل جهاز الاستقبال بشكل صحيح.\n"
+"تم ضبط الوقت المتبقي على 0."
+
+msgid "Clock"
+msgstr "ساعة"
+
+msgid "Decrease remaining time"
+msgstr "تقليل الوقت المتبقي"
+
+msgid "Disable KiddyTimer"
+msgstr "تعطيل مؤقت يوم تلفزيون الاطفال"
+
+msgid "Discard changes and close screen"
+msgstr "تجاهل التغيرات وأغلاق الشاشه"
+
+msgid "Do you want to start the kiddytimer- plugin now."
+msgstr "هل تريد أن تشغيل مؤقت يوم تلفزيون الاطفال- البلجن الآن."
+
+msgid "Don't monitor TV started after"
+msgstr "لا تبدأ مراقبة التلفزيون بعد"
+
+msgid "Don't monitor TV started before"
+msgstr "لا تبدأ مراقبة التلفزيون قبل"
+
+msgid "Enable KiddyTimer"
+msgstr "تفعيل مؤقت يوم تلفزيون الاطفال"
+
+msgid "Enable KiddyTimer for x minutes"
+msgstr "تفعيل مؤقت يوم تلفزيون الاطفال لمدة x دقيقة"
+
+msgid "Enabled"
+msgstr "تم التفعيل"
+
+msgid "Enter pin code"
+msgstr "أدخل الرقم السري"
+
+msgid "Friday"
+msgstr "الجمعه"
+
+msgid "Increase remaining time"
+msgstr "زيادة الوقت المتبقي"
+
+msgid "Invalid selection"
+msgstr "إختيار غير صالح"
+
+msgid "KiddyTimer"
+msgstr "مؤقت يوم تلفزيون الاطفال"
+
+#, python-format
+msgid "Last day started: %s"
+msgstr "بدأ اليوم الأخير: %s"
+
+msgid "Monday"
+msgstr "الاثنين"
+
+msgid "Move clock"
+msgstr "نقل الساعة"
+
+msgid "Move screen down"
+msgstr "تحريك الشاشه للأسفل"
+
+msgid "Move screen to the center of your TV"
+msgstr "تحريك الشاشه الى منتصف التليفزيون"
+
+msgid "Move screen to the left"
+msgstr "تحريك شاشة العرض إلى اليسار"
+
+msgid "Move screen to the lower left corner"
+msgstr "حرك الشاشه إلى الركن الايسر السفلي"
+
+msgid "Move screen to the lower right corner"
+msgstr "حرك الشاشه إلى الركن الايمن السفلي"
+
+msgid "Move screen to the middle of the left border"
+msgstr "حرك الشاشه إلى منتصف الحافه اليسرى"
+
+msgid "Move screen to the middle of the right border"
+msgstr "حرك الشاشه إلى منتصف الحافه اليمنى"
+
+msgid "Move screen to the right"
+msgstr "حرك الشاشه إلى اليمين"
+
+msgid "Move screen to the upper left corner"
+msgstr "حرك الشاشه إلى الركن الايسر العلوي"
+
+msgid "Move screen to the upper right corner"
+msgstr "حرك الشاشه إلى الركن الايمن العلوي"
+
+msgid "Move screen up"
+msgstr "حرك الشاشه للأعلى"
+
+msgid "PIN"
+msgstr "الرمز السري"
+
+msgid "Please enter the correct pin code"
+msgstr "من فضلك أدخل الرقم السري الصحيح"
+
+msgid "Please select your KiddyTimer- option"
+msgstr "يرجى تحديد خيار مؤقت يوم تلفزيون الأطفال- الخاص بك"
+
+#, python-format
+msgid "Plugin: %(plugin)s , Version: %(version)s"
+msgstr "Plugin: %(plugin)s , Version: %(version)s"
+
+#, python-format
+msgid "Remaining time: %s"
+msgstr "الوقت المتبقي: %s"
+
+msgid "Reset clock"
+msgstr "إعادة تعيين الوقت"
+
+msgid "Reset saved position"
+msgstr "إعادة المواقع المحفوظة للوضع الإفتراضي"
+
+msgid "Reset todays remaining time"
+msgstr "إعادة تعيين الوقت المتبقي من اليوم"
+
+msgid "Saturday"
+msgstr "السبت"
+
+msgid "Save"
+msgstr "حفظ"
+
+msgid "Save values and close screen"
+msgstr "حفظ القيم وإغلاق الشاشة"
+
+msgid "Set remaining time"
+msgstr "تعيين الوقت المتبقي"
+
+msgid "Smiley"
+msgstr "الوجوه المعبرة"
+
+msgid "Start KiddyTimer"
+msgstr "تشغيل مؤقت يوم تلفزيون الاطفال"
+
+msgid "Stop KiddyTimer (this session only)"
+msgstr "وقف مؤقت يوم تلفزيون الأطفال (هذه الجلسة فقط)"
+
+msgid "Style of timer"
+msgstr "نمط الموقت"
+
+msgid "Sunday"
+msgstr "الاحد"
+
+msgid "The pin code you entered is wrong."
+msgstr "الرقم السري الذي قمت بإدخاله غير صحيح."
+
+msgid "Thursday"
+msgstr "الخميس"
+
+msgid "Timeout for activation dialog"
+msgstr "وقت مهلة الحوار التنشيط"
+
+msgid "Tuesday"
+msgstr "الثلاثاء"
+
+msgid "Wednesday"
+msgstr "الاربعاء"
