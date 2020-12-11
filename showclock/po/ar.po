@@ -1,0 +1,93 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Show Clock\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"PO-Revision-Date: \n"
+"Last-Translator: mosad - مساعد الجعيد <abo-mishal@hotmail.com>\n"
+"Language-Team: mosad - مساعد الجعيد\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
+"X-Generator: Poedit 2.4.1\n"
+"X-Poedit-SearchPath-0: ../src\n"
+
+msgid "Cancel"
+msgstr "إلغاء"
+
+msgid "Clock show timeout"
+msgstr "مهلة عرض الساعة"
+
+msgid "Description"
+msgstr "الوصـف"
+
+msgid "Extensions menu"
+msgstr "قائمة الملحقات"
+
+msgid "Help"
+msgstr "المساعدة"
+
+msgid ""
+"Modify the settings to match your preferences. To change the clock position, select \"Move clock\" and relocate using the direction keys. Press OK to store current position and return to the setup menu or EXIT to cancel the moving.\n"
+"\n"
+"Push key \"Exit long\" to show the clock while watching TV. Clock will disappear after the specified timeout or by pushing key \"Exit long\" again.\n"
+"\n"
+"If GP3 is installed, weekday shows up in selected language, otherwise always in english."
+msgstr ""
+"قم بتعديل الإعدادات لتتناسب مع تفضيلاتك. لتغيير موضع الساعة ، حدد \"تحريك الساعة\" وانتقل باستخدام مفاتيح الاتجاه. اضغط على موافق لتخزين الموضع الحالي والعودة إلى قائمة الإعداد أو خروج لإلغاء النقل.\n"
+"\n"
+"اضغط على مفتاح \"أضغط زر خروج مطول\" لعرض الساعة أثناء مشاهدة التلفزيون. ستختفي الساعة بعد المهلة المحددة أو بالضغط على مفتاح \"الخروج طويلاً\" مرة أخرى.\n"
+"\n"
+"إذا تم تثبيت ، فإن أيام الأسبوع تظهر باللغة المحددة ، وإلا ستكون اللغة الإنجليزية دائمًا."
+
+msgid "Move clock"
+msgstr "نقل الساعة"
+
+msgid "Name"
+msgstr "الاسم"
+
+msgid "OK"
+msgstr "موافق"
+
+msgid ""
+"Please use direction keys to move the clock.\n"
+"\n"
+"Press OK to store current position and return to the setup menu or EXIT to cancel the moving."
+msgstr ""
+"الرجاء استخدام مفاتيح الاتجاه لتحريك الساعة.\n"
+"\n"
+"اضغط على موافق لتخزين الموضع الحالي والعودة إلى قائمة الإعداد أو الخروج لإلغاء النقل."
+
+msgid "Plugin menu"
+msgstr "قائمة البلج إنز"
+
+msgid "Push \"Exit\" long to show/hide clock"
+msgstr "دفع \"الخروج\" طويلة لإظهار / إخفاء على مدار الساعة"
+
+msgid "Show Clock Setup"
+msgstr "ضبط عرض الوقت"
+
+msgid "Show Clock setup"
+msgstr "ضبط عرض الوقت"
+
+msgid "Show in"
+msgstr "تظهر في"
+
+msgid "Specify how long (seconds) the clock shall be shown before it disappears. Set to \"0\" to show clock until hidden manually."
+msgstr "حدد المدة (الثواني) التي يجب أن تظهر فيها الساعة قبل أن تختفي. اضبط على \"0\" لإظهار الساعة حتى يتم إخفاؤها يدويًا."
+
+msgid "Specify plugin description to be used in menu (needs GUI restart)."
+msgstr "تحديد وصف البرنامج المساعد لاستخدامها في القائمة (يحتاج إعادة تشغيل واجهة المستخدم الرسومية)."
+
+msgid "Specify plugin name to be used in menu (needs GUI restart)."
+msgstr "تحديد اسم البرنامج المساعد لاستخدامها في القائمة (يحتاج إعادة تشغيل واجهة المستخدم الرسومية)."
+
+msgid "Specify whether plugin shall show up in plugin menu or extensions menu (needs GUI restart)"
+msgstr "تحديد ما إذا كان يجب أن تظهر في البرنامج المساعد القائمة أو الملحقات القائمة (احتياجات إعادة تشغيل واجهة المستخدم الرسومية)"
+
+msgid "Ver."
+msgstr "نسخة."
