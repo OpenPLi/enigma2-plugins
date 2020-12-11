@@ -1,0 +1,200 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: EasyMedia\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"PO-Revision-Date: 2020-12-11 16:48+0300\n"
+"Last-Translator: mosad - مساعد الجعيد <abo-mishal@hotmail.com>\n"
+"Language-Team: mosad - مساعد الجعيد\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.4.2\n"
+
+msgid " added to EasyMedia"
+msgstr " إضافة إلى الوسائط البسيطة"
+
+msgid " removed from EasyMedia"
+msgstr " تمت إزالته من الوسائط البسيطة"
+
+#, python-format
+msgid "%s (%s)\n"
+msgstr "%s (%s)\n"
+
+msgid "Add/remove plugin"
+msgstr "إضافة/إزالة البلجن"
+
+msgid "Bookmarks"
+msgstr "الاشارات المرجعيه"
+
+msgid "DVD Player"
+msgstr "مشغل الديفيدي"
+
+msgid "DVD player:"
+msgstr "مشغل الأقراص الصلبة:"
+
+msgid "DVDPlayer Plugin is not installed!"
+msgstr "لم يتم تثبيت بلجن مشغل الأقراص الصلبة!"
+
+msgid "Disabled"
+msgstr "معطل"
+
+msgid "DreamExplorer"
+msgstr "متصفح الدريم"
+
+msgid "EasyMedia settings..."
+msgstr "إعدادات الوسائط البسيطة..."
+
+msgid "Enabled"
+msgstr "تمكين"
+
+msgid "Filebrowser"
+msgstr "متصفح الملفات"
+
+msgid "Files"
+msgstr "الملفات"
+
+msgid "Files browser:"
+msgstr "متصفح الملفات:"
+
+msgid "MediaPlayer"
+msgstr "مشغل الوسائط"
+
+msgid "Merlin iDream is not installed!"
+msgstr "لم يتم تثبيت مرلين أي دريم!"
+
+msgid "MerlinMusicPlayer"
+msgstr "مشغل مارلين للموسيقى"
+
+msgid "Movies"
+msgstr "الأفلام"
+
+msgid "Music"
+msgstr "موسيقى"
+
+msgid "Music player:"
+msgstr "مشغل الموسيقى:"
+
+msgid "MyTube Player"
+msgstr "مشغل اليوتيوب"
+
+msgid "MyTube Plugin is not installed!"
+msgstr "لم يتم تثبيت بلجن اليوتيوب!"
+
+msgid "MyVideo"
+msgstr "فديوهاتي"
+
+msgid "MyVideo Player is not installed!"
+msgstr "لم يتم تثبيت مشغل فديوهاتي!"
+
+msgid "MyVideo player:"
+msgstr "مشغل فديوهاتي:"
+
+msgid "NetRadio player:"
+msgstr "مشغل راديو الانترنت:"
+
+msgid "No File-Manager installed!"
+msgstr "لا يوجد ملف إدارة التثبيت!"
+
+msgid "No Music-Player installed!"
+msgstr "لا يوجد مشغل موسيقى مثبت!"
+
+msgid "Not easy way to start EasyMedia"
+msgstr "ليست طريقة سهلة لشتغيل الوسائط البسيطة"
+
+msgid "Nothing"
+msgstr "لا شئ"
+
+msgid "Picture-player is not installed!"
+msgstr "لم يتم تثبيت مشغل الصور!"
+
+msgid "PicturePlayer:"
+msgstr "مشغل الصو:"
+
+msgid "Pictures"
+msgstr "الصور"
+
+msgid "Radio"
+msgstr "القنوات الاذاعية"
+
+msgid "Radio-mode"
+msgstr "وضع الراديو"
+
+msgid "SHOUTcast"
+msgstr "البث المنتج"
+
+msgid "SHOUTcast Plugin is not installed!"
+msgstr "لم يتم تثبيت بلجن البث المنتج!"
+
+msgid "Select bookmark..."
+msgstr "حدد إشارة مرجعية..."
+
+msgid "Show Merlin-iDream:"
+msgstr "عرض مرلين-أي دريم"
+
+msgid "Show bookmarks:"
+msgstr "إظهار الإشارات المرجعية:"
+
+msgid "Show tv/radio switch:"
+msgstr "عرض التلفزيون/التغيي إلى الراديو:"
+
+msgid "Some plugins are not available:\n"
+msgstr "بعض البلجن غير متوفر:\n"
+
+msgid "TV-mode"
+msgstr "وضع التلفزيون"
+
+msgid "Timer"
+msgstr "المؤقت"
+
+msgid "Timer:"
+msgstr "الموقت:"
+
+msgid "TuxCom"
+msgstr "أوامر التكست"
+
+msgid "Tv/Radio"
+msgstr "التلفزيون/راديو"
+
+msgid "VLC Player"
+msgstr "مشغل الوسائط"
+
+msgid "VLC Player is not installed!"
+msgstr "لم يتم تثبيت مشغل الوسائط!"
+
+msgid "VLC player:"
+msgstr "مشغل الوسائط:"
+
+msgid "Video database:"
+msgstr "قاعدة بيانات الفيديو:"
+
+msgid "VideoDB"
+msgstr "فيديو دي بي"
+
+msgid "VideoDB is not installed!"
+msgstr "لم يتم تثبيت فديو دي بي!"
+
+msgid "Weather"
+msgstr "الطقس"
+
+msgid "Weather Plugin is not installed!"
+msgstr "لم يتم تثبيت بلجن الطقس!"
+
+msgid "Weather plugin:"
+msgstr "بلجن الطقس:"
+
+msgid "YouTube player:"
+msgstr "مشغل اليوتيوب:"
+
+msgid "ZDFmediathek"
+msgstr "زي دي اف بث الوسائط"
+
+msgid "ZDFmediathek Plugin is not installed!"
+msgstr "لم يتم تثبيت بلجن زي دي اف لبث الوسائط!"
+
+msgid "ZDFmediathek player:"
+msgstr "مشغل زي دي اف لبث الوسائط:"
+
+msgid "iDream"
+msgstr "أي دريم"
