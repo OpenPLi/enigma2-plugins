@@ -1,0 +1,83 @@
+# --- PLEASE EDIT THE LINES BELOW CORRECTLY ---
+# SOME DESCRIPTIVE TITLE.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: PluginSort\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"PO-Revision-Date: 2020-12-10 16:15+0300\n"
+"Last-Translator: mosad - مساعد الجعيد <abo-mishal@hotmail.com>\n"
+"Language-Team: mosad - مساعد الجعيد\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: /Users/fk/Desktop/PluginSort/locale/de/LC_MESSAGES\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Generator: Poedit 2.4.2\n"
+"X-Poedit-SearchPath-0: ../src\n"
+
+msgid "Add Tag"
+msgstr "إضافة وسم"
+
+msgid "Add new Tag"
+msgstr "إضافة علامة جديدة"
+
+msgid "Assigned Tags"
+msgstr "العلامات المعينة"
+
+msgid "Can't write movietags, because no meta-file found!"
+msgstr "لا يمكن كتابة علامات الافلام ، لأنه لا يوجد ملف الفوقية وجدت!"
+
+msgid "Clear all Tags"
+msgstr "مسح كافة العلامات"
+
+msgid ""
+"Clear all Tags?\n"
+"\n"
+"This will delete ALL tags in ALL recodings!\n"
+"Are you sure?"
+msgstr ""
+"مسح كافة العلامات؟\n"
+"\n"
+"هذا سوف حذف جميع العلامات في جميع التسجيلات!\n"
+"هل أنت متأكد؟"
+
+msgid "Enter the new Tag"
+msgstr "أدخل العلامة الجديدة"
+
+msgid "Movie Tagger"
+msgstr "محدد الفيلم"
+
+msgid "Movie Tagger..."
+msgstr "محدد الفيلم..."
+
+msgid "Predefined Tag"
+msgstr "علامة تعريف مسبقًا"
+
+msgid "Remove Tag"
+msgstr "إزالة العلامة"
+
+msgid "Specified Tags"
+msgstr "علامات التمييز المحددة"
+
+msgid "Toggle List"
+msgstr "تبديل القائمة"
+
+msgid "Used Tag"
+msgstr "علامة المستخدم"
+
+msgid "User-specific Tag"
+msgstr "علامة خاصة بالمستخدم"
+
+msgid "Ver."
+msgstr "نسخة."
+
+msgid "Whitepace will be replaced by \"_\""
+msgstr "سيتم استبدال وايتبيس بـ \"_\""
