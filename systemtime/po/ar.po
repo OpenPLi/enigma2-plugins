@@ -1,0 +1,212 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: system time\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"PO-Revision-Date: 2020-11-05 16:52+0300\n"
+"Last-Translator: mosad - مساعد الجعيد <abo-mishal@hotmail.com>\n"
+"Language-Team: mosad - مساعد الجعيد\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.4.1\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
+
+msgid "'dvbdate' is not installed!"
+msgstr "لم يتم تثبيت 'بيانات التردد'!"
+
+msgid "'ntpdate' is not installed!"
+msgstr "لم يتم تثبيت 'بيانات الشبكة'!"
+
+msgid "1 hour"
+msgstr "ساعة واحدة 1"
+
+msgid "12 hours"
+msgstr "إثناعشر ساعة"
+
+msgid "15 mins"
+msgstr "15 دقيقة"
+
+msgid "2 hours"
+msgstr "ساعتين"
+
+msgid "24 hours"
+msgstr "أربعة وعشرون ساعة"
+
+msgid "30 mins"
+msgstr "30 دقيقة"
+
+msgid "4 hours"
+msgstr "4 ساعات"
+
+msgid "48 hours"
+msgstr "48 ساعة"
+
+msgid "5 mins"
+msgstr "5 دقائق"
+
+msgid "After receiver's boot, wait for the specified delay before connecting to the NTP server. This allows the Wi-Fi connection to be fully established."
+msgstr "بعد تمهيد جهاز الاستقبال ، انتظر التأخير المحدد قبل الاتصال بخادم بروتوكل ضبط التوقيت العالمي. يتيح ذلك إنشاء اتصال الشبكة اللاسلكية بالكامل."
+
+msgid "Apply new system time?"
+msgstr "هل تطبق وقت النظام الجديد؟"
+
+msgid "Cancel"
+msgstr "إلغاء"
+
+msgid "Change system time in enigma2 box"
+msgstr "قم بتغيير وقت النظام في جهاز الانجما2"
+
+msgid "Delay (in seconds) when using Wi-Fi"
+msgstr "تأخير (بالثواني) عند استخدام الشبكة اللاسلكية"
+
+msgid "Enter a user defined date and time."
+msgstr "أدخل التاريخ والوقت المحددين من قبل المستخدم."
+
+msgid "Enter new system time and press OK!"
+msgstr "أدخل وقت النظام الجديد واضغط موافق!"
+
+msgid "Get current time from the specified DVB transponder."
+msgstr "احصل على الوقت الحالي من جهاز الإرسال والاستقبال نطاق التردد المحدد."
+
+msgid "Get current time from the specified NTP server."
+msgstr "احصل على الوقت الحالي من بروتوكل ضبط التوقيت العالمي المحدد."
+
+#, python-format
+msgid "Invalid input in day: %s"
+msgstr "إدخال غير صالح في اليوم: %s"
+
+#, python-format
+msgid "Invalid input in hour: %s"
+msgstr "إدخال غير صالح في الساعة: %s"
+
+#, python-format
+msgid "Invalid input in minute: %s"
+msgstr "إدخال غير صالح في الدقيقة: %s"
+
+#, python-format
+msgid "Invalid input in month: %s"
+msgstr "إدخال غير صالح في الشهر: %s"
+
+#, python-format
+msgid "Invalid input in year: %s"
+msgstr "إدخال غير صالح في السنة: %s"
+
+msgid "Invalid time format."
+msgstr "تنسيق الوقت غير صالح."
+
+msgid "NTP"
+msgstr "بروتوكول ضبط الوقت العالمي"
+
+msgid "NTP cold start"
+msgstr "تشغيل بروتوكل ضبط التوقيت العالمي الشتوي"
+
+msgid "NTP server"
+msgstr "خادم بروتوكول ضبط الوقت العالمي"
+
+msgid "No answer given."
+msgstr "لا جواب معين."
+
+msgid "No change detected."
+msgstr "لم يتم الكشف عن أي تغيير."
+
+msgid "No confirmation given."
+msgstr "لم يتم إعطاء أي تأكيد."
+
+#, python-format
+msgid ""
+"Old time: %(oldtime)s\n"
+"New time: %(newtime)s\n"
+"\n"
+"Offset: %(offset)s seconds"
+msgstr ""
+"Old time: %(oldtime)s\n"
+"New time: %(newtime)s\n"
+"\n"
+"Offset: %(offset)s seconds"
+
+msgid "On receiver 'cold start', allow any required time adjustments to be 'stepped'."
+msgstr "عند \"بدء التشغيل التوقيت الشتوي\" لجهاز الاستقبال ، اسمح \"بخطوة\" أي تعديلات زمنية مطلوبة."
+
+msgid "Press OK"
+msgstr "أضغط موافق"
+
+msgid "Restart GUI"
+msgstr "إعادة تشغيل الاينجما"
+
+msgid "Restart GUI now?"
+msgstr "هل تريد إعادة تشغيل الاينجما2 الان ؟"
+
+msgid "Save"
+msgstr "حفظ"
+
+msgid "Script 'set-rtctime' not found!"
+msgstr "البرنامج النصي \"ضبط التوقيت\" غير موجود!"
+
+msgid "Select the preferred method for syncing time on your receiver. Network Time Protocol requires internet connection. Transponder time might not be very accurate."
+msgstr "حدد الطريقة المفضلة لمزامنة الوقت على جهاز الاستقبال الخاص بك. يتطلب بروتوكول وقت الشبكة الاتصال بالإنترنت. قد لا يكون وقت المرسل المستجيب دقيقًا جدًا."
+
+msgid "Select transponder"
+msgstr "أختار التردد"
+
+msgid "Set how often the receiver will connect to the NTP server to sync time."
+msgstr "قم بتعيين عدد مرات اتصال جهاز الاستقبال بخادم بروتوكول ضبط التوقيت العالمي لمزامنة الوقت."
+
+msgid "Set system time manually"
+msgstr "وضع وقت النظام يدوياً"
+
+msgid "Set the IP address of the preferred NTP server. Default is pool.ntp.org."
+msgstr "قم بتعيين عنوان الايبي لخادم بروتوكول ضبط التوقيت العالمي المفضل. الافتراضي هو pool.ntp.org."
+
+msgid "Sync NTP every"
+msgstr "مزامنة وقت التوقيت العالمي للكل"
+
+msgid "Sync now with NTP server"
+msgstr "المزامنة الآن مع خادم بروتوكول ضبط التوقيت العالمي"
+
+msgid "Sync now with current transponder"
+msgstr "مزامنة الآن مع جهاز الإرسال والاستقبال الحالي"
+
+msgid "Sync time using"
+msgstr "إستحدام مزامنة التوقيت"
+
+msgid "Syncing with NTP server..."
+msgstr "المزامنة مع خادم بروتوكول ضبط التوقيت العالمي..."
+
+msgid "Syncing with current transponder..."
+msgstr "مزامنة مع جهاز الإرسال والاستقبال الحالي ..."
+
+msgid "Syncing... Please wait."
+msgstr "المزامنه... الرجاء الانتظار."
+
+msgid "System time"
+msgstr "وقت النظام"
+
+msgid "System time setup"
+msgstr "إعداد وقت النظام"
+
+#, python-format
+msgid ""
+"System time was not applied.\n"
+"%s"
+msgstr ""
+"لم يتم تطبيق وقت النظام.\n"
+"%s"
+
+msgid "Time string too short."
+msgstr "السلسلة الزمنية قصيرة جدًا."
+
+msgid "Transponder"
+msgstr "التردد"
+
+msgid "Use RTC time from deep standby"
+msgstr "استخدام الوقت الحقيقي للنظام من الاستعداد العميق"
+
+msgid "When the receiver starts from deep standby, use the time provided by the Real Time Clock, if it appears to be valid."
+msgstr "عندما يبدأ جهاز الاستقبال من وضع الاستعداد العميق ، استخدم الوقت الذي توفره ساعة التوقيت الحقيقي ، إذا بدا أنه صالح."
