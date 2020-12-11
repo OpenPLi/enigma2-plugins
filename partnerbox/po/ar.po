@@ -1,0 +1,633 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Partnerbox\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-07-15 10:30+0200\n"
+"PO-Revision-Date: \n"
+"Last-Translator: mosad - مساعد الجعيد <abo-mishal@hotmail.com>\n"
+"Language-Team: mosad - مساعد الجعيد\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
+"X-Generator: Poedit 2.4.2\n"
+
+#, python-format
+msgid " (Partnerbox %s - Version: %s)"
+msgstr " (%s صندوق الشركاء - الإصدار: %s)"
+
+#, python-format
+msgid "%d min"
+msgstr "%d دقيقة"
+
+msgid "%d.%B %Y"
+msgstr "%d.%B %Y"
+
+#, python-format
+msgid "%s%d min"
+msgstr "%s%d دقيقة"
+
+msgid "(ZAP)"
+msgstr "(تنقل)"
+
+msgid "<unknown>"
+msgstr "<مجهول>"
+
+msgid "Abort"
+msgstr "الغاء"
+
+msgid "Activate Picture in Picture"
+msgstr "تفعيل صورة داخل صورة"
+
+msgid "Active boxes from local network only (using localhost names)"
+msgstr "الاجهزة النشطة من الشبكة المحلية فقط (باستخدام أسماء المضيف المحلي)"
+
+msgid "Add"
+msgstr "إضافة"
+
+msgid "Add internal timer"
+msgstr "إضافة جهاز ضبط وقت داخلي"
+
+msgid "Add timer"
+msgstr "أضف مؤقت"
+
+msgid "After event"
+msgstr "بعد الحدث"
+
+msgid "Alternative"
+msgstr "بديل"
+
+msgid "Alternative services are not supported!"
+msgstr "لا يتم دعم الخدمات البديلة!"
+
+msgid "Apply"
+msgstr "تطبيق"
+
+msgid "Attention, this is repeated timer!\n"
+msgstr "انتباه ، هذا مؤقت متكرر!\n"
+
+msgid "AutoTimer overview"
+msgstr "معاينة المؤقت الآلى"
+
+msgid "Bouquet List"
+msgstr "قائمة الباقات"
+
+msgid "Cancel"
+msgstr "إلغاء"
+
+msgid "Change pin code"
+msgstr "تغيير الرقم السري"
+
+msgid "Channel"
+msgstr "قناة"
+
+msgid "Choice list Partnerbox"
+msgstr "مربع الشريك لقائمة الاختيار"
+
+msgid "Choose action:"
+msgstr "اختر الإجراء:"
+
+msgid "Choose bouquet"
+msgstr "أختار الباقه"
+
+msgid "Clean up"
+msgstr "تنظيف"
+
+msgid "Cleaning up finished timer entries..."
+msgstr "تنظيف إدخالات جهاز ضبط الوقت المنتهي..."
+
+msgid "Close and save"
+msgstr "إغلاق وحفظ"
+
+msgid "Close without saving"
+msgstr "إغلاق دون حفظ"
+
+msgid "DVB-C"
+msgstr "نظام البث الرقمي عبر الكيبل"
+
+msgid "DVB-T"
+msgstr "نظام البث الرقمي الأرضي"
+
+msgid "DVR"
+msgstr "DVR"
+
+msgid "Date"
+msgstr "تاريخ"
+
+msgid "Deep Standby"
+msgstr "الاستعداد العميق"
+
+msgid "Delete"
+msgstr "حذف"
+
+msgid "Delete timer"
+msgstr "حذف المؤقت"
+
+msgid "Description"
+msgstr "الوصـف"
+
+msgid "Disable Picture in Picture"
+msgstr "تعطيل صوره داخل صوره"
+
+#, python-format
+msgid "Do you really want to delete %s?"
+msgstr "هل تريد فعلا مسح %s?"
+
+#, python-format
+msgid ""
+"Do you really want to delete the remote timer \n"
+"%s ?"
+msgstr ""
+"هل تريد حقاً حذف جهاز ضبط الوقت عن بعد \n"
+"%s ?"
+
+#, python-format
+msgid ""
+"Do you really want to delete the timer \n"
+"%s ?"
+msgstr ""
+"هل تريد حقا لحذف الموقت \n"
+"%s ?"
+
+msgid "EPG Selection"
+msgstr "إختيار دليل البرامج اليومي"
+
+msgid "Edit"
+msgstr "تعديل"
+
+msgid "Edit internal timer"
+msgstr "تحرير مؤقت داخلي"
+
+msgid "Edit remote timer"
+msgstr "تحرير مؤقت عن بعد"
+
+msgid "Enable Partnerbox-AutoTimer function"
+msgstr "تمكين وظيفة المؤقت التلقائي على جهاز الشريك"
+
+msgid "Enable Partnerbox-Function in Channel Selector"
+msgstr "تمكين وظيفة جهاز الشريك في محدد القناة"
+
+msgid "Enable Partnerbox-Function in EPGList"
+msgstr "تمكين وظيفة قائمة الدليل على جهاز الشريك"
+
+msgid "Enable Partnerbox-Function in TimerEvent"
+msgstr "تمكين وظيفة مؤقت الحدث على جهاز الشريك"
+
+msgid "Enable Red Button-Function in single/multi EPG"
+msgstr "تمكين وظيفة الزر الأحمر في الدليل الالكتروني الواحد/الدليل الالكتروني المتعدد"
+
+msgid "Enable VPS"
+msgstr "تفعيل الخادم الإفتراضي الخاص"
+
+msgid "Enable VPS-Function in TimerEvent"
+msgstr "تفعيل الخادم الإفتراضي الخاص-وظيفة مؤقت الحدث"
+
+msgid "Enable first Partnerbox-entry in Timeredit as default"
+msgstr "تمكين إدخال جهاز الشريك الأول في تعديل المؤقت بشكل افتراضي"
+
+msgid "Enable/disable moving item"
+msgstr "تمكين/تعطيل عنصر النقل"
+
+msgid "EndTime"
+msgstr "وقت الانتهاء"
+
+msgid "Enigma 1"
+msgstr "انجما 1"
+
+msgid "Enigma 2"
+msgstr "انجما 2"
+
+msgid "Enigma Type"
+msgstr "نوع الانجما"
+
+msgid "Enter the service pin"
+msgstr "أدخل الرقم السري للخدمة"
+
+msgid "Error: "
+msgstr "خطأ:"
+
+msgid "Error: No space left"
+msgstr "خطأ: لم يتبقى أي مساحة"
+
+msgid "Error: Outdated"
+msgstr "خطأ: قديم"
+
+msgid "Error: User aborted"
+msgstr "خطأ: تم خروج المستخدم"
+
+msgid "Error: Zap failed"
+msgstr "خطأ: فشل الضغط"
+
+msgid "Eventview"
+msgstr "مشاهدة الحدث"
+
+msgid "Fri"
+msgstr "الجمعه"
+
+msgid "Friday"
+msgstr "الجمعه"
+
+msgid "Get MAC"
+msgstr "الحصول على ماك"
+
+msgid "Getting Channel Information..."
+msgstr "الحصول على معلومات القناة..."
+
+msgid "Getting EPG Information..."
+msgstr "الحصول على معلومات الدليل الالكتروني..."
+
+msgid "Getting EPG data..."
+msgstr "الحصول على بيانات الدليل الالكتروني..."
+
+msgid "Getting Partnerbox Bouquet Information..."
+msgstr "الحصول على معلومات باقة الجهاز..."
+
+msgid "Getting Partnerbox Information..."
+msgstr "الحصول على معلومات جهاز الشريك..."
+
+msgid "Getting timerlist data..."
+msgstr "الحصول على بيانات قائمة توقيت..."
+
+msgid "Give Enigma time to fill epg cache..."
+msgstr "إعطاء الانجما الوقت لملء ذاكرة التخزين المؤقت الدليل الالكتروني..."
+
+msgid "IP"
+msgstr "عناون الايبي"
+
+msgid "Info"
+msgstr "معلومات"
+
+msgid "Internet services are not supported!"
+msgstr "خدمات الإنترنت غير مدعومة!"
+
+msgid "Location"
+msgstr "الموقع"
+
+msgid "MAC"
+msgstr "ماك"
+
+msgid "Manage autotimer for other dreamboxes in network"
+msgstr "إدارة المؤقت التلقائي على اجهزة الفوبلس الأخرى في الشبكة"
+
+msgid "Manage timer for other dreamboxes in network"
+msgstr "إدارة المؤقت على اجهزة الفوبلس الأخرى في الشبكة"
+
+msgid "Menu PiP"
+msgstr "قائمة خاصية قناة داخل قناة"
+
+msgid "Mon"
+msgstr "الاثنين"
+
+msgid "Monday"
+msgstr "الاثنين"
+
+msgid "Move Picture in Picture"
+msgstr "تحريك صوره داخل صوره"
+
+msgid "Move item down"
+msgstr "نقل العنصر لأسفل"
+
+msgid "Move item up"
+msgstr "نقل العنصر لأعلى"
+
+msgid "Mute"
+msgstr "كتم الصوت"
+
+msgid "Mute remote box"
+msgstr "كتم صوت الجهاز عن بعد"
+
+msgid "NGRAB"
+msgstr "NGRAB"
+
+msgid "Name"
+msgstr "الاسم"
+
+msgid "No"
+msgstr "لا"
+
+msgid "OK"
+msgstr "موافق"
+
+msgid "Partnerbox"
+msgstr "جهاز الشريك"
+
+msgid "Partnerbox - RemotePlayer"
+msgstr "جهاز الشريك - مشغل الريموت"
+
+#, python-format
+msgid ""
+"Partnerbox Answer: \n"
+"%s"
+msgstr ""
+"إجابة جهاز الشريك: \n"
+"%s"
+
+msgid "Partnerbox Entries"
+msgstr "إدخالات جهاز الشريك"
+
+msgid "Partnerbox RemoteTimer"
+msgstr "التحكم بالمؤقت على جهاز الشريك"
+
+msgid "Partnerbox Setup"
+msgstr "ضبط جهاز الشريك"
+
+msgid "Partnerbox: AutoTimer"
+msgstr "جهاز الشريك: المؤقت التلقائي"
+
+msgid "Partnerbox: Edit Entry"
+msgstr "جهاز الشريك: تعديل الادخال"
+
+msgid "Partnerbox: List of Entries"
+msgstr "جهاز الشريك:قائمة الإدخالات"
+
+msgid "Partnerbox: RemoteTV Player"
+msgstr "جهاز الشريك:مشغل التلفزيون عن بعد"
+
+msgid "Partnerbox: RemoteTimer"
+msgstr "جهاز الشريك:مشغل المؤقت"
+
+msgid "Password"
+msgstr "كلمة المرور"
+
+msgid "Port"
+msgstr "المنفذ"
+
+msgid "Power"
+msgstr "الأغلاق"
+
+msgid "Press OK to edit timer..."
+msgstr "اضغط موافق لتحرير المؤقت..."
+
+msgid ""
+"Really close without saving settings?\n"
+"What do you want to do?"
+msgstr ""
+"هل أنت قريب حقاً من دون حفظ الإعدادات؟\n"
+"ماذا تريد أن تفعل؟"
+
+msgid "Really delete this Partnerbox Entry?"
+msgstr "هل تريد حذف هذا الإدخال في جهاز الشريك؟"
+
+msgid "Remote Player"
+msgstr "مشغل عن بعد"
+
+msgid "Remote Timer"
+msgstr "الموقت عن بعد"
+
+msgid "RemoteTimer Timerlist"
+msgstr "قائمة عداد الوقت عن بعد"
+
+msgid "Remove timer"
+msgstr "حذف المؤقت"
+
+msgid "Repeated Timer are not supported!"
+msgstr "لا يتم اعتماد جهاز ضبط الوقت المتكرر!"
+
+msgid "Restart"
+msgstr "إعادة التشغيل"
+
+msgid "Restart enigma"
+msgstr "إعادة تشغيل الأنيجما"
+
+msgid "Sat"
+msgstr "السبت"
+
+msgid "Saturday"
+msgstr "السبت"
+
+msgid "Save"
+msgstr "حفظ"
+
+#, python-format
+msgid "Select action for remote timer '%s':"
+msgstr "حدد إجراءً لمؤقت عن بعد '%s':"
+
+#, python-format
+msgid "Select action for timer '%s':"
+msgstr "حدد الإجراء الخاص بالمؤقِّت %s:"
+
+msgid "Select action:"
+msgstr "حدد الاجراء:"
+
+msgid "Select operation for partnerbox"
+msgstr "تحديد العملية لجهاز الشريك"
+
+msgid "Send Wake-on-LAN"
+msgstr "إرسال تنبيه على شبكة محلية"
+
+msgid "Servicelists/EPG"
+msgstr "قوائم القنوات/الدليل الالكتروني"
+
+#, python-format
+msgid "Set %s as fallback remote receiver?"
+msgstr "تعيين %s كجهاز استقبال عن بعد احتياطي؟"
+
+msgid "Set as fallback remote receiver"
+msgstr "تعيين جهاز استقبال عن بعد احتياطي"
+
+msgid "Show 'RemoteTV Player' in E-Menu"
+msgstr "عرض 'التحكم في مشغل التلفزيون' في القائمة الإلكترونية"
+
+msgid "Show 'RemoteTimer' in E-Menu"
+msgstr "عرض 'التحكم في المؤقت' في القائمة الإلكترونية"
+
+msgid "Show 'RemoteTimer' in Event View context menu"
+msgstr "عرض 'التحكم في المؤقت' في قائمة سياق عرض الأحداث"
+
+msgid "Show 'RemoteTimer' in Eventinfo menu"
+msgstr "عرض 'التحكم في المؤقت' في قائمة معلومات الحدث"
+
+msgid "Show 'Stream current Service' in E-Menu"
+msgstr "عرض 'القناة الحالية في البث' في القائمة الإلكترونية"
+
+msgid "Show all icon for event in EPGList"
+msgstr "عرض كل رمز للحدث في قائمة الدليل الالكتروني"
+
+msgid "Show duration time for event"
+msgstr "عرض مدة الوقت للحدث"
+
+msgid "Shutdown"
+msgstr "إغلاق"
+
+msgid "Sleep remote box"
+msgstr "وضع السكون عن بعد"
+
+msgid "Standard Zap"
+msgstr "ضغط الملف عادي"
+
+msgid "Standby"
+msgstr "وضع الإستعداد"
+
+msgid "StartTime"
+msgstr "وقت التشغيل"
+
+#, python-format
+msgid "Starting Remote Player (IP = %s)"
+msgstr "بدء تشغيل التحكم بالمشغل عن بعد (الايبي = %s)"
+
+msgid "Stream"
+msgstr "البث"
+
+msgid "Stream TV from your Partnerbox"
+msgstr "بث التلفزيون من جهاز الشريك الخاص بك"
+
+msgid "Stream current Service from Partnerbox"
+msgstr "بث الخدمة الحالية من جهاز الشريك"
+
+msgid "Stream current service from partnerbox"
+msgstr "بث الخدمة الحالية من جهاز الشريك"
+
+msgid "Sun"
+msgstr "الاحد"
+
+msgid "Sunday"
+msgstr "الاحد"
+
+msgid "The pin code you entered is wrong."
+msgstr "الرقم السري الذي قمت بإدخاله غير صحيح."
+
+msgid "Thu"
+msgstr "الخميس"
+
+msgid "Thursday"
+msgstr "الخميس"
+
+msgid "Timer Overview"
+msgstr "نظرة عامة على المؤقت"
+
+msgid "Timer Type"
+msgstr "نوع المؤقت"
+
+msgid "Timer can not be added...no locations on partnerbox available."
+msgstr "لا يمكن إضافة جهاز ضبط الوقت... لا توجد مواقع على جهاز الشريك متاحة."
+
+msgid "Timer entry"
+msgstr "إدخال الوقت"
+
+msgid "Timer event deleted successfully."
+msgstr "حدث مؤقت تم حذفه بنجاح."
+
+msgid "Timer event was created successfully."
+msgstr "تم إنشاء حدث مؤقت بنجاح."
+
+msgid "Timer menu"
+msgstr "قائمة المؤقت"
+
+msgid "Toggle Standby"
+msgstr "تبديل وضع الاستعداد"
+
+msgid "Toggle status (on/off)"
+msgstr "تبديل الحالة (تشغيل/إيقاف)"
+
+msgid "Tue"
+msgstr "الثلاثاء"
+
+msgid "Tuesday"
+msgstr "الثلاثاء"
+
+msgid "Use Wake-on-LAN"
+msgstr "استخدام التنبيه على شبكة محلية"
+
+msgid "Wake up remote box"
+msgstr "تنبيه مربع بعيد"
+
+msgid "Wakeup"
+msgstr "تنبيه"
+
+msgid "Wed"
+msgstr "الاربعاء"
+
+msgid "Wednesday"
+msgstr "الاربعاء"
+
+msgid "Yes"
+msgstr "نعم"
+
+msgid "Yes (safe mode)"
+msgstr "نعم (الوضع الآمن)"
+
+msgid "You can not add services or bouquets from Enigma1-receivers into the channellist..."
+msgstr "لا يمكنك إضافة قنوات أو باقات من الانجما 1-الاجهزة في قائمة القنوات..."
+
+msgid "Zap"
+msgstr "التنقل"
+
+msgid "Zap focus to Picture in Picture"
+msgstr "مركز التنقل إلى قناة داخل قناة"
+
+msgid "Zap focus to main screen"
+msgstr "مركز التنقل إلى الشاشة الرئيسية"
+
+msgid "Zap to service when streaming"
+msgstr "انطلق إلى الخدمة عند البث"
+
+msgid "Zap/"
+msgstr "أنتقل/"
+
+msgid "Zapping to "
+msgstr "الانتقال إلى "
+
+msgid "about to start"
+msgstr "على وشك البدأ"
+
+msgid "add AutoTimer"
+msgstr "أضف التوقيت التلقائي"
+
+msgid "add AutoTimer for Partnerbox..."
+msgstr "إضافة مؤقت تلقائي إلى جهاز الشريك..."
+
+msgid "add Partnerbox bouquet"
+msgstr "إضافة باقة جهاز الشريك"
+
+msgid "add Partnerbox service"
+msgstr "إضافة قناة جهاز الشريك"
+
+msgid "auto"
+msgstr "تلقائي"
+
+msgid "disabled"
+msgstr "تم التعطيل"
+
+msgid "do nothing"
+msgstr "لا تفعل شيئ"
+
+msgid "done!"
+msgstr "إنتهى!"
+
+msgid "go to deep standby"
+msgstr "الذهاب الى وضع الاستعداد العميق"
+
+msgid "go to standby"
+msgstr "الذهاب لوضع الاستعداد"
+
+msgid "mins"
+msgstr "دقائق"
+
+msgid "record"
+msgstr "تسجيل"
+
+msgid "recording..."
+msgstr "جاري التسجيل..."
+
+msgid "setup for partnerbox"
+msgstr "ضبط جهاز الشريك"
+
+msgid "unknown service"
+msgstr "قناة مجهولة"
+
+msgid "use external"
+msgstr "استخدام خارجي"
+
+msgid "use internal"
+msgstr "استخدام داخلي"
+
+msgid "waiting"
+msgstr "فى الانتظار"
+
+msgid "zap"
+msgstr "أنتقل"
+
+msgid "zapped"
+msgstr "تم الانتقال"
