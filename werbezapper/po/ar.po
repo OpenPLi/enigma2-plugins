@@ -1,0 +1,228 @@
+# German translations for enigma package.
+# Copyright (C) 2009 THE enigma'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the enigma package.
+# Automatically generated, 2009.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Enigma2 Plugin WerbeZapper\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"PO-Revision-Date: 2020-10-22 17:04+0300\n"
+"Last-Translator: mosad - مساعد الجعيد <abo-mishal@hotmail.com>\n"
+"Language-Team: mosad - مساعد الجعيد\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
+"X-Generator: Poedit 2.4.1\n"
+
+msgid "\"Werbezapper\" quick button"
+msgstr "\"التنقل عبر الويب\" المفاتيح الملونة"
+
+#, python-format
+msgid "%d min"
+msgstr "%d دقيقة"
+
+#, python-format
+msgid "%s\n"
+msgstr "%s\n"
+
+#, python-format
+msgid "- %d:%02d min"
+msgstr "- %d:%02d دقيقة"
+
+msgid "Automatically zaps back to current service after given Time"
+msgstr "الزّر تلقائياً إلى الخدمة الحالية بعد إعطاء الوقت"
+
+#, python-format
+msgid ""
+"Button Info/EPG\n"
+"Set time begin next event: %d min"
+msgstr ""
+"مفتاح معلومات الدليل الالكتروني\n"
+"الوقت المحدد يبدأ الحدث التالي: %d دقيقة"
+
+msgid "Cancel"
+msgstr "إلغاء"
+
+#, python-format
+msgid "Channel: %s"
+msgstr "قناة: %s"
+
+msgid "Custom"
+msgstr "مخصص"
+
+msgid "Error"
+msgstr "خطأ"
+
+msgid "GREEN"
+msgstr "خُضْرَة"
+
+msgid "HELP"
+msgstr "مساعدة"
+
+msgid "How many minutes to wait until zapping back?"
+msgstr "كم دقيقة للانتظار حتى يعود للخلف؟"
+
+msgid "Indicator mode"
+msgstr "وضع المؤشر"
+
+msgid "Monitoring duration for service if not EPG"
+msgstr "مدة المراقبة القناة إن لم يكن دليل البرامج الإلكتروني"
+
+#, python-format
+msgid "Monitoring: %s (%d:%02d Min)"
+msgstr "المراقبة: %s (%d:%02d دقيقة)"
+
+#, python-format
+msgid "Monitoring: for service is not EPG (%d:%02d Min)"
+msgstr "المراقبة: القناة ليس لها دليل برامج الكتروني (%d:%02d دقيقة)"
+
+msgid "NONE"
+msgstr "لا شيء"
+
+msgid "Open setup"
+msgstr "فتح الإعداد"
+
+msgid "RADIO"
+msgstr "راديو"
+
+msgid "Rezap"
+msgstr "إعادة تنقل"
+
+msgid "SEARCH"
+msgstr "بحث"
+
+msgid "Save"
+msgstr "حفظ"
+
+msgid "Service is not EPG"
+msgstr "الخدمة ليس لها دليل برامج الكتروني"
+
+msgid "Set zap time"
+msgstr "تعيين وقت التنقل"
+
+msgid "Show \"Start / Stop monitoring\" in extensions menu"
+msgstr "عرض \"تشغيل / إيقاف المراقبة\" في قائمة الملحقات"
+
+msgid "Show indicator zap time in window"
+msgstr "عرض وقت المؤشر في النافذة"
+
+msgid "Show plugin in channel selection context menu"
+msgstr "عرض المكون الإضافي في قائمة سياق تحديد القناة"
+
+msgid "Slider step size (1 - 20 mins)"
+msgstr "حجم خطوة التقديم (من 1 إلى 20 دقيقة)"
+
+msgid "Start / Stop monitoring instantly"
+msgstr "تشغيل / إيقاف عن المراقبة على الفور"
+
+msgid "Start monitoring"
+msgstr "بدء المراقبة"
+
+msgid "Stop monitoring"
+msgstr "إيقاف المراقبة"
+
+msgid "Stop timer"
+msgstr "إيقاف مؤقت"
+
+msgid "TEXT"
+msgstr "نص"
+
+msgid "TIMER"
+msgstr "المؤقت"
+
+msgid "TV"
+msgstr "التلفزيون"
+
+msgid "Wakeup receiver from standby for zap timer"
+msgstr "جهاز استقبال التنبيه من وضع الاستعداد لجهاز توقيت التنقل"
+
+msgid "WerbeZapper"
+msgstr "التنقل عبر الويب"
+
+#, python-format
+msgid ""
+"WerbeZapper\n"
+"Monitoring ends\n"
+"%s"
+msgstr ""
+"التنقل عبر الويب\n"
+"إنتهاء المراقبة\n"
+"%s"
+
+msgid "WerbeZapper Setup"
+msgstr "إعداد التنقل عبر الويب"
+
+#, python-format
+msgid ""
+"WerbeZapper...\n"
+"Monitoring started\n"
+"%s"
+msgstr ""
+"التنقل عبر الويب...\n"
+"بدء المراقبة\n"
+"%s"
+
+#, python-format
+msgid ""
+"WerbeZapper...\n"
+"Monitoring started for service is not EPG.\n"
+"Duration %d Min."
+msgstr ""
+"التنقل عبر المراقبة...\n"
+"المراقبة اشتغلت للقناة التي ليس لها دليل برامج إلكتروني.\n"
+"المدة %d دقيقة."
+
+msgid "Werbezapper"
+msgstr "التنقل عبر الويب"
+
+msgid "Werbezapper Start / Stop monitoring"
+msgstr "التنقل عبر الويب تشغيل / إيقاف المراقب"
+
+msgid "When zap to service?"
+msgstr "عندما ينتقل للقناة؟"
+
+msgid "X position"
+msgstr "الموضع ا"
+
+msgid "Y position"
+msgstr "الموضع ي"
+
+msgid "YELLOW"
+msgstr "أصفر"
+
+msgid "Z position (priority of srceen)"
+msgstr "الموضع ز(أولوية الشاشة)"
+
+#, python-format
+msgid "Zapping back %s in %d Min"
+msgstr "الرجوع عن التنقل %s في %d دقيقة"
+
+#, python-format
+msgid "Zapping to %s"
+msgstr "الانتقال إلى %s"
+
+#, python-format
+msgid "Zapping to service in %d:%02d Min"
+msgstr "الإنتقال إلى القناة في %d:%02d دقيقة"
+
+msgid "add zap timer for service"
+msgstr "إضافة مؤقت للإنتقال إلى القناة"
+
+msgid "minut"
+msgstr "دقيقة"
+
+msgid "minute"
+msgstr "دقيقة"
+
+msgid "minutes"
+msgstr "دقائق"
+
+msgid "service / time"
+msgstr "القناة / الوقت"
+
+msgid "time"
+msgstr "الوقت"
