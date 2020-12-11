@@ -1,0 +1,828 @@
+# FritzCall plugin german localization
+# Copyright (C) 2009 Michael Schmidt
+# This file is distributed under the same license as the PACKAGE package.
+# Michael Schmidt <michael@schmidt-schmitten.com>, 2009.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Enigma2 FritzCall Plugin\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"PO-Revision-Date: 2020-10-22 16:35+0300\n"
+"Last-Translator: mosad - مساعد الجعيد <abo-mishal@hotmail.com>\n"
+"Language-Team: mosad - مساعد الجعيد\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
+"X-Generator: Poedit 2.4.1\n"
+
+msgid "05.29 until below 6.35"
+msgstr "05.29 حتى أقل من 6.35"
+
+msgid "06.35 and newer"
+msgstr "06.35 وأحدث"
+
+#. TRANSLATORS: this is a window title.
+#. TRANSLATORS: keep it short, this is a button
+#. TRANSLATORS: keep it short, this is a help text
+msgid "About FritzCall"
+msgstr "حول فريتز كال"
+
+#. TRANSLATORS: keep it short, this is a button
+msgid "Activate WLAN guest access"
+msgstr "تفعيل الشبكة اللاسلكية كضيف"
+
+#. TRANSLATORS: keep it short, this is a help text
+#. TRANSLATORS: this is a window title.
+msgid "Add entry to phonebook"
+msgstr "إضافة إدخال إلى دفتر الهاتف"
+
+#. TRANSLATORS: keep it short, this is a button
+msgid "All"
+msgstr "الكل"
+
+msgid "All calls"
+msgstr "جميع المكالمات"
+
+msgid "Append shortcut number"
+msgstr "إلحاق رقم اختصار"
+
+msgid "Append type of number"
+msgstr "إلحاق نوع الرقم"
+
+msgid "Append vanity name"
+msgstr "إلحاق اسم الغرور"
+
+msgid "Areacode to add to calls without one (if necessary)"
+msgstr "رمز المنطقة لإضافه إلى المكالمات بدون واحدة (إذا لزم الأمر)"
+
+msgid "Austria"
+msgstr "النمسا"
+
+msgid "Automatically add new Caller to PhoneBook"
+msgstr "إضافة المتصل الجديد تلقائيا إلى دليل الهاتف"
+
+#. TRANSLATORS: keep it short, this is a button
+msgid "Call"
+msgstr "اتصل"
+
+msgid "Call diversion"
+msgstr "تحويل المكالمات"
+
+msgid "Call diversion active"
+msgstr "تحويل المكالمات نشط"
+
+msgid "Call monitoring"
+msgstr "مراقبة المكالمات"
+
+msgid "Call redirection"
+msgstr "إعادة توجيه المكالمة"
+
+#, python-format
+msgid "Calling %s"
+msgstr "الاتصال %s"
+
+#. TRANSLATORS: keep it short, this is a button
+msgid "Cancel"
+msgstr "إلغاء"
+
+msgid "Cannot get calls from FRITZ!Box"
+msgstr "لا يمكن الحصول على المكالمات من جهاز فريتز"
+
+msgid ""
+"Cannot get infos from FRITZ!Box yet\n"
+"Still initialising or wrong firmware version"
+msgstr ""
+"لا يمكن الحصول على معلومات من جهاز فريتز! حتى الآن\n"
+"لا يزال تهيئة أو إصدار البرامج الثابتة غير صحيح"
+
+msgid "Connected since"
+msgstr "متصل منذ"
+
+msgid "Connected to FRITZ!Box!"
+msgstr "متصل بـ(جهاز فريتز)!"
+
+#, python-format
+msgid ""
+"Connecting to FRITZ!Box failed\n"
+" (%s)\n"
+"retrying..."
+msgstr ""
+"الاتصال بـجهاز فريتز! فشل\n"
+" (%s)\n"
+"اعاده المحاوله..."
+
+msgid "Connecting to FRITZ!Box..."
+msgstr "الاتصال بـجهاز فريتز!..."
+
+#, python-format
+msgid ""
+"Connection to FRITZ!Box! lost\n"
+" (%s)\n"
+"retrying..."
+msgstr ""
+"الاتصال بـجهاز (فريتز)! فقدت\n"
+" (%s)\n"
+"اعاده المحاوله..."
+
+msgid "Could not get call list; wrong version?"
+msgstr "تعذر الحصول على قائمة الاتصال; إصدار خاطئ؟"
+
+msgid "Could not load phonebook: "
+msgstr "تعذر تحميل دفتر الهاتف: "
+
+#, python-format
+msgid "Could not load phonebook: %s"
+msgstr "تعذر تحميل دفتر الهاتف: %s"
+
+msgid "Could not parse FRITZ!Box Phonebook entry"
+msgstr "لا يمكن تحليل جهاز فريتز! إدخال دفتر الهاتف"
+
+msgid "Could not read FRITZ!Box phonebook; wrong version?"
+msgstr "لم تستطع قراءة فريتز! صندوق دليل الهاتف؛ إصدار خاطئ؟"
+
+msgid "Country"
+msgstr "الدولة"
+
+msgid "Countrycode (e.g. 0044 for UK, 0034 for Spain, etc.)"
+msgstr "رمز البلد (على سبيل المثال 0044 للمملكة المتحدة، 0034 لإسبانيا، الخ))"
+
+msgid "DECT inactive"
+msgstr "غير نشط"
+
+msgid "DECT phones registered"
+msgstr "هواتف DECT المسجلة"
+
+#. TRANSLATORS: keep it short, this is a button
+msgid "Deactivate WLAN guest access"
+msgstr "إلغاء تنشيط وصول ضيف الشبكة اللاسلكية"
+
+#. TRANSLATORS: keep it short, this is a button
+msgid "Delete"
+msgstr "حذف"
+
+#. TRANSLATORS: keep it short, this is a help text
+msgid "Delete entry"
+msgstr "مسح المدخل"
+
+msgid "Display FRITZ!box-Fon calls on screen"
+msgstr "عرض إتصال جهاز فريتز يظهر على الشاشة"
+
+#. TRANSLATORS: keep it short, this is a help text
+msgid "Display all calls"
+msgstr "عرض جميع المكالمات"
+
+msgid "Display connection infos"
+msgstr "عرض معلومات الاتصال"
+
+#. TRANSLATORS: keep it short, this is a help text
+msgid "Display incoming calls"
+msgstr "عرض المكالمات الواردة"
+
+#. TRANSLATORS: keep it short, this is a help text
+msgid "Display missed calls"
+msgstr "عرض المكالمات التي لم ترد عليها"
+
+#. TRANSLATORS: keep it short, this is a help text
+msgid "Display outgoing calls"
+msgstr "عرض المكالمات الصادرة"
+
+#. TRANSLATORS: this is a window title.
+msgid "Do what?"
+msgstr "هل ماذا؟"
+
+#, python-format
+msgid ""
+"Do you really want to delete entry for\n"
+"\n"
+"%(number)s\n"
+"\n"
+"%(name)s?"
+msgstr ""
+"Do you really want to delete entry for\n"
+"\n"
+"%(number)s\n"
+"\n"
+"%(name)s?"
+
+#. TRANSLATORS: keep it short, this is a button
+msgid "Edit"
+msgstr "تعديل"
+
+#. TRANSLATORS: keep it short, this is a help text
+#. TRANSLATORS: this is a window title.
+msgid "Edit selected entry"
+msgstr "تعديل الإدخال المحدد"
+
+msgid "Enter Search Terms"
+msgstr "أدخل مصطلحات البحث"
+
+msgid "Entry incomplete."
+msgstr "الإدخال غير مكتمل."
+
+msgid "Extended Search for faces"
+msgstr "بحث موسع عن الوجوه"
+
+msgid "Extended Search for names"
+msgstr "بحث موسع عن الأسماء"
+
+msgid "Extension number to initiate call on"
+msgstr "الرقم الداخلي لبدء الاتصال"
+
+msgid "FRITZ!Box - "
+msgstr "جهاز فريتز - "
+
+#, python-format
+msgid "FRITZ!Box - Could not load calls: %s"
+msgstr "جهاز! فريتز- تعذر تحميل المكالمات: %s"
+
+#, python-format
+msgid "FRITZ!Box - Dialling failed: %s"
+msgstr "جهاز! فريتز - فشل الطلب: %s"
+
+#, python-format
+msgid "FRITZ!Box - Error getting blacklist: %s"
+msgstr "جهاز! فريتز - خطأ في الحصول على القائمة السوداء: %s"
+
+msgid "FRITZ!Box - Error getting status: "
+msgstr "جهاز! فريتز - خطأ في الحصول على الحالة: "
+
+#, python-format
+msgid "FRITZ!Box - Error getting status: %s"
+msgstr "جهاز! فريتز - خطأ في الحصول على الحالة: %s"
+
+msgid ""
+"FRITZ!Box - Error logging in\n"
+"\n"
+msgstr ""
+"جهاز! فريتز - خطأ في تسجيل الدخول\n"
+"\n"
+
+#, python-format
+msgid "FRITZ!Box - Error logging in: %s"
+msgstr "جهاز! فريتز - خطأ في تسجيل الدخول: %s"
+
+#, python-format
+msgid ""
+"FRITZ!Box - Error logging in: %s\n"
+"Disabling plugin."
+msgstr ""
+"جهاز فريتزل - خطاء في تسجيل الدخول: %s\n"
+"تعطيل البلجن."
+
+#, python-format
+msgid "FRITZ!Box - Error logging out: %s"
+msgstr "جهاز! فريتز - خطأ في تسجيل الخروج: %s"
+
+#, python-format
+msgid "FRITZ!Box - Error resetting: %s"
+msgstr "جهاز! فريتز - إعادة تعيين الخطأ: %s"
+
+#, python-format
+msgid "FRITZ!Box - Failed changing GuestAccess: %s"
+msgstr "جهاز! فريتز - فشل تغيير الضيف: %s"
+
+#, python-format
+msgid "FRITZ!Box - Failed changing Mailbox: %s"
+msgstr "جهاز! فريتز - فشل تغيير علبة البريد: %s"
+
+#, python-format
+msgid "FRITZ!Box - Failed changing WLAN: %s"
+msgstr "فشل! فريتز - فشل تغيير الشبكة اللاسلكية: %s"
+
+msgid "FRITZ!Box FON address (Name or IP)"
+msgstr "فريتز! عنوان الهاتف (الاسم أو عنوان الايبي)"
+
+msgid "FRITZ!Box FON firmware version"
+msgstr "فريتز! إصدار البرامج الثابتة جهاز المربع"
+
+#. TRANSLATORS: this is a window title.
+#. TRANSLATORS: keep it short, this is a button
+#. TRANSLATORS: keep it short, this is a help text
+msgid "FRITZ!Box Fon Status"
+msgstr "جهاز فريتز حالة الهاتف"
+
+msgid "FRITZ!Box PhoneBook to read"
+msgstr "جهاز! فريتز قراءة دفتر الهاتف"
+
+msgid "FRITZ!Box firmware version not configured! Please set it in the configuration."
+msgstr "فريتز! إصدار البرنامج الثابت الجهاز غير مهيأ! يرجى تعيينه في التكوين."
+
+msgid "FRITZ!Box not available for calling"
+msgstr "جهاز! فريتز غير متوفر للمكالمات"
+
+msgid "Filter also list of calls"
+msgstr "تصفية أيضا قائمة المكالمات"
+
+#, python-format
+msgid ""
+"Found picture\n"
+"\n"
+"%s\n"
+"\n"
+"But did not load. Probably not PNG, 8-bit"
+msgstr ""
+"العثور على صورة\n"
+"\n"
+"%s\n"
+"\n"
+"ولكن لم يتم تحميل. ربما ليست بصيغة بنق، 8 بت"
+
+msgid "France"
+msgstr "فرنسا"
+
+#. TRANSLATORS: this is a window title.
+msgid "FritzCall Setup"
+msgstr "إعداد فريتز كول"
+
+msgid "Germany"
+msgstr "المانيا"
+
+msgid "Getting calls from FRITZ!Box..."
+msgstr "الحصول على مكالمات من جهاز! فريتز..."
+
+msgid "Getting status from FRITZ!Box Fon..."
+msgstr "الحصول على الحالة من جهاز فريتز..."
+
+msgid "Guest access"
+msgstr "وصول الضيف"
+
+msgid "Guest access not active"
+msgstr "وصول الضيف غير نشط"
+
+msgid "Guest access on "
+msgstr "وصول الضيف على "
+
+msgid "IP Address:"
+msgstr "عنوان الايبي:"
+
+msgid "Ignore callers with no phone number"
+msgstr "تجاهل المتصلين بدون رقم هاتف"
+
+#. TRANSLATORS: keep it short, this is a button
+msgid "Incoming"
+msgstr "الوارد"
+
+#, python-format
+msgid ""
+"Incoming Call on %(date)s at %(time)s from\n"
+"---------------------------------------------\n"
+"%(number)s\n"
+"%(caller)s\n"
+"---------------------------------------------\n"
+"to: %(phone)s"
+msgstr ""
+"Incoming Call on %(date)s at %(time)s from\n"
+"---------------------------------------------\n"
+"%(number)s\n"
+"%(caller)s\n"
+"---------------------------------------------\n"
+"to: %(phone)s"
+
+msgid "Incoming calls"
+msgstr "المكالمات الواردة"
+
+msgid "Italy"
+msgstr "إيطاليا"
+
+msgid "Last 10 calls:\n"
+msgstr "آخر 10 مكالمات:\n"
+
+msgid "Log level"
+msgstr "مستوى السجل"
+
+#. TRANSLATORS: keep it short, this is a button
+msgid "Lookup"
+msgstr "المشاهدة"
+
+msgid "MSN to show (separated by ,)"
+msgstr "إتصال الماسنجر لإظهار (مفصولة بـ ،)"
+
+msgid "Mailbox"
+msgstr "علبه البريد"
+
+msgid "Make it more skin friendly"
+msgstr "اجعله أكثر ملاءمة للسكن"
+
+#. TRANSLATORS: keep it short, this is a button
+msgid "Missed"
+msgstr "المفوتة"
+
+msgid "Missed calls"
+msgstr "مكالمات فائتة"
+
+msgid "Mute on incoming call"
+msgstr "كتم الصوت في المكالمة الواردة"
+
+msgid "Mute on outgoing calls"
+msgstr "كتم الصوت على المكالمات الصادرة"
+
+msgid "Name"
+msgstr "الاسم"
+
+#. TRANSLATORS: keep it short, this is a button
+msgid "New"
+msgstr "جديد"
+
+msgid "New call"
+msgstr "مكالمة جديدة"
+
+msgid "No DECT phone registered"
+msgstr "لم يتم تسجيل هاتف DECT"
+
+msgid "No call diversion active"
+msgstr "لا يوجد تحويل للمكالمات نشط"
+
+msgid "No entry selected"
+msgstr "لم يتم تحديد أي إدخال"
+
+msgid "No mailbox active"
+msgstr "لا يوجد صندوق بريد نشط"
+
+msgid "No phonebook"
+msgstr "لا يوجد دليل هاتف"
+
+msgid "No result from LDIF"
+msgstr "لا توجد نتيجة من LDIF"
+
+msgid "No result from Outlook export"
+msgstr "لا توجد نتيجة من تصدير البريد الالكتروني"
+
+msgid "No result from reverse lookup"
+msgstr "لا توجد نتيجة من البحث العكسي"
+
+msgid "Not deactivating after time"
+msgstr "عدم التعطيل بعد مرور الوقت"
+
+msgid "Number"
+msgstr "عدد"
+
+#. TRANSLATORS: keep it short, this is a button
+msgid "OK"
+msgstr "موافق"
+
+msgid "One DECT phone registered"
+msgstr "واحد DECT الهاتف المسجل"
+
+msgid "One call diversion active"
+msgstr "تحويل مكالمة واحدة نشطة"
+
+msgid "One mailbox active"
+msgstr "علبة بريد واحدة نشطة"
+
+msgid "Others"
+msgstr "الآخرين"
+
+#. TRANSLATORS: keep it short, this is a button
+msgid "Outgoing"
+msgstr "الصادر"
+
+#, python-format
+msgid ""
+"Outgoing Call on %(date)s at %(time)s to\n"
+"---------------------------------------------\n"
+"%(number)s\n"
+"%(caller)s\n"
+"---------------------------------------------\n"
+"from: %(phone)s"
+msgstr ""
+"Outgoing Call on %(date)s at %(time)s to\n"
+"---------------------------------------------\n"
+"%(number)s\n"
+"%(caller)s\n"
+"---------------------------------------------\n"
+"from: %(phone)s"
+
+msgid "Outgoing calls"
+msgstr "المكالمات الصادرة"
+
+msgid "Password Accessing FRITZ!Box"
+msgstr "كلمة السر الوصول إلى جهاز! فريتز"
+
+#. TRANSLATORS: this is a window title.
+#. TRANSLATORS: keep it short, this is a button
+msgid "Phone calls"
+msgstr "المكالمات الهاتفية"
+
+msgid "PhoneBook and Faces Location"
+msgstr "موقع دفتر الهاتف والصور الشخصية"
+
+#. TRANSLATORS: this is a window title.
+#. TRANSLATORS: keep it short, this is a button
+msgid "Phonebook"
+msgstr "دليل"
+
+msgid "Plugin not enabled"
+msgstr "لم يتم تمكين البلجن"
+
+#. TRANSLATORS: keep it short, this is a help text
+msgid "Quit"
+msgstr "خروج"
+
+msgid "Read PhoneBook from FRITZ!Box"
+msgstr "قراءة دليل الهاتف من جهاز! فريتز"
+
+#. TRANSLATORS: keep it short, this is a help text
+msgid "Refresh status"
+msgstr "تحديث الحالة"
+
+msgid "Refreshing..."
+msgstr "جاري التحديث..."
+
+msgid "Reload interval for phonebooks (hours)"
+msgstr "إعادة تحميل الفاصل الزمني لدفاتر الهواتف (ساعات)"
+
+#. TRANSLATORS: keep it short, this is a button
+#. TRANSLATORS: keep it short, this is a help text
+#. TRANSLATORS: keep it short, this is a button
+msgid "Reset"
+msgstr "إعاده الضبط"
+
+msgid "Reverse Lookup Caller ID"
+msgstr "عكس معرف المتصل البحث"
+
+msgid "Reverse searching..."
+msgstr "عكس البحث..."
+
+#. TRANSLATORS: keep it short, this is a button
+msgid "Save"
+msgstr "حفظ"
+
+#. TRANSLATORS: keep it short, this is a button
+msgid "Search"
+msgstr "بحث"
+
+#. TRANSLATORS: keep it short, this is a help text
+msgid "Search (case insensitive)"
+msgstr "البحث (حالة غير حساسة)"
+
+msgid "Search phonebook"
+msgstr "بحث دليل الهاتف"
+
+msgid "Searching in LDIF..."
+msgstr "البحث في LDIF..."
+
+msgid "Searching in Outlook export..."
+msgstr "البحث في تصدير البريد الالكتروني..."
+
+msgid "Setting..."
+msgstr "جار الضبط ..."
+
+msgid "Shortcut"
+msgstr "الاختصار"
+
+msgid "Show Blocked Calls"
+msgstr "عرض المكالمات المحظورة"
+
+msgid "Show Outgoing Calls"
+msgstr "عرض المكالمات الصادرة"
+
+msgid "Show after Standby"
+msgstr "عرض بعد وضع الاستعداد"
+
+msgid "Show also internal numbers"
+msgstr "عرض الأرقام الداخلية أيضاً"
+
+#. TRANSLATORS: keep it short, this is a help text
+msgid "Show details of entry"
+msgstr "عرض التفاصيل المدخلة"
+
+msgid "Show only calls for specific MSN"
+msgstr "عرض المكالمات فقط لـ لجهات الماسجنر معينة"
+
+msgid "Software fax active"
+msgstr "فاكس البرامج نشط"
+
+msgid "Software fax inactive"
+msgstr "فاكس البرامج غير نشط"
+
+msgid "Status not available"
+msgstr "الحالة غير متوفرة"
+
+msgid "Strip Leading 0"
+msgstr "قيادة الشريط 0"
+
+msgid "Switzerland"
+msgstr "سويسرا"
+
+msgid "The Netherlands"
+msgstr "هولندا"
+
+#, python-format
+msgid ""
+"There might be a problem with your FritzCall %spassword.\n"
+"Check in the configuration."
+msgstr ""
+"قد تكون هناك مشكلة مع إتصال فريتز %s كلمة المرور.\n"
+"تحقق من الاعدادات."
+
+msgid "Timeout for Call Notifications (seconds)"
+msgstr "مهلة لإشعارات المكالمات (ثواني)"
+
+msgid "To enjoy more functionalities of your FRITZ!Box, configure the firmware version!"
+msgstr "للاستمتاع بالمزيد من الوظائف الخاصة بـ بجهاز! فريتز، إعدادات إصدار البرامج الثابتة!"
+
+#. TRANSLATORS: keep it short, this is a help text
+msgid "Toggle 1. mailbox"
+msgstr "تبديل 1. علبه البريد"
+
+#. TRANSLATORS: keep it short, this is a help text
+msgid "Toggle 2. mailbox"
+msgstr "تبديل 2. علبه البريد"
+
+#. TRANSLATORS: keep it short, this is a help text
+msgid "Toggle 3. mailbox"
+msgstr "تبديل 3. علبه البريد"
+
+#. TRANSLATORS: keep it short, this is a help text
+msgid "Toggle 4. mailbox"
+msgstr "تبديل 4. علبه البريد"
+
+#. TRANSLATORS: keep it short, this is a help text
+msgid "Toggle 5. mailbox"
+msgstr "تبديل 5. علبه البريد"
+
+#. TRANSLATORS: keep it short, this is a button
+msgid "Toggle Mailbox"
+msgstr "تبديل علبة البريد"
+
+#. TRANSLATORS: keep it short, this is a button
+#. TRANSLATORS: keep it short, this is a help text
+#. TRANSLATORS: keep it short, this is a button
+msgid "Toggle WLAN"
+msgstr "تبديل الشبكة اللاسلكية"
+
+#. TRANSLATORS: keep it short, this is a help text
+msgid "Toggle WLAN guest access"
+msgstr "تبديل وصول الضيف على الشبكة اللاسلكية"
+
+#. TRANSLATORS: keep it short, this is a help text
+msgid "Toggle all mailboxes"
+msgstr "تبديل كافة علب البريد"
+
+msgid "UNKNOWN"
+msgstr "غير معرف"
+
+msgid "Unknown"
+msgstr "غير معروف"
+
+msgid "Update available"
+msgstr "تحديث متاح"
+
+msgid "Use internal PhoneBook"
+msgstr "استخدام دفتر الهاتف الداخلي"
+
+msgid "User name Accessing FRITZ!Box"
+msgstr "اسم المستخدم الوصول إلى جهاز! فريتز"
+
+msgid "Vanity"
+msgstr "غرور"
+
+msgid "WLAN not active"
+msgstr "الشبكة اللاسلكية غير نشظة"
+
+msgid "You need to enable the monitoring on your FRITZ!Box by dialing #96*5*!"
+msgstr "تحتاج إلى تمكين المراقبة على جهاز فريتز الخاص بك عن طريق طلب # 96 * 5 *!"
+
+msgid ""
+"You need to set the password of the FRITZ!Box\n"
+"in the configuration dialog to display calls\n"
+"\n"
+"It could be a communication issue, just try again."
+msgstr ""
+"تحتاج إلى تعيين كلمة السر من جهاز! فريتز\n"
+"في جهاز التكوين لعرض المكالمات\n"
+"\n"
+"قد تكون مشكلة في التواصل، حاول مرة أخرى."
+
+msgid "before 05.27"
+msgstr "قبل 05.27"
+
+msgid "business"
+msgstr "الاعمال"
+
+msgid "call diversions active"
+msgstr "استدعاء التحويلات النشطة"
+
+msgid "calls in mailbox"
+msgstr "المكالمات في صندوق البريد"
+
+msgid "devices active"
+msgstr "الأجهزة النشطة"
+
+#. TRANSLATORS: keep it short, this is a help text
+msgid "display calls"
+msgstr "عرض المكالمات"
+
+#. TRANSLATORS: keep it short, this is a help text
+msgid "display phonebook"
+msgstr "عرض دفتر الهاتف"
+
+msgid "done"
+msgstr "تم"
+
+msgid "done, using last list"
+msgstr "القيام به، وذلك باستخدام القائمة الأخيرة"
+
+msgid "encrypted"
+msgstr "مشفر"
+
+msgid "fax_home"
+msgstr "فاكس_المنزل"
+
+msgid "fax_work"
+msgstr "فاكس_العمل"
+
+msgid "finishing"
+msgstr "إِكْمَال"
+
+msgid "guest "
+msgstr "ضيف "
+
+msgid "home"
+msgstr "الرئيسية"
+
+msgid "login"
+msgstr "تسجيل الدخول"
+
+msgid "login ok"
+msgstr "تسجيل الدخول موافق"
+
+msgid "login verification"
+msgstr "التحقق من تسجيل الدخول"
+
+msgid "mailboxes active"
+msgstr "صناديق البريد النشطة"
+
+msgid "mobile"
+msgstr "مُتَحَرِّك"
+
+msgid "no calls"
+msgstr "لايوجد مكالمات"
+
+msgid "no device active"
+msgstr "لا يوجد جهاز نشط"
+
+msgid "not available with this firmware version"
+msgstr "غير متوفر مع إصدار البرامج الثابتة هذا"
+
+msgid "not configured"
+msgstr "غير مكون"
+
+msgid "not encrypted"
+msgstr "غير مشفرة"
+
+msgid "not yet implemented"
+msgstr "لم يتم تنفيذها بعد"
+
+msgid "nothing"
+msgstr "لا شيء"
+
+msgid "number suppressed"
+msgstr "تم منع العدد"
+
+msgid "off"
+msgstr "لا يعمـل"
+
+msgid "on"
+msgstr "على"
+
+msgid "one device active"
+msgstr "جهاز واحد نشط"
+
+msgid "only failed"
+msgstr "فشل فقط"
+
+msgid "pager"
+msgstr "النداء"
+
+msgid "preparing"
+msgstr "اعداد"
+
+#. TRANSLATORS: keep it short, this is a help text
+msgid "quit"
+msgstr "خروج"
+
+#. TRANSLATORS: keep it short, this is a help text
+msgid "save and quit"
+msgstr "حفظ والخروج"
+
+msgid "show as list"
+msgstr "إظهار كقائمة"
+
+msgid "show each call"
+msgstr "إظهار كل مكالمة"
+
+msgid "show nothing"
+msgstr "لا تظهر أي شيء"
+
+msgid "with"
+msgstr "مع"
+
+msgid "work"
+msgstr "عَمَل"
+
+msgid "wrong user or password?"
+msgstr "مستخدم خاطئ أو كلمة المرور؟"
