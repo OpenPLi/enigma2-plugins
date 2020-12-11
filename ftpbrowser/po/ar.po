@@ -1,0 +1,223 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: enigma 2-plugins\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"PO-Revision-Date: 2020-11-05 15:16+0300\n"
+"Last-Translator: mosad - مساعد الجعيد <abo-mishal@hotmail.com>\n"
+"Language-Team: mosad - مساعد الجعيد\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
+"X-Generator: Poedit 2.4.1\n"
+
+#, python-format
+msgid "%d kb/s"
+msgstr "%d كيلوبايت/الثانية"
+
+msgid "A basic FTP client"
+msgstr "بروتوكول نقل الملفات الرئيسي"
+
+#, python-format
+msgid ""
+"A file with this name (%s) already exists locally.\n"
+"Do you want to overwrite it?"
+msgstr ""
+"يوجد بالفعل ملف بهذا الاسم (%s) محليًا.\n"
+"هل تريد الكتابة عليه؟"
+
+#, python-format
+msgid ""
+"A file with this name (%s) already exists on the remote host.\n"
+"Do you want to overwrite it?"
+msgstr ""
+"يوجد ملف بهذا الاسم (%s) بالفعل على المضيف البعيد.\n"
+"هل تريد الكتابة عليه؟"
+
+msgid ""
+"A transfer is currently in progress.\n"
+"What do you want to do?"
+msgstr ""
+"النقل قيد التقدم حاليا.\n"
+"ماذا تريد أن تفعل؟"
+
+msgid "Abort transfer"
+msgstr "بورت النقل"
+
+msgid "Add"
+msgstr "إضافة"
+
+msgid "Address:"
+msgstr "العنوان:"
+
+#, python-format
+msgid "Are you sure you want to delete %s?"
+msgstr "هل أنت متأكد أنك تريد الحذف %s?"
+
+msgid "Cancel"
+msgstr "إلغاء"
+
+msgid "Configuration saved."
+msgstr "تم حفظ التهيئة."
+
+msgid "Connect to FTP..."
+msgstr "الاتصال بروتوكول نقل الملفات..."
+
+msgid "Could not connect to ftp server!"
+msgstr "تعذر الاتصال بخادم بروتوكول نقل الملفات!"
+
+#, python-format
+msgid "Could not delete %s."
+msgstr "تعذر الحذف %s."
+
+msgid "Could not obtain list of files."
+msgstr "تعذر الحصول على قائمة الملفات."
+
+#, python-format
+msgid "Could not rename %s."
+msgstr "تعذر إعادة تسمية %s."
+
+msgid "Delete"
+msgstr "حذف"
+
+msgid "Download"
+msgstr "تحميل"
+
+msgid "Download finished."
+msgstr "إنتهاء التحميل."
+
+#, python-format
+msgid "ETA %d:%02d min"
+msgstr "الوقت المقدر للوصول %d:%02d دقيقة"
+
+msgid "Edit"
+msgstr "تعديل"
+
+msgid "Enter URI"
+msgstr "أدخل الرابط"
+
+msgid "Enter URI of FTP Server:"
+msgstr "أدخل الرابط من خادم بروتوكول نقل الملفات:"
+
+msgid "Enter new filename:"
+msgstr "أدخل اسم الملف الجديد:"
+
+msgid "Error"
+msgstr "خطأ"
+
+msgid "Error during download."
+msgstr "خطأ أثناء التحميل."
+
+msgid "Exit"
+msgstr "الخروج"
+
+msgid "FTP Queue Manager"
+msgstr "مدير قائمة انتظار بروتوكول نقل الملفات"
+
+msgid "FTP Server Editor"
+msgstr "تعديل خادم بروتوكول نقل الملفات"
+
+msgid "FTP Server Manager"
+msgstr "مدير خادم بروتوكول نقل الملفات"
+
+msgid "Local"
+msgstr "محلي"
+
+msgid "Name:"
+msgstr "الاسم:"
+
+msgid "OK"
+msgstr "موافق"
+
+msgid "Parent Directory"
+msgstr "الدليل الرئيسي"
+
+msgid "Passive:"
+msgstr "سلبي:"
+
+msgid "Password:"
+msgstr "كلمة المرور:"
+
+msgid "Port:"
+msgstr "المنفذ:"
+
+msgid "Queue Manager"
+msgstr "إدارة قائمة الانتظار"
+
+msgid "Queue processed."
+msgstr "تمت معالجة قائمة الانتظار."
+
+msgid ""
+"Really delete this entry?\n"
+"It cannot be recovered!"
+msgstr ""
+"حقا حذف هذا الإدخال؟\n"
+"لا يمكن استعادته!"
+
+msgid "Remote"
+msgstr "ريموت التحكم عن بعد"
+
+msgid "Remote (not connected)"
+msgstr "التحكم عن بعد (غير متصل)"
+
+#, python-format
+msgid "Removed %s."
+msgstr "تم الازالة %s."
+
+msgid "Removing directories is not supported."
+msgstr "لا يتم دعم إزالة المجلدات."
+
+msgid "Rename"
+msgstr "إعادة التسميه"
+
+#, python-format
+msgid "Renamed %s to %s."
+msgstr "تمت إعادة التسميته %s إلى %s."
+
+msgid "Run in Background"
+msgstr "تشغيل في الخلفية"
+
+msgid "Save"
+msgstr "حفظ"
+
+msgid "Select local file list"
+msgstr "تحديد قائمة الملفات المحلية"
+
+msgid "Select remote file list"
+msgstr "تحديد قائمة الملفات عن بعد"
+
+msgid "Server Manager"
+msgstr "مدير الخادم"
+
+msgid ""
+"There already is an active connection.\n"
+"Do you want to abort it?"
+msgstr ""
+"يوجد بالفعل اتصال فعال.\n"
+"هل تريد إنهاءه؟"
+
+msgid "There already is an active transfer."
+msgstr "يوجد بالفعل نقل نشط."
+
+msgid "Upload"
+msgstr "رفع"
+
+msgid "Upload finished."
+msgstr "تم التحميل."
+
+msgid "Username:"
+msgstr "اسم المستخدم:"
+
+msgid "Which server do you want to connect to?"
+msgstr "ما هو الخادم الذي تريد الاتصال به؟"
+
+msgid "close"
+msgstr "إغلاق"
+
+msgid "enter directory/get file/put file"
+msgstr "أدخل الدليل / الحصول على ملف / وضع الملف"
+
+msgid "open menu"
+msgstr "افتح القائمة"
