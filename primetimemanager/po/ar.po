@@ -1,0 +1,406 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PrimeTimeManager\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"PO-Revision-Date: \n"
+"Last-Translator: mosad - مساعد الجعيد <abo-mishal@hotmail.com>\n"
+"Language-Team: mosad - مساعد الجعيد\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
+"X-Generator: Poedit 2.4.2\n"
+"X-Poedit-SearchPath-0: po\n"
+
+#, python-format
+msgid ""
+"\n"
+"Timer '%s' disabled!"
+msgstr ""
+"\n"
+"تعطيل '%s' المؤقت!"
+
+#, python-format
+msgid ""
+"\n"
+"Total number of conflicts: %s"
+msgstr ""
+"\n"
+"العدد الإجمالي للمتعارض: %s"
+
+msgid "\"View live\" event only in Prime Time:"
+msgstr "حدث \"عرض مباشر\" فقط في الوقت الرئيسي:"
+
+msgid "\"View live\" type:"
+msgstr "نوع \"عرض مباشر\":"
+
+#, python-format
+msgid "%d min"
+msgstr "%d دقيقة"
+
+#, python-format
+msgid "%s prime time | events today (%s) | Bouquet: %s"
+msgstr "%s الوقت الرئيسي | الأحداث اليوم (%s) | باقة: %s"
+
+#, python-format
+msgid "%s prime time | events today +%s (%s) | Bouquet: %s"
+msgstr "%s الوقت الرئيسي | أحداث اليوم +%s (%s) | الباقة: %s"
+
+msgid "'Timer Edit' key menu - show conflict timer:"
+msgstr "'مؤقت تحرير' القائمة الرئيسية - عرض المؤقت المتعارض:"
+
+msgid ": only notification"
+msgstr ": إشعارات فقط"
+
+msgid "Accept"
+msgstr "قبول"
+
+msgid "Accept the events as shown"
+msgstr "قبول الأحداث كما هو موضح"
+
+msgid "Accept this solution?"
+msgstr "هل تقبل هذا الحل؟"
+
+msgid "Add Timer"
+msgstr "إضافة مؤقت"
+
+msgid "Add timer"
+msgstr "أضف مؤقت"
+
+#, python-format
+msgid "Add timer for \"%s\"?"
+msgstr "إضافة الموقت ل \"%s\"؟"
+
+msgid "Add/remove event to or from favourites"
+msgstr "إضافة/إزالة حدث إلى أو من المفضلة"
+
+msgid "Any timers"
+msgstr "أي مؤقتات"
+
+msgid "Begin time"
+msgstr "وقت البدأ"
+
+msgid "Bouquet"
+msgstr "باقة"
+
+msgid "Bouquet:"
+msgstr "الباقة:"
+
+#, python-format
+msgid "Bouquet: %s - EPG Selection Multi"
+msgstr "باقة: %s - الدليل الالكتروني التحديد متعدد"
+
+msgid "Cancel"
+msgstr "إلغاء"
+
+msgid "Cansel"
+msgstr "إلغاء"
+
+msgid "Channel not in services list"
+msgstr "قناة غير موجوده فى قائمة القنوات"
+
+msgid "Check conflicts timers after \"Accept\":"
+msgstr "التحقق من تعارضات توقيت بعد \"قبول\":"
+
+msgid "Check conflicts timers after exit:"
+msgstr "التحقق من تعارضات أجهزة ضبط الوقت بعد الإنهاء:"
+
+msgid "Checking with conflict detection enabled for"
+msgstr "التحقق من تمكين الكشف عن التعارض"
+
+msgid "Close"
+msgstr "إغلاق"
+
+msgid "Conflict detected!"
+msgstr "تم اكتشاف المتعارض!"
+
+msgid "Conflict not resolved!"
+msgstr "التعارض لم يحل!"
+
+msgid "Conflicts were solved"
+msgstr "تم حل المتعارض"
+
+msgid "Current timer"
+msgstr "الموقت الحالي"
+
+msgid "Date"
+msgstr "تاريخ"
+
+msgid "Disable"
+msgstr "تعطيل"
+
+#, python-format
+msgid "Do you really want to delete the timer for \"%s\"?"
+msgstr "هل تريد حقا لحذف الموقت ل \"%s\"؟"
+
+msgid "Do you want to switch the prime time? Currently selected favorites will be lost!"
+msgstr "هل تريد تبديل الوقت الرئيسي؟ سيتم فقدان المفضلة المحددة حاليا!"
+
+msgid "Duration"
+msgstr "المدة"
+
+msgid "Edit"
+msgstr "تعديل"
+
+msgid "Enable"
+msgstr "تفعيل"
+
+msgid "End time"
+msgstr "وقت النهاية"
+
+msgid "Exit"
+msgstr "تسجيل الخروج"
+
+msgid "Exit from Multi EPG on selected service:"
+msgstr "الخروج من الدليل الإلكتروني المتعدد في القنوات المحددة:"
+
+msgid "Exit plugin"
+msgstr "الخروج من البلجن"
+
+msgid "Exit plugin or open Multi EPG"
+msgstr "الخروج من البلجن أو فتح الدليل الالكتروني المتعدد"
+
+msgid "Favorite"
+msgstr "المفضلة"
+
+msgid "Favorite will be deleted!"
+msgstr "سيتم حذف المفضلة!"
+
+msgid "Ignore conflict"
+msgstr "تجاهل التعارض"
+
+msgid "Lookup in TMBD"
+msgstr "نظرة في قاعدة بيانات الافلام"
+
+msgid "Manage prime time events"
+msgstr "إدارة الأحداث الزمنية الرئيسية"
+
+msgid "Multi EPG"
+msgstr "الدليل الإلكتروني المتعدد"
+
+msgid "No EPG data"
+msgstr "لا توجد بيانات دليل الالكتروني"
+
+msgid "No conflicts found"
+msgstr "لم يتم العثور على تعارضات"
+
+msgid "OK"
+msgstr "موافق"
+
+msgid "Open the settings screen"
+msgstr "فتح شاشة الإعدادات"
+
+msgid "Open timers list"
+msgstr "فتح قائمة المؤقتات"
+
+msgid "Primary"
+msgstr "أساسي"
+
+msgid "Primary Prime Time:"
+msgstr "الوقت الرئيسي الأساسي:"
+
+msgid "Prime Time Manager"
+msgstr "إدارة الوقت الرئيسي"
+
+msgid "Prime Time Manager "
+msgstr "إدارة الوقت الرئيسي "
+
+msgid "Prime Time Manager Conflict Results"
+msgstr "نتائج تعارض إدارة الوقت الرئيسي"
+
+msgid "Prime Time Manager in E-menu:"
+msgstr "إدارة الوقت الرئيسي في القائمة الالكترونية:"
+
+msgid "Prime Time Manager setup"
+msgstr "ضبط إدارة الوقت الرئيسي"
+
+msgid ""
+"Prime Time Manager:\n"
+"\n"
+"Prime time has already begun or is over. Starting with tomorrow's events."
+msgstr ""
+"إدارة الوقت الرئيسي:\n"
+"\n"
+"لقد بدأ الوقت الرئيسي بالفعل او انتهى. تشغيل مع أحداث الغد."
+
+#, python-format
+msgid ""
+"Prime Time Manager:\n"
+"\n"
+"Sorry, but a timer for %s can't be set because there are conflicts with other timers."
+msgstr ""
+"إدارة الوقت الرئيسي:\n"
+"\n"
+"عذراً، ولكن لا يمكن تعيين جهاز ضبط وقت %s بسبب وجود تعارضات مع أجهزة ضبط الوقت الأخرى."
+
+msgid ""
+"Prime Time Manager:\n"
+"\n"
+"Sorry, but turning a repeated timer into a view live event isn't supported."
+msgstr ""
+"إدارة الوقت الرئيسي:\n"
+"\n"
+"عذراً، ولكن لا يتم دعم تحويل جهاز ضبط وقت متكرر إلى حدث مباشر للعرض."
+
+msgid "Prime Time Settings"
+msgstr "إعدادات الوقت الرئيسي"
+
+msgid "Recording is in progress.\n"
+msgstr "التسجيل قيد التنفيذ.\n"
+
+msgid "Red Button function:"
+msgstr "وظيفة الزر الأحمر:"
+
+msgid "Remove favorite on timer deletion:"
+msgstr "إزالة المفضلة على حذف جهاز ضبط الوقت:"
+
+msgid "Remove timer"
+msgstr "حذف المؤقت"
+
+msgid "Scroll selected list to the left"
+msgstr "تمرير القائمة المحددة إلى اليسار"
+
+msgid "Scroll selected list to the right"
+msgstr "تمرير القائمة المحددة إلى اليمين"
+
+msgid "Search in IMDb"
+msgstr "البحث في قاعدة بيانات معلومات الأفلام على الإنترنت"
+
+msgid "Secondary"
+msgstr "ثانوي"
+
+msgid "Secondary Prime Time:"
+msgstr "الوقت الرئيسي الثانوي:"
+
+msgid "Select action"
+msgstr "حدد الاجراء"
+
+msgid "Selected favorites"
+msgstr "المفضلة المحددة"
+
+#, python-format
+msgid "Set 'view live' type '%s'?"
+msgstr "تعيين نوع \"عرض مباشر\" %s؟"
+
+msgid "Set Timer"
+msgstr "ضبط الموقت"
+
+msgid "Set day"
+msgstr "تعيين اليوم"
+
+msgid "Set or remove a timer"
+msgstr "تعيين مؤقت أو إزالته"
+
+msgid "Settings of the plugin"
+msgstr "إعدادات البلجن"
+
+msgid "Show duration or end time:"
+msgstr "عرض المدة أو وقت الانتهاء:"
+
+msgid "Show event information"
+msgstr "عرض معلومات الحدث"
+
+msgid "Show warning before set 'Ignore conflict'"
+msgstr "عرض التحذير قبل تعيين 'تجاهل التعارض'"
+
+msgid "Single EPG"
+msgstr "دليل إلكتروني يوم واحد"
+
+msgid "Solution"
+msgstr "الحل"
+
+msgid ""
+"Sorri!\n"
+"Conflict timers in timers.xml detected!\n"
+"Please recheck it!"
+msgstr ""
+"أسف!\n"
+"التوقيت المتعارض في المؤقتات.اكس امل الكشف عن!\n"
+"يرجى إعادة فحصه!"
+
+msgid "Switch betw. favourite/prime time list"
+msgstr "التبديل بين. المفضلة/قائمة التوقيت الرئيسي"
+
+msgid "Switch to the next bouquet"
+msgstr "التبديل إلى الباقة التالية"
+
+msgid "Switch to the next day"
+msgstr "التبديل إلى اليوم التالي"
+
+msgid "Switch to the previous bouquet"
+msgstr "التبديل إلى الباقة السابقة"
+
+msgid "Switch to the previous day"
+msgstr "التبديل إلى اليوم السابق"
+
+#, python-format
+msgid ""
+"This event \"%s\" has already begun or will begin in the next few minutes.\n"
+"We can not add it to your list of favorites, as will instantly record.\n"
+"Just want to switch to this service?"
+msgstr ""
+"وقد بدأ هذا الحدث \"%s\" بالفعل أو سيبدأ في الدقائق القليلة القادمة.\n"
+"لا يمكننا إضافته إلى قائمة المفضلة لديك، كما سيتم تسجيل على الفور.\n"
+"هل تريد فقط أن تتحول إلى هذه الخدمة؟"
+
+msgid "This event will be an instant record.\n"
+msgstr "هذا الحدث سيكون مسجل فورياً.\n"
+
+#, python-format
+msgid "This is a repeated timer! Do you really want to delete the repeated timer for \"%s\"?"
+msgstr "هذا توقيت متكرر! هل تريد حقا لحذف الموقت المتكرر ل \"%s\"؟"
+
+msgid "Timer sanity error"
+msgstr "خطأ في سلامة المؤقت"
+
+msgid "Timers list"
+msgstr "قائمه المؤقتات"
+
+msgid "Toggle \"view live\" type"
+msgstr "تبديل نوع \"عرض مباشر\""
+
+msgid "Toggle marker for a \"view live\" event"
+msgstr "تبديل علامة لحدث \"عرض مباشر\""
+
+msgid "Toggle primary/secondary prime time"
+msgstr "تبديل الوقت الرئيسي الأساسي/الثانوي"
+
+msgid "Try to solve conflicts and show result"
+msgstr "محاولة حل التعارضات وإظهار النتيجة"
+
+msgid "Use AutoTimer plugin instead remove favorites:"
+msgstr "استخدام بلجن المؤقت التلقائي بدلا من ذلك إزالة المفضلة:"
+
+msgid ""
+"Warning!\n"
+"This is an option for advanced users.\n"
+"Really disable timer conflict detection?"
+msgstr ""
+"تحذير!\n"
+"هذا خيار للمستخدمين المتقدمين.\n"
+"تعطيل حقا جهاز ضبط الوقت كشف التعارض؟"
+
+msgid "Zap"
+msgstr "التنقل"
+
+msgid "Zap + Record"
+msgstr "أنتقل و سجل"
+
+msgid "and never ask this again"
+msgstr "ولا نطلب هذا مرة أخرى"
+
+msgid "exit plugin"
+msgstr "الخروج من البلجن"
+
+msgid "no"
+msgstr "لا"
+
+msgid "open Multi EPG"
+msgstr "فتح الدليل الإلكتروني المتعدد"
+
+msgid "yes"
+msgstr "نعم"
