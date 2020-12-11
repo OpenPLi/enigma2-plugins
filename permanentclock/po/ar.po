@@ -1,0 +1,101 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PermanentClock\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"PO-Revision-Date: 2020-12-10 17:11+0300\n"
+"Last-Translator: mosad - مساعد الجعيد <abo-mishal@hotmail.com>\n"
+"Language-Team: mosad - مساعد الجعيد\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
+"X-Generator: Poedit 2.4.2\n"
+"X-Poedit-SearchPath-0: /home/aliabdul/dream/enigma2-plugins/permanentclock/src\n"
+
+msgid "Activate permanent clock"
+msgstr "تنشيط الساعة الدائمة"
+
+msgid "Change permanent clock position"
+msgstr "تغيير مكان الساعة الدائمة"
+
+msgid "Choice color clock:"
+msgstr "اختيار لون الساعة:"
+
+msgid "Color analog clock"
+msgstr "لون الساعة التناظرية"
+
+msgid "Color digital clock"
+msgstr "لون الساعة الرقمية"
+
+msgid "Deactivate permanent clock"
+msgstr "إلغاء تنشيط الساعة الدائمة"
+
+msgid "Disable key 'long EXIT' show/hide"
+msgstr "تعطيل مفتاح 'خروج طويل' إظهار / إخفاء"
+
+msgid "Enable key 'long EXIT' show/hide"
+msgstr "تمكين مفتاح 'خروج طويل' إظهار / إخفاء"
+
+msgid "PLi-transparent"
+msgstr "شفاف صورة بلي"
+
+msgid "Permanent Clock"
+msgstr "الساعة الدائمة"
+
+msgid "Permanent Clock Setup"
+msgstr "إعداد الساعة الدائمة"
+
+msgid "Save"
+msgstr "حفظ"
+
+msgid "Set slider"
+msgstr "تعيين شريط التمرير"
+
+msgid "Set slider step (1 - 30):"
+msgstr "تعيين خطوة شريط التمرير (1 - 30):"
+
+msgid "Show analog clock"
+msgstr "عرض الساعة التناظرية"
+
+msgid "Show digital clock"
+msgstr "عرض الساعة الرقمية"
+
+msgid "Shows the clock permanent on the screen"
+msgstr "عرض الساعة الدائمة على الشاشة"
+
+msgid "black-blue"
+msgstr "أسود- أزرق"
+
+msgid "black-white"
+msgstr "أبيض أبيض"
+
+msgid "black-yellow"
+msgstr "أسود أصفر"
+
+msgid "blue"
+msgstr "أزرق"
+
+msgid "cyan"
+msgstr "أزرق فاتح"
+
+msgid "large cyan"
+msgstr "سماوي غامق"
+
+msgid "large white"
+msgstr "أبيض غامق"
+
+msgid "large yellow"
+msgstr "أصفر غامق"
+
+msgid "transparent"
+msgstr "شفاف"
+
+msgid "white"
+msgstr "أبيض"
+
+msgid "yellow"
+msgstr "أصفر"
