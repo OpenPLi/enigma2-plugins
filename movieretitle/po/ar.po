@@ -1,0 +1,64 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Enigma 2 MovieRetitle Plugin\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"PO-Revision-Date: 2020-12-10 16:10+0300\n"
+"Last-Translator: mosad - مساعد الجعيد <abo-mishal@hotmail.com>\n"
+"Language-Team: mosad - مساعد الجعيد\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
+"X-Generator: Poedit 2.4.2\n"
+
+msgid "Cancel"
+msgstr "إلغاء"
+
+msgid "Choose target folder"
+msgstr "أختار المجلد المراد"
+
+msgid "Description"
+msgstr "الوصـف"
+
+#, python-format
+msgid "Failed to move the movie %s to %s in the background"
+msgstr "فشل نقل %s الفيلم إلى %s في الخلفية"
+
+msgid "Filename"
+msgstr "اسم الملف"
+
+msgid "Location"
+msgstr "الموقع"
+
+msgid "Name and Description Input"
+msgstr "إدخال الاسم والوصف"
+
+msgid "OK"
+msgstr "موافق"
+
+#, python-format
+msgid "Successfully moved the movie %s"
+msgstr "نقل الفيلم بنجاح %s"
+
+#, python-format
+msgid ""
+"Target file %s.ts already exist.\n"
+"Do you want to replace it?"
+msgstr ""
+"الملف الهدف %s ts موجود مسبقاً.\n"
+"هل تريد استبداله؟"
+
+#, python-format
+msgid "The movie is moved in the background from %s to %s."
+msgstr "يتم نقل الفيلم في الخلفية من %s إلى %s."
+
+msgid "The target directory is not found. The file is not renamed."
+msgstr "لم يتم العثور على الدليل الهدف. لم تتم إعادة تسمية الملف."
+
+msgid "Title"
+msgstr "عنوان"
+
+msgid "change name..."
+msgstr "تغيير الاسم..."
