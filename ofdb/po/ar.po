@@ -1,0 +1,96 @@
+# German translations for enigma package.
+# Copyright (C) 2009 THE enigma'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the enigma package.
+# Automatically generated, 2009.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Enigma 2 OFDb Plugin\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"PO-Revision-Date: 2020-12-10 16:40+0300\n"
+"Last-Translator: mosad - مساعد الجعيد <abo-mishal@hotmail.com>\n"
+"Language-Team: mosad - مساعد الجعيد\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
+"X-Poedit-Basepath: .\n"
+"X-Generator: Poedit 2.4.2\n"
+"X-Poedit-SearchPath-0: ../src\n"
+
+msgid "Ambiguous results"
+msgstr "نتائج غامضة"
+
+msgid "Cast: "
+msgstr "الممثلين: "
+
+msgid "Channel Selection"
+msgstr "إختيار القناة"
+
+msgid "Could't get Eventname"
+msgstr "تعذر الحصول على اسم الحدث"
+
+msgid "Details"
+msgstr "تفاصيل"
+
+#, python-format
+msgid "Downloading Movie Poster: %s..."
+msgstr "تحميل غلاف الفلم: %s..."
+
+msgid "Exit"
+msgstr "تسجيل الخروج"
+
+msgid "Lookup"
+msgstr "المشاهدة"
+
+msgid "No OFDb match."
+msgstr "لا تطابق قاعدة بيانات الأفلام عبر الانترنت."
+
+msgid "No cast list found in the database."
+msgstr "لا توجد قائمة موجودة للممثلين في قاعدة البيانات."
+
+msgid "No details found."
+msgstr "لايوجد تفاصيل."
+
+msgid "OFDb Details parsed"
+msgstr "تم تحليل تفاصيل قاعدة بيانات الأفلام عبر الانترنت"
+
+msgid "OFDb Download completed"
+msgstr "تم إكمال تحميل قاعدة بيانات الأفلام عبر الانترنت"
+
+msgid "OFDb Download failed"
+msgstr "فشل تحميل قاعدة بيانات الأفلام عبر الانترنت"
+
+msgid "OFDb Plugin"
+msgstr "بلجن قاعدة بيانات الأفلام عبر الانترنت"
+
+msgid "OFDb Re-Download completed"
+msgstr "تم إكمال إعادة تحميل قاعدة بيانات الأفلام عبر الانترنت"
+
+msgid "OFDb query failed!"
+msgstr "فشل استعلام قاعدة بيانات الأفلام عبر الانترنت!"
+
+msgid "Please select the matching entry"
+msgstr "من فضلك حدد النتائج المتطابقة"
+
+#, python-format
+msgid "Query OFDb: %s..."
+msgstr "استعلام قاعدة بيانات الأفلام عبر الانترنت: %s..."
+
+msgid "Query details from the Online-Filmdatenbank"
+msgstr "تفاصيل الاستعلام من البنك على الانترنت -بيانات الفلم"
+
+#, python-format
+msgid "Re-Query OFDb: %s..."
+msgstr "إعادة الاستعلام قاعدة بيانات الأفلام عبر الانترنت: %s..."
+
+msgid "The Online-Filmdatenbank"
+msgstr "متصل-بيانات الفلم"
+
+msgid "Title Menu"
+msgstr "قائمة العنوان"
+
+msgid "no user rating yet"
+msgstr "لا تقييم المستخدم حتى الآن"
