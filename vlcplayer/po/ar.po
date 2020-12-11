@@ -1,0 +1,285 @@
+# German translations for enigma package.
+# Copyright (C) 2008 THE enigma'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the enigma package.
+# Alex <info@laetsch.de>, 2008.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: enigma2.plugins.vlcplayer\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"PO-Revision-Date: 2020-11-05 14:41+0300\n"
+"Last-Translator: mosad - مساعد الجعيد <abo-mishal@hotmail.com>\n"
+"Language-Team: mosad - مساعد الجعيد\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
+"X-Generator: Poedit 2.4.1\n"
+
+msgid "1 minute"
+msgstr "دقيقة واحدة"
+
+msgid "10 minutes"
+msgstr "عشر دقائق"
+
+msgid "15 minutes"
+msgstr "15 دقيقة"
+
+msgid "20 minutes"
+msgstr "20 دقيقة"
+
+msgid "3 minutes"
+msgstr "3 دقائق"
+
+msgid "30 minutes"
+msgstr "30 دقيقة"
+
+msgid "5 minutes"
+msgstr "5 دقائق"
+
+msgid "A video streaming solution based on VLC"
+msgstr "حلول مشاركة بث الفديوهات عبر مشغل الوسائط"
+
+msgid "Audio"
+msgstr "صوت"
+
+msgid "Audio Bitrate"
+msgstr "معدل بث الصوت"
+
+msgid "Audio Channels"
+msgstr "القنوات الصوتية"
+
+msgid "Audio Codec"
+msgstr "ترميز الصوت"
+
+msgid "Audio Samplerate"
+msgstr "معدل ترميز الصوت"
+
+msgid "Cache Directory"
+msgstr "دليل ذاكرة التخزين المؤقت"
+
+msgid "Cancel"
+msgstr "إلغاء"
+
+msgid "Choice of minutes to jump"
+msgstr "اختيار الدقائق للتنقل"
+
+msgid "Choose an action:"
+msgstr "اختر إجراء:"
+
+msgid "DVD Device (leave empty for default)"
+msgstr "جهاز الديفيدي (الإفتراضي يترك فارغ)"
+
+msgid "Direct play"
+msgstr "التشغيل المباشر"
+
+msgid "Edit VLC Server"
+msgstr "تعديل خادم بث الوسائط"
+
+msgid "Enter VLC-Server as FQDN or IP-Address"
+msgstr "أدخل معلومات مشغل الوسائط أو عنوان الإيبي"
+
+msgid "Enter subtitles as Track or Language"
+msgstr "أدخل الترجمة كصوت او لغة"
+
+#, python-format
+msgid ""
+"Error loading filelist into server %(server)s:\n"
+"%(error)s"
+msgstr ""
+"Error loading filelist into server %(server)s:\n"
+"%(error)s"
+
+#, python-format
+msgid ""
+"Error loading playlist %(media)s into server %(server)s:\n"
+"%(error)s"
+msgstr ""
+"Error loading playlist %(media)s into server %(server)s:\n"
+"%(error)s"
+
+#, python-format
+msgid ""
+"Error loading playlist into server %(server)s:\n"
+"%(error)s"
+msgstr ""
+"Error loading playlist into server %(server)s:\n"
+"%(error)s"
+
+#, python-format
+msgid ""
+"Error updating filelist from server %(server)s:\n"
+"%(error)s"
+msgstr ""
+"Error updating filelist from server %(server)s:\n"
+"%(error)s"
+
+#, python-format
+msgid ""
+"Error with VLC server:\n"
+"%s"
+msgstr ""
+"خطأ مع خادم مشغل الوسائط:\n"
+"%s"
+
+msgid "FQDN"
+msgstr "FQDN"
+
+msgid "Filelist"
+msgstr "قائمة الملفات"
+
+msgid "HTTP Port"
+msgstr "منفذ بروتوكول نقل النصوص"
+
+msgid "IP-Address"
+msgstr "عنوان الايبي"
+
+msgid ""
+"Latest compatible version VLC 2.0.7\n"
+"Setup VLC for PC:\n"
+"Tools -> Preferences -> All -> Interface -> Main Interface -> Select Web\n"
+"Find file c:/Program Files/VideoLAN/VLC/Lua/http/.hosts and insert your box ip (without #).\n"
+"Add shortcut to the startup of the background start VLC 'C:\\Program Files\\VideoLAN\\VLC\\vlc.exe --intf telnet --extraintf http'"
+msgstr ""
+"أحدث إصدار متوافق مع VLC 2.0.7\n"
+"إعداد VLC للكمبيوتر الشخصي:\n"
+"الأدوات -> التفضيلات -> الكل -> الواجهة -> الواجهة الرئيسية -> حدد الويب\n"
+"ابحث عن الملف c: / Program Files / VideoLAN / VLC / Lua / http / .hosts وأدخل صندوقك ip (بدون #).\n"
+"إضافة اختصار لبدء تشغيل الخلفية ، ابدأ تشغيل VLC 'C: \\ Program Files \\ VideoLAN \\ VLC \\ vlc.exe --intf telnet --extraintf http'"
+
+msgid "List of known profiles. Note: key info - help"
+msgstr "قائمة التشكيلات الجانبية المعروفة. ملاحظة: معلومات أساسية - مساعدة"
+
+msgid "Movie Directory"
+msgstr "دليل الفيلم"
+
+msgid "No more files in this directory"
+msgstr "لا مزيد من الملفات في هذا المسار"
+
+#, python-format
+msgid ""
+"No ping from Server:\n"
+"%s\n"
+"%s"
+msgstr ""
+"لا تعليق في الخادم:\n"
+"%s\n"
+"%s"
+
+msgid "No previous file in this directory"
+msgstr "لا يوجد ملف سابق في هذا المسار"
+
+msgid ""
+"No valid Enigma-Service to play a VLC-Stream\n"
+"Check your installation and try again!"
+msgstr ""
+"لا توجد خدمة انجما صالحة لتشغيل بث مشغل الوسائط\n"
+"تحقق من التثبيت الخاص بك وحاول مرة أخرى!"
+
+msgid "OK"
+msgstr "موافق"
+
+#, python-format
+msgid "Overscan Correction [in %(percentsign)s of Video width]"
+msgstr "Overscan Correction [in %(percentsign)s of Video width]"
+
+msgid "Ping IP-Address when open Server"
+msgstr "لاق عنوان الايبي عند فتح الخادم"
+
+msgid "Playlist"
+msgstr "قائمة التشغيل"
+
+msgid "Really delete this Server?"
+msgstr "هل تريد حذف هذا الخادم؟"
+
+msgid "Reset default"
+msgstr "إعادة التعيين الافتراضي"
+
+msgid "Save as .ts and play"
+msgstr "حفظ باسم .تي اس أو تشغيل"
+
+msgid "Select VLC-Server profile"
+msgstr "حدد ملف تعريف خادم مشغل الوسائط"
+
+msgid "Select method?"
+msgstr "هل تريد تحديد الأسلوب؟"
+
+msgid "Server Address"
+msgstr "عنوان الخادم"
+
+msgid "Server Profile Name"
+msgstr "أسم ملف الخادم"
+
+msgid "Serverlist"
+msgstr "قائمة الخادم"
+
+msgid "Set as default"
+msgstr "تعيين كافتراضي"
+
+msgid "Subtitle overlay"
+msgstr "تبديل الترجمة"
+
+msgid "Subtitles"
+msgstr "الترجمة"
+
+msgid "Transcode MPEG/DVD Audio"
+msgstr "ملفات الصوت داخل القرص المضعوط"
+
+msgid "Transcode MPEG/DVD Video"
+msgstr "ملفات الفديو داخل القرص المضغوط"
+
+msgid "Use saving to Cache Directory"
+msgstr "استخدام الحفظ إلى دليل ذاكرة التخزين المؤقت"
+
+msgid "VLC < 2.x"
+msgstr "مشغل الوسائط < 2.x"
+
+msgid "VLC Media List"
+msgstr "قائمة تشغيل مشغل الوسائط"
+
+msgid "VLC Video Player"
+msgstr "مشغل الوسائط"
+
+msgid "Video Bitrate"
+msgstr "معدل بث الفيديو"
+
+msgid "Video Codec"
+msgstr "ترميز الفيديو"
+
+msgid "Video Norm"
+msgstr "قاعدة الفديو"
+
+msgid "Yellow subtitles"
+msgstr "ترجمات صفراء"
+
+msgid "add server"
+msgstr "إضافة خادم"
+
+msgid "delete server"
+msgstr "مسح الخادم"
+
+msgid "edit server"
+msgstr "تعديل خادم"
+
+msgid "filter off"
+msgstr "التصفية لاتعمل"
+
+msgid "filter on"
+msgstr "التصفية تعمل"
+
+msgid "languages"
+msgstr "اللغات"
+
+msgid "play DVD"
+msgstr "تشغيل ديفيدي"
+
+msgid "refresh"
+msgstr "تحديث"
+
+msgid "set default"
+msgstr "تعين كافتراضي"
+
+msgid "tracks"
+msgstr "الاغاني"
