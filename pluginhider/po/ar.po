@@ -1,0 +1,69 @@
+# --- PLEASE EDIT THE LINES BELOW CORRECTLY ---
+# SOME DESCRIPTIVE TITLE.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: PluginHider\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"PO-Revision-Date: 2020-11-12 17:15+0300\n"
+"Last-Translator: mosad - مساعد الجعيد <abo-mishal@hotmail.com>\n"
+"Language-Team: mosad - مساعد الجعيد\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: /Users/fk/Desktop/PluginHiderpath\n"
+"X-Generator: Poedit 2.4.1\n"
+
+msgid "Cancel"
+msgstr "إلغاء"
+
+msgid "Could not start Plugin:"
+msgstr "تعذر بدء تشغيل البلجن:"
+
+msgid "Eventinfo"
+msgstr "معلومات الحدث"
+
+msgid "Extensions"
+msgstr "إضافات"
+
+msgid "Hide Plugins"
+msgstr "إخفاء البلجن"
+
+msgid "OK"
+msgstr "موافق"
+
+msgid "PluginHider Setup"
+msgstr "ضبط إخفاء البلجن"
+
+msgid "Plugins"
+msgstr "البلج أنز"
+
+msgid "Run"
+msgstr "تشغيل"
+
+msgid "Unable to access InfoBar."
+msgstr "تعذر الوصول إلى شريط المعلومات."
+
+msgid "end editing"
+msgstr "إنهاء التحرير"
+
+msgid "run selected plugin"
+msgstr "تشغيل البلجن المحدد"
+
+msgid "save"
+msgstr "حفظ"
+
+msgid "select next tab"
+msgstr "تحديد علامة التبويب التالية"
+
+msgid "select previous tab"
+msgstr "تحديد علامة التبويب السابقة"
+
+msgid "toggle selection"
+msgstr "تحديد تبديل"
