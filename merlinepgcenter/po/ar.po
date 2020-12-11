@@ -1,0 +1,251 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: MerlinEPGCenter\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"PO-Revision-Date: \n"
+"Last-Translator: mosad - مساعد الجعيد <abo-mishal@hotmail.com>\n"
+"Language-Team: mosad- مساعد الجعيد\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
+"X-Generator: Poedit 2.4.2\n"
+
+msgid "<unknown>"
+msgstr "<مجهول>"
+
+msgid ""
+"A finished record timer wants to set your\n"
+"Dreambox to standby. Do that now?"
+msgstr ""
+"انتهاء التسجيل بالمؤقت حسب إعداداتك كم تريد\n"
+"الفوبلس فى وضع الاستعداد , أفعل ذلك الان ؟"
+
+msgid ""
+"A finished record timer wants to shut down\n"
+"your Dreambox. Shutdown now?"
+msgstr ""
+"إنتهاء التسجيل بالمؤقت هل تريد إيقاف التشغيل\n"
+"إيقاف تشغيل.جهاز الفوبلس الخاص بك"
+
+msgid ""
+"A timer failed to record!\n"
+"Disable TV and try again?\n"
+msgstr ""
+"فشل عمليه التسجيل بالمؤقت\n"
+"قم بتعطيل قنوات التليفزيون وحاول مره أخرى؟\n"
+
+msgid "Add"
+msgstr "إضافة"
+
+msgid "Add timer"
+msgstr "أضف مؤقت"
+
+msgid "Edit Off"
+msgstr "إيقاف التعيدل"
+
+msgid "Edit On"
+msgstr "تشغيل التعديل"
+
+msgid "Event Info"
+msgstr "معلومات عن الحدث"
+
+msgid "Exit on TV <-> Radio switch:"
+msgstr "الخروج من قنوات التلفزيون <-> الدخول على قنوات الراديو"
+
+msgid "Friday"
+msgstr "الجمعه"
+
+msgid "General"
+msgstr "عام"
+
+msgid "In order to record a timer, the TV was switched to the recording service!\n"
+msgstr ""
+"لكى تسجل مؤقت ، يجب تحويل شاشة التليفزيون الى القناة التى ستسجل منها!\n"
+"\n"
+
+msgid "Increase list item height:"
+msgstr "زيادة ارتفاع عنصر القائمة:"
+
+msgid "Limit search results to bouquet services:"
+msgstr "نتائج محدودة في البحث على قنوات الباقة:"
+
+msgid "List style:"
+msgstr "شكل القائمة:"
+
+msgid "Lists"
+msgstr "القوائم"
+
+msgid "MerlinEPGCenter"
+msgstr "مركز مارلين للدليل الالكتروني"
+
+msgid "Monday"
+msgstr "الاثنين"
+
+msgid "More than just an EPG..."
+msgstr "أكثر من مجرد دليل إلكتروني..."
+
+msgid "New Search"
+msgstr "بحث جديد"
+
+msgid "Now"
+msgstr "الان"
+
+msgid "Number of upcoming events to show:"
+msgstr "عدد الأحداث القادمة التي يجب عرضها:"
+
+msgid "OK"
+msgstr "موافق"
+
+msgid "Outdated off"
+msgstr "إيقاف القديم"
+
+msgid "Outdated on"
+msgstr "تشغيل القديم"
+
+msgid "Prime Time"
+msgstr "الوقت الرئيسي"
+
+msgid "Prime time:"
+msgstr "الوقت الرئيسي:"
+
+msgid "Progress bar style:"
+msgstr "شكل شريط التقدم:"
+
+msgid "Remember last tab:"
+msgstr "تذكر علامة التبويب الأخيرة:"
+
+msgid "Remove"
+msgstr "حذف"
+
+msgid "Remove timer"
+msgstr "حذف المؤقت"
+
+msgid "Replace InfoBar single and multi EPG:"
+msgstr "استبدال شريط المعلومات بدليل واحد و دليل متعدد:"
+
+msgid "Saturday"
+msgstr "السبت"
+
+msgid "Search"
+msgstr "بحث"
+
+msgid "Search for:"
+msgstr "البحث عن:"
+
+msgid "Select running service on start:"
+msgstr "حدد تشغيل قناة في البداية:"
+
+msgid "Set search term"
+msgstr "تعيين مصطلح البحث"
+
+msgid "Show blinking picon for running timers:"
+msgstr "عرض أيقونة وميض لتشغيل أجهزة ضبط المؤقتات:"
+
+msgid "Show duration:"
+msgstr "عرض المدة:"
+
+msgid "Show event information:"
+msgstr "عرض معلومات الحدث:"
+
+msgid "Show list numbers:"
+msgstr "عرض أرقام القوائم:"
+
+msgid "Show multi colored begin/remain times:"
+msgstr "عرض مؤقتات الحالية/المتبقية متعددة الألوان:"
+
+msgid "Show picons:"
+msgstr "عرض الايقونات:"
+
+msgid "Show service name:"
+msgstr "عرض اسم القناة:"
+
+msgid "Show short description:"
+msgstr "عرض وصف قصير:"
+
+msgid "Show text input help for epg search:"
+msgstr "عرض تعليمات إدخال النص للبحث عن الدليل الالكتروني:"
+
+msgid "Show timer messages:"
+msgstr "عرض رسائل المؤقت:"
+
+msgid "Show video picture:"
+msgstr "عرض صورة الفيديو:"
+
+msgid "Similar"
+msgstr "شبيهه"
+
+msgid "Single"
+msgstr "مفرد"
+
+msgid "Sunday"
+msgstr "الاحد"
+
+msgid "Thursday"
+msgstr "الخميس"
+
+msgid "Timer"
+msgstr "المؤقت"
+
+msgid "Today"
+msgstr "اليوم"
+
+msgid "Tomorrow"
+msgstr "غداً"
+
+msgid "Tuesday"
+msgstr "الثلاثاء"
+
+msgid "Unknown date"
+msgstr "تاريخ غير معروف"
+
+msgid "Upcoming"
+msgstr "القادمة"
+
+msgid "Use picons (50x30) from:"
+msgstr "استخدام بيكون (50x30) من:"
+
+msgid "Use skin:"
+msgstr "استخدام السكن:"
+
+msgid "Wednesday"
+msgstr "الاربعاء"
+
+msgid "about to start"
+msgstr "على وشك التشغيل"
+
+msgid "disabled"
+msgstr "تم التعطيل"
+
+msgid "done!"
+msgstr "إنتهى!"
+
+msgid "four parts"
+msgstr "أربعة أجزاء"
+
+msgid "gradient"
+msgstr "مدرج"
+
+msgid "recording..."
+msgstr "جاري التسجيل..."
+
+msgid "return"
+msgstr "العودة"
+
+msgid "simple"
+msgstr "بسيط"
+
+msgid "single line style"
+msgstr "شكل سطر واحد"
+
+msgid "waiting"
+msgstr "فى الانتظار"
+
+msgid "with short description"
+msgstr "مع وصف قصير"
+
+msgid "zapped"
+msgstr "تم الانتقال"
