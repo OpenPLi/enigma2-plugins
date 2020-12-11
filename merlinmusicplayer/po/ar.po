@@ -1,0 +1,366 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: MerlinMusicPlayer\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"PO-Revision-Date: 2020-12-10 16:08+0300\n"
+"Last-Translator: mosad - مساعد الجعيد <abo-mishal@hotmail.com>\n"
+"Language-Team: mosad - مساعد الجعيد\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.4.2\n"
+"X-Poedit-Basepath: c:/00000000_0MerlinPlayer/merlinmusicplayer/src\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: c:/00000000_0MerlinPlayer/merlinmusicplayer/src\n"
+
+#, python-format
+msgid ""
+"%d files added to database!\n"
+"Press OK to close."
+msgstr ""
+"%d الملفات المضافة إلى قاعدة البيانات!\n"
+"اضغط على موافق للإغلاق."
+
+#, python-format
+msgid ""
+"%s\n"
+" added to database"
+msgstr ""
+"%s\n"
+" تمت إضافته إلى قاعدة البيانات"
+
+#, python-format
+msgid ""
+"%s\n"
+" already exists in database!"
+msgstr ""
+"%s\n"
+" موجود بالفعل في قاعدة البيانات!"
+
+#, python-format
+msgid ""
+"%s\n"
+"appended to songlist"
+msgstr ""
+"%s\n"
+"ملحقة بقائمة الأغاني"
+
+#, python-format
+msgid ""
+"%s\n"
+"inserted and will be played as next song"
+msgstr ""
+"%s\n"
+"إدراج وسيتم تشغيلها كما الأغنية التالية"
+
+msgid "Activate screensaver"
+msgstr "تنشيط شاشة التوقف"
+
+msgid "Add all songs from selected album to a playlist"
+msgstr "إضافة كافة الأغاني من الألبوم المحدد إلى قائمة تشغيل"
+
+msgid "Add all songs from selected artist to a playlist"
+msgstr "إضافة كافة الأغاني من فنان محدد إلى قائمة تشغيل"
+
+msgid "Add all songs from selected genre to a playlist"
+msgstr "إضافة جميع الأغاني من النوع المحدد إلى قائمة تشغيل"
+
+msgid "Add music files to iDream database"
+msgstr "إضافة ملفات الموسيقى إلى قاعدة بيانات أي دريم"
+
+msgid "Add selected song to a playlist"
+msgstr "إضافة أغنية محددة إلى قائمة تشغيل"
+
+#, python-format
+msgid "Album (%s) -> Song List"
+msgstr "الألبوم (%s) - قائمة الأغاني >"
+
+#, python-format
+msgid "Albums (%d)"
+msgstr "الألبومات (%d)"
+
+msgid "Albums List"
+msgstr "قائمة الألبومات"
+
+msgid "All Artists"
+msgstr "كل الفنانين"
+
+msgid "All Songs"
+msgstr "كل الأغاني"
+
+msgid "Append file to current playing songlist"
+msgstr "إلحاق ملف بقائمة الأغاني الحالية التي يتم تشغيلها"
+
+msgid "Append file to current songlist"
+msgstr "إلحاق ملف بقائمة الأغاني الحالية"
+
+#, python-format
+msgid "Artist (%s) -> Album List"
+msgstr "الفنان (%s) -> قائمة الألبوم"
+
+#, python-format
+msgid "Artist (%s) -> Song List"
+msgstr "الفنان (%s) -> قائمة الأغاني"
+
+#, python-format
+msgid "Artists (%d)"
+msgstr "الفنانون (%d)"
+
+msgid "Artists List"
+msgstr "قائمة الفنانين"
+
+msgid "Cancel"
+msgstr "إلغاء"
+
+msgid "Clear current songlist and play selected entry"
+msgstr "مسح قائمة الأغاني الحالية وتشغيل الإدخال المحدد"
+
+msgid "Close"
+msgstr "إغلاق"
+
+msgid "Configuration"
+msgstr "الإعدادات"
+
+msgid "Create new playlist"
+msgstr "إنشاء قائمة تشغيل جديدة"
+
+msgid "Delete selected playlist"
+msgstr "حذف قائمة التشغيل المحددة"
+
+msgid "Delete song from current playlist"
+msgstr "حذف الأغنية من قائمة التشغيل الحالية"
+
+msgid "Delete song from database"
+msgstr "حذف أغنية من قاعدة البيانات"
+
+msgid "Do you really want to add all songs from that album to a playlist?"
+msgstr "هل تريد حقاً إضافة جميع الأغاني من هذا الألبوم إلى قائمة تشغيل؟"
+
+msgid "Do you really want to add all songs from that artist to a playlist?"
+msgstr "هل تريد حقاً إضافة جميع الأغاني من هذا الفنان إلى قائمة تشغيل؟"
+
+msgid "Do you really want to add all songs from that genre to a playlist?"
+msgstr "هل تريد حقاً إضافة جميع الأغاني من هذا النوع إلى قائمة تشغيل؟"
+
+msgid "Do you really want to delete that song from the database?"
+msgstr "هل تريد حقاً حذف تلك الأغنية من قاعدة البيانات؟"
+
+msgid "Do you really want to delete that song the current playlist?"
+msgstr "هل تريد حقا أن حذف هذه الأغنية قائمة التشغيل الحالية؟"
+
+msgid "Do you really want to delete the current playlist?"
+msgstr "هل تريد حذف قائمة التشغيل الحالية؟"
+
+msgid "Enter name for playlist"
+msgstr "أدخل اسم قائمة التشغيل"
+
+msgid "Enter search text"
+msgstr "أدخل نص البحث"
+
+msgid ""
+"Error!\n"
+"Can not open database!\n"
+"Check if save folder is correct and writeable!\n"
+"Press OK to close."
+msgstr ""
+"الخطا!\n"
+"لا يمكن فتح قاعدة البيانات!\n"
+"تحقق مما إذا كان حفظ المجلد هو الصحيح والكتابة!\n"
+"اضغط على موافق لإغلاق."
+
+msgid "Filebrowser startup path"
+msgstr "مسار بدء تشغيل ملف"
+
+#, python-format
+msgid "Filelist: %s"
+msgstr "قائمة الملفات: %s"
+
+#, python-format
+msgid "Genre (%s) -> Song List"
+msgstr "النوع (%s) -> قائمة الأغاني"
+
+msgid "Genre List"
+msgstr "قائمة النوع"
+
+#, python-format
+msgid "Genres (%d)"
+msgstr "الأنواع (%d)"
+
+msgid "Google image path"
+msgstr "مسار صور جوجل"
+
+msgid "Insert file to current playing songlist and play next"
+msgstr "إدراج ملف إلى قائمة الأغاني الحالية وتشغيل التالي"
+
+msgid "Insert file to current songlist and play next"
+msgstr "إدراج ملف إلى قائمة الأغاني الحالية وتشغيل التالي"
+
+msgid "Invalid Location"
+msgstr "موقع غير صالح"
+
+msgid "Lyrics"
+msgstr "كلمات الاغنية"
+
+msgid "Main Menu"
+msgstr "القائـمة الرئيسيـة"
+
+msgid "Merlin Music Player"
+msgstr "مشغل مارلين الموسيقي"
+
+msgid "Merlin Music Player Lyrics"
+msgstr "كلمات مشغل مارلين الموسيقي"
+
+msgid "Merlin Music Player Setup"
+msgstr "ضبط مشغل مارلين الموسيقي"
+
+msgid "Merlin Music Player Songlist"
+msgstr "قائمة الأغاني مشغل مارلين الموسيقي"
+
+msgid "Merlin Music Player TV"
+msgstr "مشغل مارلين الموسيقي على الشاشة"
+
+msgid "Merlin music player"
+msgstr "مشغل مارلين الموسيقي"
+
+msgid "No lyrics found"
+msgstr "لم يتم العثور على كلمات"
+
+msgid "No music files found!"
+msgstr "لم يتم العثور على ملفات الموسيقى!"
+
+msgid "OK"
+msgstr "موافق"
+
+msgid "Play"
+msgstr "تشغيل"
+
+msgid "Play last used songlist after starting"
+msgstr "تشغيل آخر قائمة أغاني مستخدمة بعد البدء"
+
+#, python-format
+msgid "Playlist (%s) -> Song List"
+msgstr "قائمة التشغيل (%s) -> قائمة الأغاني"
+
+msgid "Playlists"
+msgstr "قوائم التشغيل"
+
+#, python-format
+msgid "Playlists (%d)"
+msgstr "قوائم التشغيل (%d)"
+
+msgid ""
+"Process aborted.\n"
+" 0 files added to database!\n"
+"Press OK to close."
+msgstr ""
+"تم إحباط العملية.\n"
+" 0 إضافة الملفات إلى قاعدة البيانات!\n"
+"اضغط على موافق لإغلاق."
+
+msgid "Receiver Music Database"
+msgstr "قاعدة بيانات موسيقى الجهاز"
+
+msgid "Remember last path of filebrowser"
+msgstr "تذكر المسار الأخير من متصفح الملفات"
+
+msgid "Repeat is not available yet with cue-files!"
+msgstr "تكرار غير متوفر حتى الآن مع جديلة الملفات!"
+
+#, python-format
+msgid "Response -> lyrics for: %s (%s)"
+msgstr "رد -> كلمات ل: %s (%s)"
+
+msgid "Scan path for music files and add them to database"
+msgstr "مسح مسار ملفات الموسيقى وإضافتها إلى قاعدة البيانات"
+
+msgid "Search in iDream database"
+msgstr "البحث في قاعدة بيانات أي دريم"
+
+#, python-format
+msgid "Search results for \"%s\" in all albums"
+msgstr "نتائج البحث عن \"%s\" في جميع الألبومات"
+
+#, python-format
+msgid "Search results for \"%s\" in all artists"
+msgstr "نتائج البحث عن \"%s\" في جميع الفنانين"
+
+#, python-format
+msgid "Search results for \"%s\" in all titles"
+msgstr "نتائج البحث عن \"%s\" في جميع العناوين"
+
+#, python-format
+msgid "Search results for \"%s\" in title, artist or album"
+msgstr "نتائج البحث عن \"%s\" في العنوان أو الفنان أو الألبوم"
+
+msgid "Select path"
+msgstr "تحديد المسار"
+
+msgid "Show Album"
+msgstr "عرض الألبوم"
+
+msgid "Show Merlin Music Player in extensions menu"
+msgstr "عرض مشغل ميرلين الموسيقي في قائمة الملحقات"
+
+msgid "Show Merlin Music Player in main menu"
+msgstr "عرض مشغل موسيقى ميرلين في القائمة الرئيسية"
+
+msgid "Show iDream in extensions menu"
+msgstr "عرض أي دريم في قائمة الملحقات"
+
+msgid "Show iDream in main menu"
+msgstr "عرض أي دريم في القائمة الرئيسية"
+
+msgid "Shuffle is not available yet with cue-files!"
+msgstr "التشغيل العشوائي غير متوفر حتى الآن مع قطع الملفات!"
+
+#, python-format
+msgid "Songs (%d)"
+msgstr "الأغاني (%d)"
+
+msgid ""
+"There are no playlists defined.\n"
+"Do you want to create a new playlist?"
+msgstr ""
+"لا توجد قوائم تشغيل محددة.\n"
+"هل تريد إنشاء قائمة تشغيل جديدة؟"
+
+#, python-format
+msgid "This Receiver can't decode %s streams!"
+msgstr "جهاز الإستقبال لايفتح تشفير %s البث!"
+
+#, python-format
+msgid "Track %s"
+msgstr "الاصوات %s"
+
+msgid "Use google-images for cover art"
+msgstr "استخدام صور جوجل لفن الغلاف"
+
+msgid "Wait for screensaver (in min)"
+msgstr "انتظر شاشة التوقف (بالدقيقة)"
+
+msgid "[back]"
+msgstr "[رجوع]"
+
+msgid "iDream"
+msgstr "أي دريم"
+
+msgid "iDream Main Menu"
+msgstr "القائمة الرئيسية أي دريم"
+
+msgid "iDream database path"
+msgstr "مسار قاعدة بيانات أي دريم"
+
+msgid "search for album"
+msgstr "البحث عن الألبوم"
+
+msgid "search for artist"
+msgstr "البحث عن فنان"
+
+msgid "search for title"
+msgstr "البحث عن عنوان"
+
+msgid "search in all of them"
+msgstr "البحث في كل منهم"
