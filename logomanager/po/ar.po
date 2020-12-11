@@ -1,0 +1,120 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: logo manager\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-08-01 20:49+0200\n"
+"PO-Revision-Date: 2020-12-10 15:29+0300\n"
+"Last-Translator: mosad - مساعد الجعيد <abo-mishal@hotmail.com>\n"
+"Language-Team: mosad - مساعد الجعيد\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.4.2\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
+
+msgid "Add default bootlogo to folder logos"
+msgstr "أضف صورة واجهة التشغيل الافتراضية إلى شعارات المجلد"
+
+msgid "Add default radio to folder logos"
+msgstr "أضف صورة واجهة تشغيل الراديو الافتراضية إلى شعارات المجلد"
+
+msgid "CF Drive"
+msgstr "فلاشة مدمجة"
+
+msgid "Cancel"
+msgstr "إلغاء"
+
+msgid "Directory to scan for logos"
+msgstr "مسار بحث عن الشعارات"
+
+msgid "Disable backdrop"
+msgstr "تعطيل فديو واجهة التشغيل"
+
+msgid "Disable reboot"
+msgstr "تعطيل إعادة التشغيل"
+
+msgid "Disable switch off"
+msgstr "تعطيل إعادة التشغيل"
+
+msgid "Harddisk"
+msgstr "القرص الصلب"
+
+msgid "Install selected logo as..."
+msgstr "تثبيت الشعار المحدد كـ..."
+
+msgid "Logo Manager"
+msgstr "إدارة الشعارات"
+
+msgid "Logo manager setup"
+msgstr "ضبط إدارة الشعارات"
+
+msgid "None"
+msgstr "لاشيئ"
+
+#, python-format
+msgid "Not found directory '%s'!"
+msgstr "لم يتم العثور على مسار '%s'!"
+
+msgid "OK"
+msgstr "موافق"
+
+msgid "Open configuration"
+msgstr "فتح الاعدادات"
+
+msgid "Please select a option:"
+msgstr "الرجاء تحديد خيار:"
+
+#, python-format
+msgid "Really remove current logo of %s?"
+msgstr "هل تريد حقا إزالة الشعار الحالي %s?"
+
+msgid "Remove current logo"
+msgstr "إزالة الشعار الحالي"
+
+msgid "Reset all logos to default"
+msgstr "إعادة تعيين كافة الشعارات إلى الافتراضي"
+
+msgid "Reset bootlogo to default"
+msgstr "إعادة تعيين صورة واجهة التشغيل الإفتراضية"
+
+msgid "Reset radio to default"
+msgstr "إعادة تعيين الراديو إلى الافتراضي"
+
+msgid "Select target for logo:"
+msgstr "حدد الشعار المستهدف:"
+
+msgid "Show active logos"
+msgstr "عرض الشعارات النشطة"
+
+msgid "Show available logos"
+msgstr "عرض الشعارات المتاحة"
+
+msgid "USB Drive"
+msgstr "محرك وحدات الفلاش مموري"
+
+msgid "backdrop"
+msgstr "خلفية"
+
+msgid "bootlogo"
+msgstr "صورة بداية التشغيل"
+
+msgid "manage logos to display at boottime"
+msgstr "إدارة الشعارات لعرضها وقت التشغيل"
+
+msgid "radio"
+msgstr "الراديو"
+
+msgid "reboot"
+msgstr "إعادة تشغيل"
+
+msgid "switch off"
+msgstr "إيقاف تشغيل"
+
+msgid "view bootlogo/mvi"
+msgstr "عرض صورة بداية التشغيل/بصيغة"
