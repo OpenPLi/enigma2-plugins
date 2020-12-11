@@ -1,0 +1,275 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: shoutcast\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"PO-Revision-Date: \n"
+"Last-Translator: mosad - مساعد الجعيد <abo-mishal@hotmail.com>\n"
+"Language-Team: mosad - مساعد الجعيد\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
+"X-Generator: Poedit 2.4.1\n"
+"X-Poedit-SearchPath-0: ../src\n"
+
+#, python-format
+msgid ""
+"%s\n"
+"Press OK to try again..."
+msgstr ""
+"%s\n"
+"اضغط موافق للمحاولة مرة أخرى..."
+
+#, python-format
+msgid ""
+"%s\n"
+"Press green-button to try again..."
+msgstr ""
+"%s\n"
+"اضغط على الزر الأخضر للمحاولة مرة أخرى..."
+
+msgid ">= 128 kbps"
+msgstr ">= 128 كيلو بايت في الثانية"
+
+msgid ">= 192 kbps"
+msgstr ">= 192 كيلو بايت في الثانية"
+
+msgid ">= 256 kbps"
+msgstr ">= 256 كيلو بايت في الثانية"
+
+msgid ">= 64 kbps"
+msgstr ">= 64 كيلو بايت في الثانية"
+
+msgid "Activate Picture in Picture"
+msgstr "تفعيل قناة داخل قناة"
+
+msgid "Add current playing stream to favorite"
+msgstr "إضافة قناة الايبي المشغلة حاليا إلى المفضلة"
+
+msgid "Add current selected genre to favorite"
+msgstr "إضافة النوع المحدد الحالي إلى المفضلة"
+
+msgid "Add current selected station to favorite"
+msgstr "إضافة محطة محددة حالية إلى المفضلة"
+
+msgid "Add sequence number to output file"
+msgstr "إضافة رقم التسلسل إلى ملف الإخراج"
+
+msgid "All"
+msgstr "الكل"
+
+#, python-format
+msgid "Audio: %s"
+msgstr "الصوت: %s"
+
+#, python-format
+msgid "Bit rate: %s kbps"
+msgstr "معدل البت: %s كيلو بايت في الثانية"
+
+msgid "Cancel"
+msgstr "إلغاء"
+
+msgid "Choose action:"
+msgstr "اختر الإجراء:"
+
+msgid "Config"
+msgstr "الاعدادات"
+
+msgid "Coverheight:"
+msgstr "طول مقاس الغلاف:"
+
+msgid "Coverwidth:"
+msgstr "عرض مقاس الغلاف:"
+
+msgid "Create a directory for each stream"
+msgstr "إنشاء مسار لكل قناة تدفق"
+
+msgid "Disable Picture in Picture"
+msgstr "تعطيل قناة داخل قناة"
+
+msgid "Do you really want to stop the recording?"
+msgstr "هل تريد حقاً إيقاف التسجيل؟"
+
+msgid "Enter in minutes (0 means unlimited)"
+msgstr "أدخل في دقائق (0 يعني غير محدود)"
+
+msgid "Enter new name for favorite item"
+msgstr "إدخال اسم جديد للعنصر المفضل"
+
+msgid "Enter text to search for"
+msgstr "إدخال نص للبحث عن"
+
+#, python-format
+msgid "Error create directory %s!"
+msgstr "خطأ في إنشاء %s المسار!"
+
+msgid "Error downloading cover..."
+msgstr "خطأ في تحميل الغلاف..."
+
+msgid "Favorite list"
+msgstr "القائمة المفضلة"
+
+msgid "Favorites"
+msgstr "المفضلة"
+
+msgid "First play streaming!"
+msgstr "أولا تشغيل قنوات المشاركة!"
+
+msgid "Genres"
+msgstr "النوع"
+
+#, python-format
+msgid "Getting %s"
+msgstr "الحصول على %s"
+
+#, python-format
+msgid "Getting SHOUTcast genre list for %s..."
+msgstr "الحصول على قائمة أنواع البث المنتج لـ %s..."
+
+msgid "Getting SHOUTcast genre list..."
+msgstr "الحصول على قائمة أنواع البث المنتج..."
+
+#, python-format
+msgid ""
+"Getting streaming data from\n"
+"%s"
+msgstr ""
+"الحصول على بيانات التدفق من\n"
+"%s"
+
+msgid ""
+"Got 0 genres. Could be a network problem.\n"
+"Please try again..."
+msgstr ""
+"حصلت على 0 أنواع. يمكن أن تكون مشكلة في الشبكة.\n"
+"حاول مرة اخرى..."
+
+msgid "Hide"
+msgstr "إخفاء"
+
+msgid "Invalid Location"
+msgstr "موقع غير صالح"
+
+msgid "Menu PiP"
+msgstr "قائمة خاصية قناة داخل قناة"
+
+msgid "Move Picture in Picture"
+msgstr "تحريك قناة داخل قناة"
+
+msgid "No streaming data found..."
+msgstr "لا يوجد بيانات قنوات تدفق تم العثور عليها..."
+
+msgid "OK"
+msgstr "موافق"
+
+msgid "Off"
+msgstr "لا يعمل"
+
+msgid "Only running streamings can be recorded!"
+msgstr "يمكن تسجيل البث الجاري فقط!"
+
+msgid "Record"
+msgstr "تسجيل"
+
+msgid "Recording length"
+msgstr "طول التسجيل"
+
+msgid "Recording location:"
+msgstr "موقع التسجيل:"
+
+msgid "Recording stream station"
+msgstr "محطة بث التسجيل"
+
+msgid "Reload station list:"
+msgstr "إعادة تحميل قائمة المحطات:"
+
+msgid "Rip to single file, name is timestamped"
+msgstr "نسخ إلى ملف واحد ، الاسم مختوم بطابع زمني"
+
+msgid "SHOUTcast genre list"
+msgstr "قائمة أنواع البث المنتج"
+
+msgid "SHOUTcast setup"
+msgstr "ضبط قائمة أنواع البث المنتج"
+
+#, python-format
+msgid "SHOUTcast station list for %s"
+msgstr "قائمة محظة البث المنتج لـ %s"
+
+msgid "Search"
+msgstr "بحث"
+
+#, python-format
+msgid "Searching SHOUTcast for %s..."
+msgstr "البحث في البث المنتج %s..."
+
+msgid "Select record path for streamripper"
+msgstr "حدد مسار السجل للتدفق المختار"
+
+msgid "Show cover:"
+msgstr "عرض غلاف الأفلام:"
+
+msgid "Show in extension menu:"
+msgstr "عرض في الملحقات في القائمة:"
+
+#, python-format
+msgid "Station: %s"
+msgstr "المحطة: %s"
+
+msgid "Stations"
+msgstr "محطات"
+
+msgid "Stop record"
+msgstr "إيقاف التسجيل"
+
+msgid "Stream stopped playing, playback of stream stopped!"
+msgstr "توقف البث عن التشغيل ، توقف تشغيل التدفق!"
+
+msgid "Streaming rate:"
+msgstr "معدل البث:"
+
+#, python-format
+msgid "Title: %s"
+msgstr "العنوان: %s"
+
+msgid "Title: n/a"
+msgstr "العنوان: لا شئ"
+
+msgid "Zap focus to Picture in Picture"
+msgstr "مركز التنقل إلى قناة داخل قناة"
+
+msgid "Zap focus to main screen"
+msgstr "مركز التنقل إلى الشاشة الرئيسية"
+
+msgid "every five minutes"
+msgstr "كل خمس دقائق"
+
+msgid "every minute"
+msgstr "كل دقيقة"
+
+msgid "every three minutes"
+msgstr "كل ثلاث دقائق"
+
+#, python-format
+msgid "genre %s"
+msgstr "النوع %s"
+
+msgid "listen to shoutcast internet-radio"
+msgstr "الاستماع إلى قنوات راديو الإنترنت"
+
+msgid "remove current selected favorite"
+msgstr "إزالة المفضلة المحددة الحالية"
+
+msgid "rename current selected favorite"
+msgstr "إعادة تسمية المفضلة المحددة الحالية"
+
+#, python-format
+msgid "search-criteria %s"
+msgstr "معايير البحث %s"
+
+msgid "streamripper not installed!"
+msgstr "تيار التدفق غير مثبت!"
