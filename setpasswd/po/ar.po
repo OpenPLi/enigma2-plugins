@@ -1,0 +1,55 @@
+# German translations for enigma2-plugins package.
+# Copyright (C) 2009 THE enigma2-plugins'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the enigma2-plugins package.
+# Automatically generated, 2009.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: enigma2-plugins 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"PO-Revision-Date: 2020-10-29 16:44+0300\n"
+"Last-Translator: mosad - مساعد الجعيد <abo-mishal@hotmail.com>\n"
+"Language-Team: mosad - مساعد الجعيد\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
+"X-Generator: Poedit 2.4.1\n"
+
+msgid "Change Root Password"
+msgstr "تغيير كلمة مرور الملفات"
+
+msgid "Change or reset the root password of your box"
+msgstr "قم بتغيير أو إعادة تعيين كلمة مرور الملفات على جهاز الاستقبال الخاص بك"
+
+msgid "Delete Password"
+msgstr "حذف كلمة المرور"
+
+msgid "Enter new Password"
+msgstr "أَدْخِلْ كلمة المرور الجديدة"
+
+msgid "Enter your password here:"
+msgstr "أدخل كلمة المرور هنا:"
+
+msgid "Password deleted sucessfully for root user"
+msgstr "تم حذف كلمة المرور بنجاح لملفات المستخدم"
+
+msgid "Set Password"
+msgstr "تعيين كلمة المرور"
+
+msgid "Sucessfully changed password for root user to: "
+msgstr "تم تغيير كلمة المرور بنجاح لملفات المستخدم إلى: "
+
+msgid "Unable to change/reset password for root user"
+msgstr "غير قادر على تغيير/ إعادة تعيين كلمة المرور لملفات المستخدم"
+
+msgid "Unable to delete password for root user"
+msgstr "غير قادر على حذف كلمة المرور لملفات المستخدم"
+
+msgid "new Random"
+msgstr "عشوائية جديدة"
+
+msgid "virt. Keyboard"
+msgstr "لوحة المفاتيح"
