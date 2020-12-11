@@ -1,0 +1,128 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: satipclient\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"PO-Revision-Date: 2020-11-05 17:11+0300\n"
+"Last-Translator: mosad - مساعد الجعيد <abo-mishal@hotmail.com>\n"
+"Language-Team: mosad - مساعد الجعيد\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.4.1\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
+
+msgid " "
+msgstr " "
+
+msgid "Cancel"
+msgstr "إلغاء"
+
+msgid "DVB-S"
+msgstr "بث الفديو الرقمي من الأقمار"
+
+msgid "Description"
+msgstr "الوصـف"
+
+msgid "Disable"
+msgstr "تعطيل"
+
+msgid "Discover"
+msgstr "ديسكفر"
+
+#, python-format
+msgid "IP : %s"
+msgstr "الايبي : %s"
+
+msgid "Manufacturer"
+msgstr "الشركة المصنعة"
+
+msgid "Model URL"
+msgstr "موديل البرابط"
+
+msgid "No vtuner found."
+msgstr "لم يتم العثور على المؤالف."
+
+msgid "OK"
+msgstr "موافق"
+
+msgid "Presentation URL"
+msgstr "رابط العرض التقديمي"
+
+msgid "Really close without saving settings?"
+msgstr "هل تريد الإغلاق بدون حفظ الإعدادات؟"
+
+msgid "SAT>IP Capability"
+msgstr "القمر> إمكانية الايبي"
+
+msgid "SAT>IP Client"
+msgstr "القمر> عميل الايبي"
+
+msgid "SAT>IP Client Setup"
+msgstr "القمر> ضبط عميل الايبي"
+
+msgid "SAT>IP Client Tuner Setup"
+msgstr "القمر> ضبط مؤالف عميل الايبي"
+
+msgid "SAT>IP Client attached to vtuner."
+msgstr "القمر>عميل الايبي مرتبط بالمؤالف."
+
+#, python-format
+msgid "SAT>IP SERVER : %s"
+msgstr "القمر>خادم الايبي : %s"
+
+msgid "SAT>IP Server : "
+msgstr "القمر>خادم الايبي : "
+
+msgid "SAT>IP Tuner Type : "
+msgstr "القمر>نوع مؤالف الايبي : "
+
+#, python-format
+msgid "SAT>IP server discovering for %d seconds..."
+msgstr "القمر>يكتشف خادم الايبي لمدة %d ثانية ..."
+
+msgid "SAT>IP server is not detected."
+msgstr "القمر>لم يتم الكشف عن خادم الايبي."
+
+msgid "Save"
+msgstr "حفظ"
+
+msgid "Select"
+msgstr "تحديد"
+
+msgid "Select tuner and press setup key (Yellow)"
+msgstr "حدد الموالف واضغط على مفتاح الإعداد (أصفر)"
+
+msgid "Server capacity is fulled."
+msgstr "سعة الخادم ممتلئة."
+
+msgid "Setup"
+msgstr "الضبط"
+
+msgid "Starting..."
+msgstr "يشتغل..."
+
+#, python-format
+msgid "TUNER TYPE : %s"
+msgstr "نوع موالف : %s"
+
+#, python-format
+msgid "TYPE : %s"
+msgstr "النوع : %s"
+
+#, python-format
+msgid "VIRTUAL TUNER %s"
+msgstr "مؤالف ظاهري %s"
+
+msgid ""
+"You should now reboot your STB to change SAT>IP Configuration.\n"
+"\n"
+"Reboot now ?\n"
+"\n"
+msgstr ""
+"يجب عليك الآن إعادة تشغيل جهاز الاستقبال الخاص بك لتغيير إعدادات قمر>الايبي .\n"
+"\n"
+"إعادة التشغيل الآن؟\n"
+"\n"
