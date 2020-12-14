@@ -1006,7 +1006,7 @@ class Blindscan(ConfigListScreen, Screen):
 			else:
 				self.session.open(MessageBox, _("Not found blind scan utility '%s'!") % tools, MessageBox.TYPE_ERROR)
 				return
-		elif BOX_NAME == "sf8008":
+		elif BOX_NAME.startswith("sf8008"):
 			#self.frontend and self.frontend.closeFrontend()
 			tools = "/usr/bin/octagon-blindscan"
 			if os.path.exists(tools):
