@@ -125,14 +125,6 @@ class AutoMount():
 		if 'ro' not in options and 'rw' not in options:
 			options.append('rw')
 
-		# if not specified, don't hang on server errors
-		if 'soft' not in options and 'hard' not in options:
-			options.append('soft')
-
-		# if not specified, don't update last access time
-		if 'atime' not in options and 'noatime' not in options and 'relatime' not in options:
-			options.append('noatime')
-
 		# if not specified, disable locking
 		if 'lock' not in options and 'nolock' not in options:
 			options.append('nolock')
@@ -171,6 +163,14 @@ class AutoMount():
 			if 'intr' not in options and 'nointr' not in options:
 				options.append('intr')
 
+			# if not specified, don't hang on server errors
+			if 'soft' not in options and 'hard' not in options:
+				options.append('soft')
+
+			# if not specified, don't update last access time
+			if 'atime' not in options and 'noatime' not in options and 'relatime' not in options:
+				options.append('noatime')
+
 		# unknown mounttype
 		else:
 			print "[AutoMount.py] Unknown mount type: ",mounttype
@@ -183,7 +183,7 @@ class AutoMount():
 		secvers = ( \
 			'vers=3,sec=ntlmssp', 'vers=3,sec=ntlmv2', 'vers=2.1,sec=ntlmssp', 'vers=2.1,sec=ntlmv2', \
 			'vers=2.1,sec=ntlm', 'vers=1.0,sec=ntlmssp', 'vers=1.0,sec=ntlmv2', 'vers=1.0,sec=ntlm', \
-			'vers=default' \
+			'vers=default', '' \
 		)
 
 		# create a console object if it doesnt exist
