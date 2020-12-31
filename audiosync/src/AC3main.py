@@ -281,7 +281,7 @@ class AC3SetCustomValue:
 
 	def getKeyList(self):
 		keyList = []
-		for i, iValue in self.keyStep.iteritems():
+		for i, iValue in iter(self.keyStep.items()):
 			if i != "0":
 				keyList.append((_("Key %(key)s (current value: %(value)i ms)") % dict(key=i, value=iValue), i))
 		return keyList
