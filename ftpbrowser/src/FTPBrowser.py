@@ -39,6 +39,9 @@ from os import path as os_path, unlink as os_unlink, rename as os_rename, \
 from time import time
 import re
 
+from enigma import gFont 
+HD = getDesktop(0).size()
+
 def FTPFileEntryComponent(file, directory):
 	isDir = True if file['filetype'] == 'd' else False
 	name = file['filename']
@@ -85,6 +88,13 @@ class FTPFileList(FileList):
 
 		if self.ftpclient is None:
 			self.list = []
+            		self.l.setFont(9, gFont('Regular', 34))
+			
+		    	if HD.width() > 1280:
+              		    self.l.setItemHeight(40)
+            		else:
+                	    self.l.setItemHeight(40)			
+			
 			self.l.setList(self.list)
 			return
 
@@ -103,6 +113,13 @@ class FTPFileList(FileList):
 			list.insert(0, FileEntryComponent(name = "<" +_("Parent Directory") + ">", absolute = '/'.join(self.current_directory.split('/')[:-2]) + '/', isDir = True))
 
 		self.isValid = True
+		
+		if HD.width() > 1280:
+		    self.l.setItemHeight(40)
+		else:
+		    self.l.setItemHeight(40)
+		self.l.setFont(9, gFont('Regular', 34))
+		
 		self.l.setList(list)
 		self.list = list
 
