@@ -141,7 +141,7 @@ class AutoMount():
 			# and add any passed
 			if username or password:
 				options.append('username="%s"' % username)
-				options.append('password="%s"' % password)
+				options.append('password="%s"' % "" if password is None else password)
 
 			# default to utf8
 			if not [i for i in options if i.startswith('iocharset=')]:
