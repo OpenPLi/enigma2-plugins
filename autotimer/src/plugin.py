@@ -38,7 +38,7 @@ from AutoTimer import AutoTimer
 autotimer = AutoTimer()
 autopoller = None
 
-AUTOTIMER_VERSION = "4.6.5"
+AUTOTIMER_VERSION = "4.6.6"
 
 try:
 	from Plugins.SystemPlugins.MPHelp import registerHelp, XMLHelpReader
@@ -347,7 +347,7 @@ def handleAutoPoller():
 		if autopoller is None:
 			from AutoPoller import AutoPoller
 			autopoller = AutoPoller()
-		autopoller.start(initial = False)
+		autopoller.start(initial=False)
 	# Remove instance if not running in background
 	else:
 		autopoller = None
@@ -474,6 +474,17 @@ def housekeepingExtensionsmenu(el):
 			plugins.removePlugin(extDescriptor_scan)
 		except ValueError as ve:
 			doLog("[AutoTimer] housekeepingExtensionsmenu got confused, tried to remove non-existant plugin entry... ignoring.")
+
+def timezoneChanged(self):
+	if config.plugins.autotimer.autopoll.value and autopoller is not None:
+		autopoller.pause()
+		autopoller.start(initial=False)
+		doLog("[AutoTimer] Timezone change detected.")
+
+try:
+	config.timezone.val.addNotifier(timezoneChanged, initial_call=False, immediate_feedback=False)
+except AttributeError:
+	doLog("[AutoTimer] Failed to load timezone notifier.")
 
 config.plugins.autotimer.show_in_extensionsmenu.addNotifier(housekeepingExtensionsmenu, initial_call = False, immediate_feedback = True)
 extDescriptor = PluginDescriptor(name=_("AutoTimer"), description = _("Edit Timers and scan for new Events"), where = PluginDescriptor.WHERE_EXTENSIONSMENU, fnc = extensionsmenu, needsRestart = False)
