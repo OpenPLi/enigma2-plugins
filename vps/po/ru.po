@@ -10,7 +10,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.7.5\n"
+"X-Generator: Poedit 2.0.4\n"
 "X-Poedit-SearchPath-0: ../src_py\n"
 
 msgid "%d.%B %Y"
@@ -26,7 +26,7 @@ msgid "Enable VPS by default (new timers)"
 msgstr "Включить VPS по дефолту (новые таймеры)"
 
 msgid "Enable VPS on instant records"
-msgstr "Включить VPS для немедленных записей"
+msgstr "Включить VPS для мгновенных записей"
 
 msgid "Enable VPS-Plugin"
 msgstr "Включить плагин VPS"
@@ -35,7 +35,7 @@ msgid "If a programme is interrupted and divided into separate events, the plugi
 msgstr "Если программа прерывается и делится на отдельные события, плагин будет искать связанные события."
 
 msgid "If enabled and necessary, the plugin will wake up the Dreambox from Deep-Standby for the defined starting time to control whether the programme begins earlier."
-msgstr "Если включено и необходимо, плагин будет поднимать ресивер из режима глубокого ожидания в определенное заданное время, для контроля программы, не начинается ли она раньше."
+msgstr "Если включено и необходимо, плагин будет автоматически включать ресивер из режима глубокого ожидания в определенное заданное время, для контроля программы, не начинается ли она раньше."
 
 msgid "If possible, x minutes before a timer starts VPS-Plugin will control whether the programme begins earlier. (0 disables feature)"
 msgstr "Если это возможно, плагин VPS проверит за х минут до фактического начала, не начинается ли программа раньше. (0 отключает этот параметр)"
@@ -91,7 +91,7 @@ msgstr ""
 " Вы действительно хотите включить VPS?"
 
 msgid "This plugin can determine whether a programme begins earlier or lasts longer. The channel has to provide reliable data."
-msgstr "Этот плагин может определить, начинается ли программа раньше или будет продлена. Провайдер должен предоставить достоверные данные!"
+msgstr "Этот плагин может определить, начинается ли программа раньше или будет продлена. Провайдер должен поддерживать PDC и предоставить достоверные данные!"
 
 msgid "VPS Settings"
 msgstr "Настройки VPS"
@@ -152,7 +152,7 @@ msgstr ""
 " SF\n"
 "\n"
 "\n"
-"Для таймера запрограммированного вручную (без помощи EPG), необходимо установить VPS-Время, для работы VPS. VPS-Время (также известное как PDC), является первым опубликованым в стартовое время, например в данных журнала. Если Вы примените VPS-Время, необходимо оставить пустое название таймера!"
+"Для таймера запрограммированного вручную (без помощи EPG), необходимо установить VPS-время, для работы VPS. VPS-время, также известное как PDC, является первым опубликованым в стартовое время, например в данных журнала. Если Вы примените VPS-время, необходимо оставить пустое название таймера!"
 
 msgid "VPS-Plugin checks if the channel supports VPS ..."
 msgstr "Плагин VPS проверяет канал на поддержку VPS ..."
@@ -178,10 +178,10 @@ msgid "VPS-Time (time)"
 msgstr "VPS-Время (время)"
 
 msgid "Wakeup from Deep-Standby is allowed"
-msgstr "Включение из режима глубокого ожидания разрешено"
+msgstr "Включение из режима глубокого ожидания"
 
 msgid "When yes, VPS will be enabled on instant records (stop after current event), if the channel supports VPS."
-msgstr "Если да, VPS будет включен для немедленных записей (остановка после текущего события), если канал поддерживает VPS."
+msgstr "Если да, VPS будет включен для мгновенных аписей (остановка после текущего события), если канал поддерживает VPS."
 
 msgid "Yes"
 msgstr "Да"
@@ -194,3 +194,9 @@ msgstr "Да, больше не спрашивать"
 
 msgid "always ask"
 msgstr "всегда спрашивать"
+
+msgid "Check for PDC"
+msgstr "Проверка PDC"
+
+msgid "Check for PDC availability on each service"
+msgstr "Проверять доступность PDC для каждого сервиса."

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from . import _
-from enigma import eTimer, eConsoleAppContainer, getBestPlayableServiceReference, eServiceReference, eEPGCache
+from enigma import eTimer, eConsoleAppContainer, getBestPlayableServiceReference, eServiceReference, eEPGCache, getDesktop
 from Screens.Screen import Screen
 from Components.ActionMap import ActionMap
 from Components.Sources.StaticText import StaticText
@@ -68,6 +68,10 @@ class VPS_check_PDC:
 		file.close()
 
 	def check_service(self, service):
+		# If we aren't checking PDC, returns successes for "now"
+		if not config.plugins.vps.do_PDC_check.getValue():
+			return 1, time(), 1
+
 		service_str = service.toCompareString()
 
 		try:
@@ -102,9 +106,14 @@ Check_PDC = VPS_check_PDC()
 
 # Prüfen, ob PDC-Descriptor vorhanden ist.
 class VPS_check(Screen):
-	skin = """<screen name="vpsCheck" position="center,center" size="540,110" title="VPS-Plugin">
-		<widget source="infotext" render="Label" position="10,10" size="520,90" font="Regular;21" valign="center" halign="center" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
-	</screen>"""
+	if getDesktop(0).size().width() <= 1280:
+		skin = """<screen name="vpsCheck" position="center,center" size="540,110" title="VPS-Plugin">
+			<widget source="infotext" render="Label" position="10,10" size="520,90" font="Regular;21" valign="center" halign="center" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
+		</screen>"""
+	else:
+		skin = """<screen name="vpsCheck" position="center,center" size="900,200" title="VPS-Plugin">
+			<widget source="infotext" render="Label" position="15,15" size="870,170" font="Regular;32" valign="center" halign="center" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
+		</screen>"""
 
 	def __init__(self, session, service):
 		Screen.__init__(self, session)
