@@ -12,6 +12,7 @@ from Components.config import config, ConfigYesNo, ConfigSubsection, ConfigInteg
 
 config.plugins.vps = ConfigSubsection()
 config.plugins.vps.enabled = ConfigYesNo(default = True)
+config.plugins.vps.do_PDC_check = ConfigYesNo(default = True)
 config.plugins.vps.initial_time = ConfigInteger(default=10, limits=(0, 120))
 config.plugins.vps.allow_wakeup = ConfigYesNo(default = False)
 config.plugins.vps.allow_seeking_multiple_pdc = ConfigYesNo(default = True)
@@ -38,20 +39,11 @@ def autostart(reason, **kwargs):
 
 		try:
 			if config.plugins.vps.wakeup_time.value != -1 and config.plugins.vps.wakeup_time.value == config.misc.prev_wakeup_time.value:
-				# Folgendes wird nur wegen spezieller Anforderungen des Plugins gesetzt.
-				# Damit sich Enigma2 so verhält, wie wenn es für eine Aufnahme aus dem Standby aufwacht.
 				config.misc.prev_wakeup_time_type.value = 0
 				config.misc.prev_wakeup_time_type.save()
-				#config.misc.isNextRecordTimerAfterEventActionAuto = ConfigYesNo(default=False)
-				#config.misc.isNextRecordTimerAfterEventActionAuto.value = recordTimerWakeupAuto
-				#config.misc.isNextRecordTimerAfterEventActionAuto.save()
-
-				# Da E2 die Configdatei noch vor dem Aufruf von autostart shutdown abspeichert, muss hier nochmal abgespeichert werden.
 				configfile.save()
-
 		except:
 			print "[VPS-Plugin] exception in shutdown handler, probably old enigma2"
-
 
 def setup(session, **kwargs):
 	session.openWithCallback(doneConfig, VPS_Setup)

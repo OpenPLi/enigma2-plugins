@@ -163,3 +163,9 @@ msgstr ""
 
 msgid "always ask"
 msgstr ""
+
+msgid "Check for PDC"
+msgstr ""
+
+msgid "Check for PDC availability on each service"
+msgstr ""
