@@ -52,6 +52,12 @@ try:
 except:
 	sp_showResult = None
 
+try:
+	from Plugins.SystemPlugins.vps import Vps
+	hasVps = True
+except:
+	hasVps = False
+
 from . import config, xrange, itervalues
 
 CONFLICTINGDOUBLEID = 'AutoTimerConflictingDoubleTimersNotification'
@@ -558,12 +564,16 @@ class AutoTimer:
 			# We first check eit and if user wants us to guess event based on time
 			# we try this as backup. The allowed diff should be configurable though.
 			for rtimer in timerdict.get(serviceref, ()):
+				try: # protect against vps plugin not being present
+					vps_changed = hasVps and (rtimer.vpsplugin_enabled != timer.vps_enabled or rtimer.vpsplugin_overwrite != timer.vps_overwrite)
+				except:
+					vps_changed = False
 				time_changed = (evtBegin - offsetBegin != rtimer.begin) or (evtEnd + offsetEnd != rtimer.end)
 				desc_changed = (timer.avoidDuplicateDescription >= 1 and shortdesc and rtimer.description and shortdesc != rtimer.description) or (timer.avoidDuplicateDescription >= 2 and extdesc and rtimer.extdesc and  extdesc != rtimer.extdesc)
 				if rtimer.eit == eit:
 					oldExists = True
 					doLog("[AutoTimer] We found a timer based on eit")
-					if time_changed or desc_changed:
+					if time_changed or desc_changed or vps_changed:
 						newEntry = rtimer
 						oldEntry = [rtimer.name, rtimer.description, rtimer.extdesc, rtimer.begin, rtimer.end, rtimer.service_ref, rtimer.eit, rtimer.disabled]
 					break
@@ -571,7 +581,7 @@ class AutoTimer:
 					if timeSimilarityPercent(rtimer, evtBegin, evtEnd, timer) > 80:
 						oldExists = True
 						doLog("[AutoTimer] We found a timer based on time guessing")
-						if time_changed or desc_changed:
+						if time_changed or desc_changed or vps_changed:
 							newEntry = rtimer
 							oldEntry = [rtimer.name, rtimer.description, rtimer.extdesc, rtimer.begin, rtimer.end, rtimer.service_ref, rtimer.eit, rtimer.disabled]
 						break
