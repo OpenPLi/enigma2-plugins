@@ -53,27 +53,16 @@ class VPS_Setup(Screen, ConfigListScreen):
 		self.vps_default = getConfigListEntry(_("VPS enabled by default"), config.plugins.vps.vps_default)
 		self.vps_instanttimer = getConfigListEntry(_("Enable VPS on instant records"), config.plugins.vps.instanttimer)
 
-		self.list = []
-		self.list.append(self.vps_enabled)
-		self.list.append(self.vps_do_PDC_check)
-		self.list.append(self.vps_initial_time)
-		self.list.append(self.vps_margin_after)
-		self.list.append(self.vps_allow_wakeup)
-		self.list.append(self.vps_allow_seeking_multiple_pdc)
-		self.list.append(self.vps_default)
-		self.list.append(self.vps_instanttimer)
-
-		ConfigListScreen.__init__(self, self.list, session = session)
+		ConfigListScreen.__init__(self, [], session=session)
+		self.initConfig()
 		self["config"].onSelectionChanged.append(self.updateHelp)
 
-		# Initialize Buttons
 		self["key_red"] = StaticText(_("Cancel"))
 		self["key_green"] = StaticText(_("OK"))
 		self["key_blue"] = StaticText(_("Information"))
 
 		self["help"] = StaticText()
 
-		# Define Actions
 		self["actions"] = ActionMap(["SetupActions", "ColorActions"],
 			{
 				"cancel": self.keyCancel,
@@ -86,6 +75,20 @@ class VPS_Setup(Screen, ConfigListScreen):
 
 	def setCustomTitle(self):
 		self.setTitle(self.setup_title)
+
+	def initConfig(self):
+		self.list = []
+		self.list.append(self.vps_enabled)
+		if config.plugins.vps.enabled.value:
+			self.list.append(self.vps_do_PDC_check)
+			self.list.append(self.vps_initial_time)
+			self.list.append(self.vps_margin_after)
+			self.list.append(self.vps_allow_wakeup)
+			self.list.append(self.vps_allow_seeking_multiple_pdc)
+			self.list.append(self.vps_default)
+			self.list.append(self.vps_instanttimer)
+		self["config"].list = self.list
+		self["config"].l.setList(self.list)
 
 	def updateHelp(self):
 		cur = self["config"].getCurrent()
@@ -106,6 +109,18 @@ class VPS_Setup(Screen, ConfigListScreen):
 		elif cur == self.vps_instanttimer:
 			self["help"].text = _("When yes, VPS will be enabled on instant records (stop after current event), if the channel supports VPS.")
 
+	def keyLeft(self):
+		ConfigListScreen.keyLeft(self)
+		cur = self["config"].getCurrent()
+		if cur == self.vps_enabled:
+			self.initConfig()
+
+	def keyRight(self):
+		ConfigListScreen.keyRight(self)
+		cur = self["config"].getCurrent()
+		if cur == self.vps_enabled:
+			self.initConfig()
+
 	def show_info(self):
 		VPS_show_info(self.session)
 
@@ -118,8 +133,14 @@ class VPS_Setup(Screen, ConfigListScreen):
 
 		self.close(self.session)
 
+	def isChanged(self):
+		is_changed = False
+		for x in self["config"].list:
+			is_changed |= x[1].isChanged()
+		return is_changed
+
 	def keyCancel(self):
-		if self["config"].isChanged():
+		if self.isChanged():
 			from Screens.MessageBox import MessageBox
 
 			self.session.openWithCallback(
