@@ -186,9 +186,6 @@ msgstr ""
 msgid "auto"
 msgstr ""
 
-msgid "bob"
-msgstr ""
-
 msgid "default"
 msgstr ""
 
@@ -202,4 +199,7 @@ msgid "second"
 msgstr ""
 
 msgid "seconds"
+msgstr ""
+
+msgid "Force set progressive for stream/video content"
 msgstr ""

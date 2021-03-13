@@ -13,7 +13,7 @@ msgstr ""
 "X-Poedit-KeywordsList: _(\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SourceCharset: utf-8\n"
-"X-Generator: Poedit 1.8.4\n"
+"X-Generator: Poedit 2.0.4\n"
 "X-Poedit-SearchPath-0: ../src\n"
 
 msgid "Alternative resolution when native not supported"
@@ -188,22 +188,22 @@ msgid "Videomode: %s %s %s"
 msgstr "Видеорежим: %s %s %s"
 
 msgid "auto"
-msgstr "авто"
-
-msgid "bob"
-msgstr "bob"
+msgstr "auto"
 
 msgid "default"
 msgstr "дефолт"
 
 msgid "off"
-msgstr "выкл"
+msgstr "off"
 
 msgid "on"
-msgstr "вкл"
+msgstr "on"
 
 msgid "second"
 msgstr "сек."
 
 msgid "seconds"
 msgstr "сек."
+
+msgid "Force set progressive for stream/video content"
+msgstr "Принудительная прогрессивная развертка для стрима/видео"
