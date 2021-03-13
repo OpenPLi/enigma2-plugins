@@ -69,9 +69,9 @@ config.plugins.autoresolution.enable = ConfigYesNo(default = False)
 config.plugins.autoresolution.showinfo = ConfigYesNo(default = True)
 config.plugins.autoresolution.testmode = ConfigYesNo(default = False)
 config.plugins.autoresolution.deinterlacer = ConfigSelection(default = "auto", choices =
-		[("off", _("off")), ("auto", _("auto")), ("on", _("on")), ("bob", _("bob"))])
+		[("off", _("off")), ("auto", _("auto")), ("on", _("on"))])
 config.plugins.autoresolution.deinterlacer_progressive = ConfigSelection(default = "auto", choices =
-		[("off", _("off")), ("auto", _("auto")), ("on", _("on")), ("bob", _("bob"))])
+		[("off", _("off")), ("auto", _("auto")), ("on", _("on"))])
 config.plugins.autoresolution.delay_switch_mode = ConfigSelection(default = "1000", choices = [
 		("0", "0 " + _("seconds")),("50", "0.05 " + _("seconds")), ("500", "0.5 " + _("seconds")),
 		("1000", "1 " + _("second")), ("2000", "2 " + _("seconds")), ("3000", "3 " + _("seconds")),
@@ -85,6 +85,7 @@ config.plugins.autoresolution.auto_24_30_alternative = ConfigYesNo(default = Tru
 config.plugins.autoresolution.ask_timeout = ConfigSelection(default = "20", choices = [("5", "5 " + _("seconds")), ("10", "10 " + _("seconds")), ("15", "15 " + _("seconds")), ("20", "20 " + _("seconds"))])
 config.plugins.autoresolution.manual_resolution_ext_menu = ConfigYesNo(default = False)
 config.plugins.autoresolution.manual_resolution_ask = ConfigYesNo(default = True)
+config.plugins.autoresolution.force_progressive_mode = ConfigYesNo(default = False)
 
 def setDeinterlacer(mode):
 	try:
@@ -314,6 +315,12 @@ class AutoRes(Screen):
 
 				prog = ("i", "p", "")[info.getInfo(iServiceInformation.sProgressive)]
 
+				if config.plugins.autoresolution.force_progressive_mode.value:
+					service = self.session.nav.getCurrentlyPlayingServiceReference()
+					str_service = service and service.toString() or ""
+					if ("%3a//" in str_service or str_service.rsplit(":", 1)[1].startswith("/")) and prog != "p":
+						prog = "p"
+
 				if have_2160p and (height >= 2100 or width >= 3200): # 2160 content
 					if frate in ('24', '25', '30') and prog == 'p':
 						new_mode = 'p2160_%s' % frate
@@ -491,7 +498,8 @@ class AutoResSetupMenu(Screen, ConfigListScreen):
 						getConfigListEntry(_("Delay x seconds after service started"), config.plugins.autoresolution.delay_switch_mode),
 						getConfigListEntry(_("Running in testmode"), config.plugins.autoresolution.testmode),
 						getConfigListEntry(_("Deinterlacer mode for interlaced content"), config.plugins.autoresolution.deinterlacer),
-						getConfigListEntry(_("Deinterlacer mode for progressive content"), config.plugins.autoresolution.deinterlacer_progressive)
+						getConfigListEntry(_("Deinterlacer mode for progressive content"), config.plugins.autoresolution.deinterlacer_progressive),
+						getConfigListEntry(_("Force set progressive for stream/video content"), config.plugins.autoresolution.force_progressive_mode)
 					))
 				else:
 					self.list.append(getConfigListEntry(_("Lock timeout"), config.plugins.autoresolution.lock_timeout))
