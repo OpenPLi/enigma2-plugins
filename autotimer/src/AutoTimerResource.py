@@ -262,6 +262,7 @@ class AutoTimerAddXMLAutoTimerResource(AutoTimerBaseResource):
 		req.setHeader('charset', 'UTF-8')
 		xml = req.args.get("xml")
 		if xml:
+			autotimer.readXml() # read current timers to ensure autotimer.timers is populated with current autotimers
 			autotimer.readXmlTimer(xml[0])
 			if config.plugins.autotimer.always_write_config.value:
 				autotimer.writeXml()

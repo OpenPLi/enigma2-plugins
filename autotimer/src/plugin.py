@@ -292,17 +292,16 @@ def AutoTimerChannelContextMenu__init__(self, session, csel):
 	baseChannelContextMenu__init__(self, session, csel)
 	if csel.mode == MODE_TV:
 		current = csel.getCurrentSelection()
-		current_root = csel.getRoot()
-		current_sel_path = current.getPath()
-		current_sel_flags = current.flags
-		inBouquetRootList = current_root and current_root.getPath().find('FROM BOUQUET "bouquets.') != -1 #FIXME HACK
-		inBouquet = csel.getMutableList() is not None
-		isPlayable = not (current_sel_flags & (eServiceReference.isMarker|eServiceReference.isDirectory))
-		if csel.bouquet_mark_edit == OFF and not csel.movemode:
-			if isPlayable:
-				if config.plugins.autotimer.add_to_channelselection.value:
-					callFunction = self.addtoAutoTimer
-					self["menu"].list.insert(3, ChoiceEntryComponent(text = (_("create AutoTimer for current event"), boundFunction(callFunction,1)), key = "bullet"))
+		if current and current.valid():
+			current_root = csel.getRoot()
+			current_sel_path = current.getPath()
+			current_sel_flags = current.flags
+			inBouquetRootList = current_root and current_root.getPath().find('FROM BOUQUET "bouquets.') != -1 #FIXME HACK
+			inBouquet = csel.getMutableList() is not None
+			isPlayable = not (current_sel_flags & (eServiceReference.isMarker|eServiceReference.isDirectory))
+			if config.plugins.autotimer.add_to_channelselection.value and csel.bouquet_mark_edit == OFF and not csel.movemode and isPlayable:
+				callFunction = self.addtoAutoTimer
+				self["menu"].list.insert(3, ChoiceEntryComponent(text = (_("create AutoTimer for current event"), boundFunction(callFunction,1)), key = "bullet"))
 
 def addtoAutoTimer(self, add):
 	sref = self.csel.servicelist.getCurrent()
