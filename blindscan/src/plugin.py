@@ -566,6 +566,11 @@ class Blindscan(ConfigListScreen, Screen):
 				continue
 			if n.config_mode == "nothing":
 				continue
+			try:
+				if n.config_mode == "advanced" and int(n.config.advanced.sat[3607].lnb.value) != 0:
+					continue
+			except:
+				pass
 			if len(nimmanager.getSatListForNim(n.slot)) < 1:
 				if n.config_mode in ("advanced", "simple"):
 					config.Nims[n.slot].configMode.value = "nothing"
