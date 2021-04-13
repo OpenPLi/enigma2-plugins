@@ -6,7 +6,7 @@ import gettext
 myPlugin = "EasyMedia"
 
 def localeInit():
-	gettext.bindtextdomain(myPlugin, ("/usr/lib/enigma2/python/Plugins/Extensions/"+myPlugin+"/locale"))
+	gettext.bindtextdomain(myPlugin, ("/usr/lib/enigma2/python/Plugins/Extensions/" + myPlugin + "/locale"))
 
 def _(txt):
 	t = gettext.dgettext(myPlugin, txt)

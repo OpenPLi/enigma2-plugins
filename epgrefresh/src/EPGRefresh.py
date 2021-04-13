@@ -75,9 +75,9 @@ class EPGRefresh:
 				pos = value.rfind(':')
 				# don't split alternative service
 				if pos != -1 and not value.startswith('1:134:'):
-					value = value[:pos+1]
+					value = value[:pos + 1]
 				duration = service.get('duration', None)
-				duration = duration and int(duration)*factor
+				duration = duration and int(duration) * factor
 				self.services[0].add(EPGRefreshService(value, duration))
 		for bouquet in configuration.findall("bouquet"):
 			value = bouquet.text
@@ -157,7 +157,7 @@ class EPGRefresh:
 			service = eServiceReference(scanservice.sref)
 			if (service.flags & eServiceReference.isGroup):
 				service = getBestPlayableServiceReference(eServiceReference(scanservice.sref), eServiceReference())
-			if not service or not service.valid() or service.type != eServiceReference.idDVB or (service.flags & (eServiceReference.isMarker|eServiceReference.isDirectory)):
+			if not service or not service.valid() or service.type != eServiceReference.idDVB or (service.flags & (eServiceReference.isMarker | eServiceReference.isDirectory)):
 				continue
 			channelID = '%08x%04x%04x' % (
 				service.getUnsignedData(4), # NAMESPACE
@@ -295,7 +295,7 @@ class EPGRefresh:
 						except:
 							self.autotimer_pause.startLongTimer(120)
 						else:
-							self.autotimer_pause.startLongTimer(int(config.plugins.epgrefresh.timeout_shutdown.value)*60)
+							self.autotimer_pause.startLongTimer(int(config.plugins.epgrefresh.timeout_shutdown.value) * 60)
 					else:
 						self.finish()
 			except Exception as e:
@@ -385,7 +385,7 @@ class EPGRefresh:
 					if check_standby and config.plugins.epgrefresh.adapter.value == "main":
 						self.session.nav.stopService()
 					epgrefreshtimer.add(EPGRefreshTimerEntry(
-							time() + config.plugins.epgrefresh.delay_standby.value*60,
+							time() + config.plugins.epgrefresh.delay_standby.value * 60,
 							self.refresh,
 							nocheck=True)
 					)
@@ -420,7 +420,7 @@ class EPGRefresh:
 			if not delay:
 				delay = 20
 			if not self.wait.isActive():
-				self.wait.start(int(delay*1000), True)
+				self.wait.start(int(delay * 1000), True)
 
 	def showPendingServices(self, session):
 		if session is None:

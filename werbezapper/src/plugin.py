@@ -88,7 +88,7 @@ class WerbeZapperSilder(ConfigListScreen, Screen):
 		Screen.__init__(self, session)
 		self["time"] = StaticText()
 		if self.remaining > 0 and self.remaining < 300:
-			self["time"].setText(_("Button Info/EPG\nSet time begin next event: %d min")%(self.remaining))
+			self["time"].setText(_("Button Info/EPG\nSet time begin next event: %d min") % (self.remaining))
 		self["header"] = StaticText("")
 		self["setupActions"] = ActionMap(["SetupActions", "ChannelSelectEPGActions"],
 			{
@@ -138,7 +138,7 @@ class WerbeZapperSilder(ConfigListScreen, Screen):
 
 	def updateHeaderText(self):
 		if "header" in self:
-			self["header"].setText(_("%d min")%(self.duration.value))
+			self["header"].setText(_("%d min") % (self.duration.value))
 
 from keyids import KEYIDS
 from enigma import eActionMap

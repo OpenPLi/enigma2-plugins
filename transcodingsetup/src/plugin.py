@@ -19,7 +19,7 @@ config.plugins.transcodingsetup.bitrate = ConfigSelection(default="1000000", cho
 config.plugins.transcodingsetup.framerate = ConfigSelection(default="25000", choices=[("23976", "23.976 fps"), ("24000", "24 fps"), ("25000", "25 fps"), ("30000", "30 fps")])
 config.plugins.transcodingsetup.interlaced = ConfigInteger(default=0)
 if SystemInfo["HasH265Encoder"]:
-	config.plugins.transcodingsetup.resolution = ConfigSelection(default="640x360", choices=[("426x240", "240p"), ("640x360", "360p"), ("854x480", "480p"), ("1024x576", "576p"), ("1280x720", "720p"), ("1920x1080", "1080p"), ("480x360", "360p (4:3)"),  ("720x480", "480p NTSC"), ("720x576", "576p PAL")])
+	config.plugins.transcodingsetup.resolution = ConfigSelection(default="640x360", choices=[("426x240", "240p"), ("640x360", "360p"), ("854x480", "480p"), ("1024x576", "576p"), ("1280x720", "720p"), ("1920x1080", "1080p"), ("480x360", "360p (4:3)"), ("720x480", "480p NTSC"), ("720x576", "576p PAL")])
 	config.plugins.transcodingsetup.vcodec = ConfigSelection(default="h265", choices=[("h264", "H.264"), ("h265", "H.265")])
 	config.plugins.transcodingsetup.aspectratio = ConfigInteger(default=0)
 else:
@@ -29,7 +29,7 @@ else:
 TRANSCODING_CONFIG = "/etc/enigma2/streamproxy.conf"
 
 class TranscodingSetup(ConfigListScreen, Screen):
-	skin = 	"""
+	skin = """
 		<screen position="center,center" size="500,190" title="Transcoding Setup">
 			<widget name="config" position="4,36" font="Regular;20" size="492,100" />
 			<ePixmap pixmap="skin_default/buttons/red.png" position="0,150" size="140,40" alphatest="on" />

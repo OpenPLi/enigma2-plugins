@@ -22,7 +22,7 @@ import sys
 import time
 from random import Random 
 
-title =_("Change Root Password")
+title = _("Change Root Password")
 
 class ChangePasswdScreen(Screen):
 	skin = """

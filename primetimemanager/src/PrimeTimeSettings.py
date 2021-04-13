@@ -37,7 +37,7 @@ config.plugins.PrimeTimeManager.RedButton = ConfigSelection(default="epg", choic
 config.plugins.PrimeTimeManager.CloseMultiEPG = ConfigYesNo(default=False)
 
 class PrimeTimeSettings(ConfigListScreen, Screen):
-	if size_width >=1920:
+	if size_width >= 1920:
 		skin = """<screen title="Prime Time Settings" position="center,center" size="560,390">
 			<ePixmap pixmap="skin_default/buttons/red.png" position="0,0" zPosition="0" size="140,40" transparent="1" alphatest="on" />
 			<ePixmap pixmap="skin_default/buttons/green.png" position="140,0" zPosition="0" size="140,40" transparent="1" alphatest="on" />
@@ -91,9 +91,9 @@ class PrimeTimeSettings(ConfigListScreen, Screen):
 
 		self["actions"] = ActionMap(["SetupActions", "ColorActions"],
 		{
-			"red":		self.exit,
-			"green":	self.save,
-			"cancel":	self.exit
+			"red": self.exit,
+			"green": self.save,
+			"cancel": self.exit
 		}, -1)
 
 		self.setTitle(_("Prime Time Settings") + ": " + plugin_version)

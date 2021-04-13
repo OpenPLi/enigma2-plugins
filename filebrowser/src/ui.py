@@ -119,9 +119,9 @@ class FilebrowserScreen(Screen):
 
         self["actions"] = ActionMap(["ChannelSelectBaseActions","WizardActions", "DirectionActions","MenuActions","NumberActions","ColorActions","ChannelSelectEPGActions"],
             {
-             "ok":      self.ok,
-             "back":    self.exit,
-             "menu":    self.goMenu,
+             "ok": self.ok,
+             "back": self.exit,
+             "menu": self.goMenu,
              "nextMarker": self.listRight,
              "prevMarker": self.listLeft,
              "nextBouquet": self.toggleList,
@@ -239,9 +239,9 @@ class FilebrowserScreen(Screen):
         sourceDir = self.SOURCELIST.getCurrentDirectory()
         targetDir = self.TARGETLIST.getCurrentDirectory()
         if os_path_isdir(filename):
-            txt = _("Copy directory")+"?\n\n%s\n%s\n%s"%(filename,_("to"),targetDir)
+            txt = _("Copy directory") + "?\n\n%s\n%s\n%s" % (filename,_("to"),targetDir)
         else:
-            txt =_("Copy file")+"?\n\n%s\n%s\n%s\n%s\n%s"%(filename,_("from"),sourceDir,_("to"),targetDir)
+            txt = _("Copy file") + "?\n\n%s\n%s\n%s\n%s\n%s" % (filename,_("from"),sourceDir,_("to"),targetDir)
         self.session.openWithCallback(self.doCopy, MessageBox, txt, type=MessageBox.TYPE_YESNO, default=True, simple=True)
 
     def doCopy(self, result=False):
@@ -251,10 +251,10 @@ class FilebrowserScreen(Screen):
             targetDir = self.TARGETLIST.getCurrentDirectory()
             if os_path_isdir(filename):
                 txt = _("copying directory, wait please ...")
-                cmd = ["cp -ar \""+filename+"\" \""+targetDir+"\""]
+                cmd = ["cp -ar \"" + filename + "\" \"" + targetDir + "\""]
             else:
                 txt = _("copying file ...")
-                cmd = ["cp \""+sourceDir+filename+"\" \""+targetDir+"\""]
+                cmd = ["cp \"" + sourceDir + filename + "\" \"" + targetDir + "\""]
             self.session.openWithCallback(self.doCopyCB, Console, title=txt, cmdlist=cmd, closeOnSuccess=True)
 
     def doCopyCB(self):
@@ -269,7 +269,7 @@ class FilebrowserScreen(Screen):
         if os_path_isdir(filename):
             txt = _("Delete directory") + "?\n\n%s" % (filename)
         else:
-            txt =_("Delete file") + "?\n\n%s\n%s\n%s" % (filename,_("from dir"),sourceDir)
+            txt = _("Delete file") + "?\n\n%s\n%s\n%s" % (filename,_("from dir"),sourceDir)
         self.session.openWithCallback(self.doDelete, MessageBox, txt, type=MessageBox.TYPE_YESNO, default=False, simple=True)
 
     def doDelete(self,result=False):
@@ -278,10 +278,10 @@ class FilebrowserScreen(Screen):
             sourceDir = self.SOURCELIST.getCurrentDirectory()
             if os_path_isdir(filename):
                 txt = _("deleting directory ...")
-                cmd = ["rm -r \""+filename+"\""]
+                cmd = ["rm -r \"" + filename + "\""]
             else:
                 txt = _("deleting file ...")
-                cmd = ["rm \""+sourceDir+filename+"\""]
+                cmd = ["rm \"" + sourceDir + filename + "\""]
             self.session.openWithCallback(self.doDeleteCB, Console, title=txt, cmdlist=cmd, closeOnSuccess=True)
 
     def doDeleteCB(self):
@@ -307,10 +307,10 @@ class FilebrowserScreen(Screen):
             targetDir = self.TARGETLIST.getCurrentDirectory()
             if os_path_isdir(filename):
                 txt = _("moving directory, wait please ...")
-                cmd = ["mv \""+filename+"\" \""+targetDir+"\""]
+                cmd = ["mv \"" + filename + "\" \"" + targetDir + "\""]
             else:
                 txt = _("moving file ...")
-                cmd = ["mv \""+sourceDir+filename+"\" \""+targetDir+"\""]
+                cmd = ["mv \"" + sourceDir + filename + "\" \"" + targetDir + "\""]
             self.session.openWithCallback(self.doMoveCB,Console, title=txt, cmdlist=cmd, closeOnSuccess=True)
 
     def doMoveCB(self):
@@ -335,10 +335,10 @@ class FilebrowserScreen(Screen):
             sourceDir = self.SOURCELIST.getCurrentDirectory()
             if os_path_isdir(filename):
                 txt = _("renaming directory ...")
-                cmd = ["mv \""+filename+"\" \""+sourceDir+newname+"\""]
+                cmd = ["mv \"" + filename + "\" \"" + sourceDir + newname + "\""]
             else:
                 txt = _("renaming file ...")
-                cmd = ["mv \""+sourceDir+filename+"\" \""+sourceDir+newname+"\""]
+                cmd = ["mv \"" + sourceDir + filename + "\" \"" + sourceDir + newname + "\""]
             self.session.openWithCallback(self.doRenameCB, Console, title=txt, cmdlist=cmd, closeOnSuccess=True)
 
     def doRenameCB(self):
@@ -354,7 +354,7 @@ class FilebrowserScreen(Screen):
         if dirname:
             sourceDir = self.SOURCELIST.getCurrentDirectory()
             txt = _("creating directory ...")
-            cmd = ["mkdir \""+sourceDir+dirname+"\""]
+            cmd = ["mkdir \"" + sourceDir + dirname + "\""]
             self.session.openWithCallback(self.doMkDirCB, Console, title=txt, cmdlist=cmd, closeOnSuccess=True)
 
     def doMkDirCB(self):
@@ -388,7 +388,7 @@ class FilebrowserScreen(Screen):
 
     def onFileAction(self):
         try:
-            x = openFile(self.session,guess_type(self.SOURCELIST.getFilename())[0],self.SOURCELIST.getCurrentDirectory()+self.SOURCELIST.getFilename())
+            x = openFile(self.session,guess_type(self.SOURCELIST.getFilename())[0],self.SOURCELIST.getCurrentDirectory() + self.SOURCELIST.getFilename())
             print "RESULT OPEN FILE",x
         except TypeError,e:
             # catching error
@@ -398,7 +398,7 @@ class FilebrowserScreen(Screen):
 
 ##################################
 class FilebrowserScreenInfo(Screen):
-        skin="""
+        skin = """
         <screen name="FilebrowserScreenInfo" position="fill" title="FileInfo" flags="wfNoBorder" backgroundColor="background">
                 <widget name="path" position="15,25" size="1890,30" font="Regular;26"/>
                 <widget name="size" position="15,65" size="1890,30" font="Regular;26"/>
@@ -428,12 +428,12 @@ class FilebrowserScreenInfo(Screen):
                 w,h = self.getScreenSize()
                 mx = 30 if w >= 1920 else 15
                 x,y = self.getLineSize()
-                wsize = (x + 2*mx, 4*y)
+                wsize = (x + 2 * mx, 4 * y)
                 self.instance.resize(eSize(*wsize))
-                self["path"].instance.move(ePoint(mx,y-y/4))
-                self["size"].instance.move(ePoint(mx,2*y+y/4))
-                wx = (w - wsize[0])/2
-                wy = (h - wsize[1])/2
+                self["path"].instance.move(ePoint(mx,y - y / 4))
+                self["size"].instance.move(ePoint(mx,2 * y + y / 4))
+                wx = (w - wsize[0]) / 2
+                wy = (h - wsize[1]) / 2
                 self.instance.move(ePoint(wx,wy))
 
         def getLineSize(self):

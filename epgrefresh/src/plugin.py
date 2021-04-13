@@ -37,8 +37,8 @@ from time import time, localtime, mktime
 #Configuration
 config.plugins.epgrefresh = ConfigSubsection()
 config.plugins.epgrefresh.enabled = ConfigYesNo(default=False)
-config.plugins.epgrefresh.begin = ConfigClock(default=((20*60) + 15) * 60)
-config.plugins.epgrefresh.end = ConfigClock(default=((6*60) + 30) * 60)
+config.plugins.epgrefresh.begin = ConfigClock(default=((20 * 60) + 15) * 60)
+config.plugins.epgrefresh.end = ConfigClock(default=((6 * 60) + 30) * 60)
 config.plugins.epgrefresh.interval_seconds = ConfigNumber(default=120)
 config.plugins.epgrefresh.delay_standby = ConfigNumber(default=10)
 config.plugins.epgrefresh.inherit_autotimer = ConfigYesNo(default=False)
@@ -167,7 +167,7 @@ except Exception as e:
 	epgrefreshHelp = None
 
 class AutoZap(Screen):
-	skin="""
+	skin = """
 		<screen flags="wfNoBorder" position="center,25" size="500,30" title="AutoZap" backgroundColor="#64121214">
 			<widget name="wohin" position="0,0" size="500,30" font="Regular;20" foregroundColor="foreground" transparent="1" zPosition="1" halign="center" valign="center">
 				<convert type="ConditionalShowHide">Blink</convert>
@@ -286,13 +286,13 @@ def getNextWakeup():
 	if wakeup_day == -1:
 		if begin > time():
 			return begin
-		return begin+86400
+		return begin + 86400
 	# now config
 	current_day = int(now.tm_wday)
 	if begin > time():
 		if config.plugins.epgrefresh_extra.day_refresh[current_day].value:
 			return begin
-	return begin+86400*wakeup_day
+	return begin + 86400 * wakeup_day
 
 def WakeupDayOfWeek():
 	start_day = -1
@@ -304,7 +304,7 @@ def WakeupDayOfWeek():
 
 	if cur_day >= 0:
 		for i in range(1,8):
-			if config.plugins.epgrefresh_extra.day_refresh[(cur_day+i)%7].value:
+			if config.plugins.epgrefresh_extra.day_refresh[(cur_day + i) % 7].value:
 				return i
 	return start_day
 
@@ -329,7 +329,7 @@ def eventinfo(session, servicelist, **kwargs):
 	# strip all after last :
 	pos = sref.rfind(':')
 	if pos != -1:
-		sref = sref[:pos+1]
+		sref = sref[:pos + 1]
 	try:
 		epgrefresh.services[0].add(EPGRefreshService(str(sref), None))
 	except:
@@ -363,7 +363,7 @@ def EPGRefreshChannelContextMenu__init__(self, session, csel):
 		current_sel_flags = current.flags
 		inBouquetRootList = current_root and current_root.getPath().find('FROM BOUQUET "bouquets.') != -1 #FIXME HACK
 		inBouquet = csel.getMutableList() is not None
-		isPlayable = not (current_sel_flags & (eServiceReference.isMarker|eServiceReference.isDirectory))
+		isPlayable = not (current_sel_flags & (eServiceReference.isMarker | eServiceReference.isDirectory))
 		if csel.bouquet_mark_edit == OFF and not csel.movemode and current and current.valid():
 			if isPlayable:
 				profile = config.plugins.epgrefresh.add_to_refresh.value
@@ -380,7 +380,7 @@ def addtoEPGRefresh(self, add):
 	sref = ref.toString()
 	pos = sref.rfind(':')
 	if pos != -1 and not value.startswith('1:134:'):
-		sref = sref[:pos+1]
+		sref = sref[:pos + 1]
 	try:
 		epgrefresh.services[0].add(EPGRefreshService(str(sref), None))
 	except:

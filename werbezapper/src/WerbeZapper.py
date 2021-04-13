@@ -51,12 +51,12 @@ class WerbeZapperIndicator(Screen):
 		self.zap_service = zap_service
 		self.name = None
 		if config.werbezapper.icon_mode.value == "0":
-			if sz_w >=1920:
+			if sz_w >= 1920:
 				self.skin = WerbeZapperIconFullHD
 			else:
 				self.skin = WerbeZapperIcon
 		else:
-			if sz_w >=1920:
+			if sz_w >= 1920:
 				self.skin = WerbeZapperIconFullHD1
 			else:
 				self.skin = WerbeZapperIcon1
@@ -93,7 +93,7 @@ class WerbeZapperIndicator(Screen):
 				if remaining > 0:
 					if self.name is not None:
 						text += _("%s\n") % (self.name)
-					text += _("- %d:%02d min") % (remaining/60, remaining%60)
+					text += _("- %d:%02d min") % (remaining / 60, remaining % 60)
 		except:
 			text += _("Error") 
 		self['icon_text'].setText(text)
@@ -127,16 +127,16 @@ class WerbeZapperChoiceBox(ChoiceBox):
 			name = self.monitored_event and self.monitored_event.getEventName()
 			remaining = (self.monitored_event.getDuration() - (time() - self.monitored_event.getBeginTime()))
 			if remaining > 0:
-				text += _("Monitoring: %s (%d:%02d Min)") % (name, remaining/60, remaining%60)
+				text += _("Monitoring: %s (%d:%02d Min)") % (name, remaining / 60, remaining % 60)
 		if self.monitor_time and not self.monitored_event:
 			remaining = int(math.floor(self.monitor_time - time()))
 			if remaining > 0:
-				text += _("Monitoring: for service is not EPG (%d:%02d Min)") % (remaining/60, remaining%60)
+				text += _("Monitoring: for service is not EPG (%d:%02d Min)") % (remaining / 60, remaining % 60)
 		if self.zap_time:
 			remaining = int(math.floor(self.zap_time - time()))
 			if remaining > 0:
-				remainstr = ("%d:%02d") % (remaining/60, remaining%60)
-				text += "\n" + _("Zapping to service in %d:%02d Min") % (remaining/60, remaining%60)
+				remainstr = ("%d:%02d") % (remaining / 60, remaining % 60)
+				text += "\n" + _("Zapping to service in %d:%02d Min") % (remaining / 60, remaining % 60)
 				if self.zap_service is not None:
 					ref_cur = self.zap_service
 					if self.monitored_service is not None and self.monitored_event:
@@ -199,23 +199,23 @@ class WerbeZapper(Screen):
 		self.select = 1
 		val = int(config.werbezapper.duration.value)
 		if val == 1:
-			select= 1
+			select = 1
 		elif val == 2:
-			select= 2
+			select = 2
 		elif val == 3:
-			select= 3
+			select = 3
 		elif val == 4:
-			select= 4
+			select = 4
 		elif val == 5:
-			select= 5
+			select = 5
 		elif val == 6:
-			select= 6
+			select = 6
 		elif val == 8:
-			select= 7
+			select = 7
 		elif val == 9:
-			select= 8
+			select = 8
 		elif val == 14:
-			select= 9
+			select = 9
 		else:
 			select = 0
 			self.select = 0
@@ -376,7 +376,7 @@ class WerbeZapper(Screen):
 			duration = int(config.werbezapper.duration_not_event.value)
 			self.monitor_time = time() + (duration * 60)
 			self.monitored_bouquet = self.servicelist.getRoot()
-			self.monitor_timer.startLongTimer(duration* 60)
+			self.monitor_timer.startLongTimer(duration * 60)
 			self.monitored_event = None
 			if notify:
 				AddPopup(
@@ -519,7 +519,7 @@ class WerbeZapper(Screen):
 				Screens.Standby.inStandby.prev_running_service = self.zap_service
 				Screens.Standby.inStandby.Power()
 			ref_cur = self.session.nav.getCurrentlyPlayingServiceReference()
-			if ref_cur and ref_cur !=self.zap_service:
+			if ref_cur and ref_cur != self.zap_service:
 				self.session.nav.playService(self.zap_service)
 
 		# Cleanup if end timer is not running

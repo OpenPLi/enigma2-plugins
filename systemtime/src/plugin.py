@@ -379,15 +379,15 @@ class ChangeTimeWizzard(Screen):
 				else:
 					maxmonth = 28
 			if (int(newyear) < 2019) or (int(newyear) > 2029) or (len(newyear) < 4):
-				self.skipChangeTime(_("Invalid input in year: %s") %newyear)
+				self.skipChangeTime(_("Invalid input in year: %s") % newyear)
 			elif (int(newmonth) < 1) or (int(newmonth) > 12) or (len(newmonth) < 2):
-				self.skipChangeTime(_("Invalid input in month: %s") %newmonth)
+				self.skipChangeTime(_("Invalid input in month: %s") % newmonth)
 			elif (int(newday) < 1) or (int(newday) > maxmonth) or (len(newday) < 2):
-				self.skipChangeTime(_("Invalid input in day: %s") %newday)
+				self.skipChangeTime(_("Invalid input in day: %s") % newday)
 			elif (int(newhour) < 0) or (int(newhour) > 23) or (len(newhour) < 2):
-				self.skipChangeTime(_("Invalid input in hour: %s") %newhour)
+				self.skipChangeTime(_("Invalid input in hour: %s") % newhour)
 			elif (int(newmin) < 0) or (int(newmin) > 59) or (len(newmin) < 2):
-				self.skipChangeTime(_("Invalid input in minute: %s") %newmin)
+				self.skipChangeTime(_("Invalid input in minute: %s") % newmin)
 			else:
 				self.newtime = "%s%s%s%s%s" % (newmonth, newday, newhour, newmin, newyear)
 				self.session.openWithCallback(self.DoChangeTimeRestart, MessageBox, _("Apply new system time?"), MessageBox.TYPE_YESNO)

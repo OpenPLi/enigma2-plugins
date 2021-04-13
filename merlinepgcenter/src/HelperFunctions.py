@@ -48,15 +48,15 @@ class ResizeScrollLabel(ScrollLabel):
 		ScrollLabel.__init__(self, text)
 		
 	def resize(self, s):
-		lineheight=fontRenderClass.getInstance().getLineHeight(self.long_text.getFont())
+		lineheight = fontRenderClass.getInstance().getLineHeight(self.long_text.getFont())
 		if not lineheight:
 			lineheight = 30 # assume a random lineheight if nothing is visible
 		lines = (int)(s.height() / lineheight)
 		self.pageHeight = (int)(lines * lineheight)
-		self.instance.resize(eSize(s.width(), self.pageHeight+(int)(lineheight/6)))
-		self.scrollbar.move(ePoint(s.width()-20,0))
-		self.scrollbar.resize(eSize(20,self.pageHeight+(int)(lineheight/6)))
-		self.long_text.resize(eSize(s.width()-30, self.pageHeight*16))
+		self.instance.resize(eSize(s.width(), self.pageHeight + (int)(lineheight / 6)))
+		self.scrollbar.move(ePoint(s.width() - 20,0))
+		self.scrollbar.resize(eSize(20,self.pageHeight + (int)(lineheight / 6)))
+		self.long_text.resize(eSize(s.width() - 30, self.pageHeight * 16))
 		self.setText(self.message)
 
 class PiconLoader():
@@ -124,7 +124,7 @@ def getFuzzyDay(t):
 	elif dt_date.fromtimestamp(t) == dt_date.today() + dt_timedelta(days=1):
 		# next day
 		date = _("Tomorrow")
-	elif ((t - nt) < 7*86400) and (nt < t):
+	elif ((t - nt) < 7 * 86400) and (nt < t):
 		# same week
 		date = (_("Monday"), _("Tuesday"), _("Wednesday"), _("Thursday"), _("Friday"), _("Saturday"), _("Sunday"))[d[6]]
 	elif d[0] == n[0]:
@@ -301,7 +301,7 @@ class RecTimerEntry(RecordTimerEntry):
 		elif next_state == self.StateEnded:
 			old_end = self.end
 			if self.setAutoincreaseEnd():
-				self.log(12, "autoincrase recording %d minute(s)" % int((self.end - old_end)/60))
+				self.log(12, "autoincrase recording %d minute(s)" % int((self.end - old_end) / 60))
 				self.state -= 1
 				return True
 			self.log(12, "stop recording")

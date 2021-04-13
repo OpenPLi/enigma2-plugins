@@ -116,7 +116,7 @@ def new_TimerEntry_createConfig(self):
 
 	# added by VPS-Plugin
 	try:
-		self.timerentry_vpsplugin_dontcheck_pdc =  not config.plugins.vps.do_PDC_check.getValue()
+		self.timerentry_vpsplugin_dontcheck_pdc = not config.plugins.vps.do_PDC_check.getValue()
 		default_value = "no"
 
 		if self.timer.vpsplugin_enabled is not None:
@@ -239,7 +239,7 @@ def new_InfoBarInstantRecord_recordQuestionCallback(self, answer):
 	self._recordQuestionCallback_old_rn_vps(answer)
 
 	try:
-		entry = len(self.recording)-1
+		entry = len(self.recording) - 1
 		if answer is not None and answer[1] == "event" and config.plugins.vps.instanttimer.value != "no" and entry is not None and entry >= 0:
 			# If we aren't checking PDC, just put the values in directly
 			if not config.plugins.vps.do_PDC_check.getValue():

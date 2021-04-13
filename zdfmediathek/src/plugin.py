@@ -30,7 +30,7 @@ import urllib2
 
 MAIN_PAGE = "http://www.zdf.de"
 
-PNG_PATH = resolveFilename(SCOPE_PLUGINS)+"/Extensions/ZDFMediathek/"
+PNG_PATH = resolveFilename(SCOPE_PLUGINS) + "/Extensions/ZDFMediathek/"
 
 TYPE_NOTHING = 0
 TYPE_MOVIE = 1
@@ -201,12 +201,12 @@ def getCategoryDetails(div):
 		if '">' in count:
 			while '">' in count:
 				idx = count.index('">')
-				count = count[idx+2:]
+				count = count[idx + 2:]
 		if '"/>' in count:
 			while '"/>' in count:
 				idx = count.index('"/>')
-				count = count[idx+3:]
-		list.append("%sBeitraege"%count)
+				count = count[idx + 3:]
+		list.append("%sBeitraege" % count)
 	else:
 		reonecat = re.compile(r'">(.+?)BEITR&Auml;GE ZUM THEMA</a></p>', re.DOTALL)
 		counts = reonecat.findall(div)
@@ -215,12 +215,12 @@ def getCategoryDetails(div):
 			if '">' in count:
 				while '">' in count:
 					idx = count.index('">')
-					count = count[idx+2:]
+					count = count[idx + 2:]
 			if '"/>' in count:
 				while '"/>' in count:
 					idx = count.index('"/>')
-					count = count[idx+3:]
-			list.append("%sBeitraege"%count)
+					count = count[idx + 3:]
+			list.append("%sBeitraege" % count)
 		else:
 			reonecat = re.compile(r'">(.+?)BEITR&Auml;GE ZUR RUBRIK</a></p>', re.DOTALL)
 			counts = reonecat.findall(div)
@@ -229,12 +229,12 @@ def getCategoryDetails(div):
 				if '">' in count:
 					while '">' in count:
 						idx = count.index('">')
-						count = count[idx+2:]
+						count = count[idx + 2:]
 				if '"/>' in count:
 					while '"/>' in count:
 						idx = count.index('"/>')
-						count = count[idx+3:]
-				list.append("%sBeitraege"%count)
+						count = count[idx + 3:]
+				list.append("%sBeitraege" % count)
 	# Alles gefunden?
 	if len(list) == 5:
 		return list
@@ -253,7 +253,7 @@ def getMovieUrl(url):
 	if ('rtsp' in txt) and ('.mp4' in txt):
 		idx = txt.index('rtsp')
 		idx2 = txt.index('.mp4')
-		return txt[idx:idx2+4]
+		return txt[idx:idx2 + 4]
 	else:
 		return None
 
@@ -319,7 +319,7 @@ def getRightMenu(html):
 		while (start in html) and (end in html):
 			idx = html.index(start)
 			html = html[idx:]
-			reonecat = re.compile(r'%s(.+?)%s'%(start, end), re.DOTALL)
+			reonecat = re.compile(r'%s(.+?)%s' % (start, end), re.DOTALL)
 			blocks = reonecat.findall(html)
 			if blocks:
 				reonecat = re.compile(r'<div class="image">(.+?)</li>', re.DOTALL)
@@ -340,7 +340,7 @@ def getRightMenu(html):
 			if 'href="' in more:
 				while 'href="' in more:
 					idx = more.index('href="')
-					more = more[idx+6:]
+					more = more[idx + 6:]
 			list.append([more, "", "", "", "Weitere  Beitraege laden."])
 	if len(list):
 		return [TYPE_MOVIELIST_CATEGORY, list]
@@ -371,7 +371,7 @@ class LeftMenuList(MenuList):
 		elif text.startswith("- Morgen"):
 			text = "- Morgen"
 		if selected:
-			res.append(MultiContentEntryPixmapAlphaTest(pos=(0, 0), size=(20, 20), png=LoadPixmap(cached=True, path=PNG_PATH+"active.png")))
+			res.append(MultiContentEntryPixmapAlphaTest(pos=(0, 0), size=(20, 20), png=LoadPixmap(cached=True, path=PNG_PATH + "active.png")))
 		if active:
 			res.append(MultiContentEntryText(pos=(25, 0), size=(175, 20), font=0, text=text, color=0xf47d19))
 		else:
@@ -414,15 +414,15 @@ class LeftMenuList(MenuList):
 		self.select(0)
 
 	def last(self):
-		self.select(len(self.menu)-1)
+		self.select(len(self.menu) - 1)
 
 	def previous(self):
 		if len(self.menu):
-			self.select(self.current-1)
+			self.select(self.current - 1)
 
 	def next(self):
 		if len(self.menu):
-			self.select(self.current+1)
+			self.select(self.current + 1)
 
 ###################################################
 
@@ -462,7 +462,7 @@ class RightMenuList(MenuList):
 	def downloadThumbnail(self):
 		thumbUrl = self.list[self.idx][3]
 		if not thumbUrl.startswith("http://"):
-			thumbUrl = "%s%s"%(MAIN_PAGE, thumbUrl)
+			thumbUrl = "%s%s" % (MAIN_PAGE, thumbUrl)
 		try:
 			req = urllib2.Request(thumbUrl)
 			url_handle = urllib2.urlopen(req)
@@ -584,7 +584,7 @@ class ZDFMediathek(Screen, HelpableScreen):
 				<ePixmap pixmap="skin_default/buttons/key_menu.png" position="40,520" size="35,25" transparent="1" alphatest="on" />
 				<widget name="serverName" position="80,520" size="160,20" font="Regular;18" backgroundColor="#252525" foregroundColor="#f47d19" />
 				<widget name="fakeList" position="0,0" size="0,0" />
-			</screen>""" % (PNG_PATH+"logo.png")
+			</screen>""" % (PNG_PATH + "logo.png")
 		
 		Screen.__init__(self, session)
 		
@@ -627,7 +627,7 @@ class ZDFMediathek(Screen, HelpableScreen):
 		self.working = True
 		if not page:
 			page = "/ZDFmediathek/hauptnavigation/startseite?flash=off"
-		url = "%s%s"%(MAIN_PAGE, page)
+		url = "%s%s" % (MAIN_PAGE, page)
 		getPage(url).addCallback(self.gotPage).addErrback(self.error)
 
 	def error(self, err=""):
@@ -640,7 +640,7 @@ class ZDFMediathek(Screen, HelpableScreen):
 		if rightMenu[0] == TYPE_MOVIE:
 			list = []
 			for x in rightMenu[1]:
-				list.append(("%s %s"%(x[0], x[1].split(".")[-1]), x[1]))
+				list.append(("%s %s" % (x[0], x[1].split(".")[-1]), x[1]))
 			if len(list):
 				self.session.openWithCallback(self.play, ChoiceBox, title="Selektiere...", list=list)
 			else:
@@ -676,7 +676,7 @@ class ZDFMediathek(Screen, HelpableScreen):
 
 	def searchCallback(self, callback):
 		if callback and (callback != ""):
-			self.getPage("/ZDFmediathek/suche?sucheText=%s&offset=0&flash=off"%(callback.replace(" ", "+")))
+			self.getPage("/ZDFmediathek/suche?sucheText=%s&offset=0&flash=off" % (callback.replace(" ", "+")))
 
 	def play(self, callback):
 		self.working = False

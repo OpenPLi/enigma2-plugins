@@ -86,11 +86,11 @@ def message(msg):
 def Humanizer(size):
 	try:
 		if (size < 1024):
-			humansize = str(size)+ _(" B")
+			humansize = str(size) + _(" B")
 		elif (size < 1048576):
-			humansize = str(size/1024) + _(" KB")
+			humansize = str(size / 1024) + _(" KB")
 		else:
-			humansize = str(size/1048576) + _(" MB")
+			humansize = str(size / 1048576) + _(" MB")
 		return humansize
 	except:
 		pass
@@ -179,7 +179,7 @@ class DVDBackup:
 		firstPhrase = "File Structure DVD"
 		lastPhrase = "Main feature:"
 		if result and result.__contains__(firstPhrase) and result.__contains__(lastPhrase):
-			result = result[result.index(firstPhrase)+len(firstPhrase)+1: result.index(lastPhrase)]
+			result = result[result.index(firstPhrase) + len(firstPhrase) + 1: result.index(lastPhrase)]
 			print "[DVD Backup]",result
 			lines = result.split("\n")
 			for line in lines:
@@ -200,7 +200,7 @@ class DVDBackup:
 		firstPhrase = "File Structure DVD"
 		lastPhrase = "Main feature:"
 		if result and result.__contains__(firstPhrase) and result.__contains__(lastPhrase):
-			result = result[result.index(firstPhrase)+len(firstPhrase)+1: result.index(lastPhrase)]
+			result = result[result.index(firstPhrase) + len(firstPhrase) + 1: result.index(lastPhrase)]
 			print "[DVD Backup]",result
 			lines = result.split("\n")
 			folder = ""
@@ -209,7 +209,7 @@ class DVDBackup:
 				if len(tmp) == 1:
 					folder = tmp[0]
 				elif len(tmp) == 4:
-					name = folder+tmp[1]
+					name = folder + tmp[1]
 					size = tmp[2]
 					if size.__contains__("."):
 						size = size[:size.index(".")]
@@ -363,7 +363,7 @@ class DVDBackupProgress(Screen):
 		self.working = False
 
 		self["key_red"] = Label(_("Exit"))
-		if  dvdbackup.working:
+		if dvdbackup.working:
 			self["key_green"] = Label(_("Abort"))
 		else:
 			self["key_green"] = Label()
@@ -615,7 +615,7 @@ class DVDBackupScreen(Screen, ConfigListScreen):
 		file = cfg.device.value
 		file_path = isCDdevice()
 		if file_path:
-			file ="/dev/sr0"
+			file = "/dev/sr0"
 			cfg.device.value = file_path
 		self.console.ePopen("dvdbackup --info -i %s" % file, self.gotInfo)
 
@@ -646,7 +646,7 @@ class DVDBackupScreen(Screen, ConfigListScreen):
 			for line in lines:
 				if line.startswith("DVD-Video information of the DVD with title "):
 					idx = line.index("title ")
-					name = line[idx+6:]
+					name = line[idx + 6:]
 					name = name.replace('&', '').replace('+', '').replace('*', '').replace('?', '').replace('<', '').replace('>', '').replace('|', '').replace(' ', '_')
 					name = name.replace('"', '').replace('.', '').replace('/', '').replace('\\', '').replace('[', '').replace(']', '').replace(':', '').replace(';', '').replace('=', '').replace(',', '')
 					if name:

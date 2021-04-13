@@ -69,7 +69,7 @@ class Services(Source):
 				events = self.epgcache.lookupEvent(['IBDTSERNX', (epgref, 0, -1)])
 				if events:
 					if events[0][0] is not None:
-						eventid =  events[0][0]
+						eventid = events[0][0]
 					if events[0][1] is not None:
 						eventstart = events[0][1]
 					if events[0][2] is not None:

@@ -89,18 +89,18 @@ service_types_tv_hd = '1:7:1:0:0:0:0:0:0:0:(type == 17) || (type == 25) || (type
 
 #############################################################################################
 
-PRIMETIME	= 0
-FAVORITE	= 1
-PT_AND_FAV	= 2
+PRIMETIME = 0
+FAVORITE = 1
+PT_AND_FAV = 2
 
-EVENTID		= 0
-SERVICEREF	= 1
-BEGIN		= 2
-DURATION	= 3
-TITLE		= 4
-SHORTDESC	= 5
-EXTDESC		= 6
-SERVICENAME	= 7
+EVENTID = 0
+SERVICEREF = 1
+BEGIN = 2
+DURATION = 3
+TITLE = 4
+SHORTDESC = 5
+EXTDESC = 6
+SERVICENAME = 7
 
 #############################################################################################
 
@@ -172,55 +172,55 @@ class PrimeTimeManager(Screen, HelpableScreen):
 		HelpableScreen.__init__(self)
 		self["OkCancelActions"] = HelpableActionMap(self, "OkCancelActions",
 		{
-			"cancel":	(self.buttonCancel,	_("Exit plugin")),
-			"ok":		(self.buttonOk,		_("Add/remove event to or from favourites")),
+			"cancel": (self.buttonCancel, _("Exit plugin")),
+			"ok": (self.buttonOk, _("Add/remove event to or from favourites")),
 		}, -1)
 
 		self["ColorActions"] = HelpableActionMap(self, "ColorActions",
 		{
-			"red":		(self.buttonRed,	_("Exit plugin or open Multi EPG")),
-			"green":	(self.showTimerEntry,	_("Set or remove a timer")),
-			"yellow":	(self.showResultScreen,	_("Try to solve conflicts and show result")),
-			"blue":		(self.openTimerlist,	_("Open timers list")),
+			"red": (self.buttonRed, _("Exit plugin or open Multi EPG")),
+			"green": (self.showTimerEntry, _("Set or remove a timer")),
+			"yellow": (self.showResultScreen, _("Try to solve conflicts and show result")),
+			"blue": (self.openTimerlist, _("Open timers list")),
 		}, -1)
 
 		self["DirectionActions"] = HelpableActionMap(self, "DirectionActions",
 		{
-			"up":		(self.changeActiveList, _("Switch betw. favourite/prime time list")),
-			"down":		(self.changeActiveList, _("Switch betw. favourite/prime time list")),
-			"left":		(self.buttonLeft,	_("Scroll selected list to the left")),
-			"leftRepeated":	(self.buttonLeft,	_("Scroll selected list to the left")),
-			"right":	(self.buttonRight,	_("Scroll selected list to the right")),
-			"rightRepeated":(self.buttonRight,	_("Scroll selected list to the right")),
+			"up": (self.changeActiveList, _("Switch betw. favourite/prime time list")),
+			"down": (self.changeActiveList, _("Switch betw. favourite/prime time list")),
+			"left": (self.buttonLeft, _("Scroll selected list to the left")),
+			"leftRepeated": (self.buttonLeft, _("Scroll selected list to the left")),
+			"right": (self.buttonRight, _("Scroll selected list to the right")),
+			"rightRepeated":(self.buttonRight, _("Scroll selected list to the right")),
 		}, -1)
 
 		self["ChannelSelectBaseActions"] = HelpableActionMap(self, "ChannelSelectBaseActions",
 		{
-			"nextMarker":	(boundFunction(self.changeDay, True),	_("Switch to the next day")),
-			"prevMarker":	(boundFunction(self.changeDay, False),	_("Switch to the previous day")),
-			"nextBouquet":	(self.nextBouquet,			_("Switch to the next bouquet")),
-			"prevBouquet":	(self.prevBouquet,			_("Switch to the previous bouquet")),
+			"nextMarker": (boundFunction(self.changeDay, True), _("Switch to the next day")),
+			"prevMarker": (boundFunction(self.changeDay, False), _("Switch to the previous day")),
+			"nextBouquet": (self.nextBouquet, _("Switch to the next bouquet")),
+			"prevBouquet": (self.prevBouquet, _("Switch to the previous bouquet")),
 		}, -1)
 
 		self["ChannelSelectEPGActions"] = HelpableActionMap(self, "ChannelSelectEPGActions",
 		{
-			"showEPGList":	(self.showEventView,	_("Show event information")),
+			"showEPGList": (self.showEventView, _("Show event information")),
 		}, -1)
 
 		self["ChannelSelectEditActions"] = HelpableActionMap(self, "ChannelSelectEditActions",
 		{
-			"contextMenu":	(self.showSettings,	_("Open the settings screen")),
+			"contextMenu": (self.showSettings, _("Open the settings screen")),
 		}, -1)
 
 		self["NumberActions"] = HelpableActionMap(self, "NumberActions",
 		{
-			"0":		(self.toggleViewLive,	_('Toggle marker for a "view live" event')),
-			"1":		(self.toggleViewLiveType,	_('Toggle "view live" type')),
+			"0": (self.toggleViewLive, _('Toggle marker for a "view live" event')),
+			"1": (self.toggleViewLiveType, _('Toggle "view live" type')),
 		}, -1)
 
 		self["InfobarActions"] = HelpableActionMap(self, "InfobarActions",
 		{
-			"showMovies":	(self.togglePrimeTime,	_("Toggle primary/secondary prime time")),
+			"showMovies": (self.togglePrimeTime, _("Toggle primary/secondary prime time")),
 		}, -1)
 
 		# initialize the skin sub lists
@@ -585,11 +585,11 @@ class PrimeTimeManager(Screen, HelpableScreen):
 		if cur_ref:
 			self.service_types = service_types_tv
 			pos = self.service_types.rfind(':')
-			refstr = '%s (channelID == %08x%04x%04x) && %s ORDER BY name' % (self.service_types[:pos+1],
+			refstr = '%s (channelID == %08x%04x%04x) && %s ORDER BY name' % (self.service_types[:pos + 1],
 				cur_ref.getUnsignedData(4), # NAMESPACE
 				cur_ref.getUnsignedData(2), # TSID
 				cur_ref.getUnsignedData(3), # ONID
-				self.service_types[pos+1:])
+				self.service_types[pos + 1:])
 			ref = eServiceReference(refstr)
 
 			returnList = []
@@ -1349,9 +1349,9 @@ class PrimeTimeManager(Screen, HelpableScreen):
 		i = 1
 		while i < 4:
 			if (listType is PRIMETIME) or (listType is PT_AND_FAV):
-				self["ptList" + str(i)].moveToIndex(self.primeTimeEvents[self.currentBouquet].offset +i -1)
+				self["ptList" + str(i)].moveToIndex(self.primeTimeEvents[self.currentBouquet].offset + i - 1)
 			if (listType is FAVORITE) or (listType is PT_AND_FAV):
-				self["favList" + str(i)].moveToIndex(self.favoriteEvents[self.dayOffset].offset +i -1)
+				self["favList" + str(i)].moveToIndex(self.favoriteEvents[self.dayOffset].offset + i - 1)
 			i += 1
 
 	# update the channel marker (list and position)
@@ -1647,7 +1647,7 @@ class PrimeTimeManager(Screen, HelpableScreen):
 		if self.currentBouquet > 0:
 			self.currentBouquet -= 1
 		else:
-			self.currentBouquet = self.bouquetCount -1
+			self.currentBouquet = self.bouquetCount - 1
 
 		self.setPrimeTimeTitleString()
 		print '[PrimeTimeManager] Selected next bouquet'
@@ -1662,7 +1662,7 @@ class PrimeTimeManager(Screen, HelpableScreen):
 		if self.bouquetCount == 1:
 			return
 
-		if self.currentBouquet < self.bouquetCount -1:
+		if self.currentBouquet < self.bouquetCount - 1:
 			self.currentBouquet += 1
 		else:
 			self.currentBouquet = 0
@@ -1865,7 +1865,7 @@ class PrimeTimeManager(Screen, HelpableScreen):
 
 		while i <= counter:
 			if i:
-				refstr ='%s FROM SATELLITES' % (service_types_tv_hd)
+				refstr = '%s FROM SATELLITES' % (service_types_tv_hd)
 				ref = eServiceReference(refstr)
 
 			servicelist = self.serviceHandler.list(ref)
@@ -2277,22 +2277,22 @@ class PreviewList(MenuList):
 		else:
 			begin = strftime("%H:%M", localtime(beginTime))
 
-			res.append((eListboxPythonMultiContent.TYPE_TEXT, 0, 75 + offsetY, width / 2, 18, 0, RT_HALIGN_LEFT|RT_VALIGN_CENTER, _("Begin time") + ":"))
-			res.append((eListboxPythonMultiContent.TYPE_TEXT, width / 2, 75 + offsetY, width / 2, 18, 0, RT_HALIGN_LEFT|RT_VALIGN_CENTER, "%s" % begin))
+			res.append((eListboxPythonMultiContent.TYPE_TEXT, 0, 75 + offsetY, width / 2, 18, 0, RT_HALIGN_LEFT | RT_VALIGN_CENTER, _("Begin time") + ":"))
+			res.append((eListboxPythonMultiContent.TYPE_TEXT, width / 2, 75 + offsetY, width / 2, 18, 0, RT_HALIGN_LEFT | RT_VALIGN_CENTER, "%s" % begin))
 
 			if config.plugins.PrimeTimeManager.DurationOrEndTime.value == "duration":
 				#duration = _("%dh:%02dmin") % (durationTime / 3600, (durationTime / 60) - ((durationTime / 3600) * 60))
-				res.append((eListboxPythonMultiContent.TYPE_TEXT, 0, 95 + offsetY, width / 2, 18, 0, RT_HALIGN_LEFT|RT_VALIGN_CENTER, _("Duration") + ":"))
-				res.append((eListboxPythonMultiContent.TYPE_TEXT, width / 2, 95 + offsetY, width / 2, 18, 0, RT_HALIGN_LEFT|RT_VALIGN_CENTER, _("%d min") % (durationTime / 60)))
+				res.append((eListboxPythonMultiContent.TYPE_TEXT, 0, 95 + offsetY, width / 2, 18, 0, RT_HALIGN_LEFT | RT_VALIGN_CENTER, _("Duration") + ":"))
+				res.append((eListboxPythonMultiContent.TYPE_TEXT, width / 2, 95 + offsetY, width / 2, 18, 0, RT_HALIGN_LEFT | RT_VALIGN_CENTER, _("%d min") % (durationTime / 60)))
 			else:
 				end = strftime("%H:%M", localtime(beginTime + durationTime))
-				res.append((eListboxPythonMultiContent.TYPE_TEXT, 0, 95 + offsetY, width / 2, 18, 0, RT_HALIGN_LEFT|RT_VALIGN_CENTER, _("End time") + ":"))
-				res.append((eListboxPythonMultiContent.TYPE_TEXT, width / 2, 95 + offsetY, width / 2, 18, 0, RT_HALIGN_LEFT|RT_VALIGN_CENTER, "%s" % end))
+				res.append((eListboxPythonMultiContent.TYPE_TEXT, 0, 95 + offsetY, width / 2, 18, 0, RT_HALIGN_LEFT | RT_VALIGN_CENTER, _("End time") + ":"))
+				res.append((eListboxPythonMultiContent.TYPE_TEXT, width / 2, 95 + offsetY, width / 2, 18, 0, RT_HALIGN_LEFT | RT_VALIGN_CENTER, "%s" % end))
 
 			if self.listType is FAVORITE:
 				bouquet = self.serviceBouquet[serviceRef]
-				res.append((eListboxPythonMultiContent.TYPE_TEXT, 0, 75, width, 18, 0, RT_HALIGN_LEFT|RT_VALIGN_CENTER, _("Bouquet:")))
-				res.append((eListboxPythonMultiContent.TYPE_TEXT, width / 2, 75, width / 2, 18, 0, RT_HALIGN_LEFT|RT_VALIGN_CENTER, bouquet))
+				res.append((eListboxPythonMultiContent.TYPE_TEXT, 0, 75, width, 18, 0, RT_HALIGN_LEFT | RT_VALIGN_CENTER, _("Bouquet:")))
+				res.append((eListboxPythonMultiContent.TYPE_TEXT, width / 2, 75, width / 2, 18, 0, RT_HALIGN_LEFT | RT_VALIGN_CENTER, bouquet))
 
 				if numConflicts > 9:
 					numConflicts = 10
@@ -2308,8 +2308,8 @@ class PreviewList(MenuList):
 			elif serviceRef in self.viewLiveServices:
 				res.append((eListboxPythonMultiContent.TYPE_PIXMAP_ALPHATEST, width - 21, 0, 21, 21, self.favoritePixmap))
 
-		res.append((eListboxPythonMultiContent.TYPE_TEXT, 0, 0, width - 23, 23, 0, RT_HALIGN_LEFT|RT_VALIGN_CENTER, shortServiceName))
-		res.append((eListboxPythonMultiContent.TYPE_TEXT, 0, 30, width, 44, 0, RT_HALIGN_LEFT|RT_VALIGN_TOP|RT_WRAP, title))
+		res.append((eListboxPythonMultiContent.TYPE_TEXT, 0, 0, width - 23, 23, 0, RT_HALIGN_LEFT | RT_VALIGN_CENTER, shortServiceName))
+		res.append((eListboxPythonMultiContent.TYPE_TEXT, 0, 30, width, 44, 0, RT_HALIGN_LEFT | RT_VALIGN_TOP | RT_WRAP, title))
 
 		return res
 
@@ -2396,14 +2396,14 @@ class NoScrollBarLabel(ScrollLabel):
 			ret = True
 		s = self.long_text.size()
 		self.instance.move(self.long_text.position())
-		lineheight=fontRenderClass.getInstance().getLineHeight(self.long_text.getFont())
+		lineheight = fontRenderClass.getInstance().getLineHeight(self.long_text.getFont())
 		if not lineheight:
 			lineheight = 30 # assume a random lineheight if nothing is visible
 		lines = (int)(s.height() / lineheight)
 		self.pageHeight = (int)(lines * lineheight)
-		self.instance.resize(eSize(s.width(), self.pageHeight+(int)(lineheight/6)))
+		self.instance.resize(eSize(s.width(), self.pageHeight + (int)(lineheight / 6)))
 		self.long_text.move(ePoint(0,0))
-		self.long_text.resize(eSize(s.width()-30, self.pageHeight*16))
+		self.long_text.resize(eSize(s.width() - 30, self.pageHeight * 16))
 		self.setText(self.message)
 		return ret
 		
@@ -2412,12 +2412,12 @@ class NoScrollBarLabel(ScrollLabel):
 		if self.long_text is not None and self.pageHeight:
 			self.long_text.move(ePoint(0,0))
 			self.long_text.setText(self.message)
-			text_height=self.long_text.calculateSize().height()
-			total=self.pageHeight
-			pages=1
+			text_height = self.long_text.calculateSize().height()
+			total = self.pageHeight
+			pages = 1
 			while total < text_height:
-				total=total+self.pageHeight
-				pages=pages+1
+				total = total + self.pageHeight
+				pages = pages + 1
 			if pages > 1:
 				self.total = total
 				self.pages = pages

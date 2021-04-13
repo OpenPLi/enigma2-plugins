@@ -273,7 +273,7 @@ class TerrestrialScan(Screen, ConfigListScreen):
 					self.showError(_('Cannot get the NIM'))
 					return
 
-		print "[TerrestrialScan][getFrontend] Will wait up to %i seconds for tuner lock." % (self.lockTimeout/10)
+		print "[TerrestrialScan][getFrontend] Will wait up to %i seconds for tuner lock." % (self.lockTimeout / 10)
 
 		self.selectedNIM = current_slotid # Remember for next iteration
 
@@ -333,7 +333,7 @@ class TerrestrialScan(Screen, ConfigListScreen):
 			self.signalQualitytimer.start(100, 1)
 			return
 
-		self.tsidOnidCounter +=1
+		self.tsidOnidCounter += 1
 		if self.tsidOnidCounter > self.tsidOnidTimeout:
 			print "[TerrestrialScan][tsidOnidWait] tsid & onid wait failed"
 			self.search()
@@ -360,7 +360,7 @@ class TerrestrialScan(Screen, ConfigListScreen):
 				self.search()
 				return
 
-		self.signalQualityCounter +=1
+		self.signalQualityCounter += 1
 		if self.signalQualityCounter > self.snrTimeout:
 			print "[TerrestrialScan][signalQualityWait] Failed to collect SNR"
 			self.search()

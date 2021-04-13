@@ -227,7 +227,7 @@ class LogoManagerScreen(Screen):
 	def setlist_to_current(self):
 		""" fills the list with the target MVIs"""
 		global plugin_path
-		filelist =[]
+		filelist = []
 		for i in self.targets:
 			if fileExists(i[1]):
 				filelist.append(i[1])
@@ -239,7 +239,7 @@ class LogoManagerScreen(Screen):
 
 	def setlist_to_avaiable(self):
 		""" fills the list with all found new MVIs"""
-		filelist =[]
+		filelist = []
 		for i in os.listdir(config.plugins.logomanager.path.value):
 			if i.endswith(".mvi"):
 				filelist.append(config.plugins.logomanager.path.value + i)
@@ -269,7 +269,7 @@ class LogoManagerScreen(Screen):
 
 	def installMVI(self, target, sourcefile):
 		""" installs a mvi by overwriting the target with a source mvi """
-		print "[Logo Manager] installing %s as %s on %s" %(sourcefile, target[0], target[1])
+		print "[Logo Manager] installing %s as %s on %s" % (sourcefile, target[0], target[1])
 		if target[0] == _("radio") and not fileExists("/usr/share/enigma2/radio.mvi-orig"):
 			os.system("mv /usr/share/enigma2/radio.mvi /usr/share/enigma2/radio.mvi-orig")
 		if fileExists(target[1]):
@@ -287,7 +287,7 @@ class LogoManagerScreen(Screen):
 				os.system(cmd)
 				if fileExists("/etc/rc6.d/K01bootlogo-reboot"):
 					os.chmod("/etc/rc6.d/K01bootlogo-reboot", 0755)
-		os.system("cp '%s' '%s'"%(sourcefile, target[1]))
+		os.system("cp '%s' '%s'" % (sourcefile, target[1]))
 
 class LogoManagerConfigScreen(ConfigListScreen, Screen):
 	skin = """

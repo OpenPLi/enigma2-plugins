@@ -61,7 +61,7 @@ class AutoMount():
 			ret = ""
 			# How many definitions are present
 			Len = len(definitions)
-			return Len > 0 and definitions[Len-1].text or default
+			return Len > 0 and definitions[Len - 1].text or default
 
 		# Config is stored in "mountmanager" element
 		# Read out NFS Mounts
@@ -73,7 +73,7 @@ class AutoMount():
 					data['mounttype'] = 'nfs'.encode("UTF-8")
 					data['active'] = getValue(mount.findall("active"), False).encode("UTF-8")
 					if data["active"] == 'True' or data["active"] == True:
-						self.activeMountsCounter +=1
+						self.activeMountsCounter += 1
 					data['hdd_replacement'] = getValue(mount.findall("hdd_replacement"), "False").encode("UTF-8")
 					data['ip'] = getValue(mount.findall("ip"), "").encode("UTF-8")
 					data['host'] = getValue(mount.findall("host"), "").encode("UTF-8")
@@ -93,7 +93,7 @@ class AutoMount():
 					data['mounttype'] = 'cifs'.encode("UTF-8")
 					data['active'] = getValue(mount.findall("active"), False).encode("UTF-8")
 					if data["active"] == 'True' or data["active"] == True:
-						self.activeMountsCounter +=1
+						self.activeMountsCounter += 1
 					data['hdd_replacement'] = getValue(mount.findall("hdd_replacement"), "False").encode("UTF-8")
 					data['ip'] = getValue(mount.findall("ip"), "").encode("UTF-8")
 					data['host'] = getValue(mount.findall("host"), "").encode("UTF-8")
@@ -418,7 +418,7 @@ class AutoMount():
 		self.automounts = self.newautomounts
 		if not self.removeConsole:
 			self.removeConsole = Console()
-		path = '/media/net/'+ mountpoint
+		path = '/media/net/' + mountpoint
 		umountcmd = "umount -fl '%s'" % path
 		print "[AutoMount.py] UMOUNT-CMD--->",umountcmd
 		self.removeConsole.ePopen(umountcmd, self.removeMountPointFinished, [path, callback])

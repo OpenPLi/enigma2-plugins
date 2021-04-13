@@ -37,7 +37,7 @@ from Components.config import ConfigSubsection, ConfigSubList, ConfigInteger, co
 from setup import initConfig, WeatherPluginEntriesListConfigScreen
 
 config.plugins.WeatherPlugin = ConfigSubsection()
-config.plugins.WeatherPlugin.entriescount =  ConfigInteger(0)
+config.plugins.WeatherPlugin.entriescount = ConfigInteger(0)
 config.plugins.WeatherPlugin.Entries = ConfigSubList()
 initConfig()
 
@@ -111,7 +111,7 @@ class WeatherPlugin(Screen):
 		i = 1
 		while i < 5:
 			self["weekday%s" % i] = StaticText()
-			self["weekday%s_icon" %i] = WeatherIcon()
+			self["weekday%s_icon" % i] = WeatherIcon()
 			self["weekday%s_temp" % i] = StaticText()
 			i += 1
 		del i
@@ -155,7 +155,7 @@ class WeatherPlugin(Screen):
 			self.setItem()
 
 	def setItem(self):
-		self.weatherPluginEntry = config.plugins.WeatherPlugin.Entries[self.weatherPluginEntryIndex-1]
+		self.weatherPluginEntry = config.plugins.WeatherPlugin.Entries[self.weatherPluginEntryIndex - 1]
 		self.clearFields()
 		self.startRun()
 
@@ -168,7 +168,7 @@ class WeatherPlugin(Screen):
 		i = 1
 		while i < 5:
 			self["weekday%s" % i].text = ""
-			self["weekday%s_icon" %i].hide()
+			self["weekday%s_icon" % i].hide()
 			self["weekday%s_temp" % i].text = ""
 			i += 1
 
@@ -207,9 +207,9 @@ class WeatherPlugin(Screen):
 						if items2.tag == "condition":
 							self["condition"].text = _("Current: %s") % items2.attrib.get("data").encode("utf-8", 'ignore')
 						elif items2.tag == "temp_f" and metric == 0:
-							self["currentTemp"].text =  ("%s °F" % items2.attrib.get("data").encode("utf-8", 'ignore')) 
+							self["currentTemp"].text = ("%s °F" % items2.attrib.get("data").encode("utf-8", 'ignore')) 
 						elif items2.tag == "temp_c" and metric == 1:
-							self["currentTemp"].text =  ("%s °C" % items2.attrib.get("data").encode("utf-8", 'ignore')) 
+							self["currentTemp"].text = ("%s °C" % items2.attrib.get("data").encode("utf-8", 'ignore')) 
 						elif items2.tag == "humidity":
 							self["humidity"].text = items2.attrib.get("data").encode("utf-8", 'ignore')
 						elif items2.tag == "wind_condition":

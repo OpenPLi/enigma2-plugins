@@ -14,7 +14,7 @@ class ReconstructApSc(ChoiceBox):
 		name = self.getName(service, path)
 
 		if offline is None:
-			tlist = [(_("Cannot reconstruct this item"),  "CALLFUNC", self.confirmed0),]
+			tlist = [(_("Cannot reconstruct this item"), "CALLFUNC", self.confirmed0),]
 		else:
 			tlist = [(_("Don't reconstruct"), "CALLFUNC", self.confirmed0),]
 			tnext = [
@@ -42,7 +42,7 @@ class ReconstructApSc(ChoiceBox):
 		for service in playlist:
 			path = service.getPath()
 			if path.endswith('.ts'):
-				if arg == "reconstructallfiles" or not fileExists(path+'.ap') or not fileExists(path+'.sc'):
+				if arg == "reconstructallfiles" or not fileExists(path + '.ap') or not fileExists(path + '.sc'):
 					self.addToTask(service, path)
 		self.close()
 

@@ -145,7 +145,7 @@ class Seekbar(ConfigListScreen, Screen):
 			self["cursor"].moveTo(x, 125, 1)
 			self["cursor"].startMoving()
 			pts = int(float(self.length[1]) / 100.0 * self.percent)
-			self["time"].setText("%d:%02d" % ((pts/60/90000), ((pts/90000)%60)))
+			self["time"].setText("%d:%02d" % ((pts / 60 / 90000), ((pts / 90000) % 60)))
 
 	def exit(self):
 		self.cursorTimer.stop()
@@ -162,7 +162,7 @@ class Seekbar(ConfigListScreen, Screen):
 					if newPosition > oldPosition:
 						pts = newPosition - oldPosition
 					else:
-						pts = -1*(oldPosition - newPosition)
+						pts = -1 * (oldPosition - newPosition)
 					DVDPlayer2.doSeekRelative(self.infobarInstance, pts)
 				elif self.media_player:
 					oldPosition = self.seek.getPlayPosition()[1]
@@ -238,7 +238,7 @@ class Seekbar(ConfigListScreen, Screen):
 		elif sel == self.minuteInput:
 			pts = self.minuteInput.value * 60 * 90000
 			if self.fwd == False:
-				pts = -1*pts
+				pts = -1 * pts
 			if self.old_dvd:
 				DVDPlayer2.doSeekRelative(self.infobarInstance, pts)
 			elif self.media_player:

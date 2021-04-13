@@ -86,11 +86,11 @@ def timeSimilarityPercent(rtimer, evtBegin, evtEnd, timer=None):
 	else:
 		commonTime = 0
 	if evtBegin != evtEnd:
-		commonTime_percent = 100*commonTime/(evtEnd - evtBegin)
+		commonTime_percent = 100 * commonTime / (evtEnd - evtBegin)
 	else:
 		return 0
 	if rtimerEnd != rtimerBegin:
-		durationMatch_percent = 100*(evtEnd - evtBegin)/(rtimerEnd - rtimerBegin)
+		durationMatch_percent = 100 * (evtEnd - evtBegin) / (rtimerEnd - rtimerBegin)
 	else:
 		return 0
 	if durationMatch_percent < commonTime_percent:
@@ -117,7 +117,7 @@ def blockingCallFromMainThread(f, *a, **kw):
 	result = None
 	while True:
 		try:
-			result = queue.get(True, config.plugins.autotimer.timeout.value*60)
+			result = queue.get(True, config.plugins.autotimer.timeout.value * 60)
 		except Queue.Empty as qe:
 			if True: #not reactor.running: # reactor.running is only False AFTER shutdown, we are during.
 				doLog("[AutoTimer] Reactor no longer active, aborting.")
@@ -198,7 +198,7 @@ class AutoTimer:
 				except:
 					pass
 				if Standby.inStandby is None:
-					AddPopup(_("The autotimer file (/etc/enigma2/autotimer.xml) is corrupt and could not be loaded.") + "\n" +_("A new and empty config was created. A backup of the config can be found here (/etc/enigma2/autotimer.xml_old)."), type=MessageBox.TYPE_ERROR, timeout=0, id="AutoTimerLoadFailed")
+					AddPopup(_("The autotimer file (/etc/enigma2/autotimer.xml) is corrupt and could not be loaded.") + "\n" + _("A new and empty config was created. A backup of the config can be found here (/etc/enigma2/autotimer.xml_old)."), type=MessageBox.TYPE_ERROR, timeout=0, id="AutoTimerLoadFailed")
 
 				self.timers = []
 				self.defaultTimer = preferredAutoTimerComponent(
@@ -339,7 +339,7 @@ class AutoTimer:
 								service = services.getNext()
 								if not service.valid():
 									break
-								playable = not (service.flags & (eServiceReference.isMarker|eServiceReference.isDirectory)) or (service.flags & eServiceReference.isNumberedMarker)
+								playable = not (service.flags & (eServiceReference.isMarker | eServiceReference.isDirectory)) or (service.flags & eServiceReference.isNumberedMarker)
 								if playable:
 									test.append((service.toString(), 0, -1, -1))
 			else: # Get all bouquets
@@ -375,7 +375,7 @@ class AutoTimer:
 									service = services.getNext()
 									if not service.valid():
 										break
-									playable = not (service.flags & (eServiceReference.isMarker|eServiceReference.isDirectory)) or (service.flags & eServiceReference.isNumberedMarker)
+									playable = not (service.flags & (eServiceReference.isMarker | eServiceReference.isDirectory)) or (service.flags & eServiceReference.isNumberedMarker)
 									if playable:
 										test.append((service.toString(), 0, -1, -1))
 
@@ -569,7 +569,7 @@ class AutoTimer:
 				except:
 					vps_changed = False
 				time_changed = (evtBegin - offsetBegin != rtimer.begin) or (evtEnd + offsetEnd != rtimer.end)
-				desc_changed = (timer.avoidDuplicateDescription >= 1 and shortdesc and rtimer.description and shortdesc != rtimer.description) or (timer.avoidDuplicateDescription >= 2 and extdesc and rtimer.extdesc and  extdesc != rtimer.extdesc)
+				desc_changed = (timer.avoidDuplicateDescription >= 1 and shortdesc and rtimer.description and shortdesc != rtimer.description) or (timer.avoidDuplicateDescription >= 2 and extdesc and rtimer.extdesc and extdesc != rtimer.extdesc)
 				if rtimer.eit == eit:
 					oldExists = True
 					doLog("[AutoTimer] We found a timer based on eit")
@@ -944,7 +944,7 @@ class AutoTimer:
 				logpath = os.path.dirname(config.plugins.autotimer.log_file.value)
 			path_search_log = os.path.join(logpath, "autotimer_search.log")
 			file_search_log = open(path_search_log, "a")
-			log_txt  = "(" + str(entryType) + ") "
+			log_txt = "(" + str(entryType) + ") "
 			log_txt += str(strftime('%d.%m., %H:%M', localtime(timerEntry.begin)))
 			log_txt += ' - ' + timerEntry.service_ref.getServiceName()
 			log_txt += ' - "' + str(timerEntry.name) + '"\n'
@@ -1010,7 +1010,7 @@ class AutoTimer:
 					ret = self.addToFilterfile(name, begin)
 					if ret:
 						add_counter += 1
-				session.open(MessageBox, _("Finished add to filterList with %s event(s):\n\n %s event(s) added \n %s event(s) skipped") % (len(services), add_counter,len(services)-add_counter), type=MessageBox.TYPE_INFO, timeout=config.plugins.autotimer.popup_timeout.value)
+				session.open(MessageBox, _("Finished add to filterList with %s event(s):\n\n %s event(s) added \n %s event(s) skipped") % (len(services), add_counter,len(services) - add_counter), type=MessageBox.TYPE_INFO, timeout=config.plugins.autotimer.popup_timeout.value)
 			except Exception as e:
 				doLog("[AutoTimer] Error in addToFilterList", e)
 				print("[AutoTimer] ======== Error in addToFilterList ", e)
@@ -1035,9 +1035,9 @@ class AutoTimer:
 				try:
 					recordHandler.removeEntry(timer)
 					removed_at += 1
-					doLog("[AutoTimer-reload] Remove double timer %s."% (timer.name))
+					doLog("[AutoTimer-reload] Remove double timer %s." % (timer.name))
 				except:
-					doLog("[AutoTimer-reload] Error for remove double timer %s."% (timer.name))
+					doLog("[AutoTimer-reload] Error for remove double timer %s." % (timer.name))
 		if config.plugins.autotimer.remove_double_and_conflicts_timers.value == "yes_notify":
 			if Standby.inStandby is None and (disabled_at or removed_at):
 				AddPopup(_("Reload timers list.\n%d autotimer(s) disabled because conflict.\n%d double autotimer(s) removed.\n") % (disabled_at, removed_at), MessageBox.TYPE_INFO, config.plugins.autotimer.popup_timeout.value, CONFLICTINGDOUBLEID)
