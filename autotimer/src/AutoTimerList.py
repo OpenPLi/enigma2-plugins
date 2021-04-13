@@ -117,17 +117,17 @@ class AutoTimerList(MenuList):
 			height = self.l.getItemSize().height()
 			width = self.l.getItemSize().width()
 			res = [None]
-			x = (2*width) // 3
+			x = (2 * width) // 3
 			nx, ny, nw, nh = skin.parameters.get("AutotimerListTimerName",(52, 2, 26, 25))
-			res.append((eListboxPythonMultiContent.TYPE_TEXT, nx, ny, x-nw, nh, 0, RT_HALIGN_LEFT|RT_VALIGN_BOTTOM, timer.name))
+			res.append((eListboxPythonMultiContent.TYPE_TEXT, nx, ny, x - nw, nh, 0, RT_HALIGN_LEFT | RT_VALIGN_BOTTOM, timer.name))
 			nx, ny, nw, nh = skin.parameters.get("AutotimerListChannels",(2, 47, 4, 25))
-			res.append((eListboxPythonMultiContent.TYPE_TEXT, nx, ny, width-nw, nh, 1, RT_HALIGN_LEFT|RT_VALIGN_BOTTOM, channel))
+			res.append((eListboxPythonMultiContent.TYPE_TEXT, nx, ny, width - nw, nh, 1, RT_HALIGN_LEFT | RT_VALIGN_BOTTOM, channel))
 
 			if timer.include[3]:
 				total = len(timer.include[3])
 				count = 0
 				days = []
-				while count+1 <= total:
+				while count + 1 <= total:
 					day = timer.include[3][count]
 					day = {
 						'0': _("Mon"),
@@ -146,7 +146,7 @@ class AutoTimerList(MenuList):
 			else:
 				days = _("Everyday")
 			dx, ny, dw, nh = skin.parameters.get("AutotimerListDays",(1, 25, 5, 25))
-			res.append((eListboxPythonMultiContent.TYPE_TEXT, float(width)/10*4.5+dx, ny, float(width)/10*5.5-dw, nh, 1, RT_HALIGN_RIGHT|RT_VALIGN_BOTTOM, days))
+			res.append((eListboxPythonMultiContent.TYPE_TEXT, float(width) / 10 * 4.5 + dx, ny, float(width) / 10 * 5.5 - dw, nh, 1, RT_HALIGN_RIGHT | RT_VALIGN_BOTTOM, days))
 
 			if timer.hasTimespan():
 				nowt = time()
@@ -157,14 +157,14 @@ class AutoTimerList(MenuList):
 			else:
 				timespan = _("Any time")
 			dx, ny, nw, nh = skin.parameters.get("AutotimerListHasTimespan",(154, 1, 150, 25))
-			res.append((eListboxPythonMultiContent.TYPE_TEXT, width-dx, ny, nw, nh, 1, RT_HALIGN_RIGHT|RT_VALIGN_BOTTOM, timespan))
+			res.append((eListboxPythonMultiContent.TYPE_TEXT, width - dx, ny, nw, nh, 1, RT_HALIGN_RIGHT | RT_VALIGN_BOTTOM, timespan))
 
 			if timer.hasTimeframe():
 				begin = strftime("%a, %d %b", localtime(timer.getTimeframeBegin()))
 				end = strftime("%a, %d %b", localtime(timer.getTimeframeEnd()))
 				timespan = (("%s ... %s") % (begin, end))
 				nx, ny, nw, nh = skin.parameters.get("AutotimerListTimespan",(2, 25, 5, 25))
-				res.append((eListboxPythonMultiContent.TYPE_TEXT, nx, ny, float(width)/10*4.5-nw, nh, 1, RT_HALIGN_LEFT|RT_VALIGN_BOTTOM, timespan))
+				res.append((eListboxPythonMultiContent.TYPE_TEXT, nx, ny, float(width) / 10 * 4.5 - nw, nh, 1, RT_HALIGN_LEFT | RT_VALIGN_BOTTOM, timespan))
 
 			if icon:
 				nx, ny, nw, nh = skin.parameters.get("AutotimerListIcon",(2, 3, 24, 25))
@@ -172,7 +172,7 @@ class AutoTimerList(MenuList):
 			nx, ny, nw, nh = skin.parameters.get("AutotimerListRectypeicon",(28, 5, 24, 25))
 			res.append((eListboxPythonMultiContent.TYPE_PIXMAP_ALPHATEST, nx, ny, nw, nh, rectypeicon))
 			devide = LoadPixmap(resolveFilename(SCOPE_CURRENT_SKIN, "div-h.png"))
-			res.append((eListboxPythonMultiContent.TYPE_PIXMAP_ALPHATEST, 0, height-2, width, 1, devide))
+			res.append((eListboxPythonMultiContent.TYPE_PIXMAP_ALPHATEST, 0, height - 2, width, 1, devide))
 			return res
 
 	def getCurrent(self):

@@ -20,7 +20,7 @@ from Screens.MessageBox import MessageBox
 from Screens.HelpMenu import HelpableScreen
 from Screens.Standby import TryQuitMainloop
 from Screens.EpgSelection import EPGSelection
-from Screens.EventView import  EventViewEPGSelect
+from Screens.EventView import EventViewEPGSelect
 from Screens.PictureInPicture import PictureInPicture, pip_config_initialized
 from Tools.BoundFunction import boundFunction
 from Tools.Directories import fileExists
@@ -97,7 +97,7 @@ class RememberLastService:
 		mode = config.plugins.extvirtualzap.saveLastServiceMode.value
 		self.clearTimer.stop()
 		if mode != "standby" and mode != "always":
-			self.clearTimer.start(int(mode)*60*1000,True)
+			self.clearTimer.start(int(mode) * 60 * 1000,True)
 
 	def clearLastService(self):
 		config.plugins.extvirtualzap.curref.value = ""
@@ -654,7 +654,7 @@ class ExtendedVirtualZap(Screen, HelpableScreen):
 						self.servicelist.moveDown()
 					cur = self.servicelist.getCurrentSelection()
 					if cur:
-						if cur.toString() == prev or not (cur.flags & (64|8)):
+						if cur.toString() == prev or not (cur.flags & (64 | 8)):
 							break
 		else:
 			self.servicelist.moveDown()
@@ -675,7 +675,7 @@ class ExtendedVirtualZap(Screen, HelpableScreen):
 					self.servicelist.moveUp()
 					cur = self.servicelist.getCurrentSelection()
 					if cur:
-						if cur.toString() == prev or not (cur.flags & (64|8)):
+						if cur.toString() == prev or not (cur.flags & (64 | 8)):
 							break
 		else:
 			self.servicelist.moveUp()
@@ -686,7 +686,7 @@ class ExtendedVirtualZap(Screen, HelpableScreen):
 
 	def isPlayable(self):
 		current = ServiceReference(self.servicelist.getCurrentSelection())
-		return not (current.ref.flags & (eServiceReference.isMarker|eServiceReference.isDirectory))
+		return not (current.ref.flags & (eServiceReference.isMarker | eServiceReference.isDirectory))
 
 	def getTunerName(self):
 		number = -2
@@ -700,7 +700,7 @@ class ExtendedVirtualZap(Screen, HelpableScreen):
 					type = tuner.get("tuner_type", '')
 					if type: 
 						tunerType = ' (%s)' % type
-					name = chr(number+65) + tunerType
+					name = chr(number + 65) + tunerType
 					return _("Tuner %s") % name
 		except:
 			pass
@@ -812,7 +812,7 @@ class ExtendedVirtualZap(Screen, HelpableScreen):
 						timedisplay = _("+%d min") % (((event[0][1] + duration) - time()) / 60)
 						percent = int((now - begin) * 100 / duration)
 					elif modus == 1:
-						timedisplay = _("%d min") %  (duration / 60)
+						timedisplay = _("%d min") % (duration / 60)
 						percent = 0
 					return "%02d:%02d %s" % (t[3],t[4], event[0][4]), timedisplay, percent
 				else:
@@ -1097,7 +1097,7 @@ class ExtendedVirtualZap(Screen, HelpableScreen):
 					if bouquet.flags & eServiceReference.isDirectory:
 						service = self.searchNumberHelper(serviceHandler, number, bouquet)
 						if service:
-							playable = not (service.flags & (eServiceReference.isMarker|eServiceReference.isDirectory)) or (service.flags & eServiceReference.isNumberedMarker)
+							playable = not (service.flags & (eServiceReference.isMarker | eServiceReference.isDirectory)) or (service.flags & eServiceReference.isNumberedMarker)
 							if not playable:
 								service = None
 							break
@@ -1335,7 +1335,7 @@ def ExtendedVirtualZapChannelContextMenu__init__(self, session, csel):
 		current_sel_flags = current.flags
 		inBouquetRootList = current_root and current_root.getPath().find('FROM BOUQUET "bouquets.') != -1
 		inBouquet = csel.getMutableList() is not None
-		isPlayable = not (current_sel_flags & (eServiceReference.isMarker|eServiceReference.isDirectory))
+		isPlayable = not (current_sel_flags & (eServiceReference.isMarker | eServiceReference.isDirectory))
 		if csel.bouquet_mark_edit == OFF and not csel.movemode and current and current.valid():
 			if isPlayable:
 				if config.plugins.extvirtualzap.channelselection_contextmenu.value:
@@ -1464,7 +1464,7 @@ def singleepg(session, selectedevent, **kwargs):
 def eventinfofull(session, eventName="", **kwargs):
 	mode = config.plugins.extvirtualzap.event_menu.value
 	open_plugin = False
-	if eventName != "" and (mode =="2" or mode == "3"):
+	if eventName != "" and (mode == "2" or mode == "3"):
 		open_plugin = True
 	elif eventName == "":
 		open_plugin = True
@@ -1480,7 +1480,7 @@ def eventinfofull(session, eventName="", **kwargs):
 def eventinfo(session, servicelist, eventName="", **kwargs):
 	mode = config.plugins.extvirtualzap.event_menu.value
 	open_plugin = False
-	if eventName != "" and (mode =="2" or mode == "3"):
+	if eventName != "" and (mode == "2" or mode == "3"):
 		open_plugin = False
 	elif eventName == "":
 		open_plugin = True

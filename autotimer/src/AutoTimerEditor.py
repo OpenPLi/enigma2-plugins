@@ -203,7 +203,7 @@ class AutoTimerEditorBase:
 		self.overrideAlternatives = NoSave(ConfigYesNo(default=timer.overrideAlternatives))
 
 		# Justplay
-		self.justplay = NoSave(ConfigSelection(choices=[("zap", _("zap")), ("record", _("record")), ("zap+record", _("zap and record"))], default={0: "record", 1: "zap", 2: "zap+record"}[int(timer.justplay) + 2*int(timer.always_zap)]))
+		self.justplay = NoSave(ConfigSelection(choices=[("zap", _("zap")), ("record", _("record")), ("zap+record", _("zap and record"))], default={0: "record", 1: "zap", 2: "zap+record"}[int(timer.justplay) + 2 * int(timer.always_zap)]))
 		self.setEndtime = NoSave(ConfigYesNo(default=timer.setEndtime))
 
 		# Zap wakeup
@@ -309,7 +309,7 @@ class AutoTimerEditorBase:
 			duration = timer.getDuration()
 		else:
 			default = False
-			duration =70
+			duration = 70
 		self.duration = NoSave(ConfigEnableDisable(default=default))
 		self.durationlength = NoSave(ConfigNumber(default=duration))
 
@@ -563,7 +563,7 @@ class AutoTimerEditor(Screen, ConfigListScreen, AutoTimerEditorBase):
 			self["key_yellow"].text = _("edit filters")
 		else:
 			self["key_yellow"].text = _("add filters")
-		if self.excludes[0] or self.excludes[1] or self.excludes[2]  or self.includes[0] or self.includes[1] or self.includes[2]:
+		if self.excludes[0] or self.excludes[1] or self.excludes[2] or self.includes[0] or self.includes[1] or self.includes[2]:
 			self.isActive_otherfilters_value = _("enabled")
 		else:
 			self.isActive_otherfilters_value = _("disabled")
@@ -961,7 +961,7 @@ class AutoTimerEditor(Screen, ConfigListScreen, AutoTimerEditorBase):
 
 		# Offset
 		if self.offset.value:
-			self.timer.offset = (self.offsetbegin.value*60, self.offsetend.value*60)
+			self.timer.offset = (self.offsetbegin.value * 60, self.offsetend.value * 60)
 		else:
 			self.timer.offset = None
 
@@ -985,7 +985,7 @@ class AutoTimerEditor(Screen, ConfigListScreen, AutoTimerEditorBase):
 
 		# Maxduration
 		if self.duration.value:
-			self.timer.maxduration = self.durationlength.value*60
+			self.timer.maxduration = self.durationlength.value * 60
 		else:
 			self.timer.maxduration = None
 
@@ -1409,9 +1409,9 @@ class AutoTimerServiceEditor(Screen, ConfigListScreen):
 				# strip all after last : when adding a (non alternative) channel
 				pos = sname.rfind(':')
 				if pos != -1:
-					if sname[pos-1] == ':':
+					if sname[pos - 1] == ':':
 						pos -= 1
-					sname = sname[:pos+1]
+					sname = sname[:pos + 1]
 
 			list.append(getConfigListEntry(_("Record on"), NoSave(ConfigSelection(choices=[(sname, ServiceReference(args[0]).getServiceName().replace('\xc2\x86', '').replace('\xc2\x87', ''))]))))
 			self["config"].setList(list)
@@ -1483,15 +1483,15 @@ def addAutotimerFromEvent(session, evt=None, service=None, importer_Callback=imp
 			# strip all after last :
 			pos = service.rfind(':')
 			if pos != -1:
-				if service[pos-1] == ':':
+				if service[pos - 1] == ':':
 					pos -= 1
-				service = service[:pos+1]
+				service = service[:pos + 1]
 
 		sref = ServiceReference(myref)
 	if evt:
 		# timespan defaults to +- 1h
-		begin = evt.getBeginTime()-3600
-		end = begin + evt.getDuration()+7200
+		begin = evt.getBeginTime() - 3600
+		end = begin + evt.getDuration() + 7200
 	else:
 		begin = end = 0
 
@@ -1536,9 +1536,9 @@ def addAutotimerFromService(session, service=None, importer_Callback=importerCal
 		# strip all after last :
 		pos = sref.rfind(':')
 		if pos != -1:
-			if sref[pos-1] == ':':
+			if sref[pos - 1] == ':':
 				pos -= 1
-			sref = sref[:pos+1]
+			sref = sref[:pos + 1]
 
 		sref = ServiceReference(sref)
 	if info:

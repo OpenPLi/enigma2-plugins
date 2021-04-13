@@ -34,7 +34,7 @@ except:
 PrevFrontendPriority = None
 _session = None
 
-config.misc.rectimerstate =  ConfigBoolean(default=False)
+config.misc.rectimerstate = ConfigBoolean(default=False)
 config.usage.recinfobar = ConfigYesNo(default=False)
 config.plugins.RecInfobar = ConfigSubsection()
 config.plugins.RecInfobar.anchor = ConfigSelection([("top", _("down")),("bottom", _("top"))], default="bottom")
@@ -42,9 +42,9 @@ config.plugins.RecInfobar.background = ConfigSelection([("#00000000", _("black")
 config.plugins.RecInfobar.x = ConfigInteger(default=0, limits=(0,9999))
 config.plugins.RecInfobar.y = ConfigInteger(default=360, limits=(0,9999))
 config.plugins.RecInfobar.always_zap = ConfigSelection([("0", _("default")),("1", _("always")),("2", _("ask the user"))], default="0")
-config.plugins.RecInfobar.always_message =  ConfigYesNo(default=False)
+config.plugins.RecInfobar.always_message = ConfigYesNo(default=False)
 config.plugins.RecInfobar.default_zap = ConfigSelection([("yes", _("zap")),("no", _("no zap"))], default="yes")
-config.plugins.RecInfobar.check_wakeup =  ConfigYesNo(default=False)
+config.plugins.RecInfobar.check_wakeup = ConfigYesNo(default=False)
 config.plugins.RecInfobar.standby_timeout = ConfigInteger(default=10, limits=(5,180))
 config.plugins.RecInfobar.after_event = ConfigSelection([("0", _("all")),("1", _("standby")),("2", _("deep standby")),("3", _("auto")),("4", _("auto and deep standby")),("5", _("all, except 'nothing'"))], default="5")
 config.plugins.RecInfobar.set_position = ConfigYesNo(default=False)
@@ -185,7 +185,7 @@ class RecInfoBar(Screen):
 			if timer.justplay:
 				continue
 			ret = None
-			if 0 < timer.begin - Time() <= 60*5:
+			if 0 < timer.begin - Time() <= 60 * 5:
 				if timer.afterEvent == AFTEREVENT.STANDBY:
 					ret = 1
 				elif timer.afterEvent == AFTEREVENT.DEEPSTANDBY:
@@ -281,7 +281,7 @@ class RecInfoBar(Screen):
 							begintimestr = strftime("%H:%M ", localtime(timer.begin))
 							begintimeendstr = strftime("%H:%M ", localtime(timer.end))
 							default = (config.plugins.RecInfobar.default_zap.value == "yes")
-							self.session.openWithCallback(self.callbackYesNo, MessageBox, _("Recording starts!\n") + _("duration:  %s ... ") % (begintimestr) + "%s " % (begintimeendstr) + _(" (%d mins)\n") % (begintime) + _("channel: %s   prov: %s\n %s\n") % (name, prov, rec_name) + "\n" +  _("Switch to a recordable channel?"), MessageBox.TYPE_YESNO, timeout=timeout, default=default)
+							self.session.openWithCallback(self.callbackYesNo, MessageBox, _("Recording starts!\n") + _("duration:  %s ... ") % (begintimestr) + "%s " % (begintimeendstr) + _(" (%d mins)\n") % (begintime) + _("channel: %s   prov: %s\n %s\n") % (name, prov, rec_name) + "\n" + _("Switch to a recordable channel?"), MessageBox.TYPE_YESNO, timeout=timeout, default=default)
 
 	def GozapPosition(self):
 		if self.SetPosition and self.zap_ref is not None:
@@ -323,12 +323,12 @@ class RecInfoBar(Screen):
 		self.session.nav.record_event.remove(self.gotRecordEvent)
 
 	def getTimeStr(self, secs):
-		dd, ss = divmod(secs, 60*60*24)
-		hh, ss = divmod(ss, 60*60)
+		dd, ss = divmod(secs, 60 * 60 * 24)
+		hh, ss = divmod(ss, 60 * 60)
 		mm, ss = divmod(ss, 60)
 		return _(config.plugins.RecInfobar.timelen_format.value) % dict(
-			DDs=dd and _N("%(DD)d day", "%(DD)d days", dd)%{"DD": dd} or "",
-			DD=dd, HH=hh, MM=mm, SS=ss, HHs=secs/3600, MMs=secs/60, SSs=secs)
+			DDs =dd and _N("%(DD)d day", "%(DD)d days", dd) % {"DD": dd} or "",
+			DD=dd, HH=hh, MM=mm, SS=ss, HHs=secs / 3600, MMs=secs / 60, SSs=secs)
 
 	def updateInfo(self):
 		cnt = 0
@@ -340,22 +340,22 @@ class RecInfoBar(Screen):
 				for x in range(len(fields)):
 					fields[x] += '\n\n'
 			fields[0] += value[0] and str(value[0]) or ''
-			fields[1] += "%s"%(value[1])
+			fields[1] += "%s" % (value[1])
 			fields[2] += self.getTimeStr(Time() - value[2])
 			if fields[3] != ("Unknown") or fields[3] != _("N/A"):
-				fields[3] += _("Provider: %s")%(value[3])
+				fields[3] += _("Provider: %s") % (value[3])
 			else:
-				fields[3] += "%s"%(value[3])
+				fields[3] += "%s" % (value[3])
 			if value[4] != '':
-				fields[4] += _("Bouquet: %s")%(value[4])
+				fields[4] += _("Bouquet: %s") % (value[4])
 			else:
-				fields[4] += "%s"%(value[4])
-			fields[5] += "%s"%(value[5])
+				fields[4] += "%s" % (value[4])
+			fields[5] += "%s" % (value[5])
 			if value[6] == 'Stream':
 				fields[6] += _('Stream')
 			else:
-				fields[6] += _("Tuner: %s")%(value[6])
-			fields[7] += _("+%d min / %s")%(r/60, value[7][1])
+				fields[6] += _("Tuner: %s") % (value[6])
+			fields[7] += _("+%d min / %s") % (r / 60, value[7][1])
 			fields[8] += self.getSignalQuality(value[8])
 		cnt = 0
 		for x in self.labels:
@@ -446,7 +446,7 @@ class RecInfoBar(Screen):
 									if config.usage.show_message_when_recording_starts.value:
 										self.session.open(MessageBox, _("Switched to the recording service !\n") + _("channel: %s   prov: %s\n") % (name, prov), MessageBox.TYPE_INFO, timeout=2)
 									else:
-										self.session.open(MessageBox, _("Switched to the recording service !\n")  + _("channel: %s   prov: %s\n %s\n") % (name, prov, recname), MessageBox.TYPE_INFO, timeout=5)
+										self.session.open(MessageBox, _("Switched to the recording service !\n") + _("channel: %s   prov: %s\n %s\n") % (name, prov, recname), MessageBox.TYPE_INFO, timeout=5)
 				if config.plugins.RecInfobar.rec_indicator.value:
 					if self.RecIndicator is None:
 						self.RecIndicator = self.session.instantiateDialog(RecIndicator)
@@ -472,7 +472,7 @@ class RecInfoBar(Screen):
 					s = servicelist.getNext()
 					if not s.valid():
 						break
-					if not (s.flags & (eServiceReference.isMarker|eServiceReference.isDirectory)):
+					if not (s.flags & (eServiceReference.isMarker | eServiceReference.isDirectory)):
 						num += 1
 						if s == ref:
 							return s, num
@@ -550,7 +550,7 @@ class RecInfoBar(Screen):
 					s = servicelist.getNext()
 					if not s.valid():
 						break
-					if not (s.flags & (eServiceReference.isMarker|eServiceReference.isDirectory)):
+					if not (s.flags & (eServiceReference.isMarker | eServiceReference.isDirectory)):
 						num += 1
 						if s == ref:
 							return s, num
@@ -614,11 +614,11 @@ class RecInfoBar(Screen):
 		if isinstance(ref, eServiceReference):
 			typestr = ref.getData(0) in (2,10) and service_types_radio or service_types_tv
 			pos = typestr.rfind(':')
-			rootstr = '%s (channelID == %08x%04x%04x) && %s FROM PROVIDERS ORDER BY name'%(typestr[:pos+1],
+			rootstr = '%s (channelID == %08x%04x%04x) && %s FROM PROVIDERS ORDER BY name' % (typestr[:pos + 1],
 				ref.getUnsignedData(4), # NAMESPACE
 				ref.getUnsignedData(2), # TSID
 				ref.getUnsignedData(3), # ONID
-				typestr[pos+1:])
+				typestr[pos + 1:])
 			provider_root = eServiceReference(rootstr)
 			serviceHandler = eServiceCenter.getInstance()
 			providerlist = serviceHandler.list(provider_root)
@@ -651,7 +651,7 @@ class RecInfoBar(Screen):
 				type = data.get("tuner_type", '')
 				if type: 
 					tunerType = ' (%s)' % type
-		name = chr(number+65) + tunerType
+		name = chr(number + 65) + tunerType
 		return number, name
 
 	def doShow(self, parent):

@@ -43,7 +43,7 @@ class TransponderSearchSupport:
 		return (False, False)
 
 class SatBlindscanState(Screen):
-	skin="""
+	skin = """
 	<screen position="center,center" size="820,520" title="Blind scan state">
 		<widget name="text" position="10,10" size="800,25" font="Regular;20" />
 		<widget name="progress" position="10,40" size="800,25" font="Regular;20" />
@@ -66,11 +66,11 @@ class SatBlindscanState(Screen):
 		Screen.__init__(self, session)
 		self.setup_title = _("Blind scan state")
 		Screen.setTitle(self, _(self.setup_title))
-		self["list"]=List()
-		self["text"]=Label()
+		self["list"] = List()
+		self["text"] = Label()
 		self["text"].setText(text)
-		self["post_action"]=Label()
-		self["progress"]=Label()
+		self["post_action"] = Label()
+		self["progress"] = Label()
 		self["actions"] = ActionMap(["OkCancelActions", "ColorActions"],
 		{
 			"ok": self.keyOk,
@@ -84,11 +84,11 @@ class SatBlindscanState(Screen):
 		self.tmr.callback.append(self.updateConstellation)
 		self.constellation_supported = None
 		if fe_num != -1:
-			self.post_action=1
-			self.finished=0
+			self.post_action = 1
+			self.finished = 0
 			self.keyGreen()
 		else:
-			self.post_action=-1
+			self.post_action = -1
 
 	def keyGreen(self):
 		if self.finished:
@@ -102,7 +102,7 @@ class SatBlindscanState(Screen):
 
 	def setFinished(self):
 		if self.post_action:
-			self.finished=1
+			self.finished = 1
 			self["text"].setText(_("Transponder searching finished!"))
 			self["post_action"].setText(_("Press green to start service searching!"))
 		else:
@@ -141,7 +141,7 @@ class SatBlindscanState(Screen):
 			I = []
 			for pos in range(0,30,2):
 				try:
-					val = int(bitmap[pos:pos+2], 16)
+					val = int(bitmap[pos:pos + 2], 16)
 					val = 128 + (val - 256 if val > 127 else val)
 					#val = (int(bitmap[pos:pos+2], 16) + 128) & 0xff
 				except ValueError:
@@ -150,7 +150,7 @@ class SatBlindscanState(Screen):
 				I.append(val)
 			for pos in range(30,60,2):
 				try:
-					val = int(bitmap[pos:pos+2], 16)
+					val = int(bitmap[pos:pos + 2], 16)
 					val = 128 + (val - 256 if val > 127 else val)
 					#val = (int(bitmap[pos:pos+2], 16) + 128) & 0xff
 				except ValueError:
@@ -213,7 +213,7 @@ class SatelliteTransponderSearchSupport:
 			if x["tuner_state"] == "LOCKED":
 				freq = d["frequency"]
 				parm = eDVBFrontendParametersSatellite()
-				parm.frequency = int(round(float(freq*2) / 1000)) * 1000
+				parm.frequency = int(round(float(freq * 2) / 1000)) * 1000
 				parm.frequency /= 2
 				fstr = str(parm.frequency)
 				if self.parm.polarisation == eDVBFrontendParametersSatellite.Polarisation_Horizontal:
@@ -230,10 +230,10 @@ class SatelliteTransponderSearchSupport:
 					if not self.auto_scan:
 						self.parm.frequency += self.parm.symbol_rate
 				else:
-					sr_rounded = round(float(sr*2L) / 1000) * 1000
+					sr_rounded = round(float(sr * 2L) / 1000) * 1000
 					sr_rounded /= 2
 					parm.symbol_rate = int(sr_rounded)
-					fstr += str(parm.symbol_rate/1000)
+					fstr += str(parm.symbol_rate / 1000)
 					parm.fec = d["fec_inner"]
 					fstr += " "
 					fstr += r["fec_inner"]
@@ -256,10 +256,10 @@ class SatelliteTransponderSearchSupport:
 					if self.auto_scan:
 						print "LOCKED at", freq
 					else:
-						print "LOCKED at", freq, "SEARCHED at", self.parm.frequency, "half bw", (135L*((sr+1000)/1000)/200), "half search range", (self.parm.symbol_rate/2)
+						print "LOCKED at", freq, "SEARCHED at", self.parm.frequency, "half bw", (135L * ((sr + 1000) / 1000) / 200), "half search range", (self.parm.symbol_rate / 2)
 						self.parm.frequency = freq
-						self.parm.frequency += (135L*((sr+999)/1000)/200)
-						self.parm.frequency += self.parm.symbol_rate/2
+						self.parm.frequency += (135L * ((sr + 999) / 1000) / 200)
+						self.parm.frequency += self.parm.symbol_rate / 2
 
 					bm = state.getConstellationBitmap(5)
 					self.tp_found.append((fstr, bm))
@@ -278,10 +278,10 @@ class SatelliteTransponderSearchSupport:
 
 			if self.auto_scan:
 				freq = d["frequency"]
-				freq = int(round(float(freq*2) / 1000)) * 1000
+				freq = int(round(float(freq * 2) / 1000)) * 1000
 				freq /= 2
 				mhz_complete, mhz_done = self.stats(freq)
-				print "CURRENT freq", freq, "%d/%d" %(mhz_done, mhz_complete)
+				print "CURRENT freq", freq, "%d/%d" % (mhz_done, mhz_complete)
 				check_finished = self.parm is None
 			else:
 				print "NEXT freq", self.parm.frequency
@@ -296,7 +296,7 @@ class SatelliteTransponderSearchSupport:
 				if self.parm is None:
 					tmpstr = _("%dMHz scanned") % mhz_complete
 					tmpstr += ', '
-					tmpstr += _("%d transponders found at %d:%02d min") %(len(self.tp_found),seconds_done / 60, seconds_done % 60)
+					tmpstr += _("%d transponders found at %d:%02d min") % (len(self.tp_found),seconds_done / 60, seconds_done % 60)
 					state["progress"].setText(tmpstr)
 					state.setFinished()
 					self.frontend = None
@@ -304,9 +304,9 @@ class SatelliteTransponderSearchSupport:
 					return
 
 			if self.auto_scan:
-				tmpstr = str((freq+500)/1000)
+				tmpstr = str((freq + 500) / 1000)
 			else:
-				tmpstr = str((self.parm.frequency+500)/1000)
+				tmpstr = str((self.parm.frequency + 500) / 1000)
 
 			if self.parm.polarisation == eDVBFrontendParametersSatellite.Polarisation_Horizontal:
 				tmpstr += "H"
@@ -318,15 +318,15 @@ class SatelliteTransponderSearchSupport:
 				tmpstr += "R"
 
 			tmpstr += ', '
-			tmpstr += "%d/%dMhz" %(mhz_done, mhz_complete)
+			tmpstr += "%d/%dMhz" % (mhz_done, mhz_complete)
 
 			tmpstr += ", "
-			tmpstr += _("%d transponder(s) found") %len(self.tp_found)
+			tmpstr += _("%d transponder(s) found") % len(self.tp_found)
 
 			tmpstr += ', '
 
 			seconds_complete = (seconds_done * mhz_complete) / max(mhz_done, 1)
-			tmpstr += _("%d:%02d/%d:%02dmin") %(seconds_done / 60, seconds_done % 60, seconds_complete / 60, seconds_complete % 60)
+			tmpstr += _("%d:%02d/%d:%02dmin") % (seconds_done / 60, seconds_done % 60, seconds_complete / 60, seconds_complete % 60)
 
 			state["progress"].setText(tmpstr)
 
@@ -425,7 +425,7 @@ class SatelliteTransponderSearchSupport:
 							del self.session.pip
 					(self.channel, self.frontend) = self.tryGetRawFrontend(nim_idx, False, False)
 					if not self.frontend:
-						print "couldn't allocate tuner %d for blindscan!!!" %nim_idx
+						print "couldn't allocate tuner %d for blindscan!!!" % nim_idx
 						text = _("Sorry, this tuner is in use.")
 						if self.session.nav.getRecordings():
 							text += "\n"
@@ -447,7 +447,7 @@ class SatelliteTransponderSearchSupport:
 				stop += 50000
 				if start < limits[0]:
 					start = limits[0]
-				if stop >limits[1]:
+				if stop > limits[1]:
 					stop = limits[1]
 
 			if self.scan_sat.bs_horizontal.value:
@@ -495,7 +495,7 @@ class SatelliteTransponderSearchSupport:
 		self.updateStateSat()
 
 class DmmBlindscan(ConfigListScreen, Screen, TransponderSearchSupport, SatelliteTransponderSearchSupport):
-	skin="""
+	skin = """
 		<screen position="center,center" size="620,430" title="Satellite Blindscan">
 			<widget name="config" position="10,10" size="600,360" itemHeight="30" scrollbarMode="showOnDemand" />
 			<eLabel position="10,390" size="600,1" backgroundColor="grey"/>
@@ -597,7 +597,7 @@ class DmmBlindscan(ConfigListScreen, Screen, TransponderSearchSupport, Satellite
 				self.list.append(getConfigListEntry(_("Only free scan"), self.scan_onlyfree))
 		self["config"].list = self.list
 		self["config"].l.setList(self.list)
-		self.scan_sat.bs_freq_limits = (limits[0]*1000, limits[1]*1000)
+		self.scan_sat.bs_freq_limits = (limits[0] * 1000, limits[1] * 1000)
 
 	def Satexists(self, tlist, pos):
 		for x in tlist:
@@ -805,10 +805,10 @@ class DmmBlindscan(ConfigListScreen, Screen, TransponderSearchSupport, Satellite
 		if pos > 1800:
 			pos -= 3600
 		if pos < 0:
-			pos_name = '%dW' % (abs(int(pos))/10)
+			pos_name = '%dW' % (abs(int(pos)) / 10)
 		else:
-			pos_name = '%dE' % (abs(int(pos))/10)
-		location = '%s/dmm_blindscan_%s_%s.xml' %(save_xml_dir, pos_name, strftime("%d-%m-%Y_%H-%M-%S"))
+			pos_name = '%dE' % (abs(int(pos)) / 10)
+		location = '%s/dmm_blindscan_%s_%s.xml' % (save_xml_dir, pos_name, strftime("%d-%m-%Y_%H-%M-%S"))
 		tuner = nimmanager.nim_slots[self.feid].friendly_full_description
 		xml = ['<?xml version="1.0" encoding="iso-8859-1"?>\n\n']
 		xml.append('<!--\n')

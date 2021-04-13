@@ -64,12 +64,12 @@ class PartnerboxAutoTimer(object):
 			root = cet_fromstring(result)
 			statetext = root.findtext("e2statetext")
 			if statetext:
-				text =  statetext.encode("utf-8", 'ignore')
+				text = statetext.encode("utf-8", 'ignore')
 				self.session.open(MessageBox,text,MessageBox.TYPE_INFO, timeout=10)
 
 	def downloadError(self, error=None):
 		if error is not None:
-			self.session.open(MessageBox,str(error.getErrorMessage()),  MessageBox.TYPE_INFO)
+			self.session.open(MessageBox,str(error.getErrorMessage()), MessageBox.TYPE_INFO)
 
 	def autotimerImporterCallback(self, ret):
 		if ret:

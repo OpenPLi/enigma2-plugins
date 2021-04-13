@@ -8,7 +8,7 @@ from time import time, localtime
 
 class PrimeTimeTimerSanityCheck:
 	def __init__(self, timerlist, newtimer=None, visible_conflict=False):
-		self.localtimediff = 25*3600 - mktime(gmtime(25*3600))
+		self.localtimediff = 25 * 3600 - mktime(gmtime(25 * 3600))
 		self.timerlist = timerlist
 		self.newtimer = newtimer
 		self.visible_conflict = visible_conflict
@@ -83,13 +83,13 @@ class PrimeTimeTimerSanityCheck:
 			print "[TimerSanityCheck] timer is finished!"
 			return True
 		rflags = self.newtimer.repeated
-		rflags = ((rflags & 0x7F)>> 3)|((rflags & 0x07)<<4)
+		rflags = ((rflags & 0x7F) >> 3) | ((rflags & 0x07) << 4)
 		if rflags:
 			begin = self.newtimer.begin % 86400 # map to first day
 			if (self.localtimediff > 0) and ((begin + self.localtimediff) > 86400):
-				rflags = ((rflags >> 1)& 0x3F)|((rflags << 6)& 0x40)
+				rflags = ((rflags >> 1) & 0x3F) | ((rflags << 6) & 0x40)
 			elif (self.localtimediff < 0) and (begin < self.localtimediff):
-				rflags = ((rflags << 1)& 0x7E)|((rflags >> 6)& 0x01)
+				rflags = ((rflags << 1) & 0x7E) | ((rflags >> 6) & 0x01)
 			while rflags: # then arrange on the week
 				if rflags & 1:
 					self.rep_eventlist.append((begin, -1))
@@ -108,12 +108,12 @@ class PrimeTimeTimerSanityCheck:
 					continue
 				if timer.repeated:
 					rflags = timer.repeated
-					rflags = ((rflags & 0x7F)>> 3)|((rflags & 0x07)<<4)
+					rflags = ((rflags & 0x7F) >> 3) | ((rflags & 0x07) << 4)
 					begin = timer.begin % 86400 # map all to first day
 					if (self.localtimediff > 0) and ((begin + self.localtimediff) > 86400):
-						rflags = ((rflags >> 1)& 0x3F)|((rflags << 6)& 0x40)
+						rflags = ((rflags >> 1) & 0x3F) | ((rflags << 6) & 0x40)
 					elif (self.localtimediff < 0) and (begin < self.localtimediff):
-						rflags = ((rflags << 1)& 0x7E)|((rflags >> 6)& 0x01)
+						rflags = ((rflags << 1) & 0x7E) | ((rflags >> 6) & 0x01)
 					while rflags:
 						if rflags & 1:
 							self.rep_eventlist.append((begin, idx))

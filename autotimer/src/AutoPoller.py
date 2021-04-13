@@ -73,11 +73,11 @@ class AutoPollerThread(Thread):
 
 	def start(self, initial=True):
 		if initial:
-			delay = config.plugins.autotimer.delay.value*60
+			delay = config.plugins.autotimer.delay.value * 60
 			if delay == 0:
 				delay = 30
 		else:
-			delay = config.plugins.autotimer.interval.value*3600
+			delay = config.plugins.autotimer.interval.value * 3600
 
 		self.__timer.startLongTimer(delay)
 		if not self.isAlive():
@@ -113,14 +113,14 @@ class AutoPollerThread(Thread):
 					import NavigationInstance
 					if NavigationInstance.instance.getRecordings():
 						doLog("[AutoTimer] Skip check during running records")
-						reactor.callFromThread(timer.startLongTimer, config.plugins.autotimer.interval.value*3600)
+						reactor.callFromThread(timer.startLongTimer, config.plugins.autotimer.interval.value * 3600)
 						continue
 				except:
 					pass
 			try:
 				if config.plugins.autotimer.onlyinstandby.value and Standby.inStandby is None:
 					doLog("[AutoTimer] Skip check during live tv")
-					reactor.callFromThread(timer.startLongTimer, config.plugins.autotimer.interval.value*3600)
+					reactor.callFromThread(timer.startLongTimer, config.plugins.autotimer.interval.value * 3600)
 					continue
 			except:
 				pass
@@ -129,7 +129,7 @@ class AutoPollerThread(Thread):
 					from Plugins.Extensions.EPGRefresh.EPGRefresh import epgrefresh
 					if epgrefresh.isrunning:
 						doLog("[AutoTimer] Skip check during EPGRefresh")
-						reactor.callFromThread(timer.startLongTimer, config.plugins.autotimer.interval.value*3600)
+						reactor.callFromThread(timer.startLongTimer, config.plugins.autotimer.interval.value * 3600)
 						continue
 				except:
 					pass
@@ -145,7 +145,7 @@ class AutoPollerThread(Thread):
 				import sys
 				traceback.print_exc(file=sys.stdout)
 			#Keep that eTimer in the mainThread
-			reactor.callFromThread(timer.startLongTimer, config.plugins.autotimer.interval.value*3600)
+			reactor.callFromThread(timer.startLongTimer, config.plugins.autotimer.interval.value * 3600)
 
 	def clearMemory(self):
 		eConsoleAppContainer().execute("sync")

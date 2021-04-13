@@ -18,14 +18,14 @@ except ImportError:
 
 size_width = getDesktop(0).size().width()
 
-EVENTID		= 0
-SERVICEREF	= 1
-BEGIN		= 2
-DURATION	= 3
-TITLE		= 4
-SHORTDESC	= 5
-EXTDESC		= 6
-SERVICENAME	= 7
+EVENTID = 0
+SERVICEREF = 1
+BEGIN = 2
+DURATION = 3
+TITLE = 4
+SHORTDESC = 5
+EXTDESC = 6
+SERVICENAME = 7
 
 skinPTMhdfull = """<screen title="%s" position="center,center" size="630,650">
 		<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/Extensions/PrimeTimeManager/images/red.png" position="35,20" size="140,2" transparent="1" alphatest="on" />
@@ -78,14 +78,14 @@ class ResultScreen(Screen, HelpableScreen):
 		
 		self["SetupActions"] = HelpableActionMap(self, "SetupActions",
 		{
-			"cancel":	(self.buttonCancel,	_("Close")),
-			"ok":		(self.buttonOK,	_("Accept the events as shown")),
+			"cancel": (self.buttonCancel, _("Close")),
+			"ok": (self.buttonOK, _("Accept the events as shown")),
 		}, -1)
 		
 		self["ColorActions"] = HelpableActionMap(self, "ColorActions",
 		{
-			"red":		(self.buttonCancel,	_("Close")),
-			"green":	(self.buttonAccept,	_("Accept the events as shown")),
+			"red": (self.buttonCancel, _("Close")),
+			"green": (self.buttonAccept, _("Accept the events as shown")),
 		}, -1)
 		
 		self.visible = True
@@ -163,20 +163,20 @@ class ResultList(GUIComponent, object):
 
 		begin = strftime("%H:%M", localtime(favorite[BEGIN]))
 
-		res.append((eListboxPythonMultiContent.TYPE_TEXT, 5, 100, 105, 18, 0, RT_HALIGN_LEFT|RT_VALIGN_CENTER, _("Begin time") + ":"))
-		res.append((eListboxPythonMultiContent.TYPE_TEXT, 105, 100, 105, 18, 0, RT_HALIGN_LEFT|RT_VALIGN_CENTER, "%s" % begin))
+		res.append((eListboxPythonMultiContent.TYPE_TEXT, 5, 100, 105, 18, 0, RT_HALIGN_LEFT | RT_VALIGN_CENTER, _("Begin time") + ":"))
+		res.append((eListboxPythonMultiContent.TYPE_TEXT, 105, 100, 105, 18, 0, RT_HALIGN_LEFT | RT_VALIGN_CENTER, "%s" % begin))
 
 		if config.plugins.PrimeTimeManager.DurationOrEndTime.value == "duration":
 			#duration = "%d:%02d" % (favorite[DURATION] / 60, favorite[DURATION] % 60)
-			res.append((eListboxPythonMultiContent.TYPE_TEXT, 5, 120, 105, 18, 0, RT_HALIGN_LEFT|RT_VALIGN_CENTER, _("Duration") + ":"))
-			res.append((eListboxPythonMultiContent.TYPE_TEXT, 105, 120, 105, 18, 0, RT_HALIGN_LEFT|RT_VALIGN_CENTER, _("%d min") % (favorite[DURATION] / 60)))
+			res.append((eListboxPythonMultiContent.TYPE_TEXT, 5, 120, 105, 18, 0, RT_HALIGN_LEFT | RT_VALIGN_CENTER, _("Duration") + ":"))
+			res.append((eListboxPythonMultiContent.TYPE_TEXT, 105, 120, 105, 18, 0, RT_HALIGN_LEFT | RT_VALIGN_CENTER, _("%d min") % (favorite[DURATION] / 60)))
 		else:
 			end = strftime("%H:%M", localtime(favorite[BEGIN] + favorite[DURATION]))
-			res.append((eListboxPythonMultiContent.TYPE_TEXT, 5, 120, 105, 18, 0, RT_HALIGN_LEFT|RT_VALIGN_CENTER, _("End time") + ":"))
-			res.append((eListboxPythonMultiContent.TYPE_TEXT, 105, 120, 105, 18, 0, RT_HALIGN_LEFT|RT_VALIGN_CENTER, "%s" % end))
+			res.append((eListboxPythonMultiContent.TYPE_TEXT, 5, 120, 105, 18, 0, RT_HALIGN_LEFT | RT_VALIGN_CENTER, _("End time") + ":"))
+			res.append((eListboxPythonMultiContent.TYPE_TEXT, 105, 120, 105, 18, 0, RT_HALIGN_LEFT | RT_VALIGN_CENTER, "%s" % end))
 
-		res.append((eListboxPythonMultiContent.TYPE_TEXT, 5, 75, width, 18, 0, RT_HALIGN_LEFT|RT_VALIGN_CENTER, _("Bouquet") + ":"))
-		res.append((eListboxPythonMultiContent.TYPE_TEXT, 105, 75, width / 2, 18, 0, RT_HALIGN_LEFT|RT_VALIGN_CENTER, bouquet))
+		res.append((eListboxPythonMultiContent.TYPE_TEXT, 5, 75, width, 18, 0, RT_HALIGN_LEFT | RT_VALIGN_CENTER, _("Bouquet") + ":"))
+		res.append((eListboxPythonMultiContent.TYPE_TEXT, 105, 75, width / 2, 18, 0, RT_HALIGN_LEFT | RT_VALIGN_CENTER, bouquet))
 
 		res.append((eListboxPythonMultiContent.TYPE_PIXMAP_ALPHATEST, 190, 103, 17, 30, self.digitList[numConflicts]))
 
@@ -189,8 +189,8 @@ class ResultList(GUIComponent, object):
 		elif viewLive:
 			res.append((eListboxPythonMultiContent.TYPE_PIXMAP_ALPHATEST, 215 - 21, 5, 21, 21, self.favoritePixmap))
 
-		res.append((eListboxPythonMultiContent.TYPE_TEXT, 5, 0, 187, 23, 0, RT_HALIGN_LEFT|RT_VALIGN_CENTER, favorite[SERVICENAME]))
-		res.append((eListboxPythonMultiContent.TYPE_TEXT, 5, 30, 210, 44, 0, RT_HALIGN_LEFT|RT_VALIGN_TOP|RT_WRAP, favorite[TITLE]))
+		res.append((eListboxPythonMultiContent.TYPE_TEXT, 5, 0, 187, 23, 0, RT_HALIGN_LEFT | RT_VALIGN_CENTER, favorite[SERVICENAME]))
+		res.append((eListboxPythonMultiContent.TYPE_TEXT, 5, 30, 210, 44, 0, RT_HALIGN_LEFT | RT_VALIGN_TOP | RT_WRAP, favorite[TITLE]))
 
 		# middle column
 		if similarTimer and similarTimer.begin > 0:
@@ -206,36 +206,36 @@ class ResultList(GUIComponent, object):
 		# right column
 		if similarTimer and similarTimer.begin > 0:
 			res.append((eListboxPythonMultiContent.TYPE_PIXMAP_ALPHATEST, 485 - 21, 5, 21, 21, self.clockPixmap))
-			res.append((eListboxPythonMultiContent.TYPE_TEXT, 275, 0, 187, 23, 0, RT_HALIGN_LEFT|RT_VALIGN_CENTER, similarTimer.service_ref.getServiceName()))
-			res.append((eListboxPythonMultiContent.TYPE_TEXT, 275, 30, 210, 44, 0, RT_HALIGN_LEFT|RT_VALIGN_TOP|RT_WRAP, similarTimer.name))
+			res.append((eListboxPythonMultiContent.TYPE_TEXT, 275, 0, 187, 23, 0, RT_HALIGN_LEFT | RT_VALIGN_CENTER, similarTimer.service_ref.getServiceName()))
+			res.append((eListboxPythonMultiContent.TYPE_TEXT, 275, 30, 210, 44, 0, RT_HALIGN_LEFT | RT_VALIGN_TOP | RT_WRAP, similarTimer.name))
 
 			t = localtime(similarTimer.begin)
 			d = strftime("%02d.%02d.%04d" % (t[2], t[1], t[0]))
-			res.append((eListboxPythonMultiContent.TYPE_TEXT, 275, 75, 105, 18, 0, RT_HALIGN_LEFT|RT_VALIGN_CENTER, _("Date") + ":"))
-			res.append((eListboxPythonMultiContent.TYPE_TEXT, 380, 75, 105, 18, 0, RT_HALIGN_LEFT|RT_VALIGN_CENTER, d))
+			res.append((eListboxPythonMultiContent.TYPE_TEXT, 275, 75, 105, 18, 0, RT_HALIGN_LEFT | RT_VALIGN_CENTER, _("Date") + ":"))
+			res.append((eListboxPythonMultiContent.TYPE_TEXT, 380, 75, 105, 18, 0, RT_HALIGN_LEFT | RT_VALIGN_CENTER, d))
 
-			res.append((eListboxPythonMultiContent.TYPE_TEXT, 275, 100, 105, 18, 0, RT_HALIGN_LEFT|RT_VALIGN_CENTER, _("Begin time") + ":"))
-			res.append((eListboxPythonMultiContent.TYPE_TEXT, 380, 100, 105, 18, 0, RT_HALIGN_LEFT|RT_VALIGN_CENTER, "%s" % strftime("%H:%M", localtime(similarTimer.begin))))
+			res.append((eListboxPythonMultiContent.TYPE_TEXT, 275, 100, 105, 18, 0, RT_HALIGN_LEFT | RT_VALIGN_CENTER, _("Begin time") + ":"))
+			res.append((eListboxPythonMultiContent.TYPE_TEXT, 380, 100, 105, 18, 0, RT_HALIGN_LEFT | RT_VALIGN_CENTER, "%s" % strftime("%H:%M", localtime(similarTimer.begin))))
 
 			timerDuration = similarTimer.end - similarTimer.begin
 			if config.plugins.PrimeTimeManager.DurationOrEndTime.value == "duration":
 				#duration = "%d:%02d" % (timerDuration / 60, timerDuration % 60)
-				res.append((eListboxPythonMultiContent.TYPE_TEXT, 275, 120, 105, 18, 0, RT_HALIGN_LEFT|RT_VALIGN_CENTER, _("Duration") + ":"))
-				res.append((eListboxPythonMultiContent.TYPE_TEXT, 380, 120, 105, 18, 0, RT_HALIGN_LEFT|RT_VALIGN_CENTER, _("%d min") % (timerDuration / 60)))
+				res.append((eListboxPythonMultiContent.TYPE_TEXT, 275, 120, 105, 18, 0, RT_HALIGN_LEFT | RT_VALIGN_CENTER, _("Duration") + ":"))
+				res.append((eListboxPythonMultiContent.TYPE_TEXT, 380, 120, 105, 18, 0, RT_HALIGN_LEFT | RT_VALIGN_CENTER, _("%d min") % (timerDuration / 60)))
 			else:
 				end = strftime("%H:%M", localtime(similarTimer.begin + favorite[DURATION]))
-				res.append((eListboxPythonMultiContent.TYPE_TEXT, 275, 120, 105, 18, 0, RT_HALIGN_LEFT|RT_VALIGN_CENTER, _("End time") + ":"))
-				res.append((eListboxPythonMultiContent.TYPE_TEXT, 380, 120, 105, 18, 0, RT_HALIGN_LEFT|RT_VALIGN_CENTER, "%s" % end))
+				res.append((eListboxPythonMultiContent.TYPE_TEXT, 275, 120, 105, 18, 0, RT_HALIGN_LEFT | RT_VALIGN_CENTER, _("End time") + ":"))
+				res.append((eListboxPythonMultiContent.TYPE_TEXT, 380, 120, 105, 18, 0, RT_HALIGN_LEFT | RT_VALIGN_CENTER, "%s" % end))
 		elif autoTimer:
 			if AUTOTIMER and config.plugins.PrimeTimeManager.UseAutotimer.value:
 				res.append((eListboxPythonMultiContent.TYPE_PIXMAP_ALPHATEST, 330, 50, 100, 40, self.autotimerPixmap))
 			else:
-				res.append((eListboxPythonMultiContent.TYPE_TEXT, 275, 0, 210, 140, 0, RT_HALIGN_CENTER|RT_VALIGN_CENTER, _("Favorite will be deleted!")))
+				res.append((eListboxPythonMultiContent.TYPE_TEXT, 275, 0, 210, 140, 0, RT_HALIGN_CENTER | RT_VALIGN_CENTER, _("Favorite will be deleted!")))
 		else:
 			if numConflicts == 0:
-				res.append((eListboxPythonMultiContent.TYPE_TEXT, 275, 0, 210, 140, 0, RT_HALIGN_CENTER|RT_VALIGN_CENTER, _("No conflicts found")))
+				res.append((eListboxPythonMultiContent.TYPE_TEXT, 275, 0, 210, 140, 0, RT_HALIGN_CENTER | RT_VALIGN_CENTER, _("No conflicts found")))
 			else:
-				res.append((eListboxPythonMultiContent.TYPE_TEXT, 275, 0, 210, 140, 0, RT_HALIGN_CENTER|RT_VALIGN_CENTER, _("Conflicts were solved")))
+				res.append((eListboxPythonMultiContent.TYPE_TEXT, 275, 0, 210, 140, 0, RT_HALIGN_CENTER | RT_VALIGN_CENTER, _("Conflicts were solved")))
 
 		return res
 

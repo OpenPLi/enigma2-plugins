@@ -117,7 +117,7 @@ class MovieRetitle(Screen, ConfigListScreen):
 			if not descr and descr != "":
 				descr = olddescr
 			metafile = open(file + ".ts.meta", "w")
-			metafile.write("%s%s\n%s\n%s" %(sid, title, descr, rest))
+			metafile.write("%s%s\n%s\n%s" % (sid, title, descr, rest))
 			metafile.close()
 
 	def maybeMoveMovieFiles(self, fr, to):

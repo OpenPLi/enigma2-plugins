@@ -219,7 +219,7 @@ class PodcastMovies(Screen):
 					file = url
 					while file.__contains__("/"):
 						idx = file.index("/")
-						file = file[idx+1:]
+						file = file[idx + 1:]
 					self.file = "%s%s" % (config.plugins.Podcast.bufferDevice.value, file)
 					self.session.openWithCallback(self.bufferCallback, PodcastBuffer, url, self.file)
 				else:
@@ -275,7 +275,7 @@ class PodcastMovies(Screen):
 						title = title[:-3]
 					if description.__contains__("<![CDATA["):
 						idx = description.index("<![CDATA[")
-						description = description[idx+10:]
+						description = description[idx + 10:]
 					if description.endswith("]]>"):
 						description = description[:-3]
 					self.list.append(encodeUrl(title))
@@ -299,7 +299,7 @@ class PodcastMovies(Screen):
 	def splitExtraInfo(self, info):
 		if info.__contains__('url="'):
 			idx = info.index('url="')
-			url = info[idx+5:]
+			url = info[idx + 5:]
 			idx = url.index('"')
 			url = url[:idx]
 		else:
@@ -308,7 +308,7 @@ class PodcastMovies(Screen):
 		length = "N/A"
 		if info.__contains__('length="'):
 			idx = info.index('length="')
-			length = info[idx+8:]
+			length = info[idx + 8:]
 			idx = length.index('"')
 			length = length[:idx]
 			if length:
@@ -316,7 +316,7 @@ class PodcastMovies(Screen):
 
 		if info.__contains__('type="'):
 			idx = info.index('type="')
-			type = info[idx+6:]
+			type = info[idx + 6:]
 			idx = type.index('"')
 			type = type[:idx]
 		else:
@@ -448,9 +448,9 @@ class PodcastComGenre2(Screen):
 		page = page[:idx]
 		while page.__contains__("http://"):
 			idx = page.index("http://")
-			page = page[idx+1:]
+			page = page[idx + 1:]
 		self.working = False
-		self.session.open(PodcastMovies, "h%s"%page)
+		self.session.open(PodcastMovies, "h%s" % page)
 
 	def exit(self):
 		if self.working == False:
@@ -736,14 +736,14 @@ class PodcastDeEpisodes(Screen):
 			url = url[:idx]
 			while url.__contains__("http://"):
 				idx = url.index("http://")
-				url = url[idx+1:]
-			url = "h%s"%url
+				url = url[idx + 1:]
+			url = "h%s" % url
 
 			if config.plugins.Podcast.buffer.value:
 				file = url
 				while file.__contains__("/"):
 					idx = file.index("/")
-					file = file[idx+1:]
+					file = file[idx + 1:]
 				self.file = "%s%s" % (config.plugins.Podcast.bufferDevice.value, file)
 				self.session.openWithCallback(self.bufferCallback, PodcastBuffer, url, self.file)
 			else:
@@ -848,7 +848,7 @@ class PodcastDePodcasts(Screen):
 				text = _(" (Audio)")
 			else:
 				text = _(" (Video)")
-			list.append(encodeUrl(title+text))
+			list.append(encodeUrl(title + text))
 			self.urls.append(url)
 		self["list"].setList(list)
 		self.working = False

@@ -271,7 +271,7 @@ def menuCallbackAutoTimer(self, ret):
 				from time import time as my_time
 				global mepg_config_initialized
 				if not mepg_config_initialized:
-					config.misc.prev_mepg_time=ConfigClock(default=my_time())
+					config.misc.prev_mepg_time = ConfigClock(default=my_time())
 					mepg_config_initialized = True
 				self.session.openWithCallback(self.onDateTimeInputClosed, TimeDateInput, config.misc.prev_mepg_time)
 			except:
@@ -298,7 +298,7 @@ def AutoTimerChannelContextMenu__init__(self, session, csel):
 			current_sel_flags = current.flags
 			inBouquetRootList = current_root and current_root.getPath().find('FROM BOUQUET "bouquets.') != -1 #FIXME HACK
 			inBouquet = csel.getMutableList() is not None
-			isPlayable = not (current_sel_flags & (eServiceReference.isMarker|eServiceReference.isDirectory))
+			isPlayable = not (current_sel_flags & (eServiceReference.isMarker | eServiceReference.isDirectory))
 			if config.plugins.autotimer.add_to_channelselection.value and csel.bouquet_mark_edit == OFF and not csel.movemode and isPlayable:
 				callFunction = self.addtoAutoTimer
 				self["menu"].list.insert(3, ChoiceEntryComponent(text=(_("create AutoTimer for current event"), boundFunction(callFunction,1)), key="bullet"))
@@ -389,10 +389,10 @@ def parseEPGCallback(ret):
 				searchlog_txt = searchlog_txt[:maxlistcount]
 				for i, entry in enumerate(searchlog_txt):
 					if len(entry) > maxtextlength:
-						searchlog_txt[i] = entry[:maxtextlength-3] + "..."
+						searchlog_txt[i] = entry[:maxtextlength - 3] + "..."
 				searchlog_txt = "\n".join(searchlog_txt)
-				if listcount > maxlistcount+1:
-					searchlog_txt += "\n" + "and %d searchlog-entries more ..." % (listcount-maxlistcount)
+				if listcount > maxlistcount + 1:
+					searchlog_txt += "\n" + "and %d searchlog-entries more ..." % (listcount - maxlistcount)
 
 	AddPopup(
 		_("Found a total of %d matching Events.\n%d Timer were added and\n%d modified,\n%d conflicts encountered,\n%d similars added.") % (ret[0], ret[1], ret[2], len(ret[4]), len(ret[5])) + "\n\n" + searchlog_txt,

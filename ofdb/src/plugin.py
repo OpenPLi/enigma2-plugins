@@ -291,7 +291,7 @@ class OFDB(Screen):
 		if self.eventName is not "":
 			try:
 				pos = self.eventName.index(" (")
-				self.eventName=self.eventName[0:pos]
+				self.eventName = self.eventName[0:pos]
 			except ValueError:
 				pass
 			if self.eventName[-3:] == "...":
@@ -400,8 +400,8 @@ class OFDB(Screen):
 						Detailstext += self.htmltags.sub('', x.group(1)) + " "
 
 			for category in ("director", "year", "country", "original"):
-				if self.generalinfos.group('g_'+category):
-					Detailstext += "\n" + self.generalinfos.group('g_'+category) + ": " + self.htmltags.sub('', self.generalinfos.group(category).replace("<br>",' '))
+				if self.generalinfos.group('g_' + category):
+					Detailstext += "\n" + self.generalinfos.group('g_' + category) + ": " + self.htmltags.sub('', self.generalinfos.group(category).replace("<br>",' '))
 
 			self["detailslabel"].setText(Detailstext)
 
@@ -413,7 +413,7 @@ class OFDB(Screen):
 			Ratingtext = _("no user rating yet")
 			if rating:
 				Ratingtext = rating.group("g_rating") + rating.group("rating") + " / 10"
-				self.ratingstars = int(10*round(float(rating.group("rating")),1))
+				self.ratingstars = int(10 * round(float(rating.group("rating")),1))
 				self["stars"].show()
 				self["stars"].setValue(self.ratingstars)
 				self["starsbg"].show()

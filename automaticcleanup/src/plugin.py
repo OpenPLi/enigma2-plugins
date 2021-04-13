@@ -78,7 +78,7 @@ VERSION = "0.1.6"
 # 0.1.5 Fix infinite loop when timerlist cleanup is set to option "immediately after recording"
 # 0.1.6 Fix crash if settings backup file date ends with "2"
 ###############################################################################  
-pluginPrintname = "[AutomaticCleanup Ver. %s]" %VERSION
+pluginPrintname = "[AutomaticCleanup Ver. %s]" % VERSION
 DEBUG = False # If set True, plugin won't remove any file physically, instead prints file names in log for verification purposes
 ###############################################################################
 
@@ -239,7 +239,7 @@ class AutomaticCleanup:
 			self.timer.stop()
 		print pluginPrintname, "Setup values have changed"
 		if self.cleanupEnabled(): # check only if feature is enabled
-			print pluginPrintname, "Next automatic timerlist cleanup at ", strftime("%c", localtime(time()+120))
+			print pluginPrintname, "Next automatic timerlist cleanup at ", strftime("%c", localtime(time() + 120))
 			self.timer.startLongTimer(120) # check timerlist in 2 minutes after changing 
 		else:
 			print pluginPrintname, "Cleanup disabled"
@@ -251,7 +251,7 @@ class AutomaticCleanup:
 			self.cleanupSettings()
 			self.cleanupMovies()
 			self.cleanupTimerlist()
-			print pluginPrintname, "Next automatic cleanup at", strftime("%c", localtime(time()+self.checkInterval))
+			print pluginPrintname, "Next automatic cleanup at", strftime("%c", localtime(time() + self.checkInterval))
 			self.timer.startLongTimer(self.checkInterval) # check again after x secs
 		else:
 			print pluginPrintname, "Cleanup disabled"
@@ -279,9 +279,9 @@ class AutomaticCleanup:
 		keep = int(config.plugins.AutomaticCleanup.keepSettings.value)
 		if keep > -1: # don't keep all setting backups
 			if keep > self.numSettings:
-				print pluginPrintname, "Found %i setting backup(s), keeping max %i" %(self.numSettings+1, keep) # increment for uncounted latest
+				print pluginPrintname, "Found %i setting backup(s), keeping max %i" % (self.numSettings + 1, keep) # increment for uncounted latest
 			else:
-				print pluginPrintname, "Keeping the %i latest settings"  % keep
+				print pluginPrintname, "Keeping the %i latest settings" % keep
 				# add all settings > config.plugins.AutomaticCleanup.keepSettings.value
 				# to a new list. the settings in this new list will be deleted later.
 				self.deleteList = self.settingList[0: self.numSettings - keep + 1] # increment for uncounted latest
@@ -308,14 +308,14 @@ class AutomaticCleanup:
 				backupDatePos = self.settingList[i].rfind('/') + 1
 				backupDate = self.settingList[i][backupDatePos:backupDatePos + 10]
 				if DEBUG:
-					print pluginPrintname, "Backup path: %s, file: %s, date: %s"  %(self.backupPath, self.settingList[i], backupDate)
+					print pluginPrintname, "Backup path: %s, file: %s, date: %s" % (self.backupPath, self.settingList[i], backupDate)
 				settingTime = mktime(strptime(backupDate, "%Y-%m-%d"))
 				if int(settingTime) > deleteOlderThan:
 					break
 				self.deleteList.append(self.settingList[i])
 				i += 1
 			
-			print pluginPrintname, "Found %i outdated setting backup(s)"  % i
+			print pluginPrintname, "Found %i outdated setting backup(s)" % i
 
 		for setting in self.deleteList:
 			if DEBUG:
@@ -323,7 +323,7 @@ class AutomaticCleanup:
 			else:
 				remove(setting)
 
-		print pluginPrintname, "Deleted %i setting backup(s)"  % len(self.deleteList)
+		print pluginPrintname, "Deleted %i setting backup(s)" % len(self.deleteList)
 						
 	def getBackupPath(self):	
 		try:

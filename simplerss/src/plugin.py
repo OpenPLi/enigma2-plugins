@@ -33,7 +33,7 @@ i = 0
 while i < simpleRSS.feedcount.value:
 	s = ConfigSubsection()
 	s.uri = ConfigText(default="http://", fixed_size=False)
-	s.autoupdate =  ConfigYesNo(default=True)
+	s.autoupdate = ConfigYesNo(default=True)
 	simpleRSS.feed.append(s)
 	i += 1
 	del s

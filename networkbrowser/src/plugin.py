@@ -39,10 +39,10 @@ def Plugins(path, **kwargs):
 	global plugin_path
 	plugin_path = path
 	return [
-		PluginDescriptor(name=_("NetworkBrowser"), description=_("Search for network shares")+"\n", where=PluginDescriptor.WHERE_NETWORKSETUP, fnc={"ifaceSupported": NetworkBrowserCallFunction, "menuEntryName": lambda x: _("NetworkBrowser"), "menuEntryDescription": lambda x: _("Search for network shares...")+"\n"}),
-		PluginDescriptor(name=_("MountManager"), description=_("Manage network shares")+"\n", where=PluginDescriptor.WHERE_NETWORKSETUP, fnc={"ifaceSupported": MountManagerCallFunction, "menuEntryName": lambda x: _("MountManager"), "menuEntryDescription": lambda x: _("Manage your network shares...")+"\n"}),
-		PluginDescriptor(name=_("Mount again"), description=_("Attempt to mount shares again")+"\n", where=PluginDescriptor.WHERE_NETWORKSETUP,
+		PluginDescriptor(name=_("NetworkBrowser"), description=_("Search for network shares") + "\n", where=PluginDescriptor.WHERE_NETWORKSETUP, fnc={"ifaceSupported": NetworkBrowserCallFunction, "menuEntryName": lambda x: _("NetworkBrowser"), "menuEntryDescription": lambda x: _("Search for network shares...") + "\n"}),
+		PluginDescriptor(name=_("MountManager"), description=_("Manage network shares") + "\n", where=PluginDescriptor.WHERE_NETWORKSETUP, fnc={"ifaceSupported": MountManagerCallFunction, "menuEntryName": lambda x: _("MountManager"), "menuEntryDescription": lambda x: _("Manage your network shares...") + "\n"}),
+		PluginDescriptor(name=_("Mount again"), description=_("Attempt to mount shares again") + "\n", where=PluginDescriptor.WHERE_NETWORKSETUP,
 			fnc={"ifaceSupported": RemountCallFunction,
 				"menuEntryName": lambda x: _("Mount again"),
-				"menuEntryDescription": lambda x: _("Attempt to recover lost mounts (in background)")+"\n"})
+				"menuEntryDescription": lambda x: _("Attempt to recover lost mounts (in background)") + "\n"})
 	]

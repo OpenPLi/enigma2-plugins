@@ -8,7 +8,7 @@ from PrimeTimeSettings import PrimeTimeSettings
 
 baseTimerEditList__init__ = None
 
-def eventinfo(session,  servicelist, **kwargs):
+def eventinfo(session, servicelist, **kwargs):
 	session.open(PrimeTimeManager, servicelist)
 
 def main(session, **kwargs):

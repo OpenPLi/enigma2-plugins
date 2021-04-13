@@ -389,7 +389,7 @@ def sendPartnerBoxWebCommand(url, contextFactory=None, timeout=60, username="roo
 		scheme = parsed.scheme
 		host = parsed.hostname
 		port = parsed.port or (443 if scheme == 'https' else 80)
-		basicAuth = encodestring(("%s:%s")%(username,password))
+		basicAuth = encodestring(("%s:%s") % (username,password))
 		authHeader = "Basic " + basicAuth.strip()
 		AuthHeaders = {"Authorization": authHeader}
 		if kwargs.has_key("headers"):
@@ -401,8 +401,8 @@ def sendPartnerBoxWebCommand(url, contextFactory=None, timeout=60, username="roo
 		return factory.deferred
 
 def runCommand(path, username="", password="", host="", port=80, sessionid="0", parameter=None):
-	command = "http://%s:%d%s" %(host, port, path)
-	basicAuth = encodestring(("%s:%s")%(username, password))
+	command = "http://%s:%d%s" % (host, port, path)
+	basicAuth = encodestring(("%s:%s") % (username, password))
 	authHeader = "Basic " + basicAuth.strip()
 	headers = {
 		"Authorization": authHeader,
@@ -411,7 +411,7 @@ def runCommand(path, username="", password="", host="", port=80, sessionid="0", 
 	postdata = {"user":username, "password":password, "sessionid":sessionid}
 	if parameter:
 		postdata.update(parameter)
-	send = getPage('%s' %(command), method='POST', headers=headers, postdata=urllib.urlencode(postdata))
+	send = getPage('%s' % (command), method='POST', headers=headers, postdata=urllib.urlencode(postdata))
 	def readData(data):
 		return data
 	send.addCallback(readData)
@@ -423,40 +423,40 @@ def runCommand(path, username="", password="", host="", port=80, sessionid="0", 
 
 class PlaylistEntry:
 
-	PlaylistEntry=1			# normal PlaylistEntry (no Timerlist entry)
-	SwitchTimerEntry=2		#simple service switch timer
-	RecTimerEntry=4			#timer do recording
+	PlaylistEntry = 1			# normal PlaylistEntry (no Timerlist entry)
+	SwitchTimerEntry = 2		#simple service switch timer
+	RecTimerEntry = 4			#timer do recording
 	
-	recDVR=8				#timer do DVR recording
-	recVCR=16				#timer do VCR recording (LIRC) not used yet
-	recNgrab=131072			#timer do record via Ngrab Server
+	recDVR = 8				#timer do DVR recording
+	recVCR = 16				#timer do VCR recording (LIRC) not used yet
+	recNgrab = 131072			#timer do record via Ngrab Server
 
-	stateWaiting=32			#timer is waiting
-	stateRunning=64			#timer is running
-	statePaused=128			#timer is paused
-	stateFinished=256		#timer is finished
-	stateError=512			#timer has error state(s)
+	stateWaiting = 32			#timer is waiting
+	stateRunning = 64			#timer is running
+	statePaused = 128			#timer is paused
+	stateFinished = 256		#timer is finished
+	stateError = 512			#timer has error state(s)
 
-	errorNoSpaceLeft=1024	#HDD no space Left ( recDVR )
-	errorUserAborted=2048	#User Action aborts this event
-	errorZapFailed=4096		#Zap to service failed
-	errorOutdated=8192		#Outdated event
+	errorNoSpaceLeft = 1024	#HDD no space Left ( recDVR )
+	errorUserAborted = 2048	#User Action aborts this event
+	errorZapFailed = 4096		#Zap to service failed
+	errorOutdated = 8192		#Outdated event
 
-	boundFile=16384			#Playlistentry have an bounded file
-	isSmartTimer=32768		#this is a smart timer (EIT related) not uses Yet
-	isRepeating=262144		#this timer is repeating
-	doFinishOnly=65536		#Finish an running event/action
+	boundFile = 16384			#Playlistentry have an bounded file
+	isSmartTimer = 32768		#this is a smart timer (EIT related) not uses Yet
+	isRepeating = 262144		#this timer is repeating
+	doFinishOnly = 65536		#Finish an running event/action
 
-	doShutdown=67108864		#timer shutdown the box
-	doGoSleep=134217728		#timer set box to standby
+	doShutdown = 67108864		#timer shutdown the box
+	doGoSleep = 134217728		#timer set box to standby
 
-	Su=524288
-	Mo=1048576
-	Tue=2097152
-	Wed=4194304
-	Thu=8388608
-	Fr=16777216
-	Sa=33554432
+	Su = 524288
+	Mo = 1048576
+	Tue = 2097152
+	Wed = 4194304
+	Thu = 8388608
+	Fr = 16777216
+	Sa = 33554432
 
 def SetPartnerboxTimerlist(partnerboxentry=None, sreference=None):
 	global remote_timer_list
@@ -473,7 +473,7 @@ def SetPartnerboxTimerlist(partnerboxentry=None, sreference=None):
 			sCommand = "http://%s:%s@%s:%d/web/timerlist" % (username, password, ip,port)
 		else:
 			sCommand = "http://%s:%s@%s:%d/xml/timers" % (username, password, ip,port)
-		print "[RemoteEPGList] Getting timerlist data from %s..."%ip
+		print "[RemoteEPGList] Getting timerlist data from %s..." % ip
 		f = urllib.urlopen(sCommand)
 		sxml = f.read()
 		if int(partnerboxentry.enigma.value) == 0:

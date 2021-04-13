@@ -120,11 +120,11 @@ class EPGSaveLoadConfiguration(Screen, ConfigListScreen):
 
 	def Humanizer(self, size):
 		if (size < 1024):
-			humansize = str(size)+" B"
+			humansize = str(size) + " B"
 		elif (size < 1048576):
-			humansize = str(size/1024)+" KB"
+			humansize = str(size / 1024) + " KB"
 		else:
-			humansize = str(size/1048576)+" MB"
+			humansize = str(size / 1048576) + " MB"
 		return humansize
 
 	def updateHelp(self):

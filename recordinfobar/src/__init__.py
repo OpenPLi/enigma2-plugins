@@ -9,7 +9,7 @@ PLUGIN_NAME = os.path.basename(PLUGIN_PATH)
 TEXT_DOMAIN = PLUGIN_NAME
 
 def localeInit():
-	gettext.bindtextdomain(TEXT_DOMAIN, "%s/locale"%(PLUGIN_PATH))
+	gettext.bindtextdomain(TEXT_DOMAIN, "%s/locale" % (PLUGIN_PATH))
 
 def _(txt):
 	t = gettext.dgettext(TEXT_DOMAIN, txt)

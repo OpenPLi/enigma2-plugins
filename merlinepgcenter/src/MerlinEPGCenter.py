@@ -274,8 +274,8 @@ class MerlinEPGCenter(TimerEditList, MerlinEPGActions):
 				
 	def initEpgBaseTab(self):
 		# set ourself, the action map and prime time
-		EpgBaseTab.parentInstance	= self
-		EpgBaseTab.primeTime		= self.primeTime
+		EpgBaseTab.parentInstance = self
+		EpgBaseTab.primeTime = self.primeTime
 		
 		self.epgTabObjectList = []
 		self.epgTabObjectList.append(EpgNowTab(self["list"]))
@@ -288,8 +288,8 @@ class MerlinEPGCenter(TimerEditList, MerlinEPGActions):
 		self.epgTabObjectList.append(EpgSearchManualTab(self["search"], self["searchLabel"]))
 		
 	def releaseEpgBaseTab(self):
-		EpgBaseTab.parentInstance	= None
-		EpgBaseTab.primeTime		= None
+		EpgBaseTab.parentInstance = None
+		EpgBaseTab.primeTime = None
 		
 	############################################################################################
 	# TAB STUFF
@@ -376,9 +376,9 @@ class MerlinEPGCenter(TimerEditList, MerlinEPGActions):
 		if cur is None:
 			return
 			
-		sRef		= cur[2]
-		begin		= cur[3]
-		duration	= cur[4]
+		sRef = cur[2]
+		begin = cur[3]
+		duration = cur[4]
 		
 		if sRef is None or begin is None or duration is None:
 			nextEvent = -1
@@ -640,20 +640,20 @@ class MerlinEPGCenter(TimerEditList, MerlinEPGActions):
 				
 				if self.currentMode == SINGLE_EPG:
 					if self["list"].instance.getCurrentIndex() == 0:
-						timeValue = (begin + duration - now) /  60 + 1
+						timeValue = (begin + duration - now) / 60 + 1
 						percent = int((now - begin) * 100 / duration)
 					else:
-						timeValue = (now - begin) /  60
+						timeValue = (now - begin) / 60
 						percent = 0
 				elif self.currentMode == MULTI_EPG_NEXT:
-					timeValue = (now - begin) /  60
+					timeValue = (now - begin) / 60
 					percent = 0
 				else:
 					if now >= begin:
-						timeValue = (begin + duration - now) /  60 + 1
+						timeValue = (begin + duration - now) / 60 + 1
 						percent = int((now - begin) * 100 / duration)
 					else:
-						timeValue = (now - begin) /  60
+						timeValue = (now - begin) / 60
 						percent = 0
 						
 				if (KEEP_OUTDATED_TIME is None and (begin + duration) > now) or (KEEP_OUTDATED_TIME is not None and (begin + duration) > now):
@@ -664,7 +664,7 @@ class MerlinEPGCenter(TimerEditList, MerlinEPGActions):
 						timeValue /= 60
 						remainBeginString += "%02dh" % timeValue
 					elif fabs(timeValue) >= 1440:
-						timeValue = (timeValue / 1440) +1
+						timeValue = (timeValue / 1440) + 1
 						remainBeginString += "%02dd" % timeValue
 					else:
 						if timeValue < 0:
@@ -1227,7 +1227,7 @@ class MerlinEPGCenter(TimerEditList, MerlinEPGActions):
 			else:
 				self.currentMode -= 1
 				if self.currentMode >= numTabs:
-					self.currentMode = numTabs -1 # set to last tab -1
+					self.currentMode = numTabs - 1 # set to last tab -1
 				elif self.currentMode == -1:
 					self.currentMode = numTabs # set to last tab
 			
@@ -1243,9 +1243,9 @@ class MerlinEPGCenter(TimerEditList, MerlinEPGActions):
 			if self.configEditMode:
 				self["settings"].handleKey(KEY_0 + number)
 			else:
-				if number != 0 and self.currentMode != number -1 and number -1 <= NUM_CONFIG_TABS:
+				if number != 0 and self.currentMode != number - 1 and number - 1 <= NUM_CONFIG_TABS:
 					self["tab_text_%d" % self.currentMode].instance.setForegroundColor(parseColor("#ffffff")) # inactive
-					self.currentMode = number -1
+					self.currentMode = number - 1
 					self.setTabs()
 					self.configTabObjectList[self.currentMode].settingsWidget.setCurrentIndex(0)
 					self.configTabObjectList[self.currentMode].show()
@@ -1262,10 +1262,10 @@ class MerlinEPGCenter(TimerEditList, MerlinEPGActions):
 		if self.currentMode == EPGSEARCH_MANUAL:
 			self["search"].handleKey(KEY_0 + number)
 		else:
-			if self.oldMode == number -1: # same mode, there's nothing to do
+			if self.oldMode == number - 1: # same mode, there's nothing to do
 				return
-			elif number <= (NUM_EPG_TABS +1): # make sure one of our tabs was selected
-				self.currentMode = number -1 # 0 based
+			elif number <= (NUM_EPG_TABS + 1): # make sure one of our tabs was selected
+				self.currentMode = number - 1 # 0 based
 				if number == 6 and self.oldMode != EPGSEARCH_RESULT: # epg search
 					self.setMode(searchEpg=True)
 					
@@ -1300,7 +1300,7 @@ class MerlinEPGCenter(TimerEditList, MerlinEPGActions):
 			self.keyInfo()
 			
 		if self.currentMode == MULTI_EPG_NOW or self.currentMode == MULTI_EPG_NEXT or self.currentMode == MULTI_EPG_PRIMETIME:
-			if (self.currentBouquetIndex +1)  <= (len(self.bouquetList) -1):
+			if (self.currentBouquetIndex + 1) <= (len(self.bouquetList) - 1):
 				self.currentBouquetIndex += 1
 			else:
 				self.currentBouquetIndex = 0
