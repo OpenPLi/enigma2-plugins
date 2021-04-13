@@ -15,7 +15,8 @@ from Screens.Screen import Screen
 from Screens.InfoBar import MoviePlayer, InfoBar
 from Tools.Directories import fileExists, resolveFilename, SCOPE_LANGUAGE, SCOPE_PLUGINS
 from Tools.KeyBindings import addKeyBinding
-import gettext, keymapparser
+import gettext
+import keymapparser
 
 ##############################################
 

@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 from . import _
-import os, sys, traceback
+import os
+import sys
+import traceback
 from Components.ActionMap import ActionMap
 from Components.ScrollLabel import ScrollLabel
 from enigma import ePoint

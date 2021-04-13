@@ -22,7 +22,8 @@ from Tools.Directories import fileExists, resolveFilename, SCOPE_LANGUAGE, SCOPE
 from Tools.Downloader import downloadWithProgress
 from twisted.web.client import getPage
 from xml.etree.cElementTree import parse
-import gettext, re
+import gettext
+import re
 
 ###################################################
 

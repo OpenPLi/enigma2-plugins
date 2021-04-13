@@ -405,7 +405,11 @@ class PartnerboxEntriesListConfigScreen(Screen, HelpableScreen):
 		sendPartnerBoxWebCommand(sCommand, None,3, username, password)
 
 	def GetIPsFromNetworkInterfaces(self):
-		import socket, fcntl, struct, array, sys
+		import socket
+		import fcntl
+		import struct
+		import array
+		import sys
 		is_64bits = sys.maxsize > 2**32
 		struct_size = 40 if is_64bits else 32
 		s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
