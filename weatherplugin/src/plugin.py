@@ -43,6 +43,7 @@ initConfig()
 
 UserAgent = "Mozilla/5.0 (X11; U; Linux x86_64; de; rv:1.9.0.15) Gecko/2009102815 Ubuntu/9.04 (jaunty) Firefox/3."
 
+
 class WeatherIconItem:
 	def __init__(self, url="", filename="", index=-1, error=False):
 		self.url = url
@@ -50,8 +51,10 @@ class WeatherIconItem:
 		self.index = index
 		self.error = error
 
+
 def getXML(url):
 	return getPage(url, agent=UserAgent)
+
 
 def download(item):
 	return downloadPage(item.url, file(item.filename, 'wb'), agent=UserAgent)
@@ -59,6 +62,7 @@ def download(item):
 
 def main(session, **kwargs):
 	session.open(WeatherPlugin)
+
 
 def Plugins(**kwargs):
 	list = [PluginDescriptor(name=_("Weather Plugin"), description=_("Show Weather Forecast"), where=[PluginDescriptor.WHERE_PLUGINMENU, PluginDescriptor.WHERE_EXTENSIONSMENU], fnc=main)]

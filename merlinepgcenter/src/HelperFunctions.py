@@ -59,6 +59,7 @@ class ResizeScrollLabel(ScrollLabel):
 		self.long_text.resize(eSize(s.width() - 30, self.pageHeight * 16))
 		self.setText(self.message)
 
+
 class PiconLoader():
 	def __init__(self):
 		self.nameCache = {}
@@ -99,6 +100,7 @@ class PiconLoader():
 	def removeNotifier(self):
 		config.plugins.merlinEpgCenter.epgPaths.notifiers.remove(self.piconPathChanged)
 		
+
 def findDefaultPicon(serviceName):
 	searchPaths = (eEnv.resolve('${datadir}/enigma2/%s/'), '/media/cf/%s/', '/media/usb/%s/')
 	
@@ -113,6 +115,8 @@ def findDefaultPicon(serviceName):
 	return resolveFilename(SCOPE_CURRENT_PLUGIN, "Extensions/MerlinEPGCenter/images/PiconMissing.png")
 	
 # derived from Tools.FuzzyDate
+
+
 def getFuzzyDay(t):
 	d = localtime(t)
 	nt = time()
@@ -136,6 +140,8 @@ def getFuzzyDay(t):
 	return date
 	
 # used to let timer pixmaps blink in our lists
+
+
 class BlinkTimer():
 	def __init__(self, session):
 		self.session = session
@@ -228,6 +234,7 @@ class BlinkTimer():
 		self.listSets[LIST_TYPE_EPG].clear()
 		self.listSets[LIST_TYPE_UPCOMING].clear()
 		
+
 class RecTimerEntry(RecordTimerEntry):
 	def __init__(self, session, serviceref, begin, end, name, description, eit, disabled=False, justplay=False, afterEvent=AFTEREVENT.AUTO, checkOldTimers=False, dirname=None, tags=None):
 		self.session = session

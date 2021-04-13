@@ -36,6 +36,7 @@ from ServiceReference import ServiceReference
 from AutomaticVolumeAdjustment import AutomaticVolumeAdjustment
 from AutomaticVolumeAdjustmentConfig import AutomaticVolumeAdjustmentConfig
 
+
 class AutomaticVolumeAdjustmentConfigScreen(ConfigListScreen, Screen):
 	skin = """
 		<screen name="AutomaticVolumeAdjustmentConfigScreen" position="center,center" size="550,400">
@@ -127,6 +128,7 @@ class AutomaticVolumeAdjustmentConfigScreen(ConfigListScreen, Screen):
 		plugins.clearPluginList()
 		plugins.readPluginList(resolveFilename(SCOPE_PLUGINS))
 
+
 class AutomaticVolumeAdjustmentEntriesListConfigScreen(Screen):
 	skin = """
 		<screen position="center,center" size="550,400">
@@ -209,6 +211,7 @@ class AutomaticVolumeAdjustmentEntriesListConfigScreen(Screen):
 			self.automaticVolumeAdjustmentInstance.initializeConfigValues(self["entrylist"].configVA, True) # submit config values
 		self.updateList()
 
+
 class AutomaticVolumeAdjustmentEntryList(MenuList):
 	def __init__(self, list, enableWrapAround=True):
 		MenuList.__init__(self, list, enableWrapAround, eListboxPythonMultiContent)
@@ -239,6 +242,7 @@ class AutomaticVolumeAdjustmentEntryList(MenuList):
 		self.list = list
 		self.l.setList(list)
 		self.moveToIndex(0)
+
 
 class AutomaticVolumeAdjustmentEntryConfigScreen(ConfigListScreen, Screen):
 	skin = """

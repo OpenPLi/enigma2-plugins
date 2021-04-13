@@ -95,10 +95,16 @@ if config.plugins.epgrefresh.interval.value != 2:
 config.plugins.epgrefresh_extra = ConfigSubsection()
 config.plugins.epgrefresh_extra.cacheloadsched = ConfigYesNo(default=False)
 config.plugins.epgrefresh_extra.cachesavesched = ConfigYesNo(default=False)
+
+
 def EpgCacheLoadSchedChanged(configElement):
 	EpgLoadSaveRefresh.EpgCacheLoadCheck()
+
+
 def EpgCacheSaveSchedChanged(configElement):
 	EpgLoadSaveRefresh.EpgCacheSaveCheck()
+
+
 config.plugins.epgrefresh_extra.cacheloadsched.addNotifier(EpgCacheLoadSchedChanged)
 config.plugins.epgrefresh_extra.cachesavesched.addNotifier(EpgCacheSaveSchedChanged)
 config.plugins.epgrefresh_extra.cacheloadtimer = ConfigSelectionNumber(default=24, stepwidth=1, min=1, max=24, wraparound=True)
@@ -122,6 +128,7 @@ for i in range(7):
 
 #pragma mark - Workaround for unset clock
 from enigma import eDVBLocalTimeHandler
+
 
 def timeCallback(isCallback=True):
 	"""Time Callback/Autostart management."""
@@ -156,6 +163,7 @@ def timeCallback(isCallback=True):
 			)
 	epgrefresh.start()
 
+
 #pragma mark - Help
 try:
 	from Plugins.SystemPlugins.MPHelp import registerHelp, XMLHelpReader
@@ -166,6 +174,7 @@ except Exception as e:
 	print("[EPGRefresh] Unable to initialize MPHelp:", e, "- Help not available!")
 	epgrefreshHelp = None
 
+
 class AutoZap(Screen):
 	skin = """
 		<screen flags="wfNoBorder" position="center,25" size="500,30" title="AutoZap" backgroundColor="#64121214">
@@ -173,6 +182,7 @@ class AutoZap(Screen):
 				<convert type="ConditionalShowHide">Blink</convert>
 			</widget>
 		</screen>"""
+
 	def __init__(self, session):
 		Screen.__init__(self, session)
 		self.session = session
@@ -219,11 +229,13 @@ class AutoZap(Screen):
 			srvName = srvName.replace('\xc2\x86', '').replace('\xc2\x87', '')
 			self["wohin"].setText(srvName + _("   (AutoZap)"))
 
+
 def standbyQuestionCallback(session, res=None):
 	if res:
 		from Screens import Standby
 		if Standby.inStandby is None:
 			session.open(Standby.Standby)
+
 
 def autostart(reason, session=None, **kwargs):
 	global _session
@@ -267,6 +279,7 @@ def autostart(reason, session=None, **kwargs):
 	elif reason == 1:
 		epgrefresh.stop()
 
+
 def getNextWakeup():
 	# Return invalid time if not automatically refreshing
 	if not config.plugins.epgrefresh.enabled.value:
@@ -294,6 +307,7 @@ def getNextWakeup():
 			return begin
 	return begin + 86400 * wakeup_day
 
+
 def WakeupDayOfWeek():
 	start_day = -1
 	try:
@@ -309,6 +323,8 @@ def WakeupDayOfWeek():
 	return start_day
 
 # Mainfunction
+
+
 def main(session, **kwargs):
 	epgrefresh.stop()
 	session.openWithCallback(
@@ -316,11 +332,14 @@ def main(session, **kwargs):
 		EPGRefreshConfiguration
 	)
 
+
 def doneConfiguring(session, **kwargs):
 	if config.plugins.epgrefresh.enabled.value:
 		epgrefresh.start(session)
 
 # Eventinfo
+
+
 def eventinfo(session, servicelist, **kwargs):
 	ref = session.nav.getCurrentlyPlayingServiceReference()
 	if not ref:
@@ -343,16 +362,21 @@ def eventinfo(session, servicelist, **kwargs):
 def extensionsmenu(session, **kwargs):
 	main(session, **kwargs)
 
+
 def autostart_ChannelContextMenu(session, **kwargs):
 	EPGRefreshChannelContextMenuInit()
 
+
 baseChannelContextMenu__init__ = None
+
+
 def EPGRefreshChannelContextMenuInit():
 	global baseChannelContextMenu__init__
 	if baseChannelContextMenu__init__ is None:
 		baseChannelContextMenu__init__ = ChannelContextMenu.__init__
 	ChannelContextMenu.__init__ = EPGRefreshChannelContextMenu__init__
 	ChannelContextMenu.addtoEPGRefresh = addtoEPGRefresh
+
 
 def EPGRefreshChannelContextMenu__init__(self, session, csel):
 	baseChannelContextMenu__init__(self, session, csel)
@@ -373,6 +397,7 @@ def EPGRefreshChannelContextMenu__init__(self, session, csel):
 				else:
 					pass
 
+
 def addtoEPGRefresh(self, add):
 	ref = self.csel.servicelist.getCurrent()
 	if not ref:
@@ -391,10 +416,12 @@ def addtoEPGRefresh(self, add):
 		pass
 	self.close()
 
+
 def main_menu(menuid, **kwargs):
 	if menuid == "mainmenu" and config.plugins.epgrefresh_extra.main_menu.value:
 		return [(_("Manual EPG"), manual_epg, "Manual_Epg", 98)]
 	return []
+
 
 def manualrefresh_menu(menuid, **kwargs):
 	if menuid == "mainmenu" and config.plugins.epgrefresh.stop_on_mainmenu.value and epgrefresh.isRunning():
@@ -403,26 +430,33 @@ def manualrefresh_menu(menuid, **kwargs):
 		return [(_("EPG-refresh now"), start_Running, "start_EPG-refresh", 99)]
 	return []
 
+
 def stop_Running(session, **kwargs):
 	if not epgrefresh.isRunning():
 		return True
 	epgrefresh.showPendingServices(session)
+
 
 def start_Running(session, **kwargs):
 	if epgrefresh.isRunning():
 		return True
 	epgrefresh.forceRefresh(session, dontshutdown=True)
 
+
 myServicelist = None
+
+
 def autozap(session, servicelist, **kwargs):
 	global myServicelist
 	if servicelist:
 		myServicelist = servicelist
 		session.open(AutoZap)
 
+
 def manual_epg(session, **kwargs):
 	from EPGSaveLoadConfiguration import ManualEPGlist 
 	session.open(ManualEPGlist)
+
 
 def housekeepingExtensionsmenu(el):
 	if el.value:
@@ -433,6 +467,7 @@ def housekeepingExtensionsmenu(el):
 		except ValueError as ve:
 			print("[EPGRefresh] housekeepingExtensionsmenu got confused, tried to remove non-existant plugin entry... ignoring.")
 
+
 def AutozapExtensionsmenu(el):
 	if el.value:
 		plugins.addPlugin(autozapDescriptor)
@@ -441,6 +476,7 @@ def AutozapExtensionsmenu(el):
 			plugins.removePlugin(autozapDescriptor)
 		except ValueError as ve:
 			print("[EPGRefresh] housekeepingExtensionsmenu got confused, tried to remove non-existant plugin entry... ignoring.")
+
 
 def addEventinfomenu(el):
 	if el.value == "1":
@@ -460,6 +496,7 @@ config.plugins.epgrefresh.add_to_refresh.addNotifier(addEventinfomenu, initial_c
 extDescriptor = PluginDescriptor(name="EPGRefresh", description=_("Automatically refresh EPG"), where=PluginDescriptor.WHERE_EXTENSIONSMENU, fnc=extensionsmenu, needsRestart=False)
 eventinfoDescriptor = PluginDescriptor(name=_("add to EPGRefresh"), description=_("add to EPGRefresh"), where=PluginDescriptor.WHERE_EVENTINFO, fnc=eventinfo, needsRestart=False)
 autozapDescriptor = PluginDescriptor(name=_("Refresh-EPG / AutoZap"), description=_("AutoZap for refreshing EPG data"), where=PluginDescriptor.WHERE_EXTENSIONSMENU, fnc=autozap, needsRestart=False)
+
 
 def Plugins(**kwargs):
 	needsRestart = config.plugins.epgrefresh.enabled.value and not plugins.firstRun

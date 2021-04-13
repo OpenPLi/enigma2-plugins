@@ -86,8 +86,10 @@ if not config.plugins.extvirtualzap.saveLastService.value or config.plugins.extv
 	config.plugins.extvirtualzap.curref.save()
 	config.plugins.extvirtualzap.curbouquet.save()
 
+
 class RememberLastService:
 	"""Clear Last Service"""
+
 	def __init__(self):
 		self.clearTimer = eTimer()
 		self.clearTimer.timeout.get().append(self.clearLastService)
@@ -109,7 +111,9 @@ class RememberLastService:
 		if config.plugins.extvirtualzap.saveLastService.value and config.plugins.extvirtualzap.saveLastServiceMode.value == 'standby':
 			self.clearLastService()
 
+
 currentRememberLastService = RememberLastService()
+
 
 class ExtendedVirtualZap(Screen, HelpableScreen):
 	sz_w = getDesktop(0).size().width()
@@ -998,7 +1002,6 @@ class ExtendedVirtualZap(Screen, HelpableScreen):
 			if config.plugins.extvirtualzap.show_dish.value and startDialog:
 				self.dishpipDialog = self.session.instantiateDialog(DishPiP)
 
-
 	def isPlayableForPipService(self, service):
 		playingref = self.session.nav.getCurrentlyPlayingServiceReference()
 		if playingref is None or service == playingref:
@@ -1210,6 +1213,7 @@ class ExtendedVirtualZap(Screen, HelpableScreen):
 				"keyTV": self.servicelist.setModeTv,
 			})
 
+
 class ExtendedVirtualZapConfig(Screen, ConfigListScreen):
 	sz_w = getDesktop(0).size().width()
 	if sz_w >= 1920:
@@ -1230,6 +1234,7 @@ class ExtendedVirtualZapConfig(Screen, ConfigListScreen):
 				<widget render="Label" source="key_green" position="185,0" size="140,40" zPosition="5" valign="center" halign="center" backgroundColor="red" font="Regular;21" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
 				<widget name="config" position="20,50" size="650,320" scrollbarMode="showOnDemand" />
 			</screen>"""
+
 	def __init__(self, session):
 		Screen.__init__(self, session)
 		self["key_red"] = StaticText(_("Cancel"))
@@ -1316,6 +1321,7 @@ class ExtendedVirtualZapConfig(Screen, ConfigListScreen):
 		plugins.clearPluginList()
 		plugins.readPluginList(resolveFilename(SCOPE_PLUGINS))
 
+
 def ExtendedVirtualZapChannelContextMenuInit():
 	from Screens.ChannelSelection import ChannelContextMenu, OFF, MODE_TV, service_types_tv
 	global baseEVZChannelContextMenuINIT
@@ -1323,6 +1329,7 @@ def ExtendedVirtualZapChannelContextMenuInit():
 		baseEVZChannelContextMenuINIT = ChannelContextMenu.__init__
 	ChannelContextMenu.__init__ = ExtendedVirtualZapChannelContextMenu__init__
 	ChannelContextMenu.showEVZ = showEVZ
+
 
 def ExtendedVirtualZapChannelContextMenu__init__(self, session, csel):
 	baseEVZChannelContextMenuINIT(self, session, csel)
@@ -1342,6 +1349,7 @@ def ExtendedVirtualZapChannelContextMenu__init__(self, session, csel):
 					callFunction = self.showEVZ
 					self["menu"].list.insert(2, ChoiceEntryComponent(text=(_("show 'Extended virtual zap' for current service"), boundFunction(callFunction, 1))))
 
+
 def showEVZ(self, add):
 	try:
 		ref = self.csel.servicelist.getCurrent()
@@ -1351,6 +1359,7 @@ def showEVZ(self, add):
 		self.close(False)
 	except:
 		pass
+
 
 def autostart(reason, **kwargs):
 	if reason == 0 and config.plugins.extvirtualzap.mode.value != "3":
@@ -1366,6 +1375,7 @@ def autostart(reason, **kwargs):
 		#	ExtendedVirtualZapChannelContextMenuInit()
 		#except:
 		#	pass
+
 
 def InfoBarShowHide__init__(self):
 	InfoBarShowHideINIT(self)
@@ -1390,6 +1400,7 @@ def InfoBarShowHide__init__(self):
 			"hideLong": self.hideLong,
 		}, prio=1)
 
+
 def showVZ(self, exit=False):
 	from Screens.InfoBarGenerics import InfoBarEPG
 	if isinstance(self, InfoBarEPG):
@@ -1408,6 +1419,7 @@ def showVZ(self, exit=False):
 				#self.showSecondInfoBar()
 		except:
 			pass
+
 
 def ExtendedVirtualZapCallback(self, service=None, servicePath=None, pipZap=False):
 	if isinstance(self, InfoBarPiP):
@@ -1429,6 +1441,7 @@ def ExtendedVirtualZapCallback(self, service=None, servicePath=None, pipZap=Fals
 				del self.session.pip
 				self.session.openWithCallback(self.close, MessageBox, _("Could not open Picture in Picture"), MessageBox.TYPE_ERROR)
 
+
 def newHide(self):
 	mode = config.plugins.extvirtualzap.mode.value
 	if mode == "1" or mode == "0" or mode == "4":
@@ -1445,11 +1458,14 @@ def newHide(self):
 		if not visible:
 			self.showVZ(exit=True)
 
+
 def setup(session, **kwargs):
 	session.open(ExtendedVirtualZapConfig)
 
+
 def ExtendedVirtualZapMainCallback(service=None, servicePath=None, pipZap=False):
 		ExtendedVirtualZapCallback(InfoBar.instance, service, servicePath, pipZap)
+
 
 def singleepg(session, selectedevent, **kwargs):
 	mode = config.plugins.extvirtualzap.event_menu.value
@@ -1460,6 +1476,7 @@ def singleepg(session, selectedevent, **kwargs):
 				if hasattr(InfoBar.instance, "showPiP"):
 					InfoBar.instance.showPiP()
 			session.openWithCallback(ExtendedVirtualZapMainCallback, ExtendedVirtualZap, InfoBar.instance.servicelist)
+
 
 def eventinfofull(session, eventName="", **kwargs):
 	mode = config.plugins.extvirtualzap.event_menu.value
@@ -1477,6 +1494,7 @@ def eventinfofull(session, eventName="", **kwargs):
 				InfoBar.instance.showPiP()
 		session.openWithCallback(ExtendedVirtualZapMainCallback, ExtendedVirtualZap, InfoBar.instance.servicelist)
 
+
 def eventinfo(session, servicelist, eventName="", **kwargs):
 	mode = config.plugins.extvirtualzap.event_menu.value
 	open_plugin = False
@@ -1493,6 +1511,7 @@ def eventinfo(session, servicelist, eventName="", **kwargs):
 				InfoBar.instance.showPiP()
 		session.openWithCallback(ExtendedVirtualZapMainCallback, ExtendedVirtualZap, InfoBar.instance.servicelist)
 
+
 def startForChannelSelector(session=None, service=None):
 	if session is None:
 		return
@@ -1505,6 +1524,7 @@ def startForChannelSelector(session=None, service=None):
 				InfoBar.instance.showPiP()
 		session.openWithCallback(ExtendedVirtualZapMainCallback, ExtendedVirtualZap, InfoBar.instance.servicelist, lastService=False)
 
+
 def main(session, **kwargs):
 	from Screens.InfoBar import InfoBar
 	if InfoBar.instance:
@@ -1512,6 +1532,7 @@ def main(session, **kwargs):
 			if hasattr(InfoBar.instance, "showPiP"):
 				InfoBar.instance.showPiP()
 		session.openWithCallback(ExtendedVirtualZapMainCallback, ExtendedVirtualZap, InfoBar.instance.servicelist)
+
 
 def Plugins(**kwargs):
  	plist = [PluginDescriptor(name=_("Extended virtual zap setup"), description=_("config menu"), where=[PluginDescriptor.WHERE_PLUGINMENU], icon="plugin.png", fnc=setup)]

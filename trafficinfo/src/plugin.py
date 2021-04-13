@@ -15,6 +15,8 @@ from twisted.web.client import getPage
 from twisted.internet import reactor
 
 ###############################################################################        
+
+
 class TrafficInfoMain(Screen):
     skin_SD = """
         <screen position="110,83" size="530,430" title="Verkehrsinfo" >                        
@@ -32,6 +34,7 @@ class TrafficInfoMain(Screen):
             <widget name="statuslabel" position="0,587" size="730,13" halign="left" />
         </screen>
         """
+
     def __init__(self, session, args=0):
         self.loadinginprogress = False
         self.session = session
@@ -205,6 +208,7 @@ class TrafficInfoMain(Screen):
             street = "Info"
         return TrafficInfoItem(street, direction, details)
 
+
 class ItemList(MenuList):
     def __init__(self, items, enableWrapAround=False):
         MenuList.__init__(self, items, enableWrapAround, eListboxPythonMultiContent)
@@ -215,6 +219,8 @@ class ItemList(MenuList):
         return self.l.getCurrentSelection()
 
 ####################
+
+
 class TrafficInfoSection:
     def __init__(self, name, link):
         self.name = name.encode("utf-8")
@@ -224,6 +230,8 @@ class TrafficInfoSection:
         return "name=" + self.name + ", link=" + self.link
 
 ####################
+
+
 class TrafficInfoItem:
     def __init__(self, street, direction, text):
         self.street = street.encode("utf-8")
@@ -234,8 +242,11 @@ class TrafficInfoItem:
         return "street=" + self.street + ", dir=" + self.direction + ", text=" + self.text
 
 #############################
+
+
 def main(session, **kwargs):
     session.open(TrafficInfoMain)
+
 
 def Plugins(**kwargs):
   return PluginDescriptor(name="Verkehrsinfo", description="Show German traffic jams", where=PluginDescriptor.WHERE_PLUGINMENU, fnc=main, icon="plugin.png")

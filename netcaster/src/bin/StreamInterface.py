@@ -4,6 +4,7 @@ from urlparse import urlparse
 
 valid_types = ("MP3", "PLS") #list of playable mediatypes
 
+
 def getPage(url, contextFactory=None, *args, **kwargs):
 	parsed = urlparse(url)
 	scheme = parsed.scheme
@@ -20,6 +21,7 @@ def getPage(url, contextFactory=None, *args, **kwargs):
 	else:
 		reactor.connectTCP(host, port, factory)
 	return factory.deferred
+
 
 class LimitedHTTPClientFactory(HTTPClientFactory):
 
@@ -54,6 +56,7 @@ class LimitedHTTPClientFactory(HTTPClientFactory):
 			self.waiting = 0
 			self.deferred.callback(self.buf)
 
+
 class StreamInterface:
     def __init__(self, session, cbListLoaded=None):
         self.session = session
@@ -79,23 +82,32 @@ class StreamInterface:
             self.cbListLoaded(self.list)
 
 ###############################################################################
+
+
 class Stream:
     isfavorite = False
+
     def __init__(self, name, description, url, type="mp3"):
         self.name = name
         self.description = description
         self.url = url
         self.type = type
+
     def getName(self):
         return self.name
+
     def getDescription(self):
         return self.description
+
     def setName(self, name):
         self.name = name
+
     def setDescription(self, description):
         self.description = description
+
     def setURL(self, url):
         self.url = url
+
     def getURL(self, callback):
     	self.callback = callback
         if self.type.lower() == "pls":
@@ -128,10 +140,13 @@ class Stream:
 
     def setFavorite(self, TrueFalse):
         self.isfavorite = TrueFalse
+
     def isFavorite(self):
         return self.isfavorite
+
     def setType(self, type):
         self.type = type
+
     def getType(self):
         return self.type
 

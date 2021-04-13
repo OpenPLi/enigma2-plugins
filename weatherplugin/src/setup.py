@@ -40,6 +40,7 @@ def initWeatherPluginEntryConfig():
 	config.plugins.WeatherPlugin.Entries.append(s)
 	return s
 
+
 def initConfig():
 	count = config.plugins.WeatherPlugin.entriescount.value
 	if count != 0:
@@ -47,6 +48,7 @@ def initConfig():
 		while i < count:
 			initWeatherPluginEntryConfig()
 			i += 1
+
 
 class WeatherPluginEntriesListConfigScreen(Screen):
 	skin = """
@@ -131,6 +133,7 @@ class WeatherPluginEntriesListConfigScreen(Screen):
 		configfile.save()
 		self.updateList()
 
+
 class WeatherPluginEntryList(MenuList):
 	def __init__(self, list, enableWrapAround=True):
 		MenuList.__init__(self, list, enableWrapAround, eListboxPythonMultiContent)
@@ -156,6 +159,7 @@ class WeatherPluginEntryList(MenuList):
 		self.list = list
 		self.l.setList(list)
 		self.moveToIndex(0)
+
 
 class WeatherPluginEntryConfigScreen(ConfigListScreen, Screen):
 	skin = """

@@ -7,8 +7,10 @@ from Components.Label import Label
 from enigma import eTimer
 from Components.config import config
 
+
 class MovingLabel(Label):
 	"""Simple Label which allows to display badly scrolling text."""
+
 	def __init__(self, text=""):
 		self.offset = 0
 		self.displayLength = 100
@@ -57,8 +59,10 @@ class MovingLabel(Label):
 		except Exception:
 			self.stopMoving()
 
+
 class MovingCallbackLabel(MovingLabel):
 	"""Extended MovingLabel that allows to set a callback when done scrolling."""
+
 	def __init__(self, text="", callback=None):
 		MovingLabel.__init__(self, text)
 		self.callback = callback
@@ -70,6 +74,7 @@ class MovingCallbackLabel(MovingLabel):
 
 #pragma mark RSSTickerView
 
+
 from Screens.Screen import Screen
 from enigma import getDesktop
 
@@ -79,6 +84,7 @@ if getDesktop(0).size().width() >= 1920:
 	FULLHD = True
 elif getDesktop(0).size().width() >= 1280:
 	HD = True
+
 
 class RSSTickerView(Screen):
 	if FULLHD:
@@ -110,5 +116,6 @@ class RSSTickerView(Screen):
 			self.updateText(feed)
 		self.show()
 		self["newsLabel"].startMoving()
+
 
 tickerView = None

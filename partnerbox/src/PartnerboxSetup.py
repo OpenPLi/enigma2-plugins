@@ -37,6 +37,7 @@ from Components.Pixmap import Pixmap
 # for localized messages
 from . import _
 
+
 def initPartnerboxEntryConfig():
 	config.plugins.Partnerbox.Entries.append(ConfigSubsection())
 	i = len(config.plugins.Partnerbox.Entries) - 1
@@ -51,6 +52,7 @@ def initPartnerboxEntryConfig():
 	config.plugins.Partnerbox.Entries[i].zaptoservicewhenstreaming = ConfigYesNo(default=False)
 	return config.plugins.Partnerbox.Entries[i]
 
+
 def initConfig():
 	count = config.plugins.Partnerbox.entriescount.value
 	if count != 0:
@@ -59,9 +61,12 @@ def initConfig():
 			initPartnerboxEntryConfig()
 			i += 1
 
+
 HD = False
 if getDesktop(0).size().width() >= 1280:
 	HD = True
+
+
 class PartnerboxSetup(ConfigListScreen, Screen):
 	if HD:
 		skin = """ <screen position="center,center" size="700,400" title="Partnerbox Setup" >
@@ -167,6 +172,7 @@ class PartnerboxSetup(ConfigListScreen, Screen):
 		plugins.clearPluginList()
 		plugins.readPluginList(resolveFilename(SCOPE_PLUGINS))
 
+
 class PartnerboxEntriesListConfigScreen(Screen, HelpableScreen):
 	skin = """
 		<screen position="center,center" size="550,400" title="Partnerbox: List of Entries" >
@@ -267,6 +273,7 @@ class PartnerboxEntriesListConfigScreen(Screen, HelpableScreen):
 		self.edit = not self.edit
 		self.idx = self["entrylist"].l.getCurrentSelectionIndex()
 		self.showPrevNext()
+
 	def showPrevNext(self):
 		if self.edit:
 			self["h_prev"].show()
@@ -274,12 +281,15 @@ class PartnerboxEntriesListConfigScreen(Screen, HelpableScreen):
 		else:
 			self["h_prev"].hide()
 			self["h_next"].hide()
+
 	def moveUp(self):
 		if self.edit and self.idx >= 1:
 				self.moveDirection(-1)
+
 	def moveDown(self):
 		if self.edit and self.idx < config.plugins.Partnerbox.entriescount.value - 1:
 				self.moveDirection(1)
+
 	def moveDirection(self, direction):
 			self["entrylist"].moveToIndex(self.idx)
 			tmp = config.plugins.Partnerbox.Entries[self.idx]
@@ -454,12 +464,14 @@ class PartnerboxEntriesListConfigScreen(Screen, HelpableScreen):
 	def setFallbackTuner(self, name, ip):
 		if not ip:
 			return
+
 		def fallbackConfirm(result):
 			if not result:
 				return
 			config.usage.remote_fallback.value = "http://%s:8001" % ip
 			config.usage.remote_fallback.save()
 		self.session.openWithCallback(fallbackConfirm, MessageBox, _("Set %s as fallback remote receiver?") % name)
+
 
 class PartnerboxEntryList(MenuList):
 	def __init__(self, list, enableWrapAround=True):
@@ -469,6 +481,7 @@ class PartnerboxEntryList(MenuList):
 		self.ItemHeight = int(font[2])
 		font = skin.fonts.get("PartnerBoxEntryList1", ("Regular", 18))
 		self.l.setFont(1, gFont(font[0], font[1]))
+
 	def postWidgetCreate(self, instance):
 		MenuList.postWidgetCreate(self, instance)
 		instance.setItemHeight(self.ItemHeight)
@@ -494,6 +507,7 @@ class PartnerboxEntryList(MenuList):
 			self.list.append(res)
 		self.l.setList(self.list)
 		self.moveToIndex(0)
+
 
 class PartnerboxEntryConfigScreen(ConfigListScreen, Screen):
 	skin = """

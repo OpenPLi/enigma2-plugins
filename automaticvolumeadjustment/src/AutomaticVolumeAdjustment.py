@@ -30,8 +30,10 @@ from ServiceReference import ServiceReference
 from Components.VolumeControl import VolumeControl
 from AutomaticVolumeAdjustmentConfig import AutomaticVolumeAdjustmentConfig, getVolumeDict
 
+
 class AutomaticVolumeAdjustment(Screen):
 	instance = None
+
 	def __init__(self, session):
 		self.session = session
 		Screen.__init__(self, session)
@@ -190,9 +192,11 @@ class AutomaticVolumeAdjustment(Screen):
 		config.audio.volume.value = self.volctrl.getVolume()
 		config.audio.volume.save()
 
+
 # VolumeControl Class --> overwrite setVolume
 # only for max. mpeg-volume restriction
 baseVolumeControl_setVolume = None
+
 
 def VolumeControlInit(enabled, maxVolume):
 	global baseVolumeControl_setVolume
@@ -204,6 +208,7 @@ def VolumeControlInit(enabled, maxVolume):
 	else:
 		VolumeControl.setVolume = baseVolumeControl_setVolume
 		baseVolumeControl_setVolume = None
+
 
 def AVA_setVolume(self, direction):
 	ok = True

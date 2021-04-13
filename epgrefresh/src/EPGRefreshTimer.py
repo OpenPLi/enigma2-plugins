@@ -12,6 +12,7 @@ from time import localtime, mktime, time, strftime
 # Config
 from Components.config import config
 
+
 def checkTimespan(begin, end):
 	# Get current time
 	time = localtime()
@@ -39,8 +40,10 @@ def checkTimespan(begin, end):
 			return False
 		return True
 
+
 class EPGRefreshTimerEntry(timer.TimerEntry):
 	"""TimerEntry ..."""
+
 	def __init__(self, begin, tocall, nocheck=False):
 		timer.TimerEntry.__init__(self, int(begin), int(begin))
 
@@ -99,6 +102,7 @@ class EPGRefreshTimerEntry(timer.TimerEntry):
 				)),
 				")>"
 			))
+
 
 class EPGRefreshTimer(timer.Timer):
 	def __init__(self):
@@ -160,5 +164,6 @@ class EPGRefreshTimer(timer.Timer):
 
 	def isActive(self):
 		return len(self.timer_list) > 0
+
 
 epgrefreshtimer = EPGRefreshTimer()

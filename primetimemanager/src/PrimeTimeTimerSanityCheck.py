@@ -6,6 +6,7 @@ from timer import TimerEntry
 import RecordTimer
 from time import time, localtime
 
+
 class PrimeTimeTimerSanityCheck:
 	def __init__(self, timerlist, newtimer=None, visible_conflict=False):
 		self.localtimediff = 25 * 3600 - mktime(gmtime(25 * 3600))

@@ -47,6 +47,8 @@ del simpleRSS, i
 rssPoller = None
 
 # Main Function
+
+
 def main(session, **kwargs):
 	# Get Global rssPoller-Object
 	global rssPoller
@@ -66,6 +68,8 @@ def main(session, **kwargs):
 		session.openWithCallback(closed, RSSSetup, rssPoller)
 
 # Plugin window has been closed
+
+
 def closed():
 	# If SimpleRSS should not run in Background: shutdown
 	if not (config.plugins.simpleRSS.autostart.value or
@@ -78,6 +82,8 @@ def closed():
 		rssPoller = None
 
 # Autostart
+
+
 def autostart(reason, **kwargs):
 	global rssPoller
 
@@ -97,6 +103,7 @@ def autostart(reason, **kwargs):
 			rssPoller.shutdown()
 			rssPoller = None
 
+
 def filescan_chosen(session, feed, item):
 	if item and item[1] == "apply":
 		for i in range(config.plugins.simpleRSS.feedcount.value):
@@ -115,6 +122,8 @@ def filescan_chosen(session, feed, item):
 			session.open(MessageBox, _("Not found new feed(s)."), type=MessageBox.TYPE_INFO, timeout=5)
 
 # Filescan
+
+
 def filescan_open(item, session, **kwargs):
 	Len = len(item)
 	if Len:
@@ -141,10 +150,13 @@ def filescan_open(item, session, **kwargs):
 			# Display Message
 			session.open(MessageBox, _("%d Feed(s) were added to configuration.") % (Len), type=MessageBox.TYPE_INFO, timeout=5)
 
+
 from mimetypes import add_type
 add_type("application/x-feed-rss", ".rss")
 
 # Filescanner
+
+
 def filescan(**kwargs):
 	from Components.Scanner import Scanner, ScanPath
 
@@ -166,6 +178,7 @@ def filescan(**kwargs):
 			openfnc=filescan_open,
 		)
 	]
+
 
 def Plugins(**kwargs):
  	lst = [

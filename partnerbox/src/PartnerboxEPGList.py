@@ -35,6 +35,7 @@ basebuildMultiEntry = None
 
 picDY = 0
 
+
 def Partnerbox_EPGListInit():
 	global baseEPGList__init__, basebuildSingleEntry, basebuildSimilarEntry, basebuildMultiEntry
 	if baseEPGList__init__ is None:
@@ -54,8 +55,10 @@ def Partnerbox_EPGListInit():
 	EPGList.getClockTypesEntry = getClockTypesEntry
 	EPGList.isInTimer = isInTimer
 
+
 def Partnerbox_EPGList__init__(self, type=0, selChangedCB=None, timer=None):
 	baseEPGList__init__(self, type, selChangedCB, timer)
+
 	def loadPixmap(name):
 		pixmap = LoadPixmap(resolveFilename(SCOPE_CURRENT_SKIN, "icons/%s" % name))
 		if pixmap is None:
@@ -87,6 +90,7 @@ def Partnerbox_EPGList__init__(self, type=0, selChangedCB=None, timer=None):
 	self.remote_repzapclock_pre_pixmap = loadPixmap("remote_repzapclock_pre.png")
 	self.remote_repzapclock_post_pixmap = loadPixmap("remote_repzapclock_post.png")
 	self.remote_repzapclock_prepost_pixmap = loadPixmap("remote_repzapclock_prepost.png")
+
 
 def Partnerbox_SingleEntry(self, service, eventId, beginTime, duration, EventName):
 	rec1 = self.getClockTypesEntry(service, eventId, beginTime, duration)
@@ -175,6 +179,7 @@ def Partnerbox_SingleEntry(self, service, eventId, beginTime, duration, EventNam
 			res.append((eListboxPythonMultiContent.TYPE_TEXT, r3.left(), r3.top(), r3.width(), r3.height(), 0, RT_HALIGN_LEFT | RT_VALIGN_CENTER, EventName))
 		return res
 
+
 def Partnerbox_SimilarEntry(self, service, eventId, beginTime, service_name, duration):
 	rec1 = self.getClockTypesEntry(service, eventId, beginTime, duration)
 	rec2 = beginTime and (isInRemoteTimer(self, beginTime, duration, service))
@@ -215,6 +220,7 @@ def Partnerbox_SimilarEntry(self, service, eventId, beginTime, service_name, dur
 	else:
 		res.append((eListboxPythonMultiContent.TYPE_TEXT, r3.left(), r3.top(), r3.width(), r3.height(), 0, RT_HALIGN_LEFT | RT_VALIGN_CENTER, service_name))
 	return res
+
 
 def Partnerbox_MultiEntry(self, changecount, service, eventId, begTime, duration, EventName, nowTime, service_name):
 	rec1 = self.getClockTypesEntry(service, eventId, begTime, duration)
@@ -288,6 +294,7 @@ def Partnerbox_MultiEntry(self, changecount, service, eventId, begTime, duration
 				))
 	return res
 
+
 def getClockTypesEntry(self, service, eventId, beginTime, duration):
 	if not beginTime:
 		return None
@@ -296,6 +303,7 @@ def getClockTypesEntry(self, service, eventId, beginTime, duration):
 		return rec[1]
 	else:
 		return None
+
 
 def isInTimer(self, eventid, begin, duration, service):
 	returnValue = None
@@ -451,6 +459,7 @@ def isInTimer(self, eventid, begin, duration, service):
 						returnValue = (time_match, [type])
 	return returnValue
 
+
 def isInRemoteTimer(self, begin, duration, service):
 	time_match = 0
 	chktime = None
@@ -488,6 +497,7 @@ def isInRemoteTimer(self, begin, duration, service):
 				break
 	return time_match
 
+
 def getRemoteClockPixmap(self, refstr, beginTime, duration, eventId):
 	pre_clock = 1
 	post_clock = 2
@@ -514,6 +524,7 @@ def getRemoteClockPixmap(self, refstr, beginTime, duration, eventId):
 		return self.remote_clock_post_pixmap
 	else:
 		return self.remote_clock_prepost_pixmap
+
 
 def getRemoteClockZapPixmap(self, refstr, beginTime, duration, eventId):
 	type = 0

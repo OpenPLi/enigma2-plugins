@@ -22,10 +22,12 @@ from Components.Sources.ServiceList import ServiceList
 from enigma import eServiceReference, eEPGCache
 import re
 
+
 def stringReplace(text):
 	illegal_xml_chars_RE = re.compile(u'[\x00-\x08\x0b\x0c\x0e-\x1F\uD800-\uDFFF\uFFFE\uFFFF]')
 	text = illegal_xml_chars_RE.sub('', text)
 	return text.replace('&amp;quot;', '"')
+
 
 class E2EPGListAllData:
 	def __init__(self, servicereference="", servicename="", eventid=0, eventstart=0, eventduration=0, eventtitle="", eventdescription="", eventdescriptionextended=""):
@@ -38,10 +40,12 @@ class E2EPGListAllData:
 		self.eventdescription = stringReplace(eventdescription)
 		self.eventdescriptionextended = stringReplace(eventdescriptionextended)
 
+
 class E2ServiceList:
 	def __init__(self, servicereference="", servicename=""):
 		self.servicereference = servicereference
 		self.servicename = stringReplace(servicename)
+
 
 class Services(Source):
 	def __init__(self, session):

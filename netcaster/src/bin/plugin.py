@@ -23,10 +23,13 @@ streamplayer = None
 plugin_path = ""
 
 ###############################################################################
+
+
 def main(session, **kwargs):
     session.open(NETcasterScreenBrowser)
     global streamplayer
     streamplayer = StreamPlayer(session)
+
 
 def Plugins(path, **kwargs):
     global plugin_path
@@ -40,6 +43,8 @@ def Plugins(path, **kwargs):
         )
 
 ###############################################################################
+
+
 class NETcasterScreenBrowser(Screen):
     skin = """
         <screen position="80,73" size="560,440" title="SHOUTcaster" >
@@ -57,6 +62,7 @@ class NETcasterScreenBrowser(Screen):
 
     streamlist = []
     currentPlugin = None
+
     def __init__(self, session, args=0):
         self.skin = NETcasterScreenBrowser.skin
         self.session = session
@@ -213,6 +219,8 @@ class NETcasterScreenBrowser(Screen):
 	return NETcastLCDScreen
 
 ###############################################################################
+
+
 class NETcasterScreenHelp(Screen):
     skin = """
         <screen position="103,73" size="500,400" title="NETcaster Help" >
@@ -240,6 +248,8 @@ class NETcasterScreenHelp(Screen):
              }, -1)
 
 ###############################################################################
+
+
 class StreamMenu(MenuList):
     def __init__(self, list, enableWrapAround=False):
         MenuList.__init__(self, list, enableWrapAround, eListboxPythonMultiContent)
@@ -261,6 +271,8 @@ class StreamMenu(MenuList):
         self.moveToIndex(0)
 
 ###############################################################################
+
+
 class NETcasterScreenStreamDelete(Screen):
     def __init__(self, session):
         self.session = session
@@ -285,6 +297,7 @@ class NETcasterScreenStreamDelete(Screen):
             self.config.deleteStreamWithName(self.stream2delete)
 
 ###############################################################################
+
 
 class NETcastLCDScreen(Screen):
 	skin = """

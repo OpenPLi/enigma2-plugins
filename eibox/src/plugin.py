@@ -24,14 +24,17 @@ from Components.Language import language
 from os import environ as os_environ
 import gettext
 
+
 def localeInit():
 	gettext.bindtextdomain("EIBox", resolveFilename(SCOPE_PLUGINS, "Extensions/EIBox/locale"))
+
 
 def _(txt):
 	t = gettext.dgettext("EIBox", txt)
 	if t == txt:
 		t = gettext.gettext(txt)
 	return t
+
 
 localeInit()
 language.addCallback(localeInit)
@@ -49,14 +52,20 @@ file_prefix = resolveFilename(SCOPE_PLUGINS, 'Extensions/EIBox/')
 img_prefix = file_prefix + 'images/'
 
 up_down_descriptions = {False: _("up"), True: _("down")}
+
+
 class ConfigUpDown(ConfigBoolean):
 	def __init__(self, default=False):
 		ConfigBoolean.__init__(self, default=default, descriptions=up_down_descriptions)
 
+
 goto_descriptions = {False: "", True: ""}
+
+
 class ConfigGoto(ConfigBoolean):
 	def __init__(self, default=False):
 		ConfigBoolean.__init__(self, default=default, descriptions=goto_descriptions)
+
 
 class ConfigEIBText(ConfigText):
 	def __init__(self, default="", fixed_size=True, visible_width=False):
@@ -64,6 +73,7 @@ class ConfigEIBText(ConfigText):
 	
 	def onSelect(self, session):
 		self.allmarked = (self.value != "")
+
 
 class EIBObject(object):
 	def __init__(self, order, object_id, object_type, label, position, img=None, custom_img=[], custom_values=[], textformat=None, readonly=False):
@@ -167,6 +177,7 @@ class EIBObject(object):
 
 	value = property(getValue, setValue)
 		
+
 class EIBObjects(object):
 	def __init__(self, zone_id, zone_name, zone_img):
 		self.ids = {}
@@ -281,6 +292,7 @@ class EIBObjects(object):
 		list = self.ids.itervalues()
 		return iter(sorted(list, key=lambda EIBObject: EIBObject.order))
 		
+
 class EIBoxZoneScreen(Screen, ConfigListScreen):
 
 	def __init__(self, session, EIB_objects):
@@ -519,6 +531,7 @@ class EIBoxZoneScreen(Screen, ConfigListScreen):
 		self.refresh_timer.callback.remove(self.refreshObjects)
 		self.close(gotoZone)
 
+
 class EIBox(Screen, ConfigListScreen):
 	skin = """
 		<screen position="center,center" size="570,420" title="E.I.B.ox" >
@@ -617,6 +630,7 @@ class EIBox(Screen, ConfigListScreen):
 						images.append(str(item.nodeValue))
 					i = i + 1
 		return values, images
+
 	def xmlGetZoneNode(self, node, zone):
 		order = 0
 		for subnode in node.childNodes:
@@ -693,8 +707,10 @@ class EIBox(Screen, ConfigListScreen):
 				else:
 					print "[xmlGetZoneNode] couldn't parse object", object_id, object_type, label, (x, y), img, custom_img, custom_values, textformat, readonly, temp_id, setpoint_id
 
+
 def main(session, **kwargs):
 	session.open(EIBox)
+
 
 def Plugins(**kwargs):
 	return PluginDescriptor(name="E.I.B.ox", description=_("Visualization for European Installation Bus"), where=PluginDescriptor.WHERE_EXTENSIONSMENU, fnc=main)

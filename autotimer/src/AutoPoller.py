@@ -27,8 +27,10 @@ from twisted.internet import reactor
 
 from Logger import doLog
 
+
 class AutoPollerThread(Thread):
 	"""Background thread where the EPG is parsed (unless initiated by the user)."""
+
 	def __init__(self):
 		Thread.__init__(self)
 		self.__semaphore = Semaphore(0)
@@ -150,6 +152,7 @@ class AutoPollerThread(Thread):
 	def clearMemory(self):
 		eConsoleAppContainer().execute("sync")
 		open("/proc/sys/vm/drop_caches", "w").write("3")
+
 
 class AutoPoller:
 	"""Manages actual thread which does the polling. Used for convenience."""

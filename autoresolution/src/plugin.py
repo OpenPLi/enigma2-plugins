@@ -14,6 +14,7 @@ from Plugins.Plugin import PluginDescriptor
 from Tools import Notifications
 from Plugins.SystemPlugins.Videomode.VideoHardware import video_hw # depends on Videomode Plugin
 
+
 def readAvailableModes():
 	try:
 		f = open("/proc/stb/video/videomode_choices")
@@ -22,6 +23,7 @@ def readAvailableModes():
 		return modes.split(' ')
 	except:
 		return []
+
 
 modes_available = readAvailableModes()
 
@@ -85,6 +87,7 @@ config.plugins.autoresolution.manual_resolution_ext_menu = ConfigYesNo(default=F
 config.plugins.autoresolution.manual_resolution_ask = ConfigYesNo(default=True)
 config.plugins.autoresolution.force_progressive_mode = ConfigYesNo(default=False)
 
+
 def setDeinterlacer(mode):
 	try:
 		f = open('/proc/stb/vmpeg/deinterlace', "w")
@@ -93,6 +96,7 @@ def setDeinterlacer(mode):
 		print "[AutoRes] switch deinterlacer mode to %s" % mode
 	except:
 		print "[AutoRes] failed switch deinterlacer mode to %s" % mode
+
 
 frqdic = {23000: '24',
 		23976: '24',
@@ -129,6 +133,7 @@ codec_data = {
 	20: "N/A 20",
 	21: "SPARK",
 }
+
 
 class AutoRes(Screen):
 	def __init__(self, session):
@@ -417,6 +422,7 @@ class AutoRes(Screen):
 				return
 		self.lastmode = mode
 
+
 class ResolutionLabel(Screen):
 	height = getDesktop(0).size().height()
 	if height >= 2100:
@@ -555,6 +561,7 @@ class AutoResSetupMenu(Screen, ConfigListScreen):
 		plugins.clearPluginList()
 		plugins.readPluginList(resolveFilename(SCOPE_PLUGINS))
 
+
 class AutoFrameRate(Screen):
 	def __init__(self, session):
 		Screen.__init__(self, session)
@@ -674,6 +681,7 @@ class AutoFrameRate(Screen):
 			return
  		seekable.seekRelative(pts < 0 and -1 or 1, abs(pts))
 
+
 class ManualResolution(Screen):
 	def __init__(self, session):
 		Screen.__init__(self, session)
@@ -758,6 +766,7 @@ class ManualResolution(Screen):
 		except:
 			print "[ManualResolution] Error write /proc/stb/video/videomode"
 
+
 def openManualResolution(session, **kwargs):
 	if config.av.videoport.value not in ('DVI-PC', 'Scart'):
 		global manualResolution
@@ -769,6 +778,7 @@ def openManualResolution(session, **kwargs):
 		config.plugins.autoresolution.manual_resolution_ext_menu.save()
 		session.open(MessageBox, _("Manual resolution is not working in Scart/DVI-PC mode!"), MessageBox.TYPE_INFO, timeout=6)
 
+
 def autostart(reason, **kwargs):
 	global resolutionlabel
 	if reason == 0 and "session" in kwargs and resolutionlabel is None:
@@ -778,14 +788,17 @@ def autostart(reason, **kwargs):
 			AutoFrameRate(session)
 			AutoRes(session)
 
+
 def startSetup(menuid):
 	if menuid != "video":
 		return []
 	return [(_("Autoresolution"), autoresSetup, "autores_setup", None)]
 
+
 def autoresSetup(session, **kwargs):
 	autostart(reason=0, session=session)
 	session.open(AutoResSetupMenu)
+
 
 def Plugins(path, **kwargs):
 	lst = [PluginDescriptor(where=[PluginDescriptor.WHERE_SESSIONSTART], fnc=autostart),

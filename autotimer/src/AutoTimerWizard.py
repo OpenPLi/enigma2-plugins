@@ -21,6 +21,7 @@ from Tools import Directories
 
 from Logger import doLog
 
+
 class AutoTimerWizard(WizardLanguage, AutoTimerEditorBase, Rc):
 	STEP_ID_BASIC = 2
 	STEP_ID_TIMESPAN = 5

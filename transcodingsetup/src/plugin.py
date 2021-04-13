@@ -28,6 +28,7 @@ else:
 
 TRANSCODING_CONFIG = "/etc/enigma2/streamproxy.conf"
 
+
 class TranscodingSetup(ConfigListScreen, Screen):
 	skin = """
 		<screen position="center,center" size="500,190" title="Transcoding Setup">
@@ -177,13 +178,16 @@ class TranscodingSetup(ConfigListScreen, Screen):
 	def callbackNone(self, *retval):
 		None
 
+
 def startSetup(menuid):
 	if menuid != "expert":
 		return []
 	return [(_("Transcoding Setup"), main, "transcoding_setup", 60)]
 
+
 def main(session, **kwargs):
 	session.open(TranscodingSetup)
+
 
 def Plugins(**kwargs):
 	return [PluginDescriptor(name="Transcoding Setup", description=_("Set up default transcoding parameters"), where=PluginDescriptor.WHERE_MENU, fnc=startSetup)]

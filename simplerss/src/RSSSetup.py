@@ -9,6 +9,7 @@ from Components.Sources.StaticText import StaticText
 from Components.ActionMap import ActionMap
 from Screens.MessageBox import MessageBox
 
+
 class RSSFeedEdit(ConfigListScreen, Screen):
 	"""Edit an RSS-Feed"""
 
@@ -54,6 +55,7 @@ class RSSFeedEdit(ConfigListScreen, Screen):
 		for x in self["config"].list:
 			x[1].cancel()
 		self.close()
+
 
 class RSSSetup(ConfigListScreen, Screen):
 	"""Setup for SimpleRSS, quick-edit for Feed-URIs and settings present."""
@@ -223,6 +225,7 @@ class RSSSetup(ConfigListScreen, Screen):
 		# Keep feedcount sane
 		simpleRSS.feedcount.value = len(simpleRSS.feed)
 		simpleRSS.feedcount.save()
+
 
 def addFeed(address, auto=False):
 	l = config.plugins.simpleRSS.feed

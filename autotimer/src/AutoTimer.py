@@ -65,6 +65,7 @@ addNewTimers = []
 
 XML_CONFIG = "/etc/enigma2/autotimer.xml"
 
+
 def timeSimilarityPercent(rtimer, evtBegin, evtEnd, timer=None):
 	if (timer is not None) and (timer.offset is not None):
 		# remove custom offset from rtimer using timer.offset as RecordTimerEntry doesn't store the offset
@@ -99,6 +100,7 @@ def timeSimilarityPercent(rtimer, evtBegin, evtEnd, timer=None):
 	else:
 		return commonTime_percent
 
+
 def blockingCallFromMainThread(f, *a, **kw):
 	"""
 	  Modified version of twisted.internet.threads.blockingCallFromThread
@@ -109,6 +111,7 @@ def blockingCallFromMainThread(f, *a, **kw):
 	  down.
 	"""
 	queue = Queue.Queue()
+
 	def _callFromThread():
 		result = defer.maybeDeferred(f, *a, **kw)
 		result.addBoth(queue.put)
@@ -130,6 +133,7 @@ def blockingCallFromMainThread(f, *a, **kw):
 		result.raiseException()
 	return result
 
+
 typeMap = {
 	"exact": eEPGCache.EXAKT_TITLE_SEARCH,
 	"partial": eEPGCache.PARTIAL_TITLE_SEARCH,
@@ -143,6 +147,7 @@ caseMap = {
 	"sensitive": eEPGCache.CASE_CHECK,
 	"insensitive": eEPGCache.NO_CASE_CHECK
 }
+
 
 class AutoTimer:
 	"""Read and save xml configuration, query EPGCache"""
@@ -424,7 +429,6 @@ class AutoTimer:
 			#	i = evt.getLinkageService(eserviceref, n-1)
 			#	serviceref = i.toString()
 			#	doLog("[AutoTimer] Serviceref2 %s" % serviceref)
-
 
 			# If event starts in less than 60 seconds skip it
 			if begin < time() + 60:

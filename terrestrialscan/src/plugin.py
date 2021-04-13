@@ -24,6 +24,7 @@ config.plugins.TerrestrialScan.uhf_vhf = ConfigSelection(default='uhf', choices=
 			('uhf', _("UHF Europe")),
 			('uhf_vhf', _("UHF/VHF Europe"))])
 
+
 class TerrestrialScanScreen(ConfigListScreen, Screen):
 	def __init__(self, session):
 		Screen.__init__(self, session)
@@ -148,13 +149,16 @@ class TerrestrialScanScreen(ConfigListScreen, Screen):
 		if answer:
 			self.close(True)
 
+
 def TerrestrialScanStart(menuid, **kwargs):
 	if menuid == "scan":
 		return [(_("Terrestrial Scan"), TerrestrialScanMain, "TerrestrialScanScreen", 75)]
 	return []
 
+
 def TerrestrialScanMain(session, **kwargs):
 	session.open(TerrestrialScanScreen)
+
 
 def Plugins(**kwargs):
 	pList = []

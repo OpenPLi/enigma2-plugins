@@ -21,6 +21,8 @@ from Components.Pixmap import Pixmap
 HD = False
 if getDesktop(0).size().width() >= 1280:
 	HD = True
+
+
 class AutoTimerSettings(Screen, ConfigListScreen):
 	if HD:
 		skin = """<screen name="AutoTimerSettings" title="AutoTimer Settings" position="center,center" size="750,635">

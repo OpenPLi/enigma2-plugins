@@ -32,8 +32,10 @@ from xml.etree.cElementTree import fromstring as cet_fromstring
 from ServiceReference import ServiceReference
 from enigma import eServiceReference
 
+
 class PartnerboxAutoTimer(object):
 	instance = None
+
 	def __init__(self, session):
 		self.session = session
 		assert not PartnerboxAutoTimer.instance, "only one PartnerboxAutoTimer instance is allowed!"
@@ -111,6 +113,7 @@ class PartnerboxAutoTimer(object):
 			sCommand = "http://%s:%d/autotimer/upload_xmlconfiguration" % (ip, port)
 			sendPartnerBoxWebCommand(sCommand, None, 10, username, password, parameter=parameter).addCallback(self.downloadCallback).addErrback(self.downloadError)
 
+
 class PartnerboxAutoTimerEPGSelection(AutoTimerEPGSelection):
 	def __init__(self, *args):
 		AutoTimerEPGSelection.__init__(self, *args)
@@ -131,6 +134,7 @@ class PartnerboxAutoTimerEPGSelection(AutoTimerEPGSelection):
 			sref = ServiceReference(":".join(ref_split))
 
 		addAutotimerFromEvent(self.session, evt=evt, service=sref, importer_Callback=PartnerboxAutoTimer.instance.autotimerImporterCallback)
+
 
 class PartnerboxAutoTimerOverview(AutoTimerOverview):
 	def __init__(self, session, autotimer, partnerbox):

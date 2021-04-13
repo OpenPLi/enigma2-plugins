@@ -25,6 +25,7 @@ config.plugins.vps.wakeup_time = ConfigInteger(default=-1)
 
 recordTimerWakeupAuto = False
 
+
 def autostart(reason, **kwargs):
 	if reason == 0:
 		if kwargs.has_key("session"):
@@ -45,16 +46,20 @@ def autostart(reason, **kwargs):
 		except:
 			print "[VPS-Plugin] exception in shutdown handler, probably old enigma2"
 
+
 def setup(session, **kwargs):
 	session.openWithCallback(doneConfig, VPS_Setup)
 
+
 def doneConfig(session, **kwargs):
 	vps_timers.checkTimer()
+
 
 def startSetup(menuid):
 	if menuid != "system":
 		return []
 	return [(_("VPS Settings"), setup, "vps", 50)]
+
 
 def getNextWakeup():
 	global recordTimerWakeupAuto
@@ -63,6 +68,7 @@ def getNextWakeup():
 	config.plugins.vps.save()
 
 	return t
+
 
 def Plugins(**kwargs):
 	return [

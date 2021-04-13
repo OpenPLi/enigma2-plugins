@@ -8,6 +8,7 @@ from Components.SystemInfo import SystemInfo
 from Screens.Screen import Screen
 from __init__ import _
 
+
 class AC3LipSyncSetup(ConfigListScreen, Screen):
 	skin = """
 		<screen position="center,center" size="560,400" title="AC3 Lip Sync setup">

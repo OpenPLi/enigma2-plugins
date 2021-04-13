@@ -45,6 +45,7 @@ WerbeZapperIconFullHD1 = """
 			<widget name="icon_text" font="Regular;34" position="0,0" zPosition="1" valign="center" halign="center" size="420,80" backgroundColor="#31000000" transparent="1" />
 		</screen>""" % (config.werbezapper.z.value)
 
+
 class WerbeZapperIndicator(Screen):
 	def __init__(self, session, zap_time=0, zap_service=None):
 		self.zap_time = zap_time
@@ -103,6 +104,7 @@ class WerbeZapperIndicator(Screen):
 		if not self.instance is None:
 			self.instance.move(ePoint(config.werbezapper.x.value, config.werbezapper.y.value))
 
+
 class WerbeZapperChoiceBox(ChoiceBox):
 	def __init__(self, session, title="", list=[], keys=None, selection=0, zap_time=0, zap_service=None, monitored_event=None, monitor_time=None, monitored_service=None, skin_name=[]):
 		ChoiceBox.__init__(self, session, title, list, keys, selection, skin_name)
@@ -154,9 +156,11 @@ class WerbeZapperChoiceBox(ChoiceBox):
 		self.update_timer.stop()
 		ChoiceBox.close(self, param)
 
+
 class WerbeZapper(Screen):
 	"""Simple Plugin to automatically zap back to a Service after a given amount
 		of time."""
+
 	def __init__(self, session, servicelist, cleanupfnc=None):
 		Screen.__init__(self, session)
 
@@ -556,6 +560,7 @@ class WerbeZapper(Screen):
 			zapperIconInstance.update_time.stop()
 			zapperIconInstance.hide()
 			zapperIconInstance = None
+
 
 class WerbezapperSettings(Screen, ConfigListScreen):
 	skin = """<screen position="center,center" size="610,350" title="WerbezapperSettings" backgroundColor="#31000000" >

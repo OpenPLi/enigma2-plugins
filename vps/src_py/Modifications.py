@@ -16,6 +16,7 @@ from Vps_setup import VPS_show_info
 
 vps_already_registered = False
 
+
 def new_RecordTimer_saveTimer(self):
 	self._saveTimer_old_rn_vps()
 
@@ -57,6 +58,7 @@ def new_RecordTimer_saveTimer(self):
 	except:
 	 pass
 	# added by VPS-Plugin
+
 
 def new_RecordTimer_loadTimer(self):
 	# added by VPS-Plugin
@@ -111,6 +113,7 @@ def new_RecordTimer_loadTimer(self):
 		pass
 	# added by VPS-Plugin
 
+
 def new_TimerEntry_createConfig(self):
 	#self._createConfig_old_rn_vps()
 
@@ -145,6 +148,7 @@ def new_TimerEntry_createConfig(self):
 	except:
 		pass
 	# added by VPS-Plugin
+
 
 def new_TimerEntry_createSetup(self, widget):
 	if not hasattr(self, "timerentry_vpsplugin_enabled"):
@@ -191,6 +195,7 @@ def new_TimerEntry_createSetup(self, widget):
 	self[widget].list = self.list
 	self[widget].l.setList(self.list)
 
+
 def new_TimerEntry_newConfig(self):
 	self._newConfig_old_rn_vps()
 
@@ -202,6 +207,7 @@ def new_TimerEntry_newConfig(self):
 		self.createSetup("config")
 		self["config"].setCurrentIndex(self["config"].getCurrentIndex() + 1)
 	# added by VPS-Plugin
+
 
 def new_TimerEntry_keyGo(self):
 	# added by VPS-Plugin
@@ -225,6 +231,7 @@ def new_TimerEntry_keyGo(self):
 
 	self._keyGo_old_rn_vps()
 
+
 def new_TimerEntry_finishedChannelSelection(self, *args):
 	self._finishedChannelSelection_old_rn_vps(*args)
 
@@ -234,6 +241,7 @@ def new_TimerEntry_finishedChannelSelection(self, *args):
 			self.createSetup("config")
 	except:
 		pass
+
 
 def new_InfoBarInstantRecord_recordQuestionCallback(self, answer):
 	self._recordQuestionCallback_old_rn_vps(answer)
@@ -260,6 +268,7 @@ def new_InfoBarInstantRecord_recordQuestionCallback(self, answer):
 				self.session.open(VPS_check_on_instanttimer, rec_ref, self.recording[entry])
 	except:
 		pass
+
 
 def register_vps():
 	global vps_already_registered

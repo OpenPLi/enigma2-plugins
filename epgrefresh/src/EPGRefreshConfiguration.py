@@ -43,6 +43,8 @@ weekdays = [
 HD = False
 if getDesktop(0).size().width() >= 1280:
 	HD = True
+
+
 class EPGRefreshConfiguration(Screen, ConfigListScreen):
 	"""Configuration of EPGRefresh"""
 	if HD:
@@ -301,6 +303,7 @@ class EPGRefreshConfiguration(Screen, ConfigListScreen):
 				x[1].save()
 			self.close(self.session)
 
+
 class EPGRefreshProfile(ConfigListScreen, Screen):
 	skin = """
 			<screen position="center,center" size="400,230" title="EPGRefreshProfile" >
@@ -349,7 +352,6 @@ class EPGRefreshProfile(ConfigListScreen, Screen):
 			self.session.open(MessageBox, _("You may not use this settings!\nAt least one day a week should be included!"), MessageBox.TYPE_INFO, timeout=6)
 			return
 		self.close()
-
 
 	def cancel(self):
 		for x in self["config"].list:

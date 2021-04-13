@@ -49,6 +49,7 @@ except Exception as e:
 	doLog("[AutoTimer] Unable to initialize MPHelp:", e, "- Help not available!")
 	autotimerHelp = None
 
+
 def isOriginalWebifInstalled():
 	try:
 		from Tools.Directories import fileExists
@@ -58,6 +59,7 @@ def isOriginalWebifInstalled():
 	if fileExists(pluginpath) or fileExists(pluginpath + "o") or fileExists(pluginpath + "c"):
 		return True
 	return False
+
 
 def isOpenWebifInstalled():
 	try:
@@ -70,6 +72,8 @@ def isOpenWebifInstalled():
 	return False
 
 # Autostart
+
+
 def autostart(reason, **kwargs):
 	global autopoller
 
@@ -99,6 +103,7 @@ def autostart(reason, **kwargs):
 			pass
 		else:
 			autotimer.writeXml()
+
 
 def sessionstart(reason, **kwargs):
 	if reason == 0 and "session" in kwargs:
@@ -179,9 +184,12 @@ def sessionstart(reason, **kwargs):
 					addExternalChild(("autotimer", root, "AutoTimer-Plugin", API_VERSION))
 					doLog("[AutoTimer] Use OpenWebif")
 
+
 base_furtherOptions = None
 baseEPGSelection__init__ = None
 mepg_config_initialized = False
+
+
 def AutoTimerEPGSelectionInit():
 	global baseEPGSelection__init__, base_furtherOptions
 	try:
@@ -195,8 +203,10 @@ def AutoTimerEPGSelectionInit():
 	except:
 		pass
 
+
 def AutoTimerEPGSelection__init__(self, session, service, zapFunc=None, eventid=None, bouquetChangeCB=None, serviceChangeCB=None, parent=None):
 	baseEPGSelection__init__(self, session, service, zapFunc, eventid, bouquetChangeCB, serviceChangeCB, parent)
+
 
 def furtherOptions(self):
 	if self.type == EPG_TYPE_SINGLE:
@@ -228,6 +238,7 @@ def furtherOptions(self):
 			base_furtherOptions(self)
 	else:
 		base_furtherOptions(self)
+
 
 def menuCallbackAutoTimer(self, ret):
 	ret = ret and ret[1]
@@ -277,7 +288,10 @@ def menuCallbackAutoTimer(self, ret):
 			except:
 				pass
 
+
 baseChannelContextMenu__init__ = None
+
+
 def AutoTimerChannelContextMenuInit():
 	try:
 		global baseChannelContextMenu__init__
@@ -287,6 +301,7 @@ def AutoTimerChannelContextMenuInit():
 			ChannelContextMenu.addtoAutoTimer = addtoAutoTimer
 	except:
 		pass
+
 
 def AutoTimerChannelContextMenu__init__(self, session, csel):
 	baseChannelContextMenu__init__(self, session, csel)
@@ -303,6 +318,7 @@ def AutoTimerChannelContextMenu__init__(self, session, csel):
 				callFunction = self.addtoAutoTimer
 				self["menu"].list.insert(3, ChoiceEntryComponent(text=(_("create AutoTimer for current event"), boundFunction(callFunction, 1)), key="bullet"))
 
+
 def addtoAutoTimer(self, add):
 	sref = self.csel.servicelist.getCurrent()
 	if not sref:
@@ -318,6 +334,8 @@ def addtoAutoTimer(self, add):
 			pass
 
 # Mainfunction
+
+
 def main(session, **kwargs):
 	global autopoller
 
@@ -338,6 +356,7 @@ def main(session, **kwargs):
 		autotimer
 	)
 
+
 def handleAutoPoller():
 	global autopoller
 
@@ -351,7 +370,9 @@ def handleAutoPoller():
 	else:
 		autopoller = None
 
+
 editTimer = eTimer()
+
 
 def editCallback(session):
 	# Don't parse EPG if editing was canceled
@@ -363,11 +384,14 @@ def editCallback(session):
 	else:
 		handleAutoPoller()
 
+
 def parseEPGstart():
 	if autotimer:
 		autotimer.parseEPGAsync().addCallback(parseEPGCallback)#.addErrback(parseEPGErrback)
 
+
 editTimer.callback.append(parseEPGstart)
+
 
 def parseEPGCallback(ret):
 	searchlog_txt = ""
@@ -407,11 +431,15 @@ def parseEPGCallback(ret):
 	handleAutoPoller()
 
 # Movielist
+
+
 def movielist(session, service, **kwargs):
 	from AutoTimerEditor import addAutotimerFromService
 	addAutotimerFromService(session, service)
 
 # EPG Further Options
+
+
 def epgfurther(session, selectedevent, **kwargs):
 	from AutoTimerEditor import addAutotimerFromEvent
 	try:
@@ -420,6 +448,8 @@ def epgfurther(session, selectedevent, **kwargs):
 		pass
 
 # Event Info and EventView Context Menu
+
+
 def eventinfo(session, service=None, event=None, eventName="", **kwargs):
 	if eventName != "":
 		if service is not None and event is not None:
@@ -438,10 +468,14 @@ def eventinfo(session, service=None, event=None, eventName="", **kwargs):
 			session.open(AutoTimerEPGSelection, ref)
 
 # Extensions menu
+
+
 def extensionsmenu(session, **kwargs):
 	main(session, **kwargs)
 
 # Extensions menu - only scan Autotimer
+
+
 def extensionsmenu_scan(session, **kwargs):
 	try:
 		autotimer.readXml()
@@ -451,6 +485,8 @@ def extensionsmenu_scan(session, **kwargs):
 	editCallback(session)
 
 # Movielist menu add to filterList
+
+
 def add_to_filterList(session, service, services=None, *args, **kwargs):
 	try:
 		if services:
@@ -463,6 +499,7 @@ def add_to_filterList(session, service, services=None, *args, **kwargs):
 		print("[AutoTimer] Unable to add Recordtitle to FilterList:", e)
 		doLog("[AutoTimer] Unable to add Recordtitle to FilterList:", e)
 
+
 def housekeepingExtensionsmenu(el):
 	if el.value:
 		plugins.addPlugin(extDescriptor)
@@ -474,11 +511,13 @@ def housekeepingExtensionsmenu(el):
 		except ValueError as ve:
 			doLog("[AutoTimer] housekeepingExtensionsmenu got confused, tried to remove non-existant plugin entry... ignoring.")
 
+
 def timezoneChanged(self):
 	if config.plugins.autotimer.autopoll.value and autopoller is not None:
 		autopoller.pause()
 		autopoller.start(initial=False)
 		doLog("[AutoTimer] Timezone change detected.")
+
 
 try:
 	config.timezone.val.addNotifier(timezoneChanged, initial_call=False, immediate_feedback=False)
@@ -488,6 +527,7 @@ except AttributeError:
 config.plugins.autotimer.show_in_extensionsmenu.addNotifier(housekeepingExtensionsmenu, initial_call=False, immediate_feedback=True)
 extDescriptor = PluginDescriptor(name=_("AutoTimer"), description=_("Edit Timers and scan for new Events"), where=PluginDescriptor.WHERE_EXTENSIONSMENU, fnc=extensionsmenu, needsRestart=False)
 extDescriptor_scan = PluginDescriptor(name=_("AutoTimer scan"), description=_("scan for new Events"), where=PluginDescriptor.WHERE_EXTENSIONSMENU, fnc=extensionsmenu_scan, needsRestart=False)
+
 
 def Plugins(**kwargs):
 	l = [

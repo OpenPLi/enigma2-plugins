@@ -15,6 +15,7 @@ import enigma
 import os
 import cPickle
 
+
 def write_cache(cache_file, cache_data):
 	path = os.path.dirname(cache_file)
 	if not os.path.isdir(path):
@@ -25,9 +26,11 @@ def write_cache(cache_file, cache_data):
 	with open(cache_file, 'w') as fd:
 		cPickle.dump(cache_data, fd, -1)
 
+
 def load_cache(cache_file):
 	with open(cache_file) as fd:
 		return cPickle.load(fd)
+
 
 class UserDialog(Screen, ConfigListScreen):
 	skin = """

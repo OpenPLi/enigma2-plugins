@@ -3,6 +3,7 @@ from Components.config import config
 from __init__ import _
 from enigma import ePoint, eTimer, getDesktop
 
+
 class MovableScreen():
 	def __init__(self, configRoot, disableKeymaps, screenSize_x, screenSize_y, moveMinMargin=30, moveStepSize=10):
 		self.configRoot = configRoot
@@ -39,7 +40,6 @@ class MovableScreen():
 		desktop = getDesktop(0)
 		self.desktopWidth = desktop.size().width()
 		self.desktopHeight = desktop.size().height()
-
 
 	def startMoving(self):
 		self.setEnableMoveKeymap(True)

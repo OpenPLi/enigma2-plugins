@@ -24,6 +24,7 @@ import os
 import stat
 import time
 
+
 def write_cache(cache_file, cache_data):
 	path = os.path.dirname(cache_file)
 	if not os.path.isdir(path):
@@ -34,9 +35,11 @@ def write_cache(cache_file, cache_data):
 	with open(cache_file, 'w') as fd:
 		cPickle.dump(cache_data, fd, -1)
 
+
 def load_cache(cache_file):
 	with open(cache_file) as fd:
 		return cPickle.load(fd)
+
 
 def valid_cache(cache_file, cache_ttl):
 	#See if the cache file exists and is still living
@@ -50,10 +53,12 @@ def valid_cache(cache_file, cache_ttl):
 	else:
 		return 1
 
+
 class NetworkDescriptor:
 	def __init__(self, name="NetworkServer", description=""):
 		self.name = name
 		self.description = description
+
 
 class NetworkBrowser(Screen):
 	skin = """
@@ -461,6 +466,7 @@ class NetworkBrowser(Screen):
 	def MountEditClosed(self, returnValue=None):
 		if returnValue is None:
 			self.updateNetworkList()
+
 
 class ScanIP(Screen, ConfigListScreen):
 	skin = """

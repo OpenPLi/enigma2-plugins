@@ -8,15 +8,19 @@ from PrimeTimeSettings import PrimeTimeSettings
 
 baseTimerEditList__init__ = None
 
+
 def eventinfo(session, servicelist, **kwargs):
 	session.open(PrimeTimeManager, servicelist)
+
 
 def main(session, **kwargs):
 	servicelist = kwargs.get('servicelist', None)
 	session.open(PrimeTimeManager, servicelist)
 
+
 def settings(session, **kwargs):
 	session.open(PrimeTimeSettings)
+
 
 def autostart(reason, **kwargs):
 	global baseTimerEditList__init__
@@ -30,6 +34,7 @@ def autostart(reason, **kwargs):
 			TimerEditList.updateList = updateList
 		except:
 			pass
+
 
 def Plugins(**kwargs):
 	list = [PluginDescriptor(name=_("Prime Time Manager setup"), description=_("Settings of the plugin"), where=PluginDescriptor.WHERE_PLUGINMENU, icon="plugin.png", fnc=settings)]

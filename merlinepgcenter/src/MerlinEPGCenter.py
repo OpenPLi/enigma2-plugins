@@ -445,6 +445,7 @@ class MerlinEPGCenter(TimerEditList, MerlinEPGActions):
 		for (attrib, value) in self["videoPicture"].skinAttributes:
 			if attrib == "position":
 				self.videoPicturePosX, self.videoPicturePosY = [int(x) for x in value.split(",")]
+
 	def setSkinFile(self, configElement=None):
 		config.plugins.merlinEpgCenter.skin.value = configElement.getValue()
 		

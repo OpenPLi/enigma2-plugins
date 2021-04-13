@@ -22,6 +22,8 @@ from os import stat as os_stat, path as os_path, walk as os_walk
 from time import strftime, localtime
 
 ##################################
+
+
 class FilebrowserConfigScreen(ConfigListScreen, Screen):
     skin = """
         <screen position="100,100" size="550,400" title="" >
@@ -31,6 +33,7 @@ class FilebrowserConfigScreen(ConfigListScreen, Screen):
             <ePixmap name="pred" position="10,360" size="100,40" zPosition="0" pixmap="skin_default/buttons/red.png" transparent="1" alphatest="on"/>
             <ePixmap name="pgreen" position="120,360" size="100,40" zPosition="0" pixmap="skin_default/buttons/green.png" transparent="1" alphatest="on"/>
         </screen>"""
+
     def __init__(self, session):
         self.session = session
         Screen.__init__(self, session)
@@ -78,6 +81,8 @@ class FilebrowserConfigScreen(ConfigListScreen, Screen):
         plugins.readPluginList(resolveFilename(SCOPE_PLUGINS))
 
 ##################################
+
+
 class FilebrowserScreen(Screen):
     skin = """
         <screen position="110,83" size="530,430" title="">
@@ -95,6 +100,7 @@ class FilebrowserScreen(Screen):
             <ePixmap name="pblue" position="400,390" size="120,30" zPosition="0" pixmap="skin_default/buttons/blue.png" transparent="1" alphatest="on"/>
         </screen>
         """
+
     def __init__(self, session, path_left=None):
         if path_left is None:
             if os_path_isdir(config.plugins.filebrowser.path_left.value) and config.plugins.filebrowser.savedirs.value:
@@ -397,6 +403,8 @@ class FilebrowserScreen(Screen):
             self.session.open(MessageBox, _("no Viewer installed for this mimetype!"), type=MessageBox.TYPE_ERROR, timeout=5, close_on_any_key=True)
 
 ##################################
+
+
 class FilebrowserScreenInfo(Screen):
         skin = """
         <screen name="FilebrowserScreenInfo" position="fill" title="FileInfo" flags="wfNoBorder" backgroundColor="background">

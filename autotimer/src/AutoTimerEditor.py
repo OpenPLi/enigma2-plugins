@@ -68,6 +68,7 @@ try:
 except:
 	hasSeriesPlugin = False
 
+
 def importerCallback(ret):
 	if ret:
 		ret, session = ret
@@ -78,6 +79,7 @@ def importerCallback(ret):
 			ret
 		)
 
+
 def editorCallback(ret):
 	if ret:
 		from plugin import autotimer
@@ -86,6 +88,7 @@ def editorCallback(ret):
 		# Save modified xml
 		if config.plugins.autotimer.always_write_config.value:
 			autotimer.writeXml()
+
 
 class SimpleBouquetSelection(SimpleChannelSelection):
 	def __init__(self, session, title):
@@ -100,6 +103,7 @@ class SimpleBouquetSelection(SimpleChannelSelection):
 			# We return the currently active path here
 			# Asking the user if this is what he wants might be better though
 			self.close(self.servicePath[-1])
+
 
 class AutoTimerChannelSelection(SimpleChannelSelection):
 	def __init__(self, session, autotimer):
@@ -123,6 +127,7 @@ class AutoTimerChannelSelection(SimpleChannelSelection):
 				ref
 			)
 
+
 class AutoTimerEPGSelection(EPGSelection):
 	def __init__(self, *args):
 		EPGSelection.__init__(self, *args)
@@ -143,6 +148,7 @@ class AutoTimerEPGSelection(EPGSelection):
 
 class AutoTimerEditorBase:
 	""" Base Class for all Editors """
+
 	def __init__(self, timer, editingDefaults=False):
 		# Keep Timer
 		self.timer = timer
@@ -337,7 +343,6 @@ class AutoTimerEditorBase:
 			default=str(timer.getAvoidDuplicateDescription())
 		))
 
-
 		# Search for Duplicate Desciption in...
 		self.searchForDuplicateDescription = NoSave(ConfigSelection([
 				("0", _("Title")),
@@ -428,6 +433,7 @@ class AutoTimerEditorBase:
 			self.openMovieLocationBox()
 		elif len(menu) == 2:
 			text = _("Select action")
+
 			def selectAction(choice):
 				if choice:
 					if choice[1] == "timername":
@@ -450,9 +456,12 @@ class AutoTimerEditorBase:
 				self.timerentry_tags
 			)
 
+
 HD = False
 if getDesktop(0).size().width() >= 1280:
 	HD = True
+
+
 class AutoTimerEditor(Screen, ConfigListScreen, AutoTimerEditorBase):
 	"""Edit AutoTimer"""
 	if HD:
@@ -489,6 +498,7 @@ class AutoTimerEditor(Screen, ConfigListScreen, AutoTimerEditorBase):
 				<convert type="ConditionalShowHide"/>
 			</widget>
 		</screen>"""
+
 	def __init__(self, session, timer, editingDefaults=False, **kwargs):
 		Screen.__init__(self, session)
 
@@ -1045,6 +1055,7 @@ class AutoTimerEditor(Screen, ConfigListScreen, AutoTimerEditorBase):
 		# Close
 		self.close(self.timer)
 
+
 class AutoTimerFilterEditor(Screen, ConfigListScreen):
 	"""Edit AutoTimer Filter"""
 
@@ -1115,7 +1126,6 @@ class AutoTimerFilterEditor(Screen, ConfigListScreen):
 
 	def setCustomTitle(self):
 		self.setTitle(_("Edit AutoTimer filters"))
-
 
 	def changed(self):
 		for x in self.onChangedEntry:
@@ -1267,6 +1277,7 @@ class AutoTimerFilterEditor(Screen, ConfigListScreen):
 			self.excludes,
 			self.includes
 		))
+
 
 class AutoTimerServiceEditor(Screen, ConfigListScreen):
 	"""Edit allowed Services of a AutoTimer"""
@@ -1438,6 +1449,7 @@ class AutoTimerServiceEditor(Screen, ConfigListScreen):
 			self.services
 		))
 
+
 def addAutotimerFromSearchString(session, match, importer_Callback=importerCallback):
 	from AutoTimerComponent import preferredAutoTimerComponent
 	from AutoTimerImporter import AutoTimerImporter
@@ -1465,6 +1477,7 @@ def addAutotimerFromSearchString(session, match, importer_Callback=importerCallb
 		None,		# Proposed dirname, can we get anything useful here?
 		[]			# Proposed tags
 	)
+
 
 def addAutotimerFromEvent(session, evt=None, service=None, importer_Callback=importerCallback):
 	from AutoTimerComponent import preferredAutoTimerComponent
@@ -1518,6 +1531,7 @@ def addAutotimerFromEvent(session, evt=None, service=None, importer_Callback=imp
 		[],		# Proposed tags
 		3600
 	)
+
 
 def addAutotimerFromService(session, service=None, importer_Callback=importerCallback):
 	from AutoTimerComponent import preferredAutoTimerComponent

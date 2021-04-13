@@ -55,6 +55,8 @@ try:
 		HD = True
 except:
 	pass
+
+
 class RemoteTimerEntry(Screen, ConfigListScreen):
 	if HD:
 		skin = """
@@ -269,6 +271,7 @@ class RemoteTimerEntry(Screen, ConfigListScreen):
 			self.timerentry_endtime.decrement()
 			self["config"].invalidate(self.entryEndTime)
 
+
 # ##########################################
 # TimerEntry
 # ##########################################
@@ -280,6 +283,7 @@ baseTimerkeyRight = None
 baseTimerkeySelect = None
 baseTimercreateConfig = None
 baseTimer__init__ = None
+
 
 def RemoteTimerInit():
 	global baseTimerEntrySetup, baseTimerEntryGo, baseTimerEntrynewConfig, baseTimerkeyLeft, baseTimerkeyRight, baseTimerkeySelect, baseTimercreateConfig, baseTimer__init__
@@ -308,11 +312,13 @@ def RemoteTimerInit():
 	TimerEntry.newConfig = RemoteTimernewConfig
 	TimerEntry.__init__ = RemoteTimer__init__
 
+
 def RemoteTimer__init__(self, session, timer):
 	baseTimer__init__(self, session, timer)
 	RemoteTimerConfig(self)
 	if int(self.timerentry_remote.value) != 0:
 		RemoteTimernewConfig(self)
+
 
 def RemoteTimerConfig(self):
 	def addPBoxtoList(pb, boxes):
@@ -349,6 +355,7 @@ def RemoteTimerConfig(self):
 #	RemoteTimercreateConfig(self)
 #	RemoteTimerCreateSetup(self,"config")
 
+
 def getLocations(self, url, check):
 	try:
 		f = urllib.urlopen(url)
@@ -356,6 +363,7 @@ def getLocations(self, url, check):
 		getLocationsCallback(self, sxml, check)
 	except:
 		pass
+
 
 def getLocationsCallback(self, xmlstring, check=False):
 	try:
@@ -375,12 +383,14 @@ def getLocationsCallback(self, xmlstring, check=False):
 		if add:
 			self.Locations.append(location.text.decode("utf-8").encode("utf-8", 'ignore'))
 
+
 def createRemoteTimerSetup(self, widget):
 	baseTimerEntrySetup(self, widget)
 	self.display = _("Remote Timer")
 	self.timerRemoteEntry = getConfigListEntry(self.display, self.timerentry_remote)
 	self.list.insert(0, self.timerRemoteEntry)
 	self[widget].list = self.list
+
 
 def RemoteTimerkeyLeft(self):
 	if int(self.timerentry_remote.value) != 0:
@@ -389,6 +399,7 @@ def RemoteTimerkeyLeft(self):
 	else:
 		baseTimerkeyLeft(self)
 
+
 def RemoteTimerkeyRight(self):
 	if int(self.timerentry_remote.value) != 0:
 		ConfigListScreen.keyRight(self)
@@ -396,11 +407,13 @@ def RemoteTimerkeyRight(self):
 	else:
 		baseTimerkeyRight(self)
 
+
 def RemoteTimerkeySelect(self):
 	if int(self.timerentry_remote.value) != 0:
 		RemoteTimerGo(self)
 	else:
 		baseTimerkeySelect(self)
+
 
 def RemoteTimernewConfig(self):
 	if self["config"].getCurrent() == self.timerRemoteEntry:
@@ -437,6 +450,7 @@ def RemoteTimernewConfig(self):
 
 			self.createSetup("config")
 			self["config"].setCurrentIndex(self["config"].getCurrentIndex() + 1)
+
 
 def RemoteTimercreateConfig(self):
 	if int(self.entryguilist[int(self.timerentry_remote.value)][2].enigma.value) == 0:
@@ -505,6 +519,7 @@ def RemoteTimercreateConfig(self):
 	self.timerentry_service_ref = self.timer.service_ref
 	self.timerentry_service = ConfigSelection([servicename])
 	self.timerentry_vps_in_timerevent = ConfigSelection(default="no", choices=[("no", _("No")), ("yes_safe", _("Yes (safe mode)")), ("yes", _("Yes"))])
+
 
 def RemoteTimerCreateSetup(self, widget):
 	self.list = []
@@ -607,6 +622,7 @@ def RemoteTimerGo(self):
 				sCommand = "%s/web/timeradd?sRef=%s&begin=%d&end=%d&name=%s&description=%s&dirname=%s&eit=%d&justplay=%d&afterevent=%s&vps_pbox=%s" % (http, refstr, begin, end, name, descr, dirname, eit, justplay, afterevent, vpsValue(self))
 				sendPartnerBoxWebCommand(sCommand, None, 3, "root", str(self.entryguilist[int(self.timerentry_remote.value)][2].password.value)).addCallback(boundFunction(AddTimerE2Callback, self, self.session)).addErrback(boundFunction(AddTimerError, self, self.session))
 
+
 def AddTimerE2Callback(self, session, answer):
 	text = ""
 	try:
@@ -626,6 +642,7 @@ def AddTimerE2Callback(self, session, answer):
 				SetPartnerboxTimerlist(self.entryguilist[int(self.timerentry_remote.value)][2])
 		self.keyCancel()
 
+
 def AddTimerE1Callback(self, session, answer):
 	ok = answer == "Timer event was created successfully."
 	if answer == "Timer event was created successfully.":
@@ -638,8 +655,10 @@ def AddTimerE1Callback(self, session, answer):
 				SetPartnerboxTimerlist(self.entryguilist[int(self.timerentry_remote.value)][2])
 		self.keyCancel()
 
+
 def AddTimerError(self, session, error):
 	session.open(MessageBox, str(_(error.getErrorMessage())), MessageBox.TYPE_INFO)
+
 
 def isVPSplugin():
 	try:
@@ -648,6 +667,7 @@ def isVPSplugin():
 			return True
 	except:
 		return False
+
 
 def vpsValue(self):
 	if isVPSplugin():

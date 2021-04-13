@@ -104,6 +104,7 @@ SERVICENAME = 7
 
 #############################################################################################
 
+
 class PrimeTimeManager(Screen, HelpableScreen):
 	skin = """<screen name="PrimeTimeManager" title="Prime Time Manager" position="center,center" size="650,545">
 		<ePixmap pixmap="skin_default/buttons/red.png" position="45,0" size="140,40" transparent="1" alphatest="on" />
@@ -2224,6 +2225,7 @@ class PrimeTimeManager(Screen, HelpableScreen):
 
 #############################################################################################
 
+
 class PreviewList(MenuList):
 	def __init__(self, list, listType):
 		MenuList.__init__(self, list)
@@ -2343,6 +2345,8 @@ class PreviewList(MenuList):
 #############################################################################################
 
 # used to store the prime time and favorite lists with additional information
+
+
 class ListObject:
 	def __init__(self, name, bouquetName, services, size):
 		self.name = name		# the name of the gui list
@@ -2355,6 +2359,8 @@ class ListObject:
 #############################################################################################
 
 # used to store a transponders list of service refs and favorite services using it
+
+
 class ConflictObject:
 	def __init__(self, transponderServices=[], knownServices=[]):
 		self.transponderServices = transponderServices	# a list holding servicesrefs of a transponder
@@ -2365,6 +2371,8 @@ class ConflictObject:
 #############################################################################################
 
 # used to store similar event information
+
+
 class SimilarObject:
 	def __init__(self, sRef):
 		self.sRef = sRef		# the service ref we're storing similar events for
@@ -2375,6 +2383,8 @@ class SimilarObject:
 
 # used to show the event description and to check if the whole description can be displayed or the info icons should be shown
 # TODO write own class because this one is ugly!
+
+
 class NoScrollBarLabel(ScrollLabel):
 	def __init__(self, text=""):
 		GUIComponent.__init__(self)
@@ -2436,6 +2446,8 @@ class NoScrollBarLabel(ScrollLabel):
 #############################################################################################
 
 # show the "unhandled key" pixmap
+
+
 class KeyNotHandled:
 	def __init__(self, session, init=False):
 		self.session = session
@@ -2452,6 +2464,8 @@ class KeyNotHandled:
 #############################################################################################
 
 # this is shown when the info key was pressed
+
+
 class EventViewSuperSimple(Screen, EventViewBase):
 	def __init__(self, session, Event, Ref, callback=None, similarEPGCB=None, showTimerEntry=None, getIsTimer=None):
 		Screen.__init__(self, session)
@@ -2583,10 +2597,13 @@ class EventViewSuperSimple(Screen, EventViewBase):
 				except:
 					pass
 
+
 from enigma import getDesktop
 HD = False
 if getDesktop(0).size().width() >= 1280:
 	HD = True
+
+
 class PrimeTimeSelection(EPGSelection):
 	if HD:
 		skin = """<screen name="PrimeTimeSelection" position="90,100" size="1100, 576" title="Prime Time EPG Selection Multi">
@@ -2699,6 +2716,7 @@ class PrimeTimeSelection(EPGSelection):
 	def timerAdd(self):
 		self.eventSelected()
 
+
 class PrimeTimeSingleSelection(EPGSelection):
 	def __init__(self, session, ref, event_id=None):
 		self.event_id = event_id
@@ -2727,6 +2745,7 @@ class PrimeTimeSingleSelection(EPGSelection):
 
 	def eventSelected(self):
 		pass
+
 
 class PTMtimerSanityConflict(TimerSanityConflict):
 	def __init__(self, session, timer):
@@ -2761,9 +2780,11 @@ def funcRefStr(service=None):
 		return ':'.join(service.split(':')[:11])
 	return ""
 
+
 def getAlternativeChannels(service):
 	alternativeServices = eServiceCenter.getInstance().list(eServiceReference(service))
 	return alternativeServices and alternativeServices.getContent("S", True)
+
 
 def GetWithAlternative(service):
 	if service.startswith('1:134:'):

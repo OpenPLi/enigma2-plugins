@@ -76,6 +76,7 @@ for x in nimmanager.nim_slots:
 	nims.append((str(x.slot), x.getSlotName()))
 config.plugins.RecInfobar.tuner_recording_priority = ConfigSelection(default="-2", choices=nims)
 
+
 class RecIndicator(Screen):
 	skin = """
 		<screen name="RecIndicator" title="Records Indicator" flags="wfNoBorder" position="60,60" size="36,36" zPosition="-1" backgroundColor="transparent" >
@@ -95,11 +96,13 @@ class RecIndicator(Screen):
 		if not self.instance is None:
 			self.instance.move(ePoint(config.plugins.RecInfobar.indicator_x.value, config.plugins.RecInfobar.indicator_y.value))
 
+
 FULLHD = 0
 if getDesktop(0).size().width() >= 1920:
 	FULLHD = 2
 elif getDesktop(0).size().width() >= 1280:
 	FULLHD = 1
+
 
 class RecInfoBar(Screen):
 	if FULLHD == 1:
@@ -682,6 +685,7 @@ class RecInfoBar(Screen):
 			except:
 				pass
 
+
 def RecInfobarRecordService(ref, simulate=False):
 	service = None
 	change_frontend = False
@@ -697,6 +701,7 @@ def RecInfobarRecordService(ref, simulate=False):
 		if change_frontend:
 			setDefaultFrontendPriority(_session, timeout=service)
 	return service
+
 
 class setDefaultFrontendPriority:
 	def __init__(self, session, timeout=None):
@@ -716,6 +721,7 @@ class setDefaultFrontendPriority:
 			config.usage.frontend_priority.save()
 			PrevFrontendPriority = None
 
+
 def newInfoBarShowHide__init__(self):
 	try:
 		cgfNZE = config.plugins.NumberZapExt
@@ -726,6 +732,7 @@ def newInfoBarShowHide__init__(self):
 	baseInfoBarShowHide__init__(self)
 	self.onShow.append(boundFunction(self.recDialog.doShow, self))
 	self.onHide.append(self.recDialog.doHide)
+
 
 def StartMainSession(reason, session, **kwargs):
 	if reason == 0 and session and _session is None and config.usage.recinfobar.value:
@@ -741,9 +748,11 @@ def StartMainSession(reason, session, **kwargs):
 			baseInfoBarShowHide__init__ = InfoBarShowHide.__init__
 			InfoBarShowHide.__init__ = newInfoBarShowHide__init__
 
+
 def OpenSetup(session, **kwargs):
 	import RecInfobarSetup
 	session.open(RecInfobarSetup.RecInfobarSetupScreen)
+
 
 def StartSetup(menuid, **kwargs):
 	if menuid == "system":

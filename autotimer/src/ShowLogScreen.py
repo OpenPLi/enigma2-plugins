@@ -9,6 +9,7 @@ from enigma import ePoint
 from Screens.Screen import Screen
 from Tools.Directories import fileExists
 
+
 class ShowLogScreen(Screen):
 	def __init__(self, session, logFile, titleText, firstLineText, lastLineText):
 		Screen.__init__(self, session)
