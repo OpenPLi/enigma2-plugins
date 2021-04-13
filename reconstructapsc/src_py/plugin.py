@@ -6,4 +6,4 @@ def main(session, service, **kwargs):
 	session.open(ui.ReconstructApSc, service, **kwargs)
 
 def Plugins(**kwargs):
-	return PluginDescriptor(name="ReconstructApSc", description=_("Reconstruct AP/SC ..."), where = PluginDescriptor.WHERE_MOVIELIST, fnc=main)
+	return PluginDescriptor(name="ReconstructApSc", description=_("Reconstruct AP/SC ..."), where=PluginDescriptor.WHERE_MOVIELIST, fnc=main)

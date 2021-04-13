@@ -143,7 +143,7 @@ class PrimeTimeManager(Screen, HelpableScreen):
 		</widget>
 		</screen>"""
 
-	def __init__(self, session, servicelist = None):
+	def __init__(self, session, servicelist=None):
 		self.servicelist = servicelist
 		Screen.__init__(self, session)
 		self.session = session
@@ -521,7 +521,7 @@ class PrimeTimeManager(Screen, HelpableScreen):
 		else:
 			# add new transponder object to the conflict list
 			serviceList = self.getTransponderServices(sRef)
-			conflictObject = ConflictObject(transponderServices = serviceList, knownServices = [sRef])
+			conflictObject = ConflictObject(transponderServices=serviceList, knownServices=[sRef])
 			self.conflictList[self.dayOffset].append(conflictObject)
 			#if self.numTuners > 1 and self.getAvailableTunerCount(sRef) == 1:
 			if self.getAvailableTunerCount(sRef) == 1:
@@ -629,7 +629,7 @@ class PrimeTimeManager(Screen, HelpableScreen):
 						if AUTOTIMER and config.plugins.PrimeTimeManager.UseAutotimer.value:
 							try:
 								event = self.epgcache.lookupEventId(ServiceReference(favorite[SERVICEREF]).ref, favorite[EVENTID])
-								addAutotimerFromEvent(self.session, evt = event, service = sRef)
+								addAutotimerFromEvent(self.session, evt=event, service=sRef)
 								print "[PrimeTimeManager] Add auto timer %s" % ServiceReference(sRef).getServiceName()
 							except:
 								pass
@@ -1635,7 +1635,7 @@ class PrimeTimeManager(Screen, HelpableScreen):
 						total = _("\nTotal number of conflicts: %s") % (len(simulTimerList) - 1)
 					except:
 						pass
-				AddPopup(_("Sorri!\nConflict timers in timers.xml detected!\nPlease recheck it!") + total, type = MessageBox.TYPE_ERROR, timeout = 0, id = "TimerLoadFailed")
+				AddPopup(_("Sorri!\nConflict timers in timers.xml detected!\nPlease recheck it!") + total, type=MessageBox.TYPE_ERROR, timeout=0, id="TimerLoadFailed")
 		self.close()
 
 	# previous bouquet selected
@@ -2236,21 +2236,21 @@ class PreviewList(MenuList):
 		else:
 			self.l.setItemHeight(115)
 
-		self.favoritePixmap = LoadPixmap(cached = True, path=resolveFilename(SCOPE_CURRENT_PLUGIN, 'Extensions/PrimeTimeManager/images/favorite.png'), desktop = getDesktop(0))
-		self.clockPixmap = LoadPixmap(cached = True, path=resolveFilename(SCOPE_CURRENT_PLUGIN, 'Extensions/PrimeTimeManager/images/epgclock.png'), desktop = getDesktop(0))
-		self.clockOverlap = LoadPixmap(cached = True, path=resolveFilename(SCOPE_CURRENT_PLUGIN, 'Extensions/PrimeTimeManager/images/clockOverlap.png'), desktop = getDesktop(0))
-		self.clockNotrecord = LoadPixmap(cached = True, path=resolveFilename(SCOPE_CURRENT_PLUGIN, 'Extensions/PrimeTimeManager/images/clockNotrecord.png'), desktop = getDesktop(0))
+		self.favoritePixmap = LoadPixmap(cached=True, path=resolveFilename(SCOPE_CURRENT_PLUGIN, 'Extensions/PrimeTimeManager/images/favorite.png'), desktop=getDesktop(0))
+		self.clockPixmap = LoadPixmap(cached=True, path=resolveFilename(SCOPE_CURRENT_PLUGIN, 'Extensions/PrimeTimeManager/images/epgclock.png'), desktop=getDesktop(0))
+		self.clockOverlap = LoadPixmap(cached=True, path=resolveFilename(SCOPE_CURRENT_PLUGIN, 'Extensions/PrimeTimeManager/images/clockOverlap.png'), desktop=getDesktop(0))
+		self.clockNotrecord = LoadPixmap(cached=True, path=resolveFilename(SCOPE_CURRENT_PLUGIN, 'Extensions/PrimeTimeManager/images/clockNotrecord.png'), desktop=getDesktop(0))
 		
 		self.digitList = []
 		i = 0
 		while i <= 10:
 			name = 'Extensions/PrimeTimeManager/images/digit_' + str(i) + '.png'
-			digitPixmap = LoadPixmap(cached = True, path=resolveFilename(SCOPE_CURRENT_PLUGIN, name), desktop = getDesktop(0))
+			digitPixmap = LoadPixmap(cached=True, path=resolveFilename(SCOPE_CURRENT_PLUGIN, name), desktop=getDesktop(0))
 			self.digitList.append(digitPixmap)
 			i += 1
 
 	# build the list entry
-	def buildEventEntry(self, data = None):
+	def buildEventEntry(self, data=None):
 		(eventId, serviceRef, beginTime, durationTime, title, shortDescription, extendedDescription, shortServiceName) = data
 
 		width = self.l.getItemSize().width()
@@ -2356,7 +2356,7 @@ class ListObject:
 
 # used to store a transponders list of service refs and favorite services using it
 class ConflictObject:
-	def __init__(self, transponderServices = [], knownServices = []):
+	def __init__(self, transponderServices=[], knownServices=[]):
 		self.transponderServices = transponderServices	# a list holding servicesrefs of a transponder
 		self.knownServices = knownServices		# a list holding known services
 		self.knownServicesSize = len(knownServices)	# the list size of known services list

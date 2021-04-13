@@ -39,7 +39,7 @@ class ChangePasswdScreen(Screen):
 		<widget source="key_blue" render="Label" position="440,210" zPosition="1" size="140,40" font="Regular;17" halign="center" valign="center" backgroundColor="#1f771f" transparent="1" />
 	</screen>""" % title
 
-	def __init__(self, session, args = 0):
+	def __init__(self, session, args=0):
 		Screen.__init__(self, session)
 		self.skin = ChangePasswdScreen.skin
 		self.user = "root"
@@ -65,7 +65,7 @@ class ChangePasswdScreen(Screen):
 	def buildList(self, password):
 		self.password = password
 		self.list = []
-		self.list.append(getConfigListEntry(_('Enter new Password'), ConfigText(default = self.password, fixed_size = False)))
+		self.list.append(getConfigListEntry(_('Enter new Password'), ConfigText(default=self.password, fixed_size=False)))
 		self["passwd"].setList(self.list)
 
 	def GeneratePassword(self): 
@@ -106,9 +106,9 @@ class ChangePasswdScreen(Screen):
 		self.close()
 
 	def bluePressed(self):
-		self.session.openWithCallback(self.VirtualKeyBoardTextEntry, VirtualKeyBoard, title = _("Enter your password here:"), text = self.password)
+		self.session.openWithCallback(self.VirtualKeyBoardTextEntry, VirtualKeyBoard, title=_("Enter your password here:"), text=self.password)
 
-	def VirtualKeyBoardTextEntry(self, callback = None):
+	def VirtualKeyBoardTextEntry(self, callback=None):
 		if callback is not None and len(callback):
 			self.buildList(callback)
 
@@ -121,4 +121,4 @@ def main(session, **kwargs):
 	session.open(ChangePasswdScreen)
 
 def Plugins(**kwargs):
-	return PluginDescriptor(name=title, description=_("Change or reset the root password of your box"), where = [PluginDescriptor.WHERE_MENU], fnc = startChange)
+	return PluginDescriptor(name=title, description=_("Change or reset the root password of your box"), where=[PluginDescriptor.WHERE_MENU], fnc=startChange)

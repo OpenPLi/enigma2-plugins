@@ -44,7 +44,7 @@ initConfig()
 UserAgent = "Mozilla/5.0 (X11; U; Linux x86_64; de; rv:1.9.0.15) Gecko/2009102815 Ubuntu/9.04 (jaunty) Firefox/3."
 
 class WeatherIconItem:
-	def __init__(self, url = "", filename = "", index = -1, error = False):
+	def __init__(self, url="", filename="", index=-1, error=False):
 		self.url = url
 		self.filename = filename
 		self.index = index
@@ -61,7 +61,7 @@ def main(session,**kwargs):
 	session.open(WeatherPlugin)
 
 def Plugins(**kwargs):
-	list = [PluginDescriptor(name=_("Weather Plugin"), description=_("Show Weather Forecast"), where = [PluginDescriptor.WHERE_PLUGINMENU, PluginDescriptor.WHERE_EXTENSIONSMENU], fnc=main)]
+	list = [PluginDescriptor(name=_("Weather Plugin"), description=_("Show Weather Forecast"), where=[PluginDescriptor.WHERE_PLUGINMENU, PluginDescriptor.WHERE_EXTENSIONSMENU], fnc=main)]
 	return list
 
 
@@ -172,7 +172,7 @@ class WeatherPlugin(Screen):
 			self["weekday%s_temp" % i].text = ""
 			i += 1
 
-	def errorIconDownload(self, error = None, item = None):
+	def errorIconDownload(self, error=None, item=None):
 		item.error = True
 
 	def finishedIconDownload(self, result, item):
@@ -234,7 +234,7 @@ class WeatherPlugin(Screen):
 							parts = url.split("/")
 							filename = self.appdir + parts[-1]
 							if not os_path.exists(filename):
-								IconDownloadList.append(WeatherIconItem(url = url,filename = filename, index = index))
+								IconDownloadList.append(WeatherIconItem(url=url,filename=filename, index=index))
 							else:
 								self.showIcon(index,filename)
 		if len(IconDownloadList) != 0:
@@ -245,7 +245,7 @@ class WeatherPlugin(Screen):
 	def config(self):
 		self.session.openWithCallback(self.setupFinished, WeatherPluginEntriesListConfigScreen)
 
-	def setupFinished(self, index, entry = None):
+	def setupFinished(self, index, entry=None):
 		self.weatherPluginEntryCount = config.plugins.WeatherPlugin.entriescount.value
 		if self.weatherPluginEntryCount >= 1:
 			if entry is not None:
@@ -261,7 +261,7 @@ class WeatherPlugin(Screen):
 		self.clearFields()
 		self.startRun()
 
-	def error(self, error = None):
+	def error(self, error=None):
 		if error is not None:
 			self.clearFields()
 			self["statustext"].text = str(error.getErrorMessage())

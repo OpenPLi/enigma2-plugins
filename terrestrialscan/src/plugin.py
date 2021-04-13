@@ -17,10 +17,10 @@ from enigma import eComponentScan
 from TerrestrialScan import TerrestrialScan, setParams
 
 config.plugins.TerrestrialScan = ConfigSubsection()
-config.plugins.TerrestrialScan.networkid = ConfigInteger(default = 0, limits = (0, 65535))
-config.plugins.TerrestrialScan.clearallservices = ConfigYesNo(default = False)
-config.plugins.TerrestrialScan.onlyfree = ConfigYesNo(default = False)
-config.plugins.TerrestrialScan.uhf_vhf = ConfigSelection(default = 'uhf', choices = [
+config.plugins.TerrestrialScan.networkid = ConfigInteger(default=0, limits=(0, 65535))
+config.plugins.TerrestrialScan.clearallservices = ConfigYesNo(default=False)
+config.plugins.TerrestrialScan.onlyfree = ConfigYesNo(default=False)
+config.plugins.TerrestrialScan.uhf_vhf = ConfigSelection(default='uhf', choices=[
 			('uhf', _("UHF Europe")),
 			('uhf_vhf', _("UHF/VHF Europe"))])
 
@@ -32,7 +32,7 @@ class TerrestrialScanScreen(ConfigListScreen, Screen):
 		self.skinName = ["TerrestrialScanScreen", "Setup"]
 		self.onChangedEntry = []
 		self.session = session
-		ConfigListScreen.__init__(self, [], session = session, on_change = self.changedEntry)
+		ConfigListScreen.__init__(self, [], session=session, on_change=self.changedEntry)
 
 		self["actions"] = ActionMap(["SetupActions","ColorActions"],
 		{
@@ -61,7 +61,7 @@ class TerrestrialScanScreen(ConfigListScreen, Screen):
 		nim_list.append((-1, _("Automatic")))
 		for x in dvbt_capable_nims:
 			nim_list.append((nimmanager.nim_slots[x].slot, nimmanager.nim_slots[x].friendly_full_description))
-		self.scan_nims = ConfigSelection(choices = nim_list)
+		self.scan_nims = ConfigSelection(choices=nim_list)
 
 		self.createSetup()
 
@@ -159,5 +159,5 @@ def TerrestrialScanMain(session, **kwargs):
 def Plugins(**kwargs):
 	pList = []
 	if nimmanager.hasNimType("DVB-T"):
-		pList.append( PluginDescriptor(name=_("Terrestrial Scan"), description="For scanning terrestrial tv", where = PluginDescriptor.WHERE_MENU, needsRestart = False, fnc=TerrestrialScanStart) )
+		pList.append( PluginDescriptor(name=_("Terrestrial Scan"), description="For scanning terrestrial tv", where=PluginDescriptor.WHERE_MENU, needsRestart=False, fnc=TerrestrialScanStart) )
 	return pList

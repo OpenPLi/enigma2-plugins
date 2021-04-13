@@ -32,9 +32,9 @@ def autostart(reason, **kwargs):
 			pass
 
 def Plugins(**kwargs):
-	list = [PluginDescriptor(name = _("Prime Time Manager setup"), description = _("Settings of the plugin"), where = PluginDescriptor.WHERE_PLUGINMENU, icon = "plugin.png", fnc = settings)]
-	list.append(PluginDescriptor(name = _("Prime Time Manager"), description = _("Manage prime time events"), where = PluginDescriptor.WHERE_EVENTINFO, fnc = eventinfo))
-	list.append(PluginDescriptor(name = "Timer Edit key menu - show conflict timer", where = PluginDescriptor.WHERE_SESSIONSTART, fnc = autostart))
+	list = [PluginDescriptor(name=_("Prime Time Manager setup"), description=_("Settings of the plugin"), where=PluginDescriptor.WHERE_PLUGINMENU, icon="plugin.png", fnc=settings)]
+	list.append(PluginDescriptor(name=_("Prime Time Manager"), description=_("Manage prime time events"), where=PluginDescriptor.WHERE_EVENTINFO, fnc=eventinfo))
+	list.append(PluginDescriptor(name="Timer Edit key menu - show conflict timer", where=PluginDescriptor.WHERE_SESSIONSTART, fnc=autostart))
 	if config.plugins.PrimeTimeManager.ExtMenu.value:
-		list.append(PluginDescriptor(name = _("Prime Time Manager "), description = _("Manage prime time events"), where = PluginDescriptor.WHERE_EXTENSIONSMENU, fnc = main))
+		list.append(PluginDescriptor(name=_("Prime Time Manager "), description=_("Manage prime time events"), where=PluginDescriptor.WHERE_EXTENSIONSMENU, fnc=main))
 	return list

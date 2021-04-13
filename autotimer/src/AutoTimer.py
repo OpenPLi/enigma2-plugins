@@ -198,7 +198,7 @@ class AutoTimer:
 				except:
 					pass
 				if Standby.inStandby is None:
-					AddPopup(_("The autotimer file (/etc/enigma2/autotimer.xml) is corrupt and could not be loaded.") + "\n" +_("A new and empty config was created. A backup of the config can be found here (/etc/enigma2/autotimer.xml_old)."), type = MessageBox.TYPE_ERROR, timeout = 0, id = "AutoTimerLoadFailed")
+					AddPopup(_("The autotimer file (/etc/enigma2/autotimer.xml) is corrupt and could not be loaded.") + "\n" +_("A new and empty config was created. A backup of the config can be found here (/etc/enigma2/autotimer.xml_old)."), type=MessageBox.TYPE_ERROR, timeout=0, id="AutoTimerLoadFailed")
 
 				self.timers = []
 				self.defaultTimer = preferredAutoTimerComponent(
@@ -298,7 +298,7 @@ class AutoTimer:
 			idx += 1
 		self.timers.append(timer)
 
-	def parseEPGAsync(self, simulateOnly = False):
+	def parseEPGAsync(self, simulateOnly=False):
 		t = SimpleThread(lambda: self.parseEPG(simulateOnly=simulateOnly))
 		t.start()
 		return t.deferred
@@ -887,7 +887,7 @@ class AutoTimer:
 			doBlockingCallFromMainThread = blockingCallFromMainThread
 
 		# NOTE: the config option specifies "the next X days" which means today (== 1) + X
-		delta = timedelta(days = config.plugins.autotimer.maxdaysinfuture.value + 1)
+		delta = timedelta(days=config.plugins.autotimer.maxdaysinfuture.value + 1)
 		evtLimit = mktime((date.today() + delta).timetuple())
 		checkEvtLimit = delta.days > 1
 		del delta
@@ -1010,7 +1010,7 @@ class AutoTimer:
 					ret = self.addToFilterfile(name, begin)
 					if ret:
 						add_counter += 1
-				session.open( MessageBox, _("Finished add to filterList with %s event(s):\n\n %s event(s) added \n %s event(s) skipped") % (len(services), add_counter,len(services)-add_counter), type = MessageBox.TYPE_INFO, timeout = config.plugins.autotimer.popup_timeout.value)
+				session.open( MessageBox, _("Finished add to filterList with %s event(s):\n\n %s event(s) added \n %s event(s) skipped") % (len(services), add_counter,len(services)-add_counter), type=MessageBox.TYPE_INFO, timeout=config.plugins.autotimer.popup_timeout.value)
 			except Exception as e:
 				doLog("[AutoTimer] Error in addToFilterList", e)
 				print ("[AutoTimer] ======== Error in addToFilterList ", e)

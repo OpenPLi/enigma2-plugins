@@ -14,10 +14,10 @@ from enigma import eServiceCenter
 ################################################
 
 config.plugins.ZapHistoryConfigurator = ConfigSubsection()
-config.plugins.ZapHistoryConfigurator.enable_zap_history = ConfigSelection(choices = {"off": _("disabled"), "on": _("enabled"), "parental_lock": _("disabled at parental lock")}, default="on")
+config.plugins.ZapHistoryConfigurator.enable_zap_history = ConfigSelection(choices={"off": _("disabled"), "on": _("enabled"), "parental_lock": _("disabled at parental lock")}, default="on")
 config.plugins.ZapHistoryConfigurator.maxEntries_zap_history = ConfigInteger(default=20, limits=(1, 60))
-config.plugins.ZapHistoryConfigurator.history_tv = ConfigSet(choices = [])
-config.plugins.ZapHistoryConfigurator.history_radio = ConfigSet(choices = [])
+config.plugins.ZapHistoryConfigurator.history_tv = ConfigSet(choices=[])
+config.plugins.ZapHistoryConfigurator.history_radio = ConfigSet(choices=[])
 
 ################################################
 

@@ -47,7 +47,7 @@ class DishPiP(Screen):
 		self["tunerName"] = Label("")
 		self["turnSpeed"] = Label("")
 		self.frontend = None
-		self["Frontend"] = FrontendStatus(service_source = lambda: self.frontend, update_interval = 1000)
+		self["Frontend"] = FrontendStatus(service_source=lambda: self.frontend, update_interval=1000)
 		self.rotorTimer = eTimer()
 		self.rotorTimer.timeout.get().append(self.updateRotorMovingState)
 		self.turnTimer = eTimer()

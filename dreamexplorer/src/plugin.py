@@ -90,8 +90,8 @@ else:
 	HDSkn = False
 
 def Plugins(**kwargs):
-	list = [PluginDescriptor(name="Dream-Explorer", description=_("Explore your box"), where = [PluginDescriptor.WHERE_PLUGINMENU], icon="dreamexplorer.png", fnc=main)]
-	list.append(PluginDescriptor(name=_("Dream-Explorer"), where = PluginDescriptor.WHERE_EXTENSIONSMENU, fnc=main))
+	list = [PluginDescriptor(name="Dream-Explorer", description=_("Explore your box"), where=[PluginDescriptor.WHERE_PLUGINMENU], icon="dreamexplorer.png", fnc=main)]
+	list.append(PluginDescriptor(name=_("Dream-Explorer"), where=PluginDescriptor.WHERE_EXTENSIONSMENU, fnc=main))
 	#list.append(PluginDescriptor(where = [PluginDescriptor.WHERE_SESSIONSTART],fnc = autostart))
 	return list
 
@@ -105,7 +105,7 @@ def autostart(reason, **kwargs):
 			explSession = kwargs["session"]
 			InfoBar.showMovies = showExpl
 
-def showExpl(dummy_self = None):
+def showExpl(dummy_self=None):
 	global explSession
 	explSession.open(DreamExplorerII)
 
@@ -165,7 +165,7 @@ class DreamExplorerII(Screen):
 			<eLabel font="Regular;16" halign="left" position="465,425" size="100,25" text="Bookmarks" transparent="1" valign="center" zPosition="6"/>
 			</screen>"""
 
-	def __init__(self, session, args = None):
+	def __init__(self, session, args=None):
 		self.skin = DreamExplorerII.skin
 		Screen.__init__(self, session)
 		self.setTitle(_("Dream-Explorer"))
@@ -182,11 +182,11 @@ class DreamExplorerII(Screen):
 			StartMeOn = None
 		if (config.plugins.DreamExplorer.MediaFilter.value == "off"):
 			self.MediaFilter = False
-			self["filelist"] = myFileList(StartMeOn, showDirectories = True, showFiles = True, matchingPattern = None, useServiceRef = False)
+			self["filelist"] = myFileList(StartMeOn, showDirectories=True, showFiles=True, matchingPattern=None, useServiceRef=False)
 		else:
 			self.MediaFilter = True
-			self["filelist"] = myFileList(StartMeOn, showDirectories = True, showFiles = True, matchingPattern = self.MediaPattern, useServiceRef = False)
-		self["TEMPfl"] = FileList("/", matchingPattern = "(?i)^.*\.(jpeg|jpg|jpe|png|bmp)")
+			self["filelist"] = myFileList(StartMeOn, showDirectories=True, showFiles=True, matchingPattern=self.MediaPattern, useServiceRef=False)
+		self["TEMPfl"] = FileList("/", matchingPattern="(?i)^.*\.(jpeg|jpg|jpe|png|bmp)")
 
 		self["key_red"] = StaticText(_("Delete"))
 		self["key_green"] = StaticText(_("Rename"))
@@ -403,11 +403,11 @@ class DreamExplorerII(Screen):
 		global PicPlayerAviable
 		answer = answer and answer[1]
 		if answer == "YES":
-			self.session.open(Console, cmdlist = [ self.commando[0] ])
+			self.session.open(Console, cmdlist=[ self.commando[0] ])
 		elif answer == "YES2ALL":
-			self.session.open(Console, cmdlist = self.commando)
+			self.session.open(Console, cmdlist=self.commando)
 		elif answer == "PACKLOGOS":
-			self.session.open(Console, cmdlist = ["cd /tmp/", "tar -czf /tmp/dreambox.bootlogo.tar.gz /usr/share/bootlogo.mvi /usr/share/bootlogo_wait.mvi /usr/share/backdrop.mvi /boot/bootlogo.jpg"])
+			self.session.open(Console, cmdlist=["cd /tmp/", "tar -czf /tmp/dreambox.bootlogo.tar.gz /usr/share/bootlogo.mvi /usr/share/bootlogo_wait.mvi /usr/share/backdrop.mvi /boot/bootlogo.jpg"])
 		elif answer == "VIEW":
 			try:
 				yfile = os.stat(self.commando[0])
@@ -728,7 +728,7 @@ class DreamExplorerII(Screen):
 		for name in files:
 			testname = name.lower()
 			if testname.endswith(".mp3") or name.endswith(".m4a") or name.endswith(".ogg") or name.endswith(".flac"):
-				slist.append((Item(text = name, filename = os.path.join(self["filelist"].getCurrentDirectory(),name)),))
+				slist.append((Item(text=name, filename=os.path.join(self["filelist"].getCurrentDirectory(),name)),))
 				if self["filelist"].getFilename() == name:
 					foundIndex = index
 				index = index + 1
@@ -890,7 +890,7 @@ class PictureExplorerII(Screen):
 				<widget name="State" font="Regular;20" halign="center" position="0,506" size="720,70" backgroundColor="#01080911" foregroundColor="#fcc000" transparent="0" zPosition="9"/>
 			</screen>"""
 
-	def __init__(self, session, whatPic = None, whatDir = None):
+	def __init__(self, session, whatPic=None, whatDir=None):
 		self.skin = PictureExplorerII.skin
 		Screen.__init__(self, session)
 		self.setTitle(_("Picture-Explorer"))
@@ -1093,7 +1093,7 @@ class vInputBox(InputBox):
 	sknew = sknew + '<widget name="text" position="5,5" size="1270,25" font="Regular;15"/>\n<widget name="input" position="0,40" size="'
 	sknew = sknew + vibnewx + ',30" font="Regular;20"/>\n</screen>'
 	skin = sknew
-	def __init__(self, session, title = "", windowTitle = _("Input"), useableChars = None, **kwargs):
+	def __init__(self, session, title="", windowTitle=_("Input"), useableChars=None, **kwargs):
 		InputBox.__init__(self, session, title, windowTitle, useableChars, **kwargs)
 
 class CPmaniger(Screen):
@@ -1133,14 +1133,14 @@ class CPmaniger(Screen):
 				<eLabel font="Regular;18" halign="left" position="345,425" size="120,25" text="COPY" transparent="1" valign="center" zPosition="6"/>
 			</screen>"""
 
-	def __init__(self, session, source = "/tmp/none"):
+	def __init__(self, session, source="/tmp/none"):
 		self.skin = CPmaniger.skin
 		Screen.__init__(self, session)
 		self.setTitle(_("Select Copy/Move location..."))
 		self.sesion = session
 		self.src = source
 		self["File"] = Label(_("WARNING! they doing now COPY or MOVE\n") + source + _("\nto:"))
-		self["CPto"] = myFileList(config.plugins.DreamExplorer.CopyDest.value, showDirectories = True, showFiles = False, matchingPattern = "^.*\.*", useServiceRef = False)
+		self["CPto"] = myFileList(config.plugins.DreamExplorer.CopyDest.value, showDirectories=True, showFiles=False, matchingPattern="^.*\.*", useServiceRef=False)
 
 		self["key_red"] = StaticText(_("MOVE"))
 		self["key_yellow"] = StaticText(_("COPY"))
@@ -1240,7 +1240,7 @@ class SoftLinkScreen(Screen):
 				<eLabel font="Regular;18" halign="left" position="35,425" size="120,25" text="Set name" transparent="1" valign="center" zPosition="6"/>
 				<eLabel font="Regular;18" halign="left" position="345,425" size="220,25" text="Make a softlink" transparent="1" valign="center" zPosition="6"/>
 			</screen>"""
-	def __init__(self, session, source = "/tmp/"):
+	def __init__(self, session, source="/tmp/"):
 		self.skin = SoftLinkScreen.skin
 		Screen.__init__(self, session)
 		self.setTitle(_("Make a softlink..."))
@@ -1248,7 +1248,7 @@ class SoftLinkScreen(Screen):
 		self.src = source
 		self.newSLname = " "
 		self["File"] = Label(_("Set first the Softlink name ..."))
-		self["SLto"] = myFileList('/', showDirectories=True, showFiles=True, matchingPattern = None, useServiceRef = False)
+		self["SLto"] = myFileList('/', showDirectories=True, showFiles=True, matchingPattern=None, useServiceRef=False)
 
 		self["key_red"] = StaticText(_("Set name"))
 		self["key_yellow"] = StaticText(_("Make a softlink"))

@@ -34,23 +34,23 @@ except:
 PrevFrontendPriority = None
 _session = None
 
-config.misc.rectimerstate =  ConfigBoolean(default = False)
-config.usage.recinfobar = ConfigYesNo(default = False)
+config.misc.rectimerstate =  ConfigBoolean(default=False)
+config.usage.recinfobar = ConfigYesNo(default=False)
 config.plugins.RecInfobar = ConfigSubsection()
 config.plugins.RecInfobar.anchor = ConfigSelection([("top", _("down")),("bottom", _("top"))], default="bottom")
 config.plugins.RecInfobar.background = ConfigSelection([("#00000000", _("black")),("#ffffffff", _("transparent")),("#54111112", _("transparent") + " - " + _("black"))], default="#ffffffff")
 config.plugins.RecInfobar.x = ConfigInteger(default=0, limits=(0,9999))
 config.plugins.RecInfobar.y = ConfigInteger(default=360, limits=(0,9999))
 config.plugins.RecInfobar.always_zap = ConfigSelection([("0", _("default")),("1", _("always")),("2", _("ask the user"))], default="0")
-config.plugins.RecInfobar.always_message =  ConfigYesNo(default = False)
+config.plugins.RecInfobar.always_message =  ConfigYesNo(default=False)
 config.plugins.RecInfobar.default_zap = ConfigSelection([("yes", _("zap")),("no", _("no zap"))], default="yes")
-config.plugins.RecInfobar.check_wakeup =  ConfigYesNo(default = False)
+config.plugins.RecInfobar.check_wakeup =  ConfigYesNo(default=False)
 config.plugins.RecInfobar.standby_timeout = ConfigInteger(default=10, limits=(5,180))
 config.plugins.RecInfobar.after_event = ConfigSelection([("0", _("all")),("1", _("standby")),("2", _("deep standby")),("3", _("auto")),("4", _("auto and deep standby")),("5", _("all, except 'nothing'"))], default="5")
-config.plugins.RecInfobar.set_position = ConfigYesNo(default = False)
+config.plugins.RecInfobar.set_position = ConfigYesNo(default=False)
 config.plugins.RecInfobar.z = ConfigSelection([(str(x), str(x)) for x in range(-20,21)], "1")
 config.plugins.RecInfobar.help = ConfigNothing()
-config.plugins.RecInfobar.rec_indicator = ConfigYesNo(default = False)
+config.plugins.RecInfobar.rec_indicator = ConfigYesNo(default=False)
 config.plugins.RecInfobar.indicator_x = ConfigInteger(default=30, limits=(0,9999))
 config.plugins.RecInfobar.indicator_y = ConfigInteger(default=30, limits=(0,9999))
 TIMEFORMATS = [
@@ -74,7 +74,7 @@ config.plugins.RecInfobar.timelen_format = ConfigSelection(TIMEFORMATS, "%(MMs)d
 nims = [("-1", _("auto")), ("-2", _("disabled"))]
 for x in nimmanager.nim_slots:
 	nims.append((str(x.slot), x.getSlotName()))
-config.plugins.RecInfobar.tuner_recording_priority = ConfigSelection(default = "-2", choices = nims)
+config.plugins.RecInfobar.tuner_recording_priority = ConfigSelection(default="-2", choices=nims)
 
 class RecIndicator(Screen):
 	skin = """
@@ -217,7 +217,7 @@ class RecInfoBar(Screen):
 	def checkStandby(self):
 		if Standby.inStandby is None:
 			try:
-				self.session.openWithCallback(self.DoStandby,MessageBox,_("Go to Standby now?"),type = MessageBox.TYPE_YESNO,timeout = config.plugins.RecInfobar.standby_timeout.value)
+				self.session.openWithCallback(self.DoStandby,MessageBox,_("Go to Standby now?"),type=MessageBox.TYPE_YESNO,timeout=config.plugins.RecInfobar.standby_timeout.value)
 			except:
 				pass 
 
@@ -281,7 +281,7 @@ class RecInfoBar(Screen):
 							begintimestr = strftime("%H:%M ", localtime(timer.begin))
 							begintimeendstr = strftime("%H:%M ", localtime(timer.end))
 							default = (config.plugins.RecInfobar.default_zap.value == "yes")
-							self.session.openWithCallback(self.callbackYesNo, MessageBox, _("Recording starts!\n") + _("duration:  %s ... ") % (begintimestr) + "%s " % (begintimeendstr) + _(" (%d mins)\n") % (begintime) + _("channel: %s   prov: %s\n %s\n") % (name, prov, rec_name) + "\n" +  _("Switch to a recordable channel?"), MessageBox.TYPE_YESNO, timeout = timeout, default = default)
+							self.session.openWithCallback(self.callbackYesNo, MessageBox, _("Recording starts!\n") + _("duration:  %s ... ") % (begintimestr) + "%s " % (begintimeendstr) + _(" (%d mins)\n") % (begintime) + _("channel: %s   prov: %s\n %s\n") % (name, prov, rec_name) + "\n" +  _("Switch to a recordable channel?"), MessageBox.TYPE_YESNO, timeout=timeout, default=default)
 
 	def GozapPosition(self):
 		if self.SetPosition and self.zap_ref is not None:
@@ -444,9 +444,9 @@ class RecInfoBar(Screen):
 								self.session.nav.playService(timer.service_ref.ref)
 								if config.plugins.RecInfobar.always_message.value is True:
 									if config.usage.show_message_when_recording_starts.value:
-										self.session.open(MessageBox, _("Switched to the recording service !\n") + _("channel: %s   prov: %s\n") % (name, prov), MessageBox.TYPE_INFO, timeout = 2)
+										self.session.open(MessageBox, _("Switched to the recording service !\n") + _("channel: %s   prov: %s\n") % (name, prov), MessageBox.TYPE_INFO, timeout=2)
 									else:
-										self.session.open(MessageBox, _("Switched to the recording service !\n")  + _("channel: %s   prov: %s\n %s\n") % (name, prov, recname), MessageBox.TYPE_INFO, timeout = 5)
+										self.session.open(MessageBox, _("Switched to the recording service !\n")  + _("channel: %s   prov: %s\n %s\n") % (name, prov, recname), MessageBox.TYPE_INFO, timeout=5)
 				if config.plugins.RecInfobar.rec_indicator.value:
 					if self.RecIndicator is None:
 						self.RecIndicator = self.session.instantiateDialog(RecIndicator)
@@ -464,7 +464,7 @@ class RecInfoBar(Screen):
 							self.RecIndicator.hide()
 			self.reSize()
 
-	def setZapPosition(self, ref, SetCurTimer = False):
+	def setZapPosition(self, ref, SetCurTimer=False):
 		def searchHelper(serviceHandler, num, bouquet):
 			servicelist = serviceHandler.list(bouquet)
 			if not servicelist is None:
@@ -753,5 +753,5 @@ def StartSetup(menuid, **kwargs):
 
 
 def Plugins(**kwargs):
-	return [PluginDescriptor(name=_("Record Infobar"), description=_("Record Infobar addon"), where = PluginDescriptor.WHERE_SESSIONSTART, fnc = StartMainSession),
-		PluginDescriptor(name=_("Record Infobar"), description=_("Record Infobar addon"), where = PluginDescriptor.WHERE_MENU, fnc = StartSetup)]
+	return [PluginDescriptor(name=_("Record Infobar"), description=_("Record Infobar addon"), where=PluginDescriptor.WHERE_SESSIONSTART, fnc=StartMainSession),
+		PluginDescriptor(name=_("Record Infobar"), description=_("Record Infobar addon"), where=PluginDescriptor.WHERE_MENU, fnc=StartSetup)]

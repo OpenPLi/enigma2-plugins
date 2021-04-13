@@ -68,7 +68,7 @@ config.plugins.autotimer.add_autotimer_to_tags = ConfigYesNo(default=False)
 config.plugins.autotimer.add_name_to_tags = ConfigYesNo(default=False)
 config.plugins.autotimer.disabled_on_conflict = ConfigYesNo(default=False)
 config.plugins.autotimer.show_in_extensionsmenu = ConfigYesNo(default=False)
-config.plugins.autotimer.show_in_furtheroptionsmenu = ConfigYesNo(default = True)
+config.plugins.autotimer.show_in_furtheroptionsmenu = ConfigYesNo(default=True)
 config.plugins.autotimer.fastscan = ConfigYesNo(default=False)
 config.plugins.autotimer.notifconflict = ConfigYesNo(default=True)
 config.plugins.autotimer.notifsimilar = ConfigYesNo(default=True)
@@ -87,32 +87,32 @@ config.plugins.autotimer.enable_multiple_timer = ConfigSelection(choices=[
 		("s", _("If specified services")),
 		("b", _("If specified bouquets")),
 		("sb", _("If specified services or bouquets"))
-	], default = "0"
+	], default="0"
 )
-config.plugins.autotimer.log_shell = ConfigYesNo(default = False)
-config.plugins.autotimer.log_write = ConfigYesNo(default = False)
-config.plugins.autotimer.log_file = ConfigText(default = "/tmp/autotimer.log", fixed_size = False)
+config.plugins.autotimer.log_shell = ConfigYesNo(default=False)
+config.plugins.autotimer.log_write = ConfigYesNo(default=False)
+config.plugins.autotimer.log_file = ConfigText(default="/tmp/autotimer.log", fixed_size=False)
 val = config.plugins.autotimer.log_file.value
 if not val or not val.endswith("autotimer.log"):
 	config.plugins.autotimer.log_file.value = "/tmp/autotimer.log"
 	config.plugins.autotimer.log_file.save()
 
-config.plugins.autotimer.series_save_filter = ConfigYesNo(default = False)
-config.plugins.autotimer.searchlog_write = ConfigYesNo(default = False)
+config.plugins.autotimer.series_save_filter = ConfigYesNo(default=False)
+config.plugins.autotimer.searchlog_write = ConfigYesNo(default=False)
 config.plugins.autotimer.searchlog_path = ConfigSelection(choices=[
 		("?likeATlog?", _("like autotimer.log")),
 		("/tmp", _("/tmp")),
 		("/etc/enigma2", _("/etc/enigma2"))
 	], default="?likeATlog?"
 )
-config.plugins.autotimer.searchlog_max = ConfigSelectionNumber(5, 20, 1, default = 5)
+config.plugins.autotimer.searchlog_max = ConfigSelectionNumber(5, 20, 1, default=5)
 config.plugins.autotimer.max_search_events_match = ConfigSelection(choices=[
 		("1000", _("Standard (1000 events)")),
 		("2000", _("Advanced (2000 events)")),
 		("3000", _("Full (3000 events)"))
 	], default="1000"
 )
-config.plugins.autotimer.clear_memory = ConfigYesNo(default = False)
+config.plugins.autotimer.clear_memory = ConfigYesNo(default=False)
 
 try:
 	xrange = xrange

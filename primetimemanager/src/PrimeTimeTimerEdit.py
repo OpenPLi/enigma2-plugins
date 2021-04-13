@@ -56,7 +56,7 @@ def openExtendedSetup(self):
 				if choice[1] == "any":
 					self.session.openWithCallback(self.updateList, PrimeTimeTimerSanityConflict, simulTimerList, True)
 		if menu:
-			self.session.openWithCallback(conflictAction, ChoiceBox, title= _("Checking with conflict detection enabled for"), list=menu)
+			self.session.openWithCallback(conflictAction, ChoiceBox, title=_("Checking with conflict detection enabled for"), list=menu)
 
 def updateList(self, answer=None):
 	self.fillTimerList()
@@ -197,7 +197,7 @@ class PrimeTimeTimerSanityConflict(Screen):
 					config.usage.show_timer_conflict_warning.value = True
 					config.usage.show_timer_conflict_warning.save()
 		if menu:
-			self.session.openWithCallback(showAction, ChoiceBox, title= _("Select action"), list=menu)
+			self.session.openWithCallback(showAction, ChoiceBox, title=_("Select action"), list=menu)
 
 	def up(self):
 		self["timerlist"].instance.moveSelection(self["timerlist"].instance.moveUp)
