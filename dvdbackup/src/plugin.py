@@ -176,7 +176,8 @@ class DVDBackup:
 
 	def getDVDSize(self, result, retval, extra_args):
 		size = 0
-		firstPhrase = "File Structure DVD"; lastPhrase = "Main feature:"
+		firstPhrase = "File Structure DVD"
+		lastPhrase = "Main feature:"
 		if result and result.__contains__(firstPhrase) and result.__contains__(lastPhrase):
 			result = result[result.index(firstPhrase)+len(firstPhrase)+1: result.index(lastPhrase)]
 			print "[DVD Backup]",result
@@ -196,7 +197,8 @@ class DVDBackup:
 		return size
 
 	def gotInfo(self, result, retval, extra_args):
-		firstPhrase = "File Structure DVD"; lastPhrase = "Main feature:"
+		firstPhrase = "File Structure DVD"
+		lastPhrase = "Main feature:"
 		if result and result.__contains__(firstPhrase) and result.__contains__(lastPhrase):
 			result = result[result.index(firstPhrase)+len(firstPhrase)+1: result.index(lastPhrase)]
 			print "[DVD Backup]",result
@@ -283,8 +285,10 @@ class DVDBackup:
 	def genisoimageCallback2(self, yesno):
 		if yesno:
 			cmd = ("rm -R '%s/%s'" % (cfg.directory.value, cfg.name.value)).replace("//", "/")
-			try: os.system(cmd)
-			except: pass
+			try:
+				os.system(cmd)
+			except:
+				pass
 		self.finished()
 
 	def finished(self):
@@ -418,12 +422,16 @@ class DVDBackupProgress(Screen):
 					tool = "dd"
 			self.console.ePopen("killall -9 %s" % tool, self.abortCallback)
 			if tool == "dd":
-				try: os.system("rm '%s'" % file.name)
-				except: pass
+				try:
+					os.system("rm '%s'" % file.name)
+				except:
+					pass
 			else:
 				cmd = ("rm -R '%s/%s'" % (cfg.directory.value, cfg.name.value)).replace("//", "/")
-				try: os.system(cmd)
-				except: pass
+				try:
+					os.system(cmd)
+				except:
+					pass
 
 	def abortCallback(self, result, retval, extra_args):
 		self.working = False

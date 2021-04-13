@@ -734,10 +734,12 @@ class ExtendedVirtualZap(Screen, HelpableScreen):
 		self.CheckForEPG.stop()
 		self.resetExitTimer()
 		current_service = self.servicelist.getCurrentSelection()
-		if not current_service: return
+		if not current_service:
+			return
 		current = ServiceReference(current_service)
 		current_ref = ref or current_service
-		if not current_ref: return
+		if not current_ref:
+			return
 		if config.plugins.extvirtualzap.picons.value:
 			pngname = getPiconName(str(current))
 			if pngname:
@@ -910,7 +912,8 @@ class ExtendedVirtualZap(Screen, HelpableScreen):
 			self.pipservice = None
 			self.setDishpipDialog(stoping=True)
 			self.setPlayableService()
-			if self.servicelist.getCurrentSelection() is None: return
+			if self.servicelist.getCurrentSelection() is None:
+				return
 			service = ServiceReference(self.servicelist.getCurrentSelection()).ref
 			servicePath = self.servicelist.getCurrentServicePath()
 			self.saveLastService(self.servicelist.getCurrentSelection().toString(), self.servicelist.getRoot().toString())
@@ -962,7 +965,8 @@ class ExtendedVirtualZap(Screen, HelpableScreen):
 
 	def repeatUpdateInfos(self):
 		self.CheckForEPG.stop()
-		if self.servicelist.getCurrentSelection() is None: return
+		if self.servicelist.getCurrentSelection() is None:
+			return
 		current = ServiceReference(self.servicelist.getCurrentSelection())
 		self["NowChannel"].setText(current.getServiceName() or '')
 		nowepg, nowtimedisplay, percentnow = self.getEPGNowNext(current.ref,0)
@@ -1322,7 +1326,8 @@ def ExtendedVirtualZapChannelContextMenuInit():
 
 def ExtendedVirtualZapChannelContextMenu__init__(self, session, csel):
 	baseEVZChannelContextMenuINIT(self, session, csel)
-	if csel is None: return
+	if csel is None:
+		return
 	if csel.mode == MODE_TV:
 		current = csel.getCurrentSelection()
 		current_root = csel.getRoot()
@@ -1463,7 +1468,8 @@ def eventinfofull(session, eventName="", **kwargs):
 		open_plugin = True
 	elif eventName == "":
 		open_plugin = True
-	if not open_plugin: return
+	if not open_plugin:
+		return
 	from Screens.InfoBar import InfoBar
 	if InfoBar.instance:
 		if hasattr(InfoBar.instance, "pipShown") and InfoBar.instance.pipShown():
@@ -1478,7 +1484,8 @@ def eventinfo(session, servicelist, eventName="", **kwargs):
 		open_plugin = False
 	elif eventName == "":
 		open_plugin = True
-	if not open_plugin: return
+	if not open_plugin:
+		return
 	from Screens.InfoBar import InfoBar
 	if InfoBar.instance:
 		if hasattr(InfoBar.instance, "pipShown") and InfoBar.instance.pipShown():
@@ -1487,8 +1494,10 @@ def eventinfo(session, servicelist, eventName="", **kwargs):
 		session.openWithCallback(ExtendedVirtualZapMainCallback, ExtendedVirtualZap, InfoBar.instance.servicelist)
 
 def startForChannelSelector(session=None, service=None):
-	if session is None: return
-	if service is None: return
+	if session is None:
+		return
+	if service is None:
+		return
 	from Screens.InfoBar import InfoBar
 	if InfoBar.instance:
 		if hasattr(InfoBar.instance, "pipShown") and InfoBar.instance.pipShown():

@@ -189,7 +189,7 @@ def getNextWakeup():
 	
 	#it might happen, that session does not exist. I don't know why. :-(
 	if session is None:
-		return ElektroWakeUpTime;
+		return ElektroWakeUpTime
 	
 	nextTimer = session.nav.RecordTimer.getNextRecordingTime()
 	print pluginPrintname, "Now:", strftime("%a:%H:%M:%S",  gmtime(time()))
@@ -627,7 +627,7 @@ class DoElektro(Screen):
 		return ( (clock.value[0]) * 60 + (int)(clock.value[1]) )  * 60
 		
 	def getTime(self):
-		ltime = localtime();
+		ltime = localtime()
 		return ( (int)(ltime.tm_hour) * 60 + (int)(ltime.tm_min) ) * 60
 	
 	def getPrintTime(self, secs):

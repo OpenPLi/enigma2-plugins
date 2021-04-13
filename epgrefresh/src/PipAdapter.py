@@ -79,12 +79,15 @@ class PipAdapter:
 				self.hidePiP()
 		else:
 			self.session.pipshown = False
-			try: del self.session.pip
-			except Exception: pass
+			try:
+				del self.session.pip
+			except Exception:
+				pass
 
 	def play(self, service):
 		print("[EPGRefresh.PipAdapter.play]")
-		if not self.pipAvail: return False
+		if not self.pipAvail:
+			return False
 
 		if not self.session.pipshown: # make sure pip still exists
 			self.initPiP(new_service=service)
@@ -100,15 +103,18 @@ class PipAdapter:
 			return False
 
 	def stop(self):
-		if not self.pipAvail: return
+		if not self.pipAvail:
+			return
 		if config.plugins.epgrefresh.enablemessage.value and Standby.inStandby is None:
 			try:
 				Notifications.AddPopup(_("EPG refresh finished.") + "\n" + _("PiP available now."), MessageBox.TYPE_INFO, 4, PIPNOTIFICATIONID)
 			except:
 				pass
 		# remove pip preemptively
-		try: del self.session.pip
-		except Exception: pass
+		try:
+			del self.session.pip
+		except Exception:
+			pass
 
 		# reset pip and remove it if unable to play service
 		if self.wasShown:
@@ -119,8 +125,10 @@ class PipAdapter:
 				self.session.pipshown = True
 			else:
 				self.session.pipshown = False
-				try: del self.session.pip
-				except Exception: pass
+				try:
+					del self.session.pip
+				except Exception:
+					pass
 		else:
 			self.session.pipshown = False
 

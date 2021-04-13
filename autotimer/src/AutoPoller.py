@@ -76,7 +76,8 @@ class AutoPollerThread(Thread):
 			delay = config.plugins.autotimer.delay.value*60
 			if delay == 0:
 				delay = 30
-		else: delay = config.plugins.autotimer.interval.value*3600
+		else:
+			delay = config.plugins.autotimer.interval.value*3600
 
 		self.__timer.startLongTimer(delay)
 		if not self.isAlive():
@@ -104,7 +105,8 @@ class AutoPollerThread(Thread):
 		while 1:
 			sem.acquire()
 			# NOTE: we have to check this here and not using the while to prevent the parser to be started on shutdown
-			if not self.running: break
+			if not self.running:
+				break
 
 			if config.plugins.autotimer.skip_during_records.value:
 				try:

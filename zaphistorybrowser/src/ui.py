@@ -30,8 +30,10 @@ def addToHistory(instance, ref):
 	if instance.servicePath is not None:
 		tmp = instance.servicePath[:]
 		tmp.append(ref)
-		try: del instance.history[instance.history_pos+1:]
-		except Exception, e: pass
+		try:
+			del instance.history[instance.history_pos+1:]
+		except Exception, e:
+			pass
 		instance.history.append(tmp)
 		hlen = len(instance.history)
 		if hlen > config.plugins.ZapHistoryConfigurator.maxEntries_zap_history.value:

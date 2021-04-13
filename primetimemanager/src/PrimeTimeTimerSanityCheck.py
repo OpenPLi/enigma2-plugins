@@ -49,7 +49,7 @@ class PrimeTimeTimerSanityCheck:
 					getUnsignedDataRef2 = self.newtimer.service_ref.ref.getUnsignedData
 					for x in (1, 2, 3, 4):
 						if getUnsignedDataRef1(x) != getUnsignedDataRef2(x):
-							break;
+							break
 					else:
 						return True
 		return False

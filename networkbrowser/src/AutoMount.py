@@ -67,7 +67,7 @@ class AutoMount():
 		# Read out NFS Mounts
 		for nfs in tree.findall("nfs"):
 			for mount in nfs.findall("mount"):
-				data = { 'isMounted': False, 'active': False, 'ip': False, 'host': False, 'sharename': False, 'sharedir': False, 'username': False, \
+				data = { 'isMounted': False, 'active': False, 'ip': False, 'host': False, 'sharename': False, 'sharedir': False, 'username': False,
 							'password': False, 'mounttype' : False, 'options' : False, 'hdd_replacement' : False }
 				try:
 					data['mounttype'] = 'nfs'.encode("UTF-8")
@@ -87,7 +87,7 @@ class AutoMount():
 		# Read out CIFS Mounts
 		for nfs in tree.findall("cifs"):
 			for mount in nfs.findall("mount"):
-				data = { 'isMounted': False, 'active': False, 'ip': False, 'host': False, 'sharename': False, 'sharedir': False, 'username': False, \
+				data = { 'isMounted': False, 'active': False, 'ip': False, 'host': False, 'sharename': False, 'sharedir': False, 'username': False,
 							'password': False, 'mounttype' : False, 'options' : False, 'hdd_replacement' : False }
 				try:
 					data['mounttype'] = 'cifs'.encode("UTF-8")
@@ -179,10 +179,10 @@ class AutoMount():
 
 	def CheckMountPoint(self, item, callback):
 		# possible CIFS version/security combinations
-		secvers = ( \
-			'vers=3,sec=ntlmssp', 'vers=3,sec=ntlmv2', 'vers=2.1,sec=ntlmssp', 'vers=2.1,sec=ntlmv2', \
-			'vers=2.1,sec=ntlm', 'vers=1.0,sec=ntlmssp', 'vers=1.0,sec=ntlmv2', 'vers=1.0,sec=ntlm', \
-			'vers=default', '' \
+		secvers = (
+			'vers=3,sec=ntlmssp', 'vers=3,sec=ntlmv2', 'vers=2.1,sec=ntlmssp', 'vers=2.1,sec=ntlmv2',
+			'vers=2.1,sec=ntlm', 'vers=1.0,sec=ntlmssp', 'vers=1.0,sec=ntlmv2', 'vers=1.0,sec=ntlm',
+			'vers=default', ''
 		)
 
 		# create a console object if it doesnt exist

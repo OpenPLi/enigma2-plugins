@@ -182,7 +182,8 @@ class RecInfoBar(Screen):
 
 	def checkWakeup(self):
 		for timer in NavigationInstance.instance.RecordTimer.timer_list:
-			if timer.justplay: continue
+			if timer.justplay:
+				continue
 			ret = None
 			if 0 < timer.begin - Time() <= 60*5:
 				if timer.afterEvent == AFTEREVENT.STANDBY:
@@ -312,7 +313,8 @@ class RecInfoBar(Screen):
 		self.def_hreg = max(0, self.def_size.height() - self["chName"].instance.size().height())
 		self.initRecList()
 		self.session.nav.record_event.append(self.gotRecordEvent)
-		if len(self.reclist) == 0: self.reSize()
+		if len(self.reclist) == 0:
+			self.reSize()
 
 	def __onShow(self):
 		self.updateInfo()
@@ -321,12 +323,12 @@ class RecInfoBar(Screen):
 		self.session.nav.record_event.remove(self.gotRecordEvent)
 
 	def getTimeStr(self, secs):
-		dd, ss = divmod(secs, 60*60*24);
-		hh, ss = divmod(ss, 60*60);
-		mm, ss = divmod(ss, 60);
+		dd, ss = divmod(secs, 60*60*24)
+		hh, ss = divmod(ss, 60*60)
+		mm, ss = divmod(ss, 60)
 		return _(config.plugins.RecInfobar.timelen_format.value) % dict(
 			DDs=dd and _N("%(DD)d day", "%(DD)d days", dd)%{"DD": dd} or "",
-			DD=dd, HH=hh, MM=mm, SS=ss, HHs=secs/3600, MMs=secs/60, SSs=secs);
+			DD=dd, HH=hh, MM=mm, SS=ss, HHs=secs/3600, MMs=secs/60, SSs=secs)
 
 	def updateInfo(self):
 		cnt = 0
@@ -468,10 +470,12 @@ class RecInfoBar(Screen):
 			if not servicelist is None:
 				while True:
 					s = servicelist.getNext()
-					if not s.valid(): break
+					if not s.valid():
+						break
 					if not (s.flags & (eServiceReference.isMarker|eServiceReference.isDirectory)):
 						num += 1
-						if s == ref: return s, num
+						if s == ref:
+							return s, num
 			return None, num
 
 		if isinstance(ref, eServiceReference):
@@ -497,7 +501,8 @@ class RecInfoBar(Screen):
 					acount = False
 				rootstr = ''
 				for x in lastpath.split(';'):
-					if x != '': rootstr = x
+					if x != '':
+						rootstr = x
 				service = None
 				serviceHandler = eServiceCenter.getInstance()
 				if not config.usage.multibouquet.value:
@@ -513,10 +518,12 @@ class RecInfoBar(Screen):
 					if not bouquetlist is None:
 						while True:
 							bouquet = bouquetlist.getNext()
-							if not bouquet.valid(): break
+							if not bouquet.valid():
+								break
 							if bouquet.flags & eServiceReference.isDirectory and not bouquet.flags & eServiceReference.isInvisible:
 								service, number = searchHelper(serviceHandler, number, bouquet)
-								if service and number > 0: break
+								if service and number > 0:
+									break
 								#if acount: break
 				if not service is None and number > 0:
 					from Screens.InfoBar import InfoBar
@@ -541,10 +548,12 @@ class RecInfoBar(Screen):
 			if not servicelist is None:
 				while True:
 					s = servicelist.getNext()
-					if not s.valid(): break
+					if not s.valid():
+						break
 					if not (s.flags & (eServiceReference.isMarker|eServiceReference.isDirectory)):
 						num += 1
-						if s == ref: return s, num
+						if s == ref:
+							return s, num
 			return None, num
 
 		if isinstance(ref, eServiceReference):
@@ -569,7 +578,8 @@ class RecInfoBar(Screen):
 				acount = False
 			rootstr = ''
 			for x in lastpath.split(';'):
-				if x != '': rootstr = x
+				if x != '':
+					rootstr = x
 			service = None
 			serviceHandler = eServiceCenter.getInstance()
 			if acount is True or not config.usage.multibouquet.value:
@@ -586,10 +596,12 @@ class RecInfoBar(Screen):
 				if not bouquetlist is None:
 					while True:
 						bouquet = bouquetlist.getNext()
-						if not bouquet.valid(): break
+						if not bouquet.valid():
+							break
 						if bouquet.flags & eServiceReference.isDirectory and not bouquet.flags & eServiceReference.isInvisible:
 							service, number = searchHelper(serviceHandler, number, bouquet)
-							if service and number > 0: break
+							if service and number > 0:
+								break
 			if not service is None:
 				info = serviceHandler.info(bouquet)
 				name = info and info.getName(bouquet) or ''
@@ -613,13 +625,15 @@ class RecInfoBar(Screen):
 			if not providerlist is None:
 				while True:
 					provider = providerlist.getNext()
-					if not provider.valid(): break
+					if not provider.valid():
+						break
 					if provider.flags & eServiceReference.isDirectory:
 						servicelist = serviceHandler.list(provider)
 						if not servicelist is None:
 							while True:
 								service = servicelist.getNext()
-								if not service.valid(): break
+								if not service.valid():
+									break
 								if service == ref:
 									info = serviceHandler.info(provider)
 									name = info and info.getName(provider) or _("Unknown")

@@ -195,9 +195,9 @@ class RemoteTimerScreen(Screen):
 			]
 
 class E2Timer:
-	def __init__(self, sref = "", sname = "", name = "", disabled = 0, \
-			timebegin = 0, timeend = 0, duration = 0, startprepare = 0, \
-			state = 0, repeated = 0, justplay = 0, eit = 0, afterevent = 0, \
+	def __init__(self, sref = "", sname = "", name = "", disabled = 0,
+			timebegin = 0, timeend = 0, duration = 0, startprepare = 0,
+			state = 0, repeated = 0, justplay = 0, eit = 0, afterevent = 0,
 			dirname = "", description = "", flags = "", conflict_detection = 0):
 		self.service_ref = RemoteService(sref, sname)
 		self.name = name

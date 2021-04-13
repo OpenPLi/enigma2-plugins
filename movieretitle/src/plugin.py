@@ -159,7 +159,8 @@ class MovieRetitle(Screen, ConfigListScreen):
 			try:
 				# when started from MovieSelection Quickbutton Plugin, MovieSelection is parent, not MovieContextMenu --> try again
 				self.parent.reloadList()
-			except: pass
+			except:
+				pass
 
 	def baseName(self, str):
 		name = str.split('/')[-1]

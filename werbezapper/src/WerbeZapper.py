@@ -198,15 +198,24 @@ class WerbeZapper(Screen):
 		title = _("When zap to service?")
 		self.select = 1
 		val = int(config.werbezapper.duration.value)
-		if val == 1: select= 1
-		elif val == 2: select= 2
-		elif val == 3: select= 3
-		elif val == 4: select= 4
-		elif val == 5: select= 5
-		elif val == 6: select= 6
-		elif val == 8: select= 7
-		elif val == 9: select= 8
-		elif val == 14: select= 9
+		if val == 1:
+			select= 1
+		elif val == 2:
+			select= 2
+		elif val == 3:
+			select= 3
+		elif val == 4:
+			select= 4
+		elif val == 5:
+			select= 5
+		elif val == 6:
+			select= 6
+		elif val == 8:
+			select= 7
+		elif val == 9:
+			select= 8
+		elif val == 14:
+			select= 9
 		else:
 			select = 0
 			self.select = 0

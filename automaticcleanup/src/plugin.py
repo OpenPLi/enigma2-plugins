@@ -220,8 +220,10 @@ class AutomaticCleanup:
         checkInterval = 60 * 60 * 24 # check timerlist every 24 hours
 	def __init__(self, session):
 		self.session = session
-		if DEBUG: print pluginPrintname, "Starting in debugging mode..."
-		else: print pluginPrintname, "Starting AutomaticCleanup..."
+		if DEBUG:
+			print pluginPrintname, "Starting in debugging mode..."
+		else:
+			print pluginPrintname, "Starting AutomaticCleanup..."
 		self.timer = eTimer() # check timer
 		self.timer.callback.append(self.doCleanup)
 		self.doCleanup() # always check immediately after starting plugin
@@ -305,7 +307,8 @@ class AutomaticCleanup:
 				self.backupPath = self.getBackupPath()
 				backupDatePos = self.settingList[i].rfind('/') + 1
 				backupDate = self.settingList[i][backupDatePos:backupDatePos + 10]
-				if DEBUG: print pluginPrintname, "Backup path: %s, file: %s, date: %s"  %(self.backupPath, self.settingList[i], backupDate)
+				if DEBUG:
+					print pluginPrintname, "Backup path: %s, file: %s, date: %s"  %(self.backupPath, self.settingList[i], backupDate)
 				settingTime = mktime(strptime(backupDate, "%Y-%m-%d"))
 				if int(settingTime) > deleteOlderThan:
 					break
@@ -315,8 +318,10 @@ class AutomaticCleanup:
 			print pluginPrintname, "Found %i outdated setting backup(s)"  % i
 
 		for setting in self.deleteList:
-			if DEBUG: print pluginPrintname, "Setting backup to delete:", setting
-			else: remove(setting)
+			if DEBUG:
+				print pluginPrintname, "Setting backup to delete:", setting
+			else:
+				remove(setting)
 
 		print pluginPrintname, "Deleted %i setting backup(s)"  % len(self.deleteList)
 						
@@ -328,8 +333,10 @@ class AutomaticCleanup:
 		except ImportError, ie:
 			print pluginPrintname, "SoftwareManager not installed:", ie
 			backuppath = '/media/hdd/'
-		if backuppath.endswith('/'): return (backuppath + 'backup')
-		else: return (backuppath + '/backup')		
+		if backuppath.endswith('/'):
+			return (backuppath + 'backup')
+		else:
+			return (backuppath + '/backup')		
 		
 	def cleanupTimerlist(self):
 		try:
@@ -364,18 +371,24 @@ class AutomaticCleanup:
 			
 			from Components.UsageConfig import defaultMoviePath
 			moviePath.append(defaultMoviePath())
-			if config.usage.instantrec_path.value.endswith('/'): excludePath.append(config.usage.instantrec_path.value)
-			else: excludePath.append(config.usage.instantrec_path.value + "/")			
-			if config.usage.timeshift_path.value.endswith('/'): excludePath.append(config.usage.timeshift_path.value)
-			else: excludePath.append(config.usage.timeshift_path.value + "/")
+			if config.usage.instantrec_path.value.endswith('/'):
+				excludePath.append(config.usage.instantrec_path.value)
+			else:
+				excludePath.append(config.usage.instantrec_path.value + "/")			
+			if config.usage.timeshift_path.value.endswith('/'):
+				excludePath.append(config.usage.timeshift_path.value)
+			else:
+				excludePath.append(config.usage.timeshift_path.value + "/")
 
 			try:
 				# try to import EMC module to check for its existence
 				from Plugins.Extensions.EnhancedMovieCenter.EnhancedMovieCenter import EnhancedMovieCenterMenu 
 				moviePath.append(config.EMC.movie_homepath.value)
 				if len(config.EMC.movie_trashpath.value) > 1:	# Trashpath specified?
-					if config.EMC.movie_trashpath.value.endswith('/'): excludePath.append(config.EMC.movie_trashpath.value)
-					else: excludePath.append(config.EMC.movie_trashpath.value + "/")
+					if config.EMC.movie_trashpath.value.endswith('/'):
+						excludePath.append(config.EMC.movie_trashpath.value)
+					else:
+						excludePath.append(config.EMC.movie_trashpath.value + "/")
 			except ImportError, ie:
 				print pluginPrintname, "EMC not installed:", ie
 
@@ -383,7 +396,8 @@ class AutomaticCleanup:
 				print pluginPrintname, "No movies found!"
 			else:
 				for f in range(len(excludePath)):
-					if excludePath[f].startswith("/hdd"): excludePath[f] = "/media" + excludePath[f]
+					if excludePath[f].startswith("/hdd"):
+						excludePath[f] = "/media" + excludePath[f]
 				print pluginPrintname, "Excluded movie path:", excludePath
 				for checkPath in moviePath:	
 					self.filterMovies(str(checkPath), excludePath)				
@@ -391,16 +405,22 @@ class AutomaticCleanup:
 			print pluginPrintname, "Orphaned movies cleanup disabled"
 
 	def filterMovies(self, scanPath, exclude = []):
-		if not scanPath.endswith("/"): scanPath += "/"
-		if scanPath.startswith("/hdd"): scanPath = "/media" + scanPath
-		if not path.exists(scanPath) or scanPath in exclude: return
-		if DEBUG: print pluginPrintname, "Checking moviepath:", scanPath
+		if not scanPath.endswith("/"):
+			scanPath += "/"
+		if scanPath.startswith("/hdd"):
+			scanPath = "/media" + scanPath
+		if not path.exists(scanPath) or scanPath in exclude:
+			return
+		if DEBUG:
+			print pluginPrintname, "Checking moviepath:", scanPath
 		extensions = [".ts.ap", ".ts.cuts", ".ts.cutsr", ".ts.gm", ".ts.meta", ".ts.sc", ".eit", ".png", ".ts_mp.jpg"]
 
 		for p in listdir(scanPath):
 			if path.isdir(scanPath + p):
-				try: self.filterMovies(scanPath + p, exclude)
-				except: pass
+				try:
+					self.filterMovies(scanPath + p, exclude)
+				except:
+					pass
 			else:
 				for ext in extensions:
 					if p.endswith(ext):
