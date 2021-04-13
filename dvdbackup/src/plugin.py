@@ -31,7 +31,7 @@ import skin
 
 PluginLanguageDomain = "DVDBackup"
 PluginLanguagePath = "Extensions/DVDBackup/locale/"
- 
+
 
 def localeInit():
 	gettext.bindtextdomain(PluginLanguageDomain, resolveFilename(SCOPE_PLUGINS, PluginLanguagePath))
@@ -383,7 +383,7 @@ class DVDBackupProgress(Screen):
 		self["text"] = Label()
 
 		self["list"] = DVDBackupList()
-		
+
 		self["actions"] = ActionMap(["ColorActions", "OkCancelActions"],
 			{
 				"cancel": self.exit,

@@ -18,9 +18,9 @@ language.addCallback(localeInit)
 def _(txt): # pylint: disable-msg=C0103
 	td = gettext.dgettext("NcidClient", txt)
 	if td == txt:
-		print "[NcidClient] fallback to default translation for", txt 
+		print "[NcidClient] fallback to default translation for", txt
 		td = gettext.gettext(txt)
-		
+
 	return td
 
 

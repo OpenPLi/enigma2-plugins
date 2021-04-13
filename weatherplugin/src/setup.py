@@ -72,7 +72,7 @@ class WeatherPluginEntriesListConfigScreen(Screen):
 		self["city"] = StaticText(_("City"))
 		self["language"] = StaticText(_("Language"))
 		self["key_red"] = StaticText(_("Back"))
-		self["key_green"] = StaticText(_("Add"))		
+		self["key_green"] = StaticText(_("Add"))
 		self["key_yellow"] = StaticText(_("Edit"))
 		self["key_blue"] = StaticText(_("Delete"))
 		self["entrylist"] = WeatherPluginEntryList([])
@@ -81,7 +81,7 @@ class WeatherPluginEntriesListConfigScreen(Screen):
 			 "ok": self.keyOK,
 			 "back": self.keyClose,
 			 "red": self.keyClose,
-			 "green": self.keyGreen,    
+			 "green": self.keyGreen,
 			 "yellow": self.keyYellow,
 			 "blue": self.keyDelete,
 			 }, -1)
@@ -220,7 +220,7 @@ class WeatherPluginEntryConfigScreen(ConfigListScreen, Screen):
 	def keyDelete(self):
 		if self.newmode == 1:
 			self.keyCancel()
-		else:		
+		else:
 			self.session.openWithCallback(self.deleteConfirm, MessageBox, _("Really delete this WeatherPlugin Entry?"))
 
 	def deleteConfirm(self, result):

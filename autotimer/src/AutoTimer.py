@@ -1191,7 +1191,7 @@ class AutoTimer:
 				or ((isMovie and extdesc1 and not extdesc2) or (not isMovie and not extdesc1 and not extdesc2 and name1 != name2))):
 				doDebug("[AutoTimer] Configuration caused this sortdesc/extdesc match to be ignored!")
 				return False
-			if force or timer.searchForDuplicateDescription > 0: 
+			if force or timer.searchForDuplicateDescription > 0:
 				if shortdesc1 and shortdesc2:
 					sequenceMatcher.set_seqs(shortdesc1, shortdesc2)
 					ratio = sequenceMatcher.ratio()

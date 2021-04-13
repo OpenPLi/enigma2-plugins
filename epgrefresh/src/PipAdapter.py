@@ -77,7 +77,7 @@ class PipAdapter:
 		if self.session.pip.playService(newservice):
 			self.session.pipshown = True
 			self.session.pip.servicePath = InfoBar.instance and InfoBar.instance.servicelist and InfoBar.instance.servicelist.getCurrentServicePath()
-			if self.hide: 
+			if self.hide:
 				self.hidePiP()
 		else:
 			self.session.pipshown = False
@@ -98,7 +98,7 @@ class PipAdapter:
 			return False
 		else:
 			if self.session.pip.playService(service):
-				if self.hide: 
+				if self.hide:
 					self.hidePiP()
 				self.session.pip.servicePath = InfoBar.instance and InfoBar.instance.servicelist and InfoBar.instance.servicelist.getCurrentServicePath()
 				return True
@@ -133,4 +133,3 @@ class PipAdapter:
 					pass
 		else:
 			self.session.pipshown = False
-

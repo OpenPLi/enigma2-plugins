@@ -57,7 +57,7 @@ if config.plugins.autotimer.timeout.value == 0:
 config.plugins.autotimer.add_to_channelselection = ConfigYesNo(default=False)
 config.plugins.autotimer.add_to_epgselection = ConfigYesNo(default=False)
 config.plugins.autotimer.add_to_multiepgselection = ConfigYesNo(default=False)
-config.plugins.autotimer.add_to_graph = ConfigYesNo(default=False) 
+config.plugins.autotimer.add_to_graph = ConfigYesNo(default=False)
 config.plugins.autotimer.try_guessing = ConfigYesNo(default=True)
 config.plugins.autotimer.editor = ConfigSelection(choices=[
 		("epg", _("Import from EPG")),

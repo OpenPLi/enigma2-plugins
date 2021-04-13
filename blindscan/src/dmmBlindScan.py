@@ -33,7 +33,7 @@ class TransponderSearchSupport:
 				frontend = raw_channel.getFrontend()
 				if frontend:
 					if do_close:
-						frontend.closeFrontend() # immediate close... 
+						frontend.closeFrontend() # immediate close...
 					if ret_boolean:
 						del raw_channel
 						del frontend
@@ -669,7 +669,7 @@ class DmmBlindscan(ConfigListScreen, Screen, TransponderSearchSupport, Satellite
 				nim_list.append((str(n.slot), n.friendly_full_description))
 		self.scan_nims = ConfigSelection(choices=nim_list)
 
-		self.scan_sat.bs_system = ConfigSelection(default=eDVBFrontendParametersSatellite.System_DVB_S2, 
+		self.scan_sat.bs_system = ConfigSelection(default=eDVBFrontendParametersSatellite.System_DVB_S2,
 			choices=[(eDVBFrontendParametersSatellite.System_DVB_S2, _("DVB-S + DVB-S2")),
 				(eDVBFrontendParametersSatellite.System_DVB_S, _("DVB-S only"))])
 

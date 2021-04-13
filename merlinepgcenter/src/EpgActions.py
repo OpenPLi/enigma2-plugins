@@ -6,8 +6,8 @@
 #  Coded by Shaderman (c) 2011
 #  Support: www.dreambox-tools.info
 #
-#  This plugin is licensed under the Creative Commons 
-#  Attribution-NonCommercial-ShareAlike 3.0 Unported 
+#  This plugin is licensed under the Creative Commons
+#  Attribution-NonCommercial-ShareAlike 3.0 Unported
 #  License. To view a copy of this license, visit
 #  http://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative
 #  Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.
@@ -16,7 +16,7 @@
 #  is licensed by Dream Multimedia GmbH.
 
 #  This plugin is NOT free software. It is open source, you are allowed to
-#  modify it (if you keep the license), but it may not be commercially 
+#  modify it (if you keep the license), but it may not be commercially
 #  distributed other than under the conditions noted above.
 #
 
@@ -28,7 +28,7 @@ from Tools.BoundFunction import boundFunction
 from EpgCenterList import MULTI_EPG_NOW, MULTI_EPG_NEXT, SINGLE_EPG, MULTI_EPG_PRIMETIME, TIMERLIST, EPGSEARCH_HISTORY, EPGSEARCH_RESULT, EPGSEARCH_MANUAL
 
 
-class MerlinEPGActions():		
+class MerlinEPGActions():
 	def __init__(self):
 		# TIMEREDITLIST
 		self["actions"] = ActionMap(["OkCancelActions", "DirectionActions", "ShortcutActions", "TimerEditActions"],
@@ -42,7 +42,7 @@ class MerlinEPGActions():
 			"up": self.up,
 			"down": self.down,
 		}, -1)
-		
+
 		# TAB NAVIGATION
 		self["tabNavigationActions"] = ActionMap(["TabNavigationActions"],
 		{
@@ -55,7 +55,7 @@ class MerlinEPGActions():
 			"5": boundFunction(self.keyNumber, number=5),
 			"6": boundFunction(self.keyNumber, number=6),
 		}, -1)
-		
+
 		# EPG TABS
 		self["epgTabBaseActions"] = ActionMap(["EpgTabBaseActions"],
 		{
@@ -71,7 +71,7 @@ class MerlinEPGActions():
 			"showEventInfo": self.keyInfo,
 			"ok": self.keyOk,
 		}, -1)
-		
+
 		# EPG HISTORY ACTIONS
 		self["epgHistoryActions"] = ActionMap(["EpgHistoryActions"],
 		{
@@ -82,7 +82,7 @@ class MerlinEPGActions():
 			"pageUp": self.keyLeft,
 			"pageDown": self.keyRight,
 		}, -1)
-		
+
 		# EPG MANUAL SEARCH ACTIONS
 		self["epgManualSearchActions"] = ActionMap(["EpgManualSearchActions"],
 		{
@@ -103,31 +103,31 @@ class MerlinEPGActions():
 			"9": boundFunction(self.keyNumber, number=9),
 			"0": boundFunction(self.keyNumber, number=0),
 		}, -1)
-		
+
 		# EPG RED
 		self["epgRedActions"] = ActionMap(["EpgRedActions"],
 		{
 			"red": self.keyRed,
 		}, -1)
-		
+
 		# EPG GREEN
 		self["epgGreenActions"] = ActionMap(["EpgGreenActions"],
 		{
 			"green": self.keyGreen,
 		}, -1)
-		
+
 		# EPG BLUE
 		self["epgBlueActions"] = ActionMap(["EpgBlueActions"],
 		{
 			"blue": self.keyBlue,
 		}, -1)
-		
+
 		# EPG YELLOW
 		self["epgYellowActions"] = ActionMap(["EpgYellowActions"],
 		{
 			"yellow": self.keyYellow,
 		}, -1)
-		
+
 		# EPG HISTORY ACTIONS
 		self["settingsActions"] = ActionMap(["SettingsActions"],
 		{
@@ -149,13 +149,13 @@ class MerlinEPGActions():
 			"left": self.keyLeft,
 			"right": self.keyRight,
 		}, -1)
-		
+
 		# TOGGLE CONFIG
 		self["toggleConfigActions"] = ActionMap(["ToggleConfigActions"],
 		{
 			"toggleConfig": self.keyMenu,
 		}, -1)
-		
+
 		# disable several action maps on start
 		self["actions"].setEnabled(False)
 		self["epgHistoryActions"].setEnabled(False)
@@ -165,7 +165,7 @@ class MerlinEPGActions():
 		self["epgBlueActions"].setEnabled(False)
 		self["settingsActions"].setEnabled(False)
 		self["toggleConfigActions"].setEnabled(True)
-		
+
 	def setActions(self):
 		# unset action map
 		if self.oldMode == MULTI_EPG_NOW or self.oldMode == MULTI_EPG_NEXT or self.oldMode == MULTI_EPG_PRIMETIME or self.oldMode == EPGSEARCH_RESULT:
@@ -188,7 +188,7 @@ class MerlinEPGActions():
 		elif self.oldMode == EPGSEARCH_MANUAL:
 			self["epgManualSearchActions"].setEnabled(False)
 			self["tabNavigationActions"].setEnabled(True)
-			
+
 		# set action map
 		if self.configTabsShown:
 			self["tabNavigationActions"].setEnabled(False)
@@ -220,9 +220,8 @@ class MerlinEPGActions():
 			self["epgManualSearchActions"].setEnabled(True)
 		elif self.currentMode == EPGSEARCH_RESULT:
 			self["tabNavigationActions"].setEnabled(False)
-			
+
 		if not self.configTabsShown:
 			self["settingsActions"].setEnabled(False)
 			self["tabNavigationActions"].setEnabled(True)
 			self["epgGreenActions"].setEnabled(True)
-			

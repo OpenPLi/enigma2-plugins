@@ -121,7 +121,7 @@ class DishPiP(Screen):
 
 	def __onHide(self):
 		self.__state = self.STATE_HIDDEN
-	
+
 	def stopDishpip(self):
 		self.__toHide()
 

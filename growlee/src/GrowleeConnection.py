@@ -107,4 +107,3 @@ class GrowleeConnection:
 
 
 growleeConnection = GrowleeConnection()
-

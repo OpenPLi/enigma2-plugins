@@ -365,4 +365,3 @@ class EPGRefreshSettingsResource(resource.Resource):
 				hasAutoTimer,
 				API_VERSION,
 			)
-

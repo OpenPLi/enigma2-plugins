@@ -122,7 +122,7 @@ class VPS_check(Screen):
 
 		self["infotext"] = StaticText(_("VPS-Plugin checks if the channel supports VPS ..."))
 
-		self["actions"] = ActionMap(["OkCancelActions"], 
+		self["actions"] = ActionMap(["OkCancelActions"],
 			{
 				"cancel": self.finish,
 			}, -1)
@@ -211,7 +211,7 @@ class VPS_check(Screen):
 				self.calledfinished = True
 				self.setServicePDC(1)
 				self.finish()
-				
+
 			elif line == "NO_PDC_AVAILABLE" and not self.calledfinished:
 				self.calledfinished = True
 				self.setServicePDC(0)

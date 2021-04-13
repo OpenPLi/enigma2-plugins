@@ -37,7 +37,7 @@ def initLog():
 	logger = logger or logging.getLogger("AT")
 	logger.setLevel(logging.DEBUG)
 
-	logger.handlers = [] 
+	logger.handlers = []
 
 	if config.plugins.autotimer.log_shell.value:
 		shandler = logging.StreamHandler(sys.stdout)
@@ -48,7 +48,7 @@ def initLog():
 
 		logger.addHandler(shandler)
 		logger.setLevel(logging.DEBUG)
-		
+
 	if config.plugins.autotimer.log_write.value:
 		try:
 			try:

@@ -21,7 +21,7 @@ class ShowLogScreen(Screen):
 		self.firstLineText = firstLineText
 		self.lastLineText = lastLineText
 		self["text"] = ScrollLabel("")
-		self["actions"] = ActionMap(["WizardActions", "DirectionActions", "ChannelSelectBaseActions"], 
+		self["actions"] = ActionMap(["WizardActions", "DirectionActions", "ChannelSelectBaseActions"],
 		{
 			"ok": self.cancel,
 			"back": self.cancel,

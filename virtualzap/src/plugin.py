@@ -495,9 +495,9 @@ class ExtendedVirtualZap(Screen, HelpableScreen):
 		self["servicePicon"] = Pixmap()
 		self["nowProgress"] = ProgressBar()
 		self["nowProgress"].hide()
-		self["ExtendedVirtualZapActions"] = HelpableActionMap(self, "ExtendedVirtualZapActions", 
+		self["ExtendedVirtualZapActions"] = HelpableActionMap(self, "ExtendedVirtualZapActions",
 		{
-			"ok": (self.ok, _("zap to PiP service and exit")), 
+			"ok": (self.ok, _("zap to PiP service and exit")),
 			"cancel": (self.closing, _("exit")),
 			"right": (self.keyRightCheck, _("zap to next channel/open service list")),
 			"left": (self.keyLeftCheck, _("zap to previous channel/open service list")),
@@ -561,7 +561,7 @@ class ExtendedVirtualZap(Screen, HelpableScreen):
 		self.servicelist = servicelist
 		if self.servicelist is None:
 			return
-		self.servicelist_orig_zap = self.servicelist.zap 
+		self.servicelist_orig_zap = self.servicelist.zap
 		self.servicelist.zap = self.servicelist_overwrite_zap
 		self.servicelist["actions"] = ActionMap(["OkCancelActions"],
 			{
@@ -702,7 +702,7 @@ class ExtendedVirtualZap(Screen, HelpableScreen):
 				if tuner is not None:
 					number = tuner.get("tuner_number", number)
 					type = tuner.get("tuner_type", '')
-					if type: 
+					if type:
 						tunerType = ' (%s)' % type
 					name = chr(number + 65) + tunerType
 					return _("Tuner %s") % name
@@ -719,13 +719,13 @@ class ExtendedVirtualZap(Screen, HelpableScreen):
 		if config.usage.multibouquet.value:
 			self.servicelist.prevBouquet()
 		self.updateInfos()
-		
+
 	def getServiceNumber(self, ref):
 		if isinstance(ref, eServiceReference):
 				root = self.servicelist.getRoot()
 				if root:
 					lastpath = root.getPath()
-					if not 'FROM BOUQUET "bouquets.' in lastpath: 
+					if not 'FROM BOUQUET "bouquets.' in lastpath:
 						if 'provider' in lastpath:
 							return 'P'
 						if 'satellitePosition ==' in lastpath:
@@ -986,7 +986,7 @@ class ExtendedVirtualZap(Screen, HelpableScreen):
 
 	def CheckItNow(self):
 		self.repeatUpdateInfos()
-	
+
 	def setPlayableService(self):
 		self.servicelist.servicelist.setPlayableIgnoreService(self.session.nav.getCurrentlyPlayingServiceReference() or eServiceReference())
 
@@ -1028,7 +1028,7 @@ class ExtendedVirtualZap(Screen, HelpableScreen):
 				self.pipservice = eServiceCenter.getInstance().play(ref)
 				if self.pipservice and not self.pipservice.setTarget(1, True):
 					self.pipservice.start()
-					if self.video_state is False: 
+					if self.video_state is False:
 						self["video"].show()
 						self.video_state = True
 					if not imitation:
@@ -1203,7 +1203,7 @@ class ExtendedVirtualZap(Screen, HelpableScreen):
 		if self.isPlayable():
 			self.updateInfos()
 
-	def __onClose(self): 
+	def __onClose(self):
 		self.servicelist.zap = self.servicelist_orig_zap
 		self.servicelist["actions"] = ActionMap(["OkCancelActions", "TvRadioActions"],
 			{

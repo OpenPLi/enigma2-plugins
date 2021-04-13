@@ -18,9 +18,9 @@ from Plugins.Plugin import PluginDescriptor
 from __init__ import _
 
 import string
-import sys 
+import sys
 import time
-from random import Random 
+from random import Random
 
 title = _("Change Root Password")
 
@@ -69,10 +69,10 @@ class ChangePasswdScreen(Screen):
 		self.list.append(getConfigListEntry(_('Enter new Password'), ConfigText(default=self.password, fixed_size=False)))
 		self["passwd"].setList(self.list)
 
-	def GeneratePassword(self): 
+	def GeneratePassword(self):
 		passwdChars = string.letters + string.digits
 		passwdLength = 8
-		return ''.join(Random().sample(passwdChars, passwdLength)) 
+		return ''.join(Random().sample(passwdChars, passwdLength))
 
 	def SetPasswd(self):
 		self.container = eConsoleAppContainer()
@@ -115,7 +115,7 @@ class ChangePasswdScreen(Screen):
 
 
 def startChange(menuid):
-	if menuid != "system": 
+	if menuid != "system":
 		return []
 	return [(title, main, "change_root_passwd", 50)]
 

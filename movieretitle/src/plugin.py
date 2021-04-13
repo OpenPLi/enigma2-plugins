@@ -299,4 +299,3 @@ class MovieRetitleBackgroundMover:
 global_background_mover = MovieRetitleBackgroundMover()
 
 global_message_block = False
-

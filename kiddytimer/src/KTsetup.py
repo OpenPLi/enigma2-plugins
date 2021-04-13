@@ -51,13 +51,13 @@ class KiddyTimerSetup(ConfigListScreen, Screen, ProtectedScreen):
         self.list = [
             getConfigListEntry(_("Enabled"), config.plugins.KiddyTimer.enabled),
             getConfigListEntry(_("PIN"), config.plugins.KiddyTimer.pin),
-            getConfigListEntry(_("Don't monitor TV started before"), config.plugins.KiddyTimer.monitorStartTime), 
-            getConfigListEntry(_("Don't monitor TV started after"), config.plugins.KiddyTimer.monitorEndTime), 
+            getConfigListEntry(_("Don't monitor TV started before"), config.plugins.KiddyTimer.monitorStartTime),
+            getConfigListEntry(_("Don't monitor TV started after"), config.plugins.KiddyTimer.monitorEndTime),
             getConfigListEntry(_("Style of timer"), config.plugins.KiddyTimer.timerStyle),
             getConfigListEntry(_("Timeout for activation dialog"), config.plugins.KiddyTimer.activationDialogTimeout)
             ]
         for i in range(0, 7):
-            self.list.append(getConfigListEntry(KTglob.DAYNAMES[i], config.plugins.KiddyTimer.dayTimes[i].timeValue))                
+            self.list.append(getConfigListEntry(KTglob.DAYNAMES[i], config.plugins.KiddyTimer.dayTimes[i].timeValue))
 
         ConfigListScreen.__init__(self, self.list)
 
@@ -65,7 +65,7 @@ class KiddyTimerSetup(ConfigListScreen, Screen, ProtectedScreen):
 
         self.skin_path = KTglob.plugin_path
         self.kiddyTimerStopped = False
-        
+
         # Plugin Information
         self.remainingTime = config.plugins.KiddyTimer.remainingTime.value
         sRemainingTime = KTglob.getTimeFromSeconds(self.remainingTime, True)
@@ -73,7 +73,7 @@ class KiddyTimerSetup(ConfigListScreen, Screen, ProtectedScreen):
         self["PluginInfo"] = Label(_("Plugin: %(plugin)s , Version: %(version)s") % dict(plugin=KTglob.PLUGIN_BASE, version=KTglob.PLUGIN_VERSION))
         self["RemainingTime"] = Label(_("Remaining time: %s") % sRemainingTime)
         self["LastDayStarted"] = Label(_("Last day started: %s") % config.plugins.KiddyTimer.lastStartDay.getValue())
-        
+
         # BUTTONS
         self["key_red"] = Button(_("Cancel"))
         self["key_green"] = Button(_("Save"))
@@ -101,7 +101,7 @@ class KiddyTimerSetup(ConfigListScreen, Screen, ProtectedScreen):
 
     def pinCancel(self, result):
         self.cancel()
-               
+
     def keyPositioner(self):
         self.session.open(KiddyTimerPositioner)
 
@@ -124,8 +124,8 @@ class KiddyTimerSetup(ConfigListScreen, Screen, ProtectedScreen):
             self.resetTimer()
         for x in self["config"].list:
             x[1].save()
-        configfile.save() 
-            
+        configfile.save()
+
         if config.plugins.KiddyTimer.enabled.value:
             kiddyTimer.startTimer()
         self.close()
@@ -136,7 +136,7 @@ class KiddyTimerSetup(ConfigListScreen, Screen, ProtectedScreen):
         self.close()
         if self.kiddyTimerStopped:
             kiddyTimer.startTimer()
-        
+
     def protectedWithPin(self):
         return config.plugins.KiddyTimer.pin.getValue()
 
@@ -152,11 +152,11 @@ class KiddyTimerPositioner(Screen, MovableScreen):
         self["TimerText"] = Label(_("01:00"))
         self["TimerSlider"] = ProgressBar()
         self["TimerSliderText"] = Label(_("01:00"))
-        
+
         if config.plugins.KiddyTimer.timerStyle.value == "clock":
             self["TimerGraph"].show()
             self["TimerText"].show()
-            self["TimerSlider"].hide()    
+            self["TimerSlider"].hide()
             self["TimerSliderText"].hide()
         else:
             self["TimerGraph"].hide()
@@ -164,7 +164,7 @@ class KiddyTimerPositioner(Screen, MovableScreen):
             self["TimerSlider"].show()
             self["TimerSliderText"].show()
 
-        self["actions"] = ActionMap(["OkCancelActions"], 
+        self["actions"] = ActionMap(["OkCancelActions"],
         {
          "ok": self.keyOK,
          "cancel": self.keyCancel
@@ -172,9 +172,9 @@ class KiddyTimerPositioner(Screen, MovableScreen):
 
         MovableScreen.__init__(self, config.plugins.KiddyTimer, [], 82, 82)
         self.startMoving()
-        
+
     def keyOK(self):
         self.close()
-    
+
     def keyCancel(self):
         self.close()

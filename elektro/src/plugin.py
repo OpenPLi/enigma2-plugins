@@ -17,7 +17,7 @@ from Screens.InfoBarGenerics import *
 # from RecordTimer import *
 
 
-import calendar 
+import calendar
 #################
 
 # Plugin
@@ -28,7 +28,7 @@ from Screens.Screen import Screen
 from Components.ConfigList import ConfigListScreen
 from Screens.MessageBox import MessageBox
 from Screens.Console import Console
-from Screens import Standby 
+from Screens import Standby
 
 # GUI (Summary)
 # from Screens.Setup import SetupSummary
@@ -73,7 +73,7 @@ debug = False # If set True, plugin will print some additional status info to tr
 session = None
 ElektroWakeUpTime = -1
 elektro_pluginversion = "3.4.5"
-elektrostarttime = 60 
+elektrostarttime = 60
 elektrosleeptime = 5
 elektroShutdownThreshold = 60 * 20
 ###############################################################################
@@ -180,7 +180,7 @@ def NASpowerdown(Nname, Nuser, Npass, Ncommand, Nport):
 
 
 def autostart(reason, **kwargs):
-	global session  
+	global session
 	if reason == 0 and kwargs.has_key("session"):
 		session = kwargs["session"]
 		session.open(DoElektro)
@@ -188,58 +188,58 @@ def autostart(reason, **kwargs):
 
 def getNextWakeup():
 	global ElektroWakeUpTime
-	
+
 	#it might happen, that session does not exist. I don't know why. :-(
 	if session is None:
 		return ElektroWakeUpTime
-	
+
 	nextTimer = session.nav.RecordTimer.getNextRecordingTime()
 	print pluginPrintname, "Now:", strftime("%a:%H:%M:%S", gmtime(time()))
 	if (nextTimer < 1) or (nextTimer > ElektroWakeUpTime):
 		print pluginPrintname, "Will wake up", strftime("%a:%H:%M:%S", gmtime(ElektroWakeUpTime))
 		return ElektroWakeUpTime
-	
+
 	#We have to make sure, that the Box will wake up because of us
 	# and not because of the timer
 	print pluginPrintname, "Will wake up due to the next timer", strftime("%a:%H:%M:%S", gmtime(nextTimer))
 	return nextTimer - 1
-	
+
 
 def Plugins(**kwargs):
 	if debug:
 		print pluginPrintname, "Setting entry points"
 	list = [
 		PluginDescriptor(
-			name=config.plugins.elektro.name.value, 
-			description=config.plugins.elektro.description.value + " " + _("Ver.") + " " + elektro_pluginversion, 
+			name=config.plugins.elektro.name.value,
+			description=config.plugins.elektro.description.value + " " + _("Ver.") + " " + elektro_pluginversion,
 			where=[
-				PluginDescriptor.WHERE_SESSIONSTART, 
+				PluginDescriptor.WHERE_SESSIONSTART,
 				PluginDescriptor.WHERE_AUTOSTART
-			], 
-			fnc=autostart, 
+			],
+			fnc=autostart,
 			wakeupfnc=getNextWakeup)
 		]
 	if config.plugins.elektro.menu.value == "plugin":
 		list.append(PluginDescriptor(
-			name=config.plugins.elektro.name.value, 
-			description=config.plugins.elektro.description.value + " " + _("Ver.") + " " + elektro_pluginversion, 
-			where=PluginDescriptor.WHERE_PLUGINMENU, 
-			icon="elektro.png", 
+			name=config.plugins.elektro.name.value,
+			description=config.plugins.elektro.description.value + " " + _("Ver.") + " " + elektro_pluginversion,
+			where=PluginDescriptor.WHERE_PLUGINMENU,
+			icon="elektro.png",
 			fnc=main)
 		)
 	else:
 		list.append(PluginDescriptor(
-			name=config.plugins.elektro.name.value, 
-			description=config.plugins.elektro.description.value + " " + _("Ver.") + " " + elektro_pluginversion, 
-			where=PluginDescriptor.WHERE_EXTENSIONSMENU, 
+			name=config.plugins.elektro.name.value,
+			description=config.plugins.elektro.description.value + " " + _("Ver.") + " " + elektro_pluginversion,
+			where=PluginDescriptor.WHERE_EXTENSIONSMENU,
 			fnc=main)
-		)		
-	
+		)
+
 	return list
 
-	
+
 def main(session, **kwargs):
-	try:	
+	try:
 	 	session.open(Elektro)
 	except:
 		print pluginPrintname, "Pluginexecution failed"
@@ -249,18 +249,18 @@ class ElektroProfile(ConfigListScreen, Screen):
 	skin = """
 			<screen position="center,center" size="600,400" title="Elektro Power Save Profile Times" >
 			<widget name="config" position="0,0" size="600,360" scrollbarMode="showOnDemand" />
-			
-			<widget name="key_red" position="0,360" size="140,40" valign="center" halign="center" zPosition="4"  foregroundColor="white" font="Regular;18" transparent="1"/> 
-			<widget name="key_green" position="140,360" size="140,40" valign="center" halign="center" zPosition="4"  foregroundColor="white" font="Regular;18" transparent="1"/> 
-			
+
+			<widget name="key_red" position="0,360" size="140,40" valign="center" halign="center" zPosition="4"  foregroundColor="white" font="Regular;18" transparent="1"/>
+			<widget name="key_green" position="140,360" size="140,40" valign="center" halign="center" zPosition="4"  foregroundColor="white" font="Regular;18" transparent="1"/>
+
 			<ePixmap name="red"    position="0,360"   zPosition="2" size="140,40" pixmap="skin_default/buttons/red.png" transparent="1" alphatest="on" />
 			<ePixmap name="green"  position="140,360" zPosition="2" size="140,40" pixmap="skin_default/buttons/green.png" transparent="1" alphatest="on" />
 		</screen>"""
-		
+
 	def __init__(self, session, args=0):
 		self.session = session
 		Screen.__init__(self, session)
-		
+
 		self.list = []
 
 		for i in range(7):
@@ -273,9 +273,9 @@ class ElektroProfile(ConfigListScreen, Screen):
 			self.list.append(getConfigListEntry(" 2. " + weekdays[i] + ": " + _("Sleep"), config.plugins.elektro.sleep2[i]))
 		self.list.append(getConfigListEntry(" 2. " + _("Next day starts at"), config.plugins.elektro.nextday2,
 			_("If the box is supposed to enter deep standby e.g. monday night at 1 AM, it actually is already tuesday. To enable this anyway, differing next day start time can be specified here.")))
-			
+
 		ConfigListScreen.__init__(self, self.list)
-		
+
 		self["key_red"] = Button(_("Cancel"))
 		self["key_green"] = Button(_("OK"))
 		self["setupActions"] = ActionMap(["SetupActions", "ColorActions"],
@@ -286,7 +286,7 @@ class ElektroProfile(ConfigListScreen, Screen):
 			"cancel": self.cancel,
 			"ok": self.save,
 		}, -2)
-	
+
 	def save(self):
 		#print "saving"
 		for x in self["config"].list:
@@ -304,25 +304,25 @@ class ElektroIP(ConfigListScreen, Screen):
 	skin = """
 			<screen position="center,center" size="600,400" title="Elektro Power Save IP Addresses to wait" >
 			<widget name="config" position="0,0" size="600,360" scrollbarMode="showOnDemand" />
-			
-			<widget name="key_red" position="0,360" size="140,40" valign="center" halign="center" zPosition="4"  foregroundColor="white" font="Regular;18" transparent="1"/> 
-			<widget name="key_green" position="140,360" size="140,40" valign="center" halign="center" zPosition="4"  foregroundColor="white" font="Regular;18" transparent="1"/> 
-			
+
+			<widget name="key_red" position="0,360" size="140,40" valign="center" halign="center" zPosition="4"  foregroundColor="white" font="Regular;18" transparent="1"/>
+			<widget name="key_green" position="140,360" size="140,40" valign="center" halign="center" zPosition="4"  foregroundColor="white" font="Regular;18" transparent="1"/>
+
 			<ePixmap name="red"    position="0,360"   zPosition="2" size="140,40" pixmap="skin_default/buttons/red.png" transparent="1" alphatest="on" />
 			<ePixmap name="green"  position="140,360" zPosition="2" size="140,40" pixmap="skin_default/buttons/green.png" transparent="1" alphatest="on" />
 		</screen>"""
-		
+
 	def __init__(self, session, args=0):
 		self.session = session
 		Screen.__init__(self, session)
-		
+
 		self.list = []
 
 		for i in range(10):
 			self.list.append(getConfigListEntry(_("IP Address"), config.plugins.elektro.ip[i]))
-			
+
 		ConfigListScreen.__init__(self, self.list)
-		
+
 		self["key_red"] = Button(_("Cancel"))
 		self["key_green"] = Button(_("OK"))
 		self["setupActions"] = ActionMap(["SetupActions", "ColorActions"],
@@ -333,7 +333,7 @@ class ElektroIP(ConfigListScreen, Screen):
 			"cancel": self.cancel,
 			"ok": self.save,
 		}, -2)
-	
+
 	def save(self):
 		#print "saving"
 		for x in self["config"].list:
@@ -362,7 +362,7 @@ class ElektroNASrun(ConfigListScreen, Screen):
 		self.timer.callback.append(self.DoNASrun)
 		self.timer.start(1000, True)
 
-		self["actions"] = ActionMap(["OkCancelActions"], 
+		self["actions"] = ActionMap(["OkCancelActions"],
 		{
 			"ok": self.cancel,
 			"cancel": self.cancel
@@ -380,20 +380,20 @@ class ElektroNAS(ConfigListScreen, Screen):
 	skin = """
 			<screen name="ElektroNAS" position="center,center" size="600,400" title="Elektro Power Save IP Telnet - Poweroff" >
 			<widget name="config" position="0,0" size="600,360" scrollbarMode="showOnDemand" />
-			
-			<widget name="key_red" position="0,360" size="140,40" valign="center" halign="center" zPosition="4"  foregroundColor="white" font="Regular;18" transparent="1"/> 
-			<widget name="key_green" position="140,360" size="140,40" valign="center" halign="center" zPosition="4"  foregroundColor="white" font="Regular;18" transparent="1"/> 
+
+			<widget name="key_red" position="0,360" size="140,40" valign="center" halign="center" zPosition="4"  foregroundColor="white" font="Regular;18" transparent="1"/>
+			<widget name="key_green" position="140,360" size="140,40" valign="center" halign="center" zPosition="4"  foregroundColor="white" font="Regular;18" transparent="1"/>
 			<widget name="key_yellow" position="280,360" size="140,40" valign="center" halign="center" zPosition="4"  foregroundColor="white" font="Regular;18" transparent="1"/>
-			
+
 			<ePixmap name="red"    position="0,360"   zPosition="2" size="140,40" pixmap="skin_default/buttons/red.png" transparent="1" alphatest="on" />
 			<ePixmap name="green"  position="140,360" zPosition="2" size="140,40" pixmap="skin_default/buttons/green.png" transparent="1" alphatest="on" />
-			<ePixmap name="yellow" position="280,360" zPosition="2" size="140,40" pixmap="skin_default/buttons/yellow.png" transparent="1" alphatest="on" /> 
+			<ePixmap name="yellow" position="280,360" zPosition="2" size="140,40" pixmap="skin_default/buttons/yellow.png" transparent="1" alphatest="on" />
 		</screen>"""
-		
+
 	def __init__(self, session, args=0):
 		self.session = session
 		Screen.__init__(self, session)
-		
+
 		self.list = []
 		self.list.append(getConfigListEntry(_("NAS/Server Name or IP"), config.plugins.elektro.NASname))
 		self.list.append(getConfigListEntry(_("Username"), config.plugins.elektro.NASuser))
@@ -401,9 +401,9 @@ class ElektroNAS(ConfigListScreen, Screen):
 		self.list.append(getConfigListEntry(_("Command [poweroff, shutdown -h,...]"), config.plugins.elektro.NAScommand))
 		self.list.append(getConfigListEntry(_("Telnet Port"), config.plugins.elektro.NASport))
 		self.list.append(getConfigListEntry(_("Waiting until poweroff"), config.plugins.elektro.NASwait))
-		
+
 		ConfigListScreen.__init__(self, self.list)
-		
+
 		self["key_red"] = Button(_("Cancel"))
 		self["key_green"] = Button(_("OK"))
 		self["key_yellow"] = Button(_("Run"))
@@ -440,35 +440,35 @@ class ElektroNAS(ConfigListScreen, Screen):
 class Elektro(ConfigListScreen, Screen):
 	skin = """
 		<screen name ="Elektro" position="center,center" size="630,480" title="Elektro Power Save" >
-			<widget name="key_red" position="4,5" size="140,40" valign="center" halign="center" zPosition="4"  foregroundColor="white" font="Regular;18" transparent="1"/> 
-			<widget name="key_green" position="165,5" size="140,40" valign="center" halign="center" zPosition="4"  foregroundColor="white" font="Regular;18" transparent="1"/> 
+			<widget name="key_red" position="4,5" size="140,40" valign="center" halign="center" zPosition="4"  foregroundColor="white" font="Regular;18" transparent="1"/>
+			<widget name="key_green" position="165,5" size="140,40" valign="center" halign="center" zPosition="4"  foregroundColor="white" font="Regular;18" transparent="1"/>
 			<widget name="key_yellow" position="325,5" size="140,40" valign="center" halign="center" zPosition="4"  foregroundColor="white" font="Regular;18" transparent="1"/>
 			<widget name="key_blue" position="485,5" size="140,40" valign="center" halign="center" zPosition="4"  foregroundColor="white" font="Regular;18" transparent="1"/>
-			
+
 			<ePixmap name="red"    position="5,5"   zPosition="2" size="140,40" pixmap="skin_default/buttons/red.png" transparent="1" alphatest="on" />
 			<ePixmap name="green"  position="165,5" zPosition="2" size="140,40" pixmap="skin_default/buttons/green.png" transparent="1" alphatest="on" />
-			<ePixmap name="yellow" position="325,5" zPosition="2" size="140,40" pixmap="skin_default/buttons/yellow.png" transparent="1" alphatest="on" /> 
-			<ePixmap name="blue"   position="485,5" zPosition="2" size="140,40" pixmap="skin_default/buttons/blue.png" transparent="1" alphatest="on" /> 
-			
-			<widget name="config" position="5,50" size="620,275" scrollbarMode="showOnDemand" />		
-			 
+			<ePixmap name="yellow" position="325,5" zPosition="2" size="140,40" pixmap="skin_default/buttons/yellow.png" transparent="1" alphatest="on" />
+			<ePixmap name="blue"   position="485,5" zPosition="2" size="140,40" pixmap="skin_default/buttons/blue.png" transparent="1" alphatest="on" />
+
+			<widget name="config" position="5,50" size="620,275" scrollbarMode="showOnDemand" />
+
 			<ePixmap pixmap="skin_default/div-h.png" position="0,330" zPosition="1" size="630,2" />
-			<widget source="help" render="Label" position="5,335" size="620,153" font="Regular;21" /> 					
-		</screen>""" 
-                			
+			<widget source="help" render="Label" position="5,335" size="620,153" font="Regular;21" />
+		</screen>"""
+
 	def __init__(self, session, args=0):
 		self.session = session
 		Screen.__init__(self, session)
 		if debug:
-			print pluginPrintname, "Displays config screen"			
+			print pluginPrintname, "Displays config screen"
 
 		self.onChangedEntry = []
-		
-		self.list = [	
+
+		self.list = [
 			getConfigListEntry(_("Active Time Profile"), config.plugins.elektro.profile,
 				_("The active Time Profile is (1 or 2).")),
 			getConfigListEntry(_("Enable Elektro Power Save"), config.plugins.elektro.enable,
-				_("Unless this is enabled, this plugin won't run automatically.")),							
+				_("Unless this is enabled, this plugin won't run automatically.")),
 			getConfigListEntry(_("Use both profiles alternately"), config.plugins.elektro.profileShift,
 				_("Both profiles are used alternately. When shutting down the other profile is enabled. This allows two time cycles per day. Do not overlap the times.")),
 			getConfigListEntry(_("Standby on boot"), config.plugins.elektro.standbyOnBoot,
@@ -494,11 +494,11 @@ class Elektro(ConfigListScreen, Screen):
 			getConfigListEntry(_("Name"), config.plugins.elektro.name,
 				_("Specify plugin name to be used in menu (needs GUI restart).")),
 			getConfigListEntry(_("Description"), config.plugins.elektro.description,
-				_("Specify plugin description to be used in menu (needs GUI restart).")),		
-			]		
-				
+				_("Specify plugin description to be used in menu (needs GUI restart).")),
+			]
+
 		ConfigListScreen.__init__(self, self.list, session=session, on_change=self.changed)
-		
+
 		def selectionChanged():
 			if self["config"].current:
 				self["config"].current[1].onDeselect(self.session)
@@ -507,16 +507,16 @@ class Elektro(ConfigListScreen, Screen):
 				self["config"].current[1].onSelect(self.session)
 			for x in self["config"].onSelectionChanged:
 				x()
-				
+
 		self["config"].selectionChanged = selectionChanged
 		self["config"].onSelectionChanged.append(self.configHelp)
-		
+
 		self["key_red"] = Button(_("Cancel"))
 		self["key_green"] = Button(_("OK"))
 		self["key_yellow"] = Button(_("Help"))
 		self["key_blue"] = Button(_("Times"))
 		self["help"] = StaticText()
-		
+
 		self["setupActions"] = ActionMap(["SetupActions", "ColorActions"],
 		{
 			"red": self.keyCancel,
@@ -527,7 +527,7 @@ class Elektro(ConfigListScreen, Screen):
 			"cancel": self.keyCancel,
 			"ok": self.keyOK,
 		}, -2)
-		
+
 		# Trigger change
 		self.changed()
 
@@ -553,14 +553,14 @@ class Elektro(ConfigListScreen, Screen):
 			try:
 				x()
 			except Exception:
-				pass	
-			
+				pass
+
 	def getCurrentEntry(self):
 		return self["config"].getCurrent()[0]
 
 	def getCurrentValue(self):
 		return str(self["config"].getCurrent()[1].getText())
-		
+
 	def help(self):
 		self.session.open(Console, _("Showing Elektro readme.txt"), ["cat /usr/lib/enigma2/python/Plugins/Extensions/Elektro/%s" % _("readme.txt")])
 
@@ -570,51 +570,51 @@ class Elektro(ConfigListScreen, Screen):
 
 class DoElektro(Screen):
 	skin = """ <screen position="center,center" size="300,300" title="Elektro Plugin Menu" > </screen>"""
-	
+
 	def __init__(self, session):
 		Screen.__init__(self, session)
-		
+
 		print pluginPrintname, "Starting up Version", elektro_pluginversion
-		
+
 		self.session = session
-		
+
 		# Make sure wakeup time is set.
 		self.setNextWakeuptime()
-		
+
 		# If we didn't wake up by a timer we don't want to go to sleep any more.
 		# Unforturnately it is not possible to use getFPWasTimerWakeup()
 		# Therfore we're checking wheter there is a recording starting within
-		# the next five min		
+		# the next five min
 		self.dontsleep = False
-		
+
 		#Let's assume we got woken up manually
 		timerWakeup = False
-		
+
 		#Is a recording already runniong ->woken up by a timer
 		if self.session.nav.RecordTimer.isRecording():
 			timerWakeup = True
-		# Is the next timer within 5 min -> woken up by a timer	
+		# Is the next timer within 5 min -> woken up by a timer
 		if abs(self.session.nav.RecordTimer.getNextRecordingTime() - time()) <= 360:
 			timerWakeup = True
-			
+
 		# Did we wake up by Elektro?
 		# Let's hope this get's run early enaugh, and this get's run
 		# before the requested wakeup-time (should be the case)
 		#
 		if abs(ElektroWakeUpTime - time()) <= 360:
-			timerWakeup = True	
-			
-		# If the was a manual wakeup: Don't go to sleep	
+			timerWakeup = True
+
+		# If the was a manual wakeup: Don't go to sleep
 		if timerWakeup == False:
 			self.dontsleep = True
 
 		#Check whether we should try to sleep:
 		trysleep = config.plugins.elektro.standbyOnBoot.value
-		
+
 		#Don't go to sleep when this was a manual wakeup and the box shouldn't go to standby
 		if timerWakeup == False and config.plugins.elektro.standbyOnManualBoot.value == False:
 			trysleep = False
-			
+
 		#if waken up by timer and configured ask whether to go to sleep.
 		if trysleep:
 			self.TimerStandby = eTimer()
@@ -625,17 +625,17 @@ class DoElektro(Screen):
 		self.TimerSleep = eTimer()
 		self.TimerSleep.callback.append(self.CheckElektro)
 		self.TimerSleep.startLongTimer(elektrostarttime)
-		print pluginPrintname, "Set up sleep timer"		
+		print pluginPrintname, "Set up sleep timer"
 		if debug:
 			print pluginPrintname, "Translation test:", _("Standby on boot")
-		
+
 	def clkToTime(self, clock):
 		return ((clock.value[0]) * 60 + (int)(clock.value[1])) * 60
-		
+
 	def getTime(self):
 		ltime = localtime()
 		return ((int)(ltime.tm_hour) * 60 + (int)(ltime.tm_min)) * 60
-	
+
 	def getPrintTime(self, secs):
 		return strftime("%H:%M:%S", gmtime(secs))
 
@@ -648,7 +648,7 @@ class DoElektro(Screen):
 		else:
 			nextday = self.clkToTime(config.plugins.elektro.nextday2)
 		return (time - nextday) % (24 * 60 * 60)
-		
+
 	def CheckStandby(self):
 		print pluginPrintname, "Showing Standby Sceen"
 		try:
@@ -669,13 +669,13 @@ class DoElektro(Screen):
 		#  - Elektro isn't enabled
 		#  - Elektro shouldn't wake up
 		#  - Holiday mode is turned on
-		if ((config.plugins.elektro.enable.value == False) 
+		if ((config.plugins.elektro.enable.value == False)
 		      or (config.plugins.elektro.dontwakeup.value == True)
-		      or config.plugins.elektro.holiday.value == True): 
+		      or config.plugins.elektro.holiday.value == True):
 			global ElektroWakeUpTime
 			ElektroWakeUpTime = -1
 			return
-			
+
 		time_s = self.getTime()
 		ltime = localtime()
 		if config.plugins.elektro.profile.value == "1":
@@ -686,7 +686,7 @@ class DoElektro(Screen):
 			config_wakeup = config.plugins.elektro.wakeup2
 			config_sleep = config.plugins.elektro.sleep2
 			config_nextday = config.plugins.elektro.nextday2
-		
+
 		#print pluginPrintname, "Nextday:", time.ctime(self.clkToTime(config.plugins.elektro.nextday))
 		# If it isn't past next-day time we need yesterdays settings
 		#
@@ -699,28 +699,28 @@ class DoElektro(Screen):
 		# Relative Time is needed for this
 		time_s = self.getReltime(time_s)
 		wakeuptime = self.getReltime(self.clkToTime(config_wakeup[day]))
-		
+
 		# Lets see if we already woke up today
 		if wakeuptime < time_s:
 			#yes we did -> Next wakeup is tomorrow
-			if debug:			
+			if debug:
 				print pluginPrintname, "Wakeup tomorrow"
 			day = (day + 1) % 7
 			wakeuptime = self.getReltime(self.clkToTime(config_wakeup[day]))
-		
+
 		# Tomorrow we'll wake up erly-> Add a full day.
 		if wakeuptime < time_s:
 			wakeuptime = wakeuptime + 24 * 60 * 60
-		
+
 		# The next wakeup will be in wakupin seconds
 		wakeupin = wakeuptime - time_s
-		
+
 		# Now add this to the current time to get the wakeuptime
 		wakeuptime = (int)(time()) + wakeupin
-		
+
 		#Write everything to the global variable
 		ElektroWakeUpTime = wakeuptime
-			
+
 	def CheckElektro(self):
 		# first set the next wakeuptime - it would be much better to call that function on sleep. This will be a todo!
 		self.setNextWakeuptime()
@@ -736,7 +736,7 @@ class DoElektro(Screen):
 			config_wakeup = config.plugins.elektro.wakeup2
 			config_sleep = config.plugins.elektro.sleep2
 			config_nextday = config.plugins.elektro.nextday2
-		
+
 		#Which day is it? The next day starts at nextday
 		if debug:
 			print pluginPrintname, "wday 1:", str(ltime.tm_wday)
@@ -744,9 +744,9 @@ class DoElektro(Screen):
 			day = (ltime.tm_wday - 1) % 7
 		else:
 			day = ltime.tm_wday
-		if debug:	
+		if debug:
 			print pluginPrintname, "wday 2:", str(day)
-		
+
 		#Let's get the day
 		wakeuptime = self.clkToTime(config_wakeup[day])
 		sleeptime = self.clkToTime(config_sleep[day])
@@ -756,17 +756,17 @@ class DoElektro(Screen):
 		print pluginPrintname, "Current time:", self.getPrintTime(time_s)
 		print pluginPrintname, "Wakeup time:", self.getPrintTime(wakeuptime)
 		print pluginPrintname, "Sleep time:", self.getPrintTime(sleeptime)
-		
+
 		#convert into relative Times
 		time_s = self.getReltime(time_s)
 		wakeuptime = self.getReltime(wakeuptime)
 		sleeptime = self.getReltime(sleeptime)
-		
+
 		if debug:
 			print pluginPrintname, "Current Rel-time:", self.getPrintTime(time_s)
 			print pluginPrintname, "Wakeup Rel-time:", self.getPrintTime(wakeuptime)
 			print pluginPrintname, "Sleep Rel-time:", self.getPrintTime(sleeptime)
-		
+
 		#let's see if we should be sleeping
 		trysleep = False
 		if time_s < (wakeuptime - elektroShutdownThreshold): # Wakeup is in the future -> sleep!
@@ -775,32 +775,32 @@ class DoElektro(Screen):
 		if sleeptime < time_s: #Sleep is in the past -> sleep!
 			trysleep = True
 			print pluginPrintname, "Sleep:", str(sleeptime), " <", str(time_s)
-		
+
 		#We are not tying to go to sleep anymore -> maybe go to sleep again the next time
 		if trysleep == False:
 			self.dontsleep = False
-		
+
 		#The User aborted to got to sleep -> Don't go to sleep.
 		if self.dontsleep:
 			trysleep = False
-			
+
 		# If we are in holydaymode we should try to got to sleep anyway
 		# This should be set after self.dontsleep has been handled
 		if config.plugins.elektro.holiday.value:
 			trysleep = True
-		
+
 		# We are not enabled -> Dont go to sleep (This could have been catched earlier!)
 		if config.plugins.elektro.enable.value == False:
 			trysleep = False
-		
+
 		# Only go to sleep if we are in standby or sleep is forced by settings
 		if not ((Standby.inStandby) or (config.plugins.elektro.force.value == True)):
 			trysleep = False
-		
+
 		# No Sleep while recording
 		if self.session.nav.RecordTimer.isRecording():
 			trysleep = False
-		
+
 		# No Sleep on Online IPs - joergm6
 		if trysleep == True and config.plugins.elektro.IPenable.value == True:
 			for i in range(10):
@@ -816,23 +816,23 @@ class DoElektro(Screen):
 			hddlist = harddiskmanager.HDDList()
 			if not hddlist[0][1].isSleeping():
 				trysleep = False
-		
+
 		# Will there be a recording in a short while?
 		nextRecTime = self.session.nav.RecordTimer.getNextRecordingTime()
 		if (nextRecTime > 0) and (nextRecTime - (int)(time()) < elektroShutdownThreshold):
 			trysleep = False
-			
+
 		# Looks like there really is a reason to go to sleep -> Lets try it!
 		if trysleep:
 			#self.();
 			try:
-				self.session.openWithCallback(self.DoElektroSleep, MessageBox, _("Go to sleep now?"), type=MessageBox.TYPE_YESNO, timeout=60)	
+				self.session.openWithCallback(self.DoElektroSleep, MessageBox, _("Go to sleep now?"), type=MessageBox.TYPE_YESNO, timeout=60)
 			except:
 				#reset the timer and try again
-				self.TimerSleep.startLongTimer(elektrostarttime) 
-				
+				self.TimerSleep.startLongTimer(elektrostarttime)
+
 		#set Timer, which calls this function again.
-		self.TimerSleep.startLongTimer(elektrostarttime) 
+		self.TimerSleep.startLongTimer(elektrostarttime)
 
 	def DoElektroSleep(self, retval):
 		config_NASenable = True if config.plugins.elektro.NASenable.value == config.plugins.elektro.profile.value else False
@@ -844,7 +844,7 @@ class DoElektro(Screen):
 			# os.system("wall 'Powermanagent does Deepsleep now'")
 			#  Notifications.AddNotification(TryQuitMainloop,1)
 			# 1 = Deep Standby -> enigma2:/doc/RETURNCODES
-			
+
 			global inTryQuitMainloop
 			if Standby.inTryQuitMainloop == False:
 				if config.plugins.elektro.NASenable.value == "true" or config_NASenable:
@@ -856,4 +856,4 @@ class DoElektro(Screen):
 			# Dont try to sleep until next wakeup
 			self.dontsleep = True
 			#Start the timer again
-			self.TimerSleep.startLongTimer(elektrostarttime) 
+			self.TimerSleep.startLongTimer(elektrostarttime)

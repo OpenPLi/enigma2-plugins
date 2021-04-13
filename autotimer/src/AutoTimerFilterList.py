@@ -34,7 +34,7 @@ class AutoTimerFilterList(MenuList):
 		self.colorDisabled = 12368828
 
 	def applySkin(self, desktop, parent):
-		attribs = [] 
+		attribs = []
 		if self.skinAttributes is not None:
 			for (attrib, value) in self.skinAttributes:
 				if attrib == "font":
@@ -120,11 +120,11 @@ class AutoTimerFilterListOverview(Screen):
 			self["config"].onSelectionChanged.append(self.updateFilterDate)
 			self["actions"] = ActionMap(["OkCancelActions", "ColorActions", "InfobarActions", "MenuActions"],
 				{
-					"ok": self.ok, 
+					"ok": self.ok,
 					"cancel": self.cancel,
 					"red": self.cancel,
-					"green": self.save, 
-					"yellow": self.remove, 
+					"green": self.save,
+					"yellow": self.remove,
 					"blue": self.add,
 					"showTv": self.sortList,
 					"menu": self.add_copy,

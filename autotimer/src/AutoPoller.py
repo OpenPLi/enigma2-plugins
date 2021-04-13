@@ -70,7 +70,7 @@ class AutoPollerThread(Thread):
 				_("AutoTimer\n%d timer(s) were added.") % (ret[1]),
 				MessageBox.TYPE_INFO,
 				config.plugins.autotimer.popup_timeout.value,
-				TIMERNOTIFICATIONID 
+				TIMERNOTIFICATIONID
 			)
 
 	def start(self, initial=True):

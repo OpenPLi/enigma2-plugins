@@ -157,4 +157,3 @@ def Plugins(**kwargs):
           PluginDescriptor(name="HTTP Proxy", description="use your Dreambox as Web Proxy", where=PluginDescriptor.WHERE_PLUGINMENU, fnc=main),
           PluginDescriptor(where=[PluginDescriptor.WHERE_NETWORKCONFIG_READ], fnc=autostart)
           ]
-

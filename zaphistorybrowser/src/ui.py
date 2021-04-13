@@ -68,7 +68,7 @@ class ZapHistoryConfigurator(ConfigListScreen, Screen):
 		ConfigListScreen.__init__(self, [
 			getConfigListEntry(_("Enable zap history:"), config.plugins.ZapHistoryConfigurator.enable_zap_history),
 			getConfigListEntry(_("Maximum zap history entries:"), config.plugins.ZapHistoryConfigurator.maxEntries_zap_history)])
-		
+
 		self["actions"] = ActionMap(["OkCancelActions", "ColorActions"],
 			{
 				"ok": self.save,
@@ -145,7 +145,7 @@ class ZapHistoryBrowser(Screen, ProtectedScreen):
 				"yellow": self.zapAndClose,
 				"blue": self.config
 			}, prio=-1)
-		
+
 		self.onLayoutFinish.append(self.buildList)
 
 	def buildList(self):
