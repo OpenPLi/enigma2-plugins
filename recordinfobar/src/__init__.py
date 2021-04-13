@@ -4,7 +4,7 @@ import gettext
 
 """RecInfobar"""
 
-PLUGIN_PATH = os.path.dirname( __file__ )
+PLUGIN_PATH = os.path.dirname(__file__)
 PLUGIN_NAME = os.path.basename(PLUGIN_PATH)
 TEXT_DOMAIN = PLUGIN_NAME
 

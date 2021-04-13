@@ -331,10 +331,10 @@ class AutoTimerOverview(Screen, HelpableScreen):
 		from plugin import autotimerHelp
 		if autotimerHelp:
 			list.append((_("Help"), "help"))
-			list.append((_("Frequently asked questions") , "faq"))
+			list.append((_("Frequently asked questions"), "faq"))
 
 		keys = ["menu"]
-		keys = [ "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "red", "green", "yellow", "blue" ][:len(list)] + (len(list) - 14) * [""] + keys
+		keys = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "red", "green", "yellow", "blue"][:len(list)] + (len(list) - 14) * [""] + keys
 		list.append((_("Setup"), "setup"))
 
 		self.session.openWithCallback(

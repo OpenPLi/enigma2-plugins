@@ -334,7 +334,7 @@ class RecInfoBar(Screen):
 		cnt = 0
 		fields = ["","","","","","","","",""] # [numbers,names,timelens,providers,bouquets,recnames,tuner,remaining,snrvalue]
 		for (key, value) in self.reclist.items():
-			r = int( math.floor(value[7][0] - Time()))
+			r = int(math.floor(value[7][0] - Time()))
 			cnt += 1
 			if cnt > 1:
 				for x in range(len(fields)):

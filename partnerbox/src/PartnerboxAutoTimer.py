@@ -153,7 +153,7 @@ class PartnerboxAutoTimerOverview(AutoTimerOverview):
 
 	def cancel(self):
 		if self.changed:
-			self.session.openWithCallback(self.cancelConfirm, ChoiceBox, title=_('Really close without saving settings?\nWhat do you want to do?') , list=[(_('Close without saving'), 'close'), (_('Close and save'), 'close_save')])
+			self.session.openWithCallback(self.cancelConfirm, ChoiceBox, title=_('Really close without saving settings?\nWhat do you want to do?'), list=[(_('Close without saving'), 'close'), (_('Close and save'), 'close_save')])
 		else:
 			self.close(None)
 

@@ -838,7 +838,7 @@ class ExtendedVirtualZap(Screen, HelpableScreen):
 		self.session.open(EPGSelection, current.ref)
 
 	def openEventView(self):
-		epglist = [ ]
+		epglist = []
 		self.epglist = epglist
 		service = ServiceReference(self.servicelist.getCurrentSelection())
 		ref = service.ref
@@ -1374,7 +1374,7 @@ def InfoBarShowHide__init__(self):
 			del self["ShowHideActions"]
 		except:
 			pass
-		self["myactions"] = ActionMap( ["myShowHideActions"] ,
+		self["myactions"] = ActionMap(["myShowHideActions"],
 		{
 			"toggleShow": self.okButtonCheck,
 			"longOK": self.showVZ,
@@ -1382,7 +1382,7 @@ def InfoBarShowHide__init__(self):
 			"hideLong": self.hideLong,
 		}, prio=1)
 	elif config.plugins.extvirtualzap.mode.value != "3":
-		self["ShowHideActions"] = ActionMap( ["InfobarShowHideActions"] ,
+		self["ShowHideActions"] = ActionMap(["InfobarShowHideActions"],
 		{
 			"toggleShow": self.okButtonCheck,
 			"hide": self.newHide,

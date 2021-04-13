@@ -53,7 +53,7 @@ class Channelnumber:
 		self.zaPrik = eTimer()
 		self.zaPrik.timeout.get().append(self.vrime)
 		self.zaPrik.start(1000, 1)
-		self.onClose = [ ]
+		self.onClose = []
 
 		self.__event_tracker = ServiceEventTracker(screen=self,eventmap={
 				iPlayableService.evUpdatedEventInfo: self.__eventInfoChanged,
@@ -229,7 +229,7 @@ class VFD_INISetup(ConfigListScreen, Screen):
 		self.setTitle(_("Control 7 segment VFD display"))
 		self.onClose.append(self.abort)
 
-		self.onChangedEntry = [ ]
+		self.onChangedEntry = []
 			
 		self.list = []
 		ConfigListScreen.__init__(self, self.list, session=self.session, on_change=self.changedEntry)
@@ -300,7 +300,7 @@ class VFD_INISetup(ConfigListScreen, Screen):
 class VFD_INI:
 	def __init__(self, session):
 		self.session = session
-		self.onClose = [ ]
+		self.onClose = []
 		initVFD()
 
 		global ChannelnumberInstance
@@ -315,7 +315,7 @@ class VFD_INI:
 
 def main(menuid):
 	if menuid != "system":
-		return [ ]
+		return []
 	return [(_("VFD Display Setup"), startVFD, "vfd_ini", None)]
 
 def startVFD(session, **kwargs):
@@ -349,6 +349,6 @@ def sessionstart(reason, **kwargs):
 def Plugins(**kwargs):
 	from Components.SystemInfo import SystemInfo
 	if SystemInfo["FrontpanelDisplay"]:
-		return [ PluginDescriptor(where=[PluginDescriptor.WHERE_AUTOSTART, PluginDescriptor.WHERE_SESSIONSTART], fnc=sessionstart),
-			PluginDescriptor(name="VFD Display Setup", description=_("Change VFD display settings"),where=PluginDescriptor.WHERE_MENU, fnc=main) ]
+		return [PluginDescriptor(where=[PluginDescriptor.WHERE_AUTOSTART, PluginDescriptor.WHERE_SESSIONSTART], fnc=sessionstart),
+			PluginDescriptor(name="VFD Display Setup", description=_("Change VFD display settings"),where=PluginDescriptor.WHERE_MENU, fnc=main)]
 	return []

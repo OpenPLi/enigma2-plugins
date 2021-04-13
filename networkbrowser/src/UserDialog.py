@@ -41,7 +41,7 @@ class UserDialog(Screen, ConfigListScreen):
 			<widget name="HelpWindow" pixmap="skin_default/vkey_icon.png" position="160,250" zPosition="1" size="1,1" transparent="1" alphatest="on" />	
 		</screen>"""
 
-	def __init__(self, session, plugin_path, hostinfo=None ):
+	def __init__(self, session, plugin_path, hostinfo=None):
 		self.skin_path = plugin_path
 		self.session = session
 		Screen.__init__(self, self.session)
@@ -100,9 +100,9 @@ class UserDialog(Screen, ConfigListScreen):
 
 	def KeyText(self):
 		if self["config"].getCurrent() == self.usernameEntry:
-			self.session.openWithCallback(lambda x : self.VirtualKeyBoardCallback(x, 'username'), VirtualKeyBoard, title=(_("Enter username:")), text=self.username.value)
+			self.session.openWithCallback(lambda x: self.VirtualKeyBoardCallback(x, 'username'), VirtualKeyBoard, title=(_("Enter username:")), text=self.username.value)
 		if self["config"].getCurrent() == self.passwordEntry:
-			self.session.openWithCallback(lambda x : self.VirtualKeyBoardCallback(x, 'password'), VirtualKeyBoard, title=(_("Enter password:")), text=self.password.value)
+			self.session.openWithCallback(lambda x: self.VirtualKeyBoardCallback(x, 'password'), VirtualKeyBoard, title=(_("Enter password:")), text=self.password.value)
 
 	def VirtualKeyBoardCallback(self, callback=None, entry=None):
 		if callback is not None and len(callback) and entry is not None and len(entry):
@@ -131,6 +131,6 @@ class UserDialog(Screen, ConfigListScreen):
 
 	def ok(self):
 		current = self["config"].getCurrent()
-		hostdata = { 'username': self.username.value, 'password': self.password.value }
+		hostdata = {'username': self.username.value, 'password': self.password.value}
 		write_cache(self.cache_file, hostdata)
 		self.close(True)

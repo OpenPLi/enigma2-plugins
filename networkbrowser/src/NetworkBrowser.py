@@ -172,7 +172,7 @@ class NetworkBrowser(Screen):
 				nwlist.append(netscan.netzInfo(result[0] + "/24"))
 				self.networklist += nwlist[0]
 			elif result[1] == "nfs":
-				self.networklist.append(['host', result[0], result[0] , '00:00:00:00:00:00', result[0], 'Master Browser'])
+				self.networklist.append(['host', result[0], result[0], '00:00:00:00:00:00', result[0], 'Master Browser'])
 
 		if len(self.networklist) > 0:
 			write_cache(self.cache_file, self.networklist)
@@ -183,11 +183,11 @@ class NetworkBrowser(Screen):
 			self.statuslist = []
 			if status == 'update':
 				statuspng = LoadPixmap(cached=True, path=resolveFilename(SCOPE_PLUGINS, "SystemPlugins/NetworkBrowser/icons/update.png"))
-				self.statuslist.append(( ['info'], statuspng, _("Searching your network. Please wait..."), None, None, None, None ))
+				self.statuslist.append((['info'], statuspng, _("Searching your network. Please wait..."), None, None, None, None))
 				self['list'].setList(self.statuslist)
 			elif status == 'error':
 				statuspng = LoadPixmap(cached=True, path=resolveFilename(SCOPE_PLUGINS, "SystemPlugins/NetworkBrowser/icons/error.png"))
-				self.statuslist.append(( ['info'], statuspng, _("No network devices found!"), None, None, None, None ))
+				self.statuslist.append((['info'], statuspng, _("No network devices found!"), None, None, None, None))
 				self['list'].setList(self.statuslist)
 
 	def process_NetworkIPs(self):
@@ -261,7 +261,7 @@ class NetworkBrowser(Screen):
 			hostentry = self.network[x][0][1]
 			name = hostentry[2] + " ( " +hostentry[1].strip() + " )"
 			expandableIcon = LoadPixmap(cached=True, path=resolveFilename(SCOPE_PLUGINS, "SystemPlugins/NetworkBrowser/icons/host.png"))
-			self.list.append(( hostentry, expandableIcon, name, None, None, None, None ))
+			self.list.append((hostentry, expandableIcon, name, None, None, None, None))
 
 		if len(self.list):
 			for entry in self.list:
@@ -291,14 +291,14 @@ class NetworkBrowser(Screen):
 				hostentry = self.network[x][0][1]
 				name = hostentry[2] + " ( " +hostentry[1].strip() + " )"
 				expandedIcon = LoadPixmap(cached=True, path=resolveFilename(SCOPE_PLUGINS, "SystemPlugins/NetworkBrowser/icons/host.png"))
-				self.list.append(( hostentry, expandedIcon, name, None, None, None, None ))
+				self.list.append((hostentry, expandedIcon, name, None, None, None, None))
 				for share in networkshares:
 					self.list.append(self.BuildNetworkShareEntry(share))
 			else: # HOSTLIST - VIEW
 				hostentry = self.network[x][0][1]
 				name = hostentry[2] + " ( " +hostentry[1].strip() + " )"
 				expandableIcon = LoadPixmap(cached=True, path=resolveFilename(SCOPE_PLUGINS, "SystemPlugins/NetworkBrowser/icons/host.png"))
-				self.list.append(( hostentry, expandableIcon, name, None, None, None, None ))
+				self.list.append((hostentry, expandableIcon, name, None, None, None, None))
 		if len(self.list):
 			for entry in self.list:
 				entry[0][2]= "%3s.%3s.%3s.%3s" % tuple(entry[0][2].split("."))
@@ -378,7 +378,7 @@ class NetworkBrowser(Screen):
 					self.hostdata = load_cache(self.hostcache_file)
 					self.passwordQuestion(False)
 				except:
-					self.session.openWithCallback(self.passwordQuestion, MessageBox, (_("Do you want to enter a username and password for this host?\n") ) )
+					self.session.openWithCallback(self.passwordQuestion, MessageBox, (_("Do you want to enter a username and password for this host?\n")))
 
 		if sel[0][0] == 'nfsShare': # share entry selected
 			print '[Networkbrowser] sel nfsShare'
@@ -390,7 +390,7 @@ class NetworkBrowser(Screen):
 				print '[Networkbrowser] userinfo found from ', self.sharecache_file
 				self.openMountEdit(sel[0])
 			else:
-				self.session.openWithCallback(self.passwordQuestion, MessageBox, (_("Do you want to enter a username and password for this host?\n") ) )
+				self.session.openWithCallback(self.passwordQuestion, MessageBox, (_("Do you want to enter a username and password for this host?\n")))
 
 	def passwordQuestion(self, ret=False):
 		sel = self["list"].getCurrent()
@@ -419,7 +419,7 @@ class NetworkBrowser(Screen):
 			mounts = iAutoMount.getMountsList()
 			if selection[0] == 'nfsShare': # share entry selected
 				#Initialize blank mount enty
-				data = { 'isMounted': False, 'active': False, 'ip': False, 'sharename': False, 'sharedir': False, 'username': False, 'password': False, 'mounttype' : False, 'options' : False }
+				data = {'isMounted': False, 'active': False, 'ip': False, 'sharename': False, 'sharedir': False, 'username': False, 'password': False, 'mounttype': False, 'options': False}
 				# add data
 				data['mounttype'] = 'nfs'
 				data['active'] = True
@@ -434,7 +434,7 @@ class NetworkBrowser(Screen):
 				self.session.openWithCallback(self.MountEditClosed,AutoMountEdit, self.skin_path, data)
 			if selection[0] == 'smbShare': # share entry selected
 				#Initialize blank mount enty
-				data = { 'isMounted': False, 'active': False, 'ip': False, 'sharename': False, 'sharedir': False, 'username': False, 'password': False, 'mounttype' : False, 'options' : False }
+				data = {'isMounted': False, 'active': False, 'ip': False, 'sharename': False, 'sharedir': False, 'username': False, 'password': False, 'mounttype': False, 'options': False}
 				# add data
 				data['mounttype'] = 'cifs'
 				data['active'] = True

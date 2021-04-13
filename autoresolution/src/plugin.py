@@ -87,14 +87,14 @@ config.plugins.autoresolution.force_progressive_mode = ConfigYesNo(default=False
 
 def setDeinterlacer(mode):
 	try:
-		f = open('/proc/stb/vmpeg/deinterlace' , "w")
+		f = open('/proc/stb/vmpeg/deinterlace', "w")
 		f.write("%s\n" % mode)
 		f.close()
 		print "[AutoRes] switch deinterlacer mode to %s" % mode
 	except:
 		print "[AutoRes] failed switch deinterlacer mode to %s" % mode
 
-frqdic = { 23000: '24',
+frqdic = {23000: '24',
 		23976: '24',
 		24000: '24',
 		25000: '25',
@@ -370,7 +370,7 @@ class AutoRes(Screen):
 			mode = self.lastmode
 			if "p24" in mode or "p25" in mode or "p30" in mode or (self.extra_mode1080p50 and "1080p50" in mode) or (self.extra_mode1080p60 and "1080p60" in mode) or (self.extra_mode720p60 and "720p60" in mode) or (self.extra_mode2160p50 and "2160p50" in mode) or "720p50" in mode:
 				try:
-					v = open('/proc/stb/video/videomode' , "w")
+					v = open('/proc/stb/video/videomode', "w")
 					v.write("%s\n" % mode)
 					v.close()
 					print "[AutoRes] switching to", mode
@@ -456,11 +456,11 @@ class ResolutionLabel(Screen):
 class AutoResSetupMenu(Screen, ConfigListScreen):
 	def __init__(self, session):
 		Screen.__init__(self, session)
-		self.skinName = [ "AutoResSetupMenu", "Setup" ]
+		self.skinName = ["AutoResSetupMenu", "Setup"]
 		self.setup_title = _("Autoresolution videomode setup")
 		self.setTitle(self.setup_title)
-		self.onChangedEntry = [ ]
-		self.list = [ ]
+		self.onChangedEntry = []
+		self.list = []
 		ConfigListScreen.__init__(self, self.list, session=session, on_change=self.changedEntry)
 		self.prev_manual_resolution_ext_menu = config.plugins.autoresolution.manual_resolution_ext_menu.value
 		self["actions"] = ActionMap(["SetupActions"],
@@ -780,7 +780,7 @@ def autostart(reason, **kwargs):
 
 def startSetup(menuid):
 	if menuid != "video":
-		return [ ]
+		return []
 	return [(_("Autoresolution"), autoresSetup, "autores_setup", None)]
 
 def autoresSetup(session, **kwargs):

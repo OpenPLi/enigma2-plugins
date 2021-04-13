@@ -64,7 +64,7 @@ class ResultScreen(Screen, HelpableScreen):
 		else:
 			self.skin = skinPTMsd
 		Screen.__init__(self, session)
-		self.list = [ ]
+		self.list = []
 		self["list"] = ResultList(self.list)
 
 		self["key_red"] = StaticText(_("Close"))
@@ -105,7 +105,7 @@ class ResultScreen(Screen, HelpableScreen):
 			self.close(True)
 
 	def buildEventList(self, eventListIndex=0):
-		self["list"].setList([ (x,) for x in self.favoriteEvents])
+		self["list"].setList([(x,) for x in self.favoriteEvents])
 		if len(self.favoriteEvents):
 			self["list"].moveToIndex(eventListIndex)
 		self["list"].show()
@@ -117,7 +117,7 @@ class ResultList(GUIComponent, object):
 		self.l.setFont(0, gFont("Regular", 18))
 		self.l.setBuildFunc(self.buildResultEntry)
 		self.l.setItemHeight(150)
-		self.onSelectionChanged = [ ]
+		self.onSelectionChanged = []
 
 		self.resultlist = LoadPixmap(cached=True, path=resolveFilename(SCOPE_CURRENT_PLUGIN, 'Extensions/PrimeTimeManager/images/resultlist.png'), desktop=getDesktop(0))
 		self.favoritePixmap = LoadPixmap(cached=True, path=resolveFilename(SCOPE_CURRENT_PLUGIN, 'Extensions/PrimeTimeManager/images/favorite.png'), desktop=getDesktop(0))
@@ -156,7 +156,7 @@ class ResultList(GUIComponent, object):
 		else:
 			conflictColor = 0x0000FF00
 
-		res = [ None ]
+		res = [None]
 
 		# left column
 		res.append((eListboxPythonMultiContent.TYPE_PIXMAP_ALPHATEST, 0, 0, width, 150, self.resultlist))

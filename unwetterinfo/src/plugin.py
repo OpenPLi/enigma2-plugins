@@ -171,7 +171,7 @@ class UnwetterMain(Screen):
 
 	def hauptmenu(self,output):
 		self.loadinginprogress = False
-		trans = { '&szlig;' : 'ß' , '&auml;' : 'ä' , '&ouml;' : 'ö' , '&uuml;' : 'ü' , '&Auml;' : 'Ä', '&Ouml;' : 'Ö' , '&Uuml;' : 'Ü'}
+		trans = {'&szlig;': 'ß', '&auml;': 'ä', '&ouml;': 'ö', '&uuml;': 'ü', '&Auml;': 'Ä', '&Ouml;': 'Ö', '&Uuml;': 'Ü'}
 		output= util.unescape(output,trans)
 
 		if self.land == "de":
@@ -324,7 +324,7 @@ class UnwetterMain(Screen):
 
 	def getWeatherReport(self,output):
 		self.loadinginprogress = False
-		trans = { '&szlig;' : 'ß' , '&auml;' : 'ä' , '&ouml;' : 'ö' , '&uuml;' : 'ü' , '&Auml;' : 'Ä', '&Ouml;' : 'Ö' , '&Uuml;' : 'Ü'}
+		trans = {'&szlig;': 'ß', '&auml;': 'ä', '&ouml;': 'ö', '&uuml;': 'ü', '&Auml;': 'Ä', '&Ouml;': 'Ö', '&Uuml;': 'Ü'}
 		output= util.unescape(output,trans)
 		if self.land == "de":
 			startpos = output.find('<!-- Anfang msg_Box Content -->')

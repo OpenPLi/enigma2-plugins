@@ -50,8 +50,8 @@ class AC3LipSync(Screen, HelpableScreen, MovableScreen):
 		self["ChannelImg"] = MultiPixmap()
 		self["GlobalImg"] = MultiPixmap()
 
-		self["ChannelLabel"] = MultiColorLabel( _("Service delay"))
-		self["GlobalLabel"] = MultiColorLabel( _("Global delay"))
+		self["ChannelLabel"] = MultiColorLabel(_("Service delay"))
+		self["GlobalLabel"] = MultiColorLabel(_("Global delay"))
 
 		# Slider
 		self["AudioSliderBar"] = ProgressBar()

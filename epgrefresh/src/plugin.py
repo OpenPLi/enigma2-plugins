@@ -237,7 +237,7 @@ def autostart(reason, session=None, **kwargs):
 				restore_backup = config.misc.epgcache_filename.value + ".backup"
 				if os.path.exists(restore_backup):
 					try:
-						os.system("cp -f %s %s" % (restore_backup, config.misc.epgcache_filename.value ))
+						os.system("cp -f %s %s" % (restore_backup, config.misc.epgcache_filename.value))
 						if os.path.exists(config.misc.epgcache_filename.value): 
 							os.chmod("%s" % (config.misc.epgcache_filename.value), 0644)
 					except:
@@ -260,7 +260,7 @@ def autostart(reason, session=None, **kwargs):
 					root.putChild("get", EPGRefreshSettingsResource())
 					root.putChild("preview", EPGRefreshPreviewServicesResource())
 					from Plugins.Extensions.WebInterface.WebChilds.Toplevel import addExternalChild
-					addExternalChild( ("epgrefresh", root, "EPGRefresh-Plugin", API_VERSION) )
+					addExternalChild(("epgrefresh", root, "EPGRefresh-Plugin", API_VERSION))
 					print("[EPGRefresh] Use OpenWebif")
 				except:
 					print("[EPGRefresh] Error use OpenWebif")

@@ -251,7 +251,7 @@ class ControllerPI:
 	def ScaleCtlError(self,errval,inputMax):
 		if errval == 0:
 			return 0
-		return skal(abs(errval), 0, inputMax , 0, 100) * (errval/abs(errval))
+		return skal(abs(errval), 0, inputMax, 0, 100) * (errval/abs(errval))
 
 	def DeadBand(self,errval):
 		if abs(errval) < self.inputDeadband:
@@ -901,11 +901,11 @@ def HDDsSleeping():
 def FC2systemStatus():
 	S = int(FC2werte[5])
 	R = " -" if S>0 else " "
-	if (S & 1)>0 :
+	if (S & 1)>0:
 		R += " BoxOn"
-	if (S & 2)>0 :
+	if (S & 2)>0:
 		R += " HDDon"
-	if (S & 4)>0 :
+	if (S & 4)>0:
 		R += " REC"
 	return R
 
@@ -1237,10 +1237,10 @@ class FanControl2(Screen):
 #			import traceback, sys
 #			traceback.print_exc(file=sys.stdout)
 			from traceback import format_exc
-			FClog("Control Error:\n" + format_exc() )
+			FClog("Control Error:\n" + format_exc())
 ##			import traceback, sys
 ##			traceback.print_exc(file=sys.stdout)
-		FClogE("Runtime: %.3f" % (time.time() - tt) )
+		FClogE("Runtime: %.3f" % (time.time() - tt))
 
 def autostart(reason, **kwargs):
 	global session
@@ -1256,14 +1256,14 @@ def autostart(reason, **kwargs):
 			root.putChild("chart", FC2webChart())
 			if os.path.exists("/usr/lib/enigma2/python/Plugins/Extensions/WebInterface/web/external.xml"):
 				try:
-					addExternalChild( ("fancontrol", root, "Fan Control 2", Version, True) )
+					addExternalChild(("fancontrol", root, "Fan Control 2", Version, True))
 					FClog("use new WebIF")
 				except:
-					addExternalChild( ("fancontrol", root) )
+					addExternalChild(("fancontrol", root))
 					FClog("use old WebIF")
 			if os.path.exists("/usr/lib/enigma2/python/Plugins/Extensions/OpenWebif/pluginshook.src"):
 				try:
-					addExternalChild( ("fancontrol", root, "Fan Control 2", Version) )
+					addExternalChild(("fancontrol", root, "Fan Control 2", Version))
 					FClog("use new OpenWebIF")
 				except:
 					pass
@@ -1276,7 +1276,7 @@ def autostart(reason, **kwargs):
 
 def selSetup(menuid, **kwargs):
 	if menuid != "system":
-		return [ ]
+		return []
 	return [(_("Fan Control 2"), main, "fansetup_config", 70)]
 
 def Plugins(**kwargs):
