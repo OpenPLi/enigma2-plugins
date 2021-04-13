@@ -1,5 +1,6 @@
 from Components.Language import language
-import os, gettext
+import os
+import gettext
 
 """RecInfobar"""
 

@@ -11,7 +11,8 @@ $Date: 2016-05-02 15:52:11 +0200 (Mon, 02 May 2016) $
 from Components.config import config #@UnresolvedImport
 from Components.Language import language
 from Tools.Directories import resolveFilename, SCOPE_LANGUAGE, SCOPE_PLUGINS, SCOPE_SKIN_IMAGE #@UnresolvedImport
-import gettext, os
+import gettext
+import os
 from enigma import eBackgroundFileEraser
 from logging import NOTSET
 
