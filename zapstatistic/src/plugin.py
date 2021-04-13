@@ -235,15 +235,15 @@ class ZapStatisticDurationScreen(Screen):
 
 	def __init__(self, session):
 		Screen.__init__(self, session)
-		
+
 		self.sortType = self.SORT_NAME_ASCENDING
-		
+
 		self["key_red"] = Label(_("Sort (name+)"))
 		self["key_green"] = Label(_("Sort (name-)"))
 		self["key_yellow"] = Label(_("Sort (duration+)"))
 		self["key_blue"] = Label(_("Sort (duration-)"))
 		self["list"] = ZapStatisticBrowserList([])
-		
+
 		self["actions"] = ActionMap(["OkCancelActions", "ColorActions"],
 			{
 				"ok": self.play,
@@ -253,7 +253,7 @@ class ZapStatisticDurationScreen(Screen):
 				"yellow": self.sortByDurationAscending,
 				"blue": self.sortByDurationDescending
 			}, prio=-1)
-		
+
 		self.onLayoutFinish.append(self.buildList)
 
 	def sortList(self, l):
@@ -337,16 +337,16 @@ class ZapStatisticCombinedScreen(Screen):
 
 	def __init__(self, session):
 		Screen.__init__(self, session)
-		
+
 		self.list = []
 		self.sortType = self.SORT_DURATION_DESCENDING
-		
+
 		self["key_red"] = Label(_("Sort (name+)"))
 		self["key_green"] = Label(_("Sort (name-)"))
 		self["key_yellow"] = Label(_("Sort (duration+)"))
 		self["key_blue"] = Label(_("Sort (duration-)"))
 		self["list"] = ZapStatisticBrowserList([])
-		
+
 		self["actions"] = ActionMap(["OkCancelActions", "ColorActions"],
 			{
 				"ok": self.play,
@@ -356,7 +356,7 @@ class ZapStatisticCombinedScreen(Screen):
 				"yellow": self.sortByDurationAscending,
 				"blue": self.sortByDurationDescending
 			}, prio=-1)
-		
+
 		self.onLayoutFinish.append(self.buildList)
 
 	def sortList(self, l):
@@ -448,16 +448,16 @@ class ZapStatisticScreen(Screen, ProtectedScreen):
 	def __init__(self, session):
 		Screen.__init__(self, session)
 		ProtectedScreen.__init__(self)
-		
+
 		self.session = session
 		self.sortType = self.SORT_DATE_ASCENDING
-		
+
 		self["key_red"] = Label(_("Delete"))
 		self["key_green"] = Label(" ")
 		self["key_yellow"] = Label(" ")
 		self["key_blue"] = Label(_("Durations"))
 		self["list"] = ZapStatisticBrowserList([])
-		
+
 		self["actions"] = ActionMap(["ColorActions", "OkCancelActions", "InfobarMenuActions"],
 			{
 				"ok": self.play,
@@ -468,7 +468,7 @@ class ZapStatisticScreen(Screen, ProtectedScreen):
 				"blue": self.duration,
 				"mainMenu": self.menu
 			}, prio=-1)
-		
+
 		self.onLayoutFinish.append(self.buildList)
 
 	def updateLabels(self):
@@ -516,7 +516,7 @@ class ZapStatisticScreen(Screen, ProtectedScreen):
 
 	def isProtected(self):
 		return config.ParentalControl.servicepinactive.value
-	
+
 	def pinEntered(self, result):
 		if result is None:
 			self.close()

@@ -417,7 +417,7 @@ class PermanentClockMenu(Screen):
 	skin = """
 		<screen position="center,center" size="400,145" title="Permanent Clock Setup">
 			<widget name="list" position="10,10" size="390,135" />
-		</screen>""" 
+		</screen>"""
 
 	def __init__(self, session):
 		Screen.__init__(self, session)
@@ -588,7 +588,7 @@ def startConfig(session, **kwargs):
 
 
 def main(menuid):
-	if menuid != "system": 
+	if menuid != "system":
 		return []
 	return [(_("Permanent Clock"), startConfig, "permanent_clock", None)]
 

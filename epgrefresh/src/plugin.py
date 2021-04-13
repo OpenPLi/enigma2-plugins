@@ -250,7 +250,7 @@ def autostart(reason, session=None, **kwargs):
 				if os.path.exists(restore_backup):
 					try:
 						os.system("cp -f %s %s" % (restore_backup, config.misc.epgcache_filename.value))
-						if os.path.exists(config.misc.epgcache_filename.value): 
+						if os.path.exists(config.misc.epgcache_filename.value):
 							os.chmod("%s" % (config.misc.epgcache_filename.value), 0644)
 					except:
 						pass
@@ -454,7 +454,7 @@ def autozap(session, servicelist, **kwargs):
 
 
 def manual_epg(session, **kwargs):
-	from EPGSaveLoadConfiguration import ManualEPGlist 
+	from EPGSaveLoadConfiguration import ManualEPGlist
 	session.open(ManualEPGlist)
 
 
@@ -519,7 +519,7 @@ def Plugins(**kwargs):
 		PluginDescriptor(
 			name=_("EPGRefresh"),
 			description=_("Automatically refresh EPG"),
-			where=PluginDescriptor.WHERE_PLUGINMENU, 
+			where=PluginDescriptor.WHERE_PLUGINMENU,
 			fnc=main,
 			icon="plugin.png",
 			needsRestart=needsRestart,
@@ -527,13 +527,13 @@ def Plugins(**kwargs):
 		PluginDescriptor(
 			name="Manual EPG",
 			description=_("manual save/load EPG"),
-			where=PluginDescriptor.WHERE_MENU, 
+			where=PluginDescriptor.WHERE_MENU,
 			fnc=main_menu,
 			needsRestart=needsRestart,
 		),
 		PluginDescriptor(
 			name="Manual EPG-refresh",
-			where=PluginDescriptor.WHERE_MENU, 
+			where=PluginDescriptor.WHERE_MENU,
 			fnc=manualrefresh_menu,
 			needsRestart=needsRestart,
 		),
@@ -542,7 +542,7 @@ def Plugins(**kwargs):
 		extDescriptor.needsRestart = needsRestart
 		list.append(extDescriptor)
 	profile = config.plugins.epgrefresh.add_to_refresh.value
-	if profile == "1" or profile == "3": 
+	if profile == "1" or profile == "3":
 		eventinfoDescriptor.needsRestart = needsRestart
 		list.append(eventinfoDescriptor)
 	if config.plugins.epgrefresh_extra.show_autozap.value:

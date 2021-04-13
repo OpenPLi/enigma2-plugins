@@ -162,4 +162,3 @@ class AutoTimerSettings(Screen, ConfigListScreen):
 
 	def createSummary(self):
 		return SetupSummary
-

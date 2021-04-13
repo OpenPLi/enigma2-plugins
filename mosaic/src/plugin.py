@@ -53,14 +53,14 @@ def _(txt):
 class Mosaic(Screen):
 	PLAY = 0
 	PAUSE = 1
-	
+
 	desktop = getDesktop(0)
 	size = desktop.size()
 	width = size.width()
 	height = size.height()
 	windowWidth = width / 4
 	windowHeight = height / 4
-	
+
 	positions = []
 	x = 80
 	y = 50
@@ -71,7 +71,7 @@ class Mosaic(Screen):
 		if (i == 3) or (i == 6):
 			y = y + windowHeight + 20
 			x = 80
-	
+
 	skin = ""
 	skin += """<screen position="0,0" size="%d,%d" title="Mosaic" flags="wfNoBorder" backgroundColor="#ffffff" >""" % (width, height)
 	skin += """<widget name="playState" position="55,55" size="16,16" alphatest="on" />"""
@@ -127,7 +127,7 @@ class Mosaic(Screen):
 
 	def __init__(self, session, services):
 		Screen.__init__(self, session)
-		
+
 		self.session = session
 		self.oldService = self.session.nav.getCurrentlyPlayingServiceReference()
 		self.consoleCmd = ""
@@ -140,7 +140,7 @@ class Mosaic(Screen):
 		self.countdown = config.plugins.Mosaic.countdown.value
 		self.working = False
 		self.state = self.PLAY
-		
+
 		self["playState"] = Pixmap()
 		for i in range(1, 10):
 			self["window" + str(i)] = Pixmap()
@@ -154,7 +154,7 @@ class Mosaic(Screen):
 		self["countdown"] = Label()
 		self.updateCountdownLabel()
 		self["count"] = Label()
-		
+
 		self["actions"] = NumberActionMap(["MosaicActions"],
 			{
 				"ok": self.exit,
@@ -173,7 +173,7 @@ class Mosaic(Screen):
 				"8": self.numberPressed,
 				"9": self.numberPressed
 			}, prio=-1)
-		
+
 		self.updateTimer = eTimer()
 		self.updateTimer.callback.append(self.updateCountdown)
 		self.checkTimer = eTimer()
@@ -241,15 +241,15 @@ class Mosaic(Screen):
 		if self.working == False:
 			configNow = config.plugins.Mosaic.countdown.value
 			configNow += direction
-			
+
 			if configNow < config_limits[0]:
 				configNow = config_limits[0]
 			elif configNow > config_limits[1]:
 				configNow = config_limits[1]
-			
+
 			config.plugins.Mosaic.countdown.value = configNow
 			config.plugins.Mosaic.countdown.save()
-			
+
 			self.updateCountdownLabel()
 
 	def makeNextScreenshot(self):
@@ -264,56 +264,56 @@ class Mosaic(Screen):
 			# Show screenshot in the current window
 			pic = LoadPixmap(grab_picture)
 			self["window" + str(self.current_window)].instance.setPixmap(pic)
-		
+
 			# Hide current video-window and show the running event-name
 			self["video" + str(self.current_window)].hide()
 			self["event" + str(self.current_window)].show()
-		
+
 			# Get next ref
 			self.current_refidx += 1
 			if self.current_refidx > (len(self.ref_list) - 1):
 				self.current_refidx = 0
-		
+
 			# Play next ref
 			ref = self.ref_list[self.current_refidx]
 			info = self.serviceHandler.info(ref)
 			name = info.getName(ref).replace('\xc2\x86', '').replace('\xc2\x87', '')
 			event_name = self.getEventName(info, ref)
 			self.session.nav.playService(ref)
-		
+
 			# Get next window index
 			self.current_window += 1
 			if self.current_window > 9:
 				self.current_window = 1
-		
+
 			# Save the ref
 			self.window_refs[self.current_window - 1] = ref
-		
+
 			# Save the event-name and hide the label
 			self["event" + str(self.current_window)].hide()
 			self["event" + str(self.current_window)].setText(event_name)
-		
+
 			# Show the new video-window
 			self["video" + str(self.current_window)].show()
 			self["video" + str(self.current_window)].decoder = 0
-		
+
 			# Show the servicename
 			self["channel" + str(self.current_window)].setText(name)
 			self["count"].setText(_("Channel: ") + str(self.current_refidx + 1) + " / " + str(len(self.ref_list)))
-		
+
 			# Restart timer
 			self.working = False
 			self.updateTimer.start(1, 1)
 		else:
 			print "[Mosaic] retval: %d result: %s" % (retval, result)
-			
+
 			try:
 				f = open(grab_errorlog, "w")
 				f.write("retval: %d\nresult: %s" % (retval, result))
 				f.close()
 			except:
 				pass
-			
+
 			self.session.openWithCallback(self.exit, MessageBox, _("Error while creating screenshot. You need grab version 0.8 or higher!"), MessageBox.TYPE_ERROR, timeout=5)
 
 	def updateCountdown(self, callback=None):
@@ -380,7 +380,7 @@ def main(session, servicelist, **kwargs):
 	global Servicelist
 	Servicelist = servicelist
 	global BouquetSelectorScreen
-	
+
 	bouquets = Servicelist.getBouquetList()
 	if bouquets is not None:
 		if len(bouquets) == 1:

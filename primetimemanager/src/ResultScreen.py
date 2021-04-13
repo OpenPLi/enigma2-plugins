@@ -77,19 +77,19 @@ class ResultScreen(Screen, HelpableScreen):
 		self["text_right"] = StaticText(_("Solution"))
 
 		HelpableScreen.__init__(self)
-		
+
 		self["SetupActions"] = HelpableActionMap(self, "SetupActions",
 		{
 			"cancel": (self.buttonCancel, _("Close")),
 			"ok": (self.buttonOK, _("Accept the events as shown")),
 		}, -1)
-		
+
 		self["ColorActions"] = HelpableActionMap(self, "ColorActions",
 		{
 			"red": (self.buttonCancel, _("Close")),
 			"green": (self.buttonAccept, _("Accept the events as shown")),
 		}, -1)
-		
+
 		self.visible = True
 		self.onLayoutFinish.append(self.buildEventList)
 
@@ -153,7 +153,7 @@ class ResultList(GUIComponent, object):
 
 		if numConflicts > 9:
 			numConflicts = 10
-			
+
 		if numConflicts > 0:
 			conflictColor = 0x00FF0000
 		else:

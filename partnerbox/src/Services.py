@@ -57,8 +57,8 @@ class Services(Source):
 	def buildList(self, ref, epg):
 		self.servicelist = ServiceList(ref, command_func=self.getServiceList, validate_commands=False)
 		list = self.servicelist.getServicesAsList()
-		E2List = [] 
-		for index in range(len(list)): 
+		E2List = []
+		for index in range(len(list)):
 			item = list[index]
 			servicereference = item[0]
 			servicename = item[1]
@@ -90,7 +90,7 @@ class Services(Source):
 		return E2List
 
 	def buildEPGList(self, ref):
-		E2List = [] 
+		E2List = []
 		events = self.epgcache.lookupEvent(['IBDTSERN', (ref, 0, -1, -1)])
 		if events:
 			for item in events:

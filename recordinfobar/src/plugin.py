@@ -16,7 +16,7 @@ try:
 except:
 	from Tools.DreamboxHardware import getFPWasTimerWakeup
 from RecordTimer import AFTEREVENT
-from Screens import Standby 
+from Screens import Standby
 from Tools import Notifications
 import RecInfobarSetup
 import NavigationInstance
@@ -55,7 +55,7 @@ config.plugins.RecInfobar.indicator_x = ConfigInteger(default=30, limits=(0, 999
 config.plugins.RecInfobar.indicator_y = ConfigInteger(default=30, limits=(0, 9999))
 TIMEFORMATS = [
 	# for example, 122 seconds (zero hours, two minutes, two seconds)
-	("%(SSs)d", _("S")),		#  122  
+	("%(SSs)d", _("S")),		#  122
 	("%(SSs)ds", _("Ss")),		#  122s
 	("%(MMs)d:%(SS)d", _("M:S")),		#  2:2
 	("%(MMs)dm %(SS)ds", _("Mm Ss")),	#  2m 2s
@@ -82,7 +82,7 @@ class RecIndicator(Screen):
 		<screen name="RecIndicator" title="Records Indicator" flags="wfNoBorder" position="60,60" size="36,36" zPosition="-1" backgroundColor="transparent" >
 			<widget source="session.RecordState" render="Pixmap" pixmap="skin_default/icons/icon_rec.png" position="0,0" size="36,36" alphatest="on">
 				<convert type="ConditionalShowHide">Blink,3000</convert>
-			</widget>  
+			</widget>
 		</screen>"""
 
 	def __init__(self, session):
@@ -166,7 +166,7 @@ class RecInfoBar(Screen):
 		config.plugins.RecInfobar.rec_indicator.addNotifier(self.stateRecIndicator)
 		self.onLayoutFinish.append(self.__onLayoutFinished)
 		self.rec_ref = None
-		self.zap_ref = None 
+		self.zap_ref = None
 		self.no_decode = False
 		self.SetPosition = False
 		config.misc.rectimerstate.value = False
@@ -222,7 +222,7 @@ class RecInfoBar(Screen):
 			try:
 				self.session.openWithCallback(self.DoStandby, MessageBox, _("Go to Standby now?"), type=MessageBox.TYPE_YESNO, timeout=config.plugins.RecInfobar.standby_timeout.value)
 			except:
-				pass 
+				pass
 
 	def DoStandby(self, retval):
 		if retval and Standby.inStandby is None:
@@ -274,7 +274,7 @@ class RecInfoBar(Screen):
 						except:
 							curservice = self.session.nav.getCurrentlyPlayingServiceReference()
 						if curservice is None or timer.service_ref.ref != curservice:
-							config.misc.rectimerstate.value = True 
+							config.misc.rectimerstate.value = True
 							config.misc.rectimerstate.save()
 							self.rec_ref = timer.service_ref.ref
 							name = timer.service_ref.getServiceName()
@@ -422,7 +422,7 @@ class RecInfoBar(Screen):
 							begin = Time()
 						end = timer.end
 						if end <= begin:
-							end += 3600 * 24 
+							end += 3600 * 24
 						beginstr = strftime("%H:%M", localtime(begin))
 						endstr = strftime("%H:%M", localtime(end))
 						duration = ((end - begin) / 60)
@@ -435,7 +435,7 @@ class RecInfoBar(Screen):
 							tunname = 'Stream'
 						self.reclist[service] = [num, name, begin, prov, bqname, recname, tunname, remaining, timer.record_service]
 						if config.plugins.RecInfobar.always_zap.value == "1" and self.no_decode == True and Standby.inStandby is None:
-							self.no_decode = False 
+							self.no_decode = False
 							try:
 								curservice = self.session.nav.getCurrentlyPlayingServiceOrGroup()
 							except:
@@ -652,7 +652,7 @@ class RecInfoBar(Screen):
 			if data:
 				number = data.get("tuner_number", number)
 				type = data.get("tuner_type", '')
-				if type: 
+				if type:
 					tunerType = ' (%s)' % type
 		name = chr(number + 65) + tunerType
 		return number, name
@@ -673,7 +673,7 @@ class RecInfoBar(Screen):
 									begin = val[2]
 									end = timer.end
 									if end <= begin:
-										end += 3600 * 24 
+										end += 3600 * 24
 									beginstr = strftime("%H:%M", localtime(begin))
 									endstr = strftime("%H:%M", localtime(end))
 									duration = ((end - begin) / 60)

@@ -83,7 +83,7 @@ class SSDPServerDiscovery(DatagramProtocol):
 
 SATIPSERVERDATA = {}
 
-DEVICE_ATTR = [ 
+DEVICE_ATTR = [
 'friendlyName',
 'manufacturer',
 'manufacturerURL',
@@ -124,7 +124,7 @@ class SATIPDiscovery:
 	def DiscoveryStart(self, stop_timeout=discoveryTimeoutMS):
 		self.discoveryStopTimer.stop()
 		self.ssdp.stop_msearch()
-		
+
 #		print "Discovery Start!"
 		self.ssdp.send_msearch(self.getEthernetAddr())
 		self.discoveryStopTimer.start(stop_timeout, True)
@@ -465,12 +465,12 @@ class SATIPTuner(Screen, ConfigListScreen):
 
 		description = ""
 		description += _("Description") + " : %s\n" % modelDescription
-		description += _("Manufacturer") + " : %s\n" % manufacturer 
+		description += _("Manufacturer") + " : %s\n" % manufacturer
 		description += _("Model URL") + " : %s\n" % modelURL
 		description += _("Presentation URL") + " : %s\n" % presentationURL
 		description += "UUID : %s\n" % uuid
 		description += _("SAT>IP Capability") + " : %s" % satipcap
-		
+
 		self["description"].setText(description)
 
 	def showChoices(self):

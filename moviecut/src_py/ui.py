@@ -67,7 +67,7 @@ class MovieCut(ChoiceBox):
 			clist.append("-c")
 			clist += ret[5]
 		MovieCutSpawn(self.session, self, clist, self.name)
-		
+
 
 class AdvancedCutInput(Screen, ConfigListScreen):
 	def __init__(self, session, name, path, descr):

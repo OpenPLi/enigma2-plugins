@@ -126,7 +126,7 @@ class EPGRefreshConfiguration(Screen, ConfigListScreen):
 			self.list.append(getConfigListEntry(_("Run AutoTimer after refresh"), config.plugins.epgrefresh.parse_autotimer, _("After a successful refresh the AutoTimer will automatically search for new matches if this is enabled.")))
 			try:
 				from Plugins.Extensions.SeriesPlugin.plugin import renameTimer
-				self.list.append(getConfigListEntry(_("Timeout shutdown after refresh for SeriesPlugin (min)"), config.plugins.epgrefresh.timeout_shutdown, _("If \"Run AutoTimer after refresh\" and \"Shutdown after EPG refresh\" enabled and use \"Label series\" for match, set long timeout."))) 
+				self.list.append(getConfigListEntry(_("Timeout shutdown after refresh for SeriesPlugin (min)"), config.plugins.epgrefresh.timeout_shutdown, _("If \"Run AutoTimer after refresh\" and \"Shutdown after EPG refresh\" enabled and use \"Label series\" for match, set long timeout.")))
 			except ImportError as ie:
 				print("[EPGRefresh] SeriesPlugin Plugin not installed:", ie)
 		except ImportError as ie:
@@ -308,8 +308,8 @@ class EPGRefreshProfile(ConfigListScreen, Screen):
 	skin = """
 			<screen position="center,center" size="400,230" title="EPGRefreshProfile" >
 			<widget name="config" position="0,0" size="400,180" scrollbarMode="showOnDemand" />
-			<widget name="key_red" position="0,190" size="140,40" valign="center" halign="center" zPosition="4"  foregroundColor="white" font="Regular;18" transparent="1"/> 
-			<widget name="key_green" position="140,190" size="140,40" valign="center" halign="center" zPosition="4"  foregroundColor="white" font="Regular;18" transparent="1"/> 
+			<widget name="key_red" position="0,190" size="140,40" valign="center" halign="center" zPosition="4"  foregroundColor="white" font="Regular;18" transparent="1"/>
+			<widget name="key_green" position="140,190" size="140,40" valign="center" halign="center" zPosition="4"  foregroundColor="white" font="Regular;18" transparent="1"/>
 			<ePixmap name="red"    position="0,190"   zPosition="2" size="140,40" pixmap="skin_default/buttons/red.png" transparent="1" alphatest="on" />
 			<ePixmap name="green"  position="140,190" zPosition="2" size="140,40" pixmap="skin_default/buttons/green.png" transparent="1" alphatest="on" />
 		</screen>"""

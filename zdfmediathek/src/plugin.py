@@ -557,10 +557,10 @@ class ZDFMediathekCache(Screen):
 	def __init__(self, session):
 		self.session = session
 		Screen.__init__(self, session)
-		
+
 		self["spinner"] = Pixmap()
 		self.curr = 0
-		
+
 		self.timer = eTimer()
 		self.timer.callback.append(self.showNextSpinner)
 
@@ -585,11 +585,11 @@ class ZDFMediathekCache(Screen):
 class ZDFMediathek(Screen, HelpableScreen):
 	def __init__(self, session):
 		self.session = session
-		
+
 		desktop = getDesktop(0)
 		size = desktop.size()
 		width = size.width()
-		
+
 		if width == 720:
 			self.skin = """<screen position="0,0" size="720,576" flags="wfNoBorder" backgroundColor="#252525" >"""
 		else:
@@ -602,17 +602,17 @@ class ZDFMediathek(Screen, HelpableScreen):
 				<widget name="serverName" position="80,520" size="160,20" font="Regular;18" backgroundColor="#252525" foregroundColor="#f47d19" />
 				<widget name="fakeList" position="0,0" size="0,0" />
 			</screen>""" % (PNG_PATH + "logo.png")
-		
+
 		Screen.__init__(self, session)
-		
+
 		self["navigationTitle"] = Label(" ")
 		self["leftList"] = LeftMenuList()
 		self["rightList"] = RightMenuList()
 		self["fakeList"] = MenuList([])
 		self["serverName"] = Label("Server")
-		
+
 		HelpableScreen.__init__(self)
-		
+
 		self["actions"] = HelpableActionMap(self, "ZDFMediathekActions",
 			{
 				"back": (self.exit, "Beenden"),
@@ -627,17 +627,17 @@ class ZDFMediathek(Screen, HelpableScreen):
 				"search": (self.search, "Suche"),
 				"previousPage": (self.previousPage, "Vorherige Seite")
 			}, -2)
-		
+
 		self.cacheDialog = self.session.instantiateDialog(ZDFMediathekCache)
 		self["rightList"].callback = self.deactivateCacheDialog
 		self.working = False
 		self.currentList = LIST_RIGHT
 		self.linkPreviousPage = ""
-		
+
 		self.transcodeServer = None
 		self.cacheTimer = eTimer()
 		self.cacheTimer.callback.append(self.chechCachedFile)
-		
+
 		self.onLayoutFinish.append(self.getPage)
 
 	def getPage(self, page=None):

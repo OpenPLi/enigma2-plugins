@@ -244,4 +244,3 @@ def addFeed(address, auto=False):
 	l.save()
 	config.plugins.simpleRSS.feedcount.value = len(config.plugins.simpleRSS.feed)
 	config.plugins.simpleRSS.feedcount.save()
-

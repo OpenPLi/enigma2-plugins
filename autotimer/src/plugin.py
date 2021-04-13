@@ -402,7 +402,7 @@ def parseEPGCallback(ret):
 		path_search_log = os.path.join(logpath, "autotimer_search.log")
 		if os.path.exists(path_search_log):
 			searchlog_txt = open(path_search_log).read()
-			#find last log in logfile 
+			#find last log in logfile
 			if "\n########## " in searchlog_txt:
 				searchlog_txt = searchlog_txt.split("\n########## ")
 				searchlog_txt = str(searchlog_txt[-1]).split("\n")[2:]
@@ -545,4 +545,3 @@ def Plugins(**kwargs):
 		l.append(extDescriptor)
 		l.append(extDescriptor_scan)
 	return l
-

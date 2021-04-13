@@ -3,7 +3,7 @@
 #    EasyMedia for Dreambox-Enigma2
 #    Coded by Vali (c)2010-2011
 #
-#  This plugin is licensed under the Creative Commons 
+#  This plugin is licensed under the Creative Commons
 #  Attribution-NonCommercial-ShareAlike 3.0 Unported License.
 #  To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/3.0/
 #  or send a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.
@@ -12,7 +12,7 @@
 #  is licensed by Dream Multimedia GmbH.
 #
 #  This plugin is NOT free software. It is open source, you are allowed to
-#  modify it (if you keep the license), but it may not be commercially 
+#  modify it (if you keep the license), but it may not be commercially
 #  distributed other than under the conditions noted above.
 #
 #######################################################################
@@ -84,7 +84,7 @@ def EasyMediaAutostart(reason, **kwargs):
 
 def InfoBarPlugins__init__(self):
 	global EMStartOnlyOneTime
-	if not EMStartOnlyOneTime: 
+	if not EMStartOnlyOneTime:
 		EMStartOnlyOneTime = True
 		global InfoBar_instance
 		InfoBar_instance = self
@@ -374,7 +374,7 @@ class EasyMedia(Screen):
 			try:
 				inpf = open(("/usr/lib/enigma2/python/Plugins/Extensions/EasyMedia/" + onePlug + ".plug"), 'rb')
 				binPlug = pickle.load(inpf)
-				inpf.close()	
+				inpf.close()
 				self.__keys.append(binPlug.name)
 				MPaskList.append((binPlug.name, ("++++" + binPlug.name)))
 			except:
@@ -422,16 +422,16 @@ class EasyMedia(Screen):
 		if wohin == 0:
 			self.close(was[wohin])
 		elif wohin == 1:
-			if len(was) > 1: 
+			if len(was) > 1:
 				self.close(was[wohin])
 		elif wohin == 2:
-			if len(was) > 2: 
+			if len(was) > 2:
 				self.close(was[wohin])
 		elif wohin == 3:
-			if len(was) > 3: 
+			if len(was) > 3:
 				self.close(was[wohin])
 		elif wohin == 4:
-			if len(was) > 4: 
+			if len(was) > 4:
 				self.close(was[wohin])
 
 	def goEntry(self, entry):
@@ -568,10 +568,7 @@ def MPcallbackFunc(answer):
 		try:
 			inpf = open(("/usr/lib/enigma2/python/Plugins/Extensions/EasyMedia/" + plugToRun + ".plug"), 'rb')
 			runPlug = pickle.load(inpf)
-			inpf.close()	
+			inpf.close()
 			runPlug(session=EMsession)
 		except:
 			EMsession.open(MessageBox, text=(plugToRun + " not found!"), type=MessageBox.TYPE_WARNING)
-
-
-

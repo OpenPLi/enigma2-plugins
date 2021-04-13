@@ -102,7 +102,7 @@ class vps_timer:
 						# setze Startzeit auf jetzt
 						self.timer.begin = int(time())
 						self.session.nav.RecordTimer.timeChanged(self.timer)
-						
+
 						self.activate_autoincrease()
 						self.program_abort()
 						self.stop_simulation()
@@ -561,7 +561,7 @@ class vps:
 			nextExecution = 1
 
 		self.timer.startLongTimer(nextExecution)
-		print "[VPS-Plugin] next execution in " + str(nextExecution) + " sec" 
+		print "[VPS-Plugin] next execution in " + str(nextExecution) + " sec"
 
 	def addTimerToList(self, timer):
 		self.vpstimers.append(vps_timer(timer, self.session))

@@ -63,7 +63,7 @@ else:
 		DVDPlayerAviable = True
 	except:
 		pass
-		
+
 MMPavaiable = False
 if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/MerlinMusicPlayer/plugin.pyo") or fileExists("/usr/lib/enigma2/python/Plugins/Extensions/MerlinMusicPlayer/plugin.pyc"):
 	try:
@@ -305,7 +305,7 @@ class DreamExplorerII(Screen):
 					try:
 						xfile = os.stat(filename)
 					except:
-						xfile = None 
+						xfile = None
 					#old (xfile.st_size < 61440)
 					if xfile is not None and (xfile.st_size < 250000):
 						self.session.open(vEditor, filename)
@@ -418,7 +418,7 @@ class DreamExplorerII(Screen):
 			try:
 				yfile = os.stat(self.commando[0])
 			except:
-				yfile = None 
+				yfile = None
 			#old yfile.st_size < 61440)
 			if yfile is not None and (yfile.st_size < 250000):
 				self.session.open(vEditor, self.commando[0])
@@ -763,7 +763,7 @@ class DreamExplorerII(Screen):
 			pass
 		self.close()
 
-######## DREAM-EXPLORER END ####################### 
+######## DREAM-EXPLORER END #######################
 
 
 class vEditor(Screen):

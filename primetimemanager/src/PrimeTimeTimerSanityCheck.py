@@ -288,4 +288,3 @@ class PrimeTimeTimerSanityCheck:
 
 		print "[TimerSanityCheck] conflict detected!"
 		return False
-

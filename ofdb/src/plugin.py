@@ -29,7 +29,7 @@ def localeInit():
 def _(txt):
     t = gettext.dgettext("OFDb", txt)
     if t == txt:
-        print "[OFDb] fallback to default translation for", txt 
+        print "[OFDb] fallback to default translation for", txt
         t = gettext.gettext(txt)
     return t
 
@@ -80,7 +80,7 @@ class OFDBEPGSelection(EPGSelection):
 		cur = self["list"].getCurrent()
 		evt = cur[0]
 		sref = cur[1]
-		if not evt: 
+		if not evt:
 			return
 
 		if self.openPlugin:
@@ -164,7 +164,7 @@ class OFDB(Screen):
 			"contextMenu": self.openChannelSelection,
 			"showEventInfo": self.showDetails
 		}, -1)
-		
+
 		self.getOFDB()
 
 	def dictionary_init(self):
@@ -200,7 +200,7 @@ class OFDB(Screen):
 			self["detailslabel"].pageUp()
 		if self.Page == 2:
 			self["extralabel"].pageUp()
-	
+
 	def pageDown(self):
 		if self.Page == 0:
 			self["menu"].instance.moveSelection(self["menu"].instance.moveDown)
@@ -305,7 +305,7 @@ class OFDB(Screen):
 			for article in ["The", "Der", "Die", "Das"]:
 				if self.eventName[:4].capitalize() == article + " ":
 					self.eventName = self.eventName[4:] + ", " + article
-			
+
 			self["statusbar"].setText(_("Query OFDb: %s...") % (self.eventName))
 			try:
 				self.eventName = urllib.quote(self.eventName)
@@ -325,7 +325,7 @@ class OFDB(Screen):
 	def html2utf8(self, in_html):
 		htmlentitynumbermask = re.compile('(&#(\d{1,5}?);)')
 		htmlentitynamemask = re.compile('(&(\D{1,5}?);)')
-		
+
 		entities = htmlentitynamemask.finditer(in_html)
 		entitydict = {}
 
@@ -387,7 +387,7 @@ class OFDB(Screen):
 		if self.generalinfos:
 			self["key_yellow"].setText(_("Details"))
 			self["statusbar"].setText(_("OFDb Details parsed"))
-			
+
 			Titeltext = self.generalinfos.group("title")
 			if len(Titeltext) > 57:
 				Titeltext = Titeltext[0:54] + "..."
@@ -453,7 +453,7 @@ class OFDB(Screen):
 				self.OFDBPoster(noPoster=True)
 
 		self["detailslabel"].setText(Detailstext)
-		
+
 	def OFDBPoster(self, noPoster=False):
 		self["statusbar"].setText(_("OFDb Details parsed"))
 		if not noPoster:
@@ -495,7 +495,7 @@ def eventinfo(session, servicelist, **kwargs):
 
 def main(session, eventName="", **kwargs):
 	session.open(OFDB, eventName)
-	
+
 
 def Plugins(**kwargs):
 	try:

@@ -9,7 +9,7 @@ from Components.ActionMap import ActionMap
 from Components.SystemInfo import SystemInfo
 from Screens.MessageBox import MessageBox
 from enigma import eTimer
-from Components.config import config, ConfigSubsection, getConfigListEntry, ConfigInteger, ConfigSelection, configfile 
+from Components.config import config, ConfigSubsection, getConfigListEntry, ConfigInteger, ConfigSelection, configfile
 
 import os
 

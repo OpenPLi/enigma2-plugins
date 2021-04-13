@@ -96,7 +96,7 @@ class WerbeZapperIndicator(Screen):
 						text += _("%s\n") % (self.name)
 					text += _("- %d:%02d min") % (remaining / 60, remaining % 60)
 		except:
-			text += _("Error") 
+			text += _("Error")
 		self['icon_text'].setText(text)
 		self.update_time.start(1000)
 
@@ -108,16 +108,16 @@ class WerbeZapperIndicator(Screen):
 class WerbeZapperChoiceBox(ChoiceBox):
 	def __init__(self, session, title="", list=[], keys=None, selection=0, zap_time=0, zap_service=None, monitored_event=None, monitor_time=None, monitored_service=None, skin_name=[]):
 		ChoiceBox.__init__(self, session, title, list, keys, selection, skin_name)
-		
+
 		self.update_timer = eTimer()
 		self.update_timer.callback.append(self.update)
-		
+
 		self.zap_time = zap_time
 		self.zap_service = zap_service
 		self.monitored_event = monitored_event
-		self.monitor_time = monitor_time 
+		self.monitor_time = monitor_time
 		self.monitored_service = monitored_service
-		
+
 		# Start timer to update the ChoiceBox every second
 		self.update_timer.start(1000)
 		self.setTitle(_("WerbeZapper"))
@@ -384,7 +384,7 @@ class WerbeZapper(Screen):
 			self.monitored_event = None
 			if notify:
 				AddPopup(
-									_("WerbeZapper...\nMonitoring started for service is not EPG.\nDuration %d Min.") % (duration), 
+									_("WerbeZapper...\nMonitoring started for service is not EPG.\nDuration %d Min.") % (duration),
 									MessageBox.TYPE_INFO,
 									5,
 									"WerbeZapperMonitoringStartedUnlimited"

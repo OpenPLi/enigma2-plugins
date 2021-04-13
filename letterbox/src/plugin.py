@@ -68,4 +68,3 @@ def Plugins(**kwargs):
 			fnc=zoom_toggle),
 		PluginDescriptor(where=PluginDescriptor.WHERE_SESSIONSTART,
 			fnc=zoom_init)]
-

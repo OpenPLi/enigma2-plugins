@@ -53,7 +53,7 @@ class LogoManagerScreen(Screen):
 	targets = [
 				(_("bootlogo"), "/etc/enigma2/bootlogo.mvi"),
 				(_("backdrop"), "/etc/enigma2/backdrop.mvi"),
-				(_("radio"), "/usr/share/enigma2/radio.mvi"), 
+				(_("radio"), "/usr/share/enigma2/radio.mvi"),
 				(_("switch off"), "/etc/enigma2/switchoff.mvi"),
 				(_("reboot"), "/etc/enigma2/reboot.mvi")
 				]

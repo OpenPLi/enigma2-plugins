@@ -57,7 +57,7 @@ class TerrestrialScanScreen(ConfigListScreen, Screen):
 			if nim.config_mode != "nothing":
 				if nim.isCompatible("DVB-T") or (nim.isCompatible("DVB-S") and nim.canBeCompatible("DVB-T")):
 					dvbt_capable_nims.append(nim.slot)
-		
+
 		nim_list = []
 		nim_list.append((-1, _("Automatic")))
 		for x in dvbt_capable_nims:

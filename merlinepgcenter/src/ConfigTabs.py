@@ -6,8 +6,8 @@
 #  Coded by Shaderman (c) 2011
 #  Support: www.dreambox-tools.info
 #
-#  This plugin is licensed under the Creative Commons 
-#  Attribution-NonCommercial-ShareAlike 3.0 Unported 
+#  This plugin is licensed under the Creative Commons
+#  Attribution-NonCommercial-ShareAlike 3.0 Unported
 #  License. To view a copy of this license, visit
 #  http://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative
 #  Commons, 559 Nathan Abbott Way, Stanford, California 94305, USA.
@@ -16,7 +16,7 @@
 #  is licensed by Dream Multimedia GmbH.
 
 #  This plugin is NOT free software. It is open source, you are allowed to
-#  modify it (if you keep the license), but it may not be commercially 
+#  modify it (if you keep the license), but it may not be commercially
 #  distributed other than under the conditions noted above.
 #
 
@@ -101,21 +101,21 @@ except KeyError:
 
 class ConfigBaseTab():
 	settingsWidget = None
-	
+
 	def __init__(self):
 		pass
-		
+
 	# activate this tab
 	def show(self):
 		ConfigBaseTab.settingsWidget.setList(self.configList)
-		
+
 	def expandableSettingChanged(self, configElement=None):
 		self.buildConfigList()
 		self.show()
-		
+
 	def removeNotifier(self):
 		pass
-		
+
 # config general
 
 
@@ -124,10 +124,10 @@ class ConfigGeneral(ConfigBaseTab):
 		ConfigBaseTab.__init__(self)
 		self.configList = []
 		self.buildConfigList()
-		
+
 	def show(self):
 		ConfigBaseTab.settingsWidget.setList(self.configList)
-		
+
 	def buildConfigList(self):
 		cfgList = []
 		cfgList.append(getConfigListEntry(_("Prime time:"), config.plugins.merlinEpgCenter.primeTime))
@@ -140,7 +140,7 @@ class ConfigGeneral(ConfigBaseTab):
 		cfgList.append(getConfigListEntry(_("Exit on TV <-> Radio switch:"), config.plugins.merlinEpgCenter.exitOnTvRadioSwitch))
 		cfgList.append(getConfigListEntry(_("Show timer messages:"), config.plugins.merlinEpgCenter.showTimerMessages))
 		self.configList = cfgList
-		
+
 # config list settings
 
 
@@ -150,7 +150,7 @@ class ConfigListSettings(ConfigBaseTab):
 		self.configList = []
 		self.buildConfigList()
 		self.setNotifier()
-		
+
 	def buildConfigList(self):
 		cfgList = []
 		cfgList.append(getConfigListEntry(_("Show list numbers:"), config.plugins.merlinEpgCenter.showListNumbers))
@@ -165,18 +165,18 @@ class ConfigListSettings(ConfigBaseTab):
 		cfgList.append(getConfigListEntry(_("Progress bar style:"), config.plugins.merlinEpgCenter.listProgressStyle))
 		cfgList.append(getConfigListEntry(_("Number of upcoming events to show:"), config.plugins.merlinEpgCenter.numNextEvents))
 		self.configList = cfgList
-		
+
 	def setNotifier(self):
 		config.plugins.merlinEpgCenter.showPicons.addNotifier(self.expandableSettingChanged, initial_call=False)
 		config.plugins.merlinEpgCenter.epgPaths.addNotifier(self.piconPathChanged, initial_call=False)
-		
+
 	def removeNotifier(self):
 		config.plugins.merlinEpgCenter.showPicons.notifiers.remove(self.expandableSettingChanged)
 		config.plugins.merlinEpgCenter.epgPaths.notifiers.remove(self.piconPathChanged)
-		
+
 	def piconPathChanged(self, configElement=None):
 		config.plugins.merlinEpgCenter.epgPaths.save()
-		
+
 # config event information
 
 
@@ -186,7 +186,7 @@ class ConfigEventInfo(ConfigBaseTab):
 		self.configList = []
 		self.buildConfigList()
 		self.setNotifier()
-		
+
 	def buildConfigList(self):
 		cfgList = []
 		cfgList.append(getConfigListEntry(_("Show event information:"), config.plugins.merlinEpgCenter.showEventInfo))
@@ -195,10 +195,9 @@ class ConfigEventInfo(ConfigBaseTab):
 		cfgList.append(getConfigListEntry(_("Show blinking picon for running timers:"), config.plugins.merlinEpgCenter.blinkingPicon))
 		cfgList.append(getConfigListEntry(_("Show short description:"), config.plugins.merlinEpgCenter.showShortDescInEventInfo))
 		self.configList = cfgList
-			
+
 	def setNotifier(self):
 		config.plugins.merlinEpgCenter.showEventInfo.addNotifier(self.expandableSettingChanged, initial_call=False)
-		
+
 	def removeNotifier(self):
 		config.plugins.merlinEpgCenter.showEventInfo.notifiers.remove(self.expandableSettingChanged)
-		

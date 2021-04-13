@@ -143,9 +143,9 @@ class RecInfobarSetupScreen(Screen, ConfigListScreen):
 			self.RIB.set_position.value = False
 			self.RIB.rec_indicator.value = False
 			self.RIB.tuner_recording_priority.value = "-2"
-		if config.plugins.RecInfobar.always_zap.value != "1" and config.plugins.RecInfobar.always_message.value is True: 
+		if config.plugins.RecInfobar.always_zap.value != "1" and config.plugins.RecInfobar.always_message.value is True:
 			self.RIB.always_message.value = False
-		if not config.plugins.RecInfobar.check_wakeup.value: 
+		if not config.plugins.RecInfobar.check_wakeup.value:
 			self.RIB.after_event.value = "5"
 			self.RIB.standby_timeout.value = 10
 		if config.plugins.RecInfobar.always_zap.value == "2" and not config.recording.asktozap.value:
