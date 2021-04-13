@@ -182,9 +182,9 @@ class AutoTimerOverview(Screen, HelpableScreen):
 				logpath = os.path.dirname(config.plugins.autotimer.log_file.value)
 			path_search_log = os.path.join(logpath, "autotimer_search.log")
 			if os.path.exists(path_search_log):
-				self.session.open(ShowLogScreen, path_search_log, _("searchLog"), "","")
+				self.session.open(ShowLogScreen, path_search_log, _("searchLog"), "", "")
 			else:
-				self.session.open(MessageBox,_("No searchLog found!\n\nSo you have no new or modified timer at last autotimer-search."), MessageBox.TYPE_INFO)
+				self.session.open(MessageBox, _("No searchLog found!\n\nSo you have no new or modified timer at last autotimer-search."), MessageBox.TYPE_INFO)
 
 	def showFilterTxt(self):
 		if hasSeriesPlugin:

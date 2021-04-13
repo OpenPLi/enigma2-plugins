@@ -65,20 +65,20 @@ MAX_X = 720
 MAX_Y = 576
 
 config.plugins.extvirtualzap = ConfigSubsection()
-config.plugins.extvirtualzap.mode = ConfigSelection(default="0", choices=[("0", _("as plugin in extended menu")),("1", _("with long OK press")), ("2", _("with exit button")), ("3", _("disable")), ("4", _("as plugin in event menu"))])
-config.plugins.extvirtualzap.event_menu = ConfigSelection(default="0", choices=[("0", _("disabled")),("1", _("EPGSelection (context menu)")), ("2", _("EventView (context menu)")), ("3", _("EPGSelection/EventView (context menu)"))])
+config.plugins.extvirtualzap.mode = ConfigSelection(default="0", choices=[("0", _("as plugin in extended menu")), ("1", _("with long OK press")), ("2", _("with exit button")), ("3", _("disable")), ("4", _("as plugin in event menu"))])
+config.plugins.extvirtualzap.event_menu = ConfigSelection(default="0", choices=[("0", _("disabled")), ("1", _("EPGSelection (context menu)")), ("2", _("EventView (context menu)")), ("3", _("EPGSelection/EventView (context menu)"))])
 config.plugins.extvirtualzap.usepip = ConfigYesNo(default=True)
 config.plugins.extvirtualzap.show_dish = ConfigYesNo(default=True)
 config.plugins.extvirtualzap.showpipininfobar = ConfigYesNo(default=True)
 config.plugins.extvirtualzap.saveLastService = ConfigYesNo(default=False)
-config.plugins.extvirtualzap.saveLastServiceMode = ConfigSelection(default="always", choices=[("always", _("always")), ("1", _("1 minute")),("5", _("5 minutes")),("15", _("15 minutes")), ("30", _("30 minutes")),("45", _("45 minutes")),("60", _("60 minutes")), ("120", _("2 hours")),("180", _("3 hours")),("360", _("6 hours")), ("720", _("12 hours")),("1440",_("24 hours")), ("standby", _("until standby/restart"))])
+config.plugins.extvirtualzap.saveLastServiceMode = ConfigSelection(default="always", choices=[("always", _("always")), ("1", _("1 minute")), ("5", _("5 minutes")), ("15", _("15 minutes")), ("30", _("30 minutes")), ("45", _("45 minutes")), ("60", _("60 minutes")), ("120", _("2 hours")), ("180", _("3 hours")), ("360", _("6 hours")), ("720", _("12 hours")), ("1440", _("24 hours")), ("standby", _("until standby/restart"))])
 config.plugins.extvirtualzap.exit_button = ConfigYesNo(default=False)
 config.plugins.extvirtualzap.picons = ConfigYesNo(default=False)
 config.plugins.extvirtualzap.pipservicerelation = ConfigYesNo(default=True)
 config.plugins.extvirtualzap.channelselection_contextmenu = ConfigYesNo(default=False)
 config.plugins.extvirtualzap.curref = ConfigText()
 config.plugins.extvirtualzap.curbouquet = ConfigText()
-config.plugins.extvirtualzap.exittimer = ConfigInteger(0,limits=(0, 120))
+config.plugins.extvirtualzap.exittimer = ConfigInteger(0, limits=(0, 120))
 
 if not config.plugins.extvirtualzap.saveLastService.value or config.plugins.extvirtualzap.saveLastServiceMode.value == 'standby':
 	config.plugins.extvirtualzap.curref.value = ""
@@ -97,7 +97,7 @@ class RememberLastService:
 		mode = config.plugins.extvirtualzap.saveLastServiceMode.value
 		self.clearTimer.stop()
 		if mode != "standby" and mode != "always":
-			self.clearTimer.start(int(mode) * 60 * 1000,True)
+			self.clearTimer.start(int(mode) * 60 * 1000, True)
 
 	def clearLastService(self):
 		config.plugins.extvirtualzap.curref.value = ""
@@ -168,7 +168,7 @@ class ExtendedVirtualZap(Screen, HelpableScreen):
 					<widget source="Frontend" render="Label" position="1475,195" size="150,30" font="Regular;27" halign="left" backgroundColor="#101214" transparent="1" zPosition="2">
 						<convert type="FrontendInfo">AGC</convert>
 					</widget>
-				</screen>""" % (pos1,pos2,pos3,pos4)
+				</screen>""" % (pos1, pos2, pos3, pos4)
 		elif sz_w >= 1280:
 			pos1 = 1070
 			pos2 = 1070
@@ -208,7 +208,7 @@ class ExtendedVirtualZap(Screen, HelpableScreen):
 					<widget source="Frontend" render="Label" position="925,190" size="100,22" font="Regular;18" halign="left" backgroundColor="#101214" transparent="1" zPosition="2">
 						<convert type="FrontendInfo">AGC</convert>
 					</widget>
-				</screen>""" % (pos1,pos2,pos3,pos4)
+				</screen>""" % (pos1, pos2, pos3, pos4)
 		else:
 			pos1 = 550
 			pos2 = 550
@@ -248,7 +248,7 @@ class ExtendedVirtualZap(Screen, HelpableScreen):
 					<widget source="Frontend" render="Label" position="655,130" size="70,22" font="Regular;18" halign="left" backgroundColor="#101214" transparent="1" zPosition="2">
 						<convert type="FrontendInfo">AGC</convert>
 					</widget>
-				</screen>""" % (pos1,pos2,pos3,pos4)
+				</screen>""" % (pos1, pos2, pos3, pos4)
 	else:
 		if pipDecoder and config.plugins.extvirtualzap.usepip.value and not config.plugins.extvirtualzap.showpipininfobar.value:
 			usepip = True
@@ -301,7 +301,7 @@ class ExtendedVirtualZap(Screen, HelpableScreen):
 						<widget source="Frontend" render="Label" position="1475,1015" size="150,30" font="Regular;27" halign="left" backgroundColor="#101214" transparent="1" zPosition="2">
 							<convert type="FrontendInfo">AGC</convert>
 						</widget>
-					</screen>""" % (x,y,w,h,pos1,pos2,pos3,pos4)
+					</screen>""" % (x, y, w, h, pos1, pos2, pos3, pos4)
 			elif sz_w >= 1280:
 				pos1 = 1015
 				pos2 = 1015
@@ -341,7 +341,7 @@ class ExtendedVirtualZap(Screen, HelpableScreen):
 						<widget source="Frontend" render="Label" position="755,670" size="100,22" font="Regular;18" halign="left" backgroundColor="#101214" transparent="1" zPosition="2">
 							<convert type="FrontendInfo">AGC</convert>
 						</widget>
-					</screen>""" % (x,y,w,h,pos1,pos2,pos3,pos4)
+					</screen>""" % (x, y, w, h, pos1, pos2, pos3, pos4)
 			else:
 				pos1 = 550
 				pos2 = 550
@@ -381,7 +381,7 @@ class ExtendedVirtualZap(Screen, HelpableScreen):
 						<widget source="Frontend" render="Label" position="495,540" size="70,22" font="Regular;18" halign="left" backgroundColor="#101214" transparent="1" zPosition="2">
 							<convert type="FrontendInfo">AGC</convert>
 						</widget>
-					</screen>""" % (x,y,w,h,pos1,pos2,pos3,pos4)
+					</screen>""" % (x, y, w, h, pos1, pos2, pos3, pos4)
 		else:
 			if sz_w >= 1920:
 				pos1 = 1270
@@ -406,7 +406,7 @@ class ExtendedVirtualZap(Screen, HelpableScreen):
 						<widget backgroundColor="#101214" font="Regular;36" foregroundColor="#fcc000" halign="right" name="NowTime" position="%d,925" size="250,38" transparent="1" zPosition="2"/>
 						<widget backgroundColor="#101214" font="Regular;36" halign="right" name="NextTime" position="%d,960" size="250,38" transparent="1" zPosition="2"/>
 						<widget backgroundColor="#101214" name="servicePicon" position="%d,%d" size="200,120" alphatest="on" zPosition="2"/>
-					</screen>""" % (x,y,w,h,pos1,pos2,pos3,pos4)
+					</screen>""" % (x, y, w, h, pos1, pos2, pos3, pos4)
 
 			elif sz_w >= 1280:
 				pos1 = 1015
@@ -431,7 +431,7 @@ class ExtendedVirtualZap(Screen, HelpableScreen):
 						<widget backgroundColor="#101214" font="Regular;24" foregroundColor="#fcc000" halign="right" name="NowTime" position="%d,610" size="124,28" transparent="1" zPosition="2"/>
 						<widget backgroundColor="#101214" font="Regular;24" halign="right" name="NextTime" position="%d,645" size="124,28" transparent="1" zPosition="2"/>
 						<widget backgroundColor="#101214" name="servicePicon" position="%d,%d" size="100,60" alphatest="on" zPosition="2"/>
-					</screen>""" % (x,y,w,h,pos1,pos2,pos3,pos4)
+					</screen>""" % (x, y, w, h, pos1, pos2, pos3, pos4)
 			else:
 				pos1 = 550
 				pos2 = 550
@@ -455,7 +455,7 @@ class ExtendedVirtualZap(Screen, HelpableScreen):
 						<widget backgroundColor="#101214" font="Regular;20" foregroundColor="#fcc000" halign="right" name="NowTime" position="%d,475" size="120,22" transparent="1" zPosition="2"/>
 						<widget backgroundColor="#101214" font="Regular;20" halign="right" name="NextTime" position="%d,500" size="120,22" transparent="1" zPosition="2"/>
 						<widget backgroundColor="#101214" name="servicePicon" position="%d,%d" size="70,53" alphatest="on" zPosition="2"/>
-					</screen>""" % (x,y,w,h,pos1,pos2,pos3,pos4)
+					</screen>""" % (x, y, w, h, pos1, pos2, pos3, pos4)
 
 	def __init__(self, session, servicelist=None, lastService=True):
 		Screen.__init__(self, session)
@@ -494,21 +494,21 @@ class ExtendedVirtualZap(Screen, HelpableScreen):
 		self["ExtendedVirtualZapActions"] = HelpableActionMap(self, "ExtendedVirtualZapActions", 
 		{
 			"ok": (self.ok, _("zap to PiP service and exit")), 
-			"cancel": (self.closing,_("exit")),
-			"right": (self.keyRightCheck,_("zap to next channel/open service list")),
-			"left": (self.keyLeftCheck,_("zap to previous channel/open service list")),
-			"nextBouquet": (self.showFavourites,_("open favorite list")),
-			"prevBouquet": (self.openServiceList,_("open service list")),
-			"showEventInfo": (self.openEventView,_("open Event View")),
-			"showEventInfoSingleEPG": (self.openSingleServiceEPG,_("open single EPG")),
-			"red": (self.standardPiPzap,_("standard PiPzap")),
-			"green": (self.switchAndStandardPiPzap,_("swap and standard PiPzap")),
-			"blue": (self.standardPiP,_("standard PiP")),
-			"yellow": (self.switchAndStandardPiP,_("swap and standard PiP")),
-			"down": (self.keyDownCheck,_("zap to previous channel/open service list")),
-			"up": (self.keyUpCheck,_("zap to next channel/open service list")),
-			"0": (self.swap,_("swap services")),
-		},-2)
+			"cancel": (self.closing, _("exit")),
+			"right": (self.keyRightCheck, _("zap to next channel/open service list")),
+			"left": (self.keyLeftCheck, _("zap to previous channel/open service list")),
+			"nextBouquet": (self.showFavourites, _("open favorite list")),
+			"prevBouquet": (self.openServiceList, _("open service list")),
+			"showEventInfo": (self.openEventView, _("open Event View")),
+			"showEventInfoSingleEPG": (self.openSingleServiceEPG, _("open single EPG")),
+			"red": (self.standardPiPzap, _("standard PiPzap")),
+			"green": (self.switchAndStandardPiPzap, _("swap and standard PiPzap")),
+			"blue": (self.standardPiP, _("standard PiP")),
+			"yellow": (self.switchAndStandardPiP, _("swap and standard PiP")),
+			"down": (self.keyDownCheck, _("zap to previous channel/open service list")),
+			"up": (self.keyUpCheck, _("zap to next channel/open service list")),
+			"0": (self.swap, _("swap services")),
+		}, -2)
 		self["actions2"] = NumberActionMap(["NumberActions"],
 		{
 			"1": self.keyNumberGlobal,
@@ -758,8 +758,8 @@ class ExtendedVirtualZap(Screen, HelpableScreen):
 			self["NowNum"].setText(self.getServiceNumber(current_service))
 		self["NowChannel"].setText(current.getServiceName() or "")
 		self.setTitle(current.getServiceName() or "")
-		nowepg, nowtimedisplay, percentnow = self.getEPGNowNext(current.ref,0)
-		nextepg, nexttimedisplay, percentnext = self.getEPGNowNext(current.ref,1)
+		nowepg, nowtimedisplay, percentnow = self.getEPGNowNext(current.ref, 0)
+		nextepg, nexttimedisplay, percentnext = self.getEPGNowNext(current.ref, 1)
 		self["NowEPG"].setText(nowepg)
 		self["NextEPG"].setText(nextepg)
 		self["NowTime"].setText(nowtimedisplay)
@@ -814,7 +814,7 @@ class ExtendedVirtualZap(Screen, HelpableScreen):
 					elif modus == 1:
 						timedisplay = _("%d min") % (duration / 60)
 						percent = 0
-					return "%02d:%02d %s" % (t[3],t[4], event[0][4]), timedisplay, percent
+					return "%02d:%02d %s" % (t[3], t[4], event[0][4]), timedisplay, percent
 				else:
 					return "", "", ""
 		return "", "", ""
@@ -969,8 +969,8 @@ class ExtendedVirtualZap(Screen, HelpableScreen):
 			return
 		current = ServiceReference(self.servicelist.getCurrentSelection())
 		self["NowChannel"].setText(current.getServiceName() or '')
-		nowepg, nowtimedisplay, percentnow = self.getEPGNowNext(current.ref,0)
-		nextepg, nexttimedisplay, percentnext = self.getEPGNowNext(current.ref,1)
+		nowepg, nowtimedisplay, percentnow = self.getEPGNowNext(current.ref, 0)
+		nextepg, nexttimedisplay, percentnext = self.getEPGNowNext(current.ref, 1)
 		self["NowEPG"].setText(nowepg)
 		self["NextEPG"].setText(nextepg)
 		self["NowTime"].setText(nowtimedisplay)
@@ -1009,9 +1009,9 @@ class ExtendedVirtualZap(Screen, HelpableScreen):
 			return True
 		return False
 
-	def resolveAlternatePipService(self, service,useRelation=True):
+	def resolveAlternatePipService(self, service, useRelation=True):
 		if useRelation and service:
-			n_service = self.pipServiceRelation.get(service.toString(),None)
+			n_service = self.pipServiceRelation.get(service.toString(), None)
 			if n_service is not None:
 				service = eServiceReference(n_service)
 		if service and (service.flags & eServiceReference.isGroup):
@@ -1284,7 +1284,7 @@ class ExtendedVirtualZapConfig(Screen, ConfigListScreen):
 		if self.prev_channelselection_contextmenu != config.plugins.extvirtualzap.channelselection_contextmenu.value:
 			self.refreshPlugins()
 		if self.prev_extvirtualzap_mode != config.plugins.extvirtualzap.mode.value:
-			restartbox = self.session.openWithCallback(self.restartGUI,MessageBox,_("GUI needs a restart to apply the new settings.\nDo you want to Restart the GUI now?"), MessageBox.TYPE_YESNO)
+			restartbox = self.session.openWithCallback(self.restartGUI, MessageBox, _("GUI needs a restart to apply the new settings.\nDo you want to Restart the GUI now?"), MessageBox.TYPE_YESNO)
 			restartbox.setTitle(_("Restart GUI"))
 		else:
 			import plugin
@@ -1340,7 +1340,7 @@ def ExtendedVirtualZapChannelContextMenu__init__(self, session, csel):
 			if isPlayable:
 				if config.plugins.extvirtualzap.channelselection_contextmenu.value:
 					callFunction = self.showEVZ
-					self["menu"].list.insert(2, ChoiceEntryComponent(text=(_("show 'Extended virtual zap' for current service"), boundFunction(callFunction,1))))
+					self["menu"].list.insert(2, ChoiceEntryComponent(text=(_("show 'Extended virtual zap' for current service"), boundFunction(callFunction, 1))))
 
 def showEVZ(self, add):
 	try:
@@ -1531,7 +1531,7 @@ def Plugins(**kwargs):
 			else:
 				plist.append(PluginDescriptor(name=plugin_name, where=PluginDescriptor.WHERE_EVENTINFO, fnc=eventinfo))
 
-	plist.append(PluginDescriptor(where=PluginDescriptor.WHERE_SESSIONSTART,fnc=autostart))
+	plist.append(PluginDescriptor(where=PluginDescriptor.WHERE_SESSIONSTART, fnc=autostart))
 	if config.plugins.extvirtualzap.channelselection_contextmenu.value:
 		plist.append(PluginDescriptor(name=_("show 'Extended virtual zap' for current service"), where=PluginDescriptor.WHERE_CHANNEL_CONTEXT_MENU, fnc=startForChannelSelector))
 	return plist

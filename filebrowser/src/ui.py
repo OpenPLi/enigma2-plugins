@@ -22,7 +22,7 @@ from os import stat as os_stat, path as os_path, walk as os_walk
 from time import strftime, localtime
 
 ##################################
-class FilebrowserConfigScreen(ConfigListScreen,Screen):
+class FilebrowserConfigScreen(ConfigListScreen, Screen):
     skin = """
         <screen position="100,100" size="550,400" title="" >
             <widget name="config" position="0,0" size="550,360" scrollbarMode="showOnDemand" />
@@ -95,7 +95,7 @@ class FilebrowserScreen(Screen):
             <ePixmap name="pblue" position="400,390" size="120,30" zPosition="0" pixmap="skin_default/buttons/blue.png" transparent="1" alphatest="on"/>
         </screen>
         """
-    def __init__(self, session,path_left=None):
+    def __init__(self, session, path_left=None):
         if path_left is None:
             if os_path_isdir(config.plugins.filebrowser.path_left.value) and config.plugins.filebrowser.savedirs.value:
                 path_left = config.plugins.filebrowser.path_left.value
@@ -117,7 +117,7 @@ class FilebrowserScreen(Screen):
         self["key_yellow"] = Label(_("Copy"))
         self["key_blue"] = Label(_("Rename"))
 
-        self["actions"] = ActionMap(["ChannelSelectBaseActions","WizardActions", "DirectionActions","MenuActions","NumberActions","ColorActions","ChannelSelectEPGActions"],
+        self["actions"] = ActionMap(["ChannelSelectBaseActions", "WizardActions", "DirectionActions", "MenuActions", "NumberActions", "ColorActions", "ChannelSelectEPGActions"],
             {
              "ok": self.ok,
              "back": self.exit,
@@ -171,7 +171,7 @@ class FilebrowserScreen(Screen):
             fileinfo = ("%s        " % self.dirSize(filename) if config.plugins.filebrowser.dir_size.value else "") + self.fileTime(curFile.st_mtime)
         else:
             curFile = os_stat(self.SOURCELIST.getCurrentDirectory() + filename)
-            fileinfo = "%s  (%s)        %s" % (self.humanizer(curFile.st_size),'{:,.0f}'.format(curFile.st_size), self.fileTime(curFile.st_mtime))
+            fileinfo = "%s  (%s)        %s" % (self.humanizer(curFile.st_size), '{:,.0f}'.format(curFile.st_size), self.fileTime(curFile.st_mtime))
         self.session.open(FilebrowserScreenInfo, (filename, fileinfo))
 
     def dirSize(self, directory):
@@ -183,10 +183,10 @@ class FilebrowserScreen(Screen):
         return self.humanizer(size)
 
     def fileTime(self, epoche):
-        return strftime("%d.%m.%Y %H:%M:%S",localtime(epoche))
+        return strftime("%d.%m.%Y %H:%M:%S", localtime(epoche))
 
     def humanizer(self, size):
-        for index,count in enumerate(['B','KB','MB','GB']):
+        for index, count in enumerate(['B', 'KB', 'MB', 'GB']):
             if size < 1024.0:
                 return "%3.2f %s" % (size, count) if index else "%d %s" % (size, count)
             size /= 1024.0
@@ -200,7 +200,7 @@ class FilebrowserScreen(Screen):
         menu.append((_("Create directory"), 7))
         menu.append((_("Delete"), 8))
         menu.append((_("Settings"), 100))
-        keys = ["2","5","6","7","8","menu"]
+        keys = ["2", "5", "6", "7", "8", "menu"]
         self.session.openWithCallback(self.menuCallback, ChoiceBox, title=_("Select operation:"), list=menu, keys=keys, skin_name="ChoiceBox")
 
     def menuCallback(self, choice):
@@ -239,9 +239,9 @@ class FilebrowserScreen(Screen):
         sourceDir = self.SOURCELIST.getCurrentDirectory()
         targetDir = self.TARGETLIST.getCurrentDirectory()
         if os_path_isdir(filename):
-            txt = _("Copy directory") + "?\n\n%s\n%s\n%s" % (filename,_("to"),targetDir)
+            txt = _("Copy directory") + "?\n\n%s\n%s\n%s" % (filename, _("to"), targetDir)
         else:
-            txt = _("Copy file") + "?\n\n%s\n%s\n%s\n%s\n%s" % (filename,_("from"),sourceDir,_("to"),targetDir)
+            txt = _("Copy file") + "?\n\n%s\n%s\n%s\n%s\n%s" % (filename, _("from"), sourceDir, _("to"), targetDir)
         self.session.openWithCallback(self.doCopy, MessageBox, txt, type=MessageBox.TYPE_YESNO, default=True, simple=True)
 
     def doCopy(self, result=False):
@@ -269,10 +269,10 @@ class FilebrowserScreen(Screen):
         if os_path_isdir(filename):
             txt = _("Delete directory") + "?\n\n%s" % (filename)
         else:
-            txt = _("Delete file") + "?\n\n%s\n%s\n%s" % (filename,_("from dir"),sourceDir)
+            txt = _("Delete file") + "?\n\n%s\n%s\n%s" % (filename, _("from dir"), sourceDir)
         self.session.openWithCallback(self.doDelete, MessageBox, txt, type=MessageBox.TYPE_YESNO, default=False, simple=True)
 
-    def doDelete(self,result=False):
+    def doDelete(self, result=False):
         if result:
             filename = self.SOURCELIST.getFilename()
             sourceDir = self.SOURCELIST.getCurrentDirectory()
@@ -295,9 +295,9 @@ class FilebrowserScreen(Screen):
         sourceDir = self.SOURCELIST.getCurrentDirectory()
         targetDir = self.TARGETLIST.getCurrentDirectory()
         if os_path_isdir(filename):
-            txt = _("Move directory") + "?\n\n%s\n%s\n%s" % (filename,_("to"),targetDir)
+            txt = _("Move directory") + "?\n\n%s\n%s\n%s" % (filename, _("to"), targetDir)
         else:
-            txt = _("Move file") + "?\n\n%s\n%s\n%s\n%s\n%s" % (filename,_("from dir"),sourceDir,_("to dir"),targetDir)
+            txt = _("Move file") + "?\n\n%s\n%s\n%s\n%s\n%s" % (filename, _("from dir"), sourceDir, _("to dir"), targetDir)
         self.session.openWithCallback(self.doMove, MessageBox, txt, type=MessageBox.TYPE_YESNO, default=True, simple=True)
 
     def doMove(self, result=True):
@@ -311,7 +311,7 @@ class FilebrowserScreen(Screen):
             else:
                 txt = _("moving file ...")
                 cmd = ["mv \"" + sourceDir + filename + "\" \"" + targetDir + "\""]
-            self.session.openWithCallback(self.doMoveCB,Console, title=txt, cmdlist=cmd, closeOnSuccess=True)
+            self.session.openWithCallback(self.doMoveCB, Console, title=txt, cmdlist=cmd, closeOnSuccess=True)
 
     def doMoveCB(self):
         self.doRefresh()
@@ -388,13 +388,13 @@ class FilebrowserScreen(Screen):
 
     def onFileAction(self):
         try:
-            x = openFile(self.session,guess_type(self.SOURCELIST.getFilename())[0],self.SOURCELIST.getCurrentDirectory() + self.SOURCELIST.getFilename())
-            print "RESULT OPEN FILE",x
-        except TypeError,e:
+            x = openFile(self.session, guess_type(self.SOURCELIST.getFilename())[0], self.SOURCELIST.getCurrentDirectory() + self.SOURCELIST.getFilename())
+            print "RESULT OPEN FILE", x
+        except TypeError, e:
             # catching error
             #  File "/home/tmbinc/opendreambox/1.5/dm8000/experimental/build/tmp/work/enigma2-2.6git20090627-r1/image/usr/lib/enigma2/python/Components/Scanner.py", line 43, in handleFile
             #  TypeError: 'in <string>' requires string as left operand
-            self.session.open(MessageBox,_("no Viewer installed for this mimetype!"), type=MessageBox.TYPE_ERROR, timeout=5, close_on_any_key=True)
+            self.session.open(MessageBox, _("no Viewer installed for this mimetype!"), type=MessageBox.TYPE_ERROR, timeout=5, close_on_any_key=True)
 
 ##################################
 class FilebrowserScreenInfo(Screen):
@@ -413,7 +413,7 @@ class FilebrowserScreenInfo(Screen):
                 self["path"] = Label()
                 self["size"] = Label()
 
-                self["actions"] = ActionMap(["OkCancelActions","ChannelSelectEPGActions"],
+                self["actions"] = ActionMap(["OkCancelActions", "ChannelSelectEPGActions"],
                 {
                         "ok": self.exit,
                         "cancel": self.exit,
@@ -425,16 +425,16 @@ class FilebrowserScreenInfo(Screen):
                 self.onLayoutFinish.append(self.setSize)
 
         def setSize(self):
-                w,h = self.getScreenSize()
+                w, h = self.getScreenSize()
                 mx = 30 if w >= 1920 else 15
-                x,y = self.getLineSize()
+                x, y = self.getLineSize()
                 wsize = (x + 2 * mx, 4 * y)
                 self.instance.resize(eSize(*wsize))
-                self["path"].instance.move(ePoint(mx,y - y / 4))
-                self["size"].instance.move(ePoint(mx,2 * y + y / 4))
+                self["path"].instance.move(ePoint(mx, y - y / 4))
+                self["size"].instance.move(ePoint(mx, 2 * y + y / 4))
                 wx = (w - wsize[0]) / 2
                 wy = (h - wsize[1]) / 2
-                self.instance.move(ePoint(wx,wy))
+                self.instance.move(ePoint(wx, wy))
 
         def getLineSize(self):
                 self["path"].instance.setNoWrap(1)

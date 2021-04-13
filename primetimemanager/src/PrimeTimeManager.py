@@ -191,7 +191,7 @@ class PrimeTimeManager(Screen, HelpableScreen):
 			"left": (self.buttonLeft, _("Scroll selected list to the left")),
 			"leftRepeated": (self.buttonLeft, _("Scroll selected list to the left")),
 			"right": (self.buttonRight, _("Scroll selected list to the right")),
-			"rightRepeated":(self.buttonRight, _("Scroll selected list to the right")),
+			"rightRepeated": (self.buttonRight, _("Scroll selected list to the right")),
 		}, -1)
 
 		self["ChannelSelectBaseActions"] = HelpableActionMap(self, "ChannelSelectBaseActions",
@@ -2391,7 +2391,7 @@ class NoScrollBarLabel(ScrollLabel):
 			widget_attribs = []
 			for (attrib, value) in self.skinAttributes:
 				if attrib.find("transparent") != -1 or attrib.find("backgroundColor") != -1:
-					widget_attribs.append((attrib,value))
+					widget_attribs.append((attrib, value))
 			skin.applyAllAttributes(self.instance, desktop, widget_attribs, parent.scale)
 			ret = True
 		s = self.long_text.size()
@@ -2402,7 +2402,7 @@ class NoScrollBarLabel(ScrollLabel):
 		lines = (int)(s.height() / lineheight)
 		self.pageHeight = (int)(lines * lineheight)
 		self.instance.resize(eSize(s.width(), self.pageHeight + (int)(lineheight / 6)))
-		self.long_text.move(ePoint(0,0))
+		self.long_text.move(ePoint(0, 0))
 		self.long_text.resize(eSize(s.width() - 30, self.pageHeight * 16))
 		self.setText(self.message)
 		return ret
@@ -2410,7 +2410,7 @@ class NoScrollBarLabel(ScrollLabel):
 	def setText(self, text):
 		self.message = text
 		if self.long_text is not None and self.pageHeight:
-			self.long_text.move(ePoint(0,0))
+			self.long_text.move(ePoint(0, 0))
 			self.long_text.setText(self.message)
 			text_height = self.long_text.calculateSize().height()
 			total = self.pageHeight

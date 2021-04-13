@@ -46,7 +46,7 @@ try:
 	reader = XMLHelpReader(resolveFilename(SCOPE_PLUGINS, "Extensions/AutoTimer/mphelp.xml"), translate=_)
 	autotimerHelp = registerHelp(*reader)
 except Exception as e:
-	doLog("[AutoTimer] Unable to initialize MPHelp:", e,"- Help not available!")
+	doLog("[AutoTimer] Unable to initialize MPHelp:", e, "- Help not available!")
 	autotimerHelp = None
 
 def isOriginalWebifInstalled():
@@ -208,7 +208,7 @@ def furtherOptions(self):
 				(_("Open plugin"), "openplugin"),
 				(_("Timers list"), "timerlist"),
 			]
-			dlg = self.session.openWithCallback(self.menuCallbackAutoTimer,ChoiceBox,title=_("Select action for AutoTimer:"), list=list)
+			dlg = self.session.openWithCallback(self.menuCallbackAutoTimer, ChoiceBox, title=_("Select action for AutoTimer:"), list=list)
 			dlg.setTitle(_("Choice list AutoTimer"))
 		else:
 			base_furtherOptions(self)
@@ -222,7 +222,7 @@ def furtherOptions(self):
 				(_("Open plugin"), "openplugin"),
 				(_("Timers list"), "timerlist"),
 			]
-			dlg = self.session.openWithCallback(self.menuCallbackAutoTimer,ChoiceBox,title=_("Select action for AutoTimer or input date/time:"), list=list)
+			dlg = self.session.openWithCallback(self.menuCallbackAutoTimer, ChoiceBox, title=_("Select action for AutoTimer or input date/time:"), list=list)
 			dlg.setTitle(_("Choice list AutoTimer"))
 		else:
 			base_furtherOptions(self)
@@ -301,7 +301,7 @@ def AutoTimerChannelContextMenu__init__(self, session, csel):
 			isPlayable = not (current_sel_flags & (eServiceReference.isMarker | eServiceReference.isDirectory))
 			if config.plugins.autotimer.add_to_channelselection.value and csel.bouquet_mark_edit == OFF and not csel.movemode and isPlayable:
 				callFunction = self.addtoAutoTimer
-				self["menu"].list.insert(3, ChoiceEntryComponent(text=(_("create AutoTimer for current event"), boundFunction(callFunction,1)), key="bullet"))
+				self["menu"].list.insert(3, ChoiceEntryComponent(text=(_("create AutoTimer for current event"), boundFunction(callFunction, 1)), key="bullet"))
 
 def addtoAutoTimer(self, add):
 	sref = self.csel.servicelist.getCurrent()

@@ -101,7 +101,7 @@ class WerbeZapperIndicator(Screen):
 
 	def __changePosition(self, configElement=None):
 		if not self.instance is None:
-			self.instance.move(ePoint(config.werbezapper.x.value,config.werbezapper.y.value))
+			self.instance.move(ePoint(config.werbezapper.x.value, config.werbezapper.y.value))
 
 class WerbeZapperChoiceBox(ChoiceBox):
 	def __init__(self, session, title="", list=[], keys=None, selection=0, zap_time=0, zap_service=None, monitored_event=None, monitor_time=None, monitored_service=None, skin_name=[]):
@@ -489,7 +489,7 @@ class WerbeZapper(Screen):
 		wakeup = config.werbezapper.standby.value
 		if self.zap_service and (not standby or (standby and wakeup and not self.monitor_timer.isActive())):
 			from ServiceReference import ServiceReference
-			from enigma import iPlayableService,eServiceReference
+			from enigma import iPlayableService, eServiceReference
 			ref_cur = self.zap_service
 			refstr = ref_cur.toString()
 			zap_name = ServiceReference(eServiceReference(refstr)).getServiceName()
@@ -571,7 +571,7 @@ class WerbezapperSettings(Screen, ConfigListScreen):
 		self.setTitle(_("WerbeZapper Setup"))
 		self['key_red'] = Button(_('Cancel'))
 		self['key_green'] = Button(_('Save'))
-		self['actions'] = ActionMap(['SetupActions','ColorActions'], {'green': self.save, 'ok': self.save, 'red': self.exit, 'cancel': self.exit}, -2)
+		self['actions'] = ActionMap(['SetupActions', 'ColorActions'], {'green': self.save, 'ok': self.save, 'red': self.exit, 'cancel': self.exit}, -2)
 		ConfigListScreen.__init__(self, [])
 		self.initConfig()
 		self.createSetup()
@@ -579,7 +579,7 @@ class WerbezapperSettings(Screen, ConfigListScreen):
 	def initConfig(self):
 		def getPrevValues(section):
 			res = {}
-			for (key,val) in section.content.items.items():
+			for (key, val) in section.content.items.items():
 				if isinstance(val, ConfigSubsection):
 					res[key] = getPrevValues(val)
 				else:
@@ -631,7 +631,7 @@ class WerbezapperSettings(Screen, ConfigListScreen):
 
 	def exit(self):
 		def setPrevValues(section, values):
-			for (key,val) in section.content.items.items():
+			for (key, val) in section.content.items.items():
 				value = values.get(key, None)
 				if value is not None:
 					if isinstance(val, ConfigSubsection):

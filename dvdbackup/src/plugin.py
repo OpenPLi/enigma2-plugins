@@ -51,7 +51,7 @@ config.plugins.DVDBackup.directory = ConfigText(default="/media/hdd", fixed_size
 config.plugins.DVDBackup.name = NoSave(ConfigText(default=_("Name of DVD"), fixed_size=False))
 config.plugins.DVDBackup.log = ConfigYesNo(default=True)
 config.plugins.DVDBackup.show_message = ConfigYesNo(default=True)
-config.plugins.DVDBackup.create_iso = ConfigSelection(default="no", choices=[("no", _("no")),("genisoimage", _("with genisoimage (slower)")),("dd", _("with dd (faster)"))])
+config.plugins.DVDBackup.create_iso = ConfigSelection(default="no", choices=[("no", _("no")), ("genisoimage", _("with genisoimage (slower)")), ("dd", _("with dd (faster)"))])
 cfg = config.plugins.DVDBackup
 
 #################################################
@@ -172,7 +172,7 @@ class DVDBackup:
 		if size > 0:
 			self.files.append(DVDBackupFile("dd", int(size)))
 			self.pollTimer.start(10000, True)
-			self.console.ePopen("dd if=/dev/sr0 of=%s%s.iso bs=2048 conv=sync" % (cfg.directory.value,cfg.name.value), self.isoFinished)
+			self.console.ePopen("dd if=/dev/sr0 of=%s%s.iso bs=2048 conv=sync" % (cfg.directory.value, cfg.name.value), self.isoFinished)
 
 	def getDVDSize(self, result, retval, extra_args):
 		size = 0
@@ -180,18 +180,18 @@ class DVDBackup:
 		lastPhrase = "Main feature:"
 		if result and result.__contains__(firstPhrase) and result.__contains__(lastPhrase):
 			result = result[result.index(firstPhrase) + len(firstPhrase) + 1: result.index(lastPhrase)]
-			print "[DVD Backup]",result
+			print "[DVD Backup]", result
 			lines = result.split("\n")
 			for line in lines:
 				tmp = line.split("\t")
 				if len(tmp) == 4:
 					if not tmp[1].__contains__("VTS_00_0."):
 						size += int(tmp[2])
-			print "[DVD Backup]",size, size / 2048
+			print "[DVD Backup]", size, size / 2048
 		else:
 			msg = _("Could not read the DVD informations!")
 			message(msg)
-			print "[DVD Backup]",result
+			print "[DVD Backup]", result
 			self.working = False
 			self.error = msg
 		return size
@@ -201,7 +201,7 @@ class DVDBackup:
 		lastPhrase = "Main feature:"
 		if result and result.__contains__(firstPhrase) and result.__contains__(lastPhrase):
 			result = result[result.index(firstPhrase) + len(firstPhrase) + 1: result.index(lastPhrase)]
-			print "[DVD Backup]",result
+			print "[DVD Backup]", result
 			lines = result.split("\n")
 			folder = ""
 			for line in lines:
@@ -230,7 +230,7 @@ class DVDBackup:
 		else:
 			msg = _("Could not read the DVD informations!")
 			message(msg)
-			print "[DVD Backup]",result
+			print "[DVD Backup]", result
 			self.working = False
 			self.error = msg
 
@@ -333,7 +333,7 @@ class DVDBackupList(MenuList):
 
 def DVDBackupListEntry(file):
 	res = [(file)]
-	a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p = skin.parameters.get("DVDbackupList1",(0, 0, 180, 25, 200, 0, 120, 25, 340, 9, 100, 7, 460, 0, 60, 25))
+	a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p = skin.parameters.get("DVDbackupList1", (0, 0, 180, 25, 200, 0, 120, 25, 340, 9, 100, 7, 460, 0, 60, 25))
 	res.append(MultiContentEntryText(pos=(a, b), size=(c, d), font=0, text=file.name.split("/")[-1]))
 	res.append(MultiContentEntryText(pos=(e, f), size=(g, h), font=0, text="%s" % Humanizer(file.size), flags=RT_HALIGN_CENTER))
 	res.append(MultiContentEntryProgress(pos=(i, j), size=(k, l), percent=file.progress, borderWidth=1))

@@ -99,7 +99,7 @@ class ChangePasswdScreen(Screen):
 		if data.find('password'):
 			self.container.write("%s\n" % self.password)
 
-	def runFinished(self,retval):
+	def runFinished(self, retval):
 		del self.container.dataAvail[:]
 		del self.container.appClosed[:]
 		del self.container

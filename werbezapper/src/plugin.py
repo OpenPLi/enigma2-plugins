@@ -17,15 +17,15 @@ from Plugins.Plugin import PluginDescriptor
 zapperInstance = None
 
 WerbezapperInfoBarKeys = [
-	["none",_("NONE"),["KEY_RESERVED"]],
-	["Green",_("GREEN"),["KEY_GREEN"]],
-	["Yellow",_("YELLOW"),["KEY_YELLOW"]],
-	["Radio",_("RADIO"),["KEY_RADIO"]],
-	["Text",_("TEXT"),["KEY_TEXT"]],
-	["Tv",_("TV"),["KEY_TV"]],
-	["Help",_("HELP"),["KEY_HELP"]],
-	["Timer",_("TIMER"),["KEY_PROGRAM"]],
-	["search",_("SEARCH"),["KEY_SEARCH"]],
+	["none", _("NONE"), ["KEY_RESERVED"]],
+	["Green", _("GREEN"), ["KEY_GREEN"]],
+	["Yellow", _("YELLOW"), ["KEY_YELLOW"]],
+	["Radio", _("RADIO"), ["KEY_RADIO"]],
+	["Text", _("TEXT"), ["KEY_TEXT"]],
+	["Tv", _("TV"), ["KEY_TV"]],
+	["Help", _("HELP"), ["KEY_HELP"]],
+	["Timer", _("TIMER"), ["KEY_PROGRAM"]],
+	["search", _("SEARCH"), ["KEY_SEARCH"]],
 ]
 
 config.werbezapper = ConfigSubsection()
@@ -35,13 +35,13 @@ config.werbezapper.standby = ConfigYesNo(default=False)
 config.werbezapper.channelselection_duration = ConfigNumber(default=1)
 config.werbezapper.add_to_channelselection = ConfigYesNo(default=True)
 config.werbezapper.channelselection_duration_stepsize = ConfigInteger(default=1, limits=(1, 20))
-config.werbezapper.hotkey = ConfigSelection([(x[0],x[1]) for x in WerbezapperInfoBarKeys], "none")
+config.werbezapper.hotkey = ConfigSelection([(x[0], x[1]) for x in WerbezapperInfoBarKeys], "none")
 config.werbezapper.monitoring_extmenu = ConfigYesNo(default=True)
 config.werbezapper.icon_timer = ConfigYesNo(default=False)
-config.werbezapper.icon_mode = ConfigSelection([("0", _("time")),("1", _("service / time"))], "0")
-config.werbezapper.x = ConfigInteger(default=60, limits=(0,9999))
-config.werbezapper.y = ConfigInteger(default=60, limits=(0,9999))
-config.werbezapper.z = ConfigSelection([(str(x), str(x)) for x in range(-20,21)], "-1")
+config.werbezapper.icon_mode = ConfigSelection([("0", _("time")), ("1", _("service / time"))], "0")
+config.werbezapper.x = ConfigInteger(default=60, limits=(0, 9999))
+config.werbezapper.y = ConfigInteger(default=60, limits=(0, 9999))
+config.werbezapper.z = ConfigSelection([(str(x), str(x)) for x in range(-20, 21)], "-1")
 
 def main(session=None, servicelist=None, **kwargs):
 	if servicelist is None:

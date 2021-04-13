@@ -67,7 +67,7 @@ class AudioRestart():
 		if config.plugins.AC3LipSync.restartSelection.value in ["restart", "both"]:
 			self.startTimer()
 
-	def enterStandby(self,configElement):
+	def enterStandby(self, configElement):
 		Standby.inStandby.onClose.append(self.endStandby)
 
 	def removeNotifier(self):

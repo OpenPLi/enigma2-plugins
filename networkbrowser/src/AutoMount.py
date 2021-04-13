@@ -13,7 +13,7 @@ XML_FSTAB = "/etc/enigma2/automounts.xml"
 
 def rm_rf(d): # only for removing the ipkg stuff from /media/hdd subdirs
 	try:
-		for path in (os.path.join(d,f) for f in os.listdir(d)):
+		for path in (os.path.join(d, f) for f in os.listdir(d)):
 			if os.path.isdir(path):
 				rm_rf(path)
 			else:
@@ -108,7 +108,7 @@ class AutoMount():
 
 		self.checkList = self.automounts.keys()
 		if not self.checkList:
-			print "[AutoMount.py] self.automounts without mounts",self.automounts
+			print "[AutoMount.py] self.automounts without mounts", self.automounts
 			if callback is not None:
 				callback(True)
 		else:
@@ -172,7 +172,7 @@ class AutoMount():
 
 		# unknown mounttype
 		else:
-			print "[AutoMount.py] Unknown mount type: ",mounttype
+			print "[AutoMount.py] Unknown mount type: ", mounttype
 
 		# return the sanitized options list
 		return ",".join(options)
@@ -354,7 +354,7 @@ class AutoMount():
 		self.timer.stop()
 		if self.MountConsole:
 			if len(self.MountConsole.appContainers) == 0:
-				print "self.automounts after mounting",self.automounts
+				print "self.automounts after mounting", self.automounts
 				if self.callback is not None:
 					self.callback(True)
 
@@ -409,7 +409,7 @@ class AutoMount():
 			self.MountConsole = None
 
 	def removeMount(self, mountpoint, callback=None):
-		print "[AutoMount.py] removing mount: ",mountpoint
+		print "[AutoMount.py] removing mount: ", mountpoint
 		self.newautomounts = {}
 		for sharename, sharedata in self.automounts.items():
 			if sharename is not mountpoint.strip():
@@ -420,7 +420,7 @@ class AutoMount():
 			self.removeConsole = Console()
 		path = '/media/net/' + mountpoint
 		umountcmd = "umount -fl '%s'" % path
-		print "[AutoMount.py] UMOUNT-CMD--->",umountcmd
+		print "[AutoMount.py] UMOUNT-CMD--->", umountcmd
 		self.removeConsole.ePopen(umountcmd, self.removeMountPointFinished, [path, callback])
 
 	def removeMountPointFinished(self, result, retval, extra_args):

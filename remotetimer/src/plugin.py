@@ -336,13 +336,13 @@ def newnigma2KeyGo(self):
 		if end < begin:
 			end += 86400
 
-		rt_name = urllib.quote(self.timerentry_name.value.decode('utf8').encode('utf8','ignore'))
-		rt_description = urllib.quote(self.timerentry_description.value.decode('utf8').encode('utf8','ignore'))
+		rt_name = urllib.quote(self.timerentry_name.value.decode('utf8').encode('utf8', 'ignore'))
+		rt_description = urllib.quote(self.timerentry_description.value.decode('utf8').encode('utf8', 'ignore'))
 		rt_disabled = 0 # XXX: do we really want to hardcode this? why do we offer this option then?
 		rt_repeated = 0 # XXX: same here
 
 		if config.plugins.remoteTimer.remotedir.value:
-			rt_dirname = urllib.quote(self.timerentry_dirname.value.decode('utf8').encode('utf8','ignore'))
+			rt_dirname = urllib.quote(self.timerentry_dirname.value.decode('utf8').encode('utf8', 'ignore'))
 		else:
 			rt_dirname = "None"
 
@@ -421,7 +421,7 @@ def main(session, **kwargs):
 
 def Plugins(**kwargs):
  	p = [
-		PluginDescriptor(name=_("Remote Timer"),description=_("Create timers on remote reciever enigma2"), where=PluginDescriptor.WHERE_PLUGINMENU, icon="remotetimer.png", fnc=main),
+		PluginDescriptor(name=_("Remote Timer"), description=_("Create timers on remote reciever enigma2"), where=PluginDescriptor.WHERE_PLUGINMENU, icon="remotetimer.png", fnc=main),
 		PluginDescriptor(where=PluginDescriptor.WHERE_SESSIONSTART, fnc=autostart)
 	]
 	if config.plugins.remoteTimer.extmenu.value:

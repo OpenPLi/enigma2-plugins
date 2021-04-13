@@ -98,10 +98,10 @@ class TerrestrialScan(Screen, ConfigListScreen):
 		self.bandwidth = 8 # MHz
 		self.scanTransponders = []
 		if self.uhf_vhf == "uhf_vhf":
-			for a in range(5,13): # channel
+			for a in range(5, 13): # channel
 				for b in (eDVBFrontendParametersTerrestrial.System_DVB_T, eDVBFrontendParametersTerrestrial.System_DVB_T2): # system
 					self.scanTransponders.append({"channel": a, "system": b, "bandwidth": 7})
-		for a in range(21,70): # channel
+		for a in range(21, 70): # channel
 			for b in (eDVBFrontendParametersTerrestrial.System_DVB_T, eDVBFrontendParametersTerrestrial.System_DVB_T2): # system
 				self.scanTransponders.append({"channel": a, "system": b, "bandwidth": 8})
 		self.transponders_found = []
@@ -351,7 +351,7 @@ class TerrestrialScan(Screen, ConfigListScreen):
 			time.sleep(2) # allow extra time to get a stable reading
 			signalQuality = self.frontend.readFrontendData(iFrontendInformation.signalQuality)
 			if signalQuality > 0:
-				found = {"frequency": self.frequency, "tsid": self.tsid, "onid": self.onid, "system": self.system, "bandwidth": self.bandwidth,"signalQuality": signalQuality}
+				found = {"frequency": self.frequency, "tsid": self.tsid, "onid": self.onid, "system": self.system, "bandwidth": self.bandwidth, "signalQuality": signalQuality}
 				self.transponders_found.append(self.frequency)
 				tsidOnidKey = "%x:%x" % (self.tsid, self.onid)
 				if (tsidOnidKey not in self.transponders_unique or self.transponders_unique[tsidOnidKey]["signalQuality"] < signalQuality) and (self.networkid == 0 or self.networkid == self.onid):

@@ -208,7 +208,7 @@ class DishPiP(Screen):
 			nims = nimmanager.nimList()
 			if nr < 4:
 				return "".join(nims[nr].split(':')[:1])
-			return " ".join((_("Tuner"),str(nr)))
+			return " ".join((_("Tuner"), str(nr)))
 		return ""
 
 	def OrbToStr(self, orbpos):

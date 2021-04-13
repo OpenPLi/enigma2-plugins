@@ -17,10 +17,10 @@ if HardwareInfo().get_device_model() in ("formuler3", "formuler4", "s1", "h3", "
 	use_oled = True
 
 config.plugins.VFD_ini = ConfigSubsection()
-config.plugins.VFD_ini.showClock = ConfigSelection(default="True_Switch", choices=[("False",_("Channelnumber in Standby off")),("True",_("Channelnumber in Standby Clock")), ("True_Switch",_("Channelnumber/Clock in Standby Clock")),("True_All",_("Clock always")),("Off",_("Always off"))])
-config.plugins.VFD_ini.timeMode = ConfigSelection(default="24h", choices=[("12h",_("12h")),("24h",_("24h"))])
-config.plugins.VFD_ini.recDisplay = ConfigSelection(default="False", choices=[("True",_("yes")),("False",_("no"))])
-config.plugins.VFD_ini.recClockBlink = ConfigSelection(default="off", choices=[("off",_("Off")),("on_off",_("On/Off")),("brightness",_("Brightness level"))])
+config.plugins.VFD_ini.showClock = ConfigSelection(default="True_Switch", choices=[("False", _("Channelnumber in Standby off")), ("True", _("Channelnumber in Standby Clock")), ("True_Switch", _("Channelnumber/Clock in Standby Clock")), ("True_All", _("Clock always")), ("Off", _("Always off"))])
+config.plugins.VFD_ini.timeMode = ConfigSelection(default="24h", choices=[("12h", _("12h")), ("24h", _("24h"))])
+config.plugins.VFD_ini.recDisplay = ConfigSelection(default="False", choices=[("True", _("yes")), ("False", _("no"))])
+config.plugins.VFD_ini.recClockBlink = ConfigSelection(default="off", choices=[("off", _("Off")), ("on_off", _("On/Off")), ("brightness", _("Brightness level"))])
 config.plugins.VFD_ini.ClockLevel1 = ConfigSlider(default=1, limits=(0, 10))
 config.plugins.VFD_ini.ClockLevel2 = ConfigSlider(default=4, limits=(1, 10))
 
@@ -55,7 +55,7 @@ class Channelnumber:
 		self.zaPrik.start(1000, 1)
 		self.onClose = []
 
-		self.__event_tracker = ServiceEventTracker(screen=self,eventmap={
+		self.__event_tracker = ServiceEventTracker(screen=self, eventmap={
 				iPlayableService.evUpdatedEventInfo: self.__eventInfoChanged,
 				iPlayableService.evEnd: self.__evEnd
 			})
@@ -240,7 +240,7 @@ class VFD_INISetup(ConfigListScreen, Screen):
 		self["key_green"] = Button(_("Save"))
 		self["key_yellow"] = Button(_("Update Date/Time"))
 
-		self["setupActions"] = ActionMap(["SetupActions","ColorActions"],
+		self["setupActions"] = ActionMap(["SetupActions", "ColorActions"],
 		{
 			"save": self.save,
 			"cancel": self.cancel,
@@ -350,5 +350,5 @@ def Plugins(**kwargs):
 	from Components.SystemInfo import SystemInfo
 	if SystemInfo["FrontpanelDisplay"]:
 		return [PluginDescriptor(where=[PluginDescriptor.WHERE_AUTOSTART, PluginDescriptor.WHERE_SESSIONSTART], fnc=sessionstart),
-			PluginDescriptor(name="VFD Display Setup", description=_("Change VFD display settings"),where=PluginDescriptor.WHERE_MENU, fnc=main)]
+			PluginDescriptor(name="VFD Display Setup", description=_("Change VFD display settings"), where=PluginDescriptor.WHERE_MENU, fnc=main)]
 	return []

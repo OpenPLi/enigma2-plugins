@@ -284,7 +284,7 @@ class AC3SetCustomValue:
 				keyList.append((_("Key %(key)s (current value: %(value)i ms)") % dict(key=i, value=iValue), i))
 		return keyList
 
-	def DoSetCustomValue(self,answer):
+	def DoSetCustomValue(self, answer):
 		if answer is None:
 			self.session.open(MessageBox, _("Setting key canceled"), MessageBox.TYPE_INFO)
 		elif answer[1] in ("2", "5", "8"):

@@ -34,7 +34,7 @@ class TerrestrialScanScreen(ConfigListScreen, Screen):
 		self.session = session
 		ConfigListScreen.__init__(self, [], session=session, on_change=self.changedEntry)
 
-		self["actions"] = ActionMap(["SetupActions","ColorActions"],
+		self["actions"] = ActionMap(["SetupActions", "ColorActions"],
 		{
 			"ok": self.keyGo,
 			"cancel": self.keyCancel,
@@ -71,11 +71,11 @@ class TerrestrialScanScreen(ConfigListScreen, Screen):
 
 	def createSetup(self):
 		setup_list = [
-			getConfigListEntry(_("Tuner"), self.scan_nims,_('Select a tuner that is configured for terrestrial scans. "Automatic" will pick the highest spec available tuner.')),
-			getConfigListEntry(_("Band"), config.plugins.TerrestrialScan.uhf_vhf,_('Most transmitters in European countries only have TV channels in the UHF band.')),
-			getConfigListEntry(_('Network ID'), config.plugins.TerrestrialScan.networkid,_('Select "0" to search all networks, or enter the network ID of the provider you wish to search.')),
-			getConfigListEntry(_("Clear before scan"), config.plugins.TerrestrialScan.clearallservices,_('If you select "yes" all stored terrestrial channels will be deleted before starting the current search.')),
-			getConfigListEntry(_("Only free scan"), config.plugins.TerrestrialScan.onlyfree,_('If you select "yes" the scan will only save channels that are not encrypted; "no" will find encrypted and non-encrypted channels.'))
+			getConfigListEntry(_("Tuner"), self.scan_nims, _('Select a tuner that is configured for terrestrial scans. "Automatic" will pick the highest spec available tuner.')),
+			getConfigListEntry(_("Band"), config.plugins.TerrestrialScan.uhf_vhf, _('Most transmitters in European countries only have TV channels in the UHF band.')),
+			getConfigListEntry(_('Network ID'), config.plugins.TerrestrialScan.networkid, _('Select "0" to search all networks, or enter the network ID of the provider you wish to search.')),
+			getConfigListEntry(_("Clear before scan"), config.plugins.TerrestrialScan.clearallservices, _('If you select "yes" all stored terrestrial channels will be deleted before starting the current search.')),
+			getConfigListEntry(_("Only free scan"), config.plugins.TerrestrialScan.onlyfree, _('If you select "yes" the scan will only save channels that are not encrypted; "no" will find encrypted and non-encrypted channels.'))
 		]
 		self["config"].list = setup_list
 		self["config"].l.setList(setup_list)

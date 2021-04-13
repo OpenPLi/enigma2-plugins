@@ -22,7 +22,7 @@ config.plugins.filebrowser.dir_size = ConfigYesNo(default=False)
 def filescan_open(list, session, **kwargs):
     path = "/".join(list[0].path.split("/")[:-1]) + "/"
     import ui
-    session.open(ui.FilebrowserScreen,path_left=path)
+    session.open(ui.FilebrowserScreen, path_left=path)
 
 def start_from_filescan(**kwargs):
     from Components.Scanner import Scanner, ScanPath
@@ -42,11 +42,11 @@ def start_from_mainmenu(menuid, **kwargs):
         return [(pname, start_from_pluginmenu, "filecommand", 46)]
     return []
 
-def start_from_pluginmenu(session,**kwargs):
+def start_from_pluginmenu(session, **kwargs):
     import ui
     session.open(ui.FilebrowserScreen)
 
-def Plugins(path,**kwargs):
+def Plugins(path, **kwargs):
     desc_mainmenu = PluginDescriptor(name=pname, description=pdesc, where=PluginDescriptor.WHERE_MENU, fnc=start_from_mainmenu)
     desc_pluginmenu = PluginDescriptor(name=pname, description=pdesc, where=PluginDescriptor.WHERE_PLUGINMENU, fnc=start_from_pluginmenu)
     desc_extensionmenu = PluginDescriptor(name=pname, description=pdesc, where=PluginDescriptor.WHERE_EXTENSIONSMENU, fnc=start_from_pluginmenu)

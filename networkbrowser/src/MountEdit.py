@@ -21,7 +21,7 @@ def convertIP(ip):
 		for x in strIP:
 			ip.append(int(x))
 	except:
-		ip = [0,0,0,0]
+		ip = [0, 0, 0, 0]
 	return ip
 
 class AutoMountEdit(Screen, ConfigListScreen):
@@ -60,7 +60,7 @@ class AutoMountEdit(Screen, ConfigListScreen):
 		}, -2)
 
 		self.list = []
-		ConfigListScreen.__init__(self, self.list,session=self.session)
+		ConfigListScreen.__init__(self, self.list, session=self.session)
 		self.createSetup()
 		self.onLayoutFinish.append(self.layoutFinished)
 		# Initialize Buttons
@@ -223,11 +223,11 @@ class AutoMountEdit(Screen, ConfigListScreen):
 		if data is True:
 			self.updateConfigRef.close(True)
 
-	def updateConfigfinishedCB(self,data):
+	def updateConfigfinishedCB(self, data):
 		if data is True:
 			self.session.openWithCallback(self.Updatefinished, MessageBox, _("Your network mount has been updated."), type=MessageBox.TYPE_INFO, timeout=10)
 
-	def Updatefinished(self,data):
+	def Updatefinished(self, data):
 		if data is not None:
 			if data is True:
 				self.close()
@@ -261,10 +261,10 @@ class AutoMountEdit(Screen, ConfigListScreen):
 		if data is True:
 			self.applyConfigRef.close(True)
 
-	def applyConfigfinishedCB(self,data):
+	def applyConfigfinishedCB(self, data):
 		if data is True:
 			self.session.openWithCallback(self.applyfinished, MessageBox, _("Your network mount has been activated."), type=MessageBox.TYPE_INFO, timeout=10)
 
-	def applyfinished(self,data):
+	def applyfinished(self, data):
 		if data is True:
 			self.close()
