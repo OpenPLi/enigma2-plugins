@@ -145,7 +145,7 @@ class EPGSaveLoadConfiguration(Screen, ConfigListScreen):
 			restore_backup = config.misc.epgcache_filename.value + ".backup"
 			if os.path.exists(restore_backup):
 				try:
-					os.system("cp -f %s %s" % (restore_backup, config.misc.epgcache_filename.value ))
+					os.system("cp -f %s %s" % (restore_backup, config.misc.epgcache_filename.value))
 					os.chmod("%s" % (config.misc.epgcache_filename.value), 0644)
 					self.setEpgLoad(True)
 					self.setEpgSave(True)

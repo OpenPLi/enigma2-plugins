@@ -192,7 +192,7 @@ class SystemTimeSetupScreen(Screen, ConfigListScreen):
 		offset = (time.time() - 5.1) - self.old_time
 		newtime = time.strftime("%Y:%m:%d %H:%M", time.localtime())
 		if self.messagebox:
-			self.messagebox["text"].setText(_("Old time: %(oldtime)s\nNew time: %(newtime)s\n\nOffset: %(offset)s seconds") % ({'oldtime' : self.oldtime, 'newtime' : newtime, 'offset' : offset}))
+			self.messagebox["text"].setText(_("Old time: %(oldtime)s\nNew time: %(newtime)s\n\nOffset: %(offset)s seconds") % ({'oldtime': self.oldtime, 'newtime': newtime, 'offset': offset}))
 
 	def configPosition(self):
 		self["description"].setText(self.getCurrentDescription())

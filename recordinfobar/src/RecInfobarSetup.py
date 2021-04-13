@@ -77,7 +77,7 @@ class RecInfobarSetupScreen(Screen, ConfigListScreen):
 		self.cfg_tuner_recording_priority = getConfigListEntry(_("Preferred tuner for recording"), self.RIB.tuner_recording_priority)
 
 	def createSetup(self):
-		list = [ self.cfg_enable ]
+		list = [self.cfg_enable]
 		if config.usage.recinfobar.value:
 			list.append(self.cfg_anchor)
 			list.append(self.cfg_x)

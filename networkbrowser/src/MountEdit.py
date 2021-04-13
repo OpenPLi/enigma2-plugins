@@ -36,7 +36,7 @@ class AutoMountEdit(Screen, ConfigListScreen):
 			<widget name="HelpWindow" pixmap="skin_default/vkey_icon.png" position="160,350" zPosition="1" size="1,1" transparent="1" alphatest="on" />	
 		</screen>"""
 
-	def __init__(self, session, plugin_path, mountinfo=None ):
+	def __init__(self, session, plugin_path, mountinfo=None):
 		self.skin_path = plugin_path
 		self.session = session
 		Screen.__init__(self, self.session)
@@ -44,7 +44,7 @@ class AutoMountEdit(Screen, ConfigListScreen):
 		self.mountinfo = mountinfo
 		if self.mountinfo is None:
 			#Initialize blank mount enty
-			self.mountinfo = { 'isMounted': False, 'active': False, 'ip': False, 'host': False, 'sharename': False, 'sharedir': False, 'username': False, 'password': False, 'mounttype' : False, 'options' : False, 'hdd_replacement' : False }
+			self.mountinfo = {'isMounted': False, 'active': False, 'ip': False, 'host': False, 'sharename': False, 'sharedir': False, 'username': False, 'password': False, 'mounttype': False, 'options': False, 'hdd_replacement': False}
 
 		self.applyConfigRef = None
 		self.updateConfigRef = None
@@ -136,7 +136,7 @@ class AutoMountEdit(Screen, ConfigListScreen):
 			self.optionsConfigEntry.value = options
 		self.usernameConfigEntry = NoSave(ConfigText(default=username, visible_width=50, fixed_size=False))
 		self.passwordConfigEntry = NoSave(ConfigPassword(default=password, visible_width=50, fixed_size=False))
-		self.mounttypeConfigEntry = NoSave(ConfigSelection(self.sharetypelist, default=mounttype ))
+		self.mounttypeConfigEntry = NoSave(ConfigSelection(self.sharetypelist, default=mounttype))
 		self.hdd_replacementConfigEntry = NoSave(ConfigYesNo(default=hdd_replacement))
 
 	def createSetup(self):
@@ -190,9 +190,9 @@ class AutoMountEdit(Screen, ConfigListScreen):
 				current[1].help_window.instance.hide()
 		sharename = self.sharenameConfigEntry.value
 		if self.mounts.has_key(sharename):
-			self.session.openWithCallback(self.updateConfig, MessageBox, (_("A mount entry with this name already exists!\nUpdate existing entry and continue?\n") ) )
+			self.session.openWithCallback(self.updateConfig, MessageBox, (_("A mount entry with this name already exists!\nUpdate existing entry and continue?\n")))
 		else:
-			self.session.openWithCallback(self.applyConfig, MessageBox, (_("Are you sure you want to save this network mount?\n\n") ) )
+			self.session.openWithCallback(self.applyConfig, MessageBox, (_("Are you sure you want to save this network mount?\n\n")))
 
 	def updateConfig(self, ret=False):
 		if (ret == True):
@@ -234,8 +234,8 @@ class AutoMountEdit(Screen, ConfigListScreen):
 
 	def applyConfig(self, ret=False):
 		if (ret == True):
-			data = { 'isMounted': False, 'active': False, 'ip': False, 'sharename': False, 'sharedir': False,
-					'username': False, 'password': False, 'mounttype' : False, 'options' : False, 'hdd_replacement' : False }
+			data = {'isMounted': False, 'active': False, 'ip': False, 'sharename': False, 'sharedir': False,
+					'username': False, 'password': False, 'mounttype': False, 'options': False, 'hdd_replacement': False}
 			data['active'] = self.activeConfigEntry.value
 			data['host'] = self.hostConfigEntry.getText()
 			data['ip'] = self.ipConfigEntry.getText()

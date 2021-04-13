@@ -33,7 +33,7 @@ class AutoTimerFilterList(MenuList):
 		self.colorDisabled = 12368828
 
 	def applySkin(self, desktop, parent):
-		attribs = [ ] 
+		attribs = [] 
 		if self.skinAttributes is not None:
 			for (attrib, value) in self.skinAttributes:
 				if attrib == "font":
@@ -297,7 +297,7 @@ class AutoTimerFilterListEditor(Screen, ConfigListScreen):
 
 	def save(self):
 		if not self.list[2][1].value.strip():
-			self.session.open( MessageBox, _("The title attribute is mandatory."), type=MessageBox.TYPE_ERROR, timeout=5 )
+			self.session.open(MessageBox, _("The title attribute is mandatory."), type=MessageBox.TYPE_ERROR, timeout=5)
 		else:
 			if self["config"].isChanged():
 				self.close(self.list, self.add_edit)

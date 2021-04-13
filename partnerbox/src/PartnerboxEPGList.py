@@ -228,7 +228,7 @@ def Partnerbox_MultiEntry(self, changecount, service, eventId, begTime, duration
 	distance=self.iconDistance
 	dy=self.dy
 
-	res = [ None ]
+	res = [None]
 	if rec1 or rec2:
 		if rec1:
 			clock_types = rec1

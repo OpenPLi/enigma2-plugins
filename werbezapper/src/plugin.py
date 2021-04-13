@@ -88,7 +88,7 @@ class WerbeZapperSilder(ConfigListScreen, Screen):
 		Screen.__init__(self, session)
 		self["time"] = StaticText()
 		if self.remaining > 0 and self.remaining < 300:
-			self["time"].setText(_("Button Info/EPG\nSet time begin next event: %d min")%( self.remaining))
+			self["time"].setText(_("Button Info/EPG\nSet time begin next event: %d min")%(self.remaining))
 		self["header"] = StaticText("")
 		self["setupActions"] = ActionMap(["SetupActions", "ChannelSelectEPGActions"],
 			{
@@ -115,7 +115,7 @@ class WerbeZapperSilder(ConfigListScreen, Screen):
 		self.duration.addNotifier(self.timeSettingChanged)
 
 	def createSetup(self):
-		list = [ ]
+		list = []
 		list.append(getConfigListEntry(_("Set zap time"), self.duration))
 		self["config"].list = list
 		self["config"].l.setList(list)
@@ -138,7 +138,7 @@ class WerbeZapperSilder(ConfigListScreen, Screen):
 
 	def updateHeaderText(self):
 		if "header" in self:
-			self["header"].setText(_("%d min")%( self.duration.value))
+			self["header"].setText(_("%d min")%(self.duration.value))
 
 from keyids import KEYIDS
 from enigma import eActionMap
@@ -148,7 +148,7 @@ class WerbezapperInfoBar:
 		self.session = session
 		self.infobar = infobar
 		self.lastKey = None
-		self.hotkeys = { }
+		self.hotkeys = {}
 		for x in WerbezapperInfoBarKeys:
 			self.hotkeys[x[0]] = [KEYIDS[key] for key in x[2]]
 		eActionMap.getInstance().bindAction('', -10, self.keyPressed)

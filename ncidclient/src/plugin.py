@@ -519,7 +519,7 @@ class NcidClientPhonebook:
 					self.deleteConfirmed,
 					MessageBox,
 					_("Do you really want to delete entry for\n\n%(number)s\n\n%(name)s?") 
-					% { 'number':str(cur[2]), 'name':str(cur[0]).replace(", ", "\n") }
+					% {'number':str(cur[2]), 'name':str(cur[0]).replace(", ", "\n")}
 								)
 			else:
 				self.session.open(MessageBox, _("No entry selected"), MessageBox.TYPE_INFO)
@@ -584,7 +584,7 @@ class NcidClientPhonebook:
 						"ok": self.add,
 					}, -2)
 	
-					self.list = [ ]
+					self.list = []
 					ConfigListScreen.__init__(self, self.list, session=session)
 					self.name = name
 					self.number = number
@@ -727,7 +727,7 @@ class NcidClientSetup(Screen, ConfigListScreen):
 		self.createSetup()
 
 	def createSetup(self):
-		self.list = [ ]
+		self.list = []
 		self.list.append(getConfigListEntry(_("Call monitoring"), config.plugins.NcidClient.enable))
 		if config.plugins.NcidClient.enable.value:
 			self.list.append(getConfigListEntry(_("NCID server (Name or IP)"), config.plugins.NcidClient.hostname))
@@ -802,7 +802,7 @@ standbyMode = False
 
 class NcidCallList:
 	def __init__(self):
-		self.callList = [ ]
+		self.callList = []
 	
 	def add(self, date, number, caller):
 		debug("[NcidCallList] add: %s %s" % (number, caller))
@@ -860,7 +860,7 @@ class NcidCallList:
 		Notifications.AddNotification(MessageBox, text, type=MessageBox.TYPE_INFO)
 		# TODO please HELP: from where can I get a session?
 		# my_global_session.open(NcidDisplayCalls, text)
-		self.callList = [ ]
+		self.callList = []
 
 callList = NcidCallList()
 
@@ -880,7 +880,7 @@ def notifyCall(date, number, caller):
 		#
 		# if not yet done, register function to show call list
 		global standbyMode
-		if not standbyMode :
+		if not standbyMode:
 			standbyMode = True
 			Standby.inStandby.onHide.append(callList.display) #@UndefinedVariable
 		# add text/timeout to call list
@@ -895,7 +895,7 @@ def notifyCall(date, number, caller):
 #		the necessary data for the notification
 #===============================================================================
 
-countries = { }
+countries = {}
 reverselookupMtime = 0
 
 class NcidReverseLookupAndNotify:
@@ -1101,6 +1101,6 @@ def autostart(reason, **kwargs):
 
 def Plugins(**kwargs): #@UnusedVariable # pylint: disable=W0613,C0103
 	what = _("Display Fon calls on screen")
-	return [ PluginDescriptor(name="NCID Client", description=what, where=PluginDescriptor.WHERE_PLUGINMENU, icon="plugin.png", fnc=main),
-		PluginDescriptor(where=[PluginDescriptor.WHERE_SESSIONSTART, PluginDescriptor.WHERE_AUTOSTART], fnc=autostart) ]
+	return [PluginDescriptor(name="NCID Client", description=what, where=PluginDescriptor.WHERE_PLUGINMENU, icon="plugin.png", fnc=main),
+		PluginDescriptor(where=[PluginDescriptor.WHERE_SESSIONSTART, PluginDescriptor.WHERE_AUTOSTART], fnc=autostart)]
 

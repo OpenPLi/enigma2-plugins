@@ -39,7 +39,7 @@ from base64 import encodestring
 import urllib
 
 config.plugins.remoteTimer = ConfigSubsection()
-config.plugins.remoteTimer.httphost = ConfigText(default="" , fixed_size=False)
+config.plugins.remoteTimer.httphost = ConfigText(default="", fixed_size=False)
 config.plugins.remoteTimer.httpip = ConfigIP(default=[0, 0, 0, 0])
 config.plugins.remoteTimer.httpport = ConfigNumber(default=80)
 config.plugins.remoteTimer.username = ConfigText(default="root", fixed_size=False)
@@ -102,7 +102,7 @@ class RemoteTimerScreen(Screen):
 		self["text"] = Label("")
 
 		remoteip = "%d.%d.%d.%d" % tuple(config.plugins.remoteTimer.httpip.value)
-		self.remoteurl = "%s:%s" % ( remoteip, str(config.plugins.remoteTimer.httpport.value))
+		self.remoteurl = "%s:%s" % (remoteip, str(config.plugins.remoteTimer.httpport.value))
 
 		self.onLayoutFinish.append(self.getInfo)
 
@@ -389,7 +389,7 @@ def _gotPageLoadCb(timerEntry, doClose, *args):
 		timerEntry.keyCancel()
 
 def _gotPageLoad(session, timerEntry, html):
-	remoteresponse = parseXml( html)
+	remoteresponse = parseXml(html)
 	doClose = _("added") in remoteresponse
 	session.openWithCallback(boundFunction(_gotPageLoadCb, timerEntry, doClose), MessageBox, _("Set timer on remote reciever via WebIf:\n%s") % _(remoteresponse), MessageBox.TYPE_INFO)
 

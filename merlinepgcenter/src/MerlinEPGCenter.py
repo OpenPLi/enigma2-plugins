@@ -122,7 +122,7 @@ class MerlinEPGCenter(TimerEditList, MerlinEPGActions):
 			self.epgList = None
 			
 		# needed stuff for timerlist
-		list = [ ]
+		list = []
 		self.list = list # TimerEditList property, needed
 		
 		self.key_green_choice = self.EMPTY

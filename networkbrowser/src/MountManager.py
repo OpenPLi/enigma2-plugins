@@ -38,7 +38,7 @@ class AutoMountManager(Screen):
 			<ePixmap pixmap="skin_default/div-h.png" position="0,360" zPosition="1" size="560,2" />
 			<widget source="introduction" render="Label" position="10,370" size="540,21" zPosition="10" font="Regular;21" halign="center" valign="center" backgroundColor="#25062748" transparent="1"/>
 		</screen>"""
-	def __init__(self, session, iface ,plugin_path):
+	def __init__(self, session, iface,plugin_path):
 		self.skin_path = plugin_path
 		self.session = session
 		self.restartLanRef = None
@@ -69,8 +69,8 @@ class AutoMountManager(Screen):
 	def updateList(self):
 		self.list = []
 		okpng = LoadPixmap(cached=True, path=resolveFilename(SCOPE_PLUGINS, "SystemPlugins/NetworkBrowser/icons/ok.png"))
-		self.list.append((_("Add new network mount point"),"add", _("Add a new NFS or CIFS mount point to your Receiver."), okpng ))
-		self.list.append((_("Mountpoints management"),"view", _("View, edit or delete mountpoints on your Receiver."), okpng ))
+		self.list.append((_("Add new network mount point"),"add", _("Add a new NFS or CIFS mount point to your Receiver."), okpng))
+		self.list.append((_("Mountpoints management"),"view", _("View, edit or delete mountpoints on your Receiver."), okpng))
 		for file in os.listdir('/etc/enigma2'):
 			if file.endswith('.cache'):
 				if file == 'networkbrowser.cache':

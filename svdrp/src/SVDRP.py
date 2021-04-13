@@ -461,7 +461,7 @@ class SimpleVDRProtocol(LineReceiver):
 			params = (service, type, time)
 		else:
 			params = (service, type, time, endtime)
-		events = epgcache.lookupEvent([options , params])
+		events = epgcache.lookupEvent([options, params])
 
 		# process data
 		def sendEventLine(eit, begin, duration, title, description, extended, sref, sname):

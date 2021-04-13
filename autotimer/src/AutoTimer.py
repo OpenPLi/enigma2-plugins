@@ -392,7 +392,7 @@ class AutoTimer:
 
 		else:
 			# Search EPG, default to empty list
-			epgmatches = epgcache.search( ('RITBDSE', int(config.plugins.autotimer.max_search_events_match.value), typeMap[timer.searchType], match, caseMap[timer.searchCase]) ) or []
+			epgmatches = epgcache.search(('RITBDSE', int(config.plugins.autotimer.max_search_events_match.value), typeMap[timer.searchType], match, caseMap[timer.searchCase])) or []
 
 		# Sort list of tuples by begin time 'B'
 		epgmatches.sort(key=itemgetter(3))
@@ -401,7 +401,7 @@ class AutoTimer:
 		similardict = defaultdict(list)
 
 		# Loop over all EPG matches
-		for idx, ( serviceref, eit, name, begin, duration, shortdesc, extdesc ) in enumerate( epgmatches ):
+		for idx, (serviceref, eit, name, begin, duration, shortdesc, extdesc) in enumerate(epgmatches):
 			startLog()
 
 			# timer destination dir
@@ -631,7 +631,7 @@ class AutoTimer:
 					if sp and type(sp) in (tuple, list) and len(sp) > 3:
 						filter_title = str(sp[0])
 						if len(sp) > 4:
-							filter_title = "{series:s} - S{season:02d}E{rawepisode:s} - {title:s}".format( **sp[4] )
+							filter_title = "{series:s} - S{season:02d}E{rawepisode:s} - {title:s}".format(**sp[4])
 						ret = self.addToFilterfile(filter_title, begin, simulateOnly, str(sp[0]))
 						if ret:
 							if simulateOnly:
@@ -981,7 +981,7 @@ class AutoTimer:
 			search_txt = '"' + name + '"'
 			search_txt_sp = '"' + sp_title + '"'
 			if (search_txt or search_txt_sp) in open(path_filter_txt).read():
-				print ("[AutoTimer] Skipping an event because found event in autotimer_filter")
+				print("[AutoTimer] Skipping an event because found event in autotimer_filter")
 				doLog("[AutoTimer] Skipping an event because found event in autotimer_filter")
 				return False
 		if simulateOnlyValue:
@@ -1010,10 +1010,10 @@ class AutoTimer:
 					ret = self.addToFilterfile(name, begin)
 					if ret:
 						add_counter += 1
-				session.open( MessageBox, _("Finished add to filterList with %s event(s):\n\n %s event(s) added \n %s event(s) skipped") % (len(services), add_counter,len(services)-add_counter), type=MessageBox.TYPE_INFO, timeout=config.plugins.autotimer.popup_timeout.value)
+				session.open(MessageBox, _("Finished add to filterList with %s event(s):\n\n %s event(s) added \n %s event(s) skipped") % (len(services), add_counter,len(services)-add_counter), type=MessageBox.TYPE_INFO, timeout=config.plugins.autotimer.popup_timeout.value)
 			except Exception as e:
 				doLog("[AutoTimer] Error in addToFilterList", e)
-				print ("[AutoTimer] ======== Error in addToFilterList ", e)
+				print("[AutoTimer] ======== Error in addToFilterList ", e)
 
 	def reloadTimerList(self, recordHandler):
 		doLog("[AutoTimer] Start reload timers list after search")
@@ -1154,19 +1154,19 @@ class AutoTimer:
 		foundShort = False
 		retValue = False
 		if name1 and name2:
-			foundTitle = ( 0.8 < SequenceMatcher(lambda x: x == " ",name1, name2).ratio() )
+			foundTitle = (0.8 < SequenceMatcher(lambda x: x == " ",name1, name2).ratio())
 		# NOTE: only check extended & short if tile is a partial match
 		if foundTitle:
 			if timer.searchForDuplicateDescription > 0 or force:
 				if shortdesc1 and shortdesc2:
 					# If the similarity percent is higher then 0.7 it is a very close match
-					foundShort = ( 0.7 < SequenceMatcher(lambda x: x == " ",shortdesc1, shortdesc2).ratio() )
+					foundShort = (0.7 < SequenceMatcher(lambda x: x == " ",shortdesc1, shortdesc2).ratio())
 					if foundShort:
 						if timer.searchForDuplicateDescription == 2:
 							if extdesc1 and extdesc2:
 								# Some channels indicate replays in the extended descriptions
 								# If the similarity percent is higher then 0.7 it is a very close match
-								retValue = ( 0.7 < SequenceMatcher(lambda x: x == " ",extdesc1, extdesc2).ratio() )
+								retValue = (0.7 < SequenceMatcher(lambda x: x == " ",extdesc1, extdesc2).ratio())
 						else:
 							retValue = True
 			else:

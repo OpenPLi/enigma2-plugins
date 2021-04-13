@@ -48,11 +48,11 @@ class LogoManagerScreen(Screen):
 			<widget name="filelist" position="0,0" size="600,30"  />
 		</screen>"""
 	targets = [
-				( _("bootlogo"), "/etc/enigma2/bootlogo.mvi"),
-				( _("backdrop"), "/etc/enigma2/backdrop.mvi"),
-				( _("radio"), "/usr/share/enigma2/radio.mvi"), 
-				( _("switch off"), "/etc/enigma2/switchoff.mvi"),
-				( _("reboot"), "/etc/enigma2/reboot.mvi")
+				(_("bootlogo"), "/etc/enigma2/bootlogo.mvi"),
+				(_("backdrop"), "/etc/enigma2/backdrop.mvi"),
+				(_("radio"), "/usr/share/enigma2/radio.mvi"), 
+				(_("switch off"), "/etc/enigma2/switchoff.mvi"),
+				(_("reboot"), "/etc/enigma2/reboot.mvi")
 				]
 
 	def __init__(self, session, file=None):

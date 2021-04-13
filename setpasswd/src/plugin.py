@@ -82,7 +82,7 @@ class ChangePasswdScreen(Screen):
 			message = _("Sucessfully changed password for root user to: ") + self.password
 		else:
 			message = _("Unable to change/reset password for root user")
-		self.session.open(MessageBox, message , MessageBox.TYPE_INFO)
+		self.session.open(MessageBox, message, MessageBox.TYPE_INFO)
 
 	def DelPasswd(self):
 		self.container = eConsoleAppContainer()
@@ -93,7 +93,7 @@ class ChangePasswdScreen(Screen):
 			message = _("Password deleted sucessfully for root user")
 		else:
 			message = _("Unable to delete password for root user")
-		self.session.open(MessageBox, message , MessageBox.TYPE_INFO)
+		self.session.open(MessageBox, message, MessageBox.TYPE_INFO)
 
 	def dataAvail(self, data):
 		if data.find('password'):
@@ -114,7 +114,7 @@ class ChangePasswdScreen(Screen):
 
 def startChange(menuid):
 	if menuid != "system": 
-		return [ ]
+		return []
 	return [(title, main, "change_root_passwd", 50)]
 
 def main(session, **kwargs):
