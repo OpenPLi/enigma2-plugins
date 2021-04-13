@@ -16,7 +16,7 @@ import os
 ###############################################################################
 
 config.plugins.logomanager = ConfigSubsection()
-config.plugins.logomanager.path = ConfigSelection([("none",_("None")), ("/media/cf/bootlogos/",_("CF Drive")), ("/media/hdd/bootlogos/",_("Harddisk")), ("/media/usb/bootlogos/",_("USB Drive")),], default = "none")
+config.plugins.logomanager.path = ConfigSelection([("none",_("None")), ("/media/cf/bootlogos/",_("CF Drive")), ("/media/hdd/bootlogos/",_("Harddisk")), ("/media/usb/bootlogos/",_("USB Drive")),], default="none")
 
 from mimetypes import add_type
 add_type("image/mvi", ".mvi")
@@ -32,13 +32,12 @@ def start_from_filescan(**kwargs):
 	print "[Logo Manager] start_from_filescan", kwargs
 	return \
 		Scanner(mimetypes=["image/mvi"],
-			paths_to_scan =
-				[
-					ScanPath(path = "", with_subdirs = False),
+			paths_to_scan=[
+					ScanPath(path="", with_subdirs=False),
 				],
-			name = _("Logo Manager"),
-			description = _("view bootlogo/mvi"),
-			openfnc = filescan_open,
+			name=_("Logo Manager"),
+			description=_("view bootlogo/mvi"),
+			openfnc=filescan_open,
 		)
 
 ###############################################################################
@@ -56,7 +55,7 @@ class LogoManagerScreen(Screen):
 				( _("reboot"), "/etc/enigma2/reboot.mvi")
 				]
 
-	def __init__(self, session, file = None):
+	def __init__(self, session, file=None):
 		self.session = session
 		self.skin = LogoManagerScreen.skin
 		Screen.__init__(self, session)
@@ -297,7 +296,7 @@ class LogoManagerConfigScreen(ConfigListScreen, Screen):
 			<widget name="buttonred" position="10,160" size="100,40" backgroundColor="red" valign="center" halign="center" zPosition="2"  foregroundColor="white" font="Regular;18"/>
 			<widget name="buttongreen" position="120,160" size="100,40" backgroundColor="green" valign="center" halign="center" zPosition="2"  foregroundColor="white" font="Regular;18"/>
 		</screen>"""
-	def __init__(self, session, args = 0):
+	def __init__(self, session, args=0):
 		self.session = session
 		Screen.__init__(self, session)
 		self.setTitle(_("Logo manager setup"))
@@ -346,6 +345,6 @@ def Plugins(path, **kwargs):
     global plugin_path
     plugin_path = path
     return [
-			PluginDescriptor(name = _("Logo Manager"), description = _("manage logos to display at boottime"), where = PluginDescriptor.WHERE_PLUGINMENU, icon="plugin.png", fnc = main),
-			PluginDescriptor(name = _("Logo Manager"), where = PluginDescriptor.WHERE_FILESCAN, fnc = start_from_filescan)
+			PluginDescriptor(name=_("Logo Manager"), description=_("manage logos to display at boottime"), where=PluginDescriptor.WHERE_PLUGINMENU, icon="plugin.png", fnc=main),
+			PluginDescriptor(name=_("Logo Manager"), where=PluginDescriptor.WHERE_FILESCAN, fnc=start_from_filescan)
 			]

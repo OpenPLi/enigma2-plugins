@@ -104,7 +104,7 @@ class ResultScreen(Screen, HelpableScreen):
 		if answer:
 			self.close(True)
 
-	def buildEventList(self, eventListIndex = 0):
+	def buildEventList(self, eventListIndex=0):
 		self["list"].setList([ (x,) for x in self.favoriteEvents])
 		if len(self.favoriteEvents):
 			self["list"].moveToIndex(eventListIndex)
@@ -119,16 +119,16 @@ class ResultList(GUIComponent, object):
 		self.l.setItemHeight(150)
 		self.onSelectionChanged = [ ]
 
-		self.resultlist = LoadPixmap(cached = True, path=resolveFilename(SCOPE_CURRENT_PLUGIN, 'Extensions/PrimeTimeManager/images/resultlist.png'), desktop = getDesktop(0))
-		self.favoritePixmap = LoadPixmap(cached = True, path=resolveFilename(SCOPE_CURRENT_PLUGIN, 'Extensions/PrimeTimeManager/images/favorite.png'), desktop = getDesktop(0))
-		self.clockPixmap = LoadPixmap(cached = True, path=resolveFilename(SCOPE_CURRENT_PLUGIN, 'Extensions/PrimeTimeManager/images/epgclock.png'), desktop = getDesktop(0))
-		self.clockOverlap = LoadPixmap(cached = True, path=resolveFilename(SCOPE_CURRENT_PLUGIN, 'Extensions/PrimeTimeManager/images/clockOverlap.png'), desktop = getDesktop(0))
-		self.clockNotrecord = LoadPixmap(cached = True, path=resolveFilename(SCOPE_CURRENT_PLUGIN, 'Extensions/PrimeTimeManager/images/clockNotrecord.png'), desktop = getDesktop(0))
-		self.noConflictPixmap = LoadPixmap(cached = True, path=resolveFilename(SCOPE_CURRENT_PLUGIN, 'Extensions/PrimeTimeManager/images/noConflict.png'), desktop = getDesktop(0))
-		self.arrowRightPixmap = LoadPixmap(cached = True, path=resolveFilename(SCOPE_CURRENT_PLUGIN, 'Extensions/PrimeTimeManager/images/right.png'), desktop = getDesktop(0))
-		self.deletePixmap = LoadPixmap(cached = True, path=resolveFilename(SCOPE_CURRENT_PLUGIN, 'Extensions/PrimeTimeManager/images/delete.png'), desktop = getDesktop(0))
+		self.resultlist = LoadPixmap(cached=True, path=resolveFilename(SCOPE_CURRENT_PLUGIN, 'Extensions/PrimeTimeManager/images/resultlist.png'), desktop=getDesktop(0))
+		self.favoritePixmap = LoadPixmap(cached=True, path=resolveFilename(SCOPE_CURRENT_PLUGIN, 'Extensions/PrimeTimeManager/images/favorite.png'), desktop=getDesktop(0))
+		self.clockPixmap = LoadPixmap(cached=True, path=resolveFilename(SCOPE_CURRENT_PLUGIN, 'Extensions/PrimeTimeManager/images/epgclock.png'), desktop=getDesktop(0))
+		self.clockOverlap = LoadPixmap(cached=True, path=resolveFilename(SCOPE_CURRENT_PLUGIN, 'Extensions/PrimeTimeManager/images/clockOverlap.png'), desktop=getDesktop(0))
+		self.clockNotrecord = LoadPixmap(cached=True, path=resolveFilename(SCOPE_CURRENT_PLUGIN, 'Extensions/PrimeTimeManager/images/clockNotrecord.png'), desktop=getDesktop(0))
+		self.noConflictPixmap = LoadPixmap(cached=True, path=resolveFilename(SCOPE_CURRENT_PLUGIN, 'Extensions/PrimeTimeManager/images/noConflict.png'), desktop=getDesktop(0))
+		self.arrowRightPixmap = LoadPixmap(cached=True, path=resolveFilename(SCOPE_CURRENT_PLUGIN, 'Extensions/PrimeTimeManager/images/right.png'), desktop=getDesktop(0))
+		self.deletePixmap = LoadPixmap(cached=True, path=resolveFilename(SCOPE_CURRENT_PLUGIN, 'Extensions/PrimeTimeManager/images/delete.png'), desktop=getDesktop(0))
 		if AUTOTIMER and config.plugins.PrimeTimeManager.UseAutotimer.value:
-			self.autotimerPixmap = LoadPixmap(cached = True, path=resolveFilename(SCOPE_CURRENT_PLUGIN, 'Extensions/AutoTimer/plugin.png'), desktop = getDesktop(0))
+			self.autotimerPixmap = LoadPixmap(cached=True, path=resolveFilename(SCOPE_CURRENT_PLUGIN, 'Extensions/AutoTimer/plugin.png'), desktop=getDesktop(0))
 
 		self.l.setList(eventList)
 
@@ -136,7 +136,7 @@ class ResultList(GUIComponent, object):
 		i = 0
 		while i <= 10:
 			name = 'Extensions/PrimeTimeManager/images/digit_' + str(i) + '.png'
-			digitPixmap = LoadPixmap(cached = True, path=resolveFilename(SCOPE_CURRENT_PLUGIN, name), desktop = getDesktop(0))
+			digitPixmap = LoadPixmap(cached=True, path=resolveFilename(SCOPE_CURRENT_PLUGIN, name), desktop=getDesktop(0))
 			self.digitList.append(digitPixmap)
 			i += 1
 

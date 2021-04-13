@@ -158,7 +158,7 @@ class EpgSingleTab(EpgBaseTab):
 				
 		return sRef
 		
-	def show(self, oldMode, firstBouquet, currentBouquet, currentBouquetIndex, currentMode, showOutdated, sRef = None):
+	def show(self, oldMode, firstBouquet, currentBouquet, currentBouquetIndex, currentMode, showOutdated, sRef=None):
 		# save the last state
 		self.__currentBouquet = currentBouquet
 		self.__currentBouquetIndex = currentBouquetIndex

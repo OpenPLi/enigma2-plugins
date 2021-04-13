@@ -10,4 +10,4 @@ def main(session, service, **kwargs):
 	session.open(ui.MovieCut, service, **kwargs)
 
 def Plugins(**kwargs):
-	return PluginDescriptor(name="MovieCut", description=_("Execute cuts..."), where = PluginDescriptor.WHERE_MOVIELIST, fnc=main)
+	return PluginDescriptor(name="MovieCut", description=_("Execute cuts..."), where=PluginDescriptor.WHERE_MOVIELIST, fnc=main)

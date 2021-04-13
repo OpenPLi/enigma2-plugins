@@ -48,7 +48,7 @@ SKINLIST =	[ # order is important (HD_BORDER, XD_BORDER, SD, HD, XD)!
 		]
 
 config.plugins.merlinEpgCenter = ConfigSubsection()
-config.plugins.merlinEpgCenter.primeTime = ConfigClock(default = 69300)
+config.plugins.merlinEpgCenter.primeTime = ConfigClock(default=69300)
 config.plugins.merlinEpgCenter.showListNumbers = ConfigYesNo(True)
 config.plugins.merlinEpgCenter.showPicons = ConfigYesNo(False)
 config.plugins.merlinEpgCenter.showServiceName = ConfigYesNo(True)
@@ -58,27 +58,27 @@ config.plugins.merlinEpgCenter.showVideoPicture = ConfigYesNo(True)
 config.plugins.merlinEpgCenter.rememberLastTab = ConfigYesNo(True)
 config.plugins.merlinEpgCenter.selectRunningService = ConfigYesNo(True)
 config.plugins.merlinEpgCenter.replaceInfobarEpg = ConfigYesNo(False)
-config.plugins.merlinEpgCenter.epgPaths = ConfigSelection(default = eEnv.resolve('${datadir}/enigma2/picon_50x30/'), choices = [
+config.plugins.merlinEpgCenter.epgPaths = ConfigSelection(default=eEnv.resolve('${datadir}/enigma2/picon_50x30/'), choices=[
 				(eEnv.resolve('${datadir}/enigma2/picon_50x30/'), eEnv.resolve('${datadir}/enigma2/picon_50x30')),
 				('/media/cf/picon_50x30/', '/media/cf/picon_50x30'),
 				('/media/usb/picon_50x30/', '/media/usb/picon_50x30'),
 				])
 config.plugins.merlinEpgCenter.showColoredEpgTimes = ConfigYesNo(True)
-config.plugins.merlinEpgCenter.searchString = NoSave(ConfigText(default = ""))
-config.plugins.merlinEpgCenter.searchHistory = ConfigSet(choices = [])
+config.plugins.merlinEpgCenter.searchString = NoSave(ConfigText(default=""))
+config.plugins.merlinEpgCenter.searchHistory = ConfigSet(choices=[])
 config.plugins.merlinEpgCenter.showInputHelp = ConfigYesNo(True)
-config.plugins.merlinEpgCenter.listItemHeight = ConfigSelectionNumber(min = 0, max = 20, stepwidth = 2, default = 0, wraparound = True)
-config.plugins.merlinEpgCenter.listStyle = ConfigSelection(default = STYLE_SINGLE_LINE, choices = [
+config.plugins.merlinEpgCenter.listItemHeight = ConfigSelectionNumber(min=0, max=20, stepwidth=2, default=0, wraparound=True)
+config.plugins.merlinEpgCenter.listStyle = ConfigSelection(default=STYLE_SINGLE_LINE, choices=[
 				(STYLE_SINGLE_LINE, _("single line style")),
 				(STYLE_SHORT_DESCRIPTION, _("with short description")),
 				])
-config.plugins.merlinEpgCenter.skin = ConfigText(default = "")
-config.plugins.merlinEpgCenter.skinSelection = NoSave(ConfigSelection(choices = []))
+config.plugins.merlinEpgCenter.skin = ConfigText(default="")
+config.plugins.merlinEpgCenter.skinSelection = NoSave(ConfigSelection(choices=[]))
 config.plugins.merlinEpgCenter.limitSearchToBouquetServices = ConfigYesNo(False)
 config.plugins.merlinEpgCenter.exitOnTvRadioSwitch = ConfigYesNo(False)
-config.plugins.merlinEpgCenter.numNextEvents = ConfigSelectionNumber(min = 0, max = 3, stepwidth = 1, default = 1, wraparound = True)
+config.plugins.merlinEpgCenter.numNextEvents = ConfigSelectionNumber(min=0, max=3, stepwidth=1, default=1, wraparound=True)
 config.plugins.merlinEpgCenter.showDuration = ConfigYesNo(True)
-config.plugins.merlinEpgCenter.listProgressStyle = ConfigSelection(default = STYLE_PIXMAP_BAR, choices = [
+config.plugins.merlinEpgCenter.listProgressStyle = ConfigSelection(default=STYLE_PIXMAP_BAR, choices=[
 				(STYLE_SIMPLE_BAR, _("simple")),
 				(STYLE_PIXMAP_BAR, _("gradient")),
 				(STYLE_MULTI_PIXMAP, _("four parts")),
@@ -107,7 +107,7 @@ class ConfigBaseTab():
 	def show(self):
 		ConfigBaseTab.settingsWidget.setList(self.configList)
 		
-	def expandableSettingChanged(self, configElement = None):
+	def expandableSettingChanged(self, configElement=None):
 		self.buildConfigList()
 		self.show()
 		
@@ -161,14 +161,14 @@ class ConfigListSettings(ConfigBaseTab):
 		self.configList = cfgList
 		
 	def setNotifier(self):
-		config.plugins.merlinEpgCenter.showPicons.addNotifier(self.expandableSettingChanged, initial_call = False)
-		config.plugins.merlinEpgCenter.epgPaths.addNotifier(self.piconPathChanged, initial_call = False)
+		config.plugins.merlinEpgCenter.showPicons.addNotifier(self.expandableSettingChanged, initial_call=False)
+		config.plugins.merlinEpgCenter.epgPaths.addNotifier(self.piconPathChanged, initial_call=False)
 		
 	def removeNotifier(self):
 		config.plugins.merlinEpgCenter.showPicons.notifiers.remove(self.expandableSettingChanged)
 		config.plugins.merlinEpgCenter.epgPaths.notifiers.remove(self.piconPathChanged)
 		
-	def piconPathChanged(self, configElement = None):
+	def piconPathChanged(self, configElement=None):
 		config.plugins.merlinEpgCenter.epgPaths.save()
 		
 # config event information
@@ -189,7 +189,7 @@ class ConfigEventInfo(ConfigBaseTab):
 		self.configList = cfgList
 			
 	def setNotifier(self):
-		config.plugins.merlinEpgCenter.showEventInfo.addNotifier(self.expandableSettingChanged, initial_call = False)
+		config.plugins.merlinEpgCenter.showEventInfo.addNotifier(self.expandableSettingChanged, initial_call=False)
 		
 	def removeNotifier(self):
 		config.plugins.merlinEpgCenter.showEventInfo.notifiers.remove(self.expandableSettingChanged)

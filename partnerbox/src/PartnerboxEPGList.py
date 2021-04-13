@@ -54,7 +54,7 @@ def Partnerbox_EPGListInit():
 	EPGList.getClockTypesEntry = getClockTypesEntry
 	EPGList.isInTimer = isInTimer
 
-def Partnerbox_EPGList__init__(self, type=0, selChangedCB=None, timer = None):
+def Partnerbox_EPGList__init__(self, type=0, selChangedCB=None, timer=None):
 	baseEPGList__init__(self, type, selChangedCB, timer)
 	def loadPixmap(name):
 		pixmap = LoadPixmap(resolveFilename(SCOPE_CURRENT_SKIN, "icons/%s" % name))

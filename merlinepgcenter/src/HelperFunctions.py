@@ -44,7 +44,7 @@ LIST_TYPE_UPCOMING = 1
 
 
 class ResizeScrollLabel(ScrollLabel):
-	def __init__(self, text = ""):
+	def __init__(self, text=""):
 		ScrollLabel.__init__(self, text)
 		
 	def resize(self, s):
@@ -62,7 +62,7 @@ class ResizeScrollLabel(ScrollLabel):
 class PiconLoader():
 	def __init__(self):
 		self.nameCache = { }
-		config.plugins.merlinEpgCenter.epgPaths.addNotifier(self.piconPathChanged, initial_call = False)
+		config.plugins.merlinEpgCenter.epgPaths.addNotifier(self.piconPathChanged, initial_call=False)
 		
 	def getPiconFilename(self, sRef):
 		pngname = ""
@@ -85,7 +85,7 @@ class PiconLoader():
 		return pngname
 		
 	def getPicon(self, pngname):
-		return LoadPixmap(cached = True, path = self.getPiconFilename(pngname))
+		return LoadPixmap(cached=True, path=self.getPiconFilename(pngname))
 		
 	def findPicon(self, sRef):
 		pngname = config.plugins.merlinEpgCenter.epgPaths.value + sRef + ".png"
@@ -93,7 +93,7 @@ class PiconLoader():
 			pngname = resolveFilename(SCOPE_CURRENT_PLUGIN, "Extensions/MerlinEPGCenter/images/PiconMissing_small.png")
 		return pngname
 		
-	def piconPathChanged(self, configElement = None):
+	def piconPathChanged(self, configElement=None):
 		self.nameCache.clear()
 		
 	def removeNotifier(self):
@@ -121,7 +121,7 @@ def getFuzzyDay(t):
 	if d[:3] == n[:3]:
 		# same day
 		date = _("Today")
-	elif dt_date.fromtimestamp(t) == dt_date.today() + dt_timedelta(days = 1):
+	elif dt_date.fromtimestamp(t) == dt_date.today() + dt_timedelta(days=1):
 		# next day
 		date = _("Tomorrow")
 	elif ((t - nt) < 7*86400) and (nt < t):
@@ -229,9 +229,9 @@ class BlinkTimer():
 		self.listSets[LIST_TYPE_UPCOMING].clear()
 		
 class RecTimerEntry(RecordTimerEntry):
-	def __init__(self, session, serviceref, begin, end, name, description, eit, disabled = False, justplay = False, afterEvent = AFTEREVENT.AUTO, checkOldTimers = False, dirname = None, tags = None):
+	def __init__(self, session, serviceref, begin, end, name, description, eit, disabled=False, justplay=False, afterEvent=AFTEREVENT.AUTO, checkOldTimers=False, dirname=None, tags=None):
 		self.session = session
-		RecordTimerEntry.__init__(self, serviceref, begin, end, name, description, eit, disabled = False, justplay = False, afterEvent = AFTEREVENT.AUTO, checkOldTimers = False, dirname = None, tags = None)
+		RecordTimerEntry.__init__(self, serviceref, begin, end, name, description, eit, disabled=False, justplay=False, afterEvent=AFTEREVENT.AUTO, checkOldTimers=False, dirname=None, tags=None)
 		
 	def activate(self):
 		next_state = self.state + 1
@@ -310,12 +310,12 @@ class RecTimerEntry(RecordTimerEntry):
 				self.record_service = None
 			if self.afterEvent == AFTEREVENT.STANDBY:
 				if not Screens.Standby.inStandby and config.plugins.merlinEpgCenter.showTimerMessages.value: # not already in standby
-					self.session.openWithCallback(self.sendStandbyNotification, MessageBox, _("A finished record timer wants to set your\nDreambox to standby. Do that now?"), timeout = 20)
+					self.session.openWithCallback(self.sendStandbyNotification, MessageBox, _("A finished record timer wants to set your\nDreambox to standby. Do that now?"), timeout=20)
 			elif self.afterEvent == AFTEREVENT.DEEPSTANDBY:
 				if not Screens.Standby.inTryQuitMainloop: # not a shutdown messagebox is open
 					if Screens.Standby.inStandby: # in standby
 						RecordTimerEntry.TryQuitMainloop() # start shutdown handling without screen
 					elif config.plugins.merlinEpgCenter.showTimerMessages.value:
-						self.session.openWithCallback(self.sendTryQuitMainloopNotification, MessageBox, _("A finished record timer wants to shut down\nyour Dreambox. Shutdown now?"), timeout = 20)
+						self.session.openWithCallback(self.sendTryQuitMainloopNotification, MessageBox, _("A finished record timer wants to shut down\nyour Dreambox. Shutdown now?"), timeout=20)
 			return True
 			

@@ -49,7 +49,7 @@ class PartnerboxAutoTimer(object):
 			else:
 				self.session.openWithCallback(self.partnerboxplugin, PartnerboxEntriesListConfigScreen, parameter)
 
-	def partnerboxplugin(self, unUsed, parameter, partnerboxentry = None):
+	def partnerboxplugin(self, unUsed, parameter, partnerboxentry=None):
 		if partnerboxentry is None:
 			return
 		ip = "%d.%d.%d.%d" % tuple(partnerboxentry.ip.value)
@@ -59,15 +59,15 @@ class PartnerboxAutoTimer(object):
 		sCommand = "http://%s:%d/autotimer/add_xmltimer" % (ip,port)
 		sendPartnerBoxWebCommand(sCommand, None, 10, username, password, parameter=parameter).addCallback(self.downloadCallback).addErrback(self.downloadError)
 
-	def downloadCallback(self, result = None):
+	def downloadCallback(self, result=None):
 		if result:
 			root = cet_fromstring(result)
 			statetext = root.findtext("e2statetext")
 			if statetext:
 				text =  statetext.encode("utf-8", 'ignore')
-				self.session.open(MessageBox,text,MessageBox.TYPE_INFO, timeout = 10)
+				self.session.open(MessageBox,text,MessageBox.TYPE_INFO, timeout=10)
 
-	def downloadError(self, error = None):
+	def downloadError(self, error=None):
 		if error is not None:
 			self.session.open(MessageBox,str(error.getErrorMessage()),  MessageBox.TYPE_INFO)
 
@@ -83,7 +83,7 @@ class PartnerboxAutoTimer(object):
 		else:
 			self.session.openWithCallback(self.getPartnerboxAutoTimerList, PartnerboxEntriesListConfigScreen, 1)
 
-	def getPartnerboxAutoTimerList(self, unUsed1, unUsed2, partnerboxentry = None):
+	def getPartnerboxAutoTimerList(self, unUsed1, unUsed2, partnerboxentry=None):
 		if partnerboxentry is None:
 			return
 		ip = "%d.%d.%d.%d" % tuple(partnerboxentry.ip.value)
@@ -130,7 +130,7 @@ class PartnerboxAutoTimerEPGSelection(AutoTimerEPGSelection):
 			ref_split[1] = "0"
 			sref = ServiceReference(":".join(ref_split))
 
-		addAutotimerFromEvent(self.session, evt = evt, service = sref, importer_Callback = PartnerboxAutoTimer.instance.autotimerImporterCallback)
+		addAutotimerFromEvent(self.session, evt=evt, service=sref, importer_Callback=PartnerboxAutoTimer.instance.autotimerImporterCallback)
 
 class PartnerboxAutoTimerOverview(AutoTimerOverview):
 	def __init__(self, session, autotimer, partnerbox):

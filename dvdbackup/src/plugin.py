@@ -51,7 +51,7 @@ config.plugins.DVDBackup.directory = ConfigText(default="/media/hdd", fixed_size
 config.plugins.DVDBackup.name = NoSave(ConfigText(default=_("Name of DVD"), fixed_size=False))
 config.plugins.DVDBackup.log = ConfigYesNo(default=True)
 config.plugins.DVDBackup.show_message = ConfigYesNo(default=True)
-config.plugins.DVDBackup.create_iso = ConfigSelection(default = "no", choices = [("no", _("no")),("genisoimage", _("with genisoimage (slower)")),("dd", _("with dd (faster)"))])
+config.plugins.DVDBackup.create_iso = ConfigSelection(default="no", choices=[("no", _("no")),("genisoimage", _("with genisoimage (slower)")),("dd", _("with dd (faster)"))])
 cfg = config.plugins.DVDBackup
 
 #################################################
@@ -334,10 +334,10 @@ class DVDBackupList(MenuList):
 def DVDBackupListEntry(file):
 	res = [(file)]
 	a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p = skin.parameters.get("DVDbackupList1",(0, 0, 180, 25, 200, 0, 120, 25, 340, 9, 100, 7, 460, 0, 60, 25))
-	res.append(MultiContentEntryText(pos = (a, b), size = (c, d), font = 0, text = file.name.split("/")[-1]))
-	res.append(MultiContentEntryText(pos = (e, f), size = (g, h), font = 0, text = "%s" % Humanizer(file.size), flags=RT_HALIGN_CENTER))
-	res.append(MultiContentEntryProgress(pos = (i, j), size = (k, l), percent = file.progress, borderWidth = 1))
-	res.append(MultiContentEntryText(pos = (m, n), size = (o, p), font = 0, text = "%d%s" % (file.progress, "%"), flags = RT_HALIGN_CENTER))
+	res.append(MultiContentEntryText(pos=(a, b), size=(c, d), font=0, text=file.name.split("/")[-1]))
+	res.append(MultiContentEntryText(pos=(e, f), size=(g, h), font=0, text="%s" % Humanizer(file.size), flags=RT_HALIGN_CENTER))
+	res.append(MultiContentEntryProgress(pos=(i, j), size=(k, l), percent=file.progress, borderWidth=1))
+	res.append(MultiContentEntryText(pos=(m, n), size=(o, p), font=0, text="%d%s" % (file.progress, "%"), flags=RT_HALIGN_CENTER))
 	return res
 
 #################################################
@@ -484,7 +484,7 @@ class DVDBackupScreen(Screen, ConfigListScreen):
 			getConfigListEntry(_("Folder/iso name:"), cfg.name),
 			getConfigListEntry(_("Create log (tmp/dvdbackup.log):"), cfg.log),
 			getConfigListEntry(_("Show error message:"), cfg.show_message),
-			getConfigListEntry(_("Create iso:"), cfg.create_iso)], session = self.session)
+			getConfigListEntry(_("Create iso:"), cfg.create_iso)], session=self.session)
 
 		self["actions"] = ActionMap(["ColorActions", "OkCancelActions"],
 			{

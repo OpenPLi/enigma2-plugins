@@ -104,7 +104,7 @@ class WerbeZapperIndicator(Screen):
 			self.instance.move(ePoint(config.werbezapper.x.value,config.werbezapper.y.value))
 
 class WerbeZapperChoiceBox(ChoiceBox):
-	def __init__(self, session, title="", list=[], keys=None, selection=0, zap_time=0, zap_service=None, monitored_event=None, monitor_time =None, monitored_service=None, skin_name=[]):
+	def __init__(self, session, title="", list=[], keys=None, selection=0, zap_time=0, zap_service=None, monitored_event=None, monitor_time=None, monitored_service=None, skin_name=[]):
 		ChoiceBox.__init__(self, session, title, list, keys, selection, skin_name)
 		
 		self.update_timer = eTimer()
@@ -157,7 +157,7 @@ class WerbeZapperChoiceBox(ChoiceBox):
 class WerbeZapper(Screen):
 	"""Simple Plugin to automatically zap back to a Service after a given amount
 		of time."""
-	def __init__(self, session, servicelist, cleanupfnc = None):
+	def __init__(self, session, servicelist, cleanupfnc=None):
 		Screen.__init__(self, session)
 
 		# Save Session&Servicelist
@@ -294,10 +294,10 @@ class WerbeZapper(Screen):
 			self.session.openWithCallback(
 				self.inputCallback,
 				InputBox,
-				title =_("How many minutes to wait until zapping back?"),
-				text = num,
-				maxSize = False,
-				type = Input.NUMBER
+				title=_("How many minutes to wait until zapping back?"),
+				text=num,
+				maxSize=False,
+				type=Input.NUMBER
 			)
 			return
 
@@ -346,8 +346,7 @@ class WerbeZapper(Screen):
 		# Notify us on new services
 		# ServiceEventTracker will remove itself on close
 		if not self.__event_tracker:
-			self.__event_tracker = ServiceEventTracker(screen=self, eventmap=
-			{
+			self.__event_tracker = ServiceEventTracker(screen=self, eventmap={
 				iPlayableService.evStart: self.serviceStarted,
 			})
 
@@ -426,9 +425,9 @@ class WerbeZapper(Screen):
 		ref = self.session.nav.getCurrentlyPlayingServiceReference()
 		if ref and self.monitored_service and self.monitored_service != ref:
 			# Start zap timer
-			self.startTimer(zapto = self.monitored_service)
+			self.startTimer(zapto=self.monitored_service)
 
-	def addStartTimer(self, duration = 0):
+	def addStartTimer(self, duration=0):
 		self.stopMonitoring(notify=False)
 		self.zap_service = self.servicelist.getCurrentSelection()
 		self.epg_bouquet = self.servicelist.getRoot()
@@ -567,7 +566,7 @@ class WerbezapperSettings(Screen, ConfigListScreen):
 		<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/Extensions/WerbeZapper/green.png" position="355,320" size="235,44" zPosition="1" alphatest="on" />
 	</screen>"""
 
-	def __init__(self, session, args = None):
+	def __init__(self, session, args=None):
 		Screen.__init__(self, session)
 		self.setTitle(_("WerbeZapper Setup"))
 		self['key_red'] = Button(_('Cancel'))

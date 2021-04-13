@@ -110,8 +110,8 @@ class FilebrowserScreen(Screen):
         self.session = session
         Screen.__init__(self, session)
 
-        self["list_left"] = FileList(path_left, matchingPattern = "^.*")
-        self["list_right"] = FileList(path_right, matchingPattern = "^.*")
+        self["list_left"] = FileList(path_left, matchingPattern="^.*")
+        self["list_right"] = FileList(path_right, matchingPattern="^.*")
         self["key_red"] = Label(_("Delete"))
         self["key_green"] = Label(_("Move"))
         self["key_yellow"] = Label(_("Copy"))
@@ -244,7 +244,7 @@ class FilebrowserScreen(Screen):
             txt =_("Copy file")+"?\n\n%s\n%s\n%s\n%s\n%s"%(filename,_("from"),sourceDir,_("to"),targetDir)
         self.session.openWithCallback(self.doCopy, MessageBox, txt, type=MessageBox.TYPE_YESNO, default=True, simple=True)
 
-    def doCopy(self, result = False):
+    def doCopy(self, result=False):
         if result:
             filename = self.SOURCELIST.getFilename()
             sourceDir = self.SOURCELIST.getCurrentDirectory()
@@ -255,7 +255,7 @@ class FilebrowserScreen(Screen):
             else:
                 txt = _("copying file ...")
                 cmd = ["cp \""+sourceDir+filename+"\" \""+targetDir+"\""]
-            self.session.openWithCallback(self.doCopyCB, Console, title = txt, cmdlist = cmd, closeOnSuccess = True)
+            self.session.openWithCallback(self.doCopyCB, Console, title=txt, cmdlist=cmd, closeOnSuccess=True)
 
     def doCopyCB(self):
         self.doRefresh()
@@ -272,7 +272,7 @@ class FilebrowserScreen(Screen):
             txt =_("Delete file") + "?\n\n%s\n%s\n%s" % (filename,_("from dir"),sourceDir)
         self.session.openWithCallback(self.doDelete, MessageBox, txt, type=MessageBox.TYPE_YESNO, default=False, simple=True)
 
-    def doDelete(self,result = False):
+    def doDelete(self,result=False):
         if result:
             filename = self.SOURCELIST.getFilename()
             sourceDir = self.SOURCELIST.getCurrentDirectory()
@@ -282,7 +282,7 @@ class FilebrowserScreen(Screen):
             else:
                 txt = _("deleting file ...")
                 cmd = ["rm \""+sourceDir+filename+"\""]
-            self.session.openWithCallback(self.doDeleteCB, Console, title = txt, cmdlist = cmd, closeOnSuccess = True)
+            self.session.openWithCallback(self.doDeleteCB, Console, title=txt, cmdlist=cmd, closeOnSuccess=True)
 
     def doDeleteCB(self):
         self.doRefresh()
@@ -300,7 +300,7 @@ class FilebrowserScreen(Screen):
             txt = _("Move file") + "?\n\n%s\n%s\n%s\n%s\n%s" % (filename,_("from dir"),sourceDir,_("to dir"),targetDir)
         self.session.openWithCallback(self.doMove, MessageBox, txt, type=MessageBox.TYPE_YESNO, default=True, simple=True)
 
-    def doMove(self, result = True):
+    def doMove(self, result=True):
         if result:
             filename = self.SOURCELIST.getFilename()
             sourceDir = self.SOURCELIST.getCurrentDirectory()
@@ -311,7 +311,7 @@ class FilebrowserScreen(Screen):
             else:
                 txt = _("moving file ...")
                 cmd = ["mv \""+sourceDir+filename+"\" \""+targetDir+"\""]
-            self.session.openWithCallback(self.doMoveCB,Console, title = txt, cmdlist = cmd, closeOnSuccess = True)
+            self.session.openWithCallback(self.doMoveCB,Console, title=txt, cmdlist=cmd, closeOnSuccess=True)
 
     def doMoveCB(self):
         self.doRefresh()
@@ -327,9 +327,9 @@ class FilebrowserScreen(Screen):
             filename = os_path_basename(os_path_dirname(filename))
         else:
             text = _("Rename file")
-        self.session.openWithCallback(self.doRename, VirtualKeyBoard, title = text, text = filename)
+        self.session.openWithCallback(self.doRename, VirtualKeyBoard, title=text, text=filename)
 
-    def doRename(self, newname = None):
+    def doRename(self, newname=None):
         if newname:
             filename = self.SOURCELIST.getFilename()
             sourceDir = self.SOURCELIST.getCurrentDirectory()
@@ -339,7 +339,7 @@ class FilebrowserScreen(Screen):
             else:
                 txt = _("renaming file ...")
                 cmd = ["mv \""+sourceDir+filename+"\" \""+sourceDir+newname+"\""]
-            self.session.openWithCallback(self.doRenameCB, Console, title = txt, cmdlist = cmd, closeOnSuccess = True)
+            self.session.openWithCallback(self.doRenameCB, Console, title=txt, cmdlist=cmd, closeOnSuccess=True)
 
     def doRenameCB(self):
         self.doRefresh()
@@ -348,14 +348,14 @@ class FilebrowserScreen(Screen):
     def goMkDir(self):
         sourceDir = self.SOURCELIST.getCurrentDirectory()
         text = _("Create directory")
-        self.session.openWithCallback(self.doMkDir, VirtualKeyBoard, title = text, text = "")
+        self.session.openWithCallback(self.doMkDir, VirtualKeyBoard, title=text, text="")
 
-    def doMkDir(self, dirname = None):
+    def doMkDir(self, dirname=None):
         if dirname:
             sourceDir = self.SOURCELIST.getCurrentDirectory()
             txt = _("creating directory ...")
             cmd = ["mkdir \""+sourceDir+dirname+"\""]
-            self.session.openWithCallback(self.doMkDirCB, Console, title = txt, cmdlist = cmd, closeOnSuccess = True)
+            self.session.openWithCallback(self.doMkDirCB, Console, title=txt, cmdlist=cmd, closeOnSuccess=True)
 
     def doMkDirCB(self):
         self.doRefresh()
@@ -394,7 +394,7 @@ class FilebrowserScreen(Screen):
             # catching error
             #  File "/home/tmbinc/opendreambox/1.5/dm8000/experimental/build/tmp/work/enigma2-2.6git20090627-r1/image/usr/lib/enigma2/python/Components/Scanner.py", line 43, in handleFile
             #  TypeError: 'in <string>' requires string as left operand
-            self.session.open(MessageBox,_("no Viewer installed for this mimetype!"), type = MessageBox.TYPE_ERROR, timeout = 5, close_on_any_key = True)
+            self.session.open(MessageBox,_("no Viewer installed for this mimetype!"), type=MessageBox.TYPE_ERROR, timeout=5, close_on_any_key=True)
 
 ##################################
 class FilebrowserScreenInfo(Screen):

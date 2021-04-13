@@ -130,7 +130,7 @@ class EPGRefreshConfiguration(Screen, ConfigListScreen):
 		except ImportError as ie:
 			print("[EPGRefresh] AutoTimer Plugin not installed:", ie)
 
-		ConfigListScreen.__init__(self, self.list, session = session, on_change = self.changed)
+		ConfigListScreen.__init__(self, self.list, session=session, on_change=self.changed)
 
 		def selectionChanged():
 			if self["config"].current:
@@ -196,12 +196,12 @@ class EPGRefreshConfiguration(Screen, ConfigListScreen):
 			(_("Return to TV viewing"), self.forceRefreshAfterNoShutdown),
 			(_("Shutdown after EPG refresh"), self.forceRefreshStandart),
 			]
-			dlg = self.session.openWithCallback(self.menuCallback,ChoiceBox,list = choicelist,title= _("Select action after refresh:"))
+			dlg = self.session.openWithCallback(self.menuCallback,ChoiceBox,list=choicelist,title=_("Select action after refresh:"))
 			dlg.setTitle(_("Shutdown after EPG refresh enabled in setup..."))
 		else:
 			self.forceRefreshStandart()
 
-	def menuCallback(self, ret = None):
+	def menuCallback(self, ret=None):
 		ret and ret[1]()
 
 	def forceRefreshStandart(self):
@@ -210,7 +210,7 @@ class EPGRefreshConfiguration(Screen, ConfigListScreen):
 
 	def forceRefreshAfterNoShutdown(self):
 		epgrefresh.services = (set(self.services[0]), set(self.services[1]))
-		epgrefresh.forceRefresh(self.session, dontshutdown = True)
+		epgrefresh.forceRefresh(self.session, dontshutdown=True)
 
 	def keyOK(self):
 		ConfigListScreen.keyOK(self)
@@ -311,7 +311,7 @@ class EPGRefreshProfile(ConfigListScreen,Screen):
 			<ePixmap name="green"  position="140,190" zPosition="2" size="140,40" pixmap="skin_default/buttons/green.png" transparent="1" alphatest="on" />
 		</screen>"""
 
-	def __init__(self, session, args = 0):
+	def __init__(self, session, args=0):
 		self.session = session
 		Screen.__init__(self, session)
 
@@ -346,7 +346,7 @@ class EPGRefreshProfile(ConfigListScreen,Screen):
 				day = True
 				break
 		if not day:
-			self.session.open(MessageBox, _("You may not use this settings!\nAt least one day a week should be included!"), MessageBox.TYPE_INFO, timeout = 6)
+			self.session.open(MessageBox, _("You may not use this settings!\nAt least one day a week should be included!"), MessageBox.TYPE_INFO, timeout=6)
 			return
 		self.close()
 

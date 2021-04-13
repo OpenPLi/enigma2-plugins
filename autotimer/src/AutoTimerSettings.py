@@ -104,7 +104,7 @@ class AutoTimerSettings(Screen, ConfigListScreen):
 		except:
 			pass
 
-		ConfigListScreen.__init__(self, self.list, session = session, on_change = self.changed)
+		ConfigListScreen.__init__(self, self.list, session=session, on_change=self.changed)
 
 		def selectionChanged():
 			if self["config"].current:

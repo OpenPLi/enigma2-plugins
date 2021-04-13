@@ -86,7 +86,7 @@ class EPGRefresh:
 				duration = duration and int(duration)
 				self.services[1].add(EPGRefreshService(value, duration))
 
-	def buildConfiguration(self, webif = False):
+	def buildConfiguration(self, webif=False):
 		list = ['<?xml version="1.0" ?>\n<epgrefresh version="', XML_VERSION, '">\n\n']
 		if webif:
 			for serviceref in self.services[0].union(self.services[1]):
@@ -123,7 +123,7 @@ class EPGRefresh:
 			self.refreshAdapter.stop()
 			self.refreshAdapter = None
 
-	def forceRefresh(self, session = None, dontshutdown = False):
+	def forceRefresh(self, session=None, dontshutdown=False):
 		print("[EPGRefresh] Forcing start of EPGRefresh")
 		if self.session is None:
 			if session is not None:
@@ -136,7 +136,7 @@ class EPGRefresh:
 		self.prepareRefresh()
 		return True
 
-	def start(self, session = None):
+	def start(self, session=None):
 		if session is not None:
 			self.session = session
 		if not self.forcedScan:
@@ -387,7 +387,7 @@ class EPGRefresh:
 					epgrefreshtimer.add(EPGRefreshTimerEntry(
 							time() + config.plugins.epgrefresh.delay_standby.value*60,
 							self.refresh,
-							nocheck = True)
+							nocheck=True)
 					)
 
 	def createWaitTimer(self):

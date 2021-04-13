@@ -29,15 +29,15 @@ WerbezapperInfoBarKeys = [
 ]
 
 config.werbezapper = ConfigSubsection()
-config.werbezapper.duration = ConfigNumber(default = 5)
+config.werbezapper.duration = ConfigNumber(default=5)
 config.werbezapper.duration_not_event = ConfigInteger(default=60, limits=(10, 300))
-config.werbezapper.standby = ConfigYesNo(default = False)
+config.werbezapper.standby = ConfigYesNo(default=False)
 config.werbezapper.channelselection_duration = ConfigNumber(default=1)
-config.werbezapper.add_to_channelselection = ConfigYesNo(default = True)
+config.werbezapper.add_to_channelselection = ConfigYesNo(default=True)
 config.werbezapper.channelselection_duration_stepsize = ConfigInteger(default=1, limits=(1, 20))
 config.werbezapper.hotkey = ConfigSelection([(x[0],x[1]) for x in WerbezapperInfoBarKeys], "none")
-config.werbezapper.monitoring_extmenu = ConfigYesNo(default = True)
-config.werbezapper.icon_timer = ConfigYesNo(default = False)
+config.werbezapper.monitoring_extmenu = ConfigYesNo(default=True)
+config.werbezapper.icon_timer = ConfigYesNo(default=False)
 config.werbezapper.icon_mode = ConfigSelection([("0", _("time")),("1", _("service / time"))], "0")
 config.werbezapper.x = ConfigInteger(default=60, limits=(0,9999))
 config.werbezapper.y = ConfigInteger(default=60, limits=(0,9999))
@@ -82,7 +82,7 @@ class WerbeZapperSilder(ConfigListScreen, Screen):
 			<widget name="config" position="0,100" size="560,25" scrollbarMode="showOnDemand" zPosition="1" foregroundColor="white" backgroundColor="transparent" />
 			<widget source="time" render="Label" position="0,130" zPosition="1" size="560,120" noWrap="1" halign="center" font="Regular;19" foregroundColor="#00389416" backgroundColor="background" shadowColor="black" shadowOffset="-2,-2" transparent="1"/>
 		</screen>""" 
-	def __init__(self, session, servicelist = None, remaining = 0):
+	def __init__(self, session, servicelist=None, remaining=0):
 		self.servicelist = servicelist
 		self.remaining = remaining
 		Screen.__init__(self, session)
@@ -107,11 +107,11 @@ class WerbeZapperSilder(ConfigListScreen, Screen):
 			zapperInstance = self.session.instantiateDialog(WerbeZapper, self.servicelist, cleanup)
 		if self.servicelist:
 			zap = int(self.duration.value)
-			zapperInstance.addStartTimer(duration = zap)
+			zapperInstance.addStartTimer(duration=zap)
 		self.close()
 
 	def initConfig(self):
-		self.duration = ConfigSlider(default = config.werbezapper.channelselection_duration.value, increment = config.werbezapper.channelselection_duration_stepsize.value, limits = (1, 300))
+		self.duration = ConfigSlider(default=config.werbezapper.channelselection_duration.value, increment=config.werbezapper.channelselection_duration_stepsize.value, limits=(1, 300))
 		self.duration.addNotifier(self.timeSettingChanged)
 
 	def createSetup(self):
@@ -212,15 +212,15 @@ def start_channelselection(session=None, service=None):
 			duration = event.getDuration()
 			end = start + duration
 			remaining_event = (end - now) / 60
-			session.open(WerbeZapperSilder, servicelist, remaining = remaining_event)
+			session.open(WerbeZapperSilder, servicelist, remaining=remaining_event)
 
 def Plugins(**kwargs):
 	l = [
 		PluginDescriptor(where=PluginDescriptor.WHERE_SESSIONSTART, fnc=session_start, needsRestart=False),
-		PluginDescriptor(name= _("Werbezapper"), description = _("Automatically zaps back to current service after given Time"), where=PluginDescriptor.WHERE_EXTENSIONSMENU, fnc = main, needsRestart = False),
+		PluginDescriptor(name=_("Werbezapper"), description=_("Automatically zaps back to current service after given Time"), where=PluginDescriptor.WHERE_EXTENSIONSMENU, fnc=main, needsRestart=False),
 	]
 	if config.werbezapper.monitoring_extmenu.value:
-		l.append(PluginDescriptor(name=_("Werbezapper Start / Stop monitoring"), description = _("Start / Stop monitoring instantly"), where = PluginDescriptor.WHERE_EXTENSIONSMENU, fnc = startstop, needsRestart = False))
+		l.append(PluginDescriptor(name=_("Werbezapper Start / Stop monitoring"), description=_("Start / Stop monitoring instantly"), where=PluginDescriptor.WHERE_EXTENSIONSMENU, fnc=startstop, needsRestart=False))
 	if config.werbezapper.channelselection_duration.value:
-		l.append(PluginDescriptor(name=_("add zap timer for service"), where = PluginDescriptor.WHERE_CHANNEL_CONTEXT_MENU, fnc = start_channelselection, needsRestart = False))
+		l.append(PluginDescriptor(name=_("add zap timer for service"), where=PluginDescriptor.WHERE_CHANNEL_CONTEXT_MENU, fnc=start_channelselection, needsRestart=False))
 	return l

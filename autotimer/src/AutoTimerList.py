@@ -29,7 +29,7 @@ class AutoTimerList(MenuList):
 	"""Defines a simple Component to show Timer name"""
 
 	def __init__(self, entries):
-		MenuList.__init__(self, entries, False, content = eListboxPythonMultiContent)
+		MenuList.__init__(self, entries, False, content=eListboxPythonMultiContent)
 		self.style_autotimerslist = config.plugins.autotimer.style_autotimerslist.value
 		if self.style_autotimerslist == "standard":
 			font = skin.fonts.get("AutotimerList", ("Regular", 22, 25))

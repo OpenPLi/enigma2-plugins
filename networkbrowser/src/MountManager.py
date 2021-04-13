@@ -85,7 +85,7 @@ class AutoMountManager(Screen):
 		config.movielist.videodirs.load()
 		self.close()
 
-	def keyOK(self, returnValue = None):
+	def keyOK(self, returnValue=None):
 		if returnValue is None:
 			returnValue = self["config"].getCurrent()[1]
 			if returnValue is "add":
@@ -112,9 +112,9 @@ class AutoMountManager(Screen):
 				hostname = fp.read()
 		except:
 			return
-		self.session.openWithCallback(self.hostnameCallback, VirtualKeyBoard, title = (_("Enter new hostname for your Receiver")), text = hostname)
+		self.session.openWithCallback(self.hostnameCallback, VirtualKeyBoard, title=(_("Enter new hostname for your Receiver")), text=hostname)
 
-	def hostnameCallback(self, callback = None):
+	def hostnameCallback(self, callback=None):
 		if callback:
 			with open('/etc/hostname', 'w+') as fp:
 				fp.write(callback)
@@ -122,7 +122,7 @@ class AutoMountManager(Screen):
 
 	def restartLan(self):
 		iNetwork.restartNetwork(self.restartLanDataAvail)
-		self.restartLanRef = self.session.openWithCallback(self.restartfinishedCB, MessageBox, _("Please wait while your network is restarting..."), type = MessageBox.TYPE_INFO, enable_input = False)
+		self.restartLanRef = self.session.openWithCallback(self.restartfinishedCB, MessageBox, _("Please wait while your network is restarting..."), type=MessageBox.TYPE_INFO, enable_input=False)
 
 	def restartLanDataAvail(self, data):
 		if data is True:
@@ -135,5 +135,5 @@ class AutoMountManager(Screen):
 
 	def restartfinishedCB(self, data):
 		if data is True:
-			self.session.open(MessageBox, _("Finished restarting your network"), type = MessageBox.TYPE_INFO, timeout = 10, default = False)
+			self.session.open(MessageBox, _("Finished restarting your network"), type=MessageBox.TYPE_INFO, timeout=10, default=False)
 

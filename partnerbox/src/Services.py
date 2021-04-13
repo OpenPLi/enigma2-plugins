@@ -28,7 +28,7 @@ def stringReplace(text):
 	return text.replace('&amp;quot;', '"')
 
 class E2EPGListAllData:
-	def __init__(self, servicereference = "", servicename = "", eventid = 0, eventstart = 0, eventduration = 0, eventtitle = "", eventdescription = "", eventdescriptionextended = ""):
+	def __init__(self, servicereference="", servicename="", eventid=0, eventstart=0, eventduration=0, eventtitle="", eventdescription="", eventdescriptionextended=""):
 		self.servicereference = servicereference
 		self.servicename = stringReplace(servicename)
 		self.eventid = eventid
@@ -39,7 +39,7 @@ class E2EPGListAllData:
 		self.eventdescriptionextended = stringReplace(eventdescriptionextended)
 
 class E2ServiceList:
-	def __init__(self, servicereference = "", servicename = ""):
+	def __init__(self, servicereference="", servicename=""):
 		self.servicereference = servicereference
 		self.servicename = stringReplace(servicename)
 
@@ -80,9 +80,9 @@ class Services(Source):
 						eventdescription = events[0][4]
 					if events[0][5] is not None:
 						eventdescriptionextended = events[0][5]
-				E2List.append(E2EPGListAllData(servicereference = servicereference, servicename = servicename, eventstart = eventstart, eventduration = eventduration, eventtitle = eventtitle, eventid = eventid, eventdescription= eventdescription, eventdescriptionextended = eventdescriptionextended))
+				E2List.append(E2EPGListAllData(servicereference=servicereference, servicename=servicename, eventstart=eventstart, eventduration=eventduration, eventtitle=eventtitle, eventid=eventid, eventdescription=eventdescription, eventdescriptionextended=eventdescriptionextended))
 			else:
-					E2List.append(E2ServiceList(servicereference = item[0], servicename = item[1]))
+					E2List.append(E2ServiceList(servicereference=item[0], servicename=item[1]))
 		return E2List
 
 	def buildEPGList(self, ref):
@@ -115,7 +115,7 @@ class Services(Source):
 				if item[5] is not None:
 					eventdescriptionextended = item[5]
 				if eventstart != 0:
-					E2List.append(E2EPGListAllData(servicereference = servicereference, servicename = servicename, eventstart = eventstart, eventduration = eventduration, eventtitle = eventtitle, eventid = eventid, eventdescription= eventdescription, eventdescriptionextended = eventdescriptionextended))
+					E2List.append(E2EPGListAllData(servicereference=servicereference, servicename=servicename, eventstart=eventstart, eventduration=eventduration, eventtitle=eventtitle, eventid=eventid, eventdescription=eventdescription, eventdescriptionextended=eventdescriptionextended))
 		return E2List
 
 	def getServiceList(self, ref):

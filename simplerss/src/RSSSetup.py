@@ -70,7 +70,7 @@ class RSSSetup(ConfigListScreen, Screen):
 			<widget name="config" position="0,45" size="560,350" scrollbarMode="showOnDemand" />
 		</screen>"""
 
-	def __init__(self, session, rssPoller = None):
+	def __init__(self, session, rssPoller=None):
 		Screen.__init__(self, session)
 		self.rssPoller = rssPoller
 		self.list = []
@@ -185,7 +185,7 @@ class RSSSetup(ConfigListScreen, Screen):
 	def new(self):
 		l = config.plugins.simpleRSS.feed
 		s = ConfigSubsection()
-		s.uri = ConfigText(default="http://", fixed_size = False)
+		s.uri = ConfigText(default="http://", fixed_size=False)
 		s.autoupdate = ConfigYesNo(default=True)
 		id = len(l)
 		l.append(s)
@@ -224,12 +224,12 @@ class RSSSetup(ConfigListScreen, Screen):
 		simpleRSS.feedcount.value = len(simpleRSS.feed)
 		simpleRSS.feedcount.save()
 
-def addFeed(address, auto = False):
+def addFeed(address, auto=False):
 	l = config.plugins.simpleRSS.feed
 
 	# Create new Item
 	s = ConfigSubsection()
-	s.uri = ConfigText(default="http://", fixed_size = False)
+	s.uri = ConfigText(default="http://", fixed_size=False)
 	s.autoupdate = ConfigYesNo(default=True)
 
 	# Set values

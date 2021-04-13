@@ -111,8 +111,7 @@ class audioDelay(Screen):
 		self.newService = False
 		self.updateDelay = False
 		self.ServiceDelay = getServiceDict()
-		self.__event_tracker = ServiceEventTracker(screen=self, eventmap=
-			{
+		self.__event_tracker = ServiceEventTracker(screen=self, eventmap={
 				iPlayableService.evUpdatedInfo: self.__audiodelayUpdatedInfo,
 				iPlayableService.evStart: self.__audiodelayStart,
 				iPlayableService.evEnd: self.__audiodelayServiceEnd

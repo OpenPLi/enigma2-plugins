@@ -39,14 +39,14 @@ from base64 import encodestring
 import urllib
 
 config.plugins.remoteTimer = ConfigSubsection()
-config.plugins.remoteTimer.httphost = ConfigText(default = "" , fixed_size = False)
-config.plugins.remoteTimer.httpip = ConfigIP(default = [0, 0, 0, 0])
-config.plugins.remoteTimer.httpport = ConfigNumber(default = 80)
-config.plugins.remoteTimer.username = ConfigText(default = "root", fixed_size = False)
-config.plugins.remoteTimer.password = ConfigPassword(default = "", fixed_size = False)
-config.plugins.remoteTimer.default = ConfigYesNo(default = False)
-config.plugins.remoteTimer.remotedir = ConfigYesNo(default = False)
-config.plugins.remoteTimer.extmenu = ConfigYesNo(default = True)
+config.plugins.remoteTimer.httphost = ConfigText(default="" , fixed_size=False)
+config.plugins.remoteTimer.httpip = ConfigIP(default=[0, 0, 0, 0])
+config.plugins.remoteTimer.httpport = ConfigNumber(default=80)
+config.plugins.remoteTimer.username = ConfigText(default="root", fixed_size=False)
+config.plugins.remoteTimer.password = ConfigPassword(default="", fixed_size=False)
+config.plugins.remoteTimer.default = ConfigYesNo(default=False)
+config.plugins.remoteTimer.remotedir = ConfigYesNo(default=False)
+config.plugins.remoteTimer.extmenu = ConfigYesNo(default=True)
 
 def localGetPage(url):
 	username = config.plugins.remoteTimer.username.value
@@ -58,7 +58,7 @@ def localGetPage(url):
 	else:
 		headers = {}
 
-	return getPage(url, headers = headers)
+	return getPage(url, headers=headers)
 
 class RemoteService:
 	def __init__(self, sref, sname):
@@ -171,23 +171,23 @@ class RemoteTimerScreen(Screen):
 			return [
 				(
 					E2Timer(
-						sref = str(timer.findtext("e2servicereference", '').encode("utf-8", 'ignore')),
-						sname = str(timer.findtext("e2servicename", 'n/a').encode("utf-8", 'ignore')),
-						name = str(timer.findtext("e2name", '').encode("utf-8", 'ignore')),
-						disabled = int(timer.findtext("e2disabled", 0)),
-						timebegin = int(timer.findtext("e2timebegin", 0)),
-						timeend = int(timer.findtext("e2timeend", 0)),
-						duration = int(timer.findtext("e2duration", 0)),
-						startprepare = int(timer.findtext("e2startprepare", 0)),
-						state = int(timer.findtext("e2state", 0)),
-						repeated = int(timer.findtext("e2repeated", 0)),
-						justplay = int(timer.findtext("e2justplay", 0)),
-						eit = int(timer.findtext("e2eit", -1)),
-						afterevent = int(timer.findtext("e2afterevent", 0)),
-						dirname = str(timer.findtext("e2dirname", '').encode("utf-8", 'ignore')),
-						description = str(timer.findtext("e2description", '').encode("utf-8", 'ignore')),
-						flags = "",
-						conflict_detection = 0
+						sref=str(timer.findtext("e2servicereference", '').encode("utf-8", 'ignore')),
+						sname=str(timer.findtext("e2servicename", 'n/a').encode("utf-8", 'ignore')),
+						name=str(timer.findtext("e2name", '').encode("utf-8", 'ignore')),
+						disabled=int(timer.findtext("e2disabled", 0)),
+						timebegin=int(timer.findtext("e2timebegin", 0)),
+						timeend=int(timer.findtext("e2timeend", 0)),
+						duration=int(timer.findtext("e2duration", 0)),
+						startprepare=int(timer.findtext("e2startprepare", 0)),
+						state=int(timer.findtext("e2state", 0)),
+						repeated=int(timer.findtext("e2repeated", 0)),
+						justplay=int(timer.findtext("e2justplay", 0)),
+						eit=int(timer.findtext("e2eit", -1)),
+						afterevent=int(timer.findtext("e2afterevent", 0)),
+						dirname=str(timer.findtext("e2dirname", '').encode("utf-8", 'ignore')),
+						description=str(timer.findtext("e2description", '').encode("utf-8", 'ignore')),
+						flags="",
+						conflict_detection=0
 					),
 					False
 				)
@@ -195,10 +195,10 @@ class RemoteTimerScreen(Screen):
 			]
 
 class E2Timer:
-	def __init__(self, sref = "", sname = "", name = "", disabled = 0,
-			timebegin = 0, timeend = 0, duration = 0, startprepare = 0,
-			state = 0, repeated = 0, justplay = 0, eit = 0, afterevent = 0,
-			dirname = "", description = "", flags = "", conflict_detection = 0):
+	def __init__(self, sref="", sname="", name="", disabled=0,
+			timebegin=0, timeend=0, duration=0, startprepare=0,
+			state=0, repeated=0, justplay=0, eit=0, afterevent=0,
+			dirname="", description="", flags="", conflict_detection=0):
 		self.service_ref = RemoteService(sref, sname)
 		self.name = name
 		self.disabled = disabled
@@ -281,7 +281,7 @@ def timerInit():
 
 def createNewnigma2Setup(self, widget):
 	baseTimerEntrySetup(self, widget)
-	self.timerentry_remote = ConfigYesNo(default = config.plugins.remoteTimer.default.value)
+	self.timerentry_remote = ConfigYesNo(default=config.plugins.remoteTimer.default.value)
 	self.list.insert(0, getConfigListEntry(_("Remote Timer"), self.timerentry_remote))
 
 	# force re-reading the list
@@ -319,7 +319,7 @@ def newnigma2KeyGo(self):
 						if i.toString() == ref.toString():
 							selection = x
 						tlist.append((i.getName(), i))
-					self.session.openWithCallback(boundFunction(newnigma2SubserviceSelected, self), ChoiceBox, title=_("Please select a subservice to record..."), list = tlist, selection = selection)
+					self.session.openWithCallback(boundFunction(newnigma2SubserviceSelected, self), ChoiceBox, title=_("Please select a subservice to record..."), list=tlist, selection=selection)
 					return
 				elif n > 0:
 					parent = service_ref.ref
@@ -421,9 +421,9 @@ def main(session, **kwargs):
 
 def Plugins(**kwargs):
  	p = [
-		PluginDescriptor(name= _("Remote Timer"),description=_("Create timers on remote reciever enigma2"), where=PluginDescriptor.WHERE_PLUGINMENU, icon="remotetimer.png", fnc = main),
-		PluginDescriptor(where=PluginDescriptor.WHERE_SESSIONSTART, fnc = autostart)
+		PluginDescriptor(name=_("Remote Timer"),description=_("Create timers on remote reciever enigma2"), where=PluginDescriptor.WHERE_PLUGINMENU, icon="remotetimer.png", fnc=main),
+		PluginDescriptor(where=PluginDescriptor.WHERE_SESSIONSTART, fnc=autostart)
 	]
 	if config.plugins.remoteTimer.extmenu.value:
-		p.append(PluginDescriptor(name=_("Remote Timer"), where = PluginDescriptor.WHERE_EXTENSIONSMENU, fnc=main))
+		p.append(PluginDescriptor(name=_("Remote Timer"), where=PluginDescriptor.WHERE_EXTENSIONSMENU, fnc=main))
 	return p

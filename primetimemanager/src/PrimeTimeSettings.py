@@ -13,28 +13,28 @@ size_width = getDesktop(0).size().width()
 plugin_version = "1.4"
 
 config.plugins.PrimeTimeManager = ConfigSubsection()
-config.plugins.PrimeTimeManager.Time1 = ConfigClock(default = 69300) # 20:15
-config.plugins.PrimeTimeManager.Time2 = ConfigClock(default = 75600) # 22:00
-config.plugins.PrimeTimeManager.DurationOrEndTime = ConfigSelection(default = "duration", choices = [
+config.plugins.PrimeTimeManager.Time1 = ConfigClock(default=69300) # 20:15
+config.plugins.PrimeTimeManager.Time2 = ConfigClock(default=75600) # 22:00
+config.plugins.PrimeTimeManager.DurationOrEndTime = ConfigSelection(default="duration", choices=[
 				("duration", _("Duration")),
 				("endtime", _("End time"))
 				])
 config.plugins.PrimeTimeManager.RemoveFavorite = ConfigYesNo()
-config.plugins.PrimeTimeManager.ViewLive = ConfigYesNo(default = False)
-config.plugins.PrimeTimeManager.ViewLiveType = ConfigSelection(default = "zap", choices = [
+config.plugins.PrimeTimeManager.ViewLive = ConfigYesNo(default=False)
+config.plugins.PrimeTimeManager.ViewLiveType = ConfigSelection(default="zap", choices=[
 				("zap", _("Zap")),
 				("zaprec", _("Zap + Record"))
 				])
-config.plugins.PrimeTimeManager.CheckConflictOnExit = ConfigYesNo(default = False)
-config.plugins.PrimeTimeManager.CheckConflictOnAccept = ConfigYesNo(default = True)
-config.plugins.PrimeTimeManager.TimerEditKeyMenu = ConfigYesNo(default = True)
-config.plugins.PrimeTimeManager.ExtMenu = ConfigYesNo(default = False)
-config.plugins.PrimeTimeManager.UseAutotimer = ConfigYesNo(default = True)
-config.plugins.PrimeTimeManager.RedButton = ConfigSelection(default = "epg", choices = [
+config.plugins.PrimeTimeManager.CheckConflictOnExit = ConfigYesNo(default=False)
+config.plugins.PrimeTimeManager.CheckConflictOnAccept = ConfigYesNo(default=True)
+config.plugins.PrimeTimeManager.TimerEditKeyMenu = ConfigYesNo(default=True)
+config.plugins.PrimeTimeManager.ExtMenu = ConfigYesNo(default=False)
+config.plugins.PrimeTimeManager.UseAutotimer = ConfigYesNo(default=True)
+config.plugins.PrimeTimeManager.RedButton = ConfigSelection(default="epg", choices=[
 				("epg", _("open Multi EPG")),
 				("exit", _("exit plugin"))
 				])
-config.plugins.PrimeTimeManager.CloseMultiEPG = ConfigYesNo(default = False)
+config.plugins.PrimeTimeManager.CloseMultiEPG = ConfigYesNo(default=False)
 
 class PrimeTimeSettings(ConfigListScreen, Screen):
 	if size_width >=1920:

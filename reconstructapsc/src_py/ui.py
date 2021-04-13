@@ -28,7 +28,7 @@ class ReconstructApSc(ChoiceBox):
 				tlist.append((_("Reconstruct the .ap and .sc files of the selected movie"), "CALLFUNC", self.confirmed1, service, path))
 				tlist += tnext
 
-		ChoiceBox.__init__(self, session, _("What would you like to reconstruct?  (\"%s\")") % (name), list = tlist, selection = 0)
+		ChoiceBox.__init__(self, session, _("What would you like to reconstruct?  (\"%s\")") % (name), list=tlist, selection=0)
 		self.skinName = "ChoiceBox"
 
 	def confirmed0(self, arg):

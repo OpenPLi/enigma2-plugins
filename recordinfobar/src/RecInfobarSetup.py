@@ -11,7 +11,7 @@ import plugin
 plugin_version = "1.22"
 
 class RecInfobarSetupScreen(Screen, ConfigListScreen):
-	def __init__(self, session, args = None):
+	def __init__(self, session, args=None):
 		Screen.__init__(self, session)
 		self.skinName = ["RecInfobarSetup", "Setup"]
 		self.setup_title = _("Record Infobar Setup")

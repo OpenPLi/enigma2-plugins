@@ -36,22 +36,22 @@ from time import time, localtime, mktime
 
 #Configuration
 config.plugins.epgrefresh = ConfigSubsection()
-config.plugins.epgrefresh.enabled = ConfigYesNo(default = False)
-config.plugins.epgrefresh.begin = ConfigClock(default = ((20*60) + 15) * 60)
-config.plugins.epgrefresh.end = ConfigClock(default = ((6*60) + 30) * 60)
-config.plugins.epgrefresh.interval_seconds = ConfigNumber(default = 120)
-config.plugins.epgrefresh.delay_standby = ConfigNumber(default = 10)
-config.plugins.epgrefresh.inherit_autotimer = ConfigYesNo(default = False)
-config.plugins.epgrefresh.afterevent = ConfigYesNo(default = False)
-config.plugins.epgrefresh.force = ConfigYesNo(default = False)
-config.plugins.epgrefresh.enablemessage = ConfigYesNo(default = True)
-config.plugins.epgrefresh.wakeup = ConfigYesNo(default = False)
-config.plugins.epgrefresh.start_on_mainmenu = ConfigYesNo(default = False)
-config.plugins.epgrefresh.stop_on_mainmenu = ConfigYesNo(default = True)
-config.plugins.epgrefresh.lastscan = ConfigNumber(default = 0)
-config.plugins.epgrefresh.timeout_shutdown = ConfigInteger(default = 2, limits= (2, 30))
-config.plugins.epgrefresh.parse_autotimer = ConfigYesNo(default = False)
-config.plugins.epgrefresh.erase = ConfigYesNo(default = False)
+config.plugins.epgrefresh.enabled = ConfigYesNo(default=False)
+config.plugins.epgrefresh.begin = ConfigClock(default=((20*60) + 15) * 60)
+config.plugins.epgrefresh.end = ConfigClock(default=((6*60) + 30) * 60)
+config.plugins.epgrefresh.interval_seconds = ConfigNumber(default=120)
+config.plugins.epgrefresh.delay_standby = ConfigNumber(default=10)
+config.plugins.epgrefresh.inherit_autotimer = ConfigYesNo(default=False)
+config.plugins.epgrefresh.afterevent = ConfigYesNo(default=False)
+config.plugins.epgrefresh.force = ConfigYesNo(default=False)
+config.plugins.epgrefresh.enablemessage = ConfigYesNo(default=True)
+config.plugins.epgrefresh.wakeup = ConfigYesNo(default=False)
+config.plugins.epgrefresh.start_on_mainmenu = ConfigYesNo(default=False)
+config.plugins.epgrefresh.stop_on_mainmenu = ConfigYesNo(default=True)
+config.plugins.epgrefresh.lastscan = ConfigNumber(default=0)
+config.plugins.epgrefresh.timeout_shutdown = ConfigInteger(default=2, limits=(2, 30))
+config.plugins.epgrefresh.parse_autotimer = ConfigYesNo(default=False)
+config.plugins.epgrefresh.erase = ConfigYesNo(default=False)
 
 adapter_choices = [("main", _("Main Picture"))]
 if SystemInfo.get("NumVideoDecoders", 1) > 1:
@@ -59,66 +59,66 @@ if SystemInfo.get("NumVideoDecoders", 1) > 1:
 	adapter_choices.append(("pip_hidden", _("Picture in Picture (hidden)")))
 if len(nimmanager.nim_slots) > 1:
 	adapter_choices.append(("record", _("Fake recording")))
-config.plugins.epgrefresh.adapter = ConfigSelection(choices = adapter_choices, default = "main")
+config.plugins.epgrefresh.adapter = ConfigSelection(choices=adapter_choices, default="main")
 
-config.plugins.epgrefresh.add_to_refresh = ConfigSelection(choices = [
+config.plugins.epgrefresh.add_to_refresh = ConfigSelection(choices=[
 		("0", _("nowhere")),
 		("1", _("event info")),
 		("2", _("channel selection")),
 		("3", _("event info / channel selection")),
-	], default = "1"
+	], default="1"
 )
-config.plugins.epgrefresh.show_in_extensionsmenu = ConfigYesNo(default = False)
-config.plugins.epgrefresh.show_help = ConfigYesNo(default = True)
-config.plugins.epgrefresh.save_epg = ConfigYesNo(default = False)
-config.plugins.epgrefresh.setup_epg = ConfigSelection(choices = [("1", _("Press OK"))], default = "1")
-config.plugins.epgrefresh.day_profile = ConfigSelection(choices = [("1", _("Press OK"))], default = "1")
+config.plugins.epgrefresh.show_in_extensionsmenu = ConfigYesNo(default=False)
+config.plugins.epgrefresh.show_help = ConfigYesNo(default=True)
+config.plugins.epgrefresh.save_epg = ConfigYesNo(default=False)
+config.plugins.epgrefresh.setup_epg = ConfigSelection(choices=[("1", _("Press OK"))], default="1")
+config.plugins.epgrefresh.day_profile = ConfigSelection(choices=[("1", _("Press OK"))], default="1")
 
-config.plugins.epgrefresh.skipProtectedServices = ConfigSelection(choices = [
+config.plugins.epgrefresh.skipProtectedServices = ConfigSelection(choices=[
 		("bg_only", _("Background only")),
 		("always", _("Foreground also")),
-	], default = "bg_only"
+	], default="bg_only"
 )
 
 # convert previous parameters
-config.plugins.epgrefresh.background = ConfigYesNo(default = False)
+config.plugins.epgrefresh.background = ConfigYesNo(default=False)
 if config.plugins.epgrefresh.background.value:
 	config.plugins.epgrefresh.adapter.value = "pip_hidden"
 	config.plugins.epgrefresh.background.value = False
 	config.plugins.epgrefresh.save()
-config.plugins.epgrefresh.interval = ConfigNumber(default = 2)
+config.plugins.epgrefresh.interval = ConfigNumber(default=2)
 if config.plugins.epgrefresh.interval.value != 2:
 	config.plugins.epgrefresh.interval_seconds.value = config.plugins.epgrefresh.interval.value * 60
 	config.plugins.epgrefresh.interval.value = 2
 	config.plugins.epgrefresh.save()
 
 config.plugins.epgrefresh_extra = ConfigSubsection()
-config.plugins.epgrefresh_extra.cacheloadsched = ConfigYesNo(default = False)
-config.plugins.epgrefresh_extra.cachesavesched = ConfigYesNo(default = False)
+config.plugins.epgrefresh_extra.cacheloadsched = ConfigYesNo(default=False)
+config.plugins.epgrefresh_extra.cachesavesched = ConfigYesNo(default=False)
 def EpgCacheLoadSchedChanged(configElement):
 	EpgLoadSaveRefresh.EpgCacheLoadCheck()
 def EpgCacheSaveSchedChanged(configElement):
 	EpgLoadSaveRefresh.EpgCacheSaveCheck()
 config.plugins.epgrefresh_extra.cacheloadsched.addNotifier(EpgCacheLoadSchedChanged)
 config.plugins.epgrefresh_extra.cachesavesched.addNotifier(EpgCacheSaveSchedChanged)
-config.plugins.epgrefresh_extra.cacheloadtimer = ConfigSelectionNumber(default = 24, stepwidth = 1, min = 1, max = 24, wraparound = True)
-config.plugins.epgrefresh_extra.cachesavetimer = ConfigSelectionNumber(default = 24, stepwidth = 1, min = 1, max = 24, wraparound = True)
-config.plugins.epgrefresh_extra.manual_save = ConfigSelection(choices = [("1", _("Press OK"))], default = "1")
-config.plugins.epgrefresh_extra.manual_load = ConfigSelection(choices = [("1", _("Press OK"))], default = "1")
-config.plugins.epgrefresh_extra.manual_reload = ConfigSelection(choices = [("1", _("Press OK"))], default = "1")
-config.plugins.epgrefresh_extra.main_menu = ConfigYesNo(default = False)
+config.plugins.epgrefresh_extra.cacheloadtimer = ConfigSelectionNumber(default=24, stepwidth=1, min=1, max=24, wraparound=True)
+config.plugins.epgrefresh_extra.cachesavetimer = ConfigSelectionNumber(default=24, stepwidth=1, min=1, max=24, wraparound=True)
+config.plugins.epgrefresh_extra.manual_save = ConfigSelection(choices=[("1", _("Press OK"))], default="1")
+config.plugins.epgrefresh_extra.manual_load = ConfigSelection(choices=[("1", _("Press OK"))], default="1")
+config.plugins.epgrefresh_extra.manual_reload = ConfigSelection(choices=[("1", _("Press OK"))], default="1")
+config.plugins.epgrefresh_extra.main_menu = ConfigYesNo(default=False)
 config.plugins.epgrefresh_extra.epgcachepath = ConfigDirectory('/media/hdd/')
 config.plugins.epgrefresh_extra.bookmarks = ConfigLocations(default=['/media/hdd/'])
 config.plugins.epgrefresh_extra.epgcachefilename = ConfigText(default="epg", fixed_size=False)
-config.plugins.epgrefresh_extra.save_backup = ConfigYesNo(default = False)
-config.plugins.epgrefresh_extra.delete_backup = ConfigSelection(choices = [("1", _("Press OK"))], default = "1")
-config.plugins.epgrefresh_extra.restore_backup = ConfigSelection(choices = [("1", _("Press OK"))], default = "1")
-config.plugins.epgrefresh_extra.autorestore_backup = ConfigYesNo(default = False)
-config.plugins.epgrefresh_extra.show_autozap = ConfigYesNo(default = False)
-config.plugins.epgrefresh_extra.timeout_autozap = ConfigInteger(default = 15, limits= (10, 90))
+config.plugins.epgrefresh_extra.save_backup = ConfigYesNo(default=False)
+config.plugins.epgrefresh_extra.delete_backup = ConfigSelection(choices=[("1", _("Press OK"))], default="1")
+config.plugins.epgrefresh_extra.restore_backup = ConfigSelection(choices=[("1", _("Press OK"))], default="1")
+config.plugins.epgrefresh_extra.autorestore_backup = ConfigYesNo(default=False)
+config.plugins.epgrefresh_extra.show_autozap = ConfigYesNo(default=False)
+config.plugins.epgrefresh_extra.timeout_autozap = ConfigInteger(default=15, limits=(10, 90))
 config.plugins.epgrefresh_extra.day_refresh = ConfigSubDict()
 for i in range(7):
-	config.plugins.epgrefresh_extra.day_refresh[i] = ConfigEnableDisable(default = True)
+	config.plugins.epgrefresh_extra.day_refresh[i] = ConfigEnableDisable(default=True)
 
 #pragma mark - Workaround for unset clock
 from enigma import eDVBLocalTimeHandler
@@ -152,7 +152,7 @@ def timeCallback(isCallback=True):
 				boundFunction(standbyQuestionCallback, epgrefresh.session),
 				MessageBox,
 				_("This might have been an automated bootup to refresh the EPG. For this to happen it is recommended to put the receiver to Standby.\nDo you want to do this now?"),
-				timeout = 30
+				timeout=30
 			)
 	epgrefresh.start()
 
@@ -219,7 +219,7 @@ class AutoZap(Screen):
 			srvName = srvName.replace('\xc2\x86', '').replace('\xc2\x87', '')
 			self["wohin"].setText(srvName + _("   (AutoZap)"))
 
-def standbyQuestionCallback(session, res = None):
+def standbyQuestionCallback(session, res=None):
 	if res:
 		from Screens import Standby
 		if Standby.inStandby is None:
@@ -369,7 +369,7 @@ def EPGRefreshChannelContextMenu__init__(self, session, csel):
 				profile = config.plugins.epgrefresh.add_to_refresh.value
 				if profile == "2" or profile == "3":
 					callFunction = self.addtoEPGRefresh
-					self["menu"].list.insert(2, ChoiceEntryComponent(text = (_("add service to EPGRefresh"), boundFunction(callFunction,1))))
+					self["menu"].list.insert(2, ChoiceEntryComponent(text=(_("add service to EPGRefresh"), boundFunction(callFunction,1))))
 				else:
 					pass
 
@@ -454,51 +454,51 @@ def addEventinfomenu(el):
 			print("[EPGRefresh] housekeepingExtensionsmenu got confused, tried to remove non-existant plugin entry... ignoring.")
 
 
-config.plugins.epgrefresh_extra.show_autozap.addNotifier(AutozapExtensionsmenu, initial_call = False, immediate_feedback = True)
-config.plugins.epgrefresh.show_in_extensionsmenu.addNotifier(housekeepingExtensionsmenu, initial_call = False, immediate_feedback = True)
-config.plugins.epgrefresh.add_to_refresh.addNotifier(addEventinfomenu, initial_call = False, immediate_feedback = True)
-extDescriptor = PluginDescriptor(name="EPGRefresh", description = _("Automatically refresh EPG"), where = PluginDescriptor.WHERE_EXTENSIONSMENU, fnc = extensionsmenu, needsRestart=False)
-eventinfoDescriptor = PluginDescriptor(name= _("add to EPGRefresh"),description = _("add to EPGRefresh"), where = PluginDescriptor.WHERE_EVENTINFO, fnc = eventinfo, needsRestart=False)
-autozapDescriptor = PluginDescriptor(name= _("Refresh-EPG / AutoZap"), description = _("AutoZap for refreshing EPG data"), where = PluginDescriptor.WHERE_EXTENSIONSMENU, fnc = autozap, needsRestart=False)
+config.plugins.epgrefresh_extra.show_autozap.addNotifier(AutozapExtensionsmenu, initial_call=False, immediate_feedback=True)
+config.plugins.epgrefresh.show_in_extensionsmenu.addNotifier(housekeepingExtensionsmenu, initial_call=False, immediate_feedback=True)
+config.plugins.epgrefresh.add_to_refresh.addNotifier(addEventinfomenu, initial_call=False, immediate_feedback=True)
+extDescriptor = PluginDescriptor(name="EPGRefresh", description=_("Automatically refresh EPG"), where=PluginDescriptor.WHERE_EXTENSIONSMENU, fnc=extensionsmenu, needsRestart=False)
+eventinfoDescriptor = PluginDescriptor(name=_("add to EPGRefresh"),description=_("add to EPGRefresh"), where=PluginDescriptor.WHERE_EVENTINFO, fnc=eventinfo, needsRestart=False)
+autozapDescriptor = PluginDescriptor(name=_("Refresh-EPG / AutoZap"), description=_("AutoZap for refreshing EPG data"), where=PluginDescriptor.WHERE_EXTENSIONSMENU, fnc=autozap, needsRestart=False)
 
 def Plugins(**kwargs):
 	needsRestart = config.plugins.epgrefresh.enabled.value and not plugins.firstRun
 	list = [
 		PluginDescriptor(
-			name = "EPGRefresh",
-			where = [
+			name="EPGRefresh",
+			where=[
 				PluginDescriptor.WHERE_AUTOSTART,
 				PluginDescriptor.WHERE_SESSIONSTART
 			],
-			fnc = autostart,
-			wakeupfnc = getNextWakeup,
-			needsRestart = needsRestart,
+			fnc=autostart,
+			wakeupfnc=getNextWakeup,
+			needsRestart=needsRestart,
 		),
 		PluginDescriptor(
-			where = PluginDescriptor.WHERE_SESSIONSTART,
-			fnc = autostart_ChannelContextMenu,
-			needsRestart = needsRestart,
+			where=PluginDescriptor.WHERE_SESSIONSTART,
+			fnc=autostart_ChannelContextMenu,
+			needsRestart=needsRestart,
 		),
 		PluginDescriptor(
-			name = _("EPGRefresh"),
-			description = _("Automatically refresh EPG"),
-			where = PluginDescriptor.WHERE_PLUGINMENU, 
-			fnc = main,
-			icon = "plugin.png",
-			needsRestart = needsRestart,
+			name=_("EPGRefresh"),
+			description=_("Automatically refresh EPG"),
+			where=PluginDescriptor.WHERE_PLUGINMENU, 
+			fnc=main,
+			icon="plugin.png",
+			needsRestart=needsRestart,
 		),
 		PluginDescriptor(
-			name = "Manual EPG",
-			description = _("manual save/load EPG"),
-			where = PluginDescriptor.WHERE_MENU, 
-			fnc = main_menu,
-			needsRestart = needsRestart,
+			name="Manual EPG",
+			description=_("manual save/load EPG"),
+			where=PluginDescriptor.WHERE_MENU, 
+			fnc=main_menu,
+			needsRestart=needsRestart,
 		),
 		PluginDescriptor(
-			name = "Manual EPG-refresh",
-			where = PluginDescriptor.WHERE_MENU, 
-			fnc = manualrefresh_menu,
-			needsRestart = needsRestart,
+			name="Manual EPG-refresh",
+			where=PluginDescriptor.WHERE_MENU, 
+			fnc=manualrefresh_menu,
+			needsRestart=needsRestart,
 		),
 	]
 	if config.plugins.epgrefresh.show_in_extensionsmenu.value:

@@ -38,7 +38,7 @@ class InfoBarFunctionSaver:
 		self.infoBarSingleEpg = InfoBar.openSingleServiceEPG
 		self.infoBarMultiEpg = InfoBar.openMultiServiceEPG
 		from Components.config import config
-		config.plugins.merlinEpgCenter.replaceInfobarEpg.addNotifier(self.changeFunctions, initial_call = True)
+		config.plugins.merlinEpgCenter.replaceInfobarEpg.addNotifier(self.changeFunctions, initial_call=True)
 			
 	def changeFunctions(self, configElement):
 		if configElement.value: # replace InfoBar EPG functions
@@ -89,8 +89,8 @@ def openMerlinEPGCenterTab(session, startWithTab, **kwargs):
 	session.open(MerlinEPGCenter, servicelist, currentBouquet, bouquetList, currentIndex, startWithTab)
 	
 def Plugins(**kwargs):
-	p = PluginDescriptor(where = [PluginDescriptor.WHERE_SESSIONSTART], fnc=autostart)
-	list = [PluginDescriptor(name = "Merlin EPG Center", description = _("More than just an EPG..."), where = [PluginDescriptor.WHERE_EXTENSIONSMENU, PluginDescriptor.WHERE_PLUGINMENU, PluginDescriptor.WHERE_EVENTINFO], fnc = openMerlinEPGCenter)]
+	p = PluginDescriptor(where=[PluginDescriptor.WHERE_SESSIONSTART], fnc=autostart)
+	list = [PluginDescriptor(name="Merlin EPG Center", description=_("More than just an EPG..."), where=[PluginDescriptor.WHERE_EXTENSIONSMENU, PluginDescriptor.WHERE_PLUGINMENU, PluginDescriptor.WHERE_EVENTINFO], fnc=openMerlinEPGCenter)]
 	list.append(p)
 	return list
 	

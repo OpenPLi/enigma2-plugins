@@ -42,7 +42,7 @@ config.plugins.emailimap.showDeleted = ConfigEnableDisable(default=False)
 config.plugins.emailimap.timeout = ConfigInteger(default=0, limits=(0, 90)) # in seconds
 config.plugins.emailimap.verbose = ConfigEnableDisable(default=True)
 config.plugins.emailimap.debug = ConfigEnableDisable(default=False)
-config.plugins.emailimap.type = ConfigSelection(default = "1", choices = [("0", _("infobar mode (live TV)")), ("1", _("always"))])
+config.plugins.emailimap.type = ConfigSelection(default="1", choices=[("0", _("infobar mode (live TV)")), ("1", _("always"))])
 
 _firstCheckMail = 0
 
@@ -1189,8 +1189,8 @@ initLog()
 def Plugins(path, **kwargs): #@UnusedVariable kwargs # pylint: disable-msg=W0613,C0103
 	return [
 			 PluginDescriptor(name=_("Email Client"), description=_("view Emails via IMAP4"),
-			 where = PluginDescriptor.WHERE_PLUGINMENU,
-			 fnc = main,
+			 where=PluginDescriptor.WHERE_PLUGINMENU,
+			 fnc=main,
 			 icon="plugin.png"
 			 ),
 			 PluginDescriptor(where=PluginDescriptor.WHERE_SESSIONSTART, fnc=autostart)

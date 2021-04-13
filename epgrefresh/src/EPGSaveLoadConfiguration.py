@@ -75,7 +75,7 @@ class EPGSaveLoadConfiguration(Screen, ConfigListScreen):
 			getConfigListEntry(_("Show entry 'AutoZap' in extensions menu"), config.plugins.epgrefresh_extra.show_autozap, _("Enable automatic zapping of all services in the current services list.")),
 			getConfigListEntry(_("Duration to show each service (in seconds) for 'AutoZap'"), config.plugins.epgrefresh_extra.timeout_autozap, _("This is the duration each service will be shown in AutoZap mode.")),
 		]
-		ConfigListScreen.__init__(self, self.list, session = session, on_change = self.changed)
+		ConfigListScreen.__init__(self, self.list, session=session, on_change=self.changed)
 
 		def selectionChanged():
 			if self["config"].current:
@@ -150,18 +150,18 @@ class EPGSaveLoadConfiguration(Screen, ConfigListScreen):
 					self.setEpgLoad(True)
 					self.setEpgSave(True)
 					if os.path.exists(config.misc.epgcache_filename.value):
-						self.session.open(MessageBox, _("Backup file load!"), MessageBox.TYPE_INFO, timeout = 4)
+						self.session.open(MessageBox, _("Backup file load!"), MessageBox.TYPE_INFO, timeout=4)
 					else:
 						try:
 							os.system("rm -f %s" % (restore_backup))
-							self.session.open(MessageBox, _("Backup file is corrupt!\nBackup file will be deleted!"), MessageBox.TYPE_INFO, timeout = 4)
+							self.session.open(MessageBox, _("Backup file is corrupt!\nBackup file will be deleted!"), MessageBox.TYPE_INFO, timeout=4)
 						except:
 							pass
 					self.updateDestination()
 				except:
 					pass
 			else:
-				self.session.open(MessageBox, _("Backup file is not found!"), MessageBox.TYPE_INFO, timeout = 4)
+				self.session.open(MessageBox, _("Backup file is not found!"), MessageBox.TYPE_INFO, timeout=4)
 		if sel == config.plugins.epgrefresh_extra.epgcachepath:
 			self.setEPGCachePath()
 		if sel == config.plugins.epgrefresh_extra.delete_backup:
@@ -199,7 +199,7 @@ class EPGSaveLoadConfiguration(Screen, ConfigListScreen):
 					self.updateDestination()
 				except:
 					pass
-		self.session.openWithCallback(removeEPGAction, ChoiceBox, title= _("Select action:"), list=menu)
+		self.session.openWithCallback(removeEPGAction, ChoiceBox, title=_("Select action:"), list=menu)
 
 	def setEpgSave(self, answer):
 		if answer:
