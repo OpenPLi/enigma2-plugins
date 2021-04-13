@@ -163,7 +163,7 @@ try:
 	reader = XMLHelpReader(resolveFilename(SCOPE_PLUGINS, "Extensions/EPGRefresh/mphelp.xml"), translate=_)
 	epgrefreshHelp = registerHelp(*reader)
 except Exception as e:
-	print("[EPGRefresh] Unable to initialize MPHelp:", e,"- Help not available!")
+	print("[EPGRefresh] Unable to initialize MPHelp:", e, "- Help not available!")
 	epgrefreshHelp = None
 
 class AutoZap(Screen):
@@ -303,7 +303,7 @@ def WakeupDayOfWeek():
 		cur_day = -1
 
 	if cur_day >= 0:
-		for i in range(1,8):
+		for i in range(1, 8):
 			if config.plugins.epgrefresh_extra.day_refresh[(cur_day + i) % 7].value:
 				return i
 	return start_day
@@ -369,7 +369,7 @@ def EPGRefreshChannelContextMenu__init__(self, session, csel):
 				profile = config.plugins.epgrefresh.add_to_refresh.value
 				if profile == "2" or profile == "3":
 					callFunction = self.addtoEPGRefresh
-					self["menu"].list.insert(2, ChoiceEntryComponent(text=(_("add service to EPGRefresh"), boundFunction(callFunction,1))))
+					self["menu"].list.insert(2, ChoiceEntryComponent(text=(_("add service to EPGRefresh"), boundFunction(callFunction, 1))))
 				else:
 					pass
 
@@ -458,7 +458,7 @@ config.plugins.epgrefresh_extra.show_autozap.addNotifier(AutozapExtensionsmenu, 
 config.plugins.epgrefresh.show_in_extensionsmenu.addNotifier(housekeepingExtensionsmenu, initial_call=False, immediate_feedback=True)
 config.plugins.epgrefresh.add_to_refresh.addNotifier(addEventinfomenu, initial_call=False, immediate_feedback=True)
 extDescriptor = PluginDescriptor(name="EPGRefresh", description=_("Automatically refresh EPG"), where=PluginDescriptor.WHERE_EXTENSIONSMENU, fnc=extensionsmenu, needsRestart=False)
-eventinfoDescriptor = PluginDescriptor(name=_("add to EPGRefresh"),description=_("add to EPGRefresh"), where=PluginDescriptor.WHERE_EVENTINFO, fnc=eventinfo, needsRestart=False)
+eventinfoDescriptor = PluginDescriptor(name=_("add to EPGRefresh"), description=_("add to EPGRefresh"), where=PluginDescriptor.WHERE_EVENTINFO, fnc=eventinfo, needsRestart=False)
 autozapDescriptor = PluginDescriptor(name=_("Refresh-EPG / AutoZap"), description=_("AutoZap for refreshing EPG data"), where=PluginDescriptor.WHERE_EXTENSIONSMENU, fnc=autozap, needsRestart=False)
 
 def Plugins(**kwargs):

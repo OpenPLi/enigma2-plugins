@@ -104,7 +104,7 @@ class MerlinEPGCenter(TimerEditList, MerlinEPGActions):
 		self.startWithTab = startWithTab
 		
 		self.piconLoader = PiconLoader()
-		self.piconSize = eSize(50,30)
+		self.piconSize = eSize(50, 30)
 		
 		self.blinkTimer = BlinkTimer(session)
 		

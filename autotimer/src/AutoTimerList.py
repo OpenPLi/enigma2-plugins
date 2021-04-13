@@ -45,7 +45,7 @@ class AutoTimerList(MenuList):
 			self.l.setFont(1, gFont(font[0], font[1]))
 			self.l.setItemHeight(int(font[2]))
 
-			(iconEnabled, iconDisabled, iconRecording, iconZapped) = skin.parameters.get("AutotimerListIcons",("icons/lock_on.png","icons/lock_off.png","icons/timer_rec.png","icons/timer_zap.png"))
+			(iconEnabled, iconDisabled, iconRecording, iconZapped) = skin.parameters.get("AutotimerListIcons", ("icons/lock_on.png", "icons/lock_off.png", "icons/timer_rec.png", "icons/timer_zap.png"))
 			self.iconEnabled = LoadPixmap(resolveFilename(SCOPE_CURRENT_SKIN, iconEnabled))
 			self.iconDisabled = LoadPixmap(resolveFilename(SCOPE_CURRENT_SKIN, iconDisabled))
 			self.iconRecording = LoadPixmap(resolveFilename(SCOPE_CURRENT_SKIN, iconRecording))
@@ -58,7 +58,7 @@ class AutoTimerList(MenuList):
 			for (attrib, value) in self.skinAttributes:
 				if attrib == "font":
 					if self.style_autotimerslist == "standard":
-						self.l.setFont(0, parseFont(value, ((1,1),(1,1))))
+						self.l.setFont(0, parseFont(value, ((1, 1), (1, 1))))
 				elif attrib == "itemHeight":
 					if self.style_autotimerslist == "standard":
 						self.l.setItemHeight(int(value))
@@ -118,9 +118,9 @@ class AutoTimerList(MenuList):
 			width = self.l.getItemSize().width()
 			res = [None]
 			x = (2 * width) // 3
-			nx, ny, nw, nh = skin.parameters.get("AutotimerListTimerName",(52, 2, 26, 25))
+			nx, ny, nw, nh = skin.parameters.get("AutotimerListTimerName", (52, 2, 26, 25))
 			res.append((eListboxPythonMultiContent.TYPE_TEXT, nx, ny, x - nw, nh, 0, RT_HALIGN_LEFT | RT_VALIGN_BOTTOM, timer.name))
-			nx, ny, nw, nh = skin.parameters.get("AutotimerListChannels",(2, 47, 4, 25))
+			nx, ny, nw, nh = skin.parameters.get("AutotimerListChannels", (2, 47, 4, 25))
 			res.append((eListboxPythonMultiContent.TYPE_TEXT, nx, ny, width - nw, nh, 1, RT_HALIGN_LEFT | RT_VALIGN_BOTTOM, channel))
 
 			if timer.include[3]:
@@ -145,7 +145,7 @@ class AutoTimerList(MenuList):
 				days = ', '.join(days)
 			else:
 				days = _("Everyday")
-			dx, ny, dw, nh = skin.parameters.get("AutotimerListDays",(1, 25, 5, 25))
+			dx, ny, dw, nh = skin.parameters.get("AutotimerListDays", (1, 25, 5, 25))
 			res.append((eListboxPythonMultiContent.TYPE_TEXT, float(width) / 10 * 4.5 + dx, ny, float(width) / 10 * 5.5 - dw, nh, 1, RT_HALIGN_RIGHT | RT_VALIGN_BOTTOM, days))
 
 			if timer.hasTimespan():
@@ -156,20 +156,20 @@ class AutoTimerList(MenuList):
 				timespan = ((" %s ... %s") % (FuzzyTime(begintime)[1], FuzzyTime(endtime)[1]))
 			else:
 				timespan = _("Any time")
-			dx, ny, nw, nh = skin.parameters.get("AutotimerListHasTimespan",(154, 1, 150, 25))
+			dx, ny, nw, nh = skin.parameters.get("AutotimerListHasTimespan", (154, 1, 150, 25))
 			res.append((eListboxPythonMultiContent.TYPE_TEXT, width - dx, ny, nw, nh, 1, RT_HALIGN_RIGHT | RT_VALIGN_BOTTOM, timespan))
 
 			if timer.hasTimeframe():
 				begin = strftime("%a, %d %b", localtime(timer.getTimeframeBegin()))
 				end = strftime("%a, %d %b", localtime(timer.getTimeframeEnd()))
 				timespan = (("%s ... %s") % (begin, end))
-				nx, ny, nw, nh = skin.parameters.get("AutotimerListTimespan",(2, 25, 5, 25))
+				nx, ny, nw, nh = skin.parameters.get("AutotimerListTimespan", (2, 25, 5, 25))
 				res.append((eListboxPythonMultiContent.TYPE_TEXT, nx, ny, float(width) / 10 * 4.5 - nw, nh, 1, RT_HALIGN_LEFT | RT_VALIGN_BOTTOM, timespan))
 
 			if icon:
-				nx, ny, nw, nh = skin.parameters.get("AutotimerListIcon",(2, 3, 24, 25))
+				nx, ny, nw, nh = skin.parameters.get("AutotimerListIcon", (2, 3, 24, 25))
 				res.append((eListboxPythonMultiContent.TYPE_PIXMAP_ALPHATEST, nx, ny, nw, nh, icon))
-			nx, ny, nw, nh = skin.parameters.get("AutotimerListRectypeicon",(28, 5, 24, 25))
+			nx, ny, nw, nh = skin.parameters.get("AutotimerListRectypeicon", (28, 5, 24, 25))
 			res.append((eListboxPythonMultiContent.TYPE_PIXMAP_ALPHATEST, nx, ny, nw, nh, rectypeicon))
 			devide = LoadPixmap(resolveFilename(SCOPE_CURRENT_SKIN, "div-h.png"))
 			res.append((eListboxPythonMultiContent.TYPE_PIXMAP_ALPHATEST, 0, height - 2, width, 1, devide))

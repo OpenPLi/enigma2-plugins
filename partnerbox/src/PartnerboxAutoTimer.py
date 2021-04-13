@@ -56,7 +56,7 @@ class PartnerboxAutoTimer(object):
 		port = partnerboxentry.port.value
 		username = "root"
 		password = partnerboxentry.password.value
-		sCommand = "http://%s:%d/autotimer/add_xmltimer" % (ip,port)
+		sCommand = "http://%s:%d/autotimer/add_xmltimer" % (ip, port)
 		sendPartnerBoxWebCommand(sCommand, None, 10, username, password, parameter=parameter).addCallback(self.downloadCallback).addErrback(self.downloadError)
 
 	def downloadCallback(self, result=None):
@@ -65,11 +65,11 @@ class PartnerboxAutoTimer(object):
 			statetext = root.findtext("e2statetext")
 			if statetext:
 				text = statetext.encode("utf-8", 'ignore')
-				self.session.open(MessageBox,text,MessageBox.TYPE_INFO, timeout=10)
+				self.session.open(MessageBox, text, MessageBox.TYPE_INFO, timeout=10)
 
 	def downloadError(self, error=None):
 		if error is not None:
-			self.session.open(MessageBox,str(error.getErrorMessage()), MessageBox.TYPE_INFO)
+			self.session.open(MessageBox, str(error.getErrorMessage()), MessageBox.TYPE_INFO)
 
 	def autotimerImporterCallback(self, ret):
 		if ret:
@@ -90,7 +90,7 @@ class PartnerboxAutoTimer(object):
 		port = partnerboxentry.port.value
 		username = "root"
 		password = partnerboxentry.password.value
-		sCommand = "http://%s:%d/autotimer?webif=false" % (ip,port)
+		sCommand = "http://%s:%d/autotimer?webif=false" % (ip, port)
 		print sCommand
 		sendPartnerBoxWebCommand(sCommand, None, 10, username, password).addCallback(self.getPartnerboxAutoTimerListCallback, partnerboxentry).addErrback(self.downloadError)
 
@@ -108,7 +108,7 @@ class PartnerboxAutoTimer(object):
 			port = partnerboxentry.port.value
 			username = "root"
 			password = partnerboxentry.password.value
-			sCommand = "http://%s:%d/autotimer/upload_xmlconfiguration" % (ip,port)
+			sCommand = "http://%s:%d/autotimer/upload_xmlconfiguration" % (ip, port)
 			sendPartnerBoxWebCommand(sCommand, None, 10, username, password, parameter=parameter).addCallback(self.downloadCallback).addErrback(self.downloadError)
 
 class PartnerboxAutoTimerEPGSelection(AutoTimerEPGSelection):

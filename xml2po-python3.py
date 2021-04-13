@@ -59,10 +59,10 @@ for arg in sys.argv[1:]:
 	attrlist = list(attrlist)
 	attrlist.sort(key=lambda a: a[0])
 
-	for (k,c) in attrlist:
+	for (k, c) in attrlist:
 		print('')
 		print('#: ' + arg)
-		k = k.replace('\"','\\"')
+		k = k.replace('\"', '\\"')
 		k = string.replace(k, '\n', '\x5c\x6e')
 		if c:
 			for l in c.split('\n'):

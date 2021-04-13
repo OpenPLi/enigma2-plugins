@@ -115,7 +115,7 @@ class SatBlindscanState(Screen):
 			s = fileExists(path)
 			self.constellation_supported = s
 			if not s:
-				self["constellation"].fill(0,0,256,256,0x25101010)
+				self["constellation"].fill(0, 0, 256, 256, 0x25101010)
 				self["constellation"].flush()
 
 		if self.constellation_supported:
@@ -131,7 +131,7 @@ class SatBlindscanState(Screen):
 			pass
 		else:
 			return
-		self["constellation"].fill(0,0,256,256,0x25101010)
+		self["constellation"].fill(0, 0, 256, 256, 0x25101010)
 		if constellation_bitmap_list:
 			bitmap_list = constellation_bitmap_list
 		else:
@@ -139,7 +139,7 @@ class SatBlindscanState(Screen):
 		for bitmap in bitmap_list:
 			Q = []
 			I = []
-			for pos in range(0,30,2):
+			for pos in range(0, 30, 2):
 				try:
 					val = int(bitmap[pos:pos + 2], 16)
 					val = 128 + (val - 256 if val > 127 else val)
@@ -148,7 +148,7 @@ class SatBlindscanState(Screen):
 					print "I constellation data broken at pos", pos
 					val = 0
 				I.append(val)
-			for pos in range(30,60,2):
+			for pos in range(30, 60, 2):
 				try:
 					val = int(bitmap[pos:pos + 2], 16)
 					val = 128 + (val - 256 if val > 127 else val)
@@ -158,7 +158,7 @@ class SatBlindscanState(Screen):
 					val = 0
 				Q.append(val)
 			for i in range(15):
-				self["constellation"].fill(I[i],Q[i],1,1,0x25ffffff)
+				self["constellation"].fill(I[i], Q[i], 1, 1, 0x25ffffff)
 		self["constellation"].flush()
 		if constellation_bitmap_list:
 			self.tmr.start(3000, True)
@@ -296,7 +296,7 @@ class SatelliteTransponderSearchSupport:
 				if self.parm is None:
 					tmpstr = _("%dMHz scanned") % mhz_complete
 					tmpstr += ', '
-					tmpstr += _("%d transponders found at %d:%02d min") % (len(self.tp_found),seconds_done / 60, seconds_done % 60)
+					tmpstr += _("%d transponders found at %d:%02d min") % (len(self.tp_found), seconds_done / 60, seconds_done % 60)
 					state["progress"].setText(tmpstr)
 					state.setFinished()
 					self.frontend = None
@@ -438,8 +438,8 @@ class SatelliteTransponderSearchSupport:
 			s1 = self.scan_sat.bs_freq_start.value * 1000
 			s2 = self.scan_sat.bs_freq_stop.value * 1000
 
-			start = self.min_freq = min(s1,s2)
-			stop = self.max_freq = max(s1,s2)
+			start = self.min_freq = min(s1, s2)
+			stop = self.max_freq = max(s1, s2)
 
 			if self.auto_scan: # hack for driver based blindscan... extend search range +/- 50Mhz
 				limits = self.scan_sat.bs_freq_limits

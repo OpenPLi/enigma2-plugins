@@ -196,7 +196,7 @@ class EPGRefreshConfiguration(Screen, ConfigListScreen):
 			(_("Return to TV viewing"), self.forceRefreshAfterNoShutdown),
 			(_("Shutdown after EPG refresh"), self.forceRefreshStandart),
 			]
-			dlg = self.session.openWithCallback(self.menuCallback,ChoiceBox,list=choicelist,title=_("Select action after refresh:"))
+			dlg = self.session.openWithCallback(self.menuCallback, ChoiceBox, list=choicelist, title=_("Select action after refresh:"))
 			dlg.setTitle(_("Shutdown after EPG refresh enabled in setup..."))
 		else:
 			self.forceRefreshStandart()
@@ -301,7 +301,7 @@ class EPGRefreshConfiguration(Screen, ConfigListScreen):
 				x[1].save()
 			self.close(self.session)
 
-class EPGRefreshProfile(ConfigListScreen,Screen):
+class EPGRefreshProfile(ConfigListScreen, Screen):
 	skin = """
 			<screen position="center,center" size="400,230" title="EPGRefreshProfile" >
 			<widget name="config" position="0,0" size="400,180" scrollbarMode="showOnDemand" />

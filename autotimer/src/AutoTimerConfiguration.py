@@ -89,7 +89,7 @@ def parseEntry(element, baseTimer, defaults=False):
 		elif enabled == "yes":
 			baseTimer.enabled = True
 		else:
-			doLog('[AutoTimer] Erroneous config contains invalid value for "enabled":', enabled,', disabling')
+			doLog('[AutoTimer] Erroneous config contains invalid value for "enabled":', enabled, ', disabling')
 			baseTimer.enabled = False
 
 		# Read timeframe
@@ -235,7 +235,7 @@ def parseEntry(element, baseTimer, defaults=False):
 			if value in idx:
 				value = idx[value]
 			else:
-				doLog('[AutoTimer] Erroneous config contains invalid value for "afterevent":', afterevent,', ignoring definition')
+				doLog('[AutoTimer] Erroneous config contains invalid value for "afterevent":', afterevent, ', ignoring definition')
 				continue
 
 			start = afterevent.get("from")
@@ -334,7 +334,7 @@ def parseConfigOld(configuration, list, uniqueTimerId=0):
 			elif enabled == "yes":
 				enabled = True
 			else:
-				doLog('[AutoTimer] Erroneous config contains invalid value for "enabled":', enabled,', skipping entry')
+				doLog('[AutoTimer] Erroneous config contains invalid value for "enabled":', enabled, ', skipping entry')
 				enabled = False
 		# V1
 		else:
@@ -456,7 +456,7 @@ def parseConfigOld(configuration, list, uniqueTimerId=0):
 			if value in idx:
 				value = idx[value]
 			else:
-				doLog('[AutoTimer] Erroneous config contains invalid value for "afterevent":', afterevent,', ignoring definition')
+				doLog('[AutoTimer] Erroneous config contains invalid value for "afterevent":', afterevent, ', ignoring definition')
 				continue
 
 			start = element.get("from")
@@ -554,7 +554,7 @@ def buildConfig(defaultTimer, timers, webif=False):
 	# This gets deleted afterwards if we do not have set any defaults
 	append(' <defaults')
 	if webif:
-		extend((' id="', str(defaultTimer.getId()),'"'))
+		extend((' id="', str(defaultTimer.getId()), '"'))
 
 	# Timespan
 	if defaultTimer.hasTimespan():
@@ -719,7 +719,7 @@ def buildConfig(defaultTimer, timers, webif=False):
 		# Common attributes (match, enabled)
 		extend((' <timer name="', stringToXML(timer.name), '" match="', stringToXML(timer.match), '" enabled="', timer.getEnabled(), '"'))
 		if webif:
-			extend((' id="', str(timer.getId()),'"'))
+			extend((' id="', str(timer.getId()), '"'))
 
 		# Timespan
 		if timer.hasTimespan():
@@ -746,7 +746,7 @@ def buildConfig(defaultTimer, timers, webif=False):
 
 		# Counter
 		if timer.hasCounter():
-			extend((' lastBegin="', str(timer.getLastBegin()), '" counter="', str(timer.getCounter()), '" left="', str(timer.getCounterLeft()),'"'))
+			extend((' lastBegin="', str(timer.getLastBegin()), '" counter="', str(timer.getCounter()), '" left="', str(timer.getCounterLeft()), '"'))
 			if timer.hasCounterFormatString():
 				extend((' lastActivation="', str(timer.getCounterLimit()), '"'))
 				extend((' counterFormat="', str(timer.getCounterFormatString()), '"'))

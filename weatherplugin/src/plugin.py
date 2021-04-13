@@ -57,7 +57,7 @@ def download(item):
 	return downloadPage(item.url, file(item.filename, 'wb'), agent=UserAgent)
 
 
-def main(session,**kwargs):
+def main(session, **kwargs):
 	session.open(WeatherPlugin)
 
 def Plugins(**kwargs):
@@ -177,9 +177,9 @@ class WeatherPlugin(Screen):
 
 	def finishedIconDownload(self, result, item):
 		if not item.error:
-			self.showIcon(item.index,item.filename)
+			self.showIcon(item.index, item.filename)
 
-	def showIcon(self,index, filename):
+	def showIcon(self, index, filename):
 		self["weekday%s_icon" % index].updateIcon(filename)
 		self["weekday%s_icon" % index].show()
 
@@ -234,12 +234,12 @@ class WeatherPlugin(Screen):
 							parts = url.split("/")
 							filename = self.appdir + parts[-1]
 							if not os_path.exists(filename):
-								IconDownloadList.append(WeatherIconItem(url=url,filename=filename, index=index))
+								IconDownloadList.append(WeatherIconItem(url=url, filename=filename, index=index))
 							else:
-								self.showIcon(index,filename)
+								self.showIcon(index, filename)
 		if len(IconDownloadList) != 0:
 			ds = defer.DeferredSemaphore(tokens=len(IconDownloadList))
-			downloads = [ds.run(download,item).addErrback(self.errorIconDownload, item).addCallback(self.finishedIconDownload,item) for item in IconDownloadList]
+			downloads = [ds.run(download, item).addErrback(self.errorIconDownload, item).addCallback(self.finishedIconDownload, item) for item in IconDownloadList]
 			finished = defer.DeferredList(downloads).addErrback(self.error)
 
 	def config(self):

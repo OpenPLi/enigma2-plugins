@@ -11,7 +11,7 @@ plugin_path = ""
 
 def NetworkBrowserMain(session, iface=None, **kwargs):
 	from NetworkBrowser import NetworkBrowser
-	session.open(NetworkBrowser,iface, plugin_path)
+	session.open(NetworkBrowser, iface, plugin_path)
 
 def MountManagerMain(session, iface=None, **kwargs):
 	from MountManager import AutoMountManager

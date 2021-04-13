@@ -353,7 +353,7 @@ class myHTTPClientFactory(HTTPClientFactory):
 	agent="Twisted Remotetimer", timeout=0, cookies=None,
 	followRedirect=1, lastModified=None, etag=None):
 		HTTPClientFactory.__init__(self, url, method=method, postdata=postdata,
-		headers=headers, agent=agent, timeout=timeout, cookies=cookies,followRedirect=followRedirect)
+		headers=headers, agent=agent, timeout=timeout, cookies=cookies, followRedirect=followRedirect)
 
 def url_parse(url, defaultPort=None):
 	from urlparse import urlparse, urlunparse
@@ -389,7 +389,7 @@ def sendPartnerBoxWebCommand(url, contextFactory=None, timeout=60, username="roo
 		scheme = parsed.scheme
 		host = parsed.hostname
 		port = parsed.port or (443 if scheme == 'https' else 80)
-		basicAuth = encodestring(("%s:%s") % (username,password))
+		basicAuth = encodestring(("%s:%s") % (username, password))
 		authHeader = "Basic " + basicAuth.strip()
 		AuthHeaders = {"Authorization": authHeader}
 		if kwargs.has_key("headers"):
@@ -406,9 +406,9 @@ def runCommand(path, username="", password="", host="", port=80, sessionid="0", 
 	authHeader = "Basic " + basicAuth.strip()
 	headers = {
 		"Authorization": authHeader,
-		'content-type':'application/x-www-form-urlencoded',
+		'content-type': 'application/x-www-form-urlencoded',
 	}
-	postdata = {"user":username, "password":password, "sessionid":sessionid}
+	postdata = {"user": username, "password": password, "sessionid": sessionid}
 	if parameter:
 		postdata.update(parameter)
 	send = getPage('%s' % (command), method='POST', headers=headers, postdata=urllib.urlencode(postdata))
@@ -470,9 +470,9 @@ def SetPartnerboxTimerlist(partnerboxentry=None, sreference=None):
 		ip = "%d.%d.%d.%d" % tuple(partnerboxentry.ip.value)
 		port = partnerboxentry.port.value
 		if int(partnerboxentry.enigma.value) == 0:
-			sCommand = "http://%s:%s@%s:%d/web/timerlist" % (username, password, ip,port)
+			sCommand = "http://%s:%s@%s:%d/web/timerlist" % (username, password, ip, port)
 		else:
-			sCommand = "http://%s:%s@%s:%d/xml/timers" % (username, password, ip,port)
+			sCommand = "http://%s:%s@%s:%d/xml/timers" % (username, password, ip, port)
 		print "[RemoteEPGList] Getting timerlist data from %s..." % ip
 		f = urllib.urlopen(sCommand)
 		sxml = f.read()

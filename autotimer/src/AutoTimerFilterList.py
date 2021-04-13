@@ -37,7 +37,7 @@ class AutoTimerFilterList(MenuList):
 		if self.skinAttributes is not None:
 			for (attrib, value) in self.skinAttributes:
 				if attrib == "font":
-					self.l.setFont(0, parseFont(value, ((1,1),(1,1))))
+					self.l.setFont(0, parseFont(value, ((1, 1), (1, 1))))
 				elif attrib == "itemHeight":
 					self.l.setItemHeight(int(value))
 				elif attrib == "colorDisabled":
@@ -109,7 +109,7 @@ class AutoTimerFilterListOverview(Screen):
 				filter1 = filter.split(' - "')
 				if len(filter1) > 1:
 					time1 = time.mktime(datetime.datetime.strptime(filter1[0], "%d.%m.%Y, %H:%M").timetuple())
-					Filter = ([count,filter1[1][:-1],time1],)
+					Filter = ([count, filter1[1][:-1], time1],)
 					self.FilterList.append(Filter)
 			self.FilterList.sort(key=lambda x: x[0][1].lower())
 			self.sorted = 1
@@ -183,12 +183,12 @@ class AutoTimerFilterListOverview(Screen):
 			filtertext = ret[2][1].value.strip().replace('"', "")
 			for filter in self.FilterList:
 				if filter[0][1] == filtertext:
-					self.session.open(MessageBox,_("The filterEntry '%s' already exist!\nThe change was canceled.") % filtertext, MessageBox.TYPE_INFO)
+					self.session.open(MessageBox, _("The filterEntry '%s' already exist!\nThe change was canceled.") % filtertext, MessageBox.TYPE_INFO)
 					return
 			date1 = datetime.datetime.fromtimestamp(date1)
 			datetime1 = datetime.datetime(date1.year, date1.month, date1.day, time1[0], time1[1])
 			filtertime = time.mktime(datetime1.timetuple())
-			Filter = ([len(self.FilterList),filtertext,filtertime],)
+			Filter = ([len(self.FilterList), filtertext, filtertime],)
 			if add_edit == "add":
 				self.FilterList.append(Filter)
 			elif add_edit == "edit":

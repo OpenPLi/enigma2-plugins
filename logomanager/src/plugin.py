@@ -16,7 +16,7 @@ import os
 ###############################################################################
 
 config.plugins.logomanager = ConfigSubsection()
-config.plugins.logomanager.path = ConfigSelection([("none",_("None")), ("/media/cf/bootlogos/",_("CF Drive")), ("/media/hdd/bootlogos/",_("Harddisk")), ("/media/usb/bootlogos/",_("USB Drive")),], default="none")
+config.plugins.logomanager.path = ConfigSelection([("none", _("None")), ("/media/cf/bootlogos/", _("CF Drive")), ("/media/hdd/bootlogos/", _("Harddisk")), ("/media/usb/bootlogos/", _("USB Drive")), ], default="none")
 
 from mimetypes import add_type
 add_type("image/mvi", ".mvi")
@@ -25,7 +25,7 @@ add_type("image/mvi", ".mvi")
 
 def filescan_open(list, session, **kwargs):
 	print "[Logo Manager] filescan_open", list, kwargs
-	session.open(LogoManagerScreen,file=list[0].path)
+	session.open(LogoManagerScreen, file=list[0].path)
 
 def start_from_filescan(**kwargs):
 	from Components.Scanner import Scanner, ScanPath
@@ -62,7 +62,7 @@ class LogoManagerScreen(Screen):
 		self.setTitle(_("Logo Manager"))
 		self["filelist"] = MenuList([], enableWrapAround=True)
 		self["filelist"].onSelectionChanged.append(self.showSelected)
-		self["actions"] = ActionMap(["WizardActions", "DirectionActions","MenuActions","ShortcutActions","GlobalActions"],
+		self["actions"] = ActionMap(["WizardActions", "DirectionActions", "MenuActions", "ShortcutActions", "GlobalActions"],
 		{
 		"ok": self.showSelected,
 		"back": self.Exit,
@@ -203,7 +203,7 @@ class LogoManagerScreen(Screen):
 		self.session.openWithCallback(self.selectedMenu, ChoiceBox, _("Please select a option:"), menu)
 
 	def removeCurrentLogo(self):
-		self.session.openWithCallback(self.confirmRemove, MessageBox,_("Really remove current logo of %s?") % config.plugins.logomanager.path.value, MessageBox.TYPE_YESNO)
+		self.session.openWithCallback(self.confirmRemove, MessageBox, _("Really remove current logo of %s?") % config.plugins.logomanager.path.value, MessageBox.TYPE_YESNO)
 
 	def confirmRemove(self, answer):
 		if answer:
@@ -220,7 +220,7 @@ class LogoManagerScreen(Screen):
 	def openConfig(self):
 		self.session.open(LogoManagerConfigScreen)
 
-	def selectedMenu(self,choice):
+	def selectedMenu(self, choice):
 		if choice is not None:
 			choice[1]()
 
@@ -264,7 +264,7 @@ class LogoManagerScreen(Screen):
 
 	def showMVI(self, mvifile):
 		""" shows a mvi """
-		print "[Logo Manager] playing MVI",mvifile
+		print "[Logo Manager] playing MVI", mvifile
 		os.system("/usr/bin/showiframe '%s'" % mvifile)
 
 	def installMVI(self, target, sourcefile):

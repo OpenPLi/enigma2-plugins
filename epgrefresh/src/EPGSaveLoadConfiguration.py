@@ -136,11 +136,11 @@ class EPGSaveLoadConfiguration(Screen, ConfigListScreen):
 		ConfigListScreen.keyOK(self)
 		sel = self["config"].getCurrent()[1]
 		if sel == config.plugins.epgrefresh_extra.manual_save:
-			self.session.openWithCallback(self.setEpgSave, MessageBox,_("Are you sure you want to save the EPG cache to:\n") + config.misc.epgcache_filename.value, MessageBox.TYPE_YESNO)
+			self.session.openWithCallback(self.setEpgSave, MessageBox, _("Are you sure you want to save the EPG cache to:\n") + config.misc.epgcache_filename.value, MessageBox.TYPE_YESNO)
 		if sel == config.plugins.epgrefresh_extra.manual_load:
-			self.session.openWithCallback(self.setEpgLoad, MessageBox,_("Are you sure you want to load the EPG data from:\n") + config.misc.epgcache_filename.value, MessageBox.TYPE_YESNO)
+			self.session.openWithCallback(self.setEpgLoad, MessageBox, _("Are you sure you want to load the EPG data from:\n") + config.misc.epgcache_filename.value, MessageBox.TYPE_YESNO)
 		if sel == config.plugins.epgrefresh_extra.manual_reload:
-			self.session.openWithCallback(self.setEpgReload, MessageBox,_("Are you sure you want to save and load the EPG data from:\n") + config.misc.epgcache_filename.value, MessageBox.TYPE_YESNO)
+			self.session.openWithCallback(self.setEpgReload, MessageBox, _("Are you sure you want to save and load the EPG data from:\n") + config.misc.epgcache_filename.value, MessageBox.TYPE_YESNO)
 		if sel == config.plugins.epgrefresh_extra.restore_backup:
 			restore_backup = config.misc.epgcache_filename.value + ".backup"
 			if os.path.exists(restore_backup):
@@ -178,7 +178,7 @@ class EPGSaveLoadConfiguration(Screen, ConfigListScreen):
 			config.plugins.epgrefresh_extra.epgcachepath.value = res
 
 	def deleteEPG(self):
-		menu = [(_("Clear only in memory (RAM) EPG"), "ram"),(_("Clear only epg.dat and epg.dat.backup"), "dat"),(_("Clear all EPG"), "all")]
+		menu = [(_("Clear only in memory (RAM) EPG"), "ram"), (_("Clear only epg.dat and epg.dat.backup"), "dat"), (_("Clear all EPG"), "all")]
 		def removeEPGAction(choice):
 			if choice is not None:
 				try:
@@ -270,7 +270,7 @@ class EPGSaveLoadConfiguration(Screen, ConfigListScreen):
 			self.close()
 
 	def updateEpgCache(self):
-		config.misc.epgcache_filename.setValue(os.path.join(config.plugins.epgrefresh_extra.epgcachepath.value, config.plugins.epgrefresh_extra.epgcachefilename.value.replace(".dat","") + ".dat"))
+		config.misc.epgcache_filename.setValue(os.path.join(config.plugins.epgrefresh_extra.epgcachepath.value, config.plugins.epgrefresh_extra.epgcachefilename.value.replace(".dat", "") + ".dat"))
 		config.misc.epgcache_filename.save()
 		configfile.save()
 		if self.prev_lastepgcachepath != config.misc.epgcache_filename.value:
@@ -350,11 +350,11 @@ class ManualEPGlist(Screen):
 	def okClicked(self):
 		sel = self["list"].getCurrent()
 		if sel == _("Manually save EPG"):
-			self.session.openWithCallback(self.manualsetEpgSave, MessageBox,_("Are you sure you want to save the EPG cache to:\n") + config.misc.epgcache_filename.value, MessageBox.TYPE_YESNO)
+			self.session.openWithCallback(self.manualsetEpgSave, MessageBox, _("Are you sure you want to save the EPG cache to:\n") + config.misc.epgcache_filename.value, MessageBox.TYPE_YESNO)
 		if sel == _("Manually load EPG"):
-			self.session.openWithCallback(self.manualsetEpgLoad, MessageBox,_("Are you sure you want to load the EPG data from:\n") + config.misc.epgcache_filename.value, MessageBox.TYPE_YESNO)
+			self.session.openWithCallback(self.manualsetEpgLoad, MessageBox, _("Are you sure you want to load the EPG data from:\n") + config.misc.epgcache_filename.value, MessageBox.TYPE_YESNO)
 		if sel == _("Manually reload EPG"):
-			self.session.openWithCallback(self.manualsetEpgReload, MessageBox,_("Are you sure you want to save and load the EPG data from:\n") + config.misc.epgcache_filename.value, MessageBox.TYPE_YESNO)
+			self.session.openWithCallback(self.manualsetEpgReload, MessageBox, _("Are you sure you want to save and load the EPG data from:\n") + config.misc.epgcache_filename.value, MessageBox.TYPE_YESNO)
 		if sel == _("Configuration..."):
 			self.session.open(EPGSaveLoadConfiguration)
 

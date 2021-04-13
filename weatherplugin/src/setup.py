@@ -74,11 +74,11 @@ class WeatherPluginEntriesListConfigScreen(Screen):
 		self["key_yellow"] = StaticText(_("Edit"))
 		self["key_blue"] = StaticText(_("Delete"))
 		self["entrylist"] = WeatherPluginEntryList([])
-		self["actions"] = ActionMap(["WizardActions","MenuActions","ShortcutActions"],
+		self["actions"] = ActionMap(["WizardActions", "MenuActions", "ShortcutActions"],
 			{
-			 "ok"	: self.keyOK,
-			 "back"	: self.keyClose,
-			 "red"	: self.keyClose,
+			 "ok": self.keyOK,
+			 "back": self.keyClose,
+			 "red": self.keyClose,
 			 "green": self.keyGreen,    
 			 "yellow": self.keyYellow,
 			 "blue": self.keyDelete,
@@ -92,7 +92,7 @@ class WeatherPluginEntriesListConfigScreen(Screen):
 		self.close(-1, None)
 
 	def keyGreen(self):
-		self.session.openWithCallback(self.updateList,WeatherPluginEntryConfigScreen,None)
+		self.session.openWithCallback(self.updateList, WeatherPluginEntryConfigScreen, None)
 
 	def keyOK(self):
 		try:
@@ -108,7 +108,7 @@ class WeatherPluginEntriesListConfigScreen(Screen):
 			sel = None
 		if sel is None:
 			return
-		self.session.openWithCallback(self.updateList,WeatherPluginEntryConfigScreen,sel)
+		self.session.openWithCallback(self.updateList, WeatherPluginEntryConfigScreen, sel)
 
 	def keyDelete(self):
 		try:

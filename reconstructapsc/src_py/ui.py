@@ -14,9 +14,9 @@ class ReconstructApSc(ChoiceBox):
 		name = self.getName(service, path)
 
 		if offline is None:
-			tlist = [(_("Cannot reconstruct this item"), "CALLFUNC", self.confirmed0),]
+			tlist = [(_("Cannot reconstruct this item"), "CALLFUNC", self.confirmed0), ]
 		else:
-			tlist = [(_("Don't reconstruct"), "CALLFUNC", self.confirmed0),]
+			tlist = [(_("Don't reconstruct"), "CALLFUNC", self.confirmed0), ]
 			tnext = [
 				(_("Reconstruct missing .ap and .sc files in this directory"), "CALLFUNC", self.confirmed2),
 				(_("Reconstruct all .ap and .sc files in this directory"), "CALLFUNC", self.confirmed3),

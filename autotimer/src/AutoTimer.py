@@ -676,7 +676,7 @@ class AutoTimer:
 						doLog(msg)
 						newEntry.log(501, msg)
 						if changed:
-							self.addToSearchLogfile(newEntry,"#", simulateOnly)
+							self.addToSearchLogfile(newEntry, "#", simulateOnly)
 							modified += 1
 					else:
 						msg = "[AutoTimer] AutoTimer modification not allowed for timer %s because conflicts or double timer." % (newEntry.name)
@@ -823,9 +823,9 @@ class AutoTimer:
 					if newEntry in (recordHandler.timer_list[:] + recordHandler.processed_timers[:]):
 						new += 1
 						if isnewFilterEntry:
-							self.addToSearchLogfile(newEntry,"++", simulateOnly)
+							self.addToSearchLogfile(newEntry, "++", simulateOnly)
 						else:
-							self.addToSearchLogfile(newEntry,"+", simulateOnly)
+							self.addToSearchLogfile(newEntry, "+", simulateOnly)
 						newEntry.extdesc = extdesc
 						timerdict[serviceref].append(newEntry)
 
@@ -1010,7 +1010,7 @@ class AutoTimer:
 					ret = self.addToFilterfile(name, begin)
 					if ret:
 						add_counter += 1
-				session.open(MessageBox, _("Finished add to filterList with %s event(s):\n\n %s event(s) added \n %s event(s) skipped") % (len(services), add_counter,len(services) - add_counter), type=MessageBox.TYPE_INFO, timeout=config.plugins.autotimer.popup_timeout.value)
+				session.open(MessageBox, _("Finished add to filterList with %s event(s):\n\n %s event(s) added \n %s event(s) skipped") % (len(services), add_counter, len(services) - add_counter), type=MessageBox.TYPE_INFO, timeout=config.plugins.autotimer.popup_timeout.value)
 			except Exception as e:
 				doLog("[AutoTimer] Error in addToFilterList", e)
 				print("[AutoTimer] ======== Error in addToFilterList ", e)
@@ -1070,7 +1070,7 @@ class AutoTimer:
 							if not timer.isRunning():
 								recordHandler.removeEntry(timer)
 								doLog("[AutoTimer] Remove timer because of eit check %s." % (timer.name))
-								self.addToSearchLogfile(timer,"-", simulateOnly)
+								self.addToSearchLogfile(timer, "-", simulateOnly)
 					except:
 						pass
 		del remove
@@ -1154,19 +1154,19 @@ class AutoTimer:
 		foundShort = False
 		retValue = False
 		if name1 and name2:
-			foundTitle = (0.8 < SequenceMatcher(lambda x: x == " ",name1, name2).ratio())
+			foundTitle = (0.8 < SequenceMatcher(lambda x: x == " ", name1, name2).ratio())
 		# NOTE: only check extended & short if tile is a partial match
 		if foundTitle:
 			if timer.searchForDuplicateDescription > 0 or force:
 				if shortdesc1 and shortdesc2:
 					# If the similarity percent is higher then 0.7 it is a very close match
-					foundShort = (0.7 < SequenceMatcher(lambda x: x == " ",shortdesc1, shortdesc2).ratio())
+					foundShort = (0.7 < SequenceMatcher(lambda x: x == " ", shortdesc1, shortdesc2).ratio())
 					if foundShort:
 						if timer.searchForDuplicateDescription == 2:
 							if extdesc1 and extdesc2:
 								# Some channels indicate replays in the extended descriptions
 								# If the similarity percent is higher then 0.7 it is a very close match
-								retValue = (0.7 < SequenceMatcher(lambda x: x == " ",extdesc1, extdesc2).ratio())
+								retValue = (0.7 < SequenceMatcher(lambda x: x == " ", extdesc1, extdesc2).ratio())
 						else:
 							retValue = True
 			else:

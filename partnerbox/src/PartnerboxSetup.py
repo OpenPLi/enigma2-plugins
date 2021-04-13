@@ -41,13 +41,13 @@ def initPartnerboxEntryConfig():
 	config.plugins.Partnerbox.Entries.append(ConfigSubsection())
 	i = len(config.plugins.Partnerbox.Entries) - 1
 	config.plugins.Partnerbox.Entries[i].name = ConfigText(default="Remote box", visible_width=50, fixed_size=False)
-	config.plugins.Partnerbox.Entries[i].ip = ConfigIP(default=[192,168,0,98])
+	config.plugins.Partnerbox.Entries[i].ip = ConfigIP(default=[192, 168, 0, 98])
 	config.plugins.Partnerbox.Entries[i].port = ConfigInteger(default=80, limits=(1, 65555))
-	config.plugins.Partnerbox.Entries[i].enigma = ConfigSelection(default="0", choices=[("0", _("Enigma 2")),("1", _("Enigma 1"))])
+	config.plugins.Partnerbox.Entries[i].enigma = ConfigSelection(default="0", choices=[("0", _("Enigma 2")), ("1", _("Enigma 1"))])
 	config.plugins.Partnerbox.Entries[i].password = ConfigText(default="root", visible_width=50, fixed_size=False)
 	config.plugins.Partnerbox.Entries[i].usewakeonlan = ConfigYesNo(default=False)
 	config.plugins.Partnerbox.Entries[i].mac = ConfigText(default="00:00:00:00:00:00", fixed_size=False)
-	config.plugins.Partnerbox.Entries[i].useinternal = ConfigSelection(default="1", choices=[("0", _("use external")),("1", _("use internal"))])
+	config.plugins.Partnerbox.Entries[i].useinternal = ConfigSelection(default="1", choices=[("0", _("use external")), ("1", _("use internal"))])
 	config.plugins.Partnerbox.Entries[i].zaptoservicewhenstreaming = ConfigYesNo(default=False)
 	return config.plugins.Partnerbox.Entries[i]
 
@@ -203,7 +203,7 @@ class PartnerboxEntriesListConfigScreen(Screen, HelpableScreen):
 		self["entrylist"] = PartnerboxEntryList([])
 		self["PBPActions"] = HelpableActionMap(self, "PiPSetupActions",
 			{
-			 "size+": (self.powerOn,_("Wake up remote box")),
+			 "size+": (self.powerOn, _("Wake up remote box")),
 			 "size-": (self.powerStandby, _("Sleep remote box")),
 			 }, -1)
 		self["PBVActions"] = HelpableActionMap(self, "NumberActions",
@@ -216,11 +216,11 @@ class PartnerboxEntriesListConfigScreen(Screen, HelpableScreen):
 			"moveUp": (self.moveUp, _("Move item up")),
 			"moveDown": (self.moveDown, _("Move item down")),
 			 }, -1)
-		self["actions"] = ActionMap(["WizardActions","MenuActions","ShortcutActions"],
+		self["actions"] = ActionMap(["WizardActions", "MenuActions", "ShortcutActions"],
 			{
-			 "ok"	: self.keyOK,
-			 "back"	: self.keyClose,
-			 "red"	: self.keyRed,
+			 "ok": self.keyOK,
+			 "back": self.keyClose,
+			 "red": self.keyRed,
 			 "yellow": self.keyYellow,
 			 "blue": self.keyDelete,
 			 "green": self.powerMenu,
@@ -240,7 +240,7 @@ class PartnerboxEntriesListConfigScreen(Screen, HelpableScreen):
 		self.close(self.session, self.what, None)
 
 	def keyRed(self):
-		self.session.openWithCallback(self.updateList,PartnerboxEntryConfigScreen,None)
+		self.session.openWithCallback(self.updateList, PartnerboxEntryConfigScreen, None)
 
 	def keyOK(self):
 		try:
@@ -261,7 +261,7 @@ class PartnerboxEntriesListConfigScreen(Screen, HelpableScreen):
 			sel = None
 		if sel is None:
 			return
-		self.session.openWithCallback(self.updateList,PartnerboxEntryConfigScreen,sel)
+		self.session.openWithCallback(self.updateList, PartnerboxEntryConfigScreen, sel)
 
 	def startMoving(self):
 		self.edit = not self.edit
@@ -360,20 +360,20 @@ class PartnerboxEntriesListConfigScreen(Screen, HelpableScreen):
 		if sel is None:
 			return
 		menu = []
-		menu.append((_("Wakeup"),0))
-		menu.append((_("Standby"),1))
-		menu.append((_("Restart enigma"),2))
-		menu.append((_("Restart"),3))
+		menu.append((_("Wakeup"), 0))
+		menu.append((_("Standby"), 1))
+		menu.append((_("Restart enigma"), 2))
+		menu.append((_("Restart"), 3))
 		if int(sel.enigma.value) == 0:
-			menu.append((_("Toggle Standby"),4))
-			menu.append((_("Deep Standby"),5))
+			menu.append((_("Toggle Standby"), 4))
+			menu.append((_("Deep Standby"), 5))
 		else:
-			menu.append((_("Shutdown"),4))
+			menu.append((_("Shutdown"), 4))
 		if sel.usewakeonlan.value and sel.enigma.value == "0":
-			menu.append((_("Send Wake-on-LAN"),6))
+			menu.append((_("Send Wake-on-LAN"), 6))
 		if config.usage.remote_fallback_enabled.value:
-			menu.append((_("Set as fallback remote receiver"),10))
-		menu.append((_("Mute"),11))
+			menu.append((_("Set as fallback remote receiver"), 10))
+		menu.append((_("Mute"), 11))
 		from Screens.ChoiceBox import ChoiceBox
 		self.session.openWithCallback(self.menuCallback, ChoiceBox, title=(_("Select operation for partnerbox") + ": " + "%s" % (sel.name.value)), list=menu)
 
@@ -410,7 +410,7 @@ class PartnerboxEntriesListConfigScreen(Screen, HelpableScreen):
 			sCommand += enigma_type and "/cgi-bin/audio?mute=1" or "/web/vol?set=mute"
 		else:
 			return
-		sendPartnerBoxWebCommand(sCommand, None,3, username, password)
+		sendPartnerBoxWebCommand(sCommand, None, 3, username, password)
 
 	def GetIPsFromNetworkInterfaces(self):
 		import socket
@@ -477,19 +477,19 @@ class PartnerboxEntryList(MenuList):
 		self.list = []
 		for c in config.plugins.Partnerbox.Entries:
 			res = [c]
-			x, y, w, h = skin.parameters.get("PartnerBoxEntryListName",(5, 0, 150, 20))
+			x, y, w, h = skin.parameters.get("PartnerBoxEntryListName", (5, 0, 150, 20))
 			res.append((eListboxPythonMultiContent.TYPE_TEXT, x, y, w, h, 1, RT_HALIGN_LEFT | RT_VALIGN_CENTER, str(c.name.value)))
 			ip = "%d.%d.%d.%d" % tuple(c.ip.value)
-			x, y, w, h = skin.parameters.get("PartnerBoxEntryListIP",(120, 0, 150, 20))
+			x, y, w, h = skin.parameters.get("PartnerBoxEntryListIP", (120, 0, 150, 20))
 			res.append((eListboxPythonMultiContent.TYPE_TEXT, x, y, w, h, 1, RT_HALIGN_LEFT | RT_VALIGN_CENTER, str(ip)))
 			port = "%d" % (c.port.value)
-			x, y, w, h = skin.parameters.get("PartnerBoxEntryListPort",(270, 0, 100, 20))
+			x, y, w, h = skin.parameters.get("PartnerBoxEntryListPort", (270, 0, 100, 20))
 			res.append((eListboxPythonMultiContent.TYPE_TEXT, x, y, w, h, 1, RT_HALIGN_LEFT | RT_VALIGN_CENTER, str(port)))
 			if int(c.enigma.value) == 0:
 				e_type = "Enigma2"
 			else:
 				e_type = "Enigma1"
-			x, y, w, h = skin.parameters.get("PartnerBoxEntryListType",(410, 0, 100, 20))
+			x, y, w, h = skin.parameters.get("PartnerBoxEntryListType", (410, 0, 100, 20))
 			res.append((eListboxPythonMultiContent.TYPE_TEXT, x, y, w, h, 1, RT_HALIGN_LEFT | RT_VALIGN_CENTER, str(e_type)))
 			self.list.append(res)
 		self.l.setList(self.list)

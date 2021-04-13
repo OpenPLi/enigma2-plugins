@@ -37,22 +37,22 @@ _session = None
 config.misc.rectimerstate = ConfigBoolean(default=False)
 config.usage.recinfobar = ConfigYesNo(default=False)
 config.plugins.RecInfobar = ConfigSubsection()
-config.plugins.RecInfobar.anchor = ConfigSelection([("top", _("down")),("bottom", _("top"))], default="bottom")
-config.plugins.RecInfobar.background = ConfigSelection([("#00000000", _("black")),("#ffffffff", _("transparent")),("#54111112", _("transparent") + " - " + _("black"))], default="#ffffffff")
-config.plugins.RecInfobar.x = ConfigInteger(default=0, limits=(0,9999))
-config.plugins.RecInfobar.y = ConfigInteger(default=360, limits=(0,9999))
-config.plugins.RecInfobar.always_zap = ConfigSelection([("0", _("default")),("1", _("always")),("2", _("ask the user"))], default="0")
+config.plugins.RecInfobar.anchor = ConfigSelection([("top", _("down")), ("bottom", _("top"))], default="bottom")
+config.plugins.RecInfobar.background = ConfigSelection([("#00000000", _("black")), ("#ffffffff", _("transparent")), ("#54111112", _("transparent") + " - " + _("black"))], default="#ffffffff")
+config.plugins.RecInfobar.x = ConfigInteger(default=0, limits=(0, 9999))
+config.plugins.RecInfobar.y = ConfigInteger(default=360, limits=(0, 9999))
+config.plugins.RecInfobar.always_zap = ConfigSelection([("0", _("default")), ("1", _("always")), ("2", _("ask the user"))], default="0")
 config.plugins.RecInfobar.always_message = ConfigYesNo(default=False)
-config.plugins.RecInfobar.default_zap = ConfigSelection([("yes", _("zap")),("no", _("no zap"))], default="yes")
+config.plugins.RecInfobar.default_zap = ConfigSelection([("yes", _("zap")), ("no", _("no zap"))], default="yes")
 config.plugins.RecInfobar.check_wakeup = ConfigYesNo(default=False)
-config.plugins.RecInfobar.standby_timeout = ConfigInteger(default=10, limits=(5,180))
-config.plugins.RecInfobar.after_event = ConfigSelection([("0", _("all")),("1", _("standby")),("2", _("deep standby")),("3", _("auto")),("4", _("auto and deep standby")),("5", _("all, except 'nothing'"))], default="5")
+config.plugins.RecInfobar.standby_timeout = ConfigInteger(default=10, limits=(5, 180))
+config.plugins.RecInfobar.after_event = ConfigSelection([("0", _("all")), ("1", _("standby")), ("2", _("deep standby")), ("3", _("auto")), ("4", _("auto and deep standby")), ("5", _("all, except 'nothing'"))], default="5")
 config.plugins.RecInfobar.set_position = ConfigYesNo(default=False)
-config.plugins.RecInfobar.z = ConfigSelection([(str(x), str(x)) for x in range(-20,21)], "1")
+config.plugins.RecInfobar.z = ConfigSelection([(str(x), str(x)) for x in range(-20, 21)], "1")
 config.plugins.RecInfobar.help = ConfigNothing()
 config.plugins.RecInfobar.rec_indicator = ConfigYesNo(default=False)
-config.plugins.RecInfobar.indicator_x = ConfigInteger(default=30, limits=(0,9999))
-config.plugins.RecInfobar.indicator_y = ConfigInteger(default=30, limits=(0,9999))
+config.plugins.RecInfobar.indicator_x = ConfigInteger(default=30, limits=(0, 9999))
+config.plugins.RecInfobar.indicator_y = ConfigInteger(default=30, limits=(0, 9999))
 TIMEFORMATS = [
 	# for example, 122 seconds (zero hours, two minutes, two seconds)
 	("%(SSs)d", _("S")),		#  122  
@@ -93,7 +93,7 @@ class RecIndicator(Screen):
 
 	def __changePosition(self, configElement=None):
 		if not self.instance is None:
-			self.instance.move(ePoint(config.plugins.RecInfobar.indicator_x.value,config.plugins.RecInfobar.indicator_y.value))
+			self.instance.move(ePoint(config.plugins.RecInfobar.indicator_x.value, config.plugins.RecInfobar.indicator_y.value))
 
 FULLHD = 0
 if getDesktop(0).size().width() >= 1920:
@@ -150,7 +150,7 @@ class RecInfoBar(Screen):
 
 		Screen.__init__(self, session)
 		self.skinName = ["RecInfoBar_" + self.__class__.__name__, "RecInfoBar"]
-		self.labels = ["chNum","chName","timelen","chProv","chBouq","recName","chTuner", "remaining", "chSnr"]
+		self.labels = ["chNum", "chName", "timelen", "chProv", "chBouq", "recName", "chTuner", "remaining", "chSnr"]
 		for x in self.labels:
 			self[x] = Label("")
 		self.RecIndicator = None
@@ -177,7 +177,7 @@ class RecInfoBar(Screen):
 
 	def __changePosition(self, configElement=None):
 		if not self.instance is None:
-			self.instance.move(ePoint(config.plugins.RecInfobar.x.value,config.plugins.RecInfobar.y.value))
+			self.instance.move(ePoint(config.plugins.RecInfobar.x.value, config.plugins.RecInfobar.y.value))
 			self.def_pos = self.instance.position()
 
 	def checkWakeup(self):
@@ -217,11 +217,11 @@ class RecInfoBar(Screen):
 	def checkStandby(self):
 		if Standby.inStandby is None:
 			try:
-				self.session.openWithCallback(self.DoStandby,MessageBox,_("Go to Standby now?"),type=MessageBox.TYPE_YESNO,timeout=config.plugins.RecInfobar.standby_timeout.value)
+				self.session.openWithCallback(self.DoStandby, MessageBox, _("Go to Standby now?"), type=MessageBox.TYPE_YESNO, timeout=config.plugins.RecInfobar.standby_timeout.value)
 			except:
 				pass 
 
-	def DoStandby(self,retval):
+	def DoStandby(self, retval):
 		if retval and Standby.inStandby is None:
 			Notifications.AddNotification(Standby.Standby)
 
@@ -332,7 +332,7 @@ class RecInfoBar(Screen):
 
 	def updateInfo(self):
 		cnt = 0
-		fields = ["","","","","","","","",""] # [numbers,names,timelens,providers,bouquets,recnames,tuner,remaining,snrvalue]
+		fields = ["", "", "", "", "", "", "", "", ""] # [numbers,names,timelens,providers,bouquets,recnames,tuner,remaining,snrvalue]
 		for (key, value) in self.reclist.items():
 			r = int(math.floor(value[7][0] - Time()))
 			cnt += 1
@@ -362,7 +362,7 @@ class RecInfoBar(Screen):
 			self[x].setText(fields[cnt])
 			cnt += 1
 		if self.shown:
-			self.updateTimer.start(1000,True)
+			self.updateTimer.start(1000, True)
 
 	def getSignalQuality(self, service):
 		if service and isinstance(service, iRecordableServicePtr):
@@ -479,7 +479,7 @@ class RecInfoBar(Screen):
 			return None, num
 
 		if isinstance(ref, eServiceReference):
-			isRadioService = ref.getData(0) in (2,10)
+			isRadioService = ref.getData(0) in (2, 10)
 			if not isRadioService:
 				lastpath = config.tv.lastroot.value
 				if lastpath.find('FROM BOUQUET') == -1:
@@ -557,7 +557,7 @@ class RecInfoBar(Screen):
 			return None, num
 
 		if isinstance(ref, eServiceReference):
-			isRadioService = ref.getData(0) in (2,10)
+			isRadioService = ref.getData(0) in (2, 10)
 			lastpath = isRadioService and config.radio.lastroot.value or config.tv.lastroot.value
 			if lastpath.find('FROM BOUQUET') == -1:
 				try:
@@ -612,7 +612,7 @@ class RecInfoBar(Screen):
 		if not ref:
 			return _("N/A")
 		if isinstance(ref, eServiceReference):
-			typestr = ref.getData(0) in (2,10) and service_types_radio or service_types_tv
+			typestr = ref.getData(0) in (2, 10) and service_types_radio or service_types_tv
 			pos = typestr.rfind(':')
 			rootstr = '%s (channelID == %08x%04x%04x) && %s FROM PROVIDERS ORDER BY name' % (typestr[:pos + 1],
 				ref.getUnsignedData(4), # NAMESPACE
