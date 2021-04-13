@@ -1183,7 +1183,7 @@ class AutoTimer:
 		ratio_value = force and 0.8 or timer.ratioThresholdDuplicate
 		doDebug("[AutoTimer] names ratio %f - %s - %d - %s - %d" % (ratio, name1, len(name1), name2, len(name2)))
 		if name1 in name2 or (0.8 < ratio): # this is probably a match
-			if not force and timer.descShortExtEmpty and (((isMovie and shortdesc1 and not shortdesc2) or (not isMovie and not shortdesc1 and not shortdesc2 and name1 != name2)) \
+			if not force and timer.descShortExtEmpty and (((isMovie and shortdesc1 and not shortdesc2) or (not isMovie and not shortdesc1 and not shortdesc2 and name1 != name2))
 				or ((isMovie and extdesc1 and not extdesc2) or (not isMovie and not extdesc1 and not extdesc2 and name1 != name2))):
 				doDebug("[AutoTimer] Configuration caused this sortdesc/extdesc match to be ignored!")
 				return False

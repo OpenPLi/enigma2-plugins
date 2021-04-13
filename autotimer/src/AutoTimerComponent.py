@@ -46,13 +46,13 @@ class AutoTimerComponent(object):
 	"""
 	 Keeps init small and helps setting many values at once
 	"""
-	def setValues(self, name, match, enabled, timespan=None, services=None, \
-			offset=None, afterevent=[], exclude=None, maxduration=None, \
-			destination=None, include=None, matchCount=0, matchLeft=0, \
-			matchLimit='', matchFormatString='', lastBegin=0, justplay=False, \
-			avoidDuplicateDescription=0, searchForDuplicateDescription=2, descShortEqualExt=True, descShortExtEmpty=False, ratioThresholdDuplicate=0.8, \
-			bouquets=None, tags=None, encoding=None, searchType="partial", searchCase="insensitive", \
-			overrideAlternatives=False, timeframe=None, vps_enabled=False, vps_overwrite=False, setEndtime=False, \
+	def setValues(self, name, match, enabled, timespan=None, services=None,
+			offset=None, afterevent=[], exclude=None, maxduration=None,
+			destination=None, include=None, matchCount=0, matchLeft=0,
+			matchLimit='', matchFormatString='', lastBegin=0, justplay=False,
+			avoidDuplicateDescription=0, searchForDuplicateDescription=2, descShortEqualExt=True, descShortExtEmpty=False, ratioThresholdDuplicate=0.8,
+			bouquets=None, tags=None, encoding=None, searchType="partial", searchCase="insensitive",
+			overrideAlternatives=False, timeframe=None, vps_enabled=False, vps_overwrite=False, setEndtime=False,
 			always_zap=False, zap_wakeup="always", series_labeling=False, series_save_filter=False, conflict_detection=True):
 		self.name = name
 		self.match = match

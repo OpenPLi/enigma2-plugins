@@ -575,7 +575,8 @@ class AutoFrameRate(Screen):
 				if config.av.videomode[config.av.videoport.value].value in config.av.videorate:
 					service = self.session.nav.getCurrentService()
 					ref = self.session.nav.getCurrentlyPlayingServiceReference()
-					if not ref or not service: return
+					if not ref or not service:
+						return
 					cur_service_str = ref.toString()
 					if not (cur_service_str and self.lastService):
 						self.lastService = cur_service_str

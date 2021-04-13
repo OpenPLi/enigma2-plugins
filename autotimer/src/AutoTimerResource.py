@@ -45,7 +45,8 @@ class AutoTimerBackgroundThread(threading.Thread):
 	def run(self):
 		req = self._req
 		code = http.OK
-		try: ret = self._fnc(req)
+		try:
+			ret = self._fnc(req)
 		except Exception as e:
 			ret = str(e)
 			code = http.INTERNAL_SERVER_ERROR
@@ -121,7 +122,8 @@ class AutoTimerSimulateBackgroundThread(AutoTimerBackgroundThread):
 			req.write('</e2autotimersimulate>')
 			req.finish()
 
-		try: autotimer.parseEPG(simulateOnly=True, callback=self.intermediateWrite)
+		try:
+			autotimer.parseEPG(simulateOnly=True, callback=self.intermediateWrite)
 		except Exception as e:
 			def finishRequest():
 				req.write('<exception>'+str(e)+'</exception><|PURPOSEFULLYBROKENXML<')
@@ -169,7 +171,8 @@ class AutoTimerTestBackgroundThread(AutoTimerBackgroundThread):
 		else:
 			self.id = None
 
-		try: autotimer.parseEPG(simulateOnly=True, uniqueId=self.id, callback=self.intermediateWrite)
+		try:
+			autotimer.parseEPG(simulateOnly=True, uniqueId=self.id, callback=self.intermediateWrite)
 		except Exception as e:
 			def finishRequest():
 				req.write('<exception>'+str(e)+'</exception><|PURPOSEFULLYBROKENXML<')
@@ -318,13 +321,16 @@ class AutoTimerAddOrEditAutoTimerResource(AutoTimerBaseResource):
 
 			# Name
 			timer.name = unquote(get("name", timer.name)).strip()
-			if not timer.name: timer.name = timer.match
+			if not timer.name:
+				timer.name = timer.match
 
 			# Enabled
 			enabled = get("enabled")
 			if enabled is not None:
-				try: enabled = int(enabled)
-				except ValueError: enabled = enabled == "yes"
+				try:
+					enabled = int(enabled)
+				except ValueError:
+					enabled = enabled == "yes"
 				timer.enabled = enabled
 
 			# Timeframe
@@ -348,8 +354,10 @@ class AutoTimerAddOrEditAutoTimerResource(AutoTimerBaseResource):
 		# Justplay
 		justplay = get("justplay")
 		if justplay is not None:
-			try: justplay = int(justplay)
-			except ValueError: justplay = justplay == "zap"
+			try:
+				justplay = int(justplay)
+			except ValueError:
+				justplay = justplay == "zap"
 			timer.justplay = justplay
 		setEndtime = get("setEndtime")
 		if setEndtime is not None:
@@ -388,7 +396,8 @@ class AutoTimerAddOrEditAutoTimerResource(AutoTimerBaseResource):
 		servicelist = get("bouquets")
 		if servicelist is not None:
 			servicelist = unquote(servicelist).split(',')
-			while '' in servicelist: servicelist.remove('')
+			while '' in servicelist:
+				servicelist.remove('')
 			timer.bouquets = servicelist
 
 		# Offset
@@ -410,7 +419,8 @@ class AutoTimerAddOrEditAutoTimerResource(AutoTimerBaseResource):
 			if afterevent == "default":
 				timer.afterevent = []
 			else:
-				try: afterevent = int(afterevent)
+				try:
+					afterevent = int(afterevent)
 				except ValueError:
 					afterevent = {
 						"nothing": AFTEREVENT.NONE,
@@ -445,10 +455,14 @@ class AutoTimerAddOrEditAutoTimerResource(AutoTimerBaseResource):
 			shortdescription = [unquote(x) for x in shortdescription] if shortdescription else includes[1]
 			description = [unquote(x) for x in description] if description else includes[2]
 			dayofweek = [unquote(x) for x in dayofweek] if dayofweek else includes[3]
-			while '' in title: title.remove('')
-			while '' in shortdescription: shortdescription.remove('')
-			while '' in description: description.remove('')
-			while '' in dayofweek: dayofweek.remove('')
+			while '' in title:
+				title.remove('')
+			while '' in shortdescription:
+				shortdescription.remove('')
+			while '' in description:
+				description.remove('')
+			while '' in dayofweek:
+				dayofweek.remove('')
 			timer.include = (title, shortdescription, description, dayofweek)
 
 		# Excludes
@@ -462,15 +476,20 @@ class AutoTimerAddOrEditAutoTimerResource(AutoTimerBaseResource):
 			shortdescription = [unquote(x) for x in shortdescription] if shortdescription else excludes[1]
 			description = [unquote(x) for x in description] if description else excludes[2]
 			dayofweek = [unquote(x) for x in dayofweek] if dayofweek else excludes[3]
-			while '' in title: title.remove('')
-			while '' in shortdescription: shortdescription.remove('')
-			while '' in description: description.remove('')
-			while '' in dayofweek: dayofweek.remove('')
+			while '' in title:
+				title.remove('')
+			while '' in shortdescription:
+				shortdescription.remove('')
+			while '' in description:
+				description.remove('')
+			while '' in dayofweek:
+				dayofweek.remove('')
 			timer.exclude = (title, shortdescription, description, dayofweek)
 
 		tags = req.args.get("tag")
 		if tags:
-			while '' in tags: tags.remove('')
+			while '' in tags:
+				tags.remove('')
 			timer.tags = [unquote(x) for x in tags]
 
 		timer.matchCount = int(get("counter", timer.matchCount))
@@ -487,14 +506,18 @@ class AutoTimerAddOrEditAutoTimerResource(AutoTimerBaseResource):
 
 		descShortEqualExt = get("descShortEqualExt")
 		if descShortEqualExt is not None:
-			try: descShortEqualExt = int(descShortEqualExt)
-			except ValueError: descShortEqualExt = descShortEqualExt == "yes"
+			try:
+				descShortEqualExt = int(descShortEqualExt)
+			except ValueError:
+				descShortEqualExt = descShortEqualExt == "yes"
 			timer.descShortEqualExt= descShortEqualExt
 
 		descShortExtEmpty = get("descShortExtEmpty")
 		if descShortExtEmpty is not None:
-			try: descShortExtEmpty = int(descShortExtEmpty)
-			except ValueError: descShortExtEmpty = descShortExtEmpty == "yes"
+			try:
+				descShortExtEmpty = int(descShortExtEmpty)
+			except ValueError:
+				descShortExtEmpty = descShortExtEmpty == "yes"
 			timer.descShortExtEmpty = descShortExtEmpty
 
 		timer.ratioThresholdDuplicate = float(get("ratioThresholdDuplicate", timer.ratioThresholdDuplicate))
@@ -502,13 +525,17 @@ class AutoTimerAddOrEditAutoTimerResource(AutoTimerBaseResource):
 		# vps
 		enabled = get("vps_enabled")
 		if enabled is not None:
-			try: enabled = int(enabled)
-			except ValueError: enabled = enabled == "yes"
+			try:
+				enabled = int(enabled)
+			except ValueError:
+				enabled = enabled == "yes"
 			timer.vps_enabled = enabled
 		vps_overwrite = get("vps_overwrite")
 		if vps_overwrite is not None:
-			try: vps_overwrite = int(vps_overwrite)
-			except ValueError: vps_overwrite = vps_overwrite == "yes"
+			try:
+				vps_overwrite = int(vps_overwrite)
+			except ValueError:
+				vps_overwrite = vps_overwrite == "yes"
 			timer.vps_overwrite = vps_overwrite
 		if not timer.vps_enabled and timer.vps_overwrite:
 			timer.vps_overwrite = False
@@ -516,13 +543,17 @@ class AutoTimerAddOrEditAutoTimerResource(AutoTimerBaseResource):
 		# SeriesPlugin
 		series_labeling = get("series_labeling")
 		if series_labeling is not None:
-			try: series_labeling = int(series_labeling)
-			except ValueError: series_labeling = series_labeling == "yes"
+			try:
+				series_labeling = int(series_labeling)
+			except ValueError:
+				series_labeling = series_labeling == "yes"
 			timer.series_labeling = series_labeling
 		series_save_filter = get("series_save_filter")
 		if series_save_filter is not None:
-			try: series_save_filter = int(series_save_filter)
-			except ValueError: series_save_filter = series_save_filter == "yes"
+			try:
+				series_save_filter = int(series_save_filter)
+			except ValueError:
+				series_save_filter = series_save_filter == "yes"
 			timer.series_save_filter = series_save_filter
 		if not timer.series_labeling and timer.series_save_filter:
 			timer.series_save_filter = False
@@ -530,8 +561,10 @@ class AutoTimerAddOrEditAutoTimerResource(AutoTimerBaseResource):
 		# Conflict detection
 		conflict_detection = get("conflict_detection")
 		if conflict_detection is not None:
-			try: conflict_detection = int(conflict_detection)
-			except ValueError: conflict_detection = conflict_detection == "yes"
+			try:
+				conflict_detection = int(conflict_detection)
+			except ValueError:
+				conflict_detection = conflict_detection == "yes"
 			timer.conflict_detection = conflict_detection
 
 		# Always zap
