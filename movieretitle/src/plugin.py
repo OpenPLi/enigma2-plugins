@@ -14,8 +14,10 @@ from Components.Sources.Boolean import Boolean
 from enigma import eTimer, eServiceCenter, iServiceInformation, eConsoleAppContainer
 from os import path as os_path, rename as os_rename, unlink as os_unlink
 
+
 def main(session, service, **kwargs):
 	session.open(MovieRetitle, service, session.current_dialog, **kwargs)
+
 
 def Plugins(**kwargs):
 	return PluginDescriptor(name="MovieRetitle", description=_("change name..."), where=PluginDescriptor.WHERE_MOVIELIST, fnc=main)
@@ -176,6 +178,7 @@ class MovieRetitle(Screen, ConfigListScreen):
 		else:
 			return dir + name
 
+
 class MovieRetitleBackgroundMover:
 	def __init__(self):
 		self.container = eConsoleAppContainer()
@@ -291,6 +294,7 @@ class MovieRetitleBackgroundMover:
 			mess = _("Successfully moved the movie %s") % (self.ele[2])
 			self.message(self.ele[0], self.ele[1], None, mess)
 			self.runDone(0)
+
 
 global_background_mover = MovieRetitleBackgroundMover()
 

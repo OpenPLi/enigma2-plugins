@@ -16,8 +16,10 @@ from Components.config import config
 from . import _, NOTIFICATIONID
 PIPNOTIFICATIONID = 'EpgRefreshPipsnowNotificationId'
 
+
 class PipAdapter:
 	backgroundCapable = False
+
 	def __init__(self, session, hide=True):
 		if SystemInfo.get("NumVideoDecoders", 1) < 2:
 			self.pipAvail = False

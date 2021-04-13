@@ -13,12 +13,14 @@ from Components.config import config
 # Default encoding
 from Components.Language import language
 
+
 class AutoTimerComponent(object):
 	"""AutoTimer Component which also handles validity checks"""
 
 	"""
 	 Initiate
 	"""
+
 	def __init__(self, id, name, match, enabled, *args, **kwargs):
 		self.id = id
 		self._afterevent = []
@@ -27,6 +29,7 @@ class AutoTimerComponent(object):
 	"""
 	 Unsets all Attributes
 	"""
+
 	def clear(self, id=-1, enabled=False):
 		self.id = id
 		self.setValues('', '', enabled)
@@ -34,18 +37,21 @@ class AutoTimerComponent(object):
 	"""
 	 Create a deep copy of this instance
 	"""
+
 	def clone(self):
 		return self.__deepcopy__({})
 
 	"""
 	 Hook needed for WebIf
 	"""
+
 	def getEntry(self):
 		return self
 
 	"""
 	 Keeps init small and helps setting many values at once
 	"""
+
 	def setValues(self, name, match, enabled, timespan=None, services=None,
 			offset=None, afterevent=[], exclude=None, maxduration=None,
 			destination=None, include=None, matchCount=0, matchLeft=0,
@@ -220,6 +226,7 @@ class AutoTimerComponent(object):
 	"""
 	 Returns a tulple of (input begin, input end, begin earlier than end)
 	"""
+
 	def calculateDayspan(self, begin, end, ignore=None):
 		if end[0] < begin[0] or (end[0] == begin[0] and end[1] <= begin[1]):
 			return (begin, end, True)
@@ -229,6 +236,7 @@ class AutoTimerComponent(object):
 	"""
 	 Returns if a given timestruct is in a timespan
 	"""
+
 	def checkAnyTimespan(self, time, begin=None, end=None, haveDayspan=False):
 		if begin is None:
 			return False
@@ -258,6 +266,7 @@ class AutoTimerComponent(object):
 	"""
 	 Called when a timer based on this component was added
 	"""
+
 	def update(self, begin, timestamp):
 		# Only update limit when we have new begin
 		if begin > self.lastBegin:
@@ -460,6 +469,7 @@ class AutoTimerComponent(object):
 	Return alternative service including a given ref.
 	Note that this only works for alternatives that the autotimer is restricted to.
 	"""
+
 	def getAlternative(self, override_service):
 		services = self.services
 		if services:
@@ -667,6 +677,7 @@ class AutoTimerComponent(object):
 			 ")>"
 		))
 
+
 class AutoTimerFastscanComponent(AutoTimerComponent):
 	def __init__(self, *args, **kwargs):
 		AutoTimerComponent.__init__(self, *args, **kwargs)
@@ -758,10 +769,12 @@ class AutoTimerFastscanComponent(AutoTimerComponent):
 								break
 		return override_service
 
+
 def getDefaultEncoding():
 	#if 'de' in language.getLanguage():
 	#	return 'ISO8859-15'
 	return 'UTF-8'
+
 
 # very basic factory ;-)
 preferredAutoTimerComponent = lambda *args, **kwargs: AutoTimerFastscanComponent(*args, **kwargs) if config.plugins.autotimer.fastscan.value else AutoTimerComponent(*args, **kwargs)

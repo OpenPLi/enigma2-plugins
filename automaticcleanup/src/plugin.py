@@ -218,6 +218,7 @@ class AutomaticCleanupSetup(Screen, ConfigListScreen): # config
 
 class AutomaticCleanup:
         checkInterval = 60 * 60 * 24 # check timerlist every 24 hours
+
 	def __init__(self, session):
 		self.session = session
 		if DEBUG:
@@ -445,13 +446,16 @@ class AutomaticCleanup:
 def autostart(session, **kwargs):
 	AutomaticCleanup(session) # start plugin at sessionstart
 
+
 def setup(session, **kwargs):
 	session.open(AutomaticCleanupSetup) # start setup
+
 
 def startSetup(menuid):
 	if menuid != "system": # show setup only in system level menu
 		return []
 	return [(_("System cleanup"), setup, "AutomaticCleanup", 46)]
 	
+
 def Plugins(**kwargs):
 	return [PluginDescriptor(where=[PluginDescriptor.WHERE_SESSIONSTART], fnc=autostart), PluginDescriptor(name="System cleanup", description=_("Automatic System Cleanup Setup"), where=PluginDescriptor.WHERE_MENU, fnc=startSetup)]

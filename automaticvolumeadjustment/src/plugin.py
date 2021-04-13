@@ -32,9 +32,11 @@ from AutomaticVolumeAdjustmentConfig import saveVolumeDict
 config.misc.AV_audio_menu = ConfigYesNo(default=False)
 config.misc.toggle_AV_session = NoSave(ConfigYesNo(default=True))
 
+
 def audioMenu(session, **kwargs):
 	status = config.misc.toggle_AV_session.value and _("Disable") or _("Enable")
 	session.openWithCallback(toggleAVclosed, MessageBox, _("%s plugin only this session?") % status, MessageBox.TYPE_YESNO)
+
 
 def toggleAVclosed(ret):
 	if ret:
@@ -43,10 +45,12 @@ def toggleAVclosed(ret):
 		else:
 			config.misc.toggle_AV_session.value = True
 
+
 def autostart(reason, **kwargs):
 	if "session" in kwargs:
 		session = kwargs["session"]
 		AutomaticVolumeAdjustment(session)
+
 
 def autoend(reason, **kwargs):
 	# save config values for last used volume modus
@@ -55,13 +59,16 @@ def autoend(reason, **kwargs):
 			if AutomaticVolumeAdjustment.instance.enabled and AutomaticVolumeAdjustment.instance.modus != "0":
 				saveVolumeDict(AutomaticVolumeAdjustment.instance.serviceList)
 
+
 def setup(session, **kwargs):
 	session.open(AutomaticVolumeAdjustmentConfigScreen) # start setup
+
 
 def startSetup(menuid):
 	if menuid != "system": # show setup only in system level menu
 		return []
 	return [(_("Automatic Volume Adjustment"), setup, "AutomaticVolumeAdjustment", 46)]
+
 
 def Plugins(**kwargs):
 	l = [PluginDescriptor(where=[PluginDescriptor.WHERE_SESSIONSTART], fnc=autostart), PluginDescriptor(where=[PluginDescriptor.WHERE_AUTOSTART], fnc=autoend),

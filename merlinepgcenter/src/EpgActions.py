@@ -27,6 +27,7 @@ from Tools.BoundFunction import boundFunction
 # OWN IMPORTS
 from EpgCenterList import MULTI_EPG_NOW, MULTI_EPG_NEXT, SINGLE_EPG, MULTI_EPG_PRIMETIME, TIMERLIST, EPGSEARCH_HISTORY, EPGSEARCH_RESULT, EPGSEARCH_MANUAL
 
+
 class MerlinEPGActions():		
 	def __init__(self):
 		# TIMEREDITLIST

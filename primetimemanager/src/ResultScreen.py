@@ -55,6 +55,8 @@ skinPTMsd = """<screen title="%s" position="center,center" size="630,520">
 		<widget name="list" position="57,65" scrollbarMode="showAlways" foregroundColorSelected="#00ffffff" backgroundColorSelected="#65535ff" size="516,450"/>
 	</screen>""" % _("Prime Time Manager Conflict Results")
 #############################################################################################
+
+
 class ResultScreen(Screen, HelpableScreen):
 	def __init__(self, session, favoriteEvents):
 		self.session = session
@@ -109,6 +111,7 @@ class ResultScreen(Screen, HelpableScreen):
 		if len(self.favoriteEvents):
 			self["list"].moveToIndex(eventListIndex)
 		self["list"].show()
+
 
 class ResultList(GUIComponent, object):
 	def __init__(self, eventList):

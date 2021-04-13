@@ -36,6 +36,7 @@ config.plugins.PrimeTimeManager.RedButton = ConfigSelection(default="epg", choic
 				])
 config.plugins.PrimeTimeManager.CloseMultiEPG = ConfigYesNo(default=False)
 
+
 class PrimeTimeSettings(ConfigListScreen, Screen):
 	if size_width >= 1920:
 		skin = """<screen title="Prime Time Settings" position="center,center" size="560,390">

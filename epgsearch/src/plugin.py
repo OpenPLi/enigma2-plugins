@@ -12,6 +12,8 @@ from Components.config import config
 
 # Overwrite EPGSelection.__init__ with our modified one
 baseEPGSelection__init__ = None
+
+
 def EPGSelectionInit():
 	global baseEPGSelection__init__
 	if baseEPGSelection__init__ is None:
@@ -21,6 +23,8 @@ def EPGSelectionInit():
 	EPGSelection.VKaction = VKaction
 
 # Modified EPGSelection __init__
+
+
 def EPGSearchSelection__init__(self, session, service, zapFunc=None, eventid=None, bouquetChangeCB=None, serviceChangeCB=None, parent=None):
 	baseEPGSelection__init__(self, session, service, zapFunc, eventid, bouquetChangeCB, serviceChangeCB, parent)
 	if self.type != EPG_TYPE_MULTI and config.plugins.epgsearch.add_search_to_epg.value:
@@ -49,6 +53,7 @@ def EPGSearchSelection__init__(self, session, service, zapFunc=None, eventid=Non
 		elif config.plugins.epgsearch.type_button_blue.value == "1":
 			self["key_blue"].text = _("Choice list")
 
+
 def CallbackChoiceAction(self, ret):
 	ret = ret and ret[1]
 	if ret:
@@ -71,11 +76,14 @@ def CallbackChoiceAction(self, ret):
 			except:
 				pass
 
+
 def VKaction(self, answer):
 	if answer:
 		self.session.open(EPGSearch, answer, False)
 
 # Autostart
+
+
 def autostart(reason, **kwargs):
 	try:
 		# for blue key activating in EPGSelection
@@ -84,6 +92,8 @@ def autostart(reason, **kwargs):
 		pass
 
 # Mainfunction
+
+
 def main(session, *args, **kwargs):
 	s = session.nav.getCurrentService()
 	if s:
@@ -95,6 +105,8 @@ def main(session, *args, **kwargs):
 		session.open(EPGSearch)
 
 # Channel context menu
+
+
 def channelscontext(session, service=None, **kwargs):
 	serviceHandler = eServiceCenter.getInstance()
 	info = serviceHandler.info(service)
@@ -104,6 +116,8 @@ def channelscontext(session, service=None, **kwargs):
 		session.open(EPGSearch, name)
 
 # Event Info
+
+
 def eventinfo(session, eventName="", **kwargs):
 	if eventName != "":
 		session.open(EPGSearch, eventName, False)
@@ -113,16 +127,21 @@ def eventinfo(session, eventName="", **kwargs):
 			session.open(EPGSearchEPGSelection, ref, True)
 
 # EPG Further Options
+
+
 def epgfurther(session, selectedevent, **kwargs):
 	session.open(EPGSearch, selectedevent[0].getEventName())
 
 # Movielist
+
+
 def movielist(session, service, **kwargs):
 	serviceHandler = eServiceCenter.getInstance()
 	info = serviceHandler.info(service)
 	name = info and info.getName(service) or ''
 	name = name.split(".")[0].strip()
 	session.open(EPGSearch, name)
+
 
 def Plugins(**kwargs):
 	path = [

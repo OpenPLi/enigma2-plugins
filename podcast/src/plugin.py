@@ -27,8 +27,10 @@ import re
 
 ###################################################
 
+
 def localeInit():
 	gettext.bindtextdomain("Podcast", "%s%s" % (resolveFilename(SCOPE_PLUGINS), "Extensions/Podcast/locale/"))
+
 
 def _(txt):
 	t = gettext.dgettext("Podcast", txt)
@@ -36,15 +38,18 @@ def _(txt):
 		t = gettext.gettext(txt)
 	return t
 
+
 localeInit()
 language.addCallback(localeInit)
 
 ###################################################
 
+
 def remove(file):
 	system('rm "' + file + '"')
 
 ###################################################
+
 
 class ChangedMoviePlayer(MoviePlayer):
 	def __init__(self, session, service):
@@ -73,12 +78,14 @@ class ChangedMoviePlayer(MoviePlayer):
 
 ###################################################
 
+
 config.plugins.Podcast = ConfigSubsection()
 config.plugins.Podcast.buffer = ConfigYesNo(default=True)
 config.plugins.Podcast.bufferDevice = ConfigText(default="/media/hdd/", fixed_size=False)
 config.plugins.Podcast.keepStored = ConfigSelection(choices={"delete": _("delete"), "keep": _("keep on device"), "ask": _("ask me")}, default="delete")
 
 ###################################################
+
 
 def encodeUrl(url):
 	url = url.replace("&amp;", "&")
@@ -93,6 +100,7 @@ def encodeUrl(url):
 	return url
 
 ###################################################
+
 
 class BufferThread():
 	def __init__(self):
@@ -131,9 +139,11 @@ class BufferThread():
 		self.error = ""
 		self.download.stop()
 
+
 bufferThread = BufferThread()
 
 ###################################################
+
 
 class PodcastBuffer(Screen):
 	skin = """
@@ -184,6 +194,7 @@ class PodcastBuffer(Screen):
 		self.close(None)
 
 ###################################################
+
 
 class PodcastMovies(Screen):
 	skin = """
@@ -326,6 +337,7 @@ class PodcastMovies(Screen):
 
 ###################################################
 
+
 class PodcastPodcasts(Screen):
 	skin = """
 		<screen position="center,center" size="420,360" title="%s" >
@@ -356,6 +368,7 @@ class PodcastPodcasts(Screen):
 
 ###################################################
 
+
 class PodcastProvider(Screen):
 	skin = """
 		<screen position="center,center" size="420,360" title="%s" >
@@ -384,6 +397,7 @@ class PodcastProvider(Screen):
 			self.session.open(PodcastPodcasts, cur)
 
 ###################################################
+
 
 class PodcastXML(Screen):
 	skin = """
@@ -416,6 +430,7 @@ class PodcastXML(Screen):
 			self.session.open(PodcastProvider, cur)
 
 ###################################################
+
 
 class PodcastComGenre2(Screen):
 	skin = """
@@ -480,6 +495,7 @@ class PodcastComGenre2(Screen):
 
 ###################################################
 
+
 class PodcastComGenre(Screen):
 	skin = """
 		<screen position="center,center" size="420,360" title="%s" >
@@ -536,6 +552,7 @@ class PodcastComGenre(Screen):
 
 ###################################################
 
+
 class PodcastCom(Screen):
 	skin = """
 		<screen position="center,center" size="420,360" title="%s" >
@@ -584,6 +601,7 @@ class PodcastCom(Screen):
 		self.working = False
 
 ###################################################
+
 
 class LocationSelection(Screen):
 	skin = """
@@ -640,6 +658,7 @@ class LocationSelection(Screen):
 
 ###################################################
 
+
 class PodcastConfig(ConfigListScreen, Screen):
 	skin = """
 	<screen position="center,center" size="560,180" title="%s">
@@ -657,7 +676,6 @@ class PodcastConfig(ConfigListScreen, Screen):
 		self["key_green"] = Label(_("Save"))
 
 		ConfigListScreen.__init__(self, [])
-
 
 		self["actions"] = ActionMap(["OkCancelActions", "ColorActions"], {"green": self.save, "cancel": self.exit}, -1)
 
@@ -700,6 +718,7 @@ class PodcastConfig(ConfigListScreen, Screen):
 		self.close()
 
 ###################################################
+
 
 class PodcastDeEpisodes(Screen):
 	skin = """
@@ -803,6 +822,7 @@ class PodcastDeEpisodes(Screen):
 
 ###################################################
 
+
 class PodcastDePodcasts(Screen):
 	skin = """
 		<screen position="center,center" size="420,360" title="%s" >
@@ -860,6 +880,7 @@ class PodcastDePodcasts(Screen):
 
 ###################################################
 
+
 class PodcastDeCategories(Screen):
 	skin = """
 		<screen position="center,center" size="420,360" title="%s" >
@@ -913,6 +934,7 @@ class PodcastDeCategories(Screen):
 
 ###################################################
 
+
 class PodcastDe(Screen):
 	skin = """
 		<screen position="center,center" size="420,360" title="%s" >
@@ -965,6 +987,7 @@ class PodcastDe(Screen):
 
 ###################################################
 
+
 class Podcast(Screen):
 	skin = """
 		<screen position="center,center" size="420,360" title="%s" >
@@ -996,8 +1019,10 @@ class Podcast(Screen):
 
 ###################################################
 
+
 def main(session, **kwargs):
 	session.open(Podcast)
+
 
 def Plugins(**kwargs):
 	return PluginDescriptor(name=_("Podcast"), where=PluginDescriptor.WHERE_EXTENSIONSMENU, fnc=main)

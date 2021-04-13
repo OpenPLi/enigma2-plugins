@@ -16,8 +16,10 @@ from enigma import eServiceReference, eDVBSatelliteEquipmentControl, eTimer
 
 from . import _, NOTIFICATIONID
 
+
 class MainPictureAdapter:
 	backgroundCapable = True
+
 	def __init__(self, session):
 		self.navcore = session.nav
 		self.lastCount = None

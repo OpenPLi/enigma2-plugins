@@ -5,6 +5,7 @@ from enigma import eTimer
 from Tools.Directories import fileExists
 import os
 
+
 def EpgCacheLoadCheck(session=None, **kwargs):
 	global epgcacheloadcheckpoller
 	epgcacheloadcheckpoller = EpgCacheLoadCheckPoller()
@@ -13,6 +14,7 @@ def EpgCacheLoadCheck(session=None, **kwargs):
 	else:
 		epgcacheloadcheckpoller.stop()
 
+
 def EpgCacheSaveCheck(session=None, **kwargs):
 	global epgcachesavecheckpoller
 	epgcachesavecheckpoller = EpgCacheSaveCheckPoller()
@@ -20,6 +22,7 @@ def EpgCacheSaveCheck(session=None, **kwargs):
 		epgcachesavecheckpoller.start()
 	else:
 		epgcachesavecheckpoller.stop()
+
 
 class EpgCacheLoadCheckPoller:
 	def __init__(self):
@@ -77,6 +80,7 @@ class EpgCacheLoadCheckPoller:
 
 	def JobSched(self):
 		self.timer.startLongTimer(int(config.plugins.epgrefresh_extra.cacheloadtimer.value) * 3600)
+
 
 class EpgCacheSaveCheckPoller:
 	def __init__(self):
@@ -140,14 +144,15 @@ class EpgCacheSaveCheckPoller:
 				except:
 					pass
 
-
 	def JobSched(self):
 		self.timer.startLongTimer(int(config.plugins.epgrefresh_extra.cachesavetimer.value) * 3600)
+
 
 class EpgSaveMsg(MessageBox):
 	def __init__(self, session):
 		MessageBox.__init__(self, session, _("Are you sure you want to save the EPG cache to:\n") + config.misc.epgcache_filename.getValue(), MessageBox.TYPE_YESNO)
 		self.skinName = "MessageBox"
+
 
 class EpgLoadMsg(MessageBox):
 	def __init__(self, session):

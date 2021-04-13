@@ -26,11 +26,14 @@ config.plugins.Seekbar.sensibility = ConfigInteger(default=10, limits=(1, 10))
 
 ##############################################
 
+
 def localeInit():
 	gettext.bindtextdomain("Seekbar", "%s%s" % (resolveFilename(SCOPE_PLUGINS), "Extensions/Seekbar/locale/"))
 
+
 localeInit()
 language.addCallback(localeInit)
+
 
 def _(txt):
 	t = gettext.dgettext("Seekbar", txt)
@@ -39,6 +42,7 @@ def _(txt):
 	return t
 
 ##############################################
+
 
 class Seekbar(ConfigListScreen, Screen):
 	skin = """
@@ -293,12 +297,15 @@ class Seekbar(ConfigListScreen, Screen):
 ##############################################
 # This hack overwrites the functions seekFwdManual and seekBackManual of the InfoBarSeek class (MoviePlayer and DVDPlayer)
 
+
 def seekbar(instance, fwd=True):
 	if instance and instance.session:
 		instance.session.open(Seekbar, instance, fwd)
 
+
 def seekbarBack(instance):
 	seekbar(instance, False)
+
 
 MoviePlayer.seekFwdManual = seekbar
 MoviePlayer.seekBackManual = seekbarBack
@@ -392,6 +399,8 @@ if fileExists(cutlistEditor):
 # This hack puts the functions seekFwdManual and seekBackManual to the maped keys to seekbarRight and seekbarLeft
 
 DoBind = ActionMap.doBind
+
+
 def doBind(instance):
 	if not instance.bound:
 		for ctx in instance.contexts:
@@ -402,6 +411,7 @@ def doBind(instance):
 					instance.actions["seekbarLeft"] = instance.actions["seekBackManual"]
 			DoBind(instance)
 
+
 if config.plugins.Seekbar.overwrite_left_right.value:
 	ActionMap.doBind = doBind
 
@@ -410,6 +420,8 @@ if config.plugins.Seekbar.overwrite_left_right.value:
 
 KeymapError = keymapparser.KeymapError
 ParseKeys = keymapparser.parseKeys
+
+
 def parseKeys(context, filename, actionmap, device, keys):
 	if context == "InfobarSeekActions":
 		if device == "generic":
@@ -448,12 +460,14 @@ def parseKeys(context, filename, actionmap, device, keys):
 	else:
 		ParseKeys(context, filename, actionmap, device, keys)
 
+
 if config.plugins.Seekbar.overwrite_left_right.value:
 	keymapparser.parseKeys = parseKeys
 	keymapparser.removeKeymap(config.usage.keymap.value)
 	keymapparser.readKeymap(config.usage.keymap.value)
 
 ##############################################
+
 
 def Plugins(**kwargs):
 	return []

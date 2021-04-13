@@ -13,11 +13,13 @@ transinfo_sh = "/usr/lib/enigma2/python/Plugins/Extensions/Transmission/trans_in
 swap_sh = "/usr/lib/enigma2/python/Plugins/Extensions/Transmission/trans_swap.sh"
 pause_sh = "/usr/lib/enigma2/python/Plugins/Extensions/Transmission/trans_start_stop_down.sh"
 
+
 class Transmission(Screen):
 	skin = """
 	<screen position="center,center" size="720,440" title="Transmission menu" >
 		<widget name="menu" position="10,10" size="700,420" scrollbarMode="showOnDemand" />
 	</screen>"""
+
 	def __init__(self, session):
 		Screen.__init__(self, session)
 		self.session = session
@@ -87,8 +89,10 @@ class Transmission(Screen):
 		if answer:
 			self.session.openWithCallback(self.close, Console, _("transmission-daemon"), ["opkg update && opkg install transmission && opkg install transmission-client"])
 
+
 def main(session, **kwargs):
 	session.open(Transmission)
+
 
 def Plugins(path, **kwargs):
 	return [PluginDescriptor(name=_("Transmission"), description=_("Bittorrent client for enigma2"), where=PluginDescriptor.WHERE_PLUGINMENU, icon="transmission.png", fnc=main),

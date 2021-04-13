@@ -21,8 +21,10 @@ import htmlentitydefs
 import urllib
 import gettext
 
+
 def localeInit():
     gettext.bindtextdomain("OFDb", resolveFilename(SCOPE_PLUGINS, "Extensions/OFDb/locale"))
+
 
 def _(txt):
     t = gettext.dgettext("OFDb", txt)
@@ -31,8 +33,10 @@ def _(txt):
         t = gettext.gettext(txt)
     return t
 
+
 localeInit()
 language.addCallback(localeInit)
+
 
 class OFDBChannelSelection(SimpleChannelSelection):
 	def __init__(self, session):
@@ -61,6 +65,7 @@ class OFDBChannelSelection(SimpleChannelSelection):
 		if ret:
 			self.close(ret)
 
+
 class OFDBEPGSelection(EPGSelection):
 	def __init__(self, session, ref, openPlugin=True):
 		EPGSelection.__init__(self, session, ref)
@@ -88,6 +93,7 @@ class OFDBEPGSelection(EPGSelection):
 
 	def onSelectionChanged(self):
 		pass
+
 
 class OFDB(Screen):
 	skin = """
@@ -467,6 +473,7 @@ class OFDB(Screen):
 	def createSummary(self):
 		return OFDbLCDScreen
 
+
 class OFDbLCDScreen(Screen):
 	skin = """
 	<screen position="0,0" size="132,64" title="OFDb Plugin">
@@ -480,13 +487,16 @@ class OFDbLCDScreen(Screen):
 		Screen.__init__(self, session)
 		self["headline"] = Label(_("OFDb Plugin"))
 
+
 def eventinfo(session, servicelist, **kwargs):
 	ref = session.nav.getCurrentlyPlayingServiceReference()
 	session.open(OFDBEPGSelection, ref)
 
+
 def main(session, eventName="", **kwargs):
 	session.open(OFDB, eventName)
 	
+
 def Plugins(**kwargs):
 	try:
 		return [PluginDescriptor(name="OFDb Details",

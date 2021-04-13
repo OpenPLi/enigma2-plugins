@@ -68,6 +68,7 @@ class MovieCut(ChoiceBox):
 			clist += ret[5]
 		MovieCutSpawn(self.session, self, clist, self.name)
 		
+
 class AdvancedCutInput(Screen, ConfigListScreen):
 	def __init__(self, session, name, path, descr):
 		Screen.__init__(self, session)
@@ -204,6 +205,7 @@ class AdvancedCutInput(Screen, ConfigListScreen):
 		else:
 			return dir + name
 
+
 class MovieCutQueue:
 	def __init__(self):
 		self.container = eConsoleAppContainer()
@@ -232,6 +234,7 @@ class MovieCutQueue:
 		cb(retval)
 		self.runNext()
 
+
 global_mcut_errors = [_("The movie \"%s\" is successfully cut"),
 		      _("Cutting failed for movie \"%s\"") + ":\n" + _("Bad arguments"),
 		      _("Cutting failed for movie \"%s\"") + ":\n" + _("Couldn't open input .ts file"),
@@ -248,6 +251,7 @@ global_mcut_errors = [_("The movie \"%s\" is successfully cut"),
 global_mcut_queue = MovieCutQueue()
 
 global_mcut_block = False
+
 
 class MovieCutSpawn:
 	def __init__(self, session, parent, clist, name):

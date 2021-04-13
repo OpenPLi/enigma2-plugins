@@ -23,9 +23,11 @@ add_type("image/mvi", ".mvi")
 
 #########
 
+
 def filescan_open(list, session, **kwargs):
 	print "[Logo Manager] filescan_open", list, kwargs
 	session.open(LogoManagerScreen, file=list[0].path)
+
 
 def start_from_filescan(**kwargs):
 	from Components.Scanner import Scanner, ScanPath
@@ -41,6 +43,7 @@ def start_from_filescan(**kwargs):
 		)
 
 ###############################################################################
+
 
 class LogoManagerScreen(Screen):
 	skin = """
@@ -289,6 +292,7 @@ class LogoManagerScreen(Screen):
 					os.chmod("/etc/rc6.d/K01bootlogo-reboot", 0755)
 		os.system("cp '%s' '%s'" % (sourcefile, target[1]))
 
+
 class LogoManagerConfigScreen(ConfigListScreen, Screen):
 	skin = """
 		<screen position="center,center" size="530,200" title="LogoManager Setup" >
@@ -296,6 +300,7 @@ class LogoManagerConfigScreen(ConfigListScreen, Screen):
 			<widget name="buttonred" position="10,160" size="100,40" backgroundColor="red" valign="center" halign="center" zPosition="2"  foregroundColor="white" font="Regular;18"/>
 			<widget name="buttongreen" position="120,160" size="100,40" backgroundColor="green" valign="center" halign="center" zPosition="2"  foregroundColor="white" font="Regular;18"/>
 		</screen>"""
+
 	def __init__(self, session, args=0):
 		self.session = session
 		Screen.__init__(self, session)
@@ -335,11 +340,13 @@ class LogoManagerConfigScreen(ConfigListScreen, Screen):
 		config.plugins.logomanager.path.cancel()
 		self.close()
 
+
 def main(session, **kwargs):
 	if config.plugins.logomanager.path.value == "none" or os.path.isdir(config.plugins.logomanager.path.value) is not True:
 		session.open(LogoManagerConfigScreen)
 	else:
 		session.open(LogoManagerScreen)
+
 
 def Plugins(path, **kwargs):
     global plugin_path

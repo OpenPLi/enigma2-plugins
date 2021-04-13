@@ -48,17 +48,23 @@ class InfoBarFunctionSaver:
 			InfoBar.openSingleServiceEPG = self.infoBarSingleEpg # Info -> yellow
 			InfoBar.openMultiServiceEPG = self.infoBarMultiEpg # Info -> blue
 
+
 def autostart(session, **kwargs):
 	infoBarFunctionSaver = InfoBarFunctionSaver()
 	
 # open "single epg" tab
+
+
 def startMerlinEPGCenterSingle(self):
 	openMerlinEPGCenterTab(self.session, SINGLE_EPG)
 	
 # open "multi epg now" tab
+
+
 def startMerlinEPGCenterMulti(self):
 	openMerlinEPGCenterTab(self.session, MULTI_EPG_NOW)
 	
+
 def getBouquetInformation():
 	# get current bouquet and bouquetlist from channelselection
 	from Screens.InfoBar import InfoBar # if installed, nasty PTS Plugin overides Infobar class, so global import may not working to get instance, because maybe this plugin was imported from enigma2 before PTS ...import InfoBar now (just to be sure...) to get the correct instance member
@@ -80,14 +86,17 @@ def getBouquetInformation():
 			
 	return servicelist, currentBouquet, bouquetList, currentIndex
 	
+
 def openMerlinEPGCenter(session, **kwargs):
 	servicelist, currentBouquet, bouquetList, currentIndex = getBouquetInformation()
 	session.open(MerlinEPGCenter, servicelist, currentBouquet, bouquetList, currentIndex)
 	
+
 def openMerlinEPGCenterTab(session, startWithTab, **kwargs):
 	servicelist, currentBouquet, bouquetList, currentIndex = getBouquetInformation()
 	session.open(MerlinEPGCenter, servicelist, currentBouquet, bouquetList, currentIndex, startWithTab)
 	
+
 def Plugins(**kwargs):
 	p = PluginDescriptor(where=[PluginDescriptor.WHERE_SESSIONSTART], fnc=autostart)
 	list = [PluginDescriptor(name="Merlin EPG Center", description=_("More than just an EPG..."), where=[PluginDescriptor.WHERE_EXTENSIONSMENU, PluginDescriptor.WHERE_PLUGINMENU, PluginDescriptor.WHERE_EVENTINFO], fnc=openMerlinEPGCenter)]

@@ -25,6 +25,8 @@ import time
 HD = False
 if getDesktop(0).size().width() >= 1280:
 	HD = True
+
+
 class EPGSaveLoadConfiguration(Screen, ConfigListScreen):
 	if HD:
 		skin = """<screen name="EPGSaveLoadConfiguration" position="center,center" size="600,640">
@@ -173,12 +175,14 @@ class EPGSaveLoadConfiguration(Screen, ConfigListScreen):
 		txt = _("Input EPG Cache path")
 		self.session.openWithCallback(self.setEPGCachePathBack, LocationBox, text=txt, currDir=config.plugins.epgrefresh_extra.epgcachepath.value,
 				bookmarks=config.plugins.epgrefresh_extra.bookmarks, autoAdd=False, editDir=True, minFree=20, inhibitDirs=inhibitDirs)
+
 	def setEPGCachePathBack(self, res):
 		if res is not None:
 			config.plugins.epgrefresh_extra.epgcachepath.value = res
 
 	def deleteEPG(self):
 		menu = [(_("Clear only in memory (RAM) EPG"), "ram"), (_("Clear only epg.dat and epg.dat.backup"), "dat"), (_("Clear all EPG"), "all")]
+
 		def removeEPGAction(choice):
 			if choice is not None:
 				try:
@@ -325,6 +329,7 @@ class EPGSaveLoadConfiguration(Screen, ConfigListScreen):
 				except:
 					pass
 		self.close()
+
 
 class ManualEPGlist(Screen):
 	skin = """

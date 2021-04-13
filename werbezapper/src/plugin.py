@@ -43,6 +43,7 @@ config.werbezapper.x = ConfigInteger(default=60, limits=(0, 9999))
 config.werbezapper.y = ConfigInteger(default=60, limits=(0, 9999))
 config.werbezapper.z = ConfigSelection([(str(x), str(x)) for x in range(-20, 21)], "-1")
 
+
 def main(session=None, servicelist=None, **kwargs):
 	if servicelist is None:
 		from Screens.InfoBar import InfoBar
@@ -53,6 +54,7 @@ def main(session=None, servicelist=None, **kwargs):
 			from WerbeZapper import WerbeZapper
 			zapperInstance = session.instantiateDialog(WerbeZapper, servicelist, cleanup)
 		zapperInstance.showSelection()
+
 
 def startstop(session=None, servicelist=None, **kwargs):
 	if servicelist is None:
@@ -68,12 +70,14 @@ def startstop(session=None, servicelist=None, **kwargs):
 		else:
 			zapperInstance.stopMonitoring()
 
+
 def cleanup():
 	global zapperInstance
 	if zapperInstance is not None:
 		zapperInstance.shutdown()
 		zapperInstance.doClose()
 		zapperInstance = None
+
 
 class WerbeZapperSilder(ConfigListScreen, Screen):
 	skin = """
@@ -82,6 +86,7 @@ class WerbeZapperSilder(ConfigListScreen, Screen):
 			<widget name="config" position="0,100" size="560,25" scrollbarMode="showOnDemand" zPosition="1" foregroundColor="white" backgroundColor="transparent" />
 			<widget source="time" render="Label" position="0,130" zPosition="1" size="560,120" noWrap="1" halign="center" font="Regular;19" foregroundColor="#00389416" backgroundColor="background" shadowColor="black" shadowOffset="-2,-2" transparent="1"/>
 		</screen>""" 
+
 	def __init__(self, session, servicelist=None, remaining=0):
 		self.servicelist = servicelist
 		self.remaining = remaining
@@ -140,8 +145,10 @@ class WerbeZapperSilder(ConfigListScreen, Screen):
 		if "header" in self:
 			self["header"].setText(_("%d min") % (self.duration.value))
 
+
 from keyids import KEYIDS
 from enigma import eActionMap
+
 
 class WerbezapperInfoBar:
 	def __init__(self, session, infobar):
@@ -183,10 +190,14 @@ class WerbezapperInfoBar:
 		from WerbeZapper import WerbezapperSettings
 		self.session.open(WerbezapperSettings)
 
+
 baseInfoBar__init__ = None
+
+
 def zapInfoBar__init__(self, session):
 	baseInfoBar__init__(self, session)
 	self.werbezapperinfobar = WerbezapperInfoBar(session, self)
+
 
 def session_start(reason, **kwargs):
 	if reason == 0 and "session" in kwargs:
@@ -199,6 +210,7 @@ def session_start(reason, **kwargs):
 		#	InfoBar.__init__ = zapInfoBar__init__
 		#except:
 		#	pass
+
 
 def start_channelselection(session=None, service=None):
 	from Screens.InfoBar import InfoBar
@@ -213,6 +225,7 @@ def start_channelselection(session=None, service=None):
 			end = start + duration
 			remaining_event = (end - now) / 60
 			session.open(WerbeZapperSilder, servicelist, remaining=remaining_event)
+
 
 def Plugins(**kwargs):
 	l = [

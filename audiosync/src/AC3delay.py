@@ -7,6 +7,7 @@ import os
 import NavigationInstance
 from __init__ import _
 
+
 class AC3delay:
 	def __init__(self):
 		self.iService = None

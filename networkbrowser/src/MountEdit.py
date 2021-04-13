@@ -14,6 +14,8 @@ from AutoMount import iAutoMount, AutoMount
 from Components.Sources.Boolean import Boolean
 
 # helper function to convert ips from a sring to a list of ints
+
+
 def convertIP(ip):
 	try:
 		strIP = ip.split('.')
@@ -23,6 +25,7 @@ def convertIP(ip):
 	except:
 		ip = [0, 0, 0, 0]
 	return ip
+
 
 class AutoMountEdit(Screen, ConfigListScreen):
 	skin = """

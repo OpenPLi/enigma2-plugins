@@ -34,6 +34,7 @@ audio_delay = None
 
 CONFIG_FILE = '/etc/enigma2/audiosync.conf'
 
+
 def getServiceDict():
 	filename = {}
 	if os.path.exists(CONFIG_FILE):
@@ -49,6 +50,7 @@ def getServiceDict():
 				filename[line[0]] = (line[0], line[1])
 	return filename
 
+
 def saveServiceDict(filename):
 	try:
 		cfg = open(CONFIG_FILE, 'w')
@@ -57,6 +59,7 @@ def saveServiceDict(filename):
 	for ref, val in filename.items():
 		cfg.write('%s %s\n' % (val[0], val[1]))
 	cfg.close()
+
 
 class AudioRestart():
 	def __init__(self):
@@ -104,6 +107,7 @@ class AudioRestart():
 					if (description.find("AC3") != -1 or description.find("AC-3") != -1) or description.find("DTS") != -1:
 						AC3 = True
 		return AC3
+
 
 class audioDelay(Screen):
 	def __init__(self, session):
@@ -153,6 +157,7 @@ class audioDelay(Screen):
 	def updateServiceDelay(self):
 		self.ServiceDelay = getServiceDict()
 
+
 def autostart(reason, **kwargs):
 	global audio_restart, Session, audio_delay
 	if reason == 0 and "session" in kwargs:
@@ -167,16 +172,20 @@ def autostart(reason, **kwargs):
 			audio_restart.removeNotifier()
 			audio_restart = None
 
+
 def main(session, **kwargs):
 	import AC3main
 	session.open(AC3main.AC3LipSync, plugin_path)
 
+
 def setup(session, **kwargs):
 	session.open(AC3setup.AC3LipSyncSetup, plugin_path)
+
 
 def audioMenu(session, **kwargs):
 	import AC3main
 	session.open(AC3main.AC3LipSync, plugin_path)
+
 
 def Plugins(path, **kwargs):
 	global plugin_path

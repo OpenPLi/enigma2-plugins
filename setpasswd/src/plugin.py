@@ -24,6 +24,7 @@ from random import Random
 
 title = _("Change Root Password")
 
+
 class ChangePasswdScreen(Screen):
 	skin = """
 		<screen position="center,center" size="585,250" title="%s" >
@@ -112,13 +113,16 @@ class ChangePasswdScreen(Screen):
 		if callback is not None and len(callback):
 			self.buildList(callback)
 
+
 def startChange(menuid):
 	if menuid != "system": 
 		return []
 	return [(title, main, "change_root_passwd", 50)]
 
+
 def main(session, **kwargs):
 	session.open(ChangePasswdScreen)
+
 
 def Plugins(**kwargs):
 	return PluginDescriptor(name=title, description=_("Change or reset the root password of your box"), where=[PluginDescriptor.WHERE_MENU], fnc=startChange)

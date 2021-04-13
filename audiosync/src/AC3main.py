@@ -14,6 +14,7 @@ from Screens.Screen import Screen
 from __init__ import _
 from plugin import getServiceDict, saveServiceDict, audio_delay
 
+
 class AC3LipSync(Screen, HelpableScreen, MovableScreen):
 
 	def __init__(self, session, plugin_path):
@@ -269,6 +270,7 @@ class AC3LipSync(Screen, HelpableScreen, MovableScreen):
 			self["ServiceInfo"].setText(sActiveAudio)
 		else:
 			self.close()
+
 
 class AC3SetCustomValue:
 	def __init__(self, session, iDelay, keyStep):

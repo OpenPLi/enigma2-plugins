@@ -9,11 +9,13 @@ POLICY = "/proc/stb/video/policy"
 # list of mode choices to cycle through
 MODE_CHOICES = ["letterbox", "panscan"]
 
+
 def get_mode():
 	f = open(POLICY, "r")
 	mode = f.read().strip("\n")
 	f.close()
 	return mode
+
 
 def set_mode(mode):
 	f = open(POLICY, "w")
@@ -44,15 +46,19 @@ class LetterBox(Screen):
 		set_mode(MODE_CHOICES[modeidx])
 		self.used = True
 
+
 letterbox = None
+
 
 def zoom_init(reason, **kwargs):
 	global letterbox
 	letterbox = LetterBox(kwargs["session"])
 
+
 def zoom_toggle(session, **kwargs):
 	global letterbox
 	letterbox.toggle()
+
 
 def Plugins(**kwargs):
 	plname = "LetterBox Zoom"

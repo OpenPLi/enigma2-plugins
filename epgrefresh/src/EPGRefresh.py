@@ -23,6 +23,7 @@ from RecordAdapter import RecordAdapter
 CONFIG = "/etc/enigma2/epgrefresh.xml"
 XML_VERSION = "1"
 
+
 class EPGRefresh:
 	"""Simple Class to refresh EPGData"""
 
@@ -199,6 +200,7 @@ class EPGRefresh:
 					else:
 						break
 		del additionalBouquets[:]
+
 		def sortServices(services): # sort by positions - better for motor
 			unsortedServices = []
 			for service in services:
@@ -469,5 +471,6 @@ class EPGRefresh:
 			self.stop()
 			if config.plugins.epgrefresh.enabled.value:
 				self.start()
+
 
 epgrefresh = EPGRefresh()

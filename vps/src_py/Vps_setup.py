@@ -11,6 +11,7 @@ from Components.config import config, getConfigListEntry
 
 VERSION = "1.8"
 
+
 class VPS_Setup(Screen, ConfigListScreen):
 	if getDesktop(0).size().width() <= 1280:
 		skin = """<screen name="vpsConfiguration" title="VPS-Plugin" position="center,center" size="600,370">
@@ -156,6 +157,7 @@ class VPS_Setup(Screen, ConfigListScreen):
 			x[1].save()
 
 		self.close(self.session)
+
 
 class VPS_Screen_Info(Screen):
 	if getDesktop(0).size().width() <= 1280:

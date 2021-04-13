@@ -176,6 +176,7 @@ class dreamMediathekStationsScreen(Screen):
 				self["streamlist"].setList(self.streamlist)
 				self["streamlist"].style = "default"
 
+
 def dreamMediathekMain(session, **kwargs):
 	session.open(dreamMediathekStationsScreen)
 

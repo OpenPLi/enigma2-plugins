@@ -21,6 +21,7 @@ from skin import parseColor, parseFont
 import time
 import datetime
 
+
 class AutoTimerFilterList(MenuList):
 	"""Defines a simple Component to show Timer name"""
 
@@ -71,6 +72,7 @@ class AutoTimerFilterList(MenuList):
 				self.instance.moveSelectionTo(idx)
 				break
 			idx += 1
+
 
 class AutoTimerFilterListOverview(Screen):
 
@@ -225,6 +227,7 @@ class AutoTimerFilterListOverview(Screen):
 			file_search_log.write(filter_txt)
 			file_search_log.close()
 		self.close()
+
 
 class AutoTimerFilterListEditor(Screen, ConfigListScreen):
 	"""Edit AutoTimer Filter"""

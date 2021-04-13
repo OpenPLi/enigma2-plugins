@@ -21,6 +21,7 @@ config.plugins.ZapHistoryConfigurator.history_radio = ConfigSet(choices=[])
 
 ################################################
 
+
 def addToHistory(instance, ref):
 	if config.plugins.ZapHistoryConfigurator.enable_zap_history.value == "off":
 		return
@@ -41,9 +42,11 @@ def addToHistory(instance, ref):
 			hlen -= 1
 		instance.history_pos = hlen - 1
 
+
 ChannelSelection.addToHistory = addToHistory
 
 ################################################
+
 
 class ZapHistoryConfigurator(ConfigListScreen, Screen):
 	skin = """
@@ -87,6 +90,7 @@ class ZapHistoryConfigurator(ConfigListScreen, Screen):
 		self.close()
 
 ################################################
+
 
 class ZapHistoryBrowser(Screen, ProtectedScreen):
 	skin = """

@@ -15,6 +15,7 @@ except:
 	config.misc.lastrotorposition = ConfigInteger(INVALID_POSITION)
 	configDishpip = config.misc.lastrotorposition
 
+
 class DishPiP(Screen):
 	STATE_HIDDEN = 0
 	STATE_SHOWN = 1

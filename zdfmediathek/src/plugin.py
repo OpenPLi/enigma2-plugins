@@ -70,17 +70,22 @@ except ImportError:
 
 ###################################################
 
+
 def decode(line):
 	pat = re.compile(r'\\u(....)')
+
 	def sub(mo):
 		return unichr(fromHex(mo.group(1)))
 	return pat.sub(sub, unicode(line))
 
+
 def decode2(line):
 	pat = re.compile(r'&#(\d+);')
+
 	def sub(mo):
 		return unichr(int(mo.group(1)))
 	return decode3(pat.sub(sub, unicode(line)))
+
 
 def decode3(line):
 	dic = htmlentitydefs.name2codepoint
@@ -89,10 +94,12 @@ def decode3(line):
 		line = line.replace(entity, unichr(dic[key]))
 	return line
 
+
 def fromHex(h):
 	return int(h, 16)
 
 ###################################################
+
 
 class ChangedMoviePlayer(MoviePlayer):
 	def __init__(self, session, service):
@@ -120,6 +127,7 @@ class ChangedMoviePlayer(MoviePlayer):
 		pass
 
 ###################################################
+
 
 def getMovieDetails(div):
 	list = []
@@ -163,6 +171,7 @@ def getMovieDetails(div):
 		return list
 	else:
 		return None
+
 
 def getCategoryDetails(div):
 	list = []
@@ -243,6 +252,7 @@ def getCategoryDetails(div):
 
 ###################################################
 
+
 def getMovieUrl(url):
 	try:
 		f = urllib2.urlopen(url)
@@ -256,6 +266,7 @@ def getMovieUrl(url):
 		return txt[idx:idx2 + 4]
 	else:
 		return None
+
 
 def getTitleLinks(html):
 	links = []
@@ -271,6 +282,7 @@ def getTitleLinks(html):
 			name = decode2(decode(name)).encode("UTF-8")
 			links.append([url, name])
 	return links
+
 
 def getLeftMenu(html):
 	list = []
@@ -288,6 +300,7 @@ def getLeftMenu(html):
 			if (name != "Hilfe") and (not 'Podcasts' in name): # TODO: Podcasts brauchen noch etwas Arbeit... derzeit deaktiviert
 				list.append([url, name, active])
 	return list
+
 
 def getRightMenu(html):
 	list = []
@@ -348,6 +361,7 @@ def getRightMenu(html):
 	return [TYPE_NOTHING, list]
 
 ###################################################
+
 
 class LeftMenuList(MenuList):
 	def __init__(self):
@@ -425,6 +439,7 @@ class LeftMenuList(MenuList):
 			self.select(self.current + 1)
 
 ###################################################
+
 
 class RightMenuList(MenuList):
 	def __init__(self):
@@ -531,6 +546,7 @@ class RightMenuList(MenuList):
 
 ###################################################
 
+
 class ZDFMediathekCache(Screen):
 	skin = """
 		<screen position="center,center" size="76,76" flags="wfNoBorder" backgroundColor="#ffffff" >
@@ -564,6 +580,7 @@ class ZDFMediathekCache(Screen):
 		self["spinner"].instance.setPixmap(png)
 
 ###################################################
+
 
 class ZDFMediathek(Screen, HelpableScreen):
 	def __init__(self, session):
@@ -842,8 +859,10 @@ class ZDFMediathek(Screen, HelpableScreen):
 
 ###################################################
 
+
 def start(session, **kwargs):
 	session.open(ZDFMediathek)
+
 
 def Plugins(**kwargs):
 	return PluginDescriptor(name="ZDF Mediathek", description="Streame von der ZDF Mediathek", where=[PluginDescriptor.WHERE_EXTENSIONSMENU, PluginDescriptor.WHERE_PLUGINMENU], fnc=start)

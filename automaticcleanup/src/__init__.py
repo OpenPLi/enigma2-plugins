@@ -8,8 +8,10 @@ import gettext
 PluginLanguageDomain = "AutomaticCleanup"
 PluginLanguagePath = "SystemPlugins/AutomaticCleanup/locale"
  
+
 def localeInit():
 	gettext.bindtextdomain(PluginLanguageDomain, resolveFilename(SCOPE_PLUGINS, PluginLanguagePath))
+
 
 def _(txt):
 	t = gettext.dgettext(PluginLanguageDomain, txt)
@@ -17,6 +19,7 @@ def _(txt):
 		#print "[%s] fallback to default translation for %s" %(PluginLanguageDomain, txt)
 		t = gettext.gettext(txt)
 	return t
+
 
 localeInit()
 language.addCallback(localeInit)
