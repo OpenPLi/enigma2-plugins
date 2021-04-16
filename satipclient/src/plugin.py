@@ -140,7 +140,7 @@ class SATIPDiscovery:
 #		print "dataReceive:\n", data
 #		print "\n"
 		serverData = self.dataParse(data)
-		if serverData.has_key('LOCATION'):
+		if 'LOCATION' in serverData:
 			self.xmlParse(serverData['LOCATION'])
 
 	def dataParse(self, data):
@@ -150,7 +150,7 @@ class SATIPDiscovery:
 			if line.find(':') != -1:
 				(attr, value) = line.split(':', 1)
 				attr = attr.strip().upper()
-				if not serverData.has_key(attr):
+				if attr not in serverData:
 					serverData[attr] = value.strip()
 
 #		for (key, value) in serverData.items():

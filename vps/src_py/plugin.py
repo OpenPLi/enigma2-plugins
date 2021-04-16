@@ -28,7 +28,7 @@ recordTimerWakeupAuto = False
 
 def autostart(reason, **kwargs):
 	if reason == 0:
-		if kwargs.has_key("session"):
+		if "session" in kwargs:
 			session = kwargs["session"]
 			vps_timers.session = session
 			vps_timers.checkTimer()
