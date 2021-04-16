@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Enigma 2 Filebrowser Plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-22 18:20+0200\n"
+"POT-Creation-Date: 2021-04-16 16:27+0430\n"
 "PO-Revision-Date: 2020-10-15 15:22+0300\n"
 "Last-Translator: mosad - مساعد الجعيد <abo-mishal@hotmail.com>\n"
 "Language-Team: mosad - مساعد الجعيد\n"
@@ -16,77 +16,32 @@ msgstr ""
 "X-Generator: Poedit 2.4.1\n"
 "X-Poedit-SearchPath-0: ../src\n"
 
-msgid "Filebrowser"
-msgstr "متصفح الملفات"
-
-msgid "manage local Files"
-msgstr "إدارة الملفات"
+msgid "Add plugin to Extensionmenu"
+msgstr "إضافة البلجن إلى ملحقات القائمة"
 
 msgid "Add plugin to Mainmenu"
 msgstr "إضافة البلجن إلى القائمة الرئيسية"
 
-msgid "Add plugin to Extensionmenu"
-msgstr "إضافة البلجن إلى ملحقات القائمة"
-
-msgid "Count directory content size"
-msgstr "حساب حجم محتوى المسار"
-
-msgid "Save path positions on exit"
-msgstr "حفظ موقع المسار عند الخروج"
-
-msgid "Left panel position"
-msgstr "مكان لوحة التحكم اليسرى"
-
-msgid "Right panel position"
-msgstr "مكان لوحة التحكم اليمنى"
-
 msgid "Cancel"
 msgstr "إلغاء"
-
-msgid "OK"
-msgstr "موافق"
-
-msgid "Settings"
-msgstr "إعدادات"
-
-msgid "Delete"
-msgstr "حذف"
-
-msgid "Move"
-msgstr "تحريك"
 
 msgid "Copy"
 msgstr "نسخ"
 
-msgid "Rename"
-msgstr "إعادة التسميه"
-
-msgid "Select location"
-msgstr "حدد الموقع"
-
-msgid "Create directory"
-msgstr "إنشاء المسار"
-
-msgid "Select operation:"
-msgstr "حدد العملية:"
-
 msgid "Copy directory"
 msgstr "نسخ المسار"
-
-msgid "to"
-msgstr "إلى"
 
 msgid "Copy file"
 msgstr "نسخ الملف"
 
-msgid "from"
-msgstr "من"
+msgid "Count directory content size"
+msgstr "حساب حجم محتوى المسار"
 
-msgid "copying directory, wait please ..."
-msgstr "نسخ المسار، والانتظار من فضلك ..."
+msgid "Create directory"
+msgstr "إنشاء المسار"
 
-msgid "copying file ..."
-msgstr "نسخ الملف ..."
+msgid "Delete"
+msgstr "حذف"
 
 msgid "Delete directory"
 msgstr "حذف المسار"
@@ -94,14 +49,14 @@ msgstr "حذف المسار"
 msgid "Delete file"
 msgstr "حذف الملف"
 
-msgid "from dir"
-msgstr "من المسار"
+msgid "Filebrowser"
+msgstr "متصفح الملفات"
 
-msgid "deleting directory ..."
-msgstr "حذف الدليل ..."
+msgid "Left panel position"
+msgstr "مكان لوحة التحكم اليسرى"
 
-msgid "deleting file ..."
-msgstr "حذف الملف ..."
+msgid "Move"
+msgstr "تحريك"
 
 msgid "Move directory"
 msgstr "نقل المسار"
@@ -109,14 +64,11 @@ msgstr "نقل المسار"
 msgid "Move file"
 msgstr "نقل الملف"
 
-msgid "to dir"
-msgstr "إلى المسار"
+msgid "OK"
+msgstr "موافق"
 
-msgid "moving directory, wait please ..."
-msgstr "نقل المسار, إنتظر من فضلك ..."
-
-msgid "moving file ..."
-msgstr "نقل الملف ..."
+msgid "Rename"
+msgstr "إعادة التسميه"
 
 msgid "Rename directory"
 msgstr "إعادة تسمية المسار"
@@ -124,14 +76,62 @@ msgstr "إعادة تسمية المسار"
 msgid "Rename file"
 msgstr "إعادة تسمية الملف"
 
+msgid "Right panel position"
+msgstr "مكان لوحة التحكم اليمنى"
+
+msgid "Save path positions on exit"
+msgstr "حفظ موقع المسار عند الخروج"
+
+msgid "Select location"
+msgstr "حدد الموقع"
+
+msgid "Select operation:"
+msgstr "حدد العملية:"
+
+msgid "Settings"
+msgstr "إعدادات"
+
+msgid "copying directory, wait please ..."
+msgstr "نسخ المسار، والانتظار من فضلك ..."
+
+msgid "copying file ..."
+msgstr "نسخ الملف ..."
+
+msgid "creating directory ..."
+msgstr "إنشاء المسار ..."
+
+msgid "deleting directory ..."
+msgstr "حذف الدليل ..."
+
+msgid "deleting file ..."
+msgstr "حذف الملف ..."
+
+msgid "from"
+msgstr "من"
+
+msgid "from dir"
+msgstr "من المسار"
+
+msgid "manage local Files"
+msgstr "إدارة الملفات"
+
+msgid "moving directory, wait please ..."
+msgstr "نقل المسار, إنتظر من فضلك ..."
+
+msgid "moving file ..."
+msgstr "نقل الملف ..."
+
+msgid "no Viewer installed for this mimetype!"
+msgstr "لا يوجد شي مثبت لهذا النوع المحاكي!"
+
 msgid "renaming directory ..."
 msgstr "إعادة تسمية المسار ..."
 
 msgid "renaming file ..."
 msgstr "إعادة تسمية الملف ..."
 
-msgid "creating directory ..."
-msgstr "إنشاء المسار ..."
+msgid "to"
+msgstr "إلى"
 
-msgid "no Viewer installed for this mimetype!"
-msgstr "لا يوجد شي مثبت لهذا النوع المحاكي!"
+msgid "to dir"
+msgstr "إلى المسار"

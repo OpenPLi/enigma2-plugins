@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-05-25 08:39+0200\n"
+"POT-Creation-Date: 2021-04-16 16:27+0430\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,12 +21,6 @@ msgid ""
 "\n"
 "\n"
 "Cancel?"
-msgstr ""
-
-msgid " (if services are enabled, bouquets are ignored)."
-msgstr ""
-
-msgid " (if services are enabled, bouquets are ignored.)."
 msgstr ""
 
 msgid " (only services from bouquets when use \"favorites description match\")."
@@ -115,6 +109,9 @@ msgid "All channels"
 msgstr ""
 
 msgid "All non-repeating timers"
+msgstr ""
+
+msgid "Allow double timer for different services"
 msgstr ""
 
 msgid "Always write config"
@@ -438,6 +435,9 @@ msgstr ""
 msgid "Help"
 msgstr ""
 
+msgid "Here you can specify whether simultaneous timers of the same program can be created. This allows simultaneous recording of a program with different resolutions. (e.g. SD service and HD service)."
+msgstr ""
+
 msgid "If 0, the popup will remain open."
 msgstr ""
 
@@ -448,6 +448,15 @@ msgid "If enabled, the polling will be skipped if EPGRefresh is currently runnin
 msgstr ""
 
 msgid "If enabled, the polling will be skipped if a recording is in progress."
+msgstr ""
+
+msgid "If specified bouquets"
+msgstr ""
+
+msgid "If specified services"
+msgstr ""
+
+msgid "If specified services or bouquets"
 msgstr ""
 
 msgid "If the style is advanced, you will see more information about each auto timer. This change will not take effect until the plugin has started again."
@@ -1089,6 +1098,12 @@ msgid ""
 "%s"
 msgstr ""
 
+msgid "[B]  "
+msgstr ""
+
+msgid "[S]  "
+msgstr ""
+
 msgid "add AutoTimer"
 msgstr ""
 
@@ -1228,109 +1243,6 @@ msgstr ""
 msgid "zap and record"
 msgstr ""
 
-msgid "Abort this Wizard."
-msgstr ""
-
-msgid "Create a new AutoTimer."
-msgstr ""
-
-msgid ""
-"Filters are another powerful tool when matching events. An AutoTimer can be restricted to certain Weekdays or only match an event with a text inside eg it's Description.\n"
-"Press BLUE to add a new restriction and YELLOW to remove the selected one."
-msgstr ""
-
-msgid ""
-"It's possible to restrict an AutoTimer to certain Services or Bouquets or to deny specific ones.\n"
-"An Event will only match this AutoTimer if it's on a specific and not denied Service (inside a Bouquet).\n"
-"Press BLUE to add a new restriction and YELLOW to remove the selected one."
-msgstr ""
-
-msgid "No, remove them."
-msgstr ""
-
-msgid ""
-"Thank you for using the wizard. Your new AutoTimer has been added to the List.\n"
-"Please press OK to continue."
-msgstr ""
-
-msgid ""
-"The Timer will not be added to the List.\n"
-"Please press OK to close this Wizard."
-msgstr ""
-
-msgid "The Timespan of an AutoTimer is the first 'advanced' attribute. If a timespan is specified an event will only match this AutoTimer if it lies inside of this timespan."
-msgstr ""
-
-msgid ""
-"Welcome.\n"
-"\n"
-"This Wizard will help you to create a new AutoTimer by providing descriptions for common settings."
-msgstr ""
-
-msgid "Yes, keep them."
-msgstr ""
-
-msgid ""
-"You can set the basic properties of an AutoTimer here.\n"
-"While 'Name' is just a human-readable name displayed in the Overview, 'Match in title' is what is looked for in the EPG."
-msgstr ""
-
-msgid ""
-"You did not provide a valid 'Match in title' Attribute for your new AutoTimer.\n"
-"As this is a mandatory Attribute you cannot continue without doing so."
-msgstr ""
-
-msgid ""
-"You successfully configured a new AutoTimer. Do you want to add it to the list?\n"
-"\n"
-"You can go back a step by pressing EXIT on your remote."
-msgstr ""
-
-msgid ""
-"Your 'Match in title' Attribute ends with a Whitespace.\n"
-"Please confirm if this was intentional, if not they will be removed."
-msgstr ""
-
-msgid "AutoTimer FAQ"
-msgstr ""
-
-msgid "FAQ"
-msgstr ""
-
-msgid "Frequently asked questions about the AutoTimer"
-msgstr ""
-
-msgid ""
-"Question: I found a problem with the AutoTimer, can you fix it? \n"
-"Answer: First try the AutoTimer version in a recent (experimental) Image to see if the problem was fixed. Then read the Help again and the upcoming FAQs to make sure that this is actually a problem and not expected behavior. \n"
-"If you still think there is something wrong with the AutoTimer, please visit http://www.dream-multimedia-tv.de/board and post your problem there. \n"
-"\n"
-"Q: The plugin only adds timers when leaving the configuration, not automatically. What can I do? \n"
-"A: From the Overview press MENU and enter the \"Setup\". In this screen enable \"Poll automatically\" and you should be good to go."
-msgstr ""
-
-msgid ""
-"Question: My AutoTimer for \"Nachrichten\" does not record the \"Spätnachrichten\". \n"
-"Answer: Check \"Search type\" and \"Search strictness\" for the given AutoTimer. \n"
-"\n"
-"Q: The show I'm trying to record contains umlauts in its title. AutoTimer does not find it. \n"
-"A: Check the \"EPG encoding\" for the given AutoTimer. For german stations \"ISO8859-15\" should be selected. \n"
-"\n"
-"Q: I seem to be unable to record two subsequent events. There is only a single timer created that spans (part of) both events. \n"
-"A: From the Overview press MENU and enter the \"Setup\". In this screen disable \"Guess existing timer based on begin/end\"."
-msgstr ""
-
-msgid ""
-"Question: You keep talking about help being provided for each parameter. I'm unable to read it (in part or in full). \n"
-"Answer: Try using the default skin and if it works ask the creator of your regular skin. If it still does not work your image might not provide the actual default skin so contact the creator of your image."
-msgstr ""
-
-msgid ""
-"This FAQ is supposed to help everyone unwilling to help themselves by reading all the provided help available, and those who did not find a solution to their problems within the provided documentation. \n"
-"\n"
-"To make these hints a little easier to read, they are split up on multiple pages. You can go to the next page using the BLUE button on your remote control and back using the YELLOW one. Pressing the RED button or EXIT will close the FAQ."
-msgstr ""
-
 msgid "AutoTimer Help"
 msgstr ""
 
@@ -1406,4 +1318,107 @@ msgid ""
 "You now know almost everything there is to know about the AutoTimer-Plugin.\n"
 "\n"
 "As a final hint I can't stress how important it is to take a look at the help texts that are shown in the setup dialogs as they cover the most frequently asked questions. Surprisingly even after the hints were added ;-)."
+msgstr ""
+
+msgid "AutoTimer FAQ"
+msgstr ""
+
+msgid "FAQ"
+msgstr ""
+
+msgid "Frequently asked questions about the AutoTimer"
+msgstr ""
+
+msgid ""
+"Question: I found a problem with the AutoTimer, can you fix it? \n"
+"Answer: First try the AutoTimer version in a recent (experimental) Image to see if the problem was fixed. Then read the Help again and the upcoming FAQs to make sure that this is actually a problem and not expected behavior. \n"
+"If you still think there is something wrong with the AutoTimer, please visit http://www.dream-multimedia-tv.de/board and post your problem there. \n"
+"\n"
+"Q: The plugin only adds timers when leaving the configuration, not automatically. What can I do? \n"
+"A: From the Overview press MENU and enter the \"Setup\". In this screen enable \"Poll automatically\" and you should be good to go."
+msgstr ""
+
+msgid ""
+"Question: My AutoTimer for \"Nachrichten\" does not record the \"Spätnachrichten\". \n"
+"Answer: Check \"Search type\" and \"Search strictness\" for the given AutoTimer. \n"
+"\n"
+"Q: The show I'm trying to record contains umlauts in its title. AutoTimer does not find it. \n"
+"A: Check the \"EPG encoding\" for the given AutoTimer. For german stations \"ISO8859-15\" should be selected. \n"
+"\n"
+"Q: I seem to be unable to record two subsequent events. There is only a single timer created that spans (part of) both events. \n"
+"A: From the Overview press MENU and enter the \"Setup\". In this screen disable \"Guess existing timer based on begin/end\"."
+msgstr ""
+
+msgid ""
+"Question: You keep talking about help being provided for each parameter. I'm unable to read it (in part or in full). \n"
+"Answer: Try using the default skin and if it works ask the creator of your regular skin. If it still does not work your image might not provide the actual default skin so contact the creator of your image."
+msgstr ""
+
+msgid ""
+"This FAQ is supposed to help everyone unwilling to help themselves by reading all the provided help available, and those who did not find a solution to their problems within the provided documentation. \n"
+"\n"
+"To make these hints a little easier to read, they are split up on multiple pages. You can go to the next page using the BLUE button on your remote control and back using the YELLOW one. Pressing the RED button or EXIT will close the FAQ."
+msgstr ""
+
+msgid "Abort this Wizard."
+msgstr ""
+
+msgid "Create a new AutoTimer."
+msgstr ""
+
+msgid ""
+"Filters are another powerful tool when matching events. An AutoTimer can be restricted to certain Weekdays or only match an event with a text inside eg it's Description.\n"
+"Press BLUE to add a new restriction and YELLOW to remove the selected one."
+msgstr ""
+
+msgid ""
+"It's possible to restrict an AutoTimer to certain Services or Bouquets or to deny specific ones.\n"
+"An Event will only match this AutoTimer if it's on a specific and not denied Service (inside a Bouquet).\n"
+"Press BLUE to add a new restriction and YELLOW to remove the selected one."
+msgstr ""
+
+msgid "No, remove them."
+msgstr ""
+
+msgid ""
+"Thank you for using the wizard. Your new AutoTimer has been added to the List.\n"
+"Please press OK to continue."
+msgstr ""
+
+msgid ""
+"The Timer will not be added to the List.\n"
+"Please press OK to close this Wizard."
+msgstr ""
+
+msgid "The Timespan of an AutoTimer is the first 'advanced' attribute. If a timespan is specified an event will only match this AutoTimer if it lies inside of this timespan."
+msgstr ""
+
+msgid ""
+"Welcome.\n"
+"\n"
+"This Wizard will help you to create a new AutoTimer by providing descriptions for common settings."
+msgstr ""
+
+msgid "Yes, keep them."
+msgstr ""
+
+msgid ""
+"You can set the basic properties of an AutoTimer here.\n"
+"While 'Name' is just a human-readable name displayed in the Overview, 'Match in title' is what is looked for in the EPG."
+msgstr ""
+
+msgid ""
+"You did not provide a valid 'Match in title' Attribute for your new AutoTimer.\n"
+"As this is a mandatory Attribute you cannot continue without doing so."
+msgstr ""
+
+msgid ""
+"You successfully configured a new AutoTimer. Do you want to add it to the list?\n"
+"\n"
+"You can go back a step by pressing EXIT on your remote."
+msgstr ""
+
+msgid ""
+"Your 'Match in title' Attribute ends with a Whitespace.\n"
+"Please confirm if this was intentional, if not they will be removed."
 msgstr ""

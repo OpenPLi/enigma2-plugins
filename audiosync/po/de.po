@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: AudioSync\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"POT-Creation-Date: 2021-04-16 16:27+0430\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Tode <sagichnet@gmx.net>\n"
 "Language-Team: \n"
@@ -31,6 +31,9 @@ msgstr "Audio Sync"
 msgid "Audio Sync setup"
 msgstr "Audio Sync setup"
 
+msgid "Audio track:"
+msgstr "Kanal Tonspur:"
+
 msgid "Cancel"
 msgstr "Abbrechen"
 
@@ -42,9 +45,6 @@ msgstr "Plugin am oberen Rand zentrieren"
 
 msgid "Change active delay"
 msgstr "Aktive Verzögerung ändern"
-
-msgid "Audio track:"
-msgstr "Kanal Tonspur:"
 
 msgid "Decrease delay"
 msgstr "Verzögerung verringern"
@@ -170,6 +170,9 @@ msgstr "Kanal delay"
 msgid "Set delay to %i ms (can be set)"
 msgstr "Verzögerung auf %i ms setzen"
 
+msgid "Sets the audio delay (LipSync)"
+msgstr "Setzt die verschiedenen audio- verzögerungen (LipSync)"
+
 msgid "Setting key canceled"
 msgstr "Setzen der Taste abgebrochen"
 
@@ -201,6 +204,3 @@ msgstr "nach Standby"
 
 msgid "disabled"
 msgstr "deaktiviert"
-
-msgid "Sets the audio delay (LipSync)"
-msgstr "Setzt die verschiedenen audio- verzögerungen (LipSync)"

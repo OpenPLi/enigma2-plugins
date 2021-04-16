@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-26 22:23+0200\n"
+"POT-Creation-Date: 2021-04-16 16:27+0430\n"
 "PO-Revision-Date: 2012-02-17 12:13+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -23,12 +23,6 @@ msgid ""
 "\n"
 "Cancel?"
 msgstr "Cancel"
-
-msgid " (if services are enabled, bouquets are ignored)."
-msgstr ""
-
-msgid " (if services are enabled, bouquets are ignored.)."
-msgstr ""
 
 msgid " (only services from bouquets when use \"favorites description match\")."
 msgstr ""
@@ -129,6 +123,9 @@ msgstr "Channels"
 
 msgid "All non-repeating timers"
 msgstr "All non-repeating timers"
+
+msgid "Allow double timer for different services"
+msgstr ""
 
 msgid "Always write config"
 msgstr ""
@@ -503,6 +500,9 @@ msgstr "Guess existing timer based on begin/end"
 msgid "Help"
 msgstr "Help"
 
+msgid "Here you can specify whether simultaneous timers of the same program can be created. This allows simultaneous recording of a program with different resolutions. (e.g. SD service and HD service)."
+msgstr ""
+
 msgid "If 0, the popup will remain open."
 msgstr ""
 
@@ -513,6 +513,16 @@ msgid "If enabled, the polling will be skipped if EPGRefresh is currently runnin
 msgstr ""
 
 msgid "If enabled, the polling will be skipped if a recording is in progress."
+msgstr ""
+
+msgid "If specified bouquets"
+msgstr ""
+
+#, fuzzy
+msgid "If specified services"
+msgstr "On same service"
+
+msgid "If specified services or bouquets"
 msgstr ""
 
 msgid "If the style is advanced, you will see more information about each auto timer. This change will not take effect until the plugin has started again."
@@ -1337,6 +1347,12 @@ msgid ""
 msgstr ""
 "Your config file is not well-formed:\n"
 "%s"
+
+msgid "[B]  "
+msgstr ""
+
+msgid "[S]  "
+msgstr ""
 
 msgid "add AutoTimer"
 msgstr "add AutoTimer"

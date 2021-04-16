@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-05-25 08:39+0200\n"
+"POT-Creation-Date: 2021-04-16 16:27+0430\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,6 +21,12 @@ msgid "%d.%B %Y"
 msgstr ""
 
 msgid "Cancel"
+msgstr ""
+
+msgid "Check for PDC"
+msgstr ""
+
+msgid "Check for PDC availability on each service"
 msgstr ""
 
 msgid "Enable VPS"
@@ -162,10 +168,4 @@ msgid "Yes, don't ask again"
 msgstr ""
 
 msgid "always ask"
-msgstr ""
-
-msgid "Check for PDC"
-msgstr ""
-
-msgid "Check for PDC availability on each service"
 msgstr ""

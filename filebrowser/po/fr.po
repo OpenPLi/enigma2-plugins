@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-22 18:20+0200\n"
+"POT-Creation-Date: 2021-04-16 16:27+0430\n"
 "PO-Revision-Date: 2020-05-22 18:23+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -18,82 +18,92 @@ msgstr ""
 "X-Generator: Poedit 2.0.6\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-msgid "Filebrowser"
-msgstr "Navigateur de fichiers"
-
-msgid "manage local Files"
-msgstr "gérer les fichiers locaux"
+msgid "Add plugin to Extensionmenu"
+msgstr "Ajouter le plugin dans le menu des extensions"
 
 msgid "Add plugin to Mainmenu"
 msgstr "Ajouter le plugin au menu principal"
 
-msgid "Add plugin to Extensionmenu"
-msgstr "Ajouter le plugin dans le menu des extensions"
-
-msgid "Count directory content size"
-msgstr ""
-
-msgid "Save path positions on exit"
-msgstr "Sauvegarder la position en sortant"
-
-msgid "Left panel position"
-msgstr "Position du panneau gauche"
-
-msgid "Right panel position"
-msgstr "Position du panneau droit"
-
 msgid "Cancel"
 msgstr "Annuler"
-
-msgid "OK"
-msgstr ""
-
-msgid "Settings"
-msgstr "Paramètres"
-
-msgid "Delete"
-msgstr "Supprimer"
-
-msgid "Move"
-msgstr "Déplacer"
 
 msgid "Copy"
 msgstr "Copier"
 
+#, fuzzy
+msgid "Copy directory"
+msgstr "copier fichier"
+
+#, fuzzy
+msgid "Copy file"
+msgstr "copier fichier"
+
+msgid "Count directory content size"
+msgstr ""
+
+#, fuzzy
+msgid "Create directory"
+msgstr "supprimer le fichier"
+
+msgid "Delete"
+msgstr "Supprimer"
+
+#, fuzzy
+msgid "Delete directory"
+msgstr "supprimer le fichier"
+
+#, fuzzy
+msgid "Delete file"
+msgstr "supprimer le fichier"
+
+msgid "Filebrowser"
+msgstr "Navigateur de fichiers"
+
+msgid "Left panel position"
+msgstr "Position du panneau gauche"
+
+msgid "Move"
+msgstr "Déplacer"
+
+#, fuzzy
+msgid "Move directory"
+msgstr "déplacer fichier"
+
+#, fuzzy
+msgid "Move file"
+msgstr "déplacer fichier"
+
+msgid "OK"
+msgstr ""
+
 msgid "Rename"
 msgstr "Renommer"
+
+#, fuzzy
+msgid "Rename directory"
+msgstr "déplacer fichier"
+
+#, fuzzy
+msgid "Rename file"
+msgstr "renommer fichier"
+
+msgid "Right panel position"
+msgstr "Position du panneau droit"
+
+msgid "Save path positions on exit"
+msgstr "Sauvegarder la position en sortant"
 
 msgid "Select location"
 msgstr "Choisir la localisation"
 
 #, fuzzy
-#| msgid "delete file"
-msgid "Create directory"
-msgstr "supprimer le fichier"
-
-#, fuzzy
-#| msgid "Select location"
 msgid "Select operation:"
 msgstr "Choisir la localisation"
 
-#, fuzzy
-#| msgid "copy file"
-msgid "Copy directory"
-msgstr "copier fichier"
-
-msgid "to"
-msgstr ""
+msgid "Settings"
+msgstr "Paramètres"
 
 #, fuzzy
-#| msgid "copy file"
-msgid "Copy file"
-msgstr "copier fichier"
-
-msgid "from"
-msgstr ""
-
-#, fuzzy
-#| msgid "copying file ..."
 msgid "copying directory, wait please ..."
 msgstr "copie du fichier …"
 
@@ -101,38 +111,24 @@ msgid "copying file ..."
 msgstr "copie du fichier …"
 
 #, fuzzy
-#| msgid "delete file"
-msgid "Delete directory"
-msgstr "supprimer le fichier"
+msgid "creating directory ..."
+msgstr "suppression fichier"
 
 #, fuzzy
-#| msgid "delete file"
-msgid "Delete file"
-msgstr "supprimer le fichier"
-
-msgid "from dir"
-msgstr ""
-
-#, fuzzy
-#| msgid "deleting file ..."
 msgid "deleting directory ..."
 msgstr "suppression fichier"
 
 msgid "deleting file ..."
 msgstr "suppression fichier"
 
-#, fuzzy
-#| msgid "move file"
-msgid "Move directory"
-msgstr "déplacer fichier"
-
-#, fuzzy
-#| msgid "move file"
-msgid "Move file"
-msgstr "déplacer fichier"
-
-msgid "to dir"
+msgid "from"
 msgstr ""
+
+msgid "from dir"
+msgstr ""
+
+msgid "manage local Files"
+msgstr "gérer les fichiers locaux"
 
 msgid "moving directory, wait please ..."
 msgstr ""
@@ -140,37 +136,18 @@ msgstr ""
 msgid "moving file ..."
 msgstr "déplacement fichier …"
 
-#, fuzzy
-#| msgid "move file"
-msgid "Rename directory"
-msgstr "déplacer fichier"
+msgid "no Viewer installed for this mimetype!"
+msgstr "pas de visualiseur installé pour ce type mime!"
 
 #, fuzzy
-#| msgid "rename file"
-msgid "Rename file"
-msgstr "renommer fichier"
-
-#, fuzzy
-#| msgid "deleting file ..."
 msgid "renaming directory ..."
 msgstr "suppression fichier"
 
 msgid "renaming file ..."
 msgstr "renommage fichier …"
 
-#, fuzzy
-#| msgid "deleting file ..."
-msgid "creating directory ..."
-msgstr "suppression fichier"
+msgid "to"
+msgstr ""
 
-msgid "no Viewer installed for this mimetype!"
-msgstr "pas de visualiseur installé pour ce type mime!"
-
-#~ msgid "yes"
-#~ msgstr "oui"
-
-#~ msgid "no"
-#~ msgstr "non"
-
-#~ msgid "Ok"
-#~ msgstr "Ok"
+msgid "to dir"
+msgstr ""

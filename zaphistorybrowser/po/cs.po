@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ZapHistoryBrowser\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"POT-Creation-Date: 2021-04-16 16:27+0430\n"
 "PO-Revision-Date: 2020-06-27 10:38+0200\n"
 "Last-Translator: Pr2 <dummy@dummy.com>\n"
 "Language-Team: ims21 <ims@openpli.org>\n"
@@ -16,6 +16,9 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 "X-Poedit-SearchPath-0: /home/aliabdul/dream/enigma2/enigma2-plugins/zaphistorybrowser/src\n"
 
+msgid "Cancel"
+msgstr ""
+
 msgid "Clear"
 msgstr "Vyčistit"
 
@@ -28,11 +31,11 @@ msgstr "Smazat"
 msgid "Enable zap history:"
 msgstr "Povolit historii přepínání:"
 
-msgid "Enigma1-like history:"
-msgstr "Historie ve stylu Enigma-1:"
-
 msgid "Maximum zap history entries:"
 msgstr "Maximální délka historie přepnutí:"
+
+msgid "OK"
+msgstr ""
 
 msgid "Zap & Close"
 msgstr "Zap & zavřít"

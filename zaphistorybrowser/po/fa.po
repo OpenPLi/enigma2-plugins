@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: zap history browser Persian Translation\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"POT-Creation-Date: 2021-04-16 16:27+0430\n"
 "PO-Revision-Date: 2012-07-26 00:35+0330\n"
 "Last-Translator: mehdi <mehdi_ar_yekta@yahoo.com>\n"
 "Language-Team: Persian Professionals <persianpros@yahoo.com>\n"
@@ -16,6 +16,9 @@ msgstr ""
 "X-Poedit-Country: IRAN, ISLAMIC REPUBLIC OF\n"
 "X-Poedit-SearchPath-0: /home/aliabdul/dream/enigma2/enigma2-plugins/zaphistorybrowser/src\n"
 
+msgid "Cancel"
+msgstr ""
+
 msgid "Clear"
 msgstr "شفاف"
 
@@ -28,12 +31,11 @@ msgstr "حذف کردن"
 msgid "Enable zap history:"
 msgstr "فعال سازی پیشنه جابجایی"
 
-#, fuzzy
-msgid "Enigma1-like history:"
-msgstr "فعال سازی پیشنه جابجایی"
-
 msgid "Maximum zap history entries:"
 msgstr "بیشترین ورودی های پیشینه جابجایی"
+
+msgid "OK"
+msgstr ""
 
 msgid "Zap & Close"
 msgstr "جابجایی و بستن"

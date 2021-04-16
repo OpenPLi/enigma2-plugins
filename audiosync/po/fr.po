@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: AudioSync\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-09 09:14+0200\n"
+"POT-Creation-Date: 2021-04-16 16:27+0430\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Pr2 <dummy@dummy.com>\n"
 "Language-Team: \n"
@@ -31,6 +31,9 @@ msgstr "Audio Sync"
 msgid "Audio Sync setup"
 msgstr "Configuration Audio Sync"
 
+msgid "Audio track:"
+msgstr "Canal audio:"
+
 msgid "Cancel"
 msgstr "Annuler"
 
@@ -42,9 +45,6 @@ msgstr "Centrer l'écran sur le bord supérieur"
 
 msgid "Change active delay"
 msgstr "Modifier le délai actif"
-
-msgid "Audio track:"
-msgstr "Canal audio:"
 
 msgid "Decrease delay"
 msgstr "Diminuer le délai"
@@ -170,6 +170,9 @@ msgstr "Délai service"
 msgid "Set delay to %i ms (can be set)"
 msgstr "Définir le délai à %i ms (peut être défini)"
 
+msgid "Sets the audio delay (LipSync)"
+msgstr "Définir le délai audio (synchro lèvre) (LipSync)"
+
 msgid "Setting key canceled"
 msgstr "Définition des touches annulé"
 
@@ -201,6 +204,3 @@ msgstr "après veille"
 
 msgid "disabled"
 msgstr "désactivé"
-
-msgid "Sets the audio delay (LipSync)"
-msgstr "Définir le délai audio (synchro lèvre) (LipSync)"

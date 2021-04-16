@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: AC3LipSync\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"POT-Creation-Date: 2021-04-16 16:27+0430\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Vytenis P. <vyteniui@gmail.com>\n"
 "Language-Team: Vytenis P. <vyteniui@gmail.com>\n"
@@ -32,6 +32,9 @@ msgstr "Garso sinchronizavimas"
 msgid "Audio Sync setup"
 msgstr "Garso sinchronizavimas"
 
+msgid "Audio track:"
+msgstr "Garso kanalas:"
+
 msgid "Cancel"
 msgstr "Atšaukti"
 
@@ -43,9 +46,6 @@ msgstr "Centruoti langą viršuje"
 
 msgid "Change active delay"
 msgstr "Keisti veikiančią delsą"
-
-msgid "Audio track:"
-msgstr "Garso kanalas:"
 
 msgid "Decrease delay"
 msgstr "Mažinti delsą"
@@ -171,6 +171,9 @@ msgstr "Kanalo delsa"
 msgid "Set delay to %i ms (can be set)"
 msgstr "Nustatyti delsą (ms) %i (galima nustatyti)"
 
+msgid "Sets the audio delay (LipSync)"
+msgstr "Nustato garso delsą (LipSync)"
+
 msgid "Setting key canceled"
 msgstr "Mygtuko priskyrimas atšauktas"
 
@@ -202,6 +205,3 @@ msgstr "iš budėjimo režimo"
 
 msgid "disabled"
 msgstr "išjungta"
-
-msgid "Sets the audio delay (LipSync)"
-msgstr "Nustato garso delsą (LipSync)"

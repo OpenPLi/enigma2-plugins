@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Automatic Screen Resolution V. 0.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-09 09:14+0200\n"
+"POT-Creation-Date: 2021-04-16 16:27+0430\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Pr2 <dummy@dummy.com>\n"
 "Language-Team: OpenPLi\n"
@@ -101,6 +101,9 @@ msgstr "Sortir"
 msgid "FHD 50/60HZ Progressive Mode"
 msgstr "FHD 50/60HZ mode progressif"
 
+msgid "Force set progressive for stream/video content"
+msgstr ""
+
 msgid "HD Interlace Mode"
 msgstr "HD mode entrelacé"
 
@@ -190,9 +193,6 @@ msgstr "Mode vidéo: %s %s %s"
 
 msgid "auto"
 msgstr "auto"
-
-msgid "bob"
-msgstr "meilleur possible"
 
 msgid "default"
 msgstr "défaut"

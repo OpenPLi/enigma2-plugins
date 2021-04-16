@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-05-25 08:39+0200\n"
+"POT-Creation-Date: 2021-04-16 16:27+0430\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -33,6 +33,9 @@ msgstr ""
 msgid "Audio Sync setup"
 msgstr ""
 
+msgid "Audio track:"
+msgstr ""
+
 msgid "Cancel"
 msgstr ""
 
@@ -43,9 +46,6 @@ msgid "Center screen at the upper border"
 msgstr ""
 
 msgid "Change active delay"
-msgstr ""
-
-msgid "Audio track:"
 msgstr ""
 
 msgid "Decrease delay"
@@ -172,6 +172,9 @@ msgstr ""
 msgid "Set delay to %i ms (can be set)"
 msgstr ""
 
+msgid "Sets the audio delay (LipSync)"
+msgstr ""
+
 msgid "Setting key canceled"
 msgstr ""
 
@@ -202,7 +205,4 @@ msgid "after standby"
 msgstr ""
 
 msgid "disabled"
-msgstr ""
-
-msgid "Sets the audio delay (LipSync)"
 msgstr ""

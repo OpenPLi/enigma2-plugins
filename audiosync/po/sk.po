@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: AC3LipSync\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"POT-Creation-Date: 2021-04-16 16:27+0430\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Nicker <nickersk@gmail.com>\n"
 "Language-Team: \n"
@@ -31,6 +31,9 @@ msgstr "Synchronizácia zvuku"
 msgid "Audio Sync setup"
 msgstr "Nastavenie synchronizácie zvuku"
 
+msgid "Audio track:"
+msgstr "Audio kanál:"
+
 msgid "Cancel"
 msgstr "Zrušiť"
 
@@ -42,9 +45,6 @@ msgstr "Posunúť okno na hornú hranu"
 
 msgid "Change active delay"
 msgstr "Zmena aktívneho oneskorenia"
-
-msgid "Audio track:"
-msgstr "Audio kanál:"
 
 msgid "Decrease delay"
 msgstr "Znížiť oneskorenie"
@@ -171,6 +171,9 @@ msgstr "Oneskorenie stanice"
 msgid "Set delay to %i ms (can be set)"
 msgstr "Nastaviť oneskorenie na %i ms (možno nastaviť)"
 
+msgid "Sets the audio delay (LipSync)"
+msgstr "Nastaví oneskorenie zvuku (LipSync)"
+
 msgid "Setting key canceled"
 msgstr "Nastavenie zrušené"
 
@@ -202,6 +205,3 @@ msgstr ""
 
 msgid "disabled"
 msgstr ""
-
-msgid "Sets the audio delay (LipSync)"
-msgstr "Nastaví oneskorenie zvuku (LipSync)"

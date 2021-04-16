@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: imdb Persian Translation\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"POT-Creation-Date: 2021-04-16 16:27+0430\n"
 "PO-Revision-Date: 2012-07-25 22:59+0330\n"
 "Last-Translator: mehdi <mehdi_ar_yekta@yahoo.com>\n"
 "Language-Team: Persian Professionals <persianpros@yahoo.com>\n"
@@ -21,10 +21,7 @@ msgstr ""
 msgid " as "
 msgstr "به عنوان"
 
-msgid "Add 'Search event in IMDb' to further option EPG menu."
-msgstr ""
-
-msgid "Add 'Search in IMDb' to movie list menu for selected video."
+msgid "* = Restart Required"
 msgstr ""
 
 msgid "Ambiguous results"
@@ -42,7 +39,8 @@ msgstr "انتخاب کانال"
 msgid "Content:"
 msgstr ""
 
-msgid "Could't get Eventname"
+#, fuzzy
+msgid "Could't get event name"
 msgstr "تهیه کردن نام رویداد ها ممکن نیست"
 
 msgid "Details"
@@ -52,7 +50,13 @@ msgstr "جزئیات"
 msgid "Downloading Movie Poster: %s..."
 msgstr "%s... در حال بارگذاری پوستر فیلم "
 
-msgid "Enable this to be able to access the IMDb from within the plugin browser."
+msgid "Enable this to be able to access IMDb search setup from within the plugin browser."
+msgstr ""
+
+msgid "Enable this to be able to access IMDb searches from within the movie list."
+msgstr ""
+
+msgid "Enable this to be able to access IMDb searches from within the plugin browser."
 msgstr ""
 
 msgid "Enter search"
@@ -64,20 +68,14 @@ msgstr ""
 msgid "Exit"
 msgstr "خارج شدن"
 
+#, fuzzy
+msgid "Exit IMDb search"
+msgstr "IMDb سازگار نیست"
+
 msgid "Extra Info"
 msgstr "اطلاعات اضافی"
 
-#, fuzzy
-msgid "Extra Info\n"
-msgstr "اطلاعات اضافی"
-
 msgid "Genre:"
-msgstr ""
-
-msgid "Genre: "
-msgstr ""
-
-msgid "IMDb Details"
 msgstr ""
 
 msgid "IMDb Details parsed"
@@ -100,20 +98,16 @@ msgid "IMDb Re-Download completed"
 msgstr "کامل گردید IMDb بارگذاری مجدد"
 
 #, fuzzy
-msgid "IMDb Save-Download completed"
+msgid "IMDb Save - Download completed"
 msgstr "کامل گردید IMDb بارگذاری مجدد"
 
 msgid "IMDb Setup"
 msgstr ""
 
-msgid ""
-"IMDb can not get Movie Information, to\n"
-" write .jpg and .txt-file!"
+msgid "IMDb can not get Movie Information to write to .jpg and .txt files!"
 msgstr ""
 
-msgid ""
-"IMDb can not get Movie Information, to\n"
-" write .txt-file!"
+msgid "IMDb can not get Movie Information to write to .txt file!"
 msgstr ""
 
 msgid "IMDb query failed!"
@@ -124,10 +118,22 @@ msgid "IMDb search"
 msgstr "IMDb سازگار نیست"
 
 #, fuzzy
-msgid "Lookup IMDb"
+msgid "IMDb setup"
+msgstr "IMDb پلاگین"
+
+#, fuzzy
+msgid "Lookup"
 msgstr "مراجعه"
 
+#, fuzzy
+msgid "Menu"
+msgstr "IMDb پلاگین"
+
 msgid "No IMDb match."
+msgstr "IMDb سازگار نیست"
+
+#, fuzzy
+msgid "No IMDb match:"
 msgstr "IMDb سازگار نیست"
 
 msgid "No cast list found in the database."
@@ -139,11 +145,20 @@ msgstr "هیچ جزئیاتی یافت نشد"
 msgid "OK"
 msgstr ""
 
+msgid "Page down"
+msgstr ""
+
+msgid "Page up"
+msgstr ""
+
 msgid "Play Trailer"
 msgstr ""
 
 msgid "Please select the matching entry"
 msgstr "لطفا ورودی های سازگار را انتخاب کنید"
+
+msgid "Plot Outline"
+msgstr ""
 
 msgid "Production Countries:"
 msgstr ""
@@ -151,9 +166,6 @@ msgstr ""
 #, python-format
 msgid "Query IMDb: %s"
 msgstr ""
-
-msgid "Query details from the Internet Movie Database"
-msgstr "پرس و جو از بانک اطلاعاتی فیلم های اینترنتی "
 
 #, python-format
 msgid "Re-Query IMDb: %s..."
@@ -165,7 +177,7 @@ msgstr ""
 msgid "Runtime:"
 msgstr ""
 
-msgid "Save current Details as .html for offline using"
+msgid "Save current Details as .html for offline use"
 msgstr ""
 
 msgid "Save current Details as .txt"
@@ -177,35 +189,61 @@ msgstr ""
 msgid "Search Trailer"
 msgstr ""
 
-msgid "Search event in IMDb"
-msgstr ""
-
-msgid "Search in IMDb"
-msgstr ""
+#, fuzzy
+msgid "Search for details from the Internet Movie Database"
+msgstr "پرس و جو از بانک اطلاعاتی فیلم های اینترنتی "
 
 msgid "Select from EPG"
 msgstr ""
 
+#, fuzzy
+msgid "Settings for Internet Movie Database searches"
+msgstr "بانک اطلاعاتی فیلم های اینترنتی"
+
 msgid "Setup"
 msgstr ""
 
-msgid "Show in further option EPG menu"
+msgid "Show episode and year information for cast when available. Takes effect after the next fetch of show details."
 msgstr ""
 
-msgid "Show in movie list menu"
+msgid "Show episode and year information in cast list"
 msgstr ""
 
-msgid "Show in plugin browser"
+msgid "Show full movie or series name in title menu"
+msgstr ""
+
+msgid "Show in movie list"
+msgstr ""
+
+msgid "Show list of matched movies an series"
+msgstr ""
+
+msgid "Show movie and series basic details"
+msgstr ""
+
+msgid "Show movie and series extra details"
+msgstr ""
+
+msgid "Show search in plugin browser"
+msgstr ""
+
+msgid "Show setup in plugin browser"
+msgstr ""
+
+msgid "Show the whole IMDb title information for a movie or series, including, for example, alternative names and whether it's a series. Takes effect after the next search of IMDb for a show name."
 msgstr ""
 
 msgid "The Internet Movie Database"
 msgstr "بانک اطلاعاتی فیلم های اینترنتی"
 
-msgid "This option allows you add words/phrases for IMDb to ignore when searching. please seperaate with a comma"
+msgid "This option allows you add words/phrases for IMDb to ignore when searching. Please separate the words/phrases with commas."
 msgstr ""
 
 msgid "Title Menu"
 msgstr "عنوان منو"
+
+msgid "Unknown category"
+msgstr ""
 
 msgid "User Rating"
 msgstr ""

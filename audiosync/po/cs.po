@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ims\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"POT-Creation-Date: 2021-04-16 16:27+0430\n"
 "PO-Revision-Date: \n"
 "Last-Translator: ims <ims21@users.sourceforge.net>\n"
 "Language-Team: PLi <ims21@users.sourceforge.net>\n"
@@ -31,6 +31,10 @@ msgid "Audio Sync setup"
 msgstr ""
 
 #
+msgid "Audio track:"
+msgstr "Audio:"
+
+#
 msgid "Cancel"
 msgstr "Zavřít"
 
@@ -43,10 +47,6 @@ msgstr "Okno doprostřed horního okraje"
 #
 msgid "Change active delay"
 msgstr "Změnit aktivní zpoždění"
-
-#
-msgid "Audio track:"
-msgstr "Audio:"
 
 msgid "Decrease delay"
 msgstr "Snížit zpoždění"
@@ -181,6 +181,9 @@ msgstr "Zpoždění kanálu"
 msgid "Set delay to %i ms (can be set)"
 msgstr "Nastavit zpoždění na %i ms (lze nastavit)"
 
+msgid "Sets the audio delay (LipSync)"
+msgstr "Nastavuje zpoždění zvuku (LipSync)"
+
 msgid "Setting key canceled"
 msgstr "Nastavování kláves zrušeno"
 
@@ -214,6 +217,3 @@ msgstr "po standby"
 #
 msgid "disabled"
 msgstr "zakázáno"
-
-msgid "Sets the audio delay (LipSync)"
-msgstr "Nastavuje zpoždění zvuku (LipSync)"

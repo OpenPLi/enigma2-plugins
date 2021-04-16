@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Enigma2 Autotimer plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-05-25 07:54+0200\n"
+"POT-Creation-Date: 2021-04-16 16:27+0430\n"
 "PO-Revision-Date: 2019-04-27 15:27+0200\n"
 "Last-Translator: ims <ims21@users.sourceforge.net>\n"
 "Language-Team: PLi <ims21@users.sourceforge.net>\n"
@@ -27,12 +27,6 @@ msgstr ""
 "\n"
 "\n"
 "Zrušit?"
-
-msgid " (if services are enabled, bouquets are ignored)."
-msgstr " (jestliže jsou povoleny programy, přehledy jsou ignorovány)."
-
-msgid " (if services are enabled, bouquets are ignored.)."
-msgstr " (jestliže jsou povoleny programy, přehledy jsou ignorovány.)."
 
 msgid " (only services from bouquets when use \"favorites description match\")."
 msgstr " (pouze programy z přehledů, když je použito \"V popisu oblíbených\")."
@@ -128,6 +122,9 @@ msgstr "Všechny kanály"
 
 msgid "All non-repeating timers"
 msgstr "Všechny neopakující se časovače"
+
+msgid "Allow double timer for different services"
+msgstr ""
 
 msgid "Always write config"
 msgstr "Vždy ukládat konfiguraci"
@@ -489,6 +486,9 @@ msgstr "Odhadnout existující časovač podle začátku/konce"
 msgid "Help"
 msgstr "Nápověda"
 
+msgid "Here you can specify whether simultaneous timers of the same program can be created. This allows simultaneous recording of a program with different resolutions. (e.g. SD service and HD service)."
+msgstr ""
+
 msgid "If 0, the popup will remain open."
 msgstr "Pokud je 0, zůstane vyskakovací okno otevřené."
 
@@ -500,6 +500,16 @@ msgstr "Jestliže je povoleno, pak se nebude vyhledávat během práce EPGRefres
 
 msgid "If enabled, the polling will be skipped if a recording is in progress."
 msgstr "Jestliže je povoleno, pak se nebude vyhledávání při probíhajícím nahrávání."
+
+msgid "If specified bouquets"
+msgstr ""
+
+#, fuzzy
+msgid "If specified services"
+msgstr "Na stejném programu"
+
+msgid "If specified services or bouquets"
+msgstr ""
 
 msgid "If the style is advanced, you will see more information about each auto timer. This change will not take effect until the plugin has started again."
 msgstr "Při rozšířeném stylu uvidíte více informací o každém automatickém časovači. Tato změna projeví se až při novém spuštění pluginu."
@@ -1380,6 +1390,12 @@ msgid ""
 msgstr ""
 "Váš konfigurační soubor nemá správný formát:\n"
 "\"%s"
+
+msgid "[B]  "
+msgstr ""
+
+msgid "[S]  "
+msgstr ""
 
 msgid "add AutoTimer"
 msgstr "Přidat AutoTimer"

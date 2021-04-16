@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: transcodingsetup\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-11 12:34+0200\n"
+"POT-Creation-Date: 2021-04-16 16:27+0430\n"
 "PO-Revision-Date: 2018-04-04 16:35+0100\n"
 "Last-Translator: Frenske <voorzitter@openpli.org>\n"
 "Language-Team: \n"
@@ -17,6 +17,10 @@ msgid "Bitrate"
 msgstr "Bitrate"
 
 msgid "Frame rate"
+msgstr "Frame rate"
+
+#, fuzzy
+msgid "Framerate"
 msgstr "Frame rate"
 
 msgid "It seems your receiver is not supported!"
@@ -48,3 +52,7 @@ msgstr "Video codec"
 
 msgid "Video size"
 msgstr "Videoformaat"
+
+#, fuzzy
+msgid "videocodec"
+msgstr "Video codec"

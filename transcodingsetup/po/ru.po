@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Transcoding Setup\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"POT-Creation-Date: 2021-04-16 16:27+0430\n"
 "PO-Revision-Date: 2015-11-28 00:00+0200\n"
 "Last-Translator: Dimitrij <dima-73@inbox.lv>\n"
 "Language-Team: Dimitrij PLi\n"
@@ -18,6 +18,10 @@ msgid "Bitrate"
 msgstr "Битрейт"
 
 msgid "Frame rate"
+msgstr "Частота кадров"
+
+#, fuzzy
+msgid "Framerate"
 msgstr "Частота кадров"
 
 msgid "It seems your receiver is not supported!"
@@ -49,3 +53,7 @@ msgstr "Видео кодек"
 
 msgid "Video size"
 msgstr "Видео разрешение"
+
+#, fuzzy
+msgid "videocodec"
+msgstr "Видео кодек"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: IMDb\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"POT-Creation-Date: 2021-04-16 16:27+0430\n"
 "PO-Revision-Date: 2017-07-01 09:49+0300\n"
 "Last-Translator: Vytenis P. <vyteniui@gmail.com>\n"
 "Language-Team: Vytenis P. <vyteniui@gmail.com>\n"
@@ -21,11 +21,8 @@ msgstr ""
 msgid " as "
 msgstr " kaip "
 
-msgid "Add 'Search event in IMDb' to further option EPG menu."
-msgstr "Pridėti \"Ieškoti įvykio IMDb\" į EPG meniu."
-
-msgid "Add 'Search in IMDb' to movie list menu for selected video."
-msgstr "Pridėti \"Ieškoti IMDb\" į filmų sąrašo meniu meniu pasirinktiems filmams."
+msgid "* = Restart Required"
+msgstr ""
 
 msgid "Ambiguous results"
 msgstr "Dviprasmiški rezultatai"
@@ -42,7 +39,8 @@ msgstr "Kanalo pasirinkimas"
 msgid "Content:"
 msgstr "Turinys:"
 
-msgid "Could't get Eventname"
+#, fuzzy
+msgid "Could't get event name"
 msgstr "Nepavyko gauti įvykio pavadinimo"
 
 msgid "Details"
@@ -52,7 +50,16 @@ msgstr "Išsamiau"
 msgid "Downloading Movie Poster: %s..."
 msgstr "Parsiunčiamas filmo plakatas: %s..."
 
-msgid "Enable this to be able to access the IMDb from within the plugin browser."
+#, fuzzy
+msgid "Enable this to be able to access IMDb search setup from within the plugin browser."
+msgstr "Įjungę čia, IMDb atversite įskiepių naršyklėje."
+
+#, fuzzy
+msgid "Enable this to be able to access IMDb searches from within the movie list."
+msgstr "Įjungę čia, IMDb atversite įskiepių naršyklėje."
+
+#, fuzzy
+msgid "Enable this to be able to access IMDb searches from within the plugin browser."
 msgstr "Įjungę čia, IMDb atversite įskiepių naršyklėje."
 
 msgid "Enter search"
@@ -64,20 +71,15 @@ msgstr "Įrašykite ieškomą tekstą"
 msgid "Exit"
 msgstr "Užverti"
 
+#, fuzzy
+msgid "Exit IMDb search"
+msgstr "IMDb paieška"
+
 msgid "Extra Info"
 msgstr "Papildoma informacija"
 
-msgid "Extra Info\n"
-msgstr "Papildoma informacija\n"
-
 msgid "Genre:"
 msgstr "Žanras:"
-
-msgid "Genre: "
-msgstr "Žanras: "
-
-msgid "IMDb Details"
-msgstr "Išsami IMDb informacija"
 
 msgid "IMDb Details parsed"
 msgstr "IMDb informacija apdorota"
@@ -97,22 +99,21 @@ msgstr "IMDb įskiepis"
 msgid "IMDb Re-Download completed"
 msgstr "IMDb parsiųstas iš naujo"
 
-msgid "IMDb Save-Download completed"
+#, fuzzy
+msgid "IMDb Save - Download completed"
 msgstr "IMDb parsiųstas ir išsaugotas"
 
 msgid "IMDb Setup"
 msgstr "IMDb sąranka"
 
-msgid ""
-"IMDb can not get Movie Information, to\n"
-" write .jpg and .txt-file!"
+#, fuzzy
+msgid "IMDb can not get Movie Information to write to .jpg and .txt files!"
 msgstr ""
 "Nepavyksta gauti informacijos apie filmą\n"
 "IMDb, kad išsaugoti ją .jpg ir .txt failuose!"
 
-msgid ""
-"IMDb can not get Movie Information, to\n"
-" write .txt-file!"
+#, fuzzy
+msgid "IMDb can not get Movie Information to write to .txt file!"
 msgstr ""
 "Nepavyksta gauti informacijos apie\n"
 "filmą IMDb, kad išsaugoti ją .txt faile!"
@@ -123,10 +124,23 @@ msgstr "IMDb užklausa nepavyko!"
 msgid "IMDb search"
 msgstr "IMDb paieška"
 
-msgid "Lookup IMDb"
+#, fuzzy
+msgid "IMDb setup"
+msgstr "IMDb sąranka"
+
+#, fuzzy
+msgid "Lookup"
 msgstr "Ieškoti IMDb"
 
+#, fuzzy
+msgid "Menu"
+msgstr "IMDb meniu"
+
 msgid "No IMDb match."
+msgstr "Nėra atitikimo IMDb."
+
+#, fuzzy
+msgid "No IMDb match:"
 msgstr "Nėra atitikimo IMDb."
 
 msgid "No cast list found in the database."
@@ -138,11 +152,20 @@ msgstr "Išsamaus aprašymo nėra."
 msgid "OK"
 msgstr " Gerai"
 
+msgid "Page down"
+msgstr ""
+
+msgid "Page up"
+msgstr ""
+
 msgid "Play Trailer"
 msgstr "Žiūrėti anonsą"
 
 msgid "Please select the matching entry"
 msgstr "Pasirinkite atitinkantį įrašą"
+
+msgid "Plot Outline"
+msgstr ""
 
 msgid "Production Countries:"
 msgstr "Šalys gamintojos:"
@@ -150,9 +173,6 @@ msgstr "Šalys gamintojos:"
 #, python-format
 msgid "Query IMDb: %s"
 msgstr "Užklausti IMDb: %s"
-
-msgid "Query details from the Internet Movie Database"
-msgstr "Užklausti detaliau iš internetinės filmų duomenų bazės"
 
 #, python-format
 msgid "Re-Query IMDb: %s..."
@@ -164,7 +184,8 @@ msgstr "Išleidimo data:"
 msgid "Runtime:"
 msgstr "Trukmė:"
 
-msgid "Save current Details as .html for offline using"
+#, fuzzy
+msgid "Save current Details as .html for offline use"
 msgstr "Išsaugoti šiuos duomenis .html faile, kad naudotis be interneto"
 
 msgid "Save current Details as .txt"
@@ -176,35 +197,65 @@ msgstr "Išsaugoti šį plakatą ir aprašymą tekstiniame faile"
 msgid "Search Trailer"
 msgstr "Ieškoti anonso"
 
-msgid "Search event in IMDb"
-msgstr "Ieškoti įvykio IMDb"
-
-msgid "Search in IMDb"
-msgstr "Ieškoti IMDb"
+#, fuzzy
+msgid "Search for details from the Internet Movie Database"
+msgstr "Užklausti detaliau iš internetinės filmų duomenų bazės"
 
 msgid "Select from EPG"
 msgstr "Pasirinkti iš EPG"
 
+#, fuzzy
+msgid "Settings for Internet Movie Database searches"
+msgstr "Internetinė filmų duomenų bazė"
+
 msgid "Setup"
 msgstr "Sąranka"
 
-msgid "Show in further option EPG menu"
-msgstr "Rodyti toliau pasirenkamo EPG meniu"
+msgid "Show episode and year information for cast when available. Takes effect after the next fetch of show details."
+msgstr ""
 
-msgid "Show in movie list menu"
+msgid "Show episode and year information in cast list"
+msgstr ""
+
+msgid "Show full movie or series name in title menu"
+msgstr ""
+
+#, fuzzy
+msgid "Show in movie list"
 msgstr "Rodyti filmų sąrašo meniu"
 
-msgid "Show in plugin browser"
+msgid "Show list of matched movies an series"
+msgstr ""
+
+msgid "Show movie and series basic details"
+msgstr ""
+
+msgid "Show movie and series extra details"
+msgstr ""
+
+#, fuzzy
+msgid "Show search in plugin browser"
 msgstr "Rodyti įskiepių naršyklėje"
+
+#, fuzzy
+msgid "Show setup in plugin browser"
+msgstr "Rodyti įskiepių naršyklėje"
+
+msgid "Show the whole IMDb title information for a movie or series, including, for example, alternative names and whether it's a series. Takes effect after the next search of IMDb for a show name."
+msgstr ""
 
 msgid "The Internet Movie Database"
 msgstr "Internetinė filmų duomenų bazė"
 
-msgid "This option allows you add words/phrases for IMDb to ignore when searching. please seperaate with a comma"
+#, fuzzy
+msgid "This option allows you add words/phrases for IMDb to ignore when searching. Please separate the words/phrases with commas."
 msgstr "Ši parinktis leidžia įtraukti IMDb paieškoje ignoruotinus žodžius ir frazes. Atskirkite juos kableliais"
 
 msgid "Title Menu"
 msgstr "Pavadinimų meniu"
+
+msgid "Unknown category"
+msgstr ""
 
 msgid "User Rating"
 msgstr "Vartotojų įvertinimas"

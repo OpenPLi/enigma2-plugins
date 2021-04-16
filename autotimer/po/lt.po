@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: AutoTimer\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-26 22:23+0200\n"
+"POT-Creation-Date: 2021-04-16 16:27+0430\n"
 "PO-Revision-Date: 2016-12-28 11:35+0200\n"
 "Last-Translator: Vytenis P.\n"
 "Language-Team: Vytenis P. <vyteniui@gmail.com>\n"
@@ -26,13 +26,6 @@ msgid ""
 "\n"
 "Cancel?"
 msgstr "Atšaukti"
-
-#, fuzzy
-msgid " (if services are enabled, bouquets are ignored)."
-msgstr " (tik kanalai iš bukietų)."
-
-msgid " (if services are enabled, bouquets are ignored.)."
-msgstr ""
 
 #, fuzzy
 msgid " (only services from bouquets when use \"favorites description match\")."
@@ -130,6 +123,9 @@ msgstr "Visi kanalai"
 
 msgid "All non-repeating timers"
 msgstr "Visi nesikartojantys laikmačiai"
+
+msgid "Allow double timer for different services"
+msgstr ""
 
 msgid "Always write config"
 msgstr "Visada rašyti konfigūraciją"
@@ -499,6 +495,9 @@ msgstr "Atspėti esamą laikmatį, remiantis pradžia/pabaiga"
 msgid "Help"
 msgstr "Pagalba"
 
+msgid "Here you can specify whether simultaneous timers of the same program can be created. This allows simultaneous recording of a program with different resolutions. (e.g. SD service and HD service)."
+msgstr ""
+
 msgid "If 0, the popup will remain open."
 msgstr "Jei '0', iškylantis langas liks atviras."
 
@@ -510,6 +509,16 @@ msgstr "Čia įjungus, užklausa bus praleista, jei vyksta EPG atjaujinimas."
 
 msgid "If enabled, the polling will be skipped if a recording is in progress."
 msgstr "Čia įjungus, užklausa bus praleista, jei vyksta įrašymas."
+
+msgid "If specified bouquets"
+msgstr ""
+
+#, fuzzy
+msgid "If specified services"
+msgstr "Ant to pačio kanalo"
+
+msgid "If specified services or bouquets"
+msgstr ""
 
 msgid "If the style is advanced, you will see more information about each auto timer. This change will not take effect until the plugin has started again."
 msgstr "Jei rodoma 'Išsamiai', apie kiekvieną autolaikmatį matysite daugiau informacijos."
@@ -1317,6 +1326,12 @@ msgid ""
 msgstr ""
 "Jūsų config failas netinkamai suformuotas:\n"
 "%s"
+
+msgid "[B]  "
+msgstr ""
+
+msgid "[S]  "
+msgstr ""
 
 msgid "add AutoTimer"
 msgstr "pridėti autolaikmatį"

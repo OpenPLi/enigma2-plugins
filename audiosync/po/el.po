@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: AudioSync\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"POT-Creation-Date: 2021-04-16 16:27+0430\n"
 "PO-Revision-Date: \n"
 "Last-Translator: athoik\n"
 "Language-Team: satdreamgr <satdreamgr.com>\n"
@@ -28,6 +28,9 @@ msgstr "Συγχρονισμός ήχου"
 msgid "Audio Sync setup"
 msgstr "Ρυθμίσεις συγχρονισμού ήχου"
 
+msgid "Audio track:"
+msgstr "Ροή ήχου:"
+
 msgid "Cancel"
 msgstr "Ακύρωση"
 
@@ -39,9 +42,6 @@ msgstr "Κεντράρισμα παραθύρου στην πάνω πλευρά
 
 msgid "Change active delay"
 msgstr "Αλλαγή ενεργής καθυστέρησης"
-
-msgid "Audio track:"
-msgstr "Ροή ήχου:"
 
 msgid "Decrease delay"
 msgstr "Μείωση καθυστέρησης"
@@ -167,6 +167,9 @@ msgstr "Καθυστ. υπηρ."
 msgid "Set delay to %i ms (can be set)"
 msgstr "Ορισμός καθυστέρησης σε %i ms (μπορεί να ρυθμιστεί)"
 
+msgid "Sets the audio delay (LipSync)"
+msgstr "Ρυθμίζει την καθυστέρηση του ήχου (LipSync)"
+
 msgid "Setting key canceled"
 msgstr "Η ρύθμιση του πλήκτρου ακυρώθηκε"
 
@@ -198,6 +201,3 @@ msgstr "μετά την αναμονή"
 
 msgid "disabled"
 msgstr "απενεργοποιημένο"
-
-msgid "Sets the audio delay (LipSync)"
-msgstr "Ρυθμίζει την καθυστέρηση του ήχου (LipSync)"

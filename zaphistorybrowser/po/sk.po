@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ZapHistoryBrowser\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-12 11:26+0200\n"
+"POT-Creation-Date: 2021-04-16 16:27+0430\n"
 "PO-Revision-Date: 2017-03-06 15:31+0100\n"
 "Last-Translator: Andrej Tobola <andrej.tobola@gmail.com>\n"
 "Language-Team: Andrej Tobola <andrej.tobola@gmail.com>\n"
@@ -17,6 +17,9 @@ msgstr ""
 "X-Poedit-SearchPath-0: /home/aliabdul/dream/enigma2/enigma2-plugins/zaphistorybrowser/src\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 
+msgid "Cancel"
+msgstr ""
+
 msgid "Clear"
 msgstr "VYčistiť"
 
@@ -29,12 +32,11 @@ msgstr "Vymazať"
 msgid "Enable zap history:"
 msgstr "Povoliť históriu prepínania"
 
-#, fuzzy
-msgid "Enigma1-like history:"
-msgstr "Povoliť históriu prepínania"
-
 msgid "Maximum zap history entries:"
 msgstr "Maximálny počet histórie prepnutí"
+
+msgid "OK"
+msgstr ""
 
 msgid "Zap & Close"
 msgstr "Prepnúť a zatvoriť"

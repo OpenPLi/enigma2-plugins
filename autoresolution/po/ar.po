@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Automatic Screen Resolution V. 0.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"POT-Creation-Date: 2021-04-16 16:27+0430\n"
 "PO-Revision-Date: \n"
 "Last-Translator: mosad - مساعد الجعيد <abo-mishal@hotmail.com>\n"
 "Language-Team: mosad - مساعد الجعيد\n"
@@ -101,6 +101,9 @@ msgstr "تسجيل الخروج"
 msgid "FHD 50/60HZ Progressive Mode"
 msgstr "عالي الدقة 50/60HZ الوضع التدريجي"
 
+msgid "Force set progressive for stream/video content"
+msgstr ""
+
 msgid "HD Interlace Mode"
 msgstr "طريقة دمج قنوات عالية الوضوح"
 
@@ -190,9 +193,6 @@ msgstr "وضع الفديو: %s %s %s"
 
 msgid "auto"
 msgstr "تلقائي"
-
-msgid "bob"
-msgstr "شعبي"
 
 msgid "default"
 msgstr "إفتراضى"

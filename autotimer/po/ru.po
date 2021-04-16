@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-26 22:23+0200\n"
+"POT-Creation-Date: 2021-04-16 16:27+0430\n"
 "PO-Revision-Date: 2020-08-29 14:48+0300\n"
 "Last-Translator: Dimitrij <Dima-73@inbox.lv>\n"
 "Language-Team: openpli.org\n"
@@ -21,12 +21,6 @@ msgstr ""
 "\n"
 "\n"
 "Отмена?"
-
-msgid " (if services are enabled, bouquets are ignored)."
-msgstr " (если сервисы включены, букеты будут игнорированы)."
-
-msgid " (if services are enabled, bouquets are ignored.)."
-msgstr " (если сервисы включены, букеты будут игнорированы)."
 
 msgid " (only services from bouquets when use \"favorites description match\")."
 msgstr " (только в сервисах из букетов при использовании \"описание совпадения в фаворитах\")."
@@ -122,6 +116,9 @@ msgstr "Все каналы"
 
 msgid "All non-repeating timers"
 msgstr "Все неповторяющиеся таймеры"
+
+msgid "Allow double timer for different services"
+msgstr "Разрешить двойной таймер для разных сервисов"
 
 msgid "Always write config"
 msgstr "Всегда перезаписывать конфигурацию"
@@ -483,6 +480,9 @@ msgstr "Учесть уже существующий таймер, базиру�
 msgid "Help"
 msgstr "Помощь"
 
+msgid "Here you can specify whether simultaneous timers of the same program can be created. This allows simultaneous recording of a program with different resolutions. (e.g. SD service and HD service)."
+msgstr ""
+
 msgid "If 0, the popup will remain open."
 msgstr "Если 0, всплывающее окно останется открытым всегда."
 
@@ -494,6 +494,15 @@ msgstr "Если включено, то проверка совпадений б
 
 msgid "If enabled, the polling will be skipped if a recording is in progress."
 msgstr "Если включено, то проверка совпадений будет пропущена, если в это время идет запись."
+
+msgid "If specified bouquets"
+msgstr "Если назначены букеты"
+
+msgid "If specified services"
+msgstr "Если назначены сервисы"
+
+msgid "If specified services or bouquets"
+msgstr "Если назначены сервисы или букеты"
 
 msgid "If the style is advanced, you will see more information about each auto timer. This change will not take effect until the plugin has started again."
 msgstr "Если стиль расширенный, то вы увидете больше информации о каждом автотаймере."
@@ -510,6 +519,7 @@ msgstr "Если это включено, то лог поиска будет з
 msgid "If this enabled, will check the list of timers, conflicting autotimers are disabled, the duplicate autotimers will be deleted."
 msgstr "Если эта опция включена, то будет запущена проверка списка таймеров, по окончании поиска событий .Кофликтные автотаймеры будут отключены, дублирующие автотаймеры будут удалены."
 
+#, fuzzy, python-format
 msgid "If this is enabled an existing timer will also be considered recording an event if it records at least 80% of the it."
 msgstr "Если это включено, то уже существующий таймер также будет рассмотрен как записывающий событие, если этот таймер включает в себя, не меньше 80% времени события."
 
@@ -1317,6 +1327,12 @@ msgstr ""
 "Ваш конфигурационный файл поврежден:\n"
 "%s"
 
+msgid "[B]  "
+msgstr ""
+
+msgid "[S]  "
+msgstr ""
+
 msgid "add AutoTimer"
 msgstr "добавить Автотаймер"
 
@@ -1455,15 +1471,3 @@ msgstr "переключение"
 
 msgid "zap and record"
 msgstr "переключение и запись"
-
-msgid "Allow double timer for different services"
-msgstr "Разрешить двойной таймер для разных сервисов"
-
-msgid "If specified services"
-msgstr "Если назначены сервисы"
-
-msgid "If specified bouquets"
-msgstr "Если назначены букеты"
-
-msgid "If specified services or bouquets"
-msgstr "Если назначены сервисы или букеты"

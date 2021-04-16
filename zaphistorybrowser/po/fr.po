@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ZapHistoryBrowser\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"POT-Creation-Date: 2021-04-16 16:27+0430\n"
 "PO-Revision-Date: 2015-05-04 21:58+0100\n"
 "Last-Translator: Pr2 <dummy@dummy.com>\n"
 "Language-Team: Nabil Hanna <nabil1978@web.de>\n"
@@ -14,6 +14,9 @@ msgstr ""
 "X-Poedit-Basepath: .\n"
 "X-Generator: Poedit 1.7.6\n"
 "X-Poedit-SearchPath-0: /home/aliabdul/dream/enigma2/enigma2-plugins/zaphistorybrowser/src\n"
+
+msgid "Cancel"
+msgstr ""
 
 msgid "Clear"
 msgstr "Effacer tout"
@@ -27,11 +30,11 @@ msgstr "Effacer"
 msgid "Enable zap history:"
 msgstr "Activer l'historique de zap:"
 
-msgid "Enigma1-like history:"
-msgstr "Historique de style Enigma-1:"
-
 msgid "Maximum zap history entries:"
 msgstr "Nombre maximum d'entrées:"
+
+msgid "OK"
+msgstr ""
 
 msgid "Zap & Close"
 msgstr "Zapper & fermer"

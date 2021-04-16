@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Enigma2 AutoTimer plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-26 22:23+0200\n"
+"POT-Creation-Date: 2021-04-16 16:27+0430\n"
 "PO-Revision-Date: 2019-02-15 20:00+0200\n"
 "Last-Translator: jamu\n"
 "Language-Team: AndyBlac/TimoJ/Kojo_\n"
@@ -27,12 +27,6 @@ msgstr ""
 "\n"
 "\n"
 "Peruuta?"
-
-msgid " (if services are enabled, bouquets are ignored)."
-msgstr " (jos palvelut ovat päällä, kanavia ei oteta huomioon)."
-
-msgid " (if services are enabled, bouquets are ignored.)."
-msgstr " (jos palvelut ovat päällä, kanavia ei oteta huomioon)."
 
 msgid " (only services from bouquets when use \"favorites description match\")."
 msgstr " (valinnalla \"hae kuvauksesta (vain suosikit)\" haku rajoittuu lisäksi suosikkikanaviin)."
@@ -128,6 +122,9 @@ msgstr "Kaikki kanavat"
 
 msgid "All non-repeating timers"
 msgstr "Kaikki ei toistuvat ajastukset"
+
+msgid "Allow double timer for different services"
+msgstr ""
 
 msgid "Always write config"
 msgstr "Kirjoita asetuksiin aina"
@@ -485,6 +482,9 @@ msgstr "Arvaa olemassa oleva ajastus alun ja lopun perusteella"
 msgid "Help"
 msgstr "Apua"
 
+msgid "Here you can specify whether simultaneous timers of the same program can be created. This allows simultaneous recording of a program with different resolutions. (e.g. SD service and HD service)."
+msgstr ""
+
 msgid "If 0, the popup will remain open."
 msgstr "Jos 0, popup jää näkyviin."
 
@@ -496,6 +496,16 @@ msgstr "Jos päällä, hakua ei tehdä jos EPGRefresh on ajossa."
 
 msgid "If enabled, the polling will be skipped if a recording is in progress."
 msgstr "Jos päällä, haku ei ole käytössä tallennuksien aikana."
+
+msgid "If specified bouquets"
+msgstr ""
+
+#, fuzzy
+msgid "If specified services"
+msgstr "Samalta kanavalta"
+
+msgid "If specified services or bouquets"
+msgstr ""
 
 msgid "If the style is advanced, you will see more information about each auto timer. This change will not take effect until the plugin has started again."
 msgstr "Näet enemmän tietoja automaattiajastuksista mikäli laajuus on \"Laaja\". Muutos ei tule voimaan ennen uudelleenkäynnistystä."
@@ -1315,6 +1325,12 @@ msgid ""
 msgstr ""
 "Konfiguraatiotiedostosi ei ole oikeassa formaatissa:\n"
 "%s"
+
+msgid "[B]  "
+msgstr ""
+
+msgid "[S]  "
+msgstr ""
 
 msgid "add AutoTimer"
 msgstr "Lisää automaattiajastus"

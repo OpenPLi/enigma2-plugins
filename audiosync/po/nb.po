@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: AC3LipSync\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-11 12:33+0200\n"
+"POT-Creation-Date: 2021-04-16 16:27+0430\n"
 "PO-Revision-Date: \n"
 "Last-Translator: GeirJ <dummy@dummy.com>\n"
 "Language-Team: \n"
@@ -31,6 +31,9 @@ msgstr "Lyd synk"
 msgid "Audio Sync setup"
 msgstr "Lyd synk innstilling"
 
+msgid "Audio track:"
+msgstr "Kanal-lyd:"
+
 msgid "Cancel"
 msgstr "Avbryt"
 
@@ -42,9 +45,6 @@ msgstr "Sentrer bildet øverst"
 
 msgid "Change active delay"
 msgstr "Endre aktiv forsinkelse"
-
-msgid "Audio track:"
-msgstr "Kanal-lyd:"
 
 msgid "Decrease delay"
 msgstr "Reduser forsinkelse"
@@ -170,6 +170,9 @@ msgstr "Tjeneste forsinkelse"
 msgid "Set delay to %i ms (can be set)"
 msgstr "Still forsinkelse til %i ms (kan stilles inn)"
 
+msgid "Sets the audio delay (LipSync)"
+msgstr "Stiller inn lyd forsinkelse (Leppe synk)"
+
 msgid "Setting key canceled"
 msgstr "Innstiling av tast avbrutt"
 
@@ -201,6 +204,3 @@ msgstr "etter avslått"
 
 msgid "disabled"
 msgstr "frakoblet"
-
-msgid "Sets the audio delay (LipSync)"
-msgstr "Stiller inn lyd forsinkelse (Leppe synk)"

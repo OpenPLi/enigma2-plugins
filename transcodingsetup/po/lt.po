@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TransCodingSetup\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"POT-Creation-Date: 2021-04-16 16:27+0430\n"
 "PO-Revision-Date: 2016-06-26 17:27+0300\n"
 "Last-Translator: \n"
 "Language-Team: Vytenis P. <vyteniui@gmail.com>\n"
@@ -19,6 +19,9 @@ msgid "Bitrate"
 msgstr "Bitų dažnis"
 
 msgid "Frame rate"
+msgstr ""
+
+msgid "Framerate"
 msgstr ""
 
 msgid "It seems your receiver is not supported!"
@@ -50,4 +53,8 @@ msgid "Video codec"
 msgstr "Vaizdo kadro dydis"
 
 msgid "Video size"
+msgstr "Vaizdo kadro dydis"
+
+#, fuzzy
+msgid "videocodec"
 msgstr "Vaizdo kadro dydis"
