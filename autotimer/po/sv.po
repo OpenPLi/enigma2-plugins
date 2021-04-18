@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Enigma2 AutoTimer plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-26 22:23+0200\n"
+"POT-Creation-Date: 2021-04-16 16:27+0430\n"
 "PO-Revision-Date: 2012-12-16 11:58+0100\n"
 "Last-Translator: Magnus Nilsson <mag_nilsson@hotmail.com>\n"
 "Language-Team: none\n"
@@ -26,12 +26,6 @@ msgid ""
 "\n"
 "Cancel?"
 msgstr "Avbryt"
-
-msgid " (if services are enabled, bouquets are ignored)."
-msgstr ""
-
-msgid " (if services are enabled, bouquets are ignored.)."
-msgstr ""
 
 msgid " (only services from bouquets when use \"favorites description match\")."
 msgstr ""
@@ -132,6 +126,9 @@ msgstr "Kanaler"
 
 msgid "All non-repeating timers"
 msgstr "Alla icke upprepande timers"
+
+msgid "Allow double timer for different services"
+msgstr ""
 
 msgid "Always write config"
 msgstr ""
@@ -506,6 +503,9 @@ msgstr "Gissa befintlig timer baserad på början/slutet"
 msgid "Help"
 msgstr "Hjälp"
 
+msgid "Here you can specify whether simultaneous timers of the same program can be created. This allows simultaneous recording of a program with different resolutions. (e.g. SD service and HD service)."
+msgstr ""
+
 msgid "If 0, the popup will remain open."
 msgstr ""
 
@@ -516,6 +516,16 @@ msgid "If enabled, the polling will be skipped if EPGRefresh is currently runnin
 msgstr ""
 
 msgid "If enabled, the polling will be skipped if a recording is in progress."
+msgstr ""
+
+msgid "If specified bouquets"
+msgstr ""
+
+#, fuzzy
+msgid "If specified services"
+msgstr "På samma kanal"
+
+msgid "If specified services or bouquets"
 msgstr ""
 
 msgid "If the style is advanced, you will see more information about each auto timer. This change will not take effect until the plugin has started again."
@@ -1340,6 +1350,12 @@ msgid ""
 msgstr ""
 "Din konfigurationsfil är inte välutformad:\n"
 "%s"
+
+msgid "[B]  "
+msgstr ""
+
+msgid "[S]  "
+msgstr ""
 
 msgid "add AutoTimer"
 msgstr "Lägg till AutoTimer"

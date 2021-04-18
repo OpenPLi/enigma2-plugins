@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-AutoResolution\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"POT-Creation-Date: 2021-04-16 16:27+0430\n"
 "PO-Revision-Date: 2017-07-01 09:12+0300\n"
 "Last-Translator: Vytenis P. <vyteniui@gmail.com>\n"
 "Language-Team: Vytenis Pulokas <vytemiui@gmail.com>\n"
@@ -103,6 +103,9 @@ msgstr ""
 msgid "FHD 50/60HZ Progressive Mode"
 msgstr "SD 30/60HZ pilnaeilis režimas"
 
+msgid "Force set progressive for stream/video content"
+msgstr ""
+
 msgid "HD Interlace Mode"
 msgstr "HD dvieilio pynimo (interlace) režimas"
 
@@ -195,9 +198,6 @@ msgstr "Vaizdo režimas: %s %s %s"
 
 msgid "auto"
 msgstr "automatinis"
-
-msgid "bob"
-msgstr "bob"
 
 msgid "default"
 msgstr "numatyta"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: audio sync Persian Translation\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"POT-Creation-Date: 2021-04-16 16:27+0430\n"
 "PO-Revision-Date: \n"
 "Last-Translator: mehdi <mehdi_ar_yekta@yahoo.com>\n"
 "Language-Team: Persian Professionals <persianpros@yahoo.com>\n"
@@ -32,6 +32,9 @@ msgstr "هم زمان سازی صدا"
 msgid "Audio Sync setup"
 msgstr "راه اندازی هم زمان سازی صدا"
 
+msgid "Audio track:"
+msgstr "کانال های صوتی"
+
 msgid "Cancel"
 msgstr "لغو کردن"
 
@@ -43,9 +46,6 @@ msgstr "حرکت دادن صفحه به بالاتر از حد مرز بالای
 
 msgid "Change active delay"
 msgstr "تغییر تاخیر فعالیت ها"
-
-msgid "Audio track:"
-msgstr "کانال های صوتی"
 
 msgid "Decrease delay"
 msgstr "کاهش دادن تاخیر"
@@ -172,6 +172,9 @@ msgstr "تاخیر در ارائه خدمات"
 msgid "Set delay to %i ms (can be set)"
 msgstr ""
 
+msgid "Sets the audio delay (LipSync)"
+msgstr " (LipSync) تنظیم تاخیر صدا بر حسب"
+
 msgid "Setting key canceled"
 msgstr "تنظیمات کلیدها لغو گردید"
 
@@ -203,6 +206,3 @@ msgstr ""
 
 msgid "disabled"
 msgstr ""
-
-msgid "Sets the audio delay (LipSync)"
-msgstr " (LipSync) تنظیم تاخیر صدا بر حسب"

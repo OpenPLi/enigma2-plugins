@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2 AC3 Lip Sync Turkish Locale\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"POT-Creation-Date: 2021-04-16 16:27+0430\n"
 "PO-Revision-Date: 2009-09-22 13:11+0200\n"
 "Last-Translator: Zülfikar VEYİSOĞLU <z.veyisoglu@hobiagaci.com>\n"
 "Language-Team: http://www.hobiagaci.com <z.veyisoglu@hobiagaci.com>\n"
@@ -32,6 +32,9 @@ msgstr "AC3 Dudak senkronu"
 msgid "Audio Sync setup"
 msgstr "AC3 Dudak senkron ayarları"
 
+msgid "Audio track:"
+msgstr "Ses izi:"
+
 msgid "Cancel"
 msgstr "Vazgeç"
 
@@ -43,9 +46,6 @@ msgstr ""
 
 msgid "Change active delay"
 msgstr ""
-
-msgid "Audio track:"
-msgstr "Ses izi:"
 
 #, fuzzy
 msgid "Decrease delay"
@@ -177,6 +177,10 @@ msgstr "%s gecikmesini kaydet"
 msgid "Set delay to %i ms (can be set)"
 msgstr ""
 
+#, fuzzy
+msgid "Sets the audio delay (LipSync)"
+msgstr "AC3 ses gecikmesini ayarlayın"
+
 msgid "Setting key canceled"
 msgstr "Tuş tanımlama iptal edildi"
 
@@ -209,7 +213,3 @@ msgstr ""
 
 msgid "disabled"
 msgstr ""
-
-#, fuzzy
-msgid "Sets the audio delay (LipSync)"
-msgstr "AC3 ses gecikmesini ayarlayın"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2 - zaphistorybrowser\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"POT-Creation-Date: 2021-04-16 16:27+0430\n"
 "PO-Revision-Date: 2011-04-08 20:25+0100\n"
 "Last-Translator: Spaeleus <spaeleus@croci.org>\n"
 "Language-Team: www.linsat.net <spaeleus@croci.org>\n"
@@ -17,6 +17,9 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SearchPath-0: /media/TREKSTOR/git/enigma2-plugins/zaphistorybrowser\n"
 
+msgid "Cancel"
+msgstr ""
+
 msgid "Clear"
 msgstr "Pulire"
 
@@ -29,11 +32,11 @@ msgstr "Cancellare"
 msgid "Enable zap history:"
 msgstr "Abilitare "
 
-msgid "Enigma1-like history:"
-msgstr "History in veste enigma1"
-
 msgid "Maximum zap history entries:"
 msgstr "Numero massimo di voci nella history: "
+
+msgid "OK"
+msgstr ""
 
 msgid "Zap & Close"
 msgstr "Zap & chiudere"

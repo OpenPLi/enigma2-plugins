@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: AudioSync\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"POT-Creation-Date: 2021-04-16 16:27+0430\n"
 "PO-Revision-Date: 2018-04-17 23:25+0200\n"
 "Last-Translator: Gringo <openpli@tiscali.it>\n"
 "Language-Team: www.linsat.net - Italy <spaeleus@croci.org>\n"
@@ -36,6 +36,9 @@ msgstr "Audio Sync"
 msgid "Audio Sync setup"
 msgstr "Configurazione sincronismo audio"
 
+msgid "Audio track:"
+msgstr "Canale audio: "
+
 msgid "Cancel"
 msgstr "Annullare"
 
@@ -47,9 +50,6 @@ msgstr "Centrare la finestra al bordo superiore"
 
 msgid "Change active delay"
 msgstr "Cambiare il ritardo corrente"
-
-msgid "Audio track:"
-msgstr "Canale audio: "
 
 msgid "Decrease delay"
 msgstr "Diminuire il ritardo"
@@ -175,6 +175,9 @@ msgstr "Ritardo canale"
 msgid "Set delay to %i ms (can be set)"
 msgstr "Regolare il ritardo a %i ms (configurabili)"
 
+msgid "Sets the audio delay (LipSync)"
+msgstr "Configurare il ritardo audio (LipSync)"
+
 msgid "Setting key canceled"
 msgstr "Configurazione tasto annullata!"
 
@@ -206,6 +209,3 @@ msgstr "Dopo la sospensione"
 
 msgid "disabled"
 msgstr "Disabilitato"
-
-msgid "Sets the audio delay (LipSync)"
-msgstr "Configurare il ritardo audio (LipSync)"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Seekbar\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"POT-Creation-Date: 2021-04-16 16:27+0430\n"
 "PO-Revision-Date: 2016-07-18 22:37+0300\n"
 "Last-Translator: Dimitrij <dima-73@inbox.lv>\n"
 "Language-Team: Dimitrij PLi\n"
@@ -17,6 +17,9 @@ msgid "Bitrate"
 msgstr "Бітрейт"
 
 msgid "Frame rate"
+msgstr ""
+
+msgid "Framerate"
 msgstr ""
 
 msgid "It seems your receiver is not supported!"
@@ -48,4 +51,8 @@ msgid "Video codec"
 msgstr "Размір відео"
 
 msgid "Video size"
+msgstr "Размір відео"
+
+#, fuzzy
+msgid "videocodec"
 msgstr "Размір відео"

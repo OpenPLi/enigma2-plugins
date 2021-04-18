@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Enigma 2 Filebrowser Plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-22 18:20+0200\n"
+"POT-Creation-Date: 2021-04-16 16:27+0430\n"
 "PO-Revision-Date: 2020-05-22 18:22+0200\n"
 "Last-Translator: ims <ims21@users.sourceforge.net>\n"
 "Language-Team: PLi\n"
@@ -16,77 +16,32 @@ msgstr ""
 "X-Generator: Poedit 2.0.6\n"
 "X-Poedit-SearchPath-0: ../src\n"
 
-msgid "Filebrowser"
-msgstr ""
-
-msgid "manage local Files"
-msgstr ""
-
-msgid "Add plugin to Mainmenu"
-msgstr ""
-
 msgid "Add plugin to Extensionmenu"
 msgstr ""
 
-msgid "Count directory content size"
-msgstr ""
-
-msgid "Save path positions on exit"
-msgstr ""
-
-msgid "Left panel position"
-msgstr ""
-
-msgid "Right panel position"
+msgid "Add plugin to Mainmenu"
 msgstr ""
 
 #, fuzzy
 msgid "Cancel"
 msgstr "Abbrechen"
 
-msgid "OK"
-msgstr ""
-
-msgid "Settings"
-msgstr ""
-
-msgid "Delete"
-msgstr ""
-
-msgid "Move"
-msgstr ""
-
 msgid "Copy"
-msgstr ""
-
-msgid "Rename"
-msgstr ""
-
-msgid "Select location"
-msgstr ""
-
-msgid "Create directory"
-msgstr ""
-
-msgid "Select operation:"
 msgstr ""
 
 msgid "Copy directory"
 msgstr ""
 
-msgid "to"
-msgstr ""
-
 msgid "Copy file"
 msgstr ""
 
-msgid "from"
+msgid "Count directory content size"
 msgstr ""
 
-msgid "copying directory, wait please ..."
+msgid "Create directory"
 msgstr ""
 
-msgid "copying file ..."
+msgid "Delete"
 msgstr ""
 
 msgid "Delete directory"
@@ -95,13 +50,13 @@ msgstr ""
 msgid "Delete file"
 msgstr ""
 
-msgid "from dir"
+msgid "Filebrowser"
 msgstr ""
 
-msgid "deleting directory ..."
+msgid "Left panel position"
 msgstr ""
 
-msgid "deleting file ..."
+msgid "Move"
 msgstr ""
 
 msgid "Move directory"
@@ -110,13 +65,10 @@ msgstr ""
 msgid "Move file"
 msgstr ""
 
-msgid "to dir"
+msgid "OK"
 msgstr ""
 
-msgid "moving directory, wait please ..."
-msgstr ""
-
-msgid "moving file ..."
+msgid "Rename"
 msgstr ""
 
 msgid "Rename directory"
@@ -125,14 +77,62 @@ msgstr ""
 msgid "Rename file"
 msgstr ""
 
+msgid "Right panel position"
+msgstr ""
+
+msgid "Save path positions on exit"
+msgstr ""
+
+msgid "Select location"
+msgstr ""
+
+msgid "Select operation:"
+msgstr ""
+
+msgid "Settings"
+msgstr ""
+
+msgid "copying directory, wait please ..."
+msgstr ""
+
+msgid "copying file ..."
+msgstr ""
+
+msgid "creating directory ..."
+msgstr ""
+
+msgid "deleting directory ..."
+msgstr ""
+
+msgid "deleting file ..."
+msgstr ""
+
+msgid "from"
+msgstr ""
+
+msgid "from dir"
+msgstr ""
+
+msgid "manage local Files"
+msgstr ""
+
+msgid "moving directory, wait please ..."
+msgstr ""
+
+msgid "moving file ..."
+msgstr ""
+
+msgid "no Viewer installed for this mimetype!"
+msgstr ""
+
 msgid "renaming directory ..."
 msgstr ""
 
 msgid "renaming file ..."
 msgstr ""
 
-msgid "creating directory ..."
+msgid "to"
 msgstr ""
 
-msgid "no Viewer installed for this mimetype!"
+msgid "to dir"
 msgstr ""

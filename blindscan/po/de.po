@@ -3,41 +3,58 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: enigma2 3.0.0\n"
-"Report-Msgid-Bugs-To: www.openpli.org\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-16 16:27+0430\n"
 "PO-Revision-Date: 2019-12-01 14:02+0100\n"
+"Last-Translator: Binsche <www.openpli.org>\n"
 "Language-Team: \n"
+"Language: de_DE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 2.2.4\n"
-"Last-Translator: Binsche <www.openpli.org>\n"
-"Language: de_DE\n"
+
+#, fuzzy
+msgid ""
+"\n"
+"Second slot dual tuner may not be supported blind scan."
+msgstr "Zweiter Slot Dual Tuner unterstützt offenbar keinen Blindscan."
+
+msgid ""
+"\n"
+"WARNING! Blind scan may make the tuner malfunction on a VU+ and ET receiver. A reboot afterwards may be required to return to proper tuner function."
+msgstr ""
+
+#, fuzzy
+msgid ""
+"\n"
+"You must use the power adapter."
+msgstr "Sie müssen das Netzteil verwenden."
+
+#, fuzzy
+msgid "   Starting Sundtek hardware blind scan."
+msgstr "Starten des Sundtek Hardware-Blindscans."
 
 msgid " tuner."
 msgstr " Tuner."
 
-msgid ""
-"\"channel scan\" searches for channels and saves them to your receiver; "
-"\"transponder scan\" does a transponder search and displays the results "
-"allowing user to select some or all transponder. Both options save the "
-"results in satellites.xml format under /tmp"
-msgstr ""
-"\"Suche nach Kanälen\" sucht Kanäle und speichert sie in Ihrem Empfänger; "
-"\"Suche nach Transpondern\" führt eine Transpondersuche durch "
-"und zeigt die Ergebnisse an, so dass der Benutzer bestimmte oder alle "
-"Transponder auswählen kann. Beide Optionen speichern die Ergebnisse in "
-"der Datei satellites.xml unter /tmp"
+msgid "\"channel scan\" searches for channels and saves them to your receiver; \"transponder scan\" does a transponder search and displays the results allowing user to select some or all transponder. Both options save the results in satellites.xml format under /tmp"
+msgstr "\"Suche nach Kanälen\" sucht Kanäle und speichert sie in Ihrem Empfänger; \"Suche nach Transpondern\" führt eine Transpondersuche durch und zeigt die Ergebnisse an, so dass der Benutzer bestimmte oder alle Transponder auswählen kann. Beide Optionen speichern die Ergebnisse in der Datei satellites.xml unter /tmp"
 
+#, python-format
 msgid "%d transponder(s) found"
 msgstr "%d Transponder gefunden"
 
+#, python-format
 msgid "%d transponders found at %d:%02d min"
 msgstr "%d Transponder in %d:%02d min gefunden"
 
+#, python-format
 msgid "%d:%02d/%d:%02dmin"
 msgstr "%d:%02d/%d:%02dmin"
 
+#, python-format
 msgid "%dMHz scanned"
 msgstr "%dMHz gescannt"
 
@@ -62,23 +79,11 @@ msgstr "Blindscan Status"
 msgid "Blindscan is not supported in "
 msgstr "Blindscan wird nicht unterstützt bei "
 
-msgid ""
-"CAUTION: If you select \"yes\" the scan will not remove \"duplicated\" "
-"transponders from the list. Default is \"no\". Only change this if you "
-"understand why you are doing it."
-msgstr ""
-"VORSICHT: Wenn Sie \"Ja\" wählen, werden durch den Scan keine \"doppelten\" "
-"Transponder aus der Liste entfernt. Voreinstellung ist \"nein\". Ändern "
-"Sie dies nur, wenn Sie verstehen, warum Sie es tun."
+msgid "CAUTION: If you select \"yes\" the scan will not remove \"duplicated\" transponders from the list. Default is \"no\". Only change this if you understand why you are doing it."
+msgstr "VORSICHT: Wenn Sie \"Ja\" wählen, werden durch den Scan keine \"doppelten\" Transponder aus der Liste entfernt. Voreinstellung ist \"nein\". Ändern Sie dies nur, wenn Sie verstehen, warum Sie es tun."
 
-msgid ""
-"CAUTION: If you select \"yes\" the scan will not sync with transponders "
-"listed in satellites.xml. Default is \"no\". Only change this if you "
-"understand why you are doing it."
-msgstr ""
-"ACHTUNG: Wenn Sie \"Ja\" auswählen, wird das Ergebnis nicht mit den in "
-"der satellites.xml aufgelisteten Transpondern synchronisiert. Voreinstellung ist "
-"\"nein\". Ändern Sie dies nur, wenn Sie verstehen, warum Sie es tun."
+msgid "CAUTION: If you select \"yes\" the scan will not sync with transponders listed in satellites.xml. Default is \"no\". Only change this if you understand why you are doing it."
+msgstr "ACHTUNG: Wenn Sie \"Ja\" auswählen, wird das Ergebnis nicht mit den in der satellites.xml aufgelisteten Transpondern synchronisiert. Voreinstellung ist \"nein\". Ändern Sie dies nur, wenn Sie verstehen, warum Sie es tun."
 
 msgid "Cancel"
 msgstr "Abbruch"
@@ -86,10 +91,11 @@ msgstr "Abbruch"
 msgid "Clear before scan"
 msgstr "Vor dem Scan löschen"
 
+#, fuzzy, python-format
 msgid ""
 "Current Status: %d/%d\n"
 "Satellite: %s\n"
-"Polarization: %s  Frequency range: %d - %d MHz  Symbol rates: %d - %d MHz"
+"Polarization: %s  Frequency range: %d - %d MHz  Symbol rates: %d - %d MSym/s"
 msgstr ""
 "Aktueller Status: %d/%d\n"
 "Satellit: %s\n"
@@ -119,6 +125,7 @@ msgstr "Zurück"
 msgid "Filter out adjacent satellites"
 msgstr "Filtert benachbarte Satelliten heraus"
 
+#, python-format
 msgid "Frequency values must be between %d MHz and %d MHz"
 msgstr "Frequenzwert muss zwischen %d MHz und %d MHz liegen"
 
@@ -128,35 +135,21 @@ msgstr "Frequenzwert muss zwischen 3000 MHz und 4199 MHz (C-Band) liegen"
 msgid "Frequency values must be between 3001 MHz and 4200 MHz (C-band)"
 msgstr "Frequenzwert muss zwischen zwischen 3001 MHz und 4200 MHz (C-Band) liegen"
 
+#, python-format
 msgid "Hardware blind scan is not supported by this tuner (%s)!"
 msgstr "Hardware Blindscan wird von diesem Tuner Typ nicht unterstützt (%s)!"
 
 msgid "Horizontal"
 msgstr "Horizontal"
 
-msgid ""
-"If you select \"yes\" all channels on the satellite being search will be "
-"deleted before starting the current search, yes (keep feeds) means the same "
-"but hold all feed services/transponders."
-msgstr ""
-"Wenn Sie \"Ja\" auswählen, werden alle Kanäle auf dem Satelliten gelöscht, "
-"bevor die aktuelle Suche gestartet wird. Ja (Feeds beibehalten) bedeutet "
-"dasselbe, aber alle Feed-Dienste/Transponder werden beibehalten."
+msgid "If you select \"yes\" all channels on the satellite being search will be deleted before starting the current search, yes (keep feeds) means the same but hold all feed services/transponders."
+msgstr "Wenn Sie \"Ja\" auswählen, werden alle Kanäle auf dem Satelliten gelöscht, bevor die aktuelle Suche gestartet wird. Ja (Feeds beibehalten) bedeutet dasselbe, aber alle Feed-Dienste/Transponder werden beibehalten."
 
-msgid ""
-"If you select \"yes\" the scan will only save channels that are not "
-"encrypted; \"no\" will find encrypted and non-encrypted channels."
-msgstr ""
-"Wenn Sie \"Ja\" auswählen, speichert der Scan nur Kanäle, die nicht "
-"verschlüsselt sind. \"Nein\" speichert verschlüsselte und unverschlüsselte "
-"Kanäle."
+msgid "If you select \"yes\" the scan will only save channels that are not encrypted; \"no\" will find encrypted and non-encrypted channels."
+msgstr "Wenn Sie \"Ja\" auswählen, speichert der Scan nur Kanäle, die nicht verschlüsselt sind. \"Nein\" speichert verschlüsselte und unverschlüsselte Kanäle."
 
-msgid ""
-"If you select \"yes\" the scan will only search transponders not listed in "
-"satellites.xml"
-msgstr ""
-"Wenn Sie \"Ja\" auswählen, sucht der Scan nur nach Transpondern, die nicht "
-"in der Datei satellites.xml aufgeführt sind"
+msgid "If you select \"yes\" the scan will only search transponders not listed in satellites.xml"
+msgstr "Wenn Sie \"Ja\" auswählen, sucht der Scan nur nach Transpondern, die nicht in der Datei satellites.xml aufgeführt sind"
 
 msgid "It seems manufacturer does not support blind scan for this tuner."
 msgstr "Es scheint, dass der Hersteller den Blindscan für diesen Tuner nicht unterstützt."
@@ -204,6 +197,7 @@ msgstr ""
 "Kein Tuner aktiviert!\n"
 "Bitte vor Start der Kanalsuche den entsprechenden Tuner konfigurieren."
 
+#, python-format
 msgid "Not found blind scan utility '%s'!"
 msgstr "Es wurde kein Blindscan Tool gefunden '%s'!"
 
@@ -274,6 +268,7 @@ msgstr "Höchste Symbolrate"
 msgid "Scan unknown error!"
 msgstr "Unbekannter Fehler bei Suche aufgetreten!"
 
+#, python-format
 msgid ""
 "Search completed\n"
 "%d transponders found in %d:%02d minutes.\n"
@@ -283,6 +278,7 @@ msgstr ""
 "%d Transponder gefunden in %d:%02d Minuten.\n"
 "Details gespeichert in: %s"
 
+#, python-format
 msgid ""
 "Search completed. %d transponders found.\n"
 "\n"
@@ -296,9 +292,6 @@ msgstr ""
 
 msgid "Search type"
 msgstr "Suchmodus"
-
-msgid "Second slot dual tuner may not be supported blind scan."
-msgstr "Zweiter Slot Dual Tuner unterstützt offenbar keinen Blindscan."
 
 msgid "Select a tuner that is configured for the satellite you wish to search"
 msgstr "Konfigurierten Tuner auswählen, mit dem der Satellit abgesucht werden soll"
@@ -329,9 +322,7 @@ msgstr "Dieser Tuner ist in Nutzung."
 msgid "Start scan"
 msgstr "Starte Suche"
 
-msgid "Starting Sundtek hardware blind scan."
-msgstr "Starten des Sundtek Hardware-Blindscans."
-
+#, python-format
 msgid "Step %d %d:%02d min"
 msgstr "Schritt %d %d:%02d min"
 
@@ -344,6 +335,7 @@ msgstr "Einen Wert zwischen 2 und 45 bei der Symbolrate in MSym/s eingeben"
 msgid "The blindscan run was cancelled by the user."
 msgstr "Blindscan Suche wurde durch den Nutzer abgebrochen."
 
+#, python-format
 msgid "The suggested polarisation for this satellite is \"%s\""
 msgstr "Empfohlene Polarisation für diesen Satelliten ist \"%s\""
 
@@ -362,15 +354,8 @@ msgstr "Nutze Sundtek für einen echten Hardware Blindscan!"
 msgid "Vertical"
 msgstr "Vertikal"
 
-msgid ""
-"When a neighbouring satellite is very strong this avoids searching "
-"transponders known to be coming from the neighbouring satellite."
-msgstr ""
-"Wenn ein Nachbar Satellit sehr stark ist, wird vermieden, Transponder zu "
-"suchen, von denen bekannt ist, dass sie vom benachbarten Satelliten kommen."
-
-msgid "You must use the power adapter."
-msgstr "Sie müssen das Netzteil verwenden."
+msgid "When a neighbouring satellite is very strong this avoids searching transponders known to be coming from the neighbouring satellite."
+msgstr "Wenn ein Nachbar Satellit sehr stark ist, wird vermieden, Transponder zu suchen, von denen bekannt ist, dass sie vom benachbarten Satelliten kommen."
 
 msgid "circular left"
 msgstr "Zirkular links"

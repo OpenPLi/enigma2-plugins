@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: moviecut\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-27 20:23+0000\n"
+"POT-Creation-Date: 2021-04-16 16:27+0430\n"
 "PO-Revision-Date: 2018-12-02 13:09+0300\n"
 "Last-Translator: mosad - مساعد الجعيد <abo-mishal@hotmail.com>\n"
 "Language-Team: mosad - مساعد الجعيد\n"
@@ -20,6 +20,12 @@ msgstr ""
 
 msgid "Advanced cut specification..."
 msgstr "مواصفات التقطيع المتقدم..."
+
+#, python-format
+msgid ""
+"Another movie is currently cut.\n"
+"The movie \"%s\" will be cut in the background after it."
+msgstr ""
 
 msgid "Bad arguments"
 msgstr "الحجج السيئة"
@@ -60,9 +66,11 @@ msgstr "قائمة التقطيع"
 msgid "Cuts (an IN OUT IN OUT ... sequence of hour:min:sec)"
 msgstr "التقطيعات (في الخارج في الخارج ... تسلسل الساعة:الدقائق:الثواني)"
 
+#, python-format
 msgid "Cutting failed for movie \"%s\""
 msgstr "فشل تقطيع الفلم \"%s\""
 
+#, python-format
 msgid "Cutting was aborted for movie \"%s\""
 msgstr "تم إحباط تقطيع الفيلم \"%s\""
 
@@ -75,6 +83,7 @@ msgstr "ملف. ap فارغ"
 msgid "Execute cuts..."
 msgstr "تنفيذ التقطيعات..."
 
+#, python-format
 msgid "How would you like to cut \"%s\"?"
 msgstr "كيف تريد التقطيع \" %s\" ؟"
 
@@ -114,6 +123,11 @@ msgstr "استبدال الأصلي:"
 msgid "Replace the original movie with the cut movie"
 msgstr "استبدل الفيلم الأصلي بالفيلم المقطوع"
 
+#, fuzzy, python-format
+msgid "The movie \"%s\" is cut in the background."
+msgstr "تم قطع الفيلم \" %s\" بنجاح"
+
+#, python-format
 msgid "The movie \"%s\" is successfully cut"
 msgstr "تم قطع الفيلم \" %s\" بنجاح"
 

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Automatic Screen Resolution V. 0.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"POT-Creation-Date: 2021-04-16 16:27+0430\n"
 "PO-Revision-Date: \n"
 "Last-Translator: ims <ims21@users.sourceforge.net>\n"
 "Language-Team: msi\n"
@@ -103,6 +103,9 @@ msgstr ""
 msgid "FHD 50/60HZ Progressive Mode"
 msgstr "SD 30/60Hz progresivní režim"
 
+msgid "Force set progressive for stream/video content"
+msgstr ""
+
 msgid "HD Interlace Mode"
 msgstr "HD prokládaný režim"
 
@@ -196,9 +199,6 @@ msgstr ""
 
 msgid "auto"
 msgstr "auto"
-
-msgid "bob"
-msgstr "nejlepší možné"
 
 msgid "default"
 msgstr "standardní"

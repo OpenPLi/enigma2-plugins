@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ZapHistoryBrowser\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-11 12:34+0200\n"
+"POT-Creation-Date: 2021-04-16 16:27+0430\n"
 "PO-Revision-Date: 2016-12-21 09:11+0200\n"
 "Last-Translator: \n"
 "Language-Team: Vytenis P. <vyteniui@gmail.com>\n"
@@ -16,6 +16,9 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Poedit-SearchPath-0: /home/aliabdul/dream/enigma2/enigma2-plugins/zaphistorybrowser/src\n"
 
+msgid "Cancel"
+msgstr ""
+
 msgid "Clear"
 msgstr "Išvalyti"
 
@@ -28,12 +31,11 @@ msgstr "Pašalinti"
 msgid "Enable zap history:"
 msgstr "Įjungti perjungimų istoriją:"
 
-#, fuzzy
-msgid "Enigma1-like history:"
-msgstr "Įjungti perjungimų istoriją:"
-
 msgid "Maximum zap history entries:"
 msgstr "Daugiausiai perjungimų istorijos įrašų:"
+
+msgid "OK"
+msgstr ""
 
 msgid "Zap & Close"
 msgstr "Perjungti ir uždaryti"

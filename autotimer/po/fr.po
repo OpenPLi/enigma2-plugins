@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-26 22:23+0200\n"
+"POT-Creation-Date: 2021-04-16 16:27+0430\n"
 "PO-Revision-Date: 2019-05-25 08:17+0200\n"
 "Last-Translator: Pr2 <dummy@dummy.com>\n"
 "Language-Team: OpenPLi\n"
@@ -27,12 +27,6 @@ msgstr ""
 "\n"
 "\n"
 "Annuler?"
-
-msgid " (if services are enabled, bouquets are ignored)."
-msgstr " (si les services sont activés, les favoris sont ignorés)."
-
-msgid " (if services are enabled, bouquets are ignored.)."
-msgstr " (si les services sont activés, les favoris sont ignorés.)."
 
 msgid " (only services from bouquets when use \"favorites description match\")."
 msgstr " (seulement pour les services des favoris lorsqu’on utilise « la description du favoris correspond »)."
@@ -128,6 +122,9 @@ msgstr "Toutes les chaînes"
 
 msgid "All non-repeating timers"
 msgstr "Toutes les programmations non-répétitives"
+
+msgid "Allow double timer for different services"
+msgstr ""
 
 msgid "Always write config"
 msgstr "Toujours sauvegarder la configuration"
@@ -489,6 +486,9 @@ msgstr "Deviner les timers existant basé sur début/fin"
 msgid "Help"
 msgstr "Aide"
 
+msgid "Here you can specify whether simultaneous timers of the same program can be created. This allows simultaneous recording of a program with different resolutions. (e.g. SD service and HD service)."
+msgstr ""
+
 msgid "If 0, the popup will remain open."
 msgstr "Si 0, le message à l’écran restera ouvert."
 
@@ -500,6 +500,16 @@ msgstr "Si activé, l'interrogation sera suspendue si EPGRefresh est en cours d'
 
 msgid "If enabled, the polling will be skipped if a recording is in progress."
 msgstr "Si activé, l'interrogation sera suspendue si un enregistrement est en cours."
+
+msgid "If specified bouquets"
+msgstr ""
+
+#, fuzzy
+msgid "If specified services"
+msgstr "Sur le même service"
+
+msgid "If specified services or bouquets"
+msgstr ""
 
 msgid "If the style is advanced, you will see more information about each auto timer. This change will not take effect until the plugin has started again."
 msgstr "Si le style est avancé, vous verrez plus d'information à propos de chaque programmation."
@@ -1379,6 +1389,12 @@ msgid ""
 msgstr ""
 "Votre fichier de configuration n'est pas correcte:\n"
 "%s"
+
+msgid "[B]  "
+msgstr ""
+
+msgid "[S]  "
+msgstr ""
 
 msgid "add AutoTimer"
 msgstr "Ajouter AutoTimer"

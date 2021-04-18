@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Enigma2 Plugin - ZapHistoryBrowser\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"POT-Creation-Date: 2021-04-16 16:27+0430\n"
 "PO-Revision-Date: 2009-09-27 18:19+0100\n"
 "Last-Translator: maja <jovanovic@gmx.ch>\n"
 "Language-Team: veselin & majevica CRNABERZA <jovanovic@gmx.ch>\n"
@@ -16,6 +16,9 @@ msgstr ""
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SearchPath-0: /home/aliabdul/dream/enigma2-plugins/zaphistorybrowser/src\n"
 
+msgid "Cancel"
+msgstr ""
+
 msgid "Clear"
 msgstr "Očisti"
 
@@ -28,12 +31,11 @@ msgstr "Obriši"
 msgid "Enable zap history:"
 msgstr "Aktiviraj Zap istoriju:"
 
-#, fuzzy
-msgid "Enigma1-like history:"
-msgstr "Aktiviraj Zap istoriju:"
-
 msgid "Maximum zap history entries:"
 msgstr "Maksimum unosa Zap istorije:"
+
+msgid "OK"
+msgstr ""
 
 msgid "Zap & Close"
 msgstr "Prebaci & Zatvori"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"POT-Creation-Date: 2021-04-16 16:27+0430\n"
 "PO-Revision-Date: \n"
 "Last-Translator: ims <ims21@users.sourceforge.net>\n"
 "Language-Team: ims\n"
@@ -18,6 +18,12 @@ msgstr "%d %B %Y"
 
 msgid "Cancel"
 msgstr "Отмена"
+
+msgid "Check for PDC"
+msgstr "Проверка PDC"
+
+msgid "Check for PDC availability on each service"
+msgstr "Проверять доступность PDC для каждого сервиса."
 
 msgid "Enable VPS"
 msgstr "Включить VPS"
@@ -194,9 +200,3 @@ msgstr "Да, больше не спрашивать"
 
 msgid "always ask"
 msgstr "всегда спрашивать"
-
-msgid "Check for PDC"
-msgstr "Проверка PDC"
-
-msgid "Check for PDC availability on each service"
-msgstr "Проверять доступность PDC для каждого сервиса."

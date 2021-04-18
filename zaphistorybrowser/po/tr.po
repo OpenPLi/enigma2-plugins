@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2 ZapHistoryBrowser Turkish Locale\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"POT-Creation-Date: 2021-04-16 16:27+0430\n"
 "PO-Revision-Date: 2009-09-22 13:20+0200\n"
 "Last-Translator: Zülfikar VEYİSOĞLU <z.veyisoglu@hobiagaci.com>\n"
 "Language-Team: http://hobiagaci.com <z.veyisoglu@hobiagaci.com>\n"
@@ -13,6 +13,9 @@ msgstr ""
 "X-Poedit-Language: Turkish\n"
 "X-Poedit-Country: TURKEY\n"
 "X-Poedit-SourceCharset: utf-8\n"
+
+msgid "Cancel"
+msgstr ""
 
 msgid "Clear"
 msgstr "Temizle"
@@ -26,12 +29,11 @@ msgstr "Sil"
 msgid "Enable zap history:"
 msgstr "Zap geçmişi:"
 
-#, fuzzy
-msgid "Enigma1-like history:"
-msgstr "Zap geçmişi:"
-
 msgid "Maximum zap history entries:"
 msgstr "Tutulacak maksimum geçmiş kaydı:"
+
+msgid "OK"
+msgstr ""
 
 msgid "Zap & Close"
 msgstr "Zapla&Kapat"

@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2  - FRITZ!Box\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"POT-Creation-Date: 2021-04-16 16:27+0430\n"
 "PO-Revision-Date: 2015-04-14 23:22+0200\n"
 "Last-Translator: Spaeleus <spaeleus@croci.org>\n"
 "Language-Team: www.linsat.net <spaeleus@croci.org>\n"
@@ -215,9 +215,6 @@ msgstr "Mod."
 #. TRANSLATORS: this is a window title.
 msgid "Edit selected entry"
 msgstr "Mod. voce selezionata"
-
-msgid "Enter Search Terms"
-msgstr "Inserire criteri di ricerca"
 
 msgid "Entry incomplete."
 msgstr "Voce incompleta."
@@ -667,6 +664,9 @@ msgid "Unknown"
 msgstr ""
 
 msgid "Update available"
+msgstr ""
+
+msgid "Use HTTPS to communicate with FRITZ!Box"
 msgstr ""
 
 msgid "Use internal PhoneBook"

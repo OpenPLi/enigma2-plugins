@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: AudioSync\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"POT-Creation-Date: 2021-04-16 16:27+0430\n"
 "PO-Revision-Date: \n"
 "Last-Translator: robertut <robertut@yahoo.com>\n"
 "Language-Team: \n"
@@ -32,6 +32,9 @@ msgstr "Hang szinkronitás"
 msgid "Audio Sync setup"
 msgstr "Hang szinkronitásának beállítása"
 
+msgid "Audio track:"
+msgstr "Hangsáv:"
+
 msgid "Cancel"
 msgstr "Mégse"
 
@@ -43,9 +46,6 @@ msgstr "Középre helyezés felső szélen"
 
 msgid "Change active delay"
 msgstr "Aktív késleltetés változtatása"
-
-msgid "Audio track:"
-msgstr "Hangsáv:"
 
 msgid "Decrease delay"
 msgstr "Késleltetés csökkentése"
@@ -172,6 +172,9 @@ msgstr "Csatorna késleltetés"
 msgid "Set delay to %i ms (can be set)"
 msgstr "Késleltetés beállítása %i miliszekundumra (módosítható)"
 
+msgid "Sets the audio delay (LipSync)"
+msgstr "Beállítja a hang késleltetését a képhez képest (LipSync)"
+
 msgid "Setting key canceled"
 msgstr "Gomb beállítása megszakítva"
 
@@ -203,6 +206,3 @@ msgstr ""
 
 msgid "disabled"
 msgstr ""
-
-msgid "Sets the audio delay (LipSync)"
-msgstr "Beállítja a hang késleltetését a képhez képest (LipSync)"

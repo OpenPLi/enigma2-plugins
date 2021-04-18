@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-08-01 20:49+0200\n"
+"POT-Creation-Date: 2021-04-16 16:27+0430\n"
 "PO-Revision-Date: 2018-07-31 15:17+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -215,9 +215,6 @@ msgstr "Éditer"
 #. TRANSLATORS: this is a window title.
 msgid "Edit selected entry"
 msgstr "Modifier l'entrée sélectionnée"
-
-msgid "Enter Search Terms"
-msgstr "Rechercher"
 
 msgid "Entry incomplete."
 msgstr "Entrée incomplète."
@@ -670,6 +667,9 @@ msgstr "Inconnu"
 
 msgid "Update available"
 msgstr "Mise à jour disponible"
+
+msgid "Use HTTPS to communicate with FRITZ!Box"
+msgstr ""
 
 msgid "Use internal PhoneBook"
 msgstr "Utiliser le répertoire téléphonique interne"

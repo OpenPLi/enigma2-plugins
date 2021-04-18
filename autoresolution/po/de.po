@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Automatic Screen Resolution V. 0.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"POT-Creation-Date: 2021-04-16 16:27+0430\n"
 "PO-Revision-Date: \n"
 "Last-Translator: JuSt611 <Software@Strasdas.de>\n"
 "Language-Team: JuSt611\n"
@@ -103,6 +103,9 @@ msgstr ""
 msgid "FHD 50/60HZ Progressive Mode"
 msgstr "SD 30/60HZ Progressiv Modus"
 
+msgid "Force set progressive for stream/video content"
+msgstr ""
+
 msgid "HD Interlace Mode"
 msgstr "HD Interlace Modus"
 
@@ -197,9 +200,6 @@ msgstr ""
 
 msgid "auto"
 msgstr "automatisch"
-
-msgid "bob"
-msgstr "bestmöglich"
 
 msgid "default"
 msgstr "Standard"

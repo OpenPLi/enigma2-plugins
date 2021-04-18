@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2 - AC3LipSync\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"POT-Creation-Date: 2021-04-16 16:27+0430\n"
 "PO-Revision-Date: 2009-09-16 13:02+0100\n"
 "Last-Translator: \n"
 "Language-Team:  <Benny.DeTandt@gmail.com>\n"
@@ -44,6 +44,10 @@ msgstr "AC3 Lip Sync"
 msgid "Audio Sync setup"
 msgstr "AC3 Lip Sync instellingen"
 
+# L:\Dreambox\Eclipse\enigma2-plugins\ac3lipsync\src/AC3main.py:87
+msgid "Audio track:"
+msgstr "Kanaal audio:"
+
 # L:\Dreambox\Eclipse\enigma2-plugins\ac3lipsync\src/AC3main.py:92
 # L:\Dreambox\Eclipse\enigma2-plugins\ac3lipsync\src/AC3setup.py:58
 msgid "Cancel"
@@ -57,10 +61,6 @@ msgstr ""
 
 msgid "Change active delay"
 msgstr ""
-
-# L:\Dreambox\Eclipse\enigma2-plugins\ac3lipsync\src/AC3main.py:87
-msgid "Audio track:"
-msgstr "Kanaal audio:"
 
 # L:\Dreambox\Eclipse\enigma2-plugins\ac3lipsync\src/AC3main.py:82
 #, fuzzy
@@ -204,6 +204,12 @@ msgstr "Bewaar %s vertraging"
 msgid "Set delay to %i ms (can be set)"
 msgstr ""
 
+# L:\Dreambox\Eclipse\enigma2-plugins\ac3lipsync\src/plugin.py:34
+# L:\Dreambox\Eclipse\enigma2-plugins\ac3lipsync\src/plugin.py:36
+#, fuzzy
+msgid "Sets the audio delay (LipSync)"
+msgstr "Stel de AC3 audio vertraging in (LipSync)"
+
 # L:\Dreambox\Eclipse\enigma2-plugins\ac3lipsync\src/AC3main.py:337
 msgid "Setting key canceled"
 msgstr "Configuratie toets geannuleerd"
@@ -241,9 +247,3 @@ msgstr "na standby"
 
 msgid "disabled"
 msgstr "uitgeschakeld"
-
-# L:\Dreambox\Eclipse\enigma2-plugins\ac3lipsync\src/plugin.py:34
-# L:\Dreambox\Eclipse\enigma2-plugins\ac3lipsync\src/plugin.py:36
-#, fuzzy
-msgid "Sets the audio delay (LipSync)"
-msgstr "Stel de AC3 audio vertraging in (LipSync)"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-plugins 3.2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"POT-Creation-Date: 2021-04-16 16:27+0430\n"
 "PO-Revision-Date: 2012-08-25 12:58+0300\n"
 "Last-Translator: rimas\n"
 "Language-Team: rimas\n"
@@ -20,10 +20,7 @@ msgstr ""
 msgid " as "
 msgstr " - "
 
-msgid "Add 'Search event in IMDb' to further option EPG menu."
-msgstr ""
-
-msgid "Add 'Search in IMDb' to movie list menu for selected video."
+msgid "* = Restart Required"
 msgstr ""
 
 msgid "Ambiguous results"
@@ -41,7 +38,8 @@ msgstr "Kanalite valik"
 msgid "Content:"
 msgstr ""
 
-msgid "Could't get Eventname"
+#, fuzzy
+msgid "Could't get event name"
 msgstr "Saate nime ei tuvastatud"
 
 msgid "Details"
@@ -51,7 +49,16 @@ msgstr "Üksikasjad"
 msgid "Downloading Movie Poster: %s..."
 msgstr "Filmi plakati tõmbamine: %s..."
 
-msgid "Enable this to be able to access the IMDb from within the plugin browser."
+#, fuzzy
+msgid "Enable this to be able to access IMDb search setup from within the plugin browser."
+msgstr "Luba see, et IMDb oleks ka laienduste lehitsejas"
+
+#, fuzzy
+msgid "Enable this to be able to access IMDb searches from within the movie list."
+msgstr "Luba see, et IMDb oleks ka laienduste lehitsejas"
+
+#, fuzzy
+msgid "Enable this to be able to access IMDb searches from within the plugin browser."
 msgstr "Luba see, et IMDb oleks ka laienduste lehitsejas"
 
 msgid "Enter search"
@@ -63,21 +70,15 @@ msgstr "Sisesta otsitav tekst"
 msgid "Exit"
 msgstr "Välju"
 
-msgid "Extra Info"
-msgstr "Lisateave"
-
 #, fuzzy
-msgid "Extra Info\n"
+msgid "Exit IMDb search"
+msgstr "Vastet ei leitud"
+
+msgid "Extra Info"
 msgstr "Lisateave"
 
 msgid "Genre:"
 msgstr ""
-
-msgid "Genre: "
-msgstr ""
-
-msgid "IMDb Details"
-msgstr "IMDb andmed"
 
 msgid "IMDb Details parsed"
 msgstr "IMDb andmed töödeldud"
@@ -99,20 +100,16 @@ msgid "IMDb Re-Download completed"
 msgstr "Taasallalaadimine tehtud"
 
 #, fuzzy
-msgid "IMDb Save-Download completed"
+msgid "IMDb Save - Download completed"
 msgstr "Taasallalaadimine tehtud"
 
 msgid "IMDb Setup"
 msgstr "IMDb seaded"
 
-msgid ""
-"IMDb can not get Movie Information, to\n"
-" write .jpg and .txt-file!"
+msgid "IMDb can not get Movie Information to write to .jpg and .txt files!"
 msgstr ""
 
-msgid ""
-"IMDb can not get Movie Information, to\n"
-" write .txt-file!"
+msgid "IMDb can not get Movie Information to write to .txt file!"
 msgstr ""
 
 msgid "IMDb query failed!"
@@ -123,10 +120,22 @@ msgid "IMDb search"
 msgstr "Vastet ei leitud"
 
 #, fuzzy
-msgid "Lookup IMDb"
+msgid "IMDb setup"
+msgstr "IMDb seaded"
+
+#, fuzzy
+msgid "Lookup"
 msgstr "Otsing"
 
+#, fuzzy
+msgid "Menu"
+msgstr "IMDb seaded"
+
 msgid "No IMDb match."
+msgstr "Vastet ei leitud"
+
+#, fuzzy
+msgid "No IMDb match:"
 msgstr "Vastet ei leitud"
 
 msgid "No cast list found in the database."
@@ -138,11 +147,20 @@ msgstr "Üksikasju ei leitud."
 msgid "OK"
 msgstr "OK"
 
+msgid "Page down"
+msgstr ""
+
+msgid "Page up"
+msgstr ""
+
 msgid "Play Trailer"
 msgstr "Esita treiler"
 
 msgid "Please select the matching entry"
 msgstr "Vali sobiv vaste"
+
+msgid "Plot Outline"
+msgstr ""
 
 msgid "Production Countries:"
 msgstr ""
@@ -150,9 +168,6 @@ msgstr ""
 #, fuzzy, python-format
 msgid "Query IMDb: %s"
 msgstr "IMDb päring: %s..."
-
-msgid "Query details from the Internet Movie Database"
-msgstr "IMDb päringu üksikasjad"
 
 #, python-format
 msgid "Re-Query IMDb: %s..."
@@ -164,7 +179,7 @@ msgstr ""
 msgid "Runtime:"
 msgstr ""
 
-msgid "Save current Details as .html for offline using"
+msgid "Save current Details as .html for offline use"
 msgstr ""
 
 msgid "Save current Details as .txt"
@@ -176,35 +191,63 @@ msgstr ""
 msgid "Search Trailer"
 msgstr "Otsi treilerit"
 
-msgid "Search event in IMDb"
-msgstr ""
-
-msgid "Search in IMDb"
-msgstr ""
+#, fuzzy
+msgid "Search for details from the Internet Movie Database"
+msgstr "IMDb päringu üksikasjad"
 
 msgid "Select from EPG"
 msgstr "Vali saatekavast"
 
+#, fuzzy
+msgid "Settings for Internet Movie Database searches"
+msgstr "IMDb päringu üksikasjad"
+
 msgid "Setup"
 msgstr "Seadistamine"
 
-msgid "Show in further option EPG menu"
+msgid "Show episode and year information for cast when available. Takes effect after the next fetch of show details."
 msgstr ""
 
-msgid "Show in movie list menu"
+msgid "Show episode and year information in cast list"
 msgstr ""
 
-msgid "Show in plugin browser"
+msgid "Show full movie or series name in title menu"
+msgstr ""
+
+msgid "Show in movie list"
+msgstr ""
+
+msgid "Show list of matched movies an series"
+msgstr ""
+
+msgid "Show movie and series basic details"
+msgstr ""
+
+msgid "Show movie and series extra details"
+msgstr ""
+
+#, fuzzy
+msgid "Show search in plugin browser"
 msgstr "Näita laienduste lehitsejas"
+
+#, fuzzy
+msgid "Show setup in plugin browser"
+msgstr "Näita laienduste lehitsejas"
+
+msgid "Show the whole IMDb title information for a movie or series, including, for example, alternative names and whether it's a series. Takes effect after the next search of IMDb for a show name."
+msgstr ""
 
 msgid "The Internet Movie Database"
 msgstr ""
 
-msgid "This option allows you add words/phrases for IMDb to ignore when searching. please seperaate with a comma"
+msgid "This option allows you add words/phrases for IMDb to ignore when searching. Please separate the words/phrases with commas."
 msgstr ""
 
 msgid "Title Menu"
 msgstr "Peamenüü"
+
+msgid "Unknown category"
+msgstr ""
 
 msgid "User Rating"
 msgstr "Kasutajahinnang"

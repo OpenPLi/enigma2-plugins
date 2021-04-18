@@ -2,6 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ZapStatistic\n"
 "Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-16 16:27+0430\n"
 "PO-Revision-Date: \n"
 "Last-Translator: mosad - مساعد الجعيد <abo-mishal@hotmail.com>\n"
 "Language-Team: mosad - مساعد الجعيد\n"
@@ -10,12 +11,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-Basepath: .\n"
-"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
-"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
 "X-Generator: Poedit 2.4.1\n"
-"POT-Creation-Date: \n"
-"X-Poedit-SearchPath-0: /home/aliabdul/dream/ltteam/trunk/additions/plugins/"
-"zapstatistic/src\n"
+"X-Poedit-SearchPath-0: /home/aliabdul/dream/ltteam/trunk/additions/plugins/zapstatistic/src\n"
+
+msgid "Close plugin"
+msgstr ""
 
 msgid "Delete"
 msgstr "حذف"
@@ -31,3 +32,48 @@ msgstr "المساحات"
 
 msgid "Play entry"
 msgstr "تشغيل المدخل"
+
+msgid "Please choose a function..."
+msgstr ""
+
+msgid "Show combined duration window"
+msgstr ""
+
+msgid "Show duration window"
+msgstr ""
+
+msgid "Shows the watched services with some statistic"
+msgstr ""
+
+msgid "Sort (date+)"
+msgstr ""
+
+msgid "Sort (date-)"
+msgstr ""
+
+msgid "Sort (duration+)"
+msgstr ""
+
+msgid "Sort (duration-)"
+msgstr ""
+
+msgid "Sort (name+)"
+msgstr ""
+
+msgid "Sort (name-)"
+msgstr ""
+
+msgid "Sort by date (ascending)"
+msgstr ""
+
+msgid "Sort by date (descending)"
+msgstr ""
+
+msgid "Sort by name (ascending)"
+msgstr ""
+
+msgid "Sort by name (descending)"
+msgstr ""
+
+msgid "Zap Statistic"
+msgstr ""

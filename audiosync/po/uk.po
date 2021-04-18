@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: AC3LipSync\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"POT-Creation-Date: 2021-04-16 16:27+0430\n"
 "PO-Revision-Date: \n"
 "Last-Translator: vovan43 <vovan43@ex.ua>\n"
 "Language-Team: \n"
@@ -30,6 +30,9 @@ msgstr "Аудіо Синхр"
 msgid "Audio Sync setup"
 msgstr "Налаштування синхронізації аудіо"
 
+msgid "Audio track:"
+msgstr "Канал аудіо:"
+
 msgid "Cancel"
 msgstr "Відміна"
 
@@ -41,9 +44,6 @@ msgstr "Центр екрана на верхній границі"
 
 msgid "Change active delay"
 msgstr "Змінити активну затримку"
-
-msgid "Audio track:"
-msgstr "Канал аудіо:"
 
 msgid "Decrease delay"
 msgstr "Зменшення затримки"
@@ -170,6 +170,9 @@ msgstr "Затримка сервіса"
 msgid "Set delay to %i ms (can be set)"
 msgstr "Встановлення затримки в %i мс (можливо встановити)"
 
+msgid "Sets the audio delay (LipSync)"
+msgstr "Встановлення затримки аудіо"
+
 msgid "Setting key canceled"
 msgstr "Налаштування кнопок відмінена"
 
@@ -201,6 +204,3 @@ msgstr ""
 
 msgid "disabled"
 msgstr ""
-
-msgid "Sets the audio delay (LipSync)"
-msgstr "Встановлення затримки аудіо"

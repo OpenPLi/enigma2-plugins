@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: AC3-LipSync\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"POT-Creation-Date: 2021-04-16 16:27+0430\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Timo Jarvenpaa <timojarvenpaa@hotmail.com>\n"
 "Language-Team: \n"
@@ -30,6 +30,9 @@ msgstr ""
 msgid "Audio Sync setup"
 msgstr "AC3 Lip Sync -asetukset"
 
+msgid "Audio track:"
+msgstr "Ääniraita:"
+
 msgid "Cancel"
 msgstr "Keskeytä"
 
@@ -41,9 +44,6 @@ msgstr ""
 
 msgid "Change active delay"
 msgstr ""
-
-msgid "Audio track:"
-msgstr "Ääniraita:"
 
 #, fuzzy
 msgid "Decrease delay"
@@ -175,6 +175,10 @@ msgstr "Tallenna %s-viive"
 msgid "Set delay to %i ms (can be set)"
 msgstr ""
 
+#, fuzzy
+msgid "Sets the audio delay (LipSync)"
+msgstr "Säätää ääniviivettä (lipsync)"
+
 msgid "Setting key canceled"
 msgstr "Näppäimen määritys keskeytetty"
 
@@ -207,7 +211,3 @@ msgstr ""
 
 msgid "disabled"
 msgstr ""
-
-#, fuzzy
-msgid "Sets the audio delay (LipSync)"
-msgstr "Säätää ääniviivettä (lipsync)"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"POT-Creation-Date: 2021-04-16 16:27+0430\n"
 "PO-Revision-Date: 2016-09-20 02:52+0300\n"
 "Last-Translator: MCelliot_g <mcelliot_g@hotmail.com>\n"
 "Language-Team: \n"
@@ -22,6 +22,9 @@ msgid "Bitrate"
 msgstr "Ρυθμός bit"
 
 msgid "Frame rate"
+msgstr ""
+
+msgid "Framerate"
 msgstr ""
 
 msgid "It seems your receiver is not supported!"
@@ -53,4 +56,8 @@ msgid "Video codec"
 msgstr "Μέγεθος βίντεο"
 
 msgid "Video size"
+msgstr "Μέγεθος βίντεο"
+
+#, fuzzy
+msgid "videocodec"
 msgstr "Μέγεθος βίντεο"

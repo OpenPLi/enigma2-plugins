@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2 - AC3lipsync\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"POT-Creation-Date: 2021-04-16 16:27+0430\n"
 "PO-Revision-Date: \n"
 "Last-Translator: maja <jovanovic@gmx.ch>\n"
 "Language-Team: veselin & majevica CRNABERZA <jovanovic@gmx.ch>\n"
@@ -34,6 +34,9 @@ msgstr "AC3 Lip Sync"
 msgid "Audio Sync setup"
 msgstr "AC3 Lip Sync podešavanje"
 
+msgid "Audio track:"
+msgstr "Audio kanal: "
+
 msgid "Cancel"
 msgstr "Otkaži"
 
@@ -45,9 +48,6 @@ msgstr ""
 
 msgid "Change active delay"
 msgstr ""
-
-msgid "Audio track:"
-msgstr "Audio kanal: "
 
 #, fuzzy
 msgid "Decrease delay"
@@ -179,6 +179,10 @@ msgstr "Verzögerung setzen"
 msgid "Set delay to %i ms (can be set)"
 msgstr ""
 
+#, fuzzy
+msgid "Sets the audio delay (LipSync)"
+msgstr "Podešava AC3 audio kašnjenje (LipSync)"
+
 msgid "Setting key canceled"
 msgstr "Podešavanje tipke otkazano"
 
@@ -211,7 +215,3 @@ msgstr ""
 
 msgid "disabled"
 msgstr ""
-
-#, fuzzy
-msgid "Sets the audio delay (LipSync)"
-msgstr "Podešava AC3 audio kašnjenje (LipSync)"

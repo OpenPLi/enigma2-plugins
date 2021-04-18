@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: AudioSync\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"POT-Creation-Date: 2021-04-16 16:27+0430\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Magnus Nilsson <mag_nilsson@hotmail.com>\n"
 "Language-Team: \n"
@@ -31,6 +31,9 @@ msgstr "Ljudsynk"
 msgid "Audio Sync setup"
 msgstr "Inställning för Ljudsynk"
 
+msgid "Audio track:"
+msgstr "Kanalljud:"
+
 msgid "Cancel"
 msgstr "Avbryt"
 
@@ -42,9 +45,6 @@ msgstr "Centrera fönstret till övre kanten"
 
 msgid "Change active delay"
 msgstr "Ändra aktiverad fördröjning"
-
-msgid "Audio track:"
-msgstr "Kanalljud:"
 
 msgid "Decrease delay"
 msgstr "Minska fördröjning"
@@ -171,6 +171,9 @@ msgstr "Kanalfördröjning"
 msgid "Set delay to %i ms (can be set)"
 msgstr "Ange fördröjning till %i mS (kan sättas)"
 
+msgid "Sets the audio delay (LipSync)"
+msgstr "Sätter ljudfördröjning (Läppsynk)"
+
 msgid "Setting key canceled"
 msgstr "Inställning av knapp avbruten"
 
@@ -202,6 +205,3 @@ msgstr ""
 
 msgid "disabled"
 msgstr ""
-
-msgid "Sets the audio delay (LipSync)"
-msgstr "Sätter ljudfördröjning (Läppsynk)"
