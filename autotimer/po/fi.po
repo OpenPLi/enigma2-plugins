@@ -1470,3 +1470,9 @@ msgstr "Kanavanvaihto"
 
 msgid "zap and record"
 msgstr "Kanavanvaihto ja tallennus"
+
+msgid "Add Record Timer"
+msgstr "Lisää ajastus"
+
+msgid "Add Zap Timer"
+msgstr "Lisää kanavanvaihto ajastus"
