@@ -1,0 +1,77 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: enigma2\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2021-05-20 04:47+0300\n"
+"Last-Translator: tomppaa <www.huoltovalikko.com>\n"
+"Language-Team: Tomppaa\n"
+"Language: fi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 2.4.3\n"
+"POT-Creation-Date: \n"
+
+msgid "Blink Record Led"
+msgstr "Led vilkkuu tallentaessa"
+
+msgid "Blue"
+msgstr "Sininen"
+
+msgid "Cancel"
+msgstr "Peruuta"
+
+msgid "Enable led"
+msgstr "Ota Led käyttöön"
+
+msgid "GigaBlue Setup"
+msgstr "GigaBlue Asetukset"
+
+msgid "LED"
+msgstr "LED asetukset"
+
+msgid "Led state Deep Standby"
+msgstr "Ledin tila virransäästötilassa"
+
+msgid "Led state HDD /dev/sda active"
+msgstr "Ledin tila HDD /dev/sda aktiivinen"
+
+msgid "Led state HDD /dev/sdb active"
+msgstr "Ledin tila HDD /dev/sdb aktiivinen"
+
+msgid "Led state RUN"
+msgstr "Ledin tila käynnissä"
+
+msgid "Led state Record"
+msgstr "Ledin tila tallentaessa"
+
+msgid "Led state Standby"
+msgstr "Ledin tila valmistilassa"
+
+msgid "No"
+msgstr "Ei"
+
+msgid "None"
+msgstr "Ei mitään"
+
+msgid "Purple"
+msgstr "Violetti"
+
+msgid "Red"
+msgstr "Punainen"
+
+msgid "Save"
+msgstr "Tallenna"
+
+msgid "Show clock in Deep Standby"
+msgstr "Näytä kello virransäästötilassa"
+
+msgid "Time mode"
+msgstr "Aika tila"
+
+msgid "Update Date/Time"
+msgstr "Päivitä Päivä/Aika"
+
+msgid "Yes"
+msgstr "Kyllä"
