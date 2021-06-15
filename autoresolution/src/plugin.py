@@ -387,7 +387,7 @@ class AutoRes(Screen):
 						# 1: Traditional gamma - HDR luminance range
 						# 2: SMPTE ST2084 (aka HDR10)
 						# 3: Hybrid Log-gamma
-						setHdmiHdrType(gammas[info.getInfo(gamma_num)])
+						setHdmiHdrType(gammas[gamma_num])
 
 				print "[AutoRes] new content is %sx%s%s%s" % (width, height, prog, frate)
 
