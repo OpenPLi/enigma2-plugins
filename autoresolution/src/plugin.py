@@ -72,6 +72,7 @@ config.plugins.autoresolution.enable = ConfigYesNo(default=False)
 config.plugins.autoresolution.showinfo = ConfigYesNo(default=True)
 config.plugins.autoresolution.testmode = ConfigYesNo(default=False)
 config.plugins.autoresolution.hdmihdrtype = ConfigYesNo(default=False)
+config.plugins.autoresolution.hdmicolorimetry = ConfigSelection(default="no", choices=[("no", _("no")), ("bt2020ncl", "BT 2020 NCL"), ("bt2020cl", "BT 2020 CL")])
 config.plugins.autoresolution.deinterlacer = ConfigSelection(default="auto", choices=[("off", _("off")), ("auto", _("auto")), ("on", _("on"))])
 config.plugins.autoresolution.deinterlacer_progressive = ConfigSelection(default="auto", choices=[("off", _("off")), ("auto", _("auto")), ("on", _("on"))])
 config.plugins.autoresolution.delay_switch_mode = ConfigSelection(default="1000", choices=[
@@ -114,6 +115,22 @@ def setHdmiHdrType(mode):
 			print "[AutoRes] switch hdmi_hdrtype mode to %s" % mode
 		except:
 			print "[AutoRes] failed switch hdmi_hdrtype mode to %s" % mode
+
+def setColorimetry(mode):
+	try:
+		f = open("/proc/stb/video/hdmi_colorimetry", "r")
+		old_mode = f.read()
+		f.close()
+	except:
+		old_mode = ""
+	if old_mode and old_mode != mode:
+		try:
+			f = open("/proc/stb/video/hdmi_colorimetry", "w")
+			f.write("%s" % mode)
+			f.close()
+			print "[AutoRes] switch hdmi_colorimetry mode to %s" % mode
+		except:
+			print "[AutoRes] failed switch hdmi_colorimetry mode to %s" % mode
 
 frqdic = {23000: '24',
 		23976: '24',
@@ -387,7 +404,11 @@ class AutoRes(Screen):
 						# 1: Traditional gamma - HDR luminance range
 						# 2: SMPTE ST2084 (aka HDR10)
 						# 3: Hybrid Log-gamma
-						setHdmiHdrType(gammas[gamma_num])
+						hdrtype = gammas[gamma_num]
+						setHdmiHdrType(hdrtype)
+						if SystemInfo["HasColorimetry"]  and config.plugins.autoresolution.hdmicolorimetry.value != "no" and config.av.hdmicolorimetry.value == "auto":
+							colorimetry = hdrtype in ("hdr10", "hlg") and config.plugins.autoresolution.hdmicolorimetry.value or "auto"
+							setColorimetry(colorimetry)
 
 				print "[AutoRes] new content is %sx%s%s%s" % (width, height, prog, frate)
 
@@ -542,6 +563,8 @@ class AutoResSetupMenu(Screen, ConfigListScreen):
 					))
 					if SystemInfo["HasHdrType"]:
 						self.list.append(getConfigListEntry(_("Smart HDR type (set 'auto' HDMI HDR type)"), config.plugins.autoresolution.hdmihdrtype))
+						if SystemInfo["HasColorimetry"] and config.plugins.autoresolution.hdmihdrtype.value:
+							self.list.append(getConfigListEntry(_("Separate colorimetry for HDR (set 'auto' HDMI Colorimetry)"), config.plugins.autoresolution.hdmicolorimetry))
 				else:
 					self.list.append(getConfigListEntry(_("Lock timeout"), config.plugins.autoresolution.lock_timeout))
 					self.list.append(getConfigListEntry(_("Ask before changing videomode"), config.plugins.autoresolution.ask_apply_mode))
@@ -569,13 +592,13 @@ class AutoResSetupMenu(Screen, ConfigListScreen):
 	def keyLeft(self):
 		ConfigListScreen.keyLeft(self)
 		if self["config"].getCurrent() and len(self["config"].getCurrent()) > 0:
-			if self["config"].getCurrent()[1] in (config.plugins.autoresolution.enable, config.plugins.autoresolution.mode, config.plugins.autoresolution.ask_apply_mode, config.plugins.autoresolution.manual_resolution_ext_menu):
+			if self["config"].getCurrent()[1] in (config.plugins.autoresolution.enable, config.plugins.autoresolution.mode, config.plugins.autoresolution.ask_apply_mode, config.plugins.autoresolution.manual_resolution_ext_menu, config.plugins.autoresolution.hdmihdrtype):
 				self.createSetup()
 
 	def keyRight(self):
 		ConfigListScreen.keyRight(self)
 		if self["config"].getCurrent() and len(self["config"].getCurrent()) > 0:
-			if self["config"].getCurrent()[1] in (config.plugins.autoresolution.enable, config.plugins.autoresolution.mode, config.plugins.autoresolution.ask_apply_mode, config.plugins.autoresolution.manual_resolution_ext_menu):
+			if self["config"].getCurrent()[1] in (config.plugins.autoresolution.enable, config.plugins.autoresolution.mode, config.plugins.autoresolution.ask_apply_mode, config.plugins.autoresolution.manual_resolution_ext_menu, config.plugins.autoresolution.hdmihdrtype):
 				self.createSetup()
 
 	def changedEntry(self):

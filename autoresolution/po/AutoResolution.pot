@@ -207,3 +207,5 @@ msgstr ""
 msgid "Smart HDR type (set 'auto' HDMI HDR type)"
 msgstr ""
 
+msgid "Separate colorimetry for HDR (set 'auto' HDMI Colorimetry)"
+msgstr ""
