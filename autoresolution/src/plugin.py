@@ -8,6 +8,7 @@ from Components.config import config, configfile, getConfigListEntry, ConfigSele
 from Components.ServiceEventTracker import ServiceEventTracker
 from Components.ActionMap import ActionMap
 from Components.Label import Label
+from Components.SystemInfo import SystemInfo
 from Components.Sources.StaticText import StaticText
 from enigma import iPlayableService, iServiceInformation, eTimer, getDesktop
 from Plugins.Plugin import PluginDescriptor
@@ -70,6 +71,7 @@ config.plugins.autoresolution = ConfigSubsection()
 config.plugins.autoresolution.enable = ConfigYesNo(default=False)
 config.plugins.autoresolution.showinfo = ConfigYesNo(default=True)
 config.plugins.autoresolution.testmode = ConfigYesNo(default=False)
+config.plugins.autoresolution.hdmihdrtype = ConfigYesNo(default=False)
 config.plugins.autoresolution.deinterlacer = ConfigSelection(default="auto", choices=[("off", _("off")), ("auto", _("auto")), ("on", _("on"))])
 config.plugins.autoresolution.deinterlacer_progressive = ConfigSelection(default="auto", choices=[("off", _("off")), ("auto", _("auto")), ("on", _("on"))])
 config.plugins.autoresolution.delay_switch_mode = ConfigSelection(default="1000", choices=[
@@ -97,6 +99,21 @@ def setDeinterlacer(mode):
 	except:
 		print "[AutoRes] failed switch deinterlacer mode to %s" % mode
 
+def setHdmiHdrType(mode):
+	try:
+		f = open("/proc/stb/video/hdmi_hdrtype", "r")
+		old_mode = f.read()
+		f.close()
+	except:
+		old_mode = ""
+	if old_mode and old_mode != mode:
+		try:
+			f = open("/proc/stb/video/hdmi_hdrtype", "w")
+			f.write("%s" % mode)
+			f.close()
+			print "[AutoRes] switch hdmi_hdrtype mode to %s" % mode
+		except:
+			print "[AutoRes] failed switch hdmi_hdrtype mode to %s" % mode
 
 frqdic = {23000: '24',
 		23976: '24',
@@ -144,6 +161,7 @@ class AutoRes(Screen):
 				iPlayableService.evVideoProgressiveChanged: self.__evVideoProgressiveChanged,
 				iPlayableService.evVideoFramerateChanged: self.__evVideoFramerateChanged,
 				iPlayableService.evUpdatedInfo: self.__evUpdatedInfo,
+				iPlayableService.evVideoGammaChanged: self.__evVideoGammaChanged,
 				iPlayableService.evStart: self.__evStart,
 				iPlayableService.evEnd: self.__evEnd
 			})
@@ -276,29 +294,35 @@ class AutoRes(Screen):
 			usable = False
 			self.changeVideomode()
 
+	def __evVideoGammaChanged(self):
+		if SystemInfo["HasHdrType"] and config.plugins.autoresolution.hdmihdrtype.value and config.av.hdmihdrtype.value == "auto":
+			if not self.timer.isActive() or self.after_switch_delay:
+				print "[AutoRes] got event evVideoGammaChanged"
+				self.timer.start(200, True)
+
 	def __evVideoFramerateChanged(self):
-		print "[AutoRes] got event evFramerateChanged"
 		if not self.timer.isActive() or self.after_switch_delay:
-			self.timer.start(200, True) # give other pending events a chance..
+			print "[AutoRes] got event evFramerateChanged"
+			self.timer.start(200, True)
 
 	def __evVideoSizeChanged(self):
-		print "[AutoRes] got event evVideoSizeChanged"
 		if not self.timer.isActive() or self.after_switch_delay:
-			self.timer.start(200, True) # give other pending events a chance..
+			print "[AutoRes] got event evVideoSizeChanged"
+			self.timer.start(200, True)
 
 	def __evVideoProgressiveChanged(self):
-		print "[AutoRes] got event evVideoProgressiveChanged"
 		if not self.timer.isActive() or self.after_switch_delay:
-			self.timer.start(200, True) # give other pending events a chance..
+			print "[AutoRes] got event evVideoProgressiveChanged"
+			self.timer.start(200, True)
 
 	def determineContent(self):
 		if config.plugins.autoresolution.mode.value != "manual":
 			return
-		print "[AutoRes] determineContent"
 		self.timer.stop()
 		resolutionlabel.hide()
 		self.after_switch_delay = True
 		if usable:
+			print "[AutoRes] determineContent"
 			service = self.session.nav.getCurrentService()
 			info = service and service.info()
 			height = info and info.getInfo(iServiceInformation.sVideoHeight)
@@ -354,6 +378,17 @@ class AutoRes(Screen):
 				else:
 					setDeinterlacer("auto")
 
+				gamma_num = info.getInfo(iServiceInformation.sGamma)
+				if SystemInfo["HasHdrType"] and config.plugins.autoresolution.hdmihdrtype.value and config.av.hdmihdrtype.value == "auto":
+					gammas = ("auto", "hdr10", "hdr10", "hlg", "auto")
+					if gamma_num < len(gammas):
+						# Possible gamma values
+						# 0: Traditional gamma - SDR luminance range
+						# 1: Traditional gamma - HDR luminance range
+						# 2: SMPTE ST2084 (aka HDR10)
+						# 3: Hybrid Log-gamma
+						setHdmiHdrType(gammas[gamma_num])
+
 				print "[AutoRes] new content is %sx%s%s%s" % (width, height, prog, frate)
 
 				if new_mode in videoresolution_dictionary:
@@ -361,7 +396,8 @@ class AutoRes(Screen):
 					print '[AutoRes] determined videomode', new_mode
 					old = resolutionlabel["content"].getText()
 					codec_info = "%s %s" % (videocodec, width)
-					resolutionlabel["content"].setText(_("Videocontent: %sx%s%s %sHZ") % (codec_info, height, prog, frate))
+					gamma = (" SDR", " HDR", " HDR10", " HLG", "")[gamma_num]
+					resolutionlabel["content"].setText(_("Videocontent: %sx%s%s %sHZ") % (codec_info, height, prog, frate) + gamma)
 					if self.lastmode != new_mode:
 						self.lastmode = new_mode
 						self.changeVideomode()
@@ -504,6 +540,8 @@ class AutoResSetupMenu(Screen, ConfigListScreen):
 						getConfigListEntry(_("Deinterlacer mode for progressive content"), config.plugins.autoresolution.deinterlacer_progressive),
 						getConfigListEntry(_("Force set progressive for stream/video content"), config.plugins.autoresolution.force_progressive_mode)
 					))
+					if SystemInfo["HasHdrType"]:
+						self.list.append(getConfigListEntry(_("Smart HDR type (set 'auto' HDMI HDR type)"), config.plugins.autoresolution.hdmihdrtype))
 				else:
 					self.list.append(getConfigListEntry(_("Lock timeout"), config.plugins.autoresolution.lock_timeout))
 					self.list.append(getConfigListEntry(_("Ask before changing videomode"), config.plugins.autoresolution.ask_apply_mode))

@@ -203,3 +203,7 @@ msgstr ""
 
 msgid "seconds"
 msgstr ""
+
+msgid "Smart HDR type (set 'auto' HDMI HDR type)"
+msgstr ""
+
