@@ -209,4 +209,7 @@ msgid "seconds"
 msgstr "сек."
 
 msgid "Smart HDR type (set 'auto' HDMI HDR type)"
-msgstr "Умный HDR тип (установите 'auto' HDMI HDR тип)"
+msgstr "Умный режим HDR (установите 'auto' HDMI HDR тип)"
+
+msgid "Separate colorimetry for HDR (set 'auto' HDMI Colorimetry)"
+msgstr "Отдельная колориметрия для HDR (установите 'auto' HDMI Colorimetry)"
