@@ -223,6 +223,9 @@ msgstr "только поиск"
 msgid "partial match"
 msgstr "частичное совпадение"
 
+msgid "partial description"
+msgstr "частичное совпадение описания"
+
 msgid "search EPG"
 msgstr "поиск EPG"
 
