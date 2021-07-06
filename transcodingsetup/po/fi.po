@@ -1,0 +1,56 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: TransCodingSetup\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-06-24 19:27+0430\n"
+"PO-Revision-Date: 2021-06-24 03:39+0300\n"
+"Last-Translator: tomppaa <http://www.huoltovalikko.com/>\n"
+"Language-Team: tomppaa\n"
+"Language: fi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.0\n"
+
+msgid "Bitrate"
+msgstr "Bittinopeus"
+
+msgid "Frame rate"
+msgstr "Ruudunpäivitysnopeus"
+
+msgid "It seems your receiver is not supported!"
+msgstr "Näyttää siltä, että vastaanotintasi ei tueta!"
+
+msgid "Not found file '/etc/enigma2/streamproxy.conf' !"
+msgstr "Tiedostoa /etc/enigma2/streamproxy.conf ei löydy!"
+
+msgid "Quit"
+msgstr "Lopeta"
+
+msgid "Set"
+msgstr "Aseta"
+
+msgid "Set up default transcoding parameters"
+msgstr "Aseta oletus Transkoodauksen parametrit"
+
+msgid "Transcoding Setup"
+msgstr "Transkoodaus asetukset"
+
+msgid "Video codec"
+msgstr "Videokoodekki"
+
+msgid "Video size"
+msgstr "Videon koko"
+
+msgid "Framerate"
+msgstr "Ruudunpäivitysnopeus"
+
+msgid "Port"
+msgstr "Portti"
+
+msgid "Resolution"
+msgstr "Resoluutio"
+
+msgid "videocodec"
+msgstr "videokoodekki"
