@@ -978,7 +978,14 @@ class EPGSearch(EPGSelection):
 
 	def searchEPGWrapper(self, ret):
 		if ret:
-			self.searchEPG(ret[1])
+			if config.plugins.epgsearch.history_modify.value:
+				def result(text):
+					if not text:
+						text = ret[1]
+					self.searchEPG(text)
+				self.session.openWithCallback(result, VirtualKeyBoard, title=_("Modify searched text"), text=ret[1])
+			else:
+				self.searchEPG(ret[1])
 
 	def searchEPG(self, searchString=None, searchSave=True):
 		if searchString:
