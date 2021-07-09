@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Enigma 2 EPGSearch Plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"POT-Creation-Date: 2021-07-09 11:10+0200\n"
 "PO-Revision-Date: 2014-12-13 18:20+0300\n"
 "Last-Translator: Tapat <taapat@gmail.com>\n"
 "Language-Team: Taapat <taapat@gmail.com>\n"
@@ -125,6 +125,12 @@ msgstr "Vēsture ir attīrīta!"
 msgid "Lookup in TMBD"
 msgstr "Meklēt TMBD"
 
+msgid "Modify History item"
+msgstr ""
+
+msgid "Modify searched text"
+msgstr ""
+
 msgid "New Search"
 msgstr "Meklēt no jauna"
 
@@ -182,7 +188,8 @@ msgstr "Norādiet tekstu kuru meklēt"
 msgid "Select type for filter search. Press button P +/- for show/hide filter in description after search."
 msgstr "Izvēlieties meklēšanas veidu filtrēšanai. Lietojiet P +/- lai parādītu/slēptu filtrus aprakstā pēc meklēšanas."
 
-msgid "Select type for search, \"partial match\" for the most extensive search."
+#, fuzzy
+msgid "Select type for search, \"partial match\" for the most extensive search, \"partial description\" for the most description search."
 msgstr "Izvēlieties meklēšanas tipu, \"atbilst daļēji\" lielākam rezultātu daudzumam."
 
 msgid "Select type: 'Search and Select channel' or 'Search'."
@@ -203,6 +210,9 @@ msgstr "Zilā poga"
 msgid "Use Picons"
 msgstr "Lietot pikonas"
 
+msgid "When history item is selected, it can be modified for new searching."
+msgstr ""
+
 msgid "Zap to selected service"
 msgstr "Pārslēgt uz izvēlēto kanālu"
 
@@ -220,6 +230,9 @@ msgstr "atbilst tieši"
 
 msgid "only Search"
 msgstr "tikai meklēt"
+
+msgid "partial description"
+msgstr ""
 
 msgid "partial match"
 msgstr "atbilst daļēji"

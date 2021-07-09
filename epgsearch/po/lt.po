@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: EPGSearch\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-11 12:34+0200\n"
+"POT-Creation-Date: 2021-07-09 11:10+0200\n"
 "PO-Revision-Date: 2016-06-23 11:28+0300\n"
 "Last-Translator: \n"
 "Language-Team: Vytenis P. <vyteniui@gmail.com>\n"
@@ -129,6 +129,12 @@ msgstr "Istorijos sąrašas išvalytas!"
 msgid "Lookup in TMBD"
 msgstr "Paieška TMBD"
 
+msgid "Modify History item"
+msgstr ""
+
+msgid "Modify searched text"
+msgstr ""
+
 msgid "New Search"
 msgstr "Nauja paieška"
 
@@ -186,7 +192,8 @@ msgstr "Pasirinkite ieškomą tekstą"
 msgid "Select type for filter search. Press button P +/- for show/hide filter in description after search."
 msgstr "Pasirinkite paieškos tipo filtrą. Spauskite 'P +/-', kad atverti/užverti filtrą aprašyme po paieškos."
 
-msgid "Select type for search, \"partial match\" for the most extensive search."
+#, fuzzy
+msgid "Select type for search, \"partial match\" for the most extensive search, \"partial description\" for the most description search."
 msgstr "Pasirinkite paieškos tipą 'dalinis atitikimas', kad labiausiai išplėsti paiešką."
 
 msgid "Select type: 'Search and Select channel' or 'Search'."
@@ -207,6 +214,9 @@ msgstr "Spauskite 'MĖLYNĄ' mygtuką."
 msgid "Use Picons"
 msgstr "Naudoti piktogramas"
 
+msgid "When history item is selected, it can be modified for new searching."
+msgstr ""
+
 msgid "Zap to selected service"
 msgstr "Perjungti į pasirinktą kanalą"
 
@@ -224,6 +234,9 @@ msgstr "tikslus atitikimas"
 
 msgid "only Search"
 msgstr "tik paieška"
+
+msgid "partial description"
+msgstr ""
 
 msgid "partial match"
 msgstr "dalinis atitikimas"

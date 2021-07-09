@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Enigma 2 EPGSearch Plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"POT-Creation-Date: 2021-07-09 11:10+0200\n"
 "PO-Revision-Date: 2015-01-20 14:16+0200\n"
 "Last-Translator: Dimitrij <Dima-73@inbox.lv>\n"
 "Language-Team:  openPli\n"
@@ -124,6 +124,12 @@ msgstr "Лист истории очищен !"
 msgid "Lookup in TMBD"
 msgstr "Поиск в TMBD"
 
+msgid "Modify History item"
+msgstr ""
+
+msgid "Modify searched text"
+msgstr ""
+
 msgid "New Search"
 msgstr "Новый поиск"
 
@@ -181,7 +187,8 @@ msgstr "Выберите текст для поиска"
 msgid "Select type for filter search. Press button P +/- for show/hide filter in description after search."
 msgstr "Выберите тип поиска для фильтра. Нажмите P +/- ,что бы показать/скрыть фильтр в описании сервисов, после успешного поиска."
 
-msgid "Select type for search, \"partial match\" for the most extensive search."
+#, fuzzy
+msgid "Select type for search, \"partial match\" for the most extensive search, \"partial description\" for the most description search."
 msgstr "Выберите тип поиска, \"частичное совпадение\" для самого обширного поиска."
 
 msgid "Select type: 'Search and Select channel' or 'Search'."
@@ -202,6 +209,9 @@ msgstr "Тип синей кнопки"
 msgid "Use Picons"
 msgstr "Использовать пиконы"
 
+msgid "When history item is selected, it can be modified for new searching."
+msgstr ""
+
 msgid "Zap to selected service"
 msgstr "Переключить на выбранный сервис"
 
@@ -220,11 +230,11 @@ msgstr "точное совпадение"
 msgid "only Search"
 msgstr "только поиск"
 
-msgid "partial match"
-msgstr "частичное совпадение"
-
 msgid "partial description"
 msgstr "частичное совпадение описания"
+
+msgid "partial match"
+msgstr "частичное совпадение"
 
 msgid "search EPG"
 msgstr "поиск EPG"

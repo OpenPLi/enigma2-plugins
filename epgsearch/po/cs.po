@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Enigma 2 EPGSearch Plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-11 10:58+0200\n"
-"PO-Revision-Date: 2019-04-17 09:13+0200\n"
+"POT-Creation-Date: 2021-07-09 11:10+0200\n"
+"PO-Revision-Date: 2021-07-09 11:17+0200\n"
 "Last-Translator: ims <ims21@users.sourceforge.net>\n"
 "Language-Team: PLi <ims21@users.sourceforge.net>\n"
 "Language: cs_CZ\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Poedit 2.0.6\n"
+"X-Generator: Poedit 3.0\n"
 
 #, python-format
 msgid " (%d min)"
@@ -124,6 +124,12 @@ msgstr "Seznam historie je smazán!"
 msgid "Lookup in TMBD"
 msgstr "Vyhledat v TMDB"
 
+msgid "Modify History item"
+msgstr "Upravit položku historie"
+
+msgid "Modify searched text"
+msgstr "Upravte hledaný text"
+
 msgid "New Search"
 msgstr "Nové hledání"
 
@@ -181,8 +187,8 @@ msgstr "Výběr textu pro hledání"
 msgid "Select type for filter search. Press button P +/- for show/hide filter in description after search."
 msgstr "Vyberte typ filtru pro vyhledávání. Stiskněte P+/- pro zobrazení / skrytí filtru v popisu po vyhledání."
 
-msgid "Select type for search, \"partial match\" for the most extensive search."
-msgstr "Zvolte typ hledání, \"částečně odpovídá\" pro rozsáhlá vyhledávání."
+msgid "Select type for search, \"partial match\" for the most extensive search, \"partial description\" for the most description search."
+msgstr "Zvolte typ hledání. \"Částečně odpovídá\" pro rozsáhlá vyhledávání, \"Částečně v popisu\" pro vyhledávání v popisech."
 
 msgid "Select type: 'Search and Select channel' or 'Search'."
 msgstr "Vyberte 'hledat a vybrat kanál' nebo 'pouze hledat'."
@@ -202,6 +208,9 @@ msgstr "Možnosti modrého tlačítka"
 msgid "Use Picons"
 msgstr "Používat pikony"
 
+msgid "When history item is selected, it can be modified for new searching."
+msgstr "Zvolená položka v historii hledání může být upravena pro nové hledání."
+
 msgid "Zap to selected service"
 msgstr "Přepnout na vybraný program"
 
@@ -219,6 +228,9 @@ msgstr "Přesně odpovídá"
 
 msgid "only Search"
 msgstr "Pouze hledat"
+
+msgid "partial description"
+msgstr "Částečně odpovídá v popisu"
 
 msgid "partial match"
 msgstr "Částečně odpovídá"

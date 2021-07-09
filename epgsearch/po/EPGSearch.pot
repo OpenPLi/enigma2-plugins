@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-16 19:04+0430\n"
+"POT-Creation-Date: 2021-07-09 11:10+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -128,6 +128,12 @@ msgstr ""
 msgid "Lookup in TMBD"
 msgstr ""
 
+msgid "Modify History item"
+msgstr ""
+
+msgid "Modify searched text"
+msgstr ""
+
 msgid "New Search"
 msgstr ""
 
@@ -185,10 +191,7 @@ msgstr ""
 msgid "Select type for filter search. Press button P +/- for show/hide filter in description after search."
 msgstr ""
 
-msgid "Select type for search, \"partial description\" for the most description search."
-msgstr ""
-
-msgid "Select type for search, \"partial match\" for the most extensive search."
+msgid "Select type for search, \"partial match\" for the most extensive search, \"partial description\" for the most description search."
 msgstr ""
 
 msgid "Select type: 'Search and Select channel' or 'Search'."
@@ -207,6 +210,9 @@ msgid "Type blue Button"
 msgstr ""
 
 msgid "Use Picons"
+msgstr ""
+
+msgid "When history item is selected, it can be modified for new searching."
 msgstr ""
 
 msgid "Zap to selected service"
