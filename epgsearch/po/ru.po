@@ -125,10 +125,10 @@ msgid "Lookup in TMBD"
 msgstr "Поиск в TMBD"
 
 msgid "Modify History item"
-msgstr ""
+msgstr "Изменить элемент истории"
 
 msgid "Modify searched text"
-msgstr ""
+msgstr "Изменить текст поиска"
 
 msgid "New Search"
 msgstr "Новый поиск"
@@ -187,9 +187,8 @@ msgstr "Выберите текст для поиска"
 msgid "Select type for filter search. Press button P +/- for show/hide filter in description after search."
 msgstr "Выберите тип поиска для фильтра. Нажмите P +/- ,что бы показать/скрыть фильтр в описании сервисов, после успешного поиска."
 
-#, fuzzy
 msgid "Select type for search, \"partial match\" for the most extensive search, \"partial description\" for the most description search."
-msgstr "Выберите тип поиска, \"частичное совпадение\" для самого обширного поиска."
+msgstr "Выберите тип поиска, \"частичное совпадение\" для самого обширного поиска, \"частичное совпадение описания\" для поиска только в описании."
 
 msgid "Select type: 'Search and Select channel' or 'Search'."
 msgstr "Выберите тип: 'Поиск и выбор канала' или 'Поиск'."
@@ -210,7 +209,7 @@ msgid "Use Picons"
 msgstr "Использовать пиконы"
 
 msgid "When history item is selected, it can be modified for new searching."
-msgstr ""
+msgstr "Когда выбран элемент истории, его можно изменить для нового поиска."
 
 msgid "Zap to selected service"
 msgstr "Переключить на выбранный сервис"
