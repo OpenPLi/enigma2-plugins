@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2 - epgsearch\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"POT-Creation-Date: 2021-07-09 11:10+0200\n"
 "PO-Revision-Date: 2018-05-02 20:06+0100\n"
 "Last-Translator: Frenske <voorzitter@openpli.org>\n"
 "Language-Team:  <Benny.DeTandt@gmail.com>\n"
@@ -129,6 +129,12 @@ msgstr "Historie overzicht is gewist !"
 msgid "Lookup in TMBD"
 msgstr "Zoek in TMBD"
 
+msgid "Modify History item"
+msgstr ""
+
+msgid "Modify searched text"
+msgstr ""
+
 msgid "New Search"
 msgstr "Nieuw"
 
@@ -186,7 +192,8 @@ msgstr "Selecteer de te zoeken tekst ..."
 msgid "Select type for filter search. Press button P +/- for show/hide filter in description after search."
 msgstr "Met deze optie kunt u het zoektype kiezen om op filter te zoeken. Druk P +/- om het filter te tonen/verbergen na het zoeken."
 
-msgid "Select type for search, \"partial match\" for the most extensive search."
+#, fuzzy
+msgid "Select type for search, \"partial match\" for the most extensive search, \"partial description\" for the most description search."
 msgstr "Met deze optie kunt u aangeven hoe u wilt zoeken. U kunt kiezen uit 'gedeeltelijke overeenkomst', 'exacte overeenkomst' en 'de titel begint met'. De eerste optie zoekt het intensiefst."
 
 msgid "Select type: 'Search and Select channel' or 'Search'."
@@ -207,6 +214,9 @@ msgstr "Het type van de blauwe toets"
 msgid "Use Picons"
 msgstr "Gebruik Picons"
 
+msgid "When history item is selected, it can be modified for new searching."
+msgstr ""
+
 msgid "Zap to selected service"
 msgstr "Zap naar de gekozen zender"
 
@@ -224,6 +234,9 @@ msgstr "Exacte overeenkomst"
 
 msgid "only Search"
 msgstr "Alleen zoeken"
+
+msgid "partial description"
+msgstr ""
 
 msgid "partial match"
 msgstr "Gedeeltelijke overeenkomst"

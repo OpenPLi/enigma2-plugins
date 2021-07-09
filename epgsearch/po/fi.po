@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Enigma 2 EPGSearch Plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"POT-Creation-Date: 2021-07-09 11:10+0200\n"
 "PO-Revision-Date: 2014-11-22 20:46+0100\n"
 "Last-Translator: BoxFreak\n"
 "Language-Team: none\n"
@@ -131,6 +131,12 @@ msgstr ""
 msgid "Lookup in TMBD"
 msgstr ""
 
+msgid "Modify History item"
+msgstr ""
+
+msgid "Modify searched text"
+msgstr ""
+
 msgid "New Search"
 msgstr "Uusi haku"
 
@@ -191,7 +197,7 @@ msgstr "Valitse haettava teksti"
 msgid "Select type for filter search. Press button P +/- for show/hide filter in description after search."
 msgstr ""
 
-msgid "Select type for search, \"partial match\" for the most extensive search."
+msgid "Select type for search, \"partial match\" for the most extensive search, \"partial description\" for the most description search."
 msgstr ""
 
 msgid "Select type: 'Search and Select channel' or 'Search'."
@@ -212,6 +218,9 @@ msgstr ""
 msgid "Use Picons"
 msgstr ""
 
+msgid "When history item is selected, it can be modified for new searching."
+msgstr ""
+
 msgid "Zap to selected service"
 msgstr ""
 
@@ -230,6 +239,9 @@ msgstr ""
 #, fuzzy
 msgid "only Search"
 msgstr "Hae"
+
+msgid "partial description"
+msgstr ""
 
 msgid "partial match"
 msgstr ""

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"POT-Creation-Date: 2021-07-09 11:10+0200\n"
 "PO-Revision-Date: 2018-05-11 22:05+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -129,6 +129,12 @@ msgstr "La liste de l'historique a été effacée!"
 msgid "Lookup in TMBD"
 msgstr "Rechecher dans TMDB"
 
+msgid "Modify History item"
+msgstr ""
+
+msgid "Modify searched text"
+msgstr ""
+
 msgid "New Search"
 msgstr "Nouvelle recherche"
 
@@ -186,7 +192,8 @@ msgstr "Sélectionner le texte à rechercher"
 msgid "Select type for filter search. Press button P +/- for show/hide filter in description after search."
 msgstr "Sélectionner le type de filtre de recherche. Appuyez sur P+/- pour afficher/masquer le filtre dans la description après la recherche."
 
-msgid "Select type for search, \"partial match\" for the most extensive search."
+#, fuzzy
+msgid "Select type for search, \"partial match\" for the most extensive search, \"partial description\" for the most description search."
 msgstr "Sélectionner le type de recherche, \"correspondance partielle\" pour la recherche la plus étendue."
 
 msgid "Select type: 'Search and Select channel' or 'Search'."
@@ -207,6 +214,9 @@ msgstr "Type bouton bleu"
 msgid "Use Picons"
 msgstr "Utiliser les picons"
 
+msgid "When history item is selected, it can be modified for new searching."
+msgstr ""
+
 msgid "Zap to selected service"
 msgstr "Zapper vers le service sélectionné"
 
@@ -224,6 +234,9 @@ msgstr "correspondance parfaite"
 
 msgid "only Search"
 msgstr "seulement rechercher"
+
+msgid "partial description"
+msgstr ""
 
 msgid "partial match"
 msgstr "correspondance partielle"
