@@ -883,14 +883,8 @@ class EPGSearch(EPGSelection):
 		else:
 			# Fetch match strings
 			# XXX: we could use the timer title as description
-			options = [(x.match, x.match) for x in autotimer.getTimerList()]
-
-			self.session.openWithCallback(
-				self.searchEPGWrapper,
-				ChoiceBox,
-				title=_("Select text to search for"),
-				list=options
-			)
+			options = [ x.match for x in autotimer.getTimerList()]
+			self.session.openWithCallback(self.searchEPGWrapper, EPGSearchHistory, options)
 		finally:
 			# Remove instance if there wasn't one before
 			if removeInstance:
@@ -962,10 +956,8 @@ class EPGSearch(EPGSelection):
 
 	def blueButtonPressed(self):
 		if len(config.plugins.epgsearch.history.value):
-			def result(result):
-				if result:
-					self.searchEPG(result)
-			self.session.openWithCallback(result, EPGSearchHistory)
+			history = [ x for x in config.plugins.epgsearch.history.value ]
+			self.session.openWithCallback(self.searchEPGWrapper, EPGSearchHistory, history)
 		else:
 			self.session.open(
 				MessageBox,
@@ -973,6 +965,10 @@ class EPGSearch(EPGSelection):
 				type=MessageBox.TYPE_INFO,
 				timeout=3
 			)
+
+	def searchEPGWrapper(self, item):
+		if item:
+			self.searchEPG(item)
 
 	def searchEPG(self, searchString=None, searchSave=True):
 		if searchString:
@@ -1176,6 +1172,7 @@ class EPGSearchEPGSelection(EPGSelection):
 		else:
 			self.close(evt.getEventName())
 
+
 class EPGSearchHistory(Screen):
 	skin="""
 	<screen name="EPGSearchHistory" position="center,center" size="565,415" title="EPGSearch - History">
@@ -1194,15 +1191,15 @@ class EPGSearchHistory(Screen):
 		<widget name="help" position="5,360" zPosition="2" size="560,50" valign="center" halign="left" font="Regular;22" foregroundColor="white"/>
 	</screen>
 	"""
-	def __init__(self, session):
+	def __init__(self, session, data):
 		Screen.__init__(self, session)
-		self.skinName = ["EPGSearchHistory"]
 		self.session = session
-
+		self.skinName = ["EPGSearchHistory"]
 		self.setTitle(_("EPGSearch - History"))
 
 		self.list = List([])
 		self["history"] = self.list
+		self["history"].setList(data)
 
 		self["OkCancelActions"] = ActionMap(["OkCancelActions"],
 			{
@@ -1215,15 +1212,7 @@ class EPGSearchHistory(Screen):
 			}, -2)
 
 		self["key_yellow"] = Button(_("Edit & search"))
-		self["help"] = Label(_("Select item for search and press 'OK' or edit item with yellow button."))
-		self.onShown.append(self.readHistory)
-
-	def readHistory(self):
-		history = []
-		for x in config.plugins.epgsearch.history.value:
-			history.append(x)
-		self.list = history
-		self["history"].setList(self.list)
+		self["help"] = Label(_("Select item and press 'OK' or edit item with yellow button."))
 
 	def select(self):
 		item = self["history"].getCurrent()
