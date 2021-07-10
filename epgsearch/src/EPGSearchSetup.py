@@ -38,7 +38,6 @@ class EPGSearchSetup(Screen, ConfigListScreen):
 			self,
 			[
 				getConfigListEntry(_("Length of History"), config.plugins.epgsearch.history_length, _("How many entries to keep in the search history at most. 0 disables history entirely!")),
-				getConfigListEntry(_("Modify History item"), config.plugins.epgsearch.history_modify, _("When history item is selected, it can be modified for new searching.")),
 				getConfigListEntry(_("Add \"Search\" Button to EPG"), config.plugins.epgsearch.add_search_to_epg, _("If this setting is enabled, the plugin adds a \"Search\" Button to the regular EPG.")),
 				getConfigListEntry(_("Type blue Button"), config.plugins.epgsearch.type_button_blue, _("Select type: 'Search and Select channel' or 'Search'.")),
 				getConfigListEntry(_("Use Picons"), config.plugins.epgsearch.picons, _("If this setting is enabled, the plugin adds picons.")),

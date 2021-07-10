@@ -21,6 +21,8 @@ from Components.EpgList import EPGList, EPG_TYPE_SINGLE, EPG_TYPE_MULTI, Rect
 from Components.TimerList import TimerList
 from Components.Sources.ServiceEvent import ServiceEvent
 from Components.Sources.Event import Event
+from Components.Label import Label
+from Components.Sources.List import List
 
 from Components.GUIComponent import GUIComponent
 from skin import parseFont
@@ -881,14 +883,8 @@ class EPGSearch(EPGSelection):
 		else:
 			# Fetch match strings
 			# XXX: we could use the timer title as description
-			options = [(x.match, x.match) for x in autotimer.getTimerList()]
-
-			self.session.openWithCallback(
-				self.searchEPGWrapper,
-				ChoiceBox,
-				title=_("Select text to search for"),
-				list=options
-			)
+			options = [ x.match for x in autotimer.getTimerList()]
+			self.session.openWithCallback(self.searchEPGWrapper, EPGSearchHistory, options)
 		finally:
 			# Remove instance if there wasn't one before
 			if removeInstance:
@@ -959,15 +955,9 @@ class EPGSearch(EPGSelection):
 		self.session.open(EPGSearchSetup)
 
 	def blueButtonPressed(self):
-		options = [(x, x) for x in config.plugins.epgsearch.history.value]
-
-		if options:
-			self.session.openWithCallback(
-				self.searchEPGWrapper,
-				ChoiceBox,
-				title=_("Select text to search for"),
-				list=options
-			)
+		if len(config.plugins.epgsearch.history.value):
+			history = [ x for x in config.plugins.epgsearch.history.value ]
+			self.session.openWithCallback(self.searchEPGWrapper, EPGSearchHistory, history)
 		else:
 			self.session.open(
 				MessageBox,
@@ -976,16 +966,9 @@ class EPGSearch(EPGSelection):
 				timeout=3
 			)
 
-	def searchEPGWrapper(self, ret):
-		if ret:
-			if config.plugins.epgsearch.history_modify.value:
-				def result(text):
-					if not text:
-						text = ret[1]
-					self.searchEPG(text)
-				self.session.openWithCallback(result, VirtualKeyBoard, title=_("Modify searched text"), text=ret[1])
-			else:
-				self.searchEPG(ret[1])
+	def searchEPGWrapper(self, item):
+		if item:
+			self.searchEPG(item)
 
 	def searchEPG(self, searchString=None, searchSave=True):
 		if searchString:
@@ -1188,3 +1171,62 @@ class EPGSearchEPGSelection(EPGSelection):
 			)
 		else:
 			self.close(evt.getEventName())
+
+
+class EPGSearchHistory(Screen):
+	skin="""
+	<screen name="EPGSearchHistory" position="center,center" size="565,415" title="EPGSearch - History">
+		<ePixmap name="red"    position="0,0"   zPosition="2" size="140,40" pixmap="skin_default/buttons/red.png" transparent="1" alphatest="on"/>
+		<ePixmap name="green"  position="140,0" zPosition="2" size="140,40" pixmap="skin_default/buttons/green.png" transparent="1" alphatest="on"/>
+		<ePixmap name="yellow" position="280,0" zPosition="2" size="140,40" pixmap="skin_default/buttons/yellow.png" transparent="1" alphatest="on"/>
+		<ePixmap name="blue"   position="420,0" zPosition="2" size="140,40" pixmap="skin_default/buttons/blue.png" transparent="1" alphatest="on"/>
+		<widget name="key_red" position="0,0" size="140,40" valign="center" halign="center" zPosition="4"  foregroundColor="white" font="Regular;20" transparent="1" shadowColor="background" shadowOffset="-2,-2"/>
+		<widget name="key_green" position="140,0" size="140,40" valign="center" halign="center" zPosition="4"  foregroundColor="white" font="Regular;20" transparent="1" shadowColor="background" shadowOffset="-2,-2"/>
+		<widget name="key_yellow" position="280,0" size="140,40" valign="center" halign="center" zPosition="4"  foregroundColor="white" font="Regular;20" transparent="1" shadowColor="background" shadowOffset="-2,-2"/>
+		<widget name="key_blue" position="420,0" size="140,40" valign="center" halign="center" zPosition="4"  foregroundColor="white" font="Regular;20" transparent="1" shadowColor="background" shadowOffset="-2,-2"/>
+		<widget source="history" render="Listbox" position="5,47" size="550,300" scrollbarMode="showOnDemand">
+			<convert type="StringList"/>
+		</widget>
+		<ePixmap pixmap="skin_default/div-h.png" position="5,355" zPosition="2" size="560,2"/>
+		<widget name="help" position="5,360" zPosition="2" size="560,50" valign="center" halign="left" font="Regular;22" foregroundColor="white"/>
+	</screen>
+	"""
+	def __init__(self, session, data):
+		Screen.__init__(self, session)
+		self.session = session
+		self.skinName = ["EPGSearchHistory"]
+		self.setTitle(_("EPGSearch - History"))
+
+		self.list = List([])
+		self["history"] = self.list
+		self["history"].setList(data)
+
+		self["OkCancelActions"] = ActionMap(["OkCancelActions"],
+			{
+			"cancel": self.exit,
+			"ok": self.select,
+			})
+		self["EPGSearchHistoryActions"] = ActionMap(["ColorActions"],
+			{
+			"yellow": self.edit,
+			}, -2)
+
+		self["key_yellow"] = Button(_("Edit & search"))
+		self["help"] = Label(_("Select item and press 'OK' or edit item with yellow button."))
+
+	def select(self):
+		item = self["history"].getCurrent()
+		if item:
+			self.close(item)
+
+	def edit(self):
+		item = self["history"].getCurrent()
+		if item:
+			def result(text):
+				if not text:
+					text = item
+				self.close(text)
+			self.session.openWithCallback(result, VirtualKeyBoard, title=_("Modify searched text"), text=item)
+
+	def exit(self):
+		self.close(False)

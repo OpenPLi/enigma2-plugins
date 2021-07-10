@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: EPGSearch\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-09 11:10+0200\n"
+"POT-Creation-Date: 2021-07-10 15:41+0200\n"
 "PO-Revision-Date: 2016-06-23 11:28+0300\n"
 "Last-Translator: \n"
 "Language-Team: Vytenis P. <vyteniui@gmail.com>\n"
@@ -81,8 +81,16 @@ msgstr "EPG paieška"
 msgid "EPGSearch"
 msgstr "EPG paieška"
 
+#, fuzzy
+msgid "EPGSearch - History"
+msgstr "EPG paieškos sąranka"
+
 msgid "EPGSearch Setup"
 msgstr "EPG paieškos sąranka"
+
+#, fuzzy
+msgid "Edit & search"
+msgstr "EPG paieška"
 
 msgid "Encoding Search to EPG"
 msgstr "EPG paieškos koduotė"
@@ -128,9 +136,6 @@ msgstr "Istorijos sąrašas išvalytas!"
 
 msgid "Lookup in TMBD"
 msgstr "Paieška TMBD"
-
-msgid "Modify History item"
-msgstr ""
 
 msgid "Modify searched text"
 msgstr ""
@@ -186,6 +191,9 @@ msgstr "Pasirinkite veiksmą:"
 msgid "Select channel"
 msgstr "Pasirinkite kanalą"
 
+msgid "Select item for search and press 'OK' or edit item with yellow button."
+msgstr ""
+
 msgid "Select text to search for"
 msgstr "Pasirinkite ieškomą tekstą"
 
@@ -213,9 +221,6 @@ msgstr "Spauskite 'MĖLYNĄ' mygtuką."
 
 msgid "Use Picons"
 msgstr "Naudoti piktogramas"
-
-msgid "When history item is selected, it can be modified for new searching."
-msgstr ""
 
 msgid "Zap to selected service"
 msgstr "Perjungti į pasirinktą kanalą"

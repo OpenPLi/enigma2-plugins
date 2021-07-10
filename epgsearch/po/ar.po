@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Enigma 2 EPGSearch Plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-09 11:10+0200\n"
+"POT-Creation-Date: 2021-07-10 15:41+0200\n"
 "PO-Revision-Date: 2020-10-01 18:24+0300\n"
 "Last-Translator: mosad - مساعد الجعيد <abo-mishal@hotmail.com>\n"
 "Language-Team: mosad - مساعد الجعيد\n"
@@ -83,8 +83,16 @@ msgstr "البحدث في دليل البرامج الإلكتروني"
 msgid "EPGSearch"
 msgstr "البحث في دليل البرامج الإلكترونية"
 
+#, fuzzy
+msgid "EPGSearch - History"
+msgstr "ضبط البحث في دليل البرامج الإلكترونية"
+
 msgid "EPGSearch Setup"
 msgstr "ضبط البحث في دليل البرامج الإلكترونية"
+
+#, fuzzy
+msgid "Edit & search"
+msgstr "البحدث في دليل البرامج الإلكتروني"
 
 #, fuzzy
 msgid "Encoding Search to EPG"
@@ -134,9 +142,6 @@ msgid "List of history is cleared !"
 msgstr ""
 
 msgid "Lookup in TMBD"
-msgstr ""
-
-msgid "Modify History item"
 msgstr ""
 
 msgid "Modify searched text"
@@ -198,6 +203,9 @@ msgstr ""
 msgid "Select channel"
 msgstr "إنتقل إلى القناة"
 
+msgid "Select item for search and press 'OK' or edit item with yellow button."
+msgstr ""
+
 msgid "Select text to search for"
 msgstr "تحديد نص للبحث عن"
 
@@ -224,9 +232,6 @@ msgid "Type blue Button"
 msgstr ""
 
 msgid "Use Picons"
-msgstr ""
-
-msgid "When history item is selected, it can be modified for new searching."
 msgstr ""
 
 msgid "Zap to selected service"

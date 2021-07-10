@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Enigma 2 EPGSearch Plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-09 11:10+0200\n"
+"POT-Creation-Date: 2021-07-10 15:41+0200\n"
 "PO-Revision-Date: 2017-03-27 14:35+0200\n"
 "Last-Translator: ims <andrej.tobola@gmail.com>\n"
 "Language-Team: PLi <ims21@users.sourceforge.net>\n"
@@ -76,8 +76,16 @@ msgstr "EPG hľadanie"
 msgid "EPGSearch"
 msgstr "EPGSearch"
 
+#, fuzzy
+msgid "EPGSearch - History"
+msgstr "Nastavenie EPGSearch"
+
 msgid "EPGSearch Setup"
 msgstr "Nastavenie EPGSearch"
+
+#, fuzzy
+msgid "Edit & search"
+msgstr "EPG hľadanie"
 
 msgid "Encoding Search to EPG"
 msgstr "Kódovanie hľadania v EPG"
@@ -123,9 +131,6 @@ msgstr "Zoznam histórie je vymazaný!"
 
 msgid "Lookup in TMBD"
 msgstr "Hľadať v TMBD"
-
-msgid "Modify History item"
-msgstr ""
 
 msgid "Modify searched text"
 msgstr ""
@@ -181,6 +186,9 @@ msgstr "Zvoliť akciu:"
 msgid "Select channel"
 msgstr "Voľba kanálu"
 
+msgid "Select item for search and press 'OK' or edit item with yellow button."
+msgstr ""
+
 msgid "Select text to search for"
 msgstr "Výber textu pre hľadanie"
 
@@ -208,9 +216,6 @@ msgstr "Typ modrého tlačidla"
 
 msgid "Use Picons"
 msgstr "Použiť picony"
-
-msgid "When history item is selected, it can be modified for new searching."
-msgstr ""
 
 msgid "Zap to selected service"
 msgstr "Prepnúť na zvolenú stanicu"

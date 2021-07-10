@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Enigma 2 EPGSearch Plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-09 11:10+0200\n"
+"POT-Creation-Date: 2021-07-10 15:41+0200\n"
 "PO-Revision-Date: 2015-01-20 14:16+0200\n"
 "Last-Translator: Dimitrij <Dima-73@inbox.lv>\n"
 "Language-Team:  openPli\n"
@@ -76,8 +76,16 @@ msgstr "EPG поиск"
 msgid "EPGSearch"
 msgstr "Поиск EPG"
 
+#, fuzzy
+msgid "EPGSearch - History"
+msgstr "Поиск EPG - настройки"
+
 msgid "EPGSearch Setup"
 msgstr "Поиск EPG - настройки"
+
+#, fuzzy
+msgid "Edit & search"
+msgstr "Пользовательский поиск"
 
 msgid "Encoding Search to EPG"
 msgstr "Кодировка для поиска EPG"
@@ -123,9 +131,6 @@ msgstr "Лист истории очищен !"
 
 msgid "Lookup in TMBD"
 msgstr "Поиск в TMBD"
-
-msgid "Modify History item"
-msgstr "Изменить элемент истории"
 
 msgid "Modify searched text"
 msgstr "Изменить текст поиска"
@@ -181,6 +186,9 @@ msgstr "Выберите действие:"
 msgid "Select channel"
 msgstr "Выбор канала"
 
+msgid "Select item for search and press 'OK' or edit item with yellow button."
+msgstr ""
+
 msgid "Select text to search for"
 msgstr "Выберите текст для поиска"
 
@@ -207,9 +215,6 @@ msgstr "Тип синей кнопки"
 
 msgid "Use Picons"
 msgstr "Использовать пиконы"
-
-msgid "When history item is selected, it can be modified for new searching."
-msgstr "Когда выбран элемент истории, его можно изменить для нового поиска."
 
 msgid "Zap to selected service"
 msgstr "Переключить на выбранный сервис"
