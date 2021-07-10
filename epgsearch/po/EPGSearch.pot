@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-09 11:10+0200\n"
+"POT-Creation-Date: 2021-07-10 15:41+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -80,7 +80,13 @@ msgstr ""
 msgid "EPGSearch"
 msgstr ""
 
+msgid "EPGSearch - History"
+msgstr ""
+
 msgid "EPGSearch Setup"
+msgstr ""
+
+msgid "Edit & search"
 msgstr ""
 
 msgid "Encoding Search to EPG"
@@ -126,9 +132,6 @@ msgid "List of history is cleared !"
 msgstr ""
 
 msgid "Lookup in TMBD"
-msgstr ""
-
-msgid "Modify History item"
 msgstr ""
 
 msgid "Modify searched text"
@@ -185,6 +188,9 @@ msgstr ""
 msgid "Select channel"
 msgstr ""
 
+msgid "Select item for search and press 'OK' or edit item with yellow button."
+msgstr ""
+
 msgid "Select text to search for"
 msgstr ""
 
@@ -210,9 +216,6 @@ msgid "Type blue Button"
 msgstr ""
 
 msgid "Use Picons"
-msgstr ""
-
-msgid "When history item is selected, it can be modified for new searching."
 msgstr ""
 
 msgid "Zap to selected service"

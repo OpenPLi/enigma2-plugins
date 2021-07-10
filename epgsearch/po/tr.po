@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2 EPGSearch plugin Turkish Locale\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-09 11:10+0200\n"
+"POT-Creation-Date: 2021-07-10 15:41+0200\n"
 "PO-Revision-Date: 2014-11-22 20:47+0100\n"
 "Last-Translator: Zülfikar VEYİSOĞLU <z.veyisoglu@hobiagaci.com>\n"
 "Language-Team: http://hobiagaci.com <z.veyisoglu@hobiagaci.com>\n"
@@ -80,7 +80,15 @@ msgid "EPGSearch"
 msgstr "EPG Arama"
 
 #, fuzzy
+msgid "EPGSearch - History"
+msgstr "EPG Arama"
+
+#, fuzzy
 msgid "EPGSearch Setup"
+msgstr "EPG Arama"
+
+#, fuzzy
+msgid "Edit & search"
 msgstr "EPG Arama"
 
 #, fuzzy
@@ -127,9 +135,6 @@ msgid "List of history is cleared !"
 msgstr ""
 
 msgid "Lookup in TMBD"
-msgstr ""
-
-msgid "Modify History item"
 msgstr ""
 
 msgid "Modify searched text"
@@ -189,6 +194,9 @@ msgstr ""
 msgid "Select channel"
 msgstr ""
 
+msgid "Select item for search and press 'OK' or edit item with yellow button."
+msgstr ""
+
 msgid "Select text to search for"
 msgstr "Arama metnini seçin"
 
@@ -214,9 +222,6 @@ msgid "Type blue Button"
 msgstr ""
 
 msgid "Use Picons"
-msgstr ""
-
-msgid "When history item is selected, it can be modified for new searching."
 msgstr ""
 
 msgid "Zap to selected service"

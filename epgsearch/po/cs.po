@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Enigma 2 EPGSearch Plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-09 11:10+0200\n"
-"PO-Revision-Date: 2021-07-09 11:17+0200\n"
+"POT-Creation-Date: 2021-07-10 15:41+0200\n"
+"PO-Revision-Date: 2021-07-10 15:44+0200\n"
 "Last-Translator: ims <ims21@users.sourceforge.net>\n"
 "Language-Team: PLi <ims21@users.sourceforge.net>\n"
 "Language: cs_CZ\n"
@@ -76,8 +76,14 @@ msgstr "EPG Search"
 msgid "EPGSearch"
 msgstr "EPG Search"
 
+msgid "EPGSearch - History"
+msgstr "EPGSearch - Historie"
+
 msgid "EPGSearch Setup"
 msgstr "Nastavení EPGSearch"
+
+msgid "Edit & search"
+msgstr "Upravit & hledat"
 
 msgid "Encoding Search to EPG"
 msgstr "Kódování při vyhledávání v EPG"
@@ -123,9 +129,6 @@ msgstr "Seznam historie je smazán!"
 
 msgid "Lookup in TMBD"
 msgstr "Vyhledat v TMDB"
-
-msgid "Modify History item"
-msgstr "Upravit položku historie"
 
 msgid "Modify searched text"
 msgstr "Upravte hledaný text"
@@ -181,6 +184,9 @@ msgstr "Zvolte akci:"
 msgid "Select channel"
 msgstr "Vyberte kanál"
 
+msgid "Select item for search and press 'OK' or edit item with yellow button."
+msgstr "Zvolte položku pro hledání a stiskněte 'OK' nebo použijte žluté tlačítko pro úpravu."
+
 msgid "Select text to search for"
 msgstr "Výběr textu pro hledání"
 
@@ -207,9 +213,6 @@ msgstr "Možnosti modrého tlačítka"
 
 msgid "Use Picons"
 msgstr "Používat pikony"
-
-msgid "When history item is selected, it can be modified for new searching."
-msgstr "Zvolená položka v historii hledání může být upravena pro nové hledání."
 
 msgid "Zap to selected service"
 msgstr "Přepnout na vybraný program"

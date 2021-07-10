@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-09 11:10+0200\n"
+"POT-Creation-Date: 2021-07-10 15:41+0200\n"
 "PO-Revision-Date: 2018-05-11 22:05+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -81,8 +81,16 @@ msgstr "Recherche EPG"
 msgid "EPGSearch"
 msgstr "RechercheEPG"
 
+#, fuzzy
+msgid "EPGSearch - History"
+msgstr "Configuration RechercheEPG"
+
 msgid "EPGSearch Setup"
 msgstr "Configuration RechercheEPG"
+
+#, fuzzy
+msgid "Edit & search"
+msgstr "Recherche personnalisée"
 
 msgid "Encoding Search to EPG"
 msgstr "Encodage des recherches dans l'EPG"
@@ -128,9 +136,6 @@ msgstr "La liste de l'historique a été effacée!"
 
 msgid "Lookup in TMBD"
 msgstr "Rechecher dans TMDB"
-
-msgid "Modify History item"
-msgstr ""
 
 msgid "Modify searched text"
 msgstr ""
@@ -186,6 +191,9 @@ msgstr "Choisir l'action:"
 msgid "Select channel"
 msgstr "Sélectionner une chaîne"
 
+msgid "Select item for search and press 'OK' or edit item with yellow button."
+msgstr ""
+
 msgid "Select text to search for"
 msgstr "Sélectionner le texte à rechercher"
 
@@ -213,9 +221,6 @@ msgstr "Type bouton bleu"
 
 msgid "Use Picons"
 msgstr "Utiliser les picons"
-
-msgid "When history item is selected, it can be modified for new searching."
-msgstr ""
 
 msgid "Zap to selected service"
 msgstr "Zapper vers le service sélectionné"

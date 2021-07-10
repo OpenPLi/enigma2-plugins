@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Enigma 2 EPGSearch Plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-09 11:10+0200\n"
+"POT-Creation-Date: 2021-07-10 15:41+0200\n"
 "PO-Revision-Date: 2014-12-13 18:20+0300\n"
 "Last-Translator: Tapat <taapat@gmail.com>\n"
 "Language-Team: Taapat <taapat@gmail.com>\n"
@@ -77,8 +77,16 @@ msgstr "EPG meklēšana"
 msgid "EPGSearch"
 msgstr "EPG meklētājs"
 
+#, fuzzy
+msgid "EPGSearch - History"
+msgstr "EPGSearch iestatījumi"
+
 msgid "EPGSearch Setup"
 msgstr "EPGSearch iestatījumi"
+
+#, fuzzy
+msgid "Edit & search"
+msgstr "EPG meklēšana"
 
 msgid "Encoding Search to EPG"
 msgstr "Meklēt EPG kodējumā"
@@ -124,9 +132,6 @@ msgstr "Vēsture ir attīrīta!"
 
 msgid "Lookup in TMBD"
 msgstr "Meklēt TMBD"
-
-msgid "Modify History item"
-msgstr ""
 
 msgid "Modify searched text"
 msgstr ""
@@ -182,6 +187,9 @@ msgstr "Izvēlieties darbību:"
 msgid "Select channel"
 msgstr "Izvēlieties kanālu"
 
+msgid "Select item for search and press 'OK' or edit item with yellow button."
+msgstr ""
+
 msgid "Select text to search for"
 msgstr "Norādiet tekstu kuru meklēt"
 
@@ -209,9 +217,6 @@ msgstr "Zilā poga"
 
 msgid "Use Picons"
 msgstr "Lietot pikonas"
-
-msgid "When history item is selected, it can be modified for new searching."
-msgstr ""
 
 msgid "Zap to selected service"
 msgstr "Pārslēgt uz izvēlēto kanālu"
