@@ -1,4 +1,5 @@
 from . import _
+from enigma import getDesktop
 from Screens.Screen import Screen
 from Screens.Console import Console
 from Screens.MessageBox import MessageBox
@@ -15,11 +16,16 @@ pause_sh = "/usr/lib/enigma2/python/Plugins/Extensions/Transmission/trans_start_
 
 
 class Transmission(Screen):
-	skin = """
-	<screen position="center,center" size="720,440" title="Transmission menu" >
-		<widget name="menu" position="10,10" size="700,420" scrollbarMode="showOnDemand" />
-	</screen>"""
-
+	if getDesktop(0).size().width() >= 1920:
+		skin = """
+		<screen position="center,center" size="1020,600" title="Transmission menu" >
+			<widget name="menu" position="10,10" size="1000,600" font="Regular;30" itemHeight="36" scrollbarMode="showOnDemand" />
+		</screen>"""
+	else:
+		skin = """
+		<screen position="center,center" size="720,440" title="Transmission menu" >
+			<widget name="menu" position="10,10" size="700,420" scrollbarMode="showOnDemand" />
+		</screen>"""
 	def __init__(self, session):
 		Screen.__init__(self, session)
 		self.session = session
@@ -47,6 +53,8 @@ class Transmission(Screen):
 	def run(self):
 		returnValue = self["menu"].l.getCurrentSelection() and self["menu"].l.getCurrentSelection()[1]
 		if returnValue is not None:
+			if fileExists("/etc/init.d/transmission-daemon"):
+				os.system("update-rc.d -f transmission-daemon remove && sleep 1 && rm -rf /etc/init.d/transmission-daemon")
 			cmd = "cp /usr/lib/enigma2/python/Plugins/Extensions/Transmission/transmission.sh %s && chmod 755 %s" % (transmission_sh, transmission_sh)
 			os.system(cmd)
 			if returnValue is "info":
