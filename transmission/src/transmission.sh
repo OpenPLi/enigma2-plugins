@@ -11,7 +11,8 @@ DIRECTORY="$STORAGE_DEVICE/transmission"
 DOWNLOAD_DIR="$STORAGE_DEVICE/transmission/download"
 CONFIG_DIR="$STORAGE_DEVICE/transmission/config"
 WATCH_DIR="$STORAGE_DEVICE/transmission/watch"
-ARGS="-c $WATCH_DIR -g $CONFIG_DIR -a *.*.*.* -w $DOWNLOAD_DIR -p $RPC_PORT -t -u $USER -v $PASSWORD"
+ALLOWED="*.*.*.*,*:*:*:*:*:*:*:*"
+ARGS="-c $WATCH_DIR -g $CONFIG_DIR -a $ALLOWED -w $DOWNLOAD_DIR -p $RPC_PORT -t -u $USER -v $PASSWORD"
 INET_ADDR=`ifconfig | sed -En 's/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0-9]*).*/\2/p'`
 PATH=/usr/sbin:/usr/bin:/sbin:/bin
 
