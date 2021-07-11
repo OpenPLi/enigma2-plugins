@@ -76,16 +76,14 @@ msgstr "EPG поиск"
 msgid "EPGSearch"
 msgstr "Поиск EPG"
 
-#, fuzzy
 msgid "EPGSearch - History"
-msgstr "Поиск EPG - настройки"
+msgstr "Поиск EPG - история"
 
 msgid "EPGSearch Setup"
 msgstr "Поиск EPG - настройки"
 
-#, fuzzy
 msgid "Edit & search"
-msgstr "Пользовательский поиск"
+msgstr "Редактировать & поиск"
 
 msgid "Encoding Search to EPG"
 msgstr "Кодировка для поиска EPG"
@@ -187,7 +185,7 @@ msgid "Select channel"
 msgstr "Выбор канала"
 
 msgid "Select item for search and press 'OK' or edit item with yellow button."
-msgstr ""
+msgstr "Выберите элемент для поиска и нажмите 'OK' или отредактируйте элемент с помощью желтой кнопки."
 
 msgid "Select text to search for"
 msgstr "Выберите текст для поиска"
