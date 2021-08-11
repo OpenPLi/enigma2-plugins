@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Enigma2 EPGRefresh Plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-16 16:27+0430\n"
+"POT-Creation-Date: 2021-08-11 09:52+0200\n"
 "PO-Revision-Date: 2020-10-01 16:14+0300\n"
 "Last-Translator: mosad - مساعد الجعيد <abo-mishal@hotmail.com>\n"
 "Language-Team: mosad - مساعد الجعيد\n"
@@ -16,18 +16,28 @@ msgstr ""
 "Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
 "X-Poedit-SearchPath-0: ../src\n"
 
-#, python-format
-msgid ""
-"\n"
-"Remaining - services: %d / time: %d:%02d min"
-msgstr ""
-
 msgid "   (AutoZap)"
 msgstr ""
 
 #, python-format
-msgid "%d more services"
-msgstr "%d قنوات أكثر"
+msgid "%d:%02d min"
+msgid_plural "%d:%02d mins"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+msgstr[5] ""
+
+#, fuzzy, python-format
+msgid "... %d more service"
+msgid_plural "... %d more services"
+msgstr[0] "%d قنوات أكثر"
+msgstr[1] "%d قنوات أكثر"
+msgstr[2] "%d قنوات أكثر"
+msgstr[3] "%d قنوات أكثر"
+msgstr[4] "%d قنوات أكثر"
+msgstr[5] "%d قنوات أكثر"
 
 msgid "Adding schedule..."
 msgstr ""
@@ -386,6 +396,16 @@ msgstr ""
 
 msgid "Reloading EPG Cache..."
 msgstr ""
+
+#, python-format
+msgid "Remaining %d service"
+msgid_plural "Remaining %d services"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+msgstr[5] ""
 
 msgid "Restart enigma2 to effectuate."
 msgstr ""

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-16 16:27+0430\n"
+"POT-Creation-Date: 2021-08-11 09:52+0200\n"
 "PO-Revision-Date: 2019-07-28 21:38+0200\n"
 "Last-Translator: Pr2\n"
 "Language-Team: \n"
@@ -18,20 +18,20 @@ msgstr ""
 "X-Generator: Poedit 2.2.3\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#, python-format
-msgid ""
-"\n"
-"Remaining - services: %d / time: %d:%02d min"
-msgstr ""
-"\n"
-"Restants - services: %d / temps: %d:%02d min"
-
 msgid "   (AutoZap)"
 msgstr "   (ZapAutomatique)"
 
 #, python-format
-msgid "%d more services"
-msgstr "%d services en plus"
+msgid "%d:%02d min"
+msgid_plural "%d:%02d mins"
+msgstr[0] ""
+msgstr[1] ""
+
+#, fuzzy, python-format
+msgid "... %d more service"
+msgid_plural "... %d more services"
+msgstr[0] "%d services en plus"
+msgstr[1] "%d services en plus"
 
 msgid "Adding schedule..."
 msgstr "Ajouter une planification…"
@@ -367,6 +367,12 @@ msgstr "Recharger l’EPG"
 
 msgid "Reloading EPG Cache..."
 msgstr "Rechargement du cache de l’EPG..."
+
+#, python-format
+msgid "Remaining %d service"
+msgid_plural "Remaining %d services"
+msgstr[0] ""
+msgstr[1] ""
 
 msgid "Restart enigma2 to effectuate."
 msgstr "Rédemarrer l'IGU pour appliquer."

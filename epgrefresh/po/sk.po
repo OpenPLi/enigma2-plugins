@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Enigma2 EPGRefresh Plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-29 00:27+0100\n"
+"POT-Creation-Date: 2021-08-11 09:52+0200\n"
 "PO-Revision-Date: 2017-03-24 14:44+0100\n"
 "Last-Translator: ims <andrej.tobola@gmail.com>\n"
 "Language-Team: PLi\n"
@@ -14,18 +14,22 @@ msgstr ""
 "X-Generator: Poedit 1.8.11\n"
 "X-Poedit-SearchPath-0: D:/Dreambox/Plugins/enigma2-plugins/epgrefresh/src\n"
 
-#, python-format
-msgid ""
-"\n"
-"Remaining - services: %d / time: %d:%02d min"
-msgstr ""
-
 msgid "   (AutoZap)"
 msgstr ""
 
+#, python-format
+msgid "%d:%02d min"
+msgid_plural "%d:%02d mins"
+msgstr[0] ""
+msgstr[1] ""
+
 #, fuzzy, python-format
-msgid "%d more services"
-msgstr ""
+msgid "... %d more service"
+msgid_plural "... %d more services"
+msgstr[0] ""
+"\n"
+"a ďalších %d staníc."
+msgstr[1] ""
 "\n"
 "a ďalších %d staníc."
 
@@ -367,6 +371,12 @@ msgstr "Obnoviť EPG"
 
 msgid "Reloading EPG Cache..."
 msgstr "Načítavanie EPG cache..."
+
+#, python-format
+msgid "Remaining %d service"
+msgid_plural "Remaining %d services"
+msgstr[0] ""
+msgstr[1] ""
 
 msgid "Restart enigma2 to effectuate."
 msgstr "Reštartujte enigmu2 pre vykonanie zmien."
