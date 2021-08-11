@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-29 00:27+0100\n"
+"POT-Creation-Date: 2021-08-11 09:52+0200\n"
 "PO-Revision-Date: 2015-01-20 16:12+0200\n"
 "Last-Translator: Dima73 <Dima-73@inbox.lv>\n"
 "Language-Team: openli.org\n"
@@ -12,20 +12,22 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.7.1\n"
 
-#, python-format
-msgid ""
-"\n"
-"Remaining - services: %d / time: %d:%02d min"
-msgstr ""
-"\n"
-"Оставшиеся - сервисы: %d / время: %d:%02d мин"
-
 msgid "   (AutoZap)"
 msgstr "   (Авто переключение)"
 
+#, python-format
+msgid "%d:%02d min"
+msgid_plural "%d:%02d mins"
+msgstr[0] ""
+msgstr[1] ""
+
 #, fuzzy, python-format
-msgid "%d more services"
-msgstr ""
+msgid "... %d more service"
+msgid_plural "... %d more services"
+msgstr[0] ""
+"\n"
+"%d сервисов всего."
+msgstr[1] ""
 "\n"
 "%d сервисов всего."
 
@@ -363,6 +365,12 @@ msgstr "Перезагрузка EPG"
 
 msgid "Reloading EPG Cache..."
 msgstr "Перезагрузка кеша EPG..."
+
+#, python-format
+msgid "Remaining %d service"
+msgid_plural "Remaining %d services"
+msgstr[0] ""
+msgstr[1] ""
 
 msgid "Restart enigma2 to effectuate."
 msgstr "Для изменения этой настройки рестарт энигмы2 не требуется."

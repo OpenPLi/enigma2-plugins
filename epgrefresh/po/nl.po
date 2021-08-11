@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2 - epgrefresh\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-05-25 07:55+0200\n"
+"POT-Creation-Date: 2021-08-11 09:52+0200\n"
 "PO-Revision-Date: 2019-07-28 12:04+0200\n"
 "Last-Translator: Frenske <voorzitter@openpli.org>\n"
 "Language-Team: <Benny.DeTandt@gmail.com>\n"
@@ -12,20 +12,20 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 2.2.3\n"
 
-#, python-format
-msgid ""
-"\n"
-"Remaining - services: %d / time: %d:%02d min"
-msgstr ""
-"\n"
-"Resterende - zenders: %d / tijd: %d:%02d min"
-
 msgid "   (AutoZap)"
 msgstr "   (AutoZap)"
 
 #, python-format
-msgid "%d more services"
-msgstr "%d meer zenders."
+msgid "%d:%02d min"
+msgid_plural "%d:%02d mins"
+msgstr[0] ""
+msgstr[1] ""
+
+#, fuzzy, python-format
+msgid "... %d more service"
+msgid_plural "... %d more services"
+msgstr[0] "%d meer zenders."
+msgstr[1] "%d meer zenders."
 
 msgid "Adding schedule..."
 msgstr "Planning wordt toegevoegd..."
@@ -361,6 +361,12 @@ msgstr "Herlaad de EPG"
 
 msgid "Reloading EPG Cache..."
 msgstr "Herlaad de EPG cache..."
+
+#, python-format
+msgid "Remaining %d service"
+msgid_plural "Remaining %d services"
+msgstr[0] ""
+msgstr[1] ""
 
 msgid "Restart enigma2 to effectuate."
 msgstr "Herstart enigma2 om te effectueren"

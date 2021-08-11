@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Enigma2 AutoTimer Plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-29 00:27+0100\n"
+"POT-Creation-Date: 2021-08-11 09:52+0200\n"
 "PO-Revision-Date: 2009-09-10 20:30+0100\n"
 "Last-Translator: maja <jovanovic@gmx.ch>\n"
 "Language-Team: veselin & majevica CRNABERZA <jovanovic@gmx.ch>\n"
@@ -17,18 +17,20 @@ msgstr ""
 "X-Poedit-Language: Serbian\n"
 "X-Poedit-Country: SERBIA\n"
 
-#, python-format
-msgid ""
-"\n"
-"Remaining - services: %d / time: %d:%02d min"
-msgstr ""
-
 msgid "   (AutoZap)"
 msgstr ""
 
+#, python-format
+msgid "%d:%02d min"
+msgid_plural "%d:%02d mins"
+msgstr[0] ""
+msgstr[1] ""
+
 #, fuzzy, python-format
-msgid "%d more services"
-msgstr "Uredi kanale"
+msgid "... %d more service"
+msgid_plural "... %d more services"
+msgstr[0] "Uredi kanale"
+msgstr[1] "Uredi kanale"
 
 msgid "Adding schedule..."
 msgstr ""
@@ -377,6 +379,12 @@ msgstr ""
 
 msgid "Reloading EPG Cache..."
 msgstr ""
+
+#, python-format
+msgid "Remaining %d service"
+msgid_plural "Remaining %d services"
+msgstr[0] ""
+msgstr[1] ""
 
 msgid "Restart enigma2 to effectuate."
 msgstr ""

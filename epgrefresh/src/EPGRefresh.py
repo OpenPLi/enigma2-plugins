@@ -15,7 +15,7 @@ from Screens.MessageBox import MessageBox
 from Tools import Notifications
 from Tools.BoundFunction import boundFunction
 from Components.ParentalControl import parentalControl
-from . import _, NOTIFICATIONID
+from . import _, NOTIFICATIONID, ngettext
 from MainPictureAdapter import MainPictureAdapter
 from PipAdapter import PipAdapter
 from RecordAdapter import RecordAdapter
@@ -445,10 +445,10 @@ class EPGRefresh:
 					adapter = config.plugins.epgrefresh.adapter.value
 					if (not self.forcedScan) or skipProtectedServices == "always" or (self.forcedScan and Screens.Standby.inStandby is None and skipProtectedServices == "bg_only" and (adapter == "pip" or adapter == "main")):
 						continue
-				if servcounter <= LISTMAX:
+				if servcounter < LISTMAX:
 					ref = ServiceReference(service.sref)
 					txt = ref.getServiceName().replace('\xc2\x86', '').replace('\xc2\x87', '')
-					servtxt = servtxt + str(txt) + "\n"
+					servtxt = servtxt + 2 * ' ' + str(txt) + "\n"
 				servcounter = servcounter + 1
 				delay = service.duration or config.plugins.epgrefresh.interval_seconds.value
 				if not delay:
@@ -456,12 +456,12 @@ class EPGRefresh:
 				remaining_time = remaining_time + delay
 			first_text = _("Stop Running EPG-refresh?\n")
 			if servcounter > LISTMAX:
-				servtxt = servtxt + _("%d more services") % (servcounter - LISTMAX)
-			last_text = _("\nRemaining - services: %d / time: %d:%02d min") % (servcounter, remaining_time / 60, remaining_time % 60)
+				servtxt = servtxt + 2 * ' ' + ngettext("... %d more service", "... %d more services", servcounter - LISTMAX) % (servcounter - LISTMAX) + '\n'
+			last_text = "%s / %s" % (ngettext("Remaining %d service", "Remaining %d services", servcounter) % servcounter, ngettext("%d:%02d min", "%d:%02d mins", remaining_time / 60) % (remaining_time / 60, remaining_time % 60))
 			if servcounter == 0:
 				text = first_text + _("Scanning last service. Please wait.")
 			else:
-				text = first_text + _("Following Services have to be scanned:") + "\n" + servtxt + last_text
+				text = first_text + _("Following Services have to be scanned:") + '\n' + servtxt + last_text
 			session.openWithCallback(self.msgClosed, MessageBox, text, MessageBox.TYPE_YESNO)
 		except:
 			print("[EPGRefresh] showPendingServices Error!")

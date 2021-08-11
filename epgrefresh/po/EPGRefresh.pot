@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-16 16:27+0430\n"
+"POT-Creation-Date: 2021-08-11 09:52+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,19 +16,22 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-
-#, python-format
-msgid ""
-"\n"
-"Remaining - services: %d / time: %d:%02d min"
-msgstr ""
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
 msgid "   (AutoZap)"
 msgstr ""
 
 #, python-format
-msgid "%d more services"
-msgstr ""
+msgid "%d:%02d min"
+msgid_plural "%d:%02d mins"
+msgstr[0] ""
+msgstr[1] ""
+
+#, python-format
+msgid "... %d more service"
+msgid_plural "... %d more services"
+msgstr[0] ""
+msgstr[1] ""
 
 msgid "Adding schedule..."
 msgstr ""
@@ -353,6 +356,12 @@ msgstr ""
 
 msgid "Reloading EPG Cache..."
 msgstr ""
+
+#, python-format
+msgid "Remaining %d service"
+msgid_plural "Remaining %d services"
+msgstr[0] ""
+msgstr[1] ""
 
 msgid "Restart enigma2 to effectuate."
 msgstr ""

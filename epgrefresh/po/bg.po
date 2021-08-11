@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-29 00:27+0100\n"
+"POT-Creation-Date: 2021-08-11 09:52+0200\n"
 "PO-Revision-Date: 2017-02-05 23:42+0200\n"
 "Last-Translator: peter <sct2003@abv.bg>\n"
 "Language-Team: Bulgarian <>\n"
@@ -17,18 +17,22 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 2.0\n"
 
-#, python-format
-msgid ""
-"\n"
-"Remaining - services: %d / time: %d:%02d min"
-msgstr ""
-
 msgid "   (AutoZap)"
 msgstr "   (Автоматично превключване)"
 
+#, python-format
+msgid "%d:%02d min"
+msgid_plural "%d:%02d mins"
+msgstr[0] ""
+msgstr[1] ""
+
 #, fuzzy, python-format
-msgid "%d more services"
-msgstr ""
+msgid "... %d more service"
+msgid_plural "... %d more services"
+msgstr[0] ""
+"\n"
+"%d добавени канала."
+msgstr[1] ""
 "\n"
 "%d добавени канала."
 
@@ -370,6 +374,12 @@ msgstr "Презареждане на ЕПГ"
 
 msgid "Reloading EPG Cache..."
 msgstr "Презареждане на ЕПГ данните..."
+
+#, python-format
+msgid "Remaining %d service"
+msgid_plural "Remaining %d services"
+msgstr[0] ""
+msgstr[1] ""
 
 msgid "Restart enigma2 to effectuate."
 msgstr "Рестартирайте енигма2 за да се приложат настройките."

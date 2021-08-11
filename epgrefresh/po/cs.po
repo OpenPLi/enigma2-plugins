@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Enigma2 EPGRefresh Plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-05-25 07:55+0200\n"
-"PO-Revision-Date: 2019-04-27 15:23+0200\n"
+"POT-Creation-Date: 2021-08-11 09:52+0200\n"
+"PO-Revision-Date: 2021-08-11 09:58+0200\n"
 "Last-Translator: ims <ims21@users.sourceforge.net>\n"
 "Language-Team: PLi\n"
 "Language: cs_CZ\n"
@@ -11,23 +11,26 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-Basepath: .\n"
-"X-Generator: Poedit 2.0.6\n"
+"X-Generator: Poedit 3.0\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n>=2 && n<=4 ? 1 : 2);\n"
 "X-Poedit-SearchPath-0: D:/Dreambox/Plugins/enigma2-plugins/epgrefresh/src\n"
-
-#, python-format
-msgid ""
-"\n"
-"Remaining - services: %d / time: %d:%02d min"
-msgstr ""
-"\n"
-"Zbývá - programů: %d / čas: %d:%02d minut"
 
 msgid "   (AutoZap)"
 msgstr ""
 
 #, python-format
-msgid "%d more services"
-msgstr "a dalších %d programů"
+msgid "%d:%02d min"
+msgid_plural "%d:%02d mins"
+msgstr[0] "%d:%02d minuta"
+msgstr[1] "%d:%02d minuty"
+msgstr[2] "%d:%02d minut"
+
+#, python-format
+msgid "... %d more service"
+msgid_plural "... %d more services"
+msgstr[0] "... a další %d program"
+msgstr[1] "... a další %d programy"
+msgstr[2] "... a dalších %d programů"
 
 msgid "Adding schedule..."
 msgstr "Přidat plán..."
@@ -363,6 +366,13 @@ msgstr "Obnovení EPG"
 
 msgid "Reloading EPG Cache..."
 msgstr "Provádí se reloading EPG Cache..."
+
+#, python-format
+msgid "Remaining %d service"
+msgid_plural "Remaining %d services"
+msgstr[0] "Zbývá %d program"
+msgstr[1] "Zbývají %d programy"
+msgstr[2] "Zbývá %d programů"
 
 msgid "Restart enigma2 to effectuate."
 msgstr "Pro zobrazení musí bát restartována enigma2."
