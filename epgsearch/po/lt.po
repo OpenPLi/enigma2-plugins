@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: EPGSearch\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-10 15:41+0200\n"
+"POT-Creation-Date: 2021-08-13 18:34+0200\n"
 "PO-Revision-Date: 2016-06-23 11:28+0300\n"
 "Last-Translator: \n"
 "Language-Team: Vytenis P. <vyteniui@gmail.com>\n"
@@ -193,9 +193,6 @@ msgstr "Pasirinkite kanalą"
 
 msgid "Select item for search and press 'OK' or edit item with yellow button."
 msgstr ""
-
-msgid "Select text to search for"
-msgstr "Pasirinkite ieškomą tekstą"
 
 msgid "Select type for filter search. Press button P +/- for show/hide filter in description after search."
 msgstr "Pasirinkite paieškos tipo filtrą. Spauskite 'P +/-', kad atverti/užverti filtrą aprašyme po paieškos."

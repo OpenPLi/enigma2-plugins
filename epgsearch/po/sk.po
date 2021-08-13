@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Enigma 2 EPGSearch Plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-10 15:41+0200\n"
+"POT-Creation-Date: 2021-08-13 18:34+0200\n"
 "PO-Revision-Date: 2017-03-27 14:35+0200\n"
 "Last-Translator: ims <andrej.tobola@gmail.com>\n"
 "Language-Team: PLi <ims21@users.sourceforge.net>\n"
@@ -188,9 +188,6 @@ msgstr "Voľba kanálu"
 
 msgid "Select item for search and press 'OK' or edit item with yellow button."
 msgstr ""
-
-msgid "Select text to search for"
-msgstr "Výber textu pre hľadanie"
 
 msgid "Select type for filter search. Press button P +/- for show/hide filter in description after search."
 msgstr "Voľba typu pre filtrované vyhľadávanie. Stlačte tlačidlo P +/- pre filter zobrazenia/skrytia v popise po hľadaní."

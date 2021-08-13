@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Automatic Screen Resolution V. 0.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-16 16:27+0430\n"
+"POT-Creation-Date: 2021-08-13 18:34+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Pr2 <dummy@dummy.com>\n"
 "Language-Team: OpenPLi\n"
@@ -14,7 +14,7 @@ msgstr ""
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 2.0.7\n"
+"X-Generator: Poedit 3.0\n"
 "X-Poedit-SearchPath-0: ../src\n"
 
 msgid "Alternative resolution when native not supported"
@@ -102,7 +102,7 @@ msgid "FHD 50/60HZ Progressive Mode"
 msgstr "FHD 50/60HZ mode progressif"
 
 msgid "Force set progressive for stream/video content"
-msgstr ""
+msgstr "Forcer le mode progressif pour le contenu stream/vidéo"
 
 msgid "HD Interlace Mode"
 msgstr "HD mode entrelacé"
@@ -158,11 +158,17 @@ msgstr "SD 30/60Hz mode entrelacé"
 msgid "SD 30/60HZ Progressive Mode"
 msgstr "SD 30/60Hz mode progressif"
 
+msgid "Separate colorimetry for HDR (set 'auto' HDMI Colorimetry)"
+msgstr "Colorimétrie séparée pour HDR (définir 'auto' HDMI Colorimétrie)"
+
 msgid "Show 'Manual resolution' in extensions menu"
 msgstr "Afficher ‘Résolution manuelle’ dans le menu des extensions"
 
 msgid "Show info screen"
 msgstr "Afficher l'écran d'information"
+
+msgid "Smart HDR type (set 'auto' HDMI HDR type)"
+msgstr "Type HDR intelligent (définir le type HDR HDMI 'auto')"
 
 msgid "This resolution is OK?"
 msgstr "Cette résolution est correcte?"
@@ -196,6 +202,9 @@ msgstr "auto"
 
 msgid "default"
 msgstr "défaut"
+
+msgid "no"
+msgstr "non"
 
 msgid "off"
 msgstr "off"

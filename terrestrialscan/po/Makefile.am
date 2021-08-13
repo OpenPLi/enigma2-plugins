@@ -1,5 +1,5 @@
 PLUGIN = TerrestrialScan
 CATEGORY ?= "SystemPlugins"
-LANGS = de fr lt nl ru 
+LANGS = ar de fr lt nl ru 
 
 include $(top_srcdir)/Rules-po.mak

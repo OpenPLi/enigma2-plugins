@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2 - epgsearch\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-10 15:41+0200\n"
+"POT-Creation-Date: 2021-08-13 18:34+0200\n"
 "PO-Revision-Date: 2014-11-22 20:46+0100\n"
 "Last-Translator: Spaeleus <spaeleus@croci.org>\n"
 "Language-Team: www.linsat.net <spaeleus@croci.org>\n"
@@ -199,9 +199,6 @@ msgstr ""
 
 msgid "Select item for search and press 'OK' or edit item with yellow button."
 msgstr ""
-
-msgid "Select text to search for"
-msgstr "Selezionare il testo da cercare"
 
 msgid "Select type for filter search. Press button P +/- for show/hide filter in description after search."
 msgstr ""

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Automatic Screen Resolution V. 0.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-16 16:27+0430\n"
+"POT-Creation-Date: 2021-08-13 18:34+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: ims <ims21@users.sourceforge.net>\n"
 "Language-Team: msi\n"
@@ -162,11 +162,17 @@ msgstr "SD 30/60Hz prokládaný režim"
 msgid "SD 30/60HZ Progressive Mode"
 msgstr "SD 30/60Hz progresivní režim"
 
+msgid "Separate colorimetry for HDR (set 'auto' HDMI Colorimetry)"
+msgstr ""
+
 msgid "Show 'Manual resolution' in extensions menu"
 msgstr ""
 
 msgid "Show info screen"
 msgstr "Zobrazovat info obrazovku"
+
+msgid "Smart HDR type (set 'auto' HDMI HDR type)"
+msgstr ""
 
 msgid "This resolution is OK?"
 msgstr ""
@@ -202,6 +208,9 @@ msgstr "auto"
 
 msgid "default"
 msgstr "standardní"
+
+msgid "no"
+msgstr ""
 
 msgid "off"
 msgstr "vypnuto"

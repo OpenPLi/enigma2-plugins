@@ -1,4 +1,4 @@
 PLUGIN = DreamExplorer
 
-LANGS = cs fr it lt pl ru 
+LANGS = ar cs fr it lt pl ru 
 include $(top_srcdir)/Rules-po.mak

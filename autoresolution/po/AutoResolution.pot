@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-16 16:27+0430\n"
+"POT-Creation-Date: 2021-08-13 18:34+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -153,10 +153,16 @@ msgstr ""
 msgid "SD 30/60HZ Progressive Mode"
 msgstr ""
 
+msgid "Separate colorimetry for HDR (set 'auto' HDMI Colorimetry)"
+msgstr ""
+
 msgid "Show 'Manual resolution' in extensions menu"
 msgstr ""
 
 msgid "Show info screen"
+msgstr ""
+
+msgid "Smart HDR type (set 'auto' HDMI HDR type)"
 msgstr ""
 
 msgid "This resolution is OK?"
@@ -192,6 +198,9 @@ msgstr ""
 msgid "default"
 msgstr ""
 
+msgid "no"
+msgstr ""
+
 msgid "off"
 msgstr ""
 
@@ -202,10 +211,4 @@ msgid "second"
 msgstr ""
 
 msgid "seconds"
-msgstr ""
-
-msgid "Smart HDR type (set 'auto' HDMI HDR type)"
-msgstr ""
-
-msgid "Separate colorimetry for HDR (set 'auto' HDMI Colorimetry)"
 msgstr ""
