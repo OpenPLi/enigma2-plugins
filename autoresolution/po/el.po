@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Autoresolution plugin Official Greek translation\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-16 16:27+0430\n"
+"POT-Creation-Date: 2021-08-13 18:34+0200\n"
 "PO-Revision-Date: 2016-05-30 20:17+0200\n"
 "Last-Translator: MCelliot_g <mcelliot_g@hotmail.com>\n"
 "Language-Team: MCelliot_g <mcelliot_g@hotmail.com>\n"
@@ -163,11 +163,17 @@ msgstr "Λειτουργία Περιπλεγμένου SD 30/60Hz"
 msgid "SD 30/60HZ Progressive Mode"
 msgstr "Λειτουργία Προοδευτικού SD 30/60Hz"
 
+msgid "Separate colorimetry for HDR (set 'auto' HDMI Colorimetry)"
+msgstr ""
+
 msgid "Show 'Manual resolution' in extensions menu"
 msgstr ""
 
 msgid "Show info screen"
 msgstr "Εμφάνιση οθόνης πληροφοριών"
+
+msgid "Smart HDR type (set 'auto' HDMI HDR type)"
+msgstr ""
 
 msgid "This resolution is OK?"
 msgstr ""
@@ -204,6 +210,9 @@ msgstr "αυτόματο"
 
 msgid "default"
 msgstr "προεπιλογή"
+
+msgid "no"
+msgstr ""
 
 msgid "off"
 msgstr "ανενεργό"

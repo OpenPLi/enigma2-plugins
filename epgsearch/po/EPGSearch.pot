@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-10 15:41+0200\n"
+"POT-Creation-Date: 2021-08-13 18:34+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -189,9 +189,6 @@ msgid "Select channel"
 msgstr ""
 
 msgid "Select item for search and press 'OK' or edit item with yellow button."
-msgstr ""
-
-msgid "Select text to search for"
 msgstr ""
 
 msgid "Select type for filter search. Press button P +/- for show/hide filter in description after search."

@@ -1,3 +1,3 @@
 PLUGIN = ShowClock
-LANGS = de fr lt 
+LANGS = ar de fr lt 
 include $(top_srcdir)/Rules-po.mak

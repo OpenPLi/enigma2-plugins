@@ -2,6 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2\n"
 "Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-08-13 18:34+0200\n"
 "PO-Revision-Date: 2021-05-20 04:47+0300\n"
 "Last-Translator: tomppaa <www.huoltovalikko.com>\n"
 "Language-Team: Tomppaa\n"
@@ -11,61 +12,63 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 2.4.3\n"
-"POT-Creation-Date: \n"
 
-msgid "Blink Record Led"
-msgstr "Led vilkkuu tallentaessa"
+msgid "12h"
+msgstr ""
 
-msgid "Blue"
-msgstr "Sininen"
+msgid "24h"
+msgstr ""
+
+msgid "Always off"
+msgstr ""
+
+msgid "Brightness Level 1"
+msgstr ""
+
+msgid "Brightness Level 2"
+msgstr ""
+
+msgid "Brightness level"
+msgstr ""
 
 msgid "Cancel"
 msgstr "Peruuta"
 
-msgid "Enable led"
-msgstr "Ota Led käyttöön"
+msgid "Change VFD display settings"
+msgstr ""
 
-msgid "GigaBlue Setup"
-msgstr "GigaBlue Asetukset"
+msgid "Channelnumber in Standby Clock"
+msgstr ""
 
-msgid "LED"
-msgstr "LED asetukset"
+msgid "Channelnumber in Standby off"
+msgstr ""
 
-msgid "Led state Deep Standby"
-msgstr "Ledin tila virransäästötilassa"
+msgid "Channelnumber/Clock in Standby Clock"
+msgstr ""
 
-msgid "Led state HDD /dev/sda active"
-msgstr "Ledin tila HDD /dev/sda aktiivinen"
+msgid "Clock always"
+msgstr ""
 
-msgid "Led state HDD /dev/sdb active"
-msgstr "Ledin tila HDD /dev/sdb aktiivinen"
+msgid "Control 7 segment VFD display"
+msgstr ""
 
-msgid "Led state RUN"
-msgstr "Ledin tila käynnissä"
+msgid "Off"
+msgstr ""
 
-msgid "Led state Record"
-msgstr "Ledin tila tallentaessa"
-
-msgid "Led state Standby"
-msgstr "Ledin tila valmistilassa"
-
-msgid "No"
-msgstr "Ei"
-
-msgid "None"
-msgstr "Ei mitään"
-
-msgid "Purple"
-msgstr "Violetti"
-
-msgid "Red"
-msgstr "Punainen"
+msgid "On/Off"
+msgstr ""
 
 msgid "Save"
 msgstr "Tallenna"
 
-msgid "Show clock in Deep Standby"
-msgstr "Näytä kello virransäästötilassa"
+msgid "Show REC-Symbol in Display"
+msgstr ""
+
+msgid "Show blinking Clock on Display during recording"
+msgstr ""
+
+msgid "Show on VFD"
+msgstr ""
 
 msgid "Time mode"
 msgstr "Aika tila"
@@ -73,5 +76,12 @@ msgstr "Aika tila"
 msgid "Update Date/Time"
 msgstr "Päivitä Päivä/Aika"
 
-msgid "Yes"
+msgid "VFD Display Setup"
+msgstr ""
+
+msgid "no"
+msgstr ""
+
+#, fuzzy
+msgid "yes"
 msgstr "Kyllä"

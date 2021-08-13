@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Enigma2 AutoTimer plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-16 16:27+0430\n"
+"POT-Creation-Date: 2021-08-13 18:34+0200\n"
 "PO-Revision-Date: 2019-02-15 20:00+0200\n"
 "Last-Translator: jamu\n"
 "Language-Team: AndyBlac/TimoJ/Kojo_\n"
@@ -1470,9 +1470,3 @@ msgstr "Kanavanvaihto"
 
 msgid "zap and record"
 msgstr "Kanavanvaihto ja tallennus"
-
-msgid "Add Record Timer"
-msgstr "Lisää ajastus"
-
-msgid "Add Zap Timer"
-msgstr "Lisää kanavanvaihto ajastus"

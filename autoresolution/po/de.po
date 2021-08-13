@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Automatic Screen Resolution V. 0.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-16 16:27+0430\n"
+"POT-Creation-Date: 2021-08-13 18:34+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: JuSt611 <Software@Strasdas.de>\n"
 "Language-Team: JuSt611\n"
@@ -163,11 +163,17 @@ msgstr "SD 30/60HZ Interlace Modus"
 msgid "SD 30/60HZ Progressive Mode"
 msgstr "SD 30/60HZ Progressiv Modus"
 
+msgid "Separate colorimetry for HDR (set 'auto' HDMI Colorimetry)"
+msgstr ""
+
 msgid "Show 'Manual resolution' in extensions menu"
 msgstr ""
 
 msgid "Show info screen"
 msgstr "Info zeigen"
+
+msgid "Smart HDR type (set 'auto' HDMI HDR type)"
+msgstr ""
 
 msgid "This resolution is OK?"
 msgstr ""
@@ -203,6 +209,9 @@ msgstr "automatisch"
 
 msgid "default"
 msgstr "Standard"
+
+msgid "no"
+msgstr ""
 
 msgid "off"
 msgstr "aus"

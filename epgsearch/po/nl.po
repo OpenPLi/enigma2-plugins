@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2 - epgsearch\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-10 15:41+0200\n"
+"POT-Creation-Date: 2021-08-13 18:34+0200\n"
 "PO-Revision-Date: 2021-07-10 10:32+0200\n"
 "Last-Translator: Frenske <voorzitter@openpli.org>\n"
 "Language-Team: <Benny.DeTandt@gmail.com>\n"
@@ -195,9 +195,6 @@ msgstr "Kies de zender"
 
 msgid "Select item for search and press 'OK' or edit item with yellow button."
 msgstr ""
-
-msgid "Select text to search for"
-msgstr "Binnen de historiek kunt u de tekst van een eerder gezochte item bewerken door het bijbehorende nummer in te toetsen of door op het betreffende item te gaan staan en te drukken op Enter en vervolgens dit item aan te passen. Druk daarna op 'groen' en het item wordt gezocht en toegevoegd aan de historie."
 
 msgid "Select type for filter search. Press button P +/- for show/hide filter in description after search."
 msgstr "Met deze optie kunt u het zoektype kiezen om op filter te zoeken. Druk P +/- om het filter te tonen/verbergen na het zoeken."

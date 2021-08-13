@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Automatic Screen Resolution V. 0.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-16 16:27+0430\n"
+"POT-Creation-Date: 2021-08-13 18:34+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Dimitrij <dima-73@inbox.lv>\n"
 "Language-Team: openPLi Dimitrij\n"
@@ -157,11 +157,17 @@ msgstr "SD 30/60HZ чересстрочный режим"
 msgid "SD 30/60HZ Progressive Mode"
 msgstr "SD 30/60Hz прогрессивный режим"
 
+msgid "Separate colorimetry for HDR (set 'auto' HDMI Colorimetry)"
+msgstr "Отдельная колориметрия для HDR (установите 'auto' HDMI Colorimetry)"
+
 msgid "Show 'Manual resolution' in extensions menu"
 msgstr "Показать 'Ручное разрешение' в меню дополнений"
 
 msgid "Show info screen"
 msgstr "Показать экран информации"
+
+msgid "Smart HDR type (set 'auto' HDMI HDR type)"
+msgstr "Умный режим HDR (установите 'auto' HDMI HDR тип)"
 
 msgid "This resolution is OK?"
 msgstr "Это разрешение в порядке?"
@@ -196,6 +202,9 @@ msgstr "auto"
 msgid "default"
 msgstr "дефолт"
 
+msgid "no"
+msgstr ""
+
 msgid "off"
 msgstr "off"
 
@@ -207,9 +216,3 @@ msgstr "сек."
 
 msgid "seconds"
 msgstr "сек."
-
-msgid "Smart HDR type (set 'auto' HDMI HDR type)"
-msgstr "Умный режим HDR (установите 'auto' HDMI HDR тип)"
-
-msgid "Separate colorimetry for HDR (set 'auto' HDMI Colorimetry)"
-msgstr "Отдельная колориметрия для HDR (установите 'auto' HDMI Colorimetry)"

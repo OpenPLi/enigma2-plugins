@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-10 15:41+0200\n"
-"PO-Revision-Date: 2018-05-11 22:05+0200\n"
+"POT-Creation-Date: 2021-08-13 18:34+0200\n"
+"PO-Revision-Date: 2021-08-13 18:42+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr_FR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.7\n"
+"X-Generator: Poedit 3.0\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #, python-format
@@ -81,16 +81,14 @@ msgstr "Recherche EPG"
 msgid "EPGSearch"
 msgstr "RechercheEPG"
 
-#, fuzzy
 msgid "EPGSearch - History"
-msgstr "Configuration RechercheEPG"
+msgstr "RechercheEPG - Historique"
 
 msgid "EPGSearch Setup"
 msgstr "Configuration RechercheEPG"
 
-#, fuzzy
 msgid "Edit & search"
-msgstr "Recherche personnalisée"
+msgstr "Éditer & chercher"
 
 msgid "Encoding Search to EPG"
 msgstr "Encodage des recherches dans l'EPG"
@@ -138,7 +136,7 @@ msgid "Lookup in TMBD"
 msgstr "Rechecher dans TMDB"
 
 msgid "Modify searched text"
-msgstr ""
+msgstr "Modifier le texte recherché"
 
 msgid "New Search"
 msgstr "Nouvelle recherche"
@@ -192,17 +190,13 @@ msgid "Select channel"
 msgstr "Sélectionner une chaîne"
 
 msgid "Select item for search and press 'OK' or edit item with yellow button."
-msgstr ""
-
-msgid "Select text to search for"
-msgstr "Sélectionner le texte à rechercher"
+msgstr "Sélectionnez l’élément à rechercher et appuyez sur « OK » ou modifiez l’élément avec le bouton jaune."
 
 msgid "Select type for filter search. Press button P +/- for show/hide filter in description after search."
 msgstr "Sélectionner le type de filtre de recherche. Appuyez sur P+/- pour afficher/masquer le filtre dans la description après la recherche."
 
-#, fuzzy
 msgid "Select type for search, \"partial match\" for the most extensive search, \"partial description\" for the most description search."
-msgstr "Sélectionner le type de recherche, \"correspondance partielle\" pour la recherche la plus étendue."
+msgstr "Sélectionner le type de recherche, \"correspondance partielle\" pour la recherche la plus étendue, \"description partielle\" pour la recherche la plus détaillée."
 
 msgid "Select type: 'Search and Select channel' or 'Search'."
 msgstr "Sélectionner le type: 'Rechercher et sélectionner la chaîne' ou 'Rechercher'."
@@ -241,7 +235,7 @@ msgid "only Search"
 msgstr "seulement rechercher"
 
 msgid "partial description"
-msgstr ""
+msgstr "description partielle"
 
 msgid "partial match"
 msgstr "correspondance partielle"
