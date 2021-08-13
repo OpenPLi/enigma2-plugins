@@ -2244,14 +2244,14 @@ def partnerboxChannelContextMenu__init__(self, session, csel):
 						callFunction = self.setParentalControlPin
 					else:
 						callFunction = self.addPartnerboxService
-					self["menu"].list.insert(1, ChoiceEntryComponent(text=(_("add Partnerbox service"), boundFunction(callFunction, 0))))
+					self["menu"].list.insert(1, ChoiceEntryComponent(text=(_("add Partnerbox service"), boundFunction(callFunction, 0)), key = "bullet"))
 			if (not inBouquetRootList and not inBouquet) or (inBouquetRootList):
 				if config.usage.multibouquet.value:
 					if config.ParentalControl.configured.value:
 						callFunction = self.setParentalControlPin
 					else:
 						callFunction = self.addPartnerboxService
-					self["menu"].list.insert(1, ChoiceEntryComponent(text=(_("add Partnerbox bouquet"), boundFunction(callFunction, 1))))
+					self["menu"].list.insert(1, ChoiceEntryComponent(text=(_("add Partnerbox bouquet"), boundFunction(callFunction, 1)), key = "bullet"))
 
 
 def addPartnerboxService(self, insertType):
