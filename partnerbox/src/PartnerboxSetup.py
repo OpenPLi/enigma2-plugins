@@ -589,7 +589,8 @@ class PartnerboxEntryConfigScreen(ConfigListScreen, Screen):
 			config.plugins.Partnerbox.entriescount.save()
 		ConfigListScreen.keySave(self)
 		if self.current.enigma.value == "1":
-			self.current.enigma.value == "0"
+			self.current.enigma.value = "0"
+			self.current.enigma.save()
 		config.plugins.Partnerbox.save()
 		configfile.save()
 		self.close()
