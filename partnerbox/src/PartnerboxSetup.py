@@ -45,6 +45,7 @@ def initPartnerboxEntryConfig():
 	config.plugins.Partnerbox.Entries[i].ip = ConfigIP(default=[192, 168, 0, 98])
 	config.plugins.Partnerbox.Entries[i].port = ConfigInteger(default=80, limits=(1, 65555))
 	config.plugins.Partnerbox.Entries[i].enigma = ConfigSelection(default="0", choices=[("0", _("Enigma 2")), ("1", _("Enigma 1"))])
+	config.plugins.Partnerbox.Entries[i].type = ConfigSelection(default="4114", choices=[("4114", "4114"), ("4097", "4097")])
 	config.plugins.Partnerbox.Entries[i].password = ConfigText(default="root", visible_width=50, fixed_size=False)
 	config.plugins.Partnerbox.Entries[i].usewakeonlan = ConfigYesNo(default=False)
 	config.plugins.Partnerbox.Entries[i].mac = ConfigText(default="00:00:00:00:00:00", fixed_size=False)
@@ -559,7 +560,7 @@ class PartnerboxEntryConfigScreen(ConfigListScreen, Screen):
 			getConfigListEntry(_("Name"), self.current.name),
 			getConfigListEntry(_("IP"), self.current.ip),
 			getConfigListEntry(_("Port"), self.current.port),
-			getConfigListEntry(_("Enigma Type"), self.current.enigma),
+			getConfigListEntry(_("Enigma Type"), self.current.type),
 			getConfigListEntry(_("Password"), self.current.password),
 			getConfigListEntry(_("Servicelists/EPG"), self.current.useinternal),
 			getConfigListEntry(_("Zap to service when streaming"), self.current.zaptoservicewhenstreaming)
@@ -587,6 +588,8 @@ class PartnerboxEntryConfigScreen(ConfigListScreen, Screen):
 			config.plugins.Partnerbox.entriescount.value = config.plugins.Partnerbox.entriescount.value + 1
 			config.plugins.Partnerbox.entriescount.save()
 		ConfigListScreen.keySave(self)
+		if self.current.enigma.value == "1":
+			self.current.enigma.value == "0"
 		config.plugins.Partnerbox.save()
 		configfile.save()
 		self.close()
