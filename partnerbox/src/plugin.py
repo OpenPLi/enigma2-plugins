@@ -234,7 +234,7 @@ class CurrentRemoteTV(Screen):
 		self.session = session
 		Screen.__init__(self, session)
 		self.setTitle(_("Remote Player"))
-		self.CurrentService = self.session.nav.getCurrentlyPlayingServiceReference()
+		self.CurrentService = self.session.nav.getCurrentlyPlayingServiceOrGroup()
 		self.PartnerboxEntry = partnerboxentry
 		self.password = partnerboxentry.password.value
 		self.username = "root"
@@ -263,6 +263,9 @@ class CurrentRemoteTV(Screen):
 			for service in root.findall("e2service"):
 				servicereference = str(service.findtext("e2servicereference", '').decode("utf-8").encode("utf-8", 'ignore'))
 			if len(servicereference) > 0:
+				#if self.password:
+				#	url = "http://root:%s@%s:8001/%s" % (self.password, self.ip, servicereference)
+				#else:
 				url = "http://" + self.ip + ":8001/" + servicereference
 			else:
 				self.close()
@@ -270,7 +273,7 @@ class CurrentRemoteTV(Screen):
 			url = xmlstring
 		if len(url) > 0:
 			self.session.nav.stopService()
-			sref = eServiceReference(ENIGMA_WEBSERVICE_ID, 0, url)
+			sref = eServiceReference(int(self.PartnerboxEntry.type.value), 0, url)
 			self.session.nav.playService(sref, adjust=False)
 			self.session.openWithCallback(self.RemotePlayerFinished, RemotePlayer, "", "", 0, 0, self.PartnerboxEntry, servicereference)
 		else:
@@ -712,7 +715,7 @@ class RemoteTimerChannelList(Screen):
 		self.onClose.append(self.__onClose)
 		self.ChannelListCurrentIndex = 0
 		self.mode = self.REMOTE_TIMER_MODE
-		self.CurrentService = self.session.nav.getCurrentlyPlayingServiceReference()
+		self.CurrentService = self.session.nav.getCurrentlyPlayingServiceOrGroup()
 
 	def __onClose(self):
 		if self.zapTimer.isActive():
@@ -809,7 +812,7 @@ class RemoteTimerChannelList(Screen):
 
 	def StreamTV(self, connectstring):
 			self.session.nav.stopService()
-			sref = eServiceReference(ENIGMA_WEBSERVICE_ID, 0, connectstring)
+			sref = eServiceReference(int(self.PartnerboxEntry.type.value), 0, connectstring)
 			self.session.nav.playService(sref, adjust=False)
 			self.session.openWithCallback(self.PlayRemoteStream, RemotePlayer, self["channellist"].l.getCurrentSelection()[0].servicename, self["channellist"].l.getCurrentSelection()[0].eventtitle, self["channellist"].l.getCurrentSelection()[0].eventstart, self["channellist"].l.getCurrentSelection()[0].eventduration, self.PartnerboxEntry, self["channellist"].l.getCurrentSelection()[0].servicereference, self.session.current_dialog)
 
