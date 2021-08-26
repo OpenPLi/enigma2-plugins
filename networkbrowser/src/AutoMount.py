@@ -97,14 +97,14 @@ class AutoMount():
 					data['active'] = getValue(mount.findall("active"), False).encode("UTF-8")
 					if data["active"] == 'True' or data["active"] == True:
 						self.activeMountsCounter += 1
-					data['hdd_replacement'] = getValue(mount.findall("hdd_replacement"), "False").encode("UTF-8")
-					data['ip'] = getValue(mount.findall("ip"), "").encode("UTF-8")
-					data['host'] = getValue(mount.findall("host"), "").encode("UTF-8")
-					data['sharedir'] = getValue(mount.findall("sharedir"), "/media/").encode("UTF-8")
-					data['sharename'] = getValue(mount.findall("sharename"), "MEDIA").encode("UTF-8")
+					data['hdd_replacement'] = getValue(mount.findall("hdd_replacement"), 'False').encode("UTF-8")
+					data['ip'] = getValue(mount.findall("ip"), '').encode("UTF-8")
+					data['host'] = getValue(mount.findall("host"), '').encode("UTF-8")
+					data['sharedir'] = getValue(mount.findall("sharedir"), '/media/').encode("UTF-8")
+					data['sharename'] = getValue(mount.findall("sharename"), 'MEDIA').encode("UTF-8")
 					data['options'] = getValue(mount.findall("options"), "").encode("UTF-8")
-					data['username'] = getValue(mount.findall("username"), "guest").encode("UTF-8")
-					data['password'] = getValue(mount.findall("password"), "").encode("UTF-8")
+					data['username'] = getValue(mount.findall("username"), '').encode("UTF-8")
+					data['password'] = getValue(mount.findall("password"), '').encode("UTF-8")
 					self.automounts[data['sharename']] = data
 				except Exception, e:
 					print "[MountManager] Error reading Mounts:", e
