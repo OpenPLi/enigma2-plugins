@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Blindscan\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-04-16 16:27+0430\n"
-"PO-Revision-Date: 2020-09-09 20:09+0300\n"
+"PO-Revision-Date: 2021-08-29 19:41+0300\n"
 "Last-Translator: Dimitrij <Dima-73@inbox.lv>\n"
 "Language-Team: \n"
 "Language: ru_RU\n"
@@ -18,14 +18,14 @@ msgid ""
 "Second slot dual tuner may not be supported blind scan."
 msgstr ""
 "\n"
-"Второй слот двойного тюнера может не поддерживать слепой поиск."
+"Второй слот этого двойного тюнера может не поддерживать слепой поиск."
 
 msgid ""
 "\n"
 "WARNING! Blind scan may make the tuner malfunction on a VU+ and ET receiver. A reboot afterwards may be required to return to proper tuner function."
 msgstr ""
 "\n"
-"ВНИМАНИЕ! Слепое сканирование, может сделать временно нерабочим тюнер, на VU+/ET ресиверах. Необходима перезагрузка после поиска, для того чтобы вернуть тюнер в рабочее состояние."
+"ВНИМАНИЕ! Слепое сканирование, может сделать временно не рабочим тюнер, на VU+/ET ресиверах. Необходима перезагрузка ресивера после сканирования, для того чтобы вернуть тюнер в рабочее состояние."
 
 msgid ""
 "\n"
@@ -41,7 +41,7 @@ msgid " tuner."
 msgstr " тюнер."
 
 msgid "\"channel scan\" searches for channels and saves them to your receiver; \"transponder scan\" does a transponder search and displays the results allowing user to select some or all transponder. Both options save the results in satellites.xml format under /tmp"
-msgstr "\"сканирование каналов\" поиск каналов и сохранение их в ресивере; \"сканирование транспондера\" выполняет поиск по транспондерам и отображает результаты, позволяющие пользователю выбрать некоторые или все транспондеры. Оба варианта сохраняют результаты в формате satellites.xml в /tmp"
+msgstr "Варианты - \"сканирование каналов\" поиск каналов и сохранение их в ресивере; \"сканирование транспондера\" выполняет поиск по транспондерам и отображает результаты, позволяющие пользователю выбрать некоторые или все транспондеры. Оба варианта сохраняют результаты в формате satellites.xml в /tmp."
 
 #, python-format
 msgid "%d transponder(s) found"
@@ -59,8 +59,8 @@ msgstr "%d:%02d/%d:%02d мин"
 msgid "%dMHz scanned"
 msgstr "%dMHz сканируется"
 
-msgid "AUTOMATICALLY start service searching, press green to change"
-msgstr "АВТОМАТИЧЕСКИЙ поиск сервисов, нажмите зеленую, для смены"
+msgid "Service searching will start AUTOMATICALLY. To change this press green."
+msgstr "Поиск сервисов начнется АВТОМАТИЧЕСКИ. Чтобы изменить это, нажмите зеленую кнопку. "
 
 msgid "Accuracy (higher is better)"
 msgstr "Точность (чем выше, тем лучше)"
@@ -128,7 +128,7 @@ msgstr "Фильтр от соседних спутников"
 
 #, python-format
 msgid "Frequency values must be between %d MHz and %d MHz"
-msgstr "Значение частот должны быть между %d MHz / %d MHz"
+msgstr "Значение частот должны быть между %d MHz / %d MHz."
 
 msgid "Frequency values must be between 3000 MHz and 4199 MHz (C-band)"
 msgstr "Значение частот должны быть между 3000 MHz / 4199 MHz (C-диапазон)."
@@ -150,13 +150,13 @@ msgid "If you select \"yes\" the scan will only save channels that are not encry
 msgstr "Если Вы выберите \"да\", то будут сохранены только найденные каналы без кодировки; \"нет\" будут сохранены кодированные и некодированные каналы."
 
 msgid "If you select \"yes\" the scan will only search transponders not listed in satellites.xml"
-msgstr "Если Вы выберите \"да\", то при сканировании будет учитыватся только транспондеры не указанные в файле satellites.xml"
+msgstr "Если Вы выберите \"да\", то при сканировании будет учитыватся только транспондеры не указанные в файле satellites.xml."
 
 msgid "It seems manufacturer does not support blind scan for this tuner."
 msgstr "Похоже, производитель не поддерживает слепое сканирование для этого тюнера."
 
 msgid "LNB of current satellite not compatible with plugin"
-msgstr "LNB текущего спутника не совместим с плагином"
+msgstr "LNB текущего спутника не совместим с плагином!"
 
 msgid ""
 "Looking for available transponders.\n"
@@ -165,11 +165,11 @@ msgstr ""
 "Поиск доступных транспондеров.\n"
 "Это может занять довольно много времени, пожалуйста, будьте терпеливы."
 
-msgid "MANUALLY start service searching, press green to change"
-msgstr "РУЧНОЙ поиск сервисов, нажмите зеленую, для смены"
+msgid "Service searching to be started MANUALLY by the user. To change this press green."
+msgstr "Поиск сервисов должен запускаться пользователем ВРУЧНУЮ. Чтобы изменить это, нажмите зеленую кнопку. "
 
 msgid "Maybe the reason that recording is currently running."
-msgstr "Может быть причина в том, что сейчас идет запись."
+msgstr "Может быть причина в том, что сейчас идет запись и этот тюнер занят."
 
 msgid "Moving to "
 msgstr "Перемещение к "
@@ -222,16 +222,16 @@ msgid "Open xml file"
 msgstr "Открыть файл xml"
 
 msgid "Please setup your tuner configuration."
-msgstr "Пожалуйста настройте конфигурацию Вашего тюнера(ов)."
+msgstr "Пожалуйста настройте конфигурацию Вашего тюнера(ов)!"
 
 msgid "Polarisation"
 msgstr "Поляризация"
 
 msgid "Press Green/OK to start the scan"
-msgstr "Нажмите ОК/Зеленую для начала сканирования"
+msgstr "Нажмите ОК/Зеленую для начала сканирования!"
 
-msgid "Press OK to start the scan"
-msgstr "Нажмите ОК для начала сканирования"
+msgid "Press OK to start the scan."
+msgstr "Нажмите ОК для начала сканирования!"
 
 msgid "Press green to start service searching!"
 msgstr "Нажмите зеленую кнопку для начала поиска сервисов!"
@@ -295,13 +295,13 @@ msgid "Search type"
 msgstr "Тип поиска"
 
 msgid "Select a tuner that is configured for the satellite you wish to search"
-msgstr "Выберите тюнер, который настроен для спутника, на котором Вы хотите произвести поиск"
+msgstr "Выберите тюнер, который настроен для спутника, на котором Вы хотите произвести поиск."
 
 msgid "Select all"
 msgstr "Выбрать все"
 
 msgid "Select the satellite you wish to search"
-msgstr "Выбор необходимого спутника для поиска"
+msgstr "Выбор необходимого спутника для поиска."
 
 msgid ""
 "Select transponders and press green to scan.\n"
@@ -314,10 +314,10 @@ msgid "Select type for scan:"
 msgstr "Выбор типа сканирования:"
 
 msgid "Smaller steps takes longer but scan is more thorough"
-msgstr "Меньшие шаги занимают больше времени, но сканирование выполняется более тщательно"
+msgstr "Меньшие шаги занимают больше времени, но сканирование выполняется более тщательно."
 
 msgid "Sorry, this tuner is in use."
-msgstr "Извините, этот тюнер занят."
+msgstr "Извините, этот тюнер занят!"
 
 msgid "Start scan"
 msgstr "Старт поиска"
@@ -327,10 +327,13 @@ msgid "Step %d %d:%02d min"
 msgstr "Шаг %d %d:%02d мин"
 
 msgid "Symbol rate values are in megasymbols; enter a value between 1 and 44"
-msgstr "Значения символьных скоростей в мега символах; введите значение от 1 до 44"
+msgstr "Значения символьных скоростей в мега символах; введите значение от 1 до 44."
 
 msgid "Symbol rate values are in megasymbols; enter a value between 2 and 45"
-msgstr "Значения символьных скоростей в мега символах; введите значение от 2 до 45"
+msgstr "Значения символьных скоростей в мега символах; введите значение от 2 до 45."
+
+msgid "Symbol rate values are in megasymbols; enter a value between %d and %d"
+msgstr "Значения символьных скоростей в мега символах; введите значение от %d до %d."
 
 msgid "The blindscan run was cancelled by the user."
 msgstr "Слепой поиск был отменен пользователем."
@@ -410,3 +413,30 @@ msgstr "да"
 
 msgid "yes (keep feeds)"
 msgstr "да (хранить feeds)"
+
+msgid "LNB inversion"
+msgstr "LNB инверсия"
+
+msgid "CAUTION: Only select \"inverted\" if you are using an inverted LNB (i.e. an LNB where the local oscillator frequency is greater than the scan frequency). Default is \"normal\". Only change this if you understand why you are doing it."
+msgstr "ВНИМАНИЕ: Выбирайте \"инвертировать\", только если Вы используете инвертированный LNB (то есть LNB, где частота гетеродина больше, чем частота сканирования). По умолчанию \"нормально\". Изменяйте это только в том случае, если Вы понимаете, зачем вы это делаете."
+
+msgid "Polarisation, select horizontal, vertical or both."
+msgstr "Поляризация, выберите горизонтальную, вертикальную или обе."
+
+msgid "Select between 1 and 5. Higher numbers give more accurat search results."
+msgstr "Выберите от 1 до 5. Чем больше число, тем точнее результаты поиска."
+
+msgid "Auto / Manual"
+msgstr "Авто/В ручную"
+
+msgid "Press green to start service searching."
+msgstr "Нажмите зеленую кнопку, чтобы начать поиск сервисов."
+
+msgid "Searching for active satellite transponders..."
+msgstr "Поиск активных спутниковых транспондеров ..."
+
+msgid "Restore defaults"
+msgstr "Восстановить дефолт"
+
+msgid "\"scan for channels\" searches for channels and saves them to your receiver; \"Save to XML\" does a transponder search and saves the results in satellites.xml format and stores it in /tmp"
+msgstr "Варианты - \"сканирование каналов\" выполняет поиск каналов и сохраняет их в ресивере; \"Сохранить в XML\" выполняет поиск транспондеров и сохраняет результаты в формате satellites.xml в /tmp."
