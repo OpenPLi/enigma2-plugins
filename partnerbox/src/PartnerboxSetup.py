@@ -551,7 +551,7 @@ class PartnerboxEntryConfigScreen(ConfigListScreen, Screen):
 			self.newmode = 0
 			self.current = entry
 
-		ConfigListScreen.__init__(self, [], session)
+		ConfigListScreen.__init__(self, [], session, on_change=self.changedEntry)
 
 		self.initConfig()
 
@@ -567,21 +567,18 @@ class PartnerboxEntryConfigScreen(ConfigListScreen, Screen):
 		]
 		self["key_yellow"].setText(" ")
 		self.mac = getConfigListEntry(_("MAC"), self.current.mac)
+		self.useWOL = _("Use Wake-on-LAN")
 		if self.current.enigma.value == "0":
-			list.append(getConfigListEntry(_("Use Wake-on-LAN"), self.current.usewakeonlan))
+			list.append(getConfigListEntry(self.useWOL, self.current.usewakeonlan))
 			if self.current.usewakeonlan.value:
 				list.append(self.mac)
 				self["key_yellow"].setText(_("Get MAC"))
 		self["config"].list = list
 		self["config"].l.setList(list)
 
-	def keyLeft(self):
-		ConfigListScreen.keyLeft(self)
-		self.initConfig()
-
-	def keyRight(self):
-		ConfigListScreen.keyRight(self)
-		self.initConfig()
+	def changedEntry(self):
+		if self["config"].getCurrent()[0] == self.useWOL:
+			self.initConfig()
 
 	def keySave(self):
 		if self.newmode == 1:
