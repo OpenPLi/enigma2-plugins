@@ -265,8 +265,6 @@ class PartnerboxEntriesListConfigScreen(Screen, HelpableScreen):
 		try:
 			sel = self["entrylist"].l.getCurrentSelection()[0]
 		except:
-			sel = None
-		if sel is None:
 			return
 		self.session.openWithCallback(self.updateList, PartnerboxEntryConfigScreen, sel)
 
@@ -285,27 +283,25 @@ class PartnerboxEntriesListConfigScreen(Screen, HelpableScreen):
 
 	def moveUp(self):
 		if self.edit and self.idx >= 1:
-				self.moveDirection(-1)
+			self.moveDirection(-1)
 
 	def moveDown(self):
 		if self.edit and self.idx < config.plugins.Partnerbox.entriescount.value - 1:
-				self.moveDirection(1)
+			self.moveDirection(1)
 
 	def moveDirection(self, direction):
-			self["entrylist"].moveToIndex(self.idx)
-			tmp = config.plugins.Partnerbox.Entries[self.idx]
-			config.plugins.Partnerbox.Entries[self.idx] = config.plugins.Partnerbox.Entries[self.idx + direction]
-			config.plugins.Partnerbox.Entries[self.idx + direction] = tmp
-			self.updateList()
-			self.idx += direction
-			self["entrylist"].moveToIndex(self.idx)
+		self["entrylist"].moveToIndex(self.idx)
+		tmp = config.plugins.Partnerbox.Entries[self.idx]
+		config.plugins.Partnerbox.Entries[self.idx] = config.plugins.Partnerbox.Entries[self.idx + direction]
+		config.plugins.Partnerbox.Entries[self.idx + direction] = tmp
+		self.updateList()
+		self.idx += direction
+		self["entrylist"].moveToIndex(self.idx)
 
 	def keyDelete(self):
 		try:
 			sel = self["entrylist"].l.getCurrentSelection()[0]
 		except:
-			sel = None
-		if sel is None:
 			return
 		self.session.openWithCallback(self.deleteConfirm, MessageBox, _("Really delete this Partnerbox Entry?"))
 
@@ -560,7 +556,7 @@ class PartnerboxEntryConfigScreen(ConfigListScreen, Screen):
 			getConfigListEntry(_("Name"), self.current.name),
 			getConfigListEntry(_("IP"), self.current.ip),
 			getConfigListEntry(_("Port"), self.current.port),
-			getConfigListEntry(_("Enigma Type"), self.current.type),
+			getConfigListEntry(_("Service type"), self.current.type),
 			getConfigListEntry(_("Password"), self.current.password),
 			getConfigListEntry(_("Servicelists/EPG"), self.current.useinternal),
 			getConfigListEntry(_("Zap to service when streaming"), self.current.zaptoservicewhenstreaming)
