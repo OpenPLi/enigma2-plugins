@@ -575,14 +575,6 @@ class PartnerboxEntryConfigScreen(ConfigListScreen, Screen):
 		self["config"].list = list
 		self["config"].l.setList(list)
 
-	def keyLeft(self):
-		ConfigListScreen.keyLeft(self)
-		self.initConfig()
-
-	def keyRight(self):
-		ConfigListScreen.keyRight(self)
-		self.initConfig()
-
 	def keySave(self):
 		if self.newmode == 1:
 			config.plugins.Partnerbox.entriescount.value = config.plugins.Partnerbox.entriescount.value + 1
