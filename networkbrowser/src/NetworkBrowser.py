@@ -227,8 +227,8 @@ class NetworkBrowser(Screen):
 		sharelist = []
 		self.sharecache_file = None
 		self.sharecache_file = '/etc/enigma2/' + hostname.strip() + '.cache' #Path to cache directory
-		username = ''
-		password = ''
+		username = 'guest'
+		password = 'guest'
 		try:
 			hostdata = load_cache(self.sharecache_file)
 			username = hostdata['username']
@@ -450,8 +450,8 @@ class NetworkBrowser(Screen):
 				data['sharedir'] = selection[3]
 				data['options'] = "rw"
 				self.sharecache_file = '/etc/enigma2/' + selection[1].strip() + '.cache' #Path to cache directory
-				data['username'] = ''
-				data['password'] = ''
+				data['username'] = 'guest'
+				data['password'] = 'guest'
 				try:
 					hostdata = load_cache(self.sharecache_file)
 					data['username'] = hostdata['username']
