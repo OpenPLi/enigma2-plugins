@@ -462,6 +462,9 @@ msgstr "Режим ожидания"
 msgid "StartTime"
 msgstr "Время начала"
 
+msgid "Service type"
+msgstr "Тип стрим сервиса"
+
 #, python-format
 msgid "Starting Remote Player (IP = %s)"
 msgstr "Старт дистанционного плеера (IP = %s)"
@@ -493,9 +496,9 @@ msgstr "Чт"
 msgid "Thursday"
 msgstr "Четверг"
 
-#, fuzzy
+
 msgid "Timer Overview"
-msgstr "Автотаймер - обзор"
+msgstr "Таймеры - обзор"
 
 msgid "Timer Type"
 msgstr "Тип таймера"
