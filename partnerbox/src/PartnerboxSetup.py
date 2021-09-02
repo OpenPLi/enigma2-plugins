@@ -410,6 +410,7 @@ class PartnerboxEntriesListConfigScreen(Screen, HelpableScreen):
 			self.sendWOL(sel.mac.value)
 			return
 		elif choice[1] == 10:
+			ip = "%d.%d.%d.%d" % tuple(sel.ip.value)
 			self.setFallbackTuner(sel.name.value, ip)
 			return
 		elif choice[1] == 11:
