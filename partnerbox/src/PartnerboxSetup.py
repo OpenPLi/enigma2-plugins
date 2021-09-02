@@ -33,6 +33,8 @@ import skin
 import os
 from plugin import autoTimerAvailable
 from Components.Pixmap import Pixmap
+from Components.Sources.Boolean import Boolean
+from Screens.VirtualKeyBoard import VirtualKeyBoard
 
 # for localized messages
 from . import _
@@ -519,6 +521,9 @@ class PartnerboxEntryConfigScreen(ConfigListScreen, Screen):
 			<widget name="key_green" position="140,350" zPosition="5" size="140,40" valign="center" halign="center" font="Regular;19" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
 			<widget name="key_yellow" position="280,350" zPosition="5" size="140,40" valign="center" halign="center" font="Regular;19" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
 			<widget name="key_blue" position="420,350" zPosition="5" size="140,40" valign="center" halign="center" font="Regular;19" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
+			<widget source="VKeyIcon" render="Pixmap" pixmap="skin_default/buttons/key_text.png" position="30,325" zPosition="10" size="35,25" transparent="1" alphatest="on">
+				<convert type="ConditionalShowHide"/>
+			</widget>
 		</screen>"""
 
 	def __init__(self, session, entry):
@@ -539,6 +544,10 @@ class PartnerboxEntryConfigScreen(ConfigListScreen, Screen):
 		self["key_green"] = Button(_("OK"))
 		self["key_yellow"] = Button()
 		self["key_blue"] = Button(_("Delete"))
+
+		self["HelpWindow"] = Pixmap()
+		self["HelpWindow"].hide()
+		self["VKeyIcon"] = Boolean(False)
 
 		if entry is None:
 			self.newmode = 1
