@@ -233,6 +233,7 @@ class PartnerboxEntriesListConfigScreen(Screen, HelpableScreen):
 			 "yellow": self.keyYellow,
 			 "blue": self.keyDelete,
 			 "green": self.powerMenu,
+			 "menu": self.powerMenu,
 			 }, -1)
 		self.edit = 0
 		self.idx = 0
