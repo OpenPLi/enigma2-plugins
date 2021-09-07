@@ -40,6 +40,7 @@ import string
 import os
 import re
 import skin
+import six
 from Components.config import config, ConfigSubsection, ConfigSelection, ConfigDirectory, ConfigYesNo, Config, ConfigInteger, ConfigSubList, ConfigText, ConfigNumber, getConfigListEntry, configfile
 from Components.ConfigList import ConfigListScreen
 from Screens.MessageBox import MessageBox
@@ -71,6 +72,7 @@ config.plugins.shoutcast.cover_height = ConfigNumber(default=300)
 
 devid = "fa1jo93O_raeF0v9"
 
+_VALID_URI = re.compile(br"\A[\x21-\x7e]+\Z")
 
 class SHOUTcastGenre:
 	def __init__(self, name="", id=0, haschilds="false", parentid=0, opened="false"):
@@ -642,7 +644,7 @@ class SHOUTcastWidget(Screen):
 					if len(devid) > 8:
 						url = self.SCY + "/sbin/tunein-station.pls?id=%s" % (sel.id)
 					self["list"].hide()
-					self["statustext"].setText(_("Getting streaming data from\n%s") % sel.name)
+					self["statustext"].setText(_("Getting streaming data from\n%s") % str(sel.name))
 					self.currentStreamingStation = sel.name
 					sendUrlCommand(url, None, 10).addCallback(self.callbackPLS).addErrback(self.callbackStationListError)
 				elif self.mode == self.FAVORITELIST:
@@ -656,7 +658,7 @@ class SHOUTcastWidget(Screen):
 						self.stopPlaying()
 						url = sel.configItem.text.value
 						self["list"].hide()
-						self["statustext"].setText(_("Getting streaming data from\n%s") % sel.configItem.name.value)
+						self["statustext"].setText(_("Getting streaming data from\n%s") % str(sel.configItem.name.value))
 						self.currentStreamingStation = sel.configItem.name.value
 						sendUrlCommand(url, None, 10).addCallback(self.callbackPLS).addErrback(self.callbackStationListError)
 					elif sel.configItem.type.value == "genre":
@@ -924,6 +926,12 @@ class SHOUTcastWidget(Screen):
 		r = re.findall('murl&quot;:&quot;(http.*?)&quot', result, re.S | re.I)
 		if r:
 			url = r[nr]
+			# FIXME loop
+			_url = six.ensure_binary(url)
+			if not _VALID_URI.match(_url):
+				nr += 1
+				url = r[nr]
+			# FIXME nr max
 			print "[SHOUTcast] fetch cover first try:%s" % (url)
 			for link in bad_link:
 				if url.startswith(link):
