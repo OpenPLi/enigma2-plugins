@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: e2 blind scan PLi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-04-16 16:27+0430\n"
-"PO-Revision-Date: 2016-12-28 11:51+0200\n"
+"PO-Revision-Date: 2021-09-13 13:20+0300\n"
 "Last-Translator: Vytenis P. <vyteniui@gmail.com>\n"
 "Language-Team: Vytenis P. <vyteniui@gmail.com>\n"
 "Language: lt\n"
@@ -11,38 +11,37 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 1.8.11\n"
+"X-Generator: Poedit 3.0\n"
 
 msgid ""
 "\n"
 "Second slot dual tuner may not be supported blind scan."
 msgstr ""
 "\n"
-"Antrasis dvigubo imtuvo lizdas gali nepalaikyti aklojo skenavimo."
+"Antrasis dvigubo imtuvo lizdas gali nepalaikyti aklojo nuskaitymo."
 
 msgid ""
 "\n"
 "WARNING! Blind scan may make the tuner malfunction on a VU+ and ET receiver. A reboot afterwards may be required to return to proper tuner function."
 msgstr ""
 "\n"
-"DĖMESIO! Aklasis skenavimas gali sutrikdyti Vu+ ir ET imtuvų darbą. Kad atstatyti imtuvo funkcijas, vėliau jį gali prireikti paleisti iš naujo."
+"DĖMESIO! Aklasis nuskaitymas gali sutrikdyti Vu+ ir ET imtuvų darbą. Imtuvo funkcijoms atkurti, vėliau jį gali prireikti paleisti iš naujo."
 
 msgid ""
 "\n"
 "You must use the power adapter."
 msgstr ""
 "\n"
-"Naudokite maitinimo šaltinį."
+"Būtinai naudokite maitinimo šaltinį."
 
 msgid "   Starting Sundtek hardware blind scan."
-msgstr "   Paleidžiamas aklasis skenavimas Sundtek įranga."
+msgstr "   Paleidžiamas aklasis nuskaitymas Sundtek įranga."
 
 msgid " tuner."
 msgstr " imtuvas."
 
-#, fuzzy
 msgid "\"channel scan\" searches for channels and saves them to your receiver; \"transponder scan\" does a transponder search and displays the results allowing user to select some or all transponder. Both options save the results in satellites.xml format under /tmp"
-msgstr "'kanalų paieška' ieško kanalų ir išsaugo juos imtuve; 'įrašyti į XML failą' atlieka transponderių paiešką ir surastus išsaugo XML formate į satellites.xml failą"
+msgstr "\"kanalų nuskaitymas\" ieško kanalų ir išsaugo juos imtuve; \"transponderių nuskaitymas\" atlieka transponderių paiešką ir parodo rezultatus, leidžiančius naudotojui pasirinkti kai kuriuos, arba visus transponderius. Abi parinktys išsaugo rezultatus satellites.xml formatu į /tmp"
 
 #, python-format
 msgid "%d transponder(s) found"
@@ -50,7 +49,7 @@ msgstr "Surasti %d transponderiai"
 
 #, python-format
 msgid "%d transponders found at %d:%02d min"
-msgstr "Surasti %d transponderiai %d:%02d min"
+msgstr "Surasti %d transponderiai per %d:%02d min."
 
 #, python-format
 msgid "%d:%02d/%d:%02dmin"
@@ -58,7 +57,7 @@ msgstr "%d:%02d/%d:%02dmin"
 
 #, python-format
 msgid "%dMHz scanned"
-msgstr "Nuskenuota %dMHz"
+msgstr "Nuskaityta %dMHz"
 
 msgid "AUTOMATICALLY start service searching, press green to change"
 msgstr "AUTOMATIŠKAI pradėti kanalų paiešką, kad pakeisti, spauskite 'ŽALIĄ' mygtuką"
@@ -70,41 +69,38 @@ msgid "Another type"
 msgstr "Kito tipo"
 
 msgid "Blind scan"
-msgstr "Aklasis skenavimas"
+msgstr "Aklasis nuskaitymas"
 
 msgid "Blind scan for DVB-S2 tuners"
-msgstr "DVB-S2 imtuvų aklasis skenavimas"
+msgstr "DVB-S2 imtuvų aklasis nuskaitymas"
 
 msgid "Blind scan state"
-msgstr "Aklojo skenavimo būsena"
+msgstr "Aklojo nuskaitymo būsena"
 
 msgid "Blindscan is not supported in "
-msgstr "Aklasis skenavimas nepalaikomas "
+msgstr "Aklasis nuskaitymas nepalaikomas "
 
 msgid "CAUTION: If you select \"yes\" the scan will not remove \"duplicated\" transponders from the list. Default is \"no\". Only change this if you understand why you are doing it."
-msgstr ""
+msgstr "ĮSPĖJIMAS: Jei pasirinksite \"taip\", nuskaitymas nepašalins iš sąrašo pasikartojančių transponderių. Numatytoji reikšmė yra \"ne\". Keiskite tai tik tuo atveju, jei suprantate, kodėl tai darote."
 
-#, fuzzy
 msgid "CAUTION: If you select \"yes\" the scan will not sync with transponders listed in satellites.xml. Default is \"no\". Only change this if you understand why you are doing it."
-msgstr "Jei pasirinksite 'taip', bus ieškomi tik transponderiai, nesantys satellites.xml faile."
+msgstr "ĮSPĖJIMAS: Jei pasirinksite \"taip\", nuskaitymas nebus sinchronizuojamas su satellites.xml sąraše nurodytais transponderiais. Numatytoji reikšmė yra \"ne\". Keiskite ją tik tuo atveju, jei suprantate, kodėl tai darote."
 
 msgid "Cancel"
-msgstr ""
+msgstr "Atšaukti"
 
 msgid "Clear before scan"
-msgstr "Prieš skenuojant, išvalyti"
+msgstr "Prieš nuskaitant, išvalyti"
 
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Current Status: %d/%d\n"
 "Satellite: %s\n"
 "Polarization: %s  Frequency range: %d - %d MHz  Symbol rates: %d - %d MSym/s"
 msgstr ""
-"   Dabartinis stovis: %d/%d\n"
-"   Palydovas: %s\n"
-"   Poliarizacija: %s\n"
-"   Dažnių diapazonas: %d - %d MHz\n"
-"   Simbolių dažniai: %d - %d MHz"
+"Dabartinė būklė: %d/%d\n"
+"Palydovas: %s\n"
+"Poliarizacija: %s  Dažnių diapazonas: %d - %d MHz  Simbolių dažnis: %d - %d MSimb/sek."
 
 msgid "DVB-S + DVB-S2"
 msgstr "DVB-S + DVB-S2"
@@ -113,14 +109,13 @@ msgid "DVB-S only"
 msgstr "Tik DVB-S"
 
 msgid "Deselect all"
-msgstr ""
+msgstr "Nepasirinkti nieko"
 
 msgid "Disable remove duplicates"
-msgstr ""
+msgstr "Išjungti dublikatų pašalinimą"
 
-#, fuzzy
 msgid "Disable sync with known transponders"
-msgstr "Skenuoti tik nežinomus transponderius"
+msgstr "Nuskaityti tik nežinomus transponderius"
 
 msgid "Dreambox type"
 msgstr "Aparato tipas"
@@ -131,9 +126,9 @@ msgstr "Užverti"
 msgid "Filter out adjacent satellites"
 msgstr "Nufiltruoti gretimus palydovus"
 
-#, fuzzy, python-format
+#, python-format
 msgid "Frequency values must be between %d MHz and %d MHz"
-msgstr "Dažniai turi būti tarp 10700 MHz ir 12749 MHz"
+msgstr "Dažniai turi būti nuo %d MHz iki %d MHz"
 
 msgid "Frequency values must be between 3000 MHz and 4199 MHz (C-band)"
 msgstr "Dažniai turi būti tarp 3000 MHz ir 4199 MHz (C-band palydovams)"
@@ -141,28 +136,27 @@ msgstr "Dažniai turi būti tarp 3000 MHz ir 4199 MHz (C-band palydovams)"
 msgid "Frequency values must be between 3001 MHz and 4200 MHz (C-band)"
 msgstr "Dažniai turi būti tarp 3001 MHz ir 4200 MHz (C-band palydovams)"
 
-#, fuzzy, python-format
+#, python-format
 msgid "Hardware blind scan is not supported by this tuner (%s)!"
-msgstr "Šis imtuvas (%s) nepalaiko aklosios paieškos!"
+msgstr "Šis imtuvas (%s) nepalaiko aklojo nuskaitymo!"
 
 msgid "Horizontal"
 msgstr "Horizontali"
 
 msgid "If you select \"yes\" all channels on the satellite being search will be deleted before starting the current search, yes (keep feeds) means the same but hold all feed services/transponders."
-msgstr "Jei pasirinksite 'taip', prieš pradedant šią paiešką, visi ankstesni skenuojamo palydovo kanalai bus panaikinti. 'taip (išsaugoti šaltinius)', reiškia tą patį, tik palieka kanalų/transponderių šaltinius."
+msgstr "Jei pasirinksite 'taip', prieš pradedant šią paiešką, visi ankstesni nuskaitomo palydovo kanalai bus panaikinti. 'taip (išsaugoti šaltinius)', reiškia tą patį, tik palieka kanalų/transponderių šaltinius."
 
-#, fuzzy
 msgid "If you select \"yes\" the scan will only save channels that are not encrypted; \"no\" will find encrypted and non-encrypted channels."
 msgstr "Jei pasirinksite 'taip', bus išsaugoti tik nekoduoti kanalai; 'ne' išsaugos ir koduotus, ir nekoduotus kanalus."
 
 msgid "If you select \"yes\" the scan will only search transponders not listed in satellites.xml"
-msgstr "Jei pasirinksite 'taip', bus ieškomi tik transponderiai, nesantys satellites.xml faile."
+msgstr "Jei pasirinksite 'taip', bus ieškomi tik transponderiai, kurių nėra satellites.xml faile."
 
 msgid "It seems manufacturer does not support blind scan for this tuner."
-msgstr "Atrodo, kad gamintojas nepalaiko aklojo skenavimo šiame imtuve."
+msgstr "Atrodo, kad gamintojas nepalaiko aklojo nuskaitymo šiame imtuve."
 
 msgid "LNB of current satellite not compatible with plugin"
-msgstr ""
+msgstr "Šio palydovo LNB nesuderinamas su įskiepiu"
 
 msgid ""
 "Looking for available transponders.\n"
@@ -181,7 +175,7 @@ msgid "Moving to "
 msgstr "Sukama į "
 
 msgid "Network scan"
-msgstr "Tinklo skenavimas"
+msgstr "Tinklo nuskaitymas"
 
 msgid ""
 "No new transponders found! \n"
@@ -206,7 +200,7 @@ msgstr ""
 
 #, python-format
 msgid "Not found blind scan utility '%s'!"
-msgstr "Nerastas aklojo skenavimo įrankis '%s'!"
+msgstr "Nerastas aklojo nuskaitymo įrankis '%s'!"
 
 msgid ""
 "Nothing to scan!\n"
@@ -222,7 +216,7 @@ msgid "Only free scan"
 msgstr "Ieškoti tik nekoduotų kanalų"
 
 msgid "Only scan unknown transponders"
-msgstr "Skenuoti tik nežinomus transponderius"
+msgstr "Nuskaityti tik nežinomus transponderius"
 
 msgid "Open xml file"
 msgstr "Atverti xml failą"
@@ -249,10 +243,10 @@ msgid "Satellite"
 msgstr "Palydovas"
 
 msgid "Satellite blind scan"
-msgstr "Aklasis palydovų skenavimas"
+msgstr "Aklasis palydovų nuskaitymas"
 
 msgid "Scan"
-msgstr ""
+msgstr "Nuskaitymas"
 
 msgid "Scan Step in MHz(TBS5925)"
 msgstr "Nuskaitymo žingsnis MHz(TBS5925)"
@@ -261,30 +255,29 @@ msgid "Scan satellites for new transponders"
 msgstr "Palydovuose ieškoti naujų transponderių"
 
 msgid "Scan start frequency"
-msgstr "Pradinis skenavimo dažnis"
+msgstr "Pradinis nuskaitymo dažnis"
 
 msgid "Scan start symbolrate"
-msgstr "Pradinis skenavimo simbolių dažnis"
+msgstr "Pradinis nuskaitymo simbolių dažnis"
 
 msgid "Scan stop frequency"
-msgstr "Galutinis skenavimo dažnis"
+msgstr "Galutinis nuskaitymo dažnis"
 
 msgid "Scan stop symbolrate"
-msgstr "Galutinis skenavimo simbolių dažnis"
+msgstr "Galutinis nuskaitymo simbolių dažnis"
 
 msgid "Scan unknown error!"
-msgstr "Nežinoma skenavimo klaida!"
+msgstr "Nežinoma nuskaitymo klaida!"
 
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Search completed\n"
 "%d transponders found in %d:%02d minutes.\n"
 "Details saved in: %s"
 msgstr ""
-"Paieška baigta. Rasti % d transponderiai.\n"
-"\n"
-"Detalės išsaugotos:\n"
-"%s"
+"Paieška baigta.\n"
+"Rasti % d transponderiai per %d:%02d min.\n"
+"Detalės išsaugotos: %s"
 
 #, python-format
 msgid ""
@@ -305,7 +298,7 @@ msgid "Select a tuner that is configured for the satellite you wish to search"
 msgstr "Pasirinkite imtuvą, sukonfigūruotą palydovui, kuriame norite ieškoti"
 
 msgid "Select all"
-msgstr ""
+msgstr "Pasirinkti viską"
 
 msgid "Select the satellite you wish to search"
 msgstr "Pasirinkite palydovą, kuriame norite ieškoti"
@@ -314,9 +307,11 @@ msgid ""
 "Select transponders and press green to scan.\n"
 "Press yellow to select all transponders and blue to deselect all."
 msgstr ""
+"Pasirinkite transponderius ir spauskite 'ŽALIĄ' mygtuką, kad nuskaitytumėte.\n"
+"Norėdami pasirinkti visus transponderius, spauskite 'GELTONĄ', o kad atšaukti visų pasirinkimą, spauskite 'MĖLYNĄ'."
 
 msgid "Select type for scan:"
-msgstr "Pasirinkite skenavimo tipą:"
+msgstr "Pasirinkite nuskaitymo tipą:"
 
 msgid "Smaller steps takes longer but scan is more thorough"
 msgstr "Mažesni žingsniai prailgina paiešką, bet ji būna išsamesnė"
@@ -325,24 +320,24 @@ msgid "Sorry, this tuner is in use."
 msgstr "Atsiprašome, šis imtuvas užimtas."
 
 msgid "Start scan"
-msgstr "Pradėti skenavimą"
+msgstr "Pradėti nuskaitymą"
 
 #, python-format
 msgid "Step %d %d:%02d min"
 msgstr "Žingsnis %d %d:%02d min"
 
 msgid "Symbol rate values are in megasymbols; enter a value between 1 and 44"
-msgstr "Simbolių dažnis yra megasimboliais; įveskit reikšmę tarp 1 ir 44"
+msgstr "Simbolių dažnis išreikštas megasimboliais; įrašykite reikšmę tarp 1 ir 44"
 
 msgid "Symbol rate values are in megasymbols; enter a value between 2 and 45"
-msgstr "Simbolių dažnis yra megasimboliais; įveskit reikšmę tarp 2 ir 45"
+msgstr "Simbolių dažnis išreikštas megasimboliais. Įrašykite reikšmę tarp 2 ir 45"
 
 msgid "The blindscan run was cancelled by the user."
-msgstr "Aklas skenavimas atšauktas vartotojo."
+msgstr "Aklas nuskaitymas atšauktas vartotojo."
 
-#, fuzzy, python-format
+#, python-format
 msgid "The suggested polarisation for this satellite is \"%s\""
-msgstr "Rekomenduojama poliarizacija šiam palydovui yra '%s'"
+msgstr "Rekomenduojama poliarizacija šiam palydovui yra \"%s\""
 
 msgid "Transponder searching finished!"
 msgstr "Transponderių paieška baigta!"
@@ -354,21 +349,19 @@ msgid "Tuner"
 msgstr "Imtuvas"
 
 msgid "Use Sundtek full hardware blind scan!"
-msgstr "Naudoti Sundtek aparatūrinį aklą skenavimą!"
+msgstr "Naudoti Sundtek aparatūrinį aklą nuskaitymą!"
 
 msgid "Vertical"
 msgstr "Vertikali"
 
-#, fuzzy
 msgid "When a neighbouring satellite is very strong this avoids searching transponders known to be coming from the neighbouring satellite."
-msgstr "Kai kaimyninis palydovas labai stiprus, taip išvengiama paieškos transponderių, žinomai esančių iš kaimyninio palydovo"
+msgstr "Kai kaimyninis palydovas labai stiprus, taip išvengiama paieškos transponderių, žinomai esančių iš kaimyninio palydovo."
 
 msgid "circular left"
 msgstr "apskritiminė kairė"
 
-#, fuzzy
 msgid "circular left/right"
-msgstr "apskritiminė dešinė"
+msgstr "apskritiminė kairė/dešinė"
 
 msgid "circular right"
 msgstr "apskritiminė dešinė"
@@ -376,9 +369,8 @@ msgstr "apskritiminė dešinė"
 msgid "circular right and circular left"
 msgstr "apskritiminė dešinė ir apskritiminė kairė"
 
-#, fuzzy
 msgid "don't scan"
-msgstr "Pradėti skenavimą"
+msgstr "nenuskaityti"
 
 msgid "horizontal"
 msgstr "horizontali"
@@ -390,14 +382,13 @@ msgid "save to XML file"
 msgstr "išsaugoti XML faile"
 
 msgid "scan"
-msgstr ""
+msgstr "nuskaityti"
 
 msgid "scan for channels"
 msgstr "ieškoti kanalų"
 
-#, fuzzy
 msgid "scan for transponders"
-msgstr "Skenuoti tik nežinomus transponderius"
+msgstr "ieškoti transponderių"
 
 msgid "up to 1 degree"
 msgstr "iki 1 laipsnio"
