@@ -8,23 +8,22 @@ msgstr ""
 "Project-Id-Version: EmailClient plugin\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-05-11 10:58+0200\n"
-"PO-Revision-Date: 2016-12-28 12:21+0200\n"
+"PO-Revision-Date: 2021-09-13 15:39+0300\n"
 "Last-Translator: Vytenis P. <vyteniui@gmail.com>\n"
 "Language-Team: Vytenis P. <vyteniui@gmail.com>\n"
 "Language: lt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.11\n"
+"X-Generator: Poedit 3.0\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #, python-format
 msgid "%(name)s (%(user)s@%(server)s)"
 msgstr "%(name)s (%(user)s@%(server)s"
 
-#, fuzzy
 msgid "Account Setup"
-msgstr "Paskyrų sąrašas"
+msgstr "Paskyros sąranka"
 
 msgid "Accounts list"
 msgstr "Paskyrų sąrašas"
@@ -106,7 +105,7 @@ msgid "add"
 msgstr "pridėti"
 
 msgid "always"
-msgstr ""
+msgstr "visada"
 
 msgid "cancel"
 msgstr "atšaukti"
@@ -133,7 +132,7 @@ msgid "display connection errors"
 msgstr "rodyti jungimosi klaidas"
 
 msgid "display message type"
-msgstr ""
+msgstr "rodyti pranešimo tipą"
 
 msgid "display timeout (seconds)"
 msgstr "rodyti delsą (sek.)"
@@ -145,7 +144,7 @@ msgid "empty values - retry"
 msgstr "tuščios reikšmės – kartoti"
 
 msgid "enable auto check mail"
-msgstr ""
+msgstr "įjungti automatinį pašto tikrinimą"
 
 #, python-format
 msgid ""
@@ -176,7 +175,7 @@ msgid "importing configurations from %s"
 msgstr "konfigūracija importuojama iš %s"
 
 msgid "infobar mode (live TV)"
-msgstr ""
+msgstr "infojuostos režimas (tiesioginė TV transliacija)"
 
 msgid "leave unread"
 msgstr "palikti neskaitytą"
@@ -250,9 +249,8 @@ msgstr "atkurti"
 msgid "user name"
 msgstr "vartotojo vardas"
 
-#, fuzzy
 msgid "view Email"
-msgstr "skaityti paštą per IMAP4"
+msgstr "peržiūrėti el.paštą"
 
 msgid "view Emails via IMAP4"
 msgstr "skaityti paštą per IMAP4"
