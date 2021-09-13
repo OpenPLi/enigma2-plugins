@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: dreamexplorer\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-05-11 10:58+0200\n"
-"PO-Revision-Date: 2016-06-26 16:37+0300\n"
+"PO-Revision-Date: 2021-09-13 14:21+0300\n"
 "Last-Translator: \n"
 "Language-Team: Vytenis P. <vyteniui@gmail.com>\n"
 "Language: lt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.8\n"
+"X-Generator: Poedit 3.0\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
@@ -53,7 +53,7 @@ msgid ""
 "WARNING!"
 msgstr ""
 "\n"
-"buvo PAKEISTAS! Ar norite tai išsaugoti?\n"
+"buvo PAKEISTAS! Ar išsaugoti pakeitimus?\n"
 "\n"
 "ĮSPĖJAME!"
 
@@ -85,23 +85,22 @@ msgid "Add directory to Bookmarks"
 msgstr "Įtraukti katalogą į mėgstamus"
 
 msgid "Auto play blu-ray file"
-msgstr ""
+msgstr "Blu-ray failo automatinis paleidimas"
 
 msgid "BZ2-package:\\n"
 msgstr "BZ2-paketas: \\n"
 
-#, fuzzy
 msgid "Bookmarks"
-msgstr "Mano mėgstami"
+msgstr "Atžymos"
 
 msgid "Bootlogo-package:\\n"
-msgstr "Įkrovos logo-paketas:\\n"
+msgstr "Įkrovos logo paketas:\\n"
 
 msgid "Box: "
 msgstr "Aparatas: "
 
 msgid "COPY"
-msgstr ""
+msgstr "KOPIJUOTI"
 
 msgid "Cancel"
 msgstr "Atšaukti"
@@ -125,7 +124,7 @@ msgid "DELLINK"
 msgstr "ŠALINTI"
 
 msgid "Delete"
-msgstr ""
+msgstr "Šalinti"
 
 msgid "Directory name error !"
 msgstr "Katalogo pavadinimo klaida!"
@@ -186,10 +185,10 @@ msgid "Enable"
 msgstr "Įjungti"
 
 msgid "Error by reading bookmarks !!!"
-msgstr "Klaida skaitant žymes!"
+msgstr "Klaida, skaitant atžymas!"
 
 msgid "Error by writing bookmarks !!!"
-msgstr "Klaida įrašant žymes!"
+msgstr "Klaida, įrašant atžymas!"
 
 msgid "Error..."
 msgstr "Klaida..."
@@ -225,20 +224,19 @@ msgid "List of Storage Devices"
 msgstr "Laikmenos įrenginių sąrašas"
 
 msgid "MOVE"
-msgstr ""
+msgstr "PERKELTI"
 
-#, fuzzy
 msgid "Make a softlink"
-msgstr "Sukurti nuorodą..."
+msgstr "Sukurti nuorodą"
 
 msgid "Make a softlink..."
 msgstr "Sukurti nuorodą..."
 
 msgid "Move/Copy"
-msgstr ""
+msgstr "Perkelti/kopijuoti"
 
 msgid "My Bookmarks"
-msgstr "Mano mėgstami"
+msgstr "Mano atžymos"
 
 msgid "No more picture-files."
 msgstr "Daugiau paveikslėlių failų nėra."
@@ -273,9 +271,8 @@ msgstr "Pyc scenarijus:\\n"
 msgid "Remove directory from Bookmarks"
 msgstr "Pašalinti  katalogą iš mėgiamų"
 
-#, fuzzy
 msgid "Rename"
-msgstr "Pervadinti failą..."
+msgstr "Pervadinti"
 
 msgid "Rename directory..."
 msgstr "Pervadinti katalogą..."
@@ -307,7 +304,7 @@ msgid "Set first the Softlink name ..."
 msgstr "Pirmiausiai nustatykite nuorodos pavadinimą..."
 
 msgid "Set name"
-msgstr ""
+msgstr "Nustatyti pavadinimą"
 
 msgid "Set start directory"
 msgstr "Nustatyti pradžios katalogą"
