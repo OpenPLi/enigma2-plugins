@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Partnerbox\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-07-15 10:30+0200\n"
-"PO-Revision-Date: 2017-07-01 11:16+0300\n"
+"PO-Revision-Date: 2021-09-15 15:38+0300\n"
 "Last-Translator: Vytenis P. <vyteniui@gmail.com>\n"
 "Language-Team: Vytenis P. <vyteniui@gmail.com>\n"
 "Language: lt\n"
@@ -11,14 +11,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Poedit 2.0.2\n"
+"X-Generator: Poedit 3.0\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
-#, fuzzy, python-format
+#, python-format
 msgid " (Partnerbox %s - Version: %s)"
-msgstr ""
-"Partnerbox atsakas: \n"
-"%s"
+msgstr " (Partnerbox %s - Versija: %s)"
 
 #, python-format
 msgid "%d min"
@@ -44,7 +42,7 @@ msgid "Activate Picture in Picture"
 msgstr "Įjungti vaizdą vaizde (PiP)"
 
 msgid "Active boxes from local network only (using localhost names)"
-msgstr ""
+msgstr "Tik vietiniame tinkle veikiantys imtuvai (naudojant tinklo vardus)"
 
 msgid "Add"
 msgstr "Pridėti"
@@ -70,9 +68,8 @@ msgstr "Pritaikyti"
 msgid "Attention, this is repeated timer!\n"
 msgstr "Dėmesio, tai pasikartojantis laikmatis!\n"
 
-#, fuzzy
 msgid "AutoTimer overview"
-msgstr "Laikmačio apžvalga"
+msgstr "Autolaikmačio apžvalga"
 
 msgid "Bouquet List"
 msgstr "Bukietų sąrašas"
@@ -102,10 +99,10 @@ msgid "Cleaning up finished timer entries..."
 msgstr "Šalinami atliktų laikmačių įrašai..."
 
 msgid "Close and save"
-msgstr ""
+msgstr "Uždaryti, išsaugant"
 
 msgid "Close without saving"
-msgstr ""
+msgstr "Uždaryti neišsaugant"
 
 msgid "DVB-C"
 msgstr "DVB-C"
@@ -134,11 +131,9 @@ msgstr "Aprašymas"
 msgid "Disable Picture in Picture"
 msgstr "Išjungti vaizdą vaizde (PiP)"
 
-#, fuzzy, python-format
+#, python-format
 msgid "Do you really want to delete %s?"
-msgstr ""
-"Ar tikrai norite pašalinti laikmatį\n"
-"%s ?"
+msgstr "Ar tikrai norite pašalinti %s?"
 
 #, python-format
 msgid ""
@@ -168,9 +163,8 @@ msgstr "Redaguoti vidinį laikmatį"
 msgid "Edit remote timer"
 msgstr "Redaguoti nuotolinį laikmatį"
 
-#, fuzzy
 msgid "Enable Partnerbox-AutoTimer function"
-msgstr "Įjungti Partnerbox funkciją laikmačių nustatyme"
+msgstr "Įjungti Partnerbox autolaikmačio funkciją"
 
 msgid "Enable Partnerbox-Function in Channel Selector"
 msgstr "Įjungti Partnerbox funkciją kanalų pasirinkime"
@@ -194,7 +188,7 @@ msgid "Enable first Partnerbox-entry in Timeredit as default"
 msgstr "Pirmasis Partnerbox įrašas laikmačių redagavime - numatytasis"
 
 msgid "Enable/disable moving item"
-msgstr ""
+msgstr "Įjungti/išjungti perkėlimą"
 
 msgid "EndTime"
 msgstr "Pabaigos laikas"
@@ -209,7 +203,7 @@ msgid "Enigma Type"
 msgstr "Enigma tipas"
 
 msgid "Enter the service pin"
-msgstr "Įrašykite kanalo PIN "
+msgstr "Įrašykite kanalo PIN"
 
 msgid "Error: "
 msgstr "Klaida: "
@@ -274,9 +268,8 @@ msgstr "Padėtis"
 msgid "MAC"
 msgstr "MAC"
 
-#, fuzzy
 msgid "Manage autotimer for other dreamboxes in network"
-msgstr "Valdykite laikmatį kituose tinklo aparatuose"
+msgstr "Valdykite autolaikmatį kituose tinklo aparatuose"
 
 msgid "Manage timer for other dreamboxes in network"
 msgstr "Valdykite laikmatį kituose tinklo aparatuose"
@@ -294,16 +287,16 @@ msgid "Move Picture in Picture"
 msgstr "Perkelti vaizdą vaizde (PiP)"
 
 msgid "Move item down"
-msgstr ""
+msgstr "Nuleisti žemyn"
 
 msgid "Move item up"
-msgstr ""
+msgstr "Pakelti aukštyn"
 
 msgid "Mute"
-msgstr ""
+msgstr "Išjungti garsą"
 
 msgid "Mute remote box"
-msgstr ""
+msgstr "Išjungti nuotolinio aparato garsą"
 
 msgid "NGRAB"
 msgstr "NGRAB"
@@ -340,9 +333,8 @@ msgstr "Partnerbox nuotolinis laikmatis"
 msgid "Partnerbox Setup"
 msgstr "Partnerbox sąranka"
 
-#, fuzzy
 msgid "Partnerbox: AutoTimer"
-msgstr "Partnerbox: nuotolinis laikmatis"
+msgstr "Partnerbox: autolaikmatis"
 
 msgid "Partnerbox: Edit Entry"
 msgstr "Partnerbox: įrašų redagavimas"
@@ -372,6 +364,8 @@ msgid ""
 "Really close without saving settings?\n"
 "What do you want to do?"
 msgstr ""
+"Ar tikrai uždaryti neišsaugant nustatymų?\n"
+"Ką norite daryti?"
 
 msgid "Really delete this Partnerbox Entry?"
 msgstr "Ar tikrai ištrinti šį Partnerbox įrašą?"
@@ -404,7 +398,7 @@ msgid "Saturday"
 msgstr "šeštadienis"
 
 msgid "Save"
-msgstr ""
+msgstr "Išsaugoti"
 
 #, python-format
 msgid "Select action for remote timer '%s':"
@@ -424,7 +418,7 @@ msgid "Send Wake-on-LAN"
 msgstr "Komanda 'prabusti nuo tinklo'"
 
 msgid "Servicelists/EPG"
-msgstr "Kanalų sąrašai / EPG duomenys"
+msgstr "Kanalų sąrašai/EPG duomenys"
 
 #, python-format
 msgid "Set %s as fallback remote receiver?"
@@ -458,7 +452,7 @@ msgid "Shutdown"
 msgstr "Išjungti"
 
 msgid "Sleep remote box"
-msgstr ""
+msgstr "Užmigdyti nuotolinį aparatą"
 
 msgid "Standard Zap"
 msgstr "Paprastas perjungimas"
@@ -513,16 +507,16 @@ msgid "Timer entry"
 msgstr "Laikmačio įrašas"
 
 msgid "Timer event deleted successfully."
-msgstr "Laikmačio įrašas buvo pašalintas."
+msgstr "Laikmačio įrašas pašalintas."
 
 msgid "Timer event was created successfully."
-msgstr "Laikmačio įrašas buvo sukurtas."
+msgstr "Laikmačio įrašas sukurtas."
 
 msgid "Timer menu"
 msgstr "Laikmačio meniu"
 
 msgid "Toggle Standby"
-msgstr "Įjungti/išjungti budėjimo režimą"
+msgstr "Perjungti budėjimo režimą"
 
 msgid "Toggle status (on/off)"
 msgstr "Perjungimo būsena (įjungta/išjungta)"
@@ -534,10 +528,10 @@ msgid "Tuesday"
 msgstr "antradienis"
 
 msgid "Use Wake-on-LAN"
-msgstr "Įjungti prabudimą nuo tinklo"
+msgstr "Prabusti nuo tinklo"
 
 msgid "Wake up remote box"
-msgstr ""
+msgstr "Pažadinti nuotolinį aparatą"
 
 msgid "Wakeup"
 msgstr "Pažadinti"
@@ -552,7 +546,7 @@ msgid "Yes"
 msgstr "taip"
 
 msgid "Yes (safe mode)"
-msgstr "Taip (saugus režimas)"
+msgstr "Taip (saugiuoju režimu)"
 
 msgid "You can not add services or bouquets from Enigma1-receivers into the channellist..."
 msgstr "Jūs negalite įkelti į kanalų sąrašą kanalų, ar bukietų iš Enigma1 imtuvų..."
@@ -573,17 +567,16 @@ msgid "Zap/"
 msgstr "Perjungti/"
 
 msgid "Zapping to "
-msgstr "Perjungiama į"
+msgstr "Perjungiama į "
 
 msgid "about to start"
 msgstr "pradedama"
 
-#, fuzzy
 msgid "add AutoTimer"
-msgstr "Įtraukti laikmatį"
+msgstr "pridėti autolaikmatį"
 
 msgid "add AutoTimer for Partnerbox..."
-msgstr ""
+msgstr "pridėti Partnerbox autolaikmatį..."
 
 msgid "add Partnerbox bouquet"
 msgstr "pridėti Partnerbox bukietą"
