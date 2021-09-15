@@ -184,7 +184,7 @@ class AutoMount():
 	def CheckMountPoint(self, item, callback):
 		# possible CIFS version/security combinations
 		secvers = (
-			'vers=3,sec=ntlmssp', 'vers=3,sec=ntlmv2', 'vers=2.1,sec=ntlmssp', 'vers=2.1,sec=ntlmv2',
+			'vers=3.0,sec=ntlmssp', 'vers=3.0,sec=ntlmv2', 'vers=2.1,sec=ntlmssp', 'vers=2.1,sec=ntlmv2',
 			'vers=2.1,sec=ntlm', 'vers=1.0,sec=ntlmssp', 'vers=1.0,sec=ntlmv2', 'vers=1.0,sec=ntlm',
 			'vers=default', ''
 		)
