@@ -327,7 +327,7 @@ class IMDB(Screen, HelpableScreen):
 			'(?:.*?<a.*?>(?P<g_goofs>Pannen|Goofs)</a><div.*?<div.*?<div.*?<div.*?>(?P<goofs>.+?)</div>)?'
 			'(?:.*?<a.*?>(?P<g_quotes>Dialogzitate|Quotes)</a><div.*?<div.*?<div.*?<div.*?>(?P<quotes>.+?)</div>)?'
 			'(?:.*?<a.*?>(?P<g_connections>Bez\S*?ge zu anderen Titeln|Connections)</a><div.*?<div.*?<div.*?<div.*?>(?P<connections>.+?)</div>)?'
-			'(?:.*?<h3.*?>(?P<g_comments>Nutzerkommentare|User reviews)</h3>.*?<span.*?UserReviewSummary__Summary.*?>(?P<commenttitle>.*?)</span><div.*?<div.*?<div.*?>(?P<comment>.+?)</div>.*?<div.*?UserReviewAuthor__AuthorContainer.*?>.*?<ul.*?<li.*?>(?P<commenter>.+?)</li>)?'
+			'(?:.*?<h3.*?>(?P<g_comments>Nutzerkommentare|User reviews).*?</h3>.*?(?:.*?</svg>(?P<g_rating>[0-9]+?)<span class="ipc-rating-star--maxRating">/<!-- -->(?P<g_maxrating>[0-9]+?)</span>.*?)?<div.*?UserReviewSummary__SummaryContainer.*?><span.*?UserReviewSummary__Summary.*?>(?P<commenttitle>.*?)</span></div><div.*?><div.*?><div>(?P<comment>.+?)</div>.*?<div.*?UserReviewAuthor__AuthorContainer.*?><ul.*?><li.*?>(?P<commenter>.+?)</li>)?'
 			'(?:.*?<span.*?>(?P<g_language>Sprachen?|Languages?)</span>.*?<div.*?<ul.*?>(?P<language>.*?)</ul>)?'
 			'(?:.*?<a.*?>(?P<g_locations>Drehorte?|Filming locations?)</a>.*?<div.*?<ul.*?>(?P<locations>.*?)</ul>)?'
 			'(?:.*?<a.*?>(?P<g_company>Firm\S*?|Production compan.*?)</a>.*?<div.*?<ul.*?>(?P<company>.*?)</ul>)?'
@@ -341,7 +341,7 @@ class IMDB(Screen, HelpableScreen):
 			self.ratingmask = [re.compile('<div class="ratingValue">.*?<span itemprop="ratingValue">(?P<rating>.*?)</span>', re.DOTALL),
 			re.compile('<span.*?AggregateRatingButton__RatingScore.*?>(?P<rating>.*?)</span>', re.DOTALL)]
 			self.castmask = [re.compile('<td>\s*<a href=.*?>(?P<actor>.*?)\s*</a>\s*</td>.*?<td class="character">(?P<character>.*?)(?:<a href="#"\s+class="toggle-episodes".*?>(?P<episodes>.*?)</a>.*?)?</td>', re.DOTALL),
-			re.compile('<a.*?StyledComponents__ActorName.*?>(?P<actor>.*?)</a>.*?<div.*?<ul.*?>(?P<character>.*?)</ul>(?:.*?<span><span.*?>(?P<episodes>.*?)</span></span>)?', re.DOTALL)]
+			re.compile('<a.*?StyledComponents__ActorName.*?>(?P<actor>.*?)</a>.*?<div.*?<ul.*?>(?P<character>.*?)</span>(?:.*?<span><span.*?>(?P<episodes>.*?)</span></span>)?', re.DOTALL)]
 			self.postermask = [re.compile('<div class="poster">.*?<img .*?src=\"(http.*?)\"', re.DOTALL),
 			re.compile('<div.*?ipc-media--poster.*?<img.*?ipc-image.*?src="(http.*?)"', re.DOTALL)]
 
@@ -817,7 +817,6 @@ class IMDB(Screen, HelpableScreen):
 			for category in ("director", "creator", "writer", "seasons"):
 				try:
 					if self.generalinfos.group(category):
-						print(category)
 						if self.re_index == 1:
 							if category == 'seasons':
 								txt = ' '.join(self.htmltags.sub(' ', self.generalinfos.group(category)).replace("\n", ' ').replace(self.NBSP, ' ').replace(self.RAQUO, '').replace('See all', '...').split())
@@ -858,7 +857,6 @@ class IMDB(Screen, HelpableScreen):
 
 			castresult = self.castmask[self.re_index].finditer(self.inhtml)
 			if castresult:
-				print(castresult)
 				Casttext = ""
 				i = 0
 				for x in castresult:
@@ -897,7 +895,6 @@ class IMDB(Screen, HelpableScreen):
 			if awardsresult:
 				awardslist = [' '.join(x.group('awards').split()) for x in awardsresult]
 				if awardslist:
-					print('awardslist', awardslist)
 					Extratext = _("Extra Info") + "\n\n" + self.allhtmltags.sub(' | ', ''.join(awardslist).replace('<b>', '').strip()) + "\n"
 
 			extrainfos = self.extrainfomask[self.re_index].search(self.inhtml)
@@ -937,7 +934,13 @@ class IMDB(Screen, HelpableScreen):
 						pass
 				try:
 					if extrainfos.group("g_comments"):
-						Extratext += "\n" + extrainfos.group("g_comments") + ":\n" + extrainfos.group("commenttitle") + " [" + ' '.join(self.htmltags.sub('', extrainfos.group("commenter")).split()) + "]: " + self.htmltags.sub('', extrainfos.group("comment").replace("\n", ' ').replace(self.NBSP, ' ').replace("<br>", '\n').replace("<br/>", '\n').replace("<br />", '\n')) + "\n"
+						g_rating = ""
+						try:
+							if extrainfos.group("g_rating") and extrainfos.group("g_maxrating"):
+								g_rating = " [" + extrainfos.group("g_rating") + "/" + extrainfos.group("g_maxrating") + "]"
+						except IndexError:
+							pass
+						Extratext += "\n" + extrainfos.group("g_comments") + ":\n" + extrainfos.group("commenttitle") + " [" + ' '.join(self.htmltags.sub('', extrainfos.group("commenter")).split()) + "]" + g_rating + ":\n\n" + self.htmltags.sub('', extrainfos.group("comment").replace("\n", ' ').replace(self.NBSP, ' ').replace("<br>", '\n').replace("<br/>", '\n').replace("<br />", '\n')) + "\n"
 				except IndexError:
 					pass
 
