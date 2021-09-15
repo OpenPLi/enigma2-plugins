@@ -8,38 +8,38 @@ msgstr ""
 "Project-Id-Version: SimpleRSS\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-05-11 12:34+0200\n"
-"PO-Revision-Date: 2016-12-28 15:33+0200\n"
-"Last-Translator: \n"
+"PO-Revision-Date: 2021-09-15 18:10+0300\n"
+"Last-Translator: Vytenis P. <vyteniui@gmail.com>\n"
 "Language-Team: Vytenis P. <vyteniui@gmail.com>\n"
 "Language: lt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.11\n"
+"X-Generator: Poedit 3.0\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #, python-format
 msgid "%d Feed(s) were added to configuration."
 msgstr "Į konfigūraciją įtraukti %d šaltiniai."
 
-#, fuzzy, python-format
+#, python-format
 msgid "%d feed(s) added to configuration."
 msgstr "Į konfigūraciją įtraukti %d šaltiniai."
 
 msgid "--- Scanner automount ---"
-msgstr ""
+msgstr "--- Skenerio automatinis prijungimas ---"
 
 msgid "< Create file any name.rss in USB device >"
-msgstr ""
+msgstr "< USB įrenginyje sukurkite failą bet koks pavadinimas.rss >"
 
 msgid "< and write feeds link column >"
-msgstr ""
+msgstr "< ir įrašyti šaltinių nuorodos stulpelį >"
 
 msgid "A simple to use RSS reader"
 msgstr "Naudotis RSS skaitytuvu paprasta"
 
 msgid "Apply"
-msgstr ""
+msgstr "Pritaikyti"
 
 msgid "Autoupdate"
 msgstr "Automatinis atnaujinimas"
@@ -51,7 +51,7 @@ msgid "Close"
 msgstr "Uždaryti"
 
 msgid "Delete"
-msgstr "Pašalinti"
+msgstr "Šalinti"
 
 msgid "Enclosures"
 msgstr "Priedų"
@@ -64,7 +64,7 @@ msgid "Entry %s/%s"
 msgstr "Įrašas %s/%s"
 
 msgid "Error while parsing Feed, this usually means there is something wrong with it."
-msgstr "Klaida, nuskaitant šaltinius. Dažniausiai tai reiškia, kad ten kažkas negerai."
+msgstr "Klaida nuskaitant šaltinių serverį. Tai paprastai reiškia, kad jame kažkas negerai."
 
 msgid "Failed to get subscriptions from Google Reader."
 msgstr "Nepavyko gauti Google Reader prenumeratos."
@@ -90,7 +90,7 @@ msgstr "Parsiųsti šaltinius iš Google Reader?"
 
 #, python-format
 msgid "Found %d feed(s)"
-msgstr ""
+msgstr "Rasta %d šaltinių"
 
 msgid "Found no Enclosure we can display."
 msgstr "Galimų parodyti priedų nerasta."
@@ -105,7 +105,7 @@ msgid "Keep running in background"
 msgstr "Leisti ir fone"
 
 msgid "Let's you view current RSS entries"
-msgstr ""
+msgstr "Leidžia peržiūrėti esamus RSS įrašus"
 
 msgid "New"
 msgstr "Naujas"
@@ -117,10 +117,10 @@ msgid "New Items since last Auto-Update"
 msgstr "Nauji elementai nuo paskutinio autoatnaujinimo"
 
 msgid "No such Item."
-msgstr "Tokio elemento nėra"
+msgstr "Tokio elemento nėra."
 
 msgid "Not found new feed(s)."
-msgstr ""
+msgstr "Naujų šaltinių nerasta."
 
 msgid "Notification"
 msgstr "Pranešimas"
@@ -131,37 +131,35 @@ msgstr "Gerai"
 msgid "Preview"
 msgstr "Peržiūra"
 
-#, fuzzy
 msgid "RSS Reader"
-msgstr "Paprastas RSS skaitytuvas"
+msgstr "RSS skaitytuvas"
 
-#, fuzzy
 msgid "RSS-Reader"
-msgstr "Paprastas RSS skaitytuvas"
+msgstr "RSS skaitytuvas"
 
 #, python-format
 msgid "Read error %s"
-msgstr ""
+msgstr "Skaitymo klaida %s"
 
 msgid ""
 "Really delete this entry?\n"
 "It cannot be recovered!"
 msgstr ""
 "Tikrai pašalinti šį įrašą?\n"
-"Tai neatstatoma!"
+"Tai nepataisoma!"
 
 #, python-format
 msgid "Received %d new news item(s)."
 msgstr "Parsiųsta %d naujienų įrašų."
 
 msgid "Scroll speed (ms)"
-msgstr ""
+msgstr "Slinkimo greitis (ms)"
 
 msgid "Setup"
 msgstr "Sąranka"
 
 msgid "Show in extensions menu"
-msgstr ""
+msgstr "Rodyti plėtinių naršyklėje"
 
 msgid "Show new Messages as"
 msgstr "Naujus pranešimus rodyti, kaip"
@@ -191,7 +189,7 @@ msgid "Subscribe Newsfeed..."
 msgstr "Prenumeruoti naujienas..."
 
 msgid "Ticker"
-msgstr ""
+msgstr "Simbolis"
 
 msgid "Update Feed"
 msgstr "Atnaujinti šaltinius"
