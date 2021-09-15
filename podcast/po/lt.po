@@ -3,11 +3,11 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 msgid ""
 msgstr ""
-"Project-Id-Version: PluginSort\n"
+"Project-Id-Version: Podcast\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-05-11 12:34+0200\n"
-"PO-Revision-Date: 2016-06-25 10:18+0300\n"
-"Last-Translator: JuSt611 <Software@Strasdas.de>\n"
+"PO-Revision-Date: 2021-09-15 17:00+0300\n"
+"Last-Translator: Vytenis P. <vyteniui@gmail.com>\n"
 "Language-Team: Vytenis P. <vyteniui@gmail.com>\n"
 "Language: lt\n"
 "MIME-Version: 1.0\n"
@@ -20,87 +20,87 @@ msgstr ""
 "Domain: /Users/fk/Desktop/PluginSort/locale/de/LC_MESSAGES\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 1.8.8\n"
+"X-Generator: Poedit 3.0\n"
 "X-Poedit-SearchPath-0: ../src\n"
 
 msgid " (Audio)"
-msgstr ""
+msgstr " (Garsas)"
 
 msgid " (Video)"
-msgstr ""
+msgstr " (Vaizdas)"
 
 msgid "Buffer device:"
-msgstr ""
+msgstr "Talpyklos įrenginys:"
 
 msgid "Buffer file handling:"
-msgstr ""
+msgstr "Talpyklos failo palaikymas:"
 
 msgid "Buffer:"
-msgstr ""
+msgstr "Talpykla:"
 
 msgid "Delete this movie?"
-msgstr ""
+msgstr "Pašalinti šį filmą?"
 
 #, python-format
 msgid "Downloading movie: %s"
-msgstr ""
+msgstr "Parsiunčiamas filmas: %s"
 
 msgid "Error getting categories"
-msgstr ""
+msgstr "Kategorijų įkėlimo klaida"
 
 msgid "Error getting episodes"
-msgstr ""
+msgstr "Epizodų įkėlimo klaida"
 
 msgid "Error getting genres"
-msgstr ""
+msgstr "Žanrų įkėlimo klaida"
 
 msgid "Error getting movies"
-msgstr ""
+msgstr "Filmų įkėlimo klaida"
 
 msgid "Error getting podcast url"
-msgstr ""
+msgstr "Transliacijos internetinio adreso klaida"
 
 msgid "Error getting podcasts"
-msgstr ""
+msgstr "Prisijungimo prie transliacijų klaida"
 
 msgid "Error getting rss feed"
-msgstr ""
+msgstr "RSS šaltinių įkėlimo klaida"
 
 msgid "Length"
-msgstr ""
+msgstr "Ilgis"
 
 msgid "Podcast"
-msgstr ""
+msgstr "Podcast (saugykla)"
 
 msgid "Save"
-msgstr ""
+msgstr "Išsaugoti"
 
 msgid "Select"
-msgstr ""
+msgstr "Pasirinkti"
 
 msgid "Stop playing this movie?"
-msgstr ""
+msgstr "Nutraukti šio filmo peržiūrą?"
 
 msgid "Type"
-msgstr ""
+msgstr "Tipas"
 
 msgid "ask me"
-msgstr ""
+msgstr "klausti"
 
 msgid "configuration"
-msgstr ""
+msgstr "konfigūracija"
 
 msgid "delete"
-msgstr ""
+msgstr "šalinti"
 
 msgid "from xml"
-msgstr ""
+msgstr "iš XML"
 
 msgid "keep on device"
-msgstr ""
+msgstr "saugoti įrenginyje"
 
 msgid "podcast.com"
-msgstr ""
+msgstr "podcast.com"
 
 msgid "podcast.de"
-msgstr ""
+msgstr "podcast.de"
