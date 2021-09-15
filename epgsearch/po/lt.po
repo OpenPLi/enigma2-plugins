@@ -7,14 +7,14 @@ msgstr ""
 "Project-Id-Version: EPGSearch\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-08-13 18:34+0200\n"
-"PO-Revision-Date: 2016-06-23 11:28+0300\n"
-"Last-Translator: \n"
+"PO-Revision-Date: 2021-09-15 09:06+0300\n"
+"Last-Translator: Vytenis P. <vyteniui@gmail.com>\n"
 "Language-Team: Vytenis P. <vyteniui@gmail.com>\n"
 "Language: lt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.8\n"
+"X-Generator: Poedit 3.0\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
@@ -27,10 +27,10 @@ msgid " (%s%d min)"
 msgstr " (%s%d min.)"
 
 msgid "Add \"Search event in EPG\" to channel menu"
-msgstr "Pridėti \"ieškoti įvykio EPG\" į kanalo meniu"
+msgstr "Pridėti \"ieškoti šio įvykio EPG\" į kanalo meniu"
 
 msgid "Add \"Search event in EPG\" to event menu"
-msgstr "Pridėti \"ieškoti įvykio EPG\" į įvykio meniu"
+msgstr "Pridėti \"ieškoti šio įvykio EPG\" į įvykio meniu"
 
 msgid "Add \"Search\" Button to EPG"
 msgstr "Į EPG pridėti 'Paieška' mygtuką"
@@ -39,10 +39,10 @@ msgid "Add timer"
 msgstr "Įtraukti laikmatį"
 
 msgid "Adds \"Search event in EPG\" item into the channel selection context menu (needs restart GUI)"
-msgstr "Pridės \"ieškoti įvykio EPG\" į kanalo pasirinkimo kontekstinį meniu (grafinę aplinką reikės paleisti iš naujo)"
+msgstr "Pridės \"ieškoti šio įvykio EPG\" į kanalo pasirinkimo kontekstinį meniu (grafinę aplinką reikės paleisti iš naujo)"
 
 msgid "Adds \"Search event in EPG\" item into the event menu (needs restart GUI)"
-msgstr "Pridės \"ieškoti įvykio EPG\" į įvykio meniu (grafinę aplinką reikės paleisti iš naujo)"
+msgstr "Pridės \"ieškoti šio įvykio EPG\" į įvykio meniu (grafinę aplinką reikės paleisti iš naujo)"
 
 msgid "Cancel"
 msgstr "Atšaukti"
@@ -70,7 +70,7 @@ msgid "Could not read AutoTimer timer list: %s"
 msgstr "Nepavyko perskaityti autolaikmačio laikmačių sąrašo: %s"
 
 msgid "Custom search"
-msgstr ""
+msgstr "Pasirinktinė paieška"
 
 msgid "Display name service as in bouquets"
 msgstr "Kanalų pavadinimus rodyti, kaip bukietuose"
@@ -81,16 +81,14 @@ msgstr "EPG paieška"
 msgid "EPGSearch"
 msgstr "EPG paieška"
 
-#, fuzzy
 msgid "EPGSearch - History"
-msgstr "EPG paieškos sąranka"
+msgstr "EPG paieškos istorija"
 
 msgid "EPGSearch Setup"
 msgstr "EPG paieškos sąranka"
 
-#, fuzzy
 msgid "Edit & search"
-msgstr "EPG paieška"
+msgstr "Redaguoti ir ieškoti"
 
 msgid "Encoding Search to EPG"
 msgstr "EPG paieškos koduotė"
@@ -138,7 +136,7 @@ msgid "Lookup in TMBD"
 msgstr "Paieška TMBD"
 
 msgid "Modify searched text"
-msgstr ""
+msgstr "Keisti ieškomą tekstą"
 
 msgid "New Search"
 msgstr "Nauja paieška"
@@ -165,7 +163,7 @@ msgid "Search EPG by title event"
 msgstr "EPG paieška pagal įvykio pavadinimą"
 
 msgid "Search event in EPG"
-msgstr "Ieškoti EPG įvykio"
+msgstr "Ieškoti šio įvykio EPG"
 
 msgid "Search for TMDb info"
 msgstr "Ieškoti TMDB informacijos"
@@ -192,14 +190,13 @@ msgid "Select channel"
 msgstr "Pasirinkite kanalą"
 
 msgid "Select item for search and press 'OK' or edit item with yellow button."
-msgstr ""
+msgstr "Pasirinkite ieškomą elementą ir spauskite 'OK', arba 'GELTONU' mygtuku jį redaguokite."
 
 msgid "Select type for filter search. Press button P +/- for show/hide filter in description after search."
 msgstr "Pasirinkite paieškos tipo filtrą. Spauskite 'P +/-', kad atverti/užverti filtrą aprašyme po paieškos."
 
-#, fuzzy
 msgid "Select type for search, \"partial match\" for the most extensive search, \"partial description\" for the most description search."
-msgstr "Pasirinkite paieškos tipą 'dalinis atitikimas', kad labiausiai išplėsti paiešką."
+msgstr "Pasirinkite paieškos tipą, \"dalinis atitikimas\" - plačiausiai paieškai, \"dalinis aprašymas\" - daugiau aprašymo paieškai."
 
 msgid "Select type: 'Search and Select channel' or 'Search'."
 msgstr "Pasirinkite tipą: 'Ieškoti ir pasirinkti kanalą', arba 'Ieškoti'."
@@ -214,7 +211,7 @@ msgid "Timers list"
 msgstr "Laikmačių sąrašas"
 
 msgid "Type blue Button"
-msgstr "Spauskite 'MĖLYNĄ' mygtuką."
+msgstr "Spauskite 'MĖLYNĄ' mygtuką"
 
 msgid "Use Picons"
 msgstr "Naudoti piktogramas"
@@ -223,10 +220,10 @@ msgid "Zap to selected service"
 msgstr "Perjungti į pasirinktą kanalą"
 
 msgid "case-insensitive search"
-msgstr "paieška, neatsižvelgiant į DIDŽIĄSIAS-mažąsias raides"
+msgstr "neatsižvelgiant į raidžių registrą (A=a)"
 
 msgid "case-sensitive search"
-msgstr "paieška, atsižvelgiant į DIDŽIĄSIAS-mažąsias raides"
+msgstr "atsižvelgiant į raidžių registrą (A<>a)"
 
 msgid "choice (Search and standard)"
 msgstr "pasirinkimas (paieška ir standartas)"
@@ -238,7 +235,7 @@ msgid "only Search"
 msgstr "tik paieška"
 
 msgid "partial description"
-msgstr ""
+msgstr "dalinis aprašymas"
 
 msgid "partial match"
 msgstr "dalinis atitikimas"
