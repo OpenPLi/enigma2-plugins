@@ -4,14 +4,14 @@ msgstr ""
 "Project-Id-Version: FTPBrowser\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-05-11 12:34+0200\n"
-"PO-Revision-Date: 2016-06-23 11:54+0300\n"
-"Last-Translator: \n"
+"PO-Revision-Date: 2021-09-15 12:18+0300\n"
+"Last-Translator: Vytenis P. <vyteniui@gmail.com>\n"
 "Language-Team: Vytenis P. <vyteniui@gmail.com>\n"
 "Language: lt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.8\n"
+"X-Generator: Poedit 3.0\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
@@ -79,7 +79,7 @@ msgstr "Parsiųsti failų sąrašo nepavyko."
 
 #, python-format
 msgid "Could not rename %s."
-msgstr "Pervadinti %s nepavyko"
+msgstr "Pervadinti %s nepavyko."
 
 msgid "Delete"
 msgstr "Pašalinti"
@@ -116,13 +116,13 @@ msgid "Exit"
 msgstr "Užverti"
 
 msgid "FTP Queue Manager"
-msgstr "FTP eilės tvarkytuvas"
+msgstr "FTP eilės tvarkymas"
 
 msgid "FTP Server Editor"
 msgstr "FTP serverio redaktorius"
 
 msgid "FTP Server Manager"
-msgstr "FTP serverio tvarkytuvas"
+msgstr "FTP serverio tvarkymas"
 
 msgid "Local"
 msgstr "Vietinis"
@@ -137,7 +137,7 @@ msgid "Parent Directory"
 msgstr "Aukštesnysis katalogas"
 
 msgid "Passive:"
-msgstr ""
+msgstr "Pasyvus:"
 
 msgid "Password:"
 msgstr "Slaptažodis:"
@@ -146,7 +146,7 @@ msgid "Port:"
 msgstr "Prievadas:"
 
 msgid "Queue Manager"
-msgstr "Eilės tvarkytuvas"
+msgstr "Eilės tvarkymas"
 
 msgid "Queue processed."
 msgstr "Eilė sudaryta."
@@ -219,7 +219,7 @@ msgid "close"
 msgstr "užverti"
 
 msgid "enter directory/get file/put file"
-msgstr "įveskite  directory/get file/put file"
+msgstr "įrašykite directory/get file/put failą"
 
 msgid "open menu"
 msgstr "atverti meniu"
