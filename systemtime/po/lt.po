@@ -8,21 +8,19 @@ msgstr ""
 "Project-Id-Version: SystemTime\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-05-11 10:58+0200\n"
-"PO-Revision-Date: 2017-07-01 12:38+0300\n"
+"PO-Revision-Date: 2021-09-15 18:48+0300\n"
 "Last-Translator: Vytenis P. <vyteniui@gmail.com>\n"
 "Language-Team: Vytenis P. <vyteniui@gmail.com>\n"
 "Language: lt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.2\n"
+"X-Generator: Poedit 3.0\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#, fuzzy
 msgid "'dvbdate' is not installed!"
 msgstr "'dvbdate' neįdiegtas!"
 
-#, fuzzy
 msgid "'ntpdate' is not installed!"
 msgstr "'NtpDate' neįdiegtas!"
 
@@ -32,9 +30,8 @@ msgstr "1 val."
 msgid "12 hours"
 msgstr "12 val."
 
-#, fuzzy
 msgid "15 mins"
-msgstr "15 min."
+msgstr "min."
 
 msgid "2 hours"
 msgstr "2 val."
@@ -42,9 +39,8 @@ msgstr "2 val."
 msgid "24 hours"
 msgstr "24 val."
 
-#, fuzzy
 msgid "30 mins"
-msgstr "30 min."
+msgstr "min."
 
 msgid "4 hours"
 msgstr "4 val."
@@ -52,85 +48,76 @@ msgstr "4 val."
 msgid "48 hours"
 msgstr "48 val."
 
-#, fuzzy
 msgid "5 mins"
 msgstr "5 min."
 
 msgid "After receiver's boot, wait for the specified delay before connecting to the NTP server. This allows the Wi-Fi connection to be fully established."
-msgstr ""
+msgstr "Imtuvui įsijungus, prieš prisijungdami prie NTP serverio, palaukite nurodytą laiką. Tai leidžia pilnai užmegzti belaidį ryšį."
 
-#, fuzzy
 msgid "Apply new system time?"
-msgstr "Taikyti naują sistemos laiką?"
+msgstr "Įrašyti naują sistemos laiką?"
 
 msgid "Cancel"
 msgstr "Atšaukti"
 
-#, fuzzy
 msgid "Change system time in enigma2 box"
-msgstr "Sistemos laiko keitimas atšauktas, nes %s"
+msgstr "Sistemos laiko keitimas enigma2 imtuvuose"
 
-#, fuzzy
 msgid "Delay (in seconds) when using Wi-Fi"
 msgstr "Delsa (sek.), naudojant belaidį tinklą"
 
 msgid "Enter a user defined date and time."
-msgstr ""
+msgstr "Įrašykite naudotojo nustatytą datą ir laiką."
 
-#, fuzzy
 msgid "Enter new system time and press OK!"
-msgstr "Įveskite naują sistemos laiką ir spauskite 'OK'!"
+msgstr "Įrašykite naują sistemos laiką ir spauskite 'OK'!"
 
 msgid "Get current time from the specified DVB transponder."
-msgstr ""
+msgstr "Paimti dabartinį laiką iš nurodyto DVB transponderio."
 
 msgid "Get current time from the specified NTP server."
-msgstr ""
+msgstr "Paimti dabartinį laiką iš nurodyto NTP serverio."
 
-#, fuzzy, python-format
+#, python-format
 msgid "Invalid input in day: %s"
-msgstr "neteisinga diena %s"
+msgstr "Neteisingai įvesta diena: %s"
 
-#, fuzzy, python-format
+#, python-format
 msgid "Invalid input in hour: %s"
-msgstr "neteisinga valanda %s"
+msgstr "Neteisingai įvesta valanda: %s"
 
-#, fuzzy, python-format
+#, python-format
 msgid "Invalid input in minute: %s"
-msgstr "neteisinga minutė %s"
+msgstr "Neteisingai įvesta minutė: %s"
 
-#, fuzzy, python-format
+#, python-format
 msgid "Invalid input in month: %s"
-msgstr "neteisingas mėnuo %s"
+msgstr "Neteisingai įvestas mėnuo: %s"
 
-#, fuzzy, python-format
+#, python-format
 msgid "Invalid input in year: %s"
-msgstr "neteisinga minutė %s"
+msgstr "Neteisingai įvesti metai: %s"
 
-#, fuzzy
 msgid "Invalid time format."
-msgstr "netinkamas formatas"
+msgstr "Netinkamas laiko formatas."
 
 msgid "NTP"
-msgstr ""
+msgstr "NTP"
 
-#, fuzzy
 msgid "NTP cold start"
-msgstr "Laiką sinchronizuoti startuojant"
+msgstr "Laiką sinchronizuoti paleidžiant"
 
-#, fuzzy
 msgid "NTP server"
-msgstr "Laiką sinchronizuoti kas"
+msgstr "NTP serveris"
 
-#, fuzzy
 msgid "No answer given."
-msgstr "atsakymas 'Joks'"
+msgstr "Atsakymo nepateikta."
 
 msgid "No change detected."
-msgstr ""
+msgstr "Pakeitimų nenustatyta."
 
 msgid "No confirmation given."
-msgstr ""
+msgstr "Nepateiktas patvirtinimas."
 
 #, python-format
 msgid ""
@@ -139,9 +126,13 @@ msgid ""
 "\n"
 "Offset: %(offset)s seconds"
 msgstr ""
+"Senas laikas: %(oldtime)s\n"
+"Naujas laikas: %(newtime)s\n"
+"\n"
+"Poslinkis: %(offset)s sekundžių"
 
 msgid "On receiver 'cold start', allow any required time adjustments to be 'stepped'."
-msgstr ""
+msgstr "Pirminio imtuvo paleidimo metu leiskite atlikti bet kokius reikiamus laiko reguliavimus."
 
 msgid "Press OK"
 msgstr "Spauskite 'OK'"
@@ -149,81 +140,73 @@ msgstr "Spauskite 'OK'"
 msgid "Restart GUI"
 msgstr "Paleisti grafinę aplinką iš naujo"
 
-#, fuzzy
 msgid "Restart GUI now?"
 msgstr "Paleisti grafinę aplinką iš naujo dabar?"
 
 msgid "Save"
 msgstr "Išsaugoti"
 
-#, fuzzy
 msgid "Script 'set-rtctime' not found!"
 msgstr "Nerasta scenarijaus 'set-rtctime'!"
 
 msgid "Select the preferred method for syncing time on your receiver. Network Time Protocol requires internet connection. Transponder time might not be very accurate."
-msgstr ""
+msgstr "Pasirinkite pageidaujamą imtuvo laiko sinchronizavimo metodą. NTP protokolui reikalingas interneto ryšys. Transponderio laikas gali būti nelabai tikslus."
 
-#, fuzzy
 msgid "Select transponder"
 msgstr "Pasirinkti transponderį"
 
 msgid "Set how often the receiver will connect to the NTP server to sync time."
-msgstr ""
+msgstr "Nustatykite, kaip dažnai imtuvas jungsis prie NTP serverio, kad sinchronizuotų laiką."
 
 msgid "Set system time manually"
 msgstr "Nustatyti sistemos laiką rankiniu būdu"
 
 msgid "Set the IP address of the preferred NTP server. Default is pool.ntp.org."
-msgstr ""
+msgstr "Nustatykite pageidaujamo NTP serverio IP adresą. Numatytoji reikšmė yra pool.ntp.org. Lietuvoje galimas: laikas.pfi.lt"
 
 msgid "Sync NTP every"
 msgstr "Laiką sinchronizuoti kas"
 
-#, fuzzy
 msgid "Sync now with NTP server"
-msgstr "Laiką sinchronizuoti kas"
+msgstr "Laiką su NTP serveriu sinchronizuoti dabar"
 
-#, fuzzy
 msgid "Sync now with current transponder"
 msgstr "Sinchronizuoti su šiuo transponderiu dabar"
 
 msgid "Sync time using"
 msgstr "Sinchronizavimui naudoti"
 
-#, fuzzy
 msgid "Syncing with NTP server..."
-msgstr "Laiką sinchronizuoti kas"
+msgstr "Sinchronizuojama su NTP serveriu..."
 
-#, fuzzy
 msgid "Syncing with current transponder..."
-msgstr "Sinchronizuoti su šiuo transponderiu dabar"
+msgstr "Sinchronizuojama su šiuo transponderiu..."
 
 msgid "Syncing... Please wait."
-msgstr ""
+msgstr "Palaukite, kol sinchronizuonama..."
 
 msgid "System time"
 msgstr "Sistemos laikas"
 
-#, fuzzy
 msgid "System time setup"
-msgstr "Sistemos laikas"
+msgstr "Sistemos laiko sąranka"
 
 #, python-format
 msgid ""
 "System time was not applied.\n"
 "%s"
 msgstr ""
+"Sistemos laikas nebuvo pritaikytas.\n"
+"%s"
 
-#, fuzzy
 msgid "Time string too short."
-msgstr "Naujo laiko eilutė per trumpa"
+msgstr "Laiko eilutė per trumpa."
 
-#, fuzzy
 msgid "Transponder"
-msgstr "Transponderio laikas"
+msgstr "Transponderis"
 
 msgid "Use RTC time from deep standby"
-msgstr "Paleidžiant imtuvą, naudoti RTC laiką"
+msgstr "Po gilaus budėjimo, naudoti RTC laiką"
 
 msgid "When the receiver starts from deep standby, use the time provided by the Real Time Clock, if it appears to be valid."
-msgstr ""
+msgstr "Kai imtuvas paleidžiamas iš gilaus budėjimo režimo, naudokite RTC pateiktą laiką, jei jis teisingas."
