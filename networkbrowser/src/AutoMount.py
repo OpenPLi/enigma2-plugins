@@ -128,10 +128,6 @@ class AutoMount():
 		if 'ro' not in options and 'rw' not in options:
 			options.append('rw')
 
-		# if not specified, disable locking
-		if 'lock' not in options and 'nolock' not in options:
-			options.append('nolock')
-
 		# cifs specific options
 
 		if mounttype == "cifs":
@@ -153,6 +149,11 @@ class AutoMount():
 		# nfs specific options
 
 		elif mounttype == "nfs":
+
+			# if not specified, disable locking
+			if 'lock' not in options and 'nolock' not in options:
+				options.append('nolock')
+
 			# if no protocol given, default to udp
 			if 'tcp' not in options and 'udp' not in options and 'proto=tcp' not in options and 'proto=udp' not in options:
 				options.append('proto=tcp')
@@ -183,7 +184,7 @@ class AutoMount():
 	def CheckMountPoint(self, item, callback):
 		# possible CIFS version/security combinations
 		secvers = (
-			'vers=3,sec=ntlmssp', 'vers=3,sec=ntlmv2', 'vers=2.1,sec=ntlmssp', 'vers=2.1,sec=ntlmv2',
+			'vers=3.0,sec=ntlmssp', 'vers=3.0,sec=ntlmv2', 'vers=2.1,sec=ntlmssp', 'vers=2.1,sec=ntlmv2',
 			'vers=2.1,sec=ntlm', 'vers=1.0,sec=ntlmssp', 'vers=1.0,sec=ntlmv2', 'vers=1.0,sec=ntlm',
 			'vers=default', ''
 		)
