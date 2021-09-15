@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: TransCodingSetup\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-04-16 16:27+0430\n"
-"PO-Revision-Date: 2016-06-26 17:27+0300\n"
-"Last-Translator: \n"
+"PO-Revision-Date: 2021-09-15 19:14+0300\n"
+"Last-Translator: Vytenis P. <vyteniui@gmail.com>\n"
 "Language-Team: Vytenis P. <vyteniui@gmail.com>\n"
 "Language: lt\n"
 "MIME-Version: 1.0\n"
@@ -13,16 +13,16 @@ msgstr ""
 "Generated-By: pygettext.py 1.5\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Poedit 1.8.8\n"
+"X-Generator: Poedit 3.0\n"
 
 msgid "Bitrate"
-msgstr "Bitų dažnis"
+msgstr "Bitų srautas"
 
 msgid "Frame rate"
-msgstr ""
+msgstr "Kadrų dažnis"
 
 msgid "Framerate"
-msgstr ""
+msgstr "Kadrų dažnis"
 
 msgid "It seems your receiver is not supported!"
 msgstr "Atrodo, jūsų imtuvas nepalaikomas!"
@@ -31,13 +31,13 @@ msgid "Not found file '/etc/enigma2/streamproxy.conf' !"
 msgstr "Failo '/etc/enigma2/streamproxy.conf' nerasta!"
 
 msgid "Port"
-msgstr ""
+msgstr "Prievadas"
 
 msgid "Quit"
 msgstr "Baigti"
 
 msgid "Resolution"
-msgstr ""
+msgstr "Raiška"
 
 msgid "Set"
 msgstr "Nustatyti"
@@ -48,13 +48,11 @@ msgstr "Nustatyti numatytuosius perkodavimo parametrus"
 msgid "Transcoding Setup"
 msgstr "Perkodavimo sąranka"
 
-#, fuzzy
 msgid "Video codec"
-msgstr "Vaizdo kadro dydis"
+msgstr "Vaizdo kodekas"
 
 msgid "Video size"
 msgstr "Vaizdo kadro dydis"
 
-#, fuzzy
 msgid "videocodec"
-msgstr "Vaizdo kadro dydis"
+msgstr "vaizdo kodekas"
