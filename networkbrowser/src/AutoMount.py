@@ -128,10 +128,6 @@ class AutoMount():
 		if 'ro' not in options and 'rw' not in options:
 			options.append('rw')
 
-		# if not specified, disable locking
-		if 'lock' not in options and 'nolock' not in options:
-			options.append('nolock')
-
 		# cifs specific options
 
 		if mounttype == "cifs":
@@ -153,6 +149,11 @@ class AutoMount():
 		# nfs specific options
 
 		elif mounttype == "nfs":
+
+			# if not specified, disable locking
+			if 'lock' not in options and 'nolock' not in options:
+				options.append('nolock')
+
 			# if no protocol given, default to udp
 			if 'tcp' not in options and 'udp' not in options and 'proto=tcp' not in options and 'proto=udp' not in options:
 				options.append('proto=tcp')
