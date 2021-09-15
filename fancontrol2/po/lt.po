@@ -3,15 +3,15 @@ msgstr ""
 "Project-Id-Version: FanControl2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-05-11 12:34+0200\n"
-"PO-Revision-Date: \n"
-"Last-Translator: Vytenis P.\n"
+"PO-Revision-Date: 2021-09-15 09:28+0300\n"
+"Last-Translator: Vytenis P. <vyteniui@gmail.com>\n"
 "Language-Team: Vytenis P. <vyteniui@gmail.com>\n"
 "Language: lt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Poedit 1.8.11\n"
+"X-Generator: Poedit 3.0\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
 #, python-format
@@ -19,7 +19,7 @@ msgid "%s   %02d C"
 msgstr "%s   %02d °C"
 
 msgid "."
-msgstr ","
+msgstr "."
 
 msgid "3Pin"
 msgstr "3 kont."
@@ -31,20 +31,20 @@ msgid "4Pin (PID)"
 msgstr "4 kont. (PID)"
 
 msgid "Action in case of Fan failure"
-msgstr "Veiksmas, kai aušintuvas neveikia"
+msgstr "Veiksmas, sugedus aušintuvui"
 
 msgid "Auto-Delete Data older than (Days)"
 msgstr "Automatiškai ištrinti duomenis, senesnius nei (dienų)"
 
 #, python-format
 msgid "Auto-Delete older %s Days"
-msgstr "Automatiškai trinti senesnius, nei %s dienų"
+msgstr "Automatiškai ištrinti senesnius, nei %s dienų"
 
 msgid "Box Shutdown"
 msgstr "Išjungti"
 
 msgid "Box has no fancontrol hardware -> FC2 deactivated"
-msgstr "Aparatas neturi įskiepiui skirtos aparatūros -> FC2 išjungta"
+msgstr "Aparatas neturi aušinimo valdymo įrangos -> FC2 išjungta"
 
 msgid "Box shutdown at Temperature (C)"
 msgstr "Išjungti, pasiekus temp. (°C)"
@@ -94,21 +94,20 @@ msgstr "Pabaigos temperatūra °C"
 msgid "Extended Control Range"
 msgstr "Išplėstinis kontrolės diapazonas"
 
-#, fuzzy
 msgid "Fan Control"
-msgstr "išjungti DMM aušintuvo valdymą"
+msgstr "Aušintuvo valdymas"
 
 msgid "Fan Control 2"
-msgstr ""
+msgstr "Aušintuvo valdymas 2"
 
 msgid "Fan Control 2 - Monitor"
-msgstr ""
+msgstr "Aušintuvo valdymas 2 - langas"
 
 msgid "Fan Control 2 - Setup"
-msgstr ""
+msgstr "Aušintuvo valdymas 2 - sąranka"
 
 msgid "Fan Control 2 - Test"
-msgstr ""
+msgstr "Aušintuvo valdymas 2 - bandymas"
 
 msgid "Fan is not working!"
 msgstr "Aušintuvas neveikia!"
@@ -182,15 +181,15 @@ msgstr "Min. aušintuvo paleidimas %d aps./min. prie VLT=%d ir PWM=0"
 
 #, python-format
 msgid "Min Fan Stop %d rpm at PWM=%d (%s)"
-msgstr "Min. aušintuvo sustabdymas %d aps./min. prie PWM=%d (%s)"
+msgstr "Min. aušintuvo išjungimas %d aps./min. prie PWM=%d (%s)"
 
 #, python-format
 msgid "Min Fan Stop %d rpm at VLT=%d (%s)"
-msgstr "Min. aušintuvo sustabdymas %d aps./min. prie VLT=%d (%s)"
+msgstr "Min. aušintuvo išjungimas %d aps./min. prie VLT=%d (%s)"
 
 #, python-format
 msgid "Min Fan Stop %d rpm at VLT=%d and PWM=0 (%s)"
-msgstr "Min. aušintuvo sustabdymas %d aps./min. prie VLT=%d ir PWM=0 (%s)"
+msgstr "Min. aušintuvo išjungimas %d aps./min. prie VLT=%d ir PWM=0 (%s)"
 
 msgid "Number of WebIF-Log-Entries"
 msgstr "WebIF žurnalo įrašų skaičius"
@@ -246,7 +245,7 @@ msgid "Voltage  %03d"
 msgstr "Įtampa %03d"
 
 msgid "active"
-msgstr "aktyvus"
+msgstr "veikia"
 
 msgid "auto"
 msgstr "automatiškai"
@@ -295,13 +294,13 @@ msgid "no"
 msgstr "ne"
 
 msgid "not active"
-msgstr "neaktyvus"
+msgstr "neveikia"
 
 msgid "over Security Card"
 msgstr "virš SC laikmenos"
 
 msgid "please set fan type (3Pin or 4Pin)"
-msgstr "Pasirinkite aušintuvo tipą (3, ar 4 kontaktų)"
+msgstr "Pasirinkite, aušintuvas 3, ar 4 kontaktų"
 
 msgid "please wait (until 3min)..."
 msgstr "palaukite (iki 3min.)..."
@@ -316,7 +315,7 @@ msgid "readme.txt"
 msgstr "readme.txt"
 
 msgid "setup Fancontol inStandby mode"
-msgstr ""
+msgstr "Aušintuvo darbas budėjimo būsenoje"
 
 msgid "turn off"
 msgstr "išjungti"
