@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: ncidclient\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-05-11 12:34+0200\n"
-"PO-Revision-Date: 2016-06-25 09:48+0300\n"
-"Last-Translator: \n"
+"PO-Revision-Date: 2021-09-15 14:41+0300\n"
+"Last-Translator: Vytenis P. <vyteniui@gmail.com>\n"
 "Language-Team: Vytenis P. <vyteniui@gmail.com>\n"
 "Language: lt\n"
 "MIME-Version: 1.0\n"
@@ -13,7 +13,7 @@ msgstr ""
 "X-Poedit-KeywordsList: _;gettext;gettext_noop\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 1.8.8\n"
+"X-Generator: Poedit 3.0\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Poedit-SearchPath-0: V:/eclipse/workspaces/pydev/enigma2-plugins/enigma2-plugins/ncidclient/src\n"
 
@@ -28,7 +28,7 @@ msgid "Austria"
 msgstr "Austrija"
 
 msgid "Automatically add new Caller to PhoneBook"
-msgstr ""
+msgstr "Naują skambinantį į telefonų knygą įtraukti automatiškai"
 
 msgid "Call monitoring"
 msgstr "Skambučių stebėsena"
@@ -163,10 +163,10 @@ msgstr "Numeris"
 
 #. TRANSLATORS: keep it short, this is a button
 msgid "OK"
-msgstr " Gerai"
+msgstr "Gerai"
 
 msgid "PhoneBook Location"
-msgstr ""
+msgstr "Telefonų knygos vieta"
 
 #. TRANSLATORS: this is a window title.
 msgid "Phonebook"
@@ -210,7 +210,7 @@ msgid "USB Device"
 msgstr "USB įrenginys"
 
 msgid "Use internal PhoneBook"
-msgstr ""
+msgstr "Naudoti vidinę telefonų knygą"
 
 msgid "no calls"
 msgstr "be skambučių"
