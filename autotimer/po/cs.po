@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Enigma2 Autotimer plugin\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-04-16 16:27+0430\n"
-"PO-Revision-Date: 2019-04-27 15:27+0200\n"
+"PO-Revision-Date: 2021-09-17 08:02+0200\n"
 "Last-Translator: ims <ims21@users.sourceforge.net>\n"
 "Language-Team: PLi <ims21@users.sourceforge.net>\n"
 "Language: cs_CZ\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Poedit-SourceCharset: utf-8\n"
-"X-Generator: Poedit 2.0.6\n"
+"X-Generator: Poedit 3.0\n"
 
 msgid ""
 "\n"
@@ -504,9 +504,8 @@ msgstr "Jestliže je povoleno, pak se nebude vyhledávání při probíhajícím
 msgid "If specified bouquets"
 msgstr ""
 
-#, fuzzy
 msgid "If specified services"
-msgstr "Na stejném programu"
+msgstr "Jsou-li určeny programy"
 
 msgid "If specified services or bouquets"
 msgstr ""
@@ -1422,7 +1421,7 @@ msgid "begin searchLog from"
 msgstr "začátek vyhledávání z"
 
 msgid "case-insensitive search"
-msgstr "Nerozlišovat velká a malá písmena"
+msgstr "Nerozlišovat velikost písmen"
 
 msgid "case-sensitive search"
 msgstr "Rozlišovat velká a malá písmena"
