@@ -73,7 +73,7 @@ elif fileExists("/proc/stb/info/hwmodel"):
 		model = l.read().strip()
 		l.close()
 		BOX_NAME = str(model.lower())
-		if BOX_NAME.startswith("lunix4k"):
+		if BOX_NAME in ("lunix4k", "dual"):
 			BOX_MODEL = "qviart"
 	except:
 		pass
@@ -1089,6 +1089,13 @@ class Blindscan(ConfigListScreen, Screen, TransponderFiltering):
 			tools = "/usr/bin/qviart_blindscan_72604"
 			if os.path.exists(tools):
 				cmd = "qviart_blindscan_72604 %d %d %d %d %d %d %d %d %d %d" % (temp_start_int_freq, temp_end_int_freq, config.blindscan.start_symbol.value, config.blindscan.stop_symbol.value, tab_pol[pol], tab_hilow[band], self.feid, self.getNimSocket(self.feid), self.is_c_band_scan, orb[0])
+			else:
+				self.session.open(MessageBox, _("Not found blind scan utility '%s'!") % tools, MessageBox.TYPE_ERROR)
+				return
+		elif BOX_NAME == "dual":
+			tools = "/usr/bin/qviart_blindscan"
+			if os.path.exists(tools):
+				cmd = "qviart_blindscan %d %d %d %d %d %d %d %d %d %d" % (temp_start_int_freq, temp_end_int_freq, config.blindscan.start_symbol.value, config.blindscan.stop_symbol.value, tab_pol[pol], tab_hilow[band], self.feid, self.getNimSocket(self.feid), self.is_c_band_scan, orb[0])
 			else:
 				self.session.open(MessageBox, _("Not found blind scan utility '%s'!") % tools, MessageBox.TYPE_ERROR)
 				return
