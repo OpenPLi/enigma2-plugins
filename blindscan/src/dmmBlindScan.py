@@ -466,7 +466,7 @@ class SatelliteTransponderSearchSupport:
 		self.auto_scan = False
 
 		print("[dmmBlindscan][startSatelliteTransponderSearch] tunername", tunername)
-		self.auto_scan = nimmanager.nim_slots[nim_idx].supportsBlindScan() or tunername.startswith('Si216')
+		self.auto_scan = nimmanager.nim_slots[self.feid].supportsBlindScan() or tunername.startswith('Si216')
 		if self.auto_scan or tunername == "Alps BSBE1 C01A/D01A." or (tunername != "BCM4501" and "BCM45" in tunername):
 			if not self.prepareFrontend():
 				print("[dmmBlindscan][startSatelliteTransponderSearch] couldn't allocate tuner %d for blindscan!" % self.feid)
