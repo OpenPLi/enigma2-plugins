@@ -62,14 +62,13 @@ config.plugins.imdb.showlongmenuinfo = ConfigYesNo(default=False)
 config.plugins.imdb.showepisodeinfo = ConfigYesNo(default=False)
 
 
-def quoteEventName(eventName, safe="/()" + ''.join(map(chr, range(192, 255)))):
+def quoteEventName(eventName):
 	# BBC uses '\x86' markers in program names, remove them
 	try:
 		text = eventName.decode('utf8').replace(u'\x86', u'').replace(u'\x87', u'').encode('utf8')
 	except:
 		text = eventName
-	# IMDb doesn't seem to like urlencoded characters at all, hence the big "safe" list
-	return quote_plus(text, safe=safe)
+	return quote_plus(text)
 
 
 class IMDBChannelSelection(SimpleChannelSelection):
