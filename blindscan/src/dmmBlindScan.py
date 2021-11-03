@@ -266,6 +266,7 @@ class SatelliteTransponderSearchSupport:
 					if not parm_list:
 						print("[dmmBlindscan][frontendStateChanged] Transponder removed by filters, %s" % fstr)
 
+					sr = parm.symbol_rate
 					if self.auto_scan:
 						print("[dmmBlindscan][frontendStateChanged] LOCKED at", freq, {eDVBFrontendParametersSatellite.Polarisation_Horizontal: "H", eDVBFrontendParametersSatellite.Polarisation_Vertical: "V", eDVBFrontendParametersSatellite.Polarisation_CircularLeft: "L", eDVBFrontendParametersSatellite.Polarisation_CircularRight: "R"}.get(parm.polarisation))
 					else:
