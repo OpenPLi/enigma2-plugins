@@ -622,6 +622,15 @@ class DmmBlindscan(ConfigListScreen, Screen, SatelliteTransponderSearchSupport, 
 
 		self.tunerEntry = getConfigListEntry(_("Tuner"), self.scan_nims, _("Select a tuner that is configured for the satellite you wish to search"))
 		self.list.append(self.tunerEntry)
+		if not self.SatBandCheck():
+			self["config"].list = self.list
+			self["config"].l.setList(self.list)
+			self["actions2"].setEnabled(False)
+			self["introduction"].setText(_("LNB of current satellite not compatible with plugin"))
+			return
+		else:
+			self["introduction"].setText(_("Press OK to start the scan."))
+			self.updateFreqLimits()
 
 		nim = nimmanager.nim_slots[index_to_scan]
 
