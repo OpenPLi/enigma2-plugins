@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: AutoTimer\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-16 16:27+0430\n"
+"POT-Creation-Date: 2021-11-10 08:22+0100\n"
 "PO-Revision-Date: 2021-09-13 12:17+0300\n"
 "Last-Translator: Vytenis P.\n"
 "Language-Team: Vytenis P. <vyteniui@gmail.com>\n"
@@ -527,6 +527,7 @@ msgid "If this enabled, will check the list of timers, conflicting autotimers ar
 msgstr "Čia įjungus, bus tikrinamas laikmačių sąrašas - konfliktuojantys autolaikmačiai bus išjungti, besidubliuojantys bus pašalinti."
 
 # This is NOT a Python format, as marked!!!
+#, fuzzy, python-format
 msgid "If this is enabled an existing timer will also be considered recording an event if it records at least 80% of the it."
 msgstr "Čia įjungus,, esamas laikmatis taip pat bus skaitomas įrašančiu įvykį, jei jis įrašo bent 80% to įvykio."
 
