@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Enigma2 Autotimer plugin\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-04-16 16:27+0430\n"
-"PO-Revision-Date: 2021-09-17 08:02+0200\n"
+"PO-Revision-Date: 2021-11-10 08:38+0100\n"
 "Last-Translator: ims <ims21@users.sourceforge.net>\n"
 "Language-Team: PLi <ims21@users.sourceforge.net>\n"
 "Language: cs_CZ\n"
@@ -124,7 +124,7 @@ msgid "All non-repeating timers"
 msgstr "Všechny neopakující se časovače"
 
 msgid "Allow double timer for different services"
-msgstr ""
+msgstr "Duplicitní časovače pro různé programy"
 
 msgid "Always write config"
 msgstr "Vždy ukládat konfiguraci"
@@ -487,7 +487,7 @@ msgid "Help"
 msgstr "Nápověda"
 
 msgid "Here you can specify whether simultaneous timers of the same program can be created. This allows simultaneous recording of a program with different resolutions. (e.g. SD service and HD service)."
-msgstr ""
+msgstr "Můžete stanovit, zda lze vytvořit souběžné časovače stejného programu. To umožní současný záznam programu s různými rozlišeními. (např. SD program a HD program)."
 
 msgid "If 0, the popup will remain open."
 msgstr "Pokud je 0, zůstane vyskakovací okno otevřené."
@@ -502,13 +502,13 @@ msgid "If enabled, the polling will be skipped if a recording is in progress."
 msgstr "Jestliže je povoleno, pak se nebude vyhledávání při probíhajícím nahrávání."
 
 msgid "If specified bouquets"
-msgstr ""
+msgstr "Jsou-li určeny přehledy"
 
 msgid "If specified services"
 msgstr "Jsou-li určeny programy"
 
 msgid "If specified services or bouquets"
-msgstr ""
+msgstr "Jsou-li určeny programy nebo přehledy"
 
 msgid "If the style is advanced, you will see more information about each auto timer. This change will not take effect until the plugin has started again."
 msgstr "Při rozšířeném stylu uvidíte více informací o každém automatickém časovači. Tato změna projeví se až při novém spuštění pluginu."
@@ -1391,10 +1391,10 @@ msgstr ""
 "\"%s"
 
 msgid "[B]  "
-msgstr ""
+msgstr "[B]  "
 
 msgid "[S]  "
-msgstr ""
+msgstr "[S]  "
 
 msgid "add AutoTimer"
 msgstr "Přidat AutoTimer"
