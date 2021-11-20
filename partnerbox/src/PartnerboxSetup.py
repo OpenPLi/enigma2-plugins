@@ -111,23 +111,24 @@ class PartnerboxSetup(ConfigListScreen, Screen):
 		}, -2)
 
 	def initConfig(self):
+		dx = 4 * " "
 		self.list = []
 		self.list.append(getConfigListEntry(_("Show 'RemoteTimer' in Eventinfo menu"), config.plugins.Partnerbox.enablepartnerboxeventinfomenu))
 		if config.plugins.Partnerbox.enablepartnerboxeventinfomenu.value:
-			self.list.append(getConfigListEntry(_("Show 'RemoteTimer' in Event View context menu"), config.plugins.Partnerbox.enablepartnerboxeventinfocontextmenu))
+			self.list.append(getConfigListEntry(dx + _("Show 'RemoteTimer' in Event View context menu"), config.plugins.Partnerbox.enablepartnerboxeventinfocontextmenu))
 		self.list.append(getConfigListEntry(_("Show 'RemoteTimer' in E-Menu"), config.plugins.Partnerbox.showremotetimerinextensionsmenu))
 		self.list.append(getConfigListEntry(_("Show 'RemoteTV Player' in E-Menu"), config.plugins.Partnerbox.showremotetvinextensionsmenu))
 		self.list.append(getConfigListEntry(_("Show 'Stream current Service' in E-Menu"), config.plugins.Partnerbox.showcurrentstreaminextensionsmenu))
 		self.list.append(getConfigListEntry(_("Enable Partnerbox-Function in TimerEvent"), config.plugins.Partnerbox.enablepartnerboxintimerevent))
 		if config.plugins.Partnerbox.enablepartnerboxintimerevent.value:
-			self.list.append(getConfigListEntry(_("Active boxes from local network only (using localhost names)"), config.plugins.Partnerbox.avahicompare))
-			self.list.append(getConfigListEntry(_("Enable first Partnerbox-entry in Timeredit as default"), config.plugins.Partnerbox.enabledefaultpartnerboxintimeredit))
-			self.list.append(getConfigListEntry(_("Enable VPS-Function in TimerEvent"), config.plugins.Partnerbox.enablevpsintimerevent))
+			self.list.append(getConfigListEntry(dx + _("Active boxes from local network only (using localhost names)"), config.plugins.Partnerbox.avahicompare))
+			self.list.append(getConfigListEntry(dx + _("Enable first Partnerbox-entry in Timeredit as default"), config.plugins.Partnerbox.enabledefaultpartnerboxintimeredit))
+			self.list.append(getConfigListEntry(dx + _("Enable VPS-Function in TimerEvent"), config.plugins.Partnerbox.enablevpsintimerevent))
 		self.list.append(getConfigListEntry(_("Enable Partnerbox-Function in EPGList"), config.plugins.Partnerbox.enablepartnerboxepglist))
 		if config.plugins.Partnerbox.enablepartnerboxepglist.value:
-			self.list.append(getConfigListEntry(_("Enable Red Button-Function in single/multi EPG"), config.plugins.Partnerbox.enablepartnerboxzapbuton))
-			self.list.append(getConfigListEntry(_("Show duration time for event"), config.plugins.Partnerbox.showremaingepglist))
-			self.list.append(getConfigListEntry(_("Show all icon for event in EPGList"), config.plugins.Partnerbox.allicontype))
+			self.list.append(getConfigListEntry(dx + _("Enable Red Button-Function in single/multi EPG"), config.plugins.Partnerbox.enablepartnerboxzapbuton))
+			self.list.append(getConfigListEntry(dx + _("Show duration time for event"), config.plugins.Partnerbox.showremaingepglist))
+			self.list.append(getConfigListEntry(dx + _("Show all icon for event in EPGList"), config.plugins.Partnerbox.allicontype))
 		self.list.append(getConfigListEntry(_("Enable Partnerbox-Function in Channel Selector"), config.plugins.Partnerbox.enablepartnerboxchannelselector))
 		if autoTimerAvailable:
 			self.list.append(getConfigListEntry(_("Enable Partnerbox-AutoTimer function"), config.plugins.Partnerbox.showpartnerboxautotimerninmenu))
