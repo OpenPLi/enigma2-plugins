@@ -622,15 +622,6 @@ class DmmBlindscan(ConfigListScreen, Screen, SatelliteTransponderSearchSupport, 
 
 		self.tunerEntry = getConfigListEntry(_("Tuner"), self.scan_nims, _("Select a tuner that is configured for the satellite you wish to search"))
 		self.list.append(self.tunerEntry)
-		if not self.SatBandCheck():
-			self["config"].list = self.list
-			self["config"].l.setList(self.list)
-			self["actions2"].setEnabled(False)
-			self["introduction"].setText(_("LNB of current satellite not compatible with plugin"))
-			return
-		else:
-			self["introduction"].setText(_("Press OK to start the scan."))
-			self.updateFreqLimits()
 
 		nim = nimmanager.nim_slots[index_to_scan]
 
@@ -640,6 +631,18 @@ class DmmBlindscan(ConfigListScreen, Screen, SatelliteTransponderSearchSupport, 
 #			selected_sat_pos = self.scan_satselection[index_to_scan].value
 		self.satelliteEntry = getConfigListEntry(_("Satellite"), self.scan_satselection[index_to_scan], _("Select the satellite you wish to search"))
 		self.list.append(self.satelliteEntry)
+
+		if not self.SatBandCheck():
+			self["config"].list = self.list
+			self["config"].l.setList(self.list)
+			self["actions2"].setEnabled(False)
+			self["key_green"].setText("")
+			self["introduction"].setText(_("LNB of current satellite not compatible with plugin"))
+			return
+		else:
+			self["introduction"].setText(_("Press OK to start the scan."))
+			self.updateFreqLimits()
+
 		self.searchtypeEntry = getConfigListEntry(_("Search type"), self.search_type, _('"scan for channels" searches for channels and saves them to your receiver; "Save to XML" does a transponder search and saves the results in satellites.xml format and stores it in /tmp'))
 		self.list.append(self.searchtypeEntry)
 		self.list.append(getConfigListEntry(_("Scan start frequency"), self.dmmBlindscan.freq_start, _("Frequency values must be between %d MHz and %d MHz") % (self.freq_limits[0], self.freq_limits[1] - 1)))
