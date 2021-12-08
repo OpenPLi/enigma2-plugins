@@ -1140,15 +1140,15 @@ class SHOUTcastList(GUIComponent, object):
 		elif self.mode == 1: # STATIONLIST
 			res.append((eListboxPythonMultiContent.TYPE_TEXT, 0, 3, width, self.para, 1, RT_HALIGN_LEFT | RT_VALIGN_CENTER, item.name))
 			res.append((eListboxPythonMultiContent.TYPE_TEXT, 0, self.parb, width, self.para, 1, RT_HALIGN_LEFT | RT_VALIGN_CENTER, item.ct))
-			res.append((eListboxPythonMultiContent.TYPE_TEXT, 0, self.parc, width / 2, self.para, 1, RT_HALIGN_LEFT | RT_VALIGN_CENTER, _("Audio: %s") % item.mt))
-			res.append((eListboxPythonMultiContent.TYPE_TEXT, width / 2, self.parc, width / 2, self.para, 1, RT_HALIGN_RIGHT | RT_VALIGN_CENTER, _("Bit rate: %s kbps") % item.br))
+			res.append((eListboxPythonMultiContent.TYPE_TEXT, 0, self.parc, width // 2, self.para, 1, RT_HALIGN_LEFT | RT_VALIGN_CENTER, _("Audio: %s") % item.mt))
+			res.append((eListboxPythonMultiContent.TYPE_TEXT, width // 2, self.parc, width // 2, self.para, 1, RT_HALIGN_RIGHT | RT_VALIGN_CENTER, _("Bit rate: %s kbps") % item.br))
 		elif self.mode == 2: # FAVORITELIST
 			res.append((eListboxPythonMultiContent.TYPE_TEXT, 0, 3, width, self.para, 1, RT_HALIGN_LEFT | RT_VALIGN_CENTER, item.configItem.name.value))
 			res.append((eListboxPythonMultiContent.TYPE_TEXT, 0, self.parb, width, self.para, 1, RT_HALIGN_LEFT | RT_VALIGN_CENTER, "%s (%s)" % (item.configItem.text.value, item.configItem.type.value)))
 			if len(item.configItem.audio.value) != 0:
-				res.append((eListboxPythonMultiContent.TYPE_TEXT, 0, self.parc, width / 2, self.para, 1, RT_HALIGN_LEFT | RT_VALIGN_CENTER, _("Audio: %s") % item.configItem.audio.value))
+				res.append((eListboxPythonMultiContent.TYPE_TEXT, 0, self.parc, width // 2, self.para, 1, RT_HALIGN_LEFT | RT_VALIGN_CENTER, _("Audio: %s") % item.configItem.audio.value))
 			if len(item.configItem.bitrate.value) != 0:
-				res.append((eListboxPythonMultiContent.TYPE_TEXT, width / 2, self.parc, width / 2, self.para, 1, RT_HALIGN_RIGHT | RT_VALIGN_CENTER, _("Bit rate: %s kbps") % item.configItem.bitrate.value))
+				res.append((eListboxPythonMultiContent.TYPE_TEXT, width // 2, self.parc, width // 2, self.para, 1, RT_HALIGN_RIGHT | RT_VALIGN_CENTER, _("Bit rate: %s kbps") % item.configItem.bitrate.value))
 		return res
 
 	def __init__(self):
