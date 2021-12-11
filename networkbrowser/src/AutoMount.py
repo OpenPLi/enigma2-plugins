@@ -21,7 +21,7 @@ def rm_rf(d): # only for removing the ipkg stuff from /media/hdd subdirs
 				os.unlink(path)
 		os.rmdir(d)
 	except Exception, ex:
-	        print "AutoMount failed to remove", d, "Error:", ex
+	        print("AutoMount failed to remove", d, "Error:", ex)
 
 
 class AutoMount():
@@ -52,11 +52,11 @@ class AutoMount():
 		try:
 			tree = cet_parse(XML_FSTAB).getroot()
 		except Exception, e:
-			print "[MountManager] Error reading /etc/enigma2/automounts.xml:", e
+			print("[MountManager] Error reading /etc/enigma2/automounts.xml:", e)
 			try:
 				os.remove(XML_FSTAB)
 			except Exception, e:
-				print "[MountManager] Error delete corrupt /etc/enigma2/automounts.xml:", e
+				print("[MountManager] Error delete corrupt /etc/enigma2/automounts.xml:", e)
 			return
 
 		def getValue(definitions, default):
@@ -85,7 +85,7 @@ class AutoMount():
 					data['options'] = getValue(mount.findall("options"), "").encode("UTF-8")
 					self.automounts[data['sharename']] = data
 				except Exception, e:
-					print "[MountManager] Error reading Mounts:", e
+					print("[MountManager] Error reading Mounts:", e)
 
 		# Read out CIFS Mounts
 		for nfs in tree.findall("cifs"):
@@ -107,11 +107,11 @@ class AutoMount():
 					data['password'] = getValue(mount.findall("password"), 'guest').encode("UTF-8")
 					self.automounts[data['sharename']] = data
 				except Exception, e:
-					print "[MountManager] Error reading Mounts:", e
+					print("[MountManager] Error reading Mounts:", e)
 
 		self.checkList = self.automounts.keys()
 		if not self.checkList:
-			print "[AutoMount.py] self.automounts without mounts", self.automounts
+			print("[AutoMount.py] self.automounts without mounts", self.automounts)
 			if callback is not None:
 				callback(True)
 		else:
@@ -176,7 +176,7 @@ class AutoMount():
 
 		# unknown mounttype
 		else:
-			print "[AutoMount.py] Unknown mount type: ", mounttype
+			print("[AutoMount.py] Unknown mount type: ", mounttype)
 
 		# return the sanitized options list
 		return ",".join(options)
@@ -205,13 +205,13 @@ class AutoMount():
 		# any active mounts?
 		if self.activeMountsCounter == 0:
 			# nope, nothing more to do there
-			print "[AutoMount.py] self.automounts without active mounts", self.automounts
+			print("[AutoMount.py] self.automounts without active mounts", self.automounts)
 
 		# current mount definition disabled?
 		if data['active'] == 'False' or data['active'] is False:
 			# unmount it
 			command = "umount -fl '%s'" % path
-			print "[AutoMount.py] UMOUNT-CMD-1 --->", command
+			print("[AutoMount.py] UMOUNT-CMD-1 --->", command)
 
 		# current mount definition active
 		else:
@@ -220,7 +220,7 @@ class AutoMount():
 				# unmount if something already mounted there
 				# if so, unmount that first
 				umountcmd = "umount -fl '%s'" % path
-				print "[AutoMount.py] UMOUNT-CMD-3 --->", umountcmd
+				print("[AutoMount.py] UMOUNT-CMD-3 --->", umountcmd)
 				ret = subprocess.call(umountcmd, shell=True)
 
 				# make sure the mount point exists
@@ -240,7 +240,7 @@ class AutoMount():
 					# construct the NFS mount command, and mount it
 					tmpcmd = "mount -t nfs -o %s '%s' '%s'" % (options, host + ':/' + data['sharedir'], path)
 					command = tmpcmd.encode("UTF-8")
-					print "[AutoMount.py] NFS MOUNT-CMD--->", command
+					print("[AutoMount.py] NFS MOUNT-CMD--->", command)
 
 				# CIFS
 				elif data['mounttype'] == 'cifs':
@@ -253,7 +253,7 @@ class AutoMount():
 						# construct the CIFS mount command
 						tmpcmd = "mount -t cifs -o %s '//%s/%s' '%s'" % (options, host, data['sharedir'], path)
 						command = tmpcmd.encode("UTF-8")
-						print "[AutoMount.py] CIFS MOUNT-CMD--->", command
+						print("[AutoMount.py] CIFS MOUNT-CMD--->", command)
 
 					else:
 						# loop over the version and security options
@@ -265,11 +265,11 @@ class AutoMount():
 							# construct the CIFS mount command
 							tmpcmd = "mount -t cifs -o %s '//%s/%s' '%s'" % (secver + options, host, data['sharedir'], path)
 							command = tmpcmd.encode("UTF-8")
-							print "[AutoMount.py] CIFS AUTODETECT MOUNTCMD--->", command
+							print("[AutoMount.py] CIFS AUTODETECT MOUNTCMD--->", command)
 
 							# attempt to mount it, don't use the background console here, we need to wait
 							ret = subprocess.call(command, shell=True)
-							print "[AutoMount.py] Command returned: ", ret
+							print("[AutoMount.py] Command returned: ", ret)
 
 							# mount succeeded?
 							if ret == 0 and os.path.ismount(path):
@@ -278,16 +278,16 @@ class AutoMount():
 								self.writeMountsConfig()
 								# umount the test mount
 								umountcmd = "umount -fl '%s'" % path
-								print "[AutoMount.py] UMOUNT-AUTODETECT --->", umountcmd
+								print("[AutoMount.py] UMOUNT-AUTODETECT --->", umountcmd)
 								ret = subprocess.call(umountcmd, shell=True)
-								print "[AutoMount.py] CIFS MOUNT-CMD--->", command
+								print("[AutoMount.py] CIFS MOUNT-CMD--->", command)
 								# and terminate the loop
 								break
 
 							command = None
 
 			except Exception, ex:
-					print "[AutoMount.py] Failed to create", path, "Error:", ex
+					print("[AutoMount.py] Failed to create", path, "Error:", ex)
 
 		# execute any command constructed
 		if command:
@@ -296,10 +296,10 @@ class AutoMount():
 			self.CheckMountPointFinished(None, None, [data, callback])
 
 	def CheckMountPointFinished(self, result, retval, extra_args):
-		print "[AutoMount.py] CheckMountPointFinished", result, retval
+		print("[AutoMount.py] CheckMountPointFinished", result, retval)
 		(data, callback) = extra_args
 		path = os.path.join('/media/net', data['sharename'])
-		print "[AutoMount.py] CheckMountPointFinished, verifying: ", path
+		print("[AutoMount.py] CheckMountPointFinished, verifying: ", path)
 
 		if os.path.exists(path):
 			if os.path.ismount(path):
@@ -310,7 +310,7 @@ class AutoMount():
 						self.makeHDDlink(path)
 					harddiskmanager.addMountedPartition(path, desc)
 			else:
-				print "[AutoMount.py] CheckMountPointFinished, path not found, disabling..."
+				print("[AutoMount.py] CheckMountPointFinished, path not found, disabling...")
 				if data['sharename'] in self.automounts:
 					self.automounts[data['sharename']]['isMounted'] = False
 				if os.path.exists(path):
@@ -319,23 +319,23 @@ class AutoMount():
 							os.rmdir(path)
 							harddiskmanager.removeMountedPartition(path)
 						except Exception, ex:
-						        print "Failed to remove", path, "Error:", ex
+						        print("Failed to remove", path, "Error:", ex)
 
 		if self.checkList:
 			# Go to next item in list...
 			self.CheckMountPoint(self.checkList.pop(), callback)
 
 		if self.MountConsole:
-			print "[AutoMount.py] CheckMountPointFinished, # of appContainers: ", len(self.MountConsole.appContainers)
+			print("[AutoMount.py] CheckMountPointFinished, # of appContainers: ", len(self.MountConsole.appContainers))
 			if len(self.MountConsole.appContainers) == 0:
 				if callback is not None:
-					print "[AutoMount.py] CheckMountPointFinished, callback timer"
+					print("[AutoMount.py] CheckMountPointFinished, callback timer")
 					self.callback = callback
 					self.timer.startLongTimer(1)
 
 	def makeHDDlink(self, path):
 		hdd_dir = '/media/hdd'
-		print "[AutoMount.py] symlink %s %s" % (path, hdd_dir)
+		print("[AutoMount.py] symlink %s %s" % (path, hdd_dir))
 		if os.path.islink(hdd_dir):
 			if os.readlink(hdd_dir) != path:
 				os.remove(hdd_dir)
@@ -346,19 +346,19 @@ class AutoMount():
 		try:
 			os.symlink(path, hdd_dir)
 		except OSError, ex:
-			print "[AutoMount.py] add symlink fails!", ex
+			print("[AutoMount.py] add symlink fails!", ex)
 		movie = os.path.join(hdd_dir, 'movie')
 		if not os.path.exists(movie):
 		        try:
 				os.mkdir(movie)
 			except Exception, ex:
-				print "[AutoMount.py] Failed to create ", movie, "Error:", ex
+				print("[AutoMount.py] Failed to create ", movie, "Error:", ex)
 
 	def mountTimeout(self):
 		self.timer.stop()
 		if self.MountConsole:
 			if len(self.MountConsole.appContainers) == 0:
-				print "self.automounts after mounting", self.automounts
+				print("self.automounts after mounting", self.automounts)
 				if self.callback is not None:
 					self.callback(True)
 
@@ -406,14 +406,14 @@ class AutoMount():
 		try:
 			open(XML_FSTAB, "w").writelines(list)
 		except Exception, e:
-			print "[AutoMount.py] Error Saving Mounts List:", e
+			print("[AutoMount.py] Error Saving Mounts List:", e)
 
 	def stopMountConsole(self):
 		if self.MountConsole is not None:
 			self.MountConsole = None
 
 	def removeMount(self, mountpoint, callback=None):
-		print "[AutoMount.py] removing mount: ", mountpoint
+		print("[AutoMount.py] removing mount: ", mountpoint)
 		self.newautomounts = {}
 		for sharename, sharedata in self.automounts.items():
 			if sharename is not mountpoint.strip():
@@ -424,11 +424,11 @@ class AutoMount():
 			self.removeConsole = Console()
 		path = '/media/net/' + mountpoint
 		umountcmd = "umount -fl '%s'" % path
-		print "[AutoMount.py] UMOUNT-CMD--->", umountcmd
+		print("[AutoMount.py] UMOUNT-CMD--->", umountcmd)
 		self.removeConsole.ePopen(umountcmd, self.removeMountPointFinished, [path, callback])
 
 	def removeMountPointFinished(self, result, retval, extra_args):
-		print "[AutoMount.py] removeMountPointFinished result", result, "retval", retval
+		print("[AutoMount.py] removeMountPointFinished result", result, "retval", retval)
 		(path, callback) = extra_args
 		if os.path.exists(path):
 			if not os.path.ismount(path):
@@ -436,7 +436,7 @@ class AutoMount():
 					os.rmdir(path)
 					harddiskmanager.removeMountedPartition(path)
 				except Exception, ex:
-				        print "Failed to remove", path, "Error:", ex
+				        print("Failed to remove", path, "Error:", ex)
 		if self.removeConsole:
 			if len(self.removeConsole.appContainers) == 0:
 				if callback is not None:
