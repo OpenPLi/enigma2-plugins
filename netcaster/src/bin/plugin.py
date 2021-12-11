@@ -166,7 +166,7 @@ class NETcasterScreenBrowser(Screen):
     def stream_stop(self):
         global streamplayer
         if streamplayer.is_playing:
-            print "[", myname, "] stream_startstop -> stop"
+            print("[", myname, "] stream_startstop -> stop")
             streamplayer.stop()
             self.disconnectFromMetadataUpdates()
             self._onStop()
@@ -307,7 +307,7 @@ class NETcastLCDScreen(Screen):
 	</screen>"""
 
 	def __init__(self, session, parent):
-		print "[NetCast]: __init__"
+		print("[NetCast]: __init__")
 		Screen.__init__(self, session)
 		self["head"] = Label("")
 		self["info"] = Label("")
