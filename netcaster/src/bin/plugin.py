@@ -10,7 +10,7 @@ from enigma import eListboxPythonMultiContent, eListbox, gFont
 
 from Plugins.Plugin import PluginDescriptor
 from os import path as os_path, listdir as os_listdir
-from StreamPlayer import StreamPlayer
+from Plugins.Extensions.NETcaster.StreamPlayer import StreamPlayer
 from Tools.Import import my_import
 
 ###############################################################################
