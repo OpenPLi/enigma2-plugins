@@ -519,7 +519,7 @@ def MPcallbackFunc(answer):
 			EMsession.open(MessageBox, text=_('DVDPlayer Plugin is not installed!'), type=MessageBox.TYPE_ERROR)
 	elif answer == "MYTUBE":
 		if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/MyTube/plugin.pyo"):
-			from Plugins.Extensions.MyTube.plugin import *
+			from Plugins.Extensions.MyTube import MyTubeMain
 			MyTubeMain(EMsession)
 		else:
 			EMsession.open(MessageBox, text=_('MyTube Plugin is not installed!'), type=MessageBox.TYPE_ERROR)
@@ -537,7 +537,7 @@ def MPcallbackFunc(answer):
 			EMsession.open(MessageBox, text=_('ZDFmediathek Plugin is not installed!'), type=MessageBox.TYPE_ERROR)
 	elif answer == "VLC":
 		if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/VlcPlayer/plugin.pyo"):
-			from Plugins.Extensions.VlcPlayer.plugin import *
+			from Plugins.Extensions.VlcPlayer.plugin import main
 			main(EMsession)
 		else:
 			EMsession.open(MessageBox, text=_('VLC Player is not installed!'), type=MessageBox.TYPE_ERROR)
