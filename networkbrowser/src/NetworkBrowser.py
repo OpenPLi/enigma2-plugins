@@ -31,7 +31,7 @@ def write_cache(cache_file, cache_data):
 		try:
 			os.mkdir(path)
 		except Exception, ex:
-			print "ERROR creating:", path, ex
+			print("ERROR creating:", path, ex)
 	with open(cache_file, 'w') as fd:
 		cPickle.dump(cache_data, fd, -1)
 
@@ -172,7 +172,7 @@ class NetworkBrowser(Screen):
 	def scanIPclosed(self, result):
 		if result[0]:
 			if result[1] == "address":
-				print "[Networkbrowser] got IP:", result[1]
+				print("[Networkbrowser] got IP:", result[1])
 				nwlist = []
 				nwlist.append(netscan.netzInfo(result[0] + "/24"))
 				self.networklist += nwlist[0]
@@ -199,13 +199,13 @@ class NetworkBrowser(Screen):
 		self.inv_cache = 0
 		self.vc = valid_cache(self.cache_file, self.cache_ttl)
 		if self.cache_ttl > 0 and self.vc != 0:
-			print '[Networkbrowser] Loading network cache from ', self.cache_file
+			print('[Networkbrowser] Loading network cache from ', self.cache_file)
 			try:
 				self.networklist = load_cache(self.cache_file)
 			except:
 				self.inv_cache = 1
 		if self.cache_ttl == 0 or self.inv_cache == 1 or self.vc == 0:
-			print '[Networkbrowser] Getting fresh network list'
+			print('[Networkbrowser] Getting fresh network list')
 			self.networklist = self.getNetworkIPs()
 			write_cache(self.cache_file, self.networklist)
 		if len(self.networklist) > 0:
@@ -386,13 +386,13 @@ class NetworkBrowser(Screen):
 					self.session.openWithCallback(self.passwordQuestion, MessageBox, (_("Do you want to enter a username and password for this host?\n")))
 
 		if sel[0][0] == 'nfsShare': # share entry selected
-			print '[Networkbrowser] sel nfsShare'
+			print('[Networkbrowser] sel nfsShare')
 			self.openMountEdit(sel[0])
 		if sel[0][0] == 'smbShare': # share entry selected
-			print '[Networkbrowser] sel cifsShare'
+			print('[Networkbrowser] sel cifsShare')
 			self.hostcache_file = '/etc/enigma2/' + selectedhostname.strip() + '.cache' #Path to cache directory
 			if os.path.exists(self.hostcache_file):
-				print '[Networkbrowser] userinfo found from ', self.sharecache_file
+				print('[Networkbrowser] userinfo found from ', self.sharecache_file)
 				self.openMountEdit(sel[0])
 			else:
 				self.session.openWithCallback(self.passwordQuestion, MessageBox, (_("Do you want to enter a username and password for this host?\n")))
