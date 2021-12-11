@@ -682,7 +682,7 @@ class SHOUTcastWidget(Screen):
 	def callbackPLS(self, result):
 		self["headertext"].setText(self.headerTextString)
 		found = False
-		parts = str.split(result, "\n")
+		parts = str.split(result.decode(), "\n")
 		for lines in parts:
 			if lines.find("File1=") != -1:
 				line = str.split(lines, "File1=")
@@ -923,7 +923,7 @@ class SHOUTcastWidget(Screen):
 			sendUrlCommand(self.currentGoogle, None, 10).addCallback(self.GoogleImageCallback).addErrback(self.Error)
 			return
 		self.currentGoogle = None
-		r = re.findall('murl&quot;:&quot;(http.*?)&quot', result, re.S | re.I)
+		r = re.findall('murl&quot;:&quot;(http.*?)&quot', result.decode(), re.S|re.I)
 		if r:
 			url = r[nr]
 			# FIXME loop
