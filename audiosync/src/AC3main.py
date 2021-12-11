@@ -1,5 +1,5 @@
-from AC3utils import AC3, PCM, AC3GLOB, PCMGLOB, AC3PCM, SKIN
-from AC3delay import AC3delay
+from Plugins.Extensions.AudioSync.AC3utils import AC3, PCM, AC3GLOB, PCMGLOB, AC3PCM, SKIN
+from Plugins.Extensions.AudioSync.AC3delay import AC3delay
 from enigma import ePoint
 from Components.ActionMap import HelpableNumberActionMap
 from Components.Label import Label, MultiColorLabel
@@ -11,8 +11,8 @@ from Screens.ChoiceBox import ChoiceBox
 from Screens.HelpMenu import HelpableScreen
 from Screens.MessageBox import MessageBox
 from Screens.Screen import Screen
-from __init__ import _
-from plugin import getServiceDict, saveServiceDict, audio_delay
+from Plugins.Extensions.AudioSync.__init__ import _
+from Plugins.Extensions.AudioSync.plugin import getServiceDict, saveServiceDict, audio_delay
 
 
 class AC3LipSync(Screen, HelpableScreen, MovableScreen):

@@ -10,7 +10,7 @@ from Components.config import config, ConfigIP, NoSave, ConfigText, ConfigEnable
 from Components.ConfigList import ConfigListScreen
 from Components.Pixmap import Pixmap
 from Components.ActionMap import ActionMap, NumberActionMap
-from AutoMount import iAutoMount, AutoMount
+from Plugins.SystemPlugins.NetworkBrowser.AutoMount import iAutoMount, AutoMount
 from Components.Sources.Boolean import Boolean
 
 # helper function to convert ips from a sring to a list of ints

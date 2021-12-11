@@ -1,5 +1,5 @@
 # for localized messages
-from __init__ import _
+from Plugins.Extensions.AudioSync.__init__ import _
 from Components.config import config, ConfigSubsection, ConfigInteger, ConfigSubList, ConfigSelection
 from Plugins.Plugin import PluginDescriptor
 from enigma import iPlayableService, eTimer
@@ -7,9 +7,9 @@ from Screens import Standby
 from Screens.Screen import Screen
 from Components.ServiceEventTracker import ServiceEventTracker
 from Components.SystemInfo import SystemInfo
-from AC3utils import AC3, PCM, AC3GLOB, PCMGLOB, AC3PCM
+from Plugins.Extensions.AudioSync.AC3utils import AC3, PCM, AC3GLOB, PCMGLOB, AC3PCM
 import NavigationInstance
-import AC3setup
+import Plugins.Extensions.AudioSync.AC3setup
 import os
 
 config.plugins.AC3LipSync = ConfigSubsection()
