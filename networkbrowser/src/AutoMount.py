@@ -73,16 +73,16 @@ class AutoMount():
 				data = {'isMounted': False, 'active': False, 'ip': False, 'host': False, 'sharename': False, 'sharedir': False, 'username': False,
 							'password': False, 'mounttype': False, 'options': False, 'hdd_replacement': False}
 				try:
-					data['mounttype'] = 'nfs'.encode("UTF-8")
-					data['active'] = getValue(mount.findall("active"), False).encode("UTF-8")
+					data['mounttype'] = 'nfs'
+					data['active'] = getValue(mount.findall("active"), False)
 					if data["active"] == 'True' or data["active"] == True:
 						self.activeMountsCounter += 1
-					data['hdd_replacement'] = getValue(mount.findall("hdd_replacement"), "False").encode("UTF-8")
-					data['ip'] = getValue(mount.findall("ip"), "").encode("UTF-8")
-					data['host'] = getValue(mount.findall("host"), "").encode("UTF-8")
-					data['sharedir'] = getValue(mount.findall("sharedir"), "/media/").encode("UTF-8")
-					data['sharename'] = getValue(mount.findall("sharename"), "MEDIA").encode("UTF-8")
-					data['options'] = getValue(mount.findall("options"), "").encode("UTF-8")
+					data['hdd_replacement'] = getValue(mount.findall("hdd_replacement"), "False")
+					data['ip'] = getValue(mount.findall("ip"), "")
+					data['host'] = getValue(mount.findall("host"), "")
+					data['sharedir'] = getValue(mount.findall("sharedir"), "/media/")
+					data['sharename'] = getValue(mount.findall("sharename"), "MEDIA")
+					data['options'] = getValue(mount.findall("options"), "")
 					self.automounts[data['sharename']] = data
 				except Exception as e:
 					print("[MountManager] Error reading Mounts:", e)
@@ -93,18 +93,18 @@ class AutoMount():
 				data = {'isMounted': False, 'active': False, 'ip': False, 'host': False, 'sharename': False, 'sharedir': False, 'username': False,
 							'password': False, 'mounttype': False, 'options': False, 'hdd_replacement': False}
 				try:
-					data['mounttype'] = 'cifs'.encode("UTF-8")
-					data['active'] = getValue(mount.findall("active"), False).encode("UTF-8")
+					data['mounttype'] = 'cifs'
+					data['active'] = getValue(mount.findall("active"), False)
 					if data["active"] == 'True' or data["active"] == True:
 						self.activeMountsCounter += 1
-					data['hdd_replacement'] = getValue(mount.findall("hdd_replacement"), 'False').encode("UTF-8")
-					data['ip'] = getValue(mount.findall("ip"), '').encode("UTF-8")
-					data['host'] = getValue(mount.findall("host"), '').encode("UTF-8")
-					data['sharedir'] = getValue(mount.findall("sharedir"), '/media/').encode("UTF-8")
-					data['sharename'] = getValue(mount.findall("sharename"), 'MEDIA').encode("UTF-8")
-					data['options'] = getValue(mount.findall("options"), "").encode("UTF-8")
-					data['username'] = getValue(mount.findall("username"), 'guest').encode("UTF-8")
-					data['password'] = getValue(mount.findall("password"), 'guest').encode("UTF-8")
+					data['hdd_replacement'] = getValue(mount.findall("hdd_replacement"), "False")
+					data['ip'] = getValue(mount.findall("ip"), "")
+					data['host'] = getValue(mount.findall("host"), "")
+					data['sharedir'] = getValue(mount.findall("sharedir"), "/media/")
+					data['sharename'] = getValue(mount.findall("sharename"), "MEDIA")
+					data['options'] = getValue(mount.findall("options"), "")
+					data['username'] = getValue(mount.findall("username"), "guest")
+					data['password'] = getValue(mount.findall("password"), "")
 					self.automounts[data['sharename']] = data
 				except Exception as e:
 					print("[MountManager] Error reading Mounts:", e)
@@ -238,8 +238,7 @@ class AutoMount():
 					options = self.sanitizeOptions(data['options'], data['mounttype'])
 
 					# construct the NFS mount command, and mount it
-					tmpcmd = "mount -t nfs -o %s '%s' '%s'" % (options, host + ':/' + data['sharedir'], path)
-					command = tmpcmd.encode("UTF-8")
+					command = "mount -t nfs -o %s '%s' '%s'" % (options, host + ':/' + data['sharedir'], path)
 					print("[AutoMount.py] NFS MOUNT-CMD--->", command)
 
 				# CIFS
@@ -251,8 +250,7 @@ class AutoMount():
 					if "vers=" in options or "sec=" in options:
 
 						# construct the CIFS mount command
-						tmpcmd = "mount -t cifs -o %s '//%s/%s' '%s'" % (options, host, data['sharedir'], path)
-						command = tmpcmd.encode("UTF-8")
+						command = "mount -t cifs -o %s '//%s/%s' '%s'" % (options, host, data['sharedir'], path)
 						print("[AutoMount.py] CIFS MOUNT-CMD--->", command)
 
 					else:
@@ -263,8 +261,7 @@ class AutoMount():
 								secver += ','
 
 							# construct the CIFS mount command
-							tmpcmd = "mount -t cifs -o %s '//%s/%s' '%s'" % (secver + options, host, data['sharedir'], path)
-							command = tmpcmd.encode("UTF-8")
+							command = "mount -t cifs -o %s '//%s/%s' '%s'" % (secver + options, host, data['sharedir'], path)
 							print("[AutoMount.py] CIFS AUTODETECT MOUNTCMD--->", command)
 
 							# attempt to mount it, don't use the background console here, we need to wait
