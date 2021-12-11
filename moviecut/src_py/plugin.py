@@ -1,5 +1,5 @@
 from Plugins.Plugin import PluginDescriptor
-from __init__ import _
+from Plugins.Extensions.MovieCut.__init__ import _
 import os
 
 

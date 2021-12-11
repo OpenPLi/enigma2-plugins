@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # for localized messages
-from __init__ import _
+from Plugins.SystemPlugins.NetworkBrowser.__init__ import _
 
 from Plugins.Plugin import PluginDescriptor
 from Components.Network import iNetwork
@@ -11,12 +11,11 @@ plugin_path = ""
 
 
 def NetworkBrowserMain(session, iface=None, **kwargs):
-	from NetworkBrowser import NetworkBrowser
-	session.open(NetworkBrowser, iface, plugin_path)
-
+	from Plugins.SystemPlugins.NetworkBrowser.NetworkBrowser import NetworkBrowser
+	session.open(NetworkBrowser,iface, plugin_path)
 
 def MountManagerMain(session, iface=None, **kwargs):
-	from MountManager import AutoMountManager
+	from Plugins.SystemPlugins.NetworkBrowser.MountManager import AutoMountManager
 	session.open(AutoMountManager, iface, plugin_path)
 
 
@@ -33,7 +32,7 @@ def MountManagerCallFunction(iface):
 
 
 def RemountMain(session, iface=None, **kwargs):
-	from AutoMount import iAutoMount
+	from Plugins.SystemPlugins.NetworkBrowser.AutoMount import iAutoMount
 	iAutoMount.getAutoMountPoints()
 
 
