@@ -251,7 +251,7 @@ def autostart(reason, session=None, **kwargs):
 					try:
 						os.system("cp -f %s %s" % (restore_backup, config.misc.epgcache_filename.value))
 						if os.path.exists(config.misc.epgcache_filename.value):
-							os.chmod("%s" % (config.misc.epgcache_filename.value), 0644)
+							os.chmod("%s" % (config.misc.epgcache_filename.value), 0o644)
 					except:
 						pass
 			if os.path.exists("/usr/lib/enigma2/python/Plugins/Extensions/OpenWebif/pluginshook.src"):

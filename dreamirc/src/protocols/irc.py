@@ -52,11 +52,11 @@ import socket
 
 from os import path
 
-NUL = chr(0)
-CR = chr(015)
-NL = chr(012)
+NUL = chr(0o0)
+CR = chr(0o15)
+NL = chr(0o12)
 LF = NL
-SPC = chr(040)
+SPC = chr(0o40)
 
 CHANNEL_PREFIXES = '&#!+'
 
@@ -1899,7 +1899,7 @@ class DccFileReceive(DccFileReceiveBasic):
 
 # CTCP constants and helper functions
 
-X_DELIM = chr(001)
+X_DELIM = chr(0o1)
 
 
 def ctcpExtract(message):
@@ -1946,7 +1946,7 @@ def ctcpExtract(message):
 # CTCP escaping
 
 
-M_QUOTE = chr(020)
+M_QUOTE = chr(0o20)
 
 mQuoteTable = {
     NUL: M_QUOTE + '0',
