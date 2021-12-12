@@ -412,7 +412,8 @@ class FilebrowserScreenInfo(Screen):
                 <widget name="size" position="15,65" size="1890,30" font="Regular;26"/>
         </screen>"""
 
-        def __init__(self, session, (filename, info)):
+        def __init__(self, session, filename_info):
+                filename, info = filename_info
                 Screen.__init__(self, session)
                 self.session = session
                 self.path = filename
