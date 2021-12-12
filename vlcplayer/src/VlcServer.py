@@ -207,7 +207,7 @@ class VlcServer:
 		except:
 			resp = None
 		if resp is None:
-			raise IOError, "No response from Server"
+			raise IOError("No response from Server")
 		xml = parse(resp)
 		resp.close()
 		return xml
