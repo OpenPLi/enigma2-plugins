@@ -674,8 +674,8 @@ class DVDBackupScreen(Screen, ConfigListScreen):
 
 
 def main(session, **kwargs):
+	global SESSION
 	if SESSION is None:
-		global SESSION
 		SESSION = session
 	if dvdbackup.working:
 		session.open(DVDBackupProgress)
@@ -687,8 +687,8 @@ def main(session, **kwargs):
 
 
 def filescan_open(list, session, **kwargs):
+	global SESSION
 	if SESSION is None:
-		global SESSION
 		SESSION = session
 	if len(list) == 1 and list[0].mimetype == "video/x-dvd":
 		file_path = isCDdevice()
