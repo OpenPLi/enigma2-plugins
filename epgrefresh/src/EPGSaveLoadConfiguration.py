@@ -148,7 +148,7 @@ class EPGSaveLoadConfiguration(Screen, ConfigListScreen):
 			if os.path.exists(restore_backup):
 				try:
 					os.system("cp -f %s %s" % (restore_backup, config.misc.epgcache_filename.value))
-					os.chmod("%s" % (config.misc.epgcache_filename.value), 0644)
+					os.chmod("%s" % (config.misc.epgcache_filename.value), 0o644)
 					self.setEpgLoad(True)
 					self.setEpgSave(True)
 					if os.path.exists(config.misc.epgcache_filename.value):
@@ -215,7 +215,7 @@ class EPGSaveLoadConfiguration(Screen, ConfigListScreen):
 				if os.path.exists(config.misc.epgcache_filename.value):
 					try:
 						os.system("cp -f %s %s" % (config.misc.epgcache_filename.value, restore_backup))
-						os.chmod("%s" % (restore_backup), 0644)
+						os.chmod("%s" % (restore_backup), 0o644)
 					except:
 						pass
 
@@ -236,7 +236,7 @@ class EPGSaveLoadConfiguration(Screen, ConfigListScreen):
 				if os.path.exists(config.misc.epgcache_filename.value):
 					try:
 						os.system("cp -f %s %s" % (config.misc.epgcache_filename.value, restore_backup))
-						os.chmod("%s" % (restore_backup), 0644)
+						os.chmod("%s" % (restore_backup), 0o644)
 					except:
 						pass
 
@@ -286,7 +286,7 @@ class EPGSaveLoadConfiguration(Screen, ConfigListScreen):
 				if os.path.exists(config.misc.epgcache_filename.value):
 					try:
 						os.system("cp -f %s %s" % (config.misc.epgcache_filename.value, restore_backup))
-						os.chmod("%s" % (restore_backup), 0644)
+						os.chmod("%s" % (restore_backup), 0o644)
 					except:
 						pass
 
@@ -388,6 +388,6 @@ class ManualEPGlist(Screen):
 			if os.path.exists(config.misc.epgcache_filename.value):
 				try:
 					os.system("cp -f %s %s" % (config.misc.epgcache_filename.value, restore_backup))
-					os.chmod("%s" % (restore_backup), 0644)
+					os.chmod("%s" % (restore_backup), 0o644)
 				except:
 					pass

@@ -284,12 +284,12 @@ class LogoManagerScreen(Screen):
 				cmd = "echo -e '#!/bin/sh\n\n[ -f /etc/enigma2/switchoff.mvi ] && /usr/bin/showiframe /etc/enigma2/switchoff.mvi' >> /etc/rc0.d/K01bootlogo-switchoff"
 				os.system(cmd)
 				if fileExists("/etc/rc0.d/K01bootlogo-switchoff"):
-					os.chmod("/etc/rc0.d/K01bootlogo-switchoff", 0755)
+					os.chmod("/etc/rc0.d/K01bootlogo-switchoff", 0o755)
 		if target[0] == _("reboot") and not fileExists("/etc/rc6.d/K01bootlogo-reboot"):
 				cmd = "echo -e '#!/bin/sh\n\n[ -f /etc/enigma2/reboot.mvi ] && /usr/bin/showiframe /etc/enigma2/reboot.mvi' >> /etc/rc6.d/K01bootlogo-reboot"
 				os.system(cmd)
 				if fileExists("/etc/rc6.d/K01bootlogo-reboot"):
-					os.chmod("/etc/rc6.d/K01bootlogo-reboot", 0755)
+					os.chmod("/etc/rc6.d/K01bootlogo-reboot", 0o755)
 		os.system("cp '%s' '%s'" % (sourcefile, target[1]))
 
 
