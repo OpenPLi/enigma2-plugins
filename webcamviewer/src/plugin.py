@@ -264,7 +264,7 @@ class PictureViewer(Screen):
 		self.onLayoutFinish.append(self.updateInfoPanel)
 
 	def KeyGreen(self):
-		if self.currList is "filelist":
+		if self.currList == "filelist":
 			# adding all files in current dir to slideshowlist
 			dirname = self["menu"].getCurrentDir()
 			if os.path.isdir(dirname):
@@ -293,7 +293,7 @@ class PictureViewer(Screen):
 				print("[" + myname + "] OSError:", e)
 
 	def KeyRed(self):
-		if self.currList is "filelist":
+		if self.currList == "filelist":
 			#do slideshow
 			self.hide()
 			x = Slideshow(self.session, self.show)
@@ -352,7 +352,7 @@ class PictureViewer(Screen):
 				print("[" + myname + "] error:", e)
 
 	def KeyYellow(self):
-		if self.currList is "filelist":
+		if self.currList == "filelist":
 			# add picture to list
 			fullfile = self["menu"].getSelection()[0]
 			if os.path.isfile(fullfile):
@@ -366,7 +366,7 @@ class PictureViewer(Screen):
 				self["slist"].l.setList(self.slideshowfiles)
 
 	def switchList(self):
-		if self.currList is "filelist":
+		if self.currList == "filelist":
 			# Slideshow activieren
 			self.filelist.selectionEnabled(0)
 			self.slideshowlist.selectionEnabled(1)
@@ -386,7 +386,7 @@ class PictureViewer(Screen):
 			self.currList = "filelist"
 
 	def go(self):
-		if self.currList is "filelist":
+		if self.currList == "filelist":
 			selection = self["menu"].getSelection()
 			if self.filelist.canDescent():
 				self.setTitle(selection[0])
@@ -404,35 +404,35 @@ class PictureViewer(Screen):
 			self.updateInfoPanel()
 
 	def up(self):
-		 if self.currList is "filelist":
+		 if self.currList == "filelist":
 			 self.filelist.up()
 			 self.updateInfoPanel()
 		 else:
 			 self.slideshowlist.up()
 
 	def leftUp(self):
-		 if self.currList is "filelist":
+		 if self.currList == "filelist":
 			 self.filelist.pageUp()
 			 self.updateInfoPanel()
 		 else:
 			 self.slideshowlist.pageUp()
 
 	def rightUp(self):
-		if self.currList is "filelist":
+		if self.currList == "filelist":
 			 self.filelist.pageDown()
 			 self.updateInfoPanel()
 		else:
 			 self.slideshowlist.pageDown()
 
 	def down(self):
-		 if self.currList is "filelist":
+		 if self.currList == "filelist":
 			 self.filelist.down()
 			 self.updateInfoPanel()
 		 else:
 			 self.slideshowlist.down()
 
 	def updateInfoPanel(self):
-		if self.currList is "filelist":
+		if self.currList == "filelist":
 			selectedfile = self["menu"].getSelection()[0]
 		else:
 			selectedfile = self["slist"].l.getCurrentSelection()[1]

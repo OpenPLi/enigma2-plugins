@@ -57,37 +57,37 @@ class Transmission(Screen):
 				os.system("update-rc.d -f transmission-daemon remove && sleep 1 && rm -rf /etc/init.d/transmission-daemon")
 			cmd = "cp /usr/lib/enigma2/python/Plugins/Extensions/Transmission/transmission.sh %s && chmod 755 %s" % (transmission_sh, transmission_sh)
 			os.system(cmd)
-			if returnValue is "info":
+			if returnValue == "info":
 				self.session.open(Console, _("Information transmission download"), ["chmod 755 %s && %s" % (transinfo_sh, transinfo_sh)])
-			elif returnValue is "pause":
+			elif returnValue == "pause":
 				self.session.open(Console, _("Pause all downloads"), ["chmod 755 %s && %s pause" % (pause_sh, pause_sh)])
-			elif returnValue is "unpause":
+			elif returnValue == "unpause":
 				self.session.open(Console, _("Unpause all downloads"), ["chmod 755 %s && %s unpause" % (pause_sh, pause_sh)])
-			elif returnValue is "start":
+			elif returnValue == "start":
 				self.session.open(Console, _("Start transmission"), ["%s start" % transmission_sh])
-			elif returnValue is "stop":
+			elif returnValue == "stop":
 				self.session.open(Console, _("Stop transmission"), ["%s stop" % transmission_sh])
-			elif returnValue is "restart":
+			elif returnValue == "restart":
 				self.session.open(Console, _("Restart transmission"), ["%s restart" % transmission_sh])
-			elif returnValue is "enable":
+			elif returnValue == "enable":
 				self.session.open(Console, _("Enable transmission autostart"), ["%s enable" % transmission_sh])
-			elif returnValue is "disable":
+			elif returnValue == "disable":
 				self.session.open(Console, _("Disable transmission autostart"), ["%s disable" % transmission_sh])
-			elif returnValue is "on":
+			elif returnValue == "on":
 				self.session.open(Console, _("Enable auto queue downloads"), ["chmod 755 %s && %s on" % (swap_sh, swap_sh)])
-			elif returnValue is "off":
+			elif returnValue == "off":
 				self.session.open(Console, _("Disable auto queue downloads"), ["chmod 755 %s && %s off" % (swap_sh, swap_sh)])
-			elif returnValue is "enabled":
+			elif returnValue == "enabled":
 				self.session.open(Console, _("Enabled SWAP when start transmission"), ["chmod 755 %s && %s enabled" % (swap_sh, swap_sh)])
-			elif returnValue is "create":
+			elif returnValue == "create":
 				self.session.open(Console, _("Create SWAP '/media/hdd/swapfile'"), ["chmod 755 %s && %s create" % (swap_sh, swap_sh)])
-			elif returnValue is "disabled":
+			elif returnValue == "disabled":
 				self.session.open(Console, _("Not enabled SWAP when start transmission"), ["chmod 755 %s && %s disabled" % (swap_sh, swap_sh)])
-			elif returnValue is "stop_trans":
+			elif returnValue == "stop_trans":
 				self.session.open(Console, _("Stop transmission after downloads (only queue works)"), ["chmod 755 %s && %s stop_trans" % (swap_sh, swap_sh)])
-			elif returnValue is "dont_stop_trans":
+			elif returnValue == "dont_stop_trans":
 				self.session.open(Console, _("Don't stop transmission after downloads (only queue works)"), ["chmod 755 %s && %s dont_stop_trans" % (swap_sh, swap_sh)])
-			elif returnValue is "about_transmission":
+			elif returnValue == "about_transmission":
 				if fileExists("/usr/bin/transmission-daemon"):
 					self.session.open(Console, _("About transmission version"), ["transmission-daemon -V \n", "echo Default login:root/password:root"])
 				else:
