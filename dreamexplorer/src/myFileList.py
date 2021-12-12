@@ -312,7 +312,7 @@ class FileList(MenuList):
 				txt = info.getName(serviceref)
 				description = info.getInfoString(serviceref, iServiceInformation.sDescription)
 				if not txt.endswith(".ts"):
-					if description is not "":
+					if description != "":
 						return txt + ' - ' + description
 					else:
 						return txt

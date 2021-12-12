@@ -104,7 +104,7 @@ class DynDNSService:
 		print("[DynDNS] IP change, setting new one", self.lastip)
 		try:
 			url = "http://members.dyndns.org/nic/update?system=dyndns&hostname=%s&myip=%s&wildcard=ON&offline=NO" % (config.plugins.DynDNS.hostname.value, self.lastip)
-			if self.getURL(url).find("good") is not -1:
+			if self.getURL(url).find("good") != -1:
 				print("[DynDNS] ip changed")
 		except Exception as e:
 			print("[DynDNS] ip was not changed", e)
