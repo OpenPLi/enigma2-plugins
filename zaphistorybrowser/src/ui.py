@@ -33,7 +33,7 @@ def addToHistory(instance, ref):
 		tmp.append(ref)
 		try:
 			del instance.history[instance.history_pos + 1:]
-		except Exception, e:
+		except Exception as e:
 			pass
 		instance.history.append(tmp)
 		hlen = len(instance.history)
