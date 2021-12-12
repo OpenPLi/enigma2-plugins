@@ -111,12 +111,12 @@ class DynDNSService:
 
 	def getURL(self, url):
 		request = Request(url)
-   		base64string = encodestring('%s:%s' % (config.plugins.DynDNS.user.value, config.plugins.DynDNS.password.value))[:-1]
-   		request.add_header("Authorization", "Basic %s" % base64string)
-   		htmlFile = urlopen(request)
-   		htmlData = htmlFile.read()
-   		htmlFile.close()
-   		return htmlData
+		base64string = encodestring('%s:%s' % (config.plugins.DynDNS.user.value, config.plugins.DynDNS.password.value))[:-1]
+		request.add_header("Authorization", "Basic %s" % base64string)
+		htmlFile = urlopen(request)
+		htmlData = htmlFile.read()
+		htmlFile.close()
+		return htmlData
 
 
 def onPluginStart(session, **kwargs):

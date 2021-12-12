@@ -425,7 +425,7 @@ class PermanentClockMenu(Screen):
 		self["list"] = MenuList([])
 		self.setTitle(_("Permanent Clock Setup"))
 		self["actions"] = ActionMap(["OkCancelActions"], {"ok": self.okClicked, "cancel": self.close}, -1)
- 		self.onLayoutFinish.append(self.showMenu)
+		self.onLayoutFinish.append(self.showMenu)
 
 	def showMenu(self):
 		list = []
