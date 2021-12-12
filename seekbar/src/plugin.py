@@ -311,7 +311,7 @@ MoviePlayer.seekFwdManual = seekbar
 MoviePlayer.seekBackManual = seekbarBack
 InfoBar.seekFwdManual = seekbar
 InfoBar.seekBackManual = seekbarBack
-if fileExists("/usr/lib/enigma2/python/Screens/DVD.pyo"):
+if fileExists("/usr/lib/enigma2/python/Screens/DVD.py"):
 	try:
 		from Screens.DVD import DVDPlayer
 	except:
@@ -320,7 +320,7 @@ if fileExists("/usr/lib/enigma2/python/Screens/DVD.pyo"):
 		DVDPlayer.seekFwdManual = seekbar
 		DVDPlayer.seekBackManual = seekbarBack
 
-dvdPlayer = "%s%s" % (resolveFilename(SCOPE_PLUGINS), "Extensions/DVDPlayer/plugin.pyo")
+dvdPlayer = "%s%s" % (resolveFilename(SCOPE_PLUGINS), "Extensions/DVDPlayer/plugin.py")
 dvdPlayerKeymap = "%s%s" % (resolveFilename(SCOPE_PLUGINS), "Extensions/DVDPlayer/keymap.xml")
 if fileExists(dvdPlayer) and fileExists(dvdPlayerKeymap):
 	try:
@@ -330,7 +330,7 @@ if fileExists(dvdPlayer) and fileExists(dvdPlayerKeymap):
 	else:
 		DVDPlayer2.seekFwdManual = seekbar
 		DVDPlayer2.seekBackManual = seekbarBack
-mediaplayer = '%s%s' % (resolveFilename(SCOPE_PLUGINS), 'Extensions/MediaPlayer/plugin.pyo')
+mediaplayer = '%s%s' % (resolveFilename(SCOPE_PLUGINS), 'Extensions/MediaPlayer/plugin.py')
 if fileExists(mediaplayer):
 	try:
 		from Plugins.Extensions.MediaPlayer.plugin import MediaPlayer
@@ -339,8 +339,8 @@ if fileExists(mediaplayer):
 	else:
 		MediaPlayer.seekFwdManual = seekbar
 		MediaPlayer.seekBackManual = seekbarBack
-youTubePlayer = '%s%s' % (resolveFilename(SCOPE_PLUGINS), 'Extensions/YouTube/plugin.pyo')
-youTubePlayerUi = '%s%s' % (resolveFilename(SCOPE_PLUGINS), 'Extensions/YouTube/YouTubeUi.pyo')
+youTubePlayer = '%s%s' % (resolveFilename(SCOPE_PLUGINS), 'Extensions/YouTube/plugin.py')
+youTubePlayerUi = '%s%s' % (resolveFilename(SCOPE_PLUGINS), 'Extensions/YouTube/YouTubeUi.py')
 if fileExists(youTubePlayer) and fileExists(youTubePlayerUi):
 	try:
 		from Plugins.Extensions.YouTube.YouTubeUi import YouTubePlayer
@@ -349,7 +349,7 @@ if fileExists(youTubePlayer) and fileExists(youTubePlayerUi):
 	else:
 		YouTubePlayer.seekFwdManual = seekbar
 		YouTubePlayer.seekBackManual = seekbarBack
-tmbd = '%s%s' % (resolveFilename(SCOPE_PLUGINS), 'Extensions/TMBD/plugin.pyo')
+tmbd = '%s%s' % (resolveFilename(SCOPE_PLUGINS), 'Extensions/TMBD/plugin.py')
 if fileExists(tmbd):
 	try:
 		from Plugins.Extensions.TMBD.tmbdYTTrailer import tmbdTrailerPlayer
@@ -358,7 +358,7 @@ if fileExists(tmbd):
 	else:
 		tmbdTrailerPlayer.seekFwdManual = seekbar
 		tmbdTrailerPlayer.seekBackManual = seekbarBack
-nStreamVODPlayer = '%s%s' % (resolveFilename(SCOPE_PLUGINS), 'Extensions/nStreamVOD/plugin.pyo')
+nStreamVODPlayer = '%s%s' % (resolveFilename(SCOPE_PLUGINS), 'Extensions/nStreamVOD/plugin.py')
 if fileExists(nStreamVODPlayer):
 	try:
 		from Plugins.Extensions.nStreamVOD.plugin import nVODplayer
@@ -367,7 +367,7 @@ if fileExists(nStreamVODPlayer):
 	else:
 		nVODplayer.seekFwdManual = seekbar
 		nVODplayer.seekBackManual = seekbarBack
-yampMusicPlayer = '%s%s' % (resolveFilename(SCOPE_PLUGINS), 'Extensions/YampMusicPlayer/plugin.pyo')
+yampMusicPlayer = '%s%s' % (resolveFilename(SCOPE_PLUGINS), 'Extensions/YampMusicPlayer/plugin.py')
 if fileExists(yampMusicPlayer):
 	try:
 		from Plugins.Extensions.YampMusicPlayer.Yamp import YampScreen
@@ -376,7 +376,7 @@ if fileExists(yampMusicPlayer):
 	else:
 		YampScreen.seekFwdManual = seekbar
 		YampScreen.seekBackManual = seekbarBack
-seasondreamPlayer = '%s%s' % (resolveFilename(SCOPE_PLUGINS), 'Extensions/Seasondream/plugin.pyo')
+seasondreamPlayer = '%s%s' % (resolveFilename(SCOPE_PLUGINS), 'Extensions/Seasondream/plugin.py')
 if fileExists(seasondreamPlayer):
 	try:
 		from Plugins.Extensions.Seasondream.Player import Player
@@ -385,7 +385,7 @@ if fileExists(seasondreamPlayer):
 	else:
 		Player.seekFwdManual = seekbar
 		Player.seekBackManual = seekbarBack
-cutlistEditor = '%s%s' % (resolveFilename(SCOPE_PLUGINS), 'Extensions/CutListEditor/plugin.pyo')
+cutlistEditor = '%s%s' % (resolveFilename(SCOPE_PLUGINS), 'Extensions/CutListEditor/plugin.py')
 if fileExists(cutlistEditor):
 	try:
 		from Plugins.Extensions.CutListEditor.ui import CutListEditor

@@ -592,7 +592,7 @@ def EINcallbackFunc(answer):
 		if epglist:
 			EINsession.open(EventViewSimple, epglist[0], ServiceReference(ref), InfoBar_instance.eventViewCallback)
 	elif answer == "merlinepg":
-		if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/MerlinEPG/plugin.pyo"):
+		if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/MerlinEPG/plugin.py"):
 			from Plugins.Extensions.MerlinEPG.plugin import Merlin_PGII, Merlin_PGd
 			if config.plugins.MerlinEPG.Columns.value:
 				EINsession.open(Merlin_PGII, InfoBar_instance.servicelist)
@@ -601,13 +601,13 @@ def EINcallbackFunc(answer):
 		else:
 			EINsession.open(MessageBox, text=_('MerlinEPG is not installed!'), type=MessageBox.TYPE_INFO)
 	elif answer == "autotimer":
-		if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/AutoTimer/AutoTimerEditor.pyo"):
+		if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/AutoTimer/AutoTimerEditor.py"):
 			from Plugins.Extensions.AutoTimer.plugin import main as AutoTimerView
 			AutoTimerView(EINsession)
 		else:
 			EINsession.open(MessageBox, text=_('Autotimer is not installed!'), type=MessageBox.TYPE_INFO)
 	elif answer == "epgsearch":
-		if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/EPGSearch/plugin.pyo"):
+		if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/EPGSearch/plugin.py"):
 			from Plugins.Extensions.EPGSearch.EPGSearch import EPGSearch
 			service = EINsession.nav.getCurrentService()
 			info = service.info()
@@ -620,7 +620,7 @@ def EINcallbackFunc(answer):
 	elif answer == "channelinfo":
 		EINsession.open(ServiceInfo, InfoBar_instance.servicelist.getCurrentSelection())
 	elif answer == "imdbinfo":
-		if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/IMDb/plugin.pyo"):
+		if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/IMDb/plugin.py"):
 			from Plugins.Extensions.IMDb.plugin import IMDB
 			service = EINsession.nav.getCurrentService()
 			info = service.info()
@@ -631,31 +631,31 @@ def EINcallbackFunc(answer):
 		else:
 			EINsession.open(MessageBox, text=_('IMDB is not installed!'), type=MessageBox.TYPE_INFO)
 	elif answer == "graphepg":
-		if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/GraphMultiEPG/plugin.pyo"):
+		if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/GraphMultiEPG/plugin.py"):
 			from Plugins.Extensions.GraphMultiEPG.plugin import main as gmepgmain
 			gmepgmain(EINsession, InfoBar_instance.servicelist)
 		else:
 			EINsession.open(MessageBox, text=_('GraphMultiEPG is not installed!'), type=MessageBox.TYPE_INFO)
 	elif answer == "primetime":
-		if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/PrimeTimeManager/plugin.pyo"):
+		if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/PrimeTimeManager/plugin.py"):
 			from Plugins.Extensions.PrimeTimeManager.plugin import main as ptmanmain
 			ptmanmain(EINsession)
 		else:
 			EINsession.open(MessageBox, text=_('Prime Time Manager is not installed!'), type=MessageBox.TYPE_INFO)
 	elif answer == "epgrefresh":
-		if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/EPGRefresh/plugin.pyo"):
+		if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/EPGRefresh/plugin.py"):
 			from Plugins.Extensions.EPGRefresh.plugin import main as epgrefmain
 			epgrefmain(EINsession)
 		else:
 			EINsession.open(MessageBox, text=_('EPGRefresh is not installed!'), type=MessageBox.TYPE_INFO)
 	elif answer == "cooltv":
-		if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/CoolTVGuide/plugin.pyo"):
+		if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/CoolTVGuide/plugin.py"):
 			from Plugins.Extensions.CoolTVGuide.plugin import main as ctvmain
 			ctvmain(EINsession, InfoBar_instance.servicelist)
 		else:
 			EINsession.open(MessageBox, text=_('CoolTVGuide is not installed!'), type=MessageBox.TYPE_INFO)
 	elif answer == "sysinfo":
-		if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/Sherlock/plugin.pyo"):
+		if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/Sherlock/plugin.py"):
 			from Plugins.Extensions.Sherlock.plugin import SherlockII
 			EINsession.open(SherlockII)
 		else:
@@ -979,7 +979,7 @@ class EasyPG(EPGSelection, Screen):
 			self.infoKeyPressed()
 
 	def newRedFunc(self):
-		if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/EPGSearch/plugin.pyo"):
+		if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/EPGSearch/plugin.py"):
 			from Plugins.Extensions.EPGSearch.EPGSearch import EPGSearch
 			epg_event = self["list"].getCurrent()[0]
 			if epg_event:
