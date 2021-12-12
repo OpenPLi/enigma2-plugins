@@ -179,7 +179,7 @@ class Slideshow:
 	def nextSlideshowItem(self, prev=False):
 		currentslideshowitem = self.currentslideshowitem
 		if prev:
-   			currentslideshowitem -= 2
+			currentslideshowitem -= 2
 		if currentslideshowitem < 0:
 			currentslideshowitem = -1
 		if currentslideshowitem is not (len(self.filelist) - 1):

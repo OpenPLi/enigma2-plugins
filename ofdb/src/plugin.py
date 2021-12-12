@@ -274,8 +274,8 @@ class OFDB(Screen):
 	def channelSelectionClosed(self, ret=None):
 		if ret:
 			self.eventName = ret
- 			self.Page = 0
- 			self.resultlist = []
+			self.Page = 0
+			self.resultlist = []
 			self["menu"].hide()
 			self["ratinglabel"].show()
 			self["castlabel"].show()

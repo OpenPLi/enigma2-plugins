@@ -217,7 +217,7 @@ class AutomaticCleanupSetup(Screen, ConfigListScreen): # config
 
 
 class AutomaticCleanup:
-        checkInterval = 60 * 60 * 24 # check timerlist every 24 hours
+	checkInterval = 60 * 60 * 24 # check timerlist every 24 hours
 
 	def __init__(self, session):
 		self.session = session

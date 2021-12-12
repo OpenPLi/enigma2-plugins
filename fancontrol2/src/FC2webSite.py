@@ -15,7 +15,7 @@ import datetime
 class FC2web(resource.Resource):
 
 	title = "FanControl2 Webinterface"
- 	isLeaf = False
+	isLeaf = False
 
 	def render(self, req):
 		req.setHeader('Content-type', 'text/html')

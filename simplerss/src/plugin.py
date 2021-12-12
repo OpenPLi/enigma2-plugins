@@ -181,7 +181,7 @@ def filescan(**kwargs):
 
 
 def Plugins(**kwargs):
- 	lst = [
+	lst = [
 		PluginDescriptor(
 			name=_("RSS Reader"),
 			description=_("A simple to use RSS reader"),
@@ -195,7 +195,7 @@ def Plugins(**kwargs):
 			fnc=autostart,
 			needsRestart=False,
 		),
- 		PluginDescriptor(
+		PluginDescriptor(
 			where=PluginDescriptor.WHERE_FILESCAN,
 			fnc=filescan,
 			needsRestart=False,

@@ -555,7 +555,7 @@ class LastFMSaveScreen(Screen):
             {
              "ok": self.action_exit,
              "back": self.action_exit,
-			 "red": self.parent.action_startstop,
+             "red": self.parent.action_startstop,
              "green": self.parent.skipTrack,
              "yellow": self.parent.love,
              "blue": self.parent.banTrack,

@@ -437,7 +437,7 @@ def main(session, **kwargs):
 
 
 def Plugins(**kwargs):
- 	p = [
+	p = [
 		PluginDescriptor(name=_("Remote Timer"), description=_("Create timers on remote reciever enigma2"), where=PluginDescriptor.WHERE_PLUGINMENU, icon="remotetimer.png", fnc=main),
 		PluginDescriptor(where=PluginDescriptor.WHERE_SESSIONSTART, fnc=autostart)
 	]
