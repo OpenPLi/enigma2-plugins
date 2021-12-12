@@ -615,7 +615,7 @@ class EPGSearch(EPGSelection):
 		self.select = False
 		self.do_filter = None
 		self.eventid = None
-		self.isTMBD = fileExists("/usr/lib/enigma2/python/Plugins/Extensions/TMBD/plugin.pyo")
+		self.isTMBD = fileExists("/usr/lib/enigma2/python/Plugins/Extensions/TMBD/plugin.py")
 		# Partnerbox
 		if PartnerBoxIconsEnabled:
 			EPGSelection.PartnerboxInit(self, False)
@@ -763,7 +763,7 @@ class EPGSearch(EPGSelection):
 				pass
 
 	def runTMBD(self):
-		if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/TMBD/plugin.pyo"):
+		if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/TMBD/plugin.py"):
 			from Plugins.Extensions.TMBD.plugin import TMBD
 			cur = self["list"].getCurrent()
 			if cur[0] is not None:
@@ -818,7 +818,7 @@ class EPGSearch(EPGSelection):
 				(_("Save search as AutoTimer"), self.addAutoTimer),
 				(_("Export selected as AutoTimer"), self.exportAutoTimer),
 			))
-		if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/TMDb/plugin.pyo"):
+		if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/TMDb/plugin.py"):
 			options.append((_("Search for TMDb info"), self.opentmdb))
 		if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/IMDb/plugin.py"):
 			options.append((_("Open selected in IMDb"), self.openImdb))
