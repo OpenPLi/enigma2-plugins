@@ -345,7 +345,7 @@ class AutoRes(Screen):
 			height = info and info.getInfo(iServiceInformation.sVideoHeight)
 			width = info and info.getInfo(iServiceInformation.sVideoWidth)
 			framerate = info and info.getInfo(iServiceInformation.sFrameRate)
-			if not framerate:
+			if not framerate or framerate == -1:
 				try:
 					framerate = int(open("/proc/stb/vmpeg/0/framerate", "r").read())
 				except:
