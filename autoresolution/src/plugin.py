@@ -342,15 +342,34 @@ class AutoRes(Screen):
 			print "[AutoRes] determineContent"
 			service = self.session.nav.getCurrentService()
 			info = service and service.info()
-			height = info and info.getInfo(iServiceInformation.sVideoHeight)
-			width = info and info.getInfo(iServiceInformation.sVideoWidth)
-			framerate = info and info.getInfo(iServiceInformation.sFrameRate)
-			if not framerate:
+			if not info:
+				return
+			ref = self.session.nav.getCurrentlyPlayingServiceReference()
+			refstr = ref and ref.toString() or ""
+			video_stream_service = refstr and ("%3a//" in refstr or refstr.rsplit(":", 1)[1].startswith("/"))
+			height = info.getInfo(iServiceInformation.sVideoHeight)
+			if video_stream_service and (not height or height == -1):
+				try:
+					f = open("/proc/stb/vmpeg/0/yres", "r")
+					height = int(f.read(), 16)
+					f.close()
+				except:
+					pass
+			width = info.getInfo(iServiceInformation.sVideoWidth)
+			if video_stream_service and (not width or width == -1):
+				try:
+					f = open("/proc/stb/vmpeg/0/xres", "r")
+					width = int(f.read(), 16)
+					f.close()
+				except:
+					pass
+			framerate = info.getInfo(iServiceInformation.sFrameRate)
+			if video_stream_service and (not framerate or framerate == -1):
 				try:
 					framerate = int(open("/proc/stb/vmpeg/0/framerate", "r").read())
 				except:
 					pass
-			if info and height != -1 and width != -1 and framerate != -1:
+			if height != -1 and width != -1 and framerate != -1:
 				videocodec = codec_data.get(info.getInfo(iServiceInformation.sVideoType), "N/A")
 				frate = str(framerate)[:2] #fallback?
 				if framerate in frqdic:
@@ -358,11 +377,8 @@ class AutoRes(Screen):
 
 				prog = ("i", "p", "")[info.getInfo(iServiceInformation.sProgressive)]
 
-				if config.plugins.autoresolution.force_progressive_mode.value:
-					service = self.session.nav.getCurrentlyPlayingServiceReference()
-					str_service = service and service.toString() or ""
-					if ("%3a//" in str_service or str_service.rsplit(":", 1)[1].startswith("/")) and prog != "p":
-						prog = "p"
+				if config.plugins.autoresolution.force_progressive_mode.value and video_stream_service and prog != "p":
+					prog = "p"
 
 				if have_2160p and (height >= 2100 or width >= 3200): # 2160 content
 					if frate in ('24', '25', '30') and prog == 'p':
