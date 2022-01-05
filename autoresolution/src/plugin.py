@@ -198,6 +198,7 @@ class AutoRes(Screen):
 			self.setMode(default[0], False)
 		self.after_switch_delay = False
 		self.newService = False
+		self.video_stream_service = False
 		if "720p" in config.av.videorate:
 			config.av.videorate["720p"].addNotifier(self.__videorate_720p_changed, initial_call=False, immediate_feedback=False)
 		if "1080i" in config.av.videorate:
@@ -228,6 +229,7 @@ class AutoRes(Screen):
 
 	def __evEnd(self):
 		self.newService = False
+		self.video_stream_service = False
 
 	def __evUpdatedInfo(self):
 		if self.newService and config.plugins.autoresolution.mode.value == "manual":
@@ -346,9 +348,9 @@ class AutoRes(Screen):
 				return
 			ref = self.session.nav.getCurrentlyPlayingServiceReference()
 			refstr = ref and ref.toString() or ""
-			video_stream_service = refstr and ("%3a//" in refstr or refstr.rsplit(":", 1)[1].startswith("/"))
+			self.video_stream_service = refstr and ("%3a//" in refstr or refstr.rsplit(":", 1)[1].startswith("/"))
 			height = info.getInfo(iServiceInformation.sVideoHeight)
-			if video_stream_service and (not height or height == -1):
+			if self.video_stream_service and (not height or height == -1):
 				try:
 					f = open("/proc/stb/vmpeg/0/yres", "r")
 					height = int(f.read(), 16)
@@ -356,7 +358,7 @@ class AutoRes(Screen):
 				except:
 					pass
 			width = info.getInfo(iServiceInformation.sVideoWidth)
-			if video_stream_service and (not width or width == -1):
+			if self.video_stream_service and (not width or width == -1):
 				try:
 					f = open("/proc/stb/vmpeg/0/xres", "r")
 					width = int(f.read(), 16)
@@ -364,7 +366,7 @@ class AutoRes(Screen):
 				except:
 					pass
 			framerate = info.getInfo(iServiceInformation.sFrameRate)
-			if video_stream_service and (not framerate or framerate == -1):
+			if self.video_stream_service and (not framerate or framerate == -1):
 				try:
 					framerate = int(open("/proc/stb/vmpeg/0/framerate", "r").read())
 				except:
@@ -377,7 +379,7 @@ class AutoRes(Screen):
 
 				prog = ("i", "p", "")[info.getInfo(iServiceInformation.sProgressive)]
 
-				if config.plugins.autoresolution.force_progressive_mode.value and video_stream_service and prog != "p":
+				if config.plugins.autoresolution.force_progressive_mode.value and self.video_stream_service and prog != "p":
 					prog = "p"
 
 				if have_2160p and (height >= 2100 or width >= 3200): # 2160 content
@@ -452,6 +454,8 @@ class AutoRes(Screen):
 					v.write("%s\n" % mode)
 					v.close()
 					print "[AutoRes] switching to", mode
+					if self.video_stream_service:
+						self.doSeekRelative(2 * 9000)
 				except:
 					print "[AutoRes] failed switching to", mode
 				resolutionlabel["restxt"].setText(_("Videomode: %s") % mode)
@@ -490,11 +494,27 @@ class AutoRes(Screen):
 				resolutionlabel.show()
 			try:
 				video_hw.setMode(port, mode, rate)
+				if self.video_stream_service:
+					self.doSeekRelative(2 * 9000)
 			except:
 				print "[AutoRes] Videomode: failed switching to", mode
 				return
 		self.lastmode = mode
 
+	def getSeek(self):
+		service = self.session.nav.getCurrentService()
+		if service is None:
+			return None
+		seek = service.seek()
+		if seek is None or not seek.isCurrentlySeekable():
+			return None
+		return seek
+
+	def doSeekRelative(self, pts):
+		seekable = self.getSeek()
+		if seekable is None:
+			return
+ 		seekable.seekRelative(pts < 0 and -1 or 1, abs(pts))
 
 class ResolutionLabel(Screen):
 	height = getDesktop(0).size().height()
@@ -667,7 +687,7 @@ class AutoFrameRate(Screen):
 						self.framerate_change_is_locked = False
 					info = service and service.info()
 					framerate = info and info.getInfo(iServiceInformation.sFrameRate)
-					if not framerate:
+					if not framerate or framerate == -1:
 						try:
 							framerate = int(open("/proc/stb/vmpeg/0/framerate", "r").read())
 						except:
