@@ -1787,21 +1787,24 @@ def BlindscanCallback(close, answer):
 
 def BlindscanMain(session, close=None, **kwargs):
 	have_Support_Blindscan = False
-	try:
-		if 'Supports_Blind_Scan: yes' in open('/proc/bus/nim_sockets').read():
-			have_Support_Blindscan = True
-	except:
-		pass
-	if have_Support_Blindscan:
-		import dmmBlindScan
-		session.openWithCallback(boundFunction(BlindscanCallback, close), dmmBlindScan.DmmBlindscan)
-	elif BOX_MODEL == "dreambox":
-		menu = [(_("Another type"), "all"), (_("Dreambox type"), "dmm")]
+	if nimmanager.hasNimType("DVB-S"):
+		for n in nimmanager.nim_slots:
+			if n.canBeCompatible("DVB-S") and n.description.startswith("Si216"):
+				have_Support_Blindscan = True
+				break
+	if not have_Support_Blindscan:
+		try:
+			if 'Supports_Blind_Scan: yes' in open('/proc/bus/nim_sockets').read():
+				have_Support_Blindscan = True
+		except:
+			pass
+	if have_Support_Blindscan or BOX_MODEL == "dreambox":
+		menu = [(_("Utility from the manufacturer"), "manufacturer"), (_("Hardware type"), "hardware")]
 		def scanType(choice):
 			if choice:
-				if choice[1] == "all":
+				if choice[1] == "manufacturer":
 					session.openWithCallback(boundFunction(BlindscanCallback, close), Blindscan)
-				elif choice[1] == "dmm":
+				elif choice[1] == "hardware":
 					import dmmBlindScan
 					session.openWithCallback(boundFunction(BlindscanCallback, close), dmmBlindScan.DmmBlindscan)
 		session.openWithCallback(scanType, ChoiceBox, title=_("Select type for scan:"), list=menu)
