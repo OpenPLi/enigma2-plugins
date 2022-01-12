@@ -63,7 +63,7 @@ msgstr ""
 msgid "Accuracy (higher is better)"
 msgstr ""
 
-msgid "Another type"
+msgid "Utility from the manufacturer"
 msgstr ""
 
 msgid "Blind scan"
@@ -112,7 +112,7 @@ msgstr ""
 msgid "Disable sync with known transponders"
 msgstr ""
 
-msgid "Dreambox type"
+msgid "Hardware type"
 msgstr ""
 
 msgid "Exit"
