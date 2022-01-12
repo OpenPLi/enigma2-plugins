@@ -32,7 +32,7 @@ def write_cache(cache_file, cache_data):
 			os.mkdir(path)
 		except Exception as ex:
 			print("ERROR creating:", path, ex)
-	with open(cache_file, 'w') as fd:
+	with open(cache_file, 'wb') as fd:
 		pickle.dump(cache_data, fd, -1)
 
 
