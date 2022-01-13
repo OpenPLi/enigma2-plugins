@@ -65,8 +65,8 @@ msgstr "Поиск сервисов начнется АВТОМАТИЧЕСКИ.
 msgid "Accuracy (higher is better)"
 msgstr "Точность (чем выше, тем лучше)"
 
-msgid "Another type"
-msgstr "Другой тип"
+msgid "Utility from the manufacturer"
+msgstr "Утилита производителя"
 
 msgid "Blind scan"
 msgstr "Слепой поиск"
@@ -117,8 +117,8 @@ msgstr "Отключить удаление дубликатов"
 msgid "Disable sync with known transponders"
 msgstr "Отключить синхронизацию с известными транспондерами"
 
-msgid "Dreambox type"
-msgstr "тип Dreambox"
+msgid "Hardware type"
+msgstr "Аппаратный тип"
 
 msgid "Exit"
 msgstr "Выход"
