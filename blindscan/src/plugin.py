@@ -19,7 +19,7 @@ from Screens.Screen import Screen
 from Screens.ServiceScan import ServiceScan
 from Tools.BoundFunction import boundFunction
 from Tools.Directories import fileExists
-from filters import TransponderFiltering # imported from Blindscan folder
+from .filters import TransponderFiltering # imported from Blindscan folder
 #used for the XML file
 from time import strftime, time
 import os
@@ -1805,7 +1805,7 @@ def BlindscanMain(session, close=None, **kwargs):
 				if choice[1] == "manufacturer":
 					session.openWithCallback(boundFunction(BlindscanCallback, close), Blindscan)
 				elif choice[1] == "hardware":
-					import dmmBlindScan
+					from . import dmmBlindScan
 					session.openWithCallback(boundFunction(BlindscanCallback, close), dmmBlindScan.DmmBlindscan)
 		session.openWithCallback(scanType, ChoiceBox, title=_("Select type for scan:"), list=menu)
 	else:

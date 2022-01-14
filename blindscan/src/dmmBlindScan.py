@@ -18,7 +18,7 @@ from Components.About import about
 from Tools.Directories import fileExists
 from Tools.Transponder import ConvertToHumanReadable
 
-from filters import TransponderFiltering # imported from Blindscan folder
+from .filters import TransponderFiltering # imported from Blindscan folder
 
 XML_BLINDSCAN_DIR = "/tmp"
 
