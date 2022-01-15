@@ -116,7 +116,7 @@ class Query:
 		return rc.encode("utf-8")
 
 	def xml_parse_output(self, string):
-		data = string.decode("utf-8", "replace").replace('&', "&amp;").encode("ascii", 'xmlcharrefreplace')
+		data = string.replace('&', "&amp;").encode("ascii", 'xmlcharrefreplace')
 		try:
 			cdinfodom = xml.dom.minidom.parseString(data)
 		except:
@@ -146,19 +146,19 @@ class Query:
 			if albuminfo.nodeType == xml.dom.minidom.Element.nodeType:
 				if albuminfo.tagName == 'PERFORMER' or albuminfo.tagName == 'artist':
 					artist = self.getText(albuminfo.childNodes)
-					self.albuminfo["artist"] = artist
+					self.albuminfo["artist"] = artist.decode()
 				elif albuminfo.tagName.upper() == 'TITLE':
 					title = self.getText(albuminfo.childNodes)
-					self.albuminfo["title"] = title
+					self.albuminfo["title"] = title.decode()
 				elif albuminfo.tagName.upper() == 'YEAR':
 					year = self.getText(albuminfo.childNodes)
-					self.albuminfo["year"] = year
+					self.albuminfo["year"] = year.decode()
 				elif albuminfo.tagName.upper() == 'GENRE':
 					genre = self.getText(albuminfo.childNodes)
-					self.albuminfo["genre"] = genre
+					self.albuminfo["genre"] = genre.decode()
 				elif albuminfo.tagName == 'category' and not "GENRE" in self.albuminfo:
 					category = self.getText(albuminfo.childNodes)
-					self.albuminfo["genre"] = category
+					self.albuminfo["genre"] = category.decode()
 
 	def xml_parse_tracklisting(self, tracklisting_xml):
 		for tracklist in tracklisting_xml:
@@ -170,10 +170,10 @@ class Query:
 						if track.nodeType == xml.dom.minidom.Element.nodeType:
 							if track.tagName == 'PERFORMER' or track.tagName == 'artist':
 								artist = self.getText(track.childNodes)
-								trackinfo["artist"] = artist
+								trackinfo["artist"] = artist.decode()
 							if track.tagName.upper() == 'TITLE':
 								title = self.getText(track.childNodes)
-								trackinfo["title"] = title
+								trackinfo["title"] = title.decode()
 							#elif track.tagName == 'length':
 								#tracktext += "Dauer=%ss " % self.getText(track.childNodes)
 					self.tracklisting[index] = trackinfo
@@ -222,10 +222,10 @@ class Query:
 		self.cddb_container.execute(cmd)
 
 	def cddb_avail(self, string):
-		self.cddb_output += string
+		self.cddb_output += string.decode()
 
 	def cdtext_avail(self, string):
-		self.cdtext_output += string
+		self.cdtext_output += string.decode()
 
 	def cddb_finished(self, retval):
 		self.cddb_container.appClosed.remove(self.cddb_finished)
