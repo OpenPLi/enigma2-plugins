@@ -1,4 +1,4 @@
-from MPHelp import HelpPage
+from .MPHelp import HelpPage
 from xml.etree.cElementTree import parse as cet_parse
 
 
