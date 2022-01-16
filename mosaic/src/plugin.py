@@ -305,7 +305,7 @@ class Mosaic(Screen):
 			self.working = False
 			self.updateTimer.start(1, 1)
 		else:
-			print "[Mosaic] retval: %d result: %s" % (retval, result)
+			print("[Mosaic] retval: %d result: %s" % (retval, result))
 
 			try:
 				f = open(grab_errorlog, "w")

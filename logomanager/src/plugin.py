@@ -25,13 +25,13 @@ add_type("image/mvi", ".mvi")
 
 
 def filescan_open(list, session, **kwargs):
-	print "[Logo Manager] filescan_open", list, kwargs
+	print("[Logo Manager] filescan_open", list, kwargs)
 	session.open(LogoManagerScreen, file=list[0].path)
 
 
 def start_from_filescan(**kwargs):
 	from Components.Scanner import Scanner, ScanPath
-	print "[Logo Manager] start_from_filescan", kwargs
+	print("[Logo Manager] start_from_filescan", kwargs)
 	return \
 		Scanner(mimetypes=["image/mvi"],
 			paths_to_scan=[
@@ -267,12 +267,12 @@ class LogoManagerScreen(Screen):
 
 	def showMVI(self, mvifile):
 		""" shows a mvi """
-		print "[Logo Manager] playing MVI", mvifile
+		print("[Logo Manager] playing MVI", mvifile)
 		os.system("/usr/bin/showiframe '%s'" % mvifile)
 
 	def installMVI(self, target, sourcefile):
 		""" installs a mvi by overwriting the target with a source mvi """
-		print "[Logo Manager] installing %s as %s on %s" % (sourcefile, target[0], target[1])
+		print("[Logo Manager] installing %s as %s on %s" % (sourcefile, target[0], target[1]))
 		if target[0] == _("radio") and not fileExists("/usr/share/enigma2/radio.mvi-orig"):
 			os.system("mv /usr/share/enigma2/radio.mvi /usr/share/enigma2/radio.mvi-orig")
 		if fileExists(target[1]):

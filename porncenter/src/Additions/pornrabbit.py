@@ -69,7 +69,7 @@ class PornRabbitSub(Plugin):
 
 	def getPageError(self, error=None):
 		if error and self.currPage == 1:
-			print "[%s] Error: %s" % (self.name, error)
+			print("[%s] Error: %s" % (self.name, error))
 		else:
 			self.moreEntries = False
 
@@ -105,7 +105,7 @@ class PornRabbit(Plugin):
 
 	def getPageError(self, error=None):
 		if error:
-			print "[%s] Error: %s" % (self.name, error)
+			print("[%s] Error: %s" % (self.name, error))
 
 ##################################################
 

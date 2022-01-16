@@ -126,12 +126,12 @@ def doOne(destAddr, timeout=10):
 
 def main():
   if len(sys.argv) < 2:
-    print "Usage: %s hostname" % os.path.basename(sys.argv[0])
+    print("Usage: %s hostname" % os.path.basename(sys.argv[0]))
     sys.exit(1)
 
   dest = gethostbyname(sys.argv[1])
   delay = doOne(dest)
-  print delay
+  print(delay)
   return None
 
 

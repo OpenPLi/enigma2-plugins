@@ -296,7 +296,7 @@ class PodcastMovies(Screen):
 		self.working = False
 
 	def error(self, error=""):
-		print "[Podcast] Error:", error
+		print("[Podcast] Error:", error)
 		self.instance.setTitle(_("Error getting movies"))
 		self.working = False
 
@@ -484,12 +484,12 @@ class PodcastComGenre2(Screen):
 		self.working = False
 
 	def error(self, error=""):
-		print "[Podcast] Error:", error
+		print("[Podcast] Error:", error)
 		self.instance.setTitle(_("Error getting genres"))
 		self.working = False
 
 	def error2(self, error=""):
-		print "[Podcast] Error:", error
+		print("[Podcast] Error:", error)
 		self.instance.setTitle(_("Error getting rss feed"))
 		self.working = False
 
@@ -546,7 +546,7 @@ class PodcastComGenre(Screen):
 		self.working = False
 
 	def error(self, error=""):
-		print "[Podcast] Error:", error
+		print("[Podcast] Error:", error)
 		self.instance.setTitle(_("Error getting genres"))
 		self.working = False
 
@@ -596,7 +596,7 @@ class PodcastCom(Screen):
 		self.working = False
 
 	def error(self, error=""):
-		print "[Podcast] Error:", error
+		print("[Podcast] Error:", error)
 		self.instance.setTitle(_("Error getting genres"))
 		self.working = False
 
@@ -811,12 +811,12 @@ class PodcastDeEpisodes(Screen):
 		self.working = False
 
 	def error(self, error=""):
-		print "[Podcast] Error:", error
+		print("[Podcast] Error:", error)
 		self.instance.setTitle(_("Error getting episodes"))
 		self.working = False
 
 	def error2(self, error=""):
-		print "[Podcast] Error: Error getting podcast url"
+		print("[Podcast] Error: Error getting podcast url")
 		self.instance.setTitle(_("Error getting podcast url"))
 		self.working = False
 
@@ -874,7 +874,7 @@ class PodcastDePodcasts(Screen):
 		self.working = False
 
 	def error(self, error=""):
-		print "[Podcast] Error:", error
+		print("[Podcast] Error:", error)
 		self.instance.setTitle(_("Error getting podcasts"))
 		self.working = False
 
@@ -928,7 +928,7 @@ class PodcastDeCategories(Screen):
 		self.working = False
 
 	def error(self, error=""):
-		print "[Podcast] Error:", error
+		print("[Podcast] Error:", error)
 		self.instance.setTitle(_("Error getting categories"))
 		self.working = False
 
@@ -981,7 +981,7 @@ class PodcastDe(Screen):
 		self.working = False
 
 	def error(self, error=""):
-		print "[Podcast] Error:", error
+		print("[Podcast] Error:", error)
 		self.instance.setTitle(_("Error getting categories"))
 		self.working = False
 

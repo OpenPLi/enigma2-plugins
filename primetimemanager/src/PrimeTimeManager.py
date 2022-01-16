@@ -373,7 +373,7 @@ class PrimeTimeManager(Screen, HelpableScreen):
 						item = self.serviceHandler.list(s).getNext()
 						info = self.serviceHandler.info(s)
 						if not item.valid():
-							print '[PrimeTimeManager] Skipping empty bouquet', info.getName(s)
+							print('[PrimeTimeManager] Skipping empty bouquet', info.getName(s))
 							break
 						if info:
 							bouquets.append((info.getName(s).rstrip(' (TV)'), s))
@@ -407,30 +407,30 @@ class PrimeTimeManager(Screen, HelpableScreen):
 			if not timer in self.recordTimer.timer_list:
 				if (timer.service_ref.ref.toString(), timer.eit) in self.timerServices[self.dayOffset]:
 					self.timerServices[self.dayOffset].remove((timer.service_ref.ref.toString(), timer.eit))
-					print "[PrimeTimeManager] Del in timerServices"
+					print("[PrimeTimeManager] Del in timerServices")
 				if (timer.service_ref.ref.toString(), timer.eit) in self.overlappingTimers[self.dayOffset]:
 					self.overlappingTimers[self.dayOffset].remove((timer.service_ref.ref.toString(), timer.eit))
-					print "[PrimeTimeManager] Del in overlappingTimers"
+					print("[PrimeTimeManager] Del in overlappingTimers")
 				if (timer.service_ref.ref.toString(), timer.eit) in self.notrecordingTimers[self.dayOffset]:
 					self.notrecordingTimers[self.dayOffset].remove((timer.service_ref.ref.toString(), timer.eit))
-					print "[PrimeTimeManager] Del in notrecordingTimers"
+					print("[PrimeTimeManager] Del in notrecordingTimers")
 				timer_str = GetWithAlternative(timer.service_ref.ref.toString())
 				if (timer_str, timer.eit) in self.timerServices[self.dayOffset]:
 					self.timerServices[self.dayOffset].remove((timer_str, timer.eit))
-					print "[PrimeTimeManager] Del in timerServices"
+					print("[PrimeTimeManager] Del in timerServices")
 				if (timer_str, timer.eit) in self.overlappingTimers[self.dayOffset]:
 					self.overlappingTimers[self.dayOffset].remove((timer_str, timer.eit))
-					print "[PrimeTimeManager] Del in overlappingTimers"
+					print("[PrimeTimeManager] Del in overlappingTimers")
 				if (timer_str, timer.eit) in self.notrecordingTimers[self.dayOffset]:
 					self.notrecordingTimers[self.dayOffset].remove((timer_str, timer.eit))
-					print "[PrimeTimeManager] Del in notrecordingTimers"
+					print("[PrimeTimeManager] Del in notrecordingTimers")
 				if funcRefStr(self.viewLiveServices[self.dayOffset]) == funcRefStr(timer.service_ref.ref.toString()):
 					self.viewLiveServices[self.dayOffset] = ""
 				if config.plugins.PrimeTimeManager.RemoveFavorite.value or timer.disabled:
 					for favorite in self.favoriteEvents[self.dayOffset].services:
 						if funcRefStr(timer.service_ref.ref.toString()) == funcRefStr(favorite[SERVICEREF]):
 							self.removeEntryFromFavorites(favorite, False)
-							print "[PrimeTimeManager] Del favorite"
+							print("[PrimeTimeManager] Del favorite")
 				self.updateLists()
 				self.setSetDayButton()
 
@@ -458,7 +458,7 @@ class PrimeTimeManager(Screen, HelpableScreen):
 						self.buttonLeft()
 						i += 1
 		except:
-			print "[PrimeTimeManager] Error setPositionService for close multi EPG"
+			print("[PrimeTimeManager] Error setPositionService for close multi EPG")
 
 	def buttonRed(self):
 		if config.plugins.PrimeTimeManager.RedButton.value == "exit":
@@ -528,7 +528,7 @@ class PrimeTimeManager(Screen, HelpableScreen):
 			if self.getAvailableTunerCount(sRef) == 1:
 				if not sRef in self.conflictSat[self.dayOffset]:
 					self.conflictSat[self.dayOffset].append(sRef)
-					print "[PrimeTimeManager] Add only 1 sat %s" % ServiceReference(sRef).getServiceName()
+					print("[PrimeTimeManager] Add only 1 sat %s" % ServiceReference(sRef).getServiceName())
 			if add:
 				conflict = True
 		if conflict:
@@ -547,7 +547,7 @@ class PrimeTimeManager(Screen, HelpableScreen):
 					self.conflictList[self.dayOffset].remove(conflictObject)
 			if sRef in self.conflictSat[self.dayOffset]:
 				self.conflictSat[self.dayOffset].remove(sRef)
-				print "[PrimeTimeManager] Del only 1 sat %s" % ServiceReference(sRef).getServiceName()
+				print("[PrimeTimeManager] Del only 1 sat %s" % ServiceReference(sRef).getServiceName())
 
 		self.updateConflicts(event=None)
 
@@ -569,13 +569,13 @@ class PrimeTimeManager(Screen, HelpableScreen):
 				# number of conflicts = number of favorites - known services on sRefs transponder
 				if check_on:
 					numConflicts = self.favoriteEvents[self.dayOffset].size - conflictObject.knownServicesSize
-					print "[PrimeTimeManager] conflict count = %d " % numConflicts
+					print("[PrimeTimeManager] conflict count = %d " % numConflicts)
 				elif len(self.conflictList[self.dayOffset]) > self.numTuners:
 					numConflicts = self.favoriteEvents[self.dayOffset].size - conflictObject.knownServicesSize
-					print "[PrimeTimeManager] conflict count = %d " % numConflicts
+					print("[PrimeTimeManager] conflict count = %d " % numConflicts)
 				else:
 					numConflicts = 0
-					print "[PrimeTimeManager] conflict count = %d " % numConflicts
+					print("[PrimeTimeManager] conflict count = %d " % numConflicts)
 				self.conflictCounts[self.dayOffset][sRef] = numConflicts
 
 	# get all services sharing a transponder with sRef
@@ -616,7 +616,7 @@ class PrimeTimeManager(Screen, HelpableScreen):
 		if not result:
 			return
 
-		print "[PrimeTimeManager] setting the day"
+		print("[PrimeTimeManager] setting the day")
 		for result in self.resultList:
 			sRef = result[0][SERVICEREF] # service reference
 			if config.plugins.PrimeTimeManager.ViewLive.value:
@@ -631,7 +631,7 @@ class PrimeTimeManager(Screen, HelpableScreen):
 							try:
 								event = self.epgcache.lookupEventId(ServiceReference(favorite[SERVICEREF]).ref, favorite[EVENTID])
 								addAutotimerFromEvent(self.session, evt=event, service=sRef)
-								print "[PrimeTimeManager] Add auto timer %s" % ServiceReference(sRef).getServiceName()
+								print("[PrimeTimeManager] Add auto timer %s" % ServiceReference(sRef).getServiceName())
 							except:
 								pass
 						timerEntry = self.getIsInTimer(favorite)
@@ -665,7 +665,7 @@ class PrimeTimeManager(Screen, HelpableScreen):
 						except:
 							pass
 						try:
-							print "[PrimeTimeManager] Del favorite %s" % ServiceReference(sRef).getServiceName()
+							print("[PrimeTimeManager] Del favorite %s" % ServiceReference(sRef).getServiceName())
 							self.removeEntryFromFavorites(favorite, False)
 						except:
 							pass
@@ -702,7 +702,7 @@ class PrimeTimeManager(Screen, HelpableScreen):
 								timer_ref = GetWithAlternative(timerEntry.service_ref.ref.toString())
 								if not (timer_ref, timerEntry.eit) in self.timerServices[self.dayOffset]:
 									self.timerServices[self.dayOffset].append((timer_ref, timerEntry.eit))
-							print "[PrimeTimeManager] Add view timer %s" % ServiceReference(sRef).getServiceName()
+							print("[PrimeTimeManager] Add view timer %s" % ServiceReference(sRef).getServiceName())
 						except:
 							pass
 					elif result[6] and view_live: # similar timer event?
@@ -746,9 +746,9 @@ class PrimeTimeManager(Screen, HelpableScreen):
 											self.addTimerToFavorites(result[6])
 									else:
 										curtime = localtime(time())
-										print "[PrimeTimeManager] Current day %s" % curtime.tm_wday
+										print("[PrimeTimeManager] Current day %s" % curtime.tm_wday)
 										timertime = localtime(result[6].begin)
-										print "[PrimeTimeManager] Timer day %s" % timertime.tm_wday
+										print("[PrimeTimeManager] Timer day %s" % timertime.tm_wday)
 										if curtime.tm_wday == timertime.tm_wday:
 											if (result[6].begin - config.recording.margin_before.value * 60 <= self.primeTime) and (result[6].end - config.recording.margin_after.value * 60 > self.primeTime):
 												if not (result[6].service_ref.ref.toString(), result[6].eit) in self.timerServices[self.dayOffset]:
@@ -759,7 +759,7 @@ class PrimeTimeManager(Screen, HelpableScreen):
 												self.addTimerToFavorites(result[6])
 								except:
 									pass
-								print "[PrimeTimeManager] Add similar timer %s" % ServiceReference(sRef).getServiceName()
+								print("[PrimeTimeManager] Add similar timer %s" % ServiceReference(sRef).getServiceName())
 							if (favorite[SERVICEREF], favorite[EVENTID]) in self.timerServices[self.dayOffset]:
 								self.timerServices[self.dayOffset].remove((favorite[SERVICEREF], favorite[EVENTID]))
 							if (favorite[SERVICEREF], favorite[EVENTID]) in self.overlappingTimers[self.dayOffset]:
@@ -849,7 +849,7 @@ class PrimeTimeManager(Screen, HelpableScreen):
 											self.timerServices[self.dayOffset].append((timer_ref, timerEntry.eit))
 								except:
 									pass
-							print "[PrimeTimeManager] Add simple timer %s" % ServiceReference(sRef).getServiceName()
+							print("[PrimeTimeManager] Add simple timer %s" % ServiceReference(sRef).getServiceName())
 						except:
 							pass
 
@@ -907,7 +907,7 @@ class PrimeTimeManager(Screen, HelpableScreen):
 								if sat[0] == orbpos:
 									count += 1
 									continue
-		print "[PrimeTimeManager] tuners count %s" % count
+		print("[PrimeTimeManager] tuners count %s" % count)
 		return count
 
 	def similarFunc(self, x):
@@ -925,7 +925,7 @@ class PrimeTimeManager(Screen, HelpableScreen):
 	def TimeSortFunc(self, x):
 		t = time()
 		if int(x[BEGIN]) > int(t):
-			#print "[PrimeTimeManager] begin event %s" % x[2]
+			#print("[PrimeTimeManager] begin event %s" % x[2])
 			return -1
 		else:
 			return 0
@@ -982,7 +982,7 @@ class PrimeTimeManager(Screen, HelpableScreen):
 
 		# get the number of tuners missing to handle everything without conflicts
 		if not self.getConflictListTimer(resultList):
-			print '[PrimeTimeManager] Nothing to do, there are no conflicts'
+			print('[PrimeTimeManager] Nothing to do, there are no conflicts')
 			return resultList
 		else:
 			# this is how conflicts are solved:
@@ -996,7 +996,7 @@ class PrimeTimeManager(Screen, HelpableScreen):
 			# 4.2 if conflicts for a known service can't be solved with similar events, set the autotimer flag
 			# 4.3 repeat from 4.1 until all conflicts are solved
 
-			print "[PrimeTimeManager] Starting to resolve conflicts" # because the favorite selection requires %s more tuner(s) and  %s conflict sat." % (missingTuners, satTuners)
+			print("[PrimeTimeManager] Starting to resolve conflicts") # because the favorite selection requires %s more tuner(s) and  %s conflict sat." % (missingTuners, satTuners))
 			self.getHDServices()
 			view_live = None
 			for result in resultList:
@@ -1069,7 +1069,7 @@ class PrimeTimeManager(Screen, HelpableScreen):
 										break
 
 								if similarTimer:
-									print "[PrimeTimeManager] Conflict step 3.1 for %s can be solved with a similar event" % ServiceReference(simObject.sRef).getServiceName()
+									print("[PrimeTimeManager] Conflict step 3.1 for %s can be solved with a similar event" % ServiceReference(simObject.sRef).getServiceName())
 									for result in resultList:
 										# does the service ref match?
 										if config.plugins.PrimeTimeManager.ViewLive.value:
@@ -1084,26 +1084,26 @@ class PrimeTimeManager(Screen, HelpableScreen):
 												else:
 													result[6] = similarTimer
 												if not self.getConflictListTimer(resultList):
-													print "[PrimeTimeManager] Step 3.1 similar timer and not view live %s" % ServiceReference(simObject.sRef).getServiceName()
+													print("[PrimeTimeManager] Step 3.1 similar timer and not view live %s" % ServiceReference(simObject.sRef).getServiceName())
 													return resultList
 												else:
 													if not result[8] and not add_to_live:
 														result[6] = None
 														result[7] = similarTimer
-														print "[PrimeTimeManager] Step 3.1 revert changes %s" % ServiceReference(simObject.sRef).getServiceName()
+														print("[PrimeTimeManager] Step 3.1 revert changes %s" % ServiceReference(simObject.sRef).getServiceName())
 										else:
 											if simObject.sRef == result[0][SERVICEREF]:
 												result[6] = similarTimer
 												if not self.getConflictListTimer(resultList):
-													print "[PrimeTimeManager]  Step 3.1 similar timer %s" % ServiceReference(simObject.sRef).getServiceName()
+													print("[PrimeTimeManager]  Step 3.1 similar timer %s" % ServiceReference(simObject.sRef).getServiceName())
 													return resultList
 												else:
 													if not result[8]:
 														result[6] = None
 														result[7] = similarTimer
-														print "[PrimeTimeManager] Step 3.1 revert changes %s" % ServiceReference(simObject.sRef).getServiceName()
+														print("[PrimeTimeManager] Step 3.1 revert changes %s" % ServiceReference(simObject.sRef).getServiceName())
 								else: # unable to solve conflicts with a similar event
-									print "[PrimeTimeManager] Unable to set timer for similar event %s" % ServiceReference(simObject.sRef).getServiceName()
+									print("[PrimeTimeManager] Unable to set timer for similar event %s" % ServiceReference(simObject.sRef).getServiceName())
 									similarConflicts = True
 									break
 				# STEP 3.2
@@ -1114,14 +1114,14 @@ class PrimeTimeManager(Screen, HelpableScreen):
 						for result in resultList:
 							if knownService == result[0][SERVICEREF]:
 								result[6] = None
-								print "[PrimeTimeManager]  Step 3.2 revert changes %s" % ServiceReference(result[0][SERVICEREF]).getServiceName()
+								print("[PrimeTimeManager]  Step 3.2 revert changes %s" % ServiceReference(result[0][SERVICEREF]).getServiceName())
 
 				# STEP 3.3
 			# sort by not similar timer
-			print "[PrimeTimeManager] STEP 4.0 sort by not similar timer"
+			print("[PrimeTimeManager] STEP 4.0 sort by not similar timer")
 			resultList.sort(key=self.similarFunc)
 			if not self.getConflictListTimer(resultList):
-				print "[PrimeTimeManager] Step 3.3 done resolving conflicts"
+				print("[PrimeTimeManager] Step 3.3 done resolving conflicts")
 				return resultList
 
 			# STEP 4.0
@@ -1159,7 +1159,7 @@ class PrimeTimeManager(Screen, HelpableScreen):
 
 									# STEP 4.1
 									if similarTimer:
-										print "[PrimeTimeManager] Conflict for %s can be solved with a similar event" % ServiceReference(simObject.sRef).getServiceName()
+										print("[PrimeTimeManager] Conflict for %s can be solved with a similar event" % ServiceReference(simObject.sRef).getServiceName())
 										for result in resultList:
 											# does the service ref match?
 											if config.plugins.PrimeTimeManager.ViewLive.value:
@@ -1168,62 +1168,62 @@ class PrimeTimeManager(Screen, HelpableScreen):
 														ref = result[0][SERVICEREF]
 														if not self.getSimilarForViewLive(view_live, ref):
 															result[6] = similarTimer
-															print "[PrimeTimeManager] Step 4.1 similar timer and not view live %s" % ServiceReference(simObject.sRef).getServiceName()
+															print("[PrimeTimeManager] Step 4.1 similar timer and not view live %s" % ServiceReference(simObject.sRef).getServiceName())
 													else:
 														result[6] = similarTimer
-														print "[PrimeTimeManager] Step 4.1 similar timer and not view live %s" % ServiceReference(simObject.sRef).getServiceName()
+														print("[PrimeTimeManager] Step 4.1 similar timer and not view live %s" % ServiceReference(simObject.sRef).getServiceName())
 													if not self.getConflictListTimer(resultList):
-														print "[PrimeTimeManager] STEP 4.1 done resolving conflicts"
+														print("[PrimeTimeManager] STEP 4.1 done resolving conflicts")
 														return resultList
 											else:
 												if simObject.sRef == result[0][SERVICEREF]:
 													result[6] = similarTimer
-													print "[PrimeTimeManager] Step 4.1 similar timer %s" % ServiceReference(simObject.sRef).getServiceName()
+													print("[PrimeTimeManager] Step 4.1 similar timer %s" % ServiceReference(simObject.sRef).getServiceName())
 													if not self.getConflictListTimer(resultList):
-														print "[PrimeTimeManager] STEP 4.1 done resolving conflicts"
+														print("[PrimeTimeManager] STEP 4.1 done resolving conflicts")
 														return resultList
 
 									# STEP 4.2
 									else: # unable to solve conflict with a similar event
-										print "[PrimeTimeManager] There are no similar events for %s" % ServiceReference(simObject.sRef).getServiceName()
+										print("[PrimeTimeManager] There are no similar events for %s" % ServiceReference(simObject.sRef).getServiceName())
 										for result in resultList:
 											# does the service ref match?
 											if config.plugins.PrimeTimeManager.ViewLive.value:
 												if simObject.sRef == result[0][SERVICEREF] and result[7] is None and not result[3]:
 													result[5] = True # set auto timer flag
-													print "[PrimeTimeManager] Step 4.2 auto timer and not view live %s" % ServiceReference(simObject.sRef).getServiceName()
+													print("[PrimeTimeManager] Step 4.2 auto timer and not view live %s" % ServiceReference(simObject.sRef).getServiceName())
 													if not self.getConflictListTimer(resultList):
-														print "[PrimeTimeManager] STEP 4.2 done resolving conflicts"
+														print("[PrimeTimeManager] STEP 4.2 done resolving conflicts")
 														return resultList
 											else:
 												if simObject.sRef == result[0][SERVICEREF] and result[7] is None:
 													result[5] = True # set auto timer flag
-													print "[PrimeTimeManager] Step 4.2 auto timer %s" % ServiceReference(simObject.sRef).getServiceName()
+													print("[PrimeTimeManager] Step 4.2 auto timer %s" % ServiceReference(simObject.sRef).getServiceName())
 													if not self.getConflictListTimer(resultList):
-														print "[PrimeTimeManager] STEP 4.2 done resolving conflicts"
+														print("[PrimeTimeManager] STEP 4.2 done resolving conflicts")
 														return resultList
 								# STEP 4.3
 								else: # unable to solve conflict with a similar event
-									print "[PrimeTimeManager] There are no similar events for %s" % ServiceReference(simObject.sRef).getServiceName()
+									print("[PrimeTimeManager] There are no similar events for %s" % ServiceReference(simObject.sRef).getServiceName())
 									for result in resultList:
 										# does the service ref match?
 										if config.plugins.PrimeTimeManager.ViewLive.value:
 											if simObject.sRef == result[0][SERVICEREF] and result[7] is None and not result[3]:
 												result[5] = True # set auto timer flag
-												print "[PrimeTimeManager] Step 4.3 auto timer and not view live %s" % ServiceReference(simObject.sRef).getServiceName()
+												print("[PrimeTimeManager] Step 4.3 auto timer and not view live %s" % ServiceReference(simObject.sRef).getServiceName())
 												if not self.getConflictListTimer(resultList):
-													print "[PrimeTimeManager] STEP 4.2 done resolving conflicts"
+													print("[PrimeTimeManager] STEP 4.2 done resolving conflicts")
 													return resultList
 										else:
 											if simObject.sRef == result[0][SERVICEREF] and result[7] is None:
 												result[5] = True # set auto timer flag
-												print "[PrimeTimeManager] Step 4.3 auto timer %s" % ServiceReference(simObject.sRef).getServiceName()
+												print("[PrimeTimeManager] Step 4.3 auto timer %s" % ServiceReference(simObject.sRef).getServiceName())
 												if not self.getConflictListTimer(resultList):
-													print "[PrimeTimeManager] STEP 4.3 done resolving conflicts"
+													print("[PrimeTimeManager] STEP 4.3 done resolving conflicts")
 													return resultList
 					# STEP 4.4
 					if not self.getConflictListTimer(resultList):
-						print "[PrimeTimeManager] STEP 4.4 done resolving conflicts"
+						print("[PrimeTimeManager] STEP 4.4 done resolving conflicts")
 						return resultList
 
 		# STEP 4.5
@@ -1235,15 +1235,15 @@ class PrimeTimeManager(Screen, HelpableScreen):
 							ref = result[0][SERVICEREF]
 							if not self.getSimilarForViewLive(view_live, ref):
 								result[5] = True
-								print "[PrimeTimeManager] Step 4.5 auto timer %s" % ServiceReference(result[0][SERVICEREF]).getServiceName()
+								print("[PrimeTimeManager] Step 4.5 auto timer %s" % ServiceReference(result[0][SERVICEREF]).getServiceName())
 						else:
 							result[5] = True
-							print "[PrimeTimeManager] Step 4.5 auto timer %s" % ServiceReference(result[0][SERVICEREF]).getServiceName()
+							print("[PrimeTimeManager] Step 4.5 auto timer %s" % ServiceReference(result[0][SERVICEREF]).getServiceName())
 					elif result[7] is not None:
 						result[6] = result[7]
-						print "[PrimeTimeManager] Step 4.5 similar timer %s" % ServiceReference(result[0][SERVICEREF]).getServiceName()
+						print("[PrimeTimeManager] Step 4.5 similar timer %s" % ServiceReference(result[0][SERVICEREF]).getServiceName())
 					if not self.getConflictListTimer(resultList):
-						print "[PrimeTimeManager] Step 4.5 maybe done resolving conflicts"
+						print("[PrimeTimeManager] Step 4.5 maybe done resolving conflicts")
 						return resultList
 			# STEP 4.6
 			if self.getConflictListTimer(resultList):
@@ -1253,16 +1253,16 @@ class PrimeTimeManager(Screen, HelpableScreen):
 							ref = result[0][SERVICEREF]
 							if not self.getSimilarForViewLive(view_live, ref):
 								result[5] = True
-								print "[PrimeTimeManager] Step 4.6 auto timer %s" % ServiceReference(result[0][SERVICEREF]).getServiceName()
+								print("[PrimeTimeManager] Step 4.6 auto timer %s" % ServiceReference(result[0][SERVICEREF]).getServiceName())
 						else:
 							result[5] = True
-							print "[PrimeTimeManager] Step 4.6 auto timer %s" % ServiceReference(result[0][SERVICEREF]).getServiceName()
+							print("[PrimeTimeManager] Step 4.6 auto timer %s" % ServiceReference(result[0][SERVICEREF]).getServiceName())
 						if not self.getConflictListTimer(resultList):
-							print "[PrimeTimeManager] Step 4.6 maybe done resolving conflicts"
+							print("[PrimeTimeManager] Step 4.6 maybe done resolving conflicts")
 							return resultList
 
 		# STEP 4.7
-		print "[PrimeTimeManager] STEP 4.7 maybe done resolving conflicts"
+		print("[PrimeTimeManager] STEP 4.7 maybe done resolving conflicts")
 		return resultList
 
 	###################
@@ -1315,7 +1315,7 @@ class PrimeTimeManager(Screen, HelpableScreen):
 				if event[SERVICEREF] == x[SERVICEREF] and event[EVENTID] == x[EVENTID]:
 					self.unhandledKey.show()
 					return
-			print "[PrimeTimeManager] Add to favorites %s" % ServiceReference(event[SERVICEREF]).getServiceName()
+			print("[PrimeTimeManager] Add to favorites %s" % ServiceReference(event[SERVICEREF]).getServiceName())
 			timerEntry = self.getIsInTimer(event)
 
 			if timerEntry is None:
@@ -1651,7 +1651,7 @@ class PrimeTimeManager(Screen, HelpableScreen):
 			self.currentBouquet = self.bouquetCount - 1
 
 		self.setPrimeTimeTitleString()
-		print '[PrimeTimeManager] Selected next bouquet'
+		print('[PrimeTimeManager] Selected next bouquet')
 
 		self.activeList = self.primeTimeEvents[self.currentBouquet]
 		self.updateLists()
@@ -1669,7 +1669,7 @@ class PrimeTimeManager(Screen, HelpableScreen):
 			self.currentBouquet = 0
 
 		self.setPrimeTimeTitleString()
-		print '[PrimeTimeManager] Selected previous bouquet'
+		print('[PrimeTimeManager] Selected previous bouquet')
 
 		self.activeList = self.primeTimeEvents[self.currentBouquet]
 		self.updateLists()
@@ -1757,7 +1757,7 @@ class PrimeTimeManager(Screen, HelpableScreen):
 
 	# show more information for the event and maybe similar events
 	def showEventView(self):
-		print "[PrimeTimeManager] Opening base event view."
+		print("[PrimeTimeManager] Opening base event view.")
 		# get the selected entry from the active list
 		selected = self[self.activeList.name + str(self.activeList.position)].getCurrent()
 
@@ -1803,7 +1803,7 @@ class PrimeTimeManager(Screen, HelpableScreen):
 			text += _('Do you really want to delete the timer for "%s"?') % selected[TITLE]
 			self.session.openWithCallback(boundFunction(self.deleteTimerConfirmed, selected), MessageBox, text, default=False)
 		else:
-			print "[PrimeTimeManager] Opening Timer Entry Screen"
+			print("[PrimeTimeManager] Opening Timer Entry Screen")
 			if begin <= int(time()) or (begin - int(time())) <= 60:
 				text = _('This event will be an instant record.\n')
 				text += _('Add timer for "%s"?') % title
@@ -1856,7 +1856,7 @@ class PrimeTimeManager(Screen, HelpableScreen):
 	def getHDServices(self):
 		if self.serviceRefsHD is not None:
 			return
-		print "[PrimeTimeManager] Searching HD Services"
+		print("[PrimeTimeManager] Searching HD Services")
 		self.serviceRefsHD = []
 		refstr = '%s FROM SATELLITES' % (service_types_tv)
 		ref = eServiceReference(refstr)
@@ -1887,7 +1887,7 @@ class PrimeTimeManager(Screen, HelpableScreen):
 								self.serviceRefsHD.append(s.toString())
 			i += 1
 
-		print "[PrimeTimeManager] Found %s HD services" % len(self.serviceRefsHD)
+		print("[PrimeTimeManager] Found %s HD services" % len(self.serviceRefsHD))
 
 	# show pixmaps for possible scroll directions of prime time and favorite list
 	def setScrollPixmaps(self, listObject):
@@ -1908,7 +1908,7 @@ class PrimeTimeManager(Screen, HelpableScreen):
 			add_favorite = True
 
 			# a new timer was set or reset
-			print "[PrimeTimeManager] timer was set from Timer Entry Screen."
+			print("[PrimeTimeManager] timer was set from Timer Entry Screen.")
 
 			timersanitycheck = TimerSanityCheck(self.recordTimer.timer_list, timerEntry)
 			if timersanitycheck.check():
@@ -1967,7 +1967,7 @@ class PrimeTimeManager(Screen, HelpableScreen):
 				self.session.open(MessageBox, text, MessageBox.TYPE_INFO)
 		else:
 			# user deleted an existing timer or aborted the creation of a new timer
-			print "[PrimeTimeManager] user aborted timer creation from Timer Entry."
+			print("[PrimeTimeManager] user aborted timer creation from Timer Entry.")
 
 		self.setSetDayButton()
 
@@ -2058,14 +2058,14 @@ class PrimeTimeManager(Screen, HelpableScreen):
 						if not (timer.service_ref.ref.toString(), timer.eit) in self.overlappingTimers[self.dayOffset]:
 							self.overlappingTimers[self.dayOffset].append((timer.service_ref.ref.toString(), timer.eit))
 							self.addTimerToFavorites(timer)
-							print "[PrimeTimeManager] Add recording timer event %s" % timer.service_ref.getServiceName()
+							print("[PrimeTimeManager] Add recording timer event %s" % timer.service_ref.getServiceName())
 				else:
 					if not (timer_ref, timer.eit) in self.notrecordingTimers[self.dayOffset]:
 						self.notrecordingTimers[self.dayOffset].append((timer_ref, timer.eit))
 					if not (timer.service_ref.ref.toString(), timer.eit) in self.notrecordingTimers[self.dayOffset]:
 						self.notrecordingTimers[self.dayOffset].append((timer.service_ref.ref.toString(), timer.eit))
 						self.addTimerToFavorites(timer)
-						print "[PrimeTimeManager] Add overlapping timer event %s" % timer.service_ref.getServiceName()
+						print("[PrimeTimeManager] Add overlapping timer event %s" % timer.service_ref.getServiceName())
 
 	# add timer events to the favorite list
 	def getTimerEvents(self):
@@ -2135,7 +2135,7 @@ class PrimeTimeManager(Screen, HelpableScreen):
 
 	# remove temporary timers on exit
 	def cleanupTimers(self):
-		print '[PrimeTimeManager] removing temporary timer entries'
+		print('[PrimeTimeManager] removing temporary timer entries')
 		# delete timers set by this plugin but no real timers
 		for timerEntry in self.recordTimer.timer_list[:]:
 			try:

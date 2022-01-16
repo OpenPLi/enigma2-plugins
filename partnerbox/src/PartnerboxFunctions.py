@@ -390,7 +390,7 @@ def sendPartnerBoxWebCommand(url, contextFactory=None, timeout=60, username="roo
 		run.addCallback(returnResult)
 
 		def returnError(error):
-			print "[Partnerbox] - Error in sendPartnerBoxWebCommand", error.getErrorMessage()
+			print("[Partnerbox] - Error in sendPartnerBoxWebCommand", error.getErrorMessage())
 			return error
 		run.addErrback(returnError)
 		return run
@@ -430,7 +430,7 @@ def runCommand(path, username="", password="", host="", port=80, sessionid="0", 
 	send.addCallback(readData)
 
 	def printError(error):
-		print "[Partnerbox] - Error in runCommand", error
+		print("[Partnerbox] - Error in runCommand", error)
 		return error
 	send.addErrback(printError)
 	return send
@@ -489,7 +489,7 @@ def SetPartnerboxTimerlist(partnerboxentry=None, sreference=None):
 			sCommand = "http://%s:%s@%s:%d/web/timerlist" % (username, password, ip, port)
 		else:
 			sCommand = "http://%s:%s@%s:%d/xml/timers" % (username, password, ip, port)
-		print "[RemoteEPGList] Getting timerlist data from %s..." % ip
+		print("[RemoteEPGList] Getting timerlist data from %s..." % ip)
 		f = urllib.urlopen(sCommand)
 		sxml = f.read()
 		if int(partnerboxentry.enigma.value) == 0:

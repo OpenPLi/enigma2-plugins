@@ -48,7 +48,7 @@ def autostart(reason, **kwargs):
 #	global session
 	if "session" in kwargs and reason == 0:
 		session = kwargs["session"]
-		print "[BABELZAPPER] autostart"
+		print("[BABELZAPPER] autostart")
 		session.open(BabelZapperStartup)
 
 
@@ -134,7 +134,7 @@ class BabelZapperStartup(Screen):
 	def __init__(self, session):
 		Screen.__init__(self, session)
 		self.skin = BabelZapperStartup.skin
-		print "[BABELZAPPER] starting"
+		print("[BABELZAPPER] starting")
 		global globalActionMap
 		# overwrite Mute  for the handicaped
 		globalActionMap.actions["babelzapperMute"] = self.setKey
@@ -155,12 +155,12 @@ class BabelZapperStartup(Screen):
 		self.delayedKeyTimer = eTimer()
 		self.delayedKeyTimer.callback.append(self.setKey)
 		self.delayedKeyTimer.stop()
-		print "[BABELZAPPER] received mute key"
+		print("[BABELZAPPER] received mute key")
 		if babelkey == -1:
-			print "[BABELZAPPER] now starts from beginning\n"
+			print("[BABELZAPPER] now starts from beginning\n")
 			self.nextKeyTimer.start(200, True)
  		elif babeldone == -1:
- 			print "[BABELZAPPER] now starts with last key\n"
+ 			print("[BABELZAPPER] now starts with last key\n")
 			babeldone = 0
    			babelkey = babelkey - 1
  			self.nextKeyTimer.start(config.plugins.babelzapper.changetime.value, True)
@@ -168,46 +168,46 @@ class BabelZapperStartup(Screen):
 		else:
 			self.babelDialog.hide()
 			cmdlen = len(babelmenu[babelkey])
-			print "[BABELZAPPER] %i commands" % cmdlen
+			print("[BABELZAPPER] %i commands" % cmdlen)
 			i = 1 + babeldone
 			babeldone = 0
 			# here comes the command line interpreter
 			while i < cmdlen:
 				cmd = babelmenu[babelkey][i]
 				cmdname = cmd.lstrip("	 ")
-				print "[BABELZAPPER] command: %s" % cmdname
+				print("[BABELZAPPER] command: %s" % cmdname)
 				if cmdname.startswith("$KEY_"):
 					self.babelDialog.executeKey(cmdname)
 				elif cmdname.startswith("END"):
 					self.babelDialog.hide()
-					print "[BABELZAPPER] ENDs\n"
+					print("[BABELZAPPER] ENDs\n")
 					babelkey = -1
 					return
 				elif cmdname.startswith("IFON"):
 					if babelon == 0:
-						print "[BABELZAPPER] ON is off\n"
+						print("[BABELZAPPER] ON is off\n")
 						# skip rest of commandline
 						i = cmdlen
 					else:
-						print "[BABELZAPPER] ON is on executing rest and setting it off\n"
+						print("[BABELZAPPER] ON is on executing rest and setting it off\n")
 						babelon = 0
 				elif cmdname.startswith("ON"):
-					print "[BABELZAPPER] ON\n"
+					print("[BABELZAPPER] ON\n")
 					babelon = 1
 				elif cmdname.startswith("TOGGLE"):
 					if babelon == 0:
-						print "[BABELZAPPER] TOGGLE on\n"
+						print("[BABELZAPPER] TOGGLE on\n")
 						babelon = 1
 					else:
-						print "[BABELZAPPER] TOGGLE off\n"
+						print("[BABELZAPPER] TOGGLE off\n")
 						babelon = 0
 				elif cmdname.startswith("OFF"):
-					print "[BABELZAPPER] OFF\n"
+					print("[BABELZAPPER] OFF\n")
 					babelon = 0
 				elif cmdname.startswith("GOTO"):
  					try:
 						babelkey = int(cmdname.replace("GOTO", ""))
-						print "[BABELZAPPER] GOTO %i \n" % babelkey
+						print("[BABELZAPPER] GOTO %i \n" % babelkey)
  					except:
 						babelkey = 0
 					# skip rest of commandline
@@ -221,14 +221,14 @@ class BabelZapperStartup(Screen):
 						babelstop = 1000
 					elif babelstop > 60000:
 						babelstop = 60000
-					print "[BABELZAPPER] STOP %i \n" % babelstop
+					print("[BABELZAPPER] STOP %i \n" % babelstop)
 					self.babelDialog.show()
 					babeldone = i
 					self.delayedKeyTimer.start(babelstop, True)
 					return
 				elif cmdname.startswith("PRINT"):
 					babeltext = cmd.replace("PRINT", "")
-					print "[BABELZAPPER] PRINTs: %s \n" % babeltext
+					print("[BABELZAPPER] PRINTs: %s \n" % babeltext)
 					self.session.open(MessageBox, babeltext, MessageBox.TYPE_INFO)
 				elif cmdname.startswith("LOAD") or cmdname.startswith("RUN"):
 					babelkey = -1
@@ -238,7 +238,7 @@ class BabelZapperStartup(Screen):
  						i = i - 1
  						babelmenu.pop(i)
 					babelfile = "%s/%s.zbb" % (babelzapper_menus, cmdname.replace("LOAD", "").replace("RUN", "").replace(" ", "").replace("	", ""))
-					print "[BABELZAPPER] LOADs: %s\n" % babelfile
+					print("[BABELZAPPER] LOADs: %s\n" % babelfile)
 					if os.path.exists(babelfile):
 						f = open(babelfile, 'r')
 					else:
@@ -247,7 +247,7 @@ class BabelZapperStartup(Screen):
 					while (line):
 						bz = line.split(";")
 						if len(bz) < 2:
-							print "[BABELZAPPER] wrong line %s in babelzapper.zbb" % line
+							print("[BABELZAPPER] wrong line %s in babelzapper.zbb" % line)
  							babelmenu.append(("????", "PRINT ???? %s" % line))
 						else:
 							babelmenu.append((bz))
@@ -260,7 +260,7 @@ class BabelZapperStartup(Screen):
 					i = cmdlen
 				else:
 					if len(cmd) > 0:
-						print "[BABELZAPPER] unknown command %s\n" % cmd
+						print("[BABELZAPPER] unknown command %s\n" % cmd)
 						babeltext = "???? %s\n" % cmd
 					else:
 						babeltext = "???? empty command found\n"
@@ -274,7 +274,7 @@ class BabelZapperStartup(Screen):
 			self.nextKeyTimer.start(config.plugins.babelzapper.changetime.value, True)
 
 	def resetKey(self):
-		print "[BABELZAPPER] resets last key"
+		print("[BABELZAPPER] resets last key")
 		self.resetKeyTimer.stop()
 		self.babelDialog.hide()
 		global babelkey
@@ -304,7 +304,7 @@ class BabelZapperStartup(Screen):
 				babelkey = int(cmdname.replace("RETURN", "")) - 1
 			except:
 				babelkey = -1
-			print "[BABELZAPPER] RETURN %i \n" % babelkey
+			print("[BABELZAPPER] RETURN %i \n" % babelkey)
 			self.nextKeyTimer.start(0, True)
 			return
 		elif cmdname.startswith("REM"):
@@ -312,23 +312,23 @@ class BabelZapperStartup(Screen):
 			self.nextKeyTimer.start(0, True)
 			return
 		elif cmdname.startswith("ON"):
-			print "[BABELZAPPER] ON\n"
+			print("[BABELZAPPER] ON\n")
 			babelon = 1
 			# skip this commandline
 			self.nextKeyTimer.start(0, True)
 			return
 		elif cmdname.startswith("OFF"):
-			print "[BABELZAPPER] OFF\n"
+			print("[BABELZAPPER] OFF\n")
 			babelon = 0
 			# skip this commandline
 			self.nextKeyTimer.start(0, True)
 			return
 		elif cmdname.startswith("TOGGLE"):
 			if babelon == 0:
-				print "[BABELZAPPER] TOGGLE on\n"
+				print("[BABELZAPPER] TOGGLE on\n")
 				babelon = 0
 			else:
-				print "[BABELZAPPER] TOGGLE off\n"
+				print("[BABELZAPPER] TOGGLE off\n")
 				babelon = 1
 			# skip this commandline
 			self.nextKeyTimer.start(0, True)
@@ -342,7 +342,7 @@ class BabelZapperStartup(Screen):
 				babelstop = 1000
 			elif babelstop > 60000:
 				babelstop = 60000
-			print "[BABELZAPPER] STOP %i \n" % babelstop
+			print("[BABELZAPPER] STOP %i \n" % babelstop)
 			currentkey = babelmenu[babelkey][0]
 			split = currentkey.split(":")
 			currentkey = split[0]
@@ -362,7 +362,7 @@ class BabelZapperStartup(Screen):
  				i = i - 1
  				babelmenu.pop(i)
 			babelfile = "%s/%s.zbb" % (babelzapper_menus, cmdname.replace("RUN", "").replace(" ", "").replace("	", ""))
-			print "[BABELZAPPER] RUNs: %s\n" % babelfile
+			print("[BABELZAPPER] RUNs: %s\n" % babelfile)
 			if os.path.exists(babelfile):
 				f = open(babelfile, 'r')
 			else:
@@ -371,7 +371,7 @@ class BabelZapperStartup(Screen):
 			while (line):
 				bz = line.split(";")
 				if len(bz) < 2:
-					print "[BABELZAPPER] wrong line %s in babelzapper.zbb" % line
+					print("[BABELZAPPER] wrong line %s in babelzapper.zbb" % line)
  					babelmenu.append(("????", "PRINT ???? %s" % line))
 				else:
 					babelmenu.append((bz))
@@ -409,7 +409,7 @@ class BabelZapper(Screen):
 		Screen.__init__(self, session)
 		self.skin = BabelZapper.skin
 	        global babelmenu
-		print "[BABELZAPPER] loading %s/babelzapper.zbb" % babelzapper_menus
+		print("[BABELZAPPER] loading %s/babelzapper.zbb" % babelzapper_menus)
 		global babelkey
 		babelmenu = []
  		babelmenu.append(("NONE", "END"))
@@ -419,7 +419,7 @@ class BabelZapper(Screen):
 			while (line):
 				bz = line.split(";")
 				if len(bz) < 2:
-					print "[BABELZAPPER] wrong line %s in babelzapper.zbb" % line
+					print("[BABELZAPPER] wrong line %s in babelzapper.zbb" % line)
  					babelmenu.append(("????", "PRINT ???? %s" % line))
 
 				else:
@@ -447,12 +447,12 @@ class BabelZapper(Screen):
 				keyname = keyname.replace("_LONG", "")
 	        	try:
 				keycode = KEYIDS[keyname]
-				print "[BABELZAPPER] found key %i" % keycode
+				print("[BABELZAPPER] found key %i" % keycode)
 			except:
-				print "[BABELZAPPER] found unknown key %s" % keyname
+				print("[BABELZAPPER] found unknown key %s" % keyname)
 				return
 		else:
-			print "[BABELZAPPER] found unknown key %s" % keyname
+			print("[BABELZAPPER] found unknown key %s" % keyname)
 			return
 		if HardwareInfo.device_name == "dm8000":
 			fp = open("/dev/input/event2", 'wb')
@@ -470,7 +470,7 @@ class BabelZapper(Screen):
 			dataon = pack('iiHHi', 0, 0, 1, keycode, 2)
 			fp.write(dataon)
 		else:
-			print "[BABELZAPPER] now writes out: %i\n" % (keycode)
+			print("[BABELZAPPER] now writes out: %i\n" % (keycode))
 			dataon = pack('iiHHi', 0, 0, 1, keycode, 1)
 			fp.write(dataon)
 		dataoff = pack('iiHHi', 0, 0, 1, keycode, 0)

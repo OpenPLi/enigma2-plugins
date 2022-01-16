@@ -163,11 +163,11 @@ class DVDBackup:
 		if retval != 0:
 			msg = _("Error while backup of DVD!")
 			message(msg)
-			print "[DVD Backup]", retval, result
+			print("[DVD Backup]", retval, result)
 			self.working = False
 			self.error = msg
 		else:
-			print "[DVD Backup]", result, retval, extra_args
+			print("[DVD Backup]", result, retval, extra_args)
 			self.working = False
 			self.finished()
 
@@ -189,18 +189,18 @@ class DVDBackup:
 		lastPhrase = "Main feature:"
 		if result and result.__contains__(firstPhrase) and result.__contains__(lastPhrase):
 			result = result[result.index(firstPhrase) + len(firstPhrase) + 1: result.index(lastPhrase)]
-			print "[DVD Backup]", result
+			print("[DVD Backup]", result)
 			lines = result.split("\n")
 			for line in lines:
 				tmp = line.split("\t")
 				if len(tmp) == 4:
 					if not tmp[1].__contains__("VTS_00_0."):
 						size += int(tmp[2])
-			print "[DVD Backup]", size, size / 2048
+			print("[DVD Backup]", size, size / 2048)
 		else:
 			msg = _("Could not read the DVD informations!")
 			message(msg)
-			print "[DVD Backup]", result
+			print("[DVD Backup]", result)
 			self.working = False
 			self.error = msg
 		return size
@@ -210,7 +210,7 @@ class DVDBackup:
 		lastPhrase = "Main feature:"
 		if result and result.__contains__(firstPhrase) and result.__contains__(lastPhrase):
 			result = result[result.index(firstPhrase) + len(firstPhrase) + 1: result.index(lastPhrase)]
-			print "[DVD Backup]", result
+			print("[DVD Backup]", result)
 			lines = result.split("\n")
 			folder = ""
 			for line in lines:
@@ -239,7 +239,7 @@ class DVDBackup:
 		else:
 			msg = _("Could not read the DVD informations!")
 			message(msg)
-			print "[DVD Backup]", result
+			print("[DVD Backup]", result)
 			self.working = False
 			self.error = msg
 
@@ -247,7 +247,7 @@ class DVDBackup:
 		if retval != 0:
 			msg = _("Error while backup of DVD!")
 			message(msg)
-			print "[DVD Backup]", retval, result
+			print("[DVD Backup]", retval, result)
 			self.working = False
 			self.error = msg
 		else:
@@ -276,7 +276,7 @@ class DVDBackup:
 		if retval != 0:
 			msg = _("Error while backup of DVD!")
 			message(msg)
-			print "[DVD Backup]", result
+			print("[DVD Backup]", result)
 			self.working = False
 			self.error = msg
 		else:
@@ -325,7 +325,7 @@ class DVDBackup:
 		self.files = []
 		self.startTime = None
 		self.pollTimer.stop()
-		print "[DVD Backup] abort user"
+		print("[DVD Backup] abort user")
 
 
 dvdbackup = DVDBackup()

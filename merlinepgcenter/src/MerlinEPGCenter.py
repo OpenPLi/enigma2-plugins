@@ -584,7 +584,7 @@ class MerlinEPGCenter(TimerEditList, MerlinEPGActions):
 				self.setButtonText(timerAdded=True)
 				self.getSimilarEvents()
 		else:
-			print "Timeredit aborted"
+			print("Timeredit aborted")
 
 	def getBouquetName(self):
 		name = self.bouquetList[self.currentBouquetIndex][0]

@@ -1160,7 +1160,7 @@ def movielistSearch(session, service, **kwargs):
 	eventName = info and info.getName(service) or ''
 	(root, ext) = os.path.splitext(eventName)
 	if ext in KNOWN_EXTENSIONS:
-		print"#####################", ext
+		print("#####################", ext)
 		eventName = re.sub("[\W_]+", ' ', root.decode("utf8"), 0, re.LOCALE | re.UNICODE).encode("utf8")
 	session.open(IMDB, eventName)
 

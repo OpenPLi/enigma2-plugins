@@ -19,7 +19,7 @@ class AutoTimerEditor(Source):
 		self.result = (False, "one two three four unknown command")
 
 	def handleCommand(self, cmd):
-		print "[WebComponents.AutoTimerEditor] handleCommand with cmd = ", cmd
+		print("[WebComponents.AutoTimerEditor] handleCommand with cmd = ", cmd)
 		if self.func is self.BACKUP:
 			self.result = self.backupFiles(cmd)
 		elif self.func is self.RESTORE:

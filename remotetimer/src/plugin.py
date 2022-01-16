@@ -132,7 +132,7 @@ class RemoteTimerScreen(Screen):
 			self["key_yellow"].setText("")
 
 	def errorLoad(self, error):
-		print "[RemoteTimer] errorLoad ERROR:", error.getErrorMessage()
+		print("[RemoteTimer] errorLoad ERROR:", error.getErrorMessage())
 		info = _(error.getErrorMessage())
 		self["text"].setText(info)
 
@@ -143,7 +143,7 @@ class RemoteTimerScreen(Screen):
 				url = "http://%s/web/timercleanup?cleanup=true" % (self.remoteurl)
 				localGetPage(url).addCallback(self.getInfo).addErrback(self.errorLoad)
 			except:
-				print "[RemoteTimer] ERROR Cleanup"
+				print("[RemoteTimer] ERROR Cleanup")
 
 	def delete(self):
 		sel = self["timerlist"].getCurrent()
@@ -168,7 +168,7 @@ class RemoteTimerScreen(Screen):
 		try:
 			root = cElementTree_fromstring(data)
 		except Exception, e:
-			print "[RemoteTimer] error: %s", e
+			print("[RemoteTimer] error: %s", e)
 			self["text"].setText(_("error parsing incoming data..."))
 		else:
 			return [
@@ -388,7 +388,7 @@ def newnigma2KeyGo(self):
 			rt_dirname,
 			rt_eit
 		)
-		print "[RemoteTimer] debug remote", remoteurl
+		print("[RemoteTimer] debug remote", remoteurl)
 
 		defer = localGetPage(remoteurl)
 		defer.addCallback(boundFunction(_gotPageLoad, self.session, self))
@@ -429,7 +429,7 @@ def autostart(reason, **kwargs):
 			if config.plugins.remoteTimer.httpip.value:
 				timerInit()
 		except:
-			print "[RemoteTimer] NO remoteTimer.httpip.value"
+			print("[RemoteTimer] NO remoteTimer.httpip.value")
 
 
 def main(session, **kwargs):

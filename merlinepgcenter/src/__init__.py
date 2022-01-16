@@ -12,7 +12,7 @@ def localeInit():
 def _(txt):
 	t = gettext.dgettext("MerlinEPGCenter", txt)
 	if t == txt:
-		print "[MerlinEPGCenter] fallback to default translation for", txt
+		print("[MerlinEPGCenter] fallback to default translation for", txt)
 		t = gettext.gettext(txt)
 	return t
 

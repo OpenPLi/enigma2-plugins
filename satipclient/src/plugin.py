@@ -65,7 +65,7 @@ class SSDPServerDiscovery(DatagramProtocol):
 
 		self.port = reactor.listenUDP(0, self, interface=iface)
 		if self.port is not None:
-			print "Sending M-SEARCH..."
+			print("Sending M-SEARCH...")
 			self.port.write(MS, (SSDP_ADDR, SSDP_PORT))
 
 	def stop_msearch(self):
@@ -73,8 +73,8 @@ class SSDPServerDiscovery(DatagramProtocol):
 			self.port.stopListening()
 
 	def datagramReceived(self, datagram, address):
-#		print "Received: (from %r)" % (address,)
-# 		print "%s" % (datagram )
+#		print("Received: (from %r)" % (address,))
+# 		print("%s" % (datagram ))
 		self.callback(datagram)
 
 	def stop(self):
@@ -125,20 +125,20 @@ class SATIPDiscovery:
 		self.discoveryStopTimer.stop()
 		self.ssdp.stop_msearch()
 
-#		print "Discovery Start!"
+#		print("Discovery Start!")
 		self.ssdp.send_msearch(self.getEthernetAddr())
 		self.discoveryStopTimer.start(stop_timeout, True)
 
 	def DiscoveryStop(self):
-#		print "Discovery Stop!"
+#		print("Discovery Stop!")
 		self.ssdp.stop_msearch()
 
 		for x in self.updateCallback:
 			x()
 
 	def dataReceive(self, data):
-#		print "dataReceive:\n", data
-#		print "\n"
+#		print("dataReceive:\n", data)
+#		print("\n")
 		serverData = self.dataParse(data)
 		if 'LOCATION' in serverData:
 			self.xmlParse(serverData['LOCATION'])
@@ -146,7 +146,7 @@ class SATIPDiscovery:
 	def dataParse(self, data):
 		serverData = {}
 		for line in data.splitlines():
-#			print "[*] line : ", line
+#			print("[*] line : ", line)
 			if line.find(':') != -1:
 				(attr, value) = line.split(':', 1)
 				attr = attr.strip().upper()
@@ -154,8 +154,8 @@ class SATIPDiscovery:
 					serverData[attr] = value.strip()
 
 #		for (key, value) in serverData.items():
-#			print "[%s] %s" % (key, value)
-#		print "\n"
+#			print("[%s] %s" % (key, value))
+#		print("\n")
 		return serverData
 
 	def xmlParse(self, location):
@@ -187,21 +187,21 @@ class SATIPDiscovery:
 			return None
 
 		def dumpData():
-			print "\n######## SATIPSERVERDATA ########"
+			print("\n######## SATIPSERVERDATA ########")
 			for (k, v) in SATIPSERVERDATA.items():
 #				prestr = "[%s]" % k
 				prestr = ""
 				for (k2, v2) in v.items():
 					prestr2 = prestr + "[%s]" % k2
 					if not isinstance(v2, dict):
-						print "%s %s" % (prestr2, v2)
+						print("%s %s" % (prestr2, v2))
 						continue
 					for (k3, v3) in v2.items():
 						prestr3 = prestr2 + "[%s]" % k3
-						print "%s %s" % (prestr3, v3)
-			print ""
+						print("%s %s" % (prestr3, v3))
+			print("")
 
-		print "[SATIPClient] Parsing %s" % location
+		print("[SATIPClient] Parsing %s" % location)
 
 		address = ""
 		port = "80"
@@ -220,19 +220,19 @@ class SATIPDiscovery:
 				port = location[AAA + 1: BBB]
 				request = location[BBB:]
 
-			#print "address2 : ", address
-			#print "port2: " , port
-			#print "request : ", request
+			#print("address2 : ", address)
+			#print("port2: " , port)
+			#print("request : ", request)
 
 			conn = httplib.HTTPConnection(address, int(port))
 			conn.request("GET", request)
 			res = conn.getresponse()
 		except Exception, ErrMsg:
-			print "http request error %s" % ErrMsg
+			print("http request error %s" % ErrMsg)
 			return -1
 
 		if res.status != 200 or res.reason != "OK":
-			print "response error"
+			print("response error")
 			return -1
 
 		data = res.read()
@@ -513,11 +513,11 @@ class SATIPTuner(Screen, ConfigListScreen):
 
 			vtuner = self.current_satipConfig[int(idx)]
 			if vtuner["vtuner_type"] == "satip_client" and vtuner["uuid"] == uuid and vtuner["tuner_type"] == tunertype:
-#				print "[checkTunerCapacity] tuner %d use type %s" % (int(idx), tunertype)
+#				print("[checkTunerCapacity] tuner %d use type %s" % (int(idx), tunertype))
 				t_count += 1
 
-#		print "[checkTunerCapacity] capability : ", capability
-#		print "[checkTunerCapacity] t_cap : %d, t_count %d" % (t_cap, t_count)
+#		print("[checkTunerCapacity] capability : ", capability)
+#		print("[checkTunerCapacity] t_cap : %d, t_count %d" % (t_cap, t_count))
 
 		if int(t_cap) > t_count:
 			return True
@@ -676,8 +676,8 @@ class SATIPClient(Screen):
 			self.close()
 
 	def createSetup(self):
-#		print "vtunerIndex : ", self.vtunerIndex
-#		print "vtunerConfig : ", self.vtunerConfig
+#		print("vtunerIndex : ", self.vtunerIndex)
+#		print("vtunerConfig : ", self.vtunerConfig)
 		self.configList = []
 		for vtuner_idx in self.vtunerIndex:
 			vtuner = self.vtunerConfig[int(vtuner_idx)]
@@ -755,7 +755,7 @@ class SATIPClient(Screen):
 			if not conf:
 				continue
 
-#			print "conf : ", conf
+#			print("conf : ", conf)
 
 			attr = []
 			for k in sorted(conf):

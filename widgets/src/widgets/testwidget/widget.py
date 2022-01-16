@@ -9,7 +9,7 @@ class TestWidget(Widget):
         self.elements["testwidget_blablub"] = Label("bla bla blub")
 
     def onLoadFinished(self, instance):
-        print "refresh TestWidget"
+        print("refresh TestWidget")
 
 
 def get_widget(session):
