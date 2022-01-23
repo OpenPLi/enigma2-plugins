@@ -532,7 +532,7 @@ class AutoRes(Screen):
 		seekable = self.getSeek()
 		if seekable is None:
 			return
- 		seekable.seekRelative(pts < 0 and -1 or 1, abs(pts))
+		seekable.seekRelative(pts < 0 and -1 or 1, abs(pts))
 
 class ResolutionLabel(Screen):
 	height = getDesktop(0).size().height()
@@ -836,7 +836,7 @@ class ManualResolution(Screen):
 				elif "1" in progstr or "p" in progstr:
 					prog = "p"
 			except:
-				print "[ManualResolution] Error open /proc/stb/vmpeg/0/progressive"
+				print ("[ManualResolution] Error open /proc/stb/vmpeg/0/progressive")
 			try:
 				f = open("/proc/stb/vmpeg/0/framerate", "r")
 				fpsString = int(f.read())
