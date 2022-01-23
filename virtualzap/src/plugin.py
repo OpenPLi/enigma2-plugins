@@ -1535,7 +1535,7 @@ def main(session, **kwargs):
 
 
 def Plugins(**kwargs):
- 	plist = [PluginDescriptor(name=_("Extended virtual zap setup"), description=_("config menu"), where=[PluginDescriptor.WHERE_PLUGINMENU], icon="plugin.png", fnc=setup)]
+	plist = [PluginDescriptor(name=_("Extended virtual zap setup"), description=_("config menu"), where=[PluginDescriptor.WHERE_PLUGINMENU], icon="plugin.png", fnc=setup)]
 	mode = config.plugins.extvirtualzap.mode.value
 	if mode == "0" or mode == "4":
 		plugin_name = _("Extended virtual zap")

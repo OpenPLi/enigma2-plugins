@@ -116,24 +116,24 @@ class Query:
 		return rc.encode("utf-8")
 
 	def xml_parse_output(self, string):
-		data = string.decode("utf-8", "replace").replace('&', "&amp;").encode("ascii", 'xmlcharrefreplace')
+		data = string.replace('&', "&amp;").encode("ascii", 'xmlcharrefreplace')
 		try:
 			cdinfodom = xml.dom.minidom.parseString(data)
 		except:
-			print "[xml_parse_output] error, could not parse"
+			print("[xml_parse_output] error, could not parse")
 			return False
 		xmldata = cdinfodom.childNodes[0]
 		queries = xmldata.childNodes
 		self.xml_parse_query(queries)
-		print "[xml_parse_output] albuminfo: " + str(self.albuminfo)
-		print "[xml_parse_output] tracklisting: " + str(self.tracklisting)
+		print("[xml_parse_output] albuminfo: " + str(self.albuminfo))
+		print("[xml_parse_output] tracklisting: " + str(self.tracklisting))
 		return True
 
 	def xml_parse_query(self, queries_xml):
 		for queries in queries_xml:
 			if queries.nodeType == xml.dom.minidom.Element.nodeType:
 				if queries.tagName == 'query':
-					print "[xml_parse_query] cdinfo source is %s, hit %s of %s" % (queries.getAttribute("source"), queries.getAttribute("match"), queries.getAttribute("num_matches"))
+					print("[xml_parse_query] cdinfo source is %s, hit %s of %s" % (queries.getAttribute("source"), queries.getAttribute("match"), queries.getAttribute("num_matches")))
 					for query in queries.childNodes:
 						if query.nodeType == xml.dom.minidom.Element.nodeType:
 							if query.tagName == 'albuminfo':
@@ -146,19 +146,19 @@ class Query:
 			if albuminfo.nodeType == xml.dom.minidom.Element.nodeType:
 				if albuminfo.tagName == 'PERFORMER' or albuminfo.tagName == 'artist':
 					artist = self.getText(albuminfo.childNodes)
-					self.albuminfo["artist"] = artist
+					self.albuminfo["artist"] = artist.decode()
 				elif albuminfo.tagName.upper() == 'TITLE':
 					title = self.getText(albuminfo.childNodes)
-					self.albuminfo["title"] = title
+					self.albuminfo["title"] = title.decode()
 				elif albuminfo.tagName.upper() == 'YEAR':
 					year = self.getText(albuminfo.childNodes)
-					self.albuminfo["year"] = year
+					self.albuminfo["year"] = year.decode()
 				elif albuminfo.tagName.upper() == 'GENRE':
 					genre = self.getText(albuminfo.childNodes)
-					self.albuminfo["genre"] = genre
+					self.albuminfo["genre"] = genre.decode()
 				elif albuminfo.tagName == 'category' and not "GENRE" in self.albuminfo:
 					category = self.getText(albuminfo.childNodes)
-					self.albuminfo["genre"] = category
+					self.albuminfo["genre"] = category.decode()
 
 	def xml_parse_tracklisting(self, tracklisting_xml):
 		for tracklist in tracklisting_xml:
@@ -170,10 +170,10 @@ class Query:
 						if track.nodeType == xml.dom.minidom.Element.nodeType:
 							if track.tagName == 'PERFORMER' or track.tagName == 'artist':
 								artist = self.getText(track.childNodes)
-								trackinfo["artist"] = artist
+								trackinfo["artist"] = artist.decode()
 							if track.tagName.upper() == 'TITLE':
 								title = self.getText(track.childNodes)
-								trackinfo["title"] = title
+								trackinfo["title"] = title.decode()
 							#elif track.tagName == 'length':
 								#tracktext += "Dauer=%ss " % self.getText(track.childNodes)
 					self.tracklisting[index] = trackinfo
@@ -207,7 +207,7 @@ class Query:
 
 	def cdtext_scan(self):
 		cmd = "cdtextinfo -xalT"
-		print "[cdtext_scan] " + cmd
+		print("[cdtext_scan] " + cmd)
 		self.cdtext_container.appClosed.append(self.cdtext_finished)
 		self.cdtext_container.dataAvail.append(self.cdtext_avail)
 		self.cdtext_container.execute(cmd)
@@ -216,16 +216,16 @@ class Query:
 		cmd = "cdtextinfo -xalD --cddb-port=%d --cddb-server=%s --cddb-timeout=%s" % (config.plugins.CDInfo.CDDB_port.value, config.plugins.CDInfo.CDDB_server.value, config.plugins.CDInfo.CDDB_timeout.value)
 		if not config.plugins.CDInfo.CDDB_cache.value:
 			cmd += " --no-cddb-cache"
-		print "[cddb_scan] " + cmd
+		print("[cddb_scan] " + cmd)
 		self.cddb_container.appClosed.append(self.cddb_finished)
 		self.cddb_container.dataAvail.append(self.cddb_avail)
 		self.cddb_container.execute(cmd)
 
 	def cddb_avail(self, string):
-		self.cddb_output += string
+		self.cddb_output += string.decode()
 
 	def cdtext_avail(self, string):
-		self.cdtext_output += string
+		self.cdtext_output += string.decode()
 
 	def cddb_finished(self, retval):
 		self.cddb_container.appClosed.remove(self.cddb_finished)

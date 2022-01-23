@@ -1,6 +1,6 @@
 from Components.ActionMap import HelpableNumberActionMap
 from Components.config import config
-from __init__ import _
+from Plugins.Extensions.AudioSync.__init__ import _
 from enigma import ePoint, eTimer, getDesktop
 
 
@@ -13,7 +13,7 @@ class MovableScreen():
 		self.moveMinMargin = moveMinMargin
 		self.moveStepSize = moveStepSize
 
-		self["MovableScreenActions"] = HelpableNumberActionMap(self, "MovableScreenActions",
+		self["MovableScreenActions"] = HelpableNumberActionMap(self, ["MovableScreenActions"],
 		{
 			"ok": (self.moveKeyOk, _("Save values and close screen")),
 			"cancel": (self.moveKeyCancel, _("Discard changes and close screen")),

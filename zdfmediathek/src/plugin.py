@@ -493,7 +493,7 @@ class RightMenuList(MenuList):
 			elif 'image/png' in contentType:
 				self.thumb = "/tmp/zdf.png"
 			else:
-				print "[ZDF Mediathek] Unknown thumbnail content-type:", contentType
+				print("[ZDF Mediathek] Unknown thumbnail content-type:", contentType)
 				self.thumb = None
 		else:
 			self.thumb = None
@@ -503,7 +503,7 @@ class RightMenuList(MenuList):
 			self.buildEntry(None)
 
 	def downloadThumbnailError(self, err):
-		print "[ZDF Mediathek] Error:", err
+		print("[ZDF Mediathek] Error:", err)
 		self.buildEntry(None)
 
 	def downloadThumbnailCallback(self, txt=""):
@@ -648,7 +648,7 @@ class ZDFMediathek(Screen, HelpableScreen):
 		getPage(url).addCallback(self.gotPage).addErrback(self.error)
 
 	def error(self, err=""):
-		print "[ZDF Mediathek] Error:", err
+		print("[ZDF Mediathek] Error:", err)
 		self.working = False
 		self.deactivateCacheDialog()
 

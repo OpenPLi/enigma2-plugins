@@ -584,7 +584,7 @@ class MerlinEPGCenter(TimerEditList, MerlinEPGActions):
 				self.setButtonText(timerAdded=True)
 				self.getSimilarEvents()
 		else:
-			print "Timeredit aborted"
+			print("Timeredit aborted")
 
 	def getBouquetName(self):
 		name = self.bouquetList[self.currentBouquetIndex][0]
@@ -887,7 +887,7 @@ class MerlinEPGCenter(TimerEditList, MerlinEPGActions):
 			picon = self.piconLoader.getPicon(sRef)
 			if self["picon"].instance is not None:
 				fileName = findDefaultPicon(sRef)
-				if fileName is not "":
+				if fileName != "":
 					picon = LoadPixmap(fileName)
 					self["picon"].instance.setPixmap(picon)
 

@@ -87,8 +87,8 @@ def Partnerbox_EPGSelection__init__(self, session, service, zapFunc=None, eventi
 
 def PartnerboxInit(self, filterRef):
 	self.filterRef = filterRef
-	self.isTMBD = fileExists("/usr/lib/enigma2/python/Plugins/Extensions/TMBD/plugin.pyo")
-	self.AutoTimer = fileExists("/usr/lib/enigma2/python/Plugins/Extensions/AutoTimer/SimpleThread.pyo")
+	self.isTMBD = fileExists("/usr/lib/enigma2/python/Plugins/Extensions/TMBD/plugin.py")
+	self.AutoTimer = fileExists("/usr/lib/enigma2/python/Plugins/Extensions/AutoTimer/SimpleThread.py")
 	self.partnerboxentry = None
 	partnerboxfunctions.remote_timer_list = []
 	if int(config.plugins.Partnerbox.entriescount.value) >= 1:
@@ -343,7 +343,7 @@ def GetPartnerboxTimerlistCallback(self, sxml=None):
 def GetPartnerboxTimerlistCallbackError(self, error=None):
 	try:
 		if error is not None:
-			print str(error.getErrorMessage())
+			print(str(error.getErrorMessage()))
 	except:
 		pass
 

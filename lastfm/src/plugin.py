@@ -367,7 +367,7 @@ class LastFMScreenMain(Screen, HelpableScreen, LastFM):
                 self.resetScreensaverTimer()
 
     def onTextForCustomStationEntered(self, text):
-        print "onTextForCustomStationEntered", text, self.customstationtype
+        print("onTextForCustomStationEntered", text, self.customstationtype)
         if text is not None:
             if self.customstationtype == "artist":
                 self.changeStation(urllib2_qoute("lastfm://artist/%s/similarartists" % text))
@@ -555,7 +555,7 @@ class LastFMSaveScreen(Screen):
             {
              "ok": self.action_exit,
              "back": self.action_exit,
-			 "red": self.parent.action_startstop,
+             "red": self.parent.action_startstop,
              "green": self.parent.skipTrack,
              "yellow": self.parent.love,
              "blue": self.parent.banTrack,

@@ -22,7 +22,7 @@ def localeInit():
 def _(txt):
 	t = gettext.dgettext("VlcPlayer", txt)
 	if t == txt:
-		print "[VLC] fallback to default translation for", txt
+		print("[VLC] fallback to default translation for", txt)
 		t = gettext.gettext(txt)
 	return t
 

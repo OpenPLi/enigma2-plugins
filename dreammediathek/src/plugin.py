@@ -119,7 +119,7 @@ class dreamMediathekStationsScreen(Screen):
 			self.leavePlayerConfirmed([True, how])
 
 	def leavePlayer(self):
-		print "leavePlayer"
+		print("leavePlayer")
 		self.handleLeave(config.plugins.dreamMediathek.general.on_exit.value)
 
 	def leavePlayerConfirmed(self, answer):
@@ -135,11 +135,11 @@ class dreamMediathekStationsScreen(Screen):
 		self.close()
 
 	def keyOK(self):
-		print "self.currentList im KeyOK", self.currentList
+		print("self.currentList im KeyOK", self.currentList)
 		if self.currentList == "streamlist":
 			current = self["streamlist"].getCurrent()
 			if current:
-				print current
+				print(current)
 				url = current[2]
 				title = current[1]
 				myreference = eServiceReference(4097, 0, url)
@@ -148,7 +148,7 @@ class dreamMediathekStationsScreen(Screen):
 				self.session.open(dreamMediathekPlayer, myreference, self.lastservice)
 
 	def getStationsList(self):
-		print "getStationsList"
+		print("getStationsList")
 		iWebTVStations.getWebTVStations()
 		self.buildStationsList()
 
@@ -170,7 +170,7 @@ class dreamMediathekStationsScreen(Screen):
 		if self.tvstations and len(self.tvstations):
 			self.streamlist = []
 			for station in self.tvstations:
-				print "GOT station:", station
+				print("GOT station:", station)
 				self.streamlist.append(self.buildStationsComponent(station))
 			if len(self.streamlist):
 				self["streamlist"].setList(self.streamlist)

@@ -1,11 +1,11 @@
-from AC3utils import AC3, PCM, AC3GLOB, PCMGLOB, AC3PCM
+from Plugins.Extensions.AudioSync.AC3utils import AC3, PCM, AC3GLOB, PCMGLOB, AC3PCM
 from Components.config import config
 from enigma import eTimer
 from Tools.ISO639 import LanguageCodes
 from Tools.HardwareInfo import HardwareInfo
 import os
 import NavigationInstance
-from __init__ import _
+from Plugins.Extensions.AudioSync.__init__ import _
 
 
 class AC3delay:
@@ -91,7 +91,7 @@ class AC3delay:
 		r = self.iSeek.getPlayPosition()
 		if r[0]:
 			return None
-		return long(r[1])
+		return int(r[1])
 
 	def getSystemDelay(self, sAudio):
 		bInitialized = False

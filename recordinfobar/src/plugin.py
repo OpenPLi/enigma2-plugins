@@ -735,8 +735,8 @@ def newInfoBarShowHide__init__(self):
 
 
 def StartMainSession(reason, session, **kwargs):
+	global baseInfoBarShowHide__init__, RecordService, _session
 	if reason == 0 and session and _session is None and config.usage.recinfobar.value:
-		global baseInfoBarShowHide__init__, RecordService, _session
 		_session = session
 		if RecordService is None:
 			try:

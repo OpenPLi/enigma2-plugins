@@ -44,7 +44,7 @@ def autostart(reason, **kwargs):
 				config.misc.prev_wakeup_time_type.save()
 				configfile.save()
 		except:
-			print "[VPS-Plugin] exception in shutdown handler, probably old enigma2"
+			print("[VPS-Plugin] exception in shutdown handler, probably old enigma2")
 
 
 def setup(session, **kwargs):

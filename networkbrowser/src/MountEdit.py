@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # for localized messages
-from __init__ import _
+from Plugins.SystemPlugins.NetworkBrowser.__init__ import _
 from Screens.Screen import Screen
 from Screens.MessageBox import MessageBox
 from Screens.VirtualKeyBoard import VirtualKeyBoard
@@ -10,7 +10,7 @@ from Components.config import config, ConfigIP, NoSave, ConfigText, ConfigEnable
 from Components.ConfigList import ConfigListScreen
 from Components.Pixmap import Pixmap
 from Components.ActionMap import ActionMap, NumberActionMap
-from AutoMount import iAutoMount, AutoMount
+from Plugins.SystemPlugins.NetworkBrowser.AutoMount import iAutoMount, AutoMount
 from Components.Sources.Boolean import Boolean
 
 # helper function to convert ips from a sring to a list of ints
@@ -103,8 +103,8 @@ class AutoMountEdit(Screen, ConfigListScreen):
 			host = ''
 		try:
 			ip = convertIP(self.mountinfo['ip'])
-		except Exception, ex:
-			print "[NWB] Invalid IP", ex
+		except Exception as ex:
+			print("[NWB] Invalid IP", ex)
 			ip = [0, 0, 0, 0]
 		sharename = self.mountinfo.get('sharename', "Sharename")
 		sharedir = self.mountinfo.get('sharedir', "/media/hdd")
@@ -193,7 +193,7 @@ class AutoMountEdit(Screen, ConfigListScreen):
 				current[1].help_window.instance.hide()
 		sharename = self.sharenameConfigEntry.value
 		if sharename in self.mounts:
-			self.session.openWithCallback(self.updateConfig, MessageBox, (_("A mount entry with this name already exists!\nUpdate existing entry and continue?\n")))
+			self.session.openWithCallback(self.updateConfig, MessageBox, (_("A mount entry with this name already exists!\nUpdate existing entry and continue?\n") ) )
 		else:
 			self.session.openWithCallback(self.applyConfig, MessageBox, (_("Are you sure you want to save this network mount?\n\n")))
 

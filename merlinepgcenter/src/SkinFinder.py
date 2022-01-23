@@ -102,7 +102,7 @@ class SkinFinder(object):
 				skinIndex = skinListFiles.index(currentSkinValue)
 			else:
 				# fall back to the default skin
-				print '[SkinFinder] unable to find skin file %s, tryig to load a default skin' % currentSkinValue
+				print('[SkinFinder] unable to find skin file %s, tryig to load a default skin' % currentSkinValue)
 				skinIndex = SkinFinder.getDefaultSkinEntry()
 		else:
 			# get the index of the detected skin in our list of default skins
@@ -110,10 +110,10 @@ class SkinFinder(object):
 
 		if skinIndex is not None:
 			skinFile = SkinFinder.skinList[skinIndex][0]
-			print '[SkinFinder] found skin file', skinFile
+			print('[SkinFinder] found skin file', skinFile)
 			return skinFile, SkinFinder.skinList
 		else:
-			print '[SkinFinder] unable to find any skin!'
+			print('[SkinFinder] unable to find any skin!')
 			return None
 
 	@staticmethod
@@ -135,5 +135,5 @@ class SkinFinder(object):
 			except ValueError:
 				pass
 
-		print '[SkinFinder] skin index error! File:', fileName
+		print('[SkinFinder] skin index error! File:', fileName)
 		return None

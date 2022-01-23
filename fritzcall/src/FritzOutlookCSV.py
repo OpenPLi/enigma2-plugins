@@ -15,7 +15,7 @@ except ValueError:
 		return string
 
 	def debug(text):
-		print text
+		print(text)
 
 	import re
 
@@ -42,7 +42,7 @@ debug = logger.debug
 
 
 def out(number, name):
-	print number + '#' + name
+	print(number + '#' + name)
 
 
 import csv

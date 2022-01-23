@@ -1,18 +1,18 @@
-from AC3utils import AC3, PCM, AC3GLOB, PCMGLOB, AC3PCM, SKIN
-from AC3delay import AC3delay
+from Plugins.Extensions.AudioSync.AC3utils import AC3, PCM, AC3GLOB, PCMGLOB, AC3PCM, SKIN
+from Plugins.Extensions.AudioSync.AC3delay import AC3delay
 from enigma import ePoint
 from Components.ActionMap import HelpableNumberActionMap
 from Components.Label import Label, MultiColorLabel
 from Components.Pixmap import MultiPixmap
 from Components.ProgressBar import ProgressBar
 from Components.config import config
-from MovableScreen import MovableScreen
+from Plugins.Extensions.AudioSync.MovableScreen import MovableScreen
 from Screens.ChoiceBox import ChoiceBox
 from Screens.HelpMenu import HelpableScreen
 from Screens.MessageBox import MessageBox
 from Screens.Screen import Screen
-from __init__ import _
-from plugin import getServiceDict, saveServiceDict, audio_delay
+from Plugins.Extensions.AudioSync.__init__ import _
+from Plugins.Extensions.AudioSync.plugin import getServiceDict, saveServiceDict, audio_delay
 
 
 class AC3LipSync(Screen, HelpableScreen, MovableScreen):
@@ -70,7 +70,7 @@ class AC3LipSync(Screen, HelpableScreen, MovableScreen):
 		self["key_blue"] = Label(_("Save to key"))
 
 		# Actions
-		self["actions"] = HelpableNumberActionMap(self, "PluginAudioSyncActions",
+		self["actions"] = HelpableNumberActionMap(self, ["PluginAudioSyncActions"],
 		{
 			"menu": (self.keyMenu, _("Open plugin menu")),
 			"ok": (self.keyOk, _("Save values and close plugin")),
@@ -281,7 +281,7 @@ class AC3SetCustomValue:
 
 	def getKeyList(self):
 		keyList = []
-		for i, iValue in self.keyStep.iteritems():
+		for i, iValue in iter(self.keyStep.items()):
 			if i != "0":
 				keyList.append((_("Key %(key)s (current value: %(value)i ms)") % dict(key=i, value=iValue), i))
 		return keyList

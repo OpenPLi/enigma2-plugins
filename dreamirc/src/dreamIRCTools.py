@@ -148,7 +148,7 @@ class MessagePipe():
 			timestamp = time.strftime("[%H:%M:%S]", time.localtime(time.time()))
 			self.debuglogger.log("%s %s" % (timestamp, text))
 		else:
-			print text
+			print(text)
 
 	def clear(self):
 		global ChatText
@@ -188,10 +188,10 @@ class MessagePipe():
 class MessageLogger:
 	def __init__(self, file):
 		self.file = file
-		print '[dreamIRC] %s  MESSAGE LOGGER = %s \n' % (time.strftime("[%H:%M:%S]", time.localtime(time.time())), self.file)
+		print('[dreamIRC] %s  MESSAGE LOGGER = %s \n' % (time.strftime("[%H:%M:%S]", time.localtime(time.time())), self.file))
 
 	def log(self, message):
-		print '[dreamIRC] %s\n' % (message)
+		print('[dreamIRC] %s\n' % (message))
 		self.file.write('%s\n' % (message))
 		self.file.flush()
 

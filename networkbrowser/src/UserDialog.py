@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # for localized messages
-from __init__ import _
+from Plugins.SystemPlugins.NetworkBrowser.__init__ import _
 from Screens.Screen import Screen
 from Screens.MessageBox import MessageBox
 from Screens.VirtualKeyBoard import VirtualKeyBoard
@@ -13,7 +13,7 @@ from Components.ActionMap import ActionMap, NumberActionMap
 from Components.Sources.Boolean import Boolean
 import enigma
 import os
-import cPickle
+import pickle
 
 
 def write_cache(cache_file, cache_data):
@@ -21,15 +21,15 @@ def write_cache(cache_file, cache_data):
 	if not os.path.isdir(path):
 		try:
 			os.mkdir(path)
-		except Exception, ex:
-			print "ERROR creating:", path, ex
+		except Exception as ex:
+			print("ERROR creating:", path, ex)
 	with open(cache_file, 'w') as fd:
-		cPickle.dump(cache_data, fd, -1)
+		pickle.dump(cache_data, fd, -1)
 
 
 def load_cache(cache_file):
 	with open(cache_file) as fd:
-		return cPickle.load(fd)
+		return pickle.load(fd)
 
 
 class UserDialog(Screen, ConfigListScreen):
@@ -81,7 +81,7 @@ class UserDialog(Screen, ConfigListScreen):
 	def createConfig(self):
 		username = 'guest'
 		password = 'guest'
-		print 'Loading user cache from ', self.cache_file
+		print('Loading user cache from ', self.cache_file)
 		try:
 			hostdata = load_cache(self.cache_file)
 			username = hostdata['username']

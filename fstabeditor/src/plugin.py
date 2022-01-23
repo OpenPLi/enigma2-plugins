@@ -281,7 +281,7 @@ class fstabEditorScreen(Screen, ConfigListScreen, HelpableScreen):
 
 	def dirSelectDlgClosed(self, mountpoint):
 		#use print to see in crashlog what's been selected
-		print "mountpoint: ", mountpoint
+		print("mountpoint: ", mountpoint)
 		if mountpoint != False:
 			if self.selectedEntry == 1:
 				self.mountpoint.value = mountpoint

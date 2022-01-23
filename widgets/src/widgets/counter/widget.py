@@ -13,7 +13,7 @@ class CounterWidget(Widget):
 
     def onLoadFinished(self, instance):
         self.instance = instance
-        print "refresh CounterWidget"
+        print("refresh CounterWidget")
 
         self.getElement("counter_title").setText("###")
         self.Timer.start(200)
@@ -22,12 +22,12 @@ class CounterWidget(Widget):
         self.Timer.stop()
 
     def TimerFire(self):
-        #print "TimerFire"
+        #print("TimerFire")
         self.counter += 1
         try:
             self.getElement("counter_title").setText(str(self.counter))
             self.Timer.start(200)
-        except Exception, e:
+        except Exception as e:
             pass
 
 

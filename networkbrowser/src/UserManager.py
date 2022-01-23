@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # for localized messages
-from __init__ import _
+from Plugins.SystemPlugins.NetworkBrowser.__init__ import _
 from Screens.Screen import Screen
 from Components.Sources.StaticText import StaticText
 from Components.Pixmap import Pixmap
@@ -8,7 +8,7 @@ from Components.ActionMap import ActionMap
 from Components.Sources.List import List
 from Tools.LoadPixmap import LoadPixmap
 from Tools.Directories import resolveFilename, SCOPE_PLUGINS, SCOPE_SKIN_IMAGE
-from UserDialog import UserDialog
+from Plugins.SystemPlugins.NetworkBrowser.UserDialog import UserDialog
 import os
 
 
@@ -78,7 +78,7 @@ class UserManager(Screen):
 		if cur:
 			returnValue = cur[1]
 			hostinfo = cur[0]
-			if returnValue is "edit":
+			if returnValue == "edit":
 				self.session.open(UserDialog, self.skin_path, hostinfo)
 
 	def delete(self, returnValue=None):

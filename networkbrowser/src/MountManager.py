@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # for localized messages
-from __init__ import _
+from Plugins.SystemPlugins.NetworkBrowser.__init__ import _
 from Screens.Screen import Screen
 from Screens.MessageBox import MessageBox
 from Screens.VirtualKeyBoard import VirtualKeyBoard
@@ -11,10 +11,10 @@ from Components.Network import iNetwork
 from Components.Sources.List import List
 from Tools.LoadPixmap import LoadPixmap
 from Tools.Directories import resolveFilename, SCOPE_PLUGINS, SCOPE_SKIN_IMAGE
-from MountView import AutoMountView
-from MountEdit import AutoMountEdit
-from AutoMount import iAutoMount, AutoMount
-from UserManager import UserManager
+from Plugins.SystemPlugins.NetworkBrowser.MountView import AutoMountView
+from Plugins.SystemPlugins.NetworkBrowser.MountEdit import AutoMountEdit
+from Plugins.SystemPlugins.NetworkBrowser.AutoMount import iAutoMount, AutoMount
+from Plugins.SystemPlugins.NetworkBrowser.UserManager import UserManager
 import os
 from Components.config import config
 
@@ -90,13 +90,13 @@ class AutoMountManager(Screen):
 	def keyOK(self, returnValue=None):
 		if returnValue is None:
 			returnValue = self["config"].getCurrent()[1]
-			if returnValue is "add":
+			if returnValue == "add":
 				self.addMount()
-			elif returnValue is "view":
+			elif returnValue == "view":
 				self.viewMounts()
-			elif returnValue is "user":
+			elif returnValue == "user":
 				self.userEdit()
-			elif returnValue is "hostname":
+			elif returnValue == "hostname":
 				self.hostEdit()
 
 	def addMount(self):

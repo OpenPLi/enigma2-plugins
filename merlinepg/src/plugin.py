@@ -38,18 +38,18 @@ from RecordTimer import RecordTimerEntry, parseEvent, AFTEREVENT
 from ServiceReference import ServiceReference
 from ShowMe import ShowMe
 from time import localtime
-if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/AutoTimer/AutoTimerEditor.pyo"):
+if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/AutoTimer/AutoTimerEditor.py"):
 	from Plugins.Extensions.AutoTimer.AutoTimerEditor import addAutotimerFromEvent
 	from Plugins.Extensions.AutoTimer.plugin import main as AutoTimerView
 	AutoTimerPresent = True
 else:
 	AutoTimerPresent = False
-if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/IMDb/plugin.pyo"):
+if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/IMDb/plugin.py"):
 	from Plugins.Extensions.IMDb.plugin import IMDB
 	IMDbPresent = True
 else:
 	IMDbPresent = False
-if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/EPGSearch/EPGSearch.pyo"):
+if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/EPGSearch/EPGSearch.py"):
 	from Plugins.Extensions.EPGSearch.EPGSearch import EPGSearchList, EPGSearch
 	epgSpresent = True
 else:
@@ -68,7 +68,7 @@ config.plugins.MerlinEPG.PageUDonBouquets = ConfigYesNo(default=True)
 
 
 def Plugins(**kwargs):
- 	list = [(PluginDescriptor(name="Merlin Programm Guide", description="Merlin Programm Guide", where=PluginDescriptor.WHERE_EVENTINFO, fnc=startMerlinPG))]
+	list = [(PluginDescriptor(name="Merlin Programm Guide", description="Merlin Programm Guide", where=PluginDescriptor.WHERE_EVENTINFO, fnc=startMerlinPG))]
 	list.append(PluginDescriptor(name="Merlin Programm Guide", where=PluginDescriptor.WHERE_EXTENSIONSMENU, fnc=startMerlinPGnew))
 	return list
 

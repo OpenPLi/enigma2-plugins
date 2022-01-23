@@ -1,10 +1,10 @@
 from Plugins.Plugin import PluginDescriptor
-from __init__ import _
+from Plugins.Extensions.MovieCut.__init__ import _
 import os
 
 
 def main(session, service, **kwargs):
-	import ui
+	from Plugins.Extensions.MovieCut import ui
 	# Hack to make sure it is executable
 	if not os.access(ui.mcut_path, os.X_OK):
 		os.chmod(ui.mcut_path, 493)

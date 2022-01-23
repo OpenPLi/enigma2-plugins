@@ -1,4 +1,4 @@
-from AC3utils import PLUGIN_BASE, PLUGIN_VERSION
+from Plugins.Extensions.AudioSync.AC3utils import PLUGIN_BASE, PLUGIN_VERSION
 from Components.ActionMap import ActionMap, NumberActionMap
 from Components.Button import Button
 from Components.Label import Label
@@ -6,7 +6,7 @@ from Components.ConfigList import ConfigListScreen
 from Components.config import config, getConfigListEntry
 from Components.SystemInfo import SystemInfo
 from Screens.Screen import Screen
-from __init__ import _
+from Plugins.Extensions.AudioSync.__init__ import _
 
 
 class AC3LipSyncSetup(ConfigListScreen, Screen):

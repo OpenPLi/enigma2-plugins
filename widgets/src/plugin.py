@@ -116,7 +116,7 @@ def lookupWidgetConfig():
 
 
 def getWidgetForPosition(session, positionname):
-	#print "positionname value",config.plugins.Widgets.active_widgets[positionname].value
+	#print("positionname value",config.plugins.Widgets.active_widgets[positionname].value)
 	wpath = config.plugins.Widgets.active_widgets[positionname].value
 	if wpath == "":
 		return False
@@ -145,7 +145,7 @@ class WidgetDesktop(Screen):
 				if config.tag == "num_widgets":
 					self.num_widgets_x = int(config.get("x"))
 					self.num_widgets_y = int(config.get("y"))
-		print "init screen with", self.num_widgets_x, "x", self.num_widgets_y
+		print("init screen with", self.num_widgets_x, "x", self.num_widgets_y)
 		self.initBackgrounds()
 
 		self.positions = []
@@ -160,14 +160,14 @@ class WidgetDesktop(Screen):
 			for wname in self.positions:
 				twidget = getWidgetForPosition(session, wname)
 				if twidget is not False:
-					print "found widget for position", wname, twidget
+					print("found widget for position", wname, twidget)
 					twidget[1].setPositionname(wname)
 					self.importWidgetElements(twidget, wname)
 					self.importWidgetSkin(scr, twidget, wname)
 					self.imported_widgets.append(twidget)
 					self.widgets_on_position[wname] = twidget
 				else:
-					print "position is empty", wname
+					print("position is empty", wname)
 
 		self["actions"] = ActionMap(["WidgetDesktopActions"], {
 															  "ok": self.close,
@@ -229,8 +229,8 @@ class WidgetDesktop(Screen):
 		for w in self.imported_widgets:
 			try:
 				w[1].onLoadFinished(self)
-			except Exception, e:
-				print "Exception in onLoadFinished of widget", w[0], e
+			except Exception as e:
+				print("Exception in onLoadFinished of widget", w[0], e)
 
 	def _onClose(self):
 		for w in self.imported_widgets:
@@ -240,8 +240,8 @@ class WidgetDesktop(Screen):
 
 				#deleting the instance of the widget
 				#del w
-			except Exception, e:
-				print "Exception in onClose of widget", w[0], e
+			except Exception as e:
+				print("Exception in onClose of widget", w[0], e)
 
 	def key_up(self):
 		self.selectionHide()
@@ -285,7 +285,7 @@ class WidgetDesktop(Screen):
 
 	def key_menu(self):
 		if self.selection_x != 0 and self.selection_y != 0:
-			print "menukey on position", self.selection_x, self.selection_y
+			print("menukey on position", self.selection_x, self.selection_y)
 			w = self.getWidgetOnPosition(self.selection_x, self.selection_y)
 			if w is not False:
 				self.session.open(WidgetPositionConfigScreen, self.selection_x, self.selection_y, widget=w)
@@ -296,7 +296,7 @@ class WidgetDesktop(Screen):
 		if self.selection_x != 0 and self.selection_y != 0:
 			w = self.getWidgetOnPosition(self.selection_x, self.selection_y)
 			if w is not False:
-				print "infokey on widget", w[0]
+				print("infokey on widget", w[0])
 				w[1].onInfo()
 
 	def getWidgetOnPosition(self, x, y):
@@ -364,7 +364,7 @@ class WidgetPositionConfigScreen(Screen):
 	def update(self):
 		if self["list"].getCurrent() is not None:
 			value = self["list"].getCurrent()[1]
-			print "update", value
+			print("update", value)
 			if value == "remove":
 				self["description"].setText("remove current widget")
 				self["version"].setText("")
@@ -391,9 +391,9 @@ import os
 
 def loadSkinReal(skinPath):
     if os.path.exists(skinPath):
-        print "[Widgets] Loading skin ", skinPath
+        print("[Widgets] Loading skin ", skinPath)
         for skin in dom_skins:
-        	print "skin", skin
+        	print("skin", skin)
 
         	if skin[0] == skinPath.replace("skin.xml", ""):
         		dom_skins.remove(skin)

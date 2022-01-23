@@ -54,7 +54,7 @@ class ReconstructApSc(ChoiceBox):
 		name = self.getName(service, path)
 		offline = self.serviceHandler.offlineOperations(service)
 		if offline is None:
-			print "[Reconstruct AP/SC] Cannot reconstruct", name
+			print("[Reconstruct AP/SC] Cannot reconstruct", name)
 			return
 		text = _("Reconstruct AP/SC - %s") % name
 		job = Task.Job(text)

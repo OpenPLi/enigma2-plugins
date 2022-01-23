@@ -277,7 +277,7 @@ class EPGRefresh:
 				if my_path.exists(config.misc.epgcache_filename.value):
 					try:
 						my_system("cp -f %s %s" % (config.misc.epgcache_filename.value, restore_backup))
-						my_chmod("%s" % (restore_backup), 0644)
+						my_chmod("%s" % (restore_backup), 0o644)
 						print("[EPGRefresh] save epgcache backup...")
 					except:
 						pass

@@ -137,11 +137,11 @@ class LastFM(LastFMHandler):
                 except UnicodeDecodeError:
                     res[x[0]] = "unicodeproblem"
             elif x != [""]:
-                print "(urk?", x, ")"
+                print("(urk?", x, ")")
         return res
 
     def loadPlaylist(self):
-        print "LOADING PLAYLIST"
+        print("LOADING PLAYLIST")
         if self.state is not True:
             self.onCommandFailed("not logged in")
         else:
@@ -267,7 +267,7 @@ class LastFM(LastFMHandler):
                 nodex['url'] = node.getAttribute("url").encode("utf-8")
                 data.append(nodex)
             self.onGlobalTagsLoaded(data)
-        except xml.parsers.expat.ExpatError, e:
+        except xml.parsers.expat.ExpatError as e:
             self.onCommandFailed(e)
 
     def getTopTracks(self, username):
@@ -339,7 +339,7 @@ class LastFM(LastFMHandler):
             self.onCommandFailed(rdata)
 
     def _parseTracks(self, xmlrawdata):
-        #print xmlrawdata
+        #print(xmlrawdata)
         try:
             rssDocument = parseString(xmlrawdata)
             data = []
@@ -353,8 +353,8 @@ class LastFM(LastFMHandler):
                 nodex['_display'] = nodex['artist'] + " - " + nodex['name']
                 data.append(nodex)
             return True, data
-        except xml.parsers.expat.ExpatError, e:
-            print e
+        except xml.parsers.expat.ExpatError as e:
+            print(e)
             return False, e
 
     def getNeighbours(self, username):
@@ -392,7 +392,7 @@ class LastFM(LastFMHandler):
             self.onCommandFailed(rdata)
 
     def _parseUser(self, xmlrawdata):
-        #print xmlrawdata
+        #print(xmlrawdata)
         try:
             rssDocument = parseString(xmlrawdata)
             data = []
@@ -404,8 +404,8 @@ class LastFM(LastFMHandler):
                 nodex['_display'] = nodex['name']
                 data.append(nodex)
             return True, data
-        except xml.parsers.expat.ExpatError, e:
-            print e
+        except xml.parsers.expat.ExpatError as e:
+            print(e)
             return False, e
 
     def changeStation(self, url):

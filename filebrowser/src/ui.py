@@ -62,14 +62,14 @@ class FilebrowserConfigScreen(ConfigListScreen, Screen):
         self.setTitle(pname + " - %s" % _("Settings"))
 
     def save(self):
-        print "saving"
+        print("saving")
         for x in self["config"].list:
             x[1].save()
         self.refreshPlugins()
         self.close(True)
 
     def cancel(self):
-        print "cancel"
+        print("cancel")
         for x in self["config"].list:
             x[1].cancel()
         self.close(False)
@@ -395,8 +395,8 @@ class FilebrowserScreen(Screen):
     def onFileAction(self):
         try:
             x = openFile(self.session, guess_type(self.SOURCELIST.getFilename())[0], self.SOURCELIST.getCurrentDirectory() + self.SOURCELIST.getFilename())
-            print "RESULT OPEN FILE", x
-        except TypeError, e:
+            print("RESULT OPEN FILE", x)
+        except TypeError as e:
             # catching error
             #  File "/home/tmbinc/opendreambox/1.5/dm8000/experimental/build/tmp/work/enigma2-2.6git20090627-r1/image/usr/lib/enigma2/python/Components/Scanner.py", line 43, in handleFile
             #  TypeError: 'in <string>' requires string as left operand
@@ -412,7 +412,8 @@ class FilebrowserScreenInfo(Screen):
                 <widget name="size" position="15,65" size="1890,30" font="Regular;26"/>
         </screen>"""
 
-        def __init__(self, session, (filename, info)):
+        def __init__(self, session, filename_info):
+                filename, info = filename_info
                 Screen.__init__(self, session)
                 self.session = session
                 self.path = filename

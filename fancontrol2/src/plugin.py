@@ -75,7 +75,7 @@ def skal(x, x1, x2, y1, y2):
 
 
 def FClog(wert):
-# 	print "[FanControl2]",wert
+# 	print("[FanControl2]",wert)
 	while len(FC2Log) > config.plugins.FanControl.LogCount.value:
 		del FC2Log[5]
 	FC2Log.append(strftime("%H:%M:%S ") + wert)
@@ -573,7 +573,7 @@ class FanControl2SpezialSetup(Screen, ConfigListScreen):
 			sel = self["config"].getCurrent()[1]
 			if sel == config.plugins.FanControl.LogPath:
 				self.session.openWithCallback(self.dirSelected, LocationBox, text=_("Choose path"), filename="", currDir=self["config"].getCurrent()[1].value, minFree=50)
-		except Exception, e:
+		except Exception as e:
 			self.session.open(MessageBox, "Error:\n" + str(e), MessageBox.TYPE_ERROR)
 
 	def dirSelected(self, dir):
@@ -952,7 +952,7 @@ class FC2Worker(Thread):
 	def run(self):
 		global FritzTime
 		while True:
-#			print "worker a", self.index
+#			print("worker a", self.index)
 			zahl = Briefkasten.get()
 			if zahl == 1:
 				self.s.queryRun()
@@ -1275,7 +1275,7 @@ class FanControl2(Screen):
 def autostart(reason, **kwargs):
 	global session
 	if reason == 0 and "session" in kwargs:
-		if os.path.exists("/usr/lib/enigma2/python/Plugins/Extensions/WebInterface/__init__.pyo") or os.path.exists("/usr/lib/enigma2/python/Plugins/Extensions/WebInterface/__init__.pyo"):
+		if os.path.exists("/usr/lib/enigma2/python/Plugins/Extensions/WebInterface/__init__.py") or os.path.exists("/usr/lib/enigma2/python/Plugins/Extensions/WebInterface/__init__.py"):
 			from Plugins.Extensions.WebInterface.WebChilds.Toplevel import addExternalChild
 			from FC2webSite import FC2web, FC2webLog, FC2webChart
 			from twisted.web import static

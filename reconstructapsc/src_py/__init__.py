@@ -12,7 +12,7 @@ def localeInit():
 def _(txt):
 	t = gettext.dgettext("ReconstructApSc", txt)
 	if t == txt:
-		print "[ReconstructApSc] fallback to default translation for", txt
+		print("[ReconstructApSc] fallback to default translation for", txt)
 		t = gettext.gettext(txt)
 	return t
 

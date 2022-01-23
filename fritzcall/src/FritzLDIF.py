@@ -40,7 +40,7 @@ debug = logger.debug
 
 
 def out(number, name):
-	print number + '#' + name
+	print(number + '#' + name)
 
 
 class FindNumber(ldif.LDIFParser):
@@ -193,7 +193,7 @@ class ReadNumbers(ldif.LDIFParser):
 
 
 def lookedUp(number, name):
-	print number + ' ' + name
+	print(number + ' ' + name)
 
 
 if __name__ == '__main__':

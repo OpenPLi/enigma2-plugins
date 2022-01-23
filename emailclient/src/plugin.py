@@ -498,7 +498,7 @@ class EmailAttachment:
 			fp = open(folder + "/" + self.getFilename(), "wb")
 			fp.write(self.data)
 			fp.close()
-		except Exception, e:
+		except Exception as e:
 			debug("[EmailAttachment] save %s" % str(e))
 			return False
 		return True
@@ -600,6 +600,7 @@ class CheckMail:
 		@param headers: list of headers
 		'''
 		# debug("[CheckMail] _onHeaderList headers: %s" %repr(headers))
+		global _firstCheckMail
 		if Screens.Standby.inStandby is None and (config.plugins.emailimap.autostart.value or _firstCheckMail):
 			message = _("New mail arrived for account %s:\n\n") % self._name
 			for h in headers:
@@ -609,7 +610,6 @@ class CheckMail:
 			if delay == 0:
 				if _firstCheckMail == 0:
 					delay = 10
-					global _firstCheckMail
 					_firstCheckMail = 1
 			if config.plugins.emailimap.type.value == "0":
 				if Screens.InfoBar.InfoBar.instance and Screens.InfoBar.InfoBar.instance.execing:
@@ -715,12 +715,12 @@ class EmailAccount():
 
 	def _ebNotify(self, result, where, what):
 		debug("[EmailAccount] %s: _ebNotify error in %s: %s: %s" % (self._name, where, what, result.getErrorMessage()))
+		global _firstCheckMail
 		if config.plugins.emailimap.verbose.value and Screens.Standby.inStandby is None and (config.plugins.emailimap.autostart.value or _firstCheckMail):
 			delay = config.plugins.emailimap.timeout.value
 			if delay == 0:
 				if _firstCheckMail == 0:
 					delay = 10
-					global _firstCheckMail
 					_firstCheckMail = 1
 			if config.plugins.emailimap.type.value == "0":
 				if Screens.InfoBar.InfoBar.instance and Screens.InfoBar.InfoBar.instance.execing:
@@ -813,7 +813,7 @@ class EmailAccount():
 				self._proto.fetchFlags('%i:%i' % (rangeToFetch[0], rangeToFetch[1])	#'1:*'
 						   ).addCallback(self._onFlagsList, callback, rangeToFetch)
 
-			except imap4.IllegalServerResponse, e:
+			except imap4.IllegalServerResponse as e:
 				debug("[EmailAccount] _onExamine exception: " + str(e))
 				callback([], [])
 
@@ -931,9 +931,9 @@ class EmailAccount():
 		try:
 			failure.trap(imap4.NoSupportedAuthentication)
 			self._doLoginInsecure()
-		except Exception, e:
+		except Exception as e:
 			debug("[EmailAccount] %s: _onAuthenticationFailed: %s" % (self._name, e.message))
-			print e, e.message
+			print(e, e.message)
 
 	def _doLoginInsecure(self):
 		debug("[EmailAccount] %s: _doLoginInsecure" % (self._name))
@@ -1181,8 +1181,8 @@ def getAccounts():
 
 
 def main(session, **kwargs): #@UnusedVariable kwargs # pylint: disable-msg=W0613
+	global _firstCheckMail
 	if _firstCheckMail == 0:
-		global _firstCheckMail
 		_firstCheckMail = 1
 	session.open(EmailAccountList)
 

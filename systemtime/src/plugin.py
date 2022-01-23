@@ -220,12 +220,12 @@ class SystemTimeSetupScreen(Screen, ConfigListScreen):
 			elif os.path.exists("/usr/sbin/ntpd"):
 				cmd = "echo -e '#!/bin/sh\n\nsleep %s\n\n[ -x usr/sbin/ntpd ] && /usr/sbin/ntpd -dnqp %s\n\nexit 0' >> /etc/init.d/ntpdate" % (str(self.ST.wifi_delay.value), self.ST.ip.value)
 			if fileExists("/etc/init.d/ntpdate"):
-				os.chmod("/etc/init.d/ntpdate", 0755)
+				os.chmod("/etc/init.d/ntpdate", 0o755)
 				os.system("update-rc.d ntpdate defaults 99")
 			else:
 				os.system(cmd)
 				if fileExists("/etc/init.d/ntpdate"):
-					os.chmod("/etc/init.d/ntpdate", 0755)
+					os.chmod("/etc/init.d/ntpdate", 0o755)
 					os.system("update-rc.d ntpdate defaults 99")
 				else:
 					self.ST.syncNTPcoldstart.value = False
@@ -240,12 +240,12 @@ class SystemTimeSetupScreen(Screen, ConfigListScreen):
 
 	def addUseRTC(self):
 		if fileExists("/etc/init.d/set-rtctime"):
-			os.chmod("/etc/init.d/set-rtctime", 0755)
+			os.chmod("/etc/init.d/set-rtctime", 0o755)
 			os.system("update-rc.d set-rtctime defaults 40")
 		else:
 			os.system("cp /usr/lib/enigma2/python/Plugins/SystemPlugins/SystemTime/set-rtctime /etc/init.d/set-rtctime")
 			if fileExists("/etc/init.d/set-rtctime"):
-				os.chmod("/etc/init.d/set-rtctime", 0755)
+				os.chmod("/etc/init.d/set-rtctime", 0o755)
 				os.system("update-rc.d set-rtctime defaults 40")
 			else:
 				self.session.open(MessageBox, _("Script 'set-rtctime' not found!"), MessageBox.TYPE_ERROR, timeout=3)

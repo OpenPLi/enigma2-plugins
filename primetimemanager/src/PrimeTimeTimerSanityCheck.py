@@ -25,7 +25,7 @@ class PrimeTimeTimerSanityCheck:
 		self.simultimer = []
 		if self.newtimer:
 			if (not self.newtimer.conflict_detection and not self.visible_conflict) or (self.newtimer.service_ref and '%3a//' in self.newtimer.service_ref.ref.toString()):
-				print "[TimerSanityCheck] Exception - timer does not have to be checked!"
+				print("[TimerSanityCheck] Exception - timer does not have to be checked!")
 				return True
 			self.simultimer = [self.newtimer]
 		return self.checkTimerlist()
@@ -74,14 +74,14 @@ class PrimeTimeTimerSanityCheck:
 		if ext_timer and isinstance(ext_timer, RecordTimer.RecordTimerEntry):
 			self.newtimer = ext_timer
 		if not self.newtimer or not self.newtimer.service_ref or not self.newtimer.service_ref.ref.valid():
-			print "[TimerSanityCheck] Error - timer not valid!"
+			print("[TimerSanityCheck] Error - timer not valid!")
 			return False
 		if self.newtimer.disabled or (not self.newtimer.conflict_detection and not self.visible_conflict) or '%3a//' in self.newtimer.service_ref.ref.toString():
-			print "[TimerSanityCheck] Exception - timer does not have to be checked!"
+			print("[TimerSanityCheck] Exception - timer does not have to be checked!")
 			return True
 		curtime = localtime(time())
 		if curtime.tm_year > 1970 and self.newtimer.end < time():
-			print "[TimerSanityCheck] timer is finished!"
+			print("[TimerSanityCheck] timer is finished!")
 			return True
 		rflags = self.newtimer.repeated
 		rflags = ((rflags & 0x7F) >> 3) | ((rflags & 0x07) << 4)
@@ -196,7 +196,7 @@ class PrimeTimeTimerSanityCheck:
 					fakeRecResult = -1
 				# TODO
 				#if fakeRecResult == -6 and len(NavigationInstance.instance.getRecordings(True)) < 2:
-				#	print "[TimerSanityCheck] less than two timers in the simulated recording list - timer conflict is not plausible - ignored !"
+				#	print("[TimerSanityCheck] less than two timers in the simulated recording list - timer conflict is not plausible - ignored !")
 				#	fakeRecResult = 0
 				if not fakeRecResult: # tune okay
 					if hasattr(fakeRecService, 'frontendInfo'):
@@ -239,14 +239,14 @@ class PrimeTimeTimerSanityCheck:
 					if entry[1] == timer:
 						overlaplist.remove(entry)
 			else:
-				print "[TimerSanityCheck] bug: unknown flag!"
+				print("[TimerSanityCheck] bug: unknown flag!")
 			self.nrep_eventlist[idx] = (event[0], event[1], event[2], cnt, overlaplist[:]) # insert a duplicate into current overlaplist
 			fakeRecService = None
 			fakeRecResult = None
 			idx += 1
 
 		if ConflictTimer is None:
-			print "[TimerSanityCheck] conflict not found!"
+			print("[TimerSanityCheck] conflict not found!")
 			return True
 
 ##################################################################################
@@ -283,8 +283,8 @@ class PrimeTimeTimerSanityCheck:
 								break
 
 		if len(self.simultimer) < 2:
-			print "[TimerSanityCheck] possible bug: unknown conflict!"
+			print("[TimerSanityCheck] possible bug: unknown conflict!")
 			return True
 
-		print "[TimerSanityCheck] conflict detected!"
+		print("[TimerSanityCheck] conflict detected!")
 		return False

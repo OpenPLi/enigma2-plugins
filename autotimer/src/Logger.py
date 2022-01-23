@@ -94,7 +94,7 @@ def doDebug(*args):
 		logger.debug(strargs)
 
 	elif config.plugins.autotimer.log_shell.value:
-		print strargs
+		print(strargs)
 
 
 def doLog(*args):
@@ -109,7 +109,7 @@ def doLog(*args):
 		logger.info(strargs)
 
 	elif config.plugins.autotimer.log_shell.value:
-		print strargs
+		print(strargs)
 
 
 initLog()

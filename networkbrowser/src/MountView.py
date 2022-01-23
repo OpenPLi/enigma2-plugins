@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # for localized messages
-from __init__ import _
+from Plugins.SystemPlugins.NetworkBrowser.__init__ import _
 from Screens.Screen import Screen
 from Screens.MessageBox import MessageBox
 from Components.Sources.StaticText import StaticText
@@ -9,8 +9,8 @@ from Components.Network import iNetwork
 from Components.Sources.List import List
 from Tools.LoadPixmap import LoadPixmap
 from Tools.Directories import resolveFilename, SCOPE_PLUGINS, SCOPE_SKIN_IMAGE
-from AutoMount import iAutoMount, AutoMount
-from MountEdit import AutoMountEdit
+from Plugins.SystemPlugins.NetworkBrowser.AutoMount import iAutoMount, AutoMount
+from Plugins.SystemPlugins.NetworkBrowser.MountEdit import AutoMountEdit
 
 
 class AutoMountView(Screen):
@@ -78,6 +78,8 @@ class AutoMountView(Screen):
                 self["config"].setList(self.list)
 
         def buildMountViewItem(self, entry):
+                activepng = ""
+                mounttypepng = ""
                 if entry["isMounted"] is True:
                         isMountedpng = LoadPixmap(cached=True, path=resolveFilename(SCOPE_PLUGINS, "SystemPlugins/NetworkBrowser/icons/ok.png"))
                 if entry["isMounted"] is False:

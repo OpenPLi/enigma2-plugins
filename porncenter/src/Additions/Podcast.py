@@ -57,4 +57,4 @@ class Podcast(Plugin):
 
 	def getPageError(self, error=None):
 		if error:
-			print error
+			print(error)
