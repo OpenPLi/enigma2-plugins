@@ -836,7 +836,7 @@ class ManualResolution(Screen):
 				elif "1" in progstr or "p" in progstr:
 					prog = "p"
 			except:
-				print ("[ManualResolution] Error open /proc/stb/vmpeg/0/progressive")
+				print("[ManualResolution] Error open /proc/stb/vmpeg/0/progressive")
 			try:
 				f = open("/proc/stb/vmpeg/0/framerate", "r")
 				fpsString = int(f.read())
