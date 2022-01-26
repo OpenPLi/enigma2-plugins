@@ -1,26 +1,28 @@
 from __future__ import print_function
-# for localized messages
-from . import _
-from Components.ActionMap import NumberActionMap, ActionMap
-from Components.config import config, ConfigSubsection, ConfigSelection, ConfigYesNo, ConfigInteger, getConfigListEntry, ConfigNothing
+
+from time import strftime, time
+
+from Components.About import about
+from Components.ActionMap import ActionMap, NumberActionMap
+from Components.config import ConfigInteger, ConfigNothing, ConfigSelection, ConfigSubsection, ConfigYesNo, config, getConfigListEntry
 from Components.ConfigList import ConfigListScreen
 from Components.Label import Label
-from Components.NimManager import nimmanager, getConfigSatlist
+from Components.NimManager import getConfigSatlist, nimmanager
 from Components.Sources.CanvasSource import CanvasSource
 from Components.Sources.List import List
 from Components.Sources.StaticText import StaticText
-from enigma import eDVBFrontendParameters, eDVBFrontendParametersSatellite, eComponentScan, eTimer, eDVBResourceManager, getDesktop, getBoxType
+from enigma import eComponentScan, eDVBFrontendParameters, eDVBFrontendParametersSatellite, eDVBResourceManager, eTimer, getBoxType, getDesktop
 from Screens.MessageBox import MessageBox
 from Screens.Screen import Screen
 from Screens.ServiceScan import ServiceScan
-from time import time, strftime
-from Components.About import about
 from Tools.Directories import fileExists
 from Tools.Transponder import ConvertToHumanReadable
 
-from .filters import TransponderFiltering # imported from Blindscan folder
+from . import _
+from .filters import TransponderFiltering
 
 XML_BLINDSCAN_DIR = "/tmp"
+
 
 def insertValues(xml, values):
 	# The skin template is designed for an HD screen so the scaling factor is 720.
@@ -256,9 +258,9 @@ class SatelliteTransponderSearchSupport:
 						self.__tlist.append(parm)
 
 					fstr = "%s %s %s %s %s %s" % (
-						str(parm.frequency / 1000),
+						str(parm.frequency // 1000),
 						{eDVBFrontendParametersSatellite.Polarisation_Horizontal: "H", eDVBFrontendParametersSatellite.Polarisation_Vertical: "V", eDVBFrontendParametersSatellite.Polarisation_CircularLeft: "L", eDVBFrontendParametersSatellite.Polarisation_CircularRight: "R"}.get(parm.polarisation),
-						str(parm.symbol_rate / 1000),
+						str(parm.symbol_rate // 1000),
 						fec_inner,
 						r["system"],
 						r["modulation"])
@@ -270,10 +272,10 @@ class SatelliteTransponderSearchSupport:
 					if self.auto_scan:
 						print("[dmmBlindscan][frontendStateChanged] LOCKED at", freq, {eDVBFrontendParametersSatellite.Polarisation_Horizontal: "H", eDVBFrontendParametersSatellite.Polarisation_Vertical: "V", eDVBFrontendParametersSatellite.Polarisation_CircularLeft: "L", eDVBFrontendParametersSatellite.Polarisation_CircularRight: "R"}.get(parm.polarisation))
 					else:
-						print("[dmmBlindscan][frontendStateChanged] LOCKED at", freq, "SEARCHED at", self.parm.frequency, "half bw", (135 * ((sr + 1000) / 1000) / 200), "half search range", (self.parm.symbol_rate / 2))
+						print("[dmmBlindscan][frontendStateChanged] LOCKED at", freq, "SEARCHED at", self.parm.frequency, "half bw", (135 * ((sr + 1000) // 1000) // 200), "half search range", (self.parm.symbol_rate // 2))
 						self.parm.frequency = freq
-						self.parm.frequency += (135 * ((sr + 999) / 1000) / 200)
-						self.parm.frequency += self.parm.symbol_rate / 2
+						self.parm.frequency += (135 * ((sr + 999) // 1000) // 200)
+						self.parm.frequency += self.parm.symbol_rate // 2
 
 					if parm_list:
 						bm = state.getConstellationBitmap(5)
@@ -293,8 +295,8 @@ class SatelliteTransponderSearchSupport:
 
 			if self.auto_scan:
 #				freq = d["frequency"]
-#				freq = int(round(float(freq*2) / 1000)) * 1000
-#				freq /= 2
+#				freq = int(round(float(freq*2) // 1000)) * 1000
+#				freq //= 2
 				freq = int(round(d["frequency"], -3)) # round to nearest 1000
 				mhz_complete, mhz_done = self.stats(freq)
 				print("[dmmBlindscan][frontendStateChanged] CURRENT freq", freq, "%d/%d" % (mhz_done, mhz_complete))
@@ -312,7 +314,7 @@ class SatelliteTransponderSearchSupport:
 				if self.parm is None:
 					tmpstr = _("%dMHz scanned") % mhz_complete
 					tmpstr += ', '
-					tmpstr += _("%d transponders found at %d:%02d min") % (len(self.tp_found), seconds_done / 60, seconds_done % 60)
+					tmpstr += _("%d transponders found at %d:%02d min") % (len(self.tp_found), seconds_done // 60, seconds_done % 60)
 					state["progress"].setText(tmpstr)
 					state.setFinished()
 					self.frontend = None
@@ -320,9 +322,9 @@ class SatelliteTransponderSearchSupport:
 					return
 
 			if self.auto_scan:
-				tmpstr = str((freq + 500) / 1000)
+				tmpstr = str((freq + 500) // 1000)
 			else:
-				tmpstr = str((self.parm.frequency + 500) / 1000)
+				tmpstr = str((self.parm.frequency + 500) // 1000)
 
 			if self.parm.polarisation == eDVBFrontendParametersSatellite.Polarisation_Horizontal:
 				tmpstr += "H"
@@ -341,8 +343,8 @@ class SatelliteTransponderSearchSupport:
 
 			tmpstr += ', '
 
-			seconds_complete = (seconds_done * mhz_complete) / max(mhz_done, 1)
-			tmpstr += _("%d:%02d/%d:%02dmin") % (seconds_done / 60, seconds_done % 60, seconds_complete / 60, seconds_complete % 60)
+			seconds_complete = (seconds_done * mhz_complete) // max(mhz_done, 1)
+			tmpstr += _("%d:%02d/%d:%02dmin") % (seconds_done // 60, seconds_done % 60, seconds_complete // 60, seconds_complete % 60)
 
 			state["progress"].setText(tmpstr)
 
@@ -388,7 +390,7 @@ class SatelliteTransponderSearchSupport:
 				steps = 4000
 				parm.system = eDVBFrontendParametersSatellite.System_DVB_S
 			if self.auto_scan:
-				parm.symbol_rate = (bs_range[1] - bs_range[0]) / 1000
+				parm.symbol_rate = (bs_range[1] - bs_range[0]) // 1000
 			else:
 				parm.symbol_rate = steps
 			parm.fec = eDVBFrontendParametersSatellite.FEC_Auto
@@ -406,10 +408,10 @@ class SatelliteTransponderSearchSupport:
 		mhz_done = 0
 		cnt = 0
 		for range in self.range_list:
-			mhz = (range[1] - range[0]) / 1000
+			mhz = (range[1] - range[0]) // 1000
 			mhz_complete += mhz
 			if cnt == self.current_range:
-				mhz_done += (freq - range[0]) / 1000
+				mhz_done += (freq - range[0]) // 1000
 			elif cnt < self.current_range:
 				mhz_done += mhz
 			cnt += 1
@@ -701,9 +703,9 @@ class DmmBlindscan(ConfigListScreen, Screen, SatelliteTransponderSearchSupport, 
 			ttype = frontendData.get("tuner_type", "UNKNOWN")
 			if ttype == "DVB-S":
 				defaultSat["system"] = frontendData.get("system", eDVBFrontendParametersSatellite.System_DVB_S)
-				defaultSat["frequency"] = frontendData.get("frequency", 0) / 1000
+				defaultSat["frequency"] = frontendData.get("frequency", 0) // 1000
 				defaultSat["inversion"] = frontendData.get("inversion", eDVBFrontendParametersSatellite.Inversion_Unknown)
-				defaultSat["symbolrate"] = frontendData.get("symbol_rate", 0) / 1000
+				defaultSat["symbolrate"] = frontendData.get("symbol_rate", 0) // 1000
 				defaultSat["polarization"] = frontendData.get("polarization", eDVBFrontendParametersSatellite.Polarisation_Horizontal)
 				defaultSat["modulation"] = frontendData.get("modulation", eDVBFrontendParametersSatellite.Modulation_QPSK)
 				if defaultSat["system"] == eDVBFrontendParametersSatellite.System_DVB_S2:
@@ -995,9 +997,9 @@ class DmmBlindscan(ConfigListScreen, Screen, SatelliteTransponderSearchSupport, 
 		if pos > 1800:
 			pos -= 3600
 		if pos < 0:
-			pos_name = '%dW' % (abs(int(pos)) / 10)
+			pos_name = '%dW' % (abs(int(pos)) // 10)
 		else:
-			pos_name = '%dE' % (abs(int(pos)) / 10)
+			pos_name = '%dE' % (abs(int(pos)) // 10)
 		location = '%s/dmm_blindscan_%s_%s.xml' % (XML_BLINDSCAN_DIR, pos_name, strftime("%d-%m-%Y_%H-%M-%S"))
 		tuner = nimmanager.nim_slots[self.feid].friendly_full_description
 		xml = ['<?xml version="1.0" encoding="iso-8859-1"?>\n\n']
