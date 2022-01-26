@@ -1,19 +1,20 @@
-from . import _
-from Screens.Screen import Screen
-from Screens.ChoiceBox import ChoiceBox
-from Screens.Setup import SetupSummary
-from Screens.MessageBox import MessageBox
-from Components.ConfigList import ConfigList, ConfigListScreen
-from Components.config import config, configfile, getConfigListEntry, ConfigSelection, ConfigSubsection, ConfigYesNo, ConfigSubDict, ConfigNothing
-from Components.ServiceEventTracker import ServiceEventTracker
 from Components.ActionMap import ActionMap
+from Components.config import ConfigNothing, ConfigSelection, ConfigSubDict, ConfigSubsection, ConfigYesNo, config, configfile, getConfigListEntry
+from Components.ConfigList import ConfigListScreen
 from Components.Label import Label
-from Components.SystemInfo import SystemInfo
+from Components.ServiceEventTracker import ServiceEventTracker
 from Components.Sources.StaticText import StaticText
-from enigma import iPlayableService, iServiceInformation, eTimer, getDesktop
+from Components.SystemInfo import SystemInfo
+from enigma import eTimer, getDesktop, iPlayableService, iServiceInformation
 from Plugins.Plugin import PluginDescriptor
+from Plugins.SystemPlugins.Videomode.VideoHardware import video_hw  # depends on Videomode Plugin
+from Screens.ChoiceBox import ChoiceBox
+from Screens.MessageBox import MessageBox
+from Screens.Screen import Screen
+from Screens.Setup import SetupSummary
 from Tools import Notifications
-from Plugins.SystemPlugins.Videomode.VideoHardware import video_hw # depends on Videomode Plugin
+
+from . import _
 
 
 def readAvailableModes():
