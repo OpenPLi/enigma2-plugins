@@ -1,11 +1,11 @@
-from Plugins.Extensions.AudioSync.AC3utils import AC3, PCM, AC3GLOB, PCMGLOB, AC3PCM
+import NavigationInstance
 from Components.config import config
 from enigma import eTimer
-from Tools.ISO639 import LanguageCodes
 from Tools.HardwareInfo import HardwareInfo
-import os
-import NavigationInstance
-from Plugins.Extensions.AudioSync.__init__ import _
+from Tools.ISO639 import LanguageCodes
+
+from . import _
+from .AC3utils import AC3, AC3GLOB, AC3PCM, PCM
 
 
 class AC3delay:
