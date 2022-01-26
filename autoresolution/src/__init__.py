@@ -1,9 +1,7 @@
-# -*- coding: utf-8 -*-
+import gettext
 
 from Components.Language import language
-from Tools.Directories import resolveFilename, SCOPE_PLUGINS, SCOPE_LANGUAGE
-import os
-import gettext
+from Tools.Directories import SCOPE_PLUGINS, resolveFilename
 
 PluginLanguageDomain = "AutoResolution"
 PluginLanguagePath = "SystemPlugins/AutoResolution/locale"
@@ -16,7 +14,6 @@ def localeInit():
 def _(txt):
 	t = gettext.dgettext(PluginLanguageDomain, txt)
 	if t == txt:
-		#print("[%s] fallback to default translation for %s" %(PluginLanguageDomain, txt))
 		t = gettext.gettext(txt)
 	return t
 
