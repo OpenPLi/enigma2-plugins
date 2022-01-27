@@ -142,7 +142,7 @@ class audioDelay(Screen):
 					delay_value = 0
 					setvalue = True
 				if setvalue:
-					from AC3delay import AC3delay
+					from .AC3delay import AC3delay
 					delay = AC3delay()
 					sAudio = delay.whichAudio
 					if sAudio == AC3 or sAudio == PCM:
@@ -174,17 +174,17 @@ def autostart(reason, **kwargs):
 
 
 def main(session, **kwargs):
-	from AC3main import AC3LipSync
+	from .AC3main import AC3LipSync
 	session.open(AC3LipSync, plugin_path)
 
 
 def setup(session, **kwargs):
-	from AC3setup import AC3LipSyncSetup
+	from .AC3setup import AC3LipSyncSetup
 	session.open(AC3LipSyncSetup, plugin_path)
 
 
 def audioMenu(session, **kwargs):
-	from AC3main import AC3LipSync
+	from .AC3main import AC3LipSync
 	session.open(AC3LipSync, plugin_path)
 
 
