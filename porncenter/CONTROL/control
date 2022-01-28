@@ -3,4 +3,4 @@ Version: 1.0
 OpenPLi team <forum@openpli.org>
 Maintainer: Nabil Hanna <nabil1978@web.de>
 Homepage: http://www.openpli.org
-Depends: enigma2 (>= 2.6git20090615), python-twisted-web
+Depends: enigma2, python-twisted-web

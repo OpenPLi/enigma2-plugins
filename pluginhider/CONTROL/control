@@ -3,4 +3,4 @@ Version: 0.0.1-20110615-r0
 Description: show/hide plugins from plugin and extensionsmenu
 Maintainer: OpenPLi team <forum@openpli.org>
 Homepage: http://www.openpli.org
-Depends: enigma2 (>= 2.6git20090120), python-lang
+Depends: enigma2, python-lang
