@@ -3,4 +3,4 @@ Version: 20090222
 Description: Show Incoming Calls on your TV Screen using any NCID server (e.g. VF EasyBox)
 Maintainer: OpenPLi team <forum@openpli.org>
 Homepage: http://www.openpli.org
-Depends: enigma2, python3-twisted-web, python3-html, python3-textutils
+Depends: enigma2, python3-twisted-web, python3-html
