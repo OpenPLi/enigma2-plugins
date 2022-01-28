@@ -3,4 +3,4 @@ Version: 0.1-r0
 Description: Stream podcasts
 Maintainer: OpenPLi team <forum@openpli.org>
 Homepage: http://www.openpli.org
-Depends: enigma2, gst-plugin-neonhttpsrc, python3-twisted-web
+Depends: enigma2, gstreamer1.0-plugins-bad-neonhttpsrc, python3-twisted-web
