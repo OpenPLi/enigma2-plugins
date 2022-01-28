@@ -1,56 +1,35 @@
-# -*- coding: UTF-8 -*-
-# for localized messages
-from . import _
+import re
+from html import entities as htmlentitydefs
+from os import remove
+from os.path import splitext
+from urllib.parse import quote_plus
 
+from Components.ActionMap import ActionMap, HelpableActionMap
+from Components.AVSwitch import AVSwitch
+from Components.Button import Button
+from Components.config import ConfigSubsection, ConfigText, ConfigYesNo, config, getConfigListEntry
+from Components.ConfigList import ConfigListScreen
+from Components.Label import Label
+from Components.Language import language
+from Components.MenuList import MenuList
+from Components.Pixmap import Pixmap
+from Components.PluginComponent import plugins
+from Components.ProgressBar import ProgressBar
+from Components.ScrollLabel import ScrollLabel
+from Components.Sources.Boolean import Boolean
+from Components.Sources.StaticText import StaticText
+from enigma import ePicLoad, eServiceCenter, eServiceReference
 from Plugins.Plugin import PluginDescriptor
-from Tools.Downloader import downloadWithProgress
-from enigma import ePicLoad, eServiceReference, eServiceCenter
-from Screens.Screen import Screen
-from Screens.HelpMenu import HelpableScreen
-from Screens.EpgSelection import EPGSelection
 from Screens.ChannelSelection import SimpleChannelSelection
 from Screens.ChoiceBox import ChoiceBox
+from Screens.EpgSelection import EPGSelection
+from Screens.HelpMenu import HelpableScreen
+from Screens.Screen import Screen
 from Screens.VirtualKeyBoard import VirtualKeyBoard
-from Components.ActionMap import ActionMap, HelpableActionMap
-from Components.Pixmap import Pixmap
-from Components.Label import Label
-from Components.ScrollLabel import ScrollLabel
-from Components.Button import Button
-from Components.AVSwitch import AVSwitch
-from Components.MenuList import MenuList
-from Components.Language import language
-from Components.ProgressBar import ProgressBar
-from Components.Sources.StaticText import StaticText
-from Components.Sources.Boolean import Boolean
-from Tools.Directories import fileExists, resolveFilename, SCOPE_PLUGINS, SCOPE_SKIN_IMAGE
-import os
-import re
+from Tools.Directories import SCOPE_PLUGINS, fileExists, pathExists, resolveFilename
+from Tools.Downloader import downloadWithProgress
 
-try:
-	import htmlentitydefs
-	from urllib import quote_plus
-	iteritems = lambda d: d.iteritems()
-except ImportError as ie:
-	from html import entities as htmlentitydefs
-	from urllib.parse import quote_plus
-	iteritems = lambda d: d.items()
-	unichr = chr
-
-import gettext
-
-# Configuration
-from Components.config import config, getConfigListEntry, ConfigSubsection, ConfigYesNo, ConfigText
-from Components.ConfigList import ConfigListScreen
-from Components.PluginComponent import plugins
-from Tools.Directories import resolveFilename, SCOPE_PLUGINS
-
-from html.parser import HTMLParser
-
-
-def transHTML(text):
-	h = HTMLParser()
-	return h.unescape(text)
-
+from . import _
 
 config.plugins.imdb = ConfigSubsection()
 config.plugins.imdb.showinplugins = ConfigYesNo(default=False)
@@ -64,11 +43,7 @@ config.plugins.imdb.showepisodeinfo = ConfigYesNo(default=False)
 
 def quoteEventName(eventName):
 	# BBC uses '\x86' markers in program names, remove them
-	try:
-		text = eventName.decode('utf8').replace(u'\x86', u'').replace(u'\x87', u'').encode('utf8')
-	except:
-		text = eventName
-	return quote_plus(text)
+	return quote_plus(eventName.replace('\x86', '').replace('\x87', ''))
 
 
 class IMDBChannelSelection(SimpleChannelSelection):
@@ -165,9 +140,9 @@ class IMDB(Screen, HelpableScreen):
 		</screen>"""
 
 	# Some HTML entities as utf-8
-	NBSP = unichr(htmlentitydefs.name2codepoint['nbsp']).encode("utf8")
-	RAQUO = unichr(htmlentitydefs.name2codepoint['raquo']).encode("utf8")
-	HELLIP = unichr(htmlentitydefs.name2codepoint['hellip']).encode("utf8")
+	NBSP = chr(htmlentitydefs.name2codepoint['nbsp'])
+	RAQUO = chr(htmlentitydefs.name2codepoint['raquo'])
+	HELLIP = chr(htmlentitydefs.name2codepoint['hellip'])
 
 	def __init__(self, session, eventName, callbackNeeded=False, save=False, savepath=None, localpath=None):
 		Screen.__init__(self, session)
@@ -263,11 +238,11 @@ class IMDB(Screen, HelpableScreen):
 
 	def exit(self):
 		if fileExists("/tmp/poster.jpg"):
-			os.remove("/tmp/poster.jpg")
+			remove("/tmp/poster.jpg")
 		if fileExists("/tmp/imdbquery.html"):
-			os.remove("/tmp/imdbquery.html")
+			remove("/tmp/imdbquery.html")
 		if fileExists("/tmp/imdbquery2.html"):
-			os.remove("/tmp/imdbquery2.html")
+			remove("/tmp/imdbquery2.html")
 		if self.callbackNeeded:
 			self.close([self.callbackData, self.callbackGenre])
 		else:
@@ -481,31 +456,31 @@ class IMDB(Screen, HelpableScreen):
 					download = downloadWithProgress(self.fetchurl, isave)
 					download.start().addCallback(self.IMDBsave).addErrback(self.http_failed)
 		except Exception as e:
-			print('[IMDb] saveHtmlDetails exception failure: ', str(e))
+			print('[IMDb] saveHtmlDetails exception failure: %s' % str(e))
 
 	def saveTxtDetails(self):
 		try:
 			if self.savingpath is not None:
 				getTXT = self.IMDBsavetxt()
 				if getTXT is not None:
-					file(self.savingpath + ".txt", 'w').write(getTXT)
+					open(self.savingpath + ".txt", 'w').write(getTXT)
 				else:
 					from Screens.MessageBox import MessageBox
 					self.session.open(MessageBox, (_('IMDb can not get Movie Information to write to .txt file!')), MessageBox.TYPE_INFO, 10)
 		except Exception as e:
-			print('[IMDb] saveTxtDetails exception failure: ', str(e))
+			print('[IMDb] saveTxtDetails exception failure: %s' % str(e))
 
 	def savePosterTxtDetails(self):
 		try:
 			if self.savingpath is not None:
 				getTXT = self.IMDBsavetxt(True)
 				if getTXT is not None:
-					file(self.savingpath + ".txt", 'w').write(getTXT)
+					open(self.savingpath + ".txt", 'w').write(getTXT)
 				else:
 					from Screens.MessageBox import MessageBox
 					self.session.open(MessageBox, (_('IMDb can not get Movie Information to write to .jpg and .txt files!')), MessageBox.TYPE_INFO, 10)
 		except Exception as e:
-			print('[IMDb] savePosterTxtDetails exception failure: ', str(e))
+			print('[IMDb] savePosterTxtDetails exception failure: %s' % str(e))
 
 	def IMDBsave(self, string):
 		self["statusbar"].setText(_("IMDb Save - Download completed"))
@@ -529,18 +504,18 @@ class IMDB(Screen, HelpableScreen):
 					text = ' '.join(self.htmltags.sub('', extrainfos.group("synopsis").replace("\n", ' ').replace("<br>", '\n').replace("<br />", '\n')).replace(' |' + self.NBSP, '').replace(self.NBSP, ' ').split()) + "\n"
 					overview = _("Content:") + " " + text
 				except Exception as e:
-					print('[IMDb] IMDBsavetxt exception failure in get overview: ', str(e))
+					print('[IMDb] IMDBsavetxt exception failure in get overview: %s' % str(e))
 					overview = (_("Content:"))
-#				print'[IMDb] IMDBsavetxt overview: ', overview
+				#print('[IMDb] IMDBsavetxt overview: %s' % overview)
 
 				# get entry 2 = Runtime
 				try:
 					time = ' '.join(self.htmltags.sub('', extrainfos.group(category).replace("\n", ' ').replace("<br>", '\n').replace("<br />", '\n')).replace(' |' + self.NBSP, '').replace(self.NBSP, ' ').split())
 					runtime = _("Runtime:") + " " + time
 				except Exception as e:
-					print('[IMDb] IMDBsavetxt exception failure in get runtime: ', str(e))
+					print('[IMDb] IMDBsavetxt exception failure in get runtime: %s' % str(e))
 					runtime = (_("Runtime:"))
-#				print'[IMDb] IMDBsavetxt runtime: ', runtime
+				#print('[IMDb] IMDBsavetxt runtime: %s' % runtime)
 
 			# get entry 3 = Genre
 			genreblock = self.genreblockmask[self.re_index].search(self.inhtml)
@@ -553,25 +528,25 @@ class IMDB(Screen, HelpableScreen):
 					genre = _("Genre:") + " " + genres
 			else:
 				genre = (_("Genre:"))
-#			print'[IMDb] IMDBsavetxt genre: ', genre
+			#print('[IMDb] IMDBsavetxt genre: %s' % genre)
 
 			# get entry 4 = Country
 			try:
 				land = ' '.join(self.htmltags.sub('', self.generalinfos.group("country").replace('\n', ' ')).split())
 				country = _("Production Countries:") + " " + land
 			except Exception as e:
-				print('[IMDb] IMDBsavetxt exception failure in get country: ', str(e))
+				print('[IMDb] IMDBsavetxt exception failure in get country: %s' % str(e))
 				country = (_("Production Countries:"))
-#			print'[IMDb] IMDBsavetxt country: ', country
+			#print('[IMDb] IMDBsavetxt country: %s' % country)
 
 			# get entry 5 = ReleaseDate
 			try:
 				date = ' '.join(self.htmltags.sub('', self.generalinfos.group("premiere").replace('\n', ' ')).split())
 				release = _("Release Date:") + " " + date
 			except Exception as e:
-				print('[IMDb] IMDBsavetxt exception failure in get release: ', str(e))
+				print('[IMDb] IMDBsavetxt exception failure in get release: %s' % str(e))
 				release = (_("Release Date:"))
-#			print'[IMDb] IMDBsavetxt release: ', release
+			#print('[IMDb] IMDBsavetxt release: %s' % release)
 
 			# get entry 5 = Vote
 			ratingtext = self.ratingmask[self.re_index].search(self.inhtml)
@@ -582,7 +557,7 @@ class IMDB(Screen, HelpableScreen):
 					rating = _("User Rating") + ": " + text
 			else:
 				rating = (_("User Rating") + ": ")
-#			print'[IMDb] IMDBsavetxt rating: ', rating
+			#print('[IMDb] IMDBsavetxt rating: %s' % rating)
 
 			# get the poster.jpg
 			if poster:
@@ -595,7 +570,7 @@ class IMDB(Screen, HelpableScreen):
 						download = downloadWithProgress(posterurl, postersave)
 						download.start().addErrback(self.http_failed)
 				except Exception as e:
-					print('[IMDb] IMDBsavetxt exception failure in get poster: ', str(e))
+					print('[IMDb] IMDBsavetxt exception failure in get poster: %s' % str(e))
 
 		return overview + "\n\n" + runtime + "\n" + genre + "\n" + country + "\n" + release + "\n" + rating + "\n"
 
@@ -650,7 +625,7 @@ class IMDB(Screen, HelpableScreen):
 
 	def getIMDB(self, search=False):
 		self.resetLabels()
-		if not isinstance(self.eventName, basestring):
+		if not isinstance(self.eventName, str):
 			self["statusbar"].setText("")
 			return
 		if not self.eventName:
@@ -670,7 +645,7 @@ class IMDB(Screen, HelpableScreen):
 					self.eventName = self.eventName[:-1]
 
 		if self.localpath is not None and not search:
-			if os.path.exists(self.localpath):
+			if pathExists(self.localpath):
 				self.getLocalDetails()
 
 		else:
@@ -708,14 +683,10 @@ class IMDB(Screen, HelpableScreen):
 			if key not in entitydict:
 				entitydict[key] = x.group(1)
 
-		if 'charset="utf-8"' in in_html or 'charset=utf-8' in in_html or 'charSet="utf-8"' in in_html or 'charSet=utf-8' in in_html:
-			for key, codepoint in iteritems(entitydict):
-				in_html = in_html.replace(key, unichr(int(codepoint)).encode('utf8'))
-			self.inhtml = in_html
-		else:
-			for key, codepoint in iteritems(entitydict):
-				in_html = in_html.replace(key, unichr(int(codepoint)).encode('latin-1', 'ignore'))
-			self.inhtml = in_html.decode('latin-1').encode('utf8')
+		#if 'charset="utf-8"' in in_html or 'charset=utf-8' in in_html or 'charSet="utf-8"' in in_html or 'charSet=utf-8' in in_html:
+		for key, codepoint in entitydict.items():
+			in_html = in_html.replace(key, chr(int(codepoint)))
+		self.inhtml = in_html
 		if 'TitleHeader__TitleText' in self.inhtml:
 			self.re_index = 1
 			start = self.inhtml.find('</script><nav id="imdbHeader"')
@@ -779,7 +750,7 @@ class IMDB(Screen, HelpableScreen):
 		if error_message == "" and failure_instance is not None:
 			error_message = failure_instance.getErrorMessage()
 			text += ": " + error_message
-		print("[IMDB] ", text)
+		print("[IMDB] %s" % text)
 		self["statusbar"].setText(text)
 
 	def IMDBquery2(self, string):
@@ -1158,10 +1129,10 @@ def movielistSearch(session, service, **kwargs):
 	serviceHandler = eServiceCenter.getInstance()
 	info = serviceHandler.info(service)
 	eventName = info and info.getName(service) or ''
-	(root, ext) = os.path.splitext(eventName)
+	(root, ext) = splitext(eventName)
 	if ext in KNOWN_EXTENSIONS:
-		print("#####################", ext)
-		eventName = re.sub("[\W_]+", ' ', root.decode("utf8"), 0, re.LOCALE | re.UNICODE).encode("utf8")
+		print("##################### %s" % ext)
+		eventName = re.sub("[\W_]+", ' ', root, 0, re.LOCALE | re.UNICODE)
 	session.open(IMDB, eventName)
 
 
