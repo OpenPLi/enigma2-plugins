@@ -3,4 +3,4 @@ Version: 0.1-20072203-r1
 Description: Player for Network and Internet Streams
 Maintainer: OpenPLi team <forum@openpli.org>
 Homepage: http://www.openpli.org
-Depends: enigma2 (>= 1.0git20071803)
+Depends: enigma2

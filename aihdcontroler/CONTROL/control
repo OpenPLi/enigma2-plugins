@@ -3,4 +3,4 @@ Version: 1.0
 Description: Ai.HD skins Control
 Maintainer: OpenPli team <forum@openpli.org>
 Homepage: http://www.openpli.org
-Depends: enigma2 (>> 2.6git20091201)
+Depends: enigma2

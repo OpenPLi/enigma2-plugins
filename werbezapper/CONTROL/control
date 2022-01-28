@@ -3,4 +3,4 @@ Version: 0.2-20070820-r0
 Description: Werbezapper-Plugin for Enigma2
 Maintainer: OpenPLi team <forum@openpli.org>
 Homepage: www.openpli.org
-Depends: enigma2 (>> 2.3git20080214)
+Depends: enigma2

@@ -3,4 +3,4 @@ Version: 1.0
 Description: Control your dreambox with only the MUTE button
 Maintainer: OpenPLi team <forum@openpli.org>
 Homepage: http://www.openpli.org
-Depends: enigma2 (>= 2.6git20090615)
+Depends: enigma2
