@@ -3,4 +3,4 @@ Version: 1.0-r0
 Description: Streaming modules for the orf.at web page
 Maintainer: OpenPLi team <forum@openpli.org>
 Homepage: http://www.openpli.org
-Depends: enigma2, enigma2-plugin-extensions-vlcplayer, python-twisted-web
+Depends: enigma2, enigma2-plugin-extensions-vlcplayer, python3-twisted-web

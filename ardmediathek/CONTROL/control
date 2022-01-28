@@ -3,4 +3,4 @@ Version: 1.0
 Description: Zugriff auf die ARD-Mediathek
 Maintainer: OpenPLi team <forum@openpli.org>
 Homepage: http://www.openpli.org
-Depends: enigma2, python-twisted-web
+Depends: enigma2, python3-twisted-web

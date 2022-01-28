@@ -2,4 +2,4 @@ Package: enigma2-plugin-extensions-emailclient
 Version: 0.1
 Description: a imap4 client to access imap accounts and read emails 
 Maintainer: OpenPLi team <forum@openpli.org>
-Depends: enigma2, python-twisted-web, python-twisted-mail, python-email, python-pyopenssl, python-shell, python-textutils
+Depends: enigma2, python3-twisted-web, python3-twisted-mail, python3-email, python3-pyopenssl, python3-shell, python3-textutils

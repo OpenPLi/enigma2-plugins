@@ -3,4 +3,4 @@ Version: 1.1
 Description: Merlin Music Player and iDream (music management)
 Maintainer: OpenPLi team <forum@openpli.org>
 Homepage: http://www.openpli.org
-Depends: enigma2, python-twisted-web, python-mutagen, python-sqlite3
+Depends: enigma2, python3-twisted-web, python3-mutagen, python3-sqlite3
