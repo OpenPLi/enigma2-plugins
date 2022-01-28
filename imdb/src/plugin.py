@@ -44,7 +44,7 @@ from Components.ConfigList import ConfigListScreen
 from Components.PluginComponent import plugins
 from Tools.Directories import resolveFilename, SCOPE_PLUGINS
 
-from HTMLParser import HTMLParser
+from html.parser import HTMLParser
 
 
 def transHTML(text):
