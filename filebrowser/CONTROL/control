@@ -3,4 +3,4 @@ Version: 1.0
 Description: manage local Files
 Maintainer: OpenPLi team <forum@openpli.org>
 Homepage: http://www.openpli.org
-Depends: enigma2 (>> 1.0git20090601)
+Depends: enigma2

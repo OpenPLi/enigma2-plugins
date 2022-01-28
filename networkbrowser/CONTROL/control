@@ -3,4 +3,4 @@ Version: 1.0-20080529-r0
 Description: Networkbrowser and Network-Mountmanager
 Maintainer: OpenPLi team <forum@openpli.org>
 Homepage: http://www.openpli.org
-Depends: enigma2 (>= 2.6git20090926)
+Depends: enigma2
