@@ -1,4 +1,4 @@
-# -*- coding: ISO-8859-1 -*-
+# -*- coding: utf-8 -*-
 
 from Components.Language import language
 from Tools.Directories import resolveFilename, SCOPE_PLUGINS, SCOPE_LANGUAGE
@@ -15,7 +15,7 @@ def localeInit():
 def _(txt):
         t = gettext.dgettext(PluginLanguageDomain, txt)
         if t == txt:
-                print("[SetPasswd] fallback to default translation for", txt)
+                print("[SetPasswd] fallback to default translation for %s" % txt)
                 t = gettext.gettext(txt)
         return t
 

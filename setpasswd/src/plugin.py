@@ -15,7 +15,7 @@ from Components.Sources.StaticText import StaticText
 from Components.Sources.List import List
 from Plugins.Plugin import PluginDescriptor
 
-from __init__ import _
+from .__init__ import _
 
 import string
 import sys
@@ -70,7 +70,7 @@ class ChangePasswdScreen(Screen):
 		self["passwd"].setList(self.list)
 
 	def GeneratePassword(self):
-		passwdChars = string.letters + string.digits
+		passwdChars = string.ascii_letters + string.digits
 		passwdLength = 8
 		return ''.join(Random().sample(passwdChars, passwdLength))
 
@@ -97,7 +97,7 @@ class ChangePasswdScreen(Screen):
 		self.session.open(MessageBox, message, MessageBox.TYPE_INFO)
 
 	def dataAvail(self, data):
-		if data.find('password'):
+		if data.find(b'password'):
 			self.container.write("%s\n" % self.password)
 
 	def runFinished(self, retval):
