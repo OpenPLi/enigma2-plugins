@@ -1337,6 +1337,7 @@ class Blindscan(ConfigListScreen, Screen, TransponderFiltering):
 		self.blindscan_session = None
 
 	def blindscanContainerAvail(self, str):
+		str = str.decode() # eConsoleAppContainer returns binary data, switch to string
 		print("[Blindscan][blindscanContainerAvail]", str)
 		self.full_data = self.full_data + str # TODO: is this the cause of the duplicates in blindscanContainerClose?
 		if self.blindscan_session:
