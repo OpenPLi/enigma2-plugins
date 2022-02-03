@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 #
 #  Weather Plugin E2
 #
@@ -18,19 +17,16 @@
 #  GNU General Public License for more details.
 #
 
-# for localized messages
-from . import _
-
-from enigma import eListboxPythonMultiContent, gFont, RT_HALIGN_LEFT, \
-	RT_VALIGN_CENTER
-from Screens.Screen import Screen
-from Screens.MessageBox import MessageBox
+from Components.ActionMap import ActionMap
+from Components.config import ConfigSubsection, ConfigText, config, configfile, getConfigListEntry
+from Components.ConfigList import ConfigListScreen
 from Components.MenuList import MenuList
 from Components.Sources.StaticText import StaticText
-from Components.ActionMap import ActionMap
-from Components.ConfigList import ConfigList, ConfigListScreen
-from Components.config import ConfigSubsection, ConfigText, \
-	getConfigListEntry, config, configfile
+from enigma import RT_HALIGN_LEFT, RT_VALIGN_CENTER, eListboxPythonMultiContent, gFont
+from Screens.MessageBox import MessageBox
+from Screens.Screen import Screen
+
+from . import _
 
 
 def initWeatherPluginEntryConfig():

@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 #
 #  Weather Plugin E2
 #
@@ -18,34 +17,35 @@
 #  GNU General Public License for more details.
 #
 
-# for localized messages
-from . import _
+from os import mkdir
+from urllib.parse import quote
+from xml.etree.ElementTree import fromstring
 
+from Components.ActionMap import ActionMap
+from Components.AVSwitch import AVSwitch
+from Components.config import ConfigInteger, ConfigSubList, ConfigSubsection, config
+from Components.Pixmap import Pixmap
+from Components.Sources.StaticText import StaticText
+from enigma import eEnv, ePicLoad
 from Plugins.Plugin import PluginDescriptor
 from Screens.Screen import Screen
-from Components.ActionMap import ActionMap
-from Components.Sources.StaticText import StaticText
-from xml.etree.cElementTree import fromstring as cet_fromstring
+from Tools.Directories import pathExists
 from twisted.internet import defer
-from twisted.web.client import getPage, downloadPage
-from urllib import quote
-from Components.Pixmap import Pixmap
-from enigma import ePicLoad, eEnv
-from os import path as os_path, mkdir as os_mkdir
-from Components.AVSwitch import AVSwitch
-from Components.config import ConfigSubsection, ConfigSubList, ConfigInteger, config
-from setup import initConfig, WeatherPluginEntriesListConfigScreen
+from twisted.web.client import downloadPage, getPage
+
+from . import _
+from .setup import WeatherPluginEntriesListConfigScreen, initConfig
 
 config.plugins.WeatherPlugin = ConfigSubsection()
 config.plugins.WeatherPlugin.entriescount = ConfigInteger(0)
 config.plugins.WeatherPlugin.Entries = ConfigSubList()
 initConfig()
 
-UserAgent = "Mozilla/5.0 (X11; U; Linux x86_64; de; rv:1.9.0.15) Gecko/2009102815 Ubuntu/9.04 (jaunty) Firefox/3."
+UserAgent = b"Mozilla/5.0 (X11; U; Linux x86_64; de; rv:1.9.0.15) Gecko/2009102815 Ubuntu/9.04 (jaunty) Firefox/3."
 
 
 class WeatherIconItem:
-	def __init__(self, url="", filename="", index=-1, error=False):
+	def __init__(self, url=b"", filename="", index=-1, error=False):
 		self.url = url
 		self.filename = filename
 		self.index = index
@@ -57,7 +57,7 @@ def getXML(url):
 
 
 def download(item):
-	return downloadPage(item.url, file(item.filename, 'wb'), agent=UserAgent)
+	return downloadPage(item.url, open(item.filename, 'wb'), agent=UserAgent)
 
 
 def main(session, **kwargs):
@@ -112,17 +112,14 @@ class WeatherPlugin(Screen):
 		self["wind_condition"] = StaticText()
 		self["humidity"] = StaticText()
 
-		i = 1
-		while i < 5:
+		for i in range(5):
 			self["weekday%s" % i] = StaticText()
 			self["weekday%s_icon" % i] = WeatherIcon()
 			self["weekday%s_temp" % i] = StaticText()
-			i += 1
-		del i
 
 		self.appdir = eEnv.resolve("${libdir}/enigma2/python/Plugins/Extensions/WeatherPlugin/icons/")
-		if not os_path.exists(self.appdir):
-			os_mkdir(self.appdir)
+		if not pathExists(self.appdir):
+			mkdir(self.appdir)
 
 		self.weatherPluginEntryIndex = -1
 		self.weatherPluginEntryCount = config.plugins.WeatherPlugin.entriescount.value
@@ -137,8 +134,8 @@ class WeatherPlugin(Screen):
 	def startRun(self):
 		if self.weatherPluginEntry is not None:
 			self["statustext"].text = _("Getting weather information...")
-			url = ("http://www.google.com/ig/api?weather=%s&hl=%s" % (quote(self.weatherPluginEntry.city.value), self.weatherPluginEntry.language.value))
-			getXML(url).addCallback(self.xmlCallback).addErrback(self.error)
+			url = "http://www.google.com/ig/api?weather=%s&hl=%s" % (quote(self.weatherPluginEntry.city.value), self.weatherPluginEntry.language.value)
+			getXML(url.encode("UTF-8")).addCallback(self.xmlCallback).addErrback(self.error)
 		else:
 			self["statustext"].text = _("No locations defined...\nPress 'Menu' to do that.")
 
@@ -169,12 +166,10 @@ class WeatherPlugin(Screen):
 		self["condition"].text = ""
 		self["wind_condition"].text = ""
 		self["humidity"].text = ""
-		i = 1
-		while i < 5:
+		for i in range(5):
 			self["weekday%s" % i].text = ""
 			self["weekday%s_icon" % i].hide()
 			self["weekday%s_temp" % i].text = ""
-			i += 1
 
 	def errorIconDownload(self, error=None, item=None):
 		item.error = True
@@ -193,52 +188,51 @@ class WeatherPlugin(Screen):
 		index = 0
 		UnitSystemText = "F"
 		IconDownloadList = []
-		root = cet_fromstring(xmlstring)
+		root = fromstring(xmlstring)
 		for childs in root.findall("weather"):
 			for items in childs:
 				if items.tag == "problem_cause":
-					self["statustext"].text = items.attrib.get("data").encode("utf-8", 'ignore')
+					self["statustext"].text = items.attrib.get("data")
 				elif items.tag == "forecast_information":
 					for items2 in items:
 						if items2.tag == "city":
-							self["caption"].text = items2.attrib.get("data").encode("utf-8", 'ignore')
+							self["caption"].text = items2.attrib.get("data")
 						elif items2.tag == "unit_system":
-							if items2.attrib.get("data").encode("utf-8", 'ignore') == "SI":
+							if items2.attrib.get("data") == "SI":
 								metric = 1
 								UnitSystemText = "C"
 				elif items.tag == "current_conditions":
 					for items2 in items:
 						if items2.tag == "condition":
-							self["condition"].text = _("Current: %s") % items2.attrib.get("data").encode("utf-8", 'ignore')
+							self["condition"].text = _("Current: %s") % items2.attrib.get("data")
 						elif items2.tag == "temp_f" and metric == 0:
-							self["currentTemp"].text = ("%s °F" % items2.attrib.get("data").encode("utf-8", 'ignore'))
+							self["currentTemp"].text = ("%s °F" % items2.attrib.get("data"))
 						elif items2.tag == "temp_c" and metric == 1:
-							self["currentTemp"].text = ("%s °C" % items2.attrib.get("data").encode("utf-8", 'ignore'))
+							self["currentTemp"].text = ("%s °C" % items2.attrib.get("data"))
 						elif items2.tag == "humidity":
-							self["humidity"].text = items2.attrib.get("data").encode("utf-8", 'ignore')
+							self["humidity"].text = items2.attrib.get("data")
 						elif items2.tag == "wind_condition":
-							self["wind_condition"].text = items2.attrib.get("data").encode("utf-8", 'ignore')
+							self["wind_condition"].text = items2.attrib.get("data")
 				elif items.tag == "forecast_conditions":
 					index = index + 1
 					lowTemp = ""
 					highTemp = ""
-					icon = ""
 					for items2 in items:
 						if items2.tag == "day_of_week":
-							self["weekday%s" % index].text = items2.attrib.get("data").encode("utf-8", 'ignore')
+							self["weekday%s" % index].text = items2.attrib.get("data")
 						elif items2.tag == "low":
-							lowTemp = items2.attrib.get("data").encode("utf-8", 'ignore')
+							lowTemp = items2.attrib.get("data")
 						elif items2.tag == "high":
-							highTemp = items2.attrib.get("data").encode("utf-8", 'ignore')
+							highTemp = items2.attrib.get("data")
 							self["weekday%s_temp" % index].text = "%s °%s | %s °%s" % (highTemp, UnitSystemText, lowTemp, UnitSystemText)
 						elif items2.tag == "icon":
-							url = items2.attrib.get("data").encode("utf-8", 'ignore')
+							url = items2.attrib.get("data")
 							if not url.startswith("http://"):
-								url = "http://www.google.com%s" % items2.attrib.get("data").encode("utf-8", 'ignore')
+								url = "http://www.google.com%s" % items2.attrib.get("data")
 							parts = url.split("/")
 							filename = self.appdir + parts[-1]
-							if not os_path.exists(filename):
-								IconDownloadList.append(WeatherIconItem(url=url, filename=filename, index=index))
+							if not pathExists(filename):
+								IconDownloadList.append(WeatherIconItem(url=url.encode("UTF-8"), filename=filename, index=index))
 							else:
 								self.showIcon(index, filename)
 		if len(IconDownloadList) != 0:
@@ -289,7 +283,6 @@ class WeatherIcon(Pixmap):
 			self.instance.setPixmap(ptr.__deref__())
 
 	def updateIcon(self, filename):
-		new_IconFileName = filename
-		if (self.IconFileName != new_IconFileName):
-			self.IconFileName = new_IconFileName
+		if self.IconFileName != filename:
+			self.IconFileName = filename
 			self.picload.startDecode(self.IconFileName)
