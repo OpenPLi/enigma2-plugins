@@ -1,18 +1,19 @@
-# -*- coding: utf-8 -*-
-from Components.Language import language
-from Tools.Directories import resolveFilename, SCOPE_PLUGINS, SCOPE_LANGUAGE
-import os
 import gettext
+
+from Components.Language import language
+from Tools.Directories import SCOPE_PLUGINS, resolveFilename
+
+PluginLanguageDomain = "WeatherPlugin"
+PluginLanguagePath = "Extensions/WeatherPlugin/locale"
 
 
 def localeInit():
-	gettext.bindtextdomain("WeatherPlugin", resolveFilename(SCOPE_PLUGINS, "Extensions/WeatherPlugin/locale"))
+	gettext.bindtextdomain(PluginLanguageDomain, resolveFilename(SCOPE_PLUGINS, PluginLanguagePath))
 
 
 def _(txt):
-	t = gettext.dgettext("WeatherPlugin", txt)
+	t = gettext.dgettext(PluginLanguageDomain, txt)
 	if t == txt:
-		print("[WeatherPlugin] fallback to default translation for", txt)
 		t = gettext.gettext(txt)
 	return t
 
