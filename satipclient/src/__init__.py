@@ -1,8 +1,7 @@
- # -*- coding: utf-8 -*-
-from Components.Language import language
-from Tools.Directories import resolveFilename, SCOPE_PLUGINS, SCOPE_LANGUAGE
-import os
 import gettext
+
+from Components.Language import language
+from Tools.Directories import SCOPE_PLUGINS, resolveFilename
 
 PluginLanguageDomain = "SatipClient"
 PluginLanguagePath = "SystemPlugins/SatipClient/locale"
@@ -13,10 +12,11 @@ def localeInit():
 
 
 def _(txt):
-	if gettext.dgettext(PluginLanguageDomain, txt):
-		return gettext.dgettext(PluginLanguageDomain, txt)
-	else:
-		return gettext.gettext(txt)
+	t = gettext.dgettext(PluginLanguageDomain, txt)
+	if t == txt:
+		t = gettext.gettext(txt)
+	return t
 
 
-language.addCallback(localeInit())
+localeInit()
+language.addCallback(localeInit)
