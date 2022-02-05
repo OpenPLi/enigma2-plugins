@@ -453,11 +453,6 @@ vfdcontrol/meta/Makefile
 vfdcontrol/po/Makefile
 vfdcontrol/src/Makefile
 
-weatherplugin/Makefile
-weatherplugin/meta/Makefile
-weatherplugin/po/Makefile
-weatherplugin/src/Makefile
-
 webcamviewer/Makefile
 webcamviewer/meta/Makefile
 webcamviewer/src/Makefile
