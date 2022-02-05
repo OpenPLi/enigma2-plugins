@@ -28,8 +28,8 @@ def isEmpty(x):
 def getVtunerList():
 	data = []
 	for x in glob('/dev/misc/vtuner*'):
-		data.append(x.strip('/dev/misc/vtuner'))
-	return sorted(data, key=int) # strings "0", "1", "2", ...
+		data.append(int(x.strip('/dev/misc/vtuner')))
+	return sorted(data) # integers 0, 1, 2, ...
 
 
 VTUNER_IDX_LIST = getVtunerList()
@@ -98,10 +98,7 @@ class SATIPDiscovery:
 		self.updateCallback = []
 
 	def formatAddr(self, address):
-		if not address:
-			return None
-
-		return "%d.%d.%d.%d" % (address[0], address[1], address[2], address[3])
+		return "%d.%d.%d.%d" % (address[0], address[1], address[2], address[3]) if address else None
 
 	def getEthernetAddr(self):
 		return self.formatAddr(iNetwork.getAdapterAttribute("eth0", "ip"))
@@ -112,7 +109,6 @@ class SATIPDiscovery:
 	def DiscoveryStart(self, stop_timeout=discoveryTimeoutMS):
 		self.discoveryStopTimer.stop()
 		self.ssdp.stop_msearch()
-
 		#print("Discovery Start!")
 		self.ssdp.send_msearch(self.getEthernetAddr())
 		self.discoveryStopTimer.start(stop_timeout, True)
@@ -120,7 +116,6 @@ class SATIPDiscovery:
 	def DiscoveryStop(self):
 		#print("Discovery Stop!")
 		self.ssdp.stop_msearch()
-
 		for x in self.updateCallback:
 			x()
 
@@ -140,7 +135,6 @@ class SATIPDiscovery:
 				attr = attr.strip().upper()
 				if attr not in serverData:
 					serverData[attr] = value.strip()
-
 		#for (key, value) in serverData.items():
 			#print("[%s] %s" % (key, value))
 		#print("\n")
@@ -159,7 +153,6 @@ class SATIPDiscovery:
 						return child.text
 			except:
 				pass
-
 			return None
 
 		def getAttrN2(root, parent, tag, namespace_1, namespace_2):
@@ -171,7 +164,6 @@ class SATIPDiscovery:
 						return child.text
 			except:
 				pass
-
 			return None
 
 		def dumpData():
@@ -296,7 +288,7 @@ satipdiscovery = SATIPDiscovery()
 SATIP_CONF_CHANGED = False
 
 
-class SATIPTuner(Screen, ConfigListScreen):
+class SATIPTuner(ConfigListScreen, Screen):
 	skin = """
 		<screen position="center,center" size="590,370">
 			<ePixmap pixmap="skin_default/buttons/red.png" position="40,0" size="140,40" alphatest="on" />
@@ -354,7 +346,6 @@ class SATIPTuner(Screen, ConfigListScreen):
 	def OnClose(self):
 		if self.discoveryEnd in satipdiscovery.updateCallback:
 			satipdiscovery.updateCallback.remove(self.discoveryEnd)
-
 		satipdiscovery.DiscoveryStop()
 
 	def DiscoveryStart(self):
@@ -497,9 +488,9 @@ class SATIPTuner(Screen, ConfigListScreen):
 			if self.vtuner_idx == idx:
 				continue
 
-			vtuner = self.current_satipConfig[int(idx)]
+			vtuner = self.current_satipConfig[idx]
 			if vtuner["vtuner_type"] == "satip_client" and vtuner["uuid"] == uuid and vtuner["tuner_type"] == tunertype:
-				#print("[checkTunerCapacity] tuner %d use type %s" % (int(idx), tunertype))
+				#print("[checkTunerCapacity] tuner %d use type %s" % (idx, tunertype))
 				t_count += 1
 
 		#print("[checkTunerCapacity] capability : ", capability)
@@ -542,9 +533,6 @@ class SATIPTuner(Screen, ConfigListScreen):
 			data['uuid'] = uuid
 
 			self.close(data)
-
-	def keyCancel(self):
-		self.close()
 
 
 SATIP_CONFFILE = "/etc/vtuner.conf"
@@ -619,11 +607,10 @@ class SATIPClient(Screen):
 
 	def isChanged(self):
 		for vtuner_idx in self.vtunerIndex:
-			vtuner = self.vtunerConfig[int(vtuner_idx)]
-			old_vtuner = self.old_vtunerConfig[int(vtuner_idx)]
+			vtuner = self.vtunerConfig[vtuner_idx]
+			old_vtuner = self.old_vtunerConfig[vtuner_idx]
 			if vtuner['vtuner_type'] != old_vtuner['vtuner_type']:
 				return True
-
 			elif vtuner['vtuner_type'] == "satip_client":
 				for key in sorted(vtuner):
 					if vtuner[key] != old_vtuner[key]:
@@ -661,7 +648,7 @@ class SATIPClient(Screen):
 		#print("vtunerConfig : ", self.vtunerConfig)
 		self.configList = []
 		for vtuner_idx in self.vtunerIndex:
-			vtuner = self.vtunerConfig[int(vtuner_idx)]
+			vtuner = self.vtunerConfig[vtuner_idx]
 
 			if vtuner['vtuner_type'] == "satip_client":
 				entry = (
@@ -674,7 +661,6 @@ class SATIPClient(Screen):
 				vtuner['tuner_type'],
 				vtuner['uuid'],
 				)
-
 			else:
 				entry = (
 				_("VIRTUAL TUNER %s") % vtuner_idx,
@@ -705,8 +691,8 @@ class SATIPClient(Screen):
 		vtuner_uuid = self["vtunerList"].getCurrent()[7]
 		self.session.openWithCallback(self.SATIPTunerCB, SATIPTuner, vtuner_idx, vtuner_uuid, vtuner_type, self.vtunerConfig)
 
-	def SATIPTunerCB(self, data=None):
-		if data is not None:
+	def SATIPTunerCB(self, data=True): # KeyCancel returns False, while KeySave returns None!
+		if data:
 			self.setConfig(data)
 
 	def setConfig(self, data):
@@ -726,7 +712,7 @@ class SATIPClient(Screen):
 		data = ""
 
 		for idx in self.vtunerIndex:
-			conf = self.vtunerConfig[int(idx)]
+			conf = self.vtunerConfig[idx]
 			if not conf:
 				continue
 
