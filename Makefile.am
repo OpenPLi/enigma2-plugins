@@ -75,7 +75,6 @@ SUBDIRS = \
 	vlcplayer \
 	vps \
 	vfdcontrol \
-	weatherplugin \
 	webcamviewer \
 	werbezapper \
 	zapstatistic \
