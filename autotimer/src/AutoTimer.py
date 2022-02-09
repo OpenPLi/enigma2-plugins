@@ -459,12 +459,21 @@ class AutoTimer:
 						skipped.append((name, begin, end, serviceref, timer.name, getLog()))
 						continue
 
-				dayofweek = str(timestamp.tm_wday)
+				tdow = timestamp.tm_wday
+				if (timer.timespan[0] != None) and timer.timespan[2]:
+					begin_offset = 60 * timestamp.tm_hour + timestamp.tm_min
+					timer_offset = 60 * timer.timespan[0][0] + timer.timespan[0][1]
+					if begin_offset < timer_offset:
+						tdow = (tdow - 1) % 7
+				dayofweek = str(tdow)
+
+				#dayofweek = str(timestamp.tm_wday)
 				# Update dayofweek when programmes that cross midnight and have a dayofweek filter
-				end_timestamp = localtime(end)
-				end_dayofweek = str(end_timestamp.tm_wday)
-				if end_dayofweek != dayofweek:
-					dayofweek = end_dayofweek
+				#end_timestamp = localtime(end)
+				#end_dayofweek = str(end_timestamp.tm_wday)
+				#if end_dayofweek != dayofweek:
+				#	doLog("[AutoTimer] [AutoTimer] Update dayofweek")
+				#	dayofweek = end_dayofweek
 
 			# Check timer conditions
 			# NOTE: similar matches do not care about the day/time they are on, so ignore them
