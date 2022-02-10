@@ -405,6 +405,21 @@ class AutoTimer:
 		# Contains the the marked similar eits and the conflicting strings
 		similardict = defaultdict(list)
 
+		dayofweek_exclude = timer.exclude[3]
+		if dayofweek_exclude:
+			dayofweek_exclude_values = dayofweek_exclude[:]
+			if "weekend" in dayofweek_exclude_values:
+				dayofweek_exclude_values.extend(("5", "6"))
+			if "weekday" in dayofweek_exclude_values:
+				dayofweek_exclude_values.extend(("0", "1", "2", "3", "4"))
+		dayofweek_include = timer.include[3]
+		if dayofweek_include:
+			dayofweek_include_values = dayofweek_include[:]
+			if "weekend" in dayofweek_include_values:
+				dayofweek_include_values.extend(("5", "6"))
+			if "weekday" in dayofweek_include_values:
+				dayofweek_include_values.extend(("0", "1", "2", "3", "4"))
+
 		# Loop over all EPG matches
 		for idx, (serviceref, eit, name, begin, duration, shortdesc, extdesc) in enumerate(epgmatches):
 			startLog()
@@ -459,7 +474,7 @@ class AutoTimer:
 						skipped.append((name, begin, end, serviceref, timer.name, getLog()))
 						continue
 
-				tdow = timestamp.tm_wday
+				current_dayofweek = tdow = timestamp.tm_wday
 				if (timer.timespan[0] != None) and timer.timespan[2]:
 					begin_offset = 60 * timestamp.tm_hour + timestamp.tm_min
 					timer_offset = 60 * timer.timespan[0][0] + timer.timespan[0][1]
@@ -467,13 +482,21 @@ class AutoTimer:
 						tdow = (tdow - 1) % 7
 				dayofweek = str(tdow)
 
-				#dayofweek = str(timestamp.tm_wday)
 				# Update dayofweek when programmes that cross midnight and have a dayofweek filter
-				#end_timestamp = localtime(end)
-				#end_dayofweek = str(end_timestamp.tm_wday)
-				#if end_dayofweek != dayofweek:
-				#	doLog("[AutoTimer] [AutoTimer] Update dayofweek")
-				#	dayofweek = end_dayofweek
+				if str(current_dayofweek) == dayofweek and (dayofweek_exclude or dayofweek_include):
+					end_timestamp = localtime(end)
+					end_dayofweek = str(end_timestamp.tm_wday)
+					if dayofweek != end_dayofweek:
+						if dayofweek_exclude:
+							if dayofweek in dayofweek_exclude_values:
+								if not end_dayofweek in dayofweek_exclude_values:
+									doLog("[AutoTimer] [AutoTimer] Update dayofweek by reason of exclude dayofweek filter")
+									dayofweek = end_dayofweek
+						if dayofweek_include and dayofweek != end_dayofweek:
+							if not dayofweek in dayofweek_include_values:
+								if end_dayofweek in dayofweek_include_values:
+									doLog("[AutoTimer] [AutoTimer] Update dayofweek by reason of include dayofweek filter")
+									dayofweek = end_dayofweek
 
 			# Check timer conditions
 			# NOTE: similar matches do not care about the day/time they are on, so ignore them
@@ -1057,14 +1080,16 @@ class AutoTimer:
 
 	def populateTimerdict(self, epgcache, recordHandler, timerdict, simulateOnly=False):
 		remove = []
+		check_eit_and_remove = config.plugins.autotimer.check_eit_and_remove.value
 		for timer in chain(recordHandler.timer_list, recordHandler.processed_timers):
 			if timer and timer.service_ref:
 				if timer.eit is not None:
 					event = epgcache.lookupEventId(timer.service_ref.ref, timer.eit)
 					if event:
 						timer.extdesc = event.getExtendedDescription()
-					else:
+					elif check_eit_and_remove and "autotimer" in timer.flags and not timer.isRunning():
 						remove.append(timer)
+						continue
 				else:
 					remove.append(timer)
 					continue
@@ -1074,7 +1099,7 @@ class AutoTimer:
 
 				timerdict[str(timer.service_ref)].append(timer)
 
-		if config.plugins.autotimer.check_eit_and_remove.value:
+		if check_eit_and_remove:
 			for timer in remove:
 				if "autotimer" in timer.flags:
 					try:

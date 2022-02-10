@@ -481,7 +481,7 @@ msgid "Help"
 msgstr "Помощь"
 
 msgid "Here you can specify whether simultaneous timers of the same program can be created. This allows simultaneous recording of a program with different resolutions. (e.g. SD service and HD service)."
-msgstr ""
+msgstr "Здесь Вы можете указать, могут ли быть созданы одновременные таймеры одной и той же программы. Это позволяет одновременно записывать программу с разными разрешениями. (например, сервис SD и сервис HD)."
 
 msgid "If 0, the popup will remain open."
 msgstr "Если 0, всплывающее окно останется открытым всегда."
@@ -1328,10 +1328,10 @@ msgstr ""
 "%s"
 
 msgid "[B]  "
-msgstr ""
+msgstr "[B]  "
 
 msgid "[S]  "
-msgstr ""
+msgstr "[S]  "
 
 msgid "add AutoTimer"
 msgstr "добавить Автотаймер"
