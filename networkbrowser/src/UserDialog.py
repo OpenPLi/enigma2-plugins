@@ -66,12 +66,12 @@ class UserDialog(Screen, ConfigListScreen):
 		}, -2)
 
 		self.list = []
+		self["HelpWindow"] = Pixmap()
 		ConfigListScreen.__init__(self, self.list, session=self.session)
 		self.createSetup()
 		self.onLayoutFinish.append(self.layoutFinished)
 		# Initialize Buttons
 		self["VKeyIcon"] = Boolean(False)
-		self["HelpWindow"] = Pixmap()
 		self["introduction"] = StaticText(_("Press OK to save settings."))
 		self["key_red"] = StaticText(_("Close"))
 
