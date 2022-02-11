@@ -37,7 +37,7 @@ from Components.config import config, ConfigSubsection, ConfigText
 from Tools.Directories import fileExists, pathExists
 from Tools.HardwareInfo import HardwareInfo
 from ServiceReference import ServiceReference
-from myFileList import FileList as myFileList
+from .myFileList import FileList as myFileList
 #from vInputBox import vInputBox
 from Screens.InputBox import InputBox
 from Components.Sources.StaticText import StaticText
