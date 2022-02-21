@@ -355,7 +355,7 @@ class RemoteTimer(Screen):
 			"red": self.deleteTimer,
 		}, -1)
 
-		self.setTitle(_("RemoteTimer Timerlist"))
+		self.setTitle(_("RemoteTimer Timerlist") + " - %s" % partnerboxentry.name.value)
 		self.PartnerboxEntry = partnerboxentry
 		self.password = partnerboxentry.password.value
 		self.username = "root"
