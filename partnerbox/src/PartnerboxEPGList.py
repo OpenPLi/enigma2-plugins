@@ -28,6 +28,9 @@ from Tools.LoadPixmap import LoadPixmap
 import PartnerboxFunctions as partnerboxfunctions
 from PartnerboxFunctions import getServiceRef
 
+# for localized messages
+from . import _
+
 baseEPGList__init__ = None
 basebuildSingleEntry = None
 basebuildSimilarEntry = None
