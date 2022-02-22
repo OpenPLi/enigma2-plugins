@@ -41,6 +41,7 @@ from Screens.TimerEntry import TimerEntry
 from Screens.MessageBox import MessageBox
 from Tools.BoundFunction import boundFunction
 import urllib
+from Components.Sources.Boolean import Boolean
 
 import xml.etree.cElementTree
 from Components.ActionMap import ActionMap
@@ -66,6 +67,9 @@ class RemoteTimerEntry(Screen, ConfigListScreen):
 				<widget name="canceltext" position="0,0" zPosition="2" size="140,40" halign="center" valign="center" font="Regular;21" backgroundColor="#9f1313" transparent="1" />
 				<widget name="oktext" position="140,0" zPosition="2" size="140,40" halign="center" valign="center" font="Regular;21" backgroundColor="#1f771f" transparent="1" />
 				<widget name="config" position="10,45" size="740,385" scrollbarMode="showOnDemand" />
+				<widget source="VKeyIcon" render="Pixmap" pixmap="skin_default/buttons/key_text.png" position="30,325" zPosition="10" size="35,25" transparent="1" alphatest="on">
+					<convert type="ConditionalShowHide"/>
+				</widget>
 			</screen>"""
 	else:
 		skin = """
@@ -77,6 +81,9 @@ class RemoteTimerEntry(Screen, ConfigListScreen):
 				<widget name="canceltext" position="0,0" zPosition="2" size="140,40" halign="center" valign="center" font="Regular;21" backgroundColor="#9f1313" transparent="1" />
 				<widget name="oktext" position="140,0" zPosition="2" size="140,40" halign="center" valign="center" font="Regular;21" backgroundColor="#1f771f" transparent="1" />
 				<widget name="config" position="10,45" size="540,385" scrollbarMode="showOnDemand" />
+				<widget source="VKeyIcon" render="Pixmap" pixmap="skin_default/buttons/key_text.png" position="30,325" zPosition="10" size="35,25" transparent="1" alphatest="on">
+					<convert type="ConditionalShowHide"/>
+				</widget>
 			</screen>"""
 
 	def __init__(self, session, timer, Locations):
@@ -91,6 +98,11 @@ class RemoteTimerEntry(Screen, ConfigListScreen):
 		self["canceltext"] = Label(_("Cancel"))
 		self["ok"] = Pixmap()
 		self["cancel"] = Pixmap()
+
+		self["HelpWindow"] = Pixmap()
+		self["HelpWindow"].hide()
+		self["VKeyIcon"] = Boolean(False)
+
 		self.createConfig()
 		self["actions"] = NumberActionMap(["SetupActions", "GlobalActions", "PiPSetupActions"],
 		{
