@@ -169,7 +169,6 @@ class AutoTimerImporter(Screen):
 			))
 
 		if begin and end:
-			start = localtime(begin + bmargin)
 			begin = localtime(begin)
 			end = localtime(end)
 			append(
@@ -181,8 +180,8 @@ class AutoTimerImporter(Screen):
 			))
 			append(
 				SelectionEntryComponent(
-					_("Only on Weekday: %s") % (weekdays[start.tm_wday][1],), # XXX: the lookup is dirty but works :P
-					str(start.tm_wday),
+					_("Only on Weekday: %s") % (weekdays[begin.tm_wday][1],), # XXX: the lookup is dirty but works :P
+					str(begin.tm_wday),
 					9,
 					True
 			))

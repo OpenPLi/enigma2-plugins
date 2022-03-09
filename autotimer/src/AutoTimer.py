@@ -486,6 +486,10 @@ class AutoTimer:
 				if str(current_dayofweek) == dayofweek and (dayofweek_exclude or dayofweek_include):
 					end_timestamp = localtime(end)
 					end_dayofweek = str(end_timestamp.tm_wday)
+					#if timestamp.tm_hour == 0 and timestamp.tm_min == 0:
+					#	current_dayofweek = (current_dayofweek - 1) % 7
+					#	if str(current_dayofweek) != end_dayofweek:
+					#		dayofweek = str(current_dayofweek)
 					if dayofweek != end_dayofweek:
 						if dayofweek_exclude:
 							if dayofweek in dayofweek_exclude_values:
