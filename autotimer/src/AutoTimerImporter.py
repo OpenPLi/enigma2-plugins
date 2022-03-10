@@ -168,20 +168,23 @@ class AutoTimerImporter(Screen):
 					True
 			))
 
+		self.update_weekdays = False
 		if begin and end:
-			begin = localtime(begin)
+			self.start = localtime(begin + bmargin)
+			self.begin = localtime(begin)
+			self.update_weekdays = self.start.tm_wday != self.begin.tm_wday
 			end = localtime(end)
 			append(
 				SelectionEntryComponent(
-					_("Match Timespan: %02d:%02d - %02d:%02d") % (begin[3], begin[4], end[3], end[4]),
-					((begin[3], begin[4]), (end[3], end[4])),
+					_("Match Timespan: %02d:%02d - %02d:%02d") % (self.begin[3], self.begin[4], end[3], end[4]),
+					((self.begin[3], self.begin[4]), (end[3], end[4])),
 					2,
 					True
 			))
 			append(
 				SelectionEntryComponent(
-					_("Only on Weekday: %s") % (weekdays[begin.tm_wday][1],), # XXX: the lookup is dirty but works :P
-					str(begin.tm_wday),
+					_("Only on Weekday: %s") % (weekdays[self.begin.tm_wday][1],), # XXX: the lookup is dirty but works :P
+					str(self.begin.tm_wday),
 					9,
 					True
 			))
@@ -236,7 +239,7 @@ class AutoTimerImporter(Screen):
 		# Define Actions
 		self["actions"] = ActionMap(["OkCancelActions", "ColorActions"],
 		{
-			"ok": self["list"].toggleSelection,
+			"ok": self.toggleSelection,
 			"cancel": self.cancel,
 			"red": self.cancel,
 			"green": self.accept
@@ -246,6 +249,24 @@ class AutoTimerImporter(Screen):
 
 	def setCustomTitle(self):
 		self.setTitle(_("Import AutoTimer"))
+
+	def toggleSelection(self):
+		entrylist = self["list"]
+		if len(entrylist.list):
+			idx = entrylist.getSelectedIndex()
+			item = entrylist.list[idx][0]
+			val = not item[3]
+			entrylist.list[idx] = SelectionEntryComponent(item[0], item[1], item[2], val)
+			if self.update_weekdays and item[2] == 2:
+				next_idx = idx + 1
+				try:
+					next_item = entrylist.list[next_idx][0]
+					if next_item[2] == 9:
+						entry_val = val and self.begin.tm_wday or self.start.tm_wday
+						entrylist.list[next_idx] = SelectionEntryComponent(_("Only on Weekday: %s") % (weekdays[entry_val][1]), str(entry_val), next_item[2], next_item[3])
+				except:
+					pass
+			entrylist.setList(entrylist.list)
 
 	def cancel(self):
 		self.session.openWithCallback(

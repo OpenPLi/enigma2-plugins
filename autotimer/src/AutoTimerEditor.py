@@ -1528,7 +1528,8 @@ def addAutotimerFromEvent(session, evt=None, service=None, importer_Callback=imp
 		None,		# Proposed afterEvent
 		None,		# Proposed justplay
 		None,		# Proposed dirname, can we get anything useful here?
-		[]			# Proposed tags
+		[],			# Proposed tags
+		3600
 	)
 
 
