@@ -1115,6 +1115,13 @@ class Blindscan(ConfigListScreen, Screen, TransponderFiltering):
 			else:
 				self.session.open(MessageBox, _("Not found blind scan utility '%s'!") % tools, MessageBox.TYPE_ERROR)
 				return
+		elif BOX_NAME == "sfx6008":
+			tools = "/usr/bin/octagon-blindscan"
+			if os.path.exists(tools):
+				cmd = "octagon-blindscan %d %d %d %d %d %d %d %d %d %d" % (temp_start_int_freq, temp_end_int_freq, config.blindscan.start_symbol.value, config.blindscan.stop_symbol.value, tab_pol[pol], tab_hilow[band], self.feid, self.getNimSocket(self.feid), self.is_c_band_scan, orb[0])
+			else:
+				self.session.open(MessageBox, _("Not found blind scan utility '%s'!") % tools, MessageBox.TYPE_ERROR)
+				return
 		elif BOX_MODEL == "gigablue":
 			tools = "/usr/bin/gigablue_blindscan"
 			if os.path.exists(tools):
