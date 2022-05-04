@@ -23,12 +23,17 @@ from Components.Sources.StaticText import StaticText
 from Components.Sources.Boolean import Boolean
 from Tools.Directories import fileExists, resolveFilename, SCOPE_PLUGINS, SCOPE_SKIN_IMAGE
 
+from StringIO import StringIO
+
 import contextlib
+import gzip
 import os
 import random
 import re
 import threading
 import urllib2
+import zlib
+
 
 try:
 	import htmlentitydefs
@@ -81,9 +86,26 @@ class Downloader(object):
 	failureCallback = None
 	downloadTimeout = 10  # seconds
 
-	def __init__(self, url, file):
+	_headers = {
+		'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:99.0) Gecko/20100101 Firefox/99.0',
+		'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8',
+		'Accept-Language': 'en-US,en;q=0.5',
+		'Accept-Encoding': 'gzip, deflate',
+		'DNT': '1',
+		'Connection': 'close',
+		'Upgrade-Insecure-Requests': '1',
+		'Sec-Fetch-Dest': 'document',
+		'Sec-Fetch-Mode': 'navigate',
+		'Sec-Fetch-Site': 'same-origin',
+		'Sec-Fetch-User': '?1',
+		'TE': 'trailers'
+	}
+
+	def __init__(self, url, file, headers=None):
 		self.url = url
 		self.file = file
+		if headers is not None:
+			self._headers = headers
 
 	def addSuccessCallback(self, successCallback):
 		self.successCallback = successCallback
@@ -101,8 +123,18 @@ class Downloader(object):
 	def _download(self):
 		tmpfile = self.file + '.' + str(random.randint(10000, 99999)) + '.tmp'
 		try:
-			with open(tmpfile, 'w') as o, contextlib.closing(urllib2.urlopen(self.url, timeout=self.downloadTimeout)) as i:
-				o.write(i.read())
+			request = urllib2.Request(self.url, None, self._headers)
+			with open(tmpfile, 'w') as o, contextlib.closing(urllib2.urlopen(request, timeout=self.downloadTimeout)) as i:
+				encoding = i.info().get('Content-Encoding')
+				if encoding == 'gzip':
+					buf = StringIO(i.read())
+					f = gzip.GzipFile(fileobj=buf)
+					data = f.read()
+				elif encoding == 'deflate':
+					data = zlib.decompress(i.read())
+				else:
+					data = i.read()
+				o.write(data)
 			os.rename(tmpfile, self.file)
 			if self.successCallback:
 				self.successCallback('')
