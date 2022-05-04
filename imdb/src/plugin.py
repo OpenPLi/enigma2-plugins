@@ -487,7 +487,7 @@ class IMDB(Screen, HelpableScreen):
 			if self.savingpath is not None:
 				isave = self.savingpath + ".imdbquery2.html"
 				if self.fetchurl is not None:
-					Downloader(fetchurl, isave).addSuccessCallback(self.IMDBsave).addFailureCallback(self.http_failed).start()
+					Downloader(self.fetchurl, isave).addSuccessCallback(self.IMDBsave).addFailureCallback(self.http_failed).start()
 		except Exception, e:
 			print('[IMDb] saveHtmlDetails exception failure: ', str(e))
 
