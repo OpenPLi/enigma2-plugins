@@ -87,18 +87,9 @@ class Downloader(object):
 	downloadTimeout = 10  # seconds
 
 	_headers = {
-		'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:99.0) Gecko/20100101 Firefox/99.0',
-		'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8',
-		'Accept-Language': 'en-US,en;q=0.5',
-		'Accept-Encoding': 'gzip, deflate',
-		'DNT': '1',
-		'Connection': 'close',
-		'Upgrade-Insecure-Requests': '1',
-		'Sec-Fetch-Dest': 'document',
-		'Sec-Fetch-Mode': 'navigate',
-		'Sec-Fetch-Site': 'same-origin',
-		'Sec-Fetch-User': '?1',
-		'TE': 'trailers'
+		'Host': 'www.imdb.com',
+		'user-agent': 'curl/7.74.0',
+		'accept': '*/*'
 	}
 
 	def __init__(self, url, file, headers=None):
@@ -243,6 +234,21 @@ class IMDB(Screen, HelpableScreen):
 	RAQUO = unichr(htmlentitydefs.name2codepoint['raquo']).encode("utf8")
 	HELLIP = unichr(htmlentitydefs.name2codepoint['hellip']).encode("utf8")
 
+	ffHeaders = {
+		'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:99.0) Gecko/20100101 Firefox/99.0',
+		'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8',
+		'Accept-Language': 'en-US,en;q=0.5',
+		'Accept-Encoding': 'gzip, deflate',
+		'DNT': '1',
+		'Connection': 'close',
+		'Upgrade-Insecure-Requests': '1',
+		'Sec-Fetch-Dest': 'document',
+		'Sec-Fetch-Mode': 'navigate',
+		'Sec-Fetch-Site': 'same-origin',
+		'Sec-Fetch-User': '?1',
+		'TE': 'trailers'
+	}
+
 	def __init__(self, session, eventName, callbackNeeded=False, save=False, savepath=None, localpath=None):
 		Screen.__init__(self, session)
 		HelpableScreen.__init__(self)
@@ -364,7 +370,7 @@ class IMDB(Screen, HelpableScreen):
 
 			self.extrainfomask = re.compile(
 			'(?:.*?data-testid="plot-xl".*?>(?P<outline>.+?)</span)?'
-			'(?:.*?<h3 class="ipc-title__text">(?P<g_synopsis>Storyline)</h3>.*?<div class="ipc-html-content-inner-div">(?P<synopsis>.+?)<span)?'
+			'(?:.*?<h3 class="ipc-title__text">(?P<g_synopsis>Storyline)</h3>.*?<div class="ipc-html-content-inner-div">(?P<synopsis>.+?)</div)?'
 			'(?:.*?data-testid="storyline-plot-keywords">(?P<keywords>.+?)\d+\s+(?:mehr|more).*?</div>)?'
 			'(?:.*?<a.*?>(?P<g_tagline>Werbezeile|Taglines?)</a>.*?<li.*?<span.*?>(?P<tagline>.+?)<)?'
 			'(?:.*?<a.*?>(?P<g_cert>Altersfreigabe|Certificate|Motion Picture Rating \(MPAA\))</a>.*?<div.*?<ul.*?<li.*?<span.*?>(?P<cert>.*?)</span>)?'
@@ -629,7 +635,7 @@ class IMDB(Screen, HelpableScreen):
 						posterurl = posterurl.group(1)
 						postersave = self.savingpath + ".poster.jpg"
 						print("[IMDB] downloading poster " + posterurl + " to " + postersave)
-						Downloader(posterurl, postersave).addFailureCallback(self.http_failed).start()
+						Downloader(posterurl, postersave, self.ffHeaders).addFailureCallback(self.http_failed).start()
 				except Exception, e:
 					print('[IMDb] IMDBsavetxt exception failure in get poster: ', str(e))
 
@@ -897,7 +903,7 @@ class IMDB(Screen, HelpableScreen):
 				self["statusbar"].setText(_("Downloading Movie Poster: %s...") % (posterurl))
 				localfile = "/tmp/poster.jpg"
 				print("[IMDB] downloading poster " + posterurl + " to " + localfile)
-				Downloader(posterurl, localfile).addSuccessCallback(self.IMDBPoster).addFailureCallback(self.http_failed).start()
+				Downloader(posterurl, localfile, self.ffHeaders).addSuccessCallback(self.IMDBPoster).addFailureCallback(self.http_failed).start()
 			else:
 				self.IMDBPoster("kein Poster")
 
@@ -934,7 +940,7 @@ class IMDB(Screen, HelpableScreen):
 									Extratext += _("Unknown category")
 							except IndexError: # there's no g_keywords anymore
 								pass
-							if category == "trivia" or category == "quotes" or category == "connections" or category == "runtime":
+							if category == "trivia" or category == "quotes" or category == "connections" or category == "runtime" or category == 'synopsis':
 								txt = ' '.join(self.htmltags.sub(' ', extrainfos.group(category).replace("\n", ' ').replace("<br>", '\n').replace("<br />", '\n')).replace(' |' + self.NBSP, '').replace(self.NBSP, ' ').split())
 							elif category == "keywords":
 								Extratext += "\n" + _("Keywords") # there's no g_keywords anymore
