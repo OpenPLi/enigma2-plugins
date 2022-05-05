@@ -87,7 +87,6 @@ class Downloader(object):
 	downloadTimeout = 10  # seconds
 
 	_headers = {
-		'Host': 'www.imdb.com',
 		'user-agent': 'curl/7.74.0',
 		'accept': '*/*'
 	}
@@ -233,21 +232,6 @@ class IMDB(Screen, HelpableScreen):
 	NBSP = unichr(htmlentitydefs.name2codepoint['nbsp']).encode("utf8")
 	RAQUO = unichr(htmlentitydefs.name2codepoint['raquo']).encode("utf8")
 	HELLIP = unichr(htmlentitydefs.name2codepoint['hellip']).encode("utf8")
-
-	ffHeaders = {
-		'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:99.0) Gecko/20100101 Firefox/99.0',
-		'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8',
-		'Accept-Language': 'en-US,en;q=0.5',
-		'Accept-Encoding': 'gzip, deflate',
-		'DNT': '1',
-		'Connection': 'close',
-		'Upgrade-Insecure-Requests': '1',
-		'Sec-Fetch-Dest': 'document',
-		'Sec-Fetch-Mode': 'navigate',
-		'Sec-Fetch-Site': 'same-origin',
-		'Sec-Fetch-User': '?1',
-		'TE': 'trailers'
-	}
 
 	def __init__(self, session, eventName, callbackNeeded=False, save=False, savepath=None, localpath=None):
 		Screen.__init__(self, session)
@@ -635,7 +619,7 @@ class IMDB(Screen, HelpableScreen):
 						posterurl = posterurl.group(1)
 						postersave = self.savingpath + ".poster.jpg"
 						print("[IMDB] downloading poster " + posterurl + " to " + postersave)
-						Downloader(posterurl, postersave, self.ffHeaders).addFailureCallback(self.http_failed).start()
+						Downloader(posterurl, postersave).addFailureCallback(self.http_failed).start()
 				except Exception, e:
 					print('[IMDb] IMDBsavetxt exception failure in get poster: ', str(e))
 
@@ -903,7 +887,7 @@ class IMDB(Screen, HelpableScreen):
 				self["statusbar"].setText(_("Downloading Movie Poster: %s...") % (posterurl))
 				localfile = "/tmp/poster.jpg"
 				print("[IMDB] downloading poster " + posterurl + " to " + localfile)
-				Downloader(posterurl, localfile, self.ffHeaders).addSuccessCallback(self.IMDBPoster).addFailureCallback(self.http_failed).start()
+				Downloader(posterurl, localfile).addSuccessCallback(self.IMDBPoster).addFailureCallback(self.http_failed).start()
 			else:
 				self.IMDBPoster("kein Poster")
 
