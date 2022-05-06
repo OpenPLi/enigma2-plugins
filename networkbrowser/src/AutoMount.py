@@ -103,7 +103,7 @@ class AutoMount():
 					data['sharedir'] = getValue(mount.findall("sharedir"), "/media/")
 					data['sharename'] = getValue(mount.findall("sharename"), "MEDIA")
 					data['options'] = getValue(mount.findall("options"), "")
-					data['username'] = getValue(mount.findall("username"), "guest")
+					data['username'] = getValue(mount.findall("username"), "")
 					data['password'] = getValue(mount.findall("password"), "")
 					self.automounts[data['sharename']] = data
 				except Exception as e:

@@ -450,8 +450,8 @@ class NetworkBrowser(Screen):
 				data['sharedir'] = selection[3]
 				data['options'] = "rw"
 				self.sharecache_file = '/etc/enigma2/' + selection[1].strip() + '.cache' #Path to cache directory
-				data['username'] = 'guest'
-				data['password'] = 'guest'
+				data['username'] = ''
+				data['password'] = ''
 				try:
 					hostdata = load_cache(self.sharecache_file)
 					data['username'] = hostdata['username']

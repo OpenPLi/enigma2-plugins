@@ -79,8 +79,8 @@ class UserDialog(Screen, ConfigListScreen):
 		self.setTitle(_("Enter user and password for host: ") + self.hostinfo)
 
 	def createConfig(self):
-		username = 'guest'
-		password = 'guest'
+		username = ''
+		password = ''
 		print('Loading user cache from ', self.cache_file)
 		try:
 			hostdata = load_cache(self.cache_file)
