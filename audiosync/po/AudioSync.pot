@@ -206,3 +206,6 @@ msgstr ""
 
 msgid "disabled"
 msgstr ""
+
+msgid "No audio track available (yet). Please try again once an audio track is available."
+msgstr ""

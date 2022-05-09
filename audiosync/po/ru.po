@@ -203,3 +203,6 @@ msgstr "после режима ожидания"
 
 msgid "disabled"
 msgstr "отключено"
+
+msgid "No audio track available (yet). Please try again once an audio track is available."
+msgstr "Звуковая дорожка недоступна (может пока). Повторите попытку, когда звуковая дорожка станет доступна."

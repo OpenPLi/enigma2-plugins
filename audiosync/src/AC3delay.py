@@ -20,7 +20,7 @@ class AC3delay:
 
 		# Current audio- delay
 		self.systemDelay = {}
-
+        self.selectedAudioInfo = None
 		self.getAudioInformation()
 
 		self.activateTimer = eTimer()
