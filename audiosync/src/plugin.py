@@ -183,8 +183,14 @@ def setup(session, **kwargs):
 
 
 def audioMenu(session, **kwargs):
-	import AC3main
-	session.open(AC3main.AC3LipSync, plugin_path)
+	from AC3delay import AC3delay
+	ac3delay = AC3delay()
+    if ac3delay.selectedAudioInfo:
+		import AC3main
+		session.open(AC3main.AC3LipSync, plugin_path)
+    else:
+		from Screens.MessageBox import MessageBox
+		session.open(MessageBox, _("No audio track available (yet). Please try again once an audio track is available."), MessageBox.TYPE_ERROR, timeout=5)
 
 
 def Plugins(path, **kwargs):
