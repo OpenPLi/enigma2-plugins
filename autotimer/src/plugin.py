@@ -163,7 +163,7 @@ def sessionstart(reason, **kwargs):
 			if isOpenWebifInstalled():
 				try:
 					from Plugins.Extensions.WebInterface.WebChilds.Toplevel import addExternalChild
-					from AutoTimerResource import AutoTimerDoParseResource, \
+					from .AutoTimerResource import AutoTimerDoParseResource, \
 						AutoTimerListAutoTimerResource, AutoTimerAddOrEditAutoTimerResource, \
 						AutoTimerRemoveAutoTimerResource, AutoTimerChangeSettingsResource, \
 						AutoTimerSettingsResource, AutoTimerSimulateResource, AutoTimerTestResource, \
@@ -244,7 +244,7 @@ def menuCallbackAutoTimer(self, ret):
 	ret = ret and ret[1]
 	if ret:
 		if ret == "add":
-			from AutoTimerEditor import addAutotimerFromEvent
+			from .AutoTimerEditor import addAutotimerFromEvent
 			cur = self["list"].getCurrent()
 			evt = cur[0]
 			sref = cur[1]
@@ -255,7 +255,7 @@ def menuCallbackAutoTimer(self, ret):
 			except:
 				pass
 		elif ret == "preview":
-			from AutoTimerPreview import AutoTimerPreview
+			from .AutoTimerPreview import AutoTimerPreview
 			try:
 				total, new, modified, timers, conflicts, similars = autotimer.parseEPG(simulateOnly=True)
 				self.session.open(AutoTimerPreview, timers)
@@ -327,7 +327,7 @@ def addtoAutoTimer(self, add):
 	event = info and info.getEvent(sref)
 	if event is not None:
 		sref = sref.toString()
-		from AutoTimerEditor import addAutotimerFromEvent
+		from .AutoTimerEditor import addAutotimerFromEvent
 		try:
 			addAutotimerFromEvent(self.session, evt=event, service=sref)
 		except:
@@ -349,7 +349,7 @@ def main(session, **kwargs):
 	if autopoller is not None:
 		autopoller.pause()
 
-	from AutoTimerOverview import AutoTimerOverview
+	from .AutoTimerOverview import AutoTimerOverview
 	session.openWithCallback(
 		editCallback,
 		AutoTimerOverview,
@@ -363,7 +363,7 @@ def handleAutoPoller():
 	# Start autopoller again if wanted
 	if config.plugins.autotimer.autopoll.value:
 		if autopoller is None:
-			from AutoPoller import AutoPoller
+			from .AutoPoller import AutoPoller
 			autopoller = AutoPoller()
 		autopoller.start(initial=False)
 	# Remove instance if not running in background
@@ -434,14 +434,14 @@ def parseEPGCallback(ret):
 
 
 def movielist(session, service, **kwargs):
-	from AutoTimerEditor import addAutotimerFromService
+	from .AutoTimerEditor import addAutotimerFromService
 	addAutotimerFromService(session, service)
 
 # EPG Further Options
 
 
 def epgfurther(session, selectedevent, **kwargs):
-	from AutoTimerEditor import addAutotimerFromEvent
+	from .AutoTimerEditor import addAutotimerFromEvent
 	try:
 		addAutotimerFromEvent(session, selectedevent[0], selectedevent[1])
 	except:
@@ -454,7 +454,7 @@ def eventinfo(session, service=None, event=None, eventName="", **kwargs):
 	if eventName != "":
 		if service is not None and event is not None:
 			try:
-				from AutoTimerEditor import addAutotimerFromEvent, addAutotimerFromService
+				from .AutoTimerEditor import addAutotimerFromEvent, addAutotimerFromService
 				if service.getPath() and service.getPath()[0] == "/":
 					addAutotimerFromService(session, eServiceReference(str(service)))
 				else:
@@ -462,7 +462,7 @@ def eventinfo(session, service=None, event=None, eventName="", **kwargs):
 			except:
 				pass
 	else:
-		from AutoTimerEditor import AutoTimerEPGSelection
+		from .AutoTimerEditor import AutoTimerEPGSelection
 		ref = session.nav.getCurrentlyPlayingServiceReference()
 		if ref is not None:
 			session.open(AutoTimerEPGSelection, ref)
