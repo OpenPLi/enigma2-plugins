@@ -82,7 +82,7 @@ class AutoPollerThread(Thread):
 			delay = config.plugins.autotimer.interval.value * 3600
 
 		self.__timer.startLongTimer(delay)
-		if not self.isAlive():
+		if not self.is_alive():
 			Thread.start(self)
 
 	def pause(self):
