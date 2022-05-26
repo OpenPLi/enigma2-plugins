@@ -86,7 +86,7 @@ def autostart(reason, **kwargs):
 			autopoller.start()
 
 			# Install NPB, main is too late because the Browser is already running
-			import NotifiablePluginBrowser
+			from . import NotifiablePluginBrowser
 			NotifiablePluginBrowser.install()
 	# Shutdown
 	elif reason == 1:
