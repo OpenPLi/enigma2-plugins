@@ -25,7 +25,7 @@ from collections import deque
 
 from twisted.internet import reactor
 
-from Logger import doLog
+from .Logger import doLog
 
 
 class AutoPollerThread(Thread):

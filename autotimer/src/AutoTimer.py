@@ -3,8 +3,8 @@ from __future__ import print_function
 # Plugins Config
 from xml.etree.cElementTree import parse as cet_parse, fromstring as cet_fromstring
 import os
-from AutoTimerConfiguration import parseConfig, buildConfig
-from Logger import doLog, startLog, getLog, doDebug
+from .AutoTimerConfiguration import parseConfig, buildConfig
+from .Logger import doLog, startLog, getLog, doDebug
 
 # Navigation (RecordTimer)
 import NavigationInstance
@@ -30,17 +30,17 @@ from enigma import eEPGCache, eServiceReference, eServiceCenter, iServiceInforma
 from twisted.internet import reactor, defer
 from twisted.python import failure
 from threading import currentThread
-import Queue
+import queue
 
 # AutoTimer Component
-from AutoTimerComponent import preferredAutoTimerComponent
+from .AutoTimerComponent import preferredAutoTimerComponent
 
 from itertools import chain
 from collections import defaultdict
 from difflib import SequenceMatcher
 from operator import itemgetter
 
-from SimpleThread import SimpleThread
+from .SimpleThread import SimpleThread
 
 try:
 	from Plugins.Extensions.SeriesPlugin.plugin import getSeasonEpisode4 as sp_getSeasonEpisode

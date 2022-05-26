@@ -26,7 +26,7 @@ from Tools.BoundFunction import boundFunction
 from Components.PluginComponent import plugins
 from Plugins.Plugin import PluginDescriptor
 import os
-from Logger import doLog
+from .Logger import doLog
 
 try:
 	from Plugins.Extensions.SeriesPlugin.plugin import Plugins
@@ -34,7 +34,7 @@ try:
 except:
 	hasSeriesPlugin = False
 
-from AutoTimer import AutoTimer
+from .AutoTimer import AutoTimer
 autotimer = AutoTimer()
 autopoller = None
 
@@ -81,7 +81,7 @@ def autostart(reason, **kwargs):
 	if reason == 0 and config.plugins.autotimer.autopoll.value:
 		# Start Poller
 		if autopoller is None:
-			from AutoPoller import AutoPoller
+			from .AutoPoller import AutoPoller
 			autopoller = AutoPoller()
 			autopoller.start()
 
