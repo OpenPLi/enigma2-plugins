@@ -233,6 +233,11 @@ class IMDB(Screen, HelpableScreen):
 	RAQUO = unichr(htmlentitydefs.name2codepoint['raquo']).encode("utf8")
 	HELLIP = unichr(htmlentitydefs.name2codepoint['hellip']).encode("utf8")
 
+	mainDownloaded = 1 << 0
+	storylineDownloaded = 1 << 1
+	allDownloaded = mainDownloaded | storylineDownloaded
+	downloadedLock = threading.Lock()
+
 	def __init__(self, session, eventName, callbackNeeded=False, save=False, savepath=None, localpath=None):
 		Screen.__init__(self, session)
 		HelpableScreen.__init__(self)
@@ -332,6 +337,8 @@ class IMDB(Screen, HelpableScreen):
 			os.remove("/tmp/imdbquery.html")
 		if fileExists("/tmp/imdbquery2.html"):
 			os.remove("/tmp/imdbquery2.html")
+		if fileExists("/tmp/imdbquery-storyline.html"):
+			os.remove("/tmp/imdbquery-storyline.html")
 		if self.callbackNeeded:
 			self.close([self.callbackData, self.callbackGenre])
 		else:
@@ -354,8 +361,8 @@ class IMDB(Screen, HelpableScreen):
 
 			self.extrainfomask = re.compile(
 			'(?:.*?data-testid="plot-xl".*?>(?P<outline>.+?)</span)?'
-			'(?:.*?<h3 class="ipc-title__text">(?P<g_synopsis>Storyline)</h3>.*?<div class="ipc-html-content-inner-div">(?P<synopsis>.+?)</div)?'
-			'(?:.*?data-testid="storyline-plot-keywords">(?P<keywords>.+?)\d+\s+(?:mehr|more).*?</div>)?'
+			#'(?:.*?<h3 class="ipc-title__text">(?P<g_synopsis>Storyline)</h3>.*?<div class="ipc-html-content-inner-div">(?P<synopsis>.+?)</div)?'
+			#'(?:.*?data-testid="storyline-plot-keywords">(?P<keywords>.+?)\d+\s+(?:mehr|more).*?</div>)?'
 			'(?:.*?<a.*?>(?P<g_tagline>Werbezeile|Taglines?)</a>.*?<li.*?<span.*?>(?P<tagline>.+?)<)?'
 			'(?:.*?<a.*?>(?P<g_cert>Altersfreigabe|Certificate|Motion Picture Rating \(MPAA\))</a>.*?<div.*?<ul.*?<li.*?<span.*?>(?P<cert>.*?)</span>)?'
 			'(?:.*?<a.*?>(?P<g_trivia>Dies und das|Trivia)</a><div.*?<div.*?<div.*?<div.*?>(?P<trivia>.+?)</div>)?'
@@ -371,7 +378,9 @@ class IMDB(Screen, HelpableScreen):
 			'(?:.*?<span.*?>(?P<g_sound>Tonverfahren|Sound mix)</span>.*?<div.*?<ul.*?>(?P<sound>.*?)</ul>)?'
 			'(?:.*?<span.*?>(?P<g_aspect>Seitenverh\S*?ltnis|Aspect ratio)</span>.*?<div.*?<ul.*?<li.*?<span.*?>(?P<aspect>.*?)</span>)?', re.DOTALL)
 
-			self.genreblockmask = re.compile('<li.*?storyline-genres.*?><span.*?>Genres?</span>.*?<div.*?><ul.*?>(.*?)</ul>', re.DOTALL)
+			self.storylinemask = re.compile('id="plot-summaries-content".*?<p>(.*?<div class="author-container">.*?)</div>', re.DOTALL)
+			self.storylinealtmask = re.compile('id="plot-summaries-content".*?<p>(.*?)</p>', re.DOTALL)
+			self.genreblockmask = re.compile('<div.*?data-testid="genres".*?>(.*?)</div>', re.DOTALL)
 			self.ratingmask = re.compile('aggregate-rating__score.*?><span.*?>(?P<rating>.*?)</span>', re.DOTALL)
 			self.castmask = re.compile('<a.*?title-cast-item__actor.*?>(?P<actor>.*?)</a>.*?cast-item-characters-link.*?><span.*?>(?P<character>.*?)</span>(?:.*?<span><span.*?>(?P<episodes>.*?)</span></span>)?', re.DOTALL)
 			self.postermask = re.compile('<div.*?ipc-media--poster.*?<img.*?ipc-image.*?src="(http.*?)"', re.DOTALL)
@@ -425,7 +434,7 @@ class IMDB(Screen, HelpableScreen):
 
 	def getLocalDetails(self):
 		localfile = self.localpath
-		self.html2utf8(open(localfile, "r").read())
+		self.inhtml = self.html2utf8(open(localfile, "r").read())
 		self.generalinfos = self.generalinfomask.search(self.inhtml)
 		self.IMDBparse()
 		if self.ratingstars > 0:
@@ -445,7 +454,13 @@ class IMDB(Screen, HelpableScreen):
 			localfile = "/tmp/imdbquery2.html"
 			fetchurl = "https://www.imdb.com/title/" + link + "/"
 			print("[IMDB] showDetails() downloading query " + fetchurl + " to " + localfile)
-			Downloader(fetchurl, localfile).addSuccessCallback(self.IMDBquery2).addFailureCallback(self.http_failed).start()
+			localfile2 = "/tmp/imdbquery-storyline.html"
+			fetchurl2 = "https://www.imdb.com/title/" + link + "/plotsummary"
+			print("[IMDB] showDetails() downloading query " + fetchurl2 + " to " + localfile2)
+			with self.downloadedLock:
+				self.downloaded = 0
+			Downloader(fetchurl, localfile).addSuccessCallback(self.IMDBmainDownloaded).addFailureCallback(self.http_failed).start()
+			Downloader(fetchurl2, localfile2).addSuccessCallback(self.IMDBstorylineDownloaded).addFailureCallback(self.http_failed).start()
 			self.fetchurl = fetchurl
 			self["menu"].hide()
 			self.resetLabels()
@@ -467,9 +482,6 @@ class IMDB(Screen, HelpableScreen):
 			self["detailslabel"].hide()
 			self["castlabel"].hide()
 			self["poster"].hide()
-			self["stars"].hide()
-			self["starsbg"].hide()
-			self["ratinglabel"].hide()
 			self.Page = 2
 
 	def contextMenuPressed(self):
@@ -539,7 +551,7 @@ class IMDB(Screen, HelpableScreen):
 
 	def IMDBsave(self, string):
 		self["statusbar"].setText(_("IMDb Save - Download completed"))
-		self.html2utf8(open("/tmp/imdbquery2.html", "r").read())
+		self.inhtml = self.html2utf8(open("/tmp/imdbquery2.html", "r").read())
 		self.generalinfos = self.generalinfomask.search(self.inhtml)
 		self.IMDBparse()
 
@@ -736,16 +748,16 @@ class IMDB(Screen, HelpableScreen):
 		if 'charset="utf-8"' in in_html or 'charset=utf-8' in in_html or 'charSet="utf-8"' in in_html or 'charSet=utf-8' in in_html:
 			for key, codepoint in iteritems(entitydict):
 				in_html = in_html.replace(key, unichr(int(codepoint)).encode('utf8'))
-			self.inhtml = in_html
+			return in_html
 		else:
 			for key, codepoint in iteritems(entitydict):
 				in_html = in_html.replace(key, unichr(int(codepoint)).encode('latin-1', 'ignore'))
-			self.inhtml = in_html.decode('latin-1').encode('utf8')
+			return in_html.decode('latin-1').encode('utf8')
 
 	def IMDBquery(self, string):
 		self["statusbar"].setText(_("IMDb Download completed"))
 
-		self.html2utf8(open("/tmp/imdbquery.html", "r").read())
+		self.inhtml = self.html2utf8(open("/tmp/imdbquery.html", "r").read())
 
 		self.generalinfos = self.generalinfomask.search(self.inhtml)
 
@@ -794,11 +806,36 @@ class IMDB(Screen, HelpableScreen):
 		print("[IMDB] ", text)
 		self["statusbar"].setText(text)
 
+	def IMDBmainDownloaded(self, string):
+		with self.downloadedLock:
+			self.downloaded |= self.mainDownloaded
+			if self.downloaded == self.allDownloaded:
+				self.IMDBquery2('')
+
+	def IMDBstorylineDownloaded(self, string):
+		with self.downloadedLock:
+			self.downloaded |= self.storylineDownloaded
+			if self.downloaded == self.allDownloaded:
+				self.IMDBquery2('')
+
 	def IMDBquery2(self, string):
 		self["statusbar"].setText(_("IMDb Re-Download completed"))
-		self.html2utf8(open("/tmp/imdbquery2.html", "r").read())
+		self.inhtml = self.html2utf8(open("/tmp/imdbquery2.html", "r").read())
 		self.generalinfos = self.generalinfomask.search(self.inhtml)
+		self.IMDBparseStoryline()
 		self.IMDBparse()
+
+	def IMDBparseStoryline(self):
+		self.storyline = ''
+		storylineHtml = self.html2utf8(open("/tmp/imdbquery-storyline.html", "r").read())
+		m = self.storylinemask.search(storylineHtml)
+		if m is None:
+			m = self.storylinealtmask.search(storylineHtml)
+		if m is not None:
+			try:
+				self.storyline = ' '.join(self.htmltags.sub('', m.group(1).replace("\n", ' ').replace("<br>", '\n').replace("<br />", '\n')).replace(' |' + self.NBSP, '').replace(self.NBSP, ' ').split()) + "\n"
+			except IndexError:
+				pass
 
 	def IMDBparse(self):
 		self.Page = 1
@@ -884,7 +921,7 @@ class IMDB(Screen, HelpableScreen):
 			posterurl = self.postermask.search(self.inhtml)
 			if posterurl and posterurl.group(1).find("jpg") > 0:
 				posterurl = posterurl.group(1)
-				self["statusbar"].setText(_("Downloading Movie Poster: %s...") % (posterurl))
+				self["statusbar"].setText(_("Downloading Movie Poster..."))
 				localfile = "/tmp/poster.jpg"
 				print("[IMDB] downloading poster " + posterurl + " to " + localfile)
 				Downloader(posterurl, localfile).addSuccessCallback(self.IMDBPoster).addFailureCallback(self.http_failed).start()
@@ -908,6 +945,13 @@ class IMDB(Screen, HelpableScreen):
 
 				categories = ("outline", "synopsis", "tagline", "keywords", "cert", "runtime", "language", "color", "aspect", "sound", "locations", "company", "trivia", "goofs", "quotes", "connections")
 				for category in categories:
+					if category == "synopsis":
+						if self.storyline:
+							Extratext += "\n" + _("Storyline") + ":\n" + self.storyline + "\n"
+						else:
+							Extratext += "\n"
+						continue
+
 					extraspace = "\n" if category in addspace else ''
 					try:
 						if extrainfos.group(category):
