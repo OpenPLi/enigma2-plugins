@@ -777,9 +777,14 @@ class IMDB(Screen, HelpableScreen):
 				if Len == 1:
 					self["statusbar"].setText(_("Re-Query IMDb: %s...") % (self.resultlist[0][0],))
 					self.eventName = self.resultlist[0][1]
-					localfile = "/tmp/imdbquery.html"
+					localfile = "/tmp/imdbquery2.html"
 					fetchurl = "https://www.imdb.com/title/" + quoteEventName(self.eventName) + "/"
-					Downloader(fetchurl, localfile).addSuccessCallback(self.IMDBquery).addFailureCallback(self.http_failed).start()
+					localfile2 = "/tmp/imdbquery-storyline.html"
+					fetchurl2 = "https://www.imdb.com/title/" + quoteEventName(self.eventName) + "/plotsummary"
+					with self.downloadedLock:
+						self.downloaded = 0
+					Downloader(fetchurl, localfile).addSuccessCallback(self.IMDBmainDownloaded).addFailureCallback(self.http_failed).start()
+					Downloader(fetchurl2, localfile2).addSuccessCallback(self.IMDBstorylineDownloaded).addFailureCallback(self.http_failed).start()
 				elif Len > 1:
 					self.Page = 1
 					self.showMenu()
