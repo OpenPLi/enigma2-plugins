@@ -329,7 +329,7 @@ def isInTimer(self, eventid, begin, duration, service):
 					timer_begin = begin
 			if x.justplay:
 				type_offset = 5
-				if x.pipzap:
+				if x.pipzap and not x.repeated:
 					type_offset = 30
 				if (timer_end - x.begin) <= 1:
 					timer_end += 60
