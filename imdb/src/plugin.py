@@ -730,7 +730,7 @@ class IMDB(Screen, HelpableScreen):
 		entities = re.finditer('&([:_A-Za-z][:_\-.A-Za-z"0-9]*);', in_html)
 		for x in entities:
 			key = x.group(0)
-			if key not in entitydict:
+			if x.group(1) != 'lt' and x.group(1) != 'gt' and key not in entitydict:
 				entitydict[key] = htmlentitydefs.name2codepoint[x.group(1)]
 
 		entities = re.finditer('&#x([0-9A-Fa-f]+);', in_html)
@@ -806,8 +806,8 @@ class IMDB(Screen, HelpableScreen):
 	def http_failed(self, error_instance=None):
 		text = _("IMDb Download failed")
 		if error_instance is not None:
-			error_message = type(error_instance).__name__ + ': ' + error_instance.message
-			text += ": " + error_message
+			error_message = type(error_instance).__name__ + ':\n' + str(error_instance.code) + ' ' + error_instance.reason
+			text += ":\n" + error_message
 		print("[IMDB] ", text)
 		self["statusbar"].setText(text)
 
@@ -838,7 +838,7 @@ class IMDB(Screen, HelpableScreen):
 			m = self.storylinealtmask.search(storylineHtml)
 		if m is not None:
 			try:
-				self.storyline = ' '.join(self.htmltags.sub('', m.group(1).replace("\n", ' ').replace("<br>", '\n').replace("<br />", '\n')).replace(' |' + self.NBSP, '').replace(self.NBSP, ' ').split()) + "\n"
+				self.storyline = ' '.join(self.htmltags.sub('', m.group(1).replace("\n", ' ').replace("<br>", '\n').replace("<br />", '\n')).replace(' |' + self.NBSP, '').replace(self.NBSP, ' ').replace('&lt;', '').replace('&gt;', '').split()) + "\n"
 			except IndexError:
 				pass
 
