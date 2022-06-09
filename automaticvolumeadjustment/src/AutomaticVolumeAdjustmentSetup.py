@@ -73,6 +73,7 @@ class AutomaticVolumeAdjustmentConfigScreen(ConfigListScreen, Screen):
 
 	def createSetup(self, widget):
 		self.list = []
+		self["key_blue"].text = ""
 		self.config_enable = getConfigListEntry(_("Enable"), self.configVA.config.enable)
 		self.list.append(self.config_enable)
 		if self.configVA.config.enable.value:
@@ -83,7 +84,6 @@ class AutomaticVolumeAdjustmentConfigScreen(ConfigListScreen, Screen):
 				self.list.append(getConfigListEntry(_("Max. volume for mpeg audio"), self.configVA.config.mpeg_max_volume))
 				self["key_blue"].text = _("Services")
 			else:
-				self["key_blue"].text = ""
 			self.list.append(getConfigListEntry(_("Show volumebar when volume-value was changed"), self.configVA.config.show_volumebar))
 			self.list.append(getConfigListEntry(_("Show on/off plugin only for session in Audio menu"), config.misc.AV_audio_menu))
 		else:
@@ -104,7 +104,7 @@ class AutomaticVolumeAdjustmentConfigScreen(ConfigListScreen, Screen):
 			self.newConfig()
 
 	def blue(self):
-		if self.configVA.config.modus.value == "0":
+		if self.configVA.config.enable.value and self.configVA.config.modus.value == "0":
 			self.session.open(AutomaticVolumeAdjustmentEntriesListConfigScreen, self.configVA)
 
 	def keySave(self):

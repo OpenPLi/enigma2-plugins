@@ -29,7 +29,6 @@ from os import path as os_path, open as os_open, close as os_close, O_RDWR as os
 from pickle import load as pickle_load, dump as pickle_dump
 from enigma import eEnv
 
-#CONFIG_FILE_VOLUME = eEnv.resolve('${libdir}/enigma2/python/Plugins/SystemPlugins/AutomaticVolumeAdjustment/config_volume')
 CONFIG_FILE_VOLUME = '/etc/enigma2/AutomaticVolumeAdjustment_volume.conf'
 
 
@@ -52,7 +51,6 @@ def saveVolumeDict(dict):
 
 class AutomaticVolumeAdjustmentConfig():
 	def __init__(self):
-		#self.CONFIG_FILE = eEnv.resolve('${libdir}/enigma2/python/Plugins/SystemPlugins/AutomaticVolumeAdjustment/config')
 		self.CONFIG_FILE = '/etc/enigma2/AutomaticVolumeAdjustment_services.conf'
 		# load config file
 		self.loadConfigFile()
