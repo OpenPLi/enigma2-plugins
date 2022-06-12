@@ -40,10 +40,8 @@ def audioMenu(session, **kwargs):
 
 def toggleAVclosed(ret):
 	if ret:
-		if config.misc.toggle_AV_session.value:
-			config.misc.toggle_AV_session.value = False
-		else:
-			config.misc.toggle_AV_session.value = True
+		config.misc.toggle_AV_session.value = not config.misc.toggle_AV_session.value
+
 
 
 def autostart(reason, **kwargs):
@@ -60,14 +58,14 @@ def autoend(reason, **kwargs):
 				saveVolumeDict(AutomaticVolumeAdjustment.instance.serviceList)
 
 
-def setup(session, **kwargs):
+def setupAVA(session, **kwargs):
 	session.open(AutomaticVolumeAdjustmentConfigScreen) # start setup
 
 
 def startSetup(menuid):
-	if menuid != "system": # show setup only in system level menu
+	if menuid != "video": # show setup only in system level menu
 		return []
-	return [(_("Automatic Volume Adjustment"), setup, "AutomaticVolumeAdjustment", 46)]
+	return [(_("Automatic Volume Adjustment"), setupAVA, "AutomaticVolumeAdjustment", 0)]
 
 
 def Plugins(**kwargs):
