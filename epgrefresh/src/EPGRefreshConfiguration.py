@@ -7,7 +7,7 @@ from . import _
 from Screens.Screen import Screen
 from Components.ConfigList import ConfigListScreen
 from Screens.ChoiceBox import ChoiceBox
-from EPGRefreshChannelEditor import EPGRefreshServiceEditor
+from .EPGRefreshChannelEditor import EPGRefreshServiceEditor
 
 # GUI (Summary)
 from Screens.Setup import SetupSummary
@@ -21,8 +21,8 @@ from Tools.Directories import resolveFilename, SCOPE_PLUGINS
 # Configuration
 from Components.config import config, getConfigListEntry
 
-from EPGRefresh import epgrefresh
-from EPGSaveLoadConfiguration import EPGSaveLoadConfiguration
+from .EPGRefresh import epgrefresh
+from .EPGSaveLoadConfiguration import EPGSaveLoadConfiguration
 from Components.NimManager import nimmanager
 from enigma import getDesktop
 from Screens.MessageBox import MessageBox
@@ -173,7 +173,7 @@ class EPGRefreshConfiguration(Screen, ConfigListScreen):
 		self.onFirstExecBegin.append(self.firstExec)
 
 	def firstExec(self):
-		from plugin import epgrefreshHelp
+		from .plugin import epgrefreshHelp
 		if config.plugins.epgrefresh.show_help.value and epgrefreshHelp:
 			config.plugins.epgrefresh.show_help.value = False
 			config.plugins.epgrefresh.show_help.save()

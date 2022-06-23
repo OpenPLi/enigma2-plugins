@@ -3,22 +3,22 @@ from __future__ import print_function
 import Screens.Standby
 from enigma import eServiceReference, eServiceCenter, eTimer, getBestPlayableServiceReference
 from ServiceReference import ServiceReference
-from EPGRefreshTimer import epgrefreshtimer, EPGRefreshTimerEntry, checkTimespan
+from .EPGRefreshTimer import epgrefreshtimer, EPGRefreshTimerEntry, checkTimespan
 from time import time
 from xml.etree.cElementTree import parse as cet_parse
 from Tools.XMLTools import stringToXML
 from os import path as path
-from EPGRefreshService import EPGRefreshService
-from OrderedSet import OrderedSet
+from .EPGRefreshService import EPGRefreshService
+from .OrderedSet import OrderedSet
 from Components.config import config
 from Screens.MessageBox import MessageBox
 from Tools import Notifications
 from Tools.BoundFunction import boundFunction
 from Components.ParentalControl import parentalControl
 from . import _, NOTIFICATIONID, ngettext
-from MainPictureAdapter import MainPictureAdapter
-from PipAdapter import PipAdapter
-from RecordAdapter import RecordAdapter
+from .MainPictureAdapter import MainPictureAdapter
+from .PipAdapter import PipAdapter
+from .RecordAdapter import RecordAdapter
 
 CONFIG = "/etc/enigma2/epgrefresh.xml"
 XML_VERSION = "1"

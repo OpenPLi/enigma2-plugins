@@ -18,12 +18,12 @@ from Components.ChoiceList import ChoiceEntryComponent
 from Tools.BoundFunction import boundFunction
 from Components.SystemInfo import SystemInfo
 from Components.NimManager import nimmanager
-import EpgLoadSaveRefresh
+from . import EpgLoadSaveRefresh
 import os
 # Plugin
-from EPGRefresh import epgrefresh
-from EPGRefreshConfiguration import EPGRefreshConfiguration
-from EPGRefreshService import EPGRefreshService
+from .EPGRefresh import epgrefresh
+from .EPGRefreshConfiguration import EPGRefreshConfiguration
+from .EPGRefreshService import EPGRefreshService
 
 _session = None
 # Plugins

@@ -1,12 +1,12 @@
 # Python OrderedSet implementation
 # taken from http://code.activestate.com/recipes/576694-orderedset/
 from __future__ import print_function
-import collections
+import collections.abc
 
 KEY, PREV, NEXT = range(3)
 
 
-class OrderedSet(collections.MutableSet):
+class OrderedSet(collections.abc.MutableSet):
 
     def __init__(self, iterable=None):
         self.end = end = []
