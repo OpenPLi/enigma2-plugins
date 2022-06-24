@@ -212,7 +212,7 @@ class EPGRefresh:
 				if auxiliarySortParameter > 1800:
 					auxiliarySortParameter = 3600 - auxiliarySortParameter
 				unsortedServices.append((auxiliarySortParameter, service))
-			unsortedServices.sort()
+			unsortedServices.sort(key=lambda x: x[0])
 			sortedServices = []
 			for service in unsortedServices:
 				sortedServices.append(service[1])
