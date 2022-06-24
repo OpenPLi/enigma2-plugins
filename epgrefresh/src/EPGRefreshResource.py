@@ -1,6 +1,6 @@
 from twisted.web import http, resource
-from EPGRefresh import epgrefresh
-from EPGRefreshService import EPGRefreshService
+from .EPGRefresh import epgrefresh
+from .EPGRefreshService import EPGRefreshService
 from enigma import eServiceReference
 from Components.config import config
 from Components.NimManager import nimmanager
