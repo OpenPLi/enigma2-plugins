@@ -153,7 +153,7 @@ class AutomaticVolumeAdjustment(Screen):
 				try:
 					self.volumeControlInstance = VolumeControl.instance
 				except:
-					print "[AutomaticVolumeAdjustment] VolumeControl.instance is None"
+					print("[AutomaticVolumeAdjustment] VolumeControl.instance is None")
 				self.pluginStarted = True # plugin started...
 
 	def isCurrentAudioAC3DTS(self):
