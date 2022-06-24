@@ -169,7 +169,7 @@ class AutomaticVolumeAdjustment(Screen):
 						return True
 				else:
 					if description and description.split()[0] in ("AC3", "AC-3", "A_AC3", "A_AC-3", "A-AC-3", "E-AC-3", "A_EAC3", "DTS", "DTS-HD", "AC4", "AAC-HE"):
-					return True
+						return True
 			except:
 				pass
 		return False
