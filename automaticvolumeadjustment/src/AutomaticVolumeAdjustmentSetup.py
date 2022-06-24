@@ -85,8 +85,8 @@ class AutomaticVolumeAdjustmentConfigScreen(ConfigListScreen, Screen):
 				self.list.append(getConfigListEntry(_("Only AC3/DTS(HD)"), self.configVA.config.type_audio))
 				self["key_blue"].text = _("Services")
 			else:
-			self.list.append(getConfigListEntry(_("Show volumebar when volume-value was changed"), self.configVA.config.show_volumebar))
-			self.list.append(getConfigListEntry(_("Show on/off plugin only for session in Audio menu"), config.misc.AV_audio_menu))
+				self.list.append(getConfigListEntry(_("Show volumebar when volume-value was changed"), self.configVA.config.show_volumebar))
+				self.list.append(getConfigListEntry(_("Show on/off plugin only for session in Audio menu"), config.misc.AV_audio_menu))
 		else:
 			self.config_modus = None
 		self[widget].list = self.list
