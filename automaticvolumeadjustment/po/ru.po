@@ -98,3 +98,6 @@ msgstr "Вы должны выбрать действительный серви
 
 msgid "toggle on/off plugin only for session"
 msgstr "переключатель плагина вкл/выкл только для этой сессии"
+
+msgid "Only AC3/DTS(HD)"
+msgstr "Только AC3/DTS(HD)"

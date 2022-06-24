@@ -98,3 +98,6 @@ msgstr ""
 
 msgid "toggle on/off plugin only for session"
 msgstr ""
+
+msgid "Only AC3/DTS(HD)"
+msgstr ""
