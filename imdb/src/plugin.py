@@ -380,7 +380,7 @@ class IMDB(Screen, HelpableScreen):
 
 			self.storylinemask = re.compile('id="plot-summaries-content".*?<p>(.*?<div class="author-container">.*?)</div>', re.DOTALL)
 			self.storylinealtmask = re.compile('id="plot-summaries-content".*?<p>(.*?)</p>', re.DOTALL)
-			self.genreblockmask = re.compile('<div.*?data-testid="genres".*?>(.*?)</div>', re.DOTALL)
+			self.genreblockmask = re.compile('<div.*?data-testid="genres".*?>(?:<div.*?<svg.*?</svg></div>)?(.*?)</div>', re.DOTALL)
 			self.ratingmask = re.compile('aggregate-rating__score.*?><span.*?>(?P<rating>.*?)</span>', re.DOTALL)
 			self.castmask = re.compile('<a.*?title-cast-item__actor.*?>(?P<actor>.*?)</a>.*?cast-item-characters-link.*?><span.*?>(?P<character>.*?)</span>(?:.*?<span><span.*?>(?P<episodes>.*?)</span></span>)?', re.DOTALL)
 			self.postermask = re.compile('<div.*?ipc-media--poster.*?<img.*?ipc-image.*?src="(http.*?)"', re.DOTALL)
