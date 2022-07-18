@@ -5,10 +5,10 @@ from Screens.EpgSelection import EPGSelection
 from Screens.VirtualKeyBoard import VirtualKeyBoard, VKB_SEARCH_ICON
 from Components.EpgList import EPG_TYPE_SINGLE, EPG_TYPE_MULTI
 from Components.ActionMap import ActionMap
+from .EPGSearch import EPGSearch, EPGSearchEPGSelection
 from Plugins.Plugin import PluginDescriptor
 from Screens.ChoiceBox import ChoiceBox
 from Components.config import config
-from .EPGSearch import EPGSearch, EPGSearchEPGSelection
 
 # Overwrite EPGSelection.__init__ with our modified one
 baseEPGSelection__init__ = None
