@@ -140,7 +140,7 @@ class AutomaticCleanupSetup(Screen, ConfigListScreen): # config
 			# try to import EMC module to check for its existence
 			from Plugins.Extensions.EnhancedMovieCenter.EnhancedMovieCenter import EnhancedMovieCenterMenu
 			self.EMC_timer_autocln = config.EMC.timer_autocln.value
-		except ImportError, ie:
+		except ImportError as ie:
 			print(pluginPrintname, "EMC not installed:", ie)
 			self.EMC_timer_autocln = False
 
@@ -331,7 +331,7 @@ class AutomaticCleanup:
 			# try to import SoftwareManager module to check for its existence
 			from Plugins.SystemPlugins.SoftwareManager.plugin import UpdatePluginMenu
 			backuppath = config.plugins.configurationbackup.backuplocation.value
-		except ImportError, ie:
+		except ImportError as ie:
 			print(pluginPrintname, "SoftwareManager not installed:", ie)
 			backuppath = '/media/hdd/'
 		if backuppath.endswith('/'):
@@ -344,7 +344,7 @@ class AutomaticCleanup:
 			# try to import EMC module to check for its existence
 			from Plugins.Extensions.EnhancedMovieCenter.EnhancedMovieCenter import EnhancedMovieCenterMenu
 			self.EMC_timer_autocln = config.EMC.timer_autocln.value
-		except ImportError, ie:
+		except ImportError as ie:
 			print(pluginPrintname, "EMC not installed:", ie)
 			self.EMC_timer_autocln = False
 
@@ -390,7 +390,7 @@ class AutomaticCleanup:
 						excludePath.append(config.EMC.movie_trashpath.value)
 					else:
 						excludePath.append(config.EMC.movie_trashpath.value + "/")
-			except ImportError, ie:
+			except ImportError as ie:
 				print(pluginPrintname, "EMC not installed:", ie)
 
 			if len(moviePath) == 0:

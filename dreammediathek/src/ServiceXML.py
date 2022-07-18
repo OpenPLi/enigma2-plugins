@@ -37,7 +37,7 @@ class WebTVStations():
 
 				print("TVSTATION--->", data)
 				self.webtv_stations[data['title']] = data
-			except Exception, e:
+			except Exception as e:
 				print("[WebTVStations] Error reading Stations:", e)
 
 	def getWebTVStationsList(self):
