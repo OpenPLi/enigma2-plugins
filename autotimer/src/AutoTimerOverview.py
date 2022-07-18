@@ -332,7 +332,7 @@ class AutoTimerOverview(Screen, HelpableScreen):
 			(_("Create a new timer using the wizard"), "newwizard")
 		]
 
-		from plugin import autotimerHelp
+		from .plugin import autotimerHelp
 		if autotimerHelp:
 			list.append((_("Help"), "help"))
 			list.append((_("Frequently asked questions"), "faq"))

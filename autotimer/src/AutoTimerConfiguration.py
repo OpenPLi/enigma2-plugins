@@ -74,13 +74,13 @@ def parseConfig(configuration, list, version=None, uniqueTimerId=0, defaultTimer
 def parseEntry(element, baseTimer, defaults=False):
 	if not defaults:
 		# Read out match
-		baseTimer.match = element.get("match", "").encode("UTF-8")
+		baseTimer.match = element.get("match", "")
 		if not baseTimer.match:
 			doLog('[AutoTimer] Erroneous config is missing attribute "match", skipping entry')
 			return False
 
 		# Read out name
-		baseTimer.name = element.get("name", "").encode("UTF-8")
+		baseTimer.name = element.get("name", "")
 		if not baseTimer.name:
 			doLog('[AutoTimer] Timer is missing attribute "name", defaulting to match')
 			baseTimer.name = baseTimer.match
@@ -151,7 +151,7 @@ def parseEntry(element, baseTimer, defaults=False):
 
 	# Read out recording path
 	default = baseTimer.destination or ""
-	baseTimer.destination = element.get("location", default).encode("UTF-8") or None
+	baseTimer.destination = element.get("location", default) or None
 
 	# Read out offset
 	offset = element.get("offset")

@@ -82,7 +82,7 @@ def importerCallback(ret):
 
 def editorCallback(ret):
 	if ret:
-		from plugin import autotimer
+		from .plugin import autotimer
 		autotimer.add(ret)
 
 		# Save modified xml

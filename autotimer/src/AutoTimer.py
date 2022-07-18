@@ -900,7 +900,7 @@ class AutoTimer:
 
 	def parseEPG(self, simulateOnly=False, uniqueId=None, callback=None):
 
-		from plugin import AUTOTIMER_VERSION
+		from .plugin import AUTOTIMER_VERSION
 		doLog("AutoTimer Version: " + AUTOTIMER_VERSION)
 
 		if NavigationInstance.instance is None:
