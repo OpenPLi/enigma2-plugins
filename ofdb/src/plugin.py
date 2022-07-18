@@ -29,7 +29,7 @@ def localeInit():
 def _(txt):
     t = gettext.dgettext("OFDb", txt)
     if t == txt:
-        print "[OFDb] fallback to default translation for", txt
+        print("[OFDb] fallback to default translation for", txt)
         t = gettext.gettext(txt)
     return t
 
@@ -238,7 +238,7 @@ class OFDB(Screen):
 			self["statusbar"].setText(_("Re-Query OFDb: %s...") % (title))
 			localfile = "/tmp/ofdbquery2.html"
 			fetchurl = "http://www.ofdb.de/film/" + link
-			print "[OFDb] downloading query " + fetchurl + " to " + localfile
+			print("[OFDb] downloading query " + fetchurl + " to " + localfile)
 			downloadPage(fetchurl, localfile).addCallback(self.OFDBquery2).addErrback(self.fetchFailed)
 			self["menu"].hide()
 			self.resetLabels()
@@ -313,13 +313,13 @@ class OFDB(Screen):
 				self.eventName = urllib.quote(self.eventName.decode('utf8').encode('ascii', 'ignore'))
 			localfile = "/tmp/ofdbquery.html"
 			fetchurl = "http://www.ofdb.de/view.php?page=suchergebnis&Kat=DTitel&SText=" + self.eventName
-			print "[OFDb] Downloading Query " + fetchurl + " to " + localfile
+			print("[OFDb] Downloading Query " + fetchurl + " to " + localfile)
 			downloadPage(fetchurl, localfile).addCallback(self.OFDBquery).addErrback(self.fetchFailed)
 		else:
 			self["statusbar"].setText(_("Could't get Eventname"))
 
 	def fetchFailed(self, string):
-		print "[OFDb] fetch failed " + string
+		print("[OFDb] fetch failed " + string)
 		self["statusbar"].setText(_("OFDb Download failed"))
 
 	def html2utf8(self, in_html):
@@ -346,7 +346,7 @@ class OFDB(Screen):
 		self.inhtml = in_html
 
 	def OFDBquery(self, string):
-		print "[OFDBquery]"
+		print("[OFDBquery]")
 		self["statusbar"].setText(_("OFDb Download completed"))
 
 		self.html2utf8(open("/tmp/ofdbquery.html", "r").read())
@@ -381,7 +381,7 @@ class OFDB(Screen):
 		self.OFDBparse()
 
 	def OFDBparse(self):
-		print "[OFDBparse]"
+		print("[OFDBparse]")
 		self.Page = 1
 		Detailstext = _("No details found.")
 		if self.generalinfos:
@@ -446,10 +446,10 @@ class OFDB(Screen):
 				posterurl = posterurl.group(1)
 				self["statusbar"].setText(_("Downloading Movie Poster: %s...") % (posterurl))
 				localfile = "/tmp/poster.jpg"
-				print "[OFDb] downloading poster " + posterurl + " to " + localfile
+				print("[OFDb] downloading poster " + posterurl + " to " + localfile)
 				downloadPage(posterurl, localfile).addCallback(self.OFDBPoster).addErrback(self.fetchFailed)
 			else:
-				print "no jpg poster!"
+				print("no jpg poster!")
 				self.OFDBPoster(noPoster=True)
 
 		self["detailslabel"].setText(Detailstext)

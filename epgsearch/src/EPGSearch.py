@@ -512,7 +512,7 @@ class EPGSearchList(EPGList):
 
 	def applySkin(self, desktop, parent):
 		def warningWrongSkinParameter(string):
-			print "[EPGList] wrong '%s' skin parameters" % string
+			print("[EPGList] wrong '%s' skin parameters" % string)
 
 		def setEventItemFont(value):
 			self.eventItemFont = parseFont(value, ((1, 1), (1, 1)))

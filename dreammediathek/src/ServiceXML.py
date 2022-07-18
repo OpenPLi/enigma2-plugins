@@ -12,7 +12,7 @@ class WebTVStations():
 	"""Manages WebTVStations declared in a XML-Document."""
 
 	def __init__(self):
-		print "[WebTVStations] INIT"
+		print("[WebTVStations] INIT")
 		self.webtv_stations = {}
 
 	def getWebTVStations(self, callback=None):
@@ -35,10 +35,10 @@ class WebTVStations():
 				data['title'] = getValue(tvstation.findall("title"), False).encode("UTF-8")
 				data['streamurl'] = getValue(tvstation.findall("streamurl"), False).encode("UTF-8")
 
-				print "TVSTATION--->", data
+				print("TVSTATION--->", data)
 				self.webtv_stations[data['title']] = data
 			except Exception, e:
-				print "[WebTVStations] Error reading Stations:", e
+				print("[WebTVStations] Error reading Stations:", e)
 
 	def getWebTVStationsList(self):
 		return sorted(self.webtv_stations.iterkeys())

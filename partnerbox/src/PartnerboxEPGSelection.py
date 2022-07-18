@@ -343,7 +343,7 @@ def GetPartnerboxTimerlistCallback(self, sxml=None):
 def GetPartnerboxTimerlistCallbackError(self, error=None):
 	try:
 		if error is not None:
-			print str(error.getErrorMessage())
+			print(str(error.getErrorMessage()))
 	except:
 		pass
 

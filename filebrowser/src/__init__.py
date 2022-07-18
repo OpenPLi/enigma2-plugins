@@ -12,7 +12,7 @@ def localeInit():
 def _(txt):
 	t = gettext.dgettext("Filebrowser", txt)
 	if t == txt:
-		#print "[Filebrowser] fallback to default translation for", txt
+		#print("[Filebrowser] fallback to default translation for", txt)
 		t = gettext.gettext(txt)
 	return t
 

@@ -25,5 +25,5 @@ AWAY = Enum('Away')
 
 
 class OfflineError(Exception):
-    print "[dreamIRC] offline - %s" % Exception
+    print("[dreamIRC] offline - %s" % Exception)
     """The requested action can't happen while offline."""

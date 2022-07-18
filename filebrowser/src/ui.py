@@ -62,14 +62,14 @@ class FilebrowserConfigScreen(ConfigListScreen, Screen):
         self.setTitle(pname + " - %s" % _("Settings"))
 
     def save(self):
-        print "saving"
+        print("saving")
         for x in self["config"].list:
             x[1].save()
         self.refreshPlugins()
         self.close(True)
 
     def cancel(self):
-        print "cancel"
+        print("cancel")
         for x in self["config"].list:
             x[1].cancel()
         self.close(False)
@@ -395,7 +395,7 @@ class FilebrowserScreen(Screen):
     def onFileAction(self):
         try:
             x = openFile(self.session, guess_type(self.SOURCELIST.getFilename())[0], self.SOURCELIST.getCurrentDirectory() + self.SOURCELIST.getFilename())
-            print "RESULT OPEN FILE", x
+            print("RESULT OPEN FILE", x)
         except TypeError, e:
             # catching error
             #  File "/home/tmbinc/opendreambox/1.5/dm8000/experimental/build/tmp/work/enigma2-2.6git20090627-r1/image/usr/lib/enigma2/python/Components/Scanner.py", line 43, in handleFile

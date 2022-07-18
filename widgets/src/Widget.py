@@ -39,4 +39,4 @@ class Widget:
 
     def onInfo(self):
         """ overwrite this, if you whant to do something if the user presses the info-key and your widget is selected """
-        print "unhandled infokey"
+        print("unhandled infokey")

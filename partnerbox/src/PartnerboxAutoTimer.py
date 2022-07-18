@@ -93,7 +93,7 @@ class PartnerboxAutoTimer(object):
 		username = "root"
 		password = partnerboxentry.password.value
 		sCommand = "http://%s:%d/autotimer?webif=false" % (ip, port)
-		print sCommand
+		print(sCommand)
 		sendPartnerBoxWebCommand(sCommand, None, 10, username, password).addCallback(self.getPartnerboxAutoTimerListCallback, partnerboxentry).addErrback(self.downloadError)
 
 	def getPartnerboxAutoTimerListCallback(self, result, partnerboxentry):
