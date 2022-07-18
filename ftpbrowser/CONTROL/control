@@ -3,4 +3,4 @@ Version: 0.2-20090917-r0
 Description: FTP-Browser-Plugin for Enigma2
 Maintainer: OpenPLi team <forum@openpli.org>
 Homepage: http://www.openpli.org
-Depends: enigma2 (>= 2.6git20091014), python-twisted-protocols, python-shell
+Depends: enigma2, python-twisted-protocols, python-shell

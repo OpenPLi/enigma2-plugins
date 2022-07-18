@@ -2,4 +2,4 @@ Package: enigma2-plugin-extensions-httpproxy
 Version: 1.0
 Description: use your Dreambox as Web Proxy
 Maintainer: OpenPLi team <forum@openpli.org>
-Depends: enigma2 (>> 1.0git20070908), python-twisted-web
+Depends: enigma2, python-twisted-web

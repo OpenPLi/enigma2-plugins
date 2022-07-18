@@ -2,4 +2,4 @@ Package: enigma2-plugin-extensions-webcamviewer
 Version: 1.1
 Description: view Pictures and Webcams on your TV Screen
 Maintainer: OpenPLi team <forum@openpli.org>
-Depends: enigma2 (>> 2.5git20081120), python-twisted-web, python-shell
+Depends: enigma2, python-twisted-web, python-shell
