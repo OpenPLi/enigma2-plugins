@@ -23,7 +23,7 @@ from Components.Sources.StaticText import StaticText
 from Components.Sources.Boolean import Boolean
 from Tools.Directories import fileExists, resolveFilename, SCOPE_PLUGINS, SCOPE_SKIN_IMAGE
 
-from StringIO import StringIO
+from io import StringIO
 
 import contextlib
 import gzip
@@ -31,7 +31,7 @@ import os
 import random
 import re
 import threading
-import urllib2
+import urllib
 import zlib
 
 
@@ -113,8 +113,8 @@ class Downloader(object):
 	def _download(self):
 		tmpfile = self.file + '.' + str(random.randint(10000, 99999)) + '.tmp'
 		try:
-			request = urllib2.Request(self.url, None, self._headers)
-			with open(tmpfile, 'w') as o, contextlib.closing(urllib2.urlopen(request, timeout=self.downloadTimeout)) as i:
+			request = urllib.request.Request(self.url, None, self._headers)
+			with open(tmpfile, 'wb') as o, contextlib.closing(urllib.request.urlopen(request, timeout=self.downloadTimeout)) as i:
 				encoding = i.info().get('Content-Encoding')
 				if encoding == 'gzip':
 					buf = StringIO(i.read())
@@ -128,7 +128,7 @@ class Downloader(object):
 			os.rename(tmpfile, self.file)
 			if self.successCallback:
 				self.successCallback('')
-		except urllib2.URLError as e:
+		except urllib.error.URLError as e:
 			if fileExists(tmpfile):
 				os.remove(tmpfile)
 			if self.failureCallback:
@@ -229,9 +229,9 @@ class IMDB(Screen, HelpableScreen):
 		</screen>"""
 
 	# Some HTML entities as utf-8
-	NBSP = unichr(htmlentitydefs.name2codepoint['nbsp']).encode("utf8")
-	RAQUO = unichr(htmlentitydefs.name2codepoint['raquo']).encode("utf8")
-	HELLIP = unichr(htmlentitydefs.name2codepoint['hellip']).encode("utf8")
+	NBSP = unichr(htmlentitydefs.name2codepoint['nbsp'])
+	RAQUO = unichr(htmlentitydefs.name2codepoint['raquo'])
+	HELLIP = unichr(htmlentitydefs.name2codepoint['hellip'])
 
 	mainDownloaded = 1 << 0
 	storylineDownloaded = 1 << 1
@@ -573,7 +573,7 @@ class IMDB(Screen, HelpableScreen):
 				except Exception as e:
 					print('[IMDb] IMDBsavetxt exception failure in get overview: ', str(e))
 					overview = (_("Content:"))
-#				print(savetxt overview: ', overview)
+#				print('[IMDb] IMDBsavetxt overview: ', overview)
 
 				# get entry 2 = Runtime
 				try:
@@ -688,7 +688,7 @@ class IMDB(Screen, HelpableScreen):
 
 	def getIMDB(self, search=False):
 		self.resetLabels()
-		if not isinstance(self.eventName, basestring):
+		if not isinstance(self.eventName, str):
 			self["statusbar"].setText("")
 			return
 		if not self.eventName:
@@ -745,14 +745,9 @@ class IMDB(Screen, HelpableScreen):
 			if key not in entitydict:
 				entitydict[key] = x.group(1)
 
-		if 'charset="utf-8"' in in_html or 'charset=utf-8' in in_html or 'charSet="utf-8"' in in_html or 'charSet=utf-8' in in_html:
-			for key, codepoint in iteritems(entitydict):
-				in_html = in_html.replace(key, unichr(int(codepoint)).encode('utf8'))
-			return in_html
-		else:
-			for key, codepoint in iteritems(entitydict):
-				in_html = in_html.replace(key, unichr(int(codepoint)).encode('latin-1', 'ignore'))
-			return in_html.decode('latin-1').encode('utf8')
+		for key, codepoint in iteritems(entitydict):
+			in_html = in_html.replace(key, unichr(int(codepoint)))
+		return in_html
 
 	def IMDBquery(self, string):
 		self["statusbar"].setText(_("IMDb Download completed"))
@@ -1176,7 +1171,7 @@ class IMDbSetup(Screen, ConfigListScreen):
 		for pl in pluginlist:
 			if not pl[0].value:
 				for plugin in plugins.getPlugins(pl[1].where):
-					if plugin is pl[1]:
+					if plugin == pl[1]:
 						plugins.removePlugin(plugin)
 
 		plugins.readPluginList(resolveFilename(SCOPE_PLUGINS))
@@ -1265,4 +1260,3 @@ def Plugins(**kwargs):
 	l += [pl[1] for pl in pluginlist if pl[0].value]
 
 	return l
-
