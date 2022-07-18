@@ -7,7 +7,6 @@ from Tools.Directories import resolveFilename, SCOPE_CURRENT_SKIN, SCOPE_SKIN_IM
 from Tools.LoadPixmap import LoadPixmap
 from Tools.Alternatives import GetWithAlternative
 from ServiceReference import ServiceReference
-from EPGSearchSetup import EPGSearchSetup
 from Screens.ChannelSelection import SimpleChannelSelection
 from Screens.ChoiceBox import ChoiceBox
 from Screens.EpgSelection import EPGSelection
@@ -23,6 +22,7 @@ from Components.Sources.ServiceEvent import ServiceEvent
 from Components.Sources.Event import Event
 from Components.Label import Label
 from Components.Sources.List import List
+from .EPGSearchSetup import EPGSearchSetup
 
 from Components.GUIComponent import GUIComponent
 from skin import parseFont
