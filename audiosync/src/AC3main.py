@@ -6,7 +6,7 @@ from Components.Label import Label, MultiColorLabel
 from Components.Pixmap import MultiPixmap
 from Components.ProgressBar import ProgressBar
 from Components.config import config
-from MovableScreen import MovableScreen
+from Plugins.Extensions.AudioSync.MovableScreen import MovableScreen
 from Screens.ChoiceBox import ChoiceBox
 from Screens.HelpMenu import HelpableScreen
 from Screens.MessageBox import MessageBox
