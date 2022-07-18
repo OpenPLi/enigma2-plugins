@@ -53,7 +53,7 @@ from Components.ConfigList import ConfigListScreen
 from Components.PluginComponent import plugins
 from Tools.Directories import resolveFilename, SCOPE_PLUGINS
 
-from HTMLParser import HTMLParser
+from html.parser import HTMLParser
 
 
 def transHTML(text):
@@ -522,7 +522,7 @@ class IMDB(Screen, HelpableScreen):
 				isave = self.savingpath + ".imdbquery2.html"
 				if self.fetchurl is not None:
 					Downloader(self.fetchurl, isave).addSuccessCallback(self.IMDBsave).addFailureCallback(self.http_failed).start()
-		except Exception, e:
+		except Exception as e:
 			print('[IMDb] saveHtmlDetails exception failure: ', str(e))
 
 	def saveTxtDetails(self):
@@ -534,7 +534,7 @@ class IMDB(Screen, HelpableScreen):
 				else:
 					from Screens.MessageBox import MessageBox
 					self.session.open(MessageBox, (_('IMDb can not get Movie Information to write to .txt file!')), MessageBox.TYPE_INFO, 10)
-		except Exception, e:
+		except Exception as e:
 			print('[IMDb] saveTxtDetails exception failure: ', str(e))
 
 	def savePosterTxtDetails(self):
@@ -546,7 +546,7 @@ class IMDB(Screen, HelpableScreen):
 				else:
 					from Screens.MessageBox import MessageBox
 					self.session.open(MessageBox, (_('IMDb can not get Movie Information to write to .jpg and .txt files!')), MessageBox.TYPE_INFO, 10)
-		except Exception, e:
+		except Exception as e:
 			print('[IMDb] savePosterTxtDetails exception failure: ', str(e))
 
 	def IMDBsave(self, string):
@@ -570,19 +570,19 @@ class IMDB(Screen, HelpableScreen):
 				try:
 					text = ' '.join(self.htmltags.sub('', extrainfos.group("synopsis").replace("\n", ' ').replace("<br>", '\n').replace("<br />", '\n')).replace(' |' + self.NBSP, '').replace(self.NBSP, ' ').split()) + "\n"
 					overview = _("Content:") + " " + text
-				except Exception, e:
+				except Exception as e:
 					print('[IMDb] IMDBsavetxt exception failure in get overview: ', str(e))
 					overview = (_("Content:"))
-#				print'[IMDb] IMDBsavetxt overview: ', overview
+#				print(savetxt overview: ', overview)
 
 				# get entry 2 = Runtime
 				try:
 					time = ' '.join(self.htmltags.sub('', extrainfos.group(category).replace("\n", ' ').replace("<br>", '\n').replace("<br />", '\n')).replace(' |' + self.NBSP, '').replace(self.NBSP, ' ').split())
 					runtime = _("Runtime:") + " " + time
-				except Exception, e:
+				except Exception as e:
 					print('[IMDb] IMDBsavetxt exception failure in get runtime: ', str(e))
 					runtime = (_("Runtime:"))
-#				print'[IMDb] IMDBsavetxt runtime: ', runtime
+#				print('[IMDb] IMDBsavetxt runtime: ', runtime)
 
 			# get entry 3 = Genre
 			genreblock = self.genreblockmask.search(self.inhtml)
@@ -592,25 +592,25 @@ class IMDB(Screen, HelpableScreen):
 					genre = _("Genre:") + " " + genres
 			else:
 				genre = (_("Genre:"))
-#			print'[IMDb] IMDBsavetxt genre: ', genre
+#			print('[IMDb] IMDBsavetxt genre: ', genre)
 
 			# get entry 4 = Country
 			try:
 				land = ' '.join(self.htmltags.sub('', self.generalinfos.group("country").replace('\n', ' ')).split())
 				country = _("Production Countries:") + " " + land
-			except Exception, e:
+			except Exception as e:
 				print('[IMDb] IMDBsavetxt exception failure in get country: ', str(e))
 				country = (_("Production Countries:"))
-#			print'[IMDb] IMDBsavetxt country: ', country
+#			print('[IMDb] IMDBsavetxt country: ', country)
 
 			# get entry 5 = ReleaseDate
 			try:
 				date = ' '.join(self.htmltags.sub('', self.generalinfos.group("premiere").replace('\n', ' ')).split())
 				release = _("Release Date:") + " " + date
-			except Exception, e:
+			except Exception as e:
 				print('[IMDb] IMDBsavetxt exception failure in get release: ', str(e))
 				release = (_("Release Date:"))
-#			print'[IMDb] IMDBsavetxt release: ', release
+#			print('[IMDb] IMDBsavetxt release: ', release)
 
 			# get entry 5 = Vote
 			ratingtext = self.ratingmask.search(self.inhtml)
@@ -621,7 +621,7 @@ class IMDB(Screen, HelpableScreen):
 					rating = _("User Rating") + ": " + text
 			else:
 				rating = (_("User Rating") + ": ")
-#			print'[IMDb] IMDBsavetxt rating: ', rating
+#			print('[IMDb] IMDBsavetxt rating: ', rating)
 
 			# get the poster.jpg
 			if poster:
@@ -632,7 +632,7 @@ class IMDB(Screen, HelpableScreen):
 						postersave = self.savingpath + ".poster.jpg"
 						print("[IMDB] downloading poster " + posterurl + " to " + postersave)
 						Downloader(posterurl, postersave).addFailureCallback(self.http_failed).start()
-				except Exception, e:
+				except Exception as e:
 					print('[IMDb] IMDBsavetxt exception failure in get poster: ', str(e))
 
 		return overview + "\n\n" + runtime + "\n" + genre + "\n" + country + "\n" + release + "\n" + rating + "\n"
@@ -1212,7 +1212,7 @@ def movielistSearch(session, service, **kwargs):
 	eventName = info and info.getName(service) or ''
 	(root, ext) = os.path.splitext(eventName)
 	if ext in KNOWN_EXTENSIONS:
-		print"#####################", ext
+		print("#####################", ext)
 		eventName = re.sub("[\W_]+", ' ', root.decode("utf8"), 0, re.LOCALE | re.UNICODE).encode("utf8")
 	session.open(IMDB, eventName)
 
@@ -1265,3 +1265,4 @@ def Plugins(**kwargs):
 	l += [pl[1] for pl in pluginlist if pl[0].value]
 
 	return l
+
