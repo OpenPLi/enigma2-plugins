@@ -3,4 +3,4 @@ Version: 0.2-20070927-r0
 Description: Downloader-Plugin for Enigma2
 Maintainer: OpenPLi team <forum@openpli.org>
 Homepage: http://www.openpli.org
-Depends: enigma2, python-twisted-web, python-netclient, python-shell
+Depends: enigma2, python3-twisted-web, python3-netclient, python3-shell

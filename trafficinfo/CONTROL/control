@@ -2,4 +2,4 @@ Package: enigma2-plugin-extensions-trafficinfo
 Version: 1.1
 Description: Show German traffic jams
 Maintainer: OpenPLi team <forum@openpli.org>
-Depends: enigma2, python-twisted-web
+Depends: enigma2, python3-twisted-web

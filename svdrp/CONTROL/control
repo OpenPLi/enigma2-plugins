@@ -6,5 +6,5 @@ Section: extra
 Priority: optional
 Maintainer: OpenPLi team <forum@openpli.org>
 Homepage: www.openpli.org
-Depends: enigma2(>=2.6git20091014), python-twisted-protocols
+Depends: enigma2(>=2.6git20091014), python3-twisted-protocols
 Source: http://www.ritzmo.de

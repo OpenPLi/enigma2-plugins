@@ -3,4 +3,4 @@ Version: 0.1-20091001-r0
 Description: redirect notifications to growl
 Maintainer: OpenPLi team <forum@openpli.org>
 Homepage: http://www.openpli.org
-Depends: enigma2, python-twisted-protocols
+Depends: enigma2, python3-twisted-protocols

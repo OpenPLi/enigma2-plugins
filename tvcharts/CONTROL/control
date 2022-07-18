@@ -2,4 +2,4 @@ Package: enigma2-plugin-extensions-tvcharts
 Version: 1.0
 Description: Generates TVCharts of users having the plugin installed
 Maintainer: homey
-Depends: enigma2, python-twisted-web
+Depends: enigma2, python3-twisted-web
