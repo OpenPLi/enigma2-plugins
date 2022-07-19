@@ -36,7 +36,7 @@ from os import system as os_system
 from time import time, gmtime, strftime
 from twisted.web.client import getPage
 from xml.dom.minidom import parse, parseString
-from urllib import urlencode
+from urllib.parse import urlencode
 
 import timer
 import xml.etree.cElementTree

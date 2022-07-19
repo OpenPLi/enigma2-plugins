@@ -26,7 +26,7 @@ from twisted.web import client
 from twisted.web.client import HTTPClientFactory, getPage
 from base64 import encodestring
 import xml.etree.cElementTree
-from urllib import unquote
+from urllib.parse import unquote
 
 CurrentIP = None
 remote_timer_list = None
@@ -423,7 +423,7 @@ def runCommand(path, username="", password="", host="", port=80, sessionid="0", 
 	postdata = {"user": username, "password": password, "sessionid": sessionid}
 	if parameter:
 		postdata.update(parameter)
-	send = getPage('%s' % (command), method='POST', headers=headers, postdata=urllib.urlencode(postdata))
+	send = getPage('%s' % (command), method='POST', headers=headers, postdata=urllib.parse.urlencode(postdata))
 
 	def readData(data):
 		return data
@@ -490,7 +490,7 @@ def SetPartnerboxTimerlist(partnerboxentry=None, sreference=None):
 		else:
 			sCommand = "http://%s:%s@%s:%d/xml/timers" % (username, password, ip, port)
 		print("[RemoteEPGList] Getting timerlist data from %s..." % ip)
-		f = urllib.urlopen(sCommand)
+		f = urllib.request.urlopen(sCommand)
 		sxml = f.read()
 		if int(partnerboxentry.enigma.value) == 0:
 			remote_timer_list = FillE2TimerList(sxml, sreference)

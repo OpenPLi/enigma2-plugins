@@ -9,7 +9,7 @@ from os import uname
 from Screens.MessageBox import MessageBox
 from Tools import Notifications
 
-from GrowleeConnection import emergencyDisable
+from .GrowleeConnection import emergencyDisable
 from . import NOTIFICATIONID
 
 SYSLOG_UDP_PORT = 514

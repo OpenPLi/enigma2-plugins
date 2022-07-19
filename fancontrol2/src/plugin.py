@@ -4,9 +4,9 @@
 
 import time
 import os
-from __init__ import _
+from .__init__ import _
 
-from globals import *
+from .globals import *
 
 from enigma import eTimer, eSize
 
@@ -19,7 +19,7 @@ from Components.Sources.Progress import Progress
 
 # Startup/shutdown notification
 from Tools import Notifications
-from Sensors import sensors
+from .Sensors import sensors
 from time import gmtime, strftime
 import datetime
 
@@ -40,8 +40,8 @@ from Components.ActionMap import NumberActionMap
 from Components.Harddisk import harddiskmanager
 
 from threading import Thread, Lock
-import Queue
-Briefkasten = Queue.Queue()
+import queue
+Briefkasten = queue.Queue()
 
 FC2doThread = True
 

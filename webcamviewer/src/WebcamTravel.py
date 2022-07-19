@@ -12,7 +12,7 @@ from Tools.BoundFunction import boundFunction
 
 from enigma import eListboxPythonMultiContent, RT_HALIGN_LEFT, RT_HALIGN_RIGHT, ePicLoad, eTimer
 
-from PictureScreen import PictureScreen
+from .PictureScreen import PictureScreen
 
 from twisted.web.client import getPage, downloadPage
 #from twisted.internet import reactor
@@ -23,7 +23,7 @@ from os import remove as os_remove
 from os.path import exists as os_path_exists
 from datetime import datetime
 
-from urllib import quote as urllib_quote
+from urllib.parse import quote as urllib_quote
 #########################################
 
 

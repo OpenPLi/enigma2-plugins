@@ -30,7 +30,7 @@ from Components.ConfigList import ConfigList, ConfigListScreen
 from Components.Sources.FrontendStatus import FrontendStatus
 from Components.NimManager import nimmanager
 from Components.Renderer.Picon import getPiconName
-from DishPiP import DishPiP
+from .DishPiP import DishPiP
 
 try:
 	from Plugins.SystemPlugins.PiPServiceRelation.plugin import getRelationDict, CONFIG_FILE

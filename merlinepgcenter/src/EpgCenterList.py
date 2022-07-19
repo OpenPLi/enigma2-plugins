@@ -38,9 +38,9 @@ from Tools.Directories import resolveFilename, SCOPE_CURRENT_PLUGIN
 from Tools.LoadPixmap import LoadPixmap
 
 # OWN IMPORTS
-from ConfigTabs import KEEP_OUTDATED_TIME, STYLE_SIMPLE_BAR, STYLE_PIXMAP_BAR, STYLE_MULTI_PIXMAP
-from HelperFunctions import getFuzzyDay, LIST_TYPE_EPG, LIST_TYPE_UPCOMING
-from MerlinEPGCenter import STYLE_SINGLE_LINE, STYLE_SHORT_DESCRIPTION
+from .ConfigTabs import KEEP_OUTDATED_TIME, STYLE_SIMPLE_BAR, STYLE_PIXMAP_BAR, STYLE_MULTI_PIXMAP
+from .HelperFunctions import getFuzzyDay, LIST_TYPE_EPG, LIST_TYPE_UPCOMING
+from .MerlinEPGCenter import STYLE_SINGLE_LINE, STYLE_SHORT_DESCRIPTION
 
 # for localized messages
 from . import _

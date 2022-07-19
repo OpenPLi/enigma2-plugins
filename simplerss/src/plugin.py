@@ -7,7 +7,7 @@ from Plugins.Plugin import PluginDescriptor
 from Screens.MessageBox import MessageBox
 from Screens.ChoiceBox import ChoiceBox
 from Tools.BoundFunction import boundFunction
-from RSSSetup import addFeed
+from .RSSSetup import addFeed
 
 # Initialize Configuration
 config.plugins.simpleRSS = ConfigSubsection()

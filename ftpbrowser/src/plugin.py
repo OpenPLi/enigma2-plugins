@@ -28,8 +28,8 @@ while i < config.plugins.ftpbrowser.servercount.value:
 
 del append, i
 
-from FTPBrowser import FTPBrowser
-from FTPServerManager import ftpserverFromURI
+from .FTPBrowser import FTPBrowser
+from .FTPServerManager import ftpserverFromURI
 
 ftpbrowser = None
 

@@ -20,7 +20,7 @@ from twisted.persisted import styles
 
 from twisted.internet import error
 import dreamIRCTools
-from dreamIRCTools import *
+from .dreamIRCTools import *
 
 
 class AbstractGroup:

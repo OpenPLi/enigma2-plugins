@@ -18,8 +18,8 @@ from Screens.Screen import Screen
 
 from pyexpat import ExpatError
 
-from VlcFileList import VlcFileList
-from VlcPlayList import VlcPlayList
+from .VlcFileList import VlcFileList
+from .VlcPlayList import VlcPlayList
 from . import _
 
 

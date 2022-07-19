@@ -14,10 +14,10 @@ import posixpath
 import urllib
 from sys import maxint
 from random import randint, seed
-from urllib import urlencode, quote_plus
-from urllib2 import urlopen
+from urllib.parse import urlencode, quote_plus
+from urllib.request import urlopen
 from xml.dom.minidom import parse
-from VlcPlayer import VlcPlayer, isDvdUrl
+from .VlcPlayer import VlcPlayer, isDvdUrl
 
 seed()
 

@@ -11,7 +11,7 @@ $Modified: sreichholf
 import re
 import sys
 import os
-import htmlentitydefs
+from html.entities import name2codepoint
 from xml.dom.minidom import parse
 from twisted.web.client import getPage #@UnresolvedImport
 from twisted.internet import reactor #@UnresolvedImport
@@ -33,7 +33,7 @@ def html2unicode(in_html, charset):
 		entitydict[x.group(1)] = x.group(2)
 	for key, name in entitydict.items():
 		try:
-			entitydict[key] = htmlentitydefs.name2codepoint[str(name)]
+			entitydict[key] = name2codepoint[str(name)]
 		except KeyError:
 			debug("[Callhtml2utf8] KeyError " + key + "/" + name)
 

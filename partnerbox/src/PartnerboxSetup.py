@@ -28,7 +28,7 @@ from Components.ActionMap import ActionMap, NumberActionMap, HelpableActionMap
 from Screens.HelpMenu import HelpableScreen
 from Components.ConfigList import ConfigList, ConfigListScreen
 from Components.config import ConfigSubsection, ConfigSubList, ConfigIP, ConfigInteger, ConfigSelection, ConfigText, ConfigYesNo, getConfigListEntry, configfile
-from PartnerboxFunctions import sendPartnerBoxWebCommand
+from .PartnerboxFunctions import sendPartnerBoxWebCommand
 import skin
 import os
 from plugin import autoTimerAvailable

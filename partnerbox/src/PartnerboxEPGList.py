@@ -25,8 +25,8 @@ from time import localtime, strftime, ctime, time
 
 from Tools.Directories import resolveFilename, SCOPE_CURRENT_SKIN
 from Tools.LoadPixmap import LoadPixmap
-import PartnerboxFunctions as partnerboxfunctions
-from PartnerboxFunctions import getServiceRef
+import Plugins.Extensions.Partnerbox.PartnerboxFunctions as partnerboxfunctions
+from Plugins.Extensions.Partnerbox.PartnerboxFunctions import getServiceRef
 
 # for localized messages
 from . import _

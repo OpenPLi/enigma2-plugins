@@ -19,10 +19,10 @@ from Tools.Directories import resolveFilename, SCOPE_LANGUAGE, SCOPE_PLUGINS
 import gettext
 
 import os
-if not os.path.exists('/usr/lib/enigma2/python/Components/Converter/PermanentClockTime.py'):
-	os.system('cp /usr/lib/enigma2/python/Plugins/Extensions/PermanentClock/PermanentClockTime.py /usr/lib/enigma2/python/Components/Converter/PermanentClockTime.py')
-if not os.path.exists('/usr/lib/enigma2/python/Components/Renderer/PermanentClockWatches.py'):
-	os.system('cp /usr/lib/enigma2/python/Plugins/Extensions/PermanentClock/PermanentClockWatches.py /usr/lib/enigma2/python/Components/Renderer/PermanentClockWatches.py')
+if not os.path.exists('/usr/lib/enigma2/python/Components/Converter/PermanentClockTime.pyc'):
+	os.system('cp /usr/lib/enigma2/python/Plugins/Extensions/PermanentClock/PermanentClockTime.pyc /usr/lib/enigma2/python/Components/Converter/PermanentClockTime.pyc')
+if not os.path.exists('/usr/lib/enigma2/python/Components/Renderer/PermanentClockWatches.pyc'):
+	os.system('cp /usr/lib/enigma2/python/Plugins/Extensions/PermanentClock/PermanentClockWatches.pyc /usr/lib/enigma2/python/Components/Renderer/PermanentClockWatches.pyc')
 
 _session = None
 

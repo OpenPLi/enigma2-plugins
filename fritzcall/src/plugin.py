@@ -25,7 +25,6 @@ import time
 import os
 import traceback
 import json
-from itertools import cycle, izip
 import base64
 from logging import NOTSET, DEBUG, INFO, WARNING, ERROR, CRITICAL
 import logging
@@ -70,7 +69,7 @@ from twisted.protocols.basic import LineReceiver  # @UnresolvedImport
 
 import FritzOutlookCSV
 import FritzLDIF
-from nrzuname import ReverseLookupAndNotifier
+from .nrzuname import ReverseLookupAndNotifier
 from . import _, __  # @UnresolvedImport # pylint: disable=W0611,F0401
 
 # import codecs
@@ -81,11 +80,11 @@ from . import _, __  # @UnresolvedImport # pylint: disable=W0611,F0401
 
 
 def encode(x):
-	return base64.encodestring(''.join(chr(ord(c) ^ ord(k)) for c, k in izip(x, cycle('secret key')))).strip()
+	return base64.encodestring(''.join(chr(ord(c) ^ ord(k)) for c, k in zip(x, cycle('secret key')))).strip()
 
 
 def decode(x):
-	return ''.join(chr(ord(c) ^ ord(k)) for c, k in izip(base64.decodestring(x), cycle('secret key')))
+	return ''.join(chr(ord(c) ^ ord(k)) for c, k in zip(base64.decodestring(x), cycle('secret key')))
 
 
 DESKTOP_WIDTH = getDesktop(0).size().width()

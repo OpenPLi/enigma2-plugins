@@ -6,7 +6,7 @@ from twisted.protocols.basic import LineReceiver
 from Screens.MessageBox import MessageBox
 from Tools import Notifications
 
-from GrowleeConnection import emergencyDisable
+from .GrowleeConnection import emergencyDisable
 from . import NOTIFICATIONID
 
 SNP_TCP_PORT = 9887

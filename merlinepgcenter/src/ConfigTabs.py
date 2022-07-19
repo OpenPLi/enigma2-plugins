@@ -26,8 +26,8 @@ from enigma import eEnv
 from Tools.Directories import SCOPE_CURRENT_PLUGIN, resolveFilename
 
 # OWN IMPORTS
-from MerlinEPGCenter import STYLE_SINGLE_LINE, STYLE_SHORT_DESCRIPTION
-from SkinFinder import SkinFinder
+from .MerlinEPGCenter import STYLE_SINGLE_LINE, STYLE_SHORT_DESCRIPTION
+from .SkinFinder import SkinFinder
 
 # for localized messages
 from . import _
@@ -90,7 +90,7 @@ config.plugins.merlinEpgCenter.showShortDescInEventInfo = ConfigYesNo(True)
 # check Merlin2 feature "keep outdated events in epgcache"
 try:
 	KEEP_OUTDATED_TIME = config.merlin2.keep_outdated_epg.value * 60
-except KeyError:
+except (KeyError, AttributeError):
 	KEEP_OUTDATED_TIME = None
 
 ############################################################################################

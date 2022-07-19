@@ -11,7 +11,7 @@ from Components.config import config, getConfigListEntry, ConfigSubsection, \
 from Components.ConfigList import ConfigListScreen
 from Components.Sources.StaticText import StaticText
 
-from GrowleeConnection import gotNotification, emergencyDisable, growleeConnection
+from .GrowleeConnection import gotNotification, emergencyDisable, growleeConnection
 
 from . import NOTIFICATIONID
 

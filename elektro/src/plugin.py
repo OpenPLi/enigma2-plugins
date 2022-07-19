@@ -11,7 +11,7 @@
 
 
 #from enigma import *
-from __init__ import _
+from .__init__ import _
 
 from Screens.InfoBarGenerics import *
 # from RecordTimer import *

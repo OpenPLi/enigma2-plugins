@@ -30,7 +30,7 @@ import datetime
 import sys
 
 import plugin
-from plugin import *
+from .plugin import *
 
 import ircsupport
 import xml.dom.minidom

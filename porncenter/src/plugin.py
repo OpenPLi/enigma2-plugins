@@ -1,5 +1,5 @@
 # Porn Center by AliAbdul
-from Additions.Plugin import cache, getPlugins
+from .Additions.Plugin import cache, getPlugins
 from Components.ActionMap import ActionMap
 from Components.config import config, ConfigSelection, ConfigSubsection, ConfigText, ConfigYesNo, getConfigListEntry
 from Components.ConfigList import ConfigListScreen

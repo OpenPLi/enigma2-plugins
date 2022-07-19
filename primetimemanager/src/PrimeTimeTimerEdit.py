@@ -5,7 +5,7 @@ from Components.config import config
 from Components.MenuList import MenuList
 from Components.TimerList import TimerList
 from Components.TimerSanityCheck import TimerSanityCheck
-from PrimeTimeTimerSanityCheck import PrimeTimeTimerSanityCheck
+from .PrimeTimeTimerSanityCheck import PrimeTimeTimerSanityCheck
 from Components.UsageConfig import preferredTimerPath
 from RecordTimer import RecordTimerEntry, parseEvent, AFTEREVENT
 from Screens.Screen import Screen
@@ -17,7 +17,7 @@ from Screens.TimerEntry import TimerEntry, TimerLog
 from Tools.BoundFunction import boundFunction
 from time import time
 from timer import TimerEntry as RealTimerEntry
-from plugin import baseTimerEditList__init__
+from .plugin import baseTimerEditList__init__
 
 
 def PMTimerEditList__init__(self, session):

@@ -22,9 +22,9 @@ from Tools.Directories import resolveFilename, SCOPE_PLUGINS
 from Tools.HardwareInfo import HardwareInfo
 from Tools.LoadPixmap import LoadPixmap
 from twisted.web.client import downloadPage, getPage
-import htmlentitydefs
+from html.entities import name2codepoint
 import re
-import urllib2
+import urllib
 
 ###################################################
 
@@ -88,7 +88,7 @@ def decode2(line):
 
 
 def decode3(line):
-	dic = htmlentitydefs.name2codepoint
+	dic = name2codepoint
 	for key in dic.keys():
 		entity = "&" + key + ";"
 		line = line.replace(entity, unichr(dic[key]))
@@ -255,7 +255,7 @@ def getCategoryDetails(div):
 
 def getMovieUrl(url):
 	try:
-		f = urllib2.urlopen(url)
+		f = urllib.request.urlopen(url)
 		txt = f.read()
 		f.close()
 	except:
@@ -479,8 +479,8 @@ class RightMenuList(MenuList):
 		if not thumbUrl.startswith("http://"):
 			thumbUrl = "%s%s" % (MAIN_PAGE, thumbUrl)
 		try:
-			req = urllib2.Request(thumbUrl)
-			url_handle = urllib2.urlopen(req)
+			req = urllib.r3equest.Request(thumbUrl)
+			url_handle = urllib.request.urlopen(req)
 			headers = url_handle.info()
 			contentType = headers.getheader("content-type")
 		except:

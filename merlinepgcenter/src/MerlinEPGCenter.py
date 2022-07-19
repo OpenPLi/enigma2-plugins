@@ -58,12 +58,12 @@ from Tools.Directories import resolveFilename, SCOPE_CURRENT_PLUGIN
 from Tools.LoadPixmap import LoadPixmap
 
 # OWN IMPORTS
-from ConfigTabs import KEEP_OUTDATED_TIME, ConfigBaseTab, ConfigGeneral, ConfigListSettings, ConfigEventInfo, SKINDIR, SKINLIST, STYLE_SIMPLE_BAR, STYLE_PIXMAP_BAR, STYLE_MULTI_PIXMAP
-from EpgActions import MerlinEPGActions
-from EpgCenterList import EpgCenterList, EpgCenterTimerlist, MODE_HD, MODE_XD, MODE_SD, MULTI_EPG_NOW, MULTI_EPG_NEXT, SINGLE_EPG, MULTI_EPG_PRIMETIME, TIMERLIST, EPGSEARCH_HISTORY, EPGSEARCH_RESULT, EPGSEARCH_MANUAL, UPCOMING
-from EpgTabs import EpgBaseTab, EpgNowTab, EpgNextTab, EpgSingleTab, EpgPrimeTimeTab, EpgTimerListTab, EpgSearchHistoryTab, EpgSearchManualTab, EpgSearchResultTab
-from HelperFunctions import PiconLoader, findDefaultPicon, ResizeScrollLabel, BlinkTimer, LIST_TYPE_EPG, LIST_TYPE_UPCOMING, RecTimerEntry
-from SkinFinder import SkinFinder
+from .ConfigTabs import KEEP_OUTDATED_TIME, ConfigBaseTab, ConfigGeneral, ConfigListSettings, ConfigEventInfo, SKINDIR, SKINLIST, STYLE_SIMPLE_BAR, STYLE_PIXMAP_BAR, STYLE_MULTI_PIXMAP
+from .EpgActions import MerlinEPGActions
+from .EpgCenterList import EpgCenterList, EpgCenterTimerlist, MODE_HD, MODE_XD, MODE_SD, MULTI_EPG_NOW, MULTI_EPG_NEXT, SINGLE_EPG, MULTI_EPG_PRIMETIME, TIMERLIST, EPGSEARCH_HISTORY, EPGSEARCH_RESULT, EPGSEARCH_MANUAL, UPCOMING
+from .EpgTabs import EpgBaseTab, EpgNowTab, EpgNextTab, EpgSingleTab, EpgPrimeTimeTab, EpgTimerListTab, EpgSearchHistoryTab, EpgSearchManualTab, EpgSearchResultTab
+from .HelperFunctions import PiconLoader, findDefaultPicon, ResizeScrollLabel, BlinkTimer, LIST_TYPE_EPG, LIST_TYPE_UPCOMING, RecTimerEntry
+from .SkinFinder import SkinFinder
 
 # for localized messages
 from . import _

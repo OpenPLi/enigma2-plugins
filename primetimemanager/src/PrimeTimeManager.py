@@ -75,8 +75,8 @@ from Tools.Directories import resolveFilename, SCOPE_CURRENT_SKIN, SCOPE_CURRENT
 from Tools.HardwareInfo import HardwareInfo
 from Tools.LoadPixmap import LoadPixmap
 import NavigationInstance
-from ResultScreen import ResultScreen
-from PrimeTimeSettings import PrimeTimeSettings
+from .ResultScreen import ResultScreen
+from .PrimeTimeSettings import PrimeTimeSettings
 try:
 	from Plugins.Extensions.AutoTimer.AutoTimerEditor import addAutotimerFromEvent
 	AUTOTIMER = True

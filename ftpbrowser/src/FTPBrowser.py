@@ -17,15 +17,15 @@ from Screens.HelpMenu import HelpableScreen
 from Screens.MessageBox import MessageBox
 from Screens.ChoiceBox import ChoiceBox
 from Screens.InfoBarGenerics import InfoBarNotifications
-from FTPServerManager import FTPServerManager
-from FTPQueueManager import FTPQueueManager
-from NTIVirtualKeyBoard import NTIVirtualKeyBoard
+from .FTPServerManager import FTPServerManager
+from .FTPQueueManager import FTPQueueManager
+from .NTIVirtualKeyBoard import NTIVirtualKeyBoard
 
 # GUI (Components)
 from Components.ActionMap import ActionMap, HelpableActionMap
 from Components.FileList import FileList, FileEntryComponent, EXTENSIONS
 from Components.Sources.StaticText import StaticText
-from VariableProgressSource import VariableProgressSource
+from .VariableProgressSource import VariableProgressSource
 
 # FTP Client
 from twisted.internet import reactor, defer

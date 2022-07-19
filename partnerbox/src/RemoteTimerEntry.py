@@ -46,7 +46,7 @@ from Components.Sources.Boolean import Boolean
 import xml.etree.cElementTree
 from Components.ActionMap import ActionMap
 
-from PartnerboxFunctions import PlaylistEntry, SetPartnerboxTimerlist, sendPartnerBoxWebCommand, getServiceRef
+from .PartnerboxFunctions import PlaylistEntry, SetPartnerboxTimerlist, sendPartnerBoxWebCommand, getServiceRef
 import PartnerboxFunctions as partnerboxfunctions
 
 HD = False
@@ -370,7 +370,7 @@ def RemoteTimerConfig(self):
 
 def getLocations(self, url, check):
 	try:
-		f = urllib.urlopen(url)
+		f = urllib.request.urlopen(url)
 		sxml = f.read()
 		getLocationsCallback(self, sxml, check)
 	except:
@@ -579,7 +579,7 @@ def RemoteTimerGo(self):
 		baseTimerEntryGo(self)
 	else:
 		service_ref = self.timerentry_service_ref
-		descr = urllib.quote(self.timerentry_description.value)
+		descr = urllib.parse.quote(self.timerentry_description.value)
 		begin, end = self.getBeginEnd()
 		ip = "%d.%d.%d.%d" % tuple(self.entryguilist[int(self.timerentry_remote.value)][2].ip.value)
 		port = self.entryguilist[int(self.timerentry_remote.value)][2].port.value
@@ -600,19 +600,19 @@ def RemoteTimerGo(self):
 				servicename = str(service_ref .getServiceName())
 			except:
 				pass
-			channel = urllib.quote(servicename)
+			channel = urllib.parse.quote(servicename)
 			sCommand = "%s/addTimerEvent?ref=%s&start=%d&duration=%d&descr=%s&channel=%s&after_event=%s&action=%s" % (http, service_ref, begin, end - begin, descr, channel, afterevent, action)
 			sendPartnerBoxWebCommand(sCommand, None, 3, "root", str(self.entryguilist[int(self.timerentry_remote.value)][2].password.value)).addCallback(boundFunction(AddTimerE1Callback, self, self.session)).addErrback(boundFunction(AddTimerError, self, self.session))
 		else:
 			# E2
-			name = urllib.quote(self.timerentry_name.value)
+			name = urllib.parse.quote(self.timerentry_name.value)
 			self.timer.tags = self.timerentry_tags
 			if self.timerentry_justplay.value == "zap":
 				justplay = 1
 				dirname = ""
 			else:
 				justplay = 0
-				dirname = urllib.quote(self.timerentry_dirname.value)
+				dirname = urllib.parse.quote(self.timerentry_dirname.value)
 			if dirname == "N/A":
 				self.session.open(MessageBox, _("Timer can not be added...no locations on partnerbox available."), MessageBox.TYPE_INFO)
 			else:

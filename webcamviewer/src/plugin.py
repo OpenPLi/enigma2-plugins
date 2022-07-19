@@ -31,9 +31,9 @@ from pyexpat import ExpatError
 import xml.dom.minidom
 
 ### my
-from WebcamViewConfig import WebcamViewerMenu
-from PictureScreen import PictureScreen
-from WebcamTravel import TravelWebcamviewer
+from .WebcamViewConfig import WebcamViewerMenu
+from .PictureScreen import PictureScreen
+from .WebcamTravel import TravelWebcamviewer
 ###
 myname = "Webcam/Picture Viewer"
 myversion = "1.1"

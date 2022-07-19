@@ -13,7 +13,7 @@ from Components.ScrollLabel import ScrollLabel
 from Components.Sources.List import List
 from Components.Sources.StaticText import StaticText
 
-from RSSList import RSSFeedList
+from .RSSList import RSSFeedList
 
 from enigma import getDesktop
 

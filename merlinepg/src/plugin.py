@@ -36,20 +36,20 @@ from Tools.LoadPixmap import LoadPixmap
 from enigma import eServiceReference, eServiceCenter, getDesktop, eTimer, gFont, eListboxPythonMultiContent, RT_HALIGN_LEFT, RT_WRAP, eEPGCache
 from RecordTimer import RecordTimerEntry, parseEvent, AFTEREVENT
 from ServiceReference import ServiceReference
-from ShowMe import ShowMe
+from .ShowMe import ShowMe
 from time import localtime
-if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/AutoTimer/AutoTimerEditor.py"):
+if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/AutoTimer/AutoTimerEditor.pyc"):
 	from Plugins.Extensions.AutoTimer.AutoTimerEditor import addAutotimerFromEvent
 	from Plugins.Extensions.AutoTimer.plugin import main as AutoTimerView
 	AutoTimerPresent = True
 else:
 	AutoTimerPresent = False
-if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/IMDb/plugin.py"):
+if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/IMDb/plugin.pyc"):
 	from Plugins.Extensions.IMDb.plugin import IMDB
 	IMDbPresent = True
 else:
 	IMDbPresent = False
-if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/EPGSearch/EPGSearch.py"):
+if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/EPGSearch/EPGSearch.pyc"):
 	from Plugins.Extensions.EPGSearch.EPGSearch import EPGSearchList, EPGSearch
 	epgSpresent = True
 else:

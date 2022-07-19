@@ -3,8 +3,8 @@ from . import _
 from Plugins.Plugin import PluginDescriptor
 from Components.config import config
 from Components.ActionMap import ActionMap
-from PrimeTimeManager import PrimeTimeManager
-from PrimeTimeSettings import PrimeTimeSettings
+from .PrimeTimeManager import PrimeTimeManager
+from .PrimeTimeSettings import PrimeTimeSettings
 
 baseTimerEditList__init__ = None
 

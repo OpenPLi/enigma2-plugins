@@ -23,8 +23,8 @@ from Screens.MessageBox import MessageBox
 from Screens.ChoiceBox import ChoiceBox
 from Components.Sources.StaticText import StaticText
 from Components.config import config
-from PartnerboxFunctions import sendPartnerBoxWebCommand
-from PartnerboxSetup import PartnerboxEntriesListConfigScreen
+from .PartnerboxFunctions import sendPartnerBoxWebCommand
+from .PartnerboxSetup import PartnerboxEntriesListConfigScreen
 from Plugins.Extensions.AutoTimer.AutoTimerEditor import AutoTimerEditor, AutoTimerEPGSelection, addAutotimerFromEvent
 from Plugins.Extensions.AutoTimer.AutoTimerOverview import AutoTimerOverview
 from Plugins.Extensions.AutoTimer.AutoTimerWizard import AutoTimerWizard

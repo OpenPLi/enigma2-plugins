@@ -8,7 +8,7 @@ from hashlib import md5
 from Screens.MessageBox import MessageBox
 from Tools import Notifications
 
-from GrowleeConnection import emergencyDisable
+from .GrowleeConnection import emergencyDisable
 from . import NOTIFICATIONID
 
 GROWL_UDP_PORT = 9887

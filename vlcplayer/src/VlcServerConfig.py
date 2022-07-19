@@ -25,7 +25,7 @@ from Components.config import ConfigYesNo
 from Components.config import config
 from Components.config import getConfigListEntry
 from Screens.Screen import Screen
-from VlcServer import VlcServer
+from .VlcServer import VlcServer
 from . import _
 
 

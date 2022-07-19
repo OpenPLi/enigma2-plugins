@@ -1,7 +1,7 @@
 # pornrabbit plugin by AliAbdul
 from Plugin import Movie, Plugin
 import re
-import urllib2
+import urllib
 
 ##################################################
 
@@ -12,7 +12,7 @@ class PornRabbitMovie(Movie):
 
 	def getVideoUrl(self):
 		try:
-			data = urllib2.urlopen(self.url).read()
+			data = urllib.request.urlopen(self.url).read()
 		except:
 			data = ""
 		reonecat = re.compile(r'<span class="download"><a href="(.+?).mp4"')

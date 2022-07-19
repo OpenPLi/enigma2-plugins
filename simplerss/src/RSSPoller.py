@@ -9,12 +9,12 @@ from enigma import eTimer
 from Tools.Notifications import AddPopup
 from Screens.MessageBox import MessageBox
 
-from RSSFeed import BaseFeed, UniversalFeed
+from .RSSFeed import BaseFeed, UniversalFeed
 
 from twisted.web.client import getPage
 from xml.etree.cElementTree import fromstring as cElementTree_fromstring
 
-from GoogleReader import GoogleReader
+from .GoogleReader import GoogleReader
 
 NOTIFICATIONID = 'SimpleRSSUpdateNotification'
 

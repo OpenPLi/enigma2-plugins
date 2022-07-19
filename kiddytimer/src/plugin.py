@@ -1,11 +1,11 @@
 from Components.ActionMap import ActionMap, NumberActionMap
 from Components.config import config, ConfigInteger, ConfigSubsection, ConfigSelection, \
     ConfigSubList, ConfigText, ConfigYesNo, ConfigDateTime, ConfigClock, ConfigPIN
-from KTmain import kiddyTimer
-from KTsetup import KiddyTimerSetup
+from .KTmain import kiddyTimer
+from .KTsetup import KiddyTimerSetup
 from Plugins.Plugin import PluginDescriptor
 from Screens.MessageBox import MessageBox
-from __init__ import _
+from .__init__ import _
 import KTglob
 import time
 

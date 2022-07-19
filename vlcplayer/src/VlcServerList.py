@@ -20,8 +20,8 @@ from Components.config import config
 from Screens.ChoiceBox import ChoiceBox
 from Tools.Directories import resolveFilename, SCOPE_PLUGINS
 from Tools.LoadPixmap import LoadPixmap
-from VlcServerConfig import vlcServerConfig
-from VlcServerConfig import VlcServerConfigScreen
+from .VlcServerConfig import vlcServerConfig
+from .VlcServerConfig import VlcServerConfigScreen
 from enigma import eListboxPythonMultiContent, RT_HALIGN_LEFT, gFont
 import os
 from skin import parseFont

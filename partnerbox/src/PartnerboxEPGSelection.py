@@ -20,13 +20,13 @@
 from Screens.Screen import Screen
 from Screens.MessageBox import MessageBox
 from Components.config import config
-from PartnerboxSetup import PartnerboxEntriesListConfigScreen, PartnerboxSetup
+from .PartnerboxSetup import PartnerboxEntriesListConfigScreen, PartnerboxSetup
 from Screens.EpgSelection import EPGSelection
 from Components.EpgList import EPG_TYPE_SINGLE, EPG_TYPE_SIMILAR, EPG_TYPE_MULTI
 from Screens.ChoiceBox import ChoiceBox
 from Tools.BoundFunction import boundFunction
 from Tools.Directories import fileExists
-from PartnerboxFunctions import SetPartnerboxTimerlist, isInTimerList, isInRepeatTimer, sendPartnerBoxWebCommand, FillE1TimerList, FillE2TimerList
+from .PartnerboxFunctions import SetPartnerboxTimerlist, isInTimerList, isInRepeatTimer, sendPartnerBoxWebCommand, FillE1TimerList, FillE2TimerList
 import PartnerboxFunctions as partnerboxfunctions
 from enigma import eServiceReference, eServiceCenter
 

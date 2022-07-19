@@ -27,7 +27,7 @@ import NavigationInstance
 from ServiceReference import ServiceReference
 
 # OWN IMPORTS
-from EpgCenterList import EpgCenterList, TIMERLIST
+from .EpgCenterList import EpgCenterList, TIMERLIST
 
 
 ############################################################################################

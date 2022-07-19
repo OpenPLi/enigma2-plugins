@@ -1,7 +1,7 @@
 # bangyoulater plugin by AliAbdul
 from Plugin import Movie, Plugin
 import re
-import urllib2
+import urllib
 
 ##################################################
 

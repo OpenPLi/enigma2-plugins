@@ -6,7 +6,7 @@ from Tools.Directories import resolveFilename, SCOPE_PLUGINS
 from Tools.Import import my_import
 from Tools.LoadPixmap import LoadPixmap
 from twisted.web.client import downloadPage, getPage
-import urllib2
+import urllib
 
 ##################################################
 
@@ -47,8 +47,8 @@ class Movie:
 		self.thumb = None
 		if thumb:
 			try:
-				req = urllib2.Request(thumb)
-				url_handle = urllib2.urlopen(req)
+				req = urllib.request.Request(thumb)
+				url_handle = urllib.request.urlopen(req)
 				headers = url_handle.info()
 				contentType = headers.getheader("content-type")
 			except:

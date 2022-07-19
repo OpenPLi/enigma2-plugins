@@ -15,7 +15,7 @@ from Tools.XMLTools import elementsWithTag, mergeText
 
 from socket import gethostbyname_ex
 
-from dreamIRCTools import *
+from .dreamIRCTools import *
 
 
 class dreamIRCSetupScreen(ConfigListScreen, Screen):

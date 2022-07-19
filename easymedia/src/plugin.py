@@ -18,7 +18,7 @@
 #######################################################################
 
 
-from __init__ import _
+from .__init__ import _
 from Screens.Screen import Screen
 from Screens.MessageBox import MessageBox
 from Screens.InfoBarGenerics import InfoBarPlugins
