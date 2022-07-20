@@ -27,7 +27,7 @@ from Screens.ChoiceBox import ChoiceBox
 from Tools.BoundFunction import boundFunction
 from Tools.Directories import fileExists
 from .PartnerboxFunctions import SetPartnerboxTimerlist, isInTimerList, isInRepeatTimer, sendPartnerBoxWebCommand, FillE1TimerList, FillE2TimerList
-import PartnerboxFunctions as partnerboxfunctions
+from . import PartnerboxFunctions as partnerboxfunctions
 from enigma import eServiceReference, eServiceCenter
 
 # for localized messages
@@ -169,7 +169,7 @@ def RedCallback(self, ret):
 		elif ret == "partnerboxremotetimer":
 			try:
 				if hasattr(self, 'partnerboxentry') and self.partnerboxentry is not None:
-					from plugin import RemoteTimer
+					from .plugin import RemoteTimer
 					self.session.openWithCallback(self.DeleteTimerCallback, RemoteTimer, self.partnerboxentry, not_epg=True)
 			except:
 				pass
@@ -281,7 +281,7 @@ def remoteTimerMenu(self, timerentry):
 					self.session.openWithCallback(boundFunction(self.DeleteTimerConfirmed, timerentry), MessageBox, _("Do you really want to delete the timer \n%s ?") % timerentry.name)
 				elif choice[1] == "timerlist":
 					if hasattr(self, 'partnerboxentry') and self.partnerboxentry is not None:
-						from plugin import RemoteTimer
+						from .plugin import RemoteTimer
 						self.session.openWithCallback(self.DeleteTimerCallback, RemoteTimer, self.partnerboxentry, not_epg=True)
 		self.session.openWithCallback(remoteTimerAction, ChoiceBox, title=title_text + _("Select action for remote timer '%s':") % timerentry.name, list=menu, keys=buttons)
 	except:

@@ -167,21 +167,21 @@ def eventinfoContextMenu(session, eventName="", **kwargs):
 
 
 def partnerboxAutoTimerEventInfo(session, servicelist, eventName="", **kwargs):
-	from PartnerboxAutoTimer import PartnerboxAutoTimerEPGSelection
+	from .PartnerboxAutoTimer import PartnerboxAutoTimerEPGSelection
 	ref = session.nav.getCurrentlyPlayingServiceReference()
 	if ref:
 		session.open(PartnerboxAutoTimerEPGSelection, ref)
 
 
 def openPartnerboxAutoTimersOverview(session, servicelist, eventName="", **kwargs):
-	from PartnerboxAutoTimer import PartnerboxAutoTimer
+	from .PartnerboxAutoTimer import PartnerboxAutoTimer
 	PartnerboxAutoTimer.instance and PartnerboxAutoTimer.instance.openPartnerboxAutoTimerOverview()
 
 
 def autostart_PartnerboxAutoTimer(reason, **kwargs):
 	if "session" in kwargs:
 		session = kwargs["session"]
-		from PartnerboxAutoTimer import PartnerboxAutoTimer
+		from .PartnerboxAutoTimer import PartnerboxAutoTimer
 		PartnerboxAutoTimer(session)
 
 

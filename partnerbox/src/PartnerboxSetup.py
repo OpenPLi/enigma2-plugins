@@ -31,7 +31,7 @@ from Components.config import ConfigSubsection, ConfigSubList, ConfigIP, ConfigI
 from .PartnerboxFunctions import sendPartnerBoxWebCommand
 import skin
 import os
-from plugin import autoTimerAvailable
+from .plugin import autoTimerAvailable
 from Components.Pixmap import Pixmap
 from Components.Sources.Boolean import Boolean
 from Screens.VirtualKeyBoard import VirtualKeyBoard
@@ -260,7 +260,7 @@ class PartnerboxEntriesListConfigScreen(Screen, HelpableScreen):
 			sel = None
 		nr = int(config.plugins.Partnerbox.entriescount.value)
 		if nr > 1 and self.what == 2 or nr >= 1 and self.what is None:
-				from plugin import RemoteTimer
+				from .plugin import RemoteTimer
 				self.session.open(RemoteTimer, sel)
 		else:
 			self.close(self.session, self.what, sel)

@@ -30,6 +30,7 @@ from logging import NOTSET, DEBUG, INFO, WARNING, ERROR, CRITICAL
 import logging
 from xml.dom.minidom import parse
 import binascii
+from itertools import cycle
 
 from enigma import getDesktop
 from Screens.Screen import Screen
@@ -318,7 +319,7 @@ def stripCbCPrefix(number, countrycode):
 	return number
 
 
-import FritzCallFBF  # wrong-import-position # pylint: disable=
+from . import FritzCallFBF  # wrong-import-position # pylint: disable=
 
 
 class FritzAbout(Screen):
@@ -408,7 +409,7 @@ class FritzAbout(Screen):
 		self.close()
 
 
-from FritzCallFBF import FBF_dectActive, FBF_faxActive, FBF_rufumlActive, FBF_tamActive, FBF_wlanState  # wrong-import-position # pylint: disable=
+from .FritzCallFBF import FBF_dectActive, FBF_faxActive, FBF_rufumlActive, FBF_tamActive, FBF_wlanState  # wrong-import-position # pylint: disable=
 
 
 class FritzMenu(Screen, HelpableScreen):

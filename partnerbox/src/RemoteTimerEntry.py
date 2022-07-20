@@ -47,7 +47,7 @@ import xml.etree.cElementTree
 from Components.ActionMap import ActionMap
 
 from .PartnerboxFunctions import PlaylistEntry, SetPartnerboxTimerlist, sendPartnerBoxWebCommand, getServiceRef
-import PartnerboxFunctions as partnerboxfunctions
+from . import PartnerboxFunctions as partnerboxfunctions
 
 HD = False
 try:
