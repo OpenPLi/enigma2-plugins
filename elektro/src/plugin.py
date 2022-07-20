@@ -48,7 +48,7 @@ from Components.config import configfile, getConfigListEntry, ConfigEnableDisabl
 # Startup/shutdown notification
 from Tools import Notifications
 
-import ping
+from . import ping
 import os
 # Timer, etc
 
