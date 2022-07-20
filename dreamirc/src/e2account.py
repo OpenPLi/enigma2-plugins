@@ -5,11 +5,10 @@
 
 #
 import string
-import ircsupport
-import e2chat
-import dreamIRCTools
-import dreamIRCSetup
-
+from Plugins.Extensions.dreamIRC import ircsupport
+from Plugins.Extensions.dreamIRC import e2chat
+from Plugins.Extensions.dreamIRC import dreamIRCTools
+from Plugins.Extensions.dreamIRC import dreamIRCSetup
 
 class AccountManager:
 	"""I am responsible for managing a user's accounts.

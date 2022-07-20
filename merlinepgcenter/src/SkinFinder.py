@@ -114,7 +114,7 @@ class SkinFinder(object):
 			return skinFile, SkinFinder.skinList
 		else:
 			print('[SkinFinder] unable to find any skin!')
-			return None
+			return None, None
 
 	@staticmethod
 	def getDefaultSkinEntry():

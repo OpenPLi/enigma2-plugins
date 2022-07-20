@@ -6,7 +6,7 @@ from .KTsetup import KiddyTimerSetup
 from Plugins.Plugin import PluginDescriptor
 from Screens.MessageBox import MessageBox
 from .__init__ import _
-import KTglob
+from . import KTglob
 import time
 
 config.plugins.KiddyTimer = ConfigSubsection()

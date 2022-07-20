@@ -32,7 +32,8 @@ from .protocol import createFactory
 
 from . import _, initLog, debug, scaleH, scaleV, DESKTOP_WIDTH, DESKTOP_HEIGHT #@UnresolvedImport # pylint: disable-msg=F0401
 mailAccounts = [] # contains all EmailAccount objects
-from EmailConfig import EmailConfigOptions, EmailConfigAccount
+
+from .EmailConfig import EmailConfigOptions, EmailConfigAccount
 
 NOTIFICATIONID = 'EmailClientNotificationId'
 

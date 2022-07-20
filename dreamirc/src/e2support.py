@@ -10,8 +10,8 @@ You will find these useful if you're adding a new protocol to IM.
 
 # Abstract representation of chat "model" classes
 
-from locals import ONLINE, OFFLINE, OfflineError
-import interfaces
+from .locals import ONLINE, OFFLINE, OfflineError
+from Plugins.Extensions.dreamIRC import interfaces
 
 from twisted.internet.protocol import Protocol
 
@@ -19,7 +19,6 @@ from twisted.python.reflect import prefixedMethods
 from twisted.persisted import styles
 
 from twisted.internet import error
-import dreamIRCTools
 from .dreamIRCTools import *
 
 
@@ -106,7 +105,6 @@ class AbstractClientMixin:
                 break
         else:
             pass
-        from dreamIRCTools import MessagePipe
         self.pipe = MessagePipe()
         self.account = account
         self.chat = chatui

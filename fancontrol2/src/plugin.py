@@ -1277,7 +1277,7 @@ def autostart(reason, **kwargs):
 	if reason == 0 and "session" in kwargs:
 		if os.path.exists("/usr/lib/enigma2/python/Plugins/Extensions/WebInterface/__init__.py") or os.path.exists("/usr/lib/enigma2/python/Plugins/Extensions/WebInterface/__init__.py"):
 			from Plugins.Extensions.WebInterface.WebChilds.Toplevel import addExternalChild
-			from FC2webSite import FC2web, FC2webLog, FC2webChart
+			from .FC2webSite import FC2web, FC2webLog, FC2webChart
 			from twisted.web import static
 			root = static.File("/usr/lib/enigma2/python/Plugins/Extensions/FanControl2/data")
 #			root = FC2web()

@@ -22,7 +22,6 @@ from Tools.NumericalTextInput import *
 from Tools.Directories import *
 
 from .locals import OFFLINE, ONLINE, AWAY
-import dreamIRCTools
 from enigma import *
 from .dreamIRCTools import *
 #from myScrollLabel import *

@@ -12,7 +12,7 @@
 import re
 import posixpath
 import urllib
-from sys import maxint
+from sys import maxsize
 from random import randint, seed
 from urllib.parse import urlencode, quote_plus
 from urllib.request import urlopen
@@ -257,7 +257,7 @@ class VlcServer:
 		return dlg
 
 	def playFile(self, filename, videoPid, audioPid):
-		streamName = "dream" + str(randint(0, maxint))
+		streamName = "dream" + str(randint(0, maxsize))
 		transcode = []
 		parameters = ""
 		oldVLC = self.getVLCType()

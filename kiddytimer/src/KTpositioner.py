@@ -6,7 +6,7 @@ from .KTMultiPixmap import KTmultiPixmap
 from MovableScreen import MovableScreen
 from Screens.Screen import Screen
 from .__init__ import _
-import KTglob
+from . import KTglob
 
 
 class KiddyTimerPositioner(Screen, MovableScreen):

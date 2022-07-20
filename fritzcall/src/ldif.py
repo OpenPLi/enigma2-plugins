@@ -27,16 +27,12 @@ __all__ = [
   'LDIFCopy',
 ]
 
-import urlparse
 import urllib
 import base64
 import re
 import types
 
-try:
-  from cStringIO import StringIO
-except ImportError:
-  from StringIO import StringIO
+from io import StringIO
 
 attrtype_pattern = r'[\w;.]+(;[\w_-]+)*'
 attrvalue_pattern = r'(([^,]|\\,)+|".*?")'
@@ -146,7 +142,7 @@ class LDIFWriter:
     if attr_type.lower() in self._base64_attrs or \
        needs_base64(attr_value):
       # Encode with base64
-      self._unfoldLDIFLine(':: '.join([attr_type, base64.encodestring(attr_value).replace('\n', '')]))
+      self._unfoldLDIFLine(':: '.join([attr_type, base64.encodebytes(attr_value).replace('\n', '')]))
     else:
       self._unfoldLDIFLine(': '.join([attr_type, attr_value]))
     return # _unparseAttrTypeandValue()
@@ -331,15 +327,15 @@ class LDIFParser:
     value_spec = unfolded_line[colon_pos:colon_pos + 2]
     if value_spec == '::':
       # attribute value needs base64-decoding
-      attr_value = base64.decodestring(unfolded_line[colon_pos + 2:])
+      attr_value = base64.decodebytes(unfolded_line[colon_pos + 2:])
     elif value_spec == ':<':
       # fetch attribute value from URL
       url = unfolded_line[colon_pos + 2:].strip()
       attr_value = None
       if self._process_url_schemes:
-        u = urlparse.urlparse(url)
+        u = urllib.parse.urlparse(url)
         if u[0] in self._process_url_schemes:
-          attr_value = urllib.urlopen(url).read()
+          attr_value = urllib.request.urlopen(url).read()
     elif value_spec == ':\r\n' or value_spec == '\n':
       attr_value = ''
     else:

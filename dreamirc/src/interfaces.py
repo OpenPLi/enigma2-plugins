@@ -5,7 +5,7 @@ Stability: incendiary, work in progress.
 """
 from zope.interface import Interface
 
-import locals
+from Plugins.Extensions.dreamIRC import locals
 #from locals import *
 #from twisted.words.im import locals
 

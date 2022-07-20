@@ -6,7 +6,7 @@ from enigma import eTimer
 from Components.ConfigList import ConfigListScreen
 from Components.config import config, getConfigListEntry, ConfigText, ConfigSelection, ConfigSubsection, ConfigYesNo
 from urllib.request import Request, urlopen
-from base64 import encodestring
+from base64 import encodebytes
 global sessions
 from twisted.internet import reactor
 
@@ -111,7 +111,7 @@ class DynDNSService:
 
 	def getURL(self, url):
 		request = Request(url)
-		base64string = encodestring('%s:%s' % (config.plugins.DynDNS.user.value, config.plugins.DynDNS.password.value))[:-1]
+		base64string = encodebytes('%s:%s' % (config.plugins.DynDNS.user.value, config.plugins.DynDNS.password.value))[:-1]
 		request.add_header("Authorization", "Basic %s" % base64string)
 		htmlFile = urlopen(request)
 		htmlData = htmlFile.read()

@@ -6,13 +6,12 @@
 
 import string
 
-from protocols import irc
+from .protocols import irc
 from twisted.internet import defer, reactor, protocol
 from twisted.internet.defer import succeed
-import e2support
-import interfaces
-import dreamIRCTools
-from zope.interface import implements
+from Plugins.Extensions.dreamIRC import e2support
+from Plugins.Extensions.dreamIRC import interfaces
+from zope.interface import implementer
 
 
 class IRCPerson(e2support.AbstractPerson):
@@ -51,9 +50,8 @@ class IRCPerson(e2support.AbstractPerson):
         	  self.account.client.quit("user logged off")
 
 
+@implementer(interfaces.IGroup)
 class IRCGroup(e2support.AbstractGroup):
-
-    implements(interfaces.IGroup)
 
     def imgroup_testAction(self):
         print('action test!')
@@ -104,7 +102,9 @@ class IRCProto(e2support.AbstractClientMixin, irc.IRCClient):
         self._ingroups = {}
         self._groups = {}
         self._topics = {}
-        self.pipe = dreamIRCTools.MessagePipe()
+
+        from .dreamIRCTools import MesssagePipe
+        self.pipe = MessagePipe()
 
     def getGroupConversation(self, name, hide=0):
         name = string.lower(name)
@@ -268,8 +268,8 @@ class IRCProto(e2support.AbstractClientMixin, irc.IRCClient):
         self.getGroupConversation(name)
 
 
+@implementer(interfaces.IAccount)
 class IRCAccount(e2support.AbstractAccount):
-    implements(interfaces.IAccount)
     gatewayType = "IRC"
 
     _groupFactory = IRCGroup

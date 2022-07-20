@@ -95,18 +95,18 @@ def getMountedDevices():
 	mountedDevs = [(resolveFilename(SCOPE_CONFIG), _("Flash")),
 				   (resolveFilename(SCOPE_MEDIA, "cf"), _("Compact Flash")),
 				   (resolveFilename(SCOPE_MEDIA, "usb"), _("USB Device"))]
-	mountedDevs += map(lambda p: (p.mountpoint, (_(p.description) if p.description else "")), harddiskmanager.getMountedPartitions(True))
+	mountedDevs += list(map(lambda p: (p.mountpoint, (_(p.description) if p.description else "")), harddiskmanager.getMountedPartitions(True)))
 	mediaDir = resolveFilename(SCOPE_MEDIA)
 	for p in os.listdir(mediaDir):
 		if os.path.join(mediaDir, p) not in [path[0] for path in mountedDevs]:
 			mountedDevs.append((os.path.join(mediaDir, p), _("Media directory")))
 	debug("[NcidClient] getMountedDevices1: %s" % repr(mountedDevs))
-	mountedDevs = filter(lambda path: os.path.isdir(path[0]) and os.access(path[0], os.W_OK | os.X_OK), mountedDevs)
+	mountedDevs = list(filter(lambda path: os.path.isdir(path[0]) and os.access(path[0], os.W_OK | os.X_OK), mountedDevs))
 	# put this after the write/executable check, that is far too slow...
 	netDir = resolveFilename(SCOPE_MEDIA, "net")
 	if os.path.isdir(netDir):
-		mountedDevs += map(lambda p: (os.path.join(netDir, p), _("Network mount")), os.listdir(netDir))
-	mountedDevs = map(handleMountpoint, mountedDevs)
+		mountedDevs += list(map(lambda p: (os.path.join(netDir, p), _("Network mount")), os.listdir(netDir)))
+	mountedDevs = list(map(handleMountpoint, mountedDevs))
 	return mountedDevs
 
 

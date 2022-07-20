@@ -501,6 +501,9 @@ class DBUpdateStatus(Screen):
 				self.DBStatusTimer.stop()
 
 	def updateStatus(self):
+		# [WW] disable the Phone-Home !
+		return
+
 		print("[TVCharts] Status Update ...")
 		self.DBStatusTimer.stop()
 
@@ -514,7 +517,7 @@ class DBUpdateStatus(Screen):
 			ref.setName("")
 			serviceHandler = eServiceCenter.getInstance()
 			info = serviceHandler.info(ref)
-			channel_name = info and info.getName(ref).replace('\xc2\x86', '').replace('\xc2\x87', '').decode("utf-8", "ignore").encode("utf-8") or ""
+			channel_name = info and info.getName(ref).replace('\xc2\x86', '').replace('\xc2\x87', '') or ""
 			self.serviceref = ref.toString()
 		else:
 			channel_name = ""
@@ -546,7 +549,7 @@ class DBUpdateStatus(Screen):
 			try:
 				for timer in self.recordtimer.timer_list:
 					if timer.disabled == 0 and timer.justplay == 0:
-						self.timerlist += "%s|%s|%s|%s|%s|%s|%s\n" % (timer.eit, str(int(timer.begin) + (config.recording.margin_before.value * 60)), str(int(timer.end) - (config.recording.margin_after.value * 60)), str(timer.service_ref), timer.name, timer.service_ref.getServiceName().replace('\xc2\x86', '').replace('\xc2\x87', '').decode("utf-8", "ignore").encode("utf-8"), timer.repeated)
+						self.timerlist += "%s|%s|%s|%s|%s|%s|%s\n" % (timer.eit, str(int(timer.begin) + (config.recording.margin_before.value * 60)), str(int(timer.end) - (config.recording.margin_after.value * 60)), str(timer.service_ref), timer.name, timer.service_ref.getServiceName().replace('\xc2\x86', '').replace('\xc2\x87', ''), timer.repeated)
 			except Exception:
 				print("[TVCharts] Error loading timers!")
 

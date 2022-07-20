@@ -67,8 +67,8 @@ from twisted.internet import reactor  # @UnresolvedImport
 from twisted.internet.protocol import ReconnectingClientFactory  # @UnresolvedImport
 from twisted.protocols.basic import LineReceiver  # @UnresolvedImport
 
-import FritzOutlookCSV
-import FritzLDIF
+from . import FritzOutlookCSV
+from . import FritzLDIF
 from .nrzuname import ReverseLookupAndNotifier
 from . import _, __  # @UnresolvedImport # pylint: disable=W0611,F0401
 
@@ -80,11 +80,11 @@ from . import _, __  # @UnresolvedImport # pylint: disable=W0611,F0401
 
 
 def encode(x):
-	return base64.encodestring(''.join(chr(ord(c) ^ ord(k)) for c, k in zip(x, cycle('secret key')))).strip()
+	return base64.encodebytes(bytes(''.join(chr(ord(c) ^ ord(k)) for c, k in zip(x, cycle('secret key'))), 'utf-8')).decode().strip()
 
 
 def decode(x):
-	return ''.join(chr(ord(c) ^ ord(k)) for c, k in zip(base64.decodestring(x), cycle('secret key')))
+	return ''.join(chr(ord(c) ^ ord(k)) for c, k in zip(base64.decodebytes(bytes(x, 'utf-8')).decode(), cycle('secret key')))
 
 
 DESKTOP_WIDTH = getDesktop(0).size().width()
