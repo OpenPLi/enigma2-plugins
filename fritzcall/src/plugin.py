@@ -1001,7 +1001,7 @@ class FritzMenu(Screen, HelpableScreen):
 				self["FBFInfo"].setText(_("Refreshing..."))
 			else:
 				if boxInfo:
-					self["FBFInfo"].setText(boxInfo)
+					self["FBFInfo"].setText(str(boxInfo))
 				else:
 					self["FBFInfo"].setText('BoxInfo ' + _('Status not available'))
 
@@ -1030,7 +1030,7 @@ class FritzMenu(Screen, HelpableScreen):
 						message = "DSL"
 					if dslState[1]:
 						message = message + ' ' + dslState[1]
-					self["FBFDsl"].setText(message)
+					self["FBFDsl"].setText(str(message))
 				else:
 					self["dsl_active"].hide()
 					self["dsl_inactive"].show()
