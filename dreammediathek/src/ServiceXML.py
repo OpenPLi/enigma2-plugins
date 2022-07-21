@@ -31,9 +31,9 @@ class WebTVStations():
 		for tvstation in tree.findall("tvstation"):
 			data = {'provider': None, 'title': None, 'streamurl': None}
 			try:
-				data['provider'] = getValue(tvstation.findall("provider"), False).encode("UTF-8")
-				data['title'] = getValue(tvstation.findall("title"), False).encode("UTF-8")
-				data['streamurl'] = getValue(tvstation.findall("streamurl"), False).encode("UTF-8")
+				data['provider'] = getValue(tvstation.findall("provider"), False)
+				data['title'] = getValue(tvstation.findall("title"), False)
+				data['streamurl'] = getValue(tvstation.findall("streamurl"), False)
 
 				print("TVSTATION--->", data)
 				self.webtv_stations[data['title']] = data
@@ -41,7 +41,7 @@ class WebTVStations():
 				print("[WebTVStations] Error reading Stations:", e)
 
 	def getWebTVStationsList(self):
-		return sorted(self.webtv_stations.iterkeys())
+		return sorted(iter(self.webtv_stations))
 
 
 iWebTVStations = WebTVStations()

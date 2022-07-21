@@ -1024,7 +1024,7 @@ class EmailAccountList(Screen):
 			if not acc.isConnected():
 				acc.forceRetry(self._layoutFinish)
 		self["accounts"] = MenuList([], content=eListboxPythonMultiContent)
-		self["accounts"].l.setItemHeight(scaleV(20, 18) + 5)
+		self["accounts"].l.setItemHeight(int(scaleV(20, 18) + 5))
 		self["accounts"].l.setFont(0, gFont("Regular", scaleV(20, 18)))
 		self.onLayoutFinish.append(self._layoutFinish)
 

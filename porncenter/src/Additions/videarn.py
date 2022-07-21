@@ -1,5 +1,5 @@
 # videarn plugin by AliAbdul
-from Plugin import Movie, Plugin
+from .Plugin import Movie, Plugin
 import re
 import urllib
 
@@ -34,7 +34,7 @@ class VidearnSub(Plugin):
 	def getEntries(self, callback, currPage=1):
 		self.currPage = currPage
 		self.callback = callback
-		self.getPage("http://videarn.com/%s&page=%d" % (self.url, self.currPage))
+		self.getPage(("http://videarn.com/%s&page=%d" % (self.url, self.currPage)).decode('utf-8'))
 
 	def getPageCallback(self, page):
 		movies = []

@@ -63,7 +63,7 @@ class Movie:
 			else:
 				self.thumbnailFile = None
 			if self.thumbnailFile:
-				downloadPage(thumb, self.thumbnailFile).addCallback(self.decodeThumbnail).addErrback(self.error)
+				downloadPage(thumb.encode('utf-8'), self.thumbnailFile).addCallback(self.decodeThumbnail).addErrback(self.error)
 
 	def error(self, error=None):
 		if error:
@@ -106,7 +106,7 @@ class Plugin:
 		pass
 
 	def getPage(self, url):
-		getPage(url).addCallback(self.getPageCallback).addErrback(self.getPageError)
+		getPage(url.encode('utf-8')).addCallback(self.getPageCallback).addErrback(self.getPageError)
 
 	def getPageCallback(self, page):
 		pass

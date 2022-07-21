@@ -583,7 +583,7 @@ class RSSOverview(RSSBaseView):
 				if cur_idx > 0:
 					self.singleUpdate(cur_idx - 1)
 			elif result[1] == "setup":
-				from RSSSetup import RSSSetup
+				from .RSSSetup import RSSSetup
 
 				self.session.openWithCallback(
 					self.refresh,

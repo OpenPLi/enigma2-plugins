@@ -267,7 +267,7 @@ class TVChartsMain(Screen):
 	def downloadList(self):
 		if config.plugins.tvcharts.enabled.value:
 			self["info"].setText("Downloading feeds from server ...")
-			getPage(self.feedurl).addCallback(self.downloadListCallback).addErrback(self.downloadListError)
+			getPage(self.feedurl.encode('utf-8')).addCallback(self.downloadListCallback).addErrback(self.downloadListError)
 		else:
 			self["info"].setText("Error: Plugin disabled in Settings ...")
 

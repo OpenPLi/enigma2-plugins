@@ -22,7 +22,7 @@ config.plugins.filebrowser.dir_size = ConfigYesNo(default=False)
 
 def filescan_open(list, session, **kwargs):
     path = "/".join(list[0].path.split("/")[:-1]) + "/"
-    import ui
+    from . import ui
     session.open(ui.FilebrowserScreen, path_left=path)
 
 
@@ -47,7 +47,7 @@ def start_from_mainmenu(menuid, **kwargs):
 
 
 def start_from_pluginmenu(session, **kwargs):
-    import ui
+    from . import ui
     session.open(ui.FilebrowserScreen)
 
 

@@ -139,7 +139,7 @@ class RSSSetup(ConfigListScreen, Screen):
 		self["config"].setList(self.list)
 
 	def notificationChanged(self, instance):
-		import RSSTickerView as tv
+		from . import RSSTickerView as tv
 		if instance and instance.value == "ticker":
 			if tv.tickerView is None:
 				print("[SimpleRSS] Ticker instantiated on startup")

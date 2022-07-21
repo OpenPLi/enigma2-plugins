@@ -1,5 +1,5 @@
 # xPodClips plugin by AliAbdul
-from Podcast import Podcast
+from .Podcast import Podcast
 
 ##################################################
 

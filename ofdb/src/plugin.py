@@ -314,7 +314,7 @@ class OFDB(Screen):
 			localfile = "/tmp/ofdbquery.html"
 			fetchurl = "http://www.ofdb.de/view.php?page=suchergebnis&Kat=DTitel&SText=" + self.eventName
 			print("[OFDb] Downloading Query " + fetchurl + " to " + localfile)
-			downloadPage(fetchurl, localfile).addCallback(self.OFDBquery).addErrback(self.fetchFailed)
+			downloadPage(fetchurl.encode('utf-8'), localfile).addCallback(self.OFDBquery).addErrback(self.fetchFailed)
 		else:
 			self["statusbar"].setText(_("Could't get Eventname"))
 

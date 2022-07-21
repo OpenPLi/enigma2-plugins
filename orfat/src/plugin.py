@@ -260,7 +260,7 @@ class ORFMain(Screen):
 
 	def downloadList(self):
 		self.working = True
-		getPage(self.mainUrl).addCallback(self.downloadListCallback).addErrback(self.downloadListError)
+		getPage(self.mainUrl.encode('utf-8')).addCallback(self.downloadListCallback).addErrback(self.downloadListError)
 
 	def downloadListError(self, error=""):
 		print("[ORF.at] Fehler beim Verbindungsversuch:", str(error))

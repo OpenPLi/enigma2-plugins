@@ -16,7 +16,7 @@ from Components.Scanner import openFile
 from os.path import isdir as os_path_isdir, dirname as os_path_dirname, basename as os_path_basename
 from mimetypes import guess_type
 from Screens.VirtualKeyBoard import VirtualKeyBoard
-from plugin import pname
+from .plugin import pname
 from enigma import getDesktop, eSize, ePoint
 from os import stat as os_stat, path as os_path, walk as os_walk
 from time import strftime, localtime

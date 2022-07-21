@@ -1,5 +1,5 @@
 # podcast plugin by AliAbdul
-from Plugin import Movie, Plugin
+from .Plugin import Movie, Plugin
 import re
 
 ##################################################
@@ -31,6 +31,8 @@ class Podcast(Plugin):
 
 	def getPageCallback(self, page):
 		movies = []
+		if not isinstance(page, str):
+			page = page.decode('utf-8')
 		if page.__contains__("</title>"):
 			page = page[page.index("</title>") + 8:]
 		reonecat = re.compile(r'<title>(.+?)</title>.+?<description>(.+?)</description>.+?<enclosure(.+?)/>.+?', re.DOTALL)

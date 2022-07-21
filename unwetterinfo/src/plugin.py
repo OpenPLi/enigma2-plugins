@@ -356,11 +356,11 @@ class UnwetterMain(Screen):
 
 	def downloadMenu(self):
 		self.loadinginprogress = True
-		getPage(self.menuurl).addCallback(self.hauptmenu).addErrback(self.downloadError)
+		getPage(self.menuurl.encode('utf-8')).addCallback(self.hauptmenu).addErrback(self.downloadError)
 
 	def downloadPicUrl(self, url):
 		self.loadinginprogress = True
-		getPage(url).addCallback(self.getPicUrl).addErrback(self.downloadError)
+		getPage(url.encode('utf-8')).addCallback(self.getPicUrl).addErrback(self.downloadError)
 
 	def downloadPic(self, picurl):
 		headers = {}
@@ -370,12 +370,12 @@ class UnwetterMain(Screen):
 			c = self["hmenu"].getCurrent()
 			x = self.menueintrag.index(c)
 			headers["Referer"] = self.link[x]
-		getPage(picurl, headers=headers).addCallback(self.getPic).addErrback(self.downloadError)
+		getPage(picurl.encode('utf-8'), headers=headers).addCallback(self.getPic).addErrback(self.downloadError)
 
 	def downloadWeatherReport(self):
 		self.loadinginprogress = True
 #		self["statuslabel"].setText("Lade Report: %s" % self.weatherreporturl)
-		getPage(self.weatherreporturl).addCallback(self.getWeatherReport).addErrback(self.downloadError)
+		getPage(self.weatherreporturl.encode('utf-8')).addCallback(self.getWeatherReport).addErrback(self.downloadError)
 
 	def switchDeA(self, load=False):
 		if load:

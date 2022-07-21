@@ -178,7 +178,7 @@ class RSSPoller:
 				# Inform User
 				update_notification_value = config.plugins.simpleRSS.update_notification.value
 				if update_notification_value == "preview":
-					from RSSScreens import RSSFeedView
+					from .RSSScreens import RSSFeedView
 
 					from Tools.Notifications import AddNotificationWithID, RemovePopup
 
@@ -198,7 +198,7 @@ class RSSPoller:
 						NOTIFICATIONID
 					)
 				elif update_notification_value == "ticker":
-					from RSSTickerView import tickerView
+					from .RSSTickerView import tickerView
 					if not tickerView:
 						print("[SimpleRSS] missing ticker instance, something with my code is wrong :-/")
 					else:

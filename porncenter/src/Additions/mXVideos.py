@@ -1,5 +1,5 @@
 # mXVideos plugin by AliAbdul
-from Plugin import Movie, Plugin
+from .Plugin import Movie, Plugin
 import re
 import urllib
 
