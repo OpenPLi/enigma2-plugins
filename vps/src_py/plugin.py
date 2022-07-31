@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 from Plugins.Plugin import PluginDescriptor
 from os import stat
 from Vps import vps_timers

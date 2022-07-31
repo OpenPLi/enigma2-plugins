@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 from . import _
 from RecordTimer import RecordTimerEntry, RecordTimer
 from Screens.TimerEntry import TimerEntry

@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from twisted.web import resource, http
 from .globals import *
 from .plugin import *

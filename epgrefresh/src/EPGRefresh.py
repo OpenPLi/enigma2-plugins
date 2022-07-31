@@ -1,4 +1,3 @@
-# -*- coding: UTF-8 -*-
 import Screens.Standby
 from enigma import eServiceReference, eServiceCenter, eTimer, getBestPlayableServiceReference
 from ServiceReference import ServiceReference

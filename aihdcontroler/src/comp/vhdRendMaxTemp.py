@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 #
 #    Maximum Temperature Renderer for Dreambox/Enigma-2
 #    Coded by Vali (c)2010-2011

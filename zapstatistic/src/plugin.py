@@ -1,4 +1,3 @@
-# -*- coding: UTF-8 -*-
 # Zap Statistic by AliAbdul
 from Components.ActionMap import ActionMap
 from Components.config import config

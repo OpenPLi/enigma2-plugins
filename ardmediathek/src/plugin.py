@@ -1,4 +1,3 @@
-# -*- coding: UTF-8 -*-
 # ARD Mediathek by AliAbdul
 from Components.ActionMap import ActionMap
 from Components.AVSwitch import AVSwitch

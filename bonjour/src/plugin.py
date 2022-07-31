@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 from enigma import eListboxPythonMultiContent, gFont
 
 from Plugins.Plugin import PluginDescriptor

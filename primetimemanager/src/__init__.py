@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from Components.Language import language
 import gettext
 from Tools.Directories import resolveFilename, SCOPE_PLUGINS, SCOPE_LANGUAGE

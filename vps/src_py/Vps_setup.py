@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 from . import _
 from enigma import getDesktop
 from Screens.Screen import Screen

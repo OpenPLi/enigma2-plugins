@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # for localized messages
 from Plugins.SystemPlugins.NetworkBrowser.__init__ import _
 

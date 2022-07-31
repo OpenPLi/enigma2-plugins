@@ -1,4 +1,3 @@
-# -*- coding: UTF-8 -*-
 # ZDF Mediathek by AliAbdul
 from Components.ActionMap import HelpableActionMap
 from Components.AVSwitch import AVSwitch

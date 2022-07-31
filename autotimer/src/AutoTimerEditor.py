@@ -1,4 +1,3 @@
-# -*- coding: UTF-8 -*-
 # for localized messages
 from . import _
 

@@ -1,4 +1,3 @@
-# -*- coding: UTF-8 -*-
 from . import _
 from Plugins.Plugin import PluginDescriptor
 from Components.ActionMap import ActionMap

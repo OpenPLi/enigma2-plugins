@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from Components.Language import language
 from os import environ as os_environ
 import gettext

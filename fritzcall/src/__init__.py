@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 '''
 general functions for FritzCall plugin
 

@@ -1,4 +1,3 @@
-# -*- coding: UTF-8 -*-
 ## Zap-History Browser by AliAbdul
 from . import _
 from Plugins.Plugin import PluginDescriptor

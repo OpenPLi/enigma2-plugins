@@ -1,4 +1,3 @@
-# -*- coding: UTF-8 -*-
 # Mosaic by AliAbdul
 from Components.ActionMap import NumberActionMap
 from Components.config import config, ConfigSubsection, ConfigInteger

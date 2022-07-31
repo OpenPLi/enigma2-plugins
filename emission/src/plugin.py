@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 from Plugins.Plugin import PluginDescriptor
 from Components.config import config, ConfigSubsection, ConfigText, \
 	ConfigNumber, ConfigYesNo, ConfigSelection

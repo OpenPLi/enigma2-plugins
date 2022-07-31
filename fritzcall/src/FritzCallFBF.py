@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 '''
 Created on 30.09.2012
 $Author: michael $

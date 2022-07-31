@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 #
 # Wetter Infos von
 # www.unwetterzentrale.de und www.uwz.at

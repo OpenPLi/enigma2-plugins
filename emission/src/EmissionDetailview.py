@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 # GUI (Screens)
 from Screens.Screen import Screen
 from Screens.MessageBox import MessageBox
