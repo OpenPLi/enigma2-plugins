@@ -1,5 +1,3 @@
-from __future__ import print_function
-
 # To check if in Standby
 import Screens.Standby
 

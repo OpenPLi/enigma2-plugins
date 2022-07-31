@@ -1,5 +1,3 @@
-from __future__ import print_function
-
 from . import _, config
 
 from twisted.internet import reactor

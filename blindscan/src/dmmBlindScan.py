@@ -1,5 +1,3 @@
-from __future__ import print_function
-
 from time import strftime, time
 
 from Components.About import about

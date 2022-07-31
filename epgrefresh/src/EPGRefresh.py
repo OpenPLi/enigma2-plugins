@@ -1,5 +1,4 @@
 # -*- coding: UTF-8 -*-
-from __future__ import print_function
 import Screens.Standby
 from enigma import eServiceReference, eServiceCenter, eTimer, getBestPlayableServiceReference
 from ServiceReference import ServiceReference

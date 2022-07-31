@@ -1,7 +1,6 @@
 # for localized messages
-from __future__ import print_function
-
 from . import _
+
 # Core functionality
 from enigma import eTimer, ePythonMessagePump, eConsoleAppContainer
 

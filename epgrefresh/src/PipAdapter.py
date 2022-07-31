@@ -1,5 +1,3 @@
-from __future__ import print_function
-
 from Screens.PictureInPicture import PictureInPicture
 from Components.SystemInfo import SystemInfo
 from enigma import ePoint, eSize
