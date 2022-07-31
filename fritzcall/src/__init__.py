@@ -8,7 +8,6 @@ $Revision: 1589 $
 $Date: 2021-04-25 11:48:00 +0200 (Sun, 25 Apr 2021) $
 '''
 
-from __future__ import division
 import gettext
 import os
 from logging import NOTSET

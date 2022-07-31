@@ -21,7 +21,6 @@ $Id: FritzCallFBF.py 1589 2021-04-25 09:48:00Z michael $
 # E0611 No name %r in module %r
 # W1201 logging-not-lazy
 # pylint: disable=C0111,C0103,C0301,W0603,C0302,W0611,F0401,E0611,W1201
-from __future__ import absolute_import
 import re
 import time
 import hashlib
