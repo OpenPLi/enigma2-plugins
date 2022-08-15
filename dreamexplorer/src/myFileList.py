@@ -336,25 +336,24 @@ class FileList(MenuList):
 				tslen = ""
 		return tslen
 
-	def byNameFunc(self, a, b):
-		return cmp(b[0][1], a[0][1]) or cmp(a[1][7], b[1][7])
+	def byNameFunc(self, a):
+		return a[0][0]
 
 	def sortName(self):
-		self.list.sort(self.byNameFunc)
+		self.list.sort(key=self.byNameFunc)
 		#self.l.invalidate()
 		self.l.setList(self.list)
 		self.moveToIndex(0)
 
-	def byDateFunc(self, a, b):
+	def byDateFunc(self, a):
 		try:
 			stat1 = os_stat(self.current_directory + a[0][0])
-			stat2 = os_stat(self.current_directory + b[0][0])
 		except:
 			return 0
-		return cmp(b[0][1], a[0][1]) or cmp(stat2.st_ctime, stat1.st_ctime)
+		return stat1.st_ctime
 
 	def sortDate(self):
-		self.list.sort(self.byDateFunc)
+		self.list.sort(key=self.byDateFunc)
 		#self.l.invalidate()
 		self.l.setList(self.list)
 		self.moveToIndex(0)
