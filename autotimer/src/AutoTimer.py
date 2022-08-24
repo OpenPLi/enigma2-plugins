@@ -28,7 +28,7 @@ from enigma import eEPGCache, eServiceReference, eServiceCenter, iServiceInforma
 from twisted.internet import reactor, defer
 from twisted.python import failure
 from threading import currentThread
-import queue
+import queue as Queue
 
 # AutoTimer Component
 from .AutoTimerComponent import preferredAutoTimerComponent
