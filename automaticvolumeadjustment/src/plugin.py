@@ -24,9 +24,9 @@ from . import _
 from Plugins.Plugin import PluginDescriptor
 from Components.config import config, ConfigYesNo, NoSave
 from Screens.MessageBox import MessageBox
-from AutomaticVolumeAdjustmentSetup import AutomaticVolumeAdjustmentConfigScreen
-from AutomaticVolumeAdjustment import AutomaticVolumeAdjustment
-from AutomaticVolumeAdjustmentConfig import saveVolumeDict
+from .AutomaticVolumeAdjustmentSetup import AutomaticVolumeAdjustmentConfigScreen
+from .AutomaticVolumeAdjustment import AutomaticVolumeAdjustment
+from .AutomaticVolumeAdjustmentConfig import saveVolumeDict
 
 config.misc.AV_audio_menu = ConfigYesNo(default=False)
 config.misc.toggle_AV_session = NoSave(ConfigYesNo(default=True))
