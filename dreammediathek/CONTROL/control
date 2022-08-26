@@ -3,4 +3,4 @@ Version: 20110131
 Description: Play rtp Stream on your Dreambox 
 Maintainer: OpenPLi team <forum@openpli.org>
 Homepage: http://www.openpli.org
-Depends: twisted-web
+Depends: python3-twisted-web
