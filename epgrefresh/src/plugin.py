@@ -254,7 +254,7 @@ def autostart(reason, session=None, **kwargs):
 						pass
 			if os.path.exists("/usr/lib/enigma2/python/Plugins/Extensions/OpenWebif/pluginshook.src"):
 				try:
-					from EPGRefreshResource import \
+					from Plugins.Extensions.EPGRefresh.EPGRefreshResource import \
 							EPGRefreshStartRefreshResource, \
 							EPGRefreshAddRemoveServiceResource, \
 							EPGRefreshListServicesResource, \
