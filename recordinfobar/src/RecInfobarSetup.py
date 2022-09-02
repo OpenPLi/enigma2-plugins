@@ -6,7 +6,7 @@ from Components.ConfigList import ConfigListScreen
 from Components.config import config, getConfigListEntry
 from Screens.Standby import TryQuitMainloop
 from Screens.MessageBox import MessageBox
-import plugin
+from Plugins.SystemPlugins.RecInfobar import plugin
 
 plugin_version = "1.22"
 

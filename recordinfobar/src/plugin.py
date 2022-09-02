@@ -18,7 +18,7 @@ except:
 from RecordTimer import AFTEREVENT
 from Screens import Standby
 from Tools import Notifications
-import RecInfobarSetup
+from Plugins.SystemPlugins.RecInfobar import RecInfobarSetup
 import NavigationInstance
 from ServiceReference import ServiceReference
 import Screens.InfoBar
@@ -750,7 +750,7 @@ def StartMainSession(reason, session, **kwargs):
 
 
 def OpenSetup(session, **kwargs):
-	import RecInfobarSetup
+	from Plugins.SystemPlugins.RecInfobar import RecInfobarSetup
 	session.open(RecInfobarSetup.RecInfobarSetupScreen)
 
 
