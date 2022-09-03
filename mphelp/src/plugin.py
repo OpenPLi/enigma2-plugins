@@ -1,6 +1,6 @@
 from .MPHelp import MPHelp
 
-from collections import Callable
+from collections.abc import Callable
 
 helpList = []
 
