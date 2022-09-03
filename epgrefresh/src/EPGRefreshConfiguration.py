@@ -181,7 +181,7 @@ class EPGRefreshConfiguration(Screen, ConfigListScreen):
 		self.setTitle(' '.join((_("EPGRefresh Configuration"), _("Version"), VERSION)))
 
 	def showHelp(self):
-		from plugin import epgrefreshHelp
+		from .plugin import epgrefreshHelp
 		if epgrefreshHelp:
 			epgrefreshHelp.open(self.session)
 
