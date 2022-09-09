@@ -219,6 +219,7 @@ kiddytimer/src/Makefile
 
 lcd4linux/Makefile
 lcd4linux/src/Makefile
+lcd4linux/src/data/Makefile
 lcd4linux/po/Makefile
 lcd4linux/meta/Makefile
 
