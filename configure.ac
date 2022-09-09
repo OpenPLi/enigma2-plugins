@@ -220,6 +220,20 @@ kiddytimer/src/Makefile
 lcd4linux/Makefile
 lcd4linux/src/Makefile
 lcd4linux/src/data/Makefile
+lcd4linux/src/data/audio/Makefile
+lcd4linux/src/data/Clock1/Makefile
+lcd4linux/src/data/Clock2/Makefile
+lcd4linux/src/data/Clock3/Makefile
+lcd4linux/src/data/Clock4/Makefile
+lcd4linux/src/data/Clock5/Makefile
+lcd4linux/src/data/Clock6/Makefile
+lcd4linux/src/data/Clock7/Makefile
+lcd4linux/src/data/Clock8/Makefile
+lcd4linux/src/data/Clock9/Makefile
+lcd4linux/src/data/Clock10/Makefile
+lcd4linux/src/meteo/Makefile
+lcd4linux/src/wetter/Makefile
+lcd4linux/src/renderer/Makefile
 lcd4linux/po/Makefile
 lcd4linux/meta/Makefile
 
