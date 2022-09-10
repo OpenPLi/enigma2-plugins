@@ -24,7 +24,7 @@ from enigma import eConsoleAppContainer, eActionMap, iServiceInformation, iFront
 from enigma import getDesktop, getEnigmaVersionString, eEnv
 from enigma import ePicLoad, ePixmap
 
-from boxbranding import getImageDistro, getBoxType, getImageArch
+# from boxbranding import getImageDistro, getBoxType, getImageArch
 from Screens.Screen import Screen
 from Plugins.Plugin import PluginDescriptor
 from Components.ActionMap import ActionMap
@@ -290,15 +290,6 @@ openweather_list = ("200", "201", "202", "210", "211", "212", "221", "230", "231
 
 USBok = False
 if ctypes.util.find_library("usb-0.1") is not None or ctypes.util.find_library("usb-1.0") is not None:
-	print("[LCD4linux] libusb found :-)", getEnigmaVersionString())
-	from . import Photoframe
-	import usb.util
-	from . import dpf
-	USBok = True
-elif getImageArch() in ("aarch64"):
-	import usb.core
-	import usb.backend.libusb1
-	usb.backend.libusb1.get_backend(find_library=lambda x: "/lib64/libusb-1.0.so.0")
 	print("[LCD4linux] libusb found :-)", getEnigmaVersionString())
 	from . import Photoframe
 	import usb.util
@@ -2559,8 +2550,8 @@ def L4LoadNewConfig(cfg):
 	if os.path.isfile(LCD4default):
 		LCD4linux.loadFromFile(LCD4default)
 	L4log("Config-Load", cfg)
-	if getBoxType() == 'vuduo2':  # due to 2 displays, LCD4linux is integrated in this boximage
-		LCD4linux.loadFromFile(Data + "default.vuduo2")
+	#if getBoxType() == 'vuduo2':  # due to 2 displays, LCD4linux is integrated in this boximage
+	#	LCD4linux.loadFromFile(Data + "default.vuduo2")
 	L4log("Config-Load for 'Vu+ duo²'", cfg)
 	LCD4linux.loadFromFile(cfg)
 	LCD4linux.load()
@@ -15629,7 +15620,7 @@ def autostart(reason, **kwargs):
 
 
 def setup(menuid, **kwargs):
-	if getImageDistro() in ("openvix", "openatv", "egami", "openhdf", "openbh", "openspa", "opendroid"):
+	if 0: #getImageDistro() in ("openvix", "openatv", "egami", "openhdf", "openbh", "openspa", "opendroid"):
 		if menuid == "display" and SystemInfo["Display"]:
 			return [("LCD4Linux", main, "lcd4linux", None)]
 		elif menuid == "system" and not SystemInfo["Display"]:
