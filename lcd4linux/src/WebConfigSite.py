@@ -6,7 +6,6 @@ from . import _
 from Components.config import configfile, config, ConfigSelection
 from enigma import eTimer
 from .module import L4Lelement
-from boxbranding import getOEVersion
 import six
 
 if six.PY2:
@@ -173,8 +172,8 @@ class LCD4linuxConfigweb(resource.Resource):
 		global ExeMode
 		global StatusMode
 		IP = six.ensure_str(req.getClientIP())
-		if getOEVersion() == "OE-Alliance 4.3":
-			IP = IP.split(":")[-1]
+		#if getOEVersion() == "OE-Alliance 4.3": !FIXME What to do with this?
+		#	IP = IP.split(":")[-1]
 		L4logE("IP1:", IP)
 		if IP is None:
 			IP = req.client.host.split(":")[-1]
