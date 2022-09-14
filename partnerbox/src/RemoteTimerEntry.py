@@ -41,6 +41,7 @@ from Screens.TimerEntry import TimerEntry
 from Screens.MessageBox import MessageBox
 from Tools.BoundFunction import boundFunction
 import urllib
+import base64
 from Components.Sources.Boolean import Boolean
 
 import xml.etree.cElementTree
@@ -368,9 +369,11 @@ def RemoteTimerConfig(self):
 #	RemoteTimerCreateSetup(self,"config")
 
 
-def getLocations(self, url, check):
+def getLocations(self, url, header, check):
+	request = urllib.request.Request(url)
+	request.add_header("Authorization", "Basic %s" % header.decode('utf-8'))
 	try:
-		f = urllib.request.urlopen(url)
+		f = urllib.request.urlopen(request)
 		sxml = f.read()
 		getLocationsCallback(self, sxml, check)
 	except:
@@ -385,15 +388,15 @@ def getLocationsCallback(self, xmlstring, check=False):
 	for location in root.findall("e2location"):
 		add = True
 		if check:
-			add = location.text.decode("utf-8").encode("utf-8", 'ignore') not in self.Locations
+			add = location.text not in self.Locations
 		if add:
-			self.Locations.append(location.text.decode("utf-8").encode("utf-8", 'ignore'))
+			self.Locations.append(location.text)
 	for location in root.findall("e2simplexmlitem"):
 		add = True
 		if check:
-			add = location.text.decode("utf-8").encode("utf-8", 'ignore') not in self.Locations
+			add = location.text not in self.Locations
 		if add:
-			self.Locations.append(location.text.decode("utf-8").encode("utf-8", 'ignore'))
+			self.Locations.append(location.text)
 
 
 def createRemoteTimerSetup(self, widget):
@@ -437,10 +440,11 @@ def RemoteTimernewConfig(self):
 				ip = "%d.%d.%d.%d" % tuple(self.entryguilist[int(self.timerentry_remote.value)][2].ip.value)
 				port = self.entryguilist[int(self.timerentry_remote.value)][2].port.value
 				http_ = "%s:%d" % (ip, port)
+				header = base64.b64encode(bytes('%s:%s' % ('root', self.entryguilist[int(self.timerentry_remote.value)][2].password.value), 'ascii'))
 				self.Locations = []
-				getLocations(self, "http://root:" + self.entryguilist[int(self.timerentry_remote.value)][2].password.value + "@" + http_ + "/web/getlocations", False)
+				getLocations(self, "http://" + http_ + "/web/getlocations", header, False)
 				if len(self.Locations) == 0:
-					getLocations(self, "http://root:" + self.entryguilist[int(self.timerentry_remote.value)][2].password.value + "@" + http_ + "/web/getcurrlocation", True)
+					getLocations(self, "http://" + http_ + "/web/getcurrlocation", header, True)
 			RemoteTimercreateConfig(self)
 			RemoteTimerCreateSetup(self, "config")
 		else:
