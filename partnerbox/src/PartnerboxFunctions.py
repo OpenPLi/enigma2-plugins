@@ -251,7 +251,8 @@ def FillE2TimerList(xmlstring, sreference=None):
 			disabled = int(timer.findtext("e2disabled", 0))
 		except:
 			disabled = 0
-		servicereference = str(timer.findtext("e2servicereference", '').decode("utf-8").encode("utf-8", 'ignore'))
+		servicereference = str(timer.findtext("e2servicereference", ''))
+
 		if sreference is None:
 			go = True
 		else:
@@ -302,8 +303,8 @@ def FillE2TimerList(xmlstring, sreference=None):
 				eventId = -1
 			E2TimerList.append(E2Timer(
 				servicereference=servicereference,
-				servicename=unquote(str(timer.findtext("e2servicename", 'n/a').decode("utf-8").encode("utf-8", 'ignore'))),
-				name=str(timer.findtext("e2name", '').decode("utf-8").encode("utf-8", 'ignore')),
+				servicename=unquote(str(timer.findtext("e2servicename", 'n/a'))),
+				name=str(timer.findtext("e2name", '')),
 				disabled=disabled,
 				timebegin=timebegin,
 				timeend=timeend,
@@ -314,8 +315,8 @@ def FillE2TimerList(xmlstring, sreference=None):
 				justplay=justplay,
 				eventId=eventId,
 				afterevent=afterevent,
-				dirname=str(timer.findtext("e2location", '').decode("utf-8").encode("utf-8", 'ignore')),
-				description=unquote(str(timer.findtext("e2description", '').decode("utf-8").encode("utf-8", 'ignore'))),
+				dirname=str(timer.findtext("e2location", '')),
+				description=unquote(str(timer.findtext("e2description", ''))),
 				type=0))
 	return E2TimerList
 
