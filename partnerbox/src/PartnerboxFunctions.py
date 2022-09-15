@@ -359,7 +359,8 @@ class myHTTPClientFactory(HTTPClientFactory):
 	def __init__(self, url, method='GET', postdata=None, headers=None,
 	agent="Twisted Remotetimer", timeout=0, cookies=None,
 	followRedirect=1, lastModified=None, etag=None):
-		HTTPClientFactory.__init__(self, url, method=method.encode('utf-8'), postdata=postdata, headers=headers, agent=agent.encode('utf-8'), timeout=timeout, cookies=cookies, followRedirect=followRedirect)
+		HTTPClientFactory.__init__(self, url, method=method.encode('utf-8'), postdata=postdata,
+		headers=headers, agent=agent.encode('utf-8'), timeout=timeout, cookies=cookies, followRedirect=followRedirect)
 
 
 def url_parse(url, defaultPort=None):
