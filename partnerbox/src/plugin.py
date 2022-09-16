@@ -118,7 +118,7 @@ def partnerboxplugin(session, what, partnerboxentry=None):
 	if what == 0: # Current RemoteTV
 		session.open(CurrentRemoteTV, partnerboxentry)
 	elif what == 1: # RemoteTV
-		session.open(RemoteTimerBouquetList, [], partnerboxentry, 1)
+		session.open(RemoteTimerBouquetList, [], partnerboxentry, 0)
 	elif what == 2: # RemoteTimer
 		session.open(RemoteTimer, partnerboxentry)
 
