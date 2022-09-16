@@ -217,9 +217,9 @@ def FillLocationList(xmlstring):
 	except:
 		Locations
 	for location in root.findall("e2location"):
-		Locations.append(location.text.encode("utf-8", 'ignore'))
+		Locations.append(location.text)
 	for location in root.findall("e2simplexmlitem"):  # vorerst Kompatibilitaet zum alten Webinterface-Api aufrecht erhalten (e2simplexmlitem)
-		Locations.append(location.text.encode("utf-8", 'ignore'))
+		Locations.append(location.text)
 	return Locations
 
 
@@ -771,9 +771,9 @@ class RemoteTimerChannelList(Screen):
 			self.ZapCallback(None)
 		else:
 			if self.enigma_type == 0:
-				url = self.http + "/web/zap?sRef=" + urllib.parse.quote(sel.servicereference.decode('utf-8').encode('utf-8', 'ignore'))
+				url = self.http + "/web/zap?sRef=" + urllib.parse.quote(sel.servicereference)
 			else:
-				url = self.http + "/cgi-bin/zapTo?path=" + urllib.parse.quote(sel.servicereference.decode('utf-8').encode('utf-8', 'ignore'))
+				url = self.http + "/cgi-bin/zapTo?path=" + urllib.parse.quote(sel.servicereference)
 			sendPartnerBoxWebCommand(url, None, 10, self.username, self.password).addCallback(self.ZapCallback).addErrback(self.DoNotCareError)
 
 	def DoNotCareError(self, dnce=None):
@@ -901,15 +901,15 @@ class RemoteTimerChannelList(Screen):
 		root = xml.etree.cElementTree.fromstring(xmlstring)
 		for events in root.findall("event"):
 			try:
-				eventtitle = str(events.findtext("description", '').encode("utf-8", 'ignore'))
+				eventtitle = str(events.findtext("description", ''))
 			except:
 				eventtitle = ""
 			try:
-				eventdescriptionextended = str(events.findtext("details", '').encode("utf-8", 'ignore'))
+				eventdescriptionextended = str(events.findtext("details", ''))
 			except:
 				eventdescriptionextended = ""
 			try:
-				eventdescription = str(events.findtext("genre", '').encode("utf-8", 'ignore'))
+				eventdescription = str(events.findtext("genre", ''))
 			except:
 				eventdescription = ""
 			try:
@@ -970,6 +970,7 @@ class RemoteTimerChannelList(Screen):
 				if sel.eventid != 0:
 					self.session.openWithCallback(self.CallbackEPGSelection, RemoteTimerEPGList, self.E2TimerList, sel.servicereference, sel.servicename, self.PartnerboxEntry)
 			except:
+				print("Partnerbox - RemoteTimerChannelList failed")
 				return
 
 	def CallbackEPGSelection(self):
@@ -1205,7 +1206,7 @@ class RemotePlayer(Screen, InfoBarAudioSelection):
 		sendPartnerBoxWebCommand(url, None, 10, self.username, self.password).addCallback(self.CurrentEPGCallback).addErrback(self.CurrentEPGCallbackError)
 
 	def CurrentEPGCallback(self, xmlstring):
-		xmlstring = xmlstring.replace("""<?xml-stylesheet type="text/xsl" href="/xml/serviceepg.xsl"?>""", "")
+		xmlstring = xmlstring.decode().replace("""<?xml-stylesheet type="text/xsl" href="/xml/serviceepg.xsl"?>""", "")
 		root = xml.etree.cElementTree.fromstring(xmlstring)
 		e2eventtitle = ""
 		e2eventservicename = ""
@@ -1214,7 +1215,7 @@ class RemotePlayer(Screen, InfoBarAudioSelection):
 		if self.enigma_type == 0:
 			for events in root.findall("e2event"):
 				try:
-					e2eventservicename = str(events.findtext("e2eventservicename", 'n/a').encode("utf-8", 'ignore'))
+					e2eventservicename = events.findtext("e2eventservicename", 'n/a')
 				except:
 					e2eventservicename = "n/a"
 				try:
@@ -1226,13 +1227,13 @@ class RemotePlayer(Screen, InfoBarAudioSelection):
 				except:
 					e2eventduration = 0
 				try:
-					e2eventtitle = str(events.findtext("e2eventtitle", '').encode("utf-8", 'ignore'))
+					e2eventtitle = events.findtext("e2eventtitle", '')
 				except:
 					e2eventtitle = ""
 		else:
 			for services in root.findall("service"):
 				try:
-					e2eventservicename = str(services.findtext("name", 'n/a').encode("utf-8", 'ignore'))
+					e2eventservicename = services.findtext("name", 'n/a')
 				except:
 					e2eventservicename = "n/a"
 			for events in root.findall("event"):
@@ -1245,7 +1246,7 @@ class RemotePlayer(Screen, InfoBarAudioSelection):
 				except:
 					e2eventduration = 0
 				try:
-					e2eventtitle = str(events.findtext("description", '').encode("utf-8", 'ignore'))
+					e2eventtitle = events.findtext("description", '')
 				except:
 					e2eventtitle = ""
 		endtime = int(e2eventstart + e2eventduration)
@@ -1355,11 +1356,10 @@ class RemoteTimerEPGList(Screen):
 		self.http = "http://%s:%d" % (self.ip, port)
 		self.enigma_type = int(partnerboxentry.enigma.value)
 		self.useinternal = int(partnerboxentry.useinternal.value)
-
 		if self.enigma_type == 0:
-			self.url = self.http + "/web/epgservice?sRef=" + urllib.parse.quote(self.servicereference.decode('utf-8').encode('utf-8', 'ignore'))
+			self.url = self.http + "/web/epgservice?sRef=" + urllib.parse.quote(self.servicereference)
 		else:
-			self.url = self.http + "/xml/serviceepg?ref=" + urllib.parse.quote(self.servicereference.decode('utf-8').encode('utf-8', 'ignore'))
+			self.url = self.http + "/xml/serviceepg?ref=" + urllib.parse.quote(self.servicereference)
 		self.ListCurrentIndex = 0
 		self.Locations = []
 
@@ -1469,8 +1469,8 @@ class RemoteTimerEPGList(Screen):
 		E2ListEPG = []
 		root = xml.etree.cElementTree.fromstring(xmlstring)
 		for events in root.findall("e2event"):
-			servicereference = str(events.findtext("e2eventservicereference", '').decode("utf-8").encode("utf-8", 'ignore'))
-			servicename = str(events.findtext("e2eventservicename", 'n/a').decode("utf-8").encode("utf-8", 'ignore'))
+			servicereference = str(events.findtext("e2eventservicereference", ''))
+			servicename = str(events.findtext("e2eventservicename", 'n/a'))
 			try:
 				eventstart = int(events.findtext("e2eventstart", 0))
 			except:
@@ -1480,7 +1480,7 @@ class RemoteTimerEPGList(Screen):
 			except:
 				eventduration = 0
 			try:
-				eventtitle = str(events.findtext("e2eventtitle", '').decode("utf-8").encode("utf-8", 'ignore'))
+				eventtitle = str(events.findtext("e2eventtitle", ''))
 			except:
 				eventtitle = ""
 			try:
@@ -1488,11 +1488,11 @@ class RemoteTimerEPGList(Screen):
 			except:
 				eventid = -1
 			try:
-				eventdescription = str(events.findtext("e2eventdescription", '').decode("utf-8").encode("utf-8", 'ignore'))
+				eventdescription = str(events.findtext("e2eventdescription", ''))
 			except:
 				eventdescription = ""
 			try:
-				eventdescriptionextended = str(events.findtext("e2eventdescriptionextended", '').decode("utf-8").encode("utf-8", 'ignore'))
+				eventdescriptionextended = str(events.findtext("e2eventdescriptionextended", ''))
 			except:
 				eventdescriptionextended = ""
 			E2ListEPG.append(E2EPGListAllData(servicereference=servicereference, servicename=servicename, eventid=eventid, eventstart=eventstart, eventduration=eventduration, eventtitle=eventtitle, eventdescription=eventdescription, eventdescriptionextended=eventdescriptionextended))
@@ -1548,7 +1548,7 @@ class RemoteTimerEPGList(Screen):
 			self["epglist"].instance.hide()
 			if self.enigma_type == 0:
 				refstr = ':'.join(str(entry.servicereference).split(':')[:11])
-				ref = urllib.parse.quote(refstr.decode('utf-8').encode('utf-8', 'ignore')) + "&begin=" + ("%s" % (entry.timebegin)) + "&end=" + ("%s" % (entry.timeend)) + "&name=" + urllib.parse.quote(entry.name) + "&description=" + urllib.parse.quote(entry.description) + "&dirname=" + urllib.parse.quote(entry.dirname) + "&eit=" + ("%s" % (entry.eventId)) + "&justplay=" + ("%s" % (entry.justplay)) + "&afterevent=" + ("%s" % (entry.afterevent))
+				ref = urllib.parse.quote(refstr) + "&begin=" + ("%s" % (entry.timebegin)) + "&end=" + ("%s" % (entry.timeend)) + "&name=" + urllib.parse.quote(entry.name) + "&description=" + urllib.parse.quote(entry.description) + "&dirname=" + urllib.parse.quote(entry.dirname) + "&eit=" + ("%s" % (entry.eventId)) + "&justplay=" + ("%s" % (entry.justplay)) + "&afterevent=" + ("%s" % (entry.afterevent))
 				sCommand = self.http + "/web/timeradd?sRef=" + ref
 				sendPartnerBoxWebCommand(sCommand, None, 10, self.username, self.password).addCallback(self.deleteTimerCallback).addErrback(self.EPGListDownloadError)
 			else:
@@ -1558,7 +1558,7 @@ class RemoteTimerEPGList(Screen):
 					action = "ngrab"
 				else:
 					action = ""
-				ref = urllib.parse.quote(entry.servicereference.decode('utf-8').encode('utf-8', 'ignore')) + "&start=" + ("%s" % (entry.timebegin)) + "&duration=" + ("%s" % (entry.timeend - entry.timebegin)) + "&descr=" + urllib.parse.quote(entry.description) + "&channel=" + urllib.parse.quote(entry.servicename) + "&after_event=" + ("%s" % (entry.afterevent)) + "&action=" + ("%s" % (action))
+				ref = urllib.parse.quote(entry.servicereference) + "&start=" + ("%s" % (entry.timebegin)) + "&duration=" + ("%s" % (entry.timeend - entry.timebegin)) + "&descr=" + urllib.parse.quote(entry.description) + "&channel=" + urllib.parse.quote(entry.servicename) + "&after_event=" + ("%s" % (entry.afterevent)) + "&action=" + ("%s" % (action))
 				sCommand = self.http + "/addTimerEvent?ref=" + ref
 				sendPartnerBoxWebCommand(sCommand, None, 10, self.username, self.password).addCallback(self.deleteTimerCallback).addErrback(self.EPGListDownloadError)
 
