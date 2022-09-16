@@ -414,7 +414,7 @@ class RemoteTimer(Screen):
 			self.oldstart = sel.timebegin
 			self.oldend = sel.timeend
 			self.oldtype = sel.type
-			self.session.openWithCallback(self.RemoteTimerEntryFinished, RemoteTimerEntry, sel, self.Locations)
+			self.session.openWithCallback(self.RemoteTimerEntryFinished, RemoteTimerEntry, sel, self.Locations, boxName=self.PartnerboxEntry.name.value)
 		else:
 			text = _("Repeated Timer are not supported!")
 			self.session.open(MessageBox, text, MessageBox.TYPE_INFO)
