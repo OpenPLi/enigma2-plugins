@@ -260,7 +260,7 @@ class CurrentRemoteTV(Screen):
 		if self.enigma_type == 0:
 			root = xml.etree.cElementTree.fromstring(xmlstring)
 			for service in root.findall("e2service"):
-				servicereference = str(service.findtext("e2servicereference", '').decode("utf-8").encode("utf-8", 'ignore'))
+				servicereference = str(service.findtext("e2servicereference", ''))
 			if len(servicereference) > 0:
 				#if self.password:
 				#	url = "http://root:%s@%s:8001/%s" % (self.password, self.ip, servicereference)
