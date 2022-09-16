@@ -87,10 +87,10 @@ class RemoteTimerEntry(Screen, ConfigListScreen):
 				</widget>
 			</screen>"""
 
-	def __init__(self, session, timer, Locations):
+	def __init__(self, session, timer, Locations, boxName=None):
 		self.session = session
 		Screen.__init__(self, session)
-		self.setTitle(_("Timer entry"))
+		self.setTitle(_("Timer entry") + " - %s" % boxName if boxName else "")
 		self.timer = timer
 		self.Locations = Locations
 		self.entryDate = None
@@ -440,11 +440,11 @@ def RemoteTimernewConfig(self):
 				ip = "%d.%d.%d.%d" % tuple(self.entryguilist[int(self.timerentry_remote.value)][2].ip.value)
 				port = self.entryguilist[int(self.timerentry_remote.value)][2].port.value
 				http_ = "%s:%d" % (ip, port)
-				header = base64.b64encode(bytes('%s:%s' % ('root', self.entryguilist[int(self.timerentry_remote.value)][2].password.value), 'ascii'))
+				account = base64.b64encode(bytes('%s:%s' % ('root', self.entryguilist[int(self.timerentry_remote.value)][2].password.value), 'ascii'))
 				self.Locations = []
-				getLocations(self, "http://" + http_ + "/web/getlocations", header, False)
+				getLocations(self, "http://" + http_ + "/web/getlocations", account, False)
 				if len(self.Locations) == 0:
-					getLocations(self, "http://" + http_ + "/web/getcurrlocation", header, True)
+					getLocations(self, "http://" + http_ + "/web/getcurrlocation", account, True)
 			RemoteTimercreateConfig(self)
 			RemoteTimerCreateSetup(self, "config")
 		else:
@@ -648,7 +648,7 @@ def AddTimerE2Callback(self, session, answer):
 	statetext = root.findtext("e2statetext")
 	state = root.findtext("e2state")
 	if statetext:
-		text = statetext.encode("utf-8", 'ignore')
+		text = statetext
 	ok = state == "True"
 	session.open(MessageBox, _("Partnerbox Answer: \n%s") % _(text), MessageBox.TYPE_INFO, timeout=10)
 	if ok:
