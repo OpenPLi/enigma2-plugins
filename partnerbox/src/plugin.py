@@ -242,6 +242,7 @@ class CurrentRemoteTV(Screen):
 		self.http = "http://%s:%d" % (self.ip, port)
 		self.enigma_type = int(partnerboxentry.enigma.value)
 		self.useinternal = int(partnerboxentry.useinternal.value)
+		self.boxName = partnerboxentry.name.value
 		if self.enigma_type == 1:
 			self.url = self.http + "/video.m3u"
 		else:
@@ -267,6 +268,7 @@ class CurrentRemoteTV(Screen):
 				#else:
 				url = "http://" + self.ip + ":8001/" + servicereference
 			else:
+				self.session.open(MessageBox, _("Box '%s' is stanby or is not running." % self.boxName), type=MessageBox.TYPE_INFO, timeout=5)
 				self.close()
 		else:
 			url = xmlstring
@@ -629,8 +631,8 @@ class RemoteTimerBouquetList(Screen):
 		root = xml.etree.cElementTree.fromstring(xmlstring)
 		for servives in root.findall("e2service"):
 			BouquetList.append(E2ServiceList(
-			servicereference=str(servives.findtext("e2servicereference", '').decode("utf-8").encode("utf-8", 'ignore')),
-			servicename=str(servives.findtext("e2servicename", 'n/a').decode("utf-8").encode("utf-8", 'ignore'))))
+			servicereference=str(servives.findtext("e2servicereference", '')),
+			servicename=str(servives.findtext("e2servicename", 'n/a'))))
 		self["bouquetlist"].buildList(BouquetList)
 
 
@@ -679,7 +681,7 @@ class RemoteTimerChannelList(Screen):
 		self["key_red"] = Label(_("Zap"))
 		self["key_green"] = Label()
 		if self.playeronly == 0:
-				self["key_yellow"] = Label(_("EPG Selection"))
+			self["key_yellow"] = Label(_("EPG Selection"))
 		else:
 			self["key_yellow"] = Label()
 		self["key_blue"] = Label(_("Info"))
@@ -861,7 +863,7 @@ class RemoteTimerChannelList(Screen):
 
 	def getChannelList(self):
 		if self.enigma_type == 0:
-			ref = urllib.parse.quote(self.servicereference.decode('utf-8').encode('utf-8', 'ignore'))
+			ref = urllib.parse.quote(self.servicereference)
 			url = self.http + "/web/epgnow?bRef=" + ref
 			sendPartnerBoxWebCommand(url, None, 10, self.username, self.password).addCallback(self.ChannelListDownloadCallback).addErrback(self.ChannelListDownloadError)
 		else:
@@ -927,8 +929,8 @@ class RemoteTimerChannelList(Screen):
 		self.E2ChannelList = []
 		root = xml.etree.cElementTree.fromstring(xmlstring)
 		for events in root.findall("e2event"):
-			servicereference = str(events.findtext("e2eventservicereference", '').encode("utf-8", 'ignore'))
-			servicename = str(events.findtext("e2eventservicename", 'n/a').encode("utf-8", 'ignore'))
+			servicereference = str(events.findtext("e2eventservicereference", ''))
+			servicename = str(events.findtext("e2eventservicename", 'n/a'))
 			try:
 				eventstart = int(events.findtext("e2eventstart", 0))
 			except:
@@ -938,7 +940,7 @@ class RemoteTimerChannelList(Screen):
 			except:
 				eventduration = 0
 			try:
-				eventtitle = str(events.findtext("e2eventtitle", '').encode("utf-8", 'ignore'))
+				eventtitle = str(events.findtext("e2eventtitle", ''))
 			except:
 				eventtitle = ""
 			try:
@@ -946,11 +948,11 @@ class RemoteTimerChannelList(Screen):
 			except:
 				eventid = 0
 			try:
-				eventdescription = str(events.findtext("e2eventdescription", '').encode("utf-8", 'ignore'))
+				eventdescription = str(events.findtext("e2eventdescription", ''))
 			except:
 				eventdescription = ""
 			try:
-				eventdescriptionextended = str(events.findtext("e2eventdescriptionextended", '').encode("utf-8", 'ignore'))
+				eventdescriptionextended = str(events.findtext("e2eventdescriptionextended", ''))
 			except:
 				eventdescriptionextended = ""
 			self.E2ChannelList.append(E2EPGListAllData(
@@ -2381,8 +2383,8 @@ class PartnerBouquetList(RemoteTimerBouquetList):
 		if xmlstring:
 			root = xml.etree.cElementTree.fromstring(xmlstring)
 			for events in root.findall("e2event"):
-				servicereference = str(events.findtext("e2eventservicereference", '').decode("utf-8").encode("utf-8", 'ignore'))
-				servicename = str(events.findtext("e2eventservicename", 'n/a').decode("utf-8").encode("utf-8", 'ignore'))
+				servicereference = str(events.findtext("e2eventservicereference", ''))
+				servicename = str(events.findtext("e2eventservicename", 'n/a'))
 				e2ChannelList.append(E2EPGListAllData(servicereference=servicereference, servicename=servicename))
 		result = (e2ChannelList, sel)
 		self.close((1, result, self.PartnerboxEntry))
