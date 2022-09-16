@@ -427,8 +427,8 @@ class RemoteTimer(Screen):
 			self["timerlist"].instance.hide()
 			if self.enigma_type == 0:
 				refstr = ':'.join(str(entry.servicereference).split(':')[:11])
-				ref_old = "&channelOld=" + urllib.parse.quote(refstr.decode('utf-8').encode('utf-8', 'ignore')) + "&beginOld=" + ("%s" % (self.oldstart)) + "&endOld=" + ("%s" % (self.oldend)) + "&deleteOldOnSave=1"
-				ref = urllib.parse.quote(refstr.decode('utf-8').encode('utf-8', 'ignore')) + "&begin=" + ("%s" % (entry.timebegin)) + "&end=" + ("%s" % (entry.timeend)) + "&name=" + urllib.parse.quote(entry.name) + "&description=" + urllib.parse.quote(entry.description) + "&dirname=" + urllib.parse.quote(entry.dirname) + "&eit=" + ("%s" % (entry.eventId)) + "&justplay=" + ("%s" % (entry.justplay)) + "&afterevent=" + ("%s" % (entry.afterevent))
+				ref_old = "&channelOld=" + urllib.parse.quote(refstr) + "&beginOld=" + ("%s" % (self.oldstart)) + "&endOld=" + ("%s" % (self.oldend)) + "&deleteOldOnSave=1"
+				ref = urllib.parse.quote(refstr) + "&begin=" + ("%s" % (entry.timebegin)) + "&end=" + ("%s" % (entry.timeend)) + "&name=" + urllib.parse.quote(entry.name) + "&description=" + urllib.parse.quote(entry.description) + "&dirname=" + urllib.parse.quote(entry.dirname) + "&eit=" + ("%s" % (entry.eventId)) + "&justplay=" + ("%s" % (entry.justplay)) + "&afterevent=" + ("%s" % (entry.afterevent))
 				sCommand = self.http + "/web/timerchange?sRef=" + ref + ref_old
 				sendPartnerBoxWebCommand(sCommand, None, 10, self.username, self.password).addCallback(self.deleteTimerCallback).addErrback(self.downloadError)
 			else:
