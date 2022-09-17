@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2 - partnerbox\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-15 10:30+0200\n"
+"POT-Creation-Date: 2022-09-17 15:15+0200\n"
 "PO-Revision-Date: 2009-10-29 20:40+0100\n"
 "Last-Translator: Spaeleus <spaeleus@croci.org>\n"
 "Language-Team: www.linsat.net <spaeleus@croci.org>\n"
@@ -78,6 +78,10 @@ msgid "AutoTimer overview"
 msgstr ""
 
 msgid "Bouquet List"
+msgstr ""
+
+#, python-format
+msgid "Box '%s' is standby or is not running."
 msgstr ""
 
 msgid "Cancel"
@@ -176,6 +180,10 @@ msgstr "Rim. timer"
 
 #, fuzzy
 msgid "Enable Partnerbox-AutoTimer function"
+msgstr "Abilitare la funzione Partnerbox nell'evento timer"
+
+#, fuzzy
+msgid "Enable Partnerbox-AutoTimer in E-Menu"
 msgstr "Abilitare la funzione Partnerbox nell'evento timer"
 
 #, fuzzy
@@ -442,6 +450,9 @@ msgid "Select operation for partnerbox"
 msgstr "Configurazione Partnerbox"
 
 msgid "Send Wake-on-LAN"
+msgstr ""
+
+msgid "Service type"
 msgstr ""
 
 msgid "Servicelists/EPG"

@@ -271,7 +271,7 @@ class CurrentRemoteTV(Screen):
 				#else:
 				url = "http://" + self.ip + ":8001/" + servicereference
 			else:
-				self.session.open(MessageBox, _("Box '%s' is stanby or is not running." % self.boxName), type=MessageBox.TYPE_INFO, timeout=5)
+				self.session.open(MessageBox, _("Box '%s' is standby or is not running." % self.boxName), type=MessageBox.TYPE_INFO, timeout=5)
 				self.close()
 		else:
 			url = xmlstring

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Enigma2 Plugin - Partnerbox\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-15 10:30+0200\n"
+"POT-Creation-Date: 2022-09-17 15:15+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: maja <jovanovic@gmx.ch>\n"
 "Language-Team: veselin & majevica CRNABERZA <jovanovic@gmx.ch>\n"
@@ -75,6 +75,10 @@ msgid "AutoTimer overview"
 msgstr ""
 
 msgid "Bouquet List"
+msgstr ""
+
+#, python-format
+msgid "Box '%s' is standby or is not running."
 msgstr ""
 
 msgid "Cancel"
@@ -173,6 +177,10 @@ msgstr "daljinski tajmer"
 
 #, fuzzy
 msgid "Enable Partnerbox-AutoTimer function"
+msgstr "Omogući funkciju partnerboks u Tajmeru"
+
+#, fuzzy
+msgid "Enable Partnerbox-AutoTimer in E-Menu"
 msgstr "Omogući funkciju partnerboks u Tajmeru"
 
 #, fuzzy
@@ -439,6 +447,9 @@ msgid "Select operation for partnerbox"
 msgstr "Podešavanje partnerboksa"
 
 msgid "Send Wake-on-LAN"
+msgstr ""
+
+msgid "Service type"
 msgstr ""
 
 msgid "Servicelists/EPG"

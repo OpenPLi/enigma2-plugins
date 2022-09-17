@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Partnerbox\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-15 10:30+0200\n"
+"POT-Creation-Date: 2022-09-17 15:15+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: IMS <ims@openpli.org>\n"
 "Language-Team: PLi <ims21@users.sourceforge.net>\n"
@@ -73,6 +73,10 @@ msgstr "AutoTimer přehled"
 
 msgid "Bouquet List"
 msgstr "Přehled"
+
+#, python-format
+msgid "Box '%s' is standby or is not running."
+msgstr "Přijímač '%s' je v pohotovostním režimu nebo není zapnutý."
 
 msgid "Cancel"
 msgstr "Zrušit"
@@ -167,6 +171,9 @@ msgstr "Upravit vzdálený časovač"
 
 msgid "Enable Partnerbox-AutoTimer function"
 msgstr "Povolit Partnerbox-Autotimer"
+
+msgid "Enable Partnerbox-AutoTimer in E-Menu"
+msgstr "Povolit Partnerbox-Autotimer v E-menu"
 
 msgid "Enable Partnerbox-Function in Channel Selector"
 msgstr "Povolit Partnerbox v přehledu programů"
@@ -429,6 +436,9 @@ msgstr "Zvolte operaci pro partnerbox"
 
 msgid "Send Wake-on-LAN"
 msgstr "Poslat Wake-on-LAN"
+
+msgid "Service type"
+msgstr ""
 
 msgid "Servicelists/EPG"
 msgstr "Seznam programů/EPG"

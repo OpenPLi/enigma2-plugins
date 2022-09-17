@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Partnerbox\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-15 10:30+0200\n"
+"POT-Creation-Date: 2022-09-17 15:15+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Magnus Nilsson <mag_nilsson@hotmail.com>\n"
 "Language-Team: Dr. Best <dr.best@dreambox-tools.info>\n"
@@ -74,6 +74,10 @@ msgid "AutoTimer overview"
 msgstr ""
 
 msgid "Bouquet List"
+msgstr ""
+
+#, python-format
+msgid "Box '%s' is standby or is not running."
 msgstr ""
 
 msgid "Cancel"
@@ -172,6 +176,10 @@ msgstr "Fjärrtimer"
 
 #, fuzzy
 msgid "Enable Partnerbox-AutoTimer function"
+msgstr "Aktivera Partnerboxfunktionen i Timerprogrammet"
+
+#, fuzzy
+msgid "Enable Partnerbox-AutoTimer in E-Menu"
 msgstr "Aktivera Partnerboxfunktionen i Timerprogrammet"
 
 #, fuzzy
@@ -438,6 +446,9 @@ msgid "Select operation for partnerbox"
 msgstr "Inställningar för Partnerbox"
 
 msgid "Send Wake-on-LAN"
+msgstr ""
+
+msgid "Service type"
 msgstr ""
 
 msgid "Servicelists/EPG"
