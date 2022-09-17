@@ -260,7 +260,7 @@ def parseEntry(element, baseTimer, defaults=False):
 				continue
 
 			if where in idx:
-				excludes[idx[where]].append(value.encode("UTF-8"))
+				excludes[idx[where]].append(value)
 		baseTimer.exclude = excludes
 
 	# Read out includes (use same idx)
@@ -274,7 +274,7 @@ def parseEntry(element, baseTimer, defaults=False):
 				continue
 
 			if where in idx:
-				includes[idx[where]].append(value.encode("UTF-8"))
+				includes[idx[where]].append(value)
 		baseTimer.include = includes
 
 	# Read out recording tags
@@ -286,7 +286,7 @@ def parseEntry(element, baseTimer, defaults=False):
 			if not value:
 				continue
 
-			tags.append(value.encode("UTF-8"))
+			tags.append(value)
 		baseTimer.tags = tags
 
 	return True
