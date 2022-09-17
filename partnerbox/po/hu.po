@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partnerbox\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-15 10:30+0200\n"
+"POT-Creation-Date: 2022-09-17 15:15+0200\n"
 "PO-Revision-Date: 2012-06-27 09:22+0100\n"
 "Last-Translator: robertut <robertut@yahoo.com>\n"
 "Language-Team: \n"
@@ -80,6 +80,10 @@ msgid "AutoTimer overview"
 msgstr ""
 
 msgid "Bouquet List"
+msgstr ""
+
+#, python-format
+msgid "Box '%s' is standby or is not running."
 msgstr ""
 
 msgid "Cancel"
@@ -178,6 +182,10 @@ msgstr "Távoli időzítő"
 
 #, fuzzy
 msgid "Enable Partnerbox-AutoTimer function"
+msgstr "Partnerbox-funkció engedélyezése az időzítőben"
+
+#, fuzzy
+msgid "Enable Partnerbox-AutoTimer in E-Menu"
 msgstr "Partnerbox-funkció engedélyezése az időzítőben"
 
 #, fuzzy
@@ -444,6 +452,9 @@ msgid "Select operation for partnerbox"
 msgstr "partnerbox beállítása"
 
 msgid "Send Wake-on-LAN"
+msgstr ""
+
+msgid "Service type"
 msgstr ""
 
 msgid "Servicelists/EPG"

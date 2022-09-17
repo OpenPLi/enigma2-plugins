@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-07 09:36+0100\n"
+"POT-Creation-Date: 2022-09-17 15:15+0200\n"
 "PO-Revision-Date: 2021-11-07 09:45+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -77,6 +77,10 @@ msgstr "Aperçu AutoTimer"
 
 msgid "Bouquet List"
 msgstr "Liste des bouquets"
+
+#, python-format
+msgid "Box '%s' is standby or is not running."
+msgstr ""
 
 msgid "Cancel"
 msgstr "Annuler"
@@ -168,6 +172,10 @@ msgid "Edit remote timer"
 msgstr "Editer la programmation distante"
 
 msgid "Enable Partnerbox-AutoTimer function"
+msgstr "Activer la fonction Partnerbox-AutoTimer"
+
+#, fuzzy
+msgid "Enable Partnerbox-AutoTimer in E-Menu"
 msgstr "Activer la fonction Partnerbox-AutoTimer"
 
 msgid "Enable Partnerbox-Function in Channel Selector"

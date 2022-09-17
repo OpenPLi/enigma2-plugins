@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Enigma 2 TMBD Plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-15 10:30+0200\n"
+"POT-Creation-Date: 2022-09-17 15:15+0200\n"
 "PO-Revision-Date: 2018-03-01 22:35+0200\n"
 "Last-Translator: Dimitrij <Dima-73@inbox.lv>\n"
 "Language-Team: Dima-73@inbox.lv\n"
@@ -72,6 +72,10 @@ msgstr "Автотаймер - обзор"
 
 msgid "Bouquet List"
 msgstr "Список пакета"
+
+#, python-format
+msgid "Box '%s' is standby or is not running."
+msgstr ""
 
 msgid "Cancel"
 msgstr "Отмена"
@@ -163,6 +167,10 @@ msgid "Edit remote timer"
 msgstr "Редактировать дистанционный таймер"
 
 msgid "Enable Partnerbox-AutoTimer function"
+msgstr "Включить функцию Partnerbox-Автотаймер"
+
+#, fuzzy
+msgid "Enable Partnerbox-AutoTimer in E-Menu"
 msgstr "Включить функцию Partnerbox-Автотаймер"
 
 msgid "Enable Partnerbox-Function in Channel Selector"
@@ -416,6 +424,9 @@ msgstr "Выберите действие для partnerbox"
 msgid "Send Wake-on-LAN"
 msgstr "Послать Wake-on-LAN"
 
+msgid "Service type"
+msgstr "Тип стрим сервиса"
+
 msgid "Servicelists/EPG"
 msgstr "Список сервисов/данные EPG"
 
@@ -462,9 +473,6 @@ msgstr "Режим ожидания"
 msgid "StartTime"
 msgstr "Время начала"
 
-msgid "Service type"
-msgstr "Тип стрим сервиса"
-
 #, python-format
 msgid "Starting Remote Player (IP = %s)"
 msgstr "Старт дистанционного плеера (IP = %s)"
@@ -495,7 +503,6 @@ msgstr "Чт"
 
 msgid "Thursday"
 msgstr "Четверг"
-
 
 msgid "Timer Overview"
 msgstr "Таймеры - обзор"

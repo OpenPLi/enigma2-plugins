@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Partnerbox\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-15 10:30+0200\n"
+"POT-Creation-Date: 2022-09-17 15:15+0200\n"
 "PO-Revision-Date: 2021-09-15 15:38+0300\n"
 "Last-Translator: Vytenis P. <vyteniui@gmail.com>\n"
 "Language-Team: Vytenis P. <vyteniui@gmail.com>\n"
@@ -73,6 +73,10 @@ msgstr "Autolaikmačio apžvalga"
 
 msgid "Bouquet List"
 msgstr "Bukietų sąrašas"
+
+#, python-format
+msgid "Box '%s' is standby or is not running."
+msgstr ""
 
 msgid "Cancel"
 msgstr "Atšaukti"
@@ -164,6 +168,10 @@ msgid "Edit remote timer"
 msgstr "Redaguoti nuotolinį laikmatį"
 
 msgid "Enable Partnerbox-AutoTimer function"
+msgstr "Įjungti Partnerbox autolaikmačio funkciją"
+
+#, fuzzy
+msgid "Enable Partnerbox-AutoTimer in E-Menu"
 msgstr "Įjungti Partnerbox autolaikmačio funkciją"
 
 msgid "Enable Partnerbox-Function in Channel Selector"
@@ -416,6 +424,9 @@ msgstr "Pasirinkite Partnerbox veiksmą"
 
 msgid "Send Wake-on-LAN"
 msgstr "Komanda 'prabusti nuo tinklo'"
+
+msgid "Service type"
+msgstr ""
 
 msgid "Servicelists/EPG"
 msgstr "Kanalų sąrašai/EPG duomenys"
