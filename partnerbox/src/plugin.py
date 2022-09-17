@@ -90,6 +90,7 @@ config.plugins.Partnerbox.entriescount = ConfigInteger(0)
 config.plugins.Partnerbox.Entries = ConfigSubList()
 config.plugins.Partnerbox.enablevpsintimerevent = ConfigYesNo(default=False)
 config.plugins.Partnerbox.showpartnerboxautotimerninmenu = ConfigYesNo(default=True)
+config.plugins.Partnerbox.showpartnerboxautotimerninextensionsmenu = ConfigYesNo(default=False)
 config.plugins.Partnerbox.avahicompare = ConfigYesNo(default=False)
 initConfig()
 
@@ -166,14 +167,14 @@ def eventinfoContextMenu(session, eventName="", **kwargs):
 	partnerboxpluginStart(session, 2)
 
 
-def partnerboxAutoTimerEventInfo(session, servicelist, eventName="", **kwargs):
+def partnerboxAutoTimerEventInfo(session, **kwargs):
 	from .PartnerboxAutoTimer import PartnerboxAutoTimerEPGSelection
 	ref = session.nav.getCurrentlyPlayingServiceReference()
 	if ref:
 		session.open(PartnerboxAutoTimerEPGSelection, ref)
 
 
-def openPartnerboxAutoTimersOverview(session, servicelist, eventName="", **kwargs):
+def openPartnerboxAutoTimersOverview(session, **kwargs):
 	from .PartnerboxAutoTimer import PartnerboxAutoTimer
 	PartnerboxAutoTimer.instance and PartnerboxAutoTimer.instance.openPartnerboxAutoTimerOverview()
 
@@ -207,6 +208,8 @@ def Plugins(**kwargs):
 		if config.plugins.Partnerbox.showpartnerboxautotimerninmenu.value:
 			list.append(PluginDescriptor(name=_("Partnerbox: AutoTimer"), description=_("Manage autotimer for other dreamboxes in network"), where=[PluginDescriptor.WHERE_EVENTINFO], fnc=openPartnerboxAutoTimersOverview))
 			list.append(PluginDescriptor(name=_("add AutoTimer for Partnerbox..."), where=[PluginDescriptor.WHERE_EVENTINFO], fnc=partnerboxAutoTimerEventInfo, needsRestart=False))
+		if config.plugins.Partnerbox.showpartnerboxautotimerninextensionsmenu.value:
+			list.append(PluginDescriptor(name=_("Partnerbox: AutoTimer"), description=_("Manage autotimer for other dreamboxes in network"), where=[PluginDescriptor.WHERE_EXTENSIONSMENU], fnc=openPartnerboxAutoTimersOverview))
 	return list
 
 
