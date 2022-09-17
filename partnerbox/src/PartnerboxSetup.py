@@ -132,6 +132,7 @@ class PartnerboxSetup(ConfigListScreen, Screen):
 		self.list.append(getConfigListEntry(_("Enable Partnerbox-Function in Channel Selector"), config.plugins.Partnerbox.enablepartnerboxchannelselector))
 		if autoTimerAvailable:
 			self.list.append(getConfigListEntry(_("Enable Partnerbox-AutoTimer function"), config.plugins.Partnerbox.showpartnerboxautotimerninmenu))
+			self.list.append(getConfigListEntry(_("Enable Partnerbox-AutoTimer in E-Menu"), config.plugins.Partnerbox.showpartnerboxautotimerninextensionsmenu))
 		self["config"].l.setList(self.list)
 
 	def keySave(self):
@@ -149,6 +150,7 @@ class PartnerboxSetup(ConfigListScreen, Screen):
 		config.plugins.Partnerbox.showremaingepglist.save()
 		config.plugins.Partnerbox.enablevpsintimerevent.save()
 		config.plugins.Partnerbox.showpartnerboxautotimerninmenu.save()
+		config.plugins.Partnerbox.showpartnerboxautotimerninextensionsmenu.save()
 		config.plugins.Partnerbox.avahicompare.save()
 		configfile.save()
 		self.refreshPlugins()
