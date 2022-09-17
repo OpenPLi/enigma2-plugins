@@ -15,7 +15,7 @@ msgstr ""
 
 #, python-format
 msgid " (Partnerbox %s - Version: %s)"
-msgstr "(Partnerbox %s - verze: %s)"
+msgstr " (Partnerbox %s - verze: %s)"
 
 #, python-format
 msgid "%d min"
