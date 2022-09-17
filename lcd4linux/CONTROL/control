@@ -3,4 +3,4 @@ Version: 5.0-r9
 Description: LCD4linux plugin
 Maintainer: OpenPLi team <forum@openpli.org>
 Homepage: http://www.openpli.org
-Depends: python3-codecs, python3-ctypes, python3-datetime, python3-email, python3-image, python3-mutagen, python3-pyusb, python3-shell, python3-simplejson, python3-pillow, enigma2-plugin-extensions-lcd4linuxplugin
+Depends: python3-codecs, python3-ctypes, python3-datetime, python3-email, python3-image, python3-mutagen, python3-pyusb, python3-shell, python3-simplejson, python3-pillow, python3-requests, enigma2-plugin-extensions-lcd4linuxplugin
