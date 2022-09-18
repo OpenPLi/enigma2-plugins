@@ -44,7 +44,7 @@ class PartnerboxAutoTimer(object):
 	def setPartnerboxAutoTimer(self, ret):
 		if ret:
 			from Plugins.Extensions.AutoTimer.plugin import autotimer
-			parameter = {'xml': autotimer.writeXmlTimer([ret])}
+			parameter = {b'xml': autotimer.writeXmlTimer([ret])}
 			count = config.plugins.Partnerbox.entriescount.value
 			if count == 1:
 				self.partnerboxplugin(None, parameter, config.plugins.Partnerbox.Entries[0])
@@ -66,8 +66,7 @@ class PartnerboxAutoTimer(object):
 			root = cet_fromstring(result)
 			statetext = root.findtext("e2statetext")
 			if statetext:
-				text = statetext.encode("utf-8", 'ignore')
-				self.session.open(MessageBox, text, MessageBox.TYPE_INFO, timeout=10)
+				self.session.open(MessageBox, statetext, MessageBox.TYPE_INFO, timeout=10)
 
 	def downloadError(self, error=None):
 		if error is not None:
@@ -105,7 +104,7 @@ class PartnerboxAutoTimer(object):
 
 	def callbackAutoTimerOverview(self, partnerboxentry, autotimer, result):
 		if result is not None:
-			parameter = {'xml': autotimer.writeXmlTimer(autotimer.timers)}
+			parameter = {b'xml': autotimer.writeXmlTimer(autotimer.timers)}
 			ip = "%d.%d.%d.%d" % tuple(partnerboxentry.ip.value)
 			port = partnerboxentry.port.value
 			username = "root"
