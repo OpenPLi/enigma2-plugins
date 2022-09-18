@@ -365,7 +365,7 @@ class myHTTPClientFactory(HTTPClientFactory):
 
 
 def url_parse(url, defaultPort=None):
-	parsed = urlparse(url.encode('utf-8'))
+	parsed = urlparse(url)
 	scheme = parsed[0]
 	path = urlunparse(('', '') + parsed[2:])
 	if defaultPort is None:
@@ -422,7 +422,7 @@ def runCommand(path, username="", password="", host="", port=80, sessionid="0", 
 	postdata = {"user": username, "password": password, "sessionid": sessionid}
 	if parameter:
 		postdata.update(parameter)
-	send = getPage('%s' % (command), method='POST', headers=headers, postdata=urllib.parse.urlencode(postdata))
+	send = getPage(command.encode('utf-8'), method=b'POST', headers=headers, postdata=urllib.parse.urlencode(postdata).encode('utf-8'))
 
 	def readData(data):
 		return data
