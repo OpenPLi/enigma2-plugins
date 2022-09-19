@@ -280,10 +280,10 @@ msgstr "Emplacement"
 msgid "MAC"
 msgstr "MAC"
 
-msgid "Manage autotimer for other dreamboxes in network"
+msgid "Manage autotimer for other boxes in network"
 msgstr "Gérer les programmations automatiques pour les autres récepteurs du réseau"
 
-msgid "Manage timer for other dreamboxes in network"
+msgid "Manage timer for other boxes in network"
 msgstr "Gérer les programmations pour les autres récepteurs dans le réseau"
 
 msgid "Menu PiP"

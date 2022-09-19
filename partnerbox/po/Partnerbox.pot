@@ -274,10 +274,10 @@ msgstr ""
 msgid "MAC"
 msgstr ""
 
-msgid "Manage autotimer for other dreamboxes in network"
+msgid "Manage autotimer for other boxes in network"
 msgstr ""
 
-msgid "Manage timer for other dreamboxes in network"
+msgid "Manage timer for other boxes in network"
 msgstr ""
 
 msgid "Menu PiP"

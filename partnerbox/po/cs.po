@@ -279,10 +279,10 @@ msgstr "Umístění"
 msgid "MAC"
 msgstr "MAC"
 
-msgid "Manage autotimer for other dreamboxes in network"
+msgid "Manage autotimer for other boxes in network"
 msgstr "Spravovat autotimer pro ostatní přijímače v síti"
 
-msgid "Manage timer for other dreamboxes in network"
+msgid "Manage timer for other boxes in network"
 msgstr "Správa časovačů ostatních přijímačů v síti"
 
 msgid "Menu PiP"
