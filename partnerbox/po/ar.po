@@ -276,10 +276,10 @@ msgstr "الموقع"
 msgid "MAC"
 msgstr "ماك"
 
-msgid "Manage autotimer for other dreamboxes in network"
+msgid "Manage autotimer for other boxes in network"
 msgstr "إدارة المؤقت التلقائي على اجهزة الفوبلس الأخرى في الشبكة"
 
-msgid "Manage timer for other dreamboxes in network"
+msgid "Manage timer for other boxes in network"
 msgstr "إدارة المؤقت على اجهزة الفوبلس الأخرى في الشبكة"
 
 msgid "Menu PiP"

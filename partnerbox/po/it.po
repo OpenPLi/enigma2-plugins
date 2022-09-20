@@ -294,11 +294,11 @@ msgid "MAC"
 msgstr ""
 
 #, fuzzy
-msgid "Manage autotimer for other dreamboxes in network"
-msgstr "Gestire timer su altri Dreambox in rete"
+msgid "Manage autotimer for other boxes in network"
+msgstr "Gestire timer su altri box in rete"
 
-msgid "Manage timer for other dreamboxes in network"
-msgstr "Gestire timer su altri Dreambox in rete"
+msgid "Manage timer for other boxes in network"
+msgstr "Gestire timer su altri box in rete"
 
 msgid "Menu PiP"
 msgstr ""

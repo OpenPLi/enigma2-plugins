@@ -275,10 +275,10 @@ msgstr "Расположение"
 msgid "MAC"
 msgstr "MAC"
 
-msgid "Manage autotimer for other dreamboxes in network"
+msgid "Manage autotimer for other boxes in network"
 msgstr "Управление автотаймерами других ресиверов по сети"
 
-msgid "Manage timer for other dreamboxes in network"
+msgid "Manage timer for other boxes in network"
 msgstr "Управление таймерами других ресиверов по сети"
 
 msgid "Menu PiP"

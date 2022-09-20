@@ -193,12 +193,12 @@ def Plugins(**kwargs):
 	if config.plugins.Partnerbox.enablepartnerboxepglist.value:
 		list.append(PluginDescriptor(where=PluginDescriptor.WHERE_SESSIONSTART, fnc=autostart_Partnerbox_EPGList))
 	if config.plugins.Partnerbox.enablepartnerboxeventinfomenu.value and not config.plugins.Partnerbox.enablepartnerboxeventinfocontextmenu.value:
-		list.append(PluginDescriptor(name=_("Partnerbox: RemoteTimer"), description=_("Manage timer for other dreamboxes in network"), where=PluginDescriptor.WHERE_EVENTINFO, fnc=eventinfo))
+		list.append(PluginDescriptor(name=_("Partnerbox: RemoteTimer"), description=_("Manage timer for other boxes in network"), where=PluginDescriptor.WHERE_EVENTINFO, fnc=eventinfo))
 	if config.plugins.Partnerbox.enablepartnerboxeventinfocontextmenu.value and config.plugins.Partnerbox.enablepartnerboxeventinfomenu.value:
 		list.append(PluginDescriptor(name=_("Partnerbox: RemoteTimer"), where=PluginDescriptor.WHERE_EVENTINFO, fnc=eventinfoContextMenu))
 	list.append(PluginDescriptor(name=_("Partnerbox"), description=_("setup for partnerbox"), where=[PluginDescriptor.WHERE_PLUGINMENU], icon="Setup_Partnerbox.png", fnc=setup))
 	if config.plugins.Partnerbox.showremotetimerinextensionsmenu.value:
-		list.append(PluginDescriptor(name=_("Partnerbox: RemoteTimer"), description=_("Manage timer for other dreamboxes in network"), where=[PluginDescriptor.WHERE_EXTENSIONSMENU], fnc=main))
+		list.append(PluginDescriptor(name=_("Partnerbox: RemoteTimer"), description=_("Manage timer for other boxes in network"), where=[PluginDescriptor.WHERE_EXTENSIONSMENU], fnc=main))
 	if config.plugins.Partnerbox.showremotetvinextensionsmenu.value:
 		list.append(PluginDescriptor(name=_("Partnerbox: RemoteTV Player"), description=_("Stream TV from your Partnerbox"), where=[PluginDescriptor.WHERE_EXTENSIONSMENU], fnc=remotetvplayer))
 	if config.plugins.Partnerbox.showcurrentstreaminextensionsmenu.value:
@@ -206,10 +206,10 @@ def Plugins(**kwargs):
 	if autoTimerAvailable:
 		list.append(PluginDescriptor(where=PluginDescriptor.WHERE_SESSIONSTART, fnc=autostart_PartnerboxAutoTimer))
 		if config.plugins.Partnerbox.showpartnerboxautotimerninmenu.value:
-			list.append(PluginDescriptor(name=_("Partnerbox: AutoTimer"), description=_("Manage autotimer for other dreamboxes in network"), where=[PluginDescriptor.WHERE_EVENTINFO], fnc=openPartnerboxAutoTimersOverview))
+			list.append(PluginDescriptor(name=_("Partnerbox: AutoTimer"), description=_("Manage autotimer for other boxes in network"), where=[PluginDescriptor.WHERE_EVENTINFO], fnc=openPartnerboxAutoTimersOverview))
 			list.append(PluginDescriptor(name=_("add AutoTimer for Partnerbox..."), where=[PluginDescriptor.WHERE_EVENTINFO], fnc=partnerboxAutoTimerEventInfo, needsRestart=False))
 		if config.plugins.Partnerbox.showpartnerboxautotimerninextensionsmenu.value:
-			list.append(PluginDescriptor(name=_("Partnerbox: AutoTimer"), description=_("Manage autotimer for other dreamboxes in network"), where=[PluginDescriptor.WHERE_EXTENSIONSMENU], fnc=openPartnerboxAutoTimersOverview))
+			list.append(PluginDescriptor(name=_("Partnerbox: AutoTimer"), description=_("Manage autotimer for other boxes in network"), where=[PluginDescriptor.WHERE_EXTENSIONSMENU], fnc=openPartnerboxAutoTimersOverview))
 	return list
 
 

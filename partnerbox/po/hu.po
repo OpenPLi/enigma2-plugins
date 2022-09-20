@@ -296,10 +296,10 @@ msgid "MAC"
 msgstr ""
 
 #, fuzzy
-msgid "Manage autotimer for other dreamboxes in network"
+msgid "Manage autotimer for other boxes in network"
 msgstr "Egyéb, a hálózaton lévő készülékek időzítésének kezelése"
 
-msgid "Manage timer for other dreamboxes in network"
+msgid "Manage timer for other boxes in network"
 msgstr "Egyéb, a hálózaton lévő készülékek időzítésének kezelése"
 
 msgid "Menu PiP"

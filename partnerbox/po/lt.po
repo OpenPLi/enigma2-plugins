@@ -276,10 +276,10 @@ msgstr "Padėtis"
 msgid "MAC"
 msgstr "MAC"
 
-msgid "Manage autotimer for other dreamboxes in network"
+msgid "Manage autotimer for other boxes in network"
 msgstr "Valdykite autolaikmatį kituose tinklo aparatuose"
 
-msgid "Manage timer for other dreamboxes in network"
+msgid "Manage timer for other boxes in network"
 msgstr "Valdykite laikmatį kituose tinklo aparatuose"
 
 msgid "Menu PiP"
