@@ -277,15 +277,15 @@ class AutoTimerAddXMLAutoTimerResource(AutoTimerBaseResource):
 		req.setResponseCode(http.OK)
 		req.setHeader('Content-type', 'application/xhtml+xml;')
 		req.setHeader('charset', 'UTF-8')
-		xml = req.args.get("xml")
+		xml = req.args.get(b"xml")
 		if xml:
 			autotimer.readXml() # read current timers to ensure autotimer.timers is populated with current autotimers
 			autotimer.readXmlTimer(xml[0])
 			if config.plugins.autotimer.always_write_config.value:
 				autotimer.writeXml()
-			return self.returnResult(req, True, _("AutoTimer was added successfully"))
+			return self.returnResult(req, True, _("AutoTimer was added successfully")).encode('utf-8')
 		else:
-			return self.returnResult(req, False, _("missing parameter \"xml\""))
+			return self.returnResult(req, False, _("missing parameter \"xml\"")).encode('utf-8')
 
 
 class AutoTimerUploadXMLConfigurationAutoTimerResource(AutoTimerBaseResource):
@@ -294,14 +294,14 @@ class AutoTimerUploadXMLConfigurationAutoTimerResource(AutoTimerBaseResource):
 		req.setResponseCode(http.OK)
 		req.setHeader('Content-type', 'application/xhtml+xml;')
 		req.setHeader('charset', 'UTF-8')
-		xml = req.args.get("xml")
+		xml = req.args.get(b"xml")
 		if xml:
 			autotimer.readXml(xml_string=xml[0])
 			if config.plugins.autotimer.always_write_config.value:
 				autotimer.writeXml()
-			return self.returnResult(req, True, _("AutoTimers were changed successfully"))
+			return self.returnResult(req, True, _("AutoTimers were changed successfully")).encode('utf-8')
 		else:
-			return self.returnResult(req, False, _("Not found xml config file!"))
+			return self.returnResult(req, False, _("Not found xml config file!")).encode('utf-8')
 
 
 class AutoTimerAddOrEditAutoTimerResource(AutoTimerBaseResource):
