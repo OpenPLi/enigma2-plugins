@@ -188,6 +188,31 @@ def parseEntry(element, baseTimer, defaults=False):
 	# Read out ratioThresholdDuplicate
 	baseTimer.ratioThresholdDuplicate = float(element.get("ratioThresholdDuplicate", 0.8))
 
+	# Read out allowed services/bouquets via Partnerbox
+	l = element.findall("e2service")
+	if l:
+		servicelist = []
+		bouquets = []
+		for servicereferences in l:
+			services = servicereferences.findall("e2servicereference")
+			for service in services:
+				value = service.text
+				if value:
+					if not 'bouquet' in value:
+						myref = eServiceReference(str(value))
+						if not (myref.flags & eServiceReference.isGroup):
+							# strip all after last :
+							pos = value.rfind(':')
+							if pos != -1:
+								if value[pos - 1] == ':':
+									pos -= 1
+								value = value[:pos + 1]
+						servicelist.append(value)
+					else:
+						bouquets.append(value)
+			baseTimer.bouquets = bouquets
+			baseTimer.services = servicelist
+
 	# Read out allowed services
 	l = element.findall("serviceref")
 	if l:
@@ -195,7 +220,7 @@ def parseEntry(element, baseTimer, defaults=False):
 
 		for service in l:
 			value = service.text
-			if value:
+			if value and not 'bouquet' in value:
 				myref = eServiceReference(str(value))
 				if not (myref.flags & eServiceReference.isGroup):
 					# strip all after last :
