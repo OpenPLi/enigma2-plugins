@@ -27,6 +27,7 @@ from twisted.web.client import HTTPClientFactory, getPage
 from base64 import encodebytes
 import xml.etree.cElementTree
 from urllib.parse import unquote, urlparse, urlunparse
+import base64
 
 CurrentIP = None
 remote_timer_list = None
@@ -479,24 +480,30 @@ def SetPartnerboxTimerlist(partnerboxentry=None, sreference=None):
 	if partnerboxentry is None:
 		return
 	try:
-		password = partnerboxentry.password.value
-		username = "root"
 		CurrentIP = partnerboxentry.ip.value
 		ip = "%d.%d.%d.%d" % tuple(partnerboxentry.ip.value)
 		port = partnerboxentry.port.value
+		header = base64.b64encode(bytes('%s:%s' % ('root', partnerboxentry.password.value), 'ascii'))
+
 		if int(partnerboxentry.enigma.value) == 0:
-			sCommand = "http://%s:%s@%s:%d/web/timerlist" % (username, password, ip, port)
+			url = "http://%s:%d/web/timerlist" % (ip, port)
 		else:
-			sCommand = "http://%s:%s@%s:%d/xml/timers" % (username, password, ip, port)
-		print("[RemoteEPGList] Getting timerlist data from %s..." % ip)
-		f = urllib.request.urlopen(sCommand)
-		sxml = f.read()
-		if int(partnerboxentry.enigma.value) == 0:
-			remote_timer_list = FillE2TimerList(sxml, sreference)
-		else:
-			remote_timer_list = FillE1TimerList(sxml, sreference)
+			url = "http://%s:%d/xml/timers" % (ip, port)
+
+		request = urllib.request.Request(url)
+		request.add_header("Authorization", "Basic %s" % header.decode('utf-8'))
+		try:
+			print("[RemoteEPGList] Getting timerlist data from %s..." % ip)
+			f = urllib.request.urlopen(request)
+			sxml = f.read()
+			if int(partnerboxentry.enigma.value) == 0:
+				remote_timer_list = FillE2TimerList(sxml, sreference)
+			else:
+				remote_timer_list = FillE1TimerList(sxml, sreference)
+		except:
+			print('[RemoteEPGList] - Getting timerlist failed')
 	except:
-		pass
+		print('[SetPartnerboxTimerlist] - Getting timerlist failed')
 
 
 def getServiceRef(sreference):
