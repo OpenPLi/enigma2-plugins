@@ -1,4 +1,3 @@
-# -*- coding: UTF-8 -*-
 # for localized messages
 from . import _
 
@@ -22,17 +21,10 @@ from Components.ProgressBar import ProgressBar
 from Components.Sources.StaticText import StaticText
 from Components.Sources.Boolean import Boolean
 from Tools.Directories import fileExists, resolveFilename, SCOPE_PLUGINS, SCOPE_SKIN_IMAGE
+from twisted.web import client
 
-from StringIO import StringIO
-
-import contextlib
-import gzip
 import os
-import random
 import re
-import threading
-import urllib2
-import zlib
 
 
 try:
@@ -53,8 +45,19 @@ from Components.ConfigList import ConfigListScreen
 from Components.PluginComponent import plugins
 from Tools.Directories import resolveFilename, SCOPE_PLUGINS
 
-from HTMLParser import HTMLParser
+try:
+	from HTMLParser import HTMLParser
+except ImportError:
+	from html.parser import HTMLParser
 
+try:
+	basestring
+	def encode_utf8(x):
+		return x.encode('utf8')
+except NameError:
+	basestring = str
+	def encode_utf8(x):
+		return x
 
 def transHTML(text):
 	h = HTMLParser()
@@ -80,59 +83,11 @@ def quoteEventName(eventName):
 	return quote_plus(text)
 
 
-class Downloader(object):
-
-	successCallback = None
-	failureCallback = None
-	downloadTimeout = 10  # seconds
-
-	_headers = {
-		'user-agent': 'curl/7.74.0',
-		'accept': '*/*'
-	}
-
-	def __init__(self, url, file, headers=None):
-		self.url = url
-		self.file = file
-		if headers is not None:
-			self._headers = headers
-
-	def addSuccessCallback(self, successCallback):
-		self.successCallback = successCallback
-		return self
-
-	def addFailureCallback(self, failureCallback):
-		self.failureCallback = failureCallback
-		return self
-
-	def start(self):
-		t = threading.Thread(target=self._download)
-		t.start()
-		return t
-
-	def _download(self):
-		tmpfile = self.file + '.' + str(random.randint(10000, 99999)) + '.tmp'
-		try:
-			request = urllib2.Request(self.url, None, self._headers)
-			with open(tmpfile, 'w') as o, contextlib.closing(urllib2.urlopen(request, timeout=self.downloadTimeout)) as i:
-				encoding = i.info().get('Content-Encoding')
-				if encoding == 'gzip':
-					buf = StringIO(i.read())
-					f = gzip.GzipFile(fileobj=buf)
-					data = f.read()
-				elif encoding == 'deflate':
-					data = zlib.decompress(i.read())
-				else:
-					data = i.read()
-				o.write(data)
-			os.rename(tmpfile, self.file)
-			if self.successCallback:
-				self.successCallback('')
-		except urllib2.URLError as e:
-			if fileExists(tmpfile):
-				os.remove(tmpfile)
-			if self.failureCallback:
-				self.failureCallback(e)
+def downloadPage(url, destfilename, headers={'accept': '*/*'}, agent='curl/7.74.0', timeout=10, **kwargs):
+	url = str.encode(url)
+	headers = {str.encode(k): str.encode(v) for k, v in headers.items()}
+	agent = str.encode(agent)
+	return client.downloadPage(url, destfilename, headers=headers, agent=agent, timeout=timeout, **kwargs)
 
 
 class IMDBChannelSelection(SimpleChannelSelection):
@@ -229,14 +184,14 @@ class IMDB(Screen, HelpableScreen):
 		</screen>"""
 
 	# Some HTML entities as utf-8
-	NBSP = unichr(htmlentitydefs.name2codepoint['nbsp']).encode("utf8")
-	RAQUO = unichr(htmlentitydefs.name2codepoint['raquo']).encode("utf8")
-	HELLIP = unichr(htmlentitydefs.name2codepoint['hellip']).encode("utf8")
+	NBSP = encode_utf8(unichr(htmlentitydefs.name2codepoint['nbsp']))
+	RAQUO = encode_utf8(unichr(htmlentitydefs.name2codepoint['raquo']))
+	HELLIP = encode_utf8(unichr(htmlentitydefs.name2codepoint['hellip']))
+	BULL = encode_utf8(unichr(htmlentitydefs.name2codepoint['bull']))
 
 	mainDownloaded = 1 << 0
 	storylineDownloaded = 1 << 1
 	allDownloaded = mainDownloaded | storylineDownloaded
-	downloadedLock = threading.Lock()
 
 	def __init__(self, session, eventName, callbackNeeded=False, save=False, savepath=None, localpath=None):
 		Screen.__init__(self, session)
@@ -363,19 +318,19 @@ class IMDB(Screen, HelpableScreen):
 			'(?:.*?data-testid="plot-xl".*?>(?P<outline>.+?)</span)?'
 			#'(?:.*?<h3 class="ipc-title__text">(?P<g_synopsis>Storyline)</h3>.*?<div class="ipc-html-content-inner-div">(?P<synopsis>.+?)</div)?'
 			#'(?:.*?data-testid="storyline-plot-keywords">(?P<keywords>.+?)\d+\s+(?:mehr|more).*?</div>)?'
-			'(?:.*?<a.*?>(?P<g_tagline>Werbezeile|Taglines?)</a>.*?<li.*?<span.*?>(?P<tagline>.+?)<)?'
-			'(?:.*?<a.*?>(?P<g_cert>Altersfreigabe|Certificate|Motion Picture Rating \(MPAA\))</a>.*?<div.*?<ul.*?<li.*?<span.*?>(?P<cert>.*?)</span>)?'
+			#'(?:.*?<a.*?>(?P<g_tagline>Werbezeile|Taglines?)</a>.*?<li.*?<span.*?>(?P<tagline>.+?)<)?'
+			#'(?:.*?<a.*?>(?P<g_cert>Altersfreigabe|Certificate|Motion Picture Rating \(MPAA\))</a>.*?<div.*?<ul.*?<li.*?<span.*?>(?P<cert>.*?)</span>)?'
 			'(?:.*?<a.*?>(?P<g_trivia>Dies und das|Trivia)</a><div.*?<div.*?<div.*?<div.*?>(?P<trivia>.+?)</div>)?'
 			'(?:.*?<a.*?>(?P<g_goofs>Pannen|Goofs)</a><div.*?<div.*?<div.*?<div.*?>(?P<goofs>.+?)</div>)?'
 			'(?:.*?<a.*?>(?P<g_quotes>Dialogzitate|Quotes)</a><div.*?<div.*?<div.*?<div.*?>(?P<quotes>.+?)</div>)?'
 			'(?:.*?<a.*?>(?P<g_connections>Bez\S*?ge zu anderen Titeln|Connections)</a><div.*?<div.*?<div.*?<div.*?>(?P<connections>.+?)</div>)?'
-			'(?:.*?<h3.*?>(?P<g_comments>Nutzerkommentare|User reviews).*?</h3>(?:.*?</svg>(?P<g_rating>[0-9]+?)<span class="ipc-rating-star--maxRating">/.*?(?P<g_maxrating>[0-9]+?)</span>)?.*?<span.*?review-summary.*?>(?P<commenttitle>.*?)</span>.*?<div class="ipc-html-content-inner-div">(?P<comment>.+?)</div>.*?<a.*?"author-link">(?P<commenter>.+?)</a>)?' # no match, slow
+			'(?:.*?<h3.*?>(?P<g_comments>Nutzerkommentare|User reviews).*?</h3>(?:.*?</svg>(?P<g_rating>[0-9]+?)<span class="ipc-rating-star--maxRating">/.*?(?P<g_maxrating>[0-9]+?)</span>)?.*?<span.*?review-summary.*?>(?P<commenttitle>.*?)</span>.*?<div class="ipc-html-content-inner-div">(?P<comment>.+?)</div>.*?<a.*?"author-link".*?>(?P<commenter>.+?)</a>)?'
 			'(?:.*?<span.*?>(?P<g_language>Sprachen?|Languages?)</span>.*?<div.*?<ul.*?>(?P<language>.*?)</ul>)?'
 			'(?:.*?<a.*?>(?P<g_locations>Drehorte?|Filming locations?)</a>.*?<div.*?<ul.*?>(?P<locations>.*?)</ul>)?'
 			'(?:.*?<a.*?>(?P<g_company>Firm\S*?|Production compan.*?)</a>.*?<div.*?<ul.*?>(?P<company>.*?)</ul>)?'
 			'(?:.*?<span.*?>(?P<g_runtime>L\S*?nge|Runtime)</span>.*?<div.*?>(?P<runtime>.*?)</div>)?'
 			'(?:.*?<span.*?>(?P<g_color>Farbe|Color)</span>.*?<a.*?>(?P<color>.*?)</a>)?'
-			'(?:.*?<span.*?>(?P<g_sound>Tonverfahren|Sound mix)</span>.*?<div.*?<ul.*?>(?P<sound>.*?)</ul>)?'
+			#'(?:.*?<span.*?>(?P<g_sound>Tonverfahren|Sound mix)</span>.*?<div.*?<ul.*?>(?P<sound>.*?)</ul>)?'
 			'(?:.*?<span.*?>(?P<g_aspect>Seitenverh\S*?ltnis|Aspect ratio)</span>.*?<div.*?<ul.*?<li.*?<span.*?>(?P<aspect>.*?)</span>)?', re.DOTALL)
 
 			self.storylinemask = re.compile('id="plot-summaries-content".*?<p>(.*?<div class="author-container">.*?)</div>', re.DOTALL)
@@ -416,7 +371,7 @@ class IMDB(Screen, HelpableScreen):
 			self["extralabel"].pageDown()
 
 	def showMenu(self):
-		if (self.Page is 1 or self.Page is 2) and self.resultlist:
+		if (self.Page == 1 or self.Page == 2) and self.resultlist:
 			self["menu"].show()
 			self["stars"].hide()
 			self["starsbg"].hide()
@@ -457,10 +412,9 @@ class IMDB(Screen, HelpableScreen):
 			localfile2 = "/tmp/imdbquery-storyline.html"
 			fetchurl2 = "https://www.imdb.com/title/" + link + "/plotsummary"
 			print("[IMDB] showDetails() downloading query " + fetchurl2 + " to " + localfile2)
-			with self.downloadedLock:
-				self.downloaded = 0
-			Downloader(fetchurl, localfile).addSuccessCallback(self.IMDBmainDownloaded).addFailureCallback(self.http_failed).start()
-			Downloader(fetchurl2, localfile2).addSuccessCallback(self.IMDBstorylineDownloaded).addFailureCallback(self.http_failed).start()
+			self.downloaded = 0
+			downloadPage(fetchurl, localfile).addCallback(self.IMDBmainDownloaded).addErrback(self.http_failed)
+			downloadPage(fetchurl2, localfile2).addCallback(self.IMDBstorylineDownloaded).addErrback(self.http_failed)
 			self.fetchurl = fetchurl
 			self["menu"].hide()
 			self.resetLabels()
@@ -521,8 +475,8 @@ class IMDB(Screen, HelpableScreen):
 			if self.savingpath is not None:
 				isave = self.savingpath + ".imdbquery2.html"
 				if self.fetchurl is not None:
-					Downloader(self.fetchurl, isave).addSuccessCallback(self.IMDBsave).addFailureCallback(self.http_failed).start()
-		except Exception, e:
+					downloadPage(self.fetchurl, isave).addCallback(self.IMDBsave).addErrback(self.http_failed)
+		except Exception as e:
 			print('[IMDb] saveHtmlDetails exception failure: ', str(e))
 
 	def saveTxtDetails(self):
@@ -534,7 +488,7 @@ class IMDB(Screen, HelpableScreen):
 				else:
 					from Screens.MessageBox import MessageBox
 					self.session.open(MessageBox, (_('IMDb can not get Movie Information to write to .txt file!')), MessageBox.TYPE_INFO, 10)
-		except Exception, e:
+		except Exception as e:
 			print('[IMDb] saveTxtDetails exception failure: ', str(e))
 
 	def savePosterTxtDetails(self):
@@ -546,7 +500,7 @@ class IMDB(Screen, HelpableScreen):
 				else:
 					from Screens.MessageBox import MessageBox
 					self.session.open(MessageBox, (_('IMDb can not get Movie Information to write to .jpg and .txt files!')), MessageBox.TYPE_INFO, 10)
-		except Exception, e:
+		except Exception as e:
 			print('[IMDb] savePosterTxtDetails exception failure: ', str(e))
 
 	def IMDBsave(self, string):
@@ -570,19 +524,19 @@ class IMDB(Screen, HelpableScreen):
 				try:
 					text = ' '.join(self.htmltags.sub('', extrainfos.group("synopsis").replace("\n", ' ').replace("<br>", '\n').replace("<br />", '\n')).replace(' |' + self.NBSP, '').replace(self.NBSP, ' ').split()) + "\n"
 					overview = _("Content:") + " " + text
-				except Exception, e:
+				except Exception as e:
 					print('[IMDb] IMDBsavetxt exception failure in get overview: ', str(e))
 					overview = (_("Content:"))
-#				print'[IMDb] IMDBsavetxt overview: ', overview
+#				print('[IMDb] IMDBsavetxt overview: ', overview)
 
 				# get entry 2 = Runtime
 				try:
 					time = ' '.join(self.htmltags.sub('', extrainfos.group(category).replace("\n", ' ').replace("<br>", '\n').replace("<br />", '\n')).replace(' |' + self.NBSP, '').replace(self.NBSP, ' ').split())
 					runtime = _("Runtime:") + " " + time
-				except Exception, e:
+				except Exception as e:
 					print('[IMDb] IMDBsavetxt exception failure in get runtime: ', str(e))
 					runtime = (_("Runtime:"))
-#				print'[IMDb] IMDBsavetxt runtime: ', runtime
+#				print('[IMDb] IMDBsavetxt runtime: ', runtime)
 
 			# get entry 3 = Genre
 			genreblock = self.genreblockmask.search(self.inhtml)
@@ -592,25 +546,25 @@ class IMDB(Screen, HelpableScreen):
 					genre = _("Genre:") + " " + genres
 			else:
 				genre = (_("Genre:"))
-#			print'[IMDb] IMDBsavetxt genre: ', genre
+#			print('[IMDb] IMDBsavetxt genre: ', genre)
 
 			# get entry 4 = Country
 			try:
 				land = ' '.join(self.htmltags.sub('', self.generalinfos.group("country").replace('\n', ' ')).split())
 				country = _("Production Countries:") + " " + land
-			except Exception, e:
+			except Exception as e:
 				print('[IMDb] IMDBsavetxt exception failure in get country: ', str(e))
 				country = (_("Production Countries:"))
-#			print'[IMDb] IMDBsavetxt country: ', country
+#			print('[IMDb] IMDBsavetxt country: ', country)
 
 			# get entry 5 = ReleaseDate
 			try:
 				date = ' '.join(self.htmltags.sub('', self.generalinfos.group("premiere").replace('\n', ' ')).split())
 				release = _("Release Date:") + " " + date
-			except Exception, e:
+			except Exception as e:
 				print('[IMDb] IMDBsavetxt exception failure in get release: ', str(e))
 				release = (_("Release Date:"))
-#			print'[IMDb] IMDBsavetxt release: ', release
+#			print('[IMDb] IMDBsavetxt release: ', release)
 
 			# get entry 5 = Vote
 			ratingtext = self.ratingmask.search(self.inhtml)
@@ -621,7 +575,7 @@ class IMDB(Screen, HelpableScreen):
 					rating = _("User Rating") + ": " + text
 			else:
 				rating = (_("User Rating") + ": ")
-#			print'[IMDb] IMDBsavetxt rating: ', rating
+#			print('[IMDb] IMDBsavetxt rating: ', rating)
 
 			# get the poster.jpg
 			if poster:
@@ -631,8 +585,8 @@ class IMDB(Screen, HelpableScreen):
 						posterurl = posterurl.group(1)
 						postersave = self.savingpath + ".poster.jpg"
 						print("[IMDB] downloading poster " + posterurl + " to " + postersave)
-						Downloader(posterurl, postersave).addFailureCallback(self.http_failed).start()
-				except Exception, e:
+						downloadPage(posterurl, postersave).addErrback(self.http_failed)
+				except Exception as e:
 					print('[IMDb] IMDBsavetxt exception failure in get poster: ', str(e))
 
 		return overview + "\n\n" + runtime + "\n" + genre + "\n" + country + "\n" + release + "\n" + rating + "\n"
@@ -717,7 +671,7 @@ class IMDB(Screen, HelpableScreen):
 				localfile = "/tmp/imdbquery.html"
 				fetchurl = "https://www.imdb.com/find?s=tt&q=" + quoteEventName(self.eventName)
 				print("[IMDB] getIMDB() Downloading Query " + fetchurl + " to " + localfile)
-				Downloader(fetchurl, localfile).addSuccessCallback(self.IMDBquery).addFailureCallback(self.http_failed).start()
+				downloadPage(fetchurl, localfile).addCallback(self.IMDBquery).addErrback(self.http_failed)
 
 			else:
 				self["statusbar"].setText(_("Could't get event name"))
@@ -745,14 +699,9 @@ class IMDB(Screen, HelpableScreen):
 			if key not in entitydict:
 				entitydict[key] = x.group(1)
 
-		if 'charset="utf-8"' in in_html or 'charset=utf-8' in in_html or 'charSet="utf-8"' in in_html or 'charSet=utf-8' in in_html:
-			for key, codepoint in iteritems(entitydict):
-				in_html = in_html.replace(key, unichr(int(codepoint)).encode('utf8'))
-			return in_html
-		else:
-			for key, codepoint in iteritems(entitydict):
-				in_html = in_html.replace(key, unichr(int(codepoint)).encode('latin-1', 'ignore'))
-			return in_html.decode('latin-1').encode('utf8')
+		for key, codepoint in iteritems(entitydict):
+			in_html = in_html.replace(key, encode_utf8(unichr(int(codepoint))))
+		return in_html
 
 	def IMDBquery(self, string):
 		self["statusbar"].setText(_("IMDb Download completed"))
@@ -781,10 +730,9 @@ class IMDB(Screen, HelpableScreen):
 					fetchurl = "https://www.imdb.com/title/" + quoteEventName(self.eventName) + "/"
 					localfile2 = "/tmp/imdbquery-storyline.html"
 					fetchurl2 = "https://www.imdb.com/title/" + quoteEventName(self.eventName) + "/plotsummary"
-					with self.downloadedLock:
-						self.downloaded = 0
-					Downloader(fetchurl, localfile).addSuccessCallback(self.IMDBmainDownloaded).addFailureCallback(self.http_failed).start()
-					Downloader(fetchurl2, localfile2).addSuccessCallback(self.IMDBstorylineDownloaded).addFailureCallback(self.http_failed).start()
+					self.downloaded = 0
+					downloadPage(fetchurl, localfile).addCallback(self.IMDBmainDownloaded).addErrback(self.http_failed)
+					downloadPage(fetchurl2, localfile2).addCallback(self.IMDBstorylineDownloaded).addErrback(self.http_failed)
 				elif Len > 1:
 					self.Page = 1
 					self.showMenu()
@@ -799,7 +747,7 @@ class IMDB(Screen, HelpableScreen):
 					# event_quoted = quoteEventName(self.eventName)
 					localfile = "/tmp/imdbquery.html"
 					fetchurl = "https://www.imdb.com/find?s=tt&q=" + quoteEventName(self.eventName)
-					Downloader(fetchurl, localfile).addSuccessCallback(self.IMDBquery).addFailureCallback(self.http_failed).start()
+					downloadPage(fetchurl, localfile).addCallback(self.IMDBquery).addErrback(self.http_failed)
 				else:
 					self["detailslabel"].setText(_("IMDb query failed!"))
 
@@ -812,16 +760,14 @@ class IMDB(Screen, HelpableScreen):
 		self["statusbar"].setText(text)
 
 	def IMDBmainDownloaded(self, string):
-		with self.downloadedLock:
-			self.downloaded |= self.mainDownloaded
-			if self.downloaded == self.allDownloaded:
-				self.IMDBquery2('')
+		self.downloaded |= self.mainDownloaded
+		if self.downloaded == self.allDownloaded:
+			self.IMDBquery2('')
 
 	def IMDBstorylineDownloaded(self, string):
-		with self.downloadedLock:
-			self.downloaded |= self.storylineDownloaded
-			if self.downloaded == self.allDownloaded:
-				self.IMDBquery2('')
+		self.downloaded |= self.storylineDownloaded
+		if self.downloaded == self.allDownloaded:
+			self.IMDBquery2('')
 
 	def IMDBquery2(self, string):
 		self["statusbar"].setText(_("IMDb Re-Download completed"))
@@ -908,10 +854,10 @@ class IMDB(Screen, HelpableScreen):
 					Casttext += "\n" + extra_space + self.htmltags.sub('', x.group('actor'))
 					if x.group('character'):
 						chartext = self.htmltags.sub(' ', x.group('character').replace('/ ...', '')).replace('\n', ' ').replace(self.NBSP, ' ')
-						Casttext += _(" as ") + ' '.join(chartext.split()).replace('…', '')
+						Casttext += _(" as ") + ' '.join(chartext.split()).replace(self.HELLIP, '')
 						try:
 							if config.plugins.imdb.showepisodeinfo.value and x.group('episodes'):
-								Casttext += ' [' + self.htmltags.sub('', re.sub(r"[0-9]+ eps", "", x.group('episodes')).replace(' • ', ', ')).strip() + ']'
+								Casttext += ' [' + self.htmltags.sub('', re.sub(r"[0-9]+ eps", "", x.group('episodes')).replace(' ' + self.BULL + ' ', ', ')).strip() + ']'
 						except IndexError:
 							pass
 					i += 1
@@ -929,7 +875,7 @@ class IMDB(Screen, HelpableScreen):
 				self["statusbar"].setText(_("Downloading Movie Poster..."))
 				localfile = "/tmp/poster.jpg"
 				print("[IMDB] downloading poster " + posterurl + " to " + localfile)
-				Downloader(posterurl, localfile).addSuccessCallback(self.IMDBPoster).addFailureCallback(self.http_failed).start()
+				downloadPage(posterurl, localfile).addCallback(self.IMDBPoster).addErrback(self.http_failed)
 			else:
 				self.IMDBPoster("kein Poster")
 
@@ -1176,7 +1122,7 @@ class IMDbSetup(Screen, ConfigListScreen):
 		for pl in pluginlist:
 			if not pl[0].value:
 				for plugin in plugins.getPlugins(pl[1].where):
-					if plugin is pl[1]:
+					if plugin == pl[1]:
 						plugins.removePlugin(plugin)
 
 		plugins.readPluginList(resolveFilename(SCOPE_PLUGINS))
@@ -1212,7 +1158,7 @@ def movielistSearch(session, service, **kwargs):
 	eventName = info and info.getName(service) or ''
 	(root, ext) = os.path.splitext(eventName)
 	if ext in KNOWN_EXTENSIONS:
-		print"#####################", ext
+		print("#####################", ext)
 		eventName = re.sub("[\W_]+", ' ', root.decode("utf8"), 0, re.LOCALE | re.UNICODE).encode("utf8")
 	session.open(IMDB, eventName)
 
