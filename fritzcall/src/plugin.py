@@ -230,7 +230,6 @@ def initAvon():
 	avonFileName = resolveFilename(SCOPE_PLUGINS, "Extensions/FritzCall/avon.dat")
 	if os.path.exists(avonFileName):
 		for line in open(avonFileName):
-			line = line.decode("iso-8859-1").encode('utf-8')
 			if line[0] == '#':
 				continue
 			parts = line.split(':')
