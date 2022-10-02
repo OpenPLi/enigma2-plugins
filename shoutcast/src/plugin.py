@@ -1014,7 +1014,7 @@ class SHOUTcastWidget(Screen):
 				title = _("Title: %s") % sTitle
 				print("[SHOUTcast] Title: %s " % title)
 				self["titel"].setText(title)
-				self.summaries.setText(title)
+				self.summaries.setText(self.currentStreamingStation, title)
 			else:
 				print("[SHOUTcast] Ignoring useless updated info provided by streamengine!")
 
@@ -1231,8 +1231,10 @@ class SHOUTcastLCDScreen(Screen):
 		self["text1"] = Label("SHOUTcast")
 		self["text2"] = Label("")
 
-	def setText(self, text):
-		self["text2"].setText(text[0:39])
+	def setText(self, text1, text2=None):
+		self["text1"].setText(text1[0:39])
+		if text2 != None:
+			self["text2"].setText(text2[0:39])
 
 
 class SHOUTcastSetup(Screen, ConfigListScreen):
