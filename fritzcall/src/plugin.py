@@ -1007,13 +1007,13 @@ class FritzMenu(Screen, HelpableScreen):
 
 			if ipAddress:
 				if upTime:
-					self["FBFInternet"].setText('Internet ' + _('IP Address:') + ' ' + ipAddress + '\n' + _('Connected since') + ' ' + upTime)
+					self["FBFInternet"].setText(str('Internet ' + _('IP Address:') + ' ' + ipAddress + '\n' + _('Connected since') + ' ' + upTime))
 				else:
-					self["FBFInternet"].setText('Internet ' + _('IP Address:') + ' ' + ipAddress)
+					self["FBFInternet"].setText(str('Internet ' + _('IP Address:') + ' ' + ipAddress))
 				self["internet_inactive"].hide()
 				self["internet_active"].show()
 			elif upTime:
-				self["FBFInternet"].setText(_('Connected since') + ' ' + upTime)
+				self["FBFInternet"].setText(str(_('Connected since') + ' ' + upTime))
 				self["internet_inactive"].hide()
 				self["internet_active"].show()
 			else:
@@ -1057,7 +1057,7 @@ class FritzMenu(Screen, HelpableScreen):
 							message = message + ', ' + wlanState[2] + ' ' + _('devices active')
 					if len(wlanState) == 4:
 						message = message + ", " + wlanState[3]
-					self["FBFWlan"].setText(message)
+					self["FBFWlan"].setText(str(message))
 				else:
 					self["wlan_active"].hide()
 					self["wlan_inactive"].show()
@@ -1084,9 +1084,9 @@ class FritzMenu(Screen, HelpableScreen):
 					self["mailbox_inactive"].hide()
 					self["mailbox_active"].show()
 					if tamActive[0] == 1:
-						self["FBFMailbox"].setText(_('One mailbox active') + ' ' + message)
+						self["FBFMailbox"].setText(str(_('One mailbox active') + ' ' + message))
 					else:
-						self["FBFMailbox"].setText(str(tamActive[0]) + ' ' + _('mailboxes active') + ' ' + message)
+						self["FBFMailbox"].setText(str(tamActive[0]) + ' ' + _('mailboxes active') + ' ' + str(message))
 
 			if dectActive and "dect_inactive" in self:
 				self["dect_inactive"].hide()
@@ -1129,7 +1129,7 @@ class FritzMenu(Screen, HelpableScreen):
 			if guestAccess:
 				self["gast_inactive"].hide()
 				self["gast_active"].show()
-				self["FBFGast"].setText(_('Guest access on ') + guestAccess)
+				self["FBFGast"].setText(str(_('Guest access on ') + guestAccess))
 			else:
 				self["gast_active"].hide()
 				self["gast_inactive"].show()
@@ -1475,7 +1475,7 @@ class FritzDisplayCalls(Screen, HelpableScreen):
 
 	def updateStatus(self, text):
 		if "statusbar" in self:
-			self["statusbar"].setText(_("Getting calls from FRITZ!Box...") + ' ' + text)
+			self["statusbar"].setText(_("Getting calls from FRITZ!Box...") + ' ' + str(text))
 
 	def showEntry(self):
 		debug("[FritzDisplayCalls]")
@@ -1701,7 +1701,7 @@ class FritzOfferAction(Screen):
 
 	def _setTextAndResize(self, message):
 		self["text"].instance.resize(eSize(*(DESKTOP_WIDTH, DESKTOP_HEIGHT)))
-		self["text"].setText(self._number + "\n\n" + message)
+		self["text"].setText(str(self._number) + "\n\n" + str(message))
 		self._finishLayout()
 
 	def _lookup(self):
@@ -3192,8 +3192,8 @@ def notifyCall(event, date, number, caller, phone, connID): # @UnusedVariable # 
 	elif config.plugins.FritzCall.afterStandby.value == "inList":
 		#
 		# if not yet done, register function to show call list
+		global standbyMode
 		if not standbyMode:
-			global standbyMode
 			standbyMode = True
 			Standby.inStandby.onHide.append(callList.display)  # @UndefinedVariable
 		# add text/timeout to call list
