@@ -1795,13 +1795,7 @@ class FritzCallPhonebook(object):
 				# read json
 				debug("[FritzCallPhonebook] read " + phonebookFilename)
 
-				try:
-					for k, v in json.loads(open(phonebookFilename).read().decode("utf-8")).items():
-						# TODO if we change the value to a list of lines, we have to adapt this here
-						self.phonebook[k.encode("utf-8")] = v.encode("utf-8")
-				except (ValueError, UnicodeError, IOError) as e:
-					error("[FritzCallPhonebook] Could not load %s: %s", phonebookFilename, str(e))
-					Notifications.AddNotification(MessageBox, _("Could not load phonebook: %s") % (phonebookFilename + ": " + str(e)), type=MessageBox.TYPE_ERROR)
+				self.phonebook = json.loads(open(phonebookFilename).read())
 
 				# debug(repr(self.phonebook))
 			elif os.path.exists(phonebookFilenameOld):  # read old format and dump to json
@@ -1810,18 +1804,6 @@ class FritzCallPhonebook(object):
 				self.phonebook = {}
 				for line in open(phonebookFilenameOld):
 					# debug("[FritzCallPhonebook] got line from Phonebook.txt: %s" % ___(line))
-					try:
-						# Beware: strings in phonebook.phonebook have to be in utf-8!
-						line = line.decode("utf-8")
-					except UnicodeDecodeError:  # this is just for the case, somebody wrote latin1 chars into PhoneBook.txt
-						try:
-							line = line.decode("iso-8859-1")
-							debug("[FritzCallPhonebook] Fallback to ISO-8859-1 in %s", line)
-							phonebookTxtCorrupt = True
-						except UnicodeDecodeError:
-							error("[FritzCallPhonebook] Could not parse internal Phonebook Entry %s", line)
-							phonebookTxtCorrupt = True
-					line = line.encode("utf-8")
 					elems = line.split('#')
 					if len(elems) == 2:
 						try:
@@ -1841,15 +1823,15 @@ class FritzCallPhonebook(object):
 						os.rename(phonebookFilenameOld, phonebookFilenameOld + ".bck")
 						fNew = open(phonebookFilenameOld, 'w')
 						# Beware: strings in phonebook.phonebook are utf-8!
-						for (number, name) in self.phonebook.iteritems():
+						for (number, name) in self.phonebook.items():
 							# Beware: strings in PhoneBook.txt have to be in utf-8!
-							fNew.write(number + "#" + name.encode("utf-8"))
+							fNew.write(number + "#" + name)
 						fNew.close()
 					except (IOError, OSError):
 						error("[FritzCallPhonebook] error renaming or writing to %s", phonebookFilenameOld)
 
 				os.rename(phonebookFilenameOld, phonebookFilenameOld + ".old")
-				json.dump(self.phonebook, open(phonebookFilename, "w"), ensure_ascii=False, encoding="utf-8", indent=0, separators=(',', ': '), sort_keys=True)
+				json.dump(self.phonebook, open(phonebookFilename, "w"), ensure_ascii=False, indent=0, separators=(',', ': '), sort_keys=True)
 
 		if fritzbox:
 			if config.plugins.FritzCall.fritzphonebook.value:
@@ -1948,14 +1930,12 @@ class FritzCallPhonebook(object):
 					phonebookFilename = os.path.join(config.plugins.FritzCall.phonebookLocation.value, "PhoneBook.json")
 					# check whether PhoneBook.json exists, if not drop empty JSOn file
 					if not os.path.isfile(phonebookFilename):
-						json.dump({}, open(phonebookFilename, "w"), ensure_ascii=False, encoding="utf-8", indent=0, separators=(',', ': '), sort_keys=True)
+						json.dump({}, open(phonebookFilename, "w"), ensure_ascii=False, indent=0, separators=(',', ': '), sort_keys=True)
 						info("[FritzCallPhonebook] empty Phonebook.json created")
 
-					phonebookTmp = {}
-					for k, v in json.loads(open(phonebookFilename).read().decode("utf-8")).items():
-						phonebookTmp[k.encode("utf-8")] = v.encode("utf-8")
+					phonebookTmp = json.loads(open(phonebookFilename).read())
 					phonebookTmp[number] = name
-					json.dump(phonebookTmp, open(phonebookFilename, "w"), ensure_ascii=False, encoding="utf-8", indent=0, separators=(',', ': '), sort_keys=True)
+					json.dump(phonebookTmp, open(phonebookFilename, "w"), ensure_ascii=False, indent=0, separators=(',', ': '), sort_keys=True)
 					info("[FritzCallPhonebook] added %s with %s to Phonebook.json", number, name.strip())
 					return True
 				except IOError:
@@ -1985,16 +1965,14 @@ class FritzCallPhonebook(object):
 					phonebookFilename = os.path.join(config.plugins.FritzCall.phonebookLocation.value, "PhoneBook.json")
 					# check whether PhoneBook.json exists, if not drop empty JSOn file
 					if not os.path.isfile(phonebookFilename):
-						json.dump({}, open(phonebookFilename, "w"), ensure_ascii=False, encoding="utf-8", indent=0, separators=(',', ': '), sort_keys=True)
+						json.dump({}, open(phonebookFilename, "w"), ensure_ascii=False, indent=0, separators=(',', ': '), sort_keys=True)
 						info("[FritzCallPhonebook] empty Phonebook.json created")
 						return True
 
-					phonebookTmp = {}
-					for k, v in json.loads(open(phonebookFilename).read().decode("utf-8")).items():
-						phonebookTmp[k.encode("utf-8")] = v.encode("utf-8")
+					phonebookTmp = json.loads(open(phonebookFilename).read())
 					if number in phonebookTmp:
 						del phonebookTmp[number]
-						json.dump(phonebookTmp, open(phonebookFilename, "w"), ensure_ascii=False, encoding="utf-8", indent=0, separators=(',', ': '), sort_keys=True)
+						json.dump(phonebookTmp, open(phonebookFilename, "w"), ensure_ascii=False, indent=0, separators=(',', ': '), sort_keys=True)
 						info("[FritzCallPhonebook] removed %s from Phonebook.json", number)
 					return True
 
@@ -2211,36 +2189,22 @@ class FritzCallPhonebook(object):
 			debug("[FritzDisplayPhonebook]")
 			self.sortlist = []
 			# Beware: strings in phonebook.phonebook are utf-8!
-			sortlistHelp = sorted((name.lower(), name, number) for (number, name) in phonebook.phonebook.iteritems())
+			sortlistHelp = sorted((name.lower(), name, number) for (number, name) in phonebook.phonebook.items())
 			for (low, name, number) in sortlistHelp:
 				if number == "01234567890":
 					continue
-				try:
-					low = low.decode("utf-8")
-				except UnicodeDecodeError:  # this should definitely not happen
-					try:
-						low = low.decode("iso-8859-1")
-					except UnicodeDecodeError:
-						error("[FritzDisplayPhonebook] displayPhonebook/display: corrupt phonebook entry for %s", number)
-						# self.session.open(MessageBox, _("Corrupt phonebook entry\nfor number %s\nDeleting.") %number, type = MessageBox.TYPE_ERROR)
-						phonebook.remove(number)
+				if filterNumber:
+					filterNumber = filterNumber.lower()
+					if low.find(filterNumber) == -1:
 						continue
+				name = name.strip()
+				number = number.strip()
+				comma = name.find(',')
+				if comma != -1:
+					shortname = name[:comma]
 				else:
-					if filterNumber:
-						filterNumber = filterNumber.lower()
-						if low.find(filterNumber) == -1:
-							continue
-					name = name.strip().decode("utf-8")
-					number = number.strip().decode("utf-8")
-					comma = name.find(',')
-					if comma != -1:
-						shortname = name[:comma]
-					else:
-						shortname = name
-					number = number.encode("utf-8", "replace")
-					name = name.encode("utf-8", "replace")
-					shortname = shortname.encode('utf-8', 'replace')
-					self.sortlist.append((name, shortname, number))
+					shortname = name
+				self.sortlist.append((name, shortname, number))
 
 			self["entries"].setList(self.sortlist)
 
@@ -3318,7 +3282,7 @@ class FritzProtocol(LineReceiver):  # pylint: disable=W0223
 # 15.07.06 00:38:58;DISCONNECT;1;0;
 # 15.07.06 00:39:22;RING;0;<from/extern>;<to/our msn>;
 # 15.07.06 00:39:27;DISCONNECT;0;0;
-		anEvent = line.split(';')
+		anEvent = line.decode("utf-8").split(';')
 		(self.date, self.event) = anEvent[0:2]
 		self.connID = anEvent[2]
 
