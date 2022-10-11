@@ -233,7 +233,7 @@ class AutomaticVolumeAdjustmentEntryList(MenuList):
 
 	def buildList(self):
 		sx, sy, sw, sh = skin.parameters.get("AutomaticVolumeAdjustmentEntryList0", (5, 0, 350, 20))
-		vx, vy, vw, vh = skin.parameters.get("AutomaticVolumeAdjustmentEntryList1", (355, 0, 200, 20))
+		vx, vy, vw, vh = skin.parameters.get("AutomaticVolumeAdjustmentEntryList1", (355, 0, 160, 20))
 		list = []
 		for c in self.configVA.config.Entries:
 			c.name.value = ServiceReference(eServiceReference(c.servicereference.value)).getServiceName()
