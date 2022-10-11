@@ -27,7 +27,7 @@ from Components.ServiceEventTracker import ServiceEventTracker
 from enigma import iPlayableService, iServiceInformation, eDVBVolumecontrol, eServiceCenter, eServiceReference
 from ServiceReference import ServiceReference
 from Components.VolumeControl import VolumeControl
-from AutomaticVolumeAdjustmentConfig import AutomaticVolumeAdjustmentConfig, getVolumeDict
+from .AutomaticVolumeAdjustmentConfig import AutomaticVolumeAdjustmentConfig, getVolumeDict
 
 
 class AutomaticVolumeAdjustment(Screen):
@@ -222,7 +222,7 @@ def AVA_setVolume(self, direction):
 	if direction > 0:
 		oldvol = self.volctrl.getVolume()
 		if not AutomaticVolumeAdjustment.instance.currentAC3DTS:
-			if oldvol + 1 > self.maxVolume:
+			if oldvol + 1 > int(self.maxVolume):
 				ok = False
 				self.volumeDialog.setValue(oldvol)
 				self.volumeDialog.show()

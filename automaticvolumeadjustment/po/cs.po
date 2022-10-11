@@ -1,0 +1,106 @@
+# English translations for enigma2-plugins package.
+# Copyright (C) 2012 THE enigma2-plugins'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the enigma2-plugins package.
+# Automatically generated, 2012.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Enigma2 EPGRefresh Plugin\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-08-11 09:52+0200\n"
+"PO-Revision-Date: 2022-10-11 14:43+0200\n"
+"Last-Translator: IMS <ims@openpli.org>\n"
+"Language-Team: PLi\n"
+"Language: cs_CZ\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n>=2 && n<=4 ? 1 : 2);\n"
+"X-Poedit-Basepath: .\n"
+"X-Generator: Poedit 3.1.1\n"
+"X-Poedit-SearchPath-0: D:/Dreambox/Plugins/enigma2-plugins/epgrefresh/src\n"
+
+#, python-format
+msgid "%s plugin only this session?"
+msgstr ""
+
+msgid "Add"
+msgstr "Přidat"
+
+msgid "Adjustment value"
+msgstr "Nastavená hodnota"
+
+msgid "Automatic Volume Adjustment"
+msgstr "Automatické nastavování hlasitosti"
+
+msgid "Automatic Volume Adjustment - Config"
+msgstr "Automatické nastavování hlasitosti - Nastavení"
+
+msgid "Automatic Volume Adjustment - Entry Config"
+msgstr "Automatické nastavování hlasitosti - Entry Config"
+
+msgid "Automatic Volume Adjustment - Service Config"
+msgstr "Automatické nastavování hlasitosti - Nastavení programů"
+
+msgid "Automatic volume adjust"
+msgstr "Automatické nastavení hlasitosti"
+
+msgid "Cancel"
+msgstr "Zrušit"
+
+msgid "Channel Selection"
+msgstr ""
+
+msgid "Default volume adjustment value for AC3/DTS"
+msgstr "Výchozí hodnota hlasitosti pro AC3/DTS"
+
+msgid "Delete"
+msgstr "Smazat"
+
+msgid "Disable"
+msgstr "Zakázat"
+
+msgid "Do you really want to delete this entry?"
+msgstr "Opravdu chcete odstranit tuto položku?"
+
+msgid "Edit"
+msgstr "Upravit"
+
+msgid "Enable"
+msgstr "Povolit"
+
+msgid "Max. volume for mpeg audio"
+msgstr "Max. hlasitost pro mpeg audio"
+
+msgid "Modus"
+msgstr "Režim"
+
+msgid "OK"
+msgstr "OK"
+
+msgid "Press OK to select a service"
+msgstr "Stiskněte OK pro výběr programu"
+
+msgid "Remember service volume value"
+msgstr "Zapamatovat si nastavení hlasitosti programu"
+
+msgid "Servicename"
+msgstr "Program"
+
+msgid "Services"
+msgstr "Programy"
+
+msgid "Show on/off plugin only for session in Audio menu"
+msgstr ""
+
+msgid "Show volumebar when volume-value was changed"
+msgstr "Zobrazit volumebar při změně hlasitosti"
+
+msgid "You must select a valid service!"
+msgstr "Musíte zvolit platný program!"
+
+msgid "toggle on/off plugin only for session"
+msgstr ""
+
+msgid "Only AC3/DTS(HD)"
+msgstr "Pouze AC3/DTS(HD)"
