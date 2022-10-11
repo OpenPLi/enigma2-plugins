@@ -22,7 +22,7 @@
 # for localized messages
 from . import _
 
-from enigma import eListboxPythonMultiContent, gFont, RT_HALIGN_LEFT, RT_VALIGN_CENTER, eServiceReference
+from enigma import eListboxPythonMultiContent, gFont, RT_HALIGN_LEFT, RT_HALIGN_RIGHT, RT_VALIGN_CENTER, eServiceReference
 from Screens.Screen import Screen
 from Screens.MessageBox import MessageBox
 from Screens.ChannelSelection import SimpleChannelSelection
@@ -32,9 +32,9 @@ from Components.ActionMap import ActionMap
 from Components.ConfigList import ConfigListScreen
 from Components.config import getConfigListEntry, config
 from ServiceReference import ServiceReference
-from AutomaticVolumeAdjustment import AutomaticVolumeAdjustment
-from AutomaticVolumeAdjustmentConfig import AutomaticVolumeAdjustmentConfig
-
+from .AutomaticVolumeAdjustment import AutomaticVolumeAdjustment
+from .AutomaticVolumeAdjustmentConfig import AutomaticVolumeAdjustmentConfig
+import skin
 
 class AutomaticVolumeAdjustmentConfigScreen(ConfigListScreen, Screen):
 	skin = """
@@ -72,7 +72,7 @@ class AutomaticVolumeAdjustmentConfigScreen(ConfigListScreen, Screen):
 
 	def createSetup(self, widget):
 		self.list = []
-		self["key_blue"].text = ""
+		self["key_blue"].setText("")
 		self.config_enable = getConfigListEntry(_("Enable"), self.configVA.config.enable)
 		self.list.append(self.config_enable)
 		if self.configVA.config.enable.value:
@@ -82,7 +82,7 @@ class AutomaticVolumeAdjustmentConfigScreen(ConfigListScreen, Screen):
 				self.list.append(getConfigListEntry(_("Default volume adjustment value for AC3/DTS"), self.configVA.config.adustvalue))
 				self.list.append(getConfigListEntry(_("Max. volume for mpeg audio"), self.configVA.config.mpeg_max_volume))
 				self.list.append(getConfigListEntry(_("Only AC3/DTS(HD)"), self.configVA.config.type_audio))
-				self["key_blue"].text = _("Services")
+				self["key_blue"].setText(_("Services"))
 			else:
 				self.list.append(getConfigListEntry(_("Show volumebar when volume-value was changed"), self.configVA.config.show_volumebar))
 				self.list.append(getConfigListEntry(_("Show on/off plugin only for session in Audio menu"), config.misc.AV_audio_menu))
@@ -215,8 +215,10 @@ class AutomaticVolumeAdjustmentEntriesListConfigScreen(Screen):
 class AutomaticVolumeAdjustmentEntryList(MenuList):
 	def __init__(self, list, enableWrapAround=True):
 		MenuList.__init__(self, list, enableWrapAround, eListboxPythonMultiContent)
-		self.l.setFont(0, gFont("Regular", 20))
-		self.l.setFont(1, gFont("Regular", 18))
+		font = skin.fonts.get("AutomaticVolumeAdjustment0", ("Regular", 20))
+		self.l.setFont(0, gFont(font[0], font[1]))
+		font = skin.fonts.get("AutomaticVolumeAdjustment1", ("Regular", 18))
+		self.l.setFont(1, gFont(font[0], font[1]))
 		self.configVA = None
 
 	def postWidgetCreate(self, instance):
@@ -230,13 +232,15 @@ class AutomaticVolumeAdjustmentEntryList(MenuList):
 		self.configVA = configVA
 
 	def buildList(self):
+		sx, sy, sw, sh = skin.parameters.get("AutomaticVolumeAdjustmentEntryList0", (5, 0, 350, 20))
+		vx, vy, vw, vh = skin.parameters.get("AutomaticVolumeAdjustmentEntryList1", (355, 0, 200, 20))
 		list = []
 		for c in self.configVA.config.Entries:
 			c.name.value = ServiceReference(eServiceReference(c.servicereference.value)).getServiceName()
 			res = [
 				c,
-				(eListboxPythonMultiContent.TYPE_TEXT, 5, 0, 350, 20, 1, RT_HALIGN_LEFT | RT_VALIGN_CENTER, c.name.value),
-				(eListboxPythonMultiContent.TYPE_TEXT, 355, 0, 200, 20, 1, RT_HALIGN_LEFT | RT_VALIGN_CENTER, str(c.adjustvalue.value)),
+				(eListboxPythonMultiContent.TYPE_TEXT, sx, sy, sw, sh, 1, RT_HALIGN_LEFT | RT_VALIGN_CENTER, c.name.value),
+				(eListboxPythonMultiContent.TYPE_TEXT, vx, vy, vw, vh, 1, RT_HALIGN_RIGHT | RT_VALIGN_CENTER, str(c.adjustvalue.value)),
 			]
 			list.append(res)
 		self.list = list
