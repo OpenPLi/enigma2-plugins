@@ -652,14 +652,15 @@ class IMDB(Screen, HelpableScreen):
 			if event:
 				self.eventName = event.getEventName()
 			else:
-				self.eventName = self.session.nav.getCurrentlyPlayingServiceReference().toString()
-				self.eventName = self.eventName.split('/')
-				self.eventName = self.eventName[-1]
-				self.eventName = self.eventName.replace('.', ' ')
-				self.eventName = self.eventName.split('-')
-				self.eventName = self.eventName[0]
-				if self.eventName.endswith(' '):
-					self.eventName = self.eventName[:-1]
+				self.eventName = self.session.nav.getCurrentlyPlayingServiceReference() and self.session.nav.getCurrentlyPlayingServiceReference().toString() or ""
+				if self.eventName:
+					self.eventName = self.eventName.split('/')
+					self.eventName = self.eventName[-1]
+					self.eventName = self.eventName.replace('.', ' ')
+					self.eventName = self.eventName.split('-')
+					self.eventName = self.eventName[0]
+					if self.eventName.endswith(' '):
+						self.eventName = self.eventName[:-1]
 
 		if self.localpath is not None and not search:
 			if os.path.exists(self.localpath):
