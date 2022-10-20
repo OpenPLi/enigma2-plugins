@@ -18,18 +18,14 @@ msgstr "   (Авто переключение)"
 #, python-format
 msgid "%d:%02d min"
 msgid_plural "%d:%02d mins"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d:%02d мин"
+msgstr[1] "%d:%02d мин"
 
-#, fuzzy, python-format
+#, python-format
 msgid "... %d more service"
 msgid_plural "... %d more services"
-msgstr[0] ""
-"\n"
-"%d сервисов всего."
-msgstr[1] ""
-"\n"
-"%d сервисов всего."
+msgstr[0] "... %d больше сервисов"
+msgstr[1] "... %d больше сервисов"
 
 msgid "Adding schedule..."
 msgstr "Добавлено расписание..."
@@ -369,8 +365,8 @@ msgstr "Перезагрузка кеша EPG..."
 #, python-format
 msgid "Remaining %d service"
 msgid_plural "Remaining %d services"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Осталось %d сервисов"
+msgstr[1] "Осталось %d сервисов"
 
 msgid "Restart enigma2 to effectuate."
 msgstr "Для изменения этой настройки рестарт энигмы2 не требуется."
