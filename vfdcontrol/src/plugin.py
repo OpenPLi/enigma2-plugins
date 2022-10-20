@@ -193,7 +193,7 @@ class Channelnumber:
 		else:
 			MyRecLed = False
 			if self.blink:
-				eDBoxLCD.getInstance().setLCDBrightness(config.lcd.bright.value * 255 / 10)
+				eDBoxLCD.getInstance().setLCDBrightness(config.lcd.bright.value * 255 // 10)
 				self.blink = False
 
 
