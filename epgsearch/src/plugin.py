@@ -47,7 +47,7 @@ def EPGSearchSelection__init__(self, session, service, zapFunc=None, eventid=Non
 		self["epgsearch_actions"] = ActionMap(["EPGSelectActions"],
 				{
 					"blue": bluePressed,
-				})
+				}, -1)
 		if config.plugins.epgsearch.type_button_blue.value == "0":
 			self["key_blue"].text = _("Search")
 		elif config.plugins.epgsearch.type_button_blue.value == "1":
