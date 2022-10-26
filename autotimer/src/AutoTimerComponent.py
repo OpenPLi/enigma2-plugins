@@ -673,8 +673,8 @@ class AutoTimerComponent(object):
 					str(self.series_labeling),
 					str(self.series_save_filter),
 					str(self.conflict_detection),
-			 )),
-			 ")>"
+			)),
+			")>"
 		))
 
 
