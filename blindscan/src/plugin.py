@@ -137,8 +137,8 @@ XML_FILE = None
 # _supportNimType is only used by vuplus hardware
 _supportNimType = {'AVL1208': '', 'AVL6222': '6222_', 'AVL6211': '6211_', 'BCM7356': 'bcm7346_', 'SI2166': 'si2166_'}
 
-# For STBs that support multiple DVB-S tuner models, e.g. Solo 4K.
-_unsupportedNims = ('Vuplus DVB-S NIM(7376 FBC)', 'Vuplus DVB-S NIM(45308X FBC)', 'DVB-S2 NIM(45308 FBC)') # format = nim.description from nimmanager
+# For STBs that support PnP DVB-S/S2 tuner models, e.g. VU+Solo 4K,VU+Ultimo 4K,Gigablue UE/Quad 4K
+_unsupportedNims = ("Vuplus DVB-S NIM(7376 FBC)", "Vuplus DVB-S NIM(45308X FBC)", "DVB-S2 NIM(45308 FBC)", "DVB-S2 NIM(45208 FBC)", "DVB-S2X NIM(45308X FBC)", "DVB-S2 NIM(45308 FBC)") # format = nim.description from nimmanager
 
 # blindscan-s2 supported tuners
 _blindscans2Nims = ('TBS-5925', 'DVBS2BOX', 'M88DS3103')
@@ -316,6 +316,7 @@ class Blindscan(ConfigListScreen, Screen, TransponderFiltering):
 				self.satList.append(None)
 
 		# make config
+		self.getCurrentTuner = None
 		self.createConfig()
 
 		self.frontend = None
@@ -324,7 +325,6 @@ class Blindscan(ConfigListScreen, Screen, TransponderFiltering):
 		self.list = []
 		self.status = ""
 		self.onChangedEntry = []
-		self.getCurrentTuner = None
 		self.blindscan_session = None
 		self.tmpstr = ""
 		self.Sundtek_pol = ""
@@ -492,7 +492,12 @@ class Blindscan(ConfigListScreen, Screen, TransponderFiltering):
 			self.i2c_mapping_table = {0: 2, 1: 3, 2: 1, 3: 0}
 
 	def getNimSocket(self, slot_number):
-		return self.i2c_mapping_table.get(slot_number, -1)
+		bus = self.i2c_mapping_table.get(slot_number, -1)
+		if bus == -1:
+			I2CDevice = nimmanager.getI2CDevice(self.feid)
+			if I2CDevice != None:
+				bus = I2CDevice
+		return bus
 
 	def callbackNone(self, *retval):
 		None
@@ -518,7 +523,7 @@ class Blindscan(ConfigListScreen, Screen, TransponderFiltering):
 		if not self.openFrontend():
 			oldref = self.session.nav.getCurrentlyPlayingServiceReference()
 			stop_current_service = True
-			if oldref and self.getCurrentTuner is not None:
+			if oldref and self.getCurrentTuner != None:
 				if self.feid != self.getCurrentTuner:
 					stop_current_service = False
 			if stop_current_service:
@@ -639,7 +644,7 @@ class Blindscan(ConfigListScreen, Screen, TransponderFiltering):
 		for slot in nimmanager.nim_slots:
 			if slot.canBeCompatible("DVB-S"):
 				default_sat_pos = defaultSat["orbpos"]
-				if self.getCurrentTuner is not None and slot.slot != self.getCurrentTuner:
+				if self.getCurrentTuner != None and slot.slot != self.getCurrentTuner:
 					if len(nimmanager.getRotorSatListForNim(slot.slot)) and Lastrotorposition is not None and config.misc.lastrotorposition.value != 9999:
 						default_sat_pos = config.misc.lastrotorposition.value
 				self.scan_satselection.append(getConfigSatlist(default_sat_pos, self.satList[slot.slot]))
