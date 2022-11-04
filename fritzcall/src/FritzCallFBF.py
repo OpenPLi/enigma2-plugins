@@ -3351,8 +3351,8 @@ class FritzCallFBF_06_35(object):
 								guestAccess = guestAccess + ', ' + found.group(4)  # Geräte
 							if found.group(5):
 								guestAccess = guestAccess + ', ' + found.group(5)  # WLAN Name
-					elif fun["linktxt"] == "Wireless guest access" and fun["details"]:
-						found = re.match(r'.*enabled \([^\)]+\)(?:, (secured|unsecured))?,(?: (\d+) (minutes|hours) left,)? (\d+ devices), (.+)', fun["details"], re.S)
+					elif (fun["linktxt"] == "Wireless guest access" or fun["linktxt"] == "Wi-Fi Guest Access") and fun["details"]:
+						found = re.match(r'.*enabled \([^\)]+\)(?:, (secured|unsecured))?,(?: (\d+) (minutes|hours) left,)? (\d+ devices), (.+)', fun["details"], re.S | re.I)
 						if found:
 							if found.group(1):
 								if found.group().find('secured') != -1:
