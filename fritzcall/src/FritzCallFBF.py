@@ -3351,8 +3351,8 @@ class FritzCallFBF_06_35(object):
 								guestAccess = guestAccess + ', ' + found.group(4)  # Geräte
 							if found.group(5):
 								guestAccess = guestAccess + ', ' + found.group(5)  # WLAN Name
-					elif (fun["linktxt"] == "Wireless guest access" or fun["linktxt"] == "Wi-Fi Guest Access") and fun["details"]:
-						found = re.match(r'.*enabled \([^\)]+\)(?:, (secured|unsecured))?,(?: (\d+) (minutes|hours) left,)? (\d+ devices), (.+)', fun["details"], re.S | re.I)
+					elif fun["linktxt"] == "Wireless guest access" and fun["details"]:
+						found = re.match(r'.*enabled \([^\)]+\)(?:, (secured|unsecured))?,(?: (\d+) (minutes|hours) left,)? (\d+ devices), (.+)', fun["details"], re.S)
 						if found:
 							if found.group(1):
 								if found.group().find('secured') != -1:
@@ -3850,26 +3850,26 @@ class FritzCallFBF_upnp():
 			guestAccess = ""
 			for fun in comfortFuncs:
 				if "linktxt" in fun:
-					if fun["linktxt"] == "Faxfunktion" and fun["details"] == "Integriertes Fax aktiv":
+					if fun["linktxt"] == "Faxfunktion" and "details" in fun and six.ensure_str(fun["details"]) == "Integriertes Fax aktiv":
 						faxActive = True
-					elif fun["linktxt"] == "Fax function" and fun["details"] == "Integrated fax enabled":
+					elif fun["linktxt"] == "Fax function" and "details" in fun and six.ensure_str(fun["details"]) == "Integrated fax enabled":
 						faxActive = True
-					elif fun["linktxt"] == "Rufumleitung" and fun["details"]:
+					elif fun["linktxt"] == "Rufumleitung" and "details" in fun and fun["details"]:
 						if fun["details"] != "deaktiviert":
-							found = re.match(r'.*(?:(\d+) )?aktiv', fun["details"], re.S)
+							found = re.match(r'.*(?:(\d+) )?aktiv', six.ensure_str(fun["details"]), re.S)
 							if found and found.group(1):
 								rufumlActive = int(found.group(1))
 							else:
 								rufumlActive = -1  # means no number available
-					elif fun["linktxt"] == "Call diversion" and fun["details"]:
+					elif fun["linktxt"] == "Call diversion" and "details" in fun and fun["details"]:
 						if fun["details"] != "disabled":
-							found = re.match(r'.*(?:(\d+) )?active', fun["details"], re.S)
+							found = re.match(r'.*(?:(\d+) )?active', six.ensure_str(fun["details"]), re.S)
 							if found and found.group(1):
 								rufumlActive = int(found.group(1))
 							else:
 								rufumlActive = -1  # means no number available
-					elif fun["linktxt"] == "WLAN-Gastzugang" and fun["details"]:
-						found = re.match(r'.*aktiv \([^\)]+\)(?:, (ungesichert|gesichert))?,(?: (\d+) (Minuten|Stunden) verbleiben,)? (\d+ Gerät(?:e)?), (.+)', fun["details"], re.S)
+					elif fun["linktxt"] == "WLAN-Gastzugang" and "details" in fun and fun["details"]:
+						found = re.match(r'.*aktiv \([^\)]+\)(?:, (ungesichert|gesichert))?,(?: (\d+) (Minuten|Stunden) verbleiben,)? (\d+ Gerät(?:e)?), (.+)', six.ensure_str(fun["details"]), re.S)
 						if found:
 							if found.group(1):
 								if found.group().find('ungesichert') != -1:
@@ -3887,8 +3887,8 @@ class FritzCallFBF_upnp():
 								guestAccess = guestAccess + ', ' + found.group(4)  # Geräte
 							if found.group(5):
 								guestAccess = guestAccess + ', ' + found.group(5)  # WLAN Name
-					elif fun["linktxt"] == "Wireless guest access" and fun["details"]:
-						found = re.match(r'.*enabled \([^\)]+\)(?:, (secured|unsecured))?,(?: (\d+) (minutes|hours) left,)? (\d+ devices), (.+)', fun["details"], re.S)
+					elif (fun["linktxt"] == "Wireless guest access" or fun["linktxt"] == "Wi-Fi Guest Access") and "details" in fun and fun["details"]:
+						found = re.match(r'.*enabled \([^\)]+\)(?:, (secured|unsecured))?,(?: (\d+) (minutes|hours) left,)? (\d+ devices), (.+)', six.ensure_str(fun["details"]), re.S | re.I)
 						if found:
 							if found.group(1):
 								if found.group().find('secured') != -1:
@@ -3906,7 +3906,7 @@ class FritzCallFBF_upnp():
 								guestAccess = guestAccess + ', ' + found.group(4)  # Geräte
 							if found.group(5):
 								guestAccess = guestAccess + ', ' + found.group(5)  # WLAN Name
-					elif fun["linktxt"] == "LAN-Gastzugang" and fun["details"]:
+					elif fun["linktxt"] == "LAN-Gastzugang" and "details" in fun and fun["details"]:
 						if fun["details"] == "aktiv":
 							if guestAccess:
 								guestAccess = 'LAN, ' + guestAccess
@@ -4191,7 +4191,7 @@ class FritzCallFBF_upnp():
 			Notifications.AddNotification(MessageBox, _("Cannot get infos from FRITZ!Box yet\nStill initialising or wrong firmware version"), type=MessageBox.TYPE_ERROR, timeout=config.plugins.FritzCall.timeout.value)
 			return
 
-		if statusGuestAccess.find('WLAN') != -1:
+		if statusGuestAccess.find('WLAN') != -1 or statusGuestAccess.find('WIFI') != -1:
 			self.debug("WLAN")
 			if "WLANConfiguration:3" in list(self.fc.services.keys()):
 				self.fc.call_action(lambda x: self._general_cb(x, callback), "WLANConfiguration:3", "SetEnable", NewEnable=0)
