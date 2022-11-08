@@ -1,12 +1,12 @@
+# -*- coding: UTF-8 -*-
+from __future__ import print_function
 # for localized messages
 from . import _
 
 from Plugins.Plugin import PluginDescriptor
-from enigma import ePicLoad, eServiceReference, eServiceCenter
+from enigma import ePicLoad, eServiceCenter
 from Screens.Screen import Screen
 from Screens.HelpMenu import HelpableScreen
-from Screens.EpgSelection import EPGSelection
-from Screens.ChannelSelection import SimpleChannelSelection
 from Screens.ChoiceBox import ChoiceBox
 from Screens.VirtualKeyBoard import VirtualKeyBoard
 from Components.ActionMap import ActionMap, HelpableActionMap
@@ -20,48 +20,29 @@ from Components.Language import language
 from Components.ProgressBar import ProgressBar
 from Components.Sources.StaticText import StaticText
 from Components.Sources.Boolean import Boolean
-from Tools.Directories import fileExists, resolveFilename, SCOPE_PLUGINS, SCOPE_SKIN_IMAGE
-from twisted.web import client
-
+from Components.MovieList import KNOWN_EXTENSIONS
+from Tools.Directories import fileExists, resolveFilename, SCOPE_PLUGINS
+import json
 import os
 import re
+import requests
+import six
+from time import strftime
+from twisted.internet.threads import deferToThread
+from shutil import copy
 
+from six.moves.urllib.parse import quote_plus
 
 try:
 	import htmlentitydefs
-	from urllib import quote_plus
-	iteritems = lambda d: d.iteritems()
 except ImportError as ie:
 	from html import entities as htmlentitydefs
-	from urllib.parse import quote_plus
-	iteritems = lambda d: d.items()
-	unichr = chr
 
-import gettext
 
 # Configuration
-from Components.config import config, getConfigListEntry, ConfigSubsection, ConfigYesNo, ConfigText
 from Components.ConfigList import ConfigListScreen
+from Components.config import config, ConfigSubsection, ConfigYesNo, ConfigText, getConfigListEntry
 from Components.PluginComponent import plugins
-from Tools.Directories import resolveFilename, SCOPE_PLUGINS
-
-try:
-	from HTMLParser import HTMLParser
-except ImportError:
-	from html.parser import HTMLParser
-
-try:
-	basestring
-	def encode_utf8(x):
-		return x.encode('utf8')
-except NameError:
-	basestring = str
-	def encode_utf8(x):
-		return x
-
-def transHTML(text):
-	h = HTMLParser()
-	return h.unescape(text)
 
 
 config.plugins.imdb = ConfigSubsection()
@@ -71,7 +52,32 @@ config.plugins.imdb.showinmovielist = ConfigYesNo(default=True)
 config.plugins.imdb.force_english = ConfigYesNo(default=False)
 config.plugins.imdb.ignore_tags = ConfigText(visible_width=50, fixed_size=False)
 config.plugins.imdb.showlongmenuinfo = ConfigYesNo(default=False)
+config.plugins.imdb.showepisoderesults = ConfigYesNo(default=False)
 config.plugins.imdb.showepisodeinfo = ConfigYesNo(default=False)
+
+
+def getPage(url, params=None, headers=None, cookies=None):
+	return deferToThread(requests.get, url, params=params, headers=headers, cookies=cookies, timeout=30.05)
+
+
+def savePage(response, filename):
+	response.raise_for_status()
+	try:
+		open(filename, "wb").write(response.content)
+	except Exception as e:
+		return e
+
+
+def downloadPage(url, filename, params=None, headers=None, cookies=None):
+	return getPage(url, params, headers, cookies).addCallback(savePage, filename)
+
+
+def safeRemove(*names):
+	for name in names:
+		try:
+			os.remove(name)
+		except:
+			pass
 
 
 def quoteEventName(eventName):
@@ -83,80 +89,91 @@ def quoteEventName(eventName):
 	return quote_plus(text)
 
 
-def downloadPage(url, destfilename, headers={'accept': '*/*'}, agent='curl/7.74.0', timeout=10, **kwargs):
-	url = str.encode(url)
-	headers = {str.encode(k): str.encode(v) for k, v in headers.items()}
-	agent = str.encode(agent)
-	return client.downloadPage(url, destfilename, headers=headers, agent=agent, timeout=timeout, **kwargs)
+# Replace entities with characters, "<br/>" with "\n" and strip any other tags.
+def html2text(html):
+	def sub(match):
+		if match.group(0)[0] == "<":
+			return match.group(0) == "<br/>" and "\n" or ""
+		if match.group(1):
+			codepoint = htmlentitydefs.name2codepoint.get(match.group(1))
+		elif match.group(2):
+			codepoint = int(match.group(2), 16)
+		else:  # match.group(3)
+			codepoint = int(match.group(3))
+		if codepoint:
+			return six.PY2 and unichr(codepoint).encode("utf8") or chr(codepoint)
+		return match.group(0)
+	return re.sub(r"&(?:([A-Za-z0-9]+)|#x([0-9A-Fa-f]+)|#(\d+));|<.*?>", sub, html)
 
 
-class IMDBChannelSelection(SimpleChannelSelection):
-	def __init__(self, session):
-		SimpleChannelSelection.__init__(self, session, _("Channel Selection"))
-		self.skinName = "SimpleChannelSelection"
-
-		self["ChannelSelectEPGActions"] = ActionMap(["ChannelSelectEPGActions"],
-			{
-				"showEPGList": self.channelSelected
-			}
-		)
-
-	def channelSelected(self):
-		ref = self.getCurrentSelection()
-		if (ref.flags & 7) == 7:
-			self.enterPath(ref)
-		elif not (ref.flags & eServiceReference.isMarker):
-			info = eServiceCenter.getInstance().info(ref)
-			evt = info and info.getEvent(ref, -1)
-			event_id = evt and evt.getEventId() or None
-			self.session.openWithCallback(
-				self.epgClosed,
-				IMDBEPGSelection,
-				ref,
-				eventid=event_id,
-				openPlugin=False
-			)
-
-	def epgClosed(self, ret=None):
-		if ret:
-			self.close(ret)
+# Prevent labels from processing escape characters.
+def text2label(text):
+	return re.sub(r'\\([cnrt])', r'\\\r\1', text)
 
 
-class IMDBEPGSelection(EPGSelection):
-	def __init__(self, session, ref, eventid=None, openPlugin=True):
-		EPGSelection.__init__(self, session, ref.toString(), eventid=eventid)
-		self.skinName = "EPGSelection"
-		self["key_green"].setText(_("Lookup"))
-		self.openPlugin = openPlugin
+# Return the JSON element described by path (str/tuple/list), or default
+# if it doesn't exist.  If an item in path is a list use the first
+# element.	E.g.
+#	get(json, ('key1', 'array', 'key2'))
+# is equivalent to
+#	json['key1']['array'][0]['key2']
+# whilst also testing each key exists.
+def get(json, path, default=""):
+	if not isinstance(path, (list, tuple)):
+		path = (path,)
+	for key in path:
+		if not json:
+			return default
+		if isinstance(json, list):
+			json = json[0]
+		if key not in json:
+			return default
+		json = json[key]
+	if isinstance(json, six.text_type):
+		# It's possible UTF-8 has itself been converted to UTF-8
+		# (e.g. the storyline of "As You Want Me" / "Come mi vuoi").
+		try:
+			json = json.encode("latin1").decode("utf8")
+		except:
+			pass
+		if six.PY2:
+			json = json.encode("utf8")
+	return json
 
-	def infoKeyPressed(self):
-		self.greenButtonPressed()
 
-	def timerAdd(self):
-		self.greenButtonPressed()
+# Process strings containing
+#	{VAR, plural, one {FORMAT} other {FORMAT}}
+# where VAR is present in keywords and will substitute the appropriate
+# format.
+def LingUI(s, **keywords):
+	# s starts at a brace, return between its closing brace.
+	def extract(s):
+		b = 0
+		for i, c in enumerate(s):
+			if c == "{":
+				b += 1
+			elif c == "}":
+				b -= 1
+				if b == 0:
+					return s[1:i]
+		return s[1:]
 
-	def greenButtonPressed(self):
-		self.closeEventViewDialog()
-		from Screens.InfoBar import InfoBar
-		InfoBarInstance = InfoBar.instance
-		if not InfoBarInstance.LongButtonPressed:
-			cur = self["list"].getCurrent()
-			evt = cur[0]
-			sref = cur[1]
-			if not evt:
-				return
-
-			if self.openPlugin:
-				self.session.open(
-					IMDB,
-					evt.getEventName()
-				)
-			else:
-				self.close(evt.getEventName())
-
-	def onSelectionChanged(self):
-		super(IMDBEPGSelection, self).onSelectionChanged()
-		self["key_green"].setText(_("Lookup"))
+	r = ""
+	end = 0
+	while True:
+		start = end
+		while end < len(s) and s[end] != "{":
+			end += 1
+		r += s[start:end]
+		if end >= len(s):
+			return r
+		plural = extract(s[end:])
+		end += len(plural) + 2
+		data = plural.split(", ")
+		one = extract(data[2][4:])
+		other = extract(data[2][4 + len(one) + 2 + 7:])
+		fmt = keywords[data[0]] == 1 and one or other
+		r += fmt.format(**keywords)
 
 
 class IMDB(Screen, HelpableScreen):
@@ -175,25 +192,15 @@ class IMDB(Screen, HelpableScreen):
 			<widget name="detailslabel" position="105,90" size="485,140" font="Regular;18" />
 			<widget name="castlabel" position="10,235" size="580,155" font="Regular;18" />
 			<widget name="extralabel" position="10,40" size="580,350" font="Regular;18" />
-			<widget name="ratinglabel" position="340,62" size="250,20" halign="left" font="Regular;18" foregroundColor="#f0b400"/>
-			<widget name="statusbar" position="10,395" size="580,20" font="Regular;18" foregroundColor="#cccccc" />
+			<widget name="ratinglabel" position="340,62" size="250,20" halign="center" font="Regular;18" foregroundColor="#f0b400"/>
+			<widget name="statusbar" position="10,404" size="580,16" font="Regular;16" foregroundColor="#cccccc" />
 			<widget name="poster" position="4,90" size="96,140" alphatest="on" />
-			<widget name="menu" position="10,115" size="580,275" itemHeight = "35" zPosition="3" scrollbarMode="showOnDemand" />
+			<widget name="menu" position="10,115" size="580,275" zPosition="3" scrollbarMode="showOnDemand" />
 			<widget name="starsbg" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/IMDb/starsbar_empty.png" position="340,40" zPosition="0" size="210,21" transparent="1" alphatest="on" />
 			<widget name="stars" position="340,40" size="210,21" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/IMDb/starsbar_filled.png" transparent="1" />
 		</screen>"""
 
-	# Some HTML entities as utf-8
-	NBSP = encode_utf8(unichr(htmlentitydefs.name2codepoint['nbsp']))
-	RAQUO = encode_utf8(unichr(htmlentitydefs.name2codepoint['raquo']))
-	HELLIP = encode_utf8(unichr(htmlentitydefs.name2codepoint['hellip']))
-	BULL = encode_utf8(unichr(htmlentitydefs.name2codepoint['bull']))
-
-	mainDownloaded = 1 << 0
-	storylineDownloaded = 1 << 1
-	allDownloaded = mainDownloaded | storylineDownloaded
-
-	def __init__(self, session, eventName, callbackNeeded=False, save=False, savepath=None, localpath=None):
+	def __init__(self, session, eventName, callbackNeeded=False, save=False, savepath=None, localpath=None, imdbId=None):
 		Screen.__init__(self, session)
 		HelpableScreen.__init__(self)
 
@@ -208,16 +215,18 @@ class IMDB(Screen, HelpableScreen):
 		self.callbackData = ""
 		self.callbackGenre = ""
 
-		self.saving = save
-		self.savingpath = savepath
+		# Always enable saving.
+		#self.saving = save
+		self.saving = True
+		self.savingpath = savepath or "/home/root/logs/imdb"
 		self.localpath = localpath
-		self.fetchurl = None
 
-		self.dictionary_init()
+		self.imdbId = imdbId
 
 		self["poster"] = Pixmap()
 		self.picload = ePicLoad()
 		self.picload.PictureData.get().append(self.paintPosterPixmapCB)
+		self.poster_pos = None
 
 		self["stars"] = ProgressBar()
 		self["starsbg"] = Pixmap()
@@ -241,16 +250,21 @@ class IMDB(Screen, HelpableScreen):
 		self.resultlist = []
 		self["menu"] = MenuList(self.resultlist)
 		self["menu"].hide()
-
 		self["key_red"] = Button(_("Exit"))
 		self["key_green"] = Button("")
 		self["key_yellow"] = Button("")
 		self["key_blue"] = Button("")
+		self["key_help"] = Boolean(True)  # for auto buttons
+		self["key_menu"] = Boolean(True)  # for auto buttons
+		self["VKeyIcon"] = Boolean(False)  # for auto buttons
 
 		# 0 = multiple query selection menu page
 		# 1 = movie info page
 		# 2 = extra infos page
+		# 3 = synopsis page
 		self.Page = 0
+
+		self.cookie = {"lc-main": language.getLanguage()}
 
 		self["actionsOk"] = HelpableActionMap(self, "OkCancelActions",
 		{
@@ -269,81 +283,31 @@ class IMDB(Screen, HelpableScreen):
 			"contextMenu": (self.contextMenuPressed, _("Menu")),
 			"showEventInfo": (self.showDetails, _("Show movie and series basic details")),
 		}, -1)
+		self["actionsInfobar"] = HelpableActionMap(self, ["InfobarActions", "InfobarTeletextActions"],
+		{
+			"showMovies": (self.bigPoster, _("Show a bigger poster")),
+			"startTeletext": (self.showSynopsis, _("Show movie and series synopsis")),
+		}, -1)
 		self["actionsDir"] = HelpableActionMap(self, "DirectionActions",
 		{
 			"down": (self.pageDown, _("Page down")),
 			"up": (self.pageUp, _("Page up")),
 		}, -1)
 
-		self.getIMDB()
-
-		if self.localpath is not None:                                # otherwise the stars are not correctly shown if we call details directly
-			self.onLayoutFinish.append(self._layoutFinished)
-
-	def _layoutFinished(self):
-		self["menu"].hide()
-		self["extralabel"].hide()
-		self["stars"].setValue(self.ratingstars)
+		self.onLayoutFinish.append(self.getIMDB)
 
 	def exit(self):
-		if fileExists("/tmp/poster.jpg"):
-			os.remove("/tmp/poster.jpg")
-		if fileExists("/tmp/imdbquery.html"):
-			os.remove("/tmp/imdbquery.html")
-		if fileExists("/tmp/imdbquery2.html"):
-			os.remove("/tmp/imdbquery2.html")
-		if fileExists("/tmp/imdbquery-storyline.html"):
-			os.remove("/tmp/imdbquery-storyline.html")
+		if self.hideBigPoster():
+			return
+
+		safeRemove("/tmp/poster.jpg", "/tmp/poster-big.jpg")
 		if self.callbackNeeded:
 			self.close([self.callbackData, self.callbackGenre])
 		else:
 			self.close()
 
-	def dictionary_init(self):
-		syslang = language.getLanguage()
-		if 1: #"de" not in syslang or config.plugins.imdb.force_english.value is True:
-			self.generalinfomask = re.compile(
-			'block__title.*?>(?P<title>.*?)</h1>'
-			'(?:.*?<span.*?>(?P<g_director>Regisseur|Directors?)</span>.*?<ul.*?>(?P<director>.*?)</ul>)?'
-			'(?:.*?<span.*?>(?P<g_creator>Sch\S*?pfer|Creators?)</span>.*?<ul.*?>(?P<creator>.*?)</ul>)?'
-			'(?:.*?<span.*?>(?P<g_writer>Drehbuch|Writers?)</span>.*?<div.*?<ul.*?>(?P<writer>.*?)</ul>)?'
-			'(?:.*?<label.*?for="browse-episodes-season".*?>.*?(?P<g_seasons>seasons?)</label>.*?<select.*?browse-episodes-season.*?>(?P<seasons>.*?)</select)?'
-			'(?:.*?<a.*?>(?P<g_premiere>Premiere|Release date)</a>.*?<div.*?<ul.*?>(?P<premiere>.*?)</ul>)?'
-			'(?:.*?<span.*?>(?P<g_country>Land|Countr.*?of origin)</span>.*?<div.*?<ul.*?>(?P<country>.*?)</ul>)?'
-			'(?:.*?<a.*?>(?P<g_alternativ>Auch bekannt als|Also known as)</a>.*?<div.*?<ul.*?>(?P<alternativ>.*?)</ul>)?', re.DOTALL)
-
-			self.awardsmask = re.compile('<li.*?data-testid="award_information".*?><a.*?>(?P<awards>.+?)</span></li>', re.DOTALL)
-
-			self.extrainfomask = re.compile(
-			'(?:.*?data-testid="plot-xl".*?>(?P<outline>.+?)</span)?'
-			#'(?:.*?<h3 class="ipc-title__text">(?P<g_synopsis>Storyline)</h3>.*?<div class="ipc-html-content-inner-div">(?P<synopsis>.+?)</div)?'
-			#'(?:.*?data-testid="storyline-plot-keywords">(?P<keywords>.+?)\d+\s+(?:mehr|more).*?</div>)?'
-			#'(?:.*?<a.*?>(?P<g_tagline>Werbezeile|Taglines?)</a>.*?<li.*?<span.*?>(?P<tagline>.+?)<)?'
-			#'(?:.*?<a.*?>(?P<g_cert>Altersfreigabe|Certificate|Motion Picture Rating \(MPAA\))</a>.*?<div.*?<ul.*?<li.*?<span.*?>(?P<cert>.*?)</span>)?'
-			'(?:.*?<a.*?>(?P<g_trivia>Dies und das|Trivia)</a><div.*?<div.*?<div.*?<div.*?>(?P<trivia>.+?)</div>)?'
-			'(?:.*?<a.*?>(?P<g_goofs>Pannen|Goofs)</a><div.*?<div.*?<div.*?<div.*?>(?P<goofs>.+?)</div>)?'
-			'(?:.*?<a.*?>(?P<g_quotes>Dialogzitate|Quotes)</a><div.*?<div.*?<div.*?<div.*?>(?P<quotes>.+?)</div>)?'
-			'(?:.*?<a.*?>(?P<g_connections>Bez\S*?ge zu anderen Titeln|Connections)</a><div.*?<div.*?<div.*?<div.*?>(?P<connections>.+?)</div>)?'
-			'(?:.*?<h3.*?>(?P<g_comments>Nutzerkommentare|User reviews).*?</h3>(?:.*?</svg>(?P<g_rating>[0-9]+?)<span class="ipc-rating-star--maxRating">/.*?(?P<g_maxrating>[0-9]+?)</span>)?.*?<span.*?review-summary.*?>(?P<commenttitle>.*?)</span>.*?<div class="ipc-html-content-inner-div">(?P<comment>.+?)</div>.*?<a.*?"author-link".*?>(?P<commenter>.+?)</a>)?'
-			'(?:.*?<span.*?>(?P<g_language>Sprachen?|Languages?)</span>.*?<div.*?<ul.*?>(?P<language>.*?)</ul>)?'
-			'(?:.*?<a.*?>(?P<g_locations>Drehorte?|Filming locations?)</a>.*?<div.*?<ul.*?>(?P<locations>.*?)</ul>)?'
-			'(?:.*?<a.*?>(?P<g_company>Firm\S*?|Production compan.*?)</a>.*?<div.*?<ul.*?>(?P<company>.*?)</ul>)?'
-			'(?:.*?<span.*?>(?P<g_runtime>L\S*?nge|Runtime)</span>.*?<div.*?>(?P<runtime>.*?)</div>)?'
-			'(?:.*?<span.*?>(?P<g_color>Farbe|Color)</span>.*?<a.*?>(?P<color>.*?)</a>)?'
-			#'(?:.*?<span.*?>(?P<g_sound>Tonverfahren|Sound mix)</span>.*?<div.*?<ul.*?>(?P<sound>.*?)</ul>)?'
-			'(?:.*?<span.*?>(?P<g_aspect>Seitenverh\S*?ltnis|Aspect ratio)</span>.*?<div.*?<ul.*?<li.*?<span.*?>(?P<aspect>.*?)</span>)?', re.DOTALL)
-
-			self.storylinemask = re.compile('id="plot-summaries-content".*?<p>(.*?<div class="author-container">.*?)</div>', re.DOTALL)
-			self.storylinealtmask = re.compile('id="plot-summaries-content".*?<p>(.*?)</p>', re.DOTALL)
-			self.genreblockmask = re.compile('<div.*?data-testid="genres".*?>(?:<div.*?<svg.*?</svg></div>)?(.*?)</div>', re.DOTALL)
-			self.ratingmask = re.compile('aggregate-rating__score.*?><span.*?>(?P<rating>.*?)</span>', re.DOTALL)
-			self.castmask = re.compile('<a.*?title-cast-item__actor.*?>(?P<actor>.*?)</a>.*?cast-item-characters-link.*?><span.*?>(?P<character>.*?)</span>(?:.*?<span><span.*?>(?P<episodes>.*?)</span></span>)?', re.DOTALL)
-			self.postermask = re.compile('<div.*?ipc-media--poster.*?<img.*?ipc-image.*?src="(http.*?)"', re.DOTALL)
-
-		self.htmltags = re.compile('<.*?>', re.DOTALL)
-		self.allhtmltags = re.compile('<.*>', re.DOTALL)
-
 	def resetLabels(self):
+		self["poster"].instance.setPixmap(None)
 		self["detailslabel"].setText("")
 		self["ratinglabel"].setText("")
 		self["title"].setText("")
@@ -353,25 +317,33 @@ class IMDB(Screen, HelpableScreen):
 		self.ratingstars = -1
 
 	def pageUp(self):
+		if self.hideBigPoster():
+			return
+
 		if self.Page == 0:
 			self["menu"].instance.moveSelection(self["menu"].instance.moveUp)
-		if self.Page == 1:
+		elif self.Page == 1:
 			self["castlabel"].pageUp()
 			self["detailslabel"].pageUp()
-		if self.Page == 2:
+		else:  # self.Page in (2, 3):
 			self["extralabel"].pageUp()
 
 	def pageDown(self):
+		if self.hideBigPoster():
+			return
+
 		if self.Page == 0:
 			self["menu"].instance.moveSelection(self["menu"].instance.moveDown)
-		if self.Page == 1:
+		elif self.Page == 1:
 			self["castlabel"].pageDown()
 			self["detailslabel"].pageDown()
-		if self.Page == 2:
+		else:  # self.Page in (2, 3):
 			self["extralabel"].pageDown()
 
 	def showMenu(self):
-		if (self.Page == 1 or self.Page == 2) and self.resultlist:
+		self.hideBigPoster()
+
+		if self.Page != 0 and self.resultlist:
 			self["menu"].show()
 			self["stars"].hide()
 			self["starsbg"].hide()
@@ -385,44 +357,59 @@ class IMDB(Screen, HelpableScreen):
 			self["key_blue"].setText("")
 			self["key_green"].setText(_("Title Menu"))
 			self["key_yellow"].setText(_("Details"))
+			self["VKeyIcon"].boolean = False
 			self.Page = 0
 
 	def getLocalDetails(self):
-		localfile = self.localpath
-		self.inhtml = self.html2utf8(open(localfile, "r").read())
-		self.generalinfos = self.generalinfomask.search(self.inhtml)
+		self.html = open(self.localpath).read()
+		try:
+			self.json = open(os.path.splitext(self.localpath)[0] + ".json").read()
+		except:
+			pass
 		self.IMDBparse()
-		if self.ratingstars > 0:
-			self["starsbg"].show()
-			self["stars"].show()
-		self.Page = 1
+
+	def gotTMD(self, response):
+		if isinstance(response, requests.Response):
+			self.json = response.content
+			if six.PY3:
+				self.json = self.json.decode("utf8")
+		if self.haveHTML:
+			self.IMDBparse()
+		else:
+			self.haveTMD = True
+
+	def downloadTitle(self, title, titleId):
+		self["statusbar"].setText(_("Re-Query IMDb: %s...") % title or titleId)
+		fetchurl = "https://www.imdb.com/title/" + titleId + "/"
+#		print("[IMDB] downloadTitle()", fetchurl)
+		params = {
+			"operationName": 'TMD_Storyline',
+			"variables": '{"titleId":"%s"}' % titleId,
+			"extensions": '{"persistedQuery":{"sha256Hash":"87f41463a48af95ebba3129889d17181402622bfd30c8dc9216d99ac984f0091","version":1}}'
+		}
+		self.haveTMD = self.haveHTML = False
+		tmd = getPage("https://caching.graphql.imdb.com/", params=params, headers={"content-type": "application/json"}, cookies=self.cookie)
+		tmd.addBoth(self.gotTMD)
+		download = getPage(fetchurl, cookies=self.cookie)
+		download.addCallback(self.IMDBquery2).addErrback(self.http_failed)
 
 	def showDetails(self):
+		self.hideBigPoster()
+
+		self["poster"].show()
 		self["ratinglabel"].show()
 		self["castlabel"].show()
 		self["detailslabel"].show()
 
 		if self.resultlist and self.Page == 0:
-			link = self["menu"].getCurrent()[1]
-			title = self["menu"].getCurrent()[0]
-			self["statusbar"].setText(_("Re-Query IMDb: %s...") % (title))
-			localfile = "/tmp/imdbquery2.html"
-			fetchurl = "https://www.imdb.com/title/" + link + "/"
-			print("[IMDB] showDetails() downloading query " + fetchurl + " to " + localfile)
-			localfile2 = "/tmp/imdbquery-storyline.html"
-			fetchurl2 = "https://www.imdb.com/title/" + link + "/plotsummary"
-			print("[IMDB] showDetails() downloading query " + fetchurl2 + " to " + localfile2)
-			self.downloaded = 0
-			downloadPage(fetchurl, localfile).addCallback(self.IMDBmainDownloaded).addErrback(self.http_failed)
-			downloadPage(fetchurl2, localfile2).addCallback(self.IMDBstorylineDownloaded).addErrback(self.http_failed)
-			self.fetchurl = fetchurl
+			title, titleId = self["menu"].getCurrent()
+			self.downloadTitle(title, titleId)
 			self["menu"].hide()
 			self.resetLabels()
 			self.Page = 1
 
-		if self.Page == 2:
+		if self.Page in (2, 3):
 			self["extralabel"].hide()
-			self["poster"].show()
 			if self.ratingstars > 0:
 				self["starsbg"].show()
 				self["stars"].show()
@@ -430,35 +417,40 @@ class IMDB(Screen, HelpableScreen):
 
 			self.Page = 1
 
-	def showExtras(self):
+	def showExtras(self, synopsis=False):
+		self.hideBigPoster()
+
+		if self.Page == 0 or (not synopsis and not self.extra):
+			return
 		if self.Page == 1:
 			self["extralabel"].show()
 			self["detailslabel"].hide()
 			self["castlabel"].hide()
 			self["poster"].hide()
-			self.Page = 2
+		self["extralabel"].setText(self.synopsis if synopsis else self.extra)
+		self.Page = synopsis and 3 or 2
+
+	def showSynopsis(self):
+		self.hideBigPoster()
+
+		if self.synopsis:
+			self.showExtras(True)
 
 	def contextMenuPressed(self):
+		self.hideBigPoster()
+
 		list = [
 			(_("Enter search"), self.openVirtualKeyBoard),
-			(_("Select from EPG"), self.openChannelSelection),
 			(_("Setup"), self.setup),
 		]
 
 		if self.saving:
-			if self.savingpath is not None:
-				# TODO: save Poster also as option for .html
+			if self.savingpath is not None and self.titleId:
 				list.extend((
 					(_("Save current Details as .html for offline use"), self.saveHtmlDetails),
 					(_("Save current Details as .txt"), self.saveTxtDetails),
 					(_("Save current Poster and Details as .txt"), self.savePosterTxtDetails),
 				))
-
-		if fileExists(resolveFilename(SCOPE_PLUGINS, "Extensions/YTTrailer/plugin.py")):
-			list.extend((
-				(_("Play Trailer"), self.openYttrailer),
-				(_("Search Trailer"), self.searchYttrailer),
-			))
 
 		self.session.openWithCallback(
 			self.menuCallback,
@@ -473,123 +465,67 @@ class IMDB(Screen, HelpableScreen):
 	def saveHtmlDetails(self):
 		try:
 			if self.savingpath is not None:
-				isave = self.savingpath + ".imdbquery2.html"
-				if self.fetchurl is not None:
-					downloadPage(self.fetchurl, isave).addCallback(self.IMDBsave).addErrback(self.http_failed)
+				isave = self.savingpath + "-" + self.titleId
+				open(isave + ".html", 'w').write(self.html)
+				if self.json:
+					open(isave + ".json", 'w').write(self.json)
+				try:
+					copy("/tmp/poster.jpg", isave + ".jpg")
+				except:
+					pass
+			self["statusbar"].setText(_("IMDb save completed"))
 		except Exception as e:
-			print('[IMDb] saveHtmlDetails exception failure: ', str(e))
+			print('[IMDb] saveHtmlDetails exception failure:', str(e))
 
-	def saveTxtDetails(self):
+	def saveTxtDetails(self, poster=False):
 		try:
 			if self.savingpath is not None:
-				getTXT = self.IMDBsavetxt()
+				getTXT = self.IMDBsavetxt(poster)
 				if getTXT is not None:
-					file(self.savingpath + ".txt", 'w').write(getTXT)
+					open(self.savingpath + "-" + self.titleId + ".txt", 'w').write(getTXT)
 				else:
 					from Screens.MessageBox import MessageBox
 					self.session.open(MessageBox, (_('IMDb can not get Movie Information to write to .txt file!')), MessageBox.TYPE_INFO, 10)
 		except Exception as e:
-			print('[IMDb] saveTxtDetails exception failure: ', str(e))
+			print('[IMDb] saveTxtDetails exception failure:', str(e))
 
 	def savePosterTxtDetails(self):
-		try:
-			if self.savingpath is not None:
-				getTXT = self.IMDBsavetxt(True)
-				if getTXT is not None:
-					file(self.savingpath + ".txt", 'w').write(getTXT)
-				else:
-					from Screens.MessageBox import MessageBox
-					self.session.open(MessageBox, (_('IMDb can not get Movie Information to write to .jpg and .txt files!')), MessageBox.TYPE_INFO, 10)
-		except Exception as e:
-			print('[IMDb] savePosterTxtDetails exception failure: ', str(e))
-
-	def IMDBsave(self, string):
-		self["statusbar"].setText(_("IMDb Save - Download completed"))
-		self.inhtml = self.html2utf8(open("/tmp/imdbquery2.html", "r").read())
-		self.generalinfos = self.generalinfomask.search(self.inhtml)
-		self.IMDBparse()
+		self.saveTxtDetails(True)
 
 	def IMDBsavetxt(self, poster=False):
-		overview = ""
-		runtime = ""
-		genre = ""
-		country = ""
-		release = ""
-		rating = ""
+		if not self.generalinfos:
+			return None
 
-		if self.generalinfos:
-			extrainfos = self.extrainfomask.search(self.inhtml)
-			if extrainfos:
-				# get entry 1 = Overview(details)
-				try:
-					text = ' '.join(self.htmltags.sub('', extrainfos.group("synopsis").replace("\n", ' ').replace("<br>", '\n').replace("<br />", '\n')).replace(' |' + self.NBSP, '').replace(self.NBSP, ' ').split()) + "\n"
-					overview = _("Content:") + " " + text
-				except Exception as e:
-					print('[IMDb] IMDBsavetxt exception failure in get overview: ', str(e))
-					overview = (_("Content:"))
-#				print('[IMDb] IMDBsavetxt overview: ', overview)
+		# save the poster.jpg (big poster if we have it, otherwise get full size)
+		if poster:
+			posterurl = self.generalinfos["poster"]
+			if posterurl:
+				postersave = self.savingpath + "-" + self.titleId + ".jpg"
+				if fileExists("/tmp/poster-big.jpg"):
+					copy("/tmp/poster-big.jpg", postersave)
+				else:
+#					print("[IMDB] downloading poster " + posterurl + " to " + postersave)
+					download = downloadPage(posterurl, postersave)
+					download.addErrback(self.http_failed)
 
-				# get entry 2 = Runtime
-				try:
-					time = ' '.join(self.htmltags.sub('', extrainfos.group(category).replace("\n", ' ').replace("<br>", '\n').replace("<br />", '\n')).replace(' |' + self.NBSP, '').replace(self.NBSP, ' ').split())
-					runtime = _("Runtime:") + " " + time
-				except Exception as e:
-					print('[IMDb] IMDBsavetxt exception failure in get runtime: ', str(e))
-					runtime = (_("Runtime:"))
-#				print('[IMDb] IMDBsavetxt runtime: ', runtime)
-
-			# get entry 3 = Genre
-			genreblock = self.genreblockmask.search(self.inhtml)
-			if genreblock:
-				genres = ' | '.join(re.split('\|+', self.htmltags.sub('|', genreblock.group(1)).strip('|').replace(self.NBSP, ' ')))
-				if genres:
-					genre = _("Genre:") + " " + genres
-			else:
-				genre = (_("Genre:"))
-#			print('[IMDb] IMDBsavetxt genre: ', genre)
-
-			# get entry 4 = Country
-			try:
-				land = ' '.join(self.htmltags.sub('', self.generalinfos.group("country").replace('\n', ' ')).split())
-				country = _("Production Countries:") + " " + land
-			except Exception as e:
-				print('[IMDb] IMDBsavetxt exception failure in get country: ', str(e))
-				country = (_("Production Countries:"))
-#			print('[IMDb] IMDBsavetxt country: ', country)
-
-			# get entry 5 = ReleaseDate
-			try:
-				date = ' '.join(self.htmltags.sub('', self.generalinfos.group("premiere").replace('\n', ' ')).split())
-				release = _("Release Date:") + " " + date
-			except Exception as e:
-				print('[IMDb] IMDBsavetxt exception failure in get release: ', str(e))
-				release = (_("Release Date:"))
-#			print('[IMDb] IMDBsavetxt release: ', release)
-
-			# get entry 5 = Vote
-			ratingtext = self.ratingmask.search(self.inhtml)
-			if ratingtext:
-				ratingtext = ratingtext.group("rating")
-				if ratingtext != '<span id="voteuser"></span>':
-					text = ratingtext                                # + " / 10"
-					rating = _("User Rating") + ": " + text
-			else:
-				rating = (_("User Rating") + ": ")
-#			print('[IMDb] IMDBsavetxt rating: ', rating)
-
-			# get the poster.jpg
-			if poster:
-				try:
-					posterurl = self.postermask.search(self.inhtml)
-					if posterurl and posterurl.group(1).find("jpg") > 0:
-						posterurl = posterurl.group(1)
-						postersave = self.savingpath + ".poster.jpg"
-						print("[IMDB] downloading poster " + posterurl + " to " + postersave)
-						downloadPage(posterurl, postersave).addErrback(self.http_failed)
-				except Exception as e:
-					print('[IMDb] IMDBsavetxt exception failure in get poster: ', str(e))
-
-		return overview + "\n\n" + runtime + "\n" + genre + "\n" + country + "\n" + release + "\n" + rating + "\n"
+		return (
+			"%s\n"  # title
+			"%s\n"  # rating
+			"\n"
+			"%s\n"  # details
+			"\n"
+			"%s\n"  # cast
+			"\n"
+			"%s\n"  # extra
+			"%s"    # newlines & synopsis, if present
+		) % (
+			self.eventName,
+			self["ratinglabel"].getText(),
+			self.callbackData,
+			self.castTxt,
+			self.extraTxt,
+			self.synopsisTxt and "\n".join(("", _("Synopsis"), "", self.synopsisTxt, "")) or ""
+		)
 
 	def openYttrailer(self):
 		try:
@@ -620,18 +556,13 @@ class IMDB(Screen, HelpableScreen):
 			text=self.eventName
 		)
 
-	def openChannelSelection(self):
-		self.session.openWithCallback(
-			self.gotSearchString,
-			IMDBChannelSelection
-		)
-
 	def gotSearchString(self, ret=None):
 		if ret:
 			self.eventName = ret
 			self.Page = 0
 			self.resultlist = []
 			self["menu"].hide()
+			self.resetLabels()
 			self["ratinglabel"].show()
 			self["castlabel"].show()
 			self["detailslabel"].show()
@@ -641,19 +572,25 @@ class IMDB(Screen, HelpableScreen):
 			self.getIMDB(search=True)
 
 	def getIMDB(self, search=False):
-		self.resetLabels()
-		if not isinstance(self.eventName, basestring):
+		self.titleId = None
+		self.html = ""
+		self.json = self.generalinfos = None
+		self.castTxt = self.extraTxt = self.synopsisTxt = ""
+		self.extra = self.synopsis = ""
+		safeRemove("/tmp/poster.jpg", "/tmp/poster-big.jpg")
+		if not isinstance(self.eventName, six.string_types):
 			self["statusbar"].setText("")
 			return
 		if not self.eventName:
 			s = self.session.nav.getCurrentService()
 			info = s and s.info()
-			event = info and info.getEvent(0) # 0 = now, 1 = next
+			event = info and info.getEvent(0)  # 0 = now, 1 = next
 			if event:
 				self.eventName = event.getEventName()
 			else:
-				self.eventName = self.session.nav.getCurrentlyPlayingServiceReference() and self.session.nav.getCurrentlyPlayingServiceReference().toString() or ""
-				if self.eventName:
+				s = self.session.nav.getCurrentlyPlayingServiceReference()
+				if s:
+					self.eventName = s.toString()
 					self.eventName = self.eventName.split('/')
 					self.eventName = self.eventName[-1]
 					self.eventName = self.eventName.replace('.', ' ')
@@ -662,309 +599,544 @@ class IMDB(Screen, HelpableScreen):
 					if self.eventName.endswith(' '):
 						self.eventName = self.eventName[:-1]
 
-		if self.localpath is not None and not search:
-			if os.path.exists(self.localpath):
-				self.getLocalDetails()
+		if not search:
+			if self.localpath is not None:
+				if os.path.exists(self.localpath):
+					self.getLocalDetails()
+				else:
+					self["statusbar"].setText(_("Local file does not exist: %s") % self.localpath)
+				return
+
+			if self.imdbId:
+				if self.imdbId.startswith("tt") and self.imdbId[2:].isdigit():
+					self.downloadTitle(self.eventName, self.imdbId)
+				else:
+					self["statusbar"].setText(_("Ignoring invalid imdbId: %s") % self.imdbId)
+				return
+
+		if self.eventName:
+			self["statusbar"].setText(_("Query IMDb: %s") % self.eventName)
+			fetchurl = "https://www.imdb.com/find?q=" + quoteEventName(self.eventName) + "&s=tt"
+#			print("[IMDB] getIMDB() Downloading Query", fetchurl)
+			download = getPage(fetchurl, cookies=self.cookie)
+			download.addCallback(self.IMDBquery).addErrback(self.http_failed)
 
 		else:
-			if self.eventName:
-				self["statusbar"].setText(_("Query IMDb: %s") % (self.eventName))
-				localfile = "/tmp/imdbquery.html"
-				fetchurl = "https://www.imdb.com/find?s=tt&q=" + quoteEventName(self.eventName)
-				print("[IMDB] getIMDB() Downloading Query " + fetchurl + " to " + localfile)
-				downloadPage(fetchurl, localfile).addCallback(self.IMDBquery).addErrback(self.http_failed)
+			self["statusbar"].setText(_("Couldn't get event name"))
 
-			else:
-				self["statusbar"].setText(_("Could't get event name"))
-
-	def html2utf8(self, in_html):
-		in_html = (re.subn(r'<(script).*?</\1>(?s)', '', in_html)[0])
-		in_html = (re.subn(r'<(style).*?</\1>(?s)', '', in_html)[0])
-		entitydict = {}
-
-		entities = re.finditer('&([:_A-Za-z][:_\-.A-Za-z"0-9]*);', in_html)
-		for x in entities:
-			key = x.group(0)
-			if x.group(1) != 'lt' and x.group(1) != 'gt' and key not in entitydict:
-				entitydict[key] = htmlentitydefs.name2codepoint[x.group(1)]
-
-		entities = re.finditer('&#x([0-9A-Fa-f]+);', in_html)
-		for x in entities:
-			key = x.group(0)
-			if key not in entitydict:
-				entitydict[key] = "%d" % int(x.group(1), 16)
-
-		entities = re.finditer('&#(\d+);', in_html)
-		for x in entities:
-			key = x.group(0)
-			if key not in entitydict:
-				entitydict[key] = x.group(1)
-
-		for key, codepoint in iteritems(entitydict):
-			in_html = in_html.replace(key, encode_utf8(unichr(int(codepoint))))
-		return in_html
-
-	def IMDBquery(self, string):
+	def IMDBquery(self, response):
 		self["statusbar"].setText(_("IMDb Download completed"))
+		html = response.content
+		if six.PY3:
+			html = html.decode("utf8")
+		start = html.find('"titleResults":{"results":')
+		if start != -1:
+			searchresults = json.JSONDecoder().raw_decode(html, start + 26)[0]
+			self.resultlist = []
+			titles = {}
+			for x in searchresults:
+				series = get(x, 'seriesId')
+				if series:
+					if not config.plugins.imdb.showepisoderesults.value:
+						continue
+					if series in titles:
+						i = titles[series]
+						for t in titles:
+							if titles[t] >= i:
+								titles[t] += 1
+					else:
+						title = get(x, 'seriesNameText')
+						year = get(x, 'seriesReleaseText')
+						typ = config.plugins.imdb.showlongmenuinfo.value and get(x, 'seriesTypeText') or ""
+						if year or typ:
+							title += " ("
+							if year:
+								title += year
+							if typ:
+								if year:
+									title += "; "
+								title += typ
+							title += ")"
+						self.resultlist.append((title, series))
+						i = titles[series] = len(self.resultlist)
+					title = "- "
+					s = get(x, 'seriesSeasonText')
+					if s == "Unknown":  # not translated
+						s = ""
+					e = get(x, 'seriesEpisodeText')
+					if e == "Unknown":
+						e = ""
+				else:
+					title = s = e = ""
+					i = len(self.resultlist)
+				title += get(x, 'titleNameText')
+				year = get(x, 'titleReleaseText')
+				if config.plugins.imdb.showlongmenuinfo.value:
+					typ = not series and get(x, 'titleTypeText') or ""
+					cast = get(x, 'topCredits')
+				else:
+					typ = cast = ""
+				if year or typ or cast or s or e:
+					title += " ("
+					semicolon = False
+					if year:
+						title += year
+						semicolon = True
+					if typ:
+						if semicolon:
+							title += "; "
+						semicolon = True
+						title += typ
+					if s:
+						if semicolon:
+							title += "; "
+						semicolon = True
+						title += _("S") + s
+					if e:
+						if s:
+							title += " "
+						elif semicolon:
+							title += "; "
+						semicolon = True
+						title += _("E") + e
+					if cast:
+						if semicolon:
+							title += "; "
+						semicolon = True
+						title += six.ensure_str(", ".join(cast))
+					title += ")"
+				self.resultlist.insert(i, (title, get(x, 'id')))
+			Len = len(self.resultlist)
+			self["menu"].l.setList(self.resultlist)
+			if Len == 1:
+				self.downloadTitle(self.resultlist[0][0], self.resultlist[0][1])
+			elif Len > 1:
+				self.Page = 1
+				self.showMenu()
+			else:
+				self["detailslabel"].setText(_("No IMDb match."))
+				self["statusbar"].setText(_("No IMDb match:") + ' ' + self.eventName)
+		else:
+			self["detailslabel"].setText(_("IMDb query failed!"))
 
-		self.inhtml = self.html2utf8(open("/tmp/imdbquery.html", "r").read())
+	def http_failed(self, failure):
+		text = _("IMDb Download failed")
+		if isinstance(failure.value, requests.ConnectionError):
+			error_message = _("connection error")
+		elif isinstance(failure.value, requests.Timeout):
+			error_message = _("timeout")
+		else:
+			if not isinstance(failure.value, requests.RequestException):
+				text = _("IMDB Exception")
+			error_message = failure.getErrorMessage()
+		text += ": " + error_message
+#		print("[IMDB]", text)
+		self["statusbar"].setText(text)
+		return failure
 
-		self.generalinfos = self.generalinfomask.search(self.inhtml)
-
-		if self.generalinfos:
+	def IMDBquery2(self, response):
+		self["statusbar"].setText(_("IMDb Re-Download completed"))
+		self.html = response.content
+		if six.PY3:
+			self.html = self.html.decode("utf8")
+		if self.haveTMD:
 			self.IMDBparse()
 		else:
-			if re.search("<title>Find - IMDb</title>", self.inhtml):
-				pos = self.inhtml.find('<table class="findList">')
-				pos2 = self.inhtml.find("</table>", pos)
-				findlist = self.inhtml[pos:pos2]
-				searchresultmask = re.compile('<tr class="findResult (?:odd|even)">.*?<td class="result_text"> (<a href="/title/(tt\d{7,7})/.*?"\s?>(.*?)</a>.*?)</td>', re.DOTALL)
-				searchresults = searchresultmask.finditer(findlist)
-				titlegroup = 1 if config.plugins.imdb.showlongmenuinfo.value else 3
-				self.resultlist = [(' '.join(self.htmltags.sub('', x.group(titlegroup)).replace(self.NBSP, " ").split()), x.group(2)) for x in searchresults]
-				Len = len(self.resultlist)
-				self["menu"].l.setList(self.resultlist)
-				if Len == 1:
-					self["statusbar"].setText(_("Re-Query IMDb: %s...") % (self.resultlist[0][0],))
-					self.eventName = self.resultlist[0][1]
-					localfile = "/tmp/imdbquery2.html"
-					fetchurl = "https://www.imdb.com/title/" + quoteEventName(self.eventName) + "/"
-					localfile2 = "/tmp/imdbquery-storyline.html"
-					fetchurl2 = "https://www.imdb.com/title/" + quoteEventName(self.eventName) + "/plotsummary"
-					self.downloaded = 0
-					downloadPage(fetchurl, localfile).addCallback(self.IMDBmainDownloaded).addErrback(self.http_failed)
-					downloadPage(fetchurl2, localfile2).addCallback(self.IMDBstorylineDownloaded).addErrback(self.http_failed)
-				elif Len > 1:
-					self.Page = 1
-					self.showMenu()
-				else:
-					self["detailslabel"].setText(_("No IMDb match."))
-					self["statusbar"].setText(_("No IMDb match:") + ' ' + self.eventName)
-			else:
-				splitpos = self.eventName.find('(')
-				if splitpos > 0 and self.eventName.endswith(')'):
-					self.eventName = self.eventName[splitpos + 1:-1]
-					self["statusbar"].setText(_("Re-Query IMDb: %s...") % (self.eventName))
-					# event_quoted = quoteEventName(self.eventName)
-					localfile = "/tmp/imdbquery.html"
-					fetchurl = "https://www.imdb.com/find?s=tt&q=" + quoteEventName(self.eventName)
-					downloadPage(fetchurl, localfile).addCallback(self.IMDBquery).addErrback(self.http_failed)
-				else:
-					self["detailslabel"].setText(_("IMDb query failed!"))
-
-	def http_failed(self, error_instance=None):
-		text = _("IMDb Download failed")
-		if error_instance is not None:
-			error_message = type(error_instance).__name__ + ':\n' + str(error_instance.code) + ' ' + error_instance.reason
-			text += ":\n" + error_message
-		print("[IMDB] ", text)
-		self["statusbar"].setText(text)
-
-	def IMDBmainDownloaded(self, string):
-		self.downloaded |= self.mainDownloaded
-		if self.downloaded == self.allDownloaded:
-			self.IMDBquery2('')
-
-	def IMDBstorylineDownloaded(self, string):
-		self.downloaded |= self.storylineDownloaded
-		if self.downloaded == self.allDownloaded:
-			self.IMDBquery2('')
-
-	def IMDBquery2(self, string):
-		self["statusbar"].setText(_("IMDb Re-Download completed"))
-		self.inhtml = self.html2utf8(open("/tmp/imdbquery2.html", "r").read())
-		self.generalinfos = self.generalinfomask.search(self.inhtml)
-		self.IMDBparseStoryline()
-		self.IMDBparse()
-
-	def IMDBparseStoryline(self):
-		self.storyline = ''
-		storylineHtml = self.html2utf8(open("/tmp/imdbquery-storyline.html", "r").read())
-		m = self.storylinemask.search(storylineHtml)
-		if m is None:
-			m = self.storylinealtmask.search(storylineHtml)
-		if m is not None:
-			try:
-				self.storyline = ' '.join(self.htmltags.sub('', m.group(1).replace("\n", ' ').replace("<br>", '\n').replace("<br />", '\n')).replace(' |' + self.NBSP, '').replace(self.NBSP, ' ').replace('&lt;', '').replace('&gt;', '').split()) + "\n"
-			except IndexError:
-				pass
+			self.haveHTML = True
 
 	def IMDBparse(self):
 		self.Page = 1
 		Detailstext = _("No details found.")
-		if self.generalinfos:
+		start = self.html.find('pageProps":')
+		if start != -1:
+			pageProps = json.JSONDecoder().raw_decode(self.html, start + 11)[0]
+			fold = pageProps['aboveTheFoldData']
+			main = pageProps['mainColumnData']
+			i18n = pageProps['translationContext']['i18n']['translations']['resources']
+			try:
+				tmd = json.loads(self.json)['data']['title']
+			except Exception as e:
+				print("[IMDB] tmd failed:", str(e))
+				tmd = {}
+
+			self.eventName = get(fold, ('titleText', 'text'))
+			self.titleId = get(fold, 'id')
+
 			self["key_yellow"].setText(_("Details"))
-			self["statusbar"].setText(_("IMDb Details parsed") + '.')
-			Titeltext = self.generalinfos.group("title").replace(self.NBSP, ' ').strip()
+			self["statusbar"].setText(_("IMDb Details parsed"))
+
+			# "formatted-duration-duration": "{value} {unit}",
+			# "formatted-duration-longFormatting": "{hours} {minutes} {seconds}",
+			# "formatted-duration-hoursUnit": "{value, plural, one {hour} other {hours}}",
+			# "formatted-duration-minutesUnit": "{value, plural, one {minute} other {minutes}}",
+			# "formatted-duration-secondsUnit": "{value, plural, one {second} other {seconds}}",
+			def runtime(seconds):
+				if not seconds:
+					return ""
+				duration = {
+					'hours': seconds // 3600 or "",
+					'minutes': seconds % 3600 // 60 or "",
+					'seconds': seconds % 60 or ""
+				}
+				for unit, value in duration.items():
+					if value:
+						duration[unit] = get(i18n, 'formatted-duration-duration').format(value=value, unit=LingUI(get(i18n, 'formatted-duration-%sUnit' % unit), value=value))
+				return get(i18n, 'formatted-duration-longFormatting').format(**duration).replace("  ", " ").strip()
+
+			# Format a date using the full format.
+			def makedate(date):
+				return strftime('%x', (date['year'], date['month'], date['day'], 0, 0, 0, 0, 0, 0))
+
+			categories_i18n = {
+				'director': get(main, ('directors', 'category', 'text')),
+				'writer': get(main, ('writers', 'category', 'text')),
+				'creator': get(main, ('creators', 'category', 'text')),
+				'episodes': get(i18n, 'title_main_episodes_title'),
+				# There's "Season" (no plural) or "{count} seasons" (no capital).
+				'seasons': get(i18n, 'title_main_episodes_seasons').replace("{count}", "").strip().capitalize(),
+				'premiere': get(i18n, 'title_main_details_releaseDate'),
+				'country': LingUI(get(i18n, 'title_main_details_countriesOfOrigin'), countryCount=len(get(main, ('countriesOfOrigin', 'countries')))),
+				'alternativ': get(i18n, 'title_main_details_aka'),
+
+				'outline': get(i18n, 'title_main_hero_allTopics_plotLink'),      # no translation for "outline", just use "Plot"
+				'synopsis': get(i18n, 'title_main_storyline_title'),
+				'keywords': get(i18n, 'title_main_hero_allTopics_plotKeywordsLink'),
+				'tagline': get(i18n, 'title_main_storyline_label_taglines'),
+				'cert': get(i18n, 'title_main_storyline_label_certificate'),
+				'trivia': get(i18n, 'title_subpage_trivia'),
+				'goofs': get(i18n, 'title_subpage_goofs'),
+				'quotes': get(i18n, 'title_subpage_quotes'),
+				'connections': get(i18n, 'title_subpage_connections'),
+				'commenttitle': get(i18n, 'title_main_userReviews_title'),
+				'language': LingUI(get(i18n, 'title_main_details_languages'), languageCount=main['spokenLanguages'] and len(get(main, ('spokenLanguages', 'spokenLanguages')))),
+				'locations': get(i18n, 'title_main_details_filmingLocations'),
+				'company': LingUI(get(i18n, 'title_main_details_productionCompany'), companyCount=len(get(main, ('production', 'edges')))),
+				'runtime': get(i18n, 'title_main_techspec_runtime'),
+				'color': get(i18n, 'title_main_techspec_color'),
+				'sound': get(i18n, 'title_main_techspec_soundmix'),
+				'aspect': get(i18n, 'title_main_techspec_aspectratio'),
+			}
+
+			self.generalinfos = {
+				'director': ", ".join(get(name, ('name', 'nameText', 'text')) for name in get(main, ('directors', 'credits'))),
+				'creator': ", ".join(get(name, ('name', 'nameText', 'text')) for name in get(main, ('creators', 'credits'))),
+				'episodes': get(main, ('episodes', 'totalEpisodes', 'total')),
+				'seasons': len(get(main, ('episodes', 'seasons'))),
+				'writer': ", ".join(get(name, ('name', 'nameText', 'text')) + (name['attributes'] and " (" + name['attributes'][0]['text'] + ")" or "") for name in get(main, ('writers', 'credits'))),
+				'country': ', '.join(get(country, 'text') for country in get(main, ('countriesOfOrigin', 'countries'))),
+				'premiere': main['releaseDate'] and "%s (%s)" % (makedate(main['releaseDate']), get(main, ('releaseDate', 'country', 'text'))),
+				# there's also main['releaseYear']['year']
+				'alternativ': get(main, ('akas', 'edges', 'node', 'text')),
+				'rating': get(fold, ('ratingsSummary', 'aggregateRating')),
+				'poster': get(fold, ('primaryImage', 'url'))
+			}
+
+			Titeltext = self.eventName
 			if len(Titeltext) > 57:
 				Titeltext = Titeltext[0:54] + "..."
+			Titeltext = text2label(Titeltext)
 			self["title"].setText(Titeltext)
 
-			Detailstext = ""
-			addnewline = ''
+			Detailslist = []
 
-			genreblock = self.genreblockmask.search(self.inhtml)
+			genreblock = get(fold, ('genres', 'genres'))
 			if genreblock:
-				genres = ' | '.join(re.split('\|+', self.htmltags.sub('|', genreblock.group(1)).strip('|').replace(self.NBSP, ' ')))
-				if genres:
-					Detailstext += addnewline + _("Genre:") + " " + genres
-					addnewline = "\n"
-					self.callbackGenre = genres
+				genres = LingUI(get(i18n, 'title_main_storyline_label_genres'), count=len(genreblock)) + ": "
+				genres += " | ".join(get(genre, 'text') for genre in genreblock)
+				Detailslist.append(genres)
+				self.callbackGenre = genres
 
-			for category in ("director", "creator", "writer", "seasons"):
-				try:
-					if self.generalinfos.group(category):
-						if category == 'seasons':
-							txt = ' '.join(self.htmltags.sub(' ', self.generalinfos.group(category)).replace("\n", ' ').replace(self.NBSP, ' ').replace(self.RAQUO, '').replace('See all', '...').split())
-						elif category == 'creator':
-							txt = ', '.join(re.split('\|+', self.htmltags.sub('|', self.generalinfos.group(category).replace('</a><span class="ipc-metadata-list-item__list-content-item--subText">', ' ')).strip('|').replace("\n", ' ').replace(self.NBSP, ' ').replace(self.RAQUO, '').replace(self.HELLIP + 'See all', '...')))
-						else:
-							txt = ', '.join(re.split('\|+', self.htmltags.sub('|', self.generalinfos.group(category)).strip('|').replace("\n", ' ').replace(self.NBSP, ' ').replace(self.RAQUO, '').replace(self.HELLIP + 'See all', '...')))
-						Detailstext += addnewline + self.generalinfos.group('g_' + category).capitalize() + ": " + txt
-						addnewline = "\n"
-				except IndexError:
-					pass
+			for category in ('director', 'creator', 'writer', 'seasons', 'episodes', 'premiere', 'country', 'alternativ'):
+				if self.generalinfos[category]:
+					Detailslist.append(categories_i18n[category] + ": " + str(self.generalinfos[category]))
 
-			for category in ("premiere", "country", "alternativ"):
-				try:
-					if self.generalinfos.group(category):
-						txt = ', '.join(re.split('\|+', self.htmltags.sub('|', self.generalinfos.group(category).replace('\n', ' ')).strip('|')))
-						Detailstext += addnewline + self.generalinfos.group('g_' + category) + ": " + txt
-						addnewline = "\n"
-				except IndexError:
-					pass
+			Detailstext = "\n".join(Detailslist)
 
-			rating = self.ratingmask.search(self.inhtml)
-			Ratingtext = _("no user rating yet")
+			rating = self.generalinfos['rating']
 			if rating:
-				rating = rating.group("rating")
-				if rating != '<span id="voteuser"></span>':
-					Ratingtext = _("User Rating") + ": " + rating + " / 10"
-					self.ratingstars = int(10 * round(float(rating.replace(',', '.')), 1))
-					self["stars"].show()
-					self["stars"].setValue(self.ratingstars)
-					self["starsbg"].show()
+				Ratingtext = "%s: %.1f / 10" % (get(i18n, 'title_main_hero_aggregateRating'), rating)  # IMDb rating
+				self.ratingstars = int(10 * round(rating, 1))
+				self["stars"].show()
+				self["stars"].setValue(self.ratingstars)
+				self["starsbg"].show()
+			else:
+				Ratingtext = _("no user rating yet")
 			self["ratinglabel"].setText(Ratingtext)
 
-			castresult = self.castmask.finditer(self.inhtml)
-			if castresult:
-				Casttext = ""
-				i = 0
-				for x in castresult:
-					extra_space = ' '
-					Casttext += "\n" + extra_space + self.htmltags.sub('', x.group('actor'))
-					if x.group('character'):
-						chartext = self.htmltags.sub(' ', x.group('character').replace('/ ...', '')).replace('\n', ' ').replace(self.NBSP, ' ')
-						Casttext += _(" as ") + ' '.join(chartext.split()).replace(self.HELLIP, '')
-						try:
-							if config.plugins.imdb.showepisodeinfo.value and x.group('episodes'):
-								Casttext += ' [' + self.htmltags.sub('', re.sub(r"[0-9]+ eps", "", x.group('episodes')).replace(' ' + self.BULL + ' ', ', ')).strip() + ']'
-						except IndexError:
-							pass
-					i += 1
-					if i >= 16:
-						break
-				if Casttext:
-					Casttext = _("Cast: ") + Casttext
-				else:
-					Casttext = _("No cast list found in the database.")
-				self["castlabel"].setText(Casttext)
+			cast = get(main, ('cast', 'edges'))
+			if cast:
+				Castlist = [get(i18n, 'title_main_cast_title') + ":"]
 
-			posterurl = self.postermask.search(self.inhtml)
-			if posterurl and posterurl.group(1).find("jpg") > 0:
-				posterurl = posterurl.group(1)
+				def character(credit):
+					char = get(credit, ('name', 'nameText', 'text'))
+					if credit['characters']:
+						char += " " + get(i18n, 'common_cast_characterName_with_as').format(characterName=" / ".join(get(ch, 'name') for ch in credit['characters']))
+					# if credit['attributes']:
+					#	char += " (%s)" % "; ".join(get(attr, 'text') for attr in name['attributes'])
+					if config.plugins.imdb.showepisodeinfo.value:
+						eps = get(credit, ('episodeCredits', 'total'))
+						years = get(credit, ('episodeCredits', 'yearRange'))
+						if eps:
+							char += " [%s, %d" % (LingUI(get(i18n, 'common_cast_numEpisodes_short'), totalEpisodes=eps), years['year'])
+							endYear = get(years, 'endYear')
+							if endYear:
+								char += "-" + str(endYear)
+							char += "]"
+					return char
+
+				for node in cast:
+					Castlist.append(character(node['node']))
+				Casttext = "\n ".join(Castlist)
+			else:
+				Casttext = _("No cast list found in the database.")
+			self.castTxt = Casttext
+			Casttext = text2label(Casttext)
+			self["castlabel"].setText(Casttext)
+
+			posterurl = self.generalinfos['poster']
+			if posterurl:
+				# Get a poster size to fit its widget.
+				posterurl = posterurl.replace("_V1_", "_V1_QL75_UY%d_" % self["poster"].instance.size().height())
 				self["statusbar"].setText(_("Downloading Movie Poster..."))
 				localfile = "/tmp/poster.jpg"
-				print("[IMDB] downloading poster " + posterurl + " to " + localfile)
-				downloadPage(posterurl, localfile).addCallback(self.IMDBPoster).addErrback(self.http_failed)
+#				print("[IMDB] downloading poster " + posterurl + " to " + localfile)
+				download = downloadPage(posterurl, localfile)
+				download.addCallback(self.IMDBPoster).addErrback(self.http_failed)
 			else:
-				self.IMDBPoster("kein Poster")
+				self.IMDBPoster("No Poster Art")
 
-			Extratext = ''
-			awardsresult = self.awardsmask.finditer(self.inhtml)
-			if awardsresult:
-				awardslist = [' '.join(x.group('awards').split()) for x in awardsresult]
-				if awardslist:
-					Extratext = _("Extra Info") + "\n\n" + self.allhtmltags.sub(' | ', ''.join(awardslist).replace('<b>', '').strip()) + "\n"
+			# "feature_awards_winsAndNominations": "{numOfWins, plural, one {1 win} other {{numOfWins} wins}} & {numOfNoms, plural, one {1 nomination} other {{numOfNoms} nominations}}",
+			# "feature_awards_winsAndNominationsTotal": "{numOfWins, plural, one {1 win} other {{numOfWins} wins}} & {numOfNoms, plural, one {1 nomination total} other {{numOfNoms} nominations total}}",
+			# "feature_awards_onlyNominations": "{numOfNoms, plural, one {1 nomination} other {{numOfNoms} nominations}}",
+			# "feature_awards_onlyNominationsTotal": "{numOfNoms, plural, one {1 nomination total} other {{numOfNoms} nominations total}}",
+			# "feature_awards_onlyWins": "{numOfWins, plural, one {1 win} other {{numOfWins} wins}}",
+			# "feature_awards_onlyWinsTotal": "{numOfWins, plural, one {1 win total} other {{numOfWins} wins total}}",
+			# "feature_awards_oscars_won": "Won {count, plural, one {{count} Oscar} other {{count} Oscars}}",
+			# "feature_awards_oscars_nominated": "Nominated for {count, plural, one {{count} Oscar} other {{count} Oscars}}",
+			# "feature_awards_emmys_won": "Won {count, plural, one {{count} Primetime Emmy} other {{count} Primetime Emmys}}",
+			# "feature_awards_emmys_nominated": "Nominated for {count, plural, one {{count} Primetime Emmy} other {{count} Primetime Emmys}}",
+			# "feature_awards_globes_won": "Won {count, plural, one {{count} Golden Globe} other {{count} Golden Globes}}",
+			# "feature_awards_globes_nominated": "Nominated for {count, plural, one {{count} Golden Globe} other {{count} Golden Globes}}",
+			# "feature_awards_baftas_won": "Won {count, plural, one {{count} BAFTA Film Award} other {{count} BAFTA Film Awards}}",
+			# "feature_awards_baftas_nominated": "Nominated for {count, plural, one {{count} BAFTA Film Award} other {{count} BAFTA Film Awards}}",
+			awards = ""
+			prest = get(main, 'prestigiousAwardSummary')
+			if prest:
+				award = prest['award']['event']['id']
+				if award == "ev0000003":
+					award = 'oscars'
+				elif award == "ev0000223":
+					award = 'emmys'
+				elif award == "ev0000123":
+					award = 'baftas'
+				else:
+					award = 'globes'
+				wins = prest['wins']
+				noms = prest['nominations']
+				if wins:
+					awards += LingUI(get(i18n, 'feature_awards_%s_won' % award), count=wins)
+				else:
+					awards += LingUI(get(i18n, 'feature_awards_%s_nominated' % award), count=noms)
+				awards += " | "
+			wins = get(main, ('wins', 'total'))
+			noms = get(main, ('nominations', 'total'))
+			if wins and noms:
+				awards += LingUI(get(i18n, prest and 'feature_awards_winsAndNominationsTotal' or 'feature_awards_winsAndNominations'), numOfWins=wins, numOfNoms=noms)
+			elif noms:
+				awards += LingUI(get(i18n, prest and 'feature_awards_onlyNominationsTotal' or 'feature_awards_onlyNominations'), numOfNoms=noms)
+			if awards:
+				Extralist = ["", awards]
+			else:
+				Extralist = []
 
-			extrainfos = self.extrainfomask.search(self.inhtml)
+			# Format a quote.
+			# [
+			#	{
+			#	  "characters": null,
+			#	  "text": null,
+			#	  "stageDirection": "from trailer",
+			#	  "__typename": "TitleQuoteLine"
+			#	},
+			#	{
+			#	  "characters": [
+			#		{
+			#		  "character": "John McBurney",
+			#		  "name": {
+			#			"id": "nm0268199",
+			#			"__typename": "Name"
+			#		  },
+			#		  "__typename": "TitleQuoteCharacter"
+			#		}
+			#	  ],
+			#	  "text": "What have you done to me, you vengeful bitches?",
+			#	  "stageDirection": "screaming",
+			#	  "__typename": "TitleQuoteLine"
+			#	}
+			# ]
+			# -->
+			# [from trailer]
+			# John McBurney: [screaming] What have you done to me, you vengeful bitches?
 
-			if extrainfos:
-				if not Extratext:
-					Extratext = _("Extra Info") + "\n"
+			def quote(lines):
+				q = []
+				for char in lines:
+					stageDirection = get(char, 'stageDirection')
+					character = get(char, ('characters', 'character'))
+					line = ""
+					if character:
+						line += character + ": "
+						if stageDirection:
+							line += "[%s] " % stageDirection
+						line += get(char, 'text')
+					elif stageDirection:
+						line += "[%s]" % stageDirection
+					q.append(line)
+				return "\n".join(q)
 
-				addspace = {"outline", "synopsis", "tagline", "cert", "locations", "trivia", "goofs", "quotes", "connections"}
+			def connections(node):
+				if not node:
+					return ""
+				r = get(node, ('category', 'text'))
+				series = get(node, ('associatedTitle', 'series', 'series', 'titleText', 'text'))
+				title = get(node, ('associatedTitle', 'titleText', 'text'))
+				if series:
+					r += " " + series
+				if title:
+					if series:
+						r += ":"
+					r += " " + title
+				year = get(node, ('associatedTitle', 'releaseYear', 'year'))
+				if year:
+					r += " (%s)" % year
+				return r
 
-				categories = ("outline", "synopsis", "tagline", "keywords", "cert", "runtime", "language", "color", "aspect", "sound", "locations", "company", "trivia", "goofs", "quotes", "connections")
-				for category in categories:
-					if category == "synopsis":
-						if self.storyline:
-							Extratext += "\n" + _("Storyline") + ":\n" + self.storyline + "\n"
+			summary_author = get(tmd, ('summaries', 'edges', 'node', 'author'))
+			summary_author = summary_author and html2text(" &mdash;") + summary_author or ""  # might be None
+			cert_reason = get(tmd, ('certificate', 'ratingReason')) or ""
+			if cert_reason:
+				body = get(tmd, ('certificate', 'ratingsBody', 'id'))
+				if body:
+					cert_reason = body + ": " + cert_reason
+				cert_reason = " (" + cert_reason + ")"
+
+			self.extrainfos = {
+				'outline': get(fold, ('plot', 'plotText', 'plainText')),
+				'synopsis': html2text(get(tmd, ('summaries', 'edges', 'node', 'plotText', 'plaidHtml'))) + summary_author,
+				'keywords': " | ".join(get(name, ('node', 'text')) for name in get(fold, ('keywords', 'edges'))),
+				'tagline': get(tmd, ('taglines', 'edges', 'node', 'text')),
+				'cert': get(fold, ('certificate', 'rating')) + cert_reason,
+				'trivia': html2text(get(main, ('trivia', 'edges', 'node', 'text', 'plaidHtml'))),
+				'goofs': html2text(get(main, ('goofs', 'edges', 'node', 'text', 'plaidHtml'))),
+				'quotes': quote(get(main, ('quotes', 'edges', 'node', 'lines'))),
+				'connections': connections(get(main, ('connections', 'edges', 'node'))),
+				'commenttitle': get(main, ('featuredReviews', 'edges', 'node', 'summary', 'originalText')),
+				'comment': html2text(get(main, ('featuredReviews', 'edges', 'node', 'text', 'originalText', 'plaidHtml'))),
+				'commenter': get(main, ('featuredReviews', 'edges', 'node', 'author', 'nickName')),
+				'language': ", ".join(get(lang, 'text') for lang in get(main, ('spokenLanguages', 'spokenLanguages'))),
+				'locations': get(main, ('filmingLocations', 'edges', 'node', 'text')),
+				'company': ", ".join(get(node, ('node', 'company', 'companyText', 'text')) for node in get(main, ('production', 'edges'))),
+				'runtime': runtime(get(main, ('runtime', 'seconds'))),
+				'color': get(main, ('technicalSpecifications', 'colorations', 'items', 'text')),
+				'sound': " | ".join(get(mix, 'text') for mix in get(main, ('technicalSpecifications', 'soundMixes', 'items'))),
+				'aspect': get(main, ('technicalSpecifications', 'aspectRatios', 'items', 'aspectRatio')),
+			}
+
+			firstnospace = True
+			nospace = ("cert", "runtime", "language", "color", "aspect", "sound")
+			categories = ("outline", "synopsis", "tagline", "keywords", "cert", "runtime", "language", "color", "aspect", "sound", "locations", "company", "trivia", "goofs", "quotes", "connections")
+			for category in categories:
+				if self.extrainfos[category]:
+					sep = ":\n" if category in ("outline", "synopsis", "quotes") else ": "
+					extraspace = True
+					if category in nospace:
+						if firstnospace:
+							firstnospace = False
 						else:
-							Extratext += "\n"
-						continue
+							extraspace = False
+					if extraspace:
+						Extralist.append("")
+					if category == "outline":
+						outline = self.extrainfos["outline"]
+						synopsis = self.extrainfos["synopsis"]
+						if synopsis and synopsis.startswith(outline):
+							if extraspace:
+								Extralist.pop()
+							continue
+					Extralist.append(categories_i18n[category] + sep + self.extrainfos[category])
+			if self.extrainfos["commenttitle"]:
+				Extralist.append("")
+				Extralist.append(categories_i18n['commenttitle'] + ": " + self.extrainfos['commenttitle'] + " [" + self.extrainfos['commenter'] + "]")
+				Extralist.append(self.extrainfos['comment'])
 
-					extraspace = "\n" if category in addspace else ''
-					try:
-						if extrainfos.group(category):
-							sep = ":\n" if category in ("outline", "synopsis") else ": "
-							Extratext += extraspace
-							try:
-								if category == "outline":
-									if "Add full plot" in extrainfos.group(category):
-										continue
-									Extratext += _("Plot Outline")
-								elif extrainfos.group('g_' + category):
-									Extratext += extrainfos.group('g_' + category)
-								else:
-									Extratext += _("Unknown category")
-							except IndexError: # there's no g_keywords anymore
-								pass
-							if category == "trivia" or category == "quotes" or category == "connections" or category == "runtime" or category == 'synopsis':
-								txt = ' '.join(self.htmltags.sub(' ', extrainfos.group(category).replace("\n", ' ').replace("<br>", '\n').replace("<br />", '\n')).replace(' |' + self.NBSP, '').replace(self.NBSP, ' ').split())
-							elif category == "keywords":
-								Extratext += "\n" + _("Keywords") # there's no g_keywords anymore
-								txt = ' | '.join(re.split('\|+', self.htmltags.sub('|', extrainfos.group(category).replace("\n", ' ').replace("<br>", '\n').replace("<br />", '\n')).strip('|').replace(' |' + self.NBSP, '').replace(self.NBSP, ' ')))
-							else:
-								txt = ', '.join(re.split('\|+', self.htmltags.sub('|', extrainfos.group(category).replace("\n", ' ').replace("<br>", '\n').replace("<br />", '\n')).strip('|').replace(' |' + self.NBSP, '').replace(self.NBSP, ' ')))
-							Extratext += sep + txt + "\n"
-					except IndexError:
-						pass
-				try:
-					if extrainfos.group("g_comments"):
-						g_rating = ""
-						try:
-							if extrainfos.group("g_rating") and extrainfos.group("g_maxrating"):
-								g_rating = " [" + extrainfos.group("g_rating") + "/" + extrainfos.group("g_maxrating") + "]"
-						except IndexError:
-							pass
-						Extratext += "\n" + extrainfos.group("g_comments") + ":\n" + extrainfos.group("commenttitle") + " [" + ' '.join(self.htmltags.sub('', extrainfos.group("commenter")).split()) + "]" + g_rating + ":\n\n" + self.htmltags.sub('', extrainfos.group("comment").replace("\n", ' ').replace(self.NBSP, ' ').replace("<br>", '\n').replace("<br/>", '\n').replace("<br />", '\n')) + "\n"
-				except IndexError:
-					pass
-
-			if Extratext:
-				self["extralabel"].setText(Extratext)
+			if Extralist:
+				self.extraTxt = _("Extra Info") + "\n" + "\n".join(Extralist)
+				self.extra = text2label(self.extraTxt)
+				self["extralabel"].setText(self.extra)
 				self["extralabel"].hide()
 				self["key_blue"].setText(_("Extra Info"))
+			else:
+				self.extraTxt = self.extra = ""
 
-		self["detailslabel"].setText(Detailstext)
+			self.synopsisTxt = html2text(get(tmd, ('synopses', 'edges', 'node', 'plotText', 'plaidHtml')))
+			self.synopsis = text2label(self.synopsisTxt)
+
 		self.callbackData = Detailstext
+		Detailstext = text2label(Detailstext)
+		self["detailslabel"].setText(Detailstext)
+		self["VKeyIcon"].boolean = self.synopsis and True or False
 
-	def IMDBPoster(self, string):
-		self["statusbar"].setText(_("IMDb Details parsed") + '.')
-		if not string:
-			filename = "/tmp/poster.jpg"
-		else:
+	def IMDBPoster(self, failed, big=False):
+		self["statusbar"].setText(_("IMDb Details parsed"))
+		if failed:
 			filename = resolveFilename(SCOPE_PLUGINS, "Extensions/IMDb/no_poster.png")
+		else:
+			filename = big and "/tmp/poster-big.jpg" or "/tmp/poster.jpg"
 		sc = AVSwitch().getFramebufferScale()
 		self.picload.setPara((self["poster"].instance.size().width(), self["poster"].instance.size().height(), sc[0], sc[1], False, 1, "#00000000"))
 		self.picload.startDecode(filename)
 
 	def paintPosterPixmapCB(self, picInfo=None):
 		ptr = self.picload.getData()
-		if ptr != None:
+		if ptr is not None:
 			self["poster"].instance.setPixmap(ptr)
-			self["poster"].show()
+
+	def bigPoster(self):
+		if not self.generalinfos or self.poster_pos:
+			return
+		posterurl = self.generalinfos['poster']
+		if posterurl:
+			localfile = "/tmp/poster-big.jpg"
+			if fileExists(localfile):
+				self.IMDBPosterBig()
+				return
+			# Get a poster size to fit the skin.
+			posterurl = posterurl.replace("_V1_", "_V1_QL75_UY%d_" % self.instance.size().height())
+			self["statusbar"].setText(_("Downloading Movie Poster..."))
+#			print("[IMDB] downloading poster " + posterurl + " to " + localfile)
+			download = downloadPage(posterurl, localfile)
+			download.addCallback(self.IMDBPosterBig).addErrback(self.http_failed)
+
+	def IMDBPosterBig(self, failed=None):
+		if failed:
+			self["statusbar"].setText(str(failed))
+			return
+		self["statusbar"].setText(_("IMDb Details parsed"))
+		self.poster_pos = (self["poster"].getPosition(), self["poster"].getSize())
+		self["poster"].setZPosition(99)
+		self["poster"].move(0, 0)
+		self["poster"].resize(self.instance.size().width(), self.instance.size().height())
+		self.IMDBPoster(None, True)
+		self["poster"].show()
+
+	def hideBigPoster(self):
+		if self.poster_pos:
+			if self.Page != 1:
+				self["poster"].hide()
+			self["poster"].move(self.poster_pos[0][0], self.poster_pos[0][1])
+			self["poster"].resize(self.poster_pos[1][0], self.poster_pos[1][1])
+			self.IMDBPoster(not fileExists("/tmp/poster.jpg"))
+			self.poster_pos = None
+			return True
 
 	def setup(self):
 		self.session.open(IMDbSetup)
@@ -1042,6 +1214,7 @@ class IMDbSetup(Screen, ConfigListScreen):
 		self.list.append(getConfigListEntry(_("Show in movie list"), config.plugins.imdb.showinmovielist, _("Enable this to be able to access IMDb searches from within the movie list."))),
 		self.list.append(getConfigListEntry(_("Words / phrases to ignore "), config.plugins.imdb.ignore_tags, _("This option allows you add words/phrases for IMDb to ignore when searching. Please separate the words/phrases with commas.")))
 		self.list.append(getConfigListEntry(_("Show full movie or series name in title menu"), config.plugins.imdb.showlongmenuinfo, _("Show the whole IMDb title information for a movie or series, including, for example, alternative names and whether it's a series. Takes effect after the next search of IMDb for a show name.")))
+		self.list.append(getConfigListEntry(_("Show episodes in title menu"), config.plugins.imdb.showepisoderesults, _("Include episodes in the results. Takes effect after the next search of IMDb for a show name.")))
 		self.list.append(getConfigListEntry(_("Show episode and year information in cast list"), config.plugins.imdb.showepisodeinfo, _("Show episode and year information for cast when available. Takes effect after the next fetch of show details.")))
 		self["config"].list = self.list
 		self["config"].l.setList(self.list)
@@ -1139,7 +1312,7 @@ def eventinfo(session, eventName="", **kwargs):
 		s = session.nav.getCurrentService()
 		if s:
 			info = s.info()
-			event = info.getEvent(0) # 0 = now, 1 = next
+			event = info.getEvent(0)  # 0 = now, 1 = next
 			eventName = event and event.getEventName() or ''
 	session.open(IMDB, eventName)
 
@@ -1152,15 +1325,19 @@ def setup(session, **kwargs):
 	session.open(IMDbSetup)
 
 
-def movielistSearch(session, service, **kwargs):
-	KNOWN_EXTENSIONS = ['x264', '720p', '1080p', '1080i', 'PAL', 'GERMAN', 'ENGLiSH', 'WS', 'DVDRiP', 'UNRATED', 'RETAIL', 'Web-DL', 'DL', 'LD', 'MiC', 'MD', 'DVDR', 'BDRiP', 'BLURAY', 'DTS', 'UNCUT', 'ANiME', 'AC3MD', 'AC3', 'AC3D', 'TS', 'DVDSCR', 'COMPLETE', 'INTERNAL', 'DTSD', 'XViD', 'DIVX', 'DUBBED', 'LINE.DUBBED', 'DD51', 'DVDR9', 'DVDR5', 'h264', 'AVC', 'WEBHDTVRiP', 'WEBHDRiP', 'WEBRiP', 'WEBHDTV', 'WebHD', 'HDTVRiP', 'HDRiP', 'HDTV', 'ITUNESHD', 'REPACK', 'SYNC']
+def movielistSearch(session, serviceref, **kwargs):
+	KNOWN_EXTENSIONS2 = frozenset(('x264', '720p', '1080p', '1080i', 'PAL', 'GERMAN', 'ENGLiSH', 'WS', 'DVDRiP', 'UNRATED', 'RETAIL', 'Web-DL', 'DL', 'LD', 'MiC', 'MD', 'DVDR', 'BDRiP', 'BLURAY', 'DTS', 'UNCUT', 'ANiME', 'AC3MD', 'AC3', 'AC3D', 'TS', 'DVDSCR', 'COMPLETE', 'INTERNAL', 'DTSD', 'XViD', 'DIVX', 'DUBBED', 'LINE.DUBBED', 'DD51', 'DVDR9', 'DVDR5', 'h264', 'AVC', 'WEBHDTVRiP', 'WEBHDRiP', 'WEBRiP', 'WEBHDTV', 'WebHD', 'HDTVRiP', 'HDRiP', 'HDTV', 'ITUNESHD', 'REPACK', 'SYNC'))
 	serviceHandler = eServiceCenter.getInstance()
-	info = serviceHandler.info(service)
-	eventName = info and info.getName(service) or ''
+	info = serviceHandler.info(serviceref)
+	eventName = info and info.getName(serviceref) or ''
 	(root, ext) = os.path.splitext(eventName)
-	if ext in KNOWN_EXTENSIONS:
-		print("#####################", ext)
-		eventName = re.sub("[\W_]+", ' ', root.decode("utf8"), 0, re.LOCALE | re.UNICODE).encode("utf8")
+	if ext in KNOWN_EXTENSIONS or ext in KNOWN_EXTENSIONS2:
+		if six.PY2:
+			root = root.decode("utf8")
+			eventName = re.sub(r"[\W_]+", ' ', root, 0, re.LOCALE | re.UNICODE)
+			eventName = eventName.encode("utf8")
+		else:
+			eventName = re.sub(r"[\W_]+", ' ', root, 0)
 	session.open(IMDB, eventName)
 
 
