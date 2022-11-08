@@ -6,4 +6,4 @@ Priority: optional
 Maintainer: michael
 Architecture: all
 Homepage:
-Depends: python-twisted-web, python-html, python-textutils, python-json
+Depends: python-twisted-web, python-html, python-textutils, python-json, python-six

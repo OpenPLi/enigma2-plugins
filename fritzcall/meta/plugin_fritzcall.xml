@@ -16,6 +16,7 @@
 		<file type="package" name="enigma2-plugin-extensions-fritzcall" />
 		<file type="package" name="python-html" />
 		<file type="package" name="python-textutils" />
-		<file type="package" name="twisted-web" />
+		<file type="package" name="python-twisted-web" />
+		<file type="package" name="python-six" />
 	  </files>
 </default>
