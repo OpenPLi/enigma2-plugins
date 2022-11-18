@@ -185,6 +185,8 @@ class AutoTimerEditorBase:
 		else:
 			self.serviceRestriction = False
 
+		self.isIPTV = bool([service for service in timer.services if ":http" in service])
+
 		self.createSetup(timer)
 
 	def createSetup(self, timer):
@@ -573,27 +575,29 @@ class AutoTimerEditor(Screen, ConfigListScreen, AutoTimerEditorBase):
 			self["key_yellow"].text = _("edit filters")
 		else:
 			self["key_yellow"].text = _("add filters")
-		if self.excludes[0] or self.excludes[1] or self.excludes[2] or self.includes[0] or self.includes[1] or self.includes[2]:
+		if self.filterSet and (self.excludes[0] or self.excludes[1] or self.excludes[2] or self.includes[0] or self.includes[1] or self.includes[2]):
 			self.isActive_otherfilters_value = _("enabled")
 		else:
 			self.isActive_otherfilters_value = _("disabled")
-		if self.excludes[3] or self.includes[3]:
+		if self.filterSet and (self.excludes[3] or self.includes[3]):
 			self.isActive_dayofweek_value = _("enabled")
 		else:
 			self.isActive_dayofweek_value = _("disabled")
 		self.reloadList(True)
 
 	def renameServiceButton(self):
-		if self.serviceRestriction:
+		if self.isIPTV:
+			self["key_blue"].text = ""
+		elif self.serviceRestriction:
 			self["key_blue"].text = _("Edit services")
 		else:
 			self["key_blue"].text = _("Add services")
 			self.isActive_services_value = _("disabled")
-		if self.services:
+		if self.isIPTV or (self.serviceRestriction and self.services):
 			self.isActive_services_value = _("enabled")
 		else:
 			self.isActive_services_value = _("disabled")
-		if self.bouquets:
+		if self.serviceRestriction and self.bouquets:
 			self.isActive_bouquets_value = _("enabled")
 		else:
 			self.isActive_bouquets_value = _("disabled")
@@ -627,7 +631,7 @@ class AutoTimerEditor(Screen, ConfigListScreen, AutoTimerEditorBase):
 			self.match: _("This is what will be looked for in event titles. Note that looking for e.g. german umlauts can be tricky as you have to know the encoding the channel uses."),
 			self.encoding: _("Encoding the channel uses for it's EPG data. You only need to change this if you're searching for special characters like the german umlauts."),
 			self.searchType: _("Select \"exact match\" to enforce \"Match title\" to match exactly, \"partial match\" if you only want to search for a part of the event title or \"description match\" if you only want to search for a part of the event description") + _(" (only services from bouquets when use \"favorites description match\")."),
-			self.searchCase: _("Select whether or not you want to enforce case correctness."),
+			self.searchCase: _("Select whether or not you want to enforce case correctness.") + "\n" + _("Attention! We recommend that you ignore case when searching in Cyrillic if the search name contains uppercase and lowercase letters."),
 			self.justplay: _("Set timer type: zap, simple record, zap+record (always zap to service before start record)."),
 			self.zap_wakeup: _("Set wakeup receiver type. This works only for zap timers."),
 			self.setEndtime: _("Set an end time for the timer. If you do, the timespan of the event might be blocked for recordings."),
@@ -778,8 +782,11 @@ class AutoTimerEditor(Screen, ConfigListScreen, AutoTimerEditorBase):
 		self.isActive_bouquets = NoSave(ConfigSelection([("0", self.isActive_bouquets_value)], default="0"))
 		self.isActive_dayofweek = NoSave(ConfigSelection([("0", self.isActive_dayofweek_value)], default="0"))
 		self.isActive_otherfilters = NoSave(ConfigSelection([("0", self.isActive_otherfilters_value)], default="0"))
-		list.append(getConfigListEntry(_("Restriction to certain services (edit in services menu)"), self.isActive_services))
-		list.append(getConfigListEntry(_("Restriction to certain bouquets (edit in services menu)"), self.isActive_bouquets))
+		if not self.isIPTV:
+			list.append(getConfigListEntry(_("Restriction to certain services (edit in services menu)"), self.isActive_services))
+			list.append(getConfigListEntry(_("Restriction to certain bouquets (edit in services menu)"), self.isActive_bouquets))
+		else:
+			list.append(getConfigListEntry(_("IPTV stream use only this service for search"), self.isActive_services))
 		list.append(getConfigListEntry(_("Restriction to certain days of week (edit in filter menu)"), self.isActive_dayofweek))
 		list.append(getConfigListEntry(_("Other filters (edit in filter menu)"), self.isActive_otherfilters))
 
@@ -807,13 +814,14 @@ class AutoTimerEditor(Screen, ConfigListScreen, AutoTimerEditorBase):
 			self.renameFilterButton()
 
 	def editServices(self):
-		self.session.openWithCallback(
-			self.editServicesCallback,
-			AutoTimerServiceEditor,
-			self.serviceRestriction,
-			self.services,
-			self.bouquets
-		)
+		if not self.isIPTV:
+			self.session.openWithCallback(
+				self.editServicesCallback,
+				AutoTimerServiceEditor,
+				self.serviceRestriction,
+				self.services,
+				self.bouquets
+			)
 
 	def editServicesCallback(self, ret):
 		if ret:

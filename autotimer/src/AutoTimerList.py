@@ -4,7 +4,7 @@ from . import _
 
 # GUI (Components)
 from Components.MenuList import MenuList
-from enigma import eListboxPythonMultiContent, eListbox, gFont, RT_HALIGN_LEFT, RT_HALIGN_RIGHT, RT_VALIGN_CENTER, RT_VALIGN_TOP, RT_VALIGN_BOTTOM
+from enigma import eServiceReference, eServiceCenter, eListboxPythonMultiContent, eListbox, gFont, RT_HALIGN_LEFT, RT_HALIGN_RIGHT, RT_VALIGN_CENTER, RT_VALIGN_TOP, RT_VALIGN_BOTTOM
 from Tools.LoadPixmap import LoadPixmap
 from ServiceReference import ServiceReference
 from Components.config import config
@@ -26,6 +26,51 @@ class DAYS:
 	WEEKEND = 'weekend'
 	WEEKDAY = 'weekday'
 
+BouquetChannelListList = None
+def getBouquetChannelList(iptv_only=False):
+	channels = []
+	bouquetlist = []
+	serviceHandler = eServiceCenter.getInstance()
+	if config.usage.multibouquet.value:
+		refstr = '1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "bouquets.tv" ORDER BY bouquet'
+		bouquetroot = eServiceReference(refstr)
+		bouquets = serviceHandler.list(bouquetroot)
+		if bouquets:
+			while True:
+				s = bouquets.getNext()
+				if not s.valid():
+					break
+				if s.flags & eServiceReference.isDirectory and not s.flags & eServiceReference.isInvisible:
+					info = serviceHandler.info(s)
+					if info:
+						bouquetlist.append(s)
+	else:
+		service_types_tv = '1:7:1:0:0:0:0:0:0:0:(type == 1) || (type == 17) || (type == 22) || (type == 25) || (type == 31) || (type == 134) || (type == 195)'
+		refstr = '%s FROM BOUQUET "userbouquet.favourites.tv" ORDER BY bouquet' % (service_types_tv)
+		bouquetroot = eServiceReference(refstr)
+		info = serviceHandler.info(bouquetroot)
+		if info and bouquetroot.valid() and not bouquetroot.flags & eServiceReference.isInvisible:
+			bouquetlist.append(bouquetroot)
+	if bouquetlist:
+		for bouquet in bouquetlist:
+			if not bouquet.valid():
+				continue
+			if bouquet.flags & eServiceReference.isDirectory:
+				services = serviceHandler.list(bouquet)
+				if services:
+					while True:
+						service = services.getNext()
+						if not service.valid():
+							break
+						playable = not (service.flags & (eServiceReference.isMarker | eServiceReference.isDirectory | eServiceReference.isNumberedMarker))
+						if playable:
+							sref = service.toString()
+							if iptv_only:
+								if ":http" in sref:
+									channels.append((sref))
+							else:
+								channels.append((sref, 0, -1, -1))
+	return channels
 
 class AutoTimerList(MenuList):
 	"""Defines a simple Component to show Timer name"""
@@ -76,6 +121,7 @@ class AutoTimerList(MenuList):
 	#  | <Name of AutoTimer> |
 	#
 	def buildListboxEntry(self, timer):
+		global BouquetChannelListList
 		if self.style_autotimerslist == "standard":
 			size = self.l.getItemSize()
 			color = None
@@ -99,8 +145,18 @@ class AutoTimerList(MenuList):
 			bouquets = []
 			channel = ""
 			if timer.services:
+				if BouquetChannelListList is None:
+					BouquetChannelListList = getBouquetChannelList(iptv_only=True)
 				for t in timer.services:
-					channels.append(ServiceReference(t).getServiceName())
+					add = False
+					if ":http" in t and BouquetChannelListList:
+						for s in BouquetChannelListList:
+							if t in s:
+								channels.append(ServiceReference(s).getServiceName().replace('\xc2\x86', '').replace('\xc2\x87', '').encode('utf-8', 'ignore') + " (IPTV)")
+								add = True
+								break
+					if not add:
+						channels.append(ServiceReference(t).getServiceName())
 			if timer.bouquets:
 				for t in timer.bouquets:
 					bouquets.append(ServiceReference(t).getServiceName())
