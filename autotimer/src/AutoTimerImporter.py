@@ -133,6 +133,8 @@ class AutoTimerImporter(Screen):
 
 		# Keep AutoTimer
 		self.autotimer = autotimer
+		self.sref = sref
+		self.isIPTV = bool(sref and ":http" in str(sref))
 
 		# Initialize Buttons
 		self["key_red"] = StaticText(_("Cancel"))
@@ -189,7 +191,7 @@ class AutoTimerImporter(Screen):
 					True
 			))
 
-		if sref:
+		if sref and not self.isIPTV:
 			append(
 				SelectionEntryComponent(
 					_("Only on Service: %s") % (sref.getServiceName().replace('\xc2\x86', '').replace('\xc2\x87', '')),
@@ -317,18 +319,17 @@ class AutoTimerImporter(Screen):
 			elif item[2] == 2: # Timespan
 				autotimer.timespan = item[1]
 			elif item[2] == 3: # Service
-				value = item[1]
-
-				myref = eServiceReference(value)
-				if not (myref.flags & eServiceReference.isGroup):
-					# strip all after last :
-					pos = value.rfind(':')
-					if pos != -1:
-						if value[pos - 1] == ':':
-							pos -= 1
-						value = value[:pos + 1]
-
-				autotimer.services = [value]
+				if not self.isIPTV:
+					value = item[1]
+					myref = eServiceReference(value)
+					if not (myref.flags & eServiceReference.isGroup):
+						# strip all after last :
+						pos = value.rfind(':')
+						if pos != -1:
+							if value[pos - 1] == ':':
+								pos -= 1
+							value = value[:pos + 1]
+					autotimer.services = [value]
 			elif item[2] == 4: # AfterEvent
 				autotimer.afterevent = [(item[1], None)]
 			elif item[2] == 5: # Justplay
@@ -348,6 +349,19 @@ class AutoTimerImporter(Screen):
 						[item[1]],
 				]
 				autotimer.include = includes
+
+		# if current service is an IPTV stream force to single service search only
+		if self.isIPTV:
+			value = str(self.sref)
+			myref = eServiceReference(value)
+			if not (myref.flags & eServiceReference.isGroup):
+				# strip all after last :
+				pos = value.rfind(':')
+				if pos != -1:
+					if value[pos - 1] == ':':
+						pos -= 1
+					value = value[:pos + 1]
+			autotimer.services = [value]
 
 		if autotimer.match == "":
 			self.session.openWithCallback(

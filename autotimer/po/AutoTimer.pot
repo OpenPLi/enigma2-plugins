@@ -1422,3 +1422,9 @@ msgid ""
 "\n"
 "To make these hints a little easier to read, they are split up on multiple pages. You can go to the next page using the BLUE button on your remote control and back using the YELLOW one. Pressing the RED button or EXIT will close the FAQ."
 msgstr ""
+
+msgid "Attention! We recommend that you ignore case when searching in Cyrillic if the search name contains uppercase and lowercase letters."
+msgstr ""
+
+msgid "IPTV stream use only this service for search"
+msgstr ""

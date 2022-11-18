@@ -349,7 +349,7 @@ msgid "Edit selected AutoTimer"
 msgstr "Редактировать выбранный Автотаймер"
 
 msgid "Edit services"
-msgstr "Редактировать сервисы"
+msgstr "Редактор сервисов"
 
 msgid "Editing"
 msgstr "Редактирование"
@@ -1385,7 +1385,7 @@ msgid "do nothing"
 msgstr "ничего не делать"
 
 msgid "edit filters"
-msgstr "редактировать фильтры"
+msgstr "редактор фильтров"
 
 msgid "enable"
 msgstr "включено"
@@ -1471,3 +1471,9 @@ msgstr "переключение"
 
 msgid "zap and record"
 msgstr "переключение и запись"
+
+msgid "Attention! We recommend that you ignore case when searching in Cyrillic if the search name contains uppercase and lowercase letters."
+msgstr "Внимание! Мы рекомендуем игнорировать регистр при поиске на кириллице, если имя поиска содержит прописные и строчные буквы."
+
+msgid "IPTV stream use only this service for search"
+msgstr "Для канала IPTV используется только этот сервис для поиска"
