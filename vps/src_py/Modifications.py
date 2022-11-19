@@ -10,7 +10,7 @@ from Screens.InfoBarGenerics import InfoBarInstantRecord
 from time import time
 from enigma import getBestPlayableServiceReference, eServiceReference
 import xml.etree.cElementTree
-from Vps_setup import VPS_show_info
+from .Vps_setup import VPS_show_info
 
 vps_already_registered = False
 
