@@ -1,5 +1,3 @@
-# -*- coding: UTF-8 -*-
-from __future__ import print_function
 # for localized messages
 from . import _
 
@@ -57,6 +55,9 @@ config.plugins.imdb.showepisodeinfo = ConfigYesNo(default=False)
 
 
 def getPage(url, params=None, headers=None, cookies=None):
+	if headers is None:
+		headers = {}
+	headers['User-Agent'] = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:107.0) Gecko/20100101 Firefox/107.0'
 	return deferToThread(requests.get, url, params=params, headers=headers, cookies=cookies, timeout=30.05)
 
 
@@ -264,7 +265,10 @@ class IMDB(Screen, HelpableScreen):
 		# 3 = synopsis page
 		self.Page = 0
 
-		self.cookie = {"lc-main": language.getLanguage()}
+		self.cookie = {
+			"lc-main": language.getLanguage(),
+			"session-id": "000-0000000-0000000"
+		}
 
 		self["actionsOk"] = HelpableActionMap(self, "OkCancelActions",
 		{
@@ -717,7 +721,39 @@ class IMDB(Screen, HelpableScreen):
 				self["detailslabel"].setText(_("No IMDb match."))
 				self["statusbar"].setText(_("No IMDb match:") + ' ' + self.eventName)
 		else:
-			self["detailslabel"].setText(_("IMDb query failed!"))
+			#self["detailslabel"].setText(_("IMDb query failed!"))
+			print("[IMDB] no JSON found in search results, trying old method...")
+			if re.search("<title>Find - IMDb</title>", html):
+				pos = html.find('<table class="findList">')
+				pos2 = html.find("</table>", pos)
+				findlist = html[pos:pos2]
+				searchresultmask = re.compile('<tr class="findResult (?:odd|even)">.*?<td class="result_text"> (<a href="/title/(tt\d{7,7})/.*?"\s?>(.*?)</a>.*?)</td>', re.DOTALL)
+				searchresults = searchresultmask.finditer(findlist)
+				titlegroup = 1 if config.plugins.imdb.showlongmenuinfo.value else 3
+				htmltags = re.compile('<.*?>', re.DOTALL)
+				nbsp = chr(htmlentitydefs.name2codepoint['nbsp'])
+				self.resultlist = [(' '.join(htmltags.sub('', x.group(titlegroup)).replace(nbsp, " ").split()), x.group(2)) for x in searchresults]
+				Len = len(self.resultlist)
+				self["menu"].l.setList(self.resultlist)
+				if Len == 1:
+					self.downloadTitle(self.resultlist[0][0], self.resultlist[0][1])
+				elif Len > 1:
+					self.Page = 1
+					self.showMenu()
+				else:
+					self["detailslabel"].setText(_("No IMDb match."))
+					self["statusbar"].setText(_("No IMDb match:") + ' ' + self.eventName)
+			else:
+				splitpos = self.eventName.find('(')
+				if splitpos > 0 and self.eventName.endswith(')'):
+					self.eventName = self.eventName[splitpos + 1:-1]
+					self["statusbar"].setText(_("Re-Query IMDb: %s...") % (self.eventName))
+					# event_quoted = quoteEventName(self.eventName)
+					localfile = "/tmp/imdbquery.html"
+					fetchurl = "https://www.imdb.com/find?s=tt&q=" + quoteEventName(self.eventName)
+					downloadPage(fetchurl, localfile).addCallback(self.IMDBquery).addErrback(self.http_failed)
+				else:
+					self["detailslabel"].setText(_("IMDb query failed!"))
 
 	def http_failed(self, failure):
 		text = _("IMDb Download failed")
