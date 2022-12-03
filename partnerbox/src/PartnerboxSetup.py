@@ -542,7 +542,7 @@ class PartnerboxEntryConfigScreen(ConfigListScreen, Screen):
 			"green": self.keySave,
 			"red": self.keyCancel,
 			"yellow": self.getMAC,
-			"blue": self.keyDelete,
+			"blue": self.deleteItem,
 			"cancel": self.keyCancel
 		}, -2)
 
@@ -608,7 +608,7 @@ class PartnerboxEntryConfigScreen(ConfigListScreen, Screen):
 			config.plugins.Partnerbox.Entries.remove(self.current)
 		ConfigListScreen.cancelConfirm(self, True)
 
-	def keyDelete(self):
+	def deleteItem(self):
 		if self.newmode == 1:
 			self.keyCancel()
 		else:
