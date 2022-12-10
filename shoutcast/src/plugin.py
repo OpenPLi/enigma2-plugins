@@ -52,7 +52,7 @@ from Components.FileList import FileList
 # for localized messages
 from . import _
 
-coverfiles = ("/tmp/.cover.jpg", "/tmp/.cover.jpeg")
+coverfile = "/tmp/.cover.jpg"
 containerStreamripper = None
 config.plugins.shoutcast = ConfigSubsection()
 config.plugins.shoutcast.showcover = ConfigYesNo(default=True)
@@ -172,7 +172,6 @@ class SHOUTcastWidget(Screen):
 		self.session = session
 		Screen.__init__(self, session)
 		self.oldtitle = None
-		self.currentcoverfile = 0
 		self.currentGoogle = None
 		self.nextGoogle = None
 		self.currPlay = None
@@ -858,12 +857,11 @@ class SHOUTcastWidget(Screen):
 			self.currentGoogle = None
 
 	def __onClose(self):
-		global coverfiles
-		for f in coverfiles:
-			try:
-				os.unlink(f)
-			except:
-				pass
+		global coverfile
+		try:
+			os.unlink(coverfile)
+		except:
+			pass
 		self.stopReloadStationListTimer()
 		if self.__event in self.session.nav.event:
 			self.session.nav.event.remove(self.__event)
@@ -873,7 +871,7 @@ class SHOUTcastWidget(Screen):
 		containerStreamripper.appClosed.remove(self.streamripperClosed)
 
 	def GoogleImageCallback(self, result):
-		global coverfiles
+		global coverfile
 		bad_link = ['http://cdn.discogs.com', 'http://www.jaren80muziek.nl', 'http://www.inthestudio.net',
 		'https://deepmp3.ru', 'http://beyondbreed.com', 'https://i1.sndcdn.com', 'http://www.lyrics007.com', 'https://lametralleta.es',
 		'http://www.caramail.tv', 'http://cloud.freehandmusic.netdna-cdn.com', 'http://rockyourlyrics.com', 'http://www.franceinter.fr',
@@ -927,12 +925,6 @@ class SHOUTcastWidget(Screen):
 				if config.plugins.shoutcast.showcover.value:
 					self["cover"].doHide()
 			if validurl:
-				self.currentcoverfile = (self.currentcoverfile + 1) % len(coverfiles)
-				try:
-					os.unlink(coverfiles[self.currentcoverfile - 1])
-				except:
-					pass
-				coverfile = coverfiles[self.currentcoverfile]
 				f = open(coverfile, "wb")
 				print("[SHOUTcast] downloading cover from %s to %s numer%s" % (url, coverfile, str(nr)))
 				get(url).addCallback(collect, f.write).addCallback(self.coverDownloadFinished, coverfile).addErrback(self.coverDownloadFailed).addBoth(lambda _: f.close())
