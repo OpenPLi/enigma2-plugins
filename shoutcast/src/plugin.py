@@ -21,7 +21,6 @@
 #
 
 from Plugins.Plugin import PluginDescriptor
-from urllib.parse import urlparse
 from Screens.Screen import Screen
 from Screens.InfoBar import InfoBar
 from Components.SystemInfo import SystemInfo
@@ -31,9 +30,6 @@ from enigma import eServiceReference, eListboxPythonMultiContent, eListbox, gFon
 from Tools.LoadPixmap import LoadPixmap
 from Tools.Directories import fileExists
 import xml.etree.cElementTree
-from twisted.internet import reactor, defer
-from twisted.web import client
-from twisted.web.client import HTTPClientFactory
 from Components.Pixmap import Pixmap
 from Components.ScrollLabel import ScrollLabel
 import string
@@ -41,13 +37,13 @@ import os
 import re
 import skin
 import six
+from treq import collect, content, get, request
 from Components.config import config, ConfigSubsection, ConfigSelection, ConfigDirectory, ConfigYesNo, Config, ConfigInteger, ConfigSubList, ConfigText, ConfigNumber, getConfigListEntry, configfile
 from Components.ConfigList import ConfigListScreen
 from Screens.MessageBox import MessageBox
 from Components.GUIComponent import GUIComponent
 from Components.Sources.StaticText import StaticText
 from urllib.parse import quote
-from twisted.web.client import downloadPage
 from Screens.ChoiceBox import ChoiceBox
 from Screens.VirtualKeyBoard import VirtualKeyBoard
 from Components.Input import Input
@@ -102,36 +98,8 @@ class Favorite:
 		self.configItem = configItem
 
 
-class myHTTPClientFactory(HTTPClientFactory):
-	def __init__(self, url, method=b'GET', postdata=None, headers=None,
-			agent="Mozilla/5.0 (Windows NT 6.1; rv:17.0) Gecko/20100101 Firefox/17.0", timeout=0, cookies=None,
-			followRedirect=1, lastModified=None, etag=None):
-		url = url.replace(" ", "_")
-		HTTPClientFactory.__init__(self, url.encode(), method=method, postdata=postdata,
-		headers=headers, agent=agent, timeout=timeout, cookies=cookies, followRedirect=followRedirect)
-
-	def clientConnectionLost(self, connector, reason):
-		lostreason = ("Connection was closed cleanly" in vars(reason))
-		if lostreason == None:
-			print("[SHOUTcast] Lost connection, reason: %s ,trying to reconnect!" % reason)
-			connector.connect()
-
-	def clientConnectionFailed(self, connector, reason):
-		print("[SHOUTcast] connection failed, reason: %s,trying to reconnect!" % reason)
-		connector.connect()
-
-
 def sendUrlCommand(url, contextFactory=None, timeout=60, *args, **kwargs):
-	parsed = urlparse(url)
-	scheme = parsed.scheme
-	host = parsed.hostname
-	port = parsed.port or (443 if scheme == 'https' else 80)
-	path = parsed.path or '/'
-
-	factory = myHTTPClientFactory(url, *args, **kwargs)
-	#print("scheme=%s host=%s port=%s path=%s\n" % (scheme, host, port, path))
-	reactor.connectTCP(host, port, factory, timeout=timeout)
-	return factory.deferred
+	return request('GET', url, timeout=timeout)
 
 
 def main(session, **kwargs):
@@ -445,7 +413,7 @@ class SHOUTcastWidget(Screen):
 		self.stopReloadStationListTimer()
 		if self.mode == self.STATIONLIST:
 			# print("[SHOUTcast] reloadStationList: %s " % self.stationListURL)
-			sendUrlCommand(self.stationListURL, None, 10).addCallback(self.callbackStationList).addErrback(self.callbackStationListError)
+			sendUrlCommand(self.stationListURL, None, 10).addCallback(content).addCallback(self.callbackStationList).addErrback(self.callbackStationListError)
 
 	def InputBoxStartRecordingCallback(self, returnValue=None):
 		if returnValue:
@@ -558,7 +526,7 @@ class SHOUTcastWidget(Screen):
 			url = self.SC + "/genre/secondary?parentid=%s&k=%s&f=xml" % (id, devid)
 		else:
 			url = "http://207.200.98.1/sbin/newxml.phtml"
-		sendUrlCommand(url, None, 10).addCallback(self.callbackGenreList).addErrback(self.callbackGenreListError)
+		sendUrlCommand(url, None, 10).addCallback(content).addCallback(self.callbackGenreList).addErrback(self.callbackGenreListError)
 
 	def callbackGenreList(self, xmlstring):
 		self["headertext"].setText(_("SHOUTcast genre list"))
@@ -647,7 +615,7 @@ class SHOUTcastWidget(Screen):
 					self["list"].hide()
 					self["statustext"].setText(_("Getting streaming data from\n%s") % str(sel.name))
 					self.currentStreamingStation = sel.name
-					sendUrlCommand(url, None, 10).addCallback(self.callbackPLS).addErrback(self.callbackStationListError)
+					sendUrlCommand(url, None, 10).addCallback(content).addCallback(self.callbackPLS).addErrback(self.callbackStationListError)
 				elif self.mode == self.FAVORITELIST:
 					self.favoriteListIndex = self["list"].getCurrentIndex()
 					if sel.configItem.type.value == "url":
@@ -661,7 +629,7 @@ class SHOUTcastWidget(Screen):
 						self["list"].hide()
 						self["statustext"].setText(_("Getting streaming data from\n%s") % str(sel.configItem.name.value))
 						self.currentStreamingStation = sel.configItem.name.value
-						sendUrlCommand(url, None, 10).addCallback(self.callbackPLS).addErrback(self.callbackStationListError)
+						sendUrlCommand(url, None, 10).addCallback(content).addCallback(self.callbackPLS).addErrback(self.callbackStationListError)
 					elif sel.configItem.type.value == "genre":
 						self.getStationList(sel.configItem.name.value)
 				elif self.mode == self.SEARCHLIST and self.searchSHOUTcastString != "":
@@ -709,7 +677,7 @@ class SHOUTcastWidget(Screen):
 		else:
 			self.stationListURL = "http://207.200.98.1/sbin/newxml.phtml?genre=%s" % genre
 		self.stationListIndex = 0
-		sendUrlCommand(self.stationListURL, None, 10).addCallback(self.callbackStationList).addErrback(self.callbackStationListError)
+		sendUrlCommand(self.stationListURL, None, 10).addCallback(content).addCallback(self.callbackStationList).addErrback(self.callbackStationListError)
 
 	def callbackStationList(self, xmlstring):
 		self.searchSHOUTcastString = ""
@@ -849,7 +817,7 @@ class SHOUTcastWidget(Screen):
 			self.mode = self.SEARCHLIST
 			self.searchSHOUTcastString = searchstring
 			self.stationListIndex = 0
-			sendUrlCommand(self.stationListURL, None, 10).addCallback(self.callbackStationList).addErrback(self.callbackStationListError)
+			sendUrlCommand(self.stationListURL, None, 10).addCallback(content).addCallback(self.callbackStationList).addErrback(self.callbackStationListError)
 
 	def config(self):
 		self.stopReloadStationListTimer()
@@ -885,7 +853,7 @@ class SHOUTcastWidget(Screen):
 		if self.nextGoogle:
 			self.currentGoogle = self.nextGoogle
 			self.nextGoogle = None
-			sendUrlCommand(self.currentGoogle, None, 10).addCallback(self.GoogleImageCallback).addErrback(self.Error)
+			sendUrlCommand(self.currentGoogle, None, 10).addCallback(content).addCallback(self.GoogleImageCallback).addErrback(self.Error)
 		else:
 			self.currentGoogle = None
 
@@ -921,7 +889,7 @@ class SHOUTcastWidget(Screen):
 		if self.nextGoogle:
 			self.currentGoogle = self.nextGoogle
 			self.nextGoogle = None
-			sendUrlCommand(self.currentGoogle, None, 10).addCallback(self.GoogleImageCallback).addErrback(self.Error)
+			sendUrlCommand(self.currentGoogle, None, 10).addCallback(content).addCallback(self.GoogleImageCallback).addErrback(self.Error)
 			return
 		self.currentGoogle = None
 		r = re.findall('murl&quot;:&quot;(http.*?)&quot', result.decode(), re.S|re.I)
@@ -965,8 +933,9 @@ class SHOUTcastWidget(Screen):
 				except:
 					pass
 				coverfile = coverfiles[self.currentcoverfile]
+				f = open(coverfile, "wb")
 				print("[SHOUTcast] downloading cover from %s to %s numer%s" % (url, coverfile, str(nr)))
-				downloadPage(url.encode(), coverfile).addCallback(self.coverDownloadFinished, coverfile).addErrback(self.coverDownloadFailed)
+				d = get(url).addCallback(collect, f.write).addCallback(self.coverDownloadFinished, coverfile).addErrback(self.coverDownloadFailed).addBoth(lambda _: f.close())
 
 	def coverDownloadFailed(self, result):
 		print("[SHOUTcast] cover download failed:", result)
@@ -1008,7 +977,7 @@ class SHOUTcastWidget(Screen):
 						self.nextGoogle = url
 					else:
 						self.currentGoogle = url
-						sendUrlCommand(url, None, 10).addCallback(self.GoogleImageCallback).addErrback(self.Error)
+						sendUrlCommand(url, None, 10).addCallback(content).addCallback(self.GoogleImageCallback).addErrback(self.Error)
 				if len(sTitle) == 0:
 					sTitle = "n/a"
 				title = _("Title: %s") % sTitle
