@@ -98,7 +98,7 @@ class Favorite:
 		self.configItem = configItem
 
 
-def sendUrlCommand(url, contextFactory=None, timeout=60, *args, **kwargs):
+def sendUrlCommand(url, timeout=60):
 	return request('GET', url, timeout=timeout)
 
 
@@ -413,7 +413,7 @@ class SHOUTcastWidget(Screen):
 		self.stopReloadStationListTimer()
 		if self.mode == self.STATIONLIST:
 			# print("[SHOUTcast] reloadStationList: %s " % self.stationListURL)
-			sendUrlCommand(self.stationListURL, None, 10).addCallback(content).addCallback(self.callbackStationList).addErrback(self.callbackStationListError)
+			sendUrlCommand(self.stationListURL, 10).addCallback(content).addCallback(self.callbackStationList).addErrback(self.callbackStationListError)
 
 	def InputBoxStartRecordingCallback(self, returnValue=None):
 		if returnValue:
@@ -526,7 +526,7 @@ class SHOUTcastWidget(Screen):
 			url = self.SC + "/genre/secondary?parentid=%s&k=%s&f=xml" % (id, devid)
 		else:
 			url = "http://207.200.98.1/sbin/newxml.phtml"
-		sendUrlCommand(url, None, 10).addCallback(content).addCallback(self.callbackGenreList).addErrback(self.callbackGenreListError)
+		sendUrlCommand(url, 10).addCallback(content).addCallback(self.callbackGenreList).addErrback(self.callbackGenreListError)
 
 	def callbackGenreList(self, xmlstring):
 		self["headertext"].setText(_("SHOUTcast genre list"))
@@ -615,7 +615,7 @@ class SHOUTcastWidget(Screen):
 					self["list"].hide()
 					self["statustext"].setText(_("Getting streaming data from\n%s") % str(sel.name))
 					self.currentStreamingStation = sel.name
-					sendUrlCommand(url, None, 10).addCallback(content).addCallback(self.callbackPLS).addErrback(self.callbackStationListError)
+					sendUrlCommand(url, 10).addCallback(content).addCallback(self.callbackPLS).addErrback(self.callbackStationListError)
 				elif self.mode == self.FAVORITELIST:
 					self.favoriteListIndex = self["list"].getCurrentIndex()
 					if sel.configItem.type.value == "url":
@@ -629,7 +629,7 @@ class SHOUTcastWidget(Screen):
 						self["list"].hide()
 						self["statustext"].setText(_("Getting streaming data from\n%s") % str(sel.configItem.name.value))
 						self.currentStreamingStation = sel.configItem.name.value
-						sendUrlCommand(url, None, 10).addCallback(content).addCallback(self.callbackPLS).addErrback(self.callbackStationListError)
+						sendUrlCommand(url, 10).addCallback(content).addCallback(self.callbackPLS).addErrback(self.callbackStationListError)
 					elif sel.configItem.type.value == "genre":
 						self.getStationList(sel.configItem.name.value)
 				elif self.mode == self.SEARCHLIST and self.searchSHOUTcastString != "":
@@ -677,7 +677,7 @@ class SHOUTcastWidget(Screen):
 		else:
 			self.stationListURL = "http://207.200.98.1/sbin/newxml.phtml?genre=%s" % genre
 		self.stationListIndex = 0
-		sendUrlCommand(self.stationListURL, None, 10).addCallback(content).addCallback(self.callbackStationList).addErrback(self.callbackStationListError)
+		sendUrlCommand(self.stationListURL, 10).addCallback(content).addCallback(self.callbackStationList).addErrback(self.callbackStationListError)
 
 	def callbackStationList(self, xmlstring):
 		self.searchSHOUTcastString = ""
@@ -817,7 +817,7 @@ class SHOUTcastWidget(Screen):
 			self.mode = self.SEARCHLIST
 			self.searchSHOUTcastString = searchstring
 			self.stationListIndex = 0
-			sendUrlCommand(self.stationListURL, None, 10).addCallback(content).addCallback(self.callbackStationList).addErrback(self.callbackStationListError)
+			sendUrlCommand(self.stationListURL, 10).addCallback(content).addCallback(self.callbackStationList).addErrback(self.callbackStationListError)
 
 	def config(self):
 		self.stopReloadStationListTimer()
@@ -853,7 +853,7 @@ class SHOUTcastWidget(Screen):
 		if self.nextGoogle:
 			self.currentGoogle = self.nextGoogle
 			self.nextGoogle = None
-			sendUrlCommand(self.currentGoogle, None, 10).addCallback(content).addCallback(self.GoogleImageCallback).addErrback(self.Error)
+			sendUrlCommand(self.currentGoogle, 10).addCallback(content).addCallback(self.GoogleImageCallback).addErrback(self.Error)
 		else:
 			self.currentGoogle = None
 
@@ -889,7 +889,7 @@ class SHOUTcastWidget(Screen):
 		if self.nextGoogle:
 			self.currentGoogle = self.nextGoogle
 			self.nextGoogle = None
-			sendUrlCommand(self.currentGoogle, None, 10).addCallback(content).addCallback(self.GoogleImageCallback).addErrback(self.Error)
+			sendUrlCommand(self.currentGoogle, 10).addCallback(content).addCallback(self.GoogleImageCallback).addErrback(self.Error)
 			return
 		self.currentGoogle = None
 		r = re.findall('murl&quot;:&quot;(http.*?)&quot', result.decode(), re.S|re.I)
@@ -935,7 +935,7 @@ class SHOUTcastWidget(Screen):
 				coverfile = coverfiles[self.currentcoverfile]
 				f = open(coverfile, "wb")
 				print("[SHOUTcast] downloading cover from %s to %s numer%s" % (url, coverfile, str(nr)))
-				d = get(url).addCallback(collect, f.write).addCallback(self.coverDownloadFinished, coverfile).addErrback(self.coverDownloadFailed).addBoth(lambda _: f.close())
+				get(url).addCallback(collect, f.write).addCallback(self.coverDownloadFinished, coverfile).addErrback(self.coverDownloadFailed).addBoth(lambda _: f.close())
 
 	def coverDownloadFailed(self, result):
 		print("[SHOUTcast] cover download failed:", result)
@@ -977,7 +977,7 @@ class SHOUTcastWidget(Screen):
 						self.nextGoogle = url
 					else:
 						self.currentGoogle = url
-						sendUrlCommand(url, None, 10).addCallback(content).addCallback(self.GoogleImageCallback).addErrback(self.Error)
+						sendUrlCommand(url, 10).addCallback(content).addCallback(self.GoogleImageCallback).addErrback(self.Error)
 				if len(sTitle) == 0:
 					sTitle = "n/a"
 				title = _("Title: %s") % sTitle
