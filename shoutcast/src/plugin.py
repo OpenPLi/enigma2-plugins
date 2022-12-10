@@ -52,7 +52,7 @@ from Components.FileList import FileList
 # for localized messages
 from . import _
 
-coverfiles = ("/tmp/.cover.ping", "/tmp/.cover.pong")
+coverfiles = ("/tmp/.cover.jpg", "/tmp/.cover.jpeg")
 containerStreamripper = None
 config.plugins.shoutcast = ConfigSubsection()
 config.plugins.shoutcast.showcover = ConfigYesNo(default=True)
