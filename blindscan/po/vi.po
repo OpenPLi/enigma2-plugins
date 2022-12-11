@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-16 16:27+0430\n"
+"POT-Creation-Date: 2022-12-11 11:18+0100\n"
 "PO-Revision-Date: 2019-07-24 14:14+0700\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -17,6 +17,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 2.2.3\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid ""
+"\n"
+"A recording is in progress."
+msgstr ""
 
 msgid ""
 "\n"
@@ -48,6 +53,10 @@ msgstr " bộ chỉnh."
 msgid "\"channel scan\" searches for channels and saves them to your receiver; \"transponder scan\" does a transponder search and displays the results allowing user to select some or all transponder. Both options save the results in satellites.xml format under /tmp"
 msgstr "\"quét kênh\" tìm kiếm các kênh và lưu chúng vào máy thu của bạn; \"quét transponder\" thực hiện tìm kiếm transponder và hiển thị kết quả cho phép người dùng chọn một số hoặc tất cả transponder. Cả hai tùy chọn đều lưu kết quả ở định dạng satellites.xml trong / tmp"
 
+#, fuzzy
+msgid "\"scan for channels\" searches for channels and saves them to your receiver; \"Save to XML\" does a transponder search and saves the results in satellites.xml format and stores it in /tmp"
+msgstr "\"quét kênh\" tìm kiếm các kênh và lưu chúng vào máy thu của bạn; \"quét transponder\" thực hiện tìm kiếm transponder và hiển thị kết quả cho phép người dùng chọn một số hoặc tất cả transponder. Cả hai tùy chọn đều lưu kết quả ở định dạng satellites.xml trong / tmp"
+
 #, python-format
 msgid "%d transponder(s) found"
 msgstr "%d transponder(s) được tìm thấy"
@@ -64,14 +73,11 @@ msgstr "%d:%02d/%d:%02dphút"
 msgid "%dMHz scanned"
 msgstr "%dHMz được quét"
 
-msgid "AUTOMATICALLY start service searching, press green to change"
-msgstr "TỰ ĐỘNG bắt đầu tìm kiếm dịch vụ, nhấn màu xanh lá cây để thay đổi"
-
 msgid "Accuracy (higher is better)"
 msgstr "Độ chính xác (cao hơn là tốt hơn)"
 
-msgid "Another type"
-msgstr "Một loại khác"
+msgid "Auto / Manual"
+msgstr ""
 
 msgid "Blind scan"
 msgstr "Quét mù"
@@ -90,6 +96,10 @@ msgstr "THẬN TRỌNG: Nếu bạn chọn \"có\", quá trình quét sẽ khôn
 
 msgid "CAUTION: If you select \"yes\" the scan will not sync with transponders listed in satellites.xml. Default is \"no\". Only change this if you understand why you are doing it."
 msgstr "THẬN TRỌNG: Nếu bạn chọn \"có\", quá trình quét sẽ không đồng bộ hóa với các bộ tiếp sóng được liệt kê trong satellites.xml. Mặc định là \"không\". Chỉ thay đổi điều này nếu bạn hiểu lý do tại sao bạn đang làm điều đó."
+
+#, fuzzy
+msgid "CAUTION: Only select \"inverted\" if you are using an inverted LNB (i.e. an LNB where the local oscillator frequency is greater than the scan frequency). Default is \"normal\". Only change this if you understand why you are doing it."
+msgstr "THẬN TRỌNG: Nếu bạn chọn \"có\", quá trình quét sẽ không xóa các bộ tiếp sóng \"trùng lặp\" khỏi danh sách. Mặc định là \"không\". Chỉ thay đổi điều này nếu bạn hiểu lý do tại sao bạn đang làm điều đó."
 
 msgid "Cancel"
 msgstr "Hủy bỏ"
@@ -122,9 +132,6 @@ msgstr "Vô hiệu hóa loại bỏ trùng lặp"
 msgid "Disable sync with known transponders"
 msgstr "Vô hiệu hóa đồng bộ hóa với các bộ tiếp sóng đã biết"
 
-msgid "Dreambox type"
-msgstr "Loại Dreambox"
-
 msgid "Exit"
 msgstr "Thoát"
 
@@ -135,18 +142,16 @@ msgstr "Lọc ra các vệ tinh liền kề"
 msgid "Frequency values must be between %d MHz and %d MHz"
 msgstr "Các giá trị tần số phải nằm trong khoảng từ %d MHz đến%d MHz"
 
-msgid "Frequency values must be between 3000 MHz and 4199 MHz (C-band)"
-msgstr "Các giá trị tần số phải nằm trong khoảng từ 3000 MHz đến 4199 MHz (băng tần C)"
-
-msgid "Frequency values must be between 3001 MHz and 4200 MHz (C-band)"
-msgstr "Các giá trị tần số phải nằm trong khoảng từ 3001 MHz đến 4200 MHz (băng tần C)"
+#, fuzzy, python-format
+msgid "Frequency values must be between %d MHz and %d MHz (C-band)"
+msgstr "Các giá trị tần số phải nằm trong khoảng từ %d MHz đến%d MHz"
 
 #, python-format
 msgid "Hardware blind scan is not supported by this tuner (%s)!"
 msgstr "Quét mù phần cứng không được hỗ trợ bởi bộ chỉnh này (% s)!"
 
-msgid "Horizontal"
-msgstr "Ngang"
+msgid "Hardware type"
+msgstr ""
 
 msgid "If you select \"yes\" all channels on the satellite being search will be deleted before starting the current search, yes (keep feeds) means the same but hold all feed services/transponders."
 msgstr "Nếu bạn chọn \"có\", tất cả các kênh trên vệ tinh đang tìm kiếm sẽ bị xóa trước khi bắt đầu tìm kiếm hiện tại, có (giữ nguồn cấp dữ liệu) có nghĩa tương tự nhưng giữ tất cả các dịch vụ / bộ tiếp sóng nguồn cấp dữ liệu."
@@ -160,6 +165,9 @@ msgstr "Nếu bạn chọn \"có\", quá trình quét sẽ chỉ tìm kiếm cá
 msgid "It seems manufacturer does not support blind scan for this tuner."
 msgstr "Có vẻ như nhà sản xuất không hỗ trợ quét mù cho bộ chỉnh này."
 
+msgid "LNB inversion"
+msgstr ""
+
 msgid "LNB of current satellite not compatible with plugin"
 msgstr "LNB của vệ tinh hiện tại không tương thích với plugin"
 
@@ -170,17 +178,11 @@ msgstr ""
 "Tìm kiếm các bộ tiếp sóng có sẵn.\n"
 "Điều này sẽ mất một thời gian dài, xin hãy kiên nhẫn."
 
-msgid "MANUALLY start service searching, press green to change"
-msgstr "MANUALLY bắt đầu tìm kiếm dịch vụ, nhấn màu xanh lá cây để thay đổi"
-
 msgid "Maybe the reason that recording is currently running."
 msgstr "Có lẽ lý do mà ghi âm hiện đang chạy."
 
 msgid "Moving to "
 msgstr "Chuyển đến "
-
-msgid "Network scan"
-msgstr "Quét mạng"
 
 msgid ""
 "No new transponders found! \n"
@@ -196,23 +198,9 @@ msgstr ""
 msgid "No transponders were found for those search parameters!"
 msgstr "Không có bộ tiếp sóng nào được tìm thấy cho các tham số tìm kiếm đó!"
 
-msgid ""
-"No tuner is enabled!\n"
-"Please setup your tuner settings before you start a service scan."
-msgstr ""
-"Không có bộ chỉnh được kích hoạt!\n"
-"Vui lòng thiết lập cài đặt bộ chỉnh tần số trước khi bạn bắt đầu quét dịch vụ."
-
 #, python-format
 msgid "Not found blind scan utility '%s'!"
 msgstr "Không tìm thấy tiện ích quét mù '%s'!"
-
-msgid ""
-"Nothing to scan!\n"
-"Please setup your tuner settings before you start a service scan."
-msgstr ""
-"Không có gì để quét!\n"
-"Vui lòng thiết lập cài đặt bộ chỉnh tần số trước khi bạn bắt đầu quét dịch vụ."
 
 msgid "Nothing to scan! Press Exit!"
 msgstr "Không có gì để quét! Nhấn Thoát!"
@@ -232,14 +220,22 @@ msgstr "Vui lòng thiết lập cấu hình bộ chỉnh của bạn."
 msgid "Polarisation"
 msgstr "Phân cực"
 
+msgid "Polarisation, select horizontal, vertical or both."
+msgstr ""
+
 msgid "Press Green/OK to start the scan"
 msgstr "Nhấn nút màu xanh lá cây / OK để bắt đầu quét"
 
-msgid "Press OK to start the scan"
+#, fuzzy
+msgid "Press OK to start the scan."
 msgstr "Nhấn OK để bắt đầu quét"
 
-msgid "Press green to start service searching!"
+#, fuzzy
+msgid "Press green to start service searching."
 msgstr "Nhấn màu xanh lá cây để bắt đầu tìm kiếm dịch vụ!"
+
+msgid "Restore defaults"
+msgstr ""
 
 msgid "Rotor: "
 msgstr "Cánh quạt: "
@@ -299,11 +295,18 @@ msgstr ""
 msgid "Search type"
 msgstr "Loại tìm kiếm"
 
+#, fuzzy
+msgid "Searching for active satellite transponders..."
+msgstr "Cố gắng tìm các bộ phát đáp vệ tinh đã sử dụng ..."
+
 msgid "Select a tuner that is configured for the satellite you wish to search"
 msgstr "Chọn bộ chỉnh tần số được định cấu hình cho vệ tinh bạn muốn tìm kiếm"
 
 msgid "Select all"
 msgstr "Chọn tất cả"
+
+msgid "Select between 1 and 5. Higher numbers give more accurat search results."
+msgstr ""
 
 msgid "Select the satellite you wish to search"
 msgstr "Chọn vệ tinh bạn muốn tìm kiếm"
@@ -318,6 +321,12 @@ msgstr ""
 msgid "Select type for scan:"
 msgstr "Chọn loại để quét:"
 
+msgid "Service searching to be started MANUALLY by the user. To change this press green."
+msgstr ""
+
+msgid "Service searching will start AUTOMATICALLY. To change this press green."
+msgstr ""
+
 msgid "Smaller steps takes longer but scan is more thorough"
 msgstr "Các bước nhỏ hơn mất nhiều thời gian hơn nhưng quét kỹ hơn"
 
@@ -330,6 +339,10 @@ msgstr "Bắt đầu quét"
 #, python-format
 msgid "Step %d %d:%02d min"
 msgstr "Bước%d%d:%02d phút"
+
+#, fuzzy, python-format
+msgid "Symbol rate values are in megasymbols; enter a value between %d and %d"
+msgstr "Giá trị biểu tượng được tính bằng megasymbols; nhập giá trị từ 1 đến 44"
 
 msgid "Symbol rate values are in megasymbols; enter a value between 1 and 44"
 msgstr "Giá trị biểu tượng được tính bằng megasymbols; nhập giá trị từ 1 đến 44"
@@ -347,17 +360,14 @@ msgstr "Phân cực được đề xuất cho vệ tinh này là \"%s\""
 msgid "Transponder searching finished!"
 msgstr "Transponder tìm kiếm xong!"
 
-msgid "Try to find used satellite transponders..."
-msgstr "Cố gắng tìm các bộ phát đáp vệ tinh đã sử dụng ..."
-
 msgid "Tuner"
 msgstr "Bộ chỉnh"
 
 msgid "Use Sundtek full hardware blind scan!"
 msgstr "Sử dụng quét mù phần cứng đầy đủ Sundtek!"
 
-msgid "Vertical"
-msgstr "Theo chiều dọc"
+msgid "Utility from the manufacturer"
+msgstr ""
 
 msgid "When a neighbouring satellite is very strong this avoids searching transponders known to be coming from the neighbouring satellite."
 msgstr "Khi một vệ tinh lân cận rất mạnh, điều này sẽ tránh việc tìm kiếm các bộ tiếp sóng được biết là đến từ vệ tinh lân cận."
@@ -380,8 +390,14 @@ msgstr "không quét"
 msgid "horizontal"
 msgstr "ngang"
 
+msgid "inverted"
+msgstr ""
+
 msgid "no"
 msgstr "không"
+
+msgid "normal"
+msgstr ""
 
 msgid "save to XML file"
 msgstr "lưu vào tệp XML"

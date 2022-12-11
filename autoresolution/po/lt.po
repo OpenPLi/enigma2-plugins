@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-AutoResolution\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-13 18:34+0200\n"
+"POT-Creation-Date: 2022-12-11 11:18+0100\n"
 "PO-Revision-Date: 2021-09-12 11:43+0300\n"
 "Last-Translator: Vytenis P. <vyteniui@gmail.com>\n"
 "Language-Team: Vytenis Pulokas <vytemiui@gmail.com>\n"
@@ -198,20 +198,11 @@ msgstr "Vaizdo režimas: %s"
 msgid "Videomode: %s %s %s"
 msgstr "Vaizdo režimas: %s %s %s"
 
-msgid "auto"
-msgstr "automatinis"
-
 msgid "default"
 msgstr "numatyta"
 
 msgid "no"
 msgstr "ne"
-
-msgid "off"
-msgstr "išjungti"
-
-msgid "on"
-msgstr "įjungti"
 
 msgid "second"
 msgstr "sekundę"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Autoresolution plugin Official Greek translation\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-13 18:34+0200\n"
+"POT-Creation-Date: 2022-12-11 11:18+0100\n"
 "PO-Revision-Date: 2016-05-30 20:17+0200\n"
 "Last-Translator: MCelliot_g <mcelliot_g@hotmail.com>\n"
 "Language-Team: MCelliot_g <mcelliot_g@hotmail.com>\n"
@@ -205,20 +205,11 @@ msgstr "Λειτουργία βίντεο: %s"
 msgid "Videomode: %s %s %s"
 msgstr "Λειτουργία βίντεο: %s %s %s"
 
-msgid "auto"
-msgstr "αυτόματο"
-
 msgid "default"
 msgstr "προεπιλογή"
 
 msgid "no"
 msgstr ""
-
-msgid "off"
-msgstr "ανενεργό"
-
-msgid "on"
-msgstr "ενεργό"
 
 msgid "second"
 msgstr "δευτερόλεπτο"

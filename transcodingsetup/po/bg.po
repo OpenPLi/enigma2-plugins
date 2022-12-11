@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Seekbar\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-16 16:27+0430\n"
+"POT-Creation-Date: 2022-12-11 11:19+0100\n"
 "PO-Revision-Date: 2018-03-27 19:15+0300\n"
 "Last-Translator: Мартин Петков <marto74bg@yahoo.co.uk>\n"
 "Language-Team: BG PLi\n"
@@ -19,23 +19,14 @@ msgstr "Битрейт"
 msgid "Frame rate"
 msgstr ""
 
-msgid "Framerate"
-msgstr ""
-
 msgid "It seems your receiver is not supported!"
 msgstr "Изглежда, че Вашия приемник не се поддържа!"
 
 msgid "Not found file '/etc/enigma2/streamproxy.conf' !"
 msgstr "Не е намерен файл'/etc/enigma2/streamproxy.conf' !"
 
-msgid "Port"
-msgstr ""
-
 msgid "Quit"
 msgstr "Изход"
-
-msgid "Resolution"
-msgstr ""
 
 msgid "Set"
 msgstr "Запази"
@@ -51,8 +42,4 @@ msgid "Video codec"
 msgstr "Видео размер"
 
 msgid "Video size"
-msgstr "Видео размер"
-
-#, fuzzy
-msgid "videocodec"
 msgstr "Видео размер"

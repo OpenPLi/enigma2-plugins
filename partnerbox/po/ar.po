@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Partnerbox\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-15 10:30+0200\n"
+"POT-Creation-Date: 2022-12-11 11:18+0100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: mosad - مساعد الجعيد <abo-mishal@hotmail.com>\n"
 "Language-Team: mosad - مساعد الجعيد\n"
@@ -416,6 +416,9 @@ msgstr "تحديد العملية لجهاز الشريك"
 
 msgid "Send Wake-on-LAN"
 msgstr "إرسال تنبيه على شبكة محلية"
+
+msgid "Service type"
+msgstr ""
 
 msgid "Servicelists/EPG"
 msgstr "قوائم القنوات/الدليل الالكتروني"

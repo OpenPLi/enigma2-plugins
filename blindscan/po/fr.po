@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-07 09:36+0100\n"
-"PO-Revision-Date: 2021-11-07 09:44+0100\n"
+"POT-Creation-Date: 2022-12-11 11:18+0100\n"
+"PO-Revision-Date: 2022-12-11 11:21+0100\n"
 "Last-Translator: Pr2 <dummy@dummy.com>\n"
 "Language-Team: french\n"
 "Language: fr\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
-"X-Generator: Poedit 3.0\n"
+"X-Generator: Poedit 3.2.2\n"
 "X-Poedit-SourceCharset: iso-8859-15\n"
 
 msgid ""
@@ -73,9 +73,6 @@ msgstr "%dMHz scanné"
 msgid "Accuracy (higher is better)"
 msgstr "Précision (plus c’est mieux)"
 
-msgid "Another type"
-msgstr "Autre type"
-
 msgid "Auto / Manual"
 msgstr "Auto / Manuel"
 
@@ -131,9 +128,6 @@ msgstr "Désactiver supprimer les doublons"
 msgid "Disable sync with known transponders"
 msgstr "Désactiver la synchronisation avec les transpondeurs connus"
 
-msgid "Dreambox type"
-msgstr "Type Dreambox"
-
 msgid "Exit"
 msgstr "Quitter"
 
@@ -151,6 +145,9 @@ msgstr "Les valeurs de fréquence doivent être comprises entre %d MHz et %d MHz
 #, python-format
 msgid "Hardware blind scan is not supported by this tuner (%s)!"
 msgstr "La recherche aveugle n'est pas supportée sur ce tuner (%s)!"
+
+msgid "Hardware type"
+msgstr "Type de matériel"
 
 msgid "If you select \"yes\" all channels on the satellite being search will be deleted before starting the current search, yes (keep feeds) means the same but hold all feed services/transponders."
 msgstr "Si vous choisissez \"oui\" toutes les chaînes du satellite recherché seront effacées avant de démarrer la nouvelle recherche, oui (garder les feeds) signifie la même chose mais conserve tous les feeds des services/transpondeurs."
@@ -361,6 +358,9 @@ msgstr "Tuner"
 
 msgid "Use Sundtek full hardware blind scan!"
 msgstr "Utiliser toute les capacités de recherche aveugle du matériel Sundtek!"
+
+msgid "Utility from the manufacturer"
+msgstr "Utilitaire du fabricant"
 
 msgid "When a neighbouring satellite is very strong this avoids searching transponders known to be coming from the neighbouring satellite."
 msgstr "Lorsque le satellite voisin émet très fort, cela évite de rechercher les transpondeurs connus comme venant du satellite voisin."

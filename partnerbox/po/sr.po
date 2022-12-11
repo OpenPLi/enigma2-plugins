@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Enigma2 Plugin - Partnerbox\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-15 10:30+0200\n"
+"POT-Creation-Date: 2022-12-11 11:18+0100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: maja <jovanovic@gmx.ch>\n"
 "Language-Team: veselin & majevica CRNABERZA <jovanovic@gmx.ch>\n"
@@ -439,6 +439,9 @@ msgid "Select operation for partnerbox"
 msgstr "Podešavanje partnerboksa"
 
 msgid "Send Wake-on-LAN"
+msgstr ""
+
+msgid "Service type"
 msgstr ""
 
 msgid "Servicelists/EPG"

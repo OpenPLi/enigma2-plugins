@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tuxbox-enigma 0.0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-16 16:27+0430\n"
+"POT-Creation-Date: 2022-12-11 11:18+0100\n"
 "PO-Revision-Date: 2014-04-06 10:24+0300\n"
 "Last-Translator: rimas\n"
 "Language-Team: Raivo, Henkka, eesatfan, rimas\n"
@@ -12,6 +12,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
 "X-Generator: Poedit 1.5.4\n"
+
+msgid ""
+"\n"
+"A recording is in progress."
+msgstr ""
 
 msgid ""
 "\n"
@@ -39,6 +44,10 @@ msgstr "Tuuner"
 msgid "\"channel scan\" searches for channels and saves them to your receiver; \"transponder scan\" does a transponder search and displays the results allowing user to select some or all transponder. Both options save the results in satellites.xml format under /tmp"
 msgstr "\"kanaliotsing\" otsib kanaleid ja salvestab need vastuvõtjasse; \"salvesta XML faili\" otsib transpondereid ja salvestab need XML faili 'satellites.xml' vormis"
 
+#, fuzzy
+msgid "\"scan for channels\" searches for channels and saves them to your receiver; \"Save to XML\" does a transponder search and saves the results in satellites.xml format and stores it in /tmp"
+msgstr "\"kanaliotsing\" otsib kanaleid ja salvestab need vastuvõtjasse; \"salvesta XML faili\" otsib transpondereid ja salvestab need XML faili 'satellites.xml' vormis"
+
 #, python-format
 msgid "%d transponder(s) found"
 msgstr ""
@@ -55,15 +64,11 @@ msgstr ""
 msgid "%dMHz scanned"
 msgstr ""
 
-msgid "AUTOMATICALLY start service searching, press green to change"
-msgstr ""
-
 msgid "Accuracy (higher is better)"
 msgstr ""
 
-#, fuzzy
-msgid "Another type"
-msgstr "Otsingu tüüp"
+msgid "Auto / Manual"
+msgstr ""
 
 msgid "Blind scan"
 msgstr "Pimeotsing"
@@ -83,6 +88,10 @@ msgstr ""
 
 #, fuzzy
 msgid "CAUTION: If you select \"yes\" the scan will not sync with transponders listed in satellites.xml. Default is \"no\". Only change this if you understand why you are doing it."
+msgstr "Valides 'jah', otsitakse ainult transpondereid, mida ei leidu 'satellites.xml' failis"
+
+#, fuzzy
+msgid "CAUTION: Only select \"inverted\" if you are using an inverted LNB (i.e. an LNB where the local oscillator frequency is greater than the scan frequency). Default is \"normal\". Only change this if you understand why you are doing it."
 msgstr "Valides 'jah', otsitakse ainult transpondereid, mida ei leidu 'satellites.xml' failis"
 
 msgid "Cancel"
@@ -119,9 +128,6 @@ msgstr ""
 msgid "Disable sync with known transponders"
 msgstr "Ainult tundmatud transponderid"
 
-msgid "Dreambox type"
-msgstr ""
-
 msgid "Exit"
 msgstr "Välju"
 
@@ -132,19 +138,16 @@ msgstr "Filtreeri kõrvutised satelliidid"
 msgid "Frequency values must be between %d MHz and %d MHz"
 msgstr "Sagedusvahemik peab olema 10700 MHz kuni 12749 MHz"
 
-msgid "Frequency values must be between 3000 MHz and 4199 MHz (C-band)"
-msgstr "Sagedusvahemik peab olema 3000 MHz kuni4199 MHz (C-band)"
-
-msgid "Frequency values must be between 3001 MHz and 4200 MHz (C-band)"
-msgstr "Sagedusvahemik peab olema 3001 MHz kuni 4200 MHz (C-band)"
+#, fuzzy, python-format
+msgid "Frequency values must be between %d MHz and %d MHz (C-band)"
+msgstr "Sagedusvahemik peab olema 10700 MHz kuni 12749 MHz"
 
 #, python-format
 msgid "Hardware blind scan is not supported by this tuner (%s)!"
 msgstr ""
 
-#, fuzzy
-msgid "Horizontal"
-msgstr "horisontaalne"
+msgid "Hardware type"
+msgstr ""
 
 #, fuzzy
 msgid "If you select \"yes\" all channels on the satellite being search will be deleted before starting the current search, yes (keep feeds) means the same but hold all feed services/transponders."
@@ -160,6 +163,9 @@ msgstr "Valides 'jah', otsitakse ainult transpondereid, mida ei leidu 'satellite
 msgid "It seems manufacturer does not support blind scan for this tuner."
 msgstr ""
 
+msgid "LNB inversion"
+msgstr ""
+
 msgid "LNB of current satellite not compatible with plugin"
 msgstr ""
 
@@ -170,16 +176,10 @@ msgstr ""
 "Saadaolevate transponderite otsing.\n"
 "See kestab kaua, ole kannatlik."
 
-msgid "MANUALLY start service searching, press green to change"
-msgstr ""
-
 msgid "Maybe the reason that recording is currently running."
 msgstr ""
 
 msgid "Moving to "
-msgstr ""
-
-msgid "Network scan"
 msgstr ""
 
 msgid ""
@@ -196,18 +196,8 @@ msgstr ""
 msgid "No transponders were found for those search parameters!"
 msgstr "Nende otsingu parameetritega transpondereid ei leitud!"
 
-msgid ""
-"No tuner is enabled!\n"
-"Please setup your tuner settings before you start a service scan."
-msgstr ""
-
 #, python-format
 msgid "Not found blind scan utility '%s'!"
-msgstr ""
-
-msgid ""
-"Nothing to scan!\n"
-"Please setup your tuner settings before you start a service scan."
 msgstr ""
 
 msgid "Nothing to scan! Press Exit!"
@@ -228,16 +218,22 @@ msgstr "Häälesta tuuner."
 msgid "Polarisation"
 msgstr "Polarisatsioon"
 
+msgid "Polarisation, select horizontal, vertical or both."
+msgstr ""
+
 msgid "Press Green/OK to start the scan"
 msgstr "Otsingu alustamiseks vajuta OK või rohelist"
 
 #, fuzzy
-msgid "Press OK to start the scan"
+msgid "Press OK to start the scan."
 msgstr "Otsingu alustamiseks vajuta OK või rohelist"
 
 #, fuzzy
-msgid "Press green to start service searching!"
+msgid "Press green to start service searching."
 msgstr "Otsingu alustamiseks vajuta OK või rohelist"
+
+msgid "Restore defaults"
+msgstr ""
 
 msgid "Rotor: "
 msgstr ""
@@ -300,10 +296,17 @@ msgstr ""
 msgid "Search type"
 msgstr "Otsingu tüüp"
 
+#, fuzzy
+msgid "Searching for active satellite transponders..."
+msgstr "Otsi uusi transpondereid"
+
 msgid "Select a tuner that is configured for the satellite you wish to search"
 msgstr "Vali tuuner, mis on häälestatud otsitavale satelliidile"
 
 msgid "Select all"
+msgstr ""
+
+msgid "Select between 1 and 5. Higher numbers give more accurat search results."
 msgstr ""
 
 msgid "Select the satellite you wish to search"
@@ -318,6 +321,12 @@ msgstr ""
 msgid "Select type for scan:"
 msgstr "Kustuta enne otsingut kanalid"
 
+msgid "Service searching to be started MANUALLY by the user. To change this press green."
+msgstr ""
+
+msgid "Service searching will start AUTOMATICALLY. To change this press green."
+msgstr ""
+
 msgid "Smaller steps takes longer but scan is more thorough"
 msgstr ""
 
@@ -330,6 +339,10 @@ msgstr ""
 #, python-format
 msgid "Step %d %d:%02d min"
 msgstr ""
+
+#, fuzzy, python-format
+msgid "Symbol rate values are in megasymbols; enter a value between %d and %d"
+msgstr "Sümbolikiiruse väärtused on megasümbolites; sisesta väärtus vahemikus 1 kuni 44"
 
 msgid "Symbol rate values are in megasymbols; enter a value between 1 and 44"
 msgstr "Sümbolikiiruse väärtused on megasümbolites; sisesta väärtus vahemikus 1 kuni 44"
@@ -347,19 +360,14 @@ msgstr "Soovitatav polarisatsioon antud satellidile on \""
 msgid "Transponder searching finished!"
 msgstr ""
 
-#, fuzzy
-msgid "Try to find used satellite transponders..."
-msgstr "Otsi uusi transpondereid"
-
 msgid "Tuner"
 msgstr "Tuuner"
 
 msgid "Use Sundtek full hardware blind scan!"
 msgstr ""
 
-#, fuzzy
-msgid "Vertical"
-msgstr "vertikaalne"
+msgid "Utility from the manufacturer"
+msgstr ""
 
 #, fuzzy
 msgid "When a neighbouring satellite is very strong this avoids searching transponders known to be coming from the neighbouring satellite."
@@ -385,8 +393,14 @@ msgstr "Pimeotsing"
 msgid "horizontal"
 msgstr "horisontaalne"
 
+msgid "inverted"
+msgstr ""
+
 msgid "no"
 msgstr "ei"
+
+msgid "normal"
+msgstr ""
 
 msgid "save to XML file"
 msgstr "salvesta XML faili"

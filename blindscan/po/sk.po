@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-16 16:27+0430\n"
+"POT-Creation-Date: 2022-12-11 11:18+0100\n"
 "PO-Revision-Date: 2017-03-01 14:01+0100\n"
 "Last-Translator: Andrej <andrej.tobola@gmail.com>\n"
 "Language-Team: Andrej <andrej.tobola@gmail.com>\n"
@@ -17,6 +17,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Poedit 1.8.11\n"
+
+msgid ""
+"\n"
+"A recording is in progress."
+msgstr ""
 
 msgid ""
 "\n"
@@ -48,6 +53,10 @@ msgstr " tuner."
 msgid "\"channel scan\" searches for channels and saves them to your receiver; \"transponder scan\" does a transponder search and displays the results allowing user to select some or all transponder. Both options save the results in satellites.xml format under /tmp"
 msgstr "\"prehľadávanie kanálov\" prehľadá stanice a uloží ich do vášho prijímača; \"uložiť do XML súboru\" vykoná prehľadanie transpondérov a najdenétranspondéry uloží do XML súboru vo formáte satellites.xml"
 
+#, fuzzy
+msgid "\"scan for channels\" searches for channels and saves them to your receiver; \"Save to XML\" does a transponder search and saves the results in satellites.xml format and stores it in /tmp"
+msgstr "\"prehľadávanie kanálov\" prehľadá stanice a uloží ich do vášho prijímača; \"uložiť do XML súboru\" vykoná prehľadanie transpondérov a najdenétranspondéry uloží do XML súboru vo formáte satellites.xml"
+
 #, python-format
 msgid "%d transponder(s) found"
 msgstr "Nájdených transpondérov: %d"
@@ -64,14 +73,11 @@ msgstr "%d:%02d/%d:%02dmin"
 msgid "%dMHz scanned"
 msgstr "%dMHz prehľadávaných"
 
-msgid "AUTOMATICALLY start service searching, press green to change"
-msgstr "AUTOMATICKÉ spustenie vyhľadávania staníc, pre zmenu stlačte Zelené tlač."
-
 msgid "Accuracy (higher is better)"
 msgstr "Presnosť (vyššia je lepšie)"
 
-msgid "Another type"
-msgstr "Iný typ"
+msgid "Auto / Manual"
+msgstr ""
 
 msgid "Blind scan"
 msgstr "Blink scan"
@@ -90,6 +96,10 @@ msgstr ""
 
 #, fuzzy
 msgid "CAUTION: If you select \"yes\" the scan will not sync with transponders listed in satellites.xml. Default is \"no\". Only change this if you understand why you are doing it."
+msgstr "Ak zvolíte \"áno\", prehľadajú sa len transpondéry, ktoré nie sú uvedené v súbore satellites.xml"
+
+#, fuzzy
+msgid "CAUTION: Only select \"inverted\" if you are using an inverted LNB (i.e. an LNB where the local oscillator frequency is greater than the scan frequency). Default is \"normal\". Only change this if you understand why you are doing it."
 msgstr "Ak zvolíte \"áno\", prehľadajú sa len transpondéry, ktoré nie sú uvedené v súbore satellites.xml"
 
 msgid "Cancel"
@@ -127,9 +137,6 @@ msgstr ""
 msgid "Disable sync with known transponders"
 msgstr "Vyhľadať len neznáme transpondéry"
 
-msgid "Dreambox type"
-msgstr "Typ Dreamboxu"
-
 #
 msgid "Exit"
 msgstr "Ukončiť"
@@ -141,18 +148,16 @@ msgstr "Filtrovať susedné satelity"
 msgid "Frequency values must be between %d MHz and %d MHz"
 msgstr "Hodnoty frekvencie musia byť medzi 10700 MHz a 12749 MHz"
 
-msgid "Frequency values must be between 3000 MHz and 4199 MHz (C-band)"
-msgstr "Hodnoty frekvencie musia byť medzi 3000 MHz and 4199 MHz (C-pásmo)"
-
-msgid "Frequency values must be between 3001 MHz and 4200 MHz (C-band)"
-msgstr "Hodnoty frekvencie musia byť medzi 3001 MHz and 4200 MHz (C-pásmo)"
+#, fuzzy, python-format
+msgid "Frequency values must be between %d MHz and %d MHz (C-band)"
+msgstr "Hodnoty frekvencie musia byť medzi 10700 MHz a 12749 MHz"
 
 #, fuzzy, python-format
 msgid "Hardware blind scan is not supported by this tuner (%s)!"
 msgstr "Dreambox blind scan nie je podporovaný tunerom (%s)!"
 
-msgid "Horizontal"
-msgstr "Horizontálna"
+msgid "Hardware type"
+msgstr ""
 
 msgid "If you select \"yes\" all channels on the satellite being search will be deleted before starting the current search, yes (keep feeds) means the same but hold all feed services/transponders."
 msgstr "Ak zvolíte \"áno\", všetky stanice na prehľadávanom satelite budú vymazané pred začatím vyhľadávania, áno (ponechať feedy) znamená to isté, ale ponechá všetky stanice/transpondéry."
@@ -167,6 +172,9 @@ msgstr "Ak zvolíte \"áno\", prehľadajú sa len transpondéry, ktoré nie sú 
 msgid "It seems manufacturer does not support blind scan for this tuner."
 msgstr "Zdá sa, že výrobca tohto tuneru nepodporuje blind scan."
 
+msgid "LNB inversion"
+msgstr ""
+
 msgid "LNB of current satellite not compatible with plugin"
 msgstr ""
 
@@ -177,17 +185,11 @@ msgstr ""
 "Hľadajú sa dostupné transpondéry.\n"
 "Bude to chvíľu trvať, prosím buďte trpezlivý."
 
-msgid "MANUALLY start service searching, press green to change"
-msgstr "MANUÁLNE spustenie vyhľadávania staníc, pre zmenu stlačte Zelené tlač."
-
 msgid "Maybe the reason that recording is currently running."
 msgstr "Možná príčina - nahrávanie je spustené"
 
 msgid "Moving to "
 msgstr "Presúvam to "
-
-msgid "Network scan"
-msgstr "Vyhľadávanie siete"
 
 msgid ""
 "No new transponders found! \n"
@@ -203,23 +205,9 @@ msgstr ""
 msgid "No transponders were found for those search parameters!"
 msgstr "Podľa zadaných parametrov neboli nájdené žiadne transpondéry!"
 
-msgid ""
-"No tuner is enabled!\n"
-"Please setup your tuner settings before you start a service scan."
-msgstr ""
-"Nie je povolený tuner!\n"
-"Pred spustením vyhľadávania si prosím nastavte konfiguráciu tuneru."
-
 #, python-format
 msgid "Not found blind scan utility '%s'!"
 msgstr "Nebol nájdený Blind scan modul '%s'!"
-
-msgid ""
-"Nothing to scan!\n"
-"Please setup your tuner settings before you start a service scan."
-msgstr ""
-"Nie je čo vyhľadávať!\n"
-"Pred spustením vyhľadávania si prosím nastavte konfiguráciu tuneru."
 
 msgid "Nothing to scan! Press Exit!"
 msgstr "Nie je čo vyhľadávať! Stlačte Exit!"
@@ -240,14 +228,22 @@ msgstr "Nastavte si prosím konfiguráciu tuneru."
 msgid "Polarisation"
 msgstr "Polarizácia"
 
+msgid "Polarisation, select horizontal, vertical or both."
+msgstr ""
+
 msgid "Press Green/OK to start the scan"
 msgstr "Stlačením Zelené/OK spustíte vyhľadávanie"
 
-msgid "Press OK to start the scan"
+#, fuzzy
+msgid "Press OK to start the scan."
 msgstr "Stlačením OK spustíte vyhľadávanie"
 
-msgid "Press green to start service searching!"
+#, fuzzy
+msgid "Press green to start service searching."
 msgstr "Stlačením Zeleného tlač. spustíte prehľadávanie"
+
+msgid "Restore defaults"
+msgstr ""
 
 msgid "Rotor: "
 msgstr "Rotor: "
@@ -308,10 +304,17 @@ msgstr ""
 msgid "Search type"
 msgstr "Typ hľadania"
 
+#, fuzzy
+msgid "Searching for active satellite transponders..."
+msgstr "Pokus o nájdenie používaných satelitných transpondérov..."
+
 msgid "Select a tuner that is configured for the satellite you wish to search"
 msgstr "Vyberte tuner, ktorý je nakonfigurovaný pre satelit, ktorý chcete prehľadať"
 
 msgid "Select all"
+msgstr ""
+
+msgid "Select between 1 and 5. Higher numbers give more accurat search results."
 msgstr ""
 
 msgid "Select the satellite you wish to search"
@@ -325,6 +328,12 @@ msgstr ""
 msgid "Select type for scan:"
 msgstr "Voľba typu hľadania:"
 
+msgid "Service searching to be started MANUALLY by the user. To change this press green."
+msgstr ""
+
+msgid "Service searching will start AUTOMATICALLY. To change this press green."
+msgstr ""
+
 msgid "Smaller steps takes longer but scan is more thorough"
 msgstr "Menšie kroty zaberú viac času, vyhľadávanie je však viac dôsledné"
 
@@ -337,6 +346,10 @@ msgstr "Spustiť vyhľadávanie"
 #, python-format
 msgid "Step %d %d:%02d min"
 msgstr "Krok %d %d:%02d min"
+
+#, fuzzy, python-format
+msgid "Symbol rate values are in megasymbols; enter a value between %d and %d"
+msgstr "Hodnoty prenosovej rýchlosti sú v megasymboloch, zadajte hodnotu medzi 1 a 44"
 
 msgid "Symbol rate values are in megasymbols; enter a value between 1 and 44"
 msgstr "Hodnoty prenosovej rýchlosti sú v megasymboloch, zadajte hodnotu medzi 1 a 44"
@@ -354,17 +367,14 @@ msgstr "Doporučená polarizácia pre tento satelit je '%s'"
 msgid "Transponder searching finished!"
 msgstr "Prehľadávanie transpondéra skončilo!"
 
-msgid "Try to find used satellite transponders..."
-msgstr "Pokus o nájdenie používaných satelitných transpondérov..."
-
 msgid "Tuner"
 msgstr "Tuner"
 
 msgid "Use Sundtek full hardware blind scan!"
 msgstr ""
 
-msgid "Vertical"
-msgstr "Vertikálna"
+msgid "Utility from the manufacturer"
+msgstr ""
 
 #, fuzzy
 msgid "When a neighbouring satellite is very strong this avoids searching transponders known to be coming from the neighbouring satellite."
@@ -390,8 +400,14 @@ msgstr "Spustiť vyhľadávanie"
 msgid "horizontal"
 msgstr "horizontálna"
 
+msgid "inverted"
+msgstr ""
+
 msgid "no"
 msgstr "nie"
+
+msgid "normal"
+msgstr ""
 
 msgid "save to XML file"
 msgstr "uložiť do súboru XML"

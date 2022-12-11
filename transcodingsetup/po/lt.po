@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TransCodingSetup\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-16 16:27+0430\n"
+"POT-Creation-Date: 2022-12-11 11:19+0100\n"
 "PO-Revision-Date: 2021-09-15 19:14+0300\n"
 "Last-Translator: Vytenis P. <vyteniui@gmail.com>\n"
 "Language-Team: Vytenis P. <vyteniui@gmail.com>\n"
@@ -21,23 +21,14 @@ msgstr "Bitų srautas"
 msgid "Frame rate"
 msgstr "Kadrų dažnis"
 
-msgid "Framerate"
-msgstr "Kadrų dažnis"
-
 msgid "It seems your receiver is not supported!"
 msgstr "Atrodo, jūsų imtuvas nepalaikomas!"
 
 msgid "Not found file '/etc/enigma2/streamproxy.conf' !"
 msgstr "Failo '/etc/enigma2/streamproxy.conf' nerasta!"
 
-msgid "Port"
-msgstr "Prievadas"
-
 msgid "Quit"
 msgstr "Baigti"
-
-msgid "Resolution"
-msgstr "Raiška"
 
 msgid "Set"
 msgstr "Nustatyti"
@@ -53,6 +44,3 @@ msgstr "Vaizdo kodekas"
 
 msgid "Video size"
 msgstr "Vaizdo kadro dydis"
-
-msgid "videocodec"
-msgstr "vaizdo kodekas"

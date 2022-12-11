@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-plugins 3.2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-16 16:27+0430\n"
+"POT-Creation-Date: 2022-12-11 11:18+0100\n"
 "PO-Revision-Date: 2014-12-19 17:15+0100\n"
 "Last-Translator: Rob van der Does <robvddoes@gmail.com>\n"
 "Language-Team: Samzan\n"
@@ -20,9 +20,6 @@ msgstr ""
 "X-Poedit-Language: Finnish\n"
 "X-Poedit-Country: FINLAND\n"
 
-msgid " as "
-msgstr " roolissa "
-
 msgid "* = Restart Required"
 msgstr ""
 
@@ -32,25 +29,19 @@ msgstr "Useita tuloksia:"
 msgid "Cancel"
 msgstr "Peruuta"
 
-msgid "Cast: "
-msgstr "Pääosissa:"
-
-msgid "Channel Selection"
-msgstr "Kanavavalinta"
-
-msgid "Content:"
-msgstr ""
-
 #, fuzzy
-msgid "Could't get event name"
+msgid "Couldn't get event name"
 msgstr "Ei löytynyt tuloksia"
 
 msgid "Details"
 msgstr "Tiedot"
 
-#, python-format
-msgid "Downloading Movie Poster: %s..."
+#, fuzzy
+msgid "Downloading Movie Poster..."
 msgstr "Ladataan elokuvan julistetta: %s..."
+
+msgid "E"
+msgstr ""
 
 #, fuzzy
 msgid "Enable this to be able to access IMDb search setup from within the plugin browser."
@@ -80,7 +71,7 @@ msgstr "Ei IMDb hakuosumaa!"
 msgid "Extra Info"
 msgstr "Lisätiedot"
 
-msgid "Genre:"
+msgid "IMDB Exception"
 msgstr ""
 
 msgid "IMDb Details parsed"
@@ -102,21 +93,18 @@ msgstr "IMDb Plugin"
 msgid "IMDb Re-Download completed"
 msgstr "IMDb lataus valmis"
 
-#, fuzzy
-msgid "IMDb Save - Download completed"
-msgstr "IMDb lataus valmis"
-
 msgid "IMDb Setup"
 msgstr "IMDb asetukset"
-
-msgid "IMDb can not get Movie Information to write to .jpg and .txt files!"
-msgstr ""
 
 msgid "IMDb can not get Movie Information to write to .txt file!"
 msgstr ""
 
 msgid "IMDb query failed!"
 msgstr "IMDb haku epäonnistui!"
+
+#, fuzzy
+msgid "IMDb save completed"
+msgstr "IMDb lataus valmis"
 
 #, fuzzy
 msgid "IMDb search"
@@ -126,9 +114,16 @@ msgstr "Ei IMDb hakuosumaa!"
 msgid "IMDb setup"
 msgstr "IMDb asetukset"
 
-#, fuzzy
-msgid "Lookup"
-msgstr "Tiedot"
+#, python-format
+msgid "Ignoring invalid imdbId: %s"
+msgstr ""
+
+msgid "Include episodes in the results. Takes effect after the next search of IMDb for a show name."
+msgstr ""
+
+#, python-format
+msgid "Local file does not exist: %s"
+msgstr ""
 
 #, fuzzy
 msgid "Menu"
@@ -156,17 +151,8 @@ msgstr ""
 msgid "Page up"
 msgstr ""
 
-msgid "Play Trailer"
-msgstr "Näytä traileri"
-
 msgid "Please select the matching entry"
 msgstr "Valitse sopivin hakutulos"
-
-msgid "Plot Outline"
-msgstr ""
-
-msgid "Production Countries:"
-msgstr ""
 
 #, python-format
 msgid "Query IMDb: %s"
@@ -176,10 +162,7 @@ msgstr "IMDb haku: %s"
 msgid "Re-Query IMDb: %s..."
 msgstr "IMDb haku: %s..."
 
-msgid "Release Date:"
-msgstr ""
-
-msgid "Runtime:"
+msgid "S"
 msgstr ""
 
 msgid "Save current Details as .html for offline use"
@@ -191,15 +174,9 @@ msgstr ""
 msgid "Save current Poster and Details as .txt"
 msgstr ""
 
-msgid "Search Trailer"
-msgstr "Etsi traileria"
-
 #, fuzzy
 msgid "Search for details from the Internet Movie Database"
 msgstr "Hakutulokset"
-
-msgid "Select from EPG"
-msgstr "Valitse ohjelmaoppaasta"
 
 #, fuzzy
 msgid "Settings for Internet Movie Database searches"
@@ -208,10 +185,16 @@ msgstr "The Internet Movie Database"
 msgid "Setup"
 msgstr "Asetukset"
 
+msgid "Show a bigger poster"
+msgstr ""
+
 msgid "Show episode and year information for cast when available. Takes effect after the next fetch of show details."
 msgstr ""
 
 msgid "Show episode and year information in cast list"
+msgstr ""
+
+msgid "Show episodes in title menu"
 msgstr ""
 
 msgid "Show full movie or series name in title menu"
@@ -229,6 +212,9 @@ msgstr ""
 msgid "Show movie and series extra details"
 msgstr ""
 
+msgid "Show movie and series synopsis"
+msgstr ""
+
 #, fuzzy
 msgid "Show search in plugin browser"
 msgstr "Näytä lisäosavalikossa"
@@ -238,6 +224,9 @@ msgid "Show setup in plugin browser"
 msgstr "Näytä lisäosavalikossa"
 
 msgid "Show the whole IMDb title information for a movie or series, including, for example, alternative names and whether it's a series. Takes effect after the next search of IMDb for a show name."
+msgstr ""
+
+msgid "Synopsis"
 msgstr ""
 
 msgid "The Internet Movie Database"
@@ -250,14 +239,14 @@ msgstr "Sallii poistaa sanoja tai sanontoja hakuehdoista. Eroittele sanat pilkul
 msgid "Title Menu"
 msgstr "Nimivalikko"
 
-msgid "Unknown category"
-msgstr ""
-
-msgid "User Rating"
-msgstr "Arvostelut"
-
 msgid "Words / phrases to ignore "
 msgstr "Hylättävät sanat / sanonnat"
 
+msgid "connection error"
+msgstr ""
+
 msgid "no user rating yet"
 msgstr "Ei arvostelua vielä"
+
+msgid "timeout"
+msgstr ""
