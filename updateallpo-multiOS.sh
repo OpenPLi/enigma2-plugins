@@ -1,7 +1,7 @@
 #!/bin/bash
 # Script to generate po files outside of the normal build process
 # Author: Pr2 for OpenPLi Team
-# Version: 1.3
+# Version: 1.4
 # 
 # This script is derivated from updateallpo.sh it is intended to all you
 # create the updated version of the po files on different environment:
@@ -38,9 +38,9 @@
 #
 remote="origin"
 branch="master"
-python="python"
+python="python3"
 localgsed="gsed"
-xml2po="xml2po.py"
+xml2po="xml2po-python3.py"
 findoptions=""
 delete=1
 rootpath=$PWD
@@ -49,7 +49,7 @@ function this_help () {
 	printf "Possible options are:\n"
 	printf " -r | --remote to specify the remote git to use,   default[origin]\n" 
 	printf " -b | --branch to specify the branch to translate, default[develop]\n"
-	printf " -p | --python to specify the python runtime name, default[python]\n"
+	printf " -p | --python to specify the python runtime name, default[python3]\n"
 	printf " -n | --nodelete to keep the .pot files, useful to find where a message came from\n"
 	printf " -h | --help   this text\n\n"
 	printf "To translate for the master branch simply run this script without any option.\n"
@@ -110,8 +110,8 @@ done
 command -v "$python" >/dev/null 2>&1 || { printf >&2 "Script requires python but it's not installed.  Aborting."; \
 		 printf "Please download latest version and install it from: https://www.python.org/\n"; exit 1; }
 ver=$("$python" -V 2>&1 | sed 's/.* \([0-9]\).\([0-9]\).*/\1\2/')
-if [ "$ver" -ge "30" ]; then
-   xml2po="xml2po-python3.py"
+if [ "$ver" -lt "30" ]; then
+   xml2po="xml2po.py"
 fi
 printf "Python used [%s] script used [%s]: " "$python" "$xml2po"
 "$python" --version
@@ -225,7 +225,7 @@ done
 cd $rootpath
 printf "Po files update/creation from script finished!\n"
 printf "Edit with PoEdit the plugin po files that you want to translate\n\n"
-command -v cygpath > /dev/null && { cygpath -w "$PWD"; } || { "$PWD"; }
+command -v cygpath > /dev/null 2>&1 && { cygpath -w "$PWD"; } || { "$PWD"; }
 printf "\nthen post it back to OpenPLi forum:\n\n"
 printf "https://forums.openpli.org/forum/55-en-enduser-support/\n\n"
 printf "Please always specify for which plugin it is (and for which branch: [%s])\n\n" $branch

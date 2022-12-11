@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2 - AC3LipSync\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-16 16:27+0430\n"
+"POT-Creation-Date: 2022-12-11 11:18+0100\n"
 "PO-Revision-Date: 2009-09-16 13:02+0100\n"
 "Last-Translator: \n"
 "Language-Team:  <Benny.DeTandt@gmail.com>\n"
@@ -143,6 +143,9 @@ msgid "Move screen to the upper right corner"
 msgstr ""
 
 msgid "Move screen up"
+msgstr ""
+
+msgid "No audio track available (yet). Please try again once an audio track is available."
 msgstr ""
 
 # L:\Dreambox\Eclipse\enigma2-plugins\ac3lipsync\src/AC3main.py:93

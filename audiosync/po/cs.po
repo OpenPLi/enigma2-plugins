@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ims\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-16 16:27+0430\n"
+"POT-Creation-Date: 2022-12-11 11:18+0100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: ims <ims21@users.sourceforge.net>\n"
 "Language-Team: PLi <ims21@users.sourceforge.net>\n"
@@ -128,6 +128,9 @@ msgstr "Přesun okna do pravého horního rohu"
 
 msgid "Move screen up"
 msgstr "Posun nahoru"
+
+msgid "No audio track available (yet). Please try again once an audio track is available."
+msgstr ""
 
 #
 msgid "OK"

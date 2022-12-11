@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Partnerbox\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-15 10:30+0200\n"
+"POT-Creation-Date: 2022-12-11 11:18+0100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Dr.Best <dr.best@dreambox-tools.info>\n"
 "Language-Team: Dr. Best <dr.best@dreambox-tools.info>\n"
@@ -442,6 +442,9 @@ msgid "Select operation for partnerbox"
 msgstr "Setup für Partnerbox"
 
 msgid "Send Wake-on-LAN"
+msgstr ""
+
+msgid "Service type"
 msgstr ""
 
 msgid "Servicelists/EPG"

@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ViX\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-07 09:36+0100\n"
+"POT-Creation-Date: 2022-12-11 11:18+0100\n"
 "PO-Revision-Date: 2021-11-07 12:25+0100\n"
 "Last-Translator: Frenske <voorzitter@openpli.org>\n"
 "Language-Team: Andy Blackburn, Rob van der Does\n"
@@ -76,9 +76,6 @@ msgstr "%dMHz gescand"
 msgid "Accuracy (higher is better)"
 msgstr "Accuratesse (hoger is beter)"
 
-msgid "Another type"
-msgstr "Nog een type"
-
 msgid "Auto / Manual"
 msgstr "Auto / Handmatig"
 
@@ -143,9 +140,6 @@ msgstr "Verwijder de mogelijk dubbele transponders"
 msgid "Disable sync with known transponders"
 msgstr "Synchronisatie met bekende transponders uitschakelen"
 
-msgid "Dreambox type"
-msgstr "Type settopbox"
-
 msgid "Exit"
 msgstr "Afsluiten"
 
@@ -163,6 +157,9 @@ msgstr "Frequenties moeten liggen tussen %d MHz en %d MHz (C-band)"
 #, python-format
 msgid "Hardware blind scan is not supported by this tuner (%s)!"
 msgstr "Harwarematige blindscan is niet ondersteund door deze tuner (%s)!"
+
+msgid "Hardware type"
+msgstr ""
 
 msgid "If you select \"yes\" all channels on the satellite being search will be deleted before starting the current search, yes (keep feeds) means the same but hold all feed services/transponders."
 msgstr "Indien geactiveerd, dan zullen alle zenders van de huidige satelliet worden gewist voordat uiteindelijk het zoeken start. Indien u kiest voor 'Ja, maar behoudt de feeds' dan blijven de transponders met feed(s) behouden."
@@ -381,6 +378,9 @@ msgstr "Tuner"
 
 msgid "Use Sundtek full hardware blind scan!"
 msgstr "Gebruik Sundtek complete hardware blindscan!"
+
+msgid "Utility from the manufacturer"
+msgstr ""
 
 msgid "When a neighbouring satellite is very strong this avoids searching transponders known to be coming from the neighbouring satellite."
 msgstr ""

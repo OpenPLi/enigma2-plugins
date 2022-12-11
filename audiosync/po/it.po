@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: AudioSync\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-16 16:27+0430\n"
+"POT-Creation-Date: 2022-12-11 11:18+0100\n"
 "PO-Revision-Date: 2018-04-17 23:25+0200\n"
 "Last-Translator: Gringo <openpli@tiscali.it>\n"
 "Language-Team: www.linsat.net - Italy <spaeleus@croci.org>\n"
@@ -126,6 +126,9 @@ msgstr "Spostare la finestra nell'angolo in alto a destra"
 
 msgid "Move screen up"
 msgstr "Spostare la finestra in alto"
+
+msgid "No audio track available (yet). Please try again once an audio track is available."
+msgstr ""
 
 msgid "OK"
 msgstr "OK"

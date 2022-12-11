@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partnerbox\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-15 10:30+0200\n"
+"POT-Creation-Date: 2022-12-11 11:18+0100\n"
 "PO-Revision-Date: 2012-06-27 09:22+0100\n"
 "Last-Translator: robertut <robertut@yahoo.com>\n"
 "Language-Team: \n"
@@ -444,6 +444,9 @@ msgid "Select operation for partnerbox"
 msgstr "partnerbox beállítása"
 
 msgid "Send Wake-on-LAN"
+msgstr ""
+
+msgid "Service type"
 msgstr ""
 
 msgid "Servicelists/EPG"

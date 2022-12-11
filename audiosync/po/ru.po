@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: AC3LipSync\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-16 16:27+0430\n"
+"POT-Creation-Date: 2022-12-11 11:18+0100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Dimitrij <Dima-73@inbox.lv>\n"
 "Language-Team: \n"
@@ -121,6 +121,9 @@ msgstr "Перемещение экрана в правом верхнем уг�
 msgid "Move screen up"
 msgstr "Перемещение экрана вверх"
 
+msgid "No audio track available (yet). Please try again once an audio track is available."
+msgstr "Звуковая дорожка недоступна (может пока). Повторите попытку, когда звуковая дорожка станет доступна."
+
 msgid "OK"
 msgstr "ОК"
 
@@ -203,6 +206,3 @@ msgstr "после режима ожидания"
 
 msgid "disabled"
 msgstr "отключено"
-
-msgid "No audio track available (yet). Please try again once an audio track is available."
-msgstr "Звуковая дорожка недоступна (может пока). Повторите попытку, когда звуковая дорожка станет доступна."

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MerlinEPGCenter\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-11 12:34+0200\n"
+"POT-Creation-Date: 2022-12-11 11:18+0100\n"
 "PO-Revision-Date: 2021-09-15 14:26+0300\n"
 "Last-Translator: Vytenis P. <vyteniui@gmail.com>\n"
 "Language-Team: Vytenis P. <vyteniui@gmail.com>\n"
@@ -78,9 +78,6 @@ msgstr "Sąrašo stilius:"
 
 msgid "Lists"
 msgstr "Sąrašai"
-
-msgid "MerlinEPGCenter"
-msgstr "MerlinEPG centras"
 
 msgid "Monday"
 msgstr "pirmadienis"

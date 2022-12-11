@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: AC3LipSync\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-16 16:27+0430\n"
+"POT-Creation-Date: 2022-12-11 11:18+0100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: vovan43 <vovan43@ex.ua>\n"
 "Language-Team: \n"
@@ -120,6 +120,9 @@ msgstr "Переміщення екрана в верхньому правому
 
 msgid "Move screen up"
 msgstr "Переміщення екрана вверх"
+
+msgid "No audio track available (yet). Please try again once an audio track is available."
+msgstr ""
 
 msgid "OK"
 msgstr "ОК"

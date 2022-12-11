@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"POT-Creation-Date: 2022-12-11 11:18+0100\n"
 "PO-Revision-Date: 2015-10-03 22:19+0300\n"
 "Last-Translator: Dimitrij <Dima-73@inbox.lv>\n"
 "Language-Team: \n"
@@ -75,6 +75,9 @@ msgstr "Способ"
 msgid "OK"
 msgstr "ОК"
 
+msgid "Only AC3/DTS(HD)"
+msgstr "Только AC3/DTS(HD)"
+
 msgid "Press OK to select a service"
 msgstr "Нажмите ОК для выбора сервиса"
 
@@ -98,6 +101,3 @@ msgstr "Вы должны выбрать действительный серви
 
 msgid "toggle on/off plugin only for session"
 msgstr "переключатель плагина вкл/выкл только для этой сессии"
-
-msgid "Only AC3/DTS(HD)"
-msgstr "Только AC3/DTS(HD)"

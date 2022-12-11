@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Partnerbox\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-15 10:30+0200\n"
+"POT-Creation-Date: 2022-12-11 11:18+0100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: ims <ims21@users.sourceforge.net>\n"
 "Language-Team: PLi <ims21@users.sourceforge.net>\n"
@@ -429,6 +429,9 @@ msgstr "Zvolte operaci pro partnerbox"
 
 msgid "Send Wake-on-LAN"
 msgstr "Poslat Wake-on-LAN"
+
+msgid "Service type"
+msgstr ""
 
 msgid "Servicelists/EPG"
 msgstr "Seznam programů/EPG"

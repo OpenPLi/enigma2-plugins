@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MerlinEPGCenter\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"POT-Creation-Date: 2022-12-11 11:18+0100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Shaderman <shaderman@dreambox-tools.info>\n"
 "Language-Team: Shaderman <shaderman@dreambox-tools.info>\n"
@@ -76,9 +76,6 @@ msgstr "Darstellung der Listen:"
 
 msgid "Lists"
 msgstr "Listen"
-
-msgid "MerlinEPGCenter"
-msgstr ""
 
 msgid "Monday"
 msgstr "Montag"
