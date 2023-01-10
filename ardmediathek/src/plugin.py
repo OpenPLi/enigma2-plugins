@@ -5,9 +5,9 @@ from . import ard
 
 
 def main(session, **kwargs):
-    reload_module(ard)
-    session.open(ard.ArdMediathek)
+	reload_module(ard)
+	session.open(ard.ArdMediathek)
 
 
 def Plugins(**kwargs):
-    return PluginDescriptor(name="ARD Mediathek", description="ARD Mediathek Plugin für Enigma2", where=[PluginDescriptor.WHERE_EXTENSIONSMENU, PluginDescriptor.WHERE_PLUGINMENU], icon="logo.png", fnc=main)
+	return PluginDescriptor(name="ARD Mediathek", description="ARD Mediathek Plugin für Enigma2", where=[PluginDescriptor.WHERE_EXTENSIONSMENU, PluginDescriptor.WHERE_PLUGINMENU], icon="logo.png", fnc=main)
