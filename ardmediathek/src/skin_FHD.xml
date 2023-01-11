@@ -1,20 +1,20 @@
 <screen position="center,center" size="1920,1080" flags="wfNoBorder">
-    <widget source="global.CurrentTime" render="Label" position="1740,0" size="150,60" font="Regular; 48" halign="right" valign="center">
-        <convert type="ClockToText">Default</convert>
-    </widget>
-    <widget source="movielist" render="Listbox" position="600,90" size="1290,882" scrollbarMode="showOnDemand">
-        <convert type="TemplatedMultiContent">{"template": [ MultiContentEntryText(pos=(15,0), size=(1100,42), font=0, text=1, flags=RT_HALIGN_LEFT | RT_VALIGN_BOTTOM ), MultiContentEntryText(pos=(1140,0), size=(120,42), font=0, text=5, flags=RT_HALIGN_LEFT | RT_VALIGN_BOTTOM )], "fonts": [gFont("Regular",34)], "itemHeight": 42 }</convert>
-    </widget>
-    <widget name="cover" position="30,90" size="540,305" alphatest="blend"/>
-    <widget name="handlung" position="30,420" size="540,525" font="Regular; 32" halign="center"/>
-    <eLabel position="30,75" size="1860,3" backgroundColor="grey"/>
-    <eLabel position="30,987" size="1860,3" backgroundColor="grey"/>
-    <eLabel position="600,1065" size="300,3" backgroundColor="red"/>
-    <eLabel position="600,1005" size="300,45" text="Beenden" halign="center" font="Regular; 42"/>
-    <eLabel position="930,1065" size="300,3" backgroundColor="green"/>
-    <widget position="930,1005" size="300,45" name="key_green" halign="center" font="Regular; 42"/>
-    <eLabel position="1260,1065" size="300,2" backgroundColor="yellow"/>
-    <widget position="1260,1005" size="300,45" name="key_yellow" halign="center" font="Regular; 42"/>
-    <eLabel position="1590,1065" size="300,2" backgroundColor="blue"/>
-    <eLabel position="1590,1005" size="300,45" text="Home" halign="center" font="Regular; 42"/>
+	<widget source="global.CurrentTime" render="Label" position="1230,8" size="660,60" font="Regular; 45" foregroundColor="#FFFFFF" halign="right" valign="center">
+		<convert type="ClockToText">Format %a. %e %b. %Y %H:%M:%S</convert>
+	</widget>
+	<widget source="movielist" render="Listbox" position="30,90" size="1290,882" scrollbarMode="showOnDemand" foregroundColor="#FFFFFF" foregroundColorSelected="#FFFFFF" backgroundColorSelected="#283c7d" scrollbarWidth="10">
+		<convert type="TemplatedMultiContent">{"template": [ MultiContentEntryText(pos=(15,0), size=(1125,42), font=0, text=1, flags=RT_HALIGN_LEFT | RT_VALIGN_BOTTOM ), MultiContentEntryText(pos=(1140,0), size=(120,42), font=0, text=5, flags=RT_HALIGN_LEFT | RT_VALIGN_BOTTOM )], "fonts": [gFont("Regular",34)], "itemHeight": 42 }</convert>
+	</widget>
+	<widget name="cover" position="1350,90" size="540,305" alphatest="blend"/>
+	<widget name="handlung" position="1350,450" size="540,525" font="Regular; 32" foregroundColor="#FFFFFF" halign="center"/>
+	<eLabel position="30,997" size="300,75" text="Beenden" font="Regular; 42" foregroundColor="#FF0000" halign="center" valign="center"/>
+	<eLabel position="360,997" size="300,75" text="Download" font="Regular; 42" foregroundColor="#008000" halign="center" valign="center"/>
+	<eLabel position="690,997" size="300,75" text=" " font="Regular; 42" foregroundColor="#FFFF00" halign="center" valign="center"/>
+	<eLabel position="1020,997" size="300,75" text="Home" font="Regular; 42" foregroundColor="#0000FF" halign="center" valign="center"/>
+	<eLabel position="1800,1020" size="90,30" text="Menü" font="Regular; 21" foregroundColor="#FFFFFF" backgroundColor="#000000" halign="center" valign="center"/>
+	<widget name="progress" position="1350,420" size="540,22" backgroundColor="#697279" foregroundColor="#0000FF"/>
+	<widget name="DownloadLabel" position="1350,397" size="540,22" font="Regular; 17" foregroundColor="#FFFFFF" halign="center" valign="center"/>
+	<eLabel position="30,75" size="1860,3" backgroundColor="#C0C0C0"/>
+	<eLabel position="30,987" size="1860,3" backgroundColor="#C0C0C0"/>
+	<eLabel position="1335,90" size="3,882" backgroundColor="#C0C0C0"/>
 </screen>
