@@ -5,7 +5,7 @@ from Plugins.Plugin import PluginDescriptor
 from Components.ActionMap import ActionMap
 from Components.Sources.StaticText import StaticText
 from Screens.Screen import Screen
-from Components.config import config, ConfigSubsection, ConfigInteger, ConfigYesNo, ConfigText, getConfigListEntry
+from Components.config import config, ConfigSubsection, ConfigInteger, ConfigYesNo, ConfigText
 from Components.ConfigList import ConfigListScreen
 
 config.plugins.CDInfo = ConfigSubsection()
@@ -43,15 +43,14 @@ class CDInfo(ConfigListScreen, Screen):
 
 		self["info2"] = StaticText("Playlist string variables: $i=track, $t=title, $a=artist\nCDDB query will not delay start of audio CD playback. The request will be sent asynchronously and playlist text will be updated when match was found.")
 
-		self.list = []
-		self.list.append(getConfigListEntry("Try to extract CDTEXT", config.plugins.CDInfo.useCDTEXT))
-		self.list.append(getConfigListEntry("Try to query CDDB", config.plugins.CDInfo.useCDDB))
-		self.list.append(getConfigListEntry("Playlist string", config.plugins.CDInfo.displayString))
-		self.list.append(getConfigListEntry("CDDB overwrites CDTEXT info", config.plugins.CDInfo.preferCDDB))
-		self.list.append(getConfigListEntry("CDDB server hostname", config.plugins.CDInfo.CDDB_server))
-		self.list.append(getConfigListEntry("CDDB server port number", config.plugins.CDInfo.CDDB_port))
-		self.list.append(getConfigListEntry("CDDB retrieval timeout (s)", config.plugins.CDInfo.CDDB_timeout))
-		self.list.append(getConfigListEntry("store local CDDB cache", config.plugins.CDInfo.CDDB_cache))
+		self.list = [("Try to extract CDTEXT", config.plugins.CDInfo.useCDTEXT),
+			("Try to query CDDB", config.plugins.CDInfo.useCDDB),
+			("Playlist string", config.plugins.CDInfo.displayString),
+			("CDDB overwrites CDTEXT info", config.plugins.CDInfo.preferCDDB),
+			("CDDB server hostname", config.plugins.CDInfo.CDDB_server),
+			("CDDB server port number", config.plugins.CDInfo.CDDB_port),
+			("CDDB retrieval timeout (s)", config.plugins.CDInfo.CDDB_timeout),
+			("store local CDDB cache", config.plugins.CDInfo.CDDB_cache)]
 
 		ConfigListScreen.__init__(self, self.list)
 		self["key_red"] = StaticText(_("Cancel"))
