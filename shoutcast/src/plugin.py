@@ -38,7 +38,7 @@ import re
 import skin
 import six
 from treq import collect, content, get, request
-from Components.config import config, ConfigSubsection, ConfigSelection, ConfigDirectory, ConfigYesNo, Config, ConfigInteger, ConfigSubList, ConfigText, ConfigNumber, getConfigListEntry, configfile
+from Components.config import config, ConfigSubsection, ConfigSelection, ConfigDirectory, ConfigYesNo, Config, ConfigInteger, ConfigSubList, ConfigText, ConfigNumber, configfile
 from Components.ConfigList import ConfigListScreen
 from Screens.MessageBox import MessageBox
 from Components.GUIComponent import GUIComponent
@@ -1218,18 +1218,16 @@ class SHOUTcastSetup(Screen, ConfigListScreen):
 		self["key_red"] = StaticText(_("Cancel"))
 		self["key_green"] = StaticText(_("OK"))
 
-		self.list = [
-			getConfigListEntry(_("Show cover:"), config.plugins.shoutcast.showcover),
-			getConfigListEntry(_("Coverwidth:"), config.plugins.shoutcast.cover_width),
-			getConfigListEntry(_("Coverheight:"), config.plugins.shoutcast.cover_height),
-			getConfigListEntry(_("Show in extension menu:"), config.plugins.shoutcast.showinextensions),
-			getConfigListEntry(_("Streaming rate:"), config.plugins.shoutcast.streamingrate),
-			getConfigListEntry(_("Reload station list:"), config.plugins.shoutcast.reloadstationlist),
-			getConfigListEntry(_("Rip to single file, name is timestamped"), config.plugins.shoutcast.riptosinglefile),
-			getConfigListEntry(_("Create a directory for each stream"), config.plugins.shoutcast.createdirforeachstream),
-			getConfigListEntry(_("Add sequence number to output file"), config.plugins.shoutcast.addsequenceoutputfile),
-				]
-		self.dirname = getConfigListEntry(_("Recording location:"), config.plugins.shoutcast.dirname)
+		self.list = [(_("Show cover:"), config.plugins.shoutcast.showcover),
+			(_("Coverwidth:"), config.plugins.shoutcast.cover_width),
+			(_("Coverheight:"), config.plugins.shoutcast.cover_height),
+			(_("Show in extension menu:"), config.plugins.shoutcast.showinextensions),
+			(_("Streaming rate:"), config.plugins.shoutcast.streamingrate),
+			(_("Reload station list:"), config.plugins.shoutcast.reloadstationlist),
+			(_("Rip to single file, name is timestamped"), config.plugins.shoutcast.riptosinglefile),
+			(_("Create a directory for each stream"), config.plugins.shoutcast.createdirforeachstream),
+			(_("Add sequence number to output file"), config.plugins.shoutcast.addsequenceoutputfile)]
+		self.dirname = (_("Recording location:"), config.plugins.shoutcast.dirname)
 		self.list.append(self.dirname)
 
 		ConfigListScreen.__init__(self, self.list, session)
