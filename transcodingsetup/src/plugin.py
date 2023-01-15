@@ -80,7 +80,7 @@ class TranscodingSetup(ConfigListScreen, Screen):
 		try:
 			f = open(TRANSCODING_CONFIG, "r")
 			rawcontent = f.readlines()
-			rawcontent = [x.translate(None, ' \n\r') for x in rawcontent]
+			rawcontent = [x.translate(str.maketrans('', '', ' \n\r')) for x in rawcontent]
 			f.close()
 		except:
 			if needstreamproxy:
