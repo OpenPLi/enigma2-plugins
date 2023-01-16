@@ -5,7 +5,7 @@ from Screens.MessageBox import MessageBox
 from Screens.VirtualKeyBoard import VirtualKeyBoard
 from Components.ActionMap import ActionMap
 from Components.Sources.StaticText import StaticText
-from Components.config import config, ConfigIP, NoSave, ConfigText, ConfigEnableDisable, ConfigPassword, ConfigSelection, getConfigListEntry, ConfigYesNo
+from Components.config import config, ConfigIP, NoSave, ConfigText, ConfigEnableDisable, ConfigPassword, ConfigSelection, ConfigYesNo
 from Components.ConfigList import ConfigListScreen
 from Components.Pixmap import Pixmap
 from Components.ActionMap import ActionMap, NumberActionMap
@@ -142,32 +142,25 @@ class AutoMountEdit(Screen, ConfigListScreen):
 		self.hdd_replacementConfigEntry = NoSave(ConfigYesNo(default=hdd_replacement))
 
 	def createSetup(self):
-		self.list = []
-		self.activeEntry = getConfigListEntry(_("Active"), self.activeConfigEntry)
-		self.list.append(self.activeEntry)
-		self.sharenameEntry = getConfigListEntry(_("Local mountpoint"), self.sharenameConfigEntry)
-		self.list.append(self.sharenameEntry)
-		self.mounttypeEntry = getConfigListEntry(_("Mount type"), self.mounttypeConfigEntry)
-		self.list.append(self.mounttypeEntry)
-		self.ipEntry = getConfigListEntry(_("Server IP"), self.ipConfigEntry)
-		self.list.append(self.ipEntry)
-		self.hostEntry = getConfigListEntry(_("Host name"), self.hostConfigEntry)
-		self.list.append(self.hostEntry)
-		self.sharedirEntry = getConfigListEntry(_("Server share"), self.sharedirConfigEntry)
-		self.list.append(self.sharedirEntry)
-		self.hdd_replacementEntry = getConfigListEntry(_("use as HDD replacement"), self.hdd_replacementConfigEntry)
-		self.list.append(self.hdd_replacementEntry)
+		self.activeEntry = (_("Active"), self.activeConfigEntry)
+		self.sharenameEntry = (_("Local mountpoint"), self.sharenameConfigEntry)
+		self.mounttypeEntry = (_("Mount type"), self.mounttypeConfigEntry)
+		self.ipEntry = (_("Server IP"), self.ipConfigEntry)
+		self.hostEntry = (_("Host name"), self.hostConfigEntry)
+		self.sharedirEntry = (_("Server share"), self.sharedirConfigEntry)
+		self.hdd_replacementEntry = (_("use as HDD replacement"), self.hdd_replacementConfigEntry)
+		self.list = [self.activeEntry, self.sharenameEntry, self.mounttypeEntry, self.ipEntry, self.hostEntry, self.sharedirEntry, self.hdd_replacementEntry]
 		if self.optionsConfigEntry.value == self.optionsConfigEntry.default:
 			if self.mounttypeConfigEntry.value == "cifs":
 				self.optionsConfigEntry = NoSave(ConfigText(default="rw", visible_width=50, fixed_size=False))
 			else:
 				self.optionsConfigEntry = NoSave(ConfigText(default="rw,nolock,soft", visible_width=50, fixed_size=False))
-		self.optionsEntry = getConfigListEntry(_("Mount options"), self.optionsConfigEntry)
+		self.optionsEntry = (_("Mount options"), self.optionsConfigEntry)
 		self.list.append(self.optionsEntry)
 		if self.mounttypeConfigEntry.value == "cifs":
-			self.usernameEntry = getConfigListEntry(_("Username"), self.usernameConfigEntry)
+			self.usernameEntry = (_("Username"), self.usernameConfigEntry)
 			self.list.append(self.usernameEntry)
-			self.passwordEntry = getConfigListEntry(_("Password"), self.passwordConfigEntry)
+			self.passwordEntry = (_("Password"), self.passwordConfigEntry)
 			self.list.append(self.passwordEntry)
 
 		self["config"].list = self.list

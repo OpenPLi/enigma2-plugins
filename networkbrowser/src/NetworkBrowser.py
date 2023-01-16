@@ -9,7 +9,7 @@ from Components.Sources.List import List
 from Components.Sources.StaticText import StaticText
 from Components.Network import iNetwork
 from Components.Input import Input
-from Components.config import getConfigListEntry, NoSave, config, ConfigIP
+from Components.config import NoSave, config, ConfigIP
 from Components.ConfigList import ConfigList, ConfigListScreen
 from Tools.Directories import resolveFilename, SCOPE_PLUGINS, SCOPE_SKIN_IMAGE
 from Tools.LoadPixmap import LoadPixmap
@@ -498,9 +498,7 @@ class ScanIP(Screen, ConfigListScreen):
 
 		self.ipAddress = ConfigIP(default=[0, 0, 0, 0])
 
-		ConfigListScreen.__init__(self, [
-			getConfigListEntry(_("IP Address"), self.ipAddress),
-		], self.session)
+		ConfigListScreen.__init__(self, [(_("IP Address"), self.ipAddress)], self.session)
 
 		self.onLayoutFinish.append(self.layoutFinished)
 

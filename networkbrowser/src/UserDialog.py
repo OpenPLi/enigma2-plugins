@@ -4,7 +4,7 @@ from Screens.Screen import Screen
 from Screens.MessageBox import MessageBox
 from Screens.VirtualKeyBoard import VirtualKeyBoard
 from Components.ActionMap import ActionMap
-from Components.config import ConfigText, ConfigPassword, NoSave, getConfigListEntry
+from Components.config import ConfigText, ConfigPassword, NoSave
 from Components.ConfigList import ConfigListScreen
 from Components.Sources.StaticText import StaticText
 from Components.Pixmap import Pixmap
@@ -91,11 +91,9 @@ class UserDialog(Screen, ConfigListScreen):
 		self.password = NoSave(ConfigPassword(default=password, visible_width=50, fixed_size=False))
 
 	def createSetup(self):
-		self.list = []
-		self.usernameEntry = getConfigListEntry(_("Username"), self.username)
-		self.list.append(self.usernameEntry)
-		self.passwordEntry = getConfigListEntry(_("Password"), self.password)
-		self.list.append(self.passwordEntry)
+		self.usernameEntry = (_("Username"), self.username)
+		self.passwordEntry = (_("Password"), self.password)
+		self.list = [self.usernameEntry, self.passwordEntry]
 		self["config"].list = self.list
 		self["config"].l.setList(self.list)
 		self["config"].onSelectionChanged.append(self.selectionChanged)
