@@ -159,9 +159,8 @@ class AutoMountEdit(Screen, ConfigListScreen):
 		self.list.append(self.optionsEntry)
 		if self.mounttypeConfigEntry.value == "cifs":
 			self.usernameEntry = (_("Username"), self.usernameConfigEntry)
-			self.list.append(self.usernameEntry)
 			self.passwordEntry = (_("Password"), self.passwordConfigEntry)
-			self.list.append(self.passwordEntry)
+			self.list.extend([self.usernameEntry, self.passwordEntry])
 
 		self["config"].list = self.list
 		self["config"].l.setList(self.list)
