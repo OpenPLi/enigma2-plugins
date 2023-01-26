@@ -107,7 +107,6 @@ def filescan_open(item, session, **kwargs):
 	errors = 0
 	for each in item:
 		cmd = "[ -d %s ] && cp %s %s" % (WATCH_DIR, each.path, WATCH_DIR)
-		os.system(cmd)
 		ret = os.system(cmd)
 		if ret == 0:
 			added += 1
