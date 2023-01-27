@@ -1,6 +1,6 @@
 from Components.ActionMap import NumberActionMap
 from Components.Button import Button
-from Components.config import config, getConfigListEntry
+from Components.config import config
 from Components.ConfigList import ConfigListScreen
 from Components.Label import Label
 from Components.SystemInfo import SystemInfo
@@ -29,20 +29,20 @@ class AC3LipSyncSetup(ConfigListScreen, Screen):
 		Screen.__init__(self, session)
 		self.setTitle(_("AC3 Lip Sync setup"))
 		self.list = [
-			getConfigListEntry(_("Outer bound (+/-)"), config.plugins.AC3LipSync.outerBounds),
-			getConfigListEntry(_("Step in ms for arrow keys"), config.plugins.AC3LipSync.arrowStepSize),
-			getConfigListEntry(_("Wait time in ms before activation:"), config.plugins.AC3LipSync.activationDelay),
-			getConfigListEntry(_("Step in ms for keys '%s'") % ("1/3"), config.plugins.AC3LipSync.stepSize13),
-			getConfigListEntry(_("Step in ms for keys '%s'") % ("4/6"), config.plugins.AC3LipSync.stepSize46),
-			getConfigListEntry(_("Step in ms for keys '%s'") % ("7/9"), config.plugins.AC3LipSync.stepSize79),
-			getConfigListEntry(_("Step in ms for key %i") % (2), config.plugins.AC3LipSync.absoluteStep2),
-			getConfigListEntry(_("Step in ms for key %i") % (5), config.plugins.AC3LipSync.absoluteStep5),
-			getConfigListEntry(_("Step in ms for key %i") % (8), config.plugins.AC3LipSync.absoluteStep8)
+			(_("Outer bound (+/-)"), config.plugins.AC3LipSync.outerBounds),
+			(_("Step in ms for arrow keys"), config.plugins.AC3LipSync.arrowStepSize),
+			(_("Wait time in ms before activation:"), config.plugins.AC3LipSync.activationDelay),
+			(_("Step in ms for keys '%s'") % ("1/3"), config.plugins.AC3LipSync.stepSize13),
+			(_("Step in ms for keys '%s'") % ("4/6"), config.plugins.AC3LipSync.stepSize46),
+			(_("Step in ms for keys '%s'") % ("7/9"), config.plugins.AC3LipSync.stepSize79),
+			(_("Step in ms for key %i") % (2), config.plugins.AC3LipSync.absoluteStep2),
+			(_("Step in ms for key %i") % (5), config.plugins.AC3LipSync.absoluteStep5),
+			(_("Step in ms for key %i") % (8), config.plugins.AC3LipSync.absoluteStep8)
 		]
 		if SystemInfo["CanDownmixAC3"]:
 			self.list += [
-				getConfigListEntry(_("Restart audio") + " AC3", config.plugins.AC3LipSync.restartSelection),
-				getConfigListEntry(_("Restart audio delay (in sec)"), config.plugins.AC3LipSync.restartDelay)
+				(_("Restart audio") + " AC3", config.plugins.AC3LipSync.restartSelection),
+				(_("Restart audio delay (in sec)"), config.plugins.AC3LipSync.restartDelay)
 			]
 		ConfigListScreen.__init__(self, self.list)
 		self["config"].list = self.list
