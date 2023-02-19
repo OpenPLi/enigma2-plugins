@@ -69,9 +69,11 @@ msgstr "Меню Transmission"
 msgid "Unpause all downloads"
 msgstr "Возобновление всех загрузок"
 
-#, fuzzy
-msgid "transmission-daemon"
-msgstr "Меню Transmission"
+msgid "Add torrent..."
+msgstr "Добавить торрент..."
+
+msgid "%d Torrent(s) added in '%s', %d failed."
+msgstr "%d торрент(ов) добавлен в '%s', %d ошибка."
 
 msgid ""
 "transmission-daemon not installed!\n"
