@@ -123,7 +123,7 @@ class EPGRefreshConfiguration(Screen, ConfigListScreen):
 			self.list.append(getConfigListEntry(_("Inherit Services from AutoTimer"), config.plugins.epgrefresh.inherit_autotimer, _("Extend the list of services to refresh by those your AutoTimers use?")))
 			self.list.append(getConfigListEntry(_("Run AutoTimer after refresh"), config.plugins.epgrefresh.parse_autotimer, _("After a successful refresh the AutoTimer will automatically search for new matches if this is enabled.")))
 			try:
-				from Plugins.Extensions.SeriesPlugin.plugin import renameTimer
+				from Plugins.Extensions.SeriesPlugin.plugin import getSeasonEpisode4
 				self.list.append(getConfigListEntry(_("Timeout shutdown after refresh for SeriesPlugin (min)"), config.plugins.epgrefresh.timeout_shutdown, _("If \"Run AutoTimer after refresh\" and \"Shutdown after EPG refresh\" enabled and use \"Label series\" for match, set long timeout.")))
 			except ImportError as ie:
 				print("[EPGRefresh] SeriesPlugin Plugin not installed:", ie)
