@@ -52,7 +52,7 @@ class Transmission(Screen):
 
 	def run(self):
 		returnValue = self["menu"].l.getCurrentSelection() and self["menu"].l.getCurrentSelection()[1]
-		if returnValue is not None:
+		if returnValue != None:
 			if fileExists("/etc/init.d/transmission-daemon"):
 				os.system("update-rc.d -f transmission-daemon remove && sleep 1 && rm -rf /etc/init.d/transmission-daemon")
 			cmd = "cp /usr/lib/enigma2/python/Plugins/Extensions/Transmission/transmission.sh %s && chmod 755 %s" % (transmission_sh, transmission_sh)
@@ -95,13 +95,54 @@ class Transmission(Screen):
 
 	def InstallNow(self, answer):
 		if answer:
-			self.session.openWithCallback(self.close, Console, _("transmission-daemon"), ["opkg update && opkg install transmission && opkg install transmission-client"])
+			self.session.openWithCallback(self.close, Console, "transmission-daemon", ["opkg update && opkg install transmission && opkg install transmission-client"])
 
 
 def main(session, **kwargs):
 	session.open(Transmission)
 
 
+def filescan_open(item, session, **kwargs):
+	added = 0
+	errors = 0
+	for each in item:
+		cmd = "[ -d %s ] && cp %s %s" % (WATCH_DIR, each.path, WATCH_DIR)
+		ret = os.system(cmd)
+		if ret == 0:
+			added += 1
+		else:
+			errors += 1
+
+	session.open(
+		MessageBox,
+		_("%d Torrent(s) added in '%s', %d failed.") % (added, WATCH_DIR, errors),
+		type=MessageBox.TYPE_INFO,
+		timeout=10
+	)
+
+
+from mimetypes import add_type
+add_type("application/x-bittorrent", ".torrent")
+WATCH_DIR = "/media/hdd/transmission/watch"
+
+
+def filescan(**kwargs):
+	from Components.Scanner import Scanner, ScanPath
+
+	return [
+		Scanner(
+			mimetypes=("application/x-bittorrent",),
+			paths_to_scan=(
+					ScanPath(path="", with_subdirs=False),
+				),
+			name="Add torrrent",
+			description=_("Add torrent..."),
+			openfnc=filescan_open,
+		)
+	]
+
+
 def Plugins(path, **kwargs):
 	return [PluginDescriptor(name=_("Transmission"), description=_("Bittorrent client for enigma2"), where=PluginDescriptor.WHERE_PLUGINMENU, icon="transmission.png", fnc=main),
-		PluginDescriptor(name=_("Transmission"), where=PluginDescriptor.WHERE_EXTENSIONSMENU, fnc=main)]
+		PluginDescriptor(name=_("Transmission"), where=PluginDescriptor.WHERE_EXTENSIONSMENU, fnc=main),
+		PluginDescriptor(where=PluginDescriptor.WHERE_FILESCAN, fnc=filescan),]
