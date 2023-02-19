@@ -282,7 +282,6 @@ class EPGRefresh:
 		if config.plugins.epgrefresh.parse_autotimer.value:
 			try:
 				from Plugins.Extensions.AutoTimer.plugin import autotimer
-
 				if autotimer is None:
 					from Plugins.Extensions.AutoTimer.AutoTimer import AutoTimer
 					autotimer = AutoTimer()
@@ -291,9 +290,9 @@ class EPGRefresh:
 				if not self.autotimer_pause.isActive():
 					if config.plugins.epgrefresh.afterevent.value and not self.DontShutdown:
 						try:
-							from Plugins.Extensions.SeriesPlugin.plugin import renameTimer
+							from Plugins.Extensions.SeriesPlugin.plugin import getSeasonEpisode4
 						except:
-							self.autotimer_pause.startLongTimer(120)
+							self.autotimer_pause.startLongTimer(180)
 						else:
 							self.autotimer_pause.startLongTimer(int(config.plugins.epgrefresh.timeout_shutdown.value) * 60)
 					else:
@@ -341,14 +340,18 @@ class EPGRefresh:
 			print("[EPGRefresh] Return to TV viewing...")
 			return
 		if not self.forcedScan and config.plugins.epgrefresh.afterevent.value and not Screens.Standby.inTryQuitMainloop:
-			self.forcedScan = False
-			print("[EPGRefresh] Shutdown after EPG refresh...")
-			self.session.open(
-				Screens.Standby.TryQuitMainloop,
-				1
-			)
+			if Screens.Standby.inStandby:
+				self.doPowerOffAnswer(True)
+			else:
+				self.session.openWithCallback(self.doPowerOffAnswer, MessageBox, _("EPG refresh finished.") + "\n" + _("Really shutdown now?"), type=MessageBox.TYPE_YESNO, timeout=60)
 		self.forcedScan = False
 		self.DontShutdown = False
+
+	def doPowerOffAnswer(self, answer):
+		if answer:
+			if not Screens.Standby.inTryQuitMainloop:
+				print("[EPGRefresh] Shutdown after EPG refresh...")
+				self.session.open(Screens.Standby.TryQuitMainloop, 1)
 
 	def refresh(self):
 		if self.wait.isActive():
