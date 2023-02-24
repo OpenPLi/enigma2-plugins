@@ -1,8 +1,9 @@
 ZDF Mediathek Plugin für Enigma2
 
 Unterstützte image
-Openatv 6.3-7.2, openHDF, OpenNFR, openBh, OpenVIX, OpenPLI
+Unterstützte image OpenATV, OpenHDF, OpenNFR, OpenBH, OpenVIX, OpenPLI, Pure2, Open Vision
 
+Version 1.4 
 
 Version 1.2
 - simple Downloadfunktion hinzugefügt
