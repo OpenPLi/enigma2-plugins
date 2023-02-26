@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: Enigma2 Autotimer plugin\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-04-16 16:27+0430\n"
-"PO-Revision-Date: 2021-11-10 08:38+0100\n"
-"Last-Translator: ims <ims21@users.sourceforge.net>\n"
+"PO-Revision-Date: 2023-02-26 13:51+0100\n"
+"Last-Translator: IMS <ims@openpli.org>\n"
 "Language-Team: PLi <ims21@users.sourceforge.net>\n"
 "Language: cs_CZ\n"
 "MIME-Version: 1.0\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Poedit-SourceCharset: utf-8\n"
-"X-Generator: Poedit 3.0\n"
+"X-Generator: Poedit 3.2.2\n"
 
 msgid ""
 "\n"
@@ -29,7 +29,7 @@ msgstr ""
 "Zrušit?"
 
 msgid " (only services from bouquets when use \"favorites description match\")."
-msgstr " (pouze programy z přehledů, když je použito \"V popisu oblíbených\")."
+msgstr " (hledat pouze v popisu stanic z přehledů zvolte \"V popisu jen v přehledech\"."
 
 msgid " - AutoTimer "
 msgstr " - AutoTimer "
@@ -321,7 +321,7 @@ msgid "Delete"
 msgstr "Smazat"
 
 msgid "Description"
-msgstr "Popis"
+msgstr "Název časovače"
 
 msgid "Description - short equal extended for match"
 msgstr "Popis - krátký se rovná rozšířenému pro porovnání"
@@ -597,7 +597,7 @@ msgid "Match Timespan: %02d:%02d - %02d:%02d"
 msgstr "Najít v časovém úseku: %02d:%02d - %02d:%02d"
 
 msgid "Match title"
-msgstr "Hledat v názvu"
+msgstr "Hledaný název/text"
 
 #, python-format
 msgid "Match title: %s"
@@ -884,7 +884,7 @@ msgid "Search type"
 msgstr "Typ hledání"
 
 msgid "Select \"exact match\" to enforce \"Match title\" to match exactly, \"partial match\" if you only want to search for a part of the event title or \"description match\" if you only want to search for a part of the event description"
-msgstr "Zvolte \"Přesně odpovídá\" pokud chcete, aby název přesně odpovídal. Vyberte \"Název začíná na\" nebo \"Částečná shoda\", chcete-li hledat jen část z názvu nebo \"Hledat v popisu\", pokud chcete hledat jen část popisu události"
+msgstr "Zvolte \"Přesně odpovídá\" pokud hledáte přesný název v názvech pořadů, \"Název začíná na\" nebo \"Částečná shoda\", chcete-li hledat jen podle části textu v názvech pořadů. \"Hledat v popisu\", pokud chcete hledat text v popisech událostí"
 
 msgid "Select a timer to import"
 msgstr "Vyberte časovač pro import"
@@ -1168,7 +1168,7 @@ msgid "This is the duration in minutes that the AutoTimer is allowed to run."
 msgstr "Doba v minutách po kterou může AutoTimer běžet."
 
 msgid "This is what will be looked for in event titles. Note that looking for e.g. german umlauts can be tricky as you have to know the encoding the channel uses."
-msgstr "Tento výraz bude hledán v názvech událostí. Uvědomte si, že pro hledání např. přehlásek musíte znát, jaké kódování kanál používá."
+msgstr "Tento text bude vyhledáván v názvech pořadů nebo v jejich popisech. Uvědomte si, že pro hledání, např. přehlásek, musíte znát, jaké kódování kanál používá."
 
 msgid "This option allows you to turn off the timer confict detection. This option is for advanced users."
 msgstr "Umožňuje vypnout detekci konfliktu časovače. Tato volba je pro pokročilé uživatele."
@@ -1460,7 +1460,7 @@ msgid "exact match"
 msgstr "Přesně odpovídá"
 
 msgid "favorites description match"
-msgstr "V popisu oblíbených"
+msgstr "V popisu jen v přehledech"
 
 msgid "go to deep standby"
 msgstr "Přejít do hlubokého spánku"
