@@ -604,7 +604,8 @@ class AutoTimerAddOrEditAutoTimerResource(AutoTimerBaseResource):
 class AutoTimerChangeSettingsResource(AutoTimerBaseResource):
 	def render(self, req):
 		for key, value in iteritems(req.args):
-			value = value[0]
+			value = value[0].decode()
+			key = key.decode()
 			if key == "autopoll":
 				config.plugins.autotimer.autopoll.value = True if value == "true" else False
 			elif key == "interval":
@@ -672,7 +673,7 @@ class AutoTimerChangeSettingsResource(AutoTimerBaseResource):
 				plugin.autopoller.stop()
 				plugin.autopoller = None
 
-		return self.returnResult(req, True, _("config changed."))
+		return self.returnResult(req, True, _("config changed.")).encode('utf-8')
 
 
 class AutoTimerSettingsResource(resource.Resource):
