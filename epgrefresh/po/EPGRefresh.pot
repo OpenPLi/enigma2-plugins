@@ -593,3 +593,12 @@ msgid ""
 "As a final note I want to hint you at the fact that this plugin will not do anything on its own without YOU telling it to. So if you want the refresh to happen automatically in the background you need to configure the plugin to do so.\n"
 "This was not done to cause you any inconvenience but rather to give you the freedom of choice."
 msgstr ""
+
+msgid "never"
+msgstr ""
+
+msgid "only 'epgrefresh' wakeup"
+msgstr ""
+
+msgid "always"
+msgstr ""
