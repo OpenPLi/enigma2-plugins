@@ -24,12 +24,8 @@ msgstr[1] ""
 #, python-format
 msgid "... %d more service"
 msgid_plural "... %d more services"
-msgstr[0] ""
-"\n"
-"%d сервисов всего."
-msgstr[1] ""
-"\n"
-"%d сервисов всего."
+msgstr[0] "... %d сервис всего."
+msgstr[1] "... %d сервисов всего."
 
 msgid "Adding schedule..."
 msgstr "Добавлено расписание..."
@@ -597,9 +593,6 @@ msgstr "никогда"
 
 msgid "nowhere"
 msgstr "нигде"
-
-msgid "never"
-msgstr "никогда"
 
 msgid "only 'epgrefresh' wakeup"
 msgstr "только при включении от 'epgrefresh'"
