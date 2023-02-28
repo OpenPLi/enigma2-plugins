@@ -1,3 +1,3 @@
 OpenPLi enigma2 plugins
 -------
-[![plugins build](https://github.com/OpenPLi/enigma2-plugins/workflows/ci.yml/badge.svg)](https://github.com/OpenPLi/enigma2-plugins/workflows/ci.yml)
+[![plugins ci](https://github.com/OpenPLi/enigma2-plugins/actions/workflows/ci.yml/badge.svg)](https://github.com/OpenPLi/enigma2-plugins/actions/workflows/ci.yml)
