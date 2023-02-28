@@ -594,9 +594,6 @@ msgid ""
 "This was not done to cause you any inconvenience but rather to give you the freedom of choice."
 msgstr ""
 
-msgid "never"
-msgstr ""
-
 msgid "only 'epgrefresh' wakeup"
 msgstr ""
 
