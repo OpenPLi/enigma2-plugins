@@ -1,0 +1,35 @@
+name: plugins ci
+
+on:
+  push:
+    paths-ignore:
+      - 'README.md'
+  pull_request:
+    paths-ignore:
+      - 'README.md'
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: install python 3.11
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      - name: install dev packages
+        run: |
+          sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
+          sudo apt-get -q update
+          sudo apt-get install gettext python3.11-dev
+      - name: build plugins
+        env:
+          CC: "gcc-10"
+          CXX: "g++-10"
+        run: |
+          autoreconf -i
+          ./configure CFLAGS=-I/usr/include/tirpc
+          make
+          python -O -m compileall .
