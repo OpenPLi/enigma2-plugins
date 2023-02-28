@@ -48,7 +48,7 @@ class EPGRefresh:
 	def isServiceProtected(self, service):
 		if not service:
 			return True
-		if not config.ParentalControl.servicepinactive.value:
+		if  not config.ParentalControl.servicepin[0].value or not config.ParentalControl.servicepinactive.value:
 			return False
 		refstr = ':'.join(str(service).split(':')[:11])
 		return parentalControl.getProtectionLevel(refstr) != -1
@@ -129,8 +129,7 @@ class EPGRefresh:
 				self.session = session
 			else:
 				return False
-		if dontshutdown:
-			self.DontShutdown = True
+		self.DontShutdown = dontshutdown
 		self.forcedScan = True
 		self.prepareRefresh()
 		return True
@@ -288,7 +287,7 @@ class EPGRefresh:
 				autotimer.readXml()
 				autotimer.parseEPGAsync(simulateOnly=False)
 				if not self.autotimer_pause.isActive():
-					if config.plugins.epgrefresh.afterevent.value and not self.DontShutdown:
+					if config.plugins.epgrefresh.afterevent.value != "never" and not self.DontShutdown:
 						try:
 							from Plugins.Extensions.SeriesPlugin.plugin import getSeasonEpisode4
 						except:
@@ -334,12 +333,16 @@ class EPGRefresh:
 		else:
 			return
 		self.isrunning = False
-		if config.plugins.epgrefresh.afterevent.value and self.DontShutdown:
+		if config.plugins.epgrefresh.afterevent.value == "always" and self.DontShutdown:
 			self.DontShutdown = False
 			self.forcedScan = False
 			print("[EPGRefresh] Return to TV viewing...")
 			return
-		if not self.forcedScan and config.plugins.epgrefresh.afterevent.value and not Screens.Standby.inTryQuitMainloop:
+		force_auto_shutdown = self.session.nav.wasTimerWakeup() and \
+				config.plugins.epgrefresh.afterevent.value == "auto" and \
+				Screens.Standby.inStandby and config.misc.standbyCounter.value == 1 and \
+				config.plugins.epgrefresh.enigma_wakeup_time.value == config.plugins.epgrefresh.wakeup_time.value
+		if not self.forcedScan and (force_auto_shutdown or config.plugins.epgrefresh.afterevent.value == "always") and not Screens.Standby.inTryQuitMainloop:
 			if Screens.Standby.inStandby:
 				self.doPowerOffAnswer(True)
 			else:
