@@ -21,7 +21,7 @@ msgid_plural "%d:%02d mins"
 msgstr[0] ""
 msgstr[1] ""
 
-#, python-format
+#, fuzzy, python-format
 msgid "... %d more service"
 msgid_plural "... %d more services"
 msgstr[0] ""
@@ -240,7 +240,7 @@ msgid "Extend the list of services to refresh by those your AutoTimers use?"
 msgstr "Расширить список сервисов, для обновления данных ваших Автотаймеров?"
 
 msgid "Fake recording"
-msgstr "имитация записи"
+msgstr "Имитация записи"
 
 msgid "Flush EPG before refresh"
 msgstr "Очистка EPG перед обновлением"
@@ -252,7 +252,7 @@ msgid "Force scan even if receiver is in use"
 msgstr "Форсированное обновление, даже если ресивер занят"
 
 msgid "Foreground also"
-msgstr "так же и при режиме просмотра ТВ"
+msgstr "так же и при режиме просмотра тв"
 
 msgid "Friday"
 msgstr "Пятница"
@@ -267,7 +267,7 @@ msgid "If enabled, show 'Stop running EPGRefresh' in main menu when EPGPRefresh 
 msgstr "Если включено, то 'Остановить обновление EPG' будет показано в главном меню, если в это время обновление запущено."
 
 msgid "If you want to refresh the EPG in background, you can choose the method which best suits your needs here, e.g. hidden, fake recording or regular Picture in Picture."
-msgstr "Если вы хотите обновлять EPG в фоновом режиме, вы можете выбрать метод, который наилучшим образом соответствует вашим потребностям. Варианты - в режиме ожидания, имитация записи, скрытая или стандартная функция PiP."
+msgstr "Если вы хотите обновлять EPG в фоновом режиме, вы можете выбрать метод, который наилучшим образом соответствует вашим потребностям. Варианты - в режиме ожидания, имитация записи, скрытая или стандартная функция из Картинка в Картинке."
 
 msgid "Inherit Services from AutoTimer"
 msgstr "Унаследовать сервисы из Автотаймера"
@@ -286,7 +286,7 @@ msgid "Load EPG from backup cache file when booting."
 msgstr "Автоматическое восстановление  из бекапа данных EPG при старте и загрузки его в память ресивера."
 
 msgid "Main Picture"
-msgstr "основной экран"
+msgstr "Основной экран"
 
 msgid "Manual EPG"
 msgstr "Ручное EPG"
@@ -325,13 +325,13 @@ msgid "OK"
 msgstr "ОК"
 
 msgid "PiP available now."
-msgstr "PiP теперь доступен!"
+msgstr "PiP теперь доступен."
 
 msgid "Picture in Picture"
-msgstr "картинка в картинке (PiP)"
+msgstr "Картинка в картинке"
 
 msgid "Picture in Picture (hidden)"
-msgstr "картинка в картинке (скрытый режим)"
+msgstr "Картинка в картинке (скрытый режим)"
 
 msgid "Please don't use PiP in the meantime!"
 msgstr "Пожалуйста, не используйте PiP в это время!"
@@ -597,12 +597,3 @@ msgstr "никогда"
 
 msgid "nowhere"
 msgstr "нигде"
-
-msgid "never"
-msgstr "никогда"
-
-msgid "only 'epgrefresh' wakeup"
-msgstr "только при включении от 'epgrefresh'"
-
-msgid "always"
-msgstr "всегда"

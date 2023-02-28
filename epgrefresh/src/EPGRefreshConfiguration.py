@@ -17,7 +17,8 @@ from Components.Button import Button
 from Tools.Directories import resolveFilename, SCOPE_PLUGINS
 
 # Configuration
-from Components.config import config
+from Components.config import config, getConfigListEntry
+
 from .EPGRefresh import epgrefresh
 from .EPGSaveLoadConfiguration import EPGSaveLoadConfiguration
 from Components.NimManager import nimmanager
@@ -25,7 +26,7 @@ from enigma import getDesktop
 from Screens.MessageBox import MessageBox
 
 
-VERSION = "1.9"
+VERSION = "1.8"
 
 weekdays = [
 	_("Monday"),
@@ -91,9 +92,45 @@ class EPGRefreshConfiguration(Screen, ConfigListScreen):
 			[x for x in epgrefresh.services[0]],
 			[x for x in epgrefresh.services[1]]
 		)
-		self.list = []
+
+		self.list = [
+			getConfigListEntry(_("Setup save / load EPG"), config.plugins.epgrefresh.setup_epg, _("Press the OK button to open the save / load EPG (+ configuration) menu.")),
+			getConfigListEntry(_("Refresh EPG automatically"), config.plugins.epgrefresh.enabled, _("EPGRefresh needs to be explicitly started using the yellow button in this menu if this option is not enabled")),
+			getConfigListEntry(_("Flush EPG before refresh"), config.plugins.epgrefresh.erase, _("Enable this item to flush all EPG data before starting a new EPG refresh cycle")),
+			getConfigListEntry(_("Show in extensions menu"), config.plugins.epgrefresh.show_in_extensionsmenu, _("Enable this to show the EPGRefresh configuration menu in the extension menu.")),
+			getConfigListEntry(_("Show \"add to EPGRefresh\" in"), config.plugins.epgrefresh.add_to_refresh, _("Select this item to add services to the EPGRefresh.")),
+			getConfigListEntry(_("Show popup when refresh starts or ends"), config.plugins.epgrefresh.enablemessage, _("Enable this to show an informational message at the start and completion of the refresh.")),
+			getConfigListEntry(_("Wake up from deep standby"), config.plugins.epgrefresh.wakeup, _("Enable this item to wake up the receiver from deep standby (if possible).")),
+			getConfigListEntry(_("Choice days for refresh"), config.plugins.epgrefresh.day_profile, _("Select the days of the week for automatic refresh.")),
+			getConfigListEntry(_("Timespan to remain on service (in seconds)"), config.plugins.epgrefresh.interval_seconds, _("This is the duration each service/channel will be tuned to during a refresh.")),
+			getConfigListEntry(_("EPG refresh auto-start earliest (hh:mm)"), config.plugins.epgrefresh.begin, _("Automated refresh will start after this time of day, but before the time specified in next setting.")),
+			getConfigListEntry(_("EPG refresh auto-start latest (hh:mm)"), config.plugins.epgrefresh.end, _("Automated refresh will start before this time of day, but after the time specified in previous setting.")),
+			getConfigListEntry(_("Delay if not in standby (in minutes)"), config.plugins.epgrefresh.delay_standby, _("The duration that will be waited for the receiver to go into standby.")),
+			getConfigListEntry(_("Force scan even if receiver is in use"), config.plugins.epgrefresh.force, _("Don't wait for the receiver to go into standby when starting a refresh cycle.")),
+			getConfigListEntry(_("Shutdown after EPG refresh"), config.plugins.epgrefresh.afterevent, _("Whether the receiver should go into deep standby after refresh is completed.")),
+			getConfigListEntry(_("Save EPG after refresh"), config.plugins.epgrefresh.save_epg, _("Save EPG in the cache file after refresh is completed.")),
+			getConfigListEntry(_("Show 'EPGRefresh now' in main menu"), config.plugins.epgrefresh.start_on_mainmenu, _("If enabled, show 'EPGRefresh now' in main menu when currently no EPGRefresh is running.")),
+			getConfigListEntry(_("Show 'Stop running EPGRefresh' in main menu"), config.plugins.epgrefresh.stop_on_mainmenu, _("If enabled, show 'Stop running EPGRefresh' in main menu when EPGPRefresh is running.")),
+				]
+		if len(nimmanager.nim_slots) > 1:
+			self.list.insert(3, getConfigListEntry(_("Refresh EPG using"), config.plugins.epgrefresh.adapter, _("If you want to refresh the EPG in background, you can choose the method which best suits your needs here, e.g. hidden, fake recording or regular Picture in Picture.")))
+		if config.ParentalControl.servicepinactive.value:
+			self.list.append(getConfigListEntry(_("Skip protected Services"), config.plugins.epgrefresh.skipProtectedServices, _("Select mode the refresh for services/bouquets parental control.")))
+		try:
+			# try to import autotimer module to check for its existence
+			from Plugins.Extensions.AutoTimer.AutoTimer import AutoTimer
+
+			self.list.append(getConfigListEntry(_("Inherit Services from AutoTimer"), config.plugins.epgrefresh.inherit_autotimer, _("Extend the list of services to refresh by those your AutoTimers use?")))
+			self.list.append(getConfigListEntry(_("Run AutoTimer after refresh"), config.plugins.epgrefresh.parse_autotimer, _("After a successful refresh the AutoTimer will automatically search for new matches if this is enabled.")))
+			try:
+				from Plugins.Extensions.SeriesPlugin.plugin import getSeasonEpisode4
+				self.list.append(getConfigListEntry(_("Timeout shutdown after refresh for SeriesPlugin (min)"), config.plugins.epgrefresh.timeout_shutdown, _("If \"Run AutoTimer after refresh\" and \"Shutdown after EPG refresh\" enabled and use \"Label series\" for match, set long timeout.")))
+			except ImportError as ie:
+				print("[EPGRefresh] SeriesPlugin Plugin not installed:", ie)
+		except ImportError as ie:
+			print("[EPGRefresh] AutoTimer Plugin not installed:", ie)
+
 		ConfigListScreen.__init__(self, self.list, session=session, on_change=self.changed)
-		self.initConfig()
 
 		def selectionChanged():
 			if self["config"].current:
@@ -133,49 +170,6 @@ class EPGRefreshConfiguration(Screen, ConfigListScreen):
 		self.onLayoutFinish.append(self.setCustomTitle)
 		self.onFirstExecBegin.append(self.firstExec)
 
-	def initConfig(self):
-		dx = 4 * " "
-		self.list = [
-			(_("Setup save / load EPG"), config.plugins.epgrefresh.setup_epg, _("Press the OK button to open the save / load EPG (+ configuration) menu.")),
-			(_("Refresh EPG automatically"), config.plugins.epgrefresh.enabled, _("EPGRefresh needs to be explicitly started using the yellow button in this menu if this option is not enabled")),
-				]
-		if config.plugins.epgrefresh.enabled.value:
-			self.list.append((dx + _("Wake up from deep standby"), config.plugins.epgrefresh.wakeup, _("Enable this item to wake up the receiver from deep standby (if possible).")))
-			self.list.append((dx + _("Choice days for refresh"), config.plugins.epgrefresh.day_profile, _("Select the days of the week for automatic refresh.")))
-			self.list.append((dx + _("EPG refresh auto-start earliest (hh:mm)"), config.plugins.epgrefresh.begin, _("Automated refresh will start after this time of day, but before the time specified in next setting.")))
-			self.list.append((dx + _("EPG refresh auto-start latest (hh:mm)"), config.plugins.epgrefresh.end, _("Automated refresh will start before this time of day, but after the time specified in previous setting.")))
-			self.list.append((dx + _("Force scan even if receiver is in use"), config.plugins.epgrefresh.force, _("Don't wait for the receiver to go into standby when starting a refresh cycle.")))
-			self.list.append((dx + _("Delay if not in standby (in minutes)"), config.plugins.epgrefresh.delay_standby, _("The duration that will be waited for the receiver to go into standby.")))
-			self.list.append((dx + _("Shutdown after EPG refresh"), config.plugins.epgrefresh.afterevent, _("Whether the receiver should go into deep standby after refresh is completed.")))
-		if len(nimmanager.nim_slots) > 1:
-			self.list.append((_("Refresh EPG using"), config.plugins.epgrefresh.adapter, _("If you want to refresh the EPG in background, you can choose the method which best suits your needs here, e.g. hidden, fake recording or regular Picture in Picture.")))
-		self.list.append((_("Timespan to remain on service (in seconds)"), config.plugins.epgrefresh.interval_seconds, _("This is the duration each service/channel will be tuned to during a refresh.")))
-		self.list.append((_("Flush EPG before refresh"), config.plugins.epgrefresh.erase, _("Enable this item to flush all EPG data before starting a new EPG refresh cycle")))
-		self.list.append((_("Save EPG after refresh"), config.plugins.epgrefresh.save_epg, _("Save EPG in the cache file after refresh is completed.")))
-		self.list.append((_("Show popup when refresh starts or ends"), config.plugins.epgrefresh.enablemessage, _("Enable this to show an informational message at the start and completion of the refresh.")))
-		if config.ParentalControl.servicepin[0].value and config.ParentalControl.servicepinactive.value:
-			self.list.append((_("Skip protected Services"), config.plugins.epgrefresh.skipProtectedServices, _("Select mode the refresh for services/bouquets parental control.")))
-		self.list.append((_("Show 'EPGRefresh now' in main menu"), config.plugins.epgrefresh.start_on_mainmenu, _("If enabled, show 'EPGRefresh now' in main menu when currently no EPGRefresh is running.")))
-		self.list.append((_("Show 'Stop running EPGRefresh' in main menu"), config.plugins.epgrefresh.stop_on_mainmenu, _("If enabled, show 'Stop running EPGRefresh' in main menu when EPGPRefresh is running.")))
-		self.list.append((_("Show in extensions menu"), config.plugins.epgrefresh.show_in_extensionsmenu, _("Enable this to show the EPGRefresh configuration menu in the extension menu.")))
-		self.list.append((_("Show \"add to EPGRefresh\" in"), config.plugins.epgrefresh.add_to_refresh, _("Select this item to add services to the EPGRefresh.")))
-		try:
-			# try to import autotimer module to check for its existence
-			from Plugins.Extensions.AutoTimer.AutoTimer import AutoTimer
-
-			self.list.append((_("Inherit Services from AutoTimer"), config.plugins.epgrefresh.inherit_autotimer, _("Extend the list of services to refresh by those your AutoTimers use?")))
-			self.list.append((_("Run AutoTimer after refresh"), config.plugins.epgrefresh.parse_autotimer, _("After a successful refresh the AutoTimer will automatically search for new matches if this is enabled.")))
-			if config.plugins.epgrefresh.afterevent.value != "never":
-				try:
-					from Plugins.Extensions.SeriesPlugin.plugin import getSeasonEpisode4
-					self.list.append((_("Timeout shutdown after refresh for SeriesPlugin (min)"), config.plugins.epgrefresh.timeout_shutdown, _("If \"Run AutoTimer after refresh\" and \"Shutdown after EPG refresh\" enabled and use \"Label series\" for match, set long timeout.")))
-				except ImportError as ie:
-					print("[EPGRefresh] SeriesPlugin Plugin not installed:", ie)
-		except ImportError as ie:
-			print("[EPGRefresh] AutoTimer Plugin not installed:", ie)
-		self["config"].list = self.list
-		#self["config"].l.setList(self.list)
-
 	def firstExec(self):
 		from .plugin import epgrefreshHelp
 		if config.plugins.epgrefresh.show_help.value and epgrefreshHelp:
@@ -193,19 +187,11 @@ class EPGRefreshConfiguration(Screen, ConfigListScreen):
 
 	def updateHelp(self):
 		cur = self["config"].getCurrent()
-		if cur and len(cur) > 1:
+		if cur:
 			self["help"].text = cur[2]
 
-	def keyLeft(self):
-		ConfigListScreen.keyLeft(self)
-		self.initConfig()
-
-	def keyRight(self):
-		ConfigListScreen.keyRight(self)
-		self.initConfig()
-
 	def forceRefresh(self):
-		if config.plugins.epgrefresh.afterevent.value == "always":
+		if config.plugins.epgrefresh.afterevent.value:
 			choicelist = [
 			(_("Return to TV viewing"), self.forceRefreshAfterNoShutdown),
 			(_("Shutdown after EPG refresh"), self.forceRefreshStandart),
@@ -253,19 +239,22 @@ class EPGRefreshConfiguration(Screen, ConfigListScreen):
 				pass
 
 	def getCurrentEntry(self):
-		return self["config"].getCurrent() and self["config"].getCurrent()[0] or ""
+		return self["config"].getCurrent()[0]
 
 	def getCurrentValue(self):
-		return self["config"].getCurrent() and len(self["config"].getCurrent()) > 1 and str(self["config"].getCurrent()[1].getText()) or ""
+		return str(self["config"].getCurrent()[1].getText())
 
 	def createSummary(self):
 		return SetupSummary
 
 	def cancelConfirm(self, result):
-		if result:
-			for x in self["config"].list:
-				x[1].cancel()
-			self.close(self.session)
+		if not result:
+			return
+
+		for x in self["config"].list:
+			x[1].cancel()
+
+		self.close(self.session)
 
 	def keyInfo(self):
 		lastscan = config.plugins.epgrefresh.lastscan.value
@@ -297,7 +286,8 @@ class EPGRefreshConfiguration(Screen, ConfigListScreen):
 			return
 		epgrefresh.services = (set(self.services[0]), set(self.services[1]))
 		epgrefresh.saveConfiguration()
-		config.plugins.epgrefresh.save()
+		for x in self["config"].list:
+			x[1].save()
 		self.close(self.session)
 
 	def checkAnswer(self, answer):
@@ -307,8 +297,8 @@ class EPGRefreshConfiguration(Screen, ConfigListScreen):
 			epgrefresh.services = (set(self.services[0]), set(self.services[1]))
 			epgrefresh.saveConfiguration()
 			config.plugins.epgrefresh.enabled.value = False
-			config.plugins.epgrefresh.enabled.save()
-			config.plugins.epgrefresh.save()
+			for x in self["config"].list:
+				x[1].save()
 			self.close(self.session)
 
 
@@ -329,7 +319,7 @@ class EPGRefreshProfile(ConfigListScreen, Screen):
 		self.list = []
 
 		for i in range(7):
-			self.list.append((weekdays[i], config.plugins.epgrefresh_extra.day_refresh[i]))
+			self.list.append(getConfigListEntry(weekdays[i], config.plugins.epgrefresh_extra.day_refresh[i]))
 
 		ConfigListScreen.__init__(self, self.list)
 
@@ -357,7 +347,7 @@ class EPGRefreshProfile(ConfigListScreen, Screen):
 				day = True
 				break
 		if not day:
-			self.session.open(MessageBox, _("You may not use this settings!\nAt least one day a week should be included!"), MessageBox.TYPE_INFO, timeout=10)
+			self.session.open(MessageBox, _("You may not use this settings!\nAt least one day a week should be included!"), MessageBox.TYPE_INFO, timeout=6)
 			return
 		self.close()
 

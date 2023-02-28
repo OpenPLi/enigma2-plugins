@@ -4,9 +4,8 @@ from . import _
 # Config
 from Components.config import config, ConfigYesNo, ConfigNumber, ConfigSelectionNumber, \
 	ConfigSelection, ConfigSubsection, ConfigClock, ConfigText, ConfigInteger, ConfigSubDict, ConfigEnableDisable, ConfigDirectory, ConfigLocations
-from enigma import eServiceReference, iPlayableService, eTimer, eDVBLocalTimeHandler
+from enigma import eServiceReference, iPlayableService, eTimer
 from Screens.Screen import Screen
-from Screens import Standby
 from Screens.MessageBox import MessageBox
 from Screens.InfoBar import InfoBar
 from Components.Label import Label
@@ -41,17 +40,10 @@ config.plugins.epgrefresh.end = ConfigClock(default=((6 * 60) + 30) * 60)
 config.plugins.epgrefresh.interval_seconds = ConfigNumber(default=120)
 config.plugins.epgrefresh.delay_standby = ConfigNumber(default=10)
 config.plugins.epgrefresh.inherit_autotimer = ConfigYesNo(default=False)
-config.plugins.epgrefresh.afterevent = ConfigSelection(choices=[
-		("never", _("never")),
-		("auto", _("only 'epgrefresh' wakeup")),
-		("always", _("always")),
-	], default="never"
-)
+config.plugins.epgrefresh.afterevent = ConfigYesNo(default=False)
 config.plugins.epgrefresh.force = ConfigYesNo(default=False)
 config.plugins.epgrefresh.enablemessage = ConfigYesNo(default=True)
 config.plugins.epgrefresh.wakeup = ConfigYesNo(default=False)
-config.plugins.epgrefresh.wakeup_time = ConfigInteger(default=-1)
-config.plugins.epgrefresh.enigma_wakeup_time = ConfigInteger(default=-1)
 config.plugins.epgrefresh.start_on_mainmenu = ConfigYesNo(default=False)
 config.plugins.epgrefresh.stop_on_mainmenu = ConfigYesNo(default=True)
 config.plugins.epgrefresh.lastscan = ConfigNumber(default=0)
@@ -132,16 +124,9 @@ config.plugins.epgrefresh_extra.day_refresh = ConfigSubDict()
 for i in range(7):
 	config.plugins.epgrefresh_extra.day_refresh[i] = ConfigEnableDisable(default=True)
 
-def setEnigmaWakeupTime(configElement):
-	print("[EPGRefresh] next enigma wakeup time", configElement.value)
-	if configElement.value != 0:
-		config.plugins.epgrefresh.enigma_wakeup_time.value = configElement.value
-		config.plugins.epgrefresh.enigma_wakeup_time.save()
+#pragma mark - Workaround for unset clock
+from enigma import eDVBLocalTimeHandler
 
-try:
-	config.misc.prev_wakeup_time.addNotifier(setEnigmaWakeupTime)
-except:
-	config.plugins.epgrefresh.enigma_wakeup_time.value = -1
 
 def timeCallback(isCallback=True):
 	"""Time Callback/Autostart management."""
@@ -164,11 +149,9 @@ def timeCallback(isCallback=True):
 		))
 		# booted +- 6min from begin of timespan
 		cur_day = int(now.tm_wday)
-		#old check
-		#if Standby.inStandby is None and epgrefresh.session and epgrefresh.session.nav.wasTimerWakeup() and abs(time() - begin) < 360 and config.plugins.epgrefresh_extra.day_refresh[cur_day].value:
-		#new test check
-		if Standby.inStandby is None and epgrefresh.session and epgrefresh.session.nav.wasTimerWakeup() and config.plugins.epgrefresh.enigma_wakeup_time.value == config.plugins.epgrefresh.wakeup_time.value:
+		if abs(time() - begin) < 360 and config.plugins.epgrefresh_extra.day_refresh[cur_day].value:
 			from Tools.Notifications import AddNotificationWithCallback
+			from Tools.BoundFunction import boundFunction
 			# XXX: we use a notification because this will be suppressed otherwise
 			AddNotificationWithCallback(
 				boundFunction(standbyQuestionCallback, epgrefresh.session),
@@ -247,7 +230,8 @@ class AutoZap(Screen):
 
 def standbyQuestionCallback(session, res=None):
 	if res:
-		if Standby.inStandby is None and session:
+		from Screens import Standby
+		if Standby.inStandby is None:
 			session.open(Standby.Standby)
 
 
@@ -293,14 +277,12 @@ def autostart(reason, session=None, **kwargs):
 	elif reason == 1:
 		epgrefresh.stop()
 
-def setConfigWakeupTime(value):
-	config.plugins.epgrefresh.wakeup_time.value = value
-	config.plugins.epgrefresh.wakeup_time.save()
-
 
 def getNextWakeup():
-	if not config.plugins.epgrefresh.enabled.value or not config.plugins.epgrefresh.wakeup.value:
-		setConfigWakeupTime(-1)
+	# Return invalid time if not automatically refreshing
+	if not config.plugins.epgrefresh.enabled.value:
+		return -1
+	if not config.plugins.epgrefresh.wakeup.value:
 		return -1
 
 	now = localtime()
@@ -314,17 +296,13 @@ def getNextWakeup():
 	# old config
 	if wakeup_day == -1:
 		if begin > time():
-			setConfigWakeupTime(begin)
 			return begin
-		setConfigWakeupTime(begin + 86400)
 		return begin + 86400
 	# now config
 	current_day = int(now.tm_wday)
 	if begin > time():
 		if config.plugins.epgrefresh_extra.day_refresh[current_day].value:
-			setConfigWakeupTime(begin)
 			return begin
-	setConfigWakeupTime(begin + 86400 * wakeup_day)
 	return begin + 86400 * wakeup_day
 
 
@@ -342,6 +320,8 @@ def WakeupDayOfWeek():
 				return i
 	return start_day
 
+# Mainfunction
+
 
 def main(session, **kwargs):
 	epgrefresh.stop()
@@ -355,12 +335,15 @@ def doneConfiguring(session, **kwargs):
 	if config.plugins.epgrefresh.enabled.value:
 		epgrefresh.start(session)
 
+# Eventinfo
+
 
 def eventinfo(session, servicelist, **kwargs):
 	ref = session.nav.getCurrentlyPlayingServiceReference()
 	if not ref:
 		return
 	sref = ref.toString()
+	# strip all after last :
 	pos = sref.rfind(':')
 	if pos != -1:
 		sref = sref[:pos + 1]
@@ -408,7 +391,9 @@ def EPGRefreshChannelContextMenu__init__(self, session, csel):
 				profile = config.plugins.epgrefresh.add_to_refresh.value
 				if profile == "2" or profile == "3":
 					callFunction = self.addtoEPGRefresh
-					self["menu"].list.insert(2, ChoiceEntryComponent(text=(_("add service to EPGRefresh"), boundFunction(callFunction, 1)), key="bullet"))
+					self["menu"].list.insert(2, ChoiceEntryComponent(text=(_("add service to EPGRefresh"), boundFunction(callFunction, 1))))
+				else:
+					pass
 
 
 def addtoEPGRefresh(self, add):
