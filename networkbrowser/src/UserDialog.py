@@ -5,12 +5,11 @@ import enigma
 
 from Screens.Screen import Screen
 from Screens.VirtualKeyBoard import VirtualKeyBoard
-from Components.ActionMap import ActionMap
+from Components.ActionMap import ActionMap, NumberActionMap
 from Components.config import ConfigText, ConfigPassword, NoSave
 from Components.ConfigList import ConfigListScreen
 from Components.Sources.StaticText import StaticText
 from Components.Pixmap import Pixmap
-from Components.ActionMap import ActionMap, NumberActionMap
 from Components.Sources.Boolean import Boolean
 
 from . import _
