@@ -96,7 +96,7 @@ class AutoMountView(Screen):
 			mounttypepng = LoadPixmap(cached=True, path=resolveFilename(SCOPE_PLUGINS, "SystemPlugins/NetworkBrowser/icons/i-nfs.png"))
 		if entry["mounttype"] == 'cifs':
 			mounttypepng = LoadPixmap(cached=True, path=resolveFilename(SCOPE_PLUGINS, "SystemPlugins/NetworkBrowser/icons/i-smb.png"))
-		return((isMountedpng, sharename, IPdescription, DIRdescription, activepng, mounttypepng))
+		return ((isMountedpng, sharename, IPdescription, DIRdescription, activepng, mounttypepng))
 
 	def exit(self):
 		self.close()

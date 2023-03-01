@@ -84,10 +84,11 @@ class UserDialog(Screen, ConfigListScreen):
 		print('Loading user cache from ', self.cache_file)
 		try:
 			hostdata = load_cache(self.cache_file)
+		except (IOError, ValueError):
+			pass
+		else:
 			username = hostdata['username']
 			password = hostdata['password']
-		except:
-			pass
 		self.username = NoSave(ConfigText(default=username, visible_width=50, fixed_size=False))
 		self.password = NoSave(ConfigPassword(default=password, visible_width=50, fixed_size=False))
 

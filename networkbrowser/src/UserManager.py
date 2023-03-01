@@ -86,5 +86,5 @@ class UserManager(Screen):
 			try:
 				os.unlink('/etc/enigma2/' + cur[2].strip())
 				self.updateList()
-			except:
+			except (IOError):
 				pass

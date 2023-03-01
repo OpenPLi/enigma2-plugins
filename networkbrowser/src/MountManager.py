@@ -110,7 +110,7 @@ class AutoMountManager(Screen):
 		try:
 			with open('/etc/hostname', 'r') as fp:
 				hostname = fp.read()
-		except:
+		except (IOError, ValueError):
 			return
 		self.session.openWithCallback(self.hostnameCallback, VirtualKeyBoard, title=(_("Enter new hostname for your Receiver")), text=hostname)
 

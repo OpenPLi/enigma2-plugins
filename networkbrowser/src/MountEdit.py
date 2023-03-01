@@ -18,7 +18,7 @@ def convertIP(ip):
 		ip = []
 		for x in strIP:
 			ip.append(int(x))
-	except:
+	except (ValueError, AttributeError):
 		ip = [0, 0, 0, 0]
 	return ip
 

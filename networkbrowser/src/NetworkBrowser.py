@@ -43,7 +43,7 @@ def valid_cache(cache_file, cache_ttl):
 	# See if the cache file exists and is still living
 	try:
 		mtime = os.stat(cache_file)[stat.ST_MTIME]
-	except:
+	except (IOError, ValueError):
 		return 0
 	curr_time = time.time()
 	if (curr_time - mtime) > cache_ttl:
@@ -160,7 +160,7 @@ class NetworkBrowser(Screen):
 	def keyYellow(self):
 		try:
 			os.unlink(self.cache_file)
-		except:
+		except (IOError):
 			pass
 		self.startRun()
 
@@ -200,7 +200,7 @@ class NetworkBrowser(Screen):
 			print('[Networkbrowser] Loading network cache from ', self.cache_file)
 			try:
 				self.networklist = load_cache(self.cache_file)
-			except:
+			except (IOError, ValueError):
 				self.inv_cache = 1
 		if self.cache_ttl == 0 or self.inv_cache == 1 or self.vc == 0:
 			print('[Networkbrowser] Getting fresh network list')
@@ -228,10 +228,11 @@ class NetworkBrowser(Screen):
 		password = 'guest'
 		try:
 			hostdata = load_cache(self.sharecache_file)
+		except (IOError, ValueError):
+			pass
+		else:
 			username = hostdata['username']
 			password = hostdata['password']
-		except:
-			pass
 
 		if devicetype == 'unix':
 			smblist = netscan.smbShare(hostip, hostname, username, password)
@@ -343,7 +344,7 @@ class NetworkBrowser(Screen):
 		else:
 			isMountedpng = LoadPixmap(cached=True, path=resolveFilename(SCOPE_PLUGINS, "SystemPlugins/NetworkBrowser/icons/cancel.png"))
 
-		return((share, verticallineIcon, None, sharedir, sharedescription, newpng, isMountedpng))
+		return ((share, verticallineIcon, None, sharedir, sharedescription, newpng, isMountedpng))
 
 	def selectionChanged(self):
 		current = self["list"].getCurrent()
@@ -378,7 +379,7 @@ class NetworkBrowser(Screen):
 				try:
 					self.hostdata = load_cache(self.hostcache_file)
 					self.passwordQuestion(False)
-				except:
+				except (IOError, ValueError):
 					self.session.openWithCallback(self.passwordQuestion, MessageBox, (_("Do you want to enter a username and password for this host?\n")))
 
 		if sel[0][0] == 'nfsShare':  # share entry selected
@@ -450,10 +451,11 @@ class NetworkBrowser(Screen):
 				data['password'] = ''
 				try:
 					hostdata = load_cache(self.sharecache_file)
+				except (IOError, ValueError):
+					pass
+				else:
 					data['username'] = hostdata['username']
 					data['password'] = hostdata['password']
-				except:
-					pass
 				for sharename, sharedata in mounts.items():
 					if sharedata['ip'] == selection[2].strip() and sharedata['sharedir'] == selection[3].strip():
 						data = sharedata
