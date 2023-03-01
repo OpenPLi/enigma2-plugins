@@ -213,7 +213,6 @@ class NetworkBrowser(Screen):
 
 	def getNetworkIPs(self):
 		nwlist = []
-		sharelist = []
 		self.IP = iNetwork.getAdapterAttribute(self.iface, "ip")
 		if len(self.IP):
 			strIP = str(self.IP[0]) + "." + str(self.IP[1]) + "." + str(self.IP[2]) + ".0/24"
@@ -314,7 +313,6 @@ class NetworkBrowser(Screen):
 	def BuildNetworkShareEntry(self, share):
 		verticallineIcon = LoadPixmap(cached=True, path=resolveFilename(SCOPE_PLUGINS, "SystemPlugins/NetworkBrowser/icons/verticalLine.png"))
 		sharetype = share[0]
-		localsharename = share[1]
 		sharehost = share[2]
 
 		if sharetype == 'smbShare':

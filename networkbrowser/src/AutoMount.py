@@ -39,7 +39,6 @@ class AutoMount():
 
 	def getAutoMountPoints(self, callback=None):
 		# Initialize mounts to empty list
-		automounts = []
 		self.automounts = {}
 		self.activeMountsCounter = 0
 
@@ -57,8 +56,6 @@ class AutoMount():
 			return
 
 		def getValue(definitions, default):
-			# Initialize Output
-			ret = ""
 			# How many definitions are present
 			Len = len(definitions)
 			return Len > 0 and definitions[Len - 1].text or default

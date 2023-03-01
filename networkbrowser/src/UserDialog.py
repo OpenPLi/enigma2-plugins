@@ -131,7 +131,6 @@ class UserDialog(Screen, ConfigListScreen):
 			current[1].help_window.instance.move(enigma.ePoint(helpwindowpos[0], helpwindowpos[1]))
 
 	def ok(self):
-		current = self["config"].getCurrent()
 		hostdata = {'username': self.username.value, 'password': self.password.value}
 		write_cache(self.cache_file, hostdata)
 		self.close(True)
