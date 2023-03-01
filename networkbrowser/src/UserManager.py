@@ -1,14 +1,14 @@
-# for localized messages
-from Plugins.SystemPlugins.NetworkBrowser.__init__ import _
+import os
+
 from Screens.Screen import Screen
 from Components.Sources.StaticText import StaticText
-from Components.Pixmap import Pixmap
 from Components.ActionMap import ActionMap
 from Components.Sources.List import List
 from Tools.LoadPixmap import LoadPixmap
-from Tools.Directories import resolveFilename, SCOPE_PLUGINS, SCOPE_SKIN_IMAGE
+from Tools.Directories import resolveFilename, SCOPE_PLUGINS
 from Plugins.SystemPlugins.NetworkBrowser.UserDialog import UserDialog
-import os
+
+from . import _
 
 
 class UserManager(Screen):

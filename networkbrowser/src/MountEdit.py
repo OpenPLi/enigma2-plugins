@@ -1,21 +1,18 @@
-# for localized messages
-from Plugins.SystemPlugins.NetworkBrowser.__init__ import _
 from Screens.Screen import Screen
 from Screens.MessageBox import MessageBox
-from Screens.VirtualKeyBoard import VirtualKeyBoard
-from Components.ActionMap import ActionMap
+from Components.ActionMap import NumberActionMap
 from Components.Sources.StaticText import StaticText
-from Components.config import config, ConfigIP, NoSave, ConfigText, ConfigEnableDisable, ConfigPassword, ConfigSelection, ConfigYesNo
+from Components.config import ConfigIP, NoSave, ConfigText, ConfigEnableDisable, ConfigPassword, ConfigSelection, ConfigYesNo
 from Components.ConfigList import ConfigListScreen
 from Components.Pixmap import Pixmap
-from Components.ActionMap import ActionMap, NumberActionMap
-from Plugins.SystemPlugins.NetworkBrowser.AutoMount import iAutoMount, AutoMount
 from Components.Sources.Boolean import Boolean
 
-# helper function to convert ips from a sring to a list of ints
+from . import _
+from .AutoMount import iAutoMount
 
 
 def convertIP(ip):
+	"""helper function to convert ips from a sring to a list of ints"""
 	try:
 		strIP = ip.split('.')
 		ip = []

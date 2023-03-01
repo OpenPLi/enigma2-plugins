@@ -1,10 +1,10 @@
-# for localized messages
-from Plugins.SystemPlugins.NetworkBrowser.__init__ import _
-
 from Plugins.Plugin import PluginDescriptor
 from Components.Network import iNetwork
 # Don't remove this line! It's needed to remount shares at startup
 from Plugins.SystemPlugins.NetworkBrowser.AutoMount import iAutoMount
+
+from . import _
+
 
 plugin_path = ""
 

@@ -1,27 +1,26 @@
-# for localized messages
-from Plugins.SystemPlugins.NetworkBrowser.__init__ import _
-from enigma import eTimer, getDesktop
+import os
+import pickle
+import stat
+import time
+
+from enigma import eTimer
 from Screens.Screen import Screen
 from Screens.MessageBox import MessageBox
-from Components.Label import Label
-from Components.ActionMap import ActionMap, NumberActionMap
+from Components.ActionMap import ActionMap
 from Components.Sources.List import List
 from Components.Sources.StaticText import StaticText
 from Components.Network import iNetwork
-from Components.Input import Input
-from Components.config import NoSave, config, ConfigIP
-from Components.ConfigList import ConfigList, ConfigListScreen
-from Tools.Directories import resolveFilename, SCOPE_PLUGINS, SCOPE_SKIN_IMAGE
+from Components.config import ConfigIP
+from Components.ConfigList import ConfigListScreen
+from Tools.Directories import resolveFilename, SCOPE_PLUGINS
 from Tools.LoadPixmap import LoadPixmap
 from Plugins.SystemPlugins.NetworkBrowser.MountManager import AutoMountManager
 from Plugins.SystemPlugins.NetworkBrowser.AutoMount import iAutoMount
 from Plugins.SystemPlugins.NetworkBrowser.MountEdit import AutoMountEdit
 from Plugins.SystemPlugins.NetworkBrowser.UserDialog import UserDialog
 from Plugins.SystemPlugins.NetworkBrowser import netscan
-import pickle
-import os
-import stat
-import time
+
+from . import _
 
 
 def write_cache(cache_file, cache_data):

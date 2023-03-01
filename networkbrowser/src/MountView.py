@@ -1,15 +1,14 @@
-# for localized messages
-from Plugins.SystemPlugins.NetworkBrowser.__init__ import _
 from Screens.Screen import Screen
 from Screens.MessageBox import MessageBox
 from Components.Sources.StaticText import StaticText
 from Components.ActionMap import ActionMap
-from Components.Network import iNetwork
 from Components.Sources.List import List
 from Tools.LoadPixmap import LoadPixmap
 from Tools.Directories import resolveFilename, SCOPE_PLUGINS, SCOPE_SKIN_IMAGE
-from Plugins.SystemPlugins.NetworkBrowser.AutoMount import iAutoMount, AutoMount
+from Plugins.SystemPlugins.NetworkBrowser.AutoMount import iAutoMount
 from Plugins.SystemPlugins.NetworkBrowser.MountEdit import AutoMountEdit
+
+from . import _
 
 
 class AutoMountView(Screen):

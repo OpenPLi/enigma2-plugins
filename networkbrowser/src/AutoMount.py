@@ -1,5 +1,3 @@
-# for localized messages
-from Plugins.SystemPlugins.NetworkBrowser.__init__ import _
 import os
 import subprocess
 import shlex

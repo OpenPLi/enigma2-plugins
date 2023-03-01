@@ -1,7 +1,9 @@
-# for localized messages
-from Plugins.SystemPlugins.NetworkBrowser.__init__ import _
+import os
+import pickle
+
+import enigma
+
 from Screens.Screen import Screen
-from Screens.MessageBox import MessageBox
 from Screens.VirtualKeyBoard import VirtualKeyBoard
 from Components.ActionMap import ActionMap
 from Components.config import ConfigText, ConfigPassword, NoSave
@@ -10,9 +12,8 @@ from Components.Sources.StaticText import StaticText
 from Components.Pixmap import Pixmap
 from Components.ActionMap import ActionMap, NumberActionMap
 from Components.Sources.Boolean import Boolean
-import enigma
-import os
-import pickle
+
+from . import _
 
 
 def write_cache(cache_file, cache_data):
