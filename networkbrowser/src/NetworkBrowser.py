@@ -40,7 +40,7 @@ def load_cache(cache_file):
 
 
 def valid_cache(cache_file, cache_ttl):
-	#See if the cache file exists and is still living
+	# See if the cache file exists and is still living
 	try:
 		mtime = os.stat(cache_file)[stat.ST_MTIME]
 	except:
@@ -397,7 +397,7 @@ class NetworkBrowser(Screen):
 		sel = self["list"].getCurrent()
 		selectedhost = sel[0][2]
 		selectedhostname = sel[0][1]
-		if (ret == True):
+		if (ret is True):
 			self.session.openWithCallback(self.UserDialogClosed, UserDialog, self.skin_path, selectedhostname.strip())
 		else:
 			if sel[0][0] == 'host':  # host entry selected
@@ -419,7 +419,7 @@ class NetworkBrowser(Screen):
 		if selection:
 			mounts = iAutoMount.getMountsList()
 			if selection[0] == 'nfsShare':  # share entry selected
-				#Initialize blank mount enty
+				# Initialize blank mount enty
 				data = {'isMounted': False, 'active': False, 'ip': False, 'sharename': False, 'sharedir': False, 'username': False, 'password': False, 'mounttype': False, 'options': False}
 				# add data
 				data['mounttype'] = 'nfs'
@@ -434,7 +434,7 @@ class NetworkBrowser(Screen):
 						data = sharedata
 				self.session.openWithCallback(self.MountEditClosed, AutoMountEdit, self.skin_path, data)
 			if selection[0] == 'smbShare':  # share entry selected
-				#Initialize blank mount enty
+				# Initialize blank mount enty
 				data = {'isMounted': False, 'active': False, 'ip': False, 'sharename': False, 'sharedir': False, 'username': False, 'password': False, 'mounttype': False, 'options': False}
 				# add data
 				data['mounttype'] = 'cifs'

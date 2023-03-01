@@ -88,9 +88,9 @@ class AutoMountView(Screen):
 		else:
 			IPdescription = _("IP:") + " " + str(entry["ip"])
 		DIRdescription = _("Dir:") + " " + str(entry["sharedir"])
-		if entry["active"] == 'True' or entry["active"] == True:
+		if entry["active"] == 'True' or entry["active"] is True:
 			activepng = LoadPixmap(cached=True, path=resolveFilename(SCOPE_SKIN_IMAGE, "skin_default/icons/lock_on.png"))
-		if entry["active"] == 'False' or entry["active"] == False:
+		if entry["active"] == 'False' or entry["active"] is False:
 			activepng = LoadPixmap(cached=True, path=resolveFilename(SCOPE_SKIN_IMAGE, "skin_default/icons/lock_error.png"))
 		if entry["mounttype"] == 'nfs':
 			mounttypepng = LoadPixmap(cached=True, path=resolveFilename(SCOPE_PLUGINS, "SystemPlugins/NetworkBrowser/icons/i-nfs.png"))

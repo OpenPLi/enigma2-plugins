@@ -69,7 +69,7 @@ class AutoMount():
 				try:
 					data['mounttype'] = 'nfs'
 					data['active'] = getValue(mount.findall("active"), False)
-					if data["active"] == 'True' or data["active"] == True:
+					if data["active"] == 'True' or data["active"] is True:
 						self.activeMountsCounter += 1
 					data['hdd_replacement'] = getValue(mount.findall("hdd_replacement"), "False")
 					data['ip'] = getValue(mount.findall("ip"), "")
@@ -89,7 +89,7 @@ class AutoMount():
 				try:
 					data['mounttype'] = 'cifs'
 					data['active'] = getValue(mount.findall("active"), False)
-					if data["active"] == 'True' or data["active"] == True:
+					if data["active"] == 'True' or data["active"] is True:
 						self.activeMountsCounter += 1
 					data['hdd_replacement'] = getValue(mount.findall("hdd_replacement"), "False")
 					data['ip'] = getValue(mount.findall("ip"), "")
