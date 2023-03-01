@@ -49,7 +49,7 @@ class UserDialog(Screen, ConfigListScreen):
 		self.session = session
 		Screen.__init__(self, self.session)
 		self.hostinfo = str(hostinfo)
-		self.cache_file = '/etc/enigma2/' + self.hostinfo + '.cache' #Path to cache directory
+		self.cache_file = '/etc/enigma2/' + self.hostinfo + '.cache'  # Path to cache directory
 		self.createConfig()
 
 		self["actions"] = NumberActionMap(["SetupActions"],

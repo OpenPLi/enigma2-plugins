@@ -181,7 +181,7 @@ class AutoMountEdit(Screen, ConfigListScreen):
 				current[1].help_window.instance.hide()
 		sharename = self.sharenameConfigEntry.value
 		if sharename in self.mounts:
-			self.session.openWithCallback(self.updateConfig, MessageBox, (_("A mount entry with this name already exists!\nUpdate existing entry and continue?\n") ) )
+			self.session.openWithCallback(self.updateConfig, MessageBox, (_("A mount entry with this name already exists!\nUpdate existing entry and continue?\n")))
 		else:
 			self.session.openWithCallback(self.applyConfig, MessageBox, (_("Are you sure you want to save this network mount?\n\n")))
 

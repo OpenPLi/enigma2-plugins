@@ -3,13 +3,13 @@ import subprocess
 import shlex
 from enigma import eTimer
 from Components.Console import Console
-from Components.Harddisk import harddiskmanager #global harddiskmanager
+from Components.Harddisk import harddiskmanager  # global harddiskmanager
 from xml.etree.cElementTree import parse as cet_parse
 
 XML_FSTAB = "/etc/enigma2/automounts.xml"
 
 
-def rm_rf(d): # only for removing the ipkg stuff from /media/hdd subdirs
+def rm_rf(d):  # only for removing the ipkg stuff from /media/hdd subdirs
 	try:
 		for path in (os.path.join(d, f) for f in os.listdir(d)):
 			if os.path.isdir(path):
@@ -18,7 +18,7 @@ def rm_rf(d): # only for removing the ipkg stuff from /media/hdd subdirs
 				os.unlink(path)
 		os.rmdir(d)
 	except Exception as ex:
-	        print("AutoMount failed to remove", d, "Error:", ex)
+		print("AutoMount failed to remove", d, "Error:", ex)
 
 
 class AutoMount():
@@ -281,7 +281,7 @@ class AutoMount():
 							command = None
 
 			except Exception as ex:
-					print("[AutoMount.py] Failed to create", path, "Error:", ex)
+				print("[AutoMount.py] Failed to create", path, "Error:", ex)
 
 		# execute any command constructed
 		if command:
@@ -300,7 +300,7 @@ class AutoMount():
 				if data['sharename'] in self.automounts:
 					self.automounts[data['sharename']]['isMounted'] = True
 					desc = data['sharename']
-					if self.automounts[data['sharename']]['hdd_replacement'] == 'True': #hdd replacement hack
+					if self.automounts[data['sharename']]['hdd_replacement'] == 'True':  # hdd replacement hack
 						self.makeHDDlink(path)
 					harddiskmanager.addMountedPartition(path, desc)
 			else:
