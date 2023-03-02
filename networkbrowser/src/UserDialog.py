@@ -1,18 +1,18 @@
-# for localized messages
-from Plugins.SystemPlugins.NetworkBrowser.__init__ import _
+import os
+import pickle
+
+import enigma
+
 from Screens.Screen import Screen
-from Screens.MessageBox import MessageBox
 from Screens.VirtualKeyBoard import VirtualKeyBoard
-from Components.ActionMap import ActionMap
+from Components.ActionMap import ActionMap, NumberActionMap
 from Components.config import ConfigText, ConfigPassword, NoSave
 from Components.ConfigList import ConfigListScreen
 from Components.Sources.StaticText import StaticText
 from Components.Pixmap import Pixmap
-from Components.ActionMap import ActionMap, NumberActionMap
 from Components.Sources.Boolean import Boolean
-import enigma
-import os
-import pickle
+
+from . import _
 
 
 def write_cache(cache_file, cache_data):
@@ -48,7 +48,7 @@ class UserDialog(Screen, ConfigListScreen):
 		self.session = session
 		Screen.__init__(self, self.session)
 		self.hostinfo = str(hostinfo)
-		self.cache_file = '/etc/enigma2/' + self.hostinfo + '.cache' #Path to cache directory
+		self.cache_file = '/etc/enigma2/' + self.hostinfo + '.cache'  # Path to cache directory
 		self.createConfig()
 
 		self["actions"] = NumberActionMap(["SetupActions"],
@@ -83,10 +83,11 @@ class UserDialog(Screen, ConfigListScreen):
 		print('Loading user cache from ', self.cache_file)
 		try:
 			hostdata = load_cache(self.cache_file)
+		except (IOError, ValueError):
+			pass
+		else:
 			username = hostdata['username']
 			password = hostdata['password']
-		except:
-			pass
 		self.username = NoSave(ConfigText(default=username, visible_width=50, fixed_size=False))
 		self.password = NoSave(ConfigPassword(default=password, visible_width=50, fixed_size=False))
 
@@ -130,7 +131,6 @@ class UserDialog(Screen, ConfigListScreen):
 			current[1].help_window.instance.move(enigma.ePoint(helpwindowpos[0], helpwindowpos[1]))
 
 	def ok(self):
-		current = self["config"].getCurrent()
 		hostdata = {'username': self.username.value, 'password': self.password.value}
 		write_cache(self.cache_file, hostdata)
 		self.close(True)

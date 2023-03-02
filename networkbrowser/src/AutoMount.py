@@ -1,17 +1,15 @@
-# for localized messages
-from Plugins.SystemPlugins.NetworkBrowser.__init__ import _
 import os
 import subprocess
 import shlex
 from enigma import eTimer
 from Components.Console import Console
-from Components.Harddisk import harddiskmanager #global harddiskmanager
+from Components.Harddisk import harddiskmanager  # global harddiskmanager
 from xml.etree.cElementTree import parse as cet_parse
 
 XML_FSTAB = "/etc/enigma2/automounts.xml"
 
 
-def rm_rf(d): # only for removing the ipkg stuff from /media/hdd subdirs
+def rm_rf(d):  # only for removing the ipkg stuff from /media/hdd subdirs
 	try:
 		for path in (os.path.join(d, f) for f in os.listdir(d)):
 			if os.path.isdir(path):
@@ -20,7 +18,7 @@ def rm_rf(d): # only for removing the ipkg stuff from /media/hdd subdirs
 				os.unlink(path)
 		os.rmdir(d)
 	except Exception as ex:
-	        print("AutoMount failed to remove", d, "Error:", ex)
+		print("AutoMount failed to remove", d, "Error:", ex)
 
 
 class AutoMount():
@@ -41,7 +39,6 @@ class AutoMount():
 
 	def getAutoMountPoints(self, callback=None):
 		# Initialize mounts to empty list
-		automounts = []
 		self.automounts = {}
 		self.activeMountsCounter = 0
 
@@ -59,8 +56,6 @@ class AutoMount():
 			return
 
 		def getValue(definitions, default):
-			# Initialize Output
-			ret = ""
 			# How many definitions are present
 			Len = len(definitions)
 			return Len > 0 and definitions[Len - 1].text or default
@@ -74,7 +69,7 @@ class AutoMount():
 				try:
 					data['mounttype'] = 'nfs'
 					data['active'] = getValue(mount.findall("active"), False)
-					if data["active"] == 'True' or data["active"] == True:
+					if data["active"] == 'True' or data["active"] is True:
 						self.activeMountsCounter += 1
 					data['hdd_replacement'] = getValue(mount.findall("hdd_replacement"), "False")
 					data['ip'] = getValue(mount.findall("ip"), "")
@@ -94,7 +89,7 @@ class AutoMount():
 				try:
 					data['mounttype'] = 'cifs'
 					data['active'] = getValue(mount.findall("active"), False)
-					if data["active"] == 'True' or data["active"] == True:
+					if data["active"] == 'True' or data["active"] is True:
 						self.activeMountsCounter += 1
 					data['hdd_replacement'] = getValue(mount.findall("hdd_replacement"), "False")
 					data['ip'] = getValue(mount.findall("ip"), "")
@@ -283,7 +278,7 @@ class AutoMount():
 							command = None
 
 			except Exception as ex:
-					print("[AutoMount.py] Failed to create", path, "Error:", ex)
+				print("[AutoMount.py] Failed to create", path, "Error:", ex)
 
 		# execute any command constructed
 		if command:
@@ -302,7 +297,7 @@ class AutoMount():
 				if data['sharename'] in self.automounts:
 					self.automounts[data['sharename']]['isMounted'] = True
 					desc = data['sharename']
-					if self.automounts[data['sharename']]['hdd_replacement'] == 'True': #hdd replacement hack
+					if self.automounts[data['sharename']]['hdd_replacement'] == 'True':  # hdd replacement hack
 						self.makeHDDlink(path)
 					harddiskmanager.addMountedPartition(path, desc)
 			else:

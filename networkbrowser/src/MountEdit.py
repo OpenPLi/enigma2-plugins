@@ -1,27 +1,24 @@
-# for localized messages
-from Plugins.SystemPlugins.NetworkBrowser.__init__ import _
 from Screens.Screen import Screen
 from Screens.MessageBox import MessageBox
-from Screens.VirtualKeyBoard import VirtualKeyBoard
-from Components.ActionMap import ActionMap
+from Components.ActionMap import NumberActionMap
 from Components.Sources.StaticText import StaticText
-from Components.config import config, ConfigIP, NoSave, ConfigText, ConfigEnableDisable, ConfigPassword, ConfigSelection, ConfigYesNo
+from Components.config import ConfigIP, NoSave, ConfigText, ConfigEnableDisable, ConfigPassword, ConfigSelection, ConfigYesNo
 from Components.ConfigList import ConfigListScreen
 from Components.Pixmap import Pixmap
-from Components.ActionMap import ActionMap, NumberActionMap
-from Plugins.SystemPlugins.NetworkBrowser.AutoMount import iAutoMount, AutoMount
 from Components.Sources.Boolean import Boolean
 
-# helper function to convert ips from a sring to a list of ints
+from . import _
+from .AutoMount import iAutoMount
 
 
 def convertIP(ip):
+	"""helper function to convert ips from a sring to a list of ints"""
 	try:
 		strIP = ip.split('.')
 		ip = []
 		for x in strIP:
 			ip.append(int(x))
-	except:
+	except (ValueError, AttributeError):
 		ip = [0, 0, 0, 0]
 	return ip
 
@@ -45,7 +42,7 @@ class AutoMountEdit(Screen, ConfigListScreen):
 
 		self.mountinfo = mountinfo
 		if self.mountinfo is None:
-			#Initialize blank mount enty
+			# Initialize blank mount enty
 			self.mountinfo = {'isMounted': False, 'active': False, 'ip': False, 'host': False, 'sharename': False, 'sharedir': False, 'username': False, 'password': False, 'mounttype': False, 'options': False, 'hdd_replacement': False}
 
 		self.applyConfigRef = None
@@ -184,12 +181,12 @@ class AutoMountEdit(Screen, ConfigListScreen):
 				current[1].help_window.instance.hide()
 		sharename = self.sharenameConfigEntry.value
 		if sharename in self.mounts:
-			self.session.openWithCallback(self.updateConfig, MessageBox, (_("A mount entry with this name already exists!\nUpdate existing entry and continue?\n") ) )
+			self.session.openWithCallback(self.updateConfig, MessageBox, (_("A mount entry with this name already exists!\nUpdate existing entry and continue?\n")))
 		else:
 			self.session.openWithCallback(self.applyConfig, MessageBox, (_("Are you sure you want to save this network mount?\n\n")))
 
 	def updateConfig(self, ret=False):
-		if (ret == True):
+		if (ret is True):
 			sharedir = None
 			if self.sharedirConfigEntry.value.startswith("/"):
 				sharedir = self.sharedirConfigEntry.value[1:]
@@ -227,7 +224,7 @@ class AutoMountEdit(Screen, ConfigListScreen):
 				self.close()
 
 	def applyConfig(self, ret=False):
-		if (ret == True):
+		if (ret is True):
 			data = {'isMounted': False, 'active': False, 'ip': False, 'sharename': False, 'sharedir': False,
 					'username': False, 'password': False, 'mounttype': False, 'options': False, 'hdd_replacement': False}
 			data['active'] = self.activeConfigEntry.value

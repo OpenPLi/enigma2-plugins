@@ -1,21 +1,20 @@
-# for localized messages
-from Plugins.SystemPlugins.NetworkBrowser.__init__ import _
+import os
+
 from Screens.Screen import Screen
 from Screens.MessageBox import MessageBox
 from Screens.VirtualKeyBoard import VirtualKeyBoard
 from Components.Sources.StaticText import StaticText
-from Components.Pixmap import Pixmap
 from Components.ActionMap import ActionMap
 from Components.Network import iNetwork
 from Components.Sources.List import List
 from Tools.LoadPixmap import LoadPixmap
-from Tools.Directories import resolveFilename, SCOPE_PLUGINS, SCOPE_SKIN_IMAGE
+from Tools.Directories import resolveFilename, SCOPE_PLUGINS
 from Plugins.SystemPlugins.NetworkBrowser.MountView import AutoMountView
 from Plugins.SystemPlugins.NetworkBrowser.MountEdit import AutoMountEdit
-from Plugins.SystemPlugins.NetworkBrowser.AutoMount import iAutoMount, AutoMount
 from Plugins.SystemPlugins.NetworkBrowser.UserManager import UserManager
-import os
 from Components.config import config
+
+from . import _
 
 
 class AutoMountManager(Screen):
@@ -111,7 +110,7 @@ class AutoMountManager(Screen):
 		try:
 			with open('/etc/hostname', 'r') as fp:
 				hostname = fp.read()
-		except:
+		except (IOError, ValueError):
 			return
 		self.session.openWithCallback(self.hostnameCallback, VirtualKeyBoard, title=(_("Enter new hostname for your Receiver")), text=hostname)
 
