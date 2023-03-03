@@ -309,7 +309,7 @@ class EPGSearchList(EPGList):
 							type = type_offset + 2
 				if time_match:
 					#if type in (2,7,12):
-						# When full recording do not look further
+					# When full recording do not look further
 					#	returnValue = (time_match, [type])
 					#	break
 					if returnValue:
@@ -924,12 +924,12 @@ class EPGSearch(EPGSelection):
 				from Screens.InfoBar import InfoBar
 				InfoBarInstance = InfoBar.instance
 				if InfoBarInstance is not None:
-						InfoBarInstance.servicelist.clearPath()
-						InfoBarInstance.servicelist.setRoot(serviceref.ref)
-						InfoBarInstance.servicelist.enterPath(serviceref.ref)
-						InfoBarInstance.servicelist.saveRoot()
-						InfoBarInstance.servicelist.saveChannel(serviceref.ref)
-						InfoBarInstance.servicelist.addToHistory(serviceref.ref)
+					InfoBarInstance.servicelist.clearPath()
+					InfoBarInstance.servicelist.setRoot(serviceref.ref)
+					InfoBarInstance.servicelist.enterPath(serviceref.ref)
+					InfoBarInstance.servicelist.saveRoot()
+					InfoBarInstance.servicelist.saveChannel(serviceref.ref)
+					InfoBarInstance.servicelist.addToHistory(serviceref.ref)
 				self.session.nav.playService(serviceref.ref)
 			except:
 				pass
