@@ -167,7 +167,7 @@ def timeCallback(isCallback=True):
 		#old check
 		#if Standby.inStandby is None and epgrefresh.session and epgrefresh.session.nav.wasTimerWakeup() and abs(time() - begin) < 360 and config.plugins.epgrefresh_extra.day_refresh[cur_day].value:
 		#new test check
-		if Standby.inStandby is None and epgrefresh.session and epgrefresh.session.nav.wasTimerWakeup() and config.plugins.epgrefresh.enigma_wakeup_time.value == config.plugins.epgrefresh.wakeup_time.value:
+		if Standby.inStandby is None and epgrefresh.session and epgrefresh.session.nav.wasTimerWakeup() and config.plugins.epgrefresh.wakeup_time.value != -1 and config.plugins.epgrefresh.enigma_wakeup_time.value == config.plugins.epgrefresh.wakeup_time.value:
 			from Tools.Notifications import AddNotificationWithCallback
 			# XXX: we use a notification because this will be suppressed otherwise
 			AddNotificationWithCallback(

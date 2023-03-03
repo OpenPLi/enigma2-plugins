@@ -473,6 +473,8 @@ class EPGRefresh:
 	def msgClosed(self, ret=False):
 		if ret:
 			self.stop()
+			config.plugins.epgrefresh.lastscan.value = int(time())
+			config.plugins.epgrefresh.lastscan.save()
 			if config.plugins.epgrefresh.enabled.value:
 				self.start()
 
