@@ -66,7 +66,7 @@ msgid "Could not read AutoTimer timer list: %s"
 msgstr "Nevar nolasīt auto taimeru sarakstu: %s"
 
 msgid "Custom search"
-msgstr ""
+msgstr "Pielāgota meklēšana"
 
 msgid "Display name service as in bouquets"
 msgstr "Attēlot kanāla nosakukumu kā buķetē"
@@ -77,16 +77,14 @@ msgstr "EPG meklēšana"
 msgid "EPGSearch"
 msgstr "EPG meklētājs"
 
-#, fuzzy
 msgid "EPGSearch - History"
-msgstr "EPGSearch iestatījumi"
+msgstr "EPGSearch vēsture"
 
 msgid "EPGSearch Setup"
 msgstr "EPGSearch iestatījumi"
 
-#, fuzzy
 msgid "Edit & search"
-msgstr "EPG meklēšana"
+msgstr "Meklēt"
 
 msgid "Encoding Search to EPG"
 msgstr "Meklēt EPG kodējumā"
@@ -134,7 +132,7 @@ msgid "Lookup in TMBD"
 msgstr "Meklēt TMBD"
 
 msgid "Modify searched text"
-msgstr ""
+msgstr "Mainīt meklēto tekstu"
 
 msgid "New Search"
 msgstr "Meklēt no jauna"
@@ -188,14 +186,13 @@ msgid "Select channel"
 msgstr "Izvēlieties kanālu"
 
 msgid "Select item for search and press 'OK' or edit item with yellow button."
-msgstr ""
+msgstr "Izvēlieties meklējamo tekstu un nospiediet 'Labi' vai rediģējiet tekstu ar dzelteno pogu."
 
 msgid "Select type for filter search. Press button P +/- for show/hide filter in description after search."
 msgstr "Izvēlieties meklēšanas veidu filtrēšanai. Lietojiet P +/- lai parādītu/slēptu filtrus aprakstā pēc meklēšanas."
 
-#, fuzzy
 msgid "Select type for search, \"partial match\" for the most extensive search, \"partial description\" for the most description search."
-msgstr "Izvēlieties meklēšanas tipu, \"atbilst daļēji\" lielākam rezultātu daudzumam."
+msgstr "Izvēlieties meklēšanas tipu, \"atbilst daļēji\" lielākam rezultātu daudzumam, \"līdzīgs apraksts\" labākai meklēšanai aprakstos."
 
 msgid "Select type: 'Search and Select channel' or 'Search'."
 msgstr "Izvēlieties veidu: 'Meklēt un izvēlēties kanālu' vai 'meklēt'."
@@ -234,7 +231,7 @@ msgid "only Search"
 msgstr "tikai meklēt"
 
 msgid "partial description"
-msgstr ""
+msgstr "līdzīgs apraksts"
 
 msgid "partial match"
 msgstr "atbilst daļēji"

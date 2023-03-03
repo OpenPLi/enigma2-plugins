@@ -1,10 +1,8 @@
-from Components.Language import language
-from Tools.Directories import resolveFilename, SCOPE_PLUGINS, SCOPE_LANGUAGE
-from os import environ as os_environ
 import gettext
 
-# Config
-from Components.config import config, ConfigSet, ConfigSubsection, ConfigText, ConfigNumber, ConfigYesNo, ConfigSelection
+from Components.Language import language
+from Tools.Directories import resolveFilename, SCOPE_PLUGINS
+from Components.config import config, ConfigSet, ConfigSubsection, ConfigNumber, ConfigYesNo, ConfigSelection
 
 
 def localeInit():

@@ -1,14 +1,14 @@
-# for localized messages
-from . import _
 from enigma import eServiceCenter
 from Screens.EpgSelection import EPGSelection
 from Screens.VirtualKeyBoard import VirtualKeyBoard, VKB_SEARCH_ICON
-from Components.EpgList import EPG_TYPE_SINGLE, EPG_TYPE_MULTI
+from Components.EpgList import EPG_TYPE_MULTI
 from Components.ActionMap import ActionMap
-from .EPGSearch import EPGSearch, EPGSearchEPGSelection
 from Plugins.Plugin import PluginDescriptor
 from Screens.ChoiceBox import ChoiceBox
 from Components.config import config
+
+from .EPGSearch import EPGSearch, EPGSearchEPGSelection
+from . import _
 
 # Overwrite EPGSelection.__init__ with our modified one
 baseEPGSelection__init__ = None
@@ -37,12 +37,12 @@ def EPGSearchSelection__init__(self, session, service, zapFunc=None, eventid=Non
 					name = ''
 				self.session.open(EPGSearch, name, False)
 			elif config.plugins.epgsearch.type_button_blue.value == "1":
-				list = [
-				(_("Search"), "search"),
-				(_("Select channel"), "standard"),
-				(_("Custom search"), "custom"),
+				slist = [
+					(_("Search"), "search"),
+					(_("Select channel"), "standard"),
+					(_("Custom search"), "custom"),
 				]
-				dlg = self.session.openWithCallback(self.CallbackChoiceAction, ChoiceBox, title=_("Select action:"), list=list)
+				dlg = self.session.openWithCallback(self.CallbackChoiceAction, ChoiceBox, title=_("Select action:"), list=slist)
 				dlg.setTitle(_("Choice list EPGSearch"))
 		self["epgsearch_actions"] = ActionMap(["EPGSelectActions"],
 				{
@@ -98,7 +98,7 @@ def main(session, *args, **kwargs):
 	s = session.nav.getCurrentService()
 	if s:
 		info = s.info()
-		event = info and info.getEvent(0) # 0 = now, 1 = next
+		event = info and info.getEvent(0)  # 0 = now, 1 = next
 		name = event and event.getEventName() or ''
 		session.open(EPGSearch, name, False)
 	else:
