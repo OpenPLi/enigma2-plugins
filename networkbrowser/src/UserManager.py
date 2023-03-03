@@ -6,8 +6,8 @@ from Components.ActionMap import ActionMap
 from Components.Sources.List import List
 from Tools.LoadPixmap import LoadPixmap
 from Tools.Directories import resolveFilename, SCOPE_PLUGINS
-from Plugins.SystemPlugins.NetworkBrowser.UserDialog import UserDialog
 
+from .UserDialog import UserDialog
 from . import _
 
 

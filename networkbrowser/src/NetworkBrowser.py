@@ -14,12 +14,12 @@ from Components.config import ConfigIP
 from Components.ConfigList import ConfigListScreen
 from Tools.Directories import resolveFilename, SCOPE_PLUGINS
 from Tools.LoadPixmap import LoadPixmap
-from Plugins.SystemPlugins.NetworkBrowser.MountManager import AutoMountManager
-from Plugins.SystemPlugins.NetworkBrowser.AutoMount import iAutoMount
-from Plugins.SystemPlugins.NetworkBrowser.MountEdit import AutoMountEdit
-from Plugins.SystemPlugins.NetworkBrowser.UserDialog import UserDialog
-from Plugins.SystemPlugins.NetworkBrowser import netscan
 
+from .MountManager import AutoMountManager
+from .AutoMount import iAutoMount
+from .MountEdit import AutoMountEdit
+from .UserDialog import UserDialog
+from . import netscan
 from . import _
 
 

@@ -5,9 +5,9 @@ from Components.ActionMap import ActionMap
 from Components.Sources.List import List
 from Tools.LoadPixmap import LoadPixmap
 from Tools.Directories import resolveFilename, SCOPE_PLUGINS, SCOPE_SKIN_IMAGE
-from Plugins.SystemPlugins.NetworkBrowser.AutoMount import iAutoMount
-from Plugins.SystemPlugins.NetworkBrowser.MountEdit import AutoMountEdit
 
+from .AutoMount import iAutoMount
+from .MountEdit import AutoMountEdit
 from . import _
 
 

@@ -1,8 +1,8 @@
 from Plugins.Plugin import PluginDescriptor
 from Components.Network import iNetwork
-# Don't remove this line! It's needed to remount shares at startup
-from Plugins.SystemPlugins.NetworkBrowser.AutoMount import iAutoMount
 
+# Don't remove this line! It's needed to remount shares at startup
+from .AutoMount import iAutoMount
 from . import _
 
 
@@ -10,12 +10,12 @@ plugin_path = ""
 
 
 def NetworkBrowserMain(session, iface=None, **kwargs):
-	from Plugins.SystemPlugins.NetworkBrowser.NetworkBrowser import NetworkBrowser
+	from .NetworkBrowser import NetworkBrowser
 	session.open(NetworkBrowser, iface, plugin_path)
 
 
 def MountManagerMain(session, iface=None, **kwargs):
-	from Plugins.SystemPlugins.NetworkBrowser.MountManager import AutoMountManager
+	from .MountManager import AutoMountManager
 	session.open(AutoMountManager, iface, plugin_path)
 
 

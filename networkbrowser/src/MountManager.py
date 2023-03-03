@@ -3,17 +3,17 @@ import os
 from Screens.Screen import Screen
 from Screens.MessageBox import MessageBox
 from Screens.VirtualKeyBoard import VirtualKeyBoard
+from Components.config import config
 from Components.Sources.StaticText import StaticText
 from Components.ActionMap import ActionMap
 from Components.Network import iNetwork
 from Components.Sources.List import List
 from Tools.LoadPixmap import LoadPixmap
 from Tools.Directories import resolveFilename, SCOPE_PLUGINS
-from Plugins.SystemPlugins.NetworkBrowser.MountView import AutoMountView
-from Plugins.SystemPlugins.NetworkBrowser.MountEdit import AutoMountEdit
-from Plugins.SystemPlugins.NetworkBrowser.UserManager import UserManager
-from Components.config import config
 
+from .MountView import AutoMountView
+from .MountEdit import AutoMountEdit
+from .UserManager import UserManager
 from . import _
 
 
