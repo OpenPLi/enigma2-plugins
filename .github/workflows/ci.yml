@@ -32,8 +32,6 @@ jobs:
           pip install flake8
       - name: Install dev packages
         run: |
-          sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
-          sudo apt -q update
           sudo apt install gettext python3.11-dev
       - name: Build plugins
         env:
