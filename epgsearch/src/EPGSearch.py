@@ -29,7 +29,7 @@ from . import _
 try:
 	from Components.Renderer.Picon import getPiconName
 	getPiconsName = True
-except:
+except ImportError:
 	getPiconsName = False
 from time import localtime, time
 from operator import itemgetter
