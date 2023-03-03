@@ -1,11 +1,9 @@
-from . import _
-from enigma import eEPGCache, eServiceReference, eServiceCenter, RT_HALIGN_LEFT, RT_HALIGN_RIGHT, eRect, getDesktop, \
-		RT_HALIGN_CENTER, RT_VALIGN_CENTER, RT_WRAP, eListboxPythonMultiContent, gFont, ePicLoad
-from Tools.Directories import resolveFilename, SCOPE_CURRENT_SKIN, SCOPE_SKIN_IMAGE, fileExists
+from enigma import eEPGCache, eServiceReference, eServiceCenter, RT_HALIGN_LEFT, RT_HALIGN_RIGHT, \
+		RT_VALIGN_CENTER, eListboxPythonMultiContent, gFont, ePicLoad
+from Tools.Directories import resolveFilename, SCOPE_CURRENT_SKIN, fileExists
 from Tools.LoadPixmap import LoadPixmap
 from Tools.Alternatives import GetWithAlternative
 from ServiceReference import ServiceReference
-from .EPGSearchSetup import EPGSearchSetup
 from Screens.ChannelSelection import SimpleChannelSelection
 from Screens.ChoiceBox import ChoiceBox
 from Screens.EpgSelection import EPGSelection
@@ -24,6 +22,9 @@ from Components.Sources.List import List
 
 from Components.GUIComponent import GUIComponent
 from skin import parseFont
+
+from .EPGSearchSetup import EPGSearchSetup
+from . import _
 
 try:
 	from Components.Renderer.Picon import getPiconName
