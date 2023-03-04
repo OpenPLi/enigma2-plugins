@@ -84,7 +84,7 @@ msgid "EPGSearch Setup"
 msgstr "EPGSearch iestatījumi"
 
 msgid "Edit & search"
-msgstr "Meklēt"
+msgstr "Rediģēt"
 
 msgid "Encoding Search to EPG"
 msgstr "Meklēt EPG kodējumā"
@@ -141,7 +141,7 @@ msgid "No history !"
 msgstr "Nav vēstures!"
 
 msgid "OK"
-msgstr "Labi"
+msgstr "Lietot"
 
 msgid "Open selected in IMDb"
 msgstr "Atvērt izvēlēto IMDb"
@@ -186,7 +186,7 @@ msgid "Select channel"
 msgstr "Izvēlieties kanālu"
 
 msgid "Select item for search and press 'OK' or edit item with yellow button."
-msgstr "Izvēlieties meklējamo tekstu un nospiediet 'Labi' vai rediģējiet tekstu ar dzelteno pogu."
+msgstr "Izvēlieties meklējamo tekstu un nospiediet 'Lietot' vai rediģējiet tekstu ar dzelteno pogu."
 
 msgid "Select type for filter search. Press button P +/- for show/hide filter in description after search."
 msgstr "Izvēlieties meklēšanas veidu filtrēšanai. Lietojiet P +/- lai parādītu/slēptu filtrus aprakstā pēc meklēšanas."
