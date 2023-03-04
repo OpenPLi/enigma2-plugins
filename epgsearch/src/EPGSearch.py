@@ -579,7 +579,7 @@ class EPGSearch(EPGSelection):
 		self.bouquetChangeCB = None
 		self.serviceChangeCB = None
 		self.ask_time = -1  # now
-		self["key_red"] = Button("")
+		self["key_red"] = Button(_("Cancel"))
 		self.closeRecursive = False
 		self.saved_title = None
 		self["Service"] = ServiceEvent()
@@ -593,20 +593,20 @@ class EPGSearch(EPGSelection):
 		self.key_red_choice = self.EMPTY
 		self["list"] = EPGSearchList(type=self.type, selChangedCB=self.onSelectionChanged, timer=session.nav.RecordTimer)
 		self["actions"] = ActionMap(["EPGSelectActions", "OkCancelActions", "MenuActions"],
-			{
-				"menu": self.menu,
-				"cancel": self.closeScreen,
-				"ok": self.eventSelected,
-				"timerAdd": self.timerAdd,
-				"yellow": self.yellowButtonPressed,
-				"blue": self.blueButtonPressed,
-				"info": self.infoKeyPressed,
-				"red": self.zapToselect,  # needed --> Partnerbox
-				"nextBouquet": self.nextBouquet,  # just used in multi epg yet
-				"prevBouquet": self.prevBouquet,  # just used in multi epg yet
-				"nextService": self.nextService,  # just used in single epg yet
-				"prevService": self.prevService,  # just used in single epg yet
-			})
+		{
+			"menu": self.menu,
+			"cancel": self.closeScreen,
+			"ok": self.eventSelected,
+			"timerAdd": self.timerAdd,
+			"yellow": self.yellowButtonPressed,
+			"blue": self.blueButtonPressed,
+			"info": self.infoKeyPressed,
+			"red": self.key_red_pressed,
+			"nextBouquet": self.nextBouquet,  # just used in multi epg yet
+			"prevBouquet": self.prevBouquet,  # just used in multi epg yet
+			"nextService": self.nextService,  # just used in single epg yet
+			"prevService": self.prevService,  # just used in single epg yet
+		})
 
 		self["actions"].csel = self
 		self.onLayoutFinish.append(self.onCreate)
@@ -730,6 +730,12 @@ class EPGSearch(EPGSelection):
 		if PartnerBoxZapRepIcons:
 			if self.isTMBD:
 				self["key_red"].setText(_("Choice list"))
+
+	def key_red_pressed(self):
+		if not PartnerBoxIconsEnabled and not self.isTMBD:
+			self.closeScreen()
+		else:
+			self.zapToselect()
 
 	def zapToselect(self):
 		if not PartnerBoxIconsEnabled:
@@ -1073,8 +1079,6 @@ class EPGSearchTimerImport(Screen):
 
 		self["key_red"] = Button(_("Cancel"))
 		self["key_green"] = Button(_("OK"))
-		self["key_yellow"] = Button("")
-		self["key_blue"] = Button("")
 
 		self["actions"] = ActionMap(["OkCancelActions", "ColorActions"],
 		{
@@ -1177,11 +1181,9 @@ class EPGSearchHistory(Screen):
 		<ePixmap name="red"    position="0,0"   zPosition="2" size="140,40" pixmap="skin_default/buttons/red.png" transparent="1" alphatest="on"/>
 		<ePixmap name="green"  position="140,0" zPosition="2" size="140,40" pixmap="skin_default/buttons/green.png" transparent="1" alphatest="on"/>
 		<ePixmap name="yellow" position="280,0" zPosition="2" size="140,40" pixmap="skin_default/buttons/yellow.png" transparent="1" alphatest="on"/>
-		<ePixmap name="blue"   position="420,0" zPosition="2" size="140,40" pixmap="skin_default/buttons/blue.png" transparent="1" alphatest="on"/>
 		<widget name="key_red" position="0,0" size="140,40" valign="center" halign="center" zPosition="4"  foregroundColor="white" font="Regular;20" transparent="1" shadowColor="background" shadowOffset="-2,-2"/>
 		<widget name="key_green" position="140,0" size="140,40" valign="center" halign="center" zPosition="4"  foregroundColor="white" font="Regular;20" transparent="1" shadowColor="background" shadowOffset="-2,-2"/>
 		<widget name="key_yellow" position="280,0" size="140,40" valign="center" halign="center" zPosition="4"  foregroundColor="white" font="Regular;20" transparent="1" shadowColor="background" shadowOffset="-2,-2"/>
-		<widget name="key_blue" position="420,0" size="140,40" valign="center" halign="center" zPosition="4"  foregroundColor="white" font="Regular;20" transparent="1" shadowColor="background" shadowOffset="-2,-2"/>
 		<widget source="history" render="Listbox" position="5,47" size="550,300" scrollbarMode="showOnDemand">
 			<convert type="StringList"/>
 		</widget>
@@ -1189,6 +1191,7 @@ class EPGSearchHistory(Screen):
 		<widget name="help" position="5,360" zPosition="2" size="560,50" valign="center" halign="left" font="Regular;22" foregroundColor="white"/>
 	</screen>
 	"""
+
 	def __init__(self, session, data):
 		Screen.__init__(self, session)
 		self.session = session
@@ -1200,15 +1203,19 @@ class EPGSearchHistory(Screen):
 		self["history"].setList(data)
 
 		self["OkCancelActions"] = ActionMap(["OkCancelActions"],
-			{
+		{
 			"cancel": self.exit,
 			"ok": self.select,
-			})
+		})
 		self["EPGSearchHistoryActions"] = ActionMap(["ColorActions"],
-			{
+		{
+			"red": self.exit,
+			"green": self.select,
 			"yellow": self.edit,
-			}, -2)
+		}, -2)
 
+		self["key_red"] = Button(_("Cancel"))
+		self["key_green"] = Button(_("OK"))
 		self["key_yellow"] = Button(_("Edit & search"))
 		self["help"] = Label(_("Select item for search and press 'OK' or edit item with yellow button."))
 
