@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: AudioSync\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-16 16:27+0430\n"
+"POT-Creation-Date: 2023-03-18 16:36+0100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: robertut <robertut@yahoo.com>\n"
 "Language-Team: \n"
@@ -122,6 +122,9 @@ msgstr "Képernyő elhelyezése a jobb felső sarokba"
 
 msgid "Move screen up"
 msgstr "Képernyő mozgatása felfelé"
+
+msgid "No audio track available (yet). Please try again once an audio track is available."
+msgstr ""
 
 msgid "OK"
 msgstr "OK"

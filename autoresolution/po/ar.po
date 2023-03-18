@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Automatic Screen Resolution V. 0.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-13 18:34+0200\n"
+"POT-Creation-Date: 2023-03-18 16:36+0100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: mosad - مساعد الجعيد <abo-mishal@hotmail.com>\n"
 "Language-Team: mosad - مساعد الجعيد\n"
@@ -197,20 +197,11 @@ msgstr "وضع الفديو: %s"
 msgid "Videomode: %s %s %s"
 msgstr "وضع الفديو: %s %s %s"
 
-msgid "auto"
-msgstr "تلقائي"
-
 msgid "default"
 msgstr "إفتراضى"
 
 msgid "no"
 msgstr ""
-
-msgid "off"
-msgstr "لا يعمـل"
-
-msgid "on"
-msgstr "على"
 
 msgid "second"
 msgstr "ثانوي"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-13 18:34+0200\n"
+"POT-Creation-Date: 2023-03-18 16:36+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -75,6 +75,9 @@ msgstr ""
 msgid "OK"
 msgstr ""
 
+msgid "Only AC3/DTS(HD)"
+msgstr ""
+
 msgid "Press OK to select a service"
 msgstr ""
 
@@ -97,7 +100,4 @@ msgid "You must select a valid service!"
 msgstr ""
 
 msgid "toggle on/off plugin only for session"
-msgstr ""
-
-msgid "Only AC3/DTS(HD)"
 msgstr ""

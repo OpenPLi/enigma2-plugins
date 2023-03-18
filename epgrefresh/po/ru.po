@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-11 09:52+0200\n"
+"POT-Creation-Date: 2021-08-13 18:34+0200\n"
 "PO-Revision-Date: 2015-01-20 16:12+0200\n"
 "Last-Translator: Dima73 <Dima-73@inbox.lv>\n"
 "Language-Team: openli.org\n"
@@ -573,6 +573,9 @@ msgstr "добавить сервис к обновлению EPG"
 msgid "add to EPGRefresh"
 msgstr "добавить к обновлению EPG"
 
+msgid "always"
+msgstr "всегда"
+
 msgid "channel selection"
 msgstr "селектор каналов"
 
@@ -596,6 +599,3 @@ msgstr "нигде"
 
 msgid "only 'epgrefresh' wakeup"
 msgstr "только при включении от 'epgrefresh'"
-
-msgid "always"
-msgstr "всегда"

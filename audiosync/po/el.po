@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: AudioSync\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-16 16:27+0430\n"
+"POT-Creation-Date: 2023-03-18 16:36+0100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: athoik\n"
 "Language-Team: satdreamgr <satdreamgr.com>\n"
@@ -118,6 +118,9 @@ msgstr "Μετακίνηση παραθύρου στην πάνω δεξιά γ�
 
 msgid "Move screen up"
 msgstr "Μετακίνηση παραθύρου προς τα πάνω"
+
+msgid "No audio track available (yet). Please try again once an audio track is available."
+msgstr ""
 
 msgid "OK"
 msgstr "Επιβεβαίωση"

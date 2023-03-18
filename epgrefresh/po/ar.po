@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Enigma2 EPGRefresh Plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-11 09:52+0200\n"
+"POT-Creation-Date: 2021-08-13 18:34+0200\n"
 "PO-Revision-Date: 2020-10-01 16:14+0300\n"
 "Last-Translator: mosad - مساعد الجعيد <abo-mishal@hotmail.com>\n"
 "Language-Team: mosad - مساعد الجعيد\n"
@@ -627,6 +627,9 @@ msgstr "إضافة إلى تحديث دليل البرامج الإلكترون�
 msgid "add to EPGRefresh"
 msgstr "إضافة إلى تحديث دليل البرامج الإلكترونية"
 
+msgid "always"
+msgstr ""
+
 msgid "channel selection"
 msgstr ""
 
@@ -647,4 +650,7 @@ msgid "never"
 msgstr "أبدا"
 
 msgid "nowhere"
+msgstr ""
+
+msgid "only 'epgrefresh' wakeup"
 msgstr ""

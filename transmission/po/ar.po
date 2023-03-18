@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: transmission\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-29 00:28+0100\n"
+"POT-Creation-Date: 2023-03-18 16:36+0100\n"
 "PO-Revision-Date: 2020-11-05 16:16+0300\n"
 "Last-Translator: mosad - مساعد الجعيد <abo-mishal@hotmail.com>\n"
 "Language-Team: mosad - مساعد الجعيد\n"
@@ -18,8 +18,15 @@ msgstr ""
 "X-Generator: Poedit 2.4.1\n"
 "Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
 
+#, python-format
+msgid "%d Torrent(s) added in '%s', %d failed."
+msgstr ""
+
 msgid "About transmission version"
 msgstr "حول إصدار الإرسال"
+
+msgid "Add torrent..."
+msgstr ""
 
 msgid "Bittorrent client for enigma2"
 msgstr "عميل البت تورنت من الانجما2"
@@ -74,9 +81,6 @@ msgstr "قائمة الإرسال"
 
 msgid "Unpause all downloads"
 msgstr "قم بإلغاء الإيقاف المؤقت لجميع التنزيلات"
-
-msgid "transmission-daemon"
-msgstr "إرسال-الاستضافة"
 
 msgid ""
 "transmission-daemon not installed!\n"

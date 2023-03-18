@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Enigma2 EPGRefresh Plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-11 09:52+0200\n"
+"POT-Creation-Date: 2021-08-13 18:34+0200\n"
 "PO-Revision-Date: 2009-09-28 09:12+0100\n"
 "Last-Translator: WeeGull <weegull@hotmail.com>\n"
 "Language-Team: german <de@li.org>\n"
@@ -605,6 +605,9 @@ msgstr "Lägg till i EPGRefresh"
 msgid "add to EPGRefresh"
 msgstr "Lägg till i EPGRefresh"
 
+msgid "always"
+msgstr ""
+
 msgid "channel selection"
 msgstr ""
 
@@ -624,4 +627,7 @@ msgid "never"
 msgstr ""
 
 msgid "nowhere"
+msgstr ""
+
+msgid "only 'epgrefresh' wakeup"
 msgstr ""

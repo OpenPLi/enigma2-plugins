@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-plugins 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-11 09:52+0200\n"
+"POT-Creation-Date: 2021-08-13 18:34+0200\n"
 "PO-Revision-Date: 2009-02-10 13:58+0100\n"
 "Last-Translator: José Juan Zapater <josej@zapater.fdns.net>\n"
 "Language-Team: none\n"
@@ -604,6 +604,9 @@ msgstr "Editar Canales a refrescar"
 msgid "add to EPGRefresh"
 msgstr "Configurar EPGRefresh"
 
+msgid "always"
+msgstr ""
+
 msgid "channel selection"
 msgstr ""
 
@@ -623,4 +626,7 @@ msgid "never"
 msgstr ""
 
 msgid "nowhere"
+msgstr ""
+
+msgid "only 'epgrefresh' wakeup"
 msgstr ""

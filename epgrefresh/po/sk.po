@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Enigma2 EPGRefresh Plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-11 09:52+0200\n"
+"POT-Creation-Date: 2021-08-13 18:34+0200\n"
 "PO-Revision-Date: 2017-03-24 14:44+0100\n"
 "Last-Translator: ims <andrej.tobola@gmail.com>\n"
 "Language-Team: PLi\n"
@@ -585,6 +585,9 @@ msgstr "pridať stanicu do EPGRefresh"
 msgid "add to EPGRefresh"
 msgstr "Pridať do EPGRefresh"
 
+msgid "always"
+msgstr ""
+
 msgid "channel selection"
 msgstr "v zozname staníc"
 
@@ -605,3 +608,6 @@ msgstr "nikdy"
 
 msgid "nowhere"
 msgstr "nikde"
+
+msgid "only 'epgrefresh' wakeup"
+msgstr ""

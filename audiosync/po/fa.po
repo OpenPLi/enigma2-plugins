@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: audio sync Persian Translation\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-16 16:27+0430\n"
+"POT-Creation-Date: 2023-03-18 16:36+0100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: mehdi <mehdi_ar_yekta@yahoo.com>\n"
 "Language-Team: Persian Professionals <persianpros@yahoo.com>\n"
@@ -122,6 +122,9 @@ msgstr "حرکت دادن صفحه به گوشه راست بالایی"
 
 msgid "Move screen up"
 msgstr "حرکت دادن صفحه به بالا"
+
+msgid "No audio track available (yet). Please try again once an audio track is available."
+msgstr ""
 
 msgid "OK"
 msgstr "مورد تایید است"

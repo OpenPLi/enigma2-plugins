@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Transmission\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-11 12:34+0200\n"
+"POT-Creation-Date: 2023-03-18 16:36+0100\n"
 "PO-Revision-Date: 2021-09-15 19:20+0300\n"
 "Last-Translator: Vytenis P. <vyteniui@gmail.com>\n"
 "Language-Team: Vytenis P. <vyteniui@gmail.com>\n"
@@ -18,8 +18,15 @@ msgstr ""
 "X-Generator: Poedit 3.0\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
+#, python-format
+msgid "%d Torrent(s) added in '%s', %d failed."
+msgstr ""
+
 msgid "About transmission version"
 msgstr "Transmission versija"
+
+msgid "Add torrent..."
+msgstr ""
 
 msgid "Bittorrent client for enigma2"
 msgstr "Enigma2 BitTorrent klientas"
@@ -74,9 +81,6 @@ msgstr "Transmission meniu"
 
 msgid "Unpause all downloads"
 msgstr "Pratęsti visus parsisiuntimus"
-
-msgid "transmission-daemon"
-msgstr "Transmission valdiklis"
 
 msgid ""
 "transmission-daemon not installed!\n"

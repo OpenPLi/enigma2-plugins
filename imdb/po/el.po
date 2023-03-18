@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-16 16:27+0430\n"
+"POT-Creation-Date: 2023-03-18 16:36+0100\n"
 "PO-Revision-Date: 2016-09-29 04:38+0300\n"
 "Last-Translator: MCelliot_g <mcelliot_g@hotmail.com>\n"
 "Language-Team: \n"
@@ -18,9 +18,6 @@ msgstr ""
 "X-Generator: Poedit 1.8.8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-msgid " as "
-msgstr " ως "
-
 msgid "* = Restart Required"
 msgstr ""
 
@@ -30,25 +27,19 @@ msgstr "Διφορούμενα αποτελέσματα"
 msgid "Cancel"
 msgstr "Ακύρωση"
 
-msgid "Cast: "
-msgstr "Πρωταγωνιστές: "
-
-msgid "Channel Selection"
-msgstr "Επιλογή Καναλιών"
-
-msgid "Content:"
-msgstr "Περιεχόμενο:"
-
 #, fuzzy
-msgid "Could't get event name"
+msgid "Couldn't get event name"
 msgstr "Αδυναμία λήψης Ονόματος Εκπομπής"
 
 msgid "Details"
 msgstr "Λεπτομέρειες"
 
-#, python-format
-msgid "Downloading Movie Poster: %s..."
+#, fuzzy
+msgid "Downloading Movie Poster..."
 msgstr "Λήψη Πόστερ Ταινίας: %s..."
+
+msgid "E"
+msgstr ""
 
 #, fuzzy
 msgid "Enable this to be able to access IMDb search setup from within the plugin browser."
@@ -78,8 +69,8 @@ msgstr "Αναζήτηση IMDb"
 msgid "Extra Info"
 msgstr "Πρόσθετες Πληροφορίες"
 
-msgid "Genre:"
-msgstr "Είδος:"
+msgid "IMDB Exception"
+msgstr ""
 
 msgid "IMDb Details parsed"
 msgstr "Οι Λεπτομέρειες IMDb αναλύθηκαν"
@@ -99,18 +90,8 @@ msgstr "Πρόσθετο IMDb"
 msgid "IMDb Re-Download completed"
 msgstr "Η επανάληψη λήψης IMDb ολοκληρώθηκε"
 
-#, fuzzy
-msgid "IMDb Save - Download completed"
-msgstr "Η Αποθήκευση Λήψης IMDb ολοκληρώθηκε"
-
 msgid "IMDb Setup"
 msgstr "Ρυθμίσεις IMDb"
-
-#, fuzzy
-msgid "IMDb can not get Movie Information to write to .jpg and .txt files!"
-msgstr ""
-"Αδυναμία λήψης Πληροφοριών Ταινίας από το IMDb,\n"
-" για εγγραφή αρχείων .jpg και .txt!"
 
 #, fuzzy
 msgid "IMDb can not get Movie Information to write to .txt file!"
@@ -121,6 +102,10 @@ msgstr ""
 msgid "IMDb query failed!"
 msgstr "Η αναζήτηση στο IMDb απέτυχε!"
 
+#, fuzzy
+msgid "IMDb save completed"
+msgstr "Η Λήψη IMDb ολοκληρώθηκε"
+
 msgid "IMDb search"
 msgstr "Αναζήτηση IMDb"
 
@@ -128,9 +113,16 @@ msgstr "Αναζήτηση IMDb"
 msgid "IMDb setup"
 msgstr "Ρυθμίσεις IMDb"
 
-#, fuzzy
-msgid "Lookup"
-msgstr "Αναζήτηση στο IMDb"
+#, python-format
+msgid "Ignoring invalid imdbId: %s"
+msgstr ""
+
+msgid "Include episodes in the results. Takes effect after the next search of IMDb for a show name."
+msgstr ""
+
+#, python-format
+msgid "Local file does not exist: %s"
+msgstr ""
 
 #, fuzzy
 msgid "Menu"
@@ -158,17 +150,8 @@ msgstr ""
 msgid "Page up"
 msgstr ""
 
-msgid "Play Trailer"
-msgstr "Αναπαραγωγή Τρέιλερ"
-
 msgid "Please select the matching entry"
 msgstr "Παρακαλώ επιλέξτε το στοιχείο που ταιριάζει"
-
-msgid "Plot Outline"
-msgstr ""
-
-msgid "Production Countries:"
-msgstr "Χώρες Παραγωγής:"
 
 #, python-format
 msgid "Query IMDb: %s"
@@ -178,11 +161,8 @@ msgstr "Αναζήτηση IMDb: %s..."
 msgid "Re-Query IMDb: %s..."
 msgstr "Επαναζήτηση IMDb: %s..."
 
-msgid "Release Date:"
-msgstr "Ημερομηνία Κυκλοφορίας:"
-
-msgid "Runtime:"
-msgstr "Χρονική διάρκεια:"
+msgid "S"
+msgstr ""
 
 #, fuzzy
 msgid "Save current Details as .html for offline use"
@@ -194,15 +174,9 @@ msgstr "Αποθήκευση τρεχουσών Πληροφοριών ως .txt
 msgid "Save current Poster and Details as .txt"
 msgstr "Αποθήκευση τρέχοντος Πόστερ και Πληροφοριών ως .txt"
 
-msgid "Search Trailer"
-msgstr "Αναζήτηση Τρέιλερ"
-
 #, fuzzy
 msgid "Search for details from the Internet Movie Database"
 msgstr "Αναζήτηση λεπτομερειών από τη Διαδικτυακή Βάση Δεδομένων Ταινιών"
-
-msgid "Select from EPG"
-msgstr "Επιλογή από το EPG"
 
 #, fuzzy
 msgid "Settings for Internet Movie Database searches"
@@ -211,10 +185,16 @@ msgstr "Η Διαδικτυακή Βάση Δεδομένων Ταινιών"
 msgid "Setup"
 msgstr "Εγκατάσταση"
 
+msgid "Show a bigger poster"
+msgstr ""
+
 msgid "Show episode and year information for cast when available. Takes effect after the next fetch of show details."
 msgstr ""
 
 msgid "Show episode and year information in cast list"
+msgstr ""
+
+msgid "Show episodes in title menu"
 msgstr ""
 
 msgid "Show full movie or series name in title menu"
@@ -233,6 +213,9 @@ msgstr ""
 msgid "Show movie and series extra details"
 msgstr ""
 
+msgid "Show movie and series synopsis"
+msgstr ""
+
 #, fuzzy
 msgid "Show search in plugin browser"
 msgstr "Εμφάνιση στον πλοηγό προσθέτων"
@@ -242,6 +225,9 @@ msgid "Show setup in plugin browser"
 msgstr "Εμφάνιση στον πλοηγό προσθέτων"
 
 msgid "Show the whole IMDb title information for a movie or series, including, for example, alternative names and whether it's a series. Takes effect after the next search of IMDb for a show name."
+msgstr ""
+
+msgid "Synopsis"
 msgstr ""
 
 msgid "The Internet Movie Database"
@@ -254,14 +240,14 @@ msgstr "Αυτή η επιλογή επιτρέπει την προσθήκη λ
 msgid "Title Menu"
 msgstr "Μενού Τίτλου"
 
-msgid "Unknown category"
-msgstr ""
-
-msgid "User Rating"
-msgstr "Βαθμολογία Χρηστών"
-
 msgid "Words / phrases to ignore "
 msgstr "Λέξεις / φράσεις προς αγνόηση "
 
+msgid "connection error"
+msgstr ""
+
 msgid "no user rating yet"
 msgstr "χωρίς βαθμολογία χρήστη ακόμα"
+
+msgid "timeout"
+msgstr ""

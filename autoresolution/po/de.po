@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Automatic Screen Resolution V. 0.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-13 18:34+0200\n"
+"POT-Creation-Date: 2023-03-18 16:36+0100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: JuSt611 <Software@Strasdas.de>\n"
 "Language-Team: JuSt611\n"
@@ -204,20 +204,11 @@ msgstr ""
 msgid "Videomode: %s %s %s"
 msgstr ""
 
-msgid "auto"
-msgstr "automatisch"
-
 msgid "default"
 msgstr "Standard"
 
 msgid "no"
 msgstr ""
-
-msgid "off"
-msgstr "aus"
-
-msgid "on"
-msgstr "ein"
 
 msgid "second"
 msgstr "Sekunde"

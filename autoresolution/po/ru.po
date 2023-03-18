@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Automatic Screen Resolution V. 0.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-13 18:34+0200\n"
+"POT-Creation-Date: 2023-03-18 16:36+0100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Dimitrij <dima-73@inbox.lv>\n"
 "Language-Team: openPLi Dimitrij\n"
@@ -196,20 +196,11 @@ msgstr "Видеорежим: %s"
 msgid "Videomode: %s %s %s"
 msgstr "Видеорежим: %s %s %s"
 
-msgid "auto"
-msgstr "auto"
-
 msgid "default"
 msgstr "дефолт"
 
 msgid "no"
 msgstr ""
-
-msgid "off"
-msgstr "off"
-
-msgid "on"
-msgstr "on"
 
 msgid "second"
 msgstr "сек."

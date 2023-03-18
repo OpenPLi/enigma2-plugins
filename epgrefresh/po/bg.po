@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-11 09:52+0200\n"
+"POT-Creation-Date: 2021-08-13 18:34+0200\n"
 "PO-Revision-Date: 2017-02-05 23:42+0200\n"
 "Last-Translator: peter <sct2003@abv.bg>\n"
 "Language-Team: Bulgarian <>\n"
@@ -588,6 +588,9 @@ msgstr "добавяне канала към EPGRefresh"
 msgid "add to EPGRefresh"
 msgstr "добавяне към EPGRefresh"
 
+msgid "always"
+msgstr ""
+
 msgid "channel selection"
 msgstr "избор на канали"
 
@@ -608,3 +611,6 @@ msgstr "никога"
 
 msgid "nowhere"
 msgstr "никъде"
+
+msgid "only 'epgrefresh' wakeup"
+msgstr ""

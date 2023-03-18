@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2 - epgrefresh\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-11 09:52+0200\n"
+"POT-Creation-Date: 2021-08-13 18:34+0200\n"
 "PO-Revision-Date: 2019-07-28 12:04+0200\n"
 "Last-Translator: Frenske <voorzitter@openpli.org>\n"
 "Language-Team: <Benny.DeTandt@gmail.com>\n"
@@ -593,6 +593,9 @@ msgstr "voeg zenders toe aan EPGRefresh"
 msgid "add to EPGRefresh"
 msgstr "toevoegen aan EPGRefresh"
 
+msgid "always"
+msgstr ""
+
 msgid "channel selection"
 msgstr "Zenderkeuze"
 
@@ -613,3 +616,6 @@ msgstr "nooit"
 
 msgid "nowhere"
 msgstr "Nergens"
+
+msgid "only 'epgrefresh' wakeup"
+msgstr ""

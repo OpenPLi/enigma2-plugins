@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Enigma 2 IMDb Plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-16 16:27+0430\n"
+"POT-Creation-Date: 2023-03-18 16:36+0100\n"
 "PO-Revision-Date: 2015-07-26 16:55+0100\n"
 "Last-Translator: Rob van der Does <RobvanderDoes@Gmail.com>\n"
 "Language-Team: Andy Blackburn/Rob van der Does\n"
@@ -21,9 +21,6 @@ msgstr ""
 "X-Poedit-Country: NETHERLANDS\n"
 "X-Poedit-SearchPath-0: ../src\n"
 
-msgid " as "
-msgstr " als "
-
 msgid "* = Restart Required"
 msgstr ""
 
@@ -33,25 +30,19 @@ msgstr "Geen eenduidige resultaten"
 msgid "Cancel"
 msgstr "Annuleer"
 
-msgid "Cast: "
-msgstr "Cast: "
-
-msgid "Channel Selection"
-msgstr "Kanaallijst"
-
-msgid "Content:"
-msgstr "Inhoud:"
-
 #, fuzzy
-msgid "Could't get event name"
+msgid "Couldn't get event name"
 msgstr "Kon de naam van het event niet bepalen"
 
 msgid "Details"
 msgstr "Details"
 
-#, python-format
-msgid "Downloading Movie Poster: %s..."
+#, fuzzy
+msgid "Downloading Movie Poster..."
 msgstr "Movie poster wordt gedownload: %s..."
+
+msgid "E"
+msgstr ""
 
 #, fuzzy
 msgid "Enable this to be able to access IMDb search setup from within the plugin browser."
@@ -81,8 +72,8 @@ msgstr "Geen passende titel in de IMDB gevonden."
 msgid "Extra Info"
 msgstr "Extra Info"
 
-msgid "Genre:"
-msgstr "Genre:"
+msgid "IMDB Exception"
+msgstr ""
 
 msgid "IMDb Details parsed"
 msgstr "IMDB details ingelezen"
@@ -102,18 +93,8 @@ msgstr "IMDb Plugin"
 msgid "IMDb Re-Download completed"
 msgstr "IMDB-Download nogmaals uitgevoerd"
 
-#, fuzzy
-msgid "IMDb Save - Download completed"
-msgstr "IMDb opslaan gereed"
-
 msgid "IMDb Setup"
 msgstr "IMDb instellingen"
-
-#, fuzzy
-msgid "IMDb can not get Movie Information to write to .jpg and .txt files!"
-msgstr ""
-"IMDb kan geen filminformatie vinden,\n"
-"schrijven als .jpg en .txt bestanden "
 
 #, fuzzy
 msgid "IMDb can not get Movie Information to write to .txt file!"
@@ -125,6 +106,10 @@ msgid "IMDb query failed!"
 msgstr "Zoeken in de IMDb mislukt!"
 
 #, fuzzy
+msgid "IMDb save completed"
+msgstr "Download van IMDb voltooid"
+
+#, fuzzy
 msgid "IMDb search"
 msgstr "Geen passende titel in de IMDB gevonden."
 
@@ -132,9 +117,16 @@ msgstr "Geen passende titel in de IMDB gevonden."
 msgid "IMDb setup"
 msgstr "IMDb instellingen"
 
-#, fuzzy
-msgid "Lookup"
-msgstr "Zoeken"
+#, python-format
+msgid "Ignoring invalid imdbId: %s"
+msgstr ""
+
+msgid "Include episodes in the results. Takes effect after the next search of IMDb for a show name."
+msgstr ""
+
+#, python-format
+msgid "Local file does not exist: %s"
+msgstr ""
 
 #, fuzzy
 msgid "Menu"
@@ -162,17 +154,8 @@ msgstr ""
 msgid "Page up"
 msgstr ""
 
-msgid "Play Trailer"
-msgstr "Speel Trailer"
-
 msgid "Please select the matching entry"
 msgstr "Maak de juiste keuze"
-
-msgid "Plot Outline"
-msgstr ""
-
-msgid "Production Countries:"
-msgstr "Productieland"
 
 #, python-format
 msgid "Query IMDb: %s"
@@ -182,11 +165,8 @@ msgstr "Zoekslag IMDb: %s"
 msgid "Re-Query IMDb: %s..."
 msgstr "Nieuwe zoekslag in de IMDb: %s..."
 
-msgid "Release Date:"
-msgstr "Releasedatum:"
-
-msgid "Runtime:"
-msgstr "Duur:"
+msgid "S"
+msgstr ""
 
 #, fuzzy
 msgid "Save current Details as .html for offline use"
@@ -198,15 +178,9 @@ msgstr "Sla huidige details op als .txt"
 msgid "Save current Poster and Details as .txt"
 msgstr "Sla huidige poster en details op als .txt"
 
-msgid "Search Trailer"
-msgstr "Zoek Trailer"
-
 #, fuzzy
 msgid "Search for details from the Internet Movie Database"
 msgstr "Filminformatie van de Internet Movie Database"
-
-msgid "Select from EPG"
-msgstr "Kies vanuit de EPG"
 
 #, fuzzy
 msgid "Settings for Internet Movie Database searches"
@@ -215,10 +189,16 @@ msgstr "De Internet Movie Database"
 msgid "Setup"
 msgstr "Instellingen"
 
+msgid "Show a bigger poster"
+msgstr ""
+
 msgid "Show episode and year information for cast when available. Takes effect after the next fetch of show details."
 msgstr ""
 
 msgid "Show episode and year information in cast list"
+msgstr ""
+
+msgid "Show episodes in title menu"
 msgstr ""
 
 msgid "Show full movie or series name in title menu"
@@ -236,6 +216,9 @@ msgstr ""
 msgid "Show movie and series extra details"
 msgstr ""
 
+msgid "Show movie and series synopsis"
+msgstr ""
+
 #, fuzzy
 msgid "Show search in plugin browser"
 msgstr "Toon in plugin browser"
@@ -245,6 +228,9 @@ msgid "Show setup in plugin browser"
 msgstr "Toon in plugin browser"
 
 msgid "Show the whole IMDb title information for a movie or series, including, for example, alternative names and whether it's a series. Takes effect after the next search of IMDb for a show name."
+msgstr ""
+
+msgid "Synopsis"
 msgstr ""
 
 msgid "The Internet Movie Database"
@@ -257,14 +243,14 @@ msgstr "Deze optie maakt het mogelijk woorden/zinnen uit te sluiten van de zoeks
 msgid "Title Menu"
 msgstr "Titel menu"
 
-msgid "Unknown category"
-msgstr ""
-
-msgid "User Rating"
-msgstr "Gebruikers waardering"
-
 msgid "Words / phrases to ignore "
 msgstr "Woorden/zinnen die genegeerd worden"
 
+msgid "connection error"
+msgstr ""
+
 msgid "no user rating yet"
 msgstr "nog geen gebruikers waardering"
+
+msgid "timeout"
+msgstr ""

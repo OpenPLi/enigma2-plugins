@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"POT-Creation-Date: 2023-03-18 16:36+0100\n"
 "PO-Revision-Date: 2016-05-31 22:31+0300\n"
 "Last-Translator: Dimitrij <Dima-73@inbox.lv>\n"
 "Language-Team: LANGUAGE <Dima-73@inbox.lv>\n"
@@ -12,8 +12,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.8.4\n"
 
+#, python-format
+msgid "%d Torrent(s) added in '%s', %d failed."
+msgstr "%d торрент(ов) добавлен в '%s', %d ошибка."
+
 msgid "About transmission version"
 msgstr "Информация о версии transmission"
+
+msgid "Add torrent..."
+msgstr "Добавить торрент..."
 
 msgid "Bittorrent client for enigma2"
 msgstr "Битторрент клиент для Энигма2"
@@ -68,12 +75,6 @@ msgstr "Меню Transmission"
 
 msgid "Unpause all downloads"
 msgstr "Возобновление всех загрузок"
-
-msgid "Add torrent..."
-msgstr "Добавить торрент..."
-
-msgid "%d Torrent(s) added in '%s', %d failed."
-msgstr "%d торрент(ов) добавлен в '%s', %d ошибка."
 
 msgid ""
 "transmission-daemon not installed!\n"
