@@ -83,13 +83,13 @@ msgid "EPGSearch Setup"
 msgstr "Поиск EPG - настройки"
 
 msgid "Edit & search"
-msgstr "Редактировать & поиск"
+msgstr "Редактор/поиск"
 
 msgid "Encoding Search to EPG"
 msgstr "Кодировка для поиска EPG"
 
 msgid "Enter text to search for"
-msgstr "Введите текст для поиска"
+msgstr "Ввод текста поиска"
 
 msgid "Export selected as AutoTimer"
 msgstr "Экспорт выбранного как Автотаймер"
@@ -98,7 +98,7 @@ msgid "History"
 msgstr "История"
 
 msgid "How many entries to keep in the search history at most. 0 disables history entirely!"
-msgstr "Сколько элементов хранить в истории поиска. 0 - отключает историю полностью! "
+msgstr "Сколько элементов хранить в истории поиска. 0 - отключает историю полностью!"
 
 msgid "If 'Search only bouquets' is enabled, show service name as in bouquets for renamed services."
 msgstr "Если 'Поиск только в фаворитах' включен, то показывать имя сервиса как в букетах, для переименованных сервисов."
@@ -125,7 +125,7 @@ msgid "Length of History"
 msgstr "Количество истории поиска"
 
 msgid "List of history is cleared !"
-msgstr "Лист истории очищен !"
+msgstr "Список истории поиска очищен!"
 
 msgid "Lookup in TMBD"
 msgstr "Поиск в TMBD"
@@ -137,7 +137,7 @@ msgid "New Search"
 msgstr "Новый поиск"
 
 msgid "No history !"
-msgstr "Нет истории !"
+msgstr "Нет списка истории!"
 
 msgid "OK"
 msgstr "OK"
@@ -161,7 +161,7 @@ msgid "Search event in EPG"
 msgstr "Поиск события в EPG"
 
 msgid "Search for TMDb info"
-msgstr "Поиск в TMDb инфо"
+msgstr "Поиск в TMBD"
 
 msgid "Search only bouquets"
 msgstr "Поиск только в фаворитах"
@@ -224,7 +224,7 @@ msgid "choice (Search and standard)"
 msgstr "выбор (поиск и стандарт)"
 
 msgid "exact match"
-msgstr "точное совпадение"
+msgstr "точное совпадение названия"
 
 msgid "only Search"
 msgstr "только поиск"
@@ -233,7 +233,7 @@ msgid "partial description"
 msgstr "частичное совпадение описания"
 
 msgid "partial match"
-msgstr "частичное совпадение"
+msgstr "частичное совпадение названия"
 
 msgid "search EPG"
 msgstr "поиск EPG"
@@ -243,3 +243,6 @@ msgstr "поиск EPG..."
 
 msgid "title starts with"
 msgstr "название начинается с"
+
+msgid "title ends with"
+msgstr "название заканчивается на"
