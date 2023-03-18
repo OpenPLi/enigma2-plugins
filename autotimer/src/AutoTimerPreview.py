@@ -12,6 +12,8 @@ from Components.Sources.StaticText import StaticText
 from ServiceReference import ServiceReference
 from Tools.FuzzyDate import FuzzyTime
 from enigma import getDesktop
+from AutoTimerList import getBouquetChannelList
+prewBouquetChannelListList = None
 HD = False
 if getDesktop(0).size().width() >= 1280:
 	HD = True
@@ -72,9 +74,22 @@ class AutoTimerPreview(Screen):
 		self.sort_type = 0
 
 		# name, begin, end, serviceref, timername -> name, begin, timername, sname, timestr
+		def renameIPTV(sref):
+			global prewBouquetChannelListList
+			iptv_text = ""
+			if ":http" in sref:
+				if prewBouquetChannelListList is None:
+					prewBouquetChannelListList = getBouquetChannelList(iptv_only=True)
+				if prewBouquetChannelListList:
+					for service in prewBouquetChannelListList:
+						if sref in service:
+							sref = service
+							iptv_text = " (IPTV)"
+							break
+			return ServiceReference(sref).getServiceName().replace('\xc2\x86', '').replace('\xc2\x87', '').encode('utf-8', 'ignore') + iptv_text
 		self.timers = [
 			(x[0], x[1], x[4],
-			ServiceReference(x[3]).getServiceName().replace('\xc2\x86', '').replace('\xc2\x87', ''),
+			renameIPTV(x[3]),
 			(("%s, %s ... %s (%d " + _("mins") + ")") % (FuzzyTime(x[1]) + FuzzyTime(x[2])[1:] + ((x[2] - x[1]) / 60,))))
 			for x in timers
 		]

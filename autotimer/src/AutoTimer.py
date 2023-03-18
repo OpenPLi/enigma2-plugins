@@ -323,7 +323,9 @@ class AutoTimer:
 			except UnicodeDecodeError:
 				pass
 
-		if timer.searchType == "favoritedesc":
+		self.isIPTV = bool([service for service in timer.services if ":http" in service])
+
+		if timer.searchType == "favoritedesc" or self.isIPTV:
 			epgmatches = []
 
 			casesensitive = timer.searchCase == "sensitive"
@@ -342,7 +344,7 @@ class AutoTimer:
 								service = services.getNext()
 								if not service.valid():
 									break
-								playable = not (service.flags & (eServiceReference.isMarker | eServiceReference.isDirectory)) or (service.flags & eServiceReference.isNumberedMarker)
+								playable = not (service.flags & (eServiceReference.isMarker | eServiceReference.isDirectory | eServiceReference.isNumberedMarker))
 								if playable:
 									test.append((service.toString(), 0, -1, -1))
 			else: # Get all bouquets
@@ -365,12 +367,12 @@ class AutoTimer:
 					refstr = '%s FROM BOUQUET "userbouquet.favourites.tv" ORDER BY bouquet' % (service_types_tv)
 					bouquetroot = eServiceReference(refstr)
 					info = serviceHandler.info(bouquetroot)
-					if info:
+					if info and bouquetroot.valid() and not bouquetroot.flags & eServiceReference.isInvisible:
 						bouquetlist.append(bouquetroot)
 				if bouquetlist:
 					for bouquet in bouquetlist:
 						if not bouquet.valid():
-							break
+							continue
 						if bouquet.flags & eServiceReference.isDirectory:
 							services = serviceHandler.list(bouquet)
 							if services:
@@ -378,7 +380,7 @@ class AutoTimer:
 									service = services.getNext()
 									if not service.valid():
 										break
-									playable = not (service.flags & (eServiceReference.isMarker | eServiceReference.isDirectory)) or (service.flags & eServiceReference.isNumberedMarker)
+									playable = not (service.flags & (eServiceReference.isMarker | eServiceReference.isDirectory | eServiceReference.isNumberedMarker))
 									if playable:
 										test.append((service.toString(), 0, -1, -1))
 
@@ -390,8 +392,16 @@ class AutoTimer:
 
 				# Filter events
 				for serviceref, eit, name, begin, duration, shortdesc, extdesc in allevents:
-					if match in (shortdesc if casesensitive else shortdesc.lower()) or match in (extdesc if casesensitive else extdesc.lower()) or match in (name if casesensitive else name.lower()):
-						epgmatches.append((serviceref, eit, name, begin, duration, shortdesc, extdesc))
+					if timer.searchType == "favoritedesc":
+						if match in (shortdesc if casesensitive else shortdesc.lower()) or match in (extdesc if casesensitive else extdesc.lower()) or match in (name if casesensitive else name.lower()):
+							epgmatches.append((serviceref, eit, name, begin, duration, shortdesc, extdesc))
+					else: # IPTV streams
+						if timer.searchType == "exact" and match == (name if casesensitive else name.lower()) or \
+							timer.searchType == "partial" and match in (name if casesensitive else name.lower()) or \
+							timer.searchType == "start" and (name if casesensitive else name.lower()).startswith(match) or \
+							timer.searchType == "end" and (name if casesensitive else name.lower()).endswith(match) or \
+							timer.searchType == "description" and (match in (shortdesc if casesensitive else shortdesc.lower()) or match in (extdesc if casesensitive else extdesc.lower())):
+							epgmatches.append((serviceref, eit, name, begin, duration, shortdesc, extdesc))
 
 		else:
 			# Search EPG, default to empty list
