@@ -66,7 +66,7 @@ def getBouquetChannelList(iptv_only=False):
 							sref = service.toString()
 							if iptv_only:
 								if ":http" in sref:
-									channels.append((sref))
+									channels.append(sref)
 							else:
 								channels.append((sref, 0, -1, -1))
 	return channels
@@ -151,7 +151,7 @@ class AutoTimerList(MenuList):
 					if ":http" in t and BouquetChannelListList:
 						for s in BouquetChannelListList:
 							if t in s:
-								channels.append(ServiceReference(s).getServiceName().replace('\xc2\x86', '').replace('\xc2\x87', '').encode('utf-8', 'ignore') + " (IPTV)")
+								channels.append(ServiceReference(s).getServiceName().replace('\xc2\x86', '').replace('\xc2\x87', '') + " (IPTV)")
 								add = True
 								break
 					if not add:
