@@ -664,7 +664,7 @@ class AutoTimer:
 					if not rtimer.disabled:
 						if self.checkDoubleTimers(timer, name, rtimer.name, begin, rtimer.begin, end, rtimer.end, serviceref, rtimer.service_ref.ref.toString(), enable_multiple_timer):
 							oldExists = True
-							print("[AutoTimer] We found a timer with same start time, skipping event")
+							doLog("[AutoTimer] We found a timer with same start time, skipping event")
 							break
 						if timer.avoidDuplicateDescription >= 2:
 							if self.checkSimilarity(timer, name, rtimer.name, shortdesc, rtimer.description, extdesc, rtimer.extdesc):
