@@ -36,10 +36,11 @@ class EPGSearchSetup(ConfigListScreen, Screen):
 				(_("Use Picons"), config.plugins.epgsearch.picons, _("If this setting is enabled, the plugin adds picons.")),
 				(_("Encoding Search to EPG"), config.plugins.epgsearch.encoding, _("Choosing an encoding. \"UTF-8\" to search for EPG cyrillic.")),
 				(_("Search type"), config.plugins.epgsearch.search_type, _("Select type for search, \"partial match\" for the most extensive search, \"partial description\" for the most description search.")),
+				(_("Search strictness"), config.plugins.epgsearch.search_case, _("Select whether or not you want to enforce case correctness.")),
 				(_("Add \"Search event in EPG\" to event menu"), config.plugins.epgsearch.show_in_furtheroptionsmenu, _("Adds \"Search event in EPG\" item into the event menu (needs restart GUI)")),
 				(_("Add \"Search event in EPG\" to channel menu"), config.plugins.epgsearch.search_in_channelmenu, _("Adds \"Search event in EPG\" item into the channel selection context menu (needs restart GUI)")),
-				(_("Search strictness"), config.plugins.epgsearch.search_case, _("Select whether or not you want to enforce case correctness.")),
 				(_("Search only bouquets"), config.plugins.epgsearch.bouquet, _("If this setting is enabled, searching EPG in only services in user bouquets.")),
+				(_("Include IPTV services"), config.plugins.epgsearch.include_iptv, _("Include IPTV services in search, in some cases slows down the searching.")),
 				(_("Display name service as in bouquets"), config.plugins.epgsearch.favorit_name, _("If 'Search only bouquets' is enabled, show service name as in bouquets for renamed services.")),
 				(_("Search type for filter"), config.plugins.epgsearch.filter_type, _("Select type for filter search. Press button P +/- for show/hide filter in description after search.")),
 
@@ -64,7 +65,7 @@ class EPGSearchSetup(ConfigListScreen, Screen):
 
 	def updateHelp(self):
 		cur = self["config"].getCurrent()
-		if cur:
+		if cur and len(cur) > 2:
 			self["help"].text = cur[2]
 
 	def save(self):
