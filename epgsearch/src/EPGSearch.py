@@ -38,13 +38,13 @@ typeMap = {
 	"exact": eEPGCache.EXAKT_TITLE_SEARCH,
 	"partial": eEPGCache.PARTIAL_TITLE_SEARCH,
 	"partialdes": eEPGCache.PARTIAL_DESCRIPTION_SEARCH,
-	"start": eEPGCache.START_TITLE_SEARCH
+	"start": eEPGCache.START_TITLE_SEARCH,
+	"end": eEPGCache.END_TITLE_SEARCH
 }
 
 caseMap = {
 	"sensitive": eEPGCache.CASE_CHECK,
-	"insensitive": eEPGCache.NO_CASE_CHECK
-}
+	"insensitive": eEPGCache.NO_CASE_CHECK}
 
 
 def GetTypeMap():
@@ -57,7 +57,6 @@ def GetCaseMap():
 	return caseMap.get(search_case, eEPGCache.NO_CASE_CHECK)
 
 
-# Partnerbox installed and icons in epglist enabled?
 try:
 	from Plugins.Extensions.Partnerbox.PartnerboxEPGList import \
 			isInRemoteTimer, getRemoteClockPixmap
@@ -74,7 +73,6 @@ try:
 except ImportError:
 	PartnerBoxZapRepIcons = False
 
-# AutoTimer installed?
 try:
 	from Plugins.Extensions.AutoTimer.AutoTimerEditor import \
 			addAutotimerFromEvent, addAutotimerFromSearchString
@@ -82,7 +80,8 @@ try:
 except ImportError:
 	autoTimerAvailable = False
 
-# Modified EPGSearchList with support for PartnerBox
+BouquetChannelListList = None
+IptvBouquetChannelListList = None
 
 
 class EPGSearchList(EPGList):
@@ -155,33 +154,6 @@ class EPGSearchList(EPGList):
 		refstr = ':'.join(service.split(':')[:11])
 		for x in self.timer.timer_list:
 			check = ':'.join(x.service_ref.ref.toString().split(':')[:11]) == refstr
-			if not check:
-				sref = x.service_ref.ref
-				parent_sid = sref.getUnsignedData(5)
-				parent_tsid = sref.getUnsignedData(6)
-				if parent_sid and parent_tsid:
-					# check for subservice
-					sid = sref.getUnsignedData(1)
-					tsid = sref.getUnsignedData(2)
-					sref.setUnsignedData(1, parent_sid)
-					sref.setUnsignedData(2, parent_tsid)
-					sref.setUnsignedData(5, 0)
-					sref.setUnsignedData(6, 0)
-					check = sref.toCompareString() == refstr
-					num = 0
-					if check:
-						check = False
-						event = eEPGCache.getInstance().lookupEventId(sref, eventid)
-						num = event and event.getNumOfLinkageServices() or 0
-					sref.setUnsignedData(1, sid)
-					sref.setUnsignedData(2, tsid)
-					sref.setUnsignedData(5, parent_sid)
-					sref.setUnsignedData(6, parent_tsid)
-					for cnt in range(num):
-						subservice = event.getLinkageService(sref, cnt)
-						if sref.toCompareString() == subservice.toCompareString():
-							check = True
-							break
 			if check:
 				timer_end = x.end
 				timer_begin = x.begin
@@ -193,7 +165,7 @@ class EPGSearchList(EPGList):
 						timer_begin = begin
 				if x.justplay:
 					type_offset = 5
-					if x.pipzap:
+					if x.pipzap and not x.repeated:
 						type_offset = 30
 					if (timer_end - x.begin) <= 1:
 						timer_end += 60
@@ -614,7 +586,7 @@ class EPGSearch(EPGSelection):
 		self.select = False
 		self.do_filter = None
 		self.eventid = None
-		self.isTMBD = fileExists("/usr/lib/enigma2/python/Plugins/Extensions/TMBD/plugin.py")
+		self.isTMBD = fileExists("/usr/lib/enigma2/python/Plugins/Extensions/TMBD/plugin.pyc")
 		# Partnerbox
 		if PartnerBoxIconsEnabled:
 			EPGSelection.PartnerboxInit(self, False)
@@ -768,7 +740,7 @@ class EPGSearch(EPGSelection):
 				pass
 
 	def runTMBD(self):
-		if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/TMBD/plugin.py"):
+		if self.isTMBD:
 			from Plugins.Extensions.TMBD.plugin import TMBD
 			cur = self["list"].getCurrent()
 			if cur[0] is not None:
@@ -823,9 +795,9 @@ class EPGSearch(EPGSelection):
 				(_("Save search as AutoTimer"), self.addAutoTimer),
 				(_("Export selected as AutoTimer"), self.exportAutoTimer),
 			))
-		if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/TMDb/plugin.py"):
+		if self.isTMBD:
 			options.append((_("Search for TMDb info"), self.opentmdb))
-		if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/IMDb/plugin.py"):
+		if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/IMDb/plugin.pyc"):
 			options.append((_("Open selected in IMDb"), self.openImdb))
 		history = config.plugins.epgsearch.history.value
 		if len(history) > 0:
@@ -976,6 +948,7 @@ class EPGSearch(EPGSelection):
 			self.searchEPG(item)
 
 	def searchEPG(self, searchString=None, searchSave=True):
+		global BouquetChannelListList, IptvBouquetChannelListList
 		if searchString:
 			self.do_filter = None
 			self.eventid = None
@@ -1006,11 +979,44 @@ class EPGSearch(EPGSelection):
 
 			# Search EPG, default to empty list
 			epgcache = eEPGCache.getInstance()  # XXX: the EPGList also keeps an instance of the cache but we better make sure that we get what we want :-)
-			ret = epgcache.search(('RIBDT', 1500, GetTypeMap(), searchString, GetCaseMap())) or []
+			epgmatches = []
+			if IptvBouquetChannelListList == None:
+				BouquetChannelListList, IptvBouquetChannelListList = self.getBouquetChannelList()
+			if config.plugins.epgsearch.include_iptv.value and IptvBouquetChannelListList:
+				_searchString = searchString
+				searchType = config.plugins.epgsearch.search_type.value
+				casesensitive = config.plugins.epgsearch.search_case.value == "sensitive"
+				if not casesensitive:
+					_searchString = _searchString.lower()
+				allevents = []
+				for sref in IptvBouquetChannelListList[:]:
+					lookup = ["RIBDTSE", (sref, 0, -1, -1)]
+					try:
+						event = epgcache.lookupEvent(lookup) or []
+					except Exception as e:
+						print("[EPGSearch] wrong event", e)
+					else:
+						allevents += event
+				# Filter events
+				for serviceref, eit, begin, duration, name, shortdesc, extdesc in allevents:
+					if searchType == "exact" and _searchString == (name if casesensitive else name.lower()) or \
+						searchType == "partial" and _searchString in (name if casesensitive else name.lower()) or \
+						searchType == "start" and (name if casesensitive else name.lower()).startswith(_searchString) or \
+						searchType == "end" and (name if casesensitive else name.lower()).endswith(_searchString) or \
+						searchType == "partialdes" and (_searchString in (shortdesc if casesensitive else shortdesc.lower()) or _searchString in (extdesc if casesensitive else extdesc.lower())):
+						epgmatches.append((serviceref, eit, begin, duration, name))
+						if len(epgmatches) > 1000:
+							del epgmatches[1000:]
+							break
+				del allevents
+			ret = epgcache.search(("RIBDT", 1000, GetTypeMap(), searchString, GetCaseMap())) or []
+			if epgmatches:
+				ret = ret + epgmatches
+				if len(ret) > 1500:
+					del ret[1500:]
 			ret.sort(key=itemgetter(2))  # sort by time
-			if config.plugins.epgsearch.bouquet.value:
+			if ret and config.plugins.epgsearch.bouquet.value:
 				ret = self.sortEPGList(ret)  # sort only user bouquets
-
 			# Update List
 			l = self["list"]
 			l.recalcEntrySize()
@@ -1018,53 +1024,77 @@ class EPGSearch(EPGSelection):
 			l.l.setList(ret)
 
 	def sortEPGList(self, epglist):
-		usr_ref_list = []
-		serviceHandler = eServiceCenter.getInstance()
-		if not config.usage.multibouquet.value:
-			service_types_tv = '1:7:1:0:0:0:0:0:0:0:(type == 1) || (type == 17) || (type == 22) || (type == 25) || (type == 134) || (type == 195)'
-			bqrootstr = '%s FROM BOUQUET "userbouquet.favourites.tv" ORDER BY bouquet' % (service_types_tv)
-			bouquet = eServiceReference(bqrootstr)
-			servicelist = serviceHandler.list(bouquet)
-			if servicelist is not None:
-				while True:
-					service = servicelist.getNext()
-					if not service.valid():
-						break
-					if not (service.flags & (eServiceReference.isMarker | eServiceReference.isDirectory)):
-						usr_ref_list.append(service.toString())
-		else:
-			bqrootstr = '1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "bouquets.tv" ORDER BY bouquet'
-			bouquet = eServiceReference(bqrootstr)
-			bouquetlist = serviceHandler.list(bouquet)
-			if bouquetlist is not None:
-				while True:
-					bouquet = bouquetlist.getNext()
-					if not bouquet.valid():
-						break
-					if bouquet.flags & eServiceReference.isDirectory and not bouquet.flags & eServiceReference.isInvisible:
-						servicelist = serviceHandler.list(bouquet)
-						if servicelist is not None:
-							while True:
-								service = servicelist.getNext()
-								if not service.valid():
-									break
-								if not (service.flags & (eServiceReference.isMarker | eServiceReference.isDirectory)):
-									usr_ref_list.append(service.toString())
+		global BouquetChannelListList, IptvBouquetChannelListList
+		if BouquetChannelListList == None:
+			BouquetChannelListList, IptvBouquetChannelListList = self.getBouquetChannelList()
 		result = []
-		if config.plugins.epgsearch.favorit_name.value:
-			for e in epglist:
-				for x in usr_ref_list:
-					y = ':'.join(GetWithAlternative(x).split(':')[:11])
-					if y == e[0]:
-						new_e = (x, e[1], e[2], e[3], e[4])
-						result.append(new_e)
-		else:
-			for e in epglist:
-				for x in usr_ref_list:
-					y = ':'.join(GetWithAlternative(x).split(':')[:11])
-					if y == e[0]:
+		if BouquetChannelListList != None and epglist: 
+			if config.plugins.epgsearch.favorit_name.value:
+				for e in epglist:
+					if ":http" in e[0]:
 						result.append(e)
+						continue
+					for x in BouquetChannelListList:
+						y = ':'.join(GetWithAlternative(x).split(':')[:11])
+						if y == e[0]:
+							new_e = (x, e[1], e[2], e[3], e[4])
+							result.append(new_e)
+							continue
+			else:
+				for e in epglist:
+					if ":http" in e[0]:
+						result.append(e)
+						continue
+					for x in BouquetChannelListList:
+						y = ':'.join(GetWithAlternative(x).split(':')[:11])
+						if y == e[0]:
+							result.append(e)
+							continue
 		return result
+
+	def getBouquetChannelList(self):
+		channels = []
+		iptv_channels = []
+		bouquetlist = []
+		serviceHandler = eServiceCenter.getInstance()
+		if config.usage.multibouquet.value:
+			refstr = '1:7:1:0:0:0:0:0:0:0:FROM BOUQUET "bouquets.tv" ORDER BY bouquet'
+			bouquetroot = eServiceReference(refstr)
+			bouquets = serviceHandler.list(bouquetroot)
+			if bouquets:
+				while True:
+					s = bouquets.getNext()
+					if not s.valid():
+						break
+					if s.flags & eServiceReference.isDirectory and not s.flags & eServiceReference.isInvisible:
+						info = serviceHandler.info(s)
+						if info:
+							bouquetlist.append(s)
+		else:
+			service_types_tv = '1:7:1:0:0:0:0:0:0:0:(type == 1) || (type == 17) || (type == 22) || (type == 25) || (type == 31) || (type == 134) || (type == 195)'
+			refstr = '%s FROM BOUQUET "userbouquet.favourites.tv" ORDER BY bouquet' % (service_types_tv)
+			bouquetroot = eServiceReference(refstr)
+			info = serviceHandler.info(bouquetroot)
+			if info and bouquetroot.valid() and not bouquetroot.flags & eServiceReference.isInvisible:
+				bouquetlist.append(bouquetroot)
+		if bouquetlist:
+			for bouquet in bouquetlist:
+				if not bouquet.valid():
+					continue
+				if bouquet.flags & eServiceReference.isDirectory:
+					services = serviceHandler.list(bouquet)
+					if services:
+						while True:
+							service = services.getNext()
+							if not service.valid():
+								break
+							playable = not (service.flags & (eServiceReference.isMarker | eServiceReference.isDirectory | eServiceReference.isNumberedMarker))
+							if playable:
+								sref = service.toString()
+								if ":http" in sref:
+									iptv_channels.append(sref)
+								channels.append(sref)
+		return channels, iptv_channels
 
 
 class EPGSearchTimerImport(Screen):
