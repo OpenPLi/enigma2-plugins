@@ -327,7 +327,7 @@ msgid "Picture in Picture"
 msgstr "картинка в картинке (PiP)"
 
 msgid "Picture in Picture (hidden)"
-msgstr "картинка в картинке (скрытый режим)"
+msgstr "PiP (скрытый режим)"
 
 msgid "Please don't use PiP in the meantime!"
 msgstr "Пожалуйста, не используйте PiP в это время!"
@@ -365,8 +365,8 @@ msgstr "Перезагрузка кеша EPG..."
 #, python-format
 msgid "Remaining %d service"
 msgid_plural "Remaining %d services"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Остался %d сервис"
+msgstr[1] "Осталось %d сервисов"
 
 msgid "Restart enigma2 to effectuate."
 msgstr "Для изменения этой настройки рестарт энигмы2 не требуется."
@@ -599,3 +599,6 @@ msgstr "нигде"
 
 msgid "only 'epgrefresh' wakeup"
 msgstr "только при включении от 'epgrefresh'"
+
+msgid "Really shutdown now?"
+msgstr "Выключить сейчас?"
