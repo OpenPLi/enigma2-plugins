@@ -82,3 +82,6 @@ msgid ""
 msgstr ""
 "transmission-daemon не установлен!\n"
 "Установить сейчас?"
+
+msgid "< Auto add - (any name).torrent in USB device >"
+msgstr "< Авто добавление - (любое имя).torrent на USB устройстве >"
