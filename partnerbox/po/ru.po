@@ -75,7 +75,7 @@ msgstr "Список пакета"
 
 #, python-format
 msgid "Box '%s' is standby or is not running."
-msgstr ""
+msgstr "Ресивер '%s' находится в режиме ожидания или не работает."
 
 msgid "Cancel"
 msgstr "Отмена"
@@ -169,9 +169,8 @@ msgstr "Редактировать дистанционный таймер"
 msgid "Enable Partnerbox-AutoTimer function"
 msgstr "Включить функцию Partnerbox-Автотаймер"
 
-#, fuzzy
 msgid "Enable Partnerbox-AutoTimer in E-Menu"
-msgstr "Включить функцию Partnerbox-Автотаймер"
+msgstr "Включить функцию Partnerbox-Автотаймер в меню дополнений"
 
 msgid "Enable Partnerbox-Function in Channel Selector"
 msgstr "Partnerbox-функция в контекстном меню селектора каналов"
@@ -201,13 +200,13 @@ msgid "EndTime"
 msgstr "Время окончания"
 
 msgid "Enigma 1"
-msgstr "Энигма 1"
+msgstr "Enigma 1"
 
 msgid "Enigma 2"
-msgstr "Энигма 2"
+msgstr "Enigma 2"
 
 msgid "Enigma Type"
-msgstr "Тип Энигма"
+msgstr "Тип Enigma"
 
 msgid "Enter the service pin"
 msgstr "Введите PIN-код сервиса"
@@ -303,7 +302,7 @@ msgid "Mute"
 msgstr "Звук"
 
 msgid "Mute remote box"
-msgstr "Звук ресивера"
+msgstr "Звук удаленного ресивера"
 
 msgid "NGRAB"
 msgstr "NGRAB"
