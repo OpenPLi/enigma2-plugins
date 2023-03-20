@@ -18,13 +18,13 @@ pause_sh = "/usr/lib/enigma2/python/Plugins/Extensions/Transmission/trans_start_
 class Transmission(Screen):
 	if getDesktop(0).size().width() >= 1920:
 		skin = """
-		<screen position="center,center" size="1020,600" title="Transmission menu" >
-			<widget name="menu" position="10,10" size="1000,600" font="Regular;30" itemHeight="36" scrollbarMode="showOnDemand" />
+		<screen position="center,center" size="1020,620" title="Transmission menu" >
+			<widget name="menu" position="10,10" size="1000,620" font="Regular;30" itemHeight="36" scrollbarMode="showOnDemand" />
 		</screen>"""
 	else:
 		skin = """
-		<screen position="center,center" size="720,440" title="Transmission menu" >
-			<widget name="menu" position="10,10" size="700,420" scrollbarMode="showOnDemand" />
+		<screen position="center,center" size="720,460" title="Transmission menu" >
+			<widget name="menu" position="10,10" size="700,440" scrollbarMode="showOnDemand" />
 		</screen>"""
 	def __init__(self, session):
 		Screen.__init__(self, session)
@@ -47,6 +47,7 @@ class Transmission(Screen):
 		list.append((_("Stop transmission after downloads (only queue works)"), "stop_trans"))
 		list.append((_("Don't stop transmission after downloads (only queue works)"), "dont_stop_trans"))
 		list.append((_("About transmission version"), "about_transmission"))
+		list.append((_("< Auto add - (any name).torrent in USB device >"), ""))
 		self["menu"] = MenuList(list)
 		self["actions"] = ActionMap(["OkCancelActions"], {"ok": self.run, "cancel": self.close}, -1)
 
@@ -89,7 +90,7 @@ class Transmission(Screen):
 				self.session.open(Console, _("Don't stop transmission after downloads (only queue works)"), ["chmod 755 %s && %s dont_stop_trans" % (swap_sh, swap_sh)])
 			elif returnValue == "about_transmission":
 				if fileExists("/usr/bin/transmission-daemon"):
-					self.session.open(Console, _("About transmission version"), ["transmission-daemon -V \n", "echo Default login:root/password:root"])
+					self.session.open(Console, _("About transmission version"), ["transmission-daemon -V \n", "echo Default login:root/password:root\n\n", "echo For information about downloads, to correct config settings.json this line 'rpc-host-whitelist' as empty."])
 				else:
 					self.session.openWithCallback(self.InstallNow, MessageBox, _("transmission-daemon not installed!\nInstall now?"), MessageBox.TYPE_YESNO)
 
