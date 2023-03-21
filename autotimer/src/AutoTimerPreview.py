@@ -12,7 +12,7 @@ from Components.Sources.StaticText import StaticText
 from ServiceReference import ServiceReference
 from Tools.FuzzyDate import FuzzyTime
 from enigma import getDesktop
-from AutoTimerList import getBouquetChannelList
+from .AutoTimerList import getBouquetChannelList
 prewBouquetChannelListList = None
 HD = False
 if getDesktop(0).size().width() >= 1280:
