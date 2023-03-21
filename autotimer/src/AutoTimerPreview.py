@@ -86,7 +86,7 @@ class AutoTimerPreview(Screen):
 							sref = service
 							iptv_text = " (IPTV)"
 							break
-			return ServiceReference(sref).getServiceName().replace('\xc2\x86', '').replace('\xc2\x87', '').encode('utf-8', 'ignore') + iptv_text
+			return ServiceReference(sref).getServiceName().replace('\xc2\x86', '').replace('\xc2\x87', '') + iptv_text
 		self.timers = [
 			(x[0], x[1], x[4],
 			renameIPTV(x[3]),
