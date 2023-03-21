@@ -104,7 +104,7 @@ def Partnerbox_SingleEntry(self, service, eventId, beginTime, duration, EventNam
 	s = self.iconSize
 	space = self.space
 	distance = self.iconDistance
-	times = 80
+	times = self.gap(self.tw) + 5
 	dy = self.dy
 
 	t = localtime(beginTime)
@@ -116,7 +116,7 @@ def Partnerbox_SingleEntry(self, service, eventId, beginTime, duration, EventNam
 				Time = _("%d min") % (duration / 60)
 			else:
 				prefix = "+"
-				remaining = ((beginTime + duration) - int(time())) / 60
+				remaining = ((beginTime + duration) - nowTime) / 60
 				if remaining <= 0:
 					prefix = ""
 				Time = _("%s%d min") % (prefix, remaining)
