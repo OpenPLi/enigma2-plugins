@@ -397,7 +397,7 @@ class AutoTimer:
 					try:
 						event = epgcache.lookupEvent(lookup) or []
 					except Exception as e:
-						print("[EPGSearch] wrong event", e)
+						print("[AutoTimer] wrong event", e)
 					else:
 						allevents += event
 
