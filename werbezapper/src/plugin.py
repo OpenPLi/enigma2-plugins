@@ -43,6 +43,7 @@ config.werbezapper.x = ConfigInteger(default=60, limits=(0, 9999))
 config.werbezapper.y = ConfigInteger(default=60, limits=(0, 9999))
 config.werbezapper.z = ConfigSelection([(str(x), str(x)) for x in range(-20, 21)], "-1")
 
+from .WerbeZapper import WerbeZapper, WerbezapperSettings
 
 def main(session=None, servicelist=None, **kwargs):
 	if servicelist is None:
@@ -51,7 +52,6 @@ def main(session=None, servicelist=None, **kwargs):
 	if session and servicelist:
 		global zapperInstance
 		if zapperInstance is None:
-			from WerbeZapper import WerbeZapper
 			zapperInstance = session.instantiateDialog(WerbeZapper, servicelist, cleanup)
 		zapperInstance.showSelection()
 
@@ -63,7 +63,6 @@ def startstop(session=None, servicelist=None, **kwargs):
 	if session and servicelist:
 		global zapperInstance
 		if zapperInstance is None:
-			from WerbeZapper import WerbeZapper
 			zapperInstance = session.instantiateDialog(WerbeZapper, servicelist, cleanup)
 		if not zapperInstance.monitor_timer.isActive():
 			zapperInstance.startMonitoring()
@@ -108,7 +107,6 @@ class WerbeZapperSilder(ConfigListScreen, Screen):
 	def keyOk(self):
 		global zapperInstance
 		if zapperInstance is None:
-			from WerbeZapper import WerbeZapper
 			zapperInstance = self.session.instantiateDialog(WerbeZapper, self.servicelist, cleanup)
 		if self.servicelist:
 			zap = int(self.duration.value)
@@ -179,7 +177,6 @@ class WerbezapperInfoBar:
 						InfoBarInstance = InfoBar.instance
 						if InfoBarInstance is not None:
 							servicelist = InfoBarInstance.servicelist
-							from WerbeZapper import WerbeZapper
 							zapperInstance = self.session.instantiateDialog(WerbeZapper, servicelist, cleanup)
 					if zapperInstance:
 						zapperInstance.showSelection()
@@ -187,7 +184,6 @@ class WerbezapperInfoBar:
 		return 0
 
 	def showSetup(self):
-		from WerbeZapper import WerbezapperSettings
 		self.session.open(WerbezapperSettings)
 
 
@@ -217,14 +213,19 @@ def start_channelselection(session=None, service=None):
 	servicelist = InfoBar.instance and InfoBar.instance.servicelist
 	if service and session and servicelist:
 		epg = eEPGCache.getInstance()
-		event = epg.lookupEventTime(service, -1, 0)
+		try:
+			event = epg.lookupEventTime(service, -1, 0)
+		except:
+			event = None
 		if event:
 			now = int(time())
 			start = event.getBeginTime()
 			duration = event.getDuration()
 			end = start + duration
 			remaining_event = (end - now) / 60
-			session.open(WerbeZapperSilder, servicelist, remaining=remaining_event)
+		else:
+			remaining_event = 0
+		session.open(WerbeZapperSilder, servicelist, remaining=remaining_event)
 
 
 def Plugins(**kwargs):
