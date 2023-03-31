@@ -464,6 +464,11 @@ class AutoTimer:
 			#	serviceref = i.toString()
 			#	doLog("[AutoTimer] Serviceref2 %s" % serviceref)
 
+			if end < time():
+				doLog("[AutoTimer] Skipping expired timer")
+				skipped.append((name, begin, end, serviceref, timer.name, getLog()))
+				continue
+
 			# If event starts in less than 60 seconds skip it
 			if begin < time() + 60:
 				doLog("[AutoTimer] Skipping an event because it starts in less than 60 seconds")
