@@ -154,7 +154,7 @@ class BaseFeed:
 		self.uri = uri
 
 		# Initialize
-		self.title = title or uri.encode("UTF-8")
+		self.title = title or uri
 		self.description = description
 		self.logoUrl = ''
 		self.history = []
@@ -207,9 +207,9 @@ class UniversalFeed(BaseFeed):
 
 			# Update Lists
 			self.history.insert(idx, (
-					title.encode("UTF-8"),
-					link.encode("UTF-8"),
-					summary.encode("UTF-8"),
+					title,
+					link,
+					summary,
 					item.enclosures
 			))
 			ids.add(id)
@@ -243,8 +243,8 @@ class UniversalFeed(BaseFeed):
 
 			wrapper = self.wrapper(feed, self.ns)
 
-			self.title = strip(wrapper.title).encode("UTF-8")
-			self.description = strip_readable(wrapper.description or "").encode("UTF-8")
+			self.title = strip(wrapper.title)
+			self.description = strip_readable(wrapper.description or "")
 			self.logoUrl = wrapper.logo
 
 		return self.gotWrapper(wrapper)
