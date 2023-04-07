@@ -35,7 +35,7 @@ def initLog():
 def debug(message):
 	if config.plugins.emailimap.debug.value:
 		try:
-			deb = open("/tmp/EmailClient.log", "aw")
+			deb = open("/tmp/EmailClient.log", "a")
 			deb.write(time.ctime() + ': ' + message + "\n")
 			deb.close()
 		except Exception as e:
@@ -64,4 +64,4 @@ def scaleV(y2, y1):
 
 
 def scale(y2, y1, x2, x1, x):
-	return (y2 - y1) * (x - x1) / (x2 - x1) + y1
+	return int((y2 - y1) * (x - x1) / (x2 - x1) + y1)

@@ -56,14 +56,16 @@ def decodeHeader(text, default=''):
 	for part in decode_header(text):
 		(content, charset) = part
 		# print("decodeHeader content/charset: %s/%s" %(repr(content),charset))
-		if charset:
-			textNew += content.decode(charset)
+		charset = charset or "utf-8"
+		if isinstance(content, bytes):
+			try:
+				textNew += content.decode(charset)
+			except:
+				pass
 		else:
 			textNew += content
-	try:
-		return textNew.encode('utf-8')
-	except UnicodeDecodeError: # for faulty mail software systems
-		return textNew.decode('iso-8859-1').encode('utf-8')
+
+	return textNew
 
 
 IS_UNSEEN = 0
@@ -86,7 +88,7 @@ class EmailScreen(Screen):
 	messagelistWidth = width - boxlistWidth
 	infolabelHeight = scaleV(-1, 30)
 	skin = """
-		<screen position="%d,%d" size="%d,%d" title="Email" >
+		<screen position="%d,%d" size="%d,%d" title="Email">
 			<widget name="boxlist" position="0,0" size="%d,%d" scrollbarMode="showOnDemand" />
 			<widget name="messagelist" position="%d,%d" size="%d,%d" scrollbarMode="showOnDemand" />
 			<widget name="infolabel" position="%d,%d" size="%d,%d"   foregroundColor=\"white\" font=\"Regular;%d\" />
@@ -192,7 +194,8 @@ class EmailScreen(Screen):
 		'''
 		# pylint: disable-msg=W0212
 		debug("[EmailScreen] _ebNotify error in %s: %s" % (where, what))
-		self.session.open(MessageBox, _("EmailClient for %(account)s:\n\n%(error)s") % {'account': self._account._name, 'error': what}, type=MessageBox.TYPE_ERROR, timeout=config.plugins.emailimap.timeout.value)
+		#Notifications.AddNotification(MessageBox, _("EmailClient for %(account)s:\n\n%(error)s") % {'account': self._account._name, 'error': what}, type=MessageBox.TYPE_ERROR, timeout=config.plugins.emailimap.timeout.value)
+
 
 	def _onBoxSelected(self):
 		self["messagelist"].l.setList([])
@@ -255,7 +258,7 @@ class EmailScreen(Screen):
 			self._account.getMessage(message, self._onMessageLoaded, self._ebNotify)
 			# self.loadMessage(message)
 			return
-		msg = email.Parser.Parser().parsestr(msgstr) #@UndefinedVariable # pylint: disable-msg=E1101
+		msg = email.parser.Parser().parsestr(msgstr) #@UndefinedVariable # pylint: disable-msg=E1101
 		msg.messagebodys = []
 		msg.attachments = []
 
@@ -461,11 +464,11 @@ class EmailBody:
 
 	def getData(self):
 		text = self.data.get_payload(decode=True)
-		if self.getEncoding():
-			try:
-				text = text.decode(self.getEncoding())
-			except UnicodeDecodeError:
-				pass
+		enc = self.getEncoding() or "utf-8"
+		try:
+			text = text.decode(enc)
+		except:
+			pass
 		# debug('EmailBody/getData text: ' +  text)
 		#=======================================================================
 		# if self.getEncoding():
@@ -476,10 +479,7 @@ class EmailBody:
 			text = strip_readable(text)
 			# debug('EmailBody/getData text: ' +  text)
 
-		try:
-			return text.encode('utf-8')
-		except UnicodeDecodeError:
-			return text
+		return text
 
 	def getContenttype(self):
 		return self.data.get_content_type()
@@ -621,7 +621,7 @@ class CheckMail:
 class MessageHeader(object):
 	def __init__(self, uid, message):
 		self.uid = uid #must be int
-		self.message = email.Parser.HeaderParser().parsestr(message) #@UndefinedVariable # pylint: disable-msg=E1101
+		self.message = email.parser.Parser().parsestr(message, headersonly=True) #@UndefinedVariable # pylint: disable-msg=E1101
 
 	def getSenderString(self):
 		return decodeHeader(self.get("from"), _("no sender"))
@@ -790,7 +790,7 @@ class EmailAccount():
 
 	def getMessageList(self, callback, mbox):
 		if self._proto:
-			self._proto.select(mbox.decode('utf-8')).addCallback(self._onSelect, callback).addErrback(self._onSelectFailed, callback, mbox)
+			self._proto.select(mbox).addCallback(self._onSelect, callback).addErrback(self._onSelectFailed, callback, mbox)
 			return True
 		else:
 			return False
@@ -811,7 +811,7 @@ class EmailAccount():
 				rangeToFetch = [1, numMessagesinFolder]
 			try:
 				self._proto.fetchFlags('%i:%i' % (rangeToFetch[0], rangeToFetch[1])	#'1:*'
-						   ).addCallback(self._onFlagsList, callback, rangeToFetch)
+							).addCallback(self._onFlagsList, callback, rangeToFetch)
 
 			except imap4.IllegalServerResponse as e:
 				debug("[EmailAccount] _onExamine exception: " + str(e))
@@ -936,8 +936,14 @@ class EmailAccount():
 			print(e, e.message)
 
 	def _doLoginInsecure(self):
+		try:
+			user = self._user.encode('ascii')
+			password = self._password.encode('ascii')
+		except:
+			user = self._user
+			password = self._password
 		debug("[EmailAccount] %s: _doLoginInsecure" % (self._name))
-		self._proto.login(self._user, self._password).addCallback(self._onAuthentication).addErrback(self._onInsecureAuthenticationFailed)
+		self._proto.login(user, password).addCallback(self._onAuthentication).addErrback(self._onInsecureAuthenticationFailed)
 
 	def _onInsecureAuthenticationFailed(self, failure):
 		debug("[EmailAccount] %s: _onInsecureAuthenticationFailed: %s" % (self._name, failure.getErrorMessage()))
@@ -959,12 +965,13 @@ class EmailAccount():
 					})
 
 	def _onMailboxList(self, result):
-		mylist = [UTF7toUTF8(mb[2]).encode('utf-8') for mb in result if '\\Noselect' not in mb[0]]
+		#mylist = [UTF7toUTF8(mb[2]).encode('utf-8') for mb in result if '\\Noselect' not in mb[0]]
+		mylist = [mb[2] for mb in result if '\\Noselect' not in mb[0]]
 		debug("[EmailAccount] %s: onMailboxList: %s selectable mailboxes" % (self._name, len(mylist)))
 		# debug("[EmailAccount] %s: onMailboxList:\n%s" %(self._name, str(mylist)))
 		mylist.sort()
 		try:
-			self.inboxPos = map(lambda x: x.lower(), mylist).index('inbox') + 1
+			self.inboxPos = list(map(lambda x: x.lower(), mylist)).index('inbox') + 1
 		except ValueError:
 			debug("[EmailAccount] onMailboxList: no inbox?!?!")
 			mylist = ['INBOX']
@@ -1190,11 +1197,6 @@ def main(session, **kwargs): #@UnusedVariable kwargs # pylint: disable-msg=W0613
 def autostart(reason, **kwargs): #@UnusedVariable reason
 	debug("[EmailClient] - Autostart reason: %d kwargs: %s" % (reason, repr(kwargs)))
 	debug("[EmailClient] " + "$Revision$"[1:-1] + "$Date$"[7:23] + " starting")
-	import shutil
-	if os.path.isdir('/usr/lib/python2.6') and not os.path.isfile('/usr/lib/python2.6/uu.py'):
-		shutil.copy(resolveFilename(SCOPE_PLUGINS, "Extensions/EmailClient/uu.py"), '/usr/lib/python2.6/uu.py')
-	elif os.path.isdir('/usr/lib/python2.5') and not os.path.isfile('/usr/lib/python2.5/uu.py'):
-		shutil.copy(resolveFilename(SCOPE_PLUGINS, "Extensions/EmailClient/uu.py"), '/usr/lib/python2.5/uu.py')
 
 	if reason == 0:
 		getAccounts()
