@@ -36,7 +36,7 @@ class MovingLabel(Label):
 		text = (self.displayLength * ' ') + text
 		self.longText = text
 		self.offset = 0
-		Label.setText(self, text[:self.displayLength].encode('utf-8', 'ignore'))
+		Label.setText(self, text[:self.displayLength])
 
 	def stopMoving(self):
 		self.moveTimer.stop()
@@ -55,7 +55,7 @@ class MovingLabel(Label):
 			self.stopMoving()
 
 		try:
-			Label.setText(self, text.encode('utf-8', 'ignore'))
+			Label.setText(self, text)
 		except Exception:
 			self.stopMoving()
 
@@ -108,7 +108,7 @@ class RSSTickerView(Screen):
 		self["newsLabel"] = MovingCallbackLabel(callback=self.hide)
 
 	def updateText(self, feed):
-		text = _("New Items") + ': ' + ' +++ '.join((item[0].decode('utf-8') for item in feed.history))
+		text = _("New Items") + ': ' + ' +++ '.join((item[0] for item in feed.history))
 		self["newsLabel"].setText(text)
 
 	def display(self, feed=None):

@@ -10,7 +10,7 @@ from Components.ActionMap import ActionMap
 from Screens.MessageBox import MessageBox
 
 
-class RSSFeedEdit(ConfigListScreen, Screen):
+class RSSFeedEdit(Screen, ConfigListScreen):
 	"""Edit an RSS-Feed"""
 
 	def __init__(self, session, id):
@@ -28,7 +28,7 @@ class RSSFeedEdit(ConfigListScreen, Screen):
 		self["key_red"] = StaticText(_("Cancel"))
 		self["key_green"] = StaticText(_("OK"))
 
-		self["setupActions"] = ActionMap(["SetupActions"],
+		self["actions"] = ActionMap(["SetupActions"],
 		{
 			"save": self.save,
 			"cancel": self.keyCancel
@@ -57,7 +57,7 @@ class RSSFeedEdit(ConfigListScreen, Screen):
 		self.close()
 
 
-class RSSSetup(ConfigListScreen, Screen):
+class RSSSetup(Screen, ConfigListScreen):
 	"""Setup for SimpleRSS, quick-edit for Feed-URIs and settings present."""
 	skin = """
 		<screen name="RSSSetup" position="center,center" size="560,400" title="Simple RSS Reader Setup" >
@@ -83,14 +83,14 @@ class RSSSetup(ConfigListScreen, Screen):
 		self["key_yellow"] = StaticText(_("New"))
 		self["key_blue"] = StaticText(_("Delete"))
 
-		self["setupActions"] = ActionMap(["SetupActions", "ColorActions"],
+		self["actions"] = ActionMap(["ColorActions", "SetupActions"],
 		{
 			"blue": self.delete,
 			"yellow": self.new,
 			"save": self.keySave,
 			"cancel": self.keyCancel,
-			"ok": self.ok
-		}, -1)
+			"ok": self.openEntry,
+		}, -2)
 
 		self.onLayoutFinish.append(self.setCustomTitle)
 		self.onClose.append(self.abort)
@@ -160,14 +160,17 @@ class RSSSetup(ConfigListScreen, Screen):
 
 	def deleteConfirm(self, result):
 		if result:
-			id = self["config"].getCurrentIndex()
-			del config.plugins.simpleRSS.feed[id]
-			config.plugins.simpleRSS.feedcount.value -= 1
+			try:
+				id = self["config"].getCurrentIndex()
+				del config.plugins.simpleRSS.feed[id]
+				config.plugins.simpleRSS.feedcount.value -= 1
+			except Exception:
+				pass
 
 			self.createSetup()
 			self["config"].setList(self.list)
 
-	def ok(self):
+	def openEntry(self):
 		id = self["config"].getCurrentIndex()
 		if id < len(config.plugins.simpleRSS.feed):
 			self.session.openWithCallback(self.refresh, RSSFeedEdit, id)

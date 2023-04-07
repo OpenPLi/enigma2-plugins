@@ -14,6 +14,8 @@ from xml.etree.cElementTree import fromstring as cElementTree_fromstring
 
 from .GoogleReader import GoogleReader
 
+from six import ensure_str, ensure_binary
+
 NOTIFICATIONID = 'SimpleRSSUpdateNotification'
 
 update_callbacks = []
@@ -139,6 +141,7 @@ class RSSPoller:
 			self.next_feed()
 
 	def gotPage(self, data, id=None):
+		#data = ensure_str(data)
 		feed = cElementTree_fromstring(data)
 
 		# For Single-Polling
@@ -159,7 +162,7 @@ class RSSPoller:
 		self.next_feed()
 
 	def singlePoll(self, id, callback=False, errorback=None):
-		getPage(self.feeds[id].uri).addCallback(self._gotPage, id, callback, errorback).addErrback(errorback)
+		getPage(ensure_binary(self.feeds[id].uri)).addCallback(self._gotPage, id, callback, errorback).addErrback(errorback)
 
 	def poll(self):
 		# Reloading, reschedule
@@ -233,7 +236,7 @@ class RSSPoller:
 			feed = self.feeds[self.current_feed]
 
 			if feed.autoupdate:
-				getPage(feed.uri).addCallback(self._gotPage).addErrback(self.error)
+				getPage(ensure_binary(feed.uri)).addCallback(self._gotPage).addErrback(self.error)
 			# Go to next feed
 			else:
 				print("[SimpleRSS] passing feed")
