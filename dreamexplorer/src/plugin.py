@@ -43,7 +43,7 @@ from Screens.InputBox import InputBox
 from Components.Sources.StaticText import StaticText
 
 PicPlayerAviable = False
-if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/PicturePlayer/plugin.py"):
+if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/PicturePlayer/plugin.pyc"):
 	try:
 		from Plugins.Extensions.PicturePlayer.plugin import Pic_Thumb, picshow
 		PicPlayerAviable = True
@@ -51,7 +51,7 @@ if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/PicturePlayer/plugin.p
 		pass
 
 DVDPlayerAviable = False
-if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/DVDPlayer/plugin.py"):
+if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/DVDPlayer/plugin.pyc"):
 	try:
 		from Plugins.Extensions.DVDPlayer.plugin import DVDPlayer
 		DVDPlayerAviable = True
@@ -65,7 +65,7 @@ else:
 		pass
 
 MMPavaiable = False
-if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/MerlinMusicPlayer/plugin.py"):
+if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/MerlinMusicPlayer/plugin.pyc"):
 	try:
 		from Plugins.Extensions.MerlinMusicPlayer.plugin import MerlinMusicPlayerScreen, Item
 		MMPavaiable = True
@@ -292,7 +292,7 @@ class DreamExplorerII(Screen):
 					askList = [(_("Cancel"), "NO"), (_("Install this package"), "YES")]
 					dei = self.session.openWithCallback(self.SysExecution, ChoiceBox, title=_("OPKG-package:\\n") + filename, list=askList)
 					dei.setTitle(_("Dream-Explorer : Install..."))
-				elif testFileName.endswith(".pyc") or testFileName.endswith(".py"):
+				elif testFileName.endswith(".pyc") or testFileName.endswith(".pyo"):
 					self.commando = ["/usr/lib/enigma2/python/Plugins/Extensions/DreamExplorer/pyc2xml " + filename]
 					askList = [(_("Cancel"), "NO"), (_("Disassemble to bytecode..."), "YES")]
 					dei = self.session.openWithCallback(self.SysExecution, ChoiceBox, title=_("Pyc-Script:\\n") + filename, list=askList)
