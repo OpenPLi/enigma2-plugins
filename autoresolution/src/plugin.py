@@ -13,6 +13,9 @@ from Screens.MessageBox import MessageBox
 from Screens.Screen import Screen
 from Screens.Setup import SetupSummary
 from Tools import Notifications
+from Tools.HardwareInfo import HardwareInfo
+
+model = HardwareInfo().get_device_model()
 
 from . import _
 
@@ -463,20 +466,31 @@ class AutoRes(Screen):
 						resolutionlabel.show()
 
 	def changeVideomode(self):
-		if config.plugins.autoresolution.mode.value != "manual":
+		if config.plugins.autoresolution.mode.value != "manual" or not config.plugins.autoresolution.enable.value:
 			return
 		if usable:
 			mode = self.lastmode
 			if "p24" in mode or "p25" in mode or "p30" in mode or (self.extra_mode1080p50 and "1080p50" in mode) or (self.extra_mode1080p60 and "1080p60" in mode) or (self.extra_mode720p60 and "720p60" in mode) or (self.extra_mode2160p50 and "2160p50" in mode) or "720p50" in mode:
-				try:
-					v = open('/proc/stb/video/videomode', "w")
-					v.write("%s\n" % mode)
-					v.close()
-					print("[AutoRes] switching to", mode)
-					if self.video_stream_service:
-						self.doSeekRelative(2 * 9000)
-				except:
-					print("[AutoRes] failed switching to", mode)
+				if model in ("gbue4k", "gbquad4k"):
+					try:
+						v = open("/proc/stb/video/videomode_50hz", "w")
+						v.write(mode)
+						v.close()
+						print("[AutoRes] switching videomode_50hz to", mode)
+						if self.video_stream_service:
+							self.doSeekRelative(2 * 9000)
+					except:
+						print("[AutoRes] failed videomode_50hz switching to", mode)
+				else:
+					try:
+						v = open('/proc/stb/video/videomode', "w")
+						v.write("%s\n" % mode)
+						v.close()
+						print("[AutoRes] switching to", mode)
+						if self.video_stream_service:
+							self.doSeekRelative(2 * 9000)
+					except:
+						print("[AutoRes] failed switching to", mode)
 				resolutionlabel["restxt"].setText(_("Videomode: %s") % mode)
 				if config.plugins.autoresolution.showinfo.value:
 					resolutionlabel.show()
@@ -769,10 +783,22 @@ class AutoFrameRate(Screen):
 
 	def changeFramerateCallback(self, ret=True):
 		if ret:
-			f = open("/proc/stb/video/videomode", "w")
-			f.write(self.new_mode)
-			f.close()
-			print("[AutoFramerate] set resolution/framerate: %s" % self.new_mode)
+			if model in ("gbue4k", "gbquad4k"):
+				try:
+					f = open("/proc/stb/video/videomode_50hz", "w")
+					f.write(self.new_mode)
+					f.close()
+					print("[AutoFramerate] set resolution/framerate: %s" % self.new_mode)
+				except:
+					print("[AutoFramerate] failed videomode_50hz switching to")
+			else:
+				try:
+					f = open("/proc/stb/video/videomode", "w")
+					f.write(self.new_mode)
+					f.close()
+					print("[AutoFramerate] set resolution/framerate: %s" % self.new_mode)
+				except:
+					print("[AutoFramerate] failed switching to")
 			service = self.session.nav.getCurrentlyPlayingServiceReference()
 			if service:
 				path = service.getPath()
@@ -809,7 +835,10 @@ class ManualResolution(Screen):
 			values = f.readline().replace("\n", "").replace("pal ", "").replace("ntsc ", "").replace("auto", "").replace("480i", "").replace("480p", "").replace("576i", "").replace("576p", "").replace("3d1080p24", "").replace("3d720p50", "").replace("3d720p", "").split(" ", -1)
 			for x in values:
 				if x:
-					entry = x.replace('i50', 'i@50hz').replace('i60', 'i@60hz').replace('p23', 'p@23.976hz').replace('p24', 'p@24hz').replace('p25', 'p@25hz').replace('p29', 'p@29.970hz').replace('p30', 'p@30hz').replace('p50', 'p@50hz').replace('p60', 'p@60hz'), x
+					if x in ('2160p', '1080p', '1080i', '720p'):
+						entry = x.replace('2160p', '2160p@60hz').replace('1080p', '1080p@60hz').replace('720p', '720p@60hz').replace('1080i', '1080i@60hz'), x
+					else:
+						entry = x.replace('i50', 'i@50hz').replace('i60', 'i@60hz').replace('p23', 'p@23.976hz').replace('p24', 'p@24hz').replace('p25', 'p@25hz').replace('p29', 'p@29.970hz').replace('p30', 'p@30hz').replace('p50', 'p@50hz').replace('p60', 'p@60hz'), x
 					self.choices.append(entry)
 			f.close()
 		except:
@@ -877,7 +906,7 @@ class ManualResolution(Screen):
 		if res and isinstance(res, str) and res != "exit":
 			self.setResolution(res)
 			if config.plugins.autoresolution.ask_apply_mode.value and self.init and self.old_mode != res:
-				self.session.openWithCallback(self.confirmMode, MessageBox, _("This resolution is OK?"), MessageBox.TYPE_YESNO, timeout=10, default=False)
+				self.session.openWithCallback(self.confirmMode, MessageBox, _("This resolution is OK?"), MessageBox.TYPE_YESNO, timeout=15, default=False)
 			if not self.init:
 				self.init = True
 
@@ -886,12 +915,20 @@ class ManualResolution(Screen):
 			self.setResolution(self.old_mode)
 
 	def setResolution(self, mode):
-		try:
-			f = open("/proc/stb/video/videomode", "w")
-			f.write(mode)
-			f.close()
-		except:
-			print("[ManualResolution] Error write /proc/stb/video/videomode")
+		if model in ("gbue4k", "gbquad4k"):
+			try:
+				f = open("/proc/stb/video/videomode_50hz", "w")
+				f.write(mode)
+				f.close()
+			except:
+				print("[ManualResolution] Error write /proc/stb/video/videomode_50hz")
+		else:
+			try:
+				f = open("/proc/stb/video/videomode", "w")
+				f.write(mode)
+				f.close()
+			except:
+				print("[ManualResolution] Error write /proc/stb/video/videomode")
 
 
 def openManualResolution(session, **kwargs):
