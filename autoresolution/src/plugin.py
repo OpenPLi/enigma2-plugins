@@ -15,9 +15,9 @@ from Screens.Setup import SetupSummary
 from Tools import Notifications
 from Tools.HardwareInfo import HardwareInfo
 
-model = HardwareInfo().get_device_model()
-
 from . import _
+
+proc_videomode = HardwareInfo().get_device_model() in ("gbue4k", "gbquad4k") and "/proc/stb/video/videomode_50hz" or "/proc/stb/video/videomode"
 
 
 def readAvailableModes():
@@ -471,26 +471,15 @@ class AutoRes(Screen):
 		if usable:
 			mode = self.lastmode
 			if "p24" in mode or "p25" in mode or "p30" in mode or (self.extra_mode1080p50 and "1080p50" in mode) or (self.extra_mode1080p60 and "1080p60" in mode) or (self.extra_mode720p60 and "720p60" in mode) or (self.extra_mode2160p50 and "2160p50" in mode) or "720p50" in mode:
-				if model in ("gbue4k", "gbquad4k"):
-					try:
-						v = open("/proc/stb/video/videomode_50hz", "w")
-						v.write(mode)
-						v.close()
-						print("[AutoRes] switching videomode_50hz to", mode)
-						if self.video_stream_service:
-							self.doSeekRelative(2 * 9000)
-					except:
-						print("[AutoRes] failed videomode_50hz switching to", mode)
-				else:
-					try:
-						v = open('/proc/stb/video/videomode', "w")
-						v.write("%s\n" % mode)
-						v.close()
-						print("[AutoRes] switching to", mode)
-						if self.video_stream_service:
-							self.doSeekRelative(2 * 9000)
-					except:
-						print("[AutoRes] failed switching to", mode)
+				try:
+					v = open(proc_videomode, "w")
+					v.write("%s\n" % mode)
+					v.close()
+					print("[AutoRes] switching to", mode)
+					if self.video_stream_service:
+						self.doSeekRelative(2 * 9000)
+				except:
+					print("[AutoRes] failed switching to", mode)
 				resolutionlabel["restxt"].setText(_("Videomode: %s") % mode)
 				if config.plugins.autoresolution.showinfo.value:
 					resolutionlabel.show()
@@ -783,22 +772,13 @@ class AutoFrameRate(Screen):
 
 	def changeFramerateCallback(self, ret=True):
 		if ret:
-			if model in ("gbue4k", "gbquad4k"):
-				try:
-					f = open("/proc/stb/video/videomode_50hz", "w")
-					f.write(self.new_mode)
-					f.close()
-					print("[AutoFramerate] set resolution/framerate: %s" % self.new_mode)
-				except:
-					print("[AutoFramerate] failed videomode_50hz switching to")
-			else:
-				try:
-					f = open("/proc/stb/video/videomode", "w")
-					f.write(self.new_mode)
-					f.close()
-					print("[AutoFramerate] set resolution/framerate: %s" % self.new_mode)
-				except:
-					print("[AutoFramerate] failed switching to")
+			try:
+				f = open(proc_videomode, "w")
+				f.write(self.new_mode)
+				f.close()
+				print("[AutoFramerate] set resolution/framerate: %s" % self.new_mode)
+			except:
+				print("[AutoFramerate] failed switching to")
 			service = self.session.nav.getCurrentlyPlayingServiceReference()
 			if service:
 				path = service.getPath()
@@ -915,20 +895,12 @@ class ManualResolution(Screen):
 			self.setResolution(self.old_mode)
 
 	def setResolution(self, mode):
-		if model in ("gbue4k", "gbquad4k"):
-			try:
-				f = open("/proc/stb/video/videomode_50hz", "w")
-				f.write(mode)
-				f.close()
-			except:
-				print("[ManualResolution] Error write /proc/stb/video/videomode_50hz")
-		else:
-			try:
-				f = open("/proc/stb/video/videomode", "w")
-				f.write(mode)
-				f.close()
-			except:
-				print("[ManualResolution] Error write /proc/stb/video/videomode")
+		try:
+			f = open(proc_videomode, "w")
+			f.write(mode)
+			f.close()
+		except:
+			print("[ManualResolution] Error write /proc/stb/video/videomode")
 
 
 def openManualResolution(session, **kwargs):
