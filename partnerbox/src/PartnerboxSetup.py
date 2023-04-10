@@ -133,8 +133,7 @@ class PartnerboxSetup(ConfigListScreen, Screen):
 		if autoTimerAvailable:
 			self.list.append(getConfigListEntry(_("Enable Partnerbox-AutoTimer function"), config.plugins.Partnerbox.showpartnerboxautotimerninmenu))
 			self.list.append(getConfigListEntry(_("Enable Partnerbox-AutoTimer in E-Menu"), config.plugins.Partnerbox.showpartnerboxautotimerninextensionsmenu))
-		self["config"].list = list
-		self["config"].l.setList(self.list)
+		self["config"].list = self.list
 
 	def keySave(self):
 		config.plugins.Partnerbox.showremotetvinextensionsmenu.save()
