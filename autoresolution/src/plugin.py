@@ -13,11 +13,10 @@ from Screens.MessageBox import MessageBox
 from Screens.Screen import Screen
 from Screens.Setup import SetupSummary
 from Tools import Notifications
-from Tools.HardwareInfo import HardwareInfo
 
 from . import _
 
-proc_videomode = SystemInfo.get("Autoresolution_proc_videomode", None) or (HardwareInfo().get_device_model() in ("gbue4k", "gbquad4k") and "/proc/stb/video/videomode_50hz" or "/proc/stb/video/videomode")
+proc_videomode = SystemInfo.get("Autoresolution_proc_videomode", "/proc/stb/video/videomode")
 
 
 def readAvailableModes():
