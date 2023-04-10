@@ -8,6 +8,7 @@ from Components.ConfigList import ConfigListScreen
 from Components.Sources.StaticText import StaticText
 from Components.ActionMap import ActionMap
 from Screens.MessageBox import MessageBox
+from Components.Sources.Boolean import Boolean
 
 
 class RSSFeedEdit(Screen, ConfigListScreen):
@@ -78,6 +79,7 @@ class RSSSetup(Screen, ConfigListScreen):
 		self.list = []
 		ConfigListScreen.__init__(self, self.list, session)
 		self.createSetup()
+		self["VKeyIcon"] = Boolean(False)
 		self["key_red"] = StaticText(_("Cancel"))
 		self["key_green"] = StaticText(_("OK"))
 		self["key_yellow"] = StaticText(_("New"))
