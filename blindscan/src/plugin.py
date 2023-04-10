@@ -137,7 +137,7 @@ XML_FILE = None
 _supportNimType = {'AVL1208': '', 'AVL6222': '6222_', 'AVL6211': '6211_', 'BCM7356': 'bcm7346_', 'SI2166': 'si2166_'}
 
 # For STBs that support PnP DVB-S/S2 tuner models, e.g. VU+Solo 4K,VU+Ultimo 4K,Gigablue UE/Quad 4K
-_unsupportedNims = ("Vuplus DVB-S NIM(7376 FBC)", "Vuplus DVB-S NIM(45308X FBC)", "DVB-S2 NIM(45308 FBC)", "DVB-S2 NIM(45208 FBC)", "DVB-S2X NIM(45308X FBC)", "DVB-S2 NIM(45308 FBC)") # format = nim.description from nimmanager
+_unsupportedNims = ("Vuplus DVB-S NIM(7376 FBC)", "Vuplus DVB-S NIM(45308X FBC)", "Vuplus DVB-S NIM(45208 FBC)", "DVB-S2 NIM(45208 FBC)", "DVB-S2X NIM(45308X FBC)", "DVB-S2 NIM(45308 FBC)") # format = nim.description from nimmanager
 
 # blindscan-s2 supported tuners
 _blindscans2Nims = ('TBS-5925', 'DVBS2BOX', 'M88DS3103')
@@ -214,7 +214,7 @@ class BlindscanState(Screen, ConfigListScreen):
 
 		self.configBooleanTpList = []
 		self.tp_list = []
-		ConfigListScreen.__init__(self, self.tp_list, session=self.session)
+		ConfigListScreen.__init__(self, self.tp_list, session=self.session, on_change=self.changedEntry)
 
 		self["actions"] = ActionMap(["SetupActions"],
 		{
@@ -522,7 +522,7 @@ class Blindscan(ConfigListScreen, Screen, TransponderFiltering):
 		if not self.openFrontend():
 			oldref = self.session.nav.getCurrentlyPlayingServiceReference()
 			stop_current_service = True
-			if oldref and self.getCurrentTuner != None:
+			if BOX_MODEL != "gigablue" and oldref and self.getCurrentTuner != None:
 				if self.feid != self.getCurrentTuner:
 					stop_current_service = False
 			if stop_current_service:
@@ -1249,7 +1249,8 @@ class Blindscan(ConfigListScreen, Screen, TransponderFiltering):
 					sys = {"DVB-S": parm.System_DVB_S,
 						"DVB-S2": parm.System_DVB_S2,
 						"DVB-S2X": parm.System_DVB_S2}
-					qam = {"QPSK": parm.Modulation_QPSK,
+					qam = {"AUTO": parm.Modulation_Auto,
+						"QPSK": parm.Modulation_QPSK,
 						"8PSK": parm.Modulation_8PSK,
 						"16APSK": parm.Modulation_16APSK,
 						"APSK_16": parm.Modulation_16APSK,
@@ -1263,7 +1264,7 @@ class Blindscan(ConfigListScreen, Screen, TransponderFiltering):
 					parm.inversion = parm.Inversion_Off
 					parm.pilot = parm.Pilot_Off
 					parm.fec = parm.FEC_Auto
-					parm.modulation = qam.get(data[4], eDVBFrontendParametersSatellite.Modulation_QPSK)
+					parm.modulation = qam.get(data[4], parm.Modulation_QPSK)
 					parm.rolloff = parm.RollOff_alpha_0_35
 					parm.pls_mode = eDVBFrontendParametersSatellite.PLS_Gold
 					parm.is_id = eDVBFrontendParametersSatellite.No_Stream_Id_Filter
@@ -1279,7 +1280,8 @@ class Blindscan(ConfigListScreen, Screen, TransponderFiltering):
 					sys = {"DVB-S": parm.System_DVB_S,
 						"DVB-S2": parm.System_DVB_S2,
 						"DVB-S2X": parm.System_DVB_S2}
-					qam = {"QPSK": parm.Modulation_QPSK,
+					qam = {"AUTO": parm.Modulation_Auto,
+						"QPSK": parm.Modulation_QPSK,
 						"8PSK": parm.Modulation_8PSK,
 						"16APSK": parm.Modulation_16APSK,
 						"32APSK": parm.Modulation_32APSK}
@@ -1309,15 +1311,15 @@ class Blindscan(ConfigListScreen, Screen, TransponderFiltering):
 						"CIRCULARLEFT": parm.Polarisation_CircularLeft,
 						"VERTICAL": parm.Polarisation_Vertical}
 					parm.orbital_position = self.orb_position
-					parm.polarisation = pol[data[1]]
+					parm.polarisation = pol.get(data[1], parm.Polarisation_Horizontal)
 					parm.frequency = int(data[2])
 					parm.symbol_rate = int(data[3])
-					parm.system = sys[data[4]]
-					parm.inversion = inv[data[5]]
-					parm.pilot = pilot[data[6]]
-					parm.fec = fec.get(data[7], eDVBFrontendParametersSatellite.FEC_Auto)
-					parm.modulation = qam[data[8]]
-					parm.rolloff = roll[data[9]]
+					parm.system = sys.get(data[4], parm.System_DVB_S)
+					parm.inversion = inv.get(data[5], parm.Inversion_Off)
+					parm.pilot = pilot.get(data[6], parm.Pilot_On)
+					parm.fec = fec.get(data[7], parm.FEC_Auto)
+					parm.modulation = qam.get(data[8], parm.Modulation_QPSK)
+					parm.rolloff = roll.get(data[9], parm.RollOff_alpha_0_35)
 					if parm.system == parm.System_DVB_S:
 						data = data[:10] # "DVB-S" does not support MIS/PLS or T2MI so remove any values from the output of the binary file
 					parm.pls_mode = getMisPlsValue(data, 10, eDVBFrontendParametersSatellite.PLS_Gold)
@@ -1434,11 +1436,13 @@ class Blindscan(ConfigListScreen, Screen, TransponderFiltering):
 						p.FEC_None: "None"}
 					sys = {p.System_DVB_S: "DVB-S",
 						p.System_DVB_S2: "DVB-S2"}
-					qam = {p.Modulation_QPSK: "QPSK",
+					qam = {p.Modulation_Auto: "Auto",
+						p.Modulation_QPSK: "QPSK",
 						p.Modulation_8PSK: "8PSK",
 						p.Modulation_16APSK: "16APSK",
 						p.Modulation_32APSK: "32APSK"}
 					tp_str = "%g%s %d FEC %s %s %s" % (p.frequency / 1000.0, pol[p.polarisation], p.symbol_rate // 1000, fec[p.fec], sys[p.system], qam[p.modulation])
+					tp_str = "%g%s %d FEC %s %s %s" % (p.frequency / 1000.0, pol.get(p.polarisation, ""), p.symbol_rate // 1000, fec.get(p.fec, ""), sys.get(p.system, ""), qam.get(p.modulation, ""))
 					if p.is_id > eDVBFrontendParametersSatellite.No_Stream_Id_Filter:
 						tp_str += " MIS %d" % p.is_id
 					if p.pls_code > 0:
