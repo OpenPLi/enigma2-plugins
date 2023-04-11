@@ -3,7 +3,7 @@ from . import _
 
 
 def main(session, service, **kwargs):
-	import ui
+	from . import ui
 	session.open(ui.ReconstructApSc, service, **kwargs)
 
 
