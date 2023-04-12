@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Enigma2 EPGRefresh Plugin\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-08-13 18:34+0200\n"
-"PO-Revision-Date: 2023-02-28 21:41+0100\n"
+"PO-Revision-Date: 2023-04-12 09:06+0200\n"
 "Last-Translator: IMS <ims@openpli.org>\n"
 "Language-Team: PLi\n"
 "Language: cs_CZ\n"
@@ -109,7 +109,7 @@ msgid "Channels"
 msgstr "Kanály"
 
 msgid "Choice days for refresh"
-msgstr "Nastavit dny pro aktualizaci "
+msgstr "Nastavit dny pro aktualizaci"
 
 msgid "Clear EPG"
 msgstr "Vyčistit EPG"
@@ -202,7 +202,7 @@ msgid "EPGRefresh configuration"
 msgstr "EPGRefresh - nastavení"
 
 msgid "EPGRefresh needs to be explicitly started using the yellow button in this menu if this option is not enabled"
-msgstr "Dokud není povoleno, EPGRefresh  nebude probíhat automaticky a musí být spouštěna pomocí žlutého tlačítka v této nabídce."
+msgstr "Dokud není povoleno, EPGRefresh nebude probíhat automaticky a musí být spouštěna pomocí žlutého tlačítka v této nabídce."
 
 msgid "EPGRefresh requires services/bouquets to be configured. Configure now?"
 msgstr "EPGRefresh vyžaduje nastavení programů/přehledů. Nastavit nyní?"
@@ -223,7 +223,7 @@ msgid "Enable automatic EPG save interval."
 msgstr "Povoluje automatické ukládání EPG v určitém intervalu."
 
 msgid "Enable automatic zapping of all services in the current services list."
-msgstr "Povoluje automatické přepínání ze všech programů v seznamu programů. "
+msgstr "Povoluje automatické přepínání ze všech programů v seznamu programů."
 
 msgid "Enable this item to flush all EPG data before starting a new EPG refresh cycle"
 msgstr "Povolením této volby vyčistíte všechna EPG data před spuštěním nové aktualizace EPG"
@@ -238,7 +238,7 @@ msgid "Enable this to show the EPGRefresh configuration menu in the extension me
 msgstr "Umožní přistupovat k nastavení EPGRefresh z Extension menu."
 
 msgid "Extend the list of services to refresh by those your AutoTimers use?"
-msgstr "Seznam kanálů pro automatickou aktualizaci EPG bude rozšířen o kanály používané v AutoTimeru."
+msgstr "Seznam kanálů pro automatickou aktualizaci EPG rozšířit o kanály použité v AutoTimeru?"
 
 msgid "Fake recording"
 msgstr "Falešné nahrávání"
@@ -262,13 +262,13 @@ msgid "If \"Run AutoTimer after refresh\" and \"Shutdown after EPG refresh\" ena
 msgstr "Jestliže jsou \"Spustit AutoTimer po auktualizaci\" a \"Vypnout po aktualizaci EPG\" povoleny a používáte \"Label series\" pro hledání, nastavte delší zpoždění."
 
 msgid "If enabled, show 'EPGRefresh now' in main menu when currently no EPGRefresh is running."
-msgstr "Jestliže je povoleno, pak bude zobrazeno 'Aktualizace EPG' v hlavním menu ( jestliže již aktualizace neprobíhá)."
+msgstr "Jestliže je povoleno, pak bude zobrazeno 'Aktualizace EPG' v hlavním menu (jestliže již aktualizace neprobíhá)."
 
 msgid "If enabled, show 'Stop running EPGRefresh' in main menu when EPGPRefresh is running."
-msgstr "Jestliže je povoleno a probíhá aktualizace, pak bude v hlavním menu zobrazenována volba 'Zastavit aktualizaci EPG'."
+msgstr "Jestliže je povoleno a probíhá aktualizace, pak bude v hlavním menu zobrazována volba 'Zastavit aktualizaci EPG'."
 
 msgid "If you want to refresh the EPG in background, you can choose the method which best suits your needs here, e.g. hidden, fake recording or regular Picture in Picture."
-msgstr "Pokud chcete aktualizovat EPG na pozadí, můžete zvolit metodu, která nejlépe vyhovuje Vašim potřebám. Např. skrytě , falešné nahrávání nebo obraz v obraze (PiP). "
+msgstr "Pokud chcete aktualizovat EPG na pozadí, můžete zvolit metodu, která nejlépe vyhovuje Vašim potřebám. Např. skrytě, falešné nahrávání nebo obraz v obraze (PiP)."
 
 msgid "Inherit Services from AutoTimer"
 msgstr "Převzít kanály z AutoTimeru"
@@ -350,7 +350,7 @@ msgid "Refresh EPG automatically"
 msgstr "Aktualizovat EPG automaticky"
 
 msgid "Refresh EPG using"
-msgstr "Aktualizace EPG používá "
+msgstr "Aktualizace EPG používá"
 
 msgid "Refresh now"
 msgstr "Aktualizovat"
@@ -432,7 +432,7 @@ msgid "Select the file name for the EPG cache file."
 msgstr "Vyberte název EPG souboru, pokud se vám nelíbí výchozí název."
 
 msgid "Select the path to EPG cache file. Don't use the internal flash if not necessary!"
-msgstr "Vyberte cestu k EPG souboru. Nedoporučuje se používat interní flash."
+msgstr "Vyberte cestu k EPG souboru. Používat interní flash se nedoporučuje!"
 
 msgid "Select this item to add services to the EPGRefresh."
 msgstr "Nastavuje, kde se bude zobrazovat  'přidat program do EPGRefresh'."
@@ -468,7 +468,7 @@ msgid "Shutdown after EPG refresh enabled in setup..."
 msgstr "Vypnout po aktualizaci EPG povolené v nastavení..."
 
 msgid "Size: "
-msgstr "Velikost:"
+msgstr "Velikost: "
 
 msgid "Skip protected Services"
 msgstr "Přeskočit zabezpečené kanály"
