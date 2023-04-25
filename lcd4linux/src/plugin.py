@@ -15678,10 +15678,10 @@ def autostart(reason, **kwargs):
 
 
 def setup(menuid, **kwargs):
-		if menuid == "setup":
-			return [("LCD4Linux", main, "lcd4linux", None)]
-		else:
-			return []
+	if menuid == "setup":
+		return [("LCD4Linux", main, "lcd4linux", None)]
+	else:
+		return []
 
 
 def Plugins(**kwargs):
