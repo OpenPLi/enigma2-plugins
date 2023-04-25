@@ -57,7 +57,6 @@ from threading import Thread
 from time import strftime, strptime, localtime, mktime, time, sleep, timezone, altzone, daylight, gmtime
 from twisted.internet.reactor import callInThread
 from unicodedata import normalize
-from boxbranding import getImageDistro, getBoxType, getImageArch
 from enigma import eActionMap, iServiceInformation, iFrontendInformation, eDVBResourceManager, eDVBVolumecontrol, eTimer
 from enigma import eEPGCache, eServiceReference, eServiceCenter, getDesktop, getEnigmaVersionString, eEnv, ePicLoad
 from Components.ActionMap import ActionMap
@@ -263,15 +262,6 @@ INFO = ""
 WeekDays = [_("Mon"), _("Tue"), _("Wed"), _("Thur"), _("Fri"), _("Sat"), _("Sun")]
 USBok = False
 if find_library("usb-0.1") is not None or find_library("usb-1.0") is not None:
-	print("[LCD4linux] libusb found :-)", getEnigmaVersionString())
-	from . import Photoframe
-	import usb.util
-	from . import dpf
-	USBok = True
-elif getImageArch() in ("aarch64"):
-	import usb.core
-	import usb.backend.libusb1
-	usb.backend.libusb1.get_backend(find_library=lambda x: "/lib64/libusb-1.0.so.0")
 	print("[LCD4linux] libusb found :-)", getEnigmaVersionString())
 	from . import Photoframe
 	import usb.util
@@ -2537,8 +2527,6 @@ def L4LoadNewConfig(cfg):
 	if isfile(LCD4default):
 		LCD4linux.loadFromFile(LCD4default)
 	L4log("Config-Load", cfg)
-	if getBoxType() == 'vuduo2':  # due to 2 displays, LCD4linux is integrated in this boximage
-		LCD4linux.loadFromFile("%sdefault.vuduo2" % LCD4data)
 	L4log("Config-Load for 'Vu+ duo²'", cfg)
 	LCD4linux.loadFromFile(cfg)
 	LCD4linux.load()
@@ -15690,14 +15678,6 @@ def autostart(reason, **kwargs):
 
 
 def setup(menuid, **kwargs):
-	if getImageDistro() in ("openvix", "openatv", "egami", "openhdf", "openbh", "openspa", "opendroid"):
-		if menuid == "display" and SystemInfo["Display"]:
-			return [("LCD4Linux", main, "lcd4linux", None)]
-		elif menuid == "system" and not SystemInfo["Display"]:
-			return [("LCD4Linux", main, "lcd4linux", None)]
-		else:
-			return []
-	else:
 		if menuid == "setup":
 			return [("LCD4Linux", main, "lcd4linux", None)]
 		else:
