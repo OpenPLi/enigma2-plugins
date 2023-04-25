@@ -1,51 +1,43 @@
 # -*- coding: utf-8 -*-
 from __future__ import absolute_import
-from twisted.web import resource, http
-from .plugin import *
-from . import _
-from Components.config import configfile, config, ConfigSelection
-from enigma import eTimer
-from .module import L4Lelement
-import six
-
-if six.PY2:
+from glob import glob
+from os import stat
+from os.path import isfile, join, basename
+from six import PY2, ensure_str, ensure_binary
+if PY2:
 	from HTMLParser import HTMLParser
 	_unescape = HTMLParser().unescape
 else:
 	from html import unescape as _unescape
-
-L4LElement = L4Lelement()
-
-import os
-import datetime
-import glob
-import time
+from time import time
+from twisted.web import resource, http
+from enigma import eTimer
+from boxbranding import getOEVersion
+from Components.config import ConfigSelection
 from Tools.Directories import resolveFilename, SCOPE_PLUGINS, SCOPE_CONFIG
+from .module import L4Lelement
+from .plugin import *
+from . import _
+
 Py = resolveFilename(SCOPE_PLUGINS, "Extensions/LCD4linux/plugin.py")
-
-try:
-	from enigma import eMediaDatabase
-	DPKG = True
-except:
-	DPKG = False
-
+DPKG = False
 L1 = []
 L2 = []
 L3 = []
 L4 = []
 M1 = ["LCD4linux.OSD", "LCD4linux.Scr", "LCD4linux.Bil", "LCD4linux.Wet", "LCD4linux.Net", "LCD4linux.Pop", "LCD4linux.Fri", "LCD4linux.Fon", "LCD4linux.Mai", "LCD4linux.Cal", "LCD4linux.RBo", "LCD4linux.Www", "LCD4linux.Web", "LCD4linux.MJP", "LCD4linux.xml", "LCD4linux.Tun", "LCD4linux.Key", "LCD4linux.Blu", "LCD4linux.Son", "LCD4linux.YMC"]
 M2 = [_("OSD"), _("Screen"), _("Picture"), _("Weather"), _("Netatmo"), _("Popup-Text"), _("FritzCall"), _("Font"), _("Mail"), _("Calendar"), _("Remote Box"), _("WWW Converter"), _("WebIF"), _("MJPEG Stream"), _("Box-Skin-LCD"), _("Tuner"), _("Key"), _("BlueSound"), _("Sonos"), _("MusicCast")]
-
 Mode = "1"
 ModeOld = ""
 Element = ""
 ElementList = []
 ExeMode = False
 StatusMode = False
+L4LElement = L4Lelement()
 
 
 def _exec(command):
-	if six.PY2:
+	if PY2:
 		exec(command)
 	else:
 		variable = command.split(" ", 1)[0]
@@ -96,9 +88,9 @@ def ParseCode():
 
 
 def _l(st):
-	st = six.ensure_str(st, "utf-8", "ignore")
+	st = ensure_str(st, "utf-8", "ignore")
 	st = st.replace(" [ok]>", "").encode('ascii', 'xmlcharrefreplace')
-	return six.ensure_str(st)
+	return ensure_str(st)
 
 
 def AktiveMode(Test, R):
@@ -120,12 +112,7 @@ def AktiveElement(Test):
 
 
 def AktiveScreen(Test):
-	Color = ""
-	if getScreenActive() == Test:
-		Color = "; background-color:lime"
-	else:
-		Color = "; background-color:ButtonFace"
-	return Color
+	return "; background-color:lime" if getScreenActive() == Test else "; background-color:ButtonFace"
 
 ########################################################
 
@@ -171,14 +158,13 @@ class LCD4linuxConfigweb(resource.Resource):
 		global ElementList
 		global ExeMode
 		global StatusMode
-		IP = six.ensure_str(req.getClientIP())
-		IP = IP.split(":")[-1]
+		IP = ensure_str(req.getClientIP())
+		if getOEVersion() == "OE-Alliance 4.3":
+			IP = IP.split(":")[-1]
 		L4logE("IP1:", IP)
 		if IP is None:
-			IP = req.client.host.split(":")[-1]
 			L4logE("IP2:", req.client.host)
-			if IP.find(".") == -1:
-				IP = None
+			IP = None if IP.find(".") == -1 else req.client.host.split(":")[-1]
 		else:
 			IP = IP.split(":")[-1]
 		if IP is None:
@@ -211,20 +197,16 @@ class LCD4linuxConfigweb(resource.Resource):
 			html += "Default is: 127. 192.168. 172. 10.\n"
 			html += "</body>\n"
 			html += "</html>\n"
-			return six.ensure_binary(html)
+			return ensure_binary(html)
 		if len(L1) == 0:
 			ParseCode()
-
 		req.setResponseCode(http.OK)
 		req.setHeader('Content-type', 'text/html')
 		req.setHeader('charset', 'UTF-8')
-
 		command = req.args.get(b"cmd", None)
-		if command != None:
-			_command = six.ensure_str(command[0])
+		_command = ensure_str(command[0]) if command != None else ""
 		ex = req.args.get(b"ex", None)
-		if ex != None:
-			_ex = six.ensure_str(ex[0])
+		_ex = ensure_str(ex[0]) if ex != None else req.args.get(b"ex", None)
 		mo = req.args.get(b"Mode", None)
 		el = req.args.get(b"Element", None)
 		self.restartTimer()
@@ -232,7 +214,7 @@ class LCD4linuxConfigweb(resource.Resource):
 		if self.CurrentMode == ("-", "-"):
 			self.CurrentMode = (getConfigStandby(), getisMediaPlayer())
 		if mo is not None:
-			Mode = six.ensure_str(mo[0])
+			Mode = ensure_str(mo[0])
 			setConfigMode(True)
 			if Mode in ["1", "2"]:
 				setisMediaPlayer("")
@@ -248,7 +230,7 @@ class LCD4linuxConfigweb(resource.Resource):
 			getBilder()
 		html = ""
 		if el is not None:
-			Element = six.ensure_str(el[0])
+			Element = ensure_str(el[0])
 		if req.args.get(b"save.y", None) is not None:
 			L4log("WebIF: save Config-File")
 			LCD4linux.save()
@@ -260,12 +242,12 @@ class LCD4linuxConfigweb(resource.Resource):
 			lcd4config = resolveFilename(SCOPE_CONFIG) + "lcd4config"
 			req.setHeader('Content-type', 'text/plain')
 			req.setHeader('Content-Disposition', 'attachment;filename=lcd4config')
-			req.setHeader('Content-Length', str(os.stat(lcd4config).st_size))
+			req.setHeader('Content-Length', str(stat(lcd4config).st_size))
 			req.setHeader('charset', 'UTF-8')
 			f = open(lcd4config, "r")
 			html = f.read()
 			f.close()
-			return six.ensure_binary(html)
+			return ensure_binary(html)
 		if req.args.get(b"upload.y", None) is not None:
 			L4log("WebIF: upload Config")
 			lcd4config = "/tmp/test"
@@ -274,7 +256,7 @@ class LCD4linuxConfigweb(resource.Resource):
 				f = open(lcd4config, "wb")
 				f.write(data)
 				f.close()
-				if os.path.isfile(lcd4config):
+				if isfile(lcd4config):
 					L4LoadNewConfig(lcd4config)
 			else:
 				L4log("WebIF: Error upload")
@@ -287,22 +269,21 @@ class LCD4linuxConfigweb(resource.Resource):
 		if req.args.get(b"logdownload.y", None) is not None:
 			L4log("WebIF: download Logfile")
 			lcd4config = "/tmp/L4log.txt"
-			if os.path.isfile(lcd4config):
+			if isfile(lcd4config):
 				req.setResponseCode(http.OK)
 				req.setHeader('Content-type', 'text/plain')
 				req.setHeader('Content-Disposition', 'attachment;filename=l4log.txt')
-				req.setHeader('Content-Length', str(os.stat(lcd4config).st_size))
+				req.setHeader('Content-Length', str(stat(lcd4config).st_size))
 				req.setHeader('charset', 'UTF-8')
 				f = open(lcd4config, "r")
 				html = f.read()
 				f.close()
-				return six.ensure_binary(html)
-
+				return ensure_binary(html)
 		if command is None:
 			L4logE("no command")
 		elif _command == "exec" and ex is not None:
-			L4logE("exec", _ex)
-			exec(_ex)  # FIXME PY3
+			L4logE("exec: %s" % _ex)
+			exec(str(_ex))  # FIXME PY3
 		elif _command == "enable":
 			ExeMode = True
 		elif _command == "status":
@@ -338,13 +319,13 @@ class LCD4linuxConfigweb(resource.Resource):
 			elif len(exs) == 2:
 				L4LElement.setScreen(exs[0], exs[1])
 			elif len(exs) == 3:
-				L4LElement.setScreen(exs[0], exs[1], exs[2])
+				L4LElement.setScreen(exs[0], exs[1], exs[2] == "True")
 		elif _command == "brightness" and ex is not None:
 			exs = _ex.split(",")
 			if len(exs) == 1:
 				L4LElement.setBrightness(exs[0])
 			elif len(exs) == 2:
-				L4LElement.setBrightness(exs[0], exs[1])
+				L4LElement.setBrightness(exs[0], exs[1] == "True")
 		elif _command == "getbrightness" and ex is not None:
 			if int(_ex) < 1 or int(_ex) > 3:
 				return "0"
@@ -357,11 +338,11 @@ class LCD4linuxConfigweb(resource.Resource):
 				return str(getMJPEGreader(_ex))
 		elif _command == "getexec" and ex is not None:
 			L4logE("getexec", _ex)
-			_exec("getexec = " + _ex)  # FIXME PY3
-			return str(getexec)
+			_exec("getexec = %s" % _ex)  # FIXME PY3
+			return str(_ex)
 		elif _command == "copyMP":
 			for a in req.args.keys():
-				_a = six.ensure_str(a)
+				_a = ensure_str(a)
 				if ".Standby" in _a:
 					b = _a.replace(".Standby", ".MP")
 					if (" " + b) in list(zip(*L3))[2]:
@@ -376,7 +357,7 @@ class LCD4linuxConfigweb(resource.Resource):
 						objb.value = obja.value
 		elif _command == "copyIdle":
 			for a in req.args.keys():
-				_a = six.ensure_str(a)
+				_a = ensure_str(a)
 				if ".MP" in _a:
 					b = _a.replace(".MP", ".Standby")
 					if (" " + b) in list(zip(*L4))[2]:
@@ -391,7 +372,7 @@ class LCD4linuxConfigweb(resource.Resource):
 						objb.value = obja.value
 		elif _command == "copyOn":
 			for a in req.args.keys():
-				_a = six.ensure_str(a)
+				_a = ensure_str(a)
 				if ".MP" in _a:
 					b = _a.replace(".MP", ".")
 					if (" " + b) in list(zip(*L2))[2]:
@@ -416,12 +397,11 @@ class LCD4linuxConfigweb(resource.Resource):
 			Ccal = False
 			Cwww = False
 			for a in req.args.keys():
-				_a = six.ensure_str(a)
+				_a = ensure_str(a)
 				if _a.find(".") > 0:
 					val = req.args.get(a, "")[0]
-					val = six.ensure_str(val)
+					val = ensure_str(val)
 #ConfigSelection
-					changed = False
 					ConfObj = eval(_a)
 					if isinstance(ConfObj, ConfigSelection):
 						ConfObj.value = val
@@ -429,10 +409,7 @@ class LCD4linuxConfigweb(resource.Resource):
 #ConfigYesNo
 						if isinstance(ConfObj, ConfigYesNo):
 							val = req.args.get(a, "")
-							if len(val) == 2:
-								ConfObj.value = True
-							else:
-								ConfObj.value = False
+							ConfObj.value = True if len(val) == 2 else False
 						else:
 #ConfigText
 							if isinstance(ConfObj, ConfigText):
@@ -481,30 +458,37 @@ class LCD4linuxConfigweb(resource.Resource):
 						elif _a.find(".Font") > 0:
 							setFONT(LCD4linux.Font.value)
 						if _a.find("WetterCity") > 0:
-							resetWetter()
+							LCD4linux.WetterCoords.value = "0,0"
+							LCD4linux.WetterCoords.save()
+							LCD4linux.saveToFile(LCD4config)
+							resetWetter(0)
+						if _a.find("Wetter2City") > 0:
+							LCD4linux.Wetter2Coords.value = "0,0"
+							LCD4linux.Wetter2Coords.save()
+							LCD4linux.saveToFile(LCD4config)
+							resetWetter(1)
 						if _a.find("ScreenActive") > 0:
 							setScreenActive(LCD4linux.ScreenActive.value)
 						if _a.find("BildFile") > 0:
 							getBilder()
 						if _a.find("WWW1") > 0:
-							if _a.find("WWW1url") > 0 or os.path.isfile(WWWpic % "1") == False:
+							if _a.find("WWW1url") > 0 or isfile(WWWpic % "1") == False:
 								Cwww = True
 							else:
 								rmFile(WWWpic % "1p")
 			if Cfritz:
 				rmFile(PICfritz)
 			if Cwetter:
-				resetWetter()
+				resetWetter(None)
 			if Cpicon:
 				if len(LCD4linux.PiconCache.value) > 2:
-					rmFiles(os.path.join(LCD4linux.PiconCache.value, "*.png"))
+					rmFiles(join(LCD4linux.PiconCache.value, "*.png"))
 				if len(LCD4linux.Picon2Cache.value) > 2:
-					rmFiles(os.path.join(LCD4linux.Picon2Cache.value, "*.png"))
+					rmFiles(join(LCD4linux.Picon2Cache.value, "*.png"))
 			if Ccal:
 				resetCal()
 			if Cwww:
 				getWWW()
-
 			L4LElement.setRefresh()
 #####################
 # Anzeige
@@ -517,7 +501,7 @@ class LCD4linuxConfigweb(resource.Resource):
 		html += "<meta http-equiv=\"pragma\" content=\"no-cache\" />\n"
 		html += "<meta http-equiv=\"expires\" content=\"0\">\n"
 		html += "<link rel=\"shortcut icon\" href=\"/lcd4linux/data/favicon.png\">"
-		if os.path.isfile(CrashFile):
+		if isfile(CrashFile):
 			html += "<script language=\"JavaScript\">\n"
 			html += "function fensterchen() {\n"
 			html += "fens1=window.open(\"\", \"Crashlog\",\"width=500,height=300,resizable=yes\");\n"
@@ -529,11 +513,9 @@ class LCD4linuxConfigweb(resource.Resource):
 		html += "vertical-align: middle; font-size:8px; }\n"
 		html += "</style>\n"
 		if L4LElement.getRefresh() == True:
+			glob
 			GI = getINFO().split()
-			if len(GI) > 6:
-				GR = min(int(float(GI[6])) + 1, 6)
-			else:
-				GR = 6
+			GR = min(int(float(GI[6])) + 1, 6) if len(GI) > 6 else 6
 			html += "<meta http-equiv=\"refresh\" content=\"%d\">\n" % GR
 		html += "<title>LCD4linux</title>\n"
 		html += "</head>"
@@ -544,22 +526,22 @@ class LCD4linuxConfigweb(resource.Resource):
 		html += "<tr><td bgcolor=\"#000000\" width=\"220\">\n"
 		html += "<p align=\"center\"><img title=\"\" border=\"0\" src=\"/lcd4linux/data/WEBdreambox.png\" width=\"181\" height=\"10\">\n"
 		CCM = "#FFFFFF" if getConfigMode() == False else "#FFCC00"
-		html += "<font color=\"%s\"><b>LCD4linux Config</b></font><br />%s\n" % (CCM, (Version if L4LElement.getVersion() == True else Version + "") + " (%s: Py" + ("2" if six.PY2 else "3") + ")") % _l(_("Mode"))
+		html += "<font color=\"%s\"><b>LCD4linux Config</b></font><br />%s\n" % (CCM, (Version if L4LElement.getVersion() == True else Version + "") + " (%s: Py" + ("2" if PY2 else "3") + ")") % _l(_("Mode"))
 		if IP is None:
 			html += "<br><span style=\"font-size:7pt;color: #FF0000\">%s!</span>" % _l(_("IP seurity not supported by Box"))
 		html += "</p></td><td bgcolor=\"#000000\">\n"
 		html += "<p align=\"left\">"
-		d = glob.glob("%sdpf.*" % getTMPL())
+		d = glob("%sdpf.*" % getTMPL())
 		if len(d) > 0:
-			html += "<a href=\"/lcd4linux\"><img style=\"color:#FFCC00\" title=\"LCD 1\" src=\"/lcd4linux/%s?%d\" border=\"1\" height=\"80\" id=\"reloader1\" onload=\"setTimeout('document.getElementById(\\'reloader1\\').src=\\'/lcd4linux/%s?\\'+new Date().getTime()', 5000)\" ></a>" % (os.path.basename(d[0]), time.time(), os.path.basename(d[0]))
-		d = glob.glob("%sdpf2.*" % getTMPL())
+			html += "<a href=\"/lcd4linux\"><img style=\"color:#FFCC00\" title=\"LCD 1\" src=\"/lcd4linux/%s?%d\" border=\"1\" height=\"80\" id=\"reloader1\" onload=\"setTimeout('document.getElementById(\\'reloader1\\').src=\\'/lcd4linux/%s?\\'+new Date().getTime()', 5000)\" ></a>" % (basename(d[0]), time(), basename(d[0]))
+		d = glob("%sdpf2.*" % getTMPL())
 		if len(d) > 0:
-			html += "<a href=\"/lcd4linux?file=%s\"><img style=\"color:#FFCC00\" title=\"LCD 2\" src=\"/lcd4linux/%s?%d\" border=\"1\" height=\"80\" id=\"reloader2\" onload=\"setTimeout('document.getElementById(\\'reloader2\\').src=\\'/lcd4linux/%s?\\'+new Date().getTime()', 5000)\" ></a>" % (os.path.basename(d[0]), os.path.basename(d[0]), time.time(), os.path.basename(d[0]))
-		d = glob.glob("%sdpf3.*" % getTMPL())
+			html += "<a href=\"/lcd4linux?file=%s\"><img style=\"color:#FFCC00\" title=\"LCD 2\" src=\"/lcd4linux/%s?%d\" border=\"1\" height=\"80\" id=\"reloader2\" onload=\"setTimeout('document.getElementById(\\'reloader2\\').src=\\'/lcd4linux/%s?\\'+new Date().getTime()', 5000)\" ></a>" % (basename(d[0]), basename(d[0]), time(), basename(d[0]))
+		d = glob("%sdpf3.*" % getTMPL())
 		if len(d) > 0:
-			html += "<a href=\"/lcd4linux?file=%s\"><img style=\"color:#FFCC00\" title=\"LCD 3\" src=\"/lcd4linux/%s?%d\" border=\"1\" height=\"80\" id=\"reloader3\" onload=\"setTimeout('document.getElementById(\\'reloader3\\').src=\\'/lcd4linux/%s?\\'+new Date().getTime()', 5000)\" ></a>" % (os.path.basename(d[0]), os.path.basename(d[0]), time.time(), os.path.basename(d[0]))
+			html += "<a href=\"/lcd4linux?file=%s\"><img style=\"color:#FFCC00\" title=\"LCD 3\" src=\"/lcd4linux/%s?%d\" border=\"1\" height=\"80\" id=\"reloader3\" onload=\"setTimeout('document.getElementById(\\'reloader3\\').src=\\'/lcd4linux/%s?\\'+new Date().getTime()', 5000)\" ></a>" % (basename(d[0]), basename(d[0]), time(), basename(d[0]))
 		html += "</p></td>\n"
-		if os.path.isfile(CrashFile):
+		if isfile(CrashFile):
 			html += "<td valign=\"top\" align=\"left\"  bgcolor=\"#000000\">\n"
 			html += "<form method=\"post\"><font color=\"#FFFF00\">%s</font><br>\n" % _l(_("Crashlog"))
 			html += "<input type=\"hidden\" name=\"cmd\" value=\"\">\n"
@@ -571,7 +553,7 @@ class LCD4linuxConfigweb(resource.Resource):
 		html += "<input type=\"file\" name=\"uploadName\" title=\"%s\" class=\"style1\" >\n" % _l(_("Filename"))
 		html += "<input type=\"image\" name=\"upload\" value=\"klick\" src=\"/lcd4linux/data/WEBupload.png\" height=\"25\" title=\"%s\" class=\"style1\"  >\n" % _l(_("Restore Config"))
 		html += "<input type=\"image\" name=\"download\" value=\"klick\" src=\"/lcd4linux/data/WEBdownload.png\" height=\"25\" title=\"%s\" class=\"style1\" >\n" % _l(_("Backup Config"))
-		if os.path.isfile("/tmp/L4log.txt"):
+		if isfile("/tmp/L4log.txt"):
 			html += "<input type=\"image\" name=\"logdel\" value=\"klick\" src=\"/lcd4linux/data/WEBlogdel.png\" height=\"25\" title=\"%s\" class=\"style1\"  >\n" % _l(_("Delete Logfile"))
 			html += "<input type=\"image\" name=\"logdownload\" value=\"klick\" src=\"/lcd4linux/data/WEBlogshow.png\" height=\"25\" title=\"%s\" class=\"style1\" >\n" % _l(_("Download Logfile"))
 		html += "<input type=\"image\" name=\"save\" value=\"klick\" src=\"/lcd4linux/data/WEBsave.png\" height=\"40\" title=\"%s\" class=\"style1\" >\n" % _l(_("Save Config"))
@@ -635,16 +617,12 @@ class LCD4linuxConfigweb(resource.Resource):
 					ElementList.append(Conf)
 					i += 1
 					Ea, Ec = AktiveElement(Conf)
-#					html += Conf
 					if Mode != "1":
 						ConfObj = eval(Conf)
 						Curr = ConfObj.value
 						L4log("Curr = %s.value" % Conf, Curr)
 						if Curr != "0":
-							if Ec == "":
-								Ec = "style=\"font-weight:bold;color:#CCFFBB\""
-							else:
-								Ec = Ec.replace("=\"", "=\"font-weight:bold;")
+							Ec = "style=\"font-weight:bold;color:#CCFFBB\"" if Ec == "" else Ec.replace("=\"", "=\"font-weight:bold;")
 					if Ea == "checked":
 						ElementText = (_l(_(LL[1])) if Mode != "1" else _l(M2[LL[3] - 1]))
 					html += "<input id=\"e%d\" name=\"Element\" type=\"radio\" value=\"%s\" %s onclick=\"this.form.submit();\"><label %s for=\"e%d\">%s&nbsp;&nbsp;</label>\n" % (i, Conf, Ea, Ec, i, (_l(_(LL[1])) if Mode != "1" else _l(M2[LL[3] - 1])))
@@ -657,7 +635,6 @@ class LCD4linuxConfigweb(resource.Resource):
 			html += "</fieldset></form>\n"
 			if str(LCD4linux.WebIfDesign.value) == "2":
 				html += "<br></td><td valign=\"top\">"
-
 			html += "<form name=\"Eingabe\" method=\"POST\">\n"
 			if str(LCD4linux.WebIfDesign.value) == "2":
 				html += "<fieldset style=\"width:auto\" name=\"Mode3\"><legend style=\"color: #FFCC00\">%s&nbsp;</legend>" % ElementText
@@ -696,7 +673,6 @@ class LCD4linuxConfigweb(resource.Resource):
 							b = Conf.replace(".Standby", ".MP")
 							if (" " + b) in list(zip(*L3))[2]:
 								isMP = True
-
 					if AktCode == 0:
 						AktCode = LL[3]
 					Curr = ConfObj.value
@@ -709,10 +685,7 @@ class LCD4linuxConfigweb(resource.Resource):
 						for i in list(range(Len)):
 							Choice = ConfObj.choices[i]
 							Wert = ConfObj.description[Choice]
-							if str(Choice) == str(Curr):
-								Aktiv = " selected"
-							else:
-								Aktiv = ""
+							Aktiv = " selected" if str(Choice) == str(Curr) else ""
 							html += "<option value=\"%s\" %s>%s</option>\n" % (Choice, Aktiv, _l(Wert))
 						html += "</select>\n"
 						html += "</td>\n"
@@ -728,10 +701,7 @@ class LCD4linuxConfigweb(resource.Resource):
 #ConfigText
 							if isinstance(ConfObj, ConfigText):
 								html += "<td width=\"300\">%s</td><td>\n" % _l(_(LL[1]))
-								if isinstance(ConfObj, ConfigPassword):
-									html += "<input type=\"password\" name=\"%s\" size=\"60\" value=\"%s\">" % (Conf, _l(Curr))
-								else:
-									html += "<input type=\"text\" name=\"%s\" size=\"60\" value=\"%s\">" % (Conf, _l(Curr))
+								html += "<input type=\"password\" name=\"%s\" size=\"60\" value=\"%s\">" % (Conf, _l(Curr)) if isinstance(ConfObj, ConfigPassword) else "<input type=\"text\" name=\"%s\" size=\"60\" value=\"%s\">" % (Conf, _l(Curr))
 								html += "</td>\n"
 							else:
 #ConfigSlider
@@ -747,7 +717,6 @@ class LCD4linuxConfigweb(resource.Resource):
 										html += "<td width=\"300\">%s</td><td>\n" % _l(_(LL[1]))
 										html += "<input type=\"text\" name=\"%s\" size=\"6\" value=\"%02d:%02d\">" % (Conf, Curr[0], Curr[1])
 										html += "</td>\n"
-
 			html += "</tr></table>\n"
 			html += "<input type=\"hidden\" name=\"cmd\" value=\"config\">\n"
 			html += "<input type=\"submit\" style=\"background-color: #FFCC00\" value=\"%s\">\n" % _l(_("set Settings"))
@@ -758,9 +727,7 @@ class LCD4linuxConfigweb(resource.Resource):
 					html += "<input type=\"button\" align=\"middle\" style=\"text-align:center; font-size:8pt\" value=\"%s\" onclick=\"this.form.cmd.value = 'copyMP'; this.form.submit(); \">\n" % _l(_("copy to Media"))
 				if Mode in ["2", "3"] and isSb:
 					html += "<input type=\"button\" align=\"middle\" style=\"text-align:center; font-size:8pt\" value=\"%s\" onclick=\"this.form.cmd.value = 'copyIdle'; this.form.submit(); \">\n" % _l(_("copy to Idle"))
-			html += "</form>\n"
-			if str(LCD4linux.WebIfDesign.value) == "2":
-				html += "</fieldset></td></tr></table>"
+			html += "</fieldset></td></tr></table>" if str(LCD4linux.WebIfDesign.value) == "2" else "</form>\n"
 		elif Mode == "5":
 			html += "<form method=\"POST\">\n"
 			html += "<fieldset style=\"width:auto\" name=\"Mode2\">\n"
@@ -797,5 +764,4 @@ class LCD4linuxConfigweb(resource.Resource):
 			html += "</form></td>\n"
 		html += "</body>\n"
 		html += "</html>\n"
-
-		return six.ensure_binary(html)
+		return ensure_binary(html)
