@@ -1,12 +1,9 @@
-from __future__ import print_function
-#import Image
-from PIL import Image
+# -*- coding: utf-8 -*-
 from six import PY2
 try:
 	from . import dpflib
 except:
 	print("[LCD4linux] dpflib-Error")
-
 
 PROPERTY_BRIGHTNESS = 0x01
 PROPERTY_FGCOLOR = 0x02
@@ -40,11 +37,11 @@ def showImage(dev, image):
 def open(usb):
 	try:
 		d = dpflib.open(usb)
-#		d.setProperty(PROPERTY_ORIENTATION, 1)
-		print("[LCD4linux] open", usb)
+		d.setProperty(PROPERTY_ORIENTATION, 1)
+		print("[LCD4linux] open %s" % usb)
 	except:
 		d = None
-		print("[LCD4linux] open Error", usb)
+		print("[LCD4linux] open Error: %s" % usb)
 	return d
 
 
