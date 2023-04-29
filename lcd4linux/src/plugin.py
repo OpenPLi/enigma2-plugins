@@ -10437,7 +10437,7 @@ def getNumber(actservice):
 						service = servicelist.getNext()
 						if not service.valid():  # check end of list
 							break
-						playable = not (service.flags & mask)
+						playable = not (service.flags & mask) or (service.flags & eServiceReference.isNumberedMarker)
 						if playable:
 							number += 1
 #						L4logE(" ",service.getPath())
