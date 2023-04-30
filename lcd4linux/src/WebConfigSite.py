@@ -18,7 +18,7 @@ from .module import L4Lelement
 from .plugin import *
 from . import _
 
-Py = resolveFilename(SCOPE_PLUGINS, "Extensions/LCD4linux/plugin.py")
+Py = resolveFilename(SCOPE_PLUGINS, "Extensions/LCD4linux/config.txt")
 DPKG = False
 L1 = []
 L2 = []
