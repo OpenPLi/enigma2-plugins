@@ -256,10 +256,10 @@ msgstr "Пятница"
 msgid "If \"Run AutoTimer after refresh\" and \"Shutdown after EPG refresh\" enabled and use \"Label series\" for match, set long timeout."
 msgstr "Если \"Запустить Автотаймер после обновления\" и \"Глубокое ожидание после обновления EPG\" включены и используются \"Ярлыки сериалов\" для совпадений, установите большой таймаут."
 
-msgid "If enabled, show 'EPGRefresh now' in main menu when currently no EPGRefresh is running."
+msgid "If enabled, show 'EPGRefresh now' in the epg menu when currently no EPGRefresh is running."
 msgstr "Если включено, то 'Обновить EPG сейчас' будет показано в главном меню, если в это время обновление не запущено."
 
-msgid "If enabled, show 'Stop running EPGRefresh' in main menu when EPGPRefresh is running."
+msgid "If enabled, show 'Stop running EPGRefresh' in the epg menu when EPGPRefresh is running."
 msgstr "Если включено, то 'Остановить обновление EPG' будет показано в главном меню, если в это время обновление запущено."
 
 msgid "If you want to refresh the EPG in background, you can choose the method which best suits your needs here, e.g. hidden, fake recording or regular Picture in Picture."
@@ -437,16 +437,16 @@ msgstr "Настройки сохранения / загрузки EPG"
 msgid "Show \"add to EPGRefresh\" in"
 msgstr "Показать \"добавить к обновлению EPG\" в"
 
-msgid "Show 'EPGRefresh now' in main menu"
+msgid "Show 'EPGRefresh now' in epg menu"
 msgstr "Показать 'Обновить EPG сейчас' в главном меню"
 
-msgid "Show 'Stop running EPGRefresh' in main menu"
+msgid "Show 'Stop running EPGRefresh' in epg menu"
 msgstr "Показать 'Остановить обновление EPG' в главном меню"
 
 msgid "Show entry 'AutoZap' in extensions menu"
 msgstr "Показать 'Авто переключение' в меню дополнений"
 
-msgid "Show entry 'Manually change EPG' in main menu"
+msgid "Show entry 'Manually change EPG' in epg menu"
 msgstr "Показать 'Ручные изменения EPG' в главном меню"
 
 msgid "Show in extensions menu"

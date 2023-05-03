@@ -71,7 +71,7 @@ class EPGSaveLoadConfiguration(Screen, ConfigListScreen):
 			getConfigListEntry(_("EPG cache file filename"), config.plugins.epgrefresh_extra.epgcachefilename, _("Select the file name for the EPG cache file.")),
 			getConfigListEntry(_("Create backup when saving EPG"), config.plugins.epgrefresh_extra.save_backup, _("Create a backup cache file, after manually or automatically saving EPG.")),
 			getConfigListEntry(_("Automatically restore EPG backup on boot"), config.plugins.epgrefresh_extra.autorestore_backup, _("Load EPG from backup cache file when booting.")),
-			getConfigListEntry(_("Show entry 'Manually change EPG' in main menu"), config.plugins.epgrefresh_extra.main_menu, _("Restart enigma2 to effectuate.")),
+			getConfigListEntry(_("Show entry 'Manually change EPG' in epg menu"), config.plugins.epgrefresh_extra.main_menu, _("Restart enigma2 to effectuate.")),
 			getConfigListEntry(_("Show entry 'AutoZap' in extensions menu"), config.plugins.epgrefresh_extra.show_autozap, _("Enable automatic zapping of all services in the current services list.")),
 			getConfigListEntry(_("Duration to show each service (in seconds) for 'AutoZap'"), config.plugins.epgrefresh_extra.timeout_autozap, _("This is the duration each service will be shown in AutoZap mode.")),
 		]

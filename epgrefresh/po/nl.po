@@ -256,10 +256,10 @@ msgstr "Vrijdag"
 msgid "If \"Run AutoTimer after refresh\" and \"Shutdown after EPG refresh\" enabled and use \"Label series\" for match, set long timeout."
 msgstr "Bij het gebruik van 'activeren van AutoTimer na EPGrefresh' en 'sluit EPGRefresh af na gebruik' en het gebruik van 'Laser series' om te vergelijken stel dan een lange vertraging in."
 
-msgid "If enabled, show 'EPGRefresh now' in main menu when currently no EPGRefresh is running."
+msgid "If enabled, show 'EPGRefresh now' in the epg menu when currently no EPGRefresh is running."
 msgstr "Indien geactiveerd zal 'EPGrefresh nu' getoond worden in het hoofdmenu ook als EPGrefresh niet actief is."
 
-msgid "If enabled, show 'Stop running EPGRefresh' in main menu when EPGPRefresh is running."
+msgid "If enabled, show 'Stop running EPGRefresh' in the epg menu when EPGPRefresh is running."
 msgstr "Indien geactiveerd dan zal 'Stop EPGrefresh' niet meer getoond worden in het hoofdmenu indien deze actief is."
 
 msgid "If you want to refresh the EPG in background, you can choose the method which best suits your needs here, e.g. hidden, fake recording or regular Picture in Picture."
@@ -437,17 +437,17 @@ msgstr "Configuratie opslaan/laden van de EPG"
 msgid "Show \"add to EPGRefresh\" in"
 msgstr "Toon 'voeg aan EPGRefresh toe' in"
 
-msgid "Show 'EPGRefresh now' in main menu"
-msgstr "Toon 'EPGrefresh nu' in het hoofdmenu"
+msgid "Show 'EPGRefresh now' in epg menu"
+msgstr "Toon 'EPGrefresh nu' in het EPG menu"
 
-msgid "Show 'Stop running EPGRefresh' in main menu"
-msgstr "Toon 'stop actieve EPGrefresh' in het hoofdmenu"
+msgid "Show 'Stop running EPGRefresh' in epg menu"
+msgstr "Toon 'stop actieve EPGrefresh' in het EPG menu"
 
 msgid "Show entry 'AutoZap' in extensions menu"
 msgstr "Toon 'AutoZap' in het applicatiemenu"
 
-msgid "Show entry 'Manually change EPG' in main menu"
-msgstr "Toon 'wijzig de EPG handmatig' in het hoofdmenu"
+msgid "Show entry 'Manually change EPG' in EPG menu"
+msgstr "Toon 'wijzig de EPG handmatig' in het EPG menu"
 
 msgid "Show in extensions menu"
 msgstr "Toon in het applicatiemenu"

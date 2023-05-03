@@ -431,15 +431,15 @@ def addtoEPGRefresh(self, add):
 
 
 def main_menu(menuid, **kwargs):
-	if menuid == "mainmenu" and config.plugins.epgrefresh_extra.main_menu.value:
+	if menuid == "epg" and config.plugins.epgrefresh_extra.main_menu.value:
 		return [(_("Manual EPG"), manual_epg, "Manual_Epg", 98)]
 	return []
 
 
 def manualrefresh_menu(menuid, **kwargs):
-	if menuid == "mainmenu" and config.plugins.epgrefresh.stop_on_mainmenu.value and epgrefresh.isRunning():
+	if menuid == "epg" and config.plugins.epgrefresh.stop_on_mainmenu.value and epgrefresh.isRunning():
 		return [(_("Stop Running EPG-refresh"), stop_Running, "stop_EPG-refresh", 99)]
-	elif menuid == "mainmenu" and config.plugins.epgrefresh.start_on_mainmenu.value and not epgrefresh.isRunning():
+	elif menuid == "epg" and config.plugins.epgrefresh.start_on_mainmenu.value and not epgrefresh.isRunning():
 		return [(_("EPG-refresh now"), start_Running, "start_EPG-refresh", 99)]
 	return []
 

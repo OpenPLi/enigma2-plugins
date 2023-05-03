@@ -286,10 +286,10 @@ msgstr ""
 msgid "If \"Run AutoTimer after refresh\" and \"Shutdown after EPG refresh\" enabled and use \"Label series\" for match, set long timeout."
 msgstr ""
 
-msgid "If enabled, show 'EPGRefresh now' in main menu when currently no EPGRefresh is running."
+msgid "If enabled, show 'EPGRefresh now' in epg menu when currently no EPGRefresh is running."
 msgstr ""
 
-msgid "If enabled, show 'Stop running EPGRefresh' in main menu when EPGPRefresh is running."
+msgid "If enabled, show 'Stop running EPGRefresh' in epg menu when EPGPRefresh is running."
 msgstr ""
 
 #, fuzzy
@@ -480,18 +480,18 @@ msgid "Show \"add to EPGRefresh\" in"
 msgstr "إضافة إلى تحديث دليل البرامج الإلكترونية"
 
 #, fuzzy
-msgid "Show 'EPGRefresh now' in main menu"
+msgid "Show 'EPGRefresh now' in epg menu"
 msgstr "عرض 'تشغيل تحديث دليل البرامج الإلكتروني الأن' في قائمة الإضافات."
 
 #, fuzzy
-msgid "Show 'Stop running EPGRefresh' in main menu"
+msgid "Show 'Stop running EPGRefresh' in epg menu"
 msgstr "عرض 'تشغيل تحديث دليل البرامج الإلكتروني الأن' في قائمة الإضافات."
 
 #, fuzzy
 msgid "Show entry 'AutoZap' in extensions menu"
 msgstr "عرض الضبط في قائمة الملحقات"
 
-msgid "Show entry 'Manually change EPG' in main menu"
+msgid "Show entry 'Manually change EPG' in epg menu"
 msgstr ""
 
 #, fuzzy

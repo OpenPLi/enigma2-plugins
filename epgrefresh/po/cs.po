@@ -261,10 +261,10 @@ msgstr "Pátek"
 msgid "If \"Run AutoTimer after refresh\" and \"Shutdown after EPG refresh\" enabled and use \"Label series\" for match, set long timeout."
 msgstr "Jestliže jsou \"Spustit AutoTimer po auktualizaci\" a \"Vypnout po aktualizaci EPG\" povoleny a používáte \"Label series\" pro hledání, nastavte delší zpoždění."
 
-msgid "If enabled, show 'EPGRefresh now' in main menu when currently no EPGRefresh is running."
+msgid "If enabled, show 'EPGRefresh now' in epg menu when currently no EPGRefresh is running."
 msgstr "Jestliže je povoleno, pak bude zobrazeno 'Aktualizace EPG' v hlavním menu (jestliže již aktualizace neprobíhá)."
 
-msgid "If enabled, show 'Stop running EPGRefresh' in main menu when EPGPRefresh is running."
+msgid "If enabled, show 'Stop running EPGRefresh' in epg menu when EPGPRefresh is running."
 msgstr "Jestliže je povoleno a probíhá aktualizace, pak bude v hlavním menu zobrazována volba 'Zastavit aktualizaci EPG'."
 
 msgid "If you want to refresh the EPG in background, you can choose the method which best suits your needs here, e.g. hidden, fake recording or regular Picture in Picture."
@@ -443,16 +443,16 @@ msgstr "Nastavit uložení/načtení EPG"
 msgid "Show \"add to EPGRefresh\" in"
 msgstr "Zobrazovat \"přidat do EPGRefresh\""
 
-msgid "Show 'EPGRefresh now' in main menu"
+msgid "Show 'EPGRefresh now' in epg menu"
 msgstr "Zobrazovat 'Aktualizovat EPG' v hlavním menu"
 
-msgid "Show 'Stop running EPGRefresh' in main menu"
+msgid "Show 'Stop running EPGRefresh' in epg menu"
 msgstr "Zobrazovat 'Zastavit aktualizaci EPG' v hlavním menu"
 
 msgid "Show entry 'AutoZap' in extensions menu"
 msgstr "Zobrazovat 'AutoZap' v Extension menu"
 
-msgid "Show entry 'Manually change EPG' in main menu"
+msgid "Show entry 'Manually change EPG' in epg menu"
 msgstr "Zobrazovat 'EPG ručně' v hlavním menu"
 
 msgid "Show in extensions menu"
