@@ -430,20 +430,6 @@ def addtoEPGRefresh(self, add):
 	self.close()
 
 
-def main_menu(menuid, **kwargs):
-	if menuid == "epg" and config.plugins.epgrefresh_extra.main_menu.value:
-		return [(_("Manual EPG"), manual_epg, "Manual_Epg", 98)]
-	return []
-
-
-def manualrefresh_menu(menuid, **kwargs):
-	if menuid == "epg" and config.plugins.epgrefresh.stop_on_mainmenu.value and epgrefresh.isRunning():
-		return [(_("Stop Running EPG-refresh"), stop_Running, "stop_EPG-refresh", 99)]
-	elif menuid == "epg" and config.plugins.epgrefresh.start_on_mainmenu.value and not epgrefresh.isRunning():
-		return [(_("EPG-refresh now"), start_Running, "start_EPG-refresh", 99)]
-	return []
-
-
 def stop_Running(session, **kwargs):
 	if not epgrefresh.isRunning():
 		return True
@@ -503,19 +489,34 @@ def addEventinfomenu(el):
 			print("[EPGRefresh] housekeepingExtensionsmenu got confused, tried to remove non-existant plugin entry... ignoring.")
 
 
+def main_menu(menuid, **kwargs):
+	if menuid == "epg":
+		return [(_("EPG Refresh"), main, "Configure_Epg", 98)]
+	return []
+
+
+def manualrefresh_menu(menuid, **kwargs):
+	if menuid == "epg" and config.plugins.epgrefresh.stop_on_mainmenu.value and epgrefresh.isRunning():
+		return [(_("Stop Running EPG-refresh"), stop_Running, "stop_EPG-refresh", 99)]
+	elif menuid == "epg" and config.plugins.epgrefresh.start_on_mainmenu.value and not epgrefresh.isRunning():
+		return [(_("EPG-refresh now"), start_Running, "start_EPG-refresh", 99)]
+	return []
+
+
 config.plugins.epgrefresh_extra.show_autozap.addNotifier(AutozapExtensionsmenu, initial_call=False, immediate_feedback=True)
 config.plugins.epgrefresh.show_in_extensionsmenu.addNotifier(housekeepingExtensionsmenu, initial_call=False, immediate_feedback=True)
 config.plugins.epgrefresh.add_to_refresh.addNotifier(addEventinfomenu, initial_call=False, immediate_feedback=True)
-extDescriptor = PluginDescriptor(name="EPGRefresh", description=_("Automatically refresh EPG"), where=PluginDescriptor.WHERE_EXTENSIONSMENU, fnc=extensionsmenu, needsRestart=False)
+ext1Descriptor = PluginDescriptor(name="EPGRefresh", description=_("Automatically refresh EPG"), where=PluginDescriptor.WHERE_EXTENSIONSMENU, fnc=extensionsmenu, needsRestart=False)
+ext2Descriptor = PluginDescriptor(name="Manual EPG-refresh", description=_("Automatically refresh EPG"), where=PluginDescriptor.WHERE_EXTENSIONSMENU, fnc=manualrefresh_menu, needsRestart=False)
+manualDescriptor = PluginDescriptor(name="Manual EPG", description=_("Automatically refresh EPG"), where=PluginDescriptor.WHERE_EXTENSIONSMENU, fnc=manual_epg, needsRestart=False)
 eventinfoDescriptor = PluginDescriptor(name=_("add to EPGRefresh"), description=_("add to EPGRefresh"), where=PluginDescriptor.WHERE_EVENTINFO, fnc=eventinfo, needsRestart=False)
 autozapDescriptor = PluginDescriptor(name=_("Refresh-EPG / AutoZap"), description=_("AutoZap for refreshing EPG data"), where=PluginDescriptor.WHERE_EXTENSIONSMENU, fnc=autozap, needsRestart=False)
-
 
 def Plugins(**kwargs):
 	needsRestart = config.plugins.epgrefresh.enabled.value and not plugins.firstRun
 	list = [
 		PluginDescriptor(
-			name="EPGRefresh",
+			name=_("EPG Refresh"),
 			where=[
 				PluginDescriptor.WHERE_AUTOSTART,
 				PluginDescriptor.WHERE_SESSIONSTART
@@ -530,7 +531,7 @@ def Plugins(**kwargs):
 			needsRestart=needsRestart,
 		),
 		PluginDescriptor(
-			name=_("EPGRefresh"),
+			name=_("EPG Refresh"),
 			description=_("Automatically refresh EPG"),
 			where=PluginDescriptor.WHERE_PLUGINMENU,
 			fnc=main,
@@ -538,22 +539,21 @@ def Plugins(**kwargs):
 			needsRestart=needsRestart,
 		),
 		PluginDescriptor(
-			name="Manual EPG",
-			description=_("manual save/load EPG"),
+			name=_("EPG Refresh"),
+			description=_("Automatically refresh EPG"),
 			where=PluginDescriptor.WHERE_MENU,
 			fnc=main_menu,
 			needsRestart=needsRestart,
 		),
-		PluginDescriptor(
-			name="Manual EPG-refresh",
-			where=PluginDescriptor.WHERE_MENU,
-			fnc=manualrefresh_menu,
-			needsRestart=needsRestart,
-		),
 	]
 	if config.plugins.epgrefresh.show_in_extensionsmenu.value:
-		extDescriptor.needsRestart = needsRestart
-		list.append(extDescriptor)
+		ext1Descriptor.needsRestart = needsRestart
+		list.append(ext1Descriptor)
+		ext2Descriptor.needsRestart = needsRestart
+		list.append(ext2Descriptor)
+	if config.plugins.epgrefresh_extra.main_menu.value:
+		manualDescriptor.needsRestart = needsRestart
+		list.append(manualDescriptor)
 	profile = config.plugins.epgrefresh.add_to_refresh.value
 	if profile == "1" or profile == "3":
 		eventinfoDescriptor.needsRestart = needsRestart
