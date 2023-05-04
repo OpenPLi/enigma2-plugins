@@ -229,7 +229,7 @@ msgstr "Indien geactiveerd zal EPGrefresh indien mogelijk ook starten vanuit dee
 msgid "Enable this to show an informational message at the start and completion of the refresh."
 msgstr "Indien geactiveerd zal er een bericht worden getoond tijdens de start en einde van EPGrefresh."
 
-msgid "Enable this to show the EPGRefresh configuration menu in the extension menu."
+msgid "Enable this to show the EPG Refresh configuration menu in the extension menu."
 msgstr "Indien geactiveerd zal EPGrefresh in het applicatiemenu getoond worden."
 
 msgid "Extend the list of services to refresh by those your AutoTimers use?"
@@ -437,10 +437,10 @@ msgstr "Configuratie opslaan/laden van de EPG"
 msgid "Show \"add to EPGRefresh\" in"
 msgstr "Toon 'voeg aan EPGRefresh toe' in"
 
-msgid "Show 'EPGRefresh now' in epg menu"
+msgid "Show 'EPGRefresh now' in the extension menu"
 msgstr "Toon 'EPGrefresh nu' in het EPG menu"
 
-msgid "Show 'Stop running EPGRefresh' in epg menu"
+msgid "Show 'Stop running EPG Refresh' in the extension menu"
 msgstr "Toon 'stop actieve EPGrefresh' in het EPG menu"
 
 msgid "Show entry 'AutoZap' in extensions menu"

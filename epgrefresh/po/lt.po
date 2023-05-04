@@ -237,7 +237,7 @@ msgstr "Jei čia įjungta, prižadins imtuvą, jei įmanoma, iš gilaus budėjim
 msgid "Enable this to show an informational message at the start and completion of the refresh."
 msgstr "Šis parametras nustato, ar bus rodomi informaciniai pranešimai atnaujinimo pradžioje ir pabaigoje."
 
-msgid "Enable this to show the EPGRefresh configuration menu in the extension menu."
+msgid "Enable this to show the EPG Refresh configuration menu in the extension menu."
 msgstr "Įjunkite čia, jei norite turėti prieigą prie EPG atnaujinimo konfigūravimo iš plėtinių meniu."
 
 msgid "Extend the list of services to refresh by those your AutoTimers use?"
@@ -446,10 +446,10 @@ msgstr "EPG išsaugojimo/įkėlimo sąranka"
 msgid "Show \"add to EPGRefresh\" in"
 msgstr "Rodyti 'įtraukti į EPG atnaujinimą' tarp"
 
-msgid "Show 'EPGRefresh now' in epg menu"
+msgid "Show 'EPGRefresh now' in the extension menu"
 msgstr "Rodyti 'Atnaujinti EPG dabar' pagrindiniame meniu"
 
-msgid "Show 'Stop running EPGRefresh' in epg menu"
+msgid "Show 'Stop running EPG Refresh' in the extension menu"
 msgstr "Rodyti 'Stabdyti EPG atnaujinimą' pagrindiniame meniu"
 
 msgid "Show entry 'AutoZap' in extensions menu"

@@ -258,7 +258,7 @@ msgid "Enable this to show an informational message at the start and completion 
 msgstr "يتحكم في إعداد ما إذا كان سيظهر رسالة معلوماتية في البدء والانتهاء من التحديث."
 
 #, fuzzy
-msgid "Enable this to show the EPGRefresh configuration menu in the extension menu."
+msgid "Enable this to show the EPG Refresh configuration menu in the extension menu."
 msgstr "تمكين هذا ليكون قادر على الوصول إلى إعدادات تحديث دليل البرامج الإلكترونية من خلال قائمة الملحقات."
 
 msgid "Extend the list of services to refresh by those your AutoTimers use?"
@@ -480,11 +480,11 @@ msgid "Show \"add to EPGRefresh\" in"
 msgstr "إضافة إلى تحديث دليل البرامج الإلكترونية"
 
 #, fuzzy
-msgid "Show 'EPGRefresh now' in epg menu"
+msgid "Show 'EPGRefresh now' in the extension menu"
 msgstr "عرض 'تشغيل تحديث دليل البرامج الإلكتروني الأن' في قائمة الإضافات."
 
 #, fuzzy
-msgid "Show 'Stop running EPGRefresh' in epg menu"
+msgid "Show 'Stop running EPG Refresh' in the extension menu"
 msgstr "عرض 'تشغيل تحديث دليل البرامج الإلكتروني الأن' في قائمة الإضافات."
 
 #, fuzzy

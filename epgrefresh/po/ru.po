@@ -229,7 +229,7 @@ msgstr "Если эта опция включена, обновление EPG б
 msgid "Enable this to show an informational message at the start and completion of the refresh."
 msgstr "Этот параметр определяет, будет ли показано информационное сообщение при начале и завершении обновления."
 
-msgid "Enable this to show the EPGRefresh configuration menu in the extension menu."
+msgid "Enable this to show the EPG Refresh configuration menu in the extension menu."
 msgstr "Если включено, то плагин обновления EPG будет показан в меню дополнений."
 
 msgid "Extend the list of services to refresh by those your AutoTimers use?"
@@ -437,10 +437,10 @@ msgstr "Настройки сохранения / загрузки EPG"
 msgid "Show \"add to EPGRefresh\" in"
 msgstr "Показать \"добавить к обновлению EPG\" в"
 
-msgid "Show 'EPGRefresh now' in epg menu"
+msgid "Show 'EPGRefresh now' in the extension menu"
 msgstr "Показать 'Обновить EPG сейчас' в главном меню"
 
-msgid "Show 'Stop running EPGRefresh' in epg menu"
+msgid "Show 'Stop running EPG Refresh' in the extension menu"
 msgstr "Показать 'Остановить обновление EPG' в главном меню"
 
 msgid "Show entry 'AutoZap' in extensions menu"

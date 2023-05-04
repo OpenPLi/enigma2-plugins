@@ -235,7 +235,7 @@ msgstr "Activer ceci pour réveiller le récepteur de la veille profonde (si pos
 msgid "Enable this to show an informational message at the start and completion of the refresh."
 msgstr "Activer cette option pour afficher un message d'information au démarrage et à la fin du rafraîchissement."
 
-msgid "Enable this to show the EPGRefresh configuration menu in the extension menu."
+msgid "Enable this to show the EPG Refresh configuration menu in the extension menu."
 msgstr "Activer ceci pour afficher le menu de configuration RafraîchirEPG dans le menu des extensions."
 
 msgid "Extend the list of services to refresh by those your AutoTimers use?"
@@ -443,10 +443,10 @@ msgstr "Configurer sauvegarder / lire EPG"
 msgid "Show \"add to EPGRefresh\" in"
 msgstr "Afficher \"Ajouter à RafraîchirEPG\" dans"
 
-msgid "Show 'EPGRefresh now' in epg menu"
+msgid "Show 'EPGRefresh now' in the extension menu"
 msgstr "Afficher 'RafraîchirEPG maintenant' dans le menu principal"
 
-msgid "Show 'Stop running EPGRefresh' in epg menu"
+msgid "Show 'Stop running EPG Refresh' in the extension menu"
 msgstr "Afficher 'Arrêter l'exécution de RafraîchirEPG' dans le menu principal"
 
 msgid "Show entry 'AutoZap' in extensions menu"

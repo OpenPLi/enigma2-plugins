@@ -234,7 +234,7 @@ msgstr "Pokud je povoleno, pak plugin - jestliže je to možné - probudí přij
 msgid "Enable this to show an informational message at the start and completion of the refresh."
 msgstr "Určuje, zda se bude zobrazovat zpráva při spuštění a dokončení aktualizace."
 
-msgid "Enable this to show the EPGRefresh configuration menu in the extension menu."
+msgid "Enable this to show the EPG Refresh configuration menu in the extension menu."
 msgstr "Umožní přistupovat k nastavení EPGRefresh z Extension menu."
 
 msgid "Extend the list of services to refresh by those your AutoTimers use?"
@@ -443,10 +443,10 @@ msgstr "Nastavit uložení/načtení EPG"
 msgid "Show \"add to EPGRefresh\" in"
 msgstr "Zobrazovat \"přidat do EPGRefresh\""
 
-msgid "Show 'EPGRefresh now' in epg menu"
+msgid "Show 'EPGRefresh now' in the extension menu"
 msgstr "Zobrazovat 'Aktualizovat EPG' v hlavním menu"
 
-msgid "Show 'Stop running EPGRefresh' in epg menu"
+msgid "Show 'Stop running EPG Refresh' in the extension menu"
 msgstr "Zobrazovat 'Zastavit aktualizaci EPG' v hlavním menu"
 
 msgid "Show entry 'AutoZap' in extensions menu"

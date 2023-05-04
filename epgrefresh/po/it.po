@@ -250,7 +250,7 @@ msgid "Enable this to show an informational message at the start and completion 
 msgstr "Questa funzione determina se debba essere mostrato un messaggio all'avvio e al termine di un aggiornamento."
 
 #, fuzzy
-msgid "Enable this to show the EPGRefresh configuration menu in the extension menu."
+msgid "Enable this to show the EPG Refresh configuration menu in the extension menu."
 msgstr "Abilitando questa opzione, sarà possibile accedere alla configurazione di EPGRefresh dal menu estensioni."
 
 msgid "Extend the list of services to refresh by those your AutoTimers use?"
@@ -466,10 +466,10 @@ msgstr ""
 msgid "Show \"add to EPGRefresh\" in"
 msgstr "aggiungere a EPGRefresh"
 
-msgid "Show 'EPGRefresh now' in epg menu"
+msgid "Show 'EPGRefresh now' in the extension menu"
 msgstr ""
 
-msgid "Show 'Stop running EPGRefresh' in epg menu"
+msgid "Show 'Stop running EPG Refresh' in the extension menu"
 msgstr ""
 
 #, fuzzy
