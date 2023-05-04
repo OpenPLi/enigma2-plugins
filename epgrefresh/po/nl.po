@@ -353,7 +353,7 @@ msgstr "Nu vernieuwen"
 msgid "Refresh-EPG / AutoZap"
 msgstr "Ververs de EPG/Autozap"
 
-msgid "Refreshing"
+msgid "Refresh using"
 msgstr "Verversen"
 
 msgid "Reload EPG"

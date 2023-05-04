@@ -375,7 +375,7 @@ msgstr "Aktualisieren"
 msgid "Refresh-EPG / AutoZap"
 msgstr "EPG automatisch aktualisieren"
 
-msgid "Refreshing"
+msgid "Refresh using"
 msgstr "Aktualisiere"
 
 msgid "Reload EPG"

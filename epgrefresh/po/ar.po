@@ -388,7 +388,7 @@ msgstr "التحديث الآن"
 msgid "Refresh-EPG / AutoZap"
 msgstr "تحديث دليل البرامج الإلكترونية تلقائياً"
 
-msgid "Refreshing"
+msgid "Refresh using"
 msgstr "محدث"
 
 msgid "Reload EPG"

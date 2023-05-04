@@ -372,7 +372,7 @@ msgstr "Uppdatera nu"
 msgid "Refresh-EPG / AutoZap"
 msgstr "Uppdatera EPG efter"
 
-msgid "Refreshing"
+msgid "Refresh using"
 msgstr "Uppdaterar"
 
 msgid "Reload EPG"

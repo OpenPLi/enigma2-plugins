@@ -374,7 +374,7 @@ msgstr "Ferfaskje no"
 msgid "Refresh-EPG / AutoZap"
 msgstr "Ferfaskje EPG nei"
 
-msgid "Refreshing"
+msgid "Refresh using"
 msgstr "Oan it ferfaskjen"
 
 msgid "Reload EPG"

@@ -366,7 +366,7 @@ msgstr "Обновяване сега"
 msgid "Refresh-EPG / AutoZap"
 msgstr "Обновяване на ЕПГ /Автоматично Превключване"
 
-msgid "Refreshing"
+msgid "Refresh using"
 msgstr "Обновяване"
 
 msgid "Reload EPG"

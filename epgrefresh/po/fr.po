@@ -359,7 +359,7 @@ msgstr "Rafraîchir maintenant"
 msgid "Refresh-EPG / AutoZap"
 msgstr "Rafraîchier-EPG / ZapAutomatique"
 
-msgid "Refreshing"
+msgid "Refresh using"
 msgstr "Rafraîchissement"
 
 msgid "Reload EPG"

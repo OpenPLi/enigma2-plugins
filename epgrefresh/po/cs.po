@@ -358,7 +358,7 @@ msgstr "Aktualizovat"
 msgid "Refresh-EPG / AutoZap"
 msgstr "Aktualizovat EPG / AutoZap"
 
-msgid "Refreshing"
+msgid "Refresh using"
 msgstr "Aktualizace"
 
 msgid "Reload EPG"

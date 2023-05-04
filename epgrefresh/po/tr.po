@@ -371,7 +371,7 @@ msgstr "Şimdi yenile"
 msgid "Refresh-EPG / AutoZap"
 msgstr "EPG'yi sonrasında yenile"
 
-msgid "Refreshing"
+msgid "Refresh using"
 msgstr "Yenileniyor"
 
 msgid "Reload EPG"

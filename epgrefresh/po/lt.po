@@ -361,7 +361,7 @@ msgstr "Atnaujinti dabar"
 msgid "Refresh-EPG / AutoZap"
 msgstr "Atnaujinti EPG / perjungti automatiškai"
 
-msgid "Refreshing"
+msgid "Refresh using"
 msgstr "Atnaujinama"
 
 msgid "Reload EPG"

@@ -381,7 +381,7 @@ msgstr "همین الان بازآوی کن"
 msgid "Refresh-EPG / AutoZap"
 msgstr "بازآوری برنامه راهنمای الکترونیک"
 
-msgid "Refreshing"
+msgid "Refresh using"
 msgstr "بازآوری کردن"
 
 msgid "Reload EPG"

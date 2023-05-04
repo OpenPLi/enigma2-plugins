@@ -353,7 +353,7 @@ msgstr "Обновить сейчас"
 msgid "Refresh-EPG / AutoZap"
 msgstr "Обновление-EPG / Авто переключение"
 
-msgid "Refreshing"
+msgid "Refresh using"
 msgstr "Обновлять"
 
 msgid "Reload EPG"

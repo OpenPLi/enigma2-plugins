@@ -379,7 +379,7 @@ msgstr "Agg. ora"
 msgid "Refresh-EPG / AutoZap"
 msgstr "Aggiornare automaticamente EPG"
 
-msgid "Refreshing"
+msgid "Refresh using"
 msgstr "Aggiornamento in corso"
 
 msgid "Reload EPG"

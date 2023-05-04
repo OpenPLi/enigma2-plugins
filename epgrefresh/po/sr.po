@@ -371,7 +371,7 @@ msgstr "Osveži sada"
 msgid "Refresh-EPG / AutoZap"
 msgstr "Osveži EPG posle"
 
-msgid "Refreshing"
+msgid "Refresh using"
 msgstr "Osvežavanje"
 
 msgid "Reload EPG"
