@@ -14,13 +14,16 @@ msgstr ""
 "X-Generator: Poedit 1.8.4\n"
 
 msgid " "
-msgstr ""
+msgstr " "
 
 msgid "Cancel"
 msgstr "Отмена"
 
 msgid "DVB-S"
-msgstr ""
+msgstr "DVB-S"
+
+msgid "LAN connection required for first detection."
+msgstr "При первом обнаружении требуется подключение по LAN."
 
 msgid "Description"
 msgstr "Описание"

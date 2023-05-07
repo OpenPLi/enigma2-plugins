@@ -34,12 +34,12 @@ def getVtunerList():
 
 VTUNER_IDX_LIST = getVtunerList()
 
-SSDP_ADDR = b'239.255.255.250'
+SSDP_ADDR = '239.255.255.250'
 SSDP_PORT = 1900
-MAN = b"ssdp:discover"
+MAN = "ssdp:discover"
 MX = 2
-ST = b"urn:ses-com:device:SatIPServer:1"
-MS = b'M-SEARCH * HTTP/1.1\r\nHOST: %s:%d\r\nMAN: "%s"\r\nMX: %d\r\nST: %s\r\n\r\n' % (SSDP_ADDR, SSDP_PORT, MAN, MX, ST)
+ST = "urn:ses-com:device:SatIPServer:1"
+MS = 'M-SEARCH * HTTP/1.1\r\nHOST: %s:%d\r\nMAN: "%s"\r\nMX: %d\r\nST: %s\r\n\r\n' % (SSDP_ADDR, SSDP_PORT, MAN, MX, ST)
 
 
 class SSDPServerDiscovery(DatagramProtocol):
@@ -48,17 +48,23 @@ class SSDPServerDiscovery(DatagramProtocol):
 		self.port = None
 
 	def send_msearch(self, iface):
-		if not iface:
+		if not iface or iface == "0.0.0.0":
 			return
 
-		self.port = reactor.listenUDP(0, self, interface=iface)
-		if self.port is not None:
-			print("Sending M-SEARCH...")
-			self.port.write(MS, (SSDP_ADDR, SSDP_PORT))
+		try:
+			self.port = reactor.listenUDP(0, self, interface=iface)
+			if self.port is not None:
+				print("Sending M-SEARCH...")
+				self.port.write(bytes(MS, 'utf-8'), (SSDP_ADDR, SSDP_PORT))
+		except:
+			print("Error listenUDP...")
 
 	def stop_msearch(self):
-		if self.port is not None:
-			self.port.stopListening()
+		try:
+			if self.port is not None:
+				self.port.stopListening()
+		except:
+			print("Error stopListening...")
 
 	def datagramReceived(self, datagram, address):
 		#print("Received: (from %r)" % (address,))
@@ -90,6 +96,7 @@ class SATIPDiscovery:
 	def __init__(self):
 		self.discoveryStartTimer = eTimer()
 		self.discoveryStartTimer.callback.append(self.DiscoveryStart)
+		self.iface = ""
 
 		self.discoveryStopTimer = eTimer()
 		self.discoveryStopTimer.callback.append(self.DiscoveryStop)
@@ -101,7 +108,10 @@ class SATIPDiscovery:
 		return "%d.%d.%d.%d" % (address[0], address[1], address[2], address[3]) if address else None
 
 	def getEthernetAddr(self):
-		return self.formatAddr(iNetwork.getAdapterAttribute("eth0", "ip"))
+		iface = self.formatAddr(iNetwork.getAdapterAttribute("eth0", "ip"))
+		if not iface or iface == "0.0.0.0":
+			self.iface = _("LAN connection required for first detection.")
+		return iface
 
 	def DiscoveryTimerStart(self):
 		self.discoveryStartTimer.start(10, True)
@@ -128,6 +138,7 @@ class SATIPDiscovery:
 
 	def dataParse(self, data):
 		serverData = {}
+		data = data.decode("UTF-8")
 		for line in data.splitlines():
 			#print("[*] line : ", line)
 			if line.find(':') != -1:
@@ -330,7 +341,8 @@ class SATIPTuner(ConfigListScreen, Screen):
 		self.list = []
 		ConfigListScreen.__init__(self, self.list, session=self.session)
 		self.satipconfig = ConfigSubsection()
-		self.satipconfig.server = None
+		self.server_entry = None
+		satipdiscovery.iface = ""
 
 		if not self.discoveryEnd in satipdiscovery.updateCallback:
 			satipdiscovery.updateCallback.append(self.discoveryEnd)
@@ -361,7 +373,7 @@ class SATIPTuner(ConfigListScreen, Screen):
 			self.createServerConfig()
 			self.createSetup()
 		else:
-			self["description"].setText(_("SAT>IP server is not detected."))
+			self["description"].setText(_("SAT>IP server is not detected.") + satipdiscovery.iface)
 
 	def createServerConfig(self):
 		if satipdiscovery.isEmptyServerData():
@@ -382,7 +394,7 @@ class SATIPTuner(ConfigListScreen, Screen):
 		self.satipconfig.server = ConfigSelection(default=server_default, choices=server_choices)
 
 	def createSetup(self):
-		if self.satipconfig.server is None:
+		if not hasattr(self.satipconfig, "server"):
 			return
 
 		self.list = []
@@ -418,7 +430,7 @@ class SATIPTuner(ConfigListScreen, Screen):
 		self.satipconfig.tunertype = ConfigSelection(default=type_default, choices=type_choices)
 
 	def selectionChanged(self):
-		if self.satipconfig.server is None:
+		if not hasattr(self.satipconfig, "server"):
 			return
 
 		uuid = self.satipconfig.server.value
@@ -451,16 +463,13 @@ class SATIPTuner(ConfigListScreen, Screen):
 		self["description"].setText(description)
 
 	def showChoices(self):
-		currentConfig = self["config"].getCurrent()[1]
-		text_list = []
-		for choice in currentConfig.choices.choices:
-			text_list.append(choice[1])
-
-		#text = ",".join(text_list)
-		text = _("Select") + " : " + ",".join(text_list)
-
-		#self["choices"].setText("Choices : \n%s" % (text))
-		self["choices"].setText(text)
+		currentConfig = len(self["config"].getCurrent()) > 1 and self["config"].getCurrent()[1] or None
+		if currentConfig != None:
+			text_list = []
+			for choice in currentConfig.choices.choices:
+				text_list.append(choice[1])
+			text = _("Select") + " : " + ",".join(text_list)
+			self["choices"].setText(text)
 
 	def getCapability(self, uuid):
 		capability = {'DVB-S': 0, 'DVB-C': 0, 'DVB-T': 0}
@@ -514,7 +523,7 @@ class SATIPTuner(ConfigListScreen, Screen):
 		self.selectionChanged()
 
 	def keySave(self):
-		if self.satipconfig.server is None:
+		if not hasattr(self.satipconfig, "server"):
 			self.keyCancel()
 			return
 
@@ -556,10 +565,10 @@ class SATIPClient(Screen):
 				{"templates":
 					{"default": (68,[
 							MultiContentEntryText(pos = (20, 0), size = (320, 27), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 0),
-							MultiContentEntryText(pos = (50, 28), size = (160, 20), font=1, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 1),
+							MultiContentEntryText(pos = (30, 28), size = (180, 20), font=1, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 1),
 							MultiContentEntryText(pos = (230, 28), size = (140, 20), font=1, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 2),
 							MultiContentEntryText(pos = (390, 28), size = (190, 20), font=1, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 3),
-							MultiContentEntryText(pos = (50, 49), size = (490, 19), font=1, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 4),
+							MultiContentEntryText(pos = (30, 49), size = (510, 19), font=1, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 4),
 					]),
 					},
 					"fonts": [gFont("Regular", 24),gFont("Regular", 16)],
@@ -625,9 +634,11 @@ class SATIPClient(Screen):
 			self.close()
 
 	def keySaveCB(self, res):
+		self.saveConfig()
 		if res:
-			self.saveConfig()
 			self.doReboot()
+		else:
+			self.close()
 
 	def doReboot(self):
 		self.session.open(TryQuitMainloop, 2)
@@ -691,12 +702,12 @@ class SATIPClient(Screen):
 		vtuner_uuid = self["vtunerList"].getCurrent()[7]
 		self.session.openWithCallback(self.SATIPTunerCB, SATIPTuner, vtuner_idx, vtuner_uuid, vtuner_type, self.vtunerConfig)
 
-	def SATIPTunerCB(self, data=True): # KeyCancel returns False, while KeySave returns None!
-		if data:
+	def SATIPTunerCB(self, data=None):
+		if data is not None:
 			self.setConfig(data)
 
 	def setConfig(self, data):
-		if data['uuid'] is not None:
+		if not isinstance(data, bool) and 'uuid' in data and data['uuid'] is not None:
 			vtuner = self.vtunerConfig[int(data['idx'])]
 			vtuner['vtuner_type'] = "satip_client"
 			vtuner['ipaddr'] = data['ip']
@@ -705,8 +716,6 @@ class SATIPClient(Screen):
 			vtuner['tuner_type'] = data['tuner_type']
 
 		self.createSetup()
-		#else:
-		#	self.keyDisable()
 
 	def saveConfig(self):
 		data = ""
@@ -722,7 +731,7 @@ class SATIPClient(Screen):
 			for k in sorted(conf):
 				attr.append("%s:%s" % (k, conf[k]))
 
-			data += idx + '=' + ",".join(attr) + "\n"
+			data += str(idx) + '=' + ",".join(attr) + "\n"
 
 		if data:
 			fd = open(SATIP_CONFFILE, 'w')
