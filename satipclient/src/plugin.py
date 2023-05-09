@@ -108,7 +108,11 @@ class SATIPDiscovery:
 		return "%d.%d.%d.%d" % (address[0], address[1], address[2], address[3]) if address else None
 
 	def getEthernetAddr(self):
-		iface = self.formatAddr(iNetwork.getAdapterAttribute("eth0", "ip"))
+		iface = None
+		for interface in iNetwork.getAdapterList():
+			if interface == "eth0" and iNetwork.checkforInterface(interface):
+				iface = self.formatAddr(iNetwork.getAdapterAttribute(interface, "ip"))
+				break
 		if not iface or iface == "0.0.0.0":
 			self.iface = _("LAN connection required for first detection.")
 		return iface
