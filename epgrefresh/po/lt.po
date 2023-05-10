@@ -446,10 +446,10 @@ msgstr "EPG išsaugojimo/įkėlimo sąranka"
 msgid "Show \"add to EPGRefresh\" in"
 msgstr "Rodyti 'įtraukti į EPG atnaujinimą' tarp"
 
-msgid "Show 'EPGRefresh now' in the extension menu"
+msgid "Show 'EPGRefresh now' in the extensions menu"
 msgstr "Rodyti 'Atnaujinti EPG dabar' pagrindiniame meniu"
 
-msgid "Show 'Stop running EPG Refresh' in the extension menu"
+msgid "Show 'Stop running EPG Refresh' in the extensions menu"
 msgstr "Rodyti 'Stabdyti EPG atnaujinimą' pagrindiniame meniu"
 
 msgid "Show entry 'AutoZap' in the extensions menu"

@@ -437,10 +437,10 @@ msgstr "Configuratie opslaan/laden van de EPG"
 msgid "Show \"add to EPGRefresh\" in"
 msgstr "Toon 'voeg aan EPGRefresh toe' in"
 
-msgid "Show 'EPGRefresh now' in the extension menu"
+msgid "Show 'EPGRefresh now' in the extensions menu"
 msgstr "Toon 'EPGrefresh nu' in het EPG menu"
 
-msgid "Show 'Stop running EPG Refresh' in the extension menu"
+msgid "Show 'Stop running EPG Refresh' in the extensions menu"
 msgstr "Toon 'stop actieve EPGrefresh' in het EPG menu"
 
 msgid "Show entry 'AutoZap' in the extensions menu"

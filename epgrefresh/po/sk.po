@@ -447,10 +447,10 @@ msgstr "Nastaviť uloženie/načítanie EPG"
 msgid "Show \"add to EPGRefresh\" in"
 msgstr "Zobrazovať \"pridať do EPGRefresh\" v"
 
-msgid "Show 'EPGRefresh now' in the extension menu"
+msgid "Show 'EPGRefresh now' in the extensions menu"
 msgstr "Zobrazovať 'Aktualizovať EPG' v hlavnom menu"
 
-msgid "Show 'Stop running EPG Refresh' in the extension menu"
+msgid "Show 'Stop running EPG Refresh' in the extensions menu"
 msgstr "Zobrazovať 'Zastaviť aktualizáciu EPG' v hlavnom menu"
 
 msgid "Show entry 'AutoZap' in the extensions menu"

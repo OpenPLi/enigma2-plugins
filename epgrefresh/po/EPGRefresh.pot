@@ -432,10 +432,10 @@ msgstr ""
 msgid "Show \"add to EPGRefresh\" in"
 msgstr ""
 
-msgid "Show 'EPGRefresh now' in the extension menu"
+msgid "Show 'EPGRefresh now' in the extensions menu"
 msgstr ""
 
-msgid "Show 'Stop running EPG Refresh' in the extension menu"
+msgid "Show 'Stop running EPG Refresh' in the extensions menu"
 msgstr ""
 
 msgid "Show entry 'AutoZap' in the extensions menu"

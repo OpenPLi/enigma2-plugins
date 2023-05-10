@@ -443,10 +443,10 @@ msgstr "Configurer sauvegarder / lire EPG"
 msgid "Show \"add to EPGRefresh\" in"
 msgstr "Afficher \"Ajouter à RafraîchirEPG\" dans"
 
-msgid "Show 'EPGRefresh now' in the extension menu"
+msgid "Show 'EPGRefresh now' in the extensions menu"
 msgstr "Afficher 'RafraîchirEPG maintenant' dans le menu principal"
 
-msgid "Show 'Stop running EPG Refresh' in the extension menu"
+msgid "Show 'Stop running EPG Refresh' in the extensions menu"
 msgstr "Afficher 'Arrêter l'exécution de RafraîchirEPG' dans le menu principal"
 
 msgid "Show entry 'AutoZap' in the extensions menu"

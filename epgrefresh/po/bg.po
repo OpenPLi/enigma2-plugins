@@ -450,10 +450,10 @@ msgstr "Настройка при записване / зареждане на �
 msgid "Show \"add to EPGRefresh\" in"
 msgstr "Покажи \"добави към EPGRefresh\" в"
 
-msgid "Show 'EPGRefresh now' in the extension menu"
+msgid "Show 'EPGRefresh now' in the extensions menu"
 msgstr "Покажи 'EPGRefresh сега' в главното меню"
 
-msgid "Show 'Stop running EPG Refresh' in the extension menu"
+msgid "Show 'Stop running EPG Refresh' in the extensions menu"
 msgstr "Покажи 'Спри EPGRefresh' в главното меню"
 
 msgid "Show entry 'AutoZap' in the extensions menu"
