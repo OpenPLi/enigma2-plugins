@@ -533,7 +533,7 @@ ext2Descriptor = PluginDescriptor(name="Manual EPG refresh", description=_("Auto
 eventinfoDescriptor = PluginDescriptor(name=_("add to EPGRefresh"), description=_("add to EPGRefresh"), where=PluginDescriptor.WHERE_EVENTINFO, fnc=eventinfo, needsRestart=False)
 autozapDescriptor = PluginDescriptor(name=_("Refresh EPG / AutoZap"), description=_("AutoZap for refreshing EPG data"), where=PluginDescriptor.WHERE_EXTENSIONSMENU, fnc=autozap, needsRestart=False)
 startDescriptor = PluginDescriptor(name=_("EPG refresh now"), description="Start EPG refresh", where=PluginDescriptor.WHERE_EXTENSIONSMENU, fnc=start_Running, needsRestart=False)
-stopDescriptor = PluginDescriptor(name=_("Stop Running EPG refresh"), description="Stop EPF refresh", where=PluginDescriptor.WHERE_EXTENSIONSMENU, fnc=stop_Running, needsRestart=False)
+stopDescriptor = PluginDescriptor(name=_("Stop Running EPG refresh"), description="Stop EPG refresh", where=PluginDescriptor.WHERE_EXTENSIONSMENU, fnc=stop_Running, needsRestart=False)
 
 
 def Plugins(**kwargs):
