@@ -246,7 +246,7 @@ msgid "Enable this to show an informational message at the start and completion 
 msgstr "Soll beim Start und Beenden der Aktualisierung eine Informationsmeldung angezeigt werden?"
 
 #, fuzzy
-msgid "Enable this to show the EPG Refresh configuration menu in the extension menu."
+msgid "Enable this to show the EPG Refresh configuration menu in the extensions menu."
 msgstr "Soll die Konfiguration direkt aus dem Erweiterungsmenu heraus aufgerufen werden können?"
 
 msgid "Extend the list of services to refresh by those your AutoTimers use?"

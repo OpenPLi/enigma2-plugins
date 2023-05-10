@@ -242,7 +242,7 @@ msgstr ""
 msgid "Enable this to show an informational message at the start and completion of the refresh."
 msgstr ""
 
-msgid "Enable this to show the EPG Refresh configuration menu in the extension menu."
+msgid "Enable this to show the EPG Refresh configuration menu in the extensions menu."
 msgstr ""
 
 msgid "Extend the list of services to refresh by those your AutoTimers use?"

@@ -238,7 +238,7 @@ msgstr "Ak je povolené, prebudí sa prijímač z hlbokého spánku (ak to bude 
 msgid "Enable this to show an informational message at the start and completion of the refresh."
 msgstr "Určuje, či sa bude zobrazovať správa pri spúšťaní a dokončení aktualizácie EPG."
 
-msgid "Enable this to show the EPG Refresh configuration menu in the extension menu."
+msgid "Enable this to show the EPG Refresh configuration menu in the extensions menu."
 msgstr "Umožní pristupovať k nastaveniu EPGRefresh z menu rozšírení."
 
 msgid "Extend the list of services to refresh by those your AutoTimers use?"
