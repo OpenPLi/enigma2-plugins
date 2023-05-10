@@ -449,13 +449,13 @@ msgstr "Afficher 'RafraîchirEPG maintenant' dans le menu principal"
 msgid "Show 'Stop running EPG Refresh' in the extension menu"
 msgstr "Afficher 'Arrêter l'exécution de RafraîchirEPG' dans le menu principal"
 
-msgid "Show entry 'AutoZap' in extensions menu"
+msgid "Show entry 'AutoZap' in the extensions menu"
 msgstr "Afficher une entrée 'ZapAutomatique' dans le menu des extensions"
 
-msgid "Show entry 'Manually change EPG' in epg menu"
+msgid "Show entry 'Manually change EPG' in the extensions menu"
 msgstr "Afficher l'entrée 'Charger manuelle l'EPG' dans le menu principal"
 
-msgid "Show in extensions menu"
+msgid "Show in the extensions menu"
 msgstr "Afficher dans le menu des extensions"
 
 msgid "Show popup when refresh starts or ends"

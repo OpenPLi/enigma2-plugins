@@ -443,13 +443,13 @@ msgstr "Toon 'EPGrefresh nu' in het EPG menu"
 msgid "Show 'Stop running EPG Refresh' in the extension menu"
 msgstr "Toon 'stop actieve EPGrefresh' in het EPG menu"
 
-msgid "Show entry 'AutoZap' in extensions menu"
+msgid "Show entry 'AutoZap' in the extensions menu"
 msgstr "Toon 'AutoZap' in het applicatiemenu"
 
 msgid "Show entry 'Manually change EPG' in EPG menu"
 msgstr "Toon 'wijzig de EPG handmatig' in het EPG menu"
 
-msgid "Show in extensions menu"
+msgid "Show in the extensions menu"
 msgstr "Toon in het applicatiemenu"
 
 msgid "Show popup when refresh starts or ends"

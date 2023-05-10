@@ -279,10 +279,10 @@ msgstr ""
 msgid "If \"Run AutoTimer after refresh\" and \"Shutdown after EPG refresh\" enabled and use \"Label series\" for match, set long timeout."
 msgstr ""
 
-msgid "If enabled, show 'EPGRefresh now' in epg menu when currently no EPGRefresh is running."
+msgid "If enabled, show 'EPGRefresh now' in the extensions menu when currently no EPGRefresh is running."
 msgstr ""
 
-msgid "If enabled, show 'Stop running EPGRefresh' in epg menu when EPGPRefresh is running."
+msgid "If enabled, show 'Stop running EPGRefresh' in the extensions menu when EPGPRefresh is running."
 msgstr ""
 
 msgid "If you want to refresh the EPG in background, you can choose the method which best suits your needs here, e.g. hidden, fake recording or regular Picture in Picture."
@@ -475,13 +475,13 @@ msgstr ""
 msgid "Show 'Stop running EPG Refresh' in the extension menu"
 msgstr ""
 
-msgid "Show entry 'AutoZap' in extensions menu"
+msgid "Show entry 'AutoZap' in the extensions menu"
 msgstr ""
 
-msgid "Show entry 'Manually change EPG' in epg menu"
+msgid "Show entry 'Manually change EPG' in the extensions menu"
 msgstr ""
 
-msgid "Show in extensions menu"
+msgid "Show in the extensions menu"
 msgstr ""
 
 msgid "Show popup when refresh starts or ends"

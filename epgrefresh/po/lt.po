@@ -452,13 +452,13 @@ msgstr "Rodyti 'Atnaujinti EPG dabar' pagrindiniame meniu"
 msgid "Show 'Stop running EPG Refresh' in the extension menu"
 msgstr "Rodyti 'Stabdyti EPG atnaujinimą' pagrindiniame meniu"
 
-msgid "Show entry 'AutoZap' in extensions menu"
+msgid "Show entry 'AutoZap' in the extensions menu"
 msgstr "Rodyti 'Automatinį perjungimą' tarp plėtinių meniu"
 
-msgid "Show entry 'Manually change EPG' in epg menu"
+msgid "Show entry 'Manually change EPG' in the extensions menu"
 msgstr "Rodyti 'Rankinis EPG keitimas' pagrindiniame meniu"
 
-msgid "Show in extensions menu"
+msgid "Show in the extensions menu"
 msgstr "Rodyti tarp plėtinių meniu"
 
 msgid "Show popup when refresh starts or ends"

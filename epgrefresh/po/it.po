@@ -473,14 +473,14 @@ msgid "Show 'Stop running EPG Refresh' in the extension menu"
 msgstr ""
 
 #, fuzzy
-msgid "Show entry 'AutoZap' in extensions menu"
+msgid "Show entry 'AutoZap' in the extensions menu"
 msgstr "Mostrare nel menu estensioni"
 
-msgid "Show entry 'Manually change EPG' in epg menu"
+msgid "Show entry 'Manually change EPG' in the extensions menu"
 msgstr ""
 
 #, fuzzy
-msgid "Show in extensions menu"
+msgid "Show in the extensions menu"
 msgstr "Mostrare nel menu estensioni"
 
 #, fuzzy

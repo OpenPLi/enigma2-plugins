@@ -443,13 +443,13 @@ msgstr "Показать 'Обновить EPG сейчас' в главном �
 msgid "Show 'Stop running EPG Refresh' in the extension menu"
 msgstr "Показать 'Остановить обновление EPG' в главном меню"
 
-msgid "Show entry 'AutoZap' in extensions menu"
+msgid "Show entry 'AutoZap' in the extensions menu"
 msgstr "Показать 'Авто переключение' в меню дополнений"
 
-msgid "Show entry 'Manually change EPG' in epg menu"
+msgid "Show entry 'Manually change EPG' in the extensions menu"
 msgstr "Показать 'Ручные изменения EPG' в главном меню"
 
-msgid "Show in extensions menu"
+msgid "Show in the extensions menu"
 msgstr "Показать обновление EPG в меню дополнений"
 
 msgid "Show popup when refresh starts or ends"

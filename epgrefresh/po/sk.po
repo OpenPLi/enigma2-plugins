@@ -453,13 +453,13 @@ msgstr "Zobrazovať 'Aktualizovať EPG' v hlavnom menu"
 msgid "Show 'Stop running EPG Refresh' in the extension menu"
 msgstr "Zobrazovať 'Zastaviť aktualizáciu EPG' v hlavnom menu"
 
-msgid "Show entry 'AutoZap' in extensions menu"
+msgid "Show entry 'AutoZap' in the extensions menu"
 msgstr "Zobrazovať 'AutoZap' v menu rozšírení"
 
-msgid "Show entry 'Manually change EPG' in epg menu"
+msgid "Show entry 'Manually change EPG' in the extensions menu"
 msgstr "Zobrazovať 'Manuálna zmena EPG' v hlavnom menu"
 
-msgid "Show in extensions menu"
+msgid "Show in the extensions menu"
 msgstr "Zobrazovať v menu rozšírení"
 
 msgid "Show popup when refresh starts or ends"
