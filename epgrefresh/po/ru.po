@@ -256,10 +256,10 @@ msgstr "Пятница"
 msgid "If \"Run AutoTimer after refresh\" and \"Shutdown after EPG refresh\" enabled and use \"Label series\" for match, set long timeout."
 msgstr "Если \"Запустить Автотаймер после обновления\" и \"Глубокое ожидание после обновления EPG\" включены и используются \"Ярлыки сериалов\" для совпадений, установите большой таймаут."
 
-msgid "If enabled, show 'EPGRefresh now' in the epg menu when currently no EPGRefresh is running."
+msgid "If enabled, show 'EPGRefresh now' in the extensions menu when currently no EPGRefresh is running."
 msgstr "Если включено, то 'Обновить EPG сейчас' будет показано в главном меню, если в это время обновление не запущено."
 
-msgid "If enabled, show 'Stop running EPGRefresh' in the epg menu when EPGPRefresh is running."
+msgid "If enabled, show 'Stop running EPGRefresh' in the extensions menu when EPGPRefresh is running."
 msgstr "Если включено, то 'Остановить обновление EPG' будет показано в главном меню, если в это время обновление запущено."
 
 msgid "If you want to refresh the EPG in background, you can choose the method which best suits your needs here, e.g. hidden, fake recording or regular Picture in Picture."

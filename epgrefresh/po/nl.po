@@ -256,11 +256,11 @@ msgstr "Vrijdag"
 msgid "If \"Run AutoTimer after refresh\" and \"Shutdown after EPG refresh\" enabled and use \"Label series\" for match, set long timeout."
 msgstr "Bij het gebruik van 'activeren van AutoTimer na EPGrefresh' en 'sluit EPGRefresh af na gebruik' en het gebruik van 'Laser series' om te vergelijken stel dan een lange vertraging in."
 
-msgid "If enabled, show 'EPGRefresh now' in the epg menu when currently no EPGRefresh is running."
-msgstr "Indien geactiveerd zal 'EPGrefresh nu' getoond worden in het hoofdmenu ook als EPGrefresh niet actief is."
+msgid "If enabled, show 'EPGRefresh now' in the extensions menu when currently no EPGRefresh is running."
+msgstr "Indien geactiveerd zal 'EPGrefresh nu' getoond worden in het applicatie menu ook als EPGrefresh niet actief is."
 
-msgid "If enabled, show 'Stop running EPGRefresh' in the epg menu when EPGPRefresh is running."
-msgstr "Indien geactiveerd dan zal 'Stop EPGrefresh' niet meer getoond worden in het hoofdmenu indien deze actief is."
+msgid "If enabled, show 'Stop running EPGRefresh' in the extensions menu when EPGPRefresh is running."
+msgstr "Indien geactiveerd dan zal 'Stop EPGrefresh' niet meer getoond worden in het applicatie menu indien deze actief is."
 
 msgid "If you want to refresh the EPG in background, you can choose the method which best suits your needs here, e.g. hidden, fake recording or regular Picture in Picture."
 msgstr "Indien u de EPG in de achtergrond wilt actualiseren kunt u de voor u gewenste methode kiezen. U kunt kiezen uit 'verborgen', simulatie van een opname of een standaard PIP."
