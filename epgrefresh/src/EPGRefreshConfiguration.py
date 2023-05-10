@@ -24,6 +24,9 @@ from Components.NimManager import nimmanager
 from enigma import getDesktop
 from Screens.MessageBox import MessageBox
 
+# Plugins
+from Components.PluginComponent import plugins
+
 
 VERSION = "1.9"
 
@@ -298,6 +301,7 @@ class EPGRefreshConfiguration(Screen, ConfigListScreen):
 		epgrefresh.services = (set(self.services[0]), set(self.services[1]))
 		epgrefresh.saveConfiguration()
 		config.plugins.epgrefresh.save()
+		plugins.reloadPlugins()
 		self.close(self.session)
 
 	def checkAnswer(self, answer):
