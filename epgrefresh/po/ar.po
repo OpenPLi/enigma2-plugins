@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Enigma2 EPGRefresh Plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-13 18:34+0200\n"
+"POT-Creation-Date: 2023-05-11 00:18+0200\n"
 "PO-Revision-Date: 2020-10-01 16:14+0300\n"
 "Last-Translator: mosad - مساعد الجعيد <abo-mishal@hotmail.com>\n"
 "Language-Team: mosad - مساعد الجعيد\n"
@@ -149,9 +149,6 @@ msgstr ""
 msgid "Configure EPG save interval, if enabled."
 msgstr ""
 
-msgid "Congratulations"
-msgstr ""
-
 msgid "Create a backup cache file, after manually or automatically saving EPG."
 msgstr ""
 
@@ -178,11 +175,19 @@ msgstr "مدة البقاء في القناة (بالثواني)"
 msgid "EPG Cache Check"
 msgstr ""
 
+#, fuzzy
+msgid "EPG Refresh"
+msgstr "إضافة إلى تحديث دليل البرامج الإلكترونية"
+
 msgid "EPG cache file filename"
 msgstr ""
 
 msgid "EPG cache file path"
 msgstr ""
+
+#, fuzzy
+msgid "EPG refresh"
+msgstr "إضافة إلى تحديث دليل البرامج الإلكترونية"
 
 msgid "EPG refresh auto-start earliest (hh:mm)"
 msgstr "تحديث دليل البرامج الإلكترونية تلقائيا - تشغيل مبكر (ساعات: دقائق)"
@@ -193,26 +198,18 @@ msgstr "تحديث دليل البرامج الإلكترونية تلقائيا
 msgid "EPG refresh finished."
 msgstr "تم الانتهاء من تحديث دليل البرامج الإلكترونية."
 
+#, fuzzy
+msgid "EPG refresh now"
+msgstr "تحديث-دليل البرامج الإلكترونية_التحديث الأن"
+
 msgid "EPG refresh started in background."
 msgstr "تشغيل تحديث دليل البرامج الإلكترونية في الخلفية."
 
 msgid "EPG refresh starts scanning channels."
 msgstr "تحديث دليل البرامج الإلكترونية يبدأ بالبحث في القنوات."
 
-#, fuzzy
-msgid "EPG-refresh now"
-msgstr "تحديث-دليل البرامج الإلكترونية_التحديث الأن"
-
-#, fuzzy
-msgid "EPGRefresh"
-msgstr "إضافة إلى تحديث دليل البرامج الإلكترونية"
-
 msgid "EPGRefresh Configuration"
 msgstr "إعدادات تحديث دليل البرامج الإلكترونية"
-
-#, fuzzy
-msgid "EPGRefresh Help"
-msgstr "تحديث-دليل البرامج الإلكترونية_الضبط"
 
 msgid "EPGRefresh Services"
 msgstr "قنوات تحديث دليل البرامج الإلكترونية"
@@ -236,10 +233,6 @@ msgstr "تعديل تحديث القنوات"
 
 msgid "Editing"
 msgstr "التحرير"
-
-#, fuzzy
-msgid "Editing the service list"
-msgstr "تحرير"
 
 msgid "Enable automatic EPG save interval."
 msgstr ""
@@ -317,9 +310,6 @@ msgstr ""
 msgid "Main Picture"
 msgstr "الصورة الرئيسية"
 
-msgid "Manual EPG"
-msgstr ""
-
 msgid "Manually clear EPG (choose method)."
 msgstr ""
 
@@ -375,6 +365,13 @@ msgstr ""
 msgid "Really close without saving settings?"
 msgstr "هل تريد الإغلاق بدون حفظ الإعدادات؟"
 
+msgid "Really shutdown now?"
+msgstr ""
+
+#, fuzzy
+msgid "Refresh EPG / AutoZap"
+msgstr "تحديث دليل البرامج الإلكترونية تلقائياً"
+
 msgid "Refresh EPG automatically"
 msgstr "تحديث دليل البرامج الإلكترونية تلقائياً"
 
@@ -383,10 +380,6 @@ msgstr "تحديث دليل البرامج الإلكترونية قيد الإ�
 
 msgid "Refresh now"
 msgstr "التحديث الآن"
-
-#, fuzzy
-msgid "Refresh-EPG / AutoZap"
-msgstr "تحديث دليل البرامج الإلكترونية تلقائياً"
 
 msgid "Refresh using"
 msgstr "محدث"
@@ -516,7 +509,8 @@ msgstr ""
 msgid "Skip protected Services"
 msgstr "تخطي حماية القنوات"
 
-msgid "Stop Running EPG-refresh"
+#, fuzzy
+msgid "Stop Running EPG refresh"
 msgstr "إيقاف تشغيل تحديث دليل البرامج الإلكترونية"
 
 #, fuzzy
@@ -525,10 +519,6 @@ msgstr "إيقاف تشغيل تحديث دليل البرامج الإلكتر�
 
 msgid "Sunday"
 msgstr ""
-
-#, fuzzy
-msgid "The configuration menu"
-msgstr "المساعدة في إعدادات تحديث دليل البرامج الإلكترونية"
 
 msgid "The duration that will be waited for the receiver to go into standby."
 msgstr ""
@@ -539,14 +529,6 @@ msgstr ""
 msgid "The same functions are used in plugin EPGD!!"
 msgstr ""
 
-msgid ""
-"This help screen is supposed to give you a quick look at everything EPGRefresh has to offer.\n"
-"You can abort it at any time by pressing the RED or EXIT button on your remote control or bring it up at a later point by pressing the HELP button from the configuration menu (more on that later).\n"
-"\n"
-"\n"
-"But you really should consider to take the few minutes it takes to read these help pages."
-msgstr ""
-
 #, fuzzy
 msgid "This is the duration each service will be shown in AutoZap mode."
 msgstr "هذه هي مدة كل خدمة/القناة ستبقى نشطة أثناء التحديث."
@@ -554,14 +536,6 @@ msgstr "هذه هي مدة كل خدمة/القناة ستبقى نشطة أثن
 #, fuzzy
 msgid "This is the duration each service/channel will be tuned to during a refresh."
 msgstr "هذه هي مدة كل خدمة/القناة ستبقى نشطة أثناء التحديث."
-
-msgid ""
-"This is the entry point of EPGRefresh. From this menu you can configure every aspect of the plugin and start a manual refresh of the EPG.\n"
-"The configuration options each have an explaination which is supposed to help you to understand their effects better. Please give reading them a try, they can save you a lot of time.\n"
-"\n"
-"Using the YELLOW button you can start a refresh manually and the INFO button brings up the date the last refresh was completed successfully.\n"
-"The BLUE key opens the service editor (next page)."
-msgstr ""
 
 msgid ""
 "This might have been an automated bootup to refresh the EPG. For this to happen it is recommended to put the receiver to Standby.\n"
@@ -592,32 +566,12 @@ msgid "Wednesday"
 msgstr ""
 
 #, fuzzy
-msgid "Welcome to EPGRefresh"
-msgstr "إضافة إلى تحديث دليل البرامج الإلكترونية"
-
-#, fuzzy
 msgid "Whether the receiver should go into deep standby after refresh is completed."
 msgstr "يتحكم في إعداد ما إذا كان يجب تعيين المتلقي إلى وضع الاستعداد بعد اكتمال التحديث."
 
 msgid ""
-"While the screen does not immediately show it, it does have a lot to offer. The topmost line allows you to choose between the editor for channels and bouquets and the following lines contain the channels/bouquets you chose to refresh.\n"
-"\n"
-"You can use the BLUE button to add a new entry to the list or the YELLOW button to remove an existing one.\n"
-"\n"
-"\n"
-"For most people it should be sufficient to add the \"Favourites\" bouquet by selecting \"Bouquets\" in the first line and by adding it using the BLUE button."
-msgstr ""
-
-msgid ""
 "You may not use this settings!\n"
 "At least one day a week should be included!"
-msgstr ""
-
-msgid ""
-"You now know how to do your first steps in EPGRefresh.\n"
-"\n"
-"As a final note I want to hint you at the fact that this plugin will not do anything on its own without YOU telling it to. So if you want the refresh to happen automatically in the background you need to configure the plugin to do so.\n"
-"This was not done to cause you any inconvenience but rather to give you the freedom of choice."
 msgstr ""
 
 #, fuzzy
@@ -641,9 +595,6 @@ msgid "event info"
 msgstr ""
 
 msgid "event info / channel selection"
-msgstr ""
-
-msgid "manual save/load EPG"
 msgstr ""
 
 msgid "never"

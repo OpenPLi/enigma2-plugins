@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Enigma2 EPGRefresh Plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-13 18:34+0200\n"
+"POT-Creation-Date: 2023-05-11 00:18+0200\n"
 "PO-Revision-Date: 2023-04-12 09:06+0200\n"
 "Last-Translator: IMS <ims@openpli.org>\n"
 "Language-Team: PLi\n"
@@ -135,9 +135,6 @@ msgstr "Nastavuje interval pro automatické načítání EPG, jestliže je to po
 msgid "Configure EPG save interval, if enabled."
 msgstr "Nastavuje interval pro ukládání EPG, jestliže je to povoleno."
 
-msgid "Congratulations"
-msgstr "Blahopřejeme."
-
 msgid "Create a backup cache file, after manually or automatically saving EPG."
 msgstr "Vytvořít zálohu mezipaměti při ručním nebo automatickém ukládání EPG."
 
@@ -162,11 +159,19 @@ msgstr "Doba zobrazení (ve vteřinách) každého programu pro \"AutoZap\""
 msgid "EPG Cache Check"
 msgstr "Kontrola EPG Cache"
 
+#, fuzzy
+msgid "EPG Refresh"
+msgstr "EPGRefresh"
+
 msgid "EPG cache file filename"
 msgstr "Název EPG souboru"
 
 msgid "EPG cache file path"
 msgstr "Cesta k EPG souboru"
+
+#, fuzzy
+msgid "EPG refresh"
+msgstr "EPGRefresh"
 
 msgid "EPG refresh auto-start earliest (hh:mm)"
 msgstr "Aktualizaci EPG spouštět nejdříve v (hh:mm)"
@@ -177,23 +182,18 @@ msgstr "Aktualizaci EPG spouštět nejpozději v (hh:mm)"
 msgid "EPG refresh finished."
 msgstr "Aktualizace EPG dokončena."
 
+#, fuzzy
+msgid "EPG refresh now"
+msgstr "Aktualizovat EPG"
+
 msgid "EPG refresh started in background."
 msgstr "Aktualizace EPG spuštěna na pozadí."
 
 msgid "EPG refresh starts scanning channels."
 msgstr "Aktualizace EPG začala prohledávat kanály."
 
-msgid "EPG-refresh now"
-msgstr "Aktualizovat EPG"
-
-msgid "EPGRefresh"
-msgstr "EPGRefresh"
-
 msgid "EPGRefresh Configuration"
 msgstr "EPGRefresh - nastavení,"
-
-msgid "EPGRefresh Help"
-msgstr "EPGRefresh - Nápověda"
 
 msgid "EPGRefresh Services"
 msgstr "EPGRefresh kanály"
@@ -215,9 +215,6 @@ msgstr "Upravit aktualizované kanály"
 
 msgid "Editing"
 msgstr "Upravovat"
-
-msgid "Editing the service list"
-msgstr "Úpravy seznamu programů."
 
 msgid "Enable automatic EPG save interval."
 msgstr "Povoluje automatické ukládání EPG v určitém intervalu."
@@ -289,9 +286,6 @@ msgstr "Ruční načtení EPG ze záložního souboru při startu."
 msgid "Main Picture"
 msgstr "Hlavní obraz"
 
-msgid "Manual EPG"
-msgstr "EPG ručně"
-
 msgid "Manually clear EPG (choose method)."
 msgstr "Ruční vyčištění EPG (zvolte metodu)."
 
@@ -346,6 +340,13 @@ msgstr "Stiskněte OK a otevřete menu pro načtení/ukládání EPG a konfigura
 msgid "Really close without saving settings?"
 msgstr "Opravdu zavřít bez uloženého nastavení?"
 
+msgid "Really shutdown now?"
+msgstr ""
+
+#, fuzzy
+msgid "Refresh EPG / AutoZap"
+msgstr "Aktualizovat EPG / AutoZap"
+
 msgid "Refresh EPG automatically"
 msgstr "Aktualizovat EPG automaticky"
 
@@ -354,9 +355,6 @@ msgstr "Aktualizace EPG používá"
 
 msgid "Refresh now"
 msgstr "Aktualizovat"
-
-msgid "Refresh-EPG / AutoZap"
-msgstr "Aktualizovat EPG / AutoZap"
 
 msgid "Refresh using"
 msgstr "Aktualizace"
@@ -473,7 +471,8 @@ msgstr "Velikost: "
 msgid "Skip protected Services"
 msgstr "Přeskočit zabezpečené kanály"
 
-msgid "Stop Running EPG-refresh"
+#, fuzzy
+msgid "Stop Running EPG refresh"
 msgstr "Zastavit aktualizaci  EPG"
 
 msgid "Stop Running EPG-refresh?\n"
@@ -481,9 +480,6 @@ msgstr "Zastavit probíhající aktualizaci EPG?\n"
 
 msgid "Sunday"
 msgstr "Neděle"
-
-msgid "The configuration menu"
-msgstr "Konfigurační menu."
 
 msgid "The duration that will be waited for the receiver to go into standby."
 msgstr "Doba po kterou se čeká, než přejde přijímač do pohotovostního režimu."
@@ -494,37 +490,11 @@ msgstr "Shodné funkce jsou použity v Menu -> Nastavení -> Systém -> Nastaven
 msgid "The same functions are used in plugin EPGD!!"
 msgstr "Stejné funkce jsou použity v pluginu EPGD!!"
 
-msgid ""
-"This help screen is supposed to give you a quick look at everything EPGRefresh has to offer.\n"
-"You can abort it at any time by pressing the RED or EXIT button on your remote control or bring it up at a later point by pressing the HELP button from the configuration menu (more on that later).\n"
-"\n"
-"\n"
-"But you really should consider to take the few minutes it takes to read these help pages."
-msgstr ""
-"Tato nápověda by Vám měla poskytnout rychlý náhled na vše, co EPGRefresh nabízí.\n"
-"Můžete ji kdykoliv přerušit stisknutím 'červeného' tlačítka nebo tlačítka 'exit' na dálkovém ovladači nebo ji později vyvolat výběrem z ovládacího menu.\n"
-"\n"
-"\n"
-"Měli byste věnovat několik minut přečtení těchto stránek nápovědy."
-
 msgid "This is the duration each service will be shown in AutoZap mode."
 msgstr "Doba, po kterou bude každý program zobrazen v AutoZap módu."
 
 msgid "This is the duration each service/channel will be tuned to during a refresh."
 msgstr "Doba, po kterou plugin zůstává přepnutý na kanálu a načítá EPG."
-
-msgid ""
-"This is the entry point of EPGRefresh. From this menu you can configure every aspect of the plugin and start a manual refresh of the EPG.\n"
-"The configuration options each have an explaination which is supposed to help you to understand their effects better. Please give reading them a try, they can save you a lot of time.\n"
-"\n"
-"Using the YELLOW button you can start a refresh manually and the INFO button brings up the date the last refresh was completed successfully.\n"
-"The BLUE key opens the service editor (next page)."
-msgstr ""
-"Toto je vstupní bod EPGRefresh. Z tohoto menu můžete konfigurovat každý aspekt pluginu a spustit ruční aktualizaci EPG.\n"
-"Každá z možností konfigurace má své vysvětlení, které má pomoci lépe porozumět jejich účinkům. Prosím, zkuste je přečíst, mohou Vám ušetřit spoustu času.\n"
-"\n"
-"Pomocí žlutého tlačítka můžete ručně spustit aktualizaci a tlačítkem INFO můžete zobrazit datum, kdy bylo úspěšně dokončeno poslední obnovení EPG.\n"
-"Modrým tlačítkem otevřete editor pro úpravu seznamu programů (následující strana)."
 
 msgid ""
 "This might have been an automated bootup to refresh the EPG. For this to happen it is recommended to put the receiver to Standby.\n"
@@ -554,26 +524,8 @@ msgstr "Probudit pro aktualizaci z hlubokého spánku"
 msgid "Wednesday"
 msgstr "Středa"
 
-msgid "Welcome to EPGRefresh"
-msgstr "Vítejte do EPGRefresh."
-
 msgid "Whether the receiver should go into deep standby after refresh is completed."
 msgstr "Určuje, zda přijímač po provedené aktualizaci bude nebo nebude přepnut do hlubokého spánku."
-
-msgid ""
-"While the screen does not immediately show it, it does have a lot to offer. The topmost line allows you to choose between the editor for channels and bouquets and the following lines contain the channels/bouquets you chose to refresh.\n"
-"\n"
-"You can use the BLUE button to add a new entry to the list or the YELLOW button to remove an existing one.\n"
-"\n"
-"\n"
-"For most people it should be sufficient to add the \"Favourites\" bouquet by selecting \"Bouquets\" in the first line and by adding it using the BLUE button."
-msgstr ""
-"Ačkoliv toho obrazovka mnoho nezobrazuje, přesto má co nabídnout. Horní řádek umožňuje volit mezi editorem programů a přehledů a následující řádky obsahují programy/přehledy, které jste zvolili pro obnovování.\n"
-"\n"
-"Pomocí modrého tlačítka můžete přidat novou položku do seznamu nebo žlutým tlačítkem existující položku odstranit.\n"
-"\n"
-"\n"
-"Pro většinu lidí by mělo stačit přidat přehled \"Oblíbené\" zvolením \"Přehledy\" v prvním řádku a poté přidáním pomocí modrého tlačítka."
 
 msgid ""
 "You may not use this settings!\n"
@@ -581,17 +533,6 @@ msgid ""
 msgstr ""
 "Nemůžete použít toto nastavení!\n"
 "Alespoň jeden den v týdnu by měl být nastaven!"
-
-msgid ""
-"You now know how to do your first steps in EPGRefresh.\n"
-"\n"
-"As a final note I want to hint you at the fact that this plugin will not do anything on its own without YOU telling it to. So if you want the refresh to happen automatically in the background you need to configure the plugin to do so.\n"
-"This was not done to cause you any inconvenience but rather to give you the freedom of choice."
-msgstr ""
-"Nyní víte, jak udělat první kroky v pluginu EPGRefresh.\n"
-"\n"
-"Jako poslední poznámku bychom Vás rádi upozornili na skutečnost, že tento plugin neudělá nic sám. Pokud tedy chcete, aby se aktualizace automaticky prováděla na pozadí, musíte to nastavit.\n"
-"Není to nastaveno automaticky - máte svobodu volby."
 
 msgid "add service to EPGRefresh"
 msgstr "Přidat program do EPGRefresh"
@@ -613,9 +554,6 @@ msgstr "V informaci o události"
 
 msgid "event info / channel selection"
 msgstr "V informaci o události / výběru kanálů"
-
-msgid "manual save/load EPG"
-msgstr "Ruční uložení/načtení EPG"
 
 msgid "never"
 msgstr "Nikdy"
