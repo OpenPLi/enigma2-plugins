@@ -261,10 +261,10 @@ msgstr "Pátek"
 msgid "If \"Run AutoTimer after refresh\" and \"Shutdown after EPG refresh\" enabled and use \"Label series\" for match, set long timeout."
 msgstr "Jestliže jsou \"Spustit AutoTimer po auktualizaci\" a \"Vypnout po aktualizaci EPG\" povoleny a používáte \"Label series\" pro hledání, nastavte delší zpoždění."
 
-msgid "If enabled, show 'EPGRefresh now' in the extensions menu when currently no EPGRefresh is running."
+msgid "If enabled, show 'EPGRefresh now' in the extensions menu when currently no EPG Refresh is running."
 msgstr "Jestliže je povoleno, pak bude zobrazeno 'Aktualizace EPG' v hlavním menu (jestliže již aktualizace neprobíhá)."
 
-msgid "If enabled, show 'Stop running EPGRefresh' in the extensions menu when EPGPRefresh is running."
+msgid "If enabled, show 'Stop running EPGRefresh' in the extensions menu when EPG Refresh is running."
 msgstr "Jestliže je povoleno a probíhá aktualizace, pak bude v hlavním menu zobrazována volba 'Zastavit aktualizaci EPG'."
 
 msgid "If you want to refresh the EPG in background, you can choose the method which best suits your needs here, e.g. hidden, fake recording or regular Picture in Picture."
