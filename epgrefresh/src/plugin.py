@@ -408,7 +408,7 @@ def EPGRefreshChannelContextMenu__init__(self, session, csel):
 				profile = config.plugins.epgrefresh.add_to_refresh.value
 				if profile == "2" or profile == "3":
 					callFunction = self.addtoEPGRefresh
-					self["menu"].list.insert(2, ChoiceEntryComponent(text=(_("add service to EPGRefresh"), boundFunction(callFunction, 1)), key="bullet"))
+					self["menu"].list.insert(2, ChoiceEntryComponent(text=(_("add service to EPG Refresh"), boundFunction(callFunction, 1)), key="bullet"))
 
 
 def addtoEPGRefresh(self, add):
@@ -528,12 +528,12 @@ def main_menu(menuid, **kwargs):
 config.plugins.epgrefresh_extra.show_autozap.addNotifier(AutozapExtensionsmenu, initial_call=False, immediate_feedback=True)
 config.plugins.epgrefresh.show_in_extensionsmenu.addNotifier(housekeepingExtensionsmenu, initial_call=False, immediate_feedback=True)
 config.plugins.epgrefresh.add_to_refresh.addNotifier(addEventinfomenu, initial_call=False, immediate_feedback=True)
-ext1Descriptor = PluginDescriptor(name="EPG refresh", description=_("EPG refresh"), where=PluginDescriptor.WHERE_EXTENSIONSMENU, fnc=main, needsRestart=False)
+ext1Descriptor = PluginDescriptor(name=_("EPG Refresh"), description=_("EPG Refresh"), where=PluginDescriptor.WHERE_EXTENSIONSMENU, fnc=main, needsRestart=False)
 ext2Descriptor = PluginDescriptor(name="Manual EPG refresh", description=_("Automatically refresh EPG"), where=PluginDescriptor.WHERE_EXTENSIONSMENU, fnc=manualepg, needsRestart=False)
 eventinfoDescriptor = PluginDescriptor(name=_("add to EPGRefresh"), description=_("add to EPGRefresh"), where=PluginDescriptor.WHERE_EVENTINFO, fnc=eventinfo, needsRestart=False)
 autozapDescriptor = PluginDescriptor(name=_("Refresh EPG / AutoZap"), description=_("AutoZap for refreshing EPG data"), where=PluginDescriptor.WHERE_EXTENSIONSMENU, fnc=autozap, needsRestart=False)
-startDescriptor = PluginDescriptor(name=_("EPG refresh now"), description="Start EPG refresh", where=PluginDescriptor.WHERE_EXTENSIONSMENU, fnc=start_Running, needsRestart=False)
-stopDescriptor = PluginDescriptor(name=_("Stop Running EPG refresh"), description="Stop EPG refresh", where=PluginDescriptor.WHERE_EXTENSIONSMENU, fnc=stop_Running, needsRestart=False)
+startDescriptor = PluginDescriptor(name=_("EPG refresh now"), description=_("Start EPG refresh"), where=PluginDescriptor.WHERE_EXTENSIONSMENU, fnc=start_Running, needsRestart=False)
+stopDescriptor = PluginDescriptor(name=_("Stop Running EPG refresh"), description=_("Stop EPG refresh"), where=PluginDescriptor.WHERE_EXTENSIONSMENU, fnc=stop_Running, needsRestart=False)
 
 
 def Plugins(**kwargs):
