@@ -17,6 +17,7 @@ from . import _, NOTIFICATIONID, ngettext
 from .MainPictureAdapter import MainPictureAdapter
 from .PipAdapter import PipAdapter
 from .RecordAdapter import RecordAdapter
+from Components.PluginComponent import plugins
 
 CONFIG = "/etc/enigma2/epgrefresh.xml"
 XML_VERSION = "1"
@@ -252,6 +253,7 @@ class EPGRefresh:
 			from enigma import eEPGCache
 			epgcache = eEPGCache.getInstance()
 			epgcache.flushEPG()
+		plugins.reloadPlugins()
 		self.refresh()
 		print("[EPGRefresh] pre start...")
 
