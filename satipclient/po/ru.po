@@ -28,8 +28,17 @@ msgstr "При первом обнаружении требуется подкл
 msgid "Description"
 msgstr "Описание"
 
+msgid "%s autostart"
+msgstr "%s автостарт"
+
+msgid "Not found '%s' ..."
+msgstr "Не найден '%s' ..."
+
 msgid "Disable"
 msgstr "Отключить"
+
+msgid "Enable"
+msgstr "Включить"
 
 msgid "Discover"
 msgstr "Обнаружение"
