@@ -1,7 +1,7 @@
 from copy import deepcopy
 from glob import glob
 from http.client import HTTPConnection
-from os import R_OK, access
+from os import R_OK, access, path, system
 from xml.etree.ElementTree import fromstring
 
 from Components.ActionMap import ActionMap
@@ -110,9 +110,10 @@ class SATIPDiscovery:
 	def getEthernetAddr(self):
 		iface = None
 		for interface in iNetwork.getAdapterList():
-			if interface == "eth0" and iNetwork.checkforInterface(interface):
+			if iNetwork.checkforInterface(interface):
 				iface = self.formatAddr(iNetwork.getAdapterAttribute(interface, "ip"))
-				break
+				if interface == "eth0" and iface and iface != "0.0.0.0":
+					break
 		if not iface or iface == "0.0.0.0":
 			self.iface = _("LAN connection required for first detection.")
 		return iface
@@ -305,13 +306,15 @@ SATIP_CONF_CHANGED = False
 
 class SATIPTuner(ConfigListScreen, Screen):
 	skin = """
-		<screen position="center,center" size="590,370">
-			<ePixmap pixmap="skin_default/buttons/red.png" position="40,0" size="140,40" alphatest="on" />
-			<ePixmap pixmap="skin_default/buttons/green.png" position="230,0" size="140,40" alphatest="on" />
-			<ePixmap pixmap="skin_default/buttons/yellow.png" position="420,0" size="140,40" alphatest="on" />
-			<widget source="key_red" render="Label" position="40,0" zPosition="1" size="140,40" font="Regular;18" halign="center" valign="center" backgroundColor="#9f1313" foregroundColor="#ffffff" transparent="1" />
-			<widget source="key_green" render="Label" position="230,0" zPosition="1" size="140,40" font="Regular;18" halign="center" valign="center" backgroundColor="#1f771f" foregroundColor="#ffffff" transparent="1" />
-			<widget source="key_yellow" render="Label" position="420,0" zPosition="1" size="140,40" font="Regular;18" halign="center" valign="center" backgroundColor="#a08500" foregroundColor="#ffffff" transparent="1" />
+		<screen position="center,center" size="600,370">
+			<ePixmap pixmap="skin_default/buttons/red.png" position="10,0" size="140,40" alphatest="on" />
+			<ePixmap pixmap="skin_default/buttons/green.png" position="160,0" size="140,40" alphatest="on" />
+			<ePixmap pixmap="skin_default/buttons/yellow.png" position="310,0" size="140,40" alphatest="on" />
+			<ePixmap pixmap="skin_default/buttons/blue.png" position="460,0" size="140,40" alphatest="on" />
+			<widget source="key_red" render="Label" position="10,0" zPosition="1" size="140,40" font="Regular;18" halign="center" valign="center" backgroundColor="#9f1313" foregroundColor="#ffffff" transparent="1" />
+			<widget source="key_green" render="Label" position="160,0" zPosition="1" size="140,40" font="Regular;18" halign="center" valign="center" backgroundColor="#1f771f" foregroundColor="#ffffff" transparent="1" />
+			<widget source="key_yellow" render="Label" position="310,0" zPosition="1" size="140,40" font="Regular;18" halign="center" valign="center" backgroundColor="#a08500" foregroundColor="#ffffff" transparent="1" />
+			<widget source="key_blue" render="Label" position="460,0" zPosition="1" size="140,40" font="Regular;18" halign="center" valign="center" backgroundColor="#a08500" foregroundColor="#ffffff" transparent="1" />
 			<widget name="config" zPosition="2" position="20,60" size="550,50" scrollbarMode="showOnDemand" transparent="1" />
 			<widget source="description" render="Label" position="20,170" size="550,210" font="Regular;18" halign="left" valign="center" />
 			<widget source="choices" render="Label" position="20,120" size="550,40" font="Regular;18" halign="left" valign="center" />
@@ -330,6 +333,8 @@ class SATIPTuner(ConfigListScreen, Screen):
 		self["key_red"] = StaticText(_("Cancel"))
 		self["key_green"] = StaticText(_("OK"))
 		self["key_yellow"] = StaticText(_("Discover"))
+		self.autostart_client = path.exists("/etc/rc3.d/S20satipclient")
+		self["key_blue"] = StaticText(_("%s autostart") % (self.autostart_client and _("Disable") or _("Enable")))
 		self["description"] = StaticText(_("Starting..."))
 		self["choices"] = StaticText(_(" "))
 
@@ -340,6 +345,7 @@ class SATIPTuner(ConfigListScreen, Screen):
 			"red": self.keyCancel,
 			"green": self.keySave,
 			"yellow": self.DiscoveryStart,
+			"blue": self.AutostartClient,
 		}, -2)
 
 		self.list = []
@@ -358,6 +364,19 @@ class SATIPTuner(ConfigListScreen, Screen):
 		else:
 			self.createServerConfig()
 			self.createSetup()
+
+	def AutostartClient(self):
+		client = "/etc/init.d/satipclient"
+		if path.exists(client):
+			if self.autostart_client:
+				system("update-rc.d -f satipclient remove")
+			else:
+				system("update-rc.d satipclient defaults")
+			self.autostart_client = path.exists("/etc/rc3.d/S20satipclient")
+			self["key_blue"].setText(_("%s autostart") % (self.autostart_client and _("Disable") or _("Enable")))
+		else:
+			self["description"].setText(_("Not found '%s' ...") % client)
+
 
 	def OnClose(self):
 		if self.discoveryEnd in satipdiscovery.updateCallback:
