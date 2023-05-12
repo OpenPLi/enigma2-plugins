@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: satipclient\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"POT-Creation-Date: 2023-05-12 14:32+0200\n"
 "PO-Revision-Date: 2020-11-05 17:11+0300\n"
 "Last-Translator: mosad - مساعد الجعيد <abo-mishal@hotmail.com>\n"
 "Language-Team: mosad - مساعد الجعيد\n"
@@ -16,6 +16,10 @@ msgstr ""
 
 msgid " "
 msgstr " "
+
+#, python-format
+msgid "%s autostart"
+msgstr ""
 
 msgid "Cancel"
 msgstr "إلغاء"
@@ -32,9 +36,16 @@ msgstr "تعطيل"
 msgid "Discover"
 msgstr "ديسكفر"
 
+#, fuzzy
+msgid "Enable"
+msgstr "تعطيل"
+
 #, python-format
 msgid "IP : %s"
 msgstr "الايبي : %s"
+
+msgid "LAN connection required for first detection."
+msgstr ""
 
 msgid "Manufacturer"
 msgstr "الشركة المصنعة"
@@ -44,6 +55,10 @@ msgstr "موديل البرابط"
 
 msgid "No vtuner found."
 msgstr "لم يتم العثور على المؤالف."
+
+#, python-format
+msgid "Not found '%s' ..."
+msgstr ""
 
 msgid "OK"
 msgstr "موافق"

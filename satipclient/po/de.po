@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"POT-Creation-Date: 2023-05-12 14:32+0200\n"
 "PO-Revision-Date: 2015-08-08 23:26+0200\n"
 "Last-Translator: OE-A <OE_A>\n"
 "Language-Team: \n"
@@ -15,6 +15,10 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid " "
+msgstr ""
+
+#, python-format
+msgid "%s autostart"
 msgstr ""
 
 msgid "Cancel"
@@ -32,9 +36,16 @@ msgstr "Deaktivieren"
 msgid "Discover"
 msgstr "Suchen"
 
+#, fuzzy
+msgid "Enable"
+msgstr "Deaktivieren"
+
 #, python-format
 msgid "IP : %s"
 msgstr "IP : %s"
+
+msgid "LAN connection required for first detection."
+msgstr ""
 
 msgid "Manufacturer"
 msgstr "Hersteller"
@@ -43,6 +54,10 @@ msgid "Model URL"
 msgstr ""
 
 msgid "No vtuner found."
+msgstr ""
+
+#, python-format
+msgid "Not found '%s' ..."
 msgstr ""
 
 msgid "OK"

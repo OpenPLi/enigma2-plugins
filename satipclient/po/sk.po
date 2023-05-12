@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-16 16:27+0430\n"
+"POT-Creation-Date: 2023-05-12 14:32+0200\n"
 "PO-Revision-Date: 2019-10-24 20:10\n"
 "Last-Translator: Ladislav Zilizi, zilizila@gmail.com\n"
 "Language-Team: \n"
@@ -16,6 +16,10 @@ msgstr ""
 
 msgid " "
 msgstr " "
+
+#, python-format
+msgid "%s autostart"
+msgstr ""
 
 msgid "Cancel"
 msgstr "Zrušiť"
@@ -32,9 +36,16 @@ msgstr "Deaktivovať"
 msgid "Discover"
 msgstr "Vyhľadať"
 
+#, fuzzy
+msgid "Enable"
+msgstr "Deaktivovať"
+
 #, python-format
 msgid "IP : %s"
 msgstr "IP : %s"
+
+msgid "LAN connection required for first detection."
+msgstr ""
 
 msgid "Manufacturer"
 msgstr "Výrobca"
@@ -44,6 +55,10 @@ msgstr ""
 
 msgid "No vtuner found."
 msgstr "Žiadny vTuner nebol nájdený."
+
+#, python-format
+msgid "Not found '%s' ..."
+msgstr ""
 
 msgid "OK"
 msgstr "OK"

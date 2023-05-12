@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SAT>IP Client\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"POT-Creation-Date: 2023-05-12 14:32+0200\n"
 "PO-Revision-Date: 2015-12-02 18:55+0200\n"
 "Last-Translator: Dimitrij <Dima-73@inbox.lv>\n"
 "Language-Team: Dimitrij PLi\n"
@@ -16,36 +16,34 @@ msgstr ""
 msgid " "
 msgstr " "
 
+#, python-format
+msgid "%s autostart"
+msgstr "%s автостарт"
+
 msgid "Cancel"
 msgstr "Отмена"
 
 msgid "DVB-S"
 msgstr "DVB-S"
 
-msgid "LAN connection required for first detection."
-msgstr "При первом обнаружении требуется подключение по LAN."
-
 msgid "Description"
 msgstr "Описание"
-
-msgid "%s autostart"
-msgstr "%s автостарт"
-
-msgid "Not found '%s' ..."
-msgstr "Не найден '%s' ..."
 
 msgid "Disable"
 msgstr "Отключить"
 
-msgid "Enable"
-msgstr "Включить"
-
 msgid "Discover"
 msgstr "Обнаружение"
+
+msgid "Enable"
+msgstr "Включить"
 
 #, python-format
 msgid "IP : %s"
 msgstr "IP : %s"
+
+msgid "LAN connection required for first detection."
+msgstr "При первом обнаружении требуется подключение по LAN."
 
 msgid "Manufacturer"
 msgstr "Производитель"
@@ -55,6 +53,10 @@ msgstr "Модель URL"
 
 msgid "No vtuner found."
 msgstr "Не найден vtuner."
+
+#, python-format
+msgid "Not found '%s' ..."
+msgstr "Не найден '%s' ..."
 
 msgid "OK"
 msgstr "Ок"
