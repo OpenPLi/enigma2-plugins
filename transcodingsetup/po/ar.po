@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-oe-alliance-plugins 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-16 16:27+0430\n"
+"POT-Creation-Date: 2023-05-12 14:32+0200\n"
 "PO-Revision-Date: 2018-12-08 11:51+0300\n"
 "Last-Translator: mosad - مساعد الجعيد <abo-mishal@hotmail.com>\n"
 "Language-Team: mosad - مساعد الجعيد\n"
@@ -20,23 +20,14 @@ msgstr "معدل البث"
 msgid "Frame rate"
 msgstr "معدل الإطار"
 
-msgid "Framerate"
-msgstr "معدل الإطار"
-
 msgid "It seems your receiver is not supported!"
 msgstr ""
 
 msgid "Not found file '/etc/enigma2/streamproxy.conf' !"
 msgstr ""
 
-msgid "Port"
-msgstr "المنفذ"
-
 msgid "Quit"
 msgstr ""
-
-msgid "Resolution"
-msgstr "الدقة"
 
 msgid "Set"
 msgstr ""
@@ -52,8 +43,4 @@ msgstr "ترميز الفيديو"
 
 #, fuzzy
 msgid "Video size"
-msgstr "ترميز الفيديو"
-
-#, fuzzy
-msgid "videocodec"
 msgstr "ترميز الفيديو"

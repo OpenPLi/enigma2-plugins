@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TransCodingSetup\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-13 18:34+0200\n"
+"POT-Creation-Date: 2023-05-12 14:32+0200\n"
 "PO-Revision-Date: 2021-06-24 03:39+0300\n"
 "Last-Translator: tomppaa <http://www.huoltovalikko.com/>\n"
 "Language-Team: tomppaa\n"
@@ -19,23 +19,14 @@ msgstr "Bittinopeus"
 msgid "Frame rate"
 msgstr "Ruudunpäivitysnopeus"
 
-msgid "Framerate"
-msgstr "Ruudunpäivitysnopeus"
-
 msgid "It seems your receiver is not supported!"
 msgstr "Näyttää siltä, että vastaanotintasi ei tueta!"
 
 msgid "Not found file '/etc/enigma2/streamproxy.conf' !"
 msgstr "Tiedostoa /etc/enigma2/streamproxy.conf ei löydy!"
 
-msgid "Port"
-msgstr "Portti"
-
 msgid "Quit"
 msgstr "Lopeta"
-
-msgid "Resolution"
-msgstr "Resoluutio"
 
 msgid "Set"
 msgstr "Aseta"
@@ -51,6 +42,3 @@ msgstr "Videokoodekki"
 
 msgid "Video size"
 msgstr "Videon koko"
-
-msgid "videocodec"
-msgstr "videokoodekki"

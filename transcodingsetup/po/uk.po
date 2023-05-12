@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Seekbar\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-16 16:27+0430\n"
+"POT-Creation-Date: 2023-05-12 14:32+0200\n"
 "PO-Revision-Date: 2021-11-08 15:37+0300\n"
 "Last-Translator: kvinto <kvinto@rambler.ru>\n"
 "Language-Team: kvinto\n"
@@ -19,23 +19,14 @@ msgstr "Бітрейт"
 msgid "Frame rate"
 msgstr "Частота кадрів"
 
-msgid "Framerate"
-msgstr "Частота кадрів"
-
 msgid "It seems your receiver is not supported!"
 msgstr "Ваш приймач не підтримується!"
 
 msgid "Not found file '/etc/enigma2/streamproxy.conf' !"
 msgstr "Не знайдено файл'/etc/enigma2/streamproxy.conf' !"
 
-msgid "Port"
-msgstr "Порт"
-
 msgid "Quit"
 msgstr "Відмінити"
-
-msgid "Resolution"
-msgstr "Роздільча здатність"
 
 msgid "Set"
 msgstr "Встановити"
@@ -51,6 +42,3 @@ msgstr "Відео кодек"
 
 msgid "Video size"
 msgstr "Размір відео"
-
-msgid "videocodec"
-msgstr "відео кодек"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: transcodingsetup\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-16 16:27+0430\n"
+"POT-Creation-Date: 2023-05-12 14:32+0200\n"
 "PO-Revision-Date: 2018-04-04 16:35+0100\n"
 "Last-Translator: Frenske <voorzitter@openpli.org>\n"
 "Language-Team: \n"
@@ -19,24 +19,14 @@ msgstr "Bitrate"
 msgid "Frame rate"
 msgstr "Frame rate"
 
-#, fuzzy
-msgid "Framerate"
-msgstr "Frame rate"
-
 msgid "It seems your receiver is not supported!"
 msgstr "Naar het schijnt is uw ontvanger niet ondersteund!"
 
 msgid "Not found file '/etc/enigma2/streamproxy.conf' !"
 msgstr "Bestand niet gevonden '/etc/enigma2/streamproxy.conf' !"
 
-msgid "Port"
-msgstr ""
-
 msgid "Quit"
 msgstr "Afsluiten"
-
-msgid "Resolution"
-msgstr ""
 
 msgid "Set"
 msgstr "Opslaan"
@@ -52,7 +42,3 @@ msgstr "Video codec"
 
 msgid "Video size"
 msgstr "Videoformaat"
-
-#, fuzzy
-msgid "videocodec"
-msgstr "Video codec"

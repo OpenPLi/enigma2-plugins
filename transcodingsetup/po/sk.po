@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-16 16:27+0430\n"
+"POT-Creation-Date: 2023-05-12 14:32+0200\n"
 "PO-Revision-Date: 2017-03-06 15:31+0100\n"
 "Last-Translator: Andrej Tobola <andrej.tobola@gmail.com>\n"
 "Language-Team: \n"
@@ -24,23 +24,14 @@ msgstr "Bitrate"
 msgid "Frame rate"
 msgstr ""
 
-msgid "Framerate"
-msgstr ""
-
 msgid "It seems your receiver is not supported!"
 msgstr "Váš prijímač nie je pravdepodobne podporovaný!"
 
 msgid "Not found file '/etc/enigma2/streamproxy.conf' !"
 msgstr "Nenájdený súbor '/etc/enigma2/streamproxy.conf' !"
 
-msgid "Port"
-msgstr ""
-
 msgid "Quit"
 msgstr "Ukončiť"
-
-msgid "Resolution"
-msgstr ""
 
 msgid "Set"
 msgstr "Nastaviť"
@@ -56,8 +47,4 @@ msgid "Video codec"
 msgstr "Veľkosť obrazu"
 
 msgid "Video size"
-msgstr "Veľkosť obrazu"
-
-#, fuzzy
-msgid "videocodec"
 msgstr "Veľkosť obrazu"

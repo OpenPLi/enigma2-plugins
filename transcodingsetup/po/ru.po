@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Transcoding Setup\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-16 16:27+0430\n"
+"POT-Creation-Date: 2023-05-12 14:32+0200\n"
 "PO-Revision-Date: 2015-11-28 00:00+0200\n"
 "Last-Translator: Dimitrij <dima-73@inbox.lv>\n"
 "Language-Team: Dimitrij PLi\n"
@@ -20,24 +20,14 @@ msgstr "Битрейт"
 msgid "Frame rate"
 msgstr "Частота кадров"
 
-#, fuzzy
-msgid "Framerate"
-msgstr "Частота кадров"
-
 msgid "It seems your receiver is not supported!"
 msgstr "Кажется, Ваш ресивер не поддерживается!"
 
 msgid "Not found file '/etc/enigma2/streamproxy.conf' !"
 msgstr "Не найден файл'/etc/enigma2/streamproxy.conf'!"
 
-msgid "Port"
-msgstr ""
-
 msgid "Quit"
 msgstr "Отмена"
-
-msgid "Resolution"
-msgstr ""
 
 msgid "Set"
 msgstr "Установка"
@@ -53,7 +43,3 @@ msgstr "Видео кодек"
 
 msgid "Video size"
 msgstr "Видео разрешение"
-
-#, fuzzy
-msgid "videocodec"
-msgstr "Видео кодек"
