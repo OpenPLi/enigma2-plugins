@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-18 16:36+0100\n"
+"POT-Creation-Date: 2023-05-12 14:32+0200\n"
 "PO-Revision-Date: 2019-05-25 08:00+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -20,6 +20,9 @@ msgstr ""
 
 #, python-format
 msgid "%d Torrent(s) added in '%s', %d failed."
+msgstr ""
+
+msgid "< Auto add - (any name).torrent in USB device >"
 msgstr ""
 
 msgid "About transmission version"
