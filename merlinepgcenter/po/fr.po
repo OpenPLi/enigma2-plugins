@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-08-01 20:49+0200\n"
+"POT-Creation-Date: 2023-05-12 14:32+0200\n"
 "PO-Revision-Date: 2018-07-31 19:40+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -80,9 +80,6 @@ msgstr "Style de liste"
 
 msgid "Lists"
 msgstr "Listes"
-
-msgid "MerlinEPGCenter"
-msgstr "MerlinEPGCenter"
 
 msgid "Monday"
 msgstr "Lundi"

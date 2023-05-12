@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2 - merlinepgcenter\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"POT-Creation-Date: 2023-05-12 14:32+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Spaeleus <spaeleus@croci.org>\n"
 "Language-Team: www.linsat.net <spaeleus@croci.org>\n"
@@ -79,9 +79,6 @@ msgstr "Stile elenco:"
 
 msgid "Lists"
 msgstr "Elenchi"
-
-msgid "MerlinEPGCenter"
-msgstr ""
 
 msgid "Monday"
 msgstr "Lunedì"
