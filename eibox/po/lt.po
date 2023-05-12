@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: EIBox\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-11 12:33+0200\n"
+"POT-Creation-Date: 2023-05-12 14:32+0200\n"
 "PO-Revision-Date: 2016-06-22 14:24+0300\n"
 "Last-Translator: \n"
 "Language-Team: Vytenis P. <vyteniui@gmail.com>\n"
@@ -32,15 +32,6 @@ msgstr "(nustatyti tašką)"
 
 msgid "Visualization for European Installation Bus"
 msgstr "European Installation Bus vizualizacija"
-
-msgid "beleuchtung:helligkeitswerte:esstisch"
-msgstr ""
-
-msgid "beleuchtung:helligkeitswerte:schlafen_decke"
-msgstr ""
-
-msgid "beleuchtung:helligkeitswerte:wohnzimmer_decke_1"
-msgstr ""
 
 msgid "down"
 msgstr "žemyn"

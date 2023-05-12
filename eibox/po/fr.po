@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eibox\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"POT-Creation-Date: 2023-05-12 14:32+0200\n"
 "PO-Revision-Date: 2018-05-11 22:02+0200\n"
 "Last-Translator: Pr2 <dummy@dummy.com>\n"
 "Language-Team: OpenPLi\n"
@@ -33,15 +33,6 @@ msgstr "(définir point)"
 
 msgid "Visualization for European Installation Bus"
 msgstr "Visualisation pour EIB (European Installation Bus)"
-
-msgid "beleuchtung:helligkeitswerte:esstisch"
-msgstr "éclairage:valeurs de luminosité:table à manger"
-
-msgid "beleuchtung:helligkeitswerte:schlafen_decke"
-msgstr "éclairage:valeurs de luminosité:couverture de sommeil"
-
-msgid "beleuchtung:helligkeitswerte:wohnzimmer_decke_1"
-msgstr "éclairage:valeurs de luminosité:plafond du salon 1"
 
 msgid "down"
 msgstr "bas"
