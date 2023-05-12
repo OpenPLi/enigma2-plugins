@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Enigma2 EPGRefresh Plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-11 00:18+0200\n"
+"POT-Creation-Date: 2023-05-12 01:30+0200\n"
 "PO-Revision-Date: 2009-09-28 09:12+0100\n"
 "Last-Translator: WeeGull <weegull@hotmail.com>\n"
 "Language-Team: german <de@li.org>\n"
@@ -171,10 +171,6 @@ msgstr ""
 
 msgid "EPG cache file path"
 msgstr ""
-
-#, fuzzy
-msgid "EPG refresh"
-msgstr "Lägg till i EPGRefresh"
 
 msgid "EPG refresh auto-start earliest (hh:mm)"
 msgstr ""
@@ -487,6 +483,14 @@ msgid "Skip protected Services"
 msgstr "Ändra kanaler"
 
 #, fuzzy
+msgid "Start EPG refresh"
+msgstr "Lägg till i EPGRefresh"
+
+#, fuzzy
+msgid "Stop EPG refresh"
+msgstr "Lägg till i EPGRefresh"
+
+#, fuzzy
 msgid "Stop Running EPG refresh"
 msgstr "EPGRefresh Konfiguration"
 
@@ -552,7 +556,7 @@ msgid ""
 msgstr ""
 
 #, fuzzy
-msgid "add service to EPGRefresh"
+msgid "add service to EPG Refresh"
 msgstr "Lägg till i EPGRefresh"
 
 msgid "add to EPGRefresh"

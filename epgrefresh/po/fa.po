@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epg refresh Persian Translation\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-11 00:18+0200\n"
+"POT-Creation-Date: 2023-05-12 01:30+0200\n"
 "PO-Revision-Date: 2012-07-25 21:57+0330\n"
 "Last-Translator: mehdi <mehdi_ar_yekta@yahoo.com>\n"
 "Language-Team: Persian Professionals <persianpros@yahoo.com>\n"
@@ -178,10 +178,6 @@ msgstr ""
 
 msgid "EPG cache file path"
 msgstr ""
-
-#, fuzzy
-msgid "EPG refresh"
-msgstr "اضافه کردن به برنامه راهنما الکترونیک"
 
 msgid "EPG refresh auto-start earliest (hh:mm)"
 msgstr ""
@@ -496,6 +492,14 @@ msgid "Skip protected Services"
 msgstr "ویرایشگر سرویس ها"
 
 #, fuzzy
+msgid "Start EPG refresh"
+msgstr "اضافه کردن به برنامه راهنما الکترونیک"
+
+#, fuzzy
+msgid "Stop EPG refresh"
+msgstr "اضافه کردن به برنامه راهنما الکترونیک"
+
+#, fuzzy
 msgid "Stop Running EPG refresh"
 msgstr "پیکربندی بازآوری برنامه راهنمای اللکترونیک"
 
@@ -560,7 +564,7 @@ msgid ""
 msgstr ""
 
 #, fuzzy
-msgid "add service to EPGRefresh"
+msgid "add service to EPG Refresh"
 msgstr "اضافه کردن به برنامه راهنما الکترونیک"
 
 msgid "add to EPGRefresh"

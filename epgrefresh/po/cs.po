@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Enigma2 EPGRefresh Plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-11 00:18+0200\n"
+"POT-Creation-Date: 2023-05-12 01:30+0200\n"
 "PO-Revision-Date: 2023-04-12 09:06+0200\n"
 "Last-Translator: IMS <ims@openpli.org>\n"
 "Language-Team: PLi\n"
@@ -168,10 +168,6 @@ msgstr "Název EPG souboru"
 
 msgid "EPG cache file path"
 msgstr "Cesta k EPG souboru"
-
-#, fuzzy
-msgid "EPG refresh"
-msgstr "EPGRefresh"
 
 msgid "EPG refresh auto-start earliest (hh:mm)"
 msgstr "Aktualizaci EPG spouštět nejdříve v (hh:mm)"
@@ -472,6 +468,14 @@ msgid "Skip protected Services"
 msgstr "Přeskočit zabezpečené kanály"
 
 #, fuzzy
+msgid "Start EPG refresh"
+msgstr "EPGRefresh"
+
+#, fuzzy
+msgid "Stop EPG refresh"
+msgstr "EPGRefresh"
+
+#, fuzzy
 msgid "Stop Running EPG refresh"
 msgstr "Zastavit aktualizaci  EPG"
 
@@ -534,7 +538,8 @@ msgstr ""
 "Nemůžete použít toto nastavení!\n"
 "Alespoň jeden den v týdnu by měl být nastaven!"
 
-msgid "add service to EPGRefresh"
+#, fuzzy
+msgid "add service to EPG Refresh"
 msgstr "Přidat program do EPGRefresh"
 
 msgid "add to EPGRefresh"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2 EPGRefresh plugin Turkish Locale\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-11 00:18+0200\n"
+"POT-Creation-Date: 2023-05-12 01:30+0200\n"
 "PO-Revision-Date: 2009-09-24 20:37+0200\n"
 "Last-Translator: Zülfikar VEYİSOĞLU <z.veyisoglu@hobiagaci.com>\n"
 "Language-Team: http://hobiagaci.com <z.veyisoglu@hobiagaci.com>\n"
@@ -170,10 +170,6 @@ msgstr ""
 
 msgid "EPG cache file path"
 msgstr ""
-
-#, fuzzy
-msgid "EPG refresh"
-msgstr "Otomatik EPG yenileyiciye ekle"
 
 msgid "EPG refresh auto-start earliest (hh:mm)"
 msgstr ""
@@ -486,6 +482,14 @@ msgid "Skip protected Services"
 msgstr "Kanal Düzenle"
 
 #, fuzzy
+msgid "Start EPG refresh"
+msgstr "Otomatik EPG yenileyiciye ekle"
+
+#, fuzzy
+msgid "Stop EPG refresh"
+msgstr "Otomatik EPG yenileyiciye ekle"
+
+#, fuzzy
 msgid "Stop Running EPG refresh"
 msgstr "EPG Yenileyici Yapılandır"
 
@@ -551,7 +555,7 @@ msgid ""
 msgstr ""
 
 #, fuzzy
-msgid "add service to EPGRefresh"
+msgid "add service to EPG Refresh"
 msgstr "Otomatik EPG yenileyiciye ekle"
 
 msgid "add to EPGRefresh"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-plugins 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-11 00:18+0200\n"
+"POT-Creation-Date: 2023-05-12 01:30+0200\n"
 "PO-Revision-Date: 2009-02-10 13:58+0100\n"
 "Last-Translator: José Juan Zapater <josej@zapater.fdns.net>\n"
 "Language-Team: none\n"
@@ -173,10 +173,6 @@ msgstr ""
 
 msgid "EPG cache file path"
 msgstr ""
-
-#, fuzzy
-msgid "EPG refresh"
-msgstr "Refrescando"
 
 msgid "EPG refresh auto-start earliest (hh:mm)"
 msgstr ""
@@ -488,6 +484,14 @@ msgid "Skip protected Services"
 msgstr "Editar Canales"
 
 #, fuzzy
+msgid "Start EPG refresh"
+msgstr "Refrescando"
+
+#, fuzzy
+msgid "Stop EPG refresh"
+msgstr "Refrescando"
+
+#, fuzzy
 msgid "Stop Running EPG refresh"
 msgstr "Configurar EPGRefresh"
 
@@ -550,7 +554,7 @@ msgid ""
 msgstr ""
 
 #, fuzzy
-msgid "add service to EPGRefresh"
+msgid "add service to EPG Refresh"
 msgstr "Editar Canales a refrescar"
 
 #, fuzzy

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-11 00:18+0200\n"
+"POT-Creation-Date: 2023-05-12 01:30+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -165,9 +165,6 @@ msgid "EPG cache file filename"
 msgstr ""
 
 msgid "EPG cache file path"
-msgstr ""
-
-msgid "EPG refresh"
 msgstr ""
 
 msgid "EPG refresh auto-start earliest (hh:mm)"
@@ -465,6 +462,12 @@ msgstr ""
 msgid "Skip protected Services"
 msgstr ""
 
+msgid "Start EPG refresh"
+msgstr ""
+
+msgid "Stop EPG refresh"
+msgstr ""
+
 msgid "Stop Running EPG refresh"
 msgstr ""
 
@@ -523,7 +526,7 @@ msgid ""
 "At least one day a week should be included!"
 msgstr ""
 
-msgid "add service to EPGRefresh"
+msgid "add service to EPG Refresh"
 msgstr ""
 
 msgid "add to EPGRefresh"

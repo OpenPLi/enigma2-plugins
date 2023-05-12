@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: EPGRefresh\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-11 00:18+0200\n"
+"POT-Creation-Date: 2023-05-12 01:30+0200\n"
 "PO-Revision-Date: 2021-09-15 07:44+0300\n"
 "Last-Translator: Vytenis P. <vyteniui@gmail.com>\n"
 "Language-Team: Vytenis P. <vyteniui@gmail.com>\n"
@@ -171,10 +171,6 @@ msgstr "EPG podėlio failo pavadinimas"
 
 msgid "EPG cache file path"
 msgstr "Kelias į EPG failą podėlyje"
-
-#, fuzzy
-msgid "EPG refresh"
-msgstr "EPG atnaujinimas"
 
 msgid "EPG refresh auto-start earliest (hh:mm)"
 msgstr "Ankstyviausias EPG atnaujinimo auto-paleidimas (hh:mm)"
@@ -475,6 +471,14 @@ msgid "Skip protected Services"
 msgstr "Praleisti apsaugotus kanalus"
 
 #, fuzzy
+msgid "Start EPG refresh"
+msgstr "EPG atnaujinimas"
+
+#, fuzzy
+msgid "Stop EPG refresh"
+msgstr "EPG atnaujinimas"
+
+#, fuzzy
 msgid "Stop Running EPG refresh"
 msgstr "Nutraukti EPG atnaujinimą"
 
@@ -537,7 +541,8 @@ msgstr ""
 "Jūs negalite naudoti šių nustatymų!\n"
 "Turi būti įtraukta bent viena savaitės diena!"
 
-msgid "add service to EPGRefresh"
+#, fuzzy
+msgid "add service to EPG Refresh"
 msgstr "įtraukti kanalą į EPG atnaujinimą"
 
 msgid "add to EPGRefresh"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-11 00:18+0200\n"
+"POT-Creation-Date: 2023-05-12 01:30+0200\n"
 "PO-Revision-Date: 2015-01-20 16:12+0200\n"
 "Last-Translator: Dima73 <Dima-73@inbox.lv>\n"
 "Language-Team: openli.org\n"
@@ -163,10 +163,6 @@ msgstr "Название файла данных EPG"
 
 msgid "EPG cache file path"
 msgstr "Директория хранения файла данных EPG"
-
-#, fuzzy
-msgid "EPG refresh"
-msgstr "Обновление EPG"
 
 msgid "EPG refresh auto-start earliest (hh:mm)"
 msgstr "Начало авто-старта обновления EPG  не раньше (чч:мм)"
@@ -466,6 +462,14 @@ msgid "Skip protected Services"
 msgstr "Пропускать защищенные сервисы"
 
 #, fuzzy
+msgid "Start EPG refresh"
+msgstr "Обновление EPG"
+
+#, fuzzy
+msgid "Stop EPG refresh"
+msgstr "Обновление EPG"
+
+#, fuzzy
 msgid "Stop Running EPG refresh"
 msgstr "Остановить обновление EPG"
 
@@ -528,7 +532,8 @@ msgstr ""
 "Вы не можете использовать эти настройки!\n"
 "Хотя бы один день должен быть активирован!"
 
-msgid "add service to EPGRefresh"
+#, fuzzy
+msgid "add service to EPG Refresh"
 msgstr "добавить сервис к обновлению EPG"
 
 msgid "add to EPGRefresh"

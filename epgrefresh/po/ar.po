@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Enigma2 EPGRefresh Plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-11 00:18+0200\n"
+"POT-Creation-Date: 2023-05-12 01:30+0200\n"
 "PO-Revision-Date: 2020-10-01 16:14+0300\n"
 "Last-Translator: mosad - مساعد الجعيد <abo-mishal@hotmail.com>\n"
 "Language-Team: mosad - مساعد الجعيد\n"
@@ -184,10 +184,6 @@ msgstr ""
 
 msgid "EPG cache file path"
 msgstr ""
-
-#, fuzzy
-msgid "EPG refresh"
-msgstr "إضافة إلى تحديث دليل البرامج الإلكترونية"
 
 msgid "EPG refresh auto-start earliest (hh:mm)"
 msgstr "تحديث دليل البرامج الإلكترونية تلقائيا - تشغيل مبكر (ساعات: دقائق)"
@@ -510,6 +506,14 @@ msgid "Skip protected Services"
 msgstr "تخطي حماية القنوات"
 
 #, fuzzy
+msgid "Start EPG refresh"
+msgstr "إضافة إلى تحديث دليل البرامج الإلكترونية"
+
+#, fuzzy
+msgid "Stop EPG refresh"
+msgstr "إضافة إلى تحديث دليل البرامج الإلكترونية"
+
+#, fuzzy
 msgid "Stop Running EPG refresh"
 msgstr "إيقاف تشغيل تحديث دليل البرامج الإلكترونية"
 
@@ -575,7 +579,7 @@ msgid ""
 msgstr ""
 
 #, fuzzy
-msgid "add service to EPGRefresh"
+msgid "add service to EPG Refresh"
 msgstr "إضافة إلى تحديث دليل البرامج الإلكترونية"
 
 msgid "add to EPGRefresh"

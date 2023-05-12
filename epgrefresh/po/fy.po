@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epgrefresh_fy\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-11 00:18+0200\n"
+"POT-Creation-Date: 2023-05-12 01:30+0200\n"
 "PO-Revision-Date: 2009-01-09 20:46+0100\n"
 "Last-Translator: gerrit <gerrit@nedlinux.nl>\n"
 "Language-Team: gerrit <fy@li.org>\n"
@@ -173,10 +173,6 @@ msgstr ""
 
 msgid "EPG cache file path"
 msgstr ""
-
-#, fuzzy
-msgid "EPG refresh"
-msgstr "Oan it ferfaskjen"
 
 msgid "EPG refresh auto-start earliest (hh:mm)"
 msgstr ""
@@ -488,6 +484,14 @@ msgid "Skip protected Services"
 msgstr "Bewurkje services"
 
 #, fuzzy
+msgid "Start EPG refresh"
+msgstr "Oan it ferfaskjen"
+
+#, fuzzy
+msgid "Stop EPG refresh"
+msgstr "Oan it ferfaskjen"
+
+#, fuzzy
 msgid "Stop Running EPG refresh"
 msgstr "EPGRefresh ynstelle"
 
@@ -550,7 +554,7 @@ msgid ""
 msgstr ""
 
 #, fuzzy
-msgid "add service to EPGRefresh"
+msgid "add service to EPG Refresh"
 msgstr "Bewurkje de te ferfaskjen services"
 
 #, fuzzy

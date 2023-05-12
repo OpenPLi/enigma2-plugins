@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2 - epgrefresh\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-11 00:18+0200\n"
+"POT-Creation-Date: 2023-05-12 01:30+0200\n"
 "PO-Revision-Date: 2019-07-28 12:04+0200\n"
 "Last-Translator: Frenske <voorzitter@openpli.org>\n"
 "Language-Team: <Benny.DeTandt@gmail.com>\n"
@@ -163,10 +163,6 @@ msgstr "De naam van het EPG cachebestand"
 
 msgid "EPG cache file path"
 msgstr "Pad naar het EPG cachebestand"
-
-#, fuzzy
-msgid "EPG refresh"
-msgstr "EPGRefresh"
 
 msgid "EPG refresh auto-start earliest (hh:mm)"
 msgstr "EPG start op het eerst vanaf dit moment (hh:mm)"
@@ -467,6 +463,14 @@ msgid "Skip protected Services"
 msgstr "Sla de beveiligde zenders over"
 
 #, fuzzy
+msgid "Start EPG refresh"
+msgstr "EPGRefresh"
+
+#, fuzzy
+msgid "Stop EPG refresh"
+msgstr "EPGRefresh"
+
+#, fuzzy
 msgid "Stop Running EPG refresh"
 msgstr "Beëindig EPGrefresh"
 
@@ -529,7 +533,8 @@ msgstr ""
 "Wellicht gebruikt u deze instelling niet!\n"
 "Minimaal zal er één dag gebruikt moeten worden!"
 
-msgid "add service to EPGRefresh"
+#, fuzzy
+msgid "add service to EPG Refresh"
 msgstr "voeg zenders toe aan EPGRefresh"
 
 msgid "add to EPGRefresh"

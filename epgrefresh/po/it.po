@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2 - epgrefresh\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-11 00:18+0200\n"
+"POT-Creation-Date: 2023-05-12 01:30+0200\n"
 "PO-Revision-Date: 2011-10-03 21:49+0100\n"
 "Last-Translator: Spaeleus <spaeleus@croci.org>\n"
 "Language-Team: www.linsat.net <spaeleus@croci.org>\n"
@@ -175,10 +175,6 @@ msgstr ""
 
 msgid "EPG cache file path"
 msgstr ""
-
-#, fuzzy
-msgid "EPG refresh"
-msgstr "aggiungere a EPGRefresh"
 
 msgid "EPG refresh auto-start earliest (hh:mm)"
 msgstr "Intervallo avvio automatico EPG Refresh: inizio (hh:mm)"
@@ -495,6 +491,14 @@ msgid "Skip protected Services"
 msgstr "Mod. Canali"
 
 #, fuzzy
+msgid "Start EPG refresh"
+msgstr "aggiungere a EPGRefresh"
+
+#, fuzzy
+msgid "Stop EPG refresh"
+msgstr "aggiungere a EPGRefresh"
+
+#, fuzzy
 msgid "Stop Running EPG refresh"
 msgstr "Configurare Agg. automatizzato EPG"
 
@@ -561,7 +565,7 @@ msgid ""
 msgstr ""
 
 #, fuzzy
-msgid "add service to EPGRefresh"
+msgid "add service to EPG Refresh"
 msgstr "aggiungere a EPGRefresh"
 
 msgid "add to EPGRefresh"

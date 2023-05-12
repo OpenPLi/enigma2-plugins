@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-11 00:18+0200\n"
+"POT-Creation-Date: 2023-05-12 01:30+0200\n"
 "PO-Revision-Date: 2017-02-05 23:42+0200\n"
 "Last-Translator: peter <sct2003@abv.bg>\n"
 "Language-Team: Bulgarian <>\n"
@@ -172,10 +172,6 @@ msgstr "Име на файла с ЕПГ данни"
 
 msgid "EPG cache file path"
 msgstr "Път до файла с ЕПГ данните"
-
-#, fuzzy
-msgid "EPG refresh"
-msgstr "Стартиране на EPGRefresh"
 
 msgid "EPG refresh auto-start earliest (hh:mm)"
 msgstr "Автоматично стартиране не по-рано от (чч:мм)"
@@ -476,6 +472,14 @@ msgid "Skip protected Services"
 msgstr "Пропускане на заключените канали"
 
 #, fuzzy
+msgid "Start EPG refresh"
+msgstr "Стартиране на EPGRefresh"
+
+#, fuzzy
+msgid "Stop EPG refresh"
+msgstr "Стартиране на EPGRefresh"
+
+#, fuzzy
 msgid "Stop Running EPG refresh"
 msgstr "Спиране на EPGRefresh"
 
@@ -538,7 +542,8 @@ msgstr ""
 "Не може да използвате тези настройки!\n"
 "Трябва да бъде добавен поне един ден от седмицата!"
 
-msgid "add service to EPGRefresh"
+#, fuzzy
+msgid "add service to EPG Refresh"
 msgstr "добавяне канала към EPGRefresh"
 
 msgid "add to EPGRefresh"
