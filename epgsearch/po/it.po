@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2 - epgsearch\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-13 18:34+0200\n"
+"POT-Creation-Date: 2023-05-12 14:32+0200\n"
 "PO-Revision-Date: 2014-11-22 20:46+0100\n"
 "Last-Translator: Spaeleus <spaeleus@croci.org>\n"
 "Language-Team: www.linsat.net <spaeleus@croci.org>\n"
@@ -131,6 +131,12 @@ msgstr "Importare da EPG"
 msgid "Import from Timer"
 msgstr "Importare da timer"
 
+msgid "Include IPTV services"
+msgstr ""
+
+msgid "Include IPTV services in search, in some cases slows down the searching."
+msgstr ""
+
 msgid "Length of History"
 msgstr "Dimensione History"
 
@@ -254,6 +260,9 @@ msgstr "EPGRicerca "
 
 msgid "search EPG..."
 msgstr "ricerca EPG..."
+
+msgid "title ends with"
+msgstr ""
 
 msgid "title starts with"
 msgstr ""

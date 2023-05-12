@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: EPGSearch\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-13 18:34+0200\n"
+"POT-Creation-Date: 2023-05-12 14:32+0200\n"
 "PO-Revision-Date: 2021-09-15 09:06+0300\n"
 "Last-Translator: Vytenis P. <vyteniui@gmail.com>\n"
 "Language-Team: Vytenis P. <vyteniui@gmail.com>\n"
@@ -125,6 +125,12 @@ msgstr "Importuoti iš EPG"
 
 msgid "Import from Timer"
 msgstr "Importuoti iš laikmačio"
+
+msgid "Include IPTV services"
+msgstr ""
+
+msgid "Include IPTV services in search, in some cases slows down the searching."
+msgstr ""
 
 msgid "Length of History"
 msgstr "Istorijos dydis"
@@ -245,6 +251,10 @@ msgstr "ieškoti EPG"
 
 msgid "search EPG..."
 msgstr "ieškoti EPG..."
+
+#, fuzzy
+msgid "title ends with"
+msgstr "pavadinimas prasideda"
 
 msgid "title starts with"
 msgstr "pavadinimas prasideda"

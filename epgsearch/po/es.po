@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-plugins 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-13 18:34+0200\n"
+"POT-Creation-Date: 2023-05-12 14:32+0200\n"
 "PO-Revision-Date: 2014-11-22 20:45+0100\n"
 "Last-Translator: José Juan Zapater <josej@zapater.fdns.net>\n"
 "Language-Team: none\n"
@@ -132,6 +132,12 @@ msgstr "Importar desde el EPG"
 msgid "Import from Timer"
 msgstr "Importar desde la Programación"
 
+msgid "Include IPTV services"
+msgstr ""
+
+msgid "Include IPTV services in search, in some cases slows down the searching."
+msgstr ""
+
 msgid "Length of History"
 msgstr ""
 
@@ -255,6 +261,9 @@ msgstr "Buscar EPG"
 
 msgid "search EPG..."
 msgstr "Buscar EPG..."
+
+msgid "title ends with"
+msgstr ""
 
 msgid "title starts with"
 msgstr ""

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Enigma 2 EPGSearch Plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-13 18:34+0200\n"
+"POT-Creation-Date: 2023-05-12 14:32+0200\n"
 "PO-Revision-Date: 2020-10-01 18:24+0300\n"
 "Last-Translator: mosad - مساعد الجعيد <abo-mishal@hotmail.com>\n"
 "Language-Team: mosad - مساعد الجعيد\n"
@@ -134,6 +134,12 @@ msgstr "إستيراد من دليل البرامج الإلكتروني"
 msgid "Import from Timer"
 msgstr "إستيراد من المؤقت"
 
+msgid "Include IPTV services"
+msgstr ""
+
+msgid "Include IPTV services in search, in some cases slows down the searching."
+msgstr ""
+
 #, fuzzy
 msgid "Length of History"
 msgstr "طول التاريخ"
@@ -262,6 +268,10 @@ msgstr "البحث في دليل البرامج الإلكترونية"
 #, fuzzy
 msgid "search EPG..."
 msgstr "البحث في دليل البرامج الإلكترونية"
+
+#, fuzzy
+msgid "title ends with"
+msgstr "يبدأ العنوان بـ"
 
 msgid "title starts with"
 msgstr "يبدأ العنوان بـ"

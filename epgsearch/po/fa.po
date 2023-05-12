@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: epg search Persian Translation\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-13 18:34+0200\n"
+"POT-Creation-Date: 2023-05-12 14:32+0200\n"
 "PO-Revision-Date: 2014-11-22 20:45+0100\n"
 "Last-Translator: mehdi <mehdi_ar_yekta@yahoo.com>\n"
 "Language-Team: Persian Professionals <persianpros@yahoo.com>\n"
@@ -131,6 +131,12 @@ msgstr "وارد کردن از برنامه راهنمای الکترونیک"
 
 msgid "Import from Timer"
 msgstr "وارد کردن از تایمر"
+
+msgid "Include IPTV services"
+msgstr ""
+
+msgid "Include IPTV services in search, in some cases slows down the searching."
+msgstr ""
 
 msgid "Length of History"
 msgstr ""
@@ -256,6 +262,9 @@ msgstr "جستجوی یک برنامه راهنمای الکترونیک"
 
 msgid "search EPG..."
 msgstr "جستجوی برنامه راهنمای الکترونیک"
+
+msgid "title ends with"
+msgstr ""
 
 msgid "title starts with"
 msgstr ""

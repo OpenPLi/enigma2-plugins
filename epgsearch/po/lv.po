@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Enigma 2 EPGSearch Plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-13 18:34+0200\n"
+"POT-Creation-Date: 2023-05-12 14:32+0200\n"
 "PO-Revision-Date: 2014-12-13 18:20+0300\n"
 "Last-Translator: Tapat <taapat@gmail.com>\n"
 "Language-Team: Taapat <taapat@gmail.com>\n"
@@ -121,6 +121,12 @@ msgstr "Iegūt no EPG"
 
 msgid "Import from Timer"
 msgstr "Iegūt no taimera"
+
+msgid "Include IPTV services"
+msgstr ""
+
+msgid "Include IPTV services in search, in some cases slows down the searching."
+msgstr ""
 
 msgid "Length of History"
 msgstr "Vēstures ilgums"
@@ -241,6 +247,10 @@ msgstr "meklēt EPG"
 
 msgid "search EPG..."
 msgstr "meklēt EPG..."
+
+#, fuzzy
+msgid "title ends with"
+msgstr "nosaukums sākas ar"
 
 msgid "title starts with"
 msgstr "nosaukums sākas ar"

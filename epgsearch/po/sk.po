@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Enigma 2 EPGSearch Plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-13 18:34+0200\n"
+"POT-Creation-Date: 2023-05-12 14:32+0200\n"
 "PO-Revision-Date: 2017-03-27 14:35+0200\n"
 "Last-Translator: ims <andrej.tobola@gmail.com>\n"
 "Language-Team: PLi <ims21@users.sourceforge.net>\n"
@@ -122,6 +122,12 @@ msgstr "Import z EPG"
 
 msgid "Import from Timer"
 msgstr "Import z Časovača"
+
+msgid "Include IPTV services"
+msgstr ""
+
+msgid "Include IPTV services in search, in some cases slows down the searching."
+msgstr ""
 
 msgid "Length of History"
 msgstr "Dĺžka histórie"
@@ -243,6 +249,10 @@ msgstr "prehľadať EPG"
 
 msgid "search EPG..."
 msgstr "hľadať v EPG..."
+
+#, fuzzy
+msgid "title ends with"
+msgstr "názov začína na"
 
 msgid "title starts with"
 msgstr "názov začína na"

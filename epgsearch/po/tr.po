@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2 EPGSearch plugin Turkish Locale\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-13 18:34+0200\n"
+"POT-Creation-Date: 2023-05-12 14:32+0200\n"
 "PO-Revision-Date: 2014-11-22 20:47+0100\n"
 "Last-Translator: Zülfikar VEYİSOĞLU <z.veyisoglu@hobiagaci.com>\n"
 "Language-Team: http://hobiagaci.com <z.veyisoglu@hobiagaci.com>\n"
@@ -128,6 +128,12 @@ msgstr "EPG'den içeri al"
 msgid "Import from Timer"
 msgstr "Zamanlayıcıdan içeri al"
 
+msgid "Include IPTV services"
+msgstr ""
+
+msgid "Include IPTV services in search, in some cases slows down the searching."
+msgstr ""
+
 msgid "Length of History"
 msgstr ""
 
@@ -251,6 +257,9 @@ msgstr "EPG'de ara"
 
 msgid "search EPG..."
 msgstr "EPG'de ara..."
+
+msgid "title ends with"
+msgstr ""
 
 msgid "title starts with"
 msgstr ""

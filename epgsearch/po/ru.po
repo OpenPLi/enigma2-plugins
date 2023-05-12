@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Enigma 2 EPGSearch Plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-13 18:34+0200\n"
+"POT-Creation-Date: 2023-05-12 14:32+0200\n"
 "PO-Revision-Date: 2015-01-20 14:16+0200\n"
 "Last-Translator: Dimitrij <Dima-73@inbox.lv>\n"
 "Language-Team:  openPli\n"
@@ -120,6 +120,12 @@ msgstr "Импорт из EPG"
 
 msgid "Import from Timer"
 msgstr "Импорт из таймеров"
+
+msgid "Include IPTV services"
+msgstr "Включать в поиск IPTV сервисы"
+
+msgid "Include IPTV services in search, in some cases slows down the searching."
+msgstr "Включать IPTV сервисы, в некоторых случаях это замедляет поиск."
 
 msgid "Length of History"
 msgstr "Количество истории поиска"
@@ -241,14 +247,8 @@ msgstr "поиск EPG"
 msgid "search EPG..."
 msgstr "поиск EPG..."
 
-msgid "title starts with"
-msgstr "название начинается с"
-
 msgid "title ends with"
 msgstr "название заканчивается на"
 
-msgid "Include IPTV services"
-msgstr "Включать в поиск IPTV сервисы"
-
-msgid "Include IPTV services in search, in some cases slows down the searching."
-msgstr "Включать IPTV сервисы, в некоторых случаях это замедляет поиск."
+msgid "title starts with"
+msgstr "название начинается с"

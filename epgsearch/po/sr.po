@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Enigma2 - Plugin epgsearch\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-13 18:34+0200\n"
+"POT-Creation-Date: 2023-05-12 14:32+0200\n"
 "PO-Revision-Date: 2014-11-22 20:47+0100\n"
 "Last-Translator: maja <jovanovic@gmx.ch>\n"
 "Language-Team: veselin & majevica CRNABERZA <jovanovic@gmx.ch>\n"
@@ -133,6 +133,12 @@ msgstr "Uvezi iz EPG"
 msgid "Import from Timer"
 msgstr "Uvezi iz tajmera"
 
+msgid "Include IPTV services"
+msgstr ""
+
+msgid "Include IPTV services in search, in some cases slows down the searching."
+msgstr ""
+
 msgid "Length of History"
 msgstr ""
 
@@ -256,6 +262,9 @@ msgstr "pretraga EPG"
 
 msgid "search EPG..."
 msgstr "pretraga EPG..."
+
+msgid "title ends with"
+msgstr ""
 
 msgid "title starts with"
 msgstr ""

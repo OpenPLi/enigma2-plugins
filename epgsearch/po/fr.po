@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-13 18:34+0200\n"
+"POT-Creation-Date: 2023-05-12 14:32+0200\n"
 "PO-Revision-Date: 2021-08-13 18:42+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -125,6 +125,12 @@ msgstr "Importer depuis l'EPG"
 
 msgid "Import from Timer"
 msgstr "Importer depuis les Timers (programmations)"
+
+msgid "Include IPTV services"
+msgstr ""
+
+msgid "Include IPTV services in search, in some cases slows down the searching."
+msgstr ""
 
 msgid "Length of History"
 msgstr "Longueur de l'historique"
@@ -245,6 +251,10 @@ msgstr "recherche EPG"
 
 msgid "search EPG..."
 msgstr "recherche EPG..."
+
+#, fuzzy
+msgid "title ends with"
+msgstr "titre commence par"
 
 msgid "title starts with"
 msgstr "titre commence par"

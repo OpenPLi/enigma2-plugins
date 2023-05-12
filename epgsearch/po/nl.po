@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2 - epgsearch\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-13 18:34+0200\n"
+"POT-Creation-Date: 2023-05-12 14:32+0200\n"
 "PO-Revision-Date: 2021-07-10 10:32+0200\n"
 "Last-Translator: Frenske <voorzitter@openpli.org>\n"
 "Language-Team: <Benny.DeTandt@gmail.com>\n"
@@ -130,6 +130,12 @@ msgstr "Importeren vanuit de EPG"
 msgid "Import from Timer"
 msgstr "Importeren vanuit de timer"
 
+msgid "Include IPTV services"
+msgstr ""
+
+msgid "Include IPTV services in search, in some cases slows down the searching."
+msgstr ""
+
 msgid "Length of History"
 msgstr "Het max. aantal items in de historie"
 
@@ -251,6 +257,10 @@ msgstr "EPG doorzoeken"
 
 msgid "search EPG..."
 msgstr "EPG doorzoeken..."
+
+#, fuzzy
+msgid "title ends with"
+msgstr "De titel begint met"
 
 msgid "title starts with"
 msgstr "De titel begint met"
