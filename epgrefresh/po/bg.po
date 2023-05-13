@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-12 01:30+0200\n"
+"POT-Creation-Date: 2023-05-13 18:17+0200\n"
 "PO-Revision-Date: 2017-02-05 23:42+0200\n"
 "Last-Translator: peter <sct2003@abv.bg>\n"
 "Language-Team: Bulgarian <>\n"
@@ -286,6 +286,10 @@ msgstr "Зареждане на ЕПГ данните от резервното 
 
 msgid "Main Picture"
 msgstr "Главен Прозорец"
+
+#, fuzzy
+msgid "Manual EPG refresh"
+msgstr "Стартиране на EPGRefresh"
 
 msgid "Manually clear EPG (choose method)."
 msgstr "Ръчно изчистване на ЕПГ данните (изберете метод)."

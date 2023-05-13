@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2 EPGRefresh plugin Turkish Locale\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-12 01:30+0200\n"
+"POT-Creation-Date: 2023-05-13 18:17+0200\n"
 "PO-Revision-Date: 2009-09-24 20:37+0200\n"
 "Last-Translator: Zülfikar VEYİSOĞLU <z.veyisoglu@hobiagaci.com>\n"
 "Language-Team: http://hobiagaci.com <z.veyisoglu@hobiagaci.com>\n"
@@ -287,6 +287,10 @@ msgstr ""
 
 msgid "Main Picture"
 msgstr ""
+
+#, fuzzy
+msgid "Manual EPG refresh"
+msgstr "Otomatik EPG yenileyiciye ekle"
 
 msgid "Manually clear EPG (choose method)."
 msgstr ""

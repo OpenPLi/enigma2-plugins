@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Enigma2 AutoTimer Plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-12 01:30+0200\n"
+"POT-Creation-Date: 2023-05-13 18:17+0200\n"
 "PO-Revision-Date: 2009-09-10 20:30+0100\n"
 "Last-Translator: maja <jovanovic@gmx.ch>\n"
 "Language-Team: veselin & majevica CRNABERZA <jovanovic@gmx.ch>\n"
@@ -287,6 +287,10 @@ msgstr ""
 
 msgid "Main Picture"
 msgstr ""
+
+#, fuzzy
+msgid "Manual EPG refresh"
+msgstr "Dodaj u  EPG osvežavanje"
 
 msgid "Manually clear EPG (choose method)."
 msgstr ""

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Enigma2 EPGRefresh Plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-12 01:30+0200\n"
+"POT-Creation-Date: 2023-05-13 18:17+0200\n"
 "PO-Revision-Date: 2017-03-24 14:44+0100\n"
 "Last-Translator: ims <andrej.tobola@gmail.com>\n"
 "Language-Team: PLi\n"
@@ -283,6 +283,10 @@ msgstr "Načítať EPG zo záložného súboru (cache) počas štartu."
 
 msgid "Main Picture"
 msgstr "Hlavný obraz"
+
+#, fuzzy
+msgid "Manual EPG refresh"
+msgstr "EPGRefresh"
 
 msgid "Manually clear EPG (choose method)."
 msgstr "Manuálne vyčistenie EPG (zvolte metódu)."
