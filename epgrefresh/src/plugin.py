@@ -529,7 +529,7 @@ config.plugins.epgrefresh_extra.show_autozap.addNotifier(AutozapExtensionsmenu, 
 config.plugins.epgrefresh.show_in_extensionsmenu.addNotifier(housekeepingExtensionsmenu, initial_call=False, immediate_feedback=True)
 config.plugins.epgrefresh.add_to_refresh.addNotifier(addEventinfomenu, initial_call=False, immediate_feedback=True)
 ext1Descriptor = PluginDescriptor(name=_("EPG Refresh"), description=_("EPG Refresh"), where=PluginDescriptor.WHERE_EXTENSIONSMENU, fnc=main, needsRestart=False)
-ext2Descriptor = PluginDescriptor(name="Manual EPG refresh", description=_("Automatically refresh EPG"), where=PluginDescriptor.WHERE_EXTENSIONSMENU, fnc=manualepg, needsRestart=False)
+ext2Descriptor = PluginDescriptor(name=_("Manual EPG refresh"), description=_("Automatically refresh EPG"), where=PluginDescriptor.WHERE_EXTENSIONSMENU, fnc=manualepg, needsRestart=False)
 eventinfoDescriptor = PluginDescriptor(name=_("add to EPGRefresh"), description=_("add to EPGRefresh"), where=PluginDescriptor.WHERE_EVENTINFO, fnc=eventinfo, needsRestart=False)
 autozapDescriptor = PluginDescriptor(name=_("Refresh EPG / AutoZap"), description=_("AutoZap for refreshing EPG data"), where=PluginDescriptor.WHERE_EXTENSIONSMENU, fnc=autozap, needsRestart=False)
 startDescriptor = PluginDescriptor(name=_("EPG refresh now"), description=_("Start EPG refresh"), where=PluginDescriptor.WHERE_EXTENSIONSMENU, fnc=start_Running, needsRestart=False)
@@ -537,55 +537,23 @@ stopDescriptor = PluginDescriptor(name=_("Stop Running EPG refresh"), descriptio
 
 
 def Plugins(**kwargs):
-	needsRestart = config.plugins.epgrefresh.enabled.value and not plugins.firstRun
 	list = [
-		PluginDescriptor(
-			name=_("EPG Refresh"),
-			where=[
-				PluginDescriptor.WHERE_AUTOSTART,
-				PluginDescriptor.WHERE_SESSIONSTART
-			],
-			fnc=autostart,
-			wakeupfnc=getNextWakeup,
-			needsRestart=needsRestart,
-		),
-		PluginDescriptor(
-			where=PluginDescriptor.WHERE_SESSIONSTART,
-			fnc=autostart_ChannelContextMenu,
-			needsRestart=needsRestart,
-		),
-		PluginDescriptor(
-			name=_("EPG Refresh"),
-			description=_("Automatically refresh EPG"),
-			where=PluginDescriptor.WHERE_PLUGINMENU,
-			fnc=main,
-			icon="plugin.png",
-			needsRestart=needsRestart,
-		),
-		PluginDescriptor(
-			name=_("EPG Refresh"),
-			description=_("Automatically refresh EPG"),
-			where=PluginDescriptor.WHERE_MENU,
-			fnc=main_menu,
-			needsRestart=needsRestart,
-		),
+		PluginDescriptor(name=_("EPG Refresh"), where=[PluginDescriptor.WHERE_AUTOSTART, PluginDescriptor.WHERE_SESSIONSTART], fnc=autostart, wakeupfnc=getNextWakeup, needsRestart=False),
+		PluginDescriptor(where=PluginDescriptor.WHERE_SESSIONSTART, fnc=autostart_ChannelContextMenu, needsRestart=False),
+		PluginDescriptor(name=_("EPG Refresh"), description=_("Automatically refresh EPG"), where=PluginDescriptor.WHERE_PLUGINMENU, fnc=main, icon="plugin.png", needsRestart=False),
+		PluginDescriptor(name=_("EPG Refresh"), description=_("Automatically refresh EPG"), where=PluginDescriptor.WHERE_MENU, fnc=main_menu, needsRestart=False)
 	]
 	if config.plugins.epgrefresh.show_in_extensionsmenu.value:
-		ext1Descriptor.needsRestart = needsRestart
 		list.append(ext1Descriptor)
-		ext2Descriptor.needsRestart = needsRestart
 		list.append(ext2Descriptor)
 	if config.plugins.epgrefresh.stop_on_mainmenu.value and epgrefresh.isRunning():
-		stopDescriptor.needsRestart = needsRestart
+		PluginDescriptor(name=_("Stop Running EPG refresh"), description=_("Stop EPG refresh"), where=PluginDescriptor.WHERE_EXTENSIONSMENU, fnc=stop_Running, needsRestart=False)
 		list.append(stopDescriptor)
 	elif config.plugins.epgrefresh.start_on_mainmenu.value and not epgrefresh.isRunning():
-		startDescriptor.needsRestart = needsRestart
 		list.append(startDescriptor)
 	profile = config.plugins.epgrefresh.add_to_refresh.value
 	if profile == "1" or profile == "3":
-		eventinfoDescriptor.needsRestart = needsRestart
 		list.append(eventinfoDescriptor)
 	if config.plugins.epgrefresh_extra.show_autozap.value:
-		autozapDescriptor.needsRestart = needsRestart
 		list.append(autozapDescriptor)
 	return list
