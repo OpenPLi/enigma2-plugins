@@ -547,7 +547,6 @@ def Plugins(**kwargs):
 		list.append(ext1Descriptor)
 		list.append(ext2Descriptor)
 	if config.plugins.epgrefresh.stop_on_mainmenu.value and epgrefresh.isRunning():
-		PluginDescriptor(name=_("Stop Running EPG refresh"), description=_("Stop EPG refresh"), where=PluginDescriptor.WHERE_EXTENSIONSMENU, fnc=stop_Running, needsRestart=False)
 		list.append(stopDescriptor)
 	elif config.plugins.epgrefresh.start_on_mainmenu.value and not epgrefresh.isRunning():
 		list.append(startDescriptor)
