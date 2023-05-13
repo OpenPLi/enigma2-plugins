@@ -18,14 +18,10 @@ from .module import L4Lelement
 from .plugin import *
 from . import _
 
-Py = resolveFilename(SCOPE_PLUGINS, "Extensions/LCD4linux/config.txt")
+from .configOptions import L1, L2, L3, L4
+
 DPKG = False
-L1 = []
-L2 = []
-L3 = []
-L4 = []
-M1 = ["LCD4linux.OSD", "LCD4linux.Scr", "LCD4linux.Bil", "LCD4linux.Wet", "LCD4linux.Net", "LCD4linux.Pop", "LCD4linux.Fri", "LCD4linux.Fon", "LCD4linux.Mai", "LCD4linux.Cal", "LCD4linux.RBo", "LCD4linux.Www", "LCD4linux.Web", "LCD4linux.MJP", "LCD4linux.xml", "LCD4linux.Tun", "LCD4linux.Key", "LCD4linux.Blu", "LCD4linux.Son", "LCD4linux.YMC"]
-M2 = [_("OSD"), _("Screen"), _("Picture"), _("Weather"), _("Netatmo"), _("Popup-Text"), _("FritzCall"), _("Font"), _("Mail"), _("Calendar"), _("Remote Box"), _("WWW Converter"), _("WebIF"), _("MJPEG Stream"), _("Box-Skin-LCD"), _("Tuner"), _("Key"), _("BlueSound"), _("Sonos"), _("MusicCast")]
+M = [_("OSD"), _("Screen"), _("Picture"), _("Weather"), _("Netatmo"), _("Popup-Text"), _("FritzCall"), _("Font"), _("Mail"), _("Calendar"), _("Remote Box"), _("WWW Converter"), _("WebIF"), _("MJPEG Stream"), _("Box-Skin-LCD"), _("Tuner"), _("Key"), _("BlueSound"), _("Sonos"), _("MusicCast")]
 Mode = "1"
 ModeOld = ""
 Element = ""
@@ -41,49 +37,6 @@ def _exec(command):
 	else:
 		variable = command.split(" ", 1)[0]
 		exec("global %s;%s" % (variable, command))
-
-
-def ParseCode():
-	global L1
-	global L2
-	global L3
-	global L4
-	global ElementList
-	L1 = []
-	L2 = []
-	L3 = []
-	L4 = []
-	i1 = 0
-	i2 = 0
-	i3 = 0
-	i4 = 0
-	L4log("WebIF: parsing Code....")
-	for line in open(Py, "r").readlines():
-		if line.find("self.list1.append") >= 0 or line.find("self.list2.append") >= 0 or line.find("self.list3.append") >= 0 or line.find("self.list4.append") >= 0:
-			Z = line.replace("getConfigListEntry(_", ",").replace(")", "").replace("(", "").replace(".append", "").replace("\t", "").replace("\n", "").replace("\r", "").replace("\"", "").split(",")
-			if Z[0] == "self.list1":
-				if Z[2].strip()[:13] in M1:
-					idx = M1.index(Z[2].strip()[:13])
-					i1 = idx + 1
-				Z.append(i1)
-				i1 = 0
-				L1.append(Z)
-			elif Z[0] == "self.list2":
-				if Z[1][:1] != "-":
-					i2 += 1
-				Z.append(i2)
-				L2.append(Z)
-			elif Z[0] == "self.list3":
-				if Z[1][:1] != "-":
-					i3 += 1
-				Z.append(i3)
-				L3.append(Z)
-
-			elif Z[0] == "self.list4":
-				if Z[1][:1] != "-":
-					i4 += 1
-				Z.append(i4)
-				L4.append(Z)
 
 
 def _l(st):
@@ -196,8 +149,6 @@ class LCD4linuxConfigweb(resource.Resource):
 			html += "</body>\n"
 			html += "</html>\n"
 			return ensure_binary(html)
-		if len(L1) == 0:
-			ParseCode()
 		req.setResponseCode(http.OK)
 		req.setHeader('Content-type', 'text/html')
 		req.setHeader('charset', 'UTF-8')
@@ -622,8 +573,8 @@ class LCD4linuxConfigweb(resource.Resource):
 						if Curr != "0":
 							Ec = "style=\"font-weight:bold;color:#CCFFBB\"" if Ec == "" else Ec.replace("=\"", "=\"font-weight:bold;")
 					if Ea == "checked":
-						ElementText = (_l(_(LL[1])) if Mode != "1" else _l(M2[LL[3] - 1]))
-					html += "<input id=\"e%d\" name=\"Element\" type=\"radio\" value=\"%s\" %s onclick=\"this.form.submit();\"><label %s for=\"e%d\">%s&nbsp;&nbsp;</label>\n" % (i, Conf, Ea, Ec, i, (_l(_(LL[1])) if Mode != "1" else _l(M2[LL[3] - 1])))
+						ElementText = (_l(_(LL[1])) if Mode != "1" else _l(M[LL[3] - 1]))
+					html += "<input id=\"e%d\" name=\"Element\" type=\"radio\" value=\"%s\" %s onclick=\"this.form.submit();\"><label %s for=\"e%d\">%s&nbsp;&nbsp;</label>\n" % (i, Conf, Ea, Ec, i, (_l(_(LL[1])) if Mode != "1" else _l(M[LL[3] - 1])))
 					if str(LCD4linux.WebIfDesign.value) == "2":
 						html += "<br>"
 			Ea, Ec = AktiveElement("other")
