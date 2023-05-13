@@ -331,13 +331,14 @@ class EPGSaveLoadConfiguration(Screen, ConfigListScreen):
 
 class ManualEPGlist(Screen):
 	skin = """
-		<screen position="center,center" size="380,140" title="%s">
+		<screen position="center,center" size="380,140" title="Select options">
 			<widget name="list" position="5,5" size="370,130" />
-		</screen>""" % _("Select options")
+		</screen>"""
 
 	def __init__(self, session):
 		Screen.__init__(self, session)
 		self.session = session
+		self.setTitle(_("Select options"))
 		self["list"] = MenuList([])
 		self["actions"] = ActionMap(["OkCancelActions"], {"ok": self.okClicked, "cancel": self.close}, -1)
 		self.onLayoutFinish.append(self.showMenu)
