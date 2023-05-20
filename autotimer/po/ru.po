@@ -124,7 +124,7 @@ msgid "Amount of recordings left"
 msgstr "Количество оставшихся записей"
 
 msgid "Any Day filter refers to the day of the timespan start, even if the timespan crosses midnight."
-msgstr ""
+msgstr "Любой фильтр 'День' относится к дню начала временного интервала, даже если временной интервал пересекает полночь."
 
 msgid "Any service/recording"
 msgstr "Любой сервис/запись"
