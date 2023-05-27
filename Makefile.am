@@ -27,7 +27,6 @@ SUBDIRS = \
 	epgsearch \
 	fancontrol2 \
 	filebrowser \
-	fritzcall \
 	fstabeditor \
 	ftpbrowser \
 	growlee \
