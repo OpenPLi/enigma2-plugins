@@ -12,5 +12,6 @@
 		<key id="KEY_YELLOW" mapto="yellow" flags="mr" />
 		<key id="KEY_GREEN" mapto="green" flags="mr" />
 		<key id="KEY_BLUE" mapto="blue" flags="mr" />
+		<key id="KEY_MENU" mapto="menu" flags="mr" />
 	</map>
 </keymap>

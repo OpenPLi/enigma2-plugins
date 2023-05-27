@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: SAT>IP Client\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-05-12 14:32+0200\n"
-"PO-Revision-Date: 2015-12-02 18:55+0200\n"
+"PO-Revision-Date: 2023-05-27 22:09+0300\n"
 "Last-Translator: Dimitrij <Dima-73@inbox.lv>\n"
 "Language-Team: Dimitrij PLi\n"
 "Language: ru\n"
@@ -11,10 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-SourceCharset: utf-8\n"
-"X-Generator: Poedit 1.8.4\n"
-
-msgid " "
-msgstr " "
+"X-Generator: Poedit 2.0.4\n"
 
 #, python-format
 msgid "%s autostart"
@@ -59,7 +56,7 @@ msgid "Not found '%s' ..."
 msgstr "Не найден '%s' ..."
 
 msgid "OK"
-msgstr "Ок"
+msgstr "OK"
 
 msgid "Presentation URL"
 msgstr "Презентация URL"
@@ -76,8 +73,11 @@ msgstr "SAT>IP клиент"
 msgid "SAT>IP Client Setup"
 msgstr "Настройки SAT>IP клиента"
 
-msgid "SAT>IP Client Tuner Setup"
-msgstr "Настройки тюнера SAT>IP клиента"
+msgid "SAT>IP client - auto tuner setup"
+msgstr "SAT>IP клиент - авто настройка тюнера"
+
+msgid "SAT>IP client - manual tuner setup"
+msgstr "SAT>IP клиент - ручная настройка тюнера"
 
 msgid "SAT>IP Client attached to vtuner."
 msgstr "SAT>IP клиент через vtuner."
@@ -105,14 +105,14 @@ msgstr "Сохранить"
 msgid "Select"
 msgstr "Выбор"
 
-msgid "Select tuner and press setup key (Yellow)"
-msgstr "Выберите тюнер и нажмите кнопку настроек (желтая)"
+msgid "Select tuner and press: Yellow/OK - 'Auto setup' or Blue - 'Manual setup'. Menu - vtuner.conf."
+msgstr "Выберите тюнер и нажмите кнопку: Желтая/OK - 'Авто настройка' или Синяя - 'Ручная настройка'. Меню - vtuner.conf."
 
 msgid "Server capacity is fulled."
 msgstr "Вместимость сервера полная."
 
-msgid "Setup"
-msgstr "Настройки"
+msgid "Auto setup"
+msgstr "Авто настройка"
 
 msgid "Starting..."
 msgstr "Запуск..."
@@ -139,3 +139,33 @@ msgstr ""
 "\n"
 "Выполнить перезагрузку сейчас?\n"
 "\n"
+
+msgid "Disable tuner"
+msgstr "Отключить тюнер"
+
+msgid "Manual setup"
+msgstr "Ручная настройка"
+
+msgid "Server name"
+msgstr "Название сервера"
+
+msgid "Tuner type"
+msgstr "Тип тюнера"
+
+msgid "IP address"
+msgstr "IP адрес"
+
+msgid "Port"
+msgstr "Порт"
+
+msgid "Use TCP instead UDP"
+msgstr "Использовать TCP вместо UDP"
+
+msgid "Force sending plts=on"
+msgstr "Принудительно посылать plts=on"
+
+msgid "Send fe=(number specific adapter)"
+msgstr "Посылать fe=(номер конкретного адаптера)"
+
+msgid "Unique uuid"
+msgstr "Уникальный uuid"
