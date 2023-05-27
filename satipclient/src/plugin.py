@@ -5,7 +5,7 @@ from os import R_OK, access, path, system
 from xml.etree.ElementTree import fromstring
 
 from Components.ActionMap import ActionMap
-from Components.config import ConfigSelection, ConfigSubsection, getConfigListEntry
+from Components.config import ConfigSelection, ConfigSubsection, getConfigListEntry, NoSave, ConfigText, ConfigIP, ConfigInteger, ConfigYesNo
 from Components.ConfigList import ConfigListScreen
 from Components.Network import iNetwork
 from Components.Sources.List import List
@@ -14,6 +14,7 @@ from enigma import eTimer
 from Plugins.Plugin import PluginDescriptor
 from Screens.MessageBox import MessageBox
 from Screens.Screen import Screen
+from Screens.Console import Console
 from Screens.Standby import TryQuitMainloop
 from twisted.internet import reactor
 from twisted.internet.protocol import DatagramProtocol
@@ -301,10 +302,9 @@ class SATIPDiscovery:
 
 
 satipdiscovery = SATIPDiscovery()
-SATIP_CONF_CHANGED = False
 
 
-class SATIPTuner(ConfigListScreen, Screen):
+class SATIPTuner(Screen, ConfigListScreen):
 	skin = """
 		<screen position="center,center" size="600,370">
 			<ePixmap pixmap="skin_default/buttons/red.png" position="10,0" size="140,40" alphatest="on" />
@@ -323,7 +323,7 @@ class SATIPTuner(ConfigListScreen, Screen):
 
 	def __init__(self, session, vtuner_idx, vtuner_uuid, vtuner_type, current_satipConfig):
 		Screen.__init__(self, session)
-		self.setTitle(_("SAT>IP Client Tuner Setup"))
+		self.setTitle(_("SAT>IP client - auto tuner setup"))
 		self.skin = SATIPTuner.skin
 		self.vtuner_idx = vtuner_idx
 		self.vtuner_uuid = vtuner_uuid
@@ -336,7 +336,7 @@ class SATIPTuner(ConfigListScreen, Screen):
 		self.autostart_client = path.exists("/etc/rc3.d/S20satipclient")
 		self["key_blue"] = StaticText(_("%s autostart") % (self.autostart_client and _("Disable") or _("Enable")))
 		self["description"] = StaticText(_("Starting..."))
-		self["choices"] = StaticText(_(" "))
+		self["choices"] = StaticText("")
 
 		self["shortcuts"] = ActionMap(["SATIPCliActions"],
 		{
@@ -476,12 +476,12 @@ class SATIPTuner(ConfigListScreen, Screen):
 		satipcap = ",".join(satipcap_list)
 
 		description = ""
-		description += _("Description") + " : %s\n" % modelDescription
-		description += _("Manufacturer") + " : %s\n" % manufacturer
-		description += _("Model URL") + " : %s\n" % modelURL
-		description += _("Presentation URL") + " : %s\n" % presentationURL
-		description += "UUID : %s\n" % uuid
-		description += _("SAT>IP Capability") + " : %s" % satipcap
+		description += _("Description") + ": %s\n" % modelDescription
+		description += _("Manufacturer") + ": %s\n" % manufacturer
+		description += _("Model URL") + ": %s\n" % modelURL
+		description += _("Presentation URL") + ": %s\n" % presentationURL
+		description += "UUID: %s\n" % uuid
+		description += _("SAT>IP Capability") + ": %s" % satipcap
 
 		self["description"].setText(description)
 
@@ -559,12 +559,155 @@ class SATIPTuner(ConfigListScreen, Screen):
 		else:
 			data = {}
 			data['idx'] = self.vtuner_idx
-			data['ip'] = satipdiscovery.getServerInfo(uuid, 'ipaddress')
+			data['ipaddr'] = satipdiscovery.getServerInfo(uuid, 'ipaddress')
 			data['desc'] = satipdiscovery.getServerInfo(uuid, "modelName")
 			data['tuner_type'] = tunertype
 			data['uuid'] = uuid
+			data['vtuner_type'] = 'satip_client'
 
 			self.close(data)
+
+class SATIPManualTuner(Screen, ConfigListScreen):
+	skin = """
+		<screen position="center,center" size="600,370">
+			<ePixmap pixmap="skin_default/buttons/red.png" position="10,0" size="140,40" alphatest="on" />
+			<ePixmap pixmap="skin_default/buttons/green.png" position="160,0" size="140,40" alphatest="on" />
+			<ePixmap pixmap="skin_default/buttons/yellow.png" position="310,0" size="140,40" alphatest="on" />
+			<ePixmap pixmap="skin_default/buttons/blue.png" position="460,0" size="140,40" alphatest="on" />
+			<widget source="key_red" render="Label" position="10,0" zPosition="1" size="140,40" font="Regular;18" halign="center" valign="center" backgroundColor="#9f1313" foregroundColor="#ffffff" transparent="1" />
+			<widget source="key_green" render="Label" position="160,0" zPosition="1" size="140,40" font="Regular;18" halign="center" valign="center" backgroundColor="#1f771f" foregroundColor="#ffffff" transparent="1" />
+			<widget source="key_yellow" render="Label" position="310,0" zPosition="1" size="140,40" font="Regular;18" halign="center" valign="center" backgroundColor="#a08500" foregroundColor="#ffffff" transparent="1" />
+			<widget source="key_blue" render="Label" position="460,0" zPosition="1" size="140,40" font="Regular;18" halign="center" valign="center" backgroundColor="#a08500" foregroundColor="#ffffff" transparent="1" />
+			<widget name="config" zPosition="2" position="20,60" size="550,200" scrollbarMode="showOnDemand" transparent="1" />
+			<widget source="description" render="Label" position="20,300" size="550,45" font="Regular;20" halign="left" valign="center" />
+		</screen>
+	"""
+
+	def __init__(self, session, vtuner_idx, current_satipConfig):
+		Screen.__init__(self, session)
+		self.setTitle(_("SAT>IP client - manual tuner setup"))
+		self.skin = SATIPManualTuner.skin
+		self.vtuner_idx = vtuner_idx
+		self.current_satipConfig = current_satipConfig
+
+		self["key_red"] = StaticText(_("Cancel"))
+		self["key_green"] = StaticText(_("OK"))
+		self["key_yellow"] = StaticText("")
+		self.autostart_client = path.exists("/etc/rc3.d/S20satipclient")
+		self["key_blue"] = StaticText(_("%s autostart") % (self.autostart_client and _("Disable") or _("Enable")))
+		self["description"] = StaticText("")
+
+		self["shortcuts"] = ActionMap(["SATIPCliActions"],
+		{
+			"ok": self.keySave,
+			"cancel": self.keyCancel,
+			"red": self.keyCancel,
+			"green": self.keySave,
+			"yellow": self.keyYellow,
+			"blue": self.AutostartClient,
+		}, -2)
+
+		self.list = []
+		ConfigListScreen.__init__(self, self.list, session=self.session)
+		self.createSetup()
+
+	def keyYellow(self):
+		pass
+
+	def AutostartClient(self):
+		client = "/etc/init.d/satipclient"
+		if path.exists(client):
+			if self.autostart_client:
+				system("update-rc.d -f satipclient remove")
+			else:
+				system("update-rc.d satipclient defaults")
+			self.autostart_client = path.exists("/etc/rc3.d/S20satipclient")
+			self["key_blue"].setText(_("%s autostart") % (self.autostart_client and _("Disable") or _("Enable")))
+		else:
+			self["description"].setText(_("Not found '%s' ...") % client)
+
+	def convertIP(self, ip):
+		try:
+			return [int(n) for n in ip.split('.')]
+		except:
+			return [0, 0, 0, 0]
+
+	def createSetup(self):
+		self.curSatipConfig = ConfigSubsection()
+		try:
+			default_desc = self.current_satipConfig['desc']
+		except:
+			default_desc = "unknown"
+		self.curSatipConfig.desc = NoSave(ConfigText(default=default_desc, visible_width=50, fixed_size=False))
+		try:
+			default_tuner_type = self.current_satipConfig['tuner_type']
+		except:
+			default_tuner_type = "DVB-S"
+		self.curSatipConfig.tuner_type = NoSave(ConfigSelection(default=default_tuner_type, choices=[("DVB-S", "DVB-S"), ("DVB-T", "DVB-T"), ("DVB-C", "DVB-C")]))
+		try:
+			default_ipaddr = self.convertIP(self.current_satipConfig['ipaddr'])
+		except:
+			default_ipaddr = [0, 0, 0, 0]
+		self.curSatipConfig.ipaddr = NoSave(ConfigIP(default=default_ipaddr))
+		try:
+			default_port = int(self.current_satipConfig['port'])
+		except:
+			default_port = 554
+		self.curSatipConfig.port = NoSave(ConfigInteger(default=default_port, limits=(1, 65555)))
+		try:
+			default_tcpdata = self.current_satipConfig['tcpdata'] == "1"
+		except:
+			default_tcpdata = False
+		self.curSatipConfig.tcpdata = NoSave(ConfigYesNo(default=default_tcpdata))
+		try:
+			default_force_plts = self.current_satipConfig['force_plts'] == "1"
+		except:
+			default_force_plts = False
+		self.curSatipConfig.force_plts = NoSave(ConfigYesNo(default=default_force_plts))
+		try:
+			fe = int(self.current_satipConfig['fe'])
+			default_fe = str(fe)
+		except:
+			default_fe = "off"
+		choicelist = [("off", _("off"))]
+		for i in range(0, 20):
+			choicelist.append((str(i), str(i)))
+		self.curSatipConfig.fe = NoSave(ConfigSelection(default=default_fe, choices=choicelist))
+		try:
+			default_uuid = self.current_satipConfig['uuid']
+		except:
+			default_uuid = "n/a"
+		self.curSatipConfig.uuid = NoSave(ConfigText(default=default_uuid, visible_width=50, fixed_size=False))
+		self.list = []
+		self.list.append(getConfigListEntry(_("Server name"), self.curSatipConfig.desc))
+		self.list.append(getConfigListEntry(_("Tuner type"), self.curSatipConfig.tuner_type))
+		self.list.append(getConfigListEntry(_("IP address"), self.curSatipConfig.ipaddr))
+		self.list.append(getConfigListEntry(_("Port"), self.curSatipConfig.port))
+		self.list.append(getConfigListEntry(_("Use TCP instead UDP"), self.curSatipConfig.tcpdata))
+		self.list.append(getConfigListEntry(_("Force sending plts=on"), self.curSatipConfig.force_plts))
+		self.list.append(getConfigListEntry(_("Send fe=(number specific adapter)"), self.curSatipConfig.fe))
+		self.list.append(getConfigListEntry(_("Unique uuid"), self.curSatipConfig.uuid))
+		self["config"].list = self.list
+
+	def selectionChanged(self):
+		pass
+
+	def keySave(self):
+		data = {}
+		data['ipaddr'] = "%d.%d.%d.%d" % tuple(self.curSatipConfig.ipaddr.value)
+		if self.curSatipConfig.port.value != 554:
+			data['port'] = str(self.curSatipConfig.port.value)
+		data['desc'] = self.curSatipConfig.desc.value or "unknown"
+		data['tuner_type'] = self.curSatipConfig.tuner_type.value
+		data['uuid'] = self.curSatipConfig.uuid.value or "n/a"
+		if self.curSatipConfig.fe.value != "off":
+			data['fe'] = self.curSatipConfig.fe.value
+		if self.curSatipConfig.tcpdata.value:
+			data['tcpdata'] = "1"
+		if self.curSatipConfig.force_plts.value:
+			data['force_plts'] = "1"
+		data['vtuner_type'] = "satip_client"
+		self.close((self.vtuner_idx, data))
 
 
 SATIP_CONFFILE = "/etc/vtuner.conf"
@@ -572,16 +715,16 @@ SATIP_CONFFILE = "/etc/vtuner.conf"
 
 class SATIPClient(Screen):
 	skin = """
-		<screen position="center,center" size="590,370">
+		<screen position="center,center" size="590,390">
 			<ePixmap pixmap="skin_default/buttons/red.png" position="20,0" size="140,40" alphatest="on" />
 			<ePixmap pixmap="skin_default/buttons/green.png" position="160,0" size="140,40" alphatest="on" />
 			<ePixmap pixmap="skin_default/buttons/yellow.png" position="300,0" size="140,40" alphatest="on" />
 			<ePixmap pixmap="skin_default/buttons/blue.png" position="440,0" size="140,40" alphatest="on" />
 
-			<widget source="key_red" render="Label" position="20,0" zPosition="1" size="140,40" font="Regular;20" halign="center" valign="center" foregroundColor="#ffffff" backgroundColor="#9f1313" transparent="1" />
-			<widget source="key_green" render="Label" position="160,0" zPosition="1" size="140,40" font="Regular;20" halign="center" valign="center" foregroundColor="#ffffff" backgroundColor="#1f771f" transparent="1" />
-			<widget source="key_yellow" render="Label" position="300,0" zPosition="1" size="140,40" font="Regular;20" halign="center" valign="center" foregroundColor="#ffffff" backgroundColor="#a08500" transparent="1" />
-			<widget source="key_blue" render="Label" position="440,0" zPosition="1" size="140,40" font="Regular;20" halign="center" valign="center" foregroundColor="#ffffff" backgroundColor="#18188b" transparent="1" />
+			<widget source="key_red" render="Label" position="20,0" zPosition="1" size="140,40" font="Regular;18" halign="center" valign="center" foregroundColor="#ffffff" backgroundColor="#9f1313" transparent="1" />
+			<widget source="key_green" render="Label" position="160,0" zPosition="1" size="140,40" font="Regular;18" halign="center" valign="center" foregroundColor="#ffffff" backgroundColor="#1f771f" transparent="1" />
+			<widget source="key_yellow" render="Label" position="300,0" zPosition="1" size="140,40" font="Regular;18" halign="center" valign="center" foregroundColor="#ffffff" backgroundColor="#a08500" transparent="1" />
+			<widget source="key_blue" render="Label" position="440,0" zPosition="1" size="140,40" font="Regular;18" halign="center" valign="center" foregroundColor="#ffffff" backgroundColor="#18188b" transparent="1" />
 
 			<widget source="vtunerList" render="Listbox" position="5,60" size="580,272" scrollbarMode="showOnDemand">
 				<convert type="TemplatedMultiContent">
@@ -599,7 +742,7 @@ class SATIPClient(Screen):
 				}
 				</convert>
 			</widget>
-			<widget source="description" render="Label" position="0,340" size="590,30" font="Regular;20" halign="center" valign="center" />
+			<widget source="description" render="Label" position="0,338" size="590,44" font="Regular;19" />
 		</screen>
 	"""
 
@@ -607,23 +750,24 @@ class SATIPClient(Screen):
 		Screen.__init__(self, session)
 		self.setTitle(_("SAT>IP Client Setup"))
 
-		self["key_red"] = StaticText(_("Cancel"))
+		self["key_red"] = StaticText(_("Disable tuner"))
 		self["key_green"] = StaticText(_("Save"))
-		self["key_yellow"] = StaticText(_("Setup"))
-		self["key_blue"] = StaticText(_("Disable"))
-		self["description"] = StaticText(_("Select tuner and press setup key (Yellow)"))
+		self["key_yellow"] = StaticText(_("Auto setup"))
+		self["key_blue"] = StaticText(_("Manual setup"))
+		self["description"] = StaticText(_("Select tuner and press: Yellow/OK - 'Auto setup' or Blue - 'Manual setup'. Menu - vtuner.conf."))
 
 		self.configList = []
 		self["vtunerList"] = List(self.configList)
 
 		self["shortcuts"] = ActionMap(["SATIPCliActions"],
 		{
-			"ok": self.keySetup,
+			"ok": self.keyAutoSetup,
 			"cancel": self.keyCancel,
-			"red": self.keyCancel,
+			"red": self.keyDisable,
 			"green": self.KeySave,
-			"yellow": self.keySetup,
-			"blue": self.keyDisable,
+			"yellow": self.keyAutoSetup,
+			"blue": self.keyManualSetup,
+			"menu": self.openVtunerConf,
 		}, -2)
 
 		self.vtunerIndex = VTUNER_IDX_LIST
@@ -631,6 +775,9 @@ class SATIPClient(Screen):
 		self.old_vtunerConfig = deepcopy(self.vtunerConfig)
 		self.createSetup()
 		self.onShown.append(self.checkVTuner)
+
+	def openVtunerConf(self):
+		self.session.open(Console, SATIP_CONFFILE, ["cat %s" % SATIP_CONFFILE])
 
 	def checkVTuner(self):
 		if not VTUNER_IDX_LIST:
@@ -644,8 +791,10 @@ class SATIPClient(Screen):
 			if vtuner['vtuner_type'] != old_vtuner['vtuner_type']:
 				return True
 			elif vtuner['vtuner_type'] == "satip_client":
+				if len(vtuner) != len(old_vtuner):
+					return True
 				for key in sorted(vtuner):
-					if vtuner[key] != old_vtuner[key]:
+					if key not in old_vtuner or (vtuner[key] != old_vtuner[key]):
 						return True
 		return False
 
@@ -678,15 +827,13 @@ class SATIPClient(Screen):
 			self.close()
 
 	def createSetup(self):
-		#print("vtunerIndex : ", self.vtunerIndex)
-		#print("vtunerConfig : ", self.vtunerConfig)
 		self.configList = []
 		for vtuner_idx in self.vtunerIndex:
 			vtuner = self.vtunerConfig[vtuner_idx]
 
 			if vtuner['vtuner_type'] == "satip_client":
 				entry = (
-				_("VIRTUAL TUNER %s") % vtuner_idx,
+				_("VIRTUAL TUNER %s") % (vtuner_idx + 1),
 				_("TYPE : %s") % vtuner['vtuner_type'].replace('_', ' ').upper(),
 				_("IP : %s") % vtuner['ipaddr'],
 				_("TUNER TYPE : %s") % vtuner['tuner_type'],
@@ -697,7 +844,7 @@ class SATIPClient(Screen):
 				)
 			else:
 				entry = (
-				_("VIRTUAL TUNER %s") % vtuner_idx,
+				_("VIRTUAL TUNER %s") % (vtuner_idx + 1),
 				_("TYPE : %s") % vtuner['vtuner_type'].replace('_', ' ').upper(),
 				"",
 				"",
@@ -712,33 +859,32 @@ class SATIPClient(Screen):
 
 	def keyDisable(self):
 		idx = self["vtunerList"].getCurrent()[5]
-
 		self.vtunerConfig[int(idx)] = deepcopy(self.old_vtunerConfig[int(idx)])
 		if self.vtunerConfig[int(idx)] and self.vtunerConfig[int(idx)]['vtuner_type'] == "satip_client":
 			self.vtunerConfig[int(idx)] = {'vtuner_type': "usb_tuner"}
-
 		self.createSetup()
 
-	def keySetup(self):
+	def keyAutoSetup(self):
 		vtuner_idx = self["vtunerList"].getCurrent()[5]
 		vtuner_type = self["vtunerList"].getCurrent()[6]
 		vtuner_uuid = self["vtunerList"].getCurrent()[7]
 		self.session.openWithCallback(self.SATIPTunerCB, SATIPTuner, vtuner_idx, vtuner_uuid, vtuner_type, self.vtunerConfig)
 
+	def keyManualSetup(self):
+		idx = int(self["vtunerList"].getCurrent()[5])
+		self.session.openWithCallback(self.SATIPTunerAnswer, SATIPManualTuner, idx, self.vtunerConfig[idx])
+
+	def SATIPTunerAnswer(self, data=None):
+		if data != None and not isinstance(data, bool):
+			self.vtunerConfig[data[0]] = data[1]
+			self.createSetup()
+
 	def SATIPTunerCB(self, data=None):
-		if data is not None:
-			self.setConfig(data)
-
-	def setConfig(self, data):
-		if not isinstance(data, bool) and 'uuid' in data and data['uuid'] is not None:
-			vtuner = self.vtunerConfig[int(data['idx'])]
-			vtuner['vtuner_type'] = "satip_client"
-			vtuner['ipaddr'] = data['ip']
-			vtuner['desc'] = data['desc']
-			vtuner['uuid'] = data['uuid']
-			vtuner['tuner_type'] = data['tuner_type']
-
-		self.createSetup()
+		if data != None and not isinstance(data, bool) and 'uuid' in data and data['uuid'] is not None:
+			idx = int(data['idx'])
+			del data['idx']
+			self.vtunerConfig[idx] = data
+			self.createSetup()
 
 	def saveConfig(self):
 		data = ""
@@ -748,11 +894,10 @@ class SATIPClient(Screen):
 			if not conf:
 				continue
 
-			#print("conf : ", conf)
-
 			attr = []
 			for k in sorted(conf):
-				attr.append("%s:%s" % (k, conf[k]))
+				if conf[k] != "":
+					attr.append("%s:%s" % (k, conf[k]))
 
 			data += str(idx) + '=' + ",".join(attr) + "\n"
 
@@ -788,7 +933,7 @@ class SATIPClient(Screen):
 						continue
 
 					data = data[1].split(',')
-					if len(data) != 5:
+					if len(data) < 5:
 						continue
 
 					for x in data:
