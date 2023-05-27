@@ -186,13 +186,6 @@ filebrowser/meta/Makefile
 filebrowser/src/Makefile
 filebrowser/po/Makefile
 
-fritzcall/Makefile
-fritzcall/meta/Makefile
-fritzcall/po/Makefile
-fritzcall/src/Makefile
-fritzcall/src/images/Makefile
-fritzcall/src/images/MODERN/Makefile
-
 fstabeditor/Makefile
 fstabeditor/meta/Makefile
 fstabeditor/src/Makefile
