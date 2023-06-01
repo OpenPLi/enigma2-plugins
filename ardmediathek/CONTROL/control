@@ -1,4 +1,4 @@
 Package: enigma2-plugin-extensions-ardmediathek
-Version: 1.2
+Version: 1.5
 Description: Zugriff auf die ARD-Mediathek
 Depends: enigma2, python-twisted-web, python-requests

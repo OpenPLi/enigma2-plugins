@@ -1,5 +1,12 @@
 ARD Mediathek Plugin für Enigma2
 
+Version 1.5
+
+Version 1.3
+- Neue Skins
+- Untertitel Download
+- unsere region
+
 Version 1.2
 - simple Downloadfunktion hinzugefügt
 - Skin überarbeitet
