@@ -145,7 +145,7 @@ class IRC(protocol.Protocol):
         if ' ' in command or command[0] == ':':
             # Not the ONLY way to screw up, but provides a little
             # sanity checking to catch likely dumb mistakes.
-            raise ValueError("Somebody screwed up, 'cuz this doesn't" \
+            raise ValueError("Somebody screwed up, 'cuz this doesn't"
                   " look like a command to me: %s" % command)
 
         line = string.join([command] + list(parameter_list))
