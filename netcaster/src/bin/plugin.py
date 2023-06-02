@@ -194,8 +194,8 @@ class NETcasterScreenBrowser(Screen):
 				menu.append((i[0],i[1]))
 		# std menuitems
 		menu.append((_("hide"), self.hide))
-		menu.append((_("info"), self.showAbout));
-		menu.append((_("help"), self.showHelp));
+		menu.append((_("info"), self.showAbout))
+		menu.append((_("help"), self.showHelp))
 		self.session.openWithCallback(self.menuCallback, ChoiceBox, title=_("Menu"), list=menu)
 
 	def menuCallback(self,choice):
