@@ -93,13 +93,13 @@ class TranscodingSetup(ConfigListScreen, Screen):
 			if not line.startswith('#') and not line.startswith(';'):
 				tokens = line.split('=')
 
-				if(tokens[0] == "bitrate"):
+				if (tokens[0] == "bitrate"):
 					for choice in config.plugins.transcodingsetup.bitrate.choices:
 						if int(tokens[1]) * 1000 <= int(choice):
 							config.plugins.transcodingsetup.bitrate.value = choice
 							break
 
-				if(tokens[0] == "size"):
+				if (tokens[0] == "size"):
 					if tokens[1] == "480p":
 						config.plugins.transcodingsetup.resolution.value = "720x480"
 					elif tokens[1] == "576p":
@@ -141,10 +141,10 @@ class TranscodingSetup(ConfigListScreen, Screen):
 	def keyGo(self):
 		if self.content:
 			for token in self.content:
-				if(token[0] == "bitrate"):
+				if (token[0] == "bitrate"):
 					token[1] = str(int(config.plugins.transcodingsetup.bitrate.value) / 1000)
 
-				if(token[0] == "size"):
+				if (token[0] == "size"):
 					if config.plugins.transcodingsetup.resolution.value == "720x480":
 						token[1] = "480p"
 					elif config.plugins.transcodingsetup.resolution.value == "720x576":

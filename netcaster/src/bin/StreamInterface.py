@@ -59,7 +59,7 @@ class StreamInterface:
 	def __init__(self,session,cbListLoaded=None):
 		self.session = session
 		self.cbListLoaded = cbListLoaded
-		self.list= [] # contains the streams in this iface
+		self.list = [] # contains the streams in this iface
 
 	def getList(self):
 		#loads a list auf Streams into self.list
@@ -88,7 +88,7 @@ class Stream:
 		self.name = name
 		self.description = description
 		self.url = url
-		self.type=type
+		self.type = type
 
 	def getName(self):
 		return self.name
@@ -142,7 +142,7 @@ class Stream:
 		return self.isfavorite
 
 	def setType(self,type):
-		self.type=type
+		self.type = type
 
 	def getType(self):
 		return self.type

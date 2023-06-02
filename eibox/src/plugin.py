@@ -251,7 +251,7 @@ class EIBObjects(object):
 						print("[parseSingleRead] KeyError exception")
 					return
 			print("[parseSingleRead] XML parser error parseSingleRead failed")
-		except(xml.parsers.expat.ExpatError, ValueError):
+		except (xml.parsers.expat.ExpatError, ValueError):
 			print("[parseSingleRead] XML parser error parseSingleRead DOM error")
 
 	def parseMultiRead(self, knxdata, user_args):

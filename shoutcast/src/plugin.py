@@ -890,7 +890,7 @@ class SHOUTcastWidget(Screen):
 			sendUrlCommand(self.currentGoogle, 10).addCallback(content).addCallback(self.GoogleImageCallback).addErrback(self.Error)
 			return
 		self.currentGoogle = None
-		r = re.findall('murl&quot;:&quot;(http.*?)&quot', result.decode(), re.S|re.I)
+		r = re.findall('murl&quot;:&quot;(http.*?)&quot', result.decode(), re.S | re.I)
 		if r:
 			url = r[nr]
 			# FIXME loop
