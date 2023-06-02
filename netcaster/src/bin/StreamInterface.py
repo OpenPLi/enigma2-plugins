@@ -56,7 +56,7 @@ class LimitedHTTPClientFactory(HTTPClientFactory):
 
 
 class StreamInterface:
-	def __init__(self,session,cbListLoaded=None):
+	def __init__(self, session, cbListLoaded=None):
 		self.session = session
 		self.cbListLoaded = cbListLoaded
 		self.list = [] # contains the streams in this iface
@@ -65,7 +65,7 @@ class StreamInterface:
 		#loads a list auf Streams into self.list
 		pass
 
-	def getMenuItems(self,selectedStream,generic=False):
+	def getMenuItems(self, selectedStream, generic=False):
 		# this return a list of MenuEntries of actions of this iterface
 		# list=(("item1",func1),("item2",func2), ... )
 		#
@@ -84,7 +84,7 @@ class StreamInterface:
 class Stream:
 	isfavorite = False
 
-	def __init__(self,name,description,url,type="mp3"):
+	def __init__(self, name, description, url, type="mp3"):
 		self.name = name
 		self.description = description
 		self.url = url
@@ -96,13 +96,13 @@ class Stream:
 	def getDescription(self):
 		return self.description
 
-	def setName(self,name):
+	def setName(self, name):
 		self.name = name
 
-	def setDescription(self,description):
+	def setDescription(self, description):
 		self.description = description
 
-	def setURL(self,url):
+	def setURL(self, url):
 		self.url = url
 
 	def getURL(self, callback):
@@ -113,7 +113,7 @@ class Stream:
 			self.callback(self.url)
 
 	def getPLSContent(self):
-		print("loading PLS of stream ",self.name,self.url)
+		print("loading PLS of stream ", self.name, self.url)
 		getPage(self.url).addCallback(self._gotPLSContent).addErrback(self._errorPLSContent)
 
 	def _gotPLSContent(self, lines):
@@ -135,13 +135,13 @@ class Stream:
 		self.type = "mp3"
 		self.callback(self.url)
 
-	def setFavorite(self,TrueFalse):
+	def setFavorite(self, TrueFalse):
 		self.isfavorite = TrueFalse
 
 	def isFavorite(self):
 		return self.isfavorite
 
-	def setType(self,type):
+	def setType(self, type):
 		self.type = type
 
 	def getType(self):
