@@ -196,7 +196,6 @@ class EmailScreen(Screen):
 		debug("[EmailScreen] _ebNotify error in %s: %s" % (where, what))
 		#Notifications.AddNotification(MessageBox, _("EmailClient for %(account)s:\n\n%(error)s") % {'account': self._account._name, 'error': what}, type=MessageBox.TYPE_ERROR, timeout=config.plugins.emailimap.timeout.value)
 
-
 	def _onBoxSelected(self):
 		self["messagelist"].l.setList([])
 		self._onBoxSelectedNoClear()

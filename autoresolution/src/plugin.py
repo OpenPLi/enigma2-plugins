@@ -109,6 +109,7 @@ def setDeinterlacer(mode):
 	except:
 		print("[AutoRes] failed switch deinterlacer mode to %s" % mode)
 
+
 def setHdmiHdrType(mode):
 	try:
 		f = open("/proc/stb/video/hdmi_hdrtype", "r")
@@ -125,6 +126,7 @@ def setHdmiHdrType(mode):
 		except:
 			print("[AutoRes] failed switch hdmi_hdrtype mode to %s" % mode)
 
+
 def setColorimetry(mode):
 	try:
 		f = open("/proc/stb/video/hdmi_colorimetry", "r")
@@ -140,6 +142,7 @@ def setColorimetry(mode):
 			print("[AutoRes] switch hdmi_colorimetry mode to %s" % mode)
 		except:
 			print("[AutoRes] failed switch hdmi_colorimetry mode to %s" % mode)
+
 
 frqdic = {23000: '24',
 		23976: '24',
@@ -536,6 +539,7 @@ class AutoRes(Screen):
 		if seekable is None:
 			return
 		seekable.seekRelative(pts < 0 and -1 or 1, abs(pts))
+
 
 class ResolutionLabel(Screen):
 	height = getDesktop(0).size().height()

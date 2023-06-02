@@ -42,7 +42,6 @@ def toggleAVclosed(ret):
 		config.misc.toggle_AV_session.value = not config.misc.toggle_AV_session.value
 
 
-
 def autostart(reason, **kwargs):
 	if "session" in kwargs:
 		session = kwargs["session"]

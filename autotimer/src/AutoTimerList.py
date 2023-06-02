@@ -25,7 +25,10 @@ class DAYS:
 	WEEKEND = 'weekend'
 	WEEKDAY = 'weekday'
 
+
 BouquetChannelListList = None
+
+
 def getBouquetChannelList(iptv_only=False):
 	channels = []
 	bouquetlist = []
@@ -70,6 +73,7 @@ def getBouquetChannelList(iptv_only=False):
 							else:
 								channels.append((sref, 0, -1, -1))
 	return channels
+
 
 class AutoTimerList(MenuList):
 	"""Defines a simple Component to show Timer name"""

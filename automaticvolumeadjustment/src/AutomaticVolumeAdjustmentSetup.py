@@ -36,6 +36,7 @@ from .AutomaticVolumeAdjustment import AutomaticVolumeAdjustment
 from .AutomaticVolumeAdjustmentConfig import AutomaticVolumeAdjustmentConfig
 import skin
 
+
 class AutomaticVolumeAdjustmentConfigScreen(ConfigListScreen, Screen):
 	skin = """
 		<screen name="AutomaticVolumeAdjustmentConfigScreen" position="center,center" size="550,400">

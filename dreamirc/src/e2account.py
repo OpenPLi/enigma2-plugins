@@ -10,6 +10,7 @@ from Plugins.Extensions.dreamIRC import e2chat
 from Plugins.Extensions.dreamIRC import dreamIRCTools
 from Plugins.Extensions.dreamIRC import dreamIRCSetup
 
+
 class AccountManager:
 	"""I am responsible for managing a user's accounts.
 
