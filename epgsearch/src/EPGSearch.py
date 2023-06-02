@@ -1028,7 +1028,7 @@ class EPGSearch(EPGSelection):
 		if BouquetChannelListList == None:
 			BouquetChannelListList, IptvBouquetChannelListList = self.getBouquetChannelList()
 		result = []
-		if BouquetChannelListList != None and epglist: 
+		if BouquetChannelListList != None and epglist:
 			if config.plugins.epgsearch.favorit_name.value:
 				for e in epglist:
 					if ":http" in e[0]:

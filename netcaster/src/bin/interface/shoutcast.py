@@ -16,7 +16,7 @@ class Interface(StreamInterface):
 		glist = []
 		#self.genrefeed.fetch_genres()
 		self.genrefeed.parse_genres()
-		for i in self.genrefeed.genre_list:            
+		for i in self.genrefeed.genre_list:
 			glist.append((str(i), i))
 		self.session.openWithCallback(self.GenreSelected, ChoiceBox, _("select Genre to search for streams"), glist)
 

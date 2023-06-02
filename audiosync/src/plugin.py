@@ -200,4 +200,3 @@ def Plugins(path, **kwargs):
 	return [PluginDescriptor(name=_("Audio Sync setup"), description=_("Setup for the Audio Sync plugin"), icon="AudioSync.png", where=PluginDescriptor.WHERE_PLUGINMENU, fnc=setup),
 		PluginDescriptor(name=_("Audio Sync"), description=_("Sets the audio delay (LipSync)"), where=PluginDescriptor.WHERE_AUDIOMENU, fnc=audioMenu),
 		PluginDescriptor(where=[PluginDescriptor.WHERE_SESSIONSTART, PluginDescriptor.WHERE_AUTOSTART], fnc=autostart)]
-
