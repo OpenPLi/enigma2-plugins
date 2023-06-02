@@ -45,6 +45,7 @@ config.werbezapper.z = ConfigSelection([(str(x), str(x)) for x in range(-20, 21)
 
 from .WerbeZapper import WerbeZapper, WerbezapperSettings
 
+
 def main(session=None, servicelist=None, **kwargs):
 	if servicelist is None:
 		from Screens.InfoBar import InfoBar

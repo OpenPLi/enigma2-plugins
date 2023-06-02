@@ -48,6 +48,7 @@ class Interface(StreamInterface):
 
 ###############################################################################
 
+
 class SHOUTcasterFavorites:
 	configfile = "/etc/NETcaster.conf"
 

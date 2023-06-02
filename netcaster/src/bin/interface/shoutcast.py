@@ -50,6 +50,7 @@ class Interface(StreamInterface):
 # License along with this library; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
+
 from pickle import dump, load
 from urllib.request import FancyURLopener
 from xml.sax import parseString

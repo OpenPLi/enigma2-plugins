@@ -377,7 +377,6 @@ class SATIPTuner(Screen, ConfigListScreen):
 		else:
 			self["description"].setText(_("Not found '%s' ...") % client)
 
-
 	def OnClose(self):
 		if self.discoveryEnd in satipdiscovery.updateCallback:
 			satipdiscovery.updateCallback.remove(self.discoveryEnd)
@@ -566,6 +565,7 @@ class SATIPTuner(Screen, ConfigListScreen):
 			data['vtuner_type'] = 'satip_client'
 
 			self.close(data)
+
 
 class SATIPManualTuner(Screen, ConfigListScreen):
 	skin = """

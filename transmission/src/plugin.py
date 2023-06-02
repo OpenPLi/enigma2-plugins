@@ -26,6 +26,7 @@ class Transmission(Screen):
 		<screen position="center,center" size="720,460" title="Transmission menu" >
 			<widget name="menu" position="10,10" size="700,440" scrollbarMode="showOnDemand" />
 		</screen>"""
+
 	def __init__(self, session):
 		Screen.__init__(self, session)
 		self.session = session

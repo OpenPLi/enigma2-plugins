@@ -125,6 +125,7 @@ def getAdapterFrontend(frontend, description):
 			break
 	return " -f %d" % frontend
 
+
 try:
 	Lastrotorposition = config.misc.lastrotorposition
 except:
@@ -200,6 +201,7 @@ class BlindscanState(Screen, ConfigListScreen):
 		<widget source="key_blue" render="Label" position="340,530" size="100,40" font="Regular;17" halign="center"/>
 	</screen>
 	"""
+
 	def __init__(self, session, progress, post_action, tp_list, finished=False):
 		Screen.__init__(self, session)
 		Screen.setTitle(self, _("Blind scan state"))
@@ -296,6 +298,7 @@ class Blindscan(ConfigListScreen, Screen, TransponderFiltering):
 			</widget>
 		</screen>
 		"""
+
 	def __init__(self, session):
 		Screen.__init__(self, session)
 		self.setup_title = _("Blind scan for DVB-S2 tuners") + ":" + BOX_NAME + "/" + BOX_MODEL
@@ -1816,6 +1819,7 @@ def BlindscanMain(session, close=None, **kwargs):
 			pass
 	if have_Support_Blindscan or BOX_MODEL == "dreambox":
 		menu = [(_("Utility from the manufacturer"), "manufacturer"), (_("Hardware type"), "hardware")]
+
 		def scanType(choice):
 			if choice:
 				if choice[1] == "manufacturer":

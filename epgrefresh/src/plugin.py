@@ -132,16 +132,19 @@ config.plugins.epgrefresh_extra.day_refresh = ConfigSubDict()
 for i in range(7):
 	config.plugins.epgrefresh_extra.day_refresh[i] = ConfigEnableDisable(default=True)
 
+
 def setEnigmaWakeupTime(configElement):
 	print("[EPGRefresh] next enigma wakeup time", configElement.value)
 	if configElement.value != 0:
 		config.plugins.epgrefresh.enigma_wakeup_time.value = configElement.value
 		config.plugins.epgrefresh.enigma_wakeup_time.save()
 
+
 try:
 	config.misc.prev_wakeup_time.addNotifier(setEnigmaWakeupTime)
 except:
 	config.plugins.epgrefresh.enigma_wakeup_time.value = -1
+
 
 def timeCallback(isCallback=True):
 	"""Time Callback/Autostart management."""
@@ -293,6 +296,7 @@ def autostart(reason, session=None, **kwargs):
 	elif reason == 1:
 		epgrefresh.stop()
 
+
 def setConfigWakeupTime(value):
 	config.plugins.epgrefresh.wakeup_time.value = value
 	config.plugins.epgrefresh.wakeup_time.save()
@@ -429,7 +433,9 @@ def addtoEPGRefresh(self, add):
 		pass
 	self.close()
 
+
 stopTimer = None
+
 
 def stop_Running(session, **kwargs):
 	global stopTimer
