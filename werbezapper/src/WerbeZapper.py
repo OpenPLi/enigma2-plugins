@@ -469,7 +469,7 @@ class WerbeZapper(Screen):
 		self.zap_timer.startLongTimer(int(duration * 60))
 
 		if notify:
-			AddPopup( _("Zapping back %s in %d Min") % (zap_name, duration), MessageBox.TYPE_INFO, 3, "WerbeZapperZapStarted")
+			AddPopup(_("Zapping back %s in %d Min") % (zap_name, duration), MessageBox.TYPE_INFO, 3, "WerbeZapperZapStarted")
 		if config.werbezapper.icon_timer.value:
 			self.StartIndicator()
 
@@ -494,7 +494,7 @@ class WerbeZapper(Screen):
 			ref_now = self.session.nav.getCurrentlyPlayingServiceReference()
 			if notify:
 				if ref_now and ref_now != self.zap_service:
-					AddPopup( _("Zapping to %s") % (zap_name), MessageBox.TYPE_INFO, 3, "WerbeZapperZapBack")
+					AddPopup(_("Zapping to %s") % (zap_name), MessageBox.TYPE_INFO, 3, "WerbeZapperZapBack")
 			self.root = self.servicelist.getRoot()
 			if self.root:
 				if self.monitor_timer.isActive():

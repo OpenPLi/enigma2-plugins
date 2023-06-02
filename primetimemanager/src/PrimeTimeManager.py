@@ -967,7 +967,7 @@ class PrimeTimeManager(Screen, HelpableScreen):
 			else:
 				conflictSat = False
 
-			result = [	favorite,								# the favorite event
+			result = [favorite,								# the favorite event
 					self.serviceBouquet[favorite[SERVICEREF]],	# bouquet
 					numConflicts,								# number of conflicts
 					viewLive,									# is it a view live event?
