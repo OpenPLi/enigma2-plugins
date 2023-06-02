@@ -445,7 +445,7 @@ class AutoRes(Screen):
 						# 3: Hybrid Log-gamma
 						hdrtype = gammas[gamma_num]
 						setHdmiHdrType(hdrtype)
-						if SystemInfo["HasColorimetry"]  and config.plugins.autoresolution.hdmicolorimetry.value != "no" and config.av.hdmicolorimetry.value == "auto":
+						if SystemInfo["HasColorimetry"] and config.plugins.autoresolution.hdmicolorimetry.value != "no" and config.av.hdmicolorimetry.value == "auto":
 							colorimetry = hdrtype in ("hdr10", "hlg") and config.plugins.autoresolution.hdmicolorimetry.value or "auto"
 							setColorimetry(colorimetry)
 
@@ -851,7 +851,7 @@ class ManualResolution(Screen):
 				fpsString = int(f.read())
 				f.close()
 				fpsFloat = float(fpsString) / 1000
-				text_fps =  str(fpsFloat)
+				text_fps = str(fpsFloat)
 			except:
 				print("[ManualResolution] Error open /proc/stb/vmpeg/0/framerate")
 				text_fps = "?"

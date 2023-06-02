@@ -4,7 +4,7 @@ from Screens.ChoiceBox import ChoiceBox
 
 
 class Interface(StreamInterface):
-	name= "listen to SHOUTcast Streams"
+	name = "listen to SHOUTcast Streams"
 	nameshort = "SHOUTcast"
 	description = "This is a Plugin to browse www.shoutcast.com and listen to webradios listed there."
 
@@ -13,7 +13,7 @@ class Interface(StreamInterface):
 		self.genrefeed = GenreFeed()
 
 	def getList(self):
-		glist=[]
+		glist = []
 		#self.genrefeed.fetch_genres()
 		self.genrefeed.parse_genres()
 		for i in self.genrefeed.genre_list:            
@@ -25,9 +25,9 @@ class Interface(StreamInterface):
 			feed = ShoutcastFeed(selectedGenre[1])
 			#feed.fetch_stations()
 			feed.parse_stations()
-			self.list=[]
+			self.list = []
 			for station in feed.station_list:
-				stream = Stream(str(station['Name']),"Bitrate: "+str(station['Bitrate'])+", Type: "+str(station['MimeType']),str(station['PLS_URL']),type="pls")
+				stream = Stream(str(station['Name']),"Bitrate: " + str(station['Bitrate']) + ", Type: " + str(station['MimeType']),str(station['PLS_URL']),type="pls")
 				self.list.append(stream)
 		self.OnListLoaded()
 
@@ -232,7 +232,7 @@ class ShoutcastFeed:
 		"""
 		Grabs the xml list of stations from the shoutcast server
 		"""
-		self.shout_url='http://www.shoutcast.com/sbin/newxml.phtml?genre=' + self.genre
+		self.shout_url = 'http://www.shoutcast.com/sbin/newxml.phtml?genre=' + self.genre
 		self.urlhandler = FancyURLopener()
 		self.fd = self.urlhandler.open(self.shout_url)
 		self.stations = self.fd.read()
