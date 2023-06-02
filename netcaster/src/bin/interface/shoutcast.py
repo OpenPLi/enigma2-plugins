@@ -8,8 +8,8 @@ class Interface(StreamInterface):
 	nameshort = "SHOUTcast"
 	description = "This is a Plugin to browse www.shoutcast.com and listen to webradios listed there."
 
-	def __init__(self,session,cbListLoaded=None):
-		StreamInterface.__init__(self,session,cbListLoaded=cbListLoaded)
+	def __init__(self, session, cbListLoaded=None):
+		StreamInterface.__init__(self, session, cbListLoaded=cbListLoaded)
 		self.genrefeed = GenreFeed()
 
 	def getList(self):
@@ -17,17 +17,17 @@ class Interface(StreamInterface):
 		#self.genrefeed.fetch_genres()
 		self.genrefeed.parse_genres()
 		for i in self.genrefeed.genre_list:            
-			glist.append((str(i),i))
-		self.session.openWithCallback(self.GenreSelected,ChoiceBox,_("select Genre to search for streams"),glist)
+			glist.append((str(i), i))
+		self.session.openWithCallback(self.GenreSelected, ChoiceBox, _("select Genre to search for streams"), glist)
 
-	def GenreSelected(self,selectedGenre):
+	def GenreSelected(self, selectedGenre):
 		if selectedGenre is not None:
 			feed = ShoutcastFeed(selectedGenre[1])
 			#feed.fetch_stations()
 			feed.parse_stations()
 			self.list = []
 			for station in feed.station_list:
-				stream = Stream(str(station['Name']),"Bitrate: " + str(station['Bitrate']) + ", Type: " + str(station['MimeType']),str(station['PLS_URL']),type="pls")
+				stream = Stream(str(station['Name']), "Bitrate: " + str(station['Bitrate']) + ", Type: " + str(station['MimeType']), str(station['PLS_URL']), type="pls")
 				self.list.append(stream)
 		self.OnListLoaded()
 
@@ -103,7 +103,7 @@ class StationParser(ContentHandler):
 	SAX handler for xml feed, not for public consumption
 	"""
 
-	def __init__(self,min_bitrate):
+	def __init__(self, min_bitrate):
 		self.isStationList = False
 		self.isTuneIn = False
 		self.isStation = False
@@ -136,7 +136,7 @@ class StationParser(ContentHandler):
 			self.Listeners = attrs.get('lc', None)
 			self.Genre = attrs.get('genre', None)
 
-	def endElement(self,name):
+	def endElement(self, name):
 		if name == 'station':
 			self.isStation = False
 		if name == 'tunein':
@@ -145,7 +145,7 @@ class StationParser(ContentHandler):
 			self.isStation = False
 			if int(self.Bitrate) >= self.min_bitrate:
 				self.stationUrl = self.shoutUrl + self.baseUrl + '?id=' + self.Id
-				self.station_list.append({'Name':self.Name.encode("utf-8"), 'PLS_URL':self.stationUrl.encode("utf-8"), 'NowPlaying':self.nowPlaying.encode("utf-8"), 'Listeners':self.Listeners.encode("utf-8"), 'Bitrate':self.Bitrate.encode("utf-8"), 'MimeType':self.mimeType.encode("utf-8"), 'Genres': self.Genre.encode("utf-8")})
+				self.station_list.append({'Name': self.Name.encode("utf-8"), 'PLS_URL': self.stationUrl.encode("utf-8"), 'NowPlaying': self.nowPlaying.encode("utf-8"), 'Listeners': self.Listeners.encode("utf-8"), 'Bitrate': self.Bitrate.encode("utf-8"), 'MimeType': self.mimeType.encode("utf-8"), 'Genres': self.Genre.encode("utf-8")})
 				self.count += 1
 		if name == 'stationlist':
 			self.isStationList = False
