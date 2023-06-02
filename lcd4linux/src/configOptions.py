@@ -1945,4 +1945,3 @@ L4 = [['self.list4', 'LCD Display', ' LCD4linux.Standby', 1],
 		['self.list4', '- Position', ' LCD4linux.StandbyRecordingPos', 44],
 		['self.list4', '- Alignment', ' LCD4linux.StandbyRecordingAlign', 44],
 		['self.list4', '- Split Screen', ' LCD4linux.StandbyRecordingSplit', 44]]
-

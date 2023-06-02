@@ -26,7 +26,7 @@ class Interface(StreamInterface):
 		list = []
 		if generic is True and selectedStream is not None:
 			if selectedStream.isFavorite() is False:
-				list.append((_("add stream to favorites"), self.addStream))            
+				list.append((_("add stream to favorites"), self.addStream))
 		elif generic is False and selectedStream is not None:
 			if selectedStream.isFavorite() is False:
 				list.append((_("add stream to favorites"), self.addStream))
