@@ -330,7 +330,7 @@ class RecInfoBar(Screen):
 		hh, ss = divmod(ss, 60 * 60)
 		mm, ss = divmod(ss, 60)
 		return _(config.plugins.RecInfobar.timelen_format.value) % dict(
-			DDs =dd and _N("%(DD)d day", "%(DD)d days", dd) % {"DD": dd} or "",
+			DDs=dd and _N("%(DD)d day", "%(DD)d days", dd) % {"DD": dd} or "",
 			DD=dd, HH=hh, MM=mm, SS=ss, HHs=secs / 3600, MMs=secs / 60, SSs=secs)
 
 	def updateInfo(self):
