@@ -2715,7 +2715,7 @@ def ICSdownloads():
 	global ICSlist
 	global ICSdownrun
 	global PICcal
-	
+
 	def dateiter(start, resolution):
 		date = start
 		while True:
