@@ -35,7 +35,7 @@ def write_cache(cache_file, cache_data):
 
 
 def load_cache(cache_file):
-	with open(cache_file) as fd:
+	with open(cache_file, 'rb') as fd:
 		return pickle.load(fd)
 
 
