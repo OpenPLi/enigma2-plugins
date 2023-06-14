@@ -1,0 +1,4 @@
+Package: enigma2-plugin-extensions-srfmediathek
+Version: 0.5
+Description: Zugriff auf die SRF-Mediathek
+Depends: enigma2, python3-html, python3-twisted-web, python3-requests
