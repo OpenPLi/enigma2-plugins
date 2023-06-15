@@ -59,6 +59,7 @@ SUBDIRS = \
 	primetimemanager \
 	reconstructapsc \
 	recordinfobar \
+	srfmediathek \
 	satipclient \
 	seekbar \
 	setpasswd \

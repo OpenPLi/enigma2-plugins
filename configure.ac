@@ -411,6 +411,11 @@ simplerss/meta/Makefile
 simplerss/po/Makefile
 simplerss/src/Makefile
 
+srfmediathek/Makefile
+srfmediathek/meta/Makefile
+srfmediathek/src/Makefile
+srfmediathek/src/img/Makefile
+
 systemtime/Makefile
 systemtime/meta/Makefile
 systemtime/po/Makefile
