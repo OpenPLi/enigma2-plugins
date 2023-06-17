@@ -9,7 +9,7 @@ import requests
 from Components.ActionMap import ActionMap
 from Components.AVSwitch import AVSwitch
 from Components.ConfigList import ConfigListScreen
-from Components.config import config, getConfigListEntry, ConfigSubsection, ConfigDirectory, ConfigSelection, ConfigYesNo
+from Components.config import config, getConfigListEntry, ConfigSubsection, ConfigDirectory, ConfigSelection, ConfigYesNo, configfile
 from Components.FileList import FileList
 from Components.Pixmap import Pixmap
 from Components.ProgressBar import ProgressBar
@@ -581,6 +581,7 @@ class ARDConfigScreen(ConfigListScreen, Screen):
 
     def save(self):
         self.keySave()
+        configfile.save()
         self.close()
 
     def cancel(self):
