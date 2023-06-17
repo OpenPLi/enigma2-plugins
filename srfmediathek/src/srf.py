@@ -8,7 +8,7 @@ import requests
 from Components.ActionMap import ActionMap
 from Components.AVSwitch import AVSwitch
 from Components.ConfigList import ConfigListScreen
-from Components.config import config, getConfigListEntry, ConfigSubsection, ConfigSelection, ConfigYesNo
+from Components.config import config, getConfigListEntry, ConfigSubsection, ConfigSelection, ConfigYesNo, configfile
 from Components.Pixmap import Pixmap
 from Components.ProgressBar import ProgressBar
 from Components.ScrollLabel import ScrollLabel
@@ -24,7 +24,6 @@ from Screens.VirtualKeyBoard import VirtualKeyBoard
 from six import ensure_str
 from six.moves.urllib.parse import quote_plus
 from twisted.internet.reactor import callInThread
-
 config.plugins.SRF = ConfigSubsection()
 config.plugins.SRF.SaveResumePoint = ConfigYesNo(default=False)
 config.plugins.SRF.AUTOPLAY = ConfigYesNo(default=False)
@@ -372,6 +371,7 @@ class SRFConfigScreen(ConfigListScreen, Screen):
 
     def save(self):
         self.keySave()
+        configfile.save()
         self.close()
 
     def cancel(self):
