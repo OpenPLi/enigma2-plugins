@@ -4,27 +4,31 @@ from datetime import datetime, timedelta
 from json import loads
 import xml.etree.ElementTree as Et
 import re
+import time
 import requests
 from Components.ActionMap import ActionMap
 from Components.AVSwitch import AVSwitch
 from Components.ConfigList import ConfigListScreen
-from Components.config import config, getConfigListEntry, ConfigSubsection, ConfigSelection, ConfigYesNo, configfile
+from Components.config import config, getConfigListEntry, ConfigSubsection, ConfigDirectory, ConfigSelection, ConfigYesNo, configfile
+from Components.FileList import FileList
 from Components.Pixmap import Pixmap
 from Components.ProgressBar import ProgressBar
 from Components.ScrollLabel import ScrollLabel
 from Components.Sources.StaticText import StaticText
 from Components.Sources.List import List
-from enigma import eServiceReference, ePicLoad, gPixmapPtr, getDesktop, addFont
+from enigma import eServiceReference, ePicLoad, gPixmapPtr, getDesktop, addFont, eConsoleAppContainer
+from Screens.ChoiceBox import ChoiceBox
+from Screens.Console import Console
 from Screens.InfoBarGenerics import setResumePoint
 from Screens.InfoBar import MoviePlayer
-from Screens.Screen import Screen
-from Screens.ChoiceBox import ChoiceBox
 from Screens.MessageBox import MessageBox
+from Screens.Screen import Screen
 from Screens.VirtualKeyBoard import VirtualKeyBoard
 from six import ensure_str
 from six.moves.urllib.parse import quote_plus
 from twisted.internet.reactor import callInThread
 config.plugins.SRF = ConfigSubsection()
+config.plugins.SRF.savetopath = ConfigDirectory(default="/media/hdd/movie/")
 config.plugins.SRF.SaveResumePoint = ConfigYesNo(default=False)
 config.plugins.SRF.AUTOPLAY = ConfigYesNo(default=False)
 PLUGINPATH = "/usr/lib/enigma2/python/Plugins/Extensions/SRFMediathek/"
@@ -36,6 +40,7 @@ FONT = "/usr/share/fonts/LiberationSans-Regular.ttf"
 if not path.exists(FONT):
     FONT = "/usr/share/fonts/nmsbd.ttf"
 addFont(FONT, "SRegular", 100, False)
+API_URL = "https://il.srgssr.ch/integrationlayer"
 ColorList = [("default,#1a104485,#3D104485,#1aC0C0C0", "Trans-BrightBlue"), ("default,#050a1232,#1502050e,#05192d7c", "Trans-DarkBlue"), ("default,#05000000,#15000000,#606060", "Trans-BlackGray"), ("default,#05000000,#15000000,#ffff00", "Trans-BlackYellow"), ("default,#1a746962,#1502050e,#1a746962", "Trans-BrownBlue"), ("MiniTV,#104485,#0c366a,#C0C0C0", "BrightBlue MiniTV"), ("MiniTV,#0a1232,#02050e,#192d7c", "DarkBlue MiniTV"), ("MiniTV,#000000,#080808,#606060", "BlackGray MiniTV"), ("MiniTV,#000000,#080808,#ffff00", "BlackYellow MiniTV"), ("MiniTV,#746962,#02050e,#746962", "BrownBlue MiniTV")]
 config.plugins.SRF.SkinColor = ConfigSelection(default="default,#050a1232,#1502050e,#05192d7c", choices=ColorList)
 
@@ -63,6 +68,22 @@ def geturl(url):
         return ""
 
 
+def dateTime2(dt):
+    try:
+        s = ""
+        if dt.get("validFrom"):
+            b = time.mktime(time.strptime(dt.get("validFrom")[:19], "%Y-%m-%dT%H:%M:%S"))
+            b = time.localtime(b)
+            s += "Gesendet am %s\n" % "{0:02d}.{1:02d}.{2:04d} {3:02d}:{4:02d}".format(b.tm_mday, b.tm_mon, b.tm_year, b.tm_hour, b.tm_min)
+        if dt.get("validTo"):
+            a = time.mktime(time.strptime(dt.get("validTo")[:19], "%Y-%m-%dT%H:%M:%S"))
+            a = time.localtime(a)
+            s += "Verfügbar bis %s\n" % "{0:02d}.{1:02d}.{2:04d} {3:02d}:{4:02d}".format(a.tm_mday, a.tm_mon, a.tm_year, a.tm_hour, a.tm_min)
+        return ensure_str(s)
+    except (TypeError, ValueError, AttributeError, OverflowError):
+        return ""
+
+
 def sortList(txt):
     return sorted(txt, key=lambda text: int(re.compile(r"(\d+)x", re.DOTALL).findall(text[0])[0]) if re.compile(r"(\d+)x", re.DOTALL).findall(str(text[0])) else 0, reverse=True)
 
@@ -72,16 +93,17 @@ class SRFMediathek(Screen):
         skin = readskin()
         self.skin = skin
         Screen.__init__(self, session)
-        self["actions"] = ActionMap(["OkCancelActions", "ColorActions", "DirectionActions", "ChannelSelectBaseActions", "MovieSelectionActions"], {"contextMenu": self.SRFSetup, "red": self.close, "blue": self.Home, "up": self.up, "down": self.down, "left": self.left, "right": self.right, "nextBouquet": self.p_up, "prevBouquet": self.p_down, "ok": self.ok, "cancel": self.exit}, -1)
+        self["actions"] = ActionMap(["OkCancelActions", "ColorActions", "DirectionActions", "ChannelSelectBaseActions", "MovieSelectionActions"], {"contextMenu": self.SRFSetup, "green": self.Download, "red": self.close, "blue": self.Home, "up": self.up, "down": self.down, "left": self.left, "right": self.right, "nextBouquet": self.p_up, "prevBouquet": self.p_down, "ok": self.ok, "cancel": self.exit}, -1)
         self["movielist"] = List()
         self["cover"] = Pixmap()
         self["handlung"] = ScrollLabel()
         self.HISTORY = [("MENU", "")]
         self["DownloadLabel"] = ScrollLabel()
-        self["PluginName"] = ScrollLabel("Play SRF Mediathek v0.5 Beta")
+        self["PluginName"] = ScrollLabel("Play SRF Mediathek v0.6")
         self["progress"] = ProgressBar()
         self["progress"].hide()
         self.DL_File = None
+        self.totalDuration = ""
         if not path.exists("/tmp/cover/"):
             mkdir("/tmp/cover/")
         self.onLayoutFinish.append(self.HauptMenu)
@@ -91,7 +113,7 @@ class SRFMediathek(Screen):
 
     def HauptMenu(self, index="0"):
         self.searchtxt = ""
-        menu = [("MENU", "SRF Mediathek - Start", "https://il.srgssr.ch/integrationlayer/2.0/srf/page/landingPage/byProduct/PLAY_VIDEO?isPublished=true&vector=APPPLAY", "", PLUGINPATH + "/img/" + "home.png", ""), ("MENU", "Kategorien", "https://il.srgssr.ch/integrationlayer/2.0/srf/topicList/tv?vector=APPPLAY", "", PLUGINPATH + "/img/" + "endecken.png", ""), ("MENU", "A-Z", "https://il.srgssr.ch/integrationlayer/2.0/srf/showList/tv/alphabetical?pageSize=unlimited&vector=APPPLAY", "", PLUGINPATH + "/img/" + "az.png", ""), ("Programm3", "Sendung verpasst", "Programm3", "", PLUGINPATH + "/img/" + "programm.png", ""), ("MENU", "Am meisten gesuchte", "https://il.srgssr.ch/integrationlayer/2.0/srf/showList/tv/mostClickedSearchResults?vector=portalplay", "", PLUGINPATH + "/img/" + "mostClick.png", ""), ("Suche", "Suche", "", "", PLUGINPATH + "/img/" + "suche.png", "")]
+        menu = [("MENU", "SRF Mediathek - Start", API_URL + "/2.0/srf/page/landingPage/byProduct/PLAY_VIDEO?isPublished=true&vector=APPPLAY", "", PLUGINPATH + "/img/" + "home.png", ""), ("MENU", "Kategorien", API_URL + "/2.0/srf/topicList/tv?vector=APPPLAY", "", PLUGINPATH + "/img/" + "endecken.png", ""), ("MENU", "A-Z", API_URL + "/2.0/srf/showList/tv/alphabetical?pageSize=unlimited&vector=APPPLAY", "", PLUGINPATH + "/img/" + "az.png", ""), ("VERPASST", "Sendung verpasst", "VERPASST", "", PLUGINPATH + "/img/" + "programm.png", ""), ("MENU", "Am meisten gesuchte", API_URL + "/2.0/srf/showList/tv/mostClickedSearchResults?vector=portalplay", "", PLUGINPATH + "/img/" + "mostClick.png", ""), ("Suche", "Suche", "", "", PLUGINPATH + "/img/" + "suche.png", "")]
         self["movielist"].setList(menu)
         self["movielist"].setIndex(int(index))
         self.infos()
@@ -108,8 +130,8 @@ class SRFMediathek(Screen):
                 self.Widgets(url)
             elif self["movielist"].getCurrent()[0] == "WEITER":
                 self.Widgets(url)
-            elif self["movielist"].getCurrent()[0] == "Programm3":
-                self.Programm3()
+            elif self["movielist"].getCurrent()[0] == "VERPASST":
+                self.Verpasst()
             else:
                 return
             self.HISTORY.append((url, Index))
@@ -127,14 +149,14 @@ class SRFMediathek(Screen):
                 self.Widgets(url, Index)
             elif url == "MENU":
                 self.HauptMenu(Index)
-            elif url == "Programm3":
-                self.Programm3(Index)
+            elif url == "VERPASST":
+                self.Verpasst(Index)
         else:
             if path.exists(TMPIC):
                 unlink(TMPIC)
             self.close()
 
-    def Programm3(self, index="0"):
+    def Verpasst(self, index="0"):
         now = datetime.now()
         liste = []
         for i in range(0, 7):
@@ -145,7 +167,7 @@ class SRFMediathek(Screen):
                 title = "GESTERN"
             else:
                 title = start.strftime("%d.%m.%Y")
-            url = "https://il.srgssr.ch/integrationlayer/2.0/srf/mediaList/video/episodesByDate/%s?pageSize=40&vector=APPPLAY" % start.strftime("%Y-%m-%d")
+            url = API_URL + "/2.0/srf/mediaList/video/episodesByDate/%s?pageSize=40&vector=APPPLAY" % start.strftime("%Y-%m-%d")
             liste.append(("WEITER", title, ensure_str(url), "", "", ""))
         self["movielist"].setList(liste)
         self["movielist"].setIndex(int(index))
@@ -154,7 +176,7 @@ class SRFMediathek(Screen):
     def search(self, search):
         if search:
             self.searchtxt = search
-            url = "https://il.srgssr.ch/integrationlayer/2.0/srf/searchResultMediaList?q=%s&sortBy=default&includeSuggestions=false&includeAggregations=false&pageSize=40&vector=APPPLAY" % quote_plus(self.searchtxt)
+            url = API_URL + "/2.0/srf/searchResultMediaList?q=%s&sortBy=default&includeSuggestions=false&includeAggregations=false&pageSize=40&vector=APPPLAY" % quote_plus(self.searchtxt)
             Index = self["movielist"].getIndex()
             self.HISTORY.append((url, Index))
             self.Widgets(url, index="0")
@@ -188,16 +210,16 @@ class SRFMediathek(Screen):
             if js.get("urn"):
                 url = js.get("urn", "")
                 if "video" in url or "audio" in url:
-                    url = "https://il.srgssr.ch/integrationlayer/2.1/mediaComposition/byUrn/%s?onlyChapters=false&vector=APPPLAY" % url
+                    url = API_URL + "/2.1/mediaComposition/byUrn/%s?onlyChapters=false&vector=APPPLAY" % url
                 elif "show" in url:
-                    url = "https://il.srgssr.ch/integrationlayer/2.0/mediaList/latest/byShowUrn/urn:srf:%s?pageSize=40&vector=APPPLAY" % url
+                    url = API_URL + "/2.0/mediaList/latest/byShowUrn/urn:srf:%s?pageSize=40&vector=APPPLAY" % url
                 elif "topic" in url:
-                    url = "https://il.srgssr.ch/integrationlayer/2.0/srf/page/byTopicUrn/%s?isPublished=true&vector=APPPLAY" % url
+                    url = API_URL + "/2.0/srf/page/byTopicUrn/%s?isPublished=true&vector=APPPLAY" % url
             elif js.get("id"):
                 if js.get("sectionType") == "MediaSection":
-                    url = "https://il.srgssr.ch/integrationlayer/2.0/srf/section/mediaSection/%s?isPublished=true&vector=APPPLAY" % js.get("id")
+                    url = API_URL + "/2.0/srf/section/mediaSection/%s?isPublished=true&vector=APPPLAY" % js.get("id")
                 if js.get("sectionType") == "ShowSection":
-                    url = "https://il.srgssr.ch/integrationlayer/2.0/srf/section/showSection/%s?isPublished=true&vector=APPPLAY" % js.get("id")
+                    url = API_URL + "/2.0/srf/section/showSection/%s?isPublished=true&vector=APPPLAY" % js.get("id")
                 if js.get("representation"):
                     js = js.get("representation", "")
                 if "HeroStage" in js.get("name", ""):
@@ -212,8 +234,9 @@ class SRFMediathek(Screen):
             if str(duration).isdigit():
                 duration = str(timedelta(seconds=int(duration // 1000)))
             img = str(js.get("imageUrl", ""))
-            desc = js.get("lead") + "\n" if js.get("lead") else ""
-            desc += js.get("description", "")
+            desc = dateTime2(js)
+            desc += "\n" + js.get("lead", "") if desc else js.get("lead", "")
+            desc += "\n" + js.get("description", "") if desc else js.get("description", "")
             if not url.startswith("http"):
                 continue
             if "video" in url or "audio" in url:
@@ -226,6 +249,107 @@ class SRFMediathek(Screen):
             self["movielist"].setList(liste)
             self["movielist"].setIndex(int(index))
             self.infos()
+
+    def ffmpegsetup(self, answer):
+        if answer:
+            self.session.open(Console, cmdlist=["opkg update && opkg install ffmpeg"])
+
+    def Download(self):
+        if not path.exists("/usr/bin/ffmpeg"):
+            self.session.openWithCallback(self.ffmpegsetup, MessageBox, "Zum Download benötigen Sie ffmpeg  installieren?")
+            return
+        if self.DL_File:
+            self.session.openWithCallback(self.DL_Stop, MessageBox, "möchten Sie den Download abbrechen?", default=True, type=MessageBox.TYPE_YESNO)
+        else:
+            url = self["movielist"].getCurrent()[2]
+            html = ensure_str(geturl(url))
+            if "drmList" in html:
+                self.session.open(MessageBox, "DRM Geschützt Download nicht möglich", MessageBox.TYPE_INFO)
+                return
+            liste = []
+            link = re.compile('media_streaming_quality" : "HD".*?"media_url" : "([^"]+)', re.DOTALL).findall(html)
+            if not link:
+                link = re.compile('media_url" : "([^"]+)', re.DOTALL).findall(html)
+            if link:
+                link = link[0]
+                if ".mp3" in link:
+                    liste.append(("MP3", link))
+                elif link.startswith("http"):
+                    html2 = ensure_str(geturl(link))
+                    m3u = re.compile(r"#EXT-X-STREAM.*?RESOLUTION=(\d+x+\d+).*?\n(.*?)\n", re.DOTALL).findall(html2)
+                    for q, url in m3u:
+                        liste.append(("HLS | %s" % (q), link.split("master")[0] + url.strip()))
+                liste = sortList(liste)
+                if config.plugins.SRF.AUTOPLAY.value and liste:
+                    self.DL_Start(liste[0])
+                elif len(liste) > 1:
+                    self.session.openWithCallback(self.DL_Start, ChoiceBox, title="Wiedergabe starten?", list=liste)
+                elif liste:
+                    self.DL_Start(liste[0])
+            else:
+                self.session.open(MessageBox, "Kein Eintrag vorhanden", MessageBox.TYPE_INFO)
+
+    def DL_Stop(self, answer):
+        if answer:
+            self.console.sendCtrlC()
+            if path.exists(self.DL_File):
+                unlink(self.DL_File)
+            self.DL_File = None
+            self.totalDuration = ""
+            self["progress"].hide()
+            self["progress"].setValue(0)
+
+    def DL_Start(self, answer):
+        if answer:
+            url = answer[1].replace("&webvttbaseurl=subtitles.eai-general.aws.srf.ch", "")
+            filename = "".join(i for i in ensure_str(self["movielist"].getCurrent()[1]) if i not in r'\/":*?<>|')
+            self.DL_File = str(config.plugins.SRF.savetopath.value) + "/" + str(filename) + ".mp4"
+            if path.exists(self.DL_File):
+                n = self.DL_File
+                root, ext = path.splitext(self.DL_File)
+                i = 0
+                while path.exists(n):
+                    i += 1
+                    n = "%s_(%i)%s" % (root, i, ext)
+                self.DL_File = n
+            if ".m3u8" in url:
+                self.console = eConsoleAppContainer()
+                self.console.dataAvail.append(self.avail)
+                self.console.appClosed.append(self.finished)
+                cmd = 'ffmpeg -y -i %s -headers "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101 Firefox/102.0" -acodec copy -vcodec copy "%s"' % (url, self.DL_File)
+                self.console.execute(cmd)
+                self["progress"].show()
+                self["DownloadLabel"].show()
+
+    def avail(self, string):
+        try:
+            string = ensure_str(string)
+            if "Duration:" in string:
+                duration = re.compile(r"Duration:[^>](\d{2}):(\d{2}):(\d{2}).(\d{2})", re.DOTALL).findall(string)
+                if duration:
+                    duration = duration[0]
+                    self.totalDuration = duration[0] + duration[1] + duration[2]
+            if "time=" in string and self.totalDuration:
+                Duration = re.compile(r"time=(\d{2}):(\d{2}):(\d{2}).(\d{2})", re.DOTALL).findall(string)
+                if Duration:
+                    Duration = Duration[0]
+                    Dur = Duration[0] + Duration[1] + Duration[2]
+                    percent = int(Dur) * 100 // int(self.totalDuration)
+                    self["progress"].setValue(int(percent))
+                    self["DownloadLabel"].setText(str(percent) + " %")
+        except (KeyError, ValueError):
+            pass
+
+    def finished(self, string):
+        if self.DL_File:
+            if string == 0:
+                self.session.open(MessageBox, "Download erfolgreich", MessageBox.TYPE_INFO)
+            else:
+                self.session.open(MessageBox, "Download error", MessageBox.TYPE_INFO)
+            self.console.sendCtrlC()
+        self["progress"].hide()
+        self["DownloadLabel"].hide()
+        self["progress"].setValue(0)
 
     def Play(self):
         url = self["movielist"].getCurrent()[2]
@@ -248,15 +372,15 @@ class SRFMediathek(Screen):
                     liste.append(("HLS | %s" % (q), link.split("master")[0] + url.strip()))
             liste = sortList(liste)
             if config.plugins.SRF.AUTOPLAY.value and liste:
-                self.Play2(liste[0])
+                self.Player(liste[0])
             elif len(liste) > 1:
-                self.session.openWithCallback(self.Play2, ChoiceBox, title="Wiedergabe starten?", list=liste)
+                self.session.openWithCallback(self.Player, ChoiceBox, title="Wiedergabe starten?", list=liste)
             elif liste:
-                self.Play2(liste[0])
+                self.Player(liste[0])
         else:
             self.session.open(MessageBox, "Kein Eintrag vorhanden", MessageBox.TYPE_INFO)
 
-    def Play2(self, url):
+    def Player(self, url):
         url = url and url[1]
         if url:
             sref = eServiceReference(4097, 0, ensure_str(url))
@@ -362,12 +486,12 @@ class SRFConfigScreen(ConfigListScreen, Screen):
         self.skinName = ["Setup"]
         self["key_red"] = StaticText("Abbrechen")
         self["key_green"] = StaticText("Speichern")
-        self["setupActions"] = ActionMap(["SetupActions", "ColorActions"], {"cancel": self.cancel, "red": self.cancel, "green": self.save}, -2)
+        self["setupActions"] = ActionMap(["SetupActions", "ColorActions"], {"cancel": self.cancel, "red": self.cancel, "ok": self.ok, "green": self.save}, -2)
         ConfigListScreen.__init__(self, [], session=session)
         self.ConfigList()
 
     def ConfigList(self):
-        self["config"].list = [getConfigListEntry("Skin", config.plugins.SRF.SkinColor), getConfigListEntry("Letzte Abspielposition speichern", config.plugins.SRF.SaveResumePoint), getConfigListEntry("AutoPlay", config.plugins.SRF.AUTOPLAY)]
+        self["config"].list = [getConfigListEntry("Skin", config.plugins.SRF.SkinColor), getConfigListEntry("Download-Verzeichnis:", config.plugins.SRF.savetopath), getConfigListEntry("Letzte Abspielposition speichern", config.plugins.SRF.SaveResumePoint), getConfigListEntry("AutoPlay Beste Qualität", config.plugins.SRF.AUTOPLAY)]
 
     def save(self):
         self.keySave()
@@ -376,3 +500,38 @@ class SRFConfigScreen(ConfigListScreen, Screen):
 
     def cancel(self):
         self.close()
+
+    def ok(self):
+        if self["config"].getCurrent()[1] == config.plugins.SRF.savetopath:
+            DLdir = config.plugins.SRF.savetopath.value
+            self.session.openWithCallback(self.DL_Path, DirBrowser, DLdir)
+
+    def DL_Path(self, res):
+        self["config"].setCurrentIndex(0)
+        if res:
+            config.plugins.SRF.savetopath.value = res
+
+
+class DirBrowser(Screen):
+    def __init__(self, session, DLdir):
+        Screen.__init__(self, session)
+        self.skinName = ["FileBrowser"]
+        self["key_red"] = StaticText("Abbrechen")
+        self["key_green"] = StaticText("Speichern")
+        if not path.exists(DLdir):
+            DLdir = "/"
+        self.filelist = FileList(DLdir, showFiles=False)
+        self["filelist"] = self.filelist
+        self["FilelistActions"] = ActionMap(["SetupActions", "ColorActions"], {"cancel": self.cancel, "red": self.cancel, "ok": self.ok, "green": self.save}, -2)
+
+    def ok(self):
+        if self.filelist.canDescent():
+            self.filelist.descent()
+
+    def save(self):
+        fullpath = self["filelist"].getSelection()[0]
+        if fullpath is not None and fullpath.endswith("/"):
+            self.close(fullpath)
+
+    def cancel(self):
+        self.close(False)
