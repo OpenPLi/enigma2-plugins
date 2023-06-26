@@ -25,6 +25,8 @@ class ReconstructApSc(ChoiceBox):
 			if not path.endswith('.ts'):
 				tlist += tnext
 				name = _("more files...")
+				if path.endswith('.stream'):
+					tlist.append((_("Change type '.stream' to '.ts' of the selected movie"), "CALLFUNC", self.confirmed4, path))
 			else:
 				tlist.append((_("Reconstruct the .ap and .sc files of the selected movie"), "CALLFUNC", self.confirmed1, service, path))
 				tlist += tnext
@@ -49,6 +51,16 @@ class ReconstructApSc(ChoiceBox):
 
 	def confirmed3(self, arg):
 		self.confirmed2("reconstructallfiles")
+
+	def confirmed4(self, arg):
+		path = arg[3]
+		if path.endswith(".stream") and fileExists(path):
+			from os import rename
+			rename(path, path[:-7] + ".ts")
+			for end in (".meta", ".cuts", ".ap", ".sc"):
+				if fileExists(path + end):
+					rename(path + end, path[:-7] + ".ts" + end)
+		self.close()
 
 	def addToTask(self, service, path):
 		name = self.getName(service, path)
