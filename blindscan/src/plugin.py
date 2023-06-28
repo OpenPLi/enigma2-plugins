@@ -432,12 +432,12 @@ class Blindscan(ConfigListScreen, Screen, TransponderFiltering):
 			if line.startswith('NIM Socket'):
 				sNo, sName, sI2C = -1, '', -1
 				try:
-					sNo = int(line.split()[2][:-1])
+					sNo = line.split()[2][:-1]
 				except:
 					sNo = -1
 			elif line.startswith('I2C_Device:'):
 				try:
-					sI2C = int(line.split()[1])
+					sI2C = line.split()[1]
 				except:
 					sI2C = -1
 			elif line.startswith('Name:'):
@@ -449,7 +449,7 @@ class Blindscan(ConfigListScreen, Screen, TransponderFiltering):
 						sName = splitLines[3][4:-1]
 				except:
 					sName = ""
-			if sNo >= 0 and sName != "":
+			if sNo != -1 and sName != "":
 				if sName.startswith('BCM'):
 					sI2C = sNo
 				if sI2C != -1:
@@ -1444,7 +1444,6 @@ class Blindscan(ConfigListScreen, Screen, TransponderFiltering):
 						p.Modulation_8PSK: "8PSK",
 						p.Modulation_16APSK: "16APSK",
 						p.Modulation_32APSK: "32APSK"}
-					tp_str = "%g%s %d FEC %s %s %s" % (p.frequency / 1000.0, pol[p.polarisation], p.symbol_rate // 1000, fec[p.fec], sys[p.system], qam[p.modulation])
 					tp_str = "%g%s %d FEC %s %s %s" % (p.frequency / 1000.0, pol.get(p.polarisation, ""), p.symbol_rate // 1000, fec.get(p.fec, ""), sys.get(p.system, ""), qam.get(p.modulation, ""))
 					if p.is_id > eDVBFrontendParametersSatellite.No_Stream_Id_Filter:
 						tp_str += " MIS %d" % p.is_id
