@@ -426,20 +426,20 @@ class Blindscan(ConfigListScreen, Screen, TransponderFiltering):
 			fp = open(filepath)
 		except:
 			return _nimSocket
-		sNo, sName, sI2C = -1, "", -1
+		sNo, sName, sI2C = "-1", "", "-1"
 		for line in fp:
 			line = line.strip()
 			if line.startswith('NIM Socket'):
-				sNo, sName, sI2C = -1, '', -1
+				sNo, sName, sI2C = "-1", "", "-1"
 				try:
 					sNo = line.split()[2][:-1]
 				except:
-					sNo = -1
+					sNo = "-1"
 			elif line.startswith('I2C_Device:'):
 				try:
 					sI2C = line.split()[1]
 				except:
-					sI2C = -1
+					sI2C = "-1"
 			elif line.startswith('Name:'):
 				splitLines = line.split()
 				try:
@@ -449,10 +449,10 @@ class Blindscan(ConfigListScreen, Screen, TransponderFiltering):
 						sName = splitLines[3][4:-1]
 				except:
 					sName = ""
-			if sNo != -1 and sName != "":
+			if sNo != "-1" and sName != "":
 				if sName.startswith('BCM'):
 					sI2C = sNo
-				if sI2C != -1:
+				if sI2C != "-1":
 					_nimSocket[sNo] = [sName, sI2C]
 				else:
 					_nimSocket[sNo] = [sName]
