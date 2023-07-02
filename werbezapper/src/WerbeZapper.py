@@ -255,7 +255,7 @@ class WerbeZapper(Screen):
 				remaining = int(math.floor(self.zap_time - time()))
 				remaining = remaining if remaining > 0 else 0
 				remaining /= 60
-				select = remaining if 0 < remaining and remaining < 5 else select
+				select = int(remaining if 0 < remaining and remaining < 5 else select)
 			choices.append((_("Stop timer"), 'stoptimer'))
 			keys.append("red")
 		else:
