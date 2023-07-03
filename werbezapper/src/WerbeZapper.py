@@ -20,6 +20,7 @@ from Components.ConfigList import ConfigListScreen
 from Components.Button import Button
 from Components.Label import Label
 from Components.ActionMap import ActionMap
+from Components.VolumeControl import VolumeControl
 
 zapperIconInstance = None
 
@@ -93,7 +94,7 @@ class WerbeZapperIndicator(Screen):
 				remaining = int(math.floor(self.zap_time - time()))
 				if remaining > 0:
 					if self.name is not None:
-						text += _("%s\n") % (self.name)
+						text += "%s\n" % self.name
 					text += _("- %d:%02d min") % (remaining / 60, remaining % 60)
 		except:
 			text += _("Error")
@@ -193,50 +194,38 @@ class WerbeZapper(Screen):
 		self.monitored_event = None
 		self.monitor_time = None
 		self.__event_tracker = None
-		self.select = 1
+		self.select = True
 
+		# Initialize volume
+		self.volume_value = -1
+		self.volume_muted = False
 		# Keep Cleanup
 		self.cleanupfnc = cleanupfnc
 
 	def showSelection(self):
 		title = _("When zap to service?")
-		self.select = 1
 		val = int(config.werbezapper.duration.value)
-		if val == 1:
-			select = 1
-		elif val == 2:
-			select = 2
-		elif val == 3:
-			select = 3
-		elif val == 4:
-			select = 4
-		elif val == 5:
-			select = 5
-		elif val == 6:
-			select = 6
-		elif val == 8:
-			select = 7
-		elif val == 9:
-			select = 8
-		elif val == 14:
-			select = 9
-		else:
-			select = 0
-			self.select = 0
+		self.select = False
+		select = 0
+		if 0 < val and val < 10:
+			select = val
+			self.select = True
+		elif not self.zap_timer.isActive():
+			title += _(" Current value - %s min.") % val
 		keys = []
 
 		# Number keys
 		choices = [
 								(_("Custom"), 'custom'),
-								('1 ' + _('minute'), 1),
-								('2 ' + _('minut'), 2),
-								('3 ' + _('minut'), 3),
-								('4 ' + _('minut'), 4),
-								('5 ' + _('minutes'), 5),
-								('6 ' + _('minutes'), 6),
-								('8 ' + _('minutes'), 8),
-								('9 ' + _('minutes'), 9),
-								('14 ' + _('minutes'), 14),
+								('1 ' + _('min.'), 1),
+								('2 ' + _('min.'), 2),
+								('3 ' + _('min.'), 3),
+								('4 ' + _('min.'), 4),
+								('5 ' + _('min.'), 5),
+								('6 ' + _('min.'), 6),
+								('7 ' + _('min.'), 7),
+								('8 ' + _('min.'), 8),
+								('9 ' + _('min.'), 9),
 							]
 		keys.extend(["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"])
 		# Dummy entry to seperate the color keys
@@ -255,7 +244,7 @@ class WerbeZapper(Screen):
 				remaining = int(math.floor(self.zap_time - time()))
 				remaining = remaining if remaining > 0 else 0
 				remaining /= 60
-				select = int(remaining if 0 < remaining and remaining < 5 else select)
+				select = int(remaining if 0 < remaining and remaining < 10 else select)
 			choices.append((_("Stop timer"), 'stoptimer'))
 			keys.append("red")
 		else:
@@ -292,7 +281,7 @@ class WerbeZapper(Screen):
 			from Screens.InputBox import InputBox
 			from Components.Input import Input
 
-			num = "10"
+			num = "15"
 			if not self.select:
 				num = str(config.werbezapper.duration.value)
 			self.session.openWithCallback(
@@ -463,6 +452,11 @@ class WerbeZapper(Screen):
 		ref_cur = self.zap_service
 		refstr = ref_cur.toString()
 		zap_name = ServiceReference(eServiceReference(refstr)).getServiceName()
+		if config.werbezapper.preserve_volume.value:
+			WZ_vctrl = VolumeControl.instance
+			if WZ_vctrl:
+				self.volume_value = WZ_vctrl.volctrl.getVolume()
+				self.volume_muted = WZ_vctrl.volctrl.isMuted()
 
 		# Start Timer
 		self.zap_time = time() + (duration * 60)
@@ -513,6 +507,12 @@ class WerbeZapper(Screen):
 			ref_cur = self.session.nav.getCurrentlyPlayingServiceReference()
 			if ref_cur and ref_cur != self.zap_service:
 				self.session.nav.playService(self.zap_service)
+			if config.werbezapper.preserve_volume.value:
+				WZ_vctrl = VolumeControl.instance
+				if WZ_vctrl and self.volume_value != -1:
+					WZ_vctrl.volctrl.setVolume(self.volume_value, self.volume_value)
+					if WZ_vctrl.volctrl.isMuted() and not self.volume_muted:
+						WZ_vctrl.volMute()
 
 		# Cleanup if end timer is not running
 		if not self.monitor_timer.isActive():
@@ -521,6 +521,8 @@ class WerbeZapper(Screen):
 			self.move_service = None
 			self.root = None
 			self.epg_bouquet = None
+			self.volume_value = -1
+			self.volume_muted = False
 		self.StopIndicator()
 
 	def cleanup(self):
@@ -585,6 +587,7 @@ class WerbezapperSettings(Screen, ConfigListScreen):
 		self.cfg_channelselection_step = getConfigListEntry(_("Slider step size (1 - 20 mins)"), config.werbezapper.channelselection_duration_stepsize)
 		self.cfg_standby = getConfigListEntry(_('Wakeup receiver from standby for zap timer'), config.werbezapper.standby)
 		self.cfg_hotkey = getConfigListEntry(_('\"Werbezapper\" quick button'), config.werbezapper.hotkey)
+		self.cfg_volume = getConfigListEntry(_('Preserve volume'), config.werbezapper.preserve_volume)
 		self.cfg_no_event = getConfigListEntry(_('Monitoring duration for service if not EPG'), config.werbezapper.duration_not_event)
 		self.cfg_icon_timer = getConfigListEntry(_('Show indicator zap time in window'), config.werbezapper.icon_timer)
 		self.cfg_icon_mode = getConfigListEntry(_('Indicator mode'), config.werbezapper.icon_mode)
@@ -600,6 +603,7 @@ class WerbezapperSettings(Screen, ConfigListScreen):
 		if config.werbezapper.add_to_channelselection.value:
 			list.append(self.cfg_channelselection_step)
 		list.append(self.cfg_standby)
+		list.append(self.cfg_volume)
 		list.append(self.cfg_no_event)
 		list.append(self.cfg_icon_timer)
 		if config.werbezapper.icon_timer.value:
