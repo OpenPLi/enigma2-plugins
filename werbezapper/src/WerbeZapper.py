@@ -332,7 +332,7 @@ class WerbeZapper(Screen):
 		self.cleanup()
 
 	def inputCallback(self, result):
-		if result is not None:
+		if result:
 			self.startTimer(int(result))
 		else:
 			# Clean up if possible
