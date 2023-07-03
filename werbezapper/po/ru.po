@@ -21,10 +21,6 @@ msgid "%d min"
 msgstr "%d мин"
 
 #, python-format
-msgid "%s\n"
-msgstr ""
-
-#, python-format
 msgid "- %d:%02d min"
 msgstr "- %d:%02d мин"
 
@@ -51,6 +47,9 @@ msgstr "Задать время"
 
 msgid "Error"
 msgstr "Ошибка"
+
+msgid " Current value - %s min."
+msgstr " Текущее значение - %s мин."
 
 msgid "GREEN"
 msgstr ""
@@ -208,14 +207,11 @@ msgstr "Переключение на канал через %d:%02d мин"
 msgid "add zap timer for service"
 msgstr "добавить таймер переключения для сервиса"
 
-msgid "minut"
-msgstr "минуты"
+msgid "min."
+msgstr "мин."
 
-msgid "minute"
-msgstr "минута"
-
-msgid "minutes"
-msgstr "минут"
+msgid "Preserve volume"
+msgstr "Сохранять уровень громкости"
 
 msgid "service / time"
 msgstr "сервис / время"
