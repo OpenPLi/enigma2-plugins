@@ -216,8 +216,14 @@ class NetworkBrowser(Screen):
 		self.IP = iNetwork.getAdapterAttribute(self.iface, "ip")
 		if len(self.IP):
 			strIP = str(self.IP[0]) + "." + str(self.IP[1]) + "." + str(self.IP[2]) + ".0/24"
-			nwlist.append(netscan.netzInfo(strIP))
-		tmplist = nwlist[0]
+			try:
+				nInfo = netscan.netzInfo(strIP)
+			except Exception as e:
+				print("[Networkbrowser] error netscan.netzInfo", strIP, e)
+			else:
+				nwlist.append(nInfo)
+		if nwlist:
+			tmplist = nwlist[0]
 		return tmplist
 
 	def getNetworkShares(self, hostip, hostname, devicetype):
