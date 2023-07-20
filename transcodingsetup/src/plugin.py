@@ -142,7 +142,7 @@ class TranscodingSetup(ConfigListScreen, Screen):
 		if self.content:
 			for token in self.content:
 				if (token[0] == "bitrate"):
-					token[1] = str(int(config.plugins.transcodingsetup.bitrate.value) / 1000)
+					token[1] = str(int(config.plugins.transcodingsetup.bitrate.value) // 1000)
 
 				if (token[0] == "size"):
 					if config.plugins.transcodingsetup.resolution.value == "720x480":
