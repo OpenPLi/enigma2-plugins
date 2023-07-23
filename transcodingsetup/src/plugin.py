@@ -95,7 +95,7 @@ class TranscodingSetup(ConfigListScreen, Screen):
 
 				if (tokens[0] == "bitrate"):
 					for choice in config.plugins.transcodingsetup.bitrate.choices:
-						if int(tokens[1]) * 1000 <= int(choice):
+						if int(float(tokens[1])) * 1000 <= int(choice):
 							config.plugins.transcodingsetup.bitrate.value = choice
 							break
 
