@@ -440,8 +440,8 @@ class FilebrowserScreenInfo(Screen):
                 self.instance.resize(eSize(*wsize))
                 self["path"].instance.move(ePoint(mx, y - y / 4))
                 self["size"].instance.move(ePoint(mx, 2 * y + y / 4))
-                wx = (w - wsize[0]) / 2
-                wy = (h - wsize[1]) / 2
+                wx = (w - wsize[0]) // 2
+                wy = (h - wsize[1]) // 2
                 self.instance.move(ePoint(wx, wy))
 
         def getLineSize(self):
