@@ -821,7 +821,10 @@ class IMDB(Screen, HelpableScreen):
 
 			# Format a date using the full format.
 			def makedate(date):
-				return strftime('%x', (date['year'], date['month'], date['day'], 0, 0, 0, 0, 0, 0))
+				if 'month' in date and date['month'] is not None and 'day' in date and date['day'] is not None:
+					return strftime('%x', (date['year'], date['month'], date['day'], 0, 0, 0, 0, 0, 0))
+				else:
+					return strftime('%Y', (date['year'], 0, 0, 0, 0, 0, 0, 0, 0))
 
 			categories_i18n = {
 				'director': get(main, ('directors', 'category', 'text')),
