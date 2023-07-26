@@ -7,23 +7,23 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-12 14:32+0200\n"
-"PO-Revision-Date: 2018-07-31 21:24+0200\n"
+"POT-Creation-Date: 2023-07-26 11:30+0200\n"
+"PO-Revision-Date: 2023-07-26 11:36+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.1.1\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-
-msgid " "
-msgstr "  "
+"X-Generator: Poedit 3.3.2\n"
 
 #, python-format
 msgid "%s autostart"
-msgstr ""
+msgstr "%s démarrage automatique"
+
+msgid "Auto setup"
+msgstr "Configuration automatique"
 
 msgid "Cancel"
 msgstr "Annuler"
@@ -37,19 +37,30 @@ msgstr "Description"
 msgid "Disable"
 msgstr "Supprimer"
 
+msgid "Disable tuner"
+msgstr "Désactiver le tuner"
+
 msgid "Discover"
 msgstr "Découvrir"
 
-#, fuzzy
 msgid "Enable"
-msgstr "Supprimer"
+msgstr "Activer"
+
+msgid "Force sending plts=on"
+msgstr "Forcer l'envoi de plts=on"
 
 #, python-format
 msgid "IP : %s"
 msgstr "IP : %s"
 
+msgid "IP address"
+msgstr "Adresse IP"
+
 msgid "LAN connection required for first detection."
-msgstr ""
+msgstr "Connection LAN nécessaire pour la détection initiale."
+
+msgid "Manual setup"
+msgstr "Configuration manuelle"
 
 msgid "Manufacturer"
 msgstr "Constructeur"
@@ -62,10 +73,13 @@ msgstr "Aucun vtuner trouvé."
 
 #, python-format
 msgid "Not found '%s' ..."
-msgstr ""
+msgstr "Pas trouvé '%s' ..."
 
 msgid "OK"
 msgstr "Ok"
+
+msgid "Port"
+msgstr "Port"
 
 msgid "Presentation URL"
 msgstr "URL de présentation"
@@ -82,9 +96,6 @@ msgstr "SAT>IP Client"
 msgid "SAT>IP Client Setup"
 msgstr "SAT>IP Client Configuration"
 
-msgid "SAT>IP Client Tuner Setup"
-msgstr "SAT>IP Client Tuner Configuration"
-
 msgid "SAT>IP Client attached to vtuner."
 msgstr "SAT>IP Client attaché à vtuner."
 
@@ -97,6 +108,12 @@ msgstr "SAT>IP Serveur : "
 
 msgid "SAT>IP Tuner Type : "
 msgstr "SAT>IP Type de Tuner : "
+
+msgid "SAT>IP client - auto tuner setup"
+msgstr "SAT>IP Client - configuration du tuner automatique"
+
+msgid "SAT>IP client - manual tuner setup"
+msgstr "SAT>IP client - configuration manuelle du tuner"
 
 #, python-format
 msgid "SAT>IP server discovering for %d seconds..."
@@ -111,14 +128,17 @@ msgstr "Sauver"
 msgid "Select"
 msgstr "Sélectionner"
 
-msgid "Select tuner and press setup key (Yellow)"
-msgstr "Sélectionner le tuner et appuyer sur la touche configuration (jaune)"
+msgid "Select tuner and press: Yellow/OK - 'Auto setup' or Blue - 'Manual setup'. Menu - vtuner.conf."
+msgstr "Choisir le tuner et appuyer: Jaune/OK - 'Configuration automatique' ou Bleu - 'Configuration manuelle'. Menu - vtuner.conf."
+
+msgid "Send fe=(number specific adapter)"
+msgstr "Envoyer fe=(numéro de l'adaptateur spécifique)"
 
 msgid "Server capacity is fulled."
 msgstr "La capacité du serveur est pleine."
 
-msgid "Setup"
-msgstr "Configuration"
+msgid "Server name"
+msgstr "Nom du serveur"
 
 msgid "Starting..."
 msgstr "Démarrage..."
@@ -130,6 +150,15 @@ msgstr "TYPE de TUNER: %s"
 #, python-format
 msgid "TYPE : %s"
 msgstr "TYPE : %s"
+
+msgid "Tuner type"
+msgstr "Type tuner"
+
+msgid "Unique uuid"
+msgstr "uuid unique"
+
+msgid "Use TCP instead UDP"
+msgstr "Utiliser TCP à la place de UDP"
 
 #, python-format
 msgid "VIRTUAL TUNER %s"
@@ -145,3 +174,6 @@ msgstr ""
 "\n"
 "Redémarrer maintenant ?\n"
 "\n"
+
+msgid "off"
+msgstr "arrêt"

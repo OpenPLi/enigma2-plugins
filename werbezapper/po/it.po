@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2 - werbezapper\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"POT-Creation-Date: 2023-07-26 11:30+0200\n"
 "PO-Revision-Date: 2009-05-31 02:28+0100\n"
 "Last-Translator: Spaeleus <spaeleus@croci.org>\n"
 "Language-Team: www.linsat.net <spaeleus@croci.org>\n"
@@ -17,15 +17,15 @@ msgstr ""
 "X-Poedit-Basepath: /home/dario/Plugins/werbezapper\n"
 "X-Poedit-SearchPath-0: /home/dario/Plugins/werbezapper\n"
 
+#, python-format
+msgid " Current value - %s min."
+msgstr ""
+
 msgid "\"Werbezapper\" quick button"
 msgstr ""
 
 #, python-format
 msgid "%d min"
-msgstr ""
-
-#, python-format
-msgid "%s\n"
 msgstr ""
 
 #, python-format
@@ -81,6 +81,9 @@ msgid "NONE"
 msgstr ""
 
 msgid "Open setup"
+msgstr ""
+
+msgid "Preserve volume"
 msgstr ""
 
 msgid "RADIO"
@@ -200,15 +203,8 @@ msgstr "Zap indietro tra %d minuti"
 msgid "add zap timer for service"
 msgstr ""
 
-#, fuzzy
-msgid "minut"
-msgstr "Minuto"
-
-msgid "minute"
-msgstr "Minuto"
-
-msgid "minutes"
-msgstr "Minuti"
+msgid "min."
+msgstr ""
 
 msgid "service / time"
 msgstr ""

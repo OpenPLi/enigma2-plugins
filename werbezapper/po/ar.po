@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Enigma2 Plugin WerbeZapper\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"POT-Creation-Date: 2023-07-26 11:30+0200\n"
 "PO-Revision-Date: 2020-10-22 17:04+0300\n"
 "Last-Translator: mosad - مساعد الجعيد <abo-mishal@hotmail.com>\n"
 "Language-Team: mosad - مساعد الجعيد\n"
@@ -18,16 +18,16 @@ msgstr ""
 "Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
 "X-Generator: Poedit 2.4.1\n"
 
+#, python-format
+msgid " Current value - %s min."
+msgstr ""
+
 msgid "\"Werbezapper\" quick button"
 msgstr "\"التنقل عبر الويب\" المفاتيح الملونة"
 
 #, python-format
 msgid "%d min"
 msgstr "%d دقيقة"
-
-#, python-format
-msgid "%s\n"
-msgstr "%s\n"
 
 #, python-format
 msgid "- %d:%02d min"
@@ -85,6 +85,9 @@ msgstr "لا شيء"
 
 msgid "Open setup"
 msgstr "فتح الإعداد"
+
+msgid "Preserve volume"
+msgstr ""
 
 msgid "RADIO"
 msgstr "راديو"
@@ -212,14 +215,8 @@ msgstr "الإنتقال إلى القناة في %d:%02d دقيقة"
 msgid "add zap timer for service"
 msgstr "إضافة مؤقت للإنتقال إلى القناة"
 
-msgid "minut"
-msgstr "دقيقة"
-
-msgid "minute"
-msgstr "دقيقة"
-
-msgid "minutes"
-msgstr "دقائق"
+msgid "min."
+msgstr ""
 
 msgid "service / time"
 msgstr "القناة / الوقت"
