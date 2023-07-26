@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2 WerbeZapper plugin Turkish Locale\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"POT-Creation-Date: 2023-07-26 11:30+0200\n"
 "PO-Revision-Date: 2009-02-08 12:03+0200\n"
 "Last-Translator: Zülfikar VEYİSOĞLU <zveyis@gmail.com>\n"
 "Language-Team: www.turkeyforum.com/satforum <zveyis@gmail.com>\n"
@@ -14,15 +14,15 @@ msgstr ""
 "X-Poedit-Country: TURKEY\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
+#, python-format
+msgid " Current value - %s min."
+msgstr ""
+
 msgid "\"Werbezapper\" quick button"
 msgstr ""
 
 #, python-format
 msgid "%d min"
-msgstr ""
-
-#, python-format
-msgid "%s\n"
 msgstr ""
 
 #, python-format
@@ -78,6 +78,9 @@ msgid "NONE"
 msgstr ""
 
 msgid "Open setup"
+msgstr ""
+
+msgid "Preserve volume"
 msgstr ""
 
 msgid "RADIO"
@@ -197,16 +200,8 @@ msgstr "%d dakika içinde kanal değiştirilecek"
 msgid "add zap timer for service"
 msgstr ""
 
-#, fuzzy
-msgid "minut"
-msgstr "dakika"
-
-#, fuzzy
-msgid "minute"
-msgstr "dakika"
-
-msgid "minutes"
-msgstr "dakika"
+msgid "min."
+msgstr ""
 
 msgid "service / time"
 msgstr ""

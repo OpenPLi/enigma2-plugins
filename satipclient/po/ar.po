@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: satipclient\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-12 14:32+0200\n"
+"POT-Creation-Date: 2023-07-26 11:30+0200\n"
 "PO-Revision-Date: 2020-11-05 17:11+0300\n"
 "Last-Translator: mosad - مساعد الجعيد <abo-mishal@hotmail.com>\n"
 "Language-Team: mosad - مساعد الجعيد\n"
@@ -14,11 +14,11 @@ msgstr ""
 "X-Poedit-Basepath: .\n"
 "Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
 
-msgid " "
-msgstr " "
-
 #, python-format
 msgid "%s autostart"
+msgstr ""
+
+msgid "Auto setup"
 msgstr ""
 
 msgid "Cancel"
@@ -33,6 +33,10 @@ msgstr "الوصـف"
 msgid "Disable"
 msgstr "تعطيل"
 
+#, fuzzy
+msgid "Disable tuner"
+msgstr "تعطيل"
+
 msgid "Discover"
 msgstr "ديسكفر"
 
@@ -40,11 +44,20 @@ msgstr "ديسكفر"
 msgid "Enable"
 msgstr "تعطيل"
 
+msgid "Force sending plts=on"
+msgstr ""
+
 #, python-format
 msgid "IP : %s"
 msgstr "الايبي : %s"
 
+msgid "IP address"
+msgstr ""
+
 msgid "LAN connection required for first detection."
+msgstr ""
+
+msgid "Manual setup"
 msgstr ""
 
 msgid "Manufacturer"
@@ -63,6 +76,9 @@ msgstr ""
 msgid "OK"
 msgstr "موافق"
 
+msgid "Port"
+msgstr ""
+
 msgid "Presentation URL"
 msgstr "رابط العرض التقديمي"
 
@@ -78,9 +94,6 @@ msgstr "القمر> عميل الايبي"
 msgid "SAT>IP Client Setup"
 msgstr "القمر> ضبط عميل الايبي"
 
-msgid "SAT>IP Client Tuner Setup"
-msgstr "القمر> ضبط مؤالف عميل الايبي"
-
 msgid "SAT>IP Client attached to vtuner."
 msgstr "القمر>عميل الايبي مرتبط بالمؤالف."
 
@@ -93,6 +106,14 @@ msgstr "القمر>خادم الايبي : "
 
 msgid "SAT>IP Tuner Type : "
 msgstr "القمر>نوع مؤالف الايبي : "
+
+#, fuzzy
+msgid "SAT>IP client - auto tuner setup"
+msgstr "القمر> ضبط مؤالف عميل الايبي"
+
+#, fuzzy
+msgid "SAT>IP client - manual tuner setup"
+msgstr "القمر> ضبط مؤالف عميل الايبي"
 
 #, python-format
 msgid "SAT>IP server discovering for %d seconds..."
@@ -107,14 +128,17 @@ msgstr "حفظ"
 msgid "Select"
 msgstr "تحديد"
 
-msgid "Select tuner and press setup key (Yellow)"
-msgstr "حدد الموالف واضغط على مفتاح الإعداد (أصفر)"
+msgid "Select tuner and press: Yellow/OK - 'Auto setup' or Blue - 'Manual setup'. Menu - vtuner.conf."
+msgstr ""
+
+msgid "Send fe=(number specific adapter)"
+msgstr ""
 
 msgid "Server capacity is fulled."
 msgstr "سعة الخادم ممتلئة."
 
-msgid "Setup"
-msgstr "الضبط"
+msgid "Server name"
+msgstr ""
 
 msgid "Starting..."
 msgstr "يشتغل..."
@@ -126,6 +150,16 @@ msgstr "نوع موالف : %s"
 #, python-format
 msgid "TYPE : %s"
 msgstr "النوع : %s"
+
+#, fuzzy
+msgid "Tuner type"
+msgstr "القمر>نوع مؤالف الايبي : "
+
+msgid "Unique uuid"
+msgstr ""
+
+msgid "Use TCP instead UDP"
+msgstr ""
 
 #, python-format
 msgid "VIRTUAL TUNER %s"
@@ -141,3 +175,6 @@ msgstr ""
 "\n"
 "إعادة التشغيل الآن؟\n"
 "\n"
+
+msgid "off"
+msgstr ""

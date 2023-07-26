@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Enigma2 Plugin WerbeZapper\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"POT-Creation-Date: 2023-07-26 11:30+0200\n"
 "PO-Revision-Date: 2015-11-06 22:36+0200\n"
 "Last-Translator: Dimitrij <Dima-73@inbox.lv>\n"
 "Language-Team: none\n"
@@ -12,6 +12,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 1.8.4\n"
+
+#, python-format
+msgid " Current value - %s min."
+msgstr " Текущее значение - %s мин."
 
 msgid "\"Werbezapper\" quick button"
 msgstr "\"Werbezapper\" быстрая кнопка"
@@ -48,9 +52,6 @@ msgstr "Задать время"
 msgid "Error"
 msgstr "Ошибка"
 
-msgid " Current value - %s min."
-msgstr " Текущее значение - %s мин."
-
 msgid "GREEN"
 msgstr ""
 
@@ -79,6 +80,9 @@ msgstr ""
 
 msgid "Open setup"
 msgstr "Открыть настройки"
+
+msgid "Preserve volume"
+msgstr "Сохранять уровень громкости"
 
 msgid "RADIO"
 msgstr ""
@@ -209,9 +213,6 @@ msgstr "добавить таймер переключения для серви
 
 msgid "min."
 msgstr "мин."
-
-msgid "Preserve volume"
-msgstr "Сохранять уровень громкости"
 
 msgid "service / time"
 msgstr "сервис / время"

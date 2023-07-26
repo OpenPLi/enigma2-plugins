@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"POT-Creation-Date: 2023-07-26 11:30+0200\n"
 "PO-Revision-Date: 2012-06-24 22:45+0100\n"
 "Last-Translator: robertut <robertut@yahoo.com>\n"
 "Language-Team: none\n"
@@ -20,15 +20,15 @@ msgstr ""
 "X-Poedit-Language: Hungarian\n"
 "X-Poedit-Country: HUNGARY\n"
 
+#, python-format
+msgid " Current value - %s min."
+msgstr ""
+
 msgid "\"Werbezapper\" quick button"
 msgstr ""
 
 #, python-format
 msgid "%d min"
-msgstr ""
-
-#, python-format
-msgid "%s\n"
 msgstr ""
 
 #, python-format
@@ -84,6 +84,9 @@ msgid "NONE"
 msgstr ""
 
 msgid "Open setup"
+msgstr ""
+
+msgid "Preserve volume"
 msgstr ""
 
 msgid "RADIO"
@@ -203,15 +206,8 @@ msgstr "Csatorna visszaváltás %d perc múlva"
 msgid "add zap timer for service"
 msgstr ""
 
-#, fuzzy
-msgid "minut"
-msgstr "perc"
-
-msgid "minute"
-msgstr "perc"
-
-msgid "minutes"
-msgstr "perc"
+msgid "min."
+msgstr ""
 
 msgid "service / time"
 msgstr ""

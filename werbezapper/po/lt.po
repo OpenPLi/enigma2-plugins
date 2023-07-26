@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-11 12:34+0200\n"
+"POT-Creation-Date: 2023-07-26 11:30+0200\n"
 "PO-Revision-Date: 2016-12-29 15:12+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -18,16 +18,16 @@ msgstr ""
 "X-Generator: Poedit 1.8.11\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
+#, python-format
+msgid " Current value - %s min."
+msgstr ""
+
 msgid "\"Werbezapper\" quick button"
 msgstr "WerbeZapper greitasis mygtukas"
 
 #, python-format
 msgid "%d min"
 msgstr "%d min."
-
-#, python-format
-msgid "%s\n"
-msgstr ""
 
 #, fuzzy, python-format
 msgid "- %d:%02d min"
@@ -85,6 +85,9 @@ msgstr "NIEKO"
 
 msgid "Open setup"
 msgstr "Averti sąranką"
+
+msgid "Preserve volume"
+msgstr ""
 
 msgid "RADIO"
 msgstr "'RADIO'"
@@ -212,14 +215,8 @@ msgstr "Perjungimas į kanalą po %d:%02d min."
 msgid "add zap timer for service"
 msgstr "pridėti perjungimo laikmatį kanalui"
 
-msgid "minut"
-msgstr "min."
-
-msgid "minute"
-msgstr "min."
-
-msgid "minutes"
-msgstr "min."
+msgid "min."
+msgstr ""
 
 msgid "service / time"
 msgstr "kanalas / trukmė"

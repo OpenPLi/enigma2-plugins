@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Enigma2 Plugin WerbeZapper\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"POT-Creation-Date: 2023-07-26 11:30+0200\n"
 "PO-Revision-Date: 2023-07-04 16:00+0200\n"
 "Last-Translator: Stan\n"
 "Language-Team: none\n"
@@ -17,16 +17,16 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+#, python-format
+msgid " Current value - %s min."
+msgstr " Individuelle Zeit - %s Min."
+
 msgid "\"Werbezapper\" quick button"
 msgstr ""
 
 #, python-format
 msgid "%d min"
 msgstr "%d Min."
-
-#, python-format
-msgid " Current value - %s min."
-msgstr " Individuelle Zeit - %s Min."
 
 #, python-format
 msgid "- %d:%02d min"
@@ -216,12 +216,6 @@ msgstr "Zap-Timer setzen"
 
 msgid "min."
 msgstr "Min."
-
-msgid "minute"
-msgstr "Minute"
-
-msgid "minutes"
-msgstr "Minuten"
 
 msgid "service / time"
 msgstr "Sender / Zeit"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ReconstructApSc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"POT-Creation-Date: 2023-07-26 11:30+0200\n"
 "PO-Revision-Date: 2020-11-12 17:36+0300\n"
 "Last-Translator: mosad - مساعد الجعيد <abo-mishal@hotmail.com>\n"
 "Language-Team: mosad - مساعد الجعيد\n"
@@ -21,6 +21,10 @@ msgstr ""
 
 msgid "Cannot reconstruct this item"
 msgstr "لا يمكن إعادة بناء هذا العنصر"
+
+#, fuzzy
+msgid "Change type '.stream' to '.ts' of the selected movie"
+msgstr "إعادة بناء ملفات .ap و .sc للفيلم المحدد"
 
 msgid "Don't reconstruct"
 msgstr "لا تعيد البناء"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ReconstructApSc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-11 12:34+0200\n"
+"POT-Creation-Date: 2023-07-26 11:30+0200\n"
 "PO-Revision-Date: 2021-09-15 17:43+0300\n"
 "Last-Translator: Vytenis P. <vyteniui@gmail.com>\n"
 "Language-Team: Vytenis P. <vyteniui@gmail.com>\n"
@@ -20,6 +20,10 @@ msgstr ""
 
 msgid "Cannot reconstruct this item"
 msgstr "Šio elemento atkurti nepavyko"
+
+#, fuzzy
+msgid "Change type '.stream' to '.ts' of the selected movie"
+msgstr "Atkurti pasirinkto filmo .ap ir .sc failus"
 
 msgid "Don't reconstruct"
 msgstr "Neatkūrinėti"

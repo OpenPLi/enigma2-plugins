@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-18 16:36+0100\n"
+"POT-Creation-Date: 2023-07-26 11:30+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,15 +17,15 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+#, python-format
+msgid " Current value - %s min."
+msgstr ""
+
 msgid "\"Werbezapper\" quick button"
 msgstr ""
 
 #, python-format
 msgid "%d min"
-msgstr ""
-
-#, python-format
-msgid "%s\n"
 msgstr ""
 
 #, python-format
@@ -81,6 +81,9 @@ msgid "NONE"
 msgstr ""
 
 msgid "Open setup"
+msgstr ""
+
+msgid "Preserve volume"
 msgstr ""
 
 msgid "RADIO"
@@ -200,13 +203,7 @@ msgstr ""
 msgid "add zap timer for service"
 msgstr ""
 
-msgid "minut"
-msgstr ""
-
-msgid "minute"
-msgstr ""
-
-msgid "minutes"
+msgid "min."
 msgstr ""
 
 msgid "service / time"

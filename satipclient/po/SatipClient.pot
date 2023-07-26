@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-12 15:53+0200\n"
+"POT-Creation-Date: 2023-07-26 11:30+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,11 +17,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-msgid " "
-msgstr ""
-
 #, python-format
 msgid "%s autostart"
+msgstr ""
+
+msgid "Auto setup"
 msgstr ""
 
 msgid "Cancel"
@@ -36,17 +36,29 @@ msgstr ""
 msgid "Disable"
 msgstr ""
 
+msgid "Disable tuner"
+msgstr ""
+
 msgid "Discover"
 msgstr ""
 
 msgid "Enable"
 msgstr ""
 
+msgid "Force sending plts=on"
+msgstr ""
+
 #, python-format
 msgid "IP : %s"
 msgstr ""
 
+msgid "IP address"
+msgstr ""
+
 msgid "LAN connection required for first detection."
+msgstr ""
+
+msgid "Manual setup"
 msgstr ""
 
 msgid "Manufacturer"
@@ -65,6 +77,9 @@ msgstr ""
 msgid "OK"
 msgstr ""
 
+msgid "Port"
+msgstr ""
+
 msgid "Presentation URL"
 msgstr ""
 
@@ -80,9 +95,6 @@ msgstr ""
 msgid "SAT>IP Client Setup"
 msgstr ""
 
-msgid "SAT>IP Client Tuner Setup"
-msgstr ""
-
 msgid "SAT>IP Client attached to vtuner."
 msgstr ""
 
@@ -94,6 +106,12 @@ msgid "SAT>IP Server : "
 msgstr ""
 
 msgid "SAT>IP Tuner Type : "
+msgstr ""
+
+msgid "SAT>IP client - auto tuner setup"
+msgstr ""
+
+msgid "SAT>IP client - manual tuner setup"
 msgstr ""
 
 #, python-format
@@ -109,13 +127,16 @@ msgstr ""
 msgid "Select"
 msgstr ""
 
-msgid "Select tuner and press setup key (Yellow)"
+msgid "Select tuner and press: Yellow/OK - 'Auto setup' or Blue - 'Manual setup'. Menu - vtuner.conf."
+msgstr ""
+
+msgid "Send fe=(number specific adapter)"
 msgstr ""
 
 msgid "Server capacity is fulled."
 msgstr ""
 
-msgid "Setup"
+msgid "Server name"
 msgstr ""
 
 msgid "Starting..."
@@ -129,6 +150,15 @@ msgstr ""
 msgid "TYPE : %s"
 msgstr ""
 
+msgid "Tuner type"
+msgstr ""
+
+msgid "Unique uuid"
+msgstr ""
+
+msgid "Use TCP instead UDP"
+msgstr ""
+
 #, python-format
 msgid "VIRTUAL TUNER %s"
 msgstr ""
@@ -138,4 +168,7 @@ msgid ""
 "\n"
 "Reboot now ?\n"
 "\n"
+msgstr ""
+
+msgid "off"
 msgstr ""

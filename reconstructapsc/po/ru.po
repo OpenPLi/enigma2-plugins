@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ReconstructApSc\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"POT-Creation-Date: 2023-07-26 11:30+0200\n"
 "Last-Translator: Dimitrij <Dima-73@inbox.lv>\n"
 "Language-Team: PLi Dima73\n"
 "Language: ru_RU\n"
@@ -19,6 +19,9 @@ msgstr ""
 
 msgid "Cannot reconstruct this item"
 msgstr "Невозможно реконструировать этот файл"
+
+msgid "Change type '.stream' to '.ts' of the selected movie"
+msgstr "Изменить тип '.stream' на '.ts' для выбранного видео"
 
 msgid "Don't reconstruct"
 msgstr "Не реконструировать"
@@ -45,6 +48,3 @@ msgstr "Вы действительно хотите реконструиров�
 
 msgid "more files..."
 msgstr "больше файлов ..."
-
-msgid "Change type '.stream' to '.ts' of the selected movie"
-msgstr "Изменить тип '.stream' на '.ts' для выбранного видео"
