@@ -8,21 +8,20 @@ msgstr ""
 "Project-Id-Version: Enigma 2 IMDb Plugin\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-03-18 16:36+0100\n"
-"PO-Revision-Date: 2015-07-26 16:55+0100\n"
-"Last-Translator: Rob van der Does <RobvanderDoes@Gmail.com>\n"
-"Language-Team: Andy Blackburn/Rob van der Does\n"
-"Language: \n"
+"PO-Revision-Date: 2023-07-28 00:22+0200\n"
+"Last-Translator: Frenske <voorzitter@openpli.org>\n"
+"Language-Team: translators@openpli.org\n"
+"Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-Basepath: .\n"
-"X-Poedit-Language: Dutch\n"
-"X-Poedit-Country: NETHERLANDS\n"
+"X-Generator: Poedit 3.3.2\n"
 "X-Poedit-SearchPath-0: ../src\n"
 
 msgid "* = Restart Required"
-msgstr ""
+msgstr "* = Herstart noodzakelijk"
 
 msgid "Ambiguous results"
 msgstr "Geen eenduidige resultaten"
@@ -30,31 +29,26 @@ msgstr "Geen eenduidige resultaten"
 msgid "Cancel"
 msgstr "Annuleer"
 
-#, fuzzy
 msgid "Couldn't get event name"
-msgstr "Kon de naam van het event niet bepalen"
+msgstr "Kon de naam van het programma niet bepalen"
 
 msgid "Details"
 msgstr "Details"
 
-#, fuzzy
 msgid "Downloading Movie Poster..."
-msgstr "Movie poster wordt gedownload: %s..."
+msgstr "Filmposter wordt gedownload..."
 
 msgid "E"
-msgstr ""
+msgstr "E"
 
-#, fuzzy
 msgid "Enable this to be able to access IMDb search setup from within the plugin browser."
-msgstr "Schakel dit in om de IMDb vanuit de plugin browser te kunnen benaderen."
+msgstr "Activeer dit om de IMDb zoekfunctie te starten van de plugin browser."
 
-#, fuzzy
 msgid "Enable this to be able to access IMDb searches from within the movie list."
-msgstr "Schakel dit in om de IMDb vanuit de plugin browser te kunnen benaderen."
+msgstr "Activeer dit in om de IMDb zoekfunctie vanuit het filmoverzicht te kunnen benaderen."
 
-#, fuzzy
 msgid "Enable this to be able to access IMDb searches from within the plugin browser."
-msgstr "Schakel dit in om de IMDb vanuit de plugin browser te kunnen benaderen."
+msgstr "Activeer dit in om de IMDb zoekfunctie vanuit de plugin browser te kunnen starten."
 
 msgid "Enter search"
 msgstr "Zoeken"
@@ -65,15 +59,14 @@ msgstr "Zoek naar (tekst)"
 msgid "Exit"
 msgstr "Afsluiten"
 
-#, fuzzy
 msgid "Exit IMDb search"
-msgstr "Geen passende titel in de IMDB gevonden."
+msgstr "Verlaat de IMDb zoekfunctie"
 
 msgid "Extra Info"
 msgstr "Extra Info"
 
 msgid "IMDB Exception"
-msgstr ""
+msgstr "IMDb Uitzondering"
 
 msgid "IMDb Details parsed"
 msgstr "IMDB details ingelezen"
@@ -96,48 +89,40 @@ msgstr "IMDB-Download nogmaals uitgevoerd"
 msgid "IMDb Setup"
 msgstr "IMDb instellingen"
 
-#, fuzzy
 msgid "IMDb can not get Movie Information to write to .txt file!"
-msgstr ""
-"IMDb kan geen filminformatie vinden,\n"
-"schrijven als .txt bestand "
+msgstr "IMDb kan de information van de film niet als tekstbestand schrijven!"
 
 msgid "IMDb query failed!"
 msgstr "Zoeken in de IMDb mislukt!"
 
-#, fuzzy
 msgid "IMDb save completed"
-msgstr "Download van IMDb voltooid"
+msgstr "De opslag van IMDb data is voltooid"
 
-#, fuzzy
 msgid "IMDb search"
-msgstr "Geen passende titel in de IMDB gevonden."
+msgstr "IMDb zoektocht"
 
-#, fuzzy
 msgid "IMDb setup"
 msgstr "IMDb instellingen"
 
 #, python-format
 msgid "Ignoring invalid imdbId: %s"
-msgstr ""
+msgstr "Negeer onjuiste imdbId: %s"
 
 msgid "Include episodes in the results. Takes effect after the next search of IMDb for a show name."
-msgstr ""
+msgstr "Neem de afleveringen in de resultaten op. Wordt actief na de volgende zoekopdracht op IMDb naar de naam van een show."
 
 #, python-format
 msgid "Local file does not exist: %s"
-msgstr ""
+msgstr "Het lokale bestand bestaat niet: %s"
 
-#, fuzzy
 msgid "Menu"
-msgstr "IMDb menu"
+msgstr "Menu"
 
 msgid "No IMDb match."
 msgstr "Geen passende titel in de IMDB gevonden."
 
-#, fuzzy
 msgid "No IMDb match:"
-msgstr "Geen passende titel in de IMDB gevonden."
+msgstr "Geen passende overeenkomst in IMDb gevonden."
 
 msgid "No cast list found in the database."
 msgstr "Geen cast in de database gevonden."
@@ -149,10 +134,10 @@ msgid "OK"
 msgstr "OK"
 
 msgid "Page down"
-msgstr ""
+msgstr "Page down"
 
 msgid "Page up"
-msgstr ""
+msgstr "Page up"
 
 msgid "Please select the matching entry"
 msgstr "Maak de juiste keuze"
@@ -166,11 +151,10 @@ msgid "Re-Query IMDb: %s..."
 msgstr "Nieuwe zoekslag in de IMDb: %s..."
 
 msgid "S"
-msgstr ""
+msgstr "S"
 
-#, fuzzy
 msgid "Save current Details as .html for offline use"
-msgstr "Sla huidige details op als .html voor offline gebruik."
+msgstr "Sla de huidige details op als .html voor offline gebruik"
 
 msgid "Save current Details as .txt"
 msgstr "Sla huidige details op als .txt"
@@ -178,79 +162,74 @@ msgstr "Sla huidige details op als .txt"
 msgid "Save current Poster and Details as .txt"
 msgstr "Sla huidige poster en details op als .txt"
 
-#, fuzzy
 msgid "Search for details from the Internet Movie Database"
-msgstr "Filminformatie van de Internet Movie Database"
+msgstr "Zoek naar details binnen de Internet Movie Database"
 
-#, fuzzy
 msgid "Settings for Internet Movie Database searches"
-msgstr "De Internet Movie Database"
+msgstr "Instellingen t.b.v. het zoeken in de Internet Movie Database"
 
 msgid "Setup"
 msgstr "Instellingen"
 
 msgid "Show a bigger poster"
-msgstr ""
+msgstr "Toon een grotere poster"
 
 msgid "Show episode and year information for cast when available. Takes effect after the next fetch of show details."
-msgstr ""
+msgstr "Toon, indien beschikbaar, de aflevering- en jaarinformatie van de cast. Dit treedt in werking na de volgende keer dat de gegevens van de show worden opgehaald."
 
 msgid "Show episode and year information in cast list"
-msgstr ""
+msgstr "Toon de aflevering- en jaarinformatie in het overzicht van de cast"
 
 msgid "Show episodes in title menu"
-msgstr ""
+msgstr "Toon de afleveringen in het titelmenu"
 
 msgid "Show full movie or series name in title menu"
-msgstr ""
+msgstr "Toon de volledige film- of naam van de serie in het titelmenu"
 
 msgid "Show in movie list"
-msgstr ""
+msgstr "Toon in het filmoverzicht"
 
 msgid "Show list of matched movies an series"
-msgstr ""
+msgstr "Toon de lijst met overeengekomen films en series"
 
 msgid "Show movie and series basic details"
-msgstr ""
+msgstr "Toon de basisgegevens van de films en series"
 
 msgid "Show movie and series extra details"
-msgstr ""
+msgstr "Toon de extra gegevens van de films en series"
 
 msgid "Show movie and series synopsis"
-msgstr ""
+msgstr "Toon een samenvatting van films en series"
 
-#, fuzzy
 msgid "Show search in plugin browser"
-msgstr "Toon in plugin browser"
+msgstr "Toon IMDb in de plugin browser"
 
-#, fuzzy
 msgid "Show setup in plugin browser"
-msgstr "Toon in plugin browser"
+msgstr "Toon de IMDb setup in de plugin browser"
 
 msgid "Show the whole IMDb title information for a movie or series, including, for example, alternative names and whether it's a series. Takes effect after the next search of IMDb for a show name."
-msgstr ""
+msgstr "Toon de volledige titelinformatie in IMDb van een film of serie, inclusief bijvoorbeeld de alternatieve namen en of het een serie is. Dit treedt pas in werking na de volgende zoekopdracht in IMDb voor de naam van een show."
 
 msgid "Synopsis"
-msgstr ""
+msgstr "Samenvatting"
 
 msgid "The Internet Movie Database"
 msgstr "De Internet Movie Database"
 
-#, fuzzy
 msgid "This option allows you add words/phrases for IMDb to ignore when searching. Please separate the words/phrases with commas."
-msgstr "Deze optie maakt het mogelijk woorden/zinnen uit te sluiten van de zoekslag. Gebruik een komma als scheidingsteken."
+msgstr "Deze optie maakt het mogelijk om woorden / zinnen uit te sluiten tijdens het zoeken. Gebruik een komma als scheidingsteken voor de diverse woorden."
 
 msgid "Title Menu"
 msgstr "Titel menu"
 
 msgid "Words / phrases to ignore "
-msgstr "Woorden/zinnen die genegeerd worden"
+msgstr "Woorden / zinnen om te negeren"
 
 msgid "connection error"
-msgstr ""
+msgstr "verbindingsfout"
 
 msgid "no user rating yet"
 msgstr "nog geen gebruikers waardering"
 
 msgid "timeout"
-msgstr ""
+msgstr "timeout"
