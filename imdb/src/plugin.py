@@ -442,11 +442,11 @@ class IMDB(Screen, HelpableScreen):
 
 	def contextMenuPressed(self):
 		self.hideBigPoster()
-
+		keys = []
 		list = [
 			(_("Enter search"), self.openVirtualKeyBoard),
-			(_("Setup"), self.setup),
 		]
+		keys += ["1"]
 
 		if self.saving:
 			if self.savingpath is not None and self.titleId:
@@ -455,12 +455,17 @@ class IMDB(Screen, HelpableScreen):
 					(_("Save current Details as .txt"), self.saveTxtDetails),
 					(_("Save current Poster and Details as .txt"), self.savePosterTxtDetails),
 				))
+				keys += ["2", "3", "4"]
+
+		list.append((_("Setup"), self.setup))
+		keys += ["menu"]
 
 		self.session.openWithCallback(
 			self.menuCallback,
 			ChoiceBox,
 			title=_("IMDb Menu"),
 			list=list,
+			keys=["dummy" if key == "" else key for key in keys]
 		)
 
 	def menuCallback(self, ret=None):
