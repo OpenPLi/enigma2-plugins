@@ -163,10 +163,6 @@ USBok = False
 if find_library("usb-0.1") is not None or find_library("usb-1.0") is not None:
 	print("[LCD4linux] libusb found :-)", getEnigmaVersionString())
 	USBok = True
-elif getImageArch() in ("aarch64"):
-	get_backend(find_library=lambda x: "/lib64/libusb-1.0.so.0")
-	print("[LCD4linux] libusb found :-)", getEnigmaVersionString())
-	USBok = True
 Version = "V5.0-r14"
 L4LElist = L4Lelement()
 L4LdoThread = True
