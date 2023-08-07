@@ -1,0 +1,244 @@
+OpenPLi Enigma2 crash log
+
+crashdate=Mon Aug  7 13:46:34 2023
+compiledate=Aug  6 2023
+skin=PLi-FullHD/skin.xml
+sourcedate=2023-08-06
+branch=develop
+rev=cfddee3
+component=Enigma2
+
+stbmodel=dm920
+kernelcmdline=bmem=640M@384M bmem=384M@2048M console=ttyS0,1000000 root=/dev/mmcblk0p2 rootwait rootfstype=ext4 coherent_pool=2M
+nimsockets=NIM Socket 0:
+imageissue=openpli 13.2 %h
+
+
+REMOVE Peer dm920
+REMOVE Peer dm920
+REMOVE Peer dm920
+Traceback (most recent call last):
+  File "/usr/lib/enigma2/python/Plugins/Extensions/LCD4linux/plugin.py", line 7858, in keyOK
+    elif sel in [LCD4linux.Background1Bild, LCD4linux.LCD4linux.MPBackground1Bild, LCD4linux.StandbyBackground1Bild]:
+                                            ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/enigma2/python/Components/config.py", line 1758, in __getattr__
+    raise AttributeError(name)
+AttributeError: LCD4linux
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/enigma2/python/Components/ActionMap.py", line 77, in action
+    return ActionMap.action(self, contexts, action)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/enigma2/python/Components/ActionMap.py", line 57, in action
+    res = self.actions[action]()
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/enigma2/python/Plugins/Extensions/LCD4linux/plugin.py", line 7862, in keyOK
+    L4log("Key-OK Config Fehler: %s" % e)
+                                       ^
+NameError: name 'e' is not defined
+[ePyObject] (CallObject(<bound method NumberActionMap.action of <Components.ActionMap.NumberActionMap object at 0xa6eb2810>>,('SetupActions', 'ok')) failed)
+
+
+dmesg
+
+<4>[17935.690405] stop PCR0 on dmx 0 pid:217
+<4>[17935.690428] stop AUDIO0 on dmx 0 pid:217
+<4>[17935.690433] audio ch0: xpt stop
+<4>[17935.690456] audio ch0: decoder stop
+<6>[17935.690508] si2183(0): DVB-S(2) voltage disabled now
+<4>[17935.710647] sync0 1fff no decoder left in sync handling so disable
+<4>[17935.710655] sync0: was last pcroffset0 user so free it
+<4>[17935.724135] VIDEO0: set streamtype!
+<4>[17935.724149] ->      set H264
+<4>[17935.724156] ->      sw rave disabled!
+<4>[17935.724355] sync0 is off so we enable it
+<4>[17935.724363] sync0: allocated pcroffset 0
+<4>[17935.724373] sync0: playback!
+<4>[17935.724401] VIDEO0: total delay: 0 (0 ms)
+<4>[17935.729349] VIDEO0: start decode
+<4>[17935.729381] VIDEO0: flush video decoder
+<4>[17935.766303] VIDEO0: first pts 0x0
+<4>[17935.885821] VIDEO0: stop decode
+<4>[17935.885837] sync0 1fff no decoder left in sync handling so disable
+<4>[17935.885841] sync0: was last pcroffset0 user so free it
+<3>[17935.943338] bcm_accel: invalid opcode! 00000080
+<6>[17935.944724] bcmfb: creating surface with pixel format 0x07e48888 (BPXL_eA8_R8_G8_B8)
+<4>[17935.990261] HDMI: CEC device open ... state is 3, flushed 0 old messages from RX fifo
+<4>[17935.990274] HDMI: CEC returned state 3
+<4>[17935.990278] HDMI: CEC state now 803
+<4>[17935.990965] tsmux set cisource reg 06 to val 0a
+<4>[17935.991482] tsmux set cisource reg 07 to val 0a
+<4>[17935.992009] input0 set to A1
+<4>[17935.992015] tsmux set tsports reg 00 to val 0a
+<4>[17935.992509] input1 set to A2
+<4>[17935.992513] tsmux set tsports reg 01 to val 09
+<4>[17935.992999] input2 set to B1
+<4>[17935.993004] tsmux set tsports reg 02 to val 08
+<6>[17936.054616] si2183(0): DVB-S(2) voltage disabled now
+<6>[17936.054898] si2183(0): DVB-S(2) voltage disabled now
+<6>[17936.055221] si2183(0): DVB-S(2) voltage disabled now
+<6>[17936.055630] si2183(1): DVB-S(2) voltage disabled now
+<6>[17936.055909] si2183(1): DVB-S(2) voltage disabled now
+<6>[17936.056218] si2183(1): DVB-S(2) voltage disabled now
+<4>[17936.059003] VIDEO0: dst_left, dst_top, dst_width and dst_height is 0.. reset to defaults!
+<4>[17936.059014] set current avs auto aspect to 16:9
+<4>[17936.059044] set sb to 3(1)
+<4>[17936.059585] VIDEO1: dst_left, dst_top, dst_width and dst_height is 0.. reset to defaults!
+<4>[17936.166798] 17917994 ms: 54 
+<4>[17936.222639] 56 ms: 0 
+<3>[17936.406642] EXT3-fs (mmcblk0p3): error: couldn't mount because of unsupported optional features (240)
+<3>[17936.407251] EXT2-fs (mmcblk0p3): error: couldn't mount because of unsupported optional features (240)
+<6>[17936.409594] EXT4-fs (mmcblk0p3): mounted filesystem with ordered data mode. Opts: (null)
+<4>[17936.523320] 301 ms: 0 
+<4>[17936.682571] 159 ms: 0 
+<4>[17936.726303] VIDEO0: progressive changed (0)
+<4>[17937.585328] 903 ms: 0 
+<4>[17937.586138] 1 ms: 0 
+<4>[17937.601323] 15 ms: 0 
+<4>[17937.622411] 21 ms: 0 
+<4>[17937.623226] 1 ms: 0 
+<4>[17937.627915] 4 ms: 0 
+<4>[17937.628759] 1 ms: 0 
+<4>[17937.629645] 1 ms: 0 
+<4>[17937.665302] 36 ms: 0 
+<4>[17937.668573] 3 ms: 0 
+<4>[17937.730317] 62 ms: 0 
+<4>[17937.756295] 26 ms: 0 
+<4>[17937.757221] 1 ms: 0 
+<4>[17937.760537] 3 ms: 0 
+<4>[17937.775408] 15 ms: 0 
+<4>[17937.777746] 2 ms: 0 
+<4>[17937.781671] 4 ms: 0 
+<4>[17937.782488] 1 ms: 0 
+<4>[17937.783739] 1 ms: 0 
+<4>[17937.786114] 3 ms: 0 
+<4>[17938.450097] 664 ms: 0 
+<4>[17938.450836] 0 ms: 0 
+<4>[17938.473432] 23 ms: 0 
+<4>[17938.474236] 1 ms: 0 
+<4>[17938.486806] 12 ms: 0 
+<4>[17938.487968] 1 ms: 0 
+<4>[17938.488991] 1 ms: 0 
+<4>[17938.491357] 3 ms: 0 
+<4>[17938.495564] 4 ms: 0 
+<4>[17938.496417] 1 ms: 0 
+<6>[17938.516790] bcmfb: creating surface with pixel format 0x07e48888 (BPXL_eA8_R8_G8_B8)
+<6>[17938.594774] bcmfb: creating surface with pixel format 0x07e48888 (BPXL_eA8_R8_G8_B8)
+<4>[17938.702694] 206 ms: 0 
+<4>[17938.750603] 48 ms: 0 
+<4>[17938.754936] set current avs auto aspect to 16:9
+<4>[17938.754973] set sb to 3(1)
+<4>[17938.776630] set current avs auto aspect to 16:9
+<4>[17938.776653] set sb to 3(1)
+<4>[17938.776994] set input to 0
+<4>[17938.777001] set fb to 2(-1)
+<4>[17938.777008] set current avs auto aspect to 16:9
+<4>[17938.777024] set sb to 3(1)
+<4>[17938.778107] set ac3 to passthrough
+<4>[17938.778625] set ac3plus to force_ac3
+<4>[17938.779044] set dtshd to force_dts
+<4>[17938.779656] set aac to passthrough
+<4>[17938.780135] set wmapro to downmix
+<4>[17938.797494] set mute 0 0
+<4>[17938.798493] using 50.00Hz as MonitorRefreshRate
+<4>[17938.798505] VIDEO1: shared window not available
+<4>[17938.798529] SET FORMAT: display[0], format='1080p50'
+<4>[17938.798538] HDMI mode
+<4>[17938.798542] use EDID to detect colorspace
+<4>[17938.798545] preferred colorspace: Itu_R_BT_709
+<4>[17938.798548] using 8bit output
+<4>[17938.916592] VIDEO1: shared window not available
+<4>[17938.916622] set current avs auto aspect to 16:9
+<4>[17938.916653] set sb to 3(1)
+<4>[17939.016622] using 50.00Hz as MonitorRefreshRate
+<4>[17939.016632] VIDEO1: shared window not available
+<4>[17939.016656] SET FORMAT: display[0], format='1080p50'
+<4>[17939.016665] HDMI mode
+<4>[17939.016669] use EDID to detect colorspace
+<4>[17939.016673] preferred colorspace: Itu_R_BT_709
+<4>[17939.016675] using 8bit output
+<4>[17939.136590] VIDEO1: shared window not available
+<4>[17939.136615] set current avs auto aspect to 16:9
+<4>[17939.136639] set sb to 3(1)
+<4>[17939.236616] using 50.00Hz as MonitorRefreshRate
+<4>[17939.236625] VIDEO1: shared window not available
+<4>[17939.236646] SET FORMAT: display[0], format='1080p50'
+<4>[17939.236653] HDMI mode
+<4>[17939.236657] use EDID to detect colorspace
+<4>[17939.236660] preferred colorspace: Itu_R_BT_709
+<4>[17939.236663] using 8bit output
+<4>[17939.356594] VIDEO1: shared window not available
+<4>[17939.356617] set current avs auto aspect to 16:9
+<4>[17939.356640] set sb to 3(1)
+<4>[17939.356999] 606 ms: 0 
+<4>[17939.359777] 3 ms: 0 
+<4>[17939.472047] 112 ms: 0 
+<4>[17939.495626] 24 ms: 0 
+<4>[17939.523677] 28 ms: 0 
+<4>[17939.534160] 11 ms: 0 
+<4>[17939.575499] tsmux set ciclk reg 34 to val 03
+<4>[17939.576899] tsmux set ciclk reg 34 to val 03
+<4>[17939.663548] set current avs auto aspect to 16:9
+<4>[17939.663583] set sb to 3(1)
+<4>[17939.676669] set current avs auto aspect to 16:9
+<4>[17939.676697] set sb to 3(1)
+<4>[17939.677175] set current avs auto aspect to 16:9
+<4>[17939.677197] set sb to 3(1)
+<4>[17939.677714] set current avs auto aspect to 16:9
+<4>[17939.677738] set sb to 3(1)
+<4>[17939.677911] set current avs auto aspect to 16:9
+<4>[17939.677925] set sb to 3(1)
+<4>[17939.678184] set current avs auto aspect to 16:9
+<4>[17939.678205] set sb to 3(1)
+<4>[17939.678605] set current avs auto aspect to 16:9
+<4>[17939.678622] set sb to 3(1)
+<4>[17939.678787] set current avs auto aspect to 16:9
+<4>[17939.678798] set sb to 3(1)
+<4>[17939.679006] set current avs auto aspect to 16:9
+<4>[17939.679020] set sb to 3(1)
+<4>[17939.679416] set current avs auto aspect to 16:9
+<4>[17939.679432] set sb to 3(1)
+<4>[17939.679593] set current avs auto aspect to 16:9
+<4>[17939.679606] set sb to 3(1)
+<4>[17939.679806] set current avs auto aspect to 16:9
+<4>[17939.679819] set sb to 3(1)
+<4>[17939.680177] set current avs auto aspect to 16:9
+<4>[17939.680191] set sb to 3(1)
+<4>[17939.680366] set current avs auto aspect to 16:9
+<4>[17939.680379] set sb to 3(1)
+<4>[17939.681507] set current avs auto aspect to 16:9
+<4>[17939.681531] set sb to 3(1)
+<4>[17939.681728] set current avs auto aspect to 16:9
+<4>[17939.681744] set sb to 3(1)
+<4>[17939.681981] set current avs auto aspect to 16:9
+<4>[17939.681997] set sb to 3(1)
+<6>[17942.643234] si2183(0): DVB-S(2) voltage disabled now
+<6>[17942.655349] si2183(0): start tune freq 434000000, sr 6900000, delsys 1
+<6>[17942.826424] si2183(0): found carrier after 176 ms
+<6>[17942.826434] si2183(0): final lock after 176 ms
+<4>[17942.830142] start PCR0 on dmx 0 pid:1005 index 1
+<4>[17942.830224] start AUDIO0 on dmx 0 pid:100f index 2
+<4>[17942.830230] audio ch0: xpt start
+<4>[17942.830249] sync0 is off so we enable it
+<4>[17942.830255] sync0: allocated pcroffset 0
+<4>[17942.830265] sync0: demux-index 0 pcr pid 1005
+<4>[17942.830277] sync0: using 1 as pcr pidchannel
+<4>[17942.830295] audio ch0: MPEG
+<4>[17942.830303] audio ch0: decoder start
+<4>[17942.830309] audio ch0 delay 18000 (200 ms)
+<4>[17942.830314] VIDEO0: total delay: 18000 (200 ms)
+<4>[17942.830825] start VIDEO0 on dmx 0 pid:1005 index 1
+<4>[17942.830858] VIDEO0: total delay: 18000 (200 ms)
+<4>[17942.835820] VIDEO0: start decode
+<4>[17942.900229] audio ch0: first pts 0x154ad9c06, stc 0x154ad890c, pcr valid
+<4>[17942.922643] audio ch0: lock
+<4>[17942.922671] audio ch0: sample rate changed isr (48000)
+<4>[17943.198836] audio ch0: status ready isr
+<4>[17943.366519] VIDEO0: first pts 0x154af6400
+<4>[17943.516093] VIDEO0: enable tsm
+<4>[17956.094468] VIDEO0: dst_left, dst_top, dst_width and dst_height is 0.. reset to defaults!
+<4>[17956.094542] set current avs auto aspect to 16:9
+<4>[17956.094574] set sb to 3(1)
+
