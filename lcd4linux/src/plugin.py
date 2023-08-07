@@ -11239,7 +11239,7 @@ def LCD4linuxPIC(self, session):
 					minus5 = -3
 					font = ImageFont.truetype(ConfigFont, int(((int(LCD4linux.WetterExtraZoom.value) - 100) / 20.0 + 8) * Wmulti), encoding='unic')
 					ShadowText(Wim, POSXs - minus5, POSYs, "%s %s" % (Locname, Wtime), font, LCD4linux.WetterExtraColorCity.value, ConfigShadow)
-					HumColor = LCD4linux.WetterRainColor.value if float(cleanHum) < LCD4linux.WetterRainColor2use.value else LCD4linux.WetterRainColor2.value
+					HumColor = LCD4linux.WetterRainColor.value if float(cleanHum) < int(LCD4linux.WetterRainColor2use.value) else LCD4linux.WetterRainColor2.value
 					Humarrow = ""
 					if LCD4linux.WetterTrendArrows.value:
 						if OldHum != -88:
