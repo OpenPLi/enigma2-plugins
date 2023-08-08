@@ -15386,7 +15386,7 @@ def LCD4linuxPIC(self, session):
 		if "2" in LCD4linux.PopupLCD.value and LCD4linux.LCDType2.value != "00":
 			Brief2.put([putPopup, Para, 2, 2])
 		if "3" in LCD4linux.PopupLCD.value and LCD4linux.LCDType3.value != "00":
-			Brief2.put([putPopup, Para, 3, 3])
+			Brief3.put([putPopup, Para, 3, 3])
 # show isCrashlog
 	if LCD4linux.Crash.value == True:
 		Brief1.put([putCrash, 1, 1])
