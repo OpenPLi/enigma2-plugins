@@ -2654,7 +2654,7 @@ def BRI(w1, w2):
 
 def virtBRI(LCD):
 	global AktNight
-	vb = BRI(L4LElist.getBrightness(LCD), LCD)
+	vb = int(BRI(L4LElist.getBrightness(LCD), LCD))
 	if vb < 1:
 		return 0
 	elif vb == 10:
