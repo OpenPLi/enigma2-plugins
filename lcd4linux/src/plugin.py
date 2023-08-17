@@ -2649,12 +2649,12 @@ def getFB2(check):
 
 def BRI(w1, w2):
 	gb = L4LElist.getBrightness(w2, False)
-	return w1 if gb == -1 else gb
+	return int(w1) if gb == -1 else gb
 
 
 def virtBRI(LCD):
 	global AktNight
-	vb = int(BRI(L4LElist.getBrightness(LCD), LCD))
+	vb = BRI(L4LElist.getBrightness(LCD), LCD)
 	if vb < 1:
 		return 0
 	elif vb == 10:
