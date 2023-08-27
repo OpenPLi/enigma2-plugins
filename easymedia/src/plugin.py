@@ -50,7 +50,7 @@ InfoBar_instance = None
 
 config.plugins.easyMedia = ConfigSubsection()
 config.plugins.easyMedia.music = ConfigSelection(default="mediaplayer", choices=[("no", _("Disabled")), ("mediaplayer", _("MediaPlayer")), ("merlinmp", _("MerlinMusicPlayer"))])
-config.plugins.easyMedia.files = ConfigSelection(default="dreamexplorer", choices=[("no", _("Disabled")), ("filebrowser", _("Filebrowser")), ("dreamexplorer", _("DreamExplorer")), ("tuxcom", _("TuxCom"))])
+config.plugins.easyMedia.files = ConfigSelection(default="dreamexplorer", choices=[("no", _("Disabled")), ("filebrowser", _("Filebrowser")), ("dreamexplorer", _("FileCommander")), ("tuxcom", _("TuxCom"))])
 config.plugins.easyMedia.videodb = ConfigSelection(default="no", choices=[("no", _("Disabled")), ("yes", _("Enabled"))])
 config.plugins.easyMedia.bookmarks = ConfigSelection(default="no", choices=[("no", _("Disabled")), ("yes", _("Enabled"))])
 config.plugins.easyMedia.pictures = ConfigSelection(default="yes", choices=[("no", _("Disabled")), ("yes", _("Enabled"))])
@@ -124,7 +124,7 @@ def MPanelEntryComponent(key, text, cell):
 class MPanelList(MenuList):
 	def __init__(self, list, selection=0, enableWrapAround=True):
 		MenuList.__init__(self, list, enableWrapAround, eListboxPythonMultiContent)
-		self.l.setFont(0, gFont("Regular", 20))
+		self.l.setFont(0, gFont("Regular", 32))
 		self.l.setItemHeight(60)
 		self.selection = selection
 
@@ -478,84 +478,90 @@ def MPcallbackFunc(answer):
 				askBM.append((s, s))
 			EMsession.openWithCallback(BookmarksCallback, ChoiceBox, title=_("Select bookmark..."), list=askBM)
 	elif answer == "PICTURES":
-		if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/PicturePlayer/plugin.pyc"):
+		if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/PicturePlayer/"):
 			from Plugins.Extensions.PicturePlayer.plugin import picshow
 			EMsession.open(picshow)
 		else:
 			EMsession.open(MessageBox, text=_('Picture-player is not installed!'), type=MessageBox.TYPE_ERROR)
 	elif answer == "MUSIC":
-		if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/MerlinMusicPlayer/plugin.pyc") and (config.plugins.easyMedia.music.value == "merlinmp"):
+		if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/MerlinMusicPlayer/") and (config.plugins.easyMedia.music.value == "merlinmp"):
 			from Plugins.Extensions.MerlinMusicPlayer.plugin import MerlinMusicPlayerFileList
 			servicelist = None
 			EMsession.open(MerlinMusicPlayerFileList, servicelist)
-		elif fileExists("/usr/lib/enigma2/python/Plugins/Extensions/MediaPlayer/plugin.pyc") and (config.plugins.easyMedia.music.value == "mediaplayer"):
+		elif fileExists("/usr/lib/enigma2/python/Plugins/Extensions/MediaPlayer/") and (config.plugins.easyMedia.music.value == "mediaplayer"):
 			from Plugins.Extensions.MediaPlayer.plugin import MediaPlayer
 			EMsession.open(MediaPlayer)
 		else:
 			EMsession.open(MessageBox, text=_('No Music-Player installed!'), type=MessageBox.TYPE_ERROR)
 	elif answer == "FILES":
-		if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/Tuxcom/plugin.pyc") and (config.plugins.easyMedia.files.value == "tuxcom"):
+		if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/Tuxcom/") and (config.plugins.easyMedia.files.value == "tuxcom"):
 			from Plugins.Extensions.Tuxcom.plugin import TuxComStarter
 			EMsession.open(TuxComStarter)
-		elif fileExists("/usr/lib/enigma2/python/Plugins/Extensions/DreamExplorer/plugin.pyc") and (config.plugins.easyMedia.files.value == "dreamexplorer"):
-			from Plugins.Extensions.DreamExplorer.plugin import DreamExplorerII
-			EMsession.open(DreamExplorerII)
-		elif fileExists("/usr/lib/enigma2/python/Plugins/Extensions/Filebrowser/plugin.pyc") and (config.plugins.easyMedia.files.value == "filebrowser"):
+		elif fileExists("/usr/lib/enigma2/python/Plugins/Extensions/Filebrowser/") and (config.plugins.easyMedia.files.value == "filebrowser"):
 			from Plugins.Extensions.Filebrowser.plugin import FilebrowserScreen
 			EMsession.open(FilebrowserScreen)
+		elif fileExists("/usr/lib/enigma2/python/Plugins/Extensions/DreamExplorer/") and (config.plugins.easyMedia.files.value == "dreamexplorer"):
+			from Plugins.Extensions.FileCommander.ui import FileCommanderScreen
+			EMsession.open(FileCommanderScreen)
 		else:
 			EMsession.open(MessageBox, text=_('No File-Manager installed!'), type=MessageBox.TYPE_ERROR)
 	elif answer == "WEATHER":
-		if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/WeatherPlugin/plugin.pyc"):
+		if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/WeatherPlugin/"):
 			from Plugins.Extensions.WeatherPlugin.plugin import WeatherPlugin
 			EMsession.open(WeatherPlugin)
+		elif fileExists("/usr/lib/enigma2/python/Plugins/Extensions/HetWeer/"):
+			from Plugins.Extensions.HetWeer.plugin import startScreen
+			EMsession.open(startScreen)
 		else:
 			EMsession.open(MessageBox, text=_('Weather Plugin is not installed!'), type=MessageBox.TYPE_ERROR)
 	elif answer == "DVD":
-		if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/DVDPlayer/plugin.pyc"):
+		if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/DVDPlayer/"):
 			from Plugins.Extensions.DVDPlayer.plugin import DVDPlayer
 			EMsession.open(DVDPlayer)
 		else:
 			EMsession.open(MessageBox, text=_('DVDPlayer Plugin is not installed!'), type=MessageBox.TYPE_ERROR)
 	elif answer == "MYTUBE":
-		if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/MyTube/plugin.pyc"):
+		if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/MyTube/"):
 			from Plugins.Extensions.MyTube import MyTubeMain
 			MyTubeMain(EMsession)
+		elif fileExists("/usr/lib/enigma2/python/Plugins/Extensions/YouTube/"):
+			from Plugins.Extensions.YouTube.plugin import main
+			main(EMsession)
 		else:
 			EMsession.open(MessageBox, text=_('MyTube Plugin is not installed!'), type=MessageBox.TYPE_ERROR)
 	elif answer == "SHOUTCAST":
-		if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/SHOUTcast/plugin.pyc"):
+		if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/SHOUTcast/"):
 			from Plugins.Extensions.SHOUTcast.plugin import SHOUTcastWidget
 			EMsession.open(SHOUTcastWidget)
 		else:
 			EMsession.open(MessageBox, text=_('SHOUTcast Plugin is not installed!'), type=MessageBox.TYPE_ERROR)
 	elif answer == "ZDF":
-		if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/ZDFMediathek/plugin.pyc"):
+		if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/ZDFMediathek/"):
 			from Plugins.Extensions.ZDFMediathek.plugin import ZDFMediathek
 			EMsession.open(ZDFMediathek)
 		else:
 			EMsession.open(MessageBox, text=_('ZDFmediathek Plugin is not installed!'), type=MessageBox.TYPE_ERROR)
 	elif answer == "VLC":
-		if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/VlcPlayer/plugin.pyc"):
+		if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/VlcPlayer/"):
 			from Plugins.Extensions.VlcPlayer.plugin import main
 			main(EMsession)
 		else:
 			EMsession.open(MessageBox, text=_('VLC Player is not installed!'), type=MessageBox.TYPE_ERROR)
 	elif answer == "IDREAM":
-		if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/MerlinMusicPlayer/plugin.pyc"):
+		if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/MerlinMusicPlayer/"):
 			from Plugins.Extensions.MerlinMusicPlayer.plugin import iDreamMerlin
 			servicelist = None
 			EMsession.open(iDreamMerlin, servicelist)
 		else:
 			EMsession.open(MessageBox, text=_('Merlin iDream is not installed!'), type=MessageBox.TYPE_ERROR)
 	elif answer == "MYVIDEO":
-		if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/MyVideoPlayer/plugin.pyc"):
+		if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/MyVideoPlayer/"):
 			from Plugins.Extensions.MyVideoPlayer.plugin import Vidtype
 			EMsession.open(Vidtype)
 		else:
 			EMsession.open(MessageBox, text=_('MyVideo Player is not installed!'), type=MessageBox.TYPE_ERROR)
 	elif answer == "VIDEODB":
-		if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/VideoDB/plugin.pyc"):
+		if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/VideoDB/"):
 			from Plugins.Extensions.VideoDB.plugin import main as vdbmain
 			vdbmain(EMsession)
 		else:
