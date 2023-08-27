@@ -50,7 +50,7 @@ InfoBar_instance = None
 
 config.plugins.easyMedia = ConfigSubsection()
 config.plugins.easyMedia.music = ConfigSelection(default="mediaplayer", choices=[("no", _("Disabled")), ("mediaplayer", _("MediaPlayer")), ("merlinmp", _("MerlinMusicPlayer"))])
-config.plugins.easyMedia.files = ConfigSelection(default="dreamexplorer", choices=[("no", _("Disabled")), ("filebrowser", _("Filebrowser")), ("dreamexplorer", _("FileCommander")), ("tuxcom", _("TuxCom"))])
+config.plugins.easyMedia.files = ConfigSelection(default="filecommander", choices=[("no", _("Disabled")), ("filebrowser", _("Filebrowser")), ("filecommander", _("FileCommander")), ("tuxcom", _("TuxCom"))])
 config.plugins.easyMedia.videodb = ConfigSelection(default="no", choices=[("no", _("Disabled")), ("yes", _("Enabled"))])
 config.plugins.easyMedia.bookmarks = ConfigSelection(default="no", choices=[("no", _("Disabled")), ("yes", _("Enabled"))])
 config.plugins.easyMedia.pictures = ConfigSelection(default="yes", choices=[("no", _("Disabled")), ("yes", _("Enabled"))])
@@ -500,7 +500,7 @@ def MPcallbackFunc(answer):
 		elif fileExists("/usr/lib/enigma2/python/Plugins/Extensions/Filebrowser/") and (config.plugins.easyMedia.files.value == "filebrowser"):
 			from Plugins.Extensions.Filebrowser.plugin import FilebrowserScreen
 			EMsession.open(FilebrowserScreen)
-		elif fileExists("/usr/lib/enigma2/python/Plugins/Extensions/DreamExplorer/") and (config.plugins.easyMedia.files.value == "dreamexplorer"):
+		elif fileExists("/usr/lib/enigma2/python/Plugins/Extensions/FileCommander/") and (config.plugins.easyMedia.files.value == "filecommander"):
 			from Plugins.Extensions.FileCommander.ui import FileCommanderScreen
 			EMsession.open(FileCommanderScreen)
 		else:
