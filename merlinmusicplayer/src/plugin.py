@@ -1269,7 +1269,7 @@ class MerlinMusicPlayerScreen(Screen, InfoBarBase, InfoBarSeek, InfoBarNotificat
 	def getGoogleCover(self, artist, album):
 		if artist != "" and album != "":
 			url = 'https://www.google.de/search?q=%s+%s+-youtube&tbm=isch&source=lnt&tbs=isz:ex,iszw:500,iszh:500' % (quote(album), quote(artist))
-			getPage(url, timeout=10, agent='Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.56 Safari/537.17').addCallback(self.googleImageCallback).addErrback(self.coverDownloadFailed)
+			getPage(url.encode('utf-8'), timeout=10, agent='Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.56 Safari/537.17').addCallback(self.googleImageCallback).addErrback(self.coverDownloadFailed)
 		else:
 			self["coverArt"].showDefaultCover()
 
