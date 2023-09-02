@@ -46,6 +46,8 @@ class vps_timer:
 			self.stop_simulation()
 
 	def program_dataAvail(self, str):
+		if isinstance(str, bytes):
+			str = str.decode()
 		if self.timer is None or self.timer.state == TimerEntry.StateEnded or self.timer.cancelled:
 			self.program_abort()
 			self.stop_simulation()
