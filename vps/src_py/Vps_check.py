@@ -29,7 +29,7 @@ class VPS_check_PDC:
 
 			if xmlroot is not None:
 				for xml in xmlroot.findall("channel"):
-					serviceref = xml.get("serviceref").encode("utf-8")
+					serviceref = xml.get("serviceref")
 					has_pdc = xml.get("has_pdc")
 					last_check = xml.get("last_check")
 					default_vps = xml.get("default_vps")
@@ -203,6 +203,8 @@ class VPS_check(Screen):
 			self.finish()
 
 	def program_dataAvail(self, str):
+		if isinstance(str, bytes):
+			str = str.decode()
 		lines = str.split("\n")
 		for line in lines:
 			if line == "PDC_AVAILABLE" and not self.calledfinished:
