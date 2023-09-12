@@ -53,8 +53,8 @@ def new_RecordTimer_saveTimer(self):
 		for x in list:
 			file.write(x)
 		file.close()
-	except:
-	 pass
+	except Exception as exc:
+		print("[VPS] new_RecordTimer_saveTimer : %s" % exc)
 	# added by VPS-Plugin
 
 
@@ -65,8 +65,8 @@ def new_RecordTimer_loadTimer(self):
 		global xml
 		doc = xml.etree.cElementTree.parse(Directories.resolveFilename(Directories.SCOPE_CONFIG, "timers_vps.xml"))
 		xmlroot = doc.getroot()
-	except:
-		pass
+	except Exception as exc:
+		print("[VPS] new_RecordTimer_loadTimer : %s" % exc)
 	# added by VPS-Plugin
 
 	self._loadTimer_old_rn_vps()
@@ -79,7 +79,7 @@ def new_RecordTimer_loadTimer(self):
 			for xml in xmlroot.findall("timer"):
 				begin = xml.get("begin")
 				end = xml.get("end")
-				serviceref = xml.get("serviceref").encode("utf-8")
+				serviceref = xml.get("serviceref")
 
 				vps_timers[serviceref + begin + end] = {}
 				vps_overwrite = xml.get("vps_overwrite")
@@ -107,8 +107,8 @@ def new_RecordTimer_loadTimer(self):
 				else:
 					timer.vpsplugin_enabled = False
 					timer.vpsplugin_overwrite = False
-	except:
-		pass
+	except Exception as exc:
+		print("[VPS] new_RecordTimer_loadTimer : %s" % exc)
 	# added by VPS-Plugin
 
 
@@ -143,8 +143,8 @@ def new_TimerEntry_createConfig(self):
 		else:
 			self.timerentry_vpsplugin_time_date = ConfigDateTime(default=self.timer.begin, formatstring=_("%d.%B %Y"), increment=86400)
 			self.timerentry_vpsplugin_time_clock = ConfigClock(default=self.timer.begin)
-	except:
-		pass
+	except Exception as exc:
+		print("[VPS] new_TimerEntry_createConfig : %s" % exc)
 	# added by VPS-Plugin
 
 
@@ -187,8 +187,8 @@ def new_TimerEntry_createSetup(self, widget):
 						config.plugins.vps.infotext.value = 2
 						config.plugins.vps.infotext.save()
 						VPS_show_info(self.session)
-	except:
-		pass
+	except Exception as exc:
+		print("[VPS] new_TimerEntry_createSetup : %s" % exc)
 	# added by VPS-Plugin
 	self[widget].list = self.list
 	self[widget].l.setList(self.list)
@@ -223,8 +223,8 @@ def new_TimerEntry_keyGo(self):
 					if (timerbegin - 60) < time() and (self.timer.vpsplugin_time - time()) > 1800:
 						self.timerentry_date.value = self.timerentry_vpsplugin_time_date.value
 						self.timerentry_starttime.value = self.timerentry_vpsplugin_time_clock.value
-	except:
-		pass
+	except Exception as exc:
+		print("[VPS] new_TimerEntry_keyGo : %s" % exc)
 	# added by VPS-Plugin
 
 	self._keyGo_old_rn_vps()
@@ -237,8 +237,8 @@ def new_TimerEntry_finishedChannelSelection(self, *args):
 		if self.timerentry_vpsplugin_enabled.value != "no":
 			self.timerentry_vpsplugin_dontcheck_pdc = False
 			self.createSetup("config")
-	except:
-		pass
+	except Exception as exc:
+		print("[VPS] new_TimerEntry_finishedChannelSelection : %s" % exc)
 
 
 def new_InfoBarInstantRecord_recordQuestionCallback(self, answer):
@@ -264,8 +264,8 @@ def new_InfoBarInstantRecord_recordQuestionCallback(self, answer):
 				if rec_ref and rec_ref.flags & eServiceReference.isGroup:
 					rec_ref = getBestPlayableServiceReference(rec_ref, eServiceReference())
 				self.session.open(VPS_check_on_instanttimer, rec_ref, self.recording[entry])
-	except:
-		pass
+	except Exception as exc:
+		print("[VPS] new_InfoBarInstantRecord_recordQuestionCallback : %s" % exc)
 
 
 def register_vps():
