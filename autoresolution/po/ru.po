@@ -200,10 +200,13 @@ msgid "default"
 msgstr "дефолт"
 
 msgid "no"
-msgstr ""
+msgstr "нет"
 
 msgid "second"
 msgstr "сек."
 
 msgid "seconds"
 msgstr "сек."
+
+msgid "Use 'seek' for stream/video content"
+msgstr "Использовать 'seek' для стрима/видео"

@@ -98,6 +98,7 @@ config.plugins.autoresolution.ask_timeout = ConfigSelection(default="20", choice
 config.plugins.autoresolution.manual_resolution_ext_menu = ConfigYesNo(default=False)
 config.plugins.autoresolution.manual_resolution_ask = ConfigYesNo(default=True)
 config.plugins.autoresolution.force_progressive_mode = ConfigYesNo(default=False)
+config.plugins.autoresolution.seek_video_stream_service = ConfigYesNo(default=False)
 
 
 def setDeinterlacer(mode):
@@ -478,7 +479,7 @@ class AutoRes(Screen):
 					v.write("%s\n" % mode)
 					v.close()
 					print("[AutoRes] switching to", mode)
-					if self.video_stream_service:
+					if self.video_stream_service and config.plugins.autoresolution.seek_video_stream_service.value:
 						self.doSeekRelative(2 * 9000)
 				except:
 					print("[AutoRes] failed switching to", mode)
@@ -518,7 +519,7 @@ class AutoRes(Screen):
 				resolutionlabel.show()
 			try:
 				video_hw.setMode(port, mode, rate)
-				if self.video_stream_service:
+				if self.video_stream_service and config.plugins.autoresolution.seek_video_stream_service.value:
 					self.doSeekRelative(2 * 9000)
 			except:
 				print("[AutoRes] Videomode: failed switching to", mode)
@@ -620,7 +621,8 @@ class AutoResSetupMenu(Screen, ConfigListScreen):
 						getConfigListEntry(_("Running in testmode"), config.plugins.autoresolution.testmode),
 						getConfigListEntry(_("Deinterlacer mode for interlaced content"), config.plugins.autoresolution.deinterlacer),
 						getConfigListEntry(_("Deinterlacer mode for progressive content"), config.plugins.autoresolution.deinterlacer_progressive),
-						getConfigListEntry(_("Force set progressive for stream/video content"), config.plugins.autoresolution.force_progressive_mode)
+						getConfigListEntry(_("Force set progressive for stream/video content"), config.plugins.autoresolution.force_progressive_mode),
+						getConfigListEntry(_("Use 'seek' for stream/video content"), config.plugins.autoresolution.seek_video_stream_service)
 					))
 					if SystemInfo["HasHdrType"]:
 						self.list.append(getConfigListEntry(_("Smart HDR type (set 'auto' HDMI HDR type)"), config.plugins.autoresolution.hdmihdrtype))
