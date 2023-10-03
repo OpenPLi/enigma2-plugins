@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: LCD4linux\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-12 14:32+0200\n"
+"POT-Creation-Date: 2023-10-03 15:37+0200\n"
 "PO-Revision-Date: 2023-02-27 18:11+0100\n"
 "Last-Translator: Mr.Servo <mrservo via GitHub.com>\n"
 "Language-Team: 孤独之剑 <haotzyy1970@163.com>\n"
@@ -1703,6 +1703,10 @@ msgstr "珍珠（或相容的LCD）320x240"
 
 msgid "Pearl (or compatible LCD) 480x320"
 msgstr "珍珠（或相容的LCD）480x320"
+
+#, fuzzy
+msgid "Pearl (or compatible LCD) 800x480"
+msgstr "珍珠（或相容的LCD）320x240"
 
 msgid "Picon"
 msgstr "皮康"

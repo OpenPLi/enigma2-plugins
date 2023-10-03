@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Autoresolution plugin Official Greek translation\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-18 16:36+0100\n"
+"POT-Creation-Date: 2023-10-03 15:37+0200\n"
 "PO-Revision-Date: 2016-05-30 20:17+0200\n"
 "Last-Translator: MCelliot_g <mcelliot_g@hotmail.com>\n"
 "Language-Team: MCelliot_g <mcelliot_g@hotmail.com>\n"
@@ -185,6 +185,9 @@ msgstr "Λειτουργία περιπλεγμένου HD"
 #, fuzzy
 msgid "UHD Progressive Mode"
 msgstr "Λειτουργία προοδευτικού HD"
+
+msgid "Use 'seek' for stream/video content"
+msgstr ""
 
 msgid "Use 60HZ instead 30HZ"
 msgstr ""
