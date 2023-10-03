@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: EasyMedia\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-11 12:33+0200\n"
+"POT-Creation-Date: 2023-10-03 15:37+0200\n"
 "PO-Revision-Date: 2021-09-13 15:19+0300\n"
 "Last-Translator: \n"
 "Language-Team: Vytenis P. <vyteniui@gmail.com>\n"
@@ -42,14 +42,14 @@ msgstr "DVD grotuvo įskiepis neįdiegtas!"
 msgid "Disabled"
 msgstr "Išjungta"
 
-msgid "DreamExplorer"
-msgstr "Dream naršyklė"
-
 msgid "EasyMedia settings..."
 msgstr "EasyMedia parametrai ..."
 
 msgid "Enabled"
 msgstr "Įjungta"
+
+msgid "FileCommander"
+msgstr ""
 
 msgid "Filebrowser"
 msgstr "Failų naršyklė"

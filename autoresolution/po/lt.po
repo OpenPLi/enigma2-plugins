@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-AutoResolution\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-18 16:36+0100\n"
+"POT-Creation-Date: 2023-10-03 15:37+0200\n"
 "PO-Revision-Date: 2021-09-12 11:43+0300\n"
 "Last-Translator: Vytenis P. <vyteniui@gmail.com>\n"
 "Language-Team: Vytenis Pulokas <vytemiui@gmail.com>\n"
@@ -179,6 +179,10 @@ msgstr "UHD dvieilio pynimo režimas"
 
 msgid "UHD Progressive Mode"
 msgstr "UHD pilnaeilis režimas"
+
+#, fuzzy
+msgid "Use 'seek' for stream/video content"
+msgstr "Transliacijai/video priverstinai jungti pilnaeilį režimą"
 
 msgid "Use 60HZ instead 30HZ"
 msgstr "Vietoje 30Hz naudoti 60Hz"

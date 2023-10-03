@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: LCD4linux\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-12 14:32+0200\n"
+"POT-Creation-Date: 2023-10-03 15:37+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Mr.Servo <mrservo via GitHub.com>\n"
 "Language-Team: BH Team\n"
@@ -1706,6 +1706,10 @@ msgstr "Pearl (ou LCD compatível) 320x240"
 
 msgid "Pearl (or compatible LCD) 480x320"
 msgstr "Pearl (ou LCD compatível) 480x320"
+
+#, fuzzy
+msgid "Pearl (or compatible LCD) 800x480"
+msgstr "Pearl (ou LCD compatível) 320x240"
 
 msgid "Picon"
 msgstr "Picon"
