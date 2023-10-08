@@ -56,4 +56,4 @@ jobs:
         if: ${{ steps.filter.outputs.mod == 'true' }}
         run: |
           mod_files="${{ steps.filter.outputs.mod_files }}"
-          flake8 --ignore=E126,E127,E128,E501,F821,W191 --show-source --filename=./${mod_files// /,.\/}
+          flake8 --ignore=E126,E127,E128,E501,W191 --builtins="_,ngettext,pgettext" --show-source --filename=./${mod_files// /,.\/}
