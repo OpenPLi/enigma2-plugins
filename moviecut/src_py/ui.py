@@ -8,7 +8,8 @@ from Components.ActionMap import ActionMap
 from Components.ConfigList import ConfigList, ConfigListScreen
 from Components.Sources.StaticText import StaticText
 from enigma import eTimer, eServiceCenter, iServiceInformation, eConsoleAppContainer, eEnv
-from Plugins.Extensions.MovieCut.__init__ import _
+from .__init__ import _
+
 
 mcut_path = eEnv.resolve("${libdir}/enigma2/python/Plugins/Extensions/MovieCut/bin/mcut")
 
@@ -17,10 +18,10 @@ class MovieCut(ChoiceBox):
 	def __init__(self, session, service):
 		self.service = service
 		serviceHandler = eServiceCenter.getInstance()
-		path = self.service.getPath()
+		self.path = self.service.getPath()
 		info = serviceHandler.info(self.service)
 		if not info:
-			self.name = path
+			self.name = self.path
 		else:
 			self.name = info.getName(self.service)
 		tlist = [
@@ -36,34 +37,37 @@ class MovieCut(ChoiceBox):
 		self.close()
 
 	def confirmed1(self, arg):
-		MovieCutSpawn(self.session, self, [mcut_path, "-r", self.service.getPath()], self.name)
+		MovieCutSpawn(self.session, self, [mcut_path, "-r", self.path], self.name)
 
 	def confirmed2(self, arg):
-		MovieCutSpawn(self.session, self, [mcut_path, self.service.getPath()], self.name)
+		MovieCutSpawn(self.session, self, [mcut_path, self.path], self.name)
 
 	def confirmed3(self, arg):
 		serviceHandler = eServiceCenter.getInstance()
 		info = serviceHandler.info(self.service)
-		path = self.service.getPath()
-		self.name = info.getName(self.service)
-		descr = info.getInfoString(self.service, iServiceInformation.sDescription)
-		self.session.openWithCallback(self.advcutConfirmed, AdvancedCutInput, self.name, path, descr)
+		if not info:
+			self.name = self.path
+			descr = self.path
+		else:
+			self.name = info.getName(self.service)
+			descr = info.getInfoString(self.service, iServiceInformation.sDescription)
+		self.session.openWithCallback(self.advcutConfirmed, AdvancedCutInput, self.name, self.path, descr)
 
 	def advcutConfirmed(self, ret):
 		if len(ret) <= 1 or not ret[0]:
 			self.close()
 			return
 		clist = [mcut_path]
-		if ret[1] == True:
+		if ret[1] is True:
 			clist.append("-r")
-		clist.append(self.service.getPath())
-		if ret[2] != False:
+		clist.append(self.path)
+		if ret[2] is not False:
 			clist += ["-o", ret[2]]
-		if ret[3] != False:
+		if ret[3] is not False:
 			clist += ["-n", ret[3]]
-		if ret[4] != False:
+		if ret[4] is not False:
 			clist += ["-d", ret[4]]
-		if ret[5] != False:
+		if ret[5] is not False:
 			clist.append("-c")
 			clist += ret[5]
 		MovieCutSpawn(self.session, self, clist, self.name)
@@ -88,7 +92,7 @@ class AdvancedCutInput(Screen, ConfigListScreen):
 		self.input_title = ConfigText(default=title, fixed_size=False, visible_width=45)
 		self.input_descr = ConfigText(default=descr, fixed_size=False, visible_width=45)
 		tmp = config.movielist.videodirs.value
-		if not dir in tmp:
+		if dir not in tmp:
 			tmp.append(dir)
 		self.input_dir = ConfigSelection(choices=tmp, default=dir)
 		self.input_manual = ConfigSelection(choices=[("no", _("Cutlist")), ("yes", _("Manual specification"))], default="no")
@@ -121,27 +125,27 @@ class AdvancedCutInput(Screen, ConfigListScreen):
 		self.setTitle(_("Cut Parameter Input"))
 
 	def createSetup(self, configlist):
-		list = [
+		items = [
 			self.entry_replace
 		]
 		if self.input_replace.value == "no":
-			list.extend((
+			items.extend((
 				self.entry_file,
 				self.entry_dir,
 			))
-		list.extend((
+		items.extend((
 			self.entry_title,
 			self.entry_descr,
 			self.entry_manual,
 		))
 		if self.input_manual.value == "yes":
-			list.extend((
+			items.extend((
 				self.entry_space,
 				self.entry_manualcuts,
 			))
-		self.list = list
-		configlist.list = list
-		configlist.l.setList(list)
+		self.list = items
+		configlist.list = items
+		configlist.l.setList(items)
 
 	def keyLeft(self):
 		ConfigListScreen.keyLeft(self)
@@ -188,20 +192,24 @@ class AdvancedCutInput(Screen, ConfigListScreen):
 	def keyCancel(self):
 		self.close((False,))
 
-	def baseName(self, str):
-		name = str.split('/')[-1]
-		if name.endswith(".ts") is True:
+	def baseName(self, name):
+		name = name.split('/')[-1]
+		if name.endswith(".ts"):
 			return name[:-3]
+		elif name.endswith(".stream"):
+			return name[:-7]
 		else:
 			return name
 
-	def dirName(self, str):
-		return '/'.join(str.split('/')[:-1]) + '/'
+	def dirName(self, path):
+		return '/'.join(path.split('/')[:-1]) + '/'
 
 	def rejoinName(self, dir, name):
 		name = name.strip()
-		if name.endswith(".ts") is True:
+		if name.endswith(".ts"):
 			return dir + name[:-3]
+		elif name.endswith(".stream"):
+			return dir + name[:-7]
 		else:
 			return dir + name
 
@@ -235,18 +243,20 @@ class MovieCutQueue:
 		self.runNext()
 
 
-global_mcut_errors = [_("The movie \"%s\" is successfully cut"),
-		      _("Cutting failed for movie \"%s\"") + ":\n" + _("Bad arguments"),
-		      _("Cutting failed for movie \"%s\"") + ":\n" + _("Couldn't open input .ts file"),
-		      _("Cutting failed for movie \"%s\"") + ":\n" + _("Couldn't open input .cuts file"),
-		      _("Cutting failed for movie \"%s\"") + ":\n" + _("Couldn't open input .ap file"),
-		      _("Cutting failed for movie \"%s\"") + ":\n" + _("Couldn't open output .ts file"),
-		      _("Cutting failed for movie \"%s\"") + ":\n" + _("Couldn't open output .cuts file"),
-		      _("Cutting failed for movie \"%s\"") + ":\n" + _("Couldn't open output .ap file"),
-		      _("Cutting failed for movie \"%s\"") + ":\n" + _("Empty .ap file"),
-		      _("Cutting failed for movie \"%s\"") + ":\n" + _("No cuts specified"),
-		      _("Cutting failed for movie \"%s\"") + ":\n" + _("Read/write error (disk full?)"),
-		      _("Cutting was aborted for movie \"%s\"")]
+global_mcut_errors = [
+	_("The movie \"%s\" is successfully cut"),
+	_("Cutting failed for movie \"%s\"") + ":\n" + _("Bad arguments"),
+	_("Cutting failed for movie \"%s\"") + ":\n" + _("Couldn't open input .ts file"),
+	_("Cutting failed for movie \"%s\"") + ":\n" + _("Couldn't open input .cuts file"),
+	_("Cutting failed for movie \"%s\"") + ":\n" + _("Couldn't open input .ap file"),
+	_("Cutting failed for movie \"%s\"") + ":\n" + _("Couldn't open output .ts file"),
+	_("Cutting failed for movie \"%s\"") + ":\n" + _("Couldn't open output .cuts file"),
+	_("Cutting failed for movie \"%s\"") + ":\n" + _("Couldn't open output .ap file"),
+	_("Cutting failed for movie \"%s\"") + ":\n" + _("Empty .ap file"),
+	_("Cutting failed for movie \"%s\"") + ":\n" + _("No cuts specified"),
+	_("Cutting failed for movie \"%s\"") + ":\n" + _("Read/write error (disk full?)"),
+	_("Cutting was aborted for movie \"%s\"")
+	]
 
 global_mcut_queue = MovieCutQueue()
 
@@ -274,10 +284,10 @@ class MovieCutSpawn:
 
 	def doAck(self, retval):
 		global global_mcut_errors
-#		if WIFEXITED(retval):
-#			self.mess = global_mcut_errors[WEXITSTATUS(retval)] % (self.name)
-#		else:
-#			self.mess = global_mcut_errors[-1] % (self.name)
+		#if WIFEXITED(retval):
+		#	self.mess = global_mcut_errors[WEXITSTATUS(retval)] % (self.name)
+		#else:
+		#	self.mess = global_mcut_errors[-1] % (self.name)
 		if retval < 0 or retval > 10:
 			self.mess = global_mcut_errors[11] % (self.name)
 		else:
