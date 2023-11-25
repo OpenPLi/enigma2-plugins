@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from six import PY2
 try:
-	from . import dpflib
+	import dpflib
 except:
 	print("[LCD4linux] dpflib-Error")
 
