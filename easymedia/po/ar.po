@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: EasyMedia\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"POT-Creation-Date: 2023-10-03 15:37+0200\n"
 "PO-Revision-Date: 2020-12-11 16:48+0300\n"
 "Last-Translator: mosad - مساعد الجعيد <abo-mishal@hotmail.com>\n"
 "Language-Team: mosad - مساعد الجعيد\n"
@@ -40,14 +40,14 @@ msgstr "لم يتم تثبيت بلجن مشغل الأقراص الصلبة!"
 msgid "Disabled"
 msgstr "معطل"
 
-msgid "DreamExplorer"
-msgstr "متصفح الدريم"
-
 msgid "EasyMedia settings..."
 msgstr "إعدادات الوسائط البسيطة..."
 
 msgid "Enabled"
 msgstr "تمكين"
+
+msgid "FileCommander"
+msgstr ""
 
 msgid "Filebrowser"
 msgstr "متصفح الملفات"

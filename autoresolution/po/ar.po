@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Automatic Screen Resolution V. 0.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-18 16:36+0100\n"
+"POT-Creation-Date: 2023-10-03 15:37+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: mosad - مساعد الجعيد <abo-mishal@hotmail.com>\n"
 "Language-Team: mosad - مساعد الجعيد\n"
@@ -178,6 +178,9 @@ msgstr "وضع الواجهة فوركي"
 
 msgid "UHD Progressive Mode"
 msgstr "وضع المعالجة فوركي"
+
+msgid "Use 'seek' for stream/video content"
+msgstr ""
 
 msgid "Use 60HZ instead 30HZ"
 msgstr "استخدم 60 هرتز بدلاً من ذلك 30 هرتز"

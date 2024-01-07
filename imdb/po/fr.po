@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: enigma2 - IMDb\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-03-18 16:36+0100\n"
-"PO-Revision-Date: 2021-08-13 19:52+0200\n"
+"PO-Revision-Date: 2023-10-03 16:19+0200\n"
 "Last-Translator: mimi74\n"
 "Language-Team: french-EGAMI\n"
 "Language: fr\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
-"X-Generator: Poedit 3.0\n"
+"X-Generator: Poedit 3.4\n"
 "X-Poedit-SourceCharset: iso-8859-15\n"
 
 msgid "* = Restart Required"
@@ -23,19 +23,17 @@ msgstr "Résultats ambigus"
 msgid "Cancel"
 msgstr "Annuler"
 
-#, fuzzy
 msgid "Couldn't get event name"
 msgstr "Impossible d'obtenir le nom de l'événement"
 
 msgid "Details"
 msgstr "Détails"
 
-#, fuzzy
 msgid "Downloading Movie Poster..."
-msgstr "Téléchargement affiche du film: %s..."
+msgstr "Téléchargement affiche du film..."
 
 msgid "E"
-msgstr ""
+msgstr "E"
 
 msgid "Enable this to be able to access IMDb search setup from within the plugin browser."
 msgstr "Activer cette option pour accéder à la recherche IMDb depuis le navigateur des plugins."
@@ -62,7 +60,7 @@ msgid "Extra Info"
 msgstr "Infos suplémentaires"
 
 msgid "IMDB Exception"
-msgstr ""
+msgstr "IMDB Exception"
 
 msgid "IMDb Details parsed"
 msgstr "IMDb Détails filtrés"
@@ -91,9 +89,8 @@ msgstr "IMDb ne peut pas obtenir les informations sur le film pour créer le fic
 msgid "IMDb query failed!"
 msgstr "IMDb requête échoué!"
 
-#, fuzzy
 msgid "IMDb save completed"
-msgstr "IMDb Téléchargement terminé"
+msgstr "IMDb sauvegarde terminée"
 
 msgid "IMDb search"
 msgstr "Recherche IMDb"
@@ -103,15 +100,14 @@ msgstr "IMDb Configuration"
 
 #, python-format
 msgid "Ignoring invalid imdbId: %s"
-msgstr ""
+msgstr "L'imdbid invalide: %s a été ignoré"
 
-#, fuzzy
 msgid "Include episodes in the results. Takes effect after the next search of IMDb for a show name."
-msgstr "Afficher les informations sur l'épisode et l'année pour le casting lorsqu'elles sont disponibles. Prend effet après la prochaine récupération des détails de l'émission."
+msgstr "Inclure les épisodes dans les résultats. Prend effet après la prochaine recherche d'IMDb pour un nom de série."
 
 #, python-format
 msgid "Local file does not exist: %s"
-msgstr ""
+msgstr "Le fichier local: %s n'existe pas"
 
 msgid "Menu"
 msgstr "Menu"
@@ -149,7 +145,7 @@ msgid "Re-Query IMDb: %s..."
 msgstr "Re-Récupération IMDb: %s..."
 
 msgid "S"
-msgstr ""
+msgstr "S"
 
 msgid "Save current Details as .html for offline use"
 msgstr "Enregistrer les détails actuels en .html pour l'utilisation hors ligne"
@@ -170,7 +166,7 @@ msgid "Setup"
 msgstr "Configuration"
 
 msgid "Show a bigger poster"
-msgstr ""
+msgstr "Montrer une affiche plus grande"
 
 msgid "Show episode and year information for cast when available. Takes effect after the next fetch of show details."
 msgstr "Afficher les informations sur l'épisode et l'année pour le casting lorsqu'elles sont disponibles. Prend effet après la prochaine récupération des détails de l'émission."
@@ -178,9 +174,8 @@ msgstr "Afficher les informations sur l'épisode et l'année pour le casting lor
 msgid "Show episode and year information in cast list"
 msgstr "Afficher les informations de l'épisode et l'année dans la liste des acteurs "
 
-#, fuzzy
 msgid "Show episodes in title menu"
-msgstr "Afficher le nom complet du film ou de la série dans le titre du menu"
+msgstr "Afficher les épisodes dans le menu titre"
 
 msgid "Show full movie or series name in title menu"
 msgstr "Afficher le nom complet du film ou de la série dans le titre du menu"
@@ -197,9 +192,8 @@ msgstr "Afficher les détails de base pour le film ou la série"
 msgid "Show movie and series extra details"
 msgstr "Afficher les détails complets pour le film ou la série"
 
-#, fuzzy
 msgid "Show movie and series synopsis"
-msgstr "Afficher les détails de base pour le film ou la série"
+msgstr "Synopsis du film et de la série"
 
 msgid "Show search in plugin browser"
 msgstr "Afficher la recherche dans les plugins"
@@ -211,7 +205,7 @@ msgid "Show the whole IMDb title information for a movie or series, including, f
 msgstr "Afficher l'information IMDb complète du titre du film ou de la série, en incluant, par exemple, les noms alternatifs et si c'est une série. Prendra effet à la prochaine recherche IMDb pour un nom donné."
 
 msgid "Synopsis"
-msgstr ""
+msgstr "Synopsis"
 
 msgid "The Internet Movie Database"
 msgstr "La base de données internet des films"
@@ -226,10 +220,10 @@ msgid "Words / phrases to ignore "
 msgstr "Mots / phrases à ignorer "
 
 msgid "connection error"
-msgstr ""
+msgstr "erreur de connexion"
 
 msgid "no user rating yet"
 msgstr "pas d'appréciation encore"
 
 msgid "timeout"
-msgstr ""
+msgstr "délai d'attente dépassé"

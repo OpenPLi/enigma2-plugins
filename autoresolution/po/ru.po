@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Automatic Screen Resolution V. 0.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-18 16:36+0100\n"
+"POT-Creation-Date: 2023-10-03 15:37+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Dimitrij <dima-73@inbox.lv>\n"
 "Language-Team: openPLi Dimitrij\n"
@@ -178,6 +178,9 @@ msgstr "UHD чересстрочный режим"
 msgid "UHD Progressive Mode"
 msgstr "UHD прогрессивный режим"
 
+msgid "Use 'seek' for stream/video content"
+msgstr "Использовать 'seek' для стрима/видео"
+
 msgid "Use 60HZ instead 30HZ"
 msgstr "Использовать 60HZ вместо 30HZ"
 
@@ -200,7 +203,7 @@ msgid "default"
 msgstr "дефолт"
 
 msgid "no"
-msgstr ""
+msgstr "нет"
 
 msgid "second"
 msgstr "сек."

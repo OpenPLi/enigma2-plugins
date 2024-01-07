@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2 - easymedia\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"POT-Creation-Date: 2023-10-03 15:37+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Spaeleus <spaeleus@croci.org>\n"
 "Language-Team: www.linsat.net <spaeleus@croci.org>\n"
@@ -45,14 +45,14 @@ msgstr "Plugin DVDPlayer non installato!"
 msgid "Disabled"
 msgstr "Disabilitato"
 
-msgid "DreamExplorer"
-msgstr "DreamExplorer"
-
 msgid "EasyMedia settings..."
 msgstr "Configurazione EasyMedia..."
 
 msgid "Enabled"
 msgstr "Abilitato"
+
+msgid "FileCommander"
+msgstr ""
 
 msgid "Filebrowser"
 msgstr "Browser file"

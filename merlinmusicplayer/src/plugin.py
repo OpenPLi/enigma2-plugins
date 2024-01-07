@@ -292,6 +292,10 @@ class myHTTPClientFactory(HTTPClientFactory):
 	def __init__(self, url, method='GET', postdata=None, headers=None,
 	agent="SHOUTcast", timeout=0, cookies=None,
 	followRedirect=1, lastModified=None, etag=None):
+		if type(url) is str:
+			url = bytes(url, 'utf-8')
+		if type(method) is str:
+			method = bytes(method, 'utf-8')
 		HTTPClientFactory.__init__(self, url, method=method, postdata=postdata,
 		headers=headers, agent=agent, timeout=timeout, cookies=cookies, followRedirect=followRedirect)
 
@@ -1269,7 +1273,7 @@ class MerlinMusicPlayerScreen(Screen, InfoBarBase, InfoBarSeek, InfoBarNotificat
 	def getGoogleCover(self, artist, album):
 		if artist != "" and album != "":
 			url = 'https://www.google.de/search?q=%s+%s+-youtube&tbm=isch&source=lnt&tbs=isz:ex,iszw:500,iszh:500' % (quote(album), quote(artist))
-			getPage(url, timeout=10, agent='Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.56 Safari/537.17').addCallback(self.googleImageCallback).addErrback(self.coverDownloadFailed)
+			getPage(url.encode('utf-8'), timeout=10, agent='Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.56 Safari/537.17').addCallback(self.googleImageCallback).addErrback(self.coverDownloadFailed)
 		else:
 			self["coverArt"].showDefaultCover()
 
@@ -1548,8 +1552,10 @@ class MerlinMusicPlayerLyrics(Screen):
 			audio = ID3(self.currentSong.filename)
 		except:
 			audio = None
-		text = getEncodedString(self.getLyricsFromID3Tag(audio)).replace("\r\n", "\n")
-		text = text.replace("\r", "\n")
+		text = getEncodedString(self.getLyricsFromID3Tag(audio))
+		if type(text) is bytes:
+			text = text.decode('utf-8')
+		text = text.replace("\r\n", "\n").replace("\r", "\n")
 		self["lyric_text"].setText(text)
 
 	def getLyricsFromID3Tag(self, tag):
@@ -1569,10 +1575,10 @@ class MerlinMusicPlayerLyrics(Screen):
 	def gotLyrics(self, xmlstring):
 		root = cet_fromstring(xmlstring)
 		lyrictext = ""
-		lyrictext = root.findtext("{http://api.chartlyrics.com/}Lyric").encode("utf-8", 'ignore')
+		lyrictext = root.findtext("{http://api.chartlyrics.com/}Lyric")
 		self["lyric_text"].setText(lyrictext)
-		title = root.findtext("{http://api.chartlyrics.com/}LyricSong").encode("utf-8", 'ignore')
-		artist = root.findtext("{http://api.chartlyrics.com/}LyricArtist").encode("utf-8", 'ignore')
+		title = root.findtext("{http://api.chartlyrics.com/}LyricSong")
+		artist = root.findtext("{http://api.chartlyrics.com/}LyricArtist")
 		result = _("Response -> lyrics for: %s (%s)") % (title, artist)
 		self["resulttext"].setText(result)
 		if not lyrictext:
