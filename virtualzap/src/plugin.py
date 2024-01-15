@@ -8,7 +8,7 @@ from Screens.ChannelSelection import ChannelContextMenu, OFF, MODE_TV, service_t
 from Components.ChoiceList import ChoiceEntryComponent
 from enigma import eServiceReference, eTimer, getDesktop, eServiceCenter, getBestPlayableServiceReference, ePoint, eEPGCache, iPlayableService, eEnv
 from ServiceReference import ServiceReference, isPlayableForCur
-from Components.SystemInfo import SystemInfo
+from Components.SystemInfo import BoxInfo
 from Components.VideoWindow import VideoWindow
 from time import localtime, time
 from Screens.InfoBarGenerics import InfoBarShowHide, NumberZap, InfoBarPiP
@@ -119,7 +119,7 @@ class ExtendedVirtualZap(Screen, HelpableScreen):
 	sz_w = getDesktop(0).size().width()
 	sz_h = getDesktop(0).size().height()
 	usepip = False
-	pipDecoder = SystemInfo.get("NumVideoDecoders", 1) > 1
+	pipDecoder = BoxInfo.getItem("NumVideoDecoders", 1) > 1
 	if pipDecoder:
 		if not pip_config_initialized:
 			config.av.pip = ConfigPosition(default=[510, 28, 180, 135], args=(MAX_X, MAX_Y, MAX_X, MAX_Y))
@@ -1260,7 +1260,7 @@ class ExtendedVirtualZapConfig(Screen, ConfigListScreen):
 			list.append(getConfigListEntry(_("Show plugin in the context menu"), config.plugins.extvirtualzap.event_menu))
 		if config.plugins.extvirtualzap.mode.value != "3":
 			list.append(getConfigListEntry(_("Show plugin in channel selection context menu"), config.plugins.extvirtualzap.channelselection_contextmenu))
-			if SystemInfo.get("NumVideoDecoders", 1) > 1:
+			if BoxInfo.getItem("NumVideoDecoders", 1) > 1:
 				list.append(getConfigListEntry(_("Use PiP"), config.plugins.extvirtualzap.usepip))
 				if config.plugins.extvirtualzap.usepip.value:
 					list.append(getConfigListEntry(_("Show PiP in window infobar"), config.plugins.extvirtualzap.showpipininfobar))
@@ -1539,7 +1539,7 @@ def Plugins(**kwargs):
 	mode = config.plugins.extvirtualzap.mode.value
 	if mode == "0" or mode == "4":
 		plugin_name = _("Extended virtual zap")
-		if SystemInfo.get("NumVideoDecoders", 1) > 1:
+		if BoxInfo.getItem("NumVideoDecoders", 1) > 1:
 			plugin_name = _("Extended virtual zap (PiP)")
 		if mode == "0":
 			plist.append(PluginDescriptor(name=plugin_name, where=PluginDescriptor.WHERE_EXTENSIONSMENU, fnc=main))

@@ -361,8 +361,8 @@ def sessionstart(reason, **kwargs):
 
 
 def Plugins(**kwargs):
-	from Components.SystemInfo import SystemInfo
-	if SystemInfo["FrontpanelDisplay"]:
+	from Components.SystemInfo import BoxInfo
+	if BoxInfo.getItem("FrontpanelDisplay"):
 		return [PluginDescriptor(where=[PluginDescriptor.WHERE_AUTOSTART, PluginDescriptor.WHERE_SESSIONSTART], fnc=sessionstart),
 			PluginDescriptor(name="VFD Display Setup", description=_("Change VFD display settings"), where=PluginDescriptor.WHERE_MENU, fnc=main)]
 	return []

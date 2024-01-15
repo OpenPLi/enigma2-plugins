@@ -68,7 +68,7 @@ import skin
 from Components.config import config, ConfigSubsection, ConfigDirectory, ConfigYesNo, ConfigInteger, getConfigListEntry, configfile
 from Components.ConfigList import ConfigListScreen
 
-from Components.SystemInfo import SystemInfo
+from Components.SystemInfo import BoxInfo
 from enigma import eServiceCenter, getBestPlayableServiceReference
 from Components.VideoWindow import VideoWindow
 from ServiceReference import ServiceReference
@@ -1070,7 +1070,7 @@ class MerlinMusicPlayerScreen(Screen, InfoBarBase, InfoBarSeek, InfoBarNotificat
 		self.session.openWithCallback(self.setupFinished, MerlinMusicPlayerSetup, False)
 
 	def showTV(self):
-		if SystemInfo.get("NumVideoDecoders", 1) > 1:
+		if BoxInfo.getItem("NumVideoDecoders", 1) > 1:
 			if self.screenSaverTimer.isActive():
 				self.screenSaverTimer.stop()
 			if self.screenSaverScreen:

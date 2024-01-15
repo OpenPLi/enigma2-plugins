@@ -15,7 +15,7 @@ from ServiceReference import ServiceReference
 from Screens.ChannelSelection import ChannelContextMenu, OFF, MODE_TV, service_types_tv
 from Components.ChoiceList import ChoiceEntryComponent
 from Tools.BoundFunction import boundFunction
-from Components.SystemInfo import SystemInfo
+from Components.SystemInfo import BoxInfo
 from Components.NimManager import nimmanager
 from . import EpgLoadSaveRefresh
 import os
@@ -60,7 +60,7 @@ config.plugins.epgrefresh.parse_autotimer = ConfigYesNo(default=False)
 config.plugins.epgrefresh.erase = ConfigYesNo(default=False)
 
 adapter_choices = [("main", _("Main Picture"))]
-if SystemInfo.get("NumVideoDecoders", 1) > 1:
+if BoxInfo.getItem("NumVideoDecoders", 1) > 1:
 	adapter_choices.append(("pip", _("Picture in Picture")))
 	adapter_choices.append(("pip_hidden", _("Picture in Picture (hidden)")))
 if len(nimmanager.nim_slots) > 1:
