@@ -29,6 +29,29 @@ else
 fi
 
 #
+# python version check that we are with python3
+#
+python_exec=""
+which python3 > /dev/null 2>&1
+if [[ $? -eq 0 ]]; then
+	python_exec="python3"
+else
+	which python > /dev/null 2>&1
+	if [[ $? -eq 0 ]]; then
+		# Check if it is version 3
+		python_version=$(python --version | awk -F "." '{ gsub(/Python\s+/,"",$1); print $1; }')
+		if [[ ${python_version} -eq 3 ]]; then
+			python_exec="python"
+		else
+			python_exec=""
+		fi
+	fi
+fi
+[[ -z ${python_exec} ]] && { echo "No python 3 found, please install it or set it first into your PATH variable"; exit 1; }
+
+echo "Python  found: [${python_exec}]"
+
+#
 # On Mac OSX find option are specific
 #
 if [[ "$OSTYPE" == "darwin"* ]]
@@ -68,7 +91,7 @@ for directory in */po/ ; do
 	find $findoptions .. -name "*.py" -exec xgettext --no-wrap -L Python --from-code=UTF-8 -kpgettext:1c,2 --add-comments="TRANSLATORS:" -d $plugin -s -o $plugin-py.pot {} \+
 	$localgsed --in-place $plugin-py.pot --expression=s/CHARSET/UTF-8/
 	printf "Creating temporary file $plugin-xml.pot\n"
-	find $findoptions .. -name "*.xml" -exec python $rootpath/xml2po.py {} \+ > $plugin-xml.pot
+	find $findoptions .. -name "*.xml" -exec ${python_exec} $rootpath/xml2po-python3.py {} \+ > $plugin-xml.pot
 	printf "Merging pot files to create: %s.pot\n" $plugin
 	cat $plugin-py.pot $plugin-xml.pot | msguniq --no-wrap --no-location -o $plugin.pot -
 	rm $plugin-py.pot $plugin-xml.pot
