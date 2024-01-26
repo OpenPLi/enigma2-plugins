@@ -1215,30 +1215,6 @@ class AutoTimer:
 					"extdesc": event.getExtendedDescription() or '' # XXX: does event.getExtendedDescription() actually return None on no description or an empty string?
 				})
 
-	def checkSimilarityOE(self, timer, name1, name2, shortdesc1, shortdesc2, extdesc1, extdesc2, force=False):
-		foundTitle = False
-		foundShort = False
-		retValue = False
-		if name1 and name2:
-			foundTitle = (0.8 < SequenceMatcher(lambda x: x == " ", name1, name2).ratio())
-		# NOTE: only check extended & short if tile is a partial match
-		if foundTitle:
-			if timer.searchForDuplicateDescription > 0 or force:
-				if shortdesc1 and shortdesc2:
-					# If the similarity percent is higher then 0.7 it is a very close match
-					foundShort = (0.7 < SequenceMatcher(lambda x: x == " ", shortdesc1, shortdesc2).ratio())
-					if foundShort:
-						if timer.searchForDuplicateDescription == 2:
-							if extdesc1 and extdesc2:
-								# Some channels indicate replays in the extended descriptions
-								# If the similarity percent is higher then 0.7 it is a very close match
-								retValue = (0.7 < SequenceMatcher(lambda x: x == " ", extdesc1, extdesc2).ratio())
-						else:
-							retValue = True
-			else:
-				retValue = True
-		return retValue
-
 	def checkSimilarity(self, timer, name1, name2, shortdesc1, shortdesc2, extdesc1, extdesc2, force=False, isMovie=False):
 		if name1 and name2:
 			sequenceMatcher = SequenceMatcher(" ".__eq__, name1, name2)
@@ -1258,9 +1234,9 @@ class AutoTimer:
 					sequenceMatcher.set_seqs(shortdesc1, shortdesc2)
 					ratio = sequenceMatcher.ratio()
 					doDebug("[AutoTimer] shortdesc ratio %f - %s - %d - %s - %d" % (ratio, shortdesc1, len(shortdesc1), shortdesc2, len(shortdesc2)))
-					foundShort = shortdesc1 in shortdesc2 or ((ratio_value < ratio) or (ratio_value == 1.0 and ratio_value == ratio))
-					doDebug("[AutoTimer] Final result for found shortdesc: %s" % foundShort)
-					if foundShort:
+					retValue = (ratio_value < ratio) or (ratio_value == 1.0 and ratio_value == ratio)
+					doDebug("[AutoTimer] Final result for found shortdesc: %s" % retValue)
+					if retValue:
 						doLog("[AutoTimer] shortdesc match: ratio %f - %s - %d - %s - %d" % (ratio, shortdesc1, len(shortdesc1), shortdesc2, len(shortdesc2)))
 						if force or timer.searchForDuplicateDescription > 1:
 							if extdesc1 and extdesc2:
@@ -1271,8 +1247,6 @@ class AutoTimer:
 								doDebug("[AutoTimer] Final result for found extdesc: %s" % retValue)
 								if retValue:
 									doLog("[AutoTimer] extdesc match: ratio %f - %s - %d - %s - %d" % (ratio, extdesc1, len(extdesc1), extdesc2, len(extdesc2)))
-						else:
-							retValue = True
 			else:
 				retValue = True
 		return retValue
