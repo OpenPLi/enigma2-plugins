@@ -1,0 +1,42 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: TransCodingSetup\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-07-26 11:30+0200\n"
+"PO-Revision-Date: 2024-01-16 18:15+0200\n"
+"Last-Translator: hasiok\n"
+"Language-Team: hasiok\n"
+"Language: pl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Bitrate"
+msgstr ""
+
+msgid "Frame rate"
+msgstr "Klatki na sekundę"
+
+msgid "It seems your receiver is not supported!"
+msgstr "Wygląda na to, że Twój odbiornik nie jest obsługiwany!"
+
+msgid "Not found file '/etc/enigma2/streamproxy.conf' !"
+msgstr "Nie znaleziono pliku '/etc/enigma2/streamproxy.conf' !"
+
+msgid "Quit"
+msgstr "Wyjście"
+
+msgid "Set"
+msgstr "Zapisz"
+
+msgid "Set up default transcoding parameters"
+msgstr "Skonfiguruj domyślne parametry transkodowania"
+
+msgid "Transcoding Setup"
+msgstr "Ustawienia transkodowania"
+
+msgid "Video codec"
+msgstr "Kodek video"
+
+msgid "Video size"
+msgstr "Jakość video"
