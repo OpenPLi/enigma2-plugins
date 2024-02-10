@@ -1,0 +1,4 @@
+Package: enigma2-plugin-extensions-mediathekviewweb
+Version: 1.0
+Description: Zugriff auf Mediathekviewweb.de
+Depends: enigma2, python3-twisted-web, python3-requests
