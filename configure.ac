@@ -249,6 +249,11 @@ mediadownloader/meta/Makefile
 mediadownloader/po/Makefile
 mediadownloader/src/Makefile
 
+mediathekviewweb/Makefile
+mediathekviewweb/meta/Makefile
+mediathekviewweb/src/Makefile
+mediathekviewweb/src/img/Makefile
+
 merlinepg/Makefile
 merlinepg/meta/Makefile
 merlinepg/src/Makefile

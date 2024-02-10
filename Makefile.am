@@ -37,6 +37,7 @@ SUBDIRS = \
 	letterbox \
 	logomanager \
 	mediadownloader \
+	mediathekviewweb \
 	merlinepg \
 	merlinepgcenter \
 	merlinmusicplayer \
