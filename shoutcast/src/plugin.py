@@ -23,7 +23,7 @@
 from Plugins.Plugin import PluginDescriptor
 from Screens.Screen import Screen
 from Screens.InfoBar import InfoBar
-from Components.SystemInfo import SystemInfo
+from Components.SystemInfo import BoxInfo
 from Components.ActionMap import ActionMap
 from Components.Label import Label
 from enigma import eServiceReference, eListboxPythonMultiContent, eListbox, gFont, RT_HALIGN_LEFT, RT_HALIGN_RIGHT, RT_VALIGN_CENTER, getDesktop, iPlayableService, iServiceInformation, eTimer, eConsoleAppContainer, ePicLoad
@@ -273,7 +273,7 @@ class SHOUTcastWidget(Screen):
 	def activatePiP(self):
 		if self.pipZapAvailable is None:
 			return
-		if SystemInfo.get("NumVideoDecoders", 1) > 1:
+		if BoxInfo.getItem("NumVideoDecoders", 1) > 1:
 			if InfoBar.instance is not None:
 				modeslist = []
 				keyslist = []
@@ -461,7 +461,7 @@ class SHOUTcastWidget(Screen):
 				else:
 					self.session.open(MessageBox, _("Only running streamings can be recorded!"), type=MessageBox.TYPE_INFO, timeout=20)
 		else:
-			if self.pipZapAvailable is not None and SystemInfo.get("NumVideoDecoders", 1) > 1:
+			if self.pipZapAvailable is not None and BoxInfo.getItem("NumVideoDecoders", 1) > 1:
 				self.activatePiP()
 			else:
 				self.showWindow()
@@ -499,7 +499,7 @@ class SHOUTcastWidget(Screen):
 				self.stopReloadStationListTimer()
 				self.getFavoriteList(self.favoriteListIndex)
 		else:
-			if self.pipZapAvailable is not None and SystemInfo.get("NumVideoDecoders", 1) > 1:
+			if self.pipZapAvailable is not None and BoxInfo.getItem("NumVideoDecoders", 1) > 1:
 				self.openServiceList()
 			else:
 				self.showWindow()
@@ -734,7 +734,7 @@ class SHOUTcastWidget(Screen):
 		if len(self.currentStreamingURL) != 0:
 			options.extend(((_("Add current playing stream to favorite"), self.addCurrentStreamToFavorite),))
 		options.extend(((_("Hide"), self.hideWindow),))
-		if self.pipZapAvailable is not None and SystemInfo.get("NumVideoDecoders", 1) > 1:
+		if self.pipZapAvailable is not None and BoxInfo.getItem("NumVideoDecoders", 1) > 1:
 			options.extend(((_("Menu PiP"), self.activatePiP),))
 		self.session.openWithCallback(self.menuCallback, ChoiceBox, list=options)
 

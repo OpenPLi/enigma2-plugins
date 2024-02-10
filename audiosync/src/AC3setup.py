@@ -3,7 +3,7 @@ from Components.Button import Button
 from Components.config import config
 from Components.ConfigList import ConfigListScreen
 from Components.Label import Label
-from Components.SystemInfo import SystemInfo
+from Components.SystemInfo import BoxInfo
 from Screens.Screen import Screen
 
 from . import _
@@ -39,7 +39,7 @@ class AC3LipSyncSetup(ConfigListScreen, Screen):
 			(_("Step in ms for key %i") % (5), config.plugins.AC3LipSync.absoluteStep5),
 			(_("Step in ms for key %i") % (8), config.plugins.AC3LipSync.absoluteStep8)
 		]
-		if SystemInfo["CanDownmixAC3"]:
+		if BoxInfo.getItem("CanDownmixAC3"):
 			self.list += [
 				(_("Restart audio") + " AC3", config.plugins.AC3LipSync.restartSelection),
 				(_("Restart audio delay (in sec)"), config.plugins.AC3LipSync.restartDelay)

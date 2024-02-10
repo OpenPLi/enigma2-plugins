@@ -4,7 +4,7 @@ from Components.ConfigList import ConfigListScreen
 from Components.Label import Label
 from Components.ServiceEventTracker import ServiceEventTracker
 from Components.Sources.StaticText import StaticText
-from Components.SystemInfo import SystemInfo
+from Components.SystemInfo import BoxInfo
 from enigma import eTimer, getDesktop, iPlayableService, iServiceInformation
 from Plugins.Plugin import PluginDescriptor
 from Plugins.SystemPlugins.Videomode.VideoHardware import video_hw  # depends on Videomode Plugin
@@ -16,7 +16,7 @@ from Tools import Notifications
 
 from . import _
 
-proc_videomode = SystemInfo.get("Autoresolution_proc_videomode", "/proc/stb/video/videomode")
+proc_videomode = BoxInfo.getItem("Autoresolution_proc_videomode", "/proc/stb/video/videomode")
 
 
 def readAvailableModes():
@@ -328,7 +328,7 @@ class AutoRes(Screen):
 			self.changeVideomode()
 
 	def __evVideoGammaChanged(self):
-		if SystemInfo["HasHdrType"] and config.plugins.autoresolution.hdmihdrtype.value and config.av.hdmihdrtype.value == "auto":
+		if BoxInfo.getItem("HasHdrType") and config.plugins.autoresolution.hdmihdrtype.value and config.av.hdmihdrtype.value == "auto":
 			if not self.timer.isActive() or self.after_switch_delay:
 				print("[AutoRes] got event evVideoGammaChanged")
 				self.timer.start(200, True)
@@ -439,7 +439,7 @@ class AutoRes(Screen):
 					setDeinterlacer("auto")
 
 				gamma_num = info.getInfo(iServiceInformation.sGamma)
-				if SystemInfo["HasHdrType"] and config.plugins.autoresolution.hdmihdrtype.value and config.av.hdmihdrtype.value == "auto":
+				if BoxInfo.getItem("HasHdrType") and config.plugins.autoresolution.hdmihdrtype.value and config.av.hdmihdrtype.value == "auto":
 					gammas = ("auto", "hdr10", "hdr10", "hlg", "auto")
 					if gamma_num < len(gammas):
 						# Possible gamma values
@@ -449,7 +449,7 @@ class AutoRes(Screen):
 						# 3: Hybrid Log-gamma
 						hdrtype = gammas[gamma_num]
 						setHdmiHdrType(hdrtype)
-						if SystemInfo["HasColorimetry"] and config.plugins.autoresolution.hdmicolorimetry.value != "no" and config.av.hdmicolorimetry.value == "auto":
+						if BoxInfo.getItem("HasColorimetry") and config.plugins.autoresolution.hdmicolorimetry.value != "no" and config.av.hdmicolorimetry.value == "auto":
 							colorimetry = hdrtype in ("hdr10", "hlg") and config.plugins.autoresolution.hdmicolorimetry.value or "auto"
 							setColorimetry(colorimetry)
 
@@ -624,9 +624,9 @@ class AutoResSetupMenu(Screen, ConfigListScreen):
 						getConfigListEntry(_("Force set progressive for stream/video content"), config.plugins.autoresolution.force_progressive_mode),
 						getConfigListEntry(_("Use 'seek' for stream/video content"), config.plugins.autoresolution.seek_video_stream_service)
 					))
-					if SystemInfo["HasHdrType"]:
+					if BoxInfo.getItem("HasHdrType"):
 						self.list.append(getConfigListEntry(_("Smart HDR type (set 'auto' HDMI HDR type)"), config.plugins.autoresolution.hdmihdrtype))
-						if SystemInfo["HasColorimetry"] and config.plugins.autoresolution.hdmihdrtype.value:
+						if BoxInfo.getItem("HasColorimetry") and config.plugins.autoresolution.hdmihdrtype.value:
 							self.list.append(getConfigListEntry(_("Separate colorimetry for HDR (set 'auto' HDMI Colorimetry)"), config.plugins.autoresolution.hdmicolorimetry))
 				else:
 					self.list.append(getConfigListEntry(_("Lock timeout"), config.plugins.autoresolution.lock_timeout))

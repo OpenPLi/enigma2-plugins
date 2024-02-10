@@ -36,7 +36,7 @@ from Components.MenuList import MenuList
 from Components.Label import Label
 from Components.Button import Button
 from Components.EpgList import Rect
-from Components.SystemInfo import SystemInfo
+from Components.SystemInfo import BoxInfo
 from Components.MultiContent import MultiContentEntryText
 from enigma import eServiceReference
 from enigma import eListboxPythonMultiContent, eListbox, gFont, RT_HALIGN_LEFT, RT_HALIGN_RIGHT, RT_VALIGN_CENTER, RT_VALIGN_TOP
@@ -1058,7 +1058,7 @@ class RemotePlayer(Screen, InfoBarAudioSelection):
 	def activatePiP(self):
 		if self.pipZapAvailable is None:
 			return
-		if SystemInfo.get("NumVideoDecoders", 1) > 1:
+		if BoxInfo.getItem("NumVideoDecoders", 1) > 1:
 			if InfoBar.instance is not None:
 				modeslist = []
 				keyslist = []

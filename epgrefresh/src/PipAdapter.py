@@ -1,5 +1,5 @@
 from Screens.PictureInPicture import PictureInPicture
-from Components.SystemInfo import SystemInfo
+from Components.SystemInfo import BoxInfo
 from enigma import ePoint, eSize
 from Screens.InfoBar import InfoBar
 
@@ -19,7 +19,7 @@ class PipAdapter:
 	backgroundCapable = False
 
 	def __init__(self, session, hide=True):
-		if SystemInfo.get("NumVideoDecoders", 1) < 2:
+		if BoxInfo.getItem("NumVideoDecoders", 1) < 2:
 			self.pipAvail = False
 			return
 
