@@ -25,7 +25,7 @@ class ReconstructApSc(ChoiceBox):
 			if not path.endswith('.ts'):
 				tlist += tnext
 				name = _("more files...")
-				if path.endswith('.stream'):
+				if path.endswith('.stream') and fileExists(path):
 					tlist.append((_("Change type '.stream' to '.ts' of the selected movie"), "CALLFUNC", self.confirmed4, path))
 			else:
 				tlist.append((_("Reconstruct the .ap and .sc files of the selected movie"), "CALLFUNC", self.confirmed1, service, path))
