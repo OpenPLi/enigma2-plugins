@@ -210,3 +210,6 @@ msgstr "сек."
 
 msgid "seconds"
 msgstr "сек."
+
+msgid "Use 1080i25 same as 1080p25 content"
+msgstr "Использовать 1080i25 так же как 1080p25"
