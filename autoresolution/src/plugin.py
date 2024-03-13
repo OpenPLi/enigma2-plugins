@@ -92,6 +92,7 @@ config.plugins.autoresolution.delay_switch_mode = ConfigSelection(default="1000"
 config.plugins.autoresolution.mode = ConfigSelection(default="manual", choices=[("manual", _("Manual")), ("auto", _("Auto frame rate (refresh need 'multi/auto')"))])
 config.plugins.autoresolution.lock_timeout = ConfigSelection(default="60", choices=[("30", "30 " + _("seconds")), ("60", "60 " + _("seconds"))])
 config.plugins.autoresolution.ask_apply_mode = ConfigYesNo(default=False)
+config.plugins.autoresolution.replace_1080i25_1080p25 = ConfigYesNo(default=False)
 config.plugins.autoresolution.auto_30_60 = ConfigYesNo(default=True)
 config.plugins.autoresolution.auto_24_30_alternative = ConfigYesNo(default=True)
 config.plugins.autoresolution.ask_timeout = ConfigSelection(default="20", choices=[("5", "5 " + _("seconds")), ("10", "10 " + _("seconds")), ("15", "15 " + _("seconds")), ("20", "20 " + _("seconds"))])
@@ -246,7 +247,7 @@ class AutoRes(Screen):
 		self.video_stream_service = False
 
 	def __evUpdatedInfo(self):
-		if self.newService and config.plugins.autoresolution.mode.value == "manual":
+		if config.plugins.autoresolution.enable.value and self.newService and config.plugins.autoresolution.mode.value == "manual":
 			print("[AutoRes] service changed")
 			self.after_switch_delay = False
 			if int(config.plugins.autoresolution.delay_switch_mode.value) > 0:
@@ -328,28 +329,36 @@ class AutoRes(Screen):
 			self.changeVideomode()
 
 	def __evVideoGammaChanged(self):
+		if config.plugins.autoresolution.mode.value != "manual" or not config.plugins.autoresolution.enable.value:
+			return
 		if BoxInfo.getItem("HasHdrType") and config.plugins.autoresolution.hdmihdrtype.value and config.av.hdmihdrtype.value == "auto":
 			if not self.timer.isActive() or self.after_switch_delay:
 				print("[AutoRes] got event evVideoGammaChanged")
 				self.timer.start(200, True)
 
 	def __evVideoFramerateChanged(self):
+		if config.plugins.autoresolution.mode.value != "manual" or not config.plugins.autoresolution.enable.value:
+			return
 		if not self.timer.isActive() or self.after_switch_delay:
 			print("[AutoRes] got event evFramerateChanged")
 			self.timer.start(200, True)
 
 	def __evVideoSizeChanged(self):
+		if config.plugins.autoresolution.mode.value != "manual" or not config.plugins.autoresolution.enable.value:
+			return
 		if not self.timer.isActive() or self.after_switch_delay:
 			print("[AutoRes] got event evVideoSizeChanged")
 			self.timer.start(200, True)
 
 	def __evVideoProgressiveChanged(self):
+		if config.plugins.autoresolution.mode.value != "manual" or not config.plugins.autoresolution.enable.value:
+			return
 		if not self.timer.isActive() or self.after_switch_delay:
 			print("[AutoRes] got event evVideoProgressiveChanged")
 			self.timer.start(200, True)
 
 	def determineContent(self):
-		if config.plugins.autoresolution.mode.value != "manual":
+		if config.plugins.autoresolution.mode.value != "manual" or not config.plugins.autoresolution.enable.value:
 			return
 		self.timer.stop()
 		resolutionlabel.hide()
@@ -404,6 +413,7 @@ class AutoRes(Screen):
 					except:
 						pass
 
+				orig_prog = prog
 				if config.plugins.autoresolution.force_progressive_mode.value and self.video_stream_service and prog != "p":
 					prog = "p"
 
@@ -414,7 +424,7 @@ class AutoRes(Screen):
 						new_mode = 'uhd_p'
 					else:
 						new_mode = 'uhd_i' # 2160i content
-				elif (height >= 900 or width >= 1600) and frate in ('24', '25', '30') and prog == 'p': # 1080p content
+				elif (height >= 900 or width >= 1600) and frate in ('24', '25', '30') and (prog == 'p' or (orig_prog != "p" and frate == '25' and config.plugins.autoresolution.replace_1080i25_1080p25.value)): # 1080p content
 					new_mode = 'p1080_%s' % frate
 				elif (576 < height < 900 or 720 < width < 1600) and frate == '24' and prog == 'p': # 720p24 content
 					new_mode = 'p720_24'
@@ -508,7 +518,7 @@ class AutoRes(Screen):
 			self.setMode(default[0])
 
 	def setMode(self, mode, set=True):
-		if config.plugins.autoresolution.mode.value != "manual":
+		if config.plugins.autoresolution.mode.value != "manual" or not config.plugins.autoresolution.enable.value:
 			return
 		rate = config.av.videorate[mode].value
 		port_txt = "HDMI" if port == "DVI" else port
@@ -607,6 +617,8 @@ class AutoResSetupMenu(Screen, ConfigListScreen):
 				if config.plugins.autoresolution.mode.value == "manual":
 					for mode, label in resolutions:
 						self.list.append(getConfigListEntry(label, videoresolution_dictionary[mode]))
+						if mode == "p1080_25":
+							self.list.append(getConfigListEntry("  " + _("Use 1080i25 same as 1080p25 content"), config.plugins.autoresolution.replace_1080i25_1080p25))
 					if "720p" in config.av.videorate:
 						self.list.append(getConfigListEntry(_("Refresh Rate") + " 720p", config.av.videorate["720p"]))
 					if "1080i" in config.av.videorate:
@@ -627,7 +639,7 @@ class AutoResSetupMenu(Screen, ConfigListScreen):
 					if BoxInfo.getItem("HasHdrType"):
 						self.list.append(getConfigListEntry(_("Smart HDR type (set 'auto' HDMI HDR type)"), config.plugins.autoresolution.hdmihdrtype))
 						if BoxInfo.getItem("HasColorimetry") and config.plugins.autoresolution.hdmihdrtype.value:
-							self.list.append(getConfigListEntry(_("Separate colorimetry for HDR (set 'auto' HDMI Colorimetry)"), config.plugins.autoresolution.hdmicolorimetry))
+							self.list.append(getConfigListEntry("  " + _("Separate colorimetry for HDR (set 'auto' HDMI Colorimetry)"), config.plugins.autoresolution.hdmicolorimetry))
 				else:
 					self.list.append(getConfigListEntry(_("Lock timeout"), config.plugins.autoresolution.lock_timeout))
 					self.list.append(getConfigListEntry(_("Ask before changing videomode"), config.plugins.autoresolution.ask_apply_mode))
@@ -698,8 +710,8 @@ class AutoFrameRate(Screen):
 		self.init = False
 
 	def AutoVideoFramerateChanged(self):
-		print("[AutoFrameRate] got event evFramerateChanged")
-		if usable and config.plugins.autoresolution.mode.value == "auto":
+		if usable and config.plugins.autoresolution.enable.value and config.plugins.autoresolution.mode.value == "auto":
+			print("[AutoFrameRate] got event evFramerateChanged")
 			if config.av.videoport.value in config.av.videomode:
 				if config.av.videomode[config.av.videoport.value].value in config.av.videorate:
 					service = self.session.nav.getCurrentService()
@@ -820,8 +832,8 @@ class ManualResolution(Screen):
 			values = f.readline().replace("\n", "").replace("pal ", "").replace("ntsc ", "").replace("auto", "").replace("480i", "").replace("480p", "").replace("576i", "").replace("576p", "").replace("3d1080p24", "").replace("3d720p50", "").replace("3d720p", "").split(" ", -1)
 			for x in values:
 				if x:
-					if x in ('2160p', '1080p', '1080i', '720p'):
-						entry = x.replace('2160p', '2160p@60hz').replace('1080p', '1080p@60hz').replace('720p', '720p@60hz').replace('1080i', '1080i@60hz'), x
+					if x in ('2160p', '1080p', '720p'):
+						entry = x.replace('2160p', '2160p@60hz').replace('1080p', '1080p@60hz').replace('720p', '720p@60hz'), x
 					else:
 						entry = x.replace('i50', 'i@50hz').replace('i60', 'i@60hz').replace('p23', 'p@23.976hz').replace('p24', 'p@24hz').replace('p25', 'p@25hz').replace('p29', 'p@29.970hz').replace('p30', 'p@30hz').replace('p50', 'p@50hz').replace('p60', 'p@60hz'), x
 					self.choices.append(entry)
