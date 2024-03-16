@@ -560,11 +560,12 @@ class AutoTimerEditor(Screen, ConfigListScreen, AutoTimerEditorBase):
 		self.renameFilterButton()
 
 		# Define Actions
-		self["actions"] = ActionMap(["SetupActions", "ColorActions"],
+		self["actions"] = ActionMap(["SetupActions", "ColorActions", "TimerEditActions"],
 			{
 				"cancel": self.cancel,
 				"save": self.maybeSave,
 				"ok": self.ok,
+				"log": self.copyNameOrMatchTitle,
 				"yellow": self.editFilter,
 				"blue": self.editServices
 			}, -2
@@ -635,8 +636,8 @@ class AutoTimerEditor(Screen, ConfigListScreen, AutoTimerEditorBase):
 	def initHelpTexts(self):
 		self.helpDict = {
 			self.enabled: _("Set this NO to disable this AutoTimer."),
-			self.name: _("This is a name you can give the AutoTimer. It will be shown in the Overview and the Preview."),
-			self.match: _("This is what will be looked for in event titles. Note that looking for e.g. german umlauts can be tricky as you have to know the encoding the channel uses."),
+			self.name: _("This is a name you can give the AutoTimer. It will be shown in the Overview and the Preview.") + _("\nWith 'Info' can be edited existing text from \"Match title\" and inserted to \"Description\"."),
+			self.match: _("This is what will be looked for in event titles. Note that looking for e.g. german umlauts can be tricky as you have to know the encoding the channel uses.") + _("\nWith 'Info' can be edited existing text from \"Description\" and inserted to \"Match title\"."),
 			self.encoding: _("Encoding the channel uses for it's EPG data. You only need to change this if you're searching for special characters like the german umlauts."),
 			self.searchType: _("Select \"exact match\" to enforce \"Match title\" to match exactly, \"partial match\" if you only want to search for a part of the event title or \"description match\" if you only want to search for a part of the event description") + _(" (only services from bouquets when use \"favorites description match\")."),
 			self.searchCase: _("Select whether or not you want to enforce case correctness.") + "\n" + _("Attention! We recommend that you ignore case when searching in Cyrillic if the search name contains uppercase and lowercase letters."),
@@ -877,6 +878,14 @@ class AutoTimerEditor(Screen, ConfigListScreen, AutoTimerEditorBase):
 			self.matchKeyboard()
 		else:
 			ConfigListScreen.keyOK(self)
+
+	def copyNameOrMatchTitle(self):
+		cur = self["config"].getCurrent()
+		cur = cur and cur[1]
+		if cur == self.name:
+			self.session.openWithCallback(self.SearchNameCallback, VirtualKeyBoard, title=_("Enter or edit description"), text=self.match.value)
+		elif cur == self.match:
+			self.session.openWithCallback(self.SearchMatchCallback, VirtualKeyBoard, title=_("Enter or edit match title"), text=self.name.value)
 
 	def nameKeyboard(self):
 		self.session.openWithCallback(self.SearchNameCallback, VirtualKeyBoard, title=_("Enter or edit description"), text=self.name.value)
