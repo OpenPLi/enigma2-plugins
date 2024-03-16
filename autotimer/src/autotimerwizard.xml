@@ -13,7 +13,7 @@ self.selectKey("OK")
 
 		<!-- Name / Match / Enabled / Justplay -->
 		<step id="conf1" nextstep="conf2">
-			<text value="You can set the basic properties of an AutoTimer here.\nWhile 'Name' is just a human-readable name displayed in the Overview, 'Match in title' is what is looked for in the EPG." />
+			<text value="You can set the basic properties of an AutoTimer here.\nWhile 'Name' is just a human-readable name displayed in the Overview, 'Match in title' is what is looked for in the EPG.\nNote: with 'Insert' button on 'Description' or 'Match title' you can copy and edit text from one item to current item."/>
 			<config type="dynamic" source="getConfigList" evaluation="selectionMade" />
 			<code>
 self.clearSelectedKeys()

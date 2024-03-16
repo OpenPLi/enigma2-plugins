@@ -21,6 +21,7 @@ from Tools import Directories
 
 from .Logger import doLog
 
+from Screens.VirtualKeyBoard import VirtualKeyBoard
 
 class AutoTimerWizard(WizardLanguage, AutoTimerEditorBase, Rc):
 	STEP_ID_BASIC = 2
@@ -81,10 +82,11 @@ class AutoTimerWizard(WizardLanguage, AutoTimerEditorBase, Rc):
 				self.filterSet, self.excludes, self.includes
 		)
 
-		self["TextEntryActions"] = ActionMap(["TextEntryActions"],
+		self["TextEntryActions"] = ActionMap(["TextEntryActions", "TimerEditActions"],
 			{
 				"deleteForward": self.deleteForward,
-				"deleteBackward": self.deleteBackward
+				"deleteBackward": self.deleteBackward,
+				"log": self.copyNameOrMatchTitle
 			}, -2
 		)
 
@@ -123,6 +125,20 @@ class AutoTimerWizard(WizardLanguage, AutoTimerEditorBase, Rc):
 		elif self.currStep == AutoTimerWizard.STEP_ID_FILTER: # Filters
 			return self.filterDlg["config"].getList()
 		return []
+
+	def copyNameOrMatchTitle(self):
+		def Callback(callback=None):
+			if callback:
+				if cur == self.name:
+					self.name.value = callback
+				elif cur == self.match:
+					self.match.value = callback
+		cur = self["config"].getCurrent()
+		cur = cur and cur[1]
+		if cur == self.name:
+			self.session.openWithCallback(Callback, VirtualKeyBoard, title=_("Enter or edit description"), text=self.match.value)
+		elif cur == self.match:
+			self.session.openWithCallback(Callback, VirtualKeyBoard, title=_("Enter or edit match title"), text=self.name.value)
 
 	def selectionMade(self):
 		timer = self.timer
