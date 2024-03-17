@@ -26,11 +26,15 @@ msgid ""
 "\n"
 "With 'Info' can be edited existing text from \"Description\" and inserted to \"Match title\"."
 msgstr ""
+"\n"
+"С помощью 'Info' можно редактировать существующий текст из \"Описание\" и вставить в \"Название совпадения\"."
 
 msgid ""
 "\n"
 "With 'Info' can be edited existing text from \"Match title\" and inserted to \"Description\"."
 msgstr ""
+"\n"
+"С помощью 'Info' можно редактировать существующий текст из \"Название совпадения\" и вставить в \"Описание\"."
 
 msgid " (only services from bouquets when use \"favorites description match\")."
 msgstr " (только в сервисах из букетов при использовании \"описание совпадения в фаворитах\")."
@@ -507,9 +511,9 @@ msgstr "Если это включено, то лог поиска будет з
 msgid "If this enabled, will check the list of timers, conflicting autotimers are disabled, the duplicate autotimers will be deleted."
 msgstr "Если эта опция включена, то будет запущена проверка списка таймеров, по окончании поиска событий .Кофликтные автотаймеры будут отключены, дублирующие автотаймеры будут удалены."
 
-#, fuzzy, python-format
+#python-format
 msgid "If this is enabled an existing timer will also be considered recording an event if it records at least 80% of the it."
-msgstr "Если это включено, то уже существующий таймер также будет рассмотрен как записывающий событие, если этот таймер включает в себя, не меньше 80% времени события."
+msgstr "Если это включено, то уже существующий таймер также будет рассмотрен как записывающий событие, если этот таймер включает в себя не меньше 80% времени события."
 
 msgid "If this is enabled, up on the MENU button in the multi-EPG will list of choices for AutoTimer."
 msgstr "Если этот параметр включен, то на кнопке меню в мульти EPG, будет список действий для  Автотаймера."
