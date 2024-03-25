@@ -141,6 +141,9 @@ class EPGRefreshTimer(timer.Timer):
 		if config.plugins.epgrefresh.lastscan.value < begin and begin < time():
 			tocall()
 
+		if config.plugins.epgrefresh.lastscan.value > begin and begin < time():
+			begin += 86400
+
 		refreshTimer = EPGRefreshTimerEntry(begin, tocall, nocheck=True)
 
 		i = 0
