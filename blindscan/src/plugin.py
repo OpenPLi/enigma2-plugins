@@ -375,7 +375,7 @@ class Blindscan(ConfigListScreen, Screen, TransponderFiltering):
 		self["key_red"] = Label(_("Exit"))
 		self["key_yellow"] = Label("")
 		self["key_green"] = Label("")
-		self["key_blue"] = Label(_(""))
+		self["key_blue"] = Label("")
 
 		if self.scan_nims.value is not None and self.scan_nims.value != "": # self.scan_nims set in createConfig()
 			self["key_green"].setText(_("Start scan"))
@@ -640,6 +640,8 @@ class Blindscan(ConfigListScreen, Screen, TransponderFiltering):
 				root_id = nimmanager.sec.getRoot(n.slot_id, int(n.config.connectedTo.value))
 				if n.type == nimmanager.nim_slots[root_id].type: # check if connected from a DVB-S to DVB-S2 Nim or vice versa
 					continue
+			if n.description.startswith("SAT>IP"):
+				continue
 			nim_list.append((str(n.slot), n.friendly_full_description))
 		self.scan_nims = ConfigSelection(choices=nim_list)
 
@@ -1656,6 +1658,8 @@ class Blindscan(ConfigListScreen, Screen, TransponderFiltering):
 
 	def SatBandCheck(self):
 		# search for LNB type in Universal, C band, or user defined.
+		if self.scan_nims.value is None or self.scan_nims.value == "":
+			return False
 		cur_orb_pos = self.getOrbPos()
 		self.is_c_band_scan = False
 		self.is_Ku_band_scan = False
