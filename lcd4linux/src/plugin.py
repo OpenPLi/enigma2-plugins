@@ -14539,8 +14539,7 @@ def LCD4linuxPIC(self, session):
 				self.CoverName = ["-", "-"]
 			elif sref.startswith(("4097:0", "5001:0", "5002:0", "5003:0")):
 				if self.Lpath and self.Lpath.startswith("http") and self.Llength and self.Llength[0] == -1:
-					L4log("detected AudioMedia or IPTV")
-					isMediaPlayer = "mp3"
+					L4log("detected IPTV")
 				else:
 					L4log("detected VOD Media")
 					isMediaPlayer = "mp3"
