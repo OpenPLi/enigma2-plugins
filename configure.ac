@@ -153,11 +153,6 @@ eibox/po/Makefile
 eibox/src/Makefile
 eibox/src/images/Makefile
 
-elektro/Makefile
-elektro/meta/Makefile
-elektro/po/Makefile
-elektro/src/Makefile
-
 emailclient/Makefile
 emailclient/meta/Makefile
 emailclient/po/Makefile
