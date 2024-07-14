@@ -1,4 +1,4 @@
-ACLOCAL_AMFLAGS = -I m4
+#ACLOCAL_AMFLAGS = -I m4
 
 SUBDIRS = \
 	aihdcontroler \
@@ -32,7 +32,6 @@ SUBDIRS = \
 	httpproxy \
 	imdb \
 	kiddytimer \
-	lcd4linux \
 	letterbox \
 	logomanager \
 	mediadownloader \
@@ -41,14 +40,12 @@ SUBDIRS = \
 	merlinepgcenter \
 	merlinmusicplayer \
 	mosaic \
-	moviecut \
 	movieretitle \
 	movietagger \
 	mphelp \
 	multirc \
 	ncidclient \
 	netcaster \
-	networkbrowser \
 	netzkino \
 	ofdb \
 	orfat \
@@ -76,7 +73,6 @@ SUBDIRS = \
 	valixdcontrol \
 	virtualzap \
 	vlcplayer \
-	vps \
 	vfdcontrol \
 	webcamviewer \
 	werbezapper \

@@ -1,8 +1,0 @@
-Package: enigma2-plugin-systemplugins-vps
-Version: 1.7
-Description: VPS-Plugin
-Section: extra
-Priority: optional
-Maintainer: Martin Gauk <mart-g@web.de>
-Architecture: all
-

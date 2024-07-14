@@ -1,4 +1,0 @@
-Package: enigma2-plugin-extensions-moviecut
-Description: Perform the cuts specified with the Cutlist editor
-Maintainer: OpenPLi team <forum@openpli.org>
-Depends: enigma2
