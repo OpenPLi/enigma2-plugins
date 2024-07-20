@@ -48,6 +48,7 @@ resolutions = (
 	('hd_i', _("HD Interlace Mode")),
 	('hd_p', _("HD Progressive Mode")),
 	('p720_24', _("Enable 720p24 Mode")),
+	('p720_25', _("Enable 720p25 Mode")),
 	('p720_50', _("Enable 720p50 Mode")),
 	('p1080_24', _("Enable 1080p24 Mode")),
 	('p1080_25', _("Enable 1080p25 Mode")),
@@ -299,6 +300,8 @@ class AutoRes(Screen):
 						choices = ['1080p24', '1080p25', '1080p30'] + preferedmodes
 					elif mode[0] == 'p720_24':
 						choices = ['720p24', '1080p24', '2160p24'] + preferedmodes
+					elif mode[0] == 'p720_25':
+						choices = ['720p25', '1080p25', '2160p25'] + preferedmodes
 					elif mode[0] == 'p720_50':
 						choices = ['720p50', '1080p25', '2160p25'] + preferedmodes
 					else:
@@ -308,6 +311,8 @@ class AutoRes(Screen):
 						choices = ['1080p24', '1080p25', '1080p30'] + preferedmodes
 					elif mode[0] == 'p720_24':
 						choices = ['720p24', '1080p24'] + preferedmodes
+					elif mode[0] == 'p720_25':
+						choices = ['720p25', '1080p25'] + preferedmodes
 					elif mode[0] == 'p720_50':
 						choices = ['720p50', '1080p25'] + preferedmodes
 					else:
@@ -426,12 +431,10 @@ class AutoRes(Screen):
 						new_mode = 'uhd_i' # 2160i content
 				elif (height >= 900 or width >= 1600) and frate in ('24', '25', '30') and (prog == 'p' or (orig_prog != "p" and frate == '25' and config.plugins.autoresolution.replace_1080i25_1080p25.value)): # 1080p content
 					new_mode = 'p1080_%s' % frate
-				elif (576 < height < 900 or 720 < width < 1600) and frate == '24' and prog == 'p': # 720p24 content
-					new_mode = 'p720_24'
+				elif (576 < height < 900 or 720 < width < 1600) and frate in ('24', '25', '50') and prog == 'p': # 720p24/25/50 content
+					new_mode = 'p720_%s' % frate
 				elif frate in ('24'): # always 1080p24 content
 					new_mode = 'p1080_24'
-				elif (576 < height < 900 or 720 < width < 1600) and frate == '50' and prog == 'p': # 720p50 content
-					new_mode = 'p720_50'
 				elif (height <= 576) and (width <= 720) and frate in ('25', '50'):
 					new_mode = 'sd_%s_50' % prog
 				elif (height <= 480) and (width <= 720) and frate in ('24', '30', '60'):
