@@ -88,6 +88,9 @@ msgstr "Включить режим 2160p30"
 msgid "Enable 720p24 Mode"
 msgstr "Включить режим 720p24"
 
+msgid "Enable 720p25 Mode"
+msgstr "Включить режим 720p25"
+
 msgid "Enable 720p50 Mode"
 msgstr "Включить режим 720p50"
 
