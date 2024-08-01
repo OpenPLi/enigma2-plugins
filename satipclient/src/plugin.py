@@ -14,6 +14,7 @@ from enigma import eTimer
 from Plugins.Plugin import PluginDescriptor
 from Screens.MessageBox import MessageBox
 from Screens.Screen import Screen
+from Screens.Setup import Setup
 from Screens.Console import Console
 from Screens.Standby import TryQuitMainloop
 from twisted.internet import reactor
@@ -304,53 +305,20 @@ class SATIPDiscovery:
 satipdiscovery = SATIPDiscovery()
 
 
-class SATIPTuner(Screen, ConfigListScreen):
-	skin = """
-		<screen position="center,center" size="600,370">
-			<ePixmap pixmap="skin_default/buttons/red.png" position="10,0" size="140,40" alphatest="on" />
-			<ePixmap pixmap="skin_default/buttons/green.png" position="160,0" size="140,40" alphatest="on" />
-			<ePixmap pixmap="skin_default/buttons/yellow.png" position="310,0" size="140,40" alphatest="on" />
-			<ePixmap pixmap="skin_default/buttons/blue.png" position="460,0" size="140,40" alphatest="on" />
-			<widget source="key_red" render="Label" position="10,0" zPosition="1" size="140,40" font="Regular;18" halign="center" valign="center" backgroundColor="#9f1313" foregroundColor="#ffffff" transparent="1" />
-			<widget source="key_green" render="Label" position="160,0" zPosition="1" size="140,40" font="Regular;18" halign="center" valign="center" backgroundColor="#1f771f" foregroundColor="#ffffff" transparent="1" />
-			<widget source="key_yellow" render="Label" position="310,0" zPosition="1" size="140,40" font="Regular;18" halign="center" valign="center" backgroundColor="#a08500" foregroundColor="#ffffff" transparent="1" />
-			<widget source="key_blue" render="Label" position="460,0" zPosition="1" size="140,40" font="Regular;18" halign="center" valign="center" backgroundColor="#a08500" foregroundColor="#ffffff" transparent="1" />
-			<widget name="config" zPosition="2" position="20,60" size="550,50" scrollbarMode="showOnDemand" transparent="1" />
-			<widget source="description" render="Label" position="20,170" size="550,210" font="Regular;18" halign="left" valign="center" />
-			<widget source="choices" render="Label" position="20,120" size="550,40" font="Regular;18" halign="left" valign="center" />
-		</screen>
-	"""
-
+class SATIPTuner(Setup):
 	def __init__(self, session, vtuner_idx, vtuner_uuid, vtuner_type, current_satipConfig):
-		Screen.__init__(self, session)
-		self.setTitle(_("SAT>IP client - auto tuner setup"))
-		self.skin = SATIPTuner.skin
+		self.satipconfig = ConfigSubsection()
 		self.vtuner_idx = vtuner_idx
 		self.vtuner_uuid = vtuner_uuid
 		self.vtuner_type = vtuner_type
 		self.current_satipConfig = current_satipConfig
-
-		self["key_red"] = StaticText(_("Cancel"))
-		self["key_green"] = StaticText(_("OK"))
-		self["key_yellow"] = StaticText(_("Discover"))
 		self.autostart_client = path.exists("/etc/rc3.d/S20satipclient")
-		self["key_blue"] = StaticText(_("%s autostart") % (self.autostart_client and _("Disable") or _("Enable")))
-		self["description"] = StaticText(_("Starting..."))
-		self["choices"] = StaticText("")
 
-		self["shortcuts"] = ActionMap(["SATIPCliActions"],
-		{
-			"ok": self.keySave,
-			"cancel": self.keyCancel,
-			"red": self.keyCancel,
-			"green": self.keySave,
-			"yellow": self.DiscoveryStart,
-			"blue": self.AutostartClient,
-		}, -2)
+		Setup.__init__(self, session, yellow_button={'function': self.DiscoveryStart, 'helptext': _("Toggle Configuration Mode or AutoDisqc"), 'text': _("Discover")},
+			blue_button={'function': self.AutostartClient, 'helptext': _("Set all the settings back as they were"), 'text': _("%s autostart") % (self.autostart_client and _("Disable") or _("Enable"))})
 
-		self.list = []
-		ConfigListScreen.__init__(self, self.list, session=self.session)
-		self.satipconfig = ConfigSubsection()
+		self.setTitle(_("SAT>IP client - auto tuner setup"))
+
 		self.server_entry = None
 		satipdiscovery.iface = ""
 
@@ -383,14 +351,16 @@ class SATIPTuner(Screen, ConfigListScreen):
 		satipdiscovery.DiscoveryStop()
 
 	def DiscoveryStart(self):
-		self["shortcuts"].setEnabled(False)
-		self["config_actions"].setEnabled(False)
+		self["configActions"].setEnabled(False)
+		self["key_blueActions"].setEnabled(False)
+		self["key_yellowActions"].setEnabled(False)
 		self["description"].setText(_("SAT>IP server discovering for %d seconds...") % (discoveryTimeoutMS // 1000))
 		satipdiscovery.DiscoveryStart()
 
 	def discoveryEnd(self):
-		self["shortcuts"].setEnabled(True)
-		self["config_actions"].setEnabled(True)
+		self["configActions"].setEnabled(True)
+		self["key_blueActions"].setEnabled(True)
+		self["key_yellowActions"].setEnabled(True)
 		if not satipdiscovery.isEmptyServerData():
 			self.createServerConfig()
 			self.createSetup()
@@ -567,52 +537,16 @@ class SATIPTuner(Screen, ConfigListScreen):
 			self.close(data)
 
 
-class SATIPManualTuner(Screen, ConfigListScreen):
-	skin = """
-		<screen position="center,center" size="600,370">
-			<ePixmap pixmap="skin_default/buttons/red.png" position="10,0" size="140,40" alphatest="on" />
-			<ePixmap pixmap="skin_default/buttons/green.png" position="160,0" size="140,40" alphatest="on" />
-			<ePixmap pixmap="skin_default/buttons/yellow.png" position="310,0" size="140,40" alphatest="on" />
-			<ePixmap pixmap="skin_default/buttons/blue.png" position="460,0" size="140,40" alphatest="on" />
-			<widget source="key_red" render="Label" position="10,0" zPosition="1" size="140,40" font="Regular;18" halign="center" valign="center" backgroundColor="#9f1313" foregroundColor="#ffffff" transparent="1" />
-			<widget source="key_green" render="Label" position="160,0" zPosition="1" size="140,40" font="Regular;18" halign="center" valign="center" backgroundColor="#1f771f" foregroundColor="#ffffff" transparent="1" />
-			<widget source="key_yellow" render="Label" position="310,0" zPosition="1" size="140,40" font="Regular;18" halign="center" valign="center" backgroundColor="#a08500" foregroundColor="#ffffff" transparent="1" />
-			<widget source="key_blue" render="Label" position="460,0" zPosition="1" size="140,40" font="Regular;18" halign="center" valign="center" backgroundColor="#a08500" foregroundColor="#ffffff" transparent="1" />
-			<widget name="config" zPosition="2" position="20,60" size="550,200" scrollbarMode="showOnDemand" transparent="1" />
-			<widget source="description" render="Label" position="20,300" size="550,45" font="Regular;20" halign="left" valign="center" />
-		</screen>
-	"""
-
+class SATIPManualTuner(Setup):
 	def __init__(self, session, vtuner_idx, current_satipConfig):
-		Screen.__init__(self, session)
-		self.setTitle(_("SAT>IP client - manual tuner setup"))
-		self.skin = SATIPManualTuner.skin
 		self.vtuner_idx = vtuner_idx
 		self.current_satipConfig = current_satipConfig
-
-		self["key_red"] = StaticText(_("Cancel"))
-		self["key_green"] = StaticText(_("OK"))
-		self["key_yellow"] = StaticText("")
 		self.autostart_client = path.exists("/etc/rc3.d/S20satipclient")
-		self["key_blue"] = StaticText(_("%s autostart") % (self.autostart_client and _("Disable") or _("Enable")))
-		self["description"] = StaticText("")
 
-		self["shortcuts"] = ActionMap(["SATIPCliActions"],
-		{
-			"ok": self.keySave,
-			"cancel": self.keyCancel,
-			"red": self.keyCancel,
-			"green": self.keySave,
-			"yellow": self.keyYellow,
-			"blue": self.AutostartClient,
-		}, -2)
+		Setup.__init__(self, session, blue_button={'function': self.AutostartClient, 'helptext': _("Set all the settings back as they were"), 'text': _("%s autostart") % (self.autostart_client and _("Disable") or _("Enable"))})
 
-		self.list = []
-		ConfigListScreen.__init__(self, self.list, session=self.session)
+		self.setTitle(_("SAT>IP client - manual tuner setup"))
 		self.createSetup()
-
-	def keyYellow(self):
-		pass
 
 	def AutostartClient(self):
 		client = "/etc/init.d/satipclient"
