@@ -351,6 +351,7 @@ class SATIPTuner(Setup):
 		satipdiscovery.DiscoveryStop()
 
 	def DiscoveryStart(self):
+		self.previous_selected_server = None
 		self["configActions"].setEnabled(False)
 		self["key_blueActions"].setEnabled(False)
 		self["key_yellowActions"].setEnabled(False)
@@ -389,20 +390,18 @@ class SATIPTuner(Setup):
 		if not hasattr(self.satipconfig, "server"):
 			return
 
-		self.list = []
-		self.server_entry = getConfigListEntry(_("SAT>IP Server : "), self.satipconfig.server)
-		self.list.append(self.server_entry)
+		if self.previous_selected_server != self.satipconfig.server.value:
+			self.list = []
+			self.server_entry = getConfigListEntry(_("SAT>IP Server : "), self.satipconfig.server)
+			self.list.append(self.server_entry)
 
-		self.createTypeConfig(self.satipconfig.server.value)
-		self.type_entry = getConfigListEntry(_("SAT>IP Tuner Type : "), self.satipconfig.tunertype)
-		self.list.append(self.type_entry)
+			self.createTypeConfig(self.satipconfig.server.value)
+			self.type_entry = getConfigListEntry(_("SAT>IP Tuner Type : "), self.satipconfig.tunertype)
+			self.list.append(self.type_entry)
 
-		self["config"].list = self.list
-
-		if not self.showChoices in self["config"].onSelectionChanged:
-			self["config"].onSelectionChanged.append(self.showChoices)
-
-		self.selectionChanged()
+			self["config"].list = self.list
+			self.previous_selected_server = self.satipconfig.server.value
+			self.selectionChanged()
 
 	def createTypeConfig(self, uuid):
 		#type_choices = [("DVB-S", _("DVB-S")), ("DVB-C", _("DVB-C")), ("DVB-T", _("DVB-T"))]
@@ -454,15 +453,6 @@ class SATIPTuner(Setup):
 
 		self["description"].setText(description)
 
-	def showChoices(self):
-		currentConfig = len(self["config"].getCurrent()) > 1 and self["config"].getCurrent()[1] or None
-		if currentConfig != None:
-			text_list = []
-			for choice in currentConfig.choices.choices:
-				text_list.append(choice[1])
-			text = _("Select") + " : " + ",".join(text_list)
-			self["choices"].setText(text)
-
 	def getCapability(self, uuid):
 		capability = {'DVB-S': 0, 'DVB-C': 0, 'DVB-T': 0}
 		data = satipdiscovery.getServerInfo(uuid, "X_SATIPCAP")
@@ -502,18 +492,6 @@ class SATIPTuner(Setup):
 
 		return False
 
-	def keyLeft(self):
-		ConfigListScreen.keyLeft(self)
-		if self["config"].getCurrent() == self.server_entry:
-			self.createSetup()
-		self.selectionChanged()
-
-	def keyRight(self):
-		ConfigListScreen.keyRight(self)
-		if self["config"].getCurrent() == self.server_entry:
-			self.createSetup()
-		self.selectionChanged()
-
 	def keySave(self):
 		if not hasattr(self.satipconfig, "server"):
 			self.keyCancel()
@@ -542,10 +520,8 @@ class SATIPManualTuner(Setup):
 		self.vtuner_idx = vtuner_idx
 		self.current_satipConfig = current_satipConfig
 		self.autostart_client = path.exists("/etc/rc3.d/S20satipclient")
-		self.initializeSetup()
-
 		Setup.__init__(self, session, blue_button={'function': self.AutostartClient, 'helptext': _("Set all the settings back as they were"), 'text': _("%s autostart") % (self.autostart_client and _("Disable") or _("Enable"))})
-
+		self.initializeSetup()
 		self.setTitle(_("SAT>IP client - manual tuner setup"))
 
 	def AutostartClient(self):
@@ -612,8 +588,6 @@ class SATIPManualTuner(Setup):
 		except:
 			default_uuid = "n/a"
 		self.curSatipConfig.uuid = NoSave(ConfigText(default=default_uuid, visible_width=50, fixed_size=False))
-
-	def createSetup(self):
 		self.list = []
 		self.list.append(getConfigListEntry(_("Server name"), self.curSatipConfig.desc))
 		self.list.append(getConfigListEntry(_("Tuner type"), self.curSatipConfig.tuner_type))
