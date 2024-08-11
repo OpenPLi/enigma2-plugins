@@ -85,7 +85,7 @@ class AutomaticVolumeAdjustment(Screen):
 			else: # Remember channel volume mode
 				# save current volume in dict, but for valid ref only
 				ref = self.newService[1]
-				if ref and ref.valid():
+				if ref:
 					self.serviceList[ref.toString()] = self.volctrl.getVolume()
 		self.newService = [False, None]
 
@@ -134,7 +134,7 @@ class AutomaticVolumeAdjustment(Screen):
 			else: # modus = Remember channel volume
 				if self.pluginStarted:
 					ref = self.getPlayingServiceReference()
-					if ref and ref.valid():
+					if ref:
 						# get value from dict
 						lastvol = self.serviceList.get(ref.toString(), -1)
 						if lastvol != -1 and lastvol != self.volctrl.getVolume():
