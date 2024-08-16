@@ -85,12 +85,17 @@ class AutomaticVolumeAdjustment(Screen):
 			else: # Remember channel volume mode
 				# save current volume in dict, but for valid ref only
 				ref = self.newService[1]
-				if ref:
+				if ref and ref.valid():
 					self.serviceList[ref.toString()] = self.volctrl.getVolume()
+					print("[AutomaticVolumeAdjustment] save last value", ref.toString())
 		self.newService = [False, None]
 
 	def __evStart(self):
 		self.newService = [True, None]
+		if self.pluginStarted and self.enabled and config.misc.toggle_AV_session.value:
+			ref = self.session.nav.getCurrentlyPlayingServiceReference()
+			if ref and ref.toString().startswith("4097:"):
+				self.__evUpdatedInfo()
 
 	def __evUpdatedInfo(self):
 		if self.newService[0] and self.session.nav.getCurrentlyPlayingServiceReference() and self.enabled and config.misc.toggle_AV_session.value:
@@ -134,7 +139,7 @@ class AutomaticVolumeAdjustment(Screen):
 			else: # modus = Remember channel volume
 				if self.pluginStarted:
 					ref = self.getPlayingServiceReference()
-					if ref:
+					if ref and ref.valid():
 						# get value from dict
 						lastvol = self.serviceList.get(ref.toString(), -1)
 						if lastvol != -1 and lastvol != self.volctrl.getVolume():
