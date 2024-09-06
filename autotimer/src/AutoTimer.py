@@ -192,7 +192,8 @@ class AutoTimer:
 			# Parse Config
 			try:
 				configuration = cet_parse(XML_CONFIG).getroot()
-			except:
+			except Exception as error:
+				doLog("[AutoTimer] An exception occurred:", error)
 				try:
 					if os.path.exists(XML_CONFIG + "_old"):
 						os.rename(XML_CONFIG + "_old", XML_CONFIG + "_old(1)")
@@ -1114,7 +1115,11 @@ class AutoTimer:
 				if timer.eit is not None:
 					event = epgcache.lookupEventId(timer.service_ref.ref, timer.eit)
 					if event:
-						timer.extdesc = event.getExtendedDescription()
+						if hasattr(timer, "extdesc"):
+							if event.getExtendedDescription() and timer.extdesc != event.getExtendedDescription():
+								timer.extdesc = event.getExtendedDescription()
+						else:
+							timer.extdesc = event.getExtendedDescription() or ""
 					elif check_eit_and_remove and "autotimer" in timer.flags and not timer.isRunning():
 						remove.append(timer)
 						continue
@@ -1122,8 +1127,8 @@ class AutoTimer:
 					remove.append(timer)
 					continue
 
-				if not hasattr(timer, 'extdesc'):
-					timer.extdesc = ''
+				if not hasattr(timer, "extdesc"):
+					timer.extdesc = ""
 
 				timerdict[str(timer.service_ref)].append(timer)
 

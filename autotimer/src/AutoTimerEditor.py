@@ -996,6 +996,8 @@ class AutoTimerEditor(Screen, ConfigListScreen, AutoTimerEditorBase):
 
 		# Offset
 		if self.offset.value:
+			if self.justplay.value == "zap" and not self.setEndtime.value:
+				self.offsetend.value = 0
 			self.timer.offset = (self.offsetbegin.value * 60, self.offsetend.value * 60)
 		else:
 			self.timer.offset = None
