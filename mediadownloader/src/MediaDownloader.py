@@ -106,6 +106,9 @@ def download(url, file, writeProgress=None, contextFactory=None,
 		else:
 			kwargs["headers"] = AuthHeaders
 
+	if isinstance(url, str):
+		url = url.encode("utf-8")
+
 	from .HTTPProgressDownloader import HTTPProgressDownloader
 	from twisted.internet import reactor
 
