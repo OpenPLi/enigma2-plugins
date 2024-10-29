@@ -952,7 +952,7 @@ class SHOUTcastWidget(Screen):
 			self["statustext"].setText(_("Stream stopped playing, playback of stream stopped!"))
 			print("[SHOUTcast] Stream stopped playing, playback of stream stopped!")
 			self.session.nav.stopService()
-		elif ev == 5:
+		elif ev == 5 or ev ==271:
 			if not self.currPlay:
 				return
 			sTitle = self.currPlay.info().getInfoString(iServiceInformation.sTagTitle)
