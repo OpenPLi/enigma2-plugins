@@ -191,7 +191,7 @@ class SHOUTcastWidget(Screen):
 		self["actions"] = ActionMap(["WizardActions", "DirectionActions", "ColorActions", "EPGSelectActions"],
 		{
 			"ok": self.ok_pressed,
-			"back": self.close,
+			"back": self.back_pressed,
 			"menu": self.menu_pressed,
 			"red": self.red_pressed,
 			"green": self.green_pressed,
@@ -403,7 +403,7 @@ class SHOUTcastWidget(Screen):
 
 	def streamripperDataAvail(self, data):
 		sData = data.decode().replace('\n', '')
-		self["console"].setText(sData)
+		self["console"].setText(_("Recording: %s") % sData)
 
 	def stopReloadStationListTimer(self):
 		if self.reloadStationListTimer.isActive():
@@ -445,6 +445,7 @@ class SHOUTcastWidget(Screen):
 				return
 			cmd = [self.STREAMRIPPER_BIN, self.STREAMRIPPER_BIN] + args
 			containerStreamripper.execute(*cmd)
+			print("[SHOUTcast] Streamripper command: %s" % cmd)
 			self["key_red"].setText(_("Stop record"))
 
 	def deleteRecordingConfirmed(self, val):
@@ -457,7 +458,7 @@ class SHOUTcastWidget(Screen):
 				self.session.openWithCallback(self.deleteRecordingConfirmed, MessageBox, _("Do you really want to stop the recording?"))
 			else:
 				if len(self.currentStreamingURL) != 0:
-					self.session.openWithCallback(self.InputBoxStartRecordingCallback, InputBox, windowTitle=_("Recording length"), title=_("Enter in minutes (0 means unlimited)"), text="0", type=Input.NUMBER)
+					self.session.openWithCallback(self.InputBoxStartRecordingCallback, InputBox, windowTitle=_("Recording length"), title=_("Enter in minutes (0 means unlimited)"), text="0", type=Input.NUMBER, maxValue=1440)
 				else:
 					self.session.open(MessageBox, _("Only running streamings can be recorded!"), type=MessageBox.TYPE_INFO, timeout=20)
 		else:
@@ -857,6 +858,13 @@ class SHOUTcastWidget(Screen):
 		else:
 			self.currentGoogle = None
 
+	def back_pressed(self):
+		self.session.openWithCallback(self.exitShoutcast, MessageBox, _("Do you really want to exit SHOUTcast?"), MessageBox.TYPE_YESNO)
+
+	def exitShoutcast(self, result):
+		if result:
+			self.close()
+
 	def __onClose(self):
 		global coverfile
 		try:
@@ -952,19 +960,19 @@ class SHOUTcastWidget(Screen):
 			self["statustext"].setText(_("Stream stopped playing, playback of stream stopped!"))
 			print("[SHOUTcast] Stream stopped playing, playback of stream stopped!")
 			self.session.nav.stopService()
-		elif ev == 5 or ev ==271:
+		elif ev == 5 or ev == 271:
 			if not self.currPlay:
 				return
 			sTitle = self.currPlay.info().getInfoString(iServiceInformation.sTagTitle)
 			if self.oldtitle != sTitle:
 				self.oldtitle = sTitle
-				sTitle = sTitle.replace("Title:", "")[:55]
+				sTitle = sTitle.replace("Title:", "")[:155]
 				if config.plugins.shoutcast.showcover.value:
 					searchpara = sTitle
 					if sTitle:
 						url = "http://www.bing.com/images/search?q=%s&FORM=HDRSC2" % quote(searchpara)
 					else:
-						url = "http://www.bing.com/images/search?q=%s&FORM=HDRSC2" % quote('pamela anderson')
+						url = "http://www.bing.com/images/search?q=%s&FORM=HDRSC2" % quote('shoutcast web radio')
 					print("[SHOUTcast] coverurl = %s " % url)
 					if self.currentGoogle:
 						self.nextGoogle = url
@@ -974,7 +982,7 @@ class SHOUTcastWidget(Screen):
 				if len(sTitle) == 0:
 					sTitle = "n/a"
 				title = _("Title: %s") % sTitle
-				print("[SHOUTcast] Title: %s " % title)
+				print("[SHOUTcast] %s" % title)
 				self["titel"].setText(title)
 				self.summaries.setText(self.currentStreamingStation, title)
 			else:
@@ -1291,7 +1299,6 @@ class SHOUTcastStreamripperRecordingPath(Screen):
 			"ok": self.ok,
 			"green": self.green,
 			"red": self.cancel
-
 		}, -1)
 		self["key_red"] = StaticText(_("Cancel"))
 		self["key_green"] = StaticText(_("OK"))
