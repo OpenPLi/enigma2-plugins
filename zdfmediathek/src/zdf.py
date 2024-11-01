@@ -15,7 +15,11 @@ from Components.ScrollLabel import ScrollLabel
 from Components.Sources.StaticText import StaticText
 from Components.Sources.List import List
 from enigma import eServiceReference, ePicLoad, gPixmapPtr, getDesktop, addFont
-from Screens.InfoBarGenerics import setResumePoint
+try:
+	from Screens.InfoBarGenerics import resumePointsInstance
+	setResumePoint = resumePointsInstance.setResumePoint
+except ImportError:
+	from Screens.InfoBarGenerics import setResumePoint
 from Screens.InfoBar import MoviePlayer
 from Screens.Screen import Screen
 from Screens.ChoiceBox import ChoiceBox
