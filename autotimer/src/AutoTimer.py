@@ -1229,29 +1229,27 @@ class AutoTimer:
 		ratio = sequenceMatcher.ratio()
 		ratio_value = force and 0.8 or timer.ratioThresholdDuplicate
 		doDebug("[AutoTimer] names ratio %f - %s - %d - %s - %d" % (ratio, name1, len(name1), name2, len(name2)))
-		if name1 in name2 or (0.8 < ratio): # this is probably a match
+		if (ratio_value < ratio) or (ratio_value == 1.0 and ratio_value == ratio): # this is probably a match
 			if not force and timer.descShortExtEmpty and (((isMovie and shortdesc1 and not shortdesc2) or (not isMovie and not shortdesc1 and not shortdesc2 and name1 != name2))
 				or ((isMovie and extdesc1 and not extdesc2) or (not isMovie and not extdesc1 and not extdesc2 and name1 != name2))):
 				doDebug("[AutoTimer] Configuration caused this sortdesc/extdesc match to be ignored!")
 				return False
 			if force or timer.searchForDuplicateDescription > 0:
-				if shortdesc1 and shortdesc2:
-					sequenceMatcher.set_seqs(shortdesc1, shortdesc2)
-					ratio = sequenceMatcher.ratio()
-					doDebug("[AutoTimer] shortdesc ratio %f - %s - %d - %s - %d" % (ratio, shortdesc1, len(shortdesc1), shortdesc2, len(shortdesc2)))
-					retValue = (ratio_value < ratio) or (ratio_value == 1.0 and ratio_value == ratio)
-					doDebug("[AutoTimer] Final result for found shortdesc: %s" % retValue)
-					if retValue:
-						doLog("[AutoTimer] shortdesc match: ratio %f - %s - %d - %s - %d" % (ratio, shortdesc1, len(shortdesc1), shortdesc2, len(shortdesc2)))
-						if force or timer.searchForDuplicateDescription > 1:
-							if extdesc1 and extdesc2:
-								sequenceMatcher.set_seqs(extdesc1, extdesc2)
-								ratio = sequenceMatcher.ratio()
-								doDebug("[AutoTimer] extdesc ratio %f - %s - %d - %s - %d" % (ratio, extdesc1, len(extdesc1), extdesc2, len(extdesc2)))
-								retValue = (ratio_value < ratio) or (ratio_value == 1.0 and ratio_value == ratio)
-								doDebug("[AutoTimer] Final result for found extdesc: %s" % retValue)
-								if retValue:
-									doLog("[AutoTimer] extdesc match: ratio %f - %s - %d - %s - %d" % (ratio, extdesc1, len(extdesc1), extdesc2, len(extdesc2)))
+				sequenceMatcher.set_seqs(shortdesc1 or "", shortdesc2 or "")
+				ratio = sequenceMatcher.ratio()
+				doDebug("[AutoTimer] shortdesc ratio %f - %s - %d - %s - %d" % (ratio, shortdesc1, len(shortdesc1), shortdesc2, len(shortdesc2)))
+				retValue = (ratio_value < ratio) or (ratio_value == 1.0 and ratio_value == ratio)
+				doDebug("[AutoTimer] Final result for found shortdesc: %s" % retValue)
+				if retValue:
+					doLog("[AutoTimer] shortdesc match: ratio %f - %s - %d - %s - %d" % (ratio, shortdesc1, len(shortdesc1), shortdesc2, len(shortdesc2)))
+					if force or timer.searchForDuplicateDescription > 1:
+						sequenceMatcher.set_seqs(extdesc1 or "", extdesc2 or "")
+						ratio = sequenceMatcher.ratio()
+						doDebug("[AutoTimer] extdesc ratio %f - %s - %d - %s - %d" % (ratio, extdesc1, len(extdesc1), extdesc2, len(extdesc2)))
+						retValue = (ratio_value < ratio) or (ratio_value == 1.0 and ratio_value == ratio)
+						doDebug("[AutoTimer] Final result for found extdesc: %s" % retValue)
+						if retValue:
+							doLog("[AutoTimer] extdesc match: ratio %f - %s - %d - %s - %d" % (ratio, extdesc1, len(extdesc1), extdesc2, len(extdesc2)))
 			else:
 				retValue = True
 		return retValue
