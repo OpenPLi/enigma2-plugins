@@ -324,7 +324,7 @@ class AutoTimer:
 			except UnicodeDecodeError:
 				pass
 
-		self.isIPTV = bool([service for service in timer.services if ":http" in service])
+		self.isIPTV = bool([service for service in timer.services if "%3a//" in service])
 
 		if timer.searchType == "favoritedesc" or self.isIPTV:
 			epgmatches = []

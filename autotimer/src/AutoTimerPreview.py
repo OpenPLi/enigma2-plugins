@@ -77,14 +77,14 @@ class AutoTimerPreview(Screen):
 		def renameIPTV(sref):
 			global prewBouquetChannelListList
 			iptv_text = ""
-			if ":http" in sref:
+			if "%3a//" in sref:
+				iptv_text = " (IPTV)"
 				if prewBouquetChannelListList is None:
 					prewBouquetChannelListList = getBouquetChannelList(iptv_only=True)
 				if prewBouquetChannelListList:
 					for service in prewBouquetChannelListList:
 						if sref in service:
 							sref = service
-							iptv_text = " (IPTV)"
 							break
 			return ServiceReference(sref).getServiceName().replace('\xc2\x86', '').replace('\xc2\x87', '') + iptv_text
 		self.timers = [
