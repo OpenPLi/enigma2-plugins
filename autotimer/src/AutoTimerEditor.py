@@ -348,7 +348,7 @@ class AutoTimerEditorBase:
 		self.searchForDuplicateDescription = NoSave(ConfigSelection([
 				("0", _("Title")),
 				("1", _("Title and Short description")),
-				("2", _("Title and all descriptions")),
+				("2", _("Title and all descriptions") + _(" (Short and Extended)")),
 			],
 			default=str(timer.searchForDuplicateDescription)
 		))
