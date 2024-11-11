@@ -198,7 +198,7 @@ def parseEntry(element, baseTimer, defaults=False):
 			for service in services:
 				value = service.text
 				if value:
-					if not 'bouquet' in value:
+					if not "bouquet" in value or "alternatives" in value:
 						myref = eServiceReference(str(value))
 						if not (myref.flags & eServiceReference.isGroup):
 							# strip all after last :
@@ -220,7 +220,7 @@ def parseEntry(element, baseTimer, defaults=False):
 
 		for service in l:
 			value = service.text
-			if value and not 'bouquet' in value:
+			if value and (not "bouquet" in value or "alternatives" in value):
 				myref = eServiceReference(str(value))
 				if not (myref.flags & eServiceReference.isGroup):
 					# strip all after last :

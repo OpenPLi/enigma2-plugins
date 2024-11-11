@@ -752,7 +752,7 @@ class AutoTimerFastscanComponent(AutoTimerComponent):
 				if myref.flags & eServiceReference.isGroup:
 					mylist = serviceHandler.list(myref)
 					if mylist is not None:
-						while 1:
+						while True:
 							s = mylist.getNext()
 							if s.valid():
 								# strip all after last :
