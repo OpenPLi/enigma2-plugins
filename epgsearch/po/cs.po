@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Enigma 2 EPGSearch Plugin\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-05-12 14:32+0200\n"
-"PO-Revision-Date: 2023-12-19 12:10+0100\n"
+"PO-Revision-Date: 2024-11-12 09:27+0100\n"
 "Last-Translator: ims <ims21@users.sourceforge.net>\n"
 "Language-Team: PLi <ims21@users.sourceforge.net>\n"
 "Language: cs_CZ\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Poedit 3.4.1\n"
+"X-Generator: Poedit 3.5\n"
 
 #, python-format
 msgid " (%d min)"
@@ -93,6 +93,9 @@ msgstr "Zadejte text pro hledání"
 
 msgid "Export selected as AutoTimer"
 msgstr "Exportovat vybrané jako AutoTimer"
+
+msgid "Delete text '%s' from history?"
+msgstr "Odstranit text '%s' z historie?"
 
 msgid "History"
 msgstr "Historie"
@@ -190,8 +193,8 @@ msgstr "Zvolte akci:"
 msgid "Select channel"
 msgstr "Vyberte kanál"
 
-msgid "Select item for search and press 'OK' or edit item with yellow button."
-msgstr "Zvolte položku pro hledání a stiskněte 'OK' nebo použijte žluté tlačítko pro úpravu."
+msgid "Select item for search and press 'OK' or edit item with yellow button or delete item with blue button."
+msgstr "Zvolte položku pro hledání a stiskněte 'OK' nebo použijte žluté tlačítko pro úpravu nebo modré tlačítko pro odstranění."
 
 msgid "Select type for filter search. Press button P +/- for show/hide filter in description after search."
 msgstr "Vyberte typ filtru pro vyhledávání. Stiskněte P+/- pro zobrazení / skrytí filtru v popisu po vyhledání."

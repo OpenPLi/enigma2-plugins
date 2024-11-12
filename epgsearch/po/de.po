@@ -98,6 +98,9 @@ msgstr "Zu suchenden Text eingeben"
 msgid "Export selected as AutoTimer"
 msgstr "Auswahl als AutoTimer exportieren"
 
+msgid "Delete text '%s' from history?"
+msgstr ""
+
 msgid "History"
 msgstr "Verlauf"
 
@@ -194,7 +197,8 @@ msgstr "Wähle Aktion :"
 msgid "Select channel"
 msgstr "Kanal auswählen"
 
-msgid "Select item for search and press 'OK' or edit item with yellow button."
+#, fuzzy
+msgid "Select item for search and press 'OK' or edit item with yellow button or delete item with blue button."
 msgstr "Wählen Sie das zu suchende Element aus und drücken Sie „OK“ oder bearbeiten Sie das Element mit der gelben Taste."
 
 msgid "Select type for filter search. Press button P +/- for show/hide filter in description after search."

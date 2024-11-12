@@ -581,6 +581,7 @@ class EPGSearch(EPGSelection):
 		})
 
 		self["actions"].csel = self
+
 		self.onLayoutFinish.append(self.onCreate)
 		# end stripped copy of EPGSelection.__init__
 		self.select = False
@@ -1242,12 +1243,14 @@ class EPGSearchHistory(Screen):
 			"red": self.exit,
 			"green": self.select,
 			"yellow": self.edit,
+			"blue": self.remove,
 		}, -2)
 
 		self["key_red"] = Button(_("Cancel"))
 		self["key_green"] = Button(_("OK"))
 		self["key_yellow"] = Button(_("Edit & search"))
-		self["help"] = Label(_("Select item for search and press 'OK' or edit item with yellow button."))
+		self["key_blue"] = Button(_("Delete"))
+		self["help"] = Label(_("Select item for search and press 'OK' or edit item with yellow button or delete item with blue button."))
 
 	def select(self):
 		item = self["history"].getCurrent()
@@ -1263,5 +1266,17 @@ class EPGSearchHistory(Screen):
 				self.close(text)
 			self.session.openWithCallback(result, VirtualKeyBoard, title=_("Modify searched text"), text=item)
 
+	def remove(self):
+		item = self["history"].getCurrent()
+		if item:
+			def delete_item(answer=False):
+				if answer:
+					index = self["history"].getSelectedIndex()
+					history = self["history"].list
+					new_history = history[:index] + history[index + 1:]
+					self["history"].setList(new_history)
+					config.plugins.epgsearch.history.value = new_history
+			text = _("Delete text '%s' from history?") % item
+			self.session.openWithCallback(delete_item, MessageBox, text, type=MessageBox.TYPE_YESNO, default=False)
 	def exit(self):
 		self.close(False)

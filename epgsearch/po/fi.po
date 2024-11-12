@@ -102,6 +102,9 @@ msgstr "Syötä haettava teksti"
 msgid "Export selected as AutoTimer"
 msgstr "Vie valitut AutoTimeriin"
 
+msgid "Delete text '%s' from history?"
+msgstr ""
+
 msgid "History"
 msgstr "Historia"
 
@@ -202,7 +205,7 @@ msgstr ""
 msgid "Select channel"
 msgstr ""
 
-msgid "Select item for search and press 'OK' or edit item with yellow button."
+msgid "Select item for search and press 'OK' or edit item with yellow button or delete item with blue button."
 msgstr ""
 
 msgid "Select type for filter search. Press button P +/- for show/hide filter in description after search."

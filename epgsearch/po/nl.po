@@ -101,6 +101,9 @@ msgstr "Voer te zoeken tekst in:"
 msgid "Export selected as AutoTimer"
 msgstr "Exporteer het geselecteerde als AutoTimer"
 
+msgid "Delete text '%s' from history?"
+msgstr ""
+
 msgid "History"
 msgstr "Historiek"
 
@@ -199,7 +202,7 @@ msgstr "Kies de actie:"
 msgid "Select channel"
 msgstr "Kies de zender"
 
-msgid "Select item for search and press 'OK' or edit item with yellow button."
+msgid "Select item for search and press 'OK' or edit item with yellow button or delete item with blue button."
 msgstr ""
 
 msgid "Select type for filter search. Press button P +/- for show/hide filter in description after search."

@@ -95,6 +95,9 @@ msgstr "Ievadiet tekstu kuru meklēt"
 msgid "Export selected as AutoTimer"
 msgstr "Eksportēt iezīmēto kā auto taimeri"
 
+msgid "Delete text '%s' from history?"
+msgstr ""
+
 msgid "History"
 msgstr "Vēsture"
 
@@ -191,7 +194,8 @@ msgstr "Izvēlieties darbību:"
 msgid "Select channel"
 msgstr "Izvēlieties kanālu"
 
-msgid "Select item for search and press 'OK' or edit item with yellow button."
+#, fuzzy
+msgid "Select item for search and press 'OK' or edit item with yellow button or delete item with blue button."
 msgstr "Izvēlieties meklējamo tekstu un nospiediet 'Lietot' vai rediģējiet tekstu ar dzelteno pogu."
 
 msgid "Select type for filter search. Press button P +/- for show/hide filter in description after search."

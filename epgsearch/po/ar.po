@@ -105,6 +105,9 @@ msgstr "إدخال نص للبحث عن"
 msgid "Export selected as AutoTimer"
 msgstr "حفظ البحث حسب المؤقت التلقائي"
 
+msgid "Delete text '%s' from history?"
+msgstr ""
+
 #, fuzzy
 msgid "History"
 msgstr "بدون تاريخ"
@@ -209,7 +212,7 @@ msgstr ""
 msgid "Select channel"
 msgstr "إنتقل إلى القناة"
 
-msgid "Select item for search and press 'OK' or edit item with yellow button."
+msgid "Select item for search and press 'OK' or edit item with yellow button or delete item with blue button."
 msgstr ""
 
 msgid "Select type for filter search. Press button P +/- for show/hide filter in description after search."

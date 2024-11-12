@@ -99,6 +99,9 @@ msgstr "Vpis besedila za namen iskanja"
 msgid "Export selected as AutoTimer"
 msgstr "Izvoz izbranega v AutoTimer vtičnik"
 
+msgid "Delete text '%s' from history?"
+msgstr ""
+
 msgid "History"
 msgstr "Zgodovina"
 
@@ -199,7 +202,7 @@ msgstr ""
 msgid "Select channel"
 msgstr ""
 
-msgid "Select item for search and press 'OK' or edit item with yellow button."
+msgid "Select item for search and press 'OK' or edit item with yellow button or delete item with blue button."
 msgstr ""
 
 msgid "Select type for filter search. Press button P +/- for show/hide filter in description after search."
