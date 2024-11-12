@@ -581,7 +581,6 @@ class EPGSearch(EPGSelection):
 		})
 
 		self["actions"].csel = self
-
 		self.onLayoutFinish.append(self.onCreate)
 		# end stripped copy of EPGSelection.__init__
 		self.select = False
