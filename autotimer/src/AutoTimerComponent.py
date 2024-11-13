@@ -24,6 +24,7 @@ class AutoTimerComponent(object):
 	def __init__(self, id, name, match, enabled, *args, **kwargs):
 		self.id = id
 		self._afterevent = []
+		self.alternativeServices = None
 		self.setValues(name, match, enabled, *args, **kwargs)
 
 	"""
@@ -119,6 +120,7 @@ class AutoTimerComponent(object):
 			self._bouquets = bouquets
 		else:
 			self._bouquets = []
+		self.alternativeServices = None
 
 	bouquets = property(lambda self: self._bouquets, setBouquets)
 
@@ -175,6 +177,7 @@ class AutoTimerComponent(object):
 			self._services = services
 		else:
 			self._services = []
+		self.alternativeServices = None
 
 	services = property(lambda self: self._services, setServices)
 
@@ -443,10 +446,9 @@ class AutoTimerComponent(object):
 				if mylist is not None:
 					while True:
 						s = mylist.getNext()
-						# TODO: I wonder if its sane to assume we get services here (and not just new lists)
-						# We can ignore markers & directorys here because they won't match any event's service :-)
 						if s.valid():
-							# strip all after last :
+							if s.flags & (eServiceReference.isMarker | eServiceReference.isDirectory | eServiceReference.isNumberedMarker):
+								continue
 							value = s.toString()
 							pos = value.rfind(':')
 							if pos != -1:
@@ -472,29 +474,51 @@ class AutoTimerComponent(object):
 
 	def getAlternative(self, override_service):
 		services = self.services
-		if services:
+		bouquets = self.bouquets
+		if services or bouquets:
 			serviceHandler = eServiceCenter.getInstance()
+			if self.alternativeServices is None:
+				self.alternativeServices = []
+				if services:
+					for service in services:
+						myref = eServiceReference(str(service))
+						if myref.flags & eServiceReference.isGroup:
+							if service not in self.alternativeServices:
+								self.alternativeServices.append(service)
+				if bouquets:
+					for bouquet in bouquets:
+						myref = eServiceReference(str(bouquet))
+						mylist = serviceHandler.list(myref)
+						if mylist is not None:
+							while True:
+								s = mylist.getNext()
+								if s.valid():
+									if s.flags & eServiceReference.isGroup:
+										value = s.toString()
+										if value not in self.alternativeServices:
+											self.alternativeServices.append(value)
+								else:
+									break
+			if self.alternativeServices:
+				for alternative in self.alternativeServices:
+					myref = eServiceReference(str(alternative))
+					if myref.flags & eServiceReference.isGroup:
+						mylist = serviceHandler.list(myref)
+						if mylist is not None:
+							while True:
+								s = mylist.getNext()
+								if s.valid():
+									value = s.toString()
+									pos = value.rfind(':')
+									if pos != -1:
+										if value[pos - 1] == ':':
+											pos -= 1
+											value = value[:pos + 1]
 
-			for service in services:
-				myref = eServiceReference(str(service))
-				if myref.flags & eServiceReference.isGroup:
-					mylist = serviceHandler.list(myref)
-					if mylist is not None:
-						while True:
-							s = mylist.getNext()
-							if s.valid():
-								# strip all after last :
-								value = s.toString()
-								pos = value.rfind(':')
-								if pos != -1:
-									if value[pos - 1] == ':':
-										pos -= 1
-										value = value[:pos + 1]
-
-								if value == override_service:
-									return service
-							else:
-								break
+									if value == override_service:
+										return alternative
+								else:
+									break
 		return override_service
 
 	def checkTimespan(self, begin):
@@ -703,8 +727,7 @@ class AutoTimerFastscanComponent(AutoTimerComponent):
 				if myref.flags & eServiceReference.isGroup:
 					addbouquets.append(service)
 				else:
-					comp = service.split(':')
-					append(':'.join(comp[3:]))
+					append(':'.join(service.split(':')[3:]))
 
 			serviceHandler = eServiceCenter.getInstance()
 			for bouquet in bouquets + addbouquets:
@@ -713,10 +736,9 @@ class AutoTimerFastscanComponent(AutoTimerComponent):
 				if mylist is not None:
 					while True:
 						s = mylist.getNext()
-						# TODO: I wonder if its sane to assume we get services here (and not just new lists)
-						# We can ignore markers & directorys here because they won't match any event's service :-)
 						if s.valid():
-							# strip all after last :
+							if s.flags & (eServiceReference.isMarker | eServiceReference.isDirectory | eServiceReference.isNumberedMarker):
+								continue
 							value = s.toString()
 							pos = value.rfind(':')
 							if pos != -1:
@@ -724,8 +746,7 @@ class AutoTimerFastscanComponent(AutoTimerComponent):
 									pos -= 1
 									value = value[:pos + 1]
 
-							comp = value.split(':')
-							append(':'.join(value[3:]))
+							append(':'.join(value.split(':')[3:]))
 						else:
 							break
 			self._fastServices = fastServices
@@ -743,30 +764,52 @@ class AutoTimerFastscanComponent(AutoTimerComponent):
 
 	def getAlternative(self, override_service):
 		services = self.services
-		if services:
-			override = ':'.join(override_service.split(':')[3:])
+		bouquets = self.bouquets
+		if services or bouquets:
 			serviceHandler = eServiceCenter.getInstance()
+			if self.alternativeServices is None:
+				self.alternativeServices = []
+				if services:
+					for service in services:
+						myref = eServiceReference(str(service))
+						if myref.flags & eServiceReference.isGroup:
+							if service not in self.alternativeServices:
+								self.alternativeServices.append(service)
+				if bouquets:
+					for bouquet in bouquets:
+						myref = eServiceReference(str(bouquet))
+						mylist = serviceHandler.list(myref)
+						if mylist is not None:
+							while True:
+								s = mylist.getNext()
+								if s.valid():
+									if s.flags & eServiceReference.isGroup:
+										value = s.toString()
+										if value not in self.alternativeServices:
+											self.alternativeServices.append(value)
+								else:
+									break
+			if self.alternativeServices:
+				override = ':'.join(override_service.split(':')[3:])
+				for alternative in self.alternativeServices:
+					myref = eServiceReference(str(alternative))
+					if myref.flags & eServiceReference.isGroup:
+						mylist = serviceHandler.list(myref)
+						if mylist is not None:
+							while True:
+								s = mylist.getNext()
+								if s.valid():
+									value = s.toString()
+									pos = value.rfind(':')
+									if pos != -1:
+										if value[pos - 1] == ':':
+											pos -= 1
+											value = value[:pos + 1]
 
-			for service in services:
-				myref = eServiceReference(str(service))
-				if myref.flags & eServiceReference.isGroup:
-					mylist = serviceHandler.list(myref)
-					if mylist is not None:
-						while True:
-							s = mylist.getNext()
-							if s.valid():
-								# strip all after last :
-								value = s.toString()
-								pos = value.rfind(':')
-								if pos != -1:
-									if value[pos - 1] == ':':
-										pos -= 1
-										value = value[:pos + 1]
-
-								if ':'.join(value.split(':')[3:]) == override:
-									return service
-							else:
-								break
+									if ':'.join(value.split(':')[3:]) == override:
+										return alternative
+								else:
+									break
 		return override_service
 
 
