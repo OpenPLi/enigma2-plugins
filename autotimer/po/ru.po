@@ -1296,3 +1296,6 @@ msgstr "переключение"
 
 msgid "zap and record"
 msgstr "переключение и запись"
+
+msgid "In case of changes, a GUI restart is required to apply the changes."
+msgstr "В случае изменений, для применения потребуется рестарт GUI."

@@ -36,7 +36,7 @@ from .AutoTimer import AutoTimer
 autotimer = AutoTimer()
 autopoller = None
 
-AUTOTIMER_VERSION = "4.6.9"
+AUTOTIMER_VERSION = "4.7.0"
 
 try:
 	from Plugins.SystemPlugins.MPHelp import registerHelp, XMLHelpReader
