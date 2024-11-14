@@ -7,7 +7,7 @@ import requests
 from Components.ActionMap import ActionMap
 from Components.AVSwitch import AVSwitch
 from Components.ConfigList import ConfigListScreen
-from Components.config import config, getConfigListEntry, ConfigSubsection, ConfigDirectory, ConfigSelection, ConfigYesNo
+from Components.config import config, getConfigListEntry, ConfigSubsection, ConfigDirectory, ConfigSelection, ConfigYesNo, configfile
 from Components.FileList import FileList
 from Components.Pixmap import Pixmap
 from Components.ProgressBar import ProgressBar
@@ -15,7 +15,11 @@ from Components.ScrollLabel import ScrollLabel
 from Components.Sources.StaticText import StaticText
 from Components.Sources.List import List
 from enigma import eServiceReference, ePicLoad, gPixmapPtr, getDesktop, addFont
-from Screens.InfoBarGenerics import setResumePoint
+try:
+	from Screens.InfoBarGenerics import resumePointsInstance
+	setResumePoint = resumePointsInstance.setResumePoint
+except ImportError:
+	from Screens.InfoBarGenerics import setResumePoint
 from Screens.InfoBar import MoviePlayer
 from Screens.Screen import Screen
 from Screens.ChoiceBox import ChoiceBox
@@ -32,6 +36,7 @@ config.plugins.ZDF.UT_DL = ConfigYesNo(default=False)
 config.plugins.ZDF.COVER_DL = ConfigYesNo(default=False)
 PLUGINPATH = "/usr/lib/enigma2/python/Plugins/Extensions/ZDFMediathek/"
 FHD = getDesktop(0).size().height() > 720
+UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/111.0"
 SKINFILE = PLUGINPATH + "skin_FHD.xml" if FHD else PLUGINPATH + "skin_HD.xml"
 FONT = "/usr/share/fonts/LiberationSans-Regular.ttf"
 if not path.exists(FONT):
@@ -58,9 +63,10 @@ def readskin():
 
 def geturl(url):
     try:
-        response = requests.get(url, timeout=10, headers={"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101 Firefox/102.0"})
-        return response.content
-    except Exception:
+        r = requests.get(url, timeout=10, headers={"User-Agent": UA, "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8", "Accept-Language": "de,en-US;q=0.7,en;q=0.3", "Accept-Encoding": "gzip, deflate"})
+        r.raise_for_status()
+        return r.content
+    except requests.RequestException:
         return ""
 
 
@@ -158,7 +164,6 @@ class ZDFMediathek(Screen):
 
     def DL_Start(self, answer):
         if answer:
-            UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101 Firefox/102.0"
             url = answer[1].split("##")
             self.DL_File = str(config.plugins.ZDF.savetopath.value) + str(answer[0])
             if path.exists(self.DL_File):
@@ -217,7 +222,7 @@ class ZDFMediathek(Screen):
         try:
             self["DownloadLabel"].setText(str(recvbytes // 1024 // 1024) + "MB/" + str(totalbytes // 1024 // 1024) + "MB")
             self["progress"].setValue(int(100 * recvbytes // totalbytes))
-        except Exception:
+        except KeyError:
             pass
 
     def Home(self):
@@ -526,6 +531,7 @@ class ZDFConfigScreen(ConfigListScreen, Screen):
 
     def save(self):
         self.keySave()
+        configfile.save()
         self.close()
 
     def cancel(self):
