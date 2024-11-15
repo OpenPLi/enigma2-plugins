@@ -44,6 +44,7 @@ config.plugins.imdb = ConfigSubsection()
 config.plugins.imdb.showinplugins = ConfigYesNo(default=False)
 config.plugins.imdb.showsetupinplugins = ConfigYesNo(default=True)
 config.plugins.imdb.showinmovielist = ConfigYesNo(default=True)
+config.plugins.imdb.showinchannelcontext = ConfigYesNo(default=True)
 config.plugins.imdb.force_english = ConfigYesNo(default=False)
 config.plugins.imdb.ignore_tags = ConfigText(visible_width=50, fixed_size=False)
 config.plugins.imdb.showlongmenuinfo = ConfigYesNo(default=False)
@@ -1458,6 +1459,7 @@ class IMDbSetup(Screen, ConfigListScreen):
 		self.list.append(getConfigListEntry(_("Show search in plugin browser"), config.plugins.imdb.showinplugins, _("Enable this to be able to access IMDb searches from within the plugin browser.")))
 		self.list.append(getConfigListEntry(_("Show setup in plugin browser"), config.plugins.imdb.showsetupinplugins, _("Enable this to be able to access IMDb search setup from within the plugin browser.")))
 		self.list.append(getConfigListEntry(_("Show in movie list"), config.plugins.imdb.showinmovielist, _("Enable this to be able to access IMDb searches from within the movie list."))),
+		self.list.append(getConfigListEntry(_("Show in channel context menu"), config.plugins.imdb.showinchannelcontext, _("Enable this to be able to access IMDb searches from within the channel context menu."))),
 		self.list.append(getConfigListEntry(_("Words / phrases to ignore "), config.plugins.imdb.ignore_tags, _("This option allows you add words/phrases for IMDb to ignore when searching. Please separate the words/phrases with commas.")))
 		self.list.append(getConfigListEntry(_("Show full movie or series name in title menu"), config.plugins.imdb.showlongmenuinfo, _("Show the whole IMDb title information for a movie or series, including, for example, alternative names and whether it's a series. Takes effect after the next search of IMDb for a show name.")))
 		self.list.append(getConfigListEntry(_("Show episodes in title menu"), config.plugins.imdb.showepisoderesults, _("Include episodes in the results. Takes effect after the next search of IMDb for a show name.")))
@@ -1579,6 +1581,13 @@ def movielistSearch(session, serviceref, **kwargs):
 		eventName = re.sub(r"[\W_]+", ' ', root, 0)
 	session.open(IMDB, eventName)
 
+def channelSearch(session, service=None, **kwargs):
+	serviceHandler = eServiceCenter.getInstance()
+	info = serviceHandler.info(service)
+	event = info.getEvent(service)
+	if event:
+		name = info and event.getEventName() or ''
+		session.open(IMDB, name)
 
 pluginlist = (
 	(
@@ -1610,6 +1619,16 @@ pluginlist = (
 			description=_("IMDb search"),
 			where=PluginDescriptor.WHERE_MOVIELIST,
 			fnc=movielistSearch,
+			needsRestart=False,
+		)
+	),
+	(
+		config.plugins.imdb.showinchannelcontext,
+		PluginDescriptor(
+			name=_("IMDb search"),
+			description=_("IMDb search"),
+			where=PluginDescriptor.WHERE_CHANNEL_CONTEXT_MENU,
+			fnc=channelSearch,
 			needsRestart=False,
 		)
 	),
