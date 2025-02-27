@@ -132,7 +132,7 @@ class Seekbar(ConfigListScreen, Screen):
 		self["cursor"] = MovingPixmap()
 		self["time"] = Label()
 
-		self["actions"] = ActionMap(["WizardActions"], {"back": self.exit}, -1)
+		self["actions"] = ActionMap(["WizardActions"], {"ok": self.keyOK, "back": self.exit}, -1)
 
 		self.cursorTimer = eTimer()
 		self.cursorTimer.callback.append(self.updateCursor)
