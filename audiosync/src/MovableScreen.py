@@ -50,7 +50,7 @@ class MovableScreen():
 
 	def movePositionTimer(self):
 		if self.configRoot.position_x.value == 0 and self.configRoot.position_y.value == 0:
-			self.configRoot.position_x.value = (self.desktopWidth - self.screenSize_x) / 2
+			self.configRoot.position_x.value = (self.desktopWidth - self.screenSize_x) // 2
 			self.configRoot.position_y.value = self.moveMinMargin
 		self.instance.move(ePoint(self.configRoot.position_x.value, self.configRoot.position_y.value))
 
