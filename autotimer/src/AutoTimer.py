@@ -236,9 +236,12 @@ class AutoTimer:
 		return buildConfig(self.defaultTimer, self.timers, webif)
 
 	def writeXml(self):
-		file = open(XML_CONFIG, 'w')
-		file.writelines(buildConfig(self.defaultTimer, self.timers))
-		file.close()
+		try:
+			file = open(XML_CONFIG, 'w')
+			file.writelines(buildConfig(self.defaultTimer, self.timers))
+			file.close()
+		except FileNotFoundError:
+			doLog("[AutoTimer] fatal error, unable to write xml file")
 
 	def writeXmlTimer(self, timers):
 		return ''.join(buildConfig(self.defaultTimer, timers))
