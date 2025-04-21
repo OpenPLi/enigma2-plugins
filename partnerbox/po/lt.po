@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Partnerbox\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-17 15:15+0200\n"
+"POT-Creation-Date: 2025-04-21 17:17+0200\n"
 "PO-Revision-Date: 2021-09-15 15:38+0300\n"
 "Last-Translator: Vytenis P. <vyteniui@gmail.com>\n"
 "Language-Team: Vytenis P. <vyteniui@gmail.com>\n"
@@ -306,6 +306,10 @@ msgstr "Išjungti garsą"
 msgid "Mute remote box"
 msgstr "Išjungti nuotolinio aparato garsą"
 
+#, fuzzy
+msgid "Muted"
+msgstr "Išjungti garsą"
+
 msgid "NGRAB"
 msgstr "NGRAB"
 
@@ -318,8 +322,19 @@ msgstr "ne"
 msgid "OK"
 msgstr " Gerai"
 
+msgid "Online"
+msgstr ""
+
 msgid "Partnerbox"
 msgstr "Partnerbox"
+
+#, fuzzy, python-format
+msgid ""
+"Partnerbox %s status:\n"
+"\n"
+"%s\n"
+"Volume: %s"
+msgstr " (Partnerbox %s - Versija: %s)"
 
 msgid "Partnerbox - RemotePlayer"
 msgstr "Partnerbox - nuotolinis grotuvas"

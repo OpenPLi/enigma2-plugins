@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Partnerbox\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-17 15:15+0200\n"
+"POT-Creation-Date: 2025-04-21 17:17+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Magnus Nilsson <mag_nilsson@hotmail.com>\n"
 "Language-Team: Dr. Best <dr.best@dreambox-tools.info>\n"
@@ -320,6 +320,9 @@ msgstr ""
 msgid "Mute remote box"
 msgstr ""
 
+msgid "Muted"
+msgstr ""
+
 msgid "NGRAB"
 msgstr "NGRAB"
 
@@ -332,9 +335,22 @@ msgstr "Nej"
 msgid "OK"
 msgstr "OK"
 
+msgid "Online"
+msgstr ""
+
 #, fuzzy
 msgid "Partnerbox"
 msgstr "Partnerbox Poster"
+
+#, fuzzy, python-format
+msgid ""
+"Partnerbox %s status:\n"
+"\n"
+"%s\n"
+"Volume: %s"
+msgstr ""
+"Partnerbox Svar: \n"
+"%s"
 
 #, fuzzy
 msgid "Partnerbox - RemotePlayer"

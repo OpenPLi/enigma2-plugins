@@ -31,6 +31,7 @@ from Components.config import ConfigSubsection, ConfigSubList, ConfigIP, ConfigI
 from .PartnerboxFunctions import sendPartnerBoxWebCommand
 import skin
 import os
+import xml.etree.cElementTree
 from .plugin import autoTimerAvailable
 from Components.Pixmap import Pixmap
 from Components.Sources.Boolean import Boolean
@@ -228,7 +229,7 @@ class PartnerboxEntriesListConfigScreen(Screen, HelpableScreen):
 			"moveUp": (self.moveUp, _("Move item up")),
 			"moveDown": (self.moveDown, _("Move item down")),
 			 }, -1)
-		self["actions"] = ActionMap(["WizardActions", "MenuActions", "ShortcutActions"],
+		self["actions"] = ActionMap(["WizardActions", "MenuActions", "ShortcutActions", "InfobarEPGActions"],
 			{
 			 "ok": self.keyOK,
 			 "back": self.keyClose,
@@ -237,6 +238,10 @@ class PartnerboxEntriesListConfigScreen(Screen, HelpableScreen):
 			 "blue": self.keyDelete,
 			 "green": self.powerMenu,
 			 "menu": self.powerMenu,
+			 "showEventInfo": self.boxStatusInfo,
+			 "showEventInfoPlugin": self.boxStatusInfo,
+			 "showEventInfoSingleEPG": self.boxStatusInfo,
+			 "showEventGuidePlugin": self.boxStatusInfo,
 			 }, -1)
 		self.edit = 0
 		self.idx = 0
@@ -273,6 +278,41 @@ class PartnerboxEntriesListConfigScreen(Screen, HelpableScreen):
 		except:
 			return
 		self.session.openWithCallback(self.updateList, PartnerboxEntryConfigScreen, sel)
+
+	def boxStatusInfo(self):
+		def getInfoCallback(xmldata):
+			try:
+				root = xml.etree.cElementTree.fromstring(xmldata)
+				if root.tag == "e2powerstate":
+					self.inStandby = root.findtext("e2instandby", "").strip().lower()
+				elif root.tag == "e2volume":
+					self.isMuted = root.findtext("e2ismuted", "").strip().lower()
+					self.isLevel = root.findtext("e2current", "").strip()
+				# both values readed, create and display final msg
+				if self.inStandby and self.isMuted:
+					instandby = _("Standby") if self.inStandby == "true" else _("Online")
+					ismuted = _("Muted") if self.isMuted == "true" else ""
+					level = self.isLevel
+					msg = _("Partnerbox %s status:\n\n%s\nVolume: %s") % (partnerbox, instandby, level) + (" - %s" % ismuted if ismuted else "")
+					self.session.open(MessageBox, msg, type=MessageBox.TYPE_INFO, timeout=5)
+			except Exception as e:
+				print("Error on parse XML:", e)
+
+		def getTimerError(error=None):
+			print(error.getErrorMessage())
+
+		try:
+			sel = self["entrylist"].l.getCurrentSelection()[0]
+		except:
+			return
+		partnerbox = self["entrylist"].l.getCurrentSelection()[1][-1]
+
+		self.inStandby = self.isMuted = self.isLevel = None
+		(password, username, http, cmd, enigma_type) = self.getPars(sel)
+		sCommand = http + "/web/powerstate?"
+		sendPartnerBoxWebCommand(sCommand, None, 3, username, password).addCallback(getInfoCallback).addErrback(getTimerError)
+		sCommand = http + "/web/vol?"
+		sendPartnerBoxWebCommand(sCommand, None, 3, username, password).addCallback(getInfoCallback).addErrback(getTimerError)
 
 	def startMoving(self):
 		self.edit = not self.edit
