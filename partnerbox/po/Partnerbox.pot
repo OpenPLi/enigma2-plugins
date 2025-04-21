@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-26 11:30+0200\n"
+"POT-Creation-Date: 2025-04-21 17:17+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -304,6 +304,9 @@ msgstr ""
 msgid "Mute remote box"
 msgstr ""
 
+msgid "Muted"
+msgstr ""
+
 msgid "NGRAB"
 msgstr ""
 
@@ -316,7 +319,18 @@ msgstr ""
 msgid "OK"
 msgstr ""
 
+msgid "Online"
+msgstr ""
+
 msgid "Partnerbox"
+msgstr ""
+
+#, python-format
+msgid ""
+"Partnerbox %s status:\n"
+"\n"
+"%s\n"
+"Volume: %s"
 msgstr ""
 
 msgid "Partnerbox - RemotePlayer"
