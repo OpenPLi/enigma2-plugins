@@ -3,6 +3,7 @@ from enigma import eEPGCache, eServiceReference, eServiceCenter, RT_HALIGN_LEFT,
 from Tools.Directories import resolveFilename, SCOPE_CURRENT_SKIN, fileExists
 from Tools.LoadPixmap import LoadPixmap
 from Tools.Alternatives import GetWithAlternative
+from Tools.FallbackTimer import FallbackTimerList
 from ServiceReference import ServiceReference
 from Screens.ChannelSelection import SimpleChannelSelection
 from Screens.ChoiceBox import ChoiceBox
@@ -577,6 +578,7 @@ class EPGSearch(EPGSelection):
 
 		self["actions"].csel = self
 		self.onLayoutFinish.append(self.onCreate)
+		self.fallbackTimer = FallbackTimerList(self, self.onSelectionChanged)
 		# end stripped copy of EPGSelection.__init__
 		self.select = False
 		self.do_filter = None
@@ -591,7 +593,6 @@ class EPGSearch(EPGSelection):
 		else:
 			if self.isTMBD:
 				self["key_red"].setText(_("Lookup in TMBD"))
-
 
 	def onCreate(self):
 		self.setTitle(_("EPG Search"))
