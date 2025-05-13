@@ -343,7 +343,7 @@ class EPGRefresh:
 		force_auto_shutdown = self.session.nav.wasTimerWakeup() and \
 				config.plugins.epgrefresh.afterevent.value == "auto" and \
 				Screens.Standby.inStandby and config.misc.standbyCounter.value == 1 and \
-				config.plugins.epgrefresh.enigma_wakeup_time.value == config.plugins.epgrefresh.wakeup_time.value
+				config.plugins.epgrefresh.wakeup_time.value != -1 and config.plugins.epgrefresh.enigma_wakeup_time.value == config.plugins.epgrefresh.wakeup_time.value
 		if not self.forcedScan and (force_auto_shutdown or config.plugins.epgrefresh.afterevent.value == "always") and not Screens.Standby.inTryQuitMainloop:
 			if Screens.Standby.inStandby:
 				self.doPowerOffAnswer(True)
