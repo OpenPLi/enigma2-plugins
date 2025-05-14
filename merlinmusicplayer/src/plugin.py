@@ -479,7 +479,13 @@ def getID3Tags(root, filename):
 class MerlinMusicPlayerScreenSaver(Screen):
 
 	sz_w = getDesktop(0).size().width()
-	if sz_w == 1280:
+	if sz_w == 1920:
+		skin = """
+			<screen name="MerlinMusicPlayerScreenSaver" position="0,0" size="1920,1080" flags="wfNoBorder" backgroundColor="#00000000" title="MerlinMusicPlayerScreenSaver">
+			<widget name="coverArt" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/MerlinMusicPlayer/images/mplogo.png" position="0,0" size="500,267" />
+			<widget name="display" position="0,30" size="500,100" font="Regular;28" foregroundColor="yellow" halign="center" backgroundColor="#000000" zPosition="1" />
+			</screen>"""
+	elif sz_w == 1280:
 		skin = """
 			<screen name="MerlinMusicPlayerScreenSaver" position="0,0" size="1280,720" flags="wfNoBorder" backgroundColor="#00000000" title="MerlinMusicPlayerScreenSaver">
 			<widget name="coverArt" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/MerlinMusicPlayer/images/no_coverArt.png" position="200,77" size="238,238" transparent="1" alphatest="blend" />
@@ -872,7 +878,40 @@ class MerlinMusicPlayerTV(MerlinMusicPlayerScreenSaver):
 
 class MerlinMusicPlayerScreen(Screen, InfoBarBase, InfoBarSeek, InfoBarNotifications):
 	sz_w = getDesktop(0).size().width()
-	if sz_w == 1280:
+	if sz_w == 1920:
+		skin = """
+			<screen name="MerlinMusicPlayerScreen" position="0,0" size="1920,1080" title="Merlin Music Player" flags="wfNoBorder">
+			<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/Extensions/MerlinMusicPlayer/images/merlin2.png" position="0,0" size="1920,1080" />
+			<widget name="headertext" position="10,10" zPosition="10" size="1400,100" font="Regular;60" transparent="1" foregroundColor="#fcc000" backgroundColor="#00000000" />
+			<!--Time -->
+			<widget source="global.CurrentTime" render="Label" position="1180,70" size="720,110" font="Regular;50" halign="right" foregroundColor="#606060" backgroundColor="#000000" noWrap="1" transparent="1" zPosition="2">
+				<convert type="ClockToText">Format:%-H:%M:%S</convert>
+			</widget>
+			<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/Extensions/MerlinMusicPlayer/images/overlay2.png" position="0,780" size="1920,300" transparent="0" alphatest="blend" />
+			<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/Extensions/MerlinMusicPlayer/images/cd.png" position="10,796" size="450,294" zPosition="1" transparent="1" alphatest="blend" />
+			<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/Extensions/MerlinMusicPlayer/images/cover.png" position="5,791" size="333,294" zPosition="3" transparent="1" alphatest="blend" />
+			<widget name="coverArt" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/MerlinMusicPlayer/images/no_coverArt.png" position="56,803" size="267,267" zPosition="2" transparent="1" alphatest="blend" />
+			<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/Extensions/MerlinMusicPlayer/images/dvr.png" alphatest="blend" position="570,809" size="245,60" transparent="1" zPosition="4" />
+			<widget name="dvrStatus" pixmaps="/usr/lib/enigma2/python/Plugins/Extensions/MerlinMusicPlayer/images/dvr_pl.png,/usr/lib/enigma2/python/Plugins/Extensions/MerlinMusicPlayer/images/dvr_pau.png" alphatest="blend" position="570,809" size="245,60" transparent="1" zPosition="5" />
+			<widget name="repeat" pixmaps="/usr/lib/enigma2/python/Plugins/Extensions/MerlinMusicPlayer/images/dvr_rep1.png,/usr/lib/enigma2/python/Plugins/Extensions/MerlinMusicPlayer/images/dvr_rep2.png" alphatest="blend" position="475,792" size="95,95" transparent="1" zPosition="5" />
+			<widget name="shuffle" pixmaps="/usr/lib/enigma2/python/Plugins/Extensions/MerlinMusicPlayer/images/dvr_shuf1.png,/usr/lib/enigma2/python/Plugins/Extensions/MerlinMusicPlayer/images/dvr_shuf2.png" alphatest="blend" position="821,792" size="95,95" transparent="1" zPosition="4" />
+			<widget source="session.CurrentService" render="Label" position="1500,792" size="400,73" font="Regular;70" halign="right" foregroundColor="#007fcfff" backgroundColor="#000000" transparent="1" zPosition="3">
+				<convert type="ServicePosition">Position</convert>
+			</widget>
+			<widget name="title" position="480,880" size="1430,100" font="Regular;38" valign="center" nowrap="1" foregroundColor="#007fcfff" backgroundColor="#000000" transparent="1" zPosition="2" />
+			<widget source="session.CurrentService" render="Progress" position="480,990" size="1300,10" foregroundColor="#007fcfff" backgroundColor="#001b3c85" transparent="1" zPosition="5">
+				<convert type="ServicePosition">Position</convert>
+			</widget>
+			<widget source="session.CurrentService" render="Label" position="1750,973" size="150,42" zPosition="1" font="Regular;36" halign="right" foregroundColor="#ffffff" transparent="1">
+				<convert type="ServicePosition">Length</convert>
+			</widget>
+			<widget name="nextTitle" position="480,1020" size="1425,43" font="Regular;36" nowrap="1" foregroundColor="#505050" backgroundColor="#000000" transparent="1" zPosition="2" />
+			<ePixmap position="1813,22" size="80,40" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/MerlinMusicPlayer/images/key_menu.png" alphatest="blend" scale="1" zPosition="2" />
+			<widget name="album" position="30,300" size="900,40" zPosition="10" transparent="1" font="Regular;34" foregroundColor="#505050" />
+			<widget name="artist" position="30,350" size="900,40" zPosition="10" transparent="1" font="Regular;34" foregroundColor="#505050" />
+			<widget name="genre" position="30,400" size="900,40" zPosition="10" transparent="1" font="Regular;34" foregroundColor="#505050" />
+			</screen>"""
+	elif sz_w == 1280:
 		skin = """
 			<screen name="MerlinMusicPlayerScreen" position="0,0" size="1280,720" flags="wfNoBorder" backgroundColor="#00000000" title="iDream">
 			<eLabel backgroundColor="#999999" position="178,112" size="924,2" zPosition="1"/>
