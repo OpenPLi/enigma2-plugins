@@ -104,12 +104,11 @@ def sessionstart(reason, **kwargs):
 			pass
 		if isOpenWebifInstalled():
 			try:
-				from Plugins.Extensions.WebInterface.WebChilds.Toplevel import addExternalChild
 				from .AutoTimerResource import AutoTimerDoParseResource, \
 					AutoTimerListAutoTimerResource, AutoTimerAddOrEditAutoTimerResource, \
 					AutoTimerRemoveAutoTimerResource, AutoTimerChangeSettingsResource, \
 					AutoTimerSettingsResource, AutoTimerSimulateResource, AutoTimerTestResource, \
-					AutoTimerUploadXMLConfigurationAutoTimerResource, AutoTimerAddXMLAutoTimerResource, API_VERSION
+					AutoTimerUploadXMLConfigurationAutoTimerResource, AutoTimerAddXMLAutoTimerResource
 			except ImportError as ie:
 				pass
 			else:
@@ -123,7 +122,6 @@ def sessionstart(reason, **kwargs):
 				root.putChild('set', AutoTimerChangeSettingsResource())
 				root.putChild('simulate', AutoTimerSimulateResource())
 				root.putChild('test', AutoTimerTestResource())
-				addExternalChild(("autotimer", root, "AutoTimer-Plugin", API_VERSION))
 				doLog("[AutoTimer] Use OpenWebif")
 
 
