@@ -48,16 +48,6 @@ except Exception as e:
 	autotimerHelp = None
 
 
-def isOpenWebifInstalled():
-	try:
-		from Tools.Directories import fileExists
-	except:
-		return False
-	pluginpath = eEnv.resolve('${libdir}/enigma2/python/Plugins/Extensions/OpenWebif/plugin.py')
-	if fileExists(pluginpath) or fileExists(pluginpath + "o") or fileExists(pluginpath + "c"):
-		return True
-	return False
-
 # Autostart
 
 
@@ -102,29 +92,6 @@ def sessionstart(reason, **kwargs):
 			AutoTimerEPGSelectionInit()
 		except:
 			pass
-		if isOpenWebifInstalled():
-			try:
-				from Plugins.Extensions.WebInterface.WebChilds.Toplevel import addExternalChild
-				from .AutoTimerResource import AutoTimerDoParseResource, \
-					AutoTimerListAutoTimerResource, AutoTimerAddOrEditAutoTimerResource, \
-					AutoTimerRemoveAutoTimerResource, AutoTimerChangeSettingsResource, \
-					AutoTimerSettingsResource, AutoTimerSimulateResource, AutoTimerTestResource, \
-					AutoTimerUploadXMLConfigurationAutoTimerResource, AutoTimerAddXMLAutoTimerResource, API_VERSION
-			except ImportError as ie:
-				pass
-			else:
-				root = AutoTimerListAutoTimerResource()
-				root.putChild('parse', AutoTimerDoParseResource())
-				root.putChild('remove', AutoTimerRemoveAutoTimerResource())
-				root.putChild('upload_xmlconfiguration', AutoTimerUploadXMLConfigurationAutoTimerResource())
-				root.putChild('add_xmltimer', AutoTimerAddXMLAutoTimerResource())
-				root.putChild('edit', AutoTimerAddOrEditAutoTimerResource())
-				root.putChild('get', AutoTimerSettingsResource())
-				root.putChild('set', AutoTimerChangeSettingsResource())
-				root.putChild('simulate', AutoTimerSimulateResource())
-				root.putChild('test', AutoTimerTestResource())
-				addExternalChild(("autotimer", root, "AutoTimer-Plugin", API_VERSION))
-				doLog("[AutoTimer] Use OpenWebif")
 
 
 base_furtherOptions = None
