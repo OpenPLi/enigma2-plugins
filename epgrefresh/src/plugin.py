@@ -271,28 +271,6 @@ def autostart(reason, session=None, **kwargs):
 							os.chmod("%s" % (config.misc.epgcache_filename.value), 0o644)
 					except:
 						pass
-			if os.path.exists("/usr/lib/enigma2/python/Plugins/Extensions/OpenWebif/pluginshook.src"):
-				try:
-					from Plugins.Extensions.EPGRefresh.EPGRefreshResource import \
-							EPGRefreshStartRefreshResource, \
-							EPGRefreshAddRemoveServiceResource, \
-							EPGRefreshListServicesResource, \
-							EPGRefreshChangeSettingsResource, \
-							EPGRefreshSettingsResource, \
-							EPGRefreshPreviewServicesResource, \
-							API_VERSION
-					root = EPGRefreshListServicesResource()
-					root.putChild(b"refresh", EPGRefreshStartRefreshResource())
-					root.putChild(b"add", EPGRefreshAddRemoveServiceResource(EPGRefreshAddRemoveServiceResource.TYPE_ADD))
-					root.putChild(b"del", EPGRefreshAddRemoveServiceResource(EPGRefreshAddRemoveServiceResource.TYPE_DEL))
-					root.putChild(b"set", EPGRefreshChangeSettingsResource())
-					root.putChild(b"get", EPGRefreshSettingsResource())
-					root.putChild(b"preview", EPGRefreshPreviewServicesResource())
-					from Plugins.Extensions.WebInterface.WebChilds.Toplevel import addExternalChild
-					addExternalChild(("epgrefresh", root, "EPGRefresh-Plugin", API_VERSION))
-					print("[EPGRefresh] Use OpenWebif")
-				except:
-					print("[EPGRefresh] Error use OpenWebif")
 	elif reason == 1:
 		epgrefresh.stop()
 
