@@ -348,6 +348,8 @@ def parseEPGCallback(ret):
 			if "\n########## " in searchlog_txt:
 				searchlog_txt = searchlog_txt.split("\n########## ")
 				searchlog_txt = str(searchlog_txt[-1]).split("\n")[2:]
+				# for MessageBox remove lines starts with '     AT:' (timerName and match)
+				searchlog_txt = [line for line in searchlog_txt if not line.startswith('     AT:')]
 				#check count and length of searchlog_entries
 				maxlistcount = 10
 				maxtextlength = 55
