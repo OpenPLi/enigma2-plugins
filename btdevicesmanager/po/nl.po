@@ -1,0 +1,86 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-03-29 20:16+0100\n"
+"PO-Revision-Date: 2022-05-24 16:13+0200\n"
+"Last-Translator: Rob van der Does <RobvanderDoes@Gmail.com>\n"
+"Language-Team: \n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-Basepath: .\n"
+"X-Generator: Poedit 3.0.1\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+msgid "Audio Connect"
+msgstr "Verbind audio"
+
+msgid "Audio Off"
+msgstr ""
+
+#, fuzzy
+msgid "Audio On"
+msgstr "Verbind audio"
+
+msgid "Bluetooth Devices Manager"
+msgstr "Bluetooth apparaat beheer"
+
+msgid "Bluetooth Devices Manager Setup"
+msgstr "Bluetooth apparaat beheer instellingen"
+
+msgid "Can't not pair with selected device!"
+msgstr "Kan niet verbinden met geselecteerd apparaat!"
+
+msgid "Connect"
+msgstr "Verbind"
+
+#, fuzzy
+msgid "Connected"
+msgstr "Verbind"
+
+msgid "Connection with:\n"
+msgstr "Verbonden met:\n"
+
+msgid "Disconnect"
+msgstr "verbreek verbinding"
+
+msgid "Disconnect with:\n"
+msgstr "Verbreek verbinding met:\n"
+
+#, fuzzy
+msgid "Disconnecting please wait..."
+msgstr "Verbreek verbinding met:\n"
+
+msgid "Exit"
+msgstr "Sluit af"
+
+msgid "Not connected to any device"
+msgstr "Niet verbonden met enig apparaat"
+
+#, fuzzy
+msgid "Not connected"
+msgstr "Niet verbonden met enig apparaat"
+
+msgid "Please Enter Passkey: \n"
+msgstr "Geef Passkey in: \n"
+
+#, fuzzy
+msgid "Scan"
+msgstr "(Re)Scan"
+
+msgid "Scanning for devices..."
+msgstr "Zoekt apparaten..."
+
+msgid "This is bt devices manager"
+msgstr "Dit is bt apparaatbeheer"
+
+msgid "Trying to pair with:"
+msgstr "Probeert te verbinden met:"
