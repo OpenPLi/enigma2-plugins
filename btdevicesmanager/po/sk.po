@@ -1,0 +1,86 @@
+#
+msgid ""
+msgstr ""
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-03-29 20:16+0100\n"
+"PO-Revision-Date: 2018-10-14 12:58+0200\n"
+"Last-Translator: Ladislav Zilzi, zilizila@gmail.sk\n"
+"Language: sk_SK\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: \n"
+"X-Poedit-SourceCharset: UTF-8\n"
+
+#
+#, fuzzy
+msgid "Audio Connect"
+msgstr "Pripojiť"
+
+msgid "Audio Off"
+msgstr ""
+
+#
+#, fuzzy
+msgid "Audio On"
+msgstr "Pripojiť"
+
+msgid "Bluetooth Devices Manager"
+msgstr "Bluetooth Devices Manager"
+
+msgid "Bluetooth Devices Manager Setup"
+msgstr "Bluetooth Devices Manager - Nastavenie"
+
+msgid "Can't not pair with selected device!"
+msgstr "Nie je možné spárovať s vybraným zariadením!"
+
+#
+msgid "Connect"
+msgstr "Pripojiť"
+
+#
+#, fuzzy
+msgid "Connected"
+msgstr "Pripojiť"
+
+msgid "Connection with:\n"
+msgstr "Pripojenie s:\n"
+
+#
+msgid "Disconnect"
+msgstr "Odpojiť"
+
+#, fuzzy
+msgid "Disconnect with:\n"
+msgstr "Pripojenie s:\n"
+
+#, fuzzy
+msgid "Disconnecting please wait..."
+msgstr "Pripojenie s:\n"
+
+msgid "Exit"
+msgstr "Skončiť"
+
+msgid "Not connected to any device"
+msgstr "Žiadne zariadenie nie je pripojené"
+
+#, fuzzy
+msgid "Not connected"
+msgstr "Žiadne zariadenie nie je pripojené"
+
+msgid "Please Enter Passkey: \n"
+msgstr ""
+
+#, fuzzy
+msgid "Scan"
+msgstr "Prehľadať"
+
+msgid "Scanning for devices..."
+msgstr "Hľadanie zariadení..."
+
+msgid "This is bt devices manager"
+msgstr "Správca pre BT zariadenia"
+
+msgid "Trying to pair with:"
+msgstr "Pokus o párovanie s:"

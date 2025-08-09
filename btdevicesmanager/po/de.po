@@ -1,0 +1,77 @@
+# German translations for Enigma2.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: BTDevicesManager 1.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-03-29 20:16+0100\n"
+"PO-Revision-Date: 2025-03-29 20:21+0100\n"
+"Last-Translator: jbleyel\n"
+"Language-Team: openATV\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.5\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+
+msgid "Audio Connect"
+msgstr "Audio Verbinden"
+
+msgid "Audio Off"
+msgstr "Audio Aus"
+
+msgid "Audio On"
+msgstr "Audio An"
+
+msgid "Bluetooth Devices Manager"
+msgstr "Bluetooth Geräte-Manager"
+
+msgid "Bluetooth Devices Manager Setup"
+msgstr "Bluetooth Geräte-Manager"
+
+msgid "Can't not pair with selected device!"
+msgstr "Kann nicht mit ausgewähltem Gerät koppeln!"
+
+msgid "Connect"
+msgstr "Verbinden"
+
+msgid "Connected"
+msgstr "Verbunden"
+
+msgid "Connection with:\n"
+msgstr "Verbunden mit:\n"
+
+msgid "Disconnect"
+msgstr "Trennen"
+
+msgid "Disconnect with:\n"
+msgstr "Getrennt mit:\n"
+
+msgid "Disconnecting please wait..."
+msgstr "Trennen bitte warten..."
+
+msgid "Exit"
+msgstr "Beenden"
+
+msgid "Not connected to any device"
+msgstr "Mit keinem Gerät verbunden"
+
+msgid "Not connected"
+msgstr "Nicht Verbunden"
+
+msgid "Please Enter Passkey: \n"
+msgstr "Bitte Passkey eingeben: \n"
+
+msgid "Scan"
+msgstr "Suchen"
+
+msgid "Scanning for devices..."
+msgstr "Scannen der Geräte..."
+
+msgid "This is bt devices manager"
+msgstr "Bluetooth-Konfiguration"
+
+msgid "Trying to pair with:"
+msgstr "Versuche zu koppeln mit:"
