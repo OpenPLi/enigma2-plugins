@@ -1,5 +1,6 @@
 <setupxml>
 	<setup key="BluetoothDevicesManager" showOpenWebIF="1" title="Bluetooth Devices Manager Setup">
 		<item level="0" text="Audio Connect" description="Audio Connect">config.btdevicesmanager.audioconnect</item>
+		<item level="0" text="Reload Enigma2" conditional="BoxInfo.getItem('model') == 'gbquad4kpro'" description="Reload Enigma2 when first boot">config.btdevicesmanager.e2reload</item>
 	</setup>
 </setupxml>

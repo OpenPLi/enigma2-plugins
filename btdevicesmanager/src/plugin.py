@@ -30,6 +30,7 @@ from Components.Sources.StaticText import StaticText
 from Components.ActionMap import ActionMap
 from Components.config import config, ConfigText, ConfigSubsection, ConfigYesNo
 from Components.MenuList import MenuList
+from Components.SystemInfo import BoxInfo
 from Components.ServiceEventTracker import ServiceEventTracker
 from Plugins.Plugin import PluginDescriptor
 from Screens.Screen import Screen
@@ -43,6 +44,7 @@ config.btdevicesmanager = ConfigSubsection()
 config.btdevicesmanager.autostart = ConfigYesNo(default=False)
 config.btdevicesmanager.audioconnect = ConfigYesNo(default=False)
 config.btdevicesmanager.audioaddress = ConfigText(default="", fixed_size=False)
+config.btdevicesmanager.e2reload = ConfigYesNo(default=False)
 
 
 class BluetoothDevicesManagerSetup(Setup):
@@ -57,12 +59,13 @@ class BluetoothDevicesManager(Screen):
 			<ePixmap pixmap="skin_default/buttons/green.png" position="155,0" size="140,40" alphatest="on" />
 			<ePixmap pixmap="skin_default/buttons/yellow.png" position="305,0" size="140,40" alphatest="on" />
 			<ePixmap pixmap="skin_default/buttons/blue.png" position="455,0" size="140,40" alphatest="on" />
+			<ePixmap pixmap="skin_default/buttons/key_menu.png" position="0,430" size="35,25" alphatest="on" />
 			<widget source="key_red" render="Label" position="5,0" zPosition="1" size="140,40" font="Regular;20" halign="center" valign="center" backgroundColor="#9f1313" foregroundColor="#ffffff" transparent="1" />
 			<widget source="key_green" render="Label" position="155,0" zPosition="1" size="140,40" font="Regular;20" halign="center" valign="center" backgroundColor="#1f771f" foregroundColor="#ffffff" transparent="1" />
 			<widget source="key_yellow" render="Label" position="305,0" zPosition="1" size="140,40" font="Regular;20" halign="center" valign="center" backgroundColor="#a08500" foregroundColor="#ffffff" transparent="1" />
 			<widget source="key_blue" render="Label" position="455,0" zPosition="1" size="140,40" font="Regular;20" halign="center" valign="center" backgroundColor="#18188b" foregroundColor="#ffffff" transparent="1" />
 			<widget name="devicelist" position="0,50" size="600,300" foregroundColor="#ffffff" zPosition="10" scrollbarMode="showOnDemand" transparent="1"/>
-			<widget name="ConnStatus" position="0,330" size="600,150" zPosition="1" font="Regular;20" halign="center" valign="center" backgroundColor="#9f1313" foregroundColor="#ffffff" transparent="1" />
+			<widget name="ConnStatus" position="0,330" size="600,120" zPosition="1" font="Regular;20" halign="center" valign="center" backgroundColor="#9f1313" foregroundColor="#ffffff" transparent="1" />
 		</screen>
 		"""
 
@@ -84,9 +87,9 @@ class BluetoothDevicesManager(Screen):
 
 		self["key_red"] = StaticText(_("Exit"))
 		self["key_green"] = StaticText(_("Scan"))
-		self["key_yellow"] = StaticText(_("Connect"))
+		self["key_yellow"] = StaticText("")
 		self["key_blue"] = StaticText("")
-		self["ConnStatus"] = Label(_("Not connected to any device"))
+		self["ConnStatus"] = Label(_("No connected to any device"))
 
 		self.devicelist = []
 		self["devicelist"] = MenuList(self.devicelist)
@@ -152,7 +155,14 @@ class BluetoothDevicesManager(Screen):
 		if self.devicelist:
 			self["ConnStatus"].setText("")
 		else:
-			self["ConnStatus"].setText(_("No connected to any device"))
+			info_text = ""
+			if BoxInfo.getItem("model") == "gbquad4kpro":
+				info_text = "\n" +_("Press Menu+OK keys on the BT/IR remote control until the LED starts flashing. The 'GIGABLUE-BT20' remote will appear during the scan.")
+			elif BoxInfo.getItem("model") == "gbtrio4kpro":
+				info_text = "\n" +_("Press Info+OK keys on the BT/IR remote control until the LED starts flashing.")
+			elif BoxInfo.getItem("model") == "sf8008":
+				info_text = "\n" +_("Hold down the OK button on the BT remote control (bluetooth RCU06) until the LED flashes. The 'DEFINE' remote will appear during the scan.")
+			self["ConnStatus"].setText(_("No connected to any device") + info_text)
 		self["devicelist"].setList(self.devicelist)
 		self.selectionChanged()
 
@@ -320,6 +330,20 @@ class BluetoothDevicesTask:
 		self.check_timer = eTimer()
 		self.check_timer.callback.append(self.poll)
 		self.check_timer.start(3600000)
+		if BoxInfo.getItem("model") == "gbquad4kpro" and config.btdevicesmanager.e2reload.value and not isfile("/tmp/.bt-reload.txt"):
+			try:
+				open("/tmp/.bt-reload.txt", 'wb').close()
+			except:
+				config.btdevicesmanager.e2reload.value = False
+				config.btdevicesmanager.e2reload.save()
+			self.e2reload_timer = eTimer()
+			self.e2reload_timer.callback.append(self.e2Reload)
+			self.e2reload_timer.start(40000, True)
+
+	def e2Reload(self):
+		import Screens.Standby
+		if not Screens.Standby.inStandby and not Screens.Standby.inTryQuitMainloop and not self.session.nav.getRecordings():
+			self.session.open(Screens.Standby.TryQuitMainloop, 3)
 
 	def __evStart(self):
 		curr_time = datetime.now()
@@ -335,8 +359,9 @@ class BluetoothDevicesTask:
 
 	def flush(self):
 		try:
-			pid = open("/var/run/aplay.pid").read().split()[0]
-			kill(int(pid), SIGUSR2)
+			if isfile("/var/run/aplay.pid"):
+				pid = open("/var/run/aplay.pid").read().split()[0]
+				kill(int(pid), SIGUSR2)
 		except Exception:
 			pass
 		self.timestamp = datetime.now()

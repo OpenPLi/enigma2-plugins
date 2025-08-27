@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: tuxbox-enigma 0.0.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-29 20:16+0100\n"
-"PO-Revision-Date: 2024-09-22 23:16+0300\n"
+"PO-Revision-Date: 2025-08-27 11:39+0300\n"
 "Last-Translator: Viacheslav Dikonov <sdiconov@mail.ru>\n"
 "Language-Team: openATV\n"
 "Language: ru\n"
@@ -13,75 +13,83 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
-"X-Generator: Poedit 3.3.2\n"
+"X-Generator: Poedit 2.0.4\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
-#
 msgid "Audio Connect"
-msgstr "Подключить"
+msgstr "Аудио - подключение"
 
 msgid "Audio Off"
-msgstr ""
+msgstr "Аудио - выкл."
 
-#
-#, fuzzy
 msgid "Audio On"
-msgstr "Подключить"
+msgstr "Аудио - вкл."
 
 msgid "Bluetooth Devices Manager"
 msgstr "Менеджер Bluetooth-устройств"
 
 msgid "Bluetooth Devices Manager Setup"
-msgstr "Настройка менеджера Bluetooth-устройств"
+msgstr "Настройки менеджера Bluetooth-устройств"
 
 msgid "Can't not pair with selected device!"
 msgstr "Невозможно соединиться с выбранным устройством!"
 
-#
 msgid "Connect"
-msgstr "Соединиться"
+msgstr "Подключение"
 
-#
-#, fuzzy
 msgid "Connected"
-msgstr "Соединиться"
+msgstr "Подключено"
 
 msgid "Connection with:\n"
-msgstr "Соединение с:\n"
+msgstr "Подключено к :\n"
 
-#
 msgid "Disconnect"
-msgstr "Отсоединить"
+msgstr "Отключить"
 
 msgid "Disconnect with:\n"
-msgstr "Отсоединить от:\n"
+msgstr "Отключено от:\n"
 
-#, fuzzy
 msgid "Disconnecting please wait..."
-msgstr "Отсоединить от:\n"
+msgstr "Отключение - пожалуйста, подождите..."
 
 msgid "Exit"
 msgstr "Выход"
 
 msgid "Not connected to any device"
-msgstr "Нет соединения ни с одним устройством"
+msgstr "Не подключено ни одно устройство."
 
-#, fuzzy
+msgid "No connected to any device"
+msgstr "Не подключено ни одно устройство."
+
 msgid "Not connected"
-msgstr "Нет соединения ни с одним устройством"
+msgstr "Не подключено"
 
 msgid "Please Enter Passkey: \n"
 msgstr "Введите пин-код:\n"
 
-#, fuzzy
 msgid "Scan"
-msgstr "(Пере)сканировать"
+msgstr "Сканирование"
 
 msgid "Scanning for devices..."
-msgstr "Поиск устройств..."
+msgstr "Сканирование устройств..."
 
 msgid "This is bt devices manager"
-msgstr "Это менеджер Bluetooth-устройств"
+msgstr "Сканирование/настройки Bluetooth-устройств"
 
 msgid "Trying to pair with:"
 msgstr "Попытка соединения с:"
+
+msgid "Reload Enigma2"
+msgstr "Рестарт Enigma2"
+
+msgid "Reload Enigma2 when first boot"
+msgstr "Рестарт Enigma2 при первой загрузке"
+
+msgid "Press Menu+OK keys on the BT/IR remote control until the LED starts flashing. The 'GIGABLUE-BT20' remote will appear during the scan."
+msgstr "Нажмите одновременно кнопки Menu+OK на BT/IR пульте, пока светодиод не начнет мигать. 'GIGABLUE-BT20' пульт появится во время сканирования."
+
+msgid "Hold down the OK button on the BT remote control (bluetooth RCU06) until the LED flashes. The 'DEFINE' remote will appear during the scan."
+msgstr "Нажмите и удерживайте кнопку ОК на BT пульте (bluetooth RCU06), пока светодиод не начнет мигать. The 'DEFINE' пульт появится во время сканирования."
+
+msgid "Press Info+OK keys on the BT/IR remote control until the LED starts flashing."
+msgstr "Нажмите одновременно кнопки Info+OK на BT/IR пульте, пока светодиод не начнет мигать."
