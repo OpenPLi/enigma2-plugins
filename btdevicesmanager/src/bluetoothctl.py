@@ -214,10 +214,14 @@ class Bluetoothctl:
             print(e)
             return False
         else:
-            res = self.process.expect(
-                [".*not available\r\n", "trust succe", EOF]
-            )
-            return res == 1
+            try:
+                res = self.process.expect(
+                    [".*not available\r\n", "trust succe", EOF]
+                )
+                return res == 1
+            except Exception as e:
+                print(e)
+                return False
 
     def remove(self, mac_address):
         """Remove paired device by mac address, return success of the operation."""
@@ -227,10 +231,14 @@ class Bluetoothctl:
             print(e)
             return False
         else:
-            res = self.process.expect(
-                ["not available", "Device has been removed", EOF]
-            )
-            return res == 1
+            try:
+                res = self.process.expect(
+                    ["not available", "Device has been removed", EOF]
+                )
+                return res == 1
+            except Exception as e:
+                print(e)
+                return False
 
     def connect(self, mac_address):
         """Try to connect to a device by mac address."""
@@ -240,10 +248,14 @@ class Bluetoothctl:
             print(e)
             return False
         else:
-            res = self.process.expect(
-                ["Failed to connect", "Connection successful", EOF]
-            )
-            return res == 1
+            try:
+                res = self.process.expect(
+                    ["Failed to connect", "Connection successful", EOF]
+                )
+                return res == 1
+            except Exception as e:
+                print(e)
+                return False
 
     def disconnect(self, mac_address):
         """Try to disconnect to a device by mac address."""
@@ -253,10 +265,14 @@ class Bluetoothctl:
             print(e)
             return False
         else:
-            res = self.process.expect(
-                ["Failed to disconnect", "Successful disconnected", EOF]
-            )
-            return res == 1
+            try:
+                res = self.process.expect(
+                    ["Failed to disconnect", "Successful disconnected", EOF]
+                )
+                return res == 1
+            except Exception as e:
+                print(e)
+                return False
 
     def agent_noinputnooutput(self):
         """Start agent"""
