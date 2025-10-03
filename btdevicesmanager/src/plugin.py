@@ -159,8 +159,8 @@ class BluetoothDevicesManager(Screen):
 				info_text = "\n" +_("Press Menu+OK keys on the BT/IR remote control until the LED starts flashing. The 'GIGABLUE-BT20' remote will appear during the scan.")
 			elif BoxInfo.getItem("model") == "gbtrio4kpro":
 				info_text = "\n" +_("Press Info+OK keys on the BT/IR remote control until the LED starts flashing.")
-			elif BoxInfo.getItem("model") == "sf8008":
-				info_text = "\n" +_("Hold down the OK button on the BT remote control (bluetooth RCU06) until the LED flashes. The 'DEFINE' remote will appear during the scan.")
+			#elif BoxInfo.getItem("model") == "sf8008":
+			#	info_text = "\n" +_("Hold down the OK button on the BT remote control (bluetooth RCU06) until the LED flashes. The 'DEFINE' remote will appear during the scan.")
 			self["ConnStatus"].setText(_("Not connected to any device") + info_text)
 		self["devicelist"].setList(self.devicelist)
 		self.selectionChanged()
