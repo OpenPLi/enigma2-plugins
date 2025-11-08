@@ -301,7 +301,7 @@ msgid "The Internet Movie Database"
 msgstr "Η Διαδικτυακή Βάση Δεδομένων Ταινιών"
 
 #, fuzzy
-msgid "This option allows you add words/phrases for IMDb to ignore when searching. Please separate the words/phrases with commas."
+msgid "This option allows you to add words/phrases for IMDb to ignore when searching. Please separate the words/phrases with commas."
 msgstr "Αυτή η επιλογή επιτρέπει την προσθήκη λέξεων/φράσεων προς αγνόηση στην αναζήτηση στο IMDb. παρακαλώ διαχωρίστε με κόμμα"
 
 msgid "Title Menu"

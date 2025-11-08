@@ -287,7 +287,7 @@ msgstr ""
 msgid "The Internet Movie Database"
 msgstr "قاعده بيانات الفيلم علي الإنترنت"
 
-msgid "This option allows you add words/phrases for IMDb to ignore when searching. Please separate the words/phrases with commas."
+msgid "This option allows you to add words/phrases for IMDb to ignore when searching. Please separate the words/phrases with commas."
 msgstr "يتيح لك هذا الخيار إضافة كلمات / عبارات قاعدة بيانات معلومات الأفلام لتجاهلها عند البحث. يرجى فصل الكلمات / العبارات باستخدام الفواصل."
 
 msgid "Title Menu"

@@ -300,7 +300,7 @@ msgid "The Internet Movie Database"
 msgstr "The Internet Movie Database"
 
 #, fuzzy
-msgid "This option allows you add words/phrases for IMDb to ignore when searching. Please separate the words/phrases with commas."
+msgid "This option allows you to add words/phrases for IMDb to ignore when searching. Please separate the words/phrases with commas."
 msgstr "Sallii poistaa sanoja tai sanontoja hakuehdoista. Eroittele sanat pilkulla."
 
 msgid "Title Menu"

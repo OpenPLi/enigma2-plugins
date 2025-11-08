@@ -271,7 +271,7 @@ msgstr "Краткий обзор"
 msgid "The Internet Movie Database"
 msgstr "База данных видео в сети"
 
-msgid "This option allows you add words/phrases for IMDb to ignore when searching. Please separate the words/phrases with commas."
+msgid "This option allows you to add words/phrases for IMDb to ignore when searching. Please separate the words/phrases with commas."
 msgstr "Эта опция позволяет добавить слова/фразы для игнорирования при поиске в IMDb. Пожалуйста, отделяйте слова/фразы запятой."
 
 msgid "Title Menu"

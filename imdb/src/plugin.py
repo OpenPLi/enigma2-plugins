@@ -927,7 +927,7 @@ class IMDB(Screen, HelpableScreen):
 						year = get(x, ('series', 'releaseYear', 'year'))
 						if year:
 							title += " (%s)"
-						self.resultlist.append((title, series))
+						self.resultlist.append((title, series, ""))
 						i = titles[series] = len(self.resultlist)
 					title = "- "
 				else:
@@ -1599,7 +1599,7 @@ class IMDbSetup(Screen, ConfigListScreen):
 		self.list.append(getConfigListEntry(_("Show in movie list"), config.plugins.imdb.showinmovielist, _("Enable this to be able to access IMDb searches from within the movie list."))),
 		self.list.append(getConfigListEntry(_("Show in channel context menu"), config.plugins.imdb.showinchannelcontext, _("Enable this to be able to access IMDb searches from within the channel context menu."))),
 		self.list.append(getConfigListEntry(_("Show in multi-channel EPG menu"), config.plugins.imdb.showinfurtheroptions, _("Enable this to be able to access IMDb searches from within the multi-channel EPG menu."))),
-		self.list.append(getConfigListEntry(_("Words / phrases to ignore "), config.plugins.imdb.ignore_tags, _("This option allows you add words/phrases for IMDb to ignore when searching. Please separate the words/phrases with commas.")))
+		self.list.append(getConfigListEntry(_("Words / phrases to ignore "), config.plugins.imdb.ignore_tags, _("This option allows you to add words/phrases for IMDb to ignore when searching. Please separate the words/phrases with commas.")))
 		self.list.append(getConfigListEntry(_("Show full movie or series name in title menu"), config.plugins.imdb.showlongmenuinfo, _("Show the whole IMDb title information for a movie or series, including, for example, alternative names and whether it's a series. Takes effect after the next search of IMDb for a show name.")))
 		self.list.append(getConfigListEntry(_("Show episodes in title menu"), config.plugins.imdb.showepisoderesults, _("Include episodes in the results. Takes effect after the next search of IMDb for a show name.")))
 		self.list.append(getConfigListEntry(_("Show episode and year information in cast list"), config.plugins.imdb.showepisodeinfo, _("Show episode and year information for cast when available. Takes effect after the next fetch of show details.")))

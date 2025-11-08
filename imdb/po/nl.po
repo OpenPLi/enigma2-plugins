@@ -284,7 +284,7 @@ msgstr "Samenvatting"
 msgid "The Internet Movie Database"
 msgstr "De Internet Movie Database"
 
-msgid "This option allows you add words/phrases for IMDb to ignore when searching. Please separate the words/phrases with commas."
+msgid "This option allows you to add words/phrases for IMDb to ignore when searching. Please separate the words/phrases with commas."
 msgstr "Met deze optie wordt het mogelijk om woorden / zinnen uit te sluiten tijdens het zoeken. Gebruik een komma als scheidingsteken voor de diverse woorden."
 
 msgid "Title Menu"

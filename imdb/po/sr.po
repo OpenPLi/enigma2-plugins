@@ -290,7 +290,7 @@ msgstr ""
 msgid "The Internet Movie Database"
 msgstr "Internet filmska baza podataka"
 
-msgid "This option allows you add words/phrases for IMDb to ignore when searching. Please separate the words/phrases with commas."
+msgid "This option allows you to add words/phrases for IMDb to ignore when searching. Please separate the words/phrases with commas."
 msgstr ""
 
 msgid "Title Menu"

@@ -285,7 +285,7 @@ msgstr ""
 msgid "The Internet Movie Database"
 msgstr "Internetinė filmų duomenų bazė"
 
-msgid "This option allows you add words/phrases for IMDb to ignore when searching. Please separate the words/phrases with commas."
+msgid "This option allows you to add words/phrases for IMDb to ignore when searching. Please separate the words/phrases with commas."
 msgstr "Ši parinktis leidžia įtraukti IMDb paieškoje ignoruotinus žodžius ir frazes. Atskirkite juos kableliais."
 
 msgid "Title Menu"

@@ -272,7 +272,7 @@ msgstr "Synopsis"
 msgid "The Internet Movie Database"
 msgstr "La base de données internet des films"
 
-msgid "This option allows you add words/phrases for IMDb to ignore when searching. Please separate the words/phrases with commas."
+msgid "This option allows you to add words/phrases for IMDb to ignore when searching. Please separate the words/phrases with commas."
 msgstr "Cette option vous permet d'ajouter des mots/phrases que l'IMDb ignorera lors de la recherche. Merci de les séparer avec des virgules."
 
 msgid "Title Menu"

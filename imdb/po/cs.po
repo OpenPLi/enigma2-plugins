@@ -271,7 +271,7 @@ msgstr "Přehledy"
 msgid "The Internet Movie Database"
 msgstr "Internetová filmová databáze"
 
-msgid "This option allows you add words/phrases for IMDb to ignore when searching. Please separate the words/phrases with commas."
+msgid "This option allows you to add words/phrases for IMDb to ignore when searching. Please separate the words/phrases with commas."
 msgstr "Tato možnost vám umožňuje přidat slova/fráze, která má IMDb ignorovat při hledání. Prosím, oddělte slova/fráze čárkami."
 
 msgid "Title Menu"
