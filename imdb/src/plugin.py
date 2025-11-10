@@ -983,7 +983,8 @@ class IMDB(Screen, HelpableScreen):
 			self["detailslabel"].setText(_("IMDb query failed!"))
 
 	def searchPlot(self):
-		self["statusbar"].setText(self["menu"].getCurrent()[2])
+		if self["menu"].getCurrent() and len(self["menu"].getCurrent()) > 2:
+			self["statusbar"].setText(self["menu"].getCurrent()[2])
 
 	def http_failed(self, failure):
 		text = _("IMDb Download failed")
