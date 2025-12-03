@@ -45,6 +45,32 @@ config.btdevicesmanager.audioconnect = ConfigYesNo(default=False)
 config.btdevicesmanager.audioaddress = ConfigText(default="", fixed_size=False)
 
 
+def applyBTAudioState():
+	if not isfile("/proc/stb/audio/btaudio"):
+		return
+
+	newState = "off"
+	if config.btdevicesmanager.audioaddress.value and config.av.btaudio.value:
+		newState = "on"
+
+	print(f"[BluetoothManager] newState: {newState}")
+	config.btdevicesmanager.audioaddress.save()
+	config.btdevicesmanager.audioconnect.save()
+	if hasattr(config, "av") and hasattr(config.av, "btaudio"):
+		config.av.btaudio.save()
+
+	try:
+		with open("/proc/stb/audio/btaudio", "w") as fn:
+			fn.write(newState)
+	except Exception as e:
+		print(f"[BluetoothManager] Error writing btaudio: {e}")
+
+	commandconnect = resolveFilename(SCOPE_CURRENT_PLUGIN, "Extensions/BTDevicesManager/BTAudioConnect")
+	audioaddress = config.btdevicesmanager.audioaddress.value
+	audioaddress = f" {audioaddress}" if audioaddress and config.btdevicesmanager.audioconnect.value else ""
+	system(f"{commandconnect}{audioaddress}")
+
+
 class BluetoothDevicesManagerSetup(Setup):
 	def __init__(self, session):
 		Setup.__init__(self, session, "BluetoothDevicesManager", plugin="Extensions/BTDevicesManager", PluginLanguageDomain="BTDevicesManager")
@@ -152,7 +178,7 @@ class BluetoothDevicesManager(Screen):
 		if self.devicelist:
 			self["ConnStatus"].setText("")
 		else:
-			self["ConnStatus"].setText(_("No connected to any device"))
+			self["ConnStatus"].setText(_("Not connected to any device"))
 		self["devicelist"].setList(self.devicelist)
 		self.selectionChanged()
 
@@ -280,22 +306,19 @@ class BluetoothDevicesManager(Screen):
 			if current[3] and isAudio:
 				if config.btdevicesmanager.audioaddress.value == current[1]:
 					config.btdevicesmanager.audioaddress.value = ""
+					config.btdevicesmanager.audioconnect.value = False
+					config.av.btaudio.value = False
 				else:
 					config.btdevicesmanager.audioaddress.value = current[1]
-				config.btdevicesmanager.audioaddress.save()
-				commandconnect = resolveFilename(SCOPE_CURRENT_PLUGIN, "Extensions/BTDevicesManager/BTAudioConnect")
-				audioaddress = config.btdevicesmanager.audioaddress.value
-				audioaddress = f" {audioaddress}" if audioaddress and config.btdevicesmanager.audioconnect.value else ""
-				system(f"{commandconnect}{audioaddress}")
+					config.btdevicesmanager.audioconnect.value = True
+					config.av.btaudio.value = True
+				applyBTAudioState()
 				self.selectionChanged()
 
 	def keyMenu(self):
 		if self.hasBTAudio:
 			def setupCallback(*args):
-				commandconnect = resolveFilename(SCOPE_CURRENT_PLUGIN, "Extensions/BTDevicesManager/BTAudioConnect")
-				audioaddress = config.btdevicesmanager.audioaddress.value
-				audioaddress = f" {audioaddress}" if audioaddress and config.btdevicesmanager.audioconnect.value else ""
-				system(f"{commandconnect}{audioaddress}")
+				applyBTAudioState()
 			self.session.openWithCallback(setupCallback, BluetoothDevicesManagerSetup)
 
 	def setListOnView(self):
@@ -346,6 +369,7 @@ def sessionstart(session, reason, **kwargs):
 	global iBluetoothDevicesTask
 	if reason == 0:
 		if isfile("/proc/stb/audio/btaudio"):
+			applyBTAudioState()
 			if iBluetoothDevicesTask is None:
 				iBluetoothDevicesTask = BluetoothDevicesTask(session)
 
