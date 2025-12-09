@@ -1,4 +1,5 @@
-# for localized messages
+# -*- coding: utf-8 -*-
+
 from . import _
 
 from Components.ActionMap import ActionMap, HelpableActionMap
@@ -30,10 +31,10 @@ from time import strftime
 from twisted.internet.threads import deferToThread
 from os import path as os_path, remove as os_remove
 
-import json
-import re
+from json import loads, encode, JSONDecoder
+from six import text_type, string_types, ensure_str
+from re import sub
 import requests
-import six
 
 # Configuration
 from Components.ConfigList import ConfigListScreen
@@ -52,6 +53,7 @@ config.plugins.imdb.ignore_tags = ConfigText(visible_width=50, fixed_size=False)
 config.plugins.imdb.showlongmenuinfo = ConfigYesNo(default=False)
 config.plugins.imdb.showepisoderesults = ConfigYesNo(default=False)
 config.plugins.imdb.showepisodeinfo = ConfigYesNo(default=False)
+
 
 def getPage(url, params=None, data=None, headers=None, cookies=None):
 	headers = headers or {}
@@ -109,12 +111,12 @@ def html2text(html):
 		html = html.replace(b"\xc2\x85", b"\xe2\x80\xa6")  # ellipsis
 	else:
 		html = html.replace(u"\x85", u"\u2026")  # ellipsis
-	return re.sub(r"&(?:([A-Za-z0-9]+)|#x([0-9A-Fa-f]+)|#(\d+));|<.*?>", sub, html)
+	return sub(r"&(?:([A-Za-z0-9]+)|#x([0-9A-Fa-f]+)|#(\d+));|<.*?>", sub, html)
 
 
 # Prevent labels from processing escape characters.
 def text2label(text):
-	return re.sub(r'\\([cnrt])', r'\\\r\1', text)
+	return sub(r'\\([cnrt])', r'\\\r\1', text)
 
 
 # Return the JSON element described by path (str/tuple/list), or default
@@ -135,11 +137,11 @@ def get(json, path, default=""):
 		if key not in json:
 			return default
 		json = json[key]
-	if isinstance(json, six.text_type):
+	if isinstance(json, text_type):
 		# It's possible UTF-8 has itself been converted to UTF-8
 		# (e.g. the storyline of "As You Want Me" / "Come mi vuoi").
 		try:
-			json = json.encode("latin1").decode("utf8")
+			json = encode("latin1").decode("utf8")
 		except:
 			pass
 	return json
@@ -276,34 +278,58 @@ class IMDB(Screen, HelpableScreen):
 			"session-id": "000-0000000-0000000",
 		}
 
-		self["actionsOk"] = HelpableActionMap(self, "OkCancelActions",
-		{
-			"ok": (self.showDetails, _("Show movie and series basic details")),
-			"cancel": (self.exit, _("Exit IMDb search")),
-		}, -1)
-		self["actionsColor"] = HelpableActionMap(self, "ColorActions",
-		{
-			"red": (self.exit, _("Exit IMDb search")),
-			"green": (self.showMenu, _("Show list of matched movies and series")),
-			"yellow": (self.showDetails, _("Show movie and series basic details")),
-			"blue": (self.showExtras, _("Show movie and series extra details")),
-		}, -1)
-		self["actionsMovieSel"] = HelpableActionMap(self, "MovieSelectionActions",
-		{
-			"contextMenu": (self.contextMenuPressed, _("Menu")),
-			"showEventInfo": (self.showDetails, _("Show movie and series basic details")),
-		}, -1)
-		self["actionsInfobar"] = HelpableActionMap(self, ["InfobarActions", "InfobarTeletextActions", "InfobarCueSheetActions"],
-		{
-			"showMovies": (self.bigPoster, _("Show a bigger poster")),
-			"toggleMark": (self.showReviews, _("Show first page of user reviews")),
-			"startTeletext": (self.showSynopsis, _("Show movie and series synopsis")),
-		}, -1)
-		self["actionsDir"] = HelpableActionMap(self, "DirectionActions",
-		{
-			"down": (self.pageDown, _("Page down")),
-			"up": (self.pageUp, _("Page up")),
-		}, -1)
+		self["actionsOk"] = HelpableActionMap(
+			self,
+			"OkCancelActions",
+			{
+				"ok": (self.showDetails, _("Show movie and series basic details")),
+				"cancel": (self.exit, _("Exit IMDb search")),
+			},
+			-1
+		)
+
+		self["actionsColor"] = HelpableActionMap(
+			self,
+			"ColorActions",
+			{
+				"red": (self.exit, _("Exit IMDb search")),
+				"green": (self.showMenu, _("Show list of matched movies and series")),
+				"yellow": (self.showDetails, _("Show movie and series basic details")),
+				"blue": (self.showExtras, _("Show movie and series extra details")),
+			},
+			-1
+		)
+
+		self["actionsMovieSel"] = HelpableActionMap(
+			self,
+			"MovieSelectionActions",
+			{
+				"contextMenu": (self.contextMenuPressed, _("Menu")),
+				"showEventInfo": (self.showDetails, _("Show movie and series basic details")),
+			},
+			-1
+		)
+
+		self["actionsInfobar"] = HelpableActionMap(
+			self,
+			["InfobarActions", "InfobarTeletextActions", "InfobarCueSheetActions"],
+			{
+				"showMovies": (self.bigPoster, _("Show a bigger poster")),
+				"toggleMark": (self.showReviews, _("Show first page of user reviews")),
+				"startTeletext": (self.showSynopsis, _("Show movie and series synopsis")),
+			},
+			-1
+		)
+
+		self["actionsDir"] = HelpableActionMap(
+			self,
+			"DirectionActions",
+			{
+				"down": (self.pageDown, _("Page down")),
+				"up": (self.pageUp, _("Page up")),
+			},
+			-1
+		)
 
 		self.onLayoutFinish.append(self.getIMDB)
 
@@ -505,7 +531,7 @@ class IMDB(Screen, HelpableScreen):
 	def downloadTitle(self, title, titleId):
 		self["statusbar"].setText(_("Re-Query IMDb: %s...") % title or titleId)
 		fetchurl = "https://www.imdb.com/title/" + titleId + "/"
-#		print("[IMDB] downloadTitle()", fetchurl)
+#       print("[IMDB] downloadTitle()", fetchurl)
 		params = {
 			"operationName": 'Title_Storyline',
 			"variables": '{"titleId":"%s"}' % titleId,
@@ -523,7 +549,7 @@ class IMDB(Screen, HelpableScreen):
 		self.reviewsJSON = response.content.decode("utf8")
 
 		try:
-			reviews = json.loads(self.reviewsJSON)['data']['title']['reviews']['edges']
+			reviews = loads(self.reviewsJSON)['data']['title']['reviews']['edges']
 		except Exception as e:
 			self["statusbar"].setText(_("IMDb Reviews failed"))
 			print("[IMDB] reviews failed:", str(e))
@@ -688,7 +714,6 @@ class IMDB(Screen, HelpableScreen):
 
 		for video in self.videos:
 			list.append((video[0], self.playVideo, video[1], video[2]))
-
 
 		self.session.openWithCallback(
 			self.menuCallback,
@@ -855,7 +880,7 @@ class IMDB(Screen, HelpableScreen):
 		self.reviews = []
 		self.spoilers = False
 		safeRemove("/tmp/poster.jpg", "/tmp/poster-big.jpg")
-		if not isinstance(self.eventName, six.string_types):
+		if not isinstance(self.eventName, string_types):
 			self["statusbar"].setText("")
 			return
 		if not self.eventName:
@@ -907,7 +932,7 @@ class IMDB(Screen, HelpableScreen):
 		html = html.decode("utf8")
 		start = html.find('"titleResults":{"results":')
 		if start != -1:
-			searchresults = json.JSONDecoder().raw_decode(html, start + 26)[0]
+			searchresults = JSONDecoder().raw_decode(html, start + 26)[0]
 			self.resultlist = []
 			titles = {}
 			for x in searchresults:
@@ -931,13 +956,13 @@ class IMDB(Screen, HelpableScreen):
 						i = titles[series] = len(self.resultlist)
 					title = "- "
 				else:
-					title =  ""
+					title = ""
 					i = len(self.resultlist)
 				title += get(x, 'titleText')
 				year = get(x, 'releaseYear')
 				if config.plugins.imdb.showlongmenuinfo.value:
 					typ = not series and get(x, 'titleTypeText') or ""
-					cast = get(x, 'topCredits')
+					# cast = get(x, 'topCredits')
 					typ = get(x, ('titleType', 'text')) or ""
 					# This always seems to be empty, instead using another
 					# query (when you click the "i") to get director & stars.
@@ -964,7 +989,7 @@ class IMDB(Screen, HelpableScreen):
 				if typ:
 					extras.append(typ)
 				if genres:
-					extras.append(six.ensure_str(genres))
+					extras.append(ensure_str(genres))
 				if extras:
 					title += " (%s)" % "; ".join(extras)
 				self.resultlist.insert(i, (title, get(x, 'titleId'), get(x, 'plot')))
@@ -1016,12 +1041,12 @@ class IMDB(Screen, HelpableScreen):
 		Detailstext = _("No details found.")
 		start = self.html.find('pageProps":')
 		if start != -1:
-			pageProps = json.JSONDecoder().raw_decode(self.html, start + 11)[0]
+			pageProps = JSONDecoder().raw_decode(self.html, start + 11)[0]
 			fold = pageProps['aboveTheFoldData']
 			main = pageProps['mainColumnData']
 			i18n = pageProps['translationContext']['i18n']['translations']['resources']
 			try:
-				tmd = json.loads(self.json)['data']['title']
+				tmd = loads(self.json)['data']['title']
 			except Exception as e:
 				print("[IMDB] tmd failed:", str(e))
 				tmd = {}
@@ -1198,7 +1223,7 @@ class IMDB(Screen, HelpableScreen):
 				posterurl = posterurl.replace("_V1_", "_V1_QL75_UY%d_" % self["poster"].instance.size().height())
 				self["statusbar"].setText(_("Downloading Movie Poster..."))
 				localfile = "/tmp/poster.jpg"
-				#print("[IMDB] downloading poster " + posterurl + " to " + localfile)
+				# print("[IMDB] downloading poster " + posterurl + " to " + localfile)
 				download = downloadPage(posterurl, localfile)
 				download.addCallback(self.IMDBPoster).addErrback(self.http_failed)
 			else:
@@ -1502,10 +1527,12 @@ class IMDbChannelSelection(SimpleChannelSelection):
 		SimpleChannelSelection.__init__(self, session, _("Channel Selection"))
 		self.skinName = ["IMDbChannelSelection", "SimpleChannelSelection"]
 
-		self["ChannelSelectEPGActions"] = ActionMap(["ChannelSelectEPGActions"],
-		{
-				"showEPGList": self.channelSelected
-		})
+		self["ChannelSelectEPGActions"] = ActionMap(
+			["ChannelSelectEPGActions"],
+			{
+				"showEPGList": self.channelSelected,
+			}
+		)
 
 	def channelSelected(self):
 		ref = self.getCurrentSelection()
@@ -1574,16 +1601,23 @@ class IMDbSetup(Screen, ConfigListScreen):
 		self["description"] = Label("")
 
 		# Define Actions
-		self["actions"] = ActionMap(["SetupActions"],
+		self["actions"] = ActionMap(
+			["SetupActions"],
 			{
 				"cancel": self.keyCancel,
 				"save": self.keySave,
-			}, -2)
+			},
+			-2
+		)
 
-		self["VirtualKB"] = ActionMap(["VirtualKeyboardActions"],
-		{
-			"showVirtualKeyboard": self.KeyText,
-		}, -2)
+		self["VirtualKB"] = ActionMap(
+			["VirtualKeyboardActions"],
+			{
+				"showVirtualKeyboard": self.KeyText,
+			},
+			-2
+		)
+
 		self["VirtualKB"].setEnabled(False)
 
 		self.list = []
@@ -1689,10 +1723,6 @@ class IMDbSetup(Screen, ConfigListScreen):
 		plugins.readPluginList(resolveFilename(SCOPE_PLUGINS))
 		self.close()
 
-	def createSummary(self):
-		from Screens.Setup import SetupSummary
-		return SetupSummary
-
 
 def eventinfo(session, eventName="", **kwargs):
 	if not eventName:
@@ -1724,7 +1754,7 @@ def movielistSearch(session, serviceref, **kwargs):
 	eventName = info and info.getName(serviceref) or ''
 	(root, ext) = os_path.splitext(eventName)
 	if ext in KNOWN_EXTENSIONS or ext in KNOWN_EXTENSIONS2:
-		eventName = re.sub(r"[\W_]+", ' ', root, 0)
+		eventName = sub(r"[\W_]+", ' ', root, 0)
 	session.open(IMDB, eventName)
 
 
@@ -1798,13 +1828,21 @@ pluginlist = (
 
 
 def Plugins(**kwargs):
-	l = [PluginDescriptor(name=_("IMDb search") + "...",
-		description=_("Search for details from the Internet Movie Database"),
-		where=PluginDescriptor.WHERE_EVENTINFO,
-		fnc=eventinfo,
-		needsRestart=False,
-		)]
+	"""
+	Create and return the list of PluginDescriptor objects
+	for the IMDb search plugin and any additional enabled plugins.
+	"""
+	plugins = [
+		PluginDescriptor(
+			name=_("IMDb search") + "...",
+			description=_("Search for details from the Internet Movie Database"),
+			where=PluginDescriptor.WHERE_EVENTINFO,
+			fnc=eventinfo,
+			needsRestart=False,
+		)
+	]
 
-	l += [pl[1] for pl in pluginlist if pl[0].value]
+	# Add all plugins marked as enabled
+	plugins.extend(pl[1] for pl in pluginlist if pl[0].value)
 
-	return l
+	return plugins
