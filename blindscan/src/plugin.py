@@ -62,7 +62,7 @@ elif fileExists("/proc/stb/info/gbmodel"):
 		model = l.read().strip()
 		l.close()
 		BOX_NAME = str(model.lower())
-		if BOX_NAME in ("gbquad4k", "gbue4k", "gbtrio4k"):
+		if BOX_NAME in ("gbquad4k", "gbue4k", "gbtrio4k", "gbquad4kpro", "gbtrio4kpro"):
 			BOX_MODEL = "gigablue"
 	except:
 		pass
