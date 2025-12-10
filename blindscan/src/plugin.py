@@ -62,7 +62,7 @@ elif fileExists("/proc/stb/info/gbmodel"):
 		model = l.read().strip()
 		l.close()
 		BOX_NAME = str(model.lower())
-		if BOX_NAME in ("gbquad4k", "gbue4k", "gbtrio4k"):
+		if BOX_NAME in ("gbquad4k", "gbue4k", "gbtrio4k", "gbquad4kpro", "gbtrio4kpro"):
 			BOX_MODEL = "gigablue"
 	except:
 		pass
@@ -1136,7 +1136,7 @@ class Blindscan(ConfigListScreen, Screen, TransponderFiltering):
 			tools = "/usr/bin/gigablue_blindscan"
 			if pathExists(tools):
 				cmd = "gigablue_blindscan %d %d %d %d %d %d %d %d" % (temp_start_int_freq, temp_end_int_freq, config.blindscan.start_symbol.value, config.blindscan.stop_symbol.value, tab_pol[pol], tab_hilow[band], self.feid, self.getNimSocket(self.feid))
-				if BOX_NAME == "gbtrio4k":
+				if BOX_NAME.startswith("gbtrio4k"):
 					cmd += " %d" % self.is_c_band_scan
 					cmd += " %d" % orb[0]
 					self.adjust_freq = False
