@@ -21,50 +21,63 @@
 
 # for localized messages
 from . import _
-from re import compile as re_compile
-from os import path as os_path, listdir, stat as os_stat
+
+from os import listdir
+from os import path as os_path
+from os import stat as os_stat
 from Components.MenuList import MenuList
 from Components.Harddisk import harddiskmanager
 from Components.config import config
-from enigma import RT_HALIGN_LEFT, eListboxPythonMultiContent, eServiceReference, eServiceCenter, gFont, iServiceInformation, RT_VALIGN_CENTER, BT_SCALE, BT_KEEP_ASPECT_RATIO
+from Components.MultiContent import MultiContentEntryPixmapAlphaTest
+from enigma import (
+	BT_KEEP_ASPECT_RATIO,
+	BT_SCALE,
+	RT_HALIGN_LEFT,
+	RT_VALIGN_CENTER,
+	eListboxPythonMultiContent,
+	eServiceCenter,
+	eServiceReference,
+	gFont,
+	iServiceInformation,
+)
 from Tools.LoadPixmap import LoadPixmap
 import skin
-from Components.MultiContent import MultiContentEntryPixmapAlphaTest
+
 
 EXTENSIONS = {
-		"mp2": "music",
-		"mp3": "music",
-		"wav": "music",
-		"ogg": "music",
-		"flac": "music",
-		"m4a": "music",
-		"jpg": "picture",
-		"jpeg": "picture",
-		"jpe": "picture",
-		"png": "picture",
-		"bmp": "picture",
-		"mvi": "picture",
-		"ts": "movie",
-		"m2ts": "movie",
-		"avi": "movie",
-		"divx": "movie",
-		"wmv": "movie",
-		"mpg": "movie",
-		"mpeg": "movie",
-		"mkv": "movie",
-		"mp4": "movie",
-		"mov": "movie",
-		"vob": "movie",
-		"ifo": "movie",
-		"iso": "movie",
-		"flv": "movie",
-		"3gp": "movie",
-		"mod": "movie",
-		"ipk": "package",
-		"gz": "package",
-		"bz2": "package",
-		"sh": "script"
-	}
+	"mp2": "music",
+	"mp3": "music",
+	"wav": "music",
+	"ogg": "music",
+	"flac": "music",
+	"m4a": "music",
+	"jpg": "picture",
+	"jpeg": "picture",
+	"jpe": "picture",
+	"png": "picture",
+	"bmp": "picture",
+	"mvi": "picture",
+	"ts": "movie",
+	"m2ts": "movie",
+	"avi": "movie",
+	"divx": "movie",
+	"wmv": "movie",
+	"mpg": "movie",
+	"mpeg": "movie",
+	"mkv": "movie",
+	"mp4": "movie",
+	"mov": "movie",
+	"vob": "movie",
+	"ifo": "movie",
+	"iso": "movie",
+	"flv": "movie",
+	"3gp": "movie",
+	"mod": "movie",
+	"ipk": "package",
+	"gz": "package",
+	"bz2": "package",
+	"sh": "script"
+}
 
 
 def FileEntryComponent(name, absolute=None, isDir=False):
@@ -74,8 +87,7 @@ def FileEntryComponent(name, absolute=None, isDir=False):
 	if isDir:
 		png = LoadPixmap("/usr/lib/enigma2/python/Plugins/Extensions/DreamExplorer/res/dir.png")
 	else:
-		extension = name.split('.')
-		extension = extension[-1].lower()
+		extension = name.split('.')[-1].lower()
 		if extension in EXTENSIONS:
 			if name == "VIDEO_TS.IFO":
 				png = LoadPixmap("/usr/lib/enigma2/python/Plugins/Extensions/DreamExplorer/res/dvd.png")
@@ -142,11 +154,11 @@ class FileList(MenuList):
 		return self.l.getCurrentSelection()[0]
 
 	def getCurrentEvent(self):
-		l = self.l.getCurrentSelection()
-		if not l or l[0][1] == True:
+		current_item = self.l.getCurrentSelection()
+		if not current_item or current_item[0][1] is True:
 			return None
 		else:
-			return self.serviceHandler.info(l[0][0]).getEvent(l[0][0])
+			return self.serviceHandler.info(current_item[0][0]).getEvent(current_item[0][0])
 
 	def getFileList(self):
 		return self.list
@@ -337,23 +349,31 @@ class FileList(MenuList):
 		return tslen
 
 	def byNameFunc(self, a):
-		return a[0][0]
+		try:
+			return str(a[0][0] or "").lower()
+		except:
+			return ""
 
 	def sortName(self):
 		self.list.sort(key=self.byNameFunc)
-		#self.l.invalidate()
 		self.l.setList(self.list)
 		self.moveToIndex(0)
 
 	def byDateFunc(self, a):
 		try:
-			stat1 = os_stat(self.current_directory + a[0][0])
+			if a[0][0] and self.current_directory:
+				path = str(a[0][0])
+				if not path.startswith('/'):
+					path = self.current_directory + path
+				if os_path.exists(path):
+					return (0, float(os_stat(path).st_ctime))
 		except:
-			return 0
-		return stat1.st_ctime
+			pass
+		
+		# Fallback: use name
+		return (1, self.byNameFunc(a))
 
 	def sortDate(self):
-		self.list.sort(key=self.byDateFunc)
-		#self.l.invalidate()
+		self.list.sort(key=self.byDateFunc, reverse=True)
 		self.l.setList(self.list)
 		self.moveToIndex(0)
