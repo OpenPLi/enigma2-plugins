@@ -1,21 +1,21 @@
 #######################################################################
 #
-#    Vali's File-List with some extendet functions
-#    based on FileList(Enigma-2)
+# Vali's File-List with some extendet functions
+# based on FileList(Enigma-2)
 #
-#    Coded by Vali (c)2009-2011
-#    Main idea and getTSLength/getTSInfo/Sort functions by DarkVolli
-#    Support: www.dreambox-tools.info
+# Coded by Vali (c)2009-2011
+# Main idea and getTSLength/getTSInfo/Sort functions by DarkVolli
+# Support: www.dreambox-tools.info
 #
-#    This program is free software; you can redistribute it and/or
-#    modify it under the terms of the GNU General Public License
-#    as published by the Free Software Foundation; either version 2
-#    of the License, or (at your option) any later version.
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU General Public License
+# as published by the Free Software Foundation; either version 2
+# of the License, or (at your option) any later version.
 #
-#    This program is distributed in the hope that it will be useful,
-#    but WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU General Public License for more details.
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
 #
 #######################################################################
 
@@ -369,7 +369,7 @@ class FileList(MenuList):
 					return (0, float(os_stat(path).st_ctime))
 		except:
 			pass
-		
+
 		# Fallback: use name
 		return (1, self.byNameFunc(a))
 

@@ -16,7 +16,6 @@
 #
 #######################################################################
 
-# for localized messages
 from Plugins.Plugin import PluginDescriptor
 from Screens.Screen import Screen
 from Screens.InfoBar import InfoBar
@@ -32,7 +31,6 @@ from Components.FileList import FileList
 from Components.Label import Label
 from Components.MenuList import MenuList
 from Components.Pixmap import Pixmap
-# from Components.ScrollLabel import ScrollLabel
 from Components.config import config, ConfigSubsection, ConfigText
 from Components.Sources.StaticText import StaticText
 from Tools.Directories import fileExists, pathExists
@@ -44,14 +42,12 @@ from .myFileList import FileList as myFileList
 # from vInputBox import vInputBox
 
 from enigma import (
-    # eConsoleAppContainer,
     eServiceReference,
     ePicLoad,
     getDesktop,
     eServiceCenter
 )
 
-# --- OS operations ---
 from os import (
     system as os_system,
     stat as os_stat,
@@ -63,7 +59,6 @@ from os import (
     listdir as os_listdir
 )
 
-# --- Time operations ---
 from time import (
     strftime as time_strftime,
     localtime as time_localtime
