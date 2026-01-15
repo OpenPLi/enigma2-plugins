@@ -84,6 +84,8 @@ elif fileExists("/proc/stb/info/boxtype"):
 		BOX_NAME = str(model.lower())
 		if BOX_NAME == "ustym4kpro":
 			BOX_MODEL = "uclan"
+		elif BOX_NAME == "sf8008":
+			BOX_MODEL = "octagon"
 
 	except:
 		pass
