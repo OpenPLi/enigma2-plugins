@@ -1,0 +1,236 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR ORGANIZATION
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-16 19:06+0430\n"
+"PO-Revision-Date: 2023-03-30 11:49+0200\n"
+"Last-Translator: Mr.Servo <mrservo via GitHub.com>\n"
+"Language-Team: \n"
+"Language: lt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Generated-By: pygettext.py 1.5\n"
+"X-Generator: Poedit 3.2.2\n"
+
+#, python-format
+msgid "%s will turn %s in %s!"
+msgstr "%s įjungs %s po %s!"
+
+msgid "1 day"
+msgstr "1 dieną"
+
+msgid "1 week"
+msgstr "1 savaitę"
+
+msgid "3 days"
+msgstr "3 dienas"
+
+msgid "Accept changes"
+msgstr "Priimti pakeitimus"
+
+msgid "Add"
+msgstr "Pridėti"
+
+msgid "Add a birthday"
+msgstr "Pridėti gimtadienį"
+
+msgid "Add birthday"
+msgstr "Pridėti gimtadienį"
+
+msgid "Age"
+msgstr "Amžius"
+
+msgid "Birthday"
+msgstr "Gimtadienis"
+
+msgid "Birthday Reminder"
+msgstr "Gimtadienių priminimas"
+
+msgid "Birthday Reminder Settings"
+msgstr "Gimtadienių priminimo nustatymai"
+
+#, python-format
+msgid "Birthday Reminder received %s birthdays from %s."
+msgstr "Gimtadienių priminimo parsiųsti %s gimtadieniai iš %s."
+
+msgid "Birthday filename:"
+msgstr "Gimtadienių failo pavadinimas:"
+
+msgid "Birthdays"
+msgstr "Gimtadieniai"
+
+msgid "CSV import successful!"
+msgstr "CSV importas pavyko!"
+
+#, python-format
+msgid "Can't find CSV file %s!"
+msgstr "Surasti CSV failo %s nepavyko!"
+
+#, python-format
+msgid "Can't import CSV data from file %s."
+msgstr "Importuoti CSV duomenų iš failo %s negalima."
+
+#, python-format
+msgid "Can't write CSV file %s."
+msgstr "Įrašyti CSV failo %s nepavyko."
+
+msgid "Cancel"
+msgstr "Atšaukti"
+
+msgid "Change path"
+msgstr "Keisti kelią"
+
+msgid "Choose the filename:"
+msgstr "Pasirinkite failo pavadinimą:"
+
+msgid "Date format:"
+msgstr "Datos formatas:"
+
+msgid "Day:"
+msgstr "Diena:"
+
+msgid "Disabled"
+msgstr "Išjungta"
+
+msgid "Distribute birthdays to other Dreamboxes"
+msgstr "Platinti gimtadienius į kitus aparatus"
+
+#, python-format
+msgid "Do you really want to delete the entry for %s?"
+msgstr "Ar tikrai norite trinti įrašą %s?"
+
+msgid "Edit"
+msgstr "Redaguoti"
+
+msgid "Edit birthday"
+msgstr "Redaguoti gimtadienį"
+
+msgid "Edit birthdays"
+msgstr "Redaguoti gimtadienius"
+
+msgid "Edit the selected entry"
+msgstr "Redaguoti pasirinktą įrašą"
+
+msgid "Enter the name of the person:"
+msgstr "Įveskite asmens vardą ir pavardę:"
+
+#, python-format
+msgid ""
+"Error reading file %s.\n"
+"\n"
+"Error: %s, %s"
+msgstr ""
+"Klaida skaitant failą %s.\n"
+"\n"
+"Klaida: %s, %s"
+
+#, python-format
+msgid ""
+"Error writing file %s.\n"
+"\n"
+"Error: %s, %s"
+msgstr ""
+"Klaida rašant failą %s.\n"
+"\n"
+"Klaida: %s, %s"
+
+msgid "Exit the plugin"
+msgstr "Užverti įskiepį"
+
+msgid "Export CSV file"
+msgstr "Eksportuoti CSV failą"
+
+msgid "Extras"
+msgstr "Priedai"
+
+msgid "Helps to remind of birthdays"
+msgstr "Padeda prisiminti apie gimtadienius"
+
+msgid "Import CSV file"
+msgstr "Importuoti CSV failą"
+
+msgid "Invalid Location"
+msgstr "Neteisinga vieta"
+
+msgid "Invalid date!"
+msgstr "Neleistina data!"
+
+msgid "Month:"
+msgstr "Mėnuo:"
+
+msgid "Name"
+msgstr "Vardas"
+
+msgid "Name:"
+msgstr "Vardas:"
+
+msgid "Networking port (default: 7374):"
+msgstr "Tinklo prievadas (numatytasis: 7374):"
+
+msgid "Next birthday"
+msgstr "Kitas gimtadienis"
+
+msgid "Notification time:"
+msgstr "Pranešimo laikas:"
+
+msgid "OK"
+msgstr "Gerai"
+
+msgid "Open the extras menu"
+msgstr "Atidaryti priedų meniu"
+
+msgid "Path to birthday file:"
+msgstr "Kelias į gimtadienių failą:"
+
+msgid "Remind before birthday:"
+msgstr "Priminti prieš gimtadienį:"
+
+msgid "Remove"
+msgstr "Pašalinti"
+
+msgid "Remove the selected entry"
+msgstr "Pašalinti pasirinktą įrašą"
+
+msgid "Save"
+msgstr "Išsaugoti"
+
+msgid "Show plugin in extensions menu:"
+msgstr "Rodyti tarp plėtinių meniu:"
+
+msgid "Sort birthdays by:"
+msgstr "Rūšiuoti gimtadienius pagal:"
+
+msgid "Sorting next"
+msgstr "Kitas rūšiavimas"
+
+msgid "Sorting previous"
+msgstr "Ankstesnis rūšiavimas"
+
+#, python-format
+msgid ""
+"Today is %s's birthday!\n"
+"\n"
+"She/he was born on %s and is now %s year(s) old."
+msgstr ""
+"Šiandien %s gimtadienis!\n"
+"\n"
+"Gimė %s ir dabar yra %s metų amžiaus."
+
+msgid "VirtualKeyBoard"
+msgstr "VirtualKeyBoard"
+
+msgid "What do you want to do?"
+msgstr "Ką norite daryti?"
+
+#, python-format
+msgid "Wrote CSV file %s."
+msgstr "Įrašytas CSV failas %s."
+
+msgid "Year:"
+msgstr "Metai:"
