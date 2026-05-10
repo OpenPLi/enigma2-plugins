@@ -471,7 +471,7 @@ class EPGRefresh:
 				else:
 					text = first_text + _("Scanning last service. Please wait.")
 					if config.plugins.epgrefresh.parse_autotimer.value:
-						text += "\n\nAutoTimer will start after completion."
+						text += _("\n\nAutoTimer will start after completion.")
 			else:
 				text = first_text + _("Following Services have to be scanned:") + '\n' + servtxt + last_text
 			session.openWithCallback(self.msgClosed, MessageBox, text, MessageBox.TYPE_YESNO)
