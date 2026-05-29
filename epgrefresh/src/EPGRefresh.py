@@ -281,7 +281,7 @@ class EPGRefresh:
 					except:
 						pass
 		if config.plugins.epgrefresh.parse_autotimer.value:
-			self.maybeStopAdapter()
+			self.refreshAdapter.play(self.refreshAdapter.previousService)
 			try:
 				from Plugins.Extensions.AutoTimer.plugin import autotimer
 				if autotimer is None:

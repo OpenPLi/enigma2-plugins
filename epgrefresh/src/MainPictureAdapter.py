@@ -30,8 +30,10 @@ class MainPictureAdapter:
 				Notifications.AddPopup(_("EPG refresh starts scanning channels."), MessageBox.TYPE_INFO, 4, NOTIFICATIONID)
 			except:
 				pass
+		self.wasInStandby = None
 		self.previousService = self.navcore.getCurrentlyPlayingServiceOrGroup()
 		if self.previousService is None and Screens.Standby.inStandby:
+			self.wasInStandby = True
 			self.previousService = eServiceReference(config.tv.lastservice.value)
 		try:
 			self.lastCount = Components.ServiceEventTracker.InfoBarCount
@@ -58,7 +60,13 @@ class MainPictureAdapter:
 				self.rotorTimer.start(1500, True)
 		else:
 			if self.previousService is not None:
-				self.navcore.playService(self.previousService)
+				if self.wasInStandby:
+					from Screens.InfoBar import InfoBar
+					csel = InfoBar.instance and InfoBar.instance.servicelist
+					if csel:
+						csel.servicelist.setCurrent(self.previousService, adjust=False)
+						self.previousService = csel.getCurrentSelection()
+				self.navcore.playService(self.previousService, forceRestart=self.wasInStandby)
 				config.tv.lastservice.value = self.previousService.toString()
 				config.tv.lastservice.save()
 			else:
