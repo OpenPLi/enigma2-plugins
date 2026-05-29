@@ -10,6 +10,7 @@ SUBDIRS = \
 	autoresolution \
 	autotimer \
 	babelzapper \
+	birthdayreminder \
 	blindscan \
 	bonjour \
 	btdevicesmanager \

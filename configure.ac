@@ -87,6 +87,11 @@ babelzapper/etc/Makefile
 babelzapper/meta/Makefile
 babelzapper/src/Makefile
 
+birthdayreminder/Makefile
+birthdayreminder/meta/Makefile
+birthdayreminder/po/Makefile
+birthdayreminder/src/Makefile
+
 blindscan/src/Makefile
 blindscan/po/Makefile
 blindscan/Makefile
