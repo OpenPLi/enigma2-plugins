@@ -281,7 +281,8 @@ class EPGRefresh:
 					except:
 						pass
 		if config.plugins.epgrefresh.parse_autotimer.value:
-			self.refreshAdapter.play(self.refreshAdapter.previousService)
+			if self.refreshAdapter.__class__.__name__ == "MainPictureAdapter":
+				self.refreshAdapter.play(self.refreshAdapter.previousService)
 			try:
 				from Plugins.Extensions.AutoTimer.plugin import autotimer
 				if autotimer is None:
@@ -466,14 +467,17 @@ class EPGRefresh:
 				servtxt = servtxt + 2 * ' ' + ngettext("... %d more service", "... %d more services", servcounter - LISTMAX) % (servcounter - LISTMAX) + '\n'
 			last_text = "%s / %s" % (ngettext("Remaining %d service", "Remaining %d services", servcounter) % servcounter, ngettext("%d:%02d min", "%d:%02d mins", remaining_time / 60) % (remaining_time / 60, remaining_time % 60))
 			if servcounter == 0:
-				if config.plugins.epgrefresh.parse_autotimer.value and not self.refreshAdapter:
-					text = first_text + _("\nRunning AutoTimer. Please wait.")
-				else:
+				if self.wait.isActive():
 					text = first_text + _("Scanning last service. Please wait.")
 					if config.plugins.epgrefresh.parse_autotimer.value:
 						text += _("\n\nAutoTimer will start after completion.")
+				else:
+					if config.plugins.epgrefresh.parse_autotimer.value:
+						text = first_text + _("\nRunning AutoTimer. Please wait.")
 			else:
 				text = first_text + _("Following Services have to be scanned:") + '\n' + servtxt + last_text
+				if config.plugins.epgrefresh.parse_autotimer.value:
+					text += _("\n\nAutoTimer will start after completion.")
 			session.openWithCallback(self.msgClosed, MessageBox, text, MessageBox.TYPE_YESNO)
 		except:
 			print("[EPGRefresh] showPendingServices Error!")
