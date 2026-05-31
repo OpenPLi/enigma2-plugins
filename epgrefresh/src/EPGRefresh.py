@@ -472,8 +472,9 @@ class EPGRefresh:
 					if config.plugins.epgrefresh.parse_autotimer.value:
 						text += _("\n\nAutoTimer will start after completion.")
 				else:
+					text = first_text
 					if config.plugins.epgrefresh.parse_autotimer.value:
-						text = first_text + _("\nRunning AutoTimer. Please wait.")
+						text += _("\nRunning AutoTimer. Please wait.")
 			else:
 				text = first_text + _("Following Services have to be scanned:") + '\n' + servtxt + last_text
 				if config.plugins.epgrefresh.parse_autotimer.value:
