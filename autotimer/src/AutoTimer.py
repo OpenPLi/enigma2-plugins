@@ -753,7 +753,7 @@ class AutoTimer:
 					doLog(msg)
 					continue
 			else:
-				newEntry = RecordTimerEntry(ServiceReference(serviceref), begin, end, name, shortdesc, eit)
+				newEntry = RecordTimerEntry(ServiceReference(serviceref), begin, end, name, shortdesc or extdesc, eit)
 				newAT = True
 
 				msg = "[AutoTimer] Try to add new timer based on AutoTimer %s." % (timer.name)
