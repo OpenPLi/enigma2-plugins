@@ -475,7 +475,7 @@ class AutoTimer:
 				continue
 
 			# Set short description to equal extended description if it is empty.
-			if not shortdesc and timer.descShortEqualExt and extdesc:
+			if not shortdesc and extdesc and (not timer.avoidDuplicateDescription or timer.descShortEqualExt):
 				shortdesc = extdesc
 
 			# Convert begin time
@@ -753,7 +753,7 @@ class AutoTimer:
 					doLog(msg)
 					continue
 			else:
-				newEntry = RecordTimerEntry(ServiceReference(serviceref), begin, end, name, shortdesc or extdesc, eit)
+				newEntry = RecordTimerEntry(ServiceReference(serviceref), begin, end, name, shortdesc, eit)
 				newAT = True
 
 				msg = "[AutoTimer] Try to add new timer based on AutoTimer %s." % (timer.name)
