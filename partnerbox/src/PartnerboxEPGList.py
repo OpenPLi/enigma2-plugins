@@ -129,6 +129,14 @@ def Partnerbox_SingleEntry(self, service, eventId, beginTime, duration, EventNam
 			(eListboxPythonMultiContent.TYPE_TEXT, r1.left(), r1.top(), r1.width(), r1.height(), 0, RT_HALIGN_RIGHT | RT_VALIGN_CENTER, self.days[t[6]]),
 			(eListboxPythonMultiContent.TYPE_TEXT, r2.left(), r2.top(), r2.width(), r1.height(), 0, RT_HALIGN_RIGHT | RT_VALIGN_CENTER, "%02d.%02d, %02d:%02d" % (t[2], t[1], t[3], t[4]))
 		]
+		if self.sorting == 2:
+			r = self.getEventRating((service, eventId, beginTime, duration, EventName))
+			if r:
+				rating = str(r + 3)
+			else:
+				rating = "-"
+			r4 = self.rating_rect
+			res.append((eListboxPythonMultiContent.TYPE_TEXT, r4.x, r4.y, r4.w, r4.h, 0, RT_HALIGN_CENTER | RT_VALIGN_CENTER, rating))
 		if rec1 or rec2:
 			if rec1:
 				clock_types = rec1
@@ -162,6 +170,14 @@ def Partnerbox_SingleEntry(self, service, eventId, beginTime, duration, EventNam
 			(eListboxPythonMultiContent.TYPE_TEXT, r1.left(), r1.top(), r1.width(), r1.height(), 0, RT_HALIGN_RIGHT | RT_VALIGN_CENTER, self.days[t[6]]),
 			(eListboxPythonMultiContent.TYPE_TEXT, r2.left(), r2.top(), r2.width(), r1.height(), 0, RT_HALIGN_RIGHT | RT_VALIGN_CENTER, "%02d.%02d, %02d:%02d" % (t[2], t[1], t[3], t[4]))
 		]
+		if self.sorting == 2:
+			r = self.getEventRating((service, eventId, beginTime, duration, EventName))
+			if r:
+				rating = str(r + 3)
+			else:
+				rating = "-"
+			r4 = self.rating_rect
+			res.append((eListboxPythonMultiContent.TYPE_TEXT, r4.x, r4.y, r4.w, r4.h, 0, RT_HALIGN_CENTER | RT_VALIGN_CENTER, rating))
 		if rec1 or rec2:
 			if rec1:
 				clock_types = rec1

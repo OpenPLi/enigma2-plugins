@@ -146,16 +146,41 @@ except:
 	config.plugins.epgrefresh.enigma_wakeup_time.value = -1
 
 
+# Retry if the eDVBLocalTimeHandler callback is missed due to a startup race.
+class TimeCallbackRetryTimer:
+	def __init__(self):
+		self.timer = eTimer()
+		self.timer.callback.append(self.retry)
+
+	def retry(self):
+		timeCallback(isCallback=False)
+
+	def start(self):
+		if not self.timer.isActive():
+			self.timer.start(500, True)
+
+	def stop(self):
+		self.timer.stop()
+
+timeCallbackRetry = TimeCallbackRetryTimer()
+
+
 def timeCallback(isCallback=True):
 	"""Time Callback/Autostart management."""
 	thInstance = eDVBLocalTimeHandler.getInstance()
 	if isCallback:
-		# NOTE: this assumes the clock is actually ready when called back
-		# this may not be true, but we prefer silently dying to waiting forever
-		thInstance.m_timeUpdated.get().remove(timeCallback)
+		pass
 	elif not thInstance.ready():
-		thInstance.m_timeUpdated.get().append(timeCallback)
+		callbacks = thInstance.m_timeUpdated.get()
+		if timeCallback not in callbacks:
+			callbacks.append(timeCallback)
+		timeCallbackRetry.start()
 		return
+
+	callbacks = thInstance.m_timeUpdated.get()
+	if timeCallback in callbacks:
+		callbacks.remove(timeCallback)
+	timeCallbackRetry.stop()
 
 	if config.plugins.epgrefresh.wakeup.value:
 		now = localtime()
