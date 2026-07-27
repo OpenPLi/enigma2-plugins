@@ -218,6 +218,12 @@ msgstr "Možnosti modrého tlačítka"
 msgid "Use Picons"
 msgstr "Používat pikony"
 
+msgid "Use the current event name as the initial search text. An empty search field is used otherwise."
+msgstr "Použít aktuální název ve vyhledávacím poli, jinak ponechat vyhledávací pole prázdné."
+
+msgid "Use event name for yellow button search"
+msgstr "Použít název pro hledání žlutým tlačítkem"
+
 msgid "Zap to selected service"
 msgstr "Přepnout na vybraný program"
 

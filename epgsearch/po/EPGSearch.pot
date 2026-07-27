@@ -222,6 +222,12 @@ msgstr ""
 msgid "Use Picons"
 msgstr ""
 
+msgid "Use the current event name as the initial search text. An empty search field is used otherwise."
+msgstr ""
+
+msgid "Use event name for yellow button search"
+msgstr ""
+
 msgid "Zap to selected service"
 msgstr ""
 
