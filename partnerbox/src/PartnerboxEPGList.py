@@ -19,9 +19,12 @@
 
 from Components.EpgList import EPGList
 from enigma import eListboxPythonMultiContent, \
-	RT_HALIGN_LEFT, RT_HALIGN_RIGHT, RT_VALIGN_CENTER, RT_HALIGN_CENTER
+	RT_HALIGN_LEFT, RT_HALIGN_RIGHT, RT_VALIGN_CENTER, RT_HALIGN_CENTER, eServiceReference
 from Components.config import config
 from time import localtime, strftime, ctime, time
+from re import search
+from datetime import timedelta
+
 
 from Tools.Directories import resolveFilename, SCOPE_CURRENT_SKIN
 from Tools.LoadPixmap import LoadPixmap
@@ -56,6 +59,7 @@ def Partnerbox_EPGListInit():
 	EPGList.buildSimilarEntry = Partnerbox_SimilarEntry
 	EPGList.buildMultiEntry = Partnerbox_MultiEntry
 	EPGList.getClockTypesEntry = getClockTypesEntry
+	EPGList.detectCatchupAvailable = detectCatchupAvailable
 	EPGList.isInTimer = isInTimer
 
 
@@ -94,9 +98,12 @@ def Partnerbox_EPGList__init__(self, type=0, selChangedCB=None, timer=None):
 	self.remote_repzapclock_post_pixmap = loadPixmap("remote_repzapclock_post.png")
 	self.remote_repzapclock_prepost_pixmap = loadPixmap("remote_repzapclock_prepost.png")
 
+	# stream archive icon
+	self.catchUpIcon = LoadPixmap("catchup.png")
+
 
 def Partnerbox_SingleEntry(self, service, eventId, beginTime, duration, EventName):
-	rec1 = self.getClockTypesEntry(service, eventId, beginTime, duration)
+	rec1 = self.getClockTypesEntry(service, eventId, beginTime, duration, self.catchUpIcon)
 	rec2 = beginTime and (isInRemoteTimer(self, beginTime, duration, service))
 	r1 = self.weekday_rect
 	r2 = self.datetime_rect
@@ -147,14 +154,16 @@ def Partnerbox_SingleEntry(self, service, eventId, beginTime, duration, EventNam
 			if rec1 and rec2:
 				res.append((eListboxPythonMultiContent.TYPE_TEXT, r3.left(), r3.top(), times, r3.height(), 1, RT_HALIGN_RIGHT | RT_VALIGN_CENTER, Time))
 				for i in range(len(clock_types)):
-					res.append((eListboxPythonMultiContent.TYPE_PIXMAP_ALPHATEST, r3.left() + times + 10 + i * space, r3.top() + dy, s, s, self.clocks[clock_types[i]]))
+					clockIcon = (clock_types[i] == 65 and self.catchUpIcon) or self.clocks[clock_types[i]]
+					res.append((eListboxPythonMultiContent.TYPE_PIXMAP_ALPHATEST, r3.left() + times + 10 + i * space, r3.top() + dy, s, s, clockIcon))
 				res.append((eListboxPythonMultiContent.TYPE_PIXMAP_ALPHATEST, r3.left() + times + 10 + i * space + space, r3.top() + dy, s, s, clock_pic_partnerbox))
 				res.append((eListboxPythonMultiContent.TYPE_TEXT, r3.left() + times + 10 + (i + 1) * space + space + distance, r3.top(), r3.width(), r3.height(), 0, RT_HALIGN_LEFT | RT_VALIGN_CENTER, EventName))
 			else:
 				res.append((eListboxPythonMultiContent.TYPE_TEXT, r3.left(), r3.top(), times, r3.height(), 1, RT_HALIGN_RIGHT | RT_VALIGN_CENTER, Time))
 				if rec1:
 					for i in range(len(clock_types)):
-						res.append((eListboxPythonMultiContent.TYPE_PIXMAP_ALPHATEST, r3.left() + times + 10 + i * space, r3.top() + dy, s, s, self.clocks[clock_types[i]]))
+						clockIcon = (clock_types[i] == 65 and self.catchUpIcon) or self.clocks[clock_types[i]]
+						res.append((eListboxPythonMultiContent.TYPE_PIXMAP_ALPHATEST, r3.left() + times + 10 + i * space, r3.top() + dy, s, s, clockIcon))
 					res.append((eListboxPythonMultiContent.TYPE_TEXT, r3.left() + times + 10 + (i + 1) * space + distance, r3.top(), r3.width(), r3.height(), 0, RT_HALIGN_LEFT | RT_VALIGN_CENTER, EventName))
 				else:
 					res.append((eListboxPythonMultiContent.TYPE_PIXMAP_ALPHATEST, r3.left() + times + 10, r3.top() + dy, s, s, clock_pic))
@@ -187,13 +196,15 @@ def Partnerbox_SingleEntry(self, service, eventId, beginTime, duration, EventNam
 				clock_pic = getRemoteClockZapPixmap(self, service, beginTime, duration, eventId)
 			if rec1 and rec2:
 				for i in range(len(clock_types)):
-					res.append((eListboxPythonMultiContent.TYPE_PIXMAP_ALPHATEST, r3.left() + i * space, r3.top() + dy, s, s, self.clocks[clock_types[i]]))
+					clockIcon = (clock_types[i] == 65 and self.catchUpIcon) or self.clocks[clock_types[i]]
+					res.append((eListboxPythonMultiContent.TYPE_PIXMAP_ALPHATEST, r3.left() + i * space, r3.top() + dy, s, s, clockIcon))
 				res.append((eListboxPythonMultiContent.TYPE_PIXMAP_ALPHATEST, r3.left() + i * space + space, r3.top() + dy, s, s, clock_pic_partnerbox))
 				res.append((eListboxPythonMultiContent.TYPE_TEXT, r3.left() + (i + 1) * space + space + distance, r3.top(), r3.width(), r3.height(), 0, RT_HALIGN_LEFT | RT_VALIGN_CENTER, EventName))
 			else:
 				if rec1:
 					for i in range(len(clock_types)):
-						res.append((eListboxPythonMultiContent.TYPE_PIXMAP_ALPHATEST, r3.left() + i * space, r3.top() + dy, s, s, self.clocks[clock_types[i]]))
+						clockIcon = (clock_types[i] == 65 and self.catchUpIcon) or self.clocks[clock_types[i]]
+						res.append((eListboxPythonMultiContent.TYPE_PIXMAP_ALPHATEST, r3.left() + i * space, r3.top() + dy, s, s, clockIcon))
 					res.append((eListboxPythonMultiContent.TYPE_TEXT, r3.left() + (i + 1) * space + distance, r3.top(), r3.width(), r3.height(), 0, RT_HALIGN_LEFT | RT_VALIGN_CENTER, EventName))
 				else:
 					res.append((eListboxPythonMultiContent.TYPE_PIXMAP_ALPHATEST, r3.left(), r3.top() + dy, s, s, clock_pic))
@@ -318,15 +329,28 @@ def Partnerbox_MultiEntry(self, changecount, service, eventId, begTime, duration
 	return res
 
 
-def getClockTypesEntry(self, service, eventId, beginTime, duration):
+def getClockTypesEntry(self, service, eventId, beginTime, duration, catchUpIcon=None):
 	if not beginTime:
 		return None
+	type = []
 	rec = self.isInTimer(eventId, beginTime, duration, service)
+	if catchUpIcon and self.detectCatchupAvailable(beginTime, service):
+		type = [65]
 	if rec is not None:
-		return rec[1]
+		return (type + rec[1])
 	else:
-		return None
+		return type
 
+
+def detectCatchupAvailable(self, stime, service):
+	sref = service.toString() if isinstance(service, eServiceReference) else service
+	now = time()
+	if stime and "catchupdays=" in sref and stime < now:
+		match = search(r"catchupdays=(\d*)", sref)
+		catchup_days = int(match.groups(1)[0])
+		if now - stime <= timedelta(days=catchup_days).total_seconds():
+			return True
+	return False
 
 def isInTimer(self, eventid, begin, duration, service, disabledTimers=False):
 	returnValue = None
