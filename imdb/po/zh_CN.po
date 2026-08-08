@@ -1,22 +1,19 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the IMDb package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: IMDb\n"
+"Project-Id-Version: Enigma 2 IMDb Plugin\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-07-26 13:31+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2021-07-20 23:07+0800\n"
+"Last-Translator: 孤独之剑 <haotzyy1970@yahoo.com>\n"
+"Language-Team: 孤独之剑 <haotzyy1970@yahoo.com>\n"
+"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-Basepath: .\n"
+"X-Generator: Poedit 1.7.3\n"
+"X-Poedit-SearchPath-0: ../src\n"
 
 #: ../plugin.py:1093
 msgid " & "
@@ -38,7 +35,7 @@ msgstr ""
 
 #: ../plugin.py:350
 msgid "Ambiguous results"
-msgstr ""
+msgstr "模糊结果"
 
 #: ../plugin.py:1159
 msgid "Aspect ratio"
@@ -53,12 +50,14 @@ msgid "Color"
 msgstr ""
 
 #: ../plugin.py:1178
+#, fuzzy
 msgid "Connections"
-msgstr ""
+msgstr "频道选择"
 
 #: ../plugin.py:1552
+#, fuzzy
 msgid "Couldn't get event name"
-msgstr ""
+msgstr "无法获取事件名称 "
 
 #: ../plugin.py:1019
 msgid "Country"
@@ -74,7 +73,7 @@ msgstr[1] ""
 
 #: ../plugin.py:355 ../plugin.py:956
 msgid "Details"
-msgstr ""
+msgstr "详情 "
 
 #: ../plugin.py:976
 msgid "Director"
@@ -83,32 +82,34 @@ msgstr[0] ""
 msgstr[1] ""
 
 #: ../plugin.py:1070 ../plugin.py:1694
+#, fuzzy
 msgid "Downloading Movie Poster..."
-msgstr ""
+msgstr "下载电影海报: %s..."
 
 #: ../plugin.py:923
+#, fuzzy
 msgid "Downloading reviews..."
-msgstr ""
+msgstr "下载电影海报: %s..."
 
 #: ../setup.xml
 msgid "Enable this to be able to access IMDb search setup from within the plugin browser."
-msgstr ""
+msgstr "使其能够在插件浏览器中访问IMDB搜索设置."
 
 #: ../setup.xml
 msgid "Enable this to be able to access IMDb searches from within the movie list."
-msgstr ""
+msgstr "使其能够从电影列表中访问IMDB搜索."
 
 #: ../setup.xml
 msgid "Enable this to be able to access IMDb searches from within the plugin browser."
-msgstr ""
+msgstr "使其能够在插件浏览器中访问IMDB搜索."
 
 #: ../plugin.py:1341
 msgid "Enter search"
-msgstr ""
+msgstr "输入搜索"
 
 #: ../plugin.py:1484
 msgid "Enter text to search for"
-msgstr ""
+msgstr "输入要搜索的文本"
 
 #: ../plugin.py:995
 msgid "Episodes"
@@ -116,15 +117,15 @@ msgstr ""
 
 #: ../plugin.py:242
 msgid "Exit"
-msgstr ""
+msgstr "退出"
 
 #: ../plugin.py:266 ../plugin.py:270
 msgid "Exit IMDb search"
-msgstr ""
+msgstr "退出IMDB搜索 "
 
 #: ../plugin.py:1241 ../plugin.py:1245
 msgid "Extra Info"
-msgstr ""
+msgstr "附加信息 "
 
 #: ../plugin.py:1173
 msgid "Filming locations"
@@ -146,71 +147,77 @@ msgstr ""
 
 #: ../plugin.py:1249 ../plugin.py:1672 ../plugin.py:1703
 msgid "IMDb Details parsed"
-msgstr ""
+msgstr "IMDB细节解析"
 
 #: ../plugin.py:1555
 msgid "IMDb Download completed"
-msgstr ""
+msgstr "下载完成"
 
 #: ../plugin.py:1657
 msgid "IMDb Download failed"
-msgstr ""
+msgstr "IMDB下载失败"
 
 #: ../plugin.py:1368
 msgid "IMDb Menu"
-msgstr ""
+msgstr "IMDB菜单"
 
 #: ../plugin.py:1752
 msgid "IMDb Plugin"
-msgstr ""
+msgstr "IMDB插件"
 
 #: ../plugin.py:928
 msgid "IMDb Re-Download completed"
-msgstr ""
+msgstr "IMDB重新下载完成"
 
 #: ../plugin.py:889
+#, fuzzy
 msgid "IMDb Reviews failed"
-msgstr ""
+msgstr "IMDB查询失败!"
 
 #: ../plugin.py:919
+#, fuzzy
 msgid "IMDb Reviews parsed"
-msgstr ""
+msgstr "IMDB细节解析"
 
 #: ../plugin.py:1758 ../setup.xml
 msgid "IMDb Setup"
-msgstr ""
+msgstr "IMDB设置"
 
 #: ../plugin.py:1404
 msgid "IMDb can not get Movie Information to write to .txt file!"
 msgstr ""
 
 #: ../plugin.py:944
+#, fuzzy
 msgid "IMDb details unavailable"
-msgstr ""
+msgstr "IMDB细节解析"
 
 #: ../plugin.py:1560
 msgid "IMDb query failed!"
-msgstr ""
+msgstr "IMDB查询失败!"
 
 #: ../plugin.py:1032
+#, fuzzy
 msgid "IMDb rating"
-msgstr ""
+msgstr "IMDB插件"
 
 #: ../plugin.py:1392
+#, fuzzy
 msgid "IMDb save completed"
-msgstr ""
+msgstr "下载完成"
 
 #: ../plugin.py:1805 ../plugin.py:1827 ../plugin.py:1828 ../plugin.py:1838
 msgid "IMDb search"
-msgstr ""
+msgstr "IMDB搜索"
 
 #: ../plugin.py:1816
 msgid "IMDb setup"
-msgstr ""
+msgstr "IMDB设置"
 
 #: ../plugin.py:931
+#, fuzzy
 msgid "IMDb title failed!"
-msgstr ""
+msgstr "IMDB查询失败!"
 
 #: ../plugin.py:1543
 #, python-format
@@ -218,8 +225,9 @@ msgid "Ignoring invalid imdbId: %s"
 msgstr ""
 
 #: ../setup.xml
+#, fuzzy
 msgid "Include episodes in the results. Takes effect after the next search of IMDb for a show name."
-msgstr ""
+msgstr "可用时显示节目和年报信息.在下一次获取显示细节之后生效."
 
 #: ../plugin.py:1023
 msgid "Language"
@@ -229,31 +237,31 @@ msgstr[1] ""
 
 #: ../plugin.py:277
 msgid "Menu"
-msgstr ""
+msgstr "菜单"
 
 #: ../plugin.py:1642
 msgid "No IMDb match."
-msgstr ""
+msgstr "没有IMDB匹配."
 
 #: ../plugin.py:1643
 msgid "No IMDb match:"
-msgstr ""
+msgstr "没有IMDB匹配:"
 
 #: ../plugin.py:1064
 msgid "No cast list found in the database."
-msgstr ""
+msgstr "数据库中未找到CAST列表."
 
 #: ../plugin.py:935
 msgid "No details found."
-msgstr ""
+msgstr "没有找到详细信息."
 
 #: ../plugin.py:287
 msgid "Page down"
-msgstr ""
+msgstr "下页"
 
 #: ../plugin.py:288
 msgid "Page up"
-msgstr ""
+msgstr "上页 "
 
 #: ../plugin.py:884
 msgid "Parsing reviews..."
@@ -261,11 +269,11 @@ msgstr ""
 
 #: ../plugin.py:1355
 msgid "Play Trailer"
-msgstr ""
+msgstr "游戏预告片"
 
 #: ../plugin.py:351
 msgid "Please select the matching entry"
-msgstr ""
+msgstr "请选择匹配的条目"
 
 #: ../plugin.py:1168
 msgid "Plot"
@@ -276,13 +284,14 @@ msgid "Plot keywords"
 msgstr ""
 
 #: ../plugin.py:1174
+#, fuzzy
 msgid "Production companies"
-msgstr ""
+msgstr "发布国家:"
 
 #: ../plugin.py:1547
-#, python-format
+#, fuzzy, python-format
 msgid "Query IMDb: %s"
-msgstr ""
+msgstr "重新查询IMDB: %s..."
 
 #: ../plugin.py:1177
 msgid "Quotes"
@@ -291,15 +300,17 @@ msgstr ""
 #: ../plugin.py:879
 #, python-format
 msgid "Re-Query IMDb: %s..."
-msgstr ""
+msgstr "重新查询IMDB: %s..."
 
 #: ../plugin.py:1014
+#, fuzzy
 msgid "Release date"
-msgstr ""
+msgstr "发布日期:"
 
 #: ../plugin.py:1157
+#, fuzzy
 msgid "Runtime"
-msgstr ""
+msgstr "运行时间:"
 
 #: ../plugin.py:1601
 #, python-format
@@ -307,24 +318,25 @@ msgid "S%d E%d - "
 msgstr ""
 
 #: ../plugin.py:1348
+#, fuzzy
 msgid "Save current Details as .json for offline use"
-msgstr ""
+msgstr "将当前细节保存为.html用于脱机使用"
 
 #: ../plugin.py:1349
 msgid "Save current Details as .txt"
-msgstr ""
+msgstr "保存当前的细节.txt "
 
 #: ../plugin.py:1350
 msgid "Save current Poster and Details as .txt"
-msgstr ""
+msgstr "保存当前的海报和细节.txt "
 
 #: ../plugin.py:1356
 msgid "Search Trailer"
-msgstr ""
+msgstr "搜索预告片"
 
 #: ../plugin.py:1806 ../plugin.py:1839
 msgid "Search for details from the Internet Movie Database"
-msgstr ""
+msgstr "从互联网电影数据库中搜索细节"
 
 #: ../plugin.py:992
 msgid "Seasons"
@@ -332,11 +344,11 @@ msgstr ""
 
 #: ../plugin.py:1817
 msgid "Settings for Internet Movie Database searches"
-msgstr ""
+msgstr "Internet电影数据库检索设置 "
 
 #: ../plugin.py:1342
 msgid "Setup"
-msgstr ""
+msgstr "设置"
 
 #: ../plugin.py:281
 msgid "Show a bigger poster"
@@ -344,19 +356,21 @@ msgstr ""
 
 #: ../setup.xml
 msgid "Show episode and year information for cast when available. Takes effect after the next fetch of show details."
-msgstr ""
+msgstr "可用时显示节目和年报信息.在下一次获取显示细节之后生效."
 
 #: ../setup.xml
 msgid "Show episode and year information in cast list"
-msgstr ""
+msgstr "在列表中显示事件和年份信息"
 
 #: ../setup.xml
+#, fuzzy
 msgid "Show episodes in title menu"
-msgstr ""
+msgstr "在标题菜单中显示完整的电影或系列名称"
 
 #: ../setup.xml
+#, fuzzy
 msgid "Show extra information in title menu"
-msgstr ""
+msgstr "在列表中显示事件和年份信息"
 
 #: ../plugin.py:282
 msgid "Show first page of user reviews"
@@ -364,35 +378,38 @@ msgstr ""
 
 #: ../setup.xml
 msgid "Show in movie list"
-msgstr ""
+msgstr "在电影列表中显示"
 
 #: ../plugin.py:271
+#, fuzzy
 msgid "Show list of matched movies and series"
-msgstr ""
+msgstr "显示匹配的电影系列 "
 
 #: ../plugin.py:265 ../plugin.py:272
 msgid "Show movie and series basic details"
-msgstr ""
+msgstr "显示电影和系列基本细节 "
 
 #: ../plugin.py:273
 msgid "Show movie and series extra details"
-msgstr ""
+msgstr "显示电影和系列额外细节"
 
 #: ../plugin.py:283
+#, fuzzy
 msgid "Show movie and series synopsis"
-msgstr ""
+msgstr "显示电影和系列基本细节 "
 
 #: ../setup.xml
 msgid "Show search in plugin browser"
-msgstr ""
+msgstr "在插件浏览器中显示搜索"
 
 #: ../setup.xml
 msgid "Show setup in plugin browser"
-msgstr ""
+msgstr "显示在浏览器安装插件"
 
 #: ../setup.xml
+#, fuzzy
 msgid "Show the runtime, type and genres. Takes effect after the next search of IMDb for a show name."
-msgstr ""
+msgstr "显示整个IMDB标题信息的电影或系列,包括,例如,替代名称,它是否是一系列.在下一次搜索IMDB以显示名称之后生效."
 
 #: ../plugin.py:1160
 msgid "Sound mix"
@@ -420,15 +437,16 @@ msgstr ""
 
 #: ../plugin.py:225
 msgid "The Internet Movie Database"
-msgstr ""
+msgstr "互联网电影数据库 "
 
 #: ../setup.xml
+#, fuzzy
 msgid "This option allows you to add words/phrases for IMDb to ignore when searching. Please separate the words/phrases with commas."
-msgstr ""
+msgstr "此选项允许您添加IMDB在搜索时忽略的单词/短语.请用逗号分隔单词/短语."
 
 #: ../plugin.py:354
 msgid "Title Menu"
-msgstr ""
+msgstr "标题菜单 "
 
 #: ../plugin.py:1059
 msgid "Top cast"
@@ -451,8 +469,9 @@ msgid "User reviews"
 msgstr ""
 
 #: ../setup.xml
+#, fuzzy
 msgid "Words / phrases to ignore"
-msgstr ""
+msgstr "忽略单词/句子"
 
 #: ../plugin.py:979
 msgid "Writer"
@@ -461,8 +480,9 @@ msgstr[0] ""
 msgstr[1] ""
 
 #: ../plugin.py:1045
+#, fuzzy
 msgid "as"
-msgstr ""
+msgstr " 作为 "
 
 #: ../plugin.py:1659
 msgid "connection error"
@@ -474,7 +494,7 @@ msgstr ""
 
 #: ../plugin.py:1037
 msgid "no user rating yet"
-msgstr ""
+msgstr "还没有用户评级 "
 
 #: ../plugin.py:1661
 msgid "timeout"
