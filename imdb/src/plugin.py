@@ -1,4 +1,3 @@
-# -*- coding: UTF-8 -*-
 # for localized messages
 from . import _, ngettext
 
@@ -1277,7 +1276,7 @@ query TitleReviewsRefine {
 			self["extralabel"].show()
 			self["detailslabel"].hide()
 			self["castlabel"].hide()
-			self["poster"].hide()
+			self["poster"].show()
 			self["stars"].hide()
 			self["starsbg"].hide()
 			self["ratinglabel"].hide()
