@@ -1276,7 +1276,7 @@ query TitleReviewsRefine {
 			self["extralabel"].show()
 			self["detailslabel"].hide()
 			self["castlabel"].hide()
-			self["poster"].show()
+			self["poster"].hide()
 			self["stars"].hide()
 			self["starsbg"].hide()
 			self["ratinglabel"].hide()
