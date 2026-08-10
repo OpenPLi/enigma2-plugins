@@ -33,6 +33,7 @@ class EPGSearchSetup(Screen, ConfigListScreen):
 				(_("Length of History"), config.plugins.epgsearch.history_length, _("How many entries to keep in the search history at most. 0 disables history entirely!")),
 				(_("Add \"Search\" Button to EPG"), config.plugins.epgsearch.add_search_to_epg, _("If this setting is enabled, the plugin adds a \"Search\" Button to the regular EPG.")),
 				(_("Type blue Button"), config.plugins.epgsearch.type_button_blue, _("Select type: 'Search and Select channel' or 'Search'.")),
+				(_("Use event name for yellow button search"), config.plugins.epgsearch.yellow_eventname, _("Use the current event name as the initial search text. An empty search field is used otherwise.")),
 				(_("Use Picons"), config.plugins.epgsearch.picons, _("If this setting is enabled, the plugin adds picons.")),
 				(_("Search type"), config.plugins.epgsearch.search_type, _("Select type for search, \"partial match\" for the most extensive search, \"partial description\" for the most description search.")),
 				(_("Search strictness"), config.plugins.epgsearch.search_case, _("Select whether or not you want to enforce case correctness.")),

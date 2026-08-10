@@ -16,5 +16,15 @@ def _(txt):
 	else:
 		return gettext.gettext(txt)
 
+def ngettext(singular, plural, n):
+	t = gettext.dngettext(PluginLanguageDomain, singular, plural, n)
+	if t in (singular, plural):
+		# print("[%s] fallback to default translation for %s, %s, %d" % (PluginLanguageDomain, singular, plural, n))
+		t = gettext.ngettext(singular, plural, n)
+	return t
 
-language.addCallback(localeInit())
+
+localeInit()
+language.addCallback(localeInit)
+
+__version__ = "1.2"

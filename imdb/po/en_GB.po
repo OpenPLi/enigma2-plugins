@@ -1,422 +1,443 @@
-# Finnish translations for enigma2-plugins package.
-# Copyright (C) 2014 THE enigma2-plugins'S COPYRIGHT HOLDER
+# English translations for enigma2-plugins package.
+# Copyright (C) 2012 THE enigma2-plugins'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the enigma2-plugins package.
-# Automatically generated, 2014.
+# Automatically generated, 2012.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: enigma2-plugins 3.2.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-07-26 13:31+0200\n"
-"PO-Revision-Date: 2026-07-19 14:02+0300\n"
-"Last-Translator: Orlandox\n"
-"Language-Team: Samzan/Kojo/Orlandox\n"
-"Language: fi\n"
+"PO-Revision-Date: 2012-03-16 14:21+0100\n"
+"Last-Translator: Andy Blackburn <andyblac@o2.co.uk>\n"
+"Language-Team: none\n"
+"Language: en_GB\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.9\n"
 
 #: ../plugin.py:1093
 msgid " & "
-msgstr " & "
+msgstr ""
 
 #: ../plugin.py:905
 #, python-format
 msgid "%d out of %d found this helpful."
-msgstr "%d/%d piti tätä hyödyllisenä."
+msgstr ""
 
 #: ../plugin.py:1189
 #, python-format
 msgid "%s of %s"
-msgstr "%s / %s"
+msgstr ""
 
 #: ../plugin.py:1303
 msgid "** Spoiler **"
-msgstr "** Juonipaljastus **"
+msgstr ""
 
 #: ../plugin.py:350
 msgid "Ambiguous results"
-msgstr "Epäselvät tulokset"
+msgstr "Ambiguous results"
 
 #: ../plugin.py:1159
 msgid "Aspect ratio"
-msgstr "Kuvasuhde"
+msgstr ""
 
 #: ../plugin.py:1156
 msgid "Certificate"
-msgstr "Ikäraja"
+msgstr ""
 
 #: ../plugin.py:1158
 msgid "Color"
-msgstr "Väri"
+msgstr ""
 
 #: ../plugin.py:1178
+#, fuzzy
 msgid "Connections"
-msgstr "Yhteydet"
+msgstr "Channel Selection"
 
 #: ../plugin.py:1552
+#, fuzzy
 msgid "Couldn't get event name"
-msgstr "Ohjelman nimeä ei saatu"
+msgstr "Could't get Event name"
 
 #: ../plugin.py:1019
 msgid "Country"
 msgid_plural "Countries"
-msgstr[0] "Maa"
-msgstr[1] "Maat"
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../plugin.py:982
 msgid "Creator"
 msgid_plural "Creators"
-msgstr[0] "Luoja"
-msgstr[1] "Luojat"
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../plugin.py:355 ../plugin.py:956
 msgid "Details"
-msgstr "Tiedot"
+msgstr "Details"
 
 #: ../plugin.py:976
 msgid "Director"
 msgid_plural "Directors"
-msgstr[0] "Ohjaaja"
-msgstr[1] "Ohjaajat"
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../plugin.py:1070 ../plugin.py:1694
+#, fuzzy
 msgid "Downloading Movie Poster..."
-msgstr "Ladataan elokuvan julistetta..."
+msgstr "Downloading Movie Poster: %s..."
 
 #: ../plugin.py:923
+#, fuzzy
 msgid "Downloading reviews..."
-msgstr "Ladataan arvosteluja..."
+msgstr "Downloading Movie Poster: %s..."
 
 #: ../setup.xml
+#, fuzzy
 msgid "Enable this to be able to access IMDb search setup from within the plugin browser."
-msgstr "Ota tämä käyttöön, jotta voit muokata IMDb-haun asetuksia suoraan lisäosien valinnassa."
+msgstr "Enable this to be able to access the IMDb from within the plugin browser."
 
 #: ../setup.xml
+#, fuzzy
 msgid "Enable this to be able to access IMDb searches from within the movie list."
-msgstr "Ota tämä käyttöön, jotta voit tehdä IMDb-hakuja suoraan tallenneluettelossa."
+msgstr "Enable this to be able to access the IMDb from within the plugin browser."
 
 #: ../setup.xml
+#, fuzzy
 msgid "Enable this to be able to access IMDb searches from within the plugin browser."
-msgstr "Ota tämä käyttöön, jotta voit tehdä IMDb-hakuja suoraan lisäosien valinnassa."
+msgstr "Enable this to be able to access the IMDb from within the plugin browser."
 
 #: ../plugin.py:1341
 msgid "Enter search"
-msgstr "Haku"
+msgstr "Enter search"
 
 #: ../plugin.py:1484
 msgid "Enter text to search for"
-msgstr "Tekstihaku"
+msgstr "Enter text to search for"
 
 #: ../plugin.py:995
 msgid "Episodes"
-msgstr "Jaksot"
+msgstr ""
 
 #: ../plugin.py:242
 msgid "Exit"
-msgstr "Poistu"
+msgstr "Exit"
 
 #: ../plugin.py:266 ../plugin.py:270
+#, fuzzy
 msgid "Exit IMDb search"
-msgstr "Poistu IMDb-hausta"
+msgstr "Enter search"
 
 #: ../plugin.py:1241 ../plugin.py:1245
 msgid "Extra Info"
-msgstr "Lisätiedot"
+msgstr "Extra Info"
 
 #: ../plugin.py:1173
 msgid "Filming locations"
-msgstr "Kuvauspaikat"
+msgstr ""
 
 #: ../plugin.py:965
 msgid "Genre"
 msgid_plural "Genres"
-msgstr[0] "Genre"
-msgstr[1] "Genret"
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../plugin.py:1176
 msgid "Goofs"
-msgstr "Mokat"
+msgstr ""
 
 #: ../plugin.py:1664
 msgid "IMDB Exception"
-msgstr "IMDb-poikkeus"
+msgstr ""
 
 #: ../plugin.py:1249 ../plugin.py:1672 ../plugin.py:1703
 msgid "IMDb Details parsed"
-msgstr "IMDb-tiedot jäsennetty"
+msgstr "IMDb Details parsed"
 
 #: ../plugin.py:1555
 msgid "IMDb Download completed"
-msgstr "IMDb-lataus valmis"
+msgstr "IMDb Download completed"
 
 #: ../plugin.py:1657
 msgid "IMDb Download failed"
-msgstr "IMDb-lataus epäonnistui"
+msgstr "IMDb Download failed"
 
 #: ../plugin.py:1368
+#, fuzzy
 msgid "IMDb Menu"
-msgstr "IMDb-valikko"
+msgstr "IMDb Setup"
 
 #: ../plugin.py:1752
 msgid "IMDb Plugin"
-msgstr "IMDb-lisäosa"
+msgstr "IMDb Plugin"
 
 #: ../plugin.py:928
 msgid "IMDb Re-Download completed"
-msgstr "IMDb-uudelleenlataus valmis"
+msgstr "IMDb Re-Download completed"
 
 #: ../plugin.py:889
+#, fuzzy
 msgid "IMDb Reviews failed"
-msgstr "IMDb-arvostelut epäonnistuivat"
+msgstr "IMDb query failed!"
 
 #: ../plugin.py:919
+#, fuzzy
 msgid "IMDb Reviews parsed"
-msgstr "IMDb-arvostelut jäsennetty"
+msgstr "IMDb Details parsed"
 
 #: ../plugin.py:1758 ../setup.xml
 msgid "IMDb Setup"
-msgstr "IMDb-asetukset"
+msgstr "IMDb Setup"
 
 #: ../plugin.py:1404
 msgid "IMDb can not get Movie Information to write to .txt file!"
-msgstr "IMDb ei saanut elokuvan tietoja tallennettua tekstitiedostoon!"
+msgstr ""
 
 #: ../plugin.py:944
+#, fuzzy
 msgid "IMDb details unavailable"
-msgstr "IMDb-tietoja ei ole saatavilla"
+msgstr "IMDb Details parsed"
 
 #: ../plugin.py:1560
 msgid "IMDb query failed!"
-msgstr "IMDb-haku epäonnistui!"
+msgstr "IMDb query failed!"
 
 #: ../plugin.py:1032
+#, fuzzy
 msgid "IMDb rating"
-msgstr "IMDb-luokitus"
+msgstr "IMDb Plugin"
 
 #: ../plugin.py:1392
+#, fuzzy
 msgid "IMDb save completed"
-msgstr "IMDb-tallennus valmis"
+msgstr "IMDb Download completed"
 
 #: ../plugin.py:1805 ../plugin.py:1827 ../plugin.py:1828 ../plugin.py:1838
+#, fuzzy
 msgid "IMDb search"
-msgstr "IMDb-haku"
+msgstr "No IMDb match:"
 
 #: ../plugin.py:1816
+#, fuzzy
 msgid "IMDb setup"
-msgstr "IMDb-asetukset"
+msgstr "IMDb Setup"
 
 #: ../plugin.py:931
+#, fuzzy
 msgid "IMDb title failed!"
-msgstr "IMDb-nimikkeen haku epäonnistui!"
+msgstr "IMDb query failed!"
 
 #: ../plugin.py:1543
 #, python-format
 msgid "Ignoring invalid imdbId: %s"
-msgstr "Ohitetaan virheellinen imdbId: %s"
+msgstr ""
 
 #: ../setup.xml
 msgid "Include episodes in the results. Takes effect after the next search of IMDb for a show name."
-msgstr "Sisällytä jaksot tuloksiin. Tulee voimaan, kun seuraavan kerran haetaan IMDb:stä ohjelman nimeä."
+msgstr ""
 
 #: ../plugin.py:1023
 msgid "Language"
 msgid_plural "Languages"
-msgstr[0] "Kieli"
-msgstr[1] "Kielet"
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../plugin.py:277
 msgid "Menu"
-msgstr "Valikko"
+msgstr ""
 
 #: ../plugin.py:1642
+#, fuzzy
 msgid "No IMDb match."
-msgstr "Ei IMDb-osumia."
+msgstr "No IMDb match:"
 
 #: ../plugin.py:1643
 msgid "No IMDb match:"
-msgstr "Ei IMDb-osumia:"
+msgstr "No IMDb match:"
 
 #: ../plugin.py:1064
 msgid "No cast list found in the database."
-msgstr "Tietokannasta ei löytynyt näyttelijätietoja."
+msgstr "No cast list found in the database."
 
 #: ../plugin.py:935
 msgid "No details found."
-msgstr "Tietoja ei löytynyt."
+msgstr "No details found."
 
 #: ../plugin.py:287
 msgid "Page down"
-msgstr "Sivu alas"
+msgstr ""
 
 #: ../plugin.py:288
 msgid "Page up"
-msgstr "Sivu ylös"
+msgstr ""
 
 #: ../plugin.py:884
 msgid "Parsing reviews..."
-msgstr "Jäsennetään arvosteluja..."
+msgstr ""
 
 #: ../plugin.py:1355
 msgid "Play Trailer"
-msgstr "Toista traileri"
+msgstr "Play Trailer"
 
 #: ../plugin.py:351
 msgid "Please select the matching entry"
-msgstr "Valitse sopivin hakutulos"
+msgstr "Please select the matching entry"
 
 #: ../plugin.py:1168
 msgid "Plot"
-msgstr "Juoni"
+msgstr ""
 
 #: ../plugin.py:1171
 msgid "Plot keywords"
-msgstr "Juonen avainsanat"
+msgstr ""
 
 #: ../plugin.py:1174
 msgid "Production companies"
-msgstr "Tuotantoyhtiöt"
+msgstr ""
 
 #: ../plugin.py:1547
-#, python-format
+#, fuzzy, python-format
 msgid "Query IMDb: %s"
-msgstr "IMDb-haku: %s"
+msgstr "Query IMDb: %s..."
 
 #: ../plugin.py:1177
 msgid "Quotes"
-msgstr "Sitaatit"
+msgstr ""
 
 #: ../plugin.py:879
 #, python-format
 msgid "Re-Query IMDb: %s..."
-msgstr "IMDb-uudelleenhaku: %s..."
+msgstr "Re-Query IMDb: %s..."
 
 #: ../plugin.py:1014
 msgid "Release date"
-msgstr "Julkaisupäivä"
+msgstr ""
 
 #: ../plugin.py:1157
 msgid "Runtime"
-msgstr "Kesto"
+msgstr ""
 
 #: ../plugin.py:1601
 #, python-format
 msgid "S%d E%d - "
-msgstr "K%d J%d - "
+msgstr ""
 
 #: ../plugin.py:1348
 msgid "Save current Details as .json for offline use"
-msgstr "Tallenna nykyiset tiedot .json-muodossa offline-käyttöön"
+msgstr ""
 
 #: ../plugin.py:1349
 msgid "Save current Details as .txt"
-msgstr "Tallenna nykyiset tiedot tekstitiedostona"
+msgstr ""
 
 #: ../plugin.py:1350
 msgid "Save current Poster and Details as .txt"
-msgstr "Tallenna nykyinen juliste ja tiedot tekstitiedostona"
+msgstr ""
 
 #: ../plugin.py:1356
 msgid "Search Trailer"
-msgstr "Etsi traileria"
+msgstr "Search Trailer"
 
 #: ../plugin.py:1806 ../plugin.py:1839
+#, fuzzy
 msgid "Search for details from the Internet Movie Database"
-msgstr "Etsi IMDb:stä lisätietoja"
+msgstr "Query details from the Internet Movie Database"
 
 #: ../plugin.py:992
 msgid "Seasons"
-msgstr "Tuotantokaudet"
+msgstr ""
 
 #: ../plugin.py:1817
+#, fuzzy
 msgid "Settings for Internet Movie Database searches"
-msgstr "IMDb-haun asetukset"
+msgstr "The Internet Movie Database"
 
 #: ../plugin.py:1342
 msgid "Setup"
-msgstr "Asetukset"
+msgstr "Setup"
 
 #: ../plugin.py:281
 msgid "Show a bigger poster"
-msgstr "Näytä isompi juliste"
+msgstr ""
 
 #: ../setup.xml
 msgid "Show episode and year information for cast when available. Takes effect after the next fetch of show details."
-msgstr "Näytä näyttelijöiden jakso- ja vuositiedot, kun ne ovat saatavilla. Tulee voimaan ohjelman tietojen seuraavan haun jälkeen."
+msgstr ""
 
 #: ../setup.xml
 msgid "Show episode and year information in cast list"
-msgstr "Näytä jakso- ja vuositiedot näyttelijälistassa"
+msgstr ""
 
 #: ../setup.xml
 msgid "Show episodes in title menu"
-msgstr "Näytä jaksot nimivalikossa"
+msgstr ""
 
 #: ../setup.xml
 msgid "Show extra information in title menu"
-msgstr "Näytä lisätiedot nimivalikossa"
+msgstr ""
 
 #: ../plugin.py:282
 msgid "Show first page of user reviews"
-msgstr "Näytä käyttäjien arvostelujen ensimmäinen sivu"
+msgstr ""
 
 #: ../setup.xml
 msgid "Show in movie list"
-msgstr "Näytä tallenneluettelossa"
+msgstr ""
 
 #: ../plugin.py:271
 msgid "Show list of matched movies and series"
-msgstr "Näytä osuvimmat elokuvat ja sarjat"
+msgstr ""
 
 #: ../plugin.py:265 ../plugin.py:272
 msgid "Show movie and series basic details"
-msgstr "Näytä elokuvien ja sarjojen perustiedot"
+msgstr ""
 
 #: ../plugin.py:273
 msgid "Show movie and series extra details"
-msgstr "Näytä elokuvien ja sarjojen lisätiedot"
+msgstr ""
 
 #: ../plugin.py:283
 msgid "Show movie and series synopsis"
-msgstr "Näytä elokuvien ja sarjojen tiivistelmä"
+msgstr ""
 
 #: ../setup.xml
+#, fuzzy
 msgid "Show search in plugin browser"
-msgstr "Näytä haku lisäosien valinnassa"
+msgstr "Show in plugin browser"
 
 #: ../setup.xml
+#, fuzzy
 msgid "Show setup in plugin browser"
-msgstr "Näytä asetukset lisäosien valinnassa"
+msgstr "Show in plugin browser"
 
 #: ../setup.xml
 msgid "Show the runtime, type and genres. Takes effect after the next search of IMDb for a show name."
-msgstr "Näytä kesto, tyyppi ja genret. Tulee voimaan, kun IMDb:stä tehdään seuraavan ohjelman nimen haku."
+msgstr ""
 
 #: ../plugin.py:1160
 msgid "Sound mix"
-msgstr "Ääniformaatti"
+msgstr ""
 
 #: ../plugin.py:1169
 msgid "Storyline"
-msgstr "Juoniseloste"
+msgstr ""
 
 #: ../plugin.py:1471
 msgid "SubsSupport import failed"
-msgstr "SubsSupport-tuonti epäonnistui"
+msgstr ""
 
 #: ../plugin.py:1360
 msgid "SubsSupport search"
-msgstr "SubsSupport-haku"
+msgstr ""
 
 #: ../plugin.py:1442
 msgid "Synopsis"
-msgstr "Tiivistelmä"
+msgstr ""
 
 #: ../plugin.py:1170
 msgid "Tagline"
-msgstr "Iskulause"
+msgstr ""
 
 #: ../plugin.py:225
 msgid "The Internet Movie Database"
@@ -424,15 +445,15 @@ msgstr "The Internet Movie Database"
 
 #: ../setup.xml
 msgid "This option allows you to add words/phrases for IMDb to ignore when searching. Please separate the words/phrases with commas."
-msgstr "Tämän vaihtoehdon avulla voit lisätä sanoja/lauseita, joita IMDb jättää huomiotta haussa. Erota sanat/lauseet pilkuilla."
+msgstr ""
 
 #: ../plugin.py:354
 msgid "Title Menu"
-msgstr "Nimivalikko"
+msgstr "Title Menu"
 
 #: ../plugin.py:1059
 msgid "Top cast"
-msgstr "Päänäyttelijät"
+msgstr ""
 
 #: ../setup.xml
 msgid "Translate IMDb texts to the user interface language."
@@ -444,73 +465,74 @@ msgstr ""
 
 #: ../plugin.py:1175
 msgid "Trivia"
-msgstr "Nippelitieto"
+msgstr ""
 
 #: ../plugin.py:1189 ../plugin.py:1443
 msgid "User reviews"
-msgstr "Käyttäjäarvostelut"
+msgstr ""
 
 #: ../setup.xml
 msgid "Words / phrases to ignore"
-msgstr "Huomiotta jätettävät sanat / lauseet"
+msgstr ""
 
 #: ../plugin.py:979
 msgid "Writer"
 msgid_plural "Writers"
-msgstr[0] "Käsikirjoittaja"
-msgstr[1] "Käsikirjoittajat"
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../plugin.py:1045
+#, fuzzy
 msgid "as"
-msgstr "on"
+msgstr " as "
 
 #: ../plugin.py:1659
 msgid "connection error"
-msgstr "yhteysvirhe"
+msgstr ""
 
 #: ../plugin.py:1536
 msgid "localpath is no longer supported."
-msgstr "paikallista polkua (localpath) ei enää tueta."
+msgstr ""
 
 #: ../plugin.py:1037
 msgid "no user rating yet"
-msgstr "ei vielä käyttäjäarvioita"
+msgstr "no user rating yet"
 
 #: ../plugin.py:1661
 msgid "timeout"
-msgstr "aikakatkaisu"
+msgstr ""
 
 #: ../plugin.py:1052
 #, python-brace-format
 msgid "{n} ep"
 msgid_plural "{n} eps"
-msgstr[0] "{n} jakso"
-msgstr[1] "{n} jaksoa"
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../plugin.py:1094
 #, python-brace-format
 msgid "{n} nomination total"
 msgid_plural "{n} nominations total"
-msgstr[0] "{n} ehdokkuus yhteensä"
-msgstr[1] "{n} ehdokkuutta yhteensä"
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../plugin.py:1090
 #, python-brace-format
 msgid "{n} win"
 msgid_plural "{n} wins"
-msgstr[0] "{n} voitto"
-msgstr[1] "{n} voittoa"
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../plugin.py:1085
 #, python-brace-format
 msgid "{n} {award} nomination"
 msgid_plural "{n} {award} nominations"
-msgstr[0] "{n} {award} -ehdokkuus"
-msgstr[1] "{n} {award} -ehdokkuutta"
+msgstr[0] ""
+msgstr[1] ""
 
 #: ../plugin.py:1083
 #, python-brace-format
 msgid "{n} {award} win"
 msgid_plural "{n} {award} wins"
-msgstr[0] "{n} {award} -voitto"
-msgstr[1] "{n} {award} -voittoa"
+msgstr[0] ""
+msgstr[1] ""

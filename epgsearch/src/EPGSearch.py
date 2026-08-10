@@ -759,10 +759,16 @@ class EPGSearch(EPGSelection):
 		EPGSelection.closeScreen(self)
 
 	def yellowButtonPressed(self):
+		searchText = ""
+		if config.plugins.epgsearch.yellow_eventname.value:
+			event = self["list"].getCurrent()[0]
+			if event:
+				searchText = event.getEventName()
 		self.session.openWithCallback(
 			self.searchEPG,
 			VirtualKeyBoard,
 			title=_("Enter text to search for"),
+			text = searchText,
 			style=VKB_SEARCH_ICON
 		)
 
