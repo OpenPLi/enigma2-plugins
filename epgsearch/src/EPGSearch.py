@@ -941,6 +941,7 @@ class EPGSearch(EPGSelection):
 				l.list = []
 				l.l.setList(l.list)
 			self.currSearch = searchString
+			self.setTitle("%s:  %s" % (_("EPG Search"), searchString))
 			if searchSave:
 				# Maintain history
 				history = config.plugins.epgsearch.history.value
