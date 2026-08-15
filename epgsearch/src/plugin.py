@@ -6,6 +6,7 @@ from Components.ActionMap import ActionMap
 from Plugins.Plugin import PluginDescriptor
 from Screens.ChoiceBox import ChoiceBox
 from Components.config import config
+from os.path import splitext
 
 from .EPGSearch import EPGSearch, EPGSearchEPGSelection
 from . import _
@@ -138,8 +139,11 @@ def epgfurther(session, selectedevent, **kwargs):
 def movielist(session, service, **kwargs):
 	serviceHandler = eServiceCenter.getInstance()
 	info = serviceHandler.info(service)
-	name = info and info.getName(service) or ''
-	name = name.split(".")[0].strip()
+	name = (info.getName(service) if info else "").strip()
+
+	extension = splitext(service.getPath() or "")[1]
+	if extension and name.lower().endswith(extension.lower()):
+		name = name[:-len(extension)].strip()
 	session.open(EPGSearch, name)
 
 
