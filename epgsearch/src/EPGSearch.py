@@ -764,6 +764,8 @@ class EPGSearch(EPGSelection):
 			event = self["list"].getCurrent()[0]
 			if event:
 				searchText = event.getEventName()
+			elif self.currSearch != "":
+				searchText = self.currSearch
 		self.session.openWithCallback(
 			self.searchEPG,
 			VirtualKeyBoard,
