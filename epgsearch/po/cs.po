@@ -3,15 +3,15 @@ msgstr ""
 "Project-Id-Version: Enigma 2 EPGSearch Plugin\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-12-08 14:24+0100\n"
-"PO-Revision-Date: 2024-12-10 08:38+0100\n"
-"Last-Translator: ims <ims21@users.sourceforge.net>\n"
+"PO-Revision-Date: 2026-08-17 13:26+0200\n"
+"Last-Translator: ims <ims@openpli.org>\n"
 "Language-Team: PLi <ims21@users.sourceforge.net>\n"
 "Language: cs_CZ\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Poedit 3.5\n"
+"X-Generator: Poedit 3.9\n"
 
 #, python-format
 msgid " (%d min)"
@@ -180,7 +180,7 @@ msgid "Search type"
 msgstr "Typ hledání"
 
 msgid "Search type for filter"
-msgstr "Způsob vyhledávání"
+msgstr "Způsob vyhledávání pro filtr"
 
 msgid "Select a timer to search"
 msgstr "Výběr časovače pro hledání"
@@ -195,13 +195,13 @@ msgid "Select item for search and press 'OK' or edit item with yellow button or 
 msgstr "Zvolte položku pro hledání a stiskněte 'OK' nebo použijte žluté tlačítko pro úpravu nebo modré tlačítko pro odstranění."
 
 msgid "Select type for filter search. Press button P +/- for show/hide filter in description after search."
-msgstr "Vyberte typ filtru pro vyhledávání. Stiskněte P+/- pro zobrazení / skrytí filtru v popisu po vyhledání."
+msgstr "Určuje, zda se popisy událostí musí shodovat přesně nebo jen částečně. Po vyhledání CH+/- zobrazí jen události odpovídající popisu vybrané události; další stisknutí filtr zruší."
 
 msgid "Select type for search, \"partial match\" for the most extensive search, \"partial description\" for the most description search."
 msgstr "Zvolte typ hledání. \"Částečně odpovídá\" pro rozsáhlá vyhledávání, \"Částečně v popisu\" pro vyhledávání v popisech."
 
 msgid "Select type: 'Search and Select channel' or 'Search'."
-msgstr "Vyberte 'hledat a vybrat kanál' nebo 'pouze hledat'."
+msgstr "Zvolte 'Hledat' nebo 'Výběr akce (Hledat, Vyberte kanál, Uživatelské hledání)'."
 
 msgid "Select whether or not you want to enforce case correctness."
 msgstr "Zvolte, zda při hledání chcete rozlišovat velikost písmen."
@@ -234,13 +234,13 @@ msgid "case-sensitive search"
 msgstr "Rozlišovat velikost písmen"
 
 msgid "choice (Search and standard)"
-msgstr "Výběr (hledat a standard)"
+msgstr "Výběr akce (Hledat, Vyberte kanál,...)"
 
 msgid "exact match"
 msgstr "Přesně odpovídá"
 
 msgid "only Search"
-msgstr "Pouze hledat"
+msgstr "Pouze 'Hledat'"
 
 msgid "partial description"
 msgstr "Částečně odpovídá v popisu"
