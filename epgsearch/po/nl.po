@@ -102,6 +102,9 @@ msgstr "Voer te zoeken tekst in:"
 msgid "Export selected as AutoTimer"
 msgstr "Exporteer het geselecteerde als AutoTimer"
 
+msgid "full match (short + extended)"
+msgstr ""
+
 msgid "History"
 msgstr "Historiek"
 
@@ -188,7 +191,7 @@ msgstr "Nauwkeurigheid van het zoeken"
 msgid "Search type"
 msgstr "Zoektype"
 
-msgid "Search type for filter"
+msgid "Result filter"
 msgstr "Zoektype om te filteren"
 
 msgid "Select a timer to search"

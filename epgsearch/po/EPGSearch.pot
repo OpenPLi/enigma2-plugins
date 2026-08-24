@@ -99,6 +99,9 @@ msgstr ""
 msgid "Export selected as AutoTimer"
 msgstr ""
 
+msgid "full match (short + extended)"
+msgstr ""
+
 msgid "History"
 msgstr ""
 
@@ -159,6 +162,9 @@ msgstr ""
 msgid "Partnerbox Entries"
 msgstr ""
 
+msgid "Result filter"
+msgstr ""
+
 msgid "Save"
 msgstr ""
 
@@ -181,9 +187,6 @@ msgid "Search strictness"
 msgstr ""
 
 msgid "Search type"
-msgstr ""
-
-msgid "Search type for filter"
 msgstr ""
 
 msgid "Select a timer to search"

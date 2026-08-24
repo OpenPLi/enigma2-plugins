@@ -103,6 +103,9 @@ msgstr "Skriv in text att söka efter"
 msgid "Export selected as AutoTimer"
 msgstr "Exportera vald som AutoTimer"
 
+msgid "full match (short + extended)"
+msgstr ""
+
 msgid "History"
 msgstr "Historik"
 
@@ -191,7 +194,7 @@ msgstr ""
 msgid "Search type"
 msgstr "Sök"
 
-msgid "Search type for filter"
+msgid "Result filter"
 msgstr ""
 
 msgid "Select a timer to search"

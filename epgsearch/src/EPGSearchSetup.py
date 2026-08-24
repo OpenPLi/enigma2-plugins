@@ -42,7 +42,8 @@ class EPGSearchSetup(Screen, ConfigListScreen):
 				(_("Search only bouquets"), config.plugins.epgsearch.bouquet, _("If this setting is enabled, searching EPG in only services in user bouquets.")),
 				(_("Include IPTV services"), config.plugins.epgsearch.include_iptv, _("Include IPTV services in search, in some cases slows down the searching.")),
 				(_("Display name service as in bouquets"), config.plugins.epgsearch.favorit_name, _("If 'Search only bouquets' is enabled, show service name as in bouquets for renamed services.")),
-				(_("Search type for filter"), config.plugins.epgsearch.filter_type, _("Select type for filter search. Press button P +/- for show/hide filter in description after search.")),
+				(_("Result filter"), config.plugins.epgsearch.filter_type, _("Use P+/- to filter result by short description or extended (only if short is missing). Partial: only items whose description is contained in selected event. Exact: only items with matching description. Full: identical whole description.")),
+
 
 			],
 			session=session

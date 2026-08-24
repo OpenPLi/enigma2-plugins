@@ -105,6 +105,9 @@ msgstr "إدخال نص للبحث عن"
 msgid "Export selected as AutoTimer"
 msgstr "حفظ البحث حسب المؤقت التلقائي"
 
+msgid "full match (short + extended)"
+msgstr ""
+
 #, fuzzy
 msgid "History"
 msgstr "بدون تاريخ"
@@ -196,7 +199,7 @@ msgid "Search type"
 msgstr "نوع البحث"
 
 #, fuzzy
-msgid "Search type for filter"
+msgid "Result filter"
 msgstr "نوع البحث"
 
 msgid "Select a timer to search"

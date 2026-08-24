@@ -103,6 +103,9 @@ msgstr "Inserire il testo da cercare"
 msgid "Export selected as AutoTimer"
 msgstr "Esportare la selezione come AutoTimer"
 
+msgid "full match (short + extended)"
+msgstr ""
+
 msgid "History"
 msgstr "History"
 
@@ -191,7 +194,7 @@ msgstr ""
 msgid "Search type"
 msgstr "Cercare"
 
-msgid "Search type for filter"
+msgid "Result filter"
 msgstr ""
 
 msgid "Select a timer to search"

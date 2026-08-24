@@ -99,6 +99,9 @@ msgstr "Vpis besedila za namen iskanja"
 msgid "Export selected as AutoTimer"
 msgstr "Izvoz izbranega v AutoTimer vtičnik"
 
+msgid "full match (short + extended)"
+msgstr ""
+
 msgid "History"
 msgstr "Zgodovina"
 
@@ -187,7 +190,7 @@ msgstr ""
 msgid "Search type"
 msgstr "Iskanje"
 
-msgid "Search type for filter"
+msgid "Result filter"
 msgstr ""
 
 msgid "Select a timer to search"

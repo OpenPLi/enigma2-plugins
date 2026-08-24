@@ -95,6 +95,9 @@ msgstr "Ввод текста поиска"
 msgid "Export selected as AutoTimer"
 msgstr "Экспорт выбранного как Автотаймер"
 
+msgid "full match (short + extended)"
+msgstr ""
+
 msgid "History"
 msgstr "История"
 
@@ -179,7 +182,7 @@ msgstr "Регистр поиска"
 msgid "Search type"
 msgstr "Тип поиска"
 
-msgid "Search type for filter"
+msgid "Result filter"
 msgstr "Тип поиска для фильтра"
 
 msgid "Select a timer to search"

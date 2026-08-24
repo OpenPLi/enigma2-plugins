@@ -97,6 +97,9 @@ msgstr "Zadajte text pre hľadanie"
 msgid "Export selected as AutoTimer"
 msgstr "Exportovať vybrané ako AutoTimer"
 
+msgid "full match (short + extended)"
+msgstr ""
+
 msgid "History"
 msgstr "História"
 
@@ -181,7 +184,7 @@ msgstr "Prísne hľadanie"
 msgid "Search type"
 msgstr "Hľadať typ"
 
-msgid "Search type for filter"
+msgid "Result filter"
 msgstr "Filter vyhľadávania typu"
 
 msgid "Select a timer to search"

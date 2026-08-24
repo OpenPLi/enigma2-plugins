@@ -100,6 +100,9 @@ msgstr "Įrašykite ieškomą tekstą"
 msgid "Export selected as AutoTimer"
 msgstr "Eksportuoti pasirinktą, kaip autolaikmatį"
 
+msgid "full match (short + extended)"
+msgstr ""
+
 msgid "History"
 msgstr "Istorija"
 
@@ -184,7 +187,7 @@ msgstr "Paieškos tikslumas"
 msgid "Search type"
 msgstr "Paieškos tipas"
 
-msgid "Search type for filter"
+msgid "Result filter"
 msgstr "Paieškos tipo filtras"
 
 msgid "Select a timer to search"

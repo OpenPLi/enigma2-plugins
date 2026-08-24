@@ -106,6 +106,9 @@ msgstr "Unesi tekst za traženje"
 msgid "Export selected as AutoTimer"
 msgstr "Izvezi izabrano kao autotajmer"
 
+msgid "full match (short + extended)"
+msgstr ""
+
 msgid "History"
 msgstr "Istorija"
 
@@ -193,7 +196,7 @@ msgstr ""
 msgid "Search type"
 msgstr "Traženje"
 
-msgid "Search type for filter"
+msgid "Result filter"
 msgstr ""
 
 msgid "Select a timer to search"
