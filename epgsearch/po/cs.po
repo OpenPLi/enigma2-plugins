@@ -95,6 +95,9 @@ msgstr "Zadejte text pro hledání"
 msgid "Export selected as AutoTimer"
 msgstr "Exportovat vybrané jako AutoTimer"
 
+msgid "full match (short + extended)"
+msgstr "Úplná shoda (krátké + rozšířené)"
+
 msgid "History"
 msgstr "Historie"
 
@@ -179,8 +182,8 @@ msgstr "Přesnost vyhledávání"
 msgid "Search type"
 msgstr "Typ hledání"
 
-msgid "Search type for filter"
-msgstr "Způsob vyhledávání pro filtr"
+msgid "Result filter"
+msgstr "Filtr výsledku vyhledání"
 
 msgid "Select a timer to search"
 msgstr "Výběr časovače pro hledání"
@@ -194,8 +197,8 @@ msgstr "Vyberte kanál"
 msgid "Select item for search and press 'OK' or edit item with yellow button or delete item with blue button."
 msgstr "Zvolte položku pro hledání a stiskněte 'OK' nebo použijte žluté tlačítko pro úpravu nebo modré tlačítko pro odstranění."
 
-msgid "Select type for filter search. Press button P +/- for show/hide filter in description after search."
-msgstr "Určuje, zda se popisy událostí musí shodovat přesně nebo jen částečně. Po vyhledání CH+/- zobrazí jen události odpovídající popisu vybrané události; další stisknutí filtr zruší."
+msgid "Use P+/- to filter result by short description or extended (only if short is missing). Partial: only items whose description is contained in selected event. Exact: only items with matching description. Full: identical whole description."
+msgstr "Použijte CH+/- pro filtrování výsledku podle krátkého nebo rozšířeného popisu (jen pokud krátký chybí). Částečně odpovídá – položky, jejichž popis je obsažen v označené události. Přesně odpovídá – položky se shodným popisem. Úplná shoda – celý popis se shoduje."
 
 msgid "Select type for search, \"partial match\" for the most extensive search, \"partial description\" for the most description search."
 msgstr "Zvolte typ hledání. \"Částečně odpovídá\" pro rozsáhlá vyhledávání, \"Částečně v popisu\" pro vyhledávání v popisech."

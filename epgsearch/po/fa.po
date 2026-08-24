@@ -105,6 +105,9 @@ msgstr "وارد کردن یک متن به منظور جستجو برای "
 msgid "Export selected as AutoTimer"
 msgstr "صادر کردن منتخب به عنوان یک تایمر خودکار "
 
+msgid "full match (short + extended)"
+msgstr ""
+
 msgid "History"
 msgstr "پیشینه"
 
@@ -192,7 +195,7 @@ msgstr ""
 msgid "Search type"
 msgstr "جستجو"
 
-msgid "Search type for filter"
+msgid "Result filter"
 msgstr ""
 
 msgid "Select a timer to search"

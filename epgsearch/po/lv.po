@@ -96,6 +96,9 @@ msgstr "Ievadiet tekstu kuru meklēt"
 msgid "Export selected as AutoTimer"
 msgstr "Eksportēt iezīmēto kā auto taimeri"
 
+msgid "full match (short + extended)"
+msgstr ""
+
 msgid "History"
 msgstr "Vēsture"
 
@@ -180,7 +183,7 @@ msgstr "Meklēšanas atbilstība"
 msgid "Search type"
 msgstr "Meklēšanas tips"
 
-msgid "Search type for filter"
+msgid "Result filter"
 msgstr "Meklēšanas tips filtrēšanai"
 
 msgid "Select a timer to search"

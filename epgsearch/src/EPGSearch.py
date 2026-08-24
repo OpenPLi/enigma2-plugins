@@ -643,9 +643,14 @@ class EPGSearch(EPGSelection):
 		if event:
 			l = self["list"]
 			if len(l.list) > 1:
-				description = event.getShortDescription()
-				if description == "" or description == "no description available.":
-					description = event.getExtendedDescription()
+				filter_type = config.plugins.epgsearch.filter_type.value
+				if filter_type == "exact_whole":
+					description = event.getShortDescription() + event.getExtendedDescription()
+				else:
+					description = event.getShortDescription()
+					if description == "" or description == "no description available.":
+						description = event.getExtendedDescription()
+
 				if description:
 					filter_list = []
 					for x in l.list:
@@ -654,8 +659,11 @@ class EPGSearch(EPGSelection):
 							service = ServiceReference(x[0])
 							ev = l.getEventFromId(service, event_id)
 							if ev:
-								if config.plugins.epgsearch.filter_type.value == "exact":
+								if filter_type == "exact":
 									if (ev.getShortDescription() and ev.getShortDescription() == description) or (ev.getExtendedDescription() and ev.getExtendedDescription() == description):
+										filter_list.append(x)
+								elif filter_type == "exact_whole":
+									if (ev.getShortDescription() + ev.getExtendedDescription() == description):
 										filter_list.append(x)
 								else:
 									if (ev.getShortDescription() and ev.getShortDescription() in description) or (ev.getExtendedDescription() and ev.getExtendedDescription() in description):

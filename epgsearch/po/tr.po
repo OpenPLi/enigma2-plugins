@@ -101,6 +101,9 @@ msgstr "Arama metnini girin"
 msgid "Export selected as AutoTimer"
 msgstr "Seçililenleri AutoTimer olarak dışarı ver"
 
+msgid "full match (short + extended)"
+msgstr ""
+
 msgid "History"
 msgstr "Geçmiş"
 
@@ -188,7 +191,7 @@ msgstr ""
 msgid "Search type"
 msgstr "Ara"
 
-msgid "Search type for filter"
+msgid "Result filter"
 msgstr ""
 
 msgid "Select a timer to search"

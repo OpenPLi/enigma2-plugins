@@ -102,6 +102,9 @@ msgstr "Syötä haettava teksti"
 msgid "Export selected as AutoTimer"
 msgstr "Vie valitut AutoTimeriin"
 
+msgid "full match (short + extended)"
+msgstr ""
+
 msgid "History"
 msgstr "Historia"
 
@@ -190,7 +193,7 @@ msgstr ""
 msgid "Search type"
 msgstr "Hae"
 
-msgid "Search type for filter"
+msgid "Result filter"
 msgstr ""
 
 msgid "Select a timer to search"
