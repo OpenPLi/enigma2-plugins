@@ -915,7 +915,13 @@ class EPGSearch(EPGSelection):
 			self.session.open(MessageBox, _("List of history is cleared !"), type=MessageBox.TYPE_INFO, timeout=3)
 
 	def setup(self):
-		self.session.open(EPGSearchSetup)
+		self.filter_type_before_setup = config.plugins.epgsearch.filter_type.value
+		self.session.openWithCallback(self.setupClosed, EPGSearchSetup)
+
+	def setupClosed(self):
+		if self.do_filter is not None and self.filter_type_before_setup != config.plugins.epgsearch.filter_type.value:
+			self.hide_filter()
+			self.show_filter()
 
 	def blueButtonPressed(self):
 		if len(config.plugins.epgsearch.history.value):
