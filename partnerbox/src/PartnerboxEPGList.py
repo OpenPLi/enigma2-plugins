@@ -136,7 +136,7 @@ def Partnerbox_SingleEntry(self, service, eventId, beginTime, duration, EventNam
 			(eListboxPythonMultiContent.TYPE_TEXT, r1.left(), r1.top(), r1.width(), r1.height(), 0, RT_HALIGN_RIGHT | RT_VALIGN_CENTER, self.days[t[6]]),
 			(eListboxPythonMultiContent.TYPE_TEXT, r2.left(), r2.top(), r2.width(), r1.height(), 0, RT_HALIGN_RIGHT | RT_VALIGN_CENTER, "%02d.%02d, %02d:%02d" % (t[2], t[1], t[3], t[4]))
 		]
-		if self.sorting == 2:
+		if getattr(self, "sorting", None) == 2:
 			r = self.getEventRating((service, eventId, beginTime, duration, EventName))
 			if r:
 				rating = str(r + 3)
@@ -179,7 +179,7 @@ def Partnerbox_SingleEntry(self, service, eventId, beginTime, duration, EventNam
 			(eListboxPythonMultiContent.TYPE_TEXT, r1.left(), r1.top(), r1.width(), r1.height(), 0, RT_HALIGN_RIGHT | RT_VALIGN_CENTER, self.days[t[6]]),
 			(eListboxPythonMultiContent.TYPE_TEXT, r2.left(), r2.top(), r2.width(), r1.height(), 0, RT_HALIGN_RIGHT | RT_VALIGN_CENTER, "%02d.%02d, %02d:%02d" % (t[2], t[1], t[3], t[4]))
 		]
-		if self.sorting == 2:
+		if getattr(self, "sorting", None) == 2:
 			r = self.getEventRating((service, eventId, beginTime, duration, EventName))
 			if r:
 				rating = str(r + 3)
