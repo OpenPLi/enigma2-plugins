@@ -1046,7 +1046,7 @@ class EPGSearch(EPGSelection):
 						if y == e[0]:
 							new_e = (x, e[1], e[2], e[3], e[4])
 							result.append(new_e)
-							continue
+							break
 			else:
 				for e in epglist:
 					if ":http" in e[0]:
@@ -1056,7 +1056,7 @@ class EPGSearch(EPGSelection):
 						y = ':'.join(GetWithAlternative(x).split(':')[:11])
 						if y == e[0]:
 							result.append(e)
-							continue
+							break
 		return result
 
 	def getBouquetChannelList(self):
