@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-08 14:27+0100\n"
+"POT-Creation-Date: 2026-09-29 07:32+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -96,10 +96,13 @@ msgstr ""
 msgid "Enter text to search for"
 msgstr ""
 
-msgid "Export selected as AutoTimer"
+msgid "Exclude Last Scanned"
 msgstr ""
 
-msgid "full match (short + extended)"
+msgid "Exclude the Last Scanned bouquet when searching only in bouquets."
+msgstr ""
+
+msgid "Export selected as AutoTimer"
 msgstr ""
 
 msgid "History"
@@ -201,9 +204,6 @@ msgstr ""
 msgid "Select item for search and press 'OK' or edit item with yellow button or delete item with blue button."
 msgstr ""
 
-msgid "Select type for filter search. Press button P +/- for show/hide filter in description after search."
-msgstr ""
-
 msgid "Select type for search, \"partial match\" for the most extensive search, \"partial description\" for the most description search."
 msgstr ""
 
@@ -222,13 +222,16 @@ msgstr ""
 msgid "Type blue Button"
 msgstr ""
 
+msgid "Use P+/- to filter result by short description or extended (only if short is missing). Partial: only items whose description is contained in selected event. Exact: only items with matching description. Full: identical whole description."
+msgstr ""
+
 msgid "Use Picons"
 msgstr ""
 
-msgid "Use the current event name as the initial search text. An empty search field is used otherwise."
+msgid "Use event name for yellow button search"
 msgstr ""
 
-msgid "Use event name for yellow button search"
+msgid "Use the current event name as the initial search text. An empty search field is used otherwise."
 msgstr ""
 
 msgid "Zap to selected service"
@@ -244,6 +247,9 @@ msgid "choice (Search and standard)"
 msgstr ""
 
 msgid "exact match"
+msgstr ""
+
+msgid "full match (short + extended)"
 msgstr ""
 
 msgid "only Search"

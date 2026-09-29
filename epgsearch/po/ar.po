@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Enigma 2 EPGSearch Plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-08 14:24+0100\n"
+"POT-Creation-Date: 2026-09-29 07:32+0200\n"
 "PO-Revision-Date: 2020-10-01 18:24+0300\n"
 "Last-Translator: mosad - مساعد الجعيد <abo-mishal@hotmail.com>\n"
 "Language-Team: mosad - مساعد الجعيد\n"
@@ -101,12 +101,15 @@ msgstr "البحدث في دليل البرامج الإلكتروني"
 msgid "Enter text to search for"
 msgstr "إدخال نص للبحث عن"
 
+msgid "Exclude Last Scanned"
+msgstr ""
+
+msgid "Exclude the Last Scanned bouquet when searching only in bouquets."
+msgstr ""
+
 #, fuzzy
 msgid "Export selected as AutoTimer"
 msgstr "حفظ البحث حسب المؤقت التلقائي"
-
-msgid "full match (short + extended)"
-msgstr ""
 
 #, fuzzy
 msgid "History"
@@ -172,6 +175,10 @@ msgstr "فتح الحدث المختار من قاعدة بيانات معلوم
 msgid "Partnerbox Entries"
 msgstr ""
 
+#, fuzzy
+msgid "Result filter"
+msgstr "نوع البحث"
+
 msgid "Save"
 msgstr ""
 
@@ -198,10 +205,6 @@ msgstr "دقة البحث"
 msgid "Search type"
 msgstr "نوع البحث"
 
-#, fuzzy
-msgid "Result filter"
-msgstr "نوع البحث"
-
 msgid "Select a timer to search"
 msgstr "إختيار مؤقت البحث"
 
@@ -213,9 +216,6 @@ msgid "Select channel"
 msgstr "إنتقل إلى القناة"
 
 msgid "Select item for search and press 'OK' or edit item with yellow button or delete item with blue button."
-msgstr ""
-
-msgid "Select type for filter search. Press button P +/- for show/hide filter in description after search."
 msgstr ""
 
 msgid "Select type for search, \"partial match\" for the most extensive search, \"partial description\" for the most description search."
@@ -237,7 +237,16 @@ msgstr "عرض قائمة المؤقتات التلقائية"
 msgid "Type blue Button"
 msgstr ""
 
+msgid "Use P+/- to filter result by short description or extended (only if short is missing). Partial: only items whose description is contained in selected event. Exact: only items with matching description. Full: identical whole description."
+msgstr ""
+
 msgid "Use Picons"
+msgstr ""
+
+msgid "Use event name for yellow button search"
+msgstr ""
+
+msgid "Use the current event name as the initial search text. An empty search field is used otherwise."
 msgstr ""
 
 msgid "Zap to selected service"
@@ -254,6 +263,9 @@ msgstr ""
 
 msgid "exact match"
 msgstr "تطابق كامل"
+
+msgid "full match (short + extended)"
+msgstr ""
 
 #, fuzzy
 msgid "only Search"

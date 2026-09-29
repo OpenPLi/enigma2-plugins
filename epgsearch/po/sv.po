@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Enigma 2 EPGSearch Plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-08 14:24+0100\n"
+"POT-Creation-Date: 2026-09-29 07:32+0200\n"
 "PO-Revision-Date: 2014-11-22 20:47+0100\n"
 "Last-Translator: Magnus Nilsson <mag_nilsson@hotmail.com>\n"
 "Language-Team: none\n"
@@ -100,11 +100,14 @@ msgstr "EPG sökning"
 msgid "Enter text to search for"
 msgstr "Skriv in text att söka efter"
 
+msgid "Exclude Last Scanned"
+msgstr ""
+
+msgid "Exclude the Last Scanned bouquet when searching only in bouquets."
+msgstr ""
+
 msgid "Export selected as AutoTimer"
 msgstr "Exportera vald som AutoTimer"
-
-msgid "full match (short + extended)"
-msgstr ""
 
 msgid "History"
 msgstr "Historik"
@@ -168,6 +171,9 @@ msgstr ""
 msgid "Partnerbox Entries"
 msgstr ""
 
+msgid "Result filter"
+msgstr ""
+
 msgid "Save"
 msgstr ""
 
@@ -194,9 +200,6 @@ msgstr ""
 msgid "Search type"
 msgstr "Sök"
 
-msgid "Result filter"
-msgstr ""
-
 msgid "Select a timer to search"
 msgstr "Välj en timer för sökning"
 
@@ -207,9 +210,6 @@ msgid "Select channel"
 msgstr ""
 
 msgid "Select item for search and press 'OK' or edit item with yellow button or delete item with blue button."
-msgstr ""
-
-msgid "Select type for filter search. Press button P +/- for show/hide filter in description after search."
 msgstr ""
 
 msgid "Select type for search, \"partial match\" for the most extensive search, \"partial description\" for the most description search."
@@ -230,7 +230,16 @@ msgstr ""
 msgid "Type blue Button"
 msgstr ""
 
+msgid "Use P+/- to filter result by short description or extended (only if short is missing). Partial: only items whose description is contained in selected event. Exact: only items with matching description. Full: identical whole description."
+msgstr ""
+
 msgid "Use Picons"
+msgstr ""
+
+msgid "Use event name for yellow button search"
+msgstr ""
+
+msgid "Use the current event name as the initial search text. An empty search field is used otherwise."
 msgstr ""
 
 msgid "Zap to selected service"
@@ -246,6 +255,9 @@ msgid "choice (Search and standard)"
 msgstr ""
 
 msgid "exact match"
+msgstr ""
+
+msgid "full match (short + extended)"
 msgstr ""
 
 #, fuzzy

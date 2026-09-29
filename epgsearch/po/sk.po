@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Enigma 2 EPGSearch Plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-08 14:24+0100\n"
+"POT-Creation-Date: 2026-09-29 07:32+0200\n"
 "PO-Revision-Date: 2017-03-27 14:35+0200\n"
 "Last-Translator: ims <andrej.tobola@gmail.com>\n"
 "Language-Team: PLi <ims21@users.sourceforge.net>\n"
@@ -94,11 +94,14 @@ msgstr "EPG hľadanie"
 msgid "Enter text to search for"
 msgstr "Zadajte text pre hľadanie"
 
+msgid "Exclude Last Scanned"
+msgstr ""
+
+msgid "Exclude the Last Scanned bouquet when searching only in bouquets."
+msgstr ""
+
 msgid "Export selected as AutoTimer"
 msgstr "Exportovať vybrané ako AutoTimer"
-
-msgid "full match (short + extended)"
-msgstr ""
 
 msgid "History"
 msgstr "História"
@@ -160,6 +163,9 @@ msgstr "Otvoriť vybrané v IMDb"
 msgid "Partnerbox Entries"
 msgstr "Položky Partnerbox"
 
+msgid "Result filter"
+msgstr "Filter vyhľadávania typu"
+
 msgid "Save"
 msgstr ""
 
@@ -184,9 +190,6 @@ msgstr "Prísne hľadanie"
 msgid "Search type"
 msgstr "Hľadať typ"
 
-msgid "Result filter"
-msgstr "Filter vyhľadávania typu"
-
 msgid "Select a timer to search"
 msgstr "Výber časovača pre hľadanie"
 
@@ -198,9 +201,6 @@ msgstr "Voľba kanálu"
 
 msgid "Select item for search and press 'OK' or edit item with yellow button or delete item with blue button."
 msgstr ""
-
-msgid "Select type for filter search. Press button P +/- for show/hide filter in description after search."
-msgstr "Voľba typu pre filtrované vyhľadávanie. Stlačte tlačidlo P +/- pre filter zobrazenia/skrytia v popise po hľadaní."
 
 #, fuzzy
 msgid "Select type for search, \"partial match\" for the most extensive search, \"partial description\" for the most description search."
@@ -221,8 +221,17 @@ msgstr "Zoznam časovačov"
 msgid "Type blue Button"
 msgstr "Typ modrého tlačidla"
 
+msgid "Use P+/- to filter result by short description or extended (only if short is missing). Partial: only items whose description is contained in selected event. Exact: only items with matching description. Full: identical whole description."
+msgstr ""
+
 msgid "Use Picons"
 msgstr "Použiť picony"
+
+msgid "Use event name for yellow button search"
+msgstr ""
+
+msgid "Use the current event name as the initial search text. An empty search field is used otherwise."
+msgstr ""
 
 msgid "Zap to selected service"
 msgstr "Prepnúť na zvolenú stanicu"
@@ -238,6 +247,9 @@ msgstr "voľba (Hľadať a štandardná)"
 
 msgid "exact match"
 msgstr "presná zhoda"
+
+msgid "full match (short + extended)"
+msgstr ""
 
 msgid "only Search"
 msgstr "iba Hľadať"
