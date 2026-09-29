@@ -924,12 +924,36 @@ class EPGSearch(EPGSelection):
 
 	def setup(self):
 		self.filter_type_before_setup = config.plugins.epgsearch.filter_type.value
+		self.search_settings_before_setup = self.getSearchSettings()
 		self.session.openWithCallback(self.setupClosed, EPGSearchSetup)
 
 	def setupClosed(self):
-		if self.do_filter is not None and self.filter_type_before_setup != config.plugins.epgsearch.filter_type.value:
+		epg = config.plugins.epgsearch
+		search_settings = self.getSearchSettings()
+		if self.currSearch and self.search_settings_before_setup != search_settings:
+			global BouquetChannelListList, IptvBouquetChannelListList
+			BouquetChannelListList = None
+			IptvBouquetChannelListList = None
+			self.searchEPG(self.currSearch, False)
+		elif self.do_filter is not None and self.filter_type_before_setup != epg.filter_type.value:
 			self.hide_filter()
 			self.show_filter()
+
+	# Track settings that affect EPG search results.
+	# Exclude unrelated settings to avoid unnecessary searches after closing setup.
+	# The result filter is handled separately without repeating the EPG search.
+	# New settings are included automatically unless explicitly excluded.
+	def getSearchSettings(self):
+		return {
+			name: item.value
+			for name, item in config.plugins.epgsearch.dict().items()
+			if name not in (
+				"filter_type", "history", "history_length",
+				"add_search_to_epg", "type_button_blue",
+				"yellow_eventname", "picons",
+				"show_in_furtheroptionsmenu", "search_in_channelmenu"
+			)
+		}
 
 	def blueButtonPressed(self):
 		if len(config.plugins.epgsearch.history.value):
@@ -1087,6 +1111,8 @@ class EPGSearch(EPGSelection):
 		if bouquetlist:
 			for bouquet in bouquetlist:
 				if not bouquet.valid():
+					continue
+				if config.plugins.epgsearch.bouquet.value and config.plugins.epgsearch.exclude_lastscanned.value and 'FROM BOUQUET "userbouquet.LastScanned.tv"' in bouquet.toString():
 					continue
 				if bouquet.flags & eServiceReference.isDirectory:
 					services = serviceHandler.list(bouquet)
