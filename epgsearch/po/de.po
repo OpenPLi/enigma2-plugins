@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Enigma 2 EPGSearch Plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-08 14:24+0100\n"
+"POT-Creation-Date: 2026-09-29 07:32+0200\n"
 "PO-Revision-Date: 2023-05-12 19:34+0200\n"
 "Last-Translator: kueken\n"
 "Language-Team: none\n"
@@ -96,11 +96,14 @@ msgstr "Bearbeiten & Suchen"
 msgid "Enter text to search for"
 msgstr "Zu suchenden Text eingeben"
 
+msgid "Exclude Last Scanned"
+msgstr ""
+
+msgid "Exclude the Last Scanned bouquet when searching only in bouquets."
+msgstr ""
+
 msgid "Export selected as AutoTimer"
 msgstr "Auswahl als AutoTimer exportieren"
-
-msgid "full match (short + extended)"
-msgstr ""
 
 msgid "History"
 msgstr "Verlauf"
@@ -162,6 +165,9 @@ msgstr "Ausgewähltes in IMDb öffnen"
 msgid "Partnerbox Entries"
 msgstr "Partnerbox-Einträge"
 
+msgid "Result filter"
+msgstr "Typ des SuchFilters auswählen"
+
 msgid "Save"
 msgstr ""
 
@@ -186,9 +192,6 @@ msgstr "Genauigkeit der Suche"
 msgid "Search type"
 msgstr "Suchtyp"
 
-msgid "Result filter"
-msgstr "Typ des SuchFilters auswählen"
-
 msgid "Select a timer to search"
 msgstr "Einen Timer auswählen"
 
@@ -201,9 +204,6 @@ msgstr "Kanal auswählen"
 #, fuzzy
 msgid "Select item for search and press 'OK' or edit item with yellow button or delete item with blue button."
 msgstr "Wählen Sie das zu suchende Element aus und drücken Sie „OK“ oder bearbeiten Sie das Element mit der gelben Taste."
-
-msgid "Select type for filter search. Press button P +/- for show/hide filter in description after search."
-msgstr "Wählen Sie den Typ für die Filtersuche aus. Drücken Sie die Taste P +/-, um den Filter in der Beschreibung nach der Suche ein-/auszublenden."
 
 msgid "Select type for search, \"partial match\" for the most extensive search, \"partial description\" for the most description search."
 msgstr "Wählen Sie den Suchtyp aus, „teilweise Übereinstimmung“ für die umfassendste Suche und „teilweise Beschreibung“ für die umfassendste Suche."
@@ -223,8 +223,17 @@ msgstr "Timer-Liste"
 msgid "Type blue Button"
 msgstr "Wähle Blau Button"
 
+msgid "Use P+/- to filter result by short description or extended (only if short is missing). Partial: only items whose description is contained in selected event. Exact: only items with matching description. Full: identical whole description."
+msgstr ""
+
 msgid "Use Picons"
 msgstr "Verwenden Sie Picons"
+
+msgid "Use event name for yellow button search"
+msgstr ""
+
+msgid "Use the current event name as the initial search text. An empty search field is used otherwise."
+msgstr ""
 
 msgid "Zap to selected service"
 msgstr "Schalte zum ausgewählten Sender um"
@@ -240,6 +249,9 @@ msgstr "Auswahl (Suche und Standard)"
 
 msgid "exact match"
 msgstr "Exakter Treffer"
+
+msgid "full match (short + extended)"
+msgstr ""
 
 msgid "only Search"
 msgstr "nur Suche"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: EPGSearch\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-08 14:24+0100\n"
+"POT-Creation-Date: 2026-09-29 07:32+0200\n"
 "PO-Revision-Date: 2021-09-15 09:06+0300\n"
 "Last-Translator: Vytenis P. <vyteniui@gmail.com>\n"
 "Language-Team: Vytenis P. <vyteniui@gmail.com>\n"
@@ -97,11 +97,14 @@ msgstr "Redaguoti ir ieškoti"
 msgid "Enter text to search for"
 msgstr "Įrašykite ieškomą tekstą"
 
+msgid "Exclude Last Scanned"
+msgstr ""
+
+msgid "Exclude the Last Scanned bouquet when searching only in bouquets."
+msgstr ""
+
 msgid "Export selected as AutoTimer"
 msgstr "Eksportuoti pasirinktą, kaip autolaikmatį"
-
-msgid "full match (short + extended)"
-msgstr ""
 
 msgid "History"
 msgstr "Istorija"
@@ -163,6 +166,9 @@ msgstr "Atverti pasirinktą IMDb"
 msgid "Partnerbox Entries"
 msgstr "Kaimyninio aparato įrašai"
 
+msgid "Result filter"
+msgstr "Paieškos tipo filtras"
+
 msgid "Save"
 msgstr ""
 
@@ -187,9 +193,6 @@ msgstr "Paieškos tikslumas"
 msgid "Search type"
 msgstr "Paieškos tipas"
 
-msgid "Result filter"
-msgstr "Paieškos tipo filtras"
-
 msgid "Select a timer to search"
 msgstr "Pasirinkite laikmatį paieškai"
 
@@ -202,9 +205,6 @@ msgstr "Pasirinkite kanalą"
 #, fuzzy
 msgid "Select item for search and press 'OK' or edit item with yellow button or delete item with blue button."
 msgstr "Pasirinkite ieškomą elementą ir spauskite 'OK', arba 'GELTONU' mygtuku jį redaguokite."
-
-msgid "Select type for filter search. Press button P +/- for show/hide filter in description after search."
-msgstr "Pasirinkite paieškos tipo filtrą. Spauskite 'P +/-', kad atverti/užverti filtrą aprašyme po paieškos."
 
 msgid "Select type for search, \"partial match\" for the most extensive search, \"partial description\" for the most description search."
 msgstr "Pasirinkite paieškos tipą, \"dalinis atitikimas\" - plačiausiai paieškai, \"dalinis aprašymas\" - daugiau aprašymo paieškai."
@@ -224,8 +224,17 @@ msgstr "Laikmačių sąrašas"
 msgid "Type blue Button"
 msgstr "Spauskite 'MĖLYNĄ' mygtuką"
 
+msgid "Use P+/- to filter result by short description or extended (only if short is missing). Partial: only items whose description is contained in selected event. Exact: only items with matching description. Full: identical whole description."
+msgstr ""
+
 msgid "Use Picons"
 msgstr "Naudoti piktogramas"
+
+msgid "Use event name for yellow button search"
+msgstr ""
+
+msgid "Use the current event name as the initial search text. An empty search field is used otherwise."
+msgstr ""
 
 msgid "Zap to selected service"
 msgstr "Perjungti į pasirinktą kanalą"
@@ -241,6 +250,9 @@ msgstr "pasirinkimas (paieška ir standartas)"
 
 msgid "exact match"
 msgstr "tikslus atitikimas"
+
+msgid "full match (short + extended)"
+msgstr ""
 
 msgid "only Search"
 msgstr "tik paieška"

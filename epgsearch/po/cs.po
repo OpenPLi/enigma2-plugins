@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Enigma 2 EPGSearch Plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-08 14:24+0100\n"
-"PO-Revision-Date: 2026-08-17 13:26+0200\n"
+"POT-Creation-Date: 2026-09-29 07:32+0200\n"
+"PO-Revision-Date: 2026-09-29 07:37+0200\n"
 "Last-Translator: ims <ims@openpli.org>\n"
 "Language-Team: PLi <ims21@users.sourceforge.net>\n"
 "Language: cs_CZ\n"
@@ -92,11 +92,14 @@ msgstr "Upravit & hledat"
 msgid "Enter text to search for"
 msgstr "Zadejte text pro hledání"
 
+msgid "Exclude Last Scanned"
+msgstr "Vynechat Last Scanned"
+
+msgid "Exclude the Last Scanned bouquet when searching only in bouquets."
+msgstr "Při hledání pouze v přehledech se vynechává i přehled 'Last Scanned'."
+
 msgid "Export selected as AutoTimer"
 msgstr "Exportovat vybrané jako AutoTimer"
-
-msgid "full match (short + extended)"
-msgstr "Úplná shoda (krátké + rozšířené)"
 
 msgid "History"
 msgstr "Historie"
@@ -158,8 +161,11 @@ msgstr "Otevřít v IMDb"
 msgid "Partnerbox Entries"
 msgstr "Položky Partnerboxu"
 
+msgid "Result filter"
+msgstr "Filtr výsledku vyhledání"
+
 msgid "Save"
-msgstr ""
+msgstr "Uložit"
 
 msgid "Save search as AutoTimer"
 msgstr "Uložit hledání jako AutoTimer"
@@ -182,9 +188,6 @@ msgstr "Přesnost vyhledávání"
 msgid "Search type"
 msgstr "Typ hledání"
 
-msgid "Result filter"
-msgstr "Filtr výsledku vyhledání"
-
 msgid "Select a timer to search"
 msgstr "Výběr časovače pro hledání"
 
@@ -196,9 +199,6 @@ msgstr "Vyberte kanál"
 
 msgid "Select item for search and press 'OK' or edit item with yellow button or delete item with blue button."
 msgstr "Zvolte položku pro hledání a stiskněte 'OK' nebo použijte žluté tlačítko pro úpravu nebo modré tlačítko pro odstranění."
-
-msgid "Use P+/- to filter result by short description or extended (only if short is missing). Partial: only items whose description is contained in selected event. Exact: only items with matching description. Full: identical whole description."
-msgstr "Použijte CH+/- pro filtrování výsledku podle krátkého nebo rozšířeného popisu (jen pokud krátký chybí). Částečně odpovídá – položky, jejichž popis je obsažen v označené události. Přesně odpovídá – položky se shodným popisem. Úplná shoda – celý popis se shoduje."
 
 msgid "Select type for search, \"partial match\" for the most extensive search, \"partial description\" for the most description search."
 msgstr "Zvolte typ hledání. \"Částečně odpovídá\" pro rozsáhlá vyhledávání, \"Částečně v popisu\" pro vyhledávání v popisech."
@@ -218,14 +218,17 @@ msgstr "Přehled časovačů"
 msgid "Type blue Button"
 msgstr "Možnosti modrého tlačítka"
 
+msgid "Use P+/- to filter result by short description or extended (only if short is missing). Partial: only items whose description is contained in selected event. Exact: only items with matching description. Full: identical whole description."
+msgstr "Použijte CH+/- pro filtrování výsledku podle krátkého nebo rozšířeného popisu (jen pokud krátký chybí). Částečně odpovídá – položky, jejichž popis je obsažen v označené události. Přesně odpovídá – položky se shodným popisem. Úplná shoda – celý popis se shoduje."
+
 msgid "Use Picons"
 msgstr "Používat pikony"
 
-msgid "Use the current event name as the initial search text. An empty search field is used otherwise."
-msgstr "Použít aktuální název ve vyhledávacím poli, jinak ponechat vyhledávací pole prázdné."
-
 msgid "Use event name for yellow button search"
 msgstr "Použít název pro hledání žlutým tlačítkem"
+
+msgid "Use the current event name as the initial search text. An empty search field is used otherwise."
+msgstr "Použít aktuální název ve vyhledávacím poli, jinak ponechat vyhledávací pole prázdné."
 
 msgid "Zap to selected service"
 msgstr "Přepnout na vybraný program"
@@ -241,6 +244,9 @@ msgstr "Výběr akce (Hledat, Vyberte kanál,...)"
 
 msgid "exact match"
 msgstr "Přesně odpovídá"
+
+msgid "full match (short + extended)"
+msgstr "Úplná shoda (krátké + rozšířené)"
 
 msgid "only Search"
 msgstr "Pouze 'Hledat'"

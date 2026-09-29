@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Enigma 2 EPGSearch Plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-08 14:24+0100\n"
+"POT-Creation-Date: 2026-09-29 07:32+0200\n"
 "PO-Revision-Date: 2014-12-13 18:20+0300\n"
 "Last-Translator: Tapat <taapat@gmail.com>\n"
 "Language-Team: Taapat <taapat@gmail.com>\n"
@@ -93,11 +93,14 @@ msgstr "Rediģēt"
 msgid "Enter text to search for"
 msgstr "Ievadiet tekstu kuru meklēt"
 
+msgid "Exclude Last Scanned"
+msgstr ""
+
+msgid "Exclude the Last Scanned bouquet when searching only in bouquets."
+msgstr ""
+
 msgid "Export selected as AutoTimer"
 msgstr "Eksportēt iezīmēto kā auto taimeri"
-
-msgid "full match (short + extended)"
-msgstr ""
 
 msgid "History"
 msgstr "Vēsture"
@@ -159,6 +162,9 @@ msgstr "Atvērt izvēlēto IMDb"
 msgid "Partnerbox Entries"
 msgstr "Partnerbox ieraksti"
 
+msgid "Result filter"
+msgstr "Meklēšanas tips filtrēšanai"
+
 msgid "Save"
 msgstr ""
 
@@ -183,9 +189,6 @@ msgstr "Meklēšanas atbilstība"
 msgid "Search type"
 msgstr "Meklēšanas tips"
 
-msgid "Result filter"
-msgstr "Meklēšanas tips filtrēšanai"
-
 msgid "Select a timer to search"
 msgstr "Izvēlieties taimeri lai meklētu"
 
@@ -198,9 +201,6 @@ msgstr "Izvēlieties kanālu"
 #, fuzzy
 msgid "Select item for search and press 'OK' or edit item with yellow button or delete item with blue button."
 msgstr "Izvēlieties meklējamo tekstu un nospiediet 'Lietot' vai rediģējiet tekstu ar dzelteno pogu."
-
-msgid "Select type for filter search. Press button P +/- for show/hide filter in description after search."
-msgstr "Izvēlieties meklēšanas veidu filtrēšanai. Lietojiet P +/- lai parādītu/slēptu filtrus aprakstā pēc meklēšanas."
 
 msgid "Select type for search, \"partial match\" for the most extensive search, \"partial description\" for the most description search."
 msgstr "Izvēlieties meklēšanas tipu, \"atbilst daļēji\" lielākam rezultātu daudzumam, \"līdzīgs apraksts\" labākai meklēšanai aprakstos."
@@ -220,8 +220,17 @@ msgstr "Taimeru saraksts"
 msgid "Type blue Button"
 msgstr "Zilā poga"
 
+msgid "Use P+/- to filter result by short description or extended (only if short is missing). Partial: only items whose description is contained in selected event. Exact: only items with matching description. Full: identical whole description."
+msgstr ""
+
 msgid "Use Picons"
 msgstr "Lietot pikonas"
+
+msgid "Use event name for yellow button search"
+msgstr ""
+
+msgid "Use the current event name as the initial search text. An empty search field is used otherwise."
+msgstr ""
 
 msgid "Zap to selected service"
 msgstr "Pārslēgt uz izvēlēto kanālu"
@@ -237,6 +246,9 @@ msgstr "izvēlēties (meklēt vai standarta)"
 
 msgid "exact match"
 msgstr "atbilst tieši"
+
+msgid "full match (short + extended)"
+msgstr ""
 
 msgid "only Search"
 msgstr "tikai meklēt"

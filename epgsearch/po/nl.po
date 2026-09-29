@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2 - epgsearch\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-08 14:24+0100\n"
+"POT-Creation-Date: 2026-09-29 07:32+0200\n"
 "PO-Revision-Date: 2021-07-10 10:32+0200\n"
 "Last-Translator: Frenske <voorzitter@openpli.org>\n"
 "Language-Team: <Benny.DeTandt@gmail.com>\n"
@@ -99,11 +99,14 @@ msgstr "Vrij zoeken"
 msgid "Enter text to search for"
 msgstr "Voer te zoeken tekst in:"
 
+msgid "Exclude Last Scanned"
+msgstr ""
+
+msgid "Exclude the Last Scanned bouquet when searching only in bouquets."
+msgstr ""
+
 msgid "Export selected as AutoTimer"
 msgstr "Exporteer het geselecteerde als AutoTimer"
-
-msgid "full match (short + extended)"
-msgstr ""
 
 msgid "History"
 msgstr "Historiek"
@@ -167,6 +170,9 @@ msgstr "Open de selectie in IMBd"
 msgid "Partnerbox Entries"
 msgstr "Partnerbox item"
 
+msgid "Result filter"
+msgstr "Zoektype om te filteren"
+
 msgid "Save"
 msgstr ""
 
@@ -191,9 +197,6 @@ msgstr "Nauwkeurigheid van het zoeken"
 msgid "Search type"
 msgstr "Zoektype"
 
-msgid "Result filter"
-msgstr "Zoektype om te filteren"
-
 msgid "Select a timer to search"
 msgstr "Selecteer de te zoeken timer ..."
 
@@ -205,9 +208,6 @@ msgstr "Kies de zender"
 
 msgid "Select item for search and press 'OK' or edit item with yellow button or delete item with blue button."
 msgstr ""
-
-msgid "Select type for filter search. Press button P +/- for show/hide filter in description after search."
-msgstr "Met deze optie kunt u het zoektype kiezen om op filter te zoeken. Druk P +/- om het filter te tonen/verbergen na het zoeken."
 
 msgid "Select type for search, \"partial match\" for the most extensive search, \"partial description\" for the most description search."
 msgstr "Met deze optie kunt u aangeven hoe u wilt zoeken. U kunt kiezen uit 'gedeeltelijke overeenkomst', 'exacte overeenkomst' en 'de titel begint met'. De eerste optie zoekt het intensiefst."
@@ -229,8 +229,17 @@ msgstr "Timeroverzicht"
 msgid "Type blue Button"
 msgstr "Het type van de blauwe toets"
 
+msgid "Use P+/- to filter result by short description or extended (only if short is missing). Partial: only items whose description is contained in selected event. Exact: only items with matching description. Full: identical whole description."
+msgstr ""
+
 msgid "Use Picons"
 msgstr "Gebruik Picons"
+
+msgid "Use event name for yellow button search"
+msgstr ""
+
+msgid "Use the current event name as the initial search text. An empty search field is used otherwise."
+msgstr ""
 
 msgid "Zap to selected service"
 msgstr "Zap naar de gekozen zender"
@@ -246,6 +255,9 @@ msgstr "Zoek en standaard actie"
 
 msgid "exact match"
 msgstr "Exacte overeenkomst"
+
+msgid "full match (short + extended)"
+msgstr ""
 
 msgid "only Search"
 msgstr "Alleen zoeken"
