@@ -269,6 +269,9 @@ def GetMatchingPartnerboxTimers(self, event, serviceref, firstOnly=False):
 
 
 def Partnerbox_timerAdd(self):
+	def pbColorText(text):
+		return "\\c0008f0f0%s\\C" % text
+
 	try:
 		if self.key_green_choice != self.REMOVE_TIMER:
 			basetimerAdd(self)
@@ -289,7 +292,7 @@ def Partnerbox_timerAdd(self):
 
 		internalAction = _("Edit internal timer") if HasInternalTimer(self, event, serviceref) else _("Add internal timer")
 		remoteAction = _("Edit remote timer")
-		remoteAction += "\\c00f0f0f0 - \\c0008f0f0%s\\C" % ", ".join(box.name.value for box, timer in matches)
+		remoteAction += " - " + ", ".join(pbColorText(box.name.value) for box, _ in matches)
 		menu = [(remoteAction, "remote"), (internalAction, "internal")]
 
 		def timerAction(choice):
