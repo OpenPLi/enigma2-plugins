@@ -251,6 +251,8 @@ mosaic/meta/Makefile
 mosaic/po/Makefile
 mosaic/src/Makefile
 
+mstkgs/Makefile
+
 movieretitle/Makefile
 movieretitle/meta/Makefile
 movieretitle/po/Makefile
