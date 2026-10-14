@@ -92,6 +92,7 @@ config.plugins.Partnerbox.enablevpsintimerevent = ConfigYesNo(default=False)
 config.plugins.Partnerbox.showpartnerboxautotimerninmenu = ConfigYesNo(default=True)
 config.plugins.Partnerbox.showpartnerboxautotimerninextensionsmenu = ConfigYesNo(default=False)
 config.plugins.Partnerbox.avahicompare = ConfigYesNo(default=False)
+config.plugins.Partnerbox.allboxes = ConfigYesNo(default=False)
 initConfig()
 
 

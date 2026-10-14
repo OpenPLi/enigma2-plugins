@@ -130,6 +130,7 @@ class PartnerboxSetup(ConfigListScreen, Screen):
 			self.list.append(getConfigListEntry(dx + _("Enable Red Button-Function in single/multi EPG"), config.plugins.Partnerbox.enablepartnerboxzapbuton))
 			self.list.append(getConfigListEntry(dx + _("Show duration time for event"), config.plugins.Partnerbox.showremaingepglist))
 			self.list.append(getConfigListEntry(dx + _("Show all icon for event in EPGList"), config.plugins.Partnerbox.allicontype))
+			self.list.append(getConfigListEntry(dx + _("Show timers from all Partnerboxes in EPG"), config.plugins.Partnerbox.allboxes))
 		self.list.append(getConfigListEntry(_("Enable Partnerbox-Function in Channel Selector"), config.plugins.Partnerbox.enablepartnerboxchannelselector))
 		if autoTimerAvailable:
 			self.list.append(getConfigListEntry(_("Enable Partnerbox-AutoTimer function"), config.plugins.Partnerbox.showpartnerboxautotimerninmenu))
@@ -153,6 +154,7 @@ class PartnerboxSetup(ConfigListScreen, Screen):
 		config.plugins.Partnerbox.showpartnerboxautotimerninmenu.save()
 		config.plugins.Partnerbox.showpartnerboxautotimerninextensionsmenu.save()
 		config.plugins.Partnerbox.avahicompare.save()
+		config.plugins.Partnerbox.allboxes.save()
 		configfile.save()
 		self.refreshPlugins()
 		self.close(self.session)
