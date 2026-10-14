@@ -42,6 +42,7 @@ SUBDIRS = \
 	merlinepgcenter \
 	merlinmusicplayer \
 	mosaic \
+	mstkgs \
 	movieretitle \
 	movietagger \
 	mphelp \
