@@ -486,6 +486,12 @@ msgstr "Zobrazovat 'Streamovat aktuální program' v E-Menu"
 msgid "Show all icon for event in EPGList"
 msgstr "V EPG zobrazovat pro událost všechny ikony"
 
+msgid "Show timers from all Partnerboxes in EPG"
+msgstr "Zobrazovat časovače všech partnerboxů v EPG"
+
+msgid "Select Partnerbox:"
+msgstr "Zvolte partnerbox:"
+
 msgid "Show duration time for event"
 msgstr "Zobrazit délku trvání události"
 

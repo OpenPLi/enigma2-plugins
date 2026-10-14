@@ -26,7 +26,7 @@ from Components.EpgList import EPG_TYPE_SINGLE, EPG_TYPE_SIMILAR, EPG_TYPE_MULTI
 from Screens.ChoiceBox import ChoiceBox
 from Tools.BoundFunction import boundFunction
 from Tools.Directories import fileExists
-from .PartnerboxFunctions import SetPartnerboxTimerlist, isInTimerList, isInRepeatTimer, sendPartnerBoxWebCommand, FillE1TimerList, FillE2TimerList
+from .PartnerboxFunctions import isInTimerList, isInRepeatTimer, sendPartnerBoxWebCommand, FillE1TimerList, FillE2TimerList
 from . import PartnerboxFunctions as partnerboxfunctions
 from enigma import eServiceReference, eServiceCenter
 
@@ -67,8 +67,13 @@ def Partnerbox_EPGSelectionInit():
 	EPGSelection.GetPartnerboxTimerlistCallback = GetPartnerboxTimerlistCallback
 	EPGSelection.GetPartnerboxTimerlistCallbackError = GetPartnerboxTimerlistCallbackError
 	EPGSelection.CheckRemoteTimer = CheckRemoteTimer
+	EPGSelection.GetMatchingPartnerboxTimers = GetMatchingPartnerboxTimers
+	EPGSelection.ChooseRemoteTimer = ChooseRemoteTimer
+	EPGSelection.RemoteTimerSelected = RemoteTimerSelected
+	EPGSelection.OpenRemoteTimer = OpenRemoteTimer
 	EPGSelection.DeleteTimerConfirmed = DeleteTimerConfirmed
 	EPGSelection.DeleteTimerCallback = DeleteTimerCallback
+	EPGSelection.DeleteTimerCallbackError = DeleteTimerCallbackError
 	EPGSelection.GetPartnerboxTimerlist = GetPartnerboxTimerlist
 	EPGSelection.RedCallback = RedCallback
 	EPGSelection.setRedbutton = setRedbutton
@@ -186,11 +191,7 @@ def NewPartnerBoxSelected(self, session, what, partnerboxentry=None):
 	try:
 		if partnerboxentry is not None:
 			self.partnerboxentry = partnerboxentry
-			curService = None
-			if self.type == EPG_TYPE_SINGLE and self.filterRef:
-				curService = self.currentService.ref.toString()
-			SetPartnerboxTimerlist(partnerboxentry, curService)
-			Partnerbox_onSelectionChanged(self)
+			self.GetPartnerboxTimerlist()
 			name_red = ''
 			if int(config.plugins.Partnerbox.entriescount.value) > 1:
 				name_red = _("Zap/") + partnerboxentry.name.value
@@ -217,56 +218,116 @@ def Partnerbox_onSelectionChanged(self):
 		pass
 
 
+def GetPartnerboxEntries(self):
+	if config.plugins.Partnerbox.allboxes.value:
+		return config.plugins.Partnerbox.Entries
+	return [self.partnerboxentry]
+
+
+def HasInternalTimer(self, event, serviceref):
+	eventId = event.getEventId()
+	begin = event.getBeginTime()
+	end = begin + event.getDuration()
+	service = ':'.join(serviceref.ref.toString().split(':')[:11])
+	recordTimer = self.session.nav.RecordTimer
+
+	for timer in recordTimer.timer_list:
+		if ':'.join(timer.service_ref.ref.toString().split(':')[:11]) != service:
+			continue
+		if timer.eit == eventId and (begin < timer.begin <= end or timer.begin <= begin <= timer.end):
+			return True
+		if timer.repeated and recordTimer.isInRepeatTimer(timer, event):
+			return True
+	return False
+
+
+def GetMatchingPartnerboxTimers(self, event, serviceref, firstOnly=False):
+	boxes = [box for box in GetPartnerboxEntries(self) if box is not None]
+	best = {id(box): None for box in boxes}
+	begin = event.getBeginTime()
+	duration = event.getDuration()
+	end = begin + duration
+	eventId = event.getEventId()
+	service = serviceref.ref.toString()
+
+	for timer in partnerboxfunctions.remote_timer_list:
+		box = getattr(timer, "partnerboxentry", None)
+		key = id(box)
+		if key not in best:
+			continue
+		# Check each timer separately so overlapping timers cannot hide a better match.
+		if isInTimerList(begin, duration, service, eventId, [timer]) is None:
+			continue
+		if firstOnly:
+			return [(box, timer)]
+		overlap = max(0, min(end, timer.timeend) - max(begin, timer.timebegin))
+		exact = eventId is not None and eventId >= 0 and timer.eventId == eventId
+		score = (exact, overlap)  # Prefer matching EIT, then the longest overlap.
+		if best[key] is None or score > best[key][0]:
+			best[key] = (score, timer)
+	return [(box, best[id(box)][1]) for box in boxes if best[id(box)] is not None]
+
+
 def Partnerbox_timerAdd(self):
 	try:
-		proceed = True
-		if self.key_green_choice == self.REMOVE_TIMER:
-			cur = self["list"].getCurrent()
-			if cur is None:
-				return
-			event = cur[0]
-			serviceref = cur[1]
-			if event is not None:
-				timerentry = isInTimerList(event.getBeginTime(), event.getDuration(), serviceref.ref.toString(), event.getEventId(), partnerboxfunctions.remote_timer_list)
-				if timerentry is not None:
-					proceed = False
-					if int(self.partnerboxentry.enigma.value) == 0:
-						name = timerentry.name
-					else:
-						name = timerentry.description
-						self.session.openWithCallback(boundFunction(self.DeleteTimerConfirmed, timerentry), MessageBox, _("Do you really want to delete the remote timer \n%s ?") % name)
-						return
-					isRecordEvent = False
-					eventid = event.getEventId()
-					begin = event.getBeginTime()
-					end = begin + event.getDuration()
-					refstr = ':'.join(serviceref.ref.toString().split(':')[:11])
-					for timer in self.session.nav.RecordTimer.timer_list:
-						needed_ref = ':'.join(timer.service_ref.ref.toString().split(':')[:11]) == refstr
-						if needed_ref and timer.eit == eventid and (begin < timer.begin <= end or timer.begin <= begin <= timer.end):
-							isRecordEvent = True
-							break
-						elif needed_ref and timer.repeated and self.session.nav.RecordTimer.isInRepeatTimer(timer, event):
-							isRecordEvent = True
-							break
-					if isRecordEvent:
-						action = _("Edit internal timer")
-					else:
-						action = _("Add internal timer")
-					menu = [(_("Edit remote timer"), "remote"), (action, "internal")]
-					buttons = ["red", "green"]
-
-					def timerAction(choice):
-						if choice is not None:
-							if choice[1] == "remote":
-								self.remoteTimerMenu(timerentry)
-							elif choice[1] == "internal":
-								basetimerAdd(self)
-					self.session.openWithCallback(timerAction, ChoiceBox, title=_("Select action for timer '%s':") % name, list=menu, keys=buttons)
-		if proceed:
+		if self.key_green_choice != self.REMOVE_TIMER:
 			basetimerAdd(self)
+			return
+		current = self["list"].getCurrent()
+		if current is None or current[0] is None:
+			return
+		event, serviceref = current[:2]
+		matches = self.GetMatchingPartnerboxTimers(event, serviceref)
+		if not matches:
+			basetimerAdd(self)
+			return
+
+		box, timer = matches[0]
+		if int(box.enigma.value) != 0:
+			self.ChooseRemoteTimer(matches)
+			return
+
+		internalAction = _("Edit internal timer") if HasInternalTimer(self, event, serviceref) else _("Add internal timer")
+		remoteAction = _("Edit remote timer")
+		remoteAction += "\\c00b0b0b0 - " + ", ".join(box.name.value for box, _ in matches) + "\\C"
+		menu = [(remoteAction, "remote"), (internalAction, "internal")]
+
+		def timerAction(choice):
+			if choice is None:
+				return
+			if choice[1] == "remote":
+				self.ChooseRemoteTimer(matches)
+			elif choice[1] == "internal":
+				basetimerAdd(self)
+
+		self.session.openWithCallback(timerAction, ChoiceBox,
+			title=_("Select action for timer '%s':") % timer.name, list=menu, keys=["blue", "green"])
 	except:
 		pass
+
+
+def ChooseRemoteTimer(self, matches):
+	if not matches:
+		return
+	if len(matches) == 1:
+		self.OpenRemoteTimer(matches[0][1])
+	else:
+		menu = [(box.name.value, timer) for box, timer in matches]
+		self.session.openWithCallback(self.RemoteTimerSelected, ChoiceBox,
+			title=_("Select Partnerbox:"), list=menu)
+
+
+def RemoteTimerSelected(self, choice):
+	if choice is not None:
+		self.OpenRemoteTimer(choice[1])
+
+
+def OpenRemoteTimer(self, timerentry):
+	if int(timerentry.partnerboxentry.enigma.value) == 0:
+		self.remoteTimerMenu(timerentry)
+	else:
+		message = _("Do you really want to delete the remote timer \n%s ?") % timerentry.description
+		self.session.openWithCallback(boundFunction(self.DeleteTimerConfirmed, timerentry), MessageBox, message)
 
 
 def remoteTimerMenu(self, timerentry):
@@ -280,9 +341,8 @@ def remoteTimerMenu(self, timerentry):
 				if choice[1] == "delete":
 					self.session.openWithCallback(boundFunction(self.DeleteTimerConfirmed, timerentry), MessageBox, _("Do you really want to delete the timer \n%s ?") % timerentry.name)
 				elif choice[1] == "timerlist":
-					if hasattr(self, 'partnerboxentry') and self.partnerboxentry is not None:
-						from .plugin import RemoteTimer
-						self.session.openWithCallback(self.DeleteTimerCallback, RemoteTimer, self.partnerboxentry, not_epg=True)
+					from .plugin import RemoteTimer
+					self.session.openWithCallback(self.DeleteTimerCallback, RemoteTimer, timerentry.partnerboxentry, not_epg=True)
 		self.session.openWithCallback(remoteTimerAction, ChoiceBox, title=title_text + _("Select action for remote timer '%s':") % timerentry.name, list=menu, keys=buttons)
 	except:
 		pass
@@ -291,8 +351,7 @@ def remoteTimerMenu(self, timerentry):
 def Partnerbox_finishedAdd(self, answer):
 	try:
 		basefinishedAdd(self, answer)
-		self.CheckRemoteTimer()
-		self.setRedbutton()
+		self.GetPartnerboxTimerlist()
 	except:
 		pass
 
@@ -307,45 +366,55 @@ def Partnerbox_onCreate(self):
 		pass
 
 
-def GetPartnerboxTimerlist(self):
+def RefreshPartnerboxEPG(self):
+	Partnerbox_onSelectionChanged(self)
+	self["list"].l.invalidate()
+
+
+def GetPartnerboxTimerlist(self, keepTimers=False):
+	if self.partnerboxentry is None:
+		return
+	self.partnerboxRequestId = getattr(self, "partnerboxRequestId", 0) + 1
+	requestId = self.partnerboxRequestId
+	if not keepTimers:
+		partnerboxfunctions.remote_timer_list = []
+		RefreshPartnerboxEPG(self)
+
+	for box in GetPartnerboxEntries(self):
+		if box is None:
+			continue
+		ip = "%d.%d.%d.%d" % tuple(box.ip.value)
+		path = "/web/timerlist" if int(box.enigma.value) == 0 else "/xml/timers"
+		command = "http://%s:%d%s" % (ip, box.port.value, path)
+		request = sendPartnerBoxWebCommand(command, None, 3, "root", box.password.value)
+		request.addCallback(boundFunction(self.GetPartnerboxTimerlistCallback, box, requestId))
+		request.addErrback(boundFunction(self.GetPartnerboxTimerlistCallbackError, box, requestId))
+
+
+def GetPartnerboxTimerlistCallback(self, box, requestId, sxml=None):
+	if requestId != self.partnerboxRequestId or sxml is None:
+		return
 	try:
-		if self.partnerboxentry is not None:
-			ip = "%d.%d.%d.%d" % tuple(self.partnerboxentry.ip.value)
-			port = self.partnerboxentry.port.value
-			http = "http://%s:%d" % (ip, port)
-			if int(self.partnerboxentry.enigma.value) == 0:
-				sCommand = http + "/web/timerlist"
-			else:
-				sCommand = http + "/xml/timers"
-			sendPartnerBoxWebCommand(sCommand, None, 3, "root", self.partnerboxentry.password.value).addCallback(self.GetPartnerboxTimerlistCallback).addErrback(GetPartnerboxTimerlistCallbackError)
-	except:
-		pass
+		curService = None
+		if self.type == EPG_TYPE_SINGLE and self.filterRef:
+			curService = self.currentService.ref.toString()
+		parseTimers = FillE2TimerList if int(box.enigma.value) == 0 else FillE1TimerList
+		timers = parseTimers(sxml, curService)
+		for timer in timers:
+			timer.partnerboxentry = box
+		partnerboxfunctions.remote_timer_list = [
+			timer for timer in partnerboxfunctions.remote_timer_list
+			if getattr(timer, "partnerboxentry", None) is not box
+		]
+		partnerboxfunctions.remote_timer_list.extend(timers)
+		RefreshPartnerboxEPG(self)
+	except Exception as error:
+		print("[Partnerbox] Timerlist from %s: %s" % (box.name.value, error))
 
 
-def GetPartnerboxTimerlistCallback(self, sxml=None):
-	try:
-		if sxml is not None:
-			curService = None
-			if self.type == EPG_TYPE_SINGLE and self.filterRef:
-				curService = self.currentService.ref.toString()
-			if int(self.partnerboxentry.enigma.value) == 0:
-				partnerboxfunctions.remote_timer_list = FillE2TimerList(sxml, curService)
-			else:
-				partnerboxfunctions.remote_timer_list = FillE1TimerList(sxml, curService)
-		if len(partnerboxfunctions.remote_timer_list) != 0:
-			Partnerbox_onSelectionChanged(self)
-			self["list"].l.invalidate()
-		self.setRedbutton()
-	except:
-		pass
-
-
-def GetPartnerboxTimerlistCallbackError(self, error=None):
-	try:
-		if error is not None:
-			print(str(error.getErrorMessage()))
-	except:
-		pass
+def GetPartnerboxTimerlistCallbackError(self, box, requestId, error=None):
+	if requestId == self.partnerboxRequestId and error is not None:
+		print("[Partnerbox] Timerlist from %s: %s" % (box.name.value, error.getErrorMessage()))
 
 
 def CheckRemoteTimer(self):
@@ -357,8 +426,7 @@ def CheckRemoteTimer(self):
 			event = cur[0]
 			serviceref = cur[1]
 			if event is not None:
-				timerentry = isInTimerList(event.getBeginTime(), event.getDuration(), serviceref.ref.toString(), event.getEventId(), partnerboxfunctions.remote_timer_list)
-				if timerentry is not None:
+				if self.GetMatchingPartnerboxTimers(event, serviceref, firstOnly=True):
 					self["key_green"].setText(_("Timer menu"))
 					self.key_green_choice = self.REMOVE_TIMER
 	except:
@@ -366,29 +434,34 @@ def CheckRemoteTimer(self):
 
 
 def DeleteTimerConfirmed(self, timerentry, answer):
+	if not answer:
+		return
 	try:
-		if answer:
-			ip = "%d.%d.%d.%d" % tuple(self.partnerboxentry.ip.value)
-			port = self.partnerboxentry.port.value
-			http = "http://%s:%d" % (ip, port)
-			if int(self.partnerboxentry.enigma.value) == 0:
-				refstr = ':'.join(str(timerentry.servicereference).split(':')[:11])
-				sCommand = http + "/web/timerdelete?sRef=" + refstr + "&begin=" + ("%s" % (timerentry.timebegin)) + "&end=" + ("%s" % (timerentry.timeend))
-			else:
-				sCommand = http + "/deleteTimerEvent?ref=" + timerentry.servicereference + "&start=" + ("%s" % (timerentry.timebegin)) + "&type=" + ("%s" % (timerentry.type)) + "&force=yes"
-			sendPartnerBoxWebCommand(sCommand, None, 3, "root", self.partnerboxentry.password.value).addCallback(self.DeleteTimerCallback).addErrback(DeleteTimerCallbackError)
+		box = timerentry.partnerboxentry
+		ip = "%d.%d.%d.%d" % tuple(box.ip.value)
+		http = "http://%s:%d" % (ip, box.port.value)
+		if int(box.enigma.value) == 0:
+			serviceRef = ':'.join(str(timerentry.servicereference).split(':')[:11])
+			command = "%s/web/timerdelete?sRef=%s&begin=%s&end=%s" % (
+				http, serviceRef, timerentry.timebegin, timerentry.timeend)
+		else:
+			command = "%s/deleteTimerEvent?ref=%s&start=%s&type=%s&force=yes" % (
+				http, timerentry.servicereference, timerentry.timebegin, timerentry.type)
+		request = sendPartnerBoxWebCommand(command, None, 3, "root", box.password.value)
+		request.addCallback(self.DeleteTimerCallback)
+		request.addErrback(self.DeleteTimerCallbackError)
 	except:
 		pass
 
 
 def DeleteTimerCallback(self, callback=None):
 	try:
-		curService = None
-		if self.type == EPG_TYPE_SINGLE and self.filterRef:
-			curService = self.currentService.ref.toString()
-		SetPartnerboxTimerlist(self.partnerboxentry, curService)
-		Partnerbox_onSelectionChanged(self)
-		self["list"].l.invalidate()
+		self.GetPartnerboxTimerlist(keepTimers=True)
+		fallbackTimer = getattr(self, "fallbackTimer", None)
+		if fallbackTimer and fallbackTimer.url:
+			from Tools.FallbackTimer import FallbackTimerList
+			# Refresh the separate fallback cache without changing its screen callbacks.
+			FallbackTimerList(self, boundFunction(RefreshPartnerboxEPG, self))
 	except:
 		pass
 

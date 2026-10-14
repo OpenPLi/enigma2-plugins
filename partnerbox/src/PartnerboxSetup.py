@@ -27,7 +27,7 @@ from Components.config import config
 from Components.ActionMap import ActionMap, NumberActionMap, HelpableActionMap
 from Screens.HelpMenu import HelpableScreen
 from Components.ConfigList import ConfigList, ConfigListScreen
-from Components.config import ConfigSubsection, ConfigSubList, ConfigIP, ConfigInteger, ConfigSelection, ConfigText, ConfigYesNo, getConfigListEntry, configfile
+from Components.config import ConfigSubsection, ConfigSubList, ConfigIP, ConfigInteger, ConfigSelection, ConfigText, ConfigYesNo, configfile
 from .PartnerboxFunctions import sendPartnerBoxWebCommand
 import skin
 import os
@@ -114,26 +114,27 @@ class PartnerboxSetup(ConfigListScreen, Screen):
 	def initConfig(self):
 		dx = 4 * " "
 		self.list = []
-		self.list.append(getConfigListEntry(_("Show 'RemoteTimer' in Eventinfo menu"), config.plugins.Partnerbox.enablepartnerboxeventinfomenu))
+		self.list.append((_("Show 'RemoteTimer' in Eventinfo menu"), config.plugins.Partnerbox.enablepartnerboxeventinfomenu))
 		if config.plugins.Partnerbox.enablepartnerboxeventinfomenu.value:
-			self.list.append(getConfigListEntry(dx + _("Show 'RemoteTimer' in Event View context menu"), config.plugins.Partnerbox.enablepartnerboxeventinfocontextmenu))
-		self.list.append(getConfigListEntry(_("Show 'RemoteTimer' in E-Menu"), config.plugins.Partnerbox.showremotetimerinextensionsmenu))
-		self.list.append(getConfigListEntry(_("Show 'RemoteTV Player' in E-Menu"), config.plugins.Partnerbox.showremotetvinextensionsmenu))
-		self.list.append(getConfigListEntry(_("Show 'Stream current Service' in E-Menu"), config.plugins.Partnerbox.showcurrentstreaminextensionsmenu))
-		self.list.append(getConfigListEntry(_("Enable Partnerbox-Function in TimerEvent"), config.plugins.Partnerbox.enablepartnerboxintimerevent))
+			self.list.append((dx + _("Show 'RemoteTimer' in Event View context menu"), config.plugins.Partnerbox.enablepartnerboxeventinfocontextmenu))
+		self.list.append((_("Show 'RemoteTimer' in E-Menu"), config.plugins.Partnerbox.showremotetimerinextensionsmenu))
+		self.list.append((_("Show 'RemoteTV Player' in E-Menu"), config.plugins.Partnerbox.showremotetvinextensionsmenu))
+		self.list.append((_("Show 'Stream current Service' in E-Menu"), config.plugins.Partnerbox.showcurrentstreaminextensionsmenu))
+		self.list.append((_("Enable Partnerbox-Function in TimerEvent"), config.plugins.Partnerbox.enablepartnerboxintimerevent))
 		if config.plugins.Partnerbox.enablepartnerboxintimerevent.value:
-			self.list.append(getConfigListEntry(dx + _("Active boxes from local network only (using localhost names)"), config.plugins.Partnerbox.avahicompare))
-			self.list.append(getConfigListEntry(dx + _("Enable first Partnerbox-entry in Timeredit as default"), config.plugins.Partnerbox.enabledefaultpartnerboxintimeredit))
-			self.list.append(getConfigListEntry(dx + _("Enable VPS-Function in TimerEvent"), config.plugins.Partnerbox.enablevpsintimerevent))
-		self.list.append(getConfigListEntry(_("Enable Partnerbox-Function in EPGList"), config.plugins.Partnerbox.enablepartnerboxepglist))
+			self.list.append((dx + _("Active boxes from local network only (using localhost names)"), config.plugins.Partnerbox.avahicompare))
+			self.list.append((dx + _("Enable first Partnerbox-entry in Timeredit as default"), config.plugins.Partnerbox.enabledefaultpartnerboxintimeredit))
+			self.list.append((dx + _("Enable VPS-Function in TimerEvent"), config.plugins.Partnerbox.enablevpsintimerevent))
+		self.list.append((_("Enable Partnerbox-Function in EPGList"), config.plugins.Partnerbox.enablepartnerboxepglist))
 		if config.plugins.Partnerbox.enablepartnerboxepglist.value:
-			self.list.append(getConfigListEntry(dx + _("Enable Red Button-Function in single/multi EPG"), config.plugins.Partnerbox.enablepartnerboxzapbuton))
-			self.list.append(getConfigListEntry(dx + _("Show duration time for event"), config.plugins.Partnerbox.showremaingepglist))
-			self.list.append(getConfigListEntry(dx + _("Show all icon for event in EPGList"), config.plugins.Partnerbox.allicontype))
-		self.list.append(getConfigListEntry(_("Enable Partnerbox-Function in Channel Selector"), config.plugins.Partnerbox.enablepartnerboxchannelselector))
+			self.list.append((dx + _("Enable Red Button-Function in single/multi EPG"), config.plugins.Partnerbox.enablepartnerboxzapbuton))
+			self.list.append((dx + _("Show duration time for event"), config.plugins.Partnerbox.showremaingepglist))
+			self.list.append((dx + _("Show all icon for event in EPGList"), config.plugins.Partnerbox.allicontype))
+			self.list.append((dx + _("Show timers from all Partnerboxes in EPG"), config.plugins.Partnerbox.allboxes))
+		self.list.append((_("Enable Partnerbox-Function in Channel Selector"), config.plugins.Partnerbox.enablepartnerboxchannelselector))
 		if autoTimerAvailable:
-			self.list.append(getConfigListEntry(_("Enable Partnerbox-AutoTimer function"), config.plugins.Partnerbox.showpartnerboxautotimerninmenu))
-			self.list.append(getConfigListEntry(_("Enable Partnerbox-AutoTimer in E-Menu"), config.plugins.Partnerbox.showpartnerboxautotimerninextensionsmenu))
+			self.list.append((_("Enable Partnerbox-AutoTimer function"), config.plugins.Partnerbox.showpartnerboxautotimerninmenu))
+			self.list.append((_("Enable Partnerbox-AutoTimer in E-Menu"), config.plugins.Partnerbox.showpartnerboxautotimerninextensionsmenu))
 		self["config"].list = self.list
 
 	def keySave(self):
@@ -153,6 +154,7 @@ class PartnerboxSetup(ConfigListScreen, Screen):
 		config.plugins.Partnerbox.showpartnerboxautotimerninmenu.save()
 		config.plugins.Partnerbox.showpartnerboxautotimerninextensionsmenu.save()
 		config.plugins.Partnerbox.avahicompare.save()
+		config.plugins.Partnerbox.allboxes.save()
 		configfile.save()
 		self.refreshPlugins()
 		self.close(self.session)
@@ -608,19 +610,19 @@ class PartnerboxEntryConfigScreen(ConfigListScreen, Screen):
 
 	def initConfig(self):
 		list = [
-			getConfigListEntry(_("Name"), self.current.name),
-			getConfigListEntry(_("IP"), self.current.ip),
-			getConfigListEntry(_("Port"), self.current.port),
-			getConfigListEntry(_("Service type"), self.current.type),
-			getConfigListEntry(_("Password"), self.current.password),
-			getConfigListEntry(_("Servicelists/EPG"), self.current.useinternal),
-			getConfigListEntry(_("Zap to service when streaming"), self.current.zaptoservicewhenstreaming)
+			(_("Name"), self.current.name),
+			(_("IP"), self.current.ip),
+			(_("Port"), self.current.port),
+			(_("Service type"), self.current.type),
+			(_("Password"), self.current.password),
+			(_("Servicelists/EPG"), self.current.useinternal),
+			(_("Zap to service when streaming"), self.current.zaptoservicewhenstreaming)
 		]
 		self["key_yellow"].setText(" ")
-		self.mac = getConfigListEntry(_("MAC"), self.current.mac)
+		self.mac = (_("MAC"), self.current.mac)
 		self.useWOL = _("Use Wake-on-LAN")
 		if self.current.enigma.value == "0":
-			list.append(getConfigListEntry(self.useWOL, self.current.usewakeonlan))
+			list.append((self.useWOL, self.current.usewakeonlan))
 			if self.current.usewakeonlan.value:
 				list.append(self.mac)
 				self["key_yellow"].setText(_("Get MAC"))

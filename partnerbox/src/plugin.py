@@ -65,7 +65,7 @@ from .Services import Services, E2EPGListAllData, E2ServiceList
 from Screens.ChannelSelection import service_types_tv
 
 from Components.ConfigList import ConfigList, ConfigListScreen
-from Components.config import ConfigSubsection, ConfigSubList, ConfigIP, ConfigInteger, ConfigSelection, ConfigText, ConfigYesNo, getConfigListEntry, configfile
+from Components.config import ConfigSubsection, ConfigSubList, ConfigIP, ConfigInteger, ConfigSelection, ConfigText, ConfigYesNo, configfile
 
 from Components.GUIComponent import GUIComponent
 import skin
@@ -92,6 +92,7 @@ config.plugins.Partnerbox.enablevpsintimerevent = ConfigYesNo(default=False)
 config.plugins.Partnerbox.showpartnerboxautotimerninmenu = ConfigYesNo(default=True)
 config.plugins.Partnerbox.showpartnerboxautotimerninextensionsmenu = ConfigYesNo(default=False)
 config.plugins.Partnerbox.avahicompare = ConfigYesNo(default=False)
+config.plugins.Partnerbox.allboxes = ConfigYesNo(default=False)
 initConfig()
 
 

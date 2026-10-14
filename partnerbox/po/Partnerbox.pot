@@ -430,6 +430,9 @@ msgstr ""
 msgid "Select operation for partnerbox"
 msgstr ""
 
+msgid "Select Partnerbox:"
+msgstr ""
+
 msgid "Send Wake-on-LAN"
 msgstr ""
 
@@ -465,6 +468,9 @@ msgid "Show all icon for event in EPGList"
 msgstr ""
 
 msgid "Show duration time for event"
+msgstr ""
+
+msgid "Show timers from all Partnerboxes in EPG"
 msgstr ""
 
 msgid "Shutdown"

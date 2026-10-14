@@ -22,7 +22,7 @@ from . import _
 from Screens.Screen import Screen
 import Screens.ChannelSelection
 from ServiceReference import ServiceReference
-from Components.config import config, ConfigSelection, ConfigText, ConfigSubList, ConfigDateTime, ConfigClock, ConfigYesNo, getConfigListEntry
+from Components.config import config, ConfigSelection, ConfigText, ConfigSubList, ConfigDateTime, ConfigClock, ConfigYesNo
 from Components.ActionMap import NumberActionMap
 from Components.ConfigList import ConfigListScreen
 from Components.MenuList import MenuList
@@ -185,32 +185,32 @@ class RemoteTimerEntry(Screen, ConfigListScreen):
 	def createSetup(self, widget):
 		self.list = []
 		if self.timer.type == 0:
-			self.list.append(getConfigListEntry(_("Name"), self.timerentry_name))
-		self.list.append(getConfigListEntry(_("Description"), self.timerentry_description))
-		self.timerJustplayEntry = getConfigListEntry(_("Timer Type"), self.timerentry_justplay)
+			self.list.append((_("Name"), self.timerentry_name))
+		self.list.append((_("Description"), self.timerentry_description))
+		self.timerJustplayEntry = (_("Timer Type"), self.timerentry_justplay)
 		self.list.append(self.timerJustplayEntry)
-		self.entryDate = getConfigListEntry(_("Date"), self.timerentry_date)
+		self.entryDate = (_("Date"), self.timerentry_date)
 		self.list.append(self.entryDate)
-		self.entryStartTime = getConfigListEntry(_("StartTime"), self.timerentry_starttime)
+		self.entryStartTime = (_("StartTime"), self.timerentry_starttime)
 		self.list.append(self.entryStartTime)
 		if self.timer.type == 0:
 			if int(self.timerentry_justplay.value) != 1:
-				self.entryEndTime = getConfigListEntry(_("EndTime"), self.timerentry_endtime)
+				self.entryEndTime = (_("EndTime"), self.timerentry_endtime)
 				self.list.append(self.entryEndTime)
 			else:
 				self.entryEndTime = None
 		else:
-			self.entryEndTime = getConfigListEntry(_("EndTime"), self.timerentry_endtime)
+			self.entryEndTime = (_("EndTime"), self.timerentry_endtime)
 			self.list.append(self.entryEndTime)
-		self.channelEntry = getConfigListEntry(_("Channel"), self.timerentry_service)
+		self.channelEntry = (_("Channel"), self.timerentry_service)
 		self.list.append(self.channelEntry)
 		if self.timer.type == 0:
-			self.dirname = getConfigListEntry(_("Location"), self.timerentry_dirname)
+			self.dirname = (_("Location"), self.timerentry_dirname)
 			if int(self.timerentry_justplay.value) != 1:
 				self.list.append(self.dirname)
-				self.list.append(getConfigListEntry(_("After event"), self.timerentry_afterevent))
+				self.list.append((_("After event"), self.timerentry_afterevent))
 		else:
-			self.list.append(getConfigListEntry(_("After event"), self.timerentry_afterevent))
+			self.list.append((_("After event"), self.timerentry_afterevent))
 		self[widget].list = self.list
 		self[widget].l.setList(self.list)
 
@@ -402,7 +402,7 @@ def getLocationsCallback(self, xmlstring, check=False):
 def createRemoteTimerSetup(self, widget):
 	baseTimerEntrySetup(self, widget)
 	self.display = _("Remote Timer")
-	self.timerRemoteEntry = getConfigListEntry(self.display, self.timerentry_remote)
+	self.timerRemoteEntry = (self.display, self.timerentry_remote)
 	self.list.insert(0, self.timerRemoteEntry)
 	self[widget].list = self.list
 
@@ -539,41 +539,41 @@ def RemoteTimercreateConfig(self):
 
 def RemoteTimerCreateSetup(self, widget):
 	self.list = []
-	self.timerRemoteEntry = getConfigListEntry(self.display, self.timerentry_remote)
+	self.timerRemoteEntry = (self.display, self.timerentry_remote)
 	self.list.append(self.timerRemoteEntry)
 	if int(self.entryguilist[int(self.timerentry_remote.value)][2].enigma.value) == 0:
-		self.list.append(getConfigListEntry(_("Name"), self.timerentry_name))
-	self.list.append(getConfigListEntry(_("Description"), self.timerentry_description))
-	self.timerJustplayEntry = getConfigListEntry(_("Timer Type"), self.timerentry_justplay)
+		self.list.append((_("Name"), self.timerentry_name))
+	self.list.append((_("Description"), self.timerentry_description))
+	self.timerJustplayEntry = (_("Timer Type"), self.timerentry_justplay)
 	self.list.append(self.timerJustplayEntry)
-	self.entryDate = getConfigListEntry(_("Date"), self.timerentry_date)
+	self.entryDate = (_("Date"), self.timerentry_date)
 	self.list.append(self.entryDate)
-	self.entryStartTime = getConfigListEntry(_("StartTime"), self.timerentry_starttime)
+	self.entryStartTime = (_("StartTime"), self.timerentry_starttime)
 	self.list.append(self.entryStartTime)
 	if int(self.entryguilist[int(self.timerentry_remote.value)][2].enigma.value) == 0:
 		if self.timerentry_justplay.value != "zap":
-			self.entryEndTime = getConfigListEntry(_("EndTime"), self.timerentry_endtime)
+			self.entryEndTime = (_("EndTime"), self.timerentry_endtime)
 			self.list.append(self.entryEndTime)
 		else:
 			self.entryEndTime = None
 	else:
-		self.entryEndTime = getConfigListEntry(_("EndTime"), self.timerentry_endtime)
+		self.entryEndTime = (_("EndTime"), self.timerentry_endtime)
 		self.list.append(self.entryEndTime)
-	self.channelEntry = getConfigListEntry(_("Channel"), self.timerentry_service)
+	self.channelEntry = (_("Channel"), self.timerentry_service)
 	self.list.append(self.channelEntry)
 	if int(self.entryguilist[int(self.timerentry_remote.value)][2].enigma.value) == 0:
-		self.dirname = getConfigListEntry(_("Location"), self.timerentry_dirname)
+		self.dirname = (_("Location"), self.timerentry_dirname)
 		if self.timerentry_justplay.value != "zap":
 			self.list.append(self.dirname)
-			self.list.append(getConfigListEntry(_("After event"), self.timerentry_afterevent))
+			self.list.append((_("After event"), self.timerentry_afterevent))
 	else:
-		self.list.append(getConfigListEntry(_("After event"), self.timerentry_afterevent))
+		self.list.append((_("After event"), self.timerentry_afterevent))
 	if config.plugins.Partnerbox.enablevpsintimerevent.value:
 		if isVPSplugin():
 			cfg = self.timerentry_vpsplugin_enabled
 		else:
 			cfg = self.timerentry_vps_in_timerevent
-		self.list.append(getConfigListEntry(_("Enable VPS"), cfg))
+		self.list.append((_("Enable VPS"), cfg))
 	self[widget].list = self.list
 	self[widget].l.setList(self.list)
 
