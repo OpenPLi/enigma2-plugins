@@ -1,18 +1,20 @@
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Podcast plugin Turkish locale\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-05-11 10:58+0200\n"
-"PO-Revision-Date: 2009-06-06 23:53+0200\n"
-"Last-Translator: Zülfikar VEYİSOĞLU <z.veyisoglu@hobiagaci.com>\n"
-"Language-Team: http://hobiagaci.com <z.veyisoglu@hobiagaci.com>\n"
-"Language: \n"
+"PO-Revision-Date: 2026-10-16 09:00+0300\n"
+"Last-Translator: audi06_19 <info@dreamosat-forum.com>\n"
+"Language-Team: Turkish\n"
+"Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Language: German\n"
-"X-Poedit-Country: GERMANY\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-Basepath: .\n"
+"X-Poedit-Country: GERMANY\n"
+"X-Poedit-Language: German\n"
 "X-Poedit-SearchPath-0: /home/aliabdul/dream/ali/enigma2/ali-image/usr/lib/enigma2/python/Plugins/Extensions/Podcast\n"
 
 msgid " (Audio)"
@@ -22,44 +24,44 @@ msgid " (Video)"
 msgstr " (Video)"
 
 msgid "Buffer device:"
-msgstr "Tampon aygıtı:"
+msgstr "Arabellek cihazı:"
 
 msgid "Buffer file handling:"
-msgstr "Tampon dosyası işleme:"
+msgstr "Arabellek dosyasına uygulanacak işlem:"
 
 msgid "Buffer:"
-msgstr "Tampon:"
+msgstr "Arabellek:"
 
 msgid "Delete this movie?"
-msgstr "Bu film silmek istiyor musunuz?"
+msgstr "Bu film silinsin mi?"
 
 #, python-format
 msgid "Downloading movie: %s"
-msgstr "%s filmi indiriliyor!"
+msgstr "Film indiriliyor: %s"
 
 msgid "Error getting categories"
-msgstr "Kategoriler getirilirken hata oluştu"
+msgstr "Kategoriler alınamadı"
 
 msgid "Error getting episodes"
-msgstr "Bölümler getirilirken hata oluştu"
+msgstr "Bölümler alınamadı"
 
 msgid "Error getting genres"
-msgstr "Türler getirilirken hata oluştu"
+msgstr "Türler alınamadı"
 
 msgid "Error getting movies"
-msgstr "Filmler getirilirken hata oluştu"
+msgstr "Filmler alınamadı"
 
 msgid "Error getting podcast url"
-msgstr "Podcast adresi getirilirken hata oluştu"
+msgstr "Podcast adresi alınamadı"
 
 msgid "Error getting podcasts"
-msgstr "Podcastler getirilirken hata oluştu"
+msgstr "Podcast'ler alınamadı"
 
 msgid "Error getting rss feed"
-msgstr "RSS beslemesi getirilirken hata oluştu"
+msgstr "RSS akışı alınamadı"
 
 msgid "Length"
-msgstr "Boyut"
+msgstr "Süre"
 
 msgid "Podcast"
 msgstr "Podcast"
@@ -70,15 +72,14 @@ msgstr "Kaydet"
 msgid "Select"
 msgstr "Seç"
 
-#, fuzzy
 msgid "Stop playing this movie?"
-msgstr "Bu film silmek istiyor musunuz?"
+msgstr "Bu filmin oynatılması durdurulsun mu?"
 
 msgid "Type"
-msgstr "Tip"
+msgstr "Tür"
 
 msgid "ask me"
-msgstr "sor"
+msgstr "bana sor"
 
 msgid "configuration"
 msgstr "ayarlar"
@@ -87,10 +88,10 @@ msgid "delete"
 msgstr "sil"
 
 msgid "from xml"
-msgstr "xml'den al"
+msgstr "XML'den"
 
 msgid "keep on device"
-msgstr "cihazda tut"
+msgstr "cihazda sakla"
 
 msgid "podcast.com"
 msgstr "podcast.com"

@@ -6,326 +6,369 @@ msgstr ""
 "Project-Id-Version: enigma2 AutoTimer Plugin Turkish Locale\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-12-08 14:24+0100\n"
-"PO-Revision-Date: 2012-02-17 15:38+0100\n"
-"Last-Translator: \n"
-"Language-Team: http://hobiagaci.com <z.veyisoglu@hobiagaci.com>\n"
-"Language: \n"
+"PO-Revision-Date: 2026-10-16 09:00+0300\n"
+"Last-Translator: audi06_19 <info@dreamosat-forum.com>\n"
+"Language-Team: Turkish\n"
+"Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Language: Turkish\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-Country: TURKEY\n"
+"X-Poedit-Language: Turkish\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-#, fuzzy
 msgid ""
 "\n"
 "\n"
 "Cancel?"
-msgstr "Vazgeç"
+msgstr ""
+"\n"
+"\n"
+"İptal edilsin mi?"
 
 msgid ""
 "\n"
 "With 'Info' can be edited existing text from \"Description\" and inserted to \"Match title\"."
 msgstr ""
+"\n"
+"'INFO' tuşuyla \"Açıklama\" metni düzenlenip \"Eşleştirilecek başlık\" alanına eklenebilir."
 
 msgid ""
 "\n"
 "With 'Info' can be edited existing text from \"Match title\" and inserted to \"Description\"."
 msgstr ""
+"\n"
+"'INFO' tuşuyla \"Eşleştirilecek başlık\" metni düzenlenip \"Açıklama\" alanına eklenebilir."
 
 msgid " (Short and Extended)"
-msgstr ""
+msgstr " (kısa ve ayrıntılı)"
 
 msgid " (only services from bouquets when use \"favorites description match\")."
 msgstr ""
+" (\"favori açıklaması eşleştirmesi\" kullanılırken yalnızca buketlerdeki "
+"kanallar)."
 
-#, fuzzy
 msgid " - AutoTimer "
-msgstr "Otomatik zamanlayıcı ekle"
+msgstr " - AutoTimer "
 
 msgid " - Version: "
-msgstr ""
+msgstr " - Sürüm: "
 
 msgid " 0 - timers will not be added."
-msgstr ""
+msgstr " 0 - zamanlayıcı eklenmez."
 
-msgid " == attention: global option 'Save/check filterlist is still active!! =="
+msgid ""
+" == attention: global option 'Save/check filterlist is still active!! =="
 msgstr ""
+" == Dikkat: Genel 'Filtre listesini kaydet/denetle' seçeneği hâlâ etkin!! =="
 
-#, fuzzy
 msgid " add AutoTimer"
-msgstr "Otomatik zamanlayıcı ekle"
+msgstr " AutoTimer ekle"
 
 #, python-format
 msgid ""
 "%d conflict(s) encountered when trying to add new timers:\n"
 "%s"
 msgstr ""
+"Yeni zamanlayıcılar eklenirken %d çakışma oluştu:\n"
+"%s"
 
 #, python-format
 msgid ""
 "%d conflict(s) solved with similar timer(s):\n"
 "%s"
 msgstr ""
+"%d çakışma benzer zamanlayıcılarla çözüldü:\n"
+"%s"
 
 msgid "%d.%B %Y"
-msgstr ""
+msgstr "%d.%B %Y"
 
 #, python-format
 msgid "%s: %s at %s"
-msgstr ""
+msgstr "%s: %s, saat %s"
 
 msgid "/etc/enigma2"
-msgstr ""
+msgstr "/etc/enigma2"
 
 msgid "/tmp"
-msgstr ""
+msgstr "/tmp"
 
-msgid "A new and empty config was created. A backup of the config can be found here (/etc/enigma2/autotimer.xml_old)."
+msgid ""
+"A new and empty config was created. A backup of the config can be found here"
+" (/etc/enigma2/autotimer.xml_old)."
 msgstr ""
+"Yeni, boş bir yapılandırma oluşturuldu. Önceki yapılandırmanın yedeği "
+"/etc/enigma2/autotimer.xml_old dosyasındadır."
 
 msgid "Activate VPS"
-msgstr ""
+msgstr "VPS'yi etkinleştir"
 
 msgid "Add"
 msgstr "Ekle"
 
 msgid "Add \"Choice list AutoTimer\" menu button to multi-EPG"
-msgstr ""
+msgstr "Çoklu EPG'ye \"AutoTimer seçenek listesi\" menü düğmesi ekle"
 
 msgid "Add \"Choice list AutoTimer\" menu button to single-EPG"
-msgstr ""
+msgstr "Tekli EPG'ye \"AutoTimer seçenek listesi\" menü düğmesi ekle"
 
-#, fuzzy
 msgid "Add AutoTimer"
-msgstr "Otomatik zamanlayıcı ekle"
+msgstr "AutoTimer ekle"
 
 msgid "Add new AutoTimer"
-msgstr "Yeni otomatik zamanlayıcı ekle"
+msgstr "Yeni AutoTimer ekle"
 
-#, fuzzy
 msgid "Add services"
-msgstr "Kanal Ekle"
+msgstr "Kanal ekle"
 
 msgid "Add similar timer on conflict"
-msgstr ""
+msgstr "Çakışmada benzer zamanlayıcı ekle"
 
 msgid "Add timer as disabled on conflict"
-msgstr "Çakışmalarda, zamanlayıcıyı 'devre dışı' ekle"
+msgstr "Çakışmada zamanlayıcıyı devre dışı olarak ekle"
 
 msgid "Advanced"
-msgstr ""
+msgstr "Gelişmiş"
 
 msgid "Advanced (2000 events)"
-msgstr ""
+msgstr "Gelişmiş (2000 program)"
 
 msgid "After event"
-msgstr "Eylem bittikten sonra"
+msgstr "Programdan sonra"
 
-#, fuzzy
 msgid "All channels"
-msgstr "Kanalda"
+msgstr "Tüm kanallar"
 
 msgid "All non-repeating timers"
 msgstr "Tekrarlanmayan tüm zamanlayıcılar"
 
 msgid "Allow double timer for different services"
-msgstr ""
+msgstr "Farklı kanallarda çift zamanlayıcıya izin ver"
 
 msgid "Always write config"
-msgstr ""
+msgstr "Yapılandırmayı her zaman kaydet"
 
 msgid "Amount of recordings left"
-msgstr ""
+msgstr "Kalan kayıt sayısı"
 
-msgid "Any Day filter refers to the day of the timespan start, even if the timespan crosses midnight."
+msgid ""
+"Any Day filter refers to the day of the timespan start, even if the timespan"
+" crosses midnight."
 msgstr ""
+"Gün filtreleri, zaman aralığı gece yarısını aşsa bile başlangıç gününe göre "
+"uygulanır."
 
 msgid "Any service/recording"
-msgstr ""
+msgstr "Herhangi bir kanal/kayıt"
 
 msgid "Any time"
-msgstr ""
+msgstr "Herhangi bir zaman"
 
-msgid "Attention! We recommend that you ignore case when searching in Cyrillic if the search name contains uppercase and lowercase letters."
+msgid ""
+"Attention! We recommend that you ignore case when searching in Cyrillic if "
+"the search name contains uppercase and lowercase letters."
 msgstr ""
+"Dikkat! Kiril alfabesiyle arama yaparken aranan ad büyük ve küçük harfler "
+"içeriyorsa harf büyüklüğünü yok saymanız önerilir."
 
-#, fuzzy
 msgid "AutoTimer"
-msgstr "Otomatik zamanlayıcı ekle"
+msgstr "AutoTimer"
 
 #, python-format
 msgid ""
 "AutoTimer\n"
 "%d timer(s) were added."
 msgstr ""
+"AutoTimer\n"
+"%d zamanlayıcı eklendi."
 
-#, fuzzy
 msgid "AutoTimer "
-msgstr "Otomatik zamanlayıcı ekle"
+msgstr "AutoTimer "
 
-#, fuzzy, python-format
+#, python-format
 msgid "AutoTimer %s FilterListEntry"
-msgstr "Otomatik zamanlayıcı filtreleri"
+msgstr "AutoTimer %s filtre listesi girdisi"
 
-#, fuzzy
 msgid "AutoTimer Context Menu"
-msgstr "İçerik Menüsünü Aç"
+msgstr "AutoTimer bağlam menüsü"
 
 msgid "AutoTimer Editor"
-msgstr "Otomatik zamanlayıcı editörü"
+msgstr "AutoTimer düzenleyicisi"
 
 msgid "AutoTimer Filters"
-msgstr "Otomatik zamanlayıcı filtreleri"
+msgstr "AutoTimer filtreleri"
 
 msgid "AutoTimer Services"
-msgstr "Otomatik zamanlayıcı kanalları"
+msgstr "AutoTimer kanalları"
 
 msgid "AutoTimer Settings"
-msgstr "Otomatik zamanlayıcı ayarları"
+msgstr "AutoTimer ayarları"
 
-#, fuzzy, python-format
+#, python-format
 msgid "AutoTimer failed with error %s"
-msgstr "Otomatik zamanlayıcı filtreleri"
+msgstr "AutoTimer şu hatayla başarısız oldu: %s"
 
 msgid "AutoTimer overview"
-msgstr "Otomatik zamanlayıcı incele"
+msgstr "AutoTimer genel görünümü"
 
-#, fuzzy
 msgid "AutoTimer scan"
-msgstr "Otomatik zamanlayıcı filtreleri"
+msgstr "AutoTimer taraması"
 
 msgid "AutoTimer was added successfully"
-msgstr ""
+msgstr "AutoTimer başarıyla eklendi"
 
 msgid "AutoTimer was changed successfully"
-msgstr ""
+msgstr "AutoTimer başarıyla değiştirildi"
 
 msgid "AutoTimer was removed"
-msgstr ""
+msgstr "AutoTimer kaldırıldı"
 
 msgid "AutoTimers were changed successfully"
-msgstr ""
+msgstr "AutoTimer kuralları başarıyla değiştirildi"
 
 msgid "Begin of \"after event\" timespan"
-msgstr "Zaman aralığı başlangıcı"
+msgstr "\"Programdan sonra\" zaman aralığının başlangıcı"
 
 msgid "Begin of timespan"
-msgstr "Zaman aralığı başlangıcı"
+msgstr "Zaman aralığının başlangıcı"
 
 msgid "Bouquets"
-msgstr "Bukette"
+msgstr "Buketler"
 
-msgid "By enabling this events will not be matched if they don't occur on certain dates."
+msgid ""
+"By enabling this events will not be matched if they don't occur on certain "
+"dates."
 msgstr ""
+"Etkinleştirildiğinde yalnızca belirtilen tarihlerdeki programlar "
+"eşleştirilir."
 
-msgid "By enabling this you will be notified about similar timers added during automated polling. There is no intelligence involved, so it might bother you about the same conflict over and over."
+msgid ""
+"By enabling this you will be notified about similar timers added during "
+"automated polling. There is no intelligence involved, so it might bother you"
+" about the same conflict over and over."
 msgstr ""
+"Etkinleştirildiğinde otomatik denetim sırasında eklenen benzer "
+"zamanlayıcılar bildirilir. Tekrarlanan çakışmalar ayırt edilmediğinden aynı "
+"çakışma için tekrar tekrar bildirim alabilirsiniz."
 
-msgid "By enabling this you will be notified about timer conflicts found during automated polling. There is no intelligence involved, so it might bother you about the same conflict over and over."
+msgid ""
+"By enabling this you will be notified about timer conflicts found during "
+"automated polling. There is no intelligence involved, so it might bother you"
+" about the same conflict over and over."
 msgstr ""
+"Etkinleştirildiğinde otomatik denetim sırasında bulunan zamanlayıcı "
+"çakışmaları bildirilir. Tekrarlanan çakışmalar ayırt edilmediğinden aynı "
+"çakışma için tekrar tekrar bildirim alabilirsiniz."
 
-msgid "By enabling this you will be notified about timer(s) added during automated polling. Just not in standby mode."
+msgid ""
+"By enabling this you will be notified about timer(s) added during automated "
+"polling. Just not in standby mode."
 msgstr ""
+"Etkinleştirildiğinde otomatik denetim sırasında eklenen zamanlayıcılar "
+"bildirilir. Bekleme modunda bildirim gösterilmez."
 
 msgid "Cancel"
-msgstr "Vazgeç"
+msgstr "İptal"
 
 msgid "Change default recording offset?"
-msgstr ""
+msgstr "Varsayılan kayıt ek süreleri değiştirilsin mi?"
 
 msgid "Channel Selection"
-msgstr "Kanal Seçimi"
+msgstr "Kanal seçimi"
 
 msgid "Channels"
-msgstr "Kanalda"
+msgstr "Kanallar"
 
 msgid "Check for uniqueness in"
-msgstr ""
+msgstr "Yinelenenleri denetleme alanı"
 
-msgid "Check the event id (eit) and remove the timer if there is no corresponding EPG event. Due to compatibility issues with SerienRecorder and IPRec, only timer created by AutoTimer are affected."
+msgid ""
+"Check the event id (eit) and remove the timer if there is no corresponding "
+"EPG event. Due to compatibility issues with SerienRecorder and IPRec, only "
+"timer created by AutoTimer are affected."
 msgstr ""
+"Program kimliğini (EIT) denetler ve karşılık gelen EPG programı yoksa "
+"zamanlayıcıyı kaldırır. SerienRecorder ve IPRec ile uyumluluk nedeniyle "
+"yalnızca AutoTimer'ın oluşturduğu zamanlayıcılara uygulanır."
 
-#, fuzzy
 msgid "Choice list AutoTimer"
-msgstr "Otomatik zamanlayıcı düzenle"
+msgstr "AutoTimer seçenek listesi"
 
 msgid "Choose target folder"
-msgstr "Hedef klasör seç"
+msgstr "Hedef klasörü seçin"
 
 msgid "Classic"
 msgstr "Klasik"
 
 msgid "Clear memory before auto run"
-msgstr ""
+msgstr "Otomatik çalıştırmadan önce belleği temizle"
 
-#, fuzzy
 msgid "Clone selected timer"
-msgstr "Seçilen otomatik zamanlayıcıyı kaldır"
+msgstr "Seçili zamanlayıcıyı kopyala"
 
 msgid "Close"
-msgstr ""
+msgstr "Kapat"
 
 msgid "Close and forget changes"
-msgstr "Değişiklikleri kaydetmeden kapat"
+msgstr "Değişiklikleri iptal et ve kapat"
 
-#, fuzzy
 msgid "Close and save"
-msgstr "Değişiklikleri kaydet ve kapat"
+msgstr "Kaydet ve kapat"
 
-#, fuzzy
 msgid "Close without saving"
-msgstr "Ayarlarınızı kaydetmeden çıkmak istediğinizden emin misiniz?"
+msgstr "Kaydetmeden kapat"
 
-#, fuzzy
 msgid "Close, save changes and search now"
-msgstr "Değişiklikleri kaydet ve kapat"
+msgstr "Değişiklikleri kaydet, kapat ve şimdi ara"
 
 msgid "Configure AutoTimer behavior"
-msgstr "Otomatik zamanlayıcı davranışını düzenle"
+msgstr "AutoTimer davranışını ayarla"
 
 msgid "Control recording completely by service"
-msgstr ""
+msgstr "Kaydı tamamen kanalın denetimine bırak"
 
 msgid "Couldn't load config file!"
-msgstr ""
+msgstr "Yapılandırma dosyası yüklenemedi!"
 
-#, fuzzy
 msgid "Create AutoTimer"
-msgstr "Sırala"
+msgstr "AutoTimer oluştur"
 
 msgid "Create a new timer using the classic editor"
-msgstr "Klasik editörü kullanarak zamanlayıcı oluştur"
+msgstr "Klasik düzenleyiciyle yeni zamanlayıcı oluştur"
 
 msgid "Create a new timer using the wizard"
-msgstr "Sihirbazı kullanarak zamanlayıcı oluştur"
+msgstr "Sihirbazla yeni zamanlayıcı oluştur"
 
 msgid "Create debug log file"
-msgstr ""
+msgstr "Hata ayıklama günlüğü oluştur"
 
 msgid "Create searchlog file"
-msgstr ""
+msgstr "Arama günlüğü oluştur"
 
 #, python-format
 msgid "Custom (%s)"
 msgstr "Özel (%s)"
 
 msgid "Custom location"
-msgstr "Özel kayıt konumu"
+msgstr "Özel konum"
 
 msgid "Custom offset"
-msgstr "Özel marj süresi"
+msgstr "Özel ek süre"
 
 msgid "Date"
-msgstr ""
+msgstr "Tarih"
 
-msgid "Defines where to search for duplicates (only title, short description or even extended description)"
+msgid ""
+"Defines where to search for duplicates (only title, short description or "
+"even extended description)"
 msgstr ""
+"Yinelenen kayıtların hangi alanlarda aranacağını belirler: yalnızca başlık, "
+"kısa açıklama veya ayrıntılı açıklama."
 
-#, fuzzy
 msgid "Delay after editing (in sec)"
-msgstr "Kayıt sonrası marj süresi (dk.)"
+msgstr "Düzenlemeden sonraki gecikme (sn)"
 
 msgid "Delete"
 msgstr "Sil"
@@ -334,106 +377,115 @@ msgid "Description"
 msgstr "Açıklama"
 
 msgid "Description - short equal extended for match"
-msgstr ""
+msgstr "Kısa ve ayrıntılı açıklamayı eşdeğer kabul et"
 
 msgid "Do not skip match when not description"
-msgstr ""
+msgstr "Açıklama yoksa eşleşmeyi atlama"
 
 #, python-format
 msgid "Do you really want to delete %s?"
-msgstr "%s 'i silmek istediğinizden emin misiniz?"
+msgstr "%s silinsin mi?"
 
 msgid "Edit AutoTimer"
-msgstr "Otomatik zamanlayıcı düzenle"
+msgstr "AutoTimer'ı düzenle"
 
 msgid "Edit AutoTimer filters"
-msgstr "Otomatik zamanlayıcı filtrelerini düzenle"
+msgstr "AutoTimer filtrelerini düzenle"
 
 msgid "Edit AutoTimer services"
-msgstr "Otomatik zamanlayıcı kanallarını düzenle"
+msgstr "AutoTimer kanallarını düzenle"
 
 msgid "Edit Timers and scan for new Events"
-msgstr "Zamanlayıcı düzenle ve yeni eylemlerde ara"
+msgstr "Zamanlayıcıları düzenle ve yeni programları tara"
 
 msgid "Edit new timer defaults"
-msgstr "Varsayılan zamanlayıcı taslağını düzenleyin"
+msgstr "Yeni zamanlayıcı varsayılanlarını düzenle"
 
 msgid "Edit selected AutoTimer"
-msgstr "Seçilen otomatik zamanlayıcıyı düzenle"
+msgstr "Seçili AutoTimer'ı düzenle"
 
-#, fuzzy
 msgid "Edit services"
-msgstr "Kanal Düzenle"
+msgstr "Kanalları düzenle"
 
 msgid "Editing"
 msgstr "Düzenleme"
 
 msgid "Editor for new AutoTimers"
-msgstr "Yeni otomatik zamanlayıcı editörü"
+msgstr "Yeni AutoTimer kuralları için düzenleyici"
 
 msgid "Enable Filtering"
-msgstr "Filtreleme"
+msgstr "Filtrelemeyi etkinleştir"
 
 msgid "Enable Service Restriction"
-msgstr "Kanal kısıtlaması"
+msgstr "Kanal kısıtlamasını etkinleştir"
 
-msgid "Enable this to add item for create the AutoTimer into event menu (needs restart GUI)."
+msgid ""
+"Enable this to add item for create the AutoTimer into event menu (needs "
+"restart GUI)."
 msgstr ""
+"Program menüsüne AutoTimer oluşturma seçeneği ekler (arayüzün yeniden "
+"başlatılması gerekir)."
 
-msgid "Enable this to be able to access the AutoTimer Overview from within the extension menu."
+msgid ""
+"Enable this to be able to access the AutoTimer Overview from within the "
+"extension menu."
 msgstr ""
+"AutoTimer genel görünümüne uzantılar menüsünden erişimi etkinleştirir."
 
-msgid "Enable this to be able to access the add to AutoTimer from the channel selection context menu."
-msgstr ""
+msgid ""
+"Enable this to be able to access the add to AutoTimer from the channel "
+"selection context menu."
+msgstr "Kanal seçimi bağlam menüsünden AutoTimer eklemeyi etkinleştirir."
 
-#, fuzzy
 msgid "Enable timer conflict detection"
-msgstr "Kanal kısıtlaması"
+msgstr "Zamanlayıcı çakışma denetimini etkinleştir"
 
 msgid "Enabled"
 msgstr "Etkin"
 
-msgid "Encoding the channel uses for it's EPG data. You only need to change this if you're searching for special characters like the german umlauts."
+msgid ""
+"Encoding the channel uses for it's EPG data. You only need to change this if"
+" you're searching for special characters like the german umlauts."
 msgstr ""
+"Kanalın EPG verileri için kullandığı karakter kodlamasıdır. Yalnızca "
+"Almancadaki çift noktalı harfler gibi özel karakterler arıyorsanız "
+"değiştirmeniz gerekir."
 
 msgid "End of \"after event\" timespan"
-msgstr "Zaman aralığı sonu"
+msgstr "\"Programdan sonra\" zaman aralığının bitişi"
 
 msgid "End of timespan"
-msgstr "Zaman aralığı sonu"
+msgstr "Zaman aralığının bitişi"
 
-#, fuzzy
 msgid "Enter or edit description"
-msgstr "Kısa açıklamada"
+msgstr "Açıklamayı girin veya düzenleyin"
 
 msgid "Enter or edit match title"
-msgstr ""
+msgstr "Eşleştirilecek başlığı girin veya düzenleyin"
 
 msgid "Enter or edit text"
-msgstr ""
+msgstr "Metni girin veya düzenleyin"
 
 msgid "Everyday"
-msgstr ""
+msgstr "Her gün"
 
 msgid "Exact match"
 msgstr "Tam eşleşme"
 
 msgid "Exclude"
-msgstr "Dışla"
+msgstr "Hariç tut"
 
 msgid "Execute \"after event\" during timespan"
-msgstr "Zaman aralığındaki eylemden sonra çalıştır"
+msgstr "\"Programdan sonra\" işlemini zaman aralığında uygula"
 
 msgid "Filter"
 msgstr "Filtre"
 
-#, fuzzy
 msgid "FilterEntry"
-msgstr "Filtre"
+msgstr "Filtre girdisi"
 
-#, fuzzy
 msgid "Filterlist"
-msgstr "Filtre"
+msgstr "Filtre listesi"
 
 #, python-format
 msgid ""
@@ -442,9 +494,17 @@ msgid ""
 " %s event(s) added \n"
 " %s event(s) skipped"
 msgstr ""
+"%s programın filtre listesine eklenmesi tamamlandı:\n"
+"\n"
+" %s program eklendi \n"
+" %s program atlandı"
 
-msgid "First day to match events. No event that begins before this date will be matched."
+msgid ""
+"First day to match events. No event that begins before this date will be "
+"matched."
 msgstr ""
+"Programların eşleştirileceği ilk gündür. Bu tarihten önce başlayan "
+"programlar eşleştirilmez."
 
 #, python-format
 msgid ""
@@ -454,168 +514,238 @@ msgid ""
 "%d conflicts encountered,\n"
 "%d similars added."
 msgstr ""
+"Toplam %d eşleşen program bulundu.\n"
+"%d zamanlayıcı eklendi,\n"
+"%d zamanlayıcı değiştirildi,\n"
+"%d çakışma oluştu,\n"
+"%d benzer zamanlayıcı eklendi."
 
 msgid "Frequently asked questions"
-msgstr ""
+msgstr "Sık sorulan sorular"
 
-#, fuzzy
 msgid "Fri"
-msgstr "Cuma"
+msgstr "Cum"
 
 msgid "Friday"
 msgstr "Cuma"
 
 msgid "Full (3000 events)"
-msgstr ""
+msgstr "Tam (3000 program)"
 
 msgid "Guess existing timer based on begin/end"
-msgstr "Başlama/Bitiş bilgisini mevcutlardan al"
+msgstr "Mevcut zamanlayıcıyı başlangıç/bitiş saatinden belirle"
 
 msgid "Help"
-msgstr ""
+msgstr "Yardım"
 
-msgid "Here you can specify whether simultaneous timers of the same program can be created. This allows simultaneous recording of a program with different resolutions. (e.g. SD service and HD service)."
+msgid ""
+"Here you can specify whether simultaneous timers of the same program can be "
+"created. This allows simultaneous recording of a program with different "
+"resolutions. (e.g. SD service and HD service)."
 msgstr ""
+"Aynı program için farklı kanallarda eşzamanlı zamanlayıcı oluşturulmasına "
+"izin verir. Böylece bir programı farklı çözünürlüklerde (örneğin SD ve HD "
+"kanallarda) aynı anda kaydedebilirsiniz."
 
 msgid "IPTV stream use only this service for search"
-msgstr ""
+msgstr "IPTV akışında arama için yalnızca bu kanalı kullan"
 
 msgid "If 0, the popup will remain open."
-msgstr ""
+msgstr "0 seçilirse bildirim açık kalır."
 
-msgid "If a timer conflict occurs, AutoTimer will search outside the timespan for a similar event and add it."
+msgid ""
+"If a timer conflict occurs, AutoTimer will search outside the timespan for a"
+" similar event and add it."
 msgstr ""
+"Zamanlayıcı çakışması olursa AutoTimer, zaman aralığının dışında benzer bir "
+"program arar ve ekler."
 
-msgid "If enabled, the polling will be skipped if EPGRefresh is currently running."
-msgstr ""
+msgid ""
+"If enabled, the polling will be skipped if EPGRefresh is currently running."
+msgstr "Etkinleştirildiğinde EPGRefresh çalışırken otomatik denetim atlanır."
 
 msgid "If enabled, the polling will be skipped if a recording is in progress."
-msgstr ""
+msgstr "Etkinleştirildiğinde kayıt devam ederken otomatik denetim atlanır."
 
 msgid "If specified bouquets"
-msgstr ""
+msgstr "Buket belirtilmişse"
 
-#, fuzzy
 msgid "If specified services"
-msgstr "Benzer kanalda"
+msgstr "Kanallar belirtilmişse"
 
 msgid "If specified services or bouquets"
-msgstr ""
+msgstr "Kanal veya buket belirtilmişse"
 
-msgid "If the style is advanced, you will see more information about each auto timer. This change will not take effect until the plugin has started again."
+msgid ""
+"If the style is advanced, you will see more information about each auto "
+"timer. This change will not take effect until the plugin has started again."
 msgstr ""
+"Gelişmiş görünümde her otomatik zamanlayıcı için daha fazla bilgi "
+"gösterilir. Değişiklik, eklenti yeniden başlatıldığında uygulanır."
 
 msgid "If this enabled, debug Autotimer write in log file."
 msgstr ""
+"Etkinleştirildiğinde AutoTimer hata ayıklama bilgileri günlük dosyasına "
+"yazılır."
 
 msgid "If this enabled, debug log print in console mode start enigma2."
 msgstr ""
+"Etkinleştirildiğinde enigma2 konsoldan başlatılırsa hata ayıklama günlüğü "
+"konsola yazdırılır."
 
 msgid "If this enabled, search log write in autotimer_search.log."
 msgstr ""
+"Etkinleştirildiğinde arama günlüğü autotimer_search.log dosyasına yazılır."
 
-msgid "If this enabled, will check the list of timers, conflicting autotimers are disabled, the duplicate autotimers will be deleted."
+msgid ""
+"If this enabled, will check the list of timers, conflicting autotimers are "
+"disabled, the duplicate autotimers will be deleted."
 msgstr ""
+"Etkinleştirildiğinde zamanlayıcı listesi denetlenir; çakışan AutoTimer "
+"zamanlayıcıları devre dışı bırakılır, yinelenenler silinir."
 
-#, python-format
-msgid "If this is enabled an existing timer will also be considered recording an event if it records at least 80% of the it."
+#, no-python-format
+msgid ""
+"If this is enabled an existing timer will also be considered recording an "
+"event if it records at least 80% of the it."
 msgstr ""
+"Etkinleştirildiğinde bir programın en az %80'ini kaydeden mevcut zamanlayıcı"
+" da o programı kaydediyor kabul edilir."
 
-msgid "If this is enabled, up on the MENU button in the multi-EPG will list of choices for AutoTimer."
+msgid ""
+"If this is enabled, up on the MENU button in the multi-EPG will list of "
+"choices for AutoTimer."
 msgstr ""
+"Etkinleştirildiğinde çoklu EPG'de MENU tuşuna basınca AutoTimer seçenekleri "
+"gösterilir."
 
-msgid "If this is enabled, up on the Menu button in the standard single-EPG will list of choices for AutoTimer."
+msgid ""
+"If this is enabled, up on the Menu button in the standard single-EPG will "
+"list of choices for AutoTimer."
 msgstr ""
+"Etkinleştirildiğinde standart tekli EPG'de MENU tuşuna basınca AutoTimer "
+"seçenekleri gösterilir."
 
-msgid "If this is selected, the name of the respective AutoTimer will be added as a tag to timers created by this plugin."
+msgid ""
+"If this is selected, the name of the respective AutoTimer will be added as a"
+" tag to timers created by this plugin."
 msgstr ""
+"Etkinleştirildiğinde oluşturulan zamanlayıcılara ilgili AutoTimer kuralının "
+"adı etiket olarak eklenir."
 
-msgid "If this is selected, the tag \"AutoTimer\" will be given to timers created by this plugin."
+msgid ""
+"If this is selected, the tag \"AutoTimer\" will be given to timers created "
+"by this plugin."
 msgstr ""
+"Etkinleştirildiğinde bu eklentinin oluşturduğu zamanlayıcılara \"AutoTimer\""
+" etiketi eklenir."
 
-msgid "If your receiver has a small amount of memory, clear memory before poll AutoTimer run."
+msgid ""
+"If your receiver has a small amount of memory, clear memory before poll "
+"AutoTimer run."
 msgstr ""
+"Alıcınızın belleği azsa AutoTimer otomatik denetiminden önce belleği "
+"temizleyin."
 
-msgid "If your receiver has a small amount of memory, use mode 'Standard (1000 events)' or 'Advanced (2000 events)'."
+msgid ""
+"If your receiver has a small amount of memory, use mode 'Standard (1000 "
+"events)' or 'Advanced (2000 events)'."
 msgstr ""
+"Alıcınızın belleği azsa 'Standart (1000 program)' veya 'Gelişmiş (2000 "
+"program)' modunu kullanın."
 
 msgid "Import AutoTimer"
-msgstr "Otomatik zamanlayıcıyı içeri al"
+msgstr "AutoTimer içe aktar"
 
 msgid "Import existing Timer"
-msgstr "Mevcut zamanlayıcıyı içeri al"
+msgstr "Mevcut zamanlayıcıyı içe aktar"
 
 msgid "Import from EPG"
-msgstr "EPG'den içeri al"
+msgstr "EPG'den içe aktar"
 
 msgid "In case of changes, a GUI restart is required to apply the changes."
 msgstr ""
+"Değişikliklerin uygulanması için arayüzün yeniden başlatılması gerekir."
 
 msgid "Include"
-msgstr "İçer"
+msgstr "Dâhil et"
 
-#, fuzzy
 msgid "Include \"AutoTimer\" in tags"
-msgstr "Otomatik zamanlayıcı ayarları"
+msgstr "Etiketlere \"AutoTimer\" ekle"
 
-#, fuzzy
 msgid "Include AutoTimer name in tags"
-msgstr "Otomatik zamanlayıcı ayarları"
+msgstr "Etiketlere AutoTimer adını ekle"
 
-msgid "Label Timers with season, episode and title, according to the SeriesPlugin settings."
+msgid ""
+"Label Timers with season, episode and title, according to the SeriesPlugin "
+"settings."
 msgstr ""
+"SeriesPlugin ayarlarına göre zamanlayıcıları sezon, bölüm ve başlık "
+"bilgileriyle etiketler."
 
-#, fuzzy
 msgid "Label series"
-msgstr "Kanal Ekle"
+msgstr "Dizileri etiketle"
 
-msgid "Last day to match events. Events have to begin before this date to be matched."
+msgid ""
+"Last day to match events. Events have to begin before this date to be "
+"matched."
 msgstr ""
+"Programların eşleştirileceği son tarihtir. Eşleşmesi için programın bu "
+"tarihten önce başlaması gerekir."
 
 msgid "Location"
 msgstr "Konum"
 
 msgid "Lower bound of timespan."
-msgstr ""
+msgstr "Zaman aralığının alt sınırı."
 
-msgid "Lower bound of timespan. Nothing before this time will be matched. Offsets are not taken into account!"
+msgid ""
+"Lower bound of timespan. Nothing before this time will be matched. Offsets "
+"are not taken into account!"
 msgstr ""
+"Zaman aralığının alt sınırıdır. Bu saatten önce başlayan programlar "
+"eşleştirilmez. Ek kayıt süreleri dikkate alınmaz!"
 
 #, python-format
 msgid "Match Timespan: %02d:%02d - %02d:%02d"
-msgstr "Zaman aralığı eşleştir:  %02d:%02d - %02d:%02d"
+msgstr "Eşleştirme aralığı: %02d:%02d - %02d:%02d"
 
 msgid "Match title"
-msgstr "Anahtar Kelime"
+msgstr "Eşleştirilecek başlık"
 
 #, python-format
 msgid "Match title: %s"
-msgstr "Anahtar Kelime: %s"
+msgstr "Eşleştirilecek başlık: %s"
 
 msgid "Max. count for saved searchlog"
-msgstr ""
+msgstr "Saklanacak en fazla arama günlüğü sayısı"
 
 msgid "Max. match search events"
-msgstr ""
+msgstr "Aranacak en fazla program sayısı"
 
 msgid "Maximum duration (in m)"
-msgstr "Maksimum Süre (dk.)"
+msgstr "En uzun süre (dk)"
 
-msgid "Maximum event duration to match. If an event is longer than this amount of time (without offset) it won't be matched."
+msgid ""
+"Maximum event duration to match. If an event is longer than this amount of "
+"time (without offset) it won't be matched."
 msgstr ""
+"Eşleştirilecek programın en uzun süresidir. Ek kayıt süreleri hariç bu "
+"süreden uzun programlar eşleştirilmez."
 
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Message\n"
 "Do you really want to delete %s?"
-msgstr "%s 'i silmek istediğinizden emin misiniz?"
+msgstr ""
+"Mesaj\n"
+"%s silinsin mi?"
 
 msgid "Modify existing timers"
-msgstr "Zamanlayıcıları değiştir"
+msgstr "Mevcut zamanlayıcıları değiştir"
 
-#, fuzzy
 msgid "Mon"
-msgstr "Pazartesi"
+msgstr "Pzt"
 
 msgid "Monday"
 msgstr "Pazartesi"
@@ -624,7 +754,7 @@ msgid "Monthly"
 msgstr "Aylık"
 
 msgid "Never"
-msgstr "Hiç"
+msgstr "Asla"
 
 msgid "New"
 msgstr "Yeni"
@@ -633,134 +763,140 @@ msgid "No"
 msgstr "Hayır"
 
 msgid "No log file found"
-msgstr ""
+msgstr "Günlük dosyası bulunamadı"
 
 msgid ""
 "No searchLog found!\n"
 "\n"
 "So you have no new or modified timer at last autotimer-search."
 msgstr ""
+"Arama günlüğü bulunamadı!\n"
+"\n"
+"Son AutoTimer aramasında eklenen veya değiştirilen zamanlayıcı yok."
 
 msgid "None"
 msgstr "Yok"
 
 msgid "Not after"
-msgstr ""
+msgstr "En geç"
 
 msgid "Not before"
-msgstr ""
+msgstr "En erken"
 
 msgid "Not found xml config file!"
-msgstr ""
+msgstr "XML yapılandırma dosyası bulunamadı!"
 
 msgid "Number of scheduled recordings left."
-msgstr ""
+msgstr "Kalan planlanmış kayıt sayısı."
 
 msgid "OK"
 msgstr "Tamam"
 
 msgid "Offset after recording (in m)"
-msgstr "Kayıt sonrası marj süresi (dk.)"
+msgstr "Kaydın sonuna eklenecek süre (dk)"
 
 msgid "Offset before recording (in m)"
-msgstr "Kayıt öncesi marj süresi (dk.)"
+msgstr "Kaydın başına eklenecek süre (dk)"
 
 msgid "On any service"
 msgstr "Herhangi bir kanalda"
 
 msgid "On same service"
-msgstr "Benzer kanalda"
+msgstr "Aynı kanalda"
 
 msgid "Only AutoTimers created during this session"
-msgstr "Yalnızca bu oturumda oluşturulan otomatik zamanlayıcılar"
+msgstr "Yalnızca bu oturumda oluşturulan AutoTimer kuralları"
 
 msgid "Only add timer for next x days"
-msgstr ""
+msgstr "Yalnızca önümüzdeki x gün için zamanlayıcı ekle"
 
 msgid "Only match during timespan"
-msgstr "Yalnızca belirtilen zaman aralığında"
+msgstr "Yalnızca zaman aralığı içinde eşleştir"
 
 #, python-format
 msgid "Only on Service: %s"
-msgstr "Yalnızca %s kanalında"
+msgstr "Yalnızca şu kanalda: %s"
 
-#, fuzzy, python-format
+#, python-format
 msgid "Only on Weekday: %s"
-msgstr "Yalnızca %s kanalında"
+msgstr "Yalnızca şu günde: %s"
 
 msgid "Only poll while in standby"
-msgstr ""
+msgstr "Yalnızca bekleme modunda denetle"
 
 msgid "Open Context Menu"
-msgstr "İçerik Menüsünü Aç"
+msgstr "Bağlam menüsünü aç"
 
 msgid "Open Timers list"
-msgstr ""
+msgstr "Zamanlayıcı listesini aç"
 
 msgid "Open plugin"
-msgstr ""
+msgstr "Eklentiyi aç"
 
-#, fuzzy
 msgid "Open select location"
-msgstr "Özel kayıt konumu seç"
+msgstr "Konum seçimini aç"
 
 msgid "Open select location as timer name"
-msgstr ""
+msgstr "Konum seçimini zamanlayıcı adıyla aç"
 
 msgid "Other filters (edit in filter menu)"
-msgstr ""
+msgstr "Diğer filtreler (filtre menüsünden düzenlenir)"
 
 msgid "Override found with alternative service"
-msgstr "Alternatifli kanalda üzerine yaz"
+msgstr "Bulunan kanalı alternatif kanalla değiştir"
 
 msgid "Path debug log"
-msgstr ""
+msgstr "Hata ayıklama günlüğünün yolu"
 
 msgid "Percentage ratio for duplicates matches"
-msgstr ""
+msgstr "Yinelenen eşleşmeler için benzerlik yüzdesi"
 
 msgid "Please provide a Text to match"
-msgstr "Lütfen eşleşme için bir metin tanımlayın"
+msgstr "Lütfen eşleştirilecek metni girin"
 
 msgid "Poll Interval (in h)"
-msgstr "Tarama aralığı (saat)"
+msgstr "Denetleme aralığı (saat)"
 
 msgid "Poll automatically"
-msgstr "Otomatik tarama"
+msgstr "Otomatik denetle"
 
 msgid "Popup timeout in seconds"
-msgstr ""
+msgstr "Bildirim süresi (saniye)"
 
-msgid "Power state to change to after recordings. Select \"standard\" to not change the default behavior of enigma2 or values changed by yourself."
+msgid ""
+"Power state to change to after recordings. Select \"standard\" to not change"
+" the default behavior of enigma2 or values changed by yourself."
 msgstr ""
+"Kayıtlardan sonra geçilecek güç durumudur. Enigma2'nin varsayılan "
+"davranışını veya kendi ayarlarınızı değiştirmemek için \"standart\" "
+"seçeneğini seçin."
 
 msgid "Preview"
 msgstr "Önizleme"
 
 msgid "Preview AutoTimer"
-msgstr "Otomatik zamanlayıcı önizleme"
+msgstr "AutoTimer önizlemesi"
 
-#, fuzzy
 msgid "Preview for your AutoTimers"
-msgstr "Otomatik zamanlayıcı önizleme"
+msgstr "AutoTimer kurallarınızın önizlemesi"
 
 msgid "Print shell log"
-msgstr ""
+msgstr "Günlüğü konsola yazdır"
 
 msgid "Reading file...\n"
-msgstr ""
+msgstr "Dosya okunuyor...\n"
 
 msgid "Really close without saving settings?"
-msgstr "Ayarlarınızı kaydetmeden çıkmak istediğinizden emin misiniz?"
+msgstr "Ayarları kaydetmeden kapatmak istiyor musunuz?"
 
 msgid "Record a maximum of x times"
-msgstr "Maksimum x defa kaydet"
+msgstr "En fazla x kez kaydet"
 
 msgid "Record on"
-msgstr "Kaydedilecek"
+msgstr "Kaydedilecek kanal"
 
 msgid "Reload timers list after search events"
-msgstr ""
+msgstr "Program aramasından sonra zamanlayıcı listesini yenile"
 
 #, python-format
 msgid ""
@@ -768,36 +904,39 @@ msgid ""
 "%d autotimer(s) disabled because conflict.\n"
 "%d double autotimer(s) removed.\n"
 msgstr ""
+"Zamanlayıcı listesi yenilendi.\n"
+"%d AutoTimer zamanlayıcısı çakışma nedeniyle devre dışı bırakıldı.\n"
+"%d yinelenen AutoTimer zamanlayıcısı kaldırıldı.\n"
 
 msgid "Remove not existing events"
-msgstr ""
+msgstr "Artık bulunmayan programları kaldır"
 
 msgid "Remove selected AutoTimer"
-msgstr "Seçilen otomatik zamanlayıcıyı kaldır"
+msgstr "Seçili AutoTimer'ı kaldır"
 
 msgid "Require description to be unique"
-msgstr "Tekil açıklama gerekiyor"
+msgstr "Açıklamanın benzersiz olmasını zorunlu tut"
 
 msgid "Reset count"
-msgstr "Sayaç Sıfırlama"
+msgstr "Sayacı sıfırla"
 
 msgid "Restrict \"after event\" to a certain timespan?"
-msgstr ""
+msgstr "\"Programdan sonra\" işlemi belirli bir zaman aralığıyla sınırlansın mı?"
 
 msgid "Restrict to events on certain dates"
-msgstr ""
+msgstr "Yalnızca belirli tarihlerdeki programları eşleştir"
 
 msgid "Restriction to certain bouquets (edit in services menu)"
-msgstr ""
+msgstr "Belirli buketlerle sınırla (kanallar menüsünden düzenlenir)"
 
 msgid "Restriction to certain days of week (edit in filter menu)"
-msgstr ""
+msgstr "Belirli günlerle sınırla (filtre menüsünden düzenlenir)"
 
 msgid "Restriction to certain services (edit in services menu)"
-msgstr ""
+msgstr "Belirli kanallarla sınırla (kanallar menüsünden düzenlenir)"
 
 msgid "Sat"
-msgstr ""
+msgstr "Cmt"
 
 msgid "Saturday"
 msgstr "Cumartesi"
@@ -806,306 +945,370 @@ msgid "Save"
 msgstr "Kaydet"
 
 msgid "Save and search now"
-msgstr ""
+msgstr "Kaydet ve şimdi ara"
 
-msgid "Save the by SeriesPlugin generated timer-name in a filterlist to filter at later timer-searches (only with SeriesPlugin)"
+msgid ""
+"Save the by SeriesPlugin generated timer-name in a filterlist to filter at "
+"later timer-searches (only with SeriesPlugin)"
 msgstr ""
+"SeriesPlugin'in oluşturduğu zamanlayıcı adını, sonraki aramalarda "
+"filtrelemek için filtre listesine kaydeder (yalnızca SeriesPlugin ile)."
 
 msgid "Save/check labeled series in filterlist (SeriesPlugin)"
-msgstr ""
+msgstr "Etiketlenen dizileri filtre listesine kaydet/denetle (SeriesPlugin)"
 
 msgid "Search new events matching for your AutoTimers"
-msgstr ""
+msgstr "AutoTimer kurallarınızla eşleşen yeni programları ara"
 
 msgid "Search strictness"
-msgstr "Arama hassasiyeti"
+msgstr "Harf büyüklüğü duyarlılığı"
 
 msgid "Search type"
-msgstr "Arama tipi"
+msgstr "Arama türü"
 
-msgid "Select \"exact match\" to enforce \"Match title\" to match exactly, \"partial match\" if you only want to search for a part of the event title or \"description match\" if you only want to search for a part of the event description"
+msgid ""
+"Select \"exact match\" to enforce \"Match title\" to match exactly, "
+"\"partial match\" if you only want to search for a part of the event title "
+"or \"description match\" if you only want to search for a part of the event "
+"description"
 msgstr ""
+"Başlığın tamamını eşleştirmek için \"tam eşleşme\", başlığın bir bölümünü "
+"aramak için \"kısmi eşleşme\", açıklamanın bir bölümünü aramak için "
+"\"açıklama eşleşmesi\" seçeneğini seçin."
 
 msgid "Select a timer to import"
-msgstr "İçeri almak için bir zamanlayıcı seçin"
+msgstr "İçe aktarılacak zamanlayıcıyı seçin"
 
-#, fuzzy
 msgid "Select action"
-msgstr "Kanal Seçimi"
+msgstr "İşlem seçin"
 
 msgid "Select action for AutoTimer or input date/time:"
-msgstr ""
+msgstr "AutoTimer için bir işlem seçin veya tarih/saat girin:"
 
-#, fuzzy
 msgid "Select action for AutoTimer:"
-msgstr "İçeri almak için bir zamanlayıcı seçin"
+msgstr "AutoTimer için bir işlem seçin:"
 
 msgid "Select bouquet to record on"
-msgstr "Kaydedilecek buketi seçin"
+msgstr "Kayıt yapılacak buketi seçin"
 
 msgid "Select channel to record on"
-msgstr "Kaydedilecek kanalı seçin"
+msgstr "Kayıt yapılacak kanalı seçin"
 
 msgid "Select the count of the last saved searchlogs (min=5 max=20)"
-msgstr ""
+msgstr "Saklanacak son arama günlüğü sayısını seçin (en az 5, en fazla 20)"
 
 msgid "Select the location to save the recording to."
-msgstr ""
+msgstr "Kayıtların kaydedileceği konumu seçin."
 
 msgid "Select the path for autotimer_search.log"
-msgstr ""
+msgstr "autotimer_search.log dosyasının yolunu seçin"
 
 msgid "Select the path where the autotimer_search.log should be saved"
-msgstr ""
+msgstr "autotimer_search.log dosyasının kaydedileceği yolu seçin"
 
 msgid "Select type of Filter"
-msgstr "Filtre tipini seçin"
+msgstr "Filtre türünü seçin"
 
 msgid "Select whether or not you want to enforce case correctness."
-msgstr ""
+msgstr "Büyük/küçük harf ayrımı yapılıp yapılmayacağını seçin."
 
-#, fuzzy
 msgid "Set End Time"
-msgstr "Zamana göre"
+msgstr "Bitiş saatini ayarla"
 
-msgid "Set an end time for the timer. If you do, the timespan of the event might be blocked for recordings."
+msgid ""
+"Set an end time for the timer. If you do, the timespan of the event might be"
+" blocked for recordings."
 msgstr ""
+"Zamanlayıcı için bitiş saati belirler. Bu durumda programın süresi boyunca "
+"başka kayıtlar engellenebilir."
 
 msgid "Set maximum duration"
-msgstr "Maksimum süre tanımla"
+msgstr "En uzun süreyi ayarla"
 
 msgid "Set this NO to disable this AutoTimer."
-msgstr ""
+msgstr "Bu AutoTimer'ı devre dışı bırakmak için Hayır seçeneğini seçin."
 
-msgid "Set timer type: zap, simple record, zap+record (always zap to service before start record)."
+msgid ""
+"Set timer type: zap, simple record, zap+record (always zap to service before"
+" start record)."
 msgstr ""
+"Zamanlayıcı türünü belirler: kanal değiştir, kaydet veya kanala geç ve "
+"kaydet (kayıttan önce her zaman ilgili kanala geçer)."
 
 msgid "Set wakeup receiver type. This works only for zap timers."
 msgstr ""
+"Alıcının hangi güç durumundan uyandırılacağını belirler. Yalnızca kanal "
+"değiştirme zamanlayıcılarında geçerlidir."
 
 msgid "Setup"
-msgstr "Kurulum"
+msgstr "Ayarlar"
 
 msgid "Should this AutoTimer be restricted to a timespan?"
-msgstr ""
+msgstr "Bu AutoTimer belirli bir zaman aralığıyla sınırlansın mı?"
 
 msgid "Should this AutoTimer only match up to a certain event duration?"
 msgstr ""
+"Bu AutoTimer yalnızca belirli bir süreden kısa programları mı eşleştirsin?"
 
-msgid "Should timers created by this AutoTimer be recorded to a custom location?"
-msgstr ""
+msgid ""
+"Should timers created by this AutoTimer be recorded to a custom location?"
+msgstr "Bu AutoTimer'ın oluşturduğu kayıtlar özel bir konuma mı kaydedilsin?"
 
 msgid "Show \"add to AutoTimer\" in channel selection menu"
-msgstr ""
+msgstr "Kanal seçim menüsünde \"AutoTimer'a ekle\" seçeneğini göster"
 
-#, fuzzy
 msgid "Show AutoTimer FilterTxt"
-msgstr "Otomatik zamanlayıcı filtreleri"
+msgstr "AutoTimer filtre metnini göster"
 
 msgid "Show Log file"
-msgstr ""
+msgstr "Günlük dosyasını göster"
 
-#, fuzzy
 msgid "Show in event menu"
-msgstr "Eklentiler menüsünde göster"
+msgstr "Program menüsünde göster"
 
 msgid "Show in extension menu"
-msgstr "Eklentiler menüsünde göster"
+msgstr "Uzantılar menüsünde göster"
 
 msgid "Show last SearchLog"
-msgstr ""
+msgstr "Son arama günlüğünü göster"
 
 msgid "Show notification on added timers"
-msgstr ""
+msgstr "Eklenen zamanlayıcıları bildir"
 
 msgid "Show notification on conflicts"
-msgstr ""
+msgstr "Çakışmaları bildir"
 
 msgid "Show notification on similars"
-msgstr ""
+msgstr "Eklenen benzer zamanlayıcıları bildir"
 
 msgid "Skip poll during epg refresh"
-msgstr ""
+msgstr "EPG yenilenirken denetimi atla"
 
 msgid "Skip poll during records"
-msgstr ""
+msgstr "Kayıt sırasında denetimi atla"
 
 msgid "Sort AutoTimer"
-msgstr "Sırala"
+msgstr "AutoTimer kurallarını sırala"
 
 msgid "Sort Time"
-msgstr "Zamana göre"
+msgstr "Zamana göre sırala"
 
 msgid "Specify the name and location for the log."
-msgstr ""
+msgstr "Günlük dosyasının adını ve konumunu belirtin."
 
-#, fuzzy
 msgid "Standard"
-msgstr "standart"
+msgstr "Standart"
 
 msgid "Standard (1000 events)"
-msgstr ""
+msgstr "Standart (1000 program)"
 
 msgid "Standard input date/time"
-msgstr ""
+msgstr "Standart tarih/saat girişi"
 
 msgid "Startup delay (in min)"
-msgstr ""
+msgstr "Başlangıç gecikmesi (dk)"
 
-#, fuzzy
 msgid "Style auto timers list"
-msgstr "İçeri almak için bir zamanlayıcı seçin"
+msgstr "AutoTimer listesi görünümü"
 
-#, fuzzy
 msgid "Sun"
-msgstr "Pazar"
+msgstr "Paz"
 
 msgid "Sunday"
 msgstr "Pazar"
 
 msgid "Support \"Fast Scan\"?"
-msgstr ""
+msgstr "\"Hızlı tarama\" desteği etkinleştirilsin mi?"
 
 msgid "Tags"
 msgstr "Etiketler"
 
 msgid "Tags the Timer/Recording will have."
-msgstr ""
+msgstr "Zamanlayıcıya/kayda eklenecek etiketler."
 
-msgid "The autotimer file (/etc/enigma2/autotimer.xml) is corrupt and could not be loaded."
+msgid ""
+"The autotimer file (/etc/enigma2/autotimer.xml) is corrupt and could not be "
+"loaded."
 msgstr ""
+"AutoTimer dosyası (/etc/enigma2/autotimer.xml) bozuk olduğu için "
+"yüklenemedi."
 
-msgid "The counter can automatically be reset to the limit at certain intervals."
+msgid ""
+"The counter can automatically be reset to the limit at certain intervals."
 msgstr ""
+"Sayaç, belirli aralıklarla otomatik olarak üst sınırına sıfırlanabilir."
 
-msgid "The editor to be used for new AutoTimers. This can either be the Wizard or the classic editor."
+msgid ""
+"The editor to be used for new AutoTimers. This can either be the Wizard or "
+"the classic editor."
 msgstr ""
+"Yeni AutoTimer kuralları için kullanılacak düzenleyicidir. Sihirbazı veya "
+"klasik düzenleyiciyi seçebilirsiniz."
 
 #, python-format
 msgid ""
 "The filterEntry '%s' already exist!\n"
 "The change was canceled."
 msgstr ""
+"'%s' filtre girdisi zaten var!\n"
+"Değişiklik iptal edildi."
 
 msgid "The match attribute is mandatory."
-msgstr "Eşleştirme yapmak zorunludur."
+msgstr "Eşleştirme alanı zorunludur."
 
-#, fuzzy
 msgid "The title attribute is mandatory."
-msgstr "Eşleştirme yapmak zorunludur."
+msgstr "Başlık alanı zorunludur."
 
-msgid "This is a name you can give the AutoTimer. It will be shown in the Overview and the Preview."
+msgid ""
+"This is a name you can give the AutoTimer. It will be shown in the Overview "
+"and the Preview."
 msgstr ""
+"AutoTimer'a verebileceğiniz addır. Genel görünümde ve önizlemede gösterilir."
 
-msgid "This is the delay in hours that the AutoTimer will wait after a search to search the EPG again."
-msgstr ""
+msgid ""
+"This is the delay in hours that the AutoTimer will wait after a search to "
+"search the EPG again."
+msgstr "AutoTimer'ın EPG'yi yeniden aramadan önce bekleyeceği süredir (saat)."
 
-msgid "This is the delay in minutes that the AutoTimer will wait on initial launch to not delay enigma2 startup time."
+msgid ""
+"This is the delay in minutes that the AutoTimer will wait on initial launch "
+"to not delay enigma2 startup time."
 msgstr ""
+"Enigma2'nin açılışını geciktirmemek için AutoTimer'ın ilk çalıştırmada "
+"bekleyeceği süredir (dakika)."
 
-msgid "This is the delay in seconds that the AutoTimer will wait after editing the AutoTimers."
-msgstr ""
+msgid ""
+"This is the delay in seconds that the AutoTimer will wait after editing the "
+"AutoTimers."
+msgstr "AutoTimer kuralları düzenlendikten sonra beklenecek süredir (saniye)."
 
 msgid "This is the duration in minutes that the AutoTimer is allowed to run."
-msgstr ""
+msgstr "AutoTimer'ın çalışmasına izin verilen en uzun süredir (dakika)."
 
-msgid "This is what will be looked for in event titles. Note that looking for e.g. german umlauts can be tricky as you have to know the encoding the channel uses."
+msgid ""
+"This is what will be looked for in event titles. Note that looking for e.g. "
+"german umlauts can be tricky as you have to know the encoding the channel "
+"uses."
 msgstr ""
+"Program başlıklarında aranacak metindir. Almancadaki çift noktalı harfler "
+"gibi özel karakterler için kanalın kullandığı karakter kodlamasını bilmeniz "
+"gerekir."
 
-msgid "This option allows you to turn off the timer confict detection. This option is for advanced users."
+msgid ""
+"This option allows you to turn off the timer confict detection. This option "
+"is for advanced users."
 msgstr ""
+"Zamanlayıcı çakışma denetimini kapatmanıza olanak verir. İleri düzey "
+"kullanıcılar içindir."
 
 msgid "This setting controls the behavior when a timer matches a found event."
 msgstr ""
+"Mevcut bir zamanlayıcı bulunan programla eşleştiğinde uygulanacak davranışı "
+"belirler."
 
-msgid "This toggles the behavior on timer conflicts. If an AutoTimer matches an event that conflicts with an existing timer it will not ignore this event but add it disabled."
+msgid ""
+"This toggles the behavior on timer conflicts. If an AutoTimer matches an "
+"event that conflicts with an existing timer it will not ignore this event "
+"but add it disabled."
 msgstr ""
+"Çakışma durumundaki davranışı değiştirir. AutoTimer'ın eşleştirdiği program "
+"mevcut bir zamanlayıcıyla çakışırsa program atlanmaz; zamanlayıcı devre dışı"
+" olarak eklenir."
 
-#, fuzzy
 msgid "Thur"
-msgstr "Perşembe"
+msgstr "Per"
 
 msgid "Thursday"
 msgstr "Perşembe"
 
-#, fuzzy
 msgid "Time"
-msgstr "Zamana göre"
+msgstr "Saat"
 
 msgid "Time in minutes to append to recording."
-msgstr ""
+msgstr "Kaydın sonuna eklenecek süre (dakika)."
 
 msgid "Time in minutes to prepend to recording."
-msgstr ""
+msgstr "Kaydın başına eklenecek süre (dakika)."
 
 msgid "Timeout (in min)"
-msgstr ""
+msgstr "Zaman aşımı (dk)"
 
 msgid "Timer from:\n"
-msgstr ""
+msgstr "Zamanlayıcının kaynağı:\n"
 
 msgid "Timer type"
-msgstr "Zamanlayıcı tipi"
+msgstr "Zamanlayıcı türü"
 
-#, fuzzy
 msgid "Timers list"
-msgstr "Zamanlayıcı tipi"
+msgstr "Zamanlayıcı listesi"
 
-#, fuzzy
 msgid "Title"
-msgstr "Başlıkta"
+msgstr "Başlık"
 
-#, fuzzy
 msgid "Title and Short description"
-msgstr "Kısa açıklamada"
+msgstr "Başlık ve kısa açıklama"
 
-#, fuzzy
 msgid "Title and all descriptions"
-msgstr "Açıklamada"
+msgstr "Başlık ve tüm açıklamalar"
 
-msgid "To cater for spelling mistakes and small deviations in the EPG information, you can make the matching algorithm fuzzy by setting the percentage both programmes must be equal for. Use 100% if you only want a match when both are completely identical. Recommended default ratio 80%."
+msgid ""
+"To cater for spelling mistakes and small deviations in the EPG information, "
+"you can make the matching algorithm fuzzy by setting the percentage both "
+"programmes must be equal for. Use 100% if you only want a match when both "
+"are completely identical. Recommended default ratio 80%."
 msgstr ""
+"EPG bilgilerindeki yazım hatalarını ve küçük farklılıkları tolere etmek için"
+" iki programın benzerlik yüzdesini ayarlayabilirsiniz. Yalnızca tamamen aynı"
+" programları eşleştirmek için %100 kullanın. Önerilen varsayılan oran "
+"%80'dir."
 
-#, fuzzy
 msgid "Tue"
-msgstr "Salı"
+msgstr "Sal"
 
 msgid "Tuesday"
 msgstr "Salı"
 
-msgid "Unless this is enabled AutoTimer will NOT automatically look for events matching your AutoTimers but only when you leave the GUI with the green button."
+msgid ""
+"Unless this is enabled AutoTimer will NOT automatically look for events "
+"matching your AutoTimers but only when you leave the GUI with the green "
+"button."
 msgstr ""
+"Etkinleştirilmezse AutoTimer kurallarınızla eşleşen programlar otomatik "
+"aranmaz; arama yalnızca yeşil tuşla arayüzden çıkıldığında yapılır."
 
 msgid "Upper bound of timespan."
-msgstr ""
+msgstr "Zaman aralığının üst sınırı."
 
-msgid "Upper bound of timespan. Nothing after this time will be matched. Offsets are not taken into account!"
+msgid ""
+"Upper bound of timespan. Nothing after this time will be matched. Offsets "
+"are not taken into account!"
 msgstr ""
+"Zaman aralığının üst sınırıdır. Bu saatten sonra başlayan programlar "
+"eşleştirilmez. Ek kayıt süreleri dikkate alınmaz!"
 
 msgid "Use a custom location"
-msgstr "Özel kayıt konumu seç"
+msgstr "Özel konum kullan"
 
 msgid "Use blue key to edit bouquets or services."
-msgstr ""
+msgstr "Buketleri veya kanalları düzenlemek için mavi tuşu kullanın."
 
 msgid "Use yellow key to edit filters."
-msgstr ""
+msgstr "Filtreleri düzenlemek için sarı tuşu kullanın."
 
 msgid "Wakeup receiver for start timer"
-msgstr ""
+msgstr "Zamanlayıcıyı başlatmak için alıcıyı uyandır"
 
-#, fuzzy
 msgid "Wed"
-msgstr "Haftaiçi"
+msgstr "Çar"
 
 msgid "Wednesday"
 msgstr "Çarşamba"
 
 msgid "Weekday"
-msgstr "Haftaiçi"
+msgstr "Hafta içi"
 
 msgid "Weekend"
-msgstr "Haftasonu"
+msgstr "Hafta sonu"
 
 msgid "Weekly (Monday)"
 msgstr "Haftalık (Pazartesi)"
@@ -1113,146 +1316,179 @@ msgstr "Haftalık (Pazartesi)"
 msgid "Weekly (Sunday)"
 msgstr "Haftalık (Pazar)"
 
-msgid "When supporting \"Fast Scan\" the service type is ignored. You don't need to enable this unless your Image supports \"Fast Scan\" and you are using it."
+msgid ""
+"When supporting \"Fast Scan\" the service type is ignored. You don't need to"
+" enable this unless your Image supports \"Fast Scan\" and you are using it."
 msgstr ""
+"\"Hızlı tarama\" desteği etkinleştirildiğinde kanal türü dikkate alınmaz. "
+"Cihaz yazılımınız hızlı taramayı desteklemiyorsa veya kullanmıyorsanız "
+"etkinleştirmeniz gerekmez."
 
-msgid "When this is enabled AutoTimer will ONLY check for new events whilst in stanadby."
+msgid ""
+"When this is enabled AutoTimer will ONLY check for new events whilst in "
+"stanadby."
 msgstr ""
+"Etkinleştirildiğinde AutoTimer yeni programları YALNIZCA bekleme modunda "
+"denetler."
 
-msgid "When this option enabled and short description and extended description match is empty and timer title exist in match title, match is not a duplicate. Attention, this may result in double timers."
+msgid ""
+"When this option enabled and short description and extended description "
+"match is empty and timer title exist in match title, match is not a "
+"duplicate. Attention, this may result in double timers."
 msgstr ""
+"Etkinleştirildiğinde kısa ve ayrıntılı açıklama boşsa ve zamanlayıcı başlığı"
+" eşleştirilecek başlıkta bulunuyorsa eşleşme yinelenen olarak "
+"değerlendirilmez. Dikkat: Bu seçenek çift zamanlayıcılara yol açabilir."
 
-msgid "When this option enabled, short description to equal extended description if short description is empty."
+msgid ""
+"When this option enabled, short description to equal extended description if"
+" short description is empty."
 msgstr ""
+"Etkinleştirildiğinde kısa açıklama boşsa yerine ayrıntılı açıklama "
+"kullanılır."
 
-msgid "When this option is enabled the AutoTimer won't match events where another timer with the same description already exists in the timer list."
+msgid ""
+"When this option is enabled the AutoTimer won't match events where another "
+"timer with the same description already exists in the timer list."
 msgstr ""
+"Etkinleştirildiğinde listede aynı açıklamaya sahip başka bir zamanlayıcı "
+"varsa AutoTimer programı eşleştirmez."
 
-msgid "With this option enabled the channel to record on can be changed to a alternative service it is restricted to."
+msgid ""
+"With this option enabled the channel to record on can be changed to a "
+"alternative service it is restricted to."
 msgstr ""
+"Etkinleştirildiğinde kayıt yapılacak kanal, kuralın izin verdiği alternatif "
+"kanalla değiştirilebilir."
 
-msgid "With this option you can restrict the AutoTimer to a certain amount of scheduled recordings. Set this to 0 to disable this functionality."
+msgid ""
+"With this option you can restrict the AutoTimer to a certain amount of "
+"scheduled recordings. Set this to 0 to disable this functionality."
 msgstr ""
+"Bu AutoTimer için planlanacak kayıt sayısını sınırlar. Sınırlamayı kapatmak "
+"için 0 girin."
 
 msgid "Wizard"
 msgstr "Sihirbaz"
 
-msgid "Write the config file after every change which the user quits by saving."
+msgid ""
+"Write the config file after every change which the user quits by saving."
 msgstr ""
+"Kullanıcının kaydederek onayladığı her değişiklikten sonra yapılandırma "
+"dosyasını yazar."
 
 msgid "Yes"
-msgstr ""
+msgstr "Evet"
 
 msgid "Yes and show notify"
-msgstr ""
+msgstr "Evet, bildirim de göster"
 
 msgid "Yes, and delete all timers generated by this autotimer"
-msgstr ""
+msgstr "Evet, bu AutoTimer'ın oluşturduğu tüm zamanlayıcıları da sil"
 
 msgid "Yes, but keep timers generated by this autotimer"
-msgstr ""
+msgstr "Evet, ancak bu AutoTimer'ın oluşturduğu zamanlayıcıları koru"
 
-msgid "You can control for how many days in the future timers are added. Set this to 0 to disable this feature."
+msgid ""
+"You can control for how many days in the future timers are added. Set this "
+"to 0 to disable this feature."
 msgstr ""
+"İleride kaç gün için zamanlayıcı ekleneceğini belirler. Sınırlamayı kapatmak"
+" için 0 girin."
 
 #, python-format
 msgid ""
 "You entered \"%s\" as Text to match.\n"
 "Do you want to remove trailing whitespaces?"
 msgstr ""
-"Metin eşleşmesi için \"%s\" girdiniz.\n"
-"Anahtar kelimeden sonra bırakılan boşluklar silinsin mi?"
+"Eşleştirilecek metin olarak \"%s\" girdiniz.\n"
+"Sondaki boşluklar kaldırılsın mı?"
 
 #, python-format
 msgid ""
 "Your config file is not well-formed:\n"
 "%s"
 msgstr ""
-"Yapılandırma dosyası düzgün değil:\n"
+"Yapılandırma dosyanızın biçimi geçersiz:\n"
 "%s"
 
 msgid "[B]  "
-msgstr ""
+msgstr "[B]  "
 
 msgid "[S]  "
-msgstr ""
+msgstr "[K]  "
 
 msgid "add AutoTimer"
-msgstr "Otomatik zamanlayıcı ekle"
+msgstr "AutoTimer ekle"
 
 msgid "add AutoTimer..."
-msgstr "Otomatik zamanlayıcı ekle..."
+msgstr "AutoTimer ekle..."
 
 msgid "add filters"
 msgstr "Filtre ekle"
 
-#, fuzzy
 msgid "add to AutoTimer filterList"
-msgstr "Otomatik zamanlayıcı filtrelerini düzenle"
+msgstr "AutoTimer filtre listesine ekle"
 
 msgid "always"
-msgstr ""
+msgstr "her zaman"
 
 msgid "auto"
 msgstr "otomatik"
 
 msgid "autotimers need a match attribute"
-msgstr ""
+msgstr "AutoTimer kurallarında eşleştirme alanı gereklidir"
 
 msgid "begin searchLog from"
-msgstr ""
+msgstr "arama günlüğü başlangıcı"
 
 msgid "case-insensitive search"
-msgstr "büyük-küçük harf duyarsız arama"
+msgstr "büyük/küçük harfe duyarsız arama"
 
 msgid "case-sensitive search"
-msgstr "büyük-küçük harf duyarlı arama"
+msgstr "büyük/küçük harfe duyarlı arama"
 
 msgid "config changed."
-msgstr ""
+msgstr "yapılandırma değişti."
 
 msgid "create AutoTimer for current event"
-msgstr ""
+msgstr "mevcut program için AutoTimer oluştur"
 
 msgid "delete"
 msgstr "sil"
 
-#, fuzzy
 msgid "description match"
-msgstr "Açıklama"
+msgstr "açıklama eşleşmesi"
 
 msgid "disable"
-msgstr "kapat"
+msgstr "devre dışı bırak"
 
-#, fuzzy
 msgid "disabled"
-msgstr "kapat"
+msgstr "devre dışı"
 
 msgid "do nothing"
-msgstr "birşey yapma"
+msgstr "işlem yapma"
 
 msgid "edit filters"
-msgstr "Filtreleri Düzenle"
+msgstr "filtreleri düzenle"
 
 msgid "enable"
 msgstr "etkinleştir"
 
-#, fuzzy
 msgid "enabled"
-msgstr "etkinleştir"
+msgstr "etkin"
 
 msgid "exact match"
 msgstr "tam eşleşme"
 
-#, fuzzy
 msgid "favorites description match"
-msgstr "Kısa açıklamada"
+msgstr "favorilerde açıklama eşleşmesi"
 
 msgid "go to deep standby"
-msgstr "derin uyku kipine geç"
+msgstr "derin bekleme moduna geç"
 
 msgid "go to standby"
-msgstr "uyku kipine geç"
+msgstr "bekleme moduna geç"
 
 msgid "in Description"
 msgstr "Açıklamada"
@@ -1264,31 +1500,28 @@ msgid "in Title"
 msgstr "Başlıkta"
 
 msgid "like autotimer.log"
-msgstr ""
+msgstr "autotimer.log ile aynı"
 
 msgid "mins"
-msgstr "dakika"
+msgstr "dk"
 
 msgid "missing parameter \"id\""
-msgstr ""
+msgstr "\"id\" parametresi eksik"
 
 msgid "missing parameter \"xml\""
-msgstr ""
+msgstr "\"xml\" parametresi eksik"
 
-#, fuzzy
 msgid "never"
-msgstr "Hiç"
+msgstr "asla"
 
 msgid "on Weekday"
-msgstr "Günde"
+msgstr "şu günde"
 
-#, fuzzy
 msgid "only from deep standby"
-msgstr "derin uyku kipine geç"
+msgstr "yalnızca derin beklemeden"
 
-#, fuzzy
 msgid "only from standby"
-msgstr "uyku kipine geç"
+msgstr "yalnızca beklemeden"
 
 msgid "partial match"
 msgstr "kısmi eşleşme"
@@ -1296,32 +1529,30 @@ msgstr "kısmi eşleşme"
 msgid "record"
 msgstr "kaydet"
 
-#, fuzzy
 msgid "scan for new Events"
-msgstr "Zamanlayıcı düzenle ve yeni eylemlerde ara"
+msgstr "yeni programları tara"
 
 msgid "searchLog"
-msgstr ""
+msgstr "arama günlüğü"
 
 msgid "standard"
 msgstr "standart"
 
 msgid "title ends with"
-msgstr ""
+msgstr "başlığın sonu"
 
 msgid "title starts with"
-msgstr ""
+msgstr "başlığın başlangıcı"
 
 #, python-format
 msgid "unable to find timer with id %i"
-msgstr ""
+msgstr "%i kimlikli zamanlayıcı bulunamadı"
 
 msgid "unknown"
-msgstr ""
+msgstr "bilinmiyor"
 
 msgid "zap"
-msgstr "değiştir"
+msgstr "kanal değiştir"
 
-#, fuzzy
 msgid "zap and record"
-msgstr "kaydet"
+msgstr "kanala geç ve kaydet"

@@ -5,137 +5,135 @@ msgstr ""
 "Project-Id-Version: enigma2 plugin vlcPlayer Turkish locale\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-05-11 10:58+0200\n"
-"PO-Revision-Date: \n"
-"Last-Translator: Zülfikar VEYİSOĞLU <zveyis@gmail.com>\n"
-"Language-Team: www.turkeyforum.com/satforum <zveyis@gmail.com>\n"
-"Language: \n"
+"PO-Revision-Date: 2026-10-16 09:00+0300\n"
+"Last-Translator: audi06_19 <info@dreamosat-forum.com>\n"
+"Language-Team: Turkish\n"
+"Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Language: Turkish\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-Country: TURKEY\n"
+"X-Poedit-Language: Turkish\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
 msgid "1 minute"
-msgstr ""
+msgstr "1 dakika"
 
 msgid "10 minutes"
-msgstr ""
+msgstr "10 dakika"
 
 msgid "15 minutes"
-msgstr ""
+msgstr "15 dakika"
 
 msgid "20 minutes"
-msgstr ""
+msgstr "20 dakika"
 
 msgid "3 minutes"
-msgstr ""
+msgstr "3 dakika"
 
 msgid "30 minutes"
-msgstr ""
+msgstr "30 dakika"
 
 msgid "5 minutes"
-msgstr ""
+msgstr "5 dakika"
 
 msgid "A video streaming solution based on VLC"
-msgstr "VLC bazlı video stream çözümü"
+msgstr "VLC tabanlı video akışı çözümü"
 
-#, fuzzy
 msgid "Audio"
-msgstr "Ses Kodeği"
+msgstr "Ses"
 
 msgid "Audio Bitrate"
-msgstr "Ses bit oranı"
+msgstr "Ses bit hızı"
 
 msgid "Audio Channels"
-msgstr "Ses Kanalları"
+msgstr "Ses kanalları"
 
 msgid "Audio Codec"
-msgstr "Ses Kodeği"
+msgstr "Ses kodlayıcısı"
 
 msgid "Audio Samplerate"
-msgstr "Ses Örnekleme Oranı"
+msgstr "Ses örnekleme hızı"
 
-#, fuzzy
 msgid "Cache Directory"
-msgstr "Film Klasörü"
+msgstr "Önbellek dizini"
 
 msgid "Cancel"
-msgstr "Vazgeç"
+msgstr "İptal"
 
 msgid "Choice of minutes to jump"
-msgstr ""
+msgstr "Atlanacak dakika sayısı"
 
 msgid "Choose an action:"
-msgstr ""
+msgstr "Bir işlem seçin:"
 
 msgid "DVD Device (leave empty for default)"
-msgstr "DVD Aygıtı (varsayılan için boş bırakın)"
+msgstr "DVD cihazı (varsayılan için boş bırakın)"
 
 msgid "Direct play"
-msgstr ""
+msgstr "Doğrudan oynat"
 
-#, fuzzy
 msgid "Edit VLC Server"
-msgstr "sunucu düzenle"
+msgstr "VLC sunucusunu düzenle"
 
 msgid "Enter VLC-Server as FQDN or IP-Address"
-msgstr "VLC sunucu adını veya IP adresini girin"
+msgstr "VLC sunucusunun tam alan adını (FQDN) veya IP adresini girin"
 
 msgid "Enter subtitles as Track or Language"
-msgstr ""
+msgstr "Altyazıyı iz numarası veya dil olarak girin"
 
 #, python-format
 msgid ""
 "Error loading filelist into server %(server)s:\n"
 "%(error)s"
 msgstr ""
-"Dosya listesi %(server)s sunucusuna yüklenirken\n"
-"%(error)s hatası oluştu"
+"Dosya listesi %(server)s sunucusuna yüklenemedi:\n"
+"%(error)s"
 
 #, python-format
 msgid ""
 "Error loading playlist %(media)s into server %(server)s:\n"
 "%(error)s"
 msgstr ""
-"%(media)s oynatma listesi %(server)s sunucusuna yüklenirken\n"
-"%(error)s hatası oluştu"
+"%(media)s oynatma listesi %(server)s sunucusuna yüklenemedi:\n"
+"%(error)s"
 
 #, python-format
 msgid ""
 "Error loading playlist into server %(server)s:\n"
 "%(error)s"
 msgstr ""
-"Oynatma listesi %(server)s sunucusuna yüklenirken\n"
-"%(error)s hatası oluştu"
+"Oynatma listesi %(server)s sunucusuna yüklenemedi:\n"
+"%(error)s"
 
 #, python-format
 msgid ""
 "Error updating filelist from server %(server)s:\n"
 "%(error)s"
 msgstr ""
-"Dosya listesi %(server)s sunucusuna güncellenirken\n"
-"%(error)s hatası oluştu"
+"%(server)s sunucusundan dosya listesi güncellenemedi:\n"
+"%(error)s"
 
 #, python-format
 msgid ""
 "Error with VLC server:\n"
 "%s"
 msgstr ""
-"VLC sunucuda hata oluştu:\n"
+"VLC sunucusunda hata:\n"
 "%s"
 
 msgid "FQDN"
-msgstr ""
+msgstr "Tam alan adı (FQDN)"
 
 msgid "Filelist"
-msgstr "Dosya Listesi"
+msgstr "Dosya listesi"
 
 msgid "HTTP Port"
-msgstr "HTTP Port"
+msgstr "HTTP bağlantı noktası"
 
 msgid "IP-Address"
-msgstr ""
+msgstr "IP adresi"
 
 msgid ""
 "Latest compatible version VLC 2.0.7\n"
@@ -144,15 +142,20 @@ msgid ""
 "Find file c:/Program Files/VideoLAN/VLC/Lua/http/.hosts and insert your box ip (without #).\n"
 "Add shortcut to the startup of the background start VLC 'C:\\Program Files\\VideoLAN\\VLC\\vlc.exe --intf telnet --extraintf http'"
 msgstr ""
+"Uyumlu en son sürüm VLC 2.0.7\n"
+"Bilgisayarda VLC kurulumu:\n"
+"Araçlar -> Tercihler -> Tümü -> Arayüz -> Ana arayüzler -> Web'i seçin\n"
+"c:/Program Files/VideoLAN/VLC/Lua/http/.hosts dosyasını bulup alıcınızın IP adresini ekleyin (# olmadan).\n"
+"VLC'yi arka planda başlatmak için başlangıca şu kısayolu ekleyin: 'C:\\Program Files\\VideoLAN\\VLC\\vlc.exe --intf telnet --extraintf http'"
 
 msgid "List of known profiles. Note: key info - help"
-msgstr ""
+msgstr "Bilinen profillerin listesi. Yardım için INFO tuşuna basın"
 
 msgid "Movie Directory"
-msgstr "Film Klasörü"
+msgstr "Film dizini"
 
 msgid "No more files in this directory"
-msgstr "Bu klasörde başka dosya yok"
+msgstr "Bu dizinde başka dosya yok"
 
 #, python-format
 msgid ""
@@ -160,105 +163,104 @@ msgid ""
 "%s\n"
 "%s"
 msgstr ""
+"Sunucudan ping yanıtı alınamadı:\n"
+"%s\n"
+"%s"
 
 msgid "No previous file in this directory"
-msgstr "Önceki dosya bu klasörde yok"
+msgstr "Bu dizinde önceki dosya yok"
 
 msgid ""
 "No valid Enigma-Service to play a VLC-Stream\n"
 "Check your installation and try again!"
 msgstr ""
-"VLC stream oynatım becerisi olan, bilinen bir enigma servisi bulunamadı\n"
-"Ayarlarınızı kontrol edin ve tekrar deneyin!"
+"VLC akışını oynatacak geçerli bir Enigma hizmeti yok.\n"
+"Kurulumunuzu kontrol edip yeniden deneyin!"
 
 msgid "OK"
 msgstr "Tamam"
 
 #, python-format
 msgid "Overscan Correction [in %(percentsign)s of Video width]"
-msgstr "Overscan Doğrulama [Video genişliğinin %(percentsign)s 'i]"
+msgstr "Aşırı tarama düzeltmesi [video genişliğinin %(percentsign)s oranı]"
 
 msgid "Ping IP-Address when open Server"
-msgstr ""
+msgstr "Sunucu açılırken IP adresine ping gönder"
 
 msgid "Playlist"
-msgstr "Oynatma Listesi"
+msgstr "Oynatma listesi"
 
 msgid "Really delete this Server?"
 msgstr "Bu sunucu silinsin mi?"
 
-#, fuzzy
 msgid "Reset default"
-msgstr "varsayılana ata"
+msgstr "Varsayılana sıfırla"
 
 msgid "Save as .ts and play"
-msgstr ""
+msgstr ".ts olarak kaydet ve oynat"
 
-#, fuzzy
 msgid "Select VLC-Server profile"
-msgstr "Bilinen VLC Sunucu Profilleri"
+msgstr "VLC sunucu profilini seçin"
 
 msgid "Select method?"
-msgstr ""
+msgstr "Yöntemi seçin"
 
 msgid "Server Address"
-msgstr "Sunucu Adresi"
+msgstr "Sunucu adresi"
 
 msgid "Server Profile Name"
-msgstr "Sunucu Profil Adı"
+msgstr "Sunucu profil adı"
 
 msgid "Serverlist"
-msgstr "Sunucular"
+msgstr "Sunucu listesi"
 
-#, fuzzy
 msgid "Set as default"
-msgstr "varsayılana ata"
+msgstr "Varsayılan olarak ayarla"
 
 msgid "Subtitle overlay"
-msgstr "Altyazı kaplaması"
+msgstr "Altyazıyı görüntüye işle"
 
-#, fuzzy
 msgid "Subtitles"
-msgstr "Altyazı kaplaması"
+msgstr "Altyazılar"
 
 msgid "Transcode MPEG/DVD Audio"
-msgstr "MPEG/DVD Ses transkodla"
+msgstr "MPEG/DVD sesini yeniden kodla"
 
 msgid "Transcode MPEG/DVD Video"
-msgstr "MPEG/DVD Video transkodla"
+msgstr "MPEG/DVD videosunu yeniden kodla"
 
 msgid "Use saving to Cache Directory"
-msgstr ""
+msgstr "Önbellek dizinine kaydetmeyi kullan"
 
 msgid "VLC < 2.x"
-msgstr ""
+msgstr "VLC < 2.x"
 
 msgid "VLC Media List"
-msgstr ""
+msgstr "VLC medya listesi"
 
 msgid "VLC Video Player"
-msgstr ""
+msgstr "VLC video oynatıcı"
 
 msgid "Video Bitrate"
-msgstr "Video bit oranı"
+msgstr "Video bit hızı"
 
 msgid "Video Codec"
-msgstr "Video Kodek"
+msgstr "Video kodlayıcısı"
 
 msgid "Video Norm"
-msgstr "Video Standartı"
+msgstr "Video standardı"
 
 msgid "Yellow subtitles"
-msgstr ""
+msgstr "Sarı altyazılar"
 
 msgid "add server"
 msgstr "sunucu ekle"
 
 msgid "delete server"
-msgstr "sunucu sil"
+msgstr "sunucuyu sil"
 
 msgid "edit server"
-msgstr "sunucu düzenle"
+msgstr "sunucuyu düzenle"
 
 msgid "filter off"
 msgstr "filtre kapalı"
@@ -267,7 +269,7 @@ msgid "filter on"
 msgstr "filtre açık"
 
 msgid "languages"
-msgstr ""
+msgstr "diller"
 
 msgid "play DVD"
 msgstr "DVD oynat"
@@ -276,7 +278,7 @@ msgid "refresh"
 msgstr "yenile"
 
 msgid "set default"
-msgstr "varsayılana ata"
+msgstr "varsayılan yap"
 
 msgid "tracks"
-msgstr ""
+msgstr "izler"

@@ -5,191 +5,230 @@ msgstr ""
 "Project-Id-Version: enigma2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-03-18 16:36+0100\n"
-"PO-Revision-Date: 2014-05-12 12:08+0200\n"
-"Last-Translator: girginoz <girginoz1@hotmail.com>\n"
-"Language-Team: CÜNEYT OCAKLILAR <ocaklilar@gmail.com>\n"
+"PO-Revision-Date: 2026-10-16 09:00+0300\n"
+"Last-Translator: audi06_19 <info@dreamosat-forum.com>\n"
+"Language-Team: Turkish\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Pootle 2.0.3\n"
-"X-Poedit-SourceCharset: utf-8\n"
-"X-Poedit-Country: TURKEY\n"
 "X-Poedit-Bookmarks: 2450,-1,-1,-1,-1,-1,-1,-1,-1,-1\n"
+"X-Poedit-Country: TURKEY\n"
 "X-Poedit-Language: Turkish\n"
+"X-Poedit-SourceCharset: utf-8\n"
 
 msgid ""
 "\n"
 "A recording is in progress."
 msgstr ""
+"\n"
+"Kayıt devam ediyor."
 
 msgid ""
 "\n"
 "Second slot dual tuner may not be supported blind scan."
 msgstr ""
+"\n"
+"İkinci yuvadaki çift tuner kör taramayı desteklemeyebilir."
 
 msgid ""
 "\n"
 "WARNING! Blind scan may make the tuner malfunction on a VU+ and ET receiver. A reboot afterwards may be required to return to proper tuner function."
 msgstr ""
+"\n"
+"UYARI! Kör tarama, VU+ ve ET alıcılarda tunerin düzgün çalışmasını engelleyebilir. Tuneri normale döndürmek için sonrasında cihazı yeniden başlatmanız gerekebilir."
 
 msgid ""
 "\n"
 "You must use the power adapter."
 msgstr ""
+"\n"
+"Güç adaptörünü kullanmalısınız."
 
 msgid "   Starting Sundtek hardware blind scan."
-msgstr ""
+msgstr "   Sundtek donanımsal kör taraması başlatılıyor."
 
-#
-#, fuzzy
 msgid " tuner."
-msgstr "Tuner"
+msgstr " tuneri."
 
-#, fuzzy
-msgid "\"channel scan\" searches for channels and saves them to your receiver; \"transponder scan\" does a transponder search and displays the results allowing user to select some or all transponder. Both options save the results in satellites.xml format under /tmp"
-msgstr "\"kanal tarama\" kanalları arar ve alıcınıza kaydeder; \"XML dosyasına kaydet\" aktarıcıu araması yapar ve bulunan aktarıcıları satellites.xml formatında bir xml dosyasına kaydeder"
+msgid ""
+"\"channel scan\" searches for channels and saves them to your receiver; "
+"\"transponder scan\" does a transponder search and displays the results "
+"allowing user to select some or all transponder. Both options save the "
+"results in satellites.xml format under /tmp"
+msgstr ""
+"\"Kanal taraması\" kanalları arayıp alıcınıza kaydeder. \"Transponder "
+"taraması\" transponderleri arayıp sonuçları gösterir; bunların bir kısmını "
+"veya tamamını seçebilirsiniz. Her iki seçenek de sonuçları /tmp altında "
+"satellites.xml biçiminde kaydeder."
 
-#, fuzzy
-msgid "\"scan for channels\" searches for channels and saves them to your receiver; \"Save to XML\" does a transponder search and saves the results in satellites.xml format and stores it in /tmp"
-msgstr "\"kanal tarama\" kanalları arar ve alıcınıza kaydeder; \"XML dosyasına kaydet\" aktarıcıu araması yapar ve bulunan aktarıcıları satellites.xml formatında bir xml dosyasına kaydeder"
+msgid ""
+"\"scan for channels\" searches for channels and saves them to your receiver;"
+" \"Save to XML\" does a transponder search and saves the results in "
+"satellites.xml format and stores it in /tmp"
+msgstr ""
+"\"Kanalları tara\" kanalları arayıp alıcınıza kaydeder. \"XML olarak "
+"kaydet\" transponderleri arar ve sonuçları /tmp altında satellites.xml "
+"biçiminde kaydeder."
 
 #, python-format
 msgid "%d transponder(s) found"
-msgstr ""
+msgstr "%d transponder bulundu"
 
 #, python-format
 msgid "%d transponders found at %d:%02d min"
-msgstr ""
+msgstr "%d transponder, %d:%02d dakikada bulundu"
 
 #, python-format
 msgid "%d:%02d/%d:%02dmin"
-msgstr ""
+msgstr "%d:%02d/%d:%02d dk"
 
 #, python-format
 msgid "%dMHz scanned"
-msgstr ""
+msgstr "%d MHz tarandı"
 
 msgid "Accuracy (higher is better)"
-msgstr ""
+msgstr "Doğruluk (yüksek değer daha iyidir)"
 
 msgid "Auto / Manual"
-msgstr ""
+msgstr "Otomatik / Elle"
 
 msgid "Blind scan"
 msgstr "Kör tarama"
 
 msgid "Blind scan for DVB-S2 tuners"
-msgstr ""
+msgstr "DVB-S2 tunerler için kör tarama"
 
-#, fuzzy
 msgid "Blind scan state"
-msgstr "Kör tarama"
+msgstr "Kör tarama durumu"
 
 msgid "Blindscan is not supported in "
+msgstr "Kör tarama desteklenmiyor: "
+
+msgid ""
+"CAUTION: If you select \"yes\" the scan will not remove \"duplicated\" "
+"transponders from the list. Default is \"no\". Only change this if you "
+"understand why you are doing it."
 msgstr ""
+"DİKKAT: \"Evet\" seçilirse yinelenen transponderler listeden çıkarılmaz. "
+"Varsayılan değer \"hayır\"dır. Yalnızca etkisini biliyorsanız değiştirin."
 
-msgid "CAUTION: If you select \"yes\" the scan will not remove \"duplicated\" transponders from the list. Default is \"no\". Only change this if you understand why you are doing it."
+msgid ""
+"CAUTION: If you select \"yes\" the scan will not sync with transponders "
+"listed in satellites.xml. Default is \"no\". Only change this if you "
+"understand why you are doing it."
 msgstr ""
+"DİKKAT: \"Evet\" seçilirse sonuçlar satellites.xml dosyasındaki "
+"transponderlerle eşitlenmez. Varsayılan değer \"hayır\"dır. Yalnızca "
+"etkisini biliyorsanız değiştirin."
 
-#, fuzzy
-msgid "CAUTION: If you select \"yes\" the scan will not sync with transponders listed in satellites.xml. Default is \"no\". Only change this if you understand why you are doing it."
-msgstr "\"evet\" sadece satellites.xml de olmayan aktarıcılar için tarama yapılır."
-
-#, fuzzy
-msgid "CAUTION: Only select \"inverted\" if you are using an inverted LNB (i.e. an LNB where the local oscillator frequency is greater than the scan frequency). Default is \"normal\". Only change this if you understand why you are doing it."
-msgstr "\"evet\" sadece satellites.xml de olmayan aktarıcılar için tarama yapılır."
+msgid ""
+"CAUTION: Only select \"inverted\" if you are using an inverted LNB (i.e. an "
+"LNB where the local oscillator frequency is greater than the scan "
+"frequency). Default is \"normal\". Only change this if you understand why "
+"you are doing it."
+msgstr ""
+"DİKKAT: \"Ters\" seçeneğini yalnızca yerel osilatör frekansı tarama "
+"frekansından yüksek olan bir LNB kullanıyorsanız seçin. Varsayılan değer "
+"\"normal\"dir. Yalnızca etkisini biliyorsanız değiştirin."
 
 msgid "Cancel"
-msgstr ""
+msgstr "İptal"
 
-#
 msgid "Clear before scan"
-msgstr "Tarama öncesinde kanal listesini temizle"
+msgstr "Taramadan önce temizle"
 
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Current Status: %d/%d\n"
 "Satellite: %s\n"
 "Polarization: %s  Frequency range: %d - %d MHz  Symbol rates: %d - %d MSym/s"
 msgstr ""
-"Durum : %d/%d\n"
-"   Uydu : %s\n"
-"   Polarizasyon : %s\n"
-"   Frekans aralığı : %d - %d MHz\n"
-"   Sembol oranı : %d - %d MHz"
+"Mevcut durum: %d/%d\n"
+"Uydu: %s\n"
+"Polarizasyon: %s  Frekans aralığı: %d - %d MHz  Sembol hızları: %d - %d MSym/s"
 
 msgid "DVB-S + DVB-S2"
-msgstr ""
+msgstr "DVB-S + DVB-S2"
 
 msgid "DVB-S only"
-msgstr ""
+msgstr "Yalnızca DVB-S"
 
 msgid "Deselect all"
-msgstr ""
+msgstr "Tüm seçimleri kaldır"
 
 msgid "Disable remove duplicates"
-msgstr ""
+msgstr "Yinelenenleri kaldırmayı devre dışı bırak"
 
-#, fuzzy
 msgid "Disable sync with known transponders"
-msgstr "Sadece bilinmeyen aktarıcıları tara"
+msgstr "Bilinen transponderlerle eşitlemeyi devre dışı bırak"
 
-#
 msgid "Exit"
 msgstr "Çıkış"
 
 msgid "Filter out adjacent satellites"
-msgstr "Bitişik uyduları filtrele"
+msgstr "Komşu uyduları filtrele"
 
-#, fuzzy, python-format
+#, python-format
 msgid "Frequency values must be between %d MHz and %d MHz"
-msgstr "Frekans değerleri 10700 MHz-12749 MHz arasında olmalıdır"
+msgstr "Frekans değerleri %d MHz ile %d MHz arasında olmalıdır"
 
-#, fuzzy, python-format
+#, python-format
 msgid "Frequency values must be between %d MHz and %d MHz (C-band)"
-msgstr "Frekans değerleri 10700 MHz-12749 MHz arasında olmalıdır"
+msgstr "Frekans değerleri %d MHz ile %d MHz arasında olmalıdır (C bandı)"
 
 #, python-format
 msgid "Hardware blind scan is not supported by this tuner (%s)!"
-msgstr ""
+msgstr "Bu tuner donanımsal kör taramayı desteklemiyor (%s)!"
 
 msgid "Hardware type"
+msgstr "Donanım türü"
+
+msgid ""
+"If you select \"yes\" all channels on the satellite being search will be "
+"deleted before starting the current search, yes (keep feeds) means the same "
+"but hold all feed services/transponders."
 msgstr ""
+"\"Evet\" seçilirse aramadan önce uydudaki tüm kanallar silinir. \"Evet (feed"
+" yayınlarını koru)\" da aynı işlemi yapar, ancak feed kanallarını ve "
+"transponderlerini korur."
 
-#, fuzzy
-msgid "If you select \"yes\" all channels on the satellite being search will be deleted before starting the current search, yes (keep feeds) means the same but hold all feed services/transponders."
-msgstr "\"evet\" geçerli tarama başlamadan önce uyduya ait tüm eski kanallar silinir."
+msgid ""
+"If you select \"yes\" the scan will only save channels that are not "
+"encrypted; \"no\" will find encrypted and non-encrypted channels."
+msgstr ""
+"\"Evet\" seçilirse yalnızca şifresiz kanallar kaydedilir. \"Hayır\" "
+"seçilirse hem şifreli hem şifresiz kanallar bulunur."
 
-#, fuzzy
-msgid "If you select \"yes\" the scan will only save channels that are not encrypted; \"no\" will find encrypted and non-encrypted channels."
-msgstr "\"evet\" tarama sadece şifresiz kanalları saklar; \"hayır\" şifresiz ve şifreli kanalları bulur."
-
-msgid "If you select \"yes\" the scan will only search transponders not listed in satellites.xml"
-msgstr "\"evet\" sadece satellites.xml de olmayan aktarıcılar için tarama yapılır."
+msgid ""
+"If you select \"yes\" the scan will only search transponders not listed in "
+"satellites.xml"
+msgstr ""
+"\"Evet\" seçilirse yalnızca satellites.xml dosyasında bulunmayan "
+"transponderler aranır."
 
 msgid "It seems manufacturer does not support blind scan for this tuner."
-msgstr ""
+msgstr "Üretici bu tuner için kör tarama desteği sunmuyor gibi görünüyor."
 
 msgid "LNB inversion"
-msgstr ""
+msgstr "LNB ters çevirme"
 
 msgid "LNB of current satellite not compatible with plugin"
-msgstr ""
+msgstr "Mevcut uydunun LNB'si eklentiyle uyumlu değil"
 
 msgid ""
 "Looking for available transponders.\n"
 "This will take a long time, please be patient."
 msgstr ""
-"Aktarıcılar aranıyor.\n"
-"Bu uzunca bir zaman alacak, sabredin."
+"Kullanılabilir transponderler aranıyor.\n"
+"Bu işlem uzun sürebilir, lütfen bekleyin."
 
 msgid "Maybe the reason that recording is currently running."
-msgstr ""
+msgstr "Bunun nedeni devam eden kayıt olabilir."
 
 msgid "Moving to "
-msgstr ""
+msgstr "Şu konuma dönülüyor: "
 
 msgid ""
 "No new transponders found! \n"
@@ -197,100 +236,93 @@ msgid ""
 "Only transponders already listed in satellites.xml \n"
 "have been found for those search parameters!"
 msgstr ""
-"Yeni aktarıcı bulunamadı! \n"
+"Yeni transponder bulunamadı! \n"
 "\n"
-"Sadece satellites.xml içinde bulunan aktarıcılar\n"
-"bulundu!"
+"Bu arama ölçütleriyle yalnızca satellites.xml dosyasında \n"
+"zaten bulunan transponderler bulundu!"
 
 msgid "No transponders were found for those search parameters!"
-msgstr "Arama parametreleri için hiçbir aktarıcı bulunamadı!"
+msgstr "Bu arama ölçütleriyle transponder bulunamadı!"
 
 #, python-format
 msgid "Not found blind scan utility '%s'!"
-msgstr ""
+msgstr "Kör tarama aracı '%s' bulunamadı!"
 
 msgid "Nothing to scan! Press Exit!"
-msgstr ""
+msgstr "Taranacak bir şey yok! EXIT tuşuna basın!"
 
 msgid "Only free scan"
-msgstr "Sadece şifresiz tara"
+msgstr "Yalnızca şifresiz kanalları tara"
 
 msgid "Only scan unknown transponders"
-msgstr "Sadece bilinmeyen aktarıcıları tara"
+msgstr "Yalnızca bilinmeyen transponderleri tara"
 
 msgid "Open xml file"
-msgstr ""
+msgstr "XML dosyasını aç"
 
 msgid "Please setup your tuner configuration."
-msgstr "Lütfen tuner yapılandırmanızı kurun."
+msgstr "Lütfen tuner ayarlarınızı yapın."
 
 msgid "Polarisation"
 msgstr "Polarizasyon"
 
 msgid "Polarisation, select horizontal, vertical or both."
-msgstr ""
+msgstr "Yatay, dikey veya her iki polarizasyonu seçin."
 
 msgid "Press Green/OK to start the scan"
-msgstr "Taramayı başlatmak için Yeşil/OK'a basın."
+msgstr "Taramayı başlatmak için yeşil tuşa veya OK tuşuna basın"
 
-#, fuzzy
 msgid "Press OK to start the scan."
-msgstr "Taramayı başlatmak için Yeşil/OK'a basın."
+msgstr "Taramayı başlatmak için OK tuşuna basın."
 
-#, fuzzy
 msgid "Press green to start service searching."
-msgstr "Taramayı başlatmak için Yeşil/OK'a basın."
+msgstr "Kanal aramasını başlatmak için yeşil tuşa basın."
 
 msgid "Restore defaults"
-msgstr ""
+msgstr "Varsayılanları geri yükle"
 
 msgid "Rotor: "
-msgstr ""
+msgstr "Motor: "
 
-#
 msgid "Satellite"
 msgstr "Uydu"
 
-#
-#, fuzzy
 msgid "Satellite blind scan"
-msgstr "Uydu"
+msgstr "Uydu kör taraması"
 
 msgid "Scan"
-msgstr ""
+msgstr "Tara"
 
 msgid "Scan Step in MHz(TBS5925)"
-msgstr ""
+msgstr "Tarama adımı, MHz (TBS5925)"
 
 msgid "Scan satellites for new transponders"
-msgstr "Uyduları yeni aktarıcılar için tara"
+msgstr "Uydularda yeni transponderler ara"
 
 msgid "Scan start frequency"
 msgstr "Tarama başlangıç frekansı"
 
 msgid "Scan start symbolrate"
-msgstr "Tarama başlangıç sembol değeri"
+msgstr "Tarama başlangıç sembol hızı"
 
 msgid "Scan stop frequency"
 msgstr "Tarama bitiş frekansı"
 
 msgid "Scan stop symbolrate"
-msgstr "Tarama bitiş sembol değeri"
+msgstr "Tarama bitiş sembol hızı"
 
-#, fuzzy
 msgid "Scan unknown error!"
-msgstr "Sadece bilinmeyen aktarıcıları tara"
+msgstr "Taramada bilinmeyen hata!"
 
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Search completed\n"
 "%d transponders found in %d:%02d minutes.\n"
 "Details saved in: %s"
 msgstr ""
-"Arama tamamlandı. %d aktarıcı bulundu.\n"
-"\n"
-"Detaylar buraya saklandı:\n"
-"%s"
+"Arama tamamlandı\n"
+"%d transponder, %d:%02d dakikada bulundu.\n"
+"Ayrıntıların kaydedildiği yer: %s"
 
 #, python-format
 msgid ""
@@ -299,139 +331,143 @@ msgid ""
 "Details saved in:\n"
 "%s"
 msgstr ""
-"Arama tamamlandı. %d aktarıcı bulundu.\n"
+"Arama tamamlandı. %d transponder bulundu.\n"
 "\n"
-"Detaylar buraya saklandı:\n"
+"Ayrıntıların kaydedildiği yer:\n"
 "%s"
 
 msgid "Search type"
-msgstr "Arama tipi"
+msgstr "Arama türü"
 
-#, fuzzy
 msgid "Searching for active satellite transponders..."
-msgstr "Uyduları yeni aktarıcılar için tara"
+msgstr "Etkin uydu transponderleri aranıyor..."
 
 msgid "Select a tuner that is configured for the satellite you wish to search"
-msgstr "Taramak istediğiniz uyduya yapılandırılmış bir tuner seçin"
+msgstr "Aramak istediğiniz uydu için yapılandırılmış bir tuner seçin"
 
 msgid "Select all"
-msgstr ""
+msgstr "Tümünü seç"
 
-msgid "Select between 1 and 5. Higher numbers give more accurat search results."
+msgid ""
+"Select between 1 and 5. Higher numbers give more accurat search results."
 msgstr ""
+"1 ile 5 arasında bir değer seçin. Yüksek değerler daha doğru arama sonuçları"
+" verir."
 
 msgid "Select the satellite you wish to search"
-msgstr "Taramak istediğiniz uyduyu seçin"
+msgstr "Aramak istediğiniz uyduyu seçin"
 
 msgid ""
 "Select transponders and press green to scan.\n"
 "Press yellow to select all transponders and blue to deselect all."
 msgstr ""
+"Transponderleri seçip taramak için yeşil tuşa basın.\n"
+"Tümünü seçmek için sarı, tüm seçimleri kaldırmak için mavi tuşa basın."
 
-#
-#, fuzzy
 msgid "Select type for scan:"
-msgstr "Tarama öncesinde kanal listesini temizle"
+msgstr "Tarama türünü seçin:"
 
-msgid "Service searching to be started MANUALLY by the user. To change this press green."
+msgid ""
+"Service searching to be started MANUALLY by the user. To change this press "
+"green."
 msgstr ""
+"Kanal araması kullanıcı tarafından ELLE başlatılacak. Değiştirmek için yeşil"
+" tuşa basın."
 
-msgid "Service searching will start AUTOMATICALLY. To change this press green."
-msgstr ""
+msgid ""
+"Service searching will start AUTOMATICALLY. To change this press green."
+msgstr "Kanal araması OTOMATİK başlayacak. Değiştirmek için yeşil tuşa basın."
 
 msgid "Smaller steps takes longer but scan is more thorough"
-msgstr ""
+msgstr "Küçük adımlar daha uzun sürer, ancak daha kapsamlı tarama yapar"
 
 msgid "Sorry, this tuner is in use."
-msgstr "Üzgünüz, bu tuner kullanımda."
+msgstr "Bu tuner şu anda kullanımda."
 
 msgid "Start scan"
-msgstr ""
+msgstr "Taramayı başlat"
 
 #, python-format
 msgid "Step %d %d:%02d min"
-msgstr ""
+msgstr "Adım %d, %d:%02d dk"
 
-#, fuzzy, python-format
+#, python-format
 msgid "Symbol rate values are in megasymbols; enter a value between %d and %d"
-msgstr "Sembol değerleri, megasembol biçiminde; 1 - 44 arasında bir değer girin."
+msgstr ""
+"Sembol hızları megasembol cinsindendir; %d ile %d arasında bir değer girin"
 
 msgid "Symbol rate values are in megasymbols; enter a value between 1 and 44"
-msgstr "Sembol değerleri, megasembol biçiminde; 1 - 44 arasında bir değer girin."
+msgstr ""
+"Sembol hızları megasembol cinsindendir; 1 ile 44 arasında bir değer girin"
 
 msgid "Symbol rate values are in megasymbols; enter a value between 2 and 45"
-msgstr "Sembol değerleri, megasembol biçiminde; 2 - 45 arasında bir değer girin."
+msgstr ""
+"Sembol hızları megasembol cinsindendir; 2 ile 45 arasında bir değer girin"
 
 msgid "The blindscan run was cancelled by the user."
 msgstr "Kör tarama kullanıcı tarafından iptal edildi."
 
-#, fuzzy, python-format
+#, python-format
 msgid "The suggested polarisation for this satellite is \"%s\""
-msgstr "Bu uydu için önerilen polarizasyon \""
+msgstr "Bu uydu için önerilen polarizasyon: \"%s\""
 
 msgid "Transponder searching finished!"
-msgstr ""
+msgstr "Transponder araması tamamlandı!"
 
-#
 msgid "Tuner"
 msgstr "Tuner"
 
 msgid "Use Sundtek full hardware blind scan!"
-msgstr ""
+msgstr "Sundtek tam donanımsal kör taramasını kullan!"
 
 msgid "Utility from the manufacturer"
+msgstr "Üreticinin aracı"
+
+msgid ""
+"When a neighbouring satellite is very strong this avoids searching "
+"transponders known to be coming from the neighbouring satellite."
 msgstr ""
+"Komşu uydunun sinyali çok güçlüyse o uyduya ait olduğu bilinen "
+"transponderlerin aranmasını engeller."
 
-#, fuzzy
-msgid "When a neighbouring satellite is very strong this avoids searching transponders known to be coming from the neighbouring satellite."
-msgstr "Komşu bir uydunun çok kuvvetli olması, yakındaki uydu aktarıcılarının aranmasını önleyebilir."
-
-#
 msgid "circular left"
 msgstr "dairesel sol"
 
-#
-#, fuzzy
 msgid "circular left/right"
-msgstr "dairesel sağ"
+msgstr "dairesel sol/sağ"
 
-#
 msgid "circular right"
 msgstr "dairesel sağ"
 
 msgid "circular right and circular left"
 msgstr "dairesel sağ ve dairesel sol"
 
-#, fuzzy
 msgid "don't scan"
-msgstr "Kör tarama"
+msgstr "tarama yapma"
 
-#
 msgid "horizontal"
-msgstr "yatay (h)"
+msgstr "yatay"
 
 msgid "inverted"
-msgstr ""
+msgstr "ters"
 
-#
 msgid "no"
 msgstr "hayır"
 
 msgid "normal"
-msgstr ""
+msgstr "normal"
 
 msgid "save to XML file"
-msgstr "XML dosyasına sakla"
+msgstr "XML dosyasına kaydet"
 
 msgid "scan"
-msgstr ""
+msgstr "tara"
 
 msgid "scan for channels"
-msgstr "kanal tara"
+msgstr "kanalları tara"
 
-#, fuzzy
 msgid "scan for transponders"
-msgstr "Sadece bilinmeyen aktarıcıları tara"
+msgstr "transponderleri tara"
 
 msgid "up to 1 degree"
 msgstr "1 dereceye kadar"
@@ -442,15 +478,14 @@ msgstr "2 dereceye kadar"
 msgid "up to 3 degrees"
 msgstr "3 dereceye kadar"
 
-#
 msgid "vertical"
-msgstr "dikey (v)"
+msgstr "dikey"
 
 msgid "vertical and horizontal"
 msgstr "dikey ve yatay"
 
 msgid "yes"
-msgstr ""
+msgstr "evet"
 
 msgid "yes (keep feeds)"
-msgstr ""
+msgstr "evet (feed yayınlarını koru)"

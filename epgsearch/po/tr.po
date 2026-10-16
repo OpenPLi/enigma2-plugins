@@ -1,178 +1,196 @@
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: enigma2 EPGSearch plugin Turkish Locale\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-09-29 07:32+0200\n"
-"PO-Revision-Date: 2014-11-22 20:47+0100\n"
-"Last-Translator: Zülfikar VEYİSOĞLU <z.veyisoglu@hobiagaci.com>\n"
-"Language-Team: http://hobiagaci.com <z.veyisoglu@hobiagaci.com>\n"
-"Language: \n"
+"PO-Revision-Date: 2026-10-16 09:00+0300\n"
+"Last-Translator: audi06_19 <info@dreamosat-forum.com>\n"
+"Language-Team: Turkish\n"
+"Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Language: Turkish\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-Country: TURKEY\n"
+"X-Poedit-Language: Turkish\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
 #, python-format
 msgid " (%d min)"
-msgstr ""
+msgstr " (%d dk)"
 
 #, python-format
 msgid " (%s%d min)"
-msgstr ""
+msgstr " (%s%d dk)"
 
 msgid "Add \"Search event in EPG\" to channel menu"
-msgstr ""
+msgstr "Kanal menüsüne \"Programı EPG'de ara\" ekle"
 
 msgid "Add \"Search event in EPG\" to event menu"
-msgstr ""
+msgstr "Program menüsüne \"Programı EPG'de ara\" ekle"
 
 msgid "Add \"Search\" Button to EPG"
-msgstr ""
+msgstr "EPG'ye \"Ara\" düğmesi ekle"
 
 msgid "Add timer"
-msgstr "Zamanlayıcı eke"
+msgstr "Zamanlayıcı ekle"
 
-msgid "Adds \"Search event in EPG\" item into the channel selection context menu (needs restart GUI)"
+msgid ""
+"Adds \"Search event in EPG\" item into the channel selection context menu "
+"(needs restart GUI)"
 msgstr ""
+"Kanal seçimi bağlam menüsüne \"Programı EPG'de ara\" ekler (arayüzün yeniden"
+" başlatılması gerekir)."
 
 msgid "Adds \"Search event in EPG\" item into the event menu (needs restart GUI)"
 msgstr ""
+"Program menüsüne \"Programı EPG'de ara\" ekler (arayüzün yeniden "
+"başlatılması gerekir)."
 
 msgid "Cancel"
-msgstr "Vazgeç"
+msgstr "İptal"
 
 msgid "Channel Selection"
-msgstr "Kanal Seçimi"
+msgstr "Kanal seçimi"
 
 msgid "Choice list"
-msgstr ""
+msgstr "Seçenek listesi"
 
 msgid "Choice list EPGSearch"
-msgstr ""
+msgstr "EPGSearch seçenek listesi"
 
 msgid "Choice list RED Button"
-msgstr ""
+msgstr "Kırmızı tuş seçenek listesi"
 
-#, fuzzy
 msgid "Clear history"
-msgstr "Geçmiş kaydı yok"
+msgstr "Geçmişi temizle"
 
 #, python-format
 msgid "Could not read AutoTimer timer list: %s"
-msgstr "AutoTimer zamanlayıcı listesi okunamıyor : %s"
+msgstr "AutoTimer zamanlayıcı listesi okunamadı: %s"
 
 msgid "Custom search"
-msgstr ""
+msgstr "Özel arama"
 
 msgid "Delete"
-msgstr ""
+msgstr "Sil"
 
 #, python-format
 msgid "Delete text '%s' from history?"
-msgstr ""
+msgstr "'%s' metni geçmişten silinsin mi?"
 
 msgid "Display name service as in bouquets"
-msgstr ""
+msgstr "Kanal adlarını buketlerdeki gibi göster"
 
 msgid "EPG Search"
-msgstr "EPG Arama"
+msgstr "EPG araması"
 
-#, fuzzy
 msgid "EPGSearch"
-msgstr "EPG Arama"
+msgstr "EPGSearch"
 
-#, fuzzy
 msgid "EPGSearch - History"
-msgstr "EPG Arama"
+msgstr "EPGSearch - Geçmiş"
 
-#, fuzzy
 msgid "EPGSearch Setup"
-msgstr "EPG Arama"
+msgstr "EPGSearch ayarları"
 
-#, fuzzy
 msgid "Edit & search"
-msgstr "EPG Arama"
+msgstr "Düzenle ve ara"
 
 msgid "Enter text to search for"
-msgstr "Arama metnini girin"
+msgstr "Aranacak metni girin"
 
 msgid "Exclude Last Scanned"
-msgstr ""
+msgstr "Son tarananları hariç tut"
 
 msgid "Exclude the Last Scanned bouquet when searching only in bouquets."
 msgstr ""
+"Yalnızca buketlerde arama yapılırken Son Tarananlar buketini hariç tutar."
 
 msgid "Export selected as AutoTimer"
-msgstr "Seçililenleri AutoTimer olarak dışarı ver"
+msgstr "Seçileni AutoTimer olarak dışa aktar"
 
 msgid "History"
 msgstr "Geçmiş"
 
-msgid "How many entries to keep in the search history at most. 0 disables history entirely!"
+msgid ""
+"How many entries to keep in the search history at most. 0 disables history "
+"entirely!"
 msgstr ""
+"Arama geçmişinde saklanacak en fazla girdi sayısıdır. 0 seçilirse geçmiş "
+"tamamen kapatılır!"
 
-msgid "If 'Search only bouquets' is enabled, show service name as in bouquets for renamed services."
+msgid ""
+"If 'Search only bouquets' is enabled, show service name as in bouquets for "
+"renamed services."
 msgstr ""
+"\"Yalnızca buketlerde ara\" etkinse adı değiştirilmiş kanallar buketlerdeki "
+"adlarıyla gösterilir."
 
-msgid "If this setting is enabled, searching EPG in only services in user bouquets."
+msgid ""
+"If this setting is enabled, searching EPG in only services in user bouquets."
 msgstr ""
+"Etkinleştirildiğinde EPG araması yalnızca kullanıcı buketlerindeki "
+"kanallarda yapılır."
 
-msgid "If this setting is enabled, the plugin adds a \"Search\" Button to the regular EPG."
-msgstr ""
+msgid ""
+"If this setting is enabled, the plugin adds a \"Search\" Button to the "
+"regular EPG."
+msgstr "Etkinleştirildiğinde standart EPG'ye \"Ara\" düğmesi eklenir."
 
 msgid "If this setting is enabled, the plugin adds picons."
-msgstr ""
+msgstr "Etkinleştirildiğinde kanal logoları gösterilir."
 
 msgid "Import from AutoTimer"
-msgstr "Otomatik zamanlayıcıdan içeri al"
+msgstr "AutoTimer'dan içe aktar"
 
 msgid "Import from EPG"
-msgstr "EPG'den içeri al"
+msgstr "EPG'den içe aktar"
 
 msgid "Import from Timer"
-msgstr "Zamanlayıcıdan içeri al"
+msgstr "Zamanlayıcıdan içe aktar"
 
 msgid "Include IPTV services"
-msgstr ""
+msgstr "IPTV kanallarını dâhil et"
 
-msgid "Include IPTV services in search, in some cases slows down the searching."
+msgid ""
+"Include IPTV services in search, in some cases slows down the searching."
 msgstr ""
+"IPTV kanallarını aramaya dâhil eder. Bazı durumlarda aramayı yavaşlatabilir."
 
 msgid "Length of History"
-msgstr ""
+msgstr "Geçmiş uzunluğu"
 
 msgid "List of history is cleared !"
-msgstr ""
+msgstr "Geçmiş temizlendi!"
 
 msgid "Lookup in TMBD"
-msgstr ""
+msgstr "TMDB'de ara"
 
 msgid "Modify searched text"
-msgstr ""
+msgstr "Arama metnini değiştir"
 
 msgid "New Search"
-msgstr "Yeni Arama"
+msgstr "Yeni arama"
 
-#, fuzzy
 msgid "No history !"
-msgstr "Geçmiş kaydı yok"
+msgstr "Geçmiş yok!"
 
 msgid "OK"
 msgstr "Tamam"
 
 msgid "Open selected in IMDb"
-msgstr ""
+msgstr "Seçileni IMDb'de aç"
 
 msgid "Partnerbox Entries"
-msgstr ""
+msgstr "Partnerbox girdileri"
 
 msgid "Result filter"
-msgstr ""
+msgstr "Sonuç filtresi"
 
 msgid "Save"
-msgstr ""
+msgstr "Kaydet"
 
 msgid "Save search as AutoTimer"
 msgstr "Aramayı AutoTimer olarak kaydet"
@@ -181,91 +199,108 @@ msgid "Search"
 msgstr "Ara"
 
 msgid "Search EPG by title event"
-msgstr ""
+msgstr "EPG'de program başlığına göre ara"
 
-#, fuzzy
 msgid "Search event in EPG"
-msgstr "EPG'de ara"
+msgstr "Programı EPG'de ara"
 
 msgid "Search only bouquets"
-msgstr ""
+msgstr "Yalnızca buketlerde ara"
 
 msgid "Search strictness"
-msgstr ""
+msgstr "Harf büyüklüğü duyarlılığı"
 
-#, fuzzy
 msgid "Search type"
-msgstr "Ara"
+msgstr "Arama türü"
 
 msgid "Select a timer to search"
-msgstr "Arama zamanını seçin"
+msgstr "Aranacak zamanlayıcıyı seçin"
 
 msgid "Select action:"
-msgstr ""
+msgstr "İşlem seçin:"
 
 msgid "Select channel"
-msgstr ""
+msgstr "Kanal seçin"
 
-msgid "Select item for search and press 'OK' or edit item with yellow button or delete item with blue button."
+msgid ""
+"Select item for search and press 'OK' or edit item with yellow button or "
+"delete item with blue button."
 msgstr ""
+"Aranacak girdiyi seçip OK tuşuna basın. Sarı tuşla düzenleyebilir, mavi "
+"tuşla silebilirsiniz."
 
-msgid "Select type for search, \"partial match\" for the most extensive search, \"partial description\" for the most description search."
+msgid ""
+"Select type for search, \"partial match\" for the most extensive search, "
+"\"partial description\" for the most description search."
 msgstr ""
+"En kapsamlı başlık araması için \"kısmi eşleşme\", açıklamalarda kapsamlı "
+"arama için \"kısmi açıklama\" türünü seçin."
 
 msgid "Select type: 'Search and Select channel' or 'Search'."
-msgstr ""
+msgstr "Türü seçin: 'Ara ve kanal seç' veya 'Ara'."
 
 msgid "Select whether or not you want to enforce case correctness."
-msgstr ""
+msgstr "Büyük/küçük harf ayrımı yapılıp yapılmayacağını seçin."
 
 msgid "Setup"
-msgstr ""
+msgstr "Ayarlar"
 
 msgid "Timers list"
-msgstr ""
+msgstr "Zamanlayıcı listesi"
 
 msgid "Type blue Button"
-msgstr ""
+msgstr "Mavi tuşun işlevi"
 
-msgid "Use P+/- to filter result by short description or extended (only if short is missing). Partial: only items whose description is contained in selected event. Exact: only items with matching description. Full: identical whole description."
+msgid ""
+"Use P+/- to filter result by short description or extended (only if short is"
+" missing). Partial: only items whose description is contained in selected "
+"event. Exact: only items with matching description. Full: identical whole "
+"description."
 msgstr ""
+"Sonuçları kısa açıklamaya göre (yoksa ayrıntılı açıklamaya göre) filtrelemek"
+" için P+/- kullanın. Kısmi: açıklaması seçili programın açıklamasında "
+"geçenler. Tam eşleşme: açıklaması eşleşenler. Bütün: açıklamanın tamamı aynı"
+" olanlar."
 
 msgid "Use Picons"
-msgstr ""
+msgstr "Kanal logolarını kullan"
 
 msgid "Use event name for yellow button search"
-msgstr ""
+msgstr "Sarı tuşla aramada program adını kullan"
 
-msgid "Use the current event name as the initial search text. An empty search field is used otherwise."
+msgid ""
+"Use the current event name as the initial search text. An empty search field"
+" is used otherwise."
 msgstr ""
+"İlk arama metni olarak mevcut programın adını kullanır. Aksi durumda arama "
+"alanı boş bırakılır."
 
 msgid "Zap to selected service"
-msgstr ""
+msgstr "Seçili kanala geç"
 
 msgid "case-insensitive search"
-msgstr ""
+msgstr "büyük/küçük harfe duyarsız arama"
 
 msgid "case-sensitive search"
-msgstr ""
+msgstr "büyük/küçük harfe duyarlı arama"
 
 msgid "choice (Search and standard)"
-msgstr ""
+msgstr "seçim (arama ve standart)"
 
 msgid "exact match"
-msgstr ""
+msgstr "tam eşleşme"
 
 msgid "full match (short + extended)"
-msgstr ""
+msgstr "bütün açıklama eşleşmesi (kısa + ayrıntılı)"
 
-#, fuzzy
 msgid "only Search"
-msgstr "Ara"
+msgstr "yalnızca arama"
 
 msgid "partial description"
-msgstr ""
+msgstr "kısmi açıklama"
 
 msgid "partial match"
-msgstr ""
+msgstr "kısmi eşleşme"
 
 msgid "search EPG"
 msgstr "EPG'de ara"
@@ -274,7 +309,7 @@ msgid "search EPG..."
 msgstr "EPG'de ara..."
 
 msgid "title ends with"
-msgstr ""
+msgstr "başlığın sonu"
 
 msgid "title starts with"
-msgstr ""
+msgstr "başlığın başlangıcı"
