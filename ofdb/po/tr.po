@@ -1,37 +1,39 @@
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: enigma2 OFDb plugin Turkish Locale\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-05-11 10:58+0200\n"
-"PO-Revision-Date: 2009-09-22 13:18+0200\n"
-"Last-Translator: Zülfikar VEYİSOĞLU <z.veyisoglu@hobiagaci.com>\n"
-"Language-Team: http://hobiagaci.com <z.veyisoglu@hobiagaci.com>\n"
-"Language: \n"
+"PO-Revision-Date: 2026-10-16 09:00+0300\n"
+"Last-Translator: audi06_19 <info@dreamosat-forum.com>\n"
+"Language-Team: Turkish\n"
+"Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Language: Turkish\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-Country: TURKEY\n"
+"X-Poedit-Language: Turkish\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
 msgid "Ambiguous results"
-msgstr "Muhtemel eşleşen başlıklar"
+msgstr "Birden fazla olası sonuç"
 
 msgid "Cast: "
 msgstr "Oyuncular: "
 
 msgid "Channel Selection"
-msgstr "Kanal Seçimi"
+msgstr "Kanal seçimi"
 
 msgid "Could't get Eventname"
-msgstr "Program adı alınamıyor"
+msgstr "Program adı alınamadı"
 
 msgid "Details"
-msgstr "Detaylar"
+msgstr "Ayrıntılar"
 
 #, python-format
 msgid "Downloading Movie Poster: %s..."
-msgstr "%s posteri indiriliyor."
+msgstr "Film afişi indiriliyor: %s..."
 
 msgid "Exit"
 msgstr "Çıkış"
@@ -40,51 +42,51 @@ msgid "Lookup"
 msgstr "Sorgula"
 
 msgid "No OFDb match."
-msgstr "OFDb eşleşmesi bulunamadı."
+msgstr "OFDb eşleşmesi yok."
 
 msgid "No cast list found in the database."
-msgstr "Oyuncu listesi veritabanında bulunamadı."
+msgstr "Veritabanında oyuncu listesi bulunamadı."
 
 msgid "No details found."
-msgstr "Detay bilgisi bulunamadı."
+msgstr "Ayrıntı bulunamadı."
 
 msgid "OFDb Details parsed"
-msgstr "OFDb detayları ayrıştırıldı"
+msgstr "OFDb ayrıntıları işlendi"
 
 msgid "OFDb Download completed"
 msgstr "OFDb indirmesi tamamlandı"
 
 msgid "OFDb Download failed"
-msgstr "OFDb indirmesi tamamlanamadı!"
+msgstr "OFDb indirmesi başarısız oldu"
 
 msgid "OFDb Plugin"
-msgstr "OFDb Eklentisi"
+msgstr "OFDb eklentisi"
 
 msgid "OFDb Re-Download completed"
-msgstr "IMDb yeniden indirme tamamlandı"
+msgstr "OFDb yeniden indirmesi tamamlandı"
 
 msgid "OFDb query failed!"
-msgstr "OFDb sorgusunda hata oluştu."
+msgstr "OFDb sorgusu başarısız oldu!"
 
 msgid "Please select the matching entry"
-msgstr "Lütfen aradığınız başlığı seçin"
+msgstr "Lütfen eşleşen girdiyi seçin"
 
 #, python-format
 msgid "Query OFDb: %s..."
-msgstr "%s OFDb'den sorgulanıyor"
+msgstr "OFDb sorgusu: %s..."
 
 msgid "Query details from the Online-Filmdatenbank"
-msgstr "Film detaylarını ofdb.de'den sorgulayın"
+msgstr "Online-Filmdatenbank üzerinden ayrıntıları sorgula"
 
 #, python-format
 msgid "Re-Query OFDb: %s..."
-msgstr "%s OFDb'de yeniden sorgulanıyor..."
+msgstr "OFDb yeniden sorgulanıyor: %s..."
 
 msgid "The Online-Filmdatenbank"
-msgstr "Çevrimiçi Film Veritabanı (ofdb.de)"
+msgstr "Online-Filmdatenbank"
 
 msgid "Title Menu"
-msgstr "Filmler"
+msgstr "Başlık menüsü"
 
 msgid "no user rating yet"
-msgstr "puan verilmemiş"
+msgstr "henüz kullanıcı puanı yok"
