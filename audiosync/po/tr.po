@@ -1,17 +1,19 @@
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: enigma2 AC3 Lip Sync Turkish Locale\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-03-18 16:36+0100\n"
-"PO-Revision-Date: 2009-09-22 13:11+0200\n"
-"Last-Translator: Zülfikar VEYİSOĞLU <z.veyisoglu@hobiagaci.com>\n"
-"Language-Team: http://www.hobiagaci.com <z.veyisoglu@hobiagaci.com>\n"
-"Language: \n"
+"PO-Revision-Date: 2026-10-16 09:00+0300\n"
+"Last-Translator: audi06_19 <info@dreamosat-forum.com>\n"
+"Language-Team: Turkish\n"
+"Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Language: Turkish\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-Country: TURKEY\n"
+"X-Poedit-Language: Turkish\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
 #, python-format
@@ -19,68 +21,64 @@ msgid "%i ms"
 msgstr "%i ms"
 
 msgid "AC3 Lip Sync setup"
-msgstr "AC3 Dudak senkron ayarları"
+msgstr "AC3 ses-görüntü eşitleme ayarları"
 
 msgid "Also save delay in config?"
-msgstr ""
+msgstr "Gecikme ayarlara da kaydedilsin mi?"
 
-#, fuzzy
 msgid "Audio Sync"
-msgstr "AC3 Dudak senkronu"
+msgstr "Ses eşitleme"
 
-#, fuzzy
 msgid "Audio Sync setup"
-msgstr "AC3 Dudak senkron ayarları"
+msgstr "Ses eşitleme ayarları"
 
 msgid "Audio track:"
 msgstr "Ses izi:"
 
 msgid "Cancel"
-msgstr "Vazgeç"
+msgstr "İptal"
 
 msgid "Center screen at the lower border"
-msgstr ""
+msgstr "Pencereyi alt kenarda ortala"
 
 msgid "Center screen at the upper border"
-msgstr ""
+msgstr "Pencereyi üst kenarda ortala"
 
 msgid "Change active delay"
-msgstr ""
+msgstr "Etkin gecikmeyi değiştir"
 
-#, fuzzy
 msgid "Decrease delay"
-msgstr "Kullanıcı gecikmesini kullan"
+msgstr "Gecikmeyi azalt"
 
 #, python-format
 msgid "Decrease delay by %i ms (can be set)"
-msgstr ""
+msgstr "Gecikmeyi %i ms azalt (ayarlanabilir)"
 
 msgid "Delete in config"
-msgstr ""
+msgstr "Ayarlardan sil"
 
 msgid "Discard changes and close plugin"
-msgstr ""
+msgstr "Değişiklikleri iptal et ve eklentiyi kapat"
 
 msgid "Discard changes and close screen"
-msgstr ""
+msgstr "Değişiklikleri iptal et ve pencereyi kapat"
 
 msgid "Global delay"
-msgstr ""
+msgstr "Genel gecikme"
 
-#, fuzzy
 msgid "Increase delay"
-msgstr "Kullanıcı gecikmesini kullan"
+msgstr "Gecikmeyi artır"
 
 #, python-format
 msgid "Increase delay by %i ms (can be set)"
-msgstr ""
+msgstr "Gecikmeyi %i ms artır (ayarlanabilir)"
 
 msgid "Invalid selection"
 msgstr "Geçersiz seçim"
 
 #, python-format
 msgid "Key %(Key)s successfully set to %(delay)i ms"
-msgstr "%(Key)s tuşuna %(delay)i ms gecikme süresi atandı"
+msgstr "%(Key)s tuşu başarıyla %(delay)i ms olarak ayarlandı"
 
 #, python-format
 msgid "Key %(key)s (current value: %(value)i ms)"
@@ -90,129 +88,127 @@ msgid "Menu"
 msgstr "Menü"
 
 msgid "Move plugin screen"
-msgstr ""
+msgstr "Eklenti penceresini taşı"
 
 msgid "Move screen down"
-msgstr ""
+msgstr "Pencereyi aşağı taşı"
 
 msgid "Move screen to the center of your TV"
-msgstr ""
+msgstr "Pencereyi TV ekranının ortasına taşı"
 
 msgid "Move screen to the left"
-msgstr ""
+msgstr "Pencereyi sola taşı"
 
 msgid "Move screen to the lower left corner"
-msgstr ""
+msgstr "Pencereyi sol alt köşeye taşı"
 
 msgid "Move screen to the lower right corner"
-msgstr ""
+msgstr "Pencereyi sağ alt köşeye taşı"
 
 msgid "Move screen to the middle of the left border"
-msgstr ""
+msgstr "Pencereyi sol kenarın ortasına taşı"
 
 msgid "Move screen to the middle of the right border"
-msgstr ""
+msgstr "Pencereyi sağ kenarın ortasına taşı"
 
 msgid "Move screen to the right"
-msgstr ""
+msgstr "Pencereyi sağa taşı"
 
 msgid "Move screen to the upper left corner"
-msgstr ""
+msgstr "Pencereyi sol üst köşeye taşı"
 
 msgid "Move screen to the upper right corner"
-msgstr ""
+msgstr "Pencereyi sağ üst köşeye taşı"
 
 msgid "Move screen up"
-msgstr ""
+msgstr "Pencereyi yukarı taşı"
 
-msgid "No audio track available (yet). Please try again once an audio track is available."
+msgid ""
+"No audio track available (yet). Please try again once an audio track is "
+"available."
 msgstr ""
+"Henüz kullanılabilir bir ses izi yok. Ses izi kullanılabilir olduğunda "
+"yeniden deneyin."
 
 msgid "OK"
 msgstr "Tamam"
 
 msgid "Open plugin menu"
-msgstr ""
+msgstr "Eklenti menüsünü aç"
 
 msgid "Outer bound (+/-)"
-msgstr "Azami gecikme (+/-)"
+msgstr "Üst sınır (+/-)"
 
 #, python-format
 msgid "Plugin: %(plugin)s, Version: %(version)s"
-msgstr ""
+msgstr "Eklenti: %(plugin)s, Sürüm: %(version)s"
 
 msgid "Reset saved position"
-msgstr ""
+msgstr "Kaydedilen konumu sıfırla"
 
 msgid "Restart audio"
-msgstr ""
+msgstr "Sesi yeniden başlat"
 
-#, fuzzy
 msgid "Restart audio delay (in sec)"
-msgstr "AC3 ses gecikmesini ayarlayın"
+msgstr "Sesi yeniden başlatma gecikmesi (sn)"
 
 msgid "Save"
 msgstr "Kaydet"
 
-#, fuzzy
 msgid "Save current delay to key"
-msgstr "Geçerli %(audio)s izi için %(delay)i ms gecikmeyi, tuşa kaydet"
+msgstr "Mevcut gecikmeyi bir tuşa ata"
 
-#, fuzzy
 msgid "Save to key"
-msgstr "%s gecikmesini kaydet"
+msgstr "Tuşa ata"
 
 msgid "Save values and close plugin"
-msgstr ""
+msgstr "Değerleri kaydet ve eklentiyi kapat"
 
 msgid "Save values and close screen"
-msgstr ""
+msgstr "Değerleri kaydet ve pencereyi kapat"
 
 #, python-format
 msgid "Select the key you want to set to %i ms"
-msgstr "%i ms gecikmeyi atamak istediğiniz tuşu seçin"
+msgstr "%i ms değerini atamak istediğiniz tuşu seçin"
 
-#, fuzzy
 msgid "Service delay"
-msgstr "%s gecikmesini kaydet"
+msgstr "Kanala özel gecikme"
 
 #, python-format
 msgid "Set delay to %i ms (can be set)"
-msgstr ""
+msgstr "Gecikmeyi %i ms olarak ayarla (ayarlanabilir)"
 
-#, fuzzy
 msgid "Sets the audio delay (LipSync)"
-msgstr "AC3 ses gecikmesini ayarlayın"
+msgstr "Ses gecikmesini ayarlar (dudak eşitleme)"
 
 msgid "Setting key canceled"
-msgstr "Tuş tanımlama iptal edildi"
+msgstr "Tuş ataması iptal edildi"
 
-#, fuzzy
 msgid "Setup for the Audio Sync plugin"
-msgstr "AC3 dudak senkron eklentisi"
+msgstr "Ses eşitleme eklentisinin ayarları"
 
 msgid "Step in ms for arrow keys"
-msgstr "<> tuşlarına basıldığında atlanacak süre (ms)"
+msgstr "Yön tuşları için adım (ms)"
 
 #, python-format
 msgid "Step in ms for key %i"
-msgstr "%i tuşuna basıldığında atlanacak süre (ms)"
+msgstr "%i tuşu için adım (ms)"
 
 #, python-format
 msgid "Step in ms for keys '%s'"
-msgstr "'%s' tuşuna basıldığında atlanacak süre (ms)"
+msgstr "'%s' tuşları için adım (ms)"
 
 msgid "Wait time in ms before activation:"
-msgstr "Aktivasyondan önce bekleme süresi (ms):"
+msgstr "Etkinleştirmeden önce beklenecek süre (ms):"
 
 msgid "after restart"
-msgstr ""
+msgstr "yeniden başlatmadan sonra"
 
 msgid "after restart/standby"
-msgstr ""
+msgstr "yeniden başlatmadan/beklemeden sonra"
 
 msgid "after standby"
-msgstr ""
+msgstr "beklemeden sonra"
 
 msgid "disabled"
-msgstr ""
+msgstr "devre dışı"

@@ -1,17 +1,19 @@
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: enigma2 KiddyTimer plugin Turkish Locale\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-05-11 10:58+0200\n"
-"PO-Revision-Date: 2009-09-22 13:12+0200\n"
-"Last-Translator: Zülfikar VEYİSOĞLU <z.veyisoglu@hobiagaci.com>\n"
-"Language-Team: http://hobiagaci.com <z.veyisoglu@hobiagaci.com>\n"
-"Language: \n"
+"PO-Revision-Date: 2026-10-16 09:00+0300\n"
+"Last-Translator: audi06_19 <info@dreamosat-forum.com>\n"
+"Language-Team: Turkish\n"
+"Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Language: Turkish\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-Country: TURKEY\n"
+"X-Poedit-Language: Turkish\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
 msgid "01:00"
@@ -21,76 +23,74 @@ msgid "??:??"
 msgstr "??:??"
 
 msgid "Allows to controls your kids' daily TV usage"
-msgstr "Çocuğunuzun TV kullanımını kontrol edin"
+msgstr "Çocuklarınızın günlük TV kullanım süresini denetlemenizi sağlar"
 
 msgid "Cancel"
-msgstr "Vazgeç"
+msgstr "İptal"
 
 msgid "Center screen at the lower border"
-msgstr ""
+msgstr "Pencereyi alt kenarda ortala"
 
 msgid "Center screen at the upper border"
-msgstr ""
+msgstr "Pencereyi üst kenarda ortala"
 
 msgid ""
 "Cheat attempt detected. \n"
 "Box has not been shudown correctly. \n"
 "Remaining time was set to 0."
 msgstr ""
+"Süre sınırını aşma girişimi algılandı. \n"
+"Alıcı düzgün kapatılmamış. \n"
+"Kalan süre 0 olarak ayarlandı."
 
 msgid "Clock"
 msgstr "Saat"
 
-#, fuzzy
 msgid "Decrease remaining time"
-msgstr "Kalan süre: %s"
+msgstr "Kalan süreyi azalt"
 
-#, fuzzy
 msgid "Disable KiddyTimer"
-msgstr "Çocuk saati"
+msgstr "KiddyTimer'ı devre dışı bırak"
 
 msgid "Discard changes and close screen"
-msgstr ""
+msgstr "Değişiklikleri iptal et ve pencereyi kapat"
 
 msgid "Do you want to start the kiddytimer- plugin now."
-msgstr "Çocuk saati eklentisini şimdi çalıştırmak istiyor musunuz?"
+msgstr "KiddyTimer eklentisini şimdi başlatmak istiyor musunuz?"
 
 msgid "Don't monitor TV started after"
-msgstr "TV izlemeye başladıktan sonra gösterme"
+msgstr "TV şu saatten sonra açılırsa denetleme"
 
-#, fuzzy
 msgid "Don't monitor TV started before"
-msgstr "TV izlemeye başladıktan sonra gösterme"
+msgstr "TV şu saatten önce açılırsa denetleme"
 
-#, fuzzy
 msgid "Enable KiddyTimer"
-msgstr "Çocuk saati"
+msgstr "KiddyTimer'ı etkinleştir"
 
 msgid "Enable KiddyTimer for x minutes"
-msgstr ""
+msgstr "KiddyTimer'ı x dakika etkinleştir"
 
 msgid "Enabled"
 msgstr "Etkin"
 
 msgid "Enter pin code"
-msgstr "Şifreyi girin"
+msgstr "PIN kodunu girin"
 
 msgid "Friday"
 msgstr "Cuma"
 
-#, fuzzy
 msgid "Increase remaining time"
-msgstr "Kalan süre: %s"
+msgstr "Kalan süreyi artır"
 
 msgid "Invalid selection"
-msgstr ""
+msgstr "Geçersiz seçim"
 
 msgid "KiddyTimer"
-msgstr "Çocuk saati"
+msgstr "KiddyTimer"
 
 #, python-format
 msgid "Last day started: %s"
-msgstr "En son başlangıç zamanı: %s"
+msgstr "Son başlatıldığı gün: %s"
 
 msgid "Monday"
 msgstr "Pazartesi"
@@ -99,46 +99,46 @@ msgid "Move clock"
 msgstr "Saati taşı"
 
 msgid "Move screen down"
-msgstr ""
+msgstr "Pencereyi aşağı taşı"
 
 msgid "Move screen to the center of your TV"
-msgstr ""
+msgstr "Pencereyi TV ekranının ortasına taşı"
 
 msgid "Move screen to the left"
-msgstr ""
+msgstr "Pencereyi sola taşı"
 
 msgid "Move screen to the lower left corner"
-msgstr ""
+msgstr "Pencereyi sol alt köşeye taşı"
 
 msgid "Move screen to the lower right corner"
-msgstr ""
+msgstr "Pencereyi sağ alt köşeye taşı"
 
 msgid "Move screen to the middle of the left border"
-msgstr ""
+msgstr "Pencereyi sol kenarın ortasına taşı"
 
 msgid "Move screen to the middle of the right border"
-msgstr ""
+msgstr "Pencereyi sağ kenarın ortasına taşı"
 
 msgid "Move screen to the right"
-msgstr ""
+msgstr "Pencereyi sağa taşı"
 
 msgid "Move screen to the upper left corner"
-msgstr ""
+msgstr "Pencereyi sol üst köşeye taşı"
 
 msgid "Move screen to the upper right corner"
-msgstr ""
+msgstr "Pencereyi sağ üst köşeye taşı"
 
 msgid "Move screen up"
-msgstr ""
+msgstr "Pencereyi yukarı taşı"
 
 msgid "PIN"
-msgstr "Şifre"
+msgstr "PIN"
 
 msgid "Please enter the correct pin code"
-msgstr "Lütfen geçerli şifreyi girin"
+msgstr "Lütfen doğru PIN kodunu girin"
 
 msgid "Please select your KiddyTimer- option"
-msgstr ""
+msgstr "KiddyTimer seçeneğini belirleyin"
 
 #, python-format
 msgid "Plugin: %(plugin)s , Version: %(version)s"
@@ -152,11 +152,10 @@ msgid "Reset clock"
 msgstr "Saati sıfırla"
 
 msgid "Reset saved position"
-msgstr ""
+msgstr "Kaydedilen konumu sıfırla"
 
-#, fuzzy
 msgid "Reset todays remaining time"
-msgstr "Kalan süre: %s"
+msgstr "Bugünün kalan süresini sıfırla"
 
 msgid "Saturday"
 msgstr "Cumartesi"
@@ -165,36 +164,34 @@ msgid "Save"
 msgstr "Kaydet"
 
 msgid "Save values and close screen"
-msgstr ""
+msgstr "Değerleri kaydet ve pencereyi kapat"
 
-#, fuzzy
 msgid "Set remaining time"
-msgstr "Kalan süre: %s"
+msgstr "Kalan süreyi ayarla"
 
 msgid "Smiley"
-msgstr "Animasyon"
+msgstr "Gülen yüz"
 
-#, fuzzy
 msgid "Start KiddyTimer"
-msgstr "Çocuk saati"
+msgstr "KiddyTimer'ı başlat"
 
 msgid "Stop KiddyTimer (this session only)"
-msgstr ""
+msgstr "KiddyTimer'ı durdur (yalnızca bu oturumda)"
 
 msgid "Style of timer"
-msgstr "Zamanlayıcı şekli"
+msgstr "Zamanlayıcı görünümü"
 
 msgid "Sunday"
 msgstr "Pazar"
 
 msgid "The pin code you entered is wrong."
-msgstr ""
+msgstr "Girdiğiniz PIN kodu yanlış."
 
 msgid "Thursday"
 msgstr "Perşembe"
 
 msgid "Timeout for activation dialog"
-msgstr ""
+msgstr "Etkinleştirme penceresinin zaman aşımı"
 
 msgid "Tuesday"
 msgstr "Salı"

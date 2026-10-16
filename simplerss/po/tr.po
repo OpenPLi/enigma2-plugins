@@ -1,47 +1,49 @@
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: SimpleRSS Turkish Locale\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-05-11 10:58+0200\n"
-"PO-Revision-Date: \n"
-"Last-Translator: Zülfikar VEYİSOĞLU <z.veyisoglu@hobiagaci.com>\n"
-"Language-Team: http://hobiagaci.com <z.veyisoglu@hobiagaci.com>\n"
-"Language: \n"
+"PO-Revision-Date: 2026-10-16 09:00+0300\n"
+"Last-Translator: audi06_19 <info@dreamosat-forum.com>\n"
+"Language-Team: Turkish\n"
+"Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Language: Turkish\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-Country: TURKEY\n"
+"X-Poedit-Language: Turkish\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
 #, python-format
 msgid "%d Feed(s) were added to configuration."
-msgstr "%d besleme(leri) eklendi."
+msgstr "Ayarlara %d akış eklendi."
 
-#, fuzzy, python-format
+#, python-format
 msgid "%d feed(s) added to configuration."
-msgstr "%d besleme(leri) eklendi."
+msgstr "Ayarlara %d akış eklendi."
 
 msgid "--- Scanner automount ---"
-msgstr ""
+msgstr "--- Otomatik bağlanan cihazları tara ---"
 
 msgid "< Create file any name.rss in USB device >"
-msgstr ""
+msgstr "< USB cihazında herhangi_bir_ad.rss dosyası oluşturun >"
 
 msgid "< and write feeds link column >"
-msgstr ""
+msgstr "< ve akış bağlantılarını alt alta yazın >"
 
 msgid "A simple to use RSS reader"
-msgstr "Kolay kullanımlı RSS okuyucu"
+msgstr "Kullanımı kolay bir RSS okuyucu"
 
 msgid "Apply"
-msgstr ""
+msgstr "Uygula"
 
 msgid "Autoupdate"
-msgstr "Otomatik güncelleme"
+msgstr "Otomatik güncelle"
 
 msgid "Cancel"
-msgstr "Vazgeç"
+msgstr "İptal"
 
 msgid "Close"
 msgstr "Kapat"
@@ -50,76 +52,80 @@ msgid "Delete"
 msgstr "Sil"
 
 msgid "Enclosures"
-msgstr "İlişkili bildiri"
+msgstr "Ekler"
 
 msgid "Entries"
-msgstr "Bildirim"
+msgstr "Girdiler"
 
 #, python-format
 msgid "Entry %s/%s"
-msgstr "Bildiri %s/%s"
+msgstr "Girdi %s/%s"
 
-msgid "Error while parsing Feed, this usually means there is something wrong with it."
-msgstr "Besleme ayrıştırılırken hata oluştu, bu durum genellikle hatalı yapılandırmadan kaynaklanır."
+msgid ""
+"Error while parsing Feed, this usually means there is something wrong with "
+"it."
+msgstr ""
+"Akış işlenirken hata oluştu. Bu genellikle akışın içeriğinde bir sorun "
+"olduğu anlamına gelir."
 
 msgid "Failed to get subscriptions from Google Reader."
-msgstr "Google Reader abonelik bilgileri alınamadı."
+msgstr "Google Reader abonelikleri alınamadı."
 
 msgid "Failed to login to Google Reader."
 msgstr "Google Reader oturumu açılamadı."
 
 msgid "Feed"
-msgstr "Besleme"
+msgstr "Akış"
 
 #, python-format
 msgid "Feed %s/%s"
-msgstr "Besleme %s/%s"
+msgstr "Akış %s/%s"
 
 msgid "Feed URI"
-msgstr "Besleme Adresi"
+msgstr "Akış URI adresi"
 
 msgid "Feed is empty."
-msgstr "Besleme boş."
+msgstr "Akış boş."
 
 msgid "Fetch feeds from Google Reader?"
-msgstr "Google Reader beslemeleri alınsın mı?"
+msgstr "Akışlar Google Reader'dan alınsın mı?"
 
 #, python-format
 msgid "Found %d feed(s)"
-msgstr ""
+msgstr "%d akış bulundu"
 
 msgid "Found no Enclosure we can display."
-msgstr "Gösterilmek üzere ilişkili bildiri bulunamadı."
+msgstr "Görüntülenebilecek ek bulunamadı."
 
 msgid "Google Password"
-msgstr "Google parola"
+msgstr "Google parolası"
 
 msgid "Google Username"
 msgstr "Google kullanıcı adı"
 
 msgid "Keep running in background"
-msgstr "Arkaplanda çalışmaya devam et"
+msgstr "Arka planda çalışmaya devam et"
 
 msgid "Let's you view current RSS entries"
-msgstr ""
+msgstr "Güncel RSS girdilerini görüntülemenizi sağlar"
 
 msgid "New"
 msgstr "Yeni"
 
 msgid "New Items"
-msgstr "Yeni maddeler"
+msgstr "Yeni öğeler"
 
 msgid "New Items since last Auto-Update"
-msgstr "Son otomatik güncellemeden sonraki yeni bildirimler"
+msgstr "Son otomatik güncellemeden sonraki yeni öğeler"
 
 msgid "No such Item."
-msgstr "Yeni bildirim yok."
+msgstr "Böyle bir öğe yok."
 
 msgid "Not found new feed(s)."
-msgstr ""
+msgstr "Yeni akış bulunamadı."
 
 msgid "Notification"
-msgstr "Bilgilendirme"
+msgstr "Bildirim"
 
 msgid "OK"
 msgstr "Tamam"
@@ -127,86 +133,84 @@ msgstr "Tamam"
 msgid "Preview"
 msgstr "Önizleme"
 
-#, fuzzy
 msgid "RSS Reader"
-msgstr "Kolay RSS Okuyucu"
+msgstr "RSS okuyucu"
 
-#, fuzzy
 msgid "RSS-Reader"
-msgstr "Kolay RSS Okuyucu"
+msgstr "RSS okuyucu"
 
 #, python-format
 msgid "Read error %s"
-msgstr ""
+msgstr "Okuma hatası: %s"
 
 msgid ""
 "Really delete this entry?\n"
 "It cannot be recovered!"
 msgstr ""
-"Bu bildirimi silmek istiyor musunuz?\n"
-"Silindiğinde geri getirilemez!"
+"Bu girdi silinsin mi?\n"
+"Bu işlem geri alınamaz!"
 
 #, python-format
 msgid "Received %d new news item(s)."
-msgstr "%d yeni bildirim alındı."
+msgstr "%d yeni haber alındı."
 
 msgid "Scroll speed (ms)"
-msgstr ""
+msgstr "Kaydırma hızı (ms)"
 
 msgid "Setup"
-msgstr "Kurulum"
+msgstr "Ayarlar"
 
 msgid "Show in extensions menu"
-msgstr ""
+msgstr "Uzantılar menüsünde göster"
 
 msgid "Show new Messages as"
-msgstr "Yeni mesajların gösterilme şekli"
+msgstr "Yeni mesajları gösterme biçimi"
 
 msgid "Simple RSS Reader"
-msgstr "Kolay RSS Okuyucu"
+msgstr "Basit RSS okuyucu"
 
 msgid "Simple RSS Reader Setup"
-msgstr "Kolay RSS Okuyucu Kurulumu"
+msgstr "Basit RSS okuyucu ayarları"
 
 #, python-format
 msgid "Simple RSS Reader: %s"
-msgstr "Kolay RSS Okuyucu: %s"
+msgstr "Basit RSS okuyucu: %s"
 
 #, python-format
 msgid ""
 "Sorry, this type of feed is unsupported:\n"
 "%s"
 msgstr ""
-"Üzgünüm, bu besleme tipi desteklenmiyor:\n"
+"Bu akış türü desteklenmiyor:\n"
 "%s"
 
 msgid "Start automatically with Enigma2"
-msgstr "Enigma2 ile birlikte otomatik başlat"
+msgstr "Enigma2 ile otomatik başlat"
 
 msgid "Subscribe Newsfeed..."
-msgstr "Haber beslemesine abone ol..."
+msgstr "Haber akışına abone ol..."
 
 msgid "Ticker"
-msgstr ""
+msgstr "Kayan yazı"
 
 msgid "Update Feed"
-msgstr "Beslemeyi Güncelle"
+msgstr "Akışı güncelle"
 
 msgid "Update Interval (min)"
-msgstr "Güncelleme Aralığı (dk)"
+msgstr "Güncelleme aralığı (dk)"
 
 msgid ""
 "Update is being done in Background.\n"
 "Contents will automatically be updated when it's done."
 msgstr ""
-"Güncelleme arkaplanda yapılıyor.\n"
-"Tamamlandığında, içerik otomatik olarak güncellenecektir."
+"Güncelleme arka planda yapılıyor.\n"
+"Tamamlandığında içerik otomatik yenilenecek."
 
 msgid "View RSS..."
-msgstr "RSS'lere bak..."
+msgstr "RSS akışlarını görüntüle..."
 
 msgid "What to do?"
-msgstr "Ne yapmak istiyorsunuz?"
+msgstr "Ne yapılsın?"
 
 msgid "none"
 msgstr "yok"
