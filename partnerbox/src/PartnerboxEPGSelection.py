@@ -289,7 +289,7 @@ def Partnerbox_timerAdd(self):
 
 		internalAction = _("Edit internal timer") if HasInternalTimer(self, event, serviceref) else _("Add internal timer")
 		remoteAction = _("Edit remote timer")
-		remoteAction += "\\c00b0b0b0 - " + ", ".join(box.name.value for box, _ in matches) + "\\C"
+		remoteAction += "\\c00d0d0d0 - " + ", ".join(box.name.value for box, _ in matches) + "\\C"
 		menu = [(remoteAction, "remote"), (internalAction, "internal")]
 
 		def timerAction(choice):
