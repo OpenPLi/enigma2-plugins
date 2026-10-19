@@ -583,6 +583,14 @@ def getRemoteClockZapPixmap(self, refstr, beginTime, duration, eventId):
 	endTime = beginTime + duration
 	ref_str = ':'.join(str(refstr).split(':')[:11])
 	remoteTimerList = partnerboxfunctions.remote_timer_list[:]
+	if eventId not in (None, -1):
+		for x in remoteTimerList:
+			servicereference_str = ':'.join(str(x.servicereference).split(':')[:11])
+			if servicereference_str.upper() == ref_str.upper() and x.eventId == eventId:
+				if x.justplay:
+					return self.remote_repzapclock_pixmap if x.repeated else self.remote_zapclock_pixmap
+				return self.remote_repclock_pixmap if x.repeated else self.remote_clock_pixmap
+
 	for x in remoteTimerList:
 		servicereference_str = ':'.join(str(x.servicereference).split(':')[:11])
 		if servicereference_str.upper() == ref_str.upper():
