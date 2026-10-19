@@ -245,6 +245,11 @@ class PartnerboxEntriesListConfigScreen(Screen, HelpableScreen):
 			 "showEventInfoSingleEPG": self.boxStatusInfo,
 			 "showEventGuidePlugin": self.boxStatusInfo,
 			 }, -1)
+		self["allTimerActions"] = ActionMap(["InfobarMovieListActions"],
+			{
+			"movieList": self.showAllTimers
+			}, -1)
+
 		self.edit = 0
 		self.idx = 0
 		self["h_prev"] = Pixmap()
@@ -273,6 +278,11 @@ class PartnerboxEntriesListConfigScreen(Screen, HelpableScreen):
 				self.session.open(RemoteTimer, sel)
 		else:
 			self.close(self.session, self.what, sel)
+
+	def showAllTimers(self):
+		if config.plugins.Partnerbox.Entries:
+			from .PartnerboxAllTimers import PartnerboxAllTimers
+			self.session.open(PartnerboxAllTimers)
 
 	def keyYellow(self):
 		try:

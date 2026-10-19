@@ -2,6 +2,7 @@ SUBDIRS = icons
 plugindir = $(libdir)/enigma2/python/Plugins/Extensions/Partnerbox
 
 plugin_PYTHON = \
+	PartnerboxAllTimers.py \
 	PartnerboxAutoTimer.py \
 	PartnerboxEPGList.py \
 	PartnerboxEPGSelection.py \
