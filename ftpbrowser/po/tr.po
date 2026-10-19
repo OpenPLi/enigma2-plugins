@@ -1,47 +1,49 @@
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: enigma2 FTP Browser plugin Turkish Locale\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-05-11 10:58+0200\n"
-"PO-Revision-Date: 2009-09-23 20:11+0200\n"
-"Last-Translator: Zülfikar VEYİSOĞLU <z.veyisoglu@hobiagaci.com>\n"
-"Language-Team: http://hobiagaci.com <z.veyisoglu@hobiagaci.com>\n"
-"Language: \n"
+"PO-Revision-Date: 2026-10-16 09:00+0300\n"
+"Last-Translator: audi06_19 <info@dreamosat-forum.com>\n"
+"Language-Team: Turkish\n"
+"Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Language: Turkish\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-Country: TURKEY\n"
+"X-Poedit-Language: Turkish\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
 #, python-format
 msgid "%d kb/s"
-msgstr "%d kb/s"
+msgstr "%d kb/sn"
 
 msgid "A basic FTP client"
-msgstr "FTP istemci"
+msgstr "Temel bir FTP istemcisi"
 
 #, python-format
 msgid ""
 "A file with this name (%s) already exists locally.\n"
 "Do you want to overwrite it?"
 msgstr ""
-"Yerelde, %s isminde bir dosya zaten mevcut.\n"
-"Üzerine yazılmasını ister misiniz?"
+"Yerel cihazda aynı adlı bir dosya (%s) zaten var.\n"
+"Üzerine yazılsın mı?"
 
 #, python-format
 msgid ""
 "A file with this name (%s) already exists on the remote host.\n"
 "Do you want to overwrite it?"
 msgstr ""
-"Uzak sunucuda, %s isminde bir dosya zaten mevcut.\n"
-"Üzerine yazılmasını ister misiniz?"
+"Uzak sunucuda aynı adlı bir dosya (%s) zaten var.\n"
+"Üzerine yazılsın mı?"
 
 msgid ""
 "A transfer is currently in progress.\n"
 "What do you want to do?"
 msgstr ""
-"Devam eden bir aktarım işlemi mevcut.\n"
+"Bir aktarım devam ediyor.\n"
 "Ne yapmak istiyorsunuz?"
 
 msgid "Abort transfer"
@@ -55,30 +57,30 @@ msgstr "Adres:"
 
 #, python-format
 msgid "Are you sure you want to delete %s?"
-msgstr "%s dosyasını silmek istediğinizden emin misiniz?"
+msgstr "%s silinsin mi?"
 
 msgid "Cancel"
-msgstr "Vazgeç"
+msgstr "İptal"
 
 msgid "Configuration saved."
-msgstr "Yapılandırma kaydedildi."
+msgstr "Ayarlar kaydedildi."
 
 msgid "Connect to FTP..."
-msgstr "FTP sunucuya bağlanılıyor..."
+msgstr "FTP sunucusuna bağlan..."
 
 msgid "Could not connect to ftp server!"
-msgstr "Ftp sunucuya bağlanılamıyor!"
+msgstr "FTP sunucusuna bağlanılamadı!"
 
 #, python-format
 msgid "Could not delete %s."
-msgstr "%s silinemiyor."
+msgstr "%s silinemedi."
 
 msgid "Could not obtain list of files."
-msgstr "Dosya listesi alınamıyor."
+msgstr "Dosya listesi alınamadı."
 
 #, python-format
 msgid "Could not rename %s."
-msgstr "%s dosyasının adı değiştirilemiyor."
+msgstr "%s yeniden adlandırılamadı."
 
 msgid "Delete"
 msgstr "Sil"
@@ -91,16 +93,16 @@ msgstr "İndirme tamamlandı."
 
 #, python-format
 msgid "ETA %d:%02d min"
-msgstr "TBS %d:%02d dk."
+msgstr "Tahmini kalan süre %d:%02d dk"
 
 msgid "Edit"
 msgstr "Düzenle"
 
 msgid "Enter URI"
-msgstr "URI Girin"
+msgstr "URI girin"
 
 msgid "Enter URI of FTP Server:"
-msgstr "FTP sunucu için URI bilgisini girin:"
+msgstr "FTP sunucusunun URI adresini girin:"
 
 msgid "Enter new filename:"
 msgstr "Yeni dosya adını girin:"
@@ -109,16 +111,16 @@ msgid "Error"
 msgstr "Hata"
 
 msgid "Error during download."
-msgstr "İndirilirken hata oluştu."
+msgstr "İndirme sırasında hata oluştu."
 
 msgid "Exit"
 msgstr "Çıkış"
 
 msgid "FTP Queue Manager"
-msgstr "FTP kuyruk yöneticisi"
+msgstr "FTP aktarım kuyruğu"
 
 msgid "FTP Server Editor"
-msgstr "FTP sunucu düzenleyici"
+msgstr "FTP sunucu düzenleyicisi"
 
 msgid "FTP Server Manager"
 msgstr "FTP sunucu yöneticisi"
@@ -127,35 +129,35 @@ msgid "Local"
 msgstr "Yerel"
 
 msgid "Name:"
-msgstr "Adı:"
+msgstr "Ad:"
 
 msgid "OK"
 msgstr "Tamam"
 
 msgid "Parent Directory"
-msgstr "Kök Klasör"
+msgstr "Üst dizin"
 
 msgid "Passive:"
-msgstr ""
+msgstr "Pasif:"
 
 msgid "Password:"
 msgstr "Parola:"
 
 msgid "Port:"
-msgstr "Port:"
+msgstr "Bağlantı noktası:"
 
 msgid "Queue Manager"
 msgstr "Kuyruk yöneticisi"
 
 msgid "Queue processed."
-msgstr "Kuyruk işleme alındı."
+msgstr "Kuyruk işlendi."
 
 msgid ""
 "Really delete this entry?\n"
 "It cannot be recovered!"
 msgstr ""
-"Bu kaydı silmek istiyor musunuz?\n"
-"Geri kurtarılamayabilir!"
+"Bu girdi silinsin mi?\n"
+"Bu işlem geri alınamaz!"
 
 msgid "Remote"
 msgstr "Uzak"
@@ -168,26 +170,26 @@ msgid "Removed %s."
 msgstr "%s kaldırıldı."
 
 msgid "Removing directories is not supported."
-msgstr "Klasör kaldırma özelliği desteklenmiyor."
+msgstr "Dizinlerin silinmesi desteklenmiyor."
 
 msgid "Rename"
-msgstr "Ad değiştir "
+msgstr "Yeniden adlandır"
 
 #, python-format
 msgid "Renamed %s to %s."
-msgstr "%s dosyasının adı %s olarak değiştirildi."
+msgstr "%s, %s olarak yeniden adlandırıldı."
 
 msgid "Run in Background"
-msgstr "Arkaplanda çalış"
+msgstr "Arka planda çalıştır"
 
 msgid "Save"
 msgstr "Kaydet"
 
 msgid "Select local file list"
-msgstr "Yerel için dosya listesini seç"
+msgstr "Yerel dosya listesini seç"
 
 msgid "Select remote file list"
-msgstr "Uzak için dosya listesini seç"
+msgstr "Uzak dosya listesini seç"
 
 msgid "Server Manager"
 msgstr "Sunucu yöneticisi"
@@ -196,11 +198,11 @@ msgid ""
 "There already is an active connection.\n"
 "Do you want to abort it?"
 msgstr ""
-"Etkin bir bağlantınız var.\n"
-"Kesmek istiyor musunuz?"
+"Zaten etkin bir bağlantı var.\n"
+"Sonlandırmak istiyor musunuz?"
 
 msgid "There already is an active transfer."
-msgstr "Aktarım işlemi devam ediyor."
+msgstr "Zaten etkin bir aktarım var."
 
 msgid "Upload"
 msgstr "Yükle"
@@ -212,13 +214,13 @@ msgid "Username:"
 msgstr "Kullanıcı adı:"
 
 msgid "Which server do you want to connect to?"
-msgstr "Hangi sunucuya bağlanmak istiyor sunuz?"
+msgstr "Hangi sunucuya bağlanmak istiyorsunuz?"
 
 msgid "close"
-msgstr "Kapat"
+msgstr "kapat"
 
 msgid "enter directory/get file/put file"
-msgstr "Klasör içine gir/dosyayı getir/dosyayı gönder"
+msgstr "dizine gir / dosya indir / dosya yükle"
 
 msgid "open menu"
-msgstr "Menü'yü aç"
+msgstr "menüyü aç"

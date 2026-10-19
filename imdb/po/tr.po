@@ -7,111 +7,107 @@ msgstr ""
 "Project-Id-Version: enigma2 IMDb Plugin Turkish locale\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-07-26 13:31+0200\n"
-"PO-Revision-Date: 2009-09-22 13:17+0200\n"
-"Last-Translator: esmos <kucukogul@gmail.com>\n"
-"Language-Team: http://hobiagaci.com <z.veyisoglu@hobiagaci.com>\n"
-"Language: \n"
+"PO-Revision-Date: 2026-10-16 09:00+0300\n"
+"Last-Translator: audi06_19 <info@dreamosat-forum.com>\n"
+"Language-Team: Turkish\n"
+"Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Language: Turkish\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-Country: TURKEY\n"
+"X-Poedit-Language: Turkish\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
 #: ../plugin.py:1093
 msgid " & "
-msgstr ""
+msgstr " ve "
 
 #: ../plugin.py:905
 #, python-format
 msgid "%d out of %d found this helpful."
-msgstr ""
+msgstr "Yararlı bulan: %d / %d kişi."
 
 #: ../plugin.py:1189
 #, python-format
 msgid "%s of %s"
-msgstr ""
+msgstr "%s / %s"
 
 #: ../plugin.py:1303
 msgid "** Spoiler **"
-msgstr ""
+msgstr "** Spoiler **"
 
 #: ../plugin.py:350
 msgid "Ambiguous results"
-msgstr "Belirsiz sonuçlar"
+msgstr "Birden fazla olası sonuç"
 
 #: ../plugin.py:1159
 msgid "Aspect ratio"
-msgstr ""
+msgstr "En-boy oranı"
 
 #: ../plugin.py:1156
 msgid "Certificate"
-msgstr ""
+msgstr "Yaş sınıflandırması"
 
 #: ../plugin.py:1158
 msgid "Color"
-msgstr ""
+msgstr "Renk"
 
 #: ../plugin.py:1178
-#, fuzzy
 msgid "Connections"
-msgstr "Kanal Seçimi"
+msgstr "İlgili yapımlar"
 
 #: ../plugin.py:1552
-#, fuzzy
 msgid "Couldn't get event name"
-msgstr "Etkinlik adı alınamadı"
+msgstr "Program adı alınamadı"
 
 #: ../plugin.py:1019
 msgid "Country"
 msgid_plural "Countries"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Ülke"
 
 #: ../plugin.py:982
 msgid "Creator"
 msgid_plural "Creators"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Yaratıcı"
 
 #: ../plugin.py:355 ../plugin.py:956
 msgid "Details"
-msgstr "Detaylar"
+msgstr "Ayrıntılar"
 
 #: ../plugin.py:976
 msgid "Director"
 msgid_plural "Directors"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Yönetmen"
 
 #: ../plugin.py:1070 ../plugin.py:1694
-#, fuzzy
 msgid "Downloading Movie Poster..."
-msgstr "Film Afişi indiriliyor: %s...."
+msgstr "Film afişi indiriliyor..."
 
 #: ../plugin.py:923
-#, fuzzy
 msgid "Downloading reviews..."
-msgstr "Film Afişi indiriliyor: %s...."
+msgstr "Yorumlar indiriliyor..."
 
 #: ../setup.xml
-#, fuzzy
-msgid "Enable this to be able to access IMDb search setup from within the plugin browser."
-msgstr "IMDb'ye eklenti tarayıcısının içinden erişebilmek için bunu etkinleştirin."
+msgid ""
+"Enable this to be able to access IMDb search setup from within the plugin "
+"browser."
+msgstr "IMDb arama ayarlarına eklenti tarayıcısından erişimi etkinleştirir."
 
 #: ../setup.xml
-#, fuzzy
-msgid "Enable this to be able to access IMDb searches from within the movie list."
-msgstr "IMDb'ye eklenti tarayıcısının içinden erişebilmek için bunu etkinleştirin."
+msgid ""
+"Enable this to be able to access IMDb searches from within the movie list."
+msgstr "IMDb aramasına film listesinden erişimi etkinleştirir."
 
 #: ../setup.xml
-#, fuzzy
-msgid "Enable this to be able to access IMDb searches from within the plugin browser."
-msgstr "IMDb'ye eklenti tarayıcısının içinden erişebilmek için bunu etkinleştirin."
+msgid ""
+"Enable this to be able to access IMDb searches from within the plugin "
+"browser."
+msgstr "IMDb aramasına eklenti tarayıcısından erişimi etkinleştirir."
 
 #: ../plugin.py:1341
 msgid "Enter search"
-msgstr "Aramayı gir"
+msgstr "Arama metnini girin"
 
 #: ../plugin.py:1484
 msgid "Enter text to search for"
@@ -119,139 +115,129 @@ msgstr "Aranacak metni girin"
 
 #: ../plugin.py:995
 msgid "Episodes"
-msgstr ""
+msgstr "Bölümler"
 
 #: ../plugin.py:242
 msgid "Exit"
 msgstr "Çıkış"
 
 #: ../plugin.py:266 ../plugin.py:270
-#, fuzzy
 msgid "Exit IMDb search"
-msgstr "Aramayı gir"
+msgstr "IMDb aramasından çık"
 
 #: ../plugin.py:1241 ../plugin.py:1245
 msgid "Extra Info"
-msgstr "Fazladan Bilgi"
+msgstr "Ek bilgiler"
 
 #: ../plugin.py:1173
 msgid "Filming locations"
-msgstr ""
+msgstr "Çekim yerleri"
 
 #: ../plugin.py:965
 msgid "Genre"
 msgid_plural "Genres"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Tür"
 
 #: ../plugin.py:1176
 msgid "Goofs"
-msgstr ""
+msgstr "Film hataları"
 
 #: ../plugin.py:1664
 msgid "IMDB Exception"
-msgstr ""
+msgstr "IMDb hatası"
 
 #: ../plugin.py:1249 ../plugin.py:1672 ../plugin.py:1703
 msgid "IMDb Details parsed"
-msgstr "IMDb detayları ayrıştırıldı"
+msgstr "IMDb ayrıntıları işlendi"
 
 #: ../plugin.py:1555
 msgid "IMDb Download completed"
-msgstr "IMDb İndirme tamamlandı"
+msgstr "IMDb indirmesi tamamlandı"
 
 #: ../plugin.py:1657
 msgid "IMDb Download failed"
-msgstr "IMDb İndirme tamamlanamadı!"
+msgstr "IMDb indirmesi başarısız oldu"
 
 #: ../plugin.py:1368
-#, fuzzy
 msgid "IMDb Menu"
-msgstr "IMDb Kurulumu"
+msgstr "IMDb menüsü"
 
 #: ../plugin.py:1752
 msgid "IMDb Plugin"
-msgstr "IMDb Eklentisi"
+msgstr "IMDb eklentisi"
 
 #: ../plugin.py:928
 msgid "IMDb Re-Download completed"
-msgstr "IMDb yeniden indirme tamamlandı"
+msgstr "IMDb yeniden indirmesi tamamlandı"
 
 #: ../plugin.py:889
-#, fuzzy
 msgid "IMDb Reviews failed"
-msgstr "IMDb sorgusu başarısız oldu!"
+msgstr "IMDb yorumları alınamadı"
 
 #: ../plugin.py:919
-#, fuzzy
 msgid "IMDb Reviews parsed"
-msgstr "IMDb detayları ayrıştırıldı"
+msgstr "IMDb yorumları işlendi"
 
 #: ../plugin.py:1758 ../setup.xml
 msgid "IMDb Setup"
-msgstr "IMDb Kurulumu"
+msgstr "IMDb ayarları"
 
 #: ../plugin.py:1404
 msgid "IMDb can not get Movie Information to write to .txt file!"
-msgstr ""
+msgstr "IMDb, .txt dosyasına yazılacak film bilgilerini alamadı!"
 
 #: ../plugin.py:944
-#, fuzzy
 msgid "IMDb details unavailable"
-msgstr "IMDb detayları ayrıştırıldı"
+msgstr "IMDb ayrıntıları kullanılamıyor"
 
 #: ../plugin.py:1560
 msgid "IMDb query failed!"
 msgstr "IMDb sorgusu başarısız oldu!"
 
 #: ../plugin.py:1032
-#, fuzzy
 msgid "IMDb rating"
-msgstr "IMDb Eklentisi"
+msgstr "IMDb puanı"
 
 #: ../plugin.py:1392
-#, fuzzy
 msgid "IMDb save completed"
-msgstr "IMDb İndirme tamamlandı"
+msgstr "IMDb bilgileri kaydedildi"
 
 #: ../plugin.py:1805 ../plugin.py:1827 ../plugin.py:1828 ../plugin.py:1838
-#, fuzzy
 msgid "IMDb search"
-msgstr "IMDb eşleşmesi yok:"
+msgstr "IMDb araması"
 
 #: ../plugin.py:1816
-#, fuzzy
 msgid "IMDb setup"
-msgstr "IMDb Kurulumu"
+msgstr "IMDb ayarları"
 
 #: ../plugin.py:931
-#, fuzzy
 msgid "IMDb title failed!"
-msgstr "IMDb sorgusu başarısız oldu!"
+msgstr "IMDb başlığı alınamadı!"
 
 #: ../plugin.py:1543
 #, python-format
 msgid "Ignoring invalid imdbId: %s"
-msgstr ""
+msgstr "Geçersiz IMDb kimliği atlanıyor: %s"
 
 #: ../setup.xml
-msgid "Include episodes in the results. Takes effect after the next search of IMDb for a show name."
+msgid ""
+"Include episodes in the results. Takes effect after the next search of IMDb "
+"for a show name."
 msgstr ""
+"Bölümleri sonuçlara dâhil eder. Bir sonraki yapım adı aramasında uygulanır."
 
 #: ../plugin.py:1023
 msgid "Language"
 msgid_plural "Languages"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Dil"
 
 #: ../plugin.py:277
 msgid "Menu"
-msgstr ""
+msgstr "Menü"
 
 #: ../plugin.py:1642
-#, fuzzy
 msgid "No IMDb match."
-msgstr "IMDb eşleşmesi yok:"
+msgstr "IMDb eşleşmesi yok."
 
 #: ../plugin.py:1643
 msgid "No IMDb match:"
@@ -259,281 +245,282 @@ msgstr "IMDb eşleşmesi yok:"
 
 #: ../plugin.py:1064
 msgid "No cast list found in the database."
-msgstr "Oyuncu listesi veritabanında bulunamadı."
+msgstr "Veritabanında oyuncu listesi bulunamadı."
 
 #: ../plugin.py:935
 msgid "No details found."
-msgstr "Veritabanında döküm listesi bulunamadı."
+msgstr "Ayrıntı bulunamadı."
 
 #: ../plugin.py:287
 msgid "Page down"
-msgstr ""
+msgstr "Sonraki sayfa"
 
 #: ../plugin.py:288
 msgid "Page up"
-msgstr ""
+msgstr "Önceki sayfa"
 
 #: ../plugin.py:884
 msgid "Parsing reviews..."
-msgstr ""
+msgstr "Yorumlar işleniyor..."
 
 #: ../plugin.py:1355
 msgid "Play Trailer"
-msgstr "Fragmanı Oynat"
+msgstr "Fragmanı oynat"
 
 #: ../plugin.py:351
 msgid "Please select the matching entry"
-msgstr "Lütfen eşleşen girişi seçin"
+msgstr "Lütfen eşleşen girdiyi seçin"
 
 #: ../plugin.py:1168
 msgid "Plot"
-msgstr ""
+msgstr "Konu"
 
 #: ../plugin.py:1171
 msgid "Plot keywords"
-msgstr ""
+msgstr "Konu anahtar sözcükleri"
 
 #: ../plugin.py:1174
 msgid "Production companies"
-msgstr ""
+msgstr "Yapım şirketleri"
 
 #: ../plugin.py:1547
-#, fuzzy, python-format
+#, python-format
 msgid "Query IMDb: %s"
-msgstr "%s IMDb'de sorgulanıyor..."
+msgstr "IMDb sorgusu: %s"
 
 #: ../plugin.py:1177
 msgid "Quotes"
-msgstr ""
+msgstr "Replikler"
 
 #: ../plugin.py:879
 #, python-format
 msgid "Re-Query IMDb: %s..."
-msgstr "%s IMDb'de yeniden sorgulanıyor..."
+msgstr "IMDb yeniden sorgulanıyor: %s..."
 
 #: ../plugin.py:1014
 msgid "Release date"
-msgstr ""
+msgstr "Yayın tarihi"
 
 #: ../plugin.py:1157
 msgid "Runtime"
-msgstr ""
+msgstr "Süre"
 
 #: ../plugin.py:1601
 #, python-format
 msgid "S%d E%d - "
-msgstr ""
+msgstr "S%d B%d - "
 
 #: ../plugin.py:1348
 msgid "Save current Details as .json for offline use"
-msgstr ""
+msgstr "Mevcut ayrıntıları çevrimdışı kullanım için .json olarak kaydet"
 
 #: ../plugin.py:1349
 msgid "Save current Details as .txt"
-msgstr ""
+msgstr "Mevcut ayrıntıları .txt olarak kaydet"
 
 #: ../plugin.py:1350
 msgid "Save current Poster and Details as .txt"
-msgstr ""
+msgstr "Mevcut afişi ve ayrıntıları .txt olarak kaydet"
 
 #: ../plugin.py:1356
 msgid "Search Trailer"
-msgstr "Fragmanı Ara"
+msgstr "Fragman ara"
 
 #: ../plugin.py:1806 ../plugin.py:1839
-#, fuzzy
 msgid "Search for details from the Internet Movie Database"
-msgstr "İnternet Film Veritabanından sorgu detayları"
+msgstr "Internet Movie Database üzerinden ayrıntıları ara"
 
 #: ../plugin.py:992
 msgid "Seasons"
-msgstr ""
+msgstr "Sezonlar"
 
 #: ../plugin.py:1817
-#, fuzzy
 msgid "Settings for Internet Movie Database searches"
-msgstr "Internet Film Veritabanı (imdb.com)"
+msgstr "Internet Movie Database arama ayarları"
 
 #: ../plugin.py:1342
 msgid "Setup"
-msgstr "Kurulum"
+msgstr "Ayarlar"
 
 #: ../plugin.py:281
 msgid "Show a bigger poster"
-msgstr ""
+msgstr "Daha büyük afiş göster"
 
 #: ../setup.xml
-msgid "Show episode and year information for cast when available. Takes effect after the next fetch of show details."
+msgid ""
+"Show episode and year information for cast when available. Takes effect "
+"after the next fetch of show details."
 msgstr ""
+"Varsa oyuncuların bölüm ve yıl bilgilerini gösterir. Yapım ayrıntıları bir "
+"sonraki alındığında uygulanır."
 
 #: ../setup.xml
 msgid "Show episode and year information in cast list"
-msgstr ""
+msgstr "Oyuncu listesinde bölüm ve yıl bilgilerini göster"
 
 #: ../setup.xml
 msgid "Show episodes in title menu"
-msgstr ""
+msgstr "Başlık menüsünde bölümleri göster"
 
 #: ../setup.xml
 msgid "Show extra information in title menu"
-msgstr ""
+msgstr "Başlık menüsünde ek bilgileri göster"
 
 #: ../plugin.py:282
 msgid "Show first page of user reviews"
-msgstr ""
+msgstr "Kullanıcı yorumlarının ilk sayfasını göster"
 
 #: ../setup.xml
 msgid "Show in movie list"
-msgstr ""
+msgstr "Film listesinde göster"
 
 #: ../plugin.py:271
 msgid "Show list of matched movies and series"
-msgstr ""
+msgstr "Eşleşen film ve dizileri listele"
 
 #: ../plugin.py:265 ../plugin.py:272
 msgid "Show movie and series basic details"
-msgstr ""
+msgstr "Film ve dizilerin temel bilgilerini göster"
 
 #: ../plugin.py:273
 msgid "Show movie and series extra details"
-msgstr ""
+msgstr "Film ve dizilerin ek bilgilerini göster"
 
 #: ../plugin.py:283
 msgid "Show movie and series synopsis"
-msgstr ""
+msgstr "Film ve dizilerin özetini göster"
 
 #: ../setup.xml
-#, fuzzy
 msgid "Show search in plugin browser"
-msgstr "Eklenti tarayıcısında göster"
+msgstr "Aramayı eklenti tarayıcısında göster"
 
 #: ../setup.xml
-#, fuzzy
 msgid "Show setup in plugin browser"
-msgstr "Eklenti tarayıcısında göster"
+msgstr "Ayarları eklenti tarayıcısında göster"
 
 #: ../setup.xml
-msgid "Show the runtime, type and genres. Takes effect after the next search of IMDb for a show name."
+msgid ""
+"Show the runtime, type and genres. Takes effect after the next search of "
+"IMDb for a show name."
 msgstr ""
+"Süreyi, yapım türünü ve türleri gösterir. Bir sonraki yapım adı aramasında "
+"uygulanır."
 
 #: ../plugin.py:1160
 msgid "Sound mix"
-msgstr ""
+msgstr "Ses miksajı"
 
 #: ../plugin.py:1169
 msgid "Storyline"
-msgstr ""
+msgstr "Hikâye"
 
 #: ../plugin.py:1471
 msgid "SubsSupport import failed"
-msgstr ""
+msgstr "SubsSupport yüklenemedi"
 
 #: ../plugin.py:1360
 msgid "SubsSupport search"
-msgstr ""
+msgstr "SubsSupport araması"
 
 #: ../plugin.py:1442
 msgid "Synopsis"
-msgstr ""
+msgstr "Özet"
 
 #: ../plugin.py:1170
 msgid "Tagline"
-msgstr ""
+msgstr "Tanıtım sloganı"
 
 #: ../plugin.py:225
 msgid "The Internet Movie Database"
-msgstr "Internet Film Veritabanı (imdb.com)"
+msgstr "Internet Movie Database"
 
 #: ../setup.xml
-msgid "This option allows you to add words/phrases for IMDb to ignore when searching. Please separate the words/phrases with commas."
+msgid ""
+"This option allows you to add words/phrases for IMDb to ignore when "
+"searching. Please separate the words/phrases with commas."
 msgstr ""
+"IMDb aramasında yok sayılacak sözcük veya ifadeleri belirler. Sözcük ve "
+"ifadeleri virgülle ayırın."
 
 #: ../plugin.py:354
 msgid "Title Menu"
-msgstr "Başlık Menüsü"
+msgstr "Başlık menüsü"
 
 #: ../plugin.py:1059
 msgid "Top cast"
-msgstr ""
+msgstr "Başlıca oyuncular"
 
 #: ../setup.xml
 msgid "Translate IMDb texts to the user interface language."
-msgstr ""
+msgstr "IMDb metinlerini arayüz diline çevirir."
 
 #: ../setup.xml
 msgid "Translate texts"
-msgstr ""
+msgstr "Metinleri çevir"
 
 #: ../plugin.py:1175
 msgid "Trivia"
-msgstr ""
+msgstr "İlginç bilgiler"
 
 #: ../plugin.py:1189 ../plugin.py:1443
 msgid "User reviews"
-msgstr ""
+msgstr "Kullanıcı yorumları"
 
 #: ../setup.xml
 msgid "Words / phrases to ignore"
-msgstr ""
+msgstr "Yok sayılacak sözcükler / ifadeler"
 
 #: ../plugin.py:979
 msgid "Writer"
 msgid_plural "Writers"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Senarist"
 
 #: ../plugin.py:1045
-#, fuzzy
 msgid "as"
-msgstr " : "
+msgstr "rolünde"
 
 #: ../plugin.py:1659
 msgid "connection error"
-msgstr ""
+msgstr "bağlantı hatası"
 
 #: ../plugin.py:1536
 msgid "localpath is no longer supported."
-msgstr ""
+msgstr "localpath artık desteklenmiyor."
 
 #: ../plugin.py:1037
 msgid "no user rating yet"
-msgstr "kullanıcı değerlendirmesi yok"
+msgstr "henüz kullanıcı puanı yok"
 
 #: ../plugin.py:1661
 msgid "timeout"
-msgstr ""
+msgstr "zaman aşımı"
 
 #: ../plugin.py:1052
 #, python-brace-format
 msgid "{n} ep"
 msgid_plural "{n} eps"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "{n} bölüm"
 
 #: ../plugin.py:1094
 #, python-brace-format
 msgid "{n} nomination total"
 msgid_plural "{n} nominations total"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "toplam {n} adaylık"
 
 #: ../plugin.py:1090
 #, python-brace-format
 msgid "{n} win"
 msgid_plural "{n} wins"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "{n} ödül"
 
 #: ../plugin.py:1085
 #, python-brace-format
 msgid "{n} {award} nomination"
 msgid_plural "{n} {award} nominations"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "{n} {award} adaylığı"
 
 #: ../plugin.py:1083
 #, python-brace-format
 msgid "{n} {award} win"
 msgid_plural "{n} {award} wins"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "{n} {award} ödülü"
