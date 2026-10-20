@@ -182,8 +182,9 @@ class PartnerboxAllTimers(RemoteTimer):
 		if self.failed:
 			print("[PartnerboxAllTimers] Unavailable: %s" % ", ".join(self.failed))
 		timerCount = len(self.E2TimerList)
+		localCount = sum(timer.isLocal for timer in self.E2TimerList)
 		boxCount = len(self.activeBoxes) - self.pending - len(self.failed)
-		self.setTitle(_("Timers: %d, Partnerboxes: %d") % (timerCount, boxCount))
+		self.setTitle(_("Timers: %d (local: %d), Partnerboxes: %d") % (timerCount, localCount, boxCount))
 		self.toggleButtonState()
 
 	def getLocations(self):
