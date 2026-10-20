@@ -1,18 +1,32 @@
 from . import _
 from Components.config import config
+from Components.TimerSanityCheck import TimerSanityCheck
 from enigma import eListboxPythonMultiContent, RT_HALIGN_LEFT, RT_VALIGN_CENTER
+from RecordTimer import AFTEREVENT
+from Screens.ChoiceBox import ChoiceBox
 from Screens.MessageBox import MessageBox
+from Screens.TimerEdit import TimerEditList, TimerSanityConflict
+from Screens.TimerEntry import TimerEntry as LocalTimerEntry
 from timer import TimerEntry
-from .PartnerboxFunctions import FillE1TimerList, FillE2TimerList, sendPartnerBoxWebCommand
+from .PartnerboxFunctions import E2Timer, FillE1TimerList, FillE2TimerList, sendPartnerBoxWebCommand
 from .plugin import E2TimerMenu, RemoteTimer, RemoteTimerEntry
 import skin
+
+
+class PartnerboxLocalTimerEntry(LocalTimerEntry):
+	def createSetup(self, widget):
+		LocalTimerEntry.createSetup(self, widget)
+		if self.entryFallbackTimer in self.list:
+			self.list.remove(self.entryFallbackTimer)
+			self[widget].list = self.list
+
 
 class AllPartnerboxTimerMenu(E2TimerMenu):
 	def __init__(self):
 		E2TimerMenu.__init__(self, 0)
 
 	def buildEntry(self, timer):
-		if int(timer.partnerboxentry.enigma.value):
+		if not timer.isLocal and int(timer.partnerboxentry.enigma.value):
 			entry = E2TimerMenu.buildEntryE1(self, timer)
 			timeParam = "PartnerBoxE1TimerTime"
 			stateParam = "PartnerBoxE1TimerState"
@@ -20,6 +34,9 @@ class AllPartnerboxTimerMenu(E2TimerMenu):
 			entry = E2TimerMenu.buildEntry(self, timer)
 			timeParam = "PartnerBoxE2TimerTime"
 			stateParam = "PartnerBoxE2TimerState"
+
+		if timer.isLocal:
+			return entry
 
 		_, y, _, h = skin.parameters.get(timeParam, (0, 50, 150, 20))
 		stateX = skin.parameters.get(stateParam, (150, 50, 150, 20))[0]
@@ -51,6 +68,23 @@ class PartnerboxAllTimers(RemoteTimer):
 		self.closed = True
 		self.requestId += 1
 
+	def _localTimer(self, timer):
+		entry = E2Timer(
+			servicereference=str(timer.service_ref),
+			servicename=timer.service_ref.getServiceName() or "",
+			name=timer.name,
+			description=timer.description,
+			disabled=timer.disabled,
+			timebegin=timer.begin,
+			timeend=timer.end,
+			state=timer.state,
+			repeated=timer.repeated,
+			justplay=timer.justplay,
+			eventId=timer.eit if timer.eit is not None else -1)
+		entry.isLocal = True
+		entry.localTimer = timer
+		return entry
+
 	def _setBox(self, timer):
 		box = timer.partnerboxentry
 		self.PartnerboxEntry = box
@@ -63,7 +97,8 @@ class PartnerboxAllTimers(RemoteTimer):
 
 	def selectionChanged(self, timer):
 		if timer is not None:
-			self._setBox(timer)
+			if not timer.isLocal:
+				self._setBox(timer)
 			self["description"].setText(timer.description)
 		else:
 			self["description"].setText("")
@@ -80,14 +115,16 @@ class PartnerboxAllTimers(RemoteTimer):
 		self.requestId += 1
 		requestId = self.requestId
 		self.pending = len(self.activeBoxes)
-		self.received = []
+		recordTimer = self.session.nav.RecordTimer
+		self.received = [self._localTimer(timer) for timer in
+			recordTimer.timer_list + recordTimer.processed_timers if not timer.external]
 		self.failed = []
 		self["timerlist"].setList([])
 		self["timerlist"].instance.hide()
 		self["text"].setText(_("Getting Partnerboxes Information..."))
 		self.toggleButtonState()
 		if not self.pending:
-			self["text"].setText(_("No active Partnerboxes found."))
+			self._finished(requestId)
 			return
 		for box in self.activeBoxes:
 			try:
@@ -106,6 +143,7 @@ class PartnerboxAllTimers(RemoteTimer):
 		try:
 			timers = FillE2TimerList(xml) if int(box.enigma.value) == 0 else FillE1TimerList(xml)
 			for timer in timers:
+				timer.isLocal = False
 				timer.partnerboxentry = box
 			self.received.extend(timers)
 		except Exception as error:
@@ -121,9 +159,12 @@ class PartnerboxAllTimers(RemoteTimer):
 		self._finished(requestId)
 
 	def _finished(self, requestId):
-		self.pending -= 1
-		if self.pending:
+		if self.closed or requestId != self.requestId:
 			return
+		if self.pending:
+			self.pending -= 1
+			if self.pending:
+				return
 
 		def sortKey(timer):
 			if timer.disabled:
@@ -142,14 +183,29 @@ class PartnerboxAllTimers(RemoteTimer):
 			print("[PartnerboxAllTimers] Unavailable: %s" % ", ".join(self.failed))
 		timerCount = len(self.E2TimerList)
 		boxCount = len(self.activeBoxes) - self.pending - len(self.failed)
-		self.setTitle(_("Remote timers: %d, Partnerboxes: %d") % (timerCount, boxCount))
+		self.setTitle(_("Timers: %d, Partnerboxes: %d") % (timerCount, boxCount))
 		self.toggleButtonState()
 
 	def getLocations(self):
 		self.pendingTimer = self["timerlist"].currentSelection
 		if self.pendingTimer is not None:
-			self._setBox(self.pendingTimer)
-			RemoteTimer.getLocations(self)
+			if self.pendingTimer.isLocal:
+				self.session.openWithCallback(self.finishedEdit, PartnerboxLocalTimerEntry, self.pendingTimer.localTimer)
+			else:
+				self._setBox(self.pendingTimer)
+				RemoteTimer.getLocations(self)
+
+	def finishedEdit(self, answer):
+		if answer and answer[0]:
+			TimerEditList.finishedEdit(self, answer)
+		else:
+			self.action()
+
+	def fillTimerList(self):
+		self.action()
+
+	def refill(self):
+		self.action()
 
 	def addTimer(self):
 		timer = self.pendingTimer
@@ -173,11 +229,21 @@ class PartnerboxAllTimers(RemoteTimer):
 	def deleteTimer(self):
 		self.pendingTimer = self["timerlist"].currentSelection
 		if self.pendingTimer is not None:
-			self._setBox(self.pendingTimer)
-			RemoteTimer.deleteTimer(self)
+			if self.pendingTimer.isLocal:
+				self.session.openWithCallback(self.deleteTimerConfirmed, MessageBox,
+					_("Do you really want to delete the timer \n%s ?") % self.pendingTimer.name)
+			else:
+				self._setBox(self.pendingTimer)
+				RemoteTimer.deleteTimer(self)
 
 	def deleteTimerConfirmed(self, answer):
 		if not answer or self.pendingTimer is None:
+			return
+		if self.pendingTimer.isLocal:
+			timer = self.pendingTimer.localTimer
+			timer.afterEvent = AFTEREVENT.NONE
+			self.session.nav.RecordTimer.removeEntry(timer)
+			self.action()
 			return
 		self._setBox(self.pendingTimer)
 		# The parent reads the current list selection.  The modal confirmation
@@ -187,12 +253,50 @@ class PartnerboxAllTimers(RemoteTimer):
 	def toggleTimer(self):
 		timer = self["timerlist"].currentSelection
 		if timer is not None:
-			self._setBox(timer)
-			RemoteTimer.toggleTimer(self)
+			if timer.isLocal:
+				self.toggleLocalTimer(timer.localTimer)
+			else:
+				self._setBox(timer)
+				RemoteTimer.toggleTimer(self)
+
+	def toggleLocalTimer(self, timer):
+		running = timer.state in (TimerEntry.StatePrepared, TimerEntry.StateRunning)
+		if timer.disabled:
+			if timer.repeated and running and not timer.justplay:
+				return
+			timer.enable()
+			check = TimerSanityCheck(self.session.nav.RecordTimer.timer_list, timer)
+			if not check.check():
+				timer.disable()
+				conflicts = check.getSimulTimerList()
+				if conflicts is not None:
+					self.session.openWithCallback(self.finishedEdit, TimerSanityConflict, conflicts)
+					return
+			elif check.doubleCheck():
+				timer.disable()
+		else:
+			if running:
+				if timer.isRunning() and timer.repeated:
+					choices = (
+						(_("Stop current event but not coming events"), "stoponlycurrent"),
+						(_("Stop current event and disable coming events"), "stopall"),
+						(_("Don't stop current event but disable coming events"), "stoponlycoming")
+					)
+					self.session.openWithCallback(
+						lambda answer: TimerEditList.runningEventCallback(self, timer, answer),
+						ChoiceBox,
+						title=_("A repeating event is currently recording. What would you like to do?"),
+						list=choices)
+				return
+			timer.disable()
+		self.session.nav.RecordTimer.timeChanged(timer)
+		self.session.nav.RecordTimer.saveTimer()
+		self.action()
 
 	def cleanupTimer(self):
-		# The blue button applies the original cleanup command to all boxes.
+		self.session.nav.RecordTimer.cleanup()
 		if not self.activeBoxes:
+			self.action()
 			return
 		self["timerlist"].instance.hide()
 		self["text"].setText(_("Cleaning up finished timer entries..."))
