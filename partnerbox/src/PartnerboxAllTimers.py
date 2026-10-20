@@ -71,7 +71,7 @@ class PartnerboxAllTimers(RemoteTimer):
 
 	def toggleButtonState(self):
 		RemoteTimer.toggleButtonState(self)
-		self["key_yellow"].setText((_("All"), _("Remote"), _("Local"))[self.filterMode])
+		self["key_yellow"].setText((_("Remote only"), _("Local only"), _("All timers"))[self.filterMode])
 
 	def EPGList(self):
 		if self.pending:
