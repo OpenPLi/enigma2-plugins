@@ -53,6 +53,7 @@ class PartnerboxAllTimers(RemoteTimer):
 
 	def __init__(self, session):
 		self.boxes = list(config.plugins.Partnerbox.Entries)
+		self.filterMode = 0
 		RemoteTimer.__init__(self, session, self.boxes[0], not_epg=True)
 		self.skinName = "RemoteTimer"
 		self["timerlist"] = AllPartnerboxTimerMenu()
@@ -67,6 +68,27 @@ class PartnerboxAllTimers(RemoteTimer):
 	def _onClose(self):
 		self.closed = True
 		self.requestId += 1
+
+	def toggleButtonState(self):
+		RemoteTimer.toggleButtonState(self)
+		self["key_yellow"].setText((_("All"), _("Remote"), _("Local"))[self.filterMode])
+
+	def EPGList(self):
+		if self.pending:
+			return
+		self.filterMode = (self.filterMode + 1) % 3
+		self.applyFilter()
+
+	def applyFilter(self):
+		timers = [timer for timer in self.E2TimerList
+			if self.filterMode == 0 or timer.isLocal == (self.filterMode == 2)]
+		self["timerlist"].setList([(timer,) for timer in timers])
+		if timers:
+			self["timerlist"].instance.show()
+		else:
+			self["timerlist"].instance.hide()
+			self["text"].setText(_("No timers found."))
+		self.toggleButtonState()
 
 	def _localTimer(self, timer):
 		entry = E2Timer(
@@ -174,11 +196,7 @@ class PartnerboxAllTimers(RemoteTimer):
 			return (0, timer.timebegin)
 
 		self.E2TimerList = sorted(self.received, key=sortKey)
-		self["timerlist"].setList([(timer,) for timer in self.E2TimerList])
-		if self.E2TimerList:
-			self["timerlist"].instance.show()
-		else:
-			self["text"].setText(_("No timers found."))
+		self.applyFilter()
 		if self.failed:
 			print("[PartnerboxAllTimers] Unavailable: %s" % ", ".join(self.failed))
 		timerCount = len(self.E2TimerList)
