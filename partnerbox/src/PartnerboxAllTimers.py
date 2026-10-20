@@ -124,6 +124,7 @@ class PartnerboxAllTimers(RemoteTimer):
 			self["description"].setText(timer.description)
 		else:
 			self["description"].setText("")
+		self.toggleButtonState()
 
 	def action(self):
 		# Fetch independently from every box.  In particular, do not reuse

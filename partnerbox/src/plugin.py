@@ -383,11 +383,13 @@ class RemoteTimer(Screen):
 	def selectionChanged(self, event):
 		if event:
 			self["description"].setText(event.description)
+		self.toggleButtonState()
 
 	def toggleButtonState(self):
-		if self["timerlist"].currentSelection is not None:
+		timer = self["timerlist"].currentSelection
+		if timer is not None:
 			self["key_red"].setText(_("Delete timer"))
-			self["key_green"].setText(_("Toggle status (on/off)"))
+			self["key_green"].setText((_("Enable") if timer.disabled else _("Disable")) if self.enigma_type == 0 else "")
 			if self.not_epg:
 				self["key_yellow"].setText("")
 			else:
