@@ -29,6 +29,7 @@ from Tools.Directories import fileExists
 from .PartnerboxFunctions import isInTimerList, isInRepeatTimer, sendPartnerBoxWebCommand, FillE1TimerList, FillE2TimerList
 from . import PartnerboxFunctions as partnerboxfunctions
 from enigma import eServiceReference, eServiceCenter
+import skin
 
 # for localized messages
 from . import _
@@ -289,7 +290,8 @@ def Partnerbox_timerAdd(self):
 
 		internalAction = _("Edit internal timer") if HasInternalTimer(self, event, serviceref) else _("Add internal timer")
 		remoteAction = _("Edit remote timer")
-		remoteAction += "\\c00d0d0d0 - " + ", ".join(box.name.value for box, _ in matches) + "\\C"
+		color = skin.parameters.get("PartnerBoxEPGTimerBoxColor", 0x00f0f0f0)
+		remoteAction += " - " + ", ".join("\\c%08x%s\\C" % (color, box.name.value) for box, _ in matches)
 		menu = [(remoteAction, "remote"), (internalAction, "internal")]
 
 		def timerAction(choice):

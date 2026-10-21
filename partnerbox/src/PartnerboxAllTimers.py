@@ -44,7 +44,7 @@ class AllPartnerboxTimerMenu(E2TimerMenu):
 		x = width // 2
 		w = width - stateX - x - 10
 		if w > 0:
-			color = 0x00b0d0d0
+			color = skin.parameters.get("PartnerBoxAllTimersBoxNameColor", 0x00f0f0f0)
 			entry.append((eListboxPythonMultiContent.TYPE_TEXT, x, y, w, h, 1, RT_HALIGN_LEFT | RT_VALIGN_CENTER, timer.partnerboxentry.name.value, color, color))
 		return entry
 
