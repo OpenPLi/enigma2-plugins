@@ -1017,7 +1017,7 @@ class RemotePlayer(Screen, InfoBarAudioSelection):
 		self.enigma_type = int(partnerboxentry.enigma.value)
 		self.useinternal = int(partnerboxentry.useinternal.value)
 		endtime = int(eventstart + eventduration)
-		tt = ((" %s ... %s (+%d " + _("mins") + ")") % (FuzzyTime(eventstart)[1], FuzzyTime(endtime)[1], (endtime - time.time()) / 60))
+		tt = ((" %s ... %s (+%d " + _("mins") + ")") % (FuzzyTime(eventstart)[1], FuzzyTime(endtime)[1], (endtime - time.time()) // 60))
 		self["ServiceName"] = Label(EventTitle)
 		self.ip = "%d.%d.%d.%d" % tuple(partnerboxentry.ip.value)
 		port = partnerboxentry.port.value
@@ -1265,7 +1265,7 @@ class RemotePlayer(Screen, InfoBarAudioSelection):
 					e2eventtitle = ""
 		endtime = int(e2eventstart + e2eventduration)
 		if endtime != 0:
-			tt = ((": %s ... %s (+%d " + _("mins") + ")") % (FuzzyTime(e2eventstart)[1], FuzzyTime(endtime)[1], (endtime - time.time()) / 60))
+			tt = ((": %s ... %s (+%d " + _("mins") + ")") % (FuzzyTime(e2eventstart)[1], FuzzyTime(endtime)[1], (endtime - time.time()) // 60))
 		else:
 			tt = ""
 		self["ServiceName"].setText(e2eventtitle)
@@ -1693,12 +1693,12 @@ class E2TimerMenu(GUIComponent, object):
 			if timer.justplay:
 				res.append((eListboxPythonMultiContent.TYPE_TEXT, x, y, width - w, h, 1, RT_HALIGN_LEFT | RT_VALIGN_CENTER, repeatedtext + ((" %s " + _("(ZAP)")) % (FuzzyTime(timer.timebegin)[1]))))
 			else:
-				res.append((eListboxPythonMultiContent.TYPE_TEXT, x, y, width - w, h, 1, RT_HALIGN_LEFT | RT_VALIGN_CENTER, repeatedtext + ((" %s ... %s (%d " + _("mins") + ")") % (FuzzyTime(timer.timebegin)[1], FuzzyTime(timer.timeend)[1], (timer.timeend - timer.timebegin) / 60))))
+				res.append((eListboxPythonMultiContent.TYPE_TEXT, x, y, width - w, h, 1, RT_HALIGN_LEFT | RT_VALIGN_CENTER, repeatedtext + ((" %s ... %s (%d " + _("mins") + ")") % (FuzzyTime(timer.timebegin)[1], FuzzyTime(timer.timeend)[1], (timer.timeend - timer.timebegin) // 60))))
 		else:
 			if timer.justplay:
 				res.append((eListboxPythonMultiContent.TYPE_TEXT, x, y, width - w, h, 1, RT_HALIGN_LEFT | RT_VALIGN_CENTER, repeatedtext + (("%s, %s " + _("(ZAP)")) % (FuzzyTime(timer.timebegin)))))
 			else:
-				res.append((eListboxPythonMultiContent.TYPE_TEXT, x, y, width - w, h, 1, RT_HALIGN_LEFT | RT_VALIGN_CENTER, repeatedtext + (("%s, %s ... %s (%d " + _("mins") + ")") % (FuzzyTime(timer.timebegin) + FuzzyTime(timer.timeend)[1:] + ((timer.timeend - timer.timebegin) / 60,)))))
+				res.append((eListboxPythonMultiContent.TYPE_TEXT, x, y, width - w, h, 1, RT_HALIGN_LEFT | RT_VALIGN_CENTER, repeatedtext + (("%s, %s ... %s (%d " + _("mins") + ")") % (FuzzyTime(timer.timebegin) + FuzzyTime(timer.timeend)[1:] + ((timer.timeend - timer.timebegin) // 60,)))))
 
 		if timer.state == TimerEntry.StateWaiting:
 			state = _("waiting")
@@ -1761,12 +1761,12 @@ class E2TimerMenu(GUIComponent, object):
 			if timer.type & PlaylistEntry.SwitchTimerEntry:
 				res.append((eListboxPythonMultiContent.TYPE_TEXT, x, y, width - w, h, 1, RT_HALIGN_LEFT | RT_VALIGN_CENTER, repeatedtext + ((" %s " + _("(ZAP)")) % (FuzzyTime(timer.timebegin)[1]))))
 			elif timer.type & PlaylistEntry.RecTimerEntry:
-				res.append((eListboxPythonMultiContent.TYPE_TEXT, x, y, width - w, h, 20, 1, RT_HALIGN_LEFT | RT_VALIGN_CENTER, repeatedtext + ((" %s ... %s (%d " + _("mins") + ")") % (FuzzyTime(timer.timebegin)[1], FuzzyTime(timer.timeend)[1], (timer.timeend - timer.timebegin) / 60))))
+				res.append((eListboxPythonMultiContent.TYPE_TEXT, x, y, width - w, h, 20, 1, RT_HALIGN_LEFT | RT_VALIGN_CENTER, repeatedtext + ((" %s ... %s (%d " + _("mins") + ")") % (FuzzyTime(timer.timebegin)[1], FuzzyTime(timer.timeend)[1], (timer.timeend - timer.timebegin) // 60))))
 		else:
 			if timer.type & PlaylistEntry.SwitchTimerEntry:
-				res.append((eListboxPythonMultiContent.TYPE_TEXT, x, y, width - w, h, 1, RT_HALIGN_LEFT | RT_VALIGN_CENTER, repeatedtext + (("%s, %s ... %s (%d " + _("mins") + ") ") % (FuzzyTime(timer.timebegin) + FuzzyTime(timer.timeend)[1:] + ((timer.timeend - timer.timebegin) / 60,))) + _("(ZAP)")))
+				res.append((eListboxPythonMultiContent.TYPE_TEXT, x, y, width - w, h, 1, RT_HALIGN_LEFT | RT_VALIGN_CENTER, repeatedtext + (("%s, %s ... %s (%d " + _("mins") + ") ") % (FuzzyTime(timer.timebegin) + FuzzyTime(timer.timeend)[1:] + ((timer.timeend - timer.timebegin) // 60,))) + _("(ZAP)")))
 			elif timer.type & PlaylistEntry.RecTimerEntry:
-				res.append((eListboxPythonMultiContent.TYPE_TEXT, x, y, width - w, h, 1, RT_HALIGN_LEFT | RT_VALIGN_CENTER, repeatedtext + (("%s, %s ... %s (%d " + _("mins") + ")") % (FuzzyTime(timer.timebegin) + FuzzyTime(timer.timeend)[1:] + ((timer.timeend - timer.timebegin) / 60,)))))
+				res.append((eListboxPythonMultiContent.TYPE_TEXT, x, y, width - w, h, 1, RT_HALIGN_LEFT | RT_VALIGN_CENTER, repeatedtext + (("%s, %s ... %s (%d " + _("mins") + ")") % (FuzzyTime(timer.timebegin) + FuzzyTime(timer.timeend)[1:] + ((timer.timeend - timer.timebegin) // 60,)))))
 
 		if timer.type & PlaylistEntry.stateWaiting:
 			state = _("waiting")
@@ -1919,12 +1919,12 @@ class E2ChannelList(MenuList):
 			if epgdata.eventstart != 0:
 				endtime = int(epgdata.eventstart + epgdata.eventduration)
 				prefix = "+"
-				remaining = (endtime - int(time.time())) / 60
+				remaining = (endtime - int(time.time())) // 60
 				if remaining <= 0:
 					prefix = ""
 				Time = _("%s%d min") % (prefix, remaining)
 				x, y, w, h = skin.parameters.get("PartnerBoxChannelListTime", (0, 50, 150, 20))
-				res.append((eListboxPythonMultiContent.TYPE_TEXT, x, y, width - w, h, 1, RT_HALIGN_LEFT | RT_VALIGN_CENTER, Time + '  ' + (("%s ... %s (%d " + _("mins") + ")") % (FuzzyTime(epgdata.eventstart)[1], FuzzyTime(endtime)[1], (endtime - epgdata.eventstart) / 60))))
+				res.append((eListboxPythonMultiContent.TYPE_TEXT, x, y, width - w, h, 1, RT_HALIGN_LEFT | RT_VALIGN_CENTER, Time + '  ' + (("%s ... %s (%d " + _("mins") + ")") % (FuzzyTime(epgdata.eventstart)[1], FuzzyTime(endtime)[1], (endtime - epgdata.eventstart) // 60))))
 			self.list.append(res)
 		self.l.setList(self.list)
 		self.moveToIndex(0)
@@ -1993,9 +1993,9 @@ class E2EPGList(MenuList):
 			esize = self.l.getItemSize()
 			width = esize.width()
 			height = esize.height()
-			r1 = Rect(0, 0, width / 20 * 2 - 10, height)
-			r2 = Rect(width / 20 * 2, 0, width / 20 * 5 - 15, height)
-			r3 = Rect(width / 20 * 7, 0, width / 20 * 13, height)
+			r1 = Rect(0, 0, width // 20 * 2 - 10, height)
+			r2 = Rect(width // 20 * 2, 0, width // 20 * 5 - 15, height)
+			r3 = Rect(width // 20 * 7, 0, width // 20 * 13, height)
 			t = localtime(epgdata.eventstart)
 			res.append((eListboxPythonMultiContent.TYPE_TEXT, r1.left(), r1.top(), r1.width(), r1.height(), 0, RT_HALIGN_RIGHT, self.days[t[6]]))
 			res.append((eListboxPythonMultiContent.TYPE_TEXT, r2.left(), r2.top(), r2.width(), r1.height(), 0, RT_HALIGN_RIGHT, "%02d.%02d, %02d:%02d" % (t[2], t[1], t[3], t[4])))
@@ -2024,13 +2024,13 @@ class E2EPGList(MenuList):
 					if chktime is None:
 						chktime = localtime(begin)
 						chktimecmp = chktime.tm_wday * 1440 + chktime.tm_hour * 60 + chktime.tm_min
-						chktimecmp_end = chktimecmp + (duration / 60)
+						chktimecmp_end = chktimecmp + (duration // 60)
 					time = localtime(x.timebegin)
 					for y in range(7):
 						if x.repeated & (2 ** y):
 							timecmp = y * 1440 + time.tm_hour * 60 + time.tm_min
-							if timecmp <= chktimecmp < (timecmp + ((x.timeend - x.timebegin) / 60)):
-								time_match = ((timecmp + ((x.timeend - x.timebegin) / 60)) - chktimecmp) * 60
+							if timecmp <= chktimecmp < (timecmp + ((x.timeend - x.timebegin) // 60)):
+								time_match = ((timecmp + ((x.timeend - x.timebegin) // 60)) - chktimecmp) * 60
 							elif chktimecmp <= timecmp < chktimecmp_end:
 								time_match = (chktimecmp_end - timecmp) * 60
 				else:
@@ -2216,7 +2216,7 @@ class RemoteTimerEventView(Screen):
 		endtime = int(self.epgdata.eventstart + self.epgdata.eventduration)
 		t = localtime(self.epgdata.eventstart)
 		datetime = ("%02d.%02d, %02d:%02d" % (t[2], t[1], t[3], t[4]))
-		duration = (" (%d " + _("mins") + ")") % ((self.epgdata.eventduration) / 60)
+		duration = (" (%d " + _("mins") + ")") % ((self.epgdata.eventduration) // 60)
 		self["datetime"].setText(datetime)
 		self["duration"].setText(duration)
 		self["key_red"].setText("")
