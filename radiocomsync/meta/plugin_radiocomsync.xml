@@ -1,0 +1,15 @@
+<default>
+	<prerequisites>
+		<tag type="System" />
+	</prerequisites>
+	<info>
+		<author>stefmat10</author>
+		<name>RadioComSync</name>
+		<packagename>enigma2-plugin-extensions-radiocomsync</packagename>
+		<shortdescription>Overlay radio commentary on TV video</shortdescription>
+		<description>RadioComSync overlays live radio commentary on TV video for sports. Mutes the DVB audio decoder and plays radio through GStreamer/ALSA. Supports BBC, talkSPORT, RTE, and WLR FM with online and satellite sources. Useful for watching sport on a foreign-language feed with English commentary.</description>
+	</info>
+	<files type="package">
+		<file type="package" name="enigma2-plugin-extensions-radiocomsync" />
+	</files>
+</default>

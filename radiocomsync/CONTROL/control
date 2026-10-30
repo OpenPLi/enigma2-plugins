@@ -1,0 +1,5 @@
+Package: enigma2-plugin-extensions-radiocomsync
+Version: 1.0.0
+Description: Overlay radio commentary on TV video
+Maintainer: stefmat10
+Depends: enigma2
