@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Enigma2 Plugin - Partnerbox\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-21 17:17+0200\n"
+"POT-Creation-Date: 2026-11-01 18:31+0100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: maja <jovanovic@gmx.ch>\n"
 "Language-Team: veselin & majevica CRNABERZA <jovanovic@gmx.ch>\n"
@@ -37,6 +37,9 @@ msgstr "(ZAP)"
 msgid "<unknown>"
 msgstr "<nepoznato>"
 
+msgid "A repeating event is currently recording. What would you like to do?"
+msgstr ""
+
 msgid "Abort"
 msgstr ""
 
@@ -59,6 +62,10 @@ msgstr "Dodaj tajmer"
 msgid "After event"
 msgstr "Posle događaja"
 
+#, fuzzy
+msgid "All timers"
+msgstr "Dodaj tajmer"
+
 msgid "Alternative"
 msgstr ""
 
@@ -72,6 +79,10 @@ msgid "Attention, this is repeated timer!\n"
 msgstr ""
 
 msgid "AutoTimer overview"
+msgstr ""
+
+#, python-format
+msgid "AutoTimer plugin is probably not installed on Partnerbox '%s'."
 msgstr ""
 
 msgid "Bouquet List"
@@ -137,6 +148,10 @@ msgstr "Ukloni tajmer"
 msgid "Description"
 msgstr "Opis"
 
+#, fuzzy
+msgid "Disable"
+msgstr "isključen"
+
 msgid "Disable Picture in Picture"
 msgstr ""
 
@@ -162,6 +177,9 @@ msgstr ""
 "Da li stvarno želite da obrišete tajmer \n"
 "%s ?"
 
+msgid "Don't stop current event but disable coming events"
+msgstr ""
+
 msgid "EPG Selection"
 msgstr "EPG Izbor"
 
@@ -174,6 +192,9 @@ msgstr ""
 #, fuzzy
 msgid "Edit remote timer"
 msgstr "daljinski tajmer"
+
+msgid "Enable"
+msgstr ""
 
 #, fuzzy
 msgid "Enable Partnerbox-AutoTimer function"
@@ -269,6 +290,10 @@ msgstr "Dobijam partnerboks informacije o buketu..."
 msgid "Getting Partnerbox Information..."
 msgstr "Dobijam partnerboks infomacije..."
 
+#, fuzzy
+msgid "Getting Partnerboxes Information..."
+msgstr "Dobijam partnerboks infomacije..."
+
 msgid "Getting timerlist data..."
 msgstr ""
 
@@ -283,6 +308,10 @@ msgstr "Info"
 
 msgid "Internet services are not supported!"
 msgstr ""
+
+#, fuzzy
+msgid "Local only"
+msgstr "Lokacija"
 
 msgid "Location"
 msgstr "Lokacija"
@@ -332,6 +361,9 @@ msgstr "Ime"
 
 msgid "No"
 msgstr "Ne"
+
+msgid "No timers found."
+msgstr ""
 
 msgid "OK"
 msgstr "OK"
@@ -394,6 +426,10 @@ msgstr "Partnerboks: Uredi unos"
 msgid "Partnerbox: RemoteTimer"
 msgstr "Partnerboks unos"
 
+#, fuzzy
+msgid "Partnerboxes"
+msgstr "Partnerboks unos"
+
 msgid "Password"
 msgstr "Lozinka"
 
@@ -422,7 +458,15 @@ msgid "Remote Timer"
 msgstr "daljinski tajmer"
 
 #, fuzzy
+msgid "Remote only"
+msgstr "daljinski tajmer"
+
+#, fuzzy
 msgid "RemoteTimer Timerlist"
+msgstr "daljinski tajmer"
+
+#, fuzzy
+msgid "RemoteTimers"
 msgstr "daljinski tajmer"
 
 msgid "Remove timer"
@@ -445,6 +489,10 @@ msgstr "Subota"
 
 msgid "Save"
 msgstr ""
+
+#, fuzzy
+msgid "Select Partnerbox:"
+msgstr "Partnerboks unos"
 
 #, python-format
 msgid "Select action for remote timer '%s':"
@@ -501,6 +549,9 @@ msgstr ""
 msgid "Show duration time for event"
 msgstr ""
 
+msgid "Show timers from all Partnerboxes in EPG"
+msgstr ""
+
 msgid "Shutdown"
 msgstr ""
 
@@ -519,6 +570,12 @@ msgstr "Početno vreme"
 
 #, python-format
 msgid "Starting Remote Player (IP = %s)"
+msgstr ""
+
+msgid "Stop current event and disable coming events"
+msgstr ""
+
+msgid "Stop current event but not coming events"
 msgstr ""
 
 msgid "Stream"
@@ -572,10 +629,11 @@ msgstr ""
 msgid "Timer menu"
 msgstr "Tip tajmera"
 
-msgid "Toggle Standby"
+#, python-format
+msgid "Timers: %d (local: %d), Partnerboxes: %d"
 msgstr ""
 
-msgid "Toggle status (on/off)"
+msgid "Toggle Standby"
 msgstr ""
 
 msgid "Tue"

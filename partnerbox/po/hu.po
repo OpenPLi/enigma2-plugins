@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: partnerbox\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-21 17:17+0200\n"
+"POT-Creation-Date: 2026-11-01 18:31+0100\n"
 "PO-Revision-Date: 2012-06-27 09:22+0100\n"
 "Last-Translator: robertut <robertut@yahoo.com>\n"
 "Language-Team: \n"
@@ -42,6 +42,9 @@ msgstr "(Ugrás)"
 msgid "<unknown>"
 msgstr "<ismeretlen>"
 
+msgid "A repeating event is currently recording. What would you like to do?"
+msgstr ""
+
 msgid "Abort"
 msgstr ""
 
@@ -64,6 +67,10 @@ msgstr "Időzítés hozzáadása"
 msgid "After event"
 msgstr "Esemény után"
 
+#, fuzzy
+msgid "All timers"
+msgstr "Időzítés hozzáadása"
+
 msgid "Alternative"
 msgstr ""
 
@@ -77,6 +84,10 @@ msgid "Attention, this is repeated timer!\n"
 msgstr ""
 
 msgid "AutoTimer overview"
+msgstr ""
+
+#, python-format
+msgid "AutoTimer plugin is probably not installed on Partnerbox '%s'."
 msgstr ""
 
 msgid "Bouquet List"
@@ -142,6 +153,10 @@ msgstr "Időzítő eltávolítása"
 msgid "Description"
 msgstr "Leírás"
 
+#, fuzzy
+msgid "Disable"
+msgstr "letiltva"
+
 msgid "Disable Picture in Picture"
 msgstr ""
 
@@ -167,6 +182,9 @@ msgstr ""
 "Biztos benne, hogy törölni szeretné ezt az időzítést: \n"
 "%s ?"
 
+msgid "Don't stop current event but disable coming events"
+msgstr ""
+
 msgid "EPG Selection"
 msgstr "EPG választás"
 
@@ -179,6 +197,9 @@ msgstr ""
 #, fuzzy
 msgid "Edit remote timer"
 msgstr "Távoli időzítő"
+
+msgid "Enable"
+msgstr ""
 
 #, fuzzy
 msgid "Enable Partnerbox-AutoTimer function"
@@ -274,6 +295,10 @@ msgstr "Partner bouquet-ek beolvasása..."
 msgid "Getting Partnerbox Information..."
 msgstr "Partnerbox információk betöltése..."
 
+#, fuzzy
+msgid "Getting Partnerboxes Information..."
+msgstr "Partnerbox információk betöltése..."
+
 msgid "Getting timerlist data..."
 msgstr ""
 
@@ -288,6 +313,10 @@ msgstr "Infó"
 
 msgid "Internet services are not supported!"
 msgstr ""
+
+#, fuzzy
+msgid "Local only"
+msgstr "Pozíció"
 
 msgid "Location"
 msgstr "Pozíció"
@@ -337,6 +366,9 @@ msgstr "Név"
 
 msgid "No"
 msgstr "Nem"
+
+msgid "No timers found."
+msgstr ""
 
 msgid "OK"
 msgstr "OK"
@@ -399,6 +431,10 @@ msgstr "Partnerbox: tétel szerkesztése"
 msgid "Partnerbox: RemoteTimer"
 msgstr "Partnerbox tételek"
 
+#, fuzzy
+msgid "Partnerboxes"
+msgstr "Partnerbox tételek"
+
 msgid "Password"
 msgstr "Jelszó"
 
@@ -427,7 +463,15 @@ msgid "Remote Timer"
 msgstr "Távoli időzítő"
 
 #, fuzzy
+msgid "Remote only"
+msgstr "Távoli időzítő"
+
+#, fuzzy
 msgid "RemoteTimer Timerlist"
+msgstr "Távoli időzítő"
+
+#, fuzzy
+msgid "RemoteTimers"
 msgstr "Távoli időzítő"
 
 msgid "Remove timer"
@@ -450,6 +494,10 @@ msgstr "Szombat"
 
 msgid "Save"
 msgstr ""
+
+#, fuzzy
+msgid "Select Partnerbox:"
+msgstr "Partnerbox tételek"
 
 #, python-format
 msgid "Select action for remote timer '%s':"
@@ -506,6 +554,9 @@ msgstr ""
 msgid "Show duration time for event"
 msgstr ""
 
+msgid "Show timers from all Partnerboxes in EPG"
+msgstr ""
+
 msgid "Shutdown"
 msgstr ""
 
@@ -524,6 +575,12 @@ msgstr "Kezdet"
 
 #, python-format
 msgid "Starting Remote Player (IP = %s)"
+msgstr ""
+
+msgid "Stop current event and disable coming events"
+msgstr ""
+
+msgid "Stop current event but not coming events"
 msgstr ""
 
 msgid "Stream"
@@ -577,10 +634,11 @@ msgstr ""
 msgid "Timer menu"
 msgstr "Időzítés típusa"
 
-msgid "Toggle Standby"
+#, python-format
+msgid "Timers: %d (local: %d), Partnerboxes: %d"
 msgstr ""
 
-msgid "Toggle status (on/off)"
+msgid "Toggle Standby"
 msgstr ""
 
 msgid "Tue"

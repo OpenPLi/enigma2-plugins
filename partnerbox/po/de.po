@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Partnerbox\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-21 17:17+0200\n"
+"POT-Creation-Date: 2026-11-01 18:31+0100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Dr.Best <dr.best@dreambox-tools.info>\n"
 "Language-Team: Dr. Best <dr.best@dreambox-tools.info>\n"
@@ -37,6 +37,9 @@ msgstr ""
 msgid "<unknown>"
 msgstr "<unbekannt>"
 
+msgid "A repeating event is currently recording. What would you like to do?"
+msgstr ""
+
 msgid "Abort"
 msgstr ""
 
@@ -59,6 +62,10 @@ msgstr "Hinzufügen"
 msgid "After event"
 msgstr "Nach dem Ereignis"
 
+#, fuzzy
+msgid "All timers"
+msgstr "Hinzufügen"
+
 msgid "Alternative"
 msgstr ""
 
@@ -72,6 +79,10 @@ msgid "Attention, this is repeated timer!\n"
 msgstr ""
 
 msgid "AutoTimer overview"
+msgstr ""
+
+#, python-format
+msgid "AutoTimer plugin is probably not installed on Partnerbox '%s'."
 msgstr ""
 
 msgid "Bouquet List"
@@ -137,6 +148,10 @@ msgstr "Timer entfernen"
 msgid "Description"
 msgstr "Beschreibung"
 
+#, fuzzy
+msgid "Disable"
+msgstr "abgeschaltet"
+
 msgid "Disable Picture in Picture"
 msgstr ""
 
@@ -165,6 +180,9 @@ msgstr ""
 "%s\n"
 " wirklich gelöscht werden?"
 
+msgid "Don't stop current event but disable coming events"
+msgstr ""
+
 msgid "EPG Selection"
 msgstr "EPG Auswahl"
 
@@ -177,6 +195,9 @@ msgstr ""
 #, fuzzy
 msgid "Edit remote timer"
 msgstr "Timer entfernen"
+
+msgid "Enable"
+msgstr ""
 
 #, fuzzy
 msgid "Enable Partnerbox-AutoTimer function"
@@ -272,6 +293,10 @@ msgstr "Hole Partnerbox Bouquet Informationen"
 msgid "Getting Partnerbox Information..."
 msgstr "Hole Partnerbox Infomationen..."
 
+#, fuzzy
+msgid "Getting Partnerboxes Information..."
+msgstr "Hole Partnerbox Infomationen..."
+
 msgid "Getting timerlist data..."
 msgstr ""
 
@@ -286,6 +311,10 @@ msgstr ""
 
 msgid "Internet services are not supported!"
 msgstr ""
+
+#, fuzzy
+msgid "Local only"
+msgstr "Ort"
 
 msgid "Location"
 msgstr "Ort"
@@ -335,6 +364,9 @@ msgstr ""
 
 msgid "No"
 msgstr "Nein"
+
+msgid "No timers found."
+msgstr ""
 
 msgid "OK"
 msgstr ""
@@ -397,6 +429,10 @@ msgstr "Partnerbox: Eintrag bearbeiten"
 msgid "Partnerbox: RemoteTimer"
 msgstr "Partnerbox Einträge"
 
+#, fuzzy
+msgid "Partnerboxes"
+msgstr "Partnerbox Einträge"
+
 msgid "Password"
 msgstr "Passwort"
 
@@ -425,7 +461,15 @@ msgid "Remote Timer"
 msgstr ""
 
 #, fuzzy
+msgid "Remote only"
+msgstr "Timer entfernen"
+
+#, fuzzy
 msgid "RemoteTimer Timerlist"
+msgstr "Timer entfernen"
+
+#, fuzzy
+msgid "RemoteTimers"
 msgstr "Timer entfernen"
 
 msgid "Remove timer"
@@ -448,6 +492,10 @@ msgstr "Samstag"
 
 msgid "Save"
 msgstr ""
+
+#, fuzzy
+msgid "Select Partnerbox:"
+msgstr "Partnerbox Einträge"
 
 #, python-format
 msgid "Select action for remote timer '%s':"
@@ -504,6 +552,9 @@ msgstr ""
 msgid "Show duration time for event"
 msgstr ""
 
+msgid "Show timers from all Partnerboxes in EPG"
+msgstr ""
+
 msgid "Shutdown"
 msgstr ""
 
@@ -522,6 +573,12 @@ msgstr "Startzeit"
 
 #, python-format
 msgid "Starting Remote Player (IP = %s)"
+msgstr ""
+
+msgid "Stop current event and disable coming events"
+msgstr ""
+
+msgid "Stop current event but not coming events"
 msgstr ""
 
 msgid "Stream"
@@ -575,10 +632,11 @@ msgstr ""
 msgid "Timer menu"
 msgstr "Timer-Art"
 
-msgid "Toggle Standby"
+#, python-format
+msgid "Timers: %d (local: %d), Partnerboxes: %d"
 msgstr ""
 
-msgid "Toggle status (on/off)"
+msgid "Toggle Standby"
 msgstr ""
 
 msgid "Tue"

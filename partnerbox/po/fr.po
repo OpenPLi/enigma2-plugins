@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-21 17:17+0200\n"
+"POT-Creation-Date: 2026-11-01 18:31+0100\n"
 "PO-Revision-Date: 2021-11-07 09:45+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -39,6 +39,9 @@ msgstr "(ZAP)"
 msgid "<unknown>"
 msgstr "<inconnu>"
 
+msgid "A repeating event is currently recording. What would you like to do?"
+msgstr ""
+
 msgid "Abort"
 msgstr "Abandon"
 
@@ -60,6 +63,10 @@ msgstr "Programmer"
 msgid "After event"
 msgstr "Après l'émission"
 
+#, fuzzy
+msgid "All timers"
+msgstr "Programmer"
+
 msgid "Alternative"
 msgstr "Ajouter les alternatifs"
 
@@ -74,6 +81,10 @@ msgstr "Attention, ceci est un timer qui se répète!\n"
 
 msgid "AutoTimer overview"
 msgstr "Aperçu AutoTimer"
+
+#, python-format
+msgid "AutoTimer plugin is probably not installed on Partnerbox '%s'."
+msgstr ""
 
 msgid "Bouquet List"
 msgstr "Liste des bouquets"
@@ -136,6 +147,10 @@ msgstr "Effacer programmation"
 msgid "Description"
 msgstr "Description"
 
+#, fuzzy
+msgid "Disable"
+msgstr "désactivé"
+
 msgid "Disable Picture in Picture"
 msgstr "Désactiver l'incrustation d'image"
 
@@ -159,6 +174,9 @@ msgstr ""
 "Voulez-vous vraiment supprimer la programmation \n"
 "%s ?"
 
+msgid "Don't stop current event but disable coming events"
+msgstr ""
+
 msgid "EPG Selection"
 msgstr "Sélection EPG"
 
@@ -170,6 +188,10 @@ msgstr "Editer la programmation interne"
 
 msgid "Edit remote timer"
 msgstr "Editer la programmation distante"
+
+#, fuzzy
+msgid "Enable"
+msgstr "Activer VPS"
 
 msgid "Enable Partnerbox-AutoTimer function"
 msgstr "Activer la fonction Partnerbox-AutoTimer"
@@ -259,6 +281,10 @@ msgstr "Obtenir des informations sur le bouquet du Partnerbox ..."
 msgid "Getting Partnerbox Information..."
 msgstr "Obtenir des informations de Partnerbox ..."
 
+#, fuzzy
+msgid "Getting Partnerboxes Information..."
+msgstr "Obtenir des informations de Partnerbox ..."
+
 msgid "Getting timerlist data..."
 msgstr "Récupération de données de la liste des programmations…"
 
@@ -273,6 +299,10 @@ msgstr "Info"
 
 msgid "Internet services are not supported!"
 msgstr "Les services Internet ne sont pas supporté!"
+
+#, fuzzy
+msgid "Local only"
+msgstr "Emplacement"
 
 msgid "Location"
 msgstr "Emplacement"
@@ -322,6 +352,9 @@ msgstr "Nom"
 
 msgid "No"
 msgstr "Non"
+
+msgid "No timers found."
+msgstr ""
 
 msgid "OK"
 msgstr "OK"
@@ -375,6 +408,10 @@ msgstr "Partnerbox: Lecteur TV distant"
 msgid "Partnerbox: RemoteTimer"
 msgstr "Partnerbox:  Programmation Distante"
 
+#, fuzzy
+msgid "Partnerboxes"
+msgstr "Partnerbox"
+
 msgid "Password"
 msgstr "Mot de passe"
 
@@ -403,8 +440,16 @@ msgstr "Lecteur distant"
 msgid "Remote Timer"
 msgstr "Programmation distante"
 
+#, fuzzy
+msgid "Remote only"
+msgstr "Lecteur distant"
+
 msgid "RemoteTimer Timerlist"
 msgstr "Programmation Distante Liste des programmations"
+
+#, fuzzy
+msgid "RemoteTimers"
+msgstr "Programmation distante"
 
 msgid "Remove timer"
 msgstr "Supprimer la programmation"
@@ -426,6 +471,10 @@ msgstr "Samedi"
 
 msgid "Save"
 msgstr "Sauver"
+
+#, fuzzy
+msgid "Select Partnerbox:"
+msgstr "Partnerbox"
 
 #, python-format
 msgid "Select action for remote timer '%s':"
@@ -478,6 +527,9 @@ msgstr "Afficher l’icône de l’évènement dans la ListeEPG"
 msgid "Show duration time for event"
 msgstr "Afficher la durée de l’évènement"
 
+msgid "Show timers from all Partnerboxes in EPG"
+msgstr ""
+
 msgid "Shutdown"
 msgstr "Éteindre"
 
@@ -496,6 +548,12 @@ msgstr "Heure de début"
 #, python-format
 msgid "Starting Remote Player (IP = %s)"
 msgstr "Démarrer le lecteur distant (IP = %s)"
+
+msgid "Stop current event and disable coming events"
+msgstr ""
+
+msgid "Stop current event but not coming events"
+msgstr ""
 
 msgid "Stream"
 msgstr "Flux"
@@ -545,11 +603,12 @@ msgstr "L’évènement de programmation a été créé avec succès."
 msgid "Timer menu"
 msgstr "Menu des programmations"
 
+#, python-format
+msgid "Timers: %d (local: %d), Partnerboxes: %d"
+msgstr ""
+
 msgid "Toggle Standby"
 msgstr "Basculer la veille"
-
-msgid "Toggle status (on/off)"
-msgstr "Basculer le statut (on/off)"
 
 msgid "Tue"
 msgstr "Mar"
