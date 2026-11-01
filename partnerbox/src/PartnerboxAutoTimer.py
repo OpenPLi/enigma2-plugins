@@ -104,6 +104,10 @@ class PartnerboxAutoTimer(object):
 
 	def getPartnerboxAutoTimerListCallback(self, result, partnerboxentry):
 		if result is not None:
+			root = cet_fromstring(result)
+			if root.tag != "autotimer" or not root.get("version"):
+				self.session.openWithCallback(self.returnToPartnerboxList, MessageBox, _("AutoTimer plugin is probably not installed on Partnerbox '%s'.") % partnerboxentry.name.value, MessageBox.TYPE_INFO)
+				return
 			from Plugins.Extensions.AutoTimer.AutoTimer import AutoTimer
 			autotimer = AutoTimer()
 			autotimer.readXml(xml_string=result)
