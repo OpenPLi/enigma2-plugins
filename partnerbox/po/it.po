@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2 - partnerbox\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-21 17:17+0200\n"
+"POT-Creation-Date: 2026-11-01 19:11+0100\n"
 "PO-Revision-Date: 2009-10-29 20:40+0100\n"
 "Last-Translator: Spaeleus <spaeleus@croci.org>\n"
 "Language-Team: www.linsat.net <spaeleus@croci.org>\n"
@@ -40,6 +40,9 @@ msgstr "(ZAP)"
 msgid "<unknown>"
 msgstr "<sconosciuto>"
 
+msgid "A repeating event is currently recording. What would you like to do?"
+msgstr ""
+
 msgid "Abort"
 msgstr ""
 
@@ -62,6 +65,10 @@ msgstr "Agg. timer"
 msgid "After event"
 msgstr "Dopo l'evento"
 
+#, fuzzy
+msgid "All timers"
+msgstr "Agg. timer"
+
 msgid "Alternative"
 msgstr ""
 
@@ -75,6 +82,10 @@ msgid "Attention, this is repeated timer!\n"
 msgstr ""
 
 msgid "AutoTimer overview"
+msgstr ""
+
+#, python-format
+msgid "AutoTimer plugin is probably not installed on Partnerbox '%s'."
 msgstr ""
 
 msgid "Bouquet List"
@@ -140,6 +151,10 @@ msgstr "Rim. timer"
 msgid "Description"
 msgstr "Descrizione"
 
+#, fuzzy
+msgid "Disable"
+msgstr "Disabilitato"
+
 msgid "Disable Picture in Picture"
 msgstr ""
 
@@ -165,6 +180,9 @@ msgstr ""
 "Rimuovere il timer \n"
 "%s?"
 
+msgid "Don't stop current event but disable coming events"
+msgstr ""
+
 msgid "EPG Selection"
 msgstr "Selezione EPG"
 
@@ -177,6 +195,9 @@ msgstr ""
 #, fuzzy
 msgid "Edit remote timer"
 msgstr "Rim. timer"
+
+msgid "Enable"
+msgstr ""
 
 #, fuzzy
 msgid "Enable Partnerbox-AutoTimer function"
@@ -272,6 +293,10 @@ msgstr "Recupero informazioni bouquet Partnerbox in corso..."
 msgid "Getting Partnerbox Information..."
 msgstr "Recupero informazioni Partnerbox in corso..."
 
+#, fuzzy
+msgid "Getting Partnerboxes Information..."
+msgstr "Recupero informazioni Partnerbox in corso..."
+
 msgid "Getting timerlist data..."
 msgstr ""
 
@@ -286,6 +311,10 @@ msgstr "Informazioni"
 
 msgid "Internet services are not supported!"
 msgstr ""
+
+#, fuzzy
+msgid "Local only"
+msgstr "Destinazione"
 
 msgid "Location"
 msgstr "Destinazione"
@@ -335,6 +364,9 @@ msgstr "Nome"
 
 msgid "No"
 msgstr "No"
+
+msgid "No timers found."
+msgstr ""
 
 msgid "OK"
 msgstr "Ok"
@@ -397,6 +429,10 @@ msgstr "Partnerbox: modificare voce"
 msgid "Partnerbox: RemoteTimer"
 msgstr "Voci Partnerbox"
 
+#, fuzzy
+msgid "Partnerboxes"
+msgstr "Voci Partnerbox"
+
 msgid "Password"
 msgstr "Password"
 
@@ -425,7 +461,15 @@ msgid "Remote Timer"
 msgstr "Timer remoto"
 
 #, fuzzy
+msgid "Remote only"
+msgstr "Timer remoto"
+
+#, fuzzy
 msgid "RemoteTimer Timerlist"
+msgstr "Timer remoto"
+
+#, fuzzy
+msgid "RemoteTimers"
 msgstr "Timer remoto"
 
 msgid "Remove timer"
@@ -448,6 +492,10 @@ msgstr "Sabato"
 
 msgid "Save"
 msgstr ""
+
+#, fuzzy
+msgid "Select Partnerbox:"
+msgstr "Voci Partnerbox"
 
 #, python-format
 msgid "Select action for remote timer '%s':"
@@ -504,6 +552,9 @@ msgstr ""
 msgid "Show duration time for event"
 msgstr ""
 
+msgid "Show timers from all Partnerboxes in EPG"
+msgstr ""
+
 msgid "Shutdown"
 msgstr ""
 
@@ -522,6 +573,12 @@ msgstr "Ora avvio"
 
 #, python-format
 msgid "Starting Remote Player (IP = %s)"
+msgstr ""
+
+msgid "Stop current event and disable coming events"
+msgstr ""
+
+msgid "Stop current event but not coming events"
 msgstr ""
 
 msgid "Stream"
@@ -575,10 +632,11 @@ msgstr ""
 msgid "Timer menu"
 msgstr "Tipo timer"
 
-msgid "Toggle Standby"
+#, python-format
+msgid "Timers: %d (local: %d), Partnerboxes: %d"
 msgstr ""
 
-msgid "Toggle status (on/off)"
+msgid "Toggle Standby"
 msgstr ""
 
 msgid "Tue"

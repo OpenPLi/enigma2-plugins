@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Enigma 2 TMBD Plugin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-21 17:17+0200\n"
+"POT-Creation-Date: 2026-11-01 19:11+0100\n"
 "PO-Revision-Date: 2018-03-01 22:35+0200\n"
 "Last-Translator: Dimitrij <Dima-73@inbox.lv>\n"
 "Language-Team: Dima-73@inbox.lv\n"
@@ -34,6 +34,9 @@ msgstr "(Перейти)"
 msgid "<unknown>"
 msgstr "<неизвестный>"
 
+msgid "A repeating event is currently recording. What would you like to do?"
+msgstr ""
+
 msgid "Abort"
 msgstr "Отмена"
 
@@ -55,6 +58,10 @@ msgstr "Добавить таймер"
 msgid "After event"
 msgstr "После события"
 
+#, fuzzy
+msgid "All timers"
+msgstr "Добавить таймер"
+
 msgid "Alternative"
 msgstr "Альтернатива"
 
@@ -69,6 +76,10 @@ msgstr "Внимание, это повторный таймер!\n"
 
 msgid "AutoTimer overview"
 msgstr "Автотаймер - обзор"
+
+#, python-format
+msgid "AutoTimer plugin is probably not installed on Partnerbox '%s'."
+msgstr ""
 
 msgid "Bouquet List"
 msgstr "Список пакета"
@@ -131,6 +142,10 @@ msgstr "Удалить таймер"
 msgid "Description"
 msgstr "Описание"
 
+#, fuzzy
+msgid "Disable"
+msgstr "отключено"
+
 msgid "Disable Picture in Picture"
 msgstr "Отключить PiP"
 
@@ -154,6 +169,9 @@ msgstr ""
 "Вы действительно хотите удалить таймер \n"
 "%s ?"
 
+msgid "Don't stop current event but disable coming events"
+msgstr ""
+
 msgid "EPG Selection"
 msgstr "Выбор EPG"
 
@@ -165,6 +183,10 @@ msgstr "Редактировать внутренний таймер"
 
 msgid "Edit remote timer"
 msgstr "Редактировать дистанционный таймер"
+
+#, fuzzy
+msgid "Enable"
+msgstr "Включить VPS"
 
 msgid "Enable Partnerbox-AutoTimer function"
 msgstr "Включить функцию Partnerbox-Автотаймер"
@@ -253,6 +275,10 @@ msgstr "Получение информации букетов Partnerbox..."
 msgid "Getting Partnerbox Information..."
 msgstr "Получение информации Partnerbox..."
 
+#, fuzzy
+msgid "Getting Partnerboxes Information..."
+msgstr "Получение информации Partnerbox..."
+
 msgid "Getting timerlist data..."
 msgstr "Получение данных списка таймеров..."
 
@@ -267,6 +293,10 @@ msgstr "Инфо"
 
 msgid "Internet services are not supported!"
 msgstr "Интернет сервисы не поддерживаются!"
+
+#, fuzzy
+msgid "Local only"
+msgstr "Расположение"
 
 msgid "Location"
 msgstr "Расположение"
@@ -316,6 +346,9 @@ msgstr "Имя"
 
 msgid "No"
 msgstr "нет"
+
+msgid "No timers found."
+msgstr ""
 
 msgid "OK"
 msgstr "ОК"
@@ -369,6 +402,10 @@ msgstr "Partnerbox: дистанционный ТВ плеер"
 msgid "Partnerbox: RemoteTimer"
 msgstr "Partnerbox: дистанционный таймер"
 
+#, fuzzy
+msgid "Partnerboxes"
+msgstr "Partnerbox"
+
 msgid "Password"
 msgstr "Пароль"
 
@@ -397,8 +434,16 @@ msgstr "Дистанционный плеер"
 msgid "Remote Timer"
 msgstr "Дистанционный таймер"
 
+#, fuzzy
+msgid "Remote only"
+msgstr "Дистанционный плеер"
+
 msgid "RemoteTimer Timerlist"
 msgstr "Дистанционный таймер - список таймеров"
+
+#, fuzzy
+msgid "RemoteTimers"
+msgstr "Дистанционный таймер"
 
 msgid "Remove timer"
 msgstr "Удалить таймер"
@@ -420,6 +465,10 @@ msgstr "Суббота"
 
 msgid "Save"
 msgstr "Сохранить"
+
+#, fuzzy
+msgid "Select Partnerbox:"
+msgstr "Partnerbox"
 
 #, python-format
 msgid "Select action for remote timer '%s':"
@@ -472,6 +521,9 @@ msgstr "Показать все иконки события в списке EPG"
 msgid "Show duration time for event"
 msgstr "Показать продолжительность времени для события"
 
+msgid "Show timers from all Partnerboxes in EPG"
+msgstr ""
+
 msgid "Shutdown"
 msgstr "Выключение"
 
@@ -490,6 +542,12 @@ msgstr "Время начала"
 #, python-format
 msgid "Starting Remote Player (IP = %s)"
 msgstr "Старт дистанционного плеера (IP = %s)"
+
+msgid "Stop current event and disable coming events"
+msgstr ""
+
+msgid "Stop current event but not coming events"
+msgstr ""
 
 msgid "Stream"
 msgstr "Стрим"
@@ -541,11 +599,12 @@ msgstr "Таймер события был успешно создан."
 msgid "Timer menu"
 msgstr "Меню таймера"
 
+#, python-format
+msgid "Timers: %d (local: %d), Partnerboxes: %d"
+msgstr ""
+
 msgid "Toggle Standby"
 msgstr "Переключатель для режима ожидания"
-
-msgid "Toggle status (on/off)"
-msgstr "Смена статуса (вкл/выкл)"
 
 msgid "Tue"
 msgstr "Вт"
