@@ -2,16 +2,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Partnerbox\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-21 17:17+0200\n"
+"POT-Creation-Date: 2026-11-01 18:31+0100\n"
 "PO-Revision-Date: \n"
-"Last-Translator: IMS <ims@openpli.org>\n"
+"Last-Translator: ims <ims@openpli.org>\n"
 "Language-Team: PLi <ims21@users.sourceforge.net>\n"
 "Language: cs_CZ\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Poedit 3.6\n"
+"X-Generator: Poedit 3.10\n"
 
 #, python-format
 msgid " (Partnerbox %s - Version: %s)"
@@ -34,6 +34,9 @@ msgstr "(PŘEPNOUT)"
 msgid "<unknown>"
 msgstr "<neznámý>"
 
+msgid "A repeating event is currently recording. What would you like to do?"
+msgstr "Právě probíhá nahrávání opakované události. Co chcete dělat?"
+
 msgid "Abort"
 msgstr "Zrušit"
 
@@ -55,6 +58,9 @@ msgstr "Přidat časovač"
 msgid "After event"
 msgstr "Po skončení"
 
+msgid "All timers"
+msgstr "Všechny časovače"
+
 msgid "Alternative"
 msgstr "Alternativa"
 
@@ -70,6 +76,10 @@ msgstr "Pozor, toto je opakující se časovač!\n"
 #
 msgid "AutoTimer overview"
 msgstr "AutoTimer přehled"
+
+#, python-format
+msgid "AutoTimer plugin is probably not installed on Partnerbox '%s'."
+msgstr "Na partnerboxu '%s' není plugin AutoTimer zřejmě nainstalován."
 
 msgid "Bouquet List"
 msgstr "Přehled"
@@ -134,6 +144,9 @@ msgstr "Odstranit časovač"
 msgid "Description"
 msgstr "Popis"
 
+msgid "Disable"
+msgstr "Zakázat"
+
 msgid "Disable Picture in Picture"
 msgstr "Zakázat PiP"
 
@@ -157,6 +170,9 @@ msgstr ""
 "Chcete skutečně odstranit časovač \n"
 "%s ?"
 
+msgid "Don't stop current event but disable coming events"
+msgstr "Nezastavovat aktuální nahrávání, ale zakázat následující"
+
 msgid "EPG Selection"
 msgstr "Výběr EPG"
 
@@ -168,6 +184,9 @@ msgstr "Upravit interní časovač"
 
 msgid "Edit remote timer"
 msgstr "Upravit vzdálený časovač"
+
+msgid "Enable"
+msgstr "Povolit"
 
 msgid "Enable Partnerbox-AutoTimer function"
 msgstr "Povolit Partnerbox-Autotimer"
@@ -257,6 +276,9 @@ msgstr "Získávají se informace o přehledech Partnerboxu..."
 msgid "Getting Partnerbox Information..."
 msgstr "Získávají se informace z Partnerboxu..."
 
+msgid "Getting Partnerboxes Information..."
+msgstr "Načítání informací z Partnerboxů..."
+
 msgid "Getting timerlist data..."
 msgstr "Získávají se data z přehledu časovačů..."
 
@@ -272,6 +294,9 @@ msgstr "Info"
 
 msgid "Internet services are not supported!"
 msgstr "Internetové programy nejsou podporovány!"
+
+msgid "Local only"
+msgstr "Pouze lokální"
 
 msgid "Location"
 msgstr "Umístění"
@@ -320,6 +345,9 @@ msgstr "Název"
 
 msgid "No"
 msgstr "Ne"
+
+msgid "No timers found."
+msgstr "Nebyly nalezeny žádné časovače."
 
 msgid "OK"
 msgstr "OK"
@@ -383,6 +411,9 @@ msgstr "Partnerbox: TV přehrávač"
 msgid "Partnerbox: RemoteTimer"
 msgstr "Partnerbox: Časovač"
 
+msgid "Partnerboxes"
+msgstr "Partnerboxy"
+
 msgid "Password"
 msgstr "Heslo"
 
@@ -413,9 +444,15 @@ msgstr "Vzdálený přehrávač"
 msgid "Remote Timer"
 msgstr "Vzdálený časovač"
 
+msgid "Remote only"
+msgstr "Pouze vzdálené"
+
 #
 msgid "RemoteTimer Timerlist"
 msgstr "RemoteTimer časovače"
+
+msgid "RemoteTimers"
+msgstr "Vzdálené časovače"
 
 msgid "Remove timer"
 msgstr "Odstranit časovač"
@@ -437,6 +474,9 @@ msgstr "Sobota"
 
 msgid "Save"
 msgstr "Uložit"
+
+msgid "Select Partnerbox:"
+msgstr "Zvolte partnerbox:"
 
 #, python-format
 msgid "Select action for remote timer '%s':"
@@ -486,14 +526,11 @@ msgstr "Zobrazovat 'Streamovat aktuální program' v E-Menu"
 msgid "Show all icon for event in EPGList"
 msgstr "V EPG zobrazovat pro událost všechny ikony"
 
-msgid "Show timers from all Partnerboxes in EPG"
-msgstr "Zobrazovat časovače všech partnerboxů v EPG"
-
-msgid "Select Partnerbox:"
-msgstr "Zvolte partnerbox:"
-
 msgid "Show duration time for event"
 msgstr "Zobrazit délku trvání události"
+
+msgid "Show timers from all Partnerboxes in EPG"
+msgstr "Zobrazovat časovače všech partnerboxů v EPG"
 
 msgid "Shutdown"
 msgstr "Vypnout"
@@ -515,6 +552,12 @@ msgstr "Čas začátku"
 #, python-format
 msgid "Starting Remote Player (IP = %s)"
 msgstr "Spouští se vzdálený přehrávač (IP=%s)"
+
+msgid "Stop current event and disable coming events"
+msgstr "Zastavit aktuální nahrávání a zakázat následující"
+
+msgid "Stop current event but not coming events"
+msgstr "Zastavit aktuální nahrávání, ale nezakazovat následující"
 
 msgid "Stream"
 msgstr "Stream"
@@ -568,12 +611,13 @@ msgstr "Časovač byl úspěšně založen."
 msgid "Timer menu"
 msgstr "Menu časovače"
 
+#, python-format
+msgid "Timers: %d (local: %d), Partnerboxes: %d"
+msgstr "Časovače: %d (lokální: %d), Partnerboxy: %d"
+
 #
 msgid "Toggle Standby"
 msgstr "Přepnout Standby"
-
-msgid "Toggle status (on/off)"
-msgstr "Přepnout stav (zap/vyp)"
 
 msgid "Tue"
 msgstr "Út"

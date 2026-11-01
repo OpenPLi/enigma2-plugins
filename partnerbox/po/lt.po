@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Partnerbox\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-21 17:17+0200\n"
+"POT-Creation-Date: 2026-11-01 19:11+0100\n"
 "PO-Revision-Date: 2021-09-15 15:38+0300\n"
 "Last-Translator: Vytenis P. <vyteniui@gmail.com>\n"
 "Language-Team: Vytenis P. <vyteniui@gmail.com>\n"
@@ -35,6 +35,9 @@ msgstr "(PERJUNGTI)"
 msgid "<unknown>"
 msgstr "<nežinomas>"
 
+msgid "A repeating event is currently recording. What would you like to do?"
+msgstr ""
+
 msgid "Abort"
 msgstr "Nutraukti"
 
@@ -56,6 +59,10 @@ msgstr "Įtraukti laikmatį"
 msgid "After event"
 msgstr "Po užduoties"
 
+#, fuzzy
+msgid "All timers"
+msgstr "Įtraukti laikmatį"
+
 msgid "Alternative"
 msgstr "Alternatyva"
 
@@ -70,6 +77,10 @@ msgstr "Dėmesio, tai pasikartojantis laikmatis!\n"
 
 msgid "AutoTimer overview"
 msgstr "Autolaikmačio apžvalga"
+
+#, python-format
+msgid "AutoTimer plugin is probably not installed on Partnerbox '%s'."
+msgstr ""
 
 msgid "Bouquet List"
 msgstr "Bukietų sąrašas"
@@ -132,6 +143,10 @@ msgstr "Šalinti laikmatį"
 msgid "Description"
 msgstr "Aprašymas"
 
+#, fuzzy
+msgid "Disable"
+msgstr "išjungta"
+
 msgid "Disable Picture in Picture"
 msgstr "Išjungti vaizdą vaizde (PiP)"
 
@@ -155,6 +170,9 @@ msgstr ""
 "Ar tikrai norite pašalinti laikmatį\n"
 "%s ?"
 
+msgid "Don't stop current event but disable coming events"
+msgstr ""
+
 msgid "EPG Selection"
 msgstr "EPG pasirinkimas"
 
@@ -166,6 +184,10 @@ msgstr "Redaguoti vidinį laikmatį"
 
 msgid "Edit remote timer"
 msgstr "Redaguoti nuotolinį laikmatį"
+
+#, fuzzy
+msgid "Enable"
+msgstr "Įjungti VPS"
 
 msgid "Enable Partnerbox-AutoTimer function"
 msgstr "Įjungti Partnerbox autolaikmačio funkciją"
@@ -255,6 +277,10 @@ msgstr "Gaunama Partnerbox bukietų informacija..."
 msgid "Getting Partnerbox Information..."
 msgstr "Gaunama Partnerbox informacija..."
 
+#, fuzzy
+msgid "Getting Partnerboxes Information..."
+msgstr "Gaunama Partnerbox informacija..."
+
 msgid "Getting timerlist data..."
 msgstr "Gaunami laikmačių sąrašo duomenys..."
 
@@ -269,6 +295,10 @@ msgstr "Informacija"
 
 msgid "Internet services are not supported!"
 msgstr "Internetiniai kanalai negalimi!"
+
+#, fuzzy
+msgid "Local only"
+msgstr "Padėtis"
 
 msgid "Location"
 msgstr "Padėtis"
@@ -318,6 +348,9 @@ msgstr "Pavadinimas"
 
 msgid "No"
 msgstr "ne"
+
+msgid "No timers found."
+msgstr ""
 
 msgid "OK"
 msgstr " Gerai"
@@ -371,6 +404,10 @@ msgstr "Partnerbox: nuotolinis TV grotuvas"
 msgid "Partnerbox: RemoteTimer"
 msgstr "Partnerbox: nuotolinis laikmatis"
 
+#, fuzzy
+msgid "Partnerboxes"
+msgstr "Partnerbox"
+
 msgid "Password"
 msgstr "Slaptažodis"
 
@@ -399,8 +436,16 @@ msgstr "Nuotolinis grotuvas"
 msgid "Remote Timer"
 msgstr "Nuotolinis laikmatis"
 
+#, fuzzy
+msgid "Remote only"
+msgstr "Nuotolinis grotuvas"
+
 msgid "RemoteTimer Timerlist"
 msgstr "Nuotolinių laikmačių sąrašas"
+
+#, fuzzy
+msgid "RemoteTimers"
+msgstr "Nuotolinis laikmatis"
 
 msgid "Remove timer"
 msgstr "Pašalinti laikmatį"
@@ -422,6 +467,10 @@ msgstr "šeštadienis"
 
 msgid "Save"
 msgstr "Išsaugoti"
+
+#, fuzzy
+msgid "Select Partnerbox:"
+msgstr "Partnerbox"
 
 #, python-format
 msgid "Select action for remote timer '%s':"
@@ -474,6 +523,9 @@ msgstr "EPG sąraše rodyti įvykio piktogramą"
 msgid "Show duration time for event"
 msgstr "Rodyti įvykio trukmę"
 
+msgid "Show timers from all Partnerboxes in EPG"
+msgstr ""
+
 msgid "Shutdown"
 msgstr "Išjungti"
 
@@ -492,6 +544,12 @@ msgstr "Pradžios laikas"
 #, python-format
 msgid "Starting Remote Player (IP = %s)"
 msgstr "Nuotolinis TV grotuvas paleidžiamas (IP = %s)"
+
+msgid "Stop current event and disable coming events"
+msgstr ""
+
+msgid "Stop current event but not coming events"
+msgstr ""
 
 msgid "Stream"
 msgstr "Transliacija"
@@ -541,11 +599,12 @@ msgstr "Laikmačio įrašas sukurtas."
 msgid "Timer menu"
 msgstr "Laikmačio meniu"
 
+#, python-format
+msgid "Timers: %d (local: %d), Partnerboxes: %d"
+msgstr ""
+
 msgid "Toggle Standby"
 msgstr "Perjungti budėjimo režimą"
-
-msgid "Toggle status (on/off)"
-msgstr "Perjungimo būsena (įjungta/išjungta)"
 
 msgid "Tue"
 msgstr "Ant"

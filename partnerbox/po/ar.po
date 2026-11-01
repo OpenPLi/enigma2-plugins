@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Partnerbox\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-21 17:17+0200\n"
+"POT-Creation-Date: 2026-11-01 19:11+0100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: mosad - مساعد الجعيد <abo-mishal@hotmail.com>\n"
 "Language-Team: mosad - مساعد الجعيد\n"
@@ -35,6 +35,9 @@ msgstr "(تنقل)"
 msgid "<unknown>"
 msgstr "<مجهول>"
 
+msgid "A repeating event is currently recording. What would you like to do?"
+msgstr ""
+
 msgid "Abort"
 msgstr "الغاء"
 
@@ -56,6 +59,10 @@ msgstr "أضف مؤقت"
 msgid "After event"
 msgstr "بعد الحدث"
 
+#, fuzzy
+msgid "All timers"
+msgstr "أضف مؤقت"
+
 msgid "Alternative"
 msgstr "بديل"
 
@@ -70,6 +77,10 @@ msgstr "انتباه ، هذا مؤقت متكرر!\n"
 
 msgid "AutoTimer overview"
 msgstr "معاينة المؤقت الآلى"
+
+#, python-format
+msgid "AutoTimer plugin is probably not installed on Partnerbox '%s'."
+msgstr ""
 
 msgid "Bouquet List"
 msgstr "قائمة الباقات"
@@ -132,6 +143,10 @@ msgstr "حذف المؤقت"
 msgid "Description"
 msgstr "الوصـف"
 
+#, fuzzy
+msgid "Disable"
+msgstr "تم التعطيل"
+
 msgid "Disable Picture in Picture"
 msgstr "تعطيل صوره داخل صوره"
 
@@ -155,6 +170,9 @@ msgstr ""
 "هل تريد حقا لحذف الموقت \n"
 "%s ?"
 
+msgid "Don't stop current event but disable coming events"
+msgstr ""
+
 msgid "EPG Selection"
 msgstr "إختيار دليل البرامج اليومي"
 
@@ -166,6 +184,10 @@ msgstr "تحرير مؤقت داخلي"
 
 msgid "Edit remote timer"
 msgstr "تحرير مؤقت عن بعد"
+
+#, fuzzy
+msgid "Enable"
+msgstr "تفعيل الخادم الإفتراضي الخاص"
 
 msgid "Enable Partnerbox-AutoTimer function"
 msgstr "تمكين وظيفة المؤقت التلقائي على جهاز الشريك"
@@ -255,6 +277,10 @@ msgstr "الحصول على معلومات باقة الجهاز..."
 msgid "Getting Partnerbox Information..."
 msgstr "الحصول على معلومات جهاز الشريك..."
 
+#, fuzzy
+msgid "Getting Partnerboxes Information..."
+msgstr "الحصول على معلومات جهاز الشريك..."
+
 msgid "Getting timerlist data..."
 msgstr "الحصول على بيانات قائمة توقيت..."
 
@@ -269,6 +295,10 @@ msgstr "معلومات"
 
 msgid "Internet services are not supported!"
 msgstr "خدمات الإنترنت غير مدعومة!"
+
+#, fuzzy
+msgid "Local only"
+msgstr "الموقع"
 
 msgid "Location"
 msgstr "الموقع"
@@ -318,6 +348,9 @@ msgstr "الاسم"
 
 msgid "No"
 msgstr "لا"
+
+msgid "No timers found."
+msgstr ""
 
 msgid "OK"
 msgstr "موافق"
@@ -371,6 +404,10 @@ msgstr "جهاز الشريك:مشغل التلفزيون عن بعد"
 msgid "Partnerbox: RemoteTimer"
 msgstr "جهاز الشريك:مشغل المؤقت"
 
+#, fuzzy
+msgid "Partnerboxes"
+msgstr "جهاز الشريك"
+
 msgid "Password"
 msgstr "كلمة المرور"
 
@@ -399,8 +436,16 @@ msgstr "مشغل عن بعد"
 msgid "Remote Timer"
 msgstr "الموقت عن بعد"
 
+#, fuzzy
+msgid "Remote only"
+msgstr "مشغل عن بعد"
+
 msgid "RemoteTimer Timerlist"
 msgstr "قائمة عداد الوقت عن بعد"
+
+#, fuzzy
+msgid "RemoteTimers"
+msgstr "الموقت عن بعد"
 
 msgid "Remove timer"
 msgstr "حذف المؤقت"
@@ -422,6 +467,10 @@ msgstr "السبت"
 
 msgid "Save"
 msgstr "حفظ"
+
+#, fuzzy
+msgid "Select Partnerbox:"
+msgstr "جهاز الشريك"
 
 #, python-format
 msgid "Select action for remote timer '%s':"
@@ -474,6 +523,9 @@ msgstr "عرض كل رمز للحدث في قائمة الدليل الالكت�
 msgid "Show duration time for event"
 msgstr "عرض مدة الوقت للحدث"
 
+msgid "Show timers from all Partnerboxes in EPG"
+msgstr ""
+
 msgid "Shutdown"
 msgstr "إغلاق"
 
@@ -492,6 +544,12 @@ msgstr "وقت التشغيل"
 #, python-format
 msgid "Starting Remote Player (IP = %s)"
 msgstr "بدء تشغيل التحكم بالمشغل عن بعد (الايبي = %s)"
+
+msgid "Stop current event and disable coming events"
+msgstr ""
+
+msgid "Stop current event but not coming events"
+msgstr ""
 
 msgid "Stream"
 msgstr "البث"
@@ -541,11 +599,12 @@ msgstr "تم إنشاء حدث مؤقت بنجاح."
 msgid "Timer menu"
 msgstr "قائمة المؤقت"
 
+#, python-format
+msgid "Timers: %d (local: %d), Partnerboxes: %d"
+msgstr ""
+
 msgid "Toggle Standby"
 msgstr "تبديل وضع الاستعداد"
-
-msgid "Toggle status (on/off)"
-msgstr "تبديل الحالة (تشغيل/إيقاف)"
 
 msgid "Tue"
 msgstr "الثلاثاء"
