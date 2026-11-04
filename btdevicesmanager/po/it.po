@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: BTDevicesManager 1.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-29 20:16+0100\n"
+"POT-Creation-Date: 2026-11-04 13:48+0100\n"
 "PO-Revision-Date: 2025-03-30 22:14+0200\n"
 "Last-Translator: madhouse\n"
 "Language-Team: \n"
@@ -51,11 +51,11 @@ msgstr "Disconnessione in corso…"
 msgid "Exit"
 msgstr "Esci"
 
-msgid "Not connected to any device"
-msgstr "Non connesso a nessun dispositivo"
-
 msgid "Not connected"
 msgstr "Non connesso"
+
+msgid "Not connected to any device"
+msgstr "Non connesso a nessun dispositivo"
 
 msgid "Please Enter Passkey: \n"
 msgstr "Inserisci la passkey:\n"

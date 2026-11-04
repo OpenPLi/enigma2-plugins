@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-12 19:10+0100\n"
+"POT-Creation-Date: 2026-11-04 13:48+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -55,9 +55,6 @@ msgstr ""
 msgid "Birthday Reminder received %s birthdays from %s."
 msgstr ""
 
-msgid "Birthday filename:"
-msgstr ""
-
 msgid "Birthdays"
 msgstr ""
 
@@ -69,17 +66,7 @@ msgid "Can't find CSV file %s!"
 msgstr ""
 
 #, python-format
-msgid "Can't import CSV data from file %s."
-msgstr ""
-
-#, python-format
-msgid "Can't write CSV file %s."
-msgstr ""
-
-msgid "Date format:"
-msgstr ""
-
-msgid "Day:"
+msgid "Can't write CSV file '%s'. Error: %s"
 msgstr ""
 
 msgid "Disabled"
@@ -93,9 +80,6 @@ msgid "Do you really want to delete the entry for %s?"
 msgstr ""
 
 msgid "Edit"
-msgstr ""
-
-msgid "Edit Birthday Settings"
 msgstr ""
 
 msgid "Edit birthday"
@@ -139,31 +123,13 @@ msgstr ""
 msgid "Invalid date!"
 msgstr ""
 
-msgid "Month:"
-msgstr ""
-
 msgid "Name"
-msgstr ""
-
-msgid "Name:"
-msgstr ""
-
-msgid "Networking port (default: 7374):"
 msgstr ""
 
 msgid "Next birthday"
 msgstr ""
 
-msgid "Notification time:"
-msgstr ""
-
 msgid "Open the extras menu"
-msgstr ""
-
-msgid "Path to birthday file:"
-msgstr ""
-
-msgid "Remind before birthday:"
 msgstr ""
 
 msgid "Remove"
@@ -173,12 +139,6 @@ msgid "Remove the selected entry"
 msgstr ""
 
 msgid "Select a path for the birthday file"
-msgstr ""
-
-msgid "Show plugin in extensions menu:"
-msgstr ""
-
-msgid "Sort birthdays by:"
 msgstr ""
 
 msgid "Sorting next"
@@ -199,6 +159,42 @@ msgstr ""
 
 #, python-format
 msgid "Wrote CSV file %s."
+msgstr ""
+
+msgid "Birthday filename:"
+msgstr ""
+
+msgid "Date format:"
+msgstr ""
+
+msgid "Day:"
+msgstr ""
+
+msgid "Edit Birthday Settings"
+msgstr ""
+
+msgid "Month:"
+msgstr ""
+
+msgid "Name:"
+msgstr ""
+
+msgid "Networking port (default: 7374):"
+msgstr ""
+
+msgid "Notification time:"
+msgstr ""
+
+msgid "Path to birthday file:"
+msgstr ""
+
+msgid "Remind before birthday:"
+msgstr ""
+
+msgid "Show plugin in extensions menu:"
+msgstr ""
+
+msgid "Sort birthdays by:"
 msgstr ""
 
 msgid "Year:"

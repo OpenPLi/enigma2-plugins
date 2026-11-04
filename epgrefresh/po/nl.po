@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2 - epgrefresh\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-01 19:10+0100\n"
+"POT-Creation-Date: 2026-11-04 13:48+0100\n"
 "PO-Revision-Date: 2019-07-28 12:04+0200\n"
 "Last-Translator: Frenske <voorzitter@openpli.org>\n"
 "Language-Team: <Benny.DeTandt@gmail.com>\n"
@@ -142,6 +142,10 @@ msgstr "Configureer de interval waarmee de EPG geladen wordt. Dit is een optie v
 msgid "Configure EPG save interval, if enabled."
 msgstr "Indien geactiveerd kan je een interval instellen voor het opslaan van de EPG."
 
+#, fuzzy
+msgid "Congratulations"
+msgstr "Configuratie..."
+
 msgid "Create a backup cache file, after manually or automatically saving EPG."
 msgstr "Maak een backup van het cachebestand aan nadat de EPG automatisch of handmatig opgeslagen is."
 
@@ -198,6 +202,10 @@ msgstr "EPGrefresh is gestart met het scannen van de zenders."
 msgid "EPGRefresh Configuration"
 msgstr "EPGRefresh configuratie"
 
+#, fuzzy
+msgid "EPGRefresh Help"
+msgstr "EPGRefresh"
+
 msgid "EPGRefresh Services"
 msgstr "EPGRefresh Services"
 
@@ -218,6 +226,10 @@ msgstr "Bewerk de zenders waarvan je de EPG wilt verversen"
 
 msgid "Editing"
 msgstr "Wat wil je bewerken"
+
+#, fuzzy
+msgid "Editing the service list"
+msgstr "Zenders bewerken"
 
 msgid "Enable automatic EPG save interval."
 msgstr "Activeer de tussentijdse automatische EPG opslag."
@@ -496,6 +508,10 @@ msgstr "Beëindig EPGrefresh?\n"
 msgid "Sunday"
 msgstr "Zondag"
 
+#, fuzzy
+msgid "The configuration menu"
+msgstr "EPGRefresh configuratie"
+
 msgid "The duration that will be waited for the receiver to go into standby."
 msgstr "Met deze optie stelt u de vertraging in voordat de ontvanger naar stand-by gaat. "
 
@@ -505,11 +521,27 @@ msgstr "Identieke functie zijn gebruikt onder Menu - Systeem - EPG instellingen!
 msgid "The same functions are used in plugin EPGD!!"
 msgstr "Identieke functies worden gebruikt in de applicatie EPGD!"
 
+msgid ""
+"This help screen is supposed to give you a quick look at everything EPGRefresh has to offer.\n"
+"You can abort it at any time by pressing the RED or EXIT button on your remote control or bring it up at a later point by pressing the HELP button from the configuration menu (more on that later).\n"
+"\n"
+"\n"
+"But you really should consider to take the few minutes it takes to read these help pages."
+msgstr ""
+
 msgid "This is the duration each service will be shown in AutoZap mode."
 msgstr "Dit is de tijdsduur waarop elke zender getoond wordt in de AutoZap modus."
 
 msgid "This is the duration each service/channel will be tuned to during a refresh."
 msgstr "Met deze optie stelt u een tijd in die nodig is om de EPG van dat kanaal te verversen."
+
+msgid ""
+"This is the entry point of EPGRefresh. From this menu you can configure every aspect of the plugin and start a manual refresh of the EPG.\n"
+"The configuration options each have an explaination which is supposed to help you to understand their effects better. Please give reading them a try, they can save you a lot of time.\n"
+"\n"
+"Using the YELLOW button you can start a refresh manually and the INFO button brings up the date the last refresh was completed successfully.\n"
+"The BLUE key opens the service editor (next page)."
+msgstr ""
 
 msgid ""
 "This might have been an automated bootup to refresh the EPG. For this to happen it is recommended to put the receiver to Standby.\n"
@@ -539,8 +571,21 @@ msgstr "Start vanuit deep stand-by"
 msgid "Wednesday"
 msgstr "Woensdag"
 
+#, fuzzy
+msgid "Welcome to EPGRefresh"
+msgstr "toevoegen aan EPGRefresh"
+
 msgid "Whether the receiver should go into deep standby after refresh is completed."
 msgstr "Indien geactiveerd zal de ontvanger naar deep stand-by gaan zodra de EPG is ververst."
+
+msgid ""
+"While the screen does not immediately show it, it does have a lot to offer. The topmost line allows you to choose between the editor for channels and bouquets and the following lines contain the channels/bouquets you chose to refresh.\n"
+"\n"
+"You can use the BLUE button to add a new entry to the list or the YELLOW button to remove an existing one.\n"
+"\n"
+"\n"
+"For most people it should be sufficient to add the \"Favourites\" bouquet by selecting \"Bouquets\" in the first line and by adding it using the BLUE button."
+msgstr ""
 
 msgid ""
 "You may not use this settings!\n"
@@ -548,6 +593,13 @@ msgid ""
 msgstr ""
 "Wellicht gebruikt u deze instelling niet!\n"
 "Minimaal zal er één dag gebruikt moeten worden!"
+
+msgid ""
+"You now know how to do your first steps in EPGRefresh.\n"
+"\n"
+"As a final note I want to hint you at the fact that this plugin will not do anything on its own without YOU telling it to. So if you want the refresh to happen automatically in the background you need to configure the plugin to do so.\n"
+"This was not done to cause you any inconvenience but rather to give you the freedom of choice."
+msgstr ""
 
 #, fuzzy
 msgid "add service to EPG Refresh"

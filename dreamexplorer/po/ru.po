@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"POT-Creation-Date: 2026-11-04 13:48+0100\n"
 "PO-Revision-Date: 2015-10-07 18:57+0300\n"
 "Last-Translator: Dimitrij <Dima-73@inbox.lv>\n"
 "Language-Team: openpli.org\n"
@@ -74,9 +74,6 @@ msgstr ""
 "%s \n"
 "ОШИБКА!"
 
-msgid "ADDLINK"
-msgstr "ДОБАВИТЬ ЛИНК"
-
 msgid "About"
 msgstr "Информация"
 
@@ -119,9 +116,6 @@ msgstr "Создать новый файл в..."
 
 msgid "Create softlink..."
 msgstr "Создать символьную ссылку..."
-
-msgid "DELLINK"
-msgstr "УДАЛИТЬ ЛИНК"
 
 msgid "Delete"
 msgstr ""
