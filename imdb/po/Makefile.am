@@ -1,3 +1,3 @@
 PLUGIN = IMDb
-LANGS = ar cs de el et fa fi fr it lt nl ru sr sv tr 
+LANGS = ar cs da de el en_GB en es et fa fi fr hu it lt nl pl pt ru sr sv tr zh_CN 
 include $(top_srcdir)/Rules-po.mak

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-12 14:32+0200\n"
+"POT-Creation-Date: 2026-11-04 13:48+0100\n"
 "PO-Revision-Date: 2021-12-03 10:50+0100\n"
 "Last-Translator: IMS <ims@openpli.org>\n"
 "Language-Team: PLi <ims21@users.sourceforge.net>\n"
@@ -24,14 +24,24 @@ msgstr "Datový tok"
 msgid "Frame rate"
 msgstr "Snímková frekvence"
 
+#, fuzzy
+msgid "Framerate"
+msgstr "Snímková frekvence"
+
 msgid "It seems your receiver is not supported!"
 msgstr "Zdá se, že Váš přijímač není podporovaný!"
 
 msgid "Not found file '/etc/enigma2/streamproxy.conf' !"
 msgstr "Soubor '/etc/enigma2/streamproxy.conf' nebyl nalezen!"
 
+msgid "Port"
+msgstr ""
+
 msgid "Quit"
 msgstr "Zavřít"
+
+msgid "Resolution"
+msgstr ""
 
 msgid "Set"
 msgstr "Nastavit"
@@ -47,3 +57,7 @@ msgstr "Kodek videa"
 
 msgid "Video size"
 msgstr "Velikost obrazu"
+
+#, fuzzy
+msgid "videocodec"
+msgstr "Kodek videa"

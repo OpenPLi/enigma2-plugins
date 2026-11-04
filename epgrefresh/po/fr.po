@@ -7,28 +7,32 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-01 19:10+0100\n"
-"PO-Revision-Date: 2019-07-28 21:38+0200\n"
+"POT-Creation-Date: 2026-11-04 13:48+0100\n"
+"PO-Revision-Date: 2026-11-04 14:14+0100\n"
 "Last-Translator: Pr2\n"
 "Language-Team: \n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.3\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 3.4.2\n"
 
 msgid ""
 "\n"
 "\n"
 "AutoTimer will start after completion."
 msgstr ""
+"\n"
+"\n"
+"L'AutoTimer démarrera une fois l'opération terminée."
 
-#, fuzzy
 msgid ""
 "\n"
 "Running AutoTimer. Please wait."
-msgstr "Recherche du dernier service. Veuillez patienter."
+msgstr ""
+"\n"
+"Exécution d'AutoTimer. Veuillez patienter."
 
 msgid "   (AutoZap)"
 msgstr "   (ZapAutomatique)"
@@ -36,13 +40,13 @@ msgstr "   (ZapAutomatique)"
 #, python-format
 msgid "%d:%02d min"
 msgid_plural "%d:%02d mins"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d:%02d min"
+msgstr[1] "%d:%02d mins"
 
-#, fuzzy, python-format
+#, python-format
 msgid "... %d more service"
 msgid_plural "... %d more services"
-msgstr[0] "%d services en plus"
+msgstr[0] "%d service en plus"
 msgstr[1] "%d services en plus"
 
 msgid "Adding schedule..."
@@ -148,6 +152,9 @@ msgstr "Configure l’intervalle de lecture de l’EPG, si activé. Ceci est une
 msgid "Configure EPG save interval, if enabled."
 msgstr "Configurer l’intervalle de sauvegarde de l’EPG, si activé."
 
+msgid "Congratulations"
+msgstr "Félicitations"
+
 msgid "Create a backup cache file, after manually or automatically saving EPG."
 msgstr "Créer un fichier de sauvegarde cache, après avoir manuellement ou automatiquement sauvé l'EPG."
 
@@ -172,9 +179,8 @@ msgstr "Durée pour chaque service (en secondes) pour 'ZapAutomatique'"
 msgid "EPG Cache Check"
 msgstr "Vérification du cache de l’EPG"
 
-#, fuzzy
 msgid "EPG Refresh"
-msgstr "RafraîchirEPG"
+msgstr "Rafraîchir EPG"
 
 msgid "EPG cache file filename"
 msgstr "Nom du fichier de cache EPG"
@@ -191,9 +197,8 @@ msgstr "Rafraîchir EPG démarre au plus tard (hh:mm)"
 msgid "EPG refresh finished."
 msgstr "Rafraîchissement EPG terminé."
 
-#, fuzzy
 msgid "EPG refresh now"
-msgstr "Rafraîchir-EPG maitenant"
+msgstr "Rafraîchir EPG maitenant"
 
 msgid "EPG refresh started in background."
 msgstr "Le rafraîchissement de l’EPG a démarré en tâche de fond."
@@ -203,6 +208,9 @@ msgstr "Rafraîchir EPG démarre l’analyse des chaînes."
 
 msgid "EPGRefresh Configuration"
 msgstr "Configuration RafraîchirEPG"
+
+msgid "EPGRefresh Help"
+msgstr "Rafraîchir EPG Aide"
 
 msgid "EPGRefresh Services"
 msgstr "Services RafraîchirEPG"
@@ -224,6 +232,9 @@ msgstr "Editer les services à rafraîchir"
 
 msgid "Editing"
 msgstr "Edition"
+
+msgid "Editing the service list"
+msgstr "Modification de la liste des services"
 
 msgid "Enable automatic EPG save interval."
 msgstr "Intervalle de sauvegarde automatique de l’EPG."
@@ -295,9 +306,8 @@ msgstr "Charger l'EPG depuis la sauvegarde du fichier cache lors du démarrage."
 msgid "Main Picture"
 msgstr "Ecran principal"
 
-#, fuzzy
 msgid "Manual EPG refresh"
-msgstr "RafraîchirEPG"
+msgstr "Rafraîchir EPG manuellement"
 
 msgid "Manually clear EPG (choose method)."
 msgstr "Effacer manuellement l’EPG (choisir la méthode)."
@@ -354,11 +364,10 @@ msgid "Really close without saving settings?"
 msgstr "Voulez-vous vraiment fermer sans sauvegarder les paramètres?"
 
 msgid "Really shutdown now?"
-msgstr ""
+msgstr "On arrête vraiment maintenant ?"
 
-#, fuzzy
 msgid "Refresh EPG / AutoZap"
-msgstr "Rafraîchier-EPG / ZapAutomatique"
+msgstr "Rafraîchier-EPG / Zap Automatique"
 
 msgid "Refresh EPG automatically"
 msgstr "Rafraîchir automatiquement l'EPG"
@@ -381,8 +390,8 @@ msgstr "Rechargement du cache de l’EPG..."
 #, python-format
 msgid "Remaining %d service"
 msgid_plural "Remaining %d services"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d service restant"
+msgstr[1] "%d services restants"
 
 msgid "Restart enigma2 to effectuate."
 msgstr "Rédemarrer l'IGU pour appliquer."
@@ -483,23 +492,23 @@ msgstr "Taille:"
 msgid "Skip protected Services"
 msgstr "Passer les services protégés"
 
-#, fuzzy
 msgid "Start EPG refresh"
-msgstr "RafraîchirEPG"
+msgstr "Démarrer Rafraîchir EPG"
 
-#, fuzzy
 msgid "Stop EPG refresh"
-msgstr "RafraîchirEPG"
+msgstr "Arrêter Rafraîchir EPG"
 
-#, fuzzy
 msgid "Stop Running EPG refresh"
-msgstr "Arrêter le fonctionnement de Rafraîchir-EPG"
+msgstr "Arrêter l'actualisation de l'EPG"
 
 msgid "Stop Running EPG-refresh?\n"
 msgstr "Arrêter l'exécution de Rafraîchir-EPG?\n"
 
 msgid "Sunday"
 msgstr "Dimanche"
+
+msgid "The configuration menu"
+msgstr "Le menu de configuration"
 
 msgid "The duration that will be waited for the receiver to go into standby."
 msgstr "La durée qui sera attendue pour que le récepteur ne passe en veille."
@@ -510,11 +519,37 @@ msgstr "Les mêmes fonctions sont utilisée dans Menu -> Paramètres -> Paramèt
 msgid "The same functions are used in plugin EPGD!!"
 msgstr "La même fonction est utilisée dans le plugin EPGD!"
 
+msgid ""
+"This help screen is supposed to give you a quick look at everything EPGRefresh has to offer.\n"
+"You can abort it at any time by pressing the RED or EXIT button on your remote control or bring it up at a later point by pressing the HELP button from the configuration menu (more on that later).\n"
+"\n"
+"\n"
+"But you really should consider to take the few minutes it takes to read these help pages."
+msgstr ""
+"Cet écran d'aide a pour but de vous donner un aperçu rapide de toutes les fonctionnalités offertes par EPGRefresh.\n"
+"Vous pouvez y mettre fin à tout moment en appuyant sur la touche ROUGE ou EXIT de votre télécommande, ou y accéder ultérieurement en appuyant sur la touche AIDE dans le menu de configuration (nous y reviendrons plus tard).\n"
+"\n"
+"\n"
+"Mais nous vous recommandons vivement de prendre les quelques minutes nécessaires pour lire ces pages d'aide."
+
 msgid "This is the duration each service will be shown in AutoZap mode."
 msgstr "Ceci est la durée d'affichage de chaque service en mode ZapAutomatique."
 
 msgid "This is the duration each service/channel will be tuned to during a refresh."
 msgstr "Ceci est la durée pendant laquelle chaque service/chaîne sera sélectionnée pendant un rafraîchissement."
+
+msgid ""
+"This is the entry point of EPGRefresh. From this menu you can configure every aspect of the plugin and start a manual refresh of the EPG.\n"
+"The configuration options each have an explaination which is supposed to help you to understand their effects better. Please give reading them a try, they can save you a lot of time.\n"
+"\n"
+"Using the YELLOW button you can start a refresh manually and the INFO button brings up the date the last refresh was completed successfully.\n"
+"The BLUE key opens the service editor (next page)."
+msgstr ""
+"Il s'agit de la page d'accueil d'EPGRefresh. Depuis ce menu, vous pouvez configurer tous les aspects du plugin et lancer une actualisation manuelle du guide électronique des programmes (EPG).\n"
+"Chaque option de configuration est accompagnée d'une explication destinée à vous aider à mieux comprendre ses effets. N'hésitez pas à les lire, cela peut vous faire gagner beaucoup de temps.\n"
+"\n"
+"Le bouton JAUNE vous permet de lancer une actualisation manuellement, tandis que le bouton INFO affiche la date à laquelle la dernière actualisation s'est déroulée avec succès.\n"
+"La touche BLEUE ouvre l'éditeur de services (page suivante)."
 
 msgid ""
 "This might have been an automated bootup to refresh the EPG. For this to happen it is recommended to put the receiver to Standby.\n"
@@ -544,8 +579,26 @@ msgstr "Réveiller de la veille profonde"
 msgid "Wednesday"
 msgstr "Mercredi"
 
+msgid "Welcome to EPGRefresh"
+msgstr "Bienvenue dans  Rafraîchir EPG"
+
 msgid "Whether the receiver should go into deep standby after refresh is completed."
 msgstr "Défini si le récepteur doit aller en veille profonde ou pas après que le rafraîchissement est terminé."
+
+msgid ""
+"While the screen does not immediately show it, it does have a lot to offer. The topmost line allows you to choose between the editor for channels and bouquets and the following lines contain the channels/bouquets you chose to refresh.\n"
+"\n"
+"You can use the BLUE button to add a new entry to the list or the YELLOW button to remove an existing one.\n"
+"\n"
+"\n"
+"For most people it should be sufficient to add the \"Favourites\" bouquet by selecting \"Bouquets\" in the first line and by adding it using the BLUE button."
+msgstr ""
+"Même si l'écran ne le montre pas au premier coup d'œil, cette fonction offre de nombreuses possibilités. La ligne du haut vous permet de choisir entre l'éditeur des chaînes et des bouquets, tandis que les lignes suivantes contiennent les chaînes/bouquets que vous avez sélectionnés pour l'actualisation.\n"
+"\n"
+"Vous pouvez utiliser la touche BLEUE pour ajouter une nouvelle entrée à la liste ou la touche JAUNE pour en supprimer une existante.\n"
+"\n"
+"\n"
+"Pour la plupart des utilisateurs, il devrait suffire d'ajouter le bouquet « Favoris » en sélectionnant « Bouquets » dans la première ligne, puis en l'ajoutant à l'aide de la touche BLEUE."
 
 msgid ""
 "You may not use this settings!\n"
@@ -554,15 +607,25 @@ msgstr ""
 "Vous ne pouvez pas utiliser ce paramètre!\n"
 "Au moins un jour de la semaine doit être inclus!"
 
-#, fuzzy
+msgid ""
+"You now know how to do your first steps in EPGRefresh.\n"
+"\n"
+"As a final note I want to hint you at the fact that this plugin will not do anything on its own without YOU telling it to. So if you want the refresh to happen automatically in the background you need to configure the plugin to do so.\n"
+"This was not done to cause you any inconvenience but rather to give you the freedom of choice."
+msgstr ""
+"Vous savez désormais comment vous lancer avec EPGRefresh.\n"
+"\n"
+"Pour finir, je tiens à vous rappeler que ce plugin n'effectuera aucune action de lui-même sans que VOUS ne le lui demandiez. Ainsi, si vous souhaitez que l'actualisation s'effectue automatiquement en arrière-plan, vous devrez configurer le plugin en conséquence.\n"
+"Cette conception n'a pas pour but de vous causer des désagréments, mais plutôt de vous offrir une liberté de choix."
+
 msgid "add service to EPG Refresh"
-msgstr "ajouter le service à RafraîchirEPG"
+msgstr "ajouter le service à Rafraîchir EPG"
 
 msgid "add to EPGRefresh"
 msgstr "ajouter à RafraîchirEPG"
 
 msgid "always"
-msgstr ""
+msgstr "toujours"
 
 msgid "channel selection"
 msgstr "sélection de la chaîne"
@@ -583,4 +646,4 @@ msgid "nowhere"
 msgstr "nulle part"
 
 msgid "only 'epgrefresh' wakeup"
-msgstr ""
+msgstr "seulement au réveil de 'epgrefresh'"

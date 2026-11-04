@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ims\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-11 10:58+0200\n"
+"POT-Creation-Date: 2026-11-04 13:48+0100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: ims <ims21@users.sourceforge.net>\n"
 "Language-Team: PLi <ims21@users.sourceforge.net>\n"
@@ -70,9 +70,6 @@ msgstr ""
 "%s \n"
 "SELHALO!"
 
-msgid "ADDLINK"
-msgstr ""
-
 #
 msgid "About"
 msgstr "O přijímači"
@@ -121,9 +118,6 @@ msgstr "Založit soubor v..."
 
 msgid "Create softlink..."
 msgstr "Vytvořit softlink..."
-
-msgid "DELLINK"
-msgstr ""
 
 msgid "Delete"
 msgstr ""

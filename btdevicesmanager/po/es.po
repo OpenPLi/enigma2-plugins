@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: BTDevicesManager\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-29 20:16+0100\n"
+"POT-Creation-Date: 2026-11-04 13:48+0100\n"
 "PO-Revision-Date: 2016-05-07 13:09+0200\n"
 "Last-Translator: neoatomic <neoatomic@users.noreply.github.com>\n"
 "Language-Team: openspa <openspa.info>\n"
@@ -56,11 +56,11 @@ msgstr "Conectado con:\n"
 msgid "Exit"
 msgstr "Salir"
 
-msgid "Not connected to any device"
-msgstr "No se ha conectado a ningún dispositivo"
-
 #, fuzzy
 msgid "Not connected"
+msgstr "No se ha conectado a ningún dispositivo"
+
+msgid "Not connected to any device"
 msgstr "No se ha conectado a ningún dispositivo"
 
 msgid "Please Enter Passkey: \n"
