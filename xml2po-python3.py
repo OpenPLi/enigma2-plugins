@@ -1,6 +1,5 @@
 import sys
 import os
-import string
 import re
 from xml.sax import make_parser
 from xml.sax.handler import ContentHandler, property_lexical_handler
@@ -18,7 +17,7 @@ class parseXML(ContentHandler, LexicalHandler):
 		self.isPointsElement, self.isReboundsElement = 0, 0
 		self.attrlist = attrlist
 		self.last_comment = None
-		self.ishex = re.compile('#[0-9a-fA-F]+\Z')
+		self.ishex = re.compile(r'#[0-9a-fA-F]+\Z')
 
 	def comment(self, comment):
 		if "TRANSLATORS:" in comment:
@@ -63,7 +62,7 @@ for arg in sys.argv[1:]:
 		print('')
 		print('#: ' + arg)
 		k = k.replace('\"', '\\"')
-		k = string.replace(k, '\n', '\x5c\x6e')
+		k = k.replace('\n', '\\n')
 		if c:
 			for l in c.split('\n'):
 				print("#. ", l)
