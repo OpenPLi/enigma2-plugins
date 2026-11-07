@@ -117,6 +117,8 @@ class EPGRefreshConfiguration(Screen, ConfigListScreen):
 		self["key_blue"] = StaticText(_("Edit Services"))
 
 		self["help"] = StaticText()
+		# for skin compatibility:
+		self["description"] = self["help"]
 
 		# Define Actions
 		self["actions"] = ActionMap(["SetupActions", "ColorActions", "ChannelSelectEPGActions", "HelpActions"],

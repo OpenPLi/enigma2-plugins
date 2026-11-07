@@ -554,6 +554,8 @@ class AutoTimerEditor(Screen, ConfigListScreen, AutoTimerEditorBase):
 		self["VKeyIcon"] = Boolean(False)
 
 		self["help"] = StaticText()
+		# for skin compatibility:
+		self["description"] = self["help"]
 
 		# Set Button texts
 		self.renameServiceButton()

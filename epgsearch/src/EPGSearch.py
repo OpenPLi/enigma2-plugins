@@ -1283,6 +1283,8 @@ class EPGSearchHistory(Screen):
 		self["key_yellow"] = Button(_("Edit & search"))
 		self["key_blue"] = Button(_("Delete"))
 		self["help"] = Label(_("Select item for search and press 'OK' or edit item with yellow button or delete item with blue button."))
+		# for skin compatibility:
+		self["description"] = self["help"]
 
 	def select(self):
 		item = self["history"].getCurrent()
