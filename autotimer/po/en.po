@@ -1330,7 +1330,7 @@ msgstr "You can control for how many days in the future timers are added. Set th
 msgid ""
 "You can set the basic properties of an AutoTimer here.\n"
 "While 'Name' is just a human-readable name displayed in the Overview, 'Match in title' is what is looked for in the EPG.\n"
-"Note: with 'Insert' button on 'Description' or 'Match title' you can copy and edit text from one item to current item."
+"Note: with 'Info' button on 'Description' or 'Match title' you can copy and edit text from one item to current item."
 msgstr ""
 
 msgid ""
