@@ -123,6 +123,8 @@ class AutoTimerSettings(Screen, ConfigListScreen):
 		self["key_green"] = StaticText(_("OK"))
 		self["key_red"] = StaticText(_("Cancel"))
 		self["help"] = StaticText()
+		# for skin compatibility:
+		self["description"] = self["help"]
 
 		self["HelpWindow"] = Pixmap()
 		self["HelpWindow"].hide()

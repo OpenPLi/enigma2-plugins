@@ -36,6 +36,9 @@ class EPGSearchSetup(Screen, ConfigListScreen):
 		self["key_green"] = StaticText(_("Save"))
 		self["key_red"] = StaticText(_("Cancel"))
 		self["help"] = StaticText()
+		# for skin compatibility:
+		self["description"] = self["help"]
+
 		self.prev_add_search_to_epg = config.plugins.epgsearch.add_search_to_epg.value
 
 		# Define Actions

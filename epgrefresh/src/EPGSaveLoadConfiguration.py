@@ -92,6 +92,9 @@ class EPGSaveLoadConfiguration(Screen, ConfigListScreen):
 		self["key_green"] = StaticText(_("OK"))
 		self["epgcachelocation"] = StaticText()
 		self["help"] = StaticText()
+		# for skin compatibility:
+		self["description"] = self["help"]
+
 		self["actions"] = ActionMap(["SetupActions", "ColorActions"],
 			{
 				"cancel": self.keyCancel,
