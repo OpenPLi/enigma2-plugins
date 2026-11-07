@@ -1364,7 +1364,7 @@ msgstr "Můžete nastavit, po kolik dnů v budoucnu jsou časovače přidávány
 msgid ""
 "You can set the basic properties of an AutoTimer here.\n"
 "While 'Name' is just a human-readable name displayed in the Overview, 'Match in title' is what is looked for in the EPG.\n"
-"Note: with 'Insert' button on 'Description' or 'Match title' you can copy and edit text from one item to current item."
+"Note: with 'Info' button on 'Description' or 'Match title' you can copy and edit text from one item to current item."
 msgstr ""
 "Tady můžete nastavit základní vlastnosti AutoTimeru.\n"
 "Zatímco 'Název časovače' slouží pouze k jeho pojmenování a zobrazení v hlavním přehledu, 'Hledaný název/text' určuje text, který se bude vyhledávat v EPG.\n"

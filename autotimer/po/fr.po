@@ -1364,11 +1364,11 @@ msgstr "Vous pouvez controller pour combien de jours dans le futur les programma
 msgid ""
 "You can set the basic properties of an AutoTimer here.\n"
 "While 'Name' is just a human-readable name displayed in the Overview, 'Match in title' is what is looked for in the EPG.\n"
-"Note: with 'Insert' button on 'Description' or 'Match title' you can copy and edit text from one item to current item."
+"Note: with 'Info' button on 'Description' or 'Match title' you can copy and edit text from one item to current item."
 msgstr ""
 "Vous pouvez définir ici les propriétés de base d'un AutoTimer.\n"
 "Alors que le champ « Nom » correspond simplement à un nom lisible par l'utilisateur et affiché dans la vue d'ensemble, le champ « Correspondance dans le titre » correspond à ce qui est recherché dans le guide électronique des programmes (EPG).\n"
-"Remarque : grâce au bouton « Insérer » situé à côté des champs « Description » ou « Correspondance dans le titre », vous pouvez copier et modifier le texte d'un élément pour l'appliquer à l'élément actuel."
+"Remarque : grâce au bouton « Info » situé à côté des champs « Description » ou « Correspondance dans le titre », vous pouvez copier et modifier le texte d'un élément pour l'appliquer à l'élément actuel."
 
 msgid ""
 "You did not provide a valid 'Match in title' Attribute for your new AutoTimer.\n"
