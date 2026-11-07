@@ -6,7 +6,7 @@ from Components.ScrollLabel import ScrollLabel
 from Components.Label import Label
 from Components.MenuList import MenuList
 from Components.MultiContent import MultiContentEntryText
-from enigma import eListboxPythonMultiContent, eListbox, gFont
+from enigma import eListboxPythonMultiContent, eListbox, gFont, getDesktop
 
 from Plugins.Plugin import PluginDescriptor
 from os import path as os_path, listdir as os_listdir
@@ -21,6 +21,7 @@ valid_types = ("MP3")
 #
 streamplayer = None
 plugin_path = ""
+FULLHD = getDesktop(0).size().width() >= 1920
 
 ###############################################################################
 
@@ -46,19 +47,33 @@ def Plugins(path, **kwargs):
 
 
 class NETcasterScreenBrowser(Screen):
-	skin = """
-		<screen position="80,73" size="560,440" title="SHOUTcaster" >
-			<widget name="streamlist" position="0,0" size="560,360" scrollbarMode="showOnDemand" />
-			<widget name="metadata"     position="0,360" size="560,40" transparent="1" valign="left" halign="center" zPosition="5"  foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" font="Regular;21" />
-			<ePixmap name="red"    position="0,400"   zPosition="4" size="140,40" pixmap="skin_default/buttons/red.png" transparent="1" alphatest="on" />
-			<ePixmap name="green"  position="140,400" zPosition="4" size="140,40" pixmap="skin_default/buttons/green.png" transparent="1" alphatest="on" />
-			<ePixmap name="yellow" position="280,400" zPosition="4" size="140,40" pixmap="skin_default/buttons/yellow.png" transparent="1" alphatest="on" />
-			<ePixmap name="blue"   position="420,400" zPosition="4" size="140,40" pixmap="skin_default/buttons/blue.png" transparent="1" alphatest="on" />
-			<widget name="pixred"     position="0,400" size="140,40" transparent="1" valign="center" halign="center" zPosition="5"  foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" font="Regular;21" />
-			<widget name="pixgreen"     position="140,400" size="140,40" transparent="1" valign="center" halign="center" zPosition="5"  foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" font="Regular;21"/>
-			<widget name="pixyellow" position="280,400" size="140,40" transparent="1" valign="center" halign="center" zPosition="5"  foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" font="Regular;21" />
-			<widget name="pixblue"     position="420,400" size="140,40" transparent="1" valign="center" halign="center" zPosition="5"  foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" font="Regular;21" />
+	skin_hd = """
+		<screen position="center,center" size="560,440" title="SHOUTcaster" >
+			<widget name="streamlist" position="0,0" size="560,350" scrollbarMode="showOnDemand" />
+			<widget name="metadata" position="0,355" size="560,40" transparent="1" valign="center" halign="center" zPosition="5" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" font="Regular;21" />
+			<ePixmap name="red" position="0,400" zPosition="4" size="140,40" pixmap="skin_default/buttons/red.png" transparent="1" alphatest="blend" scale="1" />
+			<ePixmap name="green" position="140,400" zPosition="4" size="140,40" pixmap="skin_default/buttons/green.png" transparent="1" alphatest="blend" scale="1" />
+			<ePixmap name="yellow" position="280,400" zPosition="4" size="140,40" pixmap="skin_default/buttons/yellow.png" transparent="1" alphatest="blend" scale="1" />
+			<ePixmap name="blue" position="420,400" zPosition="4" size="140,40" pixmap="skin_default/buttons/blue.png" transparent="1" alphatest="blend" scale="1" />
+			<widget name="pixred" position="0,400" size="140,40" transparent="1" valign="center" halign="center" zPosition="5" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" font="Regular;21" />
+			<widget name="pixgreen" position="140,400" size="140,40" transparent="1" valign="center" halign="center" zPosition="5" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" font="Regular;21" />
+			<widget name="pixyellow" position="280,400" size="140,40" transparent="1" valign="center" halign="center" zPosition="5" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" font="Regular;21" />
+			<widget name="pixblue" position="420,400" size="140,40" transparent="1" valign="center" halign="center" zPosition="5" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" font="Regular;21" />
 		</screen>"""
+	skin_fhd = """
+		<screen position="center,center" size="1200,820" title="SHOUTcaster" >
+			<widget name="streamlist" position="0,0" size="1200,675" scrollbarMode="showOnDemand" />
+			<widget name="metadata" position="0,685" size="1200,60" transparent="1" valign="center" halign="center" zPosition="5" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" font="Regular;30" />
+			<ePixmap name="red" position="0,760" zPosition="4" size="300,60" pixmap="skin_default/buttons/red.png" transparent="1" alphatest="blend" scale="1" />
+			<ePixmap name="green" position="300,760" zPosition="4" size="300,60" pixmap="skin_default/buttons/green.png" transparent="1" alphatest="blend" scale="1" />
+			<ePixmap name="yellow" position="600,760" zPosition="4" size="300,60" pixmap="skin_default/buttons/yellow.png" transparent="1" alphatest="blend" scale="1" />
+			<ePixmap name="blue" position="900,760" zPosition="4" size="300,60" pixmap="skin_default/buttons/blue.png" transparent="1" alphatest="blend" scale="1" />
+			<widget name="pixred" position="0,760" size="300,60" transparent="1" valign="center" halign="center" zPosition="5" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" font="Regular;30" />
+			<widget name="pixgreen" position="300,760" size="300,60" transparent="1" valign="center" halign="center" zPosition="5" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" font="Regular;30" />
+			<widget name="pixyellow" position="600,760" size="300,60" transparent="1" valign="center" halign="center" zPosition="5" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" font="Regular;30" />
+			<widget name="pixblue" position="900,760" size="300,60" transparent="1" valign="center" halign="center" zPosition="5" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" font="Regular;30" />
+		</screen>"""
+	skin = skin_fhd if FULLHD else skin_hd
 	streamlist = []
 	currentPlugin = None
 
@@ -248,19 +263,23 @@ class NETcasterScreenHelp(Screen):
 class StreamMenu(MenuList):
 	def __init__(self, list, enableWrapAround=False):
 		MenuList.__init__(self, list, enableWrapAround, eListboxPythonMultiContent)
-		self.l.setFont(0, gFont("Regular", 20))
-		self.l.setFont(1, gFont("Regular", 18))
+		self.l.setFont(0, gFont("Regular", 30 if FULLHD else 20))
+		self.l.setFont(1, gFont("Regular", 26 if FULLHD else 18))
 
 	def postWidgetCreate(self, instance):
 		MenuList.postWidgetCreate(self, instance)
-		instance.setItemHeight(50)
+		instance.setItemHeight(75 if FULLHD else 50)
 
 	def buildList(self, listnew):
 		list = []
 		for stream in listnew:
 			res = [stream]
-			res.append(MultiContentEntryText(pos=(5, 5), size=(500, 25), font=0, text=stream.getName()))
-			res.append(MultiContentEntryText(pos=(5, 26), size=(500, 24), font=1, text=stream.getDescription()))
+			if FULLHD:
+				res.append(MultiContentEntryText(pos=(10, 4), size=(1160, 38), font=0, text=stream.getName()))
+				res.append(MultiContentEntryText(pos=(10, 40), size=(1160, 32), font=1, text=stream.getDescription()))
+			else:
+				res.append(MultiContentEntryText(pos=(5, 5), size=(530, 25), font=0, text=stream.getName()))
+				res.append(MultiContentEntryText(pos=(5, 26), size=(530, 24), font=1, text=stream.getDescription()))
 			list.append(res)
 		self.l.setList(list)
 		self.moveToIndex(0)
