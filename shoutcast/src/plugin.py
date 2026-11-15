@@ -680,7 +680,7 @@ class SHOUTcastWidget(Screen):
 		self["statustext"].setText(_("Getting %s") % self.headerTextString)
 		self["list"].hide()
 		if len(devid) > 8:
-			self.stationListURL = self.SC + "/station/advancedsearch&f=xml&k=%s&search=%s" % (devid, genre)
+			self.stationListURL = self.SC + "/station/advancedsearch?f=xml&k=%s&search=%s" % (devid, genre)
 		else:
 			self.stationListURL = "http://207.200.98.1/sbin/newxml.phtml?genre=%s" % genre
 		self.stationListIndex = 0
@@ -818,7 +818,7 @@ class SHOUTcastWidget(Screen):
 			self["statustext"].setText(_("Searching SHOUTcast for %s...") % searchstring)
 			self["list"].hide()
 			if len(devid) > 8:
-			   self.stationListURL = self.SC + "/station/advancedsearch&f=xml&k=%s&search=%s" % (devid, searchstring)
+			   self.stationListURL = self.SC + "/station/advancedsearch?f=xml&k=%s&search=%s" % (devid, searchstring)
 			else:
 			   self.stationListURL = "http://207.200.98.1/sbin/newxml.phtml?search=%s" % searchstring
 			self.mode = self.SEARCHLIST
