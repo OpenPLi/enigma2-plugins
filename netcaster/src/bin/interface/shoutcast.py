@@ -52,7 +52,7 @@ class Interface(StreamInterface):
 
 
 from pickle import dump, load
-from urllib.request import FancyURLopener
+from urllib.request import urlopen
 from xml.sax import parseString
 from xml.sax.handler import ContentHandler
 from os import stat, mkdir
@@ -73,7 +73,7 @@ def write_cache(cache_file, cache_data):
 			mkdir(dirname(cache_file))
 		except OSError:
 			print(dirname(cache_file), 'is a file')
-	fd = open(cache_file, 'w')
+	fd = open(cache_file, 'wb')
 	dump(cache_data, fd, -1)
 	fd.close()
 
@@ -93,7 +93,7 @@ def load_cache(cache_file):
 	"""
 	Does a pickle load
 	"""
-	fd = open(cache_file)
+	fd = open(cache_file, 'rb')
 	cache_data = load(fd)
 	fd.close()
 	return cache_data
@@ -186,8 +186,7 @@ class GenreFeed:
 		Grabs genres and returns tuple of genres
 		"""
 		self.genre_url = 'http://www.shoutcast.com/sbin/newxml.phtml'
-		self.urlhandler = FancyURLopener()
-		self.fd = self.urlhandler.open(self.genre_url)
+		self.fd = urlopen(self.genre_url, timeout=10)
 		self.genre = self.fd.read()
 		self.fd.close()
 		return self.genre
@@ -234,8 +233,7 @@ class ShoutcastFeed:
 		Grabs the xml list of stations from the shoutcast server
 		"""
 		self.shout_url = 'http://www.shoutcast.com/sbin/newxml.phtml?genre=' + self.genre
-		self.urlhandler = FancyURLopener()
-		self.fd = self.urlhandler.open(self.shout_url)
+		self.fd = urlopen(self.shout_url, timeout=10)
 		self.stations = self.fd.read()
 		self.fd.close()
 		return self.stations
