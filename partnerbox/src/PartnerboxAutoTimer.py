@@ -49,7 +49,8 @@ class PartnerboxAutoTimer(object):
 			if count == 1:
 				self.partnerboxplugin(None, parameter, config.plugins.Partnerbox.Entries[0])
 			else:
-				self.session.openWithCallback(self.partnerboxplugin, PartnerboxEntriesListConfigScreen, parameter)
+				dialog = self.session.openWithCallback(self.partnerboxplugin, PartnerboxEntriesListConfigScreen, parameter)
+				dialog.setTitle(_("Partnerbox - Select a box from the list"))
 
 	def partnerboxplugin(self, unUsed, parameter, partnerboxentry=None):
 		if partnerboxentry is None:
@@ -59,7 +60,7 @@ class PartnerboxAutoTimer(object):
 		username = "root"
 		password = partnerboxentry.password.value
 		sCommand = "http://%s:%d/autotimer/add_xmltimer" % (ip, port)
-		sendPartnerBoxWebCommand(sCommand, None, 10, username, password, parameter=parameter).addCallback(self.downloadCallback).addErrback(self.downloadError)
+		sendPartnerBoxWebCommand(sCommand, None, 10, username, password, parameter=parameter).addCallback(self.downloadCallback).addErrback(self.downloadError, partnerboxentry)
 
 	def downloadCallback(self, result=None):
 		if result:
@@ -68,9 +69,13 @@ class PartnerboxAutoTimer(object):
 			if statetext:
 				self.session.open(MessageBox, statetext, MessageBox.TYPE_INFO, timeout=10)
 
-	def downloadError(self, error=None):
+	def downloadError(self, error=None, partnerboxentry=None):
 		if error is not None:
-			self.session.open(MessageBox, str(error.getErrorMessage()), MessageBox.TYPE_INFO)
+			if partnerboxentry is not None and getattr(error.value, "status", None) in (404, "404", b"404"):
+				message = _("AutoTimer plugin is probably not installed on Partnerbox '%s'.") % partnerboxentry.name.value
+			else:
+				message = str(error.getErrorMessage())
+			self.session.open(MessageBox, message, MessageBox.TYPE_INFO, timeout=10)
 
 	def autotimerImporterCallback(self, ret):
 		if ret:
@@ -121,7 +126,7 @@ class PartnerboxAutoTimer(object):
 			username = "root"
 			password = partnerboxentry.password.value
 			sCommand = "http://%s:%d/autotimer/upload_xmlconfiguration" % (ip, port)
-			sendPartnerBoxWebCommand(sCommand, None, 10, username, password, parameter=parameter).addCallback(self.downloadCallback).addErrback(self.downloadError)
+			sendPartnerBoxWebCommand(sCommand, None, 10, username, password, parameter=parameter).addCallback(self.downloadCallback).addErrback(self.downloadError, partnerboxentry)
 		self.returnToPartnerboxList(None)
 
 class PartnerboxAutoTimerEPGSelection(AutoTimerEPGSelection):
