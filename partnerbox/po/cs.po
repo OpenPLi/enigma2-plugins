@@ -389,6 +389,9 @@ msgstr "Partnerboxy"
 msgid "Partnerbox RemoteTimer"
 msgstr "Partnerbox: Časovač"
 
+msgid "Partnerbox - Select a box from the list"
+msgstr "Partnerbox - vyberte box ze seznamu"
+
 #
 msgid "Partnerbox Setup"
 msgstr "Nastavení partnerboxu"
