@@ -168,11 +168,22 @@ def eventinfoContextMenu(session, eventName="", **kwargs):
 	partnerboxpluginStart(session, 2)
 
 
-def partnerboxAutoTimerEventInfo(session, **kwargs):
+def partnerboxAutoTimerEventInfo(session, event=None, service=None, **kwargs):
+	if event is not None and service is not None:
+		from .PartnerboxAutoTimer import PartnerboxAutoTimer
+		from Plugins.Extensions.AutoTimer.AutoTimerEditor import addAutotimerFromEvent
+		addAutotimerFromEvent(session, evt=event, service=service,
+			importer_Callback=PartnerboxAutoTimer.instance.autotimerImporterCallback)
+		return
 	from .PartnerboxAutoTimer import PartnerboxAutoTimerEPGSelection
 	ref = session.nav.getCurrentlyPlayingServiceReference()
 	if ref:
 		session.open(PartnerboxAutoTimerEPGSelection, ref)
+
+def partnerboxAutoTimerSelectedEvent(session, selectedevent=None, **kwargs):
+	if selectedevent is not None:
+		partnerboxAutoTimerEventInfo(session, event=selectedevent[0], service=selectedevent[1])
+
 
 
 def openPartnerboxAutoTimersOverview(session, **kwargs):
@@ -209,6 +220,7 @@ def Plugins(**kwargs):
 		if config.plugins.Partnerbox.showpartnerboxautotimerninmenu.value:
 			list.append(PluginDescriptor(name=_("Partnerbox: AutoTimer"), description=_("Manage autotimer for other boxes in network"), where=[PluginDescriptor.WHERE_EVENTINFO], fnc=openPartnerboxAutoTimersOverview))
 			list.append(PluginDescriptor(name=_("add AutoTimer for Partnerbox..."), where=[PluginDescriptor.WHERE_EVENTINFO], fnc=partnerboxAutoTimerEventInfo, needsRestart=False))
+			list.append(PluginDescriptor(name=_("add AutoTimer for Partnerbox..."), where=[PluginDescriptor.WHERE_EVENTINFO], fnc=partnerboxAutoTimerSelectedEvent, needsRestart=False))
 		if config.plugins.Partnerbox.showpartnerboxautotimerninextensionsmenu.value:
 			list.append(PluginDescriptor(name=_("Partnerbox: AutoTimer"), description=_("Manage autotimer for other boxes in network"), where=[PluginDescriptor.WHERE_EXTENSIONSMENU], fnc=openPartnerboxAutoTimersOverview))
 	return list
