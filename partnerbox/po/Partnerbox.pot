@@ -364,6 +364,9 @@ msgstr ""
 msgid "Partnerbox - RemotePlayer"
 msgstr ""
 
+msgid "Partnerbox - Select a box from the list"
+msgstr ""
+
 #, python-format
 msgid ""
 "Partnerbox Answer: \n"
