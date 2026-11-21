@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enigma2 - IMDb\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-04 13:48+0100\n"
-"PO-Revision-Date: 2026-11-04 14:49+0100\n"
+"POT-Creation-Date: 2026-07-26 13:31+0200\n"
+"PO-Revision-Date: 2015-02-02 22:44+0100\n"
 "Last-Translator: mimi74\n"
 "Language-Team: french-EGAMI\n"
 "Language: fr\n"
@@ -11,386 +11,525 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
-"X-Generator: Poedit 3.4.2\n"
+"X-Generator: Poedit 1.6.10\n"
 "X-Poedit-SourceCharset: iso-8859-15\n"
 
+#: ../plugin.py:1093
 msgid " & "
-msgstr " & "
+msgstr ""
 
+#: ../plugin.py:905
 #, python-format
 msgid "%d out of %d found this helpful."
-msgstr "%d personnes sur %d ont trouvé cela utile."
+msgstr ""
 
+#: ../plugin.py:1189
 #, python-format
 msgid "%s of %s"
-msgstr "%s de %s"
+msgstr ""
 
+#: ../plugin.py:1303
 msgid "** Spoiler **"
-msgstr "** Spoiler **"
+msgstr ""
 
+#: ../plugin.py:350
 msgid "Ambiguous results"
 msgstr "Résultats ambigus"
 
+#: ../plugin.py:1159
 msgid "Aspect ratio"
-msgstr "Format d'image"
+msgstr ""
 
+#: ../plugin.py:1156
 msgid "Certificate"
-msgstr "Certificat"
+msgstr ""
 
+#: ../plugin.py:1158
 msgid "Color"
-msgstr "Couleur"
+msgstr ""
 
+#: ../plugin.py:1178
+#, fuzzy
 msgid "Connections"
-msgstr "Connexions"
+msgstr "Sélection chaîne"
 
+#: ../plugin.py:1552
+#, fuzzy
 msgid "Couldn't get event name"
-msgstr "Impossible d'obtenir le nom de l'événement"
+msgstr "Impossible d'obtenir nom événement"
 
+#: ../plugin.py:1019
 msgid "Country"
 msgid_plural "Countries"
-msgstr[0] "Pays"
-msgstr[1] "Pays"
+msgstr[0] ""
+msgstr[1] ""
 
+#: ../plugin.py:982
 msgid "Creator"
 msgid_plural "Creators"
-msgstr[0] "Créateur"
-msgstr[1] "Créateurs"
+msgstr[0] ""
+msgstr[1] ""
 
+#: ../plugin.py:355 ../plugin.py:956
 msgid "Details"
 msgstr "Détails"
 
+#: ../plugin.py:976
 msgid "Director"
 msgid_plural "Directors"
-msgstr[0] "Réalisateur"
-msgstr[1] "Réalisateurs"
+msgstr[0] ""
+msgstr[1] ""
 
+#: ../plugin.py:1070 ../plugin.py:1694
+#, fuzzy
 msgid "Downloading Movie Poster..."
-msgstr "Téléchargement de l’affiche du film..."
+msgstr "Téléchargement affiche du film: %s..."
 
+#: ../plugin.py:923
+#, fuzzy
 msgid "Downloading reviews..."
-msgstr "Téléchargement des avis..."
+msgstr "Téléchargement affiche du film: %s..."
 
+#: ../setup.xml
+#, fuzzy
 msgid "Enable this to be able to access IMDb search setup from within the plugin browser."
-msgstr "Activez cette option pour pouvoir accéder à la configuration de la recherche IMDb depuis le navigateur du plugin."
+msgstr "Activer cette option afin d'accéder à IMDb à partir de le navigateur plugiciels."
 
+#: ../setup.xml
+#, fuzzy
 msgid "Enable this to be able to access IMDb searches from within the movie list."
-msgstr "Activez cette option pour pouvoir accéder aux recherches IMDb depuis la liste des films."
+msgstr "Activer cette option afin d'accéder à IMDb à partir de le navigateur plugiciels."
 
+#: ../setup.xml
+#, fuzzy
 msgid "Enable this to be able to access IMDb searches from within the plugin browser."
-msgstr "Activez cette option pour pouvoir accéder aux recherches IMDb depuis le navigateur du plugin."
+msgstr "Activer cette option afin d'accéder à IMDb à partir de le navigateur plugiciels."
 
+#: ../plugin.py:1341
 msgid "Enter search"
 msgstr "Entrer recherche"
 
+#: ../plugin.py:1484
 msgid "Enter text to search for"
 msgstr "Entrer le texte à rechercher"
 
+#: ../plugin.py:995
 msgid "Episodes"
-msgstr "Épisodes"
+msgstr ""
 
+#: ../plugin.py:242
 msgid "Exit"
 msgstr "Quitter"
 
+#: ../plugin.py:266 ../plugin.py:270
+#, fuzzy
 msgid "Exit IMDb search"
-msgstr "Quitter la recherche IMDb"
+msgstr "Entrer recherche"
 
+#: ../plugin.py:1241 ../plugin.py:1245
 msgid "Extra Info"
 msgstr "Infos suplémentaires"
 
+#: ../plugin.py:1173
 msgid "Filming locations"
-msgstr "Lieux de tournage"
+msgstr ""
 
+#: ../plugin.py:965
 msgid "Genre"
 msgid_plural "Genres"
-msgstr[0] "Genre"
-msgstr[1] "Genres"
+msgstr[0] ""
+msgstr[1] ""
 
+#: ../plugin.py:1176
 msgid "Goofs"
-msgstr "Goofs"
+msgstr ""
 
+#: ../plugin.py:1664
 msgid "IMDB Exception"
-msgstr "Exception IMDB"
+msgstr ""
 
+#: ../plugin.py:1249 ../plugin.py:1672 ../plugin.py:1703
 msgid "IMDb Details parsed"
 msgstr "IMDb Détails filtrés"
 
+#: ../plugin.py:1555
 msgid "IMDb Download completed"
 msgstr "IMDb Téléchargement terminé"
 
+#: ../plugin.py:1657
 msgid "IMDb Download failed"
 msgstr "IMDb Téléchargement échoué"
 
+#: ../plugin.py:1368
+#, fuzzy
 msgid "IMDb Menu"
-msgstr "Menu IMDb"
+msgstr "IMDb Configuration"
 
+#: ../plugin.py:1752
 msgid "IMDb Plugin"
 msgstr "IMDb plugiciel"
 
+#: ../plugin.py:928
 msgid "IMDb Re-Download completed"
 msgstr "IMDb Re-Téléchargement terminé"
 
+#: ../plugin.py:889
+#, fuzzy
 msgid "IMDb Reviews failed"
-msgstr "Échec du chargement des avis IMDb"
+msgstr "IMDb requête échoué!"
 
+#: ../plugin.py:919
+#, fuzzy
 msgid "IMDb Reviews parsed"
-msgstr "Avis IMDb analysés"
+msgstr "IMDb Détails filtrés"
 
+#: ../plugin.py:1758 ../setup.xml
 msgid "IMDb Setup"
 msgstr "IMDb Configuration"
 
+#: ../plugin.py:1404
 msgid "IMDb can not get Movie Information to write to .txt file!"
-msgstr "IMDb ne parvient pas à récupérer les informations sur les films pour les enregistrer dans un fichier .txt !"
+msgstr ""
 
+#: ../plugin.py:944
+#, fuzzy
 msgid "IMDb details unavailable"
-msgstr "Détails IMDb non disponibles"
+msgstr "IMDb Détails filtrés"
 
+#: ../plugin.py:1560
 msgid "IMDb query failed!"
 msgstr "IMDb requête échoué!"
 
+#: ../plugin.py:1032
+#, fuzzy
 msgid "IMDb rating"
-msgstr "Note IMDb"
+msgstr "IMDb plugiciel"
 
+#: ../plugin.py:1392
+#, fuzzy
 msgid "IMDb save completed"
-msgstr "Enregistrement sur IMDb terminé"
+msgstr "IMDb Téléchargement terminé"
 
+#: ../plugin.py:1805 ../plugin.py:1827 ../plugin.py:1828 ../plugin.py:1838
+#, fuzzy
 msgid "IMDb search"
-msgstr "Recherche IMDb"
+msgstr "Aucune IMDb correspondante."
 
+#: ../plugin.py:1816
+#, fuzzy
 msgid "IMDb setup"
-msgstr "Configuration IMDb"
+msgstr "IMDb Configuration"
 
+#: ../plugin.py:931
+#, fuzzy
 msgid "IMDb title failed!"
-msgstr "Échec lors de la récupération du titre sur IMDb !"
+msgstr "IMDb requête échoué!"
 
+#: ../plugin.py:1543
 #, python-format
 msgid "Ignoring invalid imdbId: %s"
-msgstr "Ignorer l'imdbId non valide : %s"
+msgstr ""
 
+#: ../setup.xml
 msgid "Include episodes in the results. Takes effect after the next search of IMDb for a show name."
-msgstr "Inclure les épisodes dans les résultats. Cette option prend effet dès la prochaine recherche sur IMDb portant sur le nom d'une série."
+msgstr ""
 
+#: ../plugin.py:1023
 msgid "Language"
 msgid_plural "Languages"
-msgstr[0] "Langue"
-msgstr[1] "Langues"
+msgstr[0] ""
+msgstr[1] ""
 
+#: ../plugin.py:277
 msgid "Menu"
-msgstr "Menu"
+msgstr ""
 
+#: ../plugin.py:1642
+#, fuzzy
 msgid "No IMDb match."
-msgstr "Aucune correspondance sur IMDb."
+msgstr "Aucune IMDb correspondante."
 
+#: ../plugin.py:1643
 msgid "No IMDb match:"
-msgstr "Aucune IMDb correspondante:"
+msgstr "Aucune IMDb correspondante."
 
+#: ../plugin.py:1064
 msgid "No cast list found in the database."
 msgstr "Aucune liste des acteurs trouvée dans la base de données."
 
+#: ../plugin.py:935
 msgid "No details found."
 msgstr "Aucuns détails trouvés."
 
+#: ../plugin.py:287
 msgid "Page down"
-msgstr "Page suivante"
+msgstr ""
 
+#: ../plugin.py:288
 msgid "Page up"
-msgstr "Page précédente"
+msgstr ""
 
+#: ../plugin.py:884
 msgid "Parsing reviews..."
-msgstr "Analyse des avis..."
+msgstr ""
 
+#: ../plugin.py:1355
 msgid "Play Trailer"
 msgstr "Lire bande annonce"
 
+#: ../plugin.py:351
 msgid "Please select the matching entry"
 msgstr "Veuillez sélectionner l'entrée correspondante"
 
+#: ../plugin.py:1168
 msgid "Plot"
-msgstr "Synopsis"
+msgstr ""
 
+#: ../plugin.py:1171
 msgid "Plot keywords"
-msgstr "Mots-clés de l'intrigue"
+msgstr ""
 
+#: ../plugin.py:1174
 msgid "Production companies"
-msgstr "Sociétés de production"
+msgstr ""
 
-#, python-format
+#: ../plugin.py:1547
+#, fuzzy, python-format
 msgid "Query IMDb: %s"
-msgstr "Interroger IMDb : %s"
+msgstr "Récupération IMDb: %s..."
 
+#: ../plugin.py:1177
 msgid "Quotes"
-msgstr "Citations"
+msgstr ""
 
+#: ../plugin.py:879
 #, python-format
 msgid "Re-Query IMDb: %s..."
 msgstr "Re-Récupération IMDb: %s..."
 
+#: ../plugin.py:1014
 msgid "Release date"
-msgstr "Date de sortie"
+msgstr ""
 
+#: ../plugin.py:1157
 msgid "Runtime"
-msgstr "Durée "
+msgstr ""
 
+#: ../plugin.py:1601
 #, python-format
 msgid "S%d E%d - "
-msgstr "S%d E%d - "
+msgstr ""
 
+#: ../plugin.py:1348
 msgid "Save current Details as .json for offline use"
-msgstr "Enregistrer les détails actuels au format .json pour une utilisation hors ligne"
+msgstr ""
 
+#: ../plugin.py:1349
 msgid "Save current Details as .txt"
-msgstr "Enregistrer les informations actuelles au format .txt"
+msgstr ""
 
+#: ../plugin.py:1350
 msgid "Save current Poster and Details as .txt"
-msgstr "Enregistrer l'affiche et les détails actuels au format .txt"
+msgstr ""
 
+#: ../plugin.py:1356
 msgid "Search Trailer"
 msgstr "Recherche bande annonce"
 
+#: ../plugin.py:1806 ../plugin.py:1839
+#, fuzzy
 msgid "Search for details from the Internet Movie Database"
-msgstr "Rechercher des détails sur l'Internet Movie Database"
+msgstr "Récupérer détails depuis la base de données internet des films"
 
+#: ../plugin.py:992
 msgid "Seasons"
-msgstr "Saisons"
+msgstr ""
 
+#: ../plugin.py:1817
+#, fuzzy
 msgid "Settings for Internet Movie Database searches"
-msgstr "Paramètres pour les recherches sur l’Internet Movie Database"
+msgstr "La base de données internet des films"
 
+#: ../plugin.py:1342
 msgid "Setup"
 msgstr "Configuration"
 
+#: ../plugin.py:281
 msgid "Show a bigger poster"
-msgstr "Afficher une affiche plus grande"
+msgstr ""
 
+#: ../setup.xml
 msgid "Show episode and year information for cast when available. Takes effect after the next fetch of show details."
-msgstr "Afficher les informations relatives à l'épisode et à l'année pour les membres de la distribution, lorsqu'elles sont disponibles. Ces modifications prendront effet après la prochaine mise à jour des détails de l'émission."
+msgstr ""
 
+#: ../setup.xml
 msgid "Show episode and year information in cast list"
-msgstr "Afficher les informations relatives à l'épisode et à l'année dans la liste des acteurs"
+msgstr ""
 
+#: ../setup.xml
 msgid "Show episodes in title menu"
-msgstr "Afficher les épisodes dans le menu des titres"
+msgstr ""
 
+#: ../setup.xml
 msgid "Show extra information in title menu"
-msgstr "Afficher des informations supplémentaires dans le menu du titre"
+msgstr ""
 
+#: ../plugin.py:282
 msgid "Show first page of user reviews"
-msgstr "Afficher la première page des avis des utilisateurs"
+msgstr ""
 
+#: ../setup.xml
 msgid "Show in movie list"
-msgstr "Afficher dans la liste des films"
+msgstr ""
 
+#: ../plugin.py:271
 msgid "Show list of matched movies and series"
-msgstr "Afficher la liste des films et séries correspondants"
+msgstr ""
 
+#: ../plugin.py:265 ../plugin.py:272
 msgid "Show movie and series basic details"
-msgstr "Afficher les informations de base sur les films et les séries"
+msgstr ""
 
+#: ../plugin.py:273
 msgid "Show movie and series extra details"
-msgstr "Afficher plus de détails sur les films et les séries"
+msgstr ""
 
+#: ../plugin.py:283
 msgid "Show movie and series synopsis"
-msgstr "Afficher les résumés des films et des séries"
+msgstr ""
 
+#: ../setup.xml
+#, fuzzy
 msgid "Show search in plugin browser"
-msgstr "Afficher la recherche dans le navigateur de plugins"
+msgstr "Afficher dans le navigateur plugiciels"
 
+#: ../setup.xml
+#, fuzzy
 msgid "Show setup in plugin browser"
-msgstr "Afficher la configuration dans le navigateur de plug-ins"
+msgstr "Afficher dans le navigateur plugiciels"
 
+#: ../setup.xml
 msgid "Show the runtime, type and genres. Takes effect after the next search of IMDb for a show name."
-msgstr "Afficher la durée, le type et les genres. Ces modifications prendront effet dès la prochaine recherche d'un titre de série sur IMDb."
+msgstr ""
 
+#: ../plugin.py:1160
 msgid "Sound mix"
-msgstr "Mixage sonore"
+msgstr ""
 
+#: ../plugin.py:1169
 msgid "Storyline"
-msgstr "Intrigue"
+msgstr ""
 
+#: ../plugin.py:1471
 msgid "SubsSupport import failed"
-msgstr "L'importation SubsSupport a échoué"
+msgstr ""
 
+#: ../plugin.py:1360
 msgid "SubsSupport search"
-msgstr "Recherche SubsSupport"
+msgstr ""
 
+#: ../plugin.py:1442
 msgid "Synopsis"
-msgstr "Synopsis"
+msgstr ""
 
+#: ../plugin.py:1170
 msgid "Tagline"
-msgstr "Slogan"
+msgstr ""
 
+#: ../plugin.py:225
 msgid "The Internet Movie Database"
 msgstr "La base de données internet des films"
 
+#: ../setup.xml
 msgid "This option allows you to add words/phrases for IMDb to ignore when searching. Please separate the words/phrases with commas."
-msgstr "Cette option vous permet d’ajouter des mots ou des expressions qu’IMDb ignorera lors des recherches. Veuillez séparer ces mots ou expressions par des virgules."
+msgstr ""
 
+#: ../plugin.py:354
 msgid "Title Menu"
 msgstr "Menu titre"
 
+#: ../plugin.py:1059
 msgid "Top cast"
-msgstr "Distribution principale"
+msgstr ""
 
+#: ../setup.xml
 msgid "Translate IMDb texts to the user interface language."
-msgstr "Traduire les textes IMDb dans la langue de l’interface utilisateur."
+msgstr ""
 
+#: ../setup.xml
 msgid "Translate texts"
-msgstr "Traduire des textes"
+msgstr ""
 
+#: ../plugin.py:1175
 msgid "Trivia"
-msgstr "Anecdotes"
+msgstr ""
 
+#: ../plugin.py:1189 ../plugin.py:1443
 msgid "User reviews"
-msgstr "Avis des utilisateurs"
+msgstr ""
 
+#: ../setup.xml
 msgid "Words / phrases to ignore"
-msgstr "Mots / expressions à ignorer"
+msgstr ""
 
+#: ../plugin.py:979
 msgid "Writer"
 msgid_plural "Writers"
-msgstr[0] "Auteur"
-msgstr[1] "Auteurs"
+msgstr[0] ""
+msgstr[1] ""
 
+#: ../plugin.py:1045
+#, fuzzy
 msgid "as"
-msgstr "comme"
+msgstr " comme "
 
+#: ../plugin.py:1659
 msgid "connection error"
-msgstr "erreur de connexion"
+msgstr ""
 
+#: ../plugin.py:1536
 msgid "localpath is no longer supported."
-msgstr "localpath n’est plus pris en charge."
+msgstr ""
 
+#: ../plugin.py:1037
 msgid "no user rating yet"
 msgstr "pas d'appréciation encore"
 
+#: ../plugin.py:1661
 msgid "timeout"
-msgstr "timeout"
+msgstr ""
 
+#: ../plugin.py:1052
 #, python-brace-format
 msgid "{n} ep"
 msgid_plural "{n} eps"
-msgstr[0] "{n} ep"
-msgstr[1] "{n} eps"
+msgstr[0] ""
+msgstr[1] ""
 
+#: ../plugin.py:1094
 #, python-brace-format
 msgid "{n} nomination total"
 msgid_plural "{n} nominations total"
-msgstr[0] "{n} nomination total"
-msgstr[1] "{n} nominations total"
+msgstr[0] ""
+msgstr[1] ""
 
+#: ../plugin.py:1090
 #, python-brace-format
 msgid "{n} win"
 msgid_plural "{n} wins"
-msgstr[0] "{n} victoire"
-msgstr[1] "{n} victoires"
+msgstr[0] ""
+msgstr[1] ""
 
+#: ../plugin.py:1085
 #, python-brace-format
 msgid "{n} {award} nomination"
 msgid_plural "{n} {award} nominations"
-msgstr[0] "{n} {award} nomination"
-msgstr[1] "{n} {award} nominations"
+msgstr[0] ""
+msgstr[1] ""
 
+#: ../plugin.py:1083
 #, python-brace-format
 msgid "{n} {award} win"
 msgid_plural "{n} {award} wins"
-msgstr[0] "{n} {award} victoire"
-msgstr[1] "{n} {award} victoires"
+msgstr[0] ""
+msgstr[1] ""
