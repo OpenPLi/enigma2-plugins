@@ -311,7 +311,7 @@ class ControllerPI:
 # the PI controller class -end
 
 
-class FanControl2Test(ConfigListScreen, Screen):
+class FanControl2Test(Screen):
 	skin = """
 		<screen position="center,center" size="630,300" title="Fan Control 2 - Test" >
 			<widget source="TextTest1" render="Label" position="5,20" size="620,30" zPosition="10" font="Regular;20" halign="left" valign="center" backgroundColor="#25062748" transparent="1" />
@@ -440,7 +440,7 @@ class FanControl2Test(ConfigListScreen, Screen):
 		self.close(False, self.session)
 
 
-class FanControl2Monitor(Screen, ConfigListScreen):
+class FanControl2Monitor(Screen):
 	skin = """
 		<screen position="center,center" size="600,260" title="Fan Control 2 - Monitor">
 
